@@ -12,3 +12,9 @@ git push origin :branch-name
 ```git
 git branch -d branch-name
 ```
+
+## 提高git clone速度
+
+```git
+git config --global http.postBuffer 524288000
+```
