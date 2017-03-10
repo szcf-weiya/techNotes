@@ -18,3 +18,12 @@ git branch -d branch-name
 ```git
 git config --global http.postBuffer 524288000
 ```
+
+## git clone所有远程分支
+
+```git
+git clone ....
+cd ..
+git clone -a
+git checkout -b gh-pages origin/gh-pages
+```
