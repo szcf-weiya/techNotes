@@ -45,3 +45,6 @@ texlive-science - TeX Live: Natural and computer sciences
 sudo apt-get install texlive-science
 ```
 
+## Biblatex
+
+记得设置texstudio的biblatex编译方式，设为biber，默认为bibtex.
