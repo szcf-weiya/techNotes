@@ -48,3 +48,14 @@ curl ipinfo.io/ip #测试是否代理成功
 # Notes
 
 3.10 15:36 chrome 在升级xxnet后成功翻墙了，而Firefox不行了。未升级前情况是相反的，但未升级时Firefox从不能用到能用。
+
+# 有线
+
+```bash
+sudo su
+ifconfig enp0s31f6 up
+ifconfig enp0s31f6 10.71.115.59 netmask 255.255.255.0 up
+ping 10.71.115.254
+route add default gw 10.71.115.254 enp0s31f6
+ping 10.71.45.100
+```
