@@ -51,6 +51,14 @@ curl ipinfo.io/ip #测试是否代理成功
 
 # 有线
 
+手动设置ip
+IPv4 settings
+
+Address: 10.71.115.59
+Netmask: 24
+Gateway: 10.71.115.254
+DNS server: 10.10.0.21
+
 ```bash
 sudo su
 ifconfig enp0s31f6 up
