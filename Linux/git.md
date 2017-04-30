@@ -27,3 +27,8 @@ cd ..
 git clone -a
 git checkout -b gh-pages origin/gh-pages
 ```
+
+## git删除大文件
+
+[](http://www.cnblogs.com/lout/p/6111739.html)
+
