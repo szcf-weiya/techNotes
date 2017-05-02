@@ -58,3 +58,14 @@ sudo apt-get install texlive-science
 \setcounter{tocdepth}{2}
 ```
 即只显示两级目录。
+
+# Add Metadata to XeTeX PDF's
+
+```
+\usepackage[pdfauthor={Your Name},
+            pdftitle={The Title},
+            pdfsubject={The Subject},
+            pdfkeywords={Some Keywords},
+            pdfproducer={XeLateX with hyperref},
+            pdfcreator={Xelatex}]{hyperref}
+```
