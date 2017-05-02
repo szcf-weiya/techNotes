@@ -48,3 +48,13 @@ sudo apt-get install texlive-science
 ## Biblatex
 
 记得设置texstudio的biblatex编译方式，设为biber，默认为bibtex.
+
+
+# 调整目录的显示层数
+
+在使用tableofcontents 命令的时候，可分别显示chapter ， section ，subsection ，subsubsection 等目录，有时候，不希望显示级别较低的内容，比如只显示到chapter 和section，而subsection 和subsubsection 不显示，这时候可通过命令setcounter 命令来控制，具体做法如下：
+
+```
+\setcounter{tocdepth}{2}
+```
+即只显示两级目录。
