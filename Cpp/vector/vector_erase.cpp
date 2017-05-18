@@ -54,6 +54,12 @@ int main()
  for ( Iter = v1.begin( ) ; Iter != v1.end( ) ; Iter++ ) 
    cout << " " << *Iter;
  cout << endl; 
+ // another one
+ v1.erase(v1.begin()+1);
+ cout << "v1 =";
+ for ( Iter = v1.begin( ) ; Iter != v1.end( ) ; Iter++ ) 
+   cout << " " << *Iter;
+ cout << endl; 
  
  return 0;
   
