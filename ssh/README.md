@@ -18,3 +18,4 @@ Lists the public keys (DSA/ECDSA/RSA) that can be used for logging in as this us
 
 ## 基于公钥和私钥的信任关系
 
+将登录端的id_rsa.pub内容复制到服务器端的authorized_keys文件中。

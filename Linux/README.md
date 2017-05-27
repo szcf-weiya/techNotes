@@ -15,3 +15,6 @@ http://www.cnblogs.com/xn--gzr/p/6195317.html
 
 # install win on ubuntu
 http://www.linuxdeveloper.space/install-windows-after-linux/
+
+# fix locale issue
+https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue
