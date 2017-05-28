@@ -21,3 +21,7 @@ https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue
 
 # add user
 http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672
+
+# sudo 
+
+http://blog.csdn.net/ichuzhen/article/details/8241847
