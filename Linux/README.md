@@ -18,3 +18,6 @@ http://www.linuxdeveloper.space/install-windows-after-linux/
 
 # fix locale issue
 https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue
+
+# add user
+http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672

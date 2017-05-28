@@ -10,3 +10,7 @@
 
 Matplotlib自动化程度非常高，但是，掌握如何设置系统以便获得一个吸引人的图是相当困难的事。为了控制matplotlib图表的外观，Seaborn模块自带许多定制的主题和高级的接口。
 [segmentfault](https://segmentfault.com/a/1190000002789457)
+
+
+## 远程访问jupyter
+http://www.cnblogs.com/zhanglianbo/p/6109939.html
