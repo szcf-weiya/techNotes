@@ -17,3 +17,8 @@ for (i in c(1:(n-1)))
 [reference](http://stackoverflow.com/questions/12766166/error-in-plot-new-figure-margins-too-large-in-r)
 
 ![](error_too_large_for_figure.png)
+
+
+## linux更新的问题
+
+查看https://mirrors.tuna.tsinghua.edu.cn/CRAN/ 中的README.md文件
