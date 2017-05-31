@@ -25,3 +25,10 @@ http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672
 # sudo 
 
 http://blog.csdn.net/ichuzhen/article/details/8241847
+
+# 初始化服务器
+
+1. 新建用户，sudo
+2. 添加sources.list,gpg
+3. 安装R
+4. 安装Rstudioserver（成功！！！哎。。搞了一下午就是因为上午莫名其妙更新了Ubuntu，不要手贱！！）
