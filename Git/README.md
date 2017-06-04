@@ -52,3 +52,14 @@ ssh-keygen -t rsa -C "test@163.com"
 ```
 
 复制~/.ssh/id_rsa.pub到github上。
+
+## 修改origin
+```
+git remote rm origin 
+git remote add origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
+```
+
+or
+```
+git remote set-url origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
+```
