@@ -32,3 +32,21 @@ git checkout -b gh-pages origin/gh-pages
 
 [cnblog](http://www.cnblogs.com/lout/p/6111739.html)
 
+## 初次配置Git
+1. 下载安装
+```
+apt-get install git
+```
+
+2. 配置
+```
+git config --global user.name "test"
+git config --global user.email "test@163.com"
+```
+
+3. ssh
+```
+ssh-keygen -t rsa -C "test@163.com"
+```
+
+复制~/.ssh/id_rsa.pub到github上。
