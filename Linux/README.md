@@ -32,3 +32,6 @@ http://blog.csdn.net/ichuzhen/article/details/8241847
 2. 添加sources.list,gpg
 3. 安装R
 4. 安装Rstudioserver（成功！！！哎。。搞了一下午就是因为上午莫名其妙更新了Ubuntu，不要手贱！！）
+
+# 终端分屏
+[tmux](http://blog.csdn.net/u010454729/article/details/49496381)
