@@ -33,6 +33,8 @@ git checkout -b gh-pages origin/gh-pages
 [cnblog](http://www.cnblogs.com/lout/p/6111739.html)
 
 ## 初次配置Git
+[reference](http://www.open-open.com/lib/view/open1428900970330.html)
+
 1. 下载安装
 ```
 apt-get install git
