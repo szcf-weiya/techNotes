@@ -35,3 +35,9 @@ http://blog.csdn.net/ichuzhen/article/details/8241847
 
 # 终端分屏
 [tmux](http://blog.csdn.net/u010454729/article/details/49496381)
+
+# 缺少动态链接库
+
+在服务器上使用gsl报缺少动态链接库的错误
+解决方案
+[3种方法](http://www.cnblogs.com/smartvessel/archive/2011/01/21/1940868.html)
