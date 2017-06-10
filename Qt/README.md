@@ -4,3 +4,6 @@
 
 # slot
 [ref](http://blog.chinaunix.net/uid-9787967-id-1988915.html)
+
+# MENU
+[menu](http://www.cnblogs.com/shiyumiao/p/5208210.html)

@@ -69,3 +69,13 @@ sudo apt-get install texlive-science
             pdfproducer={XeLateX with hyperref},
             pdfcreator={Xelatex}]{hyperref}
 ```
+
+# 希腊字母加粗问题
+[reference](http://blog.sina.com.cn/s/blog_5e16f1770100ks8l.html)
+方案一、用\usepackage{amsmath}
+\boldsymbol{\sigma}
+
+\mathbf 只对公式中的普通字母ABC...abcdef等起作用。
+
+方案二、更好的方法是使用\usepackage{bm}
+\bm{}来加粗。
