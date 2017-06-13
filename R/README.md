@@ -29,3 +29,7 @@ for (i in c(1:(n-1)))
 sudo make uninstall
 ```
 2. 配置source.list，安装。
+
+## 终端执行R code
+
+[reference](https://stackoverflow.com/questions/18306362/run-r-script-from-command-line)

@@ -27,3 +27,9 @@
 光标移到粘贴行，输入mc
 然后 :'a,'b co 'c   把 co 改成 m 就成剪切了
 要删除多行的话，可以用 ：5, 9 de
+
+## 去除BOM
+[](https://segmentfault.com/q/1010000000256502)
+vim 打开，
+:set nobomb
+:wq
