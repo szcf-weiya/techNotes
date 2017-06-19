@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+bool replaceString(string &, const string& oldSubStr, const string& newSubStr);
+
+int main()
+{
+  string s, oldSubStr, newSubStr;
+  cin >> s >> oldSubStr >> newSubStr;
+
+  bool isReplaced = replaceString(s, oldSubStr, newSubStr);
+
+  if(isReplaced)
+    cout << s << endl;
+  else
+    cout << "NO MATCHES" << endl;
+  return 0;
+}

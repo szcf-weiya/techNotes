@@ -33,3 +33,7 @@ sudo make uninstall
 ## 终端执行R code
 
 [reference](https://stackoverflow.com/questions/18306362/run-r-script-from-command-line)
+
+## shiny
+
+[init](https://github.com/rstudio/shiny-server/issues/153)
