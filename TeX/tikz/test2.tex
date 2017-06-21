@@ -1,0 +1,12 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz-3dplot}
+\begin{document}
+\tdplotsetmaincoords{40}{0}
+\begin{tikzpicture}[scale=2,line join=bevel,tdplot_main_coords,%
+fill opacity=1]
+\tdplotsphericalsurfaceplot[parametricfill]{72}{36}%
+{sqrt(15/2)/2*sin(\tdplottheta)^2}{black}%
+{2*\tdplotphi - 6 * \tdplottheta}{}{}{}%
+\tdplotshowargcolorguide{3}{-.2}{.1}{1}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{pgf}
+\begin{document}
+\begin{tikzpicture}
+	%learn to try
+	\filldraw[white] (0, 11) circle;
+	\draw[gray, very thin] (0, 0) grid (1, 10)
+								 (1, 1) grid (3, 10)
+								 (3, 4) grid (4, 10)
+								 (4, 5) grid (6, 10)
+								 (6, 6) grid (7, 10)
+								 (7, 7) grid (9, 10)
+								 (9, 8) grid (11, 10)
+								 (11, 9) grid (14, 10);
+	\LARGE
+	\draw[yshift = 0.5 cm, xshift = 0.5 cm] (-1, 5) node {\LARGE $l$}
+			(1, 0) node {\LARGE $\lambda_l$}
+			(3, 1) node {\LARGE$\lambda_{l-1}$}
+			(7, 6) node {$\lambda_4$}
+			(9, 7) node {$\lambda_3$}
+			(11, 8) node {$\lambda_2$}
+			(14, 9) node {$\lambda_1$};
+	\filldraw[white] (0, -1) circle;
+	%axes
+\end{tikzpicture}
+\end{document}

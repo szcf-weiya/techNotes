@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\usepackage{mathpazo}
+\usetikzlibrary{calc}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\pgfplotsset{compat=1.12} 
+%\pgfplotsset{my style/.append style={axis x line=middle, axis y line=middle, xlabel={$x$},ylabel={$y$},smooth}}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\newcommand{\mydraw}[4]{
+	\draw [->, blue, very thick] (#1,#2) -- (#3,#4);
+	}
+\usepackage{ifthen}
+\begin{document}
+
+%\newcommand{\oddeven}[1]{Number #1 is %
+%\ifthenelse{\isodd{#1}}{odd}{even}  }
+
+\begin{tikzpicture}[scale=1]
+\mydraw{1,0,2,0}
+\draw [->, blue, very thick] (1,0) -- (2,0);
+\end{tikzpicture}
+
+\end{document}

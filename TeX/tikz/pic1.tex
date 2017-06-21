@@ -1,0 +1,14 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{pgf}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\begin{document}
+\begin{tikzpicture}[scale=.7]
+\datavisualization [school book axes, visualize as smooth line]
+data [format=function] {
+var x : interval [-3:3];
+func y = 1/sqrt(2*pi)*exp(-\value x*\value x /2);
+};
+\end{tikzpicture}
+\end{document}
