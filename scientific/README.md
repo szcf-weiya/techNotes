@@ -8,4 +8,8 @@
 
 [wiki](https://en.wikipedia.org/wiki/Dirichlet_distribution)
 
+
+
 ![](dirichlet.png)
+
+![](dirichlet2.png)
