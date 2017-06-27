@@ -13,6 +13,6 @@ def gen_dirichlet_random_from_beta(params):
     return xs
 
 if __name__ == '__main__':
-    print gen_dirichlet_random_from_gamma([1,2,3,4])
+    print gen_dirichlet_random_from_gamma([2,2,2,2])
     print gen_dirichlet_random_from_beta([1,2,3,4])
 
