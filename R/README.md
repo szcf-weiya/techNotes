@@ -37,3 +37,8 @@ sudo make uninstall
 ## shiny
 
 [init](https://github.com/rstudio/shiny-server/issues/153)
+
+## 删除
+```
+rm(list = ls(all = TRUE))
+```
