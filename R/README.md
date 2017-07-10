@@ -42,3 +42,6 @@ sudo make uninstall
 ```
 rm(list = ls(all = TRUE))
 ```
+
+## interval
+http://blog.sciencenet.cn/blog-54276-288414.html
