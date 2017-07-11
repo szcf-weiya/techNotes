@@ -41,3 +41,7 @@ http://blog.csdn.net/ichuzhen/article/details/8241847
 在服务器上使用gsl报缺少动态链接库的错误
 解决方案
 [3种方法](http://www.cnblogs.com/smartvessel/archive/2011/01/21/1940868.html)
+
+# Ubuntu 下对文本文件每行行首进行追加、替换
+
+[sed](http://blog.csdn.net/u010555688/article/details/48416765)
