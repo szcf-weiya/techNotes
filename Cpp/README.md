@@ -56,3 +56,10 @@ C++中，函数模板与同名的非模板函数重载时，应遵循下列调�
 ## 初始化列表
 
 [ref](http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html)
+
+
+## extern
+
+[reference](http://www.cnblogs.com/yc_sunniwell/archive/2010/07/14/1777431.html)
+
+在Rcpp中，extern "C" 告诉编译器，保持其名称，不要生成用于链接的中间函数名。
