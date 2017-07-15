@@ -66,3 +66,6 @@ git remote set-url origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
 
 ## git branch
 [ref](http://blog.csdn.net/guang11cheng/article/details/37757201)
+
+
+## git init
