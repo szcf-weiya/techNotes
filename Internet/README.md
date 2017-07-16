@@ -89,8 +89,10 @@ method:password@hostname:port
 
 然后
 ```
-ssserver -p port -k password -m method
+sslocal -p port -k password -m method
 ```
+
+[http://blog.csdn.net/qq_25978793/article/details/49870501](http://blog.csdn.net/qq_25978793/article/details/49870501)
 
 
 
