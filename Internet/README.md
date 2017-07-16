@@ -67,3 +67,30 @@ ping 10.71.115.254
 route add default gw 10.71.115.254 enp0s31f6
 ping 10.71.45.100
 ```
+
+## shadowssocks
+### 二维码反解
+对
+```
+ss://bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=
+```
+
+中的
+```
+bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=
+```
+
+base64解密得到
+
+```
+method:password@hostname:port
+```
+
+
+然后
+```
+ssserver -p port -k password -m method
+```
+
+
+
