@@ -45,3 +45,13 @@ rm(list = ls(all = TRUE))
 
 ## interval
 http://blog.sciencenet.cn/blog-54276-288414.html
+
+## window 安装包
+切换到R的安装路径下，在etc文件夹中编辑文件Rprofile.site文件
+
+```
+# set a CRAN mirror
+    local({r <- getOption("repos")
+		r["CRAN"] <- "http://mirrors.ustc.edu.cn/CRAN/"
+          options(repos=r)}) 
+```
