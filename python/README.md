@@ -25,3 +25,16 @@ http://www.cnblogs.com/zhanglianbo/p/6109939.html
 rm -r .pki
 ```
 解决
+
+
+## 创建jupyter notebook 权限问题
+
+![](error_jupyter_1.png)
+
+原因是所给的路径的用户权限不一致，jupyter的用户及用户组均为root，为解决这个问题，直接更改用户权限
+
+```
+sudo chown weiya jupyter/ -R
+sudo chgrp weiya jupyter/ -R
+```
+其中-R表示递归调用，使得文件夹中所有内容的用户权限都进行更改。
