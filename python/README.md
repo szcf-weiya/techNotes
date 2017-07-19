@@ -14,3 +14,14 @@ Matplotlib自动化程度非常高，但是，掌握如何设置系统以便获�
 
 ## 远程访问jupyter
 http://www.cnblogs.com/zhanglianbo/p/6109939.html
+
+
+## jupyter notebook 出错
+
+![](error_jupyter.png)
+
+可以通过
+```
+rm -r .pki
+```
+解决
