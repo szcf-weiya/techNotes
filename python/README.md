@@ -38,3 +38,10 @@ sudo chown weiya jupyter/ -R
 sudo chgrp weiya jupyter/ -R
 ```
 其中-R表示递归调用，使得文件夹中所有内容的用户权限都进行更改。
+
+
+## theano import出错
+
+![](err_theano.png)
+
+更改.theano文件夹的用户权限

@@ -4,8 +4,15 @@
 
 ```git
 git branch -r -d origin/branch-name
+```
+此时需要更改仓库的默认分支，不然直接运行下面的命令会报错
+```
 git push origin :branch-name
 ```
+
+![](error_branch.png)
+
+图中第一次是更改默认分支前的出错信息，第二次是更改完默认分支的信息。
 
 ## 删除本地分支
 
