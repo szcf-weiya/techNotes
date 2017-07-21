@@ -89,3 +89,24 @@ git rm -r --cached .
 git add .
 git commit -m 'update .gitignore'
 ```
+
+## 更新远程代码到本地
+
+### 方式一
+```
+git remote -v
+git fetch origin master
+git log -p master origin master
+git merge origin master
+```
+### 方式二
+```
+git fetch origin master:temp
+git diff temp
+git merge temp
+git branch temp
+```
+
+## 关于LICENSE的选择
+
+[阮一峰的网络日志](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html)
