@@ -1,4 +1,4 @@
-## 常用命令
+# 常用命令
 
 1. 切换缓存区：C-o
 2. 水平新建缓存区：C-2
@@ -7,7 +7,7 @@
 5. 删除缓存区：C-k
 6. 只保留当前缓存区：C-1
 
-## Emacs使用Fcitx中文
+# Emacs使用Fcitx中文
 
 参考博客：[fcitx-emacs](http://wangzhe3224.github.io/emacs/2015/08/31/fcitx-emacs.html)
 
