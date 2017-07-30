@@ -63,3 +63,11 @@ http://blog.sina.com.cn/s/blog_6caea8bf0100spe9.html
 sort(x)是对向量x进行排序，返回值排序后的数值向量。rank()是求秩的函数，它的返回值是这个向量中对应元素的“排名”。而order()的返回值是对应“排名”的元素所在向量中的位置。
 
 ![](sro.png)
+
+## Interpreting Residual and Null Deviance in GLM R
+
+![](glm.png)
+
+Refer to https://stats.stackexchange.com/questions/108995/interpreting-residual-and-null-deviance-in-glm-r
+
+
