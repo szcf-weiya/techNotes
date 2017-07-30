@@ -63,3 +63,17 @@ C++中，函数模板与同名的非模板函数重载时，应遵循下列调�
 [reference](http://www.cnblogs.com/yc_sunniwell/archive/2010/07/14/1777431.html)
 
 在Rcpp中，extern "C" 告诉编译器，保持其名称，不要生成用于链接的中间函数名。
+
+## "symbol lookup error"
+
+```
+./test: symbol lookup error: ./test: undefined symbol:
+```
+
+动态链接库的原因，因为更新完gsl之后，原先的动态链接库不管用了，可以用下面的命令追踪动态链接库
+```
+ldd test
+ldd -d -r test
+```
+
+参考[c++ runtime "symbol lookup error" ](http://gdwarner.blogspot.com/2009/03/c-runtime-symbol-lookup-error.html)

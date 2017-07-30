@@ -42,6 +42,20 @@ http://blog.csdn.net/ichuzhen/article/details/8241847
 解决方案
 [3种方法](http://www.cnblogs.com/smartvessel/archive/2011/01/21/1940868.html)
 
+另参考
+http://blog.csdn.net/wangeen/article/details/8159500
+
+```
+sudo vim /etc/ld.so.conf
+```
+
+添加
+
+```
+/where/is/the/lib/
+```
+
+
 # Ubuntu 下对文本文件每行行首进行追加、替换
 
 [sed](http://blog.csdn.net/u010555688/article/details/48416765)
