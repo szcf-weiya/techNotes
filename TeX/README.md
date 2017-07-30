@@ -79,3 +79,10 @@ sudo apt-get install texlive-science
 
 方案二、更好的方法是使用\usepackage{bm}
 \bm{}来加粗。
+
+# 数学字体加粗
+
+使用mathbf加粗完后斜体不见了，这不是想要的结果
+
+[LaTeX数学字体加粗问题](http://blog.sina.com.cn/s/blog_5e16f1770100nqwx.html)
+
