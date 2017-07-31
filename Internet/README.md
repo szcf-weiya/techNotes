@@ -96,3 +96,10 @@ sslocal -p port -k password -m method
 
 
 
+## 系统代理与浏览器代理
+无需单独设置系统代理，浏览器是可以通过插件设置代理的。
+
+另外使用如curl需要代理时，可以采用
+```
+curl ip.cn --proxy socks5://127.0.0.1:1080
+```
