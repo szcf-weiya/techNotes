@@ -66,3 +66,12 @@ sudo vim /etc/ld.so.conf
 $@: 目标文件
 $^: 所有的依赖文件
 $<: 第一个依赖文件
+
+
+# atom 自动更新
+[atom](https://launchpad.net/~webupd8team/+archive/ubuntu/atom/)
+
+```
+sudo add-apt-repository ppa:webupd8team/atom
+sudo apt-get update
+```
