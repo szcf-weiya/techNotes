@@ -110,3 +110,19 @@ git branch temp
 ## 关于LICENSE的选择
 
 [阮一峰的网络日志](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html)
+
+
+## git clone 某个分支或所有分支
+
+[git clone](http://blog.csdn.net/a513322/article/details/46998325)
+
+```
+git clone -b BRANCH_NAME ...
+```
+
+or
+```
+git clone ...
+git branch -r
+git checkout BRANCH_NAME
+```
