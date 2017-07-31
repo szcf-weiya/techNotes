@@ -1,0 +1,55 @@
+!look and feel
+xterm.termName: xterm-256color
+xterm.geometry: 80x24
+xterm*scrollBar: false
+xterm*rightScrollBar: true
+xterm*loginshell: true
+xterm*cursorBlink: true
+xterm*background:  black
+xterm*foreground:  gray
+xterm.borderLess: true
+xterm.cursorBlink: true
+xterm*colorUL: yellow
+xterm*colorBD: white
+!fix alt key input 
+xterm*eightBitInput: false
+xterm*altSendsEscape: true
+!print color and bold/underline attributes
+xterm*printAttributes: 2
+xterm*printerCommand: cat > ~/xtermdump
+!mouse selecting to copy, ctrl-v to paste
+!Ctrl p to print screen content to file
+XTerm*VT100.Translations: #override \
+    Ctrl <KeyPress> V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+    <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+    Ctrl <KeyPress> P: print() \n
+
+!font and locale
+xterm*locale: true
+xterm.utf8:     true
+xterm*utf8Title: true
+xterm*fontMenu*fontdefault*Label: Default
+xterm*faceName: Monaco:antialias=True:pixelsize=15
+!xterm*faceName: monofur:antialias=True:pixelsize=20
+!xter*boldFont: DejaVu Sans Mono:style=Bold:pixelsize=15
+!xterm*faceNameDoublesize: uming bitmap song:pixelsize=16:antialias=True
+xterm*faceNameDoublesize: YaHei Consolas Hybrid
+xterm*xftAntialias: true
+xterm*cjkWidth:false 
+!-- Tango color scheme
+*xterm*color0: #2e3436
+*xterm*color1: #cc0000
+*xterm*color2: #4e9a06
+*xterm*color3: #c4a000
+*xterm*color4: #3465a4
+*xterm*color5: #75507b
+*xterm*color6: #0b939b
+*xterm*color7: #d3d7cf
+*xterm*color8: #555753
+*xterm*color9: #ef2929
+*xterm*color10: #8ae234
+*xterm*color11: #fce94f
+*xterm*color12: #729fcf
+*xterm*color13: #ad7fa8
+*xterm*color14: #00f5e9
+*xterm*color15: #eeeeec

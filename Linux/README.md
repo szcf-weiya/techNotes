@@ -75,3 +75,19 @@ $<: 第一个依赖文件
 sudo add-apt-repository ppa:webupd8team/atom
 sudo apt-get update
 ```
+
+# 配置xterm
+
+## 中文字体的问题
+
+查看本机安装的中文字体
+```
+fc-list :lang=zh
+```
+
+选出一个字体的名称写进配置文件中，如
+```
+xterm*faceNameDoublesize: YaHei Consolas Hybrid
+```
+
+
