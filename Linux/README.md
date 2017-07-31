@@ -63,6 +63,8 @@ sudo vim /etc/ld.so.conf
 
 # makefile
 
+https://my.oschina.net/u/1413984/blog/199029
+
 $@: 目标文件
 $^: 所有的依赖文件
 $<: 第一个依赖文件
@@ -92,4 +94,4 @@ xterm*faceNameDoublesize: YaHei Consolas Hybrid
 
 参考
 
-1. http://forum.ubuntu.org.cn/viewtopic.php?t=143221 
+1. http://forum.ubuntu.org.cn/viewtopic.php?t=143221

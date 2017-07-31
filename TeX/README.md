@@ -85,4 +85,3 @@ sudo apt-get install texlive-science
 使用mathbf加粗完后斜体不见了，这不是想要的结果
 
 [LaTeX数学字体加粗问题](http://blog.sina.com.cn/s/blog_5e16f1770100nqwx.html)
-
