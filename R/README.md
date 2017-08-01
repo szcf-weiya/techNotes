@@ -53,7 +53,7 @@ http://blog.sciencenet.cn/blog-54276-288414.html
 # set a CRAN mirror
     local({r <- getOption("repos")
 		r["CRAN"] <- "http://mirrors.ustc.edu.cn/CRAN/"
-          options(repos=r)}) 
+          options(repos=r)})
 ```
 
 ## sort(), rank(), order()
@@ -70,4 +70,18 @@ sort(x)是对向量x进行排序，返回值排序后的数值向量。rank()是
 
 Refer to https://stats.stackexchange.com/questions/108995/interpreting-residual-and-null-deviance-in-glm-r
 
+## 缺少libRblas.so和libRlapack.so的解决办法
 
+![](err_blas.png)
+
+虽然缺少libRblas.so和libRlapack.so，但却有libblas.so和liblapack.so，而它们应该是一样的，只是文件名不同而已，为此添加链接即可。
+
+```
+cd /usr/lib
+ln -s libblas.so libRblas.so
+ln -s /usr/lib/R/module/lapack.so libRlapack.so
+```
+
+参考：
+1. https://bugs.launchpad.net/ubuntu/+source/rkward/+bug/264436
+2. http://promberger.info/linux/2009/03/20/r-lme4-matrix-not-finding-librlapackso/
