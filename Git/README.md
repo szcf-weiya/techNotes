@@ -62,7 +62,7 @@ ssh-keygen -t rsa -C "test@163.com"
 
 ## 修改origin
 ```
-git remote rm origin 
+git remote rm origin
 git remote add origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
 ```
 
@@ -125,4 +125,12 @@ or
 git clone ...
 git branch -r
 git checkout BRANCH_NAME
+```
+
+## 更改远程仓库的名字
+
+举个例子，如将一个名为epi的仓库改名为depi，再次在本地提交虽然也能成功，但是会提示你原始的仓库已经移动，请修改为新的仓库地址，于是我们可以利用下面的命令进行修改
+
+```
+git remote set-url origin git@github.com:szcf-weiya/depi.git
 ```
