@@ -45,3 +45,9 @@ sudo chgrp weiya jupyter/ -R
 ![](err_theano.png)
 
 更改.theano文件夹的用户权限
+
+## python 查看已安装的包
+
+```
+pip list
+```
