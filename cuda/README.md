@@ -3,6 +3,8 @@
 ## Tutorials
 
 1. https://devblogs.nvidia.com/parallelforall/even-easier-introduction-cuda/
+2. https://devblogs.nvidia.com/parallelforall/easy-introduction-cuda-c-and-c/
+3. 
 
 
 ## Error Handle
