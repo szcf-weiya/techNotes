@@ -2,7 +2,7 @@
 ## C++中cout输出字符型指针地址值的方法
 [ref](http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html)
 
-## const 总结 
+## const 总结
 [ref](http://www.2cto.com/kf/201210/160536.html)
 
 ## new
@@ -77,3 +77,17 @@ ldd -d -r test
 ```
 
 参考[c++ runtime "symbol lookup error" ](http://gdwarner.blogspot.com/2009/03/c-runtime-symbol-lookup-error.html)
+
+## 字符数组与数字互换
+
+http://blog.csdn.net/sunquana/article/details/14645079
+
+### 字符数字转数字
+1. atoi
+2. atof
+3. atol
+4. strtod
+5. strtol
+
+### 数字转字符
+sprintf
