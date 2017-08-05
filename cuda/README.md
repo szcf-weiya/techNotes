@@ -34,3 +34,7 @@ think twice before adding the following code
 ```
 cudaDeviceReset
 ```
+
+### free(): invalid next size (fast/normal)
+
+http://blog.sina.com.cn/s/blog_77f1e27f01019qq9.html
