@@ -1,5 +1,3 @@
-// from http://docs.nvidia.com/cuda/cusolver/index.html#ormqr-example1
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -49,14 +47,14 @@ int main(int argc, char const *argv[]) {
   double XC[ldb*nrhs]; // solution matrix from GPU
 
   double *d_A = NULL; //linear memory of GPU
-  double *d_tau = NULL;
+  //double *d_tau = NULL;
+  int *devIpiv = NULL;
   double *d_B = NULL;
   int *devInfo = NULL;
   double *d_work = NULL;
   int lwork = 0;
   int info_gpu = 0;
 
-  const double one = 1;
   printf("A = (matlab base-1)\n");
   printMatrix(m, m, A, lda, "A");
   printf("=====\n");
@@ -73,7 +71,7 @@ int main(int argc, char const *argv[]) {
 
   // step 2: copy A and B to device
   cudaStat1 = cudaMalloc ((void**)&d_A  , sizeof(double) * lda * m);
-  cudaStat2 = cudaMalloc ((void**)&d_tau, sizeof(double) * m);
+  cudaStat2 = cudaMalloc ((void**)&devIpiv, sizeof(int) * m);
   cudaStat3 = cudaMalloc ((void**)&d_B  , sizeof(double) * ldb * nrhs);
   cudaStat4 = cudaMalloc ((void**)&devInfo, sizeof(int));
   assert(cudaSuccess == cudaStat1);
@@ -86,91 +84,70 @@ int main(int argc, char const *argv[]) {
   assert(cudaSuccess == cudaStat1);
   assert(cudaSuccess == cudaStat2);
 
-  // step 3: query working space of geqrf and ormqr
-  cusolver_status = cusolverDnDgeqrf_bufferSize(
-      cusolverH,
-      m,
-      m,
-      d_A,
-      lda,
-      &lwork);
-  assert (cusolver_status == CUSOLVER_STATUS_SUCCESS);
+  // step 3: query working space of getrf and getrs
+  cusolver_status = cusolverDnDgetrf_bufferSize(cusolverH,
+                      m,
+                      m,
+                      d_A,
+                      lda,
+                      &lwork );
 
+  assert (cusolver_status == CUSOLVER_STATUS_SUCCESS);
   cudaStat1 = cudaMalloc((void**)&d_work, sizeof(double)*lwork);
   assert(cudaSuccess == cudaStat1);
 
+  // step 4: compute LU decomposition
 
+  cusolver_status = cusolverDnDgetrf(cusolverH,
+           m,
+           m,
+           d_A,
+           lda,
+           d_work,
+           devIpiv,
+           devInfo );
 
-  // step 4: compute QR factorization
-  cusolver_status = cusolverDnDgeqrf(
-      cusolverH,
-      m,
-      m,
-      d_A,
-      lda,
-      d_tau,
-      d_work,
-      lwork,
-      devInfo);
   cudaStat1 = cudaDeviceSynchronize();
   assert(CUSOLVER_STATUS_SUCCESS == cusolver_status);
   assert(cudaSuccess == cudaStat1);
 
-  // check if QR is good or not
+  // check if LU is good or not
   cudaStat1 = cudaMemcpy(&info_gpu, devInfo, sizeof(int), cudaMemcpyDeviceToHost);
   assert(cudaSuccess == cudaStat1);
+  printf("after getrf: info_gpu = %d\n", info_gpu);
+  if (info_gpu < 0)
+    printf("ERROR: the %d-th parameter is wrong.\n", abs(info_gpu));
+  else if (info_gpu > 0)
+    printf("ERROR: U(%d, %d) = 0\n", info_gpu, info_gpu);
 
-  printf("after geqrf: info_gpu = %d\n", info_gpu);
   assert(0 == info_gpu);
 
+  // setp 5: solve Ax = B
+  cusolver_status = cusolverDnDgetrs(cusolverH,
+           CUBLAS_OP_N,
+           m,
+           nrhs,
+           d_A,
+           lda,
+           devIpiv,
+           d_B,
+           ldb,
+           devInfo );
 
-  // step 5: compute Q^T*B
-  cusolver_status= cusolverDnDormqr(
-      cusolverH,
-      CUBLAS_SIDE_LEFT,
-      CUBLAS_OP_T,
-      m,
-      nrhs,
-      m,
-      d_A,
-      lda,
-      d_tau,
-      d_B,
-      ldb,
-      d_work,
-      lwork,
-      devInfo);
   cudaStat1 = cudaDeviceSynchronize();
   assert(CUSOLVER_STATUS_SUCCESS == cusolver_status);
   assert(cudaSuccess == cudaStat1);
 
-
-  // check if QR is good or not
+  // check if LU is good or not
   cudaStat1 = cudaMemcpy(&info_gpu, devInfo, sizeof(int), cudaMemcpyDeviceToHost);
   assert(cudaSuccess == cudaStat1);
 
-  printf("after ormqr: info_gpu = %d\n", info_gpu);
+  printf("after getrs: info_gpu = %d\n", info_gpu);
+  if (info_gpu < 0)
+    printf("ERROR: the %d-th parameter is wrong.\n", abs(info_gpu));
+
   assert(0 == info_gpu);
 
-
-  // step 6: compute x = R \ Q^T*B
-
-  cublas_status = cublasDtrsm(
-       cublasH,
-       CUBLAS_SIDE_LEFT,
-       CUBLAS_FILL_MODE_UPPER,
-       CUBLAS_OP_N,
-       CUBLAS_DIAG_NON_UNIT,
-       m,
-       nrhs,
-       &one,
-       d_A,
-       lda,
-       d_B,
-       ldb);
-  cudaStat1 = cudaDeviceSynchronize();
-  assert(CUBLAS_STATUS_SUCCESS == cublas_status);
-  assert(cudaSuccess == cudaStat1);
 
   cudaStat1 = cudaMemcpy(XC, d_B, sizeof(double)*ldb*nrhs, cudaMemcpyDeviceToHost);
   assert(cudaSuccess == cudaStat1);
@@ -179,16 +156,11 @@ int main(int argc, char const *argv[]) {
   printMatrix(m, nrhs, XC, ldb, "X");
 
   // free resources
-  if (d_A    ) cudaFree(d_A);
-  if (d_tau  ) cudaFree(d_tau);
-  if (d_B    ) cudaFree(d_B);
+  if (d_A) cudaFree(d_A);
+  if (devIpiv) cudaFree(devIpiv);
+  if (d_B) cudaFree(d_B);
   if (devInfo) cudaFree(devInfo);
-  if (d_work ) cudaFree(d_work);
+  if (d_work) cudaFree(d_work);
 
-
-  if (cublasH ) cublasDestroy(cublasH);
-  if (cusolverH) cusolverDnDestroy(cusolverH);
-
-  cudaDeviceReset();
   return 0;
 }
