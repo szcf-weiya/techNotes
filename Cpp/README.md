@@ -91,3 +91,26 @@ http://blog.csdn.net/sunquana/article/details/14645079
 
 ### 数字转字符
 sprintf
+
+## 指针初始化
+
+```
+double x;
+double *p = &x;
+```
+
+DO NOT
+```
+double *p = 5;
+```
+
+BUT
+```
+double *p = "aaa";
+```
+并且要初始化，不能
+
+```
+double *p;
+```
+然后直接传参了，这是不对的。
