@@ -10,6 +10,7 @@
 #include <gsl/gsl_linalg.h>
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_vector.h>
+#include <gsl/gsl_rng.h>
 
 void printMatrix(int m, int n, const double *A, int lda, const char* name)
 {
@@ -54,20 +55,20 @@ int cuda_LU_solve(const double *A, const int m, double *B)
   //double B[ldb*nrhs] = {6, 15, 4};
 
   double *d_A = NULL; //linear memory of GPU
-  //double *d_tau = NULL;
   int *devIpiv = NULL;
   double *d_B = NULL;
   int *devInfo = NULL;
   double *d_work = NULL;
   int lwork = 0;
   int info_gpu = 0;
-
+  /*
   printf("A = (matlab base-1)\n");
   printMatrix(m, m, A, lda, "A");
   printf("=====\n");
   printf("B = (matlab base-1)\n");
   printMatrix(m, nrhs, B, ldb, "B");
   printf("=====\n");
+  */
 
   // step 1: create cusolver/cublas handle
   cusolver_status = cusolverDnCreate(&cusolverH);
@@ -159,8 +160,8 @@ int cuda_LU_solve(const double *A, const int m, double *B)
   cudaStat1 = cudaMemcpy(B, d_B, sizeof(double)*ldb*nrhs, cudaMemcpyDeviceToHost);
   assert(cudaSuccess == cudaStat1);
 
-  printf("X = (matlab base-1)\n");
-  printMatrix(m, nrhs, B, ldb, "X");
+  //printf("X = (matlab base-1)\n");
+  //printMatrix(m, nrhs, B, ldb, "X");
 
   // free resources
   if (d_A) cudaFree(d_A);
@@ -173,6 +174,7 @@ int cuda_LU_solve(const double *A, const int m, double *B)
 }
 
 int main(int argc, char const *argv[]) {
+/*
   double a_data[] = { 0.18,
 0.41,
 0.14,
@@ -194,9 +196,51 @@ double b_data[] = { 1.0, 2.0, 3.0, 4.0 };
   gsl_matrix_view m = gsl_matrix_view_array(a_data, 4, 4);
   gsl_vector_view b = gsl_vector_view_array(b_data, 4);
   printMatrix(4, 4, (&m.matrix)->data, 4, "A");
+  cuda_LU_solve((&m.matrix)->data, 4, (&b.vector)->data);
+  */
+
+  const gsl_rng_type *T;
+  gsl_rng *r;
+  gsl_rng_env_setup();
+  T = gsl_rng_default;
+  r = gsl_rng_alloc(T);
+  //int N = 10000;
+  int N = atoi(argv[1]);
+  printf("N = %d\n", N);
+  //double A[N*N];
+  //double B[N];
+  double *A = (double*)malloc(sizeof(double)*N*N);
+  double *B = (double*)malloc(sizeof(double)*N);
+  for (size_t i = 0; i < N; i++)
+  {
+    for (size_t j = 0; j < N; j++)
+      A[i+j*N] = gsl_rng_uniform(r);
+    B[i] = gsl_rng_uniform(r);
+  }
+
 //  double A[] = {1, 4, 2, 2, 5, 1, 3, 6, 1};
 //  double B[] = {6, 15, 4};
-  cuda_LU_solve((&m.matrix)->data, 4, (&b.vector)->data);
-  printMatrix(4, 1, (&b.vector)->data, 4, "x");
+  //cuda_LU_solve((&m.matrix)->data, 4, (&b.vector)->data);
+
+  cuda_LU_solve(A, N, B);
+
+  /*
+  // for gsl
+  gsl_permutation *permulation = gsl_permutation_alloc(N);
+  gsl_vector *x = gsl_vector_calloc(N);
+  int s;
+  gsl_matrix_view m = gsl_matrix_view_array(A, N, N);
+  gsl_vector_view v = gsl_vector_view_array(B, N);
+  gsl_linalg_LU_decomp(&m.matrix, permulation, &s);
+  gsl_linalg_LU_solve(&m.matrix, permulation, &v.vector, x);
+
+  gsl_permutation_free(permulation);
+  gsl_vector_free(x);
+  */
+
+  free(A);
+  free(B);
+  gsl_rng_free(r);
+
   return 0;
 }
