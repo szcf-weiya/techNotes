@@ -7,6 +7,10 @@
 #include <cublas_v2.h>
 #include <cusolverDn.h>
 
+#include <gsl/gsl_linalg.h>
+#include <gsl/gsl_matrix.h>
+#include <gsl/gsl_vector.h>
+
 void printMatrix(int m, int n, const double *A, int lda, const char* name)
 {
   for (int row = 0; row < m; row++)
@@ -19,7 +23,12 @@ void printMatrix(int m, int n, const double *A, int lda, const char* name)
   }
 }
 
-int main(int argc, char const *argv[]) {
+// solve Ax = B
+//
+// where dim(A) = m*m
+//       dim(B) = m*1
+int cuda_LU_solve(const double *A, const int m, double *B)
+{
   cusolverDnHandle_t cusolverH = NULL;
   cublasHandle_t cublasH = NULL;
   cublasStatus_t cublas_status = CUBLAS_STATUS_SUCCESS;
@@ -28,7 +37,7 @@ int main(int argc, char const *argv[]) {
   cudaError_t cudaStat2 = cudaSuccess;
   cudaError_t cudaStat3 = cudaSuccess;
   cudaError_t cudaStat4 = cudaSuccess;
-  const int m = 3;
+
   const int lda = m;
   const int ldb = m;
   const int nrhs = 1;
@@ -41,10 +50,8 @@ int main(int argc, char const *argv[]) {
   // b = (6, 15, 4)'
   //
 
-  double A[lda*m] = {1, 4, 2, 2, 5, 1, 3, 6, 1};
-  double B[ldb*nrhs] = {6, 15, 4};
-
-  double XC[ldb*nrhs]; // solution matrix from GPU
+  //double A[lda*m] = {1, 4, 2, 2, 5, 1, 3, 6, 1};
+  //double B[ldb*nrhs] = {6, 15, 4};
 
   double *d_A = NULL; //linear memory of GPU
   //double *d_tau = NULL;
@@ -149,11 +156,11 @@ int main(int argc, char const *argv[]) {
   assert(0 == info_gpu);
 
 
-  cudaStat1 = cudaMemcpy(XC, d_B, sizeof(double)*ldb*nrhs, cudaMemcpyDeviceToHost);
+  cudaStat1 = cudaMemcpy(B, d_B, sizeof(double)*ldb*nrhs, cudaMemcpyDeviceToHost);
   assert(cudaSuccess == cudaStat1);
 
   printf("X = (matlab base-1)\n");
-  printMatrix(m, nrhs, XC, ldb, "X");
+  printMatrix(m, nrhs, B, ldb, "X");
 
   // free resources
   if (d_A) cudaFree(d_A);
@@ -162,5 +169,34 @@ int main(int argc, char const *argv[]) {
   if (devInfo) cudaFree(devInfo);
   if (d_work) cudaFree(d_work);
 
+  return 0;
+}
+
+int main(int argc, char const *argv[]) {
+  double a_data[] = { 0.18,
+0.41,
+0.14,
+0.51,
+0.60,
+0.24,
+0.30,
+0.13,
+0.57,
+0.99,
+0.97,
+0.19,
+0.96,
+0.58,
+0.66,
+0.85 };
+double b_data[] = { 1.0, 2.0, 3.0, 4.0 };
+
+  gsl_matrix_view m = gsl_matrix_view_array(a_data, 4, 4);
+  gsl_vector_view b = gsl_vector_view_array(b_data, 4);
+  printMatrix(4, 4, (&m.matrix)->data, 4, "A");
+//  double A[] = {1, 4, 2, 2, 5, 1, 3, 6, 1};
+//  double B[] = {6, 15, 4};
+  cuda_LU_solve((&m.matrix)->data, 4, (&b.vector)->data);
+  printMatrix(4, 1, (&b.vector)->data, 4, "x");
   return 0;
 }
