@@ -170,6 +170,11 @@ int cuda_LU_solve(const double *A, const int m, double *B)
   if (devInfo) cudaFree(devInfo);
   if (d_work) cudaFree(d_work);
 
+  if (cublasH ) cublasDestroy(cublasH);
+  if (cusolverH) cusolverDnDestroy(cusolverH);
+
+  cudaDeviceReset();
+
   return 0;
 }
 

@@ -16,3 +16,14 @@
 ```
 nvprof --unified-memory-profiling off ./add_cuda
 ```
+
+### Strange Output
+
+Pay attention to the size of vectors when running `cudaMemcpy()` .
+
+and don't mess up the order of dimensions.
+
+
+### cudaMemcpy fails
+
+check whether the order of destination and source variables.
