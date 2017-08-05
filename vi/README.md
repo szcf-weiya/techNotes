@@ -33,3 +33,9 @@
 vim 打开，
 :set nobomb
 :wq
+
+## ctrl+s 假死
+
+http://blog.csdn.net/tsuliuchao/article/details/7553003
+
+使用vim时，如果你不小心按了 Ctrl + s后，你会发现不能输入任何东西了，像死掉了一般，其实vim并没有死掉，这时vim只是停止向终端输出而已，要想退出这种状态，只需按Ctrl + q 即可恢复正常。
