@@ -20,5 +20,8 @@ while for cusolver on GPU
 
 ![](img/gpu2.png)
 
+If we don't do LU decomposition, just generate random numbers, the elapse time are as follows
 
-In a word, when $N$ is less than 2500, the speed of gsl is more fast, but when $N$ is larger than 2500, cusolver is more fast.
+![](img/noting.png)
+
+In a word, when $N$ is less than 2500, the speed of gsl is more fast, but when $N$ is larger than 2500, cusolver is more fast, and it seems that cusolver just takes about 3 seconds to finish calculation no matter what $N$ is.

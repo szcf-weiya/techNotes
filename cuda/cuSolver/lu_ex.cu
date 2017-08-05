@@ -222,7 +222,7 @@ double b_data[] = { 1.0, 2.0, 3.0, 4.0 };
 //  double B[] = {6, 15, 4};
   //cuda_LU_solve((&m.matrix)->data, 4, (&b.vector)->data);
 
-  cuda_LU_solve(A, N, B);
+  //cuda_LU_solve(A, N, B);
 
   /*
   // for gsl
