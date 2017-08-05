@@ -27,3 +27,10 @@ and don't mess up the order of dimensions.
 ### cudaMemcpy fails
 
 check whether the order of destination and source variables.
+
+### cudaDeviceReset
+
+think twice before adding the following code
+```
+cudaDeviceReset
+```
