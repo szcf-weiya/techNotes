@@ -38,3 +38,30 @@ cudaDeviceReset
 ### free(): invalid next size (fast/normal)
 
 http://blog.sina.com.cn/s/blog_77f1e27f01019qq9.html
+
+### Error [an illegal memory access was encountered]
+
+多半数组越界，另外，注意对于double的数值型指针，
+
+DO NOT
+
+```
+double *pone;
+```
+
+and DO NOT
+
+```
+double one;
+double *pone = &one;
+```
+YOU MUST
+```
+double *pone = (double*)malloc(sizeof(double));
+*pone = 1.0;
+```
+
+## help
+
+1. [Element-by-element vector multiplication with CUDA](https://stackoverflow.com/questions/16899237/element-by-element-vector-multiplication-with-cuda)
+2. [Is there a cuda function to copy a row from a Matrix in column major?](https://stackoverflow.com/questions/21002621/is-there-a-cuda-function-to-copy-a-row-from-a-matrix-in-column-major)
