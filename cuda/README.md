@@ -65,3 +65,7 @@ double *pone = (double*)malloc(sizeof(double));
 
 1. [Element-by-element vector multiplication with CUDA](https://stackoverflow.com/questions/16899237/element-by-element-vector-multiplication-with-cuda)
 2. [Is there a cuda function to copy a row from a Matrix in column major?](https://stackoverflow.com/questions/21002621/is-there-a-cuda-function-to-copy-a-row-from-a-matrix-in-column-major)
+3. [“invalid configuration argument ” error for the call of CUDA kernel?](http://blog.csdn.net/dcrmg/article/details/54850766)
+虽然block每行每列的thread最大值为512，高的thread最大值为62;但是行列高的乘积最大为768（有些硬件为1024）
+http://blog.csdn.net/dcrmg/article/details/54850766
+4. [Incomplete output from printf() called on device](https://stackoverflow.com/questions/15421626/incomplete-output-from-printf-called-on-device)

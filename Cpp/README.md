@@ -114,3 +114,7 @@ double *p = "aaa";
 double *p;
 ```
 然后直接传参了，这是不对的。
+
+## C: Correctly freeing memory of a multi-dimensional array
+
+https://stackoverflow.com/questions/1733881/c-correctly-freeing-memory-of-a-multi-dimensional-array
