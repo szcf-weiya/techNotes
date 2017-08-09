@@ -95,4 +95,7 @@ Call cublas API from kernel](https://devtalk.nvidia.com/default/topic/902074/cal
 26. [Is there a cuda function to copy a row from a Matrix in column major?](https://stackoverflow.com/questions/21002621/is-there-a-cuda-function-to-copy-a-row-from-a-matrix-in-column-major?newreg=8625eba8f07142728d2b53b8e8899348)
 27. [Element-by-element vector multiplication with CUDA](https://stackoverflow.com/questions/16899237/element-by-element-vector-multiplication-with-cuda)
 28. [
-Converting C/C++ for loops into CUDA](https://stackoverflow.com/questions/6613106/converting-c-c-for-loops-into-cuda)
+Converting C/C++ for loops into CUDA](https://stackoverflow.com/questions/6613106/converting-c-c-for-loops-into-cudas)
+29. [GPU学习笔记系列](http://blog.csdn.net/MySniper11/article/category/1200645)
+30. [多线程有什么用？](https://www.zhihu.com/question/19901763)
+31. [CUDA常见问题与解答](http://blog.csdn.net/wufenxia/article/details/7601254)
