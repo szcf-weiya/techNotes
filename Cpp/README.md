@@ -118,3 +118,6 @@ double *p;
 ## C: Correctly freeing memory of a multi-dimensional array
 
 https://stackoverflow.com/questions/1733881/c-correctly-freeing-memory-of-a-multi-dimensional-array
+
+## \#pragma unroll的用法
+http://blog.csdn.net/fengzizhuang/article/details/9300431
