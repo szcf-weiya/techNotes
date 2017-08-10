@@ -23,3 +23,10 @@
 
 }
 ```
+## display
+
+对img添加
+```
+display: block
+```
+达到居中的作用
