@@ -34,6 +34,17 @@ sudo make uninstall
 
 [reference](https://stackoverflow.com/questions/18306362/run-r-script-from-command-line)
 
+```
+touch main.R
+vi main.R
+## in main.R
+#!/usr/bin/env Rscript
+... ## R command
+## save main.R
+## run this file
+./main.R
+```
+
 ## shiny
 
 [init](https://github.com/rstudio/shiny-server/issues/153)
