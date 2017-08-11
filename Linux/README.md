@@ -95,3 +95,12 @@ xterm*faceNameDoublesize: YaHei Consolas Hybrid
 参考
 
 1. http://forum.ubuntu.org.cn/viewtopic.php?t=143221
+
+## could not get lock /var/lib/dpkg/lock -open
+
+```
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
+```
+
+如果不行，重启。
