@@ -61,6 +61,11 @@ double *pone = (double*)malloc(sizeof(double));
 *pone = 1.0;
 ```
 
+## 问题1
+
+1. 重复运行结果不一样
+2. 关于两个for循环
+3. 
 
 ## help
 
