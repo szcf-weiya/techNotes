@@ -114,3 +114,15 @@ cd /usr/local lib
 #cd /usr/lib
 ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcpp.so
 ```
+
+## function 'dataptr' not provided by package 'Rcpp'
+
+原因是因为没有在
+```
+dyn.load()
+```
+前面添加
+```
+library(Rcpp)
+# 或require(Rcpp)
+```
