@@ -173,3 +173,7 @@ while(!safeGetline(input, line).eof)
 ```
 while(safeGetline(input, line))
 ```
+
+## fPIC
+
+参考http://blog.sina.com.cn/s/blog_54f82cc201011op1.html
