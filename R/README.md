@@ -102,3 +102,15 @@ ln -s /usr/lib/R/module/lapack.so libRlapack.so
 参考博文https://statr.me/2011/10/large-regression/
 
 代码见[sqlite_ex.R](sqlite_ex.R)
+
+## Rcpp
+
+![](rcpp.png)
+
+手动设置
+
+```
+cd /usr/local lib
+#cd /usr/lib
+ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcpp.so
+```
