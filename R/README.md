@@ -96,3 +96,9 @@ ln -s /usr/lib/R/module/lapack.so libRlapack.so
 参考：
 1. https://bugs.launchpad.net/ubuntu/+source/rkward/+bug/264436
 2. http://promberger.info/linux/2009/03/20/r-lme4-matrix-not-finding-librlapackso/
+
+## RSQLite
+
+参考博文https://statr.me/2011/10/large-regression/
+
+代码见[sqlite_ex.R](sqlite_ex.R)
