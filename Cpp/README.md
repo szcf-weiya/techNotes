@@ -124,7 +124,9 @@ http://blog.csdn.net/fengzizhuang/article/details/9300431
 
 ## Getting std :: ifstream to handle LF, CR, and CRLF?
 
-https://stackoverflow.com/questions/6089231/getting-std-ifstream-to-handle-lf-cr-and-crlf
+1. https://stackoverflow.com/questions/6089231/getting-std-ifstream-to-handle-lf-cr-and-crlf
+
+2. https://stackoverflow.com/questions/9188126/c-strange-behavior-with-stdistream-or-sentry-wrap-around/9189541#9189541
 
 ```
 std::istream& safeGetline(std::istream& is, std::string& t)
@@ -159,4 +161,15 @@ std::istream& safeGetline(std::istream& is, std::string& t)
         }
     }
 }
+```
+
+使用这个代码注意一个问题
+应该使用
+```
+while(!safeGetline(input, line).eof)
+```
+
+不能用
+```
+while(safeGetline(input, line))
 ```
