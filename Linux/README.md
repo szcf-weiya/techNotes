@@ -104,3 +104,13 @@ sudo rm /var/lib/dpkg/lock
 ```
 
 如果不行，重启。
+
+## 阿里云服务器virtual memory exhausted: Cannot allocate memory
+
+http://www.bubuko.com/infodetail-1319039.html
+```
+dd if=/dev/zero of=/swap bs=1024 count=1M    #创建一个大小为1G的文件/swap
+mkswap /swap                                                 #将/swap作为swap空间
+swapon /swap                                                  #enable /swap file  for paging and swapping
+echo "/swap swap swap sw 0 0" >> /etc/fstab    #Enable swap on boot, 开机后自动生效
+```
