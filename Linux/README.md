@@ -140,3 +140,6 @@ sudo dpkg -i
 ```
 sudo apt-get remove rstudio
 ```
+
+## gcc版本
+https://codeyarns.com/2015/02/26/how-to-switch-gcc-version-using-update-alternatives/
