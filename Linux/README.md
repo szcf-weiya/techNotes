@@ -114,3 +114,10 @@ mkswap /swap                                                 #将/swap作为swap
 swapon /swap                                                  #enable /swap file  for paging and swapping
 echo "/swap swap swap sw 0 0" >> /etc/fstab    #Enable swap on boot, 开机后自动生效
 ```
+
+## 编译安装gcc-4.6.2
+
+1. https://gcc.gnu.org/faq.html#multiple
+2. https://askubuntu.com/questions/313288/how-to-use-multiple-instances-of-gcc
+3. http://www.tellurian.com.au/whitepapers/multiplegcc.php
+4. https://stackoverflow.com/questions/9450394/how-to-install-gcc-piece-by-piece-with-gmp-mpfr-mpc-elf-without-shared-libra
