@@ -65,7 +65,7 @@ double *pone = (double*)malloc(sizeof(double));
 
 1. 重复运行结果不一样
 2. 关于两个for循环
-3. 
+3.
 
 ## help
 
@@ -104,3 +104,4 @@ Converting C/C++ for loops into CUDA](https://stackoverflow.com/questions/661310
 29. [GPU学习笔记系列](http://blog.csdn.net/MySniper11/article/category/1200645)
 30. [多线程有什么用？](https://www.zhihu.com/question/19901763)
 31. [CUDA常见问题与解答](http://blog.csdn.net/wufenxia/article/details/7601254)
+32. [cudaStreamSynchronize vs CudaDeviceSynchronize vs cudaThreadSynchronize](https://stackoverflow.com/questions/13485018/cudastreamsynchronize-vs-cudadevicesynchronize-vs-cudathreadsynchronize/13485891)
