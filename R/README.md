@@ -126,3 +126,7 @@ dyn.load()
 library(Rcpp)
 # 或require(Rcpp)
 ```
+
+## R check package about description
+
+check locale
