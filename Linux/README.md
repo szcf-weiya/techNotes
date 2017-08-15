@@ -121,3 +121,22 @@ echo "/swap swap swap sw 0 0" >> /etc/fstab    #Enable swap on boot, 开机后�
 2. https://askubuntu.com/questions/313288/how-to-use-multiple-instances-of-gcc
 3. http://www.tellurian.com.au/whitepapers/multiplegcc.php
 4. https://stackoverflow.com/questions/9450394/how-to-install-gcc-piece-by-piece-with-gmp-mpfr-mpc-elf-without-shared-libra
+
+## 更新rstudio 后闪退
+1. 安装rstudio应该采用
+
+```
+sudo apt-get install gdebi-core
+wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb
+sudo gdebi rstudio-1.0.44-amd64.deb
+```
+
+而非
+```
+sudo dpkg -i
+```
+
+另外，如果不行，删除后再装
+```
+sudo apt-get remove rstudio
+```
