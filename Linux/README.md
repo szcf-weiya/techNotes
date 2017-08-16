@@ -144,4 +144,11 @@ sudo apt-get remove rstudio
 ## gcc版本
 1. https://codeyarns.com/2015/02/26/how-to-switch-gcc-version-using-update-alternatives/
 
-2. 
+## terminator设置
+1. hostname的颜色
+https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-terminators-prompt-hostname-userdomain-colors
+直接打开bashrc里面下一行的注释
+```
+#force_color_prompt=yes
+```
+2. 颜色背景色等，直接右键设置，右键设置完成之后便有了一个config文件.
