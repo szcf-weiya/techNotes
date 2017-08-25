@@ -30,3 +30,13 @@
 display: block
 ```
 达到居中的作用
+
+## meta
+
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+```
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+```
+
+1. http://www.w3cplus.com/html5/meta-tags-and-seo.html
+2. http://www.cnblogs.com/st-leslie/p/5196852.html
