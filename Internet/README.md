@@ -132,3 +132,9 @@ dig hohoweiya.xyz +noall +answer
 到现在，原因已经很显然了，因为校园网是通过电信的，不同运营商更新dns的时间可能存在差异，导致一开始在校园网上访问网址不能通过https，以及ping和dig的结果没有发生变化。
 
 折腾了一晚上，也算是了解了一点点cdn和dns的知识吧，知识有时候不要太固执，该等待的时候还是要耐心一点。
+
+## Ubuntu连接UWS和eduroam
+
+默认情况下一直连接不是，注意选对security，Authentication应当选择PEAP，如图。
+
+![](eduroam.png)
