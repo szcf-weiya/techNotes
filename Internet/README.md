@@ -138,3 +138,19 @@ dig hohoweiya.xyz +noall +answer
 默认情况下一直连接不是，注意选对security，Authentication应当选择PEAP，如图。
 
 ![](eduroam.png)
+
+
+## 阿里公共ADS差评
+
+之前轻信了阿里公共ADS，在Ubuntu上装了，链接在[此](http://www.alidns.com/setup/#linux)，然而却无法取消设置，restore选项毫无作用。也一直不管它，在枫叶国，竟然连google都ping不通，这就很奇怪了，于是便怀疑是它搞的鬼。
+
+为了彻底根除这个毒瘤，
+```
+cd /etc/resolvconf/resolv.conf.d/
+sudo vim head
+# 删除文件中的所有信息，其实只有阿里公共ads的配置信息
+sudo vim head.save
+# 删除文件中的所有信息，其实只有阿里公共ads的配置信息
+```
+
+终于好了！
