@@ -132,5 +132,4 @@ library(Rcpp)
 check locale
 
 ## par cheatsheet
-
 [r-graphical-parameters-cheatsheet](r-graphical-parameters-cheatsheet.pdf)
