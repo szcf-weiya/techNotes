@@ -130,3 +130,7 @@ library(Rcpp)
 ## R check package about description
 
 check locale
+
+## par cheatsheet
+
+[r-graphical-parameters-cheatsheet](r-graphical-parameters-cheatsheet.pdf)
