@@ -154,3 +154,7 @@ sudo vim head.save
 ```
 
 终于好了！
+
+## rvpn
+
+Ubuntu下配置rvpn，需要浏览器启用JAVA插件，但新版本的chrome和firefox都不支持（firefox 52以后都不行了），解决办法是安装一个旧版本的firefox，然后按照登录rvpn时的说明进行配置就ok了。
