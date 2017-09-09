@@ -134,3 +134,7 @@ git checkout BRANCH_NAME
 ```
 git remote set-url origin git@github.com:szcf-weiya/depi.git
 ```
+
+## 教程
+
+1. [阮一峰的网络日志](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
