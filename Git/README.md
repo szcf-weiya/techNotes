@@ -135,6 +135,16 @@ git checkout BRANCH_NAME
 git remote set-url origin git@github.com:szcf-weiya/depi.git
 ```
 
+## git pull
+
+在使用rstudio的git功能时，某次commit的时候，勾选了amend previous commit，然后push的时候就出错了
+
+![](error_pull.PNG)
+
+后来直接运行`git pull`后，重新push，便解决了问题。
+
+附上git pull的某篇博客[git pull命令](http://www.yiibai.com/git/git_pull.html)
+
 ## 教程
 
 1. [阮一峰的网络日志](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
