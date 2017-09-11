@@ -152,3 +152,9 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 #force_color_prompt=yes
 ```
 2. 颜色背景色等，直接右键设置，右键设置完成之后便有了一个config文件.
+
+
+## 试图在Ubuntu，rvpn回去
+
+参考的资料有
+1. [vpn-pptp-in-ubuntu-16-04-not-working](https://askubuntu.com/questions/891393/vpn-pptp-in-ubuntu-16-04-not-working)
