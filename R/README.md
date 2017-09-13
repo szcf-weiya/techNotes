@@ -133,3 +133,13 @@ check locale
 
 ## par cheatsheet
 [r-graphical-parameters-cheatsheet](r-graphical-parameters-cheatsheet.pdf)
+
+## Mathematical Annotation in R plot
+
+```
+plot(..., main = expression(paste("...", mu[1])))
+```
+
+参考
+1. [Mathematical Annotation in R
+](http://vis.supstat.com/2013/04/mathematical-annotation-in-r/)
