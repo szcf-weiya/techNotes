@@ -40,3 +40,9 @@ display: block
 
 1. http://www.w3cplus.com/html5/meta-tags-and-seo.html
 2. http://www.cnblogs.com/st-leslie/p/5196852.html
+
+## font-family的选择
+
+看到一篇超级棒的博客
+
+[如何优雅的选择字体(font-family)](https://segmentfault.com/a/1190000006110417)
