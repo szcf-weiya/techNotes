@@ -158,3 +158,12 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 
 参考的资料有
 1. [vpn-pptp-in-ubuntu-16-04-not-working](https://askubuntu.com/questions/891393/vpn-pptp-in-ubuntu-16-04-not-working)
+
+
+## flatten pdf file
+
+参考[is-there-a-way-to-flatten-a-pdf-image-from-the-command-line](https://unix.stackexchange.com/questions/162922/is-there-a-way-to-flatten-a-pdf-image-from-the-command-line)
+
+```
+pdf2ps orig.pdf - | ps2pdf - flattened.pdf 
+```
