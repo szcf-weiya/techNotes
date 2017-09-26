@@ -8,3 +8,9 @@
 6. vagabonds meandering through life
 7. Reading will fertilize vocabulary.
 8. A blind patriotic fervor is called chauvinism.
+
+# 2017.09.26
+
+1. a convoluted thriller, the plot of which I was never able to actually decipher.
+2. a complex literary text difficult for many people to decode.
+3. 
