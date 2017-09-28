@@ -19,6 +19,8 @@ http://www.linuxdeveloper.space/install-windows-after-linux/
 # fix locale issue
 https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue
 
+阿里云的服务器，最好default为'zh_CN.UTF-8'
+
 # add user
 http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672
 
@@ -165,5 +167,5 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 参考[is-there-a-way-to-flatten-a-pdf-image-from-the-command-line](https://unix.stackexchange.com/questions/162922/is-there-a-way-to-flatten-a-pdf-image-from-the-command-line)
 
 ```
-pdf2ps orig.pdf - | ps2pdf - flattened.pdf 
+pdf2ps orig.pdf - | ps2pdf - flattened.pdf
 ```
