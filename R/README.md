@@ -143,3 +143,7 @@ plot(..., main = expression(paste("...", mu[1])))
 参考
 1. [Mathematical Annotation in R
 ](http://vis.supstat.com/2013/04/mathematical-annotation-in-r/)
+
+## Problems installing the devtools package
+
+[关于curl](https://stackoverflow.com/questions/20923209/problems-installing-the-devtools-package)
