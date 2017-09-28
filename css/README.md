@@ -46,3 +46,8 @@ display: block
 看到一篇超级棒的博客
 
 [如何优雅的选择字体(font-family)](https://segmentfault.com/a/1190000006110417)
+
+## cloudflare 的rocket load module
+慎用，在ESL上，出现了`A Parser-blocking, cross-origin script, http://example.org/script.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.` bug，以及公式解析错误。
+
+解决方案，去cloudflare主页disable掉rocket load module.
