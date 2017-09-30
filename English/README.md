@@ -35,3 +35,8 @@
 - Do you ever do anything but yack? (你除了叨叨还会干啥？)
 - I will eat anything but carrot. (我什么都吃，就是不吃胡萝卜)
 - She is anything but a beauty. (她一点也不漂亮。)
+
+# 2017.09.09
+
+1. Numerous historical examples illustrate both the overriding influence that scientists' prejudices have on their interpretation of data and the consequent impairment of their intellectual objectivity.
+2. Jone was unable to recognize the contradictions in his attitudes that were obvious to everyone else; even the hint of an untruth was repugnant to him, but he courted serious trouble by always cheating on his taxes.
