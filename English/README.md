@@ -88,3 +88,18 @@
 42. Manifest an obliging disposition, and they can not but regard you with affection.
 43. It provides simpler and more perspicuous explanations than its rivals.
 44. This theory is too abstruse to be taught in class.
+
+
+# 2017.10.01
+
+1. Despite having steeled herself for the worst, the new band director was disheartened to hear the cacophonous/discordant sounds emanating from the freshman orchestra.
+2. Bede, the author of A History of the English Church and People, was so widely revered/esteemed that he has been almost universally known as "The Venerable Bede" since the ninth century.
+3. In addition to the detailed written regulations regarding play, a novice golfer must also learn the implicit/tacit, but nonetheless important, rules of etiquette.
+4. Based on the desire to restrict further water pollution, the Clean Water Act of 1972 began under auspicious/promising terms, but opponents soon assailed the bill in the fought for its ratification.
+5. Jane Austen's novel, Emma, paints a comedy of errors that results when its heroine tries her hand at creating love matches, an effort which she attributes to her own benevolence/magnanimity instead of a selfish need to meddle.
+6. While interviewing for a job as a computer consultant, Robert consciously provided a paucity/dearth of references, knowing full well that he had few former employers who would be laudatory about his past projects.
+7. While most of the tasks undertaken by the interns were undemanding, a fact that led to the flood of applicants for the positions each year, there was one arduous/onerous duty: cleaning out the garbage bins in the laboratory.
+8. In an attempt to inveigle/entice voters to support her, the incumbent politician beguilingly greeted a room full of constituents and pleged to lower taxes--even though she had only ever done the opposite while in office.
+9. After a series of storms, the once arid landscape became verdant/bountiful for the first time in many months.
+10. Although he received many visitors, the misanthropic/curmudgeonly old man shooed them away after only a few minutes.
+11. Eileen used to be a picky eater, but since a new complex of fine dining and ethnic restaurants opened in her neighborhood, she has been quite epicurean/gourmandizing.
