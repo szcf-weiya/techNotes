@@ -147,3 +147,8 @@ plot(..., main = expression(paste("...", mu[1])))
 ## Problems installing the devtools package
 
 [关于curl](https://stackoverflow.com/questions/20923209/problems-installing-the-devtools-package)
+
+
+##
+
+参考[function 'dataptr' not provided by package 'Rcpp'](https://stackoverflow.com/questions/21657575/what-does-this-mean-in-lme4-function-dataptr-not-provided-by-package-rcpp)
