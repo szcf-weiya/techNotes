@@ -111,3 +111,10 @@
 3. As the nexus for three great religions, Jerusalem has had a troubled as well as illustrious history.
 4. His involvement was nominal.
 5. The two girls soon became fast and inseparable friends.
+
+# 2017.10.03
+
+1. Recent discoveries have generally vindicated the physicist's theories.
+2. a novel that presents a fairly veracious and unvarnished picture of the lives of affluent suburbanites.
+3. Inevitably, his remarkable success attracted the invidious attention of the other sales representatives.
+4. As loyalty unites lovers, so perfidy estranges friends.
