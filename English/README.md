@@ -118,3 +118,9 @@
 2. a novel that presents a fairly veracious and unvarnished picture of the lives of affluent suburbanites.
 3. Inevitably, his remarkable success attracted the invidious attention of the other sales representatives.
 4. As loyalty unites lovers, so perfidy estranges friends.
+5. Every year I go to Kunming to enjoy its cool and salubrious climate.
+6. only a diaphanous hope of success.
+7. Every time this guy visits me, one of my books disappears. I don't want to say he steals them, but I really smell a rat.
+8. As soon as the war ends, the government will start to repatriate war refugees.
+9. The moon waxes and the wanes.
+10. But the picture may not be as bleak as it seems.
