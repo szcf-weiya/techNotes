@@ -103,3 +103,10 @@
 9. After a series of storms, the once arid landscape became verdant/bountiful for the first time in many months.
 10. Although he received many visitors, the misanthropic/curmudgeonly old man shooed them away after only a few minutes.
 11. Eileen used to be a picky eater, but since a new complex of fine dining and ethnic restaurants opened in her neighborhood, she has been quite epicurean/gourmandizing.
+
+# 2017.10.02
+
+1. The rise of the nascent middle class catalyzed a new economic boom.
+2. The malodor of the rotten meat made us nauseate.
+3. As the nexus for three great religions, Jerusalem has had a troubled as well as illustrious history.
+4. His involvement was nominal.
