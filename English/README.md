@@ -110,3 +110,4 @@
 2. The malodor of the rotten meat made us nauseate.
 3. As the nexus for three great religions, Jerusalem has had a troubled as well as illustrious history.
 4. His involvement was nominal.
+5. The two girls soon became fast and inseparable friends.
