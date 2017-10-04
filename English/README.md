@@ -164,3 +164,20 @@
 48. Under such a circumstance his demand for attention was utterly presumptuous.
 49. We could hear the cook in the kitchen railing against his assistant and wondered if we'd ever get our food.
 50. Vociferous opponents of the bill protested angrily outside the Congress.
+
+# 2017.10.04
+
+1. King Richard I of England was given the very laudatory epithet "the Lion-Hearted".
+2. His personal code of behavior on the playing field is epitomized by his favorite saying, Nice guys finish last.
+3. Votes don't like political advertisements in which opponents disparage one another.
+4. He procrastinated and missed the submission deadline.
+5. The strike may prod the government into action.
+6. A single blast of the shotgun squandered the herd of deer.
+7. He veered the car abruptly to the right to avoid a collision.
+8. She is venerated by the public as a saint.
+9. He was vituperated for betraying his friends.
+10. We do not have even the faintest inkling of what the project was all about.
+11. A suspension without pay is condign punishment for breaking the company's code of business ethics.
+12. All people concurred to pass the reform legislation.
+13. The administration had nothing but contempt for the ultimate Frisbee team and frequently spoke disdainfully of it.
+14. 
