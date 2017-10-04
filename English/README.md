@@ -124,3 +124,32 @@
 8. As soon as the war ends, the government will start to repatriate war refugees.
 9. The moon waxes and the wanes.
 10. But the picture may not be as bleak as it seems.
+11. My ship was tossed about many days in storms off Cape Horn.
+12. To perpetuate them it is our sacred duty to preserve it.
+13. The same lethargy, I am afraid, characterizes the use of our faculties and senses.
+14. It can also help perpetuate stereotypes, the inscrutable Japanese, bowing all the time, taking costs of pictures. Makes you wonder how the Japanese stereotype us.
+15. The children are apparently intrigued by the tale.
+16. The intrigue was quickly discovered, and the would-be assassins were arrested.
+17. The twins have an intuitive awareness of each other's feelings.
+18. The hardship of army training inured her to the rigors of desert warfare.
+19. The government is too effete to take out the powerful special interests that really ruin this state.
+20. Safety lessons dinned into us over and over.
+21. On the whole, situation has significantly improved with only sporadic disturbances.
+22. He was deeply impressed by the sprightly Gypsy dance.
+23. In statistics, a spurious relationship is a mathematical relationship in which two events or variables have no direct causal connection, but it may be wrongly inferred that they do, due to either coincidence or the presence of a certain third, unseen factor.
+24. Fiercely independent, the elderly couple spurned all offers of financial help.
+25. The kitten crept silently across the floor before suddenly pouncing on the mouse.
+26. Complaints about stifling smog conditions reach crescendo.
+27. Climate change has exerted a ponderable influence on world politics.
+28. The committee will probably pore over the results of the study for a long time before making their decision.
+29. He habitually transforms brief anecdotes into prolix sagas that exhaust his listeners.
+30. The burglary, which he committed while still a teen, was but a prologue to a wasted life of crime.
+31. The law was promulagated in June 1988.
+32. The dams along the river are interfering with the salmon's ability to propagate.
+33. The temple was built to honor the gods in times of plenty and to propitiate them in times of trouble.
+34. I would be remiss if I didn't tell you how much I appreciated the lovely gift.
+35. He gave up smoking only after a prolonged inducement by all the other family members.
+36. He loved to show off his protean talent.
+37. Beauty is as evanescent as a rainbow.
+38. He was eulogized at his funeral as a caring husband and a good father.
+39. The Internet allows us to disseminate information faster.
