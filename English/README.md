@@ -153,3 +153,14 @@
 37. Beauty is as evanescent as a rainbow.
 38. He was eulogized at his funeral as a caring husband and a good father.
 39. The Internet allows us to disseminate information faster.
+40. We managed to entangle the string of lights into a hopeless mess of wires.
+41. The history of Alexander the Great is entangled by variant accounts of his exploits.
+42. A string of inconsistent statements finally entrapped the witness.
+43. He entreated his boss for another chance.
+44. Thwarting centuries of would-be conquerors, the Aztec fortress of Chapultepec seemed impregnable, until U.S. forces under General Winfield Scott were able to take the fortress with surprisingly little effort.
+45. Her genteel behaviors at the ball make others conjecture that she must come from a distinguished noble family.
+46. It would be gauche to mention the subject.
+47. The presumptuous doctor didn't even bother to explain to me the treatment that I would be receiving.
+48. Under such a circumstance his demand for attention was utterly presumptuous.
+49. We could hear the cook in the kitchen railing against his assistant and wondered if we'd ever get our food.
+50. Vociferous opponents of the bill protested angrily outside the Congress.
