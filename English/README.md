@@ -281,3 +281,18 @@
 112. Flagrant means blatant or outrageous
 113. Dilatory means tardy or tending to delay.
 114. Aloof means standoffish and remote.
+
+# 2017.10.05
+1. Terse means abrupt and to the point.
+2. Apathetic means indifferent and unconcerned.
+3. Bombastic means pompous and pretentious.
+4. A euphemism is a mild expression used in place of an unpleasant or offensive one.
+5. A reverie is a daydream or state of dreamy meditation.
+6. A postulate is a basic principle or prerequisite.
+7. A dichotomy is a division or split into two branches.
+8. diffidence (modesty; insecurity)
+9. hesitancy (uncertainty; lack of confidence).
+10. misanthropy (hatred or distrust of humankind).
+11. enthusiasm (eagerness; zest).
+12. irascible (irritable).
+13. defiant (boldly challenging)
