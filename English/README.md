@@ -50,7 +50,7 @@
 4. He says face veils like the niqab (尼卡布，一些穆斯林妇女在公共场合戴的面纱，通常露出眼睛) are not a religious requirement.
 5. To reduce fraud, an opaque network of government bank accounts has been replaced by a centralized system.
 6. as if he could pierce those sheets of water so opaque to our eyes and scan the deepest seas.
-7. Mr Zingales has written an elegy to the America he found when he moved there 24 years ago from an Italy that was rife with nepotism.
+7. Mr Zingales has written an elegy to the America he found when he moved there 24 years ago from an Italy that was rife with nepotism (裙带关系).
 8. We keep records on every single hive, and that compendium of records goes back quite a long time.
 9. Jeremiad wreathes upon my feeling, while shadow of shiver covers my mind.
 10. He made speech of panegric.
@@ -180,4 +180,37 @@
 11. A suspension without pay is condign punishment for breaking the company's code of business ethics.
 12. All people concurred to pass the reform legislation.
 13. The administration had nothing but contempt for the ultimate Frisbee team and frequently spoke disdainfully of it.
-14. 
+14. We accepted his offer to pay for our dinners without demur.
+15. an impartial and perspicacious judge
+16. Her skill and talent ennoble her profession.
+17. The kind of ennui comes from having too much time on one's hands and too little will to find something productive to do.
+18. ensconce the spare house key in a place where no thief would think to look.
+19. A brief but embarrassing silence ensued.
+20. their clandestine love affair
+21. covert alliance
+22. European missionaries converted thousands to Christianity.
+23. evidence that led to the suspect's conviction
+24. The meeting adjourned for a week.
+25. Massage therapy can be used as an adjunct along with the medication.
+26. The transaction was totally aboveboard, so there was no reason to question it.
+27. He took a surreptitious glance at her knees.
+28. a furtive glance at her
+29. The SWAT team carried out a stealth raid on the house, which was believed to be harboring a terrorist cell.
+30. The drive to create is indigenous to humanity.
+31. agonize over every decision
+32. Children were agog over new toys.
+33. impugn a political opponent's character
+34. Well-doer never does chicanery and person who is good at chicanery does not belong well-doer.
+35. My wife chided me for forgetting to offer our guests some refreshments.
+36. I absolutely get choleric when a salesman calls during the dinner hour.
+37. Men of choleric type take to kicking and smashing.
+38. The revised system chords perfectly with the original goals.
+39. A representation of Cupid as a naked, cherubic boy usually is used as a symbol of love.
+40. The spy obtained the documents by subterfuge.
+41. The actor must have had some esoteric motive for leaving stage.
+42. In just a few pages the writer etched an unforgettable portrait of one of the more remarkable First Ladies.
+43. The minister eschews involvement in local politics, since he doesn't want to diminish his moral authority in the community.
+44. The exhibit was a hodgepodge of mediocre art, bad art, and really bad art.
+45. His failure was brought on by his hubris.
+46. an expurgated edition of the letters.
+47. 
