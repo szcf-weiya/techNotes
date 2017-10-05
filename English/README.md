@@ -214,3 +214,70 @@
 45. His failure was brought on by his hubris.
 46. an expurgated edition of the letters.
 47. exquisite pen-and-ink drawings of city scenes
+48. One of the immutable laws of television is that low ratings inevitably lead to cancellation.
+49. She remained impassive as the officers informed her of her son's death.
+50. economy, thriftiness, liberal
+51. meekness (humbleness; timidity)
+52. avalanche
+53. static (inert; motionless)
+54. Autonomous (self-governing; independent)
+55. Intrinsic (innate; essential)
+56. appall
+57. jumble
+58. codify
+59. welter
+60. intransigent
+61. draconian
+62. idiosyncratic
+63. sheer
+64. auction, auctioneer, bidding
+65. imperturbability
+66. hectic
+67. precious
+68. immensely
+69. composure
+70. frenzied (frantic; highly agitated)
+71. Magnanimous
+72. Sporadic (intermittent or infrequent)
+73. Ameliorate (improve; make better)
+74. Denigrate (disparage; defame)
+75. demonstrate (show; prove) & warrant (justify)
+76. Reticence (reserve; tendency to keep silent) & gregariousness or sociability.
+77. Competence (capability; proficiency)
+78. homogeneous (all of the same kind; uniform)
+79. obsessive
+80. Reprobates are unprincipled, wicked people.
+81. Charlatans are quacks, persons who pretend to have more skill than they actually possess.
+82. Hypocrites are people who pretend to possess some virtue or skill, but who are faking it.
+83.  unruly (rowdy; disorderly)
+84. obsequious (fawning; servile)
+85. Elan means vivacity or liveliness of spirit
+86. trepidation (apprehension; fear)
+87. Exorbitant (excessive; overly expensive)
+88. affluent (wealthy)
+89. Destitute means needy or impoverished.
+90.  A harangue is a sharp verbal attack, a bitter tirade or diatribe.
+91. Surreptitious means hidden or stealthy.
+92.  Intransigence means stubbornness. a refusal of any compromise.
+93. Phlegmatic means not easily disturbed or excited.
+94.  Autocratic means tyrannical or domineering.
+95. Wistful means pensively sad or yearning
+96. abstemious
+97. indigenous & ingenuous & disingenuous
+98. dignity (formal bearing; nobility of character)
+99. insincerity (intentional deceitfulness)
+100. reverence (deep respect; awe)
+101. abiding attachment (devotion) or regard (esteem)
+102.  Relinquish (surrender; release)
+103.  Instigate (provoke; incite)
+104.  Waive (refrain from claiming; put aside)
+105. echoes or reiterates (repeats)
+106.  invalidate (discredit or weaken)
+107. Impede (hinder; block)
+108. Dampen (depress; deaden)
+109. malfunction (failure to work properly).
+110. Condemnation means censure.
+111.  Taxonomy is the science or technique of classification.
+112. Flagrant means blatant or outrageous
+113. Dilatory means tardy or tending to delay.
+114. Aloof means standoffish and remote.
