@@ -213,4 +213,4 @@
 44. The exhibit was a hodgepodge of mediocre art, bad art, and really bad art.
 45. His failure was brought on by his hubris.
 46. an expurgated edition of the letters.
-47. 
+47. exquisite pen-and-ink drawings of city scenes
