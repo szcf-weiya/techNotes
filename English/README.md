@@ -296,3 +296,9 @@
 11. enthusiasm (eagerness; zest).
 12. irascible (irritable).
 13. defiant (boldly challenging)
+14. oblivious, incognizant, insensible, unaware, unconscious, unwitting, mindful, vigilant, acquainted, cognizant, conscious, conversant, grounded, informed, knowing, witting
+15. The March snowstorm obliterated our hopes for an early spring.
+16. con artist
+17. He spent the remainder of his life in ignominy after being involved in a bribery scandal.
+18. stop short of
+19. 
