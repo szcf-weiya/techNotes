@@ -301,3 +301,6 @@
 16. con artist
 17. He spent the remainder of his life in ignominy after being involved in a bribery scandal.
 18. stop short of
+
+# 2017.10.07
+1. as such
