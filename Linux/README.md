@@ -173,3 +173,8 @@ pdf2ps orig.pdf - | ps2pdf - flattened.pdf
 ## Linux 杀进程
 
 参考[linux下杀死进程（kill）的N种方法](http://blog.csdn.net/andy572633/article/details/7211546)
+
+```
+ps -ef | grep R
+kill -s 9 ...
+```
