@@ -307,3 +307,16 @@
 
 # 2017.10.09
 1. magma， tectonic
+
+# 2017.10.10
+1. mainstay
+2. caravan
+3. expedition
+4. merchant
+5. guild
+6. uphold
+7. The word is now an egalitarian society, but the reality is the existence of such discrimination.
+8. Here it would seem to be a wall hanging, or even a free standing object of worship.
+9. It involves a lot of aspects, among which ideological and political education really counts and is one of the most effective ways as well.
+10. In the research of technology ethic, the relationship between technology and ethic has always been a disputed question.
+11. There is nothing intrinsically improbable about this incident, which is stamped indeed, with all marks of literary truth.
