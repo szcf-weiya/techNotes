@@ -322,3 +322,15 @@
 11. There is nothing intrinsically improbable about this incident, which is stamped indeed, with all marks of literary truth.
 up
 12. billboard
+
+# 2017.10.11
+
+1. Before that beauty, the years of chaos at the heart of American politics would recede like some extraordinary dream.
+2. Power is still out to many homes and business, and flood waters are just beginning to recede leaving behind massive damage and debris.
+3. And a river went out of Eden to water the garden, and from thence it was parted, and became into four heads.
+4. The sterile soil would at least have been proof against a low-land degeneracy.
+5. orthocentre
+6. Seen from a distance, the facade appears like a rigid volume, but dissolves into a network of structures and levels as you come closer.
+7. There is another absorbing aspect to this book: its recapitulation of the author's rise as an architecture critic.
+8. Up to this point, the legends and histories of the three races mostly agree.
+9. protractor
