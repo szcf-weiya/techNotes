@@ -334,3 +334,5 @@ up
 7. There is another absorbing aspect to this book: its recapitulation of the author's rise as an architecture critic.
 8. Up to this point, the legends and histories of the three races mostly agree.
 9. protractor
+10. trace metal
+11. diatom
