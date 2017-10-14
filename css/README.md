@@ -51,3 +51,7 @@ display: block
 慎用，在ESL上，出现了`A Parser-blocking, cross-origin script, http://example.org/script.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.` bug，以及公式解析错误。
 
 解决方案，去cloudflare主页disable掉rocket load module.
+
+## Uncaught ReferenceError: $ is not defined?
+
+参考[Uncaught ReferenceError: $ is not defined?](https://stackoverflow.com/questions/2075337/uncaught-referenceerror-is-not-defined?page=1&tab=votes#tab-top)

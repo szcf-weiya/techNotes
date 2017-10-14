@@ -341,3 +341,7 @@ up
 
 1. directrix, eccentricity
 2. reciprocal
+
+# 2017.10.14
+1. cardioid: 心脏线
+2. revolution: 
