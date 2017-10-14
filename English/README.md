@@ -340,3 +340,4 @@ up
 # 2017.10.13
 
 1. directrix, eccentricity
+2. reciprocal
