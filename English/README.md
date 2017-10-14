@@ -336,3 +336,7 @@ up
 9. protractor
 10. trace metal
 11. diatom
+
+# 2017.10.13
+
+1. directrix, eccentricity
