@@ -55,3 +55,7 @@ display: block
 ## Uncaught ReferenceError: $ is not defined?
 
 参考[Uncaught ReferenceError: $ is not defined?](https://stackoverflow.com/questions/2075337/uncaught-referenceerror-is-not-defined?page=1&tab=votes#tab-top)
+
+## 网页底部出现滚动条
+
+查看footer的width是否为100%，若是，则删掉，某次是因为这个原因。
