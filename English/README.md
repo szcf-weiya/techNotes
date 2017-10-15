@@ -344,4 +344,5 @@ up
 
 # 2017.10.14
 1. cardioid: 心脏线
-2. revolution: 
+2. revolution:
+3. Last but not least 最后但不是最不重要的一点
