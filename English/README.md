@@ -346,3 +346,15 @@ up
 1. cardioid: 心脏线
 2. revolution:
 3. Last but not least 最后但不是最不重要的一点
+
+# 2017.10.15
+1. calligrapher
+2. decorator
+3. Islamic
+4. parchment
+5. angular
+6. souk
+7. mosque
+8. prisoner
+9. cellulose
+10. pulp
