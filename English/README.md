@@ -358,3 +358,18 @@ up
 8. prisoner
 9. cellulose
 10. pulp
+
+# 2017.10.16
+
+1. But political gridlock should not be conflated with economic reality.
+2. In this sedate garrison town ringed by jagged peaks, the gentle thrum of the day is usually reduced to a whisper by night.
+3. The seed germination percentage had a small increase at the beginning of desiccation and then decreased rapidly.
+4. dormant, hibernate
+5. locomotive, train
+6. meadow, field
+7. ooze
+8. pacifier
+9. paleontologist
+10. geological, geography
+11. puff, blow, exhale
+12. seep, seepage
