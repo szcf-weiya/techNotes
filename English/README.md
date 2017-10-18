@@ -374,3 +374,7 @@ up
 11. puff, blow, exhale
 12. seep, seepage
 13. fad
+
+# 2017.10.17
+
+1. precession
