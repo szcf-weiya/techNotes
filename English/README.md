@@ -378,3 +378,17 @@ up
 # 2017.10.17
 
 1. precession
+
+# 2017.10.18
+
+1. impediment
+2. dispense
+3. scent
+4. allergy
+5. thrive
+6. excrete
+7. tidbit
+8. rhizome
+9. resilient
+10. interlocking
+11. snap
