@@ -392,3 +392,6 @@ up
 9. resilient
 10. interlocking
 11. snap
+12. blowhole
+13. nasal
+14. sacs
