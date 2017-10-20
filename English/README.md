@@ -395,3 +395,19 @@ up
 12. blowhole
 13. nasal
 14. sacs
+15. spoiled meat
+16. repercussion
+17. peper, aromatic, bark, cinnamon, ginger, clove, maize
+18.  boil it down
+19. astronomical1
+20. diplomacy
+21. exotic
+22. shroud
+23. ward off
+24. perfume
+25. octopus
+26. A large factory is supposed to built near the community according to the announcement issued by a company.
+27. There is a growing awareness of both the positive and negative influences that the construction plan brings to our community.
+28. Participating in community activities is a practical and effective approach for teenagers to enhance their social skills. For example, if a teenager, who is not a sociable person, seizes an opportunity to work in a community as a volunteer for hosting an English conversations group, he is capable of practicing his communication skills by conversing with people of different ages who he might not be acquainted with it. Such an experience enables him to overcome the fear of speaking in front of a group of strangers and master the skills of how to communicate with different kinds of people in an approximate way, both of which contribute to the improvement of his social skills, particularly his communication skills.
+29. Children who fail in the entrance examination are deprived of the opportunities to receive a better and higher education. Accordingly, with an impressive educational background, it is difficult for them to find a proper job. As a result, they become full of resentment at a society, doing harm to strangers and disrupting social order, both of which inevitably increase juvenile delinquency.
+30. Several staff members have checked the manuscript for accuracy and ease of use.
