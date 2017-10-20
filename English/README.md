@@ -395,6 +395,9 @@ up
 12. blowhole
 13. nasal
 14. sacs
+
+# 2017.10.19
+
 15. spoiled meat
 16. repercussion
 17. peper, aromatic, bark, cinnamon, ginger, clove, maize
@@ -412,3 +415,49 @@ up
 29. Children who fail in the entrance examination are deprived of the opportunities to receive a better and higher education. Accordingly, with an impressive educational background, it is difficult for them to find a proper job. As a result, they become full of resentment at a society, doing harm to strangers and disrupting social order, both of which inevitably increase juvenile delinquency.
 30. Several staff members have checked the manuscript for accuracy and ease of use.
 31. anatomical
+
+# 2017.10.20
+
+1. cubism
+2. be coordinated with, to harmonize with
+3. desperate
+4. deject
+5. dip, incise
+6. bemoan
+7. moral, mortal
+8. blend
+9. blaze
+10. bland
+11. diffident, different, indifferent
+12. hatred
+13. pond
+14. boom, flourish
+15. bulk
+16. bulb
+17. bull, bullet
+18. buoyant, prosperous
+19. by and large
+20. by force of
+21. surge
+22. escalate
+23. conference
+24. linguist
+25. catastrophe
+26. chronicle
+27. deduction
+28. aviculture
+29. postscript
+30. cavalry, soldier
+31. parasite, prairie
+32. perigee
+33. cavity
+34. cessation
+35. abdicate
+36. encompass
+37. champion, support
+38. chaotic
+39. artisan
+40. symbiosis
+41. lukewarm
+42. circuitously
+43. credulously
