@@ -6,3 +6,6 @@
 2. download and install [Google Account Manager](https://www.apkmirror.com/apk/google-inc/google-account-manager/google-account-manager-4-4-4-1227136-release/google-account-manager-4-4-4-1227136-android-apk-download/), also need to pay attention the version
 3. download and install [Google Play services](https://www.apkmirror.com/apk/google-inc/google-play-services/google-play-services-11-7-43-release/google-play-services-11-7-43-070-172403884-android-apk-download/download/), it is necessary to differ the CPU Architecture no matter what the version it is.
 4. download and install [Google Play Store](https://www.apkmirror.com/?post_type=app_release&searchtype=apk&s=Google+Play+Store), you can pick the latest version and do not worry about the version or CPU Architecture.
+
+
+After you've installed these four APK's, then go to settings -> autostart -> add autostart apps and "allow" these 4 installed apps (exactly only the 2 services is also sufficient). After that restart your tablet and start Play Store and enjoy!
