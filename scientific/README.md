@@ -13,3 +13,7 @@
 ![](dirichlet.png)
 
 ![](dirichlet2.png)
+
+# Inflection Point
+
+[Inflection Point](http://mathworld.wolfram.com/InflectionPoint.html)
