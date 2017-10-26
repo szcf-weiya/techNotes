@@ -474,3 +474,7 @@ up
 # 2017.10.21
 
 1. supplement
+
+# 2017.10.25
+
+Nothing. Watching The Greatest Challenge.
