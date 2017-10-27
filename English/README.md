@@ -478,3 +478,8 @@ up
 # 2017.10.25
 
 Nothing. Watching The Greatest Challenge.
+
+# 2017.10.26
+
+1. spade
+2. deck
