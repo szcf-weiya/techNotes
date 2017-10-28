@@ -483,3 +483,7 @@ Nothing. Watching The Greatest Challenge.
 
 1. spade
 2. deck
+
+# 2017.10.27
+
+1. nilpotent
