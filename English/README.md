@@ -487,3 +487,8 @@ Nothing. Watching The Greatest Challenge.
 # 2017.10.27
 
 1. nilpotent
+
+
+# 2017.10.28
+
+NULL
