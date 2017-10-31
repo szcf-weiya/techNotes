@@ -178,3 +178,27 @@ pdf2ps orig.pdf - | ps2pdf - flattened.pdf
 ps -ef | grep R
 kill -s 9 ...
 ```
+
+## 合并jpg到pdf
+
+参考[convert images to pdf: How to make PDF Pages same size](https://unix.stackexchange.com/questions/20026/convert-images-to-pdf-how-to-make-pdf-pages-same-size)
+
+直接采用
+
+```
+pdftk A.pdf B.pdf cat out merge.pdf
+```
+
+得到的pdf中页面大小不一致，于是采用下面的命令
+
+```
+convert a.png b.png -compress jpeg -resize 1240x1753 \
+                      -extent 1240x1753 -gravity center \
+                      -units PixelsPerInch -density 150x150 multipage.pdf
+```
+
+注意重点是`-density 150x150`，若去掉这个选项，则还是得不到相同页面大小的文件。
+
+另外，上述命令是对于`.png`而言的，完全可以换成`.jpg`。
+
+同时，注意`1240x1753`中间是字母`x`.
