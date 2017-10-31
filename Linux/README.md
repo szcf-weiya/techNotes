@@ -202,3 +202,17 @@ convert a.png b.png -compress jpeg -resize 1240x1753 \
 另外，上述命令是对于`.png`而言的，完全可以换成`.jpg`。
 
 同时，注意`1240x1753`中间是字母`x`.
+
+## install typora on Linux
+
+参考[Install Typora on Linux](http://support.typora.io/Typora-on-Linux/)
+
+## Rstudio 不能切换中文输入（fctix）
+
+参考[Rstudio 不能切换中文输入（fctix）](http://blog.csdn.net/qq_27755195/article/details/51002620)
+
+[Ubuntu 16.04 + Fcitx + RStudio 1.0で日本語を入力する方法](http://blog.goo.ne.jp/ikunya/e/8508d21055503d0560efc245aa787831)
+
+## 配置jdk
+
+参考[Ubuntu14.04安装JDK与配置环境变量](https://jingyan.baidu.com/article/647f0115bb26817f2048a871.html)
