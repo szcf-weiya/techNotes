@@ -496,3 +496,30 @@ NULL
 # 2017.10.29
 
 NULL
+
+# 2017.10.31
+
+1. caffeine, nicotine
+2. sip nectar
+3. bumblebees
+4. deter
+5. pollinator
+6. pharmacy
+7. crater, impact
+8. plate tectonics
+9. geochemist
+10. bolide
+11. magma, mantle, lava
+12. stir up
+13. episode
+14. volcanism
+15. makeover
+16. pummel
+17. wipe away
+18. Valentine's Day
+19. self-absorbed
+20. showcase
+21. poll, no-no
+22. wink
+23. bizarre
+24. vein
