@@ -523,3 +523,12 @@ NULL
 22. wink
 23. bizarre
 24. vein
+25. agroecology
+26. cultivar
+27. contagion
+28. prairie
+29. latency
+30. parasite
+31. weed
+32. inoculation
+33. avirulent
