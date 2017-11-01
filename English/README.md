@@ -532,3 +532,7 @@ NULL
 31. weed
 32. inoculation
 33. avirulent
+34. that's a philosophical pickle.
+35. coops
+36. conspecifics
+37. archaeological
