@@ -536,3 +536,14 @@ NULL
 35. coops
 36. conspecifics
 37. archaeological
+
+# 2017.11.2
+
+1. motif
+2. moss
+3. monopoly
+4. monolithic
+5. miniature
+6. metropolis
+7. meteor
+8. metallurgy
