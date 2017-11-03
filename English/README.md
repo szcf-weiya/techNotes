@@ -547,3 +547,10 @@ NULL
 6. metropolis
 7. meteor
 8. metallurgy
+
+# 2017.11.3
+
+1. till
+2. dweller
+3. wriggle
+4. manure
