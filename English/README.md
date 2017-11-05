@@ -554,3 +554,6 @@ NULL
 2. dweller
 3. wriggle
 4. manure
+# 2017.11.4
+
+1. CRASH
