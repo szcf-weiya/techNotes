@@ -569,3 +569,7 @@ crash
 # 2017.11.7
 
 crash again
+
+# 2017.11.8
+
+crash, chat with Prof. Wang
