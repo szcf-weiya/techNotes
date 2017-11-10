@@ -573,3 +573,7 @@ crash again
 # 2017.11.8
 
 crash, chat with Prof. Wang
+
+# 2017.11.9
+
+full crash
