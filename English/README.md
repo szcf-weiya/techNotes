@@ -577,3 +577,7 @@ crash, chat with Prof. Wang
 # 2017.11.9
 
 full crash
+
+# 2017.11.10
+
+full crash + sleep
