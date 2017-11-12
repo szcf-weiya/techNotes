@@ -581,3 +581,7 @@ full crash
 # 2017.11.10
 
 full crash + sleep
+
+# 2017.11.11
+
+dinner
