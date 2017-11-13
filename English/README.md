@@ -585,3 +585,7 @@ full crash + sleep
 # 2017.11.11
 
 dinner
+
+# 2017.11.12
+
+letter cuhk
