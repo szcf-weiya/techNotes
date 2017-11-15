@@ -619,3 +619,6 @@ letter back
 6. tap into
 7. incandescent
 8. fluorescent
+9. pebble
+10. Hydrogen, Helium
+11. fainter
