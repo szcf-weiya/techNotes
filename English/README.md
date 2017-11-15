@@ -593,3 +593,18 @@ letter cuhk
 # 2017.11.13
 
 letter back
+
+# 2017.11.14
+
+1. molten
+2. mantle
+3. rest on
+4. conceivably
+5. creep
+6. Atlantic， Pacific， Arctic, Indian
+7. blink
+8. Antarctica
+9. Pangaea Ultima
+10. more or  less
+11. subduction
+12. slab
