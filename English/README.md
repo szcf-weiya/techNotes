@@ -608,3 +608,14 @@ letter back
 10. more or  less
 11. subduction
 12. slab
+
+# 2017.11.15
+
+1. rampage
+2. rally
+3. degradation
+4. dozens of
+5. imperiled
+6. tap into
+7. incandescent
+8. fluorescent
