@@ -622,3 +622,38 @@ letter back
 9. pebble
 10. Hydrogen, Helium
 11. fainter
+12. foundationalism
+13.  John Locke, René Descartes.
+14. slate
+15. mirage
+16. shimmer
+17. conceive
+18. or so
+19. conceivably
+20. as to that
+21. red dwarf star
+22. bode
+23. prism
+24. spectrum
+25. He rejected an objective understanding of color, in favor of a more subjective understanding.
+26. through and through
+27. marvel
+28. optics, chromatics
+29. that sort of thing
+30. rage
+31. backbone
+32. overthrow
+33. stool, mount
+34. collage
+35. canvas
+36. pull (someone or something) out of a hat: To select someone or something entirely at random.
+37. Zurich
+38. chanting, bang
+39. Cabaret Voltaire
+40. at the eleventh hour
+41. marble statue
+42. polychrome
+43. disintegrated
+44. heroism, divinity
+45. terrific
+46. armor, cloak
