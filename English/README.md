@@ -657,3 +657,35 @@ letter back
 44. heroism, divinity
 45. terrific
 46. armor, cloak
+
+# 2017.11.16
+
+1. enamor
+2. venue
+3. coil
+4. vibe
+5. choreography
+6. Renaissance, the 16th, 17th centuries.
+7. artisan, artist
+8. Raphael, frescos
+9. apprentices
+10. quarry
+11. to and fro
+12. carpenter, mason
+13. portraiture, portrait artist
+14. crucial
+15. make headway  
+16. contemplative
+17. vague
+18. chronologically
+19. close-ups
+20. petal
+21. juxtaposes
+22. archaeology
+23. oversee
+24. pharaoh Khufu, Great Pyramid
+25. sturdy
+26. Herodotus
+27. ramp
+28. Plateau
+29. spiral
