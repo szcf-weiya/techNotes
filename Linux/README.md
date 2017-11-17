@@ -216,3 +216,17 @@ convert a.png b.png -compress jpeg -resize 1240x1753 \
 ## 配置jdk
 
 参考[Ubuntu14.04安装JDK与配置环境变量](https://jingyan.baidu.com/article/647f0115bb26817f2048a871.html)
+
+## 缩小图像的大小
+
+```
+convert -resize 1024x
+```
+
+或者
+
+```
+convert -quality 50%
+```
+
+具体参考[How can I compress images?](https://askubuntu.com/questions/781497/how-can-i-compress-images)
