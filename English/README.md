@@ -689,3 +689,31 @@ letter back
 27. ramp
 28. Plateau
 29. spiral
+
+# 2017.11.17
+
+1. Chimpanzees, primates, chimps, gorillas, orangutans
+2. bottlenose
+3. aggressive
+4. trunk
+5. stand alone, hierarchy
+6. corvid, corvidae, raven, jay, crow, magpie
+7. pigeon
+8. spontaneously
+9. entail
+10. It is important because it sets animals with a sense of self apart from those without a sense of self.
+11. empathy
+12. afoot
+13. plating
+14. Seigniorage
+15. nostalgia
+16. tubing, sheet
+17. alloying
+18. brass, trumpet, trombone
+19. rust, patina
+20. halt
+21. hull
+22. barnacle, shellfish
+23. desalination
+24. pinch
+25. blend in
