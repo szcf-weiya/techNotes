@@ -717,3 +717,7 @@ letter back
 23. desalination
 24. pinch
 25. blend in
+
+# 2017.11.18
+
+last toefl
