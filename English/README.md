@@ -733,3 +733,7 @@ soap opera again
 # 2017.11.21
 
 soap opera again
+
+# 2017.11.22
+
+Nirvana in Fire
