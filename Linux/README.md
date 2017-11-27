@@ -186,7 +186,7 @@ kill -s 9 ...
 直接采用
 
 ```
-pdftk A.pdf B.pdf cat out merge.pdf
+pdftk A.pdf B.pdf cat output merge.pdf
 ```
 
 得到的pdf中页面大小不一致，于是采用下面的命令
