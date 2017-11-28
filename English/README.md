@@ -755,3 +755,7 @@ empresses in the palace
 # 2017.11.26
 
 the glory of Tang dynasty
+
+# 2017.11.27
+
+last seminar
