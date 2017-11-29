@@ -759,3 +759,7 @@ the glory of Tang dynasty
 # 2017.11.27
 
 last seminar
+
+# 2017.11.28
+
+the glory of Tang dynasty *2
