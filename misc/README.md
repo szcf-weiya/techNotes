@@ -37,6 +37,24 @@ https://help.aliyun.com/document_detail/50775.html?spm=5176.doc25426.6.655.kn1mB
 
 ## nodejs调用python脚本
 
+nodejs 收发数据
+
+https://www.cnblogs.com/gamedaybyday/p/6637933.html
+
 # 腾讯云折腾
 
 1. python main.py 80 报错，原因应该是普通用户不行，需要加上sudo，而8080口普通用户可直接访问。参考 https://www.cnblogs.com/lwhp/p/5789305.html
+
+# 443 端口转发到3000端口
+
+https://stackoverflow.com/questions/42767106/how-to-run-nodejs-server-over-443-ensuring-nginx-doesnt-stop-working
+
+同样的方法对于80端口似乎不管用，可能原因
+
+1. 之前操作过一次iptables，参见https://eladnava.com/binding-nodejs-port-80-using-nginx/。
+2. 其他原因
+
+另外注意用https的时候，不要直接写IP，不然python会报错
+```
+SSLError: hostname '112.74.43.59' doesn't match 'seminar.hohoweiya.xyz'
+```
