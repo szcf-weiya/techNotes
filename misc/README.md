@@ -9,6 +9,7 @@
 3. http://www.jianshu.com/p/38d13a7c1b78
 4. enable https: https://certbot.eff.org/#ubuntuxenial-nginx
 
+
 ## 配置nginx
 
 1. http://www.jianshu.com/p/132eed84bc4f
