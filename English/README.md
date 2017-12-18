@@ -674,7 +674,7 @@ letter back
 12. carpenter, mason
 13. portraiture, portrait artist
 14. crucial
-15. make headway  
+15. make headway
 16. contemplative
 17. vague
 18. chronologically
@@ -783,3 +783,9 @@ prepare
 # 2017.12.03
 
 happy life
+
+# 2017.12.18
+
+1. thereof
+2. finesse
+3. 
