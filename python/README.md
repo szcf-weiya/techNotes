@@ -51,3 +51,9 @@ sudo chgrp weiya jupyter/ -R
 ```
 pip list
 ```
+
+## conda更新spyder
+
+```
+(sudo proxychains) conda update spyder
+```
