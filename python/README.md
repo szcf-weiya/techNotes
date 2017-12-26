@@ -57,3 +57,9 @@ pip list
 ```
 (sudo proxychains) conda update spyder
 ```
+
+## selenium
+
+refer to [Selenium using Python - Geckodriver executable needs to be in PATH
+](https://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path)
+
