@@ -158,3 +158,11 @@ sudo vim head.save
 ## rvpn
 
 Ubuntu下配置rvpn，需要浏览器启用JAVA插件，但新版本的chrome和firefox都不支持（firefox 52以后都不行了），解决办法是安装一个旧版本的firefox，然后按照登录rvpn时的说明进行配置就ok了。
+
+## proxychains实现命令行代理
+
+参考[How to use SOCKS 5 proxy in Ubuntu command line](https://bokunokeiken.wordpress.com/2015/07/22/how-to-use-socks-5-proxy-in-ubuntu-command-line/)
+
+```
+proxychains curl ip.cn
+```
