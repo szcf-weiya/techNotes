@@ -63,3 +63,26 @@ pip list
 refer to [Selenium using Python - Geckodriver executable needs to be in PATH
 ](https://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path)
 
+## array operation
+
+```
+>>> a = np.sum([[0, 1.0], [0, 5.0]], axis=1)
+>>> c = np.sum([[0, 1.0], [0, 5.0]], axis=1, keepdims=True)
+>>> a/c
+array([[ 1. ,  5. ],
+       [ 0.2,  1. ]])
+>>> a
+array([ 1.,  5.])
+>>> c
+array([[ 1.],
+       [ 5.]])
+>>> d
+array([[ 1,  5],
+      [ 0, 10]])
+>>> d/c
+array([[ 1.,  5.],
+      [ 0.,  2.]])
+>>> d/a
+array([[ 1.,  1.],
+      [ 0.,  2.]])
+```
