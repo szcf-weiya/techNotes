@@ -789,3 +789,7 @@ happy life
 1. thereof
 2. finesse
 3. irrespective
+
+# 2017.12.27
+
+1. perk
