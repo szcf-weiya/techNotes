@@ -793,3 +793,5 @@ happy life
 # 2017.12.27
 
 1. perk
+2. terse  
+3. discern
