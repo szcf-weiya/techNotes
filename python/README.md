@@ -86,3 +86,7 @@ array([[ 1.,  5.],
 array([[ 1.,  1.],
       [ 0.,  2.]])
 ```
+
+## Difference between numpy.array shape (R, 1) and (R,)
+
+refer to [Difference between numpy.array shape (R, 1) and (R,)](https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r)
