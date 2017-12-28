@@ -230,3 +230,22 @@ convert -quality 50%
 ```
 
 具体参考[How can I compress images?](https://askubuntu.com/questions/781497/how-can-i-compress-images)
+
+## compile FileZilla
+
+refer to [Client Compile](https://wiki.filezilla-project.org/Client_Compile)
+
+download latest libfilezilla from https://lib.filezilla-project.org/download.php
+
+add wxWidget's repository according to http://codelite.org/LiteEditor/WxWidgets31Binaries#toc2
+
+pay attention to the version, NOT 3.1.0.
+
+http://codelite.org/LiteEditor/WxWidgets30Binaries
+
+require libgnutls 3.4.15 or greater, download from  https://gnutls.org/
+
+require sqlite3.h
+```
+sudo apt-get install libsqlite3-dev
+```
