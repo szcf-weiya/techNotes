@@ -799,3 +799,7 @@ happy life
 # 2017.12.28
 
 1. state of the art: the latest and most sophisticated or advanced stage of a technology, art, or science.
+
+# 2018.01.01
+
+1. exacerbate
