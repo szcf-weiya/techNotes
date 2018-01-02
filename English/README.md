@@ -803,3 +803,6 @@ happy life
 # 2018.01.01
 
 1. exacerbate
+2. gloss over
+3. be attributed to
+4. extremity
