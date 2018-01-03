@@ -806,3 +806,9 @@ happy life
 2. gloss over
 3. be attributed to
 4. extremity
+
+# 2018.01.03
+
+1. appreciably
+2. in light of
+3. albeit
