@@ -249,3 +249,11 @@ require sqlite3.h
 ```
 sudo apt-get install libsqlite3-dev
 ```
+
+## convert 参数
+
+pdf 转为 jpg
+ `-quality 100` 控制质量
+ `-density 600x600` 控制分辨率
+
+ 并注意参数放置文件的前面
