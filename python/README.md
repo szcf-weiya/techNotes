@@ -90,3 +90,7 @@ array([[ 1.,  1.],
 ## Difference between numpy.array shape (R, 1) and (R,)
 
 refer to [Difference between numpy.array shape (R, 1) and (R,)](https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r)
+
+## 正式认识conda
+
+参考https://conda.io/docs/user-guide/getting-started.html
