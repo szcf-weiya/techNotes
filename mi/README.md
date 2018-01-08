@@ -9,3 +9,11 @@
 
 
 After you've installed these four APK's, then go to settings -> autostart -> add autostart apps and "allow" these 4 installed apps (exactly only the 2 services is also sufficient). After that restart your tablet and start Play Store and enjoy!
+
+# root Mi Pad
+
+refer to http://www.miui.com/thread-3414388-1-1.html
+
+the info of my mi pad
+
+![](mipad_info.png)
