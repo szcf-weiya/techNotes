@@ -17,3 +17,11 @@ refer to http://www.miui.com/thread-3414388-1-1.html
 the info of my mi pad
 
 ![](mipad_info.png)
+
+# synergy with android
+
+download from https://sourceforge.net/projects/synergyandroid/
+
+dont be scared by the cm, which is another one.
+
+and the destdock is too bad. cannot work.
