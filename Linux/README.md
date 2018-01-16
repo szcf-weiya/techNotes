@@ -265,3 +265,34 @@ pdf 转为 jpg
 3. lynx
 
 refer to http://www.laozuo.org/8178.html
+
+## 修改文件权限
+
+采用`ls -l` 便可以查看文件(夹)权限，比如
+
+```bash
+-rw-rw-r--  1 weiya weiya    137969 3月   8  2017 font.txt
+-rw-r--r--  1 root  root      35792 12月 26 23:50 geckodriver.log
+-rw-r--r--  1 root  root     327350 12月 27 01:38 ghostdriver.log
+```
+7列的含义分别是（参考http://blog.csdn.net/jenminzhang/article/details/9816853）
+
+1. 文件类型和文件权限
+2. 文件链接个数
+3. 文件所有者
+4. 文件所在群组
+5. 文件长度
+6. 时间
+7. 文件名称
+
+采用chmod修改权限（参考http://www.linuxidc.com/Linux/2015-03/114695.htm），如
+```bash
+chmod -R 700 Document/
+```
+
+其中`-R`递归
+
+采用chown改变所有者，比如
+```bash
+chown -R username:users Document/
+```
