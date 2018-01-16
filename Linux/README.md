@@ -257,3 +257,11 @@ pdf 转为 jpg
  `-density 600x600` 控制分辨率
 
  并注意参数放置文件的前面
+
+## linux 三款命令行浏览器
+
+1. w3m
+2. links
+3. lynx
+
+refer to http://www.laozuo.org/8178.html
