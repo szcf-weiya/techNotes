@@ -99,3 +99,10 @@ refer to [Difference between numpy.array shape (R, 1) and (R,)](https://stackove
 
 1. 先建一个conda环境bunny，安装python3.4，因为要支持pyside，而经试验3.5+不支持。
 2. 安装cmake
+3. pyside出现keyerrror
+
+转向py3.6
+不装pyside，而装pyqt5
+```bash
+pip install pyqt5
+```
