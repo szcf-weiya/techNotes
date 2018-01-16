@@ -94,3 +94,8 @@ refer to [Difference between numpy.array shape (R, 1) and (R,)](https://stackove
 ## 正式认识conda
 
 参考https://conda.io/docs/user-guide/getting-started.html
+
+## 为py3安装spyder
+
+1. 先建一个conda环境bunny，安装python3.4，因为要支持pyside，而经试验3.5+不支持。
+2. 安装cmake
