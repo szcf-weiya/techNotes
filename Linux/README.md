@@ -296,3 +296,18 @@ chmod -R 700 Document/
 ```bash
 chown -R username:users Document/
 ```
+
+## 腾讯云服务器nginx failed
+
+原因：80端口被占用
+解决方法：kill掉占用80端口的
+
+```
+sudo fuser -k 80/tcp
+```
+
+重启
+
+```
+sudo /etc/init.d/nginx restart 
+```
