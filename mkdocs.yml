@@ -1,0 +1,30 @@
+site_name: techNotes
+pages:
+    - Home: index.md
+    - Linux: Linux/index.md 
+    - Internet: Internet/index.md
+    - R: R/index.md
+    - Python: python/index.md
+    - Cuda: cuda/index.md
+    - TeX: TeX/index.md
+    - Matlab: Matlab/index.md
+    - Cpp: Cpp/index.md
+    - Css: css/index.md
+    - Autotools: autotools/index.md
+    - Graph: graph/index.md
+    - Qt: Qt/index.md
+    - English: English/index.md
+    - Calculus: calculus/index.md
+    - Julia: julia/index.md
+    - Mi: mi/index.md
+    - Win: win/index.md
+    - Website: website/index.md
+    - Emacs: Emacs/index.md
+    - Vi: vi/index.md
+    - Scientific: scientific/index.md
+    - Misc: misc/index.md
+    - Ssh: ssh/index.md
+    - Phantomjs: phantomjs/index.md
+    - Java: java/index.md
+    
+theme: readthedocs
