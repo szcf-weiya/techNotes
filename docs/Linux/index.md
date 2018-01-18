@@ -309,5 +309,14 @@ sudo fuser -k 80/tcp
 重启
 
 ```
-sudo /etc/init.d/nginx restart 
+sudo /etc/init.d/nginx restart
+```
+
+# 文件重命名
+
+参考[Ubuntu中rename命令和批量重命名](http://www.linuxidc.com/Linux/2016-11/137041.htm)
+
+```bash
+rename -n 's/Sam3/Stm32/' *.nc　　/*确认需要重命名的文件*/
+rename -v 's/Sam3/Stm32/' *.nc　　/*执行修改，并列出已重命名的文件*/
 ```

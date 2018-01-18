@@ -1,7 +1,7 @@
 site_name: techNotes
 pages:
     - Home: index.md
-    - Linux: Linux/index.md 
+    - Linux: Linux/index.md
     - Internet: Internet/index.md
     - R: R/index.md
     - Python: python/index.md
@@ -26,5 +26,9 @@ pages:
     - Ssh: ssh/index.md
     - Phantomjs: phantomjs/index.md
     - Java: java/index.md
-    
+
 theme: readthedocs
+google_analytics: ['UA-85007363-6', 'auto']
+copyright: 'Copyright &copy; 2018 weiya'
+site_author: weiya
+site_description: '技术博客'
