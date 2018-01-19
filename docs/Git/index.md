@@ -159,3 +159,10 @@ git remote set-url origin git@github.com:szcf-weiya/depi.git
 npm install -g forever
 forever statr server.js
 ```
+
+## 显示user.name 和user.email
+
+```bash
+git config user.name
+git config user.email
+```

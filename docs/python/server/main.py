@@ -37,19 +37,33 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
         return
     
 class webhooksESLCN(CGIHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(404)
+        # header
+        self.send_header('Content-type', 'text/html')
+        self.end_headers()
+        
+        # message
+        message = 'Not Found!'
+        
+        self.wfile.write(bytes(message, "utf8"))
+        return
     
     def do_POST(self):
         print(self.requestline)
         req = self.requestline.split()
         if (req[1] == '/deploy'):
             update()
-        # response status code
-        self.send_response(200)
-        
-        # header
+            # response status code
+            self.send_response(200)           
+        else:
+            self.send_response(404)
+ 
+       # header
         self.send_header('Content-type', 'text/html')
         self.end_headers()
-
+ 
+            
     
 def update():
     PATH = '../ESL-CN'
