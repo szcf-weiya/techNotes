@@ -26,6 +26,7 @@ pages:
     - Ssh: ssh/index.md
     - Phantomjs: phantomjs/index.md
     - Java: java/index.md
+    - Git: Git/index.md
 
 theme: readthedocs
 google_analytics: ['UA-85007363-6', 'auto']

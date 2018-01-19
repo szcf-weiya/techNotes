@@ -148,3 +148,14 @@ git remote set-url origin git@github.com:szcf-weiya/depi.git
 ## 教程
 
 1. [阮一峰的网络日志](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
+
+## Webhook配置
+
+参考[Webhook 实践 —— 自动部署](http://jerryzou.com/posts/webhook-practice/)
+
+需要在腾讯云服务器上自动更新github pages的内容，于是采用webhook来实现。
+
+```bash
+npm install -g forever
+forever statr server.js
+```

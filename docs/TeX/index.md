@@ -98,3 +98,7 @@ sudo apt-get install texlive-science
 ```
 sudo apt-get install texinfo
 ```
+
+## 数学公式插入图片
+
+参考[Can I insert an image into an equation?](https://tex.stackexchange.com/questions/11069/can-i-insert-an-image-into-an-equation)
