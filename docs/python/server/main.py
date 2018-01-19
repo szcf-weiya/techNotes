@@ -10,7 +10,7 @@ References:
 @author: weiya
 """
 
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, CGIHTTPRequestHandler, HTTPServer
 import subprocess
 
 class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
@@ -36,8 +36,23 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(bytes(message, "utf8"))
         return
     
+class webhooksESLCN(CGIHTTPRequestHandler):
+    
+    def do_POST(self):
+        print(self.requestline)
+        req = self.requestline.split()
+        if (req[1] == '/deploy'):
+            update()
+        # response status code
+        self.send_response(200)
+        
+        # header
+        self.send_header('Content-type', 'text/html')
+        self.end_headers()
+
+    
 def update():
-    PATH = '../site'
+    PATH = '../ESL-CN'
     cmd = 'cd ' + PATH + ' && ' + 'git pull origin gh-pages'
     out = subprocess.getoutput(cmd)
     print(out)
@@ -46,7 +61,8 @@ def run():
     print('starting server ...')
     
     server_address = ('', 8088)
-    httpd = HTTPServer(server_address, testHTTPServer_RequestHandler)
+    #httpd = HTTPServer(server_address, testHTTPServer_RequestHandler)
+    httpd = HTTPServer(server_address, webhooksESLCN)
     print('running server ...')
     httpd.serve_forever()
     
