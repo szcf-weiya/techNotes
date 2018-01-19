@@ -320,3 +320,35 @@ sudo /etc/init.d/nginx restart
 rename -n 's/Sam3/Stm32/' *.nc　　/*确认需要重命名的文件*/
 rename -v 's/Sam3/Stm32/' *.nc　　/*执行修改，并列出已重命名的文件*/
 ```
+
+# 关闭screen
+
+参考https://stackoverflow.com/questions/1509677/kill-detached-screen-session
+
+```bash
+screen -list #或screen -r
+screen -r [pid] # 进入
+## ctrl+A, 然后输入":quit"
+```
+
+# Solution: Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA
+参考
+https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-authenticator-does-not-support-any-combination-of-challenges-that-will-satisfy-the-ca/49983
+
+# 重装nginx
+```bash
+
+```
+
+想重装nginx，把/etc/nginx也一并删除了，但是重新安装却报错找不到conf文件。
+
+参考[How to reinstall nginx if I deleted /etc/nginx folder (Ubuntu 14.04)?
+](https://stackoverflow.com/questions/28141667/how-to-reinstall-nginx-if-i-deleted-etc-nginx-folder-ubuntu-14-04)
+
+应当用
+```bash
+apt-get purge nginx nginx-common nginx-full
+apt-get install nginx
+```
+
+注意用purge不会保存配置文件，而remove会保存配置文件。
