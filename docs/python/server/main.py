@@ -38,7 +38,7 @@ class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
     
 def update():
     PATH = '../site'
-    cmd = 'cd ' + PATH + ' && ' + 'git pull'
+    cmd = 'cd ' + PATH + ' && ' + 'git pull origin gh-pages'
     out = subprocess.getoutput(cmd)
     print(out)
 
