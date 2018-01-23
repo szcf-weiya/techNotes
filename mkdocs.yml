@@ -29,7 +29,7 @@ pages:
     - Java: java/index.md
     - Git: Git/index.md
 
-theme: readthedocs
+theme: 'material'
 google_analytics: ['UA-85007363-6', 'auto']
 copyright: 'Copyright &copy; 2018 weiya'
 site_author: weiya

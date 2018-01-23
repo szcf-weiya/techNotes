@@ -2,7 +2,7 @@
 
 ## 使用ipython %matplotlib inline
 
-[cnblog](http://blog.csdn.net/u010194274/article/details/50698514)
+参考[cnblog](http://blog.csdn.net/u010194274/article/details/50698514)
 
 使用%matplotlib命令可以将matplotlib的图表直接嵌入到Notebook之中，或者使用指定的界面库显示图表，它有一个参数指定matplotlib图表的显示方式。inline表示将图表嵌入到Notebook中
 
@@ -13,8 +13,7 @@ Matplotlib自动化程度非常高，但是，掌握如何设置系统以便获�
 
 
 ## 远程访问jupyter
-http://www.cnblogs.com/zhanglianbo/p/6109939.html
-
+[远程访问jupyter](http://www.cnblogs.com/zhanglianbo/p/6109939.html)
 
 ## jupyter notebook 出错
 
@@ -93,7 +92,7 @@ refer to [Difference between numpy.array shape (R, 1) and (R,)](https://stackove
 
 ## 正式认识conda
 
-参考https://conda.io/docs/user-guide/getting-started.html
+参考[https://conda.io/docs/user-guide/getting-started.html](https://conda.io/docs/user-guide/getting-started.html)
 
 ## 为py3安装spyder
 
