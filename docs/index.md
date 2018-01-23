@@ -1,7 +1,6 @@
 # 技术笔记
 
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/szcf-weiya/techNotes" data-size="large" data-show-count="true" aria-label="Star szcf-weiya/techNotes on GitHub">Star</a>
+<iframe src="https://ghbtns.com/github-btn.html?user=szcf-weiya&repo=techNotes&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
 
 记录编程语言、操作系统以及配置环境等技巧。
 
