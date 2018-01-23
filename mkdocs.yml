@@ -34,3 +34,5 @@ google_analytics: ['UA-85007363-6', 'auto']
 copyright: 'Copyright &copy; 2018 weiya'
 site_author: weiya
 site_description: '技术博客'
+extra_javascript:
+  - 'javascripts/buttons.js'

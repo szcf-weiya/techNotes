@@ -1,47 +1,49 @@
-# Kazam
+# Linux笔记
+
+## Kazam
 
 Ubuntu 下 kazam 录屏 没声音解决方案
 
 [http://www.cnblogs.com/xn--gzr/p/6195317.html](http://www.cnblogs.com/xn--gzr/p/6195317.html)
 
-# bluebooth
+## bluebooth
 
 [set bluebooth](http://dz.sdut.edu.cn/blog/subaochen/2017/02/ubuntu%E4%B8%8B%E9%80%9A%E8%BF%87%E8%93%9D%E7%89%99%E6%8E%A5%E6%94%B6%E6%89%8B%E6%9C%BA%E5%8F%91%E9%80%81%E7%9A%84%E6%96%87%E4%BB%B6/)
 
-# sogou input problem
+## sogou input problem
 
 [input problem](http://pinyin.sogou.com/bbs/forum.php?mod=viewthread&tid=2681098&extra=page%3D1)
 
-# install win on ubuntu
+## install win on ubuntu
 
 [http://www.linuxdeveloper.space/install-windows-after-linux/](http://www.linuxdeveloper.space/install-windows-after-linux/)
 
-# fix locale issue
+## fix locale issue
 
 [https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue](https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue)
 
 阿里云的服务器，最好default为'zh_CN.UTF-8'
 
-# add user
+## add user
 
 [http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672](http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672)
 
-# sudo
+## sudo
 
 [http://blog.csdn.net/ichuzhen/article/details/8241847](http://blog.csdn.net/ichuzhen/article/details/8241847)
 
-# 初始化服务器
+## 初始化服务器
 
 1. 新建用户，sudo
 2. 添加sources.list,gpg
 3. 安装R
 4. 安装Rstudioserver（成功！！！哎。。搞了一下午就是因为上午莫名其妙更新了Ubuntu，不要手贱！！）
 
-# 终端分屏
+## 终端分屏
 
 [tmux](http://blog.csdn.net/u010454729/article/details/49496381)
 
-# 缺少动态链接库
+## 缺少动态链接库
 
 在服务器上使用gsl报缺少动态链接库的错误
 解决方案
@@ -61,12 +63,12 @@ sudo vim /etc/ld.so.conf
 ```
 
 
-# Ubuntu 下对文本文件每行行首进行追加、替换
+## Ubuntu 下对文本文件每行行首进行追加、替换
 
 [sed](http://blog.csdn.net/u010555688/article/details/48416765)
 
 
-# makefile
+## makefile
 
 [https://my.oschina.net/u/1413984/blog/199029](https://my.oschina.net/u/1413984/blog/199029)
 
@@ -75,7 +77,7 @@ $^: 所有的依赖文件
 $<: 第一个依赖文件
 
 
-# atom 自动更新
+## atom 自动更新
 [atom](https://launchpad.net/~webupd8team/+archive/ubuntu/atom/)
 
 ```
@@ -83,7 +85,7 @@ sudo add-apt-repository ppa:webupd8team/atom
 sudo apt-get update
 ```
 
-# 配置xterm的中文字体的问题
+## 配置xterm的中文字体的问题
 
 查看本机安装的中文字体
 ```
@@ -99,7 +101,7 @@ xterm*faceNameDoublesize: YaHei Consolas Hybrid
 
 1. [http://forum.ubuntu.org.cn/viewtopic.php?t=143221](http://forum.ubuntu.org.cn/viewtopic.php?t=143221)
 
-# could not get lock /var/lib/dpkg/lock -open
+## could not get lock /var/lib/dpkg/lock -open
 
 ```
 sudo rm /var/cache/apt/archives/lock
@@ -108,28 +110,28 @@ sudo rm /var/lib/dpkg/lock
 
 如果不行，重启。
 
-# 阿里云服务器virtual memory exhausted: Cannot allocate memory
+## 阿里云服务器virtual memory exhausted: Cannot allocate memory
 
 [http://www.bubuko.com/infodetail-1319039.html](http://www.bubuko.com/infodetail-1319039.html)
 ```
-#创建一个大小为1G的文件/swap
+##创建一个大小为1G的文件/swap
 dd if=/dev/zero of=/swap bs=1024 count=1M    
-#将/swap作为swap空间
+##将/swap作为swap空间
 mkswap /swap                                                 
-#enable /swap file  for paging and swapping
+##enable /swap file  for paging and swapping
 swapon /swap                   
-#Enable swap on boot, 开机后自动生效
+##Enable swap on boot, 开机后自动生效
 echo "/swap swap swap sw 0 0" >> /etc/fstab
 ```
 
-# 编译安装gcc-4.6.2
+## 编译安装gcc-4.6.2
 
 1. https://gcc.gnu.org/faq.html#multiple
 2. https://askubuntu.com/questions/313288/how-to-use-multiple-instances-of-gcc
 3. http://www.tellurian.com.au/whitepapers/multiplegcc.php
 4. https://stackoverflow.com/questions/9450394/how-to-install-gcc-piece-by-piece-with-gmp-mpfr-mpc-elf-without-shared-libra
 
-# 更新rstudio 后闪退
+## 更新rstudio 后闪退
 1. 安装rstudio应该采用
 
 ```
@@ -148,26 +150,26 @@ sudo dpkg -i
 sudo apt-get remove rstudio
 ```
 
-# gcc版本
+## gcc版本
 1. https://codeyarns.com/2015/02/26/how-to-switch-gcc-version-using-update-alternatives/
 
-# terminator设置
+## terminator设置
 1. hostname的颜色
 https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-terminators-prompt-hostname-userdomain-colors
 直接打开bashrc里面下一行的注释
 ```
-#force_color_prompt=yes
+##force_color_prompt=yes
 ```
 2. 颜色背景色等，直接右键设置，右键设置完成之后便有了一个config文件.
 
 
-# 试图在Ubuntu，rvpn回去
+## 试图在Ubuntu，rvpn回去
 
 参考的资料有
 1. [vpn-pptp-in-ubuntu-16-04-not-working](https://askubuntu.com/questions/891393/vpn-pptp-in-ubuntu-16-04-not-working)
 
 
-# flatten pdf file
+## flatten pdf file
 
 参考[is-there-a-way-to-flatten-a-pdf-image-from-the-command-line](https://unix.stackexchange.com/questions/162922/is-there-a-way-to-flatten-a-pdf-image-from-the-command-line)
 
@@ -175,7 +177,7 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 pdf2ps orig.pdf - | ps2pdf - flattened.pdf
 ```
 
-# Linux 杀进程
+## Linux 杀进程
 
 参考[linux下杀死进程（kill）的N种方法](http://blog.csdn.net/andy572633/article/details/7211546)
 
@@ -184,7 +186,7 @@ ps -ef | grep R
 kill -s 9 ...
 ```
 
-## 合并jpg到pdf
+### 合并jpg到pdf
 
 参考[convert images to pdf: How to make PDF Pages same size](https://unix.stackexchange.com/questions/20026/convert-images-to-pdf-how-to-make-pdf-pages-same-size)
 
@@ -208,21 +210,21 @@ convert a.png b.png -compress jpeg -resize 1240x1753 \
 
 同时，注意`1240x1753`中间是字母`x`.
 
-# install typora on Linux
+## install typora on Linux
 
 参考[Install Typora on Linux](http://support.typora.io/Typora-on-Linux/)
 
-# Rstudio 不能切换中文输入（fctix）
+## Rstudio 不能切换中文输入（fctix）
 
 参考[Rstudio 不能切换中文输入（fctix）](http://blog.csdn.net/qq_27755195/article/details/51002620)
 
 [Ubuntu 16.04 + Fcitx + RStudio 1.0で日本語を入力する方法](http://blog.goo.ne.jp/ikunya/e/8508d21055503d0560efc245aa787831)
 
-# 配置jdk
+## 配置jdk
 
 参考[Ubuntu14.04安装JDK与配置环境变量](https://jingyan.baidu.com/article/647f0115bb26817f2048a871.html)
 
-# 缩小图像的大小
+## 缩小图像的大小
 
 ```
 convert -resize 1024x
@@ -236,7 +238,7 @@ convert -quality 50%
 
 具体参考[How can I compress images?](https://askubuntu.com/questions/781497/how-can-i-compress-images)
 
-# compile FileZilla
+## compile FileZilla
 
 refer to [Client Compile](https://wiki.filezilla-project.org/Client_Compile)
 
@@ -255,7 +257,7 @@ require sqlite3.h
 sudo apt-get install libsqlite3-dev
 ```
 
-# convert 参数
+## convert 参数
 
 pdf 转为 jpg
  `-quality 100` 控制质量
@@ -263,7 +265,7 @@ pdf 转为 jpg
 
  并注意参数放置文件的前面
 
-# linux 三款命令行浏览器
+## linux 三款命令行浏览器
 
 1. w3m
 2. links
@@ -271,7 +273,7 @@ pdf 转为 jpg
 
 refer to [http://www.laozuo.org/8178.html](http://www.laozuo.org/8178.html)
 
-# 修改文件权限
+## 修改文件权限
 
 采用`ls -l` 便可以查看文件(夹)权限，比如
 
@@ -302,7 +304,7 @@ chmod -R 700 Document/
 chown -R username:users Document/
 ```
 
-# 腾讯云服务器nginx failed
+## 腾讯云服务器nginx failed
 
 原因：80端口被占用
 解决方法：kill掉占用80端口的
@@ -317,7 +319,7 @@ sudo fuser -k 80/tcp
 sudo /etc/init.d/nginx restart
 ```
 
-# 文件重命名
+## 文件重命名
 
 参考[Ubuntu中rename命令和批量重命名](http://www.linuxidc.com/Linux/2016-11/137041.htm)
 
@@ -326,21 +328,21 @@ rename -n 's/Sam3/Stm32/' *.nc　　/*确认需要重命名的文件*/
 rename -v 's/Sam3/Stm32/' *.nc　　/*执行修改，并列出已重命名的文件*/
 ```
 
-# 关闭screen
+## 关闭screen
 
 参考https://stackoverflow.com/questions/1509677/kill-detached-screen-session
 
 ```bash
 screen -list #或screen -r
 screen -r [pid] # 进入
-## ctrl+A, 然后输入":quit"
+### ctrl+A, 然后输入":quit"
 ```
 
-# Solution: Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA
+## Solution: Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA
 参考
 https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-authenticator-does-not-support-any-combination-of-challenges-that-will-satisfy-the-ca/49983
 
-# 重装nginx
+## 重装nginx
 
 想重装nginx，把/etc/nginx也一并删除了，但是重新安装却报错找不到conf文件。
 

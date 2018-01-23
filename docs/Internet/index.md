@@ -1,9 +1,13 @@
-# Environment
+# 网络连接相关问题
+
+## 安装XX-Net
+
+### Environment
 1. ubuntu 16.04
 2. XX-net
 3. privoxy
 
-# Install
+### Install
 
 - 安装privoxy
 
@@ -23,7 +27,7 @@ forward / 127.0.0.1:8087
 listen-address 0.0.0.0:8118
 ```
 
-# Usages
+### Usages
 
 - 可以在访问时设置代理
 
@@ -45,11 +49,11 @@ source ~/.bashrc
 curl ipinfo.io/ip #测试是否代理成功
 ```
 
-# Notes
+### Notes
 
 3.10 15:36 chrome 在升级xxnet后成功翻墙了，而Firefox不行了。未升级前情况是相反的，但未升级时Firefox从不能用到能用。
 
-# 有线
+## 有线连不上
 
 手动设置ip
 IPv4 settings
@@ -68,7 +72,7 @@ route add default gw 10.71.115.254 enp0s31f6
 ping 10.71.45.100
 ```
 
-## shadowssocks
+## shadowssocks安装
 ### 二维码反解
 对
 ```
@@ -96,7 +100,7 @@ sslocal -p port -k password -m method
 
 
 
-## 系统代理与浏览器代理
+### 系统代理与浏览器代理
 无需单独设置系统代理，浏览器是可以通过插件设置代理的。
 
 另外使用如curl需要代理时，可以采用
@@ -148,9 +152,9 @@ dig hohoweiya.xyz +noall +answer
 ```
 cd /etc/resolvconf/resolv.conf.d/
 sudo vim head
-# 删除文件中的所有信息，其实只有阿里公共ads的配置信息
+## 删除文件中的所有信息，其实只有阿里公共ads的配置信息
 sudo vim head.save
-# 删除文件中的所有信息，其实只有阿里公共ads的配置信息
+## 删除文件中的所有信息，其实只有阿里公共ads的配置信息
 ```
 
 终于好了！

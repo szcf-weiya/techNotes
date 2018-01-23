@@ -1,4 +1,4 @@
-# 2017.09.25
+## 2017.09.25
 
 1. She's tried every knack in Cupid's book to get her guy to marry her.
 2. The team's limp performance has many people calling for the head coach's resignation.
@@ -9,12 +9,12 @@
 7. Reading will fertilize vocabulary.
 8. A blind patriotic fervor is called chauvinism.
 
-# 2017.09.26
+## 2017.09.26
 
 1. a convoluted thriller, the plot of which I was never able to actually decipher.
 2. a complex literary text difficult for many people to decode.
 
-# 2017.09.28
+## 2017.09.28
 
 1. To skewer a sacred cow, means to defy what is generally held as indisputable.*from [What's the meaning and the origin of “skewer a sacred cow ?” ](https://english.stackexchange.com/questions/166702/whats-the-meaning-and-the-origin-of-skewer-a-sacred-cow)*
 2. anything but. *from [hujiang](https://www.hjenglish.com/new/p802863/)*
@@ -36,13 +36,13 @@
 - I will eat anything but carrot. (我什么都吃，就是不吃胡萝卜)
 - She is anything but a beauty. (她一点也不漂亮。)
 
-# 2017.09.29
+## 2017.09.29
 
 1. Numerous historical examples illustrate both the overriding influence that scientists' prejudices have on their interpretation of data and the consequent impairment of their intellectual objectivity.
 2. Jone was unable to recognize the contradictions in his attitudes that were obvious to everyone else; even the hint of an untruth was repugnant to him, but he courted serious trouble by always cheating on his taxes.
 
 
-# 2017.09.30
+## 2017.09.30
 
 1. She responded with such asperity that we knew she was offended by the question.
 2. He has encountered more than his share of asperities on the road to success.
@@ -90,7 +90,7 @@
 44. This theory is too abstruse to be taught in class.
 
 
-# 2017.10.01
+## 2017.10.01
 
 1. Despite having steeled herself for the worst, the new band director was disheartened to hear the cacophonous/discordant sounds emanating from the freshman orchestra.
 2. Bede, the author of A History of the English Church and People, was so widely revered/esteemed that he has been almost universally known as "The Venerable Bede" since the ninth century.
@@ -104,7 +104,7 @@
 10. Although he received many visitors, the misanthropic/curmudgeonly old man shooed them away after only a few minutes.
 11. Eileen used to be a picky eater, but since a new complex of fine dining and ethnic restaurants opened in her neighborhood, she has been quite epicurean/gourmandizing.
 
-# 2017.10.02
+## 2017.10.02
 
 1. The rise of the nascent middle class catalyzed a new economic boom.
 2. The malodor of the rotten meat made us nauseate.
@@ -112,7 +112,7 @@
 4. His involvement was nominal.
 5. The two girls soon became fast and inseparable friends.
 
-# 2017.10.03
+## 2017.10.03
 
 1. Recent discoveries have generally vindicated the physicist's theories.
 2. a novel that presents a fairly veracious and unvarnished picture of the lives of affluent suburbanites.
@@ -165,7 +165,7 @@
 49. We could hear the cook in the kitchen railing against his assistant and wondered if we'd ever get our food.
 50. Vociferous opponents of the bill protested angrily outside the Congress.
 
-# 2017.10.04
+## 2017.10.04
 
 1. King Richard I of England was given the very laudatory epithet "the Lion-Hearted".
 2. His personal code of behavior on the playing field is epitomized by his favorite saying, Nice guys finish last.
@@ -282,7 +282,7 @@
 113. Dilatory means tardy or tending to delay.
 114. Aloof means standoffish and remote.
 
-# 2017.10.05
+## 2017.10.05
 1. Terse means abrupt and to the point.
 2. Apathetic means indifferent and unconcerned.
 3. Bombastic means pompous and pretentious.
@@ -302,13 +302,13 @@
 17. He spent the remainder of his life in ignominy after being involved in a bribery scandal.
 18. stop short of
 
-# 2017.10.07
+## 2017.10.07
 1. as such
 
-# 2017.10.09
+## 2017.10.09
 1. magma， tectonic
 
-# 2017.10.10
+## 2017.10.10
 1. mainstay
 2. caravan
 3. expedition
@@ -323,7 +323,7 @@
 up
 12. billboard
 
-# 2017.10.11
+## 2017.10.11
 
 1. Before that beauty, the years of chaos at the heart of American politics would recede like some extraordinary dream.
 2. Power is still out to many homes and business, and flood waters are just beginning to recede leaving behind massive damage and debris.
@@ -337,17 +337,17 @@ up
 10. trace metal
 11. diatom
 
-# 2017.10.13
+## 2017.10.13
 
 1. directrix, eccentricity
 2. reciprocal
 
-# 2017.10.14
+## 2017.10.14
 1. cardioid: 心脏线
 2. revolution:
 3. Last but not least 最后但不是最不重要的一点
 
-# 2017.10.15
+## 2017.10.15
 1. calligrapher
 2. decorator
 3. Islamic
@@ -359,7 +359,7 @@ up
 9. cellulose
 10. pulp
 
-# 2017.10.16
+## 2017.10.16
 
 1. But political gridlock should not be conflated with economic reality.
 2. In this sedate garrison town ringed by jagged peaks, the gentle thrum of the day is usually reduced to a whisper by night.
@@ -375,11 +375,11 @@ up
 12. seep, seepage
 13. fad
 
-# 2017.10.17
+## 2017.10.17
 
 1. precession
 
-# 2017.10.18
+## 2017.10.18
 
 1. impediment
 2. dispense
@@ -396,7 +396,7 @@ up
 13. nasal
 14. sacs
 
-# 2017.10.19
+## 2017.10.19
 
 15. spoiled meat
 16. repercussion
@@ -416,7 +416,7 @@ up
 30. Several staff members have checked the manuscript for accuracy and ease of use.
 31. anatomical
 
-# 2017.10.20
+## 2017.10.20
 
 1. cubism
 2. be coordinated with, to harmonize with
@@ -471,33 +471,33 @@ up
 51. silt
 52. reclamation
 
-# 2017.10.21
+## 2017.10.21
 
 1. supplement
 
-# 2017.10.25
+## 2017.10.25
 
 Nothing. Watching The Greatest Challenge.
 
-# 2017.10.26
+## 2017.10.26
 
 1. spade
 2. deck
 
-# 2017.10.27
+## 2017.10.27
 
 1. nilpotent
 
 
-# 2017.10.28
+## 2017.10.28
 
 NULL
 
-# 2017.10.29
+## 2017.10.29
 
 NULL
 
-# 2017.10.31
+## 2017.10.31
 
 1. caffeine, nicotine
 2. sip nectar
@@ -537,7 +537,7 @@ NULL
 36. conspecifics
 37. archaeological
 
-# 2017.11.2
+## 2017.11.2
 
 1. motif
 2. moss
@@ -548,53 +548,53 @@ NULL
 7. meteor
 8. metallurgy
 
-# 2017.11.3
+## 2017.11.3
 
 1. till
 2. dweller
 3. wriggle
 4. manure
-# 2017.11.4
+## 2017.11.4
 
 1. CRASH
 
-# 2017.11.5
+## 2017.11.5
 
 crash
 
-# 2017.11.6
+## 2017.11.6
 
 1. half crash
 
-# 2017.11.7
+## 2017.11.7
 
 crash again
 
-# 2017.11.8
+## 2017.11.8
 
 crash, chat with Prof. Wang
 
-# 2017.11.9
+## 2017.11.9
 
 full crash
 
-# 2017.11.10
+## 2017.11.10
 
 full crash + sleep
 
-# 2017.11.11
+## 2017.11.11
 
 dinner
 
-# 2017.11.12
+## 2017.11.12
 
 letter cuhk
 
-# 2017.11.13
+## 2017.11.13
 
 letter back
 
-# 2017.11.14
+## 2017.11.14
 
 1. molten
 2. mantle
@@ -609,7 +609,7 @@ letter back
 11. subduction
 12. slab
 
-# 2017.11.15
+## 2017.11.15
 
 1. rampage
 2. rally
@@ -658,7 +658,7 @@ letter back
 45. terrific
 46. armor, cloak
 
-# 2017.11.16
+## 2017.11.16
 
 1. enamor
 2. venue
@@ -690,7 +690,7 @@ letter back
 28. Plateau
 29. spiral
 
-# 2017.11.17
+## 2017.11.17
 
 1. Chimpanzees, primates, chimps, gorillas, orangutans
 2. bottlenose
@@ -718,102 +718,102 @@ letter back
 24. pinch
 25. blend in
 
-# 2017.11.18
+## 2017.11.18
 
 last toefl
 
-# 2017.11.19
+## 2017.11.19
 
 soap opera
 
-# 2017.11.20
+## 2017.11.20
 
 soap opera again
 
-# 2017.11.21
+## 2017.11.21
 
 soap opera again
 
-# 2017.11.22
+## 2017.11.22
 
 Nirvana in Fire
 
-# 2017.11.23
+## 2017.11.23
 
 Nirvana in Fire
 
-# 2017.11.24
+## 2017.11.24
 
 Nirvana in Fire
 
-# 2017.11.25
+## 2017.11.25
 
 the disguiser
 
 empresses in the palace
 
-# 2017.11.26
+## 2017.11.26
 
 the glory of Tang dynasty
 
-# 2017.11.27
+## 2017.11.27
 
 last seminar
 
-# 2017.11.28
+## 2017.11.28
 
 the glory of Tang dynasty \* 2
 
-# 2017.11.29
+## 2017.11.29
 
 Municipality
 
-# 2017.11.30
+## 2017.11.30
 
 on the way
 
-# 2017.12.01
+## 2017.12.01
 
 arrive at hangzhou
 
-# 2017.12.02
+## 2017.12.02
 
 prepare
 
-# 2017.12.03
+## 2017.12.03
 
 happy life
 
-# 2017.12.18
+## 2017.12.18
 
 1. thereof
 2. finesse
 3. irrespective
 
-# 2017.12.27
+## 2017.12.27
 
 1. perk
 2. terse  
 3. discern
 
-# 2017.12.28
+## 2017.12.28
 
 1. state of the art: the latest and most sophisticated or advanced stage of a technology, art, or science.
 
-# 2018.01.01
+## 2018.01.01
 
 1. exacerbate
 2. gloss over
 3. be attributed to
 4. extremity
 
-# 2018.01.03
+## 2018.01.03
 
 1. appreciably
 2. in light of
 3. albeit
 4. at its disposal
 
-# 2018.01.06
+## 2018.01.06
 
 1. protestant, Catholic
