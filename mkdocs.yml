@@ -42,7 +42,7 @@ extra:
       link: 'https://esl.hohoweiya.xyz'
     - type: 'home'
       link: 'https://hohoweiya.xyz'
-    - type: 'blog'
+    - type: 'rss'
       link: 'https://blog.hohoweiya.xyz'
     - type: 'envelope'
       link: 'mailto:szcfweiya@github.com'
