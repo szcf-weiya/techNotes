@@ -10,6 +10,7 @@ pages:
     - Matlab: Matlab/index.md
     - Cpp: Cpp/index.md
     - Css: css/index.md
+    - SQL: SQL/index.md
     - Js: js/index.md
     - Autotools: autotools/index.md
     - Graph: graph/index.md
@@ -28,6 +29,7 @@ pages:
     - Phantomjs: phantomjs/index.md
     - Java: java/index.md
     - Git: Git/index.md
+    - Links: links/index.md
 
 theme: 'material'
 google_analytics: ['UA-85007363-6', 'auto']
