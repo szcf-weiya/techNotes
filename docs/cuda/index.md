@@ -105,3 +105,8 @@ Converting C/C++ for loops into CUDA](https://stackoverflow.com/questions/661310
 30. [多线程有什么用？](https://www.zhihu.com/question/19901763)
 31. [CUDA常见问题与解答](http://blog.csdn.net/wufenxia/article/details/7601254)
 32. [cudaStreamSynchronize vs CudaDeviceSynchronize vs cudaThreadSynchronize](https://stackoverflow.com/questions/13485018/cudastreamsynchronize-vs-cudadevicesynchronize-vs-cudathreadsynchronize/13485891)
+
+## use gsl in GNU
+
+[How to use the GNU scientific library (gsl) in nvidia Nsight eclipse
+](https://stackoverflow.com/questions/22296063/how-to-use-the-gnu-scientific-library-gsl-in-nvidia-nsight-eclipse)

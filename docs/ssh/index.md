@@ -39,3 +39,12 @@ export DISPLAY=:0
 ```
 ssh -X
 ```
+
+## ssh 端口转发
+
+[实战 SSH 端口转发](https://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/)
+
+## ssh隧道与代理
+
+[ssh隧道与代理](http://blog.csdn.net/xanxus46/article/details/38942215)
+[使用ssh正向连接、反向连接、做socks代理的方法](http://blog.csdn.net/linsanhua/article/details/17360369)

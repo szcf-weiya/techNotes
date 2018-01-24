@@ -28,3 +28,12 @@ emacs ~/.bashrc
 export LC_CTYPE=zh_CN.utf8 
 source ~/.bashrc
 ```
+
+## Emacs配置文件
+
+参考
+[http://download.csdn.net/download/karotte/3812760](http://download.csdn.net/download/karotte/3812760)
+
+## emacs自动补全
+
+参考[emacs自动补全插件auto-complet和yasnippet，安装、配置和扩展](http://www.cnblogs.com/liyongmou/archive/2013/04/26/3044155.html#sec-1-2)

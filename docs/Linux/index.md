@@ -356,3 +356,31 @@ apt-get install nginx
 ```
 
 注意用purge不会保存配置文件，而remove会保存配置文件。
+
+## Octave安装指南
+
+参考[Octave for Debian systems](http://wiki.octave.org/Octave_for_Debian_systems)
+
+另外帮助文档间[GNU Octave](https://www.gnu.org/software/octave/doc/interpreter/)
+
+## cairo图形库环境搭建
+
+参考[ubuntu Cairo图形库 环境搭建](http://blog.csdn.net/zh19921107/article/details/45094759)
+
+
+## 编译安装和卸载软件
+参考[Ubuntu14.04下自己编译安装和卸载软件](http://blog.csdn.net/junmuzi/article/details/51357261)
+
+## circos
+
+介绍见[DOWNLOAD CIRCOS, TUTORIALS AND TOOLS](http://circos.ca/software/download/tutorials/)
+
+[Install circos on ubuntu 14.04 LTS](https://gist.github.com/dyndna/18bb71494e021f672510)
+
+## makefile 
+
+[Makefile经典教程(掌握这些足够)](http://blog.csdn.net/ruglcc/article/details/7814546/)
+
+## shell 提取文件名和目录名
+
+[shell 提取文件名和目录名](http://blog.csdn.net/universe_hao/article/details/52640321)

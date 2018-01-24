@@ -105,3 +105,19 @@ refer to [Difference between numpy.array shape (R, 1) and (R,)](https://stackove
 ```bash
 pip install pyqt5
 ```
+
+## xrange and range
+
+参考[Python中range和xrange的区别](http://blog.csdn.net/imzoer/article/details/8742283)
+
+## 安装sqlite3
+
+参考[Python安装sqlite3](http://www.python88.com/topic/420/)
+
+## windows下安装lxml
+
+参考[python安装lxml，在windows环境下](http://blog.csdn.net/g1apassz/article/details/46574963)
+
+## 缺少Python27_d.lib
+
+参考[缺少Python27_d.lib的解决方法](http://blog.csdn.net/junparadox/article/details/52704287)

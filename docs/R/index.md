@@ -161,3 +161,55 @@ plot(..., main = expression(paste("...", mu[1])))
 ## Rcpp reference
 
 [Rcpp-quickref](Rcpp-quickref.pdf)
+
+## remove outliers from the boxplot
+
+[How to remove outliers from a dataset
+](https://stackoverflow.com/questions/4787332/how-to-remove-outliers-from-a-dataset)
+
+## rmarkdown转化中文字符为PDF的设置
+
+```r
+---
+title: "test"
+author: "weiya"
+output:
+    pdf_document:
+        latex_engine: xelatex
+        includes:
+            in_header: header.tex
+---
+```
+
+## ggplot同时绘制多个密度图
+
+参考[使用ggplot2同时绘制多个密度图](https://www.tuicool.com/articles/3aUnem7)
+
+```r
+plots <- NULL
+for(i in colnames(train)){ plots[[i]] <- ggplot(train) + geom_density(aes_string(x = i, fill = 'is_black'), alpha = 0.5, show.legend = F) + xlab("") + ylab(""); }
+plot_grid(plotlist = plots)
+```
+
+## ggplot绘制概率密度图
+
+[ggplot2绘制概率密度图](http://www.cnblogs.com/wwxbi/p/6142410.html)
+
+[Plotting distributions (ggplot2)](http://www.cookbook-r.com/Graphs/Plotting_distributions_(ggplot2)/)
+
+## 在grid排列图
+
+[Arranging plots in a grid](https://cran.r-project.org/web/packages/cowplot/vignettes/plot_grid.html)
+
+## x11 font cannot be loaded
+
+参考[X11 font -adobe-helvetica-%s-%s-*-*-%d-*-*-*-*-*-*-*, face 2 at size 11 could not be loaded](https://askubuntu.com/questions/449578/x11-font-adobe-helvetica-s-s-d-face-2-at-size-11-could-no)
+
+## 安装多版本R
+[Installing multiple versions of R](https://support.rstudio.com/hc/en-us/articles/215488098-Installing-multiple-versions-of-R)
+
+## semi-transparency is not supported on this device
+
+[semi-transparency is not supported on this device](http://tinyheero.github.io/2015/09/15/semi-transparency-r.html)
+
+

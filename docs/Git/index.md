@@ -166,3 +166,11 @@ forever statr server.js
 git config user.name
 git config user.email
 ```
+
+## 删除github的master分支
+
+参考[删除github的master分支](http://blog.csdn.net/jefbai/article/details/44234383)
+
+## Git push与pull的默认行为
+
+参考[Git push与pull的默认行为](https://segmentfault.com/a/1190000002783245)

@@ -1,4 +1,5 @@
 # Cpp notes
+
 ## C++中cout输出字符型指针地址值的方法
 [ref](http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html)
 
@@ -177,3 +178,11 @@ while(safeGetline(input, line))
 ## fPIC
 
 参考http://blog.sina.com.cn/s/blog_54f82cc201011op1.html
+
+## 参数和返回值的三种传递方式
+
+[C++函数参数和返回值三种传递方式：值传递、指针传递和引用传递（着重理解）](http://blog.csdn.net/thisispan/article/details/7456180)
+
+## linux gcc常用命令
+
+[Linux GCC常用命令](http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html)

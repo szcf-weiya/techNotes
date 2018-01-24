@@ -23,3 +23,7 @@ Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Re
 "c:\users\*username*\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\"
 
 中的 Monitor Ink Alerts - HP Photosmart 5510 series.lnk or anything HP printer related. Delete it.
+
+## vs2015配置opencv
+
+[OpenCV 2.4.13 在 VS2015上的配置](http://blog.csdn.net/lfw198911/article/details/52649459)

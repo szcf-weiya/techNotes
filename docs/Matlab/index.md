@@ -1,4 +1,5 @@
-# ACF people detector
+# Matlab相关
+## ACF people detector
 
 ```
 detector = peopleDetectorACF;
@@ -9,4 +10,3 @@ I = insertObjectAnnotation(I, 'rectangle', bboxes, scores);
 figure
 imshow(I)
 ```
-

@@ -59,3 +59,11 @@ display: block
 ## 网页底部出现滚动条
 
 查看footer的width是否为100%，若是，则删掉，某次是因为这个原因。
+
+## footer 保持在底部
+
+[告诉你一个将 footer 保持在底部的最好方法](https://www.jianshu.com/p/4896e6936ce3)
+
+## em 和 rem
+
+[何时使用 Em 与 Rem](https://www.w3cplus.com/css/when-to-use-em-vs-rem.html)

@@ -102,3 +102,59 @@ sudo apt-get install texinfo
 ## 数学公式插入图片
 
 参考[Can I insert an image into an equation?](https://tex.stackexchange.com/questions/11069/can-i-insert-an-image-into-an-equation)
+
+## beamer中frame的fragile选项
+
+参考[LaTeX技巧573：beamer中使用Listings包出现的错误](http://blog.sina.com.cn/s/blog_5e16f1770102dxps.html)
+
+错误描述
+
+```none
+Runaway argument?
+! Paragraph ended before \lst@next was complete.
+<to be read again>
+                   \par
+l.68 \end{frame}
+?
+```
+
+解决方案
+
+```tex
+\begin{frame}[fragile]
+\frametitle{Your title}
+
+\begin{lstlisting}
+code
+\end{lstlisting}
+\end{frame}
+```
+
+## beamer中数学字体
+
+默认数学字体挺丑的，可以在导言区加入
+
+```tex
+\usefonttheme[onlymath]{serif}
+```
+
+下面摘录自[Beamer中数学符号字体 ](http://blog.sina.com.cn/s/blog_4b91d3b50101lupb.html)
+
+> 关于tex的字体样式，其实是通用的，与css和windows字体等，都是通用的。来源于西方的字母写法，大致可分为两类：serif （衬线）和sans-serif（无衬线）。
+
+> 所谓衬线是字体的末端加强，便于阅读。如通常见的Times New Roman, 宋体。sans-serif（sans 源自法语，表示“没有”）字体的代表如Arial，隶书，幼圆。由于衬线的强化作用，serif字体作为正文具有易读性。因此存在大段文本的情况下，常使用衬线字体。但做幻灯片的话，衬线字体会因字体粗细不同，反倒可能降低辨识度。因此建议标题用衬线字体，正文用非衬线字体。
+
+> 数学符号用衬线字体相对美观一些，而Beamer如果不另行设置，默认全文使用sans-serif字体。因此按上述方式设置一下即可。
+
+## 源码安装texlive
+
+[How to install “vanilla” TeXLive on Debian or Ubuntu?](https://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373)
+
+以及
+[How to properly install and use texlive with package manager in 14.04](https://askubuntu.com/questions/485514/how-to-properly-install-and-use-texlive-with-package-manager-in-14-04)
+
+## beamer中导入视频
+
+[Can XeLaTeX | LuaTeX import movies?](https://tex.stackexchange.com/questions/12790/can-xelatex-luatex-import-movies)
+
+
