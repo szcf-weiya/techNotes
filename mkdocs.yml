@@ -34,3 +34,22 @@ google_analytics: ['UA-85007363-6', 'auto']
 copyright: 'Copyright &copy; 2018 weiya'
 site_author: weiya
 site_description: '技术博客'
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/szcf-weiya'
+    - type: 'book'
+      link: 'https://esl.hohoweiya.xyz'
+    - type: 'home'
+      link: 'https://hohoweiya.xyz'
+    - type: 'blog'
+      link: 'https://blog.hohoweiya.xyz'
+    - type: 'envelope'
+      link: 'mailto:szcfweiya.github.io'
+ 
+markdown_extensions:
+  - admonition
+  - codehilite
+  - smarty
+  - sane_lists
+  - meta
