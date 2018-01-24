@@ -45,7 +45,7 @@ extra:
     - type: 'blog'
       link: 'https://blog.hohoweiya.xyz'
     - type: 'envelope'
-      link: 'mailto:szcfweiya.github.io'
+      link: 'mailto:szcfweiya@github.com'
  
 markdown_extensions:
   - admonition
