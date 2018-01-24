@@ -1,4 +1,6 @@
-# install GApps for Mi Pad 2
+# 小米手机和平板折腾日志
+
+## install GApps for Mi Pad 2
 
 [solutions](http://en.miui.com/thread-318884-1-1.html)
 
@@ -10,7 +12,7 @@
 
 After you've installed these four APK's, then go to settings -> autostart -> add autostart apps and "allow" these 4 installed apps (exactly only the 2 services is also sufficient). After that restart your tablet and start Play Store and enjoy!
 
-# root Mi Pad
+## root Mi Pad
 
 refer to http://www.miui.com/thread-3414388-1-1.html
 
@@ -18,10 +20,18 @@ the info of my mi pad
 
 ![](mipad_info.png)
 
-# synergy with android
+## synergy with android
 
 download from https://sourceforge.net/projects/synergyandroid/
 
 dont be scared by the cm, which is another one.
 
 and the destdock is too bad. cannot work.
+
+## google apps
+
+[Installing Google Apps for Android 7.0 Nougat Without Root!](http://en.miui.com/thread-484491-1-1.html)
+
+[Google play store stuck on "Checking Info"](http://en.miui.com/thread-568412-1-1.html)
+
+

@@ -158,3 +158,8 @@ code
 [Can XeLaTeX | LuaTeX import movies?](https://tex.stackexchange.com/questions/12790/can-xelatex-luatex-import-movies)
 
 
+## LaTeX中的定理环境
+
+[LaTeX中的定理环境](http://blog.sina.com.cn/s/blog_62b52e290100yifl.html)
+
+

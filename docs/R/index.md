@@ -212,4 +212,52 @@ plot_grid(plotlist = plots)
 
 [semi-transparency is not supported on this device](http://tinyheero.github.io/2015/09/15/semi-transparency-r.html)
 
+## MC, MCMC, Gibbs采样 原理
+
+[MC, MCMC, Gibbs采样 原理&实现（in R）](http://blog.csdn.net/abcjennifer/article/details/25908495)
+
+[](http://blog.csdn.net/abcjennifer/article/details/25908495)
+
+[贝叶斯集锦（3）：从MC、MC到MCMC](https://site.douban.com/182577/widget/notes/10567181/note/292072927/)
+
+[随机采样方法整理与讲解（MCMC、Gibbs Sampling等）](http://www.cnblogs.com/xbinworld/p/4266146.html)
+
+[简单易学的机器学习算法——马尔可夫链蒙特卡罗方法MCMC](http://blog.csdn.net/google19890102/article/details/51755242)
+
+[DP: Collapsed Gibbs Sampling](https://cs.stanford.edu/~ppasupat/a9online/1084.html)
+
+[Metropolis Hasting算法](http://blog.csdn.net/flyingworm_eley/article/details/6517851)
+
+
+
+## Running R in batch mode on Linux
+
+[Running R in batch mode on Linux](http://www.cureffi.org/2014/01/15/running-r-batch-mode-linux/)
+
+## RStudio: Warning message: Setting LC_CTYPE failed, using "C" 浅析
+
+[RStudio: Warning message: Setting LC_CTYPE failed, using "C" 浅析](http://blog.csdn.net/wireless_com/article/details/51113668)
+
+## “Kernel density estimation” is a convolution of what?
+
+[“Kernel density estimation” is a convolution of what?](https://stats.stackexchange.com/questions/73623/kernel-density-estimation-is-a-convolution-of-what)
+
+## unable to start rstudio in centos getting error “unable to connect to service”
+
+[unable to start rstudio in centos getting error “unable to connect to service”
+](https://stackoverflow.com/questions/24665599/unable-to-start-rstudio-in-centos-getting-error-unable-to-connect-to-service)
+
+## 发布R包
+
+[Releasing a package](http://r-pkgs.had.co.nz/release.html)
+
+## Presentations with Slidy
+
+[Presentations with Slidy
+](http://rmarkdown.rstudio.com/slidy_presentation_format.html)
+
+## Estimation of the expected prediction error
+
+[Estimation of the expected prediction error](http://www.math.ku.dk/~richard/courses/regression2014/DataSplit.html)
+
 

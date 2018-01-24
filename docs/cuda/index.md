@@ -110,3 +110,8 @@ Converting C/C++ for loops into CUDA](https://stackoverflow.com/questions/661310
 
 [How to use the GNU scientific library (gsl) in nvidia Nsight eclipse
 ](https://stackoverflow.com/questions/22296063/how-to-use-the-gnu-scientific-library-gsl-in-nvidia-nsight-eclipse)
+
+## Getting started with parallel MCMC
+
+[Getting started with parallel MCMC](https://darrenjw.wordpress.com/tag/gpu/)
+

@@ -20,6 +20,7 @@ Some interesting links.
 
 1. http://downforeveryoneorjustme.com/
 2. http://ujjwalkarn.github.io/Machine-Learning-Tutorials/
+3. 在线处理图片：http://funny.pho.to/sketch/
 ## TODO
 
 ### Google Summer Of Code 2018

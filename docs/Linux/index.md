@@ -384,3 +384,29 @@ apt-get install nginx
 ## shell 提取文件名和目录名
 
 [shell 提取文件名和目录名](http://blog.csdn.net/universe_hao/article/details/52640321)
+
+## 几种方法来实现scp拷贝时无需输入密码
+
+[几种方法来实现scp拷贝时无需输入密码](http://blog.csdn.net/nfer_zhuang/article/details/42646849)
+
+
+## time命令中的real,user以及sys时间 
+
+[time命令中的real,user以及sys时间](http://blog.chinaunix.net/uid-23177306-id-2531034.html)
+
+## control android phone by PC's mouse and keyboard
+
+[How to Control Your Android Using Your Computer’s Mouse and Keyboard](https://www.makeuseof.com/tag/control-android-using-computers-mouse-keyboard/)
+
+## fix my locale issue
+
+[How do I fix my locale issue?](https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue)
+
+## 先装ubuntu10.10再装windows7简单步骤（很简单）
+[先装ubuntu10.10再装windows7简单步骤（很简单）](http://blog.csdn.net/wyzxk888/article/details/5984760)
+
+## 解决Unable to load native-hadoop library for your platform
+
+[解决Unable to load native-hadoop library for your platform](http://blog.csdn.net/succeedloveaaaa/article/details/48596857)
+
+

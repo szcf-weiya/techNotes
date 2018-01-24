@@ -27,3 +27,9 @@ Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Re
 ## vs2015配置opencv
 
 [OpenCV 2.4.13 在 VS2015上的配置](http://blog.csdn.net/lfw198911/article/details/52649459)
+
+## Windows下安装MongoDB 3.2
+
+[Windows下安装MongoDB 3.2](http://blog.csdn.net/u012995964/article/details/50943916)
+
+[MongoDB入门](http://www.cnblogs.com/huangxincheng/archive/2012/02/18/2356595.html)

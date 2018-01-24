@@ -121,3 +121,50 @@ pip install pyqt5
 ## 缺少Python27_d.lib
 
 参考[缺少Python27_d.lib的解决方法](http://blog.csdn.net/junparadox/article/details/52704287)
+
+## 远程访问Jupyter Notebook
+
+[远程访问Jupyter Notebook](http://www.cnblogs.com/zhanglianbo/p/6109939.html)
+
+## 人工鱼群算法-python实现
+
+[人工鱼群算法-python实现](http://www.cnblogs.com/biaoyu/p/4857911.html)
+
+
+## 请问phantom-proxy如何设置代理ip
+
+[请问phantom-proxy如何设置代理ip](https://segmentfault.com/q/1010000000685938)
+
+## python 编码介绍
+
+[Python编码介绍——encode和decode](http://blog.chinaunix.net/uid-27838438-id-4227131.html)
+
+## 爬虫必备requests
+
+[爬虫必备——requests](https://zhuanlan.zhihu.com/p/20410446)
+
+## Python使用代理抓取网站图片（多线程）
+
+[Python使用代理抓取网站图片（多线程）](http://www.jb51.net/article/48112.htm)
+
+## python中threading模块详解
+
+[python中threading模块详解（一）](http://blog.chinaunix.net/uid-27571599-id-3484048.html)
+
+## python 爬虫获取XiciDaili代理IP
+
+[python 爬虫获取XiciDaili代理IP](http://30daydo.com/article/94)
+
+## 使用SQLite
+
+[使用SQLite](https://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001388320596292f925f46d56ef4c80a1c9d8e47e2d5711000)
+
+[python 使用sqlite3](http://www.cnblogs.com/hongten/p/hongten_python_sqlite3.html)
+
+[用Python进行SQLite数据库操作](http://www.cnblogs.com/yuxc/archive/2011/08/18/2143606.html)
+
+[Python调用MongoDB使用心得](https://www.oschina.net/question/54100_27233)
+
+## python urllib2详解及实例
+
+[python urllib2详解及实例](http://www.pythontab.com/html/2014/pythonhexinbiancheng_1128/928.html)

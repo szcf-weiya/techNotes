@@ -186,3 +186,66 @@ while(safeGetline(input, line))
 ## linux gcc常用命令
 
 [Linux GCC常用命令](http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html)
+
+## C++ public/protected/private
+
+[深入理解C++中public、protected及private用法](http://www.jb51.net/article/54224.htm)
+
+## C++按行读取文本文件
+
+[C++按行读取文本文件](http://www.cnblogs.com/freeliver54/archive/2012/06/18/2554173.html)
+
+## struct--构造函数对结构体初始化的影响
+
+[struct--构造函数对结构体初始化的影响](http://blog.csdn.net/wwangluogongchengshi/article/details/6901540)
+
+##
+
+[](https://www.felix021.com/blog/read.php?1587)
+
+## OpenMP 框架
+[通过 GCC 学习 OpenMP 框架](https://www.ibm.com/developerworks/cn/aix/library/au-aix-openmp-framework/)
+
+[C++ Examples of Parallel Programming with OpenMP](https://people.sc.fsu.edu/~jburkardt/cpp_src/openmp/openmp.html)
+
+[C++中cout输出字符型指针地址值的方法](http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html)
+
+[OpenMP topic: Loop parallelism](http://pages.tacc.utexas.edu/~eijkhout/pcse/html/omp-loop.html)
+
+[并行计算—OpenMP—临界区critical](http://blog.csdn.net/ly_624/article/details/52921256)
+
+[OpenMP并行构造的schedule子句详解](http://blog.csdn.net/gengshenghong/article/details/7000979)
+
+## C++11 std::chrono库详解
+
+[C++11 std::chrono库详解](http://www.cnblogs.com/jwk000/p/3560086.html)
+
+## vector::erase()方法的详细介绍及问题解答
+
+[vector::erase()方法的详细介绍及问题解答](http://blog.sina.com.cn/s/blog_6377b8e60100ino6.html)
+
+## 最长递增子序列 O(NlogN)算法 
+
+[最长递增子序列 O(NlogN)算法 ](https://www.felix021.com/blog/read.php?1587)
+
+## c语言中realloc()函数解析
+
+[c语言中realloc()函数解析](http://blog.csdn.net/hackerain/article/details/7954006)
+
+## C语言结构体里的成员数组和指针(关于零数组)
+
+[C语言结构体里的成员数组和指针(关于零数组)](http://blog.csdn.net/yang_yulei/article/details/23395315)
+
+## C语言：数组和指针的区别
+
+[C语言：数组和指针的区别](http://blog.csdn.net/imred/article/details/45441457)
+
+## 1017. The Best Peak Shape (35)
+
+[1017. The Best Peak Shape (35)](http://blog.csdn.net/jtjy568805874/article/details/60339007)
+
+## error: 'stod' was not declared in this scope
+
+[error: 'stod' was not declared in this scope](https://stackoverflow.com/questions/20437984/error-stod-was-not-declared-in-this-scope)
+
+
