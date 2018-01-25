@@ -1,10 +1,11 @@
 # 网站相关笔记
 ## 设置Disqus
 
-https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html
+[https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html](https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html)
 
-迁移disqus讨论
-https://help.disqus.com/customer/en/portal/articles/912627-domain-migration-tool
+[迁移disqus讨论
+](https://help.disqus.com/customer/en/portal/articles/912627-domain-migration-tool
+)
 
 
 disqus迁移（待研究）
@@ -31,7 +32,7 @@ disqus迁移（待研究）
 
 ## iframe
 
-[Embedding a document inside another using the<iframe> tag](http://www.javascriptkit.com/howto/externalhtml.shtml)
+[Embedding a document inside another using the "iframe" tag](http://www.javascriptkit.com/howto/externalhtml.shtml)
 
 ## Variable tags
 

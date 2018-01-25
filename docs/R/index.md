@@ -23,7 +23,7 @@ for (i in c(1:(n-1)))
 
 ## linux更新的问题
 
-查看https://mirrors.tuna.tsinghua.edu.cn/CRAN/ 中的README.md文件
+查看[https://mirrors.tuna.tsinghua.edu.cn/CRAN/](https://mirrors.tuna.tsinghua.edu.cn/CRAN/) 中的README.md文件
 
 ### 更新记录
 1. 找到源码文件夹
