@@ -168,3 +168,22 @@ pip install pyqt5
 ## python urllib2详解及实例
 
 [python urllib2详解及实例](http://www.pythontab.com/html/2014/pythonhexinbiancheng_1128/928.html)
+
+## 使用Selenium
+
+参考[Python爬虫入门实战七：使用Selenium--以QQ空间为例](https://www.jianshu.com/p/ffd02cc9d4ef)
+
+## Python中将打印输出导向日志文件
+
+参考[Python中将打印输出导向日志文件](https://www.cnblogs.com/arkenstone/p/5727883.html)
+
+
+## python 中文编码
+
+参考[python 中文编码(一)](https://www.cnblogs.com/tk091/p/4012004.html)
+
+## Python爬虫利器二之Beautiful Soup的用法
+
+参考[Python爬虫利器二之Beautiful Soup的用法](https://cuiqingcai.com/1319.html)
+
+
