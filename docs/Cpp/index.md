@@ -259,3 +259,8 @@ while(safeGetline(input, line))
 参考[C++中String类的字符串分割实现](http://www.cnblogs.com/carsonzhu/p/5859552.html)
 
 
+## typeinfo.h
+
+参考[C++: typeinfo.h](http://www.cnblogs.com/visayafan/archive/2011/11/29/2268135.html)
+
+

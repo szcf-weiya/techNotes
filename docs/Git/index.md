@@ -174,3 +174,12 @@ git config user.email
 ## Git push与pull的默认行为
 
 参考[Git push与pull的默认行为](https://segmentfault.com/a/1190000002783245)
+
+## GitHub 项目徽章的添加和设置
+
+参考[GitHub 项目徽章的添加和设置](https://www.jianshu.com/p/e9ce56cb24ef)
+
+以及
+
+[shields.io](http://shields.io/)
+

@@ -817,3 +817,9 @@ happy life
 ## 2018.01.06
 
 1. protestant, Catholic
+
+## 2018.01.27
+
+["skewer a sacred cow"](https://english.stackexchange.com/questions/166702/whats-the-meaning-and-the-origin-of-skewer-a-sacred-cow)
+
+
