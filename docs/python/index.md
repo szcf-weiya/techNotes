@@ -185,5 +185,3 @@ pip install pyqt5
 ## Python爬虫利器二之Beautiful Soup的用法
 
 参考[Python爬虫利器二之Beautiful Soup的用法](https://cuiqingcai.com/1319.html)
-
-
