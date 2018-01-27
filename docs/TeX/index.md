@@ -183,4 +183,12 @@ code
 
 参考[Formatting section titles](https://tex.stackexchange.com/questions/36609/formatting-section-titles)
 
+## Letex画复杂表格的方法
+
+参考[Letex画复杂表格的方法](http://blog.csdn.net/jiakunboy/article/details/46355951)
+
+
+## latex 列举 enumerate 编号 样式设定
+
+参考[latex 列举 enumerate 编号 样式设定](http://blog.sina.com.cn/s/blog_7983e5f101019wwq.html)
 
