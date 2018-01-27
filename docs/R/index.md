@@ -261,3 +261,7 @@ plot_grid(plotlist = plots)
 [Estimation of the expected prediction error](http://www.math.ku.dk/~richard/courses/regression2014/DataSplit.html)
 
 
+## 协方差矩阵的几何解释
+
+参考[协方差矩阵的几何解释](http://www.cnblogs.com/nsnow/p/4758202.html)
+

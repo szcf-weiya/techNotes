@@ -249,3 +249,13 @@ while(safeGetline(input, line))
 [error: 'stod' was not declared in this scope](https://stackoverflow.com/questions/20437984/error-stod-was-not-declared-in-this-scope)
 
 
+## 分词
+
+参考[The Porter Stemming Algorithm](https://tartarus.org/martin/PorterStemmer/)
+
+
+## C++中String类的字符串分割实现
+
+参考[C++中String类的字符串分割实现](http://www.cnblogs.com/carsonzhu/p/5859552.html)
+
+
