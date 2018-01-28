@@ -407,6 +407,6 @@ apt-get install nginx
 
 ## 解决Unable to load native-hadoop library for your platform
 
-[解决Unable to load native-hadoop library for your platform](http://blog.csdn.net/succeedloveaaaa/article/details/48596857)
+参考[解决Unable to load native-hadoop library for your platform](http://blog.csdn.net/succeedloveaaaa/article/details/48596857)
 
 
