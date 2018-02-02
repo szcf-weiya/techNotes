@@ -2,34 +2,38 @@ site_name: techNotes
 pages:
     - Home: index.md
     - Linux: Linux/index.md
-    - Internet: Internet/index.md
-    - R: R/index.md
-    - Python: python/index.md
-    - Cuda: cuda/index.md
-    - TeX: TeX/index.md
-    - Matlab: Matlab/index.md
-    - Cpp: Cpp/index.md
-    - Css: css/index.md
-    - SQL: SQL/index.md
-    - Js: js/index.md
-    - Autotools: autotools/index.md
-    - Graph: graph/index.md
-    - Qt: Qt/index.md
+    - Programming:
+      - R: R/index.md
+      - Python: python/index.md
+      - Matlab: Matlab/index.md
+      - Cpp: Cpp/index.md
+      - Julia: julia/index.md
+      - Java: java/index.md
+      - TeX: TeX/index.md
+      - SQL: SQL/index.md
+      - Cuda: cuda/index.md
+    - Website:
+      - Website: website/index.md
+      - Css: css/index.md
+      - Js: js/index.md  
+    - Network: Internet/index.md
+    - Tools:
+      - Autotools: autotools/index.md  
+      - Emacs: Emacs/index.md
+      - Vi: vi/index.md    
+      - Ssh: ssh/index.md
+      - Git: Git/index.md
+      - Phantomjs: phantomjs/index.md
+      - Qt: Qt/index.md
+    - Stats
+      - Calculus: calculus/index.md
+      - Scientific: scientific/index.md
+      - Graph: graph/index.md
     - English: English/index.md
-    - Calculus: calculus/index.md
-    - Julia: julia/index.md
     - Mi: mi/index.md
     - Win: win/index.md
-    - Website: website/index.md
-    - Emacs: Emacs/index.md
-    - Vi: vi/index.md
-    - Scientific: scientific/index.md
-    - Misc: misc/index.md
-    - Ssh: ssh/index.md
-    - Phantomjs: phantomjs/index.md
-    - Java: java/index.md
-    - Git: Git/index.md
     - Links: links/index.md
+    - Misc: misc/index.md
 
 theme: 'material'
 google_analytics: ['UA-85007363-6', 'auto']
