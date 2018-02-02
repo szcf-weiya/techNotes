@@ -25,7 +25,7 @@ pages:
       - Git: Git/index.md
       - Phantomjs: phantomjs/index.md
       - Qt: Qt/index.md
-    - Stats
+    - Stats:
       - Calculus: calculus/index.md
       - Scientific: scientific/index.md
       - Graph: graph/index.md
