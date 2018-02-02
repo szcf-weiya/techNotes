@@ -48,7 +48,10 @@ extra:
       link: 'https://blog.hohoweiya.xyz'
     - type: 'envelope'
       link: 'mailto:szcfweiya@gmail.com'
- 
+
+repo_name: 'szcf-weiya/techNotes'
+repo_url: 'https://github.com/szcf-weiya/techNotes'
+
 markdown_extensions:
   - admonition
   - codehilite
