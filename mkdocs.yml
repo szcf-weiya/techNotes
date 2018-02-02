@@ -63,4 +63,4 @@ markdown_extensions:
   - sane_lists
   - meta
   - toc:
-    permalink: true
+      permalink: true
