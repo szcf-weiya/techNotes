@@ -189,3 +189,18 @@ pip install pyqt5
 ## 正则表达式之捕获组/非捕获组介绍
 
 参考[正则表达式之捕获组/非捕获组介绍](http://www.jb51.net/article/28035.htm)
+
+## python pip 采用国内镜像
+
+在win10下设置，参考[Python pip 国内镜像大全及使用办法](http://blog.csdn.net/testcs_dn/article/details/54374849)
+
+在用户文件夹下新建pip文件夹，里面新建pip.ini文件
+
+```txt
+[global]
+index-url=http://mirrors.aliyun.com/pypi/simple/
+[install]
+trusted-host=mirrors.aliyun.com
+```
+
+注意编码格式为utf8无BOM。
