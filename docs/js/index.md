@@ -165,6 +165,7 @@ console.log(patt1.test(str));
 console.log(patt1.exec(str));
 ```
 运行结果为
+
 ![](regexp_res1.PNG)
 
 ```js
@@ -174,6 +175,7 @@ console.log(patt1.exec(str));
 console.log(patt1.exec(str));
 ```
 运行结果为
+
 ![](regexp_res2.PNG)
 
 ### HTML DOM Document 对象
