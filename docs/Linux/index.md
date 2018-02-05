@@ -115,11 +115,11 @@ sudo rm /var/lib/dpkg/lock
 [http://www.bubuko.com/infodetail-1319039.html](http://www.bubuko.com/infodetail-1319039.html)
 ```
 ##创建一个大小为1G的文件/swap
-dd if=/dev/zero of=/swap bs=1024 count=1M    
+dd if=/dev/zero of=/swap bs=1024 count=1M
 ##将/swap作为swap空间
-mkswap /swap                                                 
+mkswap /swap
 ##enable /swap file  for paging and swapping
-swapon /swap                   
+swapon /swap
 ##Enable swap on boot, 开机后自动生效
 echo "/swap swap swap sw 0 0" >> /etc/fstab
 ```
@@ -377,7 +377,7 @@ apt-get install nginx
 
 [Install circos on ubuntu 14.04 LTS](https://gist.github.com/dyndna/18bb71494e021f672510)
 
-## makefile 
+## makefile
 
 [Makefile经典教程(掌握这些足够)](http://blog.csdn.net/ruglcc/article/details/7814546/)
 
@@ -390,7 +390,7 @@ apt-get install nginx
 [几种方法来实现scp拷贝时无需输入密码](http://blog.csdn.net/nfer_zhuang/article/details/42646849)
 
 
-## time命令中的real,user以及sys时间 
+## time命令中的real,user以及sys时间
 
 [time命令中的real,user以及sys时间](http://blog.chinaunix.net/uid-23177306-id-2531034.html)
 
@@ -409,4 +409,15 @@ apt-get install nginx
 
 参考[解决Unable to load native-hadoop library for your platform](http://blog.csdn.net/succeedloveaaaa/article/details/48596857)
 
+## Vultr配置shadowsocks
 
+按照之前的配置方法，不可用，于是参考[轻松在 VPS 搭建 Shadowsocks 翻墙](https://www.diycode.cc/topics/738)进行配置。
+
+## CentOS7搭建Apache
+
+参考资料
+
+1. [How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7)
+2. [CentOS 7.2 利用yum安装配置Apache2.4多虚拟主机](http://www.linuxidc.com/Linux/2017-10/147667.htm)
+
+按照第一个链接的指示，并不能成功访问。于是尝试参考第二个链接修改配置文件。
