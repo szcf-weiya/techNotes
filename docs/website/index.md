@@ -43,3 +43,31 @@ disqus迁移（待研究）
 
 [Track Non-JavaScript Visits In Google Analytics](https://www.simoahava.com/analytics/track-non-javascript-visits-google-analytics/)
 
+## Ubuntu 搭建Apache
+
+参考[How To Install the Apache Web Server on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04)
+
+
+[How To Install Linux, Apache, MySQL, PHP (LAMP) stack on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04)
+
+自定义根目录注意设置权限。如
+
+[Apache2: 'AH01630: client denied by server configuration'](https://stackoverflow.com/questions/18392741/apache2-ah01630-client-denied-by-server-configuration)
+
+## Disqus国内访问
+
+参考资料
+
+1. [fooleap/disqus-php-api](https://github.com/fooleap/disqus-php-api)
+1. [科学使用 Disqus](http://blog.fooleap.org/use-disqus-correctly.html)
+1. [检测网络是否能够访问 Disqus](http://blog.fooleap.org/check-network-able-to-access-disqus.html)
+1. [https://imququ.com/post/first-half-of-2016-blog-analytics.html#simple_thread](https://imququ.com/post/first-half-of-2016-blog-analytics.html#simple_thread)
+
+2. [~~解决Hexo博客中 Disqus 在国内不能访问的方案~~](https://www.jianshu.com/p/9cc4cc8628c9)
+
+### 服务器端配置过程
+
+```bash
+git clone git@github.com:fooleap/disqus-php-api.git
+```
+
