@@ -421,3 +421,5 @@ apt-get install nginx
 2. [CentOS 7.2 利用yum安装配置Apache2.4多虚拟主机](http://www.linuxidc.com/Linux/2017-10/147667.htm)
 
 按照第一个链接的指示，并不能成功访问。于是尝试参考第二个链接修改配置文件。
+
+未果，结果按照cy的建议，释放掉了这个服务器。
