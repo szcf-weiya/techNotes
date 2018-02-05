@@ -26,7 +26,23 @@ Ubuntu 下 kazam 录屏 没声音解决方案
 
 ## add user
 
-[http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672](http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672)
+参考[https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04](http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672)
+
+```bash
+useradd -m -s /bin/bash userName
+passwd userName
+```
+
+增加sudo权限
+
+```bash
+sudoedit /etc/sudoers
+// 在配置文件中找到如下位置，并添加userName1那一行。
+## Allow root to run any commands anywhere
+root    ALL=(ALL)       ALL
+userName1 ALL=(ALL)       NOPASSWD:ALL
+userName2 ALL=(ALL)       ALL
+```
 
 ## sudo
 
