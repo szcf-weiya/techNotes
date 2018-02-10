@@ -439,3 +439,10 @@ apt-get install nginx
 按照第一个链接的指示，并不能成功访问。于是尝试参考第二个链接修改配置文件。
 
 未果，结果按照cy的建议，释放掉了这个服务器。
+
+## 命令最后的&
+
+参考[What does “&” at the end of a linux command mean?](https://stackoverflow.com/questions/13338870/what-does-at-the-end-of-a-linux-command-mean)
+
+表示在后台运行。
+
