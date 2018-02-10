@@ -58,6 +58,7 @@ extra:
 
 repo_name: 'szcf-weiya/techNotes'
 repo_url: 'https://github.com/szcf-weiya/techNotes'
+edit_url: ""
 
 markdown_extensions:
   - admonition
