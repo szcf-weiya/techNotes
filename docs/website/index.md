@@ -71,3 +71,19 @@ disqus迁移（待研究）
 git clone git@github.com:fooleap/disqus-php-api.git
 ```
 
+## 博客中插入网易云音乐
+
+这个很容易实现，只需要在网易云中搜索要插入的音乐，然后点击“生成外链播放器”，将iframe代码插入博客的相应位置。
+
+比如，我想在[不愿沉默如谜]()插入容祖儿的[重生](http://music.163.com/#/song?id=522631413)。点击页面中的“生成外链播放器”，将iframe代码放进原md文件中。但一开始有问题，iframe被当成普通的md文本。在[Jekyll raw HTML in post](https://stackoverflow.com/questions/30233461/jekyll-raw-html-in-post)中找到了答案。
+
+网易云给的iframe代码为
+
+```html
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=522631413&auto=1&height=66"></iframe>
+```
+
+要将`width=330 height=86`改成`width="330" height="86"`，果然成功了。效果页面如下：
+
+![![](music.png)](https://blog.hohoweiya.xyz/movie/2017/12/30/unwilling-to-be-silent.html)
+
