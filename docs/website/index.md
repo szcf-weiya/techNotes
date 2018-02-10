@@ -85,5 +85,5 @@ git clone git@github.com:fooleap/disqus-php-api.git
 
 要将`width=330 height=86`改成`width="330" height="86"`，果然成功了。效果页面如下：
 
-![![](music.png)](https://blog.hohoweiya.xyz/movie/2017/12/30/unwilling-to-be-silent.html)
+[![](music.png)](https://blog.hohoweiya.xyz/movie/2017/12/30/unwilling-to-be-silent.html)
 
