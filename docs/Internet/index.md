@@ -170,3 +170,14 @@ Ubuntu下配置rvpn，需要浏览器启用JAVA插件，但新版本的chrome和
 ```
 proxychains curl ip.cn
 ```
+
+## hosts文件原理
+
+有段时间是采用更改hosts文件来访问谷歌，但其背后的原理一直不甚清楚。突然想到这个问题，看了下面的两个博客，大致明白了。
+
+简单来说，其目的跟dns解析域名一样，但是优先级更高，如果本机hosts文件中已经有了某域名的ip映射，则不需要通过dns返回域名ip。
+
+更多细节可以参考这两个博客
+
+1. [host文件的工作原理及应用](http://blog.csdn.net/tskyfree/article/details/41214829)
+2. [简单科普下hosts文件原理与制作 | 老D博客](https://laod.cn/hosts/hosts-file-making.html)
