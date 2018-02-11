@@ -822,4 +822,7 @@ happy life
 
 ["skewer a sacred cow"](https://english.stackexchange.com/questions/166702/whats-the-meaning-and-the-origin-of-skewer-a-sacred-cow)
 
+## 2018.02.11
+
+1. Etymology
 
