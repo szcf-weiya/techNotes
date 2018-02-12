@@ -265,3 +265,62 @@ plot_grid(plotlist = plots)
 
 参考[协方差矩阵的几何解释](http://www.cnblogs.com/nsnow/p/4758202.html)
 
+## ROCR包中prediction函数
+
+`prediction`定义如下
+
+```r
+prediction(predictions, labels, label.ordering = NULL)
+```
+
+在绘制ROC曲线时，必要时需要指定`label.ordering`中negative和positive，否则结果会完全相反。举个例子
+
+```r
+## generate some data with a non-linar class boundary
+set.seed(123)
+x = matrix(rnorm(200*2), ncol = 2)
+x[1:100, ] = x[1:100, ] + 2
+x[101:150, ] = x[101:150, ] - 2
+y = c(rep(1, 150), rep(2, 50))
+dat = data.frame(x = x, y = as.factor(y))
+plot(x, col = y)
+
+## randomly split into training and testing groups
+train = sample(200, 100)
+
+## training data using radial kernel
+svmfit = svm(y~., data = dat[train, ], kernel = "radial", cost = 1)
+plot(svmfit, dat[train, ])
+
+## cross-validation 
+set.seed(123)
+tune.out = tune(svm, y~., data = dat[train, ], kernel = "radial",
+                ranges = list(cost = c(0.1, 1, 10, 100, 1000),
+                              gamma = c(0.5, 1, 2, 3, 4)))
+summary(tune.out)
+
+## prediction
+table(true = dat[-train, "y"], pred = predict(tune.out$best.model, newdata = dat[-train, ]))
+
+## ROC curves
+library(ROCR)
+rocplot = function ( pred , truth , ...) {
+  predob = prediction ( pred, truth , label.ordering = c("2", "1"))
+  perf = performance ( predob , "tpr" , "fpr")
+  plot ( perf,...) 
+}
+svmfit.opt = svm(y~., data = dat[train, ], kernel = "radial",
+                 gamma = 3, cost = 10, decision.values = T)
+fitted = attributes(predict(svmfit.opt, dat[train, ], decision.values = T))$decision.values
+
+rocplot ( fitted , dat [ train ,"y"] , main ="Training Data")
+```
+
+对于上述代码，如果不指定`label.ordering = c("2", "1")`，则得到的ROC曲线如下图
+
+![](roc_wrong.png)
+
+原因是因为`fitted`与`y`大小关系相反，即前者大时后者小，而前者小时后者大。
+
+![](roc_fact.png)
+
