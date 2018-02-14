@@ -21,6 +21,7 @@ Some interesting links.
 1. http://downforeveryoneorjustme.com/
 2. http://ujjwalkarn.github.io/Machine-Learning-Tutorials/
 3. 在线处理图片：http://funny.pho.to/sketch/
+
 ## TODO
 
 ### Google Summer Of Code 2018
@@ -38,3 +39,7 @@ Past Organizations
 Apply
 
 https://developers.google.com/open-source/gsoc/
+
+## 有用但希望不会用到的网站
+
+1. [中国医院及专科声誉排行榜](http://www.fudanmed.com/institute/news222.aspx)
