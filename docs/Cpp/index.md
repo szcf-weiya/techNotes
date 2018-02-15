@@ -264,3 +264,18 @@ while(safeGetline(input, line))
 参考[C++: typeinfo.h](http://www.cnblogs.com/visayafan/archive/2011/11/29/2268135.html)
 
 
+## exit(0), exit(1)和return的区别
+
+参考[exit（0）与exit（1）、return区别 - ITtecman - 博客园](http://www.cnblogs.com/nufangrensheng/archive/2013/03/01/2938508.html)
+
+- exit(0): 正常运行程序并退出程序
+- exit(1): 非正常运行导致退出程序
+- return: 返回函数
+
+## 命令行参数的传入
+
+参考[使用 getopt() 进行命令行处理](https://www.ibm.com/developerworks/cn/aix/library/au-unix-getopt.html)
+
+## variably modeified type in C language
+
+参考[Variably modified type in C language - Stack Overflow](https://stackoverflow.com/questions/23529069/variably-modified-type-in-c-language)

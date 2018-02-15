@@ -92,3 +92,9 @@ git clone git@github.com:fooleap/disqus-php-api.git
 参考[How To Set Up Nginx Server Blocks (Virtual Hosts) on Ubuntu 14.04 LTS](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-14-04-lts)
 
 实现将本站用webhooks将其更新至阿里云服务器上，这与eslcn是同一个服务器，所以通过建立虚拟主机实现。
+
+
+## jekyll中的相对路径
+
+参考[Relative paths in Jekyll](https://ricostacruz.com/til/relative-paths-in-jekyll)
+
