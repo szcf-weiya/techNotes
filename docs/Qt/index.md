@@ -1,11 +1,14 @@
-# Qt的安装
+# Qt相关知识
+
+## Qt的安装
 
 [reference](https://wiki.qt.io/Install_Qt_5_on_Ubuntu)
 
-# slot
+## slot
 [ref](http://blog.chinaunix.net/uid-9787967-id-1988915.html)
 
-# MENU
+## MENU
+
 [menu](http://www.cnblogs.com/shiyumiao/p/5208210.html)
 
 ## 文件对话框
