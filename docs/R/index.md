@@ -27,16 +27,18 @@ for (i in c(1:(n-1)))
 
 ### 更新记录
 1. 找到源码文件夹
-```{r}
+
+```r
 sudo make uninstall
 ```
+
 2. 配置source.list，安装。
 
 ## 终端执行R code
 
 [reference](https://stackoverflow.com/questions/18306362/run-r-script-from-command-line)
 
-```
+```bash
 touch main.R
 vi main.R
 ### in main.R
@@ -52,7 +54,8 @@ vi main.R
 [init](https://github.com/rstudio/shiny-server/issues/153)
 
 ## 删除
-```
+
+```bash
 rm(list = ls(all = TRUE))
 ```
 
@@ -90,7 +93,7 @@ Refer to [https://stats.stackexchange.com/questions/108995/interpreting-residual
 
 虽然缺少libRblas.so和libRlapack.so，但却有libblas.so和liblapack.so，而它们应该是一样的，只是文件名不同而已，为此添加链接即可。
 
-```
+```bash
 cd /usr/lib
 ln -s libblas.so libRblas.so
 ln -s /usr/lib/R/module/lapack.so libRlapack.so
@@ -112,7 +115,7 @@ ln -s /usr/lib/R/module/lapack.so libRlapack.so
 
 手动设置
 
-```
+```bash
 cd /usr/local lib
 ##cd /usr/lib
 ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcpp.so
@@ -121,11 +124,13 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 ## function 'dataptr' not provided by package 'Rcpp'
 
 原因是因为没有在
-```
+
+```r
 dyn.load()
 ```
 前面添加
-```
+
+```r
 library(Rcpp)
 ## 或require(Rcpp)
 ```
@@ -140,7 +145,7 @@ check locale
 
 ## Mathematical Annotation in R plot
 
-```
+```r
 plot(..., main = expression(paste("...", mu[1])))
 ```
 
