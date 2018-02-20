@@ -204,3 +204,23 @@ trusted-host=mirrors.aliyun.com
 ```
 
 注意编码格式为utf8无BOM。
+
+## conda 在window下设置
+
+win10下已经装了anaconda，spyder(2.7)，现想再装上python3，于是利用conda创建一个python3的环境`bunny`。
+
+```cmd
+conda create --name bunny python=3
+```
+
+切换到bunny环境
+
+```cmd
+activate bunny
+```
+
+参考[spyder3 doc](https://pythonhosted.org/spyder/installation.html)
+
+```cmd
+pip install spyder3
+```
