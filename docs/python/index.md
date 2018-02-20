@@ -224,3 +224,10 @@ activate bunny
 ```cmd
 pip install spyder3
 ```
+
+## 又拍云的短信平台
+
+参考文献
+
+1. [Python 使用requests发送POST请求 - CSDN博客](http://blog.csdn.net/junli_chen/article/details/53670887)
+2. [Python-爬虫-requests库用语post登录](https://www.cnblogs.com/fredkeke/p/7000687.html)
