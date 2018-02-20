@@ -186,21 +186,6 @@ output:
 ---
 ```
 
-## ggplot同时绘制多个密度图
-
-参考[使用ggplot2同时绘制多个密度图](https://www.tuicool.com/articles/3aUnem7)
-
-```r
-plots <- NULL
-for(i in colnames(train)){ plots[[i]] <- ggplot(train) + geom_density(aes_string(x = i, fill = 'is_black'), alpha = 0.5, show.legend = F) + xlab("") + ylab(""); }
-plot_grid(plotlist = plots)
-```
-
-## ggplot绘制概率密度图
-
-[ggplot2绘制概率密度图](http://www.cnblogs.com/wwxbi/p/6142410.html)
-
-[Plotting distributions (ggplot2)](http://www.cookbook-r.com/Graphs/Plotting_distributions_(ggplot2)/)
 
 ## 在grid排列图
 
