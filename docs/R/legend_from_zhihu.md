@@ -60,6 +60,18 @@ ggplot()+#geom_ribbon(data=ribbon,aes(ymin=min,ymax=max,x=x.ribbon,fill='lightgr
 
 一开始对原知乎问题给出下面的解法
 
+```r
+px <- ggplot()+
+  geom_point(data = plotdatax, aes(x= number , y= datax, color = "red"), size=2 ) +
+  geom_line(data = plotdatax, aes(x=number,y = dataxo, color = "black"), size = 1 ) +
+  scale_color_manual(name = "group",
+                     values = c('red' = 'red', "black" = 'black'), 
+                     breaks = c("red", "black"),
+                     labels = c('数据', '原始数据')) 
+```
+
+![](px_o.png)
+
 但图例同时存在shape和linetype，对于普通的`plot`，可以用`NA`来使得point type或linetype不显示，具体可以参考[R plot: Displaying both point type and line type in legend | stackoverflow](https://stackoverflow.com/questions/37897984/r-plot-displaying-both-point-type-and-line-type-in-legend)。
 
 ```r
