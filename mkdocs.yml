@@ -2,8 +2,10 @@ site_name: techNotes
 pages:
     - Home: index.md
     - Linux: Linux/index.md
+    - R: 
+      - 一般问题: R/index.md
+      - 案例分析: R/legend_from_zhihu.md
     - Programming:
-      - R: R/index.md
       - Python: python/index.md
       - Matlab: Matlab/index.md
       - Cpp: Cpp/index.md
