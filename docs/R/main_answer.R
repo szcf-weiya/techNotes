@@ -35,16 +35,19 @@ plotdataz <- as.data.frame(z.matrix)
 
 
 px <- ggplot()+
-  geom_point(data = plotdatax, aes(x= number , y= datax, color = "red", shape = "A", linetype = "A"), size=2 ) +
-  geom_point(data = plotdatax, aes(x=number,y = dataxo, color = "black", shape = "B", linetype = "B"), size = 1 ) +
+  geom_point(data = plotdatax, aes(x= number , y= datax, color = "red"), size=2 ) +
+  geom_line(data = plotdatax, aes(x=number,y = dataxo, color = "black"), size = 1 ) +
   scale_color_manual(name = "group",
                      values = c('red' = 'red', "black" = 'black'), 
                      breaks = c("red", "black"),
                      labels = c('数据', '原始数据')) + 
   scale_shape_manual(name = "group",
                      values = c("A" = 16, "B" = 18), 
-                     labels = c('数据', '原始数据'))
-
+                     labels = c('数据', '原始数据')) + 
+  scale_linetype_manual(name = "group",
+                        values = c("A" = 0, "B" = 1), 
+                        labels = c('数据', '原始数据'))
+px
 # pure line or point
 
 px <- ggplot()+
