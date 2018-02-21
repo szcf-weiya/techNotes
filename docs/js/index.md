@@ -192,3 +192,34 @@ console.log(patt1.exec(str));
 sudo apt-get install yui-compressor
 yui-compressor myfile.js > myfile.min.js
 ```
+
+## 双感叹号
+
+参考[JavaScript中双叹号(!!)作用示例介绍_javascript技巧_脚本之家](http://www.jb51.net/article/48881.htm)
+
+举个例子
+
+```js
+var a;
+var b=!!a;
+```
+
+`a`默认是`undefined`。`!a`为`true`，`!!a`则为`false`。
+
+`!!`一般用来将后面的表达式强制转换为布尔类型的数据。
+
+> 因为JavaScript是弱类型的语言（变量没有固定的数据类型），所以有时需要强制转换为相应的类型，如
+
+```js
+a=parseInt(“1234″) 
+a=”1234″-0 //转换为数字 
+b=1234+”” //转换为字符串 
+c=someObject.toString() //将对象转换为字符串
+```
+
+其中第1种、第4种为显式转换，2、3为隐式转换 
+
+## 布尔类型的转换
+
+![](bool_js.PNG)
+
