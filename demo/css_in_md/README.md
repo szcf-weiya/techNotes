@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="toy.css">
 
-<p id="toy>这是引入的外部css</p>
+<p id="toy">这是引入的外部css</p>
 
 这是普通的文字。
 
