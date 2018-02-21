@@ -446,3 +446,6 @@ apt-get install nginx
 
 表示在后台运行。
 
+## crontab定时任务
+
+参考[Linux 设置定时任务crontab命令](https://www.cnblogs.com/zoulongbin/p/6187238.html)
