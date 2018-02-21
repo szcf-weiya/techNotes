@@ -133,3 +133,9 @@ ggplot(data=PlantGrowth, aes(x=group, fill=group)) +
     geom_bar() +
     geom_bar(colour="black", show.legend=FALSE)
 ```
+
+## Treemaps
+
+源于[碎片化的饼图是如何制作出来的，能否用excel或者R实现？ | 知乎](https://www.zhihu.com/question/267353430)
+
+目前查阅到的有参考价值的为treemap和treemapify，但似乎都只针对矩形，对于原知乎问题中的圆形碎片化尚不能实现，目前想法是阅读这两个package的源代码，看能否找到突破口。

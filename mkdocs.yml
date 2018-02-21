@@ -4,6 +4,7 @@ pages:
     - Linux: Linux/index.md
     - R: 
       - 一般问题: R/index.md
+      - ggplot作图: R/ggplot.md
       - 案例分析: R/legend_from_zhihu.md
     - Programming:
       - Python: python/index.md
