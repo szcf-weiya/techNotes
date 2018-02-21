@@ -183,3 +183,12 @@ console.log(patt1.exec(str));
 参考[HTML DOM Document 对象](http://www.runoob.com/jsref/dom-obj-document.html)
 
 本例中，`document.referrer`用来返回载入当前文档的文档的 URL。
+
+## 命令行压缩js
+
+参考[command line - Minify tool that can be executed through terminal - Ask Ubuntu](https://askubuntu.com/questions/321146/minify-tool-that-can-be-executed-through-terminal)
+
+```bash
+sudo apt-get install yui-compressor
+yui-compressor myfile.js > myfile.min.js
+```
