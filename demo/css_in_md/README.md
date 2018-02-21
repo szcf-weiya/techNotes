@@ -9,15 +9,8 @@ md文件可以直接当成html文件处理，直接用下面的代码引入`toy.
 ```
 
 ## 效果
-
-<link rel="stylesheet" href="toy.css">
-
-<div id="toy">这是引入的外部css</div>
-
-这是普通的文字。
-
-生成html效果如下：
+在`index.md`文件中引入`toy.css`，生成的html效果如下：
 
 ![](res.png)
 
-查看README.html及README.md源文件比较差异。
+查看index.html及index.md源文件比较差异。
