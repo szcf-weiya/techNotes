@@ -258,15 +258,15 @@ convert -quality 50%
 
 refer to [Client Compile](https://wiki.filezilla-project.org/Client_Compile)
 
-download latest libfilezilla from https://lib.filezilla-project.org/download.php
+download latest libfilezilla from [https://lib.filezilla-project.org/download.php](https://lib.filezilla-project.org/download.php)
 
-add wxWidget's repository according to http://codelite.org/LiteEditor/WxWidgets31Binaries#toc2
+add wxWidget's repository according to [http://codelite.org/LiteEditor/WxWidgets31Binaries#toc2](http://codelite.org/LiteEditor/WxWidgets31Binaries#toc2)
 
 pay attention to the version, NOT 3.1.0.
 
-http://codelite.org/LiteEditor/WxWidgets30Binaries
+[http://codelite.org/LiteEditor/WxWidgets30Binaries](http://codelite.org/LiteEditor/WxWidgets30Binaries)
 
-require libgnutls 3.4.15 or greater, download from  https://gnutls.org/
+require libgnutls 3.4.15 or greater, download from  [https://gnutls.org/](https://gnutls.org/)
 
 require sqlite3.h
 ```
@@ -346,7 +346,7 @@ rename -v 's/Sam3/Stm32/' *.nc　　/*执行修改，并列出已重命名的文
 
 ## 关闭screen
 
-参考https://stackoverflow.com/questions/1509677/kill-detached-screen-session
+参考[https://stackoverflow.com/questions/1509677/kill-detached-screen-session](https://stackoverflow.com/questions/1509677/kill-detached-screen-session)
 
 ```bash
 screen -list #或screen -r
