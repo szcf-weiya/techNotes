@@ -98,3 +98,16 @@ git clone git@github.com:fooleap/disqus-php-api.git
 
 参考[Relative paths in Jekyll](https://ricostacruz.com/til/relative-paths-in-jekyll)
 
+## URL 和 URI
+
+参考[URL 和 URI 有什么不同? - 知乎](https://www.zhihu.com/question/19557151)
+
+引用个人觉得简洁明了的回答
+
+> URI (Identifier) 只讓你可以"區別"資源
+> URL (Locator) 還讓你可以"找到"資源 (所以URL比一般的URI更"強", 是URI的子集)比如人的身份證號是 (非Locator的) Identifier: 不同身份證號一定是不同人, 但是用身份證號本身是找不到人的。这个人的住址或座标才是Locator。
+> 
+> 作者：艾征霸
+> 链接：https://www.zhihu.com/question/19557151/answer/130049112
+> 来源：知乎
+> 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
