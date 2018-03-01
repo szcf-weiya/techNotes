@@ -32,3 +32,15 @@ Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Re
 [Windows下安装MongoDB 3.2](http://blog.csdn.net/u012995964/article/details/50943916)
 
 [MongoDB入门](http://www.cnblogs.com/huangxincheng/archive/2012/02/18/2356595.html)
+
+## Windows 10 安装 rJava
+
+1. windows 10
+2. R 3.3.0
+3. jdk 1.8.0
+
+成功安装rJava需要jvm.dll这个文件，所以很简单的做法就是把这个文件的路径添加到环境变量中，比如该文件在我电脑上的安装目录为
+
+> C:\Program Files\Java\jdk1.8.0_102\jre\bin\server
+
+你把这个路径加到环境变量中的PATH中就ok了。
