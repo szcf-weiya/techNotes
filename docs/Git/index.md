@@ -31,7 +31,7 @@ git config --global http.postBuffer 524288000
 ```git
 git clone ....
 cd ..
-git clone -a
+git branch -a
 git checkout -b gh-pages origin/gh-pages
 ```
 
