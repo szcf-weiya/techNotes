@@ -192,3 +192,20 @@ code
 
 参考[latex 列举 enumerate 编号 样式设定](http://blog.sina.com.cn/s/blog_7983e5f101019wwq.html)
 
+## 二阶导数符号
+
+在tex中一般直接用
+
+```tex
+$f''$
+```
+
+但是在md中，当渲染成网页后，有时会渲染成了普通的引号，如下图
+
+![](prime.PNG)
+
+参考[How to write doubleprime in latex](https://tex.stackexchange.com/questions/210290/how-to-write-doubleprime-in-latex)
+
+1. `\dprime`和`\trprime`需要`unicode-math`
+2. `f^{\prime\prime}`代替`f''`可以解决问题。
+
