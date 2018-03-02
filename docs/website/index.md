@@ -111,3 +111,18 @@ git clone git@github.com:fooleap/disqus-php-api.git
 > 链接：https://www.zhihu.com/question/19557151/answer/130049112
 > 来源：知乎
 > 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+## nginx配置跳转
+
+比如将所有`http://ServerIP/10 Boosting and Additive Trees/.*`的访问301重定向到`http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html`，在nginx配置文件中添加
+```cmd
+location ^~ '/10 Boosting and Additive Trees/' {
+        rewrite ^/.* http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html permanent;
+}
+```
+
+几点说明：
+
+1. 含等号时，不需要用`%20`进行编码，但需要加上引号，否则会报错，“invalid number of arguments in "location" directive”，参考[nginx-rewrite-that-includes-a-blank-space](https://stackoverflow.com/questions/12101690/nginx-rewrite-that-includes-a-blank-spce)
+2. 具体location匹配参考[nginx location 匹配规则](http://blog.csdn.net/wu5215080/article/details/55050858)
+3. 参考[how-to-redirect-single-url-in-nginx](https://stackoverflow.com/questions/18037716/how-to-redirect-single-url-in-nginx)
