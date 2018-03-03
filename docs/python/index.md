@@ -231,3 +231,48 @@ pip install spyder3
 
 1. [Python 使用requests发送POST请求 - CSDN博客](http://blog.csdn.net/junli_chen/article/details/53670887)
 2. [Python-爬虫-requests库用语post登录](https://www.cnblogs.com/fredkeke/p/7000687.html)
+
+## json与字符串
+
+```python
+payload='{'name': weiya}'
+# payload='payload = {'name': weiya}'
+```
+
+换成json
+```python
+json.loads(payload)
+```
+
+!!! warning
+    注意不能采用注释掉的部分。
+
+## unquote %7B character
+
+参考[transform-url-string-into-normal-string-in-python-20-to-space-etc](https://stackoverflow.com/questions/11768070/transform-url-string-into-normal-string-in-python-20-to-space-etc)
+
+1. python2
+
+```python
+import urllib2
+print urllib2.unquote("%CE%B1%CE%BB%20")
+```
+
+2. python3
+
+```python
+from urllib.parse import unquote
+print(unquote("%CE%B1%CE%BB%20"))
+```
+
+## convert bytes to string
+
+参考[convert-bytes-to-a-string](https://stackoverflow.com/questions/606191/convert-bytes-to-a-string)
+
+```python
+b"abcde".decode("utf-8") 
+```
+
+## json.dumps() 和json.dump()的区别
+
+简言之，`dumps()`和`loads()`都是针对字符串而言的，而`dump()`和`load()`是针对文件而言的。具体细节可疑参见[python json.dumps()  json.dump()的区别 - wswang - 博客园](https://www.cnblogs.com/wswang/p/5411826.html)
