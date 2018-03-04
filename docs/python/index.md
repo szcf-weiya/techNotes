@@ -293,3 +293,11 @@ r/R:非转义的原始字符串
 b:bytes 
 python3.x里默认的str是(py2.x里的)unicode, bytes是(py2.x)的str, b”“前缀代表的就是bytes 
 python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这种写法
+
+## mdx_math安装命令
+
+参考[manage-your-cms-using-mkdocs](http://wutongtree.github.io/devops/manage-your-cms-using-mkdocs)
+
+```bash
+sudo pip install python-markdown-math
+```
