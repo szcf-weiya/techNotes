@@ -187,4 +187,4 @@ git config user.email
 
 参考[Web Hooks - execute only for specified branches #1176](https://github.com/gitlabhq/gitlabhq/issues/1176)@rtripault
 
-提取json中的`ref`
+提取json中的`ref`，在`do_POST()`中进行设置响应动作。
