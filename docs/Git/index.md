@@ -186,3 +186,5 @@ git config user.email
 ## webhooks响应特定分支的push
 
 参考[Web Hooks - execute only for specified branches #1176](https://github.com/gitlabhq/gitlabhq/issues/1176)@rtripault
+
+提取json中的`ref`
