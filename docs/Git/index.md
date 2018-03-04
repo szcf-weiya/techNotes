@@ -183,3 +183,6 @@ git config user.email
 
 [shields.io](http://shields.io/)
 
+## webhooks响应特定分支的push
+
+参考[Web Hooks - execute only for specified branches #1176](https://github.com/gitlabhq/gitlabhq/issues/1176)@rtripault
