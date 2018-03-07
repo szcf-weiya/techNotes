@@ -830,3 +830,7 @@ happy life
 
 1. epilogue
 2. indebted
+
+## 2018.03.07
+1. facilitate
+2. collinearity
