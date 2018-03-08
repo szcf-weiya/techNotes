@@ -209,3 +209,62 @@ $f''$
 1. `\dprime`和`\trprime`需要`unicode-math`
 2. `f^{\prime\prime}`代替`f''`可以解决问题。
 
+## bibtex文献加颜色
+
+
+两种方式
+
+第一种
+
+```tex
+\hypersetup{
+    colorlinks,
+    citecolor=green,
+    linkcolor=black
+}
+```
+
+但这个只会对参考文献中可点击的部分起作用，比如实际中只对年份起了作用。
+
+第二种可以自定义命令
+
+```tex
+\DeclareCiteCommand{\cite}
+  {\color{red}\usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\parencite}[\mkcolorbibparens]
+  {\usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+```
+
+
+参考
+1. [Beamer, Citation coloring](https://tex.stackexchange.com/questions/369710/beamer-citation-coloring)
+
+## 将引用的年份用括号框起来
+
+参考[Put parentheses around year in citation](https://tex.stackexchange.com/questions/104518/put-parentheses-around-year-in-citation)
+
+采用`natbib`中的`\citet`
+
+但若已经按照上个问题设置了颜色，则颜色失效。
+
+## 设置item之间的间隔
+
+直接用`itemsep`命令，如
+
+```tex
+\begin{itemize}
+  \setlength\itemsep{1em}
+  \item one
+  \item two
+  \item three
+\end{itemize}
+```
