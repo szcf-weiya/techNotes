@@ -1,7 +1,9 @@
 site_name: techNotes
 pages:
     - Home: index.md
-    - Linux: Linux/index.md
+    - Linux: 
+      - 一般问题: Linux/index.md
+      - shell: shell/index.md
     - R: 
       - 一般问题: R/index.md
       - ggplot作图: R/ggplot.md
