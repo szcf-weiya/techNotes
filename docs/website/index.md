@@ -114,7 +114,7 @@ git clone git@github.com:fooleap/disqus-php-api.git
 
 ## nginx配置跳转
 
-比如将所有`http://ServerIP/10 Boosting and Additive Trees/.*`的访问301重定向到`http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html`，在nginx配置文件中添加
+比如将所有 `http://ServerIP/10 Boosting and Additive Trees/.*` 的访问301重定向到`http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html`，在nginx配置文件中添加
 ```cmd
 location ^~ '/10 Boosting and Additive Trees/' {
         rewrite ^/.* http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html permanent;
