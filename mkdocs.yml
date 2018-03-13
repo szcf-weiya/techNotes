@@ -17,6 +17,7 @@ pages:
       - TeX: TeX/index.md
       - SQL: SQL/index.md
       - Cuda: cuda/index.md
+      - PHP: PHP/index.md
     - Website:
       - Website: website/index.md
       - Css: css/index.md
