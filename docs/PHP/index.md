@@ -212,3 +212,14 @@ $error_codes=array(
 
 ?>
 ```
+
+## nginx 与 php
+
+屡次碰到禁止访问，并且能够直接下载 `.php`文件，检查
+
+1. 配置文件中的首页是否包含了 `index.php`
+2. 配置文件中是否将php有关的部分的注释消掉
+
+参考
+
+1. [Installing and setting NGINX and PHP](https://www.digitalocean.com/community/questions/installing-and-setting-nginx-and-php)
