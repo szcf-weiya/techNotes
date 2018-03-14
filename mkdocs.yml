@@ -39,7 +39,9 @@ pages:
     - Mi: mi/index.md
     - Win: win/index.md
     - Links: links/index.md
-    - Misc: misc/index.md
+    - Misc: 
+      - 小程序: misc/index.md
+      - jssdk: misc/wxjssdk.md
 
 theme:
   name: 'material'
