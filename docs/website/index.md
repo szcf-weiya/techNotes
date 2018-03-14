@@ -130,3 +130,20 @@ location ^~ '/10 Boosting and Additive Trees/' {
 ## iframe跨域解决方案
 
 参考[iframe跨域解决方案](http://blog.sina.com.cn/s/blog_63940ce201015w0d.html)
+
+## flask + ajax + post + 跨域
+
+参考[Flask 和 jQuery 联合实现传送 JSON 数据的 POST 跨域请求 (CORS)](https://zhuanlan.zhihu.com/p/27384232)
+
+简单来说，
+
+在客户端的 ajax 中添加
+
+```javascripts
+crossDomain: true,    // 允许跨域请求
+```
+
+另外，在服务器端，通过`CORS(app, resources=r'/*')`让flask服务器上所有的URL支持跨域请求。
+
+另外，在ajax中post json的时候，注意用`JSON.stringify()`进行转换，否则格式为`否则格式为 a=2&b=3&now=14... `（参考[使用Ajax方式POST JSON数据包（转） - 平和的心 - 博客园](https://www.cnblogs.com/ajianbeyourself/p/5199144.html)）
+
