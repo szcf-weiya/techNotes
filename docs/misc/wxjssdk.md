@@ -29,3 +29,9 @@
 洗完澡发现，原来我压根就没有分享的权限，在公众号的开发权限那儿查看。哎，这就是命啊！
 
 （完）
+
+## 参考链接
+
+1. [手把手带你使用JS-SDK自定义微信分享效果 - 归零back - 博客园](https://www.cnblogs.com/backtozero/p/7064247.html)
+2. [微信JS SDK接入的几点注意事项 - 集君 - 博客园](https://www.cnblogs.com/chq3272991/archive/2017/06/22/7066614.html)
+3. [Nginx 实现端口转发 - 星河赵 - 博客园](https://www.cnblogs.com/zhaoyingjie/p/7248678.html)

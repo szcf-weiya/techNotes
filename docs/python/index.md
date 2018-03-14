@@ -301,3 +301,17 @@ python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这�
 ```bash
 sudo pip install python-markdown-math
 ```
+
+## python 3 中的 str 和 bytes
+
+参考[浅析Python3中的bytes和str类型 - Chown-Jane-Y - 博客园](https://www.cnblogs.com/chownjy/p/6625299.html)
+
+这篇博文讲得很清楚
+
+## flask 中 jsonify 和 json.dumps 的区别
+
+参考[在flask中使用jsonify和json.dumps的区别](http://blog.csdn.net/Duke_Huan_of_Qi/article/details/76064225)
+
+另外 flask 的入门文档见
+
+[快速入门 &mdash; Flask 0.10.1 文档](http://docs.jinkan.org/docs/flask/quickstart.html#quickstart)

@@ -223,3 +223,7 @@ $error_codes=array(
 参考
 
 1. [Installing and setting NGINX and PHP](https://www.digitalocean.com/community/questions/installing-and-setting-nginx-and-php)
+
+## php+ajax+json
+
+参考[php+jquery+ajax+json的一个最简单实例 - code_code_bear - 博客园](https://www.cnblogs.com/hjxcode/p/6029781.html)
