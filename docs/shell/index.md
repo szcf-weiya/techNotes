@@ -23,11 +23,13 @@ done
 4. 双引号里可以出现转义字符
 
 ## shell数组
-1. 在Shell中，用括号来表示数组，数组元素用"空格"符号分割开。
+
+1. 在Shell中，用括号来表示数组，数组元素用“空格”符号分割开。
 
 ## sed用法
 
 参考
+
 1. [sed命令_Linux sed 命令用法详解：功能强大的流式文本编辑器](http://man.linuxde.net/sed)
 2. [sed &amp; awk常用正则表达式 - 菲一打 - 博客园](https://www.cnblogs.com/nhlinkin/p/3647357.html)
 

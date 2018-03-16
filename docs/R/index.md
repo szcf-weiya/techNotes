@@ -14,29 +14,24 @@ for (i in c(1:(n-1)))
 ##2
 ```
 
-## Error in plot.new() : figure margins too large in R
+## Rstudio 清空历史图象
 
-[reference](http://stackoverflow.com/questions/12766166/error-in-plot-new-figure-margins-too-large-in-r)
+[Error in plot.new() : figure margins too large in R](http://stackoverflow.com/questions/12766166/error-in-plot-new-figure-margins-too-large-in-r)
 
 ![](error_too_large_for_figure.png)
 
 
-## linux更新的问题
+## linux 下更新 R
 
-查看[https://mirrors.tuna.tsinghua.edu.cn/CRAN/](https://mirrors.tuna.tsinghua.edu.cn/CRAN/) 中的README.md文件
+参考[https://mirrors.tuna.tsinghua.edu.cn/CRAN/](https://mirrors.tuna.tsinghua.edu.cn/CRAN/) 中的README.md文件
 
-### 更新记录
-1. 找到源码文件夹
+若已经通过源码安装，则可以通过找到源码文件夹，使用`sudo make uninstall`进行卸载。
 
-```r
-sudo make uninstall
-```
-
-2. 配置source.list，安装。
+然后通过配置source.list，进行安装。
 
 ## 终端执行R code
 
-[reference](https://stackoverflow.com/questions/18306362/run-r-script-from-command-line)
+参考[run-r-script-from-command-line](https://stackoverflow.com/questions/18306362/run-r-script-from-command-line)
 
 ```bash
 touch main.R
@@ -53,7 +48,7 @@ vi main.R
 
 [init](https://github.com/rstudio/shiny-server/issues/153)
 
-## 删除
+## 删除当前工作区所有变量
 
 ```bash
 rm(list = ls(all = TRUE))
