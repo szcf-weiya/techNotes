@@ -450,3 +450,6 @@ apt-get install nginx
 
 参考[Linux 设置定时任务crontab命令](https://www.cnblogs.com/zoulongbin/p/6187238.html)
 
+## ubuntu 连接 sftp 服务器
+
+参考[Use “Connect to Server” to connect to SFTP](https://askubuntu.com/questions/349873/use-connect-to-server-to-connect-to-sftp)
