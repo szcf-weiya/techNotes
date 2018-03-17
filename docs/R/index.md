@@ -335,3 +335,15 @@ pairs(iris[1:4], lower.panel =my.lower, upper.panel = my.upper)
 
 参考网址：
 1. [Different data in upper and lower panel of scatterplot matrix](https://stackoverflow.com/questions/15625510/different-data-in-upper-and-lower-panel-of-scatterplot-matrix)
+
+## 神奇的`[`
+
+来自[R语言中以矩阵引用多维数组的元素](https://d.cosx.org/d/419525-r)
+
+比如
+```r
+A = array(sample(0:255, 100*100*3, replace = T), dim = c(100,100,3))
+B = array(sample(1:100, 2*5), dim = c(2,5))
+apply(A, 3, `[`, t(B))
+```
+
