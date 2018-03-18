@@ -183,11 +183,11 @@ git config user.email
 
 [shields.io](http://shields.io/)
 
-## webhooks响应特定分支的push
+## webhooks 响应特定分支的 push
 
 参考[Web Hooks - execute only for specified branches #1176](https://github.com/gitlabhq/gitlabhq/issues/1176)@rtripault
 
-提取json中的`ref`，在`do_POST()`中进行设置响应动作。
+提取 json 中的 `ref`，在 `do_POST()` 中进行设置响应动作。
 
 ## 命令行同步 fork 的仓库
 
