@@ -188,3 +188,39 @@ git config user.email
 参考[Web Hooks - execute only for specified branches #1176](https://github.com/gitlabhq/gitlabhq/issues/1176)@rtripault
 
 提取json中的`ref`，在`do_POST()`中进行设置响应动作。
+
+## 命令行同步 fork 的仓库
+
+1. 添加原仓库，比如
+
+```bash
+git remote add upstream git@github.com:LCTT/TranslateProject.git
+```
+
+查看当前远程仓库
+
+```bash
+git remote -v
+```
+
+2. pull
+
+```bash
+git pull upstream master
+```
+
+参考[Quick Tip: Sync a GitHub Fork via the Command Line](https://www.sitepoint.com/quick-tip-synch-a-github-fork-via-the-command-line/)
+
+## 撤销未被 add 的文件
+
+```bash
+git checkout -- file
+```
+
+或者撤销所有更改
+
+```bash
+git checkout -- .
+```
+
+参考[git checkout all the files](https://stackoverflow.com/questions/29007821/git-checkout-all-the-files)
