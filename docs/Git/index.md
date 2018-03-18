@@ -160,7 +160,7 @@ npm install -g forever
 forever statr server.js
 ```
 
-## 显示user.name 和user.email
+## 显示 user.name 和 user.email
 
 ```bash
 git config user.name
