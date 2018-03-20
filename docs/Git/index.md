@@ -224,3 +224,9 @@ git checkout -- .
 ```
 
 参考[git checkout all the files](https://stackoverflow.com/questions/29007821/git-checkout-all-the-files)
+
+## rewrite 时百分比的含义
+
+表示相似性。
+
+参考[What does the message “rewrite … (90%)” after a git commit mean? [duplicate]](https://stackoverflow.com/questions/1046276/what-does-the-message-rewrite-90-after-a-git-commit-mean)
