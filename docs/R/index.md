@@ -347,3 +347,9 @@ B = array(sample(1:100, 2*5), dim = c(2,5))
 apply(A, 3, `[`, t(B))
 ```
 
+## proxy 代理
+
+参考
+
+1. [Proxy setting for R](https://stackoverflow.com/questions/6467277/proxy-setting-for-r)
+2. [How to use Tor socks5 in R getURL](https://stackoverflow.com/questions/17925234/how-to-use-tor-socks5-in-r-geturl)
