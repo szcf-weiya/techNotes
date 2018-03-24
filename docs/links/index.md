@@ -10,6 +10,7 @@ Some interesting links.
 5. [Chiyuan Zhang](http://pluskid.org) & [his blog](http://lifegoo.pluskid.org/)
 6. [lifengfan](http://lifengfan.wixsite.com/lifengfan)
 7. [Jerry Qu](https://imququ.com/)
+8. [听雨人](http://www.rainaudience.net/) & [Zeyu Zhao](http://zzeyu.com/en/)
 
 ## Interesting words
 
