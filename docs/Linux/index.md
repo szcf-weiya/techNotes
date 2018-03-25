@@ -453,3 +453,22 @@ apt-get install nginx
 ## ubuntu 连接 sftp 服务器
 
 参考[Use “Connect to Server” to connect to SFTP](https://askubuntu.com/questions/349873/use-connect-to-server-to-connect-to-sftp)
+
+## 视频旋转
+
+参考[How can I rotate a video?](https://askubuntu.com/questions/83711/how-can-i-rotate-a-video)
+
+直接用
+
+```bash
+ffmpeg -i in.mov -vf "transpose=1" out.mov
+```
+
+然后报错 [“The encoder 'aac' is experimental but experimental codecs are not enabled”]((https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled)) 
+
+注意添加 `-strict -2` 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成
+
+
+```bash
+ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
+```
