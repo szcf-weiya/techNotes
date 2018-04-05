@@ -77,7 +77,8 @@ https://tex.stackexchange.com/questions/13187/is-there-some-way-to-embed-latex-s
 1. https://tex.stackexchange.com/questions/8351/what-do-makeatletter-and-makeatother-do
 2. https://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
 3. https://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib
-
+4. https://tex.stackexchange.com/questions/1050/whats-the-difference-between-newcommand-and-newcommand
+5. https://tex.stackexchange.com/questions/250159/how-to-pass-title-or-other-parameter-to-class-file?rq=1
 
 ## 每章单独的参考文献
 
@@ -92,3 +93,6 @@ natbib:
 1. https://tex.stackexchange.com/questions/306801/different-comma-placement-in-textcite-and-parencite
 2. https://tex.stackexchange.com/questions/359426/biblatex-using-and-within-textcite-within-parencite-within-bibliogr
 3. https://github.com/plk/biblatex/issues/373
+
+## table
+1. https://tex.stackexchange.com/questions/19589/how-to-specify-the-row-height-in-latex-table/19594
