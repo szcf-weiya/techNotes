@@ -96,3 +96,11 @@ natbib:
 
 ## table
 1. https://tex.stackexchange.com/questions/19589/how-to-specify-the-row-height-in-latex-table/19594
+
+## latex command line
+1. https://tex.stackexchange.com/questions/147346/how-can-one-stop-latex-compilation
+
+## others
+
+1. https://askubuntu.com/questions/221962/how-can-i-extract-a-page-range-a-part-of-a-pdf
+2. https://tex.stackexchange.com/questions/5911/how-to-include-pdf-pages-without-a-newpage-before-the-first-page
