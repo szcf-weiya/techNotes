@@ -472,3 +472,7 @@ ffmpeg -i in.mov -vf "transpose=1" out.mov
 ```bash
 ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
 ```
+
+## Ubuntu的回收站
+
+参考 [https://blog.csdn.net/DSLZTX/article/details/46685959](https://blog.csdn.net/DSLZTX/article/details/46685959)
