@@ -104,3 +104,6 @@ natbib:
 
 1. https://askubuntu.com/questions/221962/how-can-i-extract-a-page-range-a-part-of-a-pdf
 2. https://tex.stackexchange.com/questions/5911/how-to-include-pdf-pages-without-a-newpage-before-the-first-page
+3. https://tex.stackexchange.com/questions/51682/is-it-possible-to-pagebreak-aligned-equations
+4. https://tex.stackexchange.com/questions/147346/how-can-one-stop-latex-compilation
+5. https://tex.stackexchange.com/questions/106964/could-not-insert-pdf-graphics
