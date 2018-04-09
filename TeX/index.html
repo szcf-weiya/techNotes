@@ -1323,6 +1323,9 @@ git push origin master --tags
 
 <p>It succeed!</p>
 <p>Then I found that if use <code>before_deploy</code>, it seems that no need to set <code>on.tags = true</code>.</p>
+<h3 id="test-maintex">test main.tex<a class="headerlink" href="#test-maintex" title="Permanent link">&para;</a></h3>
+<p>称缺失 <code>xcolor.sty</code>，而用 <code>apt-cache search xcolor | grep tex</code> 得到的包为 extra 和 recommended，但这两个包已经安装了，所以怀疑是 <code>--no-install-recommends</code>。</p>
+<p>不过突然想到，版本不对，我本机为 TeXlive 2015，而 Travis CI 上为 2013，所以我又在服务器上进行测试，发现 <code>xcolor</code> 在 <code>latex-xcolor</code> 包中。</p>
                 
                   
                 
