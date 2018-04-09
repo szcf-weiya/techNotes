@@ -155,3 +155,9 @@ crossDomain: true,    // 允许跨域请求
 
 1. [Google Analytics代码DIY-进阶篇](http://www.chinawebanalytics.cn/google-analytics%E4%BB%A3%E7%A0%81diy-%E8%BF%9B%E9%98%B6%E7%AF%87/)
 2. [浅析豆瓣的 Google Analytics 应用](http://blog.wpjam.com/2009/06/30/google-analytics-in-douban/)
+
+## Travis CI
+
+1. https://mwop.net/blog/2016-01-29-automating-gh-pages.html
+2. [Deploying Docs on Github with Travis-CI](https://djw8605.github.io/2017/02/08/deploying-docs-on-github-with-travisci/)
+3. 
