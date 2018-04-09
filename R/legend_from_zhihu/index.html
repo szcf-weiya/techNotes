@@ -1,0 +1,1281 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="技术博客">
+      
+      
+        <link rel="canonical" href="https://tech.hohoweiya.xyz/R/legend_from_zhihu/">
+      
+      
+        <meta name="author" content="weiya">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.1">
+    
+    
+      
+        <title>案例分析 - techNotes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.78aab2dc.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#ggplot" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                techNotes
+              </span>
+              <span class="md-header-nav__topic">
+                案例分析
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/szcf-weiya/techNotes" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      szcf-weiya/techNotes
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    techNotes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/szcf-weiya/techNotes" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      szcf-weiya/techNotes
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Linux/" title="一般问题" class="md-nav__link">
+      一般问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../shell/" title="shell" class="md-nav__link">
+      shell
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="一般问题" class="md-nav__link">
+      一般问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ggplot/" title="ggplot作图" class="md-nav__link">
+      ggplot作图
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        案例分析
+      </label>
+    
+    <a href="./" title="案例分析" class="md-nav__link md-nav__link--active">
+      案例分析
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="普遍的情形" class="md-nav__link">
+    普遍的情形
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="多个数据集" class="md-nav__link">
+    多个数据集
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shapelinetype" title="单一shape或linetype" class="md-nav__link">
+    单一shape或linetype
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="参考网页" class="md-nav__link">
+    参考网页
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="其他" class="md-nav__link">
+    其他
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-notes-for-rmysql/" title="源码安装 RMySQL" class="md-nav__link">
+      源码安装 RMySQL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Programming
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Matlab/" title="Matlab" class="md-nav__link">
+      Matlab
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Cpp/" title="Cpp" class="md-nav__link">
+      Cpp
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../julia/" title="Julia" class="md-nav__link">
+      Julia
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../TeX/" title="TeX" class="md-nav__link">
+      TeX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SQL/" title="SQL" class="md-nav__link">
+      SQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cuda/" title="Cuda" class="md-nav__link">
+      Cuda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../PHP/" title="PHP" class="md-nav__link">
+      PHP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Website
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Website
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../website/" title="Website" class="md-nav__link">
+      Website
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../css/" title="Css" class="md-nav__link">
+      Css
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/" title="Js" class="md-nav__link">
+      Js
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Internet/" title="Network" class="md-nav__link">
+      Network
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../autotools/" title="Autotools" class="md-nav__link">
+      Autotools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Emacs/" title="Emacs" class="md-nav__link">
+      Emacs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vi/" title="Vi" class="md-nav__link">
+      Vi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ssh/" title="Ssh" class="md-nav__link">
+      Ssh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../phantomjs/" title="Phantomjs" class="md-nav__link">
+      Phantomjs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Qt/" title="Qt" class="md-nav__link">
+      Qt
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Stats
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Stats
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../calculus/" title="Calculus" class="md-nav__link">
+      Calculus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scientific/" title="Scientific" class="md-nav__link">
+      Scientific
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../graph/" title="Graph" class="md-nav__link">
+      Graph
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../English/" title="English" class="md-nav__link">
+      English
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../mi/" title="Mi" class="md-nav__link">
+      Mi
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../win/" title="Win" class="md-nav__link">
+      Win
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../links/" title="Links" class="md-nav__link">
+      Links
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Misc
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../misc/" title="小程序" class="md-nav__link">
+      小程序
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../misc/wxjssdk/" title="jssdk" class="md-nav__link">
+      jssdk
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="普遍的情形" class="md-nav__link">
+    普遍的情形
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="多个数据集" class="md-nav__link">
+    多个数据集
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shapelinetype" title="单一shape或linetype" class="md-nav__link">
+    单一shape或linetype
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="参考网页" class="md-nav__link">
+    参考网页
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="其他" class="md-nav__link">
+    其他
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="ggplot">ggplot中图例的使用（以某知乎问题为例）<a class="headerlink" href="#ggplot" title="Permanent link">&para;</a></h1>
+<p>在知乎上浏览到这样一个问题<a href="https://www.zhihu.com/question/267400251">R语言ggplot如何添加图例？ - 知乎</a>，问题关键在于如何自定义满足下列条件的legend</p>
+<ol>
+<li>涉及两个数据集（虽然是同一个，但重复调用，相当于两个）</li>
+<li>legend仅仅为点或线段（一般默认会同时显示点或线段）</li>
+</ol>
+<h2 id="_1">普遍的情形<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>参考<a href="http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/">Legends (ggplot2) | Cookbook for R</a>这篇博文，应该可以解决一般情形下往ggplot中添加legends的问题。举个例子</p>
+<div class="codehilite"><pre><span></span><span class="c1"># A different data set</span>
+df1 <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>
+    sex <span class="o">=</span> <span class="kp">factor</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;Female&quot;</span><span class="p">,</span><span class="s">&quot;Female&quot;</span><span class="p">,</span><span class="s">&quot;Male&quot;</span><span class="p">,</span><span class="s">&quot;Male&quot;</span><span class="p">)),</span>
+    time <span class="o">=</span> <span class="kp">factor</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;Lunch&quot;</span><span class="p">,</span><span class="s">&quot;Dinner&quot;</span><span class="p">,</span><span class="s">&quot;Lunch&quot;</span><span class="p">,</span><span class="s">&quot;Dinner&quot;</span><span class="p">),</span> levels<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;Lunch&quot;</span><span class="p">,</span><span class="s">&quot;Dinner&quot;</span><span class="p">)),</span>
+    total_bill <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">13.53</span><span class="p">,</span> <span class="m">16.81</span><span class="p">,</span> <span class="m">16.24</span><span class="p">,</span> <span class="m">17.42</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># A basic graph</span>
+lp <span class="o">&lt;-</span> ggplot<span class="p">(</span>data<span class="o">=</span>df1<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>time<span class="p">,</span> y<span class="o">=</span>total_bill<span class="p">,</span> group<span class="o">=</span>sex<span class="p">,</span> shape<span class="o">=</span>sex<span class="p">))</span> <span class="o">+</span> geom_line<span class="p">()</span> <span class="o">+</span> geom_point<span class="p">()</span>
+lp
+
+<span class="c1"># Change the legend</span>
+lp <span class="o">+</span> scale_shape_discrete<span class="p">(</span>name  <span class="o">=</span><span class="s">&quot;Payer&quot;</span><span class="p">,</span>
+                          breaks<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;Female&quot;</span><span class="p">,</span> <span class="s">&quot;Male&quot;</span><span class="p">),</span>
+                          labels<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;Woman&quot;</span><span class="p">,</span> <span class="s">&quot;Man&quot;</span><span class="p">))</span>
+</pre></div>
+
+
+<p><img alt="" src="../toy_legend.png" /></p>
+<h2 id="_2">多个数据集<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>上述普遍的情形是涉及单一数据集，且类别标签已经存在数据集中，若多个数据集，数据集本身没有类别标签，但不同数据集表示不同类，则可以参考<a href="https://stackoverflow.com/questions/18394391/r-custom-legend-for-multiple-layer-ggplot">R: Custom Legend for Multiple Layer ggplot | stackoverflow</a>。</p>
+<div class="codehilite"><pre><span></span><span class="kn">require</span><span class="p">(</span>ggplot2<span class="p">)</span>
+x<span class="o">=</span><span class="kp">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">10</span><span class="p">,</span>length<span class="o">=</span><span class="m">100</span><span class="p">)</span>
+data<span class="o">=</span><span class="kt">data.frame</span><span class="p">(</span>x<span class="p">,</span>dnorm<span class="p">(</span>x<span class="p">,</span>mean<span class="o">=</span><span class="m">6.5</span><span class="p">,</span>sd<span class="o">=</span><span class="m">1</span><span class="p">))</span>
+<span class="kp">names</span><span class="p">(</span>data<span class="p">)</span><span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">,</span><span class="s">&#39;new.data&#39;</span><span class="p">)</span>
+x.ribbon<span class="o">=</span><span class="kp">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">10</span><span class="p">,</span>length<span class="o">=</span><span class="m">20</span><span class="p">)</span>
+ribbon<span class="o">=</span><span class="kt">data.frame</span><span class="p">(</span>x.ribbon<span class="p">,</span>
+                  dnorm<span class="p">(</span>x.ribbon<span class="p">,</span>mean<span class="o">=</span><span class="m">5</span><span class="p">,</span>sd<span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="m">+.01</span><span class="p">,</span>
+                  dnorm<span class="p">(</span>x.ribbon<span class="p">,</span>mean<span class="o">=</span><span class="m">5</span><span class="p">,</span>sd<span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="m">-.01</span><span class="p">,</span>
+                  dnorm<span class="p">(</span>x.ribbon<span class="p">,</span>mean<span class="o">=</span><span class="m">5</span><span class="p">,</span>sd<span class="o">=</span><span class="m">1</span><span class="p">))</span>
+<span class="kp">names</span><span class="p">(</span>ribbon<span class="p">)</span><span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&#39;x.ribbon&#39;</span><span class="p">,</span><span class="s">&#39;max&#39;</span><span class="p">,</span><span class="s">&#39;min&#39;</span><span class="p">,</span><span class="s">&#39;avg&#39;</span><span class="p">)</span>
+
+ggplot<span class="p">()</span><span class="o">+</span><span class="c1">#geom_ribbon(data=ribbon,aes(ymin=min,ymax=max,x=x.ribbon,fill=&#39;lightgreen&#39;))+</span>
+  geom_line<span class="p">(</span>data<span class="o">=</span>ribbon<span class="p">,</span>aes<span class="p">(</span>x<span class="o">=</span>x.ribbon<span class="p">,</span>y<span class="o">=</span>avg<span class="p">,</span>color<span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">))</span><span class="o">+</span>
+  geom_line<span class="p">(</span>data<span class="o">=</span>data<span class="p">,</span>aes<span class="p">(</span>x<span class="o">=</span>x<span class="p">,</span>y<span class="o">=</span>new.data<span class="p">,</span>color<span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">))</span><span class="o">+</span>
+  xlab<span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span><span class="o">+</span>ylab<span class="p">(</span><span class="s">&#39;density&#39;</span><span class="p">)</span> <span class="o">+</span> 
+  <span class="c1">#scale_fill_identity(name = &#39;the fill&#39;, guide = &#39;legend&#39;,labels = c(&#39;m1&#39;)) +</span>
+  scale_colour_manual<span class="p">(</span>name <span class="o">=</span> <span class="s">&#39;the colour&#39;</span><span class="p">,</span> 
+                      values <span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&#39;black&#39;</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">,</span><span class="s">&#39;red&#39;</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">),</span> labels <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;c2&#39;</span><span class="p">,</span><span class="s">&#39;c1&#39;</span><span class="p">))</span>
+</pre></div>
+
+
+<p><img alt="" src="../multi_dataset_legends.png" /></p>
+<h2 id="shapelinetype">单一shape或linetype<a class="headerlink" href="#shapelinetype" title="Permanent link">&para;</a></h2>
+<p>一开始对原知乎问题给出下面的解法</p>
+<div class="codehilite"><pre><span></span>px <span class="o">&lt;-</span> ggplot<span class="p">()</span><span class="o">+</span>
+  geom_point<span class="p">(</span>data <span class="o">=</span> plotdatax<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span> number <span class="p">,</span> y<span class="o">=</span> datax<span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">),</span> size<span class="o">=</span><span class="m">2</span> <span class="p">)</span> <span class="o">+</span>
+  geom_line<span class="p">(</span>data <span class="o">=</span> plotdatax<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>number<span class="p">,</span>y <span class="o">=</span> dataxo<span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">),</span> size <span class="o">=</span> <span class="m">1</span> <span class="p">)</span> <span class="o">+</span>
+  scale_color_manual<span class="p">(</span>name <span class="o">=</span> <span class="s">&quot;group&quot;</span><span class="p">,</span>
+                     values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;red&#39;</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="s">&quot;black&quot;</span> <span class="o">=</span> <span class="s">&#39;black&#39;</span><span class="p">),</span> 
+                     breaks <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;black&quot;</span><span class="p">),</span>
+                     labels <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;数据&#39;</span><span class="p">,</span> <span class="s">&#39;原始数据&#39;</span><span class="p">))</span> 
+</pre></div>
+
+
+<p><img alt="" src="../px_o.png" /></p>
+<p>但图例同时存在shape和linetype，对于普通的<code>plot</code>，可以用<code>NA</code>来使得point type或linetype不显示，具体可以参考<a href="https://stackoverflow.com/questions/37897984/r-plot-displaying-both-point-type-and-line-type-in-legend">R plot: Displaying both point type and line type in legend | stackoverflow</a>。</p>
+<div class="codehilite"><pre><span></span><span class="kp">set.seed</span><span class="p">(</span><span class="m">0</span><span class="p">);</span> x1 <span class="o">&lt;-</span> rnorm<span class="p">(</span><span class="m">10</span><span class="p">);</span> x2 <span class="o">&lt;-</span> rnorm<span class="p">(</span><span class="m">10</span><span class="p">);</span> x3 <span class="o">&lt;-</span> rnorm<span class="p">(</span><span class="m">10</span><span class="p">)</span>
+plot<span class="p">(</span>x1<span class="p">,</span> type <span class="o">=</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> pch <span class="o">=</span> <span class="m">19</span><span class="p">,</span> lty <span class="o">=</span> <span class="m">1</span><span class="p">,</span> col <span class="o">=</span> <span class="m">1</span><span class="p">,</span>
+     ylim <span class="o">=</span> <span class="kp">range</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span>x1<span class="p">,</span>x2<span class="p">,</span>x3<span class="p">)))</span>  <span class="c1">## both points and lines</span>
+points<span class="p">(</span>x2<span class="p">,</span> pch <span class="o">=</span> <span class="m">19</span><span class="p">,</span> col <span class="o">=</span> <span class="m">2</span><span class="p">)</span>  <span class="c1">## only points</span>
+lines<span class="p">(</span>x3<span class="p">,</span> lty <span class="o">=</span> <span class="m">2</span><span class="p">,</span> col <span class="o">=</span> <span class="m">3</span><span class="p">)</span>  <span class="c1">## only lines</span>
+legend<span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">0.9</span><span class="o">*</span><span class="kp">max</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span>x1<span class="p">,</span>x2<span class="p">,</span>x3<span class="p">)),</span> legend <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;x1&quot;</span><span class="p">,</span> <span class="s">&quot;x2&quot;</span><span class="p">,</span> <span class="s">&quot;x3&quot;</span><span class="p">),</span>
+       pch <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">19</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span> lty <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span>
+       col <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span> text.col <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+</pre></div>
+
+
+<p><img alt="" src="../both_points_lines_in_plot.png" /></p>
+<p>受此启发，也尝试在ggplot中使用，尝试后发现，对于<code>shape</code>用<code>NA</code>可以不显示点的形状，而<code>linetype</code>要用<code>0</code>才能不显示线条。</p>
+<div class="codehilite"><pre><span></span>px <span class="o">&lt;-</span> ggplot<span class="p">()</span><span class="o">+</span>
+  geom_point<span class="p">(</span>data <span class="o">=</span> plotdatax<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span> number <span class="p">,</span> y<span class="o">=</span> datax<span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> shape <span class="o">=</span> <span class="s">&quot;A&quot;</span><span class="p">,</span> linetype <span class="o">=</span> <span class="s">&quot;A&quot;</span><span class="p">),</span> size<span class="o">=</span><span class="m">2</span> <span class="p">)</span> <span class="o">+</span>
+  geom_line<span class="p">(</span>data <span class="o">=</span> plotdatax<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>number<span class="p">,</span>y <span class="o">=</span> dataxo<span class="p">,</span> color <span class="o">=</span> <span class="s">&quot;black&quot;</span><span class="p">,</span> shape <span class="o">=</span> <span class="s">&quot;B&quot;</span><span class="p">,</span> linetype <span class="o">=</span> <span class="s">&quot;B&quot;</span><span class="p">),</span> size <span class="o">=</span> <span class="m">1</span> <span class="p">)</span> <span class="o">+</span>
+  scale_color_manual<span class="p">(</span>name <span class="o">=</span> <span class="s">&quot;group&quot;</span><span class="p">,</span>
+                     values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;red&#39;</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="s">&quot;black&quot;</span> <span class="o">=</span> <span class="s">&#39;black&#39;</span><span class="p">),</span> 
+                     breaks <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;black&quot;</span><span class="p">),</span>
+                     labels <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;数据&#39;</span><span class="p">,</span> <span class="s">&#39;原始数据&#39;</span><span class="p">))</span> <span class="o">+</span> 
+  scale_shape_manual<span class="p">(</span>name <span class="o">=</span> <span class="s">&quot;group&quot;</span><span class="p">,</span>
+                     values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;A&quot;</span> <span class="o">=</span> <span class="m">16</span><span class="p">,</span> <span class="s">&quot;B&quot;</span> <span class="o">=</span> <span class="kc">NA</span><span class="p">),</span> 
+                     labels <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;数据&#39;</span><span class="p">,</span> <span class="s">&#39;原始数据&#39;</span><span class="p">))</span> <span class="o">+</span> 
+  scale_linetype_manual<span class="p">(</span>name <span class="o">=</span> <span class="s">&quot;group&quot;</span><span class="p">,</span>
+                          values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;A&quot;</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="s">&quot;B&quot;</span> <span class="o">=</span> <span class="m">1</span><span class="p">),</span> 
+                          labels <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;数据&#39;</span><span class="p">,</span> <span class="s">&#39;原始数据&#39;</span><span class="p">))</span>
+
+px <span class="o">+</span> theme<span class="p">(</span>legend.title<span class="o">=</span>element_blank<span class="p">(),</span>
+           legend.position <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">0.9</span><span class="p">,</span> <span class="m">0.9</span><span class="p">))</span>
+</pre></div>
+
+
+<p><img alt="" src="../px.png" /></p>
+<p>虽然与题主要求相符，但其实上述代码会报warning，如下</p>
+<p><img alt="" src="../warnings.png" /></p>
+<p>原因是geom_point中的aes没有linetype参数；</p>
+<p>而geom_line中的aes没有shape参数，但如果前者不对linetype进行赋值，后者不对shape进行赋值，则得到的图形会有两个图例块。</p>
+<p><img alt="" src="../px2.png" /></p>
+<p>更简洁更准确的做法应该是先对这些点进行标签，然后设置每个标签的color, shape以及linetype，代码如下：</p>
+<div class="codehilite"><pre><span></span>plotdatax<span class="o">$</span>group <span class="o">=</span> <span class="kp">ifelse</span><span class="p">(</span>datax <span class="o">==</span> dataxo<span class="p">,</span> <span class="s">&quot;c2&quot;</span><span class="p">,</span> <span class="s">&quot;c1&quot;</span><span class="p">)</span>
+
+px <span class="o">&lt;-</span> ggplot<span class="p">(</span>plotdatax<span class="p">,</span> aes<span class="p">(</span>color <span class="o">=</span> group<span class="p">,</span> shape <span class="o">=</span> group<span class="p">,</span> linetype <span class="o">=</span> group<span class="p">))</span><span class="o">+</span>
+  geom_point<span class="p">(</span>aes<span class="p">(</span>x<span class="o">=</span> number <span class="p">,</span> y<span class="o">=</span> datax<span class="p">),</span> size<span class="o">=</span><span class="m">2</span> <span class="p">)</span> <span class="o">+</span>
+  geom_line<span class="p">(</span>aes<span class="p">(</span>x<span class="o">=</span>number<span class="p">,</span>y <span class="o">=</span> dataxo<span class="p">),</span> size <span class="o">=</span> <span class="m">1</span> <span class="p">)</span> <span class="o">+</span>
+  scale_color_manual<span class="p">(</span>name <span class="o">=</span> <span class="s">&quot;group&quot;</span><span class="p">,</span>
+                     values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;c1&quot;</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="s">&quot;c2&quot;</span> <span class="o">=</span> <span class="s">&#39;black&#39;</span><span class="p">),</span> 
+                     labels <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;数据&#39;</span><span class="p">,</span> <span class="s">&#39;原始数据&#39;</span><span class="p">))</span> <span class="o">+</span> 
+  scale_shape_manual<span class="p">(</span>name <span class="o">=</span> <span class="s">&quot;group&quot;</span><span class="p">,</span>
+                     values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;c1&quot;</span> <span class="o">=</span> <span class="m">16</span><span class="p">,</span> <span class="s">&quot;c2&quot;</span> <span class="o">=</span> <span class="kc">NA</span><span class="p">),</span> 
+                     labels <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;数据&#39;</span><span class="p">,</span> <span class="s">&#39;原始数据&#39;</span><span class="p">))</span> <span class="o">+</span> 
+  scale_linetype_manual<span class="p">(</span>name <span class="o">=</span> <span class="s">&quot;group&quot;</span><span class="p">,</span>
+                        values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;c1&quot;</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="s">&quot;c2&quot;</span> <span class="o">=</span> <span class="m">1</span><span class="p">),</span> 
+                        labels <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;数据&#39;</span><span class="p">,</span> <span class="s">&#39;原始数据&#39;</span><span class="p">))</span>
+
+px <span class="o">+</span> theme<span class="p">(</span>legend.title<span class="o">=</span>element_blank<span class="p">(),</span>
+           legend.position <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">0.9</span><span class="p">,</span> <span class="m">0.9</span><span class="p">))</span>
+</pre></div>
+
+
+<p><img alt="" src="../px3.png" /></p>
+<p>不过这样黑线少掉了红色点，也就是认为那些不在直线上的点才是第二类的点。如果坚持题主的意思，则完全可以重新构造数据集，代码如下</p>
+<div class="codehilite"><pre><span></span>length <span class="o">&lt;-</span><span class="kp">length</span><span class="p">(</span>datax<span class="p">)</span>
+x.matrix1 <span class="o">&lt;-</span> <span class="kp">cbind</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="kp">length</span><span class="p">,</span> datax<span class="p">)</span>
+x.matrix2 <span class="o">&lt;-</span> <span class="kp">cbind</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="kp">length</span><span class="p">,</span> dataxo<span class="p">)</span>
+x.matrix <span class="o">&lt;-</span> <span class="kp">rbind</span><span class="p">(</span>x.matrix1<span class="p">,</span> x.matrix2<span class="p">)</span>
+<span class="kp">colnames</span><span class="p">(</span>x.matrix<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;number&quot;</span><span class="p">,</span> <span class="s">&quot;datax&quot;</span><span class="p">)</span>
+plotdatax <span class="o">&lt;-</span> <span class="kp">as.data.frame</span><span class="p">(</span>x.matrix<span class="p">)</span>
+
+plotdatax<span class="o">$</span>group <span class="o">&lt;-</span> <span class="kp">rep</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;c1&quot;</span><span class="p">,</span> <span class="s">&quot;c2&quot;</span><span class="p">),</span> each <span class="o">=</span> <span class="kp">length</span><span class="p">)</span>
+
+px <span class="o">&lt;-</span> ggplot<span class="p">(</span>plotdatax<span class="p">,</span> aes<span class="p">(</span>x <span class="o">=</span> number<span class="p">,</span> y <span class="o">=</span> datax<span class="p">,</span> color <span class="o">=</span> group<span class="p">,</span> shape <span class="o">=</span> group<span class="p">,</span> linetype <span class="o">=</span> group<span class="p">))</span><span class="o">+</span>
+  geom_point<span class="p">(</span>size<span class="o">=</span><span class="m">2</span><span class="p">)</span> <span class="o">+</span>
+  geom_line<span class="p">(</span>size <span class="o">=</span> <span class="m">1</span><span class="p">)</span> <span class="o">+</span>
+  scale_color_manual<span class="p">(</span>name <span class="o">=</span> <span class="s">&quot;group&quot;</span><span class="p">,</span>
+                     values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;c1&quot;</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="s">&quot;c2&quot;</span> <span class="o">=</span> <span class="s">&#39;black&#39;</span><span class="p">),</span> 
+                     labels <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;数据&#39;</span><span class="p">,</span> <span class="s">&#39;原始数据&#39;</span><span class="p">))</span> <span class="o">+</span> 
+  scale_shape_manual<span class="p">(</span>name <span class="o">=</span> <span class="s">&quot;group&quot;</span><span class="p">,</span>
+                     values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;c1&quot;</span> <span class="o">=</span> <span class="m">16</span><span class="p">,</span> <span class="s">&quot;c2&quot;</span> <span class="o">=</span> <span class="kc">NA</span><span class="p">),</span> 
+                     labels <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;数据&#39;</span><span class="p">,</span> <span class="s">&#39;原始数据&#39;</span><span class="p">))</span> <span class="o">+</span> 
+  scale_linetype_manual<span class="p">(</span>name <span class="o">=</span> <span class="s">&quot;group&quot;</span><span class="p">,</span>
+                        values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;c1&quot;</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="s">&quot;c2&quot;</span> <span class="o">=</span> <span class="m">1</span><span class="p">),</span> 
+                        labels <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&#39;数据&#39;</span><span class="p">,</span> <span class="s">&#39;原始数据&#39;</span><span class="p">))</span>
+
+px <span class="o">+</span> theme<span class="p">(</span>legend.title<span class="o">=</span>element_blank<span class="p">(),</span>
+           legend.position <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">0.9</span><span class="p">,</span> <span class="m">0.9</span><span class="p">))</span>
+</pre></div>
+
+
+<p><img alt="" src="../px4.png" /></p>
+<h2 id="_3">参考网页<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>除上述明确给出的参考链接，还参考了下列网页</p>
+<ol>
+<li><a href="https://rdrr.io/cran/ggplot2/man/scale_manual.html">scale_manual: Create your own discrete scale</a></li>
+<li><a href="https://stackoverflow.com/questions/26196606/add-point-and-line-layers-with-customized-legends-in-ggplot2">add point and line layers with customized legends in ggplot2</a></li>
+</ol>
+<h2 id="_4">其他<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>附上探索过程中用到的一个toy example</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Sample data</span>
+df <span class="o">&lt;-</span> read.table<span class="p">(</span>header<span class="o">=</span><span class="bp">T</span><span class="p">,</span> text<span class="o">=</span><span class="s">&#39;</span>
+<span class="s">                 cond xval yval</span>
+<span class="s">                 A    1  2.0</span>
+<span class="s">                 A    2  2.5</span>
+<span class="s">                 B    1  3.0</span>
+<span class="s">                 B    2  2.0</span>
+<span class="s">                 &#39;</span><span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
+
+<span class="c1"># Plot with standard lines and points</span>
+<span class="c1"># group = cond tells it which points to connect with lines</span>
+ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>xval<span class="p">,</span> y<span class="o">=</span>yval<span class="p">,</span> group <span class="o">=</span> cond<span class="p">))</span> <span class="o">+</span>
+  geom_line<span class="p">()</span> <span class="o">+</span>
+  geom_point<span class="p">()</span>
+
+<span class="c1"># Set overall shapes and line type</span>
+ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>xval<span class="p">,</span> y<span class="o">=</span>yval<span class="p">,</span> group <span class="o">=</span> cond<span class="p">))</span> <span class="o">+</span>
+  geom_line<span class="p">(</span>linetype<span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">,</span>  <span class="c1"># Dashed line</span>
+            size <span class="o">=</span> <span class="m">1.5</span><span class="p">)</span> <span class="o">+</span>       <span class="c1"># Thicker line</span>
+  geom_point<span class="p">(</span>shape <span class="o">=</span> <span class="m">0</span><span class="p">,</span>         <span class="c1"># Hollow squares</span>
+             size <span class="o">=</span> <span class="m">4</span><span class="p">)</span>          <span class="c1"># Large points</span>
+
+<span class="c1"># Condition shapes and line type on variable cond</span>
+ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>xval<span class="p">,</span> y<span class="o">=</span>yval<span class="p">,</span> group <span class="o">=</span> cond<span class="p">))</span> <span class="o">+</span>
+  geom_line<span class="p">(</span>aes<span class="p">(</span>linetype<span class="o">=</span>cond<span class="p">),</span> <span class="c1"># Line type depends on cond</span>
+            size <span class="o">=</span> <span class="m">1.5</span><span class="p">)</span> <span class="o">+</span>       <span class="c1"># Thicker line</span>
+  geom_point<span class="p">(</span>aes<span class="p">(</span>shape<span class="o">=</span>cond<span class="p">),</span>   <span class="c1"># Shape depends on cond</span>
+             size <span class="o">=</span> <span class="m">4</span><span class="p">)</span>          <span class="c1"># Large points</span>
+
+<span class="c1"># Same as previous, but also change the specific linetypes and</span>
+<span class="c1"># shapes that are used</span>
+ggplot<span class="p">(</span>df<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>xval<span class="p">,</span> y<span class="o">=</span>yval<span class="p">,</span> group <span class="o">=</span> cond<span class="p">))</span> <span class="o">+</span>
+  geom_line<span class="p">(</span>aes<span class="p">(</span>linetype<span class="o">=</span>cond<span class="p">),</span> <span class="c1"># Line type depends on cond</span>
+            size <span class="o">=</span> <span class="m">1.5</span><span class="p">)</span> <span class="o">+</span>       <span class="c1"># Thicker line</span>
+  geom_point<span class="p">(</span>aes<span class="p">(</span>shape<span class="o">=</span>cond<span class="p">),</span>   <span class="c1"># Shape depends on cond</span>
+             size <span class="o">=</span> <span class="m">4</span><span class="p">)</span> <span class="o">+</span>        <span class="c1"># Large points</span>
+  scale_shape_manual<span class="p">(</span>values<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="m">5</span><span class="p">))</span> <span class="o">+</span>                  <span class="c1"># Change shapes</span>
+  scale_linetype_manual<span class="p">(</span>values<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">))</span> <span class="c1"># Change linetypes</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ggplot/" title="ggplot作图" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                ggplot作图
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../install-notes-for-rmysql/" title="源码安装 RMySQL" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                源码安装 RMySQL
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 weiya
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/szcf-weiya" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://esl.hohoweiya.xyz" class="md-footer-social__link fa fa-book"></a>
+    
+      <a href="https://hohoweiya.xyz" class="md-footer-social__link fa fa-home"></a>
+    
+      <a href="https://blog.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
+    
+      <a href="mailto:szcfweiya@gmail.com" class="md-footer-social__link fa fa-envelope"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.8eb9be28.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="../../javascripts/baiduzhanzhang.js"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-85007363-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

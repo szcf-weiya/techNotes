@@ -1,0 +1,1729 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="技术博客">
+      
+      
+        <link rel="canonical" href="https://tech.hohoweiya.xyz/Cpp/">
+      
+      
+        <meta name="author" content="weiya">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.1">
+    
+    
+      
+        <title>Cpp - techNotes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.78aab2dc.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#cpp-notes" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                techNotes
+              </span>
+              <span class="md-header-nav__topic">
+                Cpp
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/szcf-weiya/techNotes" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      szcf-weiya/techNotes
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    techNotes
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/szcf-weiya/techNotes" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      szcf-weiya/techNotes
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Linux/" title="一般问题" class="md-nav__link">
+      一般问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shell/" title="shell" class="md-nav__link">
+      shell
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      R
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        R
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../R/" title="一般问题" class="md-nav__link">
+      一般问题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../R/ggplot/" title="ggplot作图" class="md-nav__link">
+      ggplot作图
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../R/legend_from_zhihu/" title="案例分析" class="md-nav__link">
+      案例分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../R/install-notes-for-rmysql/" title="源码安装 RMySQL" class="md-nav__link">
+      源码安装 RMySQL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Programming
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Matlab/" title="Matlab" class="md-nav__link">
+      Matlab
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Cpp
+      </label>
+    
+    <a href="./" title="Cpp" class="md-nav__link md-nav__link--active">
+      Cpp
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ccout" title="C++中cout输出字符型指针地址值的方法" class="md-nav__link">
+    C++中cout输出字符型指针地址值的方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#const" title="const 总结" class="md-nav__link">
+    const 总结
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new" title="new" class="md-nav__link">
+    new
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete" title="delete" class="md-nav__link">
+    delete
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="函数模板和模板函数" class="md-nav__link">
+    函数模板和模板函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="初始化列表" class="md-nav__link">
+    初始化列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extern" title="extern" class="md-nav__link">
+    extern
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbol-lookup-error" title=""symbol lookup error"" class="md-nav__link">
+    "symbol lookup error"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="字符数组与数字互换" class="md-nav__link">
+    字符数组与数字互换
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="字符数字转数字" class="md-nav__link">
+    字符数字转数字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="数字转字符" class="md-nav__link">
+    数字转字符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="指针初始化" class="md-nav__link">
+    指针初始化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-correctly-freeing-memory-of-a-multi-dimensional-array" title="C: Correctly freeing memory of a multi-dimensional array" class="md-nav__link">
+    C: Correctly freeing memory of a multi-dimensional array
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35pragma-unroll" title="#pragma unroll的用法" class="md-nav__link">
+    #pragma unroll的用法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-std-ifstream-to-handle-lf-cr-and-crlf" title="Getting std :: ifstream to handle LF, CR, and CRLF?" class="md-nav__link">
+    Getting std :: ifstream to handle LF, CR, and CRLF?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fpic" title="fPIC" class="md-nav__link">
+    fPIC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="参数和返回值的三种传递方式" class="md-nav__link">
+    参数和返回值的三种传递方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-gcc" title="linux gcc常用命令" class="md-nav__link">
+    linux gcc常用命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-publicprotectedprivate" title="C++ public/protected/private" class="md-nav__link">
+    C++ public/protected/private
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" title="C++按行读取文本文件" class="md-nav__link">
+    C++按行读取文本文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-" title="struct--构造函数对结构体初始化的影响" class="md-nav__link">
+    struct--构造函数对结构体初始化的影响
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openmp" title="OpenMP 框架" class="md-nav__link">
+    OpenMP 框架
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c11-stdchrono" title="C++11 std::chrono库详解" class="md-nav__link">
+    C++11 std::chrono库详解
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectorerase" title="vector::erase()方法的详细介绍及问题解答" class="md-nav__link">
+    vector::erase()方法的详细介绍及问题解答
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onlogn" title="最长递增子序列 O(NlogN)算法" class="md-nav__link">
+    最长递增子序列 O(NlogN)算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crealloc" title="c语言中realloc()函数解析" class="md-nav__link">
+    c语言中realloc()函数解析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c_1" title="C语言结构体里的成员数组和指针(关于零数组)" class="md-nav__link">
+    C语言结构体里的成员数组和指针(关于零数组)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c_2" title="C语言：数组和指针的区别" class="md-nav__link">
+    C语言：数组和指针的区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1017-the-best-peak-shape-35" title="1017. The Best Peak Shape (35)" class="md-nav__link">
+    1017. The Best Peak Shape (35)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-stod-was-not-declared-in-this-scope" title="error: 'stod' was not declared in this scope" class="md-nav__link">
+    error: 'stod' was not declared in this scope
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" title="分词" class="md-nav__link">
+    分词
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cstring" title="C++中String类的字符串分割实现" class="md-nav__link">
+    C++中String类的字符串分割实现
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typeinfoh" title="typeinfo.h" class="md-nav__link">
+    typeinfo.h
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit0-exit1return" title="exit(0), exit(1)和return的区别" class="md-nav__link">
+    exit(0), exit(1)和return的区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="命令行参数的传入" class="md-nav__link">
+    命令行参数的传入
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variably-modeified-type-in-c-language" title="variably modeified type in C language" class="md-nav__link">
+    variably modeified type in C language
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../julia/" title="Julia" class="md-nav__link">
+      Julia
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../TeX/" title="TeX" class="md-nav__link">
+      TeX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../SQL/" title="SQL" class="md-nav__link">
+      SQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cuda/" title="Cuda" class="md-nav__link">
+      Cuda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../PHP/" title="PHP" class="md-nav__link">
+      PHP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Website
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Website
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../website/" title="Website" class="md-nav__link">
+      Website
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../css/" title="Css" class="md-nav__link">
+      Css
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../js/" title="Js" class="md-nav__link">
+      Js
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Internet/" title="Network" class="md-nav__link">
+      Network
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../autotools/" title="Autotools" class="md-nav__link">
+      Autotools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Emacs/" title="Emacs" class="md-nav__link">
+      Emacs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vi/" title="Vi" class="md-nav__link">
+      Vi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ssh/" title="Ssh" class="md-nav__link">
+      Ssh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../phantomjs/" title="Phantomjs" class="md-nav__link">
+      Phantomjs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Qt/" title="Qt" class="md-nav__link">
+      Qt
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Stats
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Stats
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../calculus/" title="Calculus" class="md-nav__link">
+      Calculus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scientific/" title="Scientific" class="md-nav__link">
+      Scientific
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../graph/" title="Graph" class="md-nav__link">
+      Graph
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../English/" title="English" class="md-nav__link">
+      English
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../mi/" title="Mi" class="md-nav__link">
+      Mi
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../win/" title="Win" class="md-nav__link">
+      Win
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../links/" title="Links" class="md-nav__link">
+      Links
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Misc
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../misc/" title="小程序" class="md-nav__link">
+      小程序
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../misc/wxjssdk/" title="jssdk" class="md-nav__link">
+      jssdk
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ccout" title="C++中cout输出字符型指针地址值的方法" class="md-nav__link">
+    C++中cout输出字符型指针地址值的方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#const" title="const 总结" class="md-nav__link">
+    const 总结
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new" title="new" class="md-nav__link">
+    new
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete" title="delete" class="md-nav__link">
+    delete
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="函数模板和模板函数" class="md-nav__link">
+    函数模板和模板函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="初始化列表" class="md-nav__link">
+    初始化列表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extern" title="extern" class="md-nav__link">
+    extern
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbol-lookup-error" title=""symbol lookup error"" class="md-nav__link">
+    "symbol lookup error"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="字符数组与数字互换" class="md-nav__link">
+    字符数组与数字互换
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="字符数字转数字" class="md-nav__link">
+    字符数字转数字
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="数字转字符" class="md-nav__link">
+    数字转字符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="指针初始化" class="md-nav__link">
+    指针初始化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-correctly-freeing-memory-of-a-multi-dimensional-array" title="C: Correctly freeing memory of a multi-dimensional array" class="md-nav__link">
+    C: Correctly freeing memory of a multi-dimensional array
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35pragma-unroll" title="#pragma unroll的用法" class="md-nav__link">
+    #pragma unroll的用法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-std-ifstream-to-handle-lf-cr-and-crlf" title="Getting std :: ifstream to handle LF, CR, and CRLF?" class="md-nav__link">
+    Getting std :: ifstream to handle LF, CR, and CRLF?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fpic" title="fPIC" class="md-nav__link">
+    fPIC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="参数和返回值的三种传递方式" class="md-nav__link">
+    参数和返回值的三种传递方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-gcc" title="linux gcc常用命令" class="md-nav__link">
+    linux gcc常用命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-publicprotectedprivate" title="C++ public/protected/private" class="md-nav__link">
+    C++ public/protected/private
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" title="C++按行读取文本文件" class="md-nav__link">
+    C++按行读取文本文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-" title="struct--构造函数对结构体初始化的影响" class="md-nav__link">
+    struct--构造函数对结构体初始化的影响
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openmp" title="OpenMP 框架" class="md-nav__link">
+    OpenMP 框架
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c11-stdchrono" title="C++11 std::chrono库详解" class="md-nav__link">
+    C++11 std::chrono库详解
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectorerase" title="vector::erase()方法的详细介绍及问题解答" class="md-nav__link">
+    vector::erase()方法的详细介绍及问题解答
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onlogn" title="最长递增子序列 O(NlogN)算法" class="md-nav__link">
+    最长递增子序列 O(NlogN)算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crealloc" title="c语言中realloc()函数解析" class="md-nav__link">
+    c语言中realloc()函数解析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c_1" title="C语言结构体里的成员数组和指针(关于零数组)" class="md-nav__link">
+    C语言结构体里的成员数组和指针(关于零数组)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c_2" title="C语言：数组和指针的区别" class="md-nav__link">
+    C语言：数组和指针的区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1017-the-best-peak-shape-35" title="1017. The Best Peak Shape (35)" class="md-nav__link">
+    1017. The Best Peak Shape (35)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-stod-was-not-declared-in-this-scope" title="error: 'stod' was not declared in this scope" class="md-nav__link">
+    error: 'stod' was not declared in this scope
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" title="分词" class="md-nav__link">
+    分词
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cstring" title="C++中String类的字符串分割实现" class="md-nav__link">
+    C++中String类的字符串分割实现
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typeinfoh" title="typeinfo.h" class="md-nav__link">
+    typeinfo.h
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit0-exit1return" title="exit(0), exit(1)和return的区别" class="md-nav__link">
+    exit(0), exit(1)和return的区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="命令行参数的传入" class="md-nav__link">
+    命令行参数的传入
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variably-modeified-type-in-c-language" title="variably modeified type in C language" class="md-nav__link">
+    variably modeified type in C language
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="cpp-notes">Cpp notes<a class="headerlink" href="#cpp-notes" title="Permanent link">&para;</a></h1>
+<h2 id="ccout">C++中cout输出字符型指针地址值的方法<a class="headerlink" href="#ccout" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html">ref</a></p>
+<h2 id="const">const 总结<a class="headerlink" href="#const" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.2cto.com/kf/201210/160536.html">ref</a></p>
+<h2 id="new">new<a class="headerlink" href="#new" title="Permanent link">&para;</a></h2>
+<p>申请空间，并执行相应的构造函数</p>
+<h2 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h2>
+<p>执行析构函数，并释放空间</p>
+<p>引用的本质是指针常量</p>
+<div class="codehilite"><pre><span></span>const int m;
+//int* p = &amp;m;//wrong
+const int* p = &amp;m;
+int *const pc = &amp;m; //必须初始化，引用的本质
+</pre></div>
+
+
+<p>构造函数析构函数作用区间</p>
+<div class="codehilite"><pre><span></span>A a;
+A *ap;
+if (...)
+{
+    B b;
+    ...// B析构
+    ap = new A;
+}
+......// A析构
+delete ap;
+</pre></div>
+
+
+<p>先执行基类构造函数，再派生类构造函数；
+先执行派生类析构函数，再派生基类析构函数。</p>
+<h2 id="_1">函数模板和模板函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="http://blog.csdn.net/beyondhaven/article/details/4204345">ref</a></p>
+<p>C++中，函数模板与同名的非模板函数重载时，应遵循下列调用原则：
+1. 寻找一个参数完全匹配的函数，若找到就调用它。若参数完全匹配的函数多于一个，则这个调用是一个错误的调用。
+2. 寻找一个函数模板，若找到就将其实例化生成一个匹配的模板函数并调用它。
+3. 若上面两条都失败，则使用函数重载的方法，通过类型转换产生参数匹配，若找到就调用它。
+4. 若上面三条都失败，还没有找都匹配的函数，则这个调用是一个错误的调用。</p>
+<h2 id="_2">初始化列表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.cnblogs.com/graphics/archive/2010/07/04/1770900.html">ref</a></p>
+<h2 id="extern">extern<a class="headerlink" href="#extern" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.cnblogs.com/yc_sunniwell/archive/2010/07/14/1777431.html">reference</a></p>
+<p>在Rcpp中，extern &ldquo;C&rdquo; 告诉编译器，保持其名称，不要生成用于链接的中间函数名。</p>
+<h2 id="symbol-lookup-error">&ldquo;symbol lookup error&rdquo;<a class="headerlink" href="#symbol-lookup-error" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>./test: symbol lookup error: ./test: undefined symbol:
+</pre></div>
+
+
+<p>动态链接库的原因，因为更新完gsl之后，原先的动态链接库不管用了，可以用下面的命令追踪动态链接库</p>
+<div class="codehilite"><pre><span></span>ldd test
+ldd -d -r test
+</pre></div>
+
+
+<p>参考<a href="http://gdwarner.blogspot.com/2009/03/c-runtime-symbol-lookup-error.html">c++ runtime &ldquo;symbol lookup error&rdquo; </a></p>
+<h2 id="_3">字符数组与数字互换<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>http://blog.csdn.net/sunquana/article/details/14645079</p>
+<h3 id="_4">字符数字转数字<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>atoi</li>
+<li>atof</li>
+<li>atol</li>
+<li>strtod</li>
+<li>strtol</li>
+</ol>
+<h3 id="_5">数字转字符<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>sprintf</p>
+<h2 id="_6">指针初始化<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>double x;
+double *p = &amp;x;
+</pre></div>
+
+
+<p>DO NOT</p>
+<div class="codehilite"><pre><span></span>double *p = 5;
+</pre></div>
+
+
+<p>BUT</p>
+<div class="codehilite"><pre><span></span>double *p = &quot;aaa&quot;;
+</pre></div>
+
+
+<p>并且要初始化，不能</p>
+<div class="codehilite"><pre><span></span>double *p;
+</pre></div>
+
+
+<p>然后直接传参了，这是不对的。</p>
+<h2 id="c-correctly-freeing-memory-of-a-multi-dimensional-array">C: Correctly freeing memory of a multi-dimensional array<a class="headerlink" href="#c-correctly-freeing-memory-of-a-multi-dimensional-array" title="Permanent link">&para;</a></h2>
+<p>https://stackoverflow.com/questions/1733881/c-correctly-freeing-memory-of-a-multi-dimensional-array</p>
+<h2 id="35pragma-unroll">#pragma unroll的用法<a class="headerlink" href="#35pragma-unroll" title="Permanent link">&para;</a></h2>
+<p>http://blog.csdn.net/fengzizhuang/article/details/9300431</p>
+<h2 id="getting-std-ifstream-to-handle-lf-cr-and-crlf">Getting std :: ifstream to handle LF, CR, and CRLF?<a class="headerlink" href="#getting-std-ifstream-to-handle-lf-cr-and-crlf" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>https://stackoverflow.com/questions/6089231/getting-std-ifstream-to-handle-lf-cr-and-crlf</p>
+</li>
+<li>
+<p>https://stackoverflow.com/questions/9188126/c-strange-behavior-with-stdistream-or-sentry-wrap-around/9189541#9189541</p>
+</li>
+</ol>
+<div class="codehilite"><pre><span></span><span class="nt">std</span><span class="p">::</span><span class="nd">istream</span><span class="o">&amp;</span> <span class="nt">safeGetline</span><span class="o">(</span><span class="nt">std</span><span class="p">::</span><span class="nd">istream</span><span class="o">&amp;</span> <span class="nt">is</span><span class="o">,</span> <span class="nt">std</span><span class="p">::</span><span class="nd">string</span><span class="o">&amp;</span> <span class="nt">t</span><span class="o">)</span>
+<span class="p">{</span>
+    <span class="err">t.clear()</span><span class="p">;</span>
+
+    <span class="err">//</span> <span class="err">The</span> <span class="err">characters</span> <span class="err">in</span> <span class="err">the</span> <span class="err">stream</span> <span class="err">are</span> <span class="err">read</span> <span class="err">one-by-one</span> <span class="err">using</span> <span class="err">a</span> <span class="n">std</span><span class="p">:</span><span class="o">:</span><span class="n">streambuf</span><span class="o">.</span>
+    <span class="o">//</span> <span class="n">That</span> <span class="n">is</span> <span class="kc">faster</span> <span class="n">than</span> <span class="n">reading</span> <span class="n">them</span> <span class="n">one-by-one</span> <span class="n">using</span> <span class="n">the</span> <span class="n">std</span><span class="o">::</span><span class="n">istream</span><span class="o">.</span>
+    <span class="o">//</span> <span class="n">Code</span> <span class="n">that</span> <span class="n">uses</span> <span class="n">streambuf</span> <span class="n">this</span> <span class="n">way</span> <span class="n">must</span> <span class="n">be</span> <span class="n">guarded</span> <span class="n">by</span> <span class="n">a</span> <span class="n">sentry</span> <span class="n">object</span><span class="o">.</span>
+    <span class="o">//</span> <span class="n">The</span> <span class="n">sentry</span> <span class="n">object</span> <span class="n">performs</span> <span class="n">various</span> <span class="n">tasks</span><span class="p">,</span>
+    <span class="o">//</span> <span class="n">such</span> <span class="n">as</span> <span class="n">thread</span> <span class="n">synchronization</span> <span class="n">and</span> <span class="n">updating</span> <span class="n">the</span> <span class="n">stream</span> <span class="n">state</span><span class="o">.</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">istream</span><span class="o">::</span><span class="n">sentry</span> <span class="nf">se</span><span class="p">(</span><span class="n">is</span><span class="p">,</span> <span class="n">true</span><span class="p">);</span>
+    <span class="n">std</span><span class="p">:</span><span class="o">:</span><span class="n">streambuf</span><span class="o">*</span> <span class="n">sb</span> <span class="o">=</span> <span class="n">is</span><span class="o">.</span><span class="nf">rdbuf</span><span class="p">();</span>
+
+    <span class="err">for(</span><span class="p">;;</span><span class="err">)</span> <span class="err">{</span>
+        <span class="err">int</span> <span class="err">c</span> <span class="err">=</span> <span class="err">sb-&gt;sbumpc()</span><span class="p">;</span>
+        <span class="err">switch</span> <span class="err">(c)</span> <span class="err">{</span>
+        <span class="err">case</span> <span class="err">&#39;\n&#39;:</span>
+            <span class="err">return</span> <span class="err">is</span><span class="p">;</span>
+        <span class="err">case</span> <span class="err">&#39;\r&#39;:</span>
+            <span class="err">if(sb-&gt;sgetc()</span> <span class="err">==</span> <span class="err">&#39;\n&#39;)</span>
+                <span class="err">sb-&gt;sbumpc()</span><span class="p">;</span>
+            <span class="err">return</span> <span class="err">is</span><span class="p">;</span>
+        <span class="err">case</span> <span class="n">EOF</span><span class="p">:</span>
+            <span class="o">//</span> <span class="n">Also</span> <span class="n">handle</span> <span class="n">the</span> <span class="n">case</span> <span class="n">when</span> <span class="n">the</span> <span class="kc">last</span> <span class="n">line</span> <span class="n">has</span> <span class="n">no</span> <span class="n">line</span> <span class="n">ending</span>
+            <span class="nf">if</span><span class="p">(</span><span class="n">t</span><span class="err">.</span><span class="nf">empty</span><span class="p">())</span>
+                <span class="n">is</span><span class="o">.</span><span class="nf">setstate</span><span class="p">(</span><span class="n">std</span><span class="err">::</span><span class="n">ios</span><span class="err">::</span><span class="n">eofbit</span><span class="p">);</span>
+            <span class="err">return</span> <span class="err">is</span><span class="p">;</span>
+        <span class="n">default</span><span class="p">:</span>
+            <span class="n">t</span> <span class="o">+=</span> <span class="p">(</span><span class="n">char</span><span class="p">)</span><span class="n">c</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="err">}</span>
+<span class="err">}</span>
+</pre></div>
+
+
+<p>使用这个代码注意一个问题
+应该使用</p>
+<div class="codehilite"><pre><span></span>while(!safeGetline(input, line).eof)
+</pre></div>
+
+
+<p>不能用</p>
+<div class="codehilite"><pre><span></span>while(safeGetline(input, line))
+</pre></div>
+
+
+<h2 id="fpic">fPIC<a class="headerlink" href="#fpic" title="Permanent link">&para;</a></h2>
+<p>参考http://blog.sina.com.cn/s/blog_54f82cc201011op1.html</p>
+<h2 id="_7">参数和返回值的三种传递方式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><a href="http://blog.csdn.net/thisispan/article/details/7456180">C++函数参数和返回值三种传递方式：值传递、指针传递和引用传递（着重理解）</a></p>
+<h2 id="linux-gcc">linux gcc常用命令<a class="headerlink" href="#linux-gcc" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html">Linux GCC常用命令</a></p>
+<h2 id="c-publicprotectedprivate">C++ public/protected/private<a class="headerlink" href="#c-publicprotectedprivate" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.jb51.net/article/54224.htm">深入理解C++中public、protected及private用法</a></p>
+<h2 id="c">C++按行读取文本文件<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.cnblogs.com/freeliver54/archive/2012/06/18/2554173.html">C++按行读取文本文件</a></p>
+<h2 id="struct-">struct&ndash;构造函数对结构体初始化的影响<a class="headerlink" href="#struct-" title="Permanent link">&para;</a></h2>
+<p><a href="http://blog.csdn.net/wwangluogongchengshi/article/details/6901540">struct&ndash;构造函数对结构体初始化的影响</a></p>
+<h2 id="_8"><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.felix021.com/blog/read.php?1587"></a></p>
+<h2 id="openmp">OpenMP 框架<a class="headerlink" href="#openmp" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.ibm.com/developerworks/cn/aix/library/au-aix-openmp-framework/">通过 GCC 学习 OpenMP 框架</a></p>
+<p><a href="https://people.sc.fsu.edu/~jburkardt/cpp_src/openmp/openmp.html">C++ Examples of Parallel Programming with OpenMP</a></p>
+<p><a href="http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html">C++中cout输出字符型指针地址值的方法</a></p>
+<p><a href="http://pages.tacc.utexas.edu/~eijkhout/pcse/html/omp-loop.html">OpenMP topic: Loop parallelism</a></p>
+<p><a href="http://blog.csdn.net/ly_624/article/details/52921256">并行计算—OpenMP—临界区critical</a></p>
+<p><a href="http://blog.csdn.net/gengshenghong/article/details/7000979">OpenMP并行构造的schedule子句详解</a></p>
+<h2 id="c11-stdchrono">C++11 std::chrono库详解<a class="headerlink" href="#c11-stdchrono" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.cnblogs.com/jwk000/p/3560086.html">C++11 std::chrono库详解</a></p>
+<h2 id="vectorerase">vector::erase()方法的详细介绍及问题解答<a class="headerlink" href="#vectorerase" title="Permanent link">&para;</a></h2>
+<p><a href="http://blog.sina.com.cn/s/blog_6377b8e60100ino6.html">vector::erase()方法的详细介绍及问题解答</a></p>
+<h2 id="onlogn">最长递增子序列 O(NlogN)算法<a class="headerlink" href="#onlogn" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.felix021.com/blog/read.php?1587">最长递增子序列 O(NlogN)算法 </a></p>
+<h2 id="crealloc">c语言中realloc()函数解析<a class="headerlink" href="#crealloc" title="Permanent link">&para;</a></h2>
+<p><a href="http://blog.csdn.net/hackerain/article/details/7954006">c语言中realloc()函数解析</a></p>
+<h2 id="c_1">C语言结构体里的成员数组和指针(关于零数组)<a class="headerlink" href="#c_1" title="Permanent link">&para;</a></h2>
+<p><a href="http://blog.csdn.net/yang_yulei/article/details/23395315">C语言结构体里的成员数组和指针(关于零数组)</a></p>
+<h2 id="c_2">C语言：数组和指针的区别<a class="headerlink" href="#c_2" title="Permanent link">&para;</a></h2>
+<p><a href="http://blog.csdn.net/imred/article/details/45441457">C语言：数组和指针的区别</a></p>
+<h2 id="1017-the-best-peak-shape-35">1017. The Best Peak Shape (35)<a class="headerlink" href="#1017-the-best-peak-shape-35" title="Permanent link">&para;</a></h2>
+<p><a href="http://blog.csdn.net/jtjy568805874/article/details/60339007">1017. The Best Peak Shape (35)</a></p>
+<h2 id="error-stod-was-not-declared-in-this-scope">error: &lsquo;stod&rsquo; was not declared in this scope<a class="headerlink" href="#error-stod-was-not-declared-in-this-scope" title="Permanent link">&para;</a></h2>
+<p><a href="https://stackoverflow.com/questions/20437984/error-stod-was-not-declared-in-this-scope">error: &lsquo;stod&rsquo; was not declared in this scope</a></p>
+<h2 id="_9">分词<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>参考<a href="https://tartarus.org/martin/PorterStemmer/">The Porter Stemming Algorithm</a></p>
+<h2 id="cstring">C++中String类的字符串分割实现<a class="headerlink" href="#cstring" title="Permanent link">&para;</a></h2>
+<p>参考<a href="http://www.cnblogs.com/carsonzhu/p/5859552.html">C++中String类的字符串分割实现</a></p>
+<h2 id="typeinfoh">typeinfo.h<a class="headerlink" href="#typeinfoh" title="Permanent link">&para;</a></h2>
+<p>参考<a href="http://www.cnblogs.com/visayafan/archive/2011/11/29/2268135.html">C++: typeinfo.h</a></p>
+<h2 id="exit0-exit1return">exit(0), exit(1)和return的区别<a class="headerlink" href="#exit0-exit1return" title="Permanent link">&para;</a></h2>
+<p>参考<a href="http://www.cnblogs.com/nufangrensheng/archive/2013/03/01/2938508.html">exit（0）与exit（1）、return区别 - ITtecman - 博客园</a></p>
+<ul>
+<li>exit(0): 正常运行程序并退出程序</li>
+<li>exit(1): 非正常运行导致退出程序</li>
+<li>return: 返回函数</li>
+</ul>
+<h2 id="_10">命令行参数的传入<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>参考<a href="https://www.ibm.com/developerworks/cn/aix/library/au-unix-getopt.html">使用 getopt() 进行命令行处理</a></p>
+<h2 id="variably-modeified-type-in-c-language">variably modeified type in C language<a class="headerlink" href="#variably-modeified-type-in-c-language" title="Permanent link">&para;</a></h2>
+<p>参考<a href="https://stackoverflow.com/questions/23529069/variably-modified-type-in-c-language">Variably modified type in C language - Stack Overflow</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Matlab/" title="Matlab" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Matlab
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../julia/" title="Julia" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Julia
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 weiya
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/szcf-weiya" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://esl.hohoweiya.xyz" class="md-footer-social__link fa fa-book"></a>
+    
+      <a href="https://hohoweiya.xyz" class="md-footer-social__link fa fa-home"></a>
+    
+      <a href="https://blog.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
+    
+      <a href="mailto:szcfweiya@gmail.com" class="md-footer-social__link fa fa-envelope"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.8eb9be28.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      
+        <script src="../javascripts/baiduzhanzhang.js"></script>
+      
+    
+    
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-85007363-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
+    
+  </body>
+</html>

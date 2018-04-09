@@ -1,0 +1,35 @@
+\documentclass[tikz]{standalone}
+\usepackage{pgfplots}
+\usepackage{mathpazo}
+\usepgfplotslibrary{polar}
+\usepgflibrary{shapes.geometric}
+\usetikzlibrary{calc}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\pgfplotsset{compat=1.12} 
+\pgfplotsset{my style/.append style={axis x line=middle, axis y line=middle, xlabel={$x$},ylabel={$y$},smooth}}
+\begin{document}
+\begin{tikzpicture}[scale=1]
+	\draw[->,thick] (-1, 0) -- (15, 0) node[right] {};
+	\draw[->,thick]	(0, -1) -- (0, 11) node[above] {};
+	\draw[xstep = 14, ystep = 1] (0, 0) grid (14, 10);
+	\foreach \x/\xtext in { 1.2/{S_1}, 3.5/{S_2}, 4.4/{S_3}, 9.4/S_{n-2},12.5/S_{n-1}, 14/t}
+		{\draw (\x, 0) node[below] {$\xtext$};
+		\filldraw (\x, 0) circle[radius = 2pt];}
+	\foreach \x in {5.4, 5.6, ...,8.4}
+		\draw[xshift = \x cm] node[below] {$.$};
+	\foreach \y in {1, 2, 3}
+		\draw[yshift=\y cm] node[left] {$\y$};
+	\foreach \y in {4, 4.2,...,8}
+		\draw[yshift=\y cm] node[left] {$.$}; 
+	\foreach \y/\ytext in {9/{n-1}, 10/n}
+		\draw[yshift=\y cm] node[left] {$\ytext$};
+	\draw[ultra thick] (0, 1) -- (1.2, 1) node[midway,below] {$B_1$}
+						  (1.2, 2) -- (3.5, 2) node[midway,below] {$B_2$}
+						  (3.5, 3) -- (4.4, 3) node[midway, below] {$B_3$}
+						  (9.4, 9) -- (12.5, 9) node[midway, below] {$B_{n-1}$}
+						  (12.5, 10) -- (14, 10) node[midway, below] {$B_{n}$};
+	\draw[xshift = 0.5cm, yshift=0.5cm] (14, 10) node {$(n,t)$}
+												 (-1, -1) node {$O$}; 
+\end{tikzpicture}
+\end{document}
