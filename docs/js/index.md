@@ -223,3 +223,12 @@ c=someObject.toString() //将对象转换为字符串
 
 ![](bool_js.PNG)
 
+
+## setTimeout 返回值
+
+1. [js promise怎么返回值？](https://segmentfault.com/q/1010000007889310?_ea=1483501)
+
+## 箭头函数
+
+[js中 => 的含义](https://www.cnblogs.com/developer-os/p/6268479.html)
+
