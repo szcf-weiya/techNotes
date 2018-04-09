@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "\u6280\u672f\u7b14\u8bb0 \n\n\n\u672c\u6280\u672f\u7b14\u8bb0\u5305\u62ec\u4f46\u4e0d\u9650\u4e8e\n\n\n\n\nLinux\u4f7f\u7528\u8fc7\u7a0b\u4e2d\u9047\u5230\u7684\u95ee\u9898\u53ca\u89e3\u51b3\u65b9\u6848\uff0c\u4ee5\u53ca\u5e38\u7528\u6280\u5de7\uff1b\n\n\n\u7f16\u7a0b\u8bed\u8a00\u4f7f\u7528\u8fc7\u7a0b\u4e2d\u9047\u5230\u7684bug\u53ca\u89e3\u51b3\u65b9\u6848\uff0c\u4ee5\u53ca\u5e38\u7528\u6280\u5de7\uff1b\n\n\n\u76f8\u5173\u8f6f\u4ef6\u7684\u914d\u7f6e\u8fc7\u7a0b\u3002\n\n\n\n\nCheat sheets\n\n\n\n\nRcpp-quickref\n\n\nr-graphical-parameters-cheatsheet\n\n\ngit-cheat-sheet\n\n\nconda-cheatsheet\n\n\nmatlab-cheatsheet\n\n\nbiblatex-cheatsheet", 
+            "text": "\u6280\u672f\u7b14\u8bb0\n\n\n\u672c\u6280\u672f\u7b14\u8bb0\u5305\u62ec\u4f46\u4e0d\u9650\u4e8e\n\n\n\n\nLinux\u4f7f\u7528\u8fc7\u7a0b\u4e2d\u9047\u5230\u7684\u95ee\u9898\u53ca\u89e3\u51b3\u65b9\u6848\uff0c\u4ee5\u53ca\u5e38\u7528\u6280\u5de7\uff1b\n\n\n\u7f16\u7a0b\u8bed\u8a00\u4f7f\u7528\u8fc7\u7a0b\u4e2d\u9047\u5230\u7684bug\u53ca\u89e3\u51b3\u65b9\u6848\uff0c\u4ee5\u53ca\u5e38\u7528\u6280\u5de7\uff1b\n\n\n\u76f8\u5173\u8f6f\u4ef6\u7684\u914d\u7f6e\u8fc7\u7a0b\u3002\n\n\n\n\nCheat sheets\n\n\n\n\nRcpp-quickref\n\n\nr-graphical-parameters-cheatsheet\n\n\ngit-cheat-sheet\n\n\nconda-cheatsheet\n\n\nmatlab-cheatsheet\n\n\nbiblatex-cheatsheet", 
             "title": "Home"
         }, 
         {
