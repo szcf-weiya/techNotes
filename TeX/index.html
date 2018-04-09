@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.1">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.78aab2dc.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.8d40d89b.css">
       
     
     
@@ -1207,6 +1207,122 @@ code
   <span class="k">\item</span> three
 <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
 </pre></div>
+
+
+<h2 id="xelatex-pdf-on-travis-ci">xelatex pdf on Travis CI<a class="headerlink" href="#xelatex-pdf-on-travis-ci" title="Permanent link">&para;</a></h2>
+<p>参考 </p>
+<ol>
+<li><a href="https://hv.pizza/blog/setup-latex-pdf-build-using-travis-ci/">Setup LaTeX PDF build using Travis CI</a></li>
+<li><a href="https://hv.pizza/blog/document-building-versioning-with-tex-document-git-continuous-integration-dropbox/">Document building &amp; versioning with TeX document, Git, Continuous Integration &amp; Dropbox</a></li>
+</ol>
+<h3 id="first-example">first example<a class="headerlink" href="#first-example" title="Permanent link">&para;</a></h3>
+<ul>
+<li>no chinese</li>
+<li>no other packages</li>
+</ul>
+<div class="codehilite"><pre><span></span>before_install:
+  - &quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng&quot;
+
+script:
+  - cd proposal
+  - xelatex test
+</pre></div>
+
+
+<p>It turns out that no xelatex.</p>
+<h3 id="second-example">second example<a class="headerlink" href="#second-example" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>before_install:
+  - &quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex dvipng&quot;
+
+script:
+  - cd proposal
+  - xelatex test
+</pre></div>
+
+
+<p>succeed!</p>
+<h3 id="install-chinese-fonts">install Chinese fonts<a class="headerlink" href="#install-chinese-fonts" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">sudo</span><span class="o">:</span> <span class="n">required</span>
+<span class="n">dist</span><span class="o">:</span> <span class="n">trusty</span>
+<span class="n">before_install</span><span class="o">:</span>
+  <span class="o">-</span> <span class="s2">&quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex dvipng&quot;</span>
+  <span class="o">-</span> <span class="s2">&quot;wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download &amp;&amp; tar xzf fonts.tar.gz &amp;&amp; sudo mkdir -p /usr/share/fonts/truetype/custom/ &amp;&amp; mv fonts/* /usr/share/fonts/truetype/custom/ &amp;&amp; sudo fc-cache -f -v&quot;</span>
+
+<span class="n">script</span><span class="o">:</span>
+  <span class="o">-</span> <span class="n">cd</span> <span class="n">proposal</span>
+  <span class="o">-</span> <span class="n">xelatex</span> <span class="n">test</span>
+</pre></div>
+
+
+<p>wrong error in wget. It should be </p>
+<div class="codehilite"><pre><span></span>wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz
+</pre></div>
+
+
+<p>and mv should add <code>sudo</code></p>
+<div class="codehilite"><pre><span></span>sudo mv fonts/* /usr/share/fonts/truetype/custom/ 
+</pre></div>
+
+
+<p>succeed!</p>
+<h3 id="use-xecjk">use xeCJK<a class="headerlink" href="#use-xecjk" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span># test.tex
+\documentclass{article}
+\usepackage{xeCJK}
+\setCJKmainfont{STFANGSO.TTF}
+\begin{document}
+test TeX on Travis CI via xelatex.
+毕业论文（设计）题目 
+
+浙江大学本科生毕业论文（设计）
+\end{document}
+
+# .travis.yml
+sudo: required
+dist: trusty
+before_install:
+  - &quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex dvipng&quot;
+  - &quot;wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz &amp;&amp; tar xzf fonts.tar.gz &amp;&amp; sudo mkdir -p /usr/share/fonts/truetype/custom/ &amp;&amp; sudo mv fonts/* /usr/share/fonts/truetype/custom/ &amp;&amp; sudo fc-cache -f -v&quot;
+
+script:
+  - cd proposal
+  - xelatex test
+</pre></div>
+
+
+<p>It reports that</p>
+<div class="codehilite"><pre><span></span>! Font EU1/lmr/m/n/10=[lmroman10-regular]:mapping=tex-text at 10.0pt not loadab
+le: Metric (TFM) file or installed font not found.
+</pre></div>
+
+
+<p>refer to <a href="https://tex.stackexchange.com/questions/129799/font-eu1-lmr-m-n-10-lmroman10-regularmapping-tex-text-at-10-0pt-not-loadab">! Font EU1/lmr/m/n/10=[lmroman10-regular]:mapping=tex-text at 10.0pt not loadab le: Metric (TFM) file not found</a></p>
+<p>try to install <code>fonts-lmodern</code> fist.</p>
+<div class="codehilite"><pre><span></span>sudo apt-get install fonts-lmodern
+</pre></div>
+
+
+<p>succeed!</p>
+<p>However, I cannot find <code>test.pdf</code> in releases, and it contains other files. So set</p>
+<div class="codehilite"><pre><span></span><span class="n">skip_cleanup</span><span class="o">:</span> <span class="kc">true</span>
+</pre></div>
+
+
+<p>and fix typo from <code>tages</code> to <code>tags</code>.</p>
+<p>But it still cannot find the <code>test.pdf</code>, and even cannot find any release</p>
+<p>so I change <code>file: proposal/test.pdf</code> to <code>file: test.pdf</code>.</p>
+<p>It reports that <code>Skipping a deployment with the releases provider because this is not a tagged commit</code></p>
+<p>It still failed.</p>
+<p>Then use the normal method</p>
+<div class="codehilite"><pre><span></span>git add .
+git commit -m &quot;    &quot;
+git tag &quot;test&quot;
+git push origin master --tags
+</pre></div>
+
+
+<p>It succeed!</p>
+<p>Then I found that if use <code>before_deploy</code>, it seems that no need to set <code>on.tags = true</code>.</p>
                 
                   
                 
@@ -1298,7 +1414,7 @@ code
       
     </div>
     
-      <script src="../assets/javascripts/application.8eb9be28.js"></script>
+      <script src="../assets/javascripts/application.b438e6c5.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
       
