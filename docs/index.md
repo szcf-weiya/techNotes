@@ -1,4 +1,4 @@
-# 技术笔记
+# 技术笔记 [![Build Status](https://travis-ci.org/szcf-weiya/techNotes.svg?branch=master)](https://travis-ci.org/szcf-weiya/techNotes)
 
 本技术笔记包括但不限于
 
