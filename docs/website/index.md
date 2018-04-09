@@ -160,4 +160,6 @@ crossDomain: true,    // 允许跨域请求
 
 1. https://mwop.net/blog/2016-01-29-automating-gh-pages.html
 2. [Deploying Docs on Github with Travis-CI](https://djw8605.github.io/2017/02/08/deploying-docs-on-github-with-travisci/)
-3. 
+
+注意 GITHUB_TOKEN 的设置，参考[Creating a personal access token for the command line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+
