@@ -404,3 +404,9 @@ It succeed!
 
 Then I found that if use `before_deploy`, it seems that no need to set `on.tags = true`.
 
+### test main.tex
+
+称缺失 `xcolor.sty`，而用 `apt-cache search xcolor | grep tex` 得到的包为 extra 和 recommended，但这两个包已经安装了，所以怀疑是 `--no-install-recommends`。
+
+不过突然想到，版本不对，我本机为 TeXlive 2015，而 Travis CI 上为 2013，所以我又在服务器上进行测试，发现 `xcolor` 在 `latex-xcolor` 包中。
+
