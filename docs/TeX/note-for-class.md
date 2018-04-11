@@ -107,3 +107,38 @@ natbib:
 3. https://tex.stackexchange.com/questions/51682/is-it-possible-to-pagebreak-aligned-equations
 4. https://tex.stackexchange.com/questions/147346/how-can-one-stop-latex-compilation
 5. https://tex.stackexchange.com/questions/106964/could-not-insert-pdf-graphics
+
+## dtx
+1. https://tex.stackexchange.com/questions/344530/whats-the-point-of-ins-and-dtx-files
+2. [beautiful fonts](https://tex.stackexchange.com/questions/59702/suggest-a-nice-font-family-for-my-basic-latex-template-text-and-math)
+
+## different chapter
+1. https://tex.stackexchange.com/questions/195703/color-depending-on-section-number
+2. https://tex.stackexchange.com/questions/10326/how-to-set-the-chapter-style-in-report-class
+3. https://tex.stackexchange.com/questions/215249/why-in-the-discussion-of-the-definition-of-newif-are-the-following-things-true
+4. https://tex.stackexchange.com/questions/182569/how-to-manually-set-where-a-word-is-split
+5. https://tex.stackexchange.com/questions/86385/what-is-the-difference-between-relax-and
+
+## If not DeclareOption
+
+参考https://tex.stackexchange.com/questions/135248/if-not-declareoption
+所以似乎\ExecuteOptions不是必要的。
+```tex
+\DeclareOptionX{fangfont}[emptyoption]{%
+    \ifthenelse{\equal{#1}{emptyoption}}{%
+        \zju@fangfalse
+    }{%
+        \def\fangfont{#1}
+        \zju@fangtrue
+    }
+}
+\DeclareOptionX{heifont}[emptyoption]{%
+    \ifthenelse{\equal{#1}{emptyoption}}{%
+        \zju@heifalse
+    }{%
+        \def\heifont{#1}
+        \zju@heitrue
+    }
+}
+```
+似乎可以简化
