@@ -39,3 +39,21 @@ vim 打开，
 http://blog.csdn.net/tsuliuchao/article/details/7553003
 
 使用vim时，如果你不小心按了 Ctrl + s后，你会发现不能输入任何东西了，像死掉了一般，其实vim并没有死掉，这时vim只是停止向终端输出而已，要想退出这种状态，只需按Ctrl + q 即可恢复正常。
+
+## 执行当前脚本
+
+参考[How to execute file I'm editing in Vi(m)](https://stackoverflow.com/questions/953398/how-to-execute-file-im-editing-in-vim)
+
+另外也参考了[VIM中执行Shell命令（炫酷）](https://blog.csdn.net/bnxf00000/article/details/46618465)
+
+## 打开另外一个文件
+
+参考
+1. [vim 打开一个文件后,如何打开另一个文件?](https://zhidao.baidu.com/question/873060894102392532.html)
+2. [VI打开和编辑多个文件的命令 分屏操作 - David.Wei0810 - 博客园](https://www.cnblogs.com/david-wei0810/p/5749408.html)
+
+## 删除光标后的字符 
+
+```vi
+d$
+```

@@ -23,3 +23,10 @@ SELECT 'I''M '+'Chinese.'
 [取得sqlite数据库里所有的表名 &复制表](http://blog.csdn.net/vlily/article/details/9096909)
 
 
+## MySQL 登录退出命令
+
+参考[mysql登录退出命令](https://www.cnblogs.com/panxuejun/p/6110638.html)
+
+## 事务
+
+参考[MySQL Transaction（事务）学习笔记](https://blog.csdn.net/u014587769/article/details/68957371)

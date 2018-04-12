@@ -315,3 +315,12 @@ sudo pip install python-markdown-math
 另外 flask 的入门文档见
 
 [快速入门 &mdash; Flask 0.10.1 文档](http://docs.jinkan.org/docs/flask/quickstart.html#quickstart)
+
+## with 语句
+
+参考[Python with语句](https://www.cnblogs.com/zhangkaikai/p/6669750.html)
+
+简言之，“使用with后不管with中的代码出现什么错误，都会进行对当前对象进行清理工作。”
+
+这也就是为什么在用 MySQLdb 的时候，称“With the with keyword, the Python interpreter automatically releases the resources. It also provides error handling.” 详见[MySQL Python tutorial - programming MySQL in Python](http://zetcode.com/db/mysqlpython/)
+
