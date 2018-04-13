@@ -732,6 +732,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mysql" title="远程连接 mysql" class="md-nav__link">
+    远程连接 mysql
+  </a>
+  
+</li>
+      
       
       
       
@@ -1515,6 +1522,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mysql" title="远程连接 mysql" class="md-nav__link">
+    远程连接 mysql
+  </a>
+  
+</li>
+      
       
       
       
@@ -1759,6 +1773,23 @@ python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这�
 <p>这也就是为什么在用 MySQLdb 的时候，称“With the with keyword, the Python interpreter automatically releases the resources. It also provides error handling.” 详见<a href="http://zetcode.com/db/mysqlpython/">MySQL Python tutorial - programming MySQL in Python</a></p>
 <h2 id="how-can-i-use-conda-to-install-mysqldb">How can I use Conda to install MySQLdb?<a class="headerlink" href="#how-can-i-use-conda-to-install-mysqldb" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/34140472/how-can-i-use-conda-to-install-mysqldb">How can I use Conda to install MySQLdb?</a></p>
+<h2 id="mysql">远程连接 mysql<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h2>
+<p>首先需要在服务器端，在<code>my.cnf</code> 中注释掉</p>
+<div class="codehilite"><pre><span></span><span class="c1"># bind-address = 127.0.0.1</span>
+</pre></div>
+
+
+<p>并且在 mysql 中创建用户并设置权限，如</p>
+<div class="codehilite"><pre><span></span>create user <span class="s1">&#39;test&#39;</span>@<span class="s1">&#39;%&#39;</span> identified by <span class="s1">&#39;test123&#39;</span><span class="p">;</span>
+grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span class="s1">&#39;%&#39;</span> with grant option<span class="p">;</span>
+</pre></div>
+
+
+<p>参考</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/1559955/host-xxx-xx-xxx-xxx-is-not-allowed-to-connect-to-this-mysql-server">Host &lsquo;xxx.xx.xxx.xxx&rsquo; is not allowed to connect to this MySQL server</a></li>
+<li><a href="https://stackoverflow.com/questions/14779104/how-to-allow-remote-connection-to-mysql">How to allow remote connection to mysql</a></li>
+</ol>
                 
                   
                 
