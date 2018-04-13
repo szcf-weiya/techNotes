@@ -328,3 +328,24 @@ sudo pip install python-markdown-math
 
 
 参考[How can I use Conda to install MySQLdb?](https://stackoverflow.com/questions/34140472/how-can-i-use-conda-to-install-mysqldb)
+
+## 远程连接 mysql
+
+首先需要在服务器端，在`my.cnf` 中注释掉
+
+```bash
+# bind-address = 127.0.0.1
+```
+
+并且在 mysql 中创建用户并设置权限，如
+
+```bash
+create user 'test'@'%' identified by 'test123';
+grant all privileges on testdb.* to 'test'@'%' with grant option;
+```
+
+参考
+
+1. [Host 'xxx.xx.xxx.xxx' is not allowed to connect to this MySQL server](https://stackoverflow.com/questions/1559955/host-xxx-xx-xxx-xxx-is-not-allowed-to-connect-to-this-mysql-server)
+2. [How to allow remote connection to mysql](https://stackoverflow.com/questions/14779104/how-to-allow-remote-connection-to-mysql)
+
