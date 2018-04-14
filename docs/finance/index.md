@@ -55,3 +55,13 @@ RSI 的交叉情况
 ## 安装 MySQL
 
 参考[How To Install MySQL on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04)
+
+## 仓位
+
+参考百度百科
+
+> 仓位是指投资人实有投资和实际投资资金的比例。列举个例子：比如你有10万用于投资，现用了4万元买基金或股票，你的仓位是40%。如你全买了基金或股票，你就满仓了。如你全部赎回基金卖出股票，你就空仓了。
+
+### 持仓
+
+> 在期货交易中，无论是买还是卖，凡是新建头寸都叫开仓。交易者建仓之后手中就持有头寸，这就叫持仓。
