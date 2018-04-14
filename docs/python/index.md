@@ -354,3 +354,7 @@ grant all privileges on testdb.* to 'test'@'%' with grant option;
 ### __init__
 
 [https://stackoverflow.com/questions/5599254/how-to-use-sphinxs-autodoc-to-document-a-classs-init-self-method](https://stackoverflow.com/questions/5599254/how-to-use-sphinxs-autodoc-to-document-a-classs-init-self-method)
+
+## @staticmethod 和 @classmethod
+
+参考[Difference between @staticmethod and @classmethod in Python](https://www.pythoncentral.io/difference-between-staticmethod-and-classmethod-in-python/)
