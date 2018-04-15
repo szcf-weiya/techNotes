@@ -864,6 +864,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#travis-ci" title="Travis CI" class="md-nav__link">
+    Travis CI
+  </a>
+  
+</li>
+      
       
       
       
@@ -1275,6 +1282,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#travis-ci" title="Travis CI" class="md-nav__link">
+    Travis CI
+  </a>
+  
+</li>
+      
       
       
       
@@ -1480,6 +1494,12 @@ git config user.email
 <h2 id="rewrite">rewrite 时百分比的含义<a class="headerlink" href="#rewrite" title="Permanent link">&para;</a></h2>
 <p>表示相似性。</p>
 <p>参考<a href="https://stackoverflow.com/questions/1046276/what-does-the-message-rewrite-90-after-a-git-commit-mean">What does the message “rewrite … (90%)” after a git commit mean? [duplicate]</a></p>
+<h2 id="travis-ci">Travis CI<a class="headerlink" href="#travis-ci" title="Permanent link">&para;</a></h2>
+<p>中文折腾为什么 Travis CI 中用 &lsquo;*&rsquo; 号不会上传文件，最后还是指定了文件名。</p>
+<p>刚刚找到解决方案 <a href="https://stackoverflow.com/questions/25929225/how-to-deploy-to-github-with-file-pattern-on-travis">How to deploy to github with file pattern on travis?</a></p>
+<p>简单说要加上</p>
+<div class="codehilite"><pre><span></span><span class="n">file_glob</span><span class="o">:</span> <span class="kc">true</span>
+</pre></div>
                 
                   
                 
