@@ -357,4 +357,8 @@ grant all privileges on testdb.* to 'test'@'%' with grant option;
 
 ## @staticmethod 和 @classmethod
 
-参考[Difference between @staticmethod and @classmethod in Python](https://www.pythoncentral.io/difference-between-staticmethod-and-classmethod-in-python/)
+参考
+
+1. [Difference between @staticmethod and @classmethod in Python](https://www.pythoncentral.io/difference-between-staticmethod-and-classmethod-in-python/)
+
+2. [The definitive guide on how to use static, class or abstract methods in Python](https://julien.danjou.info/guide-python-static-class-abstract-methods/)

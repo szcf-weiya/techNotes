@@ -230,3 +230,15 @@ git checkout -- .
 表示相似性。
 
 参考[What does the message “rewrite … (90%)” after a git commit mean? [duplicate]](https://stackoverflow.com/questions/1046276/what-does-the-message-rewrite-90-after-a-git-commit-mean)
+
+## Travis CI
+
+中文折腾为什么 Travis CI 中用 '*' 号不会上传文件，最后还是指定了文件名。
+
+刚刚找到解决方案 [How to deploy to github with file pattern on travis?](https://stackoverflow.com/questions/25929225/how-to-deploy-to-github-with-file-pattern-on-travis)
+
+简单说要加上
+
+```yml
+file_glob: true
+```
