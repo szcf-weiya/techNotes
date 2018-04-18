@@ -21,8 +21,8 @@ pages:
       - PHP: PHP/index.md
     - Website:
       - Website: website/index.md
-      - Css: css/index.md
-      - Js: js/index.md
+      - CSS: css/index.md
+      - JS: js/index.md
     - Network: Internet/index.md
     - Tools:
       - Autotools: autotools/index.md
