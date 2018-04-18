@@ -41,8 +41,9 @@ pages:
     - Win: win/index.md
     - Links: links/index.md
     - Misc: 
-      - 小程序: misc/index.md
+      - 小程序: misc/wx.md
       - jssdk: misc/wxjssdk.md
+      - 讲座: misc/report.md
 
 theme:
   name: 'material'

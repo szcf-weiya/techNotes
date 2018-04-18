@@ -476,3 +476,14 @@ ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
 ## Ubuntu的回收站
 
 参考 [https://blog.csdn.net/DSLZTX/article/details/46685959](https://blog.csdn.net/DSLZTX/article/details/46685959)
+
+## 输出到 log 文件
+
+参考[How do I save terminal output to a file?](https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file)
+
+发现一件很迷的事情，要加上 `-u` 才能实现实时查看输出。
+
+参考
+
+1. [Python: significance of -u option?](https://stackoverflow.com/questions/14258500/python-significance-of-u-option)
+2. [后台运行python程序并标准输出到文件](http://www.cnblogs.com/qlshine/p/5926743.html)
