@@ -36,6 +36,7 @@ pages:
       - Calculus: calculus/index.md
       - Scientific: scientific/index.md
       - Graph: graph/index.md
+      - Finance: finance/index.md
     - English: English/index.md
     - Mi: mi/index.md
     - Win: win/index.md
