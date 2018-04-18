@@ -843,9 +843,66 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        讲座
+      </label>
+    
     <a href="./" title="讲座" class="md-nav__link md-nav__link--active">
       讲座
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="邮件提醒" class="md-nav__link">
+    邮件提醒
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="手机提醒" class="md-nav__link">
+    手机提醒
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="微信小程序" class="md-nav__link">
+    微信小程序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="自动报名" class="md-nav__link">
+    自动报名
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qq" title="QQ 群" class="md-nav__link">
+    QQ 群
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -872,6 +929,50 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="邮件提醒" class="md-nav__link">
+    邮件提醒
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="手机提醒" class="md-nav__link">
+    手机提醒
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="微信小程序" class="md-nav__link">
+    微信小程序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="自动报名" class="md-nav__link">
+    自动报名
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qq" title="QQ 群" class="md-nav__link">
+    QQ 群
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -883,7 +984,34 @@
               
                 
                 
-                <h1 id="_1">讲座<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+                <h1 id="_1">那些年抢过的讲座<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>刚刚报了最后一个讲座，感觉是时候写点东西了。</p>
+<h2 id="_2">邮件提醒<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>如图</p>
+<p><img alt="" src="../r1_mail.png" /></p>
+<p>大致实现思路如下：</p>
+<ol>
+<li>实时抓取讲座列表</li>
+<li>若发现出现新链接，发送到邮箱</li>
+</ol>
+<p>当然中间踩了好多坑，不得不吐糟一下数院的网站，里面的网页标签超级乱，<code>BeautifulSoup</code> 也不能按照正常思路来解析，经常是今天这个格式 ok，不曾想下次网页的标签又变了，诸如 <code>p</code>，<code>span</code>，<code>tr</code> 的混合使用。</p>
+<h2 id="_3">手机提醒<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>毕竟邮件提醒也不是很方便，遂想直接发到手机上。如图</p>
+<p><img alt="" src="../r1_phone.png" /></p>
+<p>当然这部分没有新的程序，只是利用了 139 邮箱的自动转发到手机上的功能。</p>
+<h2 id="_4">微信小程序<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>上学期回国后，想起讲座还没听完，于是打算继续玩玩以前的程序。然后当时小程序挺火的，如图（本来是应该截运行页面的，但我已经把后端服务器给撤了，只能进入首页了）</p>
+<p><img alt="" src="../r2_wx.png" /></p>
+<p>踩过很多坑，详见<a href="../wx.html">微信小程序开发记录</a>。必须地吐糟一下，微信对个人开发者挺不友好的，开放的权限超级有限。当时只完成了图中的刷新讲座信息的功能，自动报名还未实现。但从那时开始，数院小伙伴们疯狂在群里抢讲座了，所以刷新讲座信息其实挺鸡肋的，因为开始在群里同步讲座报名链接了。但我早已养成了不用 Windows 的~~好~~习惯，所以也不再受 QQ 的荼毒。</p>
+<h2 id="_5">自动报名<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>但到了三月份，发现自己讲座没听完（主要是上学期不在学校），所以觉得还是继续折腾了。比较成功的版本如下：</p>
+<p><img alt="" src="../r2_phone.png" /></p>
+<p>那个有 <code>registered!!</code> 表示已经帮你自动报名了。</p>
+<p>但随着讲座发布人不断更改表单类型，也经常出现无法读取数据，提交失败等 bug。比如其中的表单类型不断变换，从“23”变到“6”，从“8”变到“6”等等；另外还有前几天加入的定时发布表单功能，也不得不让我大改程序。</p>
+<h2 id="qq">QQ 群<a class="headerlink" href="#qq" title="Permanent link">&para;</a></h2>
+<p>现在很少用 Windows 了，手机也不会去查看 QQ 消息，所以错过了一些讲座扩容。今天用了一下 Windows，真是无心插柳，昨天的一个讲座扩容了（昨天因为表单形式又发生了变换，没有自动报名），而刚好那段时间群里没啥人，就报上了。</p>
+<p><img alt="" src="../r1_qq.png" /></p>
+<p>就这样报上了最后一场讲座。</p>
                 
                   
                 
