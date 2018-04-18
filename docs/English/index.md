@@ -839,3 +839,6 @@ happy life
 1. nuance
 2. with a grain of salt
 
+## 2018.04.18
+
+1. assimilate
