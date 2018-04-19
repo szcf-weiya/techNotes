@@ -14,3 +14,7 @@ t(sm) %*% sm/5
 - `scale = FALSE`
 - `/5`
 
+## PCA & SVD
+
+参考[Relationship between SVD and PCA. How to use SVD to perform PCA?](https://stats.stackexchange.com/questions/134282/relationship-between-svd-and-pca-how-to-use-svd-to-perform-pca)
+
