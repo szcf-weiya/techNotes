@@ -562,13 +562,18 @@
         }, 
         {
             "location": "/R/basic/", 
-            "text": "scale or not\n\n\n\u4e0b\u9762\u4e24\u4e2a\u7ed3\u679c\u662f\u4e00\u6837\u7684\u3002\n\n\nm \n=\n \nmatrix\n(\nrnorm\n(\n4\n*\n6\n,\n \n2\n),\n ncol \n=\n \n4\n)\n\ncov\n(\nm\n)\n\nsm \n=\n \nscale\n(\nm\n,\n scale \n=\n \nFALSE\n)\n\n\nt\n(\nsm\n)\n \n%*%\n sm\n/\n5\n\n\n\n\n\n\n\u5176\u4e2d\u9700\u8981\u6ce8\u610f\u7684\u5730\u65b9\n\n\n\n\nscale = FALSE\n\n\n/5", 
+            "text": "scale or not\n\n\n\u4e0b\u9762\u4e24\u4e2a\u7ed3\u679c\u662f\u4e00\u6837\u7684\u3002\n\n\nm \n=\n \nmatrix\n(\nrnorm\n(\n4\n*\n6\n,\n \n2\n),\n ncol \n=\n \n4\n)\n\ncov\n(\nm\n)\n\nsm \n=\n \nscale\n(\nm\n,\n scale \n=\n \nFALSE\n)\n\n\nt\n(\nsm\n)\n \n%*%\n sm\n/\n5\n\n\n\n\n\n\n\u5176\u4e2d\u9700\u8981\u6ce8\u610f\u7684\u5730\u65b9\n\n\n\n\nscale = FALSE\n\n\n/5\n\n\n\n\nPCA \n SVD\n\n\n\u53c2\u8003\nRelationship between SVD and PCA. How to use SVD to perform PCA?", 
             "title": "\u7edf\u8ba1\u57fa\u7840"
         }, 
         {
             "location": "/R/basic/#scale-or-not", 
             "text": "\u4e0b\u9762\u4e24\u4e2a\u7ed3\u679c\u662f\u4e00\u6837\u7684\u3002  m  =   matrix ( rnorm ( 4 * 6 ,   2 ),  ncol  =   4 ) \ncov ( m ) \nsm  =   scale ( m ,  scale  =   FALSE )  t ( sm )   %*%  sm / 5   \u5176\u4e2d\u9700\u8981\u6ce8\u610f\u7684\u5730\u65b9   scale = FALSE  /5", 
             "title": "scale or not"
+        }, 
+        {
+            "location": "/R/basic/#pca-svd", 
+            "text": "\u53c2\u8003 Relationship between SVD and PCA. How to use SVD to perform PCA?", 
+            "title": "PCA &amp; SVD"
         }, 
         {
             "location": "/R/ggplot/", 
