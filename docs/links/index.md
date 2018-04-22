@@ -22,6 +22,7 @@ Some interesting links.
 1. http://downforeveryoneorjustme.com/
 2. http://ujjwalkarn.github.io/Machine-Learning-Tutorials/
 3. 在线处理图片：http://funny.pho.to/sketch/
+4. [符号计算](https://www.symbolab.com/solver)
 
 ## TODO
 
