@@ -142,3 +142,26 @@ natbib:
 }
 ```
 似乎可以简化
+
+## about table and figure
+
+1. https://tex.stackexchange.com/questions/44263/how-to-use-footnotesize-with-longtable-command
+2. https://tex.stackexchange.com/questions/219138/how-to-have-a-caption-on-top-of-longtable
+3. 
+
+
+## 图表标题加粗
+
+参考[figure-how-to-have-figure-1-5-in-bold](https://tex.stackexchange.com/questions/32459/figure-how-to-have-figure-1-5-in-bold)
+
+```latex
+\usepackage[labelfont=bf]{caption}
+```
+
+## longtable 标题居上
+
+参考[how to have a caption on top of longtable?](https://tex.stackexchange.com/questions/219138/how-to-have-a-caption-on-top-of-longtable)
+
+## longtable 内字体大小
+
+参考[How to use \footnotesize with longtable command?](https://tex.stackexchange.com/questions/44263/how-to-use-footnotesize-with-longtable-command)
