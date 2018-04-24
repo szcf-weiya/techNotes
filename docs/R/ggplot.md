@@ -1,4 +1,4 @@
-# ggplot相关
+# ggplot 相关
 
 ## ggplot同时绘制多个密度图
 
@@ -139,3 +139,33 @@ ggplot(data=PlantGrowth, aes(x=group, fill=group)) +
 源于[碎片化的饼图是如何制作出来的，能否用excel或者R实现？ | 知乎](https://www.zhihu.com/question/267353430)
 
 目前查阅到的有参考价值的为treemap和treemapify，但似乎都只针对矩形，对于原知乎问题中的圆形碎片化尚不能实现，目前想法是阅读这两个package的源代码，看能否找到突破口。
+
+## 数学公式
+
+比如
+
+```r
+expression(R[group("", list(hat(F),F),"")]^2)
+```
+
+参考
+
+1. [Mathematical Annotation in R](http://vis.supstat.com/2013/04/mathematical-annotation-in-r/)
+
+## 坐标轴标签字体大小
+
+参考[Size of labels for x-axis and y-axis ggplot in R](https://stackoverflow.com/questions/14363804/size-of-labels-for-x-axis-and-y-axis-ggplot-in-r)
+
+## 多张图片
+
+`par(mfrow=c(1,2))`不起作用，要用到 `gridExtra` 包，如
+
+```r
+library(gridExtra)
+plot1 <- qplot(1)
+plot2 <- qplot(1)
+grid.arrange(plot1, plot2, ncol=2)
+```
+
+参考[Side-by-side plots with ggplot2](https://stackoverflow.com/questions/1249548/side-by-side-plots-with-ggplot2)
+

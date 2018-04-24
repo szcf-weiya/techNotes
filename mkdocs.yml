@@ -7,7 +7,8 @@ pages:
     - R: 
       - 一般问题: R/index.md
       - 统计基础: R/basic.md
-      - ggplot作图: R/ggplot.md
+      - plot 作图: R/plot.md
+      - ggplot 作图: R/ggplot.md
       - 案例分析: R/legend_from_zhihu.md
       - 源码安装 RMySQL: R/install-notes-for-rmysql.md
     - Programming:

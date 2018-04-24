@@ -165,3 +165,7 @@ natbib:
 ## longtable 内字体大小
 
 参考[How to use \footnotesize with longtable command?](https://tex.stackexchange.com/questions/44263/how-to-use-footnotesize-with-longtable-command)
+
+## 图表标题
+
+参考[latex: 改变图的caption Figure 1:为 Fig. 1.](https://blog.csdn.net/fandroid/article/details/50930137)
