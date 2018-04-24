@@ -42,7 +42,7 @@
     
     
       
-        <title>ggplot作图 - techNotes</title>
+        <title>ggplot 作图 - techNotes</title>
       
     
     
@@ -121,7 +121,7 @@
                 techNotes
               </span>
               <span class="md-header-nav__topic">
-                ggplot作图
+                ggplot 作图
               </span>
             
           
@@ -341,6 +341,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../plot/" title="plot 作图" class="md-nav__link">
+      plot 作图
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -352,11 +364,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        ggplot作图
+        ggplot 作图
       </label>
     
-    <a href="./" title="ggplot作图" class="md-nav__link md-nav__link--active">
-      ggplot作图
+    <a href="./" title="ggplot 作图" class="md-nav__link md-nav__link--active">
+      ggplot 作图
     </a>
     
       
@@ -448,6 +460,27 @@
         <li class="md-nav__item">
   <a href="#treemaps" title="Treemaps" class="md-nav__link">
     Treemaps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="数学公式" class="md-nav__link">
+    数学公式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="坐标轴标签字体大小" class="md-nav__link">
+    坐标轴标签字体大小
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" title="多张图片" class="md-nav__link">
+    多张图片
   </a>
   
 </li>
@@ -1087,6 +1120,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" title="数学公式" class="md-nav__link">
+    数学公式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="坐标轴标签字体大小" class="md-nav__link">
+    坐标轴标签字体大小
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" title="多张图片" class="md-nav__link">
+    多张图片
+  </a>
+  
+</li>
+      
       
       
       
@@ -1104,7 +1158,7 @@
               
                 
                 
-                <h1 id="ggplot">ggplot相关<a class="headerlink" href="#ggplot" title="Permanent link">&para;</a></h1>
+                <h1 id="ggplot">ggplot 相关<a class="headerlink" href="#ggplot" title="Permanent link">&para;</a></h1>
 <h2 id="ggplot_1">ggplot同时绘制多个密度图<a class="headerlink" href="#ggplot_1" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://www.tuicool.com/articles/3aUnem7">使用ggplot2同时绘制多个密度图</a></p>
 <div class="codehilite"><pre><span></span>plots <span class="o">&lt;-</span> <span class="kc">NULL</span>
@@ -1224,6 +1278,28 @@ ggplot<span class="p">(</span>data<span class="o">=</span>PlantGrowth<span class
 <h2 id="treemaps">Treemaps<a class="headerlink" href="#treemaps" title="Permanent link">&para;</a></h2>
 <p>源于<a href="https://www.zhihu.com/question/267353430">碎片化的饼图是如何制作出来的，能否用excel或者R实现？ | 知乎</a></p>
 <p>目前查阅到的有参考价值的为treemap和treemapify，但似乎都只针对矩形，对于原知乎问题中的圆形碎片化尚不能实现，目前想法是阅读这两个package的源代码，看能否找到突破口。</p>
+<h2 id="_7">数学公式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>比如</p>
+<div class="codehilite"><pre><span></span><span class="kp">expression</span><span class="p">(</span>R<span class="p">[</span>group<span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="kt">list</span><span class="p">(</span>hat<span class="p">(</span><span class="bp">F</span><span class="p">),</span><span class="bp">F</span><span class="p">),</span><span class="s">&quot;&quot;</span><span class="p">)]</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+
+
+<p>参考</p>
+<ol>
+<li><a href="http://vis.supstat.com/2013/04/mathematical-annotation-in-r/">Mathematical Annotation in R</a></li>
+</ol>
+<h2 id="_8">坐标轴标签字体大小<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>参考<a href="https://stackoverflow.com/questions/14363804/size-of-labels-for-x-axis-and-y-axis-ggplot-in-r">Size of labels for x-axis and y-axis ggplot in R</a></p>
+<h2 id="_9">多张图片<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p><code>par(mfrow=c(1,2))</code>不起作用，要用到 <code>gridExtra</code> 包，如</p>
+<div class="codehilite"><pre><span></span><span class="kn">library</span><span class="p">(</span>gridExtra<span class="p">)</span>
+plot1 <span class="o">&lt;-</span> qplot<span class="p">(</span><span class="m">1</span><span class="p">)</span>
+plot2 <span class="o">&lt;-</span> qplot<span class="p">(</span><span class="m">1</span><span class="p">)</span>
+grid.arrange<span class="p">(</span>plot1<span class="p">,</span> plot2<span class="p">,</span> ncol<span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+
+
+<p>参考<a href="https://stackoverflow.com/questions/1249548/side-by-side-plots-with-ggplot2">Side-by-side plots with ggplot2</a></p>
                 
                   
                 
@@ -1244,7 +1320,7 @@ ggplot<span class="p">(</span>data<span class="o">=</span>PlantGrowth<span class
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../basic/" title="统计基础" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../plot/" title="plot 作图" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1253,7 +1329,7 @@ ggplot<span class="p">(</span>data<span class="o">=</span>PlantGrowth<span class
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                统计基础
+                plot 作图
               </span>
             </div>
           </a>
