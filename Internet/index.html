@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.2">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
     
     
       
@@ -729,6 +729,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubuntu-vpn" title="玉泉 Ubuntu 有线连接 VPN" class="md-nav__link">
+    玉泉 Ubuntu 有线连接 VPN
+  </a>
+  
+</li>
+      
       
       
       
@@ -1165,6 +1172,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubuntu-vpn" title="玉泉 Ubuntu 有线连接 VPN" class="md-nav__link">
+    玉泉 Ubuntu 有线连接 VPN
+  </a>
+  
+</li>
+      
       
       
       
@@ -1332,6 +1346,28 @@ sudo vim head.save
 <li><a href="http://blog.csdn.net/tskyfree/article/details/41214829">host文件的工作原理及应用</a></li>
 <li><a href="https://laod.cn/hosts/hosts-file-making.html">简单科普下hosts文件原理与制作 | 老D博客</a></li>
 </ol>
+<h2 id="ubuntu-vpn">玉泉 Ubuntu 有线连接 VPN<a class="headerlink" href="#ubuntu-vpn" title="Permanent link">&para;</a></h2>
+<p>黄熊的<a href="http://wwtalwtaw.studio/2018/04/26/net_surfing/">浙大玉泉ubuntu有线上网</a>将得很详细。但我却碰到很奇怪的问题，申请完静态 IP，能够 ping 通内网。但当我安装 xl2tpd 时，却总是一直连不上网，更奇怪的是，还不能访问内网（没有运行 <code>vpn-connect</code> 时一切正常）。然后我尝试了各种办法，包括但不限于：</p>
+<ol>
+<li>重装 <code>xl2tpd</code>；</li>
+<li>换个 <code>xl2tpd</code> 的版本，在 cc98 上有两个版本；</li>
+<li>修改 <code>/etc/network/interfaces</code></li>
+<li>各种组合式操作</li>
+</ol>
+<p>但都迷之不能联网。</p>
+<p>遂准备换种方式，参考<a href="http://keyun.ml/2016/07/17/Tools/ubuntu16-l2tp-vpn.html">Ubuntu16.04配置L2TP-VPN</a></p>
+<p>但这种安装最先版本，<code>libnma</code>的版本跟不上，然后参考<a href="https://askubuntu.com/questions/789421/l2tp-ipsec-psk-vpn-client-on-xubuntu-16-04/797764">L2tp IPSEC PSK VPN client on (x)ubuntu 16.04</a></p>
+<p>直接用</p>
+<div class="codehilite"><pre><span></span>sudo add-apt-repository ppa:nm-l2tp/network-manager-l2tp  
+sudo apt-get update  
+sudo apt-get install network-manager-l2tp
+sudo apt-get install network-manager-l2tp-gnome
+</pre></div>
+
+
+<p>安装。</p>
+<p>这种方式相当于增加了 <code>L2TP</code> VPN 的设置界面，但到这里我也渐渐明白 <code>xl2tpd_zju</code> 的工作原理，其实这两种本质是一样的。于是我按照之前的配置方式新建了一个 VPN 的连接，还是没用。</p>
+<p>最后我换了 VPN 的 ip（有两个 ip，10.5.1.5 和 10.5.1.9），之前 <code>xl2tpd_zju</code> 默认是 10.5.1.5，误打误撞，改成 10.5.1.9 后，竟然成功了！！</p>
                 
                   
                 
