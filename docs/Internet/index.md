@@ -182,12 +182,12 @@ proxychains curl ip.cn
 1. [host文件的工作原理及应用](http://blog.csdn.net/tskyfree/article/details/41214829)
 2. [简单科普下hosts文件原理与制作 | 老D博客](https://laod.cn/hosts/hosts-file-making.html)
 
-## 玉泉 Ubuntu 有线连接 VPN
+## 玉泉 Ubuntu 连接 VPN
 
-黄熊的[浙大玉泉ubuntu有线上网](http://wwtalwtaw.studio/2018/04/26/net_surfing/)将得很详细。但我却碰到很奇怪的问题，申请完静态 IP，能够 ping 通内网。但当我安装 xl2tpd 时，却总是一直连不上网，更奇怪的是，还不能访问内网（没有运行 `vpn-connect` 时一切正常）。然后我尝试了各种办法，包括但不限于：
+黄熊的[浙大玉泉ubuntu有线上网](http://wwtalwtaw.studio/2018/04/26/net_surfing/)将得很详细。不过我却碰到很奇怪的问题，申请完静态 IP，能够 ping 通内网，但当我安装完 `xl2tpd_zju` 后，却总是一直连不上网，更奇怪的是，还不能访问内网（没有运行 `vpn-connect` 前至少可以访问内网）。然后我尝试了各种办法，包括但不限于：
 
-1. 重装 `xl2tpd`；
-2. 换个 `xl2tpd` 的版本，在 cc98 上有两个版本；
+1. 重装 `xl2tpd_zju`；
+2. 换个 `xl2tpd_zju` 的版本，在 cc98 上有两个版本，下载链接 [xl2tpd_zju](https://pan.baidu.com/s/1eRNQwng#list/path=%2F)；
 3. 修改 `/etc/network/interfaces`
 4. 各种组合式操作
 
@@ -195,7 +195,7 @@ proxychains curl ip.cn
 
 遂准备换种方式，参考[Ubuntu16.04配置L2TP-VPN](http://keyun.ml/2016/07/17/Tools/ubuntu16-l2tp-vpn.html)
 
-但这种安装最先版本，`libnma`的版本跟不上，然后参考[L2tp IPSEC PSK VPN client on (x)ubuntu 16.04](https://askubuntu.com/questions/789421/l2tp-ipsec-psk-vpn-client-on-xubuntu-16-04/797764)
+但这种安装最新版本，`libnma`的版本跟不上，然后参考[L2tp IPSEC PSK VPN client on (x)ubuntu 16.04](https://askubuntu.com/questions/789421/l2tp-ipsec-psk-vpn-client-on-xubuntu-16-04/797764)
 
 直接用
 
@@ -208,6 +208,6 @@ sudo apt-get install network-manager-l2tp-gnome
 
 安装。
 
-这种方式相当于增加了 `L2TP` VPN 的设置界面，但到这里我也渐渐明白 `xl2tpd_zju` 的工作原理，其实这两种本质是一样的。于是我按照之前的配置方式新建了一个 VPN 的连接，还是没用。
+这种方式相当于增加了 `L2TP` VPN 的设置界面，到这里我也渐渐明白 `xl2tpd_zju` 和这种方式本质上应该是一样的。于是我按照之前的配置方式新建了一个 VPN 的连接，但还是没用。
 
 最后我换了 VPN 的 ip（有两个 ip，10.5.1.5 和 10.5.1.9），之前 `xl2tpd_zju` 默认是 10.5.1.5，误打误撞，改成 10.5.1.9 后，竟然成功了！！
