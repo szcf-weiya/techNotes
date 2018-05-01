@@ -5,7 +5,8 @@
 5. [cleardoublepage](https://stackoverflow.com/questions/491904/how-do-i-remove-blank-pages-coming-between-two-chapters-in-appendix)
 6. [New chapter top margin is large](https://tex.stackexchange.com/questions/149757/new-chapter-top-margin-is-large)
 7. [remove-spacing-before-chapter-in-latex](https://stackoverflow.com/questions/3279194/remove-spacing-before-chapter-in-latex)
-# 玄学问题
+
+## 玄学问题
 
 1. 标题加粗
 
