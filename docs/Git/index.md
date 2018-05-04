@@ -258,3 +258,10 @@ file_glob: true
 `git reset --hard HEAD^`
 
 参考[git 放弃本地修改](https://www.cnblogs.com/qufanblog/p/7606105.html)
+
+## 列出另一分支的目录
+
+```bash
+git ls-tree master:dirname
+```
+
