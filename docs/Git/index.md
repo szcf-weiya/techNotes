@@ -242,3 +242,19 @@ git checkout -- .
 ```yml
 file_glob: true
 ```
+
+## 放弃本地修改
+
+### 未 `git add`
+
+直接用 `git checkout .`
+
+### 已 `git add`
+
+`git reset HEAD`
+
+### 已 `commit`
+
+`git reset --hard HEAD^`
+
+参考[git 放弃本地修改](https://www.cnblogs.com/qufanblog/p/7606105.html)
