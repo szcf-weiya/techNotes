@@ -23,6 +23,7 @@ Some interesting links.
 2. http://ujjwalkarn.github.io/Machine-Learning-Tutorials/
 3. 在线处理图片：http://funny.pho.to/sketch/
 4. [符号计算](https://www.symbolab.com/solver)
+5. [电子书下载](https://libgen.pw/)
 
 ## TODO
 
