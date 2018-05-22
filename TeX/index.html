@@ -731,6 +731,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#beamer-enumitem" title="beamer 不兼容 enumitem" class="md-nav__link">
+    beamer 不兼容 enumitem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="替换换行符" class="md-nav__link">
+    替换换行符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apa" title="APA 带编号" class="md-nav__link">
+    APA 带编号
+  </a>
+  
+</li>
+      
       
       
       
@@ -1393,6 +1414,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#beamer-enumitem" title="beamer 不兼容 enumitem" class="md-nav__link">
+    beamer 不兼容 enumitem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="替换换行符" class="md-nav__link">
+    替换换行符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apa" title="APA 带编号" class="md-nav__link">
+    APA 带编号
+  </a>
+  
+</li>
+      
       
       
       
@@ -1742,6 +1784,21 @@ git push origin master --tags
 <h3 id="test-maintex">test main.tex<a class="headerlink" href="#test-maintex" title="Permanent link">&para;</a></h3>
 <p>称缺失 <code>xcolor.sty</code>，而用 <code>apt-cache search xcolor | grep tex</code> 得到的包为 extra 和 recommended，但这两个包已经安装了，所以怀疑是 <code>--no-install-recommends</code>。</p>
 <p>不过突然想到，版本不对，我本机为 TeXlive 2015，而 Travis CI 上为 2013，所以我又在服务器上进行测试，发现 <code>xcolor</code> 在 <code>latex-xcolor</code> 包中。</p>
+<h2 id="beamer-enumitem">beamer 不兼容 enumitem<a class="headerlink" href="#beamer-enumitem" title="Permanent link">&para;</a></h2>
+<p>详见<a href="https://tex.stackexchange.com/questions/31505/trouble-combining-enumitem-and-beamer">lists - Trouble combining enumitem and beamer - TeX - LaTeX Stack Exchange</a></p>
+<p>摘录其中一句话</p>
+<blockquote>
+<p>enumitem “disturbs” beamer. </p>
+</blockquote>
+<h2 id="_8">替换换行符<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>详见<a href="https://tex.stackexchange.com/questions/178610/replacing-substrings-by-linebreaks">strings - Replacing substrings by linebreaks - TeX - LaTeX Stack Exchange</a></p>
+<p>这是 zju-thesis 模板允许封面标题换行的处理策略，同时参见 </p>
+<ol>
+<li><a href="https://tug.org/pipermail/texhax/2007-November/009566.html">Line break inside \makebox</a></li>
+</ol>
+<h2 id="apa">APA 带编号<a class="headerlink" href="#apa" title="Permanent link">&para;</a></h2>
+<p>默认 APA 格式的参考文献是不带标号的，如果需要，参考</p>
+<p><a href="https://tex.stackexchange.com/questions/373336/apa-bibliography-style-with-numbers">APA bibliography style with numbers</a></p>
                 
                   
                 
