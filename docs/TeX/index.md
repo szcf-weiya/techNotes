@@ -432,3 +432,25 @@ Then I found that if use `before_deploy`, it seems that no need to set `on.tags 
 
 不过突然想到，版本不对，我本机为 TeXlive 2015，而 Travis CI 上为 2013，所以我又在服务器上进行测试，发现 `xcolor` 在 `latex-xcolor` 包中。
 
+## beamer 不兼容 enumitem
+
+详见[lists - Trouble combining enumitem and beamer - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/31505/trouble-combining-enumitem-and-beamer)
+
+摘录其中一句话
+
+> enumitem “disturbs” beamer. 
+
+## 替换换行符
+
+详见[strings - Replacing substrings by linebreaks - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/178610/replacing-substrings-by-linebreaks)
+
+这是 zju-thesis 模板允许封面标题换行的处理策略，同时参见 
+
+1. [Line break inside \makebox](https://tug.org/pipermail/texhax/2007-November/009566.html)
+
+## APA 带编号
+
+默认 APA 格式的参考文献是不带标号的，如果需要，参考
+
+[APA bibliography style with numbers](https://tex.stackexchange.com/questions/373336/apa-bibliography-style-with-numbers)
+
