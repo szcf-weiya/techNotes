@@ -454,3 +454,7 @@ Then I found that if use `before_deploy`, it seems that no need to set `on.tags 
 
 [APA bibliography style with numbers](https://tex.stackexchange.com/questions/373336/apa-bibliography-style-with-numbers)
 
+## itemize 环境下不同 item 中数学公式对齐
+
+参考[Sharing alignment between equations in two different items](https://tex.stackexchange.com/questions/29119/sharing-alignment-between-equations-in-two-different-items)
+
