@@ -458,3 +458,6 @@ Then I found that if use `before_deploy`, it seems that no need to set `on.tags 
 
 参考[Sharing alignment between equations in two different items](https://tex.stackexchange.com/questions/29119/sharing-alignment-between-equations-in-two-different-items)
 
+## 数学公式后标点
+
+参考[For formal articles, should a displayed equation be followed by a punctuation to conform to the language grammar ?](https://tex.stackexchange.com/questions/7542/for-formal-articles-should-a-displayed-equation-be-followed-by-a-punctuation-to)
