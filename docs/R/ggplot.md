@@ -169,3 +169,9 @@ grid.arrange(plot1, plot2, ncol=2)
 
 参考[Side-by-side plots with ggplot2](https://stackoverflow.com/questions/1249548/side-by-side-plots-with-ggplot2)
 
+## 绘制地图
+
+参考
+
+1. [Making Maps with R](http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html)
+2. []()
