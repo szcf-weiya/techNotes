@@ -174,4 +174,3 @@ grid.arrange(plot1, plot2, ncol=2)
 参考
 
 1. [Making Maps with R](http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html)
-2. []()
