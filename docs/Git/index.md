@@ -265,3 +265,13 @@ file_glob: true
 git ls-tree master:dirname
 ```
 
+## Github 回退
+
+```bash
+git reset --hard HEAD^
+git push origin HEAD --force
+```
+
+参考
+1. [github,退回之前的commit](https://www.cnblogs.com/xiaomengzhang/p/3240788.html)
+2. [github 版本回退](https://blog.csdn.net/apple_wolf/article/details/53326187)
