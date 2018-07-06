@@ -67,3 +67,7 @@ display: block
 ## em 和 rem
 
 [何时使用 Em 与 Rem](https://www.w3cplus.com/css/when-to-use-em-vs-rem.html)
+
+或者参考
+
+[rem、px、em之间的区别以及网页响应式设计写法 - Gabriel_wei - 博客园](https://www.cnblogs.com/Gabriel-Wei/p/6180554.html)
