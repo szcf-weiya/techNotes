@@ -369,3 +369,7 @@ lm(Y ~ X + I(X^2))
 ```
 
 是不一样的。若要表示多项式回归，则应该用 `I(X^2)`。
+
+## 多项式作图
+
+参考[Plot polynomial regression curve in R](https://stackoverflow.com/questions/23334360/plot-polynomial-regression-curve-in-r)
