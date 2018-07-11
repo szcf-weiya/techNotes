@@ -353,3 +353,19 @@ apply(A, 3, `[`, t(B))
 
 1. [Proxy setting for R](https://stackoverflow.com/questions/6467277/proxy-setting-for-r)
 2. [How to use Tor socks5 in R getURL](https://stackoverflow.com/questions/17925234/how-to-use-tor-socks5-in-r-geturl)
+
+## `lm()` 中有无 `I()` 的差异
+
+注意
+
+```r
+lm(Y ~ X + X^2)
+```
+
+和 
+
+```r
+lm(Y ~ X + I(X^2))
+```
+
+是不一样的。若要表示多项式回归，则应该用 `I(X^2)`。
