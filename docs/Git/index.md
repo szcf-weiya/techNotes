@@ -275,3 +275,15 @@ git push origin HEAD --force
 参考
 1. [github,退回之前的commit](https://www.cnblogs.com/xiaomengzhang/p/3240788.html)
 2. [github 版本回退](https://blog.csdn.net/apple_wolf/article/details/53326187)
+
+## cannot lock ref
+
+参考 [git pull时遇到error: cannot lock ref 'xxx': ref xxx is at （一个commitID） but expected的解决办法](https://blog.csdn.net/qq_15437667/article/details/52479792)
+
+
+另外试试 `git gc`
+
+参考
+
+1. [Git and nasty “error: cannot lock existing info/refs fatal](https://stackoverflow.com/questions/6656619/git-and-nasty-error-cannot-lock-existing-info-refs-fatal)
+
