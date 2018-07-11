@@ -619,6 +619,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#lm-i" title="lm() 中有无 I() 的差异" class="md-nav__link">
+    lm() 中有无 I() 的差异
+  </a>
+  
+</li>
+      
       
       
       
@@ -1480,6 +1487,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#lm-i" title="lm() 中有无 I() 的差异" class="md-nav__link">
+    lm() 中有无 I() 的差异
+  </a>
+  
+</li>
+      
       
       
       
@@ -1751,6 +1765,18 @@ B <span class="o">=</span> <span class="kt">array</span><span class="p">(</span>
 <li><a href="https://stackoverflow.com/questions/6467277/proxy-setting-for-r">Proxy setting for R</a></li>
 <li><a href="https://stackoverflow.com/questions/17925234/how-to-use-tor-socks5-in-r-geturl">How to use Tor socks5 in R getURL</a></li>
 </ol>
+<h2 id="lm-i"><code>lm()</code> 中有无 <code>I()</code> 的差异<a class="headerlink" href="#lm-i" title="Permanent link">&para;</a></h2>
+<p>注意</p>
+<div class="codehilite"><pre><span></span>lm<span class="p">(</span>Y <span class="o">~</span> X <span class="o">+</span> X<span class="o">^</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+
+
+<p>和 </p>
+<div class="codehilite"><pre><span></span>lm<span class="p">(</span>Y <span class="o">~</span> X <span class="o">+</span> <span class="kp">I</span><span class="p">(</span>X<span class="o">^</span><span class="m">2</span><span class="p">))</span>
+</pre></div>
+
+
+<p>是不一样的。若要表示多项式回归，则应该用 <code>I(X^2)</code>。</p>
                 
                   
                 
