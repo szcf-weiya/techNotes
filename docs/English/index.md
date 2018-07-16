@@ -1,3 +1,11 @@
+## 2018.07.16
+
+1. plethysmography
+2. inductance
+3. prescient
+4. envisage
+
+
 ## 2017.09.25
 
 1. She's tried every knack in Cupid's book to get her guy to marry her.
