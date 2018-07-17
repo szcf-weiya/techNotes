@@ -1,3 +1,8 @@
+## 2018.07.17
+
+1. omniscience
+2. moot
+
 ## 2018.07.16
 
 1. plethysmography
