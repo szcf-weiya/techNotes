@@ -39,6 +39,7 @@ pages:
       - Scientific: scientific/index.md
       - Graph: graph/index.md
       - Finance: finance/index.md
+      - matrix: matrix/index.md
     - English: English/index.md
     - Mi: mi/index.md
     - Win: win/index.md
