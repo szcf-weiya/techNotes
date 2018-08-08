@@ -1,6 +1,13 @@
 ## 2018.08.08
 
 1. kinetic
+2. prokaryotes, eukaryotes
+3. unprecedented
+4. catalyze
+5. Escherichia coli
+6. yeast
+7. 酿酒酵母（Saccharomyces cerevisiae）
+8. stoichiometric
 
 ## 2018.08.01
 
