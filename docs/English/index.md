@@ -1,3 +1,11 @@
+## 2018.08.09
+
+1. lethal
+2. incidence
+3. extant 
+4. pertain
+5. substrate
+
 ## 2018.08.08
 
 1. kinetic
@@ -8,6 +16,7 @@
 6. yeast
 7. 酿酒酵母（Saccharomyces cerevisiae）
 8. stoichiometric
+
 
 ## 2018.08.01
 
