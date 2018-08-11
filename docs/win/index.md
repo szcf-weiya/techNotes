@@ -44,3 +44,8 @@ Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Re
 > C:\Program Files\Java\jdk1.8.0_102\jre\bin\server
 
 你把这个路径加到环境变量中的PATH中就ok了。
+
+# 安装 okular
+
+1. 先安装 KDE 包管理器 chocolatey，[The package manager for Windows](https://chocolatey.org/)
+2. 再安装 okular，[choco install okular](https://chocolatey.org/search?q=okular)

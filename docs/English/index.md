@@ -1,3 +1,17 @@
+## 2018.08.11
+
+1. coerce
+2. legitimate
+
+
+## 2018.08.10
+
+1. toggle
+2. elicitation
+3. rigorous
+4. congest
+5. recurrent
+
 ## 2018.08.09
 
 1. lethal
