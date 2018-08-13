@@ -1,3 +1,16 @@
+## 2018.08.13
+
+1. monograph
+2. awash
+3. pare it down
+4. noose
+5. Homotopy
+
+
+## 2018.08.12
+
+1. boilderplate
+
 ## 2018.08.11
 
 1. coerce
