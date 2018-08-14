@@ -1,3 +1,16 @@
+## 2018.08.14
+
+1. memo
+2. chord
+3. counter-example
+4. premiss
+5. discern
+6. enunciate
+7. remuneration 
+8. supposition
+9. entail
+10. allude
+
 ## 2018.08.13
 
 1. monograph
@@ -5,6 +18,7 @@
 3. pare it down
 4. noose
 5. Homotopy
+6. miraculously
 
 
 ## 2018.08.12
