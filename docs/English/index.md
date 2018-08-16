@@ -1,3 +1,11 @@
+## 2018.08.16
+
+1. mnemonic
+2. acyclic
+3. disgress
+4. endow
+5. serum
+
 ## 2018.08.15
 
 1. coronary
