@@ -1,3 +1,9 @@
+## 2018.08.17
+
+1. collider
+2. elevated cholesterol
+
+
 ## 2018.08.16
 
 1. mnemonic
