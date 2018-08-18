@@ -1,3 +1,8 @@
+## 2018.08.18
+
+1. percolation
+2. ascribe
+
 ## 2018.08.17
 
 1. collider
