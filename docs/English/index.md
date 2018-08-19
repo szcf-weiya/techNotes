@@ -1,3 +1,9 @@
+## 2018.08.19
+
+1. pedagogical
+2. concrete types 
+3. Populate 
+
 ## 2018.08.18
 
 1. percolation

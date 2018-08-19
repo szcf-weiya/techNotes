@@ -362,3 +362,7 @@ grant all privileges on testdb.* to 'test'@'%' with grant option;
 1. [Difference between @staticmethod and @classmethod in Python](https://www.pythoncentral.io/difference-between-staticmethod-and-classmethod-in-python/)
 
 2. [The definitive guide on how to use static, class or abstract methods in Python](https://julien.danjou.info/guide-python-static-class-abstract-methods/)
+
+## jupyter 导致 GitHub 语言比例过分倾斜的讨论
+
+[LInguist is reporting my project as a Jupyter Notebook](https://github.com/github/linguist/issues/3316)
