@@ -1,3 +1,11 @@
+## 2018.08.21
+
+1. ergodic
+2. arduous
+3. aperiodic
+4. versatility
+5. mutating 
+
 ## 2018.08.20
 
 1. stumbled

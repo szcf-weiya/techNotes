@@ -14,3 +14,6 @@ NO
 
 [Anonymous Functions](https://docs.julialang.org/en/v0.6.1/manual/functions/#man-anonymous-functions-1)
 
+## plot
+
+1. [Tutorial for plots](http://docs.juliaplots.org/latest/tutorial/)
