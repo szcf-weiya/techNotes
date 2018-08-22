@@ -465,3 +465,7 @@ Then I found that if use `before_deploy`, it seems that no need to set `on.tags 
 ## Biblatex/biber fails with a strange error about missing recode_data.xml file
 
 参考[Biblatex/biber fails with a strange error about missing recode_data.xml file](https://tex.stackexchange.com/questions/140814/biblatex-biber-fails-with-a-strange-error-about-missing-recode-data-xml-file/258217#258217)
+
+## 同时在等号上下注明
+
+参考 [Writing above and below a symbol simultaneously ](https://tex.stackexchange.com/questions/123219/writing-above-and-below-a-symbol-simultaneously)
