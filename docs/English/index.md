@@ -1,3 +1,25 @@
+## 2018.08.24
+
+1. consecutive
+2. passage
+3. leucocyte
+4. intricate
+5. delicate
+6. illusory
+
+## 2018.08.23
+
+1. exclusively 
+2. epilogue
+3. rigorous and concise
+4. Prologue
+5. reminiscent
+
+## 2018.08.22
+
+1. promptitude
+
+
 ## 2018.08.21
 
 1. ergodic
