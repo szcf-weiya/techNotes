@@ -6,6 +6,10 @@
 4. intricate
 5. delicate
 6. illusory
+7. endemic
+8. emanating
+9. aggravate
+
 
 ## 2018.08.23
 
