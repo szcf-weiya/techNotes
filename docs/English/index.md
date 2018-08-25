@@ -1,3 +1,13 @@
+## 2018.08.25
+
+1. consanguineous
+2. sibship
+3. autosomal
+4. sporadic
+5. ameliorate
+6. facilitate
+
+
 ## 2018.08.24
 
 1. consecutive
