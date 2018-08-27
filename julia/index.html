@@ -500,8 +500,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="几个发现" class="md-nav__link">
-    几个发现
+  <a href="#mean" title="关于 mean()" class="md-nav__link">
+    关于 mean()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normal-0" title="Normal 中标准差为 0 的问题" class="md-nav__link">
+    Normal 中标准差为 0 的问题
   </a>
   
 </li>
@@ -996,8 +1003,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="几个发现" class="md-nav__link">
-    几个发现
+  <a href="#mean" title="关于 mean()" class="md-nav__link">
+    关于 mean()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normal-0" title="Normal 中标准差为 0 的问题" class="md-nav__link">
+    Normal 中标准差为 0 的问题
   </a>
   
 </li>
@@ -1033,10 +1047,13 @@
 <ol>
 <li><a href="http://docs.juliaplots.org/latest/tutorial/">Tutorial for plots</a></li>
 </ol>
-<h2 id="_1">几个发现<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="mean">关于 <code>mean()</code><a class="headerlink" href="#mean" title="Permanent link">&para;</a></h2>
 <ol>
 <li><code>using Statistics</code> 后才能用 <code>mean()</code>，而 <code>using Distributions</code> 后也能用 <code>mean()</code>。前者表示 <code>generic function with 5 methods</code>，后者称 <code>generic function with 78 methods</code>.</li>
 </ol>
+<h2 id="normal-0"><code>Normal</code> 中标准差为 0 的问题<a class="headerlink" href="#normal-0" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="normal-zero-var.png" /></p>
+<p>可知，最低可以支持 <code>1e-323</code>，所以似乎也支持 <code>sqrt(1e-646)</code>，但并没有，而且当 <code>sqrt(1e-324)</code> 时精度就不够了，似乎 <code>sqrt(x)</code> 的精度与 <code>x</code> 的精度相当。</p>
                 
                   
                 
