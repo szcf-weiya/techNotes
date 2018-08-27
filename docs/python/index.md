@@ -366,3 +366,8 @@ grant all privileges on testdb.* to 'test'@'%' with grant option;
 ## jupyter 导致 GitHub 语言比例过分倾斜的讨论
 
 [LInguist is reporting my project as a Jupyter Notebook](https://github.com/github/linguist/issues/3316)
+
+## Show matplotlib plots in Ubuntu (Windows subsystem for Linux)
+
+参考 
+[Show matplotlib plots in Ubuntu (Windows subsystem for Linux)](https://stackoverflow.com/questions/43397162/show-matplotlib-plots-in-ubuntu-windows-subsystem-for-linux)
