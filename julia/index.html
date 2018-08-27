@@ -513,6 +513,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="连等号赋值" class="md-nav__link">
+    连等号赋值
+  </a>
+  
+</li>
+      
       
       
       
@@ -1016,6 +1023,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="连等号赋值" class="md-nav__link">
+    连等号赋值
+  </a>
+  
+</li>
+      
       
       
       
@@ -1054,6 +1068,9 @@
 <h2 id="normal-0"><code>Normal</code> 中标准差为 0 的问题<a class="headerlink" href="#normal-0" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="normal-zero-var.png" /></p>
 <p>可知，最低可以支持 <code>1e-323</code>，所以似乎也支持 <code>sqrt(1e-646)</code>，但并没有，而且当 <code>sqrt(1e-324)</code> 时精度就不够了，似乎 <code>sqrt(x)</code> 的精度与 <code>x</code> 的精度相当。</p>
+<h2 id="_1">连等号赋值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>如果采用 <code>a=b=c=ones(10)</code> 形式赋值的话，则如果后面改变 <code>a</code> 的值，<code>b</code> 和 <code>c</code> 的值也将随之改变。</p>
+<p>但如果 <code>a=b=c=1</code> 为常值的话，则三个变量的值还是独立的。</p>
                 
                   
                 
