@@ -1,3 +1,7 @@
+## 2018.08.26
+
+1. tangerine
+
 ## 2018.08.25
 
 1. consanguineous

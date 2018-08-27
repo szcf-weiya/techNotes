@@ -17,3 +17,8 @@ NO
 ## plot
 
 1. [Tutorial for plots](http://docs.juliaplots.org/latest/tutorial/)
+
+
+## 几个发现
+
+1. `using Statistics` 后才能用 `mean()`，而 `using Distributions` 后也能用 `mean()`。前者表示 `generic function with 5 methods`，后者称 `generic function with 78 methods`.
