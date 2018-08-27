@@ -19,6 +19,12 @@ NO
 1. [Tutorial for plots](http://docs.juliaplots.org/latest/tutorial/)
 
 
-## 几个发现
+## 关于 `mean()`
 
 1. `using Statistics` 后才能用 `mean()`，而 `using Distributions` 后也能用 `mean()`。前者表示 `generic function with 5 methods`，后者称 `generic function with 78 methods`.
+
+## `Normal` 中标准差为 0 的问题
+
+![](normal-zero-var.png)
+
+可知，最低可以支持 `1e-323`，所以似乎也支持 `sqrt(1e-646)`，但并没有，而且当 `sqrt(1e-324)` 时精度就不够了，似乎 `sqrt(x)` 的精度与 `x` 的精度相当。
