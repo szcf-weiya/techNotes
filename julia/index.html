@@ -520,6 +520,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#distributed" title="@distributed" class="md-nav__link">
+    @distributed
+  </a>
+  
+</li>
+      
       
       
       
@@ -1030,6 +1037,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#distributed" title="@distributed" class="md-nav__link">
+    @distributed
+  </a>
+  
+</li>
+      
       
       
       
@@ -1071,6 +1085,8 @@
 <h2 id="_1">连等号赋值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>如果采用 <code>a=b=c=ones(10)</code> 形式赋值的话，则如果后面改变 <code>a</code> 的值，<code>b</code> 和 <code>c</code> 的值也将随之改变。</p>
 <p>但如果 <code>a=b=c=1</code> 为常值的话，则三个变量的值还是独立的。</p>
+<h2 id="distributed"><code>@distributed</code><a class="headerlink" href="#distributed" title="Permanent link">&para;</a></h2>
+<p>如果配合 <code>sharedarrays</code> 使用时，需要加上 <code>@sync</code>, 参考<a href="https://docs.julialang.org/en/v1/stdlib/Distributed/#Distributed.@fetch">@fetch</a></p>
                 
                   
                 
