@@ -34,3 +34,7 @@ NO
 如果采用 `a=b=c=ones(10)` 形式赋值的话，则如果后面改变 `a` 的值，`b` 和 `c` 的值也将随之改变。
 
 但如果 `a=b=c=1` 为常值的话，则三个变量的值还是独立的。
+
+## `@distributed`
+
+如果配合 `sharedarrays` 使用时，需要加上 `@sync`, 参考[@fetch](https://docs.julialang.org/en/v1/stdlib/Distributed/#Distributed.@fetch)
