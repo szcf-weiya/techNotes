@@ -51,3 +51,15 @@ Foo{Int64}
 ```
 
 会爆出这样的错误。但是一开始竟然没有仔细类比，最后在 REPL 中逐行试验才发现是，`using SharedArrays` 后直接用 `SharedArrays{Float64}(10)`，这与上面 `Foo` 的错误形式完全一样，竟然没有仔细类比。哎，看来以后多思考一下错误可能的原因，不要一味蛮力试验。
+
+## type, instance, and object
+
+看两个句子：
+
+1. A type union is a special abstract type which includes as objects all instances of any of its argument types
+2. `Nothing` is the singleton type whose only instance is the object `nothing`.
+
+从中分析知道，instance 相对于 types，而 object 相对 instance。一个 type 可能有多个 instance，每个 instance 称之为 object。
+
+1. instance of some types
+2. object of some instances
