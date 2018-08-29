@@ -527,6 +527,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#error-expected-typet" title="ERROR: expected Type{T}" class="md-nav__link">
+    ERROR: expected Type{T}
+  </a>
+  
+</li>
+      
       
       
       
@@ -1044,6 +1051,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#error-expected-typet" title="ERROR: expected Type{T}" class="md-nav__link">
+    ERROR: expected Type{T}
+  </a>
+  
+</li>
+      
       
       
       
@@ -1087,6 +1101,15 @@
 <p>但如果 <code>a=b=c=1</code> 为常值的话，则三个变量的值还是独立的。</p>
 <h2 id="distributed"><code>@distributed</code><a class="headerlink" href="#distributed" title="Permanent link">&para;</a></h2>
 <p>如果配合 <code>sharedarrays</code> 使用时，需要加上 <code>@sync</code>, 参考<a href="https://docs.julialang.org/en/v1/stdlib/Distributed/#Distributed.@fetch">@fetch</a></p>
+<h2 id="error-expected-typet">ERROR: <code>expected Type{T}</code><a class="headerlink" href="#error-expected-typet" title="Permanent link">&para;</a></h2>
+<p>参考 <a href="https://discourse.julialang.org/t/error-loaderror-typeerror-type-expression-expected-type-t-got-module/1230/4">ERROR: LoadError: TypeError: Type{&hellip;} expression: expected Type{T}, got Module</a></p>
+<p>其中举了一个小例子</p>
+<div class="codehilite"><pre><span></span><span class="k">module</span> <span class="n">Foo</span> <span class="k">end</span>
+<span class="n">Foo</span><span class="p">{</span><span class="kt">Int64</span><span class="p">}</span>
+</pre></div>
+
+
+<p>会爆出这样的错误。但是一开始竟然没有仔细类比，最后在 REPL 中逐行试验才发现是，<code>using SharedArrays</code> 后直接用 <code>SharedArrays{Float64}(10)</code>，这与上面 <code>Foo</code> 的错误形式完全一样，竟然没有仔细类比。哎，看来以后多思考一下错误可能的原因，不要一味蛮力试验。</p>
                 
                   
                 
