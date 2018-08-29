@@ -534,6 +534,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#type-instance-and-object" title="type, instance, and object" class="md-nav__link">
+    type, instance, and object
+  </a>
+  
+</li>
+      
       
       
       
@@ -1058,6 +1065,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#type-instance-and-object" title="type, instance, and object" class="md-nav__link">
+    type, instance, and object
+  </a>
+  
+</li>
+      
       
       
       
@@ -1110,6 +1124,17 @@
 
 
 <p>会爆出这样的错误。但是一开始竟然没有仔细类比，最后在 REPL 中逐行试验才发现是，<code>using SharedArrays</code> 后直接用 <code>SharedArrays{Float64}(10)</code>，这与上面 <code>Foo</code> 的错误形式完全一样，竟然没有仔细类比。哎，看来以后多思考一下错误可能的原因，不要一味蛮力试验。</p>
+<h2 id="type-instance-and-object">type, instance, and object<a class="headerlink" href="#type-instance-and-object" title="Permanent link">&para;</a></h2>
+<p>看两个句子：</p>
+<ol>
+<li>A type union is a special abstract type which includes as objects all instances of any of its argument types</li>
+<li><code>Nothing</code> is the singleton type whose only instance is the object <code>nothing</code>.</li>
+</ol>
+<p>从中分析知道，instance 相对于 types，而 object 相对 instance。一个 type 可能有多个 instance，每个 instance 称之为 object。</p>
+<ol>
+<li>instance of some types</li>
+<li>object of some instances</li>
+</ol>
                 
                   
                 
