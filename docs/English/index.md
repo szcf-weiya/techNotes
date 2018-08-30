@@ -1,3 +1,12 @@
+## 2018.08.30
+
+1. postulate
+2. regimen
+3. flat-terrain
+4. aerobics
+5. treadmill
+
+
 ## 2018.08.29
 
 1. phylogeny
