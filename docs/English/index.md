@@ -1,3 +1,9 @@
+## 2018.09.02 
+
+1. homologous
+2. designate
+3. pertaining
+
 ## 2018.09.01
 
 1. invoice
