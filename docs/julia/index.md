@@ -63,3 +63,13 @@ Foo{Int64}
 
 1. instance of some types
 2. object of some instances
+
+## Couldn't find libpython error
+
+```julia
+ENV["PYTHON"]=""; Pkg.build("PyCall")
+```
+
+to install its own private Miniconda distribution for you, in a way that won't interfere with your other Python installations.
+
+Refer to [Couldn't find libpython error #199](https://github.com/JuliaPy/PyCall.jl/issues/199)
