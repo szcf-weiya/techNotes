@@ -1,6 +1,11 @@
 ## 2018.09.05
 
 1. indels
+2. at the expense of 
+3. surfeit
+4. pertinent
+5. mortal
+6. immortal
 
 ## 2018.09.04
 
