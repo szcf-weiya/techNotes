@@ -1,3 +1,19 @@
+## 2018.09.09
+
+1. vanilla
+2. haystack
+3. authentic
+4. Stratified
+5. antithetical
+6. rule of thumb
+7. opt for
+
+## 2018.09.08
+
+1. insidious
+2. incentive
+
+
 ## 2018.09.07
 
 1. dismay
