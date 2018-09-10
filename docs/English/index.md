@@ -1,3 +1,8 @@
+## 2018.09.10
+
+1. tantalizaingly
+2. lineage
+
 ## 2018.09.09
 
 1. vanilla
@@ -7,6 +12,9 @@
 5. antithetical
 6. rule of thumb
 7. opt for
+8. progeny
+9. haploid
+10. coalesce
 
 ## 2018.09.08
 
