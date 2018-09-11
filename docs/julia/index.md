@@ -73,3 +73,9 @@ ENV["PYTHON"]=""; Pkg.build("PyCall")
 to install its own private Miniconda distribution for you, in a way that won't interfere with your other Python installations.
 
 Refer to [Couldn't find libpython error #199](https://github.com/JuliaPy/PyCall.jl/issues/199)
+
+## parallel
+
+references
+
+1. [Julia parallel computing over multiple nodes in cluster](https://stackoverflow.com/questions/43079309/julia-parallel-computing-over-multiple-nodes-in-cluster)
