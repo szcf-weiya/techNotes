@@ -1,3 +1,8 @@
+## 2018.09.12
+
+1. astragali
+2. dice
+
 ## 2018.09.10
 
 1. tantalizaingly
