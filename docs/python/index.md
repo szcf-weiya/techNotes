@@ -371,3 +371,11 @@ grant all privileges on testdb.* to 'test'@'%' with grant option;
 
 参考 
 [Show matplotlib plots in Ubuntu (Windows subsystem for Linux)](https://stackoverflow.com/questions/43397162/show-matplotlib-plots-in-ubuntu-windows-subsystem-for-linux)
+
+## matplotlib math symbols
+
+```python
+plt.xlabel(r"\lambda")
+```
+
+refer to [Writing mathematical expressions](https://matplotlib.org/users/mathtext.html)
