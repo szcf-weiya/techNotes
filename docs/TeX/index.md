@@ -490,3 +490,6 @@ the option can be recongized only `10pt`, `11pt` and `12pt`.
 
 Refer to [How is 14pt giving font size smaller than 12pt?](https://tex.stackexchange.com/questions/413319/how-is-14pt-giving-font-size-smaller-than-12pt)
 
+## fancyhdr warning headheight is too small after setting font size
+
+Refer to [headheight-problem](https://tex.stackexchange.com/questions/198692/headheight-problem)
