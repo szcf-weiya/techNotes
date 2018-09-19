@@ -479,3 +479,14 @@ In beamer,  need to use
 before.
 
 refer to [Theorem Numbering in beamer](https://tex.stackexchange.com/questions/188379/theorem-numbering-in-beamer?rq=1)
+
+## font size of the documents
+
+In the following command
+```tex
+\documentclass[12pt]{article}
+```
+the option can be recongized only `10pt`, `11pt` and `12pt`.
+
+Refer to [How is 14pt giving font size smaller than 12pt?](https://tex.stackexchange.com/questions/413319/how-is-14pt-giving-font-size-smaller-than-12pt)
+
