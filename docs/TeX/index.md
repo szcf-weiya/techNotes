@@ -493,3 +493,12 @@ Refer to [How is 14pt giving font size smaller than 12pt?](https://tex.stackexch
 ## fancyhdr warning headheight is too small after setting font size
 
 Refer to [headheight-problem](https://tex.stackexchange.com/questions/198692/headheight-problem)
+
+
+## align multi cases
+
+refer to [How can I align multiple cases environment simultaneously?](https://tex.stackexchange.com/questions/96568/how-can-i-align-multiple-cases-environment-simultaneously)
+
+Key point: enclose one of the entries in the first `cases` environment in a box whose width is that of the longest of the second `cases` environment.
+
+or use `\hphantom{}`. 
