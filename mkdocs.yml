@@ -4,6 +4,7 @@ pages:
     - Linux: 
       - 一般问题: Linux/index.md
       - shell: shell/index.md
+      - 服务器: Linux/servers.md
     - R: 
       - 一般问题: R/index.md
       - 统计基础: R/basic.md
