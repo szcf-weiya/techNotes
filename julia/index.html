@@ -567,6 +567,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pbsdsh-unsolved" title="pbsdsh (unsolved)" class="md-nav__link">
+    pbsdsh (unsolved)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" title="references" class="md-nav__link">
+    references
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1112,6 +1132,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pbsdsh-unsolved" title="pbsdsh (unsolved)" class="md-nav__link">
+    pbsdsh (unsolved)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" title="references" class="md-nav__link">
+    references
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1188,6 +1228,39 @@
 <li><a href="https://stackoverflow.com/questions/43079309/julia-parallel-computing-over-multiple-nodes-in-cluster">Julia parallel computing over multiple nodes in cluster</a></li>
 <li><a href="https://white.ucc.asn.au/2017/08/17/starting-workers.html">Using julia -L startupfile.jl, rather than machinefiles for starting workers.</a></li>
 <li><a href="https://discourse.julialang.org/t/help-setting-up-julia-on-a-cluster/5519">Help setting up Julia on a cluster</a></li>
+</ol>
+<h2 id="pbsdsh-unsolved">pbsdsh (unsolved)<a class="headerlink" href="#pbsdsh-unsolved" title="Permanent link">&para;</a></h2>
+<p>Submit a pbsdsh job and specify multiply nodes with multiply cores, say <code>nodes=2:ppn=4</code></p>
+<p>error log file (see full file in the cluster: <code>dshmcmc.e21907</code>): </p>
+<div class="codehilite"><pre><span></span><span class="n">fatal</span><span class="o">:</span> <span class="n">error</span> <span class="n">thrown</span> <span class="n">and</span> <span class="n">no</span> <span class="n">exception</span> <span class="n">handler</span> <span class="n">available</span><span class="o">.</span>
+<span class="n">InitError</span><span class="o">(</span><span class="n">mod</span><span class="o">=:</span><span class="n">Base</span><span class="o">,</span> <span class="n">error</span><span class="o">=</span><span class="n">ArgumentError</span><span class="o">(</span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;Package Sockets not found in current path:</span>
+<span class="s2">- Run `Pkg.add(&quot;</span><span class="n">Sockets</span><span class="s2">&quot;)` to install the Sockets package.</span>
+<span class="s2">&quot;</span><span class="o">))</span>
+<span class="n">rec_backtrace</span> <span class="n">at</span> <span class="sr">/buildworker/worker/package_linux64/build/src/s</span><span class="n">tackwalk</span><span class="o">.</span><span class="na">c</span><span class="o">:</span><span class="mi">94</span>
+<span class="n">record_backtrace</span> <span class="n">at</span> <span class="sr">/buildworker/worker/package_linux64/build/src/</span><span class="n">task</span><span class="o">.</span><span class="na">c</span><span class="o">:</span><span class="mi">246</span>
+<span class="n">jl_throw</span> <span class="n">at</span> <span class="sr">/buildworker/worker/package_linux64/build/src/</span><span class="n">task</span><span class="o">.</span><span class="na">c</span><span class="o">:</span><span class="mi">577</span>
+<span class="n">require</span> <span class="n">at</span> <span class="o">./</span><span class="n">loading</span><span class="o">.</span><span class="na">jl</span><span class="o">:</span><span class="mi">817</span>
+<span class="n">init_stdio</span> <span class="n">at</span> <span class="o">./</span><span class="n">stream</span><span class="o">.</span><span class="na">jl</span><span class="o">:</span><span class="mi">237</span>
+<span class="n">jfptr_init_stdio_4446</span><span class="o">.</span><span class="na">clone_1</span> <span class="n">at</span> <span class="sr">/opt/share/julia-1.0.0/lib/julia/s</span><span class="n">ys</span><span class="o">.</span><span class="na">so</span> <span class="o">(</span><span class="n">unknown</span> <span class="n">line</span><span class="o">)</span>
+<span class="n">jl_apply_generic</span> <span class="n">at</span> <span class="sr">/buildworker/worker/package_linux64/build/src/g</span><span class="n">f</span><span class="o">.</span><span class="na">c</span><span class="o">:</span><span class="mi">2182</span>
+<span class="n">reinit_stdio</span> <span class="n">at</span> <span class="o">./</span><span class="n">libuv</span><span class="o">.</span><span class="na">jl</span><span class="o">:</span><span class="mi">121</span>
+<span class="n">__init__</span> <span class="n">at</span> <span class="o">./</span><span class="n">sysimg</span><span class="o">.</span><span class="na">jl</span><span class="o">:</span><span class="mi">470</span>
+<span class="n">jl_apply_generic</span> <span class="n">at</span> <span class="sr">/buildworker/worker/package_linux64/build/src/g</span><span class="n">f</span><span class="o">.</span><span class="na">c</span><span class="o">:</span><span class="mi">2182</span>
+<span class="n">jl_apply</span> <span class="n">at</span> <span class="sr">/buildworker/worker/package_linux64/build/src/</span><span class="n">julia</span><span class="o">.</span><span class="na">h</span><span class="o">:</span><span class="mi">1536</span> <span class="o">[</span><span class="n">inlined</span><span class="o">]</span>
+<span class="n">jl_module_run_initializer</span> <span class="n">at</span> <span class="sr">/buildworker/worker/package_linux64/build/src/</span><span class="n">toplevel</span><span class="o">.</span><span class="na">c</span><span class="o">:</span><span class="mi">90</span>
+<span class="n">_julia_init</span> <span class="n">at</span> <span class="sr">/buildworker/worker/package_linux64/build/src/i</span><span class="n">nit</span><span class="o">.</span><span class="na">c</span><span class="o">:</span><span class="mi">811</span>
+<span class="n">julia_init__threading</span> <span class="n">at</span> <span class="sr">/buildworker/worker/package_linux64/build/src/</span><span class="n">task</span><span class="o">.</span><span class="na">c</span><span class="o">:</span><span class="mi">302</span>
+<span class="n">main</span> <span class="n">at</span> <span class="sr">/buildworker/worker/package_linux64/build/ui/</span><span class="n">repl</span><span class="o">.</span><span class="na">c</span><span class="o">:</span><span class="mi">227</span>
+<span class="n">__libc_start_main</span> <span class="n">at</span> <span class="sr">/lib64/</span><span class="n">libc</span><span class="o">.</span><span class="na">so</span><span class="o">.</span><span class="mi">6</span> <span class="o">(</span><span class="n">unknown</span> <span class="n">line</span><span class="o">)</span>
+<span class="n">_start</span> <span class="n">at</span> <span class="sr">/opt/share/julia-1.0.0/bin/</span><span class="n">julia</span> <span class="o">(</span><span class="n">unknown</span> <span class="n">line</span><span class="o">)</span>
+</pre></div>
+
+
+<p>But when I just use single node, and arbitrary cores, say <code>nodes=1:ppn=2</code>, it works well.</p>
+<h3 id="references">references<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<ol>
+<li><a href="https://wikis.nyu.edu/display/NYUHPC/PBSDSH">PBSDSH - High Performance Computing at NYU - NYU Wikis</a></li>
+<li><a href="http://docs.adaptivecomputing.com/torque/4-1-3/Content/topics/commands/pbsdsh.htm">pbsdsh usage</a></li>
 </ol>
                 
                   
