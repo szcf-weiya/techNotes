@@ -490,4 +490,9 @@ ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
 
 ## mkdir -p
 
-1. [How to mkdir only if a dir does not already exist? ](https://stackoverflow.com/questions/793858/how-to-mkdir-only-if-a-dir-does-not-already-exist)
+1. [How to  ]
+
+## useful commands
+
+1. `cd "$(dirname "$0")"`: [cd current directory](https://stackoverflow.com/questions/3349105/how-to-set-current-working-directory-to-the-directory-of-the-script)
+2. `mkdir -p`: [mkdir only if a dir does not already exist?](https://stackoverflow.com/questions/793858/how-to-mkdir-only-if-a-dir-does-not-already-exist)
