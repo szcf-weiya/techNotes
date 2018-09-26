@@ -81,3 +81,40 @@ references
 1. [Julia parallel computing over multiple nodes in cluster](https://stackoverflow.com/questions/43079309/julia-parallel-computing-over-multiple-nodes-in-cluster)
 2. [Using julia -L startupfile.jl, rather than machinefiles for starting workers.](https://white.ucc.asn.au/2017/08/17/starting-workers.html)
 3. [Help setting up Julia on a cluster](https://discourse.julialang.org/t/help-setting-up-julia-on-a-cluster/5519)
+
+## pbsdsh (unsolved)
+
+Submit a pbsdsh job and specify multiply nodes with multiply cores, say `nodes=2:ppn=4`
+
+error log file (see full file in the cluster: `dshmcmc.e21907`): 
+
+```
+fatal: error thrown and no exception handler available.
+InitError(mod=:Base, error=ArgumentError(msg="Package Sockets not found in current path:
+- Run `Pkg.add("Sockets")` to install the Sockets package.
+"))
+rec_backtrace at /buildworker/worker/package_linux64/build/src/stackwalk.c:94
+record_backtrace at /buildworker/worker/package_linux64/build/src/task.c:246
+jl_throw at /buildworker/worker/package_linux64/build/src/task.c:577
+require at ./loading.jl:817
+init_stdio at ./stream.jl:237
+jfptr_init_stdio_4446.clone_1 at /opt/share/julia-1.0.0/lib/julia/sys.so (unknown line)
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2182
+reinit_stdio at ./libuv.jl:121
+__init__ at ./sysimg.jl:470
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2182
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1536 [inlined]
+jl_module_run_initializer at /buildworker/worker/package_linux64/build/src/toplevel.c:90
+_julia_init at /buildworker/worker/package_linux64/build/src/init.c:811
+julia_init__threading at /buildworker/worker/package_linux64/build/src/task.c:302
+main at /buildworker/worker/package_linux64/build/ui/repl.c:227
+__libc_start_main at /lib64/libc.so.6 (unknown line)
+_start at /opt/share/julia-1.0.0/bin/julia (unknown line)
+```
+
+But when I just use single node, and arbitrary cores, say `nodes=1:ppn=2`, it works well.
+
+### references
+
+1. [PBSDSH - High Performance Computing at NYU - NYU Wikis](https://wikis.nyu.edu/display/NYUHPC/PBSDSH)
+2. [pbsdsh usage](http://docs.adaptivecomputing.com/torque/4-1-3/Content/topics/commands/pbsdsh.htm)
