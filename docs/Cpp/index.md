@@ -279,3 +279,12 @@ while(safeGetline(input, line))
 ## variably modeified type in C language
 
 参考[Variably modified type in C language - Stack Overflow](https://stackoverflow.com/questions/23529069/variably-modified-type-in-c-language)
+
+## write into file immediately
+
+```
+fprintf(fileptr, "writing to file\n");
+fflush(fileptr);
+```
+
+![How to make fprintf() writes immediately](https://stackoverflow.com/questions/45339874/how-to-make-fprintf-writes-immediately)
