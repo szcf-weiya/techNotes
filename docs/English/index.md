@@ -1,3 +1,10 @@
+## 2018.09.29
+
+1. witch
+2. brim
+3. tandem
+4. salutary
+
 ## 2018.09.25
 
 1. midge
