@@ -287,4 +287,8 @@ fprintf(fileptr, "writing to file\n");
 fflush(fileptr);
 ```
 
-![How to make fprintf() writes immediately](https://stackoverflow.com/questions/45339874/how-to-make-fprintf-writes-immediately)
+[How to make fprintf() writes immediately](https://stackoverflow.com/questions/45339874/how-to-make-fprintf-writes-immediately)
+
+or refer to
+
+[Linux实时将所有输出重定向到文件](https://www.cnblogs.com/itZhy/p/3163230.html)

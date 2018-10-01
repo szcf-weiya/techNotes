@@ -1,3 +1,8 @@
+## 2018.10.01
+
+1. dismissal
+2. cavalier
+
 ## 2018.09.29
 
 1. witch
