@@ -1,3 +1,17 @@
+## 2018.10.04
+
+1. paramount
+2. excruciating
+3. contrived
+
+## 2018.10.03
+
+1. artery
+2. myocardial infarction
+3. adventitia, media, intima
+4. atherosclerosis
+
+
 ## 2018.10.01
 
 1. dismissal
