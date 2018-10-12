@@ -500,3 +500,7 @@ ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
 ## xargs 命令
 
 1. [xargs命令_Linux xargs 命令用法详解：给其他命令传递参数的一个过滤器](http://man.linuxde.net/xargs)
+
+## Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?
+
+[Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?](https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process)
