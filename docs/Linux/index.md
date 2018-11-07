@@ -504,3 +504,23 @@ ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
 ## Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?
 
 [Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?](https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process)
+
+## `&`
+
+Note that 
+
+>  when you put & the output - both stdout and stderr - will still be printed onto the screen.
+
+> If you do not want to see any output on the screen, redirect both stdout and stderr to a file by:
+
+```bash
+myscript > ~/myscript.log 2>&1 &
+```
+or just 
+
+```bash
+myscript > /dev/null 2>&1 &
+```
+
+
+refer to [Why can I see the output of background processes?](https://askubuntu.com/questions/662817/why-can-i-see-the-output-of-background-processes)
