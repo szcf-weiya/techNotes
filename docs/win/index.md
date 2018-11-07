@@ -50,3 +50,13 @@ Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Re
 1. 先安装 KDE 包管理器 chocolatey，[The package manager for Windows](https://chocolatey.org/)
 2. 再安装 okular，[choco install okular](https://chocolatey.org/search?q=okular)
 3. 在 WSL 中运行时，需要 enable display，即 [`export DISPLAY=:0`](https://virtualizationreview.com/articles/2017/02/08/graphical-programs-on-windows-subsystem-on-linux.aspx)
+
+# Acrobat cannot save pdf
+
+situation:  the "Save as" windows open as blank
+
+1. Launch the application and go to Edit menu > Preference > General.
+2. Uncheck the box for "Show online storage when saving files".
+3. Click "OK" at the bottom to save the settings.
+
+refer to [Can't save pdf document](https://forums.adobe.com/thread/2318474)
