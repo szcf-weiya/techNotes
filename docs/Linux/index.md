@@ -524,3 +524,13 @@ myscript > /dev/null 2>&1 &
 
 
 refer to [Why can I see the output of background processes?](https://askubuntu.com/questions/662817/why-can-i-see-the-output-of-background-processes)
+
+## mv file with xargs
+
+use `-I {}` to replace some str.
+
+```bash
+ls | grep 'config[0-9].txt' | xargs -I {} mv {} configs/
+```
+
+see more details in [mv files with | xargs](https://askubuntu.com/questions/487035/mv-files-with-xargs)
