@@ -1,4 +1,4 @@
-# R相关笔记
+# R 相关笔记
 
 ## 序列减去常数
 
@@ -373,3 +373,25 @@ lm(Y ~ X + I(X^2))
 ## 多项式作图
 
 参考[Plot polynomial regression curve in R](https://stackoverflow.com/questions/23334360/plot-polynomial-regression-curve-in-r)
+
+## custom print
+
+```r
+class(obj) = "example"
+print.example <- function(x)
+{
+
+}
+```
+
+refer to [Example Needed: Change the default print method of an object](https://stackoverflow.com/questions/10938427/example-needed-change-the-default-print-method-of-an-object)
+
+## write lines to file
+
+```r
+fileConn<-file("output.txt")
+writeLines(c("Hello","World"), fileConn)
+close(fileConn)
+```
+
+refer to [Write lines of text to a file in R](https://stackoverflow.com/questions/2470248/write-lines-of-text-to-a-file-in-r)
