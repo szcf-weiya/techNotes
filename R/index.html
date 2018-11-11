@@ -645,6 +645,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#custom-print" title="custom print" class="md-nav__link">
+    custom print
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-lines-to-file" title="write lines to file" class="md-nav__link">
+    write lines to file
+  </a>
+  
+</li>
+      
       
       
       
@@ -1532,6 +1546,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#custom-print" title="custom print" class="md-nav__link">
+    custom print
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-lines-to-file" title="write lines to file" class="md-nav__link">
+    write lines to file
+  </a>
+  
+</li>
+      
       
       
       
@@ -1549,7 +1577,7 @@
               
                 
                 
-                <h1 id="r">R相关笔记<a class="headerlink" href="#r" title="Permanent link">&para;</a></h1>
+                <h1 id="r">R 相关笔记<a class="headerlink" href="#r" title="Permanent link">&para;</a></h1>
 <h2 id="_1">序列减去常数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span>n<span class="m">-1</span><span class="p">))</span>
   <span class="kp">print</span><span class="p">(</span>i<span class="p">)</span>
@@ -1817,6 +1845,24 @@ B <span class="o">=</span> <span class="kt">array</span><span class="p">(</span>
 <p>是不一样的。若要表示多项式回归，则应该用 <code>I(X^2)</code>。</p>
 <h2 id="_5">多项式作图<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/23334360/plot-polynomial-regression-curve-in-r">Plot polynomial regression curve in R</a></p>
+<h2 id="custom-print">custom print<a class="headerlink" href="#custom-print" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kp">class</span><span class="p">(</span>obj<span class="p">)</span> <span class="o">=</span> <span class="s">&quot;example&quot;</span>
+print.example <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+
+
+<p>refer to <a href="https://stackoverflow.com/questions/10938427/example-needed-change-the-default-print-method-of-an-object">Example Needed: Change the default print method of an object</a></p>
+<h2 id="write-lines-to-file">write lines to file<a class="headerlink" href="#write-lines-to-file" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>fileConn<span class="o">&lt;-</span><span class="kp">file</span><span class="p">(</span><span class="s">&quot;output.txt&quot;</span><span class="p">)</span>
+<span class="kp">writeLines</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="s">&quot;World&quot;</span><span class="p">),</span> fileConn<span class="p">)</span>
+<span class="kp">close</span><span class="p">(</span>fileConn<span class="p">)</span>
+</pre></div>
+
+
+<p>refer to <a href="https://stackoverflow.com/questions/2470248/write-lines-of-text-to-a-file-in-r">Write lines of text to a file in R</a></p>
                 
                   
                 
