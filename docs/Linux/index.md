@@ -534,3 +534,25 @@ ls | grep 'config[0-9].txt' | xargs -I {} mv {} configs/
 ```
 
 see more details in [mv files with | xargs](https://askubuntu.com/questions/487035/mv-files-with-xargs)
+
+## google drive
+
+refer to [Ubuntu 16.04 set up with google online account but no drive folder in nautilus](https://askubuntu.com/questions/838956/ubuntu-16-04-set-up-with-google-online-account-but-no-drive-folder-in-nautilus)
+
+Note that you should run 
+
+```bash
+gnome-control-center online-accounts
+```
+
+in the command line, not to open the GUI.
+
+## onedrive
+
+### first try
+
+[xybu/onedrive-d-old](https://github.com/xybu/onedrive-d-old), but doesn't support exchange account.
+
+### second try
+
+[skilion/onedrive](https://github.com/skilion/onedrive), perfect!
