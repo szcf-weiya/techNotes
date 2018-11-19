@@ -174,3 +174,20 @@ grid.arrange(plot1, plot2, ncol=2)
 参考
 
 1. [Making Maps with R](http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html)
+
+## `scale_fill_manual` 和 `scale_color_manual`
+
+更改颜色命令为
+
+```r
+scale_fill_manual(values = c("red", "blue"))
+```
+
+## save 
+
+NOT `png()...dev.off()`, use
+
+```r
+ggsave("sth.eps",device="eps", width=9)
+```
+
