@@ -395,3 +395,7 @@ close(fileConn)
 ```
 
 refer to [Write lines of text to a file in R](https://stackoverflow.com/questions/2470248/write-lines-of-text-to-a-file-in-r)
+
+## combine base and ggplot graphics in R figure 
+
+refer to [Combine base and ggplot graphics in R figure window](https://stackoverflow.com/questions/14124373/combine-base-and-ggplot-graphics-in-r-figure-window)
