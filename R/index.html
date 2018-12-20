@@ -1594,13 +1594,13 @@
                 
                 <h1 id="r">R 相关笔记<a class="headerlink" href="#r" title="Permanent link">&para;</a></h1>
 <h2 id="_1">序列减去常数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span>n<span class="m">-1</span><span class="p">))</span>
-  <span class="kp">print</span><span class="p">(</span>i<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="m">-1</span><span class="p">))</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="c1">##0</span>
 <span class="c1">##1</span>
 <span class="c1">##2</span>
-<span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="p">(</span>n<span class="m">-1</span><span class="p">)))</span>
-  <span class="kp">print</span><span class="p">(</span>i<span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="n">n</span><span class="m">-1</span><span class="p">)))</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="c1">##1</span>
 <span class="c1">##2</span>
 </pre></div>
@@ -1677,12 +1677,12 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 
 <h2 id="function-dataptr-not-provided-by-package-rcpp">function &lsquo;dataptr&rsquo; not provided by package &lsquo;Rcpp&rsquo;<a class="headerlink" href="#function-dataptr-not-provided-by-package-rcpp" title="Permanent link">&para;</a></h2>
 <p>原因是因为没有在</p>
-<div class="codehilite"><pre><span></span><span class="kp">dyn.load</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><span class="nf">dyn.load</span><span class="p">()</span>
 </pre></div>
 
 
 <p>前面添加</p>
-<div class="codehilite"><pre><span></span><span class="kn">library</span><span class="p">(</span>Rcpp<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">Rcpp</span><span class="p">)</span>
 <span class="c1">## 或require(Rcpp)</span>
 </pre></div>
 
@@ -1692,7 +1692,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <h2 id="par-cheatsheet">par cheatsheet<a class="headerlink" href="#par-cheatsheet" title="Permanent link">&para;</a></h2>
 <p><a href="r-graphical-parameters-cheatsheet.pdf">r-graphical-parameters-cheatsheet</a></p>
 <h2 id="mathematical-annotation-in-r-plot">Mathematical Annotation in R plot<a class="headerlink" href="#mathematical-annotation-in-r-plot" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>plot<span class="p">(</span><span class="kc">...</span><span class="p">,</span> main <span class="o">=</span> <span class="kp">expression</span><span class="p">(</span><span class="kp">paste</span><span class="p">(</span><span class="s">&quot;...&quot;</span><span class="p">,</span> mu<span class="p">[</span><span class="m">1</span><span class="p">])))</span>
+<div class="codehilite"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;...&quot;</span><span class="p">,</span> <span class="n">mu[1]</span><span class="p">)))</span>
 </pre></div>
 
 
@@ -1710,13 +1710,13 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 </a></p>
 <h2 id="rmarkdownpdf">rmarkdown转化中文字符为PDF的设置<a class="headerlink" href="#rmarkdownpdf" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="o">---</span>
-title<span class="o">:</span> <span class="s">&quot;test&quot;</span>
-author<span class="o">:</span> <span class="s">&quot;weiya&quot;</span>
-output<span class="o">:</span>
-    pdf_document<span class="o">:</span>
-        latex_engine<span class="o">:</span> xelatex
-        includes<span class="o">:</span>
-            in_header<span class="o">:</span> header.tex
+<span class="n">title</span><span class="o">:</span> <span class="s">&quot;test&quot;</span>
+<span class="n">author</span><span class="o">:</span> <span class="s">&quot;weiya&quot;</span>
+<span class="n">output</span><span class="o">:</span>
+    <span class="n">pdf_document</span><span class="o">:</span>
+        <span class="n">latex_engine</span><span class="o">:</span> <span class="n">xelatex</span>
+        <span class="n">includes</span><span class="o">:</span>
+            <span class="n">in_header</span><span class="o">:</span> <span class="n">header.tex</span>
 <span class="o">---</span>
 </pre></div>
 
@@ -1757,49 +1757,49 @@ output<span class="o">:</span>
 <p>参考<a href="http://www.cnblogs.com/nsnow/p/4758202.html">协方差矩阵的几何解释</a></p>
 <h2 id="rocrprediction">ROCR包中prediction函数<a class="headerlink" href="#rocrprediction" title="Permanent link">&para;</a></h2>
 <p><code>prediction</code>定义如下</p>
-<div class="codehilite"><pre><span></span>prediction<span class="p">(</span>predictions<span class="p">,</span> <span class="kp">labels</span><span class="p">,</span> label.ordering <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">prediction</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">label.ordering</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span>
 </pre></div>
 
 
 <p>在绘制ROC曲线时，必要时需要指定<code>label.ordering</code>中negative和positive，否则结果会完全相反。举个例子</p>
 <div class="codehilite"><pre><span></span><span class="c1">## generate some data with a non-linar class boundary</span>
-<span class="kp">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
-x <span class="o">=</span> <span class="kt">matrix</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">200</span><span class="o">*</span><span class="m">2</span><span class="p">),</span> ncol <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
-x<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="p">]</span> <span class="o">=</span> x<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="p">]</span> <span class="o">+</span> <span class="m">2</span>
-x<span class="p">[</span><span class="m">101</span><span class="o">:</span><span class="m">150</span><span class="p">,</span> <span class="p">]</span> <span class="o">=</span> x<span class="p">[</span><span class="m">101</span><span class="o">:</span><span class="m">150</span><span class="p">,</span> <span class="p">]</span> <span class="o">-</span> <span class="m">2</span>
-y <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="kp">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">150</span><span class="p">),</span> <span class="kp">rep</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">50</span><span class="p">))</span>
-dat <span class="o">=</span> <span class="kt">data.frame</span><span class="p">(</span>x <span class="o">=</span> x<span class="p">,</span> y <span class="o">=</span> <span class="kp">as.factor</span><span class="p">(</span>y<span class="p">))</span>
-plot<span class="p">(</span>x<span class="p">,</span> col <span class="o">=</span> y<span class="p">)</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">200</span><span class="o">*</span><span class="m">2</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+<span class="n">x[1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="n">]</span> <span class="o">=</span> <span class="n">x[1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="n">]</span> <span class="o">+</span> <span class="m">2</span>
+<span class="n">x[101</span><span class="o">:</span><span class="m">150</span><span class="p">,</span> <span class="n">]</span> <span class="o">=</span> <span class="n">x[101</span><span class="o">:</span><span class="m">150</span><span class="p">,</span> <span class="n">]</span> <span class="o">-</span> <span class="m">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">150</span><span class="p">),</span> <span class="nf">rep</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">50</span><span class="p">))</span>
+<span class="n">dat</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="c1">## randomly split into training and testing groups</span>
-train <span class="o">=</span> <span class="kp">sample</span><span class="p">(</span><span class="m">200</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
+<span class="n">train</span> <span class="o">=</span> <span class="nf">sample</span><span class="p">(</span><span class="m">200</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
 
 <span class="c1">## training data using radial kernel</span>
-svmfit <span class="o">=</span> svm<span class="p">(</span>y<span class="o">~</span><span class="m">.</span><span class="p">,</span> data <span class="o">=</span> dat<span class="p">[</span>train<span class="p">,</span> <span class="p">],</span> kernel <span class="o">=</span> <span class="s">&quot;radial&quot;</span><span class="p">,</span> cost <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
-plot<span class="p">(</span>svmfit<span class="p">,</span> dat<span class="p">[</span>train<span class="p">,</span> <span class="p">])</span>
+<span class="n">svmfit</span> <span class="o">=</span> <span class="nf">svm</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">.,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dat[train</span><span class="p">,</span> <span class="n">]</span><span class="p">,</span> <span class="n">kernel</span> <span class="o">=</span> <span class="s">&quot;radial&quot;</span><span class="p">,</span> <span class="n">cost</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">svmfit</span><span class="p">,</span> <span class="n">dat[train</span><span class="p">,</span> <span class="n">]</span><span class="p">)</span>
 
 <span class="c1">## cross-validation </span>
-<span class="kp">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
-tune.out <span class="o">=</span> tune<span class="p">(</span>svm<span class="p">,</span> y<span class="o">~</span><span class="m">.</span><span class="p">,</span> data <span class="o">=</span> dat<span class="p">[</span>train<span class="p">,</span> <span class="p">],</span> kernel <span class="o">=</span> <span class="s">&quot;radial&quot;</span><span class="p">,</span>
-                ranges <span class="o">=</span> <span class="kt">list</span><span class="p">(</span>cost <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">1000</span><span class="p">),</span>
-                              gamma <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)))</span>
-<span class="kp">summary</span><span class="p">(</span>tune.out<span class="p">)</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
+<span class="n">tune.out</span> <span class="o">=</span> <span class="nf">tune</span><span class="p">(</span><span class="n">svm</span><span class="p">,</span> <span class="n">y</span><span class="o">~</span><span class="n">.,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dat[train</span><span class="p">,</span> <span class="n">]</span><span class="p">,</span> <span class="n">kernel</span> <span class="o">=</span> <span class="s">&quot;radial&quot;</span><span class="p">,</span>
+                <span class="n">ranges</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cost</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">1000</span><span class="p">),</span>
+                              <span class="n">gamma</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">tune.out</span><span class="p">)</span>
 
 <span class="c1">## prediction</span>
-<span class="kp">table</span><span class="p">(</span>true <span class="o">=</span> dat<span class="p">[</span><span class="o">-</span>train<span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">],</span> pred <span class="o">=</span> predict<span class="p">(</span>tune.out<span class="o">$</span>best.model<span class="p">,</span> newdata <span class="o">=</span> dat<span class="p">[</span><span class="o">-</span>train<span class="p">,</span> <span class="p">]))</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">true</span> <span class="o">=</span> <span class="n">dat[</span><span class="o">-</span><span class="n">train</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="n">]</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="nf">predict</span><span class="p">(</span><span class="n">tune.out</span><span class="o">$</span><span class="n">best.model</span><span class="p">,</span> <span class="n">newdata</span> <span class="o">=</span> <span class="n">dat[</span><span class="o">-</span><span class="n">train</span><span class="p">,</span> <span class="n">]</span><span class="p">))</span>
 
 <span class="c1">## ROC curves</span>
-<span class="kn">library</span><span class="p">(</span>ROCR<span class="p">)</span>
-rocplot <span class="o">=</span> <span class="kr">function</span> <span class="p">(</span> pred <span class="p">,</span> truth <span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="p">{</span>
-  predob <span class="o">=</span> prediction <span class="p">(</span> pred<span class="p">,</span> truth <span class="p">,</span> label.ordering <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">,</span> <span class="s">&quot;1&quot;</span><span class="p">))</span>
-  perf <span class="o">=</span> performance <span class="p">(</span> predob <span class="p">,</span> <span class="s">&quot;tpr&quot;</span> <span class="p">,</span> <span class="s">&quot;fpr&quot;</span><span class="p">)</span>
-  plot <span class="p">(</span> perf<span class="p">,</span><span class="kc">...</span><span class="p">)</span> 
+<span class="nf">library</span><span class="p">(</span><span class="n">ROCR</span><span class="p">)</span>
+<span class="n">rocplot</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span> <span class="n">pred</span> <span class="p">,</span> <span class="n">truth</span> <span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">predob</span> <span class="o">=</span> <span class="nf">prediction </span><span class="p">(</span> <span class="n">pred</span><span class="p">,</span> <span class="n">truth</span> <span class="p">,</span> <span class="n">label.ordering</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">,</span> <span class="s">&quot;1&quot;</span><span class="p">))</span>
+  <span class="n">perf</span> <span class="o">=</span> <span class="nf">performance </span><span class="p">(</span> <span class="n">predob</span> <span class="p">,</span> <span class="s">&quot;tpr&quot;</span> <span class="p">,</span> <span class="s">&quot;fpr&quot;</span><span class="p">)</span>
+  <span class="nf">plot </span><span class="p">(</span> <span class="n">perf</span><span class="p">,</span><span class="kc">...</span><span class="p">)</span> 
 <span class="p">}</span>
-svmfit.opt <span class="o">=</span> svm<span class="p">(</span>y<span class="o">~</span><span class="m">.</span><span class="p">,</span> data <span class="o">=</span> dat<span class="p">[</span>train<span class="p">,</span> <span class="p">],</span> kernel <span class="o">=</span> <span class="s">&quot;radial&quot;</span><span class="p">,</span>
-                 gamma <span class="o">=</span> <span class="m">3</span><span class="p">,</span> cost <span class="o">=</span> <span class="m">10</span><span class="p">,</span> decision.values <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
-fitted <span class="o">=</span> <span class="kp">attributes</span><span class="p">(</span>predict<span class="p">(</span>svmfit.opt<span class="p">,</span> dat<span class="p">[</span>train<span class="p">,</span> <span class="p">],</span> decision.values <span class="o">=</span> <span class="bp">T</span><span class="p">))</span><span class="o">$</span>decision.values
+<span class="n">svmfit.opt</span> <span class="o">=</span> <span class="nf">svm</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">.,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dat[train</span><span class="p">,</span> <span class="n">]</span><span class="p">,</span> <span class="n">kernel</span> <span class="o">=</span> <span class="s">&quot;radial&quot;</span><span class="p">,</span>
+                 <span class="n">gamma</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">cost</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">decision.values</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="n">fitted</span> <span class="o">=</span> <span class="nf">attributes</span><span class="p">(</span><span class="nf">predict</span><span class="p">(</span><span class="n">svmfit.opt</span><span class="p">,</span> <span class="n">dat[train</span><span class="p">,</span> <span class="n">]</span><span class="p">,</span> <span class="n">decision.values</span> <span class="o">=</span> <span class="bp">T</span><span class="p">))</span><span class="o">$</span><span class="n">decision.values</span>
 
-rocplot <span class="p">(</span> fitted <span class="p">,</span> dat <span class="p">[</span> train <span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">]</span> <span class="p">,</span> main <span class="o">=</span><span class="s">&quot;Training Data&quot;</span><span class="p">)</span>
+<span class="nf">rocplot </span><span class="p">(</span> <span class="n">fitted</span> <span class="p">,</span> <span class="n">dat</span> <span class="n">[</span> <span class="n">train</span> <span class="p">,</span><span class="s">&quot;y&quot;</span><span class="n">]</span> <span class="p">,</span> <span class="n">main</span> <span class="o">=</span><span class="s">&quot;Training Data&quot;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1809,23 +1809,23 @@ rocplot <span class="p">(</span> fitted <span class="p">,</span> dat <span class
 <p><img alt="" src="roc_fact.png" /></p>
 <h2 id="pairspanel">pairs中自定义panel函数<a class="headerlink" href="#pairspanel" title="Permanent link">&para;</a></h2>
 <p>问题来自<a href="https://www.zhihu.com/question/268216627/answer/334393347">R语言绘图？ - 知乎</a></p>
-<div class="codehilite"><pre><span></span>my.lower <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">,</span>y<span class="p">,</span><span class="kc">...</span><span class="p">){</span>
-  points<span class="p">(</span>x<span class="p">,</span> y<span class="p">)</span>
-  lines<span class="p">(</span>lowess<span class="p">(</span>x<span class="p">,</span> y<span class="p">),</span> col <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> lwd<span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">my.lower</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="kc">...</span><span class="p">){</span>
+  <span class="nf">points</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+  <span class="nf">lines</span><span class="p">(</span><span class="nf">lowess</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 <span class="p">}</span>
 
-my.upper <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">,</span> y<span class="p">,</span> <span class="kc">...</span><span class="p">){</span>
-  cor.val <span class="o">=</span> <span class="kp">round</span><span class="p">(</span>cor<span class="p">(</span>x<span class="p">,</span>y<span class="p">),</span> digits <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-  <span class="kr">if</span> <span class="p">(</span><span class="kp">abs</span><span class="p">(</span>cor.val<span class="p">)</span> <span class="o">&gt;</span> <span class="m">0.5</span><span class="p">){</span>
-    text<span class="p">(</span><span class="kp">mean</span><span class="p">(</span>x<span class="p">),</span> <span class="kp">mean</span><span class="p">(</span>y<span class="p">),</span> cor.val<span class="p">,</span> cex <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-    text<span class="p">(</span><span class="kp">sort</span><span class="p">(</span>x<span class="p">)[</span><span class="kp">length</span><span class="p">(</span>x<span class="p">)</span><span class="o">*</span><span class="m">0.8</span><span class="p">],</span> <span class="kp">max</span><span class="p">(</span>y<span class="p">),</span> <span class="s">&#39;***&#39;</span><span class="p">,</span> cex <span class="o">=</span> <span class="m">4</span><span class="p">,</span> col <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
-  <span class="p">}</span> <span class="kp">else</span>
+<span class="n">my.upper</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="kc">...</span><span class="p">){</span>
+  <span class="n">cor.val</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">digits</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">cor.val</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">0.5</span><span class="p">){</span>
+    <span class="nf">text</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">cor.val</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
+    <span class="nf">text</span><span class="p">(</span><span class="nf">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="nf">[length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="m">0.8</span><span class="n">]</span><span class="p">,</span> <span class="nf">max</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="s">&#39;***&#39;</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+  <span class="p">}</span> <span class="n">else</span>
   <span class="p">{</span>
-    text<span class="p">(</span><span class="kp">mean</span><span class="p">(</span>x<span class="p">),</span> <span class="kp">mean</span><span class="p">(</span>y<span class="p">),</span> cor.val<span class="p">,</span> cex <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
+    <span class="nf">text</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">cor.val</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-pairs<span class="p">(</span>iris<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> lower.panel <span class="o">=</span>my.lower<span class="p">,</span> upper.panel <span class="o">=</span> my.upper<span class="p">)</span>
+<span class="nf">pairs</span><span class="p">(</span><span class="n">iris[1</span><span class="o">:</span><span class="m">4</span><span class="n">]</span><span class="p">,</span> <span class="n">lower.panel</span> <span class="o">=</span><span class="n">my.lower</span><span class="p">,</span> <span class="n">upper.panel</span> <span class="o">=</span> <span class="n">my.upper</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1834,9 +1834,9 @@ pairs<span class="p">(</span>iris<span class="p">[</span><span class="m">1</span
 <h2 id="_4">神奇的<code>[</code><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>来自<a href="https://d.cosx.org/d/419525-r">R语言中以矩阵引用多维数组的元素</a></p>
 <p>比如</p>
-<div class="codehilite"><pre><span></span>A <span class="o">=</span> <span class="kt">array</span><span class="p">(</span><span class="kp">sample</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">255</span><span class="p">,</span> <span class="m">100</span><span class="o">*</span><span class="m">100</span><span class="o">*</span><span class="m">3</span><span class="p">,</span> replace <span class="o">=</span> <span class="bp">T</span><span class="p">),</span> dim <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
-B <span class="o">=</span> <span class="kt">array</span><span class="p">(</span><span class="kp">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="m">2</span><span class="o">*</span><span class="m">5</span><span class="p">),</span> dim <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">))</span>
-<span class="kp">apply</span><span class="p">(</span>A<span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="sb">`[`</span><span class="p">,</span> <span class="kp">t</span><span class="p">(</span>B<span class="p">))</span>
+<div class="codehilite"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">255</span><span class="p">,</span> <span class="m">100</span><span class="o">*</span><span class="m">100</span><span class="o">*</span><span class="m">3</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="bp">T</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+<span class="n">B</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="m">2</span><span class="o">*</span><span class="m">5</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">))</span>
+<span class="nf">apply</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="n">`[`</span><span class="p">,</span> <span class="nf">t</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
 </pre></div>
 
 
@@ -1848,12 +1848,12 @@ B <span class="o">=</span> <span class="kt">array</span><span class="p">(</span>
 </ol>
 <h2 id="lm-i"><code>lm()</code> 中有无 <code>I()</code> 的差异<a class="headerlink" href="#lm-i" title="Permanent link">&para;</a></h2>
 <p>注意</p>
-<div class="codehilite"><pre><span></span>lm<span class="p">(</span>Y <span class="o">~</span> X <span class="o">+</span> X<span class="o">^</span><span class="m">2</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span> <span class="o">~</span> <span class="n">X</span> <span class="o">+</span> <span class="n">X^2</span><span class="p">)</span>
 </pre></div>
 
 
 <p>和 </p>
-<div class="codehilite"><pre><span></span>lm<span class="p">(</span>Y <span class="o">~</span> X <span class="o">+</span> <span class="kp">I</span><span class="p">(</span>X<span class="o">^</span><span class="m">2</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span> <span class="o">~</span> <span class="n">X</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">X^2</span><span class="p">))</span>
 </pre></div>
 
 
@@ -1861,8 +1861,8 @@ B <span class="o">=</span> <span class="kt">array</span><span class="p">(</span>
 <h2 id="_5">多项式作图<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/23334360/plot-polynomial-regression-curve-in-r">Plot polynomial regression curve in R</a></p>
 <h2 id="custom-print">custom print<a class="headerlink" href="#custom-print" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kp">class</span><span class="p">(</span>obj<span class="p">)</span> <span class="o">=</span> <span class="s">&quot;example&quot;</span>
-print.example <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>x<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;example&quot;</span>
+<span class="n">print.example</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">{</span>
 
 <span class="p">}</span>
@@ -1871,9 +1871,9 @@ print.example <span class="o">&lt;-</span> <span class="kr">function</span><span
 
 <p>refer to <a href="https://stackoverflow.com/questions/10938427/example-needed-change-the-default-print-method-of-an-object">Example Needed: Change the default print method of an object</a></p>
 <h2 id="write-lines-to-file">write lines to file<a class="headerlink" href="#write-lines-to-file" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>fileConn<span class="o">&lt;-</span><span class="kp">file</span><span class="p">(</span><span class="s">&quot;output.txt&quot;</span><span class="p">)</span>
-<span class="kp">writeLines</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="s">&quot;World&quot;</span><span class="p">),</span> fileConn<span class="p">)</span>
-<span class="kp">close</span><span class="p">(</span>fileConn<span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">fileConn</span><span class="o">&lt;-</span><span class="nf">file</span><span class="p">(</span><span class="s">&quot;output.txt&quot;</span><span class="p">)</span>
+<span class="nf">writeLines</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="s">&quot;World&quot;</span><span class="p">),</span> <span class="n">fileConn</span><span class="p">)</span>
+<span class="nf">close</span><span class="p">(</span><span class="n">fileConn</span><span class="p">)</span>
 </pre></div>
 
 

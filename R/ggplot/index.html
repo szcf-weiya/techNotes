@@ -1229,14 +1229,14 @@
                 <h1 id="ggplot">ggplot 相关<a class="headerlink" href="#ggplot" title="Permanent link">&para;</a></h1>
 <h2 id="ggplot_1">ggplot同时绘制多个密度图<a class="headerlink" href="#ggplot_1" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://www.tuicool.com/articles/3aUnem7">使用ggplot2同时绘制多个密度图</a></p>
-<div class="codehilite"><pre><span></span>plots <span class="o">&lt;-</span> <span class="kc">NULL</span>
-<span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="kp">colnames</span><span class="p">(</span>train<span class="p">)){</span> 
-    plots<span class="p">[[</span>i<span class="p">]]</span> <span class="o">&lt;-</span> ggplot<span class="p">(</span>train<span class="p">)</span> <span class="o">+</span> 
-    geom_density<span class="p">(</span>aes_string<span class="p">(</span>x <span class="o">=</span> i<span class="p">,</span> fill <span class="o">=</span> <span class="s">&#39;is_black&#39;</span><span class="p">),</span> alpha <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> show.legend <span class="o">=</span> <span class="bp">F</span><span class="p">)</span> <span class="o">+</span> 
-    xlab<span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> 
-    ylab<span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span> 
+<div class="codehilite"><pre><span></span><span class="n">plots</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">train</span><span class="p">)){</span> 
+    <span class="n">plots[[i]]</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">train</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">geom_density</span><span class="p">(</span><span class="nf">aes_string</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&#39;is_black&#39;</span><span class="p">),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">show.legend</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span> 
 <span class="p">}</span>
-plot_grid<span class="p">(</span>plotlist <span class="o">=</span> plots<span class="p">)</span>
+<span class="nf">plot_grid</span><span class="p">(</span><span class="n">plotlist</span> <span class="o">=</span> <span class="n">plots</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1246,46 +1246,46 @@ plot_grid<span class="p">(</span>plotlist <span class="o">=</span> plots<span cl
 <h2 id="legend">legend设置<a class="headerlink" href="#legend" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/">Legends (ggplot2)</a></p>
 <h3 id="_1">默认情形<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="kn">library</span><span class="p">(</span>ggplot2<span class="p">)</span>
-bp <span class="o">&lt;-</span> ggplot<span class="p">(</span>data<span class="o">=</span>PlantGrowth<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>group<span class="p">,</span> y<span class="o">=</span>weight<span class="p">,</span> fill<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span> geom_boxplot<span class="p">()</span>
-bp
+<div class="codehilite"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="n">bp</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">PlantGrowth</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">group</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_boxplot</span><span class="p">()</span>
+<span class="n">bp</span>
 </pre></div>
 
 
 <h3 id="_2">自定义图例的顺序<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>首先移除掉默认图例，有三种方式实现：</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Remove legend for a particular aesthetic (fill)</span>
-bp <span class="o">+</span> guides<span class="p">(</span>fill<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
 
 <span class="c1"># It can also be done when specifying the scale</span>
-bp <span class="o">+</span> scale_fill_discrete<span class="p">(</span>guide<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">scale_fill_discrete</span><span class="p">(</span><span class="n">guide</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
 
 <span class="c1"># This removes all legends</span>
-bp <span class="o">+</span> theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">)</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>再改变默认顺序</p>
-<div class="codehilite"><pre><span></span>bp <span class="o">+</span> scale_fill_discrete<span class="p">(</span>breaks<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;trt1&quot;</span><span class="p">,</span><span class="s">&quot;ctrl&quot;</span><span class="p">,</span><span class="s">&quot;trt2&quot;</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><span class="n">bp</span> <span class="o">+</span> <span class="nf">scale_fill_discrete</span><span class="p">(</span><span class="n">breaks</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;trt1&quot;</span><span class="p">,</span><span class="s">&quot;ctrl&quot;</span><span class="p">,</span><span class="s">&quot;trt2&quot;</span><span class="p">))</span>
 </pre></div>
 
 
 <h3 id="_3">颠倒图例的顺序<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1"># These two methods are equivalent:</span>
-bp <span class="o">+</span> guides<span class="p">(</span>fill <span class="o">=</span> guide_legend<span class="p">(</span>reverse<span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
-bp <span class="o">+</span> scale_fill_discrete<span class="p">(</span>guide <span class="o">=</span> guide_legend<span class="p">(</span>reverse<span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">scale_fill_discrete</span><span class="p">(</span><span class="n">guide</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
 
 <span class="c1"># You can also modify the scale directly:</span>
-bp <span class="o">+</span> scale_fill_discrete<span class="p">(</span>breaks <span class="o">=</span> <span class="kp">rev</span><span class="p">(</span><span class="kp">levels</span><span class="p">(</span>PlantGrowth<span class="o">$</span>group<span class="p">)))</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">scale_fill_discrete</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="nf">rev</span><span class="p">(</span><span class="nf">levels</span><span class="p">(</span><span class="n">PlantGrowth</span><span class="o">$</span><span class="n">group</span><span class="p">)))</span>
 </pre></div>
 
 
 <h3 id="_4">隐藏图例标题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1"># Remove title for fill legend</span>
-bp <span class="o">+</span> guides<span class="p">(</span>fill<span class="o">=</span>guide_legend<span class="p">(</span>title<span class="o">=</span><span class="kc">NULL</span><span class="p">))</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="nf">guide_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="kc">NULL</span><span class="p">))</span>
 
 <span class="c1"># Remove title for all legends</span>
-bp <span class="o">+</span> theme<span class="p">(</span>legend.title<span class="o">=</span>element_blank<span class="p">())</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span><span class="o">=</span><span class="nf">element_blank</span><span class="p">())</span>
 </pre></div>
 
 
@@ -1298,48 +1298,48 @@ bp <span class="o">+</span> theme<span class="p">(</span>legend.title<span class
 
 <h3 id="_6">图例的整体形状<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1"># Title appearance</span>
-bp <span class="o">+</span> theme<span class="p">(</span>legend.title <span class="o">=</span> element_text<span class="p">(</span>colour<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> size<span class="o">=</span><span class="m">16</span><span class="p">,</span> face<span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">))</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">16</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">))</span>
 
 <span class="c1"># Label appearance</span>
-bp <span class="o">+</span> theme<span class="p">(</span>legend.text <span class="o">=</span> element_text<span class="p">(</span>colour<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> size <span class="o">=</span> <span class="m">16</span><span class="p">,</span> face <span class="o">=</span> <span class="s">&quot;bold&quot;</span><span class="p">))</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">16</span><span class="p">,</span> <span class="n">face</span> <span class="o">=</span> <span class="s">&quot;bold&quot;</span><span class="p">))</span>
 </pre></div>
 
 
 <p>图例盒子</p>
-<div class="codehilite"><pre><span></span>bp <span class="o">+</span> theme<span class="p">(</span>legend.background <span class="o">=</span> element_rect<span class="p">())</span>
-bp <span class="o">+</span> theme<span class="p">(</span>legend.background <span class="o">=</span> element_rect<span class="p">(</span>fill<span class="o">=</span><span class="s">&quot;gray90&quot;</span><span class="p">,</span> size<span class="o">=</span><span class="m">.5</span><span class="p">,</span> linetype<span class="o">=</span><span class="s">&quot;dotted&quot;</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.background</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">())</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.background</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s">&quot;gray90&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">.5</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dotted&quot;</span><span class="p">))</span>
 </pre></div>
 
 
 <p>图例位置</p>
-<div class="codehilite"><pre><span></span>bp <span class="o">+</span> theme<span class="p">(</span>legend.position<span class="o">=</span><span class="s">&quot;top&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s">&quot;top&quot;</span><span class="p">)</span>
 
 <span class="c1"># Position legend in graph, where x,y is 0,0 (bottom left) to 1,1 (top right)</span>
-bp <span class="o">+</span> theme<span class="p">(</span>legend.position<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">.5</span><span class="p">,</span> <span class="m">.5</span><span class="p">))</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">.5</span><span class="p">,</span> <span class="m">.5</span><span class="p">))</span>
 
 <span class="c1"># Set the &quot;anchoring point&quot; of the legend (bottom-left is 0,0; top-right is 1,1)</span>
 <span class="c1"># Put bottom-left corner of legend box in bottom-left corner of graph</span>
-bp <span class="o">+</span> theme<span class="p">(</span>legend.justification<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">),</span> legend.position<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">))</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.justification</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">),</span> <span class="n">legend.position</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">))</span>
 
 <span class="c1"># Put bottom-right corner of legend box in bottom-right corner of graph</span>
-bp <span class="o">+</span> theme<span class="p">(</span>legend.justification<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">),</span> legend.position<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">))</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.justification</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">),</span> <span class="n">legend.position</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">))</span>
 </pre></div>
 
 
 <h3 id="slashes">隐藏图例的slashes<a class="headerlink" href="#slashes" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1"># No outline</span>
-ggplot<span class="p">(</span>data<span class="o">=</span>PlantGrowth<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>group<span class="p">,</span> fill<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
-    geom_bar<span class="p">()</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">PlantGrowth</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">group</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_bar</span><span class="p">()</span>
 
 <span class="c1"># Add outline, but slashes appear in legend</span>
-ggplot<span class="p">(</span>data<span class="o">=</span>PlantGrowth<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>group<span class="p">,</span> fill<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
-    geom_bar<span class="p">(</span>colour<span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">PlantGrowth</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">group</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_bar</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">)</span>
 
 <span class="c1"># A hack to hide the slashes: first graph the bars with no outline and add the legend,</span>
 <span class="c1"># then graph the bars again with outline, but with a blank legend.</span>
-ggplot<span class="p">(</span>data<span class="o">=</span>PlantGrowth<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>group<span class="p">,</span> fill<span class="o">=</span>group<span class="p">))</span> <span class="o">+</span>
-    geom_bar<span class="p">()</span> <span class="o">+</span>
-    geom_bar<span class="p">(</span>colour<span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">,</span> show.legend<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">PlantGrowth</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">group</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_bar</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">geom_bar</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="n">show.legend</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1348,7 +1348,7 @@ ggplot<span class="p">(</span>data<span class="o">=</span>PlantGrowth<span class
 <p>目前查阅到的有参考价值的为treemap和treemapify，但似乎都只针对矩形，对于原知乎问题中的圆形碎片化尚不能实现，目前想法是阅读这两个package的源代码，看能否找到突破口。</p>
 <h2 id="_7">数学公式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>比如</p>
-<div class="codehilite"><pre><span></span><span class="kp">expression</span><span class="p">(</span>R<span class="p">[</span>group<span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="kt">list</span><span class="p">(</span>hat<span class="p">(</span><span class="bp">F</span><span class="p">),</span><span class="bp">F</span><span class="p">),</span><span class="s">&quot;&quot;</span><span class="p">)]</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">expression</span><span class="p">(</span><span class="n">R</span><span class="nf">[group</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="nf">list</span><span class="p">(</span><span class="nf">hat</span><span class="p">(</span><span class="bp">F</span><span class="p">),</span><span class="bp">F</span><span class="p">),</span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="n">]^2</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1360,10 +1360,10 @@ ggplot<span class="p">(</span>data<span class="o">=</span>PlantGrowth<span class
 <p>参考<a href="https://stackoverflow.com/questions/14363804/size-of-labels-for-x-axis-and-y-axis-ggplot-in-r">Size of labels for x-axis and y-axis ggplot in R</a></p>
 <h2 id="_9">多张图片<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p><code>par(mfrow=c(1,2))</code>不起作用，要用到 <code>gridExtra</code> 包，如</p>
-<div class="codehilite"><pre><span></span><span class="kn">library</span><span class="p">(</span>gridExtra<span class="p">)</span>
-plot1 <span class="o">&lt;-</span> qplot<span class="p">(</span><span class="m">1</span><span class="p">)</span>
-plot2 <span class="o">&lt;-</span> qplot<span class="p">(</span><span class="m">1</span><span class="p">)</span>
-grid.arrange<span class="p">(</span>plot1<span class="p">,</span> plot2<span class="p">,</span> ncol<span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">gridExtra</span><span class="p">)</span>
+<span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">qplot</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">qplot</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="nf">grid.arrange</span><span class="p">(</span><span class="n">plot1</span><span class="p">,</span> <span class="n">plot2</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 
 
@@ -1375,13 +1375,13 @@ grid.arrange<span class="p">(</span>plot1<span class="p">,</span> plot2<span cla
 </ol>
 <h2 id="scale_fill_manual-scale_color_manual"><code>scale_fill_manual</code> 和 <code>scale_color_manual</code><a class="headerlink" href="#scale_fill_manual-scale_color_manual" title="Permanent link">&para;</a></h2>
 <p>更改颜色命令为</p>
-<div class="codehilite"><pre><span></span>scale_fill_manual<span class="p">(</span>values <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">))</span>
+<div class="codehilite"><pre><span></span><span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">))</span>
 </pre></div>
 
 
 <h2 id="save">save<a class="headerlink" href="#save" title="Permanent link">&para;</a></h2>
 <p>NOT <code>png()...dev.off()</code>, use</p>
-<div class="codehilite"><pre><span></span>ggsave<span class="p">(</span><span class="s">&quot;sth.eps&quot;</span><span class="p">,</span>device<span class="o">=</span><span class="s">&quot;eps&quot;</span><span class="p">,</span> width<span class="o">=</span><span class="m">9</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;sth.eps&quot;</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="s">&quot;eps&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="m">9</span><span class="p">)</span>
 </pre></div>
                 
                   
