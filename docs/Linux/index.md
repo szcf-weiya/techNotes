@@ -560,3 +560,12 @@ in the command line, not to open the GUI.
 ## Bose Bluetooth
 
 [Pair Bose QuietComfort 35 with Ubuntu over Bluetooth](https://askubuntu.com/questions/833322/pair-bose-quietcomfort-35-with-ubuntu-over-bluetooth)
+
+## gvim fullscreen
+
+refer to [Is there a way to turn gvim into fullscreen mode?](https://askubuntu.com/questions/2140/is-there-a-way-to-turn-gvim-into-fullscreen-mode)
+
+In short, 
+
+1. install wmctrl
+2. map F11 via .vimrc
