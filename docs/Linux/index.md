@@ -578,5 +578,7 @@ In short,
 ## 重定向
 
 ```bash
-2>&1 
+... 2>&1 &
 ```
+
+refer to [Linux实时将所有输出重定向到文件](https://www.cnblogs.com/itZhy/p/3163230.html)
