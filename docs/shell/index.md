@@ -60,3 +60,17 @@ done
 ## awk
 
 参考[技术|如何在Linux中使用awk命令](https://linux.cn/article-3945-1.html)
+
+## 统计访问日志里每个 ip 访问次数
+
+```bash
+#!/bin/bash
+cat access.log |sed -rn '/28\/Jan\/2015/p' > a.txt 
+cat a.txt |awk '{print $1}'|sort |uniq > ipnum.txt
+for i in `cat ipnum.txt`; do
+    iptj=`cat  access.log |grep $i | grep -v 400 |wc -l`
+    echo "ip地址"$i"在2015-01-28日全天(24小时)累计成功请求"$iptj"次，平均每分钟请求次数为："$(($iptj/1440)) >> result.txt
+done
+```
+
+Refer to [用shell统计访问日志里每个ip访问次数](https://www.cnblogs.com/paul8339/p/6207182.html)

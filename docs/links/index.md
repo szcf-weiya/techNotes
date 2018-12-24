@@ -1,5 +1,4 @@
 # Links
-Some interesting links.
 
 ## Interesting personal blogs.
 
@@ -24,7 +23,15 @@ Some interesting links.
 3. 在线处理图片：http://funny.pho.to/sketch/
 4. [符号计算](https://www.symbolab.com/solver)
 5. [电子书下载](https://libgen.pw/)
+6. [RSS feeds for mathematics and statistics](https://projecteuclid.org/feeds)
+7. [Univariate Distribution Relationships](http://www.math.wm.edu/~leemis/chart/UDR/UDR.html)
+8. [Greek Alphabet](https://www.businessballs.com/glossaries-and-terminology/greek-alphabet/)
 
+## Online Courses
+
+1. [哈佛大学公开课：幸福课](http://open.163.com/special/positivepsychology/)
+
+<!--
 ## TODO
 
 ### Google Summer Of Code 2018
@@ -42,6 +49,8 @@ Past Organizations
 Apply
 
 https://developers.google.com/open-source/gsoc/
+-->
+
 
 ## 有用但希望不会用到的网站
 

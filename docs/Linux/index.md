@@ -569,3 +569,14 @@ In short,
 
 1. install wmctrl
 2. map F11 via .vimrc
+
+## thunderbird
+
+1. [Special Gmail](Folders missing (Sent, Drafts, etc...) Only see Inbox and Trash. Please help.)
+2. [Special Gmail (continued)](https://support.mozilla.org/zh-CN/kb/thunderbird-gmail)
+
+## 重定向
+
+```bash
+2>&1 
+```

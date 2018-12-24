@@ -35,13 +35,12 @@ pages:
       - Git: Git/index.md
       - Phantomjs: phantomjs/index.md
       - Qt: Qt/index.md
-    - Stats:
-      - Calculus: calculus/index.md
+    - Math:
+      - Stats: stats/index.md
       - Scientific: scientific/index.md
-      - Graph: graph/index.md
-      - Finance: finance/index.md
-      - matrix: matrix/index.md
+      - Matrix: matrix/index.md
     - English: English/index.md
+    - Finance: finance/index.md
     - Mi: mi/index.md
     - Win: win/index.md
     - Links: links/index.md
@@ -77,8 +76,11 @@ repo_url: 'https://github.com/szcf-weiya/techNotes'
 edit_uri: ""
 extra_javascript: 
   - javascripts/baiduzhanzhang.js
+  - javascripts/extra.js
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
 
 markdown_extensions:
+  - pymdownx.arithmatex
   - admonition
   - codehilite
   - smarty

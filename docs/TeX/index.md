@@ -502,3 +502,11 @@ refer to [How can I align multiple cases environment simultaneously?](https://te
 Key point: enclose one of the entries in the first `cases` environment in a box whose width is that of the longest of the second `cases` environment.
 
 or use `\hphantom{}`. 
+
+## Problem with \mkbibdateapalongextra of biblatex-apa
+
+```tex
+\DeclareLanguageMapping{american}{american-apa}
+```
+
+refer to [Problem with \mkbibdateapalongextra of biblatex-apa](https://tex.stackexchange.com/questions/133700/problem-with-mkbibdateapalongextra-of-biblatex-apa)
