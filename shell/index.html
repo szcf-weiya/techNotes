@@ -360,6 +360,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ip" title="统计访问日志里每个 ip 访问次数" class="md-nav__link">
+    统计访问日志里每个 ip 访问次数
+  </a>
+  
+</li>
+      
       
       
       
@@ -806,11 +813,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      Stats
+      Math
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
-        Stats
+        Math
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -821,8 +828,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../calculus/" title="Calculus" class="md-nav__link">
-      Calculus
+    <a href="../stats/" title="Stats" class="md-nav__link">
+      Stats
     </a>
   </li>
 
@@ -845,32 +852,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../graph/" title="Graph" class="md-nav__link">
-      Graph
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../finance/" title="Finance" class="md-nav__link">
-      Finance
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../matrix/" title="matrix" class="md-nav__link">
-      matrix
+    <a href="../matrix/" title="Matrix" class="md-nav__link">
+      Matrix
     </a>
   </li>
 
@@ -888,6 +871,18 @@
   <li class="md-nav__item">
     <a href="../English/" title="English" class="md-nav__link">
       English
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../finance/" title="Finance" class="md-nav__link">
+      Finance
     </a>
   </li>
 
@@ -935,13 +930,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
     
-    <label class="md-nav__link" for="nav-13">
+    <label class="md-nav__link" for="nav-14">
       Misc
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-13">
+      <label class="md-nav__title" for="nav-14">
         Misc
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1057,6 +1052,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ip" title="统计访问日志里每个 ip 访问次数" class="md-nav__link">
+    统计访问日志里每个 ip 访问次数
+  </a>
+  
+</li>
+      
       
       
       
@@ -1130,6 +1132,18 @@
 </ol>
 <h2 id="awk">awk<a class="headerlink" href="#awk" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://linux.cn/article-3945-1.html">技术|如何在Linux中使用awk命令</a></p>
+<h2 id="ip">统计访问日志里每个 ip 访问次数<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+cat access.log <span class="p">|</span>sed -rn <span class="s1">&#39;/28\/Jan\/2015/p&#39;</span> &gt; a.txt 
+cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</span><span class="p">|</span>sort <span class="p">|</span>uniq &gt; ipnum.txt
+<span class="k">for</span> i in <span class="sb">`</span>cat ipnum.txt<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nv">iptj</span><span class="o">=</span><span class="sb">`</span>cat  access.log <span class="p">|</span>grep <span class="nv">$i</span> <span class="p">|</span> grep -v <span class="m">400</span> <span class="p">|</span>wc -l<span class="sb">`</span>
+    <span class="nb">echo</span> <span class="s2">&quot;ip地址&quot;</span><span class="nv">$i</span><span class="s2">&quot;在2015-01-28日全天(24小时)累计成功请求&quot;</span><span class="nv">$iptj</span><span class="s2">&quot;次，平均每分钟请求次数为：&quot;</span><span class="k">$((</span><span class="nv">$iptj</span><span class="o">/</span><span class="m">1440</span><span class="k">))</span> &gt;&gt; result.txt
+<span class="k">done</span>
+</pre></div>
+
+
+<p>Refer to <a href="https://www.cnblogs.com/paul8339/p/6207182.html">用shell统计访问日志里每个ip访问次数</a></p>
                 
                   
                 
@@ -1225,6 +1239,10 @@
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
     
