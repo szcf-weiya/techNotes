@@ -26,10 +26,16 @@
 6. [RSS feeds for mathematics and statistics](https://projecteuclid.org/feeds)
 7. [Univariate Distribution Relationships](http://www.math.wm.edu/~leemis/chart/UDR/UDR.html)
 8. [Greek Alphabet](https://www.businessballs.com/glossaries-and-terminology/greek-alphabet/)
+9. [GPUSS - GPU Stochastic Simulation for statistical data analysis](http://www.oxford-man.ox.ac.uk/gpuss/)
 
 ## Online Courses
 
 1. [哈佛大学公开课：幸福课](http://open.163.com/special/positivepsychology/)
+
+
+## TODO 
+
+1. [大理四绝~~“风花雪月”~下关风，上关花，苍山雪，洱海月](http://blog.renren.com/share/233858640/14238327117)
 
 <!--
 ## TODO
