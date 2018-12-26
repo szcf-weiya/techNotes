@@ -123,13 +123,16 @@ Some similar problems and explanations:
 2. [Multple c++ files causes “multiple definition” error?](https://stackoverflow.com/questions/17646959/multple-c-files-causes-multiple-definition-error)
 3. [getting “multiple definition” errors with simple device function in CUDA C](https://stackoverflow.com/questions/27446690/getting-multiple-definition-errors-with-simple-device-function-in-cuda-c)
 4. [CUDA multiple definition error during linking](https://stackoverflow.com/questions/39035190/cuda-multiple-definition-error-during-linking)
+
 ### First Try: separate definition and implementations
 
 According to [Separate Compilation and Linking of CUDA C++ Device Code](https://devblogs.nvidia.com/separate-compilation-linking-cuda-device-code/), it seems that it is reasonable to separate the device code header file with implementation into pure header file and implementation parts.
 
-But the template cannot be separated, refer to [How to define a template class in a .h file and implement it in a .cpp file](https://www.codeproject.com/Articles/48575/%2FArticles%2F48575%2FHow-to-define-a-template-class-in-a-h-file-and-imp)
+But the template cannot be separated, refer to [How to define a template class in a .h file and implement it in a .cpp file](https://www.codeproject.com/Articles/48575/%2FArticles%2F48575%2FHow-to-define-a-template-class-in-a-h-file-and-imp) and [Why can't templates be within extern “C” blocks?](https://stackoverflow.com/questions/4877705/why-cant-templates-be-within-extern-c-blocks)
 
 ### Second Try: add `extern "C"`
+
+A reference about `extern "C"`: [C++项目中的extern "C" {}](https://www.cnblogs.com/skynet/archive/2010/07/10/1774964.html)
 
 There are several function names with different parameter list, it reports 
 
