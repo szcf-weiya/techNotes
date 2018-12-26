@@ -115,3 +115,32 @@ Converting C/C++ for loops into CUDA](https://stackoverflow.com/questions/661310
 
 [Getting started with parallel MCMC](https://darrenjw.wordpress.com/tag/gpu/)
 
+## Multiple definitions Error
+
+Some similar problems and explanations:
+
+1. [multiple definition error c++](https://stackoverflow.com/questions/34614523/multiple-definition-error-c)
+2. [Multple c++ files causes “multiple definition” error?](https://stackoverflow.com/questions/17646959/multple-c-files-causes-multiple-definition-error)
+3. [getting “multiple definition” errors with simple device function in CUDA C](https://stackoverflow.com/questions/27446690/getting-multiple-definition-errors-with-simple-device-function-in-cuda-c)
+4. [CUDA multiple definition error during linking](https://stackoverflow.com/questions/39035190/cuda-multiple-definition-error-during-linking)
+### First Try: separate definition and implementations
+
+According to [Separate Compilation and Linking of CUDA C++ Device Code](https://devblogs.nvidia.com/separate-compilation-linking-cuda-device-code/), it seems that it is reasonable to separate the device code header file with implementation into pure header file and implementation parts.
+
+But the template cannot be separated, refer to [How to define a template class in a .h file and implement it in a .cpp file](https://www.codeproject.com/Articles/48575/%2FArticles%2F48575%2FHow-to-define-a-template-class-in-a-h-file-and-imp)
+
+### Second Try: add `extern "C"`
+
+There are several function names with different parameter list, it reports 
+
+```err
+more than one instance of overloaded function "gauss1_pdf" has "C" linkage
+```
+
+In one word, overloading is a C++ feature, refer to [More than one instance overloaded function has C linkage](https://stackoverflow.com/questions/18380170/more-than-one-instance-overloaded-function-has-c-linkage).
+
+### Last Try: add `inline`
+
+Succeed!
+
+Refer to [C/C++ “inline” keyword in CUDA device-side code](https://stackoverflow.com/questions/40258528/c-c-inline-keyword-in-cuda-device-side-code)
