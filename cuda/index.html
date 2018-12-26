@@ -1318,8 +1318,9 @@ Converting C/C++ for loops into CUDA</a></li>
 </ol>
 <h3 id="first-try-separate-definition-and-implementations">First Try: separate definition and implementations<a class="headerlink" href="#first-try-separate-definition-and-implementations" title="Permanent link">&para;</a></h3>
 <p>According to <a href="https://devblogs.nvidia.com/separate-compilation-linking-cuda-device-code/">Separate Compilation and Linking of CUDA C++ Device Code</a>, it seems that it is reasonable to separate the device code header file with implementation into pure header file and implementation parts.</p>
-<p>But the template cannot be separated, refer to <a href="https://www.codeproject.com/Articles/48575/%2FArticles%2F48575%2FHow-to-define-a-template-class-in-a-h-file-and-imp">How to define a template class in a .h file and implement it in a .cpp file</a></p>
+<p>But the template cannot be separated, refer to <a href="https://www.codeproject.com/Articles/48575/%2FArticles%2F48575%2FHow-to-define-a-template-class-in-a-h-file-and-imp">How to define a template class in a .h file and implement it in a .cpp file</a> and <a href="https://stackoverflow.com/questions/4877705/why-cant-templates-be-within-extern-c-blocks">Why can&rsquo;t templates be within extern “C” blocks?</a></p>
 <h3 id="second-try-add-extern-c">Second Try: add <code>extern "C"</code><a class="headerlink" href="#second-try-add-extern-c" title="Permanent link">&para;</a></h3>
+<p>A reference about <code>extern "C"</code>: <a href="https://www.cnblogs.com/skynet/archive/2010/07/10/1774964.html">C++项目中的extern &ldquo;C&rdquo; {}</a></p>
 <p>There are several function names with different parameter list, it reports </p>
 <div class="codehilite"><pre><span></span>more than one instance of overloaded function &quot;gauss1_pdf&quot; has &quot;C&quot; linkage
 </pre></div>
