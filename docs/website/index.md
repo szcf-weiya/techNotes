@@ -163,3 +163,7 @@ crossDomain: true,    // 允许跨域请求
 
 注意 GITHUB_TOKEN 的设置，参考[Creating a personal access token for the command line](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
 
+## Jekyll add RSS feed
+
+[RSS for Jekyll blogs](https://joelglovier.com/writing/rss-for-jekyll)
+
