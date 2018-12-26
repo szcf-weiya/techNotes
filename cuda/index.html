@@ -629,6 +629,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#multiple-definitions-error" title="Multiple definitions Error" class="md-nav__link">
+    Multiple definitions Error
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-try-separate-definition-and-implementations" title="First Try: separate definition and implementations" class="md-nav__link">
+    First Try: separate definition and implementations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-try-add-extern-c" title="Second Try: add extern "C"" class="md-nav__link">
+    Second Try: add extern "C"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#last-try-add-inline" title="Last Try: add inline" class="md-nav__link">
+    Last Try: add inline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1127,6 +1161,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#multiple-definitions-error" title="Multiple definitions Error" class="md-nav__link">
+    Multiple definitions Error
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-try-separate-definition-and-implementations" title="First Try: separate definition and implementations" class="md-nav__link">
+    First Try: separate definition and implementations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-try-add-extern-c" title="Second Try: add extern "C"" class="md-nav__link">
+    Second Try: add extern "C"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#last-try-add-inline" title="Last Try: add inline" class="md-nav__link">
+    Last Try: add inline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1240,6 +1308,27 @@ Converting C/C++ for loops into CUDA</a></li>
 </a></p>
 <h2 id="getting-started-with-parallel-mcmc">Getting started with parallel MCMC<a class="headerlink" href="#getting-started-with-parallel-mcmc" title="Permanent link">&para;</a></h2>
 <p><a href="https://darrenjw.wordpress.com/tag/gpu/">Getting started with parallel MCMC</a></p>
+<h2 id="multiple-definitions-error">Multiple definitions Error<a class="headerlink" href="#multiple-definitions-error" title="Permanent link">&para;</a></h2>
+<p>Some similar problems and explanations:</p>
+<ol>
+<li><a href="https://stackoverflow.com/questions/34614523/multiple-definition-error-c">multiple definition error c++</a></li>
+<li><a href="https://stackoverflow.com/questions/17646959/multple-c-files-causes-multiple-definition-error">Multple c++ files causes “multiple definition” error?</a></li>
+<li><a href="https://stackoverflow.com/questions/27446690/getting-multiple-definition-errors-with-simple-device-function-in-cuda-c">getting “multiple definition” errors with simple device function in CUDA C</a></li>
+<li><a href="https://stackoverflow.com/questions/39035190/cuda-multiple-definition-error-during-linking">CUDA multiple definition error during linking</a></li>
+</ol>
+<h3 id="first-try-separate-definition-and-implementations">First Try: separate definition and implementations<a class="headerlink" href="#first-try-separate-definition-and-implementations" title="Permanent link">&para;</a></h3>
+<p>According to <a href="https://devblogs.nvidia.com/separate-compilation-linking-cuda-device-code/">Separate Compilation and Linking of CUDA C++ Device Code</a>, it seems that it is reasonable to separate the device code header file with implementation into pure header file and implementation parts.</p>
+<p>But the template cannot be separated, refer to <a href="https://www.codeproject.com/Articles/48575/%2FArticles%2F48575%2FHow-to-define-a-template-class-in-a-h-file-and-imp">How to define a template class in a .h file and implement it in a .cpp file</a></p>
+<h3 id="second-try-add-extern-c">Second Try: add <code>extern "C"</code><a class="headerlink" href="#second-try-add-extern-c" title="Permanent link">&para;</a></h3>
+<p>There are several function names with different parameter list, it reports </p>
+<div class="codehilite"><pre><span></span>more than one instance of overloaded function &quot;gauss1_pdf&quot; has &quot;C&quot; linkage
+</pre></div>
+
+
+<p>In one word, overloading is a C++ feature, refer to <a href="https://stackoverflow.com/questions/18380170/more-than-one-instance-overloaded-function-has-c-linkage">More than one instance overloaded function has C linkage</a>.</p>
+<h3 id="last-try-add-inline">Last Try: add <code>inline</code><a class="headerlink" href="#last-try-add-inline" title="Permanent link">&para;</a></h3>
+<p>Succeed!</p>
+<p>Refer to <a href="https://stackoverflow.com/questions/40258528/c-c-inline-keyword-in-cuda-device-side-code">C/C++ “inline” keyword in CUDA device-side code</a></p>
                 
                   
                 
