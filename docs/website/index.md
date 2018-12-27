@@ -167,3 +167,40 @@ crossDomain: true,    // 允许跨域请求
 
 [RSS for Jekyll blogs](https://joelglovier.com/writing/rss-for-jekyll)
 
+## 图片旋转后无效果
+
+
+原图片信息为
+
+```bash
+2018-10-29-cafe.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1080x1440, frames 3
+```
+
+采用 Shotwell 旋转图片后，
+```bash
+2018-10-29-cafe.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, Exif Standard: [TIFF image data, little-endian, direntries=3, orientation=lower-left, software=Shotwell 0.22.0], baseline, precision 8, 1080x1440, frames3
+```
+
+多了 EXIF 信息，其中有 orientation 信息。但是参考 [img tag displays wrong orientation](https://stackoverflow.com/questions/24658365/img-tag-displays-wrong-orientation/24658511) 的帖子，可知，有些浏览器并不遵循这个规则，即无视　EXIF 信息，从而网页端无效果。有人提到可以加上　
+
+```css
+img {
+    image-orientation: from-image;
+}
+```
+
+但这个似乎只有 Firefox 和　Safari 支持，Chrome 不支持。
+
+解决方案：采用 `mogrify` 或 `convert` 进行旋转，如
+
+```bash
+mogrify -rotate "-90" 2018-10-29-cafe.jpg
+```
+
+查看文件信息
+
+```bash
+2018-10-29-cafe.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1440x1080, frames 3
+```
+
+注意到没有 EXIF 信息，而且 size 也由 1080x1440 变成了 1440x1080，所以这算是真旋转，而之前的加 EXIF 信息算是伪旋转吧。
