@@ -747,6 +747,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" title="图片旋转后无效果" class="md-nav__link">
+    图片旋转后无效果
+  </a>
+  
+</li>
+      
       
       
       
@@ -1267,6 +1274,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" title="图片旋转后无效果" class="md-nav__link">
+    图片旋转后无效果
+  </a>
+  
+</li>
+      
       
       
       
@@ -1396,6 +1410,36 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>注意 GITHUB_TOKEN 的设置，参考<a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">Creating a personal access token for the command line</a></p>
 <h2 id="jekyll-add-rss-feed">Jekyll add RSS feed<a class="headerlink" href="#jekyll-add-rss-feed" title="Permanent link">&para;</a></h2>
 <p><a href="https://joelglovier.com/writing/rss-for-jekyll">RSS for Jekyll blogs</a></p>
+<h2 id="_4">图片旋转后无效果<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>原图片信息为</p>
+<div class="codehilite"><pre><span></span><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames <span class="m">3</span>
+</pre></div>
+
+
+<p>采用 Shotwell 旋转图片后，</p>
+<div class="codehilite"><pre><span></span><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, Exif Standard: <span class="o">[</span>TIFF image data, little-endian, <span class="nv">direntries</span><span class="o">=</span><span class="m">3</span>, <span class="nv">orientation</span><span class="o">=</span>lower-left, <span class="nv">software</span><span class="o">=</span>Shotwell <span class="m">0</span>.22.0<span class="o">]</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames3
+</pre></div>
+
+
+<p>多了 EXIF 信息，其中有 orientation 信息。但是参考 <a href="https://stackoverflow.com/questions/24658365/img-tag-displays-wrong-orientation/24658511">img tag displays wrong orientation</a> 的帖子，可知，有些浏览器并不遵循这个规则，即无视　EXIF 信息，从而网页端无效果。有人提到可以加上　</p>
+<div class="codehilite"><pre><span></span><span class="nt">img</span> <span class="p">{</span>
+    <span class="k">image-orientation</span><span class="p">:</span> <span class="kc">from-image</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>但这个似乎只有 Firefox 和　Safari 支持，Chrome 不支持。</p>
+<p>解决方案：采用 <code>mogrify</code> 或 <code>convert</code> 进行旋转，如</p>
+<div class="codehilite"><pre><span></span>mogrify -rotate <span class="s2">&quot;-90&quot;</span> <span class="m">2018</span>-10-29-cafe.jpg
+</pre></div>
+
+
+<p>查看文件信息</p>
+<div class="codehilite"><pre><span></span><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1440x1080, frames <span class="m">3</span>
+</pre></div>
+
+
+<p>注意到没有 EXIF 信息，而且 size 也由 1080x1440 变成了 1440x1080，所以这算是真旋转，而之前的加 EXIF 信息算是伪旋转吧。</p>
                 
                   
                 
