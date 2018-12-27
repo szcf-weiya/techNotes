@@ -204,3 +204,7 @@ mogrify -rotate "-90" 2018-10-29-cafe.jpg
 ```
 
 注意到没有 EXIF 信息，而且 size 也由 1080x1440 变成了 1440x1080，所以这算是真旋转，而之前的加 EXIF 信息算是伪旋转吧。
+
+## 字体
+
+采用 ADOBE 字体，详见 [Adobe Fonts](https://fonts.adobe.com/typekit)
