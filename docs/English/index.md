@@ -1,3 +1,7 @@
+## 2018.12.30
+
+1. constrain & constraint
+
 ## 2018.10.04
 
 1. paramount
