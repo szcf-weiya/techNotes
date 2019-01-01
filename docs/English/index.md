@@ -1,6 +1,14 @@
+## 2019.01.01
+
+1. in silico: 电脑模拟
+2. in vivo: 生物活体内
+3. in vitro: 生物活体外
+
+
 ## 2018.12.30
 
 1. constrain & constraint
+
 
 ## 2018.10.04
 
