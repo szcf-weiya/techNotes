@@ -160,3 +160,14 @@ References:
 1. [REPL and for loops (scope behavior change)](https://discourse.julialang.org/t/repl-and-for-loops-scope-behavior-change/13514/3)
 2. [Scope of variables in Julia](https://stackoverflow.com/questions/51930537/scope-of-variables-in-julia/)
 3. [Manual: Scope of Variables](https://docs.julialang.org/en/v1/manual/variables-and-scoping/index.html)
+
+## convert a matrix into an array of array
+
+
+```julia
+mapslices(x->[x], randn(5,5), dims=2)[:]
+```
+
+refer to 
+
+[Converting a matrix into an array of arrays](https://discourse.julialang.org/t/converting-a-matrix-into-an-array-of-arrays/17038)
