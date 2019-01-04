@@ -124,3 +124,39 @@ But when I just use single node, and arbitrary cores, say `nodes=1:ppn=2`, it wo
 1. no error after `add ~/GitHub/adm.jl`, but `using adm` cannot work. refer to [Adding a local package](https://docs.julialang.org/en/latest/stdlib/Pkg/#Adding-a-local-package-1)
 2. set `startup.jl` but still not work. refer to [How does Julia find a module?](https://en.wikibooks.org/wiki/Introducing_Julia/Modules_and_packages)
 3. one possible way: [Finalizing Your Julia Package: Documentation, Testing, Coverage, and Publishing](http://www.stochasticlifestyle.com/finalizing-julia-package-documentation-testing-coverage-publishing/)
+
+## julia `for` scope
+
+The following code
+```julia
+i = 0
+for j = 1:10
+    i = i + 1
+end
+```
+will report 
+```julia
+ERROR: UndefVarError: i not defined
+```
+
+A (possible) reasonable explanation is, $i$ is a global variable, we cannot modify a global variable in a local block without `global` keyword, but we can read `i` in the `for` loop.
+
+Alternatively, we can use `let` block,
+
+```julia
+let
+i = 0
+for j = 1:10
+    i = i + 1
+end
+i
+end
+```
+
+then `i` isn't really a global variable anymore.
+
+References:
+
+1. [REPL and for loops (scope behavior change)](https://discourse.julialang.org/t/repl-and-for-loops-scope-behavior-change/13514/3)
+2. [Scope of variables in Julia](https://stackoverflow.com/questions/51930537/scope-of-variables-in-julia/)
+3. [Manual: Scope of Variables](https://docs.julialang.org/en/v1/manual/variables-and-scoping/index.html)
