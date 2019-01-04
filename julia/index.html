@@ -595,6 +595,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#julia-for-scope" title="julia for scope" class="md-nav__link">
+    julia for scope
+  </a>
+  
+</li>
+      
       
       
       
@@ -1155,6 +1162,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#julia-for-scope" title="julia for scope" class="md-nav__link">
+    julia for scope
+  </a>
+  
+</li>
+      
       
       
       
@@ -1270,6 +1284,39 @@
 <li>no error after <code>add ~/GitHub/adm.jl</code>, but <code>using adm</code> cannot work. refer to <a href="https://docs.julialang.org/en/latest/stdlib/Pkg/#Adding-a-local-package-1">Adding a local package</a></li>
 <li>set <code>startup.jl</code> but still not work. refer to <a href="https://en.wikibooks.org/wiki/Introducing_Julia/Modules_and_packages">How does Julia find a module?</a></li>
 <li>one possible way: <a href="http://www.stochasticlifestyle.com/finalizing-julia-package-documentation-testing-coverage-publishing/">Finalizing Your Julia Package: Documentation, Testing, Coverage, and Publishing</a></li>
+</ol>
+<h2 id="julia-for-scope">julia <code>for</code> scope<a class="headerlink" href="#julia-for-scope" title="Permanent link">&para;</a></h2>
+<p>The following code</p>
+<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">end</span>
+</pre></div>
+
+
+<p>will report </p>
+<div class="codehilite"><pre><span></span><span class="n">ERROR</span><span class="o">:</span> <span class="kt">UndefVarError</span><span class="o">:</span> <span class="n">i</span> <span class="n">not</span> <span class="n">defined</span>
+</pre></div>
+
+
+<p>A (possible) reasonable explanation is, <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> is a global variable, we cannot modify a global variable in a local block without <code>global</code> keyword, but we can read <code>i</code> in the <code>for</code> loop.</p>
+<p>Alternatively, we can use <code>let</code> block,</p>
+<div class="codehilite"><pre><span></span><span class="k">let</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">end</span>
+<span class="n">i</span>
+<span class="k">end</span>
+</pre></div>
+
+
+<p>then <code>i</code> isn&rsquo;t really a global variable anymore.</p>
+<p>References:</p>
+<ol>
+<li><a href="https://discourse.julialang.org/t/repl-and-for-loops-scope-behavior-change/13514/3">REPL and for loops (scope behavior change)</a></li>
+<li><a href="https://stackoverflow.com/questions/51930537/scope-of-variables-in-julia/">Scope of variables in Julia</a></li>
+<li><a href="https://docs.julialang.org/en/v1/manual/variables-and-scoping/index.html">Manual: Scope of Variables</a></li>
 </ol>
                 
                   
