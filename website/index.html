@@ -761,6 +761,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#jekyll-tags" title="jekyll tags 逗号分隔" class="md-nav__link">
+    jekyll tags 逗号分隔
+  </a>
+  
+</li>
+      
       
       
       
@@ -1295,6 +1302,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#jekyll-tags" title="jekyll tags 逗号分隔" class="md-nav__link">
+    jekyll tags 逗号分隔
+  </a>
+  
+</li>
+      
       
       
       
@@ -1456,6 +1470,25 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>注意到没有 EXIF 信息，而且 size 也由 1080x1440 变成了 1440x1080，所以这算是真旋转，而之前的加 EXIF 信息算是伪旋转吧。</p>
 <h2 id="_5">字体<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>采用 ADOBE 字体，详见 <a href="https://fonts.adobe.com/typekit">Adobe Fonts</a></p>
+<h2 id="jekyll-tags">jekyll tags 逗号分隔<a class="headerlink" href="#jekyll-tags" title="Permanent link">&para;</a></h2>
+<p>采用</p>
+<div class="codehilite"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="k">in</span> <span class="nv">page.tags</span> <span class="cp">%}</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/tag/</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+    <span class="cp">{%</span> <span class="k">unless</span> <span class="nb">forloop</span><span class="nv">.last</span> <span class="cp">%}</span>,<span class="cp">{%</span> <span class="k">endunless</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+</pre></div>
+
+
+<p>但 <a href="https://stackoverflow.com/questions/41858548/list-of-dynamic-links-in-jekyll">List of Dynamic Links in Jekyll</a> 提到了更完整的方案，</p>
+<div class="codehilite"><pre><span></span><span class="cp">{%</span> <span class="k">capture</span> <span class="nv">tagscommas</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="k">in</span> <span class="nv">page.tags</span> <span class="cp">%}</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/tag/</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+    <span class="cp">{%</span> <span class="k">unless</span> <span class="nb">forloop</span><span class="nv">.last</span> <span class="cp">%}</span>,<span class="cp">{%</span> <span class="k">endunless</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endcapture</span> <span class="cp">%}</span>
+
+<span class="cp">{{</span><span class="nv">tagscommas</span><span class="cp">}}</span>
+</pre></div>
                 
                   
                 
