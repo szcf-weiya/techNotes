@@ -208,3 +208,27 @@ mogrify -rotate "-90" 2018-10-29-cafe.jpg
 ## 字体
 
 采用 ADOBE 字体，详见 [Adobe Fonts](https://fonts.adobe.com/typekit)
+
+## jekyll tags 逗号分隔
+
+采用
+
+```jekyll
+{% for tag in page.tags %}
+    <a href="/tag/{{tag}}">{{tag}}</a>
+    {% unless forloop.last %},{% endunless %}
+{% endfor %}
+```
+
+但 [List of Dynamic Links in Jekyll](https://stackoverflow.com/questions/41858548/list-of-dynamic-links-in-jekyll) 提到了更完整的方案，
+
+```jekyll
+{% capture tagscommas %}
+{% for tag in page.tags %}
+    <a href="/tag/{{tag}}">{{tag}}</a>
+    {% unless forloop.last %},{% endunless %}
+{% endfor %}
+{% endcapture %}
+
+{{tagscommas}}
+```
