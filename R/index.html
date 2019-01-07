@@ -667,6 +667,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#specify-cran-mirror-in-installpackage" title="specify CRAN mirror in install.package" class="md-nav__link">
+    specify CRAN mirror in install.package
+  </a>
+  
+</li>
+      
       
       
       
@@ -1563,6 +1570,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#specify-cran-mirror-in-installpackage" title="specify CRAN mirror in install.package" class="md-nav__link">
+    specify CRAN mirror in install.package
+  </a>
+  
+</li>
+      
       
       
       
@@ -1868,6 +1882,15 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>refer to <a href="https://stackoverflow.com/questions/2470248/write-lines-of-text-to-a-file-in-r">Write lines of text to a file in R</a></p>
 <h2 id="combine-base-and-ggplot-graphics-in-r-figure">combine base and ggplot graphics in R figure<a class="headerlink" href="#combine-base-and-ggplot-graphics-in-r-figure" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://stackoverflow.com/questions/14124373/combine-base-and-ggplot-graphics-in-r-figure-window">Combine base and ggplot graphics in R figure window</a></p>
+<h2 id="specify-cran-mirror-in-installpackage">specify CRAN mirror in <code>install.package</code><a class="headerlink" href="#specify-cran-mirror-in-installpackage" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">r</span> <span class="o">&lt;-</span> <span class="nf">getOption</span><span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
+       <span class="n">r[</span><span class="s">&quot;CRAN&quot;</span><span class="n">]</span> <span class="o">&lt;-</span> <span class="s">&quot;https://cran.r-project.org&quot;</span> 
+       <span class="nf">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+
+<p>we also can wrap it with <code>local({...})</code> and save in <code>~/.Rprofile</code>.</p>
+<p>Refer to <a href="https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r">How to select a CRAN mirror in R</a></p>
                 
                   
                 
