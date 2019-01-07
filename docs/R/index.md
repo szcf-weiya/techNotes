@@ -399,3 +399,15 @@ refer to [Write lines of text to a file in R](https://stackoverflow.com/question
 ## combine base and ggplot graphics in R figure 
 
 refer to [Combine base and ggplot graphics in R figure window](https://stackoverflow.com/questions/14124373/combine-base-and-ggplot-graphics-in-r-figure-window)
+
+## specify CRAN mirror in `install.package`
+
+```r
+r <- getOption("repos")
+       r["CRAN"] <- "https://cran.r-project.org" 
+       options(repos=r)
+```
+
+we also can wrap it with `local({...})` and save in `~/.Rprofile`.
+
+Refer to [How to select a CRAN mirror in R](https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r)
