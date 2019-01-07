@@ -10,6 +10,7 @@
 6. [lifengfan](http://lifengfan.wixsite.com/lifengfan)
 7. [Jerry Qu](https://imququ.com/)
 8. [听雨人](http://www.rainaudience.net/) & [Zeyu Zhao](http://zzeyu.com/en/)
+9. [Larry Wasserman's blog](https://normaldeviate.wordpress.com/)
 
 ## Interesting words
 
