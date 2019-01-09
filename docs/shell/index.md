@@ -77,5 +77,8 @@ Refer to [用shell统计访问日志里每个ip访问次数](https://www.cnblogs
 
 ## split string while reading files
 
-specify `IFS=`, see [How to split a tab-delimited string in bash script WITHOUT collapsing blanks?
-](https://stackoverflow.com/questions/19719827/how-to-split-a-tab-delimited-string-in-bash-script-without-collapsing-blanks) for more details.
+specify `IFS=`.
+
+1. [How to split a tab-delimited string in bash script WITHOUT collapsing blanks?](https://stackoverflow.com/questions/19719827/how-to-split-a-tab-delimited-string-in-bash-script-without-collapsing-blanks) 
+2. [Split String in shell script while reading from file](https://stackoverflow.com/questions/27500692/split-string-in-shell-script-while-reading-from-file)
+3. [Read a file line by line assigning the value to a variable](https://stackoverflow.com/questions/10929453/read-a-file-line-by-line-assigning-the-value-to-a-variable) 
