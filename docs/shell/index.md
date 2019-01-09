@@ -74,3 +74,8 @@ done
 ```
 
 Refer to [用shell统计访问日志里每个ip访问次数](https://www.cnblogs.com/paul8339/p/6207182.html)
+
+## split string while reading files
+
+specify `IFS=`, see [How to split a tab-delimited string in bash script WITHOUT collapsing blanks?
+](https://stackoverflow.com/questions/19719827/how-to-split-a-tab-delimited-string-in-bash-script-without-collapsing-blanks) for more details.
