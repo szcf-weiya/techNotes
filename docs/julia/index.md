@@ -171,3 +171,9 @@ mapslices(x->[x], randn(5,5), dims=2)[:]
 refer to 
 
 [Converting a matrix into an array of arrays](https://discourse.julialang.org/t/converting-a-matrix-into-an-array-of-arrays/17038)
+
+## index from 0
+
+using `OffsetArrays` package, refer to
+
+[Github: OffsetArrays](https://github.com/JuliaArrays/OffsetArrays.jl)
