@@ -172,8 +172,14 @@ refer to
 
 [Converting a matrix into an array of arrays](https://discourse.julialang.org/t/converting-a-matrix-into-an-array-of-arrays/17038)
 
+Conversely, we can converting the array of arrays to a matrix, refer to [How to convert an array of array into a matrix?](https://stackoverflow.com/questions/26673412/how-to-convert-an-array-of-array-into-a-matrix)
+
 ## index from 0
 
 using `OffsetArrays` package, refer to
 
 [Github: OffsetArrays](https://github.com/JuliaArrays/OffsetArrays.jl)
+
+## plot kernel density
+
+refer to [Kernel density estimation status](https://discourse.julialang.org/t/kernel-density-estimation-status/5928)
