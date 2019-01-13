@@ -232,3 +232,7 @@ mogrify -rotate "-90" 2018-10-29-cafe.jpg
 
 {{tagscommas}}
 ```
+
+## Correct Jekyll
+
+refer to [Configuring Jekyll for User and Project GitHub Pages](http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/)
