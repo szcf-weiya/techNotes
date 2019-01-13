@@ -1,3 +1,7 @@
+## 2019.01.13
+
+1. have a slight edge over
+
 ## 2019.01.01
 
 1. in silico: 电脑模拟
