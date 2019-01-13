@@ -12,6 +12,12 @@
 8. [听雨人](http://www.rainaudience.net/) & [Zeyu Zhao](http://zzeyu.com/en/)
 9. [Larry Wasserman's blog](https://normaldeviate.wordpress.com/)
 
+
+## Prototypes
+
+- [Zhou Fan @ Yale](http://www.stat.yale.edu/~zf59)
+
+
 ## Interesting words
 
 1. Mirzakhani, "It is like being lost in a jungle and trying to use all the knowledge that you can gather to come up with some new tricks, and with some luck you might find a way out."
