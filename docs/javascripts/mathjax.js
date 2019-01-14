@@ -23,6 +23,7 @@ window.MathJax = {
         K: "{\\mathbf{K}}",
         X: "{\\mathbf{X}}",
         Y: "{\\mathbf{Y}}",
+        Z: "{\\mathbf{Z}}",
         U: "{\\mathbf{U}}",
         V: "{\\mathbf{V}}",
         W: "{\\mathbf{W}}",

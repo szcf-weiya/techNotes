@@ -41,7 +41,7 @@ $$
 \Z = \sum_{j\le J,K}\mu_j\U_j\bar\V_j^T
 $$
 
-where $\mu_j^2$ is the $j$-th latent value of $\Z\bar\Z^T$ (or $\bar \Z^T\Z$), $\U_j$ is the $j$-th latent vector of $\Z\bar\Z^T$ and $\V_j$ is the $j$-th latent vector of $\bar Z^T\bar Z$ and it is understood $\mu_j\ge 0$.
+where $\mu_j^2$ is the $j$-th latent value of $\Z\bar\Z^T$ (or $\bar \Z^T\Z$), $\U_j$ is the $j$-th latent vector of $\Z\bar\Z^T$ and $\V_j$ is the $j$-th latent vector of $\bar \Z^T\bar \Z$ and it is understood $\mu_j\ge 0$.
 
 ### Corollary 3.7.2
 
