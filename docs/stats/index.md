@@ -49,3 +49,7 @@ Cardioid (心形)：$r=2a(1+\cos\theta)$
 ## Spherical and Elliptical Distributions
 
 [Spherical and Elliptical Distributions](http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/mvahtmlnode42.html)
+
+## Wishart Distribution
+
+![](wishart.png)
