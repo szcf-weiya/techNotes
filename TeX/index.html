@@ -829,6 +829,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#problems-with-printbibliography" title="Problems with \printbibliography" class="md-nav__link">
+    Problems with \printbibliography
+  </a>
+  
+</li>
+      
       
       
       
@@ -1575,6 +1582,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#problems-with-printbibliography" title="Problems with \printbibliography" class="md-nav__link">
+    Problems with \printbibliography
+  </a>
+  
+</li>
+      
       
       
       
@@ -1975,6 +1989,21 @@ git push origin master --tags
 
 
 <p>refer to <a href="https://tex.stackexchange.com/questions/133700/problem-with-mkbibdateapalongextra-of-biblatex-apa">Problem with \mkbibdateapalongextra of biblatex-apa</a></p>
+<h2 id="problems-with-printbibliography">Problems with \printbibliography<a class="headerlink" href="#problems-with-printbibliography" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="k">\usepackage</span><span class="na">[american]</span><span class="nb">{</span>babel<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[style=apa,backend=biber]</span><span class="nb">{</span>biblatex<span class="nb">}</span>
+<span class="k">\DeclareLanguageMapping</span><span class="nb">{</span>american<span class="nb">}{</span>american-apa<span class="nb">}</span> <span class="c">%Literaturverzeichnis american-apa style</span>
+<span class="k">\addbibresource</span><span class="nb">{</span>library.bib<span class="nb">}</span> 
+<span class="k">\usepackage</span><span class="na">[babel,threshold=2]</span><span class="nb">{</span>csquotes<span class="nb">}</span>
+</pre></div>
+
+
+<p>and then</p>
+<div class="codehilite"><pre><span></span><span class="k">\printbibliography</span><span class="na">[heading=bibintoc,title=References]</span>
+</pre></div>
+
+
+<p>refer to <a href="https://tex.stackexchange.com/questions/351079/problems-with-printbibliography/351091">Problems with \printbibliography</a></p>
                 
                   
                 

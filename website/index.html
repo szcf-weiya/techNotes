@@ -776,8 +776,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cookie-vs-session_1" title="Cookie v.s. Session" class="md-nav__link">
-    Cookie v.s. Session
+  <a href="#image-slider" title="Image Slider" class="md-nav__link">
+    Image Slider
   </a>
   
 </li>
@@ -1331,8 +1331,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cookie-vs-session_1" title="Cookie v.s. Session" class="md-nav__link">
-    Cookie v.s. Session
+  <a href="#image-slider" title="Image Slider" class="md-nav__link">
+    Image Slider
   </a>
   
 </li>
@@ -1452,6 +1452,12 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>另外，在服务器端，通过<code>CORS(app, resources=r'/*')</code>让flask服务器上所有的URL支持跨域请求。</p>
 <p>另外，在ajax中post json的时候，注意用<code>JSON.stringify()</code>进行转换，否则格式为<code>否则格式为 a=2&amp;b=3&amp;now=14...</code>（参考<a href="https://www.cnblogs.com/ajianbeyourself/p/5199144.html">使用Ajax方式POST JSON数据包（转） - 平和的心 - 博客园</a>）</p>
 <h2 id="cookie-vs-session">cookie vs. session<a class="headerlink" href="#cookie-vs-session" title="Permanent link">&para;</a></h2>
+<ol>
+<li>cookie 数据存放在客户的浏览器上，session 数据放在服务器上；</li>
+<li>cookie 不是很安全，别人可以分析存放在本地的 COOKIE 并进行 COOKIE 欺骗，考虑到安全应当使用 session；</li>
+<li>session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能。考虑到减轻服务器性能方面，应当使用 COOKIE；</li>
+<li>单个 cookie 在客户端的限制是3K，就是说一个站点在客户端存放的 COOKIE 不能超过 3K；</li>
+</ol>
 <p>参考<a href="https://www.cnblogs.com/andy-zhou/p/5360107.html">理解Cookie和Session机制 - Andrew.Zhou - 博客园</a></p>
 <h2 id="ga">GA 相关<a class="headerlink" href="#ga" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1521,14 +1527,8 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 
 <h2 id="correct-jekyll">Correct Jekyll<a class="headerlink" href="#correct-jekyll" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/">Configuring Jekyll for User and Project GitHub Pages</a></p>
-<h2 id="cookie-vs-session_1">Cookie v.s. Session<a class="headerlink" href="#cookie-vs-session_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>cookie 数据存放在客户的浏览器上，session 数据放在服务器上；</li>
-<li>cookie 不是很安全，别人可以分析存放在本地的 COOKIE 并进行 COOKIE 欺骗，考虑到安全应当使用 session；</li>
-<li>session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能。考虑到减轻服务器性能方面，应当使用 COOKIE；</li>
-<li>单个 cookie 在客户端的限制是3K，就是说一个站点在客户端存放的 COOKIE 不能超过 3K；</li>
-</ol>
-<p>参考 <a href="https://www.cnblogs.com/andy-zhou/p/5360107.html">理解Cookie和Session机制</a></p>
+<h2 id="image-slider">Image Slider<a class="headerlink" href="#image-slider" title="Permanent link">&para;</a></h2>
+<p>参考 <a href="https://www.jssor.com/demos/image-slider.slider">Image Slider - Jssor Slider</a></p>
                 
                   
                 
