@@ -149,6 +149,11 @@ crossDomain: true,    // 允许跨域请求
 
 ## cookie vs. session
 
+1. cookie 数据存放在客户的浏览器上，session 数据放在服务器上；
+2. cookie 不是很安全，别人可以分析存放在本地的 COOKIE 并进行 COOKIE 欺骗，考虑到安全应当使用 session；
+3. session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能。考虑到减轻服务器性能方面，应当使用 COOKIE；
+4. 单个 cookie 在客户端的限制是3K，就是说一个站点在客户端存放的 COOKIE 不能超过 3K；
+
 参考[理解Cookie和Session机制 - Andrew.Zhou - 博客园](https://www.cnblogs.com/andy-zhou/p/5360107.html)
 
 ## GA 相关
@@ -237,11 +242,7 @@ mogrify -rotate "-90" 2018-10-29-cafe.jpg
 
 refer to [Configuring Jekyll for User and Project GitHub Pages](http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/)
 
-## Cookie v.s. Session
+## Image Slider 
 
-1. cookie 数据存放在客户的浏览器上，session 数据放在服务器上；
-2. cookie 不是很安全，别人可以分析存放在本地的 COOKIE 并进行 COOKIE 欺骗，考虑到安全应当使用 session；
-3. session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能。考虑到减轻服务器性能方面，应当使用 COOKIE；
-4. 单个 cookie 在客户端的限制是3K，就是说一个站点在客户端存放的 COOKIE 不能超过 3K；
+参考 [Image Slider - Jssor Slider](https://www.jssor.com/demos/image-slider.slider)
 
-参考 [理解Cookie和Session机制](https://www.cnblogs.com/andy-zhou/p/5360107.html)

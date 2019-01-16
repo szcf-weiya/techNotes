@@ -510,3 +510,21 @@ or use `\hphantom{}`.
 ```
 
 refer to [Problem with \mkbibdateapalongextra of biblatex-apa](https://tex.stackexchange.com/questions/133700/problem-with-mkbibdateapalongextra-of-biblatex-apa)
+
+## Problems with \printbibliography
+
+```tex
+\usepackage[american]{babel}
+\usepackage[style=apa,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa} %Literaturverzeichnis american-apa style
+\addbibresource{library.bib} 
+\usepackage[babel,threshold=2]{csquotes}
+```
+
+and then
+
+```tex
+\printbibliography[heading=bibintoc,title=References]
+```
+
+refer to [Problems with \printbibliography](https://tex.stackexchange.com/questions/351079/problems-with-printbibliography/351091)
