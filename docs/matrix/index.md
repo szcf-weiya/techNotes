@@ -77,3 +77,8 @@ $$
 \sum_{j>L}\mu_j^2\,.
 $$
 
+## Orthogonal matrix
+
+Orthogonal matrix implies that both of columns and rows are orthogonal.
+
+Refer to [Column Vectors orthogonal implies Row Vectors also orthogonal?](https://math.stackexchange.com/questions/52717/column-vectors-orthogonal-implies-row-vectors-also-orthogonal)
