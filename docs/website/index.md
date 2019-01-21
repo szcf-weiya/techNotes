@@ -246,3 +246,6 @@ refer to [Configuring Jekyll for User and Project GitHub Pages](http://downtothe
 
 参考 [Image Slider - Jssor Slider](https://www.jssor.com/demos/image-slider.slider)
 
+## 代码高亮
+
+参考 [Jekyll 代码高亮的几种选择](https://blog.csdn.net/qiujuer/article/details/50419279)
