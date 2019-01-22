@@ -582,3 +582,16 @@ In short,
 ```
 
 refer to [Linux实时将所有输出重定向到文件](https://www.cnblogs.com/itZhy/p/3163230.html)
+
+## Ubuntu 16.04 create WiFi Hotpot
+
+Refer to 
+
+1. [3 Ways to Create Wifi Hotspot in Ubuntu 14.04 (Android Support)](http://ubuntuhandbook.org/index.php/2014/09/3-ways-create-wifi-hotspot-ubuntu/)
+2. [How do I create a WiFi hotspot sharing wireless internet connection (single adapter)?](https://askubuntu.com/questions/318973/how-do-i-create-a-wifi-hotspot-sharing-wireless-internet-connection-single-adap)
+
+几处不同：
+
+1. 选择 `mode` 时，直接选择 `hotpot` 即可，后面也无需更改文件
+2. 设置密码时位数不能少于 8 位
+3. 连接 WiFi 时 似乎需要 enable wifi。
