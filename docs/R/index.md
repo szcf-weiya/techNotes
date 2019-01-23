@@ -411,3 +411,22 @@ r <- getOption("repos")
 we also can wrap it with `local({...})` and save in `~/.Rprofile`.
 
 Refer to [How to select a CRAN mirror in R](https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r)
+
+## R 符号运算 
+
+参考 [R 语言做符号计算](https://cosx.org/2016/07/r-symbol-calculate/)。
+
+```r
+NormDensity <- expression(1 / sqrt(2 * pi) * exp(-x^2 / 2))
+D(NormDensity, "x")
+DD <- function(expr, name, order = 1) {
+ if (order < 1)
+     stop("'order' must be >= 1")
+ if (order == 1)
+     D(expr, name) else DD(D(expr, name), name, order - 1)
+ }
+DD(NormDensity, "x", 3)
+
+DFun <- deriv(NormDensity, "x", function.arg = TRUE)
+DFun(1)
+```
