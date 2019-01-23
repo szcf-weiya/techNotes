@@ -674,6 +674,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#r_3" title="R 符号运算" class="md-nav__link">
+    R 符号运算
+  </a>
+  
+</li>
+      
       
       
       
@@ -1577,6 +1584,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#r_3" title="R 符号运算" class="md-nav__link">
+    R 符号运算
+  </a>
+  
+</li>
+      
       
       
       
@@ -1891,6 +1905,21 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 
 <p>we also can wrap it with <code>local({...})</code> and save in <code>~/.Rprofile</code>.</p>
 <p>Refer to <a href="https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r">How to select a CRAN mirror in R</a></p>
+<h2 id="r_3">R 符号运算<a class="headerlink" href="#r_3" title="Permanent link">&para;</a></h2>
+<p>参考 <a href="https://cosx.org/2016/07/r-symbol-calculate/">R 语言做符号计算</a>。</p>
+<div class="codehilite"><pre><span></span><span class="n">NormDensity</span> <span class="o">&lt;-</span> <span class="nf">expression</span><span class="p">(</span><span class="m">1</span> <span class="o">/</span> <span class="nf">sqrt</span><span class="p">(</span><span class="m">2</span> <span class="o">*</span> <span class="kc">pi</span><span class="p">)</span> <span class="o">*</span> <span class="nf">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x^2</span> <span class="o">/</span> <span class="m">2</span><span class="p">))</span>
+<span class="nf">D</span><span class="p">(</span><span class="n">NormDensity</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">DD</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nf">if </span><span class="p">(</span><span class="n">order</span> <span class="o">&lt;</span> <span class="m">1</span><span class="p">)</span>
+     <span class="nf">stop</span><span class="p">(</span><span class="s">&quot;&#39;order&#39; must be &gt;= 1&quot;</span><span class="p">)</span>
+ <span class="nf">if </span><span class="p">(</span><span class="n">order</span> <span class="o">==</span> <span class="m">1</span><span class="p">)</span>
+     <span class="nf">D</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="n">else</span> <span class="nf">DD</span><span class="p">(</span><span class="nf">D</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">name</span><span class="p">,</span> <span class="n">order</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span>
+ <span class="p">}</span>
+<span class="nf">DD</span><span class="p">(</span><span class="n">NormDensity</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+
+<span class="n">DFun</span> <span class="o">&lt;-</span> <span class="nf">deriv</span><span class="p">(</span><span class="n">NormDensity</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="n">function.arg</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">DFun</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
                 
                   
                 
