@@ -43,3 +43,13 @@ ggplot() +
     p1 + p2 +
     labs(x = "Dose (mg/day)", y = "Tooth length")
 ```
+
+## Medians in high dimensions
+
+Refer to [Medians in high dimensions](https://statisticaloddsandends.wordpress.com/2018/12/21/medians-in-high-dimensions/)
+
+- marginal median
+- geometric median
+- medoid
+- centerpoint
+- Tukey median
