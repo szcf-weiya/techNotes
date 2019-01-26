@@ -861,6 +861,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#emojis-in-scatterplot" title="Emojis in scatterplot" class="md-nav__link">
+    Emojis in scatterplot
+  </a>
+  
+</li>
+      
       
       
       
@@ -971,6 +978,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#emojis-in-scatterplot" title="Emojis in scatterplot" class="md-nav__link">
+    Emojis in scatterplot
+  </a>
+  
+</li>
+      
       
       
       
@@ -991,6 +1005,43 @@
                 <h1 id="_1">新鲜事<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="pclasso">pclasso<a class="headerlink" href="#pclasso" title="Permanent link">&para;</a></h2>
 <p>Refer to <a href="https://statisticaloddsandends.wordpress.com/">pcLasso: a new method for sparse regression</a></p>
+<div class="codehilite"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">1234</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="m">100</span><span class="p">;</span> <span class="n">p</span> <span class="o">=</span> <span class="m">10</span>
+<span class="n">X</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">p</span><span class="p">),</span> <span class="n">nrow</span> <span class="o">=</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">pcLasso</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">pcLasso</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+
+<span class="nf">predict</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">X[1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="n">]</span><span class="p">)</span><span class="n">[</span><span class="p">,</span> <span class="m">5</span><span class="n">]</span>
+
+<span class="n">groups</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">=</span> <span class="nf">pcLasso</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">groups</span> <span class="o">=</span> <span class="n">groups</span><span class="p">)</span>
+
+<span class="n">fit</span> <span class="o">=</span> <span class="nf">cv.pcLasso</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+<span class="nf">predict</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">X[1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="n">]</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;lambda.min&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="emojis-in-scatterplot">Emojis in scatterplot<a class="headerlink" href="#emojis-in-scatterplot" title="Permanent link">&para;</a></h2>
+<p>References:</p>
+<ol>
+<li><a href="https://statisticaloddsandends.wordpress.com/2018/12/28/using-emojis-as-scatterplot-points/">Using emojis as scatterplot points</a></li>
+<li><a href="https://github.com/dill/emoGG">dill/emoGG</a></li>
+</ol>
+<div class="codehilite"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">emoGG</span><span class="p">)</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;ToothGrowth&quot;</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">geom_emoji</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nf">subset</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">,</span> <span class="n">supp</span> <span class="o">==</span> <span class="s">&quot;OJ&quot;</span><span class="p">),</span> 
+                <span class="nf">aes</span><span class="p">(</span><span class="n">dose</span> <span class="o">+</span> <span class="nf">runif</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="o">$</span><span class="n">supp</span> <span class="o">==</span> <span class="s">&quot;OJ&quot;</span><span class="p">),</span> <span class="n">min</span> <span class="o">=</span> <span class="m">-0.2</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">),</span> 
+                   <span class="n">len</span><span class="p">),</span> <span class="n">emoji</span> <span class="o">=</span> <span class="s">&quot;1f34a&quot;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">geom_emoji</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nf">subset</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">,</span> <span class="n">supp</span> <span class="o">==</span> <span class="s">&quot;VC&quot;</span><span class="p">),</span> 
+                 <span class="nf">aes</span><span class="p">(</span><span class="n">dose</span> <span class="o">+</span> <span class="nf">runif</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="o">$</span><span class="n">supp</span> <span class="o">==</span> <span class="s">&quot;OJ&quot;</span><span class="p">),</span> <span class="n">min</span> <span class="o">=</span> <span class="m">-0.2</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">),</span> 
+                     <span class="n">len</span><span class="p">),</span> <span class="n">emoji</span> <span class="o">=</span> <span class="s">&quot;1f48a&quot;</span><span class="p">)</span>
+
+<span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span>
+    <span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span> <span class="o">+</span>
+    <span class="nf">labs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&quot;Dose (mg/day)&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s">&quot;Tooth length&quot;</span><span class="p">)</span>
+</pre></div>
                 
                   
                 
