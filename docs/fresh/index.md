@@ -112,3 +112,9 @@ The dotted line is the $y=x$ line. The line in black represents soft-thresholdin
 Refer to [Bounds/constraints on leverage in linear regression](https://statisticaloddsandends.wordpress.com/2018/07/30/bounds-constraints-on-leverage-in-linear-regression/)
 
 The leverage of data point $i$ is the $i$-th diagonal entry of the hat matrix.
+
+## Modification to fundamental sampling formula
+
+Refer to [Inverse transform sampling for truncated distributions](https://statisticaloddsandends.wordpress.com/2018/01/28/inverse-transform-sampling-for-truncated-distributions/#comments)
+
+We can draw sample $X\sim F$ conditional on $X\ge t$.
