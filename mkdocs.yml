@@ -43,6 +43,7 @@ pages:
     - Finance: finance/index.md
     - Mi: mi/index.md
     - Win: win/index.md
+    - Fresh: fresh/index.md
     - Links: links/index.md
     - Misc: 
       - 小程序: misc/wx.md
