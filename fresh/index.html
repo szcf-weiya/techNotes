@@ -882,6 +882,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gradient-descent-as-a-minimization-problem" title="Gradient descent as a minimization problem" class="md-nav__link">
+    Gradient descent as a minimization problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordinate-descent-doesnt-always-work-for-convex-functions" title="Coordinate descent doesn’t always work for convex functions" class="md-nav__link">
+    Coordinate descent doesn’t always work for convex functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-to-a-sgn-equation" title="Solution to a sgn equation" class="md-nav__link">
+    Solution to a sgn equation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horvitzthompson-estimator" title="Horvitz–Thompson estimator" class="md-nav__link">
+    Horvitz–Thompson estimator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#illustration-of-scad-penalty" title="Illustration of SCAD penalty" class="md-nav__link">
+    Illustration of SCAD penalty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leverage-in-linear-regression" title="Leverage in Linear regression" class="md-nav__link">
+    Leverage in Linear regression
+  </a>
+  
+</li>
+      
       
       
       
@@ -1013,6 +1055,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gradient-descent-as-a-minimization-problem" title="Gradient descent as a minimization problem" class="md-nav__link">
+    Gradient descent as a minimization problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordinate-descent-doesnt-always-work-for-convex-functions" title="Coordinate descent doesn’t always work for convex functions" class="md-nav__link">
+    Coordinate descent doesn’t always work for convex functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-to-a-sgn-equation" title="Solution to a sgn equation" class="md-nav__link">
+    Solution to a sgn equation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horvitzthompson-estimator" title="Horvitz–Thompson estimator" class="md-nav__link">
+    Horvitz–Thompson estimator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#illustration-of-scad-penalty" title="Illustration of SCAD penalty" class="md-nav__link">
+    Illustration of SCAD penalty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leverage-in-linear-regression" title="Leverage in Linear regression" class="md-nav__link">
+    Leverage in Linear regression
+  </a>
+  
+</li>
+      
       
       
       
@@ -1091,6 +1175,46 @@
 \int_0^\infty f_{X\mid W=w}(x)f_W(w)dw=\frac{1}{2b}\exp\Big(-\frac{\vert x\vert}{b}\Big)\,.
 </script>
 </div>
+<h2 id="gradient-descent-as-a-minimization-problem">Gradient descent as a minimization problem<a class="headerlink" href="#gradient-descent-as-a-minimization-problem" title="Permanent link">&para;</a></h2>
+<p>Refer to <a href="https://statisticaloddsandends.wordpress.com/2018/11/09/gradient-descent-as-a-minimization-problem/">Gradient descent as a minimization problem</a></p>
+<p>put gradient decent into the optimization framework, then derive </p>
+<ul>
+<li>projected gradient descent</li>
+<li>proximal gradient methods</li>
+</ul>
+<h2 id="coordinate-descent-doesnt-always-work-for-convex-functions">Coordinate descent doesn’t always work for convex functions<a class="headerlink" href="#coordinate-descent-doesnt-always-work-for-convex-functions" title="Permanent link">&para;</a></h2>
+<p>Refer to <a href="https://statisticaloddsandends.wordpress.com/2018/10/30/coordinate-descent-doesnt-always-work-for-convex-functions/">Coordinate descent doesn’t always work for convex functions</a></p>
+<p>A counterexample: </p>
+<div>
+<div class="MathJax_Preview">
+z=\max(x,y)+\vert x-y\vert
+</div>
+<script type="math/tex; mode=display">
+z=\max(x,y)+\vert x-y\vert
+</script>
+</div>
+<h2 id="solution-to-a-sgn-equation">Solution to a <code>sgn</code> equation<a class="headerlink" href="#solution-to-a-sgn-equation" title="Permanent link">&para;</a></h2>
+<p>Refer to <a href="https://statisticaloddsandends.wordpress.com/2018/10/29/soft-thresholding-and-the-sgn-function/">Soft-thresholding and the sgn function</a></p>
+<p>Give a proof of the solution of </p>
+<div>
+<div class="MathJax_Preview">
+ax-b+c\mathrm{sgn}(x)=0
+</div>
+<script type="math/tex; mode=display">
+ax-b+c\mathrm{sgn}(x)=0
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">a&gt;0</span><script type="math/tex">a>0</script></span> and <span><span class="MathJax_Preview">c\ge 0</span><script type="math/tex">c\ge 0</script></span>.</p>
+<h2 id="horvitzthompson-estimator">Horvitz–Thompson estimator<a class="headerlink" href="#horvitzthompson-estimator" title="Permanent link">&para;</a></h2>
+<p>Refer to <a href="https://statisticaloddsandends.wordpress.com/2018/10/18/horvitz-thompson-estimator/">Horvitz–Thompson estimator</a></p>
+<p>Perform an <strong>inverse probability weighting</strong> to (unbiasedly) estimate the total <span><span class="MathJax_Preview">T=\sum X_i</span><script type="math/tex">T=\sum X_i</script></span>.</p>
+<h2 id="illustration-of-scad-penalty">Illustration of SCAD penalty<a class="headerlink" href="#illustration-of-scad-penalty" title="Permanent link">&para;</a></h2>
+<p>Refer to <a href="https://statisticaloddsandends.wordpress.com/2018/07/31/the-scad-penalty/">The SCAD penalty</a></p>
+<p><img alt="" src="scad1.png" /></p>
+<p>The dotted line is the <span><span class="MathJax_Preview">y=x</span><script type="math/tex">y=x</script></span> line. The line in black represents soft-thresholding (LASSO estimates) while the line in red represents the SCAD estimates.</p>
+<h2 id="leverage-in-linear-regression">Leverage in Linear regression<a class="headerlink" href="#leverage-in-linear-regression" title="Permanent link">&para;</a></h2>
+<p>Refer to <a href="https://statisticaloddsandends.wordpress.com/2018/07/30/bounds-constraints-on-leverage-in-linear-regression/">Bounds/constraints on leverage in linear regression</a></p>
+<p>The leverage of data point <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> is the <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>-th diagonal entry of the hat matrix.</p>
                 
                   
                 

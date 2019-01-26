@@ -688,6 +688,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mistake-with-colon-operator" title="Mistake with colon operator" class="md-nav__link">
+    Mistake with colon operator
+  </a>
+  
+</li>
+      
       
       
       
@@ -1617,6 +1624,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mistake-with-colon-operator" title="Mistake with colon operator" class="md-nav__link">
+    Mistake with colon operator
+  </a>
+  
+</li>
+      
       
       
       
@@ -1950,6 +1964,18 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 
 <h2 id="show-all-rs-shortcuts">Show all R&rsquo;s shortcuts<a class="headerlink" href="#show-all-rs-shortcuts" title="Permanent link">&para;</a></h2>
 <p><code>Alt-Shift-K</code>.</p>
+<h2 id="mistake-with-colon-operator">Mistake with colon operator<a class="headerlink" href="#mistake-with-colon-operator" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">vec</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span> <span class="nf">print</span><span class="p">(</span><span class="n">vec[i]</span><span class="p">)</span>
+</pre></div>
+
+
+<p>would print two <code>NULL</code> because <code>1:length(vec)</code> would be <code>c(1,0)</code>. A method to avoid this</p>
+<div class="codehilite"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">seq_along</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span> <span class="nf">print</span><span class="p">(</span><span class="n">vec[i]</span><span class="p">)</span>
+</pre></div>
+
+
+<p>refer to <a href="https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/">Two common mistakes with the colon operator in R</a></p>
                 
                   
                 
