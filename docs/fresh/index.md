@@ -61,3 +61,54 @@ Refer to [Laplace distribution as a mixture of normals](https://statisticaloddsa
 $$
 \int_0^\infty f_{X\mid W=w}(x)f_W(w)dw=\frac{1}{2b}\exp\Big(-\frac{\vert x\vert}{b}\Big)\,.
 $$
+
+## Gradient descent as a minimization problem
+
+Refer to [Gradient descent as a minimization problem](https://statisticaloddsandends.wordpress.com/2018/11/09/gradient-descent-as-a-minimization-problem/)
+
+put gradient decent into the optimization framework, then derive 
+
+- projected gradient descent
+- proximal gradient methods
+
+## Coordinate descent doesn’t always work for convex functions
+
+Refer to [Coordinate descent doesn’t always work for convex functions](https://statisticaloddsandends.wordpress.com/2018/10/30/coordinate-descent-doesnt-always-work-for-convex-functions/)
+
+A counterexample: 
+
+$$
+z=\max(x,y)+\vert x-y\vert
+$$
+
+## Solution to a `sgn` equation
+
+Refer to [Soft-thresholding and the sgn function](https://statisticaloddsandends.wordpress.com/2018/10/29/soft-thresholding-and-the-sgn-function/)
+
+Give a proof of the solution of 
+
+$$
+ax-b+c\mathrm{sgn}(x)=0
+$$
+
+where $a>0$ and $c\ge 0$.
+
+## Horvitz–Thompson estimator
+
+Refer to [Horvitz–Thompson estimator](https://statisticaloddsandends.wordpress.com/2018/10/18/horvitz-thompson-estimator/)
+
+Perform an **inverse probability weighting** to (unbiasedly) estimate the total $T=\sum X_i$.
+
+## Illustration of SCAD penalty
+
+Refer to [The SCAD penalty](https://statisticaloddsandends.wordpress.com/2018/07/31/the-scad-penalty/)
+
+![](scad1.png)
+
+The dotted line is the $y=x$ line. The line in black represents soft-thresholding (LASSO estimates) while the line in red represents the SCAD estimates.
+
+## Leverage in Linear regression
+
+Refer to [Bounds/constraints on leverage in linear regression](https://statisticaloddsandends.wordpress.com/2018/07/30/bounds-constraints-on-leverage-in-linear-regression/)
+
+The leverage of data point $i$ is the $i$-th diagonal entry of the hat matrix.

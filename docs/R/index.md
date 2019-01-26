@@ -434,3 +434,18 @@ DFun(1)
 ## Show all R's shortcuts
 
 `Alt-Shift-K`.
+
+## Mistake with colon operator
+
+```r
+vec <- c()
+for (i in 1:length(vec)) print(vec[i])
+```
+
+would print two `NULL` because `1:length(vec)` would be `c(1,0)`. A method to avoid this
+
+```r
+for (i in seq_along(vec)) print(vec[i])
+```
+
+refer to [Two common mistakes with the colon operator in R](https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/)
