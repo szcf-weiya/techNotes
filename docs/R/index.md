@@ -430,3 +430,7 @@ DD(NormDensity, "x", 3)
 DFun <- deriv(NormDensity, "x", function.arg = TRUE)
 DFun(1)
 ```
+
+## Show all R's shortcuts
+
+`Alt-Shift-K`.

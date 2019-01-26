@@ -53,3 +53,11 @@ Refer to [Medians in high dimensions](https://statisticaloddsandends.wordpress.c
 - medoid
 - centerpoint
 - Tukey median
+
+## Laplace distribution as a mixture of normal distributions
+
+Refer to [Laplace distribution as a mixture of normals](https://statisticaloddsandends.wordpress.com/2018/12/21/laplace-distribution-as-a-mixture-of-normals/)
+
+$$
+\int_0^\infty f_{X\mid W=w}(x)f_W(w)dw=\frac{1}{2b}\exp\Big(-\frac{\vert x\vert}{b}\Big)\,.
+$$
