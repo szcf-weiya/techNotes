@@ -249,3 +249,7 @@ refer to [Configuring Jekyll for User and Project GitHub Pages](http://downtothe
 ## 代码高亮
 
 参考 [Jekyll 代码高亮的几种选择](https://blog.csdn.net/qiujuer/article/details/50419279)
+
+## URL 中最后的斜杠
+
+新建 tag 页面后，发现链接竟然跳到源站域名上去了，跟又拍那边的技术支持沟通也没找到原因，最后猛然想到是 tag 页面的 url 没有加斜杠，[查了一下](https://blog.csdn.net/u010525694/article/details/78591355)，加不加斜杠区别还挺大的。
