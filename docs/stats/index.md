@@ -12,6 +12,12 @@ where $k=\nu/2$ and $\theta=2\sigma^2$.
 
 Refer to [ARPM: Wishart and Gamma distribution](https://www.arpm.co/lab/GammaDistribNotation.html)
 
+### Gamma & Chi-squared
+
+- $\chi^2_k = Gamma(k/2, 2)$
+- $c\chi^2_k = Gamma(k/2, 2c)$
+- $\sum_{i=1}^n\chi^2_k(\lambda) = \chi^2_{nk}(n\lambda)$.
+
 ## Calculus
 
 1. $\int_0^\infty e^{-x^2}dx$, see [Impossible Integral](https://www.math.hmc.edu/funfacts/ffiles/20008.3.shtml).

@@ -82,3 +82,36 @@ $$
 Orthogonal matrix implies that both of columns and rows are orthogonal.
 
 Refer to [Column Vectors orthogonal implies Row Vectors also orthogonal?](https://math.stackexchange.com/questions/52717/column-vectors-orthogonal-implies-row-vectors-also-orthogonal)
+
+## Decomposition
+
+### Cholesky 
+
+A symmetric, positive definite square matrix $A$ has a Cholesky decomposition into a product of a lower triangular matrix $L$ and its transpose $L^T$,
+
+$$
+A=LL^T\,.
+$$
+
+This decomposition can be used to convert the linear system $Ax=b$ into a pair of triangular systems, $Ly=b,L^Tx=y$, which can be solved by forward and back-substitution.
+
+If the matrix $A$ is near singular, it is sometimes possible to reduce the condition number and recover a more accurate a more accurate solution vector $x$ by scaling as
+
+$$
+(SAS)(S^{-1}x) = Sb
+$$
+
+where $S$ is a diagonal matrix whose elements are given by $S_{ii}=1/\sqrt{A_{ii}}$. This scaling is also known as **Jacobi preconditioning**.
+
+## QR 
+
+A general rectangular $M$-by-$N$ matrix $A$ has a QR decomposition into the product of an orthogonal $M$-by-$M$ square matrix $Q$, where $Q^TQ=I$, and an $M$-by-$N$ right-triangular matrix $R$,
+
+$$
+A=QR\,.
+$$
+
+This decomposition can be used to convert the linear system $Ax=b$ into the triangular system $Rx=Q^Tb$, which can be solved by back-substitution.
+
+Another use of the QR decomposition is to compute an orthonormal basis for a set of vectors. The first $N$ columns of $Q$ form an orthonormal basis for the range of $A$, $ran(A)$, when $A$ has full column rank.
+
