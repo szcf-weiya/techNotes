@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
     
     
       
@@ -51,7 +51,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
     
     
       
@@ -62,6 +62,12 @@
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
+    
+    
+      
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85007363-6"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-85007363-6")</script>
+      
     
     
   </head>
@@ -874,6 +880,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#decomposition" title="Decomposition" class="md-nav__link">
+    Decomposition
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cholesky" title="Cholesky" class="md-nav__link">
+    Cholesky
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qr" title="QR" class="md-nav__link">
+    QR
+  </a>
+  
+</li>
+      
       
       
       
@@ -1125,6 +1158,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#decomposition" title="Decomposition" class="md-nav__link">
+    Decomposition
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cholesky" title="Cholesky" class="md-nav__link">
+    Cholesky
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qr" title="QR" class="md-nav__link">
+    QR
+  </a>
+  
+</li>
+      
       
       
       
@@ -1225,6 +1285,40 @@
 <h2 id="orthogonal-matrix">Orthogonal matrix<a class="headerlink" href="#orthogonal-matrix" title="Permanent link">&para;</a></h2>
 <p>Orthogonal matrix implies that both of columns and rows are orthogonal.</p>
 <p>Refer to <a href="https://math.stackexchange.com/questions/52717/column-vectors-orthogonal-implies-row-vectors-also-orthogonal">Column Vectors orthogonal implies Row Vectors also orthogonal?</a></p>
+<h2 id="decomposition">Decomposition<a class="headerlink" href="#decomposition" title="Permanent link">&para;</a></h2>
+<h3 id="cholesky">Cholesky<a class="headerlink" href="#cholesky" title="Permanent link">&para;</a></h3>
+<p>A symmetric, positive definite square matrix <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> has a Cholesky decomposition into a product of a lower triangular matrix <span><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> and its transpose <span><span class="MathJax_Preview">L^T</span><script type="math/tex">L^T</script></span>,</p>
+<div>
+<div class="MathJax_Preview">
+A=LL^T\,.
+</div>
+<script type="math/tex; mode=display">
+A=LL^T\,.
+</script>
+</div>
+<p>This decomposition can be used to convert the linear system <span><span class="MathJax_Preview">Ax=b</span><script type="math/tex">Ax=b</script></span> into a pair of triangular systems, <span><span class="MathJax_Preview">Ly=b,L^Tx=y</span><script type="math/tex">Ly=b,L^Tx=y</script></span>, which can be solved by forward and back-substitution.</p>
+<p>If the matrix <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is near singular, it is sometimes possible to reduce the condition number and recover a more accurate a more accurate solution vector <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> by scaling as</p>
+<div>
+<div class="MathJax_Preview">
+(SAS)(S^{-1}x) = Sb
+</div>
+<script type="math/tex; mode=display">
+(SAS)(S^{-1}x) = Sb
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> is a diagonal matrix whose elements are given by <span><span class="MathJax_Preview">S_{ii}=1/\sqrt{A_{ii}}</span><script type="math/tex">S_{ii}=1/\sqrt{A_{ii}}</script></span>. This scaling is also known as <strong>Jacobi preconditioning</strong>.</p>
+<h2 id="qr">QR<a class="headerlink" href="#qr" title="Permanent link">&para;</a></h2>
+<p>A general rectangular <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>-by-<span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> matrix <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> has a QR decomposition into the product of an orthogonal <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>-by-<span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> square matrix <span><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span>, where <span><span class="MathJax_Preview">Q^TQ=I</span><script type="math/tex">Q^TQ=I</script></span>, and an <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>-by-<span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> right-triangular matrix <span><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>,</p>
+<div>
+<div class="MathJax_Preview">
+A=QR\,.
+</div>
+<script type="math/tex; mode=display">
+A=QR\,.
+</script>
+</div>
+<p>This decomposition can be used to convert the linear system <span><span class="MathJax_Preview">Ax=b</span><script type="math/tex">Ax=b</script></span> into the triangular system <span><span class="MathJax_Preview">Rx=Q^Tb</span><script type="math/tex">Rx=Q^Tb</script></span>, which can be solved by back-substitution.</p>
+<p>Another use of the QR decomposition is to compute an orthonormal basis for a set of vectors. The first <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> columns of <span><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> form an orthonormal basis for the range of <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>, <span><span class="MathJax_Preview">ran(A)</span><script type="math/tex">ran(A)</script></span>, when <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> has full column rank.</p>
                 
                   
                 
@@ -1315,7 +1409,7 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../assets/javascripts/application.a353778b.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
@@ -1326,12 +1420,6 @@
         <script src="../javascripts/mathjax.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-85007363-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
