@@ -595,3 +595,7 @@ Refer to
 1. 选择 `mode` 时，直接选择 `hotpot` 即可，后面也无需更改文件
 2. 设置密码时位数不能少于 8 位
 3. 连接 WiFi 时 似乎需要 enable wifi。
+
+## `/dev/loopx`
+
+refer to [What is /dev/loopx?(https://askubuntu.com/questions/906581/what-is-dev-loopx).
