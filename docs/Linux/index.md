@@ -599,3 +599,13 @@ Refer to
 ## `/dev/loopx`
 
 refer to [What is /dev/loopx?(https://askubuntu.com/questions/906581/what-is-dev-loopx).
+
+## 惊魂扩容
+
+一直想扩容来着，但总是下不了决心。今天决定了，参考 google 搜索“Ubuntu 扩容”的前几条结果，便开始干了。
+
+1. 采用启动 U 盘，因为根目录在使用状态，幸好启动 U 盘还在。
+2. 使用 Gparted 时有个大大的 warning，说对含 /boot 分区的硬盘进行操作可能会不能正常启动，有点吓到了，最后还是狠下心继续下去了。
+3. 网上有人说，不要用 Gparted 对 Windows 进行压缩，而应该在 Windows 中进行压缩，可是此时已经开始了，想中断但怕造成更严重的后果，幸好最后启动 Windows 时只是多了步检查硬盘，并没有不能启动的状况。
+
+中间提心吊胆，好在最后顺利扩容完成。
