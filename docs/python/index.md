@@ -379,3 +379,21 @@ plt.xlabel(r"\lambda")
 ```
 
 refer to [Writing mathematical expressions](https://matplotlib.org/users/mathtext.html)
+
+## 写入 non-ascii 字符
+
+```python
+f = open("filename", "w")
+write_str = u'''
+some non ascii symbols
+'''
+f.write(write.str)
+```
+
+会报错
+
+```
+'ascii' codec can't encode character 
+```
+
+参考 [Python: write a list with non-ASCII characters to a text file](https://stackoverflow.com/questions/33255846/python-write-a-list-with-non-ascii-characters-to-a-text-file) 采用 `codecs.open(, "w", encoding="utf-8")` 可以解决需求。
