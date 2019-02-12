@@ -831,6 +831,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#non-ascii" title="写入 non-ascii 字符" class="md-nav__link">
+    写入 non-ascii 字符
+  </a>
+  
+</li>
+      
       
       
       
@@ -1705,6 +1712,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#non-ascii" title="写入 non-ascii 字符" class="md-nav__link">
+    写入 non-ascii 字符
+  </a>
+  
+</li>
+      
       
       
       
@@ -1990,6 +2004,21 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 
 
 <p>refer to <a href="https://matplotlib.org/users/mathtext.html">Writing mathematical expressions</a></p>
+<h2 id="non-ascii">写入 non-ascii 字符<a class="headerlink" href="#non-ascii" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;filename&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">write_str</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">some non ascii symbols</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">write</span><span class="o">.</span><span class="n">str</span><span class="p">)</span>
+</pre></div>
+
+
+<p>会报错</p>
+<div class="codehilite"><pre><span></span>&#39;ascii&#39; codec can&#39;t encode character 
+</pre></div>
+
+
+<p>参考 <a href="https://stackoverflow.com/questions/33255846/python-write-a-list-with-non-ascii-characters-to-a-text-file">Python: write a list with non-ASCII characters to a text file</a> 采用 <code>codecs.open(, "w", encoding="utf-8")</code> 可以解决需求。</p>
                 
                   
                 
