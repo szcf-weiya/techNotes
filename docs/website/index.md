@@ -1,14 +1,13 @@
 # 网站相关笔记
-## 设置Disqus
+
+## 设置 Disqus
 
 [https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html](https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html)
 
-[迁移disqus讨论
-](https://help.disqus.com/customer/en/portal/articles/912627-domain-migration-tool
-)
+[迁移disqus讨论](https://help.disqus.com/customer/en/portal/articles/912627-domain-migration-tool)
 
 
-disqus迁移（待研究）
+disqus 迁移（待研究）
 
 参考[Disqus 最近是不是被墙了啊？](https://www.v2ex.com/t/295213)
 
@@ -253,3 +252,22 @@ refer to [Configuring Jekyll for User and Project GitHub Pages](http://downtothe
 ## URL 中最后的斜杠
 
 新建 tag 页面后，发现链接竟然跳到源站域名上去了，跟又拍那边的技术支持沟通也没找到原因，最后猛然想到是 tag 页面的 url 没有加斜杠，[查了一下](https://blog.csdn.net/u010525694/article/details/78591355)，加不加斜杠区别还挺大的。
+
+## 博客中的定理环境
+
+通过 css 实现，例如
+
+```css
+.theorem {
+    display: block;
+    margin: 12px 0;
+    font-style: italic;
+}
+.theorem:before {
+    content: "Theorem.";
+    font-weight: bold;
+    font-style: normal;
+}
+```
+
+详见 [LaTeX Theorem-like Environments for the Web](http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/)
