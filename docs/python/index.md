@@ -94,7 +94,7 @@ refer to [Difference between numpy.array shape (R, 1) and (R,)](https://stackove
 
 参考[https://conda.io/docs/user-guide/getting-started.html](https://conda.io/docs/user-guide/getting-started.html)
 
-## 为py3安装spyder
+## 为 py3 安装 spyder
 
 1. 先建一个conda环境bunny，安装python3.4，因为要支持pyside，而经试验3.5+不支持。
 2. 安装cmake
@@ -104,6 +104,13 @@ refer to [Difference between numpy.array shape (R, 1) and (R,)](https://stackove
 不装pyside，而装pyqt5
 ```bash
 pip install pyqt5
+```
+
+最终在新建的另一个 conda 环境 snakes 中装好了 Python3.6 及 spyder3，通过下面命令运行就 OK 了。
+
+```bash
+source activate snakes
+spyder3 &
 ```
 
 ## xrange and range
