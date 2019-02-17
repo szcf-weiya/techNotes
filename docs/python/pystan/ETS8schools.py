@@ -43,5 +43,7 @@ mu = la['mu']
 # return an array of three dimensions: iterations, chains, parameters
 a = fit.extract(permuted=False)
 
+# plot
+fit.plot()
 
 
