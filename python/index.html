@@ -560,8 +560,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#py3spyder" title="为py3安装spyder" class="md-nav__link">
-    为py3安装spyder
+  <a href="#py3-spyder" title="为 py3 安装 spyder" class="md-nav__link">
+    为 py3 安装 spyder
   </a>
   
 </li>
@@ -1441,8 +1441,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#py3spyder" title="为py3安装spyder" class="md-nav__link">
-    为py3安装spyder
+  <a href="#py3-spyder" title="为 py3 安装 spyder" class="md-nav__link">
+    为 py3 安装 spyder
   </a>
   
 </li>
@@ -1819,7 +1819,7 @@ array([[ 1.,  1.],
 <p>refer to <a href="https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r">Difference between numpy.array shape (R, 1) and (R,)</a></p>
 <h2 id="conda">正式认识conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://conda.io/docs/user-guide/getting-started.html">https://conda.io/docs/user-guide/getting-started.html</a></p>
-<h2 id="py3spyder">为py3安装spyder<a class="headerlink" href="#py3spyder" title="Permanent link">&para;</a></h2>
+<h2 id="py3-spyder">为 py3 安装 spyder<a class="headerlink" href="#py3-spyder" title="Permanent link">&para;</a></h2>
 <ol>
 <li>先建一个conda环境bunny，安装python3.4，因为要支持pyside，而经试验3.5+不支持。</li>
 <li>安装cmake</li>
@@ -1828,6 +1828,12 @@ array([[ 1.,  1.],
 <p>转向py3.6
 不装pyside，而装pyqt5</p>
 <div class="codehilite"><pre><span></span>pip install pyqt5
+</pre></div>
+
+
+<p>最终在新建的另一个 conda 环境 snakes 中装好了 Python3.6 及 spyder3，通过下面命令运行就 OK 了。</p>
+<div class="codehilite"><pre><span></span><span class="nb">source</span> activate snakes
+spyder3 <span class="p">&amp;</span>
 </pre></div>
 
 
