@@ -528,3 +528,25 @@ and then
 ```
 
 refer to [Problems with \printbibliography](https://tex.stackexchange.com/questions/351079/problems-with-printbibliography/351091)
+
+## 带 `\hat` 时的上标
+
+```tex
+\hat\beta^n
+```
+
+$$
+\hat\beta^n
+$$
+
+和
+
+```tex
+\hat\beta{}^n
+```
+
+$$
+\hat\beta{}^n
+$$
+
+参考 [Position of superscript when superscriptd item has \hat over it](https://tex.stackexchange.com/questions/9184/position-of-superscript-when-superscriptd-item-has-hat-over-it)
