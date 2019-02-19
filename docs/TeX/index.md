@@ -550,3 +550,13 @@ $$
 $$
 
 参考 [Position of superscript when superscriptd item has \hat over it](https://tex.stackexchange.com/questions/9184/position-of-superscript-when-superscriptd-item-has-hat-over-it)
+
+## `Capacity exceeded [semantic nest …]`
+
+check your `newcommand` definition, to see if there is some silly definition such as
+
+```tex
+\newcommand\silly{\silly}
+```
+
+refer to [Capacity exceeded](https://texfaq.org/FAQ-semanticnest)
