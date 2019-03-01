@@ -183,3 +183,29 @@ using `OffsetArrays` package, refer to
 ## plot kernel density
 
 refer to [Kernel density estimation status](https://discourse.julialang.org/t/kernel-density-estimation-status/5928)
+
+## 自定义 `==` and `hash()`
+
+对于自定义的 mutable struct, 直接用 `==` 返回 `false`，因此需要自己定义等号，比如
+
+```julia
+Base.:(==)(x::Reaction, y::Reaction) = all([
+    x.substrate == y.substrate, 
+    x.product == y.product, 
+    x.reversible == y.reversible, 
+    x.species == y.species])
+```
+
+而如果想用 `unique` 函数的话，其基于 `isequal` 函数，而 `isequal` 是通过判断 hash 值来判定的，所以仅仅定义了 `==` 仍不够，还需要定义 `hash` 函数，这很简单，比如
+
+```julia
+function Base.hash(obj::Reaction, h::UInt)
+    return hash((obj.substrate, obj.product, obj.reversible, obj.species), h)
+end
+```
+
+参考
+
+1. [Hash function for custom type](https://stackoverflow.com/questions/50052668/hash-function-for-custom-type)
+2. [到底什么是hash?](https://www.zhihu.com/question/26762707)
+3. [Surprising struct equality test](https://discourse.julialang.org/t/surprising-struct-equality-test/4890)

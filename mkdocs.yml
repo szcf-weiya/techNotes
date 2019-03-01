@@ -12,16 +12,11 @@ pages:
       - ggplot 作图: R/ggplot.md
       - 案例分析: R/legend_from_zhihu.md
       - 源码安装 RMySQL: R/install-notes-for-rmysql.md
-    - Programming:
-      - Python: python/index.md
-      - Matlab: Matlab/index.md
-      - Cpp: Cpp/index.md
-      - Julia: julia/index.md
-      - Java: java/index.md
-      - TeX: TeX/index.md
-      - SQL: SQL/index.md
-      - Cuda: cuda/index.md
-      - PHP: PHP/index.md
+    - Python:
+      - 一般问题: python/index.md
+      - PyStan 体验: python/pystan/README.md
+    - Julia: julia/index.md
+    - Tex: TeX/index.md
     - Website:
       - Website: website/index.md
       - CSS: css/index.md
@@ -49,6 +44,13 @@ pages:
       - 小程序: misc/wx.md
       - jssdk: misc/wxjssdk.md
       - 讲座: misc/report.md
+    - Others:
+      - Matlab: Matlab/index.md
+      - Cpp: Cpp/index.md
+      - Java: java/index.md
+      - SQL: SQL/index.md
+      - Cuda: cuda/index.md
+      - PHP: PHP/index.md
 
 theme:
   name: 'material'
