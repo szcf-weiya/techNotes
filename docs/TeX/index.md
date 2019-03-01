@@ -560,3 +560,14 @@ check your `newcommand` definition, to see if there is some silly definition suc
 ```
 
 refer to [Capacity exceeded](https://texfaq.org/FAQ-semanticnest)
+
+## `standalone` 环境
+
+1. 不支持 `algorithm`
+2. 对于 `algorithmic` 要加上 `varwidth` 或 `preview` 选项。
+
+参考 
+
+- [using standalone with algorithmicx or algorithm2e](https://tex.stackexchange.com/questions/113394/using-standalone-with-algorithmicx-or-algorithm2e/125863)
+- [standalone does not work with algorithms](https://tex.stackexchange.com/questions/373608/standalone-does-not-work-with-algorithms)
+- [algorithmicx crashes standalone](https://tex.stackexchange.com/questions/61281/algorithmicx-crashes-standalone)

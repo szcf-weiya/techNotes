@@ -281,6 +281,14 @@ pdf 转为 jpg
 
  并注意参数放置文件的前面
 
+pdf 转 png 更好的命令是 `pdftoppm`，参考 [How to convert PDF to Image?](https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image)
+
+```bash
+pdftoppm alg.pdf alg -png -singlefile
+```
+
+图片质量比 `convert` 好很多！！
+
 ## linux 三款命令行浏览器
 
 1. w3m
