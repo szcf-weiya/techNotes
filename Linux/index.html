@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -2273,6 +2273,12 @@ kill -s 9 ...
  <code>-quality 100</code> 控制质量
  <code>-density 600x600</code> 控制分辨率</p>
 <p>并注意参数放置文件的前面</p>
+<p>pdf 转 png 更好的命令是 <code>pdftoppm</code>，参考 <a href="https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image">How to convert PDF to Image?</a></p>
+<div class="codehilite"><pre><span></span>pdftoppm alg.pdf alg -png -singlefile
+</pre></div>
+
+
+<p>图片质量比 <code>convert</code> 好很多！！</p>
 <h2 id="linux_2">linux 三款命令行浏览器<a class="headerlink" href="#linux_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>w3m</li>
@@ -2597,7 +2603,7 @@ apt-get install nginx
       
     </div>
     
-      <script src="../assets/javascripts/application.b806dc00.js"></script>
+      <script src="../assets/javascripts/application.d9aa80ab.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
