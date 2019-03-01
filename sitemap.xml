@@ -56,12 +56,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tech.hohoweiya.xyz/Matlab/</loc>
-     <lastmod>2019-03-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://tech.hohoweiya.xyz/Cpp/</loc>
+     <loc>https://tech.hohoweiya.xyz/python/pystan/</loc>
      <lastmod>2019-03-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -71,27 +66,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://tech.hohoweiya.xyz/java/</loc>
-     <lastmod>2019-03-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://tech.hohoweiya.xyz/TeX/</loc>
-     <lastmod>2019-03-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://tech.hohoweiya.xyz/SQL/</loc>
-     <lastmod>2019-03-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://tech.hohoweiya.xyz/cuda/</loc>
-     <lastmod>2019-03-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://tech.hohoweiya.xyz/PHP/</loc>
      <lastmod>2019-03-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -207,6 +182,36 @@
     </url>
     <url>
      <loc>https://tech.hohoweiya.xyz/misc/report/</loc>
+     <lastmod>2019-03-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://tech.hohoweiya.xyz/Matlab/</loc>
+     <lastmod>2019-03-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://tech.hohoweiya.xyz/Cpp/</loc>
+     <lastmod>2019-03-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://tech.hohoweiya.xyz/java/</loc>
+     <lastmod>2019-03-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://tech.hohoweiya.xyz/SQL/</loc>
+     <lastmod>2019-03-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://tech.hohoweiya.xyz/cuda/</loc>
+     <lastmod>2019-03-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://tech.hohoweiya.xyz/PHP/</loc>
      <lastmod>2019-03-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
