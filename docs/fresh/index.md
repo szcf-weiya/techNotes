@@ -124,3 +124,5 @@ We can draw sample $X\sim F$ conditional on $X\ge t$.
 - [ETJ: PARADOXES OF PROBABILITY THEORY](http://omega.albany.edu:8008/ETJ-PDF/cc15t.pdf)
 - [An Explanation of Borel’s Paradox That You Can Understand](http://gandenberger.org/2013/07/22/borels-paradox/)
 - [Yarin Gal' slide: The Borel–Kolmogorov paradox](http://www.cs.ox.ac.uk/people/yarin.gal/website/PDFs/Short-talk-03-2014.pdf)
+- [Edwin Thompson Jaynes's homepage](https://bayes.wustl.edu/etj/etj.html)
+- [ETJ's book](http://omega.albany.edu:8008/JaynesBook.html)
