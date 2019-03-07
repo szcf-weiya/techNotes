@@ -126,3 +126,7 @@ We can draw sample $X\sim F$ conditional on $X\ge t$.
 - [Yarin Gal' slide: The Borel–Kolmogorov paradox](http://www.cs.ox.ac.uk/people/yarin.gal/website/PDFs/Short-talk-03-2014.pdf)
 - [Edwin Thompson Jaynes's homepage](https://bayes.wustl.edu/etj/etj.html)
 - [ETJ's book](http://omega.albany.edu:8008/JaynesBook.html)
+
+## Retire Statistical Significance
+
+[A petition](https://statmodeling.stat.columbia.edu/2019/03/05/abandon-retire-statistical-significance-your-chance-to-sign-a-petition/)
