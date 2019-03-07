@@ -59,3 +59,19 @@ Cardioid (心形)：$r=2a(1+\cos\theta)$
 ## Wishart Distribution
 
 ![](wishart.png)
+
+## Subscript notation in expectations.
+
+Always confused the risk function
+
+$$
+\E_P[L(\theta(P),\hat\theta)]\,,
+$$
+
+more clearly one for me is 
+
+$$
+R_T(P)=\E[L(P,T(X))]=\int_{\cal X}L(P,T(x))dP_X(x)
+$$
+
+And one related question asked in [Subscript notation in expectations](https://stats.stackexchange.com/questions/72613/subscript-notation-in-expectations)
