@@ -130,3 +130,13 @@ We can draw sample $X\sim F$ conditional on $X\ge t$.
 ## Retire Statistical Significance
 
 [A petition](https://statmodeling.stat.columbia.edu/2019/03/05/abandon-retire-statistical-significance-your-chance-to-sign-a-petition/)
+
+## EM estimation for Weibull distribution
+
+$$
+f_k(x) = k x^{k-1} e^{-x^k} \quad x >0
+$$
+
+Refer to [EM maximum likelihood estimation for Weibull distribution](https://stats.stackexchange.com/questions/22787/em-maximum-likelihood-estimation-for-weibull-distribution)
+
+A little confused about [the answer](https://stats.stackexchange.com/a/343568/171750)
