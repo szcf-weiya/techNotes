@@ -617,3 +617,13 @@ refer to [What is /dev/loopx?(https://askubuntu.com/questions/906581/what-is-dev
 3. 网上有人说，不要用 Gparted 对 Windows 进行压缩，而应该在 Windows 中进行压缩，可是此时已经开始了，想中断但怕造成更严重的后果，幸好最后启动 Windows 时只是多了步检查硬盘，并没有不能启动的状况。
 
 中间提心吊胆，好在最后顺利扩容完成。
+
+## 移动硬盘重命名
+
+通过
+
+```bash
+gnome-disks
+```
+
+进行设置，详见[How to change hard drive name](https://askubuntu.com/questions/904561/how-to-change-hard-drive-name/904564)
