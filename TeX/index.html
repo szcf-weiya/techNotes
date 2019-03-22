@@ -856,6 +856,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#texlive_1" title="便携式安装 texlive" class="md-nav__link">
+    便携式安装 texlive
+  </a>
+  
+</li>
+      
       
       
       
@@ -1697,6 +1704,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#texlive_1" title="便携式安装 texlive" class="md-nav__link">
+    便携式安装 texlive
+  </a>
+  
+</li>
+      
       
       
       
@@ -2157,6 +2171,22 @@ git push origin master --tags
 <li><a href="https://tex.stackexchange.com/questions/373608/standalone-does-not-work-with-algorithms">standalone does not work with algorithms</a></li>
 <li><a href="https://tex.stackexchange.com/questions/61281/algorithmicx-crashes-standalone">algorithmicx crashes standalone</a></li>
 </ul>
+<h2 id="texlive_1">便携式安装 texlive<a class="headerlink" href="#texlive_1" title="Permanent link">&para;</a></h2>
+<p>目前笔记本上 texlive 还是 2015 版的，而 TikePictures.jl 要求的 lualatex 跑不成功，有 bug。于是考虑安装最新版 texlive 2018，只不过笔记本硬盘空间不够，考虑在移动硬盘中安装 texlive。</p>
+<p><a href="http://tug.org/texlive/doc/install-tl.html">TexLive 官方说明文档</a>也介绍了 <code>-protable</code> 的安装选项，</p>
+<p><img alt="" src="portable_install.png" /></p>
+<p>其与正常安装时环境变量略有不同，没有单独设置 personal 的配置路径，或许还有其他地方的区别。</p>
+<p>另外安装时碰到默认的 mirror 速度很慢的情况，于是考虑换成最近的华为云。</p>
+<div class="codehilite"><pre><span></span>./install-tl -repository https://mirrors.huaweicloud.com/repository/toolkit/CTAN/systems/texlive/tlnet/
+</pre></div>
+
+
+<p>路径要指定成</p>
+<div class="codehilite"><pre><span></span>&lt;CTAN/mirror/root/URL&gt;/systems/texlive/tlnet
+</pre></div>
+
+
+<p>参考 <a href="https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository">Change TeX Live Main Repository</a></p>
                 
                   
                 

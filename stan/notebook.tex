@@ -1,0 +1,467 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Untitled}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \hypertarget{regression}{%
+\section{Regression}\label{regression}}
+
+\hypertarget{linear-regression}{%
+\subsection{Linear Regression}\label{linear-regression}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k}{using} \PY{n}{CmdStan}
+        \PY{n}{lr\PYZus{}stan\PYZus{}src} \PY{o}{=} \PY{l+s}{\PYZdq{}}
+        \PY{l+s}{d}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{\PYZob{}}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{t}\PY{l+s}{\PYZlt{}}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{w}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{=}\PY{l+s}{0}\PY{l+s}{\PYZgt{}}\PY{l+s}{ }\PY{l+s}{N}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{c}\PY{l+s}{t}\PY{l+s}{o}\PY{l+s}{r}\PY{l+s}{[}\PY{l+s}{N}\PY{l+s}{]}\PY{l+s}{ }\PY{l+s}{x}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{c}\PY{l+s}{t}\PY{l+s}{o}\PY{l+s}{r}\PY{l+s}{[}\PY{l+s}{N}\PY{l+s}{]}\PY{l+s}{ }\PY{l+s}{y}\PY{l+s}{;}
+        \PY{l+s}{\PYZcb{}}
+        \PY{l+s}{p}\PY{l+s}{a}\PY{l+s}{r}\PY{l+s}{a}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{\PYZob{}}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{ }\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{p}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{ }\PY{l+s}{b}\PY{l+s}{e}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{\PYZlt{}}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{w}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{=}\PY{l+s}{0}\PY{l+s}{\PYZgt{}}\PY{l+s}{ }\PY{l+s}{s}\PY{l+s}{i}\PY{l+s}{g}\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{;}
+        \PY{l+s}{\PYZcb{}}
+        \PY{l+s}{m}\PY{l+s}{o}\PY{l+s}{d}\PY{l+s}{e}\PY{l+s}{l}\PY{l+s}{ }\PY{l+s}{\PYZob{}}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{y}\PY{l+s}{ }\PY{l+s}{\PYZti{}}\PY{l+s}{ }\PY{l+s}{n}\PY{l+s}{o}\PY{l+s}{r}\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{(}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{p}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{+}\PY{l+s}{ }\PY{l+s}{b}\PY{l+s}{e}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{*}\PY{l+s}{ }\PY{l+s}{x}\PY{l+s}{,}\PY{l+s}{ }\PY{l+s}{s}\PY{l+s}{i}\PY{l+s}{g}\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{)}\PY{l+s}{;}
+        \PY{l+s}{\PYZcb{}}
+        \PY{l+s}{\PYZdq{}}
+        \PY{n}{lr\PYZus{}model} \PY{o}{=} \PY{n}{Stanmodel}\PY{p}{(}\PY{n}{model} \PY{o}{=} \PY{n}{lr\PYZus{}stan\PYZus{}src}\PY{p}{)}
+        \PY{n}{lr\PYZus{}data} \PY{o}{=} \PY{k+kt}{Dict}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{N}\PY{l+s}{\PYZdq{}} \PY{o}{=\PYZgt{}} \PY{l+m+mi}{100}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{x}\PY{l+s}{\PYZdq{}} \PY{o}{=\PYZgt{}} \PY{n}{rand}\PY{p}{(}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{y}\PY{l+s}{\PYZdq{}} \PY{o}{=\PYZgt{}} \PY{n}{rand}\PY{p}{(}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{)}
+        \PY{n}{lr\PYZus{}fit} \PY{o}{=} \PY{n}{stan}\PY{p}{(}\PY{n}{lr\PYZus{}model}\PY{p}{,} \PY{n}{lr\PYZus{}data}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+File /media/weiya/Windows/Users/weiya/Documents/GitHub/techNotes/docs/stan/tmp/noname.stan will be updated.
+
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Exception: normal\_lpdf: Scale parameter is 0, but must be > 0!  (in '/media/weiya/Windows/Users/weiya/Documents/GitHub/techNotes/docs/stan/tmp/noname.stan' at line 12)
+
+If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+Inference for Stan model: noname\_model
+4 chains: each with iter=(1000,1000,1000,1000); warmup=(0,0,0,0); thin=(1,1,1,1); 4000 iterations saved.
+
+Warmup took (0.064, 0.065, 0.064, 0.069) seconds, 0.26 seconds total
+Sampling took (0.091, 0.091, 0.088, 0.086) seconds, 0.36 seconds total
+
+                 Mean     MCSE  StdDev     5\%    50\%   95\%    N\_Eff  N\_Eff/s    R\_hat
+lp\_\_               67  3.2e-02     1.2     65     68    69  1.4e+03  4.0e+03  1.0e+00
+accept\_stat\_\_    0.93  1.5e-03   0.098   0.72   0.97   1.0  4.4e+03  1.2e+04  1.0e+00
+stepsize\_\_       0.32  2.2e-02   0.032   0.29   0.32  0.37  2.0e+00  5.6e+00  7.0e+13
+treedepth\_\_       3.0  1.6e-02    0.83    2.0    3.0   4.0  2.8e+03  7.8e+03  1.0e+00
+n\_leapfrog\_\_       10  8.1e-02     4.8    3.0     11    15  3.4e+03  9.6e+03  1.0e+00
+divergent\_\_      0.00     -nan    0.00   0.00   0.00  0.00     -nan     -nan     -nan
+energy\_\_          -66  4.6e-02     1.7    -68    -66   -63  1.4e+03  4.0e+03  1.0e+00
+alpha            0.45  1.6e-03   0.068   0.34   0.45  0.57  1.8e+03  5.0e+03  1.0e+00
+beta            0.050  2.6e-03    0.11  -0.13  0.052  0.23  1.8e+03  5.0e+03  1.0e+00
+sigma            0.31  4.5e-04   0.022   0.27   0.31  0.35  2.4e+03  6.7e+03  1.0e+00
+
+Samples were drawn using hmc with nuts.
+For each parameter, N\_Eff is a crude measure of effective sample size,
+and R\_hat is the potential scale reduction factor on split chains (at 
+convergence, R\_hat=1).
+
+
+    \end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}1}]:} (0, [67.3108 0.884086 … -0.0901903 0.319224; 68.0402 0.998217 … 0.0820083 0.309652; … ; 64.8937 0.714864 … 0.0733968 0.27372; 67.94 1.0 … -0.0534246 0.313792]
+        
+        [67.8875 0.992941 … -0.0267473 0.283699; 68.1533 0.992215 … 0.0788954 0.328354; … ; 68.4729 0.970527 … 0.0839659 0.296765; 66.3032 0.722181 … 0.0487446 0.316463]
+        
+        [66.0761 0.761098 … 0.293095 0.31294; 65.3591 0.860735 … 0.258585 0.320708; … ; 68.3152 1.0 … 0.051309 0.315001; 67.5405 0.994056 … 0.184409 0.325249]
+        
+        [67.5764 0.737473 … 0.092919 0.316847; 68.5774 0.940929 … 0.0665028 0.318573; … ; 67.2978 1.0 … 0.088559 0.273615; 68.6987 0.853552 … 0.0302446 0.313424], ["lp\_\_", "accept\_stat\_\_", "stepsize\_\_", "treedepth\_\_", "n\_leapfrog\_\_", "divergent\_\_", "energy\_\_", "alpha", "beta", "sigma"])
+\end{Verbatim}
+            
+    \hypertarget{qr-reparameterization}{%
+\subsection{QR Reparameterization}\label{qr-reparameterization}}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{lr\PYZus{}qr\PYZus{}stan\PYZus{}src} \PY{o}{=} \PY{l+s}{\PYZdq{}}
+        \PY{l+s}{d}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{\PYZob{}}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{t}\PY{l+s}{\PYZlt{}}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{w}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{=}\PY{l+s}{0}\PY{l+s}{\PYZgt{}}\PY{l+s}{ }\PY{l+s}{N}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{t}\PY{l+s}{\PYZlt{}}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{w}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{=}\PY{l+s}{0}\PY{l+s}{\PYZgt{}}\PY{l+s}{ }\PY{l+s}{K}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{r}\PY{l+s}{i}\PY{l+s}{x}\PY{l+s}{[}\PY{l+s}{N}\PY{l+s}{,}\PY{l+s}{ }\PY{l+s}{K}\PY{l+s}{]}\PY{l+s}{ }\PY{l+s}{x}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{c}\PY{l+s}{t}\PY{l+s}{o}\PY{l+s}{r}\PY{l+s}{[}\PY{l+s}{N}\PY{l+s}{]}\PY{l+s}{ }\PY{l+s}{y}\PY{l+s}{;}
+        \PY{l+s}{\PYZcb{}}
+        \PY{l+s}{t}\PY{l+s}{r}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{s}\PY{l+s}{f}\PY{l+s}{o}\PY{l+s}{r}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{ }\PY{l+s}{d}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{\PYZob{}}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{r}\PY{l+s}{i}\PY{l+s}{x}\PY{l+s}{[}\PY{l+s}{N}\PY{l+s}{,}\PY{l+s}{ }\PY{l+s}{K}\PY{l+s}{]}\PY{l+s}{ }\PY{l+s}{Q}\PY{l+s}{\PYZus{}}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{r}\PY{l+s}{i}\PY{l+s}{x}\PY{l+s}{[}\PY{l+s}{K}\PY{l+s}{,}\PY{l+s}{ }\PY{l+s}{K}\PY{l+s}{]}\PY{l+s}{ }\PY{l+s}{R}\PY{l+s}{\PYZus{}}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{r}\PY{l+s}{i}\PY{l+s}{x}\PY{l+s}{[}\PY{l+s}{K}\PY{l+s}{,}\PY{l+s}{ }\PY{l+s}{K}\PY{l+s}{]}\PY{l+s}{ }\PY{l+s}{R}\PY{l+s}{\PYZus{}}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{\PYZus{}}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{s}\PY{l+s}{e}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{Q}\PY{l+s}{\PYZus{}}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{ }\PY{l+s}{=}\PY{l+s}{ }\PY{l+s}{q}\PY{l+s}{r}\PY{l+s}{\PYZus{}}\PY{l+s}{Q}\PY{l+s}{(}\PY{l+s}{x}\PY{l+s}{)}\PY{l+s}{[}\PY{l+s}{,}\PY{l+s}{ }\PY{l+s}{1}\PY{l+s}{:}\PY{l+s}{K}\PY{l+s}{]}\PY{l+s}{ }\PY{l+s}{*}\PY{l+s}{ }\PY{l+s}{s}\PY{l+s}{q}\PY{l+s}{r}\PY{l+s}{t}\PY{l+s}{(}\PY{l+s}{N}\PY{l+s}{\PYZhy{}}\PY{l+s}{1}\PY{l+s}{)}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{R}\PY{l+s}{\PYZus{}}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{ }\PY{l+s}{=}\PY{l+s}{ }\PY{l+s}{q}\PY{l+s}{r}\PY{l+s}{\PYZus{}}\PY{l+s}{R}\PY{l+s}{(}\PY{l+s}{x}\PY{l+s}{)}\PY{l+s}{[}\PY{l+s}{1}\PY{l+s}{:}\PY{l+s}{K}\PY{l+s}{,}\PY{l+s}{ }\PY{l+s}{]}\PY{l+s}{ }\PY{l+s}{/}\PY{l+s}{ }\PY{l+s}{s}\PY{l+s}{q}\PY{l+s}{r}\PY{l+s}{t}\PY{l+s}{(}\PY{l+s}{N}\PY{l+s}{\PYZhy{}}\PY{l+s}{1}\PY{l+s}{)}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{R}\PY{l+s}{\PYZus{}}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{\PYZus{}}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{s}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{=}\PY{l+s}{ }\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{s}\PY{l+s}{e}\PY{l+s}{(}\PY{l+s}{R}\PY{l+s}{\PYZus{}}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{)}\PY{l+s}{;}
+        \PY{l+s}{\PYZcb{}}
+        \PY{l+s}{p}\PY{l+s}{a}\PY{l+s}{r}\PY{l+s}{a}\PY{l+s}{m}\PY{l+s}{e}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{\PYZob{}}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{ }\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{p}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{c}\PY{l+s}{t}\PY{l+s}{o}\PY{l+s}{r}\PY{l+s}{[}\PY{l+s}{K}\PY{l+s}{]}\PY{l+s}{ }\PY{l+s}{t}\PY{l+s}{h}\PY{l+s}{e}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{r}\PY{l+s}{e}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{\PYZlt{}}\PY{l+s}{l}\PY{l+s}{o}\PY{l+s}{w}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{=}\PY{l+s}{0}\PY{l+s}{\PYZgt{}}\PY{l+s}{ }\PY{l+s}{s}\PY{l+s}{i}\PY{l+s}{g}\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{;}
+        \PY{l+s}{\PYZcb{}}
+        \PY{l+s}{m}\PY{l+s}{o}\PY{l+s}{d}\PY{l+s}{e}\PY{l+s}{l}\PY{l+s}{ }\PY{l+s}{\PYZob{}}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{y}\PY{l+s}{ }\PY{l+s}{\PYZti{}}\PY{l+s}{ }\PY{l+s}{n}\PY{l+s}{o}\PY{l+s}{r}\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{(}\PY{l+s}{Q}\PY{l+s}{\PYZus{}}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{ }\PY{l+s}{*}\PY{l+s}{ }\PY{l+s}{t}\PY{l+s}{h}\PY{l+s}{e}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{+}\PY{l+s}{ }\PY{l+s}{a}\PY{l+s}{l}\PY{l+s}{p}\PY{l+s}{h}\PY{l+s}{a}\PY{l+s}{,}\PY{l+s}{ }\PY{l+s}{s}\PY{l+s}{i}\PY{l+s}{g}\PY{l+s}{m}\PY{l+s}{a}\PY{l+s}{)}\PY{l+s}{;}
+        \PY{l+s}{\PYZcb{}}
+        \PY{l+s}{g}\PY{l+s}{e}\PY{l+s}{n}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{a}\PY{l+s}{t}\PY{l+s}{e}\PY{l+s}{d}\PY{l+s}{ }\PY{l+s}{q}\PY{l+s}{u}\PY{l+s}{a}\PY{l+s}{n}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{t}\PY{l+s}{i}\PY{l+s}{e}\PY{l+s}{s}\PY{l+s}{ }\PY{l+s}{\PYZob{}}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{c}\PY{l+s}{t}\PY{l+s}{o}\PY{l+s}{r}\PY{l+s}{[}\PY{l+s}{K}\PY{l+s}{]}\PY{l+s}{ }\PY{l+s}{b}\PY{l+s}{e}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{;}
+        \PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{ }\PY{l+s}{b}\PY{l+s}{e}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{ }\PY{l+s}{=}\PY{l+s}{ }\PY{l+s}{R}\PY{l+s}{\PYZus{}}\PY{l+s}{a}\PY{l+s}{s}\PY{l+s}{t}\PY{l+s}{\PYZus{}}\PY{l+s}{i}\PY{l+s}{n}\PY{l+s}{v}\PY{l+s}{e}\PY{l+s}{r}\PY{l+s}{s}\PY{l+s}{e}\PY{l+s}{ }\PY{l+s}{*}\PY{l+s}{ }\PY{l+s}{t}\PY{l+s}{h}\PY{l+s}{e}\PY{l+s}{t}\PY{l+s}{a}\PY{l+s}{;}
+        \PY{l+s}{\PYZcb{}}
+        \PY{l+s}{\PYZdq{}}
+        \PY{n}{lr\PYZus{}qr\PYZus{}model} \PY{o}{=} \PY{n}{Stanmodel}\PY{p}{(}\PY{n}{model} \PY{o}{=} \PY{n}{lr\PYZus{}qr\PYZus{}stan\PYZus{}src}\PY{p}{)}
+        \PY{n}{x} \PY{o}{=} \PY{n}{rand}\PY{p}{(}\PY{l+m+mi}{100}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}
+        \PY{n}{y} \PY{o}{=} \PY{n}{x}\PY{p}{[}\PY{o}{:}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{x}\PY{p}{[}\PY{o}{:}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{]} \PY{o}{+} \PY{n}{x}\PY{p}{[}\PY{o}{:}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]} \PY{o}{*} \PY{l+m+mi}{2} \PY{o}{+} \PY{n}{x}\PY{p}{[}\PY{o}{:}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{]} 
+        \PY{n}{lr\PYZus{}qr\PYZus{}data} \PY{o}{=} \PY{k+kt}{Dict}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{N}\PY{l+s}{\PYZdq{}} \PY{o}{=\PYZgt{}} \PY{l+m+mi}{100}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{K}\PY{l+s}{\PYZdq{}} \PY{o}{=\PYZgt{}} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{x}\PY{l+s}{\PYZdq{}} \PY{o}{=\PYZgt{}} \PY{n}{x}\PY{p}{,} \PY{l+s}{\PYZdq{}}\PY{l+s}{y}\PY{l+s}{\PYZdq{}} \PY{o}{=\PYZgt{}} \PY{n}{y}\PY{p}{)}
+        \PY{n}{lr\PYZus{}fit} \PY{o}{=} \PY{n}{stan}\PY{p}{(}\PY{n}{lr\PYZus{}qr\PYZus{}model}\PY{p}{,} \PY{n}{lr\PYZus{}qr\PYZus{}data}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Exception: normal\_lpdf: Scale parameter is 0, but must be > 0!  (in '/home/weiya/cmdstan/tmp/noname.stan' at line 21)
+
+If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+Inference for Stan model: noname\_model
+4 chains: each with iter=(1000,1000,1000,1000); warmup=(0,0,0,0); thin=(1,1,1,1); 4000 iterations saved.
+
+Warmup took (1.1, 1.1, 0.95, 1.2) seconds, 4.4 seconds total
+Sampling took (2.4, 2.3, 2.0, 2.5) seconds, 9.2 seconds total
+
+                    Mean     MCSE   StdDev        5\%       50\%       95\%    N\_Eff  N\_Eff/s    R\_hat
+lp\_\_             1.4e+03  6.3e+00  1.9e+01   1.4e+03   1.4e+03   1.4e+03  8.8e+00  9.6e-01  1.8e+00
+accept\_stat\_\_    6.8e-01  1.2e-01  3.2e-01   3.7e-02   8.1e-01   1.0e+00  7.1e+00  7.6e-01  1.5e+00
+stepsize\_\_       2.1e-05  3.2e-06  4.5e-06   1.6e-05   2.1e-05   2.8e-05  2.0e+00  2.2e-01  2.4e+14
+treedepth\_\_      5.6e+00  5.4e-02  3.2e+00   2.0e+00   4.0e+00   1.0e+01  3.4e+03  3.7e+02  1.0e+00
+n\_leapfrog\_\_     3.3e+02  8.3e+00  4.3e+02   3.0e+00   3.1e+01   1.0e+03  2.7e+03  2.9e+02  1.0e+00
+divergent\_\_      4.4e-02     -nan  2.1e-01   0.0e+00   0.0e+00   0.0e+00     -nan     -nan  1.1e+00
+energy\_\_        -1.4e+03  6.3e+00  1.9e+01  -1.4e+03  -1.4e+03  -1.4e+03  8.9e+00  9.7e-01  1.8e+00
+alpha           -6.3e-09  5.8e-09  2.4e-07  -4.0e-07  -5.5e-09   3.9e-07  1.7e+03  1.8e+02  1.0e+00
+theta[1]         2.4e+00  2.5e-15  3.6e-15   2.4e+00   2.4e+00   2.4e+00  2.0e+00  2.2e-01  1.0e+00
+theta[2]         8.6e-01  8.3e-10  4.2e-08   8.6e-01   8.6e-01   8.6e-01  2.6e+03  2.8e+02  1.0e+00
+theta[3]         8.1e-01  9.2e-15  1.3e-14   8.1e-01   8.1e-01   8.1e-01  2.0e+00  2.2e-01  1.0e+00
+theta[4]         3.3e-01  3.9e-17  5.6e-17   3.3e-01   3.3e-01   3.3e-01  2.0e+00  2.2e-01  1.0e+00
+sigma            6.6e-07  4.1e-08  1.3e-07   4.7e-07   6.4e-07   8.7e-07  9.6e+00  1.0e+00  1.7e+00
+beta[1]          1.0e+00  2.6e-09  1.3e-07   1.0e+00   1.0e+00   1.0e+00  2.6e+03  2.9e+02  1.0e+00
+beta[2]          1.0e+00  3.5e-09  1.5e-07   1.0e+00   1.0e+00   1.0e+00  1.8e+03  1.9e+02  1.0e+00
+beta[3]          2.0e+00     -nan  1.3e-15   2.0e+00   2.0e+00   2.0e+00     -nan     -nan  1.0e+00
+beta[4]          1.0e+00  3.1e-09  1.5e-07   1.0e+00   1.0e+00   1.0e+00  2.3e+03  2.5e+02  1.0e+00
+
+Samples were drawn using hmc with nuts.
+For each parameter, N\_Eff is a crude measure of effective sample size,
+and R\_hat is the potential scale reduction factor on split chains (at 
+convergence, R\_hat=1).
+
+
+    \end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}6}]:} (0, [1378.1 0.989084 … 2.0 1.0; 1376.41 0.965605 … 2.0 1.0; … ; 1440.19 0.21143 … 2.0 1.0; 1440.19 0.0212026 … 2.0 1.0]
+        
+        [1380.41 0.97227 … 2.0 1.0; 1380.83 0.928805 … 2.0 1.0; … ; 1411.84 0.866959 … 2.0 1.0; 1415.28 1.0 … 2.0 1.0]
+        
+        [1344.89 0.982476 … 2.0 1.0; 1344.66 0.990933 … 2.0 1.0; … ; 1410.63 0.357847 … 2.0 1.0; 1411.7 0.1556 … 2.0 1.0]
+        
+        [1397.31 0.973037 … 2.0 1.0; 1397.8 0.893892 … 2.0 1.0; … ; 1450.17 0.952858 … 2.0 1.0; 1449.52 0.941807 … 2.0 1.0], ["lp\_\_", "accept\_stat\_\_", "stepsize\_\_", "treedepth\_\_", "n\_leapfrog\_\_", "divergent\_\_", "energy\_\_", "alpha", "theta.1", "theta.2", "theta.3", "theta.4", "sigma", "beta.1", "beta.2", "beta.3", "beta.4"])
+\end{Verbatim}
+            
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
