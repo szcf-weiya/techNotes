@@ -1,3 +1,5 @@
 site/
 .Rproj.user
 .spyproject
+.ipynb_checkpoints/
+tmp/
