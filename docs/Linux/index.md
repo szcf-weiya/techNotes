@@ -627,3 +627,11 @@ gnome-disks
 ```
 
 进行设置，详见[How to change hard drive name](https://askubuntu.com/questions/904561/how-to-change-hard-drive-name/904564)
+
+## remove broken link
+
+```bash
+find -L . -name . -o -type d -prune -o -type l -exec rm {} + 
+```
+
+[Delete all broken symbolic links with a line?](https://stackoverflow.com/questions/22097130/delete-all-broken-symbolic-links-with-a-line)
