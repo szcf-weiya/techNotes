@@ -15,6 +15,7 @@ pages:
     - Python:
       - 一般问题: python/index.md
       - PyStan 体验: python/pystan/README.md
+      - OpenCV: python/opencv.md
     - Julia: julia/index.md
     - Tex: TeX/index.md
     - Website:
