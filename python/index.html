@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.0">
     
     
       
@@ -51,7 +51,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+      <script src="../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
@@ -848,6 +848,13 @@
         <li class="md-nav__item">
   <a href="#non-ascii" title="写入 non-ascii 字符" class="md-nav__link">
     写入 non-ascii 字符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-jupyter" title="不同 environment 的 jupyter" class="md-nav__link">
+    不同 environment 的 jupyter
   </a>
   
 </li>
@@ -1769,6 +1776,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#environment-jupyter" title="不同 environment 的 jupyter" class="md-nav__link">
+    不同 environment 的 jupyter
+  </a>
+  
+</li>
+      
       
       
       
@@ -2075,6 +2089,8 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 
 
 <p>参考 <a href="https://stackoverflow.com/questions/33255846/python-write-a-list-with-non-ascii-characters-to-a-text-file">Python: write a list with non-ASCII characters to a text file</a> 采用 <code>codecs.open(, "w", encoding="utf-8")</code> 可以解决需求。</p>
+<h2 id="environment-jupyter">不同 environment 的 jupyter<a class="headerlink" href="#environment-jupyter" title="Permanent link">&para;</a></h2>
+<p>其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 <a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments">Kernels for different environments</a></p>
                 
                   
                 
@@ -2163,7 +2179,7 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
       
     </div>
     
-      <script src="../assets/javascripts/application.d9aa80ab.js"></script>
+      <script src="../assets/javascripts/application.2ba8dec4.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
