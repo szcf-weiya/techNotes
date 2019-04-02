@@ -17,3 +17,23 @@ model {
     sigma ~ cauchy(0, 5);
 }
 "
+
+src1 = "
+data {
+    ...
+    real x_meas[N]; // measurement of x 
+    real<lower=0> tau; // measurement noise
+}
+parameters {
+    real x[N]; // unknown true value
+    real mu_x; // prior location
+    real sigma_x; // prior scale
+    ...
+}
+model {
+    x ~ normal(mu_x, sigma_x); //prior
+    x_meas ~ normal(x, tau); // measurement model
+    y ~ normal(alpha + beta * x, sigma);
+    ...
+}
+"
