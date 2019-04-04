@@ -140,3 +140,7 @@ $$
 Refer to [EM maximum likelihood estimation for Weibull distribution](https://stats.stackexchange.com/questions/22787/em-maximum-likelihood-estimation-for-weibull-distribution)
 
 A little confused about [the answer](https://stats.stackexchange.com/a/343568/171750)
+
+## Power method for top eigenvector
+
+[Power method for obtaining the top eigenvector](https://statisticaloddsandends.wordpress.com/2019/03/27/power-method-for-obtaining-the-top-eigenvector/)
