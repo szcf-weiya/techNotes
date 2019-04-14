@@ -859,6 +859,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#xy" title="画图 xy 顺序" class="md-nav__link">
+    画图 xy 顺序
+  </a>
+  
+</li>
+      
       
       
       
@@ -1795,6 +1802,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#xy" title="画图 xy 顺序" class="md-nav__link">
+    画图 xy 顺序
+  </a>
+  
+</li>
+      
       
       
       
@@ -2103,6 +2117,13 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <p>参考 <a href="https://stackoverflow.com/questions/33255846/python-write-a-list-with-non-ascii-characters-to-a-text-file">Python: write a list with non-ASCII characters to a text file</a> 采用 <code>codecs.open(, "w", encoding="utf-8")</code> 可以解决需求。</p>
 <h2 id="environment-jupyter">不同 environment 的 jupyter<a class="headerlink" href="#environment-jupyter" title="Permanent link">&para;</a></h2>
 <p>其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 <a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments">Kernels for different environments</a></p>
+<h2 id="xy">画图 xy 顺序<a class="headerlink" href="#xy" title="Permanent link">&para;</a></h2>
+<ol>
+<li>imshow 中的 <a href="https://matplotlib.org/tutorials/intermediate/imshow_extent.html">origin and extent</a></li>
+</ol>
+<blockquote>
+<p>Generally, for an array of shape (M, N), the first index runs along the vertical, the second index runs along the horizontal. The pixel centers are at integer positions ranging from 0 to N&rsquo; = N - 1 horizontally and from 0 to M&rsquo; = M - 1 vertically. origin determines how to the data is filled in the bounding box.</p>
+</blockquote>
                 
                   
                 
