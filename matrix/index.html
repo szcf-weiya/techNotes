@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
@@ -873,6 +873,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rkab-leq-rkarkab-leq-rka" title="\rk(AB) \leq \rk(A)\rk(AB) \leq \rk(A)" class="md-nav__link">
+    \rk(AB) \leq \rk(A)\rk(AB) \leq \rk(A)
+  </a>
+  
+</li>
+      
       
       
       
@@ -1247,6 +1254,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rkab-leq-rkarkab-leq-rka" title="\rk(AB) \leq \rk(A)\rk(AB) \leq \rk(A)" class="md-nav__link">
+    \rk(AB) \leq \rk(A)\rk(AB) \leq \rk(A)
+  </a>
+  
+</li>
+      
       
       
       
@@ -1381,6 +1395,57 @@ A=QR\,.
 </div>
 <p>This decomposition can be used to convert the linear system <span><span class="MathJax_Preview">Ax=b</span><script type="math/tex">Ax=b</script></span> into the triangular system <span><span class="MathJax_Preview">Rx=Q^Tb</span><script type="math/tex">Rx=Q^Tb</script></span>, which can be solved by back-substitution.</p>
 <p>Another use of the QR decomposition is to compute an orthonormal basis for a set of vectors. The first <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> columns of <span><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> form an orthonormal basis for the range of <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>, <span><span class="MathJax_Preview">ran(A)</span><script type="math/tex">ran(A)</script></span>, when <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> has full column rank.</p>
+<h2 id="rkab-leq-rkarkab-leq-rka"><span><span class="MathJax_Preview">\rk(AB) \leq \rk(A)</span><script type="math/tex">\rk(AB) \leq \rk(A)</script></span><a class="headerlink" href="#rkab-leq-rkarkab-leq-rka" title="Permanent link">&para;</a></h2>
+<p>The range of the matrix <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> is </p>
+<div>
+<div class="MathJax_Preview">
+\calR(M)=\{\mathbf{y} \in \R^m \mid \mathbf{y}=M\mathbf{x} \text{ for some } \mathbf{x} \in \R^n\}.
+</div>
+<script type="math/tex; mode=display">
+\calR(M)=\{\mathbf{y} \in \R^m \mid \mathbf{y}=M\mathbf{x} \text{ for some } \mathbf{x} \in \R^n\}.
+</script>
+</div>
+<p>Recall that the rank of a matrix <span><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> is the dimension of the range <span><span class="MathJax_Preview">R(M)</span><script type="math/tex">R(M)</script></span> of the matrix M.
+So we have</p>
+<div>
+<div class="MathJax_Preview">
+\rk(AB)=\dim(\calR(AB)), \quad \rk(A)=\dim(\calR(A)).
+</div>
+<script type="math/tex; mode=display">
+\rk(AB)=\dim(\calR(AB)), \quad \rk(A)=\dim(\calR(A)).
+</script>
+</div>
+<p>In general, if a vector space <span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> is a subset of a vector space <span><span class="MathJax_Preview">W</span><script type="math/tex">W</script></span>, then we have</p>
+<div>
+<div class="MathJax_Preview">
+\dim(V) \leq \dim(W).
+</div>
+<script type="math/tex; mode=display">
+\dim(V) \leq \dim(W).
+</script>
+</div>
+<p>Thus, it suffices to show that the vector space <span><span class="MathJax_Preview">\calR(AB)</span><script type="math/tex">\calR(AB)</script></span> is a subset of the vector space <span><span class="MathJax_Preview">\calR(A)</span><script type="math/tex">\calR(A)</script></span>.</p>
+<p>Consider any vector <span><span class="MathJax_Preview">\y\in\calR(AB)</span><script type="math/tex">\y\in\calR(AB)</script></span>. Then there exists a vector <span><span class="MathJax_Preview">\x\in\R^l</span><script type="math/tex">\x\in\R^l</script></span> such that <span><span class="MathJax_Preview">\y=(AB)\x</span><script type="math/tex">\y=(AB)\x</script></span> by the definition of the range.</p>
+<p>Let <span><span class="MathJax_Preview">\z=B\x\in\R^n</span><script type="math/tex">\z=B\x\in\R^n</script></span>.</p>
+<p>Then we have</p>
+<div>
+<div class="MathJax_Preview">
+\mathbf{y}=A(B\mathbf{x})=A\mathbf{z}
+</div>
+<script type="math/tex; mode=display">
+\mathbf{y}=A(B\mathbf{x})=A\mathbf{z}
+</script>
+</div>
+<p>and thus the vector <span><span class="MathJax_Preview">\y</span><script type="math/tex">\y</script></span> is in <span><span class="MathJax_Preview">\calR(A)</span><script type="math/tex">\calR(A)</script></span>. Thus <span><span class="MathJax_Preview">\calR(AB)</span><script type="math/tex">\calR(AB)</script></span> is a subset of <span><span class="MathJax_Preview">\calR(A)</span><script type="math/tex">\calR(A)</script></span> and we have</p>
+<div>
+<div class="MathJax_Preview">
+\rk(AB)=\dim(\calR(AB)) \leq \dim(\calR(A))=\rk(A).
+</div>
+<script type="math/tex; mode=display">
+\rk(AB)=\dim(\calR(AB)) \leq \dim(\calR(A))=\rk(A).
+</script>
+</div>
+<p>refer to <a href="https://yutsumura.com/rank-of-the-product-of-matrices-ab-is-less-than-or-equal-to-the-rank-of-a/">Rank of the Product of Matrices AB is Less than or Equal to the Rank of A</a></p>
                 
                   
                 
@@ -1469,7 +1534,7 @@ A=QR\,.
       
     </div>
     
-      <script src="../assets/javascripts/application.dc02f8ce.js"></script>
+      <script src="../assets/javascripts/application.267712eb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
