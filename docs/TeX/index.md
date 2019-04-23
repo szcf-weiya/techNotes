@@ -595,3 +595,16 @@ refer to [Capacity exceeded](https://texfaq.org/FAQ-semanticnest)
 ```
 
 参考 [Change TeX Live Main Repository](https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository)
+
+## `operatorname` vs `mathrm`
+
+
+`\operatorname`:
+
+The argument is written in upright mode but with some additional space before and behind.
+
+`\mathrm`:
+
+It is like math mode (no spaces), but in upright mode. The font size isn't changed.
+
+[What's the difference between \mathrm and \operatorname?](https://tex.stackexchange.com/questions/48459/whats-the-difference-between-mathrm-and-operatorname)

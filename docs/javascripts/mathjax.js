@@ -43,6 +43,7 @@ window.MathJax = {
         bbR: "{\\mathbb{R}}",
   
         calC: "{{\\cal{C}}}",
+        calR: "{{\\cal{R}}}",
         calS: "{{\\cal{S}}}",
         calI: "{{\\cal{I}}}",
         cC: "{{\\cal{C}}}",
@@ -78,6 +79,8 @@ window.MathJax = {
         Ave: "{\\mathrm{Ave}}",
         median: "{\\mathrm{median}}",
         card: "{\\mathrm{card}}",
+        rk: "{\\operatorname{rank}}", 
+        dim: "{\\operatorname{dim}}", 
         
         inf: "{\\mathrm{inf}}",
         sign: "{\\mathrm{sign}}",

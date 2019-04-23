@@ -115,3 +115,43 @@ This decomposition can be used to convert the linear system $Ax=b$ into the tria
 
 Another use of the QR decomposition is to compute an orthonormal basis for a set of vectors. The first $N$ columns of $Q$ form an orthonormal basis for the range of $A$, $ran(A)$, when $A$ has full column rank.
 
+## $\rk(AB) \leq \rk(A)$
+
+The range of the matrix $M$ is 
+
+$$
+\calR(M)=\{\mathbf{y} \in \R^m \mid \mathbf{y}=M\mathbf{x} \text{ for some } \mathbf{x} \in \R^n\}.
+$$
+
+Recall that the rank of a matrix $M$ is the dimension of the range $R(M)$ of the matrix M.
+So we have
+
+$$
+\rk(AB)=\dim(\calR(AB)), \quad \rk(A)=\dim(\calR(A)).
+$$
+
+In general, if a vector space $V$ is a subset of a vector space $W$, then we have
+
+$$
+\dim(V) \leq \dim(W).
+$$
+
+Thus, it suffices to show that the vector space $\calR(AB)$ is a subset of the vector space $\calR(A)$.
+
+Consider any vector $\y\in\calR(AB)$. Then there exists a vector $\x\in\R^l$ such that $\y=(AB)\x$ by the definition of the range.
+
+Let $\z=B\x\in\R^n$.
+
+Then we have
+
+$$
+\mathbf{y}=A(B\mathbf{x})=A\mathbf{z}
+$$
+
+and thus the vector $\y$ is in $\calR(A)$. Thus $\calR(AB)$ is a subset of $\calR(A)$ and we have
+
+$$
+\rk(AB)=\dim(\calR(AB)) \leq \dim(\calR(A))=\rk(A).
+$$
+
+refer to [Rank of the Product of Matrices AB is Less than or Equal to the Rank of A](https://yutsumura.com/rank-of-the-product-of-matrices-ab-is-less-than-or-equal-to-the-rank-of-a/)
