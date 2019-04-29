@@ -889,6 +889,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#proof-by-parts" title="proof by parts" class="md-nav__link">
+    proof by parts
+  </a>
+  
+</li>
+      
       
       
       
@@ -1751,6 +1758,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#proof-by-parts" title="proof by parts" class="md-nav__link">
+    proof by parts
+  </a>
+  
+</li>
+      
       
       
       
@@ -2251,6 +2265,17 @@ git push origin master --tags
 
 
 <p>refer to <a href="https://tex.stackexchange.com/questions/43966/how-to-make-the-optional-title-of-a-theorem-bold-with-amsthm">How to make the optional title of a theorem bold with amsthm?</a></p>
+<h2 id="proof-by-parts">proof by parts<a class="headerlink" href="#proof-by-parts" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="k">\newtheorem</span><span class="nb">{</span>proofpart<span class="nb">}{</span>Part<span class="nb">}</span>
+<span class="k">\newtheorem</span><span class="nb">{</span>theorem<span class="nb">}{</span>Theorem<span class="nb">}</span>
+<span class="k">\makeatletter</span>
+<span class="k">\@</span>addtoreset<span class="nb">{</span>proofpart<span class="nb">}{</span>theorem<span class="nb">}</span>
+<span class="k">\makeatother</span>
+</pre></div>
+
+
+<p>here <code>\@addtoreset{foo}{bar}</code> is to add counter <code>foo</code> to the list of counters <code>\cl@bar</code> to be reset when counter <code>bar</code> is stepped.</p>
+<p>Refer to <a href="https://tex.stackexchange.com/questions/101880/parts-numbering-in-proofs">Parts numbering in Proofs</a></p>
                 
                   
                 
