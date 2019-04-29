@@ -608,3 +608,25 @@ The argument is written in upright mode but with some additional space before an
 It is like math mode (no spaces), but in upright mode. The font size isn't changed.
 
 [What's the difference between \mathrm and \operatorname?](https://tex.stackexchange.com/questions/48459/whats-the-difference-between-mathrm-and-operatorname)
+
+## bold for theorem title.
+
+Without `amsthm`, the title is bold by default. Refer to [Title of the theorem](https://tex.stackexchange.com/questions/22223/title-of-the-theorem).
+
+With `amsthm`, one solution is to add these in the preamble.
+
+```tex
+\usepackage{amsthm}
+\makeatletter
+\def\th@plain{%
+  \thm@notefont{}% same as heading font
+  \itshape % body font
+}
+\def\th@definition{%
+  \thm@notefont{}% same as heading font
+  \normalfont % body font
+}
+\makeatother
+```
+
+refer to [How to make the optional title of a theorem bold with amsthm?](https://tex.stackexchange.com/questions/43966/how-to-make-the-optional-title-of-a-theorem-bold-with-amsthm)
