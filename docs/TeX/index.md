@@ -630,3 +630,17 @@ With `amsthm`, one solution is to add these in the preamble.
 ```
 
 refer to [How to make the optional title of a theorem bold with amsthm?](https://tex.stackexchange.com/questions/43966/how-to-make-the-optional-title-of-a-theorem-bold-with-amsthm)
+
+## proof by parts
+
+```tex
+\newtheorem{proofpart}{Part}
+\newtheorem{theorem}{Theorem}
+\makeatletter
+\@addtoreset{proofpart}{theorem}
+\makeatother
+```
+
+here `\@addtoreset{foo}{bar}` is to add counter `foo` to the list of counters `\cl@bar` to be reset when counter `bar` is stepped.
+
+Refer to [Parts numbering in Proofs](https://tex.stackexchange.com/questions/101880/parts-numbering-in-proofs)
