@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
@@ -46,12 +46,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.01ccdecf.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -878,6 +878,13 @@
         <li class="md-nav__item">
   <a href="#operatorname-vs-mathrm" title="operatorname vs mathrm" class="md-nav__link">
     operatorname vs mathrm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bold-for-theorem-title" title="bold for theorem title." class="md-nav__link">
+    bold for theorem title.
   </a>
   
 </li>
@@ -1737,6 +1744,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bold-for-theorem-title" title="bold for theorem title." class="md-nav__link">
+    bold for theorem title.
+  </a>
+  
+</li>
+      
       
       
       
@@ -2219,6 +2233,24 @@ git push origin master --tags
 <p><code>\mathrm</code>:</p>
 <p>It is like math mode (no spaces), but in upright mode. The font size isn&rsquo;t changed.</p>
 <p><a href="https://tex.stackexchange.com/questions/48459/whats-the-difference-between-mathrm-and-operatorname">What&rsquo;s the difference between \mathrm and \operatorname?</a></p>
+<h2 id="bold-for-theorem-title">bold for theorem title.<a class="headerlink" href="#bold-for-theorem-title" title="Permanent link">&para;</a></h2>
+<p>Without <code>amsthm</code>, the title is bold by default. Refer to <a href="https://tex.stackexchange.com/questions/22223/title-of-the-theorem">Title of the theorem</a>.</p>
+<p>With <code>amsthm</code>, one solution is to add these in the preamble.</p>
+<div class="codehilite"><pre><span></span><span class="k">\usepackage</span><span class="nb">{</span>amsthm<span class="nb">}</span>
+<span class="k">\makeatletter</span>
+<span class="k">\def\th</span>@plain<span class="nb">{</span><span class="c">%</span>
+  <span class="k">\thm</span>@notefont<span class="nb">{}</span><span class="c">% same as heading font</span>
+  <span class="k">\itshape</span> <span class="c">% body font</span>
+<span class="nb">}</span>
+<span class="k">\def\th</span>@definition<span class="nb">{</span><span class="c">%</span>
+  <span class="k">\thm</span>@notefont<span class="nb">{}</span><span class="c">% same as heading font</span>
+  <span class="k">\normalfont</span> <span class="c">% body font</span>
+<span class="nb">}</span>
+<span class="k">\makeatother</span>
+</pre></div>
+
+
+<p>refer to <a href="https://tex.stackexchange.com/questions/43966/how-to-make-the-optional-title-of-a-theorem-bold-with-amsthm">How to make the optional title of a theorem bold with amsthm?</a></p>
                 
                   
                 
@@ -2307,7 +2339,7 @@ git push origin master --tags
       
     </div>
     
-      <script src="../assets/javascripts/application.267712eb.js"></script>
+      <script src="../assets/javascripts/application.39abc4af.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
