@@ -22,7 +22,7 @@ Refer to [ARPM: Wishart and Gamma distribution](https://www.arpm.co/lab/GammaDis
 
 1. $\int_0^\infty e^{-x^2}dx$, see [Impossible Integral](https://www.math.hmc.edu/funfacts/ffiles/20008.3.shtml).
 2. [Integral Inequality Absolute Value: $|\int^b_af(x)g(x) dx∣\le\int_a^b|f(x)|⋅|g(x)| dx$](https://math.stackexchange.com/questions/429220/integral-inequality-absolute-value-left-int-ab-fx-gx-dx-right)
-3. $\sum \dfrac{1}{n\log n}$ and $\sum \dfrac{1}{n\log(\log(\log n))}$ diverges, while $\sum\dfrac{1}{x\log^2x}$ converges, refer to [Infinite series ...](https://math.stackexchange.com/questions/574503/infinite-series-sum-n-2-infty-frac1n-log-n) for more details.
+3. $\sum \dfrac{1}{n\log n}$ and $\sum \dfrac{1}{n\log n\log(\log n)}$ diverges, while $\sum\dfrac{1}{x\log^2x}$ converges, refer to [Infinite series ...](https://math.stackexchange.com/questions/574503/infinite-series-sum-n-2-infty-frac1n-log-n) for more details.
 
 ## Simplex Volume
 
