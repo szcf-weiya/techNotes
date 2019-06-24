@@ -271,3 +271,16 @@ refer to [Configuring Jekyll for User and Project GitHub Pages](http://downtothe
 ```
 
 详见 [LaTeX Theorem-like Environments for the Web](http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/)
+
+## list start from 0
+
+In `kramdown`, use an IAL declaration before the list, say
+
+```html
+{:start="3"}
+1. test
+1. test
+1. test
+```
+
+Implementation for html can be found [here](https://stackoverflow.com/questions/15078393/begin-ordered-list-from-0-in-markdown).
