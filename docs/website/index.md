@@ -283,4 +283,6 @@ In `kramdown`, use an IAL declaration before the list, say
 1. test
 ```
 
+Refer to [Support starting numbered lists with arbitrary number #211](https://github.com/gettalong/kramdown/issues/211)
+
 Implementation for html can be found [here](https://stackoverflow.com/questions/15078393/begin-ordered-list-from-0-in-markdown).
