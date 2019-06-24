@@ -851,6 +851,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#arrays-with-different-size" title="arrays with different size" class="md-nav__link">
+    arrays with different size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-index-of-an-item" title="find index of an item" class="md-nav__link">
+    find index of an item
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index-a-list-with-another-list" title="index a list with another list" class="md-nav__link">
+    index a list with another list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-indices-of-true" title="getting indices of true" class="md-nav__link">
+    getting indices of true
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-noting" title="do noting" class="md-nav__link">
+    do noting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-by-index" title="remove by index" class="md-nav__link">
+    remove by index
+  </a>
+  
+</li>
+      
       
       
       
@@ -1794,6 +1836,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#arrays-with-different-size" title="arrays with different size" class="md-nav__link">
+    arrays with different size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-index-of-an-item" title="find index of an item" class="md-nav__link">
+    find index of an item
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index-a-list-with-another-list" title="index a list with another list" class="md-nav__link">
+    index a list with another list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-indices-of-true" title="getting indices of true" class="md-nav__link">
+    getting indices of true
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-noting" title="do noting" class="md-nav__link">
+    do noting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-by-index" title="remove by index" class="md-nav__link">
+    remove by index
+  </a>
+  
+</li>
+      
       
       
       
@@ -2109,6 +2193,59 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <blockquote>
 <p>Generally, for an array of shape (M, N), the first index runs along the vertical, the second index runs along the horizontal. The pixel centers are at integer positions ranging from 0 to N&rsquo; = N - 1 horizontally and from 0 to M&rsquo; = M - 1 vertically. origin determines how to the data is filled in the bounding box.</p>
 </blockquote>
+<p>also refer to</p>
+<p><a href="https://stackoverflow.com/questions/37706005/matplotlib-coordinates-convention-of-image-imshow-incompatible-with-plot">matplotlib: coordinates convention of image imshow incompatible with plot</a></p>
+<h2 id="arrays-with-different-size">arrays with different size<a class="headerlink" href="#arrays-with-different-size" title="Permanent link">&para;</a></h2>
+<ul>
+<li>nested list</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
+</pre></div>
+
+
+<ul>
+<li>numpy</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+</pre></div>
+
+
+<p>refer to <a href="https://stackoverflow.com/questions/3386259/how-to-make-a-multidimension-numpy-array-with-a-varying-row-size">How to make a multidimension numpy array with a varying row size?</a></p>
+<h2 id="find-index-of-an-item">find index of an item<a class="headerlink" href="#find-index-of-an-item" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="n">e</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="n">e</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="mi">2</span>
+</pre></div>
+
+
+<p>refer to <a href="https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-given-a-list-containing-it-in-python">Finding the index of an item given a list containing it in Python</a></p>
+<h2 id="index-a-list-with-another-list">index a list with another list<a class="headerlink" href="#index-a-list-with-another-list" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]</span>
+<span class="n">Idx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Idx</span><span class="p">]</span>
+</pre></div>
+
+
+<p>refer to <a href="https://stackoverflow.com/questions/1012185/in-python-how-do-i-index-a-list-with-another-list">In Python, how do I index a list with another list?</a></p>
+<h2 id="getting-indices-of-true">getting indices of true<a class="headerlink" href="#getting-indices-of-true" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+</pre></div>
+
+
+<p>refer to <a href="https://stackoverflow.com/questions/21448225/getting-indices-of-true-values-in-a-boolean-list">Getting indices of True values in a boolean list</a></p>
+<h2 id="do-noting">do noting<a class="headerlink" href="#do-noting" title="Permanent link">&para;</a></h2>
+<p><code>pass</code></p>
+<h2 id="remove-by-index">remove by index<a class="headerlink" href="#remove-by-index" title="Permanent link">&para;</a></h2>
+<p><code>del</code></p>
+<p>refer to <a href="https://stackoverflow.com/questions/627435/how-to-remove-an-element-from-a-list-by-index">How to remove an element from a list by index?</a></p>
                 
                   
                 
