@@ -414,3 +414,69 @@ f.write(write.str)
 1. imshow 中的 [origin and extent](https://matplotlib.org/tutorials/intermediate/imshow_extent.html)
 
 > Generally, for an array of shape (M, N), the first index runs along the vertical, the second index runs along the horizontal. The pixel centers are at integer positions ranging from 0 to N' = N - 1 horizontally and from 0 to M' = M - 1 vertically. origin determines how to the data is filled in the bounding box.
+
+also refer to
+
+[matplotlib: coordinates convention of image imshow incompatible with plot](https://stackoverflow.com/questions/37706005/matplotlib-coordinates-convention-of-image-imshow-incompatible-with-plot)
+
+## arrays with different size
+
+- nested list
+
+```python
+[[1,2,3],[1,2]]
+```
+
+- numpy
+
+```python
+numpy.array([[0,1,2,3], [2,3,4]], dtype=object)
+```
+
+refer to [How to make a multidimension numpy array with a varying row size?](https://stackoverflow.com/questions/3386259/how-to-make-a-multidimension-numpy-array-with-a-varying-row-size)
+
+## find index of an item
+
+```python
+>>> [1, 1].index(1)
+0
+>>> [i for i, e in enumerate([1, 2, 1]) if e == 1]
+[0, 2]
+>>> g = (i for i, e in enumerate([1, 2, 1]) if e == 1)
+>>> next(g)
+0
+>>> next(g)
+2
+```
+
+refer to [Finding the index of an item given a list containing it in Python](https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-given-a-list-containing-it-in-python)
+
+## index a list with another list
+
+```python
+L = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+Idx = [0, 3, 7]
+T = [L[i] for i in Idx]
+```
+
+refer to [In Python, how do I index a list with another list?](https://stackoverflow.com/questions/1012185/in-python-how-do-i-index-a-list-with-another-list)
+
+## getting indices of true 
+
+```python
+>>> t = [False, False, False, False, True, True, False, True, False, False, False, False, False, False, False, False]
+>>> [i for i, x in enumerate(t) if x]
+[4, 5, 7]
+```
+
+refer to [Getting indices of True values in a boolean list](https://stackoverflow.com/questions/21448225/getting-indices-of-true-values-in-a-boolean-list)
+
+## do noting
+
+`pass`
+
+## remove by index
+
+`del`
+
+refer to [How to remove an element from a list by index?](https://stackoverflow.com/questions/627435/how-to-remove-an-element-from-a-list-by-index)
