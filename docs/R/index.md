@@ -449,3 +449,38 @@ for (i in seq_along(vec)) print(vec[i])
 ```
 
 refer to [Two common mistakes with the colon operator in R](https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/)
+
+## Conda 管理版本
+
+1. [Using R language with Anaconda](https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/)
+2. 单独安装 rstudio `conda install -c r rstudio`
+
+## error in install `gRbase`
+
+environment: Ubuntu 16.04 (gcc 5.4.0)
+
+```
+g++: error: unrecognized comma line option ‘-fno-plt’
+```
+
+the reason should be that the current gcc is too old.
+
+In conda env `R`:
+
+1. install latest gcc v7.3.0, but it still does not work
+2. `Sys.getenv()` indeed switch to the latest gcc
+3. remove `~/.R/Makevars`, which would force the gcc to be the gcc declared in that file. 
+4. then it works well.
+
+refer to 
+
+[R Packages Fail to Compile with gcc](https://stackoverflow.com/questions/14865976/r-packages-fail-to-compile-with-gcc)
+
+Note that some packages cannot be installed via CRAN, and you can check bioconductor.
+
+```
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("graph")
+```

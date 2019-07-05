@@ -144,3 +144,10 @@ A little confused about [the answer](https://stats.stackexchange.com/a/343568/17
 ## Power method for top eigenvector
 
 [Power method for obtaining the top eigenvector](https://statisticaloddsandends.wordpress.com/2019/03/27/power-method-for-obtaining-the-top-eigenvector/)
+
+## Generalized Beta Prime
+
+This distribution, characterized by one scale and three shape parameters, is incredibly flexible in that it can mimic behavior of many other distributions. 
+
+GB2 exhibits power-law behavior at both front and tail ends and is a steady-state distribution of a simple stochastic differential equation.
+
