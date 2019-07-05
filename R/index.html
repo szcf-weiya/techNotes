@@ -700,6 +700,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#conda" title="Conda 管理版本" class="md-nav__link">
+    Conda 管理版本
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-in-install-grbase" title="error in install gRbase" class="md-nav__link">
+    error in install gRbase
+  </a>
+  
+</li>
+      
       
       
       
@@ -1684,6 +1698,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#conda" title="Conda 管理版本" class="md-nav__link">
+    Conda 管理版本
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-in-install-grbase" title="error in install gRbase" class="md-nav__link">
+    error in install gRbase
+  </a>
+  
+</li>
+      
       
       
       
@@ -2029,6 +2057,33 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 
 
 <p>refer to <a href="https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/">Two common mistakes with the colon operator in R</a></p>
+<h2 id="conda">Conda 管理版本<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/">Using R language with Anaconda</a></li>
+<li>单独安装 rstudio <code>conda install -c r rstudio</code></li>
+</ol>
+<h2 id="error-in-install-grbase">error in install <code>gRbase</code><a class="headerlink" href="#error-in-install-grbase" title="Permanent link">&para;</a></h2>
+<p>environment: Ubuntu 16.04 (gcc 5.4.0)</p>
+<div class="codehilite"><pre><span></span><span class="k">g</span><span class="o">++</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">unrecognized</span> <span class="n">comma</span> <span class="n">line</span> <span class="k">option</span> <span class="err">‘</span><span class="o">-</span><span class="n">fno</span><span class="o">-</span><span class="n">plt</span><span class="err">’</span>
+</pre></div>
+
+
+<p>the reason should be that the current gcc is too old.</p>
+<p>In conda env <code>R</code>:</p>
+<ol>
+<li>install latest gcc v7.3.0, but it still does not work</li>
+<li><code>Sys.getenv()</code> indeed switch to the latest gcc</li>
+<li>remove <code>~/.R/Makevars</code>, which would force the gcc to be the gcc declared in that file. </li>
+<li>then it works well.</li>
+</ol>
+<p>refer to </p>
+<p><a href="https://stackoverflow.com/questions/14865976/r-packages-fail-to-compile-with-gcc">R Packages Fail to Compile with gcc</a></p>
+<p>Note that some packages cannot be installed via CRAN, and you can check bioconductor.</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">requireNamespace</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">BiocManager</span><span class="s2">&quot;</span>, <span class="nv">quietly</span> <span class="o">=</span> <span class="nv">TRUE</span><span class="ss">))</span>
+    <span class="nv">install</span>.<span class="nv">packages</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">BiocManager</span><span class="s2">&quot;</span><span class="ss">)</span>
+
+<span class="nv">BiocManager</span>::<span class="nv">install</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">graph</span><span class="s2">&quot;</span><span class="ss">)</span>
+</pre></div>
                 
                   
                 
