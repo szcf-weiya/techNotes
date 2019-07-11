@@ -635,3 +635,16 @@ find -L . -name . -o -type d -prune -o -type l -exec rm {} +
 ```
 
 [Delete all broken symbolic links with a line?](https://stackoverflow.com/questions/22097130/delete-all-broken-symbolic-links-with-a-line)
+
+
+## Kazam video format
+
+cannot open in window
+
+solution
+
+```
+ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
+```
+
+refer to [convert KAZAM video file to a file, playable in windows media player](https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player)
