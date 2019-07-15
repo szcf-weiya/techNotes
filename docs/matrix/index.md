@@ -155,3 +155,7 @@ $$
 $$
 
 refer to [Rank of the Product of Matrices AB is Less than or Equal to the Rank of A](https://yutsumura.com/rank-of-the-product-of-matrices-ab-is-less-than-or-equal-to-the-rank-of-a/)
+
+## Only real eigenvalues in symmetric matrices
+
+refer to [The Case of Complex Eigenvalues](http://www.sosmath.com/matrix/eigen3/eigen3.html)
