@@ -648,3 +648,13 @@ ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
 ```
 
 refer to [convert KAZAM video file to a file, playable in windows media player](https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player)
+
+## wget a series of files in order
+
+下载连续编号的文件，如
+
+```
+wget http://work.caltech.edu/slides/slides{01..18}.pdf
+```
+
+参考 [Wget a series of files in order](https://askubuntu.com/questions/240702/wget-a-series-of-files-in-order)
