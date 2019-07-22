@@ -226,3 +226,7 @@ x[1] <= width & x[1] >= 0 & x[2] <= height & x[2] >=0
 ## `MethodError: objects of type Module are not callable`
 
 check if the function is mistaken by the module name, such as `AxisArray` vs. `AxisArrays`.
+
+## `/lib/x86_64-linux-gnu/libz.so.1: version `ZLIB_1.2.9' not found`
+
+ref to [https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-so-1-version-zlib-1-2-9-not-found](https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-so-1-version-zlib-1-2-9-not-found)
