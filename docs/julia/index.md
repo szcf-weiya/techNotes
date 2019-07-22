@@ -221,3 +221,8 @@ use
 not
 
 x[1] <= width & x[1] >= 0 & x[2] <= height & x[2] >=0
+
+
+## `MethodError: objects of type Module are not callable`
+
+check if the function is mistaken by the module name, such as `AxisArray` vs. `AxisArrays`.
