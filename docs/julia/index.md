@@ -209,3 +209,15 @@ end
 1. [Hash function for custom type](https://stackoverflow.com/questions/50052668/hash-function-for-custom-type)
 2. [到底什么是hash?](https://www.zhihu.com/question/26762707)
 3. [Surprising struct equality test](https://discourse.julialang.org/t/surprising-struct-equality-test/4890)
+
+## `&` 优先级
+
+use
+
+```
+(x[1] <= width) & (x[1] >= 0) & (x[2] <= height) & (x[2] >=0)
+```
+
+not
+
+x[1] <= width & x[1] >= 0 & x[2] <= height & x[2] >=0
