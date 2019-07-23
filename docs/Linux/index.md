@@ -658,3 +658,16 @@ wget http://work.caltech.edu/slides/slides{01..18}.pdf
 ```
 
 参考 [Wget a series of files in order](https://askubuntu.com/questions/240702/wget-a-series-of-files-in-order)
+
+## hydrogen specify the conda envirnoment
+
+just need to run
+
+```
+source activate thisenv
+python -m ipykernel install --user --name thisenv
+```
+
+and only once, hydrogen will remember this!!
+
+ref to [How to specify the conda environment in which hydrogen (jupyter) starts?](https://github.com/nteract/hydrogen/issues/899)
