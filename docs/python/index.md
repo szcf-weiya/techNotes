@@ -277,7 +277,7 @@ print(unquote("%CE%B1%CE%BB%20"))
 参考[convert-bytes-to-a-string](https://stackoverflow.com/questions/606191/convert-bytes-to-a-string)
 
 ```python
-b"abcde".decode("utf-8") 
+b"abcde".decode("utf-8")
 ```
 
 ## json.dumps() 和json.dump()的区别
@@ -288,17 +288,17 @@ b"abcde".decode("utf-8")
 
 参考[python学习-字符串前面添加u,r,b的含义](http://www.cnblogs.com/cq90/p/6959567.html)
 
-u/U:表示unicode字符串 
-不是仅仅是针对中文, 可以针对任何的字符串，代表是对字符串进行unicode编码。 
-一般英文字符在使用各种编码下, 基本都可以正常解析, 所以一般不带u；但是中文, 必须表明所需编码, 否则一旦编码转换就会出现乱码。 
+u/U:表示unicode字符串
+不是仅仅是针对中文, 可以针对任何的字符串，代表是对字符串进行unicode编码。
+一般英文字符在使用各种编码下, 基本都可以正常解析, 所以一般不带u；但是中文, 必须表明所需编码, 否则一旦编码转换就会出现乱码。
 建议所有编码方式采用utf8
 
-r/R:非转义的原始字符串 
-与普通字符相比，其他相对特殊的字符，其中可能包含转义字符，即那些，反斜杠加上对应字母，表示对应的特殊含义的，比如最常见的”\n”表示换行，”\t”表示Tab等。而如果是以r开头，那么说明后面的字符，都是普通的字符了，即如果是“\n”那么表示一个反斜杠字符，一个字母n，而不是表示换行了。 
+r/R:非转义的原始字符串
+与普通字符相比，其他相对特殊的字符，其中可能包含转义字符，即那些，反斜杠加上对应字母，表示对应的特殊含义的，比如最常见的”\n”表示换行，”\t”表示Tab等。而如果是以r开头，那么说明后面的字符，都是普通的字符了，即如果是“\n”那么表示一个反斜杠字符，一个字母n，而不是表示换行了。
 以r开头的字符，常用于正则表达式，对应着re模块。
 
-b:bytes 
-python3.x里默认的str是(py2.x里的)unicode, bytes是(py2.x)的str, b”“前缀代表的就是bytes 
+b:bytes
+python3.x里默认的str是(py2.x里的)unicode, bytes是(py2.x)的str, b”“前缀代表的就是bytes
 python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这种写法
 
 ## mdx_math安装命令
@@ -376,7 +376,7 @@ grant all privileges on testdb.* to 'test'@'%' with grant option;
 
 ## Show matplotlib plots in Ubuntu (Windows subsystem for Linux)
 
-参考 
+参考
 [Show matplotlib plots in Ubuntu (Windows subsystem for Linux)](https://stackoverflow.com/questions/43397162/show-matplotlib-plots-in-ubuntu-windows-subsystem-for-linux)
 
 ## matplotlib math symbols
@@ -400,7 +400,7 @@ f.write(write.str)
 会报错
 
 ```
-'ascii' codec can't encode character 
+'ascii' codec can't encode character
 ```
 
 参考 [Python: write a list with non-ASCII characters to a text file](https://stackoverflow.com/questions/33255846/python-write-a-list-with-non-ascii-characters-to-a-text-file) 采用 `codecs.open(, "w", encoding="utf-8")` 可以解决需求。
@@ -461,7 +461,7 @@ T = [L[i] for i in Idx]
 
 refer to [In Python, how do I index a list with another list?](https://stackoverflow.com/questions/1012185/in-python-how-do-i-index-a-list-with-another-list)
 
-## getting indices of true 
+## getting indices of true
 
 ```python
 >>> t = [False, False, False, False, True, True, False, True, False, False, False, False, False, False, False, False]
@@ -480,3 +480,9 @@ refer to [Getting indices of True values in a boolean list](https://stackoverflo
 `del`
 
 refer to [How to remove an element from a list by index?](https://stackoverflow.com/questions/627435/how-to-remove-an-element-from-a-list-by-index)
+
+## install python without root
+
+use miniconda
+
+refer to [How to install packages in Linux (CentOS) without root user with automatic dependency handling?](https://stackoverflow.com/questions/36651091/how-to-install-packages-in-linux-centos-without-root-user-with-automatic-depen)
