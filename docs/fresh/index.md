@@ -32,13 +32,13 @@ References:
 library(ggplot2)
 library(emoGG)
 data("ToothGrowth")
-p1 <- geom_emoji(data = subset(ToothGrowth, supp == "OJ"), 
-                aes(dose + runif(sum(ToothGrowth$supp == "OJ"), min = -0.2, max = 0.2), 
+p1 <- geom_emoji(data = subset(ToothGrowth, supp == "OJ"),
+                aes(dose + runif(sum(ToothGrowth$supp == "OJ"), min = -0.2, max = 0.2),
                    len), emoji = "1f34a")
-p2 <- geom_emoji(data = subset(ToothGrowth, supp == "VC"), 
-                 aes(dose + runif(sum(ToothGrowth$supp == "OJ"), min = -0.2, max = 0.2), 
+p2 <- geom_emoji(data = subset(ToothGrowth, supp == "VC"),
+                 aes(dose + runif(sum(ToothGrowth$supp == "OJ"), min = -0.2, max = 0.2),
                      len), emoji = "1f48a")
- 
+
 ggplot() +
     p1 + p2 +
     labs(x = "Dose (mg/day)", y = "Tooth length")
@@ -66,7 +66,7 @@ $$
 
 Refer to [Gradient descent as a minimization problem](https://statisticaloddsandends.wordpress.com/2018/11/09/gradient-descent-as-a-minimization-problem/)
 
-put gradient decent into the optimization framework, then derive 
+put gradient decent into the optimization framework, then derive
 
 - projected gradient descent
 - proximal gradient methods
@@ -75,7 +75,7 @@ put gradient decent into the optimization framework, then derive
 
 Refer to [Coordinate descent doesn’t always work for convex functions](https://statisticaloddsandends.wordpress.com/2018/10/30/coordinate-descent-doesnt-always-work-for-convex-functions/)
 
-A counterexample: 
+A counterexample:
 
 $$
 z=\max(x,y)+\vert x-y\vert
@@ -85,7 +85,7 @@ $$
 
 Refer to [Soft-thresholding and the sgn function](https://statisticaloddsandends.wordpress.com/2018/10/29/soft-thresholding-and-the-sgn-function/)
 
-Give a proof of the solution of 
+Give a proof of the solution of
 
 $$
 ax-b+c\mathrm{sgn}(x)=0
@@ -147,7 +147,16 @@ A little confused about [the answer](https://stats.stackexchange.com/a/343568/17
 
 ## Generalized Beta Prime
 
-This distribution, characterized by one scale and three shape parameters, is incredibly flexible in that it can mimic behavior of many other distributions. 
+This distribution, characterized by one scale and three shape parameters, is incredibly flexible in that it can mimic behavior of many other distributions.
 
 GB2 exhibits power-law behavior at both front and tail ends and is a steady-state distribution of a simple stochastic differential equation.
 
+## Julia Set
+
+在复杂动力学里，Julia集是个著名的“混沌”行为的集（与之对应的是Fatou集，“非混沌”集）
+
+References:
+
+- [看明白Julia集](https://zhuanlan.zhihu.com/p/28378988)
+- [神奇的分形艺术（四）：Julia集和Mandelbrot集](http://www.matrix67.com/blog/archives/292)
+- [Julia GPU plots Julia Set](https://nextjournal.com/sdanisch/julia-gpu-programming)
