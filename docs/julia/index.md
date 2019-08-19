@@ -7,7 +7,7 @@
 NO
 
 1. [https://stackoverflow.com/questions/33927523/can-i-make-julia-forget-a-method-from-the-repl](https://stackoverflow.com/questions/33927523/can-i-make-julia-forget-a-method-from-the-repl)
-2. [https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia](https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia) 
+2. [https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia](https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia)
 
 
 ## ->
@@ -86,7 +86,7 @@ references
 
 Submit a pbsdsh job and specify multiply nodes with multiply cores, say `nodes=2:ppn=4`
 
-error log file (see full file in the cluster: `dshmcmc.e21907`): 
+error log file (see full file in the cluster: `dshmcmc.e21907`):
 
 ```
 fatal: error thrown and no exception handler available.
@@ -134,7 +134,7 @@ for j = 1:10
     i = i + 1
 end
 ```
-will report 
+will report
 ```julia
 ERROR: UndefVarError: i not defined
 ```
@@ -168,7 +168,7 @@ References:
 mapslices(x->[x], randn(5,5), dims=2)[:]
 ```
 
-refer to 
+refer to
 
 [Converting a matrix into an array of arrays](https://discourse.julialang.org/t/converting-a-matrix-into-an-array-of-arrays/17038)
 
@@ -190,9 +190,9 @@ refer to [Kernel density estimation status](https://discourse.julialang.org/t/ke
 
 ```julia
 Base.:(==)(x::Reaction, y::Reaction) = all([
-    x.substrate == y.substrate, 
-    x.product == y.product, 
-    x.reversible == y.reversible, 
+    x.substrate == y.substrate,
+    x.product == y.product,
+    x.reversible == y.reversible,
     x.species == y.species])
 ```
 
@@ -230,3 +230,7 @@ check if the function is mistaken by the module name, such as `AxisArray` vs. `A
 ## `/lib/x86_64-linux-gnu/libz.so.1: version `ZLIB_1.2.9' not found`
 
 ref to [https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-so-1-version-zlib-1-2-9-not-found](https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-so-1-version-zlib-1-2-9-not-found)
+
+## Re-build after install cudnn
+
+refer to [GPU on cluster: conversion to pointer not defined for CuArray{Float32,2}](https://github.com/FluxML/Flux.jl/issues/286)
