@@ -155,6 +155,8 @@ GB2 exhibits power-law behavior at both front and tail ends and is a steady-stat
 
 在复杂动力学里，Julia集是个著名的“混沌”行为的集（与之对应的是Fatou集，“非混沌”集）
 
+![](juliaset.png)
+
 References:
 
 - [看明白Julia集](https://zhuanlan.zhihu.com/p/28378988)
