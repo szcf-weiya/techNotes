@@ -659,6 +659,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#re-build-after-install-cudnn" title="Re-build after install cudnn" class="md-nav__link">
+    Re-build after install cudnn
+  </a>
+  
+</li>
+      
       
       
       
@@ -1330,6 +1337,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#re-build-after-install-cudnn" title="Re-build after install cudnn" class="md-nav__link">
+    Re-build after install cudnn
+  </a>
+  
+</li>
+      
       
       
       
@@ -1353,7 +1367,7 @@
 <p>NO</p>
 <ol>
 <li><a href="https://stackoverflow.com/questions/33927523/can-i-make-julia-forget-a-method-from-the-repl">https://stackoverflow.com/questions/33927523/can-i-make-julia-forget-a-method-from-the-repl</a></li>
-<li><a href="https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia">https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia</a> </li>
+<li><a href="https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia">https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia</a></li>
 </ol>
 <h2 id="-">-&gt;<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
 <p><a href="https://docs.julialang.org/en/v0.6.1/manual/functions/#man-anonymous-functions-1">Anonymous Functions</a></p>
@@ -1409,7 +1423,7 @@
 </ol>
 <h2 id="pbsdsh-unsolved">pbsdsh (unsolved)<a class="headerlink" href="#pbsdsh-unsolved" title="Permanent link">&para;</a></h2>
 <p>Submit a pbsdsh job and specify multiply nodes with multiply cores, say <code>nodes=2:ppn=4</code></p>
-<p>error log file (see full file in the cluster: <code>dshmcmc.e21907</code>): </p>
+<p>error log file (see full file in the cluster: <code>dshmcmc.e21907</code>):</p>
 <div class="codehilite"><pre><span></span><span class="nl">fatal</span><span class="p">:</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="n">thrown</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="k">exception</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="n">available</span><span class="p">.</span><span class="w"></span>
 <span class="n">InitError</span><span class="p">(</span><span class="k">mod</span><span class="o">=</span><span class="err">:</span><span class="n">Base</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="o">=</span><span class="n">ArgumentError</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="ss">&quot;Package Sockets not found in current path:</span>
 <span class="ss">- Run `Pkg.add(&quot;</span><span class="n">Sockets</span><span class="ss">&quot;)` to install the Sockets package.</span>
@@ -1455,7 +1469,7 @@
 </pre></div>
 
 
-<p>will report </p>
+<p>will report</p>
 <div class="codehilite"><pre><span></span><span class="n">ERROR</span><span class="o">:</span> <span class="kt">UndefVarError</span><span class="o">:</span> <span class="n">i</span> <span class="n">not</span> <span class="n">defined</span>
 </pre></div>
 
@@ -1484,7 +1498,7 @@
 </pre></div>
 
 
-<p>refer to </p>
+<p>refer to</p>
 <p><a href="https://discourse.julialang.org/t/converting-a-matrix-into-an-array-of-arrays/17038">Converting a matrix into an array of arrays</a></p>
 <p>Conversely, we can converting the array of arrays to a matrix, refer to <a href="https://stackoverflow.com/questions/26673412/how-to-convert-an-array-of-array-into-a-matrix">How to convert an array of array into a matrix?</a></p>
 <h2 id="index-from-0">index from 0<a class="headerlink" href="#index-from-0" title="Permanent link">&para;</a></h2>
@@ -1495,9 +1509,9 @@
 <h2 id="and-hash">自定义 <code>==</code> and <code>hash()</code><a class="headerlink" href="#and-hash" title="Permanent link">&para;</a></h2>
 <p>对于自定义的 mutable struct, 直接用 <code>==</code> 返回 <code>false</code>，因此需要自己定义等号，比如</p>
 <div class="codehilite"><pre><span></span><span class="n">Base</span><span class="o">.:</span><span class="p">(</span><span class="o">==</span><span class="p">)(</span><span class="n">x</span><span class="o">::</span><span class="n">Reaction</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="n">Reaction</span><span class="p">)</span> <span class="o">=</span> <span class="n">all</span><span class="p">([</span>
-    <span class="n">x</span><span class="o">.</span><span class="n">substrate</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">substrate</span><span class="p">,</span> 
-    <span class="n">x</span><span class="o">.</span><span class="n">product</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">product</span><span class="p">,</span> 
-    <span class="n">x</span><span class="o">.</span><span class="n">reversible</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">reversible</span><span class="p">,</span> 
+    <span class="n">x</span><span class="o">.</span><span class="n">substrate</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">substrate</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">product</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">product</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">reversible</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">reversible</span><span class="p">,</span>
     <span class="n">x</span><span class="o">.</span><span class="n">species</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">species</span><span class="p">])</span>
 </pre></div>
 
@@ -1527,6 +1541,8 @@
 <p>check if the function is mistaken by the module name, such as <code>AxisArray</code> vs. <code>AxisArrays</code>.</p>
 <h2 id="libx86_64-linux-gnulibzso1-versionzlib_129-not-found"><code>/lib/x86_64-linux-gnu/libz.so.1: version</code>ZLIB_1.2.9&rsquo; not found`<a class="headerlink" href="#libx86_64-linux-gnulibzso1-versionzlib_129-not-found" title="Permanent link">&para;</a></h2>
 <p>ref to <a href="https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-so-1-version-zlib-1-2-9-not-found">https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-so-1-version-zlib-1-2-9-not-found</a></p>
+<h2 id="re-build-after-install-cudnn">Re-build after install cudnn<a class="headerlink" href="#re-build-after-install-cudnn" title="Permanent link">&para;</a></h2>
+<p>refer to <a href="https://github.com/FluxML/Flux.jl/issues/286">GPU on cluster: conversion to pointer not defined for CuArray{Float32,2}</a></p>
                 
                   
                 
