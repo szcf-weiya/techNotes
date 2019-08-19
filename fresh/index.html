@@ -923,6 +923,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#julia-set" title="Julia Set" class="md-nav__link">
+    Julia Set
+  </a>
+  
+</li>
+      
       
       
       
@@ -1234,6 +1241,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#julia-set" title="Julia Set" class="md-nav__link">
+    Julia Set
+  </a>
+  
+</li>
+      
       
       
       
@@ -1280,11 +1294,11 @@
 <div class="codehilite"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">emoGG</span><span class="p">)</span>
 <span class="nf">data</span><span class="p">(</span><span class="s">&quot;ToothGrowth&quot;</span><span class="p">)</span>
-<span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">geom_emoji</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nf">subset</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">,</span> <span class="n">supp</span> <span class="o">==</span> <span class="s">&quot;OJ&quot;</span><span class="p">),</span> 
-                <span class="nf">aes</span><span class="p">(</span><span class="n">dose</span> <span class="o">+</span> <span class="nf">runif</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="o">$</span><span class="n">supp</span> <span class="o">==</span> <span class="s">&quot;OJ&quot;</span><span class="p">),</span> <span class="n">min</span> <span class="o">=</span> <span class="m">-0.2</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">),</span> 
+<span class="n">p1</span> <span class="o">&lt;-</span> <span class="nf">geom_emoji</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nf">subset</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">,</span> <span class="n">supp</span> <span class="o">==</span> <span class="s">&quot;OJ&quot;</span><span class="p">),</span>
+                <span class="nf">aes</span><span class="p">(</span><span class="n">dose</span> <span class="o">+</span> <span class="nf">runif</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="o">$</span><span class="n">supp</span> <span class="o">==</span> <span class="s">&quot;OJ&quot;</span><span class="p">),</span> <span class="n">min</span> <span class="o">=</span> <span class="m">-0.2</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">),</span>
                    <span class="n">len</span><span class="p">),</span> <span class="n">emoji</span> <span class="o">=</span> <span class="s">&quot;1f34a&quot;</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">geom_emoji</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nf">subset</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">,</span> <span class="n">supp</span> <span class="o">==</span> <span class="s">&quot;VC&quot;</span><span class="p">),</span> 
-                 <span class="nf">aes</span><span class="p">(</span><span class="n">dose</span> <span class="o">+</span> <span class="nf">runif</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="o">$</span><span class="n">supp</span> <span class="o">==</span> <span class="s">&quot;OJ&quot;</span><span class="p">),</span> <span class="n">min</span> <span class="o">=</span> <span class="m">-0.2</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">),</span> 
+<span class="n">p2</span> <span class="o">&lt;-</span> <span class="nf">geom_emoji</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nf">subset</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="p">,</span> <span class="n">supp</span> <span class="o">==</span> <span class="s">&quot;VC&quot;</span><span class="p">),</span>
+                 <span class="nf">aes</span><span class="p">(</span><span class="n">dose</span> <span class="o">+</span> <span class="nf">runif</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">ToothGrowth</span><span class="o">$</span><span class="n">supp</span> <span class="o">==</span> <span class="s">&quot;OJ&quot;</span><span class="p">),</span> <span class="n">min</span> <span class="o">=</span> <span class="m">-0.2</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">),</span>
                      <span class="n">len</span><span class="p">),</span> <span class="n">emoji</span> <span class="o">=</span> <span class="s">&quot;1f48a&quot;</span><span class="p">)</span>
 
 <span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span>
@@ -1314,14 +1328,14 @@
 </div>
 <h2 id="gradient-descent-as-a-minimization-problem">Gradient descent as a minimization problem<a class="headerlink" href="#gradient-descent-as-a-minimization-problem" title="Permanent link">&para;</a></h2>
 <p>Refer to <a href="https://statisticaloddsandends.wordpress.com/2018/11/09/gradient-descent-as-a-minimization-problem/">Gradient descent as a minimization problem</a></p>
-<p>put gradient decent into the optimization framework, then derive </p>
+<p>put gradient decent into the optimization framework, then derive</p>
 <ul>
 <li>projected gradient descent</li>
 <li>proximal gradient methods</li>
 </ul>
 <h2 id="coordinate-descent-doesnt-always-work-for-convex-functions">Coordinate descent doesn’t always work for convex functions<a class="headerlink" href="#coordinate-descent-doesnt-always-work-for-convex-functions" title="Permanent link">&para;</a></h2>
 <p>Refer to <a href="https://statisticaloddsandends.wordpress.com/2018/10/30/coordinate-descent-doesnt-always-work-for-convex-functions/">Coordinate descent doesn’t always work for convex functions</a></p>
-<p>A counterexample: </p>
+<p>A counterexample:</p>
 <div>
 <div class="MathJax_Preview">
 z=\max(x,y)+\vert x-y\vert
@@ -1332,7 +1346,7 @@ z=\max(x,y)+\vert x-y\vert
 </div>
 <h2 id="solution-to-a-sgn-equation">Solution to a <code>sgn</code> equation<a class="headerlink" href="#solution-to-a-sgn-equation" title="Permanent link">&para;</a></h2>
 <p>Refer to <a href="https://statisticaloddsandends.wordpress.com/2018/10/29/soft-thresholding-and-the-sgn-function/">Soft-thresholding and the sgn function</a></p>
-<p>Give a proof of the solution of </p>
+<p>Give a proof of the solution of</p>
 <div>
 <div class="MathJax_Preview">
 ax-b+c\mathrm{sgn}(x)=0
@@ -1379,8 +1393,16 @@ f_k(x) = k x^{k-1} e^{-x^k} \quad x >0
 <h2 id="power-method-for-top-eigenvector">Power method for top eigenvector<a class="headerlink" href="#power-method-for-top-eigenvector" title="Permanent link">&para;</a></h2>
 <p><a href="https://statisticaloddsandends.wordpress.com/2019/03/27/power-method-for-obtaining-the-top-eigenvector/">Power method for obtaining the top eigenvector</a></p>
 <h2 id="generalized-beta-prime">Generalized Beta Prime<a class="headerlink" href="#generalized-beta-prime" title="Permanent link">&para;</a></h2>
-<p>This distribution, characterized by one scale and three shape parameters, is incredibly flexible in that it can mimic behavior of many other distributions. </p>
+<p>This distribution, characterized by one scale and three shape parameters, is incredibly flexible in that it can mimic behavior of many other distributions.</p>
 <p>GB2 exhibits power-law behavior at both front and tail ends and is a steady-state distribution of a simple stochastic differential equation.</p>
+<h2 id="julia-set">Julia Set<a class="headerlink" href="#julia-set" title="Permanent link">&para;</a></h2>
+<p>在复杂动力学里，Julia集是个著名的“混沌”行为的集（与之对应的是Fatou集，“非混沌”集）</p>
+<p>References:</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/28378988">看明白Julia集</a></li>
+<li><a href="http://www.matrix67.com/blog/archives/292">神奇的分形艺术（四）：Julia集和Mandelbrot集</a></li>
+<li><a href="https://nextjournal.com/sdanisch/julia-gpu-programming">Julia GPU plots Julia Set</a></li>
+</ul>
                 
                   
                 
