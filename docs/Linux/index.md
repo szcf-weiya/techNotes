@@ -671,3 +671,13 @@ python -m ipykernel install --user --name thisenv
 and only once, hydrogen will remember this!!
 
 ref to [How to specify the conda environment in which hydrogen (jupyter) starts?](https://github.com/nteract/hydrogen/issues/899)
+
+## show long character usernames which consists of `+`
+
+refer to [ps aux for long charactered usernames shows a plus sign](https://askubuntu.com/questions/523673/ps-aux-for-long-charactered-usernames-shows-a-plus-sign)
+
+
+```
+ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
+alias psaux='ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm'
+```
