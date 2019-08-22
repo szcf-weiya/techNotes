@@ -681,3 +681,11 @@ refer to [ps aux for long charactered usernames shows a plus sign](https://askub
 ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
 alias psaux='ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm'
 ```
+
+## redirect output to a file and stdout
+
+```
+program [arguments...] 2>&1 | tee outfile
+```
+
+refer to [How to redirect output to a file and stdout](https://stackoverflow.com/questions/418896/how-to-redirect-output-to-a-file-and-stdout)
