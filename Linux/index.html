@@ -876,6 +876,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#redirect-output-to-a-file-and-stdout" title="redirect output to a file and stdout" class="md-nav__link">
+    redirect output to a file and stdout
+  </a>
+  
+</li>
+      
       
       
       
@@ -2168,6 +2175,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#redirect-output-to-a-file-and-stdout" title="redirect output to a file and stdout" class="md-nav__link">
+    redirect output to a file and stdout
+  </a>
+  
+</li>
+      
       
       
       
@@ -2686,6 +2700,14 @@ apt-get install nginx
 <div class="codehilite"><pre><span></span><span class="n">ps</span> <span class="n">axo</span> <span class="k">user</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="n">pid</span><span class="p">,</span><span class="n">pcpu</span><span class="p">,</span><span class="n">pmem</span><span class="p">,</span><span class="n">vsz</span><span class="p">,</span><span class="n">rss</span><span class="p">,</span><span class="n">tty</span><span class="p">,</span><span class="n">stat</span><span class="p">,</span><span class="k">start</span><span class="p">,</span><span class="n">time</span><span class="p">,</span><span class="n">comm</span>
 <span class="k">alias</span> <span class="n">psaux</span><span class="o">=</span><span class="s1">&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#39;</span>
 </pre></div>
+
+
+<h2 id="redirect-output-to-a-file-and-stdout">redirect output to a file and stdout<a class="headerlink" href="#redirect-output-to-a-file-and-stdout" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">program</span> <span class="p">[</span><span class="n">arguments</span><span class="p">...]</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">tee</span> <span class="n">outfile</span>
+</pre></div>
+
+
+<p>refer to <a href="https://stackoverflow.com/questions/418896/how-to-redirect-output-to-a-file-and-stdout">How to redirect output to a file and stdout</a></p>
                 
                   
                 
