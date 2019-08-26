@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.1">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
       
       
     
@@ -674,6 +674,13 @@
         <li class="md-nav__item">
   <a href="#re-build-after-install-cudnn" title="Re-build after install cudnn" class="md-nav__link">
     Re-build after install cudnn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-imageview-on-server" title="load ImageView on Server" class="md-nav__link">
+    load ImageView on Server
   </a>
   
 </li>
@@ -1356,6 +1363,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#load-imageview-on-server" title="load ImageView on Server" class="md-nav__link">
+    load ImageView on Server
+  </a>
+  
+</li>
+      
       
       
       
@@ -1555,6 +1569,12 @@
 <p>ref to <a href="https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-so-1-version-zlib-1-2-9-not-found">https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-so-1-version-zlib-1-2-9-not-found</a></p>
 <h2 id="re-build-after-install-cudnn">Re-build after install cudnn<a class="headerlink" href="#re-build-after-install-cudnn" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://github.com/FluxML/Flux.jl/issues/286">GPU on cluster: conversion to pointer not defined for CuArray{Float32,2}</a></p>
+<h2 id="load-imageview-on-server">load <code>ImageView</code> on Server<a class="headerlink" href="#load-imageview-on-server" title="Permanent link">&para;</a></h2>
+<p>when <code>using ImageView</code>, it throws an error,</p>
+<blockquote>
+<p>ERROR: LoadError: InitError: Cannot open display: </p>
+</blockquote>
+<p>fixed by <code>ssh -X</code>. If further ssh on the node, it still works.</p>
                 
                   
                 
@@ -1643,7 +1663,7 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.245445c6.js"></script>
+      <script src="../assets/javascripts/application.c648116f.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
