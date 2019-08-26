@@ -234,3 +234,12 @@ ref to [https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-s
 ## Re-build after install cudnn
 
 refer to [GPU on cluster: conversion to pointer not defined for CuArray{Float32,2}](https://github.com/FluxML/Flux.jl/issues/286)
+
+
+## load `ImageView` on Server
+
+when `using ImageView`, it throws an error,
+
+> ERROR: LoadError: InitError: Cannot open display: 
+
+fixed by `ssh -X`. If further ssh on the node, it still works.
