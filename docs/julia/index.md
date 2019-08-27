@@ -243,3 +243,9 @@ when `using ImageView`, it throws an error,
 > ERROR: LoadError: InitError: Cannot open display: 
 
 fixed by `ssh -X`. If further ssh on the node, it still works.
+
+## `-i` vs `-L`
+
+if need to REPL and also arguments, then `-i` would be suitable.
+
+And note that `--` should be separated the switches and program files.
