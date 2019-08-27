@@ -287,3 +287,11 @@ git push origin HEAD --force
 
 1. [Git and nasty “error: cannot lock existing info/refs fatal](https://stackoverflow.com/questions/6656619/git-and-nasty-error-cannot-lock-existing-info-refs-fatal)
 
+## remove untracked files
+
+```
+git clean -n
+git clean -f
+```
+
+refer to [How to remove local (untracked) files from the current Git working tree](https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree)
