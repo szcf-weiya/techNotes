@@ -248,4 +248,6 @@ fixed by `ssh -X`. If further ssh on the node, it still works.
 
 if need to REPL and also arguments, then `-i` would be suitable.
 
-And note that `--` should be separated the switches and program files.
+And note that `--` should be separated the switches and program files. (but seems not necessary)
+
+[Julia docs: Getting Started](https://docs.julialang.org/en/v1/manual/getting-started/index.html)
