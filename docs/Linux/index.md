@@ -689,3 +689,22 @@ program [arguments...] 2>&1 | tee outfile
 ```
 
 refer to [How to redirect output to a file and stdout](https://stackoverflow.com/questions/418896/how-to-redirect-output-to-a-file-and-stdout)
+
+## remove the first character
+
+```bash
+${string:1}
+```
+
+```bash
+list=""
+for nc in {2..10}; do
+  for nf in 5 10 15; do
+    list="$list,acc-$nc-$nf"
+    #https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash
+    echo ${list:1}
+  done
+done
+```
+
+refer to [Remove first character of a string in Bash](https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash)
