@@ -486,3 +486,11 @@ refer to [How to remove an element from a list by index?](https://stackoverflow.
 use miniconda
 
 refer to [How to install packages in Linux (CentOS) without root user with automatic dependency handling?](https://stackoverflow.com/questions/36651091/how-to-install-packages-in-linux-centos-without-root-user-with-automatic-depen)
+
+## `class ClassName` vs `class ClassName(object)`
+
+1. In python 2.x, when you inherit from "object" you class is a "new style" class; the non inheriting from "object" case creates an "old style" class.
+2. In python 3.x, all classes are new style - no need to set the metaclass.
+
+refer to [class ClassName versus class ClassName(object)](https://stackoverflow.com/questions/10043963/class-classname-versus-class-classnameobject)
+
