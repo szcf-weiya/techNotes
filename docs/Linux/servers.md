@@ -9,3 +9,7 @@ refer to [Submitting Multiple Jobs Quickly](http://www.pace.gatech.edu/submittin
 ```bash
 qsub your.job -v arg1=val1,arg2=val2
 ```
+
+## PBS cheat sheet
+
+![](PBS Script_0.pdf)
