@@ -82,3 +82,28 @@ specify `IFS=`.
 1. [How to split a tab-delimited string in bash script WITHOUT collapsing blanks?](https://stackoverflow.com/questions/19719827/how-to-split-a-tab-delimited-string-in-bash-script-without-collapsing-blanks) 
 2. [Split String in shell script while reading from file](https://stackoverflow.com/questions/27500692/split-string-in-shell-script-while-reading-from-file)
 3. [Read a file line by line assigning the value to a variable](https://stackoverflow.com/questions/10929453/read-a-file-line-by-line-assigning-the-value-to-a-variable) 
+
+## distribute jobs into queues
+
+since different queues has different quota, try to assign the job into available nodes.
+
+```shell
+queue=(bigmem large batch)
+queues=()
+for ((i=0;i<12;i++)) do queues+=(${queue[0]}); done;
+for ((i=0;i<20;i++)) do queues+=(${queue[1]}); done;
+for ((i=0;i<15;i++)) do queues+=(${queue[2]}); done;
+```
+
+refer to
+
+- [Add a new element to an array without specifying the index in Bash](https://stackoverflow.com/questions/1951506/add-a-new-element-to-an-array-without-specifying-the-index-in-bash)
+- [Repeat an element n number of times in an array](https://stackoverflow.com/questions/29205213/repeat-an-element-n-number-of-times-in-an-array)
+- [The Double-Parentheses Construct](http://tldp.org/LDP/abs/html/dblparens.html)
+- [Increment variable value by 1 ( shell programming)](https://stackoverflow.com/questions/21035121/increment-variable-value-by-1-shell-programming)
+- [Shell 数组](http://www.runoob.com/linux/linux-shell-array.html)
+
+
+## Command line arguments
+
+refer to [Taking Command Line Arguments in Bash](https://www.devdungeon.com/content/taking-command-line-arguments-bash)
