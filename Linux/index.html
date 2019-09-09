@@ -890,6 +890,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#convert-imgs-to-pdf" class="md-nav__link">
+    convert imgs to pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-pdf-metadata-via-pdftk" class="md-nav__link">
+    modify pdf metadata via pdftk
+  </a>
+  
+</li>
+      
       
       
       
@@ -2196,6 +2210,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#convert-imgs-to-pdf" class="md-nav__link">
+    convert imgs to pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-pdf-metadata-via-pdftk" class="md-nav__link">
+    modify pdf metadata via pdftk
+  </a>
+  
+</li>
+      
       
       
       
@@ -2739,6 +2767,17 @@ apt-get install nginx
 
 
 <p>refer to <a href="https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash">Remove first character of a string in Bash</a></p>
+<h2 id="convert-imgs-to-pdf">convert imgs to pdf<a class="headerlink" href="#convert-imgs-to-pdf" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>ls -1 ./*jpg <span class="p">|</span> xargs -L1 -I <span class="o">{}</span> img2pdf <span class="o">{}</span> -o <span class="o">{}</span>.pdf
+pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m">1</span>..13<span class="o">}</span>-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
+</pre></div>
+
+
+<h2 id="modify-pdf-metadata-via-pdftk">modify pdf metadata via <code>pdftk</code><a class="headerlink" href="#modify-pdf-metadata-via-pdftk" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>pdftk input.pdf dump_data output metadata
+<span class="c1"># edit metadata</span>
+pdftk input.pdf update_info metadata output output.pdf
+</pre></div>
                 
                   
                 
