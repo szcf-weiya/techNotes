@@ -1,3 +1,8 @@
+## 2019.09.09
+
+1. as far as I can tell: 据我所知
+2. fabulous
+
 ## 2019.01.13
 
 1. have a slight edge over

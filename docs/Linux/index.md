@@ -708,3 +708,21 @@ done
 ```
 
 refer to [Remove first character of a string in Bash](https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash)
+
+## convert imgs to pdf
+
+```bash
+ls -1 ./*jpg | xargs -L1 -I {} img2pdf {} -o {}.pdf
+pdftk likelihoodfree-design-a-discussion-{1..13}-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
+```
+
+
+## modify pdf metadata via `pdftk`
+
+```bash
+pdftk input.pdf dump_data output metadata
+# edit metadata
+pdftk input.pdf update_info metadata output output.pdf
+```
+
+
