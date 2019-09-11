@@ -12,7 +12,7 @@ qsub your.job -v arg1=val1,arg2=val2
 
 ## PBS cheat sheet
 
-![](PBS Script_0.pdf)
+[PBS Script](PBS Script_0.pdf)
 
 ## 安装 spark
 
