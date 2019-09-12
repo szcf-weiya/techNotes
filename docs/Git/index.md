@@ -315,3 +315,15 @@ CRLF will be replaced by LF.
 - input 表示提交时把 CRLF 转换成 LF，检出时不转换。适合纯 Linux 或 Mac
 
 参考 [Git 多平台换行符问题(LF or CRLF)](https://blog.csdn.net/ljheee/article/details/82946368)
+
+## Git push require username and password
+
+possible reason: use the default HTTPS instead of SSH
+
+correct this by
+
+```
+git remote set-url origin git@github.com:username/repo.git
+```
+
+参考 [Git push requires username and password](https://stackoverflow.com/questions/6565357/git-push-requires-username-and-password)
