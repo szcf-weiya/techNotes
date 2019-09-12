@@ -393,6 +393,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#join-elements-of-an-array-in-bash" class="md-nav__link">
+    join elements of an array in Bash
+  </a>
+  
+</li>
+      
       
       
       
@@ -1178,6 +1185,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#join-elements-of-an-array-in-bash" class="md-nav__link">
+    join elements of an array in Bash
+  </a>
+  
+</li>
+      
       
       
       
@@ -1290,6 +1304,13 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 </ul>
 <h2 id="command-line-arguments">Command line arguments<a class="headerlink" href="#command-line-arguments" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://www.devdungeon.com/content/taking-command-line-arguments-bash">Taking Command Line Arguments in Bash</a></p>
+<h2 id="join-elements-of-an-array-in-bash">join elements of an array in Bash<a class="headerlink" href="#join-elements-of-an-array-in-bash" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>arr=(a b c)
+printf &#39;%s\n&#39; &quot;$(IFS=,; printf &#39;%s&#39; &quot;<span class="cp">${</span><span class="n">arr</span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="cp">}</span>&quot;)&quot;
+</pre></div>
+
+
+<p>refer to <a href="https://stackoverflow.com/questions/1527049/how-can-i-join-elements-of-an-array-in-bash">How can I join elements of an array in Bash?</a></p>
                 
                   
                 
