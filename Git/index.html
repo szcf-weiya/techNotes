@@ -947,6 +947,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#crlf-lf" class="md-nav__link">
+    CRLF &amp; LF
+  </a>
+  
+</li>
+      
       
       
       
@@ -1566,6 +1573,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#crlf-lf" class="md-nav__link">
+    CRLF &amp; LF
+  </a>
+  
+</li>
+      
       
       
       
@@ -1817,6 +1831,19 @@ git push origin HEAD --force
 <p>refer to <a href="https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree">How to remove local (untracked) files from the current Git working tree</a></p>
 <h2 id="_10">分支操作<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>详见 <a href="https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6">Git 分支 - 分支的新建与合并</a></p>
+<h2 id="crlf-lf"><code>CRLF</code> &amp; <code>LF</code><a class="headerlink" href="#crlf-lf" title="Permanent link">&para;</a></h2>
+<p>双系统切换时，原先在 Win 处理，后来换到 Linux 处理，报出</p>
+<div class="codehilite"><pre><span></span><span class="n">CRLF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="k">by</span> <span class="n">LF</span><span class="p">.</span>
+</pre></div>
+
+
+<p>设置 <code>autocrlf</code> 配置项：</p>
+<ul>
+<li>false 表示取消自动转换功能。适合纯 Windows</li>
+<li>true 表示提交代码时把 CRLF 转换成 LF，签出时 LF 转换成 CRLF。适合多平台协作</li>
+<li>input 表示提交时把 CRLF 转换成 LF，检出时不转换。适合纯 Linux 或 Mac</li>
+</ul>
+<p>参考 <a href="https://blog.csdn.net/ljheee/article/details/82946368">Git 多平台换行符问题(LF or CRLF)</a></p>
                 
                   
                 
