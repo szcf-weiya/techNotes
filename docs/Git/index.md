@@ -299,3 +299,19 @@ refer to [How to remove local (untracked) files from the current Git working tre
 ## 分支操作
 
 详见 [Git 分支 - 分支的新建与合并](https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6)
+
+## `CRLF` & `LF`
+
+双系统切换时，原先在 Win 处理，后来换到 Linux 处理，报出
+
+```
+CRLF will be replaced by LF.
+```
+
+设置 `autocrlf` 配置项：
+
+- false 表示取消自动转换功能。适合纯 Windows
+- true 表示提交代码时把 CRLF 转换成 LF，签出时 LF 转换成 CRLF。适合多平台协作
+- input 表示提交时把 CRLF 转换成 LF，检出时不转换。适合纯 Linux 或 Mac
+
+参考 [Git 多平台换行符问题(LF or CRLF)](https://blog.csdn.net/ljheee/article/details/82946368)
