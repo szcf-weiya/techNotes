@@ -107,3 +107,12 @@ refer to
 ## Command line arguments
 
 refer to [Taking Command Line Arguments in Bash](https://www.devdungeon.com/content/taking-command-line-arguments-bash)
+
+## join elements of an array in Bash
+
+```
+arr=(a b c)
+printf '%s\n' "$(IFS=,; printf '%s' "${arr[*]}")"
+```
+
+refer to [How can I join elements of an array in Bash?](https://stackoverflow.com/questions/1527049/how-can-i-join-elements-of-an-array-in-bash)
