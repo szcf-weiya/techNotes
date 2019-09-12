@@ -954,6 +954,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#git-push-require-username-and-password" class="md-nav__link">
+    Git push require username and password
+  </a>
+  
+</li>
+      
       
       
       
@@ -1580,6 +1587,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#git-push-require-username-and-password" class="md-nav__link">
+    Git push require username and password
+  </a>
+  
+</li>
+      
       
       
       
@@ -1844,6 +1858,14 @@ git push origin HEAD --force
 <li>input 表示提交时把 CRLF 转换成 LF，检出时不转换。适合纯 Linux 或 Mac</li>
 </ul>
 <p>参考 <a href="https://blog.csdn.net/ljheee/article/details/82946368">Git 多平台换行符问题(LF or CRLF)</a></p>
+<h2 id="git-push-require-username-and-password">Git push require username and password<a class="headerlink" href="#git-push-require-username-and-password" title="Permanent link">&para;</a></h2>
+<p>possible reason: use the default HTTPS instead of SSH</p>
+<p>correct this by</p>
+<div class="codehilite"><pre><span></span><span class="n">git</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="k">set</span><span class="o">-</span><span class="n">url</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="n">git</span><span class="nv">@github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="n">username</span><span class="o">/</span><span class="n">repo</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
+</pre></div>
+
+
+<p>参考 <a href="https://stackoverflow.com/questions/6565357/git-push-requires-username-and-password">Git push requires username and password</a></p>
                 
                   
                 
