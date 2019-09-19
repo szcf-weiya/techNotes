@@ -1,3 +1,34 @@
+## 2019.09.19
+
+1. mundane
+2. prominent
+3. sucker
+4. Theodore Roosevelt: 西奥多·罗斯福
+5. David Brooks: 专栏作家布鲁克斯
+6. Freakonomics: 魔鬼经济学
+7. pundits
+8. lapped up
+9. Satoshi Kanazawa: 金泽哲
+10. essentialism: 本质主义
+11. pseudoscientific
+12. discourse
+13. cardiologist: 心脏病医生
+14. foie: 法文，肝之意
+15. spin a tale: 编造故事， spun a false tale
+16. Thomas Kuhn: 托马斯•库恩
+17. Lakatos: 拉卡多斯
+18. Karl Popper
+19. portray
+20. exegesis
+21. Errol Morris: 埃洛莫里斯
+22. stratosphere: 平流层
+23. celebrity: 名望
+24. mingle
+25. garbled
+26. credulity: 轻信
+27. hiatus: 间断
+
+
 ## 2019.09.09
 
 1. as far as I can tell: 据我所知
