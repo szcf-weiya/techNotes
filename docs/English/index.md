@@ -27,6 +27,9 @@
 25. garbled
 26. credulity: 轻信
 27. hiatus: 间断
+28. fallacy: 谬误
+29. disdain: 鄙视蔑视
+
 
 
 ## 2019.09.09
