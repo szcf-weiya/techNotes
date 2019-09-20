@@ -1,3 +1,8 @@
+## 2019.09.20
+
+1. daunting
+2. demystify
+
 ## 2019.09.19
 
 1. mundane

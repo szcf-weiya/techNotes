@@ -494,3 +494,11 @@ refer to [How to install packages in Linux (CentOS) without root user with autom
 
 refer to [class ClassName versus class ClassName(object)](https://stackoverflow.com/questions/10043963/class-classname-versus-class-classnameobject)
 
+## `nbconvert failed: validate() got an unexpected keyword argument 'relax_add_props'`
+
+refer to [nbconvert failed: validate() got an unexpected keyword argument 'relax_add_props' #2901](https://github.com/jupyter/notebook/issues/2901)
+
+其实我的版本是一致的，但可能由于我进入 Jupyter notebook 方式不一样。
+
+- 一开始，直接从base 进入，然后选择 snakes 的 kernel，导出失败，错误原因如上
+- 直接在 snakes 进入 Jupyter notebook，这样可以成功导出
