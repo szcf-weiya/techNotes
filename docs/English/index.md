@@ -1,3 +1,13 @@
+## 2019.09.30
+
+1. debunk
+2. credulous
+3. dubious
+4. exclaim
+5. poll
+6. That strikes me as rather bold
+
+
 ## 2019.09.20
 
 1. daunting
