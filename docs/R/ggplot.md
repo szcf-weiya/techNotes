@@ -191,3 +191,8 @@ NOT `png()...dev.off()`, use
 ggsave("sth.eps",device="eps", width=9)
 ```
 
+## `aes_string` vs `aes`
+
+在重复绘图时，似乎是作用域的缘故，有时 `aes` 只能保留最后一个，此时需要用 `aes_string`.
+
+参考 [Question: Continuously add lines to ggplot with for loop](https://www.biostars.org/p/234142/)
