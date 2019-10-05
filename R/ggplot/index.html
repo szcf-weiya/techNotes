@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -521,6 +521,13 @@
         <li class="md-nav__item">
   <a href="#save" class="md-nav__link">
     save
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aes_string-vs-aes" class="md-nav__link">
+    aes_string vs aes
   </a>
   
 </li>
@@ -1274,6 +1281,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#aes_string-vs-aes" class="md-nav__link">
+    aes_string vs aes
+  </a>
+  
+</li>
+      
       
       
       
@@ -1448,6 +1462,11 @@
 <p>NOT <code>png()...dev.off()</code>, use</p>
 <div class="codehilite"><pre><span></span><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;sth.eps&quot;</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="s">&quot;eps&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="m">9</span><span class="p">)</span>
 </pre></div>
+
+
+<h2 id="aes_string-vs-aes"><code>aes_string</code> vs <code>aes</code><a class="headerlink" href="#aes_string-vs-aes" title="Permanent link">&para;</a></h2>
+<p>在重复绘图时，似乎是作用域的缘故，有时 <code>aes</code> 只能保留最后一个，此时需要用 <code>aes_string</code>.</p>
+<p>参考 <a href="https://www.biostars.org/p/234142/">Question: Continuously add lines to ggplot with for loop</a></p>
                 
                   
                 
@@ -1536,7 +1555,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.c648116f.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
