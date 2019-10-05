@@ -726,3 +726,10 @@ pdftk input.pdf update_info metadata output output.pdf
 ```
 
 
+## zip 文件解压乱码
+
+别人在 Windows 下加压的文件，通过微信发送，在 Ubuntu 16.04 中解压时文件名乱码。
+
+采用 `unar your.zip`
+
+参考 [Linux 下 zip 文件解压乱码如何解决？](https://www.zhihu.com/question/20523036)
