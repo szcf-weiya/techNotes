@@ -732,4 +732,4 @@ pdftk input.pdf update_info metadata output output.pdf
 
 采用 `unar your.zip`
 
-参考 [Linux 下 zip 文件解压乱码如何解决？](https://www.zhihu.com/question/20523036)
+参考 [Linux文件乱码](https://www.findhao.net/easycoding/1605)
