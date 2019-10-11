@@ -217,6 +217,7 @@ end
 1. [Hash function for custom type](https://stackoverflow.com/questions/50052668/hash-function-for-custom-type)
 2. [到底什么是hash?](https://www.zhihu.com/question/26762707)
 3. [Surprising struct equality test](https://discourse.julialang.org/t/surprising-struct-equality-test/4890)
+4. [What is the difference between "using" and "import"?](https://docs.julialang.org/en/v1/manual/faq/#What-is-the-difference-between-%22using%22-and-%22import%22?-1)
 
 ## `&` 优先级
 

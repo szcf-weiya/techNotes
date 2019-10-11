@@ -159,3 +159,17 @@ refer to [Rank of the Product of Matrices AB is Less than or Equal to the Rank o
 ## Only real eigenvalues in symmetric matrices
 
 refer to [The Case of Complex Eigenvalues](http://www.sosmath.com/matrix/eigen3/eigen3.html)
+
+## Calculate the Inverse of a 3x3 matrix
+
+By **Adjugate Matrix**,
+
+1. Check the determinant of the matrix.
+2. Transpose the original matrix.
+3. Find the determinant of each of the 2x2 minor matrices. 
+4. Create the matrix of cofactors.  (assign a sign)
+5. Divide each term of the adjugate matrix by the determinant. 
+
+By **Linear Row Reduction**
+
+Refer to [How to Find the Inverse of a 3x3 Matrix](https://www.wikihow.com/Find-the-Inverse-of-a-3x3-Matrix)
