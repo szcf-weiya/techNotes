@@ -826,6 +826,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fisher-information-matrix-and-hessian-matrix" class="md-nav__link">
+    Fisher Information matrix and Hessian matrix
+  </a>
+  
+</li>
+      
       
       
       
@@ -1204,6 +1211,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fisher-information-matrix-and-hessian-matrix" class="md-nav__link">
+    Fisher Information matrix and Hessian matrix
+  </a>
+  
+</li>
+      
       
       
       
@@ -1294,6 +1308,28 @@ R_T(P)=\E[L(P,T(X))]=\int_{\cal X}L(P,T(x))dP_X(x)
 </script>
 </div>
 <p>And one related question asked in <a href="https://stats.stackexchange.com/questions/72613/subscript-notation-in-expectations">Subscript notation in expectations</a></p>
+<h2 id="fisher-information-matrix-and-hessian-matrix">Fisher Information matrix and Hessian matrix<a class="headerlink" href="#fisher-information-matrix-and-hessian-matrix" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>the second derivative of the log-likelihood evaluated at the maximum likelihood estimates (MLE) is the observed Fisher information. This is exactly what most optimization algorithms like optim in R return: the Hessian evaluated at the MLE. When the negative log-likelihood is minimized, the negative Hessian is returned. As you correctly point out, the estimated standard errors of the MLE are the square roots of the diagonal elements of the inverse of the observed Fisher information matrix. In other words: The square roots of the diagonal elements of the inverse of the Hessian (or the negative Hessian) are the estimated standard errors.</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\mathbf{I}(\theta)=-\frac{\partial^{2}}{\partial\theta_{i}\partial\theta_{j}}l(\theta),~~~~ 1\leq i, j\leq p
+</div>
+<script type="math/tex; mode=display">
+\mathbf{I}(\theta)=-\frac{\partial^{2}}{\partial\theta_{i}\partial\theta_{j}}l(\theta),~~~~ 1\leq i, j\leq p
+</script>
+</div>
+<p>and </p>
+<div>
+<div class="MathJax_Preview">
+\mathbf{H}(\theta)=\frac{\partial^{2}}{\partial\theta_{i}\partial\theta_{j}}l(\theta),~~~~ 1\leq i, j\leq p
+</div>
+<script type="math/tex; mode=display">
+\mathbf{H}(\theta)=\frac{\partial^{2}}{\partial\theta_{i}\partial\theta_{j}}l(\theta),~~~~ 1\leq i, j\leq p
+</script>
+</div>
+<p>Refer to <a href="https://stats.stackexchange.com/questions/68080/basic-question-about-fisher-information-matrix-and-relationship-to-hessian-and-s">Basic question about Fisher Information matrix and relationship to Hessian and standard errors</a></p>
                 
                   
                 
