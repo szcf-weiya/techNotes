@@ -204,6 +204,14 @@ function Base.hash(obj::Reaction, h::UInt)
 end
 ```
 
+> hash（散列、杂凑）函数，是将任意长度的数据映射到有限长度的域上。直观解释起来，就是对一串数据m进行杂糅，输出另一段固定长度的数据h，作为这段数据的特征（指纹）。
+>
+> or
+>
+> HASH函数是这么一种函数，他接受一段数据作为输入，然后生成一串数据作为输出，从理论上说，设计良好的HASH函数，对于任何不同的输入数据，都应该以极高的概率生成不同的输出数据，因此可以作为“指纹”使用，来判断两个文件是否相同。
+>     数据 ---->输入 HASH函数  ---->输出指纹数据
+
+
 参考
 
 1. [Hash function for custom type](https://stackoverflow.com/questions/50052668/hash-function-for-custom-type)
@@ -325,3 +333,10 @@ export LD_LIBRARY_PATH=/users/xxx/miniconda3/lib:$LD_LIBRARY_PATH
 then rebuild `GR` package in the julia REPL.
 
 This solution should work, but actually it failed at the first time. Do not be too frustrated, I found the reason is that I type `miniconda3` as `minconda3` in the path.
+
+It works now, although it still throw an error, 
+
+```julia
+julia> libGL error: unable to load driver: swrast_dri.so
+libGL error: failed to load driver: swrast
+```
