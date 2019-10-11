@@ -644,3 +644,15 @@ refer to [How to make the optional title of a theorem bold with amsthm?](https:/
 here `\@addtoreset{foo}{bar}` is to add counter `foo` to the list of counters `\cl@bar` to be reset when counter `bar` is stepped.
 
 Refer to [Parts numbering in Proofs](https://tex.stackexchange.com/questions/101880/parts-numbering-in-proofs)
+
+## New usage of `cases`
+
+see
+
+```tex
+\ind{A} = \cases{
+        1 & if $A$ is true,\\
+        0 & otherwise,}
+```
+
+refer to [Matching Content to MathJax](http://drz.ac/2013/01/14/matching-content-to-mathjax/).
