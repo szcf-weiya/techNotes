@@ -655,4 +655,4 @@ see
         0 & otherwise,}
 ```
 
-refer to [Matching Content to MathJax](http://drz.ac/2013/01/14/matching-content-to-mathjax/).
+refer to [Matching Content to MathJax](http://drz.ac/2013/01/14/matching-content-to-mathjax/), which originally for illustrating the typeface of mathjax.
