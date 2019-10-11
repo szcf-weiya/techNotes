@@ -251,3 +251,77 @@ if need to REPL and also arguments, then `-i` would be suitable.
 And note that `--` should be separated the switches and program files. (but seems not necessary)
 
 [Julia docs: Getting Started](https://docs.julialang.org/en/v1/manual/getting-started/index.html)
+
+## Unable to display plot using the REPL. GKS errors
+
+The reason would be relate to the `GR` package, 
+
+```bash
+cd .julia/packages/GR/ZI5OE/deps/gr/bin/
+ldd gksqt
+```
+
+and then get
+
+```bash
+linux-vdso.so.1 =>  (0x00007ffdc1e58000)
+libQt5Widgets.so.5 => not found
+libQt5Gui.so.5 => not found
+libQt5Network.so.5 => not found
+libQt5Core.so.5 => not found
+libGL.so.1 => /lib64/libGL.so.1 (0x00002ae608a73000)
+libpthread.so.0 => /lib64/libpthread.so.0 (0x00002ae608ce5000)
+libstdc++.so.6 => /lib64/libstdc++.so.6 (0x00002ae608f01000)
+libm.so.6 => /lib64/libm.so.6 (0x00002ae609209000)
+libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x00002ae60950b000)
+libc.so.6 => /lib64/libc.so.6 (0x00002ae609721000)
+libexpat.so.1 => /lib64/libexpat.so.1 (0x00002ae609aef000)
+libxcb-dri3.so.0 => /lib64/libxcb-dri3.so.0 (0x00002ae609d19000)
+libxcb-xfixes.so.0 => /lib64/libxcb-xfixes.so.0 (0x00002ae609f1c000)
+libxcb-present.so.0 => /lib64/libxcb-present.so.0 (0x00002ae60a125000)
+libxcb-sync.so.1 => /lib64/libxcb-sync.so.1 (0x00002ae60a328000)
+libxshmfence.so.1 => /lib64/libxshmfence.so.1 (0x00002ae60a52f000)
+libglapi.so.0 => /lib64/libglapi.so.0 (0x00002ae60a733000)
+libselinux.so.1 => /lib64/libselinux.so.1 (0x00002ae60a963000)
+libXext.so.6 => /lib64/libXext.so.6 (0x00002ae60ab8a000)
+libXdamage.so.1 => /lib64/libXdamage.so.1 (0x00002ae60ad9d000)
+libXfixes.so.3 => /lib64/libXfixes.so.3 (0x00002ae60afa0000)
+libX11-xcb.so.1 => /lib64/libX11-xcb.so.1 (0x00002ae60b1a6000)
+libX11.so.6 => /lib64/libX11.so.6 (0x00002ae60b3a9000)
+libxcb.so.1 => /lib64/libxcb.so.1 (0x00002ae60b6e7000)
+libxcb-glx.so.0 => /lib64/libxcb-glx.so.0 (0x00002ae60b90f000)
+libxcb-dri2.so.0 => /lib64/libxcb-dri2.so.0 (0x00002ae60bb2b000)
+libXxf86vm.so.1 => /lib64/libXxf86vm.so.1 (0x00002ae60bd30000)
+libdrm.so.2 => /lib64/libdrm.so.2 (0x00002ae60bf36000)
+libdl.so.2 => /lib64/libdl.so.2 (0x00002ae60c148000)
+/lib64/ld-linux-x86-64.so.2 (0x0000557abc358000)
+libXau.so.6 => /lib64/libXau.so.6 (0x00002ae60c34c000)
+libpcre.so.1 => /lib64/libpcre.so.1 (0x00002ae60c551000)
+```
+
+(refer to [one comment in Error: GKS: can't connect to GKS socket application](https://github.com/JuliaPlots/Plots.jl/issues/1649#issuecomment-478520497))
+
+So it seems that it is due to the missing of `libqt5`. If I have the `sudo` privilege, maybe just type
+
+```bash
+sudo apt-get install qt5-default
+```
+
+but I cannot. But I noticed that I have installed `miniconda3`, and the `qt` is installed,
+
+```bash
+qmake -v
+# QMake version 3.1
+# Using Qt version 5.9.7 in /users/xxx/miniconda3/lib
+```
+
+So a natural way is to append the library path of `qt` to `LD_LIBRARY_PATH`, that is,
+
+```bash
+# in .bashrc
+export LD_LIBRARY_PATH=/users/xxx/miniconda3/lib:$LD_LIBRARY_PATH
+```
+
+then rebuild `GR` package in the julia REPL.
+
+This solution should work, but actually it failed at the first time. Do not be too frustrated, I found the reason is that I type `miniconda3` as `minconda3` in the path.
