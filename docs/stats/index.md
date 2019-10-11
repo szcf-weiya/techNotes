@@ -75,3 +75,20 @@ R_T(P)=\E[L(P,T(X))]=\int_{\cal X}L(P,T(x))dP_X(x)
 $$
 
 And one related question asked in [Subscript notation in expectations](https://stats.stackexchange.com/questions/72613/subscript-notation-in-expectations)
+
+## Fisher Information matrix and Hessian matrix
+
+> the second derivative of the log-likelihood evaluated at the maximum likelihood estimates (MLE) is the observed Fisher information. This is exactly what most optimization algorithms like optim in R return: the Hessian evaluated at the MLE. When the negative log-likelihood is minimized, the negative Hessian is returned. As you correctly point out, the estimated standard errors of the MLE are the square roots of the diagonal elements of the inverse of the observed Fisher information matrix. In other words: The square roots of the diagonal elements of the inverse of the Hessian (or the negative Hessian) are the estimated standard errors.
+
+
+$$
+\mathbf{I}(\theta)=-\frac{\partial^{2}}{\partial\theta_{i}\partial\theta_{j}}l(\theta),~~~~ 1\leq i, j\leq p
+$$
+
+and 
+
+$$
+\mathbf{H}(\theta)=\frac{\partial^{2}}{\partial\theta_{i}\partial\theta_{j}}l(\theta),~~~~ 1\leq i, j\leq p
+$$
+
+Refer to [Basic question about Fisher Information matrix and relationship to Hessian and standard errors](https://stats.stackexchange.com/questions/68080/basic-question-about-fisher-information-matrix-and-relationship-to-hessian-and-s)
