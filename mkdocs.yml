@@ -87,6 +87,7 @@ extra_javascript:
 
 markdown_extensions:
   - pymdownx.arithmatex
+  - pymdownx.superfences
   - admonition
   - codehilite
   - smarty
