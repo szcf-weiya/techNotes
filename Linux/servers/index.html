@@ -336,13 +336,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pbs-passing-argument-list" class="md-nav__link">
-    PBS passing argument list
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pbs-cheat-sheet" class="md-nav__link">
     PBS cheat sheet
   </a>
@@ -1067,13 +1060,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pbs-passing-argument-list" class="md-nav__link">
-    PBS passing argument list
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pbs-cheat-sheet" class="md-nav__link">
     PBS cheat sheet
   </a>
@@ -1113,9 +1099,27 @@
                 
                 <h1 id="servers">Servers<a class="headerlink" href="#servers" title="Permanent link">&para;</a></h1>
 <h2 id="submitting-multiple-jobs-quickly">Submitting Multiple Jobs Quickly<a class="headerlink" href="#submitting-multiple-jobs-quickly" title="Permanent link">&para;</a></h2>
-<p>refer to <a href="http://www.pace.gatech.edu/submitting-multiple-jobs-quickly">Submitting Multiple Jobs Quickly</a>.</p>
-<h2 id="pbs-passing-argument-list">PBS passing argument list<a class="headerlink" href="#pbs-passing-argument-list" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>qsub your.job -v <span class="nv">arg1</span><span class="o">=</span>val1,arg2<span class="o">=</span>val2
+<p>``` bash tab=&rdquo;PBS&rdquo;
+/usr/bin/mpirun -v -np 28 -machinefile $PBS_NODEFILE ./myexe ${NUMBERARG} ${LETTERARG}</p>
+<div class="codehilite"><pre><span></span>``` <span class="nv">bash</span> <span class="nv">tab</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">Bash</span><span class="s2">&quot;</span>
+#<span class="o">!/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">bash</span>
+<span class="k">for</span> <span class="nv">NUMBERS</span> <span class="nv">in</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="c1">; do</span>
+    <span class="k">for</span> <span class="nv">LETTERS</span> <span class="nv">in</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="nv">d</span> <span class="nv">e</span><span class="c1">; do</span>
+         <span class="nv">qsub</span> <span class="o">-</span><span class="nv">v</span> <span class="nv">NUMBERARG</span><span class="o">=</span>$<span class="nv">NUMBERS</span>,<span class="nv">LETTERARG</span><span class="o">=</span>$<span class="nv">LETTERS</span> <span class="nv">my_qsub_script</span>.<span class="nv">pbs</span>
+    <span class="nv">done</span>
+<span class="nv">done</span>
+</pre></div>
+
+
+<p>``` bash tab=&rdquo;Run&rdquo;
+chmod +x submit_multiple_jobs.sh
+./submit_multiple_jobs.sh</p>
+<div class="codehilite"><pre><span></span><span class="n">refer</span> <span class="k">to</span> <span class="p">[</span><span class="n">Submitting</span> <span class="n">Multiple</span> <span class="n">Jobs</span> <span class="n">Quickly</span><span class="p">](</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">pace</span><span class="p">.</span><span class="n">gatech</span><span class="p">.</span><span class="n">edu</span><span class="o">/</span><span class="n">submitting</span><span class="o">-</span><span class="n">multiple</span><span class="o">-</span><span class="n">jobs</span><span class="o">-</span><span class="n">quickly</span><span class="p">).</span>
+
+<span class="o">##</span> <span class="n">PBS</span> <span class="n">passing</span> <span class="n">argument</span> <span class="n">list</span>
+
+<span class="o">```</span><span class="n">bash</span>
+<span class="n">qsub</span> <span class="n">your</span><span class="p">.</span><span class="n">job</span> <span class="o">-</span><span class="n">v</span> <span class="n">arg1</span><span class="o">=</span><span class="n">val1</span><span class="p">,</span><span class="n">arg2</span><span class="o">=</span><span class="n">val2</span>
 </pre></div>
 
 
