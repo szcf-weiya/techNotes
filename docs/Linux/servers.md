@@ -2,6 +2,24 @@
 
 ## Submitting Multiple Jobs Quickly
 
+``` bash tab="PBS"
+/usr/bin/mpirun -v -np 28 -machinefile $PBS_NODEFILE ./myexe ${NUMBERARG} ${LETTERARG}
+```
+
+``` bash tab="Bash"
+#!/bin/bash
+for NUMBERS in 1 2 3 4 5; do
+	for LETTERS in a b c d e; do
+ 		 qsub -v NUMBERARG=$NUMBERS,LETTERARG=$LETTERS my_qsub_script.pbs
+	done
+done
+```
+
+``` bash tab="Run"
+chmod +x submit_multiple_jobs.sh
+./submit_multiple_jobs.sh
+```
+
 refer to [Submitting Multiple Jobs Quickly](http://www.pace.gatech.edu/submitting-multiple-jobs-quickly).
 
 ## PBS passing argument list

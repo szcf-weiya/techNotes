@@ -1,3 +1,16 @@
+## 2019.10.12
+
+1. mind-boggling
+2. instrument: verb. such as, "they instrument military aid"
+3. maddening
+4. come across
+5. jurisdictions    
+6. ramp up
+7. crap
+8. Ray Kroc
+9. teaser
+10. much-missed 
+
 ## 2019.09.30
 
 1. debunk
