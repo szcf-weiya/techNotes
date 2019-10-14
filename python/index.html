@@ -1960,21 +1960,17 @@
 <p><a href="http://www.cnblogs.com/zhanglianbo/p/6109939.html">远程访问jupyter</a></p>
 <h2 id="jupyter-notebook">jupyter notebook 出错<a class="headerlink" href="#jupyter-notebook" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="error_jupyter.png" /></p>
-<p>可以通过</p>
+<p>可以通过
 <div class="codehilite"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="p">.</span><span class="n">pki</span>
 </pre></div>
-
-
-<p>解决</p>
+解决</p>
 <h2 id="jupyter-notebook_1">创建jupyter notebook 权限问题<a class="headerlink" href="#jupyter-notebook_1" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="error_jupyter_1.png" /></p>
 <p>原因是所给的路径的用户权限不一致，jupyter的用户及用户组均为root，为解决这个问题，直接更改用户权限</p>
-<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">chown</span> <span class="n">weiya</span> <span class="n">jupyter</span><span class="o">/</span> <span class="o">-</span><span class="n">R</span>
+<p><div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">chown</span> <span class="n">weiya</span> <span class="n">jupyter</span><span class="o">/</span> <span class="o">-</span><span class="n">R</span>
 <span class="n">sudo</span> <span class="n">chgrp</span> <span class="n">weiya</span> <span class="n">jupyter</span><span class="o">/</span> <span class="o">-</span><span class="n">R</span>
 </pre></div>
-
-
-<p>其中-R表示递归调用，使得文件夹中所有内容的用户权限都进行更改。</p>
+其中-R表示递归调用，使得文件夹中所有内容的用户权限都进行更改。</p>
 <h2 id="theano-import">theano import出错<a class="headerlink" href="#theano-import" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="err_theano.png" /></p>
 <p>更改.theano文件夹的用户权限</p>
@@ -1982,11 +1978,9 @@
 <div class="codehilite"><pre><span></span><span class="n">pip</span> <span class="n">list</span>
 </pre></div>
 
-
 <h2 id="condaspyder">conda更新spyder<a class="headerlink" href="#condaspyder" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="p">(</span><span class="n">sudo</span> <span class="n">proxychains</span><span class="p">)</span> <span class="n">conda</span> <span class="k">update</span> <span class="n">spyder</span>
 </pre></div>
-
 
 <h2 id="selenium">selenium<a class="headerlink" href="#selenium" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path">Selenium using Python - Geckodriver executable needs to be in PATH
@@ -2013,7 +2007,6 @@
       <span class="p">[</span> <span class="mi">0</span><span class="p">.,</span>  <span class="mi">2</span><span class="p">.]])</span>
 </pre></div>
 
-
 <h2 id="difference-between-numpyarray-shape-r-1-and-r">Difference between numpy.array shape (R, 1) and (R,)<a class="headerlink" href="#difference-between-numpyarray-shape-r-1-and-r" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r">Difference between numpy.array shape (R, 1) and (R,)</a></p>
 <h2 id="conda">正式认识conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h2>
@@ -2025,16 +2018,13 @@
 <li>pyside出现keyerrror</li>
 </ol>
 <p>转向py3.6
-不装pyside，而装pyqt5</p>
+不装pyside，而装pyqt5
 <div class="codehilite"><pre><span></span>pip install pyqt5
-</pre></div>
-
-
+</pre></div></p>
 <p>最终在新建的另一个 conda 环境 snakes 中装好了 Python3.6 及 spyder3，通过下面命令运行就 OK 了。</p>
 <div class="codehilite"><pre><span></span><span class="nb">source</span> activate snakes
 spyder3 <span class="p">&amp;</span>
 </pre></div>
-
 
 <h2 id="xrange-and-range">xrange and range<a class="headerlink" href="#xrange-and-range" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/imzoer/article/details/8742283">Python中range和xrange的区别</a></p>
@@ -2086,23 +2076,19 @@ spyder3 <span class="p">&amp;</span>
 <span class="na">trusted-host</span><span class="o">=</span><span class="s">mirrors.aliyun.com</span>
 </pre></div>
 
-
 <p>注意编码格式为utf8无BOM。</p>
 <h2 id="conda-window">conda 在window下设置<a class="headerlink" href="#conda-window" title="Permanent link">&para;</a></h2>
 <p>win10下已经装了anaconda，spyder(2.7)，现想再装上python3，于是利用conda创建一个python3的环境<code>bunny</code>。</p>
 <div class="codehilite"><pre><span></span><span class="n">conda</span> <span class="k">create</span> <span class="c1">--name bunny python=3</span>
 </pre></div>
 
-
 <p>切换到bunny环境</p>
 <div class="codehilite"><pre><span></span><span class="n">activate</span> <span class="n">bunny</span>
 </pre></div>
 
-
 <p>参考<a href="https://pythonhosted.org/spyder/installation.html">spyder3 doc</a></p>
 <div class="codehilite"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">spyder3</span>
 </pre></div>
-
 
 <h2 id="_2">又拍云的短信平台<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>参考文献</p>
@@ -2115,12 +2101,9 @@ spyder3 <span class="p">&amp;</span>
 <span class="c1"># payload=&#39;payload = {&#39;name&#39;: weiya}&#39;</span>
 </pre></div>
 
-
-<p>换成json</p>
+<p>换成json
 <div class="codehilite"><pre><span></span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
-</pre></div>
-
-
+</pre></div></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>注意不能采用注释掉的部分。</p>
@@ -2134,7 +2117,6 @@ spyder3 <span class="p">&amp;</span>
 <span class="k">print</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="s2">&quot;%CE%B1%CE%BB%20&quot;</span><span class="p">)</span>
 </pre></div>
 
-
 <ol start="2">
 <li>python3</li>
 </ol>
@@ -2142,12 +2124,10 @@ spyder3 <span class="p">&amp;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">unquote</span><span class="p">(</span><span class="s2">&quot;%CE%B1%CE%BB%20&quot;</span><span class="p">))</span>
 </pre></div>
 
-
 <h2 id="convert-bytes-to-string">convert bytes to string<a class="headerlink" href="#convert-bytes-to-string" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/606191/convert-bytes-to-a-string">convert-bytes-to-a-string</a></p>
 <div class="codehilite"><pre><span></span><span class="sa">b</span><span class="s2">&quot;abcde&quot;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
 </pre></div>
-
 
 <h2 id="jsondumps-jsondump">json.dumps() 和json.dump()的区别<a class="headerlink" href="#jsondumps-jsondump" title="Permanent link">&para;</a></h2>
 <p>简言之，<code>dumps()</code>和<code>loads()</code>都是针对字符串而言的，而<code>dump()</code>和<code>load()</code>是针对文件而言的。具体细节可疑参见<a href="https://www.cnblogs.com/wswang/p/5411826.html">python json.dumps()  json.dump()的区别 - wswang - 博客园</a></p>
@@ -2168,7 +2148,6 @@ python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这�
 <div class="codehilite"><pre><span></span>sudo pip install python-markdown-math
 </pre></div>
 
-
 <h2 id="python-3-str-bytes">python 3 中的 str 和 bytes<a class="headerlink" href="#python-3-str-bytes" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://www.cnblogs.com/chownjy/p/6625299.html">浅析Python3中的bytes和str类型 - Chown-Jane-Y - 博客园</a></p>
 <p>这篇博文讲得很清楚</p>
@@ -2187,12 +2166,10 @@ python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这�
 <div class="codehilite"><pre><span></span><span class="c1"># bind-address = 127.0.0.1</span>
 </pre></div>
 
-
 <p>并且在 mysql 中创建用户并设置权限，如</p>
 <div class="codehilite"><pre><span></span>create user <span class="s1">&#39;test&#39;</span>@<span class="s1">&#39;%&#39;</span> identified by <span class="s1">&#39;test123&#39;</span><span class="p">;</span>
 grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span class="s1">&#39;%&#39;</span> with grant option<span class="p">;</span>
 </pre></div>
-
 
 <p>参考</p>
 <ol>
@@ -2221,7 +2198,6 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <div class="codehilite"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\lambda&quot;</span><span class="p">)</span>
 </pre></div>
 
-
 <p>refer to <a href="https://matplotlib.org/users/mathtext.html">Writing mathematical expressions</a></p>
 <h2 id="non-ascii">写入 non-ascii 字符<a class="headerlink" href="#non-ascii" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;filename&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
@@ -2231,11 +2207,9 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">write</span><span class="o">.</span><span class="n">str</span><span class="p">)</span>
 </pre></div>
 
-
 <p>会报错</p>
 <div class="codehilite"><pre><span></span><span class="s1">&#39;ascii&#39;</span> <span class="n">codec</span> <span class="n">can</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">encode</span> <span class="nb">character</span>
 </pre></div>
-
 
 <p>参考 <a href="https://stackoverflow.com/questions/33255846/python-write-a-list-with-non-ascii-characters-to-a-text-file">Python: write a list with non-ASCII characters to a text file</a> 采用 <code>codecs.open(, "w", encoding="utf-8")</code> 可以解决需求。</p>
 <h2 id="environment-jupyter">不同 environment 的 jupyter<a class="headerlink" href="#environment-jupyter" title="Permanent link">&para;</a></h2>
@@ -2256,13 +2230,11 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <div class="codehilite"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
 </pre></div>
 
-
 <ul>
 <li>numpy</li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
 </pre></div>
-
 
 <p>refer to <a href="https://stackoverflow.com/questions/3386259/how-to-make-a-multidimension-numpy-array-with-a-varying-row-size">How to make a multidimension numpy array with a varying row size?</a></p>
 <h2 id="find-index-of-an-item">find index of an item<a class="headerlink" href="#find-index-of-an-item" title="Permanent link">&para;</a></h2>
@@ -2277,7 +2249,6 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <span class="mi">2</span>
 </pre></div>
 
-
 <p>refer to <a href="https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-given-a-list-containing-it-in-python">Finding the index of an item given a list containing it in Python</a></p>
 <h2 id="index-a-list-with-another-list">index a list with another list<a class="headerlink" href="#index-a-list-with-another-list" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]</span>
@@ -2285,14 +2256,12 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Idx</span><span class="p">]</span>
 </pre></div>
 
-
 <p>refer to <a href="https://stackoverflow.com/questions/1012185/in-python-how-do-i-index-a-list-with-another-list">In Python, how do I index a list with another list?</a></p>
 <h2 id="getting-indices-of-true">getting indices of true<a class="headerlink" href="#getting-indices-of-true" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 </pre></div>
-
 
 <p>refer to <a href="https://stackoverflow.com/questions/21448225/getting-indices-of-true-values-in-a-boolean-list">Getting indices of True values in a boolean list</a></p>
 <h2 id="do-noting">do noting<a class="headerlink" href="#do-noting" title="Permanent link">&para;</a></h2>

@@ -1218,14 +1218,12 @@
 <ol>
 <li>定义变量时，变量名不加美元符号</li>
 <li>变量名和等号之间不能有空格</li>
-<li>变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：</li>
-</ol>
+<li>变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：
 <div class="codehilite"><pre><span></span><span class="k">for</span> skill in Ada Coffe Action Java<span class="p">;</span> <span class="k">do</span>
     <span class="nb">echo</span> <span class="s2">&quot;I am good at </span><span class="si">${</span><span class="nv">skill</span><span class="si">}</span><span class="s2">Script&quot;</span>
 <span class="k">done</span>
-</pre></div>
-
-
+</pre></div></li>
+</ol>
 <h2 id="shell_2">shell字符串<a class="headerlink" href="#shell_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
@@ -1275,7 +1273,6 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <span class="k">done</span>
 </pre></div>
 
-
 <p>Refer to <a href="https://www.cnblogs.com/paul8339/p/6207182.html">用shell统计访问日志里每个ip访问次数</a></p>
 <h2 id="split-string-while-reading-files">split string while reading files<a class="headerlink" href="#split-string-while-reading-files" title="Permanent link">&para;</a></h2>
 <p>specify <code>IFS=</code>.</p>
@@ -1293,7 +1290,6 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>i&lt;<span class="m">15</span><span class="p">;</span>i++<span class="o">))</span> <span class="k">do</span> <span class="nv">queues</span><span class="o">+=(</span><span class="si">${</span><span class="nv">queue</span><span class="p">[2]</span><span class="si">}</span><span class="o">)</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
 </pre></div>
 
-
 <p>refer to</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/1951506/add-a-new-element-to-an-array-without-specifying-the-index-in-bash">Add a new element to an array without specifying the index in Bash</a></li>
@@ -1308,7 +1304,6 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <div class="codehilite"><pre><span></span>arr=(a b c)
 printf &#39;%s\n&#39; &quot;$(IFS=,; printf &#39;%s&#39; &quot;<span class="cp">${</span><span class="n">arr</span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="cp">}</span>&quot;)&quot;
 </pre></div>
-
 
 <p>refer to <a href="https://stackoverflow.com/questions/1527049/how-can-i-join-elements-of-an-array-in-bash">How can I join elements of an array in Bash?</a></p>
                 

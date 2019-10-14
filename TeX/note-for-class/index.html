@@ -1179,15 +1179,12 @@
 <span class="k">\titleformat</span><span class="nb">{</span><span class="k">\chapter</span><span class="nb">}{</span><span class="k">\centering\sanhao</span><span class="nb">}{</span><span class="k">\thechapter</span><span class="nb">}{</span>0em<span class="nb">}{}</span>
 </pre></div>
 
-
 <p>可以加粗</p>
 <p>而</p>
-<div class="codehilite"><pre><span></span><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\sanhao</span><span class="nb">}{</span><span class="k">\fontsize</span><span class="nb">{</span>16pt<span class="nb">}{</span><span class="k">\baselineskip</span><span class="nb">}</span><span class="k">\selectfont</span><span class="nb">}</span> 
+<p><div class="codehilite"><pre><span></span><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\sanhao</span><span class="nb">}{</span><span class="k">\fontsize</span><span class="nb">{</span>16pt<span class="nb">}{</span><span class="k">\baselineskip</span><span class="nb">}</span><span class="k">\selectfont</span><span class="nb">}</span> 
 <span class="k">\titleformat</span><span class="nb">{</span><span class="k">\chapter</span><span class="nb">}{</span><span class="k">\centering\sanhao\bfseries</span><span class="nb">}{</span><span class="k">\thechapter</span><span class="nb">}{</span>0em<span class="nb">}{}</span>
 </pre></div>
-
-
-<p>不可以</p>
+不可以</p>
 <p>参考 <a href="https://tex.stackexchange.com/questions/165930/bold-and-italic-subsection-title-with-custom-font-size">Bold and italic subsection title with custom font size</a></p>
 <h2 id="_2">数学缩写<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>列表：https://en.wikipedia.org/wiki/List_of_mathematical_abbreviations</p>
@@ -1276,7 +1273,7 @@
 </ol>
 <h2 id="if-not-declareoption">If not DeclareOption<a class="headerlink" href="#if-not-declareoption" title="Permanent link">&para;</a></h2>
 <p>参考https://tex.stackexchange.com/questions/135248/if-not-declareoption
-所以似乎\ExecuteOptions不是必要的。</p>
+所以似乎\ExecuteOptions不是必要的。
 <div class="codehilite"><pre><span></span><span class="k">\DeclareOptionX</span><span class="nb">{</span>fangfont<span class="nb">}</span>[emptyoption]<span class="nb">{</span><span class="c">%</span>
     <span class="k">\ifthenelse</span><span class="nb">{</span><span class="k">\equal</span><span class="nb">{</span>#1<span class="nb">}{</span>emptyoption<span class="nb">}}{</span><span class="c">%</span>
         <span class="k">\zju</span>@fangfalse
@@ -1294,9 +1291,7 @@
     <span class="nb">}</span>
 <span class="nb">}</span>
 </pre></div>
-
-
-<p>似乎可以简化</p>
+似乎可以简化</p>
 <h2 id="about-table-and-figure">about table and figure<a class="headerlink" href="#about-table-and-figure" title="Permanent link">&para;</a></h2>
 <ol>
 <li>https://tex.stackexchange.com/questions/44263/how-to-use-footnotesize-with-longtable-command</li>
@@ -1307,7 +1302,6 @@
 <p>参考<a href="https://tex.stackexchange.com/questions/32459/figure-how-to-have-figure-1-5-in-bold">figure-how-to-have-figure-1-5-in-bold</a></p>
 <div class="codehilite"><pre><span></span><span class="k">\usepackage</span><span class="na">[labelfont=bf]</span><span class="nb">{</span>caption<span class="nb">}</span>
 </pre></div>
-
 
 <h2 id="longtable">longtable 标题居上<a class="headerlink" href="#longtable" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://tex.stackexchange.com/questions/219138/how-to-have-a-caption-on-top-of-longtable">how to have a caption on top of longtable?</a></p>

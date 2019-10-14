@@ -1587,7 +1587,6 @@
 <span class="nb">int</span> <span class="o">*</span><span class="n">const</span> <span class="n">pc</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">;</span> <span class="o">//</span><span class="err">必须初始化，引用的本质</span>
 </pre></div>
 
-
 <p>构造函数析构函数作用区间</p>
 <div class="codehilite"><pre><span></span><span class="nv">A</span> <span class="nv">a</span><span class="c1">;</span>
 <span class="nv">A</span> <span class="o">*</span><span class="nv">ap</span><span class="c1">;</span>
@@ -1600,7 +1599,6 @@
 ......<span class="o">//</span> <span class="nv">A</span>析构
 <span class="nv">delete</span> <span class="nv">ap</span><span class="c1">;</span>
 </pre></div>
-
 
 <p>先执行基类构造函数，再派生类构造函数；
 先执行派生类析构函数，再派生基类析构函数。</p>
@@ -1620,13 +1618,10 @@
 <div class="codehilite"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">test</span><span class="p">:</span> <span class="n">symbol</span> <span class="n">lookup</span> <span class="n">error</span><span class="p">:</span> <span class="p">.</span><span class="o">/</span><span class="n">test</span><span class="p">:</span> <span class="n">undefined</span> <span class="n">symbol</span><span class="p">:</span>
 </pre></div>
 
-
-<p>动态链接库的原因，因为更新完gsl之后，原先的动态链接库不管用了，可以用下面的命令追踪动态链接库</p>
+<p>动态链接库的原因，因为更新完gsl之后，原先的动态链接库不管用了，可以用下面的命令追踪动态链接库
 <div class="codehilite"><pre><span></span><span class="n">ldd</span> <span class="n">test</span>
 <span class="n">ldd</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">r</span> <span class="n">test</span>
-</pre></div>
-
-
+</pre></div></p>
 <p>参考<a href="http://gdwarner.blogspot.com/2009/03/c-runtime-symbol-lookup-error.html">c++ runtime &ldquo;symbol lookup error&rdquo; </a></p>
 <h2 id="_3">字符数组与数字互换<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>http://blog.csdn.net/sunquana/article/details/14645079</p>
@@ -1645,23 +1640,16 @@
 <span class="n">double</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
 </pre></div>
 
-
-<p>DO NOT</p>
+<p>DO NOT
 <div class="codehilite"><pre><span></span><span class="n">double</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-</pre></div>
-
-
-<p>BUT</p>
+</pre></div></p>
+<p>BUT
 <div class="codehilite"><pre><span></span><span class="n">double</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="ss">&quot;aaa&quot;</span><span class="p">;</span>
 </pre></div>
-
-
-<p>并且要初始化，不能</p>
-<div class="codehilite"><pre><span></span><span class="n">double</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+并且要初始化，不能</p>
+<p><div class="codehilite"><pre><span></span><span class="n">double</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
 </pre></div>
-
-
-<p>然后直接传参了，这是不对的。</p>
+然后直接传参了，这是不对的。</p>
 <h2 id="c-correctly-freeing-memory-of-a-multi-dimensional-array">C: Correctly freeing memory of a multi-dimensional array<a class="headerlink" href="#c-correctly-freeing-memory-of-a-multi-dimensional-array" title="Permanent link">&para;</a></h2>
 <p>https://stackoverflow.com/questions/1733881/c-correctly-freeing-memory-of-a-multi-dimensional-array</p>
 <h2 id="35pragma-unroll">#pragma unroll的用法<a class="headerlink" href="#35pragma-unroll" title="Permanent link">&para;</a></h2>
@@ -1709,18 +1697,13 @@
 }
 </pre></div>
 
-
 <p>使用这个代码注意一个问题
-应该使用</p>
+应该使用
 <div class="codehilite"><pre><span></span><span class="k">while</span><span class="ss">(</span><span class="o">!</span><span class="nv">safeGetline</span><span class="ss">(</span><span class="nv">input</span>, <span class="nv">line</span><span class="ss">)</span>.<span class="nv">eof</span><span class="ss">)</span>
-</pre></div>
-
-
-<p>不能用</p>
+</pre></div></p>
+<p>不能用
 <div class="codehilite"><pre><span></span><span class="k">while</span><span class="ss">(</span><span class="nv">safeGetline</span><span class="ss">(</span><span class="nv">input</span>, <span class="nv">line</span><span class="ss">))</span>
-</pre></div>
-
-
+</pre></div></p>
 <h2 id="fpic">fPIC<a class="headerlink" href="#fpic" title="Permanent link">&para;</a></h2>
 <p>参考http://blog.sina.com.cn/s/blog_54f82cc201011op1.html</p>
 <h2 id="_7">参数和返回值的三种传递方式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
@@ -1779,7 +1762,6 @@
 <div class="codehilite"><pre><span></span><span class="n">fprintf</span><span class="p">(</span><span class="n">fileptr</span><span class="p">,</span> <span class="ss">&quot;writing to file\n&quot;</span><span class="p">);</span>
 <span class="n">fflush</span><span class="p">(</span><span class="n">fileptr</span><span class="p">);</span>
 </pre></div>
-
 
 <p><a href="https://stackoverflow.com/questions/45339874/how-to-make-fprintf-writes-immediately">How to make fprintf() writes immediately</a></p>
 <p>or refer to</p>

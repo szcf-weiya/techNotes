@@ -1015,34 +1015,26 @@ support:
 <div class="codehilite"><pre><span></span><span class="n">gcc</span> <span class="n">test</span><span class="p">.</span><span class="k">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">test</span>
 </pre></div>
 
-
 <h2 id="_3">预处理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">E</span> <span class="n">test</span><span class="p">.</span><span class="k">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">test</span><span class="p">.</span><span class="n">i</span>
+<p><div class="codehilite"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">E</span> <span class="n">test</span><span class="p">.</span><span class="k">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">test</span><span class="p">.</span><span class="n">i</span>
 <span class="o">//</span> <span class="n">gcc</span> <span class="o">-</span><span class="n">E</span> <span class="n">test</span><span class="p">.</span><span class="k">c</span>
 </pre></div>
-
-
-<p>-E 使得编译器在预处理后停止，并输出预处理结果</p>
+-E 使得编译器在预处理后停止，并输出预处理结果</p>
 <h2 id="_4">编译为汇编代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">S</span> <span class="n">test</span><span class="p">.</span><span class="n">i</span> <span class="o">-</span><span class="n">o</span> <span class="n">test</span><span class="p">.</span><span class="n">s</span>
+<p><div class="codehilite"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">S</span> <span class="n">test</span><span class="p">.</span><span class="n">i</span> <span class="o">-</span><span class="n">o</span> <span class="n">test</span><span class="p">.</span><span class="n">s</span>
 </pre></div>
-
-
-<p>-S 程序编译期间，生成汇编代码后，停止</p>
+-S 程序编译期间，生成汇编代码后，停止</p>
 <h2 id="_5">汇编<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="k">c</span> <span class="n">test</span><span class="p">.</span><span class="n">s</span> <span class="o">-</span><span class="n">o</span> <span class="n">test</span><span class="p">.</span><span class="n">o</span>
 </pre></div>
-
 
 <h2 id="_6">连接<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="n">gcc</span> <span class="n">test</span><span class="p">.</span><span class="n">o</span> <span class="o">-</span><span class="n">o</span> <span class="n">test</span>
 </pre></div>
 
-
 <h1 id="_7">多个程序文件的编译<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
 <div class="codehilite"><pre><span></span><span class="n">gcc</span> <span class="n">test1</span><span class="p">.</span><span class="k">c</span> <span class="n">test2</span><span class="p">.</span><span class="k">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">test</span> 
 </pre></div>
-
 
 <h1 id="_8">检错<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
 <div class="codehilite"><pre><span></span><span class="n">gcc</span> <span class="o">-</span><span class="n">pedantic</span> <span class="n">illcode</span><span class="p">.</span><span class="k">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">illcode</span>
@@ -1050,25 +1042,21 @@ support:
 <span class="n">gcc</span> <span class="o">-</span><span class="n">Werror</span> <span class="n">test</span><span class="p">.</span><span class="k">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">test</span>
 </pre></div>
 
-
 <h1 id="_9">库文件连接<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
 <p>函数库包含.h,so,lib,dll</p>
 <h2 id="_10">编译成可执行文件<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="nv">gcc</span> –<span class="nv">c</span> –<span class="nv">I</span> <span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">mysql</span><span class="o">/</span><span class="k">include</span> <span class="nv">test</span>.<span class="nv">c</span> –<span class="nv">o</span> <span class="nv">test</span>.<span class="nv">o</span>
 </pre></div>
 
-
 <h2 id="_11">连接<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="n">gcc</span> <span class="err">–</span><span class="n">L</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="n">lib</span> <span class="err">–</span><span class="n">lmysqlclient</span> <span class="n">test</span><span class="p">.</span><span class="n">o</span> <span class="err">–</span><span class="n">o</span> <span class="n">test</span>
 </pre></div>
-
 
 <h2 id="_12">强制连接时使用静态链接库<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <p>优先使用动态链接库，只有当动态链接库不存在时才考虑使用静态链接库，-static强制使用静态链接库</p>
 <p>在/usr/dev/mysql/lib目录下有链接时所需要的库文件libmysqlclient.so和libmysqlclient.a，为了让GCC在链接时只用到静态链接库，可以使用下面的命令</p>
 <div class="codehilite"><pre><span></span><span class="n">gcc</span> <span class="err">–</span><span class="n">L</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="n">lib</span> <span class="err">–</span><span class="k">static</span> <span class="err">–</span><span class="n">lmysqlclient</span> <span class="n">test</span><span class="p">.</span><span class="n">o</span> <span class="err">–</span><span class="n">o</span> <span class="n">test</span>
 </pre></div>
-
 
 <h3 id="_13">静态库链接时搜索路径顺序:<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <ol>

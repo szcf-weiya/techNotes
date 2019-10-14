@@ -1072,7 +1072,6 @@
 <div class="codehilite"><pre><span></span>R CMD INSTALL RMySQL_0.10.14.tar.gz
 </pre></div>
 
-
 <h2 id="centos-65-mysql-5173">centos 6.5 上源码安装 mysql 5.1.73<a class="headerlink" href="#centos-65-mysql-5173" title="Permanent link">&para;</a></h2>
 <p>参考</p>
 <ol>
@@ -1086,13 +1085,11 @@
 <span class="nb">cd</span> build-mariadb
 </pre></div>
 
-
 <h3 id="step-2">step 2<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
 <p>注意设置 prefix</p>
 <p>参考 <a href="https://stackoverflow.com/questions/6003374/what-is-cmake-equivalent-of-configure-prefix-dir-make-all-install">What is cmake equivalent of &lsquo;configure &ndash;prefix=DIR &amp;&amp; make all install &lsquo;?</a></p>
 <div class="codehilite"><pre><span></span>cmake ../mariadb-5.*.* -DCMAKE_INSTALL_PREFIX:PATH<span class="o">=</span>~/mariadb
 </pre></div>
-
 
 <h3 id="step-3">step 3<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>make 

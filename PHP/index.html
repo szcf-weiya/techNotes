@@ -1250,7 +1250,6 @@
 <span class="nb">print_r</span><span class="p">(</span><span class="nb">json_encode</span><span class="p">(</span><span class="nv">$output</span><span class="p">));</span> 
 </pre></div>
 
-
 <h3 id="_3">变量规则<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li>变量以 $ 符号开始，后面跟着变量的名称</li>
@@ -1262,21 +1261,17 @@
 <h3 id="_4">数组 &amp; 关联数组<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>参考<a href="http://www.runoob.com/php/php-arrays.html">PHP 数组</a></p>
 <p>上述代码中</p>
-<div class="codehilite"><pre><span></span><span class="x">$fields_data = array(</span>
+<p><div class="codehilite"><pre><span></span><span class="x">$fields_data = array(</span>
 <span class="x">    &#39;api_key&#39; =&gt; DISQUS_PUBKEY,</span>
 <span class="x">    &#39;forum&#39; =&gt; DISQUS_SHORTNAME,</span>
 <span class="x">    &#39;limit&#39; =&gt; 100</span>
 <span class="x">);</span>
 </pre></div>
-
-
-<p>即为关联数组。</p>
-<p>而</p>
+即为关联数组。</p>
+<p>而
 <div class="codehilite"><pre><span></span><span class="x">$countArr = array();</span>
 </pre></div>
-
-
-<p>即为普通数组的创建。</p>
+即为普通数组的创建。</p>
 <h3 id="echo-print-print_r-var95dump">echo &amp; print &amp; print_r &amp; var_dump<a class="headerlink" href="#echo-print-print_r-var95dump" title="Permanent link">&para;</a></h3>
 <p>参考<a href="http://www.runoob.com/php/php-echo-print.html">PHP 5 echo 和 print 语句</a></p>
 <ol>
@@ -1304,7 +1299,6 @@
 <div class="codehilite"><pre><span></span>sudo apt-get install php-curl
 </pre></div>
 
-
 <p><strong>注意要重启apache。</strong></p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 <span class="c1">// 创建一个新cURL资源</span>
@@ -1321,7 +1315,6 @@
 <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
-
 
 <h3 id="curl_errno">curl_errno<a class="headerlink" href="#curl_errno" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -1406,7 +1399,6 @@
 
 <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
-
 
 <h2 id="nginx-php">nginx 与 php<a class="headerlink" href="#nginx-php" title="Permanent link">&para;</a></h2>
 <p>屡次碰到禁止访问，并且能够直接下载 <code>.php</code>文件，检查</p>

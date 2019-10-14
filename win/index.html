@@ -1126,11 +1126,9 @@
                 <h1 id="win">win 问题及解决<a class="headerlink" href="#win" title="Permanent link">&para;</a></h1>
 <h2 id="win10">win10 应用商店、照片等程序打不开<a class="headerlink" href="#win10" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://answers.microsoft.com/zh-hans/windows/forum/windows_10-windows_store/win10/666838b7-7acd-4455-9217-bb0d92577941?auth=1">win10 应用商店误删 求修复方法</a></p>
-<p>管理员在命令行中运行</p>
+<p>管理员在命令行中运行
 <div class="codehilite"><pre><span></span><span class="k">Get</span><span class="o">-</span><span class="n">AppXPackage</span> <span class="o">-</span><span class="n">AllUsers</span> <span class="o">|</span> <span class="n">Foreach</span> <span class="err">{</span><span class="k">Add</span><span class="o">-</span><span class="n">AppxPackage</span> <span class="o">-</span><span class="n">DisableDevelopmentMode</span> <span class="o">-</span><span class="n">Register</span> <span class="ss">&quot;$($_.InstallLocation)\AppXManifest.xml&quot;</span><span class="err">}</span>
-</pre></div>
-
-
+</pre></div></p>
 <h2 id="word">word 在试图打开文件时遇到错误<a class="headerlink" href="#word" title="Permanent link">&para;</a></h2>
 <p><a href="https://answers.microsoft.com/zh-hans/msoffice/forum/msoffice_word-mso_other-mso_archive/word/44473bde-599b-4552-99b1-0282e9ffe66e?messageId=1a74ab7c-2705-4db3-9f81-b58817a7a731">word 在试图打开文件时遇到错误</a></p>
 <h2 id="hprun-dll">HP打印机run dll找不到模块<a class="headerlink" href="#hprun-dll" title="Permanent link">&para;</a></h2>

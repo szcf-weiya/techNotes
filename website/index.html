@@ -1530,14 +1530,12 @@
 <div class="codehilite"><pre><span></span>git clone git@github.com:fooleap/disqus-php-api.git
 </pre></div>
 
-
 <h2 id="_3">博客中插入网易云音乐<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>这个很容易实现，只需要在网易云中搜索要插入的音乐，然后点击“生成外链播放器”，将iframe代码插入博客的相应位置。</p>
 <p>比如，我想在<a href="">不愿沉默如谜</a>插入容祖儿的<a href="http://music.163.com/#/song?id=522631413">重生</a>。点击页面中的“生成外链播放器”，将iframe代码放进原md文件中。但一开始有问题，iframe被当成普通的md文本。在<a href="https://stackoverflow.com/questions/30233461/jekyll-raw-html-in-post">Jekyll raw HTML in post</a>中找到了答案。</p>
 <p>网易云给的iframe代码为</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;no&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">marginwidth</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">marginheight</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">330</span> <span class="na">height</span><span class="o">=</span><span class="s">86</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//music.163.com/outchain/player?type=2&amp;id=522631413&amp;auto=1&amp;height=66&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </pre></div>
-
 
 <p>要将<code>width=330 height=86</code>改成<code>width="330" height="86"</code>，果然成功了。效果页面如下：</p>
 <p><a href="https://blog.hohoweiya.xyz/movie/2017/12/30/unwilling-to-be-silent.html"><img alt="" src="music.png" /></a></p>
@@ -1558,13 +1556,11 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 </blockquote>
 <h2 id="nginx_1">nginx配置跳转<a class="headerlink" href="#nginx_1" title="Permanent link">&para;</a></h2>
-<p>比如将所有 <code>http://ServerIP/10 Boosting and Additive Trees/.*</code> 的访问301重定向到<code>http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html</code>，在nginx配置文件中添加</p>
+<p>比如将所有 <code>http://ServerIP/10 Boosting and Additive Trees/.*</code> 的访问301重定向到<code>http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html</code>，在nginx配置文件中添加
 <div class="codehilite"><pre><span></span><span class="nt">location</span> <span class="o">^~</span> <span class="s1">&#39;/10 Boosting and Additive Trees/&#39;</span> <span class="p">{</span>
         <span class="err">rewrite</span> <span class="err">^/.*</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="err">$</span><span class="n">server_name</span><span class="o">/</span><span class="mi">10</span><span class="o">-</span><span class="n">Boosting-and-Additive-Trees</span><span class="o">/</span><span class="mf">10.1</span><span class="o">-</span><span class="n">Boosting-Methods</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span> <span class="n">permanent</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
-
-
+</pre></div></p>
 <p>几点说明：</p>
 <ol>
 <li>含等号时，不需要用<code>%20</code>进行编码，但需要加上引号，否则会报错，“invalid number of arguments in ‘location’ directive”，参考<a href="https://stackoverflow.com/questions/12101690/nginx-rewrite-that-includes-a-blank-spce">nginx-rewrite-that-includes-a-blank-space</a></li>
@@ -1579,7 +1575,6 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>在客户端的 ajax 中添加</p>
 <div class="codehilite"><pre><span></span><span class="n">crossDomain</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span>    <span class="c1">// 允许跨域请求</span>
 </pre></div>
-
 
 <p>另外，在服务器端，通过<code>CORS(app, resources=r'/*')</code>让flask服务器上所有的URL支持跨域请求。</p>
 <p>另外，在ajax中post json的时候，注意用<code>JSON.stringify()</code>进行转换，否则格式为<code>否则格式为 a=2&amp;b=3&amp;now=14...</code>（参考<a href="https://www.cnblogs.com/ajianbeyourself/p/5199144.html">使用Ajax方式POST JSON数据包（转） - 平和的心 - 博客园</a>）</p>
@@ -1609,29 +1604,23 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <div class="codehilite"><pre><span></span><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames <span class="m">3</span>
 </pre></div>
 
-
-<p>采用 Shotwell 旋转图片后，</p>
+<p>采用 Shotwell 旋转图片后，
 <div class="codehilite"><pre><span></span><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, Exif Standard: <span class="o">[</span>TIFF image data, little-endian, <span class="nv">direntries</span><span class="o">=</span><span class="m">3</span>, <span class="nv">orientation</span><span class="o">=</span>lower-left, <span class="nv">software</span><span class="o">=</span>Shotwell <span class="m">0</span>.22.0<span class="o">]</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames3
-</pre></div>
-
-
+</pre></div></p>
 <p>多了 EXIF 信息，其中有 orientation 信息。但是参考 <a href="https://stackoverflow.com/questions/24658365/img-tag-displays-wrong-orientation/24658511">img tag displays wrong orientation</a> 的帖子，可知，有些浏览器并不遵循这个规则，即无视　EXIF 信息，从而网页端无效果。有人提到可以加上　</p>
 <div class="codehilite"><pre><span></span><span class="nt">img</span> <span class="p">{</span>
     <span class="k">image-orientation</span><span class="p">:</span> <span class="kc">from-image</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
-
 <p>但这个似乎只有 Firefox 和　Safari 支持，Chrome 不支持。</p>
 <p>解决方案：采用 <code>mogrify</code> 或 <code>convert</code> 进行旋转，如</p>
 <div class="codehilite"><pre><span></span>mogrify -rotate <span class="s2">&quot;-90&quot;</span> <span class="m">2018</span>-10-29-cafe.jpg
 </pre></div>
 
-
 <p>查看文件信息</p>
 <div class="codehilite"><pre><span></span><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1440x1080, frames <span class="m">3</span>
 </pre></div>
-
 
 <p>注意到没有 EXIF 信息，而且 size 也由 1080x1440 变成了 1440x1080，所以这算是真旋转，而之前的加 EXIF 信息算是伪旋转吧。</p>
 <h2 id="_5">字体<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
@@ -1644,7 +1633,6 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 {<span class="o">%</span> <span class="nv">endfor</span> <span class="o">%</span>}
 </pre></div>
 
-
 <p>但 <a href="https://stackoverflow.com/questions/41858548/list-of-dynamic-links-in-jekyll">List of Dynamic Links in Jekyll</a> 提到了更完整的方案，</p>
 <div class="codehilite"><pre><span></span>{<span class="o">%</span> <span class="nv">capture</span> <span class="nv">tagscommas</span> <span class="o">%</span>}
 {<span class="o">%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="nv">in</span> <span class="nv">page</span>.<span class="nv">tags</span> <span class="o">%</span>}
@@ -1655,7 +1643,6 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 
 {{<span class="nv">tagscommas</span>}}
 </pre></div>
-
 
 <h2 id="correct-jekyll">Correct Jekyll<a class="headerlink" href="#correct-jekyll" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/">Configuring Jekyll for User and Project GitHub Pages</a></p>
@@ -1679,7 +1666,6 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <span class="p">}</span>
 </pre></div>
 
-
 <p>详见 <a href="http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/">LaTeX Theorem-like Environments for the Web</a></p>
 <h2 id="list-start-from-0">list start from 0<a class="headerlink" href="#list-start-from-0" title="Permanent link">&para;</a></h2>
 <p>In <code>kramdown</code>, use an IAL declaration before the list, say</p>
@@ -1688,7 +1674,6 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 1. test
 1. test
 </pre></div>
-
 
 <p>Refer to <a href="https://github.com/gettalong/kramdown/issues/211">Support starting numbered lists with arbitrary number #211</a></p>
 <p>Implementation for html can be found <a href="https://stackoverflow.com/questions/15078393/begin-ordered-list-from-0-in-markdown">here</a>.</p>
