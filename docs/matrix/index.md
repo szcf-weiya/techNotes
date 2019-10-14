@@ -156,6 +156,26 @@ $$
 
 refer to [Rank of the Product of Matrices AB is Less than or Equal to the Rank of A](https://yutsumura.com/rank-of-the-product-of-matrices-ab-is-less-than-or-equal-to-the-rank-of-a/)
 
+## $\rk(A)=\rk(AA^T)=\rh(A^TA)$
+
+Note that the left null space (the null space of $A^T$) is the orthogonal complement to the column space of $A$, that is,
+
+$$
+\mathrm{Nul}(A^T)^{\perp} = \mathrm{Col}(A), \quad \mathrm{Nul}(A)^{\perp} = \mathrm{Col}(A^T).
+$$
+
+Therefore, $\mathrm{Nul}(A^T)\cap \mathrm{Col}(A)$, and so forth.
+
+Now consider the matrix $A^TA$. Then 
+
+$$
+\mathrm{Col}(A^TA) = \{A^TAx\} = \{A^Ty:y\in \mathrm{Col}(A)\}.
+$$
+
+But since the null space of $A^T$ only intersects trivially with $\mathrm{Col}(A)$, then $\mathrm{Col}(A^TA)$ must have the same dimension as $\mathrm{Col}(A)$, which gives us the equality of ranks.
+
+Refer to [Christopher A. Wong (https://math.stackexchange.com/users/22059/christopher-a-wong), Rank of product of a matrix and its transpose, URL (version: 2012-10-16)](https://math.stackexchange.com/q/215147)
+
 ## Only real eigenvalues in symmetric matrices
 
 refer to [The Case of Complex Eigenvalues](http://www.sosmath.com/matrix/eigen3/eigen3.html)
