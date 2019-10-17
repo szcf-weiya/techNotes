@@ -174,7 +174,7 @@ $$
 
 But since the null space of $A^T$ only intersects trivially with $\mathrm{Col}(A)$, then $\mathrm{Col}(A^TA)$ must have the same dimension as $\mathrm{Col}(A)$, which gives us the equality of ranks.
 
-Refer to [Christopher A. Wong (https://math.stackexchange.com/users/22059/christopher-a-wong), Rank of product of a matrix and its transpose, URL (version: 2012-10-16)](https://math.stackexchange.com/q/215147)
+Refer to [Christopher A. Wong (https://math.stackexchange.com/users/22059/christopher-a-wong), Rank of product of a matrix and its transpose, URL (version: 2012-10-16)](https://math.stackexchange.com/q/215147), maybe also [Prove $\rk(A^TA)=\rk(A)$ for any $A\in M_{m\times n}$](https://math.stackexchange.com/questions/349738/prove-operatornamerankata-operatornameranka-for-any-a-in-m-m-times-n)
 
 ## Only real eigenvalues in symmetric matrices
 

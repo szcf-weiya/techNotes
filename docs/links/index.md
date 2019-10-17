@@ -13,10 +13,11 @@
 9. [Larry Wasserman's blog](https://normaldeviate.wordpress.com/)
 
 
-## Prototypes
+## Homepages
 
 - [Zhou Fan @ Yale](http://www.stat.yale.edu/~zf59)
-
+- [Ting Ye @Wisc](https://sites.google.com/view/tingye/home)
+- [Tengyuan Liang](https://tyliang.github.io/Tengyuan.Liang/)
 
 ## Interesting words
 

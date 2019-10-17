@@ -733,3 +733,37 @@ pdftk input.pdf update_info metadata output output.pdf
 采用 `unar your.zip`
 
 参考 [Linux文件乱码](https://www.findhao.net/easycoding/1605)
+
+## 百度网盘
+
+发现百度网盘出了 Linux 版，但是在 Ubuntu 16.04 似乎运行不了——能下载安装但是无法打开运行。
+
+目前版本为 Linux版 V2.0.2（更新时间：2019-07-25）
+
+官网显示目前只支持
+
+> 适应系统：中标麒麟桌面操作系统软件（兆芯版） V7.0、Ubuntu V18.04
+
+于是寻找替代方案。
+
+### bcloud
+
+项目地址：https://github.com/XuShaohua/bcloud
+
+但是四五年没有更新了。安装试了一下，登录不了，遂放弃。
+
+### PanDownload
+
+https://www.baiduwp.com
+
+不需要安装客户端，只需要输入网盘分享链接和提取码，便可以下载文件（而百度网盘本身下载文件需要打开客户端）。不过速度似乎不咋地
+
+### bypy
+
+逛到了另外一个客户端，项目地址：https://github.com/houtianze/bypy
+
+还挺活跃，五个月前有更新。
+
+测试了一下，相当于在网盘内新建了 `/apps/bypy` 文件夹，然后可以同步该文件夹内的内容，似乎不能直接对文件夹外的文件进行操作。尽管这样，也是很好的了，以后文件可以存放在这个文件夹下。
+
+当然，还是期待官网本身支持。
