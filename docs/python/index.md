@@ -502,3 +502,11 @@ refer to [nbconvert failed: validate() got an unexpected keyword argument 'relax
 
 - 一开始，直接从base 进入，然后选择 snakes 的 kernel，导出失败，错误原因如上
 - 直接在 snakes 进入 Jupyter notebook，这样可以成功导出
+
+## disable default `base`
+
+```bash
+conda config --set auto_activate_base false
+```
+
+refer to [How do I prevent Conda from activating the base environment by default?](https://stackoverflow.com/questions/54429210/how-do-i-prevent-conda-from-activating-the-base-environment-by-default)
