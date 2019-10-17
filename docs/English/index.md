@@ -1,3 +1,11 @@
+## 2019.10.17
+
+1. sobering
+2. gerrymander
+3. contagion
+4. paucity
+5. geodetics
+
 ## 2019.10.12
 
 1. mind-boggling
