@@ -914,6 +914,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#disable-default-base" class="md-nav__link">
+    disable default base
+  </a>
+  
+</li>
+      
       
       
       
@@ -1932,6 +1939,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#disable-default-base" class="md-nav__link">
+    disable default base
+  </a>
+  
+</li>
+      
       
       
       
@@ -2285,6 +2299,11 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <li>一开始，直接从base 进入，然后选择 snakes 的 kernel，导出失败，错误原因如上</li>
 <li>直接在 snakes 进入 Jupyter notebook，这样可以成功导出</li>
 </ul>
+<h2 id="disable-default-base">disable default <code>base</code><a class="headerlink" href="#disable-default-base" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>conda config --set auto_activate_base <span class="nb">false</span>
+</pre></div>
+
+<p>refer to <a href="https://stackoverflow.com/questions/54429210/how-do-i-prevent-conda-from-activating-the-base-environment-by-default">How do I prevent Conda from activating the base environment by default?</a></p>
                 
                   
                 
