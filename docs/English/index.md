@@ -1,3 +1,19 @@
+## 2019.10.22
+
+1. cartography
+2. regime
+3. Petroleum
+
+## 2019.10.18
+
+1. cardiovascular: 心血管的
+2. hyperinsulinemia: 血胰岛素增多
+3. ischemic： 局部贫血
+4. bilateral
+5. subthalamic
+6. nucleus
+
+
 ## 2019.10.17
 
 1. sobering
