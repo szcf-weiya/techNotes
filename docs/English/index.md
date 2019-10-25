@@ -1,3 +1,16 @@
+## 2019.10.25
+
+1. ore grades
+
+
+## 2019.10.24
+
+1. tiger prawn: 老虎虾
+2. pine
+3. saplings
+4. asthma
+
+
 ## 2019.10.22
 
 1. cartography
