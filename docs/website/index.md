@@ -356,4 +356,41 @@ Make sure that `gem install commonmarker -v '0.17.13' --source 'https://rubygems
 sudo apt-get install ruby2.4-dev
 ```
 
-解决了问题！
+~~解决了问题！~~
+
+发现还没有这么简单，总是报错
+
+```
+Could not find ffi-1.11.1 in any of the sources
+```
+
+但实际上已经装好了。不知道咋回事。
+
+后来参考 https://jekyllrb.com/docs/ 重头开始，
+
+```
+gem install jekyll bundler
+```
+
+然后这一步一开始报错
+
+```
+ERROR:  Error installing jekyll:
+        jekyll requires RubyGems version >= 2.7.0. Try 'gem update --system' to update RubyGems itself.
+```
+
+于是运行 
+
+```
+[sudo] gem update --system
+```
+
+应该要加上 `sudo`，否则会报错
+
+```
+Installing RubyGems 3.0.6
+ERROR:  While executing gem ... (Errno::EACCES)
+    Permission denied @ dir_s_mkdir - /usr/local/lib/site_ruby
+```
+
+安装成功后，最后终于成功了！！
