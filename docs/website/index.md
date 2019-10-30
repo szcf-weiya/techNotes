@@ -292,3 +292,68 @@ Implementation for html can be found [here](https://stackoverflow.com/questions/
 
 - [超赞！网页设计中最常见的30款英文字体](https://www.uisdc.com/30-west-typegraph-in-web-design)
 - [Source Han Serif Simplified Chinese in Adobe Fonts](https://fonts.adobe.com/fonts/source-han-serif-simplified-chinese#fonts-section)
+
+## ruby 版本
+
+今天 GitHub 提醒英文博客存在
+
+```md
+Known high severity security vulnerability detected in rubyzip < 1.3.0 defined in Gemfile.lock. 
+```
+
+于是合并了它自动创建的 pull request: [Merge pull request #79 from szcf-weiya/dependabot/bundler/rubyzip-2.0.0](https://github.com/szcf-weiya/en/commit/54a7c509594211f7cc05736aa4adb5135bbe21d4)
+
+但是后来发现在本地 `bundle exec jekyll serve` 预览失败。报错信息为
+
+```md
+rubyzip-2.0.0 requires ruby version >= 2.4, which is incompatible with the current version, ruby 2.3.1p112
+```
+
+看样子 ruby 版本不够，于是参考 [How do I upgrade to Ruby 2.2 on my Ubuntu system?](https://askubuntu.com/questions/839775/how-do-i-upgrade-to-ruby-2-2-on-my-ubuntu-system)
+
+```bash
+sudo apt-add-repository ppa:brightbox/ruby-ng
+sudo apt-get update
+sudo apt-get install ruby2.4
+```
+
+安装了 `ruby2.4`，完成后 `ruby` 也自动从 `ruby2.3` 更改到了 `ruby2.4`，但是重新运行
+
+```bash
+bundle exec jekyll serve
+```
+
+还是报同样的错误信息。后来参考 [Bundler using wrong ruby version](https://github.com/bundler/bundler/issues/4260)，运行
+
+```bash
+bundle env | grep ruby
+```
+
+发现里面的版本确实还是 2.3，于是按照里面的建议运行 
+
+```bash
+gem install bundler
+```
+
+这样重新运行 `bundle env | grep ruby` 发现版本确实更新过来了。但是再次运行  
+
+```bash
+bundle exec jekyll serve
+```
+
+出现了新的错误
+
+```bash
+An error occurred while installing commonmarker (0.17.13), and Bundler cannot continue.
+Make sure that `gem install commonmarker -v '0.17.13' --source 'https://rubygems.org/'` succeeds before bundling.
+```
+
+后来参考 [Error while installing json gem 'mkmf.rb can't find header files for ruby'](https://stackoverflow.com/questions/20559255/error-while-installing-json-gem-mkmf-rb-cant-find-header-files-for-ruby)
+
+安装
+
+```bash
+sudo apt-get install ruby2.4-dev
+```
+
+解决了问题！
