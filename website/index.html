@@ -1651,6 +1651,11 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 </pre></div>
 
 <p>注意到没有 EXIF 信息，而且 size 也由 1080x1440 变成了 1440x1080，所以这算是真旋转，而之前的加 EXIF 信息算是伪旋转吧。</p>
+<p>如果文件已经存在 orientation 的 EXIF 信息，则 <code>mogrify -rotate</code> 似乎不起作用，解决方案为直接删掉 EXIF 信息，再进行相应的 rotate 操作，其中删除 EXIF 信息的命令是</p>
+<div class="codehilite"><pre><span></span>exiftool -all<span class="o">=</span> /tmp/my_photo.jpg
+</pre></div>
+
+<p>参考 <a href="https://askubuntu.com/questions/260810/how-can-i-read-and-remove-meta-exif-data-from-my-photos-using-the-command-line">How can I read and remove meta (exif) data from my photos using the command line?</a></p>
 <h2 id="_5">字体<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>采用 ADOBE 字体，详见 <a href="https://fonts.adobe.com/typekit">Adobe Fonts</a></p>
 <h2 id="jekyll-tags">jekyll tags 逗号分隔<a class="headerlink" href="#jekyll-tags" title="Permanent link">&para;</a></h2>
