@@ -209,6 +209,14 @@ mogrify -rotate "-90" 2018-10-29-cafe.jpg
 
 注意到没有 EXIF 信息，而且 size 也由 1080x1440 变成了 1440x1080，所以这算是真旋转，而之前的加 EXIF 信息算是伪旋转吧。
 
+如果文件已经存在 orientation 的 EXIF 信息，则 `mogrify -rotate` 似乎不起作用，解决方案为直接删掉 EXIF 信息，再进行相应的 rotate 操作，其中删除 EXIF 信息的命令是
+
+```bash
+exiftool -all= /tmp/my_photo.jpg
+```
+
+参考 [How can I read and remove meta (exif) data from my photos using the command line?](https://askubuntu.com/questions/260810/how-can-i-read-and-remove-meta-exif-data-from-my-photos-using-the-command-line)
+
 ## 字体
 
 采用 ADOBE 字体，详见 [Adobe Fonts](https://fonts.adobe.com/typekit)
