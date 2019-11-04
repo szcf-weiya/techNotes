@@ -1,3 +1,16 @@
+## 2019.11.04
+
+1. intact
+2. hubbub
+3. academese: 
+4. echo chamber
+5. self-censoring
+6. The researchers who published impact estimates are from a small and [close-knit](https://www.bing.com/dict/search?q=close-knit&qs=BD&pq=close-knit&sc=3-10&cvid=E8FE010BBC54414E90DAF8C88101F485&sp=1) community who may [be subject to](https://www.bing.com/dict/search?q=be+subject+to&qs=BD&pq=be+subj&sc=5-7&cvid=9715749B0E9E4D879153C7D92F228720&sp=1) group-thinking, peer pressure and [self-censoring](https://www.bing.com/dict/search?q=self-censoring&qs=n&form=Z9LH5&sp=-1&pq=self-censoring&sc=0-14&sk=&cvid=61844DAB100F40A99CBC7F3144F5C24D).
+7. [People might suppose the gremlins hubbub dinged his reputation, but no.](https://translate.google.com/#view=home&op=translate&sl=auto&tl=zh-CN&text=People%20might%20suppose%20the%20gremlins%20hubbub%20dinged%20his%20reputation%2C%20but%20no.)
+8. In 2016, when the gremlins paper had been discredited, he pivoted and conducted his own exercise, rooted in Tol's idea but more sophisticated, and with very similar results.
+9. off the shelf
+10. aspirational
+
 ## 2019.11.01
 
 常用成语记忆卡片：[成语－VCE 1+2 年底考试](https://quizlet.com/167609288/%E6%88%90%E8%AF%ADvce-12-%E5%B9%B4%E5%BA%95%E8%80%83%E8%AF%95-flash-cards/)
