@@ -87,7 +87,7 @@ docker pull r-base:3.6.0
 docker run -it --rm r-base:3.6.0
 ```
 
-As a result, `v3.5.3` can reproduce the results, while it failed in the R version from `v3.6.0`. Then I found the [changelog](https://blog.revolutionanalytics.com/2019/05/whats-new-in-r-360.html) for `v3.6.0`.
+As a result, `v3.5.3` (the largest version of `v3.5.x`) can reproduce the results, while it failed in the R version from `v3.6.0`. Then I found the [changelog](https://blog.revolutionanalytics.com/2019/05/whats-new-in-r-360.html) for `v3.6.0`.
 
 The first point is exactly what we want,
 
