@@ -87,9 +87,9 @@ docker pull r-base:3.6.0
 docker run -it --rm r-base:3.6.0
 ```
 
-As a result, `v3.5.3` can reproduce the results, while it failed in the R version from `v3.6.0`. Then I found the changelog for `v3.6.0`.
+As a result, `v3.5.3` can reproduce the results, while it failed in the R version from `v3.6.0`. Then I found the [changelog](https://blog.revolutionanalytics.com/2019/05/whats-new-in-r-360.html) for `v3.6.0`.
 
-The first one is exactly what we want,
+The first point is exactly what we want,
 
 
 > **Changes to random number generation.** R 3.6.0 changes the method used to generate random integers in the sample function. In prior versions, the probability of generating each integer could vary from equal by up to 0.04% (or possibly more if generating more than a million different integers). This change will mainly be relevant to people who do large-scale simulations, and it also means that scripts using the sample function will generate different results in R 3.6.0 than they did in prior versions of R. If you need to keep the results the same (for reproducibility or for automated testing), you can revert to the old behavior by adding `RNGkind(sample.kind="Rounding")`) to the top of your script.
