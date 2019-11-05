@@ -1135,12 +1135,12 @@ Update reference output.
 Tweak NAMESPACE imports.
 </pre></div>
 
-<p>but actually the last version is back to March 2018, which is already prior to Wenyu&rsquo;s sister. Anyway, we have tried to install the old version package, and try to see some differences,</p>
+<p>but actually the last version is back to March 2018, which is already prior to Wenyu&rsquo;s sister. Anyway, we have tried to install the old version package, and try to see whether there are some differences.</p>
 <p>The command for installing a specified version would be</p>
 <div class="codehilite"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz&quot;</span><span class="p">,</span> <span class="n">repos</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;source&quot;</span><span class="p">)</span>
 </pre></div>
 
-<p>in the R console. But at the beginning, I am not familiar with it. So I use the interface of rstudio to manually install the old-version <code>tree</code>. Actually, I had tried <code>v1.0-28</code>, <code>v1.0-33</code>, <code>v1.0-37</code> and <code>v1.0-39</code>.</p>
+<p>in the R console. However, at the beginning, I am not familiar with it. So I use the interface of rstudio to manually install the old <code>tree</code>&lsquo;s. Finally, I had tried <code>v1.0-28</code>, <code>v1.0-33</code>, <code>v1.0-37</code> and <code>v1.0-39</code>, but all of them yield the same results with the latest version.</p>
 <h2 id="r-version">R version<a class="headerlink" href="#r-version" title="Permanent link">&para;</a></h2>
 <p>Currently, we are using the latest R version, v3.6.0. Firstly, I had tried the old version <code>v3.4.4</code> on my server version rstudio. It can successfully reproduce the results.</p>
 <p>Now our goal is to determine the version from which we fail to obtain the same results. It requires us to install multiple r versions to test the program.</p>
