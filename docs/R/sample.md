@@ -64,7 +64,7 @@ Update reference output.
 Tweak NAMESPACE imports.
 ```
 
-but actually the last version is back to March 2018, which is already prior to Wenyu's sister. Anyway, we have tried to install the old version package, and try to see some differences,
+but actually the last version is back to March 2018, which is already prior to Wenyu's sister. Anyway, we have tried to install the old version package, and try to see whether there are some differences.
 
 The command for installing a specified version would be
 
@@ -72,7 +72,7 @@ The command for installing a specified version would be
 install.packages("https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz", repos = NULL, type = "source")
 ```
 
-in the R console. But at the beginning, I am not familiar with it. So I use the interface of rstudio to manually install the old-version `tree`. Actually, I had tried `v1.0-28`, `v1.0-33`, `v1.0-37` and `v1.0-39`.
+in the R console. However, at the beginning, I am not familiar with it. So I use the interface of rstudio to manually install the old `tree`'s. Finally, I had tried `v1.0-28`, `v1.0-33`, `v1.0-37` and `v1.0-39`, but all of them yield the same results with the latest version.
 
 ## R version
 
