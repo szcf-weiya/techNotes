@@ -1,6 +1,6 @@
 # `sample` function in R-3.6.0+
 
-Wenyu found a very interesting question about R programming. He cannot reproduce the code in the book, but his sister can successfully produce the results last year. That's so strange. That might be some changing thing, packages or r-base itself.
+[Wenyu](https://sites.google.com/view/wenyuz/) found a very interesting question about R programming. He cannot reproduce the code in the book, but his sister can successfully produce the results last year. 
 
 The program is as follows:
 
@@ -39,6 +39,8 @@ while we get
 ##       Yes  15  53
 ```
 
+That's so strange!! There might be some changing thing, packages or r-base itself.
+
 ## Package versions
 
 All of the related packages are `tree` and `ISLR`, where the second one has not been updated for a long time, and so no need to consider it. For `tree`, there is active updates in these years,
@@ -67,7 +69,7 @@ but actually the last version is back to March 2018, which is already prior to W
 
 The command for installing a specified version would be
 
-```
+```r
 install.packages("https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz", repos = NULL, type = "source")
 ```
 
