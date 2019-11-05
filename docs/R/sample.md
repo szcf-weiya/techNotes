@@ -11,9 +11,8 @@ attach(Carseats)
 High=ifelse(Sales<=8,"No","Yes")
 Carseats=data.frame(Carseats,High)
 
-tree.carseats=tree(High~.-Sales,Carseats)
-summary(tree.carseats)
-
+set.seed(2)
+train=sample(1:nrow(Carseats), 200)
 Carseats.test=Carseats[-train,]
 High.test=High[-train]
 tree.carseats=tree(High~.-Sales,Carseats,subset=train)
@@ -35,8 +34,8 @@ while we get
 ```
 ##          High.test
 ## tree.pred  No Yes
-##       No  102  30
-##       Yes  15  53
+##       No  104  33
+##       Yes  13  50
 ```
 
 That's so strange!! There might be some changing thing, packages or r-base itself.
