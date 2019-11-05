@@ -1082,7 +1082,7 @@
                 
                 
                 <h1 id="sample-function-in-r-360"><code>sample</code> function in R-3.6.0+<a class="headerlink" href="#sample-function-in-r-360" title="Permanent link">&para;</a></h1>
-<p>Wenyu found a very interesting question about R programming. He cannot reproduce the code in the book, but his sister can successfully produce the results last year. That&rsquo;s so strange. That might be some changing thing, packages or r-base itself.</p>
+<p><a href="https://sites.google.com/view/wenyuz/">Wenyu</a> found a very interesting question about R programming. He cannot reproduce the code in the book, but his sister can successfully produce the results last year. </p>
 <p>The program is as follows:</p>
 <div class="codehilite"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ISLR</span><span class="p">)</span>
@@ -1114,6 +1114,7 @@
 <span class="o">##</span>       <span class="n">Yes</span>  <span class="mi">15</span>  <span class="mi">53</span>
 </pre></div>
 
+<p>That&rsquo;s so strange!! There might be some changing thing, packages or r-base itself.</p>
 <h2 id="package-versions">Package versions<a class="headerlink" href="#package-versions" title="Permanent link">&para;</a></h2>
 <p>All of the related packages are <code>tree</code> and <code>ISLR</code>, where the second one has not been updated for a long time, and so no need to consider it. For <code>tree</code>, there is active updates in these years,</p>
 <div class="codehilite"><pre><span></span>Version 1.0-39  2018-03-17
@@ -1137,7 +1138,7 @@ Tweak NAMESPACE imports.
 
 <p>but actually the last version is back to March 2018, which is already prior to Wenyu&rsquo;s sister. Anyway, we have tried to install the old version package, and try to see some differences,</p>
 <p>The command for installing a specified version would be</p>
-<div class="codehilite"><pre><span></span><span class="n">install</span><span class="p">.</span><span class="n">packages</span><span class="p">(</span><span class="ss">&quot;https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz&quot;</span><span class="p">,</span> <span class="n">repos</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">,</span> <span class="k">type</span> <span class="o">=</span> <span class="ss">&quot;source&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz&quot;</span><span class="p">,</span> <span class="n">repos</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;source&quot;</span><span class="p">)</span>
 </pre></div>
 
 <p>in the R console. But at the beginning, I am not familiar with it. So I use the interface of rstudio to manually install the old-version <code>tree</code>. Actually, I had tried <code>v1.0-28</code>, <code>v1.0-33</code>, <code>v1.0-37</code> and <code>v1.0-39</code>.</p>
