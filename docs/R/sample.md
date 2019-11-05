@@ -72,15 +72,15 @@ The command for installing a specified version would be
 install.packages("https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz", repos = NULL, type = "source")
 ```
 
-in the R console. However, at the beginning, I am not familiar with it. So I use the interface of rstudio to manually install the old `tree`'s. Finally, I had tried `v1.0-28`, `v1.0-33`, `v1.0-37` and `v1.0-39`, but all of them yield the same results with the latest version.
+in the R console. However, at the beginning, I am not familiar with it. So I use the interface of rstudio to manually install the old `tree`'s. Finally, I had tried `v1.0-28`, `v1.0-33`, `v1.0-37` and `v1.0-39`, but all of them yield the same results as the latest version.
 
 ## R version
 
-Currently, we are using the latest R version, v3.6.0. Firstly, I had tried the old version `v3.4.4` on my server version rstudio. It can successfully reproduce the results.
+Currently, we are using the latest R version, `v3.6.0`. Firstly, I had tried the old version `v3.4.4` on my server rstudio. It can successfully reproduce the results of the book.
 
-Now our goal is to determine the version from which we fail to obtain the same results. It requires us to install multiple r versions to test the program.
+Now our goal is to determine the version from which we fail to obtain the same results. It requires us to install multiple R versions to test the above program.
 
-The `docker` facilitates the multiple R version easily. Here is an official images for r-base, including all old versions of R. We can install a specified R version with the following commands by tagging the version number, 
+The [docker](https://www.docker.com/) facilitates the multiple R versions easily. Here is [an official images for r-base](https://hub.docker.com/_/r-base), including most old versions of R. We can install a specified R version with the following commands by tagging the version number, 
 
 ```
 docker pull r-base:3.6.0
