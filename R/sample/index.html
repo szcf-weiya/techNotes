@@ -1149,7 +1149,7 @@ Tweak NAMESPACE imports.
 <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="c1">--rm r-base:3.6.0</span>
 </pre></div>
 
-<p>As a result, <code>v3.5.3</code> can reproduce the results, while it failed in the R version from <code>v3.6.0</code>. Then I found the <a href="https://blog.revolutionanalytics.com/2019/05/whats-new-in-r-360.html">changelog</a> for <code>v3.6.0</code>.</p>
+<p>As a result, <code>v3.5.3</code> (the largest version of <code>v3.5.x</code>) can reproduce the results, while it failed in the R version from <code>v3.6.0</code>. Then I found the <a href="https://blog.revolutionanalytics.com/2019/05/whats-new-in-r-360.html">changelog</a> for <code>v3.6.0</code>.</p>
 <p>The first point is exactly what we want,</p>
 <blockquote>
 <p><strong>Changes to random number generation.</strong> R 3.6.0 changes the method used to generate random integers in the sample function. In prior versions, the probability of generating each integer could vary from equal by up to 0.04% (or possibly more if generating more than a million different integers). This change will mainly be relevant to people who do large-scale simulations, and it also means that scripts using the sample function will generate different results in R 3.6.0 than they did in prior versions of R. If you need to keep the results the same (for reproducibility or for automated testing), you can revert to the old behavior by adding <code>RNGkind(sample.kind="Rounding")</code>) to the top of your script.</p>
