@@ -38,7 +38,7 @@ while we get
 ##       Yes  13  50
 ```
 
-That's so strange!! There might be some changing thing, packages or r-base itself.
+That's so strange!! There might be some changed things, packages or r-base itself.
 
 ## Package version
 
