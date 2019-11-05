@@ -40,7 +40,7 @@ while we get
 
 That's so strange!! There might be some changing thing, packages or r-base itself.
 
-## Package versions
+## Package version
 
 All of the related packages are `tree` and `ISLR`, where the second one has not been updated for a long time, and so no need to consider it. For `tree`, there is active updates in these years,
 
