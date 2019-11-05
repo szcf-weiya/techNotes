@@ -1,6 +1,6 @@
 # `sample` function in R-3.6.0+
 
-[Wenyu](https://sites.google.com/view/wenyuz/) found a very interesting question about R programming. He cannot reproduce the code in the book, but his sister can successfully produce the results last year. 
+[Wenyu](https://sites.google.com/view/wenyuz/) found a very interesting question about R programming. When he was preparing his tutorial, he cannot reproduce the code in the section 8.3 of [An Introduction to Statistical Learning, with Applications in R (ISLR)](https://szcf-weiya.github.io/ISLRnotes/ISLR%20Sixth%20Printing.pdf), but his sister can successfully produce the results last year. 
 
 The program is as follows:
 
