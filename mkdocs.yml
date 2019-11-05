@@ -12,6 +12,7 @@ pages:
       - ggplot 作图: R/ggplot.md
       - 案例分析: R/legend_from_zhihu.md
       - 源码安装 RMySQL: R/install-notes-for-rmysql.md
+      - new sample function (v3.6.0+): R/sample.md
     - Python:
       - 一般问题: python/index.md
       - PyStan 体验: python/pystan/README.md
