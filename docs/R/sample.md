@@ -38,11 +38,11 @@ while we get
 ##       Yes  13  50
 ```
 
-That's so strange!! There might be some changed things, packages or r-base itself.
+That's so strange!! There might be some changed things, packages or `r-base` itself.
 
 ## Package version
 
-All of the related packages are `tree` and `ISLR`, where the second one has not been updated for a long time, and so no need to consider it. For `tree`, there is active updates in these years,
+All of the related packages are `tree` and `ISLR`, where the second one has not been updated for a long time, and so no need to consider it. For `tree`, there are active updates in the recent years,
 
 ```md
 Version 1.0-39  2018-03-17
