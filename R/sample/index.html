@@ -1090,9 +1090,8 @@
 <span class="n">High</span><span class="o">=</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">Sales</span><span class="o">&lt;=</span><span class="m">8</span><span class="p">,</span><span class="s">&quot;No&quot;</span><span class="p">,</span><span class="s">&quot;Yes&quot;</span><span class="p">)</span>
 <span class="n">Carseats</span><span class="o">=</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">Carseats</span><span class="p">,</span><span class="n">High</span><span class="p">)</span>
 
-<span class="n">tree.carseats</span><span class="o">=</span><span class="nf">tree</span><span class="p">(</span><span class="n">High</span><span class="o">~</span><span class="n">.-Sales</span><span class="p">,</span><span class="n">Carseats</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">tree.carseats</span><span class="p">)</span>
-
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+<span class="n">train</span><span class="o">=</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">Carseats</span><span class="p">),</span> <span class="m">200</span><span class="p">)</span>
 <span class="n">Carseats.test</span><span class="o">=</span><span class="n">Carseats[</span><span class="o">-</span><span class="n">train</span><span class="p">,</span><span class="n">]</span>
 <span class="n">High.test</span><span class="o">=</span><span class="n">High[</span><span class="o">-</span><span class="n">train]</span>
 <span class="n">tree.carseats</span><span class="o">=</span><span class="nf">tree</span><span class="p">(</span><span class="n">High</span><span class="o">~</span><span class="n">.-Sales</span><span class="p">,</span><span class="n">Carseats</span><span class="p">,</span><span class="n">subset</span><span class="o">=</span><span class="n">train</span><span class="p">)</span>
@@ -1110,8 +1109,8 @@
 <p>while we get</p>
 <div class="codehilite"><pre><span></span><span class="o">##</span>          <span class="n">High</span><span class="p">.</span><span class="n">test</span>
 <span class="o">##</span> <span class="n">tree</span><span class="p">.</span><span class="n">pred</span>  <span class="k">No</span> <span class="n">Yes</span>
-<span class="o">##</span>       <span class="k">No</span>  <span class="mi">102</span>  <span class="mi">30</span>
-<span class="o">##</span>       <span class="n">Yes</span>  <span class="mi">15</span>  <span class="mi">53</span>
+<span class="o">##</span>       <span class="k">No</span>  <span class="mi">104</span>  <span class="mi">33</span>
+<span class="o">##</span>       <span class="n">Yes</span>  <span class="mi">13</span>  <span class="mi">50</span>
 </pre></div>
 
 <p>That&rsquo;s so strange!! There might be some changing thing, packages or r-base itself.</p>
