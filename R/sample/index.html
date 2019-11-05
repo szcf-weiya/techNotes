@@ -1140,11 +1140,11 @@ Tweak NAMESPACE imports.
 <div class="codehilite"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz&quot;</span><span class="p">,</span> <span class="n">repos</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;source&quot;</span><span class="p">)</span>
 </pre></div>
 
-<p>in the R console. However, at the beginning, I am not familiar with it. So I use the interface of rstudio to manually install the old <code>tree</code>&lsquo;s. Finally, I had tried <code>v1.0-28</code>, <code>v1.0-33</code>, <code>v1.0-37</code> and <code>v1.0-39</code>, but all of them yield the same results with the latest version.</p>
+<p>in the R console. However, at the beginning, I am not familiar with it. So I use the interface of rstudio to manually install the old <code>tree</code>&lsquo;s. Finally, I had tried <code>v1.0-28</code>, <code>v1.0-33</code>, <code>v1.0-37</code> and <code>v1.0-39</code>, but all of them yield the same results as the latest version.</p>
 <h2 id="r-version">R version<a class="headerlink" href="#r-version" title="Permanent link">&para;</a></h2>
-<p>Currently, we are using the latest R version, v3.6.0. Firstly, I had tried the old version <code>v3.4.4</code> on my server version rstudio. It can successfully reproduce the results.</p>
-<p>Now our goal is to determine the version from which we fail to obtain the same results. It requires us to install multiple r versions to test the program.</p>
-<p>The <code>docker</code> facilitates the multiple R version easily. Here is an official images for r-base, including all old versions of R. We can install a specified R version with the following commands by tagging the version number, </p>
+<p>Currently, we are using the latest R version, <code>v3.6.0</code>. Firstly, I had tried the old version <code>v3.4.4</code> on my server rstudio. It can successfully reproduce the results of the book.</p>
+<p>Now our goal is to determine the version from which we fail to obtain the same results. It requires us to install multiple R versions to test the above program.</p>
+<p>The <a href="https://www.docker.com/">docker</a> facilitates the multiple R versions easily. Here is <a href="https://hub.docker.com/_/r-base">an official images for r-base</a>, including most old versions of R. We can install a specified R version with the following commands by tagging the version number, </p>
 <div class="codehilite"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">r</span><span class="o">-</span><span class="n">base</span><span class="p">:</span><span class="mi">3</span><span class="p">.</span><span class="mi">6</span><span class="p">.</span><span class="mi">0</span>
 <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="c1">--rm r-base:3.6.0</span>
 </pre></div>
