@@ -101,6 +101,7 @@ sslocal -p port -k password -m method
 
 
 ### 系统代理与浏览器代理
+
 无需单独设置系统代理，浏览器是可以通过插件设置代理的。
 
 另外使用如curl需要代理时，可以采用
@@ -108,6 +109,12 @@ sslocal -p port -k password -m method
 curl ip.cn --proxy socks5://127.0.0.1:1080
 ```
 
+## 代理方案
+
+- 只需要浏览器：shadowssocks + switchOmega
+- 全局代理：shadowssocks + privoxy
+
+参考 [Ubuntu配置Shadowsocks全局代理](https://xingjian.space/Computer-Network/global-proxy-of-Shadowsocks-in-Ubuntu/)
 
 ## CDN折腾记录
 
