@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
     
     
       
@@ -46,12 +46,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
@@ -707,6 +707,13 @@
         <li class="md-nav__item">
   <a href="#unable-to-display-plot-using-the-repl-gks-errors" class="md-nav__link">
     Unable to display plot using the REPL. GKS errors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dims1" class="md-nav__link">
+    dims=1
   </a>
   
 </li>
@@ -1410,6 +1417,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dims1" class="md-nav__link">
+    dims=1
+  </a>
+  
+</li>
+      
       
       
       
@@ -1678,6 +1692,34 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 <div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">libGL</span> <span class="n">error</span><span class="o">:</span> <span class="n">unable</span> <span class="n">to</span> <span class="n">load</span> <span class="n">driver</span><span class="o">:</span> <span class="n">swrast_dri</span><span class="o">.</span><span class="n">so</span>
 <span class="n">libGL</span> <span class="n">error</span><span class="o">:</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">load</span> <span class="n">driver</span><span class="o">:</span> <span class="n">swrast</span>
 </pre></div>
+
+<h2 id="dims1"><code>dims=1</code><a class="headerlink" href="#dims1" title="Permanent link">&para;</a></h2>
+<p>总是记不太清 <code>sum</code>, <code>mean</code> 的时候 <code>dims=1</code> 是按行求和还是按列求和，经常先玩个 toy example 才能分辨出来。比如，</p>
+<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="mi">4</span><span class="n">×3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
+ <span class="mf">0.279181</span>  <span class="mf">0.0903167</span>  <span class="mf">0.148329</span> 
+ <span class="mf">0.486691</span>  <span class="mf">0.869156</span>   <span class="mf">0.0538834</span>
+ <span class="mf">0.110781</span>  <span class="mf">0.836284</span>   <span class="mf">0.486467</span> 
+ <span class="mf">0.810343</span>  <span class="mf">0.208659</span>   <span class="mf">0.759561</span> 
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="mi">1</span><span class="n">×3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
+ <span class="mf">1.687</span>  <span class="mf">2.00442</span>  <span class="mf">1.44824</span>
+</pre></div>
+
+<p>即把 <code>dims</code> 所代表的维度元素加起来，或者说沿着 dims 进行运算。这一点与 <code>R</code> 的函数 <code>apply</code> 中 <code>margin</code> 参数作用刚好相反，</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">12</span><span class="p">),</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">a</span>
+           <span class="n">[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>        <span class="n">[</span><span class="p">,</span><span class="m">2</span><span class="n">]</span>       <span class="n">[</span><span class="p">,</span><span class="m">3</span><span class="n">]</span>
+<span class="n">[1</span><span class="p">,</span><span class="n">]</span>  <span class="m">1.1535199</span>  <span class="m">0.03198768</span>  <span class="m">0.2857126</span>
+<span class="n">[2</span><span class="p">,</span><span class="n">]</span> <span class="m">-1.3616720</span>  <span class="m">0.32325598</span>  <span class="m">1.9242805</span>
+<span class="n">[3</span><span class="p">,</span><span class="n">]</span> <span class="m">-0.6519595</span> <span class="m">-1.14800119</span> <span class="m">-0.3635221</span>
+<span class="n">[4</span><span class="p">,</span><span class="n">]</span>  <span class="m">1.2713182</span>  <span class="m">0.98515312</span>  <span class="m">0.2269218</span>
+<span class="o">&gt;</span> <span class="nf">apply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">sum</span><span class="p">)</span>
+<span class="n">[1]</span>  <span class="m">1.4712202</span>  <span class="m">0.8858644</span> <span class="m">-2.1634828</span>  <span class="m">2.4833932</span>
+</pre></div>
+
+<p>这样交叉记忆，不知道效果会不会好点。</p>
                 
                   
                 
@@ -1766,7 +1808,7 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
       
     </div>
     
-      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
