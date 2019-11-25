@@ -340,6 +340,10 @@ chmod -R 700 Document/
 chown -R username:users Document/
 ```
 
+`chmod g+s .` 会使得当前文件夹 `.` 中所有新建文件或文件夹都继承 `.` 的 group，而不是创建者所属的 group，所以这一般配合 `chgrp` 使用。参考 ['chmod g+s' command](https://unix.stackexchange.com/questions/182212/chmod-gs-command)
+
+
+
 ## 腾讯云服务器nginx failed
 
 原因：80端口被占用
