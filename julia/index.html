@@ -718,6 +718,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reset-kw-value" class="md-nav__link">
+    reset kw... value
+  </a>
+  
+</li>
+      
       
       
       
@@ -1424,6 +1431,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reset-kw-value" class="md-nav__link">
+    reset kw... value
+  </a>
+  
+</li>
+      
       
       
       
@@ -1720,6 +1734,35 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 </pre></div>
 
 <p>这样交叉记忆，不知道效果会不会好点。</p>
+<h2 id="reset-kw-value">reset <code>kw...</code> value<a class="headerlink" href="#reset-kw-value" title="Permanent link">&para;</a></h2>
+<p>In the following situation, I want to reset a particular argument in <code>kw...</code>.</p>
+<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="n">f</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">g</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>Note that the type of <code>kw</code> is <code>Base.Iterators.Pairs</code>, firstly I want to directly reset the value via</p>
+<div class="codehilite"><pre><span></span><span class="n">h</span><span class="p">(;</span><span class="n">kw</span><span class="o">...</span><span class="p">)</span> <span class="o">=</span> <span class="n">kw</span>
+<span class="n">h</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+
+<p>but it throws </p>
+<div class="codehilite"><pre><span></span><span class="n">ERROR</span><span class="o">:</span> <span class="n">setfield</span><span class="o">!</span> <span class="n">immutable</span> <span class="n">struct</span> <span class="n">of</span> <span class="n">type</span> <span class="n">NamedTuple</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">changed</span>
+<span class="n">Stacktrace</span><span class="o">:</span>
+ <span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">setproperty</span><span class="o">!(::</span><span class="n">NamedTuple</span><span class="o">{(:</span><span class="n">a</span><span class="o">,),</span><span class="n">Tuple</span><span class="o">{</span><span class="n">Int64</span><span class="o">}},</span> <span class="o">::</span><span class="n">Symbol</span><span class="o">,</span> <span class="o">::</span><span class="n">Int64</span><span class="o">)</span> <span class="n">at</span> <span class="o">./</span><span class="n">Base</span><span class="o">.</span><span class="na">jl</span><span class="o">:</span><span class="mi">21</span>
+ <span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span> <span class="n">at</span> <span class="n">none</span><span class="o">:</span><span class="mi">0</span>
+</pre></div>
+
+<p>So I need to find new method, or give up such idea. Fortunately, the <a href="https://docs.julialang.org/en/v1/manual/functions/">official documentation of Julia</a> says</p>
+<blockquote>
+<p>The nature of keyword arguments makes it possible to specify the same argument more than once. For example, in the call <code>plot(x, y; options..., width=2)</code> it is possible that the options structure also contains a value for <code>width</code>.</p>
+</blockquote>
+<p>Thus, I can write</p>
+<p><div class="codehilite"><pre><span></span><span class="k">function</span> <span class="n">f</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">g</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+to solve my problem, where <code>b</code> is the argument I want to reset.</p>
                 
                   
                 
