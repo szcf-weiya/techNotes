@@ -373,3 +373,42 @@ julia> sum(a, dims=1)
 ```
 
 这样交叉记忆，不知道效果会不会好点。
+
+## reset `kw...` value
+
+In the following situation, I want to reset a particular argument in `kw...`.
+
+```julia
+function f(; kw...)
+    g(; kw...)
+end
+```
+
+Note that the type of `kw` is `Base.Iterators.Pairs`, firstly I want to directly reset the value via
+
+```julia
+h(;kw...) = kw
+h(a=1).data.a = 2
+```
+
+but it throws 
+
+```
+ERROR: setfield! immutable struct of type NamedTuple cannot be changed
+Stacktrace:
+ [1] setproperty!(::NamedTuple{(:a,),Tuple{Int64}}, ::Symbol, ::Int64) at ./Base.jl:21
+ [2] top-level scope at none:0
+```
+
+So I need to find new method, or give up such idea. Fortunately, the [official documentation of Julia](https://docs.julialang.org/en/v1/manual/functions/) says
+
+> The nature of keyword arguments makes it possible to specify the same argument more than once. For example, in the call `plot(x, y; options..., width=2)` it is possible that the options structure also contains a value for `width`.
+
+Thus, I can write
+
+```julia
+function f(; kw...)
+    g(; kw..., b = 6)
+end
+```
+to solve my problem, where `b` is the argument I want to reset.
