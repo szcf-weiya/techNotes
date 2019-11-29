@@ -184,3 +184,6 @@ References:
 
 2013年5月14日，《自然》杂志报道，数学家张益唐证明存在无穷多个素数对相差（上界）都小于7000万。论文已被《数学年刊》（Annals of Mathematics）接受。截至2014年10月9日, 素数对之差被缩小为 <=246。另见果壳科普：[孪生素数猜想，张益唐究竟做了一个什么研究？](https://www.guokr.com/article/437023/)
 
+## minimax @ 知乎
+
+[在统计中，什么是minimax risk 呀，这个和通常的收敛速度有什么区别？](https://www.zhihu.com/question/347730562/answer/835310688)
