@@ -1813,7 +1813,7 @@
 <div class="codehilite"><pre><span></span>sudo apt-get install texlive-fonts-extra
 </pre></div></p>
 <p>有时需要考虑
-<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">texlive</span><span class="o">-</span><span class="n">fonts</span><span class="o">-</span><span class="n">recommand</span>
+<div class="codehilite"><pre><span></span><span class="err">sudo apt-get install texlive-fonts-recommand</span>
 </pre></div></p>
 <h2 id="texlive-2016">安装 TeXLive 2016<a class="headerlink" href="#texlive-2016" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1823,7 +1823,7 @@
 <p>记住勾选 create symlinks to standard directories</p>
 <h2 id="sty">缺少 <code>.sty</code> 文件<a class="headerlink" href="#sty" title="Permanent link">&para;</a></h2>
 <p>比如缺少 <code>mhchem.sty</code></p>
-<p><div class="codehilite"><pre><span></span><span class="o">!</span> <span class="n">LaTeX</span> <span class="n">Error</span><span class="p">:</span> <span class="n">File</span> <span class="s1">&#39;mhchem.sty&#39;</span> <span class="k">not</span> <span class="k">found</span>
+<p><div class="codehilite"><pre><span></span><span class="err">! LaTeX Error: File &#39;mhchem.sty&#39; not found</span>
 </pre></div>
 解决方案为
 <div class="codehilite"><pre><span></span><span class="c1"># 1. 检查是否存在 `mhchem.sty` 文件</span>
@@ -1892,12 +1892,12 @@ $ sudo apt-get install texlive-science
 <h2 id="beamer-frame-fragile">beamer 中 frame 的 fragile 选项<a class="headerlink" href="#beamer-frame-fragile" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="http://blog.sina.com.cn/s/blog_5e16f1770102dxps.html">LaTeX 技巧 573：beamer 中使用 Listings 包出现的错误</a></p>
 <p>错误描述</p>
-<div class="codehilite"><pre><span></span><span class="nv">Runaway</span> <span class="nv">argument</span>?
-<span class="o">!</span> <span class="nv">Paragraph</span> <span class="nv">ended</span> <span class="nv">before</span> \<span class="nv">lst</span>@<span class="k">next</span> <span class="nv">was</span> <span class="nv">complete</span>.
-<span class="o">&lt;</span><span class="nv">to</span> <span class="nv">be</span> <span class="nv">read</span> <span class="nv">again</span><span class="o">&gt;</span>
-                   \<span class="nv">par</span>
-<span class="nv">l</span>.<span class="mi">68</span> \<span class="k">end</span>{<span class="nv">frame</span>}
-?
+<div class="codehilite"><pre><span></span><span class="err">Runaway argument?</span>
+<span class="err">! Paragraph ended before \lst@next was complete.</span>
+<span class="err">&lt;to be read again&gt;</span>
+<span class="err">                   \par</span>
+<span class="err">l.68 \end{frame}</span>
+<span class="err">?</span>
 </pre></div>
 
 <p>解决方案</p>
@@ -2041,46 +2041,46 @@ code
 </pre></div>
 
 <p>wrong error in wget. It should be </p>
-<div class="codehilite"><pre><span></span><span class="n">wget</span> <span class="o">-</span><span class="k">c</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">sourceforge</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">zjuthesis</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="n">fonts</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span><span class="o">/</span><span class="n">download</span> <span class="o">-</span><span class="n">O</span> <span class="n">fonts</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<div class="codehilite"><pre><span></span><span class="err">wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz</span>
 </pre></div>
 
 <p>and mv should add <code>sudo</code></p>
-<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">mv</span> <span class="n">fonts</span><span class="cm">/* /usr/share/fonts/truetype/custom/ </span>
+<div class="codehilite"><pre><span></span><span class="err">sudo mv fonts/* /usr/share/fonts/truetype/custom/ </span>
 </pre></div>
 
 <p>succeed!</p>
 <h3 id="use-xecjk">use xeCJK<a class="headerlink" href="#use-xecjk" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span># <span class="nv">test</span>.<span class="nv">tex</span>
-\<span class="nv">documentclass</span>{<span class="nv">article</span>}
-\<span class="nv">usepackage</span>{<span class="nv">xeCJK</span>}
-\<span class="nv">setCJKmainfont</span>{<span class="nv">STFANGSO</span>.<span class="nv">TTF</span>}
-\<span class="nv">begin</span>{<span class="nv">document</span>}
-<span class="nv">test</span> <span class="nv">TeX</span> <span class="nv">on</span> <span class="nv">Travis</span> <span class="nv">CI</span> <span class="nv">via</span> <span class="nv">xelatex</span>.
-毕业论文（设计）题目 
+<div class="codehilite"><pre><span></span><span class="o">#</span> <span class="n">test</span><span class="p">.</span><span class="n">tex</span>
+<span class="err">\</span><span class="n">documentclass</span><span class="err">{</span><span class="n">article</span><span class="err">}</span>
+<span class="err">\</span><span class="n">usepackage</span><span class="err">{</span><span class="n">xeCJK</span><span class="err">}</span>
+<span class="err">\</span><span class="n">setCJKmainfont</span><span class="err">{</span><span class="n">STFANGSO</span><span class="p">.</span><span class="n">TTF</span><span class="err">}</span>
+<span class="err">\</span><span class="k">begin</span><span class="err">{</span><span class="n">document</span><span class="err">}</span>
+<span class="n">test</span> <span class="n">TeX</span> <span class="k">on</span> <span class="n">Travis</span> <span class="n">CI</span> <span class="n">via</span> <span class="n">xelatex</span><span class="p">.</span>
+<span class="err">毕业论文（设计）题目</span> 
 
-浙江大学本科生毕业论文（设计）
-\<span class="k">end</span>{<span class="nv">document</span>}
+<span class="err">浙江大学本科生毕业论文（设计）</span>
+<span class="err">\</span><span class="k">end</span><span class="err">{</span><span class="n">document</span><span class="err">}</span>
 
-# .<span class="nv">travis</span>.<span class="nv">yml</span>
-<span class="nv">sudo</span>: <span class="nv">required</span>
-<span class="nv">dist</span>: <span class="nv">trusty</span>
-<span class="nv">before_install</span>:
-  <span class="o">-</span> <span class="s2">&quot;</span><span class="s">sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex dvipng</span><span class="s2">&quot;</span>
-  <span class="o">-</span> <span class="s2">&quot;</span><span class="s">wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz &amp;&amp; tar xzf fonts.tar.gz &amp;&amp; sudo mkdir -p /usr/share/fonts/truetype/custom/ &amp;&amp; sudo mv fonts/* /usr/share/fonts/truetype/custom/ &amp;&amp; sudo fc-cache -f -v</span><span class="s2">&quot;</span>
+<span class="o">#</span> <span class="p">.</span><span class="n">travis</span><span class="p">.</span><span class="n">yml</span>
+<span class="n">sudo</span><span class="p">:</span> <span class="n">required</span>
+<span class="n">dist</span><span class="p">:</span> <span class="n">trusty</span>
+<span class="n">before_install</span><span class="p">:</span>
+  <span class="o">-</span> <span class="ss">&quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex dvipng&quot;</span>
+  <span class="o">-</span> <span class="ss">&quot;wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz &amp;&amp; tar xzf fonts.tar.gz &amp;&amp; sudo mkdir -p /usr/share/fonts/truetype/custom/ &amp;&amp; sudo mv fonts/* /usr/share/fonts/truetype/custom/ &amp;&amp; sudo fc-cache -f -v&quot;</span>
 
-<span class="nv">script</span>:
-  <span class="o">-</span> <span class="nv">cd</span> <span class="nv">proposal</span>
-  <span class="o">-</span> <span class="nv">xelatex</span> <span class="nv">test</span>
+<span class="n">script</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">cd</span> <span class="n">proposal</span>
+  <span class="o">-</span> <span class="n">xelatex</span> <span class="n">test</span>
 </pre></div>
 
 <p>It reports that</p>
-<div class="codehilite"><pre><span></span><span class="o">!</span> <span class="n">Font</span> <span class="n">EU1</span><span class="o">/</span><span class="n">lmr</span><span class="o">/</span><span class="n">m</span><span class="o">/</span><span class="n">n</span><span class="o">/</span><span class="mi">10</span><span class="o">=</span><span class="p">[</span><span class="n">lmroman10</span><span class="o">-</span><span class="n">regular</span><span class="p">]:</span><span class="n">mapping</span><span class="o">=</span><span class="n">tex</span><span class="o">-</span><span class="nb">text</span> <span class="k">at</span> <span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="n">pt</span> <span class="k">not</span> <span class="n">loadab</span>
-<span class="n">le</span><span class="p">:</span> <span class="n">Metric</span> <span class="p">(</span><span class="n">TFM</span><span class="p">)</span> <span class="n">file</span> <span class="k">or</span> <span class="n">installed</span> <span class="n">font</span> <span class="k">not</span> <span class="k">found</span><span class="p">.</span>
+<div class="codehilite"><pre><span></span><span class="err">! Font EU1/lmr/m/n/10=[lmroman10-regular]:mapping=tex-text at 10.0pt not loadab</span>
+<span class="c">le: Metric (TFM) file or installed font not found.</span>
 </pre></div>
 
 <p>refer to <a href="https://tex.stackexchange.com/questions/129799/font-eu1-lmr-m-n-10-lmroman10-regularmapping-tex-text-at-10-0pt-not-loadab">! Font EU1/lmr/m/n/10=[lmroman10-regular]:mapping=tex-text at 10.0pt not loadab le: Metric (TFM) file not found</a></p>
 <p>try to install <code>fonts-lmodern</code> fist.</p>
-<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">fonts</span><span class="o">-</span><span class="n">lmodern</span>
+<div class="codehilite"><pre><span></span><span class="err">sudo apt-get install fonts-lmodern</span>
 </pre></div>
 
 <p>succeed!</p>
@@ -2094,10 +2094,10 @@ code
 <p>It reports that <code>Skipping a deployment with the releases provider because this is not a tagged commit</code></p>
 <p>It still failed.</p>
 <p>Then use the normal method</p>
-<div class="codehilite"><pre><span></span><span class="n">git</span> <span class="k">add</span> <span class="p">.</span>
-<span class="n">git</span> <span class="k">commit</span> <span class="o">-</span><span class="n">m</span> <span class="ss">&quot;    &quot;</span>
-<span class="n">git</span> <span class="n">tag</span> <span class="ss">&quot;test&quot;</span>
-<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">master</span> <span class="c1">--tags</span>
+<div class="codehilite"><pre><span></span><span class="err">git add .</span>
+<span class="err">git commit -m &quot;    &quot;</span>
+<span class="err">git tag &quot;test&quot;</span>
+<span class="err">git push origin master --tags</span>
 </pre></div>
 
 <p>It succeed!</p>

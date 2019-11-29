@@ -2064,7 +2064,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 </ol>
 <h2 id="error-in-install-grbase">error in install <code>gRbase</code><a class="headerlink" href="#error-in-install-grbase" title="Permanent link">&para;</a></h2>
 <p>environment: Ubuntu 16.04 (gcc 5.4.0)</p>
-<div class="codehilite"><pre><span></span><span class="k">g</span><span class="o">++</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">unrecognized</span> <span class="n">comma</span> <span class="n">line</span> <span class="k">option</span> <span class="err">‘</span><span class="o">-</span><span class="n">fno</span><span class="o">-</span><span class="n">plt</span><span class="err">’</span>
+<div class="codehilite"><pre><span></span><span class="err">g++: error: unrecognized comma line option ‘-fno-plt’</span>
 </pre></div>
 
 <p>the reason should be that the current gcc is too old.</p>
@@ -2078,10 +2078,10 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>refer to </p>
 <p><a href="https://stackoverflow.com/questions/14865976/r-packages-fail-to-compile-with-gcc">R Packages Fail to Compile with gcc</a></p>
 <p>Note that some packages cannot be installed via CRAN, and you can check bioconductor.</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="ss">(</span><span class="o">!</span><span class="nv">requireNamespace</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">BiocManager</span><span class="s2">&quot;</span>, <span class="nv">quietly</span> <span class="o">=</span> <span class="nv">TRUE</span><span class="ss">))</span>
-    <span class="nv">install</span>.<span class="nv">packages</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">BiocManager</span><span class="s2">&quot;</span><span class="ss">)</span>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">requireNamespace</span><span class="p">(</span><span class="ss">&quot;BiocManager&quot;</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">))</span>
+    <span class="n">install</span><span class="p">.</span><span class="n">packages</span><span class="p">(</span><span class="ss">&quot;BiocManager&quot;</span><span class="p">)</span>
 
-<span class="nv">BiocManager</span>::<span class="nv">install</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">graph</span><span class="s2">&quot;</span><span class="ss">)</span>
+<span class="n">BiocManager</span><span class="p">::</span><span class="n">install</span><span class="p">(</span><span class="ss">&quot;graph&quot;</span><span class="p">)</span>
 </pre></div>
                 
                   

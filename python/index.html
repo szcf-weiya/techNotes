@@ -1987,50 +1987,50 @@
 <h2 id="jupyter-notebook">jupyter notebook 出错<a class="headerlink" href="#jupyter-notebook" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="error_jupyter.png" /></p>
 <p>可以通过
-<div class="codehilite"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="p">.</span><span class="n">pki</span>
+<div class="codehilite"><pre><span></span><span class="err">rm -r .pki</span>
 </pre></div>
 解决</p>
 <h2 id="jupyter-notebook_1">创建jupyter notebook 权限问题<a class="headerlink" href="#jupyter-notebook_1" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="error_jupyter_1.png" /></p>
 <p>原因是所给的路径的用户权限不一致，jupyter的用户及用户组均为root，为解决这个问题，直接更改用户权限</p>
-<p><div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">chown</span> <span class="n">weiya</span> <span class="n">jupyter</span><span class="o">/</span> <span class="o">-</span><span class="n">R</span>
-<span class="n">sudo</span> <span class="n">chgrp</span> <span class="n">weiya</span> <span class="n">jupyter</span><span class="o">/</span> <span class="o">-</span><span class="n">R</span>
+<p><div class="codehilite"><pre><span></span><span class="err">sudo chown weiya jupyter/ -R</span>
+<span class="err">sudo chgrp weiya jupyter/ -R</span>
 </pre></div>
 其中-R表示递归调用，使得文件夹中所有内容的用户权限都进行更改。</p>
 <h2 id="theano-import">theano import出错<a class="headerlink" href="#theano-import" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="err_theano.png" /></p>
 <p>更改.theano文件夹的用户权限</p>
 <h2 id="python_1">python 查看已安装的包<a class="headerlink" href="#python_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">pip</span> <span class="n">list</span>
+<div class="codehilite"><pre><span></span><span class="err">pip list</span>
 </pre></div>
 
 <h2 id="condaspyder">conda更新spyder<a class="headerlink" href="#condaspyder" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="p">(</span><span class="n">sudo</span> <span class="n">proxychains</span><span class="p">)</span> <span class="n">conda</span> <span class="k">update</span> <span class="n">spyder</span>
+<div class="codehilite"><pre><span></span><span class="err">(sudo proxychains) conda update spyder</span>
 </pre></div>
 
 <h2 id="selenium">selenium<a class="headerlink" href="#selenium" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path">Selenium using Python - Geckodriver executable needs to be in PATH
 </a></p>
 <h2 id="array-operation">array operation<a class="headerlink" href="#array-operation" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="k">sum</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">.</span><span class="mi">0</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">c</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="k">sum</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">.</span><span class="mi">0</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">/</span><span class="k">c</span>
-<span class="nb">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">.</span> <span class="p">,</span>  <span class="mi">5</span><span class="p">.</span> <span class="p">],</span>
-       <span class="p">[</span> <span class="mi">0</span><span class="p">.</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">1</span><span class="p">.</span> <span class="p">]])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="nb">array</span><span class="p">([</span> <span class="mi">1</span><span class="p">.,</span>  <span class="mi">5</span><span class="p">.])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">c</span>
-<span class="nb">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">.],</span>
-       <span class="p">[</span> <span class="mi">5</span><span class="p">.]])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
-<span class="nb">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">5</span><span class="p">],</span>
-      <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">/</span><span class="k">c</span>
-<span class="nb">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">.,</span>  <span class="mi">5</span><span class="p">.],</span>
-      <span class="p">[</span> <span class="mi">0</span><span class="p">.,</span>  <span class="mi">2</span><span class="p">.]])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">/</span><span class="n">a</span>
-<span class="nb">array</span><span class="p">([[</span> <span class="mi">1</span><span class="p">.,</span>  <span class="mi">1</span><span class="p">.],</span>
-      <span class="p">[</span> <span class="mi">0</span><span class="p">.,</span>  <span class="mi">2</span><span class="p">.]])</span>
+<div class="codehilite"><pre><span></span><span class="err">&gt;&gt;&gt; a = np.sum([[0, 1.0], [0, 5.0]], axis=1)</span>
+<span class="err">&gt;&gt;&gt; c = np.sum([[0, 1.0], [0, 5.0]], axis=1, keepdims=True)</span>
+<span class="err">&gt;&gt;&gt; a/c</span>
+<span class="err">array([[ 1. ,  5. ],</span>
+<span class="err">       [ 0.2,  1. ]])</span>
+<span class="err">&gt;&gt;&gt; a</span>
+<span class="err">array([ 1.,  5.])</span>
+<span class="err">&gt;&gt;&gt; c</span>
+<span class="err">array([[ 1.],</span>
+<span class="err">       [ 5.]])</span>
+<span class="err">&gt;&gt;&gt; d</span>
+<span class="err">array([[ 1,  5],</span>
+<span class="err">      [ 0, 10]])</span>
+<span class="err">&gt;&gt;&gt; d/c</span>
+<span class="err">array([[ 1.,  5.],</span>
+<span class="err">      [ 0.,  2.]])</span>
+<span class="err">&gt;&gt;&gt; d/a</span>
+<span class="err">array([[ 1.,  1.],</span>
+<span class="err">      [ 0.,  2.]])</span>
 </pre></div>
 
 <h2 id="difference-between-numpyarray-shape-r-1-and-r">Difference between numpy.array shape (R, 1) and (R,)<a class="headerlink" href="#difference-between-numpyarray-shape-r-1-and-r" title="Permanent link">&para;</a></h2>
@@ -2105,15 +2105,15 @@ spyder3 <span class="p">&amp;</span>
 <p>注意编码格式为utf8无BOM。</p>
 <h2 id="conda-window">conda 在window下设置<a class="headerlink" href="#conda-window" title="Permanent link">&para;</a></h2>
 <p>win10下已经装了anaconda，spyder(2.7)，现想再装上python3，于是利用conda创建一个python3的环境<code>bunny</code>。</p>
-<div class="codehilite"><pre><span></span><span class="n">conda</span> <span class="k">create</span> <span class="c1">--name bunny python=3</span>
+<div class="codehilite"><pre><span></span><span class="err">conda create --name bunny python=3</span>
 </pre></div>
 
 <p>切换到bunny环境</p>
-<div class="codehilite"><pre><span></span><span class="n">activate</span> <span class="n">bunny</span>
+<div class="codehilite"><pre><span></span><span class="err">activate bunny</span>
 </pre></div>
 
 <p>参考<a href="https://pythonhosted.org/spyder/installation.html">spyder3 doc</a></p>
-<div class="codehilite"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">spyder3</span>
+<div class="codehilite"><pre><span></span><span class="err">pip install spyder3</span>
 </pre></div>
 
 <h2 id="_2">又拍云的短信平台<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -2140,14 +2140,14 @@ spyder3 <span class="p">&amp;</span>
 <li>python2</li>
 </ol>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">urllib2</span>
-<span class="k">print</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="s2">&quot;%CE%B1%CE%BB%20&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="s2">&quot;%CE%B1%CE%BB%20&quot;</span><span class="p">)</span>
 </pre></div>
 
 <ol start="2">
 <li>python3</li>
 </ol>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">unquote</span>
-<span class="k">print</span><span class="p">(</span><span class="n">unquote</span><span class="p">(</span><span class="s2">&quot;%CE%B1%CE%BB%20&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">unquote</span><span class="p">(</span><span class="s2">&quot;%CE%B1%CE%BB%20&quot;</span><span class="p">))</span>
 </pre></div>
 
 <h2 id="convert-bytes-to-string">convert bytes to string<a class="headerlink" href="#convert-bytes-to-string" title="Permanent link">&para;</a></h2>
@@ -2234,7 +2234,7 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 </pre></div>
 
 <p>会报错</p>
-<div class="codehilite"><pre><span></span><span class="s1">&#39;ascii&#39;</span> <span class="n">codec</span> <span class="n">can</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">encode</span> <span class="nb">character</span>
+<div class="codehilite"><pre><span></span><span class="err">&#39;ascii&#39; codec can&#39;t encode character</span>
 </pre></div>
 
 <p>参考 <a href="https://stackoverflow.com/questions/33255846/python-write-a-list-with-non-ascii-characters-to-a-text-file">Python: write a list with non-ASCII characters to a text file</a> 采用 <code>codecs.open(, "w", encoding="utf-8")</code> 可以解决需求。</p>
@@ -2284,7 +2284,7 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 
 <p>refer to <a href="https://stackoverflow.com/questions/1012185/in-python-how-do-i-index-a-list-with-another-list">In Python, how do I index a list with another list?</a></p>
 <h2 id="getting-indices-of-true">getting indices of true<a class="headerlink" href="#getting-indices-of-true" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">]</span>
+<div class="codehilite"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 </pre></div>

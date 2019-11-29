@@ -1593,23 +1593,23 @@
 <h2 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h2>
 <p>执行析构函数，并释放空间</p>
 <p>引用的本质是指针常量</p>
-<div class="codehilite"><pre><span></span><span class="n">const</span> <span class="nb">int</span> <span class="n">m</span><span class="p">;</span>
-<span class="o">//</span><span class="nb">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">;</span><span class="o">//</span><span class="n">wrong</span>
-<span class="n">const</span> <span class="nb">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">;</span>
-<span class="nb">int</span> <span class="o">*</span><span class="n">const</span> <span class="n">pc</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">;</span> <span class="o">//</span><span class="err">必须初始化，引用的本质</span>
+<div class="codehilite"><pre><span></span><span class="err">const int m;</span>
+<span class="err">//int* p = &amp;m;//wrong</span>
+<span class="err">const int* p = &amp;m;</span>
+<span class="err">int *const pc = &amp;m; //必须初始化，引用的本质</span>
 </pre></div>
 
 <p>构造函数析构函数作用区间</p>
-<div class="codehilite"><pre><span></span><span class="nv">A</span> <span class="nv">a</span><span class="c1">;</span>
-<span class="nv">A</span> <span class="o">*</span><span class="nv">ap</span><span class="c1">;</span>
-<span class="k">if</span> <span class="ss">(</span>...<span class="ss">)</span>
-{
-    <span class="nv">B</span> <span class="nv">b</span><span class="c1">;</span>
-    ...<span class="o">//</span> <span class="nv">B</span>析构
-    <span class="nv">ap</span> <span class="o">=</span> <span class="nv">new</span> <span class="nv">A</span><span class="c1">;</span>
-}
-......<span class="o">//</span> <span class="nv">A</span>析构
-<span class="nv">delete</span> <span class="nv">ap</span><span class="c1">;</span>
+<div class="codehilite"><pre><span></span><span class="err">A a;</span>
+<span class="err">A *ap;</span>
+<span class="err">if (...)</span>
+<span class="err">{</span>
+<span class="err">    B b;</span>
+<span class="err">    ...// B析构</span>
+<span class="err">    ap = new A;</span>
+<span class="err">}</span>
+<span class="err">......// A析构</span>
+<span class="err">delete ap;</span>
 </pre></div>
 
 <p>先执行基类构造函数，再派生类构造函数；
@@ -1627,12 +1627,12 @@
 <p><a href="http://www.cnblogs.com/yc_sunniwell/archive/2010/07/14/1777431.html">reference</a></p>
 <p>在Rcpp中，extern &ldquo;C&rdquo; 告诉编译器，保持其名称，不要生成用于链接的中间函数名。</p>
 <h2 id="symbol-lookup-error">&ldquo;symbol lookup error&rdquo;<a class="headerlink" href="#symbol-lookup-error" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">test</span><span class="p">:</span> <span class="n">symbol</span> <span class="n">lookup</span> <span class="n">error</span><span class="p">:</span> <span class="p">.</span><span class="o">/</span><span class="n">test</span><span class="p">:</span> <span class="n">undefined</span> <span class="n">symbol</span><span class="p">:</span>
+<div class="codehilite"><pre><span></span><span class="err">./test: symbol lookup error: ./test: undefined symbol:</span>
 </pre></div>
 
 <p>动态链接库的原因，因为更新完gsl之后，原先的动态链接库不管用了，可以用下面的命令追踪动态链接库
-<div class="codehilite"><pre><span></span><span class="n">ldd</span> <span class="n">test</span>
-<span class="n">ldd</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">r</span> <span class="n">test</span>
+<div class="codehilite"><pre><span></span><span class="err">ldd test</span>
+<span class="err">ldd -d -r test</span>
 </pre></div></p>
 <p>参考<a href="http://gdwarner.blogspot.com/2009/03/c-runtime-symbol-lookup-error.html">c++ runtime &ldquo;symbol lookup error&rdquo; </a></p>
 <h2 id="_3">字符数组与数字互换<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -1648,18 +1648,18 @@
 <h3 id="_5">数字转字符<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>sprintf</p>
 <h2 id="_6">指针初始化<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">double</span> <span class="n">x</span><span class="p">;</span>
-<span class="n">double</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="err">double x;</span>
+<span class="err">double *p = &amp;x;</span>
 </pre></div>
 
 <p>DO NOT
-<div class="codehilite"><pre><span></span><span class="n">double</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="err">double *p = 5;</span>
 </pre></div></p>
 <p>BUT
-<div class="codehilite"><pre><span></span><span class="n">double</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="ss">&quot;aaa&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="err">double *p = &quot;aaa&quot;;</span>
 </pre></div>
 并且要初始化，不能</p>
-<p><div class="codehilite"><pre><span></span><span class="n">double</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<p><div class="codehilite"><pre><span></span><span class="err">double *p;</span>
 </pre></div>
 然后直接传参了，这是不对的。</p>
 <h2 id="c-correctly-freeing-memory-of-a-multi-dimensional-array">C: Correctly freeing memory of a multi-dimensional array<a class="headerlink" href="#c-correctly-freeing-memory-of-a-multi-dimensional-array" title="Permanent link">&para;</a></h2>
@@ -1675,46 +1675,46 @@
 <p>https://stackoverflow.com/questions/9188126/c-strange-behavior-with-stdistream-or-sentry-wrap-around/9189541#9189541</p>
 </li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="nv">std</span>::<span class="nv">istream</span><span class="o">&amp;</span> <span class="nv">safeGetline</span><span class="ss">(</span><span class="nv">std</span>::<span class="nv">istream</span><span class="o">&amp;</span> <span class="nv">is</span>, <span class="nv">std</span>::<span class="nv">string</span><span class="o">&amp;</span> <span class="nv">t</span><span class="ss">)</span>
-{
-    <span class="nv">t</span>.<span class="nv">clear</span><span class="ss">()</span><span class="c1">;</span>
+<div class="codehilite"><pre><span></span><span class="nt">std</span><span class="p">::</span><span class="nd">istream</span><span class="o">&amp;</span> <span class="nt">safeGetline</span><span class="o">(</span><span class="nt">std</span><span class="p">::</span><span class="nd">istream</span><span class="o">&amp;</span> <span class="nt">is</span><span class="o">,</span> <span class="nt">std</span><span class="p">::</span><span class="nd">string</span><span class="o">&amp;</span> <span class="nt">t</span><span class="o">)</span>
+<span class="p">{</span>
+    <span class="err">t.clear()</span><span class="p">;</span>
 
-    <span class="o">//</span> <span class="nv">The</span> <span class="nv">characters</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">stream</span> <span class="nv">are</span> <span class="nv">read</span> <span class="nv">one</span><span class="o">-</span><span class="nv">by</span><span class="o">-</span><span class="nv">one</span> <span class="nv">using</span> <span class="nv">a</span> <span class="nv">std</span>::<span class="nv">streambuf</span>.
-    <span class="o">//</span> <span class="nv">That</span> <span class="nv">is</span> <span class="nv">faster</span> <span class="nv">than</span> <span class="nv">reading</span> <span class="nv">them</span> <span class="nv">one</span><span class="o">-</span><span class="nv">by</span><span class="o">-</span><span class="nv">one</span> <span class="nv">using</span> <span class="nv">the</span> <span class="nv">std</span>::<span class="nv">istream</span>.
-    <span class="o">//</span> <span class="nv">Code</span> <span class="nv">that</span> <span class="nv">uses</span> <span class="nv">streambuf</span> <span class="nv">this</span> <span class="nv">way</span> <span class="nv">must</span> <span class="nv">be</span> <span class="nv">guarded</span> <span class="nv">by</span> <span class="nv">a</span> <span class="nv">sentry</span> <span class="nv">object</span>.
-    <span class="o">//</span> <span class="nv">The</span> <span class="nv">sentry</span> <span class="nv">object</span> <span class="nv">performs</span> <span class="nv">various</span> <span class="nv">tasks</span>,
-    <span class="o">//</span> <span class="nv">such</span> <span class="nv">as</span> <span class="nv">thread</span> <span class="nv">synchronization</span> <span class="nv">and</span> <span class="nv">updating</span> <span class="nv">the</span> <span class="nv">stream</span> <span class="nv">state</span>.
+    <span class="err">//</span> <span class="err">The</span> <span class="err">characters</span> <span class="err">in</span> <span class="err">the</span> <span class="err">stream</span> <span class="err">are</span> <span class="err">read</span> <span class="err">one-by-one</span> <span class="err">using</span> <span class="err">a</span> <span class="n">std</span><span class="p">:</span><span class="o">:</span><span class="n">streambuf</span><span class="o">.</span>
+    <span class="o">//</span> <span class="n">That</span> <span class="n">is</span> <span class="kc">faster</span> <span class="n">than</span> <span class="n">reading</span> <span class="n">them</span> <span class="n">one-by-one</span> <span class="n">using</span> <span class="n">the</span> <span class="n">std</span><span class="o">::</span><span class="n">istream</span><span class="o">.</span>
+    <span class="o">//</span> <span class="n">Code</span> <span class="n">that</span> <span class="n">uses</span> <span class="n">streambuf</span> <span class="n">this</span> <span class="n">way</span> <span class="n">must</span> <span class="n">be</span> <span class="n">guarded</span> <span class="n">by</span> <span class="n">a</span> <span class="n">sentry</span> <span class="n">object</span><span class="o">.</span>
+    <span class="o">//</span> <span class="n">The</span> <span class="n">sentry</span> <span class="n">object</span> <span class="n">performs</span> <span class="n">various</span> <span class="n">tasks</span><span class="p">,</span>
+    <span class="o">//</span> <span class="n">such</span> <span class="n">as</span> <span class="n">thread</span> <span class="n">synchronization</span> <span class="n">and</span> <span class="n">updating</span> <span class="n">the</span> <span class="n">stream</span> <span class="n">state</span><span class="o">.</span>
 
-    <span class="nv">std</span>::<span class="nv">istream</span>::<span class="nv">sentry</span> <span class="nv">se</span><span class="ss">(</span><span class="nv">is</span>, <span class="nv">true</span><span class="ss">)</span><span class="c1">;</span>
-    <span class="nv">std</span>::<span class="nv">streambuf</span><span class="o">*</span> <span class="nv">sb</span> <span class="o">=</span> <span class="nv">is</span>.<span class="nv">rdbuf</span><span class="ss">()</span><span class="c1">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">istream</span><span class="o">::</span><span class="n">sentry</span> <span class="nf">se</span><span class="p">(</span><span class="n">is</span><span class="p">,</span> <span class="n">true</span><span class="p">);</span>
+    <span class="n">std</span><span class="p">:</span><span class="o">:</span><span class="n">streambuf</span><span class="o">*</span> <span class="n">sb</span> <span class="o">=</span> <span class="n">is</span><span class="o">.</span><span class="nf">rdbuf</span><span class="p">();</span>
 
-    <span class="k">for</span><span class="ss">(</span><span class="c1">;;) {</span>
-        <span class="nv">int</span> <span class="nv">c</span> <span class="o">=</span> <span class="nv">sb</span><span class="o">-&gt;</span><span class="nv">sbumpc</span><span class="ss">()</span><span class="c1">;</span>
-        <span class="nv">switch</span> <span class="ss">(</span><span class="nv">c</span><span class="ss">)</span> {
-        <span class="nv">case</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>:
-            <span class="k">return</span> <span class="nv">is</span><span class="c1">;</span>
-        <span class="nv">case</span> <span class="s1">&#39;</span><span class="s">\r</span><span class="s1">&#39;</span>:
-            <span class="k">if</span><span class="ss">(</span><span class="nv">sb</span><span class="o">-&gt;</span><span class="nv">sgetc</span><span class="ss">()</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="ss">)</span>
-                <span class="nv">sb</span><span class="o">-&gt;</span><span class="nv">sbumpc</span><span class="ss">()</span><span class="c1">;</span>
-            <span class="k">return</span> <span class="nv">is</span><span class="c1">;</span>
-        <span class="nv">case</span> <span class="nv">EOF</span>:
-            <span class="o">//</span> <span class="nv">Also</span> <span class="nv">handle</span> <span class="nv">the</span> <span class="nv">case</span> <span class="nv">when</span> <span class="nv">the</span> <span class="nv">last</span> <span class="nv">line</span> <span class="nv">has</span> <span class="nv">no</span> <span class="nv">line</span> <span class="nv">ending</span>
-            <span class="k">if</span><span class="ss">(</span><span class="nv">t</span>.<span class="nv">empty</span><span class="ss">())</span>
-                <span class="nv">is</span>.<span class="nv">setstate</span><span class="ss">(</span><span class="nv">std</span>::<span class="nv">ios</span>::<span class="nv">eofbit</span><span class="ss">)</span><span class="c1">;</span>
-            <span class="k">return</span> <span class="nv">is</span><span class="c1">;</span>
-        <span class="nv">default</span>:
-            <span class="nv">t</span> <span class="o">+=</span> <span class="ss">(</span><span class="nv">char</span><span class="ss">)</span><span class="nv">c</span><span class="c1">;</span>
-        }
-    }
-}
+    <span class="err">for(</span><span class="p">;;</span><span class="err">)</span> <span class="err">{</span>
+        <span class="err">int</span> <span class="err">c</span> <span class="err">=</span> <span class="err">sb-&gt;sbumpc()</span><span class="p">;</span>
+        <span class="err">switch</span> <span class="err">(c)</span> <span class="err">{</span>
+        <span class="err">case</span> <span class="err">&#39;\n&#39;:</span>
+            <span class="err">return</span> <span class="err">is</span><span class="p">;</span>
+        <span class="err">case</span> <span class="err">&#39;\r&#39;:</span>
+            <span class="err">if(sb-&gt;sgetc()</span> <span class="err">==</span> <span class="err">&#39;\n&#39;)</span>
+                <span class="err">sb-&gt;sbumpc()</span><span class="p">;</span>
+            <span class="err">return</span> <span class="err">is</span><span class="p">;</span>
+        <span class="err">case</span> <span class="n">EOF</span><span class="p">:</span>
+            <span class="o">//</span> <span class="n">Also</span> <span class="n">handle</span> <span class="n">the</span> <span class="n">case</span> <span class="n">when</span> <span class="n">the</span> <span class="kc">last</span> <span class="n">line</span> <span class="n">has</span> <span class="n">no</span> <span class="n">line</span> <span class="n">ending</span>
+            <span class="nf">if</span><span class="p">(</span><span class="n">t</span><span class="err">.</span><span class="nf">empty</span><span class="p">())</span>
+                <span class="n">is</span><span class="o">.</span><span class="nf">setstate</span><span class="p">(</span><span class="n">std</span><span class="err">::</span><span class="n">ios</span><span class="err">::</span><span class="n">eofbit</span><span class="p">);</span>
+            <span class="err">return</span> <span class="err">is</span><span class="p">;</span>
+        <span class="n">default</span><span class="p">:</span>
+            <span class="n">t</span> <span class="o">+=</span> <span class="p">(</span><span class="n">char</span><span class="p">)</span><span class="n">c</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="err">}</span>
+<span class="err">}</span>
 </pre></div>
 
 <p>使用这个代码注意一个问题
 应该使用
-<div class="codehilite"><pre><span></span><span class="k">while</span><span class="ss">(</span><span class="o">!</span><span class="nv">safeGetline</span><span class="ss">(</span><span class="nv">input</span>, <span class="nv">line</span><span class="ss">)</span>.<span class="nv">eof</span><span class="ss">)</span>
+<div class="codehilite"><pre><span></span><span class="err">while(!safeGetline(input, line).eof)</span>
 </pre></div></p>
 <p>不能用
-<div class="codehilite"><pre><span></span><span class="k">while</span><span class="ss">(</span><span class="nv">safeGetline</span><span class="ss">(</span><span class="nv">input</span>, <span class="nv">line</span><span class="ss">))</span>
+<div class="codehilite"><pre><span></span><span class="err">while(safeGetline(input, line))</span>
 </pre></div></p>
 <h2 id="fpic">fPIC<a class="headerlink" href="#fpic" title="Permanent link">&para;</a></h2>
 <p>参考http://blog.sina.com.cn/s/blog_54f82cc201011op1.html</p>
@@ -1771,8 +1771,8 @@
 <h2 id="variably-modeified-type-in-c-language">variably modeified type in C language<a class="headerlink" href="#variably-modeified-type-in-c-language" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/23529069/variably-modified-type-in-c-language">Variably modified type in C language - Stack Overflow</a></p>
 <h2 id="write-into-file-immediately">write into file immediately<a class="headerlink" href="#write-into-file-immediately" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">fprintf</span><span class="p">(</span><span class="n">fileptr</span><span class="p">,</span> <span class="ss">&quot;writing to file\n&quot;</span><span class="p">);</span>
-<span class="n">fflush</span><span class="p">(</span><span class="n">fileptr</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="err">fprintf(fileptr, &quot;writing to file\n&quot;);</span>
+<span class="err">fflush(fileptr);</span>
 </pre></div>
 
 <p><a href="https://stackoverflow.com/questions/45339874/how-to-make-fprintf-writes-immediately">How to make fprintf() writes immediately</a></p>

@@ -1597,9 +1597,9 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 </blockquote>
 <h2 id="nginx_1">nginx配置跳转<a class="headerlink" href="#nginx_1" title="Permanent link">&para;</a></h2>
 <p>比如将所有 <code>http://ServerIP/10 Boosting and Additive Trees/.*</code> 的访问301重定向到<code>http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html</code>，在nginx配置文件中添加
-<div class="codehilite"><pre><span></span><span class="nt">location</span> <span class="o">^~</span> <span class="s1">&#39;/10 Boosting and Additive Trees/&#39;</span> <span class="p">{</span>
-        <span class="err">rewrite</span> <span class="err">^/.*</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="err">$</span><span class="n">server_name</span><span class="o">/</span><span class="mi">10</span><span class="o">-</span><span class="n">Boosting-and-Additive-Trees</span><span class="o">/</span><span class="mf">10.1</span><span class="o">-</span><span class="n">Boosting-Methods</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span> <span class="n">permanent</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="codehilite"><pre><span></span><span class="err">location ^~ &#39;/10 Boosting and Additive Trees/&#39; {</span>
+<span class="err">        rewrite ^/.* http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html permanent;</span>
+<span class="err">}</span>
 </pre></div></p>
 <p>几点说明：</p>
 <ol>
@@ -1672,21 +1672,21 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>采用 ADOBE 字体，详见 <a href="https://fonts.adobe.com/typekit">Adobe Fonts</a></p>
 <h2 id="jekyll-tags">jekyll tags 逗号分隔<a class="headerlink" href="#jekyll-tags" title="Permanent link">&para;</a></h2>
 <p>采用</p>
-<div class="codehilite"><pre><span></span>{<span class="o">%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="nv">in</span> <span class="nv">page</span>.<span class="nv">tags</span> <span class="o">%</span>}
-    <span class="o">&lt;</span><span class="nv">a</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">/tag/{{tag}}</span><span class="s2">&quot;</span><span class="o">&gt;</span>{{<span class="nv">tag</span>}}<span class="o">&lt;/</span><span class="nv">a</span><span class="o">&gt;</span>
-    {<span class="o">%</span> <span class="nv">unless</span> <span class="nv">forloop</span>.<span class="nv">last</span> <span class="o">%</span>},{<span class="o">%</span> <span class="nv">endunless</span> <span class="o">%</span>}
-{<span class="o">%</span> <span class="nv">endfor</span> <span class="o">%</span>}
+<div class="codehilite"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="k">in</span> <span class="nv">page.tags</span> <span class="cp">%}</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/tag/</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+    <span class="cp">{%</span> <span class="k">unless</span> <span class="nb">forloop</span><span class="nv">.last</span> <span class="cp">%}</span>,<span class="cp">{%</span> <span class="k">endunless</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
 </pre></div>
 
 <p>但 <a href="https://stackoverflow.com/questions/41858548/list-of-dynamic-links-in-jekyll">List of Dynamic Links in Jekyll</a> 提到了更完整的方案，</p>
-<div class="codehilite"><pre><span></span>{<span class="o">%</span> <span class="nv">capture</span> <span class="nv">tagscommas</span> <span class="o">%</span>}
-{<span class="o">%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="nv">in</span> <span class="nv">page</span>.<span class="nv">tags</span> <span class="o">%</span>}
-    <span class="o">&lt;</span><span class="nv">a</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">/tag/{{tag}}</span><span class="s2">&quot;</span><span class="o">&gt;</span>{{<span class="nv">tag</span>}}<span class="o">&lt;/</span><span class="nv">a</span><span class="o">&gt;</span>
-    {<span class="o">%</span> <span class="nv">unless</span> <span class="nv">forloop</span>.<span class="nv">last</span> <span class="o">%</span>},{<span class="o">%</span> <span class="nv">endunless</span> <span class="o">%</span>}
-{<span class="o">%</span> <span class="nv">endfor</span> <span class="o">%</span>}
-{<span class="o">%</span> <span class="nv">endcapture</span> <span class="o">%</span>}
+<div class="codehilite"><pre><span></span><span class="cp">{%</span> <span class="k">capture</span> <span class="nv">tagscommas</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="k">in</span> <span class="nv">page.tags</span> <span class="cp">%}</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/tag/</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
+    <span class="cp">{%</span> <span class="k">unless</span> <span class="nb">forloop</span><span class="nv">.last</span> <span class="cp">%}</span>,<span class="cp">{%</span> <span class="k">endunless</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endcapture</span> <span class="cp">%}</span>
 
-{{<span class="nv">tagscommas</span>}}
+<span class="cp">{{</span><span class="nv">tagscommas</span><span class="cp">}}</span>
 </pre></div>
 
 <h2 id="correct-jekyll">Correct Jekyll<a class="headerlink" href="#correct-jekyll" title="Permanent link">&para;</a></h2>
@@ -1771,12 +1771,12 @@ Make sure that <span class="sb">`</span>gem install commonmarker -v <span class=
 
 <p>~~解决了问题！~~</p>
 <p>发现还没有这么简单，总是报错</p>
-<div class="codehilite"><pre><span></span><span class="n">Could</span> <span class="k">not</span> <span class="n">find</span> <span class="n">ffi</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">11</span><span class="p">.</span><span class="mi">1</span> <span class="k">in</span> <span class="k">any</span> <span class="k">of</span> <span class="n">the</span> <span class="n">sources</span>
+<div class="codehilite"><pre><span></span><span class="err">Could not find ffi-1.11.1 in any of the sources</span>
 </pre></div>
 
 <p>但实际上已经装好了。不知道咋回事。</p>
 <p>后来参考 https://jekyllrb.com/docs/ 重头开始，</p>
-<div class="codehilite"><pre><span></span><span class="n">gem</span> <span class="n">install</span> <span class="n">jekyll</span> <span class="n">bundler</span>
+<div class="codehilite"><pre><span></span><span class="err">gem install jekyll bundler</span>
 </pre></div>
 
 <p>然后这一步一开始报错</p>
@@ -1789,9 +1789,9 @@ Make sure that <span class="sb">`</span>gem install commonmarker -v <span class=
 </pre></div>
 
 <p>应该要加上 <code>sudo</code>，否则会报错</p>
-<div class="codehilite"><pre><span></span><span class="nv">Installing</span> <span class="nv">RubyGems</span> <span class="mi">3</span>.<span class="mi">0</span>.<span class="mi">6</span>
-<span class="nv">ERROR</span>:  <span class="k">While</span> <span class="nv">executing</span> <span class="nv">gem</span> ... <span class="ss">(</span><span class="nv">Errno</span>::<span class="nv">EACCES</span><span class="ss">)</span>
-    <span class="nv">Permission</span> <span class="nv">denied</span> @ <span class="nv">dir_s_mkdir</span> <span class="o">-</span> <span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">local</span><span class="o">/</span><span class="nv">lib</span><span class="o">/</span><span class="nv">site_ruby</span>
+<div class="codehilite"><pre><span></span><span class="err">Installing RubyGems 3.0.6</span>
+<span class="c">ERROR:  While executing gem ... (Errno::EACCES)</span>
+<span class="c">    Permission denied @ dir_s_mkdir - /usr/local/lib/site_ruby</span>
 </pre></div>
 
 <p>安装成功后，最后终于成功了！！</p>

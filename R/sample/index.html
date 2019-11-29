@@ -1100,17 +1100,17 @@
 </pre></div>
 
 <p>the book reports</p>
-<div class="codehilite"><pre><span></span><span class="o">##</span>          <span class="n">High</span><span class="p">.</span><span class="n">test</span>
-<span class="o">##</span> <span class="n">tree</span><span class="p">.</span><span class="n">pred</span> <span class="k">No</span> <span class="n">Yes</span>
-<span class="o">##</span>       <span class="k">No</span>  <span class="mi">86</span>  <span class="mi">27</span>
-<span class="o">##</span>       <span class="n">Yes</span> <span class="mi">30</span>  <span class="mi">57</span>
+<div class="codehilite"><pre><span></span><span class="err">##          High.test</span>
+<span class="err">## tree.pred No Yes</span>
+<span class="err">##       No  86  27</span>
+<span class="err">##       Yes 30  57</span>
 </pre></div>
 
 <p>while we get</p>
-<div class="codehilite"><pre><span></span><span class="o">##</span>          <span class="n">High</span><span class="p">.</span><span class="n">test</span>
-<span class="o">##</span> <span class="n">tree</span><span class="p">.</span><span class="n">pred</span>  <span class="k">No</span> <span class="n">Yes</span>
-<span class="o">##</span>       <span class="k">No</span>  <span class="mi">104</span>  <span class="mi">33</span>
-<span class="o">##</span>       <span class="n">Yes</span>  <span class="mi">13</span>  <span class="mi">50</span>
+<div class="codehilite"><pre><span></span><span class="err">##          High.test</span>
+<span class="err">## tree.pred  No Yes</span>
+<span class="err">##       No  104  33</span>
+<span class="err">##       Yes  13  50</span>
 </pre></div>
 
 <p>That&rsquo;s so strange!! There might be some changed things, packages or <code>r-base</code> itself.</p>
@@ -1145,8 +1145,8 @@ Tweak NAMESPACE imports.
 <p>Currently, we are using the latest R version, <code>v3.6.0</code>. Firstly, I had tried the old version <code>v3.4.4</code> on my server rstudio. It can successfully reproduce the results of the book.</p>
 <p>Now our goal is to determine the version from which we fail to obtain the same results. It requires us to install multiple R versions to test the above program.</p>
 <p>The <a href="https://www.docker.com/">docker</a> facilitates the multiple R versions easily. Here is <a href="https://hub.docker.com/_/r-base">an official images for r-base</a>, including most old versions of R. We can install a specified R version with the following commands by tagging the version number, </p>
-<div class="codehilite"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">r</span><span class="o">-</span><span class="n">base</span><span class="p">:</span><span class="mi">3</span><span class="p">.</span><span class="mi">6</span><span class="p">.</span><span class="mi">0</span>
-<span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="c1">--rm r-base:3.6.0</span>
+<div class="codehilite"><pre><span></span><span class="err">docker pull r-base:3.6.0</span>
+<span class="err">docker run -it --rm r-base:3.6.0</span>
 </pre></div>
 
 <p>As a result, <code>v3.5.3</code> (the largest version of <code>v3.5.x</code>) can reproduce the results, while it failed in the R version from <code>v3.6.0</code>. Then I found the <a href="https://blog.revolutionanalytics.com/2019/05/whats-new-in-r-360.html">changelog</a> for <code>v3.6.0</code>.</p>

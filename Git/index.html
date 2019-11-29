@@ -1625,26 +1625,26 @@
                 
                 <h1 id="git-tips">Git Tips<a class="headerlink" href="#git-tips" title="Permanent link">&para;</a></h1>
 <h2 id="_1">删除远程分支<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">d</span> <span class="n">origin</span><span class="o">/</span><span class="n">branch</span><span class="o">-</span><span class="n">name</span>
+<p><div class="codehilite"><pre><span></span><span class="err">git branch -r -d origin/branch-name</span>
 </pre></div>
 此时需要更改仓库的默认分支，不然直接运行下面的命令会报错
-<div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="p">:</span><span class="n">branch</span><span class="o">-</span><span class="n">name</span>
+<div class="codehilite"><pre><span></span><span class="err">git push origin :branch-name</span>
 </pre></div></p>
 <p><img alt="" src="error_branch.png" /></p>
 <p>图中第一次是更改默认分支前的出错信息，第二次是更改完默认分支的信息。</p>
 <h2 id="_2">删除本地分支<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">branch</span><span class="o">-</span><span class="n">name</span>
+<div class="codehilite"><pre><span></span><span class="err">git branch -d branch-name</span>
 </pre></div>
 
 <h2 id="git-clone">提高git clone速度<a class="headerlink" href="#git-clone" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="c1">--global http.postBuffer 524288000</span>
+<div class="codehilite"><pre><span></span><span class="err">git config --global http.postBuffer 524288000</span>
 </pre></div>
 
 <h2 id="git-clone_1">git clone所有远程分支<a class="headerlink" href="#git-clone_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="p">....</span>
-<span class="n">cd</span> <span class="p">..</span>
-<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">a</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">gh</span><span class="o">-</span><span class="n">pages</span> <span class="n">origin</span><span class="o">/</span><span class="n">gh</span><span class="o">-</span><span class="n">pages</span>
+<div class="codehilite"><pre><span></span><span class="err">git clone ....</span>
+<span class="err">cd ..</span>
+<span class="err">git branch -a</span>
+<span class="err">git checkout -b gh-pages origin/gh-pages</span>
 </pre></div>
 
 <h2 id="git">git删除大文件<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
@@ -1654,7 +1654,7 @@
 <ol>
 <li>
 <p>下载安装
-<div class="codehilite"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">git</span>
+<div class="codehilite"><pre><span></span><span class="err">apt-get install git</span>
 </pre></div></p>
 </li>
 <li>
@@ -1684,41 +1684,41 @@
 <h2 id="gitignore">gitignore 失效<a class="headerlink" href="#gitignore" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.pfeng.org/archives/840">.gitignore</a></p>
 <p>有时候在项目开发过程中，突然心血来潮想把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交：</p>
-<div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="c1">--cached .</span>
-<span class="n">git</span> <span class="k">add</span> <span class="p">.</span>
-<span class="n">git</span> <span class="k">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;update .gitignore&#39;</span>
+<div class="codehilite"><pre><span></span><span class="err">git rm -r --cached .</span>
+<span class="err">git add .</span>
+<span class="err">git commit -m &#39;update .gitignore&#39;</span>
 </pre></div>
 
 <h2 id="_3">更新远程代码到本地<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">方式一<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span>
-<span class="n">git</span> <span class="k">fetch</span> <span class="n">origin</span> <span class="n">master</span>
-<span class="n">git</span> <span class="n">log</span> <span class="o">-</span><span class="n">p</span> <span class="n">master</span> <span class="n">origin</span> <span class="n">master</span>
-<span class="n">git</span> <span class="n">merge</span> <span class="n">origin</span> <span class="n">master</span>
+<div class="codehilite"><pre><span></span><span class="err">git remote -v</span>
+<span class="err">git fetch origin master</span>
+<span class="err">git log -p master origin master</span>
+<span class="err">git merge origin master</span>
 </pre></div>
 
 <h3 id="_5">方式二<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">git</span> <span class="k">fetch</span> <span class="n">origin</span> <span class="n">master</span><span class="p">:</span><span class="n">temp</span>
-<span class="n">git</span> <span class="n">diff</span> <span class="n">temp</span>
-<span class="n">git</span> <span class="n">merge</span> <span class="n">temp</span>
-<span class="n">git</span> <span class="n">branch</span> <span class="n">temp</span>
+<div class="codehilite"><pre><span></span><span class="err">git fetch origin master:temp</span>
+<span class="err">git diff temp</span>
+<span class="err">git merge temp</span>
+<span class="err">git branch temp</span>
 </pre></div>
 
 <h2 id="license">关于LICENSE的选择<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">阮一峰的网络日志</a></p>
 <h2 id="git-clone_2">git clone 某个分支或所有分支<a class="headerlink" href="#git-clone_2" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.csdn.net/a513322/article/details/46998325">git clone</a></p>
-<div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">BRANCH_NAME</span> <span class="p">...</span>
+<div class="codehilite"><pre><span></span><span class="err">git clone -b BRANCH_NAME ...</span>
 </pre></div>
 
 <p>or
-<div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="p">...</span>
-<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">r</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="n">BRANCH_NAME</span>
+<div class="codehilite"><pre><span></span><span class="err">git clone ...</span>
+<span class="err">git branch -r</span>
+<span class="err">git checkout BRANCH_NAME</span>
 </pre></div></p>
 <h2 id="_6">更改远程仓库的名字<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>举个例子，如将一个名为epi的仓库改名为depi，再次在本地提交虽然也能成功，但是会提示你原始的仓库已经移动，请修改为新的仓库地址，于是我们可以利用下面的命令进行修改</p>
-<div class="codehilite"><pre><span></span><span class="n">git</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="k">set</span><span class="o">-</span><span class="n">url</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="n">git</span><span class="nv">@github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="n">szcf</span><span class="o">-</span><span class="n">weiya</span><span class="o">/</span><span class="n">depi</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><span class="err">git remote set-url origin git@github.com:szcf-weiya/depi.git</span>
 </pre></div>
 
 <h2 id="git-pull">git pull<a class="headerlink" href="#git-pull" title="Permanent link">&para;</a></h2>
@@ -1818,8 +1818,8 @@ git push origin HEAD --force
 <li><a href="https://stackoverflow.com/questions/6656619/git-and-nasty-error-cannot-lock-existing-info-refs-fatal">Git and nasty “error: cannot lock existing info/refs fatal</a></li>
 </ol>
 <h2 id="remove-untracked-files">remove untracked files<a class="headerlink" href="#remove-untracked-files" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">clean</span> <span class="o">-</span><span class="n">n</span>
-<span class="n">git</span> <span class="n">clean</span> <span class="o">-</span><span class="n">f</span>
+<div class="codehilite"><pre><span></span><span class="err">git clean -n</span>
+<span class="err">git clean -f</span>
 </pre></div>
 
 <p>refer to <a href="https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree">How to remove local (untracked) files from the current Git working tree</a></p>
@@ -1827,7 +1827,7 @@ git push origin HEAD --force
 <p>详见 <a href="https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6">Git 分支 - 分支的新建与合并</a></p>
 <h2 id="crlf-lf"><code>CRLF</code> &amp; <code>LF</code><a class="headerlink" href="#crlf-lf" title="Permanent link">&para;</a></h2>
 <p>双系统切换时，原先在 Win 处理，后来换到 Linux 处理，报出</p>
-<div class="codehilite"><pre><span></span><span class="n">CRLF</span> <span class="n">will</span> <span class="n">be</span> <span class="n">replaced</span> <span class="k">by</span> <span class="n">LF</span><span class="p">.</span>
+<div class="codehilite"><pre><span></span><span class="err">CRLF will be replaced by LF.</span>
 </pre></div>
 
 <p>设置 <code>autocrlf</code> 配置项：</p>
@@ -1840,7 +1840,7 @@ git push origin HEAD --force
 <h2 id="git-push-require-username-and-password">Git push require username and password<a class="headerlink" href="#git-push-require-username-and-password" title="Permanent link">&para;</a></h2>
 <p>possible reason: use the default HTTPS instead of SSH</p>
 <p>correct this by</p>
-<div class="codehilite"><pre><span></span><span class="n">git</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="k">set</span><span class="o">-</span><span class="n">url</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="n">git</span><span class="nv">@github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="n">username</span><span class="o">/</span><span class="n">repo</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><span class="err">git remote set-url origin git@github.com:username/repo.git</span>
 </pre></div>
 
 <p>参考 <a href="https://stackoverflow.com/questions/6565357/git-push-requires-username-and-password">Git push requires username and password</a></p>

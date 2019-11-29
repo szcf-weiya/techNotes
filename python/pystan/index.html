@@ -1169,11 +1169,11 @@
 <span class="n">fit</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">sampling</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">schools_dat</span><span class="p">,</span> <span class="nb">iter</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">chains</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1"># return a dict of arrays</span>
-<span class="n">la</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">permuted</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">la</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">permuted</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">mu</span> <span class="o">=</span> <span class="n">la</span><span class="p">[</span><span class="s1">&#39;mu&#39;</span><span class="p">]</span>
 
 <span class="c1"># return an array of three dimensions: iterations, chains, parameters</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">permuted</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">permuted</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># plot</span>
 <span class="n">fit</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>

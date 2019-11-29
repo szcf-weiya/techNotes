@@ -1379,23 +1379,23 @@ ping <span class="m">10</span>.71.45.100
 <h2 id="shadowssocks">shadowssocks安装<a class="headerlink" href="#shadowssocks" title="Permanent link">&para;</a></h2>
 <h3 id="_3">二维码反解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>对
-<div class="codehilite"><pre><span></span><span class="n">ss</span><span class="p">:</span><span class="o">//</span><span class="n">bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ</span><span class="o">=</span>
+<div class="codehilite"><pre><span></span><span class="c">ss://bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=</span>
 </pre></div></p>
 <p>中的
-<div class="codehilite"><pre><span></span><span class="n">bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ</span><span class="o">=</span>
+<div class="codehilite"><pre><span></span><span class="err">bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=</span>
 </pre></div></p>
 <p>base64解密得到</p>
 <div class="codehilite"><pre><span></span><span class="n">method</span><span class="o">:</span><span class="n">password</span><span class="err">@</span><span class="n">hostname</span><span class="o">:</span><span class="n">port</span>
 </pre></div>
 
 <p>然后
-<div class="codehilite"><pre><span></span><span class="n">sslocal</span> <span class="o">-</span><span class="n">p</span> <span class="n">port</span> <span class="o">-</span><span class="n">k</span> <span class="n">password</span> <span class="o">-</span><span class="n">m</span> <span class="k">method</span>
+<div class="codehilite"><pre><span></span><span class="err">sslocal -p port -k password -m method</span>
 </pre></div></p>
 <p><a href="http://blog.csdn.net/qq_25978793/article/details/49870501">http://blog.csdn.net/qq_25978793/article/details/49870501</a></p>
 <h3 id="_4">系统代理与浏览器代理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>无需单独设置系统代理，浏览器是可以通过插件设置代理的。</p>
 <p>另外使用如curl需要代理时，可以采用
-<div class="codehilite"><pre><span></span><span class="n">curl</span> <span class="n">ip</span><span class="p">.</span><span class="n">cn</span> <span class="c1">--proxy socks5://127.0.0.1:1080</span>
+<div class="codehilite"><pre><span></span><span class="err">curl ip.cn --proxy socks5://127.0.0.1:1080</span>
 </pre></div></p>
 <h2 id="_5">代理方案<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1406,13 +1406,13 @@ ping <span class="m">10</span>.71.45.100
 <h2 id="cdn">CDN折腾记录<a class="headerlink" href="#cdn" title="Permanent link">&para;</a></h2>
 <p>突然想到要怎么设置子域名，一开始还以为需要再次购买，原来并非如此，只需要添加解析即可。具体设置子域名和添加解析的方法可以参考github提供的帮助文档。</p>
 <p>花了几个小时折腾完这个，突然又想实现https 访问，直接百度“github pages https”便有几篇文档，都谈到了cloudflare，注册之后可以享受免费版本的CDN服务。一开始我也不清楚CDN到底是什么，就直接按照网上的教程走</p>
-<div class="codehilite"><pre><span></span><span class="mi">1</span><span class="p">.</span> <span class="err">注册</span><span class="n">cloudflare</span>
-<span class="mi">2</span><span class="p">.</span> <span class="err">添加自己的网站</span>
-<span class="mi">3</span><span class="p">.</span> <span class="err">将</span><span class="n">DNS服务器改为cloudflare上要求的</span><span class="err">，比如在阿里云的域名管理界面，将万网服务器换掉。</span>
+<div class="codehilite"><pre><span></span><span class="err">1. 注册cloudflare</span>
+<span class="err">2. 添加自己的网站</span>
+<span class="err">3. 将DNS服务器改为cloudflare上要求的，比如在阿里云的域名管理界面，将万网服务器换掉。</span>
 </pre></div>
 
 <p>设置完这些之后，我也清楚可能不会理解生效，但也想尽快看看效果怎么样，于是搜索“更新dns缓存”的资料，尽管按照教程走了一遍，但是dns还是没有更新过来，通过
-<div class="codehilite"><pre><span></span><span class="n">dig</span> <span class="n">hohoweiya</span><span class="p">.</span><span class="n">xyz</span> <span class="o">+</span><span class="n">noall</span> <span class="o">+</span><span class="n">answer</span>
+<div class="codehilite"><pre><span></span><span class="err">dig hohoweiya.xyz +noall +answer</span>
 </pre></div>
 返回的结果仍然为未添加cloudflare时的信息。同时访问hohoweiya.xyz并没有传说中的https出现，又郁闷了很久。</p>
 <p>在某一刻，突然发现在firefox浏览器中访问时自动跳转到了https，然而在chrome中依然为http，然后我强制在地址栏中加入https，打开开发者模式，说有混合的错误，调用了http的资源，于是我又便去改了网站的资源地址，将http的资源改为https的。直到某一刻才清醒过来，原来我的firefox开了自动代理，之所以能够用https访问是因为我是通过代理访问的，去掉代理后，在Firefox中也是http，即使强行添加https也会报warning。</p>
@@ -1426,18 +1426,18 @@ ping <span class="m">10</span>.71.45.100
 <h2 id="ads">阿里公共ADS差评<a class="headerlink" href="#ads" title="Permanent link">&para;</a></h2>
 <p>之前轻信了阿里公共ADS，在Ubuntu上装了，链接在<a href="http://www.alidns.com/setup/#linux">此</a>，然而却无法取消设置，restore选项毫无作用。也一直不管它，在枫叶国，竟然连google都ping不通，这就很奇怪了，于是便怀疑是它搞的鬼。</p>
 <p>为了彻底根除这个毒瘤，
-<div class="codehilite"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">resolvconf</span><span class="o">/</span><span class="n">resolv</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span>
-<span class="n">sudo</span> <span class="n">vim</span> <span class="n">head</span>
-<span class="o">##</span> <span class="err">删除文件中的所有信息，其实只有阿里公共</span><span class="n">ads的配置信息</span>
-<span class="n">sudo</span> <span class="n">vim</span> <span class="n">head</span><span class="p">.</span><span class="n">save</span>
-<span class="o">##</span> <span class="err">删除文件中的所有信息，其实只有阿里公共</span><span class="n">ads的配置信息</span>
+<div class="codehilite"><pre><span></span><span class="err">cd /etc/resolvconf/resolv.conf.d/</span>
+<span class="err">sudo vim head</span>
+<span class="err">## 删除文件中的所有信息，其实只有阿里公共ads的配置信息</span>
+<span class="err">sudo vim head.save</span>
+<span class="err">## 删除文件中的所有信息，其实只有阿里公共ads的配置信息</span>
 </pre></div></p>
 <p>终于好了！</p>
 <h2 id="rvpn">rvpn<a class="headerlink" href="#rvpn" title="Permanent link">&para;</a></h2>
 <p>Ubuntu下配置rvpn，需要浏览器启用JAVA插件，但新版本的chrome和firefox都不支持（firefox 52以后都不行了），解决办法是安装一个旧版本的firefox，然后按照登录rvpn时的说明进行配置就ok了。</p>
 <h2 id="proxychains">proxychains实现命令行代理<a class="headerlink" href="#proxychains" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://bokunokeiken.wordpress.com/2015/07/22/how-to-use-socks-5-proxy-in-ubuntu-command-line/">How to use SOCKS 5 proxy in Ubuntu command line</a></p>
-<div class="codehilite"><pre><span></span><span class="n">proxychains</span> <span class="n">curl</span> <span class="n">ip</span><span class="p">.</span><span class="n">cn</span>
+<div class="codehilite"><pre><span></span><span class="err">proxychains curl ip.cn</span>
 </pre></div>
 
 <h2 id="hosts">hosts文件原理<a class="headerlink" href="#hosts" title="Permanent link">&para;</a></h2>

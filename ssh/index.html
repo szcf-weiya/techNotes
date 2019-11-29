@@ -1188,13 +1188,13 @@ Contains the public key for authentication.  These files are not sensitive and c
 <h2 id="gui">远程运行服务器端的gui程序<a class="headerlink" href="#gui" title="Permanent link">&para;</a></h2>
 <p>https://askubuntu.com/questions/47642/how-to-start-a-gui-software-on-a-remote-linux-pc-via-ssh</p>
 <p>在服务器端，运行
-<div class="codehilite"><pre><span></span><span class="n">w</span>
+<div class="codehilite"><pre><span></span><span class="err">w</span>
 </pre></div>
 可以返回当前使用的display号码，如<code>:0</code>，于是指定display的号码
-<div class="codehilite"><pre><span></span><span class="n">export</span> <span class="n">DISPLAY</span><span class="o">=</span><span class="p">:</span><span class="mi">0</span>
+<div class="codehilite"><pre><span></span><span class="err">export DISPLAY=:0</span>
 </pre></div></p>
 <h2 id="gui_1">远程运行服务器端的gui程序，并发送到客户端<a class="headerlink" href="#gui_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">X</span>
+<div class="codehilite"><pre><span></span><span class="err">ssh -X</span>
 </pre></div>
 
 <h2 id="ssh_1">ssh 端口转发<a class="headerlink" href="#ssh_1" title="Permanent link">&para;</a></h2>
