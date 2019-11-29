@@ -783,3 +783,22 @@ pdftk input.pdf update_info metadata output output.pdf
 测试了一下，相当于在网盘内新建了 `/apps/bypy` 文件夹，然后可以同步该文件夹内的内容，似乎不能直接对文件夹外的文件进行操作。尽管这样，也是很好的了，以后文件可以存放在这个文件夹下。
 
 当然，还是期待官网本身支持。
+
+## chrome 黑屏
+
+参考 https://blog.csdn.net/jjddrushi/article/details/79155421
+
+进入休眠状态后，睡了一晚上，第二天早上打开 chrome 便黑屏了，然后采用
+
+```bash
+chrome -disable-gpu
+```
+
+再设定
+
+```
+Use hardware acceleration when available
+```
+false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整个 chrome。
+
+
