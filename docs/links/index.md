@@ -18,6 +18,7 @@
 - [Zhou Fan @ Yale](http://www.stat.yale.edu/~zf59)
 - [Ting Ye @Wisc](https://sites.google.com/view/tingye/home)
 - [Tengyuan Liang](https://tyliang.github.io/Tengyuan.Liang/)
+- [范函子](https://skylinchern.wordpress.com/)
 
 ## Interesting words
 
