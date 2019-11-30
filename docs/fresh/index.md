@@ -193,3 +193,7 @@ References:
 [李军@zhihu - 随机矩阵理论综述](https://zhuanlan.zhihu.com/p/37591888)
 
 > 本文，我们来谈谈随机矩阵理论的历史、已有的理论成果以及一些新的研究探索。为了方便更多不同学科背景，不同知识层级的同学学习RMT，本文内容尽量循序渐进。由于内容众多，这里我只列出，具体内容、参考文献以及Python实现(本人一个个细致推敲实现，但很多分布仍未进行很好的normalization)，请见我的[Github](https://github.com/brucejunlee/RMT_Theory_Applications)。由于时间有限，不免有很多内容没有讲到，而且RMT理论及应用涉及众多学科领域，更难完全罗列介绍，本文只选择一些重要成果进行介绍，只对部分内容进行了较细致分析，更多的理论推导请查阅相关文献。
+
+## 二元二次函数最值
+
+参考 ![二元二次函数](https://zh.wikipedia.org/wiki/%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0)
