@@ -802,3 +802,20 @@ Use hardware acceleration when available
 false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整个 chrome。
 
 
+## 图片处理 
+
+### 拼接
+
+水平方向
+
+```bash
+convert +append *.png out.png 
+```
+
+垂直方向
+
+```bash
+convert -append *.png out.png
+```
+
+参考 [How do I join two images in Ubuntu?](https://askubuntu.com/a/889772)
