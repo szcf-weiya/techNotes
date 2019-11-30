@@ -952,6 +952,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    图片处理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    拼接
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2332,6 +2352,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    图片处理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    拼接
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2870,6 +2910,17 @@ pdftk input.pdf update_info metadata output output.pdf
 <p><div class="codehilite"><pre><span></span><span class="err">Use hardware acceleration when available</span>
 </pre></div>
 false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整个 chrome。</p>
+<h2 id="_14">图片处理<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="_15">拼接<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>水平方向</p>
+<div class="codehilite"><pre><span></span>convert +append *.png out.png 
+</pre></div>
+
+<p>垂直方向</p>
+<div class="codehilite"><pre><span></span>convert -append *.png out.png
+</pre></div>
+
+<p>参考 <a href="https://askubuntu.com/a/889772">How do I join two images in Ubuntu?</a></p>
                 
                   
                 
