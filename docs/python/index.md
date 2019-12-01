@@ -6,6 +6,8 @@
 
 使用%matplotlib命令可以将matplotlib的图表直接嵌入到Notebook之中，或者使用指定的界面库显示图表，它有一个参数指定matplotlib图表的显示方式。inline表示将图表嵌入到Notebook中
 
+另外 `%` 的一般用法详见 [Built-in magic commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html#)
+
 ## seaborn的使用
 
 Matplotlib自动化程度非常高，但是，掌握如何设置系统以便获得一个吸引人的图是相当困难的事。为了控制matplotlib图表的外观，Seaborn模块自带许多定制的主题和高级的接口。

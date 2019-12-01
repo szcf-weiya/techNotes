@@ -36,6 +36,11 @@
 7. [Univariate Distribution Relationships](http://www.math.wm.edu/~leemis/chart/UDR/UDR.html)
 8. [Greek Alphabet](https://www.businessballs.com/glossaries-and-terminology/greek-alphabet/)
 9. [GPUSS - GPU Stochastic Simulation for statistical data analysis](http://www.oxford-man.ox.ac.uk/gpuss/)
+10. [统计术语英汉对照表](https://wiki.mbalib.com/wiki/%E7%BB%9F%E8%AE%A1%E6%9C%AF%E8%AF%AD%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7%E8%A1%A8)
+
+## Informative Posts
+
+1. [长期更新-好论文解读收藏](https://zhuo931077127.github.io/2019/04/28/paper-unscramble/#more)
 
 ## Online Courses
 
