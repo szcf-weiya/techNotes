@@ -1,3 +1,16 @@
+## 2019.12.01
+
+1. malignant
+2. Glioblastomas: 胶质母细胞瘤
+3. chemotherapy： 化学疗法
+4. asthma: 哮喘
+5. exacerbate
+6. allergen：过敏原
+7. roach: 蟑螂
+8. penicillin
+9. Dermatology 皮肤病学
+10. ointments 软膏
+
 ## 2019.11.04
 
 1. intact
