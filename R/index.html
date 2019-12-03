@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
     
     
       
@@ -710,6 +710,13 @@
         <li class="md-nav__item">
   <a href="#error-in-install-grbase" class="md-nav__link">
     error in install gRbase
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protection-stack-overflow" class="md-nav__link">
+    protection stack overflow
   </a>
   
 </li>
@@ -1748,6 +1755,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#protection-stack-overflow" class="md-nav__link">
+    protection stack overflow
+  </a>
+  
+</li>
+      
       
       
       
@@ -2095,6 +2109,17 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 
 <span class="n">BiocManager</span><span class="p">::</span><span class="n">install</span><span class="p">(</span><span class="ss">&quot;graph&quot;</span><span class="p">)</span>
 </pre></div>
+
+<h2 id="protection-stack-overflow"><code>protection stack overflow</code><a class="headerlink" href="#protection-stack-overflow" title="Permanent link">&para;</a></h2>
+<p>use </p>
+<div class="codehilite"><pre><span></span>R --max-ppsize <span class="m">500000</span>
+</pre></div>
+
+<p>or for rstudio</p>
+<div class="codehilite"><pre><span></span>rstudio --max-ppsize <span class="m">500000</span>
+</pre></div>
+
+<p>refer to <a href="https://stackoverflow.com/questions/32826906/how-to-solve-protection-stack-overflow-issue-in-r-studio">How to solve &lsquo;protection stack overflow&rsquo; issue in R Studio</a></p>
                 
                   
                 
@@ -2183,7 +2208,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
       
     </div>
     
-      <script src="../assets/javascripts/application.a8b5e56f.js"></script>
+      <script src="../assets/javascripts/application.8e03edeb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
