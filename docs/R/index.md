@@ -484,3 +484,19 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 
 BiocManager::install("graph")
 ```
+
+## `protection stack overflow`
+
+use 
+
+```bash
+R --max-ppsize 500000
+```
+
+or for rstudio
+
+```bash
+rstudio --max-ppsize 500000
+```
+
+refer to [How to solve 'protection stack overflow' issue in R Studio](https://stackoverflow.com/questions/32826906/how-to-solve-protection-stack-overflow-issue-in-r-studio)

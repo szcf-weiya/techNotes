@@ -819,3 +819,9 @@ convert -append *.png out.png
 ```
 
 参考 [How do I join two images in Ubuntu?](https://askubuntu.com/a/889772)
+
+## 文本文件查看
+
+`cut`: select by columns
+
+参考 [10 command-line tools for data analysis in Linux](https://opensource.com/article/17/2/command-line-tools-data-analysis-linux)
