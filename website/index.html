@@ -1724,6 +1724,24 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 </pre></div>
 
 <p>详见 <a href="http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/">LaTeX Theorem-like Environments for the Web</a></p>
+<p>这种方法不能使用 markdown 的列表环境，有时候会不太方便。注意到 kramdown 本身具有一些特性可以解决这个问题，比如设置 Block Attributes，详见 <a href="https://kramdown.gettalong.org/quickref.html">Quick Reference of kramdown</a></p>
+<p>则我可以用</p>
+<blockquote>
+<p>{: .theorem}</p>
+</blockquote>
+<p>实现定理环境，而且这样还有额外的好处，可以突出定理。但是 before 的字 &ldquo;Theorem&rdquo; 会单独占据一行，误打误撞看到 <a href="https://stackoverflow.com/questions/32909991/adding-quotes-to-blockquote">Adding quotes to blockquote</a>，试了一下</p>
+<div class="codehilite"><pre><span></span><span class="nt">blockquote</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>可以解决这个问题，但担心会破坏其他的 blockquote 环境，于是指定 theorem 可以这样处理，即</p>
+<div class="codehilite"><pre><span></span><span class="nt">blockquote</span><span class="p">.</span><span class="nc">theorem</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>这个用法参考 <a href="https://www.runoob.com/css/css-id-class.html">CSS Id 和 Class</a></p>
 <h2 id="list-start-from-0">list start from 0<a class="headerlink" href="#list-start-from-0" title="Permanent link">&para;</a></h2>
 <p>In <code>kramdown</code>, use an IAL declaration before the list, say</p>
 <div class="codehilite"><pre><span></span>{:start=&quot;3&quot;}
