@@ -1087,6 +1087,33 @@
     参数和返回值的三种传递方式
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    值传递
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    指针传递
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    引用传递
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1181,7 +1208,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     分词
   </a>
   
@@ -1209,7 +1236,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     命令行参数的传入
   </a>
   
@@ -1436,6 +1463,33 @@
     参数和返回值的三种传递方式
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    值传递
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    指针传递
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    引用传递
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1530,7 +1584,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     分词
   </a>
   
@@ -1558,7 +1612,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     命令行参数的传入
   </a>
   
@@ -1731,7 +1785,48 @@
 <h2 id="fpic">fPIC<a class="headerlink" href="#fpic" title="Permanent link">&para;</a></h2>
 <p>参考http://blog.sina.com.cn/s/blog_54f82cc201011op1.html</p>
 <h2 id="_7">参数和返回值的三种传递方式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p><a href="http://blog.csdn.net/thisispan/article/details/7456180">C++函数参数和返回值三种传递方式：值传递、指针传递和引用传递（着重理解）</a></p>
+<p>参考<a href="http://blog.csdn.net/thisispan/article/details/7456180">C++函数参数和返回值三种传递方式：值传递、指针传递和引用传递（着重理解）</a></p>
+<h3 id="_8">值传递<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>改变 <code>x</code> 的值不会影响 <code>n</code></p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">Func1</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">Func1</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+</pre></div>
+
+<h3 id="_9">指针传递<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">Func2</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">Func2</span><span class="p">(</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</pre></div>
+
+<h3 id="_10">引用传递<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><code>x</code> 和 <code>n</code> 是一个东西</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">Func3</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">Func3</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+</pre></div>
+
+<p>引用传递的性质像指针传递，而书写方式像值传递。</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">m</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">n</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+</pre></div>
+
+<p>其中 <code>n</code> 是 <code>m</code> 的一个引用 (reference)，而 <code>m</code> 是被引用物 (referent).</p>
+<p>引用的规则如下：</p>
+<ul>
+<li>引用被创建时同时被初始化，而指针则可以在任何时候初始化；</li>
+<li>不能有 NULL 引用，必须与合法的存储单元关联，而指针可以是 NULL;</li>
+<li>一旦引用被初始化，就不能改变引用的关系，而指针则可以随时改变所指的对象。</li>
+</ul>
 <h2 id="linux-gcc">linux gcc常用命令<a class="headerlink" href="#linux-gcc" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html">Linux GCC常用命令</a></p>
 <h2 id="c-publicprotectedprivate">C++ public/protected/private<a class="headerlink" href="#c-publicprotectedprivate" title="Permanent link">&para;</a></h2>
@@ -1740,7 +1835,7 @@
 <p><a href="http://www.cnblogs.com/freeliver54/archive/2012/06/18/2554173.html">C++按行读取文本文件</a></p>
 <h2 id="struct-">struct&ndash;构造函数对结构体初始化的影响<a class="headerlink" href="#struct-" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.csdn.net/wwangluogongchengshi/article/details/6901540">struct&ndash;构造函数对结构体初始化的影响</a></p>
-<h2 id="_8"><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_11"><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.felix021.com/blog/read.php?1587"></a></p>
 <h2 id="openmp">OpenMP 框架<a class="headerlink" href="#openmp" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.ibm.com/developerworks/cn/aix/library/au-aix-openmp-framework/">通过 GCC 学习 OpenMP 框架</a></p>
@@ -1765,7 +1860,7 @@
 <p><a href="http://blog.csdn.net/jtjy568805874/article/details/60339007">1017. The Best Peak Shape (35)</a></p>
 <h2 id="error-stod-was-not-declared-in-this-scope">error: &lsquo;stod&rsquo; was not declared in this scope<a class="headerlink" href="#error-stod-was-not-declared-in-this-scope" title="Permanent link">&para;</a></h2>
 <p><a href="https://stackoverflow.com/questions/20437984/error-stod-was-not-declared-in-this-scope">error: &lsquo;stod&rsquo; was not declared in this scope</a></p>
-<h2 id="_9">分词<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_12">分词<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://tartarus.org/martin/PorterStemmer/">The Porter Stemming Algorithm</a></p>
 <h2 id="cstring">C++中String类的字符串分割实现<a class="headerlink" href="#cstring" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://www.cnblogs.com/carsonzhu/p/5859552.html">C++中String类的字符串分割实现</a></p>
@@ -1778,7 +1873,7 @@
 <li>exit(1): 非正常运行导致退出程序</li>
 <li>return: 返回函数</li>
 </ul>
-<h2 id="_10">命令行参数的传入<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_13">命令行参数的传入<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://www.ibm.com/developerworks/cn/aix/library/au-unix-getopt.html">使用 getopt() 进行命令行处理</a></p>
 <h2 id="variably-modeified-type-in-c-language">variably modeified type in C language<a class="headerlink" href="#variably-modeified-type-in-c-language" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/23529069/variably-modified-type-in-c-language">Variably modified type in C language - Stack Overflow</a></p>
