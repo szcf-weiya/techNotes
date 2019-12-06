@@ -933,6 +933,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    进程和线程
+  </a>
+  
+</li>
+      
       
       
       
@@ -1970,6 +1977,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    进程和线程
+  </a>
+  
+</li>
+      
       
       
       
@@ -2329,6 +2343,34 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 </pre></div>
 
 <p>refer to <a href="https://stackoverflow.com/questions/54429210/how-do-i-prevent-conda-from-activating-the-base-environment-by-default">How do I prevent Conda from activating the base environment by default?</a></p>
+<h2 id="_3">进程和线程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>参考 <a href="https://foofish.net/thread-and-process.html">一道面试题：说说进程和线程的区别</a></p>
+<div class="codehilite"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># https://foofish.net/thread-and-process.html</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># 进程是资源（CPU、内存等）分配的基本单位，它是程序执行时的一个实例。</span>
+<span class="c1"># 程序运行时系统就会创建一个进程，并为它分配资源，然后把该进程放入进程就绪队列，</span>
+<span class="c1"># 进程调度器选中它的时候就会为它分配CPU时间，程序开始真正运行。</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;current process: </span><span class="si">%s</span><span class="s2"> start...&quot;</span> <span class="o">%</span> <span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
+<span class="n">pid</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">fork</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;child process: </span><span class="si">%s</span><span class="s1">, parent process: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">(),</span> <span class="n">os</span><span class="o">.</span><span class="n">getppid</span><span class="p">()))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;process </span><span class="si">%s</span><span class="s1"> create child process: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">(),</span> <span class="n">pid</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># fork函数会返回两次结果，因为操作系统会把当前进程的数据复制一遍，</span>
+<span class="c1"># 然后程序就分两个进程继续运行后面的代码，fork分别在父进程和子进程中返回，</span>
+<span class="c1"># 在子进程返回的值pid永远是0，在父进程返回的是子进程的进程id。</span>
+
+
+<span class="c1"># 线程是程序执行时的最小单位，它是进程的一个执行流，</span>
+<span class="c1"># 是CPU调度和分派的基本单位，一个进程可以由很多个线程组成，</span>
+<span class="c1"># 线程间共享进程的所有资源，每个线程有自己的堆栈和局部变量。</span>
+</pre></div>
                 
                   
                 
