@@ -1,7 +1,8 @@
 # Cpp notes
 
 ## C++中cout输出字符型指针地址值的方法
-[ref](http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html)
+
+参考 [C++中cout输出字符型指针地址值的方法](http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html)
 
 C 语言中通过 `printf` 便可以很方便地输出字符串指针地址值，如
 
