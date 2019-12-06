@@ -3,6 +3,43 @@
 ## C++中cout输出字符型指针地址值的方法
 [ref](http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html)
 
+C 语言中通过 `printf` 便可以很方便地输出字符串指针地址值，如
+
+```c
+#include <stdio.h>
+int main (){
+    const char *pstr = "hello world";
+
+    printf("字符串: %s\n", pstr);
+    printf("字符串起始地址值: %p\n", pstr);
+    
+    return 0;
+}
+```
+
+但在 Cpp 中没那么简单，主要原因是
+
+> C++标准库中I/O类对<<操作符重载，因此在遇到字符型指针时会将其当作字符串名来处理，输出指针所指的字符串
+
+类似 C 中强制类型转换，用 `static_cast` 将字符串指针转换成无类型指针。
+
+```cpp
+#include <iostream>
+using std::cout;
+using std::endl;
+
+int main()
+{
+    const char *pstr = "hello world";
+
+    cout << pstr << endl;
+
+    cout << static_cast<const void*>(pstr) << endl;
+
+    return 0;
+}
+```
+
 ## const 总结
 [ref](http://www.2cto.com/kf/201210/160536.html)
 
