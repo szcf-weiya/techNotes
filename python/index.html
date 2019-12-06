@@ -2080,6 +2080,11 @@ spyder3 <span class="p">&amp;</span>
 </pre></div>
 
 <h2 id="xrange-and-range">xrange and range<a class="headerlink" href="#xrange-and-range" title="Permanent link">&para;</a></h2>
+<p>基本都在循环时使用，输出结果也是一样的，但略有差异</p>
+<ul>
+<li>range 直接生成一个 list 对象</li>
+<li>xrange 返回一个生成器。性能会比 range 好，特别是很大的时候。</li>
+</ul>
 <p>参考<a href="http://blog.csdn.net/imzoer/article/details/8742283">Python中range和xrange的区别</a></p>
 <h2 id="sqlite3">安装sqlite3<a class="headerlink" href="#sqlite3" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://www.python88.com/topic/420/">Python安装sqlite3</a></p>
