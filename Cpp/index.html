@@ -1652,6 +1652,39 @@
                 <h1 id="cpp-notes">Cpp notes<a class="headerlink" href="#cpp-notes" title="Permanent link">&para;</a></h1>
 <h2 id="ccout">C++中cout输出字符型指针地址值的方法<a class="headerlink" href="#ccout" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html">ref</a></p>
+<p>C 语言中通过 <code>printf</code> 便可以很方便地输出字符串指针地址值，如</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">(){</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pstr</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;字符串: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">pstr</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;字符串起始地址值: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">pstr</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>但在 Cpp 中没那么简单，主要原因是</p>
+<blockquote>
+<p>C++标准库中I/O类对&lt;&lt;操作符重载，因此在遇到字符型指针时会将其当作字符串名来处理，输出指针所指的字符串</p>
+</blockquote>
+<p>类似 C 中强制类型转换，用 <code>static_cast</code> 将字符串指针转换成无类型指针。</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pstr</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">pstr</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">void</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pstr</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 <h2 id="const">const 总结<a class="headerlink" href="#const" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.2cto.com/kf/201210/160536.html">ref</a></p>
 <h2 id="new">new<a class="headerlink" href="#new" title="Permanent link">&para;</a></h2>
