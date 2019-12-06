@@ -117,6 +117,11 @@ spyder3 &
 
 ## xrange and range
 
+基本都在循环时使用，输出结果也是一样的，但略有差异
+
+- range 直接生成一个 list 对象
+- xrange 返回一个生成器。性能会比 range 好，特别是很大的时候。
+
 参考[Python中range和xrange的区别](http://blog.csdn.net/imzoer/article/details/8742283)
 
 ## 安装sqlite3
