@@ -513,3 +513,34 @@ conda config --set auto_activate_base false
 
 refer to [How do I prevent Conda from activating the base environment by default?](https://stackoverflow.com/questions/54429210/how-do-i-prevent-conda-from-activating-the-base-environment-by-default)
 
+## 进程和线程
+
+参考 [一道面试题：说说进程和线程的区别](https://foofish.net/thread-and-process.html)
+
+```python
+# -*- coding: utf-8 -*-
+
+# https://foofish.net/thread-and-process.html
+
+import os
+
+# 进程是资源（CPU、内存等）分配的基本单位，它是程序执行时的一个实例。
+# 程序运行时系统就会创建一个进程，并为它分配资源，然后把该进程放入进程就绪队列，
+# 进程调度器选中它的时候就会为它分配CPU时间，程序开始真正运行。
+
+print("current process: %s start..." % os.getpid())
+pid = os.fork()
+if pid == 0:
+    print('child process: %s, parent process: %s' % (os.getpid(), os.getppid()))
+else:
+    print('process %s create child process: %s' % (os.getpid(), pid) )
+    
+# fork函数会返回两次结果，因为操作系统会把当前进程的数据复制一遍，
+# 然后程序就分两个进程继续运行后面的代码，fork分别在父进程和子进程中返回，
+# 在子进程返回的值pid永远是0，在父进程返回的是子进程的进程id。
+    
+
+# 线程是程序执行时的最小单位，它是进程的一个执行流，
+# 是CPU调度和分派的基本单位，一个进程可以由很多个线程组成，
+# 线程间共享进程的所有资源，每个线程有自己的堆栈和局部变量。
+```
