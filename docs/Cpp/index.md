@@ -181,7 +181,61 @@ while(safeGetline(input, line))
 
 ## 参数和返回值的三种传递方式
 
-[C++函数参数和返回值三种传递方式：值传递、指针传递和引用传递（着重理解）](http://blog.csdn.net/thisispan/article/details/7456180)
+参考[C++函数参数和返回值三种传递方式：值传递、指针传递和引用传递（着重理解）](http://blog.csdn.net/thisispan/article/details/7456180)
+
+### 值传递
+
+改变 `x` 的值不会影响 `n`
+
+```cpp
+void Func1(int x)
+{
+    x = x + 10;
+}
+int n = 0;
+Func1(n);
+```
+
+### 指针传递
+
+```cpp
+void Func2(int *x)
+{
+    (*x) = (*x) + 10;
+}
+int n = 0;
+Func2(&n);
+```
+
+
+### 引用传递
+
+`x` 和 `n` 是一个东西
+
+
+```cpp
+void Func3(int &x)
+{
+    x = x + 10;
+}
+int x = 0;
+Func3(n);
+```
+
+引用传递的性质像指针传递，而书写方式像值传递。
+
+```cpp
+int m;
+int &n = m;
+```
+
+其中 `n` 是 `m` 的一个引用 (reference)，而 `m` 是被引用物 (referent).
+
+引用的规则如下：
+
+- 引用被创建时同时被初始化，而指针则可以在任何时候初始化；
+- 不能有 NULL 引用，必须与合法的存储单元关联，而指针可以是 NULL;
+- 一旦引用被初始化，就不能改变引用的关系，而指针则可以随时改变所指的对象。
 
 ## linux gcc常用命令
 
