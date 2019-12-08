@@ -1666,7 +1666,7 @@
 
 <p>但在 Cpp 中没那么简单，主要原因是</p>
 <blockquote>
-<p>C++标准库中I/O类对&lt;&lt;操作符重载，因此在遇到字符型指针时会将其当作字符串名来处理，输出指针所指的字符串</p>
+<p>C++标准库中I/O类对 &lt;&lt; 操作符重载，因此在遇到字符型指针时会将其当作字符串名来处理，输出指针所指的字符串</p>
 </blockquote>
 <p>类似 C 中强制类型转换，用 <code>static_cast</code> 将字符串指针转换成无类型指针。</p>
 <div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
