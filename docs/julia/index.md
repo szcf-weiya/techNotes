@@ -412,3 +412,26 @@ function f(; kw...)
 end
 ```
 to solve my problem, where `b` is the argument I want to reset.
+
+## some interesting behavior
+
+```julia
+d = Dict{Int, Int}()
+d[1] = 1
+```
+
+if we access
+
+```julia
+d.vals
+# d.keys
+```
+
+it will return a `16-element Array{Int64,1}`, but if we use
+
+```julia
+vals(d)
+keys(d)
+```
+
+it correctly returns the exactly one elements. 
