@@ -197,3 +197,9 @@ References:
 ## 二元二次函数最值
 
 参考 ![二元二次函数](https://zh.wikipedia.org/wiki/%E4%BA%8C%E6%AC%A1%E5%87%BD%E6%95%B0)
+
+## Three leading medical journals
+
+- the Journal of the American Medical Association, 
+- the Lancet, and 
+- the New England Journal of Medicine

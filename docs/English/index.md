@@ -1,3 +1,42 @@
+## 2019.12.13
+
+1. Because of all the uncertain and unknown assumptions that **underpin** statistical inferences, we should treat inferential statistics as highly unstable local descriptions of relations between assumptions and data, rather than as generalizable inferences about hypotheses or models. 
+2. Acknowledging this uncertainty could help reduce the **allure** of selective reporting
+3. That paper is part of a much large literature in economics on Persistence or “Deep Origins” that shows how **medieval pogroms** **prefigure** Nazi support, adoption of the **plough** determines women’s rights etc.
+4. The impact of history on the present appears **indisputable** but is, as the extreme Moran statistic for spatial autocorrelation indicates, **spurious**.
+5. a battery of questions
+6. a bunch of data
+7. My father was a scratch golfer in his **heyday** on local public courses, but he said he’d never be able to sink a single putt if the greens were maintained the way they were for PGA **tournaments**.
+8. he was **obsessive** about his short game—his own career was ended by knee and **rotator cuff** surgery—**hockey** wasn’t good to his body, either, despite playing in a “non-contact” **league** as an adult.
+9. Are there things like field goals in **rugby** or Australian-rules football? I love that the actual name of the sport has “rules” in the title—it’s the kind of **pedantry** near and dear to this semanticist’s heart.
+10. I boycott contact sports like football and ice hockey due to their intentionally violent nature.
+11.  I saw too many catchers and **umpires** rocked by **foul** tips to the face mask this season.
+12. see a catcher **don the gear** again after multiple **concussions**
+13. What really **riled** me was when the speaker said
+14. This seems to me to be a **bizarre** sort of **techno-mysticism**.
+15. The **nascent** field of fair machine learning aims to ensure that decisions guided by algorithms are equitable.
+16. Over the last several years, three formal definitions of fairness have gained **prominence**
+17. classification **parity**, meaning that common measures of predictive performance
+18. One must carefully define and measure the targets of prediction to avoid **retrenching** biases in the data.
+19. A team of researchers inside **Pfizer** made a **startling** find in 2015: The company’s **blockbuster** **rheumatoid arthritis** therapy Enbrel, a powerful **anti-inflammatory** drug, appeared to reduce the risk of Alzheimer’s disease by 64 percent.
+20. A **synopsis** of its statistical findings prepared for outside publication, it says, did not meet its “rigorous scientific standards.”
+21. Pfizer said it **opted** against publication of its data because of its doubts about the results.
+22. One reason for caution: another class of anti-inflammatory therapies, called **non-steroidal** anti-inflammatory drugs (NSAIDS), showed no effect against mild-to-moderate Alzheimer’s in several clinical trials a decade ago.
+23. I bet this revelation leads to **a slew of** off-label prescriptions, just as happened with **estrogen** a couple of decades ago. My physician friends told me then that you could not recruit subjects for a clinical trial because doctors were just prescribing estrogen for all **menopausal** women, to prevent Alzheimer’s.
+24. Novartis
+25. My problem with the **ideology**
+26. if you push hard you can find the weak points and **magnify** them until you get **ridiculous** inferences.
+27. but the way probability works is that you can always find some **chink** in the model and exploit it to result in a clearly bad prediction.
+28. I think the **proclivity** of Bayesian inferences to tend toward the ridiculous is just fine
+29. But Bayesian inference can lead us **astray**, and we’re better statisticians if we realize that.
+30. I’m exhausted by the ideology of the Bayes-**evangelists**.
+31. Would Republicans pay a price if they vote to **impeach** the president?
+32. Nixon **loyalists** paid the price—not Republicans who voted to impeach.
+33. So I **goggled** a bit and asked a colleague in ML about the above. 
+34. It’s great if you’ve got hair to **comb**, but otherwise it leaves you looking a bit silly.
+35. Once my sister had the **hiccups** and my dad **snuck up** behind her and scared her. The hiccups went away but my sister made my dad promise never to scare her again like that.
+36. On the medical front, we now have things like **nut allergy** and **autism** which nobody ever thought about and now are huge.
+
 ## 2019.12.10
 
 1. conduit 
