@@ -430,8 +430,8 @@ d.vals
 it will return a `16-element Array{Int64,1}`, but if we use
 
 ```julia
-vals(d)
+values(d)
 keys(d)
 ```
 
-it correctly returns the exactly one elements. 
+it correctly returns the exactly one elements, but with type `Base.ValueIterator for a Dict{Int64,Int64} with 1 entry`.
