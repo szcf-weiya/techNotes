@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -56,7 +56,7 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -976,6 +976,33 @@
   <a href="#_16" class="md-nav__link">
     文本文件查看
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    文本文件拼接
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    按列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    按行
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2398,6 +2425,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    文本文件拼接
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    按列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    按行
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2950,8 +3004,17 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 <h2 id="_16">文本文件查看<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <p><code>cut</code>: select by columns</p>
 <p>参考 <a href="https://opensource.com/article/17/2/command-line-tools-data-analysis-linux">10 command-line tools for data analysis in Linux</a></p>
+<h2 id="_17">文本文件拼接<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<h3 id="_18">按列<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>paste file1 file2 &gt; outputfile
+</pre></div>
+
+<h3 id="_19">按行<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>cut file1 file2 &gt; outputfile
+</pre></div>
                 
                   
+                
                 
               
               
@@ -3038,7 +3101,7 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
       
     </div>
     
-      <script src="../assets/javascripts/application.8e03edeb.js"></script>
+      <script src="../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
