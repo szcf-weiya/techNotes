@@ -1800,11 +1800,11 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 </pre></div>
 
 <p>it will return a <code>16-element Array{Int64,1}</code>, but if we use</p>
-<div class="codehilite"><pre><span></span><span class="n">vals</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">values</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="n">keys</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 
-<p>it correctly returns the exactly one elements. </p>
+<p>it correctly returns the exactly one elements, but with type <code>Base.ValueIterator for a Dict{Int64,Int64} with 1 entry</code>.</p>
                 
                   
                 
