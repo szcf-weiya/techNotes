@@ -737,6 +737,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#some-interesting-behavior" class="md-nav__link">
+    some interesting behavior
+  </a>
+  
+</li>
+      
       
       
       
@@ -1450,6 +1457,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#some-interesting-behavior" class="md-nav__link">
+    some interesting behavior
+  </a>
+  
+</li>
+      
       
       
       
@@ -1775,6 +1789,22 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 <span class="k">end</span>
 </pre></div>
 to solve my problem, where <code>b</code> is the argument I want to reset.</p>
+<h2 id="some-interesting-behavior">some interesting behavior<a class="headerlink" href="#some-interesting-behavior" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">}()</span>
+<span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+
+<p>if we access</p>
+<div class="codehilite"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">vals</span>
+<span class="c"># d.keys</span>
+</pre></div>
+
+<p>it will return a <code>16-element Array{Int64,1}</code>, but if we use</p>
+<div class="codehilite"><pre><span></span><span class="n">vals</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">keys</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+
+<p>it correctly returns the exactly one elements. </p>
                 
                   
                 
