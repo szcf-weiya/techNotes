@@ -69,7 +69,7 @@
 
 ## 2019.11.01
 
-常用成语记忆卡片：[成语－VCE 1+2 年底考试](https://quizlet.com/167609288/%E6%88%90%E8%AF%ADvce-12-%E5%B9%B4%E5%BA%95%E8%80%83%E8%AF%95-flash-cards/)
+常用成语记忆卡片：[ 成语－VCE 1+2 年底考试](https://quizlet.com/167609288/%E6%88%90%E8%AF%ADvce-12-%E5%B9%B4%E5%BA%95%E8%80%83%E8%AF%95-flash-cards/)
 
 ## 2019.10.25
 
