@@ -1,3 +1,7 @@
+## 2019.12.15
+
+1. I think that the author shouldn’t have done the chapter **gimmick**, and focused more on the more impactful awards.
+
 ## 2019.12.13
 
 1. Because of all the uncertain and unknown assumptions that **underpin** statistical inferences, we should treat inferential statistics as highly unstable local descriptions of relations between assumptions and data, rather than as generalizable inferences about hypotheses or models. 
