@@ -1,3 +1,7 @@
+## 2019.12.20
+
+1. repulsive
+
 ## 2019.12.15
 
 1. I think that the author shouldn’t have done the chapter **gimmick**, and focused more on the more impactful awards.
