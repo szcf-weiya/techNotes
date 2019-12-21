@@ -1,3 +1,7 @@
+## 2019.12.21
+
+1. How do practitioners and patients discern the difference?
+
 ## 2019.12.20
 
 1. repulsive
