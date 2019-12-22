@@ -1,3 +1,9 @@
+## 2019.12.22
+
+1. I recently was discussing/arguing about the value of **[charter schools](https://www.zhihu.com/question/21810104)** **lottery** studies.
+    - [The demand for seats in charter schools is so great that almost all charter schools must admit students by random lottery.](https://www.nyccharterschools.org/sites/default/files/resources/LOTTERIES082713.pdf)
+2. is admissions of a lack of external validity **ameliorated** because of stronger internal validity?
+
 ## 2019.12.21
 
 1. How do practitioners and patients discern the difference?
