@@ -1,3 +1,28 @@
+## 2019.12.24
+
+1. **Intellectual property (IP)** is an umbrella term that covers a group of separate intangible property rights of owners/creators.
+2. Provide legal protection in various types of monopolies.
+3. Defining offences (civil or criminal infringement) against intellectual property.
+4. Plant Varieties (Agricultural or horticultural plant varieties)
+5. The IP laws protect your interpretation of ideas in the form of a book, an invention, etc.
+6. Registered designs protect the appearance of your toys. Only the look of your toys is protected, not the ways in which the toys operate. Patent law may protect the way in which a product works.
+7. The new visible shape, configuration, pattern or **ornament** applied to an article by an industrial process are features capable of protection by design registration.
+8. nephew
+9. Scientific discoveries as ideas are not protected.
+10. If a country is a member of international copyright convention, **treaty** or organization such as the World Trade Organization and others like the Berne Convention, the Universal Copyright Convention, the Geneva Convention for the protection of producers of **phonograms**, and the agreement on trade-ralated aspects of intellectual property rights, then Hong Kong's copyright applies and is valid in these countries.
+11. Hong Kong is a common law **jurisdiction**. 
+12. Copyright Ordinance
+13. The goal was to combat copyright **piracy** (c.f. privacy) activities on computer software in the business sector.
+14. The criminal provisions in Intellectual Property (Miscellaneous Amendments) Ordinance 2001 caused the public concerns that the amendments might hinder the dissemination of information in the education sector and the society.
+15. The copyright law is applicable to where the act in question occurs.
+16. compilation
+17. mime
+18. The most important rights of a performer are the right to prevent any person from making a video or sound recording of his performance and the right to prohibit any person exploiting a video or sound recording of his performance.
+19. civil remedies vs. criminal sanctions
+20. intranet
+21. Under the Copyright Ordinance, the fair dealing for showing or playing a movie will apply only if the purpose is for giving or receiving instruction in a specified course of student provided by an educational establishment. It is not allowed to use these materials outside the scope of fair dealing such as for the purpose of entertainment.
+22. Vincent van Gogh: 梵高
+
 ## 2019.12.22
 
 1. I recently was discussing/arguing about the value of **[charter schools](https://www.zhihu.com/question/21810104)** **lottery** studies.

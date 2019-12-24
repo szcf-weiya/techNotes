@@ -203,3 +203,16 @@ References:
 - the Journal of the American Medical Association, 
 - the Lancet, and 
 - the New England Journal of Medicine
+
+## Two Most Popular Creative Commons (CC) licences
+
+- CC-BY-NC (Attribution-NonCommercial): letting others remix, tweak and build up your work non-commercially
+- CC-BY-NC-SA (Attribution-NonCommercial-ShareAlike): letting others remix, tweak and build upon your work non-commercially, and the person also need to distribute their contributions under the same licence as the original.
+
+## License
+
+- 普通许可：non-exclusive license
+- 排他许可：sole license
+- 独占许可：exclusive license
+- 分售许可：sub-license
+- 交叉许可：cross license
