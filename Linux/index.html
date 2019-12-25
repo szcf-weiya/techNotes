@@ -1006,6 +1006,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    视频处理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    去除音频
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    慢速播放和快速播放
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2452,6 +2479,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    视频处理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    去除音频
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    慢速播放和快速播放
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -3012,6 +3066,15 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 <h3 id="_19">按行<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>cut file1 file2 &gt; outputfile
 </pre></div>
+
+<h2 id="_20">视频处理<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<h3 id="_21">去除音频<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p>参考 <a href="https://hefang.link/article/how-remove-voice-with-ffmpeg.html">如何使用ffmpeg去除视频声音？</a></p>
+<div class="codehilite"><pre><span></span>ffmpeg -i .<span class="se">\i</span>nput.mp4 -map <span class="m">0</span>:0 -vcodec copy out.mp4
+</pre></div>
+
+<h3 id="_22">慢速播放和快速播放<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p>参考 <a href="https://blog.csdn.net/ternence_hsu/article/details/85865718">ffmpeg 视频倍速播放 和 慢速播放</a></p>
                 
                   
                 
