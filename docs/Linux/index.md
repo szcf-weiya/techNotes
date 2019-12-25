@@ -840,3 +840,16 @@ paste file1 file2 > outputfile
 cut file1 file2 > outputfile
 ```
 
+## 视频处理
+
+### 去除音频
+
+参考 [如何使用ffmpeg去除视频声音？](https://hefang.link/article/how-remove-voice-with-ffmpeg.html)
+
+```bash
+ffmpeg -i .\input.mp4 -map 0:0 -vcodec copy out.mp4
+```
+
+### 慢速播放和快速播放
+
+参考 [ffmpeg 视频倍速播放 和 慢速播放](https://blog.csdn.net/ternence_hsu/article/details/85865718)

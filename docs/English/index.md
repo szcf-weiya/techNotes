@@ -1,3 +1,7 @@
+## 2019.12.25
+
+1. Ampoule (安瓿瓶，如利多卡因)， vs 西林瓶 (如青霉素)
+
 ## 2019.12.24
 
 1. **Intellectual property (IP)** is an umbrella term that covers a group of separate intangible property rights of owners/creators.
