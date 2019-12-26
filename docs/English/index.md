@@ -4,7 +4,7 @@
 
 ## 2019.12.24
 
-1. **Intellectual property (IP)** is an umbrella term that covers a group of separate intangible property rights of owners/creators.
+1. **Intellectual property (IP)** is an umbrella term that covers a group of separate **intangible** property rights of owners/creators.
 2. Provide legal protection in various types of monopolies.
 3. Defining offences (civil or criminal infringement) against intellectual property.
 4. Plant Varieties (Agricultural or horticultural plant varieties)
