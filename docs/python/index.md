@@ -416,6 +416,13 @@ f.write(write.str)
 
 其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 [Kernels for different environments](https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments)
 
+### 安装 julia 的 kernel
+
+```julia
+> add IJulia
+```
+
+
 ## 画图 xy 顺序
 
 1. imshow 中的 [origin and extent](https://matplotlib.org/tutorials/intermediate/imshow_extent.html)
