@@ -854,6 +854,19 @@
     不同 environment 的 jupyter
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#julia-kernel" class="md-nav__link">
+    安装 julia 的 kernel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1898,6 +1911,19 @@
     不同 environment 的 jupyter
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#julia-kernel" class="md-nav__link">
+    安装 julia 的 kernel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2272,6 +2298,10 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <p>参考 <a href="https://stackoverflow.com/questions/33255846/python-write-a-list-with-non-ascii-characters-to-a-text-file">Python: write a list with non-ASCII characters to a text file</a> 采用 <code>codecs.open(, "w", encoding="utf-8")</code> 可以解决需求。</p>
 <h2 id="environment-jupyter">不同 environment 的 jupyter<a class="headerlink" href="#environment-jupyter" title="Permanent link">&para;</a></h2>
 <p>其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 <a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments">Kernels for different environments</a></p>
+<h3 id="julia-kernel">安装 julia 的 kernel<a class="headerlink" href="#julia-kernel" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="o">&gt;</span> <span class="n">add</span> <span class="n">IJulia</span>
+</pre></div>
+
 <h2 id="xy">画图 xy 顺序<a class="headerlink" href="#xy" title="Permanent link">&para;</a></h2>
 <ol>
 <li>imshow 中的 <a href="https://matplotlib.org/tutorials/intermediate/imshow_extent.html">origin and extent</a></li>
