@@ -216,3 +216,13 @@ References:
 - 独占许可：exclusive license
 - 分售许可：sub-license
 - 交叉许可：cross license
+
+## dogleg method vs `dodge` option
+
+`dodge` option in [StatsPlots.jl](https://github.com/JuliaPlots/StatsPlots.jl)
+
+```julia
+groupedbar(rand(10,3), bar_position = :dodge, bar_width=0.7)
+``
+
+while "dogleg method" refers to an approach in optimization.
