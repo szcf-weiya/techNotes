@@ -1040,6 +1040,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    windows 命名规范
+  </a>
+  
+</li>
+      
       
       
       
@@ -2520,6 +2527,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    windows 命名规范
+  </a>
+  
+</li>
+      
       
       
       
@@ -3102,6 +3116,29 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 <blockquote>
 <p>fuse是一个用户空间实现的文件系统。内核不认识。fuseblk应该就是使用fuse的block设备吧，系统中临时的非超级用户的设备挂载好像用的就是这个。</p>
 </blockquote>
+<h2 id="windows">windows 命名规范<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
+<p>在使用 <a href="https://github.com/skilion/onedrive">onedrive</a> 同步时，一直会出现碰到某个文件崩溃。查了一下才知道是需要遵循 <a href="https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN">Windows 命名规范</a>，其中有两条很重要</p>
+<ul>
+<li>Do not assume case sensitivity. For example, consider the names OSCAR, Oscar, and oscar to be the same, even though some file systems (such as a POSIX-compliant file system) may consider them as different. Note that NTFS supports POSIX semantics for case sensitivity but this is not the default behavior. </li>
+<li>The following reserved characters:</li>
+<li>&lt; (less than)</li>
+<li>
+<blockquote>
+<p>(greater than)</p>
+</blockquote>
+</li>
+<li>: (colon)</li>
+<li>&rdquo; (double quote)</li>
+<li>/ (forward slash)</li>
+<li>\ (backslash)</li>
+<li>| (vertical bar or pipe)</li>
+<li>? (question mark)</li>
+<li>
+<ul>
+<li>(asterisk)</li>
+</ul>
+</li>
+</ul>
                 
                   
                 
