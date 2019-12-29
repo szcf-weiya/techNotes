@@ -3116,6 +3116,7 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 <blockquote>
 <p>fuse是一个用户空间实现的文件系统。内核不认识。fuseblk应该就是使用fuse的block设备吧，系统中临时的非超级用户的设备挂载好像用的就是这个。</p>
 </blockquote>
+<p>最后发现，onedrive 无法同步的原因可能并不是因为 0 byte 的文件夹，而是因为下面的命名规范，虽然不是需要同步的文件，而是之前很久的文件，但可能onedrive就在之前这个不规范命名的文件上崩溃了。</p>
 <h2 id="windows">windows 命名规范<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
 <p>在使用 <a href="https://github.com/skilion/onedrive">onedrive</a> 同步时，一直会出现碰到某个文件崩溃。查了一下才知道是需要遵循 <a href="https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN">Windows 命名规范</a>，其中有两条很重要</p>
 <ul>
