@@ -872,3 +872,18 @@ ffmpeg -i .\input.mp4 -map 0:0 -vcodec copy out.mp4
 
 > fuse是一个用户空间实现的文件系统。内核不认识。fuseblk应该就是使用fuse的block设备吧，系统中临时的非超级用户的设备挂载好像用的就是这个。
 
+## windows 命名规范
+
+在使用 [onedrive](https://github.com/skilion/onedrive) 同步时，一直会出现碰到某个文件崩溃。查了一下才知道是需要遵循 [Windows 命名规范](https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN)，其中有两条很重要
+
+- Do not assume case sensitivity. For example, consider the names OSCAR, Oscar, and oscar to be the same, even though some file systems (such as a POSIX-compliant file system) may consider them as different. Note that NTFS supports POSIX semantics for case sensitivity but this is not the default behavior. 
+- The following reserved characters:
+  - < (less than)
+  - > (greater than)
+  - : (colon)
+  - " (double quote)
+  - / (forward slash)
+  - \ (backslash)
+  - | (vertical bar or pipe)
+  - ? (question mark)
+  - * (asterisk)
