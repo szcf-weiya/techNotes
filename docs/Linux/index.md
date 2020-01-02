@@ -784,6 +784,13 @@ pdftk input.pdf update_info metadata output output.pdf
 
 当然，还是期待官网本身支持。
 
+常用命令：
+
+```bash
+bypy syncup
+bypy syncdown
+```
+
 ## chrome 黑屏
 
 参考 https://blog.csdn.net/jjddrushi/article/details/79155421
