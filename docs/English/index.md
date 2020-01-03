@@ -1,3 +1,7 @@
+## 2020.01.01
+
+1. gastric
+
 ## 2019.12.30
 
 1. High scorers are **juvenile delinquents** who then see the error of their ways and **reform** permanently.

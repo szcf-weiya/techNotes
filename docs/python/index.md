@@ -556,3 +556,57 @@ else:
 # 是CPU调度和分派的基本单位，一个进程可以由很多个线程组成，
 # 线程间共享进程的所有资源，每个线程有自己的堆栈和局部变量。
 ```
+
+## conda package 的版本号不匹配
+
+在用 anaconda3 新建 py37 环境后，安装 spyder，但是运行时弹出
+
+![](spyder-qtconsole.png)
+
+而用 `conda list | grep qtconsole` 检查发现
+
+```bash
+qtconsole                 4.6.0                      py_0
+```
+
+隐隐约约感觉是装了多个版本，想卸载掉错误的版本，但都没找到 qtconsole 怎么查看版本号。然后 Google 发现另外一个类似的问题，
+
+[Getting wrong version of packages using Conda](https://stackoverflow.com/questions/55350956/getting-wrong-version-of-packages-using-conda)
+
+于是我也去检查了 ipython 的版本，发现 
+
+```bash
+$ ipython --version
+7.7.0
+```
+
+而
+
+```bash
+$ conda list | grep ipython
+ipython                   7.10.2           py37h39e3cac_0
+```
+
+同样存在版本号不一致的问题。
+
+所以按照评论的建议，用 
+
+```bash
+pip uninstall ipython
+```
+
+首先解决了 ipython 的版本号不一致的问题。
+
+![](ipython.png)
+
+受此启发，用
+
+```bash
+pip uninstall qtconsole
+```
+
+解决了 qtconsole 的问题。
+
+## Kite 使用体验
+
+Copilot 一直 detect 不出 spyder，只有刚开始装的时候检测到了，但那时候也没有起作用。而 kite 本身一直在 spyder 右下角的状态栏中。
