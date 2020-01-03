@@ -610,3 +610,25 @@ pip uninstall qtconsole
 ## Kite 使用体验
 
 Copilot 一直 detect 不出 spyder，只有刚开始装的时候检测到了，但那时候也没有起作用。而 kite 本身一直在 spyder 右下角的状态栏中。
+
+
+## remote ipython kernel
+
+一直想玩 jupyter 的远程 ipython kernel 连接，这样可以减轻本机的压力。
+
+这两篇介绍得很详细，但是最后设置 ssh 那一步总是报错，总是说无法连接。
+
+https://medium.com/@halmubarak/connecting-spyder-ide-to-a-remote-ipython-kernel-25a322f2b2be
+https://medium.com/@mazzine.r/how-to-connect-your-spyder-ide-to-an-external-ipython-kernel-with-ssh-putty-tunnel-e1c679e44154
+
+因为我是直接把 `id_rsa.pub` 文件当作 `.pem` 文件，但如果我换成密码登录后就成功了。
+
+而如果[直接命令行操作](https://github.com/ipython/ipython/wiki/Cookbook:-Connecting-to-a-remote-kernel-via-ssh)，则就像正常 ssh 一样，也会成功。
+
+所以中间的差异应该就是 `.pem` 与 `id_rsa.pub` 不等同。具体比较详见 [what is the difference between various keys in public key encryption](https://stackoverflow.com/questions/17670446/what-is-the-difference-between-various-keys-in-public-key-encryption)
+
+## usage of `yield`
+
+> We should use yield when we want to iterate over a sequence, but don’t want to store the entire sequence in memory.
+
+More details refer to [When to use yield instead of return in Python?](https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/)
