@@ -1,3 +1,8 @@
+## 2020.01.04
+
+1. Traditionally, mpMRI examinations were used to manually **delineate** the cancerous regions within the prostate.
+2. Such methods tend to depend highly on **radiologists**' and **urologists**' expertise
+
 ## 2020.01.01
 
 1. gastric
