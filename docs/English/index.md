@@ -1,3 +1,8 @@
+## 2020.01.05
+
+1. The **knockoff** filter operates by **manufacturing** knockoff variables that are cheap.
+2. The knockoff filter can be seen as a **versatile** wrapper.
+
 ## 2020.01.04
 
 1. Traditionally, mpMRI examinations were used to manually **delineate** the cancerous regions within the prostate.
