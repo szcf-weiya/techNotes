@@ -2499,8 +2499,10 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <h2 id="remote-ipython-kernel">remote ipython kernel<a class="headerlink" href="#remote-ipython-kernel" title="Permanent link">&para;</a></h2>
 <p>一直想玩 jupyter 的远程 ipython kernel 连接，这样可以减轻本机的压力。</p>
 <p>这两篇介绍得很详细，但是最后设置 ssh 那一步总是报错，总是说无法连接。</p>
-<p>https://medium.com/@halmubarak/connecting-spyder-ide-to-a-remote-ipython-kernel-25a322f2b2be
-https://medium.com/@mazzine.r/how-to-connect-your-spyder-ide-to-an-external-ipython-kernel-with-ssh-putty-tunnel-e1c679e44154</p>
+<ul>
+<li><a href="https://medium.com/@halmubarak/connecting-spyder-ide-to-a-remote-ipython-kernel-25a322f2b2be">Connecting Spyder IDE to a remote IPython kernel</a></li>
+<li><a href="https://medium.com/@mazzine.r/how-to-connect-your-spyder-ide-to-an-external-ipython-kernel-with-ssh-putty-tunnel-e1c679e44154">How to connect your Spyder IDE to an external ipython kernel with SSH PuTTY tunnel</a></li>
+</ul>
 <p>因为我是直接把 <code>id_rsa.pub</code> 文件当作 <code>.pem</code> 文件，但如果我换成密码登录后就成功了。</p>
 <p>而如果<a href="https://github.com/ipython/ipython/wiki/Cookbook:-Connecting-to-a-remote-kernel-via-ssh">直接命令行操作</a>，则就像正常 ssh 一样，也会成功。</p>
 <p>所以中间的差异应该就是 <code>.pem</code> 与 <code>id_rsa.pub</code> 不等同。具体比较详见 <a href="https://stackoverflow.com/questions/17670446/what-is-the-difference-between-various-keys-in-public-key-encryption">what is the difference between various keys in public key encryption</a></p>
