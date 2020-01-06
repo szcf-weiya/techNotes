@@ -618,8 +618,8 @@ Copilot 一直 detect 不出 spyder，只有刚开始装的时候检测到了，
 
 这两篇介绍得很详细，但是最后设置 ssh 那一步总是报错，总是说无法连接。
 
-https://medium.com/@halmubarak/connecting-spyder-ide-to-a-remote-ipython-kernel-25a322f2b2be
-https://medium.com/@mazzine.r/how-to-connect-your-spyder-ide-to-an-external-ipython-kernel-with-ssh-putty-tunnel-e1c679e44154
+- [Connecting Spyder IDE to a remote IPython kernel](https://medium.com/@halmubarak/connecting-spyder-ide-to-a-remote-ipython-kernel-25a322f2b2be)
+- [How to connect your Spyder IDE to an external ipython kernel with SSH PuTTY tunnel](https://medium.com/@mazzine.r/how-to-connect-your-spyder-ide-to-an-external-ipython-kernel-with-ssh-putty-tunnel-e1c679e44154)
 
 因为我是直接把 `id_rsa.pub` 文件当作 `.pem` 文件，但如果我换成密码登录后就成功了。
 
