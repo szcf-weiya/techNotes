@@ -500,3 +500,7 @@ rstudio --max-ppsize 500000
 ```
 
 refer to [How to solve 'protection stack overflow' issue in R Studio](https://stackoverflow.com/questions/32826906/how-to-solve-protection-stack-overflow-issue-in-r-studio)
+
+## `not found libhdf5.a`
+
+check if compiling under anaconda environment, if so, exit and retry.
