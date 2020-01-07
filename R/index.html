@@ -728,6 +728,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#installpackages-returns-failed-to-create-lock-directory" class="md-nav__link">
+    install.packages returns failed to create lock directory
+  </a>
+  
+</li>
+      
       
       
       
@@ -1776,6 +1783,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#installpackages-returns-failed-to-create-lock-directory" class="md-nav__link">
+    install.packages returns failed to create lock directory
+  </a>
+  
+</li>
+      
       
       
       
@@ -2136,6 +2150,16 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>refer to <a href="https://stackoverflow.com/questions/32826906/how-to-solve-protection-stack-overflow-issue-in-r-studio">How to solve &lsquo;protection stack overflow&rsquo; issue in R Studio</a></p>
 <h2 id="not-found-libhdf5a"><code>not found libhdf5.a</code><a class="headerlink" href="#not-found-libhdf5a" title="Permanent link">&para;</a></h2>
 <p>check if compiling under anaconda environment, if so, exit and retry.</p>
+<h2 id="installpackages-returns-failed-to-create-lock-directory">install.packages returns <code>failed to create lock directory</code><a class="headerlink" href="#installpackages-returns-failed-to-create-lock-directory" title="Permanent link">&para;</a></h2>
+<p>in bash</p>
+<div class="codehilite"><pre><span></span>R CMD INSTALL --no-lock &lt;pkg&gt;
+</pre></div>
+
+<p>or in R session</p>
+<div class="codehilite"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;Rcpp&quot;</span><span class="p">,</span> <span class="n">dependencies</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">INSTALL_opts</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;--no-lock&#39;</span><span class="p">))</span>
+</pre></div>
+
+<p>refer to <a href="https://stackoverflow.com/questions/14382209/r-install-packages-returns-failed-to-create-lock-directory">R install.packages returns “failed to create lock directory”</a></p>
                 
                   
                 
