@@ -504,3 +504,19 @@ refer to [How to solve 'protection stack overflow' issue in R Studio](https://st
 ## `not found libhdf5.a`
 
 check if compiling under anaconda environment, if so, exit and retry.
+
+## install.packages returns `failed to create lock directory`
+
+in bash
+
+```bash
+R CMD INSTALL --no-lock <pkg>
+```
+
+or in R session
+
+```r
+install.packages("Rcpp", dependencies=TRUE, INSTALL_opts = c('--no-lock'))
+```
+
+refer to [R install.packages returns “failed to create lock directory”](https://stackoverflow.com/questions/14382209/r-install-packages-returns-failed-to-create-lock-directory)
