@@ -632,3 +632,9 @@ Copilot 一直 detect 不出 spyder，只有刚开始装的时候检测到了，
 > We should use yield when we want to iterate over a sequence, but don’t want to store the entire sequence in memory.
 
 More details refer to [When to use yield instead of return in Python?](https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/)
+
+## 'Uninstalling a distutils installed project' error
+
+pip install --ignore-installed ${PACKAGE_NAME}
+
+refer to ['Uninstalling a distutils installed project' error when installing blockstack #504](https://github.com/blockstack/blockstack-core/issues/504)
