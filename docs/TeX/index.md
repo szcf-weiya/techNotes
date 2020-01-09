@@ -656,3 +656,9 @@ see
 ```
 
 refer to [Matching Content to MathJax](http://drz.ac/2013/01/14/matching-content-to-mathjax/), which originally for illustrating the typeface of mathjax.
+
+## 数学公式常用字体
+
+![](https://i.stack.imgur.com/eZdhj.png)
+
+refer to [What are all the font styles I can use in math mode?](https://tex.stackexchange.com/questions/58098/what-are-all-the-font-styles-i-can-use-in-math-mode)
