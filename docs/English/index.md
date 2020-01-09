@@ -1,3 +1,9 @@
+## 2020.01.08
+
+1. An example is some preliminary data gathered at Stanford on revival of cardiac arrest patients by **paramedics**.
+2. defibrillation
+3. For **diploid** and **tetraploid** tumors, the **flow cytometry** method was also able to estimate the percent of tumor cells in a growth stage of their cell cycle, the percent of growth is systematically missing for most **aneuploid** tumors.
+
 ## 2020.01.05
 
 1. The **knockoff** filter operates by **manufacturing** knockoff variables that are cheap.
