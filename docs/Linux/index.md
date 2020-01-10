@@ -529,7 +529,7 @@ ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
 
 [Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?](https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process)
 
-## `&`
+## redirection
 
 Note that 
 
@@ -546,8 +546,49 @@ or just
 myscript > /dev/null 2>&1 &
 ```
 
-
 refer to [Why can I see the output of background processes?](https://askubuntu.com/questions/662817/why-can-i-see-the-output-of-background-processes)
+
+[Formally](https://askubuntu.com/a/1031424), integer `1` stands for `stdout` file descriptor, while `2` represents `stderr` file descriptor. 
+
+```bash
+echo Hello World > /dev/null
+```
+
+is same as
+
+```bash
+echo Hello World 1> /dev/null
+```
+
+**As for spacing**, integer is right next to redirection operator, but file can either be next to redirection operator or not, i.e., `command 2>/dev/null` or `command 2> /dev/null`.
+
+The classical operator, `command > file` only redirects standard output, [several choices to redirect stderr](https://askubuntu.com/a/625230),
+
+- Redirect stdout to one file and stderr to another file
+
+```bash
+command > out 2> error
+```
+
+- Redirect stdout to a file, and then redirect stderr to stdout **NO spacings in `2>&1`**
+
+```bash
+command > out 2>&1
+```
+
+- Redirect both to a file (not supported by all shells, but `bash` is OK)
+
+```bash
+command &> out
+```
+
+[In more technical terms](https://askubuntu.com/a/635069), `[integer]>&word` is called [Duplicating Output File Descriptor](https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_07_06)
+
+We can [redirect output to a file and stdout simultaneously](https://stackoverflow.com/questions/418896/how-to-redirect-output-to-a-file-and-stdout)
+
+```
+program [arguments...] 2>&1 | tee outfile
+```
 
 ## mv file with xargs
 
@@ -598,14 +639,6 @@ In short,
 
 1. [Special Gmail](Folders missing (Sent, Drafts, etc...) Only see Inbox and Trash. Please help.)
 2. [Special Gmail (continued)](https://support.mozilla.org/zh-CN/kb/thunderbird-gmail)
-
-## 重定向
-
-```bash
-... 2>&1 &
-```
-
-refer to [Linux实时将所有输出重定向到文件](https://www.cnblogs.com/itZhy/p/3163230.html)
 
 ## Ubuntu 16.04 create WiFi Hotpot
 
@@ -697,14 +730,6 @@ refer to [ps aux for long charactered usernames shows a plus sign](https://askub
 ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
 alias psaux='ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm'
 ```
-
-## redirect output to a file and stdout
-
-```
-program [arguments...] 2>&1 | tee outfile
-```
-
-refer to [How to redirect output to a file and stdout](https://stackoverflow.com/questions/418896/how-to-redirect-output-to-a-file-and-stdout)
 
 ## remove the first character
 

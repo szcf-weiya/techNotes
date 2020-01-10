@@ -666,3 +666,11 @@ what is the meaning of `:` and `->`. Then I [found](https://stackoverflow.com/qu
 Actually, seems no need to add `Tuple` before `[np.ndarray, np.ndarray]`, which will throws an error 
 
 > NameError: name 'Tuple' is not defined
+
+Ohhh, to avoid such problem, 
+
+```python
+from typing import Tuple, Dict, List
+```
+
+refer to [custom_rmsle.py#L16](https://github.com/dmlc/xgboost/blob/master/demo/guide-python/custom_rmsle.py#L16)
