@@ -660,3 +660,9 @@ what is the meaning of `:` and `->`. Then I [found](https://stackoverflow.com/qu
 > By itself, Python does not attach any particular meaning or significance to annotations. 
 >
 > The only way that annotations take on meaning is when they are interpreted by third-party libraries. 
+
+### No `Tuple` here
+
+Actually, seems no need to add `Tuple` before `[np.ndarray, np.ndarray]`, which will throws an error 
+
+> NameError: name 'Tuple' is not defined
