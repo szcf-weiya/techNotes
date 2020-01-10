@@ -638,3 +638,10 @@ More details refer to [When to use yield instead of return in Python?](https://w
 pip install --ignore-installed ${PACKAGE_NAME}
 
 refer to ['Uninstalling a distutils installed project' error when installing blockstack #504](https://github.com/blockstack/blockstack-core/issues/504)
+
+## `*args` and `**args`
+
+- `*args`: pass a **non-keyword** and **variable-length** argument list to a function.
+- `**args`: pass a **keyworded**, **variable-length** argument list, actually `dict`
+
+refer to [`*args` and `**kwargs` in Python](https://www.geeksforgeeks.org/args-kwargs-python/)
