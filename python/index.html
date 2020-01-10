@@ -2604,6 +2604,11 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <blockquote>
 <p>NameError: name &lsquo;Tuple&rsquo; is not defined</p>
 </blockquote>
+<p>Ohhh, to avoid such problem, </p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+</pre></div>
+
+<p>refer to <a href="https://github.com/dmlc/xgboost/blob/master/demo/guide-python/custom_rmsle.py#L16">custom_rmsle.py#L16</a></p>
                 
                   
                 
