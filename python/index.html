@@ -995,6 +995,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#function-annotations" class="md-nav__link">
+    Function Annotations
+  </a>
+  
+</li>
+      
       
       
       
@@ -2094,6 +2101,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#function-annotations" class="md-nav__link">
+    Function Annotations
+  </a>
+  
+</li>
+      
       
       
       
@@ -2548,6 +2562,17 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <li><code>**args</code>: pass a <strong>keyworded</strong>, <strong>variable-length</strong> argument list, actually <code>dict</code></li>
 </ul>
 <p>refer to <a href="https://www.geeksforgeeks.org/args-kwargs-python/"><code>*args</code> and <code>**kwargs</code> in Python</a></p>
+<h2 id="function-annotations">Function Annotations<a class="headerlink" href="#function-annotations" title="Permanent link">&para;</a></h2>
+<p>When I am writing the custom loss function in XGBoost, there are some new syntax in the example function,</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">squared_log</span><span class="p">(</span><span class="n">predt</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+                <span class="n">dtrain</span><span class="p">:</span> <span class="n">xgb</span><span class="o">.</span><span class="n">DMatrix</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+</pre></div>
+
+<p>what is the meaning of <code>:</code> and <code>-&gt;</code>. Then I <a href="https://stackoverflow.com/questions/14379753/what-does-mean-in-python-function-definitions">found</a> that they are <a href="https://www.python.org/dev/peps/pep-3107/">functional annotations</a>.</p>
+<blockquote>
+<p>By itself, Python does not attach any particular meaning or significance to annotations. </p>
+<p>The only way that annotations take on meaning is when they are interpreted by third-party libraries. </p>
+</blockquote>
                 
                   
                 
