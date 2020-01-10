@@ -645,3 +645,18 @@ refer to ['Uninstalling a distutils installed project' error when installing blo
 - `**args`: pass a **keyworded**, **variable-length** argument list, actually `dict`
 
 refer to [`*args` and `**kwargs` in Python](https://www.geeksforgeeks.org/args-kwargs-python/)
+
+## Function Annotations
+
+When I am writing the custom loss function in XGBoost, there are some new syntax in the example function,
+
+```python
+def squared_log(predt: np.ndarray,
+                dtrain: xgb.DMatrix) -> Tuple[np.ndarray, np.ndarray]:
+```
+
+what is the meaning of `:` and `->`. Then I [found](https://stackoverflow.com/questions/14379753/what-does-mean-in-python-function-definitions) that they are [functional annotations](https://www.python.org/dev/peps/pep-3107/).
+
+> By itself, Python does not attach any particular meaning or significance to annotations. 
+>
+> The only way that annotations take on meaning is when they are interpreted by third-party libraries. 
