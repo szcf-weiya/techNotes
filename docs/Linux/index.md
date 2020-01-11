@@ -59,6 +59,25 @@ userName2 ALL=(ALL)       ALL
 
 [tmux](http://blog.csdn.net/u010454729/article/details/49496381)
 
+还可以切换后台运行，在服务器上操作特别方便。
+
+常用操作
+
+```bash
+# new a shell
+tmux
+# view all shell
+tmux ls
+# go back
+tmux attach-session -t [NUM]
+# simplify
+tmux attach -t [NUM]
+# more simplify
+tmux a -t [NUM]
+```
+
+refer to [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it)
+
 ## 缺少动态链接库
 
 在服务器上使用gsl报缺少动态链接库的错误
@@ -927,3 +946,7 @@ ffmpeg -i .\input.mp4 -map 0:0 -vcodec copy out.mp4
 - `jobs -l` 返回后台运行程序的 `PID`，refer to [How to get PID of background process?](https://stackoverflow.com/questions/1908610/how-to-get-pid-of-background-process) 
 
 但是 `jobs` [只显示属于当前 shell 的后台程序](https://superuser.com/a/607219), 如果重新登录，则不会显示后台程序，详见 [`jobs` command doesn't show any background processes](https://superuser.com/questions/607218/jobs-command-doesnt-show-any-background-processes)
+
+## `htop`
+
+A much more powerful command than `top`, refer to [Find out what processes are running in the background on Linux](https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/)
