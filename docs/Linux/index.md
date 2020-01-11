@@ -921,3 +921,9 @@ ffmpeg -i .\input.mp4 -map 0:0 -vcodec copy out.mp4
   - | (vertical bar or pipe)
   - ? (question mark)
   - * (asterisk)
+
+## 后台运行
+
+- `jobs -l` 返回后台运行程序的 `PID`，refer to [How to get PID of background process?](https://stackoverflow.com/questions/1908610/how-to-get-pid-of-background-process) 
+
+但是 `jobs` [只显示属于当前 shell 的后台程序](https://superuser.com/a/607219), 如果重新登录，则不会显示后台程序，详见 [`jobs` command doesn't show any background processes](https://superuser.com/questions/607218/jobs-command-doesnt-show-any-background-processes)
