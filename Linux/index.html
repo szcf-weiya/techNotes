@@ -1040,6 +1040,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#htop" class="md-nav__link">
+    htop
+  </a>
+  
+</li>
+      
       
       
       
@@ -2520,6 +2527,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#htop" class="md-nav__link">
+    htop
+  </a>
+  
+</li>
+      
       
       
       
@@ -2576,6 +2590,21 @@ userName2 <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o"
 </ol>
 <h2 id="_2">终端分屏<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.csdn.net/u010454729/article/details/49496381">tmux</a></p>
+<p>还可以切换后台运行，在服务器上操作特别方便。</p>
+<p>常用操作</p>
+<div class="codehilite"><pre><span></span><span class="c1"># new a shell</span>
+tmux
+<span class="c1"># view all shell</span>
+tmux ls
+<span class="c1"># go back</span>
+tmux attach-session -t <span class="o">[</span>NUM<span class="o">]</span>
+<span class="c1"># simplify</span>
+tmux attach -t <span class="o">[</span>NUM<span class="o">]</span>
+<span class="c1"># more simplify</span>
+tmux a -t <span class="o">[</span>NUM<span class="o">]</span>
+</pre></div>
+
+<p>refer to <a href="https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it">How do I access tmux session after I leave it?</a></p>
 <h2 id="_3">缺少动态链接库<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>在服务器上使用gsl报缺少动态链接库的错误
 解决方案
@@ -3159,6 +3188,8 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 <li><code>jobs -l</code> 返回后台运行程序的 <code>PID</code>，refer to <a href="https://stackoverflow.com/questions/1908610/how-to-get-pid-of-background-process">How to get PID of background process?</a> </li>
 </ul>
 <p>但是 <code>jobs</code> <a href="https://superuser.com/a/607219">只显示属于当前 shell 的后台程序</a>, 如果重新登录，则不会显示后台程序，详见 <a href="https://superuser.com/questions/607218/jobs-command-doesnt-show-any-background-processes"><code>jobs</code> command doesn&rsquo;t show any background processes</a></p>
+<h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
+<p>A much more powerful command than <code>top</code>, refer to <a href="https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/">Find out what processes are running in the background on Linux</a></p>
                 
                   
                 
