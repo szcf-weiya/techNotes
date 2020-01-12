@@ -1047,6 +1047,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#different-cuda-version-shown-by-nvcc-and-nvidia-smi" class="md-nav__link">
+    different CUDA version shown by nvcc and NVIDIA-smi
+  </a>
+  
+</li>
+      
       
       
       
@@ -2534,6 +2541,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#different-cuda-version-shown-by-nvcc-and-nvidia-smi" class="md-nav__link">
+    different CUDA version shown by nvcc and NVIDIA-smi
+  </a>
+  
+</li>
+      
       
       
       
@@ -3190,6 +3204,17 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 <p>但是 <code>jobs</code> <a href="https://superuser.com/a/607219">只显示属于当前 shell 的后台程序</a>, 如果重新登录，则不会显示后台程序，详见 <a href="https://superuser.com/questions/607218/jobs-command-doesnt-show-any-background-processes"><code>jobs</code> command doesn&rsquo;t show any background processes</a></p>
 <h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
 <p>A much more powerful command than <code>top</code>, refer to <a href="https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/">Find out what processes are running in the background on Linux</a></p>
+<h2 id="different-cuda-version-shown-by-nvcc-and-nvidia-smi">different CUDA version shown by nvcc and NVIDIA-smi<a class="headerlink" href="#different-cuda-version-shown-by-nvcc-and-nvidia-smi" title="Permanent link">&para;</a></h2>
+<p>refer to <a href="https://stackoverflow.com/questions/53422407/different-cuda-versions-shown-by-nvcc-and-nvidia-smi">Different CUDA versions shown by nvcc and NVIDIA-smi</a></p>
+<blockquote>
+<p>CUDA has 2 primary APIs, the runtime and the driver API. Both have a corresponding version</p>
+<ul>
+<li>The necessary support for the driver API (e.g. libcuda.so on linux) is installed by the GPU driver installer.</li>
+<li>The necessary support for the runtime API (e.g. libcudart.so on linux, and also nvcc) is installed by the CUDA toolkit installer (which may also have a GPU driver installer bundled in it).</li>
+</ul>
+</blockquote>
+<p><code>nvidia-smi</code>: installed by the GPU driver installer, and generally has the GPU driver in view, not anything installed by the CUDA toolkit installer.
+<code>nvcc</code>: the CUDA compiler-driver tool that is installed with the CUDA toolkit, will always report the CUDA runtime version that it was built to recognize. </p>
                 
                   
                 
