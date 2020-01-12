@@ -950,3 +950,15 @@ ffmpeg -i .\input.mp4 -map 0:0 -vcodec copy out.mp4
 ## `htop`
 
 A much more powerful command than `top`, refer to [Find out what processes are running in the background on Linux](https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/)
+
+## different CUDA version shown by nvcc and NVIDIA-smi
+
+refer to [Different CUDA versions shown by nvcc and NVIDIA-smi](https://stackoverflow.com/questions/53422407/different-cuda-versions-shown-by-nvcc-and-nvidia-smi)
+
+> CUDA has 2 primary APIs, the runtime and the driver API. Both have a corresponding version
+>
+> - The necessary support for the driver API (e.g. libcuda.so on linux) is installed by the GPU driver installer.
+> - The necessary support for the runtime API (e.g. libcudart.so on linux, and also nvcc) is installed by the CUDA toolkit installer (which may also have a GPU driver installer bundled in it).
+
+`nvidia-smi`: installed by the GPU driver installer, and generally has the GPU driver in view, not anything installed by the CUDA toolkit installer.
+`nvcc`: the CUDA compiler-driver tool that is installed with the CUDA toolkit, will always report the CUDA runtime version that it was built to recognize. 
