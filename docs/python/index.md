@@ -674,3 +674,21 @@ from typing import Tuple, Dict, List
 ```
 
 refer to [custom_rmsle.py#L16](https://github.com/dmlc/xgboost/blob/master/demo/guide-python/custom_rmsle.py#L16)
+
+## `<U5`
+
+I met this term in [How to convert numpy object array into str/unicode array?](https://stackoverflow.com/questions/16037824/how-to-convert-numpy-object-array-into-str-unicode-array)
+
+I am confused about the [official english documentation](https://docs.scipy.org/doc/numpy-1.10.0/reference/arrays.dtypes.html)
+
+[A Chinese answer](https://segmentfault.com/q/1010000012049371) solves my question,
+
+- `<` 表示字节顺序，小端（最小有效字节存储在最小地址中）
+- `U` 表示Unicode，数据类型
+- `5` 表示元素位长，数据大小
+
+## the `i`-th row in pandas
+
+```python
+df_test.iloc[0]
+```
