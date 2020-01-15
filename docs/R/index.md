@@ -520,3 +520,7 @@ install.packages("Rcpp", dependencies=TRUE, INSTALL_opts = c('--no-lock'))
 ```
 
 refer to [R install.packages returns “failed to create lock directory”](https://stackoverflow.com/questions/14382209/r-install-packages-returns-failed-to-create-lock-directory)
+
+## nonzero in `dgCMatrix`
+
+refer to [R package Matrix: get number of non-zero entries per rows / columns of a sparse matrix](https://stackoverflow.com/questions/51560456/r-package-matrix-get-number-of-non-zero-entries-per-rows-columns-of-a-sparse)

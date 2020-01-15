@@ -1,6 +1,6 @@
 ## 利用@media screen实现网页布局的自适应
 
-参考http://www.cnblogs.com/xcxc/p/4531846.html
+参考 [利用@media screen实现网页布局的自适应](http://www.cnblogs.com/xcxc/p/4531846.html)
 
 ### 1280分辨率以上（大于1200px）
 
@@ -71,3 +71,9 @@ display: block
 或者参考
 
 [rem、px、em之间的区别以及网页响应式设计写法 - Gabriel_wei - 博客园](https://www.cnblogs.com/Gabriel-Wei/p/6180554.html)
+
+简单说，
+
+- `rem`: 相对根节点
+- `em`: 相对父节点
+- `px`: 绝对值

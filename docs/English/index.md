@@ -1,3 +1,11 @@
+## 2020.01.15
+
+1. Linguist and public intellectual [Steven Pinker](https://zh.wikipedia.org/wiki/%E5%8F%B2%E8%BF%AA%E8%8A%AC%C2%B7%E5%B9%B3%E5%85%8B) got into trouble recently when it turned out that he'd been offering expert advice to the legal team of now-disgraced financier [Jeffrey Epstein](https://www.zhihu.com/question/339846979).
+2. **taboo** questions raise our blood pressure and threaten moral panic
+3. I thought [A Fish Called Wanda](https://movie.douban.com/subject/1292440/) was **hilarious** in 1988 and I happened to see it again last year, and I found it hilarious the second time as well. Not **cringeworthy** at all.
+
+from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/14/steven-pinker-on-torture/)
+
 ## 2020.01.08
 
 1. An example is some preliminary data gathered at Stanford on revival of cardiac arrest patients by **paramedics**.
