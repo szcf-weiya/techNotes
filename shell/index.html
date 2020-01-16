@@ -356,6 +356,19 @@
     -r的作用
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    实战一
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1172,6 +1185,19 @@
     -r的作用
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    实战一
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1285,6 +1311,24 @@
 <li><code>\(abc\)\{2,3\}</code> becomes <code>(abc){2,3}</code> when using extended regular expressions. It matches either <code>abcabc</code> or <code>abcabcabc</code>.</li>
 <li><code>\(abc*\)\1</code> becomes <code>(abc*)\1</code> when using extended regular expressions. Backreferences must still be escaped when using extended regular expressions.</li>
 </ol>
+<h3 id="_2">实战一<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>将</p>
+<div class="codehilite"><pre><span></span><span class="err">!</span><span class="o">[</span><span class="n">IMG_0802</span><span class="o">]</span><span class="p">(</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="k">user</span><span class="o">-</span><span class="n">images</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="mi">13688320</span><span class="o">/</span><span class="mi">72489850</span><span class="o">-</span><span class="mi">733</span><span class="n">ae480</span><span class="o">-</span><span class="mi">3850</span><span class="o">-</span><span class="mi">11</span><span class="n">ea</span><span class="o">-</span><span class="mf">8e51</span><span class="o">-</span><span class="mi">15021588</span><span class="n">a7e6</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+
+<p>替换成</p>
+<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">IMG_0802</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="k">user</span><span class="o">-</span><span class="n">images</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="mi">13688320</span><span class="o">/</span><span class="mi">72489850</span><span class="o">-</span><span class="mi">733</span><span class="n">ae480</span><span class="o">-</span><span class="mi">3850</span><span class="o">-</span><span class="mi">11</span><span class="n">ea</span><span class="o">-</span><span class="mf">8e51</span><span class="o">-</span><span class="mi">15021588</span><span class="n">a7e6</span><span class="p">.</span><span class="n">jpg</span><span class="w"></span>
+</pre></div>
+
+<p>解决方案</p>
+<div class="codehilite"><pre><span></span>sed -i <span class="s2">&quot;s/\!\[IMG_\([0-9]\{4\}\)\](\(.*\))/\[IMG_\1\]\: \2/g&quot;</span> FILENAME
+</pre></div>
+
+<ul>
+<li><code>\(\)</code> 用于匹配子串，并可以通过 <code>\1</code>, <code>\2</code> 引用</li>
+<li><code>\!</code> 需要 escape</li>
+<li><code>\2</code> 前面的空格不需要写成 <code>[ ]</code>，不然会直接出现 <code>[ ]</code>，而之前某次为了匹配多个空格需要写成 <code>[ ]*</code></li>
+</ul>
 <h2 id="awk">awk<a class="headerlink" href="#awk" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://linux.cn/article-3945-1.html">技术|如何在Linux中使用awk命令</a></p>
 <h2 id="ip">统计访问日志里每个 ip 访问次数<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h2>
