@@ -57,6 +57,30 @@ done
 4. `\(abc\)\{2,3\}` becomes `(abc){2,3}` when using extended regular expressions. It matches either `abcabc` or `abcabcabc`.
 5. `\(abc*\)\1` becomes `(abc*)\1` when using extended regular expressions. Backreferences must still be escaped when using extended regular expressions.
 
+### 实战一
+
+将
+
+```
+![IMG_0802](https://user-images.githubusercontent.com/13688320/72489850-733ae480-3850-11ea-8e51-15021588a7e6.jpg)
+```
+
+替换成
+
+```
+[IMG_0802]: https://user-images.githubusercontent.com/13688320/72489850-733ae480-3850-11ea-8e51-15021588a7e6.jpg
+```
+
+解决方案
+
+```bash
+sed -i "s/\!\[IMG_\([0-9]\{4\}\)\](\(.*\))/\[IMG_\1\]\: \2/g" FILENAME
+```
+
+- `\(\)` 用于匹配子串，并可以通过 `\1`, `\2` 引用
+- `\!` 需要 escape
+- `\2` 前面的空格不需要写成 `[ ]`，不然会直接出现 `[ ]`，而之前某次为了匹配多个空格需要写成 `[ ]*`
+
 ## awk
 
 参考[技术|如何在Linux中使用awk命令](https://linux.cn/article-3945-1.html)
