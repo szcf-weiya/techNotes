@@ -47,7 +47,7 @@ done
 
 > The only difference between basic and extended regular expressions is in the behavior of a few characters: ‘?’, ‘+’, parentheses, and braces (‘{}’). While basic regular expressions require these to be escaped if you want them to behave as special characters, when using extended regular expressions you must escape them if you want them to match a literal character.
 
-就是说basic模式下，要使用特殊字符（如正则表达式中）需要转义，但extended模式相反，转义后表达的是原字符。
+就是说 basic 模式下，要使用特殊字符（如正则表达式中）需要转义，但extended模式相反，转义后表达的是原字符。
 
 举个例子
 
