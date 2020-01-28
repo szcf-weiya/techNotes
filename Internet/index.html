@@ -750,6 +750,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cuhk-vpn" class="md-nav__link">
+    CUHK VPN 连接失败
+  </a>
+  
+</li>
+      
       
       
       
@@ -1308,6 +1315,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cuhk-vpn" class="md-nav__link">
+    CUHK VPN 连接失败
+  </a>
+  
+</li>
+      
       
       
       
@@ -1481,6 +1495,9 @@ sudo apt-get install network-manager-l2tp-gnome
 <p>安装。</p>
 <p>这种方式相当于增加了 <code>L2TP</code> VPN 的设置界面，到这里我也渐渐明白 <code>xl2tpd_zju</code> 和这种方式本质上应该是一样的。于是我按照之前的配置方式新建了一个 VPN 的连接，但还是没用。</p>
 <p>最后我换了 VPN 的 ip（有两个 ip，10.5.1.5 和 10.5.1.9），之前 <code>xl2tpd_zju</code> 默认是 10.5.1.5，误打误撞，改成 10.5.1.9 后，竟然成功了！！</p>
+<h2 id="cuhk-vpn">CUHK VPN 连接失败<a class="headerlink" href="#cuhk-vpn" title="Permanent link">&para;</a></h2>
+<p>Ubuntu 16.04 </p>
+<p>在安装 <code>network-manager-l2tp-gnome</code> 好后（如 https://medium.com/@hkdb/ubuntu-16-04-connecting-to-l2tp-over-ipsec-via-network-manager-204b5d475721），能够连接，但是并不能访问 google，甚至 baidu 也不行，而手机端 vpn 可以正常使用。并且尝试访问 google 失败后，便弹出 vpn stop 的消息。</p>
                 
                   
                 
