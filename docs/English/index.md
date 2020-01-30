@@ -7,6 +7,8 @@
 5. brash rather than decorous
 6. the men are viewed through the **prism**
 7. Leavitt is a bit more **ruthless**, willing to let his characters hang in classic British style (e.g., Evelyn Waugh or George Orwell), in contrast to Wolitzer who likes her characters so much that she wants to give them a happy ending.
+8. **disparage** a number of journals
+9. Is it the number of articles that they publish that end up being **bogus**?
 
 ## 2020.01.15
 
