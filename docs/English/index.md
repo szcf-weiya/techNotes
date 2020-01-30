@@ -1,3 +1,13 @@
+## 2019.01.30
+
+1. a style that is so simple and open and **guileless** that it approaches **parody**.
+2. The Remains of the Day is clearly **parodic**.
+3. I found that some labeled the book as **satire** and others took it straight.
+4. with any parodic elements merely representing Levitt’s recognition of life’s **absurdities**.
+5. brash rather than decorous
+6. the men are viewed through the **prism**
+7. Leavitt is a bit more **ruthless**, willing to let his characters hang in classic British style (e.g., Evelyn Waugh or George Orwell), in contrast to Wolitzer who likes her characters so much that she wants to give them a happy ending.
+
 ## 2020.01.15
 
 1. Linguist and public intellectual [Steven Pinker](https://zh.wikipedia.org/wiki/%E5%8F%B2%E8%BF%AA%E8%8A%AC%C2%B7%E5%B9%B3%E5%85%8B) got into trouble recently when it turned out that he'd been offering expert advice to the legal team of now-disgraced financier [Jeffrey Epstein](https://www.zhihu.com/question/339846979).
