@@ -293,3 +293,44 @@ ssh [username@]22.33.44.55 -p 10022
 注意，`YOU` 的 username 是 slaver 的 username!!
 
 另外一种更复杂的工具是 [frp](https://github.com/fatedier/frp)
+
+在 Issue 中看到有人讨论 [Why not just use SSH?](https://github.com/aploium/shootback/issues/4)，才发现还有很多策略访问内网，比如
+
+- [ssh 反向隧道](https://zhuanlan.zhihu.com/p/34908698), or [外网如何访问学校内网资源？](https://www.zhihu.com/question/25061712/answer/139905076)
+- [ngrok](https://ngrok.com/)
+
+### ngrok
+
+on the server:
+
+```bash
+./ngrok tcp --region=jp 22
+```
+
+then on the local laptop:
+
+```bash
+ssh username@... -p
+```
+
+choose the nearest center to faster the connection.
+
+refer to [SSH into remote Linux by using ngrok](https://medium.com/@byteshiva/ssh-into-remote-linux-by-using-ngrok-b8c49b8dc3ca) and [Documentation of ngrok](https://ngrok.com/docs#tcp)
+
+### SSH 反向隧道
+
+一个惊人的发现这也可以实现翻墙！！
+
+```bash
+# inner sever
+autossh -M 30000 -NR 30001:localhost:22 server-user@server-address
+# server
+ssh -g -D 30002 -p30001 inner-user@localhost
+```
+
+那 30002 端口有啥用呢！！
+
+> 将 30002 端口上的连接都转发到内网主机 inner 上（server 上的 30001 端口代表 inner 上的 22 端口）
+
+所以如果我在 SwitchyOmega 上添加一条 socks5 记录，端口为 30002，而 sever 即填 `server-address`，则可以翻墙了！！
+
