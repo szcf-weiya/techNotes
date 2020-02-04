@@ -779,8 +779,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    尝试三：Windows
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    内网穿透
+  </a>
   
 </li>
       
@@ -1371,8 +1385,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    尝试三：Windows
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    内网穿透
+  </a>
   
 </li>
       
@@ -1584,6 +1612,23 @@ sudo apt-get install network-manager-l2tp
 <blockquote>
 <p>Error: Connection activation failed: the VPN service stopped unexpectedly.</p>
 </blockquote>
+<h3 id="windows">尝试三：Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<p>试用 Azure，申请了个 Windows 10，按照 ITSC 的指示连接 VPN，确实能够成功，但是连接成功后，我跟该电脑的连接也就断开了，再次尝试也连不上，只好重启。</p>
+<h2 id="_7">内网穿透<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>系里的服务器需要内网才能访问，连接内网一般需要 VPN，但是因为墙的原因极其不稳定。可以考虑一种内网穿透的策略，借助一台境外有 public IP 的服务器（好几家的云服务商都提供了免费试用），将端口转发，详见 <a href="https://github.com/aploium/shootback">shootback</a></p>
+<div class="codehilite"><pre><span></span><span class="c1"># ---- master ----</span>
+python3 master.py -m <span class="m">0</span>.0.0.0:10000 -c <span class="m">0</span>.0.0.0:10022 --ssl
+
+<span class="c1"># ---- slaver ----</span>
+<span class="c1"># ps: the `--ssl` option is for slaver-master encryption, not for SSH</span>
+python<span class="o">(</span>or python3<span class="o">)</span> slaver.py -m <span class="m">22</span>.33.44.55:10000 -t <span class="m">127</span>.0.0.1:22 --ssl
+
+<span class="c1"># ---- YOU ----</span>
+ssh <span class="o">[</span>username@<span class="o">]</span><span class="m">22</span>.33.44.55 -p <span class="m">10022</span>
+</pre></div>
+
+<p>注意，<code>YOU</code> 的 username 是 slaver 的 username!!</p>
+<p>另外一种更复杂的工具是 <a href="https://github.com/fatedier/frp">frp</a></p>
                 
                   
                 
