@@ -269,3 +269,27 @@ sudo nmcli device status
 
 > Error: Connection activation failed: the VPN service stopped unexpectedly.
 
+### 尝试三：Windows
+
+试用 Azure，申请了个 Windows 10，按照 ITSC 的指示连接 VPN，确实能够成功，但是连接成功后，我跟该电脑的连接也就断开了，再次尝试也连不上，只好重启。
+
+## 内网穿透
+
+系里的服务器需要内网才能访问，连接内网一般需要 VPN，但是因为墙的原因极其不稳定。可以考虑一种内网穿透的策略，借助一台境外有 public IP 的服务器（好几家的云服务商都提供了免费试用），将端口转发，详见 [shootback](https://github.com/aploium/shootback)
+
+
+```bash
+# ---- master ----
+python3 master.py -m 0.0.0.0:10000 -c 0.0.0.0:10022 --ssl
+
+# ---- slaver ----
+# ps: the `--ssl` option is for slaver-master encryption, not for SSH
+python(or python3) slaver.py -m 22.33.44.55:10000 -t 127.0.0.1:22 --ssl
+
+# ---- YOU ----
+ssh [username@]22.33.44.55 -p 10022
+```
+
+注意，`YOU` 的 username 是 slaver 的 username!!
+
+另外一种更复杂的工具是 [frp](https://github.com/fatedier/frp)
