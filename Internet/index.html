@@ -796,6 +796,26 @@
     内网穿透
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ngrok" class="md-nav__link">
+    ngrok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    SSH 反向隧道
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -1402,6 +1422,26 @@
     内网穿透
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ngrok" class="md-nav__link">
+    ngrok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    SSH 反向隧道
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -1629,6 +1669,35 @@ ssh <span class="o">[</span>username@<span class="o">]</span><span class="m">22<
 
 <p>注意，<code>YOU</code> 的 username 是 slaver 的 username!!</p>
 <p>另外一种更复杂的工具是 <a href="https://github.com/fatedier/frp">frp</a></p>
+<p>在 Issue 中看到有人讨论 <a href="https://github.com/aploium/shootback/issues/4">Why not just use SSH?</a>，才发现还有很多策略访问内网，比如</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/34908698">ssh 反向隧道</a>, or <a href="https://www.zhihu.com/question/25061712/answer/139905076">外网如何访问学校内网资源？</a></li>
+<li><a href="https://ngrok.com/">ngrok</a></li>
+</ul>
+<h3 id="ngrok">ngrok<a class="headerlink" href="#ngrok" title="Permanent link">&para;</a></h3>
+<p>on the server:</p>
+<div class="codehilite"><pre><span></span>./ngrok tcp --region<span class="o">=</span>jp <span class="m">22</span>
+</pre></div>
+
+<p>then on the local laptop:</p>
+<div class="codehilite"><pre><span></span>ssh username@... -p
+</pre></div>
+
+<p>choose the nearest center to faster the connection.</p>
+<p>refer to <a href="https://medium.com/@byteshiva/ssh-into-remote-linux-by-using-ngrok-b8c49b8dc3ca">SSH into remote Linux by using ngrok</a> and <a href="https://ngrok.com/docs#tcp">Documentation of ngrok</a></p>
+<h3 id="ssh">SSH 反向隧道<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h3>
+<p>一个惊人的发现这也可以实现翻墙！！</p>
+<div class="codehilite"><pre><span></span><span class="c1"># inner sever</span>
+autossh -M <span class="m">30000</span> -NR <span class="m">30001</span>:localhost:22 server-user@server-address
+<span class="c1"># server</span>
+ssh -g -D <span class="m">30002</span> -p30001 inner-user@localhost
+</pre></div>
+
+<p>那 30002 端口有啥用呢！！</p>
+<blockquote>
+<p>将 30002 端口上的连接都转发到内网主机 inner 上（server 上的 30001 端口代表 inner 上的 22 端口）</p>
+</blockquote>
+<p>所以如果我在 SwitchyOmega 上添加一条 socks5 记录，端口为 30002，而 sever 即填 <code>server-address</code>，则可以翻墙了！！</p>
                 
                   
                 
