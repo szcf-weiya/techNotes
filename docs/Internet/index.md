@@ -334,3 +334,34 @@ ssh -g -D 30002 -p30001 inner-user@localhost
 
 所以如果我在 SwitchyOmega 上添加一条 socks5 记录，端口为 30002，而 sever 即填 `server-address`，则可以翻墙了！！
 
+## SSH 端口转发
+
+```bash
+# Local Laptop
+ssh -D 30002 my@server
+```
+
+然后在 SwithyOmega 中添加 socks5://127.0.0.1:30002 即可科学上网。
+
+
+```bash
+# Local Laptop
+ssh -L 30002:localhost:30002 my@server
+# my server
+ssh -D 30002 -p 30001 my@inner-server
+# my innerserver
+ssh -R 30001:localhost:22 my@server
+```
+
+然后在 SwitchyOmega 中添加 socks5://127.0.0.1:30002 即可访问内网资源。
+
+如果将上面的 `my server` 部分改成
+```bash
+ssh -gD 30002 -p 30001 my@inner-server
+```
+
+其中 `-g` 表示允许远程连接，则在 SwitchyOmega 中添加 socks5://my-server:30002 亦可访问内网资源，但这样不够安全，因为似乎所有知道你 server address 都可以访问内网资源，除非特别配置 my server 的安全组，但是应该不是很好，因为你本地的 public ip 是动态分配的，安全组的作用不大。
+
+参考 [玩转SSH端口转发](https://blog.fundebug.com/2017/04/24/ssh-port-forwarding/)
+
+
