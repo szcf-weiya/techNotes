@@ -74,6 +74,16 @@ to install its own private Miniconda distribution for you, in a way that won't i
 
 Refer to [Couldn't find libpython error #199](https://github.com/JuliaPy/PyCall.jl/issues/199)
 
+Actually, using `PyPlot` also encounters the similar question, cannot find `matplotlib`, then I changed to the conda environment contained such package, and then
+
+```julia
+ENV["PYTHON"]="the-python-path";
+# change to package command line
+build PyCall
+```
+
+it works.
+
 ## parallel
 
 references
