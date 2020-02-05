@@ -82,7 +82,7 @@ ENV["PYTHON"]="the-python-path";
 build PyCall
 ```
 
-it works. But if I start julia from another conda environment, it fails.
+it works. And it seems that it does NOT depend on conda environment any more, i.e., `PyPlot` still works for different conda environment, even without `matplotlib` package in such environment.
 
 ## parallel
 
