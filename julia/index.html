@@ -1532,6 +1532,13 @@
 
 <p>to install its own private Miniconda distribution for you, in a way that won&rsquo;t interfere with your other Python installations.</p>
 <p>Refer to <a href="https://github.com/JuliaPy/PyCall.jl/issues/199">Couldn&rsquo;t find libpython error #199</a></p>
+<p>Actually, using <code>PyPlot</code> also encounters the similar question, cannot find <code>matplotlib</code>, then I changed to the conda environment contained such package, and then</p>
+<div class="codehilite"><pre><span></span><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;the-python-path&quot;</span><span class="p">;</span>
+<span class="c"># change to package command line</span>
+<span class="n">build</span> <span class="n">PyCall</span>
+</pre></div>
+
+<p>it works.</p>
 <h2 id="parallel">parallel<a class="headerlink" href="#parallel" title="Permanent link">&para;</a></h2>
 <p>references</p>
 <ol>
