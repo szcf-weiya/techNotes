@@ -82,7 +82,7 @@ ENV["PYTHON"]="the-python-path";
 build PyCall
 ```
 
-it works.
+it works. But if I start julia from another conda environment, it fails.
 
 ## parallel
 
