@@ -1732,6 +1732,13 @@ ssh -R <span class="m">30001</span>:localhost:22 my@server
 </pre></div></p>
 <p>其中 <code>-g</code> 表示允许远程连接，则在 SwitchyOmega 中添加 socks5://my-server:30002 亦可访问内网资源，但这样不够安全，因为似乎所有知道你 server address 都可以访问内网资源，除非特别配置 my server 的安全组，但是应该不是很好，因为你本地的 public ip 是动态分配的，安全组的作用不大。</p>
 <p>参考 <a href="https://blog.fundebug.com/2017/04/24/ssh-port-forwarding/">玩转SSH端口转发</a></p>
+<p>有时候可能需要重新连接一下，但是会出现端口占用的问题，</p>
+<div class="codehilite"><pre><span></span>lsof -i:30002
+</pre></div>
+
+<p>找出端口占用的 pid，然后</p>
+<div class="codehilite"><pre><span></span><span class="nb">kill</span> -s <span class="m">9</span> pid
+</pre></div>
                 
                   
                 
