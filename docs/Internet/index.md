@@ -364,4 +364,16 @@ ssh -gD 30002 -p 30001 my@inner-server
 
 参考 [玩转SSH端口转发](https://blog.fundebug.com/2017/04/24/ssh-port-forwarding/)
 
+有时候可能需要重新连接一下，但是会出现端口占用的问题，
+
+```bash
+lsof -i:30002
+```
+
+找出端口占用的 pid，然后
+
+
+```bash
+kill -s 9 pid
+```
 
