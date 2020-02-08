@@ -21,6 +21,13 @@ disqus 迁移（待研究）
 
 [利用 CDN 解决百度爬虫被 Github Pages 拒绝的问题](https://www.dozer.cc/2015/06/github-pages-and-cdn.html)
 
+### 索引量减少到几乎为 0 了
+
+![](baidu-index.png)
+
+然后发现原来是忘记在百度专用服务器上 `git checkout gh-pages`了，导致直接访问失败，`git log` 显示，上一次更新时间还是 20190804，时间点差不多能对得上去。
+
+
 ## Jekyll Part 13: Creating an Article Series
 
 [Jekyll Part 13: Creating an Article Series](https://digitaldrummerj.me/blogging-on-github-part-13-creating-an-article-series/)
