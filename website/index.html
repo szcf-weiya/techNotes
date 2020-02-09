@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,12 +46,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-header-nav__button md-logo">
+        <a href="https://tech.hohoweiya.xyz" title="techNotes" aria-label="techNotes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -148,7 +148,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -845,6 +845,13 @@
         <li class="md-nav__item">
   <a href="#cdn" class="md-nav__link">
     CDN 价格比较
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cdn_1" class="md-nav__link">
+    多个 CDN 混合使用
   </a>
   
 </li>
@@ -1562,6 +1569,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cdn_1" class="md-nav__link">
+    多个 CDN 混合使用
+  </a>
+  
+</li>
+      
       
       
       
@@ -1622,15 +1636,15 @@
 </li>
 </ol>
 <h3 id="_2">服务器端配置过程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>git clone git@github.com:fooleap/disqus-php-api.git
-</pre></div>
+<div class="codehilite"><pre><span></span><code>git clone git@github.com:fooleap/disqus-php-api.git
+</code></pre></div>
 
 <h2 id="_3">博客中插入网易云音乐<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>这个很容易实现，只需要在网易云中搜索要插入的音乐，然后点击“生成外链播放器”，将iframe代码插入博客的相应位置。</p>
 <p>比如，我想在<a href="">不愿沉默如谜</a>插入容祖儿的<a href="http://music.163.com/#/song?id=522631413">重生</a>。点击页面中的“生成外链播放器”，将iframe代码放进原md文件中。但一开始有问题，iframe被当成普通的md文本。在<a href="https://stackoverflow.com/questions/30233461/jekyll-raw-html-in-post">Jekyll raw HTML in post</a>中找到了答案。</p>
 <p>网易云给的iframe代码为</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;no&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">marginwidth</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">marginheight</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">330</span> <span class="na">height</span><span class="o">=</span><span class="s">86</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//music.163.com/outchain/player?type=2&amp;id=522631413&amp;auto=1&amp;height=66&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;no&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">marginwidth</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">marginheight</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">330</span> <span class="na">height</span><span class="o">=</span><span class="s">86</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//music.163.com/outchain/player?type=2&amp;id=522631413&amp;auto=1&amp;height=66&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div>
 
 <p>要将<code>width=330 height=86</code>改成<code>width="330" height="86"</code>，果然成功了。效果页面如下：</p>
 <p><a href="https://blog.hohoweiya.xyz/movie/2017/12/30/unwilling-to-be-silent.html"><img alt="" src="music.png" /></a></p>
@@ -1652,10 +1666,10 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 </blockquote>
 <h2 id="nginx_1">nginx配置跳转<a class="headerlink" href="#nginx_1" title="Permanent link">&para;</a></h2>
 <p>比如将所有 <code>http://ServerIP/10 Boosting and Additive Trees/.*</code> 的访问301重定向到<code>http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html</code>，在nginx配置文件中添加
-<div class="codehilite"><pre><span></span><span class="err">location ^~ &#39;/10 Boosting and Additive Trees/&#39; {</span>
+<div class="codehilite"><pre><span></span><code><span class="err">location ^~ &#39;/10 Boosting and Additive Trees/&#39; {</span>
 <span class="err">        rewrite ^/.* http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html permanent;</span>
 <span class="err">}</span>
-</pre></div></p>
+</code></pre></div></p>
 <p>几点说明：</p>
 <ol>
 <li>含等号时，不需要用<code>%20</code>进行编码，但需要加上引号，否则会报错，“invalid number of arguments in ‘location’ directive”，参考<a href="https://stackoverflow.com/questions/12101690/nginx-rewrite-that-includes-a-blank-spce">nginx-rewrite-that-includes-a-blank-space</a></li>
@@ -1668,8 +1682,8 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>参考<a href="https://zhuanlan.zhihu.com/p/27384232">Flask 和 jQuery 联合实现传送 JSON 数据的 POST 跨域请求 (CORS)</a></p>
 <p>简单来说，</p>
 <p>在客户端的 ajax 中添加</p>
-<div class="codehilite"><pre><span></span><span class="n">crossDomain</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span>    <span class="c1">// 允许跨域请求</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="n">crossDomain</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span>    <span class="c1">// 允许跨域请求</span>
+</code></pre></div>
 
 <p>另外，在服务器端，通过<code>CORS(app, resources=r'/*')</code>让flask服务器上所有的URL支持跨域请求。</p>
 <p>另外，在ajax中post json的时候，注意用<code>JSON.stringify()</code>进行转换，否则格式为<code>否则格式为 a=2&amp;b=3&amp;now=14...</code>（参考<a href="https://www.cnblogs.com/ajianbeyourself/p/5199144.html">使用Ajax方式POST JSON数据包（转） - 平和的心 - 博客园</a>）</p>
@@ -1696,45 +1710,45 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p><a href="https://joelglovier.com/writing/rss-for-jekyll">RSS for Jekyll blogs</a></p>
 <h2 id="_4">图片旋转后无效果<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>原图片信息为</p>
-<div class="codehilite"><pre><span></span><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames <span class="m">3</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames <span class="m">3</span>
+</code></pre></div>
 
 <p>采用 Shotwell 旋转图片后，
-<div class="codehilite"><pre><span></span><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, Exif Standard: <span class="o">[</span>TIFF image data, little-endian, <span class="nv">direntries</span><span class="o">=</span><span class="m">3</span>, <span class="nv">orientation</span><span class="o">=</span>lower-left, <span class="nv">software</span><span class="o">=</span>Shotwell <span class="m">0</span>.22.0<span class="o">]</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames3
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, Exif Standard: <span class="o">[</span>TIFF image data, little-endian, <span class="nv">direntries</span><span class="o">=</span><span class="m">3</span>, <span class="nv">orientation</span><span class="o">=</span>lower-left, <span class="nv">software</span><span class="o">=</span>Shotwell <span class="m">0</span>.22.0<span class="o">]</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames3
+</code></pre></div></p>
 <p>多了 EXIF 信息，其中有 orientation 信息。但是参考 <a href="https://stackoverflow.com/questions/24658365/img-tag-displays-wrong-orientation/24658511">img tag displays wrong orientation</a> 的帖子，可知，有些浏览器并不遵循这个规则，即无视　EXIF 信息，从而网页端无效果。有人提到可以加上　</p>
-<div class="codehilite"><pre><span></span><span class="nt">img</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">img</span> <span class="p">{</span>
     <span class="k">image-orientation</span><span class="p">:</span> <span class="kc">from-image</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <p>但这个似乎只有 Firefox 和　Safari 支持，Chrome 不支持。</p>
 <p>解决方案：采用 <code>mogrify</code> 或 <code>convert</code> 进行旋转，如</p>
-<div class="codehilite"><pre><span></span>mogrify -rotate <span class="s2">&quot;-90&quot;</span> <span class="m">2018</span>-10-29-cafe.jpg
-</pre></div>
+<div class="codehilite"><pre><span></span><code>mogrify -rotate <span class="s2">&quot;-90&quot;</span> <span class="m">2018</span>-10-29-cafe.jpg
+</code></pre></div>
 
 <p>查看文件信息</p>
-<div class="codehilite"><pre><span></span><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1440x1080, frames <span class="m">3</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1440x1080, frames <span class="m">3</span>
+</code></pre></div>
 
 <p>注意到没有 EXIF 信息，而且 size 也由 1080x1440 变成了 1440x1080，所以这算是真旋转，而之前的加 EXIF 信息算是伪旋转吧。</p>
 <p>如果文件已经存在 orientation 的 EXIF 信息，则 <code>mogrify -rotate</code> 似乎不起作用，解决方案为直接删掉 EXIF 信息，再进行相应的 rotate 操作，其中删除 EXIF 信息的命令是</p>
-<div class="codehilite"><pre><span></span>exiftool -all<span class="o">=</span> /tmp/my_photo.jpg
-</pre></div>
+<div class="codehilite"><pre><span></span><code>exiftool -all<span class="o">=</span> /tmp/my_photo.jpg
+</code></pre></div>
 
 <p>参考 <a href="https://askubuntu.com/questions/260810/how-can-i-read-and-remove-meta-exif-data-from-my-photos-using-the-command-line">How can I read and remove meta (exif) data from my photos using the command line?</a></p>
 <h2 id="_5">字体<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>采用 ADOBE 字体，详见 <a href="https://fonts.adobe.com/typekit">Adobe Fonts</a></p>
 <h2 id="jekyll-tags">jekyll tags 逗号分隔<a class="headerlink" href="#jekyll-tags" title="Permanent link">&para;</a></h2>
 <p>采用</p>
-<div class="codehilite"><pre><span></span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="k">in</span> <span class="nv">page.tags</span> <span class="cp">%}</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">{%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="k">in</span> <span class="nv">page.tags</span> <span class="cp">%}</span>
     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/tag/</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
     <span class="cp">{%</span> <span class="k">unless</span> <span class="nb">forloop</span><span class="nv">.last</span> <span class="cp">%}</span>,<span class="cp">{%</span> <span class="k">endunless</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
-</pre></div>
+</code></pre></div>
 
 <p>但 <a href="https://stackoverflow.com/questions/41858548/list-of-dynamic-links-in-jekyll">List of Dynamic Links in Jekyll</a> 提到了更完整的方案，</p>
-<div class="codehilite"><pre><span></span><span class="cp">{%</span> <span class="k">capture</span> <span class="nv">tagscommas</span> <span class="cp">%}</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">{%</span> <span class="k">capture</span> <span class="nv">tagscommas</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="k">in</span> <span class="nv">page.tags</span> <span class="cp">%}</span>
     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/tag/</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
     <span class="cp">{%</span> <span class="k">unless</span> <span class="nb">forloop</span><span class="nv">.last</span> <span class="cp">%}</span>,<span class="cp">{%</span> <span class="k">endunless</span> <span class="cp">%}</span>
@@ -1742,7 +1756,7 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <span class="cp">{%</span> <span class="k">endcapture</span> <span class="cp">%}</span>
 
 <span class="cp">{{</span><span class="nv">tagscommas</span><span class="cp">}}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="correct-jekyll">Correct Jekyll<a class="headerlink" href="#correct-jekyll" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/">Configuring Jekyll for User and Project GitHub Pages</a></p>
@@ -1754,7 +1768,7 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>新建 tag 页面后，发现链接竟然跳到源站域名上去了，跟又拍那边的技术支持沟通也没找到原因，最后猛然想到是 tag 页面的 url 没有加斜杠，<a href="https://blog.csdn.net/u010525694/article/details/78591355">查了一下</a>，加不加斜杠区别还挺大的。</p>
 <h2 id="_7">博客中的定理环境<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>通过 css 实现，例如</p>
-<div class="codehilite"><pre><span></span><span class="p">.</span><span class="nc">theorem</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nc">theorem</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
     <span class="k">margin</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">font-style</span><span class="p">:</span> <span class="kc">italic</span><span class="p">;</span>
@@ -1764,7 +1778,7 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
     <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
     <span class="k">font-style</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <p>详见 <a href="http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/">LaTeX Theorem-like Environments for the Web</a></p>
 <p>这种方法不能使用 markdown 的列表环境，有时候会不太方便。注意到 kramdown 本身具有一些特性可以解决这个问题，比如设置 Block Attributes，详见 <a href="https://kramdown.gettalong.org/quickref.html">Quick Reference of kramdown</a></p>
@@ -1773,25 +1787,25 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>{: .theorem}</p>
 </blockquote>
 <p>实现定理环境，而且这样还有额外的好处，可以突出定理。但是 before 的字 &ldquo;Theorem&rdquo; 会单独占据一行，误打误撞看到 <a href="https://stackoverflow.com/questions/32909991/adding-quotes-to-blockquote">Adding quotes to blockquote</a>，试了一下</p>
-<div class="codehilite"><pre><span></span><span class="nt">blockquote</span> <span class="nt">p</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">blockquote</span> <span class="nt">p</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="p">;</span>
   <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <p>可以解决这个问题，但担心会破坏其他的 blockquote 环境，于是指定 theorem 可以这样处理，即</p>
-<div class="codehilite"><pre><span></span><span class="nt">blockquote</span><span class="p">.</span><span class="nc">theorem</span> <span class="nt">p</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">blockquote</span><span class="p">.</span><span class="nc">theorem</span> <span class="nt">p</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="p">;</span>
   <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <p>这个用法参考 <a href="https://www.runoob.com/css/css-id-class.html">CSS Id 和 Class</a></p>
 <h2 id="list-start-from-0">list start from 0<a class="headerlink" href="#list-start-from-0" title="Permanent link">&para;</a></h2>
 <p>In <code>kramdown</code>, use an IAL declaration before the list, say</p>
-<div class="codehilite"><pre><span></span>{:start=&quot;3&quot;}
+<div class="codehilite"><pre><span></span><code>{:start=&quot;3&quot;}
 1. test
 1. test
 1. test
-</pre></div>
+</code></pre></div>
 
 <p>Refer to <a href="https://github.com/gettalong/kramdown/issues/211">Support starting numbered lists with arbitrary number #211</a></p>
 <p>Implementation for html can be found <a href="https://stackoverflow.com/questions/15078393/begin-ordered-list-from-0-in-markdown">here</a>.</p>
@@ -1802,70 +1816,70 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 </ul>
 <h2 id="ruby">ruby 版本<a class="headerlink" href="#ruby" title="Permanent link">&para;</a></h2>
 <p>今天 GitHub 提醒英文博客存在</p>
-<div class="codehilite"><pre><span></span>Known high severity security vulnerability detected in rubyzip &lt; 1.3.0 defined in Gemfile.lock. 
-</pre></div>
+<div class="codehilite"><pre><span></span><code>Known high severity security vulnerability detected in rubyzip &lt; 1.3.0 defined in Gemfile.lock. 
+</code></pre></div>
 
 <p>于是合并了它自动创建的 pull request: <a href="https://github.com/szcf-weiya/en/commit/54a7c509594211f7cc05736aa4adb5135bbe21d4">Merge pull request #79 from szcf-weiya/dependabot/bundler/rubyzip-2.0.0</a></p>
 <p>但是后来发现在本地 <code>bundle exec jekyll serve</code> 预览失败。报错信息为</p>
-<div class="codehilite"><pre><span></span>rubyzip-2.0.0 requires ruby version &gt;= 2.4, which is incompatible with the current version, ruby 2.3.1p112
-</pre></div>
+<div class="codehilite"><pre><span></span><code>rubyzip-2.0.0 requires ruby version &gt;= 2.4, which is incompatible with the current version, ruby 2.3.1p112
+</code></pre></div>
 
 <p>看样子 ruby 版本不够，于是参考 <a href="https://askubuntu.com/questions/839775/how-do-i-upgrade-to-ruby-2-2-on-my-ubuntu-system">How do I upgrade to Ruby 2.2 on my Ubuntu system?</a></p>
-<div class="codehilite"><pre><span></span>sudo apt-add-repository ppa:brightbox/ruby-ng
+<div class="codehilite"><pre><span></span><code>sudo apt-add-repository ppa:brightbox/ruby-ng
 sudo apt-get update
 sudo apt-get install ruby2.4
-</pre></div>
+</code></pre></div>
 
 <p>安装了 <code>ruby2.4</code>，完成后 <code>ruby</code> 也自动从 <code>ruby2.3</code> 更改到了 <code>ruby2.4</code>，但是重新运行</p>
-<div class="codehilite"><pre><span></span>bundle <span class="nb">exec</span> jekyll serve
-</pre></div>
+<div class="codehilite"><pre><span></span><code>bundle <span class="nb">exec</span> jekyll serve
+</code></pre></div>
 
 <p>还是报同样的错误信息。后来参考 <a href="https://github.com/bundler/bundler/issues/4260">Bundler using wrong ruby version</a>，运行</p>
-<div class="codehilite"><pre><span></span>bundle env <span class="p">|</span> grep ruby
-</pre></div>
+<div class="codehilite"><pre><span></span><code>bundle env <span class="p">|</span> grep ruby
+</code></pre></div>
 
 <p>发现里面的版本确实还是 2.3，于是按照里面的建议运行 </p>
-<div class="codehilite"><pre><span></span>gem install bundler
-</pre></div>
+<div class="codehilite"><pre><span></span><code>gem install bundler
+</code></pre></div>
 
 <p>这样重新运行 <code>bundle env | grep ruby</code> 发现版本确实更新过来了。但是再次运行  </p>
-<div class="codehilite"><pre><span></span>bundle <span class="nb">exec</span> jekyll serve
-</pre></div>
+<div class="codehilite"><pre><span></span><code>bundle <span class="nb">exec</span> jekyll serve
+</code></pre></div>
 
 <p>出现了新的错误</p>
-<div class="codehilite"><pre><span></span>An error occurred <span class="k">while</span> installing commonmarker <span class="o">(</span><span class="m">0</span>.17.13<span class="o">)</span>, and Bundler cannot <span class="k">continue</span>.
+<div class="codehilite"><pre><span></span><code>An error occurred <span class="k">while</span> installing commonmarker <span class="o">(</span><span class="m">0</span>.17.13<span class="o">)</span>, and Bundler cannot <span class="k">continue</span>.
 Make sure that <span class="sb">`</span>gem install commonmarker -v <span class="s1">&#39;0.17.13&#39;</span> --source <span class="s1">&#39;https://rubygems.org/&#39;</span><span class="sb">`</span> succeeds before bundling.
-</pre></div>
+</code></pre></div>
 
 <p>后来参考 <a href="https://stackoverflow.com/questions/20559255/error-while-installing-json-gem-mkmf-rb-cant-find-header-files-for-ruby">Error while installing json gem &lsquo;mkmf.rb can&rsquo;t find header files for ruby&rsquo;</a></p>
 <p>安装</p>
-<div class="codehilite"><pre><span></span>sudo apt-get install ruby2.4-dev
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo apt-get install ruby2.4-dev
+</code></pre></div>
 
 <p>~~解决了问题！~~</p>
 <p>发现还没有这么简单，总是报错</p>
-<div class="codehilite"><pre><span></span><span class="err">Could not find ffi-1.11.1 in any of the sources</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">Could not find ffi-1.11.1 in any of the sources</span>
+</code></pre></div>
 
 <p>但实际上已经装好了。不知道咋回事。</p>
 <p>后来参考 https://jekyllrb.com/docs/ 重头开始，</p>
-<div class="codehilite"><pre><span></span><span class="err">gem install jekyll bundler</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">gem install jekyll bundler</span>
+</code></pre></div>
 
 <p>然后这一步一开始报错</p>
-<div class="codehilite"><pre><span></span><span class="n">ERROR</span><span class="o">:</span>  <span class="n">Error</span> <span class="n">installing</span> <span class="n">jekyll</span><span class="o">:</span>
+<div class="codehilite"><pre><span></span><code><span class="n">ERROR</span><span class="o">:</span>  <span class="n">Error</span> <span class="n">installing</span> <span class="n">jekyll</span><span class="o">:</span>
         <span class="n">jekyll</span> <span class="n">requires</span> <span class="n">RubyGems</span> <span class="n">version</span> <span class="o">&gt;=</span> <span class="mf">2.7</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span> <span class="n">Try</span> <span class="s1">&#39;gem update --system&#39;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">RubyGems</span> <span class="n">itself</span><span class="o">.</span>
-</pre></div>
+</code></pre></div>
 
 <p>于是运行 </p>
-<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">sudo</span><span class="o">]</span><span class="w"> </span><span class="n">gem</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="c1">--system</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">sudo</span><span class="o">]</span><span class="w"> </span><span class="n">gem</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="c1">--system</span>
+</code></pre></div>
 
 <p>应该要加上 <code>sudo</code>，否则会报错</p>
-<div class="codehilite"><pre><span></span><span class="err">Installing RubyGems 3.0.6</span>
+<div class="codehilite"><pre><span></span><code><span class="err">Installing RubyGems 3.0.6</span>
 <span class="c">ERROR:  While executing gem ... (Errno::EACCES)</span>
 <span class="c">    Permission denied @ dir_s_mkdir - /usr/local/lib/site_ruby</span>
-</pre></div>
+</code></pre></div>
 
 <p>安装成功后，最后终于成功了！！</p>
 <h2 id="cdn">CDN 价格比较<a class="headerlink" href="#cdn" title="Permanent link">&para;</a></h2>
@@ -1876,6 +1890,24 @@ Make sure that <span class="sb">`</span>gem install commonmarker -v <span class=
 <p>阿里云：</p>
 <p><img alt="" src="cdn-20191228-aliyun-1.png" /></p>
 <p><img alt="" src="cdn-20191228-aliyun-2.png" /></p>
+<h2 id="cdn_1">多个 CDN 混合使用<a class="headerlink" href="#cdn_1" title="Permanent link">&para;</a></h2>
+<p>华为云可以免费申请 500 G 的境外 CDN，而又拍云之前买了大陆流量的 CDN，再加上阿里云域名解析有“智能解析”选项，猜测能否开通两个 CDN，境外走华为云，境内走又拍云。经试验，应该是可以的，</p>
+<ol>
+<li>又拍云加速区域改为境内</li>
+<li>华为云加速区域选择境外，同一加速域名</li>
+<li>阿里云域名解析添加华为云 CDN 设置时产生的 CNAME，注意解析线路选择境外。又拍云此前设置的 CDN 保持默认不变。</li>
+</ol>
+<p>这样为什么就可以了呢？！注意到解析线路的“默认”是这样说的，</p>
+<blockquote>
+<p>必填！未匹配到智能解析线路时，返回【默认】线路设置结果</p>
+</blockquote>
+<p>所以是不是应该这样理解，对于境外访问，因为能够匹配到智能解析线路，所以指向华为云的 CDN，而对于境内访问，因为匹配不到智能线路，则采用默认的 CNAME，即又拍云的。</p>
+<p>但还有几个小问题需要解决：</p>
+<ol>
+<li>又拍云之前有申请免费的 ssl 证书，所以支持 https，但境外走 CDN 后，华为云上面没有 SSL 证书，于是在阿里云那边申请了免费的证书，然后下载，然后将 <code>.pem</code> 和 <code>.key</code> 输入到华为云的 https 设置中。</li>
+<li>对于又拍云，其 https 连接是增值服务，而华为云竟然没看到这一点，这样挺好的，所以少交了 https 的增值费。</li>
+</ol>
+<p>另外，在配置华为云的回源 host 突然意识到一点，其实没必要通过中间域名，或许直接在 github 那边的 CNAME 文件中添加同一加速域名即可，不需要单独解析这个加速域名！这个就有点像在服务器中任意指定一个域名，但是并没有在域名服务商那边提供解析，它只是为了在 github 这个大服务器中找到对应的结点。</p>
                 
                   
                 
@@ -1938,24 +1970,24 @@ Make sure that <span class="sb">`</span>gem install commonmarker -v <span class=
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/szcf-weiya" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/szcf-weiya" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://esl.hohoweiya.xyz" class="md-footer-social__link fa fa-book"></a>
+      <a href="https://esl.hohoweiya.xyz" target="_blank" rel="noopener" title="book" class="md-footer-social__link fa fa-book"></a>
     
-      <a href="https://hohoweiya.xyz" class="md-footer-social__link fa fa-home"></a>
+      <a href="https://hohoweiya.xyz" target="_blank" rel="noopener" title="home" class="md-footer-social__link fa fa-home"></a>
     
-      <a href="https://blog.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
+      <a href="https://blog.hohoweiya.xyz" target="_blank" rel="noopener" title="rss" class="md-footer-social__link fa fa-rss"></a>
     
-      <a href="mailto:szcfweiya@gmail.com" class="md-footer-social__link fa fa-envelope"></a>
+      <a href="mailto:szcfweiya@gmail.com" target="_blank" rel="noopener" title="envelope" class="md-footer-social__link fa fa-envelope"></a>
     
   </div>
 
@@ -1965,7 +1997,7 @@ Make sure that <span class="sb">`</span>gem install commonmarker -v <span class=
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,12 +46,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#servers" tabindex="1" class="md-skip">
+      <a href="#servers" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-header-nav__button md-logo">
+        <a href="https://tech.hohoweiya.xyz" title="techNotes" aria-label="techNotes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -148,7 +148,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1140,27 +1140,27 @@
 <div class="superfences-tabs">
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
 <label for="__tab_1_0">PBS</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span>/usr/bin/mpirun -v -np <span class="m">28</span> -machinefile <span class="nv">$PBS_NODEFILE</span> ./myexe <span class="si">${</span><span class="nv">NUMBERARG</span><span class="si">}</span> <span class="si">${</span><span class="nv">LETTERARG</span><span class="si">}</span>
-</pre></div></div>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code>/usr/bin/mpirun -v -np <span class="m">28</span> -machinefile <span class="nv">$PBS_NODEFILE</span> ./myexe <span class="si">${</span><span class="nv">NUMBERARG</span><span class="si">}</span> <span class="si">${</span><span class="nv">LETTERARG</span><span class="si">}</span>
+</code></pre></div></div>
 <input name="__tabs_1" type="radio" id="__tab_1_1" />
 <label for="__tab_1_1">Bash</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="k">for</span> NUMBERS in <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="p">;</span> <span class="k">do</span>
     <span class="k">for</span> LETTERS in a b c d e<span class="p">;</span> <span class="k">do</span>
          qsub -v <span class="nv">NUMBERARG</span><span class="o">=</span><span class="nv">$NUMBERS</span>,LETTERARG<span class="o">=</span><span class="nv">$LETTERS</span> my_qsub_script.pbs
     <span class="k">done</span>
 <span class="k">done</span>
-</pre></div></div>
+</code></pre></div></div>
 <input name="__tabs_1" type="radio" id="__tab_1_2" />
 <label for="__tab_1_2">Run</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span>chmod +x submit_multiple_jobs.sh
+<div class="superfences-content"><div class="codehilite"><pre><span></span><code>chmod +x submit_multiple_jobs.sh
 ./submit_multiple_jobs.sh
-</pre></div></div>
+</code></pre></div></div>
 </div>
 <p>refer to <a href="http://www.pace.gatech.edu/submitting-multiple-jobs-quickly">Submitting Multiple Jobs Quickly</a>.</p>
 <h2 id="pbs-passing-argument-list">PBS passing argument list<a class="headerlink" href="#pbs-passing-argument-list" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>qsub your.job -v <span class="nv">arg1</span><span class="o">=</span>val1,arg2<span class="o">=</span>val2
-</pre></div>
+<div class="codehilite"><pre><span></span><code>qsub your.job -v <span class="nv">arg1</span><span class="o">=</span>val1,arg2<span class="o">=</span>val2
+</code></pre></div>
 
 <h2 id="pbs-cheat-sheet">PBS cheat sheet<a class="headerlink" href="#pbs-cheat-sheet" title="Permanent link">&para;</a></h2>
 <p><a href="../PBS Script_0.pdf">PBS Script</a></p>
@@ -1177,8 +1177,8 @@
 <ol>
 <li>上传文件</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="err">scp -i MyKeyFile.pem FileToUpload.pdf ubuntu@ec2-123-123-123-123.compute-1.amazonaws.com:FileToUpload.pdf</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">scp -i MyKeyFile.pem FileToUpload.pdf ubuntu@ec2-123-123-123-123.compute-1.amazonaws.com:FileToUpload.pdf</span>
+</code></pre></div>
 
 <p>refer to <a href="https://stackoverflow.com/questions/10364950/uploading-files-on-amazon-ec2">Uploading files on Amazon EC2</a></p>
 <ol start="2">
@@ -1188,8 +1188,8 @@
 <ol start="3">
 <li>slave 结点连接不上 master</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="err">Caused by: java.io.IOException: Connecting to ×××× timed out (120000 ms)</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">Caused by: java.io.IOException: Connecting to ×××× timed out (120000 ms)</span>
+</code></pre></div>
 
 <p>安全组配置，后台允许 <code>7077</code> 端口 <code>In</code>，本来以为同在一个 VPC 不需要配置。</p>
 <ol start="4">
@@ -1258,24 +1258,24 @@
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/szcf-weiya" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/szcf-weiya" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://esl.hohoweiya.xyz" class="md-footer-social__link fa fa-book"></a>
+      <a href="https://esl.hohoweiya.xyz" target="_blank" rel="noopener" title="book" class="md-footer-social__link fa fa-book"></a>
     
-      <a href="https://hohoweiya.xyz" class="md-footer-social__link fa fa-home"></a>
+      <a href="https://hohoweiya.xyz" target="_blank" rel="noopener" title="home" class="md-footer-social__link fa fa-home"></a>
     
-      <a href="https://blog.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
+      <a href="https://blog.hohoweiya.xyz" target="_blank" rel="noopener" title="rss" class="md-footer-social__link fa fa-rss"></a>
     
-      <a href="mailto:szcfweiya@gmail.com" class="md-footer-social__link fa fa-envelope"></a>
+      <a href="mailto:szcfweiya@gmail.com" target="_blank" rel="noopener" title="envelope" class="md-footer-social__link fa fa-envelope"></a>
     
   </div>
 
@@ -1285,7 +1285,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

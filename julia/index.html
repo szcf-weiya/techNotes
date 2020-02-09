@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,12 +46,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#julia" tabindex="1" class="md-skip">
+      <a href="#julia" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-header-nav__button md-logo">
+        <a href="https://tech.hohoweiya.xyz" title="techNotes" aria-label="techNotes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -148,7 +148,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1510,9 +1510,9 @@
 <h2 id="error-expected-typet">ERROR: <code>expected Type{T}</code><a class="headerlink" href="#error-expected-typet" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://discourse.julialang.org/t/error-loaderror-typeerror-type-expression-expected-type-t-got-module/1230/4">ERROR: LoadError: TypeError: Type{&hellip;} expression: expected Type{T}, got Module</a></p>
 <p>其中举了一个小例子</p>
-<div class="codehilite"><pre><span></span><span class="k">module</span> <span class="n">Foo</span> <span class="k">end</span>
+<div class="codehilite"><pre><span></span><code><span class="k">module</span> <span class="n">Foo</span> <span class="k">end</span>
 <span class="n">Foo</span><span class="p">{</span><span class="kt">Int64</span><span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <p>会爆出这样的错误。但是一开始竟然没有仔细类比，最后在 REPL 中逐行试验才发现是，<code>using SharedArrays</code> 后直接用 <code>SharedArrays{Float64}(10)</code>，这与上面 <code>Foo</code> 的错误形式完全一样，竟然没有仔细类比。哎，看来以后多思考一下错误可能的原因，不要一味蛮力试验。</p>
 <h2 id="type-instance-and-object">type, instance, and object<a class="headerlink" href="#type-instance-and-object" title="Permanent link">&para;</a></h2>
@@ -1527,16 +1527,16 @@
 <li>object of some instances</li>
 </ol>
 <h2 id="couldnt-find-libpython-error">Couldn&rsquo;t find libpython error<a class="headerlink" href="#couldnt-find-libpython-error" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span> <span class="n">Pkg</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s">&quot;PyCall&quot;</span><span class="p">)</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span> <span class="n">Pkg</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s">&quot;PyCall&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <p>to install its own private Miniconda distribution for you, in a way that won&rsquo;t interfere with your other Python installations.</p>
 <p>Refer to <a href="https://github.com/JuliaPy/PyCall.jl/issues/199">Couldn&rsquo;t find libpython error #199</a></p>
 <p>Actually, using <code>PyPlot</code> also encounters the similar question, cannot find <code>matplotlib</code>, then I changed to the conda environment contained such package, and then</p>
-<div class="codehilite"><pre><span></span><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;the-python-path&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;the-python-path&quot;</span><span class="p">;</span>
 <span class="c"># change to package command line</span>
 <span class="n">build</span> <span class="n">PyCall</span>
-</pre></div>
+</code></pre></div>
 
 <p>it works. And it seems that it does NOT depend on conda environment any more, i.e., <code>PyPlot</code> still works for different conda environment, even without <code>matplotlib</code> package in such environment.</p>
 <h2 id="parallel">parallel<a class="headerlink" href="#parallel" title="Permanent link">&para;</a></h2>
@@ -1549,7 +1549,7 @@
 <h2 id="pbsdsh-unsolved">pbsdsh (unsolved)<a class="headerlink" href="#pbsdsh-unsolved" title="Permanent link">&para;</a></h2>
 <p>Submit a pbsdsh job and specify multiply nodes with multiply cores, say <code>nodes=2:ppn=4</code></p>
 <p>error log file (see full file in the cluster: <code>dshmcmc.e21907</code>):</p>
-<div class="codehilite"><pre><span></span><span class="nl">fatal</span><span class="p">:</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="n">thrown</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="k">exception</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="n">available</span><span class="p">.</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="nl">fatal</span><span class="p">:</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="n">thrown</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="k">exception</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="n">available</span><span class="p">.</span><span class="w"></span>
 <span class="n">InitError</span><span class="p">(</span><span class="k">mod</span><span class="o">=</span><span class="err">:</span><span class="n">Base</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="o">=</span><span class="n">ArgumentError</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="ss">&quot;Package Sockets not found in current path:</span>
 <span class="ss">- Run `Pkg.add(&quot;</span><span class="n">Sockets</span><span class="ss">&quot;)` to install the Sockets package.</span>
 <span class="ss">&quot;</span><span class="p">))</span><span class="w"></span>
@@ -1570,7 +1570,7 @@
 <span class="n">main</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">ui</span><span class="o">/</span><span class="n">repl</span><span class="p">.</span><span class="nl">c</span><span class="p">:</span><span class="mi">227</span><span class="w"></span>
 <span class="n">__libc_start_main</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">libc</span><span class="p">.</span><span class="n">so</span><span class="mf">.6</span><span class="w"> </span><span class="p">(</span><span class="k">unknown</span><span class="w"> </span><span class="n">line</span><span class="p">)</span><span class="w"></span>
 <span class="n">_start</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">julia</span><span class="o">-</span><span class="mf">1.0.0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">julia</span><span class="w"> </span><span class="p">(</span><span class="k">unknown</span><span class="w"> </span><span class="n">line</span><span class="p">)</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 <p>But when I just use single node, and arbitrary cores, say <code>nodes=1:ppn=2</code>, it works well.</p>
 <h3 id="references">references<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
@@ -1586,24 +1586,24 @@
 </ol>
 <h2 id="julia-for-scope">julia <code>for</code> scope<a class="headerlink" href="#julia-for-scope" title="Permanent link">&para;</a></h2>
 <p>The following code
-<div class="codehilite"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="codehilite"><pre><span></span><code><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="k">end</span>
-</pre></div>
+</code></pre></div>
 will report
-<div class="codehilite"><pre><span></span><span class="n">ERROR</span><span class="o">:</span> <span class="kt">UndefVarError</span><span class="o">:</span> <span class="n">i</span> <span class="n">not</span> <span class="n">defined</span>
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code><span class="n">ERROR</span><span class="o">:</span> <span class="kt">UndefVarError</span><span class="o">:</span> <span class="n">i</span> <span class="n">not</span> <span class="n">defined</span>
+</code></pre></div></p>
 <p>A (possible) reasonable explanation is, <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> is a global variable, we cannot modify a global variable in a local block without <code>global</code> keyword, but we can read <code>i</code> in the <code>for</code> loop.</p>
 <p>Alternatively, we can use <code>let</code> block,</p>
-<div class="codehilite"><pre><span></span><span class="k">let</span>
+<div class="codehilite"><pre><span></span><code><span class="k">let</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="k">end</span>
 <span class="n">i</span>
 <span class="k">end</span>
-</pre></div>
+</code></pre></div>
 
 <p>then <code>i</code> isn&rsquo;t really a global variable anymore.</p>
 <p>References:</p>
@@ -1613,8 +1613,8 @@ will report
 <li><a href="https://docs.julialang.org/en/v1/manual/variables-and-scoping/index.html">Manual: Scope of Variables</a></li>
 </ol>
 <h2 id="convert-a-matrix-into-an-array-of-array">convert a matrix into an array of array<a class="headerlink" href="#convert-a-matrix-into-an-array-of-array" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">mapslices</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">dims</span><span class="o">=</span><span class="mi">2</span><span class="p">)[</span><span class="o">:</span><span class="p">]</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="n">mapslices</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">dims</span><span class="o">=</span><span class="mi">2</span><span class="p">)[</span><span class="o">:</span><span class="p">]</span>
+</code></pre></div>
 
 <p>refer to</p>
 <p><a href="https://discourse.julialang.org/t/converting-a-matrix-into-an-array-of-arrays/17038">Converting a matrix into an array of arrays</a></p>
@@ -1626,18 +1626,18 @@ will report
 <p>refer to <a href="https://discourse.julialang.org/t/kernel-density-estimation-status/5928">Kernel density estimation status</a></p>
 <h2 id="and-hash">自定义 <code>==</code> and <code>hash()</code><a class="headerlink" href="#and-hash" title="Permanent link">&para;</a></h2>
 <p>对于自定义的 mutable struct, 直接用 <code>==</code> 返回 <code>false</code>，因此需要自己定义等号，比如</p>
-<div class="codehilite"><pre><span></span><span class="n">Base</span><span class="o">.:</span><span class="p">(</span><span class="o">==</span><span class="p">)(</span><span class="n">x</span><span class="o">::</span><span class="n">Reaction</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="n">Reaction</span><span class="p">)</span> <span class="o">=</span> <span class="n">all</span><span class="p">([</span>
+<div class="codehilite"><pre><span></span><code><span class="n">Base</span><span class="o">.:</span><span class="p">(</span><span class="o">==</span><span class="p">)(</span><span class="n">x</span><span class="o">::</span><span class="n">Reaction</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="n">Reaction</span><span class="p">)</span> <span class="o">=</span> <span class="n">all</span><span class="p">([</span>
     <span class="n">x</span><span class="o">.</span><span class="n">substrate</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">substrate</span><span class="p">,</span>
     <span class="n">x</span><span class="o">.</span><span class="n">product</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">product</span><span class="p">,</span>
     <span class="n">x</span><span class="o">.</span><span class="n">reversible</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">reversible</span><span class="p">,</span>
     <span class="n">x</span><span class="o">.</span><span class="n">species</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">species</span><span class="p">])</span>
-</pre></div>
+</code></pre></div>
 
 <p>而如果想用 <code>unique</code> 函数的话，其基于 <code>isequal</code> 函数，而 <code>isequal</code> 是通过判断 hash 值来判定的，所以仅仅定义了 <code>==</code> 仍不够，还需要定义 <code>hash</code> 函数，这很简单，比如</p>
-<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="n">Base</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">obj</span><span class="o">::</span><span class="n">Reaction</span><span class="p">,</span> <span class="n">h</span><span class="o">::</span><span class="kt">UInt</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="k">function</span> <span class="n">Base</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">obj</span><span class="o">::</span><span class="n">Reaction</span><span class="p">,</span> <span class="n">h</span><span class="o">::</span><span class="kt">UInt</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">hash</span><span class="p">((</span><span class="n">obj</span><span class="o">.</span><span class="n">substrate</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">product</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">reversible</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">species</span><span class="p">),</span> <span class="n">h</span><span class="p">)</span>
 <span class="k">end</span>
-</pre></div>
+</code></pre></div>
 
 <blockquote>
 <p>hash（散列、杂凑）函数，是将任意长度的数据映射到有限长度的域上。直观解释起来，就是对一串数据m进行杂糅，输出另一段固定长度的数据h，作为这段数据的特征（指纹）。</p>
@@ -1654,8 +1654,8 @@ will report
 </ol>
 <h2 id="amp"><code>&amp;</code> 优先级<a class="headerlink" href="#amp" title="Permanent link">&para;</a></h2>
 <p>use</p>
-<div class="codehilite"><pre><span></span><span class="err">(x[1] &lt;= width) &amp; (x[1] &gt;= 0) &amp; (x[2] &lt;= height) &amp; (x[2] &gt;=0)</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">(x[1] &lt;= width) &amp; (x[1] &gt;= 0) &amp; (x[2] &lt;= height) &amp; (x[2] &gt;=0)</span>
+</code></pre></div>
 
 <p>not</p>
 <p>x[1] &lt;= width &amp; x[1] &gt;= 0 &amp; x[2] &lt;= height &amp; x[2] &gt;=0</p>
@@ -1677,12 +1677,12 @@ will report
 <p><a href="https://docs.julialang.org/en/v1/manual/getting-started/index.html">Julia docs: Getting Started</a></p>
 <h2 id="unable-to-display-plot-using-the-repl-gks-errors">Unable to display plot using the REPL. GKS errors<a class="headerlink" href="#unable-to-display-plot-using-the-repl-gks-errors" title="Permanent link">&para;</a></h2>
 <p>The reason would be relate to the <code>GR</code> package, </p>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> .julia/packages/GR/ZI5OE/deps/gr/bin/
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> .julia/packages/GR/ZI5OE/deps/gr/bin/
 ldd gksqt
-</pre></div>
+</code></pre></div>
 
 <p>and then get</p>
-<div class="codehilite"><pre><span></span>linux-vdso.so.1 <span class="o">=</span>&gt;  <span class="o">(</span>0x00007ffdc1e58000<span class="o">)</span>
+<div class="codehilite"><pre><span></span><code>linux-vdso.so.1 <span class="o">=</span>&gt;  <span class="o">(</span>0x00007ffdc1e58000<span class="o">)</span>
 libQt5Widgets.so.5 <span class="o">=</span>&gt; not found
 libQt5Gui.so.5 <span class="o">=</span>&gt; not found
 libQt5Network.so.5 <span class="o">=</span>&gt; not found
@@ -1715,34 +1715,34 @@ libdl.so.2 <span class="o">=</span>&gt; /lib64/libdl.so.2 <span class="o">(</spa
 /lib64/ld-linux-x86-64.so.2 <span class="o">(</span>0x0000557abc358000<span class="o">)</span>
 libXau.so.6 <span class="o">=</span>&gt; /lib64/libXau.so.6 <span class="o">(</span>0x00002ae60c34c000<span class="o">)</span>
 libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(</span>0x00002ae60c551000<span class="o">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>(refer to <a href="https://github.com/JuliaPlots/Plots.jl/issues/1649#issuecomment-478520497">one comment in Error: GKS: can&rsquo;t connect to GKS socket application</a>)</p>
 <p>So it seems that it is due to the missing of <code>libqt5</code>. If I have the <code>sudo</code> privilege, maybe just type</p>
-<div class="codehilite"><pre><span></span>sudo apt-get install qt5-default
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo apt-get install qt5-default
+</code></pre></div>
 
 <p>but I cannot. But I noticed that I have installed <code>miniconda3</code>, and the <code>qt</code> is installed,</p>
-<div class="codehilite"><pre><span></span>qmake -v
+<div class="codehilite"><pre><span></span><code>qmake -v
 <span class="c1"># QMake version 3.1</span>
 <span class="c1"># Using Qt version 5.9.7 in /users/xxx/miniconda3/lib</span>
-</pre></div>
+</code></pre></div>
 
 <p>So a natural way is to append the library path of <code>qt</code> to <code>LD_LIBRARY_PATH</code>, that is,</p>
-<div class="codehilite"><pre><span></span><span class="c1"># in .bashrc</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># in .bashrc</span>
 <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/users/xxx/miniconda3/lib:<span class="nv">$LD_LIBRARY_PATH</span>
-</pre></div>
+</code></pre></div>
 
 <p>then rebuild <code>GR</code> package in the julia REPL.</p>
 <p>This solution should work, but actually it failed at the first time. Do not be too frustrated, I found the reason is that I type <code>miniconda3</code> as <code>minconda3</code> in the path.</p>
 <p>It works now, although it still throw an error, </p>
-<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">libGL</span> <span class="n">error</span><span class="o">:</span> <span class="n">unable</span> <span class="n">to</span> <span class="n">load</span> <span class="n">driver</span><span class="o">:</span> <span class="n">swrast_dri</span><span class="o">.</span><span class="n">so</span>
+<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">libGL</span> <span class="n">error</span><span class="o">:</span> <span class="n">unable</span> <span class="n">to</span> <span class="n">load</span> <span class="n">driver</span><span class="o">:</span> <span class="n">swrast_dri</span><span class="o">.</span><span class="n">so</span>
 <span class="n">libGL</span> <span class="n">error</span><span class="o">:</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">load</span> <span class="n">driver</span><span class="o">:</span> <span class="n">swrast</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="dims1"><code>dims=1</code><a class="headerlink" href="#dims1" title="Permanent link">&para;</a></h2>
 <p>总是记不太清 <code>sum</code>, <code>mean</code> 的时候 <code>dims=1</code> 是按行求和还是按列求和，经常先玩个 toy example 才能分辨出来。比如，</p>
-<div class="codehilite"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="mi">4</span><span class="n">×3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
  <span class="mf">0.279181</span>  <span class="mf">0.0903167</span>  <span class="mf">0.148329</span> 
  <span class="mf">0.486691</span>  <span class="mf">0.869156</span>   <span class="mf">0.0538834</span>
@@ -1752,10 +1752,10 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="mi">1</span><span class="n">×3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
  <span class="mf">1.687</span>  <span class="mf">2.00442</span>  <span class="mf">1.44824</span>
-</pre></div>
+</code></pre></div>
 
 <p>即把 <code>dims</code> 所代表的维度元素加起来，或者说沿着 dims 进行运算。这一点与 <code>R</code> 的函数 <code>apply</code> 中 <code>margin</code> 参数作用刚好相反，</p>
-<div class="codehilite"><pre><span></span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">12</span><span class="p">),</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">12</span><span class="p">),</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="n">a</span>
            <span class="n">[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>        <span class="n">[</span><span class="p">,</span><span class="m">2</span><span class="n">]</span>       <span class="n">[</span><span class="p">,</span><span class="m">3</span><span class="n">]</span>
 <span class="n">[1</span><span class="p">,</span><span class="n">]</span>  <span class="m">1.1535199</span>  <span class="m">0.03198768</span>  <span class="m">0.2857126</span>
@@ -1764,52 +1764,52 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 <span class="n">[4</span><span class="p">,</span><span class="n">]</span>  <span class="m">1.2713182</span>  <span class="m">0.98515312</span>  <span class="m">0.2269218</span>
 <span class="o">&gt;</span> <span class="nf">apply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">sum</span><span class="p">)</span>
 <span class="n">[1]</span>  <span class="m">1.4712202</span>  <span class="m">0.8858644</span> <span class="m">-2.1634828</span>  <span class="m">2.4833932</span>
-</pre></div>
+</code></pre></div>
 
 <p>这样交叉记忆，不知道效果会不会好点。</p>
 <h2 id="reset-kw-value">reset <code>kw...</code> value<a class="headerlink" href="#reset-kw-value" title="Permanent link">&para;</a></h2>
 <p>In the following situation, I want to reset a particular argument in <code>kw...</code>.</p>
-<div class="codehilite"><pre><span></span><span class="k">function</span> <span class="n">f</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="k">function</span> <span class="n">f</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
     <span class="n">g</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
 <span class="k">end</span>
-</pre></div>
+</code></pre></div>
 
 <p>Note that the type of <code>kw</code> is <code>Base.Iterators.Pairs</code>, firstly I want to directly reset the value via</p>
-<div class="codehilite"><pre><span></span><span class="n">h</span><span class="p">(;</span><span class="n">kw</span><span class="o">...</span><span class="p">)</span> <span class="o">=</span> <span class="n">kw</span>
+<div class="codehilite"><pre><span></span><code><span class="n">h</span><span class="p">(;</span><span class="n">kw</span><span class="o">...</span><span class="p">)</span> <span class="o">=</span> <span class="n">kw</span>
 <span class="n">h</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-</pre></div>
+</code></pre></div>
 
 <p>but it throws </p>
-<div class="codehilite"><pre><span></span><span class="n">ERROR</span><span class="o">:</span> <span class="n">setfield</span><span class="o">!</span> <span class="n">immutable</span> <span class="n">struct</span> <span class="n">of</span> <span class="n">type</span> <span class="n">NamedTuple</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">changed</span>
+<div class="codehilite"><pre><span></span><code><span class="n">ERROR</span><span class="o">:</span> <span class="n">setfield</span><span class="o">!</span> <span class="n">immutable</span> <span class="n">struct</span> <span class="n">of</span> <span class="n">type</span> <span class="n">NamedTuple</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">changed</span>
 <span class="n">Stacktrace</span><span class="o">:</span>
  <span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">setproperty</span><span class="o">!(::</span><span class="n">NamedTuple</span><span class="o">{(:</span><span class="n">a</span><span class="o">,),</span><span class="n">Tuple</span><span class="o">{</span><span class="n">Int64</span><span class="o">}},</span> <span class="o">::</span><span class="n">Symbol</span><span class="o">,</span> <span class="o">::</span><span class="n">Int64</span><span class="o">)</span> <span class="n">at</span> <span class="o">./</span><span class="n">Base</span><span class="o">.</span><span class="na">jl</span><span class="o">:</span><span class="mi">21</span>
  <span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span> <span class="n">at</span> <span class="n">none</span><span class="o">:</span><span class="mi">0</span>
-</pre></div>
+</code></pre></div>
 
 <p>So I need to find new method, or give up such idea. Fortunately, the <a href="https://docs.julialang.org/en/v1/manual/functions/">official documentation of Julia</a> says</p>
 <blockquote>
 <p>The nature of keyword arguments makes it possible to specify the same argument more than once. For example, in the call <code>plot(x, y; options..., width=2)</code> it is possible that the options structure also contains a value for <code>width</code>.</p>
 </blockquote>
 <p>Thus, I can write</p>
-<p><div class="codehilite"><pre><span></span><span class="k">function</span> <span class="n">f</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
+<p><div class="codehilite"><pre><span></span><code><span class="k">function</span> <span class="n">f</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
     <span class="n">g</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
 <span class="k">end</span>
-</pre></div>
+</code></pre></div>
 to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <h2 id="some-interesting-behavior">some interesting behavior<a class="headerlink" href="#some-interesting-behavior" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">}()</span>
+<div class="codehilite"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">}()</span>
 <span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
+</code></pre></div>
 
 <p>if we access</p>
-<div class="codehilite"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">vals</span>
+<div class="codehilite"><pre><span></span><code><span class="n">d</span><span class="o">.</span><span class="n">vals</span>
 <span class="c"># d.keys</span>
-</pre></div>
+</code></pre></div>
 
 <p>it will return a <code>16-element Array{Int64,1}</code>, but if we use</p>
-<div class="codehilite"><pre><span></span><span class="n">values</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">values</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="n">keys</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>it correctly returns the exactly one elements, but with type <code>Base.ValueIterator for a Dict{Int64,Int64} with 1 entry</code>.</p>
                 
@@ -1874,24 +1874,24 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/szcf-weiya" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/szcf-weiya" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://esl.hohoweiya.xyz" class="md-footer-social__link fa fa-book"></a>
+      <a href="https://esl.hohoweiya.xyz" target="_blank" rel="noopener" title="book" class="md-footer-social__link fa fa-book"></a>
     
-      <a href="https://hohoweiya.xyz" class="md-footer-social__link fa fa-home"></a>
+      <a href="https://hohoweiya.xyz" target="_blank" rel="noopener" title="home" class="md-footer-social__link fa fa-home"></a>
     
-      <a href="https://blog.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
+      <a href="https://blog.hohoweiya.xyz" target="_blank" rel="noopener" title="rss" class="md-footer-social__link fa fa-rss"></a>
     
-      <a href="mailto:szcfweiya@gmail.com" class="md-footer-social__link fa fa-envelope"></a>
+      <a href="mailto:szcfweiya@gmail.com" target="_blank" rel="noopener" title="envelope" class="md-footer-social__link fa fa-envelope"></a>
     
   </div>
 
@@ -1901,7 +1901,7 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

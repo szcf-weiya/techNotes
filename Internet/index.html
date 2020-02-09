@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,12 +46,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-header-nav__button md-logo">
+        <a href="https://tech.hohoweiya.xyz" title="techNotes" aria-label="techNotes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -148,7 +148,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1501,8 +1501,8 @@
 <ul>
 <li>安装privoxy</li>
 </ul>
-<div class="codehilite"><pre><span></span>sudo apt-get install privoxy
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo apt-get install privoxy
+</code></pre></div>
 
 <ul>
 <li>安装XX-net</li>
@@ -1512,28 +1512,28 @@
 <li>设置privoxy
 在/etc/privoxy/config文件中加入</li>
 </ul>
-<div class="codehilite"><pre><span></span>forward / <span class="m">127</span>.0.0.1:8087
+<div class="codehilite"><pre><span></span><code>forward / <span class="m">127</span>.0.0.1:8087
 listen-address <span class="m">0</span>.0.0.0:8118
-</pre></div>
+</code></pre></div>
 
 <h3 id="usages">Usages<a class="headerlink" href="#usages" title="Permanent link">&para;</a></h3>
 <ul>
 <li>可以在访问时设置代理</li>
 </ul>
-<div class="codehilite"><pre><span></span>curl ipinfo.io/ip --proxy <span class="m">127</span>.0.0.1:8087
-</pre></div>
+<div class="codehilite"><pre><span></span><code>curl ipinfo.io/ip --proxy <span class="m">127</span>.0.0.1:8087
+</code></pre></div>
 
 <ul>
 <li>也可以在.bashrc设置，这样所有的终端的网络访问都会走终端，在~/.bashrc文件中加入</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span><span class="m">127</span>.0.0.1:8087
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span><span class="m">127</span>.0.0.1:8087
 <span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span><span class="m">127</span>.0.0.1:8087
-</pre></div>
+</code></pre></div>
 
 <p>然后</p>
-<div class="codehilite"><pre><span></span><span class="nb">source</span> ~/.bashrc
+<div class="codehilite"><pre><span></span><code><span class="nb">source</span> ~/.bashrc
 curl ipinfo.io/ip <span class="c1">#测试是否代理成功</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
 <p>3.10 15:36 chrome 在升级xxnet后成功翻墙了，而Firefox不行了。未升级前情况是相反的，但未升级时Firefox从不能用到能用。</p>
@@ -1544,35 +1544,35 @@ IPv4 settings</p>
 Netmask: 24
 Gateway: 10.71.115.254
 DNS server: 10.10.0.21</p>
-<div class="codehilite"><pre><span></span>sudo su
+<div class="codehilite"><pre><span></span><code>sudo su
 ifconfig enp0s31f6 up
 ifconfig enp0s31f6 <span class="m">10</span>.71.115.59 netmask <span class="m">255</span>.255.255.0 up
 ping <span class="m">10</span>.71.115.254
 route add default gw <span class="m">10</span>.71.115.254 enp0s31f6
 ping <span class="m">10</span>.71.45.100
-</pre></div>
+</code></pre></div>
 
 <h2 id="shadowssocks">shadowssocks安装<a class="headerlink" href="#shadowssocks" title="Permanent link">&para;</a></h2>
 <h3 id="_3">二维码反解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>对
-<div class="codehilite"><pre><span></span><span class="c">ss://bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=</span>
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code><span class="c">ss://bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=</span>
+</code></pre></div></p>
 <p>中的
-<div class="codehilite"><pre><span></span><span class="err">bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=</span>
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code><span class="err">bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=</span>
+</code></pre></div></p>
 <p>base64解密得到</p>
-<div class="codehilite"><pre><span></span><span class="n">method</span><span class="o">:</span><span class="n">password</span><span class="err">@</span><span class="n">hostname</span><span class="o">:</span><span class="n">port</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="n">method</span><span class="o">:</span><span class="n">password</span><span class="err">@</span><span class="n">hostname</span><span class="o">:</span><span class="n">port</span>
+</code></pre></div>
 
 <p>然后
-<div class="codehilite"><pre><span></span><span class="err">sslocal -p port -k password -m method</span>
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code><span class="err">sslocal -p port -k password -m method</span>
+</code></pre></div></p>
 <p><a href="http://blog.csdn.net/qq_25978793/article/details/49870501">http://blog.csdn.net/qq_25978793/article/details/49870501</a></p>
 <h3 id="_4">系统代理与浏览器代理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>无需单独设置系统代理，浏览器是可以通过插件设置代理的。</p>
 <p>另外使用如curl需要代理时，可以采用
-<div class="codehilite"><pre><span></span><span class="err">curl ip.cn --proxy socks5://127.0.0.1:1080</span>
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code><span class="err">curl ip.cn --proxy socks5://127.0.0.1:1080</span>
+</code></pre></div></p>
 <h2 id="_5">代理方案<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>只需要浏览器：shadowssocks + switchOmega</li>
@@ -1582,14 +1582,14 @@ ping <span class="m">10</span>.71.45.100
 <h2 id="cdn">CDN折腾记录<a class="headerlink" href="#cdn" title="Permanent link">&para;</a></h2>
 <p>突然想到要怎么设置子域名，一开始还以为需要再次购买，原来并非如此，只需要添加解析即可。具体设置子域名和添加解析的方法可以参考github提供的帮助文档。</p>
 <p>花了几个小时折腾完这个，突然又想实现https 访问，直接百度“github pages https”便有几篇文档，都谈到了cloudflare，注册之后可以享受免费版本的CDN服务。一开始我也不清楚CDN到底是什么，就直接按照网上的教程走</p>
-<div class="codehilite"><pre><span></span><span class="err">1. 注册cloudflare</span>
+<div class="codehilite"><pre><span></span><code><span class="err">1. 注册cloudflare</span>
 <span class="err">2. 添加自己的网站</span>
 <span class="err">3. 将DNS服务器改为cloudflare上要求的，比如在阿里云的域名管理界面，将万网服务器换掉。</span>
-</pre></div>
+</code></pre></div>
 
 <p>设置完这些之后，我也清楚可能不会理解生效，但也想尽快看看效果怎么样，于是搜索“更新dns缓存”的资料，尽管按照教程走了一遍，但是dns还是没有更新过来，通过
-<div class="codehilite"><pre><span></span><span class="err">dig hohoweiya.xyz +noall +answer</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">dig hohoweiya.xyz +noall +answer</span>
+</code></pre></div>
 返回的结果仍然为未添加cloudflare时的信息。同时访问hohoweiya.xyz并没有传说中的https出现，又郁闷了很久。</p>
 <p>在某一刻，突然发现在firefox浏览器中访问时自动跳转到了https，然而在chrome中依然为http，然后我强制在地址栏中加入https，打开开发者模式，说有混合的错误，调用了http的资源，于是我又便去改了网站的资源地址，将http的资源改为https的。直到某一刻才清醒过来，原来我的firefox开了自动代理，之所以能够用https访问是因为我是通过代理访问的，去掉代理后，在Firefox中也是http，即使强行添加https也会报warning。</p>
 <p>后来，觉得可能是校园网的原因，导致dns还没有更新过来，于是在服务器上ping了域名地址，已经显示为cloudflare提供的ip了。此时，也通过了www.ping.chinaz.com 进行了测试，表明cloudflare已经添加成功了，只是本地迟迟不能够访问。</p>
@@ -1602,19 +1602,19 @@ ping <span class="m">10</span>.71.45.100
 <h2 id="ads">阿里公共ADS差评<a class="headerlink" href="#ads" title="Permanent link">&para;</a></h2>
 <p>之前轻信了阿里公共ADS，在Ubuntu上装了，链接在<a href="http://www.alidns.com/setup/#linux">此</a>，然而却无法取消设置，restore选项毫无作用。也一直不管它，在枫叶国，竟然连google都ping不通，这就很奇怪了，于是便怀疑是它搞的鬼。</p>
 <p>为了彻底根除这个毒瘤，
-<div class="codehilite"><pre><span></span><span class="err">cd /etc/resolvconf/resolv.conf.d/</span>
+<div class="codehilite"><pre><span></span><code><span class="err">cd /etc/resolvconf/resolv.conf.d/</span>
 <span class="err">sudo vim head</span>
 <span class="err">## 删除文件中的所有信息，其实只有阿里公共ads的配置信息</span>
 <span class="err">sudo vim head.save</span>
 <span class="err">## 删除文件中的所有信息，其实只有阿里公共ads的配置信息</span>
-</pre></div></p>
+</code></pre></div></p>
 <p>终于好了！</p>
 <h2 id="rvpn">rvpn<a class="headerlink" href="#rvpn" title="Permanent link">&para;</a></h2>
 <p>Ubuntu下配置rvpn，需要浏览器启用JAVA插件，但新版本的chrome和firefox都不支持（firefox 52以后都不行了），解决办法是安装一个旧版本的firefox，然后按照登录rvpn时的说明进行配置就ok了。</p>
 <h2 id="proxychains">proxychains实现命令行代理<a class="headerlink" href="#proxychains" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://bokunokeiken.wordpress.com/2015/07/22/how-to-use-socks-5-proxy-in-ubuntu-command-line/">How to use SOCKS 5 proxy in Ubuntu command line</a></p>
-<div class="codehilite"><pre><span></span><span class="err">proxychains curl ip.cn</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">proxychains curl ip.cn</span>
+</code></pre></div>
 
 <h2 id="hosts">hosts文件原理<a class="headerlink" href="#hosts" title="Permanent link">&para;</a></h2>
 <p>有段时间是采用更改hosts文件来访问谷歌，但其背后的原理一直不甚清楚。突然想到这个问题，看了下面的两个博客，大致明白了。</p>
@@ -1636,11 +1636,11 @@ ping <span class="m">10</span>.71.45.100
 <p>遂准备换种方式，参考<a href="http://keyun.ml/2016/07/17/Tools/ubuntu16-l2tp-vpn.html">Ubuntu16.04配置L2TP-VPN</a></p>
 <p>但这种安装最新版本，<code>libnma</code>的版本跟不上，然后参考<a href="https://askubuntu.com/questions/789421/l2tp-ipsec-psk-vpn-client-on-xubuntu-16-04/797764">L2tp IPSEC PSK VPN client on (x)ubuntu 16.04</a></p>
 <p>直接用</p>
-<div class="codehilite"><pre><span></span>sudo add-apt-repository ppa:nm-l2tp/network-manager-l2tp  
+<div class="codehilite"><pre><span></span><code>sudo add-apt-repository ppa:nm-l2tp/network-manager-l2tp  
 sudo apt-get update  
 sudo apt-get install network-manager-l2tp
 sudo apt-get install network-manager-l2tp-gnome
-</pre></div>
+</code></pre></div>
 
 <p>安装。</p>
 <p>这种方式相当于增加了 <code>L2TP</code> VPN 的设置界面，到这里我也渐渐明白 <code>xl2tpd_zju</code> 和这种方式本质上应该是一样的。于是我按照之前的配置方式新建了一个 VPN 的连接，但还是没用。</p>
@@ -1651,15 +1651,15 @@ sudo apt-get install network-manager-l2tp-gnome
 <h2 id="vpn">VPN 跳转<a class="headerlink" href="#vpn" title="Permanent link">&para;</a></h2>
 <p>猜测可能由于墙的原因使得 VPN 不稳定，于是尝试在境外服务器连接 VPN</p>
 <p>首先安装 </p>
-<div class="codehilite"><pre><span></span>sudo add-apt-repository ppa:nm-l2tp/network-manager-l2tp
+<div class="codehilite"><pre><span></span><code>sudo add-apt-repository ppa:nm-l2tp/network-manager-l2tp
 sudo apt-get install network-manager-l2tp
-</pre></div>
+</code></pre></div>
 
 <h3 id="-x-gui">尝试一：通过 <code>-X</code> 在 GUI 中配置<a class="headerlink" href="#-x-gui" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="https://gist.github.com/pastleo/aa3a9524664864c505d637b771d079c9">setup L2TP IPsec VPN in archlinux using NetworkManager</a></p>
 <p>打开配置窗口的命令为 <a href="https://askubuntu.com/questions/174381/openning-networkmanagers-edit-connections-window-from-terminal"><code>nm-connection-editor</code></a>，但竟然没有，原来没有装 </p>
-<div class="codehilite"><pre><span></span>sudo apt-get install network-manager-gnome
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo apt-get install network-manager-gnome
+</code></pre></div>
 
 <h3 id="_6">尝试二：命令行添加<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>在尝试寻找 network manager 的 command line 命令时，发现好几个 <code>nmcli</code> 相关的命令，于是猜想应该是可以直接在 command line 中配置的，比如 <a href="https://askubuntu.com/questions/1167283/l2tp-connection-client-on-ubuntu-18-04-server">L2TP Connection Client on ubuntu 18.04 Server</a>，但我先在本地测试有几个问题</p>
@@ -1673,8 +1673,8 @@ sudo apt-get install network-manager-l2tp
 </blockquote>
 <p>参考 <a href="https://unix.stackexchange.com/questions/438224/networkmanager-fails-with-could-not-find-source-connection">NetworkManager fails with “Could not find source connection”
 </a> 无果。后来在 <a href="https://developer.gnome.org/NetworkManager/stable/nmcli.html">nmcli 的官方文档</a>中看到，似乎连接时需要指定 <code>ifname</code>，可用的 device 为</p>
-<div class="codehilite"><pre><span></span>sudo nmcli device status 
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo nmcli device status 
+</code></pre></div>
 
 <p>但是再次连接依旧报错，不过错误跟我在墙内试图连接 VPN 时报错似乎一致。</p>
 <blockquote>
@@ -1684,7 +1684,7 @@ sudo apt-get install network-manager-l2tp
 <p>试用 Azure，申请了个 Windows 10，按照 ITSC 的指示连接 VPN，确实能够成功，但是连接成功后，我跟该电脑的连接也就断开了，再次尝试也连不上，只好重启。</p>
 <h2 id="_7">内网穿透<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>系里的服务器需要内网才能访问，连接内网一般需要 VPN，但是因为墙的原因极其不稳定。可以考虑一种内网穿透的策略，借助一台境外有 public IP 的服务器（好几家的云服务商都提供了免费试用），将端口转发，详见 <a href="https://github.com/aploium/shootback">shootback</a></p>
-<div class="codehilite"><pre><span></span><span class="c1"># ---- master ----</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># ---- master ----</span>
 python3 master.py -m <span class="m">0</span>.0.0.0:10000 -c <span class="m">0</span>.0.0.0:10022 --ssl
 
 <span class="c1"># ---- slaver ----</span>
@@ -1693,7 +1693,7 @@ python<span class="o">(</span>or python3<span class="o">)</span> slaver.py -m <s
 
 <span class="c1"># ---- YOU ----</span>
 ssh <span class="o">[</span>username@<span class="o">]</span><span class="m">22</span>.33.44.55 -p <span class="m">10022</span>
-</pre></div>
+</code></pre></div>
 
 <p>注意，<code>YOU</code> 的 username 是 slaver 的 username!!</p>
 <p>另外一种更复杂的工具是 <a href="https://github.com/fatedier/frp">frp</a></p>
@@ -1704,22 +1704,22 @@ ssh <span class="o">[</span>username@<span class="o">]</span><span class="m">22<
 </ul>
 <h3 id="ngrok">ngrok<a class="headerlink" href="#ngrok" title="Permanent link">&para;</a></h3>
 <p>on the server:</p>
-<div class="codehilite"><pre><span></span>./ngrok tcp --region<span class="o">=</span>jp <span class="m">22</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>./ngrok tcp --region<span class="o">=</span>jp <span class="m">22</span>
+</code></pre></div>
 
 <p>then on the local laptop:</p>
-<div class="codehilite"><pre><span></span>ssh username@... -p
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ssh username@... -p
+</code></pre></div>
 
 <p>choose the nearest center to faster the connection.</p>
 <p>refer to <a href="https://medium.com/@byteshiva/ssh-into-remote-linux-by-using-ngrok-b8c49b8dc3ca">SSH into remote Linux by using ngrok</a> and <a href="https://ngrok.com/docs#tcp">Documentation of ngrok</a></p>
 <h3 id="ssh">SSH 反向隧道<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h3>
 <p>一个惊人的发现这也可以实现翻墙！！</p>
-<div class="codehilite"><pre><span></span><span class="c1"># inner sever</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># inner sever</span>
 autossh -M <span class="m">30000</span> -NR <span class="m">30001</span>:localhost:22 server-user@server-address
 <span class="c1"># server</span>
 ssh -g -D <span class="m">30002</span> -p30001 inner-user@localhost
-</pre></div>
+</code></pre></div>
 
 <p>那 30002 端口有啥用呢！！</p>
 <blockquote>
@@ -1727,32 +1727,32 @@ ssh -g -D <span class="m">30002</span> -p30001 inner-user@localhost
 </blockquote>
 <p>所以如果我在 SwitchyOmega 上添加一条 socks5 记录，端口为 30002，而 sever 即填 <code>server-address</code>，则可以翻墙了！！</p>
 <h2 id="ssh_1">SSH 端口转发<a class="headerlink" href="#ssh_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Local Laptop</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Local Laptop</span>
 ssh -D <span class="m">30002</span> my@server
-</pre></div>
+</code></pre></div>
 
 <p>然后在 SwithyOmega 中添加 socks5://127.0.0.1:30002 即可科学上网。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># Local Laptop</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Local Laptop</span>
 ssh -L <span class="m">30002</span>:localhost:30002 my@server
 <span class="c1"># my server</span>
 ssh -D <span class="m">30002</span> -p <span class="m">30001</span> my@inner-server
 <span class="c1"># my innerserver</span>
 ssh -R <span class="m">30001</span>:localhost:22 my@server
-</pre></div>
+</code></pre></div>
 
 <p>然后在 SwitchyOmega 中添加 socks5://127.0.0.1:30002 即可访问内网资源。</p>
 <p>如果将上面的 <code>my server</code> 部分改成
-<div class="codehilite"><pre><span></span>ssh -gD <span class="m">30002</span> -p <span class="m">30001</span> my@inner-server
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code>ssh -gD <span class="m">30002</span> -p <span class="m">30001</span> my@inner-server
+</code></pre></div></p>
 <p>其中 <code>-g</code> 表示允许远程连接，则在 SwitchyOmega 中添加 socks5://my-server:30002 亦可访问内网资源，但这样不够安全，因为似乎所有知道你 server address 都可以访问内网资源，除非特别配置 my server 的安全组，但是应该不是很好，因为你本地的 public ip 是动态分配的，安全组的作用不大。</p>
 <p>参考 <a href="https://blog.fundebug.com/2017/04/24/ssh-port-forwarding/">玩转SSH端口转发</a></p>
 <p>有时候可能需要重新连接一下，但是会出现端口占用的问题，</p>
-<div class="codehilite"><pre><span></span>lsof -i:30002
-</pre></div>
+<div class="codehilite"><pre><span></span><code>lsof -i:30002
+</code></pre></div>
 
 <p>找出端口占用的 pid，然后</p>
-<div class="codehilite"><pre><span></span><span class="nb">kill</span> -s <span class="m">9</span> pid
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">kill</span> -s <span class="m">9</span> pid
+</code></pre></div>
 
 <h2 id="_8">带宽、网速和流量<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>单位：</p>
@@ -1832,24 +1832,24 @@ ssh -R <span class="m">30001</span>:localhost:22 my@server
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/szcf-weiya" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/szcf-weiya" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://esl.hohoweiya.xyz" class="md-footer-social__link fa fa-book"></a>
+      <a href="https://esl.hohoweiya.xyz" target="_blank" rel="noopener" title="book" class="md-footer-social__link fa fa-book"></a>
     
-      <a href="https://hohoweiya.xyz" class="md-footer-social__link fa fa-home"></a>
+      <a href="https://hohoweiya.xyz" target="_blank" rel="noopener" title="home" class="md-footer-social__link fa fa-home"></a>
     
-      <a href="https://blog.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
+      <a href="https://blog.hohoweiya.xyz" target="_blank" rel="noopener" title="rss" class="md-footer-social__link fa fa-rss"></a>
     
-      <a href="mailto:szcfweiya@gmail.com" class="md-footer-social__link fa fa-envelope"></a>
+      <a href="mailto:szcfweiya@gmail.com" target="_blank" rel="noopener" title="envelope" class="md-footer-social__link fa fa-envelope"></a>
     
   </div>
 
@@ -1859,7 +1859,7 @@ ssh -R <span class="m">30001</span>:localhost:22 my@server
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

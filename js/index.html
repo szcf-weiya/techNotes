@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,12 +46,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#javascript" tabindex="1" class="md-skip">
+      <a href="#javascript" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-header-nav__button md-logo">
+        <a href="https://tech.hohoweiya.xyz" title="techNotes" aria-label="techNotes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -148,7 +148,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1331,7 +1331,7 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 <h2 id="jsheadbody">JS放在head和放在body中的区别<a class="headerlink" href="#jsheadbody" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/lumeier/article/details/46398009">JS放在head和放在body中的区别</a></p>
 <h2 id="js_1">分析百度站长自动推送js源代码<a class="headerlink" href="#js_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
     <span class="kd">var</span> <span class="nx">bp</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">curProtocol</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">curProtocol</span> <span class="o">===</span> <span class="s1">&#39;https&#39;</span><span class="p">){</span>
@@ -1343,10 +1343,10 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
     <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
     <span class="nx">s</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">bp</span><span class="p">,</span> <span class="nx">s</span><span class="p">);</span>
 <span class="p">})();</span>
-</pre></div>
+</code></pre></div>
 
 <p>对于https，其push.js为</p>
-<div class="codehilite"><pre><span></span><span class="o">!</span><span class="kd">function</span><span class="p">(){</span>
+<div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="kd">function</span><span class="p">(){</span>
   <span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="sr">/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi</span><span class="p">,</span>
   <span class="nx">r</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">,</span>
   <span class="nx">t</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">referrer</span><span class="p">;</span>
@@ -1357,7 +1357,7 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
     <span class="nx">i</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="nx">o</span>
   <span class="p">}</span>
 <span class="p">}(</span><span class="nb">window</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="_2">匿名函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>首先，这是一个匿名函数，可以参考<a href="https://www.cnblogs.com/jiejiejy/p/7434857.html">js匿名函数</a>。</p>
@@ -1365,40 +1365,40 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 <ol>
 <li>声明匿名函数，直接赋值给某一个事件</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
   <span class="nx">alert</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <ol start="2">
 <li>使用匿名函数表达式，将匿名函数赋值给某个变量</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">func</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">func</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
   <span class="nx">alert</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">func</span><span class="p">();</span>
-</pre></div>
+</code></pre></div>
 
 <ol start="3">
 <li>自执行函数</li>
 </ol>
 <p>a) 使用<code>!</code>开头</p>
-<div class="codehilite"><pre><span></span><span class="o">!</span><span class="kd">function</span><span class="p">(){</span>
+<div class="codehilite"><pre><span></span><code><span class="o">!</span><span class="kd">function</span><span class="p">(){</span>
   <span class="nx">alert</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
 <span class="p">}();</span>
-</pre></div>
+</code></pre></div>
 
 <p>b) 使用<code>()</code>将函数及函数后的括号包裹</p>
-<div class="codehilite"><pre><span></span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
   <span class="nx">alert</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
 <span class="p">}());</span>
-</pre></div>
+</code></pre></div>
 
 <p>c) 使用<code>()</code>包裹函数值</p>
-<div class="codehilite"><pre><span></span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
   <span class="nx">alert</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
 <span class="p">})();</span>
-</pre></div>
+</code></pre></div>
 
 <p>百度站长采用的是c)。</p>
 <h3 id="browser-object-model-bom">浏览器对象模型(Browser Object Model (BOM))<a class="headerlink" href="#browser-object-model-bom" title="Permanent link">&para;</a></h3>
@@ -1416,10 +1416,10 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 <h3 id="_4">正则表达式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>参考<a href="http://www.runoob.com/js/js-obj-regexp.html">JavaScript RegExp 对象</a></p>
 <p>定义一个RegExp对象如下</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">patt</span><span class="o">=</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span><span class="nx">modifiers</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">patt</span><span class="o">=</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span><span class="nx">modifiers</span><span class="p">);</span>
 <span class="c1">// or more directly</span>
 <span class="kd">var</span> <span class="nx">patt</span><span class="o">=</span><span class="err">/pattern/modifiers;</span>
-</pre></div>
+</code></pre></div>
 
 <p>其中有两种修饰器</p>
 <ul>
@@ -1429,19 +1429,19 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 <p><code>test()</code>方法搜索，根据结果返回true或false;
 <code>exec()</code>方法返回匹配的结果，但其跟是否全局匹配有很多关系，具体参考<a href="http://www.jb51.net/article/31561.htm">js正则表达式之exec方法讲解</a>。在全局匹配下，这个机制通过<code>lastIndex</code>实现，用于规定下次匹配起始位置，参考<a href="http://www.runoob.com/jsref/jsref-lastindex-regexp.html">JavaScript lastIndex 属性</a>。
 如</p>
-<p><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">patt1</span> <span class="o">=</span> <span class="sr">/hello/gi</span><span class="p">;</span>
+<p><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">patt1</span> <span class="o">=</span> <span class="sr">/hello/gi</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;HELLO world, Hello weiya.&quot;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">patt1</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
 <span class="c1">// match the second one, because the lastIndex skip the first one.</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">patt1</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
-</pre></div>
+</code></pre></div>
 运行结果为</p>
 <p><img alt="" src="regexp_res1.PNG" /></p>
-<p><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">patt1</span> <span class="o">=</span> <span class="sr">/hello/gi</span><span class="p">;</span>
+<p><div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">patt1</span> <span class="o">=</span> <span class="sr">/hello/gi</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&quot;HELLO world, Hello weiya.&quot;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">patt1</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">patt1</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
-</pre></div>
+</code></pre></div>
 运行结果为</p>
 <p><img alt="" src="regexp_res2.PNG" /></p>
 <h3 id="html-dom-document">HTML DOM Document 对象<a class="headerlink" href="#html-dom-document" title="Permanent link">&para;</a></h3>
@@ -1449,27 +1449,27 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 <p>本例中，<code>document.referrer</code>用来返回载入当前文档的文档的 URL。</p>
 <h2 id="js_2">命令行压缩js<a class="headerlink" href="#js_2" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://askubuntu.com/questions/321146/minify-tool-that-can-be-executed-through-terminal">command line - Minify tool that can be executed through terminal - Ask Ubuntu</a></p>
-<div class="codehilite"><pre><span></span>sudo apt-get install yui-compressor
+<div class="codehilite"><pre><span></span><code>sudo apt-get install yui-compressor
 yui-compressor myfile.js &gt; myfile.min.js
-</pre></div>
+</code></pre></div>
 
 <h2 id="_5">双感叹号<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://www.jb51.net/article/48881.htm">JavaScript中双叹号(!!)作用示例介绍_javascript技巧_脚本之家</a></p>
 <p>举个例子</p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">a</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">b</span><span class="o">=!!</span><span class="nx">a</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <p><code>a</code>默认是<code>undefined</code>。<code>!a</code>为<code>true</code>，<code>!!a</code>则为<code>false</code>。</p>
 <p><code>!!</code>一般用来将后面的表达式强制转换为布尔类型的数据。</p>
 <blockquote>
 <p>因为JavaScript是弱类型的语言（变量没有固定的数据类型），所以有时需要强制转换为相应的类型，如</p>
 </blockquote>
-<div class="codehilite"><pre><span></span><span class="nx">a</span><span class="o">=</span><span class="nb">parseInt</span><span class="p">(</span><span class="err">“</span><span class="mi">1234</span><span class="err">″</span><span class="p">)</span> 
+<div class="codehilite"><pre><span></span><code><span class="nx">a</span><span class="o">=</span><span class="nb">parseInt</span><span class="p">(</span><span class="err">“</span><span class="mi">1234</span><span class="err">″</span><span class="p">)</span> 
 <span class="nx">a</span><span class="o">=</span><span class="err">”</span><span class="mi">1234</span><span class="err">″</span><span class="o">-</span><span class="mi">0</span> <span class="c1">//转换为数字 </span>
 <span class="nx">b</span><span class="o">=</span><span class="mi">1234</span><span class="o">+</span><span class="err">””</span> <span class="c1">//转换为字符串 </span>
 <span class="nx">c</span><span class="o">=</span><span class="nx">someObject</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="c1">//将对象转换为字符串</span>
-</pre></div>
+</code></pre></div>
 
 <p>其中第1种、第4种为显式转换，2、3为隐式转换 </p>
 <h2 id="_6">布尔类型的转换<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
@@ -1542,24 +1542,24 @@ yui-compressor myfile.js &gt; myfile.min.js
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/szcf-weiya" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/szcf-weiya" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://esl.hohoweiya.xyz" class="md-footer-social__link fa fa-book"></a>
+      <a href="https://esl.hohoweiya.xyz" target="_blank" rel="noopener" title="book" class="md-footer-social__link fa fa-book"></a>
     
-      <a href="https://hohoweiya.xyz" class="md-footer-social__link fa fa-home"></a>
+      <a href="https://hohoweiya.xyz" target="_blank" rel="noopener" title="home" class="md-footer-social__link fa fa-home"></a>
     
-      <a href="https://blog.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
+      <a href="https://blog.hohoweiya.xyz" target="_blank" rel="noopener" title="rss" class="md-footer-social__link fa fa-rss"></a>
     
-      <a href="mailto:szcfweiya@gmail.com" class="md-footer-social__link fa fa-envelope"></a>
+      <a href="mailto:szcfweiya@gmail.com" target="_blank" rel="noopener" title="envelope" class="md-footer-social__link fa fa-envelope"></a>
     
   </div>
 
@@ -1569,7 +1569,7 @@ yui-compressor myfile.js &gt; myfile.min.js
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

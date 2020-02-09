@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,12 +46,12 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#cpp-notes" tabindex="1" class="md-skip">
+      <a href="#cpp-notes" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-header-nav__button md-logo">
+        <a href="https://tech.hohoweiya.xyz" title="techNotes" aria-label="techNotes" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -148,7 +148,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1062,7 +1062,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#35pragma-unroll" class="md-nav__link">
+  <a href="#pragma-unroll" class="md-nav__link">
     #pragma unroll的用法
   </a>
   
@@ -1438,7 +1438,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#35pragma-unroll" class="md-nav__link">
+  <a href="#pragma-unroll" class="md-nav__link">
     #pragma unroll的用法
   </a>
   
@@ -1653,7 +1653,7 @@
 <h2 id="ccout">C++中cout输出字符型指针地址值的方法<a class="headerlink" href="#ccout" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html">C++中cout输出字符型指针地址值的方法</a></p>
 <p>C 语言中通过 <code>printf</code> 便可以很方便地输出字符串指针地址值，如</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="kt">int</span> <span class="nf">main</span> <span class="p">(){</span>
     <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pstr</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
 
@@ -1662,14 +1662,14 @@
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <p>但在 Cpp 中没那么简单，主要原因是</p>
 <blockquote>
 <p>C++标准库中I/O类对 &lt;&lt; 操作符重载，因此在遇到字符型指针时会将其当作字符串名来处理，输出指针所指的字符串</p>
 </blockquote>
 <p>类似 C 中强制类型转换，用 <code>static_cast</code> 将字符串指针转换成无类型指针。</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
@@ -1683,7 +1683,7 @@
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="const">const 总结<a class="headerlink" href="#const" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.2cto.com/kf/201210/160536.html">ref</a></p>
@@ -1692,14 +1692,14 @@
 <h2 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h2>
 <p>执行析构函数，并释放空间</p>
 <p>引用的本质是指针常量</p>
-<div class="codehilite"><pre><span></span><span class="err">const int m;</span>
+<div class="codehilite"><pre><span></span><code><span class="err">const int m;</span>
 <span class="err">//int* p = &amp;m;//wrong</span>
 <span class="err">const int* p = &amp;m;</span>
 <span class="err">int *const pc = &amp;m; //必须初始化，引用的本质</span>
-</pre></div>
+</code></pre></div>
 
 <p>构造函数析构函数作用区间</p>
-<div class="codehilite"><pre><span></span><span class="err">A a;</span>
+<div class="codehilite"><pre><span></span><code><span class="err">A a;</span>
 <span class="err">A *ap;</span>
 <span class="err">if (...)</span>
 <span class="err">{</span>
@@ -1709,7 +1709,7 @@
 <span class="err">}</span>
 <span class="err">......// A析构</span>
 <span class="err">delete ap;</span>
-</pre></div>
+</code></pre></div>
 
 <p>先执行基类构造函数，再派生类构造函数；
 先执行派生类析构函数，再派生基类析构函数。</p>
@@ -1726,13 +1726,13 @@
 <p><a href="http://www.cnblogs.com/yc_sunniwell/archive/2010/07/14/1777431.html">reference</a></p>
 <p>在Rcpp中，extern &ldquo;C&rdquo; 告诉编译器，保持其名称，不要生成用于链接的中间函数名。</p>
 <h2 id="symbol-lookup-error">&ldquo;symbol lookup error&rdquo;<a class="headerlink" href="#symbol-lookup-error" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="err">./test: symbol lookup error: ./test: undefined symbol:</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">./test: symbol lookup error: ./test: undefined symbol:</span>
+</code></pre></div>
 
 <p>动态链接库的原因，因为更新完gsl之后，原先的动态链接库不管用了，可以用下面的命令追踪动态链接库
-<div class="codehilite"><pre><span></span><span class="err">ldd test</span>
+<div class="codehilite"><pre><span></span><code><span class="err">ldd test</span>
 <span class="err">ldd -d -r test</span>
-</pre></div></p>
+</code></pre></div></p>
 <p>参考<a href="http://gdwarner.blogspot.com/2009/03/c-runtime-symbol-lookup-error.html">c++ runtime &ldquo;symbol lookup error&rdquo; </a></p>
 <h2 id="_3">字符数组与数字互换<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>http://blog.csdn.net/sunquana/article/details/14645079</p>
@@ -1747,23 +1747,23 @@
 <h3 id="_5">数字转字符<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>sprintf</p>
 <h2 id="_6">指针初始化<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="err">double x;</span>
+<div class="codehilite"><pre><span></span><code><span class="err">double x;</span>
 <span class="err">double *p = &amp;x;</span>
-</pre></div>
+</code></pre></div>
 
 <p>DO NOT
-<div class="codehilite"><pre><span></span><span class="err">double *p = 5;</span>
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code><span class="err">double *p = 5;</span>
+</code></pre></div></p>
 <p>BUT
-<div class="codehilite"><pre><span></span><span class="err">double *p = &quot;aaa&quot;;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">double *p = &quot;aaa&quot;;</span>
+</code></pre></div>
 并且要初始化，不能</p>
-<p><div class="codehilite"><pre><span></span><span class="err">double *p;</span>
-</pre></div>
+<p><div class="codehilite"><pre><span></span><code><span class="err">double *p;</span>
+</code></pre></div>
 然后直接传参了，这是不对的。</p>
 <h2 id="c-correctly-freeing-memory-of-a-multi-dimensional-array">C: Correctly freeing memory of a multi-dimensional array<a class="headerlink" href="#c-correctly-freeing-memory-of-a-multi-dimensional-array" title="Permanent link">&para;</a></h2>
 <p>https://stackoverflow.com/questions/1733881/c-correctly-freeing-memory-of-a-multi-dimensional-array</p>
-<h2 id="35pragma-unroll">#pragma unroll的用法<a class="headerlink" href="#35pragma-unroll" title="Permanent link">&para;</a></h2>
+<h2 id="pragma-unroll">#pragma unroll的用法<a class="headerlink" href="#pragma-unroll" title="Permanent link">&para;</a></h2>
 <p>http://blog.csdn.net/fengzizhuang/article/details/9300431</p>
 <h2 id="getting-std-ifstream-to-handle-lf-cr-and-crlf">Getting std :: ifstream to handle LF, CR, and CRLF?<a class="headerlink" href="#getting-std-ifstream-to-handle-lf-cr-and-crlf" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1774,7 +1774,7 @@
 <p>https://stackoverflow.com/questions/9188126/c-strange-behavior-with-stdistream-or-sentry-wrap-around/9189541#9189541</p>
 </li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="nt">std</span><span class="p">::</span><span class="nd">istream</span><span class="o">&amp;</span> <span class="nt">safeGetline</span><span class="o">(</span><span class="nt">std</span><span class="p">::</span><span class="nd">istream</span><span class="o">&amp;</span> <span class="nt">is</span><span class="o">,</span> <span class="nt">std</span><span class="p">::</span><span class="nd">string</span><span class="o">&amp;</span> <span class="nt">t</span><span class="o">)</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">std</span><span class="p">::</span><span class="nd">istream</span><span class="o">&amp;</span> <span class="nt">safeGetline</span><span class="o">(</span><span class="nt">std</span><span class="p">::</span><span class="nd">istream</span><span class="o">&amp;</span> <span class="nt">is</span><span class="o">,</span> <span class="nt">std</span><span class="p">::</span><span class="nd">string</span><span class="o">&amp;</span> <span class="nt">t</span><span class="o">)</span>
 <span class="p">{</span>
     <span class="err">t.clear()</span><span class="p">;</span>
 
@@ -1806,52 +1806,52 @@
         <span class="p">}</span>
     <span class="err">}</span>
 <span class="err">}</span>
-</pre></div>
+</code></pre></div>
 
 <p>使用这个代码注意一个问题
 应该使用
-<div class="codehilite"><pre><span></span><span class="err">while(!safeGetline(input, line).eof)</span>
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code><span class="err">while(!safeGetline(input, line).eof)</span>
+</code></pre></div></p>
 <p>不能用
-<div class="codehilite"><pre><span></span><span class="err">while(safeGetline(input, line))</span>
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code><span class="err">while(safeGetline(input, line))</span>
+</code></pre></div></p>
 <h2 id="fpic">fPIC<a class="headerlink" href="#fpic" title="Permanent link">&para;</a></h2>
 <p>参考http://blog.sina.com.cn/s/blog_54f82cc201011op1.html</p>
 <h2 id="_7">参数和返回值的三种传递方式<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/thisispan/article/details/7456180">C++函数参数和返回值三种传递方式：值传递、指针传递和引用传递（着重理解）</a></p>
 <h3 id="_8">值传递<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>改变 <code>x</code> 的值不会影响 <code>n</code></p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">Func1</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">Func1</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="n">Func1</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="_9">指针传递<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">Func2</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">Func2</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="n">Func2</span><span class="p">(</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="_10">引用传递<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p><code>x</code> 和 <code>n</code> 是一个东西</p>
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">Func3</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">Func3</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="n">Func3</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 
 <p>引用传递的性质像指针传递，而书写方式像值传递。</p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">m</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">m</span><span class="p">;</span>
 <span class="kt">int</span> <span class="o">&amp;</span><span class="n">n</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <p>其中 <code>n</code> 是 <code>m</code> 的一个引用 (reference)，而 <code>m</code> 是被引用物 (referent).</p>
 <p>引用的规则如下：</p>
@@ -1911,9 +1911,9 @@
 <h2 id="variably-modeified-type-in-c-language">variably modeified type in C language<a class="headerlink" href="#variably-modeified-type-in-c-language" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/23529069/variably-modified-type-in-c-language">Variably modified type in C language - Stack Overflow</a></p>
 <h2 id="write-into-file-immediately">write into file immediately<a class="headerlink" href="#write-into-file-immediately" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="err">fprintf(fileptr, &quot;writing to file\n&quot;);</span>
+<div class="codehilite"><pre><span></span><code><span class="err">fprintf(fileptr, &quot;writing to file\n&quot;);</span>
 <span class="err">fflush(fileptr);</span>
-</pre></div>
+</code></pre></div>
 
 <p><a href="https://stackoverflow.com/questions/45339874/how-to-make-fprintf-writes-immediately">How to make fprintf() writes immediately</a></p>
 <p>or refer to</p>
@@ -1980,24 +1980,24 @@
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/szcf-weiya" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/szcf-weiya" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://esl.hohoweiya.xyz" class="md-footer-social__link fa fa-book"></a>
+      <a href="https://esl.hohoweiya.xyz" target="_blank" rel="noopener" title="book" class="md-footer-social__link fa fa-book"></a>
     
-      <a href="https://hohoweiya.xyz" class="md-footer-social__link fa fa-home"></a>
+      <a href="https://hohoweiya.xyz" target="_blank" rel="noopener" title="home" class="md-footer-social__link fa fa-home"></a>
     
-      <a href="https://blog.hohoweiya.xyz" class="md-footer-social__link fa fa-rss"></a>
+      <a href="https://blog.hohoweiya.xyz" target="_blank" rel="noopener" title="rss" class="md-footer-social__link fa fa-rss"></a>
     
-      <a href="mailto:szcfweiya@gmail.com" class="md-footer-social__link fa fa-envelope"></a>
+      <a href="mailto:szcfweiya@gmail.com" target="_blank" rel="noopener" title="envelope" class="md-footer-social__link fa fa-envelope"></a>
     
   </div>
 
@@ -2007,7 +2007,7 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
