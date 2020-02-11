@@ -144,9 +144,96 @@ refer to [Taking Command Line Arguments in Bash](https://www.devdungeon.com/cont
 
 ## join elements of an array in Bash
 
-```
+```shell
 arr=(a b c)
 printf '%s\n' "$(IFS=,; printf '%s' "${arr[*]}")"
+# a,b,c
 ```
 
+where `*` or `@` return all elements of such array.
+
 refer to [How can I join elements of an array in Bash?](https://stackoverflow.com/questions/1527049/how-can-i-join-elements-of-an-array-in-bash)
+
+### A more complex way
+
+```shell
+list=
+for nc in {2..10}; do
+  for nf in 5 10 15; do
+    if [ -z "$list" ]
+    then
+        list=acc-$nc-$nf
+    else
+        list=$list,acc-$nc-$nf
+    fi
+  done
+done
+echo $list
+```
+
+## timestamp 
+
+```shell
+timestamp=$(date +"%Y-%m-%dT%H:%M:%S")
+echo $timestamp
+# 2020-02-11T10:51:42
+```
+
+### compare two timestamps
+
+```shell
+d1=$(date -d "2019-09-22 20:07:25" +'%s')
+d2=$(date -d "2019-09-22 20:08:25" +'%s')
+if [ $d1 -gt $d2 ]
+then
+  echo "d1 > d2"
+else
+  echo "d1 < d2"
+fi
+```
+
+where 
+
+- `-d`: display time described by STRING, not 'now' (from `man date`)
+- `+%[format-option]`: format specifiers (details formats refer to `man date`, but I am curious why `+`, no hints from `many date`, but here is one from [date command in Linux with examples](https://www.geeksforgeeks.org/date-command-linux-examples/))
+- `-gt`: larger than, `-lt`: less than; with equality, `-ge` and `-le`, (from [Shell 基本运算符](https://www.runoob.com/linux/linux-shell-basic-operators.html))
+- 条件表达式要放在方括号之间，并且要有空格, from [Shell 基本运算符](https://www.runoob.com/linux/linux-shell-basic-operators.html)
+
+refer to [How to compare two time stamps?](https://unix.stackexchange.com/questions/375911/how-to-compare-two-time-stamps)
+
+## globbing for `ls` vs regular expression for `find`
+
+Support we want to get `abc2.txt` as stated in [Listing with `ls` and regular expression
+](https://unix.stackexchange.com/questions/44754/listing-with-ls-and-regular-expression),
+
+`ls` does not support regular expressions, but it can work with globbing, or filename expressions. 
+
+```shell
+ls *[!0-9][0-9].txt
+```
+
+where `!` is complement.
+
+Alternatively, we can use `find -regex`, 
+
+```shell
+find . -maxdepth 1 -regex '\./.*[^0-9][0-9]\.txt'
+```
+
+where
+
+- `-maxdepth 1` disables recursive, and only to find files in the current directory
+
+We also can add `-exec ls` to get the output of `ls`, and change the regex type by `-regextype egrep`.
+
+## strip first 2 character from a string
+
+simplest way:
+
+```shell
+${string:2}
+```
+
+some alternatives refer to [How can I strip first X characters from string using sed?](https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed), or [Remove first character of a string in Bash](https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash)
+
+## 
