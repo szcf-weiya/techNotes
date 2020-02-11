@@ -25,6 +25,24 @@ for i in {5..50..5}; do
 done
 ```
 
+actually, it can be used to construct an array,
+
+```shell
+arr=({1..10..2})
+echo ${arr[@]}
+for i in ${arr[@]}; do
+  echo $i
+done
+```
+
+alternatively, we can use `seq`,
+
+```shell
+for i in $(seq 5 5 50); do
+    echo $i
+done
+```
+
 ## shell字符串
 
 1. 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；
@@ -246,3 +264,36 @@ echo $a
 ```
 
 where `-d'.'` is to define the delimiter, and then `-f1` get the first field.
+
+## Multiple `IFS`
+
+```shell
+while IFS= read -a ADDR; do
+        IFS=':' read -a Line <<< $ADDR
+        echo ${Line[0]};
+done < <(grep -nE "finished" slurm-37985.out)
+```
+
+will also output the numbers of the finished line.
+
+- `<()` is called [process substitution](https://superuser.com/questions/1059781/what-exactly-is-in-bash-and-in-zsh)
+- `<<<` is known as `here string`, and [different from `<<`, `<`](https://askubuntu.com/questions/678915/whats-the-difference-between-and-in-bash)
+
+refer to [How can I store the “find” command results as an array in Bash](https://stackoverflow.com/questions/23356779/how-can-i-store-the-find-command-results-as-an-array-in-bash)
+
+my working case:
+
+```shell
+files=()
+start_time=$(date -d "2019-09-21T14:11:16" +'%s')
+end_time=$(date -d "2019-09-22T20:07:00" +'%s')
+while IFS=  read -r -d $'\0'; do
+  IFS='_' read -ra ADDR <<< "$REPLY"
+  timestamp=$(date -d ${ADDR[2]} +'%s')
+  if [ $timestamp -ge $start_time -a $timestamp -lt $end_time ]; then
+    curr_folder="${ADDR[0]}_${ADDR[1]}_${ADDR[2]}"
+    files+=("${ADDR[0]}_${ADDR[1]}_${ADDR[2]}")
+    qsub -v folder=${curr_folder} revisit_sil_parallel.job
+  fi
+done < <(find . -maxdepth 1 -regex "\./oracle_setting_2019-09-.*recall\.pdf" -print0)
+```
