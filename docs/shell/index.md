@@ -15,6 +15,16 @@ for skill in Ada Coffe Action Java; do
 done
 ```
 
+### another `for` loop
+
+`start..stop..length`
+
+```shell
+for i in {5..50..5}; do
+  echo $i
+done
+```
+
 ## shell字符串
 
 1. 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；

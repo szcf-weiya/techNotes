@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block analytics %}
+{% if config.google_analytics %}
+  {% include "partials/integrations/analytics.html" %}
+  <script data-ad-client="ca-pub-3680148472128768" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{% endif %}

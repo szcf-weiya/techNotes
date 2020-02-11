@@ -888,7 +888,7 @@ paste file1 file2 > outputfile
 ### 按行
 
 ```bash
-cut file1 file2 > outputfile
+cat file1 file2 > outputfile
 ```
 
 ## 视频处理

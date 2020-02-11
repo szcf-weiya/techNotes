@@ -1,6 +1,6 @@
 # Links
 
-## Interesting personal blogs.
+## Homepages
 
 1. [Chip Huyen](https://huyenchip.com/)
 2. [Yixuan's Blog](http://statr.me/)
@@ -13,12 +13,19 @@
 9. [Larry Wasserman's blog](https://normaldeviate.wordpress.com/)
 
 
-## Homepages
-
+- [Yanjun Han @ Stanford](https://web.stanford.edu/~yjhan/index.html)
 - [Zhou Fan @ Yale](http://www.stat.yale.edu/~zf59)
 - [Ting Ye @Wisc](https://sites.google.com/view/tingye/home)
 - [Tengyuan Liang](https://tyliang.github.io/Tengyuan.Liang/)
 - [范函子](https://skylinchern.wordpress.com/)
+
+### douban
+
+- [阿道克](https://www.douban.com/people/36849435/)
+
+### CSDN
+
+- [找寻最初的美](https://blog.csdn.net/mike190267481), by [Xingyu Zhou](https://xingyuzhou.org/)
 
 ## Interesting words
 
@@ -38,6 +45,7 @@
 9. [GPUSS - GPU Stochastic Simulation for statistical data analysis](http://www.oxford-man.ox.ac.uk/gpuss/)
 10. [统计术语英汉对照表](https://wiki.mbalib.com/wiki/%E7%BB%9F%E8%AE%A1%E6%9C%AF%E8%AF%AD%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7%E8%A1%A8)
 11. [心理学相关推荐](https://www.lijinzhang.xyz/blog_181226_psycho.html)
+- [An Introduction to Applied Bioinformatics](http://readiab.org/)
 
 ## Informative Posts
 

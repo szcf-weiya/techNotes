@@ -58,6 +58,7 @@ pages:
 
 theme:
   name: 'material'
+  custom_dir: 'theme'
   search:
     language: 'en, jp'
 google_analytics: ['UA-85007363-6', 'auto']
