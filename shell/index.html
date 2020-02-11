@@ -481,6 +481,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#multiple-ifs" class="md-nav__link">
+    Multiple IFS
+  </a>
+  
+</li>
+      
       
       
       
@@ -1377,6 +1384,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#multiple-ifs" class="md-nav__link">
+    Multiple IFS
+  </a>
+  
+</li>
+      
       
       
       
@@ -1413,6 +1427,20 @@
 <p><code>start..stop..length</code></p>
 <div class="codehilite"><pre><span></span><code><span class="k">for</span> i in <span class="o">{</span><span class="m">5</span>..50..5<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
   <span class="nb">echo</span> <span class="nv">$i</span>
+<span class="k">done</span>
+</code></pre></div>
+
+<p>actually, it can be used to construct an array,</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">arr</span><span class="o">=({</span><span class="m">1</span>..10..2<span class="o">})</span>
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">arr</span><span class="p">[@]</span><span class="si">}</span>
+<span class="k">for</span> i in <span class="si">${</span><span class="nv">arr</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>
+  <span class="nb">echo</span> <span class="nv">$i</span>
+<span class="k">done</span>
+</code></pre></div>
+
+<p>alternatively, we can use <code>seq</code>,</p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">5</span> <span class="m">5</span> <span class="m">50</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$i</span>
 <span class="k">done</span>
 </code></pre></div>
 
@@ -1588,6 +1616,33 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 </code></pre></div>
 
 <p>where <code>-d'.'</code> is to define the delimiter, and then <code>-f1</code> get the first field.</p>
+<h2 id="multiple-ifs">Multiple <code>IFS</code><a class="headerlink" href="#multiple-ifs" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span>
+        <span class="nv">IFS</span><span class="o">=</span><span class="s1">&#39;:&#39;</span> <span class="nb">read</span> -a Line <span class="o">&lt;&lt;&lt;</span> <span class="nv">$ADDR</span>
+        <span class="nb">echo</span> <span class="si">${</span><span class="nv">Line</span><span class="p">[0]</span><span class="si">}</span><span class="p">;</span>
+<span class="k">done</span> &lt; &lt;<span class="o">(</span>grep -nE <span class="s2">&quot;finished&quot;</span> slurm-37985.out<span class="o">)</span>
+</code></pre></div>
+
+<p>will also output the numbers of the finished line.</p>
+<ul>
+<li><code>&lt;()</code> is called <a href="https://superuser.com/questions/1059781/what-exactly-is-in-bash-and-in-zsh">process substitution</a></li>
+<li><code>&lt;&lt;&lt;</code> is known as <code>here string</code>, and <a href="https://askubuntu.com/questions/678915/whats-the-difference-between-and-in-bash">different from <code>&lt;&lt;</code>, <code>&lt;</code></a></li>
+</ul>
+<p>refer to <a href="https://stackoverflow.com/questions/23356779/how-can-i-store-the-find-command-results-as-an-array-in-bash">How can I store the “find” command results as an array in Bash</a></p>
+<p>my working case:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">files</span><span class="o">=()</span>
+<span class="nv">start_time</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-21T14:11:16&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
+<span class="nv">end_time</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22T20:07:00&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
+<span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span>  <span class="nb">read</span> -r -d <span class="s1">$&#39;\0&#39;</span><span class="p">;</span> <span class="k">do</span>
+  <span class="nv">IFS</span><span class="o">=</span><span class="s1">&#39;_&#39;</span> <span class="nb">read</span> -ra ADDR <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;</span><span class="nv">$REPLY</span><span class="s2">&quot;</span>
+  <span class="nv">timestamp</span><span class="o">=</span><span class="k">$(</span>date -d <span class="si">${</span><span class="nv">ADDR</span><span class="p">[2]</span><span class="si">}</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
+  <span class="k">if</span> <span class="o">[</span> <span class="nv">$timestamp</span> -ge <span class="nv">$start_time</span> -a <span class="nv">$timestamp</span> -lt <span class="nv">$end_time</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nv">curr_folder</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ADDR</span><span class="p">[0]</span><span class="si">}</span><span class="s2">_</span><span class="si">${</span><span class="nv">ADDR</span><span class="p">[1]</span><span class="si">}</span><span class="s2">_</span><span class="si">${</span><span class="nv">ADDR</span><span class="p">[2]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nv">files</span><span class="o">+=(</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ADDR</span><span class="p">[0]</span><span class="si">}</span><span class="s2">_</span><span class="si">${</span><span class="nv">ADDR</span><span class="p">[1]</span><span class="si">}</span><span class="s2">_</span><span class="si">${</span><span class="nv">ADDR</span><span class="p">[2]</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span>
+    qsub -v <span class="nv">folder</span><span class="o">=</span><span class="si">${</span><span class="nv">curr_folder</span><span class="si">}</span> revisit_sil_parallel.job
+  <span class="k">fi</span>
+<span class="k">done</span> &lt; &lt;<span class="o">(</span>find . -maxdepth <span class="m">1</span> -regex <span class="s2">&quot;\./oracle_setting_2019-09-.*recall\.pdf&quot;</span> -print0<span class="o">)</span>
+</code></pre></div>
                 
                   
                 
