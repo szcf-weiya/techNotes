@@ -425,6 +425,53 @@
     join elements of an array in Bash
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-more-complex-way" class="md-nav__link">
+    A more complex way
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timestamp" class="md-nav__link">
+    timestamp
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compare-two-timestamps" class="md-nav__link">
+    compare two timestamps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#globbing-for-ls-vs-regular-expression-for-find" class="md-nav__link">
+    globbing for ls vs regular expression for find
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strip-first-2-character-from-a-string" class="md-nav__link">
+    strip first 2 character from a string
+  </a>
+  
 </li>
       
       
@@ -1267,6 +1314,53 @@
     join elements of an array in Bash
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-more-complex-way" class="md-nav__link">
+    A more complex way
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timestamp" class="md-nav__link">
+    timestamp
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compare-two-timestamps" class="md-nav__link">
+    compare two timestamps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#globbing-for-ls-vs-regular-expression-for-find" class="md-nav__link">
+    globbing for ls vs regular expression for find
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strip-first-2-character-from-a-string" class="md-nav__link">
+    strip first 2 character from a string
+  </a>
+  
 </li>
       
       
@@ -1403,11 +1497,77 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <h2 id="command-line-arguments">Command line arguments<a class="headerlink" href="#command-line-arguments" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://www.devdungeon.com/content/taking-command-line-arguments-bash">Taking Command Line Arguments in Bash</a></p>
 <h2 id="join-elements-of-an-array-in-bash">join elements of an array in Bash<a class="headerlink" href="#join-elements-of-an-array-in-bash" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>arr=(a b c)
-printf &#39;%s\n&#39; &quot;$(IFS=,; printf &#39;%s&#39; &quot;<span class="cp">${</span><span class="n">arr</span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="cp">}</span>&quot;)&quot;
+<div class="codehilite"><pre><span></span><code><span class="nv">arr</span><span class="o">=(</span>a b c<span class="o">)</span>
+<span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&quot;</span><span class="k">$(</span><span class="nv">IFS</span><span class="o">=</span>,<span class="p">;</span> <span class="nb">printf</span> <span class="s1">&#39;%s&#39;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">arr</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="c1"># a,b,c</span>
 </code></pre></div>
 
+<p>where <code>*</code> or <code>@</code> return all elements of such array.</p>
 <p>refer to <a href="https://stackoverflow.com/questions/1527049/how-can-i-join-elements-of-an-array-in-bash">How can I join elements of an array in Bash?</a></p>
+<h3 id="a-more-complex-way">A more complex way<a class="headerlink" href="#a-more-complex-way" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nv">list</span><span class="o">=</span>
+<span class="k">for</span> nc in <span class="o">{</span><span class="m">2</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+  <span class="k">for</span> nf in <span class="m">5</span> <span class="m">10</span> <span class="m">15</span><span class="p">;</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$list</span><span class="s2">&quot;</span> <span class="o">]</span>
+    <span class="k">then</span>
+        <span class="nv">list</span><span class="o">=</span>acc-<span class="nv">$nc</span>-<span class="nv">$nf</span>
+    <span class="k">else</span>
+        <span class="nv">list</span><span class="o">=</span><span class="nv">$list</span>,acc-<span class="nv">$nc</span>-<span class="nv">$nf</span>
+    <span class="k">fi</span>
+  <span class="k">done</span>
+<span class="k">done</span>
+<span class="nb">echo</span> <span class="nv">$list</span>
+</code></pre></div>
+
+<h2 id="timestamp">timestamp<a class="headerlink" href="#timestamp" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="nv">timestamp</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">&quot;%Y-%m-%dT%H:%M:%S&quot;</span><span class="k">)</span>
+<span class="nb">echo</span> <span class="nv">$timestamp</span>
+<span class="c1"># 2020-02-11T10:51:42</span>
+</code></pre></div>
+
+<h3 id="compare-two-timestamps">compare two timestamps<a class="headerlink" href="#compare-two-timestamps" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nv">d1</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22 20:07:25&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
+<span class="nv">d2</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22 20:08:25&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$d1</span> -gt <span class="nv">$d2</span> <span class="o">]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;d1 &gt; d2&quot;</span>
+<span class="k">else</span>
+  <span class="nb">echo</span> <span class="s2">&quot;d1 &lt; d2&quot;</span>
+<span class="k">fi</span>
+</code></pre></div>
+
+<p>where </p>
+<ul>
+<li><code>-d</code>: display time described by STRING, not &lsquo;now&rsquo; (from <code>man date</code>)</li>
+<li><code>+%[format-option]</code>: format specifiers (details formats refer to <code>man date</code>, but I am curious why <code>+</code>, no hints from <code>many date</code>, but here is one from <a href="https://www.geeksforgeeks.org/date-command-linux-examples/">date command in Linux with examples</a>)</li>
+<li><code>-gt</code>: larger than, <code>-lt</code>: less than; with equality, <code>-ge</code> and <code>-le</code>, (from <a href="https://www.runoob.com/linux/linux-shell-basic-operators.html">Shell 基本运算符</a>)</li>
+<li>条件表达式要放在方括号之间，并且要有空格, from <a href="https://www.runoob.com/linux/linux-shell-basic-operators.html">Shell 基本运算符</a></li>
+</ul>
+<p>refer to <a href="https://unix.stackexchange.com/questions/375911/how-to-compare-two-time-stamps">How to compare two time stamps?</a></p>
+<h2 id="globbing-for-ls-vs-regular-expression-for-find">globbing for <code>ls</code> vs regular expression for <code>find</code><a class="headerlink" href="#globbing-for-ls-vs-regular-expression-for-find" title="Permanent link">&para;</a></h2>
+<p>Support we want to get <code>abc2.txt</code> as stated in <a href="https://unix.stackexchange.com/questions/44754/listing-with-ls-and-regular-expression">Listing with <code>ls</code> and regular expression
+</a>,</p>
+<p><code>ls</code> does not support regular expressions, but it can work with globbing, or filename expressions. </p>
+<div class="codehilite"><pre><span></span><code>ls *<span class="o">[</span>!0-9<span class="o">][</span><span class="m">0</span>-9<span class="o">]</span>.txt
+</code></pre></div>
+
+<p>where <code>!</code> is complement.</p>
+<p>Alternatively, we can use <code>find -regex</code>, </p>
+<div class="codehilite"><pre><span></span><code>find . -maxdepth <span class="m">1</span> -regex <span class="s1">&#39;\./.*[^0-9][0-9]\.txt&#39;</span>
+</code></pre></div>
+
+<p>where</p>
+<ul>
+<li><code>-maxdepth 1</code> disables recursive, and only to find files in the current directory</li>
+</ul>
+<p>We also can add <code>-exec ls</code> to get the output of <code>ls</code>, and change the regex type by <code>-regextype egrep</code>.</p>
+<h2 id="strip-first-2-character-from-a-string">strip first 2 character from a string<a class="headerlink" href="#strip-first-2-character-from-a-string" title="Permanent link">&para;</a></h2>
+<p>simplest way:</p>
+<div class="codehilite"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span>
+</code></pre></div>
+
+<p>some alternatives refer to <a href="https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed">How can I strip first X characters from string using sed?</a>, or <a href="https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash">Remove first character of a string in Bash</a></p>
+<h2 id="_3"><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
                 
                   
                 
