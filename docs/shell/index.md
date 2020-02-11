@@ -236,4 +236,13 @@ ${string:2}
 
 some alternatives refer to [How can I strip first X characters from string using sed?](https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed), or [Remove first character of a string in Bash](https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash)
 
-## 
+## select the first field
+
+given filename `file.txt`, want to get a string `file_test`.
+
+```shell
+a=$(cut -d'.' -f1 <<< $1)_test
+echo $a
+```
+
+where `-d'.'` is to define the delimiter, and then `-f1` get the first field.
