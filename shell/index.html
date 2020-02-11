@@ -474,6 +474,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#select-the-first-field" class="md-nav__link">
+    select the first field
+  </a>
+  
+</li>
+      
       
       
       
@@ -1363,6 +1370,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#select-the-first-field" class="md-nav__link">
+    select the first field
+  </a>
+  
+</li>
+      
       
       
       
@@ -1567,7 +1581,13 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 </code></pre></div>
 
 <p>some alternatives refer to <a href="https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed">How can I strip first X characters from string using sed?</a>, or <a href="https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash">Remove first character of a string in Bash</a></p>
-<h2 id="_3"><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="select-the-first-field">select the first field<a class="headerlink" href="#select-the-first-field" title="Permanent link">&para;</a></h2>
+<p>given filename <code>file.txt</code>, want to get a string <code>file_test</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="k">$(</span>cut -d<span class="s1">&#39;.&#39;</span> -f1 <span class="o">&lt;&lt;&lt;</span> <span class="nv">$1</span><span class="k">)</span>_test
+<span class="nb">echo</span> <span class="nv">$a</span>
+</code></pre></div>
+
+<p>where <code>-d'.'</code> is to define the delimiter, and then <code>-f1</code> get the first field.</p>
                 
                   
                 
