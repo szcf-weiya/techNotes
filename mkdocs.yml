@@ -25,7 +25,9 @@ pages:
       - Website: website/index.md
       - CSS: website/index.md
       - JS: js/index.md
-    - Network: Internet/index.md
+    - Network: 
+      - 一般问题: Internet/index.md
+      - 访问内网: Internet/sci-int.md
     - Tools:
       - Autotools: autotools/index.md
       - Emacs: Emacs/index.md

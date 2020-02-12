@@ -336,6 +336,8 @@ ssh -g -D 30002 -p30001 inner-user@localhost
 
 ## SSH 端口转发
 
+### 科学上网
+
 ```bash
 # Local Laptop
 ssh -D 30002 my@server
@@ -343,6 +345,7 @@ ssh -D 30002 my@server
 
 然后在 SwithyOmega 中添加 socks5://127.0.0.1:30002 即可科学上网。
 
+### 访问内网
 
 ```bash
 # Local Laptop
