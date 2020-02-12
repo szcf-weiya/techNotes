@@ -1,6 +1,6 @@
 # 访问学校内网
 
-## ngrok：https://ngrok.com/
+## [ngrok](https://ngrok.com/)
 
 在内网服务器 Server (such as Fan's lab server, ln001 server, chpc's server)进行如下操作：
 
@@ -48,4 +48,4 @@ ssh -D 30002 my@server
 
 ## shootback
 
-同 SSH 反向隧道，需要自己准备一台服务器，项目主页有详细配置过程 (https://github.com/aploium/shootback)
+同 SSH 反向隧道，需要自己准备一台服务器，[项目主页](https://github.com/aploium/shootback)有详细配置过程。
