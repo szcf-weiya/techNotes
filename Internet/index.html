@@ -42,7 +42,7 @@
     
     
       
-        <title>techNotes</title>
+        <title>一般问题 - techNotes</title>
       
     
     
@@ -135,7 +135,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Network
+                一般问题
               
             </span>
           
@@ -595,6 +595,27 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      Network
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Network
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -603,11 +624,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Network
+        一般问题
       </label>
     
-    <a href="./" title="Network" class="md-nav__link md-nav__link--active">
-      Network
+    <a href="./" title="一般问题" class="md-nav__link md-nav__link--active">
+      一般问题
     </a>
     
       
@@ -824,10 +845,30 @@
     SSH 端口转发
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    科学上网
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    访问内网
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     带宽、网速和流量
   </a>
   
@@ -841,6 +882,23 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="sci-int/" title="访问内网" class="md-nav__link">
+      访问内网
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -1464,10 +1522,30 @@
     SSH 端口转发
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    科学上网
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    访问内网
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     带宽、网速和流量
   </a>
   
@@ -1728,11 +1806,13 @@ ssh -g -D <span class="m">30002</span> -p30001 inner-user@localhost
 </blockquote>
 <p>所以如果我在 SwitchyOmega 上添加一条 socks5 记录，端口为 30002，而 sever 即填 <code>server-address</code>，则可以翻墙了！！</p>
 <h2 id="ssh_1">SSH 端口转发<a class="headerlink" href="#ssh_1" title="Permanent link">&para;</a></h2>
+<h3 id="_8">科学上网<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Local Laptop</span>
 ssh -D <span class="m">30002</span> my@server
 </code></pre></div>
 
 <p>然后在 SwithyOmega 中添加 socks5://127.0.0.1:30002 即可科学上网。</p>
+<h3 id="_9">访问内网<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Local Laptop</span>
 ssh -L <span class="m">30002</span>:localhost:30002 my@server
 <span class="c1"># my server</span>
@@ -1755,7 +1835,7 @@ ssh -R <span class="m">30001</span>:localhost:22 my@server
 <div class="codehilite"><pre><span></span><code><span class="nb">kill</span> -s <span class="m">9</span> pid
 </code></pre></div>
 
-<h2 id="_8">带宽、网速和流量<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_10">带宽、网速和流量<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>单位：</p>
 <ul>
 <li>带宽：比特每秒 (bit/s, bps)</li>
@@ -1807,13 +1887,13 @@ ssh -R <span class="m">30001</span>:localhost:22 my@server
           </a>
         
         
-          <a href="../autotools/" title="Autotools" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="sci-int/" title="访问内网" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Autotools
+                访问内网
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
