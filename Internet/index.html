@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
     
     
       
@@ -1726,7 +1726,7 @@ sudo apt-get install network-manager-l2tp-gnome
 <p>最后我换了 VPN 的 ip（有两个 ip，10.5.1.5 和 10.5.1.9），之前 <code>xl2tpd_zju</code> 默认是 10.5.1.5，误打误撞，改成 10.5.1.9 后，竟然成功了！！</p>
 <h2 id="cuhk-vpn">CUHK VPN 连接失败<a class="headerlink" href="#cuhk-vpn" title="Permanent link">&para;</a></h2>
 <p>Ubuntu 16.04 </p>
-<p>在安装 <code>network-manager-l2tp-gnome</code> 好后（如 https://medium.com/@hkdb/ubuntu-16-04-connecting-to-l2tp-over-ipsec-via-network-manager-204b5d475721），能够连接，但是并不能访问 google，甚至 baidu 也不行，而手机端 vpn 可以正常使用。并且尝试访问 google 失败后，便弹出 vpn stop 的消息。</p>
+<p>在安装 <code>network-manager-l2tp-gnome</code> 好后（如 <a href="https://medium.com/@hkdb/ubuntu-16-04-connecting-to-l2tp-over-ipsec-via-network-manager-204b5d475721">Ubuntu 16.04 Connecting to L2TP over IPSEC via Network Manager</a>），能够连接，但是并不能访问 google，甚至 baidu 也不行，而手机端 vpn 可以正常使用。并且尝试访问 google 失败后，便弹出 vpn stop 的消息。</p>
 <h2 id="vpn">VPN 跳转<a class="headerlink" href="#vpn" title="Permanent link">&para;</a></h2>
 <p>猜测可能由于墙的原因使得 VPN 不稳定，于是尝试在境外服务器连接 VPN</p>
 <p>首先安装 </p>
@@ -1741,7 +1741,7 @@ sudo apt-get install network-manager-l2tp
 </code></pre></div>
 
 <h3 id="_6">尝试二：命令行添加<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>在尝试寻找 network manager 的 command line 命令时，发现好几个 <code>nmcli</code> 相关的命令，于是猜想应该是可以直接在 command line 中配置的，比如 <a href="https://askubuntu.com/questions/1167283/l2tp-connection-client-on-ubuntu-18-04-server">L2TP Connection Client on ubuntu 18.04 Server</a>，但我先在本地测试有几个问题</p>
+<p>在尝试寻找 network manager 的 command line 命令时，发现好几个 <code>nmcli</code> 相关的命令，于是猜想应该是可以直接在 command line 中配置的，比如 <a href="https://askubuntu.com/questions/1167283/l2tp-connection-client-on-ubuntu-18-04-server">L2TP Connection Client on ubuntu 18.04 Server</a> 和 <a href="https://www.thegeekdiary.com/how-to-configure-and-manage-network-connections-using-nmcli/">How to configure and Manage Network Connections using nmcli</a>，但我先在本地测试有几个问题</p>
 <ul>
 <li>似乎不需要 <code>connection.id</code></li>
 <li>需要指定 <code>ifname</code></li>
@@ -1750,8 +1750,7 @@ sudo apt-get install network-manager-l2tp
 <blockquote>
 <p>NetworkManager fails with “Could not find source connection”</p>
 </blockquote>
-<p>参考 <a href="https://unix.stackexchange.com/questions/438224/networkmanager-fails-with-could-not-find-source-connection">NetworkManager fails with “Could not find source connection”
-</a> 无果。后来在 <a href="https://developer.gnome.org/NetworkManager/stable/nmcli.html">nmcli 的官方文档</a>中看到，似乎连接时需要指定 <code>ifname</code>，可用的 device 为</p>
+<p>参考 <a href="https://unix.stackexchange.com/questions/438224/networkmanager-fails-with-could-not-find-source-connection">NetworkManager fails with “Could not find source connection”</a> 无果。后来在 <a href="https://developer.gnome.org/NetworkManager/stable/nmcli.html">nmcli 的官方文档</a>中看到，似乎连接时需要指定 <code>ifname</code>，可用的 device 为</p>
 <div class="codehilite"><pre><span></span><code>sudo nmcli device status 
 </code></pre></div>
 
