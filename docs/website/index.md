@@ -160,6 +160,8 @@ file_put_contents('php://stderr', print_r($redirect, TRUE));
 
 似乎也只是 `http` 和 `https` 的区别，此时已经在 apache 配置文件指定了 host name 为域名。于是可以用 [`str_ireplace`](https://stackoverflow.com/questions/5289272/php-replace-http-with-https-in-url) 来完成替换。
 
+另外，设置不允许查看 Apache 的目录，参考 [How to make Apache more secure by hiding directory folders](https://www.techrepublic.com/article/how-to-make-apache-more-secure-by-hiding-directory-folders/)
+
 
 ## 博客中插入网易云音乐
 
