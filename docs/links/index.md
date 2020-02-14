@@ -45,7 +45,12 @@
 9. [GPUSS - GPU Stochastic Simulation for statistical data analysis](http://www.oxford-man.ox.ac.uk/gpuss/)
 10. [统计术语英汉对照表](https://wiki.mbalib.com/wiki/%E7%BB%9F%E8%AE%A1%E6%9C%AF%E8%AF%AD%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7%E8%A1%A8)
 11. [心理学相关推荐](https://www.lijinzhang.xyz/blog_181226_psycho.html)
+
 - [An Introduction to Applied Bioinformatics](http://readiab.org/)
+
+## Some Video
+
+- [【人物 | 陈丹琦】清华姚班，斯坦福博士毕业](https://www.bilibili.com/video/av45038361/?spm_id_from=333.788.videocard.3)
 
 ## Informative Posts
 

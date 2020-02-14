@@ -223,8 +223,7 @@ sudo apt-get install network-manager-l2tp-gnome
 
 Ubuntu 16.04 
 
-在安装 `network-manager-l2tp-gnome` 好后（如 https://medium.com/@hkdb/ubuntu-16-04-connecting-to-l2tp-over-ipsec-via-network-manager-204b5d475721），能够连接，但是并不能访问 google，甚至 baidu 也不行，而手机端 vpn 可以正常使用。并且尝试访问 google 失败后，便弹出 vpn stop 的消息。
-
+在安装 `network-manager-l2tp-gnome` 好后（如 [Ubuntu 16.04 Connecting to L2TP over IPSEC via Network Manager](https://medium.com/@hkdb/ubuntu-16-04-connecting-to-l2tp-over-ipsec-via-network-manager-204b5d475721)），能够连接，但是并不能访问 google，甚至 baidu 也不行，而手机端 vpn 可以正常使用。并且尝试访问 google 失败后，便弹出 vpn stop 的消息。
 
 ## VPN 跳转
 
@@ -249,7 +248,7 @@ sudo apt-get install network-manager-gnome
 
 ### 尝试二：命令行添加
 
-在尝试寻找 network manager 的 command line 命令时，发现好几个 `nmcli` 相关的命令，于是猜想应该是可以直接在 command line 中配置的，比如 [L2TP Connection Client on ubuntu 18.04 Server](https://askubuntu.com/questions/1167283/l2tp-connection-client-on-ubuntu-18-04-server)，但我先在本地测试有几个问题
+在尝试寻找 network manager 的 command line 命令时，发现好几个 `nmcli` 相关的命令，于是猜想应该是可以直接在 command line 中配置的，比如 [L2TP Connection Client on ubuntu 18.04 Server](https://askubuntu.com/questions/1167283/l2tp-connection-client-on-ubuntu-18-04-server) 和 [How to configure and Manage Network Connections using nmcli](https://www.thegeekdiary.com/how-to-configure-and-manage-network-connections-using-nmcli/)，但我先在本地测试有几个问题
 
 - 似乎不需要 `connection.id`
 - 需要指定 `ifname`
@@ -258,8 +257,7 @@ sudo apt-get install network-manager-gnome
 
 > NetworkManager fails with “Could not find source connection”
 
-参考 [NetworkManager fails with “Could not find source connection”
-](https://unix.stackexchange.com/questions/438224/networkmanager-fails-with-could-not-find-source-connection) 无果。后来在 [nmcli 的官方文档](https://developer.gnome.org/NetworkManager/stable/nmcli.html)中看到，似乎连接时需要指定 `ifname`，可用的 device 为
+参考 [NetworkManager fails with “Could not find source connection”](https://unix.stackexchange.com/questions/438224/networkmanager-fails-with-could-not-find-source-connection) 无果。后来在 [nmcli 的官方文档](https://developer.gnome.org/NetworkManager/stable/nmcli.html)中看到，似乎连接时需要指定 `ifname`，可用的 device 为
 
 ```bash
 sudo nmcli device status 

@@ -71,11 +71,95 @@ disqus 迁移（待研究）
 
 2. [~~解决Hexo博客中 Disqus 在国内不能访问的方案~~](https://www.jianshu.com/p/9cc4cc8628c9)
 
-### 服务器端配置过程
+### 更换服务器重新配置
+
+#### Step 1: Install Apache2 
 
 ```bash
+sudo apt update
+sudo apt install apache2
+```
+
+配置云服务商的安全组，添加 80,443 端口，则应该能够访问 apache 的默认网页。
+
+然后在 `/var/www` 下新建 `disqus` 文件夹
+
+```bash
+sudo mkdir /var/www/disqus
+sudo chown -R $USER:$USER /var/www/disqus
+```
+
+并配置
+
+```bash
+sudo nano /etc/apache2/sites-available/your_domain.conf
+```
+
+可以直接复制 `000-default.conf`
+
+然后启动 `disqus.conf` 并关闭 `000-default.conf`
+
+```bash
+sudo a2ensite disqus.conf
+sudo a2dissite 000-default.conf
+```
+
+这样的好处是以后方便添加不同的 hosts。
+
+#### Step 2: Install php
+
+直接下载就好了
+
+```bash
+sudo apt install php 
+```
+
+默认装的是 php7.2，虽然文档中说的是 php5.6，切换不同版本的 php 可以参考 [How to install php5 and php7 on Ubuntu 18.04 LTS](https://vitux.com/how-to-install-php5-and-php7-on-ubuntu-18-04-lts/)
+
+另外还要安装 `cURL`，不然会报错
+
+> PHP Fatal error:  Call to undefined function curl_init() in /var/www/disqus/disqus-php-api/api/init.php on line 104
+
+其中`curl_init()` 是 cURL 的函数。需要注意选择与 php 匹配的版本
+
+```bash
+sudo apt-get install php7.2-curl
+```
+
+#### Step 3: Install api
+
+
+```bash
+cd /var/www/disqus
 git clone git@github.com:fooleap/disqus-php-api.git
 ```
+
+然后配置 `config.php`，似乎也要给 api 文件夹写的权限，不然会报出
+
+![](disqus-api.png)
+
+然后在 [Disqus Api](https://disqus.com/api/applications/) 中更新 callback url，同时也要更新下 CNAME 记录。
+
+最后可以在浏览器中访问 `****/login.php` 看是否配置成功，如果不成功，可以查看日志文件寻找 bug，
+
+```bash
+cat /var/log/error.log
+```
+
+有一点比较困惑的是，disqus 会报出，
+
+![](disqus-api-1.png)
+
+于是我手动把 `login.php` 文件中的 `$redirect` 改成 callback url，这样确实也成功了，但是我肯定错过了什么东西，也许 Apache 目录名的设置？
+
+后来通过在 `login.php` 文件中添加打印输出语句
+
+```bash
+file_put_contents('php://stderr', print_r($redirect, TRUE));
+```
+
+似乎也只是 `http` 和 `https` 的区别，此时已经在 apache 配置文件指定了 host name 为域名。于是可以用 [`str_ireplace`](https://stackoverflow.com/questions/5289272/php-replace-http-with-https-in-url) 来完成替换。
+
 
 ## 博客中插入网易云音乐
 
