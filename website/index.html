@@ -1783,6 +1783,7 @@ git clone git@github.com:fooleap/disqus-php-api.git
 </code></pre></div>
 
 <p>似乎也只是 <code>http</code> 和 <code>https</code> 的区别，此时已经在 apache 配置文件指定了 host name 为域名。于是可以用 <a href="https://stackoverflow.com/questions/5289272/php-replace-http-with-https-in-url"><code>str_ireplace</code></a> 来完成替换。</p>
+<p>另外，设置不允许查看 Apache 的目录，参考 <a href="https://www.techrepublic.com/article/how-to-make-apache-more-secure-by-hiding-directory-folders/">How to make Apache more secure by hiding directory folders</a></p>
 <h2 id="_3">博客中插入网易云音乐<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>这个很容易实现，只需要在网易云中搜索要插入的音乐，然后点击“生成外链播放器”，将iframe代码插入博客的相应位置。</p>
 <p>比如，我想在<a href="">不愿沉默如谜</a>插入容祖儿的<a href="http://music.163.com/#/song?id=522631413">重生</a>。点击页面中的“生成外链播放器”，将iframe代码放进原md文件中。但一开始有问题，iframe被当成普通的md文本。在<a href="https://stackoverflow.com/questions/30233461/jekyll-raw-html-in-post">Jekyll raw HTML in post</a>中找到了答案。</p>
