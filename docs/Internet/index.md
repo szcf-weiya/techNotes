@@ -395,3 +395,33 @@ kill -s 9 pid
 - 3M以上用户的到达测速网站的速度大于 240KByte/s,即1920Kbps时是属于正常的；
 
 参考 [浅谈带宽、网速和流量之间的关系](https://zhuanlan.zhihu.com/p/50401281)
+
+## 安卓手机代理上网
+
+安卓手机自带的只默认 http 和 https 代理，但像 ssh 隧道或者 shadowsocks 得到的都是 socks5 代理，也尝试过[别人推荐的 ProxyDroid](https://blog.csdn.net/qq_40374604/article/details/88989651)，但是似乎还要对手机进行 root。遂放弃。
+
+既然 socks5 有了，直接转换成 http 不就行了么，然后看到了 [Privoxy](https://g2ex.top/2016/05/20/Tips-on-Chinternet/)，这勾起了我的回忆，记得曾经[跟 shadowsocks 搭配](https://blog.csdn.net/m0_38110132/article/details/79796171)使用过，但不知道为啥要用它。而这次我的目标及动机很明确了，将 socks5 转换成 http，供手机端访问，因为我的电脑和手机在同一个局域网内，那这样手机端的 http 代理服务器即为我电脑的局域网 ip，通过 ifconfig 可以得到。
+
+```bash
+# 把 HTTP 流量转发到本机 127.0.0.1:1080 的 Shadowsocks (or SSH tunnel)
+forward-socks5 / 127.0.0.1:1080 .
+
+# 可选，默认只监听本地连接 127.0.0.1:8118
+# 可以允许局域网中的连接
+listen-address 0.0.0.0:8118
+```
+
+注意这里要用 `0.0.0.0`，这样才能允许[局域网内的连接](https://blog.csdn.net/lamp_yang_3533/article/details/52154695)。但这样还不够，防火墙还没打开，[查看防火墙](https://blog.csdn.net/jiaochiwuzui/article/details/80907521)当前打开的 port
+
+```bash
+sudo ufw status
+```
+
+果然没有 8118 端口，于是打开
+
+```bash
+sudo ufw allow 8118
+```
+
+大功告成，手机端能够通过 http 代理科学上网啦！
+
