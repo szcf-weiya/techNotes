@@ -28,6 +28,7 @@ pages:
     - Network: 
       - 一般问题: Internet/index.md
       - 访问内网: Internet/sci-int.md
+      - IPv6: Internet/ipv6.md
     - Tools:
       - Autotools: autotools/index.md
       - Emacs: Emacs/index.md
