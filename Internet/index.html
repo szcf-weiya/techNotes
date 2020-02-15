@@ -874,6 +874,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    安卓手机代理上网
+  </a>
+  
+</li>
+      
       
       
       
@@ -1563,6 +1570,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    安卓手机代理上网
+  </a>
+  
+</li>
+      
       
       
       
@@ -1862,6 +1876,26 @@ ssh -R <span class="m">30001</span>:localhost:22 my@server
 - 3M以上用户的到达测速网站的速度大于 240KByte/s,即1920Kbps时是属于正常的；</p>
 </blockquote>
 <p>参考 <a href="https://zhuanlan.zhihu.com/p/50401281">浅谈带宽、网速和流量之间的关系</a></p>
+<h2 id="_11">安卓手机代理上网<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>安卓手机自带的只默认 http 和 https 代理，但像 ssh 隧道或者 shadowsocks 得到的都是 socks5 代理，也尝试过<a href="https://blog.csdn.net/qq_40374604/article/details/88989651">别人推荐的 ProxyDroid</a>，但是似乎还要对手机进行 root。遂放弃。</p>
+<p>既然 socks5 有了，直接转换成 http 不就行了么，然后看到了 <a href="https://g2ex.top/2016/05/20/Tips-on-Chinternet/">Privoxy</a>，这勾起了我的回忆，记得曾经<a href="https://blog.csdn.net/m0_38110132/article/details/79796171">跟 shadowsocks 搭配</a>使用过，但不知道为啥要用它。而这次我的目标及动机很明确了，将 socks5 转换成 http，供手机端访问，因为我的电脑和手机在同一个局域网内，那这样手机端的 http 代理服务器即为我电脑的局域网 ip，通过 ifconfig 可以得到。</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 把 HTTP 流量转发到本机 127.0.0.1:1080 的 Shadowsocks (or SSH tunnel)</span>
+forward-socks5 / <span class="m">127</span>.0.0.1:1080 .
+
+<span class="c1"># 可选，默认只监听本地连接 127.0.0.1:8118</span>
+<span class="c1"># 可以允许局域网中的连接</span>
+listen-address <span class="m">0</span>.0.0.0:8118
+</code></pre></div>
+
+<p>注意这里要用 <code>0.0.0.0</code>，这样才能允许<a href="https://blog.csdn.net/lamp_yang_3533/article/details/52154695">局域网内的连接</a>。但这样还不够，防火墙还没打开，<a href="https://blog.csdn.net/jiaochiwuzui/article/details/80907521">查看防火墙</a>当前打开的 port</p>
+<div class="codehilite"><pre><span></span><code>sudo ufw status
+</code></pre></div>
+
+<p>果然没有 8118 端口，于是打开</p>
+<div class="codehilite"><pre><span></span><code>sudo ufw allow <span class="m">8118</span>
+</code></pre></div>
+
+<p>大功告成，手机端能够通过 http 代理科学上网啦！</p>
                 
                   
                 
