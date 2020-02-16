@@ -1547,6 +1547,16 @@
 <li><code>\!</code> 需要 escape</li>
 <li><code>\2</code> 前面的空格不需要写成 <code>[ ]</code>，不然会直接出现 <code>[ ]</code>，而之前某次为了匹配多个空格需要写成 <code>[ ]*</code></li>
 </ul>
+<p>人总是善变的，过了一段时间，我又想把这些 img 下载到本地文件夹，但是之前处理过的文件都删掉了，只剩下传到 github 上的了，所以我首先要把文件下载到合适的位置并重命名。比如对于文件 <code>_posts/2019-12-21-quant-genetics.md</code>，只保留了 <code>https://user-images.githubusercontent.com/</code> 的链接，采用下面的脚本下载到合适的位置并重命名，</p>
+<div class="codehilite"><pre><span></span><code>grep -E <span class="s2">&quot;https://user-images.&quot;</span> _posts/2019-12-21-quant-genetics.md <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span> <span class="k">if</span> <span class="o">[</span> <span class="si">${#</span><span class="nv">ADDR</span><span class="p">[@]</span><span class="si">}</span> -eq <span class="m">2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> proxychains wget <span class="si">${</span><span class="nv">ADDR</span><span class="p">[1]</span><span class="si">}</span> -O images/2019-12-21-quant-genetics/<span class="si">${</span><span class="nv">ADDR</span><span class="p">[0]:</span><span class="nv">1</span><span class="p">:</span><span class="nv">8</span><span class="si">}</span>.jpg<span class="p">;</span> <span class="k">fi</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div>
+
+<p>其中</p>
+<ul>
+<li><code>ADDR[0]:1:8</code> 是所谓的 <a href="https://unix.stackexchange.com/questions/9468/how-to-get-the-char-at-a-given-position-of-a-string-in-shell-script">&ldquo;Parameter Expansion&rdquo; ${parameter:offset:length}</a>，用于提取特定范围的子串</li>
+<li><code>wget -O</code> 是重命名，这里顺带移动到合适的位置</li>
+<li><code>proxychains</code> 则是用于科学上网</li>
+</ul>
 <h2 id="awk">awk<a class="headerlink" href="#awk" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://linux.cn/article-3945-1.html">技术|如何在Linux中使用awk命令</a></p>
 <h2 id="ip">统计访问日志里每个 ip 访问次数<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h2>
