@@ -18,6 +18,7 @@
 - [Ting Ye @Wisc](https://sites.google.com/view/tingye/home)
 - [Tengyuan Liang](https://tyliang.github.io/Tengyuan.Liang/)
 - [范函子](https://skylinchern.wordpress.com/)
+- [Gao HR (高会然) -- GIS](http://gaohr.win/About.html###)
 
 ### douban
 

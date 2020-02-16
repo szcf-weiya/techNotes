@@ -109,6 +109,18 @@ sed -i "s/\!\[IMG_\([0-9]\{4\}\)\](\(.*\))/\[IMG_\1\]\: \2/g" FILENAME
 - `\!` 需要 escape
 - `\2` 前面的空格不需要写成 `[ ]`，不然会直接出现 `[ ]`，而之前某次为了匹配多个空格需要写成 `[ ]*`
 
+人总是善变的，过了一段时间，我又想把这些 img 下载到本地文件夹，但是之前处理过的文件都删掉了，只剩下传到 github 上的了，所以我首先要把文件下载到合适的位置并重命名。比如对于文件 `_posts/2019-12-21-quant-genetics.md`，只保留了 `https://user-images.githubusercontent.com/` 的链接，采用下面的脚本下载到合适的位置并重命名，
+
+```shell
+grep -E "https://user-images." _posts/2019-12-21-quant-genetics.md | while read -a ADDR; do if [ ${#ADDR[@]} -eq 2 ]; then proxychains wget ${ADDR[1]} -O images/2019-12-21-quant-genetics/${ADDR[0]:1:8}.jpg; fi; done
+```
+
+其中
+
+- `ADDR[0]:1:8` 是所谓的 ["Parameter Expansion" ${parameter:offset:length}](https://unix.stackexchange.com/questions/9468/how-to-get-the-char-at-a-given-position-of-a-string-in-shell-script)，用于提取特定范围的子串
+- `wget -O` 是重命名，这里顺带移动到合适的位置
+- `proxychains` 则是用于科学上网
+
 ## awk
 
 参考[技术|如何在Linux中使用awk命令](https://linux.cn/article-3945-1.html)
