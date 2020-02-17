@@ -78,7 +78,7 @@ extra:
     - type: 'home'
       link: 'https://hohoweiya.xyz'
     - type: 'rss'
-      link: 'https://blog.hohoweiya.xyz'
+      link: 'https://stats.hohoweiya.xyz'
     - type: 'envelope'
       link: 'mailto:szcfweiya@gmail.com'
 
