@@ -22,3 +22,4 @@
 4. [conda-cheatsheet](python/conda-cheatsheet.pdf)
 5. [matlab-cheatsheet](Matlab/matlab-cheatsheet.pdf)
 6. [biblatex-cheatsheet](TeX/biblatex-cheatsheet.pdf)
+7. [Google 开源项目风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/)
