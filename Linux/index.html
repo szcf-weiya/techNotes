@@ -1055,6 +1055,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    共享打印机
+  </a>
+  
+</li>
+      
       
       
       
@@ -2597,6 +2604,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    共享打印机
+  </a>
+  
+</li>
+      
       
       
       
@@ -3264,6 +3278,14 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 </blockquote>
 <p><code>nvidia-smi</code>: installed by the GPU driver installer, and generally has the GPU driver in view, not anything installed by the CUDA toolkit installer.
 <code>nvcc</code>: the CUDA compiler-driver tool that is installed with the CUDA toolkit, will always report the CUDA runtime version that it was built to recognize. </p>
+<h2 id="_23">共享打印机<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<p>现有台 HP-Deskjet-1050-J410-series 打印机，通过 USB 接口。直接连接在 Ubuntu 上是可以实现打印功能的，现在想贡献给局域网内的其他设备，参考 <a href="https://www.jianshu.com/p/a1c4fc6d9ce8">使用Linux共享打印机</a>，主要步骤为</p>
+<ol>
+<li>安装 CUPS 服务，<code>sudo apt-get install cups</code> 并启动，<code>sudo service cups start</code></li>
+<li>在 <code>127.0.0.1:631</code> 的 <code>Administration &gt;&gt; Advanced</code> 勾选 <code>Allow printing from the Internet</code>，并保存。</li>
+<li>打开防火墙，<code>sudo ufw allow 631/tcp</code></li>
+</ol>
+<p>在同一局域网内的 Windows 设备中，添加该打印机，地址即为Ubuntu中浏览器的地址，注意将 <code>127.0.0.1</code> 换成局域网 ip。如果顺利的话，添加后需要添加驱动程序，可以在 HP 官网下载。</p>
                 
                   
                 
