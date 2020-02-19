@@ -57,7 +57,7 @@ userName2 ALL=(ALL)       ALL
 
 ## 终端分屏
 
-[tmux](http://blog.csdn.net/u010454729/article/details/49496381)
+参考 [linux 工具——终端分屏与vim分屏](http://blog.csdn.net/u010454729/article/details/49496381)
 
 还可以切换后台运行，在服务器上操作特别方便。
 
@@ -76,7 +76,7 @@ tmux attach -t [NUM]
 tmux a -t [NUM]
 ```
 
-refer to [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it)
+refer to [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it) and [Getting started with Tmux](https://linuxize.com/post/getting-started-with-tmux/)
 
 ## 缺少动态链接库
 

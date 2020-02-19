@@ -6,7 +6,7 @@
 
 1. 下载 ngrok 并解压
 2. 注册 ngrok 获得 authtoken，然后运行 `./ngrok authtoken YOUR-AUTHTOKEN` 激活账户
-3. 运行 `./ngrok -region jp tcp 22` 来开启 ssh 的 22 端口，其中 `-region jp` 指定服务器为日本的，默认为 `us`，亲测速度很慢。然后得到下面的运行结果
+3. 运行 `./ngrok tcp 22 --region=jp ` 来开启 ssh 的 22 端口，其中 `-region jp` 指定服务器为日本的，默认为 `us`，亲测速度很慢。然后得到下面的运行结果
 
 ![](ngrok.png)
 
