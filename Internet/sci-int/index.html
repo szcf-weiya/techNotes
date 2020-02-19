@@ -1162,7 +1162,7 @@
 <ol>
 <li>下载 ngrok 并解压</li>
 <li>注册 ngrok 获得 authtoken，然后运行 <code>./ngrok authtoken YOUR-AUTHTOKEN</code> 激活账户</li>
-<li>运行 <code>./ngrok -region jp tcp 22</code> 来开启 ssh 的 22 端口，其中 <code>-region jp</code> 指定服务器为日本的，默认为 <code>us</code>，亲测速度很慢。然后得到下面的运行结果</li>
+<li>运行 <code>./ngrok tcp 22 --region=jp</code> 来开启 ssh 的 22 端口，其中 <code>-region jp</code> 指定服务器为日本的，默认为 <code>us</code>，亲测速度很慢。然后得到下面的运行结果</li>
 </ol>
 <p><img alt="" src="../ngrok.png" /></p>
 <p>注意 Forwarding 一行的记录，<code>tcp://SOME-IP-ADDRESS:PORT</code></p>
