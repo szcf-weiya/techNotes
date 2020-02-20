@@ -19,6 +19,7 @@ pages:
       - OpenCV: python/opencv.md
       - 金融数据爬虫: python/finance/README.md
       - rpy2: python/rpy2.md
+      - 自建关键词索引页: python/esltag.md
     - Julia: julia/index.md
     - Tex: TeX/index.md
     - Website:
