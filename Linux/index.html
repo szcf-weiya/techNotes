@@ -2963,7 +2963,14 @@ apt-get install nginx
 <p>参考<a href="https://stackoverflow.com/questions/13338870/what-does-at-the-end-of-a-linux-command-mean">What does “&amp;” at the end of a linux command mean?</a></p>
 <p>表示在后台运行。</p>
 <h2 id="crontab">crontab定时任务<a class="headerlink" href="#crontab" title="Permanent link">&para;</a></h2>
-<p>参考<a href="https://www.cnblogs.com/zoulongbin/p/6187238.html">Linux 设置定时任务crontab命令</a></p>
+<p><code>* */1 * * * *</code> 表现为每分钟执行，但是本来第 1 列应当为分钟，而第 2 列为小时，这样使用对用法理解错误，而且改成 <code>* * */1 * * *</code> 仍然表现为每分钟。试图</p>
+<div class="codehilite"><pre><span></span><code>sudo service cron restart
+<span class="c1"># or</span>
+sudo service cron reload
+</code></pre></div>
+
+<p>都失败了。所以还是理解出现了偏差，</p>
+<p>参考<a href="https://www.cnblogs.com/zoulongbin/p/6187238.html">Linux 设置定时任务crontab命令</a> 和 <a href="https://www.jianshu.com/p/d93e2b177814">关于定时执行任务：Crontab的20个例子</a></p>
 <h2 id="ubuntu-sftp">ubuntu 连接 sftp 服务器<a class="headerlink" href="#ubuntu-sftp" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://askubuntu.com/questions/349873/use-connect-to-server-to-connect-to-sftp">Use “Connect to Server” to connect to SFTP</a></p>
 <h2 id="_9">视频旋转<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
