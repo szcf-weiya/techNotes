@@ -491,7 +491,17 @@ apt-get install nginx
 
 ## crontab定时任务
 
-参考[Linux 设置定时任务crontab命令](https://www.cnblogs.com/zoulongbin/p/6187238.html)
+`* */1 * * * *` 表现为每分钟执行，但是本来第 1 列应当为分钟，而第 2 列为小时，这样使用对用法理解错误，而且改成 `* * */1 * * *` 仍然表现为每分钟。试图
+
+```bash
+sudo service cron restart
+# or
+sudo service cron reload
+```
+
+都失败了。所以还是理解出现了偏差，
+
+参考[Linux 设置定时任务crontab命令](https://www.cnblogs.com/zoulongbin/p/6187238.html) 和 [关于定时执行任务：Crontab的20个例子](https://www.jianshu.com/p/d93e2b177814)
 
 ## ubuntu 连接 sftp 服务器
 
