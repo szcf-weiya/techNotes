@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -893,6 +893,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    子网掩码
+  </a>
+  
+</li>
+      
       
       
       
@@ -1589,6 +1596,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    子网掩码
+  </a>
+  
+</li>
+      
       
       
       
@@ -1908,6 +1922,12 @@ listen-address <span class="m">0</span>.0.0.0:8118
 </code></pre></div>
 
 <p>大功告成，手机端能够通过 http 代理科学上网啦！</p>
+<h2 id="_12">子网掩码<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>想在云服务器后台设置安全组规则，只允许 CUHK 的网进入；但是填写时，除了 IP，还需要子网掩码，经查为 <a href="https://ipinfo.io/AS3661/137.189.0.0/16">CUHKNET</a></p>
+<blockquote>
+<p>137.189.0.0/16</p>
+</blockquote>
+<p>一直没懂子网掩码是啥，比如经常看到的 <code>255.255.255.0</code>，但是这里又有个 <code>/16</code>，所以很懵。<a href="https://www.zhihu.com/question/56895036">这篇知乎回答</a>解决了我的疑问。简单说，子网掩码也是 4 组长度为 8 的二进制数组成，从左到右前 <code>n</code> 位为 1，其余为 0，此时子网掩码记为 <code>/n</code>，或者换成十进制数。</p>
                 
                   
                 
@@ -1999,7 +2019,7 @@ listen-address <span class="m">0</span>.0.0.0:8118
     
       <script src="../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
