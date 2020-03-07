@@ -445,3 +445,89 @@ keys(d)
 ```
 
 it correctly returns the exactly one elements, but with type `Base.ValueIterator for a Dict{Int64,Int64} with 1 entry`.
+
+## function in function
+
+```julia
+julia> function f2()
+           a = 10
+           function g()
+               a = a+10
+           end
+           g()
+           println(a)
+       end
+f2 (generic function with 1 method)
+
+julia> f2()
+20
+```
+
+but 
+
+```julia
+julia> function f2()
+           a = 10
+           g() = a + 10
+           g()
+           println(a)
+       end
+f2 (generic function with 1 method)
+
+julia> f2()
+10
+```
+
+since the first one does not have `return`, but `g()` has `return` and the addition is not on `a`.
+
+## pass array into function
+
+```julia
+julia> a = [1,2]
+2-element Array{Int64,1}:
+ 1
+ 2
+
+julia> function f(a)
+           a = a .+ 1
+       end
+f (generic function with 1 method)
+
+julia> f(a)
+2-element Array{Int64,1}:
+ 2
+ 3
+
+julia> a
+2-element Array{Int64,1}:
+ 1
+ 2
+
+julia> function g(a)
+           a .= a .+ 1
+       end
+g (generic function with 1 method)
+
+julia> g(a)
+2-element Array{Int64,1}:
+ 2
+ 3
+
+julia> a
+2-element Array{Int64,1}:
+ 2
+ 3
+```
+
+## check whether array entry is undef
+
+```julia
+b = Array{Array{Int, 1}}(undef, 3)
+isdefined(b, 1) 
+# or
+isassigned(b, 1)
+# not
+# isdefined(b[1])
+```
+
+refer to [Julia: check whether array entry is undef](https://stackoverflow.com/questions/25020448/julia-check-whether-array-entry-is-undef)
