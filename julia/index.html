@@ -757,6 +757,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#function-in-function" class="md-nav__link">
+    function in function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pass-array-into-function" class="md-nav__link">
+    pass array into function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-whether-array-entry-is-undef" class="md-nav__link">
+    check whether array entry is undef
+  </a>
+  
+</li>
+      
       
       
       
@@ -1525,6 +1546,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#function-in-function" class="md-nav__link">
+    function in function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pass-array-into-function" class="md-nav__link">
+    pass array into function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-whether-array-entry-is-undef" class="md-nav__link">
+    check whether array entry is undef
+  </a>
+  
+</li>
+      
       
       
       
@@ -1873,6 +1915,82 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 </code></pre></div>
 
 <p>it correctly returns the exactly one elements, but with type <code>Base.ValueIterator for a Dict{Int64,Int64} with 1 entry</code>.</p>
+<h2 id="function-in-function">function in function<a class="headerlink" href="#function-in-function" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f2</span><span class="p">()</span>
+           <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+           <span class="k">function</span> <span class="n">g</span><span class="p">()</span>
+               <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">10</span>
+           <span class="k">end</span>
+           <span class="n">g</span><span class="p">()</span>
+           <span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+       <span class="k">end</span>
+<span class="n">f2</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f2</span><span class="p">()</span>
+<span class="mi">20</span>
+</code></pre></div>
+
+<p>but </p>
+<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f2</span><span class="p">()</span>
+           <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+           <span class="n">g</span><span class="p">()</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
+           <span class="n">g</span><span class="p">()</span>
+           <span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+       <span class="k">end</span>
+<span class="n">f2</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f2</span><span class="p">()</span>
+<span class="mi">10</span>
+</code></pre></div>
+
+<p>since the first one does not have <code>return</code>, but <code>g()</code> has <code>return</code> and the addition is not on <code>a</code>.</p>
+<h2 id="pass-array-into-function">pass array into function<a class="headerlink" href="#pass-array-into-function" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">1</span>
+ <span class="mi">2</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+           <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">.+</span> <span class="mi">1</span>
+       <span class="k">end</span>
+<span class="n">f</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">2</span>
+ <span class="mi">3</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span>
+<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">1</span>
+ <span class="mi">2</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">g</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+           <span class="n">a</span> <span class="o">.=</span> <span class="n">a</span> <span class="o">.+</span> <span class="mi">1</span>
+       <span class="k">end</span>
+<span class="n">g</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">2</span>
+ <span class="mi">3</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span>
+<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">2</span>
+ <span class="mi">3</span>
+</code></pre></div>
+
+<h2 id="check-whether-array-entry-is-undef">check whether array entry is undef<a class="headerlink" href="#check-whether-array-entry-is-undef" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">}}(</span><span class="n">undef</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">isdefined</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+<span class="c"># or</span>
+<span class="n">isassigned</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c"># not</span>
+<span class="c"># isdefined(b[1])</span>
+</code></pre></div>
+
+<p>refer to <a href="https://stackoverflow.com/questions/25020448/julia-check-whether-array-entry-is-undef">Julia: check whether array entry is undef</a></p>
                 
                   
                 
