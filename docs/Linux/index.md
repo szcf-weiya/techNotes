@@ -982,3 +982,12 @@ refer to [Different CUDA versions shown by nvcc and NVIDIA-smi](https://stackove
 3. 打开防火墙，`sudo ufw allow 631/tcp`
 
 在同一局域网内的 Windows 设备中，添加该打印机，地址即为Ubuntu中浏览器的地址，注意将 `127.0.0.1` 换成局域网 ip。如果顺利的话，添加后需要添加驱动程序，可以在 HP 官网下载。
+
+## Install Fira
+
+[Fira for Metropolis theme](https://github.com/matze/mtheme/issues/280)
+
+[Install the Fira Font in Ubuntu](https://stevescott.ca/2016-10-20-installing-the-fira-font-in-ubuntu.html)
+
+and some introduction: [Fira Code —— 专为编程而生的字体](https://zhuanlan.zhihu.com/p/65362086)
+
