@@ -778,6 +778,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#memory-allocation-of-undef" class="md-nav__link">
+    memory allocation of undef
+  </a>
+  
+</li>
+      
       
       
       
@@ -1567,6 +1574,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#memory-allocation-of-undef" class="md-nav__link">
+    memory allocation of undef
+  </a>
+  
+</li>
+      
       
       
       
@@ -1860,13 +1874,13 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 <p>即把 <code>dims</code> 所代表的维度元素加起来，或者说沿着 dims 进行运算。这一点与 <code>R</code> 的函数 <code>apply</code> 中 <code>margin</code> 参数作用刚好相反，</p>
 <div class="codehilite"><pre><span></span><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">12</span><span class="p">),</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="n">a</span>
-           <span class="n">[</span><span class="p">,</span><span class="m">1</span><span class="n">]</span>        <span class="n">[</span><span class="p">,</span><span class="m">2</span><span class="n">]</span>       <span class="n">[</span><span class="p">,</span><span class="m">3</span><span class="n">]</span>
-<span class="n">[1</span><span class="p">,</span><span class="n">]</span>  <span class="m">1.1535199</span>  <span class="m">0.03198768</span>  <span class="m">0.2857126</span>
-<span class="n">[2</span><span class="p">,</span><span class="n">]</span> <span class="m">-1.3616720</span>  <span class="m">0.32325598</span>  <span class="m">1.9242805</span>
-<span class="n">[3</span><span class="p">,</span><span class="n">]</span> <span class="m">-0.6519595</span> <span class="m">-1.14800119</span> <span class="m">-0.3635221</span>
-<span class="n">[4</span><span class="p">,</span><span class="n">]</span>  <span class="m">1.2713182</span>  <span class="m">0.98515312</span>  <span class="m">0.2269218</span>
+           <span class="p">[,</span><span class="m">1</span><span class="p">]</span>        <span class="p">[,</span><span class="m">2</span><span class="p">]</span>       <span class="p">[,</span><span class="m">3</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span>  <span class="m">1.1535199</span>  <span class="m">0.03198768</span>  <span class="m">0.2857126</span>
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span> <span class="m">-1.3616720</span>  <span class="m">0.32325598</span>  <span class="m">1.9242805</span>
+<span class="p">[</span><span class="m">3</span><span class="p">,]</span> <span class="m">-0.6519595</span> <span class="m">-1.14800119</span> <span class="m">-0.3635221</span>
+<span class="p">[</span><span class="m">4</span><span class="p">,]</span>  <span class="m">1.2713182</span>  <span class="m">0.98515312</span>  <span class="m">0.2269218</span>
 <span class="o">&gt;</span> <span class="nf">apply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">sum</span><span class="p">)</span>
-<span class="n">[1]</span>  <span class="m">1.4712202</span>  <span class="m">0.8858644</span> <span class="m">-2.1634828</span>  <span class="m">2.4833932</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span>  <span class="m">1.4712202</span>  <span class="m">0.8858644</span> <span class="m">-2.1634828</span>  <span class="m">2.4833932</span>
 </code></pre></div>
 
 <p>这样交叉记忆，不知道效果会不会好点。</p>
@@ -1991,6 +2005,14 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 </code></pre></div>
 
 <p>refer to <a href="https://stackoverflow.com/questions/25020448/julia-check-whether-array-entry-is-undef">Julia: check whether array entry is undef</a></p>
+<h2 id="memory-allocation-of-undef">memory allocation of <code>undef</code><a class="headerlink" href="#memory-allocation-of-undef" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@time</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="mi">2</span><span class="p">}(</span><span class="n">undef</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+  <span class="mf">0.000024</span> <span class="n">seconds</span> <span class="p">(</span><span class="mi">6</span> <span class="n">allocations</span><span class="o">:</span> <span class="mf">78.359</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@time</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="mf">0.000014</span> <span class="n">seconds</span> <span class="p">(</span><span class="mi">6</span> <span class="n">allocations</span><span class="o">:</span> <span class="mf">78.359</span> <span class="n">KiB</span><span class="p">)</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@time</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+  <span class="mf">0.000077</span> <span class="n">seconds</span> <span class="p">(</span><span class="mi">6</span> <span class="n">allocations</span><span class="o">:</span> <span class="mf">781.484</span> <span class="n">KiB</span><span class="p">)</span>
+</code></pre></div>
                 
                   
                 

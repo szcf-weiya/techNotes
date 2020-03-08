@@ -1165,9 +1165,9 @@
 
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
 <span class="n">train</span><span class="o">=</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">Carseats</span><span class="p">),</span> <span class="m">200</span><span class="p">)</span>
-<span class="n">Carseats.test</span><span class="o">=</span><span class="n">Carseats[</span><span class="o">-</span><span class="n">train</span><span class="p">,</span><span class="n">]</span>
-<span class="n">High.test</span><span class="o">=</span><span class="n">High[</span><span class="o">-</span><span class="n">train]</span>
-<span class="n">tree.carseats</span><span class="o">=</span><span class="nf">tree</span><span class="p">(</span><span class="n">High</span><span class="o">~</span><span class="n">.-Sales</span><span class="p">,</span><span class="n">Carseats</span><span class="p">,</span><span class="n">subset</span><span class="o">=</span><span class="n">train</span><span class="p">)</span>
+<span class="n">Carseats.test</span><span class="o">=</span><span class="n">Carseats</span><span class="p">[</span><span class="o">-</span><span class="n">train</span><span class="p">,]</span>
+<span class="n">High.test</span><span class="o">=</span><span class="n">High</span><span class="p">[</span><span class="o">-</span><span class="n">train</span><span class="p">]</span>
+<span class="n">tree.carseats</span><span class="o">=</span><span class="nf">tree</span><span class="p">(</span><span class="n">High</span><span class="o">~</span><span class="n">.</span><span class="o">-</span><span class="n">Sales</span><span class="p">,</span><span class="n">Carseats</span><span class="p">,</span><span class="n">subset</span><span class="o">=</span><span class="n">train</span><span class="p">)</span>
 <span class="n">tree.pred</span><span class="o">=</span><span class="nf">predict</span><span class="p">(</span><span class="n">tree.carseats</span><span class="p">,</span><span class="n">Carseats.test</span><span class="p">,</span><span class="n">type</span><span class="o">=</span><span class="s">&quot;class&quot;</span><span class="p">)</span>
 <span class="nf">table</span><span class="p">(</span><span class="n">tree.pred</span><span class="p">,</span><span class="n">High.test</span><span class="p">)</span>
 </code></pre></div>

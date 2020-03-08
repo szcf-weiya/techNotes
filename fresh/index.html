@@ -1512,13 +1512,13 @@
 <span class="nf">library</span><span class="p">(</span><span class="n">pcLasso</span><span class="p">)</span>
 <span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">pcLasso</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
 
-<span class="nf">predict</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">X[1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="n">]</span><span class="p">)</span><span class="n">[</span><span class="p">,</span> <span class="m">5</span><span class="n">]</span>
+<span class="nf">predict</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="p">])[,</span> <span class="m">5</span><span class="p">]</span>
 
 <span class="n">groups</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
 <span class="n">fit</span> <span class="o">=</span> <span class="nf">pcLasso</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">groups</span> <span class="o">=</span> <span class="n">groups</span><span class="p">)</span>
 
 <span class="n">fit</span> <span class="o">=</span> <span class="nf">cv.pcLasso</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
-<span class="nf">predict</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">X[1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span><span class="n">]</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;lambda.min&quot;</span><span class="p">)</span>
+<span class="nf">predict</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,],</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;lambda.min&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <h2 id="emojis-in-scatterplot">Emojis in scatterplot<a class="headerlink" href="#emojis-in-scatterplot" title="Permanent link">&para;</a></h2>

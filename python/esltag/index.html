@@ -1191,13 +1191,13 @@
 
 <p>而列出文件夹中的所有文件采用 <code>os.listdir()</code>，而如果想找出特定的 pattern，比如我的需求是要求文件名前两位为章节 id，则需要适当判断，</p>
 <div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">docsdir</span><span class="p">):</span>
-    <span class="k">if</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{i:02}</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="k">if</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s1">02</span><span class="si">}</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
         <span class="k">break</span>
 </code></pre></div>
 
 <p>这里注意学习 <code>enumerate</code> 的用法，这应该还是很常见的，之前也用过，但没怎么记住。另外 <code>f{i:02}</code> 补零的技巧也要记住，其它实现方法参见 <a href="https://stackoverflow.com/questions/339007/how-to-pad-zeroes-to-a-string">How to pad zeroes to a string?</a>.</p>
 <p>如果限定文件类型，有更方便的命令 <code>glob.glob()</code>，比如我只需要 <code>.md</code> 文件，则直接</p>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;docs/</span><span class="si">{chdir}</span><span class="s2">/*.md&quot;</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;docs/</span><span class="si">{</span><span class="n">chdir</span><span class="si">}</span><span class="s2">/*.md&quot;</span><span class="p">):</span>
 </code></pre></div>
 
 <p>其他用法详见 <a href="https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory">How do I list all files of a directory?</a>。</p>
