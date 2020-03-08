@@ -328,3 +328,11 @@ git remote set-url origin git@github.com:username/repo.git
 
 参考 [Git push requires username and password](https://stackoverflow.com/questions/6565357/git-push-requires-username-and-password)
 
+
+## manually resolve merge conflicts
+
+1. open the file and edit
+2. git add
+3. git commit
+
+refer to [How do I finish the merge after resolving my merge conflicts?](https://stackoverflow.com/questions/2474097/how-do-i-finish-the-merge-after-resolving-my-merge-conflicts)

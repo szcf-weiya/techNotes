@@ -531,3 +531,15 @@ isassigned(b, 1)
 ```
 
 refer to [Julia: check whether array entry is undef](https://stackoverflow.com/questions/25020448/julia-check-whether-array-entry-is-undef)
+
+## memory allocation of `undef`
+
+
+```julia
+julia> @time Array{Array{Int, 1}, 2}(undef, 100, 100);
+  0.000024 seconds (6 allocations: 78.359 KiB)
+julia> @time zeros(100,100, 1);
+  0.000014 seconds (6 allocations: 78.359 KiB)
+julia> @time zeros(100,100, 10);
+  0.000077 seconds (6 allocations: 781.484 KiB)
+```
