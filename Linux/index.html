@@ -391,8 +391,28 @@
       
         <li class="md-nav__item">
   <a href="#atom" class="md-nav__link">
+    Atom
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atom_1" class="md-nav__link">
     atom 自动更新
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxy" class="md-nav__link">
+    proxy 设置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1959,8 +1979,28 @@
       
         <li class="md-nav__item">
   <a href="#atom" class="md-nav__link">
+    Atom
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atom_1" class="md-nav__link">
     atom 自动更新
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxy" class="md-nav__link">
+    proxy 设置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2728,10 +2768,17 @@ tmux a -t <span class="o">[</span>NUM<span class="o">]</span>
 <p>$@: 目标文件
 $^: 所有的依赖文件
 $&lt;: 第一个依赖文件</p>
-<h2 id="atom">atom 自动更新<a class="headerlink" href="#atom" title="Permanent link">&para;</a></h2>
+<h2 id="atom">Atom<a class="headerlink" href="#atom" title="Permanent link">&para;</a></h2>
+<h3 id="atom_1">atom 自动更新<a class="headerlink" href="#atom_1" title="Permanent link">&para;</a></h3>
 <p><a href="https://launchpad.net/~webupd8team/+archive/ubuntu/atom/">atom</a></p>
 <div class="codehilite"><pre><span></span><code><span class="err">sudo add-apt-repository ppa:webupd8team/atom</span>
 <span class="err">sudo apt-get update</span>
+</code></pre></div>
+
+<h3 id="proxy">proxy 设置<a class="headerlink" href="#proxy" title="Permanent link">&para;</a></h3>
+<p>Atom 的包管理器是 <a href="https://github.com/atom/apm#behind-a-firewall">apm</a>，其中有介绍怎么设置 proxy，即</p>
+<div class="codehilite"><pre><span></span><code>apm config <span class="nb">set</span> strict-ssl <span class="nb">false</span>
+apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
 </code></pre></div>
 
 <h2 id="xterm">配置xterm的中文字体的问题<a class="headerlink" href="#xterm" title="Permanent link">&para;</a></h2>
