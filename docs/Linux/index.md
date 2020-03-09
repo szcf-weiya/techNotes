@@ -111,13 +111,24 @@ $@: 目标文件
 $^: 所有的依赖文件
 $<: 第一个依赖文件
 
+## Atom
 
-## atom 自动更新
+### atom 自动更新
+
 [atom](https://launchpad.net/~webupd8team/+archive/ubuntu/atom/)
 
 ```
 sudo add-apt-repository ppa:webupd8team/atom
 sudo apt-get update
+```
+
+### proxy 设置
+
+Atom 的包管理器是 [apm](https://github.com/atom/apm#behind-a-firewall)，其中有介绍怎么设置 proxy，即
+
+```bash
+apm config set strict-ssl false
+apm config set http-proxy http://127.0.0.1:8118
 ```
 
 ## 配置xterm的中文字体的问题

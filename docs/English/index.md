@@ -1,3 +1,11 @@
+## 2020.03.09
+
+1. features that **rot** before they **ripen**.
+2. the dog **sprints off**
+3. shy away from it
+4. swinging hard right on the pendulum.
+5. evade bad data
+
 ## 2020.01.17
 
 1. op-ed: opposite the editorial page. 一种源于欧美报纸出版业的新闻出版用语，意指一种由外人所撰写、刊登在报纸或杂志上的评述性质文章。
