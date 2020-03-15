@@ -792,6 +792,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#juno-cltr-enter-bug" class="md-nav__link">
+    Juno 中 Cltr + Enter 的 bug
+  </a>
+  
+</li>
+      
       
       
       
@@ -1595,6 +1602,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#juno-cltr-enter-bug" class="md-nav__link">
+    Juno 中 Cltr + Enter 的 bug
+  </a>
+  
+</li>
+      
       
       
       
@@ -2040,6 +2054,33 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 </code></pre></div>
 
 <p>refer to <a href="https://github.com/szcf-weiya/Cell-Video/issues/105">#105</a>.</p>
+<h2 id="juno-cltr-enter-bug">Juno 中 <code>Cltr + Enter</code> 的 bug<a class="headerlink" href="#juno-cltr-enter-bug" title="Permanent link">&para;</a></h2>
+<p>当我使用 <code>Ctrl + Enter</code> 运行下列语句时，</p>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span> <span class="n">Images</span><span class="p">,</span> <span class="n">ImageView</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">download</span><span class="p">(</span><span class="s">&quot;https://juliaimages.org/latest/assets/segmentation/horse.jpg&quot;</span><span class="p">));</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</code></pre></div>
+
+<p>REPL 冻住了，一直停在 </p>
+<div class="codehilite"><pre><span></span><code><span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}</span> <span class="n">with</span> <span class="mi">4</span> <span class="n">entries</span><span class="o">:</span>
+</code></pre></div>
+
+<p>而我如果直接将上述语句复制到 REPL 中运行时，一切 OK，正常显示为</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}</span> <span class="n">with</span> <span class="mi">4</span> <span class="n">entries</span><span class="o">:</span>
+  <span class="s">&quot;gui&quot;</span>         <span class="o">=&gt;</span> <span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}(</span><span class="s">&quot;window&quot;</span><span class="o">=&gt;</span><span class="n">GtkWindowLeaf</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">wi…</span>
+  <span class="s">&quot;roi&quot;</span>         <span class="o">=&gt;</span> <span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}(</span><span class="s">&quot;redraw&quot;</span><span class="o">=&gt;</span><span class="mi">50</span><span class="o">:</span> <span class="s">&quot;map(clim-mapped image, input…</span>
+<span class="s">  &quot;</span><span class="n">annotations</span><span class="s">&quot; =&gt; 3: &quot;</span><span class="n">input</span><span class="o">-</span><span class="mi">2</span><span class="s">&quot; = Dict{UInt64,Any}() Dict{UInt64,Any} </span>
+<span class="s">  &quot;</span><span class="n">clim</span><span class="s">&quot;        =&gt; 2: &quot;</span><span class="n">CLim</span><span class="s">&quot; = CLim{RGB{Float64}}(RGB{Float64}(0.0,0.0,0.0), RG…</span>
+</code></pre></div>
+
+<p>找到类似的 Issue: <a href="https://github.com/JunoLab/Juno.jl/issues/320">[BUG] Evaluation in Editor freezes Atom occasionally</a></p>
+<p>虽然其解决方案不太清楚，是有关 notification-daemon，但是维护者 @pfitzseb 的回复</p>
+<blockquote>
+<p>OS level notifications are disabled completly in the latest Juno release because they were causing crashes on Mac and didn&rsquo;t really seem to work on other platforms.</p>
+</blockquote>
+<p>提醒我或许是因为 Juno 的版本问题，当前版本为 v0.7.2, 最新版本为 v0.8.1</p>
+<p>仅仅更新 Juno.jl 的版本似乎还不行，另外将 Atom.jl 从 v0.12.8 更新到 v0.12.9</p>
+<p>最后竟然<a href="https://github.com/JunoLab/Juno.jl/issues/320#issuecomment-599213691">真的解决了！</a></p>
                 
                   
                 
