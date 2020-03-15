@@ -543,3 +543,16 @@ julia> @time zeros(100,100, 1);
 julia> @time zeros(100,100, 10);
   0.000077 seconds (6 allocations: 781.484 KiB)
 ```
+
+## 单引号和双引号
+
+```julia
+julia> a = 'www'
+ERROR: syntax: invalid character literal
+
+julia> a = 'w'
+'w': ASCII/Unicode U+0077 (category Ll: Letter, lowercase)
+
+julia> a = "ww"
+"ww"
+```
