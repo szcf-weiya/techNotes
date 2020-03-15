@@ -785,6 +785,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    单引号和双引号
+  </a>
+  
+</li>
+      
       
       
       
@@ -1581,6 +1588,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    单引号和双引号
+  </a>
+  
+</li>
+      
       
       
       
@@ -2012,6 +2026,17 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
   <span class="mf">0.000014</span> <span class="n">seconds</span> <span class="p">(</span><span class="mi">6</span> <span class="n">allocations</span><span class="o">:</span> <span class="mf">78.359</span> <span class="n">KiB</span><span class="p">)</span>
 <span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@time</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
   <span class="mf">0.000077</span> <span class="n">seconds</span> <span class="p">(</span><span class="mi">6</span> <span class="n">allocations</span><span class="o">:</span> <span class="mf">781.484</span> <span class="n">KiB</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="_2">单引号和双引号<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">www</span><span class="o">&#39;</span>
+<span class="n">ERROR</span><span class="o">:</span> <span class="n">syntax</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">character</span> <span class="n">literal</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="sc">&#39;w&#39;</span>
+<span class="sc">&#39;w&#39;</span><span class="o">:</span> <span class="n">ASCII</span><span class="o">/</span><span class="n">Unicode</span> <span class="n">U</span><span class="o">+</span><span class="mi">0077</span> <span class="p">(</span><span class="n">category</span> <span class="n">Ll</span><span class="o">:</span> <span class="n">Letter</span><span class="p">,</span> <span class="n">lowercase</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;ww&quot;</span>
+<span class="s">&quot;ww&quot;</span>
 </code></pre></div>
                 
                   
