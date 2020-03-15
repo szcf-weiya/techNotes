@@ -558,3 +558,41 @@ julia> a = "ww"
 ```
 
 refer to [#105](https://github.com/szcf-weiya/Cell-Video/issues/105).
+
+## Juno 中 `Cltr + Enter` 的 bug
+
+当我使用 `Ctrl + Enter` 运行下列语句时，
+
+```julia
+using Images, ImageView
+img = load(download("https://juliaimages.org/latest/assets/segmentation/horse.jpg"));
+imshow(img)
+```
+
+REPL 冻住了，一直停在 
+
+```julia
+Dict{String,Any} with 4 entries:
+```
+
+而我如果直接将上述语句复制到 REPL 中运行时，一切 OK，正常显示为
+
+```julia
+Dict{String,Any} with 4 entries:
+  "gui"         => Dict{String,Any}("window"=>GtkWindowLeaf(name="", parent, wi…
+  "roi"         => Dict{String,Any}("redraw"=>50: "map(clim-mapped image, input…
+  "annotations" => 3: "input-2" = Dict{UInt64,Any}() Dict{UInt64,Any} 
+  "clim"        => 2: "CLim" = CLim{RGB{Float64}}(RGB{Float64}(0.0,0.0,0.0), RG…
+```
+
+找到类似的 Issue: [[BUG] Evaluation in Editor freezes Atom occasionally](https://github.com/JunoLab/Juno.jl/issues/320)
+
+虽然其解决方案不太清楚，是有关 notification-daemon，但是维护者 @pfitzseb 的回复
+
+> OS level notifications are disabled completly in the latest Juno release because they were causing crashes on Mac and didn't really seem to work on other platforms.
+
+提醒我或许是因为 Juno 的版本问题，当前版本为 v0.7.2, 最新版本为 v0.8.1
+
+仅仅更新 Juno.jl 的版本似乎还不行，另外将 Atom.jl 从 v0.12.8 更新到 v0.12.9
+
+最后竟然[真的解决了！](https://github.com/JunoLab/Juno.jl/issues/320#issuecomment-599213691)
