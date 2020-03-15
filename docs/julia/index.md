@@ -556,3 +556,5 @@ julia> a = 'w'
 julia> a = "ww"
 "ww"
 ```
+
+refer to [#105](https://github.com/szcf-weiya/Cell-Video/issues/105).
