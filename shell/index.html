@@ -488,6 +488,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    链接自动推送
+  </a>
+  
+</li>
+      
       
       
       
@@ -1451,6 +1458,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    链接自动推送
+  </a>
+  
+</li>
+      
       
       
       
@@ -1712,6 +1726,10 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
     qsub -v <span class="nv">folder</span><span class="o">=</span><span class="si">${</span><span class="nv">curr_folder</span><span class="si">}</span> revisit_sil_parallel.job
   <span class="k">fi</span>
 <span class="k">done</span> &lt; &lt;<span class="o">(</span>find . -maxdepth <span class="m">1</span> -regex <span class="s2">&quot;\./oracle_setting_2019-09-.*recall\.pdf&quot;</span> -print0<span class="o">)</span>
+</code></pre></div>
+
+<h2 id="_3">链接自动推送<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>find -regex <span class="s2">&quot;\./.*\.html&quot;</span> <span class="p">|</span> sed -n <span class="s2">&quot;s#\./#https://esl.hohoweiya.xyz/#p&quot;</span> &gt;&gt; ../urls.txt
 </code></pre></div>
                 
                   

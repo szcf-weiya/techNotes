@@ -509,6 +509,19 @@
     OpenCV 3
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-bugs" class="md-nav__link">
+    Some bugs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1142,6 +1155,19 @@
     OpenCV 3
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-bugs" class="md-nav__link">
+    Some bugs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1178,6 +1204,15 @@
 
 <p>refer to <a href="https://stackoverflow.com/questions/40207011/opencv-not-working-properly-with-python-on-linux-with-anaconda-getting-error-th">OpenCV not working properly with python on Linux with anaconda. Getting error that cv2.imshow() is not implemented
 Ask Question</a></p>
+<p>If necessary, install <a href="https://github.com/jrosebr1/imutils">imutils: A series of convenience functions to make basic image processing operations such as translation, rotation, resizing, skeletonization, and displaying Matplotlib images easier with OpenCV and Python.</a></p>
+<div class="codehilite"><pre><span></span><code>conda install -c conda-forge imutils
+</code></pre></div>
+
+<h3 id="some-bugs">Some bugs<a class="headerlink" href="#some-bugs" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">error</span><span class="p">:</span> <span class="n">OpenCV</span><span class="p">(</span><span class="mf">3.4</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="mi">80754</span><span class="n">af9</span><span class="o">/</span><span class="n">opencv</span><span class="o">-</span><span class="n">suite_1535558553474</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">imgproc</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">color</span><span class="o">.</span><span class="n">hpp</span><span class="p">:</span><span class="mi">253</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">215</span><span class="p">:</span><span class="n">Assertion</span> <span class="n">failed</span><span class="p">)</span> <span class="n">VScn</span><span class="p">::</span><span class="n">contains</span><span class="p">(</span><span class="n">scn</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">VDcn</span><span class="p">::</span><span class="n">contains</span><span class="p">(</span><span class="n">dcn</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">VDepth</span><span class="p">::</span><span class="n">contains</span><span class="p">(</span><span class="n">depth</span><span class="p">)</span> <span class="ow">in</span> <span class="n">function</span> <span class="s1">&#39;CvtHelper&#39;</span>
+</code></pre></div>
+
+<p>the image might be not read properly, such as wrong path.</p>
 <h2 id="opencv-4">OpenCV 4<a class="headerlink" href="#opencv-4" title="Permanent link">&para;</a></h2>
 <p>build from source according to the <a href="https://docs.opencv.org/4.0.1/d2/de6/tutorial_py_setup_in_ubuntu.html">official documentation</a></p>
 <p>curious how the python distinguish different versions of opencv, does it affect the conda environment?</p>
