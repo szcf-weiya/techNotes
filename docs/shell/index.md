@@ -309,3 +309,9 @@ while IFS=  read -r -d $'\0'; do
   fi
 done < <(find . -maxdepth 1 -regex "\./oracle_setting_2019-09-.*recall\.pdf" -print0)
 ```
+
+## 链接自动推送
+
+```bash
+find -regex "\./.*\.html" | sed -n "s#\./#https://esl.hohoweiya.xyz/#p" >> ../urls.txt
+```
