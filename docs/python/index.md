@@ -88,7 +88,33 @@ array([[ 1.,  1.],
       [ 0.,  2.]])
 ```
 
-## Difference between numpy.array shape (R, 1) and (R,)
+## Some basics of `np`
+
+### Array of Array
+
+```python
+In [29]: a
+Out[29]: 
+array([[ 83.,  11.],
+       [316.,  19.],
+       [372.,  35.]])
+
+In [30]: np.hstack([a, a])
+Out[30]: 
+array([[ 83.,  11.,  83.,  11.],
+       [316.,  19., 316.,  19.],
+       [372.,  35., 372.,  35.]])
+
+In [31]: b = np.array([a, a])
+
+In [32]: b[1]
+Out[32]: 
+array([[ 83.,  11.],
+       [316.,  19.],
+       [372.,  35.]])
+```
+
+### Difference between numpy.array shape (R, 1) and (R,)
 
 refer to [Difference between numpy.array shape (R, 1) and (R,)](https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r)
 
@@ -692,3 +718,9 @@ I am confused about the [official english documentation](https://docs.scipy.org/
 ```python
 df_test.iloc[0]
 ```
+
+## the first argument in `sys.path.insert()`
+
+> But for `sys.path` specifically, element 0 is the path containing the script, and so using index 1 causes Python to search that path first and then the inserted path, versus the other way around when inserted at index 0.
+
+refer to [First argument of sys.path.insert in python](https://stackoverflow.com/questions/37176836/first-argument-of-sys-path-insert-in-python)

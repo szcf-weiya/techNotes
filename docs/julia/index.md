@@ -84,6 +84,62 @@ build PyCall
 
 it works. And it seems that it does NOT depend on conda environment any more, i.e., `PyPlot` still works for different conda environment, even without `matplotlib` package in such environment.
 
+In the words of the [official documentation](https://github.com/JuliaPy/PyCall.jl),
+
+>  If you use Python virtualenvs, then be aware that PyCall uses the virtualenv it was built with by default, even if you switch virtualenvs. If you want to switch PyCall to use a different virtualenv, then you should switch virtualenvs and run rm(Pkg.dir("PyCall","deps","PYTHON")); Pkg.build("PyCall"). 
+
+which supports my above guess.
+
+### A record
+
+Switch to `py37` conda environment, then run `julia1.2.0`
+
+```julia
+(v1.2) pkg> add PyCall
+```
+
+Then test to import module in the same REPL,
+
+```julia
+julia> using PyCall
+[ Info: Recompiling stale cache file /home/weiya/.julia/compiled/v1.2/PyCall/GkzkC.ji for PyCall [438e738f-606a-5dbb-bf0a-cddfbfd45ab0]
+
+julia> math = pyimport("math")
+PyObject <module 'math' from '/home/weiya/anaconda3/lib/python3.7/lib-dynload/math.cpython-37m-x86_64-linux-gnu.so'>
+```
+
+Now open a new julia session under different conda environment (or no any conda environment), re-run the above code
+
+```julia
+julia> using PyCall
+
+julia> math = pyimport("math")
+PyObject <module 'math' from '/home/weiya/anaconda3/lib/python3.7/lib-dynload/math.cpython-37m-x86_64-linux-gnu.so'>
+```
+
+As you can see, no any compiling info when using `PyCall`, and return the same `math` module. However such module does not corresponds to the `py37` conda environment. The official documentation says
+
+> On GNU/Linux systems, PyCall will default to using the python3 program (if any, otherwise `python`) in your PATH.
+
+Then to specify the version of python such as
+
+```julia
+julia> ENV["PYTHON"] = Sys.which("python")
+"/home/weiya/anaconda3/envs/py37/bin/python3.7"
+```
+
+and rebuild, note that need to restart the julia session to recompiling,
+
+```julia
+julia> using PyCall
+[ Info: Recompiling stale cache file /home/weiya/.julia/compiled/v1.2/PyCall/GkzkC.ji for PyCall [438e738f-606a-5dbb-bf0a-cddfbfd45ab0]
+
+julia> pyimport("math")
+PyObject <module 'math' from '/home/weiya/anaconda3/envs/py37/lib/python3.7/lib-dynload/math.cpython-37m-x86_64-linux-gnu.so'>
+```
+
+then the module corresponds to the specified conda environment, and then like the above test, it also can be used in other conda environment without recompiling.
+
 ## parallel
 
 references
