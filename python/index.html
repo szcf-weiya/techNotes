@@ -544,9 +544,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#some-basics-of-np" class="md-nav__link">
+    Some basics of np
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-of-array" class="md-nav__link">
+    Array of Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#difference-between-numpyarray-shape-r-1-and-r" class="md-nav__link">
     Difference between numpy.array shape (R, 1) and (R,)
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1026,6 +1046,13 @@
         <li class="md-nav__item">
   <a href="#the-i-th-row-in-pandas" class="md-nav__link">
     the i-th row in pandas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-first-argument-in-syspathinsert" class="md-nav__link">
+    the first argument in sys.path.insert()
   </a>
   
 </li>
@@ -1737,9 +1764,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#some-basics-of-np" class="md-nav__link">
+    Some basics of np
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-of-array" class="md-nav__link">
+    Array of Array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#difference-between-numpyarray-shape-r-1-and-r" class="md-nav__link">
     Difference between numpy.array shape (R, 1) and (R,)
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2223,6 +2270,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-first-argument-in-syspathinsert" class="md-nav__link">
+    the first argument in sys.path.insert()
+  </a>
+  
+</li>
+      
       
       
       
@@ -2299,7 +2353,30 @@
 <span class="err">      [ 0.,  2.]])</span>
 </code></pre></div>
 
-<h2 id="difference-between-numpyarray-shape-r-1-and-r">Difference between numpy.array shape (R, 1) and (R,)<a class="headerlink" href="#difference-between-numpyarray-shape-r-1-and-r" title="Permanent link">&para;</a></h2>
+<h2 id="some-basics-of-np">Some basics of <code>np</code><a class="headerlink" href="#some-basics-of-np" title="Permanent link">&para;</a></h2>
+<h3 id="array-of-array">Array of Array<a class="headerlink" href="#array-of-array" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">a</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> 
+<span class="n">array</span><span class="p">([[</span> <span class="mf">83.</span><span class="p">,</span>  <span class="mf">11.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">316.</span><span class="p">,</span>  <span class="mf">19.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">372.</span><span class="p">,</span>  <span class="mf">35.</span><span class="p">]])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">])</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">30</span><span class="p">]:</span> 
+<span class="n">array</span><span class="p">([[</span> <span class="mf">83.</span><span class="p">,</span>  <span class="mf">11.</span><span class="p">,</span>  <span class="mf">83.</span><span class="p">,</span>  <span class="mf">11.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">316.</span><span class="p">,</span>  <span class="mf">19.</span><span class="p">,</span> <span class="mf">316.</span><span class="p">,</span>  <span class="mf">19.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">372.</span><span class="p">,</span>  <span class="mf">35.</span><span class="p">,</span> <span class="mf">372.</span><span class="p">,</span>  <span class="mf">35.</span><span class="p">]])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">]:</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">32</span><span class="p">]:</span> 
+<span class="n">array</span><span class="p">([[</span> <span class="mf">83.</span><span class="p">,</span>  <span class="mf">11.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">316.</span><span class="p">,</span>  <span class="mf">19.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">372.</span><span class="p">,</span>  <span class="mf">35.</span><span class="p">]])</span>
+</code></pre></div>
+
+<h3 id="difference-between-numpyarray-shape-r-1-and-r">Difference between numpy.array shape (R, 1) and (R,)<a class="headerlink" href="#difference-between-numpyarray-shape-r-1-and-r" title="Permanent link">&para;</a></h3>
 <p>refer to <a href="https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r">Difference between numpy.array shape (R, 1) and (R,)</a></p>
 <h2 id="conda">正式认识conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://conda.io/docs/user-guide/getting-started.html">https://conda.io/docs/user-guide/getting-started.html</a></p>
@@ -2710,6 +2787,12 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <h2 id="the-i-th-row-in-pandas">the <code>i</code>-th row in pandas<a class="headerlink" href="#the-i-th-row-in-pandas" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="n">df_test</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
+
+<h2 id="the-first-argument-in-syspathinsert">the first argument in <code>sys.path.insert()</code><a class="headerlink" href="#the-first-argument-in-syspathinsert" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>But for <code>sys.path</code> specifically, element 0 is the path containing the script, and so using index 1 causes Python to search that path first and then the inserted path, versus the other way around when inserted at index 0.</p>
+</blockquote>
+<p>refer to <a href="https://stackoverflow.com/questions/37176836/first-argument-of-sys-path-insert-in-python">First argument of sys.path.insert in python</a></p>
                 
                   
                 
