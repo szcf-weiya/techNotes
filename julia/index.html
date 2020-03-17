@@ -563,13 +563,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#plot" class="md-nav__link">
-    plot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mean" class="md-nav__link">
     关于 mean()
   </a>
@@ -616,18 +609,12 @@
     Couldn't find libpython error
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-record" class="md-nav__link">
-    A record
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#record-for-install-pycall" class="md-nav__link">
+    Record for install PyCall
+  </a>
   
 </li>
       
@@ -808,6 +795,13 @@
         <li class="md-nav__item">
   <a href="#juno-cltr-enter-bug" class="md-nav__link">
     Juno 中 Cltr + Enter 的 bug
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#juno" class="md-nav__link">
+    Juno 使用系统代理
   </a>
   
 </li>
@@ -1386,13 +1380,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#plot" class="md-nav__link">
-    plot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mean" class="md-nav__link">
     关于 mean()
   </a>
@@ -1439,18 +1426,12 @@
     Couldn't find libpython error
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-record" class="md-nav__link">
-    A record
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#record-for-install-pycall" class="md-nav__link">
+    Record for install PyCall
+  </a>
   
 </li>
       
@@ -1635,6 +1616,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#juno" class="md-nav__link">
+    Juno 使用系统代理
+  </a>
+  
+</li>
+      
       
       
       
@@ -1662,10 +1650,6 @@
 </ol>
 <h2 id="-">-&gt;<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
 <p><a href="https://docs.julialang.org/en/v0.6.1/manual/functions/#man-anonymous-functions-1">Anonymous Functions</a></p>
-<h2 id="plot">plot<a class="headerlink" href="#plot" title="Permanent link">&para;</a></h2>
-<ol>
-<li><a href="http://docs.juliaplots.org/latest/tutorial/">Tutorial for plots</a></li>
-</ol>
 <h2 id="mean">关于 <code>mean()</code><a class="headerlink" href="#mean" title="Permanent link">&para;</a></h2>
 <ol>
 <li><code>using Statistics</code> 后才能用 <code>mean()</code>，而 <code>using Distributions</code> 后也能用 <code>mean()</code>。前者表示 <code>generic function with 5 methods</code>，后者称 <code>generic function with 78 methods</code>.</li>
@@ -1715,7 +1699,7 @@
 <p>If you use Python virtualenvs, then be aware that PyCall uses the virtualenv it was built with by default, even if you switch virtualenvs. If you want to switch PyCall to use a different virtualenv, then you should switch virtualenvs and run rm(Pkg.dir(&ldquo;PyCall&rdquo;,&rdquo;deps&rdquo;,&rdquo;PYTHON&rdquo;)); Pkg.build(&ldquo;PyCall&rdquo;). </p>
 </blockquote>
 <p>which supports my above guess.</p>
-<h3 id="a-record">A record<a class="headerlink" href="#a-record" title="Permanent link">&para;</a></h3>
+<h2 id="record-for-install-pycall">Record for install <code>PyCall</code><a class="headerlink" href="#record-for-install-pycall" title="Permanent link">&para;</a></h2>
 <p>Switch to <code>py37</code> conda environment, then run <code>julia1.2.0</code></p>
 <div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="n">pkg</span><span class="o">&gt;</span> <span class="n">add</span> <span class="n">PyCall</span>
 </code></pre></div>
@@ -2150,6 +2134,22 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <p>提醒我或许是因为 Juno 的版本问题，当前版本为 v0.7.2, 最新版本为 v0.8.1</p>
 <p>仅仅更新 Juno.jl 的版本似乎还不行，另外将 Atom.jl 从 v0.12.8 更新到 v0.12.9</p>
 <p>最后竟然<a href="https://github.com/JunoLab/Juno.jl/issues/320#issuecomment-599213691">真的解决了！</a></p>
+<h2 id="juno">Juno 使用系统代理<a class="headerlink" href="#juno" title="Permanent link">&para;</a></h2>
+<p>当在 <code>.bashrc</code> 添加 <code>http_proxy</code> 和 <code>https_proxy</code> 中并 source 之后，直接在 shell 里面开的 julia session 中，验证当前 ip</p>
+<div class="codehilite"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="sb">`curl ifconfig.me`</span><span class="p">)</span>
+</code></pre></div>
+
+<p>或者直接查看 </p>
+<div class="codehilite"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;http_proxy&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>发现可以使用系统代理。但是在 Atom 中开的 julia，则不行。找到 Atom 一条相关的 issue: <a href="https://github.com/atom/atom/issues/18318">[Atom 1.32.0] Does not inherit environment variables when launched not from the command line</a>，但是我已经是最新版了，不应该存在这个问题。但是当我通过 <code>Ctrl-Shift-i</code> 打开 devtools，验证 <code>process.env["http_proxy"]</code>，显示 undefined；而且直接在 source 之后的 terminal 中打开，也显示 undefined。猜想，只对 PATH 有效？或者因为 Juno.jl?</p>
+<p>跳过这个问题，最后直接在 <code>startup.jl</code> 文件中添加</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;http_proxy&quot;</span><span class="p">]</span> <span class="o">=</span> 
+<span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;https_proxy&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>进行设置，这参考了 <a href="https://discourse.julialang.org/t/install-packages-behind-the-proxy/23298/2">Install packages behind the proxy</a></p>
                 
                   
                 
