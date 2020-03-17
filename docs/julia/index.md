@@ -14,10 +14,6 @@ NO
 
 [Anonymous Functions](https://docs.julialang.org/en/v0.6.1/manual/functions/#man-anonymous-functions-1)
 
-## plot
-
-1. [Tutorial for plots](http://docs.juliaplots.org/latest/tutorial/)
-
 
 ## 关于 `mean()`
 
@@ -90,7 +86,7 @@ In the words of the [official documentation](https://github.com/JuliaPy/PyCall.j
 
 which supports my above guess.
 
-### A record
+## Record for install `PyCall`
 
 Switch to `py37` conda environment, then run `julia1.2.0`
 
@@ -652,3 +648,28 @@ Dict{String,Any} with 4 entries:
 仅仅更新 Juno.jl 的版本似乎还不行，另外将 Atom.jl 从 v0.12.8 更新到 v0.12.9
 
 最后竟然[真的解决了！](https://github.com/JunoLab/Juno.jl/issues/320#issuecomment-599213691)
+
+## Juno 使用系统代理
+
+当在 `.bashrc` 添加 `http_proxy` 和 `https_proxy` 中并 source 之后，直接在 shell 里面开的 julia session 中，验证当前 ip
+
+```julia
+run(`curl ifconfig.me`)
+```
+
+或者直接查看 
+
+```julia
+ENV["http_proxy"]
+```
+
+发现可以使用系统代理。但是在 Atom 中开的 julia，则不行。找到 Atom 一条相关的 issue: [[Atom 1.32.0] Does not inherit environment variables when launched not from the command line](https://github.com/atom/atom/issues/18318)，但是我已经是最新版了，不应该存在这个问题。但是当我通过 `Ctrl-Shift-i` 打开 devtools，验证 `process.env["http_proxy"]`，显示 undefined；而且直接在 source 之后的 terminal 中打开，也显示 undefined。猜想，只对 PATH 有效？或者因为 Juno.jl?
+
+跳过这个问题，最后直接在 `startup.jl` 文件中添加
+
+```julia
+ENV["http_proxy"] = 
+ENV["https_proxy"]
+```
+
+进行设置，这参考了 [Install packages behind the proxy](https://discourse.julialang.org/t/install-packages-behind-the-proxy/23298/2)
