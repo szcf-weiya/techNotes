@@ -806,6 +806,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wrong-arrangement-of-multiple-figures-in-a-grid" class="md-nav__link">
+    wrong arrangement of multiple figures in a grid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manage-different-versions-of-julia" class="md-nav__link">
+    Manage Different Versions of Julia
+  </a>
+  
+</li>
+      
       
       
       
@@ -1623,6 +1637,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wrong-arrangement-of-multiple-figures-in-a-grid" class="md-nav__link">
+    wrong arrangement of multiple figures in a grid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manage-different-versions-of-julia" class="md-nav__link">
+    Manage Different Versions of Julia
+  </a>
+  
+</li>
+      
       
       
       
@@ -2150,6 +2178,52 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 </code></pre></div>
 
 <p>进行设置，这参考了 <a href="https://discourse.julialang.org/t/install-packages-behind-the-proxy/23298/2">Install packages behind the proxy</a></p>
+<h2 id="wrong-arrangement-of-multiple-figures-in-a-grid">wrong arrangement of multiple figures in a grid<a class="headerlink" href="#wrong-arrangement-of-multiple-figures-in-a-grid" title="Permanent link">&para;</a></h2>
+<p>Hi, I am confused by the arrangement of multiple figures in a grid. I begin with the example code in the README,</p>
+<div class="codehilite"><pre><span></span><code><span class="n">gui</span> <span class="o">=</span> <span class="n">imshow_gui</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c"># 2 columns, 1 row of images (each initially 300×300)</span>
+<span class="n">canvases</span> <span class="o">=</span> <span class="n">gui</span><span class="p">[</span><span class="s">&quot;canvas&quot;</span><span class="p">]</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;lighthouse&quot;</span><span class="p">))</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;mandrill&quot;</span><span class="p">))</span>
+<span class="n">Gtk</span><span class="o">.</span><span class="n">showall</span><span class="p">(</span><span class="n">gui</span><span class="p">[</span><span class="s">&quot;window&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<p>it throws an error when accessing <code>canvases[1,2]</code></p>
+<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;mandrill&quot;</span><span class="p">))</span>
+<span class="n">ERROR</span><span class="o">:</span> <span class="kt">BoundsError</span><span class="o">:</span> <span class="n">attempt</span> <span class="n">to</span> <span class="n">access</span> <span class="mi">2</span><span class="n">×1</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Any</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span> <span class="n">at</span> <span class="n">index</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre></div>
+
+<p>and I check the size of <code>canvases</code> is</p>
+<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">size</span><span class="p">(</span><span class="n">canvases</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<p>it seems that the canvases will arrage by column while the gui declares it should be by rows. </p>
+<p>On the other hand, if I run</p>
+<div class="codehilite"><pre><span></span><code><span class="n">gui</span> <span class="o">=</span> <span class="n">imshow_gui</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c"># 2 columns, 1 row of images (each initially 300×300)</span>
+<span class="n">canvases</span> <span class="o">=</span> <span class="n">gui</span><span class="p">[</span><span class="s">&quot;canvas&quot;</span><span class="p">]</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;lighthouse&quot;</span><span class="p">))</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;mandrill&quot;</span><span class="p">))</span>
+<span class="n">Gtk</span><span class="o">.</span><span class="n">showall</span><span class="p">(</span><span class="n">gui</span><span class="p">[</span><span class="s">&quot;window&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<p>Then I guess it might due to the version of some packages&hellip;</p>
+<h2 id="manage-different-versions-of-julia">Manage Different Versions of Julia<a class="headerlink" href="#manage-different-versions-of-julia" title="Permanent link">&para;</a></h2>
+<ol>
+<li>download the &ldquo;Generic Linux Binaries for x86 (64-bit)&rdquo; of a particular version from <a href="https://julialang.org/downloads/">Download Julia</a></li>
+<li>put it into customed folder, such as <code>src</code> under home directory,</li>
+<li>link it to the system path, such as</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> /usr/local/bin
+sudo ln -s /home/weiya/src/julia-1.3.1/bin/julia julia1.3.1
+</code></pre></div>
+
+<p>Currently, I have installed the following different versions.</p>
+<div class="codehilite"><pre><span></span><code>$ ll <span class="p">|</span> grep julia
+lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 8月  <span class="m">31</span>  <span class="m">2018</span> julia -&gt; /home/weiya/src/julia-1.0.0/bin/julia*
+lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 7月  <span class="m">30</span>  <span class="m">2019</span> julia1.1.1 -&gt; /home/weiya/src/julia-1.1.1/bin/julia*
+lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 9月  <span class="m">18</span> <span class="m">15</span>:28 julia1.2.0 -&gt; /home/weiya/src/julia-1.2.0/bin/julia*
+lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3月  <span class="m">18</span> <span class="m">10</span>:25 julia1.3.1 -&gt; /home/weiya/src/julia-1.3.1/bin/julia*
+</code></pre></div>
                 
                   
                 
