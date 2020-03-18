@@ -673,3 +673,64 @@ ENV["https_proxy"]
 ```
 
 进行设置，这参考了 [Install packages behind the proxy](https://discourse.julialang.org/t/install-packages-behind-the-proxy/23298/2)
+
+## wrong arrangement of multiple figures in a grid
+
+Hi, I am confused by the arrangement of multiple figures in a grid. I begin with the example code in the README,
+
+```julia
+gui = imshow_gui((300, 300), (2, 1))  # 2 columns, 1 row of images (each initially 300×300)
+canvases = gui["canvas"]
+imshow(canvases[1,1], testimage("lighthouse"))
+imshow(canvases[1,2], testimage("mandrill"))
+Gtk.showall(gui["window"])
+```
+
+it throws an error when accessing `canvases[1,2]`
+
+```julia
+julia> imshow(canvases[1,2], testimage("mandrill"))
+ERROR: BoundsError: attempt to access 2×1 Array{Any,2} at index [1, 2]
+```
+
+and I check the size of `canvases` is
+
+```julia
+julia> size(canvases)
+(2, 1)
+```
+
+it seems that the canvases will arrage by column while the gui declares it should be by rows. 
+
+On the other hand, if I run
+
+```julia
+gui = imshow_gui((300, 300), (2, 1))  # 2 columns, 1 row of images (each initially 300×300)
+canvases = gui["canvas"]
+imshow(canvases[1,1], testimage("lighthouse"))
+imshow(canvases[2,1], testimage("mandrill"))
+Gtk.showall(gui["window"])
+```
+
+Then I guess it might due to the version of some packages...
+
+## Manage Different Versions of Julia
+
+1. download the "Generic Linux Binaries for x86 (64-bit)" of a particular version from [Download Julia](https://julialang.org/downloads/)
+2. put it into customed folder, such as `src` under home directory,
+3. link it to the system path, such as
+
+```bash
+cd /usr/local/bin
+sudo ln -s /home/weiya/src/julia-1.3.1/bin/julia julia1.3.1
+```
+
+Currently, I have installed the following different versions.
+
+```bash
+$ ll | grep julia
+lrwxrwxrwx  1 root root      37 8月  31  2018 julia -> /home/weiya/src/julia-1.0.0/bin/julia*
+lrwxrwxrwx  1 root root      37 7月  30  2019 julia1.1.1 -> /home/weiya/src/julia-1.1.1/bin/julia*
+lrwxrwxrwx  1 root root      37 9月  18 15:28 julia1.2.0 -> /home/weiya/src/julia-1.2.0/bin/julia*
+lrwxrwxrwx  1 root root      37 3月  18 10:25 julia1.3.1 -> /home/weiya/src/julia-1.3.1/bin/julia*
+```
