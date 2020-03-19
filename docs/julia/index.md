@@ -712,6 +712,14 @@ imshow(canvases[2,1], testimage("mandrill"))
 Gtk.showall(gui["window"])
 ```
 
+```julia
+gui = imshow_gui((300, 300), (1, 2))  # 2 columns, 1 row of images (each initially 300×300)
+canvases = gui["canvas"]
+imshow(canvases[1,1], testimage("lighthouse"))
+imshow(canvases[1,2], testimage("mandrill"))
+Gtk.showall(gui["window"])
+```
+
 Then I guess it might due to the version of some packages...
 
 ## Manage Different Versions of Julia
@@ -734,3 +742,35 @@ lrwxrwxrwx  1 root root      37 7月  30  2019 julia1.1.1 -> /home/weiya/src/jul
 lrwxrwxrwx  1 root root      37 9月  18 15:28 julia1.2.0 -> /home/weiya/src/julia-1.2.0/bin/julia*
 lrwxrwxrwx  1 root root      37 3月  18 10:25 julia1.3.1 -> /home/weiya/src/julia-1.3.1/bin/julia*
 ```
+
+## array in functions
+
+```julia
+julia> function g(x)
+           x += [1, 2]
+       end
+g (generic function with 1 method)
+julia> function g!(x)
+           x .+= [1, 2]
+       end
+g! (generic function with 1 method)
+julia> x = [1,2];
+
+julia> g(x)'
+1×2 Adjoint{Int64,Array{Int64,1}}:
+ 2  4
+
+julia> x'
+1×2 Adjoint{Int64,Array{Int64,1}}:
+ 1  2
+
+julia> g!(x)'
+1×2 Adjoint{Int64,Array{Int64,1}}:
+ 2  4
+
+julia> x'
+1×2 Adjoint{Int64,Array{Int64,1}}:
+ 2  4
+```
+
+Note that sometimes `.+=` may make the program much slower, such as https://github.com/szcf-weiya/en/blob/3c8daeb4e0f477f5ea40dc2bb44d832faa4bbbb6/code/2019-06-14-ML/GD2.jl#L10
