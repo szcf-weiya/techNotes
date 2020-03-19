@@ -659,6 +659,14 @@ refer to [Matching Content to MathJax](http://drz.ac/2013/01/14/matching-content
 
 ## 数学公式常用字体
 
-![](https://i.stack.imgur.com/eZdhj.png)
+[![](math-fonts.png)](https://i.stack.imgur.com/eZdhj.png)
 
 refer to [What are all the font styles I can use in math mode?](https://tex.stackexchange.com/questions/58098/what-are-all-the-font-styles-i-can-use-in-math-mode)
+
+## Some ways to number equations
+
+- `split` for a single number
+- `multiline` for a single number
+- `align*` with `tag`
+
+more details refer to [A test of Equation Numbering](https://cdn.rawgit.com/mathjax/MathJax/2.7.1/test/sample-eqnum.html)
