@@ -313,9 +313,7 @@ exiftool -all= /tmp/my_photo.jpg
 
 参考 [How can I read and remove meta (exif) data from my photos using the command line?](https://askubuntu.com/questions/260810/how-can-i-read-and-remove-meta-exif-data-from-my-photos-using-the-command-line)
 
-## 字体
 
-采用 ADOBE 字体，详见 [Adobe Fonts](https://fonts.adobe.com/typekit)
 
 ## jekyll tags 逗号分隔
 
@@ -420,7 +418,10 @@ Implementation for html can be found [here](https://stackoverflow.com/questions/
 ## 字体选择
 
 - [超赞！网页设计中最常见的30款英文字体](https://www.uisdc.com/30-west-typegraph-in-web-design)
-- [Source Han Serif Simplified Chinese in Adobe Fonts](https://fonts.adobe.com/fonts/source-han-serif-simplified-chinese#fonts-section)
+- [Source Han Serif Simplified Chinese in Adobe Fonts](https://fonts.adobe.com/fonts/source-han-serif-simplified-chinese#fonts-section), and [Adobe Fonts](https://fonts.adobe.com/typekit)
+- [Google Fonts](https://fonts.google.com/?category=Serif,Sans+Serif,Display,Monospace)
+- [dafont.com](https://www.dafont.com/)
+- [Webfont Generator](https://www.fontsquirrel.com/tools/webfont-generator)
 
 ## ruby 版本
 
