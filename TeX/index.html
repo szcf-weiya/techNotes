@@ -951,6 +951,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#export-to-bib-from-zotero" class="md-nav__link">
+    export to .bib from Zotero
+  </a>
+  
+</li>
+      
       
       
       
@@ -1889,6 +1896,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#export-to-bib-from-zotero" class="md-nav__link">
+    export to .bib from Zotero
+  </a>
+  
+</li>
+      
       
       
       
@@ -2372,6 +2386,35 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <li><code>align*</code> with <code>tag</code></li>
 </ul>
 <p>more details refer to <a href="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/test/sample-eqnum.html">A test of Equation Numbering</a></p>
+<h2 id="export-to-bib-from-zotero">export to <code>.bib</code> from Zotero<a class="headerlink" href="#export-to-bib-from-zotero" title="Permanent link">&para;</a></h2>
+<p>The original abstract field is,</p>
+<blockquote>
+<p>Karhunen&ndash;Lo`{e}ve decomposition</p>
+</blockquote>
+<p>after exporting to <code>.bib</code> file, it becomes</p>
+<blockquote>
+<p>Karhunen&ndash;Lo{\textbackslash}`{e}ve decomposition</p>
+</blockquote>
+<p>and it throws an error when compiling,</p>
+<blockquote>
+<p>! File ended while scanning use of \field.</p>
+</blockquote>
+<p>My first solution is to check if there are some setting when exporting to <code>.bib</code> file to drop some field, such as abstract here, but finally I failed to find one, and here is <a href="https://forums.zotero.org/discussion/22629/bibtex-export-request-option-to-omit-certain-fields-for-less-cluttered-bibliographies">a discussion</a> in the Zotero community.</p>
+<p>Then I try to replace </p>
+<blockquote>
+<p>`{e}</p>
+</blockquote>
+<p>with</p>
+<blockquote>
+<p>{`e}</p>
+</blockquote>
+<p>in the Zotero&rsquo;s abstract field as said in <a href="https://tex.stackexchange.com/questions/57743/how-to-write-%C3%A4-and-other-umlauts-and-accented-letters-in-bibliography">How to write “ä” and other umlauts and accented letters in bibliography?</a>, which also list several accented characters,</p>
+<blockquote>
+<p>{"a} {\^e} {`i} {.I} {\o} {'u} {\aa} {\c c} {\u g} {\l} {\~n} {\H o} {\v r} {\ss} {\r u}</p>
+</blockquote>
+<p><img alt="" src="accents.png" /></p>
+<p>but it still doesnt work. </p>
+<p>Finally, I directly correct the exported file using the above technique, and it works. But I still think it is not a good idea since I prefer to export without any further modifications. [TODO]</p>
                 
                   
                 
