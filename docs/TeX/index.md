@@ -670,3 +670,37 @@ refer to [What are all the font styles I can use in math mode?](https://tex.stac
 - `align*` with `tag`
 
 more details refer to [A test of Equation Numbering](https://cdn.rawgit.com/mathjax/MathJax/2.7.1/test/sample-eqnum.html)
+
+## export to `.bib` from Zotero
+
+The original abstract field is,
+
+> Karhunen--Lo\`{e}ve decomposition
+
+after exporting to `.bib` file, it becomes
+
+> Karhunen--Lo{\textbackslash}`\{e\}ve decomposition
+
+and it throws an error when compiling,
+
+> ! File ended while scanning use of \field.
+
+My first solution is to check if there are some setting when exporting to `.bib` file to drop some field, such as abstract here, but finally I failed to find one, and here is [a discussion](https://forums.zotero.org/discussion/22629/bibtex-export-request-option-to-omit-certain-fields-for-less-cluttered-bibliographies) in the Zotero community.
+
+Then I try to replace 
+
+> \`{e}
+
+with
+
+> {\`e}
+
+in the Zotero's abstract field as said in [How to write “ä” and other umlauts and accented letters in bibliography?](https://tex.stackexchange.com/questions/57743/how-to-write-%C3%A4-and-other-umlauts-and-accented-letters-in-bibliography), which also list several accented characters,
+
+> {\"a} {\^e} {\`i} {\.I} {\o} {\'u} {\aa} {\c c} {\u g} {\l} {\~n} {\H o} {\v r} {\ss} {\r u}
+
+![](accents.png)
+
+but it still doesnt work. 
+
+Finally, I directly correct the exported file using the above technique, and it works. But I still think it is not a good idea since I prefer to export without any further modifications. [TODO]
