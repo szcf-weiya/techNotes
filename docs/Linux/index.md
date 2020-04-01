@@ -1002,3 +1002,10 @@ refer to [Different CUDA versions shown by nvcc and NVIDIA-smi](https://stackove
 
 and some introduction: [Fira Code —— 专为编程而生的字体](https://zhuanlan.zhihu.com/p/65362086)
 
+## Only show directory
+
+```bash
+ls -d */
+```
+
+refer to [Listing only directories using ls in Bash?](https://stackoverflow.com/questions/14352290/listing-only-directories-using-ls-in-bash)
