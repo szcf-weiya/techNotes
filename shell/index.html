@@ -495,6 +495,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#only-show-directory" class="md-nav__link">
+    Only show directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-whether-a-certain-file-typeextension-exists-in-directory" class="md-nav__link">
+    Check whether a certain file type/extension exists in directory
+  </a>
+  
+</li>
+      
       
       
       
@@ -1465,6 +1479,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#only-show-directory" class="md-nav__link">
+    Only show directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-whether-a-certain-file-typeextension-exists-in-directory" class="md-nav__link">
+    Check whether a certain file type/extension exists in directory
+  </a>
+  
+</li>
+      
       
       
       
@@ -1731,6 +1759,21 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <h2 id="_3">链接自动推送<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>find -regex <span class="s2">&quot;\./.*\.html&quot;</span> <span class="p">|</span> sed -n <span class="s2">&quot;s#\./#https://esl.hohoweiya.xyz/#p&quot;</span> &gt;&gt; ../urls.txt
 </code></pre></div>
+
+<h2 id="only-show-directory">Only show directory<a class="headerlink" href="#only-show-directory" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>ls -d */
+</code></pre></div>
+
+<p>refer to <a href="https://stackoverflow.com/questions/14352290/listing-only-directories-using-ls-in-bash">Listing only directories using ls in Bash?</a></p>
+<p>My application: <a href="https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L9">TeXtemplates: create a tex template</a></p>
+<h2 id="check-whether-a-certain-file-typeextension-exists-in-directory">Check whether a certain file type/extension exists in directory<a class="headerlink" href="#check-whether-a-certain-file-typeextension-exists-in-directory" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span> ls *.bib <span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+  <span class="c1">#</span>
+<span class="k">fi</span>  
+</code></pre></div>
+
+<p>refer to <a href="https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory">Check whether a certain file type/extension exists in directory</a></p>
+<p>My application: <a href="https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20">TeXtemplates: create a tex template</a></p>
                 
                   
                 
