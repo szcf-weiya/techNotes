@@ -277,6 +277,14 @@ echo $a
 
 where `-d'.'` is to define the delimiter, and then `-f1` get the first field.
 
+If we need to get the last field, we can use `rev`, i.e.,
+
+```bash
+echo 'maps.google.com' | rev | cut -d'.' -f 1 | rev
+```
+
+refer to [How to find the last field using 'cut'](https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut)
+
 ## Multiple `IFS`
 
 ```shell
@@ -337,3 +345,16 @@ fi
 refer to [Check whether a certain file type/extension exists in directory](https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory)
 
 My application: [TeXtemplates: create a tex template](https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20)
+
+## path of the script
+
+get the path of the current scripts
+
+```bash
+CURDIR=`/bin/pwd`
+BASEDIR=$(dirname $0)
+ABSPATH=$(readlink -f $0)
+ABSDIR=$(dirname $ABSPATH)
+```
+
+refer to [darrenderidder/bashpath.sh](https://gist.github.com/darrenderidder/974638)
