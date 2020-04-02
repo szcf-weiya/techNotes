@@ -509,6 +509,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#path-of-the-script" class="md-nav__link">
+    path of the script
+  </a>
+  
+</li>
+      
       
       
       
@@ -1493,6 +1500,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#path-of-the-script" class="md-nav__link">
+    path of the script
+  </a>
+  
+</li>
+      
       
       
       
@@ -1728,6 +1742,11 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 </code></pre></div>
 
 <p>where <code>-d'.'</code> is to define the delimiter, and then <code>-f1</code> get the first field.</p>
+<p>If we need to get the last field, we can use <code>rev</code>, i.e.,</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;maps.google.com&#39;</span> <span class="p">|</span> rev <span class="p">|</span> cut -d<span class="s1">&#39;.&#39;</span> -f <span class="m">1</span> <span class="p">|</span> rev
+</code></pre></div>
+
+<p>refer to <a href="https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut">How to find the last field using &lsquo;cut&rsquo;</a></p>
 <h2 id="multiple-ifs">Multiple <code>IFS</code><a class="headerlink" href="#multiple-ifs" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span>
         <span class="nv">IFS</span><span class="o">=</span><span class="s1">&#39;:&#39;</span> <span class="nb">read</span> -a Line <span class="o">&lt;&lt;&lt;</span> <span class="nv">$ADDR</span>
@@ -1774,6 +1793,15 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 
 <p>refer to <a href="https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory">Check whether a certain file type/extension exists in directory</a></p>
 <p>My application: <a href="https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20">TeXtemplates: create a tex template</a></p>
+<h2 id="path-of-the-script">path of the script<a class="headerlink" href="#path-of-the-script" title="Permanent link">&para;</a></h2>
+<p>get the path of the current scripts</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">CURDIR</span><span class="o">=</span><span class="sb">`</span>/bin/pwd<span class="sb">`</span>
+<span class="nv">BASEDIR</span><span class="o">=</span><span class="k">$(</span>dirname <span class="nv">$0</span><span class="k">)</span>
+<span class="nv">ABSPATH</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="nv">$0</span><span class="k">)</span>
+<span class="nv">ABSDIR</span><span class="o">=</span><span class="k">$(</span>dirname <span class="nv">$ABSPATH</span><span class="k">)</span>
+</code></pre></div>
+
+<p>refer to <a href="https://gist.github.com/darrenderidder/974638">darrenderidder/bashpath.sh</a></p>
                 
                   
                 
