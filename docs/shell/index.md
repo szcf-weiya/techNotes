@@ -315,3 +315,25 @@ done < <(find . -maxdepth 1 -regex "\./oracle_setting_2019-09-.*recall\.pdf" -pr
 ```bash
 find -regex "\./.*\.html" | sed -n "s#\./#https://esl.hohoweiya.xyz/#p" >> ../urls.txt
 ```
+
+## Only show directory
+
+```bash
+ls -d */
+```
+
+refer to [Listing only directories using ls in Bash?](https://stackoverflow.com/questions/14352290/listing-only-directories-using-ls-in-bash)
+
+My application: [TeXtemplates: create a tex template](https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L9)
+
+## Check whether a certain file type/extension exists in directory
+
+```bash
+if ls *.bib &>/dev/null; then
+  #
+fi	
+```
+
+refer to [Check whether a certain file type/extension exists in directory](https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory)
+
+My application: [TeXtemplates: create a tex template](https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20)

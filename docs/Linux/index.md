@@ -1009,3 +1009,5 @@ ls -d */
 ```
 
 refer to [Listing only directories using ls in Bash?](https://stackoverflow.com/questions/14352290/listing-only-directories-using-ls-in-bash)
+
+My application: [create a tex template](https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L9)
