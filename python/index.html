@@ -1057,6 +1057,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#interactive-mode" class="md-nav__link">
+    interactive mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print-numpy-objects-without-line-breaks" class="md-nav__link">
+    print numpy objects without line breaks
+  </a>
+  
+</li>
+      
       
       
       
@@ -2277,6 +2291,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#interactive-mode" class="md-nav__link">
+    interactive mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print-numpy-objects-without-line-breaks" class="md-nav__link">
+    print numpy objects without line breaks
+  </a>
+  
+</li>
+      
       
       
       
@@ -2793,6 +2821,16 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <p>But for <code>sys.path</code> specifically, element 0 is the path containing the script, and so using index 1 causes Python to search that path first and then the inserted path, versus the other way around when inserted at index 0.</p>
 </blockquote>
 <p>refer to <a href="https://stackoverflow.com/questions/37176836/first-argument-of-sys-path-insert-in-python">First argument of sys.path.insert in python</a></p>
+<h2 id="interactive-mode">interactive mode<a class="headerlink" href="#interactive-mode" title="Permanent link">&para;</a></h2>
+<p>https://stackoverflow.com/questions/47273107/how-to-pause-a-for-loop-and-waiting-for-user-input-matplotlib</p>
+<p>https://matplotlib.org/3.1.1/users/event_handling.html</p>
+<h2 id="print-numpy-objects-without-line-breaks">print numpy objects without line breaks<a class="headerlink" href="#print-numpy-objects-without-line-breaks" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x_str</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array_repr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_str</span><span class="p">)</span>
+</code></pre></div>
+
+<p>refer to <a href="https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks">How to print numpy objects without line breaks</a></p>
                 
                   
                 
