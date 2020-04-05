@@ -724,3 +724,19 @@ df_test.iloc[0]
 > But for `sys.path` specifically, element 0 is the path containing the script, and so using index 1 causes Python to search that path first and then the inserted path, versus the other way around when inserted at index 0.
 
 refer to [First argument of sys.path.insert in python](https://stackoverflow.com/questions/37176836/first-argument-of-sys-path-insert-in-python)
+
+## interactive mode
+
+https://stackoverflow.com/questions/47273107/how-to-pause-a-for-loop-and-waiting-for-user-input-matplotlib
+
+https://matplotlib.org/3.1.1/users/event_handling.html
+
+## print numpy objects without line breaks
+
+```python
+import numpy as np
+x_str = np.array_repr(x).replace('\n', '')
+print(x_str)
+```
+
+refer to [How to print numpy objects without line breaks](https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks)
