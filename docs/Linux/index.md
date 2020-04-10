@@ -1001,3 +1001,17 @@ refer to [Different CUDA versions shown by nvcc and NVIDIA-smi](https://stackove
 [Install the Fira Font in Ubuntu](https://stevescott.ca/2016-10-20-installing-the-fira-font-in-ubuntu.html)
 
 and some introduction: [Fira Code —— 专为编程而生的字体](https://zhuanlan.zhihu.com/p/65362086)
+
+## Proxy for Gmail in Thunderbird
+
+Setting a proxy for the thunderbird is quite straigtforward, but not all mail accounts need the proxy, only gmail in my case. I am considering if it is possible to set up a proxy for gmail separately. Then I found that setting proxy by PAC file might work inspired by [Gmail imap/smtp domains to connect via proxy](https://support.google.com/mail/forum/AAAAK7un8RUCGQj5uPgJoo), since PAC file can customize the visited url. 
+
+Then I need to learn [how to write a PAC file](https://findproxyforurl.com/example-pac-file/), although later I directly export the rules written in SwitchyOmega to a PAC file.
+
+Once PAC is done, I need to write its location url, seems impossible to directly write a local path. One easy way is to open port 80 to access my laptop, which maybe need apache or nginx, but both of them are overqualified. A simple way is
+
+```bash
+sudo python -m SimpleHTTPServer 80
+```
+
+found in[Open port 80 on Ubuntu server](https://askubuntu.com/questions/646293/open-port-80-on-ubuntu-server)
