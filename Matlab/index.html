@@ -1142,13 +1142,13 @@
                 
                 <h1 id="matlab">Matlab相关<a class="headerlink" href="#matlab" title="Permanent link">&para;</a></h1>
 <h2 id="acf-people-detector">ACF people detector<a class="headerlink" href="#acf-people-detector" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">detector</span> <span class="o">=</span> <span class="n">peopleDetectorACF</span><span class="p">;</span>
-<span class="nf">%detector</span> <span class="o">=</span> <span class="n">peopleDetectorACF</span><span class="p">(</span><span class="err">&#39;</span><span class="n">caltech</span><span class="err">&#39;</span><span class="p">);</span>
-<span class="n">I</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="err">&#39;</span><span class="n">testACF</span><span class="p">.</span><span class="n">png</span><span class="err">&#39;</span><span class="p">);</span>
-<span class="p">[</span><span class="n">bboxes</span><span class="p">,</span> <span class="n">scores</span><span class="p">]</span> <span class="o">=</span> <span class="n">detect</span><span class="p">(</span><span class="n">detector</span><span class="p">,</span> <span class="n">I</span><span class="p">);</span>
-<span class="n">I</span> <span class="o">=</span> <span class="n">insertObjectAnnotation</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">rectangle</span><span class="err">&#39;</span><span class="p">,</span> <span class="n">bboxes</span><span class="p">,</span> <span class="n">scores</span><span class="p">);</span>
-<span class="n">figure</span>
-<span class="n">imshow</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>detector = peopleDetectorACF;
+%detector = peopleDetectorACF(&#39;caltech&#39;);
+I = imread(&#39;testACF.png&#39;);
+[bboxes, scores] = detect(detector, I);
+I = insertObjectAnnotation(I, &#39;rectangle&#39;, bboxes, scores);
+figure
+imshow(I)
 </code></pre></div>
                 
                   

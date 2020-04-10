@@ -1534,20 +1534,20 @@
 <li>定义变量时，变量名不加美元符号</li>
 <li>变量名和等号之间不能有空格</li>
 <li>变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：
-<div class="codehilite"><pre><span></span><code><span class="k">for</span> skill in Ada Coffe Action Java<span class="p">;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> skill in Ada Coffe Action Java<span class="p">;</span> <span class="k">do</span>
     <span class="nb">echo</span> <span class="s2">&quot;I am good at </span><span class="si">${</span><span class="nv">skill</span><span class="si">}</span><span class="s2">Script&quot;</span>
 <span class="k">done</span>
 </code></pre></div></li>
 </ol>
 <h3 id="another-for-loop">another <code>for</code> loop<a class="headerlink" href="#another-for-loop" title="Permanent link">&para;</a></h3>
 <p><code>start..stop..length</code></p>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span> i in <span class="o">{</span><span class="m">5</span>..50..5<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> i in <span class="o">{</span><span class="m">5</span>..50..5<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
   <span class="nb">echo</span> <span class="nv">$i</span>
 <span class="k">done</span>
 </code></pre></div>
 
 <p>actually, it can be used to construct an array,</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">arr</span><span class="o">=({</span><span class="m">1</span>..10..2<span class="o">})</span>
+<div class="highlight"><pre><span></span><code><span class="nv">arr</span><span class="o">=({</span><span class="m">1</span>..10..2<span class="o">})</span>
 <span class="nb">echo</span> <span class="si">${</span><span class="nv">arr</span><span class="p">[@]</span><span class="si">}</span>
 <span class="k">for</span> i in <span class="si">${</span><span class="nv">arr</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>
   <span class="nb">echo</span> <span class="nv">$i</span>
@@ -1555,7 +1555,7 @@
 </code></pre></div>
 
 <p>alternatively, we can use <code>seq</code>,</p>
-<div class="codehilite"><pre><span></span><code><span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">5</span> <span class="m">5</span> <span class="m">50</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">5</span> <span class="m">5</span> <span class="m">50</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
     <span class="nb">echo</span> <span class="nv">$i</span>
 <span class="k">done</span>
 </code></pre></div>
@@ -1599,15 +1599,15 @@
 </ol>
 <h3 id="_2">实战一<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>将</p>
-<div class="codehilite"><pre><span></span><code><span class="err">!</span><span class="o">[</span><span class="n">IMG_0802</span><span class="o">]</span><span class="p">(</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="k">user</span><span class="o">-</span><span class="n">images</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="mi">13688320</span><span class="o">/</span><span class="mi">72489850</span><span class="o">-</span><span class="mi">733</span><span class="n">ae480</span><span class="o">-</span><span class="mi">3850</span><span class="o">-</span><span class="mi">11</span><span class="n">ea</span><span class="o">-</span><span class="mf">8e51</span><span class="o">-</span><span class="mi">15021588</span><span class="n">a7e6</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>![IMG_0802](https://user-images.githubusercontent.com/13688320/72489850-733ae480-3850-11ea-8e51-15021588a7e6.jpg)
 </code></pre></div>
 
 <p>替换成</p>
-<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">IMG_0802</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="k">user</span><span class="o">-</span><span class="n">images</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="mi">13688320</span><span class="o">/</span><span class="mi">72489850</span><span class="o">-</span><span class="mi">733</span><span class="n">ae480</span><span class="o">-</span><span class="mi">3850</span><span class="o">-</span><span class="mi">11</span><span class="n">ea</span><span class="o">-</span><span class="mf">8e51</span><span class="o">-</span><span class="mi">15021588</span><span class="n">a7e6</span><span class="p">.</span><span class="n">jpg</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>[IMG_0802]: https://user-images.githubusercontent.com/13688320/72489850-733ae480-3850-11ea-8e51-15021588a7e6.jpg
 </code></pre></div>
 
 <p>解决方案</p>
-<div class="codehilite"><pre><span></span><code>sed -i <span class="s2">&quot;s/\!\[IMG_\([0-9]\{4\}\)\](\(.*\))/\[IMG_\1\]\: \2/g&quot;</span> FILENAME
+<div class="highlight"><pre><span></span><code>sed -i <span class="s2">&quot;s/\!\[IMG_\([0-9]\{4\}\)\](\(.*\))/\[IMG_\1\]\: \2/g&quot;</span> FILENAME
 </code></pre></div>
 
 <ul>
@@ -1616,7 +1616,7 @@
 <li><code>\2</code> 前面的空格不需要写成 <code>[ ]</code>，不然会直接出现 <code>[ ]</code>，而之前某次为了匹配多个空格需要写成 <code>[ ]*</code></li>
 </ul>
 <p>人总是善变的，过了一段时间，我又想把这些 img 下载到本地文件夹，但是之前处理过的文件都删掉了，只剩下传到 github 上的了，所以我首先要把文件下载到合适的位置并重命名。比如对于文件 <code>_posts/2019-12-21-quant-genetics.md</code>，只保留了 <code>https://user-images.githubusercontent.com/</code> 的链接，采用下面的脚本下载到合适的位置并重命名，</p>
-<div class="codehilite"><pre><span></span><code>grep -E <span class="s2">&quot;https://user-images.&quot;</span> _posts/2019-12-21-quant-genetics.md <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span> <span class="k">if</span> <span class="o">[</span> <span class="si">${#</span><span class="nv">ADDR</span><span class="p">[@]</span><span class="si">}</span> -eq <span class="m">2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> proxychains wget <span class="si">${</span><span class="nv">ADDR</span><span class="p">[1]</span><span class="si">}</span> -O images/2019-12-21-quant-genetics/<span class="si">${</span><span class="nv">ADDR</span><span class="p">[0]:</span><span class="nv">1</span><span class="p">:</span><span class="nv">8</span><span class="si">}</span>.jpg<span class="p">;</span> <span class="k">fi</span><span class="p">;</span> <span class="k">done</span>
+<div class="highlight"><pre><span></span><code>grep -E <span class="s2">&quot;https://user-images.&quot;</span> _posts/2019-12-21-quant-genetics.md <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span> <span class="k">if</span> <span class="o">[</span> <span class="si">${#</span><span class="nv">ADDR</span><span class="p">[@]</span><span class="si">}</span> -eq <span class="m">2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> proxychains wget <span class="si">${</span><span class="nv">ADDR</span><span class="p">[1]</span><span class="si">}</span> -O images/2019-12-21-quant-genetics/<span class="si">${</span><span class="nv">ADDR</span><span class="p">[0]:</span><span class="nv">1</span><span class="p">:</span><span class="nv">8</span><span class="si">}</span>.jpg<span class="p">;</span> <span class="k">fi</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
 
 <p>其中</p>
@@ -1628,7 +1628,7 @@
 <h2 id="awk">awk<a class="headerlink" href="#awk" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://linux.cn/article-3945-1.html">技术|如何在Linux中使用awk命令</a></p>
 <h2 id="ip">统计访问日志里每个 ip 访问次数<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 cat access.log <span class="p">|</span>sed -rn <span class="s1">&#39;/28\/Jan\/2015/p&#39;</span> &gt; a.txt 
 cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</span><span class="p">|</span>sort <span class="p">|</span>uniq &gt; ipnum.txt
 <span class="k">for</span> i in <span class="sb">`</span>cat ipnum.txt<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
@@ -1647,7 +1647,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 </ol>
 <h2 id="distribute-jobs-into-queues">distribute jobs into queues<a class="headerlink" href="#distribute-jobs-into-queues" title="Permanent link">&para;</a></h2>
 <p>since different queues has different quota, try to assign the job into available nodes.</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">queue</span><span class="o">=(</span>bigmem large batch<span class="o">)</span>
+<div class="highlight"><pre><span></span><code><span class="nv">queue</span><span class="o">=(</span>bigmem large batch<span class="o">)</span>
 <span class="nv">queues</span><span class="o">=()</span>
 <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>i&lt;<span class="m">12</span><span class="p">;</span>i++<span class="o">))</span> <span class="k">do</span> <span class="nv">queues</span><span class="o">+=(</span><span class="si">${</span><span class="nv">queue</span><span class="p">[0]</span><span class="si">}</span><span class="o">)</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
 <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>i&lt;<span class="m">20</span><span class="p">;</span>i++<span class="o">))</span> <span class="k">do</span> <span class="nv">queues</span><span class="o">+=(</span><span class="si">${</span><span class="nv">queue</span><span class="p">[1]</span><span class="si">}</span><span class="o">)</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
@@ -1665,7 +1665,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <h2 id="command-line-arguments">Command line arguments<a class="headerlink" href="#command-line-arguments" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://www.devdungeon.com/content/taking-command-line-arguments-bash">Taking Command Line Arguments in Bash</a></p>
 <h2 id="join-elements-of-an-array-in-bash">join elements of an array in Bash<a class="headerlink" href="#join-elements-of-an-array-in-bash" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nv">arr</span><span class="o">=(</span>a b c<span class="o">)</span>
+<div class="highlight"><pre><span></span><code><span class="nv">arr</span><span class="o">=(</span>a b c<span class="o">)</span>
 <span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&quot;</span><span class="k">$(</span><span class="nv">IFS</span><span class="o">=</span>,<span class="p">;</span> <span class="nb">printf</span> <span class="s1">&#39;%s&#39;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">arr</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
 <span class="c1"># a,b,c</span>
 </code></pre></div>
@@ -1673,7 +1673,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <p>where <code>*</code> or <code>@</code> return all elements of such array.</p>
 <p>refer to <a href="https://stackoverflow.com/questions/1527049/how-can-i-join-elements-of-an-array-in-bash">How can I join elements of an array in Bash?</a></p>
 <h3 id="a-more-complex-way">A more complex way<a class="headerlink" href="#a-more-complex-way" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nv">list</span><span class="o">=</span>
+<div class="highlight"><pre><span></span><code><span class="nv">list</span><span class="o">=</span>
 <span class="k">for</span> nc in <span class="o">{</span><span class="m">2</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
   <span class="k">for</span> nf in <span class="m">5</span> <span class="m">10</span> <span class="m">15</span><span class="p">;</span> <span class="k">do</span>
     <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$list</span><span class="s2">&quot;</span> <span class="o">]</span>
@@ -1688,13 +1688,13 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 </code></pre></div>
 
 <h2 id="timestamp">timestamp<a class="headerlink" href="#timestamp" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nv">timestamp</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">&quot;%Y-%m-%dT%H:%M:%S&quot;</span><span class="k">)</span>
+<div class="highlight"><pre><span></span><code><span class="nv">timestamp</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">&quot;%Y-%m-%dT%H:%M:%S&quot;</span><span class="k">)</span>
 <span class="nb">echo</span> <span class="nv">$timestamp</span>
 <span class="c1"># 2020-02-11T10:51:42</span>
 </code></pre></div>
 
 <h3 id="compare-two-timestamps">compare two timestamps<a class="headerlink" href="#compare-two-timestamps" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nv">d1</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22 20:07:25&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
+<div class="highlight"><pre><span></span><code><span class="nv">d1</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22 20:07:25&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
 <span class="nv">d2</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22 20:08:25&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
 <span class="k">if</span> <span class="o">[</span> <span class="nv">$d1</span> -gt <span class="nv">$d2</span> <span class="o">]</span>
 <span class="k">then</span>
@@ -1716,12 +1716,12 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <p>Support we want to get <code>abc2.txt</code> as stated in <a href="https://unix.stackexchange.com/questions/44754/listing-with-ls-and-regular-expression">Listing with <code>ls</code> and regular expression
 </a>,</p>
 <p><code>ls</code> does not support regular expressions, but it can work with globbing, or filename expressions. </p>
-<div class="codehilite"><pre><span></span><code>ls *<span class="o">[</span>!0-9<span class="o">][</span><span class="m">0</span>-9<span class="o">]</span>.txt
+<div class="highlight"><pre><span></span><code>ls *<span class="o">[</span>!0-9<span class="o">][</span><span class="m">0</span>-9<span class="o">]</span>.txt
 </code></pre></div>
 
 <p>where <code>!</code> is complement.</p>
 <p>Alternatively, we can use <code>find -regex</code>, </p>
-<div class="codehilite"><pre><span></span><code>find . -maxdepth <span class="m">1</span> -regex <span class="s1">&#39;\./.*[^0-9][0-9]\.txt&#39;</span>
+<div class="highlight"><pre><span></span><code>find . -maxdepth <span class="m">1</span> -regex <span class="s1">&#39;\./.*[^0-9][0-9]\.txt&#39;</span>
 </code></pre></div>
 
 <p>where</p>
@@ -1731,24 +1731,24 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <p>We also can add <code>-exec ls</code> to get the output of <code>ls</code>, and change the regex type by <code>-regextype egrep</code>.</p>
 <h2 id="strip-first-2-character-from-a-string">strip first 2 character from a string<a class="headerlink" href="#strip-first-2-character-from-a-string" title="Permanent link">&para;</a></h2>
 <p>simplest way:</p>
-<div class="codehilite"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span>
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span>
 </code></pre></div>
 
 <p>some alternatives refer to <a href="https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed">How can I strip first X characters from string using sed?</a>, or <a href="https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash">Remove first character of a string in Bash</a></p>
 <h2 id="select-the-first-field">select the first field<a class="headerlink" href="#select-the-first-field" title="Permanent link">&para;</a></h2>
 <p>given filename <code>file.txt</code>, want to get a string <code>file_test</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="k">$(</span>cut -d<span class="s1">&#39;.&#39;</span> -f1 <span class="o">&lt;&lt;&lt;</span> <span class="nv">$1</span><span class="k">)</span>_test
+<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="k">$(</span>cut -d<span class="s1">&#39;.&#39;</span> -f1 <span class="o">&lt;&lt;&lt;</span> <span class="nv">$1</span><span class="k">)</span>_test
 <span class="nb">echo</span> <span class="nv">$a</span>
 </code></pre></div>
 
 <p>where <code>-d'.'</code> is to define the delimiter, and then <code>-f1</code> get the first field.</p>
 <p>If we need to get the last field, we can use <code>rev</code>, i.e.,</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;maps.google.com&#39;</span> <span class="p">|</span> rev <span class="p">|</span> cut -d<span class="s1">&#39;.&#39;</span> -f <span class="m">1</span> <span class="p">|</span> rev
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;maps.google.com&#39;</span> <span class="p">|</span> rev <span class="p">|</span> cut -d<span class="s1">&#39;.&#39;</span> -f <span class="m">1</span> <span class="p">|</span> rev
 </code></pre></div>
 
 <p>refer to <a href="https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut">How to find the last field using &lsquo;cut&rsquo;</a></p>
 <h2 id="multiple-ifs">Multiple <code>IFS</code><a class="headerlink" href="#multiple-ifs" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span>
         <span class="nv">IFS</span><span class="o">=</span><span class="s1">&#39;:&#39;</span> <span class="nb">read</span> -a Line <span class="o">&lt;&lt;&lt;</span> <span class="nv">$ADDR</span>
         <span class="nb">echo</span> <span class="si">${</span><span class="nv">Line</span><span class="p">[0]</span><span class="si">}</span><span class="p">;</span>
 <span class="k">done</span> &lt; &lt;<span class="o">(</span>grep -nE <span class="s2">&quot;finished&quot;</span> slurm-37985.out<span class="o">)</span>
@@ -1761,7 +1761,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 </ul>
 <p>refer to <a href="https://stackoverflow.com/questions/23356779/how-can-i-store-the-find-command-results-as-an-array-in-bash">How can I store the “find” command results as an array in Bash</a></p>
 <p>my working case:</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">files</span><span class="o">=()</span>
+<div class="highlight"><pre><span></span><code><span class="nv">files</span><span class="o">=()</span>
 <span class="nv">start_time</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-21T14:11:16&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
 <span class="nv">end_time</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22T20:07:00&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
 <span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span>  <span class="nb">read</span> -r -d <span class="s1">$&#39;\0&#39;</span><span class="p">;</span> <span class="k">do</span>
@@ -1776,17 +1776,17 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 </code></pre></div>
 
 <h2 id="_3">链接自动推送<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>find -regex <span class="s2">&quot;\./.*\.html&quot;</span> <span class="p">|</span> sed -n <span class="s2">&quot;s#\./#https://esl.hohoweiya.xyz/#p&quot;</span> &gt;&gt; ../urls.txt
+<div class="highlight"><pre><span></span><code>find -regex <span class="s2">&quot;\./.*\.html&quot;</span> <span class="p">|</span> sed -n <span class="s2">&quot;s#\./#https://esl.hohoweiya.xyz/#p&quot;</span> &gt;&gt; ../urls.txt
 </code></pre></div>
 
 <h2 id="only-show-directory">Only show directory<a class="headerlink" href="#only-show-directory" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>ls -d */
+<div class="highlight"><pre><span></span><code>ls -d */
 </code></pre></div>
 
 <p>refer to <a href="https://stackoverflow.com/questions/14352290/listing-only-directories-using-ls-in-bash">Listing only directories using ls in Bash?</a></p>
 <p>My application: <a href="https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L9">TeXtemplates: create a tex template</a></p>
 <h2 id="check-whether-a-certain-file-typeextension-exists-in-directory">Check whether a certain file type/extension exists in directory<a class="headerlink" href="#check-whether-a-certain-file-typeextension-exists-in-directory" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">if</span> ls *.bib <span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> ls *.bib <span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
   <span class="c1">#</span>
 <span class="k">fi</span>  
 </code></pre></div>
@@ -1795,7 +1795,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <p>My application: <a href="https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20">TeXtemplates: create a tex template</a></p>
 <h2 id="path-of-the-script">path of the script<a class="headerlink" href="#path-of-the-script" title="Permanent link">&para;</a></h2>
 <p>get the path of the current scripts</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">CURDIR</span><span class="o">=</span><span class="sb">`</span>/bin/pwd<span class="sb">`</span>
+<div class="highlight"><pre><span></span><code><span class="nv">CURDIR</span><span class="o">=</span><span class="sb">`</span>/bin/pwd<span class="sb">`</span>
 <span class="nv">BASEDIR</span><span class="o">=</span><span class="k">$(</span>dirname <span class="nv">$0</span><span class="k">)</span>
 <span class="nv">ABSPATH</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="nv">$0</span><span class="k">)</span>
 <span class="nv">ABSDIR</span><span class="o">=</span><span class="k">$(</span>dirname <span class="nv">$ABSPATH</span><span class="k">)</span>

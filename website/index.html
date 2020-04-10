@@ -1754,30 +1754,30 @@
 </ol>
 <h3 id="_2">更换服务器重新配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <h4 id="step-1-install-apache2">Step 1: Install Apache2<a class="headerlink" href="#step-1-install-apache2" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>sudo apt update
+<div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install apache2
 </code></pre></div>
 
 <p>配置云服务商的安全组，添加 80,443 端口，则应该能够访问 apache 的默认网页。</p>
 <p>然后在 <code>/var/www</code> 下新建 <code>disqus</code> 文件夹</p>
-<div class="codehilite"><pre><span></span><code>sudo mkdir /var/www/disqus
+<div class="highlight"><pre><span></span><code>sudo mkdir /var/www/disqus
 sudo chown -R <span class="nv">$USER</span>:<span class="nv">$USER</span> /var/www/disqus
 </code></pre></div>
 
 <p>并配置</p>
-<div class="codehilite"><pre><span></span><code>sudo nano /etc/apache2/sites-available/your_domain.conf
+<div class="highlight"><pre><span></span><code>sudo nano /etc/apache2/sites-available/your_domain.conf
 </code></pre></div>
 
 <p>可以直接复制 <code>000-default.conf</code></p>
 <p>然后启动 <code>disqus.conf</code> 并关闭 <code>000-default.conf</code></p>
-<div class="codehilite"><pre><span></span><code>sudo a2ensite disqus.conf
+<div class="highlight"><pre><span></span><code>sudo a2ensite disqus.conf
 sudo a2dissite <span class="m">000</span>-default.conf
 </code></pre></div>
 
 <p>这样的好处是以后方便添加不同的 hosts。</p>
 <h4 id="step-2-install-php">Step 2: Install php<a class="headerlink" href="#step-2-install-php" title="Permanent link">&para;</a></h4>
 <p>直接下载就好了</p>
-<div class="codehilite"><pre><span></span><code>sudo apt install php 
+<div class="highlight"><pre><span></span><code>sudo apt install php 
 </code></pre></div>
 
 <p>默认装的是 php7.2，虽然文档中说的是 php5.6，切换不同版本的 php 可以参考 <a href="https://vitux.com/how-to-install-php5-and-php7-on-ubuntu-18-04-lts/">How to install php5 and php7 on Ubuntu 18.04 LTS</a></p>
@@ -1786,11 +1786,11 @@ sudo a2dissite <span class="m">000</span>-default.conf
 <p>PHP Fatal error:  Call to undefined function curl_init() in /var/www/disqus/disqus-php-api/api/init.php on line 104</p>
 </blockquote>
 <p>其中<code>curl_init()</code> 是 cURL 的函数。需要注意选择与 php 匹配的版本</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install php7.2-curl
+<div class="highlight"><pre><span></span><code>sudo apt-get install php7.2-curl
 </code></pre></div>
 
 <h4 id="step-3-install-api">Step 3: Install api<a class="headerlink" href="#step-3-install-api" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> /var/www/disqus
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /var/www/disqus
 git clone git@github.com:fooleap/disqus-php-api.git
 </code></pre></div>
 
@@ -1798,14 +1798,14 @@ git clone git@github.com:fooleap/disqus-php-api.git
 <p><img alt="" src="disqus-api.png" /></p>
 <p>然后在 <a href="https://disqus.com/api/applications/">Disqus Api</a> 中更新 callback url，同时也要更新下 CNAME 记录。</p>
 <p>最后可以在浏览器中访问 <code>****/login.php</code> 看是否配置成功，如果不成功，可以查看日志文件寻找 bug，</p>
-<div class="codehilite"><pre><span></span><code>cat /var/log/error.log
+<div class="highlight"><pre><span></span><code>cat /var/log/error.log
 </code></pre></div>
 
 <p>有一点比较困惑的是，disqus 会报出，</p>
 <p><img alt="" src="disqus-api-1.png" /></p>
 <p>于是我手动把 <code>login.php</code> 文件中的 <code>$redirect</code> 改成 callback url，这样确实也成功了，但是我肯定错过了什么东西，也许 Apache 目录名的设置？</p>
 <p>后来通过在 <code>login.php</code> 文件中添加打印输出语句</p>
-<div class="codehilite"><pre><span></span><code>file_put_contents<span class="o">(</span><span class="s1">&#39;php://stderr&#39;</span>, print_r<span class="o">(</span><span class="nv">$redirect</span>, TRUE<span class="o">))</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>file_put_contents<span class="o">(</span><span class="s1">&#39;php://stderr&#39;</span>, print_r<span class="o">(</span><span class="nv">$redirect</span>, TRUE<span class="o">))</span><span class="p">;</span>
 </code></pre></div>
 
 <p>似乎也只是 <code>http</code> 和 <code>https</code> 的区别，此时已经在 apache 配置文件指定了 host name 为域名。于是可以用 <a href="https://stackoverflow.com/questions/5289272/php-replace-http-with-https-in-url"><code>str_ireplace</code></a> 来完成替换。</p>
@@ -1814,7 +1814,7 @@ git clone git@github.com:fooleap/disqus-php-api.git
 <p>这个很容易实现，只需要在网易云中搜索要插入的音乐，然后点击“生成外链播放器”，将iframe代码插入博客的相应位置。</p>
 <p>比如，我想在<a href="">不愿沉默如谜</a>插入容祖儿的<a href="http://music.163.com/#/song?id=522631413">重生</a>。点击页面中的“生成外链播放器”，将iframe代码放进原md文件中。但一开始有问题，iframe被当成普通的md文本。在<a href="https://stackoverflow.com/questions/30233461/jekyll-raw-html-in-post">Jekyll raw HTML in post</a>中找到了答案。</p>
 <p>网易云给的iframe代码为</p>
-<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;no&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">marginwidth</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">marginheight</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">330</span> <span class="na">height</span><span class="o">=</span><span class="s">86</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//music.163.com/outchain/player?type=2&amp;id=522631413&amp;auto=1&amp;height=66&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;no&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">marginwidth</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">marginheight</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">330</span> <span class="na">height</span><span class="o">=</span><span class="s">86</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//music.163.com/outchain/player?type=2&amp;id=522631413&amp;auto=1&amp;height=66&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div>
 
 <p>要将<code>width=330 height=86</code>改成<code>width="330" height="86"</code>，果然成功了。效果页面如下：</p>
@@ -1837,9 +1837,9 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 </blockquote>
 <h2 id="nginx_1">nginx配置跳转<a class="headerlink" href="#nginx_1" title="Permanent link">&para;</a></h2>
 <p>比如将所有 <code>http://ServerIP/10 Boosting and Additive Trees/.*</code> 的访问301重定向到<code>http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html</code>，在nginx配置文件中添加
-<div class="codehilite"><pre><span></span><code><span class="err">location ^~ &#39;/10 Boosting and Additive Trees/&#39; {</span>
-<span class="err">        rewrite ^/.* http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html permanent;</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code>location ^~ &#39;/10 Boosting and Additive Trees/&#39; {
+        rewrite ^/.* http://$server_name/10-Boosting-and-Additive-Trees/10.1-Boosting-Methods/index.html permanent;
+}
 </code></pre></div></p>
 <p>几点说明：</p>
 <ol>
@@ -1853,7 +1853,7 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>参考<a href="https://zhuanlan.zhihu.com/p/27384232">Flask 和 jQuery 联合实现传送 JSON 数据的 POST 跨域请求 (CORS)</a></p>
 <p>简单来说，</p>
 <p>在客户端的 ajax 中添加</p>
-<div class="codehilite"><pre><span></span><code><span class="n">crossDomain</span><span class="o">:</span> <span class="kc">true</span><span class="o">,</span>    <span class="c1">// 允许跨域请求</span>
+<div class="highlight"><pre><span></span><code>crossDomain: true,    // 允许跨域请求
 </code></pre></div>
 
 <p>另外，在服务器端，通过<code>CORS(app, resources=r'/*')</code>让flask服务器上所有的URL支持跨域请求。</p>
@@ -1881,50 +1881,50 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p><a href="https://joelglovier.com/writing/rss-for-jekyll">RSS for Jekyll blogs</a></p>
 <h2 id="_4">图片旋转后无效果<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>原图片信息为</p>
-<div class="codehilite"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames <span class="m">3</span>
+<div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames <span class="m">3</span>
 </code></pre></div>
 
 <p>采用 Shotwell 旋转图片后，
-<div class="codehilite"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, Exif Standard: <span class="o">[</span>TIFF image data, little-endian, <span class="nv">direntries</span><span class="o">=</span><span class="m">3</span>, <span class="nv">orientation</span><span class="o">=</span>lower-left, <span class="nv">software</span><span class="o">=</span>Shotwell <span class="m">0</span>.22.0<span class="o">]</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames3
+<div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, Exif Standard: <span class="o">[</span>TIFF image data, little-endian, <span class="nv">direntries</span><span class="o">=</span><span class="m">3</span>, <span class="nv">orientation</span><span class="o">=</span>lower-left, <span class="nv">software</span><span class="o">=</span>Shotwell <span class="m">0</span>.22.0<span class="o">]</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames3
 </code></pre></div></p>
 <p>多了 EXIF 信息，其中有 orientation 信息。但是参考 <a href="https://stackoverflow.com/questions/24658365/img-tag-displays-wrong-orientation/24658511">img tag displays wrong orientation</a> 的帖子，可知，有些浏览器并不遵循这个规则，即无视　EXIF 信息，从而网页端无效果。有人提到可以加上　</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">img</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="nt">img</span> <span class="p">{</span>
     <span class="k">image-orientation</span><span class="p">:</span> <span class="kc">from-image</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 
 <p>但这个似乎只有 Firefox 和　Safari 支持，Chrome 不支持。</p>
 <p>解决方案：采用 <code>mogrify</code> 或 <code>convert</code> 进行旋转，如</p>
-<div class="codehilite"><pre><span></span><code>mogrify -rotate <span class="s2">&quot;-90&quot;</span> <span class="m">2018</span>-10-29-cafe.jpg
+<div class="highlight"><pre><span></span><code>mogrify -rotate <span class="s2">&quot;-90&quot;</span> <span class="m">2018</span>-10-29-cafe.jpg
 </code></pre></div>
 
 <p>查看文件信息</p>
-<div class="codehilite"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1440x1080, frames <span class="m">3</span>
+<div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1440x1080, frames <span class="m">3</span>
 </code></pre></div>
 
 <p>注意到没有 EXIF 信息，而且 size 也由 1080x1440 变成了 1440x1080，所以这算是真旋转，而之前的加 EXIF 信息算是伪旋转吧。</p>
 <p>如果文件已经存在 orientation 的 EXIF 信息，则 <code>mogrify -rotate</code> 似乎不起作用，解决方案为直接删掉 EXIF 信息，再进行相应的 rotate 操作，其中删除 EXIF 信息的命令是</p>
-<div class="codehilite"><pre><span></span><code>exiftool -all<span class="o">=</span> /tmp/my_photo.jpg
+<div class="highlight"><pre><span></span><code>exiftool -all<span class="o">=</span> /tmp/my_photo.jpg
 </code></pre></div>
 
 <p>参考 <a href="https://askubuntu.com/questions/260810/how-can-i-read-and-remove-meta-exif-data-from-my-photos-using-the-command-line">How can I read and remove meta (exif) data from my photos using the command line?</a></p>
 <h2 id="jekyll-tags">jekyll tags 逗号分隔<a class="headerlink" href="#jekyll-tags" title="Permanent link">&para;</a></h2>
 <p>采用</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">{%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="k">in</span> <span class="nv">page.tags</span> <span class="cp">%}</span>
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/tag/</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
-    <span class="cp">{%</span> <span class="k">unless</span> <span class="nb">forloop</span><span class="nv">.last</span> <span class="cp">%}</span>,<span class="cp">{%</span> <span class="k">endunless</span> <span class="cp">%}</span>
-<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<div class="highlight"><pre><span></span><code>{% for tag in page.tags %}
+    &lt;a href=&quot;/tag/{{tag}}&quot;&gt;{{tag}}&lt;/a&gt;
+    {% unless forloop.last %},{% endunless %}
+{% endfor %}
 </code></pre></div>
 
 <p>但 <a href="https://stackoverflow.com/questions/41858548/list-of-dynamic-links-in-jekyll">List of Dynamic Links in Jekyll</a> 提到了更完整的方案，</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">{%</span> <span class="k">capture</span> <span class="nv">tagscommas</span> <span class="cp">%}</span>
-<span class="cp">{%</span> <span class="k">for</span> <span class="nv">tag</span> <span class="k">in</span> <span class="nv">page.tags</span> <span class="cp">%}</span>
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/tag/</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="cp">{{</span><span class="nv">tag</span><span class="cp">}}</span><span class="nt">&lt;/a&gt;</span>
-    <span class="cp">{%</span> <span class="k">unless</span> <span class="nb">forloop</span><span class="nv">.last</span> <span class="cp">%}</span>,<span class="cp">{%</span> <span class="k">endunless</span> <span class="cp">%}</span>
-<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
-<span class="cp">{%</span> <span class="k">endcapture</span> <span class="cp">%}</span>
+<div class="highlight"><pre><span></span><code>{% capture tagscommas %}
+{% for tag in page.tags %}
+    &lt;a href=&quot;/tag/{{tag}}&quot;&gt;{{tag}}&lt;/a&gt;
+    {% unless forloop.last %},{% endunless %}
+{% endfor %}
+{% endcapture %}
 
-<span class="cp">{{</span><span class="nv">tagscommas</span><span class="cp">}}</span>
+{{tagscommas}}
 </code></pre></div>
 
 <h2 id="correct-jekyll">Correct Jekyll<a class="headerlink" href="#correct-jekyll" title="Permanent link">&para;</a></h2>
@@ -1937,7 +1937,7 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>新建 tag 页面后，发现链接竟然跳到源站域名上去了，跟又拍那边的技术支持沟通也没找到原因，最后猛然想到是 tag 页面的 url 没有加斜杠，<a href="https://blog.csdn.net/u010525694/article/details/78591355">查了一下</a>，加不加斜杠区别还挺大的。</p>
 <h2 id="_6">博客中的定理环境<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>通过 css 实现，例如</p>
-<div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nc">theorem</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">theorem</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
     <span class="k">margin</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">font-style</span><span class="p">:</span> <span class="kc">italic</span><span class="p">;</span>
@@ -1956,13 +1956,13 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>{: .theorem}</p>
 </blockquote>
 <p>实现定理环境，而且这样还有额外的好处，可以突出定理。但是 before 的字 &ldquo;Theorem&rdquo; 会单独占据一行，误打误撞看到 <a href="https://stackoverflow.com/questions/32909991/adding-quotes-to-blockquote">Adding quotes to blockquote</a>，试了一下</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">blockquote</span> <span class="nt">p</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="nt">blockquote</span> <span class="nt">p</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="p">;</span>
   <span class="p">}</span>
 </code></pre></div>
 
 <p>可以解决这个问题，但担心会破坏其他的 blockquote 环境，于是指定 theorem 可以这样处理，即</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">blockquote</span><span class="p">.</span><span class="nc">theorem</span> <span class="nt">p</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="nt">blockquote</span><span class="p">.</span><span class="nc">theorem</span> <span class="nt">p</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="p">;</span>
   <span class="p">}</span>
 </code></pre></div>
@@ -1970,7 +1970,7 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>这个用法参考 <a href="https://www.runoob.com/css/css-id-class.html">CSS Id 和 Class</a></p>
 <h2 id="list-start-from-0">list start from 0<a class="headerlink" href="#list-start-from-0" title="Permanent link">&para;</a></h2>
 <p>In <code>kramdown</code>, use an IAL declaration before the list, say</p>
-<div class="codehilite"><pre><span></span><code>{:start=&quot;3&quot;}
+<div class="highlight"><pre><span></span><code>{:start=&quot;3&quot;}
 1. test
 1. test
 1. test
@@ -1988,69 +1988,69 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 </ul>
 <h2 id="ruby">ruby 版本<a class="headerlink" href="#ruby" title="Permanent link">&para;</a></h2>
 <p>今天 GitHub 提醒英文博客存在</p>
-<div class="codehilite"><pre><span></span><code>Known high severity security vulnerability detected in rubyzip &lt; 1.3.0 defined in Gemfile.lock. 
+<div class="highlight"><pre><span></span><code>Known high severity security vulnerability detected in rubyzip &lt; 1.3.0 defined in Gemfile.lock. 
 </code></pre></div>
 
 <p>于是合并了它自动创建的 pull request: <a href="https://github.com/szcf-weiya/en/commit/54a7c509594211f7cc05736aa4adb5135bbe21d4">Merge pull request #79 from szcf-weiya/dependabot/bundler/rubyzip-2.0.0</a></p>
 <p>但是后来发现在本地 <code>bundle exec jekyll serve</code> 预览失败。报错信息为</p>
-<div class="codehilite"><pre><span></span><code>rubyzip-2.0.0 requires ruby version &gt;= 2.4, which is incompatible with the current version, ruby 2.3.1p112
+<div class="highlight"><pre><span></span><code>rubyzip-2.0.0 requires ruby version &gt;= 2.4, which is incompatible with the current version, ruby 2.3.1p112
 </code></pre></div>
 
 <p>看样子 ruby 版本不够，于是参考 <a href="https://askubuntu.com/questions/839775/how-do-i-upgrade-to-ruby-2-2-on-my-ubuntu-system">How do I upgrade to Ruby 2.2 on my Ubuntu system?</a></p>
-<div class="codehilite"><pre><span></span><code>sudo apt-add-repository ppa:brightbox/ruby-ng
+<div class="highlight"><pre><span></span><code>sudo apt-add-repository ppa:brightbox/ruby-ng
 sudo apt-get update
 sudo apt-get install ruby2.4
 </code></pre></div>
 
 <p>安装了 <code>ruby2.4</code>，完成后 <code>ruby</code> 也自动从 <code>ruby2.3</code> 更改到了 <code>ruby2.4</code>，但是重新运行</p>
-<div class="codehilite"><pre><span></span><code>bundle <span class="nb">exec</span> jekyll serve
+<div class="highlight"><pre><span></span><code>bundle <span class="nb">exec</span> jekyll serve
 </code></pre></div>
 
 <p>还是报同样的错误信息。后来参考 <a href="https://github.com/bundler/bundler/issues/4260">Bundler using wrong ruby version</a>，运行</p>
-<div class="codehilite"><pre><span></span><code>bundle env <span class="p">|</span> grep ruby
+<div class="highlight"><pre><span></span><code>bundle env <span class="p">|</span> grep ruby
 </code></pre></div>
 
 <p>发现里面的版本确实还是 2.3，于是按照里面的建议运行 </p>
-<div class="codehilite"><pre><span></span><code>gem install bundler
+<div class="highlight"><pre><span></span><code>gem install bundler
 </code></pre></div>
 
 <p>这样重新运行 <code>bundle env | grep ruby</code> 发现版本确实更新过来了。但是再次运行  </p>
-<div class="codehilite"><pre><span></span><code>bundle <span class="nb">exec</span> jekyll serve
+<div class="highlight"><pre><span></span><code>bundle <span class="nb">exec</span> jekyll serve
 </code></pre></div>
 
 <p>出现了新的错误</p>
-<div class="codehilite"><pre><span></span><code>An error occurred <span class="k">while</span> installing commonmarker <span class="o">(</span><span class="m">0</span>.17.13<span class="o">)</span>, and Bundler cannot <span class="k">continue</span>.
+<div class="highlight"><pre><span></span><code>An error occurred <span class="k">while</span> installing commonmarker <span class="o">(</span><span class="m">0</span>.17.13<span class="o">)</span>, and Bundler cannot <span class="k">continue</span>.
 Make sure that <span class="sb">`</span>gem install commonmarker -v <span class="s1">&#39;0.17.13&#39;</span> --source <span class="s1">&#39;https://rubygems.org/&#39;</span><span class="sb">`</span> succeeds before bundling.
 </code></pre></div>
 
 <p>后来参考 <a href="https://stackoverflow.com/questions/20559255/error-while-installing-json-gem-mkmf-rb-cant-find-header-files-for-ruby">Error while installing json gem &lsquo;mkmf.rb can&rsquo;t find header files for ruby&rsquo;</a></p>
 <p>安装</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install ruby2.4-dev
+<div class="highlight"><pre><span></span><code>sudo apt-get install ruby2.4-dev
 </code></pre></div>
 
 <p>~~解决了问题！~~</p>
 <p>发现还没有这么简单，总是报错</p>
-<div class="codehilite"><pre><span></span><code><span class="err">Could not find ffi-1.11.1 in any of the sources</span>
+<div class="highlight"><pre><span></span><code>Could not find ffi-1.11.1 in any of the sources
 </code></pre></div>
 
 <p>但实际上已经装好了。不知道咋回事。</p>
 <p>后来参考 https://jekyllrb.com/docs/ 重头开始，</p>
-<div class="codehilite"><pre><span></span><code><span class="err">gem install jekyll bundler</span>
+<div class="highlight"><pre><span></span><code>gem install jekyll bundler
 </code></pre></div>
 
 <p>然后这一步一开始报错</p>
-<div class="codehilite"><pre><span></span><code><span class="n">ERROR</span><span class="o">:</span>  <span class="n">Error</span> <span class="n">installing</span> <span class="n">jekyll</span><span class="o">:</span>
-        <span class="n">jekyll</span> <span class="n">requires</span> <span class="n">RubyGems</span> <span class="n">version</span> <span class="o">&gt;=</span> <span class="mf">2.7</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span> <span class="n">Try</span> <span class="s1">&#39;gem update --system&#39;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">RubyGems</span> <span class="n">itself</span><span class="o">.</span>
+<div class="highlight"><pre><span></span><code>ERROR:  Error installing jekyll:
+        jekyll requires RubyGems version &gt;= 2.7.0. Try &#39;gem update --system&#39; to update RubyGems itself.
 </code></pre></div>
 
 <p>于是运行 </p>
-<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">sudo</span><span class="o">]</span><span class="w"> </span><span class="n">gem</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="c1">--system</span>
+<div class="highlight"><pre><span></span><code>[sudo] gem update --system
 </code></pre></div>
 
 <p>应该要加上 <code>sudo</code>，否则会报错</p>
-<div class="codehilite"><pre><span></span><code><span class="err">Installing RubyGems 3.0.6</span>
-<span class="c">ERROR:  While executing gem ... (Errno::EACCES)</span>
-<span class="c">    Permission denied @ dir_s_mkdir - /usr/local/lib/site_ruby</span>
+<div class="highlight"><pre><span></span><code>Installing RubyGems 3.0.6
+ERROR:  While executing gem ... (Errno::EACCES)
+    Permission denied @ dir_s_mkdir - /usr/local/lib/site_ruby
 </code></pre></div>
 
 <p>安装成功后，最后终于成功了！！</p>

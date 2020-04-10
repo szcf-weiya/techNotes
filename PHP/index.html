@@ -1300,7 +1300,7 @@
 <p>另外有在线帮助手册：<a href="http://www.php.net/manual/zh/">中文</a>, <a href="http://www.php.net/manual/en/">英文</a></p>
 <h2 id="_2">案例分析<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>下面的代码来自<a href="mailto: fooleap@gmail.com">fooleap</a>的<a href="https://github.com/fooleap/disqus-php-api">disqus-php-api</a>项目。</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * 批量获取评论数</span>
 <span class="sd"> *</span>
@@ -1346,7 +1346,7 @@
 <h3 id="_4">数组 &amp; 关联数组<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>参考<a href="http://www.runoob.com/php/php-arrays.html">PHP 数组</a></p>
 <p>上述代码中</p>
-<p><div class="codehilite"><pre><span></span><code><span class="x">$fields_data = array(</span>
+<p><div class="highlight"><pre><span></span><code><span class="x">$fields_data = array(</span>
 <span class="x">    &#39;api_key&#39; =&gt; DISQUS_PUBKEY,</span>
 <span class="x">    &#39;forum&#39; =&gt; DISQUS_SHORTNAME,</span>
 <span class="x">    &#39;limit&#39; =&gt; 100</span>
@@ -1354,7 +1354,7 @@
 </code></pre></div>
 即为关联数组。</p>
 <p>而
-<div class="codehilite"><pre><span></span><code><span class="x">$countArr = array();</span>
+<div class="highlight"><pre><span></span><code><span class="x">$countArr = array();</span>
 </code></pre></div>
 即为普通数组的创建。</p>
 <h3 id="echo-print-print_r-var_dump">echo &amp; print &amp; print_r &amp; var_dump<a class="headerlink" href="#echo-print-print_r-var_dump" title="Permanent link">&para;</a></h3>
@@ -1381,11 +1381,11 @@
 </ol>
 <h2 id="curl">cURL<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h2>
 <p>需要安装<code>php-curl</code>，这依据php的版本而有所不同，具体参考<a href="https://stackoverflow.com/questions/38800606/how-to-install-php-curl-in-ubuntu-16-04/38801295">How to install php-curl in Ubuntu 16.04</a>我采用的是php7，所以安装命令如下。</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install php-curl
+<div class="highlight"><pre><span></span><code>sudo apt-get install php-curl
 </code></pre></div>
 
 <p><strong>注意要重启apache。</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="c1">// 创建一个新cURL资源</span>
 <span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
@@ -1402,7 +1402,7 @@
 </code></pre></div>
 
 <h3 id="curl_errno">curl_errno<a class="headerlink" href="#curl_errno" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="nv">$error_codes</span><span class="o">=</span><span class="k">array</span><span class="p">(</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;CURLE_UNSUPPORTED_PROTOCOL&#39;</span><span class="p">,</span> 
 <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;CURLE_FAILED_INIT&#39;</span><span class="p">,</span> 

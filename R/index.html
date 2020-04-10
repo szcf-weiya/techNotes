@@ -1884,7 +1884,7 @@
                 
                 <h1 id="r">R 相关笔记<a class="headerlink" href="#r" title="Permanent link">&para;</a></h1>
 <h2 id="_1">序列减去常数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="m">-1</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="m">-1</span><span class="p">))</span>
   <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="c1">##0</span>
 <span class="c1">##1</span>
@@ -1904,7 +1904,7 @@
 <p>然后通过配置source.list，进行安装。</p>
 <h2 id="r-code">终端执行R code<a class="headerlink" href="#r-code" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/18306362/run-r-script-from-command-line">run-r-script-from-command-line</a></p>
-<div class="codehilite"><pre><span></span><code>touch main.R
+<div class="highlight"><pre><span></span><code>touch main.R
 vi main.R
 <span class="c1">### in main.R</span>
 <span class="c1">##!/usr/bin/env Rscript</span>
@@ -1917,17 +1917,17 @@ vi main.R
 <h2 id="shiny">shiny<a class="headerlink" href="#shiny" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/rstudio/shiny-server/issues/153">init</a></p>
 <h2 id="_2">删除当前工作区所有变量<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>rm<span class="o">(</span><span class="nv">list</span> <span class="o">=</span> ls<span class="o">(</span><span class="nv">all</span> <span class="o">=</span> TRUE<span class="o">))</span>
+<div class="highlight"><pre><span></span><code>rm<span class="o">(</span><span class="nv">list</span> <span class="o">=</span> ls<span class="o">(</span><span class="nv">all</span> <span class="o">=</span> TRUE<span class="o">))</span>
 </code></pre></div>
 
 <h2 id="interval">interval<a class="headerlink" href="#interval" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.sciencenet.cn/blog-54276-288414.html">http://blog.sciencenet.cn/blog-54276-288414.html</a></p>
 <h2 id="window">window 安装包<a class="headerlink" href="#window" title="Permanent link">&para;</a></h2>
 <p>切换到R的安装路径下，在etc文件夹中编辑文件Rprofile.site文件</p>
-<div class="codehilite"><pre><span></span><code><span class="err">##</span> <span class="kt">set</span> <span class="nx">a</span> <span class="nx">CRAN</span> <span class="nx">mirror</span>
-    <span class="kd">local</span><span class="p">({</span><span class="nx">r</span> <span class="o">&lt;-</span> <span class="nx">getOption</span><span class="p">(</span><span class="s2">&quot;repos&quot;</span><span class="p">)</span>
-        <span class="nx">r</span><span class="err">[</span><span class="s2">&quot;CRAN&quot;</span><span class="cp">]</span><span class="x"> &lt;- &quot;http://mirrors.ustc.edu.cn/CRAN/&quot;</span>
-<span class="x">          options(repos=r)})</span>
+<div class="highlight"><pre><span></span><code>## set a CRAN mirror
+    local({r &lt;- getOption(&quot;repos&quot;)
+        r[&quot;CRAN&quot;] &lt;- &quot;http://mirrors.ustc.edu.cn/CRAN/&quot;
+          options(repos=r)})
 </code></pre></div>
 
 <h2 id="sort-rank-order">sort(), rank(), order()<a class="headerlink" href="#sort-rank-order" title="Permanent link">&para;</a></h2>
@@ -1940,7 +1940,7 @@ vi main.R
 <h2 id="librblassolibrlapackso">缺少libRblas.so和libRlapack.so的解决办法<a class="headerlink" href="#librblassolibrlapackso" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="err_blas.png" /></p>
 <p>虽然缺少libRblas.so和libRlapack.so，但却有libblas.so和liblapack.so，而它们应该是一样的，只是文件名不同而已，为此添加链接即可。</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> /usr/lib
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /usr/lib
 ln -s libblas.so libRblas.so
 ln -s /usr/lib/R/module/lapack.so libRlapack.so
 </code></pre></div>
@@ -1954,17 +1954,17 @@ ln -s /usr/lib/R/module/lapack.so libRlapack.so
 <h2 id="rcpp">Rcpp<a class="headerlink" href="#rcpp" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="rcpp.png" /></p>
 <p>手动设置</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> /usr/local lib
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /usr/local lib
 <span class="c1">##cd /usr/lib</span>
 ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcpp.so
 </code></pre></div>
 
 <h2 id="function-dataptr-not-provided-by-package-rcpp">function &lsquo;dataptr&rsquo; not provided by package &lsquo;Rcpp&rsquo;<a class="headerlink" href="#function-dataptr-not-provided-by-package-rcpp" title="Permanent link">&para;</a></h2>
 <p>原因是因为没有在</p>
-<p><div class="codehilite"><pre><span></span><code><span class="nf">dyn.load</span><span class="p">()</span>
+<p><div class="highlight"><pre><span></span><code><span class="nf">dyn.load</span><span class="p">()</span>
 </code></pre></div>
 前面添加</p>
-<div class="codehilite"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">Rcpp</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">Rcpp</span><span class="p">)</span>
 <span class="c1">## 或require(Rcpp)</span>
 </code></pre></div>
 
@@ -1973,7 +1973,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <h2 id="par-cheatsheet">par cheatsheet<a class="headerlink" href="#par-cheatsheet" title="Permanent link">&para;</a></h2>
 <p><a href="r-graphical-parameters-cheatsheet.pdf">r-graphical-parameters-cheatsheet</a></p>
 <h2 id="mathematical-annotation-in-r-plot">Mathematical Annotation in R plot<a class="headerlink" href="#mathematical-annotation-in-r-plot" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nf">plot</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;...&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="p">[</span><span class="m">1</span><span class="p">])))</span>
+<div class="highlight"><pre><span></span><code><span class="nf">plot</span><span class="p">(</span><span class="kc">...</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;...&quot;</span><span class="p">,</span> <span class="n">mu</span><span class="p">[</span><span class="m">1</span><span class="p">])))</span>
 </code></pre></div>
 
 <p>参考
@@ -1989,7 +1989,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p><a href="https://stackoverflow.com/questions/4787332/how-to-remove-outliers-from-a-dataset">How to remove outliers from a dataset
 </a></p>
 <h2 id="rmarkdownpdf">rmarkdown转化中文字符为PDF的设置<a class="headerlink" href="#rmarkdownpdf" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="o">---</span>
+<div class="highlight"><pre><span></span><code><span class="o">---</span>
 <span class="n">title</span><span class="o">:</span> <span class="s">&quot;test&quot;</span>
 <span class="n">author</span><span class="o">:</span> <span class="s">&quot;weiya&quot;</span>
 <span class="n">output</span><span class="o">:</span>
@@ -2036,11 +2036,11 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>参考<a href="http://www.cnblogs.com/nsnow/p/4758202.html">协方差矩阵的几何解释</a></p>
 <h2 id="rocrprediction">ROCR包中prediction函数<a class="headerlink" href="#rocrprediction" title="Permanent link">&para;</a></h2>
 <p><code>prediction</code>定义如下</p>
-<div class="codehilite"><pre><span></span><code><span class="nf">prediction</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">label.ordering</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">prediction</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">label.ordering</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span>
 </code></pre></div>
 
 <p>在绘制ROC曲线时，必要时需要指定<code>label.ordering</code>中negative和positive，否则结果会完全相反。举个例子</p>
-<div class="codehilite"><pre><span></span><code><span class="c1">## generate some data with a non-linar class boundary</span>
+<div class="highlight"><pre><span></span><code><span class="c1">## generate some data with a non-linar class boundary</span>
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">200</span><span class="o">*</span><span class="m">2</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
 <span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="p">]</span> <span class="o">+</span> <span class="m">2</span>
@@ -2086,7 +2086,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p><img alt="" src="roc_fact.png" /></p>
 <h2 id="pairspanel">pairs中自定义panel函数<a class="headerlink" href="#pairspanel" title="Permanent link">&para;</a></h2>
 <p>问题来自<a href="https://www.zhihu.com/question/268216627/answer/334393347">R语言绘图？ - 知乎</a></p>
-<div class="codehilite"><pre><span></span><code><span class="n">my.lower</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="kc">...</span><span class="p">){</span>
+<div class="highlight"><pre><span></span><code><span class="n">my.lower</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="kc">...</span><span class="p">){</span>
   <span class="nf">points</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
   <span class="nf">lines</span><span class="p">(</span><span class="nf">lowess</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 <span class="p">}</span>
@@ -2110,7 +2110,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <h2 id="_4">神奇的<code>[</code><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>来自<a href="https://d.cosx.org/d/419525-r">R语言中以矩阵引用多维数组的元素</a></p>
 <p>比如
-<div class="codehilite"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">255</span><span class="p">,</span> <span class="m">100</span><span class="o">*</span><span class="m">100</span><span class="o">*</span><span class="m">3</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="bp">T</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">255</span><span class="p">,</span> <span class="m">100</span><span class="o">*</span><span class="m">100</span><span class="o">*</span><span class="m">3</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="bp">T</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
 <span class="n">B</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="m">2</span><span class="o">*</span><span class="m">5</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">))</span>
 <span class="nf">apply</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="n">`[`</span><span class="p">,</span> <span class="nf">t</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
 </code></pre></div></p>
@@ -2122,18 +2122,18 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 </ol>
 <h2 id="lm-i"><code>lm()</code> 中有无 <code>I()</code> 的差异<a class="headerlink" href="#lm-i" title="Permanent link">&para;</a></h2>
 <p>注意</p>
-<div class="codehilite"><pre><span></span><code><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span> <span class="o">~</span> <span class="n">X</span> <span class="o">+</span> <span class="n">X</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span> <span class="o">~</span> <span class="n">X</span> <span class="o">+</span> <span class="n">X</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
 </code></pre></div>
 
 <p>和 </p>
-<div class="codehilite"><pre><span></span><code><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span> <span class="o">~</span> <span class="n">X</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">X</span><span class="o">^</span><span class="m">2</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span> <span class="o">~</span> <span class="n">X</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">X</span><span class="o">^</span><span class="m">2</span><span class="p">))</span>
 </code></pre></div>
 
 <p>是不一样的。若要表示多项式回归，则应该用 <code>I(X^2)</code>。</p>
 <h2 id="_5">多项式作图<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/23334360/plot-polynomial-regression-curve-in-r">Plot polynomial regression curve in R</a></p>
 <h2 id="custom-print">custom print<a class="headerlink" href="#custom-print" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nf">class</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;example&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nf">class</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;example&quot;</span>
 <span class="n">print.example</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">{</span>
 
@@ -2142,7 +2142,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 
 <p>refer to <a href="https://stackoverflow.com/questions/10938427/example-needed-change-the-default-print-method-of-an-object">Example Needed: Change the default print method of an object</a></p>
 <h2 id="write-lines-to-file">write lines to file<a class="headerlink" href="#write-lines-to-file" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">fileConn</span><span class="o">&lt;-</span><span class="nf">file</span><span class="p">(</span><span class="s">&quot;output.txt&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">fileConn</span><span class="o">&lt;-</span><span class="nf">file</span><span class="p">(</span><span class="s">&quot;output.txt&quot;</span><span class="p">)</span>
 <span class="nf">writeLines</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="s">&quot;World&quot;</span><span class="p">),</span> <span class="n">fileConn</span><span class="p">)</span>
 <span class="nf">close</span><span class="p">(</span><span class="n">fileConn</span><span class="p">)</span>
 </code></pre></div>
@@ -2151,7 +2151,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <h2 id="combine-base-and-ggplot-graphics-in-r-figure">combine base and ggplot graphics in R figure<a class="headerlink" href="#combine-base-and-ggplot-graphics-in-r-figure" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://stackoverflow.com/questions/14124373/combine-base-and-ggplot-graphics-in-r-figure-window">Combine base and ggplot graphics in R figure window</a></p>
 <h2 id="specify-cran-mirror-in-installpackage">specify CRAN mirror in <code>install.package</code><a class="headerlink" href="#specify-cran-mirror-in-installpackage" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">r</span> <span class="o">&lt;-</span> <span class="nf">getOption</span><span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">&lt;-</span> <span class="nf">getOption</span><span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
        <span class="n">r</span><span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;https://cran.r-project.org&quot;</span> 
        <span class="nf">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
 </code></pre></div>
@@ -2160,7 +2160,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>Refer to <a href="https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r">How to select a CRAN mirror in R</a></p>
 <h2 id="r_3">R 符号运算<a class="headerlink" href="#r_3" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://cosx.org/2016/07/r-symbol-calculate/">R 语言做符号计算</a>。</p>
-<div class="codehilite"><pre><span></span><code><span class="n">NormDensity</span> <span class="o">&lt;-</span> <span class="nf">expression</span><span class="p">(</span><span class="m">1</span> <span class="o">/</span> <span class="nf">sqrt</span><span class="p">(</span><span class="m">2</span> <span class="o">*</span> <span class="kc">pi</span><span class="p">)</span> <span class="o">*</span> <span class="nf">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="m">2</span> <span class="o">/</span> <span class="m">2</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="n">NormDensity</span> <span class="o">&lt;-</span> <span class="nf">expression</span><span class="p">(</span><span class="m">1</span> <span class="o">/</span> <span class="nf">sqrt</span><span class="p">(</span><span class="m">2</span> <span class="o">*</span> <span class="kc">pi</span><span class="p">)</span> <span class="o">*</span> <span class="nf">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="m">2</span> <span class="o">/</span> <span class="m">2</span><span class="p">))</span>
 <span class="nf">D</span><span class="p">(</span><span class="n">NormDensity</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">DD</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
  <span class="nf">if </span><span class="p">(</span><span class="n">order</span> <span class="o">&lt;</span> <span class="m">1</span><span class="p">)</span>
@@ -2177,12 +2177,12 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <h2 id="show-all-rs-shortcuts">Show all R&rsquo;s shortcuts<a class="headerlink" href="#show-all-rs-shortcuts" title="Permanent link">&para;</a></h2>
 <p><code>Alt-Shift-K</code>.</p>
 <h2 id="mistake-with-colon-operator">Mistake with colon operator<a class="headerlink" href="#mistake-with-colon-operator" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">vec</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">vec</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">()</span>
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span> <span class="nf">print</span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </code></pre></div>
 
 <p>would print two <code>NULL</code> because <code>1:length(vec)</code> would be <code>c(1,0)</code>. A method to avoid this</p>
-<div class="codehilite"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">seq_along</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span> <span class="nf">print</span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">seq_along</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span> <span class="nf">print</span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </code></pre></div>
 
 <p>refer to <a href="https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/">Two common mistakes with the colon operator in R</a></p>
@@ -2193,7 +2193,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 </ol>
 <h2 id="error-in-install-grbase">error in install <code>gRbase</code><a class="headerlink" href="#error-in-install-grbase" title="Permanent link">&para;</a></h2>
 <p>environment: Ubuntu 16.04 (gcc 5.4.0)</p>
-<div class="codehilite"><pre><span></span><code><span class="err">g++: error: unrecognized comma line option ‘-fno-plt’</span>
+<div class="highlight"><pre><span></span><code>g++: error: unrecognized comma line option ‘-fno-plt’
 </code></pre></div>
 
 <p>the reason should be that the current gcc is too old.</p>
@@ -2207,19 +2207,19 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>refer to </p>
 <p><a href="https://stackoverflow.com/questions/14865976/r-packages-fail-to-compile-with-gcc">R Packages Fail to Compile with gcc</a></p>
 <p>Note that some packages cannot be installed via CRAN, and you can check bioconductor.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">requireNamespace</span><span class="p">(</span><span class="ss">&quot;BiocManager&quot;</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">))</span>
-    <span class="n">install</span><span class="p">.</span><span class="n">packages</span><span class="p">(</span><span class="ss">&quot;BiocManager&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
+    install.packages(&quot;BiocManager&quot;)
 
-<span class="n">BiocManager</span><span class="p">::</span><span class="n">install</span><span class="p">(</span><span class="ss">&quot;graph&quot;</span><span class="p">)</span>
+BiocManager::install(&quot;graph&quot;)
 </code></pre></div>
 
 <h2 id="protection-stack-overflow"><code>protection stack overflow</code><a class="headerlink" href="#protection-stack-overflow" title="Permanent link">&para;</a></h2>
 <p>use </p>
-<div class="codehilite"><pre><span></span><code>R --max-ppsize <span class="m">500000</span>
+<div class="highlight"><pre><span></span><code>R --max-ppsize <span class="m">500000</span>
 </code></pre></div>
 
 <p>or for rstudio</p>
-<div class="codehilite"><pre><span></span><code>rstudio --max-ppsize <span class="m">500000</span>
+<div class="highlight"><pre><span></span><code>rstudio --max-ppsize <span class="m">500000</span>
 </code></pre></div>
 
 <p>refer to <a href="https://stackoverflow.com/questions/32826906/how-to-solve-protection-stack-overflow-issue-in-r-studio">How to solve &lsquo;protection stack overflow&rsquo; issue in R Studio</a></p>
@@ -2227,11 +2227,11 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>check if compiling under anaconda environment, if so, exit and retry.</p>
 <h2 id="installpackages-returns-failed-to-create-lock-directory">install.packages returns <code>failed to create lock directory</code><a class="headerlink" href="#installpackages-returns-failed-to-create-lock-directory" title="Permanent link">&para;</a></h2>
 <p>in bash</p>
-<div class="codehilite"><pre><span></span><code>R CMD INSTALL --no-lock &lt;pkg&gt;
+<div class="highlight"><pre><span></span><code>R CMD INSTALL --no-lock &lt;pkg&gt;
 </code></pre></div>
 
 <p>or in R session</p>
-<div class="codehilite"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;Rcpp&quot;</span><span class="p">,</span> <span class="n">dependencies</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">INSTALL_opts</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;--no-lock&#39;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;Rcpp&quot;</span><span class="p">,</span> <span class="n">dependencies</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">INSTALL_opts</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;--no-lock&#39;</span><span class="p">))</span>
 </code></pre></div>
 
 <p>refer to <a href="https://stackoverflow.com/questions/14382209/r-install-packages-returns-failed-to-create-lock-directory">R install.packages returns “failed to create lock directory”</a></p>

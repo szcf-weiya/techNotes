@@ -1179,14 +1179,14 @@
 <p><img alt="" src="../ngrok.png" /></p>
 <p>注意 Forwarding 一行的记录，<code>tcp://SOME-IP-ADDRESS:PORT</code></p>
 <p>在本地 Local Laptop 上，终端中运行</p>
-<div class="codehilite"><pre><span></span><code>ssh -X usename-for-Server@SOME-IP-ADDRESS -p PORT
+<div class="highlight"><pre><span></span><code>ssh -X usename-for-Server@SOME-IP-ADDRESS -p PORT
 </code></pre></div>
 
 <p>即可登录内网服务器。</p>
 <h2 id="ssh">SSH 反向隧道<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
 <p>需要自己有一台中间服务器，据我所知，可以在 aws、Azure、华为云、腾讯云申请免费云服务器，另外 Vultr 通过我的邀请码也可以获得 100 刀的 credit：</p>
 <p><a href="https://www.vultr.com/?ref=8436899-6G"><img src="https://www.vultr.com/media/banners/banner_800x418.png" width="800" height="418"></a></p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Local Laptop</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Local Laptop</span>
 ssh -L <span class="m">30002</span>:localhost:30002 my@server
 <span class="c1"># my server</span>
 ssh -D <span class="m">30002</span> -p <span class="m">30001</span> my@inner-server
@@ -1197,7 +1197,7 @@ ssh -R <span class="m">30001</span>:localhost:22 my@server
 <p>这样只能在 ssh 访问内网资源，可以通过 chrome 的 SwithyOmega 插件实现在浏览器中访问内网，效果和登录 VPN 一样，可以正常下文献。</p>
 <p>在 SwitchyOmega 中添加 socks5://127.0.0.1:30002 即可访问内网资源。</p>
 <p>另外，如果只想科学上网，直接</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Local Laptop</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Local Laptop</span>
 ssh -D <span class="m">30002</span> my@server
 </code></pre></div>
 

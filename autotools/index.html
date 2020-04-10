@@ -1144,21 +1144,21 @@
 <p><img alt="" src="diagram.png" /></p>
 <p>关于Autotools有个很棒的<a href="https://devmanual.gentoo.org/general-concepts/autotools/index.html">基础知识介绍文档</a></p>
 <h2 id="ac">第一篇.ac<a class="headerlink" href="#ac" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">dnl</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">version</span><span class="w"></span>
-<span class="n">AC_INIT</span><span class="p">(</span><span class="o">[</span><span class="n">depi</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2.0</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>dnl package name and version
+AC_INIT([depi], 0.2.0)
 
-<span class="n">dnl</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="n">gsl</span><span class="w"> </span><span class="n">lib</span><span class="w"></span>
-<span class="err">:</span><span class="w"> </span><span class="err">${</span><span class="n">GSL_LIBS</span><span class="o">=</span><span class="err">`</span><span class="n">gsl</span><span class="o">-</span><span class="n">config</span><span class="w"> </span><span class="c1">--libs`}</span>
-<span class="k">if</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="ss">&quot;${GSL_LIBS}&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
-<span class="w">  </span><span class="n">LIBS</span><span class="o">=</span><span class="ss">&quot;${GSL_LIBS}&quot;</span><span class="w"></span>
-<span class="k">else</span><span class="w"></span>
-<span class="w">  </span><span class="n">echo</span><span class="w"> </span><span class="ss">&quot;could find gsl&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="k">exit</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">fi</span><span class="w"></span>
+dnl check gsl lib
+: ${GSL_LIBS=`gsl-config --libs`}
+if test -n &quot;${GSL_LIBS}&quot;; then
+  LIBS=&quot;${GSL_LIBS}&quot;
+else
+  echo &quot;could find gsl&quot;
+  exit 1
+fi
 
-<span class="n">AC_SUBST</span><span class="p">(</span><span class="n">LIBS</span><span class="p">)</span><span class="w"></span>
-<span class="n">AC_CONFIG_FILES</span><span class="p">(</span><span class="o">[</span><span class="n">src/Makevars</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
-<span class="n">AC_OUTPUT</span><span class="w"></span>
+AC_SUBST(LIBS)
+AC_CONFIG_FILES([src/Makevars])
+AC_OUTPUT
 </code></pre></div>
 
 <p>几个注意点

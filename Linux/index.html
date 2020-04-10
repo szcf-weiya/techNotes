@@ -1089,6 +1089,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#proxy-for-gmail-in-thunderbird" class="md-nav__link">
+    Proxy for Gmail in Thunderbird
+  </a>
+  
+</li>
+      
       
       
       
@@ -2677,6 +2684,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#proxy-for-gmail-in-thunderbird" class="md-nav__link">
+    Proxy for Gmail in Thunderbird
+  </a>
+  
+</li>
+      
       
       
       
@@ -2709,12 +2723,12 @@
 <p>阿里云的服务器，最好default为&rsquo;zh_CN.UTF-8&rsquo;</p>
 <h2 id="add-user">add user<a class="headerlink" href="#add-user" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672">https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04</a></p>
-<div class="codehilite"><pre><span></span><code>useradd -m -s /bin/bash userName
+<div class="highlight"><pre><span></span><code>useradd -m -s /bin/bash userName
 passwd userName
 </code></pre></div>
 
 <p>增加sudo权限</p>
-<div class="codehilite"><pre><span></span><code>sudoedit /etc/sudoers
+<div class="highlight"><pre><span></span><code>sudoedit /etc/sudoers
 // 在配置文件中找到如下位置，并添加userName1那一行。
 <span class="c1">## Allow root to run any commands anywhere</span>
 root    <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span>       ALL
@@ -2735,7 +2749,7 @@ userName2 <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o"
 <p>参考 <a href="http://blog.csdn.net/u010454729/article/details/49496381">linux 工具——终端分屏与vim分屏</a></p>
 <p>还可以切换后台运行，在服务器上操作特别方便。</p>
 <p>常用操作</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># new a shell</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># new a shell</span>
 tmux
 <span class="c1"># view all shell</span>
 tmux ls
@@ -2754,11 +2768,11 @@ tmux a -t <span class="o">[</span>NUM<span class="o">]</span>
 <a href="http://www.cnblogs.com/smartvessel/archive/2011/01/21/1940868.html">3种方法</a></p>
 <p>另参考
 <a href="http://blog.csdn.net/wangeen/article/details/8159500">http://blog.csdn.net/wangeen/article/details/8159500</a></p>
-<div class="codehilite"><pre><span></span><code><span class="err">sudo vim /etc/ld.so.conf</span>
+<div class="highlight"><pre><span></span><code>sudo vim /etc/ld.so.conf
 </code></pre></div>
 
 <p>添加</p>
-<div class="codehilite"><pre><span></span><code><span class="err">/where/is/the/lib/</span>
+<div class="highlight"><pre><span></span><code>/where/is/the/lib/
 </code></pre></div>
 
 <h2 id="ubuntu">Ubuntu 下对文本文件每行行首进行追加、替换<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h2>
@@ -2771,43 +2785,43 @@ $&lt;: 第一个依赖文件</p>
 <h2 id="atom">Atom<a class="headerlink" href="#atom" title="Permanent link">&para;</a></h2>
 <h3 id="atom_1">atom 自动更新<a class="headerlink" href="#atom_1" title="Permanent link">&para;</a></h3>
 <p><a href="https://launchpad.net/~webupd8team/+archive/ubuntu/atom/">atom</a></p>
-<div class="codehilite"><pre><span></span><code><span class="err">sudo add-apt-repository ppa:webupd8team/atom</span>
-<span class="err">sudo apt-get update</span>
+<div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:webupd8team/atom
+sudo apt-get update
 </code></pre></div>
 
 <h3 id="proxy">proxy 设置<a class="headerlink" href="#proxy" title="Permanent link">&para;</a></h3>
 <p>Atom 的包管理器是 <a href="https://github.com/atom/apm#behind-a-firewall">apm</a>，其中有介绍怎么设置 proxy，即</p>
-<div class="codehilite"><pre><span></span><code>apm config <span class="nb">set</span> strict-ssl <span class="nb">false</span>
+<div class="highlight"><pre><span></span><code>apm config <span class="nb">set</span> strict-ssl <span class="nb">false</span>
 apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
 </code></pre></div>
 
 <h2 id="xterm">配置xterm的中文字体的问题<a class="headerlink" href="#xterm" title="Permanent link">&para;</a></h2>
 <p>查看本机安装的中文字体
-<div class="codehilite"><pre><span></span><code><span class="err">fc-list :lang=zh</span>
+<div class="highlight"><pre><span></span><code>fc-list :lang=zh
 </code></pre></div></p>
 <p>选出一个字体的名称写进配置文件中，如
-<div class="codehilite"><pre><span></span><code><span class="err">xterm*faceNameDoublesize: YaHei Consolas Hybrid</span>
+<div class="highlight"><pre><span></span><code>xterm*faceNameDoublesize: YaHei Consolas Hybrid
 </code></pre></div></p>
 <p>参考</p>
 <ol>
 <li><a href="http://forum.ubuntu.org.cn/viewtopic.php?t=143221">http://forum.ubuntu.org.cn/viewtopic.php?t=143221</a></li>
 </ol>
 <h2 id="could-not-get-lock-varlibdpkglock-open">could not get lock /var/lib/dpkg/lock -open<a class="headerlink" href="#could-not-get-lock-varlibdpkglock-open" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="err">sudo rm /var/cache/apt/archives/lock</span>
-<span class="err">sudo rm /var/lib/dpkg/lock</span>
+<div class="highlight"><pre><span></span><code>sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
 </code></pre></div>
 
 <p>如果不行，重启。</p>
 <h2 id="virtual-memory-exhausted-cannot-allocate-memory">阿里云服务器virtual memory exhausted: Cannot allocate memory<a class="headerlink" href="#virtual-memory-exhausted-cannot-allocate-memory" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.bubuko.com/infodetail-1319039.html">http://www.bubuko.com/infodetail-1319039.html</a>
-<div class="codehilite"><pre><span></span><code><span class="err">##创建一个大小为1G的文件/swap</span>
-<span class="err">dd if=/dev/zero of=/swap bs=1024 count=1M</span>
-<span class="err">##将/swap作为swap空间</span>
-<span class="err">mkswap /swap</span>
-<span class="err">##enable /swap file  for paging and swapping</span>
-<span class="err">swapon /swap</span>
-<span class="err">##Enable swap on boot, 开机后自动生效</span>
-<span class="err">echo &quot;/swap swap swap sw 0 0&quot; &gt;&gt; /etc/fstab</span>
+<div class="highlight"><pre><span></span><code>##创建一个大小为1G的文件/swap
+dd if=/dev/zero of=/swap bs=1024 count=1M
+##将/swap作为swap空间
+mkswap /swap
+##enable /swap file  for paging and swapping
+swapon /swap
+##Enable swap on boot, 开机后自动生效
+echo &quot;/swap swap swap sw 0 0&quot; &gt;&gt; /etc/fstab
 </code></pre></div></p>
 <h2 id="gcc-462">编译安装gcc-4.6.2<a class="headerlink" href="#gcc-462" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2820,16 +2834,16 @@ apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
 <ol>
 <li>安装rstudio应该采用</li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="err">sudo apt-get install gdebi-core</span>
-<span class="err">wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb</span>
-<span class="err">sudo gdebi rstudio-1.0.44-amd64.deb</span>
+<div class="highlight"><pre><span></span><code>sudo apt-get install gdebi-core
+wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb
+sudo gdebi rstudio-1.0.44-amd64.deb
 </code></pre></div>
 
 <p>而非
-<div class="codehilite"><pre><span></span><code><span class="err">sudo dpkg -i</span>
+<div class="highlight"><pre><span></span><code>sudo dpkg -i
 </code></pre></div></p>
 <p>另外，如果不行，删除后再装
-<div class="codehilite"><pre><span></span><code><span class="err">sudo apt-get remove rstudio</span>
+<div class="highlight"><pre><span></span><code>sudo apt-get remove rstudio
 </code></pre></div></p>
 <h2 id="gcc">gcc版本<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2840,7 +2854,7 @@ apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
 <li>hostname的颜色
 https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-terminators-prompt-hostname-userdomain-colors
 直接打开bashrc里面下一行的注释
-<div class="codehilite"><pre><span></span><code><span class="err">##force_color_prompt=yes</span>
+<div class="highlight"><pre><span></span><code>##force_color_prompt=yes
 </code></pre></div></li>
 <li>颜色背景色等，直接右键设置，右键设置完成之后便有了一个config文件.</li>
 </ol>
@@ -2849,25 +2863,25 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 1. <a href="https://askubuntu.com/questions/891393/vpn-pptp-in-ubuntu-16-04-not-working">vpn-pptp-in-ubuntu-16-04-not-working</a></p>
 <h2 id="flatten-pdf-file">flatten pdf file<a class="headerlink" href="#flatten-pdf-file" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://unix.stackexchange.com/questions/162922/is-there-a-way-to-flatten-a-pdf-image-from-the-command-line">is-there-a-way-to-flatten-a-pdf-image-from-the-command-line</a></p>
-<div class="codehilite"><pre><span></span><code><span class="err">pdf2ps orig.pdf - | ps2pdf - flattened.pdf</span>
+<div class="highlight"><pre><span></span><code>pdf2ps orig.pdf - | ps2pdf - flattened.pdf
 </code></pre></div>
 
 <h2 id="linux_1">Linux 杀进程<a class="headerlink" href="#linux_1" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/andy572633/article/details/7211546">linux下杀死进程（kill）的N种方法</a></p>
-<div class="codehilite"><pre><span></span><code><span class="err">ps -ef | grep R</span>
-<span class="err">kill -s 9 ...</span>
+<div class="highlight"><pre><span></span><code>ps -ef | grep R
+kill -s 9 ...
 </code></pre></div>
 
 <h3 id="jpgpdf">合并jpg到pdf<a class="headerlink" href="#jpgpdf" title="Permanent link">&para;</a></h3>
 <p>参考<a href="https://unix.stackexchange.com/questions/20026/convert-images-to-pdf-how-to-make-pdf-pages-same-size">convert images to pdf: How to make PDF Pages same size</a></p>
 <p>直接采用</p>
-<div class="codehilite"><pre><span></span><code><span class="err">pdftk A.pdf B.pdf cat output merge.pdf</span>
+<div class="highlight"><pre><span></span><code>pdftk A.pdf B.pdf cat output merge.pdf
 </code></pre></div>
 
 <p>得到的pdf中页面大小不一致，于是采用下面的命令</p>
-<div class="codehilite"><pre><span></span><code><span class="err">convert a.png b.png -compress jpeg -resize 1240x1753 \</span>
-<span class="err">                      -extent 1240x1753 -gravity center \</span>
-<span class="err">                      -units PixelsPerInch -density 150x150 multipage.pdf</span>
+<div class="highlight"><pre><span></span><code>convert a.png b.png -compress jpeg -resize 1240x1753 \
+                      -extent 1240x1753 -gravity center \
+                      -units PixelsPerInch -density 150x150 multipage.pdf
 </code></pre></div>
 
 <p>注意重点是<code>-density 150x150</code>，若去掉这个选项，则还是得不到相同页面大小的文件。</p>
@@ -2882,7 +2896,7 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 <li><a href="https://support.rstudio.com/hc/en-us/articles/205605748-Using-RStudio-0-99-with-Fctix-on-Linux">Using RStudio 0.99 with Fctix on Linux</a></li>
 </ul>
 <p>曾经按照上述的指导能够解决这个问题，即将系统的 qt5 的 <code>libfcitxplatforminputcontextplugin.so</code> 手动添加到 rstudio 安装目录下的 plugins 中，即</p>
-<div class="codehilite"><pre><span></span><code>sudo ln -s /usr/lib/<span class="k">$(</span>dpkg-architecture -qDEB_BUILD_MULTIARCH<span class="k">)</span>/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/bin/plugins/platforminputcontexts/
+<div class="highlight"><pre><span></span><code>sudo ln -s /usr/lib/<span class="k">$(</span>dpkg-architecture -qDEB_BUILD_MULTIARCH<span class="k">)</span>/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/bin/plugins/platforminputcontexts/
 </code></pre></div>
 
 <p>但是后来又失败了，猜测原因可能是 qt5 的版本不再兼容了。在 Rstudio 顶部的菜单栏中，点击 Help &gt; About Rstudio 可以找到具体的 qt 版本信息，比如 RStudio (Version 1.2.5001) 依赖 QtWebEngine/5.12.1，而系统的 Qt 插件版本没那么高，所以也能理解 <code>libfcitxplatforminputcontextplugin.so</code> 为什么不再有用了。一种解决方案便是手动重新编译与 Rstudio 中匹配的 Qt 插件的版本，但是似乎比较繁琐，而且也不能一劳永逸，如果 rstudio 更新，还是会失效。</p>
@@ -2890,11 +2904,11 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 <h2 id="jdk">配置jdk<a class="headerlink" href="#jdk" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://jingyan.baidu.com/article/647f0115bb26817f2048a871.html">Ubuntu14.04安装JDK与配置环境变量</a></p>
 <h2 id="_4">缩小图像的大小<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="err">convert -resize 1024x</span>
+<div class="highlight"><pre><span></span><code>convert -resize 1024x
 </code></pre></div>
 
 <p>或者</p>
-<div class="codehilite"><pre><span></span><code><span class="err">convert -quality 50%</span>
+<div class="highlight"><pre><span></span><code>convert -quality 50%
 </code></pre></div>
 
 <p>具体参考<a href="https://askubuntu.com/questions/781497/how-can-i-compress-images">How can I compress images?</a></p>
@@ -2906,7 +2920,7 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 <p><a href="http://codelite.org/LiteEditor/WxWidgets30Binaries">http://codelite.org/LiteEditor/WxWidgets30Binaries</a></p>
 <p>require libgnutls 3.4.15 or greater, download from  <a href="https://gnutls.org/">https://gnutls.org/</a></p>
 <p>require sqlite3.h
-<div class="codehilite"><pre><span></span><code><span class="err">sudo apt-get install libsqlite3-dev</span>
+<div class="highlight"><pre><span></span><code>sudo apt-get install libsqlite3-dev
 </code></pre></div></p>
 <h2 id="convert">convert 参数<a class="headerlink" href="#convert" title="Permanent link">&para;</a></h2>
 <p>pdf 转为 jpg
@@ -2914,7 +2928,7 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
  <code>-density 600x600</code> 控制分辨率</p>
 <p>并注意参数放置文件的前面</p>
 <p>pdf 转 png 更好的命令是 <code>pdftoppm</code>，参考 <a href="https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image">How to convert PDF to Image?</a></p>
-<div class="codehilite"><pre><span></span><code>pdftoppm alg.pdf alg -png -singlefile
+<div class="highlight"><pre><span></span><code>pdftoppm alg.pdf alg -png -singlefile
 </code></pre></div>
 
 <p>图片质量比 <code>convert</code> 好很多！！</p>
@@ -2927,7 +2941,7 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 <p>refer to <a href="http://www.laozuo.org/8178.html">http://www.laozuo.org/8178.html</a></p>
 <h2 id="_5">修改文件权限<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>采用<code>ls -l</code> 便可以查看文件(夹)权限，比如</p>
-<p><div class="codehilite"><pre><span></span><code>-rw-rw-r--  <span class="m">1</span> weiya weiya    <span class="m">137969</span> 3月   <span class="m">8</span>  <span class="m">2017</span> font.txt
+<p><div class="highlight"><pre><span></span><code>-rw-rw-r--  <span class="m">1</span> weiya weiya    <span class="m">137969</span> 3月   <span class="m">8</span>  <span class="m">2017</span> font.txt
 -rw-r--r--  <span class="m">1</span> root  root      <span class="m">35792</span> 12月 <span class="m">26</span> <span class="m">23</span>:50 geckodriver.log
 -rw-r--r--  <span class="m">1</span> root  root     <span class="m">327350</span> 12月 <span class="m">27</span> <span class="m">01</span>:38 ghostdriver.log
 </code></pre></div>
@@ -2942,32 +2956,32 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 <li>文件名称</li>
 </ol>
 <p>采用chmod修改权限（参考<a href="http://www.linuxidc.com/Linux/2015-03/114695.htm">http://www.linuxidc.com/Linux/2015-03/114695.htm</a>），如
-<div class="codehilite"><pre><span></span><code>chmod -R <span class="m">700</span> Document/
+<div class="highlight"><pre><span></span><code>chmod -R <span class="m">700</span> Document/
 </code></pre></div></p>
 <p>其中<code>-R</code>递归</p>
 <p>采用chown改变所有者，比如
-<div class="codehilite"><pre><span></span><code>chown -R username:users Document/
+<div class="highlight"><pre><span></span><code>chown -R username:users Document/
 </code></pre></div></p>
 <p><code>chmod g+s .</code> 会使得当前文件夹 <code>.</code> 中所有新建文件或文件夹都继承 <code>.</code> 的 group，而不是创建者所属的 group，所以这一般配合 <code>chgrp</code> 使用。参考 <a href="https://unix.stackexchange.com/questions/182212/chmod-gs-command">&lsquo;chmod g+s&rsquo; command</a></p>
 <h2 id="nginx-failed">腾讯云服务器nginx failed<a class="headerlink" href="#nginx-failed" title="Permanent link">&para;</a></h2>
 <p>原因：80端口被占用
 解决方法：kill掉占用80端口的</p>
-<div class="codehilite"><pre><span></span><code><span class="err">sudo fuser -k 80/tcp</span>
+<div class="highlight"><pre><span></span><code>sudo fuser -k 80/tcp
 </code></pre></div>
 
 <p>重启</p>
-<div class="codehilite"><pre><span></span><code><span class="err">sudo /etc/init.d/nginx restart</span>
+<div class="highlight"><pre><span></span><code>sudo /etc/init.d/nginx restart
 </code></pre></div>
 
 <h2 id="_6">文件重命名<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://www.linuxidc.com/Linux/2016-11/137041.htm">Ubuntu中rename命令和批量重命名</a></p>
-<div class="codehilite"><pre><span></span><code>rename -n <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*确认需要重命名的文件*/
+<div class="highlight"><pre><span></span><code>rename -n <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*确认需要重命名的文件*/
 rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修改，并列出已重命名的文件*/
 </code></pre></div>
 
 <h2 id="screen">关闭screen<a class="headerlink" href="#screen" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/1509677/kill-detached-screen-session">https://stackoverflow.com/questions/1509677/kill-detached-screen-session</a></p>
-<div class="codehilite"><pre><span></span><code>screen -list <span class="c1">#或screen -r</span>
+<div class="highlight"><pre><span></span><code>screen -list <span class="c1">#或screen -r</span>
 screen -r <span class="o">[</span>pid<span class="o">]</span> <span class="c1"># 进入</span>
 <span class="c1">### ctrl+A, 然后输入&quot;:quit&quot;</span>
 </code></pre></div>
@@ -2980,7 +2994,7 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 <p>参考<a href="https://stackoverflow.com/questions/28141667/how-to-reinstall-nginx-if-i-deleted-etc-nginx-folder-ubuntu-14-04">How to reinstall nginx if I deleted /etc/nginx folder (Ubuntu 14.04)?
 </a></p>
 <p>应当用
-<div class="codehilite"><pre><span></span><code>apt-get purge nginx nginx-common nginx-full
+<div class="highlight"><pre><span></span><code>apt-get purge nginx nginx-common nginx-full
 apt-get install nginx
 </code></pre></div></p>
 <p>注意用purge不会保存配置文件，而remove会保存配置文件。</p>
@@ -3025,7 +3039,7 @@ apt-get install nginx
 <p>表示在后台运行。</p>
 <h2 id="crontab">crontab定时任务<a class="headerlink" href="#crontab" title="Permanent link">&para;</a></h2>
 <p><code>* */1 * * * *</code> 表现为每分钟执行，但是本来第 1 列应当为分钟，而第 2 列为小时，这样使用对用法理解错误，而且改成 <code>* * */1 * * *</code> 仍然表现为每分钟。试图</p>
-<div class="codehilite"><pre><span></span><code>sudo service cron restart
+<div class="highlight"><pre><span></span><code>sudo service cron restart
 <span class="c1"># or</span>
 sudo service cron reload
 </code></pre></div>
@@ -3037,12 +3051,12 @@ sudo service cron reload
 <h2 id="_9">视频旋转<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://askubuntu.com/questions/83711/how-can-i-rotate-a-video">How can I rotate a video?</a></p>
 <p>直接用</p>
-<div class="codehilite"><pre><span></span><code>ffmpeg -i in.mov -vf <span class="s2">&quot;transpose=1&quot;</span> out.mov
+<div class="highlight"><pre><span></span><code>ffmpeg -i in.mov -vf <span class="s2">&quot;transpose=1&quot;</span> out.mov
 </code></pre></div>
 
 <p>然后报错 <a href="(https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled)">“The encoder &lsquo;aac&rsquo; is experimental but experimental codecs are not enabled”</a> </p>
 <p>注意添加 <code>-strict -2</code> 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成</p>
-<div class="codehilite"><pre><span></span><code>ffmpeg -i in.mov -vf <span class="s2">&quot;transpose=1&quot;</span> -strict -2 out.mov
+<div class="highlight"><pre><span></span><code>ffmpeg -i in.mov -vf <span class="s2">&quot;transpose=1&quot;</span> -strict -2 out.mov
 </code></pre></div>
 
 <h2 id="ubuntu_1">Ubuntu的回收站<a class="headerlink" href="#ubuntu_1" title="Permanent link">&para;</a></h2>
@@ -3076,19 +3090,19 @@ sudo service cron reload
 <p>when you put &amp; the output - both stdout and stderr - will still be printed onto the screen.</p>
 <p>If you do not want to see any output on the screen, redirect both stdout and stderr to a file by:</p>
 </blockquote>
-<p><div class="codehilite"><pre><span></span><code>myscript &gt; ~/myscript.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+<p><div class="highlight"><pre><span></span><code>myscript &gt; ~/myscript.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
 </code></pre></div>
 or just </p>
-<div class="codehilite"><pre><span></span><code>myscript &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>myscript &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
 </code></pre></div>
 
 <p>refer to <a href="https://askubuntu.com/questions/662817/why-can-i-see-the-output-of-background-processes">Why can I see the output of background processes?</a></p>
 <p><a href="https://askubuntu.com/a/1031424">Formally</a>, integer <code>1</code> stands for <code>stdout</code> file descriptor, while <code>2</code> represents <code>stderr</code> file descriptor. </p>
-<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> Hello World &gt; /dev/null
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> Hello World &gt; /dev/null
 </code></pre></div>
 
 <p>is same as</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> Hello World <span class="m">1</span>&gt; /dev/null
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> Hello World <span class="m">1</span>&gt; /dev/null
 </code></pre></div>
 
 <p><strong>As for spacing</strong>, integer is right next to redirection operator, but file can either be next to redirection operator or not, i.e., <code>command 2&gt;/dev/null</code> or <code>command 2&gt; /dev/null</code>.</p>
@@ -3096,36 +3110,36 @@ or just </p>
 <ul>
 <li>Redirect stdout to one file and stderr to another file</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="nb">command</span> &gt; out <span class="m">2</span>&gt; error
+<div class="highlight"><pre><span></span><code><span class="nb">command</span> &gt; out <span class="m">2</span>&gt; error
 </code></pre></div>
 
 <ul>
 <li>Redirect stdout to a file, and then redirect stderr to stdout <strong>NO spacings in <code>2&gt;&amp;1</code></strong></li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="nb">command</span> &gt; out <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<div class="highlight"><pre><span></span><code><span class="nb">command</span> &gt; out <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </code></pre></div>
 
 <ul>
 <li>Redirect both to a file (not supported by all shells, but <code>bash</code> is OK)</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="nb">command</span> <span class="p">&amp;</span>&gt; out
+<div class="highlight"><pre><span></span><code><span class="nb">command</span> <span class="p">&amp;</span>&gt; out
 </code></pre></div>
 
 <p><a href="https://askubuntu.com/a/635069">In more technical terms</a>, <code>[integer]&gt;&amp;word</code> is called <a href="https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_07_06">Duplicating Output File Descriptor</a></p>
 <p>We can <a href="https://stackoverflow.com/questions/418896/how-to-redirect-output-to-a-file-and-stdout">redirect output to a file and stdout simultaneously</a></p>
-<div class="codehilite"><pre><span></span><code><span class="err">program [arguments...] 2&gt;&amp;1 | tee outfile</span>
+<div class="highlight"><pre><span></span><code>program [arguments...] 2&gt;&amp;1 | tee outfile
 </code></pre></div>
 
 <h2 id="mv-file-with-xargs">mv file with xargs<a class="headerlink" href="#mv-file-with-xargs" title="Permanent link">&para;</a></h2>
 <p>use <code>-I {}</code> to replace some str.</p>
-<div class="codehilite"><pre><span></span><code>ls <span class="p">|</span> grep <span class="s1">&#39;config[0-9].txt&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> mv <span class="o">{}</span> configs/
+<div class="highlight"><pre><span></span><code>ls <span class="p">|</span> grep <span class="s1">&#39;config[0-9].txt&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> mv <span class="o">{}</span> configs/
 </code></pre></div>
 
 <p>see more details in <a href="https://askubuntu.com/questions/487035/mv-files-with-xargs">mv files with | xargs</a></p>
 <h2 id="google-drive">google drive<a class="headerlink" href="#google-drive" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://askubuntu.com/questions/838956/ubuntu-16-04-set-up-with-google-online-account-but-no-drive-folder-in-nautilus">Ubuntu 16.04 set up with google online account but no drive folder in nautilus</a></p>
 <p>Note that you should run </p>
-<div class="codehilite"><pre><span></span><code>gnome-control-center online-accounts
+<div class="highlight"><pre><span></span><code>gnome-control-center online-accounts
 </code></pre></div>
 
 <p>in the command line, not to open the GUI.</p>
@@ -3172,47 +3186,47 @@ or just </p>
 <p>中间提心吊胆，好在最后顺利扩容完成。</p>
 <h2 id="_11">移动硬盘重命名<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>通过</p>
-<div class="codehilite"><pre><span></span><code>gnome-disks
+<div class="highlight"><pre><span></span><code>gnome-disks
 </code></pre></div>
 
 <p>进行设置，详见<a href="https://askubuntu.com/questions/904561/how-to-change-hard-drive-name/904564">How to change hard drive name</a></p>
 <h2 id="remove-broken-link">remove broken link<a class="headerlink" href="#remove-broken-link" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>find -L . -name . -o -type d -prune -o -type l -exec rm <span class="o">{}</span> + 
+<div class="highlight"><pre><span></span><code>find -L . -name . -o -type d -prune -o -type l -exec rm <span class="o">{}</span> + 
 </code></pre></div>
 
 <p><a href="https://stackoverflow.com/questions/22097130/delete-all-broken-symbolic-links-with-a-line">Delete all broken symbolic links with a line?</a></p>
 <h2 id="kazam-video-format">Kazam video format<a class="headerlink" href="#kazam-video-format" title="Permanent link">&para;</a></h2>
 <p>cannot open in window</p>
 <p>solution</p>
-<div class="codehilite"><pre><span></span><code><span class="err">ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4</span>
+<div class="highlight"><pre><span></span><code>ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
 </code></pre></div>
 
 <p>refer to <a href="https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player">convert KAZAM video file to a file, playable in windows media player</a></p>
 <h2 id="wget-a-series-of-files-in-order">wget a series of files in order<a class="headerlink" href="#wget-a-series-of-files-in-order" title="Permanent link">&para;</a></h2>
 <p>下载连续编号的文件，如</p>
-<div class="codehilite"><pre><span></span><code><span class="err">wget http://work.caltech.edu/slides/slides{01..18}.pdf</span>
+<div class="highlight"><pre><span></span><code>wget http://work.caltech.edu/slides/slides{01..18}.pdf
 </code></pre></div>
 
 <p>参考 <a href="https://askubuntu.com/questions/240702/wget-a-series-of-files-in-order">Wget a series of files in order</a></p>
 <h2 id="hydrogen-specify-the-conda-envirnoment">hydrogen specify the conda envirnoment<a class="headerlink" href="#hydrogen-specify-the-conda-envirnoment" title="Permanent link">&para;</a></h2>
 <p>just need to run</p>
-<div class="codehilite"><pre><span></span><code><span class="err">source activate thisenv</span>
-<span class="err">python -m ipykernel install --user --name thisenv</span>
+<div class="highlight"><pre><span></span><code>source activate thisenv
+python -m ipykernel install --user --name thisenv
 </code></pre></div>
 
 <p>and only once, hydrogen will remember this!!</p>
 <p>ref to <a href="https://github.com/nteract/hydrogen/issues/899">How to specify the conda environment in which hydrogen (jupyter) starts?</a></p>
 <h2 id="show-long-character-usernames-which-consists-of">show long character usernames which consists of <code>+</code><a class="headerlink" href="#show-long-character-usernames-which-consists-of" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://askubuntu.com/questions/523673/ps-aux-for-long-charactered-usernames-shows-a-plus-sign">ps aux for long charactered usernames shows a plus sign</a></p>
-<div class="codehilite"><pre><span></span><code><span class="err">ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm</span>
-<span class="err">alias psaux=&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#39;</span>
+<div class="highlight"><pre><span></span><code>ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
+alias psaux=&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#39;
 </code></pre></div>
 
 <h2 id="remove-the-first-character">remove the first character<a class="headerlink" href="#remove-the-first-character" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span>
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="nv">list</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nv">list</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
 <span class="k">for</span> nc in <span class="o">{</span><span class="m">2</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
   <span class="k">for</span> nf in <span class="m">5</span> <span class="m">10</span> <span class="m">15</span><span class="p">;</span> <span class="k">do</span>
     <span class="nv">list</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$list</span><span class="s2">,acc-</span><span class="nv">$nc</span><span class="s2">-</span><span class="nv">$nf</span><span class="s2">&quot;</span>
@@ -3224,12 +3238,12 @@ or just </p>
 
 <p>refer to <a href="https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash">Remove first character of a string in Bash</a></p>
 <h2 id="convert-imgs-to-pdf">convert imgs to pdf<a class="headerlink" href="#convert-imgs-to-pdf" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>ls -1 ./*jpg <span class="p">|</span> xargs -L1 -I <span class="o">{}</span> img2pdf <span class="o">{}</span> -o <span class="o">{}</span>.pdf
+<div class="highlight"><pre><span></span><code>ls -1 ./*jpg <span class="p">|</span> xargs -L1 -I <span class="o">{}</span> img2pdf <span class="o">{}</span> -o <span class="o">{}</span>.pdf
 pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m">1</span>..13<span class="o">}</span>-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
 </code></pre></div>
 
 <h2 id="modify-pdf-metadata-via-pdftk">modify pdf metadata via <code>pdftk</code><a class="headerlink" href="#modify-pdf-metadata-via-pdftk" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>pdftk input.pdf dump_data output metadata
+<div class="highlight"><pre><span></span><code>pdftk input.pdf dump_data output metadata
 <span class="c1"># edit metadata</span>
 pdftk input.pdf update_info metadata output output.pdf
 </code></pre></div>
@@ -3258,28 +3272,28 @@ pdftk input.pdf update_info metadata output output.pdf
 <p>测试了一下，相当于在网盘内新建了 <code>/apps/bypy</code> 文件夹，然后可以同步该文件夹内的内容，似乎不能直接对文件夹外的文件进行操作。尽管这样，也是很好的了，以后文件可以存放在这个文件夹下。</p>
 <p>当然，还是期待官网本身支持。</p>
 <p>常用命令：</p>
-<div class="codehilite"><pre><span></span><code>bypy syncup
+<div class="highlight"><pre><span></span><code>bypy syncup
 bypy syncdown
 </code></pre></div>
 
 <h2 id="chrome">chrome 黑屏<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h2>
 <p>参考 https://blog.csdn.net/jjddrushi/article/details/79155421</p>
 <p>进入休眠状态后，睡了一晚上，第二天早上打开 chrome 便黑屏了，然后采用</p>
-<div class="codehilite"><pre><span></span><code>chrome -disable-gpu
+<div class="highlight"><pre><span></span><code>chrome -disable-gpu
 </code></pre></div>
 
 <p>再设定</p>
-<p><div class="codehilite"><pre><span></span><code><span class="err">Use hardware acceleration when available</span>
+<p><div class="highlight"><pre><span></span><code>Use hardware acceleration when available
 </code></pre></div>
 false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整个 chrome。</p>
 <h2 id="_13">图片处理<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <h3 id="_14">拼接<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p>水平方向</p>
-<div class="codehilite"><pre><span></span><code>convert +append *.png out.png 
+<div class="highlight"><pre><span></span><code>convert +append *.png out.png 
 </code></pre></div>
 
 <p>垂直方向</p>
-<div class="codehilite"><pre><span></span><code>convert -append *.png out.png
+<div class="highlight"><pre><span></span><code>convert -append *.png out.png
 </code></pre></div>
 
 <p>参考 <a href="https://askubuntu.com/a/889772">How do I join two images in Ubuntu?</a></p>
@@ -3288,17 +3302,17 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 <p>参考 <a href="https://opensource.com/article/17/2/command-line-tools-data-analysis-linux">10 command-line tools for data analysis in Linux</a></p>
 <h2 id="_16">文本文件拼接<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <h3 id="_17">按列<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>paste file1 file2 &gt; outputfile
+<div class="highlight"><pre><span></span><code>paste file1 file2 &gt; outputfile
 </code></pre></div>
 
 <h3 id="_18">按行<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>cat file1 file2 &gt; outputfile
+<div class="highlight"><pre><span></span><code>cat file1 file2 &gt; outputfile
 </code></pre></div>
 
 <h2 id="_19">视频处理<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
 <h3 id="_20">去除音频<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="https://hefang.link/article/how-remove-voice-with-ffmpeg.html">如何使用ffmpeg去除视频声音？</a></p>
-<div class="codehilite"><pre><span></span><code>ffmpeg -i .<span class="se">\i</span>nput.mp4 -map <span class="m">0</span>:0 -vcodec copy out.mp4
+<div class="highlight"><pre><span></span><code>ffmpeg -i .<span class="se">\i</span>nput.mp4 -map <span class="m">0</span>:0 -vcodec copy out.mp4
 </code></pre></div>
 
 <h3 id="_21">慢速播放和快速播放<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
@@ -3370,6 +3384,14 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 <p><a href="https://github.com/matze/mtheme/issues/280">Fira for Metropolis theme</a></p>
 <p><a href="https://stevescott.ca/2016-10-20-installing-the-fira-font-in-ubuntu.html">Install the Fira Font in Ubuntu</a></p>
 <p>and some introduction: <a href="https://zhuanlan.zhihu.com/p/65362086">Fira Code —— 专为编程而生的字体</a></p>
+<h2 id="proxy-for-gmail-in-thunderbird">Proxy for Gmail in Thunderbird<a class="headerlink" href="#proxy-for-gmail-in-thunderbird" title="Permanent link">&para;</a></h2>
+<p>Setting a proxy for the thunderbird is quite straigtforward, but not all mail accounts need the proxy, only gmail in my case. I am considering if it is possible to set up a proxy for gmail separately. Then I found that setting proxy by PAC file might work inspired by <a href="https://support.google.com/mail/forum/AAAAK7un8RUCGQj5uPgJoo">Gmail imap/smtp domains to connect via proxy</a>, since PAC file can customize the visited url. </p>
+<p>Then I need to learn <a href="https://findproxyforurl.com/example-pac-file/">how to write a PAC file</a>, although later I directly export the rules written in SwitchyOmega to a PAC file.</p>
+<p>Once PAC is done, I need to write its location url, seems impossible to directly write a local path. One easy way is to open port 80 to access my laptop, which maybe need apache or nginx, but both of them are overqualified. A simple way is</p>
+<div class="highlight"><pre><span></span><code>sudo python -m SimpleHTTPServer <span class="m">80</span>
+</code></pre></div>
+
+<p>found in<a href="https://askubuntu.com/questions/646293/open-port-80-on-ubuntu-server">Open port 80 on Ubuntu server</a></p>
                 
                   
                 

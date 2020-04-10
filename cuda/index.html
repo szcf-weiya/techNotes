@@ -1384,7 +1384,7 @@
 <h2 id="error-handle">Error Handle<a class="headerlink" href="#error-handle" title="Permanent link">&para;</a></h2>
 <h3 id="unified-memory-profiling-failed">unified memory profiling failed<a class="headerlink" href="#unified-memory-profiling-failed" title="Permanent link">&para;</a></h3>
 <p>参考http://blog.csdn.net/u010837794/article/details/64443679</p>
-<div class="codehilite"><pre><span></span><code><span class="err">nvprof --unified-memory-profiling off ./add_cuda</span>
+<div class="highlight"><pre><span></span><code>nvprof --unified-memory-profiling off ./add_cuda
 </code></pre></div>
 
 <h3 id="strange-output">Strange Output<a class="headerlink" href="#strange-output" title="Permanent link">&para;</a></h3>
@@ -1394,23 +1394,23 @@
 <p>check whether the order of destination and source variables.</p>
 <h3 id="cudadevicereset">cudaDeviceReset<a class="headerlink" href="#cudadevicereset" title="Permanent link">&para;</a></h3>
 <p>think twice before adding the following code
-<div class="codehilite"><pre><span></span><code><span class="err">cudaDeviceReset</span>
+<div class="highlight"><pre><span></span><code>cudaDeviceReset
 </code></pre></div></p>
 <h3 id="free-invalid-next-size-fastnormal">free(): invalid next size (fast/normal)<a class="headerlink" href="#free-invalid-next-size-fastnormal" title="Permanent link">&para;</a></h3>
 <p>http://blog.sina.com.cn/s/blog_77f1e27f01019qq9.html</p>
 <h3 id="error-an-illegal-memory-access-was-encountered">Error [an illegal memory access was encountered]<a class="headerlink" href="#error-an-illegal-memory-access-was-encountered" title="Permanent link">&para;</a></h3>
 <p>多半数组越界，另外，注意对于double的数值型指针，</p>
 <p>DO NOT</p>
-<div class="codehilite"><pre><span></span><code><span class="err">double *pone;</span>
+<div class="highlight"><pre><span></span><code>double *pone;
 </code></pre></div>
 
 <p>and DO NOT</p>
-<p><div class="codehilite"><pre><span></span><code><span class="err">double one;</span>
-<span class="err">double *pone = &amp;one;</span>
+<p><div class="highlight"><pre><span></span><code>double one;
+double *pone = &amp;one;
 </code></pre></div>
 YOU MUST
-<div class="codehilite"><pre><span></span><code><span class="err">double *pone = (double*)malloc(sizeof(double));</span>
-<span class="err">*pone = 1.0;</span>
+<div class="highlight"><pre><span></span><code>double *pone = (double*)malloc(sizeof(double));
+*pone = 1.0;
 </code></pre></div></p>
 <h2 id="1">问题1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1476,7 +1476,7 @@ Converting C/C++ for loops into CUDA</a></li>
 <h3 id="second-try-add-extern-c">Second Try: add <code>extern "C"</code><a class="headerlink" href="#second-try-add-extern-c" title="Permanent link">&para;</a></h3>
 <p>A reference about <code>extern "C"</code>: <a href="https://www.cnblogs.com/skynet/archive/2010/07/10/1774964.html">C++项目中的extern &ldquo;C&rdquo; {}</a></p>
 <p>There are several function names with different parameter list, it reports </p>
-<div class="codehilite"><pre><span></span><code><span class="err">more than one instance of overloaded function &quot;gauss1_pdf&quot; has &quot;C&quot; linkage</span>
+<div class="highlight"><pre><span></span><code>more than one instance of overloaded function &quot;gauss1_pdf&quot; has &quot;C&quot; linkage
 </code></pre></div>
 
 <p>In one word, overloading is a C++ feature, refer to <a href="https://stackoverflow.com/questions/18380170/more-than-one-instance-overloaded-function-has-c-linkage">More than one instance overloaded function has C linkage</a>.</p>

@@ -1925,10 +1925,10 @@
 <p>报错信息如下图</p>
 <p><img alt="" src="font_error.png" /></p>
 <p>解决方案为
-<div class="codehilite"><pre><span></span><code>sudo apt-get install texlive-fonts-extra
+<div class="highlight"><pre><span></span><code>sudo apt-get install texlive-fonts-extra
 </code></pre></div></p>
 <p>有时需要考虑
-<div class="codehilite"><pre><span></span><code><span class="err">sudo apt-get install texlive-fonts-recommand</span>
+<div class="highlight"><pre><span></span><code>sudo apt-get install texlive-fonts-recommand
 </code></pre></div></p>
 <h2 id="texlive-2016">安装 TeXLive 2016<a class="headerlink" href="#texlive-2016" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1938,10 +1938,10 @@
 <p>记住勾选 create symlinks to standard directories</p>
 <h2 id="sty">缺少 <code>.sty</code> 文件<a class="headerlink" href="#sty" title="Permanent link">&para;</a></h2>
 <p>比如缺少 <code>mhchem.sty</code></p>
-<p><div class="codehilite"><pre><span></span><code><span class="err">! LaTeX Error: File &#39;mhchem.sty&#39; not found</span>
+<p><div class="highlight"><pre><span></span><code>! LaTeX Error: File &#39;mhchem.sty&#39; not found
 </code></pre></div>
 解决方案为
-<div class="codehilite"><pre><span></span><code><span class="c1"># 1. 检查是否存在 `mhchem.sty` 文件</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. 检查是否存在 `mhchem.sty` 文件</span>
 $ locate mhchem.sty
 <span class="c1"># 2. 查找需要安装的 package</span>
 $ apt-cache search mhchem <span class="p">|</span> grep tex
@@ -1954,12 +1954,12 @@ $ sudo apt-get install texlive-science
 <p>记得设置 texstudio 的 biblatex 编译方式，设为 biber，默认为 bibtex.</p>
 <h2 id="_2">调整目录的显示层数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>在使用 <code>tableofcontents</code> 命令的时候，可分别显示 <code>chapter</code>，<code>section</code>，<code>subsection</code>，<code>subsubsection</code> 等目录，有时候，不希望显示级别较低的内容，比如只显示到 <code>chapter</code> 和 <code>section</code>，而 <code>subsection</code> 和 <code>subsubsection</code> 不显示，这时候可通过命令 <code>setcounter</code> 命令来控制，具体做法如下：</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\setcounter</span><span class="nb">{</span>tocdepth<span class="nb">}{</span>2<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\setcounter</span><span class="nb">{</span>tocdepth<span class="nb">}{</span>2<span class="nb">}</span>
 </code></pre></div>
 
 <p>即只显示两级目录。</p>
 <h2 id="pdf-metadata">pdf 添加 Metadata 信息<a class="headerlink" href="#pdf-metadata" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">\usepackage</span>[pdfauthor=<span class="nb">{</span>Your Name<span class="nb">}</span>,
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span>[pdfauthor=<span class="nb">{</span>Your Name<span class="nb">}</span>,
             pdftitle=<span class="nb">{</span>The Title<span class="nb">}</span>,
             pdfsubject=<span class="nb">{</span>The Subject<span class="nb">}</span>,
             pdfkeywords=<span class="nb">{</span>Some Keywords<span class="nb">}</span>,
@@ -1970,19 +1970,19 @@ $ sudo apt-get install texlive-science
 <h2 id="_3">希腊字母加粗问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><code>\mathbf</code> 只对公式中的普通字母 <code>ABC...abcdef</code> 等起作用。</p>
 <p>采用</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
 <span class="k">\boldsymbol</span><span class="nb">{</span><span class="k">\sigma</span><span class="nb">}</span>
 </code></pre></div>
 
 <p>或</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>bm<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>bm<span class="nb">}</span>
 <span class="k">\bm</span><span class="nb">{</span><span class="k">\sigma</span><span class="nb">}</span>
 </code></pre></div>
 
 <p>参考 <a href="http://blog.sina.com.cn/s/blog_5e16f1770100ks8l.html">LaTeX技巧326：希腊字母的加粗问题</a></p>
 <h2 id="_4">数学字体加粗<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>使用 <code>\mathbf</code> 加粗完后斜体不见了，这不是想要的结果</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
 <span class="k">\boldmath</span>
 <span class="sb">$$</span><span class="nb"></span>
 <span class="nb">f</span><span class="o">(</span><span class="nb">x,y</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">3</span><span class="o">(</span><span class="nb">x</span><span class="o">+</span><span class="nb">y</span><span class="o">)</span><span class="nb">y </span><span class="o">/</span><span class="nb"> </span><span class="o">(</span><span class="m">2</span><span class="nb">xy</span><span class="o">-</span><span class="m">7</span><span class="o">)</span><span class="nb"></span>
@@ -1991,7 +1991,7 @@ $ sudo apt-get install texlive-science
 </code></pre></div>
 
 <p>或</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>bm<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>bm<span class="nb">}</span>
 <span class="sb">$$</span><span class="nb"></span>
 <span class="nv">\bm</span><span class="nb">{f</span><span class="o">(</span><span class="nb">x,y</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">3</span><span class="o">(</span><span class="nb">x</span><span class="o">+</span><span class="nb">y</span><span class="o">)</span><span class="nb">y </span><span class="o">/</span><span class="nb"> </span><span class="o">(</span><span class="m">2</span><span class="nb">xy</span><span class="o">-</span><span class="m">7</span><span class="o">)</span><span class="nb">}</span>
 <span class="s">$$</span>
@@ -1999,7 +1999,7 @@ $ sudo apt-get install texlive-science
 
 <p>参考 <a href="http://blog.sina.com.cn/s/blog_5e16f1770100nqwx.html">LaTeX 数学字体加粗问题</a></p>
 <h2 id="texi2dvi-command-not-found">“texi2dvi” command not found<a class="headerlink" href="#texi2dvi-command-not-found" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install texinfo
+<div class="highlight"><pre><span></span><code>sudo apt-get install texinfo
 </code></pre></div>
 
 <h2 id="_5">数学公式插入图片<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
@@ -2007,16 +2007,16 @@ $ sudo apt-get install texlive-science
 <h2 id="beamer-frame-fragile">beamer 中 frame 的 fragile 选项<a class="headerlink" href="#beamer-frame-fragile" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="http://blog.sina.com.cn/s/blog_5e16f1770102dxps.html">LaTeX 技巧 573：beamer 中使用 Listings 包出现的错误</a></p>
 <p>错误描述</p>
-<div class="codehilite"><pre><span></span><code><span class="err">Runaway argument?</span>
-<span class="err">! Paragraph ended before \lst@next was complete.</span>
-<span class="err">&lt;to be read again&gt;</span>
-<span class="err">                   \par</span>
-<span class="err">l.68 \end{frame}</span>
-<span class="err">?</span>
+<div class="highlight"><pre><span></span><code>Runaway argument?
+! Paragraph ended before \lst@next was complete.
+&lt;to be read again&gt;
+                   \par
+l.68 \end{frame}
+?
 </code></pre></div>
 
 <p>解决方案</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
 <span class="k">\frametitle</span><span class="nb">{</span>Your title<span class="nb">}</span>
 
 <span class="k">\begin</span><span class="nb">{</span>lstlisting<span class="nb">}</span>
@@ -2027,7 +2027,7 @@ code
 
 <h2 id="beamer">beamer 中数学字体<a class="headerlink" href="#beamer" title="Permanent link">&para;</a></h2>
 <p>默认数学字体挺丑的，可以在导言区加入</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\usefonttheme</span><span class="na">[onlymath]</span><span class="nb">{</span>serif<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\usefonttheme</span><span class="na">[onlymath]</span><span class="nb">{</span>serif<span class="nb">}</span>
 </code></pre></div>
 
 <p>下面摘录自 <a href="http://blog.sina.com.cn/s/blog_4b91d3b50101lupb.html">Beamer 中数学符号字体 </a></p>
@@ -2060,7 +2060,7 @@ code
 <p>参考<a href="http://blog.sina.com.cn/s/blog_7983e5f101019wwq.html">latex 列举 enumerate 编号 样式设定</a></p>
 <h2 id="_6">二阶导数符号<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>在tex中一般直接用</p>
-<div class="codehilite"><pre><span></span><code><span class="s">$</span><span class="nb">f&#39;&#39;</span><span class="s">$</span>
+<div class="highlight"><pre><span></span><code><span class="s">$</span><span class="nb">f&#39;&#39;</span><span class="s">$</span>
 </code></pre></div>
 
 <p>但是在md中，当渲染成网页后，有时会渲染成了普通的引号，如下图</p>
@@ -2073,7 +2073,7 @@ code
 <h2 id="bibtex">bibtex文献加颜色<a class="headerlink" href="#bibtex" title="Permanent link">&para;</a></h2>
 <p>两种方式</p>
 <p>第一种</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\hypersetup</span><span class="nb">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">\hypersetup</span><span class="nb">{</span>
     colorlinks,
     citecolor=green,
     linkcolor=black
@@ -2082,7 +2082,7 @@ code
 
 <p>但这个只会对参考文献中可点击的部分起作用，比如实际中只对年份起了作用。</p>
 <p>第二种可以自定义命令</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\DeclareCiteCommand</span><span class="nb">{</span><span class="k">\cite</span><span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\DeclareCiteCommand</span><span class="nb">{</span><span class="k">\cite</span><span class="nb">}</span>
   <span class="nb">{</span><span class="k">\color</span><span class="nb">{</span>red<span class="nb">}</span><span class="k">\usebibmacro</span><span class="nb">{</span>prenote<span class="nb">}}</span><span class="c">%</span>
   <span class="nb">{</span><span class="k">\usebibmacro</span><span class="nb">{</span>citeindex<span class="nb">}</span><span class="c">%</span>
    <span class="k">\usebibmacro</span><span class="nb">{</span>cite<span class="nb">}}</span>
@@ -2105,7 +2105,7 @@ code
 <p>但若已经按照上个问题设置了颜色，则颜色失效。</p>
 <h2 id="item">设置item之间的间隔<a class="headerlink" href="#item" title="Permanent link">&para;</a></h2>
 <p>直接用<code>itemsep</code>命令，如</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
   <span class="k">\setlength\itemsep</span><span class="nb">{</span>1em<span class="nb">}</span>
   <span class="k">\item</span> one
   <span class="k">\item</span> two
@@ -2124,83 +2124,83 @@ code
 <li>no chinese</li>
 <li>no other packages</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="n">before_install</span><span class="p">:</span>
-  <span class="o">-</span> <span class="ss">&quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng&quot;</span>
+<div class="highlight"><pre><span></span><code>before_install:
+  - &quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended dvipng&quot;
 
-<span class="n">script</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">cd</span> <span class="n">proposal</span>
-  <span class="o">-</span> <span class="n">xelatex</span> <span class="n">test</span>
+script:
+  - cd proposal
+  - xelatex test
 </code></pre></div>
 
 <p>It turns out that no xelatex.</p>
 <h3 id="second-example">second example<a class="headerlink" href="#second-example" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">before_install</span><span class="p">:</span>
-  <span class="o">-</span> <span class="ss">&quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex dvipng&quot;</span>
+<div class="highlight"><pre><span></span><code>before_install:
+  - &quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex dvipng&quot;
 
-<span class="n">script</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">cd</span> <span class="n">proposal</span>
-  <span class="o">-</span> <span class="n">xelatex</span> <span class="n">test</span>
+script:
+  - cd proposal
+  - xelatex test
 </code></pre></div>
 
 <p>succeed!</p>
 <h3 id="install-chinese-fonts">install Chinese fonts<a class="headerlink" href="#install-chinese-fonts" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">sudo</span><span class="o">:</span> <span class="n">required</span>
-<span class="n">dist</span><span class="o">:</span> <span class="n">trusty</span>
-<span class="n">before_install</span><span class="o">:</span>
-  <span class="o">-</span> <span class="s2">&quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex dvipng&quot;</span>
-  <span class="o">-</span> <span class="s2">&quot;wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download &amp;&amp; tar xzf fonts.tar.gz &amp;&amp; sudo mkdir -p /usr/share/fonts/truetype/custom/ &amp;&amp; mv fonts/* /usr/share/fonts/truetype/custom/ &amp;&amp; sudo fc-cache -f -v&quot;</span>
+<div class="highlight"><pre><span></span><code>sudo: required
+dist: trusty
+before_install:
+  - &quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex dvipng&quot;
+  - &quot;wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download &amp;&amp; tar xzf fonts.tar.gz &amp;&amp; sudo mkdir -p /usr/share/fonts/truetype/custom/ &amp;&amp; mv fonts/* /usr/share/fonts/truetype/custom/ &amp;&amp; sudo fc-cache -f -v&quot;
 
-<span class="n">script</span><span class="o">:</span>
-  <span class="o">-</span> <span class="n">cd</span> <span class="n">proposal</span>
-  <span class="o">-</span> <span class="n">xelatex</span> <span class="n">test</span>
+script:
+  - cd proposal
+  - xelatex test
 </code></pre></div>
 
 <p>wrong error in wget. It should be </p>
-<div class="codehilite"><pre><span></span><code><span class="err">wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz</span>
+<div class="highlight"><pre><span></span><code>wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz
 </code></pre></div>
 
 <p>and mv should add <code>sudo</code></p>
-<div class="codehilite"><pre><span></span><code><span class="err">sudo mv fonts/* /usr/share/fonts/truetype/custom/ </span>
+<div class="highlight"><pre><span></span><code>sudo mv fonts/* /usr/share/fonts/truetype/custom/ 
 </code></pre></div>
 
 <p>succeed!</p>
 <h3 id="use-xecjk">use xeCJK<a class="headerlink" href="#use-xecjk" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="o">#</span> <span class="n">test</span><span class="p">.</span><span class="n">tex</span>
-<span class="err">\</span><span class="n">documentclass</span><span class="err">{</span><span class="n">article</span><span class="err">}</span>
-<span class="err">\</span><span class="n">usepackage</span><span class="err">{</span><span class="n">xeCJK</span><span class="err">}</span>
-<span class="err">\</span><span class="n">setCJKmainfont</span><span class="err">{</span><span class="n">STFANGSO</span><span class="p">.</span><span class="n">TTF</span><span class="err">}</span>
-<span class="err">\</span><span class="k">begin</span><span class="err">{</span><span class="n">document</span><span class="err">}</span>
-<span class="n">test</span> <span class="n">TeX</span> <span class="k">on</span> <span class="n">Travis</span> <span class="n">CI</span> <span class="n">via</span> <span class="n">xelatex</span><span class="p">.</span>
-<span class="err">毕业论文（设计）题目</span> 
+<div class="highlight"><pre><span></span><code># test.tex
+\documentclass{article}
+\usepackage{xeCJK}
+\setCJKmainfont{STFANGSO.TTF}
+\begin{document}
+test TeX on Travis CI via xelatex.
+毕业论文（设计）题目 
 
-<span class="err">浙江大学本科生毕业论文（设计）</span>
-<span class="err">\</span><span class="k">end</span><span class="err">{</span><span class="n">document</span><span class="err">}</span>
+浙江大学本科生毕业论文（设计）
+\end{document}
 
-<span class="o">#</span> <span class="p">.</span><span class="n">travis</span><span class="p">.</span><span class="n">yml</span>
-<span class="n">sudo</span><span class="p">:</span> <span class="n">required</span>
-<span class="n">dist</span><span class="p">:</span> <span class="n">trusty</span>
-<span class="n">before_install</span><span class="p">:</span>
-  <span class="o">-</span> <span class="ss">&quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex dvipng&quot;</span>
-  <span class="o">-</span> <span class="ss">&quot;wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz &amp;&amp; tar xzf fonts.tar.gz &amp;&amp; sudo mkdir -p /usr/share/fonts/truetype/custom/ &amp;&amp; sudo mv fonts/* /usr/share/fonts/truetype/custom/ &amp;&amp; sudo fc-cache -f -v&quot;</span>
+# .travis.yml
+sudo: required
+dist: trusty
+before_install:
+  - &quot;sudo apt-get update &amp;&amp; sudo apt-get install --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex dvipng&quot;
+  - &quot;wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz &amp;&amp; tar xzf fonts.tar.gz &amp;&amp; sudo mkdir -p /usr/share/fonts/truetype/custom/ &amp;&amp; sudo mv fonts/* /usr/share/fonts/truetype/custom/ &amp;&amp; sudo fc-cache -f -v&quot;
 
-<span class="n">script</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">cd</span> <span class="n">proposal</span>
-  <span class="o">-</span> <span class="n">xelatex</span> <span class="n">test</span>
+script:
+  - cd proposal
+  - xelatex test
 </code></pre></div>
 
 <p>It reports that</p>
-<div class="codehilite"><pre><span></span><code><span class="err">! Font EU1/lmr/m/n/10=[lmroman10-regular]:mapping=tex-text at 10.0pt not loadab</span>
-<span class="c">le: Metric (TFM) file or installed font not found.</span>
+<div class="highlight"><pre><span></span><code>! Font EU1/lmr/m/n/10=[lmroman10-regular]:mapping=tex-text at 10.0pt not loadab
+le: Metric (TFM) file or installed font not found.
 </code></pre></div>
 
 <p>refer to <a href="https://tex.stackexchange.com/questions/129799/font-eu1-lmr-m-n-10-lmroman10-regularmapping-tex-text-at-10-0pt-not-loadab">! Font EU1/lmr/m/n/10=[lmroman10-regular]:mapping=tex-text at 10.0pt not loadab le: Metric (TFM) file not found</a></p>
 <p>try to install <code>fonts-lmodern</code> fist.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">sudo apt-get install fonts-lmodern</span>
+<div class="highlight"><pre><span></span><code>sudo apt-get install fonts-lmodern
 </code></pre></div>
 
 <p>succeed!</p>
 <p>However, I cannot find <code>test.pdf</code> in releases, and it contains other files. So set</p>
-<div class="codehilite"><pre><span></span><code><span class="n">skip_cleanup</span><span class="o">:</span> <span class="kc">true</span>
+<div class="highlight"><pre><span></span><code>skip_cleanup: true
 </code></pre></div>
 
 <p>and fix typo from <code>tages</code> to <code>tags</code>.</p>
@@ -2209,10 +2209,10 @@ code
 <p>It reports that <code>Skipping a deployment with the releases provider because this is not a tagged commit</code></p>
 <p>It still failed.</p>
 <p>Then use the normal method</p>
-<div class="codehilite"><pre><span></span><code><span class="err">git add .</span>
-<span class="err">git commit -m &quot;    &quot;</span>
-<span class="err">git tag &quot;test&quot;</span>
-<span class="err">git push origin master --tags</span>
+<div class="highlight"><pre><span></span><code>git add .
+git commit -m &quot;    &quot;
+git tag &quot;test&quot;
+git push origin master --tags
 </code></pre></div>
 
 <p>It succeed!</p>
@@ -2245,13 +2245,13 @@ code
 <p>参考 <a href="https://tex.stackexchange.com/questions/123219/writing-above-and-below-a-symbol-simultaneously">Writing above and below a symbol simultaneously </a></p>
 <h2 id="remark-environment">remark environment<a class="headerlink" href="#remark-environment" title="Permanent link">&para;</a></h2>
 <p>In beamer,  need to use
-<div class="codehilite"><pre><span></span><code><span class="k">\newtheorem</span><span class="nb">{</span>remark<span class="nb">}{</span>Remark<span class="nb">}</span> 
+<div class="highlight"><pre><span></span><code><span class="k">\newtheorem</span><span class="nb">{</span>remark<span class="nb">}{</span>Remark<span class="nb">}</span> 
 </code></pre></div>
 before.</p>
 <p>refer to <a href="https://tex.stackexchange.com/questions/188379/theorem-numbering-in-beamer?rq=1">Theorem Numbering in beamer</a></p>
 <h2 id="font-size-of-the-documents">font size of the documents<a class="headerlink" href="#font-size-of-the-documents" title="Permanent link">&para;</a></h2>
 <p>In the following command
-<div class="codehilite"><pre><span></span><code><span class="k">\documentclass</span><span class="na">[12pt]</span><span class="nb">{</span>article<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="na">[12pt]</span><span class="nb">{</span>article<span class="nb">}</span>
 </code></pre></div>
 the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code>12pt</code>.</p>
 <p>Refer to <a href="https://tex.stackexchange.com/questions/413319/how-is-14pt-giving-font-size-smaller-than-12pt">How is 14pt giving font size smaller than 12pt?</a></p>
@@ -2262,12 +2262,12 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <p>Key point: enclose one of the entries in the first <code>cases</code> environment in a box whose width is that of the longest of the second <code>cases</code> environment.</p>
 <p>or use <code>\hphantom{}</code>. </p>
 <h2 id="problem-with-mkbibdateapalongextra-of-biblatex-apa">Problem with \mkbibdateapalongextra of biblatex-apa<a class="headerlink" href="#problem-with-mkbibdateapalongextra-of-biblatex-apa" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">\DeclareLanguageMapping</span><span class="nb">{</span>american<span class="nb">}{</span>american-apa<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\DeclareLanguageMapping</span><span class="nb">{</span>american<span class="nb">}{</span>american-apa<span class="nb">}</span>
 </code></pre></div>
 
 <p>refer to <a href="https://tex.stackexchange.com/questions/133700/problem-with-mkbibdateapalongextra-of-biblatex-apa">Problem with \mkbibdateapalongextra of biblatex-apa</a></p>
 <h2 id="problems-with-printbibliography">Problems with \printbibliography<a class="headerlink" href="#problems-with-printbibliography" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">\usepackage</span><span class="na">[american]</span><span class="nb">{</span>babel<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="na">[american]</span><span class="nb">{</span>babel<span class="nb">}</span>
 <span class="k">\usepackage</span><span class="na">[style=apa,backend=biber]</span><span class="nb">{</span>biblatex<span class="nb">}</span>
 <span class="k">\DeclareLanguageMapping</span><span class="nb">{</span>american<span class="nb">}{</span>american-apa<span class="nb">}</span> <span class="c">%Literaturverzeichnis american-apa style</span>
 <span class="k">\addbibresource</span><span class="nb">{</span>library.bib<span class="nb">}</span> 
@@ -2275,12 +2275,12 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 </code></pre></div>
 
 <p>and then</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\printbibliography</span><span class="na">[heading=bibintoc,title=References]</span>
+<div class="highlight"><pre><span></span><code><span class="k">\printbibliography</span><span class="na">[heading=bibintoc,title=References]</span>
 </code></pre></div>
 
 <p>refer to <a href="https://tex.stackexchange.com/questions/351079/problems-with-printbibliography/351091">Problems with \printbibliography</a></p>
 <h2 id="hat">带 <code>\hat</code> 时的上标<a class="headerlink" href="#hat" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">\hat\beta</span><span class="nb">^</span>n
+<div class="highlight"><pre><span></span><code><span class="k">\hat\beta</span><span class="nb">^</span>n
 </code></pre></div>
 
 <div>
@@ -2292,7 +2292,7 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 </script>
 </div>
 <p>和</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\hat\beta</span><span class="nb">{}^</span>n
+<div class="highlight"><pre><span></span><code><span class="k">\hat\beta</span><span class="nb">{}^</span>n
 </code></pre></div>
 
 <div>
@@ -2306,7 +2306,7 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <p>参考 <a href="https://tex.stackexchange.com/questions/9184/position-of-superscript-when-superscriptd-item-has-hat-over-it">Position of superscript when superscriptd item has \hat over it</a></p>
 <h2 id="capacity-exceeded-semantic-nest"><code>Capacity exceeded [semantic nest …]</code><a class="headerlink" href="#capacity-exceeded-semantic-nest" title="Permanent link">&para;</a></h2>
 <p>check your <code>newcommand</code> definition, to see if there is some silly definition such as</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\newcommand\silly</span><span class="nb">{</span><span class="k">\silly</span><span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\newcommand\silly</span><span class="nb">{</span><span class="k">\silly</span><span class="nb">}</span>
 </code></pre></div>
 
 <p>refer to <a href="https://texfaq.org/FAQ-semanticnest">Capacity exceeded</a></p>
@@ -2327,11 +2327,11 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <p><img alt="" src="portable_install.png" /></p>
 <p>其与正常安装时环境变量略有不同，没有单独设置 personal 的配置路径，或许还有其他地方的区别。</p>
 <p>另外安装时碰到默认的 mirror 速度很慢的情况，于是考虑换成最近的华为云。</p>
-<div class="codehilite"><pre><span></span><code>./install-tl -repository https://mirrors.huaweicloud.com/repository/toolkit/CTAN/systems/texlive/tlnet/
+<div class="highlight"><pre><span></span><code>./install-tl -repository https://mirrors.huaweicloud.com/repository/toolkit/CTAN/systems/texlive/tlnet/
 </code></pre></div>
 
 <p>路径要指定成</p>
-<div class="codehilite"><pre><span></span><code>&lt;CTAN/mirror/root/URL&gt;/systems/texlive/tlnet
+<div class="highlight"><pre><span></span><code>&lt;CTAN/mirror/root/URL&gt;/systems/texlive/tlnet
 </code></pre></div>
 
 <p>参考 <a href="https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository">Change TeX Live Main Repository</a></p>
@@ -2344,7 +2344,7 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <h2 id="bold-for-theorem-title">bold for theorem title.<a class="headerlink" href="#bold-for-theorem-title" title="Permanent link">&para;</a></h2>
 <p>Without <code>amsthm</code>, the title is bold by default. Refer to <a href="https://tex.stackexchange.com/questions/22223/title-of-the-theorem">Title of the theorem</a>.</p>
 <p>With <code>amsthm</code>, one solution is to add these in the preamble.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>amsthm<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>amsthm<span class="nb">}</span>
 <span class="k">\makeatletter</span>
 <span class="k">\def\th</span>@plain<span class="nb">{</span><span class="c">%</span>
   <span class="k">\thm</span>@notefont<span class="nb">{}</span><span class="c">% same as heading font</span>
@@ -2359,7 +2359,7 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 
 <p>refer to <a href="https://tex.stackexchange.com/questions/43966/how-to-make-the-optional-title-of-a-theorem-bold-with-amsthm">How to make the optional title of a theorem bold with amsthm?</a></p>
 <h2 id="proof-by-parts">proof by parts<a class="headerlink" href="#proof-by-parts" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">\newtheorem</span><span class="nb">{</span>proofpart<span class="nb">}{</span>Part<span class="nb">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\newtheorem</span><span class="nb">{</span>proofpart<span class="nb">}{</span>Part<span class="nb">}</span>
 <span class="k">\newtheorem</span><span class="nb">{</span>theorem<span class="nb">}{</span>Theorem<span class="nb">}</span>
 <span class="k">\makeatletter</span>
 <span class="k">\@</span>addtoreset<span class="nb">{</span>proofpart<span class="nb">}{</span>theorem<span class="nb">}</span>
@@ -2370,7 +2370,7 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <p>Refer to <a href="https://tex.stackexchange.com/questions/101880/parts-numbering-in-proofs">Parts numbering in Proofs</a></p>
 <h2 id="new-usage-of-cases">New usage of <code>cases</code><a class="headerlink" href="#new-usage-of-cases" title="Permanent link">&para;</a></h2>
 <p>see</p>
-<div class="codehilite"><pre><span></span><code><span class="k">\ind</span><span class="nb">{</span>A<span class="nb">}</span> = <span class="k">\cases</span><span class="nb">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">\ind</span><span class="nb">{</span>A<span class="nb">}</span> = <span class="k">\cases</span><span class="nb">{</span>
         1 <span class="nb">&amp;</span> if <span class="s">$</span><span class="nb">A</span><span class="s">$</span> is true,<span class="k">\\</span>
         0 <span class="nb">&amp;</span> otherwise,<span class="nb">}</span>
 </code></pre></div>

@@ -1235,12 +1235,12 @@
 <h2 id="emacsfcitx">Emacs使用Fcitx中文<a class="headerlink" href="#emacsfcitx" title="Permanent link">&para;</a></h2>
 <p>参考博客：<a href="http://wangzhe3224.github.io/emacs/2015/08/31/fcitx-emacs.html">fcitx-emacs</a></p>
 <h4 id="step-1">Step 1: 确定系统当前支持的字符集<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>locale -a
+<div class="highlight"><pre><span></span><code>locale -a
 </code></pre></div>
 
 <p>若其中有zh_CN.utf8，则表明已经包含了中文字符集。</p>
 <h4 id="step-2">Step 2: 设置系统变量<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>emacs ~/.bashrc
+<div class="highlight"><pre><span></span><code>emacs ~/.bashrc
 <span class="nb">export</span> <span class="nv">LC_CTYPE</span><span class="o">=</span>zh_CN.utf8 
 <span class="nb">source</span> ~/.bashrc
 </code></pre></div>

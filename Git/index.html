@@ -1712,26 +1712,26 @@
                 
                 <h1 id="git-tips">Git Tips<a class="headerlink" href="#git-tips" title="Permanent link">&para;</a></h1>
 <h2 id="_1">删除远程分支<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><div class="codehilite"><pre><span></span><code><span class="err">git branch -r -d origin/branch-name</span>
+<p><div class="highlight"><pre><span></span><code>git branch -r -d origin/branch-name
 </code></pre></div>
 此时需要更改仓库的默认分支，不然直接运行下面的命令会报错
-<div class="codehilite"><pre><span></span><code><span class="err">git push origin :branch-name</span>
+<div class="highlight"><pre><span></span><code>git push origin :branch-name
 </code></pre></div></p>
 <p><img alt="" src="error_branch.png" /></p>
 <p>图中第一次是更改默认分支前的出错信息，第二次是更改完默认分支的信息。</p>
 <h2 id="_2">删除本地分支<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="err">git branch -d branch-name</span>
+<div class="highlight"><pre><span></span><code>git branch -d branch-name
 </code></pre></div>
 
 <h2 id="git-clone">提高git clone速度<a class="headerlink" href="#git-clone" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="err">git config --global http.postBuffer 524288000</span>
+<div class="highlight"><pre><span></span><code>git config --global http.postBuffer 524288000
 </code></pre></div>
 
 <h2 id="git-clone_1">git clone所有远程分支<a class="headerlink" href="#git-clone_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="err">git clone ....</span>
-<span class="err">cd ..</span>
-<span class="err">git branch -a</span>
-<span class="err">git checkout -b gh-pages origin/gh-pages</span>
+<div class="highlight"><pre><span></span><code>git clone ....
+cd ..
+git branch -a
+git checkout -b gh-pages origin/gh-pages
 </code></pre></div>
 
 <h2 id="git">git删除大文件<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
@@ -1741,29 +1741,29 @@
 <ol>
 <li>
 <p>下载安装
-<div class="codehilite"><pre><span></span><code><span class="err">apt-get install git</span>
+<div class="highlight"><pre><span></span><code>apt-get install git
 </code></pre></div></p>
 </li>
 <li>
 <p>配置
-<div class="codehilite"><pre><span></span><code><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">user</span><span class="p">.</span><span class="n">name</span> <span class="s">&quot;test&quot;</span>
-<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">user</span><span class="p">.</span><span class="n">email</span> <span class="s">&quot;test@163.com&quot;</span>
+<div class="highlight"><pre><span></span><code>git config --global user.name &quot;test&quot;
+git config --global user.email &quot;test@163.com&quot;
 </code></pre></div></p>
 </li>
 <li>
 <p>ssh
-<div class="codehilite"><pre><span></span><code><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span> <span class="o">-</span><span class="n">C</span> <span class="s">&quot;test@163.com&quot;</span>
+<div class="highlight"><pre><span></span><code>ssh-keygen -t rsa -C &quot;test@163.com&quot;
 </code></pre></div></p>
 </li>
 </ol>
 <p>复制~/.ssh/id_rsa.pub到github上。</p>
 <h2 id="origin">修改origin<a class="headerlink" href="#origin" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">git</span> <span class="n">remote</span> <span class="n">rm</span> <span class="n">origin</span>
-<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">git</span><span class="mf">@192.168.1.18</span><span class="o">:</span><span class="n">mStar</span><span class="o">/</span><span class="n">OTT</span><span class="o">-</span><span class="n">dual</span><span class="o">/</span><span class="n">K3S</span><span class="o">/</span><span class="n">supernova</span>
+<div class="highlight"><pre><span></span><code>git remote rm origin
+git remote add origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
 </code></pre></div>
 
 <p>or
-<div class="codehilite"><pre><span></span><code><span class="n">git</span> <span class="n">remote</span> <span class="n">set</span><span class="o">-</span><span class="n">url</span> <span class="n">origin</span> <span class="n">git</span><span class="mf">@192.168.1.18</span><span class="o">:</span><span class="n">mStar</span><span class="o">/</span><span class="n">OTT</span><span class="o">-</span><span class="n">dual</span><span class="o">/</span><span class="n">K3S</span><span class="o">/</span><span class="n">supernova</span>
+<div class="highlight"><pre><span></span><code>git remote set-url origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
 </code></pre></div></p>
 <h2 id="git-branch">git branch<a class="headerlink" href="#git-branch" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.csdn.net/guang11cheng/article/details/37757201">ref</a></p>
@@ -1771,41 +1771,41 @@
 <h2 id="gitignore">gitignore 失效<a class="headerlink" href="#gitignore" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.pfeng.org/archives/840">.gitignore</a></p>
 <p>有时候在项目开发过程中，突然心血来潮想把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交：</p>
-<div class="codehilite"><pre><span></span><code><span class="err">git rm -r --cached .</span>
-<span class="err">git add .</span>
-<span class="err">git commit -m &#39;update .gitignore&#39;</span>
+<div class="highlight"><pre><span></span><code>git rm -r --cached .
+git add .
+git commit -m &#39;update .gitignore&#39;
 </code></pre></div>
 
 <h2 id="_3">更新远程代码到本地<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">方式一<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="err">git remote -v</span>
-<span class="err">git fetch origin master</span>
-<span class="err">git log -p master origin master</span>
-<span class="err">git merge origin master</span>
+<div class="highlight"><pre><span></span><code>git remote -v
+git fetch origin master
+git log -p master origin master
+git merge origin master
 </code></pre></div>
 
 <h3 id="_5">方式二<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="err">git fetch origin master:temp</span>
-<span class="err">git diff temp</span>
-<span class="err">git merge temp</span>
-<span class="err">git branch temp</span>
+<div class="highlight"><pre><span></span><code>git fetch origin master:temp
+git diff temp
+git merge temp
+git branch temp
 </code></pre></div>
 
 <h2 id="license">关于LICENSE的选择<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">阮一峰的网络日志</a></p>
 <h2 id="git-clone_2">git clone 某个分支或所有分支<a class="headerlink" href="#git-clone_2" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.csdn.net/a513322/article/details/46998325">git clone</a></p>
-<div class="codehilite"><pre><span></span><code><span class="err">git clone -b BRANCH_NAME ...</span>
+<div class="highlight"><pre><span></span><code>git clone -b BRANCH_NAME ...
 </code></pre></div>
 
 <p>or
-<div class="codehilite"><pre><span></span><code><span class="err">git clone ...</span>
-<span class="err">git branch -r</span>
-<span class="err">git checkout BRANCH_NAME</span>
+<div class="highlight"><pre><span></span><code>git clone ...
+git branch -r
+git checkout BRANCH_NAME
 </code></pre></div></p>
 <h2 id="_6">更改远程仓库的名字<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>举个例子，如将一个名为epi的仓库改名为depi，再次在本地提交虽然也能成功，但是会提示你原始的仓库已经移动，请修改为新的仓库地址，于是我们可以利用下面的命令进行修改</p>
-<div class="codehilite"><pre><span></span><code><span class="err">git remote set-url origin git@github.com:szcf-weiya/depi.git</span>
+<div class="highlight"><pre><span></span><code>git remote set-url origin git@github.com:szcf-weiya/depi.git
 </code></pre></div>
 
 <h2 id="git-pull">git pull<a class="headerlink" href="#git-pull" title="Permanent link">&para;</a></h2>
@@ -1820,12 +1820,12 @@
 <h2 id="webhook">Webhook配置<a class="headerlink" href="#webhook" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://jerryzou.com/posts/webhook-practice/">Webhook 实践 —— 自动部署</a></p>
 <p>需要在腾讯云服务器上自动更新github pages的内容，于是采用webhook来实现。</p>
-<div class="codehilite"><pre><span></span><code>npm install -g forever
+<div class="highlight"><pre><span></span><code>npm install -g forever
 forever statr server.js
 </code></pre></div>
 
 <h2 id="username-useremail">显示 user.name 和 user.email<a class="headerlink" href="#username-useremail" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>git config user.name
+<div class="highlight"><pre><span></span><code>git config user.name
 git config user.email
 </code></pre></div>
 
@@ -1844,26 +1844,26 @@ git config user.email
 <ol>
 <li>添加原仓库，比如</li>
 </ol>
-<div class="codehilite"><pre><span></span><code>git remote add upstream git@github.com:LCTT/TranslateProject.git
+<div class="highlight"><pre><span></span><code>git remote add upstream git@github.com:LCTT/TranslateProject.git
 </code></pre></div>
 
 <p>查看当前远程仓库</p>
-<div class="codehilite"><pre><span></span><code>git remote -v
+<div class="highlight"><pre><span></span><code>git remote -v
 </code></pre></div>
 
 <ol start="2">
 <li>pull</li>
 </ol>
-<div class="codehilite"><pre><span></span><code>git pull upstream master
+<div class="highlight"><pre><span></span><code>git pull upstream master
 </code></pre></div>
 
 <p>参考<a href="https://www.sitepoint.com/quick-tip-synch-a-github-fork-via-the-command-line/">Quick Tip: Sync a GitHub Fork via the Command Line</a></p>
 <h2 id="add">撤销未被 add 的文件<a class="headerlink" href="#add" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>git checkout -- file
+<div class="highlight"><pre><span></span><code>git checkout -- file
 </code></pre></div>
 
 <p>或者撤销所有更改</p>
-<div class="codehilite"><pre><span></span><code>git checkout -- .
+<div class="highlight"><pre><span></span><code>git checkout -- .
 </code></pre></div>
 
 <p>参考<a href="https://stackoverflow.com/questions/29007821/git-checkout-all-the-files">git checkout all the files</a></p>
@@ -1874,7 +1874,7 @@ git config user.email
 <p>中文折腾为什么 Travis CI 中用 &lsquo;*&rsquo; 号不会上传文件，最后还是指定了文件名。</p>
 <p>刚刚找到解决方案 <a href="https://stackoverflow.com/questions/25929225/how-to-deploy-to-github-with-file-pattern-on-travis">How to deploy to github with file pattern on travis?</a></p>
 <p>简单说要加上</p>
-<div class="codehilite"><pre><span></span><code><span class="n">file_glob</span><span class="o">:</span> <span class="kc">true</span>
+<div class="highlight"><pre><span></span><code>file_glob: true
 </code></pre></div>
 
 <h2 id="_8">放弃本地修改<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
@@ -1886,11 +1886,11 @@ git config user.email
 <p><code>git reset --hard HEAD^</code></p>
 <p>参考<a href="https://www.cnblogs.com/qufanblog/p/7606105.html">git 放弃本地修改</a></p>
 <h2 id="_9">列出另一分支的目录<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>git ls-tree master:dirname
+<div class="highlight"><pre><span></span><code>git ls-tree master:dirname
 </code></pre></div>
 
 <h2 id="github_1">Github 回退<a class="headerlink" href="#github_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>git reset --hard HEAD^
+<div class="highlight"><pre><span></span><code>git reset --hard HEAD^
 git push origin HEAD --force
 </code></pre></div>
 
@@ -1905,8 +1905,8 @@ git push origin HEAD --force
 <li><a href="https://stackoverflow.com/questions/6656619/git-and-nasty-error-cannot-lock-existing-info-refs-fatal">Git and nasty “error: cannot lock existing info/refs fatal</a></li>
 </ol>
 <h2 id="remove-untracked-files">remove untracked files<a class="headerlink" href="#remove-untracked-files" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="err">git clean -n</span>
-<span class="err">git clean -f</span>
+<div class="highlight"><pre><span></span><code>git clean -n
+git clean -f
 </code></pre></div>
 
 <p>refer to <a href="https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree">How to remove local (untracked) files from the current Git working tree</a></p>
@@ -1914,7 +1914,7 @@ git push origin HEAD --force
 <p>详见 <a href="https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6">Git 分支 - 分支的新建与合并</a></p>
 <h2 id="crlf-lf"><code>CRLF</code> &amp; <code>LF</code><a class="headerlink" href="#crlf-lf" title="Permanent link">&para;</a></h2>
 <p>双系统切换时，原先在 Win 处理，后来换到 Linux 处理，报出</p>
-<div class="codehilite"><pre><span></span><code><span class="err">CRLF will be replaced by LF.</span>
+<div class="highlight"><pre><span></span><code>CRLF will be replaced by LF.
 </code></pre></div>
 
 <p>设置 <code>autocrlf</code> 配置项：</p>
@@ -1927,7 +1927,7 @@ git push origin HEAD --force
 <h2 id="git-push-require-username-and-password">Git push require username and password<a class="headerlink" href="#git-push-require-username-and-password" title="Permanent link">&para;</a></h2>
 <p>possible reason: use the default HTTPS instead of SSH</p>
 <p>correct this by</p>
-<div class="codehilite"><pre><span></span><code><span class="err">git remote set-url origin git@github.com:username/repo.git</span>
+<div class="highlight"><pre><span></span><code>git remote set-url origin git@github.com:username/repo.git
 </code></pre></div>
 
 <p>参考 <a href="https://stackoverflow.com/questions/6565357/git-push-requires-username-and-password">Git push requires username and password</a></p>

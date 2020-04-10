@@ -1707,7 +1707,7 @@
 <h2 id="error-expected-typet">ERROR: <code>expected Type{T}</code><a class="headerlink" href="#error-expected-typet" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://discourse.julialang.org/t/error-loaderror-typeerror-type-expression-expected-type-t-got-module/1230/4">ERROR: LoadError: TypeError: Type{&hellip;} expression: expected Type{T}, got Module</a></p>
 <p>其中举了一个小例子</p>
-<div class="codehilite"><pre><span></span><code><span class="k">module</span> <span class="n">Foo</span> <span class="k">end</span>
+<div class="highlight"><pre><span></span><code><span class="k">module</span> <span class="n">Foo</span> <span class="k">end</span>
 <span class="n">Foo</span><span class="p">{</span><span class="kt">Int64</span><span class="p">}</span>
 </code></pre></div>
 
@@ -1724,13 +1724,13 @@
 <li>object of some instances</li>
 </ol>
 <h2 id="couldnt-find-libpython-error">Couldn&rsquo;t find libpython error<a class="headerlink" href="#couldnt-find-libpython-error" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span> <span class="n">Pkg</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s">&quot;PyCall&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span> <span class="n">Pkg</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s">&quot;PyCall&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <p>to install its own private Miniconda distribution for you, in a way that won&rsquo;t interfere with your other Python installations.</p>
 <p>Refer to <a href="https://github.com/JuliaPy/PyCall.jl/issues/199">Couldn&rsquo;t find libpython error #199</a></p>
 <p>Actually, using <code>PyPlot</code> also encounters the similar question, cannot find <code>matplotlib</code>, then I changed to the conda environment contained such package, and then</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;the-python-path&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;the-python-path&quot;</span><span class="p">;</span>
 <span class="c"># change to package command line</span>
 <span class="n">build</span> <span class="n">PyCall</span>
 </code></pre></div>
@@ -1743,11 +1743,11 @@
 <p>which supports my above guess.</p>
 <h2 id="record-for-install-pycall">Record for install <code>PyCall</code><a class="headerlink" href="#record-for-install-pycall" title="Permanent link">&para;</a></h2>
 <p>Switch to <code>py37</code> conda environment, then run <code>julia1.2.0</code></p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="n">pkg</span><span class="o">&gt;</span> <span class="n">add</span> <span class="n">PyCall</span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="n">pkg</span><span class="o">&gt;</span> <span class="n">add</span> <span class="n">PyCall</span>
 </code></pre></div>
 
 <p>Then test to import module in the same REPL,</p>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">PyCall</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">PyCall</span>
 <span class="p">[</span> <span class="n">Info</span><span class="o">:</span> <span class="n">Recompiling</span> <span class="n">stale</span> <span class="n">cache</span> <span class="n">file</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">weiya</span><span class="o">/.</span><span class="n">julia</span><span class="o">/</span><span class="n">compiled</span><span class="o">/</span><span class="n">v1</span><span class="o">.</span><span class="mi">2</span><span class="o">/</span><span class="n">PyCall</span><span class="o">/</span><span class="n">GkzkC</span><span class="o">.</span><span class="n">ji</span> <span class="k">for</span> <span class="n">PyCall</span> <span class="p">[</span><span class="mf">438e738</span><span class="n">f</span><span class="o">-</span><span class="mi">606</span><span class="n">a</span><span class="o">-</span><span class="mi">5</span><span class="n">dbb</span><span class="o">-</span><span class="n">bf0a</span><span class="o">-</span><span class="n">cddfbfd45ab0</span><span class="p">]</span>
 
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">math</span> <span class="o">=</span> <span class="n">pyimport</span><span class="p">(</span><span class="s">&quot;math&quot;</span><span class="p">)</span>
@@ -1755,7 +1755,7 @@
 </code></pre></div>
 
 <p>Now open a new julia session under different conda environment (or no any conda environment), re-run the above code</p>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">PyCall</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">PyCall</span>
 
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">math</span> <span class="o">=</span> <span class="n">pyimport</span><span class="p">(</span><span class="s">&quot;math&quot;</span><span class="p">)</span>
 <span class="n">PyObject</span> <span class="o">&lt;</span><span class="k">module</span> <span class="err">&#39;</span><span class="n">math</span><span class="o">&#39;</span> <span class="n">from</span> <span class="err">&#39;</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">weiya</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">7</span><span class="o">/</span><span class="n">lib</span><span class="o">-</span><span class="n">dynload</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">cpython</span><span class="o">-</span><span class="mi">37</span><span class="n">m</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">.</span><span class="n">so</span><span class="o">&#39;&gt;</span>
@@ -1766,12 +1766,12 @@
 <p>On GNU/Linux systems, PyCall will default to using the python3 program (if any, otherwise <code>python</code>) in your PATH.</p>
 </blockquote>
 <p>Then to specify the version of python such as</p>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Sys</span><span class="o">.</span><span class="n">which</span><span class="p">(</span><span class="s">&quot;python&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Sys</span><span class="o">.</span><span class="n">which</span><span class="p">(</span><span class="s">&quot;python&quot;</span><span class="p">)</span>
 <span class="s">&quot;/home/weiya/anaconda3/envs/py37/bin/python3.7&quot;</span>
 </code></pre></div>
 
 <p>and rebuild, note that need to restart the julia session to recompiling,</p>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">PyCall</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">using</span> <span class="n">PyCall</span>
 <span class="p">[</span> <span class="n">Info</span><span class="o">:</span> <span class="n">Recompiling</span> <span class="n">stale</span> <span class="n">cache</span> <span class="n">file</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">weiya</span><span class="o">/.</span><span class="n">julia</span><span class="o">/</span><span class="n">compiled</span><span class="o">/</span><span class="n">v1</span><span class="o">.</span><span class="mi">2</span><span class="o">/</span><span class="n">PyCall</span><span class="o">/</span><span class="n">GkzkC</span><span class="o">.</span><span class="n">ji</span> <span class="k">for</span> <span class="n">PyCall</span> <span class="p">[</span><span class="mf">438e738</span><span class="n">f</span><span class="o">-</span><span class="mi">606</span><span class="n">a</span><span class="o">-</span><span class="mi">5</span><span class="n">dbb</span><span class="o">-</span><span class="n">bf0a</span><span class="o">-</span><span class="n">cddfbfd45ab0</span><span class="p">]</span>
 
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">pyimport</span><span class="p">(</span><span class="s">&quot;math&quot;</span><span class="p">)</span>
@@ -1789,27 +1789,27 @@
 <h2 id="pbsdsh-unsolved">pbsdsh (unsolved)<a class="headerlink" href="#pbsdsh-unsolved" title="Permanent link">&para;</a></h2>
 <p>Submit a pbsdsh job and specify multiply nodes with multiply cores, say <code>nodes=2:ppn=4</code></p>
 <p>error log file (see full file in the cluster: <code>dshmcmc.e21907</code>):</p>
-<div class="codehilite"><pre><span></span><code><span class="nl">fatal</span><span class="p">:</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="n">thrown</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="k">no</span><span class="w"> </span><span class="k">exception</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="n">available</span><span class="p">.</span><span class="w"></span>
-<span class="n">InitError</span><span class="p">(</span><span class="k">mod</span><span class="o">=</span><span class="err">:</span><span class="n">Base</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="o">=</span><span class="n">ArgumentError</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="ss">&quot;Package Sockets not found in current path:</span>
-<span class="ss">- Run `Pkg.add(&quot;</span><span class="n">Sockets</span><span class="ss">&quot;)` to install the Sockets package.</span>
-<span class="ss">&quot;</span><span class="p">))</span><span class="w"></span>
-<span class="n">rec_backtrace</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">stackwalk</span><span class="p">.</span><span class="nl">c</span><span class="p">:</span><span class="mi">94</span><span class="w"></span>
-<span class="n">record_backtrace</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">task</span><span class="p">.</span><span class="nl">c</span><span class="p">:</span><span class="mi">246</span><span class="w"></span>
-<span class="n">jl_throw</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">task</span><span class="p">.</span><span class="nl">c</span><span class="p">:</span><span class="mi">577</span><span class="w"></span>
-<span class="n">require</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">loading</span><span class="p">.</span><span class="nl">jl</span><span class="p">:</span><span class="mi">817</span><span class="w"></span>
-<span class="n">init_stdio</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">stream</span><span class="p">.</span><span class="nl">jl</span><span class="p">:</span><span class="mi">237</span><span class="w"></span>
-<span class="n">jfptr_init_stdio_4446</span><span class="p">.</span><span class="n">clone_1</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">julia</span><span class="o">-</span><span class="mf">1.0.0</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">sys</span><span class="p">.</span><span class="n">so</span><span class="w"> </span><span class="p">(</span><span class="k">unknown</span><span class="w"> </span><span class="n">line</span><span class="p">)</span><span class="w"></span>
-<span class="n">jl_apply_generic</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">gf</span><span class="p">.</span><span class="nl">c</span><span class="p">:</span><span class="mi">2182</span><span class="w"></span>
-<span class="n">reinit_stdio</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">libuv</span><span class="p">.</span><span class="nl">jl</span><span class="p">:</span><span class="mi">121</span><span class="w"></span>
-<span class="n">__init__</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">sysimg</span><span class="p">.</span><span class="nl">jl</span><span class="p">:</span><span class="mi">470</span><span class="w"></span>
-<span class="n">jl_apply_generic</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">gf</span><span class="p">.</span><span class="nl">c</span><span class="p">:</span><span class="mi">2182</span><span class="w"></span>
-<span class="n">jl_apply</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">julia</span><span class="p">.</span><span class="nl">h</span><span class="p">:</span><span class="mi">1536</span><span class="w"> </span><span class="o">[</span><span class="n">inlined</span><span class="o">]</span><span class="w"></span>
-<span class="n">jl_module_run_initializer</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">toplevel</span><span class="p">.</span><span class="nl">c</span><span class="p">:</span><span class="mi">90</span><span class="w"></span>
-<span class="n">_julia_init</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">init</span><span class="p">.</span><span class="nl">c</span><span class="p">:</span><span class="mi">811</span><span class="w"></span>
-<span class="n">julia_init__threading</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">task</span><span class="p">.</span><span class="nl">c</span><span class="p">:</span><span class="mi">302</span><span class="w"></span>
-<span class="n">main</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">buildworker</span><span class="o">/</span><span class="n">worker</span><span class="o">/</span><span class="n">package_linux64</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">ui</span><span class="o">/</span><span class="n">repl</span><span class="p">.</span><span class="nl">c</span><span class="p">:</span><span class="mi">227</span><span class="w"></span>
-<span class="n">__libc_start_main</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">libc</span><span class="p">.</span><span class="n">so</span><span class="mf">.6</span><span class="w"> </span><span class="p">(</span><span class="k">unknown</span><span class="w"> </span><span class="n">line</span><span class="p">)</span><span class="w"></span>
-<span class="n">_start</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">julia</span><span class="o">-</span><span class="mf">1.0.0</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">julia</span><span class="w"> </span><span class="p">(</span><span class="k">unknown</span><span class="w"> </span><span class="n">line</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>fatal: error thrown and no exception handler available.
+InitError(mod=:Base, error=ArgumentError(msg=&quot;Package Sockets not found in current path:
+- Run `Pkg.add(&quot;Sockets&quot;)` to install the Sockets package.
+&quot;))
+rec_backtrace at /buildworker/worker/package_linux64/build/src/stackwalk.c:94
+record_backtrace at /buildworker/worker/package_linux64/build/src/task.c:246
+jl_throw at /buildworker/worker/package_linux64/build/src/task.c:577
+require at ./loading.jl:817
+init_stdio at ./stream.jl:237
+jfptr_init_stdio_4446.clone_1 at /opt/share/julia-1.0.0/lib/julia/sys.so (unknown line)
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2182
+reinit_stdio at ./libuv.jl:121
+__init__ at ./sysimg.jl:470
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2182
+jl_apply at /buildworker/worker/package_linux64/build/src/julia.h:1536 [inlined]
+jl_module_run_initializer at /buildworker/worker/package_linux64/build/src/toplevel.c:90
+_julia_init at /buildworker/worker/package_linux64/build/src/init.c:811
+julia_init__threading at /buildworker/worker/package_linux64/build/src/task.c:302
+main at /buildworker/worker/package_linux64/build/ui/repl.c:227
+__libc_start_main at /lib64/libc.so.6 (unknown line)
+_start at /opt/share/julia-1.0.0/bin/julia (unknown line)
 </code></pre></div>
 
 <p>But when I just use single node, and arbitrary cores, say <code>nodes=1:ppn=2</code>, it works well.</p>
@@ -1826,17 +1826,17 @@
 </ol>
 <h2 id="julia-for-scope">julia <code>for</code> scope<a class="headerlink" href="#julia-for-scope" title="Permanent link">&para;</a></h2>
 <p>The following code
-<div class="codehilite"><pre><span></span><code><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight"><pre><span></span><code><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="k">end</span>
 </code></pre></div>
 will report
-<div class="codehilite"><pre><span></span><code><span class="n">ERROR</span><span class="o">:</span> <span class="kt">UndefVarError</span><span class="o">:</span> <span class="n">i</span> <span class="n">not</span> <span class="n">defined</span>
+<div class="highlight"><pre><span></span><code><span class="n">ERROR</span><span class="o">:</span> <span class="kt">UndefVarError</span><span class="o">:</span> <span class="n">i</span> <span class="n">not</span> <span class="n">defined</span>
 </code></pre></div></p>
 <p>A (possible) reasonable explanation is, <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> is a global variable, we cannot modify a global variable in a local block without <code>global</code> keyword, but we can read <code>i</code> in the <code>for</code> loop.</p>
 <p>Alternatively, we can use <code>let</code> block,</p>
-<div class="codehilite"><pre><span></span><code><span class="k">let</span>
+<div class="highlight"><pre><span></span><code><span class="k">let</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">10</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
@@ -1853,7 +1853,7 @@ will report
 <li><a href="https://docs.julialang.org/en/v1/manual/variables-and-scoping/index.html">Manual: Scope of Variables</a></li>
 </ol>
 <h2 id="convert-a-matrix-into-an-array-of-array">convert a matrix into an array of array<a class="headerlink" href="#convert-a-matrix-into-an-array-of-array" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">mapslices</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">dims</span><span class="o">=</span><span class="mi">2</span><span class="p">)[</span><span class="o">:</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="n">mapslices</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">dims</span><span class="o">=</span><span class="mi">2</span><span class="p">)[</span><span class="o">:</span><span class="p">]</span>
 </code></pre></div>
 
 <p>refer to</p>
@@ -1866,7 +1866,7 @@ will report
 <p>refer to <a href="https://discourse.julialang.org/t/kernel-density-estimation-status/5928">Kernel density estimation status</a></p>
 <h2 id="and-hash">自定义 <code>==</code> and <code>hash()</code><a class="headerlink" href="#and-hash" title="Permanent link">&para;</a></h2>
 <p>对于自定义的 mutable struct, 直接用 <code>==</code> 返回 <code>false</code>，因此需要自己定义等号，比如</p>
-<div class="codehilite"><pre><span></span><code><span class="n">Base</span><span class="o">.:</span><span class="p">(</span><span class="o">==</span><span class="p">)(</span><span class="n">x</span><span class="o">::</span><span class="n">Reaction</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="n">Reaction</span><span class="p">)</span> <span class="o">=</span> <span class="n">all</span><span class="p">([</span>
+<div class="highlight"><pre><span></span><code><span class="n">Base</span><span class="o">.:</span><span class="p">(</span><span class="o">==</span><span class="p">)(</span><span class="n">x</span><span class="o">::</span><span class="n">Reaction</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="n">Reaction</span><span class="p">)</span> <span class="o">=</span> <span class="n">all</span><span class="p">([</span>
     <span class="n">x</span><span class="o">.</span><span class="n">substrate</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">substrate</span><span class="p">,</span>
     <span class="n">x</span><span class="o">.</span><span class="n">product</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">product</span><span class="p">,</span>
     <span class="n">x</span><span class="o">.</span><span class="n">reversible</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">reversible</span><span class="p">,</span>
@@ -1874,7 +1874,7 @@ will report
 </code></pre></div>
 
 <p>而如果想用 <code>unique</code> 函数的话，其基于 <code>isequal</code> 函数，而 <code>isequal</code> 是通过判断 hash 值来判定的，所以仅仅定义了 <code>==</code> 仍不够，还需要定义 <code>hash</code> 函数，这很简单，比如</p>
-<div class="codehilite"><pre><span></span><code><span class="k">function</span> <span class="n">Base</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">obj</span><span class="o">::</span><span class="n">Reaction</span><span class="p">,</span> <span class="n">h</span><span class="o">::</span><span class="kt">UInt</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">Base</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">obj</span><span class="o">::</span><span class="n">Reaction</span><span class="p">,</span> <span class="n">h</span><span class="o">::</span><span class="kt">UInt</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">hash</span><span class="p">((</span><span class="n">obj</span><span class="o">.</span><span class="n">substrate</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">product</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">reversible</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">species</span><span class="p">),</span> <span class="n">h</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div>
@@ -1894,7 +1894,7 @@ will report
 </ol>
 <h2 id="amp"><code>&amp;</code> 优先级<a class="headerlink" href="#amp" title="Permanent link">&para;</a></h2>
 <p>use</p>
-<div class="codehilite"><pre><span></span><code><span class="err">(x[1] &lt;= width) &amp; (x[1] &gt;= 0) &amp; (x[2] &lt;= height) &amp; (x[2] &gt;=0)</span>
+<div class="highlight"><pre><span></span><code>(x[1] &lt;= width) &amp; (x[1] &gt;= 0) &amp; (x[2] &lt;= height) &amp; (x[2] &gt;=0)
 </code></pre></div>
 
 <p>not</p>
@@ -1917,12 +1917,12 @@ will report
 <p><a href="https://docs.julialang.org/en/v1/manual/getting-started/index.html">Julia docs: Getting Started</a></p>
 <h2 id="unable-to-display-plot-using-the-repl-gks-errors">Unable to display plot using the REPL. GKS errors<a class="headerlink" href="#unable-to-display-plot-using-the-repl-gks-errors" title="Permanent link">&para;</a></h2>
 <p>The reason would be relate to the <code>GR</code> package, </p>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> .julia/packages/GR/ZI5OE/deps/gr/bin/
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> .julia/packages/GR/ZI5OE/deps/gr/bin/
 ldd gksqt
 </code></pre></div>
 
 <p>and then get</p>
-<div class="codehilite"><pre><span></span><code>linux-vdso.so.1 <span class="o">=</span>&gt;  <span class="o">(</span>0x00007ffdc1e58000<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>linux-vdso.so.1 <span class="o">=</span>&gt;  <span class="o">(</span>0x00007ffdc1e58000<span class="o">)</span>
 libQt5Widgets.so.5 <span class="o">=</span>&gt; not found
 libQt5Gui.so.5 <span class="o">=</span>&gt; not found
 libQt5Network.so.5 <span class="o">=</span>&gt; not found
@@ -1959,30 +1959,30 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 
 <p>(refer to <a href="https://github.com/JuliaPlots/Plots.jl/issues/1649#issuecomment-478520497">one comment in Error: GKS: can&rsquo;t connect to GKS socket application</a>)</p>
 <p>So it seems that it is due to the missing of <code>libqt5</code>. If I have the <code>sudo</code> privilege, maybe just type</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install qt5-default
+<div class="highlight"><pre><span></span><code>sudo apt-get install qt5-default
 </code></pre></div>
 
 <p>but I cannot. But I noticed that I have installed <code>miniconda3</code>, and the <code>qt</code> is installed,</p>
-<div class="codehilite"><pre><span></span><code>qmake -v
+<div class="highlight"><pre><span></span><code>qmake -v
 <span class="c1"># QMake version 3.1</span>
 <span class="c1"># Using Qt version 5.9.7 in /users/xxx/miniconda3/lib</span>
 </code></pre></div>
 
 <p>So a natural way is to append the library path of <code>qt</code> to <code>LD_LIBRARY_PATH</code>, that is,</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># in .bashrc</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># in .bashrc</span>
 <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/users/xxx/miniconda3/lib:<span class="nv">$LD_LIBRARY_PATH</span>
 </code></pre></div>
 
 <p>then rebuild <code>GR</code> package in the julia REPL.</p>
 <p>This solution should work, but actually it failed at the first time. Do not be too frustrated, I found the reason is that I type <code>miniconda3</code> as <code>minconda3</code> in the path.</p>
 <p>It works now, although it still throw an error, </p>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">libGL</span> <span class="n">error</span><span class="o">:</span> <span class="n">unable</span> <span class="n">to</span> <span class="n">load</span> <span class="n">driver</span><span class="o">:</span> <span class="n">swrast_dri</span><span class="o">.</span><span class="n">so</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">libGL</span> <span class="n">error</span><span class="o">:</span> <span class="n">unable</span> <span class="n">to</span> <span class="n">load</span> <span class="n">driver</span><span class="o">:</span> <span class="n">swrast_dri</span><span class="o">.</span><span class="n">so</span>
 <span class="n">libGL</span> <span class="n">error</span><span class="o">:</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">load</span> <span class="n">driver</span><span class="o">:</span> <span class="n">swrast</span>
 </code></pre></div>
 
 <h2 id="dims1"><code>dims=1</code><a class="headerlink" href="#dims1" title="Permanent link">&para;</a></h2>
 <p>总是记不太清 <code>sum</code>, <code>mean</code> 的时候 <code>dims=1</code> 是按行求和还是按列求和，经常先玩个 toy example 才能分辨出来。比如，</p>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="mi">4</span><span class="n">×3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
  <span class="mf">0.279181</span>  <span class="mf">0.0903167</span>  <span class="mf">0.148329</span> 
  <span class="mf">0.486691</span>  <span class="mf">0.869156</span>   <span class="mf">0.0538834</span>
@@ -1995,7 +1995,7 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 </code></pre></div>
 
 <p>即把 <code>dims</code> 所代表的维度元素加起来，或者说沿着 dims 进行运算。这一点与 <code>R</code> 的函数 <code>apply</code> 中 <code>margin</code> 参数作用刚好相反，</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">12</span><span class="p">),</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">12</span><span class="p">),</span> <span class="m">4</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="n">a</span>
            <span class="p">[,</span><span class="m">1</span><span class="p">]</span>        <span class="p">[,</span><span class="m">2</span><span class="p">]</span>       <span class="p">[,</span><span class="m">3</span><span class="p">]</span>
 <span class="p">[</span><span class="m">1</span><span class="p">,]</span>  <span class="m">1.1535199</span>  <span class="m">0.03198768</span>  <span class="m">0.2857126</span>
@@ -2009,21 +2009,21 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 <p>这样交叉记忆，不知道效果会不会好点。</p>
 <h2 id="reset-kw-value">reset <code>kw...</code> value<a class="headerlink" href="#reset-kw-value" title="Permanent link">&para;</a></h2>
 <p>In the following situation, I want to reset a particular argument in <code>kw...</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">function</span> <span class="n">f</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">f</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
     <span class="n">g</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div>
 
 <p>Note that the type of <code>kw</code> is <code>Base.Iterators.Pairs</code>, firstly I want to directly reset the value via</p>
-<div class="codehilite"><pre><span></span><code><span class="n">h</span><span class="p">(;</span><span class="n">kw</span><span class="o">...</span><span class="p">)</span> <span class="o">=</span> <span class="n">kw</span>
+<div class="highlight"><pre><span></span><code><span class="n">h</span><span class="p">(;</span><span class="n">kw</span><span class="o">...</span><span class="p">)</span> <span class="o">=</span> <span class="n">kw</span>
 <span class="n">h</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 </code></pre></div>
 
 <p>but it throws </p>
-<div class="codehilite"><pre><span></span><code><span class="n">ERROR</span><span class="o">:</span> <span class="n">setfield</span><span class="o">!</span> <span class="n">immutable</span> <span class="n">struct</span> <span class="n">of</span> <span class="n">type</span> <span class="n">NamedTuple</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">changed</span>
-<span class="n">Stacktrace</span><span class="o">:</span>
- <span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">setproperty</span><span class="o">!(::</span><span class="n">NamedTuple</span><span class="o">{(:</span><span class="n">a</span><span class="o">,),</span><span class="n">Tuple</span><span class="o">{</span><span class="n">Int64</span><span class="o">}},</span> <span class="o">::</span><span class="n">Symbol</span><span class="o">,</span> <span class="o">::</span><span class="n">Int64</span><span class="o">)</span> <span class="n">at</span> <span class="o">./</span><span class="n">Base</span><span class="o">.</span><span class="na">jl</span><span class="o">:</span><span class="mi">21</span>
- <span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span> <span class="n">scope</span> <span class="n">at</span> <span class="n">none</span><span class="o">:</span><span class="mi">0</span>
+<div class="highlight"><pre><span></span><code>ERROR: setfield! immutable struct of type NamedTuple cannot be changed
+Stacktrace:
+ [1] setproperty!(::NamedTuple{(:a,),Tuple{Int64}}, ::Symbol, ::Int64) at ./Base.jl:21
+ [2] top-level scope at none:0
 </code></pre></div>
 
 <p>So I need to find new method, or give up such idea. Fortunately, the <a href="https://docs.julialang.org/en/v1/manual/functions/">official documentation of Julia</a> says</p>
@@ -2031,29 +2031,29 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 <p>The nature of keyword arguments makes it possible to specify the same argument more than once. For example, in the call <code>plot(x, y; options..., width=2)</code> it is possible that the options structure also contains a value for <code>width</code>.</p>
 </blockquote>
 <p>Thus, I can write</p>
-<p><div class="codehilite"><pre><span></span><code><span class="k">function</span> <span class="n">f</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
+<p><div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">f</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">)</span>
     <span class="n">g</span><span class="p">(;</span> <span class="n">kw</span><span class="o">...</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div>
 to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <h2 id="some-interesting-behavior">some interesting behavior<a class="headerlink" href="#some-interesting-behavior" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">}()</span>
+<div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="kt">Dict</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">}()</span>
 <span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 </code></pre></div>
 
 <p>if we access</p>
-<div class="codehilite"><pre><span></span><code><span class="n">d</span><span class="o">.</span><span class="n">vals</span>
+<div class="highlight"><pre><span></span><code><span class="n">d</span><span class="o">.</span><span class="n">vals</span>
 <span class="c"># d.keys</span>
 </code></pre></div>
 
 <p>it will return a <code>16-element Array{Int64,1}</code>, but if we use</p>
-<div class="codehilite"><pre><span></span><code><span class="n">values</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">values</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="n">keys</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </code></pre></div>
 
 <p>it correctly returns the exactly one elements, but with type <code>Base.ValueIterator for a Dict{Int64,Int64} with 1 entry</code>.</p>
 <h2 id="function-in-function">function in function<a class="headerlink" href="#function-in-function" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f2</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f2</span><span class="p">()</span>
            <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
            <span class="k">function</span> <span class="n">g</span><span class="p">()</span>
                <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">10</span>
@@ -2068,7 +2068,7 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 </code></pre></div>
 
 <p>but </p>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f2</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f2</span><span class="p">()</span>
            <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
            <span class="n">g</span><span class="p">()</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
            <span class="n">g</span><span class="p">()</span>
@@ -2082,7 +2082,7 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 
 <p>since the first one does not have <code>return</code>, but <code>g()</code> has <code>return</code> and the addition is not on <code>a</code>.</p>
 <h2 id="pass-array-into-function">pass array into function<a class="headerlink" href="#pass-array-into-function" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 <span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
  <span class="mi">1</span>
  <span class="mi">2</span>
@@ -2119,7 +2119,7 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 </code></pre></div>
 
 <h2 id="check-whether-array-entry-is-undef">check whether array entry is undef<a class="headerlink" href="#check-whether-array-entry-is-undef" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">}}(</span><span class="n">undef</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">}}(</span><span class="n">undef</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">isdefined</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
 <span class="c"># or</span>
 <span class="n">isassigned</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -2129,7 +2129,7 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 
 <p>refer to <a href="https://stackoverflow.com/questions/25020448/julia-check-whether-array-entry-is-undef">Julia: check whether array entry is undef</a></p>
 <h2 id="memory-allocation-of-undef">memory allocation of <code>undef</code><a class="headerlink" href="#memory-allocation-of-undef" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@time</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="mi">2</span><span class="p">}(</span><span class="n">undef</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@time</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="mi">2</span><span class="p">}(</span><span class="n">undef</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
   <span class="mf">0.000024</span> <span class="n">seconds</span> <span class="p">(</span><span class="mi">6</span> <span class="n">allocations</span><span class="o">:</span> <span class="mf">78.359</span> <span class="n">KiB</span><span class="p">)</span>
 <span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@time</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
   <span class="mf">0.000014</span> <span class="n">seconds</span> <span class="p">(</span><span class="mi">6</span> <span class="n">allocations</span><span class="o">:</span> <span class="mf">78.359</span> <span class="n">KiB</span><span class="p">)</span>
@@ -2138,7 +2138,7 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 </code></pre></div>
 
 <h2 id="_2">单引号和双引号<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">www</span><span class="o">&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">www</span><span class="o">&#39;</span>
 <span class="n">ERROR</span><span class="o">:</span> <span class="n">syntax</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">character</span> <span class="n">literal</span>
 
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="sc">&#39;w&#39;</span>
@@ -2151,17 +2151,17 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <p>refer to <a href="https://github.com/szcf-weiya/Cell-Video/issues/105">#105</a>.</p>
 <h2 id="juno-cltr-enter-bug">Juno 中 <code>Cltr + Enter</code> 的 bug<a class="headerlink" href="#juno-cltr-enter-bug" title="Permanent link">&para;</a></h2>
 <p>当我使用 <code>Ctrl + Enter</code> 运行下列语句时，</p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span> <span class="n">Images</span><span class="p">,</span> <span class="n">ImageView</span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">Images</span><span class="p">,</span> <span class="n">ImageView</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">download</span><span class="p">(</span><span class="s">&quot;https://juliaimages.org/latest/assets/segmentation/horse.jpg&quot;</span><span class="p">));</span>
 <span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 </code></pre></div>
 
 <p>REPL 冻住了，一直停在 </p>
-<div class="codehilite"><pre><span></span><code><span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}</span> <span class="n">with</span> <span class="mi">4</span> <span class="n">entries</span><span class="o">:</span>
+<div class="highlight"><pre><span></span><code><span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}</span> <span class="n">with</span> <span class="mi">4</span> <span class="n">entries</span><span class="o">:</span>
 </code></pre></div>
 
 <p>而我如果直接将上述语句复制到 REPL 中运行时，一切 OK，正常显示为</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}</span> <span class="n">with</span> <span class="mi">4</span> <span class="n">entries</span><span class="o">:</span>
+<div class="highlight"><pre><span></span><code><span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}</span> <span class="n">with</span> <span class="mi">4</span> <span class="n">entries</span><span class="o">:</span>
   <span class="s">&quot;gui&quot;</span>         <span class="o">=&gt;</span> <span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}(</span><span class="s">&quot;window&quot;</span><span class="o">=&gt;</span><span class="n">GtkWindowLeaf</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">wi…</span>
   <span class="s">&quot;roi&quot;</span>         <span class="o">=&gt;</span> <span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}(</span><span class="s">&quot;redraw&quot;</span><span class="o">=&gt;</span><span class="mi">50</span><span class="o">:</span> <span class="s">&quot;map(clim-mapped image, input…</span>
 <span class="s">  &quot;</span><span class="n">annotations</span><span class="s">&quot; =&gt; 3: &quot;</span><span class="n">input</span><span class="o">-</span><span class="mi">2</span><span class="s">&quot; = Dict{UInt64,Any}() Dict{UInt64,Any} </span>
@@ -2178,23 +2178,23 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <p>最后竟然<a href="https://github.com/JunoLab/Juno.jl/issues/320#issuecomment-599213691">真的解决了！</a></p>
 <h2 id="juno">Juno 使用系统代理<a class="headerlink" href="#juno" title="Permanent link">&para;</a></h2>
 <p>当在 <code>.bashrc</code> 添加 <code>http_proxy</code> 和 <code>https_proxy</code> 中并 source 之后，直接在 shell 里面开的 julia session 中，验证当前 ip</p>
-<div class="codehilite"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="sb">`curl ifconfig.me`</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="sb">`curl ifconfig.me`</span><span class="p">)</span>
 </code></pre></div>
 
 <p>或者直接查看 </p>
-<div class="codehilite"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;http_proxy&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;http_proxy&quot;</span><span class="p">]</span>
 </code></pre></div>
 
 <p>发现可以使用系统代理。但是在 Atom 中开的 julia，则不行。找到 Atom 一条相关的 issue: <a href="https://github.com/atom/atom/issues/18318">[Atom 1.32.0] Does not inherit environment variables when launched not from the command line</a>，但是我已经是最新版了，不应该存在这个问题。但是当我通过 <code>Ctrl-Shift-i</code> 打开 devtools，验证 <code>process.env["http_proxy"]</code>，显示 undefined；而且直接在 source 之后的 terminal 中打开，也显示 undefined。猜想，只对 PATH 有效？或者因为 Juno.jl?</p>
 <p>跳过这个问题，最后直接在 <code>startup.jl</code> 文件中添加</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;http_proxy&quot;</span><span class="p">]</span> <span class="o">=</span> 
+<div class="highlight"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;http_proxy&quot;</span><span class="p">]</span> <span class="o">=</span> 
 <span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;https_proxy&quot;</span><span class="p">]</span>
 </code></pre></div>
 
 <p>进行设置，这参考了 <a href="https://discourse.julialang.org/t/install-packages-behind-the-proxy/23298/2">Install packages behind the proxy</a></p>
 <h2 id="wrong-arrangement-of-multiple-figures-in-a-grid">wrong arrangement of multiple figures in a grid<a class="headerlink" href="#wrong-arrangement-of-multiple-figures-in-a-grid" title="Permanent link">&para;</a></h2>
 <p>Hi, I am confused by the arrangement of multiple figures in a grid. I begin with the example code in the README,</p>
-<div class="codehilite"><pre><span></span><code><span class="n">gui</span> <span class="o">=</span> <span class="n">imshow_gui</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c"># 2 columns, 1 row of images (each initially 300×300)</span>
+<div class="highlight"><pre><span></span><code><span class="n">gui</span> <span class="o">=</span> <span class="n">imshow_gui</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c"># 2 columns, 1 row of images (each initially 300×300)</span>
 <span class="n">canvases</span> <span class="o">=</span> <span class="n">gui</span><span class="p">[</span><span class="s">&quot;canvas&quot;</span><span class="p">]</span>
 <span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;lighthouse&quot;</span><span class="p">))</span>
 <span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;mandrill&quot;</span><span class="p">))</span>
@@ -2202,25 +2202,25 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 </code></pre></div>
 
 <p>it throws an error when accessing <code>canvases[1,2]</code></p>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;mandrill&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;mandrill&quot;</span><span class="p">))</span>
 <span class="n">ERROR</span><span class="o">:</span> <span class="kt">BoundsError</span><span class="o">:</span> <span class="n">attempt</span> <span class="n">to</span> <span class="n">access</span> <span class="mi">2</span><span class="n">×1</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Any</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span> <span class="n">at</span> <span class="n">index</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </code></pre></div>
 
 <p>and I check the size of <code>canvases</code> is</p>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">size</span><span class="p">(</span><span class="n">canvases</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">size</span><span class="p">(</span><span class="n">canvases</span><span class="p">)</span>
 <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 
 <p>it seems that the canvases will arrage by column while the gui declares it should be by rows. </p>
 <p>On the other hand, if I run</p>
-<div class="codehilite"><pre><span></span><code><span class="n">gui</span> <span class="o">=</span> <span class="n">imshow_gui</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c"># 2 columns, 1 row of images (each initially 300×300)</span>
+<div class="highlight"><pre><span></span><code><span class="n">gui</span> <span class="o">=</span> <span class="n">imshow_gui</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c"># 2 columns, 1 row of images (each initially 300×300)</span>
 <span class="n">canvases</span> <span class="o">=</span> <span class="n">gui</span><span class="p">[</span><span class="s">&quot;canvas&quot;</span><span class="p">]</span>
 <span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;lighthouse&quot;</span><span class="p">))</span>
 <span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;mandrill&quot;</span><span class="p">))</span>
 <span class="n">Gtk</span><span class="o">.</span><span class="n">showall</span><span class="p">(</span><span class="n">gui</span><span class="p">[</span><span class="s">&quot;window&quot;</span><span class="p">])</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">gui</span> <span class="o">=</span> <span class="n">imshow_gui</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c"># 2 columns, 1 row of images (each initially 300×300)</span>
+<div class="highlight"><pre><span></span><code><span class="n">gui</span> <span class="o">=</span> <span class="n">imshow_gui</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c"># 2 columns, 1 row of images (each initially 300×300)</span>
 <span class="n">canvases</span> <span class="o">=</span> <span class="n">gui</span><span class="p">[</span><span class="s">&quot;canvas&quot;</span><span class="p">]</span>
 <span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;lighthouse&quot;</span><span class="p">))</span>
 <span class="n">imshow</span><span class="p">(</span><span class="n">canvases</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">testimage</span><span class="p">(</span><span class="s">&quot;mandrill&quot;</span><span class="p">))</span>
@@ -2234,12 +2234,12 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <li>put it into customed folder, such as <code>src</code> under home directory,</li>
 <li>link it to the system path, such as</li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> /usr/local/bin
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /usr/local/bin
 sudo ln -s /home/weiya/src/julia-1.3.1/bin/julia julia1.3.1
 </code></pre></div>
 
 <p>Currently, I have installed the following different versions.</p>
-<div class="codehilite"><pre><span></span><code>$ ll <span class="p">|</span> grep julia
+<div class="highlight"><pre><span></span><code>$ ll <span class="p">|</span> grep julia
 lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 8月  <span class="m">31</span>  <span class="m">2018</span> julia -&gt; /home/weiya/src/julia-1.0.0/bin/julia*
 lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 7月  <span class="m">30</span>  <span class="m">2019</span> julia1.1.1 -&gt; /home/weiya/src/julia-1.1.1/bin/julia*
 lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 9月  <span class="m">18</span> <span class="m">15</span>:28 julia1.2.0 -&gt; /home/weiya/src/julia-1.2.0/bin/julia*
@@ -2247,7 +2247,7 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 </code></pre></div>
 
 <h2 id="array-in-functions">array in functions<a class="headerlink" href="#array-in-functions" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
            <span class="n">x</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
        <span class="k">end</span>
 <span class="n">g</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
