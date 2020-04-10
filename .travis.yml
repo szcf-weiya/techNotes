@@ -1,7 +1,7 @@
 language: python
 install:
-  - pip install mkdocs
-  - pip install mkdocs-material
+  - pip install mkdocs==1.1
+  - pip install mkdocs-material==4.6.3
   - pip install pymdown-extensions
 script:
   - mkdocs build --verbose --clean
