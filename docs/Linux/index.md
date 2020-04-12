@@ -1015,3 +1015,37 @@ sudo python -m SimpleHTTPServer 80
 ```
 
 found in[Open port 80 on Ubuntu server](https://askubuntu.com/questions/646293/open-port-80-on-ubuntu-server)
+
+## 搜狗输入法
+
+需要 fcitx，若没有装，
+
+```bash
+sudo apt-get install fcitx-bin
+sudo apt-get install fcitx-table
+```
+
+然后将输入法切换成 fcitx，在设置中语言那里，
+
+
+最后下载按照搜狗输入法，安装时我出现这样的问题导致安装失败，
+
+> No such key 'Gtk/IMModule' in schema 'org.gnome.settings-daemon.plugins.xsettings' as specified in override file '/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override'; ignoring override for this key.
+
+参考 [Install sogoupinyin on ubuntu 16.04LTS, with error 'Gtk/IMModule'](https://askubuntu.com/questions/883506/install-sogoupinyin-on-ubuntu-16-04lts-with-error-gtk-immodule)，将 `/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override` 中的 `IMModule` 一行改成
+
+```bash
+overrides={'Gtk/IMModule':<'fcitx'>}
+```
+
+然后再运行
+
+```bash
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+```
+
+再次安装便成功了。
+
+最后在语言栏中添加搜狗拼音的输入法即可。
+
+参考 [解决Ubuntu 18.04中文输入法的问题，安装搜狗拼音](https://blog.csdn.net/fx_yzjy101/article/details/80243710)
