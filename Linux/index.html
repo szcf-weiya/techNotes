@@ -1096,6 +1096,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    搜狗输入法
+  </a>
+  
+</li>
+      
       
       
       
@@ -2703,6 +2710,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    搜狗输入法
+  </a>
+  
+</li>
+      
       
       
       
@@ -3404,6 +3418,28 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 </code></pre></div>
 
 <p>found in<a href="https://askubuntu.com/questions/646293/open-port-80-on-ubuntu-server">Open port 80 on Ubuntu server</a></p>
+<h2 id="_24">搜狗输入法<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
+<p>需要 fcitx，若没有装，</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install fcitx-bin
+sudo apt-get install fcitx-table
+</code></pre></div>
+
+<p>然后将输入法切换成 fcitx，在设置中语言那里，</p>
+<p>最后下载按照搜狗输入法，安装时我出现这样的问题导致安装失败，</p>
+<blockquote>
+<p>No such key &lsquo;Gtk/IMModule&rsquo; in schema &lsquo;org.gnome.settings-daemon.plugins.xsettings&rsquo; as specified in override file &lsquo;/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override&rsquo;; ignoring override for this key.</p>
+</blockquote>
+<p>参考 <a href="https://askubuntu.com/questions/883506/install-sogoupinyin-on-ubuntu-16-04lts-with-error-gtk-immodule">Install sogoupinyin on ubuntu 16.04LTS, with error &lsquo;Gtk/IMModule&rsquo;</a>，将 <code>/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override</code> 中的 <code>IMModule</code> 一行改成</p>
+<div class="highlight"><pre><span></span><code><span class="nv">overrides</span><span class="o">={</span><span class="s1">&#39;Gtk/IMModule&#39;</span>:&lt;<span class="s1">&#39;fcitx&#39;</span>&gt;<span class="o">}</span>
+</code></pre></div>
+
+<p>然后再运行</p>
+<div class="highlight"><pre><span></span><code>sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+</code></pre></div>
+
+<p>再次安装便成功了。</p>
+<p>最后在语言栏中添加搜狗拼音的输入法即可。</p>
+<p>参考 <a href="https://blog.csdn.net/fx_yzjy101/article/details/80243710">解决Ubuntu 18.04中文输入法的问题，安装搜狗拼音</a></p>
                 
                   
                 
