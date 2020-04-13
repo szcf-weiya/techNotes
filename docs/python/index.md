@@ -748,3 +748,16 @@ refer to [How to print numpy objects without line breaks](https://stackoverflow.
 ```python
 python -m SimpleHTTPServer 80
 ```
+
+## test and coverage
+
+1. Coverage.py
+2. coveralls
+
+combine the coverage from julia by merging the resulted json file, which need `coveralls-lcov` to convert `LCOV` to `JSON`.
+
+refer to:
+
+- [An Example of Python in Github Action](https://github.com/aodj/icelandreview/actions/runs/33951158/workflow)
+- [Multiple Language Support](https://coveralls-python.readthedocs.io/en/latest/usage/multilang.html)
+- [GitHub: Cell-Video](https://github.com/szcf-weiya/Cell-Video/blob/102153462e7fd65718738bd2ad0ef37d4150f722/.github/workflows/blank.yml)
