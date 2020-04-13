@@ -1090,6 +1090,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#test-and-coverage" class="md-nav__link">
+    test and coverage
+  </a>
+  
+</li>
+      
       
       
       
@@ -2331,6 +2338,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#test-and-coverage" class="md-nav__link">
+    test and coverage
+  </a>
+  
+</li>
+      
       
       
       
@@ -2861,6 +2875,19 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <p><code>python -m</code> lets you run modules as scripts, and it reflects the motto&ndash;&ldquo;batteries included&rdquo;. <a href="http://pythonwise.blogspot.com/2015/01/python-m.html">Here</a> are some powerful features/functions, such as creating a simple http server</p>
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">SimpleHTTPServer</span> <span class="mi">80</span>
 </code></pre></div>
+
+<h2 id="test-and-coverage">test and coverage<a class="headerlink" href="#test-and-coverage" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Coverage.py</li>
+<li>coveralls</li>
+</ol>
+<p>combine the coverage from julia by merging the resulted json file, which need <code>coveralls-lcov</code> to convert <code>LCOV</code> to <code>JSON</code>.</p>
+<p>refer to:</p>
+<ul>
+<li><a href="https://github.com/aodj/icelandreview/actions/runs/33951158/workflow">An Example of Python in Github Action</a></li>
+<li><a href="https://coveralls-python.readthedocs.io/en/latest/usage/multilang.html">Multiple Language Support</a></li>
+<li><a href="https://github.com/szcf-weiya/Cell-Video/blob/102153462e7fd65718738bd2ad0ef37d4150f722/.github/workflows/blank.yml">GitHub: Cell-Video</a></li>
+</ul>
                 
                   
                 
