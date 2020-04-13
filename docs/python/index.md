@@ -740,3 +740,11 @@ print(x_str)
 ```
 
 refer to [How to print numpy objects without line breaks](https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks)
+
+## `-m`
+
+`python -m` lets you run modules as scripts, and it reflects the motto--"batteries included". [Here](http://pythonwise.blogspot.com/2015/01/python-m.html) are some powerful features/functions, such as creating a simple http server
+
+```python
+python -m SimpleHTTPServer 80
+```
