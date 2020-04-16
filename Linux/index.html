@@ -1103,6 +1103,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#install-texlive-2020" class="md-nav__link">
+    Install TeXLive 2020
+  </a>
+  
+</li>
+      
       
       
       
@@ -2717,6 +2724,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#install-texlive-2020" class="md-nav__link">
+    Install TeXLive 2020
+  </a>
+  
+</li>
+      
       
       
       
@@ -3440,6 +3454,22 @@ sudo apt-get install fcitx-table
 <p>再次安装便成功了。</p>
 <p>最后在语言栏中添加搜狗拼音的输入法即可。</p>
 <p>参考 <a href="https://blog.csdn.net/fx_yzjy101/article/details/80243710">解决Ubuntu 18.04中文输入法的问题，安装搜狗拼音</a></p>
+<h2 id="install-texlive-2020">Install TeXLive 2020<a class="headerlink" href="#install-texlive-2020" title="Permanent link">&para;</a></h2>
+<p>The texlive2017 for Ubuntu cannot work for me, it reports</p>
+<blockquote>
+<p>fatal: Could not undump 6994 4-byte item(s) &hellip;</p>
+</blockquote>
+<p>and try </p>
+<blockquote>
+<p>fmtutil-sys &ndash;all</p>
+</blockquote>
+<p>but does not work, refer to <a href="https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from">Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”</a>, but does not work. </p>
+<p>And I also try uninstall and reinstall texlive, but it still does not work.</p>
+<p>Then finally I decided to install the latest TeXLive 2020, <a href="https://tug.org/texlive/quickinstall.html">TeX Live - Quick install</a>, follow the instructions, but note that the mirror url should append <code>path/systems/texlive/tlnet</code>.</p>
+<div class="highlight"><pre><span></span><code>install-tl --location http://mirror.example.org/ctan/path/systems/texlive/tlnet
+</code></pre></div>
+
+<p>And note that the <a href="https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu">steps for compeletely removing the installed TeXLive</a>.</p>
                 
                   
                 
