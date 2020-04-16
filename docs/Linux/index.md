@@ -1049,3 +1049,25 @@ sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
 最后在语言栏中添加搜狗拼音的输入法即可。
 
 参考 [解决Ubuntu 18.04中文输入法的问题，安装搜狗拼音](https://blog.csdn.net/fx_yzjy101/article/details/80243710)
+
+## Install TeXLive 2020
+
+The texlive2017 for Ubuntu cannot work for me, it reports
+
+> fatal: Could not undump 6994 4-byte item(s) ...
+
+and try 
+
+> fmtutil-sys --all
+
+but does not work, refer to [Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”](https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from), but does not work. 
+
+And I also try uninstall and reinstall texlive, but it still does not work.
+
+Then finally I decided to install the latest TeXLive 2020, [TeX Live - Quick install](https://tug.org/texlive/quickinstall.html), follow the instructions, but note that the mirror url should append `path/systems/texlive/tlnet`.
+
+```bash
+install-tl --location http://mirror.example.org/ctan/path/systems/texlive/tlnet
+```
+
+And note that the [steps for compeletely removing the installed TeXLive](https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu).
