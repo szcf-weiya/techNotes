@@ -1,10 +1,16 @@
 # Linux笔记
 
-## Kazam
+## 录屏
+
+### Kazam
 
 Ubuntu 下 kazam 录屏 没声音解决方案
 
 [http://www.cnblogs.com/xn--gzr/p/6195317.html](http://www.cnblogs.com/xn--gzr/p/6195317.html)
+
+### Peek
+
+[homepage](https://github.com/phw/peek), easy to use, can convert to gif.
 
 ## bluebooth
 
