@@ -12,13 +12,6 @@ Ubuntu 下 kazam 录屏 没声音解决方案
 
 [homepage](https://github.com/phw/peek), easy to use, can convert to gif.
 
-## bluebooth
-
-参考[set bluebooth](http://dz.sdut.edu.cn/blog/subaochen/2017/02/ubuntu%E4%B8%8B%E9%80%9A%E8%BF%87%E8%93%9D%E7%89%99%E6%8E%A5%E6%94%B6%E6%89%8B%E6%9C%BA%E5%8F%91%E9%80%81%E7%9A%84%E6%96%87%E4%BB%B6/)
-
-## sogou input problem
-
-参考[input problem](http://pinyin.sogou.com/bbs/forum.php?mod=viewthread&tid=2681098&extra=page%3D1)
 
 ## install win on ubuntu
 
@@ -215,12 +208,6 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 2. 颜色背景色等，直接右键设置，右键设置完成之后便有了一个config文件.
 
 
-## 试图在Ubuntu，rvpn回去
-
-参考的资料有
-1. [vpn-pptp-in-ubuntu-16-04-not-working](https://askubuntu.com/questions/891393/vpn-pptp-in-ubuntu-16-04-not-working)
-
-
 ## flatten pdf file
 
 参考[is-there-a-way-to-flatten-a-pdf-image-from-the-command-line](https://unix.stackexchange.com/questions/162922/is-there-a-way-to-flatten-a-pdf-image-from-the-command-line)
@@ -262,9 +249,6 @@ convert a.png b.png -compress jpeg -resize 1240x1753 \
 
 同时，注意`1240x1753`中间是字母`x`.
 
-## install typora on Linux
-
-参考[Install Typora on Linux](http://support.typora.io/Typora-on-Linux/)
 
 ## Rstudio 不能切换中文输入（fctix）
 
