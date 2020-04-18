@@ -761,3 +761,7 @@ refer to:
 - [An Example of Python in Github Action](https://github.com/aodj/icelandreview/actions/runs/33951158/workflow)
 - [Multiple Language Support](https://coveralls-python.readthedocs.io/en/latest/usage/multilang.html)
 - [GitHub: Cell-Video](https://github.com/szcf-weiya/Cell-Video/blob/102153462e7fd65718738bd2ad0ef37d4150f722/.github/workflows/blank.yml)
+
+## 镜像
+
+通过 `conda` 安装镜像在 `.condarc` 中设置，而通过 `pip` 详见 [pypi 镜像使用帮助](https://mirror.tuna.tsinghua.edu.cn/help/pypi/)
