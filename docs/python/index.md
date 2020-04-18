@@ -764,4 +764,8 @@ refer to:
 
 ## 镜像
 
-通过 `conda` 安装镜像在 `.condarc` 中设置，而通过 `pip` 详见 [pypi 镜像使用帮助](https://mirror.tuna.tsinghua.edu.cn/help/pypi/)
+通过 `conda` 安装镜像在 `.condarc` 中设置，而通过 `pip` 详见 [pypi 镜像使用帮助](https://mirror.tuna.tsinghua.edu.cn/help/pypi/)，临时使用可以运行
+
+```bash
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+```
