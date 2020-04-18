@@ -536,10 +536,6 @@ ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
 1. [Python: significance of -u option?](https://stackoverflow.com/questions/14258500/python-significance-of-u-option)
 2. [后台运行python程序并标准输出到文件](http://www.cnblogs.com/qlshine/p/5926743.html)
 
-## mkdir -p
-
-1. [How to  ]
-
 ## useful commands
 
 1. `cd "$(dirname "$0")"`: [cd current directory](https://stackoverflow.com/questions/3349105/how-to-set-current-working-directory-to-the-directory-of-the-script)
