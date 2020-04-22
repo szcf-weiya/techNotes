@@ -358,3 +358,19 @@ ABSDIR=$(dirname $ABSPATH)
 ```
 
 refer to [darrenderidder/bashpath.sh](https://gist.github.com/darrenderidder/974638)
+
+## if
+
+we can add `&> /dev/null` to hidden the output information in the condition of `if`.
+
+refer to [bash条件判断之if语句](https://blog.51cto.com/64314491/1629175)
+
+## square bracket `[`
+
+```bash
+echo $[ $RANDOM % 2 ]
+echo $[ 1+2 ]
+```
+
+- [shell中的括号（小括号，中括号，大括号）](https://blog.csdn.net/tttyd/article/details/11742241)
+- [What do square brackets mean without the “if” on the left?](https://unix.stackexchange.com/questions/99185/what-do-square-brackets-mean-without-the-if-on-the-left)
