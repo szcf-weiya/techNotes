@@ -92,3 +92,7 @@ $$
 $$
 
 Refer to [Basic question about Fisher Information matrix and relationship to Hessian and standard errors](https://stats.stackexchange.com/questions/68080/basic-question-about-fisher-information-matrix-and-relationship-to-hessian-and-s)
+
+## Prove $\sum_{i=1}^n(y_i-\hat y_i)(\hat y_i-\bar y) = 0$ in linear regression
+
+Note that $X'(Y-X\beta) = 0$, then take the first column of $X$, i.e., the first row of $X'$, then we can get $\sum_{i=1}^ny_i=\sum_{i=1}^n\hat y_i$.
