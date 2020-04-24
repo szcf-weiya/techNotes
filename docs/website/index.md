@@ -486,6 +486,12 @@ Make sure that `gem install commonmarker -v '0.17.13' --source 'https://rubygems
 sudo apt-get install ruby2.4-dev
 ```
 
+这里按照报错信息检查发现 `/usr/lib/ruby/` 文件夹下的确没有 `include` 目录，只有 `2.4`, `2.5` 等目录，则这需要装对应 `ruby` 版本的 `dev`。当我把系统从 Ubuntu 16.04 更新到 Ubuntu 18.04 时，此时系统默认为 `ruby-2.5`,则我需要装的是
+
+```bash
+sudo apt-get install ruby2.5-dev
+```
+
 ~~解决了问题！~~
 
 发现还没有这么简单，总是报错
