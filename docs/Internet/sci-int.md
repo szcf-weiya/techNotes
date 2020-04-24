@@ -28,11 +28,11 @@ ssh -X usename-for-Server@SOME-IP-ADDRESS -p PORT
 
 ```bash
 # Local Laptop
-ssh -L 30002:localhost:30002 my@server
+ssh -L 30002:localhost:30002 [Server's Username]@[Server's Public IP]
 # my server
-ssh -D 30002 -p 30001 my@inner-server
+ssh -D 30002 -p 30001 [Inner-Server's Username]@localhost
 # my innerserver
-ssh -R 30001:localhost:22 my@server
+ssh -R 30001:localhost:22 [Server's Username]@[Server's Public IP]
 ```
 
 这样只能在 ssh 访问内网资源，可以通过 chrome 的 SwithyOmega 插件实现在浏览器中访问内网，效果和登录 VPN 一样，可以正常下文献。

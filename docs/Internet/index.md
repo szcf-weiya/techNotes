@@ -347,11 +347,11 @@ ssh -D 30002 my@server
 
 ```bash
 # Local Laptop
-ssh -L 30002:localhost:30002 my@server
+ssh -L 30002:localhost:30002 [Server's Username]@[Server's Public IP]
 # my server
-ssh -D 30002 -p 30001 my@inner-server
+ssh -D 30002 -p 30001 [Inner-Server's Username]@localhost
 # my innerserver
-ssh -R 30001:localhost:22 my@server
+ssh -R 30001:localhost:22 [Server's Username]@[Server's Public IP]
 ```
 
 然后在 SwitchyOmega 中添加 socks5://127.0.0.1:30002 即可访问内网资源。
@@ -363,7 +363,7 @@ ssh -gD 30002 -p 30001 my@inner-server
 
 其中 `-g` 表示允许远程连接，则在 SwitchyOmega 中添加 socks5://my-server:30002 亦可访问内网资源，但这样不够安全，因为似乎所有知道你 server address 都可以访问内网资源，除非特别配置 my server 的安全组，但是应该不是很好，因为你本地的 public ip 是动态分配的，安全组的作用不大。
 
-参考 [玩转SSH端口转发](https://blog.fundebug.com/2017/04/24/ssh-port-forwarding/)
+参考 [玩转SSH端口转发](https://blog.fundebug.com/2017/04/24/ssh-port-forwarding/) 和 [使用SSH反向隧道实现内网穿透](https://zhuanlan.zhihu.com/p/34908698)
 
 有时候可能需要重新连接一下，但是会出现端口占用的问题，
 
