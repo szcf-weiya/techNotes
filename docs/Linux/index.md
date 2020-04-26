@@ -1066,7 +1066,7 @@ sudo snap install okular
 
 > Okular does not support removable media while installed as Snap. 
 
-于是卸掉 snap 版的 okular，转而按照 apt 版本的，
+于是卸掉 snap 版的 okular，转而安装 apt 版本的，
 
 ```bash
 sudo apt-get install okular
