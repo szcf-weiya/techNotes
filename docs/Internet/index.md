@@ -378,6 +378,12 @@ lsof -i:30002
 kill -s 9 pid
 ```
 
+在某些机子上发现运行 `ssh -D` 会报出，
+
+> bind: Cannot assign requested address
+
+但是还是可以 ssh 到目标服务器。[找到类似的问题](https://serverfault.com/questions/444295/ssh-tunnel-bind-cannot-assign-requested-address)，然后解决方案是加上 `-4` 来表示 ipv4，但是不懂原因
+
 ## 带宽、网速和流量
 
 单位：
