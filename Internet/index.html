@@ -1898,6 +1898,11 @@ ssh -D <span class="m">30002</span> -p <span class="m">30001</span> <span class=
 <div class="highlight"><pre><span></span><code><span class="nb">kill</span> -s <span class="m">9</span> pid
 </code></pre></div>
 
+<p>在某些机子上发现运行 <code>ssh -D</code> 会报出，</p>
+<blockquote>
+<p>bind: Cannot assign requested address</p>
+</blockquote>
+<p>但是还是可以 ssh 到目标服务器。<a href="https://serverfault.com/questions/444295/ssh-tunnel-bind-cannot-assign-requested-address">找到类似的问题</a>，然后解决方案是加上 <code>-4</code> 来表示 ipv4，但是不懂原因</p>
 <h2 id="_10">带宽、网速和流量<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>单位：</p>
 <ul>
