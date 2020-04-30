@@ -3426,6 +3426,30 @@ sudo apt-get install fcitx-table
 <p>于是卸掉 snap 版的 okular，转而安装 apt 版本的，</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install okular
 </code></pre></div>
+
+<p>发现有些图标不能正常显示，网上也找到了类似的问题，</p>
+<ul>
+<li><a href="https://askubuntu.com/questions/1007563/kde-application-icon-not-displayed-in-ubuntu">KDE application icon not displayed in Ubuntu</a></li>
+<li><a href="https://askubuntu.com/questions/999551/state-of-okular-in-ubuntu-17-10">State of Okular in Ubuntu 17.10?</a></li>
+</ul>
+<p>尝试了其中的解决方案，但均未成功，最后的解决方案是 <a href="https://bugs.launchpad.net/ubuntu/+source/okular/+bug/1698656">navigation panel icons missing on standard install of 17.04</a></p>
+<div class="highlight"><pre><span></span><code>As a workaround, what worked <span class="k">for</span> me was:
+
+$ sudo apt install systemsettings kde-config-gtk-style kde-config-gtk-style-preview oxygen-icon-theme
+
+* systemsettings <span class="k">for</span> the app systemsettings5<span class="p">;</span>
+
+* kde-config-gtk-style enables the Appearance module in systemsettings5<span class="p">;</span>
+
+* kde-config-gtk-style-preview allows previewing the themes without restarting the GTK applications<span class="p">;</span>
+
+* oxygen-icon-theme is an alternative theme to use in KDE applications.
+
+Then, run systemsettings5, click on Application Style, <span class="k">select</span> Oxygen as a Fallback theme, click on Apply.
+</code></pre></div>
+
+<p>最后我的配置是</p>
+<p><img alt="" src="okular-icons.png" /></p>
                 
                   
                 
