@@ -1098,3 +1098,5 @@ Then, run systemsettings5, click on Application Style, select Oxygen as a Fallba
 最后我的配置是
 
 ![](okular-icons.png)
+
+可以尝试不同配置，因为刚开始打开的，似乎并不是之前系统的配置。
