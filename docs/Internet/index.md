@@ -384,6 +384,30 @@ kill -s 9 pid
 
 但是还是可以 ssh 到目标服务器。[找到类似的问题](https://serverfault.com/questions/444295/ssh-tunnel-bind-cannot-assign-requested-address)，然后解决方案是加上 `-4` 来表示 ipv4，但是不懂原因
 
+### autossh
+
+为了让 ssh 程序在断开后重连，采用 [autossh](https://www.harding.motd.ca/autossh/)。在内网服务器上运行，
+
+```bash
+./autossh -M 30000 -o "StrictHostKeyChecking=false" -o "ServerAliveInterval 10" -o "ServerAliveCountMax 3" -NR 30003:localhost:22 xxx@xx.xx.xx.xx
+```
+
+通过 `ps -aef` 发现其调用了，
+
+```bash
+/usr/bin/ssh -L 30000:127.0.0.1:30000 -R 30000:127.0.0.1:30001 -o StrictHostKeyChecking=false -o ServerAliveInterval 10 -o ServerAliveCountMax 3 -NR 30003:localhost:22 xxx@xx.xx.xx.xx
+```
+
+而且如果 kill 掉这个进程，则会立即重新运行一个完全一样的。对于多出来的 `30001` 端口很是奇怪，因为我没有指定。直到学习了下 [autossh 的原理](https://blog.csdn.net/wesleyflagon/article/details/85304336)之后才恍然大悟. 
+
+监视端口 `-M port[:echo_port]` 算是最重要的参数了，这里只指定了 `port` 为 30000，则
+
+- `-L 30000:127.0.0.1:30000` 将发送到**本地端口 30000** (第一个 30000)的请求转发到**目标地址的目标端口**（`127.0.0.1:30000`， 即 `xx.xx.xx.xx:30000`）
+- `-R 30000:127.0.0.1:30001` 将发送到**远程端口 30000** (第一个 30000，对应 `xx.xx.xx.xx:30000`）的请求转发到**目标地址的目标端口**（`127.0.0.1:30001`，即本地的 30001 端口）
+- 上面一来一会就形成一个闭环。内网服务器定期往 30000 端口发送检测消息，如果链路正常，则 30000 端口的消息先转发到 `xx.xx.xx.xx` 的 30000 端口，然后立即转送到内网服务器的 30001 端口。
+
+![](autossh.png)
+
 ## 带宽、网速和流量
 
 单位：
