@@ -1071,3 +1071,30 @@ sudo snap install okular
 ```bash
 sudo apt-get install okular
 ```
+
+发现有些图标不能正常显示，网上也找到了类似的问题，
+
+- [KDE application icon not displayed in Ubuntu](https://askubuntu.com/questions/1007563/kde-application-icon-not-displayed-in-ubuntu)
+- [State of Okular in Ubuntu 17.10?](https://askubuntu.com/questions/999551/state-of-okular-in-ubuntu-17-10)
+
+尝试了其中的解决方案，但均未成功，最后的解决方案是 [navigation panel icons missing on standard install of 17.04](https://bugs.launchpad.net/ubuntu/+source/okular/+bug/1698656)
+
+```bash
+As a workaround, what worked for me was:
+
+$ sudo apt install systemsettings kde-config-gtk-style kde-config-gtk-style-preview oxygen-icon-theme
+
+* systemsettings for the app systemsettings5;
+
+* kde-config-gtk-style enables the Appearance module in systemsettings5;
+
+* kde-config-gtk-style-preview allows previewing the themes without restarting the GTK applications;
+
+* oxygen-icon-theme is an alternative theme to use in KDE applications.
+
+Then, run systemsettings5, click on Application Style, select Oxygen as a Fallback theme, click on Apply.
+```
+
+最后我的配置是
+
+![](okular-icons.png)
