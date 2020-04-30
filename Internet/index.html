@@ -886,6 +886,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#autossh" class="md-nav__link">
+    autossh
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1589,6 +1596,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#autossh" class="md-nav__link">
+    autossh
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1903,6 +1917,23 @@ ssh -D <span class="m">30002</span> -p <span class="m">30001</span> <span class=
 <p>bind: Cannot assign requested address</p>
 </blockquote>
 <p>但是还是可以 ssh 到目标服务器。<a href="https://serverfault.com/questions/444295/ssh-tunnel-bind-cannot-assign-requested-address">找到类似的问题</a>，然后解决方案是加上 <code>-4</code> 来表示 ipv4，但是不懂原因</p>
+<h3 id="autossh">autossh<a class="headerlink" href="#autossh" title="Permanent link">&para;</a></h3>
+<p>为了让 ssh 程序在断开后重连，采用 <a href="https://www.harding.motd.ca/autossh/">autossh</a>。在内网服务器上运行，</p>
+<div class="highlight"><pre><span></span><code>./autossh -M <span class="m">30000</span> -o <span class="s2">&quot;StrictHostKeyChecking=false&quot;</span> -o <span class="s2">&quot;ServerAliveInterval 10&quot;</span> -o <span class="s2">&quot;ServerAliveCountMax 3&quot;</span> -NR <span class="m">30003</span>:localhost:22 xxx@xx.xx.xx.xx
+</code></pre></div>
+
+<p>通过 <code>ps -aef</code> 发现其调用了，</p>
+<div class="highlight"><pre><span></span><code>/usr/bin/ssh -L <span class="m">30000</span>:127.0.0.1:30000 -R <span class="m">30000</span>:127.0.0.1:30001 -o <span class="nv">StrictHostKeyChecking</span><span class="o">=</span><span class="nb">false</span> -o ServerAliveInterval <span class="m">10</span> -o ServerAliveCountMax <span class="m">3</span> -NR <span class="m">30003</span>:localhost:22 xxx@xx.xx.xx.xx
+</code></pre></div>
+
+<p>而且如果 kill 掉这个进程，则会立即重新运行一个完全一样的。对于多出来的 <code>30001</code> 端口很是奇怪，因为我没有指定。直到学习了下 <a href="https://blog.csdn.net/wesleyflagon/article/details/85304336">autossh 的原理</a>之后才恍然大悟. </p>
+<p>监视端口 <code>-M port[:echo_port]</code> 算是最重要的参数了，这里只指定了 <code>port</code> 为 30000，则</p>
+<ul>
+<li><code>-L 30000:127.0.0.1:30000</code> 将发送到<strong>本地端口 30000</strong> (第一个 30000)的请求转发到<strong>目标地址的目标端口</strong>（<code>127.0.0.1:30000</code>， 即 <code>xx.xx.xx.xx:30000</code>）</li>
+<li><code>-R 30000:127.0.0.1:30001</code> 将发送到<strong>远程端口 30000</strong> (第一个 30000，对应 <code>xx.xx.xx.xx:30000</code>）的请求转发到<strong>目标地址的目标端口</strong>（<code>127.0.0.1:30001</code>，即本地的 30001 端口）</li>
+<li>上面一来一会就形成一个闭环。内网服务器定期往 30000 端口发送检测消息，如果链路正常，则 30000 端口的消息先转发到 <code>xx.xx.xx.xx</code> 的 30000 端口，然后立即转送到内网服务器的 30001 端口。</li>
+</ul>
+<p><img alt="" src="autossh.png" /></p>
 <h2 id="_10">带宽、网速和流量<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>单位：</p>
 <ul>
