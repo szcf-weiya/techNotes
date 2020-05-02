@@ -774,3 +774,11 @@ julia> x'
 ```
 
 Note that sometimes `.+=` may make the program much slower, such as https://github.com/szcf-weiya/en/blob/3c8daeb4e0f477f5ea40dc2bb44d832faa4bbbb6/code/2019-06-14-ML/GD2.jl#L10
+
+## 同时安装多个 package
+
+用空格隔开，如
+
+```julia
+add Distributions Combinatorics MATLAB PyPlot LightGraphsFlows LightGraphs Clp Plots
+```
