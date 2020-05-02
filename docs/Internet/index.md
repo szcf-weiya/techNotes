@@ -178,6 +178,47 @@ Ubuntu下配置rvpn，需要浏览器启用JAVA插件，但新版本的chrome和
 proxychains curl ip.cn
 ```
 
+### `LD_PRELOAD cannot be preloaded`
+
+在 Ubuntu 16.04 上用得好好的，但是在更新后的 Ubuntu 18.04 上使用时，报出
+
+```bash
+~$ proxychains ping www.google.com
+ProxyChains-3.1 (http://proxychains.sf.net)
+ERROR: ld.so: object 'libproxychains.so.3' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+PING www.google.com (199.16.156.7) 56(84) bytes of data.
+```
+
+参考 [proxychains LD_PRELOAD cannot be preloaded](https://askubuntu.com/questions/293649/proxychains-ld-preload-cannot-be-preloaded)，将 `/usr/bin/proxychains` 中的
+
+```bash
+export LD_PRELOAD=libproxychains.so.3
+```
+
+改到实际 `libproxychains.so.3` 的位置，这可以通过 locate 来确定。
+
+另外注意到
+
+```bash
+~$ proxychains ping www.google.com
+ProxyChains-3.1 (http://proxychains.sf.net)
+PING www.google.com (199.59.149.244) 56(84) bytes of data.
+^C
+--- www.google.com ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1019ms
+```
+
+并不会出现类似 `curl` 时的 chain
+
+```bash
+~$ proxychains curl ipinfo.io/ip
+ProxyChains-3.1 (http://proxychains.sf.net)
+|DNS-request| ipinfo.io 
+|S-chain|-<>-127.0.0.1:30002-<><>-4.2.2.2:53-<><>-OK
+|DNS-response| ipinfo.io is 216.239.38.21
+|S-chain|-<>-127.0.0.1:30002-<><>-216.239.38.21:80-<><>-OK
+```
+
 ## hosts文件原理
 
 有段时间是采用更改hosts文件来访问谷歌，但其背后的原理一直不甚清楚。突然想到这个问题，看了下面的两个博客，大致明白了。
