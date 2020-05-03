@@ -77,3 +77,15 @@ Caused by: java.io.IOException: Connecting to ×××× timed out (120000 ms)
 4. AWS 结点间免密登录
 
 [Passwordless ssh between two AWS instances](https://markobigdata.com/2018/04/29/passwordless-ssh-between-two-aws-instances/)
+
+## Slurm
+
+[学校服务器](https://www.cuhk.edu.hk/itsc/hpc/slurm.html)采用 Slurm，而系里服务器采用 PBS，常用等价格式如下：
+
+```bash
+# PBS
+qsub -l nodes=2:ppn=16 -l mem=8g -N jobname -m be -M notify@cuhk.edu.hk
+# Slurm
+sbatch -N 2 -c 16 --mem=8g -J jobname --mail-type=[BEGIN,END,FAIL,REQUEUE,ALL] --mail-user=notify@cuhk.edu.hk
+```
+
