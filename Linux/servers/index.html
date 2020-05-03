@@ -364,6 +364,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#slurm" class="md-nav__link">
+    Slurm
+  </a>
+  
+</li>
+      
       
       
       
@@ -1191,6 +1198,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#slurm" class="md-nav__link">
+    Slurm
+  </a>
+  
+</li>
+      
       
       
       
@@ -1263,6 +1277,13 @@
 <li>AWS 结点间免密登录</li>
 </ol>
 <p><a href="https://markobigdata.com/2018/04/29/passwordless-ssh-between-two-aws-instances/">Passwordless ssh between two AWS instances</a></p>
+<h2 id="slurm">Slurm<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.cuhk.edu.hk/itsc/hpc/slurm.html">学校服务器</a>采用 Slurm，而系里服务器采用 PBS，常用等价格式如下：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># PBS</span>
+qsub -l <span class="nv">nodes</span><span class="o">=</span><span class="m">2</span>:ppn<span class="o">=</span><span class="m">16</span> -l <span class="nv">mem</span><span class="o">=</span>8g -N jobname -m be -M notify@cuhk.edu.hk
+<span class="c1"># Slurm</span>
+sbatch -N <span class="m">2</span> -c <span class="m">16</span> --mem<span class="o">=</span>8g -J jobname --mail-type<span class="o">=[</span>BEGIN,END,FAIL,REQUEUE,ALL<span class="o">]</span> --mail-user<span class="o">=</span>notify@cuhk.edu.hk
+</code></pre></div>
                 
                   
                 
