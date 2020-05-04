@@ -73,6 +73,8 @@ tmux attach-session -t [NUM]
 tmux attach -t [NUM]
 # more simplify
 tmux a -t [NUM]
+# complete reset: https://stackoverflow.com/questions/38295615/complete-tmux-reset
+tmux kill-server
 ```
 
 refer to [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it) and [Getting started with Tmux](https://linuxize.com/post/getting-started-with-tmux/)
