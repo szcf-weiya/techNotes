@@ -1102,3 +1102,21 @@ Then, run systemsettings5, click on Application Style, select Oxygen as a Fallba
 ![](okular-icons.png)
 
 可以尝试不同配置，因为刚开始打开的，似乎并不是之前系统的配置。
+
+### latex in annotation
+
+okular 的 note 功能支持 LaTeX，当输入 `$$...$$` 时会提示要不要转换为 latex，点击后但是报错，
+
+```bash
+latex is not executable
+```
+
+注意到 `latex` 的 PATH 是定义在 `.bashrc` 中，而通过 zotero 调用 okular 时并不会 source `.bashrc`，只有通过 bash shell 调用的程序采用 source 到 .bashrc，也就是在终端中调用 okular 时，latex 显示正常。
+
+研究图形界面程序调用 path 的机制似乎是一种解决方案，但觉得可能过于复杂，其实之前在 atom 中也出现过类似的问题。于是我采用更简单的方案，在 `/usr/bin` 中添加 `latex` 的 soft link，添加后报了新错，
+
+```bash
+dvipng is not executable
+```
+
+但至少证明这条思路是可行的，于是继续添加 `dvipng` 的 soft link，最后解决了问题！
