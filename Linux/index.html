@@ -1086,6 +1086,19 @@
     Okular
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#latex-in-annotation" class="md-nav__link">
+    latex in annotation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -2685,6 +2698,19 @@
     Okular
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#latex-in-annotation" class="md-nav__link">
+    latex in annotation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -3453,6 +3479,17 @@ Then, run systemsettings5, click on Application Style, <span class="k">select</s
 <p>最后我的配置是</p>
 <p><img alt="" src="okular-icons.png" /></p>
 <p>可以尝试不同配置，因为刚开始打开的，似乎并不是之前系统的配置。</p>
+<h3 id="latex-in-annotation">latex in annotation<a class="headerlink" href="#latex-in-annotation" title="Permanent link">&para;</a></h3>
+<p>okular 的 note 功能支持 LaTeX，当输入 <code>$$...$$</code> 时会提示要不要转换为 latex，点击后但是报错，</p>
+<div class="highlight"><pre><span></span><code>latex is not executable
+</code></pre></div>
+
+<p>注意到 <code>latex</code> 的 PATH 是定义在 <code>.bashrc</code> 中，而通过 zotero 调用 okular 时并不会 source <code>.bashrc</code>，只有通过 bash shell 调用的程序采用 source 到 .bashrc，也就是在终端中调用 okular 时，latex 显示正常。</p>
+<p>研究图形界面程序调用 path 的机制似乎是一种解决方案，但觉得可能过于复杂，其实之前在 atom 中也出现过类似的问题。于是我采用更简单的方案，在 <code>/usr/bin</code> 中添加 <code>latex</code> 的 soft link，添加后报了新错，</p>
+<div class="highlight"><pre><span></span><code>dvipng is not executable
+</code></pre></div>
+
+<p>但至少证明这条思路是可行的，于是继续添加 <code>dvipng</code> 的 soft link，最后解决了问题！</p>
                 
                   
                 
