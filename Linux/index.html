@@ -3485,7 +3485,8 @@ Then, run systemsettings5, click on Application Style, <span class="k">select</s
 </code></pre></div>
 
 <p>注意到 <code>latex</code> 的 PATH 是定义在 <code>.bashrc</code> 中，而通过 zotero 调用 okular 时并不会 source <code>.bashrc</code>，只有通过 bash shell 调用的程序采用 source 到 .bashrc，也就是在终端中调用 okular 时，latex 显示正常。</p>
-<p>研究图形界面程序调用 path 的机制似乎是一种解决方案，但觉得可能过于复杂，其实之前在 atom 中也出现过类似的问题。于是我采用更简单的方案，在 <code>/usr/bin</code> 中添加 <code>latex</code> 的 soft link，添加后报了新错，</p>
+<p>研究图形界面程序调用 path 的机制似乎是一种解决方案，但觉得可能过于复杂，其实之前在 atom 中也出现过类似的问题。可能的方案是在 <code>.profile</code> 中添加 PATH，可能有用的<a href="https://medium.com/@abhinavkorpal/bash-profile-vs-bashrc-c52534a787d3">参考博客</a>。</p>
+<p>于是我采用更简单的方案，在 <code>/usr/bin</code> 中添加 <code>latex</code> 的 soft link，添加后报了新错，</p>
 <div class="highlight"><pre><span></span><code>dvipng is not executable
 </code></pre></div>
 
