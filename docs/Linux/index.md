@@ -1123,3 +1123,64 @@ dvipng is not executable
 
 但至少证明这条思路是可行的，于是继续添加 `dvipng` 的 soft link，最后解决了问题！
 
+## WeChat in Linux
+
+起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！
+
+docker 了解一点，知道如果成功，以后安装卸载会很简单，于是使用 https://github.com/huan/docker-wechat 提供的 docker image，但是后来输入时文本不可见的问题很恼人 https://github.com/huan/docker-wechat/issues/40，也不知道怎么解决。
+
+想到作者的 docker 是在 19.10 上构建的，在想会不会与我的 18.04 不够兼容，所以想着自己修改 docker，其实都已经 fork 好了，但是由于 wine 对 18.04 的支持有个问题，https://forum.winehq.org/viewtopic.php?f=8&t=32192，虽说可能跟输入法也不太有关，但是还是试着装这个，后面改写 docker file 时重新 build 总是出问题，一直没解决，所以决定放弃。
+
+于是差不多想放弃 docker 了，想直接安装 wine，弊端似乎也就是卸载会有点繁，但是如果安装成功，那就用着呗，也不用卸载了。
+
+于是参考 [WeChat Desktop on Linux](https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux)
+
+1. install WineHQ: https://wiki.winehq.org/Ubuntu_zhcn
+
+```bash
+The following packages have unmet dependencies:
+ gstreamer1.0-plugins-good : Breaks: gstreamer1.0-plugins-ugly (< 1.13.1) but 1.8.3-1ubuntu0.1 is to be installed
+ winehq-stable : Depends: wine-stable (= 5.0.0~bionic)
+E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by held packages.
+```
+
+solution
+
+```bash
+# (re)install gstreamer1.0-plugins-good and gstreamer1.0-plugins-ugly
+sudo apt-get install gstreamer1.0-plugins-good
+sudo apt-get install gstreamer1.0-plugins-ugly
+```
+
+```bash
+Error: winehq-stable : Depends: wine-stable (= 5.0.0~bionic)
+```
+
+It is due to [FAudio for Debian 10 and Ubuntu 18.04](https://forum.winehq.org/viewtopic.php?f=8&t=32192), and 
+
+> The quickest and easiest way to satisfy the new dependency is to download and install both the i386 and amd64 libfaudio0 packages before attempting to upgrade or install a WineHQ package.
+
+seems does not work. I need to add the repository as suggested in [Error: winehq-stable : Depends: wine-stable (= 5.0.0~bionic)](https://nixytrix.com/error-winehq-stable-depends-wine-stable-5-0-0-bionic/)
+
+```bash
+curl -sL https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key | sudo apt-key add -
+sudo apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./'
+```
+
+but seems not due to this, and follow the instruction in [docs/WineDependencies.md](https://github.com/lutris/docs/blob/master/WineDependencies.md)
+
+```bash
+sudo apt-get install libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386
+```
+
+then the problem is solved. And continue to follow the steps in [WeChat Desktop on Linux](https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux)
+
+## proxy for apt
+
+`proxychains` seems not work well before `sudo` or after `sudo`, and I dont want to add a system proxy permanently, then I found a temporary way,
+
+```bash
+sudo http_proxy='http://user:pass@proxy.example.com:8080/' apt-get install package-name
+```
+
+refer to [how to install packages with apt-get on a system connected via proxy?](https://askubuntu.com/questions/89437/how-to-install-packages-with-apt-get-on-a-system-connected-via-proxy)
