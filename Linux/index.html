@@ -1101,6 +1101,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wechat-in-linux" class="md-nav__link">
+    WeChat in Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-for-apt" class="md-nav__link">
+    proxy for apt
+  </a>
+  
+</li>
+      
       
       
       
@@ -2713,6 +2727,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wechat-in-linux" class="md-nav__link">
+    WeChat in Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-for-apt" class="md-nav__link">
+    proxy for apt
+  </a>
+  
+</li>
+      
       
       
       
@@ -3491,6 +3519,50 @@ Then, run systemsettings5, click on Application Style, <span class="k">select</s
 </code></pre></div>
 
 <p>但至少证明这条思路是可行的，于是继续添加 <code>dvipng</code> 的 soft link，最后解决了问题！</p>
+<h2 id="wechat-in-linux">WeChat in Linux<a class="headerlink" href="#wechat-in-linux" title="Permanent link">&para;</a></h2>
+<p>起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！</p>
+<p>docker 了解一点，知道如果成功，以后安装卸载会很简单，于是使用 https://github.com/huan/docker-wechat 提供的 docker image，但是后来输入时文本不可见的问题很恼人 https://github.com/huan/docker-wechat/issues/40，也不知道怎么解决。</p>
+<p>想到作者的 docker 是在 19.10 上构建的，在想会不会与我的 18.04 不够兼容，所以想着自己修改 docker，其实都已经 fork 好了，但是由于 wine 对 18.04 的支持有个问题，https://forum.winehq.org/viewtopic.php?f=8&amp;t=32192，虽说可能跟输入法也不太有关，但是还是试着装这个，后面改写 docker file 时重新 build 总是出问题，一直没解决，所以决定放弃。</p>
+<p>于是差不多想放弃 docker 了，想直接安装 wine，弊端似乎也就是卸载会有点繁，但是如果安装成功，那就用着呗，也不用卸载了。</p>
+<p>于是参考 <a href="https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux">WeChat Desktop on Linux</a></p>
+<ol>
+<li>install WineHQ: https://wiki.winehq.org/Ubuntu_zhcn</li>
+</ol>
+<div class="highlight"><pre><span></span><code>The following packages have unmet dependencies:
+ gstreamer1.0-plugins-good : Breaks: gstreamer1.0-plugins-ugly <span class="o">(</span>&lt; <span class="m">1</span>.13.1<span class="o">)</span> but <span class="m">1</span>.8.3-1ubuntu0.1 is to be installed
+ winehq-stable : Depends: wine-stable <span class="o">(=</span> <span class="m">5</span>.0.0~bionic<span class="o">)</span>
+E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by held packages.
+</code></pre></div>
+
+<p>solution</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># (re)install gstreamer1.0-plugins-good and gstreamer1.0-plugins-ugly</span>
+sudo apt-get install gstreamer1.0-plugins-good
+sudo apt-get install gstreamer1.0-plugins-ugly
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Error: winehq-stable : Depends: wine-stable <span class="o">(=</span> <span class="m">5</span>.0.0~bionic<span class="o">)</span>
+</code></pre></div>
+
+<p>It is due to <a href="https://forum.winehq.org/viewtopic.php?f=8&amp;t=32192">FAudio for Debian 10 and Ubuntu 18.04</a>, and </p>
+<blockquote>
+<p>The quickest and easiest way to satisfy the new dependency is to download and install both the i386 and amd64 libfaudio0 packages before attempting to upgrade or install a WineHQ package.</p>
+</blockquote>
+<p>seems does not work. I need to add the repository as suggested in <a href="https://nixytrix.com/error-winehq-stable-depends-wine-stable-5-0-0-bionic/">Error: winehq-stable : Depends: wine-stable (= 5.0.0~bionic)</a></p>
+<div class="highlight"><pre><span></span><code>curl -sL https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key <span class="p">|</span> sudo apt-key add -
+sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./&#39;</span>
+</code></pre></div>
+
+<p>but seems not due to this, and follow the instruction in <a href="https://github.com/lutris/docs/blob/master/WineDependencies.md">docs/WineDependencies.md</a></p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386
+</code></pre></div>
+
+<p>then the problem is solved. And continue to follow the steps in <a href="https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux">WeChat Desktop on Linux</a></p>
+<h2 id="proxy-for-apt">proxy for apt<a class="headerlink" href="#proxy-for-apt" title="Permanent link">&para;</a></h2>
+<p><code>proxychains</code> seems not work well before <code>sudo</code> or after <code>sudo</code>, and I dont want to add a system proxy permanently, then I found a temporary way,</p>
+<div class="highlight"><pre><span></span><code>sudo <span class="nv">http_proxy</span><span class="o">=</span><span class="s1">&#39;http://user:pass@proxy.example.com:8080/&#39;</span> apt-get install package-name
+</code></pre></div>
+
+<p>refer to <a href="https://askubuntu.com/questions/89437/how-to-install-packages-with-apt-get-on-a-system-connected-via-proxy">how to install packages with apt-get on a system connected via proxy?</a></p>
                 
                   
                 
