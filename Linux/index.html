@@ -1106,6 +1106,46 @@
     WeChat in Linux
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    窗口轮廓阴影
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    开机自启动
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop" class="md-nav__link">
+    修改 desktop 文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-id" class="md-nav__link">
+    window id
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2732,6 +2772,46 @@
     WeChat in Linux
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    窗口轮廓阴影
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    开机自启动
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop" class="md-nav__link">
+    修改 desktop 文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#window-id" class="md-nav__link">
+    window id
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3557,6 +3637,59 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 </code></pre></div>
 
 <p>then the problem is solved. And continue to follow the steps in <a href="https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux">WeChat Desktop on Linux</a></p>
+<h3 id="_25">窗口轮廓阴影<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p>当从微信切换到其他软件时，会留下一个窗口轮廓阴影。再一次感叹 google 的强大，本来这个问题我都不知道怎么搜索，但只给了 “wine wechat” 和 “窗口轮廓” 这两个关键词后，就找到了两种解决方案：</p>
+<ul>
+<li><a href="https://manateelazycat.github.io/linux/2019/09/29/wechat-transparent-window.html">解决Linux下微信透明窗口的问题</a>：切换微信后，直接关掉窗口，侧边栏也不在有微信的窗口，再次启动需要点击顶部栏的图标</li>
+<li><a href="https://www.wootec.top/2020/02/16/wine-wechat%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">wine-wechat 窗口阴影置顶解决方案</a>：通过 <code>xdotool</code> 去除窗口阴影。之前折腾 docker-wechat 就看到<a href="https://www.kpromise.top/run-wechat-in-linux/">有人提到 <code>xdotool</code></a></li>
+</ul>
+<p>更偏向第二种策略，后来尝试了一下也确实觉得第二种好用，当然我都有折腾过。</p>
+<p>其实策略本身很简单，而且都可以即时运行一下脚本，就能感受效果，但是在脚本自动化那里花了挺长时间。</p>
+<p>策略二本来推荐的是通过修改 wechat 的启动程序，但是因为我的启动程序是通过 wine 实现的，这一点似乎跟博客中不一样，我只找到一个 <code>WeChat.desktop</code> 文件，也没把握直接修改。所以我先去尝试了开机自启动</p>
+<h4 id="_26">开机自启动<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
+<p>实现方案有很多，但总想找种最简单的，有考虑 systemd service， <a href="https://askubuntu.com/questions/1151080/how-do-i-run-a-script-as-sudo-at-boot-time-on-ubuntu-18-04-server">How do I run a script as sudo at boot time on Ubuntu 18.04 Server?</a></p>
+<p>中间也有试过 <code>/etc/init.d</code>，<a href="https://blog.csdn.net/hcx25909/article/details/9068497">Ubuntu下添加开机启动脚本</a>，但是报出 warning </p>
+<blockquote>
+<p>warning: /etc/init.d/test missing LSB information</p>
+</blockquote>
+<p>有点不放心。</p>
+<p>另外还想到直接在 <code>.profile</code> 中添加运行程序，这应该算是最简单的方式，这在 <a href="https://blog.csdn.net/qq_14989227/article/details/79227283">Ubuntu添加和设置开机自动启动程序的方法</a> 中有更系统的总结。</p>
+<p>但是后来才发现，开机自启动并不适用于策略二提供的脚本，因为在判断没有微信时，程序会自动退出去。本来也想着简单改下使其能够始终运行，但是觉得这种不如原作者的更优，白白占用内存。</p>
+<h3 id="desktop">修改 desktop 文件<a class="headerlink" href="#desktop" title="Permanent link">&para;</a></h3>
+<p>这个关键点在于，使其能够同时运行 wine 和 <code>disable-wechat-shadow.py</code> 脚本文件，原 <code>WeChat.desktop</code> 文件为</p>
+<div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span> wine C:<span class="se">\\\\</span>windows<span class="se">\\\\</span>command<span class="se">\\\\</span>start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start<span class="se">\\</span> Menu/Programs/WeChat/WeChat.lnk
+</code></pre></div>
+
+<p>第一种尝试便是直接加上 <code>&amp; python3 /home/weiya/disable-wechat-shadow.py</code>，但是似乎当做了 wine 的 argument，这一点<a href="https://askubuntu.com/a/461495">@mango</a>也指出</p>
+<blockquote>
+<p>The <code>Exec</code> key must contain a command line. A command line consists of an executable program optionally followed by one or more arguments.</p>
+</blockquote>
+<p>第二种便是通过 <code>sh -c</code>，即</p>
+<div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span> sh -c <span class="s2">&quot;wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py&quot;</span>
+</code></pre></div>
+
+<p>但是这个经常报出错误</p>
+<blockquote>
+<p>key &ldquo;Exec&rdquo; in group &ldquo;Desktop Entry&rdquo; contains a quote which is not closed</p>
+</blockquote>
+<p>很纳闷，觉得这不应该啊，而且也<a href="https://askubuntu.com/questions/1200116/desktop-error-there-was-an-error-launching-the-application">有人 wine 的解决方案</a>也是通过 <code>sh -c</code>，但是后来发现了个区别，别人引号中空格只需要一次转义，即 <code>\</code>，比如 &ldquo;Program\ Files\ (x86)&rdquo;，但是我这里原先没加引号时，用两个反斜杠进行转义 <code>\\</code>，而且 <code>\\</code> 需要用 <code>\\\\</code> 来转义，所以隐隐觉得可能是加了引号转义会有问题。所以尝试改成 <code>\</code> 和 <code>\\</code>，但是都没有成功。</p>
+<p>后来跑去研究下 <code>wine</code> 的命令，想弄清楚那一长串 argument 是什么意思，才明白这应该是句 <code>wine start</code>，而 <code>/Unix</code> 是为了用 linux 格式的路径，详见 <a href="https://wiki.winehq.org/Wine_User%27s_Guide">3.1.1 How to run Windows programs from the command line</a>，所以为了避免可能的转义问题，首先可以把 <code>wine C:\\\\windows\\\\command\\\\start.exe</code> 替换成 <code>wine start</code>，而空格转义还是用 <code>\</code>，即最终 <code>WeChat.desktop</code> 文件为</p>
+<div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span> sh -c <span class="s2">&quot;wine start /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py&quot;</span>
+</code></pre></div>
+
+<p>这个版本终于成功了！</p>
+<p>注意到 <code>env</code> 不要删掉，虽然在 <code>.bashrc</code> 中有设置，但是通过 desktop 启动时，并不会 source <code>.bashrc</code>，所以仍需保留这句设置，不然 <code>wine</code> 会找不到。</p>
+<h3 id="window-id">window id<a class="headerlink" href="#window-id" title="Permanent link">&para;</a></h3>
+<p>策略二基于的假设是，</p>
+<blockquote>
+<p>微信窗口后四位所对应的不同窗口层次是固定的. 主窗口是0xXXXX000a, 那么阴影所对应的窗口就是0xXXXX0014.</p>
+</blockquote>
+<p>而且确实好几次我阴影对应的窗口就是 <code>0xXXXX0014</code>，所以直接用了代码。但是后来方向，有时代码不起作用，这时才意识到可能 id 没对上。果然，这时候变成了 <code>0xXXXX0015</code>。不过，“不同窗口层次是固定的” 这个规律仍适用，而且我发现刚好差 8 （虽然这一点对原作者好像不适用），所以把第 25 行改成</p>
+<div class="highlight"><pre><span></span><code><span class="n">shadow</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8</span><span class="p">)</span>
+</code></pre></div>
+
+<p>顺带学一下 python 怎么处理十六进制，<code>hex()</code> 会把十进制数转化为十六进制，并以 <code>0x</code> 开头的字符串表示。</p>
+<p>到这里，这个问题差不多是解决了。</p>
 <h2 id="proxy-for-apt">proxy for apt<a class="headerlink" href="#proxy-for-apt" title="Permanent link">&para;</a></h2>
 <p><code>proxychains</code> seems not work well before <code>sudo</code> or after <code>sudo</code>, and I dont want to add a system proxy permanently, then I found a temporary way,</p>
 <div class="highlight"><pre><span></span><code>sudo <span class="nv">http_proxy</span><span class="o">=</span><span class="s1">&#39;http://user:pass@proxy.example.com:8080/&#39;</span> apt-get install package-name
