@@ -318,6 +318,19 @@
     Kazam
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kazam-video-format" class="md-nav__link">
+    Kazam video format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -822,13 +835,6 @@
         <li class="md-nav__item">
   <a href="#remove-broken-link" class="md-nav__link">
     remove broken link
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kazam-video-format" class="md-nav__link">
-    Kazam video format
   </a>
   
 </li>
@@ -1997,6 +2003,19 @@
     Kazam
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kazam-video-format" class="md-nav__link">
+    Kazam video format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2506,13 +2525,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kazam-video-format" class="md-nav__link">
-    Kazam video format
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#wget" class="md-nav__link">
     wget
   </a>
@@ -2869,6 +2881,13 @@
 <h3 id="kazam">Kazam<a class="headerlink" href="#kazam" title="Permanent link">&para;</a></h3>
 <p>Ubuntu 下 kazam 录屏 没声音解决方案</p>
 <p><a href="http://www.cnblogs.com/xn--gzr/p/6195317.html">http://www.cnblogs.com/xn&ndash;gzr/p/6195317.html</a></p>
+<h4 id="kazam-video-format">Kazam video format<a class="headerlink" href="#kazam-video-format" title="Permanent link">&para;</a></h4>
+<p>cannot open in window</p>
+<p>solution</p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
+</code></pre></div>
+
+<p>refer to <a href="https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player">convert KAZAM video file to a file, playable in windows media player</a></p>
 <h3 id="peek">Peek<a class="headerlink" href="#peek" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/phw/peek">homepage</a>, easy to use, can convert to gif.</p>
 <h2 id="install-win-on-ubuntu">install win on ubuntu<a class="headerlink" href="#install-win-on-ubuntu" title="Permanent link">&para;</a></h2>
@@ -3338,13 +3357,6 @@ or just </p>
 </code></pre></div>
 
 <p><a href="https://stackoverflow.com/questions/22097130/delete-all-broken-symbolic-links-with-a-line">Delete all broken symbolic links with a line?</a></p>
-<h2 id="kazam-video-format">Kazam video format<a class="headerlink" href="#kazam-video-format" title="Permanent link">&para;</a></h2>
-<p>cannot open in window</p>
-<p>solution</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
-</code></pre></div>
-
-<p>refer to <a href="https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player">convert KAZAM video file to a file, playable in windows media player</a></p>
 <h2 id="wget">wget<a class="headerlink" href="#wget" title="Permanent link">&para;</a></h2>
 <h3 id="wget-a-series-of-files-in-order">wget a series of files in order<a class="headerlink" href="#wget-a-series-of-files-in-order" title="Permanent link">&para;</a></h3>
 <p>下载连续编号的文件，如</p>
