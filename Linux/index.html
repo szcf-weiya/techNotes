@@ -834,9 +834,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#wget" class="md-nav__link">
+    wget
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#wget-a-series-of-files-in-order" class="md-nav__link">
     wget a series of files in order
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wget-vs-curl" class="md-nav__link">
+    wget vs curl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2493,9 +2513,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#wget" class="md-nav__link">
+    wget
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#wget-a-series-of-files-in-order" class="md-nav__link">
     wget a series of files in order
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wget-vs-curl" class="md-nav__link">
+    wget vs curl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3305,12 +3345,20 @@ or just </p>
 </code></pre></div>
 
 <p>refer to <a href="https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player">convert KAZAM video file to a file, playable in windows media player</a></p>
-<h2 id="wget-a-series-of-files-in-order">wget a series of files in order<a class="headerlink" href="#wget-a-series-of-files-in-order" title="Permanent link">&para;</a></h2>
+<h2 id="wget">wget<a class="headerlink" href="#wget" title="Permanent link">&para;</a></h2>
+<h3 id="wget-a-series-of-files-in-order">wget a series of files in order<a class="headerlink" href="#wget-a-series-of-files-in-order" title="Permanent link">&para;</a></h3>
 <p>下载连续编号的文件，如</p>
 <div class="highlight"><pre><span></span><code>wget http://work.caltech.edu/slides/slides{01..18}.pdf
 </code></pre></div>
 
 <p>参考 <a href="https://askubuntu.com/questions/240702/wget-a-series-of-files-in-order">Wget a series of files in order</a></p>
+<h3 id="wget-vs-curl"><code>wget</code> vs <code>curl</code><a class="headerlink" href="#wget-vs-curl" title="Permanent link">&para;</a></h3>
+<p><code>wget</code> 不用添加 <code>-O</code> 就可以将下载的文件存储下来，但是 <code>curl</code> 并不默认将下载的文件存入本地文件，除非加上 <code>-o</code> 选项，而 <code>wget</code> 的 <code>-O</code> 只是为了更改文件名。</p>
+<p>比如<a href="https://github.com/huan/docker-wine/blob/54e7ba2f042a59de72a06bafc37f1fb8c554541e/Dockerfile#L36">这里</a>，直接将下载的内容输出到下一个命令</p>
+<div class="highlight"><pre><span></span><code>curl -sL https://dl.winehq.org/wine-builds/winehq.key <span class="p">|</span> apt-key add - 
+</code></pre></div>
+
+<p>更多比较详见 <a href="https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget">What is the difference between curl and wget?</a></p>
 <h2 id="hydrogen-specify-the-conda-envirnoment">hydrogen specify the conda envirnoment<a class="headerlink" href="#hydrogen-specify-the-conda-envirnoment" title="Permanent link">&para;</a></h2>
 <p>just need to run</p>
 <div class="highlight"><pre><span></span><code>source activate thisenv
