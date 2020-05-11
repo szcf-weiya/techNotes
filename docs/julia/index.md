@@ -788,3 +788,36 @@ add Distributions Combinatorics MATLAB PyPlot LightGraphsFlows LightGraphs Clp P
 安装 [PkgMirrors](https://github.com/sunoru/PkgMirrors.jl)，则可以用中科大或者浙大的镜像源了
 
 初次设置后，以后直接 `using PkgMirrors` 便切换到设置好的镜像，以后直接通过镜像源安装。
+
+## select text in the output pdf
+
+Several weeks ago, the text, such as the label, title or legend, in the output pdf via `savefig("xxx.pdf")` can be selected, but recently I found that I cannot select the text in the pdf. The reason would be the version of the packages.
+
+I had tried [`GRUtils`](https://heliosdrm.github.io/GRUtils.jl/stable/), and `GRUtils.savefig` can output pdf to select the texts, so I think the reason is some changes in `Plots` package.
+
+And I found that with `Plots@0.27.0` in `Julia1.0`, I can select the text, but currently the newer `Plots@1.2.0` cannot produce such pdf. To determine the change, maybe I need more effort to try different versions. But now I can downgrade the version to satisfy my requirement.
+
+## multiple labels
+
+In Julia 1.4.0 with Plots.jl v1.0.14,
+
+```julia
+using Plots
+x = rand(10, 2)
+plot(1:10, x, label = ["a", "b"])
+```
+
+will produce
+
+![](labels_col.png)
+
+where these two lines share the same label instead of one label for one line. But if replacing the column vector with row vector, 
+
+```julia
+plot(1:10, x, label = ["a" "b"])
+```
+
+will return the correct result,
+
+![](labels_row.png)
+
