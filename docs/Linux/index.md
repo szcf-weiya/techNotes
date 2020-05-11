@@ -792,6 +792,15 @@ ls -1 ./*jpg | xargs -L1 -I {} img2pdf {} -o {}.pdf
 pdftk likelihoodfree-design-a-discussion-{1..13}-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
 ```
 
+注意这里需要用 `ls -1`，如果 `ll` 则第一行会有 `total xxx` 的信息，即 `ll | wc -l` 等于 `ls -1 | wc -l` + 1，而且在我的 Ubuntu 18.04 中，`ll` 甚至还会列出 
+
+```bash
+./
+../
+```
+
+这一点在服务器上没看到。
+
 
 ## modify pdf metadata via `pdftk`
 
