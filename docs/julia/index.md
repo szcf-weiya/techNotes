@@ -821,3 +821,4 @@ will return the correct result,
 
 ![](labels_row.png)
 
+Refer to [Plots (plotly) multiple series or line labels in legend](https://discourse.julialang.org/t/plots-plotly-multiple-series-or-line-labels-in-legend/13001), which also works `GR` backend.
