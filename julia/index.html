@@ -853,6 +853,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#select-text-in-the-output-pdf" class="md-nav__link">
+    select text in the output pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-labels" class="md-nav__link">
+    multiple labels
+  </a>
+  
+</li>
+      
       
       
       
@@ -1705,6 +1719,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#select-text-in-the-output-pdf" class="md-nav__link">
+    select text in the output pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-labels" class="md-nav__link">
+    multiple labels
+  </a>
+  
+</li>
+      
       
       
       
@@ -2323,6 +2351,25 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 <h2 id="_4">内地镜像源<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>安装 <a href="https://github.com/sunoru/PkgMirrors.jl">PkgMirrors</a>，则可以用中科大或者浙大的镜像源了</p>
 <p>初次设置后，以后直接 <code>using PkgMirrors</code> 便切换到设置好的镜像，以后直接通过镜像源安装。</p>
+<h2 id="select-text-in-the-output-pdf">select text in the output pdf<a class="headerlink" href="#select-text-in-the-output-pdf" title="Permanent link">&para;</a></h2>
+<p>Several weeks ago, the text, such as the label, title or legend, in the output pdf via <code>savefig("xxx.pdf")</code> can be selected, but recently I found that I cannot select the text in the pdf. The reason would be the version of the packages.</p>
+<p>I had tried <a href="https://heliosdrm.github.io/GRUtils.jl/stable/"><code>GRUtils</code></a>, and <code>GRUtils.savefig</code> can output pdf to select the texts, so I think the reason is some changes in <code>Plots</code> package.</p>
+<p>And I found that with <code>Plots@0.27.0</code> in <code>Julia1.0</code>, I can select the text, but currently the newer <code>Plots@1.2.0</code> cannot produce such pdf. To determine the change, maybe I need more effort to try different versions. But now I can downgrade the version to satisfy my requirement.</p>
+<h2 id="multiple-labels">multiple labels<a class="headerlink" href="#multiple-labels" title="Permanent link">&para;</a></h2>
+<p>In Julia 1.4.0 with Plots.jl v1.0.14,</p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">Plots</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<p>will produce</p>
+<p><img alt="" src="labels_col.png" /></p>
+<p>where these two lines share the same label instead of one label for one line. But if replacing the column vector with row vector, </p>
+<div class="highlight"><pre><span></span><code><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;a&quot;</span> <span class="s">&quot;b&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<p>will return the correct result,</p>
+<p><img alt="" src="labels_row.png" /></p>
                 
                   
                 
