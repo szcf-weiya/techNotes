@@ -3405,6 +3405,12 @@ alias psaux=&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#
 pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m">1</span>..13<span class="o">}</span>-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
 </code></pre></div>
 
+<p>注意这里需要用 <code>ls -1</code>，如果 <code>ll</code> 则第一行会有 <code>total xxx</code> 的信息，即 <code>ll | wc -l</code> 等于 <code>ls -1 | wc -l</code> + 1，而且在我的 Ubuntu 18.04 中，<code>ll</code> 甚至还会列出 </p>
+<div class="highlight"><pre><span></span><code>./
+../
+</code></pre></div>
+
+<p>这一点在服务器上没看到。</p>
 <h2 id="modify-pdf-metadata-via-pdftk">modify pdf metadata via <code>pdftk</code><a class="headerlink" href="#modify-pdf-metadata-via-pdftk" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>pdftk input.pdf dump_data output metadata
 <span class="c1"># edit metadata</span>
