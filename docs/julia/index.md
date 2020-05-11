@@ -782,3 +782,9 @@ Note that sometimes `.+=` may make the program much slower, such as https://gith
 ```julia
 add Distributions Combinatorics MATLAB PyPlot LightGraphsFlows LightGraphs Clp Plots
 ```
+
+## 内地镜像源
+
+安装 [PkgMirrors](https://github.com/sunoru/PkgMirrors.jl)，则可以用中科大或者浙大的镜像源了
+
+初次设置后，以后直接 `using PkgMirrors` 便切换到设置好的镜像，以后直接通过镜像源安装。
