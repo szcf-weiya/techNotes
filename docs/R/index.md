@@ -404,13 +404,22 @@ refer to [Combine base and ggplot graphics in R figure window](https://stackover
 
 ```r
 r <- getOption("repos")
-       r["CRAN"] <- "https://cran.r-project.org" 
-       options(repos=r)
+r["CRAN"] <- "https://cran.r-project.org" 
+# r["CRAN"] <- "r["CRAN"] <- "https://mirrors.ustc.edu.cn/CRAN/"" ## for mainland China
+options(repos=r)
 ```
 
 we also can wrap it with `local({...})` and save in `~/.Rprofile`.
 
 Refer to [How to select a CRAN mirror in R](https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r)
+
+For temporary use, use `repos` argument in `install.packages`, such as
+
+```r
+install.packages('RMySQL', repos='http://cran.us.r-project.org')
+```
+
+refer to [How to select a CRAN mirror in R](https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r)
 
 ## R 符号运算 
 
