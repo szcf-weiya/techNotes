@@ -2839,6 +2839,39 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <p>We should use yield when we want to iterate over a sequence, but don’t want to store the entire sequence in memory.</p>
 </blockquote>
 <p>More details refer to <a href="https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/">When to use yield instead of return in Python?</a></p>
+<p>An example gave in <a href="https://stackoverflow.com/questions/12555443/squaring-all-elements-in-a-list">Squaring all elements in a list</a></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+<span class="o">...</span>             <span class="k">yield</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="o">...</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">square</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="o">&lt;</span><span class="n">generator</span> <span class="nb">object</span> <span class="n">square</span> <span class="n">at</span> <span class="mh">0x7f343963dca8</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">square</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="o">...</span> 
+<span class="mi">1</span>
+<span class="mi">4</span>
+</code></pre></div>
+
+<p>along with other methods to square a list,</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">map</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f3439642f60</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+<span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="o">...</span> 
+<span class="mi">1</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+<span class="o">...</span>     <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">...</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ret</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</code></pre></div>
+
 <h2 id="uninstalling-a-distutils-installed-project-error">&lsquo;Uninstalling a distutils installed project&rsquo; error<a class="headerlink" href="#uninstalling-a-distutils-installed-project-error" title="Permanent link">&para;</a></h2>
 <p>pip install &ndash;ignore-installed ${PACKAGE_NAME}</p>
 <p>refer to <a href="https://github.com/blockstack/blockstack-core/issues/504">&lsquo;Uninstalling a distutils installed project&rsquo; error when installing blockstack #504</a></p>
