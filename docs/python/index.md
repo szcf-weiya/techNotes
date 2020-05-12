@@ -659,6 +659,43 @@ Copilot 一直 detect 不出 spyder，只有刚开始装的时候检测到了，
 
 More details refer to [When to use yield instead of return in Python?](https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/)
 
+An example gave in [Squaring all elements in a list](https://stackoverflow.com/questions/12555443/squaring-all-elements-in-a-list)
+
+```python
+>>> def square(list):
+...     for i in list:
+...             yield i ** 2
+... 
+>>> square([1,2])
+<generator object square at 0x7f343963dca8>
+>>> for i in square([1,2]):
+...     print(i)
+... 
+1
+4
+```
+
+along with other methods to square a list,
+
+```python
+>>> list = [1, 2]
+>>> [i**2 for i in list]
+[1, 4]
+>>> map(lambda x: x**2, list)
+<map object at 0x7f3439642f60>
+>>> for i in map(lambda x: x**2, list):
+...     print(i)
+... 
+1
+4
+>>> ret = []
+>>> for i in list:
+...     ret.append(i**2)
+... 
+>>> ret
+[1, 4]
+```
+
 ## 'Uninstalling a distutils installed project' error
 
 pip install --ignore-installed ${PACKAGE_NAME}
