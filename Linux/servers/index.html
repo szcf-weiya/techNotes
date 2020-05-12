@@ -279,8 +279,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="一般问题" class="md-nav__link">
-      一般问题
+    <a href="../" title="系统" class="md-nav__link">
+      系统
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../software/" title="软件" class="md-nav__link">
+      软件
     </a>
   </li>
 
@@ -367,6 +379,20 @@
         <li class="md-nav__item">
   <a href="#slurm" class="md-nav__link">
     Slurm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx-failed" class="md-nav__link">
+    腾讯云服务器nginx failed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    重装nginx
   </a>
   
 </li>
@@ -1205,6 +1231,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#nginx-failed" class="md-nav__link">
+    腾讯云服务器nginx failed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    重装nginx
+  </a>
+  
+</li>
+      
       
       
       
@@ -1284,6 +1324,25 @@ qsub -l <span class="nv">nodes</span><span class="o">=</span><span class="m">2</
 <span class="c1"># Slurm</span>
 sbatch -N <span class="m">2</span> -c <span class="m">16</span> --mem<span class="o">=</span>8g -J jobname --mail-type<span class="o">=[</span>BEGIN,END,FAIL,REQUEUE,ALL<span class="o">]</span> --mail-user<span class="o">=</span>notify@cuhk.edu.hk
 </code></pre></div>
+
+<h2 id="nginx-failed">腾讯云服务器nginx failed<a class="headerlink" href="#nginx-failed" title="Permanent link">&para;</a></h2>
+<p>原因：80端口被占用
+解决方法：kill掉占用80端口的</p>
+<div class="highlight"><pre><span></span><code>sudo fuser -k 80/tcp
+</code></pre></div>
+
+<p>重启</p>
+<div class="highlight"><pre><span></span><code>sudo /etc/init.d/nginx restart
+</code></pre></div>
+
+<h2 id="nginx">重装nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
+<p>想重装nginx，把/etc/nginx也一并删除了，但是重新安装却报错找不到conf文件。</p>
+<p>参考<a href="https://stackoverflow.com/questions/28141667/how-to-reinstall-nginx-if-i-deleted-etc-nginx-folder-ubuntu-14-04">How to reinstall nginx if I deleted /etc/nginx folder (Ubuntu 14.04)?</a></p>
+<p>应当用
+<div class="highlight"><pre><span></span><code>apt-get purge nginx nginx-common nginx-full
+apt-get install nginx
+</code></pre></div></p>
+<p>注意用purge不会保存配置文件，而remove会保存配置文件。</p>
                 
                   
                 
