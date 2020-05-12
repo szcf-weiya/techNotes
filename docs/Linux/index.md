@@ -322,27 +322,6 @@ screen -r [pid] # 进入
 参考
 https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-authenticator-does-not-support-any-combination-of-challenges-that-will-satisfy-the-ca/49983
 
-## 重装nginx
-
-想重装nginx，把/etc/nginx也一并删除了，但是重新安装却报错找不到conf文件。
-
-参考[How to reinstall nginx if I deleted /etc/nginx folder (Ubuntu 14.04)?
-](https://stackoverflow.com/questions/28141667/how-to-reinstall-nginx-if-i-deleted-etc-nginx-folder-ubuntu-14-04)
-
-应当用
-```bash
-apt-get purge nginx nginx-common nginx-full
-apt-get install nginx
-```
-
-注意用purge不会保存配置文件，而remove会保存配置文件。
-
-## Octave安装指南
-
-参考[Octave for Debian systems](http://wiki.octave.org/Octave_for_Debian_systems)
-
-另外帮助文档间[GNU Octave](https://www.gnu.org/software/octave/doc/interpreter/)
-
 ## cairo图形库环境搭建
 
 参考[ubuntu Cairo图形库 环境搭建](http://blog.csdn.net/zh19921107/article/details/45094759)

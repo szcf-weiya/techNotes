@@ -396,3 +396,9 @@ sudo dpkg -i
 ```
 sudo apt-get remove rstudio
 ```
+
+## Octave安装指南
+
+参考[Octave for Debian systems](http://wiki.octave.org/Octave_for_Debian_systems)
+
+另外帮助文档见[GNU Octave](https://www.gnu.org/software/octave/doc/interpreter/)
