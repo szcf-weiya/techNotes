@@ -501,20 +501,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nginx" class="md-nav__link">
-    重装nginx
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#octave" class="md-nav__link">
-    Octave安装指南
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#cairo" class="md-nav__link">
     cairo图形库环境搭建
   </a>
@@ -1988,20 +1974,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nginx" class="md-nav__link">
-    重装nginx
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#octave" class="md-nav__link">
-    Octave安装指南
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#cairo" class="md-nav__link">
     cairo图形库环境搭建
   </a>
@@ -2692,18 +2664,6 @@ screen -r <span class="o">[</span>pid<span class="o">]</span> <span class="c1">#
 <h2 id="solution-client-with-the-currently-selected-authenticator-does-not-support-any-combination-of-challenges-that-will-satisfy-the-ca">Solution: Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA<a class="headerlink" href="#solution-client-with-the-currently-selected-authenticator-does-not-support-any-combination-of-challenges-that-will-satisfy-the-ca" title="Permanent link">&para;</a></h2>
 <p>参考
 https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-authenticator-does-not-support-any-combination-of-challenges-that-will-satisfy-the-ca/49983</p>
-<h2 id="nginx">重装nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
-<p>想重装nginx，把/etc/nginx也一并删除了，但是重新安装却报错找不到conf文件。</p>
-<p>参考<a href="https://stackoverflow.com/questions/28141667/how-to-reinstall-nginx-if-i-deleted-etc-nginx-folder-ubuntu-14-04">How to reinstall nginx if I deleted /etc/nginx folder (Ubuntu 14.04)?
-</a></p>
-<p>应当用
-<div class="highlight"><pre><span></span><code>apt-get purge nginx nginx-common nginx-full
-apt-get install nginx
-</code></pre></div></p>
-<p>注意用purge不会保存配置文件，而remove会保存配置文件。</p>
-<h2 id="octave">Octave安装指南<a class="headerlink" href="#octave" title="Permanent link">&para;</a></h2>
-<p>参考<a href="http://wiki.octave.org/Octave_for_Debian_systems">Octave for Debian systems</a></p>
-<p>另外帮助文档间<a href="https://www.gnu.org/software/octave/doc/interpreter/">GNU Octave</a></p>
 <h2 id="cairo">cairo图形库环境搭建<a class="headerlink" href="#cairo" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/zh19921107/article/details/45094759">ubuntu Cairo图形库 环境搭建</a></p>
 <h2 id="circos">circos<a class="headerlink" href="#circos" title="Permanent link">&para;</a></h2>
