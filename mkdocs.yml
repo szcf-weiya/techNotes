@@ -2,7 +2,8 @@ site_name: techNotes
 pages:
     - Home: index.md
     - Linux: 
-      - 一般问题: Linux/index.md
+      - 系统: Linux/index.md
+      - 软件: Linux/software.md
       - shell: shell/index.md
       - 服务器: Linux/servers.md
       - 16to18: Linux/16to18.md

@@ -89,3 +89,31 @@ qsub -l nodes=2:ppn=16 -l mem=8g -N jobname -m be -M notify@cuhk.edu.hk
 sbatch -N 2 -c 16 --mem=8g -J jobname --mail-type=[BEGIN,END,FAIL,REQUEUE,ALL] --mail-user=notify@cuhk.edu.hk
 ```
 
+## 腾讯云服务器nginx failed
+
+原因：80端口被占用
+解决方法：kill掉占用80端口的
+
+```
+sudo fuser -k 80/tcp
+```
+
+重启
+
+```
+sudo /etc/init.d/nginx restart
+```
+
+## 重装nginx
+
+想重装nginx，把/etc/nginx也一并删除了，但是重新安装却报错找不到conf文件。
+
+参考[How to reinstall nginx if I deleted /etc/nginx folder (Ubuntu 14.04)?](https://stackoverflow.com/questions/28141667/how-to-reinstall-nginx-if-i-deleted-etc-nginx-folder-ubuntu-14-04)
+
+应当用
+```bash
+apt-get purge nginx nginx-common nginx-full
+apt-get install nginx
+```
+
+注意用purge不会保存配置文件，而remove会保存配置文件。
