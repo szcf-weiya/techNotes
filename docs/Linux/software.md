@@ -268,6 +268,13 @@ suggested in [微信无法发送图片可以尝试一下这个方法 #32](https:
 
 No clear idea about DLL file, such as `ole32.dll` suggested in [wine运行windows软件](https://jerry.red/331/wine%e8%bf%90%e8%a1%8cwindows%e8%bd%af%e4%bb%b6), this page， [Windows 7 DLL File Information - ole32.dll](https://www.win7dll.info/ole32_dll.html), might helps.
 
+And general introduction for DLL can be found in [DLL文件到底是什么，它们是如何工作的？](https://cloud.tencent.com/developer/ask/69913)
+
+- 类似 `.so`
+- 在Windows中，文件扩展名如下所示：静态库（`.lib`）和动态库（`.dll`）。主要区别在于静态库在编译时链接到可执行文件; 而动态链接库在运行时才会被链接。
+- 通常不会在计算机上看到静态库，因为静态库直接嵌入到模块（EXE或DLL）中。动态库是一个独立的文件。
+- 一个DLL可以在任何时候被改变，并且只在EXE显式地加载DLL时在运行时加载。静态库在EXE中编译后无法更改。一个DLL可以单独更新而无需更新EXE本身。
+
 ## Chrome 
 
 ### 黑屏
