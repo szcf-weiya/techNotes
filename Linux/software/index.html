@@ -1812,6 +1812,13 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 <p>suggested in <a href="https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/32">微信无法发送图片可以尝试一下这个方法 #32</a>, but it does not work after <code>wineboot -u</code> and <code>winboot -r</code> and system reboot. And I even install <code>libjpeg8:i386</code> and <code>libjpeg9:i386</code>, still does not work, and then I doubt if I miss other dependencies, such as <a href="https://github.com/wszqkzqk/deepin-wine-ubuntu/commit/5300834405de1388893f2cedeb5c74f6b307a4f8#diff-4398b218af11cf74c553720d61cdff90">debian-special-pkgs/deepin-wine_2.18-12_i386/DEBIAN/control</a>, but I the <code>libjpeg-turbo8</code> and <code>libjpeg-turbo8:i386</code> had been installed, then I had no idea.</p>
 <h3 id="dll-file">DLL file<a class="headerlink" href="#dll-file" title="Permanent link">&para;</a></h3>
 <p>No clear idea about DLL file, such as <code>ole32.dll</code> suggested in <a href="https://jerry.red/331/wine%e8%bf%90%e8%a1%8cwindows%e8%bd%af%e4%bb%b6">wine运行windows软件</a>, this page， <a href="https://www.win7dll.info/ole32_dll.html">Windows 7 DLL File Information - ole32.dll</a>, might helps.</p>
+<p>And general introduction for DLL can be found in <a href="https://cloud.tencent.com/developer/ask/69913">DLL文件到底是什么，它们是如何工作的？</a></p>
+<ul>
+<li>类似 <code>.so</code></li>
+<li>在Windows中，文件扩展名如下所示：静态库（<code>.lib</code>）和动态库（<code>.dll</code>）。主要区别在于静态库在编译时链接到可执行文件; 而动态链接库在运行时才会被链接。</li>
+<li>通常不会在计算机上看到静态库，因为静态库直接嵌入到模块（EXE或DLL）中。动态库是一个独立的文件。</li>
+<li>一个DLL可以在任何时候被改变，并且只在EXE显式地加载DLL时在运行时加载。静态库在EXE中编译后无法更改。一个DLL可以单独更新而无需更新EXE本身。</li>
+</ul>
 <h2 id="chrome">Chrome<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h2>
 <h3 id="_4">黑屏<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>参考 https://blog.csdn.net/jjddrushi/article/details/79155421</p>
