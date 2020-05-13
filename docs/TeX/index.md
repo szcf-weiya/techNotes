@@ -267,8 +267,9 @@ $f''$
 ```
 
 
-参考
-1. [Beamer, Citation coloring](https://tex.stackexchange.com/questions/369710/beamer-citation-coloring)
+参考 [Beamer, Citation coloring](https://tex.stackexchange.com/questions/369710/beamer-citation-coloring)
+
+实战例子：[szcf-weiya/zju-thesis](https://github.com/szcf-weiya/zju-thesis/blob/ef03ae6c484bf4c9b23dd62d06cb751c05ed120d/src/zju-thesis.dtx#L499-L528)
 
 ## 将引用的年份用括号框起来
 
