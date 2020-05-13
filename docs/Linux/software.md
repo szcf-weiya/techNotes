@@ -254,6 +254,16 @@ shadow = hex(int(id, 16) + 8)
 
 到这里，这个问题差不多是解决了。
 
+### cannot send images
+
+Try to use the approach 
+
+```bash
+sudo apt install libjpeg62:i386
+```
+
+suggested in [微信无法发送图片可以尝试一下这个方法 #32](https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/32), but it does not work after `wineboot -u` and `winboot -r` and system reboot. And I even install `libjpeg8:i386` and `libjpeg9:i386`, still does not work, and then I doubt if I miss other dependencies, such as [debian-special-pkgs/deepin-wine_2.18-12_i386/DEBIAN/control](https://github.com/wszqkzqk/deepin-wine-ubuntu/commit/5300834405de1388893f2cedeb5c74f6b307a4f8#diff-4398b218af11cf74c553720d61cdff90), but I the `libjpeg-turbo8` and `libjpeg-turbo8:i386` had been installed, then I had no idea.
+
 ## Chrome 
 
 ### 黑屏
