@@ -393,6 +393,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cannot-send-images" class="md-nav__link">
+    cannot send images
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1432,6 +1439,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cannot-send-images" class="md-nav__link">
+    cannot send images
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1776,6 +1790,12 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 
 <p>顺带学一下 python 怎么处理十六进制，<code>hex()</code> 会把十进制数转化为十六进制，并以 <code>0x</code> 开头的字符串表示。</p>
 <p>到这里，这个问题差不多是解决了。</p>
+<h3 id="cannot-send-images">cannot send images<a class="headerlink" href="#cannot-send-images" title="Permanent link">&para;</a></h3>
+<p>Try to use the approach </p>
+<div class="highlight"><pre><span></span><code>sudo apt install libjpeg62:i386
+</code></pre></div>
+
+<p>suggested in <a href="https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/32">微信无法发送图片可以尝试一下这个方法 #32</a>, but it does not work after <code>wineboot -u</code> and <code>winboot -r</code> and system reboot. And I even install <code>libjpeg8:i386</code> and <code>libjpeg9:i386</code>, still does not work, and then I doubt if I miss other dependencies, such as <a href="https://github.com/wszqkzqk/deepin-wine-ubuntu/commit/5300834405de1388893f2cedeb5c74f6b307a4f8#diff-4398b218af11cf74c553720d61cdff90">debian-special-pkgs/deepin-wine_2.18-12_i386/DEBIAN/control</a>, but I the <code>libjpeg-turbo8</code> and <code>libjpeg-turbo8:i386</code> had been installed, then I had no idea.</p>
 <h2 id="chrome">Chrome<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h2>
 <h3 id="_4">黑屏<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>参考 https://blog.csdn.net/jjddrushi/article/details/79155421</p>
