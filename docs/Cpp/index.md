@@ -366,6 +366,21 @@ int &n = m;
 
 ## 命令行参数的传入
 
+申明 `main` 函数如下
+
+```cpp
+int main( int argc, char *argv[] );
+int main( int argc, char **argv );
+```
+
+其中 `argc` 参数包含参数的计数值，而 `argv` 包含指向这些参数的指针数组，且第一个参数为程序名。比如[这里](https://github.com/szcf-weiya/ESL-CN/blob/f314293634cec66606d59fdaa493155170c1d530/docs/notes/BS/bspline.cpp#L9)，
+
+```bash
+size_t order = atoi(argv[1]);
+```
+
+对于命令行的处理，可以采用 `getopt()` 或者 `getopt_long()`.
+
 参考[使用 getopt() 进行命令行处理](https://www.ibm.com/developerworks/cn/aix/library/au-unix-getopt.html)
 
 ## variably modeified type in C language
