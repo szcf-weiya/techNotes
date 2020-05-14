@@ -806,3 +806,12 @@ refer to:
 ```bash
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 ```
+
+## subplots 的间距
+
+`plt.tight_layout()` 可以调节间距，如果有必要，可以带上参数，比如，[B spline in R, C++ and Python](https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6)
+
+```bash
+plt.tight_layout(pad = 3.0)
+```
+

@@ -533,3 +533,7 @@ refer to [R install.packages returns “failed to create lock directory”](http
 ## nonzero in `dgCMatrix`
 
 refer to [R package Matrix: get number of non-zero entries per rows / columns of a sparse matrix](https://stackoverflow.com/questions/51560456/r-package-matrix-get-number-of-non-zero-entries-per-rows-columns-of-a-sparse)
+
+## `plot.new() : figure margins too large`
+
+Rstudio 中对于太大的图片有可能报错，比如当我试图以 `par(mfrow=c(4,1))` 画四个 `matplot`，于是报错。这时候，可以直接在 R session 里面绘制。
