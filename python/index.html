@@ -1116,6 +1116,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#subplots" class="md-nav__link">
+    subplots 的间距
+  </a>
+  
+</li>
+      
       
       
       
@@ -2371,6 +2378,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#subplots" class="md-nav__link">
+    subplots 的间距
+  </a>
+  
+</li>
+      
       
       
       
@@ -2950,6 +2964,11 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <h2 id="_4">镜像<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>通过 <code>conda</code> 安装镜像在 <code>.condarc</code> 中设置，而通过 <code>pip</code> 详见 <a href="https://mirror.tuna.tsinghua.edu.cn/help/pypi/">pypi 镜像使用帮助</a>，临时使用可以运行</p>
 <div class="highlight"><pre><span></span><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+</code></pre></div>
+
+<h2 id="subplots">subplots 的间距<a class="headerlink" href="#subplots" title="Permanent link">&para;</a></h2>
+<p><code>plt.tight_layout()</code> 可以调节间距，如果有必要，可以带上参数，比如，<a href="https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6">B spline in R, C++ and Python</a></p>
+<div class="highlight"><pre><span></span><code>plt.tight_layout<span class="o">(</span><span class="nv">pad</span> <span class="o">=</span> <span class="m">3</span>.0<span class="o">)</span>
 </code></pre></div>
                 
                   

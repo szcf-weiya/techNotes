@@ -427,6 +427,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    画图间距
+  </a>
+  
+</li>
+      
       
       
       
@@ -1161,6 +1168,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    画图间距
+  </a>
+  
+</li>
+      
       
       
       
@@ -1215,6 +1229,15 @@
 <p>Then I realized that I should add</p>
 <div class="highlight"><pre><span></span><code><span class="nf">plot.window</span><span class="p">(</span><span class="n">xlim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-0.1</span><span class="p">,</span> <span class="m">0.9</span><span class="p">))</span>
 </code></pre></div>
+
+<h2 id="_3">画图间距<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>有时通过 <code>par(mfrow=c(2,1))</code> 画图时间距过大，这可以通过 <code>mar</code> 来调节，注意到</p>
+<ul>
+<li><code>mar</code> 调节单张图的 margin</li>
+<li><code>oma</code> 调节整张图外部的 margin</li>
+</ul>
+<p>参考 <a href="https://stackoverflow.com/questions/15848942/how-to-reduce-space-gap-between-multiple-graphs-in-r">how to reduce space gap between multiple graphs in R</a></p>
+<p>比如，<a href="https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6">B spline in R, C++ and Python</a></p>
                 
                   
                 
