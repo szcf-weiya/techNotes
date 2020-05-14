@@ -856,3 +856,14 @@ sudo http_proxy='http://user:pass@proxy.example.com:8080/' apt-get install packa
 ```
 
 refer to [how to install packages with apt-get on a system connected via proxy?](https://askubuntu.com/questions/89437/how-to-install-packages-with-apt-get-on-a-system-connected-via-proxy)
+
+## 上次重启时间
+
+```bash
+last reboot
+# or
+uptime --since # actually the first line of `top`
+```
+
+参考 [How long has my Linux system been running?](https://unix.stackexchange.com/questions/131775/how-long-has-my-linux-system-been-running)
+
