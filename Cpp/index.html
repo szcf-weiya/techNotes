@@ -2006,6 +2006,16 @@ double *p = &amp;x;
 <li>return: 返回函数</li>
 </ul>
 <h2 id="_13">命令行参数的传入<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>申明 <code>main</code> 函数如下</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span> <span class="p">);</span>
+</code></pre></div>
+
+<p>其中 <code>argc</code> 参数包含参数的计数值，而 <code>argv</code> 包含指向这些参数的指针数组，且第一个参数为程序名。比如<a href="https://github.com/szcf-weiya/ESL-CN/blob/f314293634cec66606d59fdaa493155170c1d530/docs/notes/BS/bspline.cpp#L9">这里</a>，</p>
+<div class="highlight"><pre><span></span><code>size_t <span class="nv">order</span> <span class="o">=</span> atoi<span class="o">(</span>argv<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
+</code></pre></div>
+
+<p>对于命令行的处理，可以采用 <code>getopt()</code> 或者 <code>getopt_long()</code>.</p>
 <p>参考<a href="https://www.ibm.com/developerworks/cn/aix/library/au-unix-getopt.html">使用 getopt() 进行命令行处理</a></p>
 <h2 id="variably-modeified-type-in-c-language">variably modeified type in C language<a class="headerlink" href="#variably-modeified-type-in-c-language" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/23529069/variably-modified-type-in-c-language">Variably modified type in C language - Stack Overflow</a></p>
