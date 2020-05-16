@@ -705,3 +705,11 @@ in the Zotero's abstract field as said in [How to write “ä” and other umlau
 but it still doesnt work. 
 
 Finally, I directly correct the exported file using the above technique, and it works. But I still think it is not a good idea since I prefer to export without any further modifications. [TODO]
+
+## `\hat f` 的脚标太远
+
+当对 `f` 同时加上 `hat` 和脚标时，脚标会离得很远，感觉很丑，如
+
+![](f_subscript.png)
+
+一种解决方案如图所示，将 `hat` 框住脚标。当然这个解决方案对于其它字符并不需要，比如对于 `pi`, 反而不好。
