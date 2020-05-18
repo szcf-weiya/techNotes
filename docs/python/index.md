@@ -815,3 +815,6 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 plt.tight_layout(pad = 3.0)
 ```
 
+## scatter size
+
+the size is defined by the area, [pyplot scatter plot marker size](https://stackoverflow.com/questions/14827650/pyplot-scatter-plot-marker-size)

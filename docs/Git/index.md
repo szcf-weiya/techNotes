@@ -1,5 +1,10 @@
 # Git Tips
 
+## 教程
+
+1. [阮一峰的网络日志](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
+2. [这些GIT经验够你用一年了](https://zhuanlan.zhihu.com/p/22666153)
+
 ## 删除远程分支
 
 ```git
@@ -145,9 +150,7 @@ git remote set-url origin git@github.com:szcf-weiya/depi.git
 
 附上git pull的某篇博客[git pull命令](http://www.yiibai.com/git/git_pull.html)
 
-## 教程
 
-1. [阮一峰的网络日志](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
 
 ## Webhook配置
 

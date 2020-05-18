@@ -537,3 +537,25 @@ refer to [R package Matrix: get number of non-zero entries per rows / columns of
 ## `plot.new() : figure margins too large`
 
 Rstudio 中对于太大的图片有可能报错，比如当我试图以 `par(mfrow=c(4,1))` 画四个 `matplot`，于是报错。这时候，可以直接在 R session 里面绘制。
+
+## S3 method
+
+初体验，[ESL-CN/code/boosting/s3ex.R](https://github.com/szcf-weiya/ESL-CN/blob/96f2f91deabfa6eee57bd1823a4d8405b5f061f0/code/boosting/s3ex.R)
+
+```r
+j = list(name = "Joe", salary = 5500, union = T)
+class(j) = "employee"
+
+print.employee <- function(wrkr){
+  cat(wrkr$name, "\n")
+  cat("salary", wrkr$salary, "\n")
+  cat("union member", wrkr$union, "\n")
+}
+summary.employee <- function(wrkr){
+  cat(wrkr$name, "\n")
+  cat("salary", wrkr$salary, "\n")
+  cat("union member", wrkr$union, "\n")
+}
+```
+
+以及一个相关的问题 [How to override default S3 function in R?](https://stackoverflow.com/questions/9275387/how-to-override-default-s3-function-in-r)

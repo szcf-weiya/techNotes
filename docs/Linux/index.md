@@ -318,6 +318,9 @@ screen -r [pid] # 进入
 ### ctrl+A, 然后输入":quit"
 ```
 
+更多用法详见 [linux screen 命令详解](https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html)
+
+
 ## Solution: Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA
 参考
 https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-authenticator-does-not-support-any-combination-of-challenges-that-will-satisfy-the-ca/49983
