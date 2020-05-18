@@ -454,6 +454,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#spell-check" class="md-nav__link">
+    spell-check
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1507,6 +1514,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#spell-check" class="md-nav__link">
+    spell-check
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1855,6 +1869,12 @@ sudo apt-get update
 apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
 </code></pre></div>
 
+<h3 id="spell-check">spell-check<a class="headerlink" href="#spell-check" title="Permanent link">&para;</a></h3>
+<p>By default, one of the core package <a href="https://github.com/atom/spell-check">spell-check</a> does not check <code>.tex</code> file, although there is <a href="https://github.com/AtomLinter/linter-spell-latex">another package</a> for checking the spelling in <code>.tex</code>, it does not work and not recently update, then I investigate the <code>spell-check</code> package to add the support for <code>.tex</code>. Actually, it is quite easy, just to add the scope of the <code>.tex</code> file, which can be found by <code>Editor: Log Cursor Scope</code>. So I add <code>text.tex.latex</code>, but it would be annoying to highlighter the native latex command, such as <code>\newcommand</code>, then I found that there is a <code>Excluded Scopes</code> in the config page of <code>spell-check</code>, so we only need to add the scope name of such native latex command, which again can be found by <code>Editor: Log Cursor Scope</code> if we put the cursor on the line of the commands. Finally, I add</p>
+<div class="highlight"><pre><span></span><code>meta.preamble.latex, punctuation.definition.arguments.end.latex, support.function.general.tex, support.type.function.other.latex, storage.type.function.latex, markup.underline.link.https.hyperlink
+</code></pre></div>
+
+<p>to the whitelist, each of which is identified by tries, such as cannot continue to add <code>meta.group.braces.tex</code> since the original text would also cannot be checked.</p>
 <h2 id="_5">百度网盘<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>发现百度网盘出了 Linux 版，但是在 Ubuntu 16.04 似乎运行不了——能下载安装但是无法打开运行。</p>
 <p>目前版本为 Linux版 V2.0.2（更新时间：2019-07-25）</p>
