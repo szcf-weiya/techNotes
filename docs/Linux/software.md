@@ -329,6 +329,15 @@ apm config set strict-ssl false
 apm config set http-proxy http://127.0.0.1:8118
 ```
 
+### spell-check
+
+By default, one of the core package [spell-check](https://github.com/atom/spell-check) does not check `.tex` file, although there is [another package](https://github.com/AtomLinter/linter-spell-latex) for checking the spelling in `.tex`, it does not work and not recently update, then I investigate the `spell-check` package to add the support for `.tex`. Actually, it is quite easy, just to add the scope of the `.tex` file, which can be found by `Editor: Log Cursor Scope`. So I add `text.tex.latex`, but it would be annoying to highlighter the native latex command, such as `\newcommand`, then I found that there is a `Excluded Scopes` in the config page of `spell-check`, so we only need to add the scope name of such native latex command, which again can be found by `Editor: Log Cursor Scope` if we put the cursor on the line of the commands. Finally, I add
+
+```bash
+meta.preamble.latex, punctuation.definition.arguments.end.latex, support.function.general.tex, support.type.function.other.latex, storage.type.function.latex, markup.underline.link.https.hyperlink
+```
+
+to the whitelist, each of which is identified by tries, such as cannot continue to add `meta.group.braces.tex` since the original text would also cannot be checked.
 
 ## 百度网盘
 
