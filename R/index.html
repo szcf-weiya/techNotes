@@ -774,6 +774,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#s3-method" class="md-nav__link">
+    S3 method
+  </a>
+  
+</li>
+      
       
       
       
@@ -1903,6 +1910,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#s3-method" class="md-nav__link">
+    S3 method
+  </a>
+  
+</li>
+      
       
       
       
@@ -2283,6 +2297,24 @@ BiocManager::install(&quot;graph&quot;)
 <p>refer to <a href="https://stackoverflow.com/questions/51560456/r-package-matrix-get-number-of-non-zero-entries-per-rows-columns-of-a-sparse">R package Matrix: get number of non-zero entries per rows / columns of a sparse matrix</a></p>
 <h2 id="plotnew-figure-margins-too-large"><code>plot.new() : figure margins too large</code><a class="headerlink" href="#plotnew-figure-margins-too-large" title="Permanent link">&para;</a></h2>
 <p>Rstudio 中对于太大的图片有可能报错，比如当我试图以 <code>par(mfrow=c(4,1))</code> 画四个 <code>matplot</code>，于是报错。这时候，可以直接在 R session 里面绘制。</p>
+<h2 id="s3-method">S3 method<a class="headerlink" href="#s3-method" title="Permanent link">&para;</a></h2>
+<p>初体验，<a href="https://github.com/szcf-weiya/ESL-CN/blob/96f2f91deabfa6eee57bd1823a4d8405b5f061f0/code/boosting/s3ex.R">ESL-CN/code/boosting/s3ex.R</a></p>
+<div class="highlight"><pre><span></span><code><span class="n">j</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Joe&quot;</span><span class="p">,</span> <span class="n">salary</span> <span class="o">=</span> <span class="m">5500</span><span class="p">,</span> <span class="n">union</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;employee&quot;</span>
+
+<span class="n">print.employee</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">wrkr</span><span class="p">){</span>
+  <span class="nf">cat</span><span class="p">(</span><span class="n">wrkr</span><span class="o">$</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+  <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;salary&quot;</span><span class="p">,</span> <span class="n">wrkr</span><span class="o">$</span><span class="n">salary</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+  <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;union member&quot;</span><span class="p">,</span> <span class="n">wrkr</span><span class="o">$</span><span class="n">union</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">summary.employee</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">wrkr</span><span class="p">){</span>
+  <span class="nf">cat</span><span class="p">(</span><span class="n">wrkr</span><span class="o">$</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+  <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;salary&quot;</span><span class="p">,</span> <span class="n">wrkr</span><span class="o">$</span><span class="n">salary</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+  <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;union member&quot;</span><span class="p">,</span> <span class="n">wrkr</span><span class="o">$</span><span class="n">union</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>以及一个相关的问题 <a href="https://stackoverflow.com/questions/9275387/how-to-override-default-s3-function-in-r">How to override default S3 function in R?</a></p>
                 
                   
                 

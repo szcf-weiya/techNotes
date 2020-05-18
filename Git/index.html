@@ -787,13 +787,20 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    删除远程分支
+    教程
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    删除远程分支
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     删除本地分支
   </a>
   
@@ -856,7 +863,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     更新远程代码到本地
   </a>
   
@@ -864,14 +871,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     方式一
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     方式二
   </a>
   
@@ -897,7 +904,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     更改远程仓库的名字
   </a>
   
@@ -906,13 +913,6 @@
         <li class="md-nav__item">
   <a href="#git-pull" class="md-nav__link">
     git pull
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    教程
   </a>
   
 </li>
@@ -1427,13 +1427,20 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    删除远程分支
+    教程
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    删除远程分支
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     删除本地分支
   </a>
   
@@ -1496,7 +1503,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     更新远程代码到本地
   </a>
   
@@ -1504,14 +1511,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     方式一
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     方式二
   </a>
   
@@ -1537,7 +1544,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     更改远程仓库的名字
   </a>
   
@@ -1546,13 +1553,6 @@
         <li class="md-nav__item">
   <a href="#git-pull" class="md-nav__link">
     git pull
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    教程
   </a>
   
 </li>
@@ -1735,7 +1735,12 @@
                 
                 
                 <h1 id="git-tips">Git Tips<a class="headerlink" href="#git-tips" title="Permanent link">&para;</a></h1>
-<h2 id="_1">删除远程分支<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">教程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html">阮一峰的网络日志</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/22666153">这些GIT经验够你用一年了</a></li>
+</ol>
+<h2 id="_2">删除远程分支<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><div class="highlight"><pre><span></span><code>git branch -r -d origin/branch-name
 </code></pre></div>
 此时需要更改仓库的默认分支，不然直接运行下面的命令会报错
@@ -1743,7 +1748,7 @@
 </code></pre></div></p>
 <p><img alt="" src="error_branch.png" /></p>
 <p>图中第一次是更改默认分支前的出错信息，第二次是更改完默认分支的信息。</p>
-<h2 id="_2">删除本地分支<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">删除本地分支<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>git branch -d branch-name
 </code></pre></div>
 
@@ -1800,15 +1805,15 @@ git add .
 git commit -m &#39;update .gitignore&#39;
 </code></pre></div>
 
-<h2 id="_3">更新远程代码到本地<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">方式一<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_4">更新远程代码到本地<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">方式一<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>git remote -v
 git fetch origin master
 git log -p master origin master
 git merge origin master
 </code></pre></div>
 
-<h3 id="_5">方式二<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_6">方式二<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>git fetch origin master:temp
 git diff temp
 git merge temp
@@ -1827,7 +1832,7 @@ git branch temp
 git branch -r
 git checkout BRANCH_NAME
 </code></pre></div></p>
-<h2 id="_6">更改远程仓库的名字<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">更改远程仓库的名字<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>举个例子，如将一个名为epi的仓库改名为depi，再次在本地提交虽然也能成功，但是会提示你原始的仓库已经移动，请修改为新的仓库地址，于是我们可以利用下面的命令进行修改</p>
 <div class="highlight"><pre><span></span><code>git remote set-url origin git@github.com:szcf-weiya/depi.git
 </code></pre></div>
@@ -1837,10 +1842,6 @@ git checkout BRANCH_NAME
 <p><img alt="" src="error_pull.PNG" /></p>
 <p>后来直接运行<code>git pull</code>后，重新push，便解决了问题。</p>
 <p>附上git pull的某篇博客<a href="http://www.yiibai.com/git/git_pull.html">git pull命令</a></p>
-<h2 id="_7">教程<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<ol>
-<li><a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html">阮一峰的网络日志</a></li>
-</ol>
 <h2 id="webhook">Webhook配置<a class="headerlink" href="#webhook" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://jerryzou.com/posts/webhook-practice/">Webhook 实践 —— 自动部署</a></p>
 <p>需要在腾讯云服务器上自动更新github pages的内容，于是采用webhook来实现。</p>
