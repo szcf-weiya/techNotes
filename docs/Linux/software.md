@@ -339,6 +339,12 @@ meta.preamble.latex, punctuation.definition.arguments.end.latex, support.functio
 
 to the whitelist, each of which is identified by tries, such as cannot continue to add `meta.group.braces.tex` since the original text would also cannot be checked.
 
+### Soft wrap
+
+Soft wrap is proper for `.tex` file, or `.md` file, but not necessary for the programming file. We can turn off the soft wrap globally in `Setting > Editor`, and actually we can reset it for each language, which can be toggled in `Setting > Package > language-<language name> > Soft Wrap`.
+
+refer to [Toggle Soft Wrap by Default?](https://discuss.atom.io/t/toggle-soft-wrap-by-default/58911/5)
+
 ## 百度网盘
 
 发现百度网盘出了 Linux 版，但是在 Ubuntu 16.04 似乎运行不了——能下载安装但是无法打开运行。
