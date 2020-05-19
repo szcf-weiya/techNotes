@@ -870,3 +870,20 @@ uptime --since # actually the first line of `top`
 
 参考 [How long has my Linux system been running?](https://unix.stackexchange.com/questions/131775/how-long-has-my-linux-system-been-running)
 
+## number of cores
+
+> CPUs = Threads per core X cores per socket X sockets
+
+quick way to check
+
+```bash
+nproc --all
+```
+
+more details
+
+```bash
+lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('
+```
+
+refer to [How to know number of cores of a system in Linux?](https://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux)
