@@ -957,6 +957,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#number-of-cores" class="md-nav__link">
+    number of cores
+  </a>
+  
+</li>
+      
       
       
       
@@ -2437,6 +2444,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#number-of-cores" class="md-nav__link">
+    number of cores
+  </a>
+  
+</li>
+      
       
       
       
@@ -3046,6 +3060,19 @@ uptime --since <span class="c1"># actually the first line of `top`</span>
 </code></pre></div>
 
 <p>参考 <a href="https://unix.stackexchange.com/questions/131775/how-long-has-my-linux-system-been-running">How long has my Linux system been running?</a></p>
+<h2 id="number-of-cores">number of cores<a class="headerlink" href="#number-of-cores" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>CPUs = Threads per core X cores per socket X sockets</p>
+</blockquote>
+<p>quick way to check</p>
+<div class="highlight"><pre><span></span><code>nproc --all
+</code></pre></div>
+
+<p>more details</p>
+<div class="highlight"><pre><span></span><code>lscpu <span class="p">|</span> grep -E <span class="s1">&#39;^Thread|^Core|^Socket|^CPU\(&#39;</span>
+</code></pre></div>
+
+<p>refer to <a href="https://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux">How to know number of cores of a system in Linux?</a></p>
                 
                   
                 
