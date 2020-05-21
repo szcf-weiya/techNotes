@@ -309,33 +309,6 @@ rocplot ( fitted , dat [ train ,"y"] , main ="Training Data")
 
 ![](roc_fact.png)
 
-## pairs中自定义panel函数
-
-问题来自[R语言绘图？ - 知乎](https://www.zhihu.com/question/268216627/answer/334393347)
-
-```r
-my.lower <- function(x,y,...){
-  points(x, y)
-  lines(lowess(x, y), col = "red", lwd=2)
-}
-
-my.upper <- function(x, y, ...){
-  cor.val = round(cor(x,y), digits = 3)
-  if (abs(cor.val) > 0.5){
-    text(mean(x), mean(y), cor.val, cex = 3)
-    text(sort(x)[length(x)*0.8], max(y), '***', cex = 4, col = "red")
-  } else
-  {
-    text(mean(x), mean(y), cor.val, cex = 1)
-  }
-}
-
-pairs(iris[1:4], lower.panel =my.lower, upper.panel = my.upper)
-```
-
-参考网址：
-1. [Different data in upper and lower panel of scatterplot matrix](https://stackoverflow.com/questions/15625510/different-data-in-upper-and-lower-panel-of-scatterplot-matrix)
-
 ## 神奇的`[`
 
 来自[R语言中以矩阵引用多维数组的元素](https://d.cosx.org/d/419525-r)

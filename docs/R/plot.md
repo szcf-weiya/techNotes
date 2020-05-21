@@ -63,3 +63,30 @@ plot.window(xlim = c(0, 1), ylim = c(-0.1, 0.9))
 
 比如，[B spline in R, C++ and Python](https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6)
 
+## pairs中自定义panel函数
+
+问题来自[R语言绘图？ - 知乎](https://www.zhihu.com/question/268216627/answer/334393347)
+
+![](https://pic4.zhimg.com/v2-ad40c8c5a577f9ed3ae82dd43c7dfdcf_r.jpg)
+
+```r
+my.lower <- function(x,y,...){
+  points(x, y)
+  lines(lowess(x, y), col = "red", lwd=2)
+}
+
+my.upper <- function(x, y, ...){
+  cor.val = round(cor(x,y), digits = 3)
+  if (abs(cor.val) > 0.5){
+    text(mean(x), mean(y), cor.val, cex = 3)
+    text(sort(x)[length(x)*0.8], max(y), '***', cex = 4, col = "red")
+  } else
+  {
+    text(mean(x), mean(y), cor.val, cex = 1)
+  }
+}
+
+pairs(iris[1:4], lower.panel =my.lower, upper.panel = my.upper)
+```
+
+参考 [Different data in upper and lower panel of scatterplot matrix](https://stackoverflow.com/questions/15625510/different-data-in-upper-and-lower-panel-of-scatterplot-matrix)
