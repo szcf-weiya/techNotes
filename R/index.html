@@ -642,13 +642,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pairspanel" class="md-nav__link">
-    pairs中自定义panel函数
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     神奇的[
   </a>
@@ -1778,13 +1771,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pairspanel" class="md-nav__link">
-    pairs中自定义panel函数
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     神奇的[
   </a>
@@ -2136,29 +2122,6 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p><img alt="" src="roc_wrong.png" /></p>
 <p>原因是因为<code>fitted</code>与<code>y</code>大小关系相反，即前者大时后者小，而前者小时后者大。</p>
 <p><img alt="" src="roc_fact.png" /></p>
-<h2 id="pairspanel">pairs中自定义panel函数<a class="headerlink" href="#pairspanel" title="Permanent link">&para;</a></h2>
-<p>问题来自<a href="https://www.zhihu.com/question/268216627/answer/334393347">R语言绘图？ - 知乎</a></p>
-<div class="highlight"><pre><span></span><code><span class="n">my.lower</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="kc">...</span><span class="p">){</span>
-  <span class="nf">points</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-  <span class="nf">lines</span><span class="p">(</span><span class="nf">lowess</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="n">my.upper</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="kc">...</span><span class="p">){</span>
-  <span class="n">cor.val</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">digits</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-  <span class="nf">if </span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">cor.val</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">0.5</span><span class="p">){</span>
-    <span class="nf">text</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">cor.val</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
-    <span class="nf">text</span><span class="p">(</span><span class="nf">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="m">0.8</span><span class="p">],</span> <span class="nf">max</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="s">&#39;***&#39;</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
-  <span class="p">}</span> <span class="n">else</span>
-  <span class="p">{</span>
-    <span class="nf">text</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">cor.val</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nf">pairs</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">lower.panel</span> <span class="o">=</span><span class="n">my.lower</span><span class="p">,</span> <span class="n">upper.panel</span> <span class="o">=</span> <span class="n">my.upper</span><span class="p">)</span>
-</code></pre></div>
-
-<p>参考网址：
-1. <a href="https://stackoverflow.com/questions/15625510/different-data-in-upper-and-lower-panel-of-scatterplot-matrix">Different data in upper and lower panel of scatterplot matrix</a></p>
 <h2 id="_4">神奇的<code>[</code><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>来自<a href="https://d.cosx.org/d/419525-r">R语言中以矩阵引用多维数组的元素</a></p>
 <p>比如
