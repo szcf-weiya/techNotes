@@ -713,3 +713,18 @@ Finally, I directly correct the exported file using the above technique, and it 
 ![](f_subscript.png)
 
 一种解决方案如图所示，将 `hat` 框住脚标。当然这个解决方案对于其它字符并不需要，比如对于 `pi`, 反而不好。
+
+## display full name
+
+For `natbib`, check the documentation of `natbib` by typing
+
+```bash
+texdoc natbib
+```
+
+`longnamesfirst` option will display full name for the first citation of any given reference, but all subsequent ones will be used with `et al.`
+
+- without `longnamesfirst`, all citations would be `et al.`
+- with `\citet*`, `\citep*`, the citation would be full author list.
+
+For `biblatex`, seems that we can set the global argument `maxcitenames` to control the number of author in the citation, such as [only display all authors, of multi-author works, the first time a citation is used with biblatex](https://tex.stackexchange.com/questions/175801/only-display-all-authors-of-multi-author-works-the-first-time-a-citation-is-us)

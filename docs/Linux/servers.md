@@ -32,6 +32,10 @@ qsub your.job -v arg1=val1,arg2=val2
 
 [PBS Script](PBS Script_0.pdf)
 
+## PBSDSH
+
+[PBSDSH](https://wikis.nyu.edu/display/NYUHPC/PBSDSH)
+
 ## 安装 spark
 
 ~~在内地云主机上，[官网下载地址](https://spark.apache.org/downloads.html) 还没 5 秒就中断了，然后找到了[清华的镜像](https://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-2.4.4/)~~
