@@ -989,6 +989,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#display-full-name" class="md-nav__link">
+    display full name
+  </a>
+  
+</li>
+      
       
       
       
@@ -1941,6 +1948,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#display-full-name" class="md-nav__link">
+    display full name
+  </a>
+  
+</li>
+      
       
       
       
@@ -2457,6 +2471,17 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <p>当对 <code>f</code> 同时加上 <code>hat</code> 和脚标时，脚标会离得很远，感觉很丑，如</p>
 <p><img alt="" src="f_subscript.png" /></p>
 <p>一种解决方案如图所示，将 <code>hat</code> 框住脚标。当然这个解决方案对于其它字符并不需要，比如对于 <code>pi</code>, 反而不好。</p>
+<h2 id="display-full-name">display full name<a class="headerlink" href="#display-full-name" title="Permanent link">&para;</a></h2>
+<p>For <code>natbib</code>, check the documentation of <code>natbib</code> by typing</p>
+<div class="highlight"><pre><span></span><code>texdoc natbib
+</code></pre></div>
+
+<p><code>longnamesfirst</code> option will display full name for the first citation of any given reference, but all subsequent ones will be used with <code>et al.</code></p>
+<ul>
+<li>without <code>longnamesfirst</code>, all citations would be <code>et al.</code></li>
+<li>with <code>\citet*</code>, <code>\citep*</code>, the citation would be full author list.</li>
+</ul>
+<p>For <code>biblatex</code>, seems that we can set the global argument <code>maxcitenames</code> to control the number of author in the citation, such as <a href="https://tex.stackexchange.com/questions/175801/only-display-all-authors-of-multi-author-works-the-first-time-a-citation-is-us">only display all authors, of multi-author works, the first time a citation is used with biblatex</a></p>
                 
                   
                 
