@@ -121,3 +121,17 @@ apt-get install nginx
 ```
 
 注意用purge不会保存配置文件，而remove会保存配置文件。
+
+## CentOS 7
+
+想直接在服务器上用 Julia 的 PGFPlotsX 画图，因为默认会弹出画好的 pdf 图象，除非按照[官方教程](https://kristofferc.github.io/PGFPlotsX.jl/v0.2/man/save.html#REPL-1)中的设置
+
+```julia
+PGFPlotsX.enable_interactive(false)
+```
+
+本来期望着用 evince 打开，但是最后竟然用 liberoffice 开开了，然后字体竟然不一致了，所以想着更改默认的 pdf 阅读软件，参考 [How to set default browser for PDF reader Evince on Linux?](https://superuser.com/questions/152202/how-to-set-default-browser-for-pdf-reader-evince-on-linux)
+
+可以在 `.local/share/applications/mimeapps.list` 里面添加或者修改 
+
+虽然最后还是感觉通过服务器打开速度太慢了。
