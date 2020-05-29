@@ -1070,6 +1070,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#alias" class="md-nav__link">
+    alias
+  </a>
+  
+</li>
+      
       
       
       
@@ -1703,6 +1710,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#alias" class="md-nav__link">
+    alias
+  </a>
+  
+</li>
+      
       
       
       
@@ -1964,6 +1978,26 @@ See <span class="s1">&#39;git help config&#39;</span> and search <span class="k"
 </code></pre></div>
 
 <p>而自己本机电脑一般采用 <code>v2.0+</code>， 比如当前 <code>v2.17.1</code> 的 git，所以直接采用 <code>simple</code> 模式便好了。</p>
+<h2 id="alias">alias<a class="headerlink" href="#alias" title="Permanent link">&para;</a></h2>
+<p>本来想同时在一行命令中运行 <code>git add .</code> 和 <code>git commit -m</code>，但是如果采用 <code>;</code> 或者 <code>&amp;&amp;</code> 连接时都报错，</p>
+<blockquote>
+<p>error: unknown switch `m&rsquo;</p>
+</blockquote>
+<p>顺带发现了 <code>;</code> 和 <code>&amp;&amp;</code> 以及 <code>||</code> 的区别，详见 <a href="https://dev.to/0xbf/run-multiple-commands-in-one-line-with-and-linux-tips-5hgm">Run multiple commands in one line with <code>;</code>, <code>&amp;&amp;</code> and <code>||</code> - Linux Tips</a></p>
+<ul>
+<li><code>;</code>: 无论第一个命令成功与否，都会运行第二个命令</li>
+<li><code>&amp;&amp;</code>: 只有当第一个命令成功运行，才会运行第二个命令</li>
+<li><code>||</code>: 只有当第一个命令失败后，才会运行第二个命令</li>
+</ul>
+<p>后来发现这个，<a href="https://stackoverflow.com/questions/4298960/git-add-and-commit-in-one-command">Git add and commit in one command</a>，可以通过 <code>git config</code> 来配置 alias，</p>
+<blockquote>
+<p>git config &ndash;global alias.add-commit &lsquo;!git add -A &amp;&amp; git commit&rsquo;</p>
+</blockquote>
+<p>则以后只需要调用</p>
+<blockquote>
+<p>git add-commit -m &lsquo;My commit message&rsquo;</p>
+</blockquote>
+<p>这跟在 <code>.bashrc</code> 中配置有异曲同工之妙！</p>
                 
                   
                 
