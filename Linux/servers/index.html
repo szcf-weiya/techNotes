@@ -404,6 +404,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#centos-7" class="md-nav__link">
+    CentOS 7
+  </a>
+  
+</li>
+      
       
       
       
@@ -1259,6 +1266,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#centos-7" class="md-nav__link">
+    CentOS 7
+  </a>
+  
+</li>
+      
       
       
       
@@ -1359,6 +1373,14 @@ sbatch -N <span class="m">2</span> -c <span class="m">16</span> --mem<span class
 apt-get install nginx
 </code></pre></div></p>
 <p>注意用purge不会保存配置文件，而remove会保存配置文件。</p>
+<h2 id="centos-7">CentOS 7<a class="headerlink" href="#centos-7" title="Permanent link">&para;</a></h2>
+<p>想直接在服务器上用 Julia 的 PGFPlotsX 画图，因为默认会弹出画好的 pdf 图象，除非按照<a href="https://kristofferc.github.io/PGFPlotsX.jl/v0.2/man/save.html#REPL-1">官方教程</a>中的设置</p>
+<div class="highlight"><pre><span></span><code><span class="n">PGFPlotsX</span><span class="o">.</span><span class="n">enable_interactive</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+</code></pre></div>
+
+<p>本来期望着用 evince 打开，但是最后竟然用 liberoffice 开开了，然后字体竟然不一致了，所以想着更改默认的 pdf 阅读软件，参考 <a href="https://superuser.com/questions/152202/how-to-set-default-browser-for-pdf-reader-evince-on-linux">How to set default browser for PDF reader Evince on Linux?</a></p>
+<p>可以在 <code>.local/share/applications/mimeapps.list</code> 里面添加或者修改 </p>
+<p>虽然最后还是感觉通过服务器打开速度太慢了。</p>
                 
                   
                 
