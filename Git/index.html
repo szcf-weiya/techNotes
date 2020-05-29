@@ -842,20 +842,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-branch" class="md-nav__link">
-    git branch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-init" class="md-nav__link">
-    git init
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gitignore" class="md-nav__link">
     gitignore 失效
   </a>
@@ -1073,6 +1059,13 @@
         <li class="md-nav__item">
   <a href="#manually-resolve-merge-conflicts" class="md-nav__link">
     manually resolve merge conflicts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#push" class="md-nav__link">
+    push
   </a>
   
 </li>
@@ -1482,20 +1475,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-branch" class="md-nav__link">
-    git branch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-init" class="md-nav__link">
-    git init
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gitignore" class="md-nav__link">
     gitignore 失效
   </a>
@@ -1717,6 +1696,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#push" class="md-nav__link">
+    push
+  </a>
+  
+</li>
+      
       
       
       
@@ -1794,9 +1780,6 @@ git remote add origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
 <p>or
 <div class="highlight"><pre><span></span><code>git remote set-url origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
 </code></pre></div></p>
-<h2 id="git-branch">git branch<a class="headerlink" href="#git-branch" title="Permanent link">&para;</a></h2>
-<p><a href="http://blog.csdn.net/guang11cheng/article/details/37757201">ref</a></p>
-<h2 id="git-init">git init<a class="headerlink" href="#git-init" title="Permanent link">&para;</a></h2>
 <h2 id="gitignore">gitignore 失效<a class="headerlink" href="#gitignore" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.pfeng.org/archives/840">.gitignore</a></p>
 <p>有时候在项目开发过程中，突然心血来潮想把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交：</p>
@@ -1963,6 +1946,24 @@ git clean -f
 <li>git commit</li>
 </ol>
 <p>refer to <a href="https://stackoverflow.com/questions/2474097/how-do-i-finish-the-merge-after-resolving-my-merge-conflicts">How do I finish the merge after resolving my merge conflicts?</a></p>
+<h2 id="push">push<a class="headerlink" href="#push" title="Permanent link">&para;</a></h2>
+<p>采用低版本的 git， 如 <code>v1.8.3.1</code> 当 push 时会报出以下提醒信息，</p>
+<div class="highlight"><pre><span></span><code>warning: push.default is unset<span class="p">;</span> its implicit value is changing in
+Git <span class="m">2</span>.0 from <span class="s1">&#39;matching&#39;</span> to <span class="s1">&#39;simple&#39;</span>. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See <span class="s1">&#39;git help config&#39;</span> and search <span class="k">for</span> <span class="s1">&#39;push.default&#39;</span> <span class="k">for</span> further information.
+<span class="o">(</span>the <span class="s1">&#39;simple&#39;</span> mode was introduced in Git <span class="m">1</span>.7.11. Use the similar mode
+<span class="s1">&#39;current&#39;</span> instead of <span class="s1">&#39;simple&#39;</span> <span class="k">if</span> you sometimes use older versions of Git<span class="o">)</span>
+</code></pre></div>
+
+<p>而自己本机电脑一般采用 <code>v2.0+</code>， 比如当前 <code>v2.17.1</code> 的 git，所以直接采用 <code>simple</code> 模式便好了。</p>
                 
                   
                 
