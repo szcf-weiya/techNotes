@@ -76,13 +76,6 @@ or
 git remote set-url origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
 ```
 
-## git branch
-[ref](http://blog.csdn.net/guang11cheng/article/details/37757201)
-
-
-## git init
-
-
 ## gitignore 失效
 
 [.gitignore](http://www.pfeng.org/archives/840)
@@ -339,3 +332,25 @@ git remote set-url origin git@github.com:username/repo.git
 3. git commit
 
 refer to [How do I finish the merge after resolving my merge conflicts?](https://stackoverflow.com/questions/2474097/how-do-i-finish-the-merge-after-resolving-my-merge-conflicts)
+
+## push 
+
+采用低版本的 git， 如 `v1.8.3.1` 当 push 时会报出以下提醒信息，
+
+```bash
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+```
+
+而自己本机电脑一般采用 `v2.0+`， 比如当前 `v2.17.1` 的 git，所以直接采用 `simple` 模式便好了。
