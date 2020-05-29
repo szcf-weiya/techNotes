@@ -354,3 +354,25 @@ See 'git help config' and search for 'push.default' for further information.
 ```
 
 而自己本机电脑一般采用 `v2.0+`， 比如当前 `v2.17.1` 的 git，所以直接采用 `simple` 模式便好了。
+
+## alias
+
+本来想同时在一行命令中运行 `git add .` 和 `git commit -m`，但是如果采用 `;` 或者 `&&` 连接时都报错，
+
+> error: unknown switch `m'
+
+顺带发现了 `;` 和 `&&` 以及 `||` 的区别，详见 [Run multiple commands in one line with `;`, `&&` and `||` - Linux Tips](https://dev.to/0xbf/run-multiple-commands-in-one-line-with-and-linux-tips-5hgm)
+
+- `;`: 无论第一个命令成功与否，都会运行第二个命令
+- `&&`: 只有当第一个命令成功运行，才会运行第二个命令
+- `||`: 只有当第一个命令失败后，才会运行第二个命令
+
+后来发现这个，[Git add and commit in one command](https://stackoverflow.com/questions/4298960/git-add-and-commit-in-one-command)，可以通过 `git config` 来配置 alias，
+
+> git config --global alias.add-commit '!git add -A && git commit'
+
+则以后只需要调用
+
+> git add-commit -m 'My commit message'
+
+这跟在 `.bashrc` 中配置有异曲同工之妙！
