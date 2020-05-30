@@ -51,3 +51,5 @@ ssh -D 30002 my@server
 ## shootback
 
 同 SSH 反向隧道，需要自己准备一台服务器，[项目主页](https://github.com/aploium/shootback)有详细配置过程。
+
+但是这似乎跟不加 `-g` 版本的 ssh 反向隧道一样，会存在安全性问题，相当于暴露了公网 ip. 
