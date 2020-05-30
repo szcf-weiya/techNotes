@@ -42,7 +42,7 @@
     
     
       
-        <title>CSS - techNotes</title>
+        <title>Website - techNotes</title>
       
     
     
@@ -135,7 +135,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                CSS
+                Website
               
             </span>
           
@@ -589,18 +589,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="./" title="Website" class="md-nav__link">
-      Website
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -612,11 +600,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        CSS
+        Website
       </label>
     
-    <a href="./" title="CSS" class="md-nav__link md-nav__link--active">
-      CSS
+    <a href="./" title="Website" class="md-nav__link md-nav__link--active">
+      Website
     </a>
     
       
@@ -928,6 +916,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="css/" title="CSS" class="md-nav__link">
+      CSS
+    </a>
   </li>
 
         
@@ -1805,6 +1805,23 @@ sudo a2dissite <span class="m">000</span>-default.conf
 </code></pre></div>
 
 <p>默认装的是 php7.2，虽然文档中说的是 php5.6，切换不同版本的 php 可以参考 <a href="https://vitux.com/how-to-install-php5-and-php7-on-ubuntu-18-04-lts/">How to install php5 and php7 on Ubuntu 18.04 LTS</a></p>
+<p>注意有</p>
+<ul>
+<li>通过 Apache2, 即</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># disable</span>
+sudo a2dismod php5.6
+sudo a2enmod php7.2
+</code></pre></div>
+
+<ul>
+<li>通过 <code>update-alternatives</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo update-alternatives --set php /usr/bin/php7.2
+<span class="c1"># or select from the list</span>
+sudo update-alternatives --config php
+</code></pre></div>
+
 <p>另外还要安装 <code>cURL</code>，不然会报错</p>
 <blockquote>
 <p>PHP Fatal error:  Call to undefined function curl_init() in /var/www/disqus/disqus-php-api/api/init.php on line 104</p>
@@ -2129,7 +2146,7 @@ ERROR:  While executing gem ... (Errno::EACCES)
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="./" title="Website" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../TeX/" title="Tex" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2138,19 +2155,19 @@ ERROR:  While executing gem ... (Errno::EACCES)
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Website
+                Tex
               </span>
             </div>
           </a>
         
         
-          <a href="../js/" title="JS" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="css/" title="CSS" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                JS
+                CSS
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

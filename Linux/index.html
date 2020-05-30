@@ -355,8 +355,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ubuntu" class="md-nav__link">
-    Ubuntu 下对文本文件每行行首进行追加、替换
+  <a href="#vim" class="md-nav__link">
+    Vim 对每行行首进行追加、替换
   </a>
   
 </li>
@@ -385,13 +385,6 @@
         <li class="md-nav__item">
   <a href="#virtual-memory-exhausted-cannot-allocate-memory" class="md-nav__link">
     阿里云服务器virtual memory exhausted: Cannot allocate memory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gcc-462" class="md-nav__link">
-    编译安装gcc-4.6.2
   </a>
   
 </li>
@@ -599,7 +592,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ubuntu_1" class="md-nav__link">
+  <a href="#ubuntu" class="md-nav__link">
     Ubuntu的回收站
   </a>
   
@@ -1300,7 +1293,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../website/" title="CSS" class="md-nav__link">
+    <a href="../website/css/" title="CSS" class="md-nav__link">
       CSS
     </a>
   </li>
@@ -1849,8 +1842,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ubuntu" class="md-nav__link">
-    Ubuntu 下对文本文件每行行首进行追加、替换
+  <a href="#vim" class="md-nav__link">
+    Vim 对每行行首进行追加、替换
   </a>
   
 </li>
@@ -1879,13 +1872,6 @@
         <li class="md-nav__item">
   <a href="#virtual-memory-exhausted-cannot-allocate-memory" class="md-nav__link">
     阿里云服务器virtual memory exhausted: Cannot allocate memory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gcc-462" class="md-nav__link">
-    编译安装gcc-4.6.2
   </a>
   
 </li>
@@ -2093,7 +2079,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ubuntu_1" class="md-nav__link">
+  <a href="#ubuntu" class="md-nav__link">
     Ubuntu的回收站
   </a>
   
@@ -2518,6 +2504,8 @@ userName2 <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o"
 <p>常用操作</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># new a shell</span>
 tmux
+<span class="c1"># new a shell with name</span>
+tmux new -s NAME
 <span class="c1"># view all shell</span>
 tmux ls
 <span class="c1"># go back</span>
@@ -2526,11 +2514,16 @@ tmux attach-session -t <span class="o">[</span>NUM<span class="o">]</span>
 tmux attach -t <span class="o">[</span>NUM<span class="o">]</span>
 <span class="c1"># more simplify</span>
 tmux a -t <span class="o">[</span>NUM<span class="o">]</span>
+<span class="c1"># via name</span>
+tmux a -t NAME
 <span class="c1"># complete reset: https://stackoverflow.com/questions/38295615/complete-tmux-reset</span>
 tmux kill-server
 </code></pre></div>
 
-<p>refer to <a href="https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it">How do I access tmux session after I leave it?</a> and <a href="https://linuxize.com/post/getting-started-with-tmux/">Getting started with Tmux</a></p>
+<p>refer to 
+- <a href="https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it">How do I access tmux session after I leave it?</a>
+- <a href="https://linuxize.com/post/getting-started-with-tmux/">Getting started with Tmux</a>
+- <a href="https://gist.github.com/henrik/1967800">tmux cheatsheet</a></p>
 <h2 id="_3">缺少动态链接库<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>在服务器上使用gsl报缺少动态链接库的错误
 解决方案
@@ -2544,8 +2537,12 @@ tmux kill-server
 <div class="highlight"><pre><span></span><code>/where/is/the/lib/
 </code></pre></div>
 
-<h2 id="ubuntu">Ubuntu 下对文本文件每行行首进行追加、替换<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h2>
-<p><a href="http://blog.csdn.net/u010555688/article/details/48416765">sed</a></p>
+<h2 id="vim">Vim 对每行行首进行追加、替换<a class="headerlink" href="#vim" title="Permanent link">&para;</a></h2>
+<p>按住 v 或者 V 选定需要追加的行，然后再进入 <code>:</code> 模式，输入正常的 <code>sed</code> 命令，如</p>
+<div class="highlight"><pre><span></span><code>s/^/#/g
+</code></pre></div>
+
+<p>参考 <a href="http://blog.csdn.net/u010555688/article/details/48416765">Ubuntu 下对文本文件每行行首进行追加、替换</a></p>
 <h2 id="make">Make<a class="headerlink" href="#make" title="Permanent link">&para;</a></h2>
 <p><a href="https://my.oschina.net/u/1413984/blog/199029">https://my.oschina.net/u/1413984/blog/199029</a></p>
 <ul>
@@ -2582,17 +2579,17 @@ swapon /swap
 ##Enable swap on boot, 开机后自动生效
 echo &quot;/swap swap swap sw 0 0&quot; &gt;&gt; /etc/fstab
 </code></pre></div></p>
-<h2 id="gcc-462">编译安装gcc-4.6.2<a class="headerlink" href="#gcc-462" title="Permanent link">&para;</a></h2>
-<ol>
-<li>https://gcc.gnu.org/faq.html#multiple</li>
-<li>https://askubuntu.com/questions/313288/how-to-use-multiple-instances-of-gcc</li>
-<li>http://www.tellurian.com.au/whitepapers/multiplegcc.php</li>
-<li>https://stackoverflow.com/questions/9450394/how-to-install-gcc-piece-by-piece-with-gmp-mpfr-mpc-elf-without-shared-libra</li>
-</ol>
 <h2 id="gcc">gcc版本<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h2>
-<ol>
-<li>https://codeyarns.com/2015/02/26/how-to-switch-gcc-version-using-update-alternatives/</li>
-</ol>
+<p>可以通过 <code>update-alternatives</code> 进行切换，但注意要提前安装 <code>install</code> alternatives，这里的 install 不是下载源码安装，而是将系统中已有的不同版本的 gcc 安装到 alternatives 中。比如当前我电脑的 gcc &ndash;version 是 7.5.0，但是仍有 <code>gcc-5</code>, <code>gcc-4.8</code> 等命令，不过这些并不在 alternatives 中，因为如果直接运行 </p>
+<div class="highlight"><pre><span></span><code>$ sudo update-alternatives --config gcc
+update-alternatives: error: no alternatives <span class="k">for</span> gcc
+</code></pre></div>
+
+<p>所以可以按照 <a href="https://codeyarns.github.io/tech/2015-02-26-how-to-switch-gcc-version-using-update-alternatives.html">How to switch GCC version using update-alternatives</a> 先</p>
+<div class="highlight"><pre><span></span><code>sudo update-alternatives --install ....
+</code></pre></div>
+
+<p>然后再 config.</p>
 <h2 id="terminator">terminator设置<a class="headerlink" href="#terminator" title="Permanent link">&para;</a></h2>
 <ol>
 <li>hostname的颜色
@@ -2759,7 +2756,7 @@ sudo service cron reload
 <div class="highlight"><pre><span></span><code>ffmpeg -i in.mov -vf <span class="s2">&quot;transpose=1&quot;</span> -strict -2 out.mov
 </code></pre></div>
 
-<h2 id="ubuntu_1">Ubuntu的回收站<a class="headerlink" href="#ubuntu_1" title="Permanent link">&para;</a></h2>
+<h2 id="ubuntu">Ubuntu的回收站<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://blog.csdn.net/DSLZTX/article/details/46685959">https://blog.csdn.net/DSLZTX/article/details/46685959</a></p>
 <h2 id="log">输出到 log 文件<a class="headerlink" href="#log" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file">How do I save terminal output to a file?</a></p>
