@@ -26,7 +26,7 @@ pages:
     - Tex: TeX/index.md
     - Website:
       - Website: website/index.md
-      - CSS: website/index.md
+      - CSS: website/css.md
       - JS: js/index.md
     - Network: 
       - 一般问题: Internet/index.md

@@ -119,6 +119,25 @@ sudo apt install php
 
 默认装的是 php7.2，虽然文档中说的是 php5.6，切换不同版本的 php 可以参考 [How to install php5 and php7 on Ubuntu 18.04 LTS](https://vitux.com/how-to-install-php5-and-php7-on-ubuntu-18-04-lts/)
 
+注意有
+
+- 通过 Apache2, 即
+
+```bash
+# disable
+sudo a2dismod php5.6
+sudo a2enmod php7.2
+```
+
+- 通过 `update-alternatives`
+
+```bash
+sudo update-alternatives --set php /usr/bin/php7.2
+# or select from the list
+sudo update-alternatives --config php
+```
+
+
 另外还要安装 `cURL`，不然会报错
 
 > PHP Fatal error:  Call to undefined function curl_init() in /var/www/disqus/disqus-php-api/api/init.php on line 104

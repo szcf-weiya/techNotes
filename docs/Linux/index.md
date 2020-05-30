@@ -52,6 +52,8 @@ userName2 ALL=(ALL)       ALL
 ```bash
 # new a shell
 tmux
+# new a shell with name
+tmux new -s NAME
 # view all shell
 tmux ls
 # go back
@@ -60,12 +62,16 @@ tmux attach-session -t [NUM]
 tmux attach -t [NUM]
 # more simplify
 tmux a -t [NUM]
+# via name
+tmux a -t NAME
 # complete reset: https://stackoverflow.com/questions/38295615/complete-tmux-reset
 tmux kill-server
 ```
 
-refer to [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it) and [Getting started with Tmux](https://linuxize.com/post/getting-started-with-tmux/)
-
+refer to 
+- [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it)
+- [Getting started with Tmux](https://linuxize.com/post/getting-started-with-tmux/)
+- [tmux cheatsheet](https://gist.github.com/henrik/1967800)
 ## 缺少动态链接库
 
 在服务器上使用gsl报缺少动态链接库的错误
@@ -86,9 +92,15 @@ sudo vim /etc/ld.so.conf
 ```
 
 
-## Ubuntu 下对文本文件每行行首进行追加、替换
+## Vim 对每行行首进行追加、替换
 
-[sed](http://blog.csdn.net/u010555688/article/details/48416765)
+按住 v 或者 V 选定需要追加的行，然后再进入 `:` 模式，输入正常的 `sed` 命令，如
+
+```bash
+s/^/#/g
+```
+
+参考 [Ubuntu 下对文本文件每行行首进行追加、替换](http://blog.csdn.net/u010555688/article/details/48416765)
 
 
 ## Make
@@ -141,16 +153,24 @@ swapon /swap
 echo "/swap swap swap sw 0 0" >> /etc/fstab
 ```
 
-## 编译安装gcc-4.6.2
-
-1. https://gcc.gnu.org/faq.html#multiple
-2. https://askubuntu.com/questions/313288/how-to-use-multiple-instances-of-gcc
-3. http://www.tellurian.com.au/whitepapers/multiplegcc.php
-4. https://stackoverflow.com/questions/9450394/how-to-install-gcc-piece-by-piece-with-gmp-mpfr-mpc-elf-without-shared-libra
-
 
 ## gcc版本
-1. https://codeyarns.com/2015/02/26/how-to-switch-gcc-version-using-update-alternatives/
+
+可以通过 `update-alternatives` 进行切换，但注意要提前安装 `install` alternatives，这里的 install 不是下载源码安装，而是将系统中已有的不同版本的 gcc 安装到 alternatives 中。比如当前我电脑的 gcc --version 是 7.5.0，但是仍有 `gcc-5`, `gcc-4.8` 等命令，不过这些并不在 alternatives 中，因为如果直接运行 
+
+```bash
+$ sudo update-alternatives --config gcc
+update-alternatives: error: no alternatives for gcc
+```
+
+所以可以按照 [How to switch GCC version using update-alternatives](https://codeyarns.github.io/tech/2015-02-26-how-to-switch-gcc-version-using-update-alternatives.html) 先
+
+```bash
+sudo update-alternatives --install ....
+```
+
+然后再 config.
+
 
 ## terminator设置
 1. hostname的颜色
