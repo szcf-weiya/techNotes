@@ -1228,6 +1228,7 @@ ssh -D <span class="m">30002</span> my@server
 <p>然后在 SwitchyOmega 中添加 socks5://127.0.0.1:30002。</p>
 <h2 id="shootback">shootback<a class="headerlink" href="#shootback" title="Permanent link">&para;</a></h2>
 <p>同 SSH 反向隧道，需要自己准备一台服务器，<a href="https://github.com/aploium/shootback">项目主页</a>有详细配置过程。</p>
+<p>但是这似乎跟不加 <code>-g</code> 版本的 ssh 反向隧道一样，会存在安全性问题，相当于暴露了公网 ip. </p>
                 
                   
                 
