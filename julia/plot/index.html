@@ -1107,6 +1107,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3d" class="md-nav__link">
+    网格 3D 图
+  </a>
+  
+</li>
+      
       
       
       
@@ -1134,6 +1141,23 @@
 <span class="n">Sigma</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mf">0.9</span><span class="p">;</span> <span class="mf">0.9</span> <span class="mi">1</span><span class="p">];</span>
 <span class="n">contour</span><span class="p">(</span><span class="n">x_grid</span><span class="p">,</span> <span class="n">y_grid</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">pdf</span><span class="p">(</span><span class="n">MvNormal</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Sigma</span><span class="p">),</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]),</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div>
+
+<h2 id="3d">网格 3D 图<a class="headerlink" href="#3d" title="Permanent link">&para;</a></h2>
+<p>要求颜色随着高度渐变，这包含两部分的渐变，</p>
+<ul>
+<li>不同纬度上的每一个截面圆指定颜色</li>
+<li>经线的的不同维度需要分段指定颜色</li>
+</ul>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/83348932-2bca7600-a363-11ea-9ad0-07da29102ca0.png" /></p>
+<p>第一点其实很简单，当生成好一组渐变颜色后，比如</p>
+<div class="highlight"><pre><span></span><code><span class="n">colors</span> <span class="o">=</span> <span class="n">cgrad</span><span class="p">(</span><span class="o">:</span><span class="n">summer</span><span class="p">,</span> <span class="n">nz</span><span class="p">,</span> <span class="n">categorical</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
+</code></pre></div>
+
+<p>更多的选择详见 <a href="https://docs.juliaplots.org/latest/generated/colorschemes/">Colorschemes</a></p>
+<p>在循环画图时，每次指定一种颜色便 OK 了。</p>
+<p>第二点其实也很简单，在画一条曲线时，如果 linecolor 指定为颜色<strong>列</strong>向量，比如 <code>[:red, :green, :orange]</code>，则每一段的颜色会循环采用该列向量中的颜色，则当列向量长度刚好等于区间段的个数，则每一段都会以不同的颜色绘制。需要注意到是，颜色<strong>行</strong>向量用于画多条曲线时为每一条曲线指定不同的颜色。</p>
+<p>但最后第二点折腾了有点久，直接把 <code>colors</code> 带进去并不行，后来才发现它不是简单的颜色列向量，里面还包含其它信息，最后采用 <code>colors.colors.colors</code> 才成功。详见 <a href="https://github.com/szcf-weiya/ESL-CN/blob/5e8d95299d4c53d8f509324546b40c65b31a3666/code/SOM/wiremesh.jl#L52-L54">ESL-CN/code/SOM/wiremesh.jl</a></p>
+<p>另外，也尝试过<a href="http://docs.juliaplots.org/latest/generated/gr/#gr-ref24-1">官方文档例子</a>中 <code>zcolor</code> 参数，但是似乎只针对 marker 起作用，当然是跟 <code>m =</code> 参数配合的效果，第一个元素代表大小，第二个透明度。所以理论上把 <code>m =</code> 换成 <code>line</code> 或许也能达到效果，但如果不能直接通过 <code>zcolor</code> 使得不同高度的颜色不一样（我本以为可以），那干脆直接指定颜色。 </p>
                 
                   
                 
