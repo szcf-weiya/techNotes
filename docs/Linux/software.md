@@ -311,6 +311,19 @@ Use hardware acceleration when available
 ```
 false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整个 chrome。
 
+### 沙盒 sandbox
+
+在 Julia 中使用 Plotly 画图时，报出
+
+```julia
+[0531/160811.236665:ERROR:nacl_helper_linux.cc(308)] NaCl helper process running without a sandbox!
+Most likely you need to configure your SUID sandbox correctly
+```
+
+通过 `ps -aef | grep chrome` 查看 chrome 的运行参数，没有发现 `no-sandbox`，即默认应该是开启的，所以现在不清楚了。
+
+
+
 ## Atom
 
 ### atom 自动更新
