@@ -468,3 +468,7 @@ sudo apt-get remove rstudio
 参考[Octave for Debian systems](http://wiki.octave.org/Octave_for_Debian_systems)
 
 另外帮助文档见[GNU Octave](https://www.gnu.org/software/octave/doc/interpreter/)
+
+## Thunderbird
+
+添加学校邮箱时，必须采用学号形式的邮箱，不要用 alias 形式的，alias 验证会出问题。
