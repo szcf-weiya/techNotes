@@ -402,12 +402,25 @@
     awk
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#ip" class="md-nav__link">
     统计访问日志里每个 ip 访问次数
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    列的个数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -501,7 +514,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     链接自动推送
   </a>
   
@@ -1419,12 +1432,25 @@
     awk
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#ip" class="md-nav__link">
     统计访问日志里每个 ip 访问次数
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    列的个数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1518,7 +1544,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     链接自动推送
   </a>
   
@@ -1682,7 +1708,7 @@
 </ul>
 <h2 id="awk">awk<a class="headerlink" href="#awk" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://linux.cn/article-3945-1.html">技术|如何在Linux中使用awk命令</a></p>
-<h2 id="ip">统计访问日志里每个 ip 访问次数<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h2>
+<h3 id="ip">统计访问日志里每个 ip 访问次数<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 cat access.log <span class="p">|</span>sed -rn <span class="s1">&#39;/28\/Jan\/2015/p&#39;</span> &gt; a.txt 
 cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</span><span class="p">|</span>sort <span class="p">|</span>uniq &gt; ipnum.txt
@@ -1693,6 +1719,13 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 </code></pre></div>
 
 <p>Refer to <a href="https://www.cnblogs.com/paul8339/p/6207182.html">用shell统计访问日志里每个ip访问次数</a></p>
+<h3 id="_3">列的个数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>如果间隔是空格，则直接用下面命令便可以得到列数，</p>
+<div class="highlight"><pre><span></span><code>aws <span class="s1">&#39;print NF; exit&#39;</span> file.txt
+</code></pre></div>
+
+<p>如果是其他的间隔符，比如 <code>|</code>，可以指定 <code>-F'|'</code></p>
+<p>参考 <a href="https://stackoverflow.com/questions/8629330/unix-count-of-columns-in-file">unix - count of columns in file</a></p>
 <h2 id="split-string-while-reading-files">split string while reading files<a class="headerlink" href="#split-string-while-reading-files" title="Permanent link">&para;</a></h2>
 <p>specify <code>IFS=</code>.</p>
 <ol>
@@ -1830,7 +1863,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <span class="k">done</span> &lt; &lt;<span class="o">(</span>find . -maxdepth <span class="m">1</span> -regex <span class="s2">&quot;\./oracle_setting_2019-09-.*recall\.pdf&quot;</span> -print0<span class="o">)</span>
 </code></pre></div>
 
-<h2 id="_3">链接自动推送<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">链接自动推送<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>find -regex <span class="s2">&quot;\./.*\.html&quot;</span> <span class="p">|</span> sed -n <span class="s2">&quot;s#\./#https://esl.hohoweiya.xyz/#p&quot;</span> &gt;&gt; ../urls.txt
 </code></pre></div>
 
@@ -1858,7 +1891,16 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 
 <p>refer to <a href="https://gist.github.com/darrenderidder/974638">darrenderidder/bashpath.sh</a></p>
 <h2 id="if">if<a class="headerlink" href="#if" title="Permanent link">&para;</a></h2>
-<p>we can add <code>&amp;&gt; /dev/null</code> to hidden the output information in the condition of <code>if</code>.</p>
+<p>We can add <code>&amp;&gt; /dev/null</code> to hidden the output information in the condition of <code>if</code>. For example, check if user exists,</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># refer to https://blog.51cto.com/64314491/1629175</span>
+<span class="k">if</span> id <span class="nv">$1</span> <span class="p">&amp;</span>&gt; /dev/null<span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2"> exists&quot;</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2"> is not exists&quot;</span>
+<span class="k">fi</span>
+</code></pre></div>
+
 <p>refer to <a href="https://blog.51cto.com/64314491/1629175">bash条件判断之if语句</a></p>
 <h2 id="square-bracket">square bracket <code>[</code><a class="headerlink" href="#square-bracket" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> $<span class="o">[</span> <span class="nv">$RANDOM</span> % <span class="m">2</span> <span class="o">]</span>
