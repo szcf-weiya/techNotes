@@ -127,7 +127,7 @@ grep -E "https://user-images." _posts/2019-12-21-quant-genetics.md | while read 
 
 参考[技术|如何在Linux中使用awk命令](https://linux.cn/article-3945-1.html)
 
-## 统计访问日志里每个 ip 访问次数
+### 统计访问日志里每个 ip 访问次数
 
 ```bash
 #!/bin/bash
@@ -140,6 +140,18 @@ done
 ```
 
 Refer to [用shell统计访问日志里每个ip访问次数](https://www.cnblogs.com/paul8339/p/6207182.html)
+
+### 列的个数
+
+如果间隔是空格，则直接用下面命令便可以得到列数，
+
+```bash
+aws 'print NF; exit' file.txt
+```
+
+如果是其他的间隔符，比如 `|`，可以指定 `-F'|'`
+
+参考 [unix - count of columns in file](https://stackoverflow.com/questions/8629330/unix-count-of-columns-in-file)
 
 ## split string while reading files
 
@@ -363,7 +375,17 @@ refer to [darrenderidder/bashpath.sh](https://gist.github.com/darrenderidder/974
 
 ## if
 
-we can add `&> /dev/null` to hidden the output information in the condition of `if`.
+We can add `&> /dev/null` to hidden the output information in the condition of `if`. For example, check if user exists,
+
+```bash
+#!/bin/bash
+# refer to https://blog.51cto.com/64314491/1629175
+if id $1 &> /dev/null; then
+	echo "$1 exists"
+else
+	echo "$1 is not exists"
+fi
+```
 
 refer to [bash条件判断之if语句](https://blog.51cto.com/64314491/1629175)
 
