@@ -1040,12 +1040,51 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Java
+      </label>
     
     <a href="./" title="Java" class="md-nav__link md-nav__link--active">
       Java
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jdk-jre-and-jvm" class="md-nav__link">
+    JDK, JRE and JVM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayindex-vs-arrayindex" class="md-nav__link">
+    array[index++] vs array[++index]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-coverage-of-javajuliarpython" class="md-nav__link">
+    Code Coverage of Java/Julia/R/Python
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1105,8 +1144,36 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jdk-jre-and-jvm" class="md-nav__link">
+    JDK, JRE and JVM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrayindex-vs-arrayindex" class="md-nav__link">
+    array[index++] vs array[++index]
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-coverage-of-javajuliarpython" class="md-nav__link">
+    Code Coverage of Java/Julia/R/Python
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1119,18 +1186,44 @@
               
                 
                 
-                <h1 id="jdk-jre-and-jvm">JDK, JRE and JVM<a class="headerlink" href="#jdk-jre-and-jvm" title="Permanent link">&para;</a></h1>
+                  <h1>Java</h1>
+                
+                <h2 id="jdk-jre-and-jvm">JDK, JRE and JVM<a class="headerlink" href="#jdk-jre-and-jvm" title="Permanent link">&para;</a></h2>
 <p>Refer to <a href="http://playkid.blog.163.com/blog/static/56287260201372113842153/">JDK、JRE、JVM三者间的关系  </a></p>
 <ol>
 <li>JDK(Java Development Kit): 针对开发员，包括了Java运行环境JRE、Java工具和Java基础类库</li>
 <li>JRE(Java Runtime Environment): 运行JAVA程序所必须的环境的集合，包含JVM标准实现及Java核心类库</li>
 <li>JVM(Java Virtual Machine): 能够运行以Java语言写作的软件程序。JVM屏蔽了与具体操作系统平台相关的信息，使得Java程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。</li>
 </ol>
-<h1 id="arrayindex-vs-arrayindex"><code>array[index++]</code> vs <code>array[++index]</code><a class="headerlink" href="#arrayindex-vs-arrayindex" title="Permanent link">&para;</a></h1>
+<h2 id="arrayindex-vs-arrayindex"><code>array[index++]</code> vs <code>array[++index]</code><a class="headerlink" href="#arrayindex-vs-arrayindex" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>The code result++; and ++result; will both end in result being incremented by one. The only difference is that the prefix version (++result) evaluates to the incremented value, whereas the postfix version (result++) evaluates to the original value.</p>
 </blockquote>
 <p>参考 <a href="https://stackoverflow.com/questions/7218249/array-index-and-increment-at-the-same-line">array index and increment at the same line</a></p>
+<h2 id="code-coverage-of-javajuliarpython">Code Coverage of Java/Julia/R/Python<a class="headerlink" href="#code-coverage-of-javajuliarpython" title="Permanent link">&para;</a></h2>
+<p>此前在 Python/Julia/R 中玩过简单的 code coverage，我的印象中基本分为两步</p>
+<ol>
+<li>生成测试文件</li>
+<li>上传至 coveralls/codecov 等 CI 网站</li>
+</ol>
+<p>不同的语言有不同的 package 可以生成测试文件，并且上传至绑定好的第三方 CI 服务中。R 中</p>
+<div class="highlight"><pre><span></span><code>library<span class="o">(</span>covr<span class="o">)</span><span class="p">;</span> codecov<span class="o">()</span>
+</code></pre></div>
+
+<p>便可一键传至 codecov，比如 <a href="https://github.com/szcf-weiya/fRLR/blob/master/.travis.yml">szcf-weiya/fRLR</a>.</p>
+<p>Julia 可以用 <code>Coverage</code> 包，然后通过 <code>submit</code> 函数提交至 CI 服务中，如 <a href="https://github.com/szcf-weiya/GradientBoost.jl/blob/master/.travis.yml">szcf-weiya/GradientBoost.jl</a></p>
+<p>当然也可以先导出测试文件，<code>lcov.info</code>，然后再上传，目前我在 github action 是采用这种配置模式，而且通过在环境变量中加入 token，可以适用于 private 仓库。</p>
+<p>Python 也类似有 <code>coverage</code> 包。</p>
+<p>如果仓库中有混合代码，则可以先分别生成测试文件，再把 coverage 结果拼接起来一起上传至 CI 服务中，但是因为不同 package 输出的测试文件格式不一样，可能需要进行格式转换。比如在我的某个 Python + Julia 混合项目中，主要参考 <a href="https://coveralls-python.readthedocs.io/en/latest/usage/multilang.html">Multiple Language Support</a></p>
+<ul>
+<li>Julia 部分通过 <code>Coverage</code> 包导出 <code>lcov.info</code> 文件</li>
+<li>通过 <code>coveralls-lcov</code> 将 <code>lcov.info</code> 转换成 JSON 格式 <code>lcov.json</code></li>
+<li>python 部分通过 <code>coverage</code> 包进行测试，然后在用 <code>coveralls</code> 提交时，加上 <code>--merge=lcov.json</code> 的选项 </li>
+</ul>
+<p>在 Java 中，也以为会有这种直接的方式，当然 Java 如果是采用 Maven 等框架的话，应该会很直接（因为看上去也是一句话的事），但是我的 Java 水平仅限于 HelloWorld，暂时不想也没必要折腾 Maven 等框架，而且我觉得从零开始把背后的逻辑弄清楚更有意义。</p>
+<p>首先找到了单元测试 JUnit，这个符合我的预期，但是始终没能找到输出测试文件的选项，即只能在命令行跑完展示下。后来 google 试图找到直接从 JUnit 中导出测试结果的工具，但竟然没有，直到翻到<a href="https://stackoverflow.com/questions/12445582/generating-junit-reports-from-the-command-line">这个答案</a>打消了我的念头，里面提到了 <code>Ant</code>，其实此时根本对 Ant 和 Maven 等等名词没有任何概念，即便看了官方的解释，也还是一头雾水。不管怎样，还是准备学下 <code>Ant</code>，一个<a href="https://www.cnblogs.com/ArtsCrafts/p/Ant_begin.html">非常形象的类别——Java中的make</a>——瞬间让我理解了 <code>Ant</code> 的作用，然后接下来就像写 Makefile 一样来学着写 <code>build.xml</code>，所以在看官方文档之前，看看别人的总结也还是很有用的. 在 ant 中 task <code>junit</code> 可以指定输出选项，原以为这时大功告成，但是最后上传至 codecov 时，仍然表示解析报告出错，后来细看了了 <code>report.xml</code> 才发现里面根本包含不了 coverage 的信息，换言之，很可能 JUnit 只是起了 test 的作用，并不能分析 coverage。</p>
+<p>这时便需要另外换工具了，其实在看到 JUnit 时，也看到了 <code>JaCoCo</code>，它也可以通过 ant 实现，只不过多了一些定义，所以不是很难。于是继续对照示例文档写 <code>build.xml</code>，得到的 <code>report.xml</code> 确实也包含了 coverage 的信息，但是上传至 codecov，仍然表示不能解析报告。最后跟示例文件比照 <code>build.xml</code> 以及 <code>report.xml</code>，发现我在 <code>report.xml</code> 中没有 sourcefiles 以及 classfiles 的信息，而这些是通过在 <code>build.xml</code> 中设置 <code>debug=true</code> 产生的。当把这个选项加上去，终于能在 codecov 看到 coverage 信息了！</p>
+<p>顺带提一下混合代码的问题，对于 Java，似乎很难有方式让它与其他代码的测试结果拼起来，但是完全可以用两个不同的 CI 服务来展示不同语言代码的 coverage，比如 Java 放在 codecov，Julia 的放在 Coveralls.</p>
                 
                   
                 
