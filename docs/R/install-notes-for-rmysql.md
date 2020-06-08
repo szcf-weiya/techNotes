@@ -32,8 +32,11 @@ R CMD INSTALL RMySQL_0.10.14.tar.gz
 
 ## 源码安装 MariaDB 5.5
 
-
 源码安装时需要 `cmake` 编译，而 `cmake` 服务器上也没有，所以还得源码安装一下 `cmake`，安装时注意不要选择太高的版本，不然会提示 gcc 版本过低，所以选择与 gcc 适配的版本。
+
+> CMake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装(编译过程)。他能够输出各种各样的makefile或者project文件，能测试编译器所支持的C++特性,类似UNIX下的automake。只是 CMake 的组态档取名为 CMakeLists.txt。
+>
+> 来源: [CMake的含义和用法解读](https://www.cnblogs.com/tsingke/p/11223146.html)
 
 具体编译过程参考
 1. [Generic Build Instructions](https://mariadb.com/kb/en/library/generic-build-instructions/)

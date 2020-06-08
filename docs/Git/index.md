@@ -143,8 +143,6 @@ git remote set-url origin git@github.com:szcf-weiya/depi.git
 
 附上git pull的某篇博客[git pull命令](http://www.yiibai.com/git/git_pull.html)
 
-
-
 ## Webhook配置
 
 参考[Webhook 实践 —— 自动部署](http://jerryzou.com/posts/webhook-practice/)
@@ -207,19 +205,29 @@ git pull upstream master
 
 参考[Quick Tip: Sync a GitHub Fork via the Command Line](https://www.sitepoint.com/quick-tip-synch-a-github-fork-via-the-command-line/)
 
-## 撤销未被 add 的文件
+## `git checkout`
+
+- 撤销未被 add 的文件
 
 ```bash
 git checkout -- file
 ```
 
-或者撤销所有更改
+- 撤销所有更改
 
 ```bash
 git checkout -- .
 ```
 
 参考[git checkout all the files](https://stackoverflow.com/questions/29007821/git-checkout-all-the-files)
+
+- 从其他分支更新文件
+
+```bash
+git checkout master -- SOMEFILE
+```
+
+参考 [Quick tip: git-checkout specific files from another branch](http://nicolasgallagher.com/git-checkout-specific-files-from-another-branch/)
 
 ## rewrite 时百分比的含义
 

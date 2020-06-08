@@ -818,3 +818,13 @@ plt.tight_layout(pad = 3.0)
 ## scatter size
 
 the size is defined by the area, [pyplot scatter plot marker size](https://stackoverflow.com/questions/14827650/pyplot-scatter-plot-marker-size)
+
+## `key` in `sorted`
+
+As said in [Key Functions -- Sorting HOW TO](https://docs.python.org/3/howto/sorting.html), the `key` function is to specify a function to be called on each list element prior to making comparisons.
+
+```python
+sorted("This is a test string from Andrew".split(), key=str.lower)
+```
+
+and met such technique in [4ment/marginal-experiments](https://github.com/4ment/marginal-experiments/blob/41124a1fbeed566cd7abc3dc474ea908a5ee8b28/run_simulations.py#L229)
