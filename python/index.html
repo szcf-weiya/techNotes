@@ -1130,6 +1130,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#key-in-sorted" class="md-nav__link">
+    key in sorted
+  </a>
+  
+</li>
+      
       
       
       
@@ -2399,6 +2406,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#key-in-sorted" class="md-nav__link">
+    key in sorted
+  </a>
+  
+</li>
+      
       
       
       
@@ -2987,6 +3001,12 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 
 <h2 id="scatter-size">scatter size<a class="headerlink" href="#scatter-size" title="Permanent link">&para;</a></h2>
 <p>the size is defined by the area, <a href="https://stackoverflow.com/questions/14827650/pyplot-scatter-plot-marker-size">pyplot scatter plot marker size</a></p>
+<h2 id="key-in-sorted"><code>key</code> in <code>sorted</code><a class="headerlink" href="#key-in-sorted" title="Permanent link">&para;</a></h2>
+<p>As said in <a href="https://docs.python.org/3/howto/sorting.html">Key Functions &ndash; Sorting HOW TO</a>, the <code>key</code> function is to specify a function to be called on each list element prior to making comparisons.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">sorted</span><span class="p">(</span><span class="s2">&quot;This is a test string from Andrew&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+</code></pre></div>
+
+<p>and met such technique in <a href="https://github.com/4ment/marginal-experiments/blob/41124a1fbeed566cd7abc3dc474ea908a5ee8b28/run_simulations.py#L229">4ment/marginal-experiments</a></p>
                 
                   
                 

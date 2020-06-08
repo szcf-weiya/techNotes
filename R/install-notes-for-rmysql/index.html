@@ -1307,6 +1307,10 @@
 <p>不过需要注意的是，因为没有 sudo 权限，只能安装到自己的用户目录下，所以 <code>configue</code> 时指定安装目录。</p>
 <h2 id="mariadb-55">源码安装 MariaDB 5.5<a class="headerlink" href="#mariadb-55" title="Permanent link">&para;</a></h2>
 <p>源码安装时需要 <code>cmake</code> 编译，而 <code>cmake</code> 服务器上也没有，所以还得源码安装一下 <code>cmake</code>，安装时注意不要选择太高的版本，不然会提示 gcc 版本过低，所以选择与 gcc 适配的版本。</p>
+<blockquote>
+<p>CMake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装(编译过程)。他能够输出各种各样的makefile或者project文件，能测试编译器所支持的C++特性,类似UNIX下的automake。只是 CMake 的组态档取名为 CMakeLists.txt。</p>
+<p>来源: <a href="https://www.cnblogs.com/tsingke/p/11223146.html">CMake的含义和用法解读</a></p>
+</blockquote>
 <p>具体编译过程参考
 1. <a href="https://mariadb.com/kb/en/library/generic-build-instructions/">Generic Build Instructions</a></p>
 <h3 id="step-1">step 1<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>

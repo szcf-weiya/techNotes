@@ -953,8 +953,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add" class="md-nav__link">
-    撤销未被 add 的文件
+  <a href="#git-checkout" class="md-nav__link">
+    git checkout
   </a>
   
 </li>
@@ -1593,8 +1593,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add" class="md-nav__link">
-    撤销未被 add 的文件
+  <a href="#git-checkout" class="md-nav__link">
+    git checkout
   </a>
   
 </li>
@@ -1880,15 +1880,27 @@ git config user.email
 </code></pre></div>
 
 <p>参考<a href="https://www.sitepoint.com/quick-tip-synch-a-github-fork-via-the-command-line/">Quick Tip: Sync a GitHub Fork via the Command Line</a></p>
-<h2 id="add">撤销未被 add 的文件<a class="headerlink" href="#add" title="Permanent link">&para;</a></h2>
+<h2 id="git-checkout"><code>git checkout</code><a class="headerlink" href="#git-checkout" title="Permanent link">&para;</a></h2>
+<ul>
+<li>撤销未被 add 的文件</li>
+</ul>
 <div class="highlight"><pre><span></span><code>git checkout -- file
 </code></pre></div>
 
-<p>或者撤销所有更改</p>
+<ul>
+<li>撤销所有更改</li>
+</ul>
 <div class="highlight"><pre><span></span><code>git checkout -- .
 </code></pre></div>
 
 <p>参考<a href="https://stackoverflow.com/questions/29007821/git-checkout-all-the-files">git checkout all the files</a></p>
+<ul>
+<li>从其他分支更新文件</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git checkout master -- SOMEFILE
+</code></pre></div>
+
+<p>参考 <a href="http://nicolasgallagher.com/git-checkout-specific-files-from-another-branch/">Quick tip: git-checkout specific files from another branch</a></p>
 <h2 id="rewrite">rewrite 时百分比的含义<a class="headerlink" href="#rewrite" title="Permanent link">&para;</a></h2>
 <p>表示相似性。</p>
 <p>参考<a href="https://stackoverflow.com/questions/1046276/what-does-the-message-rewrite-90-after-a-git-commit-mean">What does the message “rewrite … (90%)” after a git commit mean? [duplicate]</a></p>
