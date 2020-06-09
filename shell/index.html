@@ -1657,6 +1657,7 @@
 </ol>
 <ul>
 <li>打印特定行，比如第 10 行：<code>sed '10!d' file.txt</code>, 参考 <a href="https://stackoverflow.com/questions/19327556/get-specific-line-from-text-file-using-just-shell-script">Get specific line from text file using just shell script</a></li>
+<li>打印行范围，<code>sed -n '10,20p' file.txt</code>，则单独打印第 10 行也可以由 <code>sed -n '10p' file.txt</code> 给出</li>
 </ul>
 <h2 id="_1"><code>|</code>的作用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <blockquote>
