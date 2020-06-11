@@ -1137,6 +1137,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#typeerror-unhashable-type-list" class="md-nav__link">
+    TypeError: unhashable type: 'list'
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convert-a-nested-list-to-a-list" class="md-nav__link">
+    convert a nested list to a list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-a-nested-list" class="md-nav__link">
+    hash a nested list
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2413,6 +2440,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#typeerror-unhashable-type-list" class="md-nav__link">
+    TypeError: unhashable type: 'list'
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convert-a-nested-list-to-a-list" class="md-nav__link">
+    convert a nested list to a list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-a-nested-list" class="md-nav__link">
+    hash a nested list
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -3007,6 +3061,36 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 </code></pre></div>
 
 <p>and met such technique in <a href="https://github.com/4ment/marginal-experiments/blob/41124a1fbeed566cd7abc3dc474ea908a5ee8b28/run_simulations.py#L229">4ment/marginal-experiments</a></p>
+<h2 id="typeerror-unhashable-type-list"><code>TypeError: unhashable type: 'list'</code><a class="headerlink" href="#typeerror-unhashable-type-list" title="Permanent link">&para;</a></h2>
+<h3 id="convert-a-nested-list-to-a-list">convert a nested list to a list<a class="headerlink" href="#convert-a-nested-list-to-a-list" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">Python</span> <span class="mf">3.6</span><span class="o">.</span><span class="mi">9</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Apr</span> <span class="mi">18</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">01</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">04</span><span class="p">)</span> 
+<span class="p">[</span><span class="n">GCC</span> <span class="mf">8.4</span><span class="o">.</span><span class="mi">0</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">unhashable</span> <span class="nb">type</span><span class="p">:</span> <span class="s1">&#39;list&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span>
+</code></pre></div>
+
+<h3 id="hash-a-nested-list">hash a nested list<a class="headerlink" href="#hash-a-nested-list" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,],</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">unhashable</span> <span class="nb">type</span><span class="p">:</span> <span class="s1">&#39;list&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="nb">tuple</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,],</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]))</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">unhashable</span> <span class="nb">type</span><span class="p">:</span> <span class="s1">&#39;list&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="nb">tuple</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,]),</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]))</span>
+<span class="o">-</span><span class="mi">7943504827826258506</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,]),</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">unhashable</span> <span class="nb">type</span><span class="p">:</span> <span class="s1">&#39;list&#39;</span>
+</code></pre></div>
+
+<p>refer to <a href="https://stackoverflow.com/questions/13675296/python-typeerror-unhashable-type-list">Python: TypeError: unhashable type: &lsquo;list&rsquo;</a></p>
                 
                   
                 
