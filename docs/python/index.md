@@ -828,3 +828,39 @@ sorted("This is a test string from Andrew".split(), key=str.lower)
 ```
 
 and met such technique in [4ment/marginal-experiments](https://github.com/4ment/marginal-experiments/blob/41124a1fbeed566cd7abc3dc474ea908a5ee8b28/run_simulations.py#L229)
+
+## `TypeError: unhashable type: 'list'`
+
+### convert a nested list to a list
+
+```python
+Python 3.6.9 (default, Apr 18 2020, 01:56:04) 
+[GCC 8.4.0] on linux
+>>> set([1,2,3,4,[5,6,7],8,9])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> set([1,2,3,4,(5,6,7),8,9])
+{1, 2, 3, 4, (5, 6, 7), 8, 9}
+```
+
+### hash a nested list
+
+```python
+>>> hash([1, 2, 3, [4, 5,], 6, 7])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> hash(tuple([1, 2, 3, [4, 5,], 6, 7]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> hash(tuple([1, 2, 3, tuple([4, 5,]), 6, 7]))
+-7943504827826258506
+>>> hash([1, 2, 3, tuple([4, 5,]), 6, 7])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+```
+
+refer to [Python: TypeError: unhashable type: 'list'](https://stackoverflow.com/questions/13675296/python-typeerror-unhashable-type-list)
