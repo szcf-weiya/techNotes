@@ -728,3 +728,11 @@ texdoc natbib
 - with `\citet*`, `\citep*`, the citation would be full author list.
 
 For `biblatex`, seems that we can set the global argument `maxcitenames` to control the number of author in the citation, such as [only display all authors, of multi-author works, the first time a citation is used with biblatex](https://tex.stackexchange.com/questions/175801/only-display-all-authors-of-multi-author-works-the-first-time-a-citation-is-us)
+
+## 图片缩放 `resizebox`
+
+> For rescaling in general you can use a `resizebox` (from the `graphicx` package), which also works for `tikzpicture`. The first argument is the width, the second the height, or `!` to scale proportionally.
+>
+> source: [@Marijn](https://tex.stackexchange.com/a/363884/) 
+
+and application in [Forcing subfigures to have same height and take overall X% of linewidth in LaTeX](https://tex.stackexchange.com/questions/218378/forcing-subfigures-to-have-same-height-and-take-overall-x-of-linewidth-in-latex)
