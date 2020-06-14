@@ -886,6 +886,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#colorviews-for-images" class="md-nav__link">
+    colorviews for images
+  </a>
+  
+</li>
+      
       
       
       
@@ -1759,6 +1766,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#colorviews-for-images" class="md-nav__link">
+    colorviews for images
+  </a>
+  
+</li>
+      
       
       
       
@@ -2400,6 +2414,36 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 <h2 id="suptitle-for-subplots">suptitle for subplots<a class="headerlink" href="#suptitle-for-subplots" title="Permanent link">&para;</a></h2>
 <p>currently， no a option to set a suptitle for subplots, but we can use <code>@layout</code> to plot the title in a grid, such as <a href="https://github.com/szcf-weiya/TB/blob/c332307263cdbab20a453e6abe74790236321048/CFPC/sim_cpc_scores.jl#L87-L93">szcf-weiya/TB</a></p>
 <p>refer to <a href="https://discourse.julialang.org/t/super-title-in-plots-and-subplots/29865/4">Super title in Plots and subplots</a></p>
+<h2 id="colorviews-for-images"><code>colorviews</code> for images<a class="headerlink" href="#colorviews-for-images" title="Permanent link">&para;</a></h2>
+<p>check the help document by <code>?colorviews</code>, and there are some examples to illustrate its usage, but here I add some examples that I used in my projects.</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">colorview</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="mi">10</span><span class="n">×10</span> <span class="n">reshape</span><span class="p">(</span><span class="n">reinterpret</span><span class="p">(</span><span class="n">RGB</span><span class="p">{</span><span class="kt">Float64</span><span class="p">},</span> <span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">3</span><span class="p">}),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="n">with</span> <span class="n">eltype</span> <span class="n">RGB</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}</span><span class="o">:</span>
+</code></pre></div>
+
+<p>and we need to permutate the dims such that the first dim matches with RGB.</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">colorview</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">permutedims</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="mi">10</span><span class="n">×10</span> <span class="n">reshape</span><span class="p">(</span><span class="n">reinterpret</span><span class="p">(</span><span class="n">RGB</span><span class="p">{</span><span class="kt">Float64</span><span class="p">},</span> <span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">3</span><span class="p">}),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="n">with</span> <span class="n">eltype</span> <span class="n">RGB</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}</span><span class="o">:</span>
+</code></pre></div>
+
+<p>we also can append the alpha channel to an image, such as</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">colorview</span><span class="p">(</span><span class="n">RGBA</span><span class="p">,</span> <span class="n">colorview</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)),</span> <span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="mi">10</span><span class="n">×10</span> <span class="n">mappedarray</span><span class="p">(</span><span class="n">RGBA</span><span class="p">{</span><span class="kt">Float64</span><span class="p">},</span> <span class="n">ImageCore</span><span class="o">.</span><span class="n">extractchannels</span><span class="p">,</span> <span class="n">reshape</span><span class="p">(</span><span class="n">reinterpret</span><span class="p">(</span><span class="n">RGB</span><span class="p">{</span><span class="kt">Float64</span><span class="p">},</span> <span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">3</span><span class="p">}),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">})</span> <span class="n">with</span> <span class="n">eltype</span> <span class="n">RGBA</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}</span><span class="o">:</span>
+</code></pre></div>
+
+<p>but directly append the array does not work,</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">colorview</span><span class="p">(</span><span class="n">RGBA</span><span class="p">,</span> <span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">ERROR</span><span class="o">:</span> <span class="kt">DimensionMismatch</span><span class="p">(</span><span class="s">&quot;arrays do not all have the same axes (got (Base.OneTo(3), Base.OneTo(10), Base.OneTo(10)) and (Base.OneTo(10), Base.OneTo(10)))&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>which should be replaced with</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">colorview</span><span class="p">(</span><span class="n">RGBA</span><span class="p">,</span> <span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="mi">10</span><span class="n">×10</span> <span class="n">reshape</span><span class="p">(</span><span class="n">reinterpret</span><span class="p">(</span><span class="n">RGBA</span><span class="p">{</span><span class="kt">Float64</span><span class="p">},</span> <span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">3</span><span class="p">}),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="n">with</span> <span class="n">eltype</span> <span class="n">RGBA</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}</span><span class="o">:</span>
+</code></pre></div>
+
+<p>To use <code>RGB{N0f8}</code>, the input array should be <code>UInt8</code> not <code>Int</code>,</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">colorview</span><span class="p">(</span><span class="n">RGB</span><span class="p">{</span><span class="n">N0f8</span><span class="p">},</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">UInt8</span><span class="p">}(</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span>
+<span class="mi">10</span><span class="n">×10</span> <span class="n">reshape</span><span class="p">(</span><span class="n">reinterpret</span><span class="p">(</span><span class="n">RGB</span><span class="p">{</span><span class="n">N0f8</span><span class="p">},</span> <span class="n">view</span><span class="p">(</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">UInt8</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">)),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="n">with</span> <span class="n">eltype</span> <span class="n">RGB</span><span class="p">{</span><span class="n">Normed</span><span class="p">{</span><span class="kt">UInt8</span><span class="p">,</span><span class="mi">8</span><span class="p">}}</span><span class="o">:</span>
+</code></pre></div>
                 
                   
                 
