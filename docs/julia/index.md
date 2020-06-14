@@ -828,3 +828,47 @@ Refer to [Plots (plotly) multiple series or line labels in legend](https://disco
 currently， no a option to set a suptitle for subplots, but we can use `@layout` to plot the title in a grid, such as [szcf-weiya/TB](https://github.com/szcf-weiya/TB/blob/c332307263cdbab20a453e6abe74790236321048/CFPC/sim_cpc_scores.jl#L87-L93)
 
 refer to [Super title in Plots and subplots](https://discourse.julialang.org/t/super-title-in-plots-and-subplots/29865/4)
+
+## `colorviews` for images
+
+check the help document by `?colorviews`, and there are some examples to illustrate its usage, but here I add some examples that I used in my projects.
+
+```julia
+julia> colorview(RGB, rand(3,10,10))
+10×10 reshape(reinterpret(RGB{Float64}, ::Array{Float64,3}), 10, 10) with eltype RGB{Float64}:
+```
+
+and we need to permutate the dims such that the first dim matches with RGB.
+
+```julia
+julia> colorview(RGB, permutedims(rand(10, 10, 3), (3, 1, 2)))
+10×10 reshape(reinterpret(RGB{Float64}, ::Array{Float64,3}), 10, 10) with eltype RGB{Float64}:
+```
+
+we also can append the alpha channel to an image, such as
+
+```julia
+julia> colorview(RGBA, colorview(RGB, rand(3, 10, 10)), rand(10, 10))
+10×10 mappedarray(RGBA{Float64}, ImageCore.extractchannels, reshape(reinterpret(RGB{Float64}, ::Array{Float64,3}), 10, 10), ::Array{Float64,2}) with eltype RGBA{Float64}:
+```
+
+but directly append the array does not work,
+
+```julia
+julia> colorview(RGBA, rand(3, 10, 10), rand(10, 10))
+ERROR: DimensionMismatch("arrays do not all have the same axes (got (Base.OneTo(3), Base.OneTo(10), Base.OneTo(10)) and (Base.OneTo(10), Base.OneTo(10)))")
+```
+
+which should be replaced with
+
+```julia
+julia> colorview(RGBA, rand(4, 10, 10))
+10×10 reshape(reinterpret(RGBA{Float64}, ::Array{Float64,3}), 10, 10) with eltype RGBA{Float64}:
+```
+
+To use `RGB{N0f8}`, the input array should be `UInt8` not `Int`,
+
+```julia
+julia> colorview(RGB{N0f8}, Array{UInt8}(fill(1,3,10,10)))
+10×10 reshape(reinterpret(RGB{N0f8}, view(::Array{UInt8,3}, [1, 2, 3], :, :)), 10, 10) with eltype RGB{Normed{UInt8,8}}:
+```
