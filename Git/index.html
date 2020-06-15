@@ -1077,6 +1077,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    标签
+  </a>
+  
+</li>
+      
       
       
       
@@ -1717,6 +1724,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    标签
+  </a>
+  
+</li>
+      
       
       
       
@@ -2010,6 +2024,31 @@ See <span class="s1">&#39;git help config&#39;</span> and search <span class="k"
 <p>git add-commit -m &lsquo;My commit message&rsquo;</p>
 </blockquote>
 <p>这跟在 <code>.bashrc</code> 中配置有异曲同工之妙！</p>
+<h2 id="_11">标签<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li>打标签</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># annotated</span>
+git tag -a v1.0 -m <span class="s2">&quot;version 1&quot;</span>
+<span class="c1"># lightweight</span>
+git tag v1.0
+<span class="c1"># push to github</span>
+git push origin v1.0
+<span class="c1"># or </span>
+git push origin --tags
+</code></pre></div>
+
+<p>详见 <a href="https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE">2.6 Git 基础 - 打标签</a></p>
+<ul>
+<li>删除标签</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># local</span>
+git tag -d v1.0
+<span class="c1"># github</span>
+git push origin :refs/tags/v1.0
+</code></pre></div>
+
+<p>详见 <a href="https://gist.github.com/mobilemind/7883996">mobilemind/git-tag-delete-local-and-remote.sh</a></p>
                 
                   
                 
