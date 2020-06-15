@@ -334,18 +334,12 @@
     shell变量
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#another-for-loop" class="md-nav__link">
-    another for loop
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#iterators-in-for-loop" class="md-nav__link">
+    iterators in for loop
+  </a>
   
 </li>
       
@@ -1364,18 +1358,12 @@
     shell变量
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#another-for-loop" class="md-nav__link">
-    another for loop
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#iterators-in-for-loop" class="md-nav__link">
+    iterators in for loop
+  </a>
   
 </li>
       
@@ -1611,19 +1599,28 @@
 <ol>
 <li>定义变量时，变量名不加美元符号</li>
 <li>变量名和等号之间不能有空格</li>
-<li>变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：
+<li>变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面 <code>for</code> 循环中举的 <code>${skill}</code> 例子。</li>
+</ol>
+<h2 id="iterators-in-for-loop">iterators in <code>for</code> loop<a class="headerlink" href="#iterators-in-for-loop" title="Permanent link">&para;</a></h2>
+<ul>
+<li>separated by space</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="k">for</span> skill in Ada Coffe Action Java<span class="p">;</span> <span class="k">do</span>
     <span class="nb">echo</span> <span class="s2">&quot;I am good at </span><span class="si">${</span><span class="nv">skill</span><span class="si">}</span><span class="s2">Script&quot;</span>
 <span class="k">done</span>
-</code></pre></div></li>
-</ol>
-<h3 id="another-for-loop">another <code>for</code> loop<a class="headerlink" href="#another-for-loop" title="Permanent link">&para;</a></h3>
-<p><code>start..stop..length</code></p>
+</code></pre></div>
+
+<ul>
+<li><code>start..stop..length</code></li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="k">for</span> i in <span class="o">{</span><span class="m">5</span>..50..5<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
   <span class="nb">echo</span> <span class="nv">$i</span>
 <span class="k">done</span>
 </code></pre></div>
 
+<ul>
+<li>construct an array</li>
+</ul>
 <p>actually, it can be used to construct an array,</p>
 <div class="highlight"><pre><span></span><code><span class="nv">arr</span><span class="o">=({</span><span class="m">1</span>..10..2<span class="o">})</span>
 <span class="nb">echo</span> <span class="si">${</span><span class="nv">arr</span><span class="p">[@]</span><span class="si">}</span>
@@ -1632,6 +1629,9 @@
 <span class="k">done</span>
 </code></pre></div>
 
+<ul>
+<li><code>seq</code></li>
+</ul>
 <p>alternatively, we can use <code>seq</code>,</p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">5</span> <span class="m">5</span> <span class="m">50</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
     <span class="nb">echo</span> <span class="nv">$i</span>
