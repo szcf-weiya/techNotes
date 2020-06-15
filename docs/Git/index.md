@@ -384,3 +384,31 @@ See 'git help config' and search for 'push.default' for further information.
 > git add-commit -m 'My commit message'
 
 这跟在 `.bashrc` 中配置有异曲同工之妙！
+
+## 标签
+
+- 打标签
+
+```bash
+# annotated
+git tag -a v1.0 -m "version 1"
+# lightweight
+git tag v1.0
+# push to github
+git push origin v1.0
+# or 
+git push origin --tags
+```
+
+详见 [2.6 Git 基础 - 打标签](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE)
+
+- 删除标签
+
+```bash
+# local
+git tag -d v1.0
+# github
+git push origin :refs/tags/v1.0
+```
+
+详见 [mobilemind/git-tag-delete-local-and-remote.sh](https://gist.github.com/mobilemind/7883996)
