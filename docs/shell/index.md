@@ -8,22 +8,28 @@
 
 1. 定义变量时，变量名不加美元符号
 2. 变量名和等号之间不能有空格
-3. 变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：
+3. 变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面 `for` 循环中举的 `${skill}` 例子。
+
+## iterators in `for` loop
+
+- separated by space
+
 ```shell
 for skill in Ada Coffe Action Java; do
     echo "I am good at ${skill}Script"
 done
 ```
 
-### another `for` loop
 
-`start..stop..length`
+- `start..stop..length`
 
 ```shell
 for i in {5..50..5}; do
   echo $i
 done
 ```
+
+- construct an array
 
 actually, it can be used to construct an array,
 
@@ -34,6 +40,8 @@ for i in ${arr[@]}; do
   echo $i
 done
 ```
+
+- `seq`
 
 alternatively, we can use `seq`,
 
