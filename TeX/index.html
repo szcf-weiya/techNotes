@@ -2108,6 +2108,15 @@ code
 <a href="https://askubuntu.com/questions/485514/how-to-properly-install-and-use-texlive-with-package-manager-in-14-04">How to properly install and use texlive with package manager in 14.04</a></p>
 <h2 id="beamer_1">beamer 中导入视频<a class="headerlink" href="#beamer_1" title="Permanent link">&para;</a></h2>
 <p><a href="https://tex.stackexchange.com/questions/12790/can-xelatex-luatex-import-movies">Can XeLaTeX | LuaTeX import movies?</a></p>
+<p>之前用 xelatex + animate 试过展示动态视频，但是只能在 Acrobat Reader 中起作用，不能在 Ubuntu 18.04 上通过 evince 或者 okular 播放。参考 <a href="https://askubuntu.com/questions/427743/how-to-make-okular-play-embedded-video">How to make Okular play embedded video</a>，建议使用 multimedia 包，但是这个包不支持 xelatex，会报错</p>
+<blockquote>
+<p>! Undefined control sequence. <argument> \pdfmark</p>
+</blockquote>
+<p>参考 multimedia 的文档，里面确实强调了，</p>
+<blockquote>
+<p>The package can be used together with both dvips plus ps2pdf and pdflatex, though the special sound support is available only in pdflatex.</p>
+</blockquote>
+<p>所以只能用 pdflatex, 不过根据 <a href="https://tex.stackexchange.com/questions/282410/video-in-beamer-with-multimedia-undefined-control-sequence">Video in Beamer with multimedia, undefined control sequence</a>, 似乎也可以用 LuaLaTeX.</p>
 <h2 id="latex">LaTeX 中的定理环境<a class="headerlink" href="#latex" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.sina.com.cn/s/blog_62b52e290100yifl.html">LaTeX中的定理环境</a></p>
 <h2 id="makeatletter-and-makeatother">makeatletter and makeatother<a class="headerlink" href="#makeatletter-and-makeatother" title="Permanent link">&para;</a></h2>
