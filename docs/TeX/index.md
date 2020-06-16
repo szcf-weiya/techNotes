@@ -179,6 +179,15 @@ code
 
 [Can XeLaTeX | LuaTeX import movies?](https://tex.stackexchange.com/questions/12790/can-xelatex-luatex-import-movies)
 
+之前用 xelatex + animate 试过展示动态视频，但是只能在 Acrobat Reader 中起作用，不能在 Ubuntu 18.04 上通过 evince 或者 okular 播放。参考 [How to make Okular play embedded video](https://askubuntu.com/questions/427743/how-to-make-okular-play-embedded-video)，建议使用 multimedia 包，但是这个包不支持 xelatex，会报错
+
+> ! Undefined control sequence. <argument> \pdfmark
+
+参考 multimedia 的文档，里面确实强调了，
+
+> The package can be used together with both dvips plus ps2pdf and pdflatex, though the special sound support is available only in pdflatex.
+
+所以只能用 pdflatex, 不过根据 [Video in Beamer with multimedia, undefined control sequence](https://tex.stackexchange.com/questions/282410/video-in-beamer-with-multimedia-undefined-control-sequence), 似乎也可以用 LuaLaTeX.
 
 ## LaTeX 中的定理环境
 
