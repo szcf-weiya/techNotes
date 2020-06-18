@@ -472,3 +472,29 @@ sudo apt-get remove rstudio
 ## Thunderbird
 
 添加学校邮箱时，必须采用学号形式的邮箱，不要用 alias 形式的，alias 验证会出问题。
+
+## onedrive
+
+### first try
+
+[xybu/onedrive-d-old](https://github.com/xybu/onedrive-d-old), but doesn't support exchange account.
+
+### second try
+
+[skilion/onedrive](https://github.com/skilion/onedrive), perfect!
+
+note that the automatic monitor would occupy much CPU, the service can be disable or enable by the following command, 
+
+```bash
+~$ systemctl --user disable onedrive
+Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
+~$ systemctl --user enable onedrive
+Created symlink /home/weiya/.config/systemd/user/default.target.wants/onedrive.service → /usr/lib/systemd/user/onedrive.service.
+```
+
+but it seems that we also need
+
+```bash
+systemctl --user start onedrive
+systemctl --user stop onedrive
+```

@@ -549,16 +549,6 @@ gnome-control-center online-accounts
 
 in the command line, not to open the GUI.
 
-## onedrive
-
-### first try
-
-[xybu/onedrive-d-old](https://github.com/xybu/onedrive-d-old), but doesn't support exchange account.
-
-### second try
-
-[skilion/onedrive](https://github.com/skilion/onedrive), perfect!
-
 ## Bose Bluetooth
 
 [Pair Bose QuietComfort 35 with Ubuntu over Bluetooth](https://askubuntu.com/questions/833322/pair-bose-quietcomfort-35-with-ubuntu-over-bluetooth)
