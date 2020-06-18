@@ -582,6 +582,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#onedrive" class="md-nav__link">
+    onedrive
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-try" class="md-nav__link">
+    first try
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-try" class="md-nav__link">
+    second try
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1663,6 +1690,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#onedrive" class="md-nav__link">
+    onedrive
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-try" class="md-nav__link">
+    first try
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-try" class="md-nav__link">
+    second try
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1995,6 +2049,22 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 <p>另外帮助文档见<a href="https://www.gnu.org/software/octave/doc/interpreter/">GNU Octave</a></p>
 <h2 id="thunderbird">Thunderbird<a class="headerlink" href="#thunderbird" title="Permanent link">&para;</a></h2>
 <p>添加学校邮箱时，必须采用学号形式的邮箱，不要用 alias 形式的，alias 验证会出问题。</p>
+<h2 id="onedrive">onedrive<a class="headerlink" href="#onedrive" title="Permanent link">&para;</a></h2>
+<h3 id="first-try">first try<a class="headerlink" href="#first-try" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/xybu/onedrive-d-old">xybu/onedrive-d-old</a>, but doesn&rsquo;t support exchange account.</p>
+<h3 id="second-try">second try<a class="headerlink" href="#second-try" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/skilion/onedrive">skilion/onedrive</a>, perfect!</p>
+<p>note that the automatic monitor would occupy much CPU, the service can be disable or enable by the following command, </p>
+<div class="highlight"><pre><span></span><code>~$ systemctl --user disable onedrive
+Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
+~$ systemctl --user <span class="nb">enable</span> onedrive
+Created symlink /home/weiya/.config/systemd/user/default.target.wants/onedrive.service → /usr/lib/systemd/user/onedrive.service.
+</code></pre></div>
+
+<p>but it seems that we also need</p>
+<div class="highlight"><pre><span></span><code>systemctl --user start onedrive
+systemctl --user stop onedrive
+</code></pre></div>
                 
                   
                 
