@@ -408,15 +408,15 @@
     flatten pdf file
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#linux_1" class="md-nav__link">
     Linux 杀进程
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#jpgpdf" class="md-nav__link">
@@ -1868,15 +1868,15 @@
     flatten pdf file
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#linux_1" class="md-nav__link">
     Linux 杀进程
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#jpgpdf" class="md-nav__link">
@@ -2550,12 +2550,29 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 <div class="highlight"><pre><span></span><code>pdf2ps orig.pdf - | ps2pdf - flattened.pdf
 </code></pre></div>
 
-<h2 id="linux_1">Linux 杀进程<a class="headerlink" href="#linux_1" title="Permanent link">&para;</a></h2>
+<h3 id="linux_1">Linux 杀进程<a class="headerlink" href="#linux_1" title="Permanent link">&para;</a></h3>
 <p>参考<a href="http://blog.csdn.net/andy572633/article/details/7211546">linux下杀死进程（kill）的N种方法</a></p>
-<div class="highlight"><pre><span></span><code>ps -ef | grep R
-kill -s 9 ...
+<div class="highlight"><pre><span></span><code>ps -ef <span class="p">|</span> grep R
+<span class="nb">kill</span> -s <span class="m">9</span> ...
 </code></pre></div>
 
+<p>其中 <code>ps -ef</code> 输出格式为</p>
+<div class="highlight"><pre><span></span><code>$ ps -ef <span class="p">|</span> head -2
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         <span class="m">1</span>     <span class="m">0</span>  <span class="m">0</span> <span class="m">09</span>:15 ?        <span class="m">00</span>:00:44 /sbin/init splash
+</code></pre></div>
+
+<p>每一列的含义可以在 <code>man ps</code> 中的 <code>STANDARD FORMAT SPECIFIERS</code> 小节中找到，具体地，</p>
+<ul>
+<li><code>UID</code>: same with EUID, effective user ID (alias uid).</li>
+<li><code>PID</code>: a number representing the process ID (alias tgid).</li>
+<li><code>PPID</code>: parent process ID.</li>
+<li><code>C</code>: processor utilization. Currently, this is the integer value of the percent usage over the lifetime of the process.  (see %cpu).</li>
+<li><code>STIME</code>: same with <code>START</code>, starting time or date of the process.  Only the year will be displayed if the process was not started the same year ps was invoked, or &ldquo;MmmDD&rdquo; if it was not started the same day, or &ldquo;HH:MM&rdquo; otherwise.  See also bsdstart, start, lstart, and stime.</li>
+<li><code>TTY</code>: controlling tty (terminal).  (alias tt, tty).</li>
+<li><code>TIME</code>: cumulative CPU time, &ldquo;[DD-]HH:MM:SS&rdquo; format.  (alias cputime).</li>
+<li><code>CMD</code>: see args.  (alias args, command).</li>
+</ul>
 <h3 id="jpgpdf">合并jpg到pdf<a class="headerlink" href="#jpgpdf" title="Permanent link">&para;</a></h3>
 <p>参考<a href="https://unix.stackexchange.com/questions/20026/convert-images-to-pdf-how-to-make-pdf-pages-same-size">convert images to pdf: How to make PDF Pages same size</a></p>
 <p>直接采用</p>
