@@ -190,14 +190,33 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 pdf2ps orig.pdf - | ps2pdf - flattened.pdf
 ```
 
-## Linux 杀进程
+### Linux 杀进程
 
 参考[linux下杀死进程（kill）的N种方法](http://blog.csdn.net/andy572633/article/details/7211546)
 
-```
+```bash
 ps -ef | grep R
 kill -s 9 ...
 ```
+
+其中 `ps -ef` 输出格式为
+
+```bash
+$ ps -ef | head -2
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 09:15 ?        00:00:44 /sbin/init splash
+```
+
+每一列的含义可以在 `man ps` 中的 `STANDARD FORMAT SPECIFIERS` 小节中找到，具体地，
+
+- `UID`: same with EUID, effective user ID (alias uid).
+- `PID`: a number representing the process ID (alias tgid).
+- `PPID`: parent process ID.
+- `C`: processor utilization. Currently, this is the integer value of the percent usage over the lifetime of the process.  (see %cpu).
+- `STIME`: same with `START`, starting time or date of the process.  Only the year will be displayed if the process was not started the same year ps was invoked, or "MmmDD" if it was not started the same day, or "HH:MM" otherwise.  See also bsdstart, start, lstart, and stime.
+- `TTY`: controlling tty (terminal).  (alias tt, tty).
+- `TIME`: cumulative CPU time, "[DD-]HH:MM:SS" format.  (alias cputime).
+- `CMD`: see args.  (alias args, command).
 
 ### 合并jpg到pdf
 
