@@ -937,6 +937,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#netrc" class="md-nav__link">
+    .netrc
+  </a>
+  
+</li>
+      
       
       
       
@@ -2397,6 +2404,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#netrc" class="md-nav__link">
+    .netrc
+  </a>
+  
+</li>
+      
       
       
       
@@ -3045,6 +3059,31 @@ uptime --since <span class="c1"># actually the first line of `top`</span>
 <h2 id="_23">顶部栏系统监测信息<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
 <p>通过 gnome-shell extension: <a href="https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet">gnome-shell-system-monitor-applet</a> 实现</p>
 <p>不过目前有个小问题，字体略小，尝试通过 gnome-tweaks 中的 scaling 来改变字体大小，但似乎对这些字体仍不适用，先将就用着吧。</p>
+<h2 id="netrc">.netrc<a class="headerlink" href="#netrc" title="Permanent link">&para;</a></h2>
+<p>为了学习 RL，在听了周博磊在 B 站的视频后，准备玩下<a href="https://github.com/cuhkrlcourse/RLexample">示例代码</a>，但是在终端中创建新 conda 环境时，</p>
+<div class="highlight"><pre><span></span><code>conda create --name RL <span class="nv">python</span><span class="o">=</span><span class="m">3</span>
+</code></pre></div>
+
+<p>总是报错，</p>
+<blockquote>
+<p>Collecting package metadata (current_repodata.json): failed</p>
+<p>ProxyError: Conda cannot proceed due to an error in your proxy configuration.
+Check for typos and other configuration errors in any &lsquo;.netrc&rsquo; file in your home directory,
+any environment variables ending in &lsquo;_PROXY&rsquo;, and any other system-wide proxy
+configuration settings.</p>
+</blockquote>
+<p>其中提到一个 <code>.netrc</code>，没想到自己竟然还真的有这个文件，看了下内容，只有两条，</p>
+<div class="highlight"><pre><span></span><code>machine api.heroku.com
+...
+machine git.heroku.com
+...
+</code></pre></div>
+
+<p>这才意识到很早无意识中折腾 heroku 时创建的。那这个文件是干嘛的呢，<a href="https://stackoverflow.com/questions/21828495/purpose-of-the-netrc-file">查了一下发现</a></p>
+<blockquote>
+<p>This is a file that is often used by Unix programs to hold access details for remote sites. It was originally created for use with FTP.</p>
+</blockquote>
+<p>最后这个问题是直接把 .bashrc 中所有的代理去掉了.</p>
                 
                   
                 
