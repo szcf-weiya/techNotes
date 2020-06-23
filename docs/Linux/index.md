@@ -922,3 +922,35 @@ refer to [How to know number of cores of a system in Linux?](https://unix.stacke
 通过 gnome-shell extension: [gnome-shell-system-monitor-applet](https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet) 实现
 
 不过目前有个小问题，字体略小，尝试通过 gnome-tweaks 中的 scaling 来改变字体大小，但似乎对这些字体仍不适用，先将就用着吧。
+
+## .netrc
+
+为了学习 RL，在听了周博磊在 B 站的视频后，准备玩下[示例代码](https://github.com/cuhkrlcourse/RLexample)，但是在终端中创建新 conda 环境时，
+
+```bash
+conda create --name RL python=3
+```
+
+总是报错，
+
+> Collecting package metadata (current_repodata.json): failed
+> 
+> ProxyError: Conda cannot proceed due to an error in your proxy configuration.
+> Check for typos and other configuration errors in any '.netrc' file in your home directory,
+> any environment variables ending in '_PROXY', and any other system-wide proxy
+> configuration settings.
+
+其中提到一个 `.netrc`，没想到自己竟然还真的有这个文件，看了下内容，只有两条，
+
+```bash
+machine api.heroku.com
+...
+machine git.heroku.com
+...
+```
+
+这才意识到很早无意识中折腾 heroku 时创建的。那这个文件是干嘛的呢，[查了一下发现](https://stackoverflow.com/questions/21828495/purpose-of-the-netrc-file)
+
+> This is a file that is often used by Unix programs to hold access details for remote sites. It was originally created for use with FTP.
+
+最后这个问题是直接把 .bashrc 中所有的代理去掉了.
