@@ -893,6 +893,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#return-values-of-function" class="md-nav__link">
+    return values of function
+  </a>
+  
+</li>
+      
       
       
       
@@ -1773,6 +1780,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#return-values-of-function" class="md-nav__link">
+    return values of function
+  </a>
+  
+</li>
+      
       
       
       
@@ -2443,6 +2457,45 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3æ
 <p>To use <code>RGB{N0f8}</code>, the input array should be <code>UInt8</code> not <code>Int</code>,</p>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">colorview</span><span class="p">(</span><span class="n">RGB</span><span class="p">{</span><span class="n">N0f8</span><span class="p">},</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">UInt8</span><span class="p">}(</span><span class="n">fill</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span>
 <span class="mi">10</span><span class="n">Ã—10</span> <span class="n">reshape</span><span class="p">(</span><span class="n">reinterpret</span><span class="p">(</span><span class="n">RGB</span><span class="p">{</span><span class="n">N0f8</span><span class="p">},</span> <span class="n">view</span><span class="p">(</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">UInt8</span><span class="p">,</span><span class="mi">3</span><span class="p">},</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="o">:</span><span class="p">,</span> <span class="o">:</span><span class="p">)),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="n">with</span> <span class="n">eltype</span> <span class="n">RGB</span><span class="p">{</span><span class="n">Normed</span><span class="p">{</span><span class="kt">UInt8</span><span class="p">,</span><span class="mi">8</span><span class="p">}}</span><span class="o">:</span>
+</code></pre></div>
+
+<h2 id="return-values-of-function">return values of function<a class="headerlink" href="#return-values-of-function" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">versioninfo</span><span class="p">()</span>
+<span class="n">Julia</span> <span class="n">Version</span> <span class="mf">1.4</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">Commit</span> <span class="n">b8e9a9ecc6</span> <span class="p">(</span><span class="mi">2020</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">21</span> <span class="mi">16</span><span class="o">:</span><span class="mi">36</span> <span class="n">UTC</span><span class="p">)</span>
+<span class="n">Platform</span> <span class="n">Info</span><span class="o">:</span>
+  <span class="n">OS</span><span class="o">:</span> <span class="n">Linux</span> <span class="p">(</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="p">)</span>
+  <span class="n">CPU</span><span class="o">:</span> <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Core</span><span class="p">(</span><span class="n">TM</span><span class="p">)</span> <span class="n">i5</span><span class="o">-</span><span class="mi">6300</span><span class="n">HQ</span> <span class="n">CPU</span> <span class="err">@</span> <span class="mf">2.30</span><span class="n">GHz</span>
+  <span class="nb">WORD_SIZE</span><span class="o">:</span> <span class="mi">64</span>
+  <span class="n">LIBM</span><span class="o">:</span> <span class="n">libopenlibm</span>
+  <span class="n">LLVM</span><span class="o">:</span> <span class="n">libLLVM</span><span class="o">-</span><span class="mf">8.0</span><span class="o">.</span><span class="mi">1</span> <span class="p">(</span><span class="n">ORCJIT</span><span class="p">,</span> <span class="n">skylake</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+           <span class="k">return</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span>
+       <span class="k">end</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span>
+<span class="mi">1</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">b</span>
+<span class="mi">2</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span>
+<span class="mi">1</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">b</span>
+<span class="mi">2</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">c</span>
+<span class="mi">3</span>
 </code></pre></div>
                 
                   
