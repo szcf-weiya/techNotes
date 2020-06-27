@@ -872,3 +872,44 @@ To use `RGB{N0f8}`, the input array should be `UInt8` not `Int`,
 julia> colorview(RGB{N0f8}, Array{UInt8}(fill(1,3,10,10)))
 10×10 reshape(reinterpret(RGB{N0f8}, view(::Array{UInt8,3}, [1, 2, 3], :, :)), 10, 10) with eltype RGB{Normed{UInt8,8}}:
 ```
+
+## return values of function
+
+```julia
+julia> versioninfo()
+Julia Version 1.4.0
+Commit b8e9a9ecc6 (2020-03-21 16:36 UTC)
+Platform Info:
+  OS: Linux (x86_64-pc-linux-gnu)
+  CPU: Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz
+  WORD_SIZE: 64
+  LIBM: libopenlibm
+  LLVM: libLLVM-8.0.1 (ORCJIT, skylake)
+
+julia> function f(a, b, c, d)
+           return a, b, c, d
+       end
+julia> a = f(1,2,3,4);
+
+julia> a
+(1, 2, 3, 4)
+
+julia> a, b = f(1,2,3,4);
+
+julia> a
+1
+
+julia> b
+2
+
+julia> a, b, c = f(1,2,3,4);
+
+julia> a
+1
+
+julia> b
+2
+
+julia> c
+3
+```
