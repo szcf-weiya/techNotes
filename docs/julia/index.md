@@ -9,11 +9,7 @@ NO
 1. [https://stackoverflow.com/questions/33927523/can-i-make-julia-forget-a-method-from-the-repl](https://stackoverflow.com/questions/33927523/can-i-make-julia-forget-a-method-from-the-repl)
 2. [https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia](https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia)
 
-
-## ->
-
-[Anonymous Functions](https://docs.julialang.org/en/v0.6.1/manual/functions/#man-anonymous-functions-1)
-
+Although we cannot remove some defined function, with the powerful [Revise.jl](https://github.com/timholy/Revise.jl), we can update the functions without reloading the scripts.
 
 ## 关于 `mean()`
 
