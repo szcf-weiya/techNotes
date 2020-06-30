@@ -609,6 +609,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorials" class="md-nav__link">
+    Tutorials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-r-via-docker" class="md-nav__link">
+    install r via docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1717,6 +1744,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorials" class="md-nav__link">
+    Tutorials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-r-via-docker" class="md-nav__link">
+    install r via docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2065,6 +2119,26 @@ Created symlink /home/weiya/.config/systemd/user/default.target.wants/onedrive.s
 <div class="highlight"><pre><span></span><code>systemctl --user start onedrive
 systemctl --user stop onedrive
 </code></pre></div>
+
+<h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
+<h3 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html">Docker 微服务教程 &ndash; 阮一峰</a></li>
+</ul>
+<h3 id="install-r-via-docker">install r via docker<a class="headerlink" href="#install-r-via-docker" title="Permanent link">&para;</a></h3>
+<p>step 1:</p>
+<div class="highlight"><pre><span></span><code>docker pull r-base
+</code></pre></div>
+
+<p>for specified version,</p>
+<div class="highlight"><pre><span></span><code>docker pull r-base:3.6.0
+</code></pre></div>
+
+<p>step 2:</p>
+<div class="highlight"><pre><span></span><code>docker run -it --rm r-base:3.6.0
+</code></pre></div>
+
+<p>install.packages(&ldquo;https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz&rdquo;, repos = NULL, type = &ldquo;source&rdquo;)</p>
                 
                   
                 
