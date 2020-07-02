@@ -1164,6 +1164,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#__getitem__" class="md-nav__link">
+    __getitem__
+  </a>
+  
+</li>
+      
       
       
       
@@ -2467,6 +2474,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#__getitem__" class="md-nav__link">
+    __getitem__
+  </a>
+  
+</li>
+      
       
       
       
@@ -3091,6 +3105,16 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 </code></pre></div>
 
 <p>refer to <a href="https://stackoverflow.com/questions/13675296/python-typeerror-unhashable-type-list">Python: TypeError: unhashable type: &lsquo;list&rsquo;</a></p>
+<h2 id="__getitem__"><code>__getitem__</code><a class="headerlink" href="#__getitem__" title="Permanent link">&para;</a></h2>
+<p>I came across the usage of <code>__getitem__</code> <a href="https://github.com/MeepMoop/tilecoding/blob/master/example.py#L34">here</a>, which seems powerful, and not only accept</p>
+<div class="highlight"><pre><span></span><code><span class="n">T</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span>
+</code></pre></div>
+
+<p>also supports</p>
+<div class="highlight"><pre><span></span><code><span class="n">T</span><span class="p">[[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]]</span>
+</code></pre></div>
+
+<p>in <a href="https://github.com/szcf-weiya/RLnotes/blob/8e714286c1ba09113c4bf295d89ed774a8c5be5c/ModelFree/mountaincar.py#L68">my code</a>. Then I found <a href="https://stackoverflow.com/a/43627975/">more detailed explanation</a> for the usage.</p>
                 
                   
                 
