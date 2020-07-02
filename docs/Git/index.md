@@ -281,6 +281,23 @@ git push origin HEAD --force
 1. [github,退回之前的commit](https://www.cnblogs.com/xiaomengzhang/p/3240788.html)
 2. [github 版本回退](https://blog.csdn.net/apple_wolf/article/details/53326187)
 
+## 修改 commit 信息
+
+If the latest commit， type
+
+```bash
+git commit --amend
+```
+
+to edit the commit message, and then
+
+```bash
+git push --force-with-lease
+```
+
+Refer to [Changing git commit message after push (given that no one pulled from remote)](https://stackoverflow.com/questions/8981194/changing-git-commit-message-after-push-given-that-no-one-pulled-from-remote).
+
+
 ## cannot lock ref
 
 参考 [git pull时遇到error: cannot lock ref 'xxx': ref xxx is at （一个commitID） but expected的解决办法](https://blog.csdn.net/qq_15437667/article/details/52479792)

@@ -909,3 +909,12 @@ julia> b
 julia> c
 3
 ```
+
+## padding zero on the left
+
+For example, convert "1" to "001",
+
+```julia
+julia> lpad(1, 3, '0')
+"001"
+```
