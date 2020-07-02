@@ -880,3 +880,11 @@ T[[x, y]]
 ```
 
 in [my code](https://github.com/szcf-weiya/RLnotes/blob/8e714286c1ba09113c4bf295d89ed774a8c5be5c/ModelFree/mountaincar.py#L68). Then I found [more detailed explanation](https://stackoverflow.com/a/43627975/) for the usage.
+
+## temporary proxy for pip
+
+```bash
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+```
+
+详见 [https://mirrors.tuna.tsinghua.edu.cn/help/pypi/](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)
