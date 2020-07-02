@@ -1022,6 +1022,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#commit_1" class="md-nav__link">
+    修改 commit 信息
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cannot-lock-ref" class="md-nav__link">
     cannot lock ref
   </a>
@@ -1669,6 +1676,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#commit_1" class="md-nav__link">
+    修改 commit 信息
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cannot-lock-ref" class="md-nav__link">
     cannot lock ref
   </a>
@@ -1946,6 +1960,16 @@ git push origin HEAD --force
 <p>参考
 1. <a href="https://www.cnblogs.com/xiaomengzhang/p/3240788.html">github,退回之前的commit</a>
 2. <a href="https://blog.csdn.net/apple_wolf/article/details/53326187">github 版本回退</a></p>
+<h2 id="commit_1">修改 commit 信息<a class="headerlink" href="#commit_1" title="Permanent link">&para;</a></h2>
+<p>If the latest commit， type</p>
+<div class="highlight"><pre><span></span><code>git commit --amend
+</code></pre></div>
+
+<p>to edit the commit message, and then</p>
+<div class="highlight"><pre><span></span><code>git push --force-with-lease
+</code></pre></div>
+
+<p>Refer to <a href="https://stackoverflow.com/questions/8981194/changing-git-commit-message-after-push-given-that-no-one-pulled-from-remote">Changing git commit message after push (given that no one pulled from remote)</a>.</p>
 <h2 id="cannot-lock-ref">cannot lock ref<a class="headerlink" href="#cannot-lock-ref" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://blog.csdn.net/qq_15437667/article/details/52479792">git pull时遇到error: cannot lock ref &lsquo;xxx&rsquo;: ref xxx is at （一个commitID） but expected的解决办法</a></p>
 <p>另外试试 <code>git gc</code></p>
