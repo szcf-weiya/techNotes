@@ -864,3 +864,19 @@ TypeError: unhashable type: 'list'
 ```
 
 refer to [Python: TypeError: unhashable type: 'list'](https://stackoverflow.com/questions/13675296/python-typeerror-unhashable-type-list)
+
+## `__getitem__`
+
+I came across the usage of `__getitem__` [here](https://github.com/MeepMoop/tilecoding/blob/master/example.py#L34), which seems powerful, and not only accept
+
+```julia
+T[x, y]
+```
+
+also supports
+
+```julia
+T[[x, y]]
+```
+
+in [my code](https://github.com/szcf-weiya/RLnotes/blob/8e714286c1ba09113c4bf295d89ed774a8c5be5c/ModelFree/mountaincar.py#L68). Then I found [more detailed explanation](https://stackoverflow.com/a/43627975/) for the usage.
