@@ -1178,6 +1178,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    新式类 vs 经典类
+  </a>
+  
+</li>
+      
       
       
       
@@ -2495,6 +2502,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    新式类 vs 经典类
+  </a>
+  
+</li>
+      
       
       
       
@@ -3004,7 +3018,13 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <li><code>*args</code>: pass a <strong>non-keyword</strong> and <strong>variable-length</strong> argument list to a function.</li>
 <li><code>**args</code>: pass a <strong>keyworded</strong>, <strong>variable-length</strong> argument list, actually <code>dict</code></li>
 </ul>
-<p>refer to <a href="https://www.geeksforgeeks.org/args-kwargs-python/"><code>*args</code> and <code>**kwargs</code> in Python</a></p>
+<p>refer to <a href="https://www.geeksforgeeks.org/args-kwargs-python/"><code>*args</code> and <code>**kwargs</code> in Python</a>, and <a href="https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/">Asterisks in Python: what they are and how to use them</a></p>
+<p>One example,</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">feature_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv3</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">input_shape</span><span class="p">))))</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<p>where <code>*self.input_shape</code> aims to unpacking something like <code>[3, 4, 5]</code> to <code>3, 4, 5</code>.</p>
 <h2 id="function-annotations">Function Annotations<a class="headerlink" href="#function-annotations" title="Permanent link">&para;</a></h2>
 <p>When I am writing the custom loss function in XGBoost, there are some new syntax in the example function,</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">squared_log</span><span class="p">(</span><span class="n">predt</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
@@ -3134,6 +3154,12 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 </code></pre></div>
 
 <p>详见 <a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">https://mirrors.tuna.tsinghua.edu.cn/help/pypi/</a></p>
+<h2 id="vs">新式类 vs 经典类<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h2>
+<ul>
+<li>python 2.x 中，默认为经典类，只有当写成 <code>class A(object)</code> 才成为新式类</li>
+<li>python 3.x 中，默认为新式类</li>
+</ul>
+<p>详见 <a href="https://www.zhihu.com/question/22475395">python新式类和经典类的区别？</a></p>
                 
                   
                 
