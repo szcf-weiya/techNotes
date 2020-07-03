@@ -48,6 +48,30 @@ ssh -D 30002 my@server
 
 然后在 SwitchyOmega 中添加 socks5://127.0.0.1:30002。
 
+### Jupyter Notebook
+
+当**搭建好隧道**后，可以借用该隧道使用内网服务器上的 Jupyter Notebook，
+
+```bash
+# open jupyter notebook as usual on innerserver
+jupyter notebook
+# return url like, 127.0.0.1:8888/?token=xxxxxxxxxxx
+
+# on public server
+ssh -L localhost:18888:localhost:8888 -p 30001 [Inner-Server's Username]@localhost
+
+# on my local laptop
+ssh -L 18888:localhost:18888 [Server's Username]@[Server's Public IP]
+```
+
+于是在本地可以通过 
+
+```bash
+127.0.0.1:18888/?token=xxxxxxxxxxx
+```
+
+访问内网的 Jupyter Notebook。
+
 ## shootback
 
 同 SSH 反向隧道，需要自己准备一台服务器，[项目主页](https://github.com/aploium/shootback)有详细配置过程。
