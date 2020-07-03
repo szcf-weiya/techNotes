@@ -707,7 +707,16 @@ refer to ['Uninstalling a distutils installed project' error when installing blo
 - `*args`: pass a **non-keyword** and **variable-length** argument list to a function.
 - `**args`: pass a **keyworded**, **variable-length** argument list, actually `dict`
 
-refer to [`*args` and `**kwargs` in Python](https://www.geeksforgeeks.org/args-kwargs-python/)
+refer to [`*args` and `**kwargs` in Python](https://www.geeksforgeeks.org/args-kwargs-python/), and [Asterisks in Python: what they are and how to use them](https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/)
+
+One example,
+
+```python
+    def feature_size(self):
+        return self.conv3(self.conv2(self.conv1(torch.zeros(1, *self.input_shape)))).view(1, -1).size(1)
+```
+
+where `*self.input_shape` aims to unpacking something like `[3, 4, 5]` to `3, 4, 5`.
 
 ## Function Annotations
 
@@ -888,3 +897,10 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 ```
 
 详见 [https://mirrors.tuna.tsinghua.edu.cn/help/pypi/](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)
+
+## 新式类 vs 经典类
+
+- python 2.x 中，默认为经典类，只有当写成 `class A(object)` 才成为新式类
+- python 3.x 中，默认为新式类
+
+详见 [python新式类和经典类的区别？](https://www.zhihu.com/question/22475395)
