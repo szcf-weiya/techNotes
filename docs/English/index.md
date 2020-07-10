@@ -1,3 +1,36 @@
+## 2020.07.10
+
+### Shawn Achor·TEDxBloomington: The happy secret to better work
+
+- so we were up on top of our **bunk** beds
+- I had put out all of my **G.I. Joe** soldiers and **weaponry**.
+- And on the other side were all my sister's My Little **Ponies** ready for a **cavalry charge**.
+- on the **clumsy** side.
+- I nervously peered over the side of the bed to see what had be fallen my fallen sister.
+- **heroically** pushing her out of the way of an oncoming imaginary **sniper** bullet.
+- this **wail** of pain and suffering and surprise threatening to **erupt** from her mouth and wake my parents from the long winter's **nap** for which they had settled.
+- my **frantic** seven year-old brain could think to do to **avert** this tragedy.
+- I thinks this means you're a unicorn.
+- **contemplate** her new-found identity as a unicorn.
+- **scramble** back up to onto the bunk bed
+- What we stumbled across at this tender age of just five and seven was was going be at the vanguard of a scientific revolution occurring two decades later in the way that we look at the human brain.
+- There is one weird dot above the curve, there's one weirdo in the room.
+- resiliency in the face of challenge
+- we can **glean** information
+- the medical school **syndrome**
+- I have **leprosy**
+- I have no idea how to **console** poor Bobo because he had just gotten over an entire week of **menopause**
+- **military scholarship**
+- I was an officer to **counsel** students through the difficult four years.
+- on the competition, the workload, the **hassles**, stresses, complaints.
+- adolescent depression, violence and bullying, illicit drugs, risky sex
+- dopamine
+- not only create ripples of positivity, but a real revolution
+- journaling about one positive experience you've had over the past 24 hours allows your brain to relive it.
+- we find that meditation allows your brain to get over the cultural ADHD that we've creating by trying to do multiple tasks at once and allows our brains to focus on the task at hand.
+- random acts of kindness are **conscious** acts of kindness.
+- we've pushed happiness over the cognitive horizon.
+
 ## 2020.07.09
 
 ### Grady Booch·TED@IBM: Don't fear superintelligent AI
