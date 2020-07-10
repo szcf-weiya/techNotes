@@ -1979,7 +1979,78 @@ double *p = &amp;x;
 <h2 id="c11-stdchrono">C++11 std::chrono库详解<a class="headerlink" href="#c11-stdchrono" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.cnblogs.com/jwk000/p/3560086.html">C++11 std::chrono库详解</a></p>
 <h2 id="vectorerase">vector::erase()方法的详细介绍及问题解答<a class="headerlink" href="#vectorerase" title="Permanent link">&para;</a></h2>
-<p><a href="http://blog.sina.com.cn/s/blog_6377b8e60100ino6.html">vector::erase()方法的详细介绍及问题解答</a></p>
+<p>adapted from <a href="http://blog.sina.com.cn/s/blog_6377b8e60100ino6.html">vector::erase()方法的详细介绍及问题解答</a></p>
+<blockquote>
+<p>当调用erase()后Iter迭代器就失效了，变成了一野指针。&hellip; 要解决调用erase()方法后，Iter迭代器变成野指针的问题，这个时候呢给他赋一个新的迭代器给他。</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1">// ref: http://blog.sina.com.cn/s/blog_6377b8e60100ino6.html</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">;</span>
+  <span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">Iter</span><span class="p">;</span>
+  <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">10</span> <span class="p">);</span>
+  <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">20</span> <span class="p">);</span>
+  <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">30</span> <span class="p">);</span>
+  <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">40</span> <span class="p">);</span>
+  <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">50</span> <span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;v1 =&quot;</span> <span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span> <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span><span class="o">++</span> <span class="p">)</span> 
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">Iter</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">v1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;v1 =&quot;</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span> <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span><span class="o">++</span> <span class="p">)</span> 
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">Iter</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">v1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">3</span> <span class="p">);</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;v1 =&quot;</span><span class="p">;</span>
+ <span class="k">for</span> <span class="p">(</span> <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span><span class="o">++</span> <span class="p">)</span> 
+   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">Iter</span><span class="p">;</span>
+ <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+ <span class="c1">//当调用erase()后Iter迭代器就失效了，变成了一野指针。</span>
+ <span class="c1">//所以要处理这种问题，关键是要解决调用erase()方法后，Iter迭代器变成野指针的问题，</span>
+ <span class="c1">//这个时候呢给他赋一个新的迭代器给他。</span>
+ <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">10</span> <span class="p">);</span>
+ <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">30</span> <span class="p">);</span>
+ <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">10</span> <span class="p">);</span>
+ <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;v1 =&quot;</span><span class="p">;</span>
+ <span class="k">for</span> <span class="p">(</span> <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span><span class="o">++</span> <span class="p">)</span> 
+   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">Iter</span><span class="p">;</span>
+ <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+ <span class="k">for</span><span class="p">(</span><span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">Iter</span><span class="o">++</span><span class="p">)</span> 
+   <span class="p">{</span> 
+     <span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">Iter</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> 
+       <span class="p">{</span> 
+     <span class="n">v1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">Iter</span><span class="p">);</span>
+     <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="c1">//当erase后，旧的容器会被重新整理成一个新的容器</span>
+     <span class="c1">// or</span>
+     <span class="c1">// Iter = v1.erase(Iter);</span>
+       <span class="p">}</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">Iter</span> <span class="o">==</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+       <span class="k">break</span><span class="p">;</span>
+   <span class="p">}</span>
+
+ <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;v1 =&quot;</span><span class="p">;</span>
+ <span class="k">for</span> <span class="p">(</span> <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span><span class="o">++</span> <span class="p">)</span> 
+   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">Iter</span><span class="p">;</span>
+ <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+ <span class="c1">// another one</span>
+ <span class="n">v1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+ <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;v1 =&quot;</span><span class="p">;</span>
+ <span class="k">for</span> <span class="p">(</span> <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span><span class="o">++</span> <span class="p">)</span> 
+   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">Iter</span><span class="p">;</span>
+ <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+
+ <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
 <h2 id="onlogn">最长递增子序列 O(NlogN)算法<a class="headerlink" href="#onlogn" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.felix021.com/blog/read.php?1587">最长递增子序列 O(NlogN)算法 </a></p>
 <h2 id="crealloc">c语言中realloc()函数解析<a class="headerlink" href="#crealloc" title="Permanent link">&para;</a></h2>
