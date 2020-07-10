@@ -95,6 +95,8 @@ extra_javascript:
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
 
 markdown_extensions:
+  # https://github.com/mkdocs/mkdocs/issues/1678
+  - attr_list
   - pymdownx.arithmatex
   - pymdownx.superfences
   - admonition

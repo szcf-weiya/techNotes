@@ -1,3 +1,32 @@
+## 2020.07.09
+
+### Grady Booch·TED@IBM: Don't fear superintelligent AI
+
+- I was the **quintessential nerd**
+- I grew up in a small town in the dusty plains of north Texas, the son of a **sheriff** who was the son of a **pastor**
+- That led me to building a **laser** and a computer and model **rockets**, and that led me to making rocket fuel in my bedroom.
+- Stanley Kubrick's "2001: A space Odyssey" came to the theaters.
+- Now, HAL was a **sentient** computer, designed to guide the Discovery spacecraft from the Earth to **Jupiter**.
+- our fear of being **subjugated** by some unfeeling, artificial intelligence.
+- I believe that such fears are **unfounded**
+- we are building machines of exquisite, beautiful complexity and grace
+- but without the **homicidal** tendencies
+- another fascinating idea in the mission profile places **humanoid** robots on the surface of Mars
+- To **paraphrase** Alan Turing, I am not interested in building a sentient machine.
+- Can we build systems that converse with humans in natural language?
+- Can we build systems that have an **ethical and moral** foundation?
+- Now, every new technology brings with it some measure of **trepidation**.
+- people **lamented** that we would see the destruction of the family.
+- how to **discern** a good game from a bad game.
+- I will teach it some corpus of law
+- what about **rogue** agents?
+- it could represent an **existential** threat to all of humanity.
+- an **insatiable** thirst for information
+- only **insofar as** HAL commanded all aspects of the Discovery.
+- it **ain't gonna** happen
+- command us capricious, chaotic humans.
+
+
 ## 2020.03.09
 
 1. features that **rot** before they **ripen**.

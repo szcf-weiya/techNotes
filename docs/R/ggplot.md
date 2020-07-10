@@ -17,9 +17,57 @@ plot_grid(plotlist = plots)
 
 ## ggplot绘制概率密度图
 
-[ggplot2绘制概率密度图](http://www.cnblogs.com/wwxbi/p/6142410.html)
+adapted from [ggplot2绘制概率密度图](http://www.cnblogs.com/wwxbi/p/6142410.html)
 
-[Plotting distributions (ggplot2)](http://www.cookbook-r.com/Graphs/Plotting_distributions_(ggplot2)/)
+Take the Weibull distribution as an example, 
+
+$$
+f(x) = \begin{cases}
+\frac k\lambda \left(\frac x\lambda\right)^{k-1}e^{-(x/\lambda)^k} & x\ge 0\\
+0 & x < 0
+\end{cases}
+$$
+
+where $\lambda > 0$ is the scale parameter, and $k > 0$ is the shape parameter. And
+
+- if $k=1$, it becomes to the exponential distribution
+- if $k=2$, it becomes to the Rayleigh distribution.
+
+```r
+d <- seq(0, 5, length.out=10000)
+y <- dweibull(d, shape=5, scale=1, log = FALSE)
+df <- data.frame(x=d,y)
+ggplot(df, aes(x=d, y=y)) + 
+    geom_line(col = "orange") + 
+    ggtitle("Density of Weibull distribution")
+```
+
+![](weibull-pdf.png){: style="height:40%;width:40%"}
+
+```r
+h = rweibull(10000, shape=5, scale=1)
+ggplot(NULL, aes(x=h)) + 
+    geom_histogram(binwidth=0.01, fill="white", col="red") + 
+    ggtitle("Histogram of Weibull distribution")
+```
+
+![](weibull-hist.png){: style="height:40%;width:40%"}
+
+```r
+ggplot(NULL, aes(x=h)) + geom_density(col = "green")
+```
+
+![](weibull-estpdf.png){: style="height:40%;width:40%"}
+
+```r
+ggplot(NULL, aes(x=h)) + geom_line(stat = "density", col = "red")
+```
+
+A minor difference is that here is a horizontal line in the above estimated density.
+
+![](weibull-estpdf2.png){: style="height:40%;width:40%"}
+
+Also refer to [Plotting distributions (ggplot2)](http://www.cookbook-r.com/Graphs/Plotting_distributions_(ggplot2)/)
 
 ## legend设置
 
