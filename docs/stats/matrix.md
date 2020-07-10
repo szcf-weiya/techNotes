@@ -7,7 +7,25 @@
 
 ## symmetric positive semidefinite
 
-1. [Proof of a matrix is positive semidefinite iff it can be written in the form X′X](https://math.stackexchange.com/questions/482688/proof-of-a-matrix-is-positive-semidefinite-iff-it-can-be-written-in-the-form-x)
+every **symmetric** positive semi-definite matrix $A$ can be written $A = X^TX$, not all positive semi-definite. As a counterexample, for $\lambda > 0$ and $\vert \epsilon\vert < \lambda$, 
+
+$$
+A = \begin{bmatrix}
+\lambda & \epsilon\\
+0 & \lambda
+\end{bmatrix}
+$$
+
+is positive semi-definite, but **cannot** be written $A=X^TX$.
+
+refer to [Proof of a matrix is positive semidefinite iff it can be written in the form X′X](https://math.stackexchange.com/questions/482688/proof-of-a-matrix-is-positive-semidefinite-iff-it-can-be-written-in-the-form-x)
+
+## eigenvectors and eigenvalues from $X^TX$ to $XX^T$
+
+- $X^Tv$ with $v$ eigenvector of $v$ of $XX^T$ to nonzero eigenvalue
+- vectors in the null space of $X$
+
+refer to [Eigenvectors and eigenvalues from $X^TX$ to $XX^T$?](https://math.stackexchange.com/questions/1247983/eigenvectors-and-eigenvalues-from-xtx-to-xxt)
 
 ## Can matrix exponentials be negative?
 

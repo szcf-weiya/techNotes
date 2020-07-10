@@ -40,10 +40,11 @@ pages:
       - Git: Git/index.md
       - Phantomjs: phantomjs/index.md
       - Qt: Qt/index.md
-    - Math:
-      - Stats: stats/index.md
+    - Stat:
+      - Probability: stats/prob.md
+      - Statistic: stats/index.md
       - Scientific: scientific/index.md
-      - Matrix: matrix/index.md
+      - Matrix: stats/matrix.md
     - English: English/index.md
     - Finance: finance/index.md
     - Mi: mi/index.md

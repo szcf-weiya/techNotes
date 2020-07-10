@@ -1,5 +1,11 @@
 # 关于 TeX
 
+## Some nice font family 
+
+refer to [Suggest a “nice” font family for my basic LaTeX template (text and math)](https://tex.stackexchange.com/a/59706)
+
+and currently I prefer to `newpxtext` and `newpxmath`.
+
 ## 缺少字体
 
 报错信息如下图
