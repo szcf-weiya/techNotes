@@ -13,7 +13,7 @@
         <meta name="description" content="技术博客">
       
       
-        <link rel="canonical" href="https://tech.hohoweiya.xyz/python/opencv/">
+        <link rel="canonical" href="https://tech.hohoweiya.xyz/stats/prob/">
       
       
         <meta name="author" content="weiya">
@@ -42,7 +42,7 @@
     
     
       
-        <title>OpenCV - techNotes</title>
+        <title>Probability - techNotes</title>
       
     
     
@@ -109,7 +109,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#opencv" tabindex="0" class="md-skip">
+      <a href="#the-product-of-gaussian" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -135,7 +135,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                OpenCV
+                Probability
               
             </span>
           
@@ -448,12 +448,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Python
@@ -471,7 +469,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="一般问题" class="md-nav__link">
+    <a href="../../python/" title="一般问题" class="md-nav__link">
       一般问题
     </a>
   </li>
@@ -483,7 +481,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../pystan/" title="PyStan 体验" class="md-nav__link">
+    <a href="../../python/pystan/" title="PyStan 体验" class="md-nav__link">
       PyStan 体验
     </a>
   </li>
@@ -493,76 +491,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        OpenCV
-      </label>
-    
-    <a href="./" title="OpenCV" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../python/opencv/" title="OpenCV" class="md-nav__link">
       OpenCV
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#opencv-2" class="md-nav__link">
-    OpenCV 2
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#opencv-3" class="md-nav__link">
-    OpenCV 3
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#some-bugs" class="md-nav__link">
-    Some bugs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#opencv-4" class="md-nav__link">
-    OpenCV 4
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -572,7 +505,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../finance/" title="金融数据爬虫" class="md-nav__link">
+    <a href="../../python/finance/" title="金融数据爬虫" class="md-nav__link">
       金融数据爬虫
     </a>
   </li>
@@ -584,7 +517,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../rpy2/" title="rpy2" class="md-nav__link">
+    <a href="../../python/rpy2/" title="rpy2" class="md-nav__link">
       rpy2
     </a>
   </li>
@@ -596,7 +529,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../esltag/" title="自建关键词索引页" class="md-nav__link">
+    <a href="../../python/esltag/" title="自建关键词索引页" class="md-nav__link">
       自建关键词索引页
     </a>
   </li>
@@ -863,10 +796,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
     
     <label class="md-nav__link" for="nav-10">
       Stat
@@ -882,11 +817,52 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../stats/prob/" title="Probability" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Probability
+      </label>
+    
+    <a href="./" title="Probability" class="md-nav__link md-nav__link--active">
       Probability
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-product-of-gaussian" class="md-nav__link">
+    the product of Gaussian
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-of-independent-random-variables" class="md-nav__link">
+    functions of independent random variables
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -896,7 +872,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../stats/" title="Statistic" class="md-nav__link">
+    <a href="../" title="Statistic" class="md-nav__link">
       Statistic
     </a>
   </li>
@@ -920,7 +896,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../stats/matrix/" title="Matrix" class="md-nav__link">
+    <a href="../matrix/" title="Matrix" class="md-nav__link">
       Matrix
     </a>
   </li>
@@ -1173,42 +1149,20 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#opencv-2" class="md-nav__link">
-    OpenCV 2
+  <a href="#the-product-of-gaussian" class="md-nav__link">
+    the product of Gaussian
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#opencv-3" class="md-nav__link">
-    OpenCV 3
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#some-bugs" class="md-nav__link">
-    Some bugs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#opencv-4" class="md-nav__link">
-    OpenCV 4
+  <a href="#functions-of-independent-random-variables" class="md-nav__link">
+    functions of independent random variables
   </a>
   
 </li>
@@ -1230,34 +1184,45 @@
               
                 
                 
-                <h1 id="opencv">OpenCV<a class="headerlink" href="#opencv" title="Permanent link">&para;</a></h1>
-<h2 id="opencv-2">OpenCV 2<a class="headerlink" href="#opencv-2" title="Permanent link">&para;</a></h2>
-<p>installed with python 2</p>
-<h2 id="opencv-3">OpenCV 3<a class="headerlink" href="#opencv-3" title="Permanent link">&para;</a></h2>
-<p>installed with python 3, but the <code>imshow</code> doesn&rsquo;t work, solve by </p>
-<div class="highlight"><pre><span></span><code>conda install -c menpo opencv3
-</code></pre></div>
-
-<p>refer to <a href="https://stackoverflow.com/questions/40207011/opencv-not-working-properly-with-python-on-linux-with-anaconda-getting-error-th">OpenCV not working properly with python on Linux with anaconda. Getting error that cv2.imshow() is not implemented
-Ask Question</a></p>
-<p>If necessary, install <a href="https://github.com/jrosebr1/imutils">imutils: A series of convenience functions to make basic image processing operations such as translation, rotation, resizing, skeletonization, and displaying Matplotlib images easier with OpenCV and Python.</a></p>
-<div class="highlight"><pre><span></span><code>conda install -c conda-forge imutils
-</code></pre></div>
-
-<h3 id="some-bugs">Some bugs<a class="headerlink" href="#some-bugs" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">error</span><span class="p">:</span> <span class="n">OpenCV</span><span class="p">(</span><span class="mf">3.4</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="mi">80754</span><span class="n">af9</span><span class="o">/</span><span class="n">opencv</span><span class="o">-</span><span class="n">suite_1535558553474</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">imgproc</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">color</span><span class="o">.</span><span class="n">hpp</span><span class="p">:</span><span class="mi">253</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">215</span><span class="p">:</span><span class="n">Assertion</span> <span class="n">failed</span><span class="p">)</span> <span class="n">VScn</span><span class="p">::</span><span class="n">contains</span><span class="p">(</span><span class="n">scn</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">VDcn</span><span class="p">::</span><span class="n">contains</span><span class="p">(</span><span class="n">dcn</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">VDepth</span><span class="p">::</span><span class="n">contains</span><span class="p">(</span><span class="n">depth</span><span class="p">)</span> <span class="ow">in</span> <span class="n">function</span> <span class="s1">&#39;CvtHelper&#39;</span>
-</code></pre></div>
-
-<p>the image might be not read properly, such as wrong path.</p>
-<h2 id="opencv-4">OpenCV 4<a class="headerlink" href="#opencv-4" title="Permanent link">&para;</a></h2>
-<p>build from source according to the <a href="https://docs.opencv.org/4.0.1/d2/de6/tutorial_py_setup_in_ubuntu.html">official documentation</a></p>
-<p>curious how the python distinguish different versions of opencv, does it affect the conda environment?</p>
-<p>build from source by specifying something, refer to <a href="http://alexsm.com/building-opencv-with-conda/">Buidling OpenCV with Conda on Linux</a> and <a href="https://www.pyimagesearch.com/2018/08/15/how-to-install-opencv-4-on-ubuntu/">How to install OpenCV 4 on Ubuntu</a></p>
-<ol>
-<li>这并不意味着只安装在具体 conda envs 中，而是 /usr/local 中，最后再 ln -s 过去</li>
-<li><code>ln -s</code> 时python site-packages 下的 .so 文件必须重命名为 cv2.so，否则找不到！！</li>
-<li>所有其实一开始指定 cmake，只是为了针对具体版本进行编译，最后还需要自己 link，参照 <a href="https://stackoverflow.com/questions/50816241/compile-opencv-with-cmake-to-integrate-it-within-a-conda-env">Compile OpenCV with Cmake to integrate it within a Conda env</a> 设置 <code>BUILD_opencv_python2=OFF</code></li>
-</ol>
+                  <h1>Probability</h1>
+                
+                <h2 id="the-product-of-gaussian">the product of Gaussian<a class="headerlink" href="#the-product-of-gaussian" title="Permanent link">&para;</a></h2>
+<ul>
+<li>with any hypothesis, the product of Gaussian is not Gaussian, take <span><span class="MathJax_Preview">Y=X</span><script type="math/tex">Y=X</script></span> as an example</li>
+<li>if <span><span class="MathJax_Preview">X, Y</span><script type="math/tex">X, Y</script></span> are independent, it is still not Gaussian. Consider</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+Z = \frac{X^2-Y^2}{2} = \frac{X-Y}{\sqrt 2} \frac{X+Y}{\sqrt 2}
+</div>
+<script type="math/tex; mode=display">
+Z = \frac{X^2-Y^2}{2} = \frac{X-Y}{\sqrt 2} \frac{X+Y}{\sqrt 2}
+</script>
+</div>
+<p>then <span><span class="MathJax_Preview">Z</span><script type="math/tex">Z</script></span> is the product of two independent Gaussian, but the characteristic function of <span><span class="MathJax_Preview">Z</span><script type="math/tex">Z</script></span> is</p>
+<div>
+<div class="MathJax_Preview">
+\begin{align*}
+\varphi_Z(t) &amp;= E\exp\left(\frac{X^2-Y^2}{2}\right) \\
+&amp;= E\exp\left(1-2i\frac t2\right)^{-1/2}\exp\left(1-2i\frac{-t}{2}\right)^{-1/2} \\
+&amp;= (1-it)^{-1/2}(1+it)^{-1/2}=(1+t^2)^{-1/2}\,.
+\end{align*}
+</div>
+<script type="math/tex; mode=display">
+\begin{align*}
+\varphi_Z(t) &= E\exp\left(\frac{X^2-Y^2}{2}\right) \\
+&= E\exp\left(1-2i\frac t2\right)^{-1/2}\exp\left(1-2i\frac{-t}{2}\right)^{-1/2} \\
+&= (1-it)^{-1/2}(1+it)^{-1/2}=(1+t^2)^{-1/2}\,.
+\end{align*}
+</script>
+</div>
+<ul>
+<li>the distribution can be directly called as <a href="https://mathworld.wolfram.com/NormalProductDistribution.html">Normal Product Distribution</a></li>
+</ul>
+<p>refer to <a href="https://math.stackexchange.com/questions/101062/is-the-product-of-two-gaussian-random-variables-also-a-gaussian">Is the product of two Gaussian random variables also a Gaussian?</a></p>
+<h2 id="functions-of-independent-random-variables">functions of independent random variables<a class="headerlink" href="#functions-of-independent-random-variables" title="Permanent link">&para;</a></h2>
+<p>it is trivial with sigma algebra.</p>
+<p>refer to <a href="https://stats.stackexchange.com/questions/94872/functions-of-independent-random-variables">Functions of Independent Random Variables</a></p>
                 
                   
                 
@@ -1279,7 +1244,7 @@ Ask Question</a></p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../pystan/" title="PyStan 体验" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../Qt/" title="Qt" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1288,19 +1253,19 @@ Ask Question</a></p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                PyStan 体验
+                Qt
               </span>
             </div>
           </a>
         
         
-          <a href="../finance/" title="金融数据爬虫" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../" title="Statistic" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                金融数据爬虫
+                Statistic
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
