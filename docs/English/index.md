@@ -1,3 +1,31 @@
+## 2020.07.12
+
+### Celeste Headlee·TEDxCreativeCoast: 10 ways to have a better conversation
+
+- unfriend someone on Facebook
+- Henry Higgins in "My Fair Lady"
+- has the potential to devolve into an argument
+- Pew Research
+- we are more polarized than we ever have been in history
+- plumber
+- **nod** and smile to show that you're paying attention.
+- it's **crap**.
+- don't **pontificate**.
+- I don't allow pundits on my show.
+- The famed therapist M. Scott Peck said that true listening requires a setting aside of oneself.
+- were you terrified?
+- he was just **bound** and determined to say that.
+- Err on the side of caution.
+- People who brag about their IQs are losers.
+- Conversations are not a promotional opportunity.
+- condescending
+- stay out of the weeds
+- I can bolster my own identity.
+- A good conversation is like a miniskirt; short enough to retain interest, but long enough to cover the subject.
+- She was the **runner-up** to Miss America.
+- He was the mayor of Sacramento. 
+- She won a Pulitzer Prize.
+
 ## 2020.07.10
 
 ### Shawn Achor·TEDxBloomington: The happy secret to better work
