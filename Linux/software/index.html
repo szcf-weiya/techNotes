@@ -1964,6 +1964,10 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 <p>key &ldquo;Exec&rdquo; in group &ldquo;Desktop Entry&rdquo; contains a quote which is not closed</p>
 </blockquote>
 <p>很纳闷，觉得这不应该啊，而且也<a href="https://askubuntu.com/questions/1200116/desktop-error-there-was-an-error-launching-the-application">有人 wine 的解决方案</a>也是通过 <code>sh -c</code>，但是后来发现了个区别，别人引号中空格只需要一次转义，即 <code>\</code>，比如 &ldquo;Program\ Files\ (x86)&rdquo;，但是我这里原先没加引号时，用两个反斜杠进行转义 <code>\\</code>，而且 <code>\\</code> 需要用 <code>\\\\</code> 来转义，所以隐隐觉得可能是加了引号转义会有问题。所以尝试改成 <code>\</code> 和 <code>\\</code>，但是都没有成功。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>一般地，<code>sh -c "command 1; command 2"</code>可以实现在 launcher 中同时运行两个命令，参考 <a href="https://askubuntu.com/questions/60379/how-to-combine-two-commands-as-a-launcher">How to combine two commands as a launcher?</a></p>
+</div>
 <p>后来跑去研究下 <code>wine</code> 的命令，想弄清楚那一长串 argument 是什么意思，才明白这应该是句 <code>wine start</code>，而 <code>/Unix</code> 是为了用 linux 格式的路径，详见 <a href="https://wiki.winehq.org/Wine_User%27s_Guide">3.1.1 How to run Windows programs from the command line</a>，所以为了避免可能的转义问题，首先可以把 <code>wine C:\\\\windows\\\\command\\\\start.exe</code> 替换成 <code>wine start</code>，而空格转义还是用 <code>\</code>，即最终 <code>WeChat.desktop</code> 文件为</p>
 <div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span> sh -c <span class="s2">&quot;wine start /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py&quot;</span>
 </code></pre></div>
