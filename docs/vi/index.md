@@ -57,3 +57,13 @@ http://blog.csdn.net/tsuliuchao/article/details/7553003
 ```vi
 d$
 ```
+
+## write with sudo
+
+For example, as said in [How does the vim “write with sudo” trick work?](https://stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work)
+
+```bash
+:w !sudo tee %
+```
+
+and such reference gives a more detailed explanation for the trick.
