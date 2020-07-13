@@ -438,25 +438,6 @@ sudo service cron reload
 
 参考[Use “Connect to Server” to connect to SFTP](https://askubuntu.com/questions/349873/use-connect-to-server-to-connect-to-sftp)
 
-## 视频旋转
-
-参考[How can I rotate a video?](https://askubuntu.com/questions/83711/how-can-i-rotate-a-video)
-
-直接用
-
-```bash
-ffmpeg -i in.mov -vf "transpose=1" out.mov
-```
-
-然后报错 [“The encoder 'aac' is experimental but experimental codecs are not enabled”]((https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled)) 
-
-注意添加 `-strict -2` 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成
-
-
-```bash
-ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
-```
-
 ## Ubuntu的回收站
 
 参考 [https://blog.csdn.net/DSLZTX/article/details/46685959](https://blog.csdn.net/DSLZTX/article/details/46685959)
@@ -788,6 +769,38 @@ ffmpeg -i .\input.mp4 -map 0:0 -vcodec copy out.mp4
 
 参考 [ffmpeg 视频倍速播放 和 慢速播放](https://blog.csdn.net/ternence_hsu/article/details/85865718)
 
+### 视频旋转
+
+参考[How can I rotate a video?](https://askubuntu.com/questions/83711/how-can-i-rotate-a-video)
+
+直接用
+
+```bash
+ffmpeg -i in.mov -vf "transpose=1" out.mov
+```
+
+然后报错 [“The encoder 'aac' is experimental but experimental codecs are not enabled”]((https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled)) 
+
+注意添加 `-strict -2` 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成
+
+
+```bash
+ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
+```
+
+### 视频剪切
+
+```bash
+ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -t 00:00:10.0 output.wmv
+```
+
+where 
+
+- (optional) `-ss` specifies the start timestamp, the format is `HH:MM:SS.xxx`
+- (optional) `-t` specifies the duration, or use `-to` to specifies the end timestamp
+
+refer to [Using ffmpeg to cut up video](https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video)
+
 ## fuseblk
 
 发现使用 onedrive 同步文件时，有时候并不能够同步。猜测可能是因为文件太小，比如文件夹 `test` 中仅有 `test.md` 文件（仅70B），而此时查看 `test` 大小，竟然为 0 B，因为根据常识，一般文件夹都是 4.0k，或者有时 8.0k 等等，具体原因参考 [Why does every directory have a size 4096 bytes (4 K)?](https://askubuntu.com/questions/186813/why-does-every-directory-have-a-size-4096-bytes-4-k)
@@ -954,3 +967,7 @@ machine git.heroku.com
 > This is a file that is often used by Unix programs to hold access details for remote sites. It was originally created for use with FTP.
 
 最后这个问题是直接把 .bashrc 中所有的代理去掉了.
+
+## possible errors using `apt-get`
+
+![How do I resolve unmet dependencies after adding a PPA?](https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa)

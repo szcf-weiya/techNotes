@@ -456,6 +456,8 @@ Then I found that if use `before_deploy`, it seems that no need to set `on.tags 
 
 > enumitem “disturbs” beamer. 
 
+而其中 `enumitem` 可以实现将列表的序号由数字改成字母，详见 [How do I change the `enumerate` list format to use letters instead of the default Arabic numerals?](https://tex.stackexchange.com/questions/2291/how-do-i-change-the-enumerate-list-format-to-use-letters-instead-of-the-defaul)
+
 ## 替换换行符
 
 详见[strings - Replacing substrings by linebreaks - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/178610/replacing-substrings-by-linebreaks)
@@ -751,3 +753,11 @@ For `biblatex`, seems that we can set the global argument `maxcitenames` to cont
 > source: [@Marijn](https://tex.stackexchange.com/a/363884/) 
 
 and application in [Forcing subfigures to have same height and take overall X% of linewidth in LaTeX](https://tex.stackexchange.com/questions/218378/forcing-subfigures-to-have-same-height-and-take-overall-x-of-linewidth-in-latex)
+
+## Make a love heart
+
+- by equation:
+- by pure latex
+- by tikz based on filtered paths
+
+refer to ![Can we make a love heart with LaTeX?](https://tex.stackexchange.com/questions/139733/can-we-make-a-love-heart-with-latex)

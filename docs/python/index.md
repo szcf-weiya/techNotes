@@ -904,3 +904,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 - python 3.x 中，默认为新式类
 
 详见 [python新式类和经典类的区别？](https://www.zhihu.com/question/22475395)
+
+## unit test in python
+
+explain the schematic of unittest framework in python: [Running unittest with typical test directory structure](https://stackoverflow.com/questions/1896918/running-unittest-with-typical-test-directory-structure)

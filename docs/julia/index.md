@@ -1,6 +1,9 @@
 # julia相关
 
-[主页](https://julialang.org/)
+- [主页](https://julialang.org/)
+- [My New Workflow with Julia 1.0](https://medium.com/@Jernfrost/my-new-workflow-with-julia-1-0-99711103d97c), mainly focus on how to develop a Julia package.
+- [Timing in Julia](http://www.pkofod.com/2017/04/24/timing-in-julia/)
+- [Publication quality plots in Julia](https://tamaspapp.eu/post/plot-workflow/)
 
 ## Is there a way to undo `using` in Julia?
 
@@ -281,14 +284,15 @@ end
 
 use
 
-```
+```julia
 (x[1] <= width) & (x[1] >= 0) & (x[2] <= height) & (x[2] >=0)
 ```
 
-not
+instead of
 
+```julia
 x[1] <= width & x[1] >= 0 & x[2] <= height & x[2] >=0
-
+```
 
 ## `MethodError: objects of type Module are not callable`
 
@@ -298,9 +302,10 @@ check if the function is mistaken by the module name, such as `AxisArray` vs. `A
 
 ref to [https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-so-1-version-zlib-1-2-9-not-found](https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-so-1-version-zlib-1-2-9-not-found)
 
-## Re-build after install cudnn
+## work with GPU
 
-refer to [GPU on cluster: conversion to pointer not defined for CuArray{Float32,2}](https://github.com/FluxML/Flux.jl/issues/286)
+- [An Introduction to GPU Programming in Julia](https://nextjournal.com/sdanisch/julia-gpu-programming)
+- Re-build after install cudnn, refer to [GPU on cluster: conversion to pointer not defined for CuArray{Float32,2}](https://github.com/FluxML/Flux.jl/issues/286)
 
 
 ## load `ImageView` on Server

@@ -1,3 +1,32 @@
+## 2020.07.13
+
+### Cameron Russell·TEDxMidAtlantic: Looks aren't everything. Believe me, I'm a model.
+
+- there's an uncomfortable tension in the room.
+- if some of the women were really horrified
+- I am quite privileged to be able to transform what you think of me in a very brief 10 seconds.
+- Image is powerful, but also, image is superficial.
+- barring surgery, or the fake tan
+- I was scouted.
+- I won a genetic lottery, and I am the recipient of a legacy.
+- slender figures, and femininity
+- there are some fashionistas who are like
+- they don't put me in charge of that.
+- a ninja cardiothoracic surgeon poet
+- saying that you want to be a model when you grow up is akin to saying you want to win the Powerball when you grow up.
+- because unlike cardiothoracic surgeons, it can just be distilled right now.
+- underwear model
+- do they retouch all the photos?
+- it's also the very first time that I had worn a **bikini**, and I didn't ever **have my period** yet.
+- Here's me at a **slumber** party a few days before I shot **French Vogue**.
+- They are constructions by a group of professionals, by hairstylists and makeup artists and photographers and stylists and all of their assistants and pre-production and post-production.
+- were stopped and frisked.
+- you are so happy and fabulous.
+- when we are backstage
+- I am insecure.
+- It was difficult to unpack a legacy of gender and racial oppression when I am one of the biggest beneficiaries.
+- If there's a takeaway to this talk,
+
 ## 2020.07.12
 
 ### Celeste Headlee·TEDxCreativeCoast: 10 ways to have a better conversation

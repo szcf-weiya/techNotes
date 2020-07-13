@@ -262,9 +262,44 @@ sudo apt-get install network-manager-l2tp-gnome
 
 ## CUHK VPN 连接失败
 
-Ubuntu 16.04 
+### Ubuntu 16.04 
 
 在安装 `network-manager-l2tp-gnome` 好后（如 [Ubuntu 16.04 Connecting to L2TP over IPSEC via Network Manager](https://medium.com/@hkdb/ubuntu-16-04-connecting-to-l2tp-over-ipsec-via-network-manager-204b5d475721)），能够连接，但是并不能访问 google，甚至 baidu 也不行，而手机端 vpn 可以正常使用。并且尝试访问 google 失败后，便弹出 vpn stop 的消息。
+
+### Ubuntu 18.04
+
+In mainland China, still failed. Firstly, I need to install `l2tp` following the instruction of [Setup L2TP over IPsec VPN client on Ubuntu 18.04 using GNOME](https://20notes.net/linux/setup-l2tp-over-ipsec-client-on-ubuntu-18-04-using-gnome/).
+Sometimes it can be connected, but quickly disconnected. Then I tried to figure out the reason, such as specifying the phase algorithm, and I known a little about the difference of `strongswan` between `libreswan` from [L2TP VPN on Ubuntu 18.04 client](https://community.ui.com/questions/L2TP-VPN-on-Ubuntu-18-04-client/e8317a0c-ba97-4673-b2c2-1c0be0906228)
+
+```bash
+3DES, modp1024, modp1536 and SHA1 are considered weak by strongswan and newer versions of libreswan, so aren't in their default proposals (although some late versions of libreswan still allow modp1536 and SHA1 with IPsec IKEv1). You can explicitly specify the proposals for phase 1 and 2 in the IPsec config dialog box.
+
+
+You could try the following with strongswan :
+
+Phase1: aes256-sha1-modp1024,aes128-sha1-modp2048,aes128-sha1-modp1536!
+Phase 2 : aes256-sha1,aes128-sha1!
+Or for libreswan try:
+
+Phase1: aes256-sha1-modp1024,aes128-sha1-modp2048,aes128-sha1-modp1536
+Phase 2 : aes256-sha1,aes128-sha1
+Note the exclamation mark (!) with strongswan that isn't used with libreswan. 
+
+If you are not sure if you are using libreswan or strongswan, run :
+
+ipsec --version 
+```
+
+
+And when I click the option of 
+
+> Use this connection only for resources on its network
+
+seems can visit the websites of school. But neither with nor without this option, I cannot visit Google.
+
+And I found [a question](https://serverfault.com/questions/978914/no-internet-access-through-l2tp-ipsec-using-ubuntu-18-04-routing-table) has quite similar problem with me, then I tried to learn and edit the routing table. [第八章、路由觀念與路由器設定](http://linux.vbird.org/linux_server/0230router.php) helps me a lot on the understanding of routing. But it seems that I don't miss the rule pointed out by the question. And so it might be due to the routing table.
+
+As a result, I give up and continue to use the reverse SSH to visit google.
 
 ## VPN 跳转
 

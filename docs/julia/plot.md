@@ -36,3 +36,17 @@ colors = cgrad(:summer, nz, categorical = true)
 但最后第二点折腾了有点久，直接把 `colors` 带进去并不行，后来才发现它不是简单的颜色列向量，里面还包含其它信息，最后采用 `colors.colors.colors` 才成功。详见 [ESL-CN/code/SOM/wiremesh.jl](https://github.com/szcf-weiya/ESL-CN/blob/5e8d95299d4c53d8f509324546b40c65b31a3666/code/SOM/wiremesh.jl#L52-L54)
 
 另外，也尝试过[官方文档例子](http://docs.juliaplots.org/latest/generated/gr/#gr-ref24-1)中 `zcolor` 参数，但是似乎只针对 marker 起作用，当然是跟 `m = ` 参数配合的效果，第一个元素代表大小，第二个透明度。所以理论上把 `m =` 换成 `line` 或许也能达到效果，但如果不能直接通过 `zcolor` 使得不同高度的颜色不一样（我本以为可以），那干脆直接指定颜色。 
+
+## axis off
+
+```julia
+plot(..., axis = nothing)
+```
+
+and similar grammar is
+
+```julia
+plot(..., ticks=nothing, border=nothing)
+```
+
+refer to [How can I implement "axis off"? #428](https://github.com/JuliaPlots/Plots.jl/issues/428)

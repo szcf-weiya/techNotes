@@ -181,6 +181,12 @@ output:
 ---
 ```
 
+## rmarkown compiler does not show captions for two consecutive figures
+
+add at least two spacing newline.
+
+[*Some* figure captions from RMarkdown not showing](https://stackoverflow.com/questions/27444804/some-figure-captions-from-rmarkdown-not-showing)
+
 
 ## 在grid排列图
 
