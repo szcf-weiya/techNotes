@@ -1126,6 +1126,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#axis-off" class="md-nav__link">
+    axis off
+  </a>
+  
+</li>
+      
       
       
       
@@ -1170,6 +1177,15 @@
 <p>第二点其实也很简单，在画一条曲线时，如果 linecolor 指定为颜色<strong>列</strong>向量，比如 <code>[:red, :green, :orange]</code>，则每一段的颜色会循环采用该列向量中的颜色，则当列向量长度刚好等于区间段的个数，则每一段都会以不同的颜色绘制。需要注意到是，颜色<strong>行</strong>向量用于画多条曲线时为每一条曲线指定不同的颜色。</p>
 <p>但最后第二点折腾了有点久，直接把 <code>colors</code> 带进去并不行，后来才发现它不是简单的颜色列向量，里面还包含其它信息，最后采用 <code>colors.colors.colors</code> 才成功。详见 <a href="https://github.com/szcf-weiya/ESL-CN/blob/5e8d95299d4c53d8f509324546b40c65b31a3666/code/SOM/wiremesh.jl#L52-L54">ESL-CN/code/SOM/wiremesh.jl</a></p>
 <p>另外，也尝试过<a href="http://docs.juliaplots.org/latest/generated/gr/#gr-ref24-1">官方文档例子</a>中 <code>zcolor</code> 参数，但是似乎只针对 marker 起作用，当然是跟 <code>m =</code> 参数配合的效果，第一个元素代表大小，第二个透明度。所以理论上把 <code>m =</code> 换成 <code>line</code> 或许也能达到效果，但如果不能直接通过 <code>zcolor</code> 使得不同高度的颜色不一样（我本以为可以），那干脆直接指定颜色。 </p>
+<h2 id="axis-off">axis off<a class="headerlink" href="#axis-off" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="nb">nothing</span><span class="p">)</span>
+</code></pre></div>
+
+<p>and similar grammar is</p>
+<div class="highlight"><pre><span></span><code><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="nb">nothing</span><span class="p">,</span> <span class="n">border</span><span class="o">=</span><span class="nb">nothing</span><span class="p">)</span>
+</code></pre></div>
+
+<p>refer to <a href="https://github.com/JuliaPlots/Plots.jl/issues/428">How can I implement &ldquo;axis off&rdquo;? #428</a></p>
                 
                   
                 

@@ -826,6 +826,26 @@
     CUHK VPN 连接失败
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-1604" class="md-nav__link">
+    Ubuntu 16.04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-1804" class="md-nav__link">
+    Ubuntu 18.04
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1561,6 +1581,26 @@
     CUHK VPN 连接失败
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-1604" class="md-nav__link">
+    Ubuntu 16.04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-1804" class="md-nav__link">
+    Ubuntu 18.04
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1884,8 +1924,36 @@ sudo apt-get install network-manager-l2tp-gnome
 <p>这种方式相当于增加了 <code>L2TP</code> VPN 的设置界面，到这里我也渐渐明白 <code>xl2tpd_zju</code> 和这种方式本质上应该是一样的。于是我按照之前的配置方式新建了一个 VPN 的连接，但还是没用。</p>
 <p>最后我换了 VPN 的 ip（有两个 ip，10.5.1.5 和 10.5.1.9），之前 <code>xl2tpd_zju</code> 默认是 10.5.1.5，误打误撞，改成 10.5.1.9 后，竟然成功了！！</p>
 <h2 id="cuhk-vpn">CUHK VPN 连接失败<a class="headerlink" href="#cuhk-vpn" title="Permanent link">&para;</a></h2>
-<p>Ubuntu 16.04 </p>
+<h3 id="ubuntu-1604">Ubuntu 16.04<a class="headerlink" href="#ubuntu-1604" title="Permanent link">&para;</a></h3>
 <p>在安装 <code>network-manager-l2tp-gnome</code> 好后（如 <a href="https://medium.com/@hkdb/ubuntu-16-04-connecting-to-l2tp-over-ipsec-via-network-manager-204b5d475721">Ubuntu 16.04 Connecting to L2TP over IPSEC via Network Manager</a>），能够连接，但是并不能访问 google，甚至 baidu 也不行，而手机端 vpn 可以正常使用。并且尝试访问 google 失败后，便弹出 vpn stop 的消息。</p>
+<h3 id="ubuntu-1804">Ubuntu 18.04<a class="headerlink" href="#ubuntu-1804" title="Permanent link">&para;</a></h3>
+<p>In mainland China, still failed. Firstly, I need to install <code>l2tp</code> following the instruction of <a href="https://20notes.net/linux/setup-l2tp-over-ipsec-client-on-ubuntu-18-04-using-gnome/">Setup L2TP over IPsec VPN client on Ubuntu 18.04 using GNOME</a>.
+Sometimes it can be connected, but quickly disconnected. Then I tried to figure out the reason, such as specifying the phase algorithm, and I known a little about the difference of <code>strongswan</code> between <code>libreswan</code> from <a href="https://community.ui.com/questions/L2TP-VPN-on-Ubuntu-18-04-client/e8317a0c-ba97-4673-b2c2-1c0be0906228">L2TP VPN on Ubuntu 18.04 client</a></p>
+<div class="highlight"><pre><span></span><code>3DES, modp1024, modp1536 and SHA1 are considered weak by strongswan and newer versions of libreswan, so aren<span class="s1">&#39;t in their default proposals (although some late versions of libreswan still allow modp1536 and SHA1 with IPsec IKEv1). You can explicitly specify the proposals for phase 1 and 2 in the IPsec config dialog box.</span>
+
+
+<span class="s1">You could try the following with strongswan :</span>
+
+<span class="s1">Phase1: aes256-sha1-modp1024,aes128-sha1-modp2048,aes128-sha1-modp1536!</span>
+<span class="s1">Phase 2 : aes256-sha1,aes128-sha1!</span>
+<span class="s1">Or for libreswan try:</span>
+
+<span class="s1">Phase1: aes256-sha1-modp1024,aes128-sha1-modp2048,aes128-sha1-modp1536</span>
+<span class="s1">Phase 2 : aes256-sha1,aes128-sha1</span>
+<span class="s1">Note the exclamation mark (!) with strongswan that isn&#39;</span>t used with libreswan. 
+
+If you are not sure <span class="k">if</span> you are using libreswan or strongswan, run :
+
+ipsec --version 
+</code></pre></div>
+
+<p>And when I click the option of </p>
+<blockquote>
+<p>Use this connection only for resources on its network</p>
+</blockquote>
+<p>seems can visit the websites of school. But neither with nor without this option, I cannot visit Google.</p>
+<p>And I found <a href="https://serverfault.com/questions/978914/no-internet-access-through-l2tp-ipsec-using-ubuntu-18-04-routing-table">a question</a> has quite similar problem with me, then I tried to learn and edit the routing table. <a href="http://linux.vbird.org/linux_server/0230router.php">第八章、路由觀念與路由器設定</a> helps me a lot on the understanding of routing. But it seems that I don&rsquo;t miss the rule pointed out by the question. And so it might be due to the routing table.</p>
+<p>As a result, I give up and continue to use the reverse SSH to visit google.</p>
 <h2 id="vpn">VPN 跳转<a class="headerlink" href="#vpn" title="Permanent link">&para;</a></h2>
 <p>猜测可能由于墙的原因使得 VPN 不稳定，于是尝试在境外服务器连接 VPN</p>
 <p>首先安装 </p>

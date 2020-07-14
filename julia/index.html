@@ -726,8 +726,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#re-build-after-install-cudnn" class="md-nav__link">
-    Re-build after install cudnn
+  <a href="#work-with-gpu" class="md-nav__link">
+    work with GPU
   </a>
   
 </li>
@@ -1625,8 +1625,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#re-build-after-install-cudnn" class="md-nav__link">
-    Re-build after install cudnn
+  <a href="#work-with-gpu" class="md-nav__link">
+    work with GPU
   </a>
   
 </li>
@@ -1817,7 +1817,12 @@
                 
                 
                 <h1 id="julia">julia相关<a class="headerlink" href="#julia" title="Permanent link">&para;</a></h1>
-<p><a href="https://julialang.org/">主页</a></p>
+<ul>
+<li><a href="https://julialang.org/">主页</a></li>
+<li><a href="https://medium.com/@Jernfrost/my-new-workflow-with-julia-1-0-99711103d97c">My New Workflow with Julia 1.0</a>, mainly focus on how to develop a Julia package.</li>
+<li><a href="http://www.pkofod.com/2017/04/24/timing-in-julia/">Timing in Julia</a></li>
+<li><a href="https://tamaspapp.eu/post/plot-workflow/">Publication quality plots in Julia</a></li>
+</ul>
 <h2 id="is-there-a-way-to-undo-using-in-julia">Is there a way to undo <code>using</code> in Julia?<a class="headerlink" href="#is-there-a-way-to-undo-using-in-julia" title="Permanent link">&para;</a></h2>
 <p>NO</p>
 <ol>
@@ -2027,17 +2032,22 @@ will report
 </ol>
 <h2 id="_2"><code>&amp;</code> 优先级<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>use</p>
-<div class="highlight"><pre><span></span><code>(x[1] &lt;= width) &amp; (x[1] &gt;= 0) &amp; (x[2] &lt;= height) &amp; (x[2] &gt;=0)
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">width</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">height</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div>
 
-<p>not</p>
-<p>x[1] &lt;= width &amp; x[1] &gt;= 0 &amp; x[2] &lt;= height &amp; x[2] &gt;=0</p>
+<p>instead of</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">width</span> <span class="o">&amp;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">height</span> <span class="o">&amp;</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;=</span><span class="mi">0</span>
+</code></pre></div>
+
 <h2 id="methoderror-objects-of-type-module-are-not-callable"><code>MethodError: objects of type Module are not callable</code><a class="headerlink" href="#methoderror-objects-of-type-module-are-not-callable" title="Permanent link">&para;</a></h2>
 <p>check if the function is mistaken by the module name, such as <code>AxisArray</code> vs. <code>AxisArrays</code>.</p>
 <h2 id="libx86_64-linux-gnulibzso1-versionzlib_129-not-found"><code>/lib/x86_64-linux-gnu/libz.so.1: version</code>ZLIB_1.2.9&rsquo; not found`<a class="headerlink" href="#libx86_64-linux-gnulibzso1-versionzlib_129-not-found" title="Permanent link">&para;</a></h2>
 <p>ref to <a href="https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-so-1-version-zlib-1-2-9-not-found">https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-so-1-version-zlib-1-2-9-not-found</a></p>
-<h2 id="re-build-after-install-cudnn">Re-build after install cudnn<a class="headerlink" href="#re-build-after-install-cudnn" title="Permanent link">&para;</a></h2>
-<p>refer to <a href="https://github.com/FluxML/Flux.jl/issues/286">GPU on cluster: conversion to pointer not defined for CuArray{Float32,2}</a></p>
+<h2 id="work-with-gpu">work with GPU<a class="headerlink" href="#work-with-gpu" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://nextjournal.com/sdanisch/julia-gpu-programming">An Introduction to GPU Programming in Julia</a></li>
+<li>Re-build after install cudnn, refer to <a href="https://github.com/FluxML/Flux.jl/issues/286">GPU on cluster: conversion to pointer not defined for CuArray{Float32,2}</a></li>
+</ul>
 <h2 id="load-imageview-on-server">load <code>ImageView</code> on Server<a class="headerlink" href="#load-imageview-on-server" title="Permanent link">&para;</a></h2>
 <p>when <code>using ImageView</code>, it throws an error,</p>
 <blockquote>
