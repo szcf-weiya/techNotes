@@ -1,3 +1,28 @@
+## 2020.07.15
+
+### Simon Sinek·TEDxPuget Sound: How great leaders inspire action
+
+- defy all of the assumptions
+- all I did was codify it.
+- it has leather seats
+- everything we do, we believe in challenging the **status quo**.
+- They're eminently qualified to make flat-screen TVs.
+- It's all grounded in the tenets of biology.
+- Our newest brain, our Homo sapien brain, our neocortex, corresponds with the "what" level.
+- our **limbic** brains are responsible for all of our feelings.
+- rationalize it with the tangible things
+- the pursuit of powered man flight was like the dot com of the day.
+- under-capitalized
+- the recipe for success
+- And **lo and behold**, look what happened.
+- They only reason these people buy **touch-tone phone** is because you can't buy **rotary phones** anymore.
+- the system tips
+- gut feeling
+- plummet
+- rewind live TV
+- a great orator
+
+
 ## 2020.07.13
 
 ### Cameron Russell·TEDxMidAtlantic: Looks aren't everything. Believe me, I'm a model.
