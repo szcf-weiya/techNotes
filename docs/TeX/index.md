@@ -760,4 +760,4 @@ and application in [Forcing subfigures to have same height and take overall X% o
 - by pure latex
 - by tikz based on filtered paths
 
-refer to ![Can we make a love heart with LaTeX?](https://tex.stackexchange.com/questions/139733/can-we-make-a-love-heart-with-latex)
+refer to [Can we make a love heart with LaTeX?](https://tex.stackexchange.com/questions/139733/can-we-make-a-love-heart-with-latex)
