@@ -306,6 +306,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#check-linux-distribution" class="md-nav__link">
+    check linux distribution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#install-win-on-ubuntu" class="md-nav__link">
     install win on ubuntu
   </a>
@@ -531,13 +538,6 @@
         <li class="md-nav__item">
   <a href="#control-android-phone-by-pcs-mouse-and-keyboard" class="md-nav__link">
     control android phone by PC's mouse and keyboard
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix-my-locale-issue" class="md-nav__link">
-    fix my locale issue
   </a>
   
 </li>
@@ -1799,6 +1799,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#check-linux-distribution" class="md-nav__link">
+    check linux distribution
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#install-win-on-ubuntu" class="md-nav__link">
     install win on ubuntu
   </a>
@@ -2024,13 +2031,6 @@
         <li class="md-nav__item">
   <a href="#control-android-phone-by-pcs-mouse-and-keyboard" class="md-nav__link">
     control android phone by PC's mouse and keyboard
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix-my-locale-issue" class="md-nav__link">
-    fix my locale issue
   </a>
   
 </li>
@@ -2469,11 +2469,48 @@
                 
                 
                 <h1 id="linux">Linux笔记<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
+<h2 id="check-linux-distribution">check linux distribution<a class="headerlink" href="#check-linux-distribution" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>lsb_release -a
+</code></pre></div>
+
+<p>If no such command, then resort to other methods mentioned in <a href="https://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/">How To Find Out My Linux Distribution Name and Version</a></p>
 <h2 id="install-win-on-ubuntu">install win on ubuntu<a class="headerlink" href="#install-win-on-ubuntu" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://www.linuxdeveloper.space/install-windows-after-linux/">http://www.linuxdeveloper.space/install-windows-after-linux/</a></p>
 <h2 id="fix-locale-issue">fix locale issue<a class="headerlink" href="#fix-locale-issue" title="Permanent link">&para;</a></h2>
-<p>参考<a href="https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue">https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue</a></p>
-<p>阿里云的服务器，最好default为&rsquo;zh_CN.UTF-8&rsquo;</p>
+<p>根据<a href="https://zh.wikipedia.org/wiki/%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">维基百科</a>，区域设置（locale），也称作“本地化策略集”、“本地环境”，是表达程序用户地区方面的软件设定。不同系统、平台、与软件有不同的区域设置处理方式和不同的设置范围，但是一般区域设置最少也会包括语言和地区。操作系统的区域设置通常比较复杂。区域设置的内容包括：数据格式、货币金额格式、小数点符号、千分位符号、度量衡单位、通货符号、日期写法、日历类型、文字排序、姓名格式、地址等等。</p>
+<p>locale 生效的顺序为</p>
+<ol>
+<li><code>LANGUAGE</code>：指定个人对语言环境值的主次偏好，在 Ubuntu 中有这个环境变量，但似乎在 CentOS7.4 服务器上没有这个变量</li>
+<li><code>LC_ALL</code>: 这不是一个环境变量，是一个可被C语言库函数setlocale设置的宏，其值可覆盖所有其他的locale设定。因此缺省时此值为空</li>
+<li><code>LC_xxx</code>: 可设定locale各方面（category）的值，可以覆盖 <code>LANG</code> 的值。</li>
+<li><code>LANG</code>: 指定默认使用的locale值 </li>
+</ol>
+<p>如若设置不当，可能会出现</p>
+<div class="highlight"><pre><span></span><code>$ locale
+locale: Cannot <span class="nb">set</span> LC_CTYPE to default locale: No such file or directory
+locale: Cannot <span class="nb">set</span> LC_MESSAGES to default locale: No such file or directory
+locale: Cannot <span class="nb">set</span> LC_ALL to default locale: No such file or directory
+<span class="nv">LANG</span><span class="o">=</span>C.UTF-8
+<span class="nv">LC_CTYPE</span><span class="o">=</span>C.UTF-8
+<span class="nv">LC_NUMERIC</span><span class="o">=</span>en_US.UTF-8
+<span class="nv">LC_TIME</span><span class="o">=</span>en_US.UTF-8
+<span class="nv">LC_COLLATE</span><span class="o">=</span><span class="s2">&quot;C.UTF-8&quot;</span>
+<span class="nv">LC_MONETARY</span><span class="o">=</span>en_US.UTF-8
+<span class="nv">LC_MESSAGES</span><span class="o">=</span><span class="s2">&quot;C.UTF-8&quot;</span>
+<span class="nv">LC_PAPER</span><span class="o">=</span>en_US.UTF-8
+<span class="nv">LC_NAME</span><span class="o">=</span>en_US.UTF-8
+<span class="nv">LC_ADDRESS</span><span class="o">=</span>en_US.UTF-8
+<span class="nv">LC_TELEPHONE</span><span class="o">=</span>en_US.UTF-8
+<span class="nv">LC_MEASUREMENT</span><span class="o">=</span>en_US.UTF-8
+<span class="nv">LC_IDENTIFICATION</span><span class="o">=</span>en_US.UTF-8
+<span class="nv">LC_ALL</span><span class="o">=</span>
+</code></pre></div>
+
+<p>则可以通过</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
+</code></pre></div>
+
+<p>来解决这个问题，这个可以写进 <code>.bashrc</code> 文件中，并且不需要 sudo 权限，而 <a href="https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue">How do I fix my locale issue?</a> 中提到的几种方法需要 sudo 权限。</p>
 <h2 id="add-user">add user<a class="headerlink" href="#add-user" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672">https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04</a></p>
 <div class="highlight"><pre><span></span><code>useradd -m -s /bin/bash userName
@@ -2734,8 +2771,6 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 <p><a href="http://blog.chinaunix.net/uid-23177306-id-2531034.html">time命令中的real,user以及sys时间</a></p>
 <h2 id="control-android-phone-by-pcs-mouse-and-keyboard">control android phone by PC&rsquo;s mouse and keyboard<a class="headerlink" href="#control-android-phone-by-pcs-mouse-and-keyboard" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.makeuseof.com/tag/control-android-using-computers-mouse-keyboard/">How to Control Your Android Using Your Computer’s Mouse and Keyboard</a></p>
-<h2 id="fix-my-locale-issue">fix my locale issue<a class="headerlink" href="#fix-my-locale-issue" title="Permanent link">&para;</a></h2>
-<p><a href="https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue">How do I fix my locale issue?</a></p>
 <h2 id="unable-to-load-native-hadoop-library-for-your-platform">解决Unable to load native-hadoop library for your platform<a class="headerlink" href="#unable-to-load-native-hadoop-library-for-your-platform" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/succeedloveaaaa/article/details/48596857">解决Unable to load native-hadoop library for your platform</a></p>
 <h2 id="vultrshadowsocks">Vultr配置shadowsocks<a class="headerlink" href="#vultrshadowsocks" title="Permanent link">&para;</a></h2>
