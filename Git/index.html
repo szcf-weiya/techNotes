@@ -1091,6 +1091,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#color-in-git-diff" class="md-nav__link">
+    color in git diff
+  </a>
+  
+</li>
+      
       
       
       
@@ -1757,6 +1764,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#color-in-git-diff" class="md-nav__link">
+    color in git diff
+  </a>
+  
+</li>
+      
       
       
       
@@ -2086,6 +2100,19 @@ git push origin :refs/tags/v1.0
 </code></pre></div>
 
 <p>详见 <a href="https://gist.github.com/mobilemind/7883996">mobilemind/git-tag-delete-local-and-remote.sh</a></p>
+<h2 id="color-in-git-diff">color in git diff<a class="headerlink" href="#color-in-git-diff" title="Permanent link">&para;</a></h2>
+<p>在服务器上使用 <code>git diff</code>，没有像在本地 Ubuntu 那样用颜色高亮出不同的地方，这个可以通过在 <code>~/.gitconfig</code> 中进行配置，</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>color<span class="o">]</span>
+  <span class="nv">diff</span> <span class="o">=</span> auto
+  <span class="nv">status</span> <span class="o">=</span> auto
+  <span class="nv">branch</span> <span class="o">=</span> auto
+  <span class="nv">interactive</span> <span class="o">=</span> auto
+  <span class="nv">ui</span> <span class="o">=</span> <span class="nb">true</span>
+  <span class="nv">pager</span> <span class="o">=</span> <span class="nb">true</span>
+</code></pre></div>
+
+<p>参考 <a href="https://unix.stackexchange.com/questions/44266/how-to-colorize-output-of-git">How to colorize output of git?</a></p>
+<p>顺带发现，如果在 markdown 中复制 git diff 的 output，可以使用 <code>diff</code> 的代码块，会将更改的部分高亮出来。</p>
                 
                   
                 
