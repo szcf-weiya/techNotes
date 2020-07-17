@@ -1,3 +1,27 @@
+## 2020.07.16
+
+### Meg Jay·TED2013: Why 30 is not the new 20
+
+- psychotherapy client
+- wearing jeans and a big slouchy top
+- arsonist
+- Twentysomethings like Alex and I had nothing but time.
+- sleeping with knucklehead
+- benigh neglect
+- the brain caps off its second and last growth spurt in your 20s
+- an inordinate impact
+- extended adolescence
+- twixters and kidults
+- we have trivialized what is actually the defining decade of adulthood.
+- you have robbed that person of his urgency and ambition
+- that sounds a little flip
+- the post-millennial midlife crisis isn't buying a red sports car.
+- displayed his temper more than his ambition
+- she hangs her head in her lap, and she sobbed for most of the hours.
+- she was nearly hysterical
+- if I get in a car wreck
+- Emma's defining decade went parading by.
+
 ## 2020.07.15
 
 ### Simon Sinek·TEDxPuget Sound: How great leaders inspire action

@@ -1,14 +1,58 @@
 # Linux笔记
 
+## check linux distribution
+
+```bash
+lsb_release -a
+```
+
+If no such command, then resort to other methods mentioned in [How To Find Out My Linux Distribution Name and Version](https://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/)
+
 ## install win on ubuntu
 
 参考[http://www.linuxdeveloper.space/install-windows-after-linux/](http://www.linuxdeveloper.space/install-windows-after-linux/)
 
 ## fix locale issue
 
-参考[https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue](https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue)
+根据[维基百科](https://zh.wikipedia.org/wiki/%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE)，区域设置（locale），也称作“本地化策略集”、“本地环境”，是表达程序用户地区方面的软件设定。不同系统、平台、与软件有不同的区域设置处理方式和不同的设置范围，但是一般区域设置最少也会包括语言和地区。操作系统的区域设置通常比较复杂。区域设置的内容包括：数据格式、货币金额格式、小数点符号、千分位符号、度量衡单位、通货符号、日期写法、日历类型、文字排序、姓名格式、地址等等。
 
-阿里云的服务器，最好default为'zh_CN.UTF-8'
+locale 生效的顺序为
+ 
+1. `LANGUAGE`：指定个人对语言环境值的主次偏好，在 Ubuntu 中有这个环境变量，但似乎在 CentOS7.4 服务器上没有这个变量
+2. `LC_ALL`: 这不是一个环境变量，是一个可被C语言库函数setlocale设置的宏，其值可覆盖所有其他的locale设定。因此缺省时此值为空
+3. `LC_xxx`: 可设定locale各方面（category）的值，可以覆盖 `LANG` 的值。
+4. `LANG`: 指定默认使用的locale值 
+
+如若设置不当，可能会出现
+
+```bash
+$ locale
+locale: Cannot set LC_CTYPE to default locale: No such file or directory
+locale: Cannot set LC_MESSAGES to default locale: No such file or directory
+locale: Cannot set LC_ALL to default locale: No such file or directory
+LANG=C.UTF-8
+LC_CTYPE=C.UTF-8
+LC_NUMERIC=en_US.UTF-8
+LC_TIME=en_US.UTF-8
+LC_COLLATE="C.UTF-8"
+LC_MONETARY=en_US.UTF-8
+LC_MESSAGES="C.UTF-8"
+LC_PAPER=en_US.UTF-8
+LC_NAME=en_US.UTF-8
+LC_ADDRESS=en_US.UTF-8
+LC_TELEPHONE=en_US.UTF-8
+LC_MEASUREMENT=en_US.UTF-8
+LC_IDENTIFICATION=en_US.UTF-8
+LC_ALL=
+```
+
+则可以通过
+
+```bash
+export LC_ALL=en_US.UTF-8
+```
+
+来解决这个问题，这个可以写进 `.bashrc` 文件中，并且不需要 sudo 权限，而 [How do I fix my locale issue?](https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue) 中提到的几种方法需要 sudo 权限。
 
 ## add user
 
@@ -391,9 +435,6 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 
 [How to Control Your Android Using Your Computer’s Mouse and Keyboard](https://www.makeuseof.com/tag/control-android-using-computers-mouse-keyboard/)
 
-## fix my locale issue
-
-[How do I fix my locale issue?](https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue)
 
 ## 解决Unable to load native-hadoop library for your platform
 
