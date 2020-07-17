@@ -1,3 +1,18 @@
+## 2020.07.17
+
+### Meg Jay·TED2013: Why 30 is not the new 20 (Cont'd)
+
+- Identity capital begets identity capital.
+- make it count: to make sth have as useful and positive an effect as possible, [make something count](https://www.macmillandictionary.com/dictionary/british/make-something-count)
+- procrastination
+- the urban tribe is overrated
+- twentysomethings who **huddle** together with like-minded peers limit who they know, what they know, how they think, how they speak, and where they work
+- last but not least
+- [go/walk down the aisle: to get married](https://dictionary.cambridge.org/dictionary/english/go-walk-down-the-aisle)
+- being as intentional with love as you are with work
+- consciously choosing, mindfully choose
+- airplanes just leaving LAX, bound for somewhere west. Right after takeoff, a slight change in course is the difference between landing in Alaska or Fiji.
+
 ## 2020.07.16
 
 ### Meg Jay·TED2013: Why 30 is not the new 20
