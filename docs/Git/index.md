@@ -430,3 +430,21 @@ git push origin :refs/tags/v1.0
 ```
 
 详见 [mobilemind/git-tag-delete-local-and-remote.sh](https://gist.github.com/mobilemind/7883996)
+
+## color in git diff
+
+在服务器上使用 `git diff`，没有像在本地 Ubuntu 那样用颜色高亮出不同的地方，这个可以通过在 `~/.gitconfig` 中进行配置，
+
+```bash
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+```
+
+参考 [How to colorize output of git?](https://unix.stackexchange.com/questions/44266/how-to-colorize-output-of-git)
+
+顺带发现，如果在 markdown 中复制 git diff 的 output，可以使用 `diff` 的代码块，会将更改的部分高亮出来。
