@@ -1,3 +1,29 @@
+## 2020.07.19
+
+### Robert Waldinger·TEDxBeaconStreet: What makes a good life? Lessons from the longest study on happiness
+
+- millennial
+- lean in to work
+- hindsight is anything but 20/20.
+- sometimes memory is downright creative.
+- sophomore
+- live in tenements
+- bricklayers
+- schizophrenia
+- the experience of loneliness turns out to be toxic
+- midst of conflict
+- octogenarian
+- securely attached relationship
+- bicker with
+- this is wisdom that's as old as the hills
+- **take a toll** on their memories
+- glamorous
+- fare the best
+- livening up a stale relationship
+- those all-too-common family feuds take a terrible toll on the people who hold the grudges
+
+
+
 ## 2020.07.17
 
 ### Meg Jay·TED2013: Why 30 is not the new 20 (Cont'd)
