@@ -1,3 +1,11 @@
+## 2020.07.21
+
+### Thomas Suarez·TEDxManhattanBeach: A 12-year-old app developer
+
+- fortune teller
+- a Justin Bieber whack-a-mole
+
+
 ## 2020.07.19
 
 ### Robert Waldinger·TEDxBeaconStreet: What makes a good life? Lessons from the longest study on happiness
