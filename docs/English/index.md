@@ -1,3 +1,58 @@
+## 2020.07.25
+
+### Andrew @ 20200723
+
+- Malthusian (马尔萨斯的，马尔萨斯人口论的) catastrophe 
+- Fertility was procyclical but declined and delayed with long-run growth.
+
+### Brené Brown·TEDxHouston： The power of vulnerability
+
+- little flyer
+- magic pixie
+- I tried to call deep on my courage.
+- data with a soul
+- expanding perception
+- he was just sweet-talking me.
+- put it into a bento box
+- lean into the discomfort of the work
+- that was my mantra
+- lay the code out for everyone to see
+- it is neurobiologically that's how we're wired.
+- most excruciating experiences of being excluded.
+- unraveled connection
+- human empathy
+- The thing that underpinned this
+- I am not promoted enough.
+- outsmart it.
+- turn out well: 成功
+- it boils down to
+- office supply addiction, so I had a manila folder, and I had a Sharpie (美国三福记号笔)
+- I always go into this Jackson Pollock crazy thing.
+- separate courage and bravery
+- courage is from the Latin word "cor", meaning "heart"
+- had the compassion to be kind to themselves first
+- as a result of authenticity
+- the willingness to breathe through waiting for the doctor to call after your mammogram.
+- it was betrayal
+- I had pledged allegiance to research.
+- my therapist calls it a spiritual awakening
+- this is going to suck
+- they surrender and walk into it.
+- It was a slugfest
+- we numb vulnerability
+- initiating sex with my wife
+- being turned down
+- getting laid off
+- banana nut muffin
+- a way to discharge pain and discomfort
+- take fat from out butts and put it in our cheeks
+- They're hardwired for struggle. You're wired for struggle.
+- it's a bailout, an oil spill.
+- this is not our first rodeo.
+- be authentic and real
+- be fierce about
+- stop screaming and start listening
+
 ## 2020.07.21
 
 ### Thomas Suarez·TEDxManhattanBeach: A 12-year-old app developer
