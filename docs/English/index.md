@@ -221,7 +221,7 @@
 - this **wail** of pain and suffering and surprise threatening to **erupt** from her mouth and wake my parents from the long winter's **nap** for which they had settled.
 - my **frantic** seven year-old brain could think to do to **avert** this tragedy.
 - I thinks this means you're a unicorn.
-- **contemplate** her new-found identity as a unicorn.
+- **contemplate** her new-found identity as a **unicorn**.
 - **scramble** back up to onto the bunk bed
 - What we stumbled across at this tender age of just five and seven was was going be at the vanguard of a scientific revolution occurring two decades later in the way that we look at the human brain.
 - There is one weird dot above the curve, there's one weirdo in the room.
