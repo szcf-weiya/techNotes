@@ -7,7 +7,7 @@ pages:
       - shell: shell/index.md
       - 服务器: Linux/servers.md
       - 16to18: Linux/16to18.md
-      - 笔记本作为服务器：Linux/asAserver.md
+      - 笔记本作为服务器: Linux/asAserver.md
     - R: 
       - 一般问题: R/index.md
       - 统计基础: R/basic.md
