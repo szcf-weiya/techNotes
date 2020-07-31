@@ -379,6 +379,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    音乐播放器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    自登录自连接
+  </a>
+  
+</li>
+      
       
       
       
@@ -1185,6 +1199,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    音乐播放器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    自登录自连接
+  </a>
+  
+</li>
+      
       
       
       
@@ -1226,6 +1254,60 @@ T460p $ ssh -p <span class="m">30003</span> weiya@127.0.0.1
 </code></pre></div>
 
 <p>没想到这个也能使连接断开，于是需要继续连接一遍。</p>
+<h2 id="_3">音乐播放器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>目标：通过 ssh 远程打开音乐，但是仍在 G40 上播放，而不是像图象一样 forward 到本地播放。</p>
+<p>本来一开始担心会像图象一样，需要通过类似 <code>-X</code> 这种选项来支持这种功能，如果支持了，下一步还要看看怎么直接在服务器端直接播放，而不是额外占用本地的资源来播放，要不然我干脆用本机的音乐播放器就完事了。</p>
+<p>幸好，图象和音频不一样，如 <a href="https://unix.stackexchange.com/questions/76751/playing-a-remote-movie-on-the-remote-computer">Playing a remote movie on the remote computer</a> 所说，</p>
+<blockquote>
+<p>Linux manages sound and display differently. You normally only get access to the screen if you&rsquo;ve logged in locally, whereas sound is often available to all processes running on the system.</p>
+</blockquote>
+<p>所以打消了我的顾虑，下一步便是直接播放了。刚好 G40 有一首下载好的歌曲，然后试了一下用 <code>aplay</code> 打开，但是非常嘈杂，根本不是音乐。</p>
+<p>然后便下了个网易云客户端，本来以为音乐会在服务器端播放，但是没有任何声音，而且报错</p>
+<blockquote>
+<p>vlcpulse audio output error: PulseAudio server connection failure: Connection refused</p>
+</blockquote>
+<p>再结合一下 <code>aplay</code> 的不正常播放，误以为 <code>PulseAudio</code> 出现了问题，所以按照 <a href="https://unix.stackexchange.com/questions/445386/pulseaudio-server-connection-failure-connection-refused-debian-stretch/567083">PulseAudio server connection failure: Connection refused (debian stretch)</a> 操作一遍，似乎并没有什么问题。但是因为这个涉及到重启，所以提醒了我一个很重要的点，即自登陆自连接。</p>
+<p>后来意识到 <code>aplay</code> 只能播放 <code>wav</code> 文件，而 <code>.mp3</code>需要其他的播放命令，比如 <code>mpg123</code>，参考 <a href="https://askubuntu.com/questions/115369/how-to-play-mp3-files-from-the-command-line">How to play mp3 files from the command line?</a></p>
+<p>后来试了下 <code>sox</code>，声称可以支持多种格式，</p>
+<div class="highlight"><pre><span></span><code>$ sudo apt-get install sox
+$ sudo apt-get install libsox-fmt-all
+</code></pre></div>
+
+<p>播放的界面很清爽但不简单，</p>
+<p><img alt="" src="../music.gif" /></p>
+<p>其中 <code>-v 0.5</code> 调节音量。</p>
+<div class="admonition tip">
+<p class="admonition-title">音乐下载</p>
+<ul>
+<li><a href="https://www.sq688.com/">超高无损音乐</a></li>
+</ul>
+</div>
+<p>先暂时写了个简单的列表顺序播放的脚本 </p>
+<div class="highlight"><pre><span></span><code>$ cat playmusic.sh 
+<span class="c1">#!/bin/bash</span>
+<span class="k">for</span> music in ~/Music/*<span class="p">;</span> <span class="k">do</span>
+    <span class="k">if</span> <span class="o">[[</span> -f <span class="nv">$music</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+        play -v <span class="m">0</span>.35 <span class="s2">&quot;</span><span class="nv">$music</span><span class="s2">&quot;</span>
+    <span class="k">fi</span>
+<span class="k">done</span>
+</code></pre></div>
+
+<h2 id="_4">自登录自连接<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>因为重启后，一般会出现登录界面，需要输入用户名及密码。将 <code>/etc/gdm3/custom.conf</code> 中的这两行</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#  AutomaticLoginEnable = true</span>
+<span class="c1">#  AutomaticLogin = user1</span>
+</code></pre></div>
+
+<p>改成 </p>
+<div class="highlight"><pre><span></span><code><span class="nv">AutomaticLoginEnable</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="nv">AutomaticLogin</span> <span class="o">=</span> weiya
+</code></pre></div>
+
+<p>下一步还需要自动发起 ssh 连接至跳板服务器，这个可以再 <code>.profile</code> 中添加</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;./autossh2ln001.sh&quot;</span> &gt;&gt; .profile
+</code></pre></div>
+
+<p>不过需要注意到如果存在 <code>.bash_profile</code> 或 <code>.bash_login</code>，则需要更改这些文件，因为只按顺序调用这三个的第一个。</p>
                 
                   
                 
