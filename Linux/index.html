@@ -958,6 +958,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hotspot" class="md-nav__link">
+    删除 Hotspot
+  </a>
+  
+</li>
+      
       
       
       
@@ -2463,6 +2470,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hotspot" class="md-nav__link">
+    删除 Hotspot
+  </a>
+  
+</li>
+      
       
       
       
@@ -3183,6 +3197,13 @@ machine git.heroku.com
 <p>最后这个问题是直接把 .bashrc 中所有的代理去掉了.</p>
 <h2 id="possible-errors-using-apt-get">possible errors using <code>apt-get</code><a class="headerlink" href="#possible-errors-using-apt-get" title="Permanent link">&para;</a></h2>
 <p><a href="https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa">How do I resolve unmet dependencies after adding a PPA?</a></p>
+<h2 id="hotspot">删除 Hotspot<a class="headerlink" href="#hotspot" title="Permanent link">&para;</a></h2>
+<p>升级到 Ubuntu 18.04 后，开机自动连接到 Hotspot，每次需要手动禁止并改成 Wifi 连接，这个可以直接删除保存好的 Hotspot 连接</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /etc/NetworkManager/system-connections/
+sudo rm Hotspot
+</code></pre></div>
+
+<p>参考 <a href="https://askubuntu.com/questions/120415/how-to-remove-access-point-from-saved-list/120447">How to remove access point from saved list</a></p>
                 
                   
                 
