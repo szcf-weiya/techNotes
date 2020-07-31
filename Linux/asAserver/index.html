@@ -1292,6 +1292,26 @@ $ sudo apt-get install libsox-fmt-all
 <span class="k">done</span>
 </code></pre></div>
 
+<p>但是如果想关掉，只能 <code>Ctrl-C</code> 了，而且要连续 <code>Ctrl-C</code> 了。其实主要的是并不支持所有格式，比如<code>.ape</code>，然后我便试了试 <code>nvlc</code>, <a href="https://help.ubuntu.com/community/PlayMusicFromCommandLine">Ubuntu documentation: PlayMusicFromCommandLine</a> 列出了几种可能的从终端播放音乐的方法。</p>
+<p>注意 <code>nvlc</code> 不需要预装 <code>vlc</code>，只需要</p>
+<div class="highlight"><pre><span></span><code>$ sudo apt-get install vlc-bin
+</code></pre></div>
+
+<p>因为一开始误以为是 vlc 自带的，但是装了 vlc 之后，</p>
+<div class="highlight"><pre><span></span><code>$ sudo snap install vlc
+</code></pre></div>
+
+<p>并没有 <code>nvlc</code>，而直接敲 <code>nvlc</code> 就可以拿到提示，</p>
+<div class="highlight"><pre><span></span><code>$ nvlc
+
+Command <span class="s1">&#39;nvlc&#39;</span> not found, but can be installed with:
+
+sudo apt install vlc-bin
+</code></pre></div>
+
+<p>安装好之后，直接 <code>vlc *</code> 便可以顺序播放所有歌曲，</p>
+<p><img alt="" src="../music-nvlc.gif" /></p>
+<p>关键是其功能远不如此，完全就是一个音乐播放器了，比如通过 <code>a, z</code> 键调节音量，更多功能键入 <code>h</code> 获取帮助，而且支持 <code>.ape</code> 格式！</p>
 <h2 id="_4">自登录自连接<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>因为重启后，一般会出现登录界面，需要输入用户名及密码。将 <code>/etc/gdm3/custom.conf</code> 中的这两行</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#  AutomaticLoginEnable = true</span>
