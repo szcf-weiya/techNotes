@@ -1328,6 +1328,9 @@ sudo apt install vlc-bin
 </code></pre></div>
 
 <p>不过需要注意到如果存在 <code>.bash_profile</code> 或 <code>.bash_login</code>，则需要更改这些文件，因为只按顺序调用这三个的第一个。</p>
+<p>因为音乐文件是通过本地百度云下载的，所以需要复制过去，但是如果 <code>scp</code> 的话，似乎没有选项支持 disable overwrite，然后看到 <a href="https://unix.stackexchange.com/questions/14191/scp-without-replacing-existing-files-in-the-destination">scp without replacing existing files in the destination</a>，推荐 <code>rsync</code>，增量更新，想起上次在 pluskid 的博客中也看到了，所以便准备用它，不过 ssh 的端口需要额外指定，<a href="https://stackoverflow.com/questions/4549945/is-it-possible-to-specify-a-different-ssh-port-when-using-rsync">Is it possible to specify a different ssh port when using rsync?</a>，最后的命令为</p>
+<div class="highlight"><pre><span></span><code>$ rsync -auv -e <span class="s2">&quot;ssh -p 30003&quot;</span> /home/weiya/OneDrive/CloudMusic/ weiya@127.0.0.1:~/Music/
+</code></pre></div>
                 
                   
                 
