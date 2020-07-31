@@ -113,8 +113,8 @@ sudo apt install vlc-bin
 
 ![](music-nvlc.gif)
 
-关键是其功能远不如此，完全就是一个音乐播放器了，比如通过 `a, z` 键调节音量，更多功能键入 `h` 获取帮助，而且支持 `.ape` 格式！
 
+关键是其功能远不如此，完全就是一个音乐播放器了，比如通过 `a, z` 键调节音量，更多功能键入 `h` 获取帮助，而且支持 `.ape` 格式！
 ## 自登录自连接
 
 因为重启后，一般会出现登录界面，需要输入用户名及密码。将 `/etc/gdm3/custom.conf` 中的这两行
@@ -139,5 +139,8 @@ $ echo "./autossh2ln001.sh" >> .profile
 
 不过需要注意到如果存在 `.bash_profile` 或 `.bash_login`，则需要更改这些文件，因为只按顺序调用这三个的第一个。
 
+因为音乐文件是通过本地百度云下载的，所以需要复制过去，但是如果 `scp` 的话，似乎没有选项支持 disable overwrite，然后看到 [scp without replacing existing files in the destination](https://unix.stackexchange.com/questions/14191/scp-without-replacing-existing-files-in-the-destination)，推荐 `rsync`，增量更新，想起上次在 pluskid 的博客中也看到了，所以便准备用它，不过 ssh 的端口需要额外指定，[Is it possible to specify a different ssh port when using rsync?](https://stackoverflow.com/questions/4549945/is-it-possible-to-specify-a-different-ssh-port-when-using-rsync)，最后的命令为
 
-
+```bash
+$ rsync -auv -e "ssh -p 30003" /home/weiya/OneDrive/CloudMusic/ weiya@127.0.0.1:~/Music/
+```
