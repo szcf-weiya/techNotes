@@ -85,6 +85,36 @@ for music in ~/Music/*; do
 done
 ```
 
+但是如果想关掉，只能 `Ctrl-C` 了，而且要连续 `Ctrl-C` 了。其实主要的是并不支持所有格式，比如`.ape`，然后我便试了试 `nvlc`, [Ubuntu documentation: PlayMusicFromCommandLine](https://help.ubuntu.com/community/PlayMusicFromCommandLine) 列出了几种可能的从终端播放音乐的方法。
+
+注意 `nvlc` 不需要预装 `vlc`，只需要
+
+```bash
+$ sudo apt-get install vlc-bin
+```
+
+因为一开始误以为是 vlc 自带的，但是装了 vlc 之后，
+
+```bash
+$ sudo snap install vlc
+```
+
+并没有 `nvlc`，而直接敲 `nvlc` 就可以拿到提示，
+
+```bash
+$ nvlc
+
+Command 'nvlc' not found, but can be installed with:
+
+sudo apt install vlc-bin
+```
+
+安装好之后，直接 `vlc *` 便可以顺序播放所有歌曲，
+
+![](music-nvlc.gif)
+
+关键是其功能远不如此，完全就是一个音乐播放器了，比如通过 `a, z` 键调节音量，更多功能键入 `h` 获取帮助，而且支持 `.ape` 格式！
+
 ## 自登录自连接
 
 因为重启后，一般会出现登录界面，需要输入用户名及密码。将 `/etc/gdm3/custom.conf` 中的这两行
