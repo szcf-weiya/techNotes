@@ -923,3 +923,24 @@ For example, convert "1" to "001",
 julia> lpad(1, 3, '0')
 "001"
 ```
+
+## no reduction with `[1:1]`
+
+Sometimes, I do not want to the array of array reduces to a single array, then `[1:1]` would help, instead of `[1]`, see the following toy example.
+
+```julia
+julia> x
+2-element Array{Array{Int64,1},1}:
+ [1, 2, 3]
+ [1, 2]
+
+julia> x[1]
+3-element Array{Int64,1}:
+ 1
+ 2
+ 3
+
+julia> x[1:1]
+1-element Array{Array{Int64,1},1}:
+ [1, 2, 3]
+```
