@@ -912,6 +912,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#no-reduction-with-11" class="md-nav__link">
+    no reduction with [1:1]
+  </a>
+  
+</li>
+      
       
       
       
@@ -1811,6 +1818,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#no-reduction-with-11" class="md-nav__link">
+    no reduction with [1:1]
+  </a>
+  
+</li>
+      
       
       
       
@@ -2535,6 +2549,24 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3æ
 <p>For example, convert &ldquo;1&rdquo; to &ldquo;001&rdquo;,</p>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">lpad</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span>
 <span class="s">&quot;001&quot;</span>
+</code></pre></div>
+
+<h2 id="no-reduction-with-11">no reduction with <code>[1:1]</code><a class="headerlink" href="#no-reduction-with-11" title="Permanent link">&para;</a></h2>
+<p>Sometimes, I do not want to the array of array reduces to a single array, then <code>[1:1]</code> would help, instead of <code>[1]</code>, see the following toy example.</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span>
+<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="mi">3</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">1</span>
+ <span class="mi">2</span>
+ <span class="mi">3</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">1</span><span class="p">]</span>
+<span class="mi">1</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </code></pre></div>
                 
                   
