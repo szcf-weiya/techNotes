@@ -186,21 +186,23 @@
 
 - unfriend someone on Facebook
 - Henry Higgins in "My Fair Lady"
+- anti-vaxxing: shorted version of [anti-vaccination](https://en.wikipedia.org/wiki/Vaccine_hesitancy)
 - has the potential to devolve into an argument
 - Pew Research
 - we are more polarized than we ever have been in history
-- plumber
+- **plumber**: 水管工人
 - **nod** and smile to show that you're paying attention.
 - it's **crap**.
 - don't **pontificate**.
-- I don't allow pundits on my show.
-- The famed therapist M. Scott Peck said that true listening requires a setting aside of oneself.
+- I don't allow **pundits** on my show.
+- The famed therapist M. Scott Peck said that true listening requires a **setting aside** of oneself.
+- the speaker will become less and less vulnerable and more and more likely to open up the [inner recesses](https://www.collinsdictionary.com/dictionary/english/recesses#:~:text=if%20you%20refer%20to%20the,inner%20recesses%20of%20the%20soul) of his or her mind to the listener.
 - were you terrified?
 - he was just **bound** and determined to say that.
 - Err on the side of caution.
-- People who brag about their IQs are losers.
+- People who **brag about** their IQs are losers.
 - Conversations are not a promotional opportunity.
-- condescending
+- **condescending**
 - stay out of the weeds
 - I can bolster my own identity.
 - A good conversation is like a miniskirt; short enough to retain interest, but long enough to cover the subject.
