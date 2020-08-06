@@ -1,3 +1,12 @@
+## 2020.08.05
+
+- Jellyfish is the common name for the free-swimming form of gelatinous animals
+- farmed in aquaculture systems
+- thousands of swimmers are stung with varying degrees of severity every year.
+- jellyfish can form swarms which are also known as jellyfish blooms, which can damage fishing apparatus or clog the cooling systems of power stations.
+- ocean eutrophication
+
+
 ## 2020.07.25
 
 ### Andrew @ 20200723

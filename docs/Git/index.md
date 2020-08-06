@@ -260,26 +260,61 @@ file_glob: true
 
 ### 已 `commit`
 
-`git reset --hard HEAD^`
+- 丢弃修改的内容：`git reset --hard HEAD^`
+- 保留修改的内容：`git reset --soft HEAD^`
+- 还有一种 `mixed`，也是默认不带参数的
 
-参考[git 放弃本地修改](https://www.cnblogs.com/qufanblog/p/7606105.html)
+参考
+
+- [git 放弃本地修改](https://www.cnblogs.com/qufanblog/p/7606105.html)
+- [github,退回之前的commit](https://www.cnblogs.com/xiaomengzhang/p/3240788.html)
+- [github 版本回退](https://blog.csdn.net/apple_wolf/article/details/53326187)
+
+### 实际案例
+
+某次写博客时，有一篇仍处于草稿箱的文件 A.md 暂时不想上传，但是更改了已经发表的文章 B.md 中的 typo，然后提交时一不留神直接用 
+
+```bash
+$ g "fix typo"
+```
+
+提交了，其中 `g` 是在 `.bashrc` 中自定义的一个函数，
+
+```bash
+# file .bashrc
+# alias for git
+func_g(){
+    rm -f core
+    git add .
+    git commit -a -m "$1"
+    git push
+}
+alias g=func_g
+```
+
+本来会直接 push 上去的，但是发现及时，Ctrl-C 取消掉了，不过 commit 需要回退。注意到这时并不想放弃修改的文档，所以 `--hard` 选项不可取，
+
+```bash
+$ git reset --soft HEAD^
+```
+
+这只是取消了 commit，但是仍然被 add 了，查看 git status，会有一行提示语，
+
+```bash
+  (use "git reset HEAD <file>..." to unstage)
+```
+
+所以下一步自然为
+
+```bash
+$ git reset HEAD A.md
+```
 
 ## 列出另一分支的目录
 
 ```bash
 git ls-tree master:dirname
 ```
-
-## Github 回退
-
-```bash
-git reset --hard HEAD^
-git push origin HEAD --force
-```
-
-参考
-1. [github,退回之前的commit](https://www.cnblogs.com/xiaomengzhang/p/3240788.html)
-2. [github 版本回退](https://blog.csdn.net/apple_wolf/article/details/53326187)
 
 ## 修改 commit 信息
 
