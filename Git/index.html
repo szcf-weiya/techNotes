@@ -1014,21 +1014,21 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    实际案例
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     列出另一分支的目录
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#github_1" class="md-nav__link">
-    Github 回退
   </a>
   
 </li>
@@ -1055,7 +1055,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     分支操作
   </a>
   
@@ -1097,7 +1097,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     标签
   </a>
   
@@ -1687,21 +1687,21 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    实际案例
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     列出另一分支的目录
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#github_1" class="md-nav__link">
-    Github 回退
   </a>
   
 </li>
@@ -1728,7 +1728,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     分支操作
   </a>
   
@@ -1770,7 +1770,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     标签
   </a>
   
@@ -1984,20 +1984,50 @@ git config user.email
 <h3 id="git-add_1">已 <code>git add</code><a class="headerlink" href="#git-add_1" title="Permanent link">&para;</a></h3>
 <p><code>git reset HEAD</code></p>
 <h3 id="commit">已 <code>commit</code><a class="headerlink" href="#commit" title="Permanent link">&para;</a></h3>
-<p><code>git reset --hard HEAD^</code></p>
-<p>参考<a href="https://www.cnblogs.com/qufanblog/p/7606105.html">git 放弃本地修改</a></p>
-<h2 id="_9">列出另一分支的目录<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<ul>
+<li>丢弃修改的内容：<code>git reset --hard HEAD^</code></li>
+<li>保留修改的内容：<code>git reset --soft HEAD^</code></li>
+<li>还有一种 <code>mixed</code>，也是默认不带参数的</li>
+</ul>
+<p>参考</p>
+<ul>
+<li><a href="https://www.cnblogs.com/qufanblog/p/7606105.html">git 放弃本地修改</a></li>
+<li><a href="https://www.cnblogs.com/xiaomengzhang/p/3240788.html">github,退回之前的commit</a></li>
+<li><a href="https://blog.csdn.net/apple_wolf/article/details/53326187">github 版本回退</a></li>
+</ul>
+<h3 id="_9">实际案例<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>某次写博客时，有一篇仍处于草稿箱的文件 A.md 暂时不想上传，但是更改了已经发表的文章 B.md 中的 typo，然后提交时一不留神直接用 </p>
+<div class="highlight"><pre><span></span><code>$ g <span class="s2">&quot;fix typo&quot;</span>
+</code></pre></div>
+
+<p>提交了，其中 <code>g</code> 是在 <code>.bashrc</code> 中自定义的一个函数，</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># file .bashrc</span>
+<span class="c1"># alias for git</span>
+func_g<span class="o">(){</span>
+    rm -f core
+    git add .
+    git commit -a -m <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+    git push
+<span class="o">}</span>
+<span class="nb">alias</span> <span class="nv">g</span><span class="o">=</span>func_g
+</code></pre></div>
+
+<p>本来会直接 push 上去的，但是发现及时，Ctrl-C 取消掉了，不过 commit 需要回退。注意到这时并不想放弃修改的文档，所以 <code>--hard</code> 选项不可取，</p>
+<div class="highlight"><pre><span></span><code>$ git reset --soft HEAD^
+</code></pre></div>
+
+<p>这只是取消了 commit，但是仍然被 add 了，查看 git status，会有一行提示语，</p>
+<div class="highlight"><pre><span></span><code>  <span class="o">(</span>use <span class="s2">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+</code></pre></div>
+
+<p>所以下一步自然为</p>
+<div class="highlight"><pre><span></span><code>$ git reset HEAD A.md
+</code></pre></div>
+
+<h2 id="_10">列出另一分支的目录<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>git ls-tree master:dirname
 </code></pre></div>
 
-<h2 id="github_1">Github 回退<a class="headerlink" href="#github_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git reset --hard HEAD^
-git push origin HEAD --force
-</code></pre></div>
-
-<p>参考
-1. <a href="https://www.cnblogs.com/xiaomengzhang/p/3240788.html">github,退回之前的commit</a>
-2. <a href="https://blog.csdn.net/apple_wolf/article/details/53326187">github 版本回退</a></p>
 <h2 id="commit_1">修改 commit 信息<a class="headerlink" href="#commit_1" title="Permanent link">&para;</a></h2>
 <p>If the latest commit， type</p>
 <div class="highlight"><pre><span></span><code>git commit --amend
@@ -2021,7 +2051,7 @@ git clean -f
 </code></pre></div>
 
 <p>refer to <a href="https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree">How to remove local (untracked) files from the current Git working tree</a></p>
-<h2 id="_10">分支操作<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_11">分支操作<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>详见 <a href="https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6">Git 分支 - 分支的新建与合并</a></p>
 <h2 id="crlf-lf"><code>CRLF</code> &amp; <code>LF</code><a class="headerlink" href="#crlf-lf" title="Permanent link">&para;</a></h2>
 <p>双系统切换时，原先在 Win 处理，后来换到 Linux 处理，报出</p>
@@ -2087,7 +2117,7 @@ See <span class="s1">&#39;git help config&#39;</span> and search <span class="k"
 <p>git add-commit -m &lsquo;My commit message&rsquo;</p>
 </blockquote>
 <p>这跟在 <code>.bashrc</code> 中配置有异曲同工之妙！</p>
-<h2 id="_11">标签<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_12">标签<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <ul>
 <li>打标签</li>
 </ul>
