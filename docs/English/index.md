@@ -76,17 +76,18 @@
 
 - millennial
 - lean in to work
-- hindsight is anything but 20/20.
+- [hindsight is anything but 20/20](https://grammarist.com/proverb/hindsight-is-20-20-and-20-20-hindsight/).
 - sometimes memory is downright creative.
 - sophomore
 - live in tenements
 - bricklayers
-- schizophrenia
+- schizophrenia (精神分裂症)
 - the experience of loneliness turns out to be toxic
 - midst of conflict
-- octogenarian
+- octogenarian (八旬老人)
 - securely attached relationship
 - bicker with
+- day in, day out
 - this is wisdom that's as old as the hills
 - **take a toll** on their memories
 - glamorous
@@ -168,8 +169,8 @@
 - if some of the women were really horrified
 - I am quite privileged to be able to transform what you think of me in a very brief 10 seconds.
 - Image is powerful, but also, image is superficial.
-- barring surgery, or the fake tan
-- I was scouted.
+- barring surgery, or the **fake tan** (人工日晒肤色；假冒古铜色；[美黑](https://zhuanlan.zhihu.com/p/28819200bar))
+- I was **scouted**.
 - I won a genetic lottery, and I am the recipient of a legacy.
 - slender figures, and femininity
 - there are some fashionistas who are like
@@ -183,7 +184,7 @@
 - Here's me at a **slumber** party a few days before I shot **French Vogue**.
 - They are constructions by a group of professionals, by hairstylists and makeup artists and photographers and stylists and all of their assistants and pre-production and post-production.
 - were stopped and frisked.
-- you are so happy and fabulous.
+- you are so happy and **fabulous**.
 - when we are backstage
 - I am insecure.
 - It was difficult to unpack a legacy of gender and racial oppression when I am one of the biggest beneficiaries.
