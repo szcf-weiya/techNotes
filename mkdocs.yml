@@ -24,7 +24,9 @@ pages:
       - rpy2: python/rpy2.md
       - 自建关键词索引页: python/esltag.md
     - Julia: julia/index.md
-    - Tex: TeX/index.md
+    - Tex: 
+      - 一般问题: TeX/index.md
+      - arXiv: TeX/arxiv.md
     - Website:
       - Website: website/index.md
       - CSS: website/css.md
