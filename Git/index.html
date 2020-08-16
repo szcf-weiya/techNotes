@@ -1146,6 +1146,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rebase-push-merges" class="md-nav__link">
+    rebase 放弃未 push 的 merges
+  </a>
+  
+</li>
+      
       
       
       
@@ -1819,6 +1826,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rebase-push-merges" class="md-nav__link">
+    rebase 放弃未 push 的 merges
+  </a>
+  
+</li>
+      
       
       
       
@@ -2191,6 +2205,36 @@ git push origin :refs/tags/v1.0
 
 <p>参考 <a href="https://unix.stackexchange.com/questions/44266/how-to-colorize-output-of-git">How to colorize output of git?</a></p>
 <p>顺带发现，如果在 markdown 中复制 git diff 的 output，可以使用 <code>diff</code> 的代码块，会将更改的部分高亮出来。</p>
+<h2 id="rebase-push-merges">rebase 放弃未 push 的 merges<a class="headerlink" href="#rebase-push-merges" title="Permanent link">&para;</a></h2>
+<p>现有本地、服务器仓库各一个，通过 GitHub 进行共享，原则上只通过本地编辑代码，然后在服务器中借助 <code>git pull</code> 进行更新代码。但是有一行代码由于文件路径原因，不得已在服务器端更改，在 <code>git pull</code> 之前进行了 <code>git add; git commit</code> 操作，所以 <code>pull</code> 的时候会产生 merge，而且这样下去每一次进行 <code>pull</code> 都会进行 merge。这样就很难看出服务器端真正更改的内容了，这时发现了 <code>git rebase</code>，这张图很好地展示了它要干的事情，</p>
+<p><img alt="" src="http://gitbook.liuhui998.com/assets/images/figure/rebase3.png" /></p>
+<p>这也正是我想要的，简单说就是把基于以前的更改转换成基于最新的更改。</p>
+<p>然而我这情况还没这么直接，因为有过很多 merges，这些 merges 都想放弃掉。</p>
+<div class="highlight"><pre><span></span><code>$ git log --graph --format<span class="o">=</span>%s
+</code></pre></div>
+
+<p><img alt="" src="graph-merges.png" /></p>
+<p>后来发现了 <a href="https://git-scm.com/docs/git-rebase/2.28.0#_rebasing_merges">&ndash;rebase-merges</a> 选项，似乎是在处理我的问题（~~最后还是理解反了~~），但是没高兴多久，服务器端的 git 版本只有 <code>1.8.3.1</code>，而这个选项至少要求 <code>2.x</code>。不过有注意到了 <code>--preserve-merges</code> 选项，新版本中已经 deprecated，而且文档中有这么一句，</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>DEPRECATED: use --rebase-merges instead<span class="o">]</span>
+</code></pre></div>
+
+<p>似乎也可以用，但是这个名字怎么感觉跟我的目标是相反的呢！?（此时还未意识到），后来简单试了一下</p>
+<div class="highlight"><pre><span></span><code>$ git rebase --preserve-merges
+</code></pre></div>
+
+<p>发现没啥变化。这才意识到自己理解错了这两个命令。</p>
+<p>后来又注意到了 <code>--root</code> 选项，发现这个跟自己的目标挺像的，而且抱着搞坏了大不了重新 <code>git clone</code> 一下，所以果断去试了，history 确实都变成线性了</p>
+<p><img alt="" src="graph-linear.png" /></p>
+<p>但是似乎还没成功，commits 都变成不一样了，</p>
+<p><img alt="" src="rebase-root.png" /></p>
+<p>后来又瞎运行了下 </p>
+<div class="highlight"><pre><span></span><code>$ git rebase
+</code></pre></div>
+
+<p>发现竟然成功了，</p>
+<p><img alt="" src="rebase-again.png" /></p>
+<p>现在我甚至怀疑是不是一开始直接 <code>git rebase</code> 就好了，也不需要 <code>--root</code>，不过 <code>root</code> 是说可以 rebase 所有 reachable commits，没有什么 upstream 限制，不知道 merges 算不算 upstream 限制（<strong>以后再玩玩</strong>）. 如果需要更新的话，仍采用 <code>git pull</code>，但是 <code>git pull</code> 不是相当于 <code>git fetch &amp; git merge</code> 么？！不过需要注意<a href="https://stackoverflow.com/a/36148845/8427014">加上 <code>--rebase</code> 选项</a></p>
+<p><img alt="" src="git-pull-with-rebase.png" /></p>
                 
                   
                 
