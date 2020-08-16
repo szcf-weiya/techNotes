@@ -483,3 +483,56 @@ git push origin :refs/tags/v1.0
 参考 [How to colorize output of git?](https://unix.stackexchange.com/questions/44266/how-to-colorize-output-of-git)
 
 顺带发现，如果在 markdown 中复制 git diff 的 output，可以使用 `diff` 的代码块，会将更改的部分高亮出来。
+
+## rebase 放弃未 push 的 merges
+
+现有本地、服务器仓库各一个，通过 GitHub 进行共享，原则上只通过本地编辑代码，然后在服务器中借助 `git pull` 进行更新代码。但是有一行代码由于文件路径原因，不得已在服务器端更改，在 `git pull` 之前进行了 `git add; git commit` 操作，所以 `pull` 的时候会产生 merge，而且这样下去每一次进行 `pull` 都会进行 merge。这样就很难看出服务器端真正更改的内容了，这时发现了 `git rebase`，这张图很好地展示了它要干的事情，
+
+![](http://gitbook.liuhui998.com/assets/images/figure/rebase3.png)
+
+这也正是我想要的，简单说就是把基于以前的更改转换成基于最新的更改。
+
+然而我这情况还没这么直接，因为有过很多 merges，这些 merges 都想放弃掉。
+
+```bash
+$ git log --graph --format=%s
+```
+
+![](graph-merges.png)
+
+后来发现了 [--rebase-merges](https://git-scm.com/docs/git-rebase/2.28.0#_rebasing_merges) 选项，似乎是在处理我的问题（~~最后还是理解反了~~），但是没高兴多久，服务器端的 git 版本只有 `1.8.3.1`，而这个选项至少要求 `2.x`。不过有注意到了 `--preserve-merges` 选项，新版本中已经 deprecated，而且文档中有这么一句，
+
+```bash
+[DEPRECATED: use --rebase-merges instead]
+```
+
+似乎也可以用，但是这个名字怎么感觉跟我的目标是相反的呢！?（此时还未意识到），后来简单试了一下
+
+```bash
+$ git rebase --preserve-merges
+```
+
+发现没啥变化。这才意识到自己理解错了这两个命令。
+
+后来又注意到了 `--root` 选项，发现这个跟自己的目标挺像的，而且抱着搞坏了大不了重新 `git clone` 一下，所以果断去试了，history 确实都变成线性了
+
+![](graph-linear.png)
+
+但是似乎还没成功，commits 都变成不一样了，
+
+![](rebase-root.png)
+
+后来又瞎运行了下 
+
+```bash
+$ git rebase
+```
+
+发现竟然成功了，
+
+![](rebase-again.png)
+
+现在我甚至怀疑是不是一开始直接 `git rebase` 就好了，也不需要 `--root`，不过 `root` 是说可以 rebase 所有 reachable commits，没有什么 upstream 限制，不知道 merges 算不算 upstream 限制（**以后再玩玩**）. 如果需要更新的话，仍采用 `git pull`，但是 `git pull` 不是相当于 `git fetch & git merge` 么？！不过需要注意[加上 `--rebase` 选项](https://stackoverflow.com/a/36148845/8427014)
+
+![](git-pull-with-rebase.png)
+
