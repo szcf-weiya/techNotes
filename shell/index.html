@@ -392,6 +392,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    批量重命名
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#awk" class="md-nav__link">
     awk
   </a>
@@ -407,7 +414,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     列的个数
   </a>
   
@@ -508,7 +515,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     链接自动推送
   </a>
   
@@ -1476,6 +1483,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    批量重命名
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#awk" class="md-nav__link">
     awk
   </a>
@@ -1491,7 +1505,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     列的个数
   </a>
   
@@ -1592,7 +1606,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     链接自动推送
   </a>
   
@@ -1766,7 +1780,13 @@
 <li><code>ADDR[0]:1:8</code> 是所谓的 <a href="https://unix.stackexchange.com/questions/9468/how-to-get-the-char-at-a-given-position-of-a-string-in-shell-script">&ldquo;Parameter Expansion&rdquo; ${parameter:offset:length}</a>，用于提取特定范围的子串</li>
 <li><code>wget -O</code> 是重命名，这里顺带移动到合适的位置</li>
 <li><code>proxychains</code> 则是用于科学上网</li>
+<li><code>read -a ADDR</code> 表示将分割后的字符串（比如默认按照空格进行分割，或者指定 <code>IFS=</code>）放进数组 ADDR 中，详见 <code>help read</code>，而 <code>man read</code> 并没有给出参数列表。另外需要注意到数组 <code>$ADDR</code> 返回结果为 <code>${ADDR[0]}</code>.</li>
 </ul>
+<h2 id="_3">批量重命名<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>有时候下载文件时网站并没有区分同名文件，下载到本地后会出现 <code>A.zip</code> 与 <code>A (1).zip</code> 的情况，但这两个并不是相同的文件，所以避免以后误删，决定重命名。不过此类文件有好几个，批量处理代码为</p>
+<div class="highlight"><pre><span></span><code>$ ls -1 <span class="p">|</span> grep <span class="s2">&quot;(1)&quot;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span> mv <span class="s2">&quot;</span><span class="si">${</span><span class="nv">ADDR</span><span class="p">[0]</span><span class="si">}</span><span class="s2"> (1).zip&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">ADDR</span><span class="p">[0]</span><span class="si">}</span><span class="s2">_SOMETHING.zip&quot;</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div>
+
 <h2 id="awk">awk<a class="headerlink" href="#awk" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://linux.cn/article-3945-1.html">技术|如何在Linux中使用awk命令</a></p>
 <h3 id="ip">统计访问日志里每个 ip 访问次数<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h3>
@@ -1780,7 +1800,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 </code></pre></div>
 
 <p>Refer to <a href="https://www.cnblogs.com/paul8339/p/6207182.html">用shell统计访问日志里每个ip访问次数</a></p>
-<h3 id="_3">列的个数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">列的个数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>如果间隔是空格，则直接用下面命令便可以得到列数，</p>
 <div class="highlight"><pre><span></span><code>aws <span class="s1">&#39;print NF; exit&#39;</span> file.txt
 </code></pre></div>
@@ -1924,7 +1944,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <span class="k">done</span> &lt; &lt;<span class="o">(</span>find . -maxdepth <span class="m">1</span> -regex <span class="s2">&quot;\./oracle_setting_2019-09-.*recall\.pdf&quot;</span> -print0<span class="o">)</span>
 </code></pre></div>
 
-<h2 id="_4">链接自动推送<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">链接自动推送<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>find -regex <span class="s2">&quot;\./.*\.html&quot;</span> <span class="p">|</span> sed -n <span class="s2">&quot;s#\./#https://esl.hohoweiya.xyz/#p&quot;</span> &gt;&gt; ../urls.txt
 </code></pre></div>
 

@@ -2074,6 +2074,38 @@ func_g<span class="o">(){</span>
 <div class="highlight"><pre><span></span><code>$ git reset HEAD A.md
 </code></pre></div>
 
+<p>有时可能删掉已经 add （甚至 commit，但还没 push） 的文件（比如下文中的 <code>Peek 2020-08-20 10-06.mp4</code>），首先如果 committed，则采用</p>
+<div class="highlight"><pre><span></span><code>$ git reset --soft HEAD^
+</code></pre></div>
+
+<p>取消 commit，然后 <code>git add</code> 就好了，但是继续撤销 add 的状态，并没有作用，而是提示</p>
+<blockquote>
+<p>Unstaged changes after reset:</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>$ git status
+On branch master
+Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
+
+Changes to be committed:
+  <span class="o">(</span>use <span class="s2">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+
+        new file:   docs/Linux/Peek <span class="m">2020</span>-08-20 <span class="m">10</span>-06.mp4
+
+Changes not staged <span class="k">for</span> commit:
+  <span class="o">(</span>use <span class="s2">&quot;git add/rm &lt;file&gt;...&quot;</span> to update what will be committed<span class="o">)</span>
+  <span class="o">(</span>use <span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="o">)</span>
+
+        deleted:    docs/Linux/Peek <span class="m">2020</span>-08-20 <span class="m">10</span>-06.mp4
+
+$ git reset HEAD docs/Linux/Peek <span class="m">2020</span>-08-20 <span class="m">10</span>-06.mp4
+Unstaged changes after reset:
+D       docs/Linux/Peek <span class="m">2020</span>-08-20 <span class="m">10</span>-06.mp4
+$ git add .
+$ git status
+On branch master
+Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
+</code></pre></div>
+
 <h2 id="_10">列出另一分支的目录<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>git ls-tree master:dirname
 </code></pre></div>
