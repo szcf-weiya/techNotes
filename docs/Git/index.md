@@ -310,6 +310,41 @@ $ git reset --soft HEAD^
 $ git reset HEAD A.md
 ```
 
+有时可能删掉已经 add （甚至 commit，但还没 push） 的文件（比如下文中的 `Peek 2020-08-20 10-06.mp4`），首先如果 committed，则采用
+
+```bash
+$ git reset --soft HEAD^
+```
+
+取消 commit，然后 `git add` 就好了，但是继续撤销 add 的状态，并没有作用，而是提示
+
+> Unstaged changes after reset:
+
+```bash
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   docs/Linux/Peek 2020-08-20 10-06.mp4
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    docs/Linux/Peek 2020-08-20 10-06.mp4
+
+$ git reset HEAD docs/Linux/Peek 2020-08-20 10-06.mp4
+Unstaged changes after reset:
+D       docs/Linux/Peek 2020-08-20 10-06.mp4
+$ git add .
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+```
+
 ## 列出另一分支的目录
 
 ```bash

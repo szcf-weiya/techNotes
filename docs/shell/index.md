@@ -131,6 +131,15 @@ grep -E "https://user-images." _posts/2019-12-21-quant-genetics.md | while read 
 - `ADDR[0]:1:8` 是所谓的 ["Parameter Expansion" ${parameter:offset:length}](https://unix.stackexchange.com/questions/9468/how-to-get-the-char-at-a-given-position-of-a-string-in-shell-script)，用于提取特定范围的子串
 - `wget -O` 是重命名，这里顺带移动到合适的位置
 - `proxychains` 则是用于科学上网
+- `read -a ADDR` 表示将分割后的字符串（比如默认按照空格进行分割，或者指定 `IFS=`）放进数组 ADDR 中，详见 `help read`，而 `man read` 并没有给出参数列表。另外需要注意到数组 `$ADDR` 返回结果为 `${ADDR[0]}`.
+
+## 批量重命名
+
+有时候下载文件时网站并没有区分同名文件，下载到本地后会出现 `A.zip` 与 `A (1).zip` 的情况，但这两个并不是相同的文件，所以避免以后误删，决定重命名。不过此类文件有好几个，批量处理代码为
+
+```bash
+$ ls -1 | grep "(1)" | while read -a ADDR; do mv "${ADDR[0]} (1).zip" "${ADDR[0]}_SOMETHING.zip"; done
+```
 
 ## awk
 
