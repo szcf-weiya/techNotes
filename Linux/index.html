@@ -965,6 +965,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ssd" class="md-nav__link">
+    移动 SSD 硬盘
+  </a>
+  
+</li>
+      
       
       
       
@@ -2513,6 +2520,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ssd" class="md-nav__link">
+    移动 SSD 硬盘
+  </a>
+  
+</li>
+      
       
       
       
@@ -3240,6 +3254,78 @@ sudo rm Hotspot
 </code></pre></div>
 
 <p>参考 <a href="https://askubuntu.com/questions/120415/how-to-remove-access-point-from-saved-list/120447">How to remove access point from saved list</a></p>
+<h2 id="ssd">移动 SSD 硬盘<a class="headerlink" href="#ssd" title="Permanent link">&para;</a></h2>
+<p>因为硬盘太小，而移动硬盘读写文件速度实在有点慢，然后看到有<a href="https://zhuanlan.zhihu.com/p/61083491">移动 SSD 硬盘</a>，于是便入手了一个。</p>
+<p>当然首先确定了，自己笔记本有 USB3.0 接口，虽然不是 USB3.1。（不过好像 USB3.0 也叫作 USB3.1 gen1，而真正的 USB3.1 叫做 USB3.1 gen2），这个可以通过 </p>
+<div class="highlight"><pre><span></span><code>$ lsusb -t
+</code></pre></div>
+
+<p>来看<a href="https://superuser.com/questions/781398/how-can-i-be-sure-that-ive-plugged-a-device-into-a-usb-3-port">接口的情况</a>，当然也直接搜了电脑型号来看具体配置、</p>
+<p>货到手后，一开始插上时，说</p>
+<blockquote>
+<p>Mount error: unknown filesystem type ‘exfat’</p>
+</blockquote>
+<p>本来以为需要什么格式转化之类的，后来发现<a href="https://better-coding.com/solved-mount-error-unknown-filesystem-type-exfat/#:~:text=Cause%20Some%20SD%20Cards%20and,%2Dfuse%20and%20exfat%2Dutils.">解决方案</a>挺简单的，</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install exfat-fuse exfat-utils
+</code></pre></div>
+
+<p>然后测试了一下读取速度，</p>
+<div class="highlight"><pre><span></span><code>~$ sudo hdparm -Tt /dev/sdc1
+
+/dev/sdc1:
+ Timing cached reads:   <span class="m">22298</span> MB in  <span class="m">1</span>.99 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">11228</span>.47 MB/sec
+ Timing buffered disk reads: <span class="m">120</span> MB in  <span class="m">3</span>.01 <span class="nv">seconds</span> <span class="o">=</span>  <span class="m">39</span>.89 MB/sec
+
+~$ sudo hdparm -Tt /dev/sde1
+
+/dev/sde1:
+ Timing cached reads:   <span class="m">24390</span> MB in  <span class="m">1</span>.99 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">12281</span>.26 MB/sec
+ Timing buffered disk reads: <span class="m">1318</span> MB in  <span class="m">3</span>.00 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">439</span>.04 MB/sec
+</code></pre></div>
+
+<p>上面是普通的移动硬盘，底下是新买的移动 SSD 硬盘，差异还是很明显的。继续测试写入的速度，</p>
+<div class="highlight"><pre><span></span><code>~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/media/weiya/Extreme<span class="se">\ </span>SSD/tempfile <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+<span class="m">1024</span>+0 records in
+<span class="m">1024</span>+0 records out
+<span class="m">1073741824</span> bytes <span class="o">(</span><span class="m">1</span>.1 GB, <span class="m">1</span>.0 GiB<span class="o">)</span> copied, <span class="m">2</span>.11846 s, <span class="m">507</span> MB/s
+
+real    0m2.131s
+user    0m0.011s
+sys 0m0.543s
+~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/media/weiya/Seagate/tempfile <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+<span class="m">1024</span>+0 records in
+<span class="m">1024</span>+0 records out
+<span class="m">1073741824</span> bytes <span class="o">(</span><span class="m">1</span>.1 GB, <span class="m">1</span>.0 GiB<span class="o">)</span> copied, <span class="m">12</span>.4132 s, <span class="m">86</span>.5 MB/s
+
+real    0m12.746s
+user    0m0.000s
+sys 0m1.551s
+</code></pre></div>
+
+<p>以及写出的速度，</p>
+<div class="highlight"><pre><span></span><code>~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/media/weiya/Extreme<span class="se">\ </span>SSD/tempfile <span class="nv">of</span><span class="o">=</span>/dev/null <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+<span class="m">1024</span>+0 records in
+<span class="m">1024</span>+0 records out
+<span class="m">1073741824</span> bytes <span class="o">(</span><span class="m">1</span>.1 GB, <span class="m">1</span>.0 GiB<span class="o">)</span> copied, <span class="m">4</span>.01399 s, <span class="m">268</span> MB/s
+
+real    0m4.018s
+user    0m0.000s
+sys 0m0.442s
+~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/media/weiya/Seagate/tempfile <span class="nv">of</span><span class="o">=</span>/dev/null <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+<span class="m">1024</span>+0 records in
+<span class="m">1024</span>+0 records out
+<span class="m">1073741824</span> bytes <span class="o">(</span><span class="m">1</span>.1 GB, <span class="m">1</span>.0 GiB<span class="o">)</span> copied, <span class="m">65</span>.6471 s, <span class="m">16</span>.4 MB/s
+
+real    1m5.981s
+user    0m0.010s
+sys 0m0.650s
+</code></pre></div>
+
+<p>移动 SSD 硬盘完胜普通的移动硬盘。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="http://einverne.github.io/post/2019/10/test-disk-write-and-read-speed-in-linux.html">在 Linux 上测试硬盘读写速度</a></li>
+</ul>
                 
                   
                 
