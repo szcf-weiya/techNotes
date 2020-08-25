@@ -156,3 +156,64 @@ sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
 
 其中 `/dev/sda4` 是通过 `sudo lsblk` 确定的。
 
+## Boot into Text mode
+
+参考 [Boot into Text Mode and Login Automatically](http://ubuntuguide.net/boot-into-text-mode-and-login-automatically)
+
+虽然之前通过设定 `.profile` 实现了重启后自动连接，但是后来某一次重启后，准确说是断电重启后，`autossh2ln001` 程序并没有运行重构，而是报出 `unknown host` 之类的错误，也就是 `ln001` 服务器的域名解析出现问题，但是当进入桌面后，收到重新运行 `autossh2ln001`，一切正常，搞不清哪里出现了问题。
+
+而且注意到每次重启并没有直接进入桌面，而且似乎是首先运行 `.profile` 里面的命令才进入桌面，而可能因为我没加后来运行的 `&` 符号，导致运行成功后一直挂起，没有进入桌面（呈现状态是 Ubuntu 的 logo 底下的几个小点的明暗循环变化），而倘若失败（也就是报出 `unknown host` 的错误），则可以顺利进入桌面。
+
+所以索性不要以图形界面启动了，这个可以通过修改 `/etc/default/grub` 实现，
+
+```bash
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+GRUB_CMDLINE_LINUX_DEFAULT="text"
+```
+
+修改后运行 `sudo update-grub`
+
+而 text 模式下免密码登录直接修改 `/etc/init/tty1.conf`
+
+```bash
+# exec /sbin/getty -8 38400 tty1
+exec /sbin/getty -8 38400 tty1 -a weiya
+```
+
+这个跟上文修改 `/etc/gdm3/custom.conf` 实现自登录应该不一样，因为 `gdm3` 是跟图形界面有关的程序。
+
+!!! tip "display managers"
+	`gdm3`, `kdm`, `lightdm` 都是 [display managers](https://en.wikipedia.org/wiki/X_display_manager)., 参考 [What is gdm3, kdm, lightdm? How to install and remove them?](https://askubuntu.com/questions/829108/what-is-gdm3-kdm-lightdm-how-to-install-and-remove-them)
+
+最后， `unknown host` 的问题也没有再报出了。
+
+## 电量查询
+
+上文提到笔记本耗电完重启，这是因为其配套的充电器充不进电，当换成当前笔记本的适配器后（功率略高一些），虽然仍充不进电，但是能够一直保持电量，一直都是 10% 左右，倘若换成其配套的充电器，很快就会自动关机了。所以想到要不[查看一下电池状态](https://www.imooc.com/article/29599)，一查吓一跳，原来电池已经快被榨干了，
+
+```bash
+$ upower -i `upower -e | grep 'BAT'`
+  native-path:          BAT0
+  vendor:               Lenovo IdeaPad
+  serial:               BAT20101001
+  power supply:         yes
+  updated:              2020年08月25日 星期二 16时21分10秒 (0 seconds ago)
+  has history:          yes
+  has statistics:       yes
+  battery
+    present:             yes
+    rechargeable:        yes
+    state:               charging
+    warning-level:       none
+    energy:              0.97 Wh
+    energy-empty:        0 Wh
+    energy-full:         9.79 Wh
+    energy-full-design:  37.5 Wh
+    energy-rate:         0 W
+    voltage:             13.974 V
+    percentage:          9%
+    capacity:            26.1067%
+    icon-name:          'battery-caution-charging-symbolic'
+```
+
+试着解读一下信息，现在电池最大容量已经耗到最初的 26.1067%，而当前一直充电时还只能达到这个的 9%，也就是 `0.261067*0.09 = 0.02349603`。
