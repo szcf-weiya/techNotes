@@ -2990,11 +2990,12 @@ or just </p>
 </ol>
 <p>中间提心吊胆，好在最后顺利扩容完成。</p>
 <h2 id="_9">移动硬盘重命名<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<p>通过</p>
+<p>终端输入</p>
 <div class="highlight"><pre><span></span><code>gnome-disks
 </code></pre></div>
 
-<p>进行设置，详见<a href="https://askubuntu.com/questions/904561/how-to-change-hard-drive-name/904564">How to change hard drive name</a></p>
+<p>在设置齿轮图标中选择 <code>Edit Mount Options</code>，修改 <code>Mount Point</code>。注意重新挂载后才能生效。</p>
+<p>详见<a href="https://askubuntu.com/questions/904561/how-to-change-hard-drive-name/904564">How to change hard drive name</a></p>
 <h2 id="remove-broken-link">remove broken link<a class="headerlink" href="#remove-broken-link" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>find -L . -name . -o -type d -prune -o -type l -exec rm <span class="o">{}</span> + 
 </code></pre></div>
