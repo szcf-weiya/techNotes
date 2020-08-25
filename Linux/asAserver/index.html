@@ -400,6 +400,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#boot-into-text-mode" class="md-nav__link">
+    Boot into Text mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    电量查询
+  </a>
+  
+</li>
+      
       
       
       
@@ -1263,6 +1277,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#boot-into-text-mode" class="md-nav__link">
+    Boot into Text mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    电量查询
+  </a>
+  
+</li>
+      
       
       
       
@@ -1389,6 +1417,54 @@ sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
 </code></pre></div>
 
 <p>其中 <code>/dev/sda4</code> 是通过 <code>sudo lsblk</code> 确定的。</p>
+<h2 id="boot-into-text-mode">Boot into Text mode<a class="headerlink" href="#boot-into-text-mode" title="Permanent link">&para;</a></h2>
+<p>参考 <a href="http://ubuntuguide.net/boot-into-text-mode-and-login-automatically">Boot into Text Mode and Login Automatically</a></p>
+<p>虽然之前通过设定 <code>.profile</code> 实现了重启后自动连接，但是后来某一次重启后，准确说是断电重启后，<code>autossh2ln001</code> 程序并没有运行重构，而是报出 <code>unknown host</code> 之类的错误，也就是 <code>ln001</code> 服务器的域名解析出现问题，但是当进入桌面后，收到重新运行 <code>autossh2ln001</code>，一切正常，搞不清哪里出现了问题。</p>
+<p>而且注意到每次重启并没有直接进入桌面，而且似乎是首先运行 <code>.profile</code> 里面的命令才进入桌面，而可能因为我没加后来运行的 <code>&amp;</code> 符号，导致运行成功后一直挂起，没有进入桌面（呈现状态是 Ubuntu 的 logo 底下的几个小点的明暗循环变化），而倘若失败（也就是报出 <code>unknown host</code> 的错误），则可以顺利进入桌面。</p>
+<p>所以索性不要以图形界面启动了，这个可以通过修改 <code>/etc/default/grub</code> 实现，</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;</span>
+<span class="nv">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&quot;text&quot;</span>
+</code></pre></div>
+
+<p>修改后运行 <code>sudo update-grub</code></p>
+<p>而 text 模式下免密码登录直接修改 <code>/etc/init/tty1.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># exec /sbin/getty -8 38400 tty1</span>
+<span class="nb">exec</span> /sbin/getty -8 <span class="m">38400</span> tty1 -a weiya
+</code></pre></div>
+
+<p>这个跟上文修改 <code>/etc/gdm3/custom.conf</code> 实现自登录应该不一样，因为 <code>gdm3</code> 是跟图形界面有关的程序。</p>
+<div class="admonition tip">
+<p class="admonition-title">display managers</p>
+<p><code>gdm3</code>, <code>kdm</code>, <code>lightdm</code> 都是 <a href="https://en.wikipedia.org/wiki/X_display_manager">display managers</a>., 参考 <a href="https://askubuntu.com/questions/829108/what-is-gdm3-kdm-lightdm-how-to-install-and-remove-them">What is gdm3, kdm, lightdm? How to install and remove them?</a></p>
+</div>
+<p>最后， <code>unknown host</code> 的问题也没有再报出了。</p>
+<h2 id="_5">电量查询<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>上文提到笔记本耗电完重启，这是因为其配套的充电器充不进电，当换成当前笔记本的适配器后（功率略高一些），虽然仍充不进电，但是能够一直保持电量，一直都是 10% 左右，倘若换成其配套的充电器，很快就会自动关机了。所以想到要不<a href="https://www.imooc.com/article/29599">查看一下电池状态</a>，一查吓一跳，原来电池已经快被榨干了，</p>
+<div class="highlight"><pre><span></span><code>$ upower -i <span class="sb">`</span>upower -e <span class="p">|</span> grep <span class="s1">&#39;BAT&#39;</span><span class="sb">`</span>
+  native-path:          BAT0
+  vendor:               Lenovo IdeaPad
+  serial:               BAT20101001
+  power supply:         yes
+  updated:              2020年08月25日 星期二 16时21分10秒 <span class="o">(</span><span class="m">0</span> seconds ago<span class="o">)</span>
+  has history:          yes
+  has statistics:       yes
+  battery
+    present:             yes
+    rechargeable:        yes
+    state:               charging
+    warning-level:       none
+    energy:              <span class="m">0</span>.97 Wh
+    energy-empty:        <span class="m">0</span> Wh
+    energy-full:         <span class="m">9</span>.79 Wh
+    energy-full-design:  <span class="m">37</span>.5 Wh
+    energy-rate:         <span class="m">0</span> W
+    voltage:             <span class="m">13</span>.974 V
+    percentage:          <span class="m">9</span>%
+    capacity:            <span class="m">26</span>.1067%
+    icon-name:          <span class="s1">&#39;battery-caution-charging-symbolic&#39;</span>
+</code></pre></div>
+
+<p>试着解读一下信息，现在电池最大容量已经耗到最初的 26.1067%，而当前一直充电时还只能达到这个的 9%，也就是 <code>0.261067*0.09 = 0.02349603</code>。</p>
                 
                   
                 
