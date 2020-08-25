@@ -1048,6 +1048,13 @@ $ lsusb -t
 sudo apt-get install exfat-fuse exfat-utils
 ```
 
+但是后来发现这个格式很多地方会出现不兼容，比如
+
+1. 解压某个文件时，报出 `Cannot set modif./access times`，而这个在正常磁盘以及已有的移动硬盘中都能正常解压
+2. 不能创建带有 `:` 的文件夹，这应该是遵循 Windows 的标准，但是 Linux 命名标准没有遵循 Windows，所以造成有些文件复制不过去。
+
+最后决定格式化为 Linux 磁盘的格式，这个其实也挺简单的，进入 `gnome-disks`，先 umount，然后选择格式化，这时直接选择格式化为 Linux 的 Ext4，有一篇[图文介绍](https://hkgoldenmra.blogspot.com/2019/12/linux-luks-ext4.html)，不过没看时就已经自己操作了，只是让自己心安一下。
+
 然后测试了一下读取速度，
 
 ```bash
