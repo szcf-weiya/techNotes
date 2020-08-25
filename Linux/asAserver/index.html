@@ -393,6 +393,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mount-windows-from-terminal" class="md-nav__link">
+    Mount Windows from Terminal
+  </a>
+  
+</li>
+      
       
       
       
@@ -1249,6 +1256,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mount-windows-from-terminal" class="md-nav__link">
+    Mount Windows from Terminal
+  </a>
+  
+</li>
+      
       
       
       
@@ -1367,6 +1381,14 @@ sudo apt install vlc-bin
 <p>因为音乐文件是通过本地百度云下载的，所以需要复制过去，但是如果 <code>scp</code> 的话，似乎没有选项支持 disable overwrite，然后看到 <a href="https://unix.stackexchange.com/questions/14191/scp-without-replacing-existing-files-in-the-destination">scp without replacing existing files in the destination</a>，推荐 <code>rsync</code>，增量更新，想起上次在 pluskid 的博客中也看到了，所以便准备用它，不过 ssh 的端口需要额外指定，<a href="https://stackoverflow.com/questions/4549945/is-it-possible-to-specify-a-different-ssh-port-when-using-rsync">Is it possible to specify a different ssh port when using rsync?</a>，最后的命令为</p>
 <div class="highlight"><pre><span></span><code>$ rsync -auv -e <span class="s2">&quot;ssh -p 30003&quot;</span> /home/weiya/OneDrive/CloudMusic/ weiya@127.0.0.1:~/Music/
 </code></pre></div>
+
+<h2 id="mount-windows-from-terminal">Mount Windows from Terminal<a class="headerlink" href="#mount-windows-from-terminal" title="Permanent link">&para;</a></h2>
+<p>参考 <a href="https://www.tecmint.com/mount-windows-partition-in-ubuntu/">How to Mount Windows Partitions in Ubuntu</a></p>
+<div class="highlight"><pre><span></span><code>sudo mkdir /media/weiya/WIN
+sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
+</code></pre></div>
+
+<p>其中 <code>/dev/sda4</code> 是通过 <code>sudo lsblk</code> 确定的。</p>
                 
                   
                 

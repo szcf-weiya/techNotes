@@ -625,6 +625,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#install-r-via-docker" class="md-nav__link">
     install r via docker
   </a>
@@ -1820,6 +1827,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#install-r-via-docker" class="md-nav__link">
     install r via docker
   </a>
@@ -2187,8 +2201,43 @@ systemctl --user stop onedrive
 <h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
 <h3 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h3>
 <ul>
+<li><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker 入门教程 &ndash; 阮一峰</a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html">Docker 微服务教程 &ndash; 阮一峰</a></li>
 </ul>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<p>Directly type <code>docker</code> in the terminal,</p>
+<div class="highlight"><pre><span></span><code>$ docker
+
+Command <span class="s1">&#39;docker&#39;</span> not found, but can be installed with:
+
+sudo snap install docker     <span class="c1"># version 19.03.11, or</span>
+sudo apt  install docker.io
+
+See <span class="s1">&#39;snap info docker&#39;</span> <span class="k">for</span> additional versions.
+</code></pre></div>
+
+<p>then run</p>
+<div class="highlight"><pre><span></span><code>sudo apt  install docker.io
+</code></pre></div>
+
+<p>Without permisson, it will report the following message</p>
+<div class="highlight"><pre><span></span><code>$ docker version
+Client:
+ Version:           <span class="m">19</span>.03.6
+ API version:       <span class="m">1</span>.40
+ Go version:        go1.12.17
+ Git commit:        369ce74a3c
+ Built:             Fri Feb <span class="m">28</span> <span class="m">23</span>:45:43 <span class="m">2020</span>
+ OS/Arch:           linux/amd64
+ Experimental:      <span class="nb">false</span>
+Got permission denied <span class="k">while</span> trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/version: dial unix /var/run/docker.sock: connect: permission denied
+</code></pre></div>
+
+<p>To <a href="https://docs.docker.com/engine/install/linux-postinstall/">avoid permission issue</a>,</p>
+<div class="highlight"><pre><span></span><code>sudo usermod -aG docker <span class="nv">$USER</span>
+</code></pre></div>
+
+<p>But it is necessary to log out and log back in to re-evaluate the group membership.</p>
 <h3 id="install-r-via-docker">install r via docker<a class="headerlink" href="#install-r-via-docker" title="Permanent link">&para;</a></h3>
 <p>step 1:</p>
 <div class="highlight"><pre><span></span><code>docker pull r-base
