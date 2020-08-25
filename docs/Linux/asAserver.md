@@ -144,3 +144,15 @@ $ echo "./autossh2ln001.sh" >> .profile
 ```bash
 $ rsync -auv -e "ssh -p 30003" /home/weiya/OneDrive/CloudMusic/ weiya@127.0.0.1:~/Music/
 ```
+
+## Mount Windows from Terminal
+
+参考 [How to Mount Windows Partitions in Ubuntu](https://www.tecmint.com/mount-windows-partition-in-ubuntu/)
+
+```bash
+sudo mkdir /media/weiya/WIN
+sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
+```
+
+其中 `/dev/sda4` 是通过 `sudo lsblk` 确定的。
+

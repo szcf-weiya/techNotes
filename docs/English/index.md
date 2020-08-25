@@ -1,3 +1,12 @@
+## 2020.08.25
+
+- the people of Italy experienced a strange kind of mass hysteria known as "53 fever"
+- Italy cities: Bari (巴里，东南部海港), Naples (那不勒斯，西南部港市), Venice (威尼斯，港市)
+- the number 53 simply stopped coming up on the Venice wheel -- leading **punters** to place increasingly big bets on the number in the certainty that it must soon make a reappearance. 
+- their financial ruin, the pain of which resulted in a **spate** of suicides
+- the victims had been led **astray** by a reasoning flaw called the "gambler's fallacy" -- a worryingly common error that can **derail** many of our professional decisions, from a **goalkeeper**'s responses to penalty shootouts in football to stock investments and even judicial rulings on new **asylum** cases
+- the team analysed **umpires**' decisions in Major League Baseball games.
+
 ## 2020.08.05
 
 - Jellyfish is the common name for the free-swimming form of gelatinous animals

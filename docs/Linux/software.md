@@ -506,7 +506,53 @@ systemctl --user stop onedrive
 
 ### Tutorials
 
+- [Docker 入门教程 -- 阮一峰](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)
 - [Docker 微服务教程 -- 阮一峰](http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html)
+
+### Installation
+
+Directly type `docker` in the terminal,
+
+```bash
+$ docker
+
+Command 'docker' not found, but can be installed with:
+
+sudo snap install docker     # version 19.03.11, or
+sudo apt  install docker.io
+
+See 'snap info docker' for additional versions.
+
+```
+
+then run
+
+```bash
+sudo apt  install docker.io
+```
+
+Without permisson, it will report the following message
+
+```bash
+$ docker version
+Client:
+ Version:           19.03.6
+ API version:       1.40
+ Go version:        go1.12.17
+ Git commit:        369ce74a3c
+ Built:             Fri Feb 28 23:45:43 2020
+ OS/Arch:           linux/amd64
+ Experimental:      false
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/version: dial unix /var/run/docker.sock: connect: permission denied
+```
+
+To [avoid permission issue](https://docs.docker.com/engine/install/linux-postinstall/),
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+But it is necessary to log out and log back in to re-evaluate the group membership.
 
 ### install r via docker
 
