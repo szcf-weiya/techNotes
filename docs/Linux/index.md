@@ -637,13 +637,15 @@ refer to [What is /dev/loopx?(https://askubuntu.com/questions/906581/what-is-dev
 
 ## 移动硬盘重命名
 
-通过
+终端输入
 
 ```bash
 gnome-disks
 ```
 
-进行设置，详见[How to change hard drive name](https://askubuntu.com/questions/904561/how-to-change-hard-drive-name/904564)
+在设置齿轮图标中选择 `Edit Mount Options`，修改 `Mount Point`。注意重新挂载后才能生效。
+
+详见[How to change hard drive name](https://askubuntu.com/questions/904561/how-to-change-hard-drive-name/904564)
 
 ## remove broken link
 
