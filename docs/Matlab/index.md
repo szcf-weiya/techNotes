@@ -19,3 +19,14 @@ imshow(I)
 - `nosplash`: skip the splash screen, the first window with the picture of the membrane and the version number. It still loads into the desktop.
 
 refer to [Launching MATLAB without the desktop](https://blogs.mathworks.com/community/2010/02/22/launching-matlab-without-the-desktop/)
+
+These are called [Startup Options](https://www.mathworks.com/help/matlab/matlab_env/startup-options.html), and the official Matlab describe the options for different systems, such as [matlab (Linux)](https://www.mathworks.com/help/matlab/ref/matlablinux.html), [matlab (Windows)](https://www.mathworks.com/help/matlab/ref/matlabwindows.html).
+
+## Option `-wait`
+
+I saw the option in the `.bat` file for Windows. By checking the documentation, [matlab (Windows)](https://www.mathworks.com/help/matlab/ref/matlabwindows.html) said,
+
+> To capture the exit code, start MATLAB with the -wait option.
+
+but no similar description in [matlab (Linux)](https://www.mathworks.com/help/matlab/ref/matlablinux.html) and [matlba (macOS)](https://www.mathworks.com/help/matlab/ref/matlabmacos.html).
+
