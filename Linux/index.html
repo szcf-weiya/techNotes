@@ -972,6 +972,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    自动充放电
+  </a>
+  
+</li>
+      
       
       
       
@@ -2527,6 +2534,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    自动充放电
+  </a>
+  
+</li>
+      
       
       
       
@@ -3333,6 +3347,98 @@ sys 0m0.650s
 <ul>
 <li><a href="http://einverne.github.io/post/2019/10/test-disk-write-and-read-speed-in-linux.html">在 Linux 上测试硬盘读写速度</a></li>
 </ul>
+<h2 id="_25">自动充放电<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
+<p>虽然一直知道插上电源充电会损耗电池容量，但是没想到竟然会损耗得那么严重，对于我正在使用的 ThinkPadT460P 来说，</p>
+<div class="highlight"><pre><span></span><code>~$ upower -i <span class="sb">`</span>upower -e <span class="p">|</span> grep <span class="s1">&#39;BAT&#39;</span><span class="sb">`</span>
+  native-path:          BAT0
+  vendor:               SANYO
+  model:                45N1767
+  serial:               <span class="m">3701</span>
+  power supply:         yes
+  updated:              Tue <span class="m">01</span> Sep <span class="m">2020</span> <span class="m">10</span>:15:52 AM CST <span class="o">(</span><span class="m">106</span> seconds ago<span class="o">)</span>
+  has history:          yes
+  has statistics:       yes
+  battery
+    present:             yes
+    rechargeable:        yes
+    state:               fully-charged
+    warning-level:       none
+    energy:              <span class="m">19</span>.42 Wh
+    energy-empty:        <span class="m">0</span> Wh
+    energy-full:         <span class="m">19</span>.58 Wh
+    energy-full-design:  <span class="m">47</span>.52 Wh
+    energy-rate:         <span class="m">0</span> W
+    voltage:             <span class="m">12</span>.025 V
+    percentage:          <span class="m">99</span>%
+    capacity:            <span class="m">41</span>.2037%
+    technology:          lithium-ion
+    icon-name:          <span class="s1">&#39;battery-full-charged-symbolic&#39;</span>
+</code></pre></div>
+
+<p>现在的容量只有 41.2037%，一半都不到。心血来潮搜了下看看有没有什么软件能够支持自动充放电，竟然还真有，而且特别支持 ThinkPad 系列, <a href="https://askubuntu.com/questions/34452/how-can-i-limit-battery-charging-to-80-capacity">How can I limit battery charging to 80% capacity?</a></p>
+<p>不过刚开始按照回答中的解决方案操作，最后 <code>sudo modprobe tp_smapi</code> 并不成功，大概是说没有这个 kernel 吧。不过因为这个回答挺早的，在评论中顺藤摸瓜找到针对更新版的 ThinkPad 的解决方案，<a href="https://linrunner.de/tlp/installation/ubuntu.html">tlp for Ubuntu</a></p>
+<div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:linrunner/tlp
+sudo apt update
+sudo apt install acpi-call-dkms tp-smapi-dkms
+</code></pre></div>
+
+<p>其中特别指出 <code>acpi-call-dkms</code> 用于 ThinkPads (X220/T420 and later)</p>
+<p>然后查看</p>
+<div class="highlight"><pre><span></span><code>~$ sudo tlp-stat -b
+--- TLP <span class="m">1</span>.3.1 --------------------------------------------
+
++++ Battery Features: Charge Thresholds and Recalibrate
+<span class="nv">natacpi</span>    <span class="o">=</span> inactive <span class="o">(</span>no kernel support<span class="o">)</span>
+tpacpi-bat <span class="o">=</span> active <span class="o">(</span>thresholds, recalibrate<span class="o">)</span>
+tp-smapi   <span class="o">=</span> inactive <span class="o">(</span>ThinkPad not supported<span class="o">)</span>
+</code></pre></div>
+
+<p>这时候按照 <a href="https://linrunner.de/tlp/settings/battery.html">Battery Charge Thresholds</a> 修改 <code>/etc/tlp.conf</code>，并运行</p>
+<div class="highlight"><pre><span></span><code>sudo tlp start
+</code></pre></div>
+
+<p>但是似乎并没有起作用，仍然在充电，尝试拔了电源线来使之生效，但好像还是不行。总共有<a href="https://linrunner.de/tlp/settings/introduction.html#making-changes">三种生效方式</a>，另外一种为重启。</p>
+<p>猜测可能的原因是</p>
+<blockquote>
+<p>natacpi    = inactive (no kernel support)</p>
+</blockquote>
+<p>但是发现 <code>natacpi</code> 只有 kernel 4.17 才开始支持，而当前我的 kernel 版本为</p>
+<div class="highlight"><pre><span></span><code>$ uname -r
+<span class="m">4</span>.15.0-112-generic
+</code></pre></div>
+
+<p>而且在 <a href="https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#why-is-my-battery-charged-up-to-100-ignoring-the-charge-thresholds">Why is my battery charged up to 100% – ignoring the charge thresholds?</a> 的 
+<a href="https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#thinkpad-t430-s-t530-w530-x230-and-all-later-models">ThinkPad T430(s)/T530/W530/X230 (and all later models)</a>
+提到解决方案是 </p>
+<blockquote>
+<p>Install a kernel ≥ 4.19 to make natacpi available</p>
+</blockquote>
+<p>网上搜了一圈，发现更新内核还是有风险的，比如可能造成某些接口无法使用，这让我想起之前 wifi 接口搞不定的噩梦。那就先这样吧。</p>
+<p>而且发现其实 <a href="https://phoenixnap.com/kb/how-to-update-kernel-ubuntu">update &amp; dist-upgrade</a> 可能还是会更新内核版本，但是不会更到最新？</p>
+<div class="admonition tip">
+<p class="admonition-title">upgrade vs dist-upgrade vs full-upgrade</p>
+<p>参考 <a href="https://askubuntu.com/questions/81585/what-is-dist-upgrade-and-why-does-it-upgrade-more-than-upgrade">What is “dist-upgrade” and why does it upgrade more than “upgrade”?</a>
+<code>upgrade</code> 只更新已经安装包的版本，不会额外下载包或卸载包
+<code>dist-upgrade</code> 会安装、卸载新包所依赖的包，而是更新内核版本也需要用它
+<code>full-upgrade</code>：不太清楚，试着运行完 dist-upgrade 后，再运行它，但是没反应。
+<div class="highlight"><pre><span></span><code>$ man apt-get
+...
+    upgrade
+       upgrade is used to install the newest versions of all packages currently installed on the system from the sources enumerated in /etc/apt/sources.list. Packages currently
+       installed with new versions available are retrieved and upgraded<span class="p">;</span> under no circumstances are currently installed packages removed, or packages not already installed retrieved
+       and installed. New versions of currently installed packages that cannot be upgraded without changing the install status of another package will be left at their current
+       version. An update must be performed first so that apt-get knows that new versions of packages are available.
+
+   dist-upgrade
+       dist-upgrade in addition to performing the <span class="k">function</span> of upgrade, also intelligently handles changing dependencies with new versions of packages<span class="p">;</span> apt-get has a <span class="s2">&quot;smart&quot;</span> conflict
+       resolution system, and it will attempt to upgrade the most important packages at the expense of less important ones <span class="k">if</span> necessary. The dist-upgrade <span class="nb">command</span> may therefore
+       remove some packages. The /etc/apt/sources.list file contains a list of locations from which to retrieve desired package files. See also apt_preferences<span class="o">(</span><span class="m">5</span><span class="o">)</span> <span class="k">for</span> a mechanism
+       <span class="k">for</span> overriding the general settings <span class="k">for</span> individual packages.
+</code></pre></div>
+但是竟然没有看到 <code>full-upgrade</code>.</p>
+</div>
+<p>比如我发现 Ubuntu 18.04.5 LTS 实际上的内核版本应该是 5.0，甚至有 5.3，不过这似乎跟硬件有关，比如<a href="https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes/ChangeSummary/18.04.5#Kernel_and_Hardware_support_updates">这里</a>列了 <code>linux-aws-5.0</code>, <code>linux-aws-5.0</code>，不过我也看到了 <code>linux-gke-4.15</code>，所以还是不要乱升级的好，不然硬件不兼容又要继续折腾了。</p>
+<p>话说回来，电池最后实在不行，就换了呗，反正这个是外置可拆卸的。</p>
                 
                   
                 
