@@ -78,15 +78,15 @@ site_description: '技术博客'
 site_url: https://tech.hohoweiya.xyz
 extra:
   social:
-    - type: 'github'
+    - icon: 'fontawesome/brands/github-alt'
       link: 'https://github.com/szcf-weiya'
-    - type: 'book'
+    - icon: 'fontawesome/solid/book'
       link: 'https://esl.hohoweiya.xyz'
-    - type: 'home'
+    - icon: 'fontawesome/solid/home'
       link: 'https://hohoweiya.xyz'
-    - type: 'rss'
+    - icon: 'fontawesome/regular/newspaper'
       link: 'https://stats.hohoweiya.xyz'
-    - type: 'envelope'
+    - icon: 'fontawesome/regular/envelope'
       link: 'mailto:szcfweiya@gmail.com'
 
 repo_name: 'szcf-weiya/techNotes'
