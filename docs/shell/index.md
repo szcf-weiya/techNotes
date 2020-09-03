@@ -164,7 +164,7 @@ Refer to [用shell统计访问日志里每个ip访问次数](https://www.cnblogs
 如果间隔是空格，则直接用下面命令便可以得到列数，
 
 ```bash
-aws 'print NF; exit' file.txt
+awk '{print NF; exit}' file.txt
 ```
 
 如果是其他的间隔符，比如 `|`，可以指定 `-F'|'`

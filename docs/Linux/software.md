@@ -502,6 +502,34 @@ systemctl --user start onedrive
 systemctl --user stop onedrive
 ```
 
+### Change to [abraunegg/onedrive](https://github.com/abraunegg/onedrive)
+
+I found that it will auto run after startup, actually with [skilion/onedrive](https://github.com/skilion/onedrive), sometimes it also starts automatically. Then I tried
+
+```bash
+$ sudo systemctl disable onedrive.service
+Failed to disable unit: Unit file onedrive.service does not exist.
+```
+
+and then I note that [OneDrive service running as a non-root user via systemd (with notifications enabled) (Arch, Ubuntu, Debian, OpenSuSE, Fedora)](https://github.com/abraunegg/onedrive/blob/master/docs/USAGE.md#onedrive-service-running-as-a-non-root-user-via-systemd-with-notifications-enabled-arch-ubuntu-debian-opensuse-fedora)
+
+then I tried
+
+```bash
+$ sudo systemctl disable onedrive@weiya.service
+```
+
+no error.
+
+Then I also tried
+
+```bash
+$ systemctl --user disable onedrive
+Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
+```
+
+It seems OK now, and pay attention to the difference of the above similar commands.
+
 ## Docker
 
 ### Tutorials
