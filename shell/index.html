@@ -1802,7 +1802,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <p>Refer to <a href="https://www.cnblogs.com/paul8339/p/6207182.html">用shell统计访问日志里每个ip访问次数</a></p>
 <h3 id="_4">列的个数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>如果间隔是空格，则直接用下面命令便可以得到列数，</p>
-<div class="highlight"><pre><span></span><code>aws <span class="s1">&#39;print NF; exit&#39;</span> file.txt
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print NF; exit}&#39;</span> file.txt
 </code></pre></div>
 
 <p>如果是其他的间隔符，比如 <code>|</code>，可以指定 <code>-F'|'</code></p>
