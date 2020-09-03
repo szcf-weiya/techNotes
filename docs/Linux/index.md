@@ -605,7 +605,7 @@ In short,
 
 ## thunderbird
 
-1. [Special Gmail](Folders missing (Sent, Drafts, etc...) Only see Inbox and Trash. Please help.)
+1. Special Gmail(Folders missing (Sent, Drafts, etc...) Only see Inbox and Trash. Please help.)
 2. [Special Gmail (continued)](https://support.mozilla.org/zh-CN/kb/thunderbird-gmail)
 
 ## Ubuntu 16.04 create WiFi Hotpot

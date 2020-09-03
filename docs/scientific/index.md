@@ -20,4 +20,4 @@
 
 ## Ellipse Facts
 
-More details are available at [Information About Ellipses](https://www.geometrictools.com/Documentation/InformationAboutEllipses.pdf) or [here](ref/InformationAboutEllipses.pdf).
+More details are available at [Information About Ellipses](https://www.geometrictools.com/Documentation/InformationAboutEllipses.pdf) or [here](/ref/InformationAboutEllipses.pdf).

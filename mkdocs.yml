@@ -1,5 +1,5 @@
 site_name: techNotes
-pages:
+nav:
     - Home: index.md
     - Linux: 
       - 系统: Linux/index.md
