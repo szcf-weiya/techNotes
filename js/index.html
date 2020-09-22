@@ -1,6 +1,7 @@
 
 
 
+
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -17,7 +18,7 @@
         <meta name="author" content="weiya">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.13">
     
     
       
@@ -25,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4dd2dd8d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.077507d7.min.css">
       
       
     
@@ -1442,14 +1443,14 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 <h2 id="js_1">分析百度站长自动推送js源代码<a class="headerlink" href="#js_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
     <span class="kd">var</span> <span class="nx">bp</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">curProtocol</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">curProtocol</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">curProtocol</span> <span class="o">===</span> <span class="s1">&#39;https&#39;</span><span class="p">){</span>
       <span class="nx">bp</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">&#39;https://zz.bdstatic.com/linksubmit/push.js&#39;</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">else</span><span class="p">{</span>
       <span class="nx">bp</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">&#39;http://push.zhanzhang.baidu.com/push.js&#39;</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
     <span class="nx">s</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">bp</span><span class="p">,</span> <span class="nx">s</span><span class="p">);</span>
 <span class="p">})();</span>
 </code></pre></div>
@@ -1475,7 +1476,7 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 <li>声明匿名函数，直接赋值给某一个事件</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="mf">123</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -1483,7 +1484,7 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 <li>使用匿名函数表达式，将匿名函数赋值给某个变量</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">func</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="mf">123</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">func</span><span class="p">();</span>
 </code></pre></div>
@@ -1493,19 +1494,19 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 </ol>
 <p>a) 使用<code>!</code>开头</p>
 <div class="highlight"><pre><span></span><code><span class="o">!</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="mf">123</span><span class="p">);</span>
 <span class="p">}();</span>
 </code></pre></div>
 
 <p>b) 使用<code>()</code>将函数及函数后的括号包裹</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="mf">123</span><span class="p">);</span>
 <span class="p">}());</span>
 </code></pre></div>
 
 <p>c) 使用<code>()</code>包裹函数值</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="mf">123</span><span class="p">);</span>
 <span class="p">})();</span>
 </code></pre></div>
 
@@ -1574,9 +1575,9 @@ yui-compressor myfile.js &gt; myfile.min.js
 <blockquote>
 <p>因为JavaScript是弱类型的语言（变量没有固定的数据类型），所以有时需要强制转换为相应的类型，如</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="nx">a</span><span class="o">=</span><span class="nb">parseInt</span><span class="p">(</span><span class="err">“</span><span class="mi">1234</span><span class="err">″</span><span class="p">)</span> 
-<span class="nx">a</span><span class="o">=</span><span class="err">”</span><span class="mi">1234</span><span class="err">″</span><span class="o">-</span><span class="mi">0</span> <span class="c1">//转换为数字 </span>
-<span class="nx">b</span><span class="o">=</span><span class="mi">1234</span><span class="o">+</span><span class="err">””</span> <span class="c1">//转换为字符串 </span>
+<div class="highlight"><pre><span></span><code><span class="nx">a</span><span class="o">=</span><span class="nb">parseInt</span><span class="p">(</span><span class="err">“</span><span class="mf">1234</span><span class="err">″</span><span class="p">)</span> 
+<span class="nx">a</span><span class="o">=</span><span class="err">”</span><span class="mf">1234</span><span class="err">″</span><span class="o">-</span><span class="mf">0</span> <span class="c1">//转换为数字 </span>
+<span class="nx">b</span><span class="o">=</span><span class="mf">1234</span><span class="o">+</span><span class="err">””</span> <span class="c1">//转换为字符串 </span>
 <span class="nx">c</span><span class="o">=</span><span class="nx">someObject</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="c1">//将对象转换为字符串</span>
 </code></pre></div>
 
@@ -1705,8 +1706,8 @@ yui-compressor myfile.js &gt; myfile.min.js
       
     </div>
     
-      <script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
-      <script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
