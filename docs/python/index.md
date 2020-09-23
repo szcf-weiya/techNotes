@@ -150,22 +150,6 @@ spyder3 &
 
 参考[Python中range和xrange的区别](http://blog.csdn.net/imzoer/article/details/8742283)
 
-## 安装sqlite3
-
-参考[Python安装sqlite3](http://www.python88.com/topic/420/)
-
-## windows下安装lxml
-
-参考[python安装lxml，在windows环境下](http://blog.csdn.net/g1apassz/article/details/46574963)
-
-## 缺少Python27_d.lib
-
-参考[缺少Python27_d.lib的解决方法](http://blog.csdn.net/junparadox/article/details/52704287)
-
-## 远程访问Jupyter Notebook
-
-[远程访问Jupyter Notebook](http://www.cnblogs.com/zhanglianbo/p/6109939.html)
-
 ## 人工鱼群算法-python实现
 
 [人工鱼群算法-python实现](http://www.cnblogs.com/biaoyu/p/4857911.html)
