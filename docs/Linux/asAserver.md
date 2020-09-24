@@ -225,3 +225,32 @@ $ upower -i `upower -e | grep 'BAT'`
 ```
 
 试着解读一下信息，现在电池最大容量已经耗到最初的 26.1067%，而当前一直充电时还只能达到这个的 9%，也就是 `0.261067*0.09 = 0.02349603`。
+
+## 拔掉电源自动关机
+
+参考 [https://askubuntu.com/questions/854570/how-to-shutdown-automatically-when-ac-power-is-not-available](How to shutdown automatically when AC power is not available)
+
+新建
+
+```bash
+sudo vi /etc/udev/rules.d/50-ac-unplugged.rules
+```
+
+然后写入
+
+```bash
+SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="0", RUN+="/sbin/shutdown now"
+```
+
+保存文件并运行
+
+```bash
+sudo udevadm control --reload-rules
+```
+
+拔掉电源后确实自动关机了！！
+
+## 插上电源自动开机
+
+这个似乎[需要 BIOS 设置](https://superuser.com/questions/984934/i-want-my-pc-to-turn-on-automatically-when-power-is-connected)，而且是在 Power Management Setup 中进行，但是通过 `Fn+F2` 进入 BIOS 后，并没有这个菜单，可能还是不支持吧。不过话说回来这个功能没有自动关机那么必要。
+
