@@ -363,6 +363,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    拔掉电源自动关机
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    插上电源自动开机
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1257,6 +1271,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    拔掉电源自动关机
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    插上电源自动开机
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1435,6 +1463,23 @@ sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
 </code></pre></div>
 
 <p>试着解读一下信息，现在电池最大容量已经耗到最初的 26.1067%，而当前一直充电时还只能达到这个的 9%，也就是 <code>0.261067*0.09 = 0.02349603</code>。</p>
+<h2 id="_6">拔掉电源自动关机<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>参考 <a href="How to shutdown automatically when AC power is not available">https://askubuntu.com/questions/854570/how-to-shutdown-automatically-when-ac-power-is-not-available</a></p>
+<p>新建</p>
+<div class="highlight"><pre><span></span><code>sudo vi /etc/udev/rules.d/50-ac-unplugged.rules
+</code></pre></div>
+
+<p>然后写入</p>
+<div class="highlight"><pre><span></span><code><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;power_supply&quot;</span>, ENV<span class="o">{</span>POWER_SUPPLY_ONLINE<span class="o">}==</span><span class="s2">&quot;0&quot;</span>, <span class="nv">RUN</span><span class="o">+=</span><span class="s2">&quot;/sbin/shutdown now&quot;</span>
+</code></pre></div>
+
+<p>保存文件并运行</p>
+<div class="highlight"><pre><span></span><code>sudo udevadm control --reload-rules
+</code></pre></div>
+
+<p>拔掉电源后确实自动关机了！！</p>
+<h2 id="_7">插上电源自动开机<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>这个似乎<a href="https://superuser.com/questions/984934/i-want-my-pc-to-turn-on-automatically-when-power-is-connected">需要 BIOS 设置</a>，而且是在 Power Management Setup 中进行，但是通过 <code>Fn+F2</code> 进入 BIOS 后，并没有这个菜单，可能还是不支持吧。不过话说回来这个功能没有自动关机那么必要。</p>
                 
               
               
