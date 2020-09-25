@@ -535,6 +535,12 @@ conda config --set auto_activate_base false
 
 refer to [How do I prevent Conda from activating the base environment by default?](https://stackoverflow.com/questions/54429210/how-do-i-prevent-conda-from-activating-the-base-environment-by-default)
 
+actually, this is equivalent to add a line in `~/.condarc`
+
+```bash
+auto_activate_base: false
+```
+
 ## 进程和线程
 
 参考 [一道面试题：说说进程和线程的区别](https://foofish.net/thread-and-process.html)
@@ -794,7 +800,7 @@ refer to:
 
 ## 镜像
 
-通过 `conda` 安装镜像在 `.condarc` 中设置，而通过 `pip` 详见 [pypi 镜像使用帮助](https://mirror.tuna.tsinghua.edu.cn/help/pypi/)，临时使用可以运行
+通过 `conda` 安装镜像在 `.condarc` 中设置, 如在内地可以用[清华的镜像](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)，而通过 `pip` 详见 [pypi 镜像使用帮助](https://mirror.tuna.tsinghua.edu.cn/help/pypi/)，临时使用可以运行
 
 ```bash
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
@@ -892,3 +898,17 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 ## unit test in python
 
 explain the schematic of unittest framework in python: [Running unittest with typical test directory structure](https://stackoverflow.com/questions/1896918/running-unittest-with-typical-test-directory-structure)
+
+## conda 指定 env 路径
+
+如果直接在创建时通过 `-p` 指定路径
+
+```bash
+conda create -p ... python=x.x
+```
+
+注意如果指定路径，则不需要 `--name`， 因为默认会将路径最后的文件名看成是 env 的 name。
+
+则 activate 的时候需要加上整个路径。
+
+再创建之前可以先在 [`.condarc` 中的 `env_dirs`](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#specify-environment-directories-envs-dirs) 项下添加指定的路径。

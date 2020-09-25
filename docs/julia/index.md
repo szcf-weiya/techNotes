@@ -744,6 +744,14 @@ lrwxrwxrwx  1 root root      37 9月  18 15:28 julia1.2.0 -> /home/weiya/src/jul
 lrwxrwxrwx  1 root root      37 3月  18 10:25 julia1.3.1 -> /home/weiya/src/julia-1.3.1/bin/julia*
 ```
 
+The source folders can be freely moved to another place, and only need to update the symbol links, which can be firstly deleted and then created, or use 
+
+```bash
+sudo ln -sf ... ...
+```
+
+to override current link.
+
 ## array in functions
 
 ```julia
