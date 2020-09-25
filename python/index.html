@@ -1129,6 +1129,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#conda-env" class="md-nav__link">
+    conda 指定 env 路径
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2493,6 +2500,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#conda-env" class="md-nav__link">
+    conda 指定 env 路径
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2875,6 +2889,10 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 </code></pre></div>
 
 <p>refer to <a href="https://stackoverflow.com/questions/54429210/how-do-i-prevent-conda-from-activating-the-base-environment-by-default">How do I prevent Conda from activating the base environment by default?</a></p>
+<p>actually, this is equivalent to add a line in <code>~/.condarc</code></p>
+<div class="highlight"><pre><span></span><code>auto_activate_base: <span class="nb">false</span>
+</code></pre></div>
+
 <h2 id="_3">进程和线程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://foofish.net/thread-and-process.html">一道面试题：说说进程和线程的区别</a></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># -*- coding: utf-8 -*-</span>
@@ -3067,7 +3085,7 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <li><a href="https://github.com/szcf-weiya/Cell-Video/blob/102153462e7fd65718738bd2ad0ef37d4150f722/.github/workflows/blank.yml">GitHub: Cell-Video</a></li>
 </ul>
 <h2 id="_4">镜像<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>通过 <code>conda</code> 安装镜像在 <code>.condarc</code> 中设置，而通过 <code>pip</code> 详见 <a href="https://mirror.tuna.tsinghua.edu.cn/help/pypi/">pypi 镜像使用帮助</a>，临时使用可以运行</p>
+<p>通过 <code>conda</code> 安装镜像在 <code>.condarc</code> 中设置, 如在内地可以用<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">清华的镜像</a>，而通过 <code>pip</code> 详见 <a href="https://mirror.tuna.tsinghua.edu.cn/help/pypi/">pypi 镜像使用帮助</a>，临时使用可以运行</p>
 <div class="highlight"><pre><span></span><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 </code></pre></div>
 
@@ -3137,6 +3155,14 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <p>详见 <a href="https://www.zhihu.com/question/22475395">python新式类和经典类的区别？</a></p>
 <h2 id="unit-test-in-python">unit test in python<a class="headerlink" href="#unit-test-in-python" title="Permanent link">&para;</a></h2>
 <p>explain the schematic of unittest framework in python: <a href="https://stackoverflow.com/questions/1896918/running-unittest-with-typical-test-directory-structure">Running unittest with typical test directory structure</a></p>
+<h2 id="conda-env">conda 指定 env 路径<a class="headerlink" href="#conda-env" title="Permanent link">&para;</a></h2>
+<p>如果直接在创建时通过 <code>-p</code> 指定路径</p>
+<div class="highlight"><pre><span></span><code>conda create -p ... <span class="nv">python</span><span class="o">=</span>x.x
+</code></pre></div>
+
+<p>注意如果指定路径，则不需要 <code>--name</code>， 因为默认会将路径最后的文件名看成是 env 的 name。</p>
+<p>则 activate 的时候需要加上整个路径。</p>
+<p>再创建之前可以先在 <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#specify-environment-directories-envs-dirs"><code>.condarc</code> 中的 <code>env_dirs</code></a> 项下添加指定的路径。</p>
                 
               
               
