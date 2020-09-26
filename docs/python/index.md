@@ -495,9 +495,6 @@ refer to [In Python, how do I index a list with another list?](https://stackover
 
 refer to [Getting indices of True values in a boolean list](https://stackoverflow.com/questions/21448225/getting-indices-of-true-values-in-a-boolean-list)
 
-## do noting
-
-`pass`
 
 ## remove by index
 
