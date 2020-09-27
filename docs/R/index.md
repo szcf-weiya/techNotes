@@ -211,9 +211,6 @@ add at least two spacing newline.
 
 [Running R in batch mode on Linux](http://www.cureffi.org/2014/01/15/running-r-batch-mode-linux/)
 
-## RStudio: Warning message: Setting LC_CTYPE failed, using "C" 浅析
-
-[RStudio: Warning message: Setting LC_CTYPE failed, using "C" 浅析](http://blog.csdn.net/wireless_com/article/details/51113668)
 
 ## “Kernel density estimation” is a convolution of what?
 
