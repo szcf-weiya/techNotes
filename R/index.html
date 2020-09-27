@@ -1,7 +1,4 @@
 
-
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -18,7 +15,7 @@
         <meta name="author" content="weiya">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.14">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.0">
     
     
       
@@ -26,13 +23,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d3202873.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d877a71.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.17bd0b03.min.css">
+        
       
     
     
     
       
+        
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
@@ -52,9 +53,14 @@
   </head>
   
   
-    <body dir="ltr">
-  
     
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -144,8 +150,6 @@
 </header>
     
     <div class="md-container" data-md-component="container">
-      
-        
       
       
         
@@ -530,13 +534,6 @@
         <li class="md-nav__item">
   <a href="#running-r-in-batch-mode-on-linux" class="md-nav__link">
     Running R in batch mode on Linux
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rstudio-warning-message-setting-lc_ctype-failed-using-c" class="md-nav__link">
-    RStudio: Warning message: Setting LC_CTYPE failed, using "C" 浅析
   </a>
   
 </li>
@@ -1713,13 +1710,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rstudio-warning-message-setting-lc_ctype-failed-using-c" class="md-nav__link">
-    RStudio: Warning message: Setting LC_CTYPE failed, using "C" 浅析
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#kernel-density-estimation-is-a-convolution-of-what" class="md-nav__link">
     “Kernel density estimation” is a convolution of what?
   </a>
@@ -1914,9 +1904,6 @@
               
                 
                 
-                  
-                
-                
                 <h1 id="r">R 相关笔记<a class="headerlink" href="#r" title="Permanent link">&para;</a></h1>
 <h2 id="_1">序列减去常数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="m">-1</span><span class="p">))</span>
@@ -2050,8 +2037,6 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p><a href="http://blog.csdn.net/flyingworm_eley/article/details/6517851">Metropolis Hasting算法</a></p>
 <h2 id="running-r-in-batch-mode-on-linux">Running R in batch mode on Linux<a class="headerlink" href="#running-r-in-batch-mode-on-linux" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.cureffi.org/2014/01/15/running-r-batch-mode-linux/">Running R in batch mode on Linux</a></p>
-<h2 id="rstudio-warning-message-setting-lc_ctype-failed-using-c">RStudio: Warning message: Setting LC_CTYPE failed, using &ldquo;C&rdquo; 浅析<a class="headerlink" href="#rstudio-warning-message-setting-lc_ctype-failed-using-c" title="Permanent link">&para;</a></h2>
-<p><a href="http://blog.csdn.net/wireless_com/article/details/51113668">RStudio: Warning message: Setting LC_CTYPE failed, using &ldquo;C&rdquo; 浅析</a></p>
 <h2 id="kernel-density-estimation-is-a-convolution-of-what">“Kernel density estimation” is a convolution of what?<a class="headerlink" href="#kernel-density-estimation-is-a-convolution-of-what" title="Permanent link">&para;</a></h2>
 <p><a href="https://stats.stackexchange.com/questions/73623/kernel-density-estimation-is-a-convolution-of-what">“Kernel density estimation” is a convolution of what?</a></p>
 <h2 id="unable-to-start-rstudio-in-centos-getting-error-unable-to-connect-to-service">unable to start rstudio in centos getting error “unable to connect to service”<a class="headerlink" href="#unable-to-start-rstudio-in-centos-getting-error-unable-to-connect-to-service" title="Permanent link">&para;</a></h2>
@@ -2388,15 +2373,15 @@ BiocManager::install(&quot;graph&quot;)
       
     </div>
     
-      <script src="../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-      <script src="../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.c6483021.min.js"></script>
+      <script src="../assets/javascripts/bundle.e2f7d7a4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../assets/javascripts/worker/search.cbc634e2.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
