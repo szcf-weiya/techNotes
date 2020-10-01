@@ -95,10 +95,10 @@ sudo chown -R $USER:$USER /var/www/disqus
 并配置
 
 ```bash
-sudo nano /etc/apache2/sites-available/your_domain.conf
+sudo nano /etc/apache2/sites-available/disqus.conf
 ```
 
-可以直接复制 `000-default.conf`
+可以直接复制 `000-default.conf`，然后更改 `ServerName` 为域名，而 `DocumentRoot`改成 `/var/www/disqus`.
 
 然后启动 `disqus.conf` 并关闭 `000-default.conf`
 
@@ -184,6 +184,89 @@ file_put_contents('php://stderr', print_r($redirect, TRUE));
 
 另外，设置不允许查看 Apache 的目录，参考 [How to make Apache more secure by hiding directory folders](https://www.techrepublic.com/article/how-to-make-apache-more-secure-by-hiding-directory-folders/)
 
+```bash
+$ sudo vi /etc/apache2/apache2.conf
+```
+将
+```bash
+<Directory /var/www/>
+​     Options Indexes FollowSymLinks
+​     AllowOverride None
+​     Require all granted
+​</Directory>
+```
+
+改成
+
+```bash
+<Directory /var/www/>
+​     Options FollowSymLinks
+​     AllowOverride None
+​     Require all granted
+​</Directory>
+```
+
+然后 
+
+```bash
+sudo service apache2 restart
+```
+
+### 20201001: 由 Ubuntu 系统迁移至 WSL
+
+因为 aws 的 free tier 到期了，所以需要换一个境外服务器来转发 disqus 的评论，想到可以直接用办公室的电脑。
+
+Step 1 与上文完全一致，只不过不需要配置安全组，只不过在本地试图访问 `localhost`，如果跳出网络配置的对话框，点击允许就好。
+
+Step 2 直接按照 php 就好，因为并没有 php5.6，即
+
+```bash
+sudo apt install php 
+sudo apt-get install php7.2-curl
+```
+
+在 WSL 中启动服务器时，出现
+
+```bash
+protocol not available ah00076 failed to enable apr_tcp_defer_accept
+```
+
+这个在 [APR_TCP_DEFER_ACCEPT error when starting Apache2 #1953](https://github.com/microsoft/WSL/issues/1953) 有讨论，解决方案是将 WSL1 升级为 WSL2
+
+在 Windows command prompt 中查看 WSL 的版本
+
+```bash
+C:\> wsl -l -v
+```
+
+升级命令为
+
+```bash
+C:\> wsl --set-version Ubuntu 2
+```
+
+其中 `Ubuntu` 可能还需要带上具体版本，以上一个命令访问的结果为准。然后会有升级提示，但是后来发现即便下载了升级包，仍然需要在 BIOS 中进行设定，而现在远程不方便重启。只好作罢。
+
+后来再次试图 start apache，发现这这只是个 warning，并不影响运行。
+
+
+Step 3 不需要重新下载了，直接把 aws 服务器中的文件夹复制过来就好。
+
+然后运行
+
+```bash
+./ngrok http 80
+```
+
+即可通过外网访问该服务器，因为域名已经解析至 CDN，所以直接在 CDN 配置中更改回源域名，不过此时回源 Host 的配置需要格外注意。
+
+如果回源 Host 仍设置为 `hohoweiya` 的域名，则试图通过该域名访问时，会出现 `Tunnel xxx.hohoweiya.xyz` not found，而且似乎只有当 https 才出现这样的问题。
+
+所以回源 Host 应当设置为 ngrok 分配的域名。
+
+其实仔细想想，也挺好理解，如果在一台已知域名的服务器上使用 virtual host，配置文件中写的 `ServerName` 其实是为了通过域名来索引到该 virtual host，但是现在我真正的服务器并没有公网 ip 或者域名，只是通过 ngrok 来转发，所以如果仍将 `hohoweiya` 的域名作为回源 Host，则是试图在 ngrok 的服务器上找名为 `xxx.hohoweiya.xyz` 的 virtual host。其实隐约觉得这个也可以实现，感觉还是一个端口转发的问题，因为前面发现似乎只有 https 时不行。
+
+这时另外一个问题出现了，现在虽然可以访问 `login.php`，但是也报出上文中出现过的 `should match predefined callback URI` 的问题，因为此时实际上是通过 ngrok 的域名访问的，所以直接的访问便是在 disqus application 后台更改 callback URI。
 
 ## 博客中插入网易云音乐
 
