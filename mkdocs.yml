@@ -31,6 +31,7 @@ nav:
       - Website: website/index.md
       - CSS: website/css.md
       - JS: js/index.md
+    - Guitar: guitar/index.md
     - Network: 
       - 一般问题: Internet/index.md
       - 访问内网: Internet/sci-int.md
