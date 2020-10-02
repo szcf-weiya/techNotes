@@ -1,3 +1,7 @@
+## 2020.10.02
+
+- Quino's Mafalda: [季诺](https://baike.baidu.com/item/%E5%AD%A3%E8%AF%BA/5934145)（阿根廷漫画家）的[玛法达](https://baike.baidu.com/item/%E7%8E%9B%E6%B3%95%E8%BE%BE/5650869)
+
 ## 2020.08.25
 
 - the people of Italy experienced a strange kind of mass hysteria known as "53 fever"
