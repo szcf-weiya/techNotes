@@ -3,6 +3,7 @@
 - according to the National Academy of Sciences, (google “**himmicanes**” for lots more), it saves lives to give **hurricanes** the names of boys rather than girls, because people are more scared of boys so they’ll act with appropriate caution.
 - Hurricane **Butch**? Run away. Hurricane **Missy**? Who cares.
 - according to **Pythagoras** (really!), 17 is “the most despised and horrible of all numbers.”
+- [Time is of the essence](https://en.wikipedia.org/wiki/Time_is_of_the_essence). (时间就是生命)
 
 ## 2020.10.02
 
