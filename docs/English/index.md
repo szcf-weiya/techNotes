@@ -1,3 +1,9 @@
+## 2020.10.03
+
+- according to the National Academy of Sciences, (google “**himmicanes**” for lots more), it saves lives to give **hurricanes** the names of boys rather than girls, because people are more scared of boys so they’ll act with appropriate caution.
+- Hurricane **Butch**? Run away. Hurricane **Missy**? Who cares.
+- according to **Pythagoras** (really!), 17 is “the most despised and horrible of all numbers.”
+
 ## 2020.10.02
 
 - Quino's Mafalda: [季诺](https://baike.baidu.com/item/%E5%AD%A3%E8%AF%BA/5934145)（阿根廷漫画家）的[玛法达](https://baike.baidu.com/item/%E7%8E%9B%E6%B3%95%E8%BE%BE/5650869)
