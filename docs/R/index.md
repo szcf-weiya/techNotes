@@ -64,9 +64,40 @@ rm(list = ls(all = TRUE))
 
 [http://blog.sina.com.cn/s/blog_6caea8bf0100spe9.html](http://blog.sina.com.cn/s/blog_6caea8bf0100spe9.html)
 
-sort(x)是对向量x进行排序，返回值排序后的数值向量。rank()是求秩的函数，它的返回值是这个向量中对应元素的“排名”。而order()的返回值是对应“排名”的元素所在向量中的位置。
+`sort(x)` 是对向量x进行排序，返回值排序后的数值向量。`rank()` 是求秩的函数，它的返回值是这个向量中对应元素的“排名”。而 `order()` 的返回值是对应“排名”的元素所在向量中的位置。
 
-![](sro.png)
+```R
+> x = c(97, 93, 85, 74, 32, 100, 99, 67)
+> sort(x)
+[1]  32  67  74  85  93  97  99 100
+> order(x)
+[1] 5 8 4 3 2 1 7 6
+> rank(x)
+[1] 6 5 4 3 1 8 7 2
+```
+
+and they satisfy
+
+$$
+\begin{align*}
+\mathrm{x[order(x)]} & = \mathrm{sort(x)}\\
+\mathrm{rank(x)} &= \mathrm{order(order(x))}
+\end{align*}
+$$
+
+```R
+> x[order(x)]
+[1]  32  67  74  85  93  97  99 100
+> order(order(x))
+[1] 6 5 4 3 1 8 7 2
+```
+
+In particular, if `x = 1:n`, then `x = order(x) = sort(x)`, and hence
+
+$$
+\mathrm{x[x] = x}
+$$
+
 
 ## Interpreting Residual and Null Deviance in GLM R
 
