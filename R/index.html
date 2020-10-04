@@ -1962,8 +1962,46 @@ vi main.R
 
 <h2 id="sort-rank-order">sort(), rank(), order()<a class="headerlink" href="#sort-rank-order" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.sina.com.cn/s/blog_6caea8bf0100spe9.html">http://blog.sina.com.cn/s/blog_6caea8bf0100spe9.html</a></p>
-<p>sort(x)是对向量x进行排序，返回值排序后的数值向量。rank()是求秩的函数，它的返回值是这个向量中对应元素的“排名”。而order()的返回值是对应“排名”的元素所在向量中的位置。</p>
-<p><img alt="" src="sro.png" /></p>
+<p><code>sort(x)</code> 是对向量x进行排序，返回值排序后的数值向量。<code>rank()</code> 是求秩的函数，它的返回值是这个向量中对应元素的“排名”。而 <code>order()</code> 的返回值是对应“排名”的元素所在向量中的位置。</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">97</span><span class="p">,</span> <span class="m">93</span><span class="p">,</span> <span class="m">85</span><span class="p">,</span> <span class="m">74</span><span class="p">,</span> <span class="m">32</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="m">67</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span>  <span class="m">32</span>  <span class="m">67</span>  <span class="m">74</span>  <span class="m">85</span>  <span class="m">93</span>  <span class="m">97</span>  <span class="m">99</span> <span class="m">100</span>
+<span class="o">&gt;</span> <span class="nf">order</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">5</span> <span class="m">8</span> <span class="m">4</span> <span class="m">3</span> <span class="m">2</span> <span class="m">1</span> <span class="m">7</span> <span class="m">6</span>
+<span class="o">&gt;</span> <span class="nf">rank</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">6</span> <span class="m">5</span> <span class="m">4</span> <span class="m">3</span> <span class="m">1</span> <span class="m">8</span> <span class="m">7</span> <span class="m">2</span>
+</code></pre></div>
+
+<p>and they satisfy</p>
+<div>
+<div class="MathJax_Preview">
+\begin{align*}
+\mathrm{x[order(x)]} &amp; = \mathrm{sort(x)}\\
+\mathrm{rank(x)} &amp;= \mathrm{order(order(x))}
+\end{align*}
+</div>
+<script type="math/tex; mode=display">
+\begin{align*}
+\mathrm{x[order(x)]} & = \mathrm{sort(x)}\\
+\mathrm{rank(x)} &= \mathrm{order(order(x))}
+\end{align*}
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span>  <span class="m">32</span>  <span class="m">67</span>  <span class="m">74</span>  <span class="m">85</span>  <span class="m">93</span>  <span class="m">97</span>  <span class="m">99</span> <span class="m">100</span>
+<span class="o">&gt;</span> <span class="nf">order</span><span class="p">(</span><span class="nf">order</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">6</span> <span class="m">5</span> <span class="m">4</span> <span class="m">3</span> <span class="m">1</span> <span class="m">8</span> <span class="m">7</span> <span class="m">2</span>
+</code></pre></div>
+
+<p>In particular, if <code>x = 1:n</code>, then <code>x = order(x) = sort(x)</code>, and hence</p>
+<div>
+<div class="MathJax_Preview">
+\mathrm{x[x] = x}
+</div>
+<script type="math/tex; mode=display">
+\mathrm{x[x] = x}
+</script>
+</div>
 <h2 id="interpreting-residual-and-null-deviance-in-glm-r">Interpreting Residual and Null Deviance in GLM R<a class="headerlink" href="#interpreting-residual-and-null-deviance-in-glm-r" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="glm.png" /></p>
 <p>Refer to <a href="https://stats.stackexchange.com/questions/108995/interpreting-residual-and-null-deviance-in-glm-r">https://stats.stackexchange.com/questions/108995/interpreting-residual-and-null-deviance-in-glm-r</a></p>
