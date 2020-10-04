@@ -1,3 +1,11 @@
+## 2020.10.04
+
+- old people with **comorbidities**
+- Trump's probabilities are **way** (adv. 很远；大量；非常；极其) better.
+- I'm **kicking myself** because I was planning to tell the **hookah** story
+- there is some evidence that the dose you get of **carcinogens** from hookah smoking might be 20 times the dose of smoking a cigarette.
+- if you're willing to accept **anecdotal** evidence, there's always going to be an unlimited amount of evidence which won't tell you anything.
+
 ## 2020.10.03
 
 - according to the National Academy of Sciences, (google “**himmicanes**” for lots more), it saves lives to give **hurricanes** the names of boys rather than girls, because people are more scared of boys so they’ll act with appropriate caution.
