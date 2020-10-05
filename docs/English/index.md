@@ -1,3 +1,24 @@
+## 2020.10.05
+
+- their attitude is something like 50% careerism and 50% that they feel already know the answers about **primatology (灵长类动物学)** or **criminology (犯罪学)**
+- these people see the entire a scientific process, pretty much the whole **megillah (冗长描述)** as a bunch of **red tape (繁文缛节)**, just a bunch of hoops they need to jump through so they can move on with their day and get their 8 hours of sleep every night
+- they don't get the connection between the fun parts and the hard work and inevitable **setbacks (挫折)**
+- they think that correcting or retracting an article or having your public errors pointed out to you is a form of punishment.
+- misinformation about the event **abounds**
+- the findings suggest that the five articles were likely fraudulent, several coauthors acted with negligence bordering on **complicity (合谋，串通)** after learning about the data irregularities.
+- beyond our interest in the **sordid** details here, our horror at what ..., and our understanding and policymaking in the important field of criminology is being driven by fake data and fake analysis.
+- **flat out (竭尽全力，用全速)** fabrication
+- **dodge (躲闪)** criticism
+- let's start with the **leadoff** to Pickett's article
+- academic **bureaucrats** and game-players taking a technical dispute
+- attacks and name-calling against dissenters
+- **retreat** into procedure
+- if someone at one of these universities had been caught robbing at a bank, would his colleagues have all **backed him up** like that?
+- this kind of **cavalier** attitude to what is pretty much the purest sort of scientific fraud makes it clear how little the scientific process is valued.
+- this kind of sounds like a **conspiracy theory (阴谋论)**
+- all participants in cargo-cut (货物崇拜) social science——from the fabricators to the **powermongers** to the enablers to the just plain incompetents 
+- swatting away people like other data **thugs**
+
 ## 2020.10.04
 
 - old people with **comorbidities**
