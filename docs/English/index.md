@@ -1,3 +1,8 @@
+## 2020.10.06
+
+- the content of unreplicated or otherwise **shaky** empirical claims
+- **sway** in the way
+
 ## 2020.10.05
 
 - their attitude is something like 50% careerism and 50% that they feel already know the answers about **primatology (灵长类动物学)** or **criminology (犯罪学)**
