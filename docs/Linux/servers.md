@@ -2,11 +2,11 @@
 
 ## Submitting Multiple Jobs Quickly
 
-``` bash tab="PBS"
+```bash tab="PBS"
 /usr/bin/mpirun -v -np 28 -machinefile $PBS_NODEFILE ./myexe ${NUMBERARG} ${LETTERARG}
 ```
 
-``` bash tab="Bash"
+```bash tab="Bash"
 #!/bin/bash
 for NUMBERS in 1 2 3 4 5; do
 	for LETTERS in a b c d e; do
@@ -15,7 +15,7 @@ for NUMBERS in 1 2 3 4 5; do
 done
 ```
 
-``` bash tab="Run"
+```bash tab="Run"
 chmod +x submit_multiple_jobs.sh
 ./submit_multiple_jobs.sh
 ```
