@@ -1,3 +1,10 @@
+## 2020.10.07
+
+- does this **fallacy** have a name?
+- **Collider** bias
+- in an outraged Louisville
+- when considering **ideological** balance, it is useful to place social psychology within a larger context of the **prevailing** ideologies of other influential groups within society, such as military officers, journalists, and business executives.
+
 ## 2020.10.06
 
 - the content of unreplicated or otherwise **shaky** empirical claims
