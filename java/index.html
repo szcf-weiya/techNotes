@@ -1247,7 +1247,6 @@
 <p>不同的语言有不同的 package 可以生成测试文件，并且上传至绑定好的第三方 CI 服务中。R 中</p>
 <div class="highlight"><pre><span></span><code>library<span class="o">(</span>covr<span class="o">)</span><span class="p">;</span> codecov<span class="o">()</span>
 </code></pre></div>
-
 <p>便可一键传至 codecov，比如 <a href="https://github.com/szcf-weiya/fRLR/blob/master/.travis.yml">szcf-weiya/fRLR</a>.</p>
 <p>Julia 可以用 <code>Coverage</code> 包，然后通过 <code>submit</code> 函数提交至 CI 服务中，如 <a href="https://github.com/szcf-weiya/GradientBoost.jl/blob/master/.travis.yml">szcf-weiya/GradientBoost.jl</a></p>
 <p>当然也可以先导出测试文件，<code>lcov.info</code>，然后再上传，目前我在 github action 是采用这种配置模式，而且通过在环境变量中加入 token，可以适用于 private 仓库。</p>

@@ -1282,7 +1282,6 @@
                           <span class="n">breaks</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Female&quot;</span><span class="p">,</span> <span class="s">&quot;Male&quot;</span><span class="p">),</span>
                           <span class="n">labels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Woman&quot;</span><span class="p">,</span> <span class="s">&quot;Man&quot;</span><span class="p">))</span>
 </code></pre></div>
-
 <p><img alt="" src="../toy_legend.png" /></p>
 <h2 id="_2">多个数据集<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>上述普遍的情形是涉及单一数据集，且类别标签已经存在数据集中，若多个数据集，数据集本身没有类别标签，但不同数据集表示不同类，则可以参考<a href="https://stackoverflow.com/questions/18394391/r-custom-legend-for-multiple-layer-ggplot">R: Custom Legend for Multiple Layer ggplot | stackoverflow</a>。</p>
@@ -1305,7 +1304,6 @@
   <span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;the colour&#39;</span><span class="p">,</span> 
                       <span class="n">values</span> <span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;black&#39;</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">,</span><span class="s">&#39;red&#39;</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">),</span> <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;c2&#39;</span><span class="p">,</span><span class="s">&#39;c1&#39;</span><span class="p">))</span>
 </code></pre></div>
-
 <p><img alt="" src="../multi_dataset_legends.png" /></p>
 <h2 id="shapelinetype">单一shape或linetype<a class="headerlink" href="#shapelinetype" title="Permanent link">&para;</a></h2>
 <p>一开始对原知乎问题给出下面的解法</p>
@@ -1317,7 +1315,6 @@
                      <span class="n">breaks</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;black&quot;</span><span class="p">),</span>
                      <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;数据&#39;</span><span class="p">,</span> <span class="s">&#39;原始数据&#39;</span><span class="p">))</span> 
 </code></pre></div>
-
 <p><img alt="" src="../px_o.png" /></p>
 <p>但图例同时存在shape和linetype，对于普通的<code>plot</code>，可以用<code>NA</code>来使得point type或linetype不显示，具体可以参考<a href="https://stackoverflow.com/questions/37897984/r-plot-displaying-both-point-type-and-line-type-in-legend">R plot: Displaying both point type and line type in legend | stackoverflow</a>。</p>
 <div class="highlight"><pre><span></span><code><span class="nf">set.seed</span><span class="p">(</span><span class="m">0</span><span class="p">);</span> <span class="n">x1</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">);</span> <span class="n">x2</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">);</span> <span class="n">x3</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
@@ -1329,7 +1326,6 @@
        <span class="n">pch</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">19</span><span class="p">,</span> <span class="kc">NA</span><span class="p">),</span> <span class="n">lty</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="kc">NA</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span>
        <span class="n">col</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span> <span class="n">text.col</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
 </code></pre></div>
-
 <p><img alt="" src="../both_points_lines_in_plot.png" /></p>
 <p>受此启发，也尝试在ggplot中使用，尝试后发现，对于<code>shape</code>用<code>NA</code>可以不显示点的形状，而<code>linetype</code>要用<code>0</code>才能不显示线条。</p>
 <div class="highlight"><pre><span></span><code><span class="n">px</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">()</span><span class="o">+</span>
@@ -1349,7 +1345,6 @@
 <span class="n">px</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span><span class="o">=</span><span class="nf">element_blank</span><span class="p">(),</span>
            <span class="n">legend.position</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.9</span><span class="p">,</span> <span class="m">0.9</span><span class="p">))</span>
 </code></pre></div>
-
 <p><img alt="" src="../px.png" /></p>
 <p>虽然与题主要求相符，但其实上述代码会报warning，如下</p>
 <p><img alt="" src="../warnings.png" /></p>
@@ -1375,7 +1370,6 @@
 <span class="n">px</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span><span class="o">=</span><span class="nf">element_blank</span><span class="p">(),</span>
            <span class="n">legend.position</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.9</span><span class="p">,</span> <span class="m">0.9</span><span class="p">))</span>
 </code></pre></div>
-
 <p><img alt="" src="../px3.png" /></p>
 <p>不过这样黑线少掉了红色点，也就是认为那些不在直线上的点才是第二类的点。如果坚持题主的意思，则完全可以重新构造数据集，代码如下</p>
 <div class="highlight"><pre><span></span><code><span class="n">length</span> <span class="o">&lt;-</span><span class="nf">length</span><span class="p">(</span><span class="n">datax</span><span class="p">)</span>
@@ -1403,7 +1397,6 @@
 <span class="n">px</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span><span class="o">=</span><span class="nf">element_blank</span><span class="p">(),</span>
            <span class="n">legend.position</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.9</span><span class="p">,</span> <span class="m">0.9</span><span class="p">))</span>
 </code></pre></div>
-
 <p><img alt="" src="../px4.png" /></p>
 <h2 id="_3">参考网页<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>除上述明确给出的参考链接，还参考了下列网页</p>

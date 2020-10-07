@@ -1233,21 +1233,18 @@
 <span class="n">tree.pred</span><span class="o">=</span><span class="nf">predict</span><span class="p">(</span><span class="n">tree.carseats</span><span class="p">,</span><span class="n">Carseats.test</span><span class="p">,</span><span class="n">type</span><span class="o">=</span><span class="s">&quot;class&quot;</span><span class="p">)</span>
 <span class="nf">table</span><span class="p">(</span><span class="n">tree.pred</span><span class="p">,</span><span class="n">High.test</span><span class="p">)</span>
 </code></pre></div>
-
 <p>the book reports</p>
 <div class="highlight"><pre><span></span><code>##          High.test
 ## tree.pred No Yes
 ##       No  86  27
 ##       Yes 30  57
 </code></pre></div>
-
 <p>while we get</p>
 <div class="highlight"><pre><span></span><code>##          High.test
 ## tree.pred  No Yes
 ##       No  104  33
 ##       Yes  13  50
 </code></pre></div>
-
 <p>That&rsquo;s so strange!! There might be some changed things, packages or <code>r-base</code> itself.</p>
 <h2 id="package-version">Package version<a class="headerlink" href="#package-version" title="Permanent link">&para;</a></h2>
 <p>All of the related packages are <code>tree</code> and <code>ISLR</code>, where the second one has not been updated for a long time, and so no need to consider it. For <code>tree</code>, there are active updates in the recent years,</p>
@@ -1269,12 +1266,10 @@ Add tests/deparse.R .
 Update reference output.
 Tweak NAMESPACE imports.
 </code></pre></div>
-
 <p>but actually the last version is back to March 2018, which is already prior to Wenyu&rsquo;s sister. Anyway, we have tried to install the old version package, and try to see whether there are some differences.</p>
 <p>The command for installing a specified version would be</p>
 <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz&quot;</span><span class="p">,</span> <span class="n">repos</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;source&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <p>in the R console. However, at the beginning, I am not familiar with it. So I use the interface of rstudio to manually install the old <code>tree</code>&lsquo;s. Finally, I had tried <code>v1.0-28</code>, <code>v1.0-33</code>, <code>v1.0-37</code> and <code>v1.0-39</code>, but all of them yield the same results as the latest version.</p>
 <h2 id="r-version">R version<a class="headerlink" href="#r-version" title="Permanent link">&para;</a></h2>
 <p>Currently, we are using the latest R version, <code>v3.6.0</code>. Firstly, I had tried the old version <code>v3.4.4</code> on my server rstudio. It can successfully reproduce the results of the book.</p>
@@ -1283,7 +1278,6 @@ Tweak NAMESPACE imports.
 <div class="highlight"><pre><span></span><code>docker pull r-base:3.6.0
 docker run -it --rm r-base:3.6.0
 </code></pre></div>
-
 <p>As a result, <code>v3.5.3</code> (the largest version of <code>v3.5.x</code>) can reproduce the results, while it failed in the R version from <code>v3.6.0</code>. Then I found the <a href="https://blog.revolutionanalytics.com/2019/05/whats-new-in-r-360.html">changelog</a> for <code>v3.6.0</code>.</p>
 <p>The first point is exactly what we want,</p>
 <blockquote>
@@ -1292,7 +1286,6 @@ docker run -it --rm r-base:3.6.0
 <p>In a word, for the R starting from <code>v3.6.0</code>, we can add</p>
 <div class="highlight"><pre><span></span><code><span class="nf">RNGkind</span><span class="p">(</span><span class="n">sample.kind</span><span class="o">=</span><span class="s">&quot;Rounding&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <p>to reproduce the results that did in prior versions of R.</p>
                 
               

@@ -2093,7 +2093,6 @@ $ sudo apt-get install texlive-science
 <p>在使用 <code>tableofcontents</code> 命令的时候，可分别显示 <code>chapter</code>，<code>section</code>，<code>subsection</code>，<code>subsubsection</code> 等目录，有时候，不希望显示级别较低的内容，比如只显示到 <code>chapter</code> 和 <code>section</code>，而 <code>subsection</code> 和 <code>subsubsection</code> 不显示，这时候可通过命令 <code>setcounter</code> 命令来控制，具体做法如下：</p>
 <div class="highlight"><pre><span></span><code><span class="k">\setcounter</span><span class="nb">{</span>tocdepth<span class="nb">}{</span>2<span class="nb">}</span>
 </code></pre></div>
-
 <p>即只显示两级目录。</p>
 <h2 id="pdf-metadata">pdf 添加 Metadata 信息<a class="headerlink" href="#pdf-metadata" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span>[pdfauthor=<span class="nb">{</span>Your Name<span class="nb">}</span>,
@@ -2103,19 +2102,16 @@ $ sudo apt-get install texlive-science
             pdfproducer=<span class="nb">{</span>XeLateX with hyperref<span class="nb">}</span>,
             pdfcreator=<span class="nb">{</span>Xelatex<span class="nb">}</span>]<span class="nb">{</span>hyperref<span class="nb">}</span>
 </code></pre></div>
-
 <h2 id="_3">希腊字母加粗问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><code>\mathbf</code> 只对公式中的普通字母 <code>ABC...abcdef</code> 等起作用。</p>
 <p>采用</p>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
 <span class="k">\boldsymbol</span><span class="nb">{</span><span class="k">\sigma</span><span class="nb">}</span>
 </code></pre></div>
-
 <p>或</p>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>bm<span class="nb">}</span>
 <span class="k">\bm</span><span class="nb">{</span><span class="k">\sigma</span><span class="nb">}</span>
 </code></pre></div>
-
 <p>参考 <a href="http://blog.sina.com.cn/s/blog_5e16f1770100ks8l.html">LaTeX技巧326：希腊字母的加粗问题</a></p>
 <h2 id="_4">数学字体加粗<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>使用 <code>\mathbf</code> 加粗完后斜体不见了，这不是想要的结果</p>
@@ -2126,19 +2122,16 @@ $ sudo apt-get install texlive-science
 <span class="s">$$</span>
 <span class="k">\unboldmath</span>
 </code></pre></div>
-
 <p>或</p>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>bm<span class="nb">}</span>
 <span class="sb">$$</span><span class="nb"></span>
 <span class="nv">\bm</span><span class="nb">{f</span><span class="o">(</span><span class="nb">x,y</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">3</span><span class="o">(</span><span class="nb">x</span><span class="o">+</span><span class="nb">y</span><span class="o">)</span><span class="nb">y </span><span class="o">/</span><span class="nb"> </span><span class="o">(</span><span class="m">2</span><span class="nb">xy</span><span class="o">-</span><span class="m">7</span><span class="o">)</span><span class="nb">}</span>
 <span class="s">$$</span>
 </code></pre></div>
-
 <p>参考 <a href="http://blog.sina.com.cn/s/blog_5e16f1770100nqwx.html">LaTeX 数学字体加粗问题</a></p>
 <h2 id="texi2dvi-command-not-found">“texi2dvi” command not found<a class="headerlink" href="#texi2dvi-command-not-found" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>sudo apt-get install texinfo
 </code></pre></div>
-
 <h2 id="_5">数学公式插入图片<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://tex.stackexchange.com/questions/11069/can-i-insert-an-image-into-an-equation">Can I insert an image into an equation?</a></p>
 <h2 id="beamer-frame-fragile">beamer 中 frame 的 fragile 选项<a class="headerlink" href="#beamer-frame-fragile" title="Permanent link">&para;</a></h2>
@@ -2151,7 +2144,6 @@ $ sudo apt-get install texlive-science
 l.68 \end{frame}
 ?
 </code></pre></div>
-
 <p>解决方案</p>
 <div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[fragile]
 <span class="k">\frametitle</span><span class="nb">{</span>Your title<span class="nb">}</span>
@@ -2161,12 +2153,10 @@ code
 <span class="k">\end</span><span class="nb">{</span>lstlisting<span class="nb">}</span>
 <span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
 </code></pre></div>
-
 <h2 id="beamer">beamer 中数学字体<a class="headerlink" href="#beamer" title="Permanent link">&para;</a></h2>
 <p>默认数学字体挺丑的，可以在导言区加入</p>
 <div class="highlight"><pre><span></span><code><span class="k">\usefonttheme</span><span class="na">[onlymath]</span><span class="nb">{</span>serif<span class="nb">}</span>
 </code></pre></div>
-
 <p>下面摘录自 <a href="http://blog.sina.com.cn/s/blog_4b91d3b50101lupb.html">Beamer 中数学符号字体 </a></p>
 <blockquote>
 <p>关于tex的字体样式，其实是通用的，与css和windows字体等，都是通用的。来源于西方的字母写法，大致可分为两类：serif （衬线）和sans-serif（无衬线）。</p>
@@ -2208,7 +2198,6 @@ code
 <p>在tex中一般直接用</p>
 <div class="highlight"><pre><span></span><code><span class="s">$</span><span class="nb">f&#39;&#39;</span><span class="s">$</span>
 </code></pre></div>
-
 <p>但是在md中，当渲染成网页后，有时会渲染成了普通的引号，如下图</p>
 <p><img alt="" src="prime.PNG" /></p>
 <p>参考<a href="https://tex.stackexchange.com/questions/210290/how-to-write-doubleprime-in-latex">How to write doubleprime in latex</a></p>
@@ -2225,7 +2214,6 @@ code
     linkcolor=black
 <span class="nb">}</span>
 </code></pre></div>
-
 <p>但这个只会对参考文献中可点击的部分起作用，比如实际中只对年份起了作用。</p>
 <p>第二种可以自定义命令</p>
 <div class="highlight"><pre><span></span><code><span class="k">\DeclareCiteCommand</span><span class="nb">{</span><span class="k">\cite</span><span class="nb">}</span>
@@ -2242,7 +2230,6 @@ code
   <span class="nb">{</span><span class="k">\multicitedelim</span><span class="nb">}</span>
   <span class="nb">{</span><span class="k">\usebibmacro</span><span class="nb">{</span>postnote<span class="nb">}}</span>
 </code></pre></div>
-
 <p>参考 <a href="https://tex.stackexchange.com/questions/369710/beamer-citation-coloring">Beamer, Citation coloring</a></p>
 <p>实战例子：<a href="https://github.com/szcf-weiya/zju-thesis/blob/ef03ae6c484bf4c9b23dd62d06cb751c05ed120d/src/zju-thesis.dtx#L499-L528">szcf-weiya/zju-thesis</a></p>
 <h2 id="_7">将引用的年份用括号框起来<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
@@ -2258,7 +2245,6 @@ code
   <span class="k">\item</span> three
 <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
 </code></pre></div>
-
 <h2 id="xelatex-pdf-on-travis-ci">xelatex pdf on Travis CI<a class="headerlink" href="#xelatex-pdf-on-travis-ci" title="Permanent link">&para;</a></h2>
 <p>参考 </p>
 <ol>
@@ -2277,7 +2263,6 @@ script:
   - cd proposal
   - xelatex test
 </code></pre></div>
-
 <p>It turns out that no xelatex.</p>
 <h3 id="second-example">second example<a class="headerlink" href="#second-example" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>before_install:
@@ -2287,7 +2272,6 @@ script:
   - cd proposal
   - xelatex test
 </code></pre></div>
-
 <p>succeed!</p>
 <h3 id="install-chinese-fonts">install Chinese fonts<a class="headerlink" href="#install-chinese-fonts" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>sudo: required
@@ -2300,15 +2284,12 @@ script:
   - cd proposal
   - xelatex test
 </code></pre></div>
-
 <p>wrong error in wget. It should be </p>
 <div class="highlight"><pre><span></span><code>wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz
 </code></pre></div>
-
 <p>and mv should add <code>sudo</code></p>
 <div class="highlight"><pre><span></span><code>sudo mv fonts/* /usr/share/fonts/truetype/custom/ 
 </code></pre></div>
-
 <p>succeed!</p>
 <h3 id="use-xecjk">use xeCJK<a class="headerlink" href="#use-xecjk" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code># test.tex
@@ -2333,22 +2314,18 @@ script:
   - cd proposal
   - xelatex test
 </code></pre></div>
-
 <p>It reports that</p>
 <div class="highlight"><pre><span></span><code>! Font EU1/lmr/m/n/10=[lmroman10-regular]:mapping=tex-text at 10.0pt not loadab
 le: Metric (TFM) file or installed font not found.
 </code></pre></div>
-
 <p>refer to <a href="https://tex.stackexchange.com/questions/129799/font-eu1-lmr-m-n-10-lmroman10-regularmapping-tex-text-at-10-0pt-not-loadab">! Font EU1/lmr/m/n/10=[lmroman10-regular]:mapping=tex-text at 10.0pt not loadab le: Metric (TFM) file not found</a></p>
 <p>try to install <code>fonts-lmodern</code> fist.</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install fonts-lmodern
 </code></pre></div>
-
 <p>succeed!</p>
 <p>However, I cannot find <code>test.pdf</code> in releases, and it contains other files. So set</p>
 <div class="highlight"><pre><span></span><code>skip_cleanup: true
 </code></pre></div>
-
 <p>and fix typo from <code>tages</code> to <code>tags</code>.</p>
 <p>But it still cannot find the <code>test.pdf</code>, and even cannot find any release</p>
 <p>so I change <code>file: proposal/test.pdf</code> to <code>file: test.pdf</code>.</p>
@@ -2360,7 +2337,6 @@ git commit -m &quot;    &quot;
 git tag &quot;test&quot;
 git push origin master --tags
 </code></pre></div>
-
 <p>It succeed!</p>
 <p>Then I found that if use <code>before_deploy</code>, it seems that no need to set <code>on.tags = true</code>.</p>
 <h3 id="test-maintex">test main.tex<a class="headerlink" href="#test-maintex" title="Permanent link">&para;</a></h3>
@@ -2411,7 +2387,6 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <h2 id="problem-with-mkbibdateapalongextra-of-biblatex-apa">Problem with \mkbibdateapalongextra of biblatex-apa<a class="headerlink" href="#problem-with-mkbibdateapalongextra-of-biblatex-apa" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">\DeclareLanguageMapping</span><span class="nb">{</span>american<span class="nb">}{</span>american-apa<span class="nb">}</span>
 </code></pre></div>
-
 <p>refer to <a href="https://tex.stackexchange.com/questions/133700/problem-with-mkbibdateapalongextra-of-biblatex-apa">Problem with \mkbibdateapalongextra of biblatex-apa</a></p>
 <h2 id="problems-with-printbibliography">Problems with \printbibliography<a class="headerlink" href="#problems-with-printbibliography" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="na">[american]</span><span class="nb">{</span>babel<span class="nb">}</span>
@@ -2420,16 +2395,13 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <span class="k">\addbibresource</span><span class="nb">{</span>library.bib<span class="nb">}</span> 
 <span class="k">\usepackage</span><span class="na">[babel,threshold=2]</span><span class="nb">{</span>csquotes<span class="nb">}</span>
 </code></pre></div>
-
 <p>and then</p>
 <div class="highlight"><pre><span></span><code><span class="k">\printbibliography</span><span class="na">[heading=bibintoc,title=References]</span>
 </code></pre></div>
-
 <p>refer to <a href="https://tex.stackexchange.com/questions/351079/problems-with-printbibliography/351091">Problems with \printbibliography</a></p>
 <h2 id="hat">带 <code>\hat</code> 时的上标<a class="headerlink" href="#hat" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">\hat\beta</span><span class="nb">^</span>n
 </code></pre></div>
-
 <div>
 <div class="MathJax_Preview">
 \hat\beta^n
@@ -2441,7 +2413,6 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <p>和</p>
 <div class="highlight"><pre><span></span><code><span class="k">\hat\beta</span><span class="nb">{}^</span>n
 </code></pre></div>
-
 <div>
 <div class="MathJax_Preview">
 \hat\beta{}^n
@@ -2455,7 +2426,6 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <p>check your <code>newcommand</code> definition, to see if there is some silly definition such as</p>
 <div class="highlight"><pre><span></span><code><span class="k">\newcommand\silly</span><span class="nb">{</span><span class="k">\silly</span><span class="nb">}</span>
 </code></pre></div>
-
 <p>refer to <a href="https://texfaq.org/FAQ-semanticnest">Capacity exceeded</a></p>
 <h2 id="standalone"><code>standalone</code> 环境<a class="headerlink" href="#standalone" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2476,11 +2446,9 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <p>另外安装时碰到默认的 mirror 速度很慢的情况，于是考虑换成最近的华为云。</p>
 <div class="highlight"><pre><span></span><code>./install-tl -repository https://mirrors.huaweicloud.com/repository/toolkit/CTAN/systems/texlive/tlnet/
 </code></pre></div>
-
 <p>路径要指定成</p>
 <div class="highlight"><pre><span></span><code>&lt;CTAN/mirror/root/URL&gt;/systems/texlive/tlnet
 </code></pre></div>
-
 <p>参考 <a href="https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository">Change TeX Live Main Repository</a></p>
 <h2 id="operatorname-vs-mathrm"><code>operatorname</code> vs <code>mathrm</code><a class="headerlink" href="#operatorname-vs-mathrm" title="Permanent link">&para;</a></h2>
 <p><code>\operatorname</code>:</p>
@@ -2503,7 +2471,6 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <span class="nb">}</span>
 <span class="k">\makeatother</span>
 </code></pre></div>
-
 <p>refer to <a href="https://tex.stackexchange.com/questions/43966/how-to-make-the-optional-title-of-a-theorem-bold-with-amsthm">How to make the optional title of a theorem bold with amsthm?</a></p>
 <h2 id="proof-by-parts">proof by parts<a class="headerlink" href="#proof-by-parts" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">\newtheorem</span><span class="nb">{</span>proofpart<span class="nb">}{</span>Part<span class="nb">}</span>
@@ -2512,7 +2479,6 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <span class="k">\@</span>addtoreset<span class="nb">{</span>proofpart<span class="nb">}{</span>theorem<span class="nb">}</span>
 <span class="k">\makeatother</span>
 </code></pre></div>
-
 <p>here <code>\@addtoreset{foo}{bar}</code> is to add counter <code>foo</code> to the list of counters <code>\cl@bar</code> to be reset when counter <code>bar</code> is stepped.</p>
 <p>Refer to <a href="https://tex.stackexchange.com/questions/101880/parts-numbering-in-proofs">Parts numbering in Proofs</a></p>
 <h2 id="new-usage-of-cases">New usage of <code>cases</code><a class="headerlink" href="#new-usage-of-cases" title="Permanent link">&para;</a></h2>
@@ -2521,7 +2487,6 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
         1 <span class="nb">&amp;</span> if <span class="s">$</span><span class="nb">A</span><span class="s">$</span> is true,<span class="k">\\</span>
         0 <span class="nb">&amp;</span> otherwise,<span class="nb">}</span>
 </code></pre></div>
-
 <p>refer to <a href="http://drz.ac/2013/01/14/matching-content-to-mathjax/">Matching Content to MathJax</a>, which originally for illustrating the typeface of mathjax.</p>
 <h2 id="_11">数学公式常用字体<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p><a href="https://i.stack.imgur.com/eZdhj.png"><img alt="" src="math-fonts.png" /></a></p>
@@ -2570,7 +2535,6 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <p>For <code>natbib</code>, check the documentation of <code>natbib</code> by typing</p>
 <div class="highlight"><pre><span></span><code>texdoc natbib
 </code></pre></div>
-
 <p><code>longnamesfirst</code> option will display full name for the first citation of any given reference, but all subsequent ones will be used with <code>et al.</code></p>
 <ul>
 <li>without <code>longnamesfirst</code>, all citations would be <code>et al.</code></li>

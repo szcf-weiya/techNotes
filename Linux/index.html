@@ -2540,7 +2540,6 @@
 <h2 id="check-linux-distribution">check linux distribution<a class="headerlink" href="#check-linux-distribution" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>lsb_release -a
 </code></pre></div>
-
 <p>If no such command, then resort to other methods mentioned in <a href="https://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/">How To Find Out My Linux Distribution Name and Version</a></p>
 <h2 id="install-win-on-ubuntu">install win on ubuntu<a class="headerlink" href="#install-win-on-ubuntu" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://www.linuxdeveloper.space/install-windows-after-linux/">http://www.linuxdeveloper.space/install-windows-after-linux/</a></p>
@@ -2573,18 +2572,15 @@ locale: Cannot <span class="nb">set</span> LC_ALL to default locale: No such fil
 <span class="nv">LC_IDENTIFICATION</span><span class="o">=</span>en_US.UTF-8
 <span class="nv">LC_ALL</span><span class="o">=</span>
 </code></pre></div>
-
 <p>则可以通过</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
 </code></pre></div>
-
 <p>来解决这个问题，这个可以写进 <code>.bashrc</code> 文件中，并且不需要 sudo 权限，而 <a href="https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue">How do I fix my locale issue?</a> 中提到的几种方法需要 sudo 权限。</p>
 <h2 id="add-user">add user<a class="headerlink" href="#add-user" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672">https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04</a></p>
 <div class="highlight"><pre><span></span><code>useradd -m -s /bin/bash userName
 passwd userName
 </code></pre></div>
-
 <p>增加sudo权限</p>
 <div class="highlight"><pre><span></span><code>sudoedit /etc/sudoers
 // 在配置文件中找到如下位置，并添加userName1那一行。
@@ -2593,7 +2589,6 @@ root    <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)
 userName1 <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span>       NOPASSWD:ALL
 userName2 <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span>       ALL
 </code></pre></div>
-
 <h2 id="unable-to-resolve-host">unable to resolve host<a class="headerlink" href="#unable-to-resolve-host" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/ichuzhen/article/details/8241847">http://blog.csdn.net/ichuzhen/article/details/8241847</a></p>
 <h2 id="_1">初始化服务器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -2624,7 +2619,6 @@ tmux a -t NAME
 <span class="c1"># complete reset: https://stackoverflow.com/questions/38295615/complete-tmux-reset</span>
 tmux kill-server
 </code></pre></div>
-
 <p>refer to 
 - <a href="https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it">How do I access tmux session after I leave it?</a>
 - <a href="https://linuxize.com/post/getting-started-with-tmux/">Getting started with Tmux</a>
@@ -2637,16 +2631,13 @@ tmux kill-server
 <a href="http://blog.csdn.net/wangeen/article/details/8159500">http://blog.csdn.net/wangeen/article/details/8159500</a></p>
 <div class="highlight"><pre><span></span><code>sudo vim /etc/ld.so.conf
 </code></pre></div>
-
 <p>添加</p>
 <div class="highlight"><pre><span></span><code>/where/is/the/lib/
 </code></pre></div>
-
 <h2 id="vim">Vim 对每行行首进行追加、替换<a class="headerlink" href="#vim" title="Permanent link">&para;</a></h2>
 <p>按住 v 或者 V 选定需要追加的行，然后再进入 <code>:</code> 模式，输入正常的 <code>sed</code> 命令，如</p>
 <div class="highlight"><pre><span></span><code>s/^/#/g
 </code></pre></div>
-
 <p>参考 <a href="http://blog.csdn.net/u010555688/article/details/48416765">Ubuntu 下对文本文件每行行首进行追加、替换</a></p>
 <h2 id="make">Make<a class="headerlink" href="#make" title="Permanent link">&para;</a></h2>
 <p><a href="https://my.oschina.net/u/1413984/blog/199029">https://my.oschina.net/u/1413984/blog/199029</a></p>
@@ -2671,7 +2662,6 @@ tmux kill-server
 <div class="highlight"><pre><span></span><code>sudo rm /var/cache/apt/archives/lock
 sudo rm /var/lib/dpkg/lock
 </code></pre></div>
-
 <p>如果不行，重启。</p>
 <h2 id="virtual-memory-exhausted-cannot-allocate-memory">阿里云服务器virtual memory exhausted: Cannot allocate memory<a class="headerlink" href="#virtual-memory-exhausted-cannot-allocate-memory" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.bubuko.com/infodetail-1319039.html">http://www.bubuko.com/infodetail-1319039.html</a>
@@ -2689,11 +2679,9 @@ echo &quot;/swap swap swap sw 0 0&quot; &gt;&gt; /etc/fstab
 <div class="highlight"><pre><span></span><code>$ sudo update-alternatives --config gcc
 update-alternatives: error: no alternatives <span class="k">for</span> gcc
 </code></pre></div>
-
 <p>所以可以按照 <a href="https://codeyarns.github.io/tech/2015-02-26-how-to-switch-gcc-version-using-update-alternatives.html">How to switch GCC version using update-alternatives</a> 先</p>
 <div class="highlight"><pre><span></span><code>sudo update-alternatives --install ....
 </code></pre></div>
-
 <p>然后再 config.</p>
 <h2 id="terminator">terminator设置<a class="headerlink" href="#terminator" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2708,19 +2696,16 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 <p>参考<a href="https://unix.stackexchange.com/questions/162922/is-there-a-way-to-flatten-a-pdf-image-from-the-command-line">is-there-a-way-to-flatten-a-pdf-image-from-the-command-line</a></p>
 <div class="highlight"><pre><span></span><code>pdf2ps orig.pdf - | ps2pdf - flattened.pdf
 </code></pre></div>
-
 <h3 id="linux_1">Linux 杀进程<a class="headerlink" href="#linux_1" title="Permanent link">&para;</a></h3>
 <p>参考<a href="http://blog.csdn.net/andy572633/article/details/7211546">linux下杀死进程（kill）的N种方法</a></p>
 <div class="highlight"><pre><span></span><code>ps -ef <span class="p">|</span> grep R
 <span class="nb">kill</span> -s <span class="m">9</span> ...
 </code></pre></div>
-
 <p>其中 <code>ps -ef</code> 输出格式为</p>
 <div class="highlight"><pre><span></span><code>$ ps -ef <span class="p">|</span> head -2
 UID        PID  PPID  C STIME TTY          TIME CMD
 root         <span class="m">1</span>     <span class="m">0</span>  <span class="m">0</span> <span class="m">09</span>:15 ?        <span class="m">00</span>:00:44 /sbin/init splash
 </code></pre></div>
-
 <p>每一列的含义可以在 <code>man ps</code> 中的 <code>STANDARD FORMAT SPECIFIERS</code> 小节中找到，具体地，</p>
 <ul>
 <li><code>UID</code>: same with EUID, effective user ID (alias uid).</li>
@@ -2737,13 +2722,11 @@ root         <span class="m">1</span>     <span class="m">0</span>  <span class=
 <p>直接采用</p>
 <div class="highlight"><pre><span></span><code>pdftk A.pdf B.pdf cat output merge.pdf
 </code></pre></div>
-
 <p>得到的pdf中页面大小不一致，于是采用下面的命令</p>
 <div class="highlight"><pre><span></span><code>convert a.png b.png -compress jpeg -resize 1240x1753 \
                       -extent 1240x1753 -gravity center \
                       -units PixelsPerInch -density 150x150 multipage.pdf
 </code></pre></div>
-
 <p>注意重点是<code>-density 150x150</code>，若去掉这个选项，则还是得不到相同页面大小的文件。</p>
 <p>另外，上述命令是对于<code>.png</code>而言的，完全可以换成<code>.jpg</code>。</p>
 <p>同时，注意<code>1240x1753</code>中间是字母<code>x</code>.</p>
@@ -2752,11 +2735,9 @@ root         <span class="m">1</span>     <span class="m">0</span>  <span class=
 <h2 id="_4">缩小图像的大小<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>convert -resize 1024x
 </code></pre></div>
-
 <p>或者</p>
 <div class="highlight"><pre><span></span><code>convert -quality 50%
 </code></pre></div>
-
 <p>具体参考<a href="https://askubuntu.com/questions/781497/how-can-i-compress-images">How can I compress images?</a></p>
 <h2 id="compile-filezilla">compile FileZilla<a class="headerlink" href="#compile-filezilla" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://wiki.filezilla-project.org/Client_Compile">Client Compile</a></p>
@@ -2776,7 +2757,6 @@ root         <span class="m">1</span>     <span class="m">0</span>  <span class=
 <p>pdf 转 png 更好的命令是 <code>pdftoppm</code>，参考 <a href="https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image">How to convert PDF to Image?</a></p>
 <div class="highlight"><pre><span></span><code>pdftoppm alg.pdf alg -png -singlefile
 </code></pre></div>
-
 <p>图片质量比 <code>convert</code> 好很多！！</p>
 <h2 id="linux_2">linux 三款命令行浏览器<a class="headerlink" href="#linux_2" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2814,14 +2794,12 @@ root         <span class="m">1</span>     <span class="m">0</span>  <span class=
 <div class="highlight"><pre><span></span><code>rename -n <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*确认需要重命名的文件*/
 rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修改，并列出已重命名的文件*/
 </code></pre></div>
-
 <h2 id="screen">关闭screen<a class="headerlink" href="#screen" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/1509677/kill-detached-screen-session">https://stackoverflow.com/questions/1509677/kill-detached-screen-session</a></p>
 <div class="highlight"><pre><span></span><code>screen -list <span class="c1">#或screen -r</span>
 screen -r <span class="o">[</span>pid<span class="o">]</span> <span class="c1"># 进入</span>
 <span class="c1">### ctrl+A, 然后输入&quot;:quit&quot;</span>
 </code></pre></div>
-
 <p>更多用法详见 <a href="https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html">linux screen 命令详解</a></p>
 <h2 id="solution-client-with-the-currently-selected-authenticator-does-not-support-any-combination-of-challenges-that-will-satisfy-the-ca">Solution: Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA<a class="headerlink" href="#solution-client-with-the-currently-selected-authenticator-does-not-support-any-combination-of-challenges-that-will-satisfy-the-ca" title="Permanent link">&para;</a></h2>
 <p>参考
@@ -2860,7 +2838,6 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 <span class="c1"># or</span>
 sudo service cron reload
 </code></pre></div>
-
 <p>都失败了。所以还是理解出现了偏差，</p>
 <p>参考<a href="https://www.cnblogs.com/zoulongbin/p/6187238.html">Linux 设置定时任务crontab命令</a> 和 <a href="https://www.jianshu.com/p/d93e2b177814">关于定时执行任务：Crontab的20个例子</a></p>
 <h2 id="ubuntu-sftp">ubuntu 连接 sftp 服务器<a class="headerlink" href="#ubuntu-sftp" title="Permanent link">&para;</a></h2>
@@ -2897,16 +2874,13 @@ sudo service cron reload
 or just </p>
 <div class="highlight"><pre><span></span><code>myscript &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
 </code></pre></div>
-
 <p>refer to <a href="https://askubuntu.com/questions/662817/why-can-i-see-the-output-of-background-processes">Why can I see the output of background processes?</a></p>
 <p><a href="https://askubuntu.com/a/1031424">Formally</a>, integer <code>1</code> stands for <code>stdout</code> file descriptor, while <code>2</code> represents <code>stderr</code> file descriptor. </p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> Hello World &gt; /dev/null
 </code></pre></div>
-
 <p>is same as</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> Hello World <span class="m">1</span>&gt; /dev/null
 </code></pre></div>
-
 <p><strong>As for spacing</strong>, integer is right next to redirection operator, but file can either be next to redirection operator or not, i.e., <code>command 2&gt;/dev/null</code> or <code>command 2&gt; /dev/null</code>.</p>
 <p>The classical operator, <code>command &gt; file</code> only redirects standard output, <a href="https://askubuntu.com/a/625230">several choices to redirect stderr</a>,</p>
 <ul>
@@ -2914,36 +2888,30 @@ or just </p>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nb">command</span> &gt; out <span class="m">2</span>&gt; error
 </code></pre></div>
-
 <ul>
 <li>Redirect stdout to a file, and then redirect stderr to stdout <strong>NO spacings in <code>2&gt;&amp;1</code></strong></li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nb">command</span> &gt; out <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </code></pre></div>
-
 <ul>
 <li>Redirect both to a file (not supported by all shells, but <code>bash</code> is OK)</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nb">command</span> <span class="p">&amp;</span>&gt; out
 </code></pre></div>
-
 <p><a href="https://askubuntu.com/a/635069">In more technical terms</a>, <code>[integer]&gt;&amp;word</code> is called <a href="https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_07_06">Duplicating Output File Descriptor</a></p>
 <p>We can <a href="https://stackoverflow.com/questions/418896/how-to-redirect-output-to-a-file-and-stdout">redirect output to a file and stdout simultaneously</a></p>
 <div class="highlight"><pre><span></span><code>program [arguments...] 2&gt;&amp;1 | tee outfile
 </code></pre></div>
-
 <h2 id="mv-file-with-xargs">mv file with xargs<a class="headerlink" href="#mv-file-with-xargs" title="Permanent link">&para;</a></h2>
 <p>use <code>-I {}</code> to replace some str.</p>
 <div class="highlight"><pre><span></span><code>ls <span class="p">|</span> grep <span class="s1">&#39;config[0-9].txt&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> mv <span class="o">{}</span> configs/
 </code></pre></div>
-
 <p>see more details in <a href="https://askubuntu.com/questions/487035/mv-files-with-xargs">mv files with | xargs</a></p>
 <h2 id="google-drive">google drive<a class="headerlink" href="#google-drive" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://askubuntu.com/questions/838956/ubuntu-16-04-set-up-with-google-online-account-but-no-drive-folder-in-nautilus">Ubuntu 16.04 set up with google online account but no drive folder in nautilus</a></p>
 <p>Note that you should run </p>
 <div class="highlight"><pre><span></span><code>gnome-control-center online-accounts
 </code></pre></div>
-
 <p>in the command line, not to open the GUI.</p>
 <h2 id="bose-bluetooth">Bose Bluetooth<a class="headerlink" href="#bose-bluetooth" title="Permanent link">&para;</a></h2>
 <p><a href="https://askubuntu.com/questions/833322/pair-bose-quietcomfort-35-with-ubuntu-over-bluetooth">Pair Bose QuietComfort 35 with Ubuntu over Bluetooth</a></p>
@@ -2985,34 +2953,29 @@ or just </p>
 <p>终端输入</p>
 <div class="highlight"><pre><span></span><code>gnome-disks
 </code></pre></div>
-
 <p>在设置齿轮图标中选择 <code>Edit Mount Options</code>，修改 <code>Mount Point</code>。注意重新挂载后才能生效。</p>
 <p>详见<a href="https://askubuntu.com/questions/904561/how-to-change-hard-drive-name/904564">How to change hard drive name</a></p>
 <h2 id="remove-broken-link">remove broken link<a class="headerlink" href="#remove-broken-link" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>find -L . -name . -o -type d -prune -o -type l -exec rm <span class="o">{}</span> + 
 </code></pre></div>
-
 <p><a href="https://stackoverflow.com/questions/22097130/delete-all-broken-symbolic-links-with-a-line">Delete all broken symbolic links with a line?</a></p>
 <h2 id="wget">wget<a class="headerlink" href="#wget" title="Permanent link">&para;</a></h2>
 <h3 id="wget-a-series-of-files-in-order">wget a series of files in order<a class="headerlink" href="#wget-a-series-of-files-in-order" title="Permanent link">&para;</a></h3>
 <p>下载连续编号的文件，如</p>
 <div class="highlight"><pre><span></span><code>wget http://work.caltech.edu/slides/slides{01..18}.pdf
 </code></pre></div>
-
 <p>参考 <a href="https://askubuntu.com/questions/240702/wget-a-series-of-files-in-order">Wget a series of files in order</a></p>
 <h3 id="wget-vs-curl"><code>wget</code> vs <code>curl</code><a class="headerlink" href="#wget-vs-curl" title="Permanent link">&para;</a></h3>
 <p><code>wget</code> 不用添加 <code>-O</code> 就可以将下载的文件存储下来，但是 <code>curl</code> 并不默认将下载的文件存入本地文件，除非加上 <code>-o</code> 选项，而 <code>wget</code> 的 <code>-O</code> 只是为了更改文件名。</p>
 <p>比如<a href="https://github.com/huan/docker-wine/blob/54e7ba2f042a59de72a06bafc37f1fb8c554541e/Dockerfile#L36">这里</a>，直接将下载的内容输出到下一个命令</p>
 <div class="highlight"><pre><span></span><code>curl -sL https://dl.winehq.org/wine-builds/winehq.key <span class="p">|</span> apt-key add - 
 </code></pre></div>
-
 <p>更多比较详见 <a href="https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget">What is the difference between curl and wget?</a></p>
 <h2 id="hydrogen-specify-the-conda-envirnoment">hydrogen specify the conda envirnoment<a class="headerlink" href="#hydrogen-specify-the-conda-envirnoment" title="Permanent link">&para;</a></h2>
 <p>just need to run</p>
 <div class="highlight"><pre><span></span><code>source activate thisenv
 python -m ipykernel install --user --name thisenv
 </code></pre></div>
-
 <p>and only once, hydrogen will remember this!!</p>
 <p>ref to <a href="https://github.com/nteract/hydrogen/issues/899">How to specify the conda environment in which hydrogen (jupyter) starts?</a></p>
 <h2 id="show-long-character-usernames-which-consists-of">show long character usernames which consists of <code>+</code><a class="headerlink" href="#show-long-character-usernames-which-consists-of" title="Permanent link">&para;</a></h2>
@@ -3020,11 +2983,9 @@ python -m ipykernel install --user --name thisenv
 <div class="highlight"><pre><span></span><code>ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
 alias psaux=&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#39;
 </code></pre></div>
-
 <h2 id="remove-the-first-character">remove the first character<a class="headerlink" href="#remove-the-first-character" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span>
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="nv">list</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
 <span class="k">for</span> nc in <span class="o">{</span><span class="m">2</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
   <span class="k">for</span> nf in <span class="m">5</span> <span class="m">10</span> <span class="m">15</span><span class="p">;</span> <span class="k">do</span>
@@ -3034,25 +2995,21 @@ alias psaux=&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#
   <span class="k">done</span>
 <span class="k">done</span>
 </code></pre></div>
-
 <p>refer to <a href="https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash">Remove first character of a string in Bash</a></p>
 <h2 id="convert-imgs-to-pdf">convert imgs to pdf<a class="headerlink" href="#convert-imgs-to-pdf" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>ls -1 ./*jpg <span class="p">|</span> xargs -L1 -I <span class="o">{}</span> img2pdf <span class="o">{}</span> -o <span class="o">{}</span>.pdf
 pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m">1</span>..13<span class="o">}</span>-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
 </code></pre></div>
-
 <p>注意这里需要用 <code>ls -1</code>，如果 <code>ll</code> 则第一行会有 <code>total xxx</code> 的信息，即 <code>ll | wc -l</code> 等于 <code>ls -1 | wc -l</code> + 1，而且在我的 Ubuntu 18.04 中，<code>ll</code> 甚至还会列出 </p>
 <div class="highlight"><pre><span></span><code>./
 ../
 </code></pre></div>
-
 <p>这一点在服务器上没看到。</p>
 <h2 id="modify-pdf-metadata-via-pdftk">modify pdf metadata via <code>pdftk</code><a class="headerlink" href="#modify-pdf-metadata-via-pdftk" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>pdftk input.pdf dump_data output metadata
 <span class="c1"># edit metadata</span>
 pdftk input.pdf update_info metadata output output.pdf
 </code></pre></div>
-
 <h2 id="zip">zip 文件解压乱码<a class="headerlink" href="#zip" title="Permanent link">&para;</a></h2>
 <p>别人在 Windows 下加压的文件，通过微信发送，在 Ubuntu 16.04 中解压时文件名乱码。</p>
 <p>采用 <code>unar your.zip</code></p>
@@ -3062,11 +3019,9 @@ pdftk input.pdf update_info metadata output output.pdf
 <p>水平方向</p>
 <div class="highlight"><pre><span></span><code>convert +append *.png out.png 
 </code></pre></div>
-
 <p>垂直方向</p>
 <div class="highlight"><pre><span></span><code>convert -append *.png out.png
 </code></pre></div>
-
 <p>参考 <a href="https://askubuntu.com/a/889772">How do I join two images in Ubuntu?</a></p>
 <h2 id="_12">文本文件查看<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <p><code>cut</code>: select by columns</p>
@@ -3075,17 +3030,14 @@ pdftk input.pdf update_info metadata output output.pdf
 <h3 id="_14">按列<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>paste file1 file2 &gt; outputfile
 </code></pre></div>
-
 <h3 id="_15">按行<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>cat file1 file2 &gt; outputfile
 </code></pre></div>
-
 <h2 id="_16">视频处理<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <h3 id="_17">去除音频<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="https://hefang.link/article/how-remove-voice-with-ffmpeg.html">如何使用ffmpeg去除视频声音？</a></p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i .<span class="se">\i</span>nput.mp4 -map <span class="m">0</span>:0 -vcodec copy out.mp4
 </code></pre></div>
-
 <h3 id="_18">慢速播放和快速播放<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="https://blog.csdn.net/ternence_hsu/article/details/85865718">ffmpeg 视频倍速播放 和 慢速播放</a></p>
 <h3 id="_19">视频旋转<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
@@ -3093,16 +3045,13 @@ pdftk input.pdf update_info metadata output output.pdf
 <p>直接用</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i in.mov -vf <span class="s2">&quot;transpose=1&quot;</span> out.mov
 </code></pre></div>
-
 <p>然后报错 <a href="(https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled)">“The encoder &lsquo;aac&rsquo; is experimental but experimental codecs are not enabled”</a> </p>
 <p>注意添加 <code>-strict -2</code> 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i in.mov -vf <span class="s2">&quot;transpose=1&quot;</span> -strict -2 out.mov
 </code></pre></div>
-
 <h3 id="_20">视频剪切<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">00</span>:00:30.0 -i input.wmv -c copy -t <span class="m">00</span>:00:10.0 output.wmv
 </code></pre></div>
-
 <p>where </p>
 <ul>
 <li>(optional) <code>-ss</code> specifies the start timestamp, the format is <code>HH:MM:SS.xxx</code></li>
@@ -3182,20 +3131,17 @@ pdftk input.pdf update_info metadata output output.pdf
 <p>Once PAC is done, I need to write its location url, seems impossible to directly write a local path. One easy way is to open port 80 to access my laptop, which maybe need apache or nginx, but both of them are overqualified. A simple way is</p>
 <div class="highlight"><pre><span></span><code>sudo python -m SimpleHTTPServer <span class="m">80</span>
 </code></pre></div>
-
 <p>found in<a href="https://askubuntu.com/questions/646293/open-port-80-on-ubuntu-server">Open port 80 on Ubuntu server</a></p>
 <h2 id="proxy-for-apt">proxy for apt<a class="headerlink" href="#proxy-for-apt" title="Permanent link">&para;</a></h2>
 <p><code>proxychains</code> seems not work well before <code>sudo</code> or after <code>sudo</code>, and I dont want to add a system proxy permanently, then I found a temporary way,</p>
 <div class="highlight"><pre><span></span><code>sudo <span class="nv">http_proxy</span><span class="o">=</span><span class="s1">&#39;http://user:pass@proxy.example.com:8080/&#39;</span> apt-get install package-name
 </code></pre></div>
-
 <p>refer to <a href="https://askubuntu.com/questions/89437/how-to-install-packages-with-apt-get-on-a-system-connected-via-proxy">how to install packages with apt-get on a system connected via proxy?</a></p>
 <h2 id="_23">上次重启时间<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>last reboot
 <span class="c1"># or</span>
 uptime --since <span class="c1"># actually the first line of `top`</span>
 </code></pre></div>
-
 <p>参考 <a href="https://unix.stackexchange.com/questions/131775/how-long-has-my-linux-system-been-running">How long has my Linux system been running?</a></p>
 <h2 id="number-of-cores">number of cores<a class="headerlink" href="#number-of-cores" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -3204,11 +3150,9 @@ uptime --since <span class="c1"># actually the first line of `top`</span>
 <p>quick way to check</p>
 <div class="highlight"><pre><span></span><code>nproc --all
 </code></pre></div>
-
 <p>more details</p>
 <div class="highlight"><pre><span></span><code>lscpu <span class="p">|</span> grep -E <span class="s1">&#39;^Thread|^Core|^Socket|^CPU\(&#39;</span>
 </code></pre></div>
-
 <p>refer to <a href="https://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux">How to know number of cores of a system in Linux?</a></p>
 <h2 id="_24">顶部栏系统监测信息<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
 <p>通过 gnome-shell extension: <a href="https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet">gnome-shell-system-monitor-applet</a> 实现</p>
@@ -3217,7 +3161,6 @@ uptime --since <span class="c1"># actually the first line of `top`</span>
 <p>为了学习 RL，在听了周博磊在 B 站的视频后，准备玩下<a href="https://github.com/cuhkrlcourse/RLexample">示例代码</a>，但是在终端中创建新 conda 环境时，</p>
 <div class="highlight"><pre><span></span><code>conda create --name RL <span class="nv">python</span><span class="o">=</span><span class="m">3</span>
 </code></pre></div>
-
 <p>总是报错，</p>
 <blockquote>
 <p>Collecting package metadata (current_repodata.json): failed</p>
@@ -3232,7 +3175,6 @@ configuration settings.</p>
 machine git.heroku.com
 ...
 </code></pre></div>
-
 <p>这才意识到很早无意识中折腾 heroku 时创建的。那这个文件是干嘛的呢，<a href="https://stackoverflow.com/questions/21828495/purpose-of-the-netrc-file">查了一下发现</a></p>
 <blockquote>
 <p>This is a file that is often used by Unix programs to hold access details for remote sites. It was originally created for use with FTP.</p>
@@ -3245,14 +3187,12 @@ machine git.heroku.com
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> /etc/NetworkManager/system-connections/
 sudo rm Hotspot
 </code></pre></div>
-
 <p>参考 <a href="https://askubuntu.com/questions/120415/how-to-remove-access-point-from-saved-list/120447">How to remove access point from saved list</a></p>
 <h2 id="ssd">移动 SSD 硬盘<a class="headerlink" href="#ssd" title="Permanent link">&para;</a></h2>
 <p>因为硬盘太小，而移动硬盘读写文件速度实在有点慢，然后看到有<a href="https://zhuanlan.zhihu.com/p/61083491">移动 SSD 硬盘</a>，于是便入手了一个。</p>
 <p>当然首先确定了，自己笔记本有 USB3.0 接口，虽然不是 USB3.1。（不过好像 USB3.0 也叫作 USB3.1 gen1，而真正的 USB3.1 叫做 USB3.1 gen2），这个可以通过 </p>
 <div class="highlight"><pre><span></span><code>$ lsusb -t
 </code></pre></div>
-
 <p>来看<a href="https://superuser.com/questions/781398/how-can-i-be-sure-that-ive-plugged-a-device-into-a-usb-3-port">接口的情况</a>，当然也直接搜了电脑型号来看具体配置、</p>
 <p>货到手后，一开始插上时，说</p>
 <blockquote>
@@ -3261,7 +3201,6 @@ sudo rm Hotspot
 <p>本来以为需要什么格式转化之类的，后来发现<a href="https://better-coding.com/solved-mount-error-unknown-filesystem-type-exfat/#:~:text=Cause%20Some%20SD%20Cards%20and,%2Dfuse%20and%20exfat%2Dutils.">解决方案</a>挺简单的，</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install exfat-fuse exfat-utils
 </code></pre></div>
-
 <p>但是后来发现这个格式很多地方会出现不兼容，比如</p>
 <ol>
 <li>解压某个文件时，报出 <code>Cannot set modif./access times</code>，而这个在正常磁盘以及已有的移动硬盘中都能正常解压</li>
@@ -3281,7 +3220,6 @@ sudo rm Hotspot
  Timing cached reads:   <span class="m">24390</span> MB in  <span class="m">1</span>.99 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">12281</span>.26 MB/sec
  Timing buffered disk reads: <span class="m">1318</span> MB in  <span class="m">3</span>.00 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">439</span>.04 MB/sec
 </code></pre></div>
-
 <p>上面是普通的移动硬盘，底下是新买的移动 SSD 硬盘，差异还是很明显的。继续测试写入的速度，</p>
 <div class="highlight"><pre><span></span><code>~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/media/weiya/Extreme<span class="se">\ </span>SSD/tempfile <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
 <span class="m">1024</span>+0 records in
@@ -3300,7 +3238,6 @@ real    0m12.746s
 user    0m0.000s
 sys 0m1.551s
 </code></pre></div>
-
 <p>以及写出的速度，</p>
 <div class="highlight"><pre><span></span><code>~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/media/weiya/Extreme<span class="se">\ </span>SSD/tempfile <span class="nv">of</span><span class="o">=</span>/dev/null <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
 <span class="m">1024</span>+0 records in
@@ -3319,7 +3256,6 @@ real    1m5.981s
 user    0m0.010s
 sys 0m0.650s
 </code></pre></div>
-
 <p>移动 SSD 硬盘完胜普通的移动硬盘。</p>
 <p>参考链接：</p>
 <ul>
@@ -3352,14 +3288,12 @@ sys 0m0.650s
     technology:          lithium-ion
     icon-name:          <span class="s1">&#39;battery-full-charged-symbolic&#39;</span>
 </code></pre></div>
-
 <p>现在的容量只有 41.2037%，一半都不到。心血来潮搜了下看看有没有什么软件能够支持自动充放电，竟然还真有，而且特别支持 ThinkPad 系列, <a href="https://askubuntu.com/questions/34452/how-can-i-limit-battery-charging-to-80-capacity">How can I limit battery charging to 80% capacity?</a></p>
 <p>不过刚开始按照回答中的解决方案操作，最后 <code>sudo modprobe tp_smapi</code> 并不成功，大概是说没有这个 kernel 吧。不过因为这个回答挺早的，在评论中顺藤摸瓜找到针对更新版的 ThinkPad 的解决方案，<a href="https://linrunner.de/tlp/installation/ubuntu.html">tlp for Ubuntu</a></p>
 <div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:linrunner/tlp
 sudo apt update
 sudo apt install acpi-call-dkms tp-smapi-dkms
 </code></pre></div>
-
 <p>其中特别指出 <code>acpi-call-dkms</code> 用于 ThinkPads (X220/T420 and later)</p>
 <p>然后查看</p>
 <div class="highlight"><pre><span></span><code>~$ sudo tlp-stat -b
@@ -3370,11 +3304,9 @@ sudo apt install acpi-call-dkms tp-smapi-dkms
 tpacpi-bat <span class="o">=</span> active <span class="o">(</span>thresholds, recalibrate<span class="o">)</span>
 tp-smapi   <span class="o">=</span> inactive <span class="o">(</span>ThinkPad not supported<span class="o">)</span>
 </code></pre></div>
-
 <p>这时候按照 <a href="https://linrunner.de/tlp/settings/battery.html">Battery Charge Thresholds</a> 修改 <code>/etc/tlp.conf</code>，并运行</p>
 <div class="highlight"><pre><span></span><code>sudo tlp start
 </code></pre></div>
-
 <p>但是似乎并没有起作用，仍然在充电，尝试拔了电源线来使之生效，但好像还是不行。总共有<a href="https://linrunner.de/tlp/settings/introduction.html#making-changes">三种生效方式</a>，另外一种为重启。</p>
 <p>猜测可能的原因是</p>
 <blockquote>
@@ -3384,7 +3316,6 @@ tp-smapi   <span class="o">=</span> inactive <span class="o">(</span>ThinkPad no
 <div class="highlight"><pre><span></span><code>$ uname -r
 <span class="m">4</span>.15.0-112-generic
 </code></pre></div>
-
 <p>而且在 <a href="https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#why-is-my-battery-charged-up-to-100-ignoring-the-charge-thresholds">Why is my battery charged up to 100% – ignoring the charge thresholds?</a> 的 
 <a href="https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#thinkpad-t430-s-t530-w530-x230-and-all-later-models">ThinkPad T430(s)/T530/W530/X230 (and all later models)</a>
 提到解决方案是 </p>

@@ -2551,11 +2551,9 @@ sudo chgrp weiya jupyter/ -R
 <h2 id="python_1">python 查看已安装的包<a class="headerlink" href="#python_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>pip list
 </code></pre></div>
-
 <h2 id="condaspyder">conda更新spyder<a class="headerlink" href="#condaspyder" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>(sudo proxychains) conda update spyder
 </code></pre></div>
-
 <h2 id="selenium">selenium<a class="headerlink" href="#selenium" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path">Selenium using Python - Geckodriver executable needs to be in PATH
 </a></p>
@@ -2580,7 +2578,6 @@ array([[ 1.,  5.],
 array([[ 1.,  1.],
       [ 0.,  2.]])
 </code></pre></div>
-
 <h2 id="some-basics-of-np">Some basics of <code>np</code><a class="headerlink" href="#some-basics-of-np" title="Permanent link">&para;</a></h2>
 <h3 id="array-of-array">Array of Array<a class="headerlink" href="#array-of-array" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">a</span>
@@ -2603,7 +2600,6 @@ array([[ 1.,  1.],
        <span class="p">[</span><span class="mf">316.</span><span class="p">,</span>  <span class="mf">19.</span><span class="p">],</span>
        <span class="p">[</span><span class="mf">372.</span><span class="p">,</span>  <span class="mf">35.</span><span class="p">]])</span>
 </code></pre></div>
-
 <h3 id="difference-between-numpyarray-shape-r-1-and-r">Difference between numpy.array shape (R, 1) and (R,)<a class="headerlink" href="#difference-between-numpyarray-shape-r-1-and-r" title="Permanent link">&para;</a></h3>
 <p>refer to <a href="https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r">Difference between numpy.array shape (R, 1) and (R,)</a></p>
 <h2 id="conda">正式认识conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h2>
@@ -2622,7 +2618,6 @@ array([[ 1.,  1.],
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> activate snakes
 spyder3 <span class="p">&amp;</span>
 </code></pre></div>
-
 <h2 id="xrange-and-range">xrange and range<a class="headerlink" href="#xrange-and-range" title="Permanent link">&para;</a></h2>
 <p>基本都在循环时使用，输出结果也是一样的，但略有差异</p>
 <ul>
@@ -2669,21 +2664,17 @@ index-url=http://mirrors.aliyun.com/pypi/simple/
 [install]
 trusted-host=mirrors.aliyun.com
 </code></pre></div>
-
 <p>注意编码格式为utf8无BOM。</p>
 <h2 id="conda-window">conda 在window下设置<a class="headerlink" href="#conda-window" title="Permanent link">&para;</a></h2>
 <p>win10下已经装了anaconda，spyder(2.7)，现想再装上python3，于是利用conda创建一个python3的环境<code>bunny</code>。</p>
 <div class="highlight"><pre><span></span><code>conda create --name bunny python=3
 </code></pre></div>
-
 <p>切换到bunny环境</p>
 <div class="highlight"><pre><span></span><code>activate bunny
 </code></pre></div>
-
 <p>参考<a href="https://pythonhosted.org/spyder/installation.html">spyder3 doc</a></p>
 <div class="highlight"><pre><span></span><code>pip install spyder3
 </code></pre></div>
-
 <h2 id="_2">又拍云的短信平台<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>参考文献</p>
 <ol>
@@ -2694,7 +2685,6 @@ trusted-host=mirrors.aliyun.com
 <div class="highlight"><pre><span></span><code><span class="n">payload</span><span class="o">=</span><span class="s1">&#39;{&#39;</span><span class="n">name</span><span class="s1">&#39;: weiya}&#39;</span>
 <span class="c1"># payload=&#39;payload = {&#39;name&#39;: weiya}&#39;</span>
 </code></pre></div>
-
 <p>换成json
 <div class="highlight"><pre><span></span><code><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
 </code></pre></div></p>
@@ -2710,19 +2700,16 @@ trusted-host=mirrors.aliyun.com
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">urllib2</span>
 <span class="nb">print</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="s2">&quot;%CE%B1%CE%BB%20&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <ol start="2">
 <li>python3</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">unquote</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">unquote</span><span class="p">(</span><span class="s2">&quot;%CE%B1%CE%BB%20&quot;</span><span class="p">))</span>
 </code></pre></div>
-
 <h2 id="convert-bytes-to-string">convert bytes to string<a class="headerlink" href="#convert-bytes-to-string" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/606191/convert-bytes-to-a-string">convert-bytes-to-a-string</a></p>
 <div class="highlight"><pre><span></span><code><span class="sa">b</span><span class="s2">&quot;abcde&quot;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <h2 id="jsondumps-jsondump">json.dumps() 和json.dump()的区别<a class="headerlink" href="#jsondumps-jsondump" title="Permanent link">&para;</a></h2>
 <p>简言之，<code>dumps()</code>和<code>loads()</code>都是针对字符串而言的，而<code>dump()</code>和<code>load()</code>是针对文件而言的。具体细节可疑参见<a href="https://www.cnblogs.com/wswang/p/5411826.html">python json.dumps()  json.dump()的区别 - wswang - 博客园</a></p>
 <h2 id="urb">字符串前面添加u,r,b的含义<a class="headerlink" href="#urb" title="Permanent link">&para;</a></h2>
@@ -2741,7 +2728,6 @@ python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这�
 <p>参考<a href="http://wutongtree.github.io/devops/manage-your-cms-using-mkdocs">manage-your-cms-using-mkdocs</a></p>
 <div class="highlight"><pre><span></span><code>sudo pip install python-markdown-math
 </code></pre></div>
-
 <h2 id="python-3-str-bytes">python 3 中的 str 和 bytes<a class="headerlink" href="#python-3-str-bytes" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://www.cnblogs.com/chownjy/p/6625299.html">浅析Python3中的bytes和str类型 - Chown-Jane-Y - 博客园</a></p>
 <p>这篇博文讲得很清楚</p>
@@ -2759,12 +2745,10 @@ python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这�
 <p>首先需要在服务器端，在<code>my.cnf</code> 中注释掉</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># bind-address = 127.0.0.1</span>
 </code></pre></div>
-
 <p>并且在 mysql 中创建用户并设置权限，如</p>
 <div class="highlight"><pre><span></span><code>create user <span class="s1">&#39;test&#39;</span>@<span class="s1">&#39;%&#39;</span> identified by <span class="s1">&#39;test123&#39;</span><span class="p">;</span>
 grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span class="s1">&#39;%&#39;</span> with grant option<span class="p">;</span>
 </code></pre></div>
-
 <p>参考</p>
 <ol>
 <li><a href="https://stackoverflow.com/questions/1559955/host-xxx-xx-xxx-xxx-is-not-allowed-to-connect-to-this-mysql-server">Host &lsquo;xxx.xx.xxx.xxx&rsquo; is not allowed to connect to this MySQL server</a></li>
@@ -2791,7 +2775,6 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <h2 id="matplotlib-math-symbols">matplotlib math symbols<a class="headerlink" href="#matplotlib-math-symbols" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\lambda&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <p>refer to <a href="https://matplotlib.org/users/mathtext.html">Writing mathematical expressions</a></p>
 <h2 id="non-ascii">写入 non-ascii 字符<a class="headerlink" href="#non-ascii" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;filename&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
@@ -2800,18 +2783,15 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <span class="s1">&#39;&#39;&#39;</span>
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">write</span><span class="o">.</span><span class="n">str</span><span class="p">)</span>
 </code></pre></div>
-
 <p>会报错</p>
 <div class="highlight"><pre><span></span><code>&#39;ascii&#39; codec can&#39;t encode character
 </code></pre></div>
-
 <p>参考 <a href="https://stackoverflow.com/questions/33255846/python-write-a-list-with-non-ascii-characters-to-a-text-file">Python: write a list with non-ASCII characters to a text file</a> 采用 <code>codecs.open(, "w", encoding="utf-8")</code> 可以解决需求。</p>
 <h2 id="environment-jupyter">不同 environment 的 jupyter<a class="headerlink" href="#environment-jupyter" title="Permanent link">&para;</a></h2>
 <p>其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 <a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments">Kernels for different environments</a></p>
 <h3 id="julia-kernel">安装 julia 的 kernel<a class="headerlink" href="#julia-kernel" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">add</span> <span class="n">IJulia</span>
 </code></pre></div>
-
 <h2 id="xy">画图 xy 顺序<a class="headerlink" href="#xy" title="Permanent link">&para;</a></h2>
 <ol>
 <li>imshow 中的 <a href="https://matplotlib.org/tutorials/intermediate/imshow_extent.html">origin and extent</a></li>
@@ -2827,13 +2807,11 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 </ul>
 <div class="highlight"><pre><span></span><code><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
 </code></pre></div>
-
 <ul>
 <li>numpy</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
 </code></pre></div>
-
 <p>refer to <a href="https://stackoverflow.com/questions/3386259/how-to-make-a-multidimension-numpy-array-with-a-varying-row-size">How to make a multidimension numpy array with a varying row size?</a></p>
 <h2 id="find-index-of-an-item">find index of an item<a class="headerlink" href="#find-index-of-an-item" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -2846,21 +2824,18 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
 <span class="mi">2</span>
 </code></pre></div>
-
 <p>refer to <a href="https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-given-a-list-containing-it-in-python">Finding the index of an item given a list containing it in Python</a></p>
 <h2 id="index-a-list-with-another-list">index a list with another list<a class="headerlink" href="#index-a-list-with-another-list" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]</span>
 <span class="n">Idx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 <span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Idx</span><span class="p">]</span>
 </code></pre></div>
-
 <p>refer to <a href="https://stackoverflow.com/questions/1012185/in-python-how-do-i-index-a-list-with-another-list">In Python, how do I index a list with another list?</a></p>
 <h2 id="getting-indices-of-true">getting indices of true<a class="headerlink" href="#getting-indices-of-true" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 </code></pre></div>
-
 <p>refer to <a href="https://stackoverflow.com/questions/21448225/getting-indices-of-true-values-in-a-boolean-list">Getting indices of True values in a boolean list</a></p>
 <h2 id="remove-by-index">remove by index<a class="headerlink" href="#remove-by-index" title="Permanent link">&para;</a></h2>
 <p><code>del</code></p>
@@ -2884,12 +2859,10 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <h2 id="disable-default-base">disable default <code>base</code><a class="headerlink" href="#disable-default-base" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>conda config --set auto_activate_base <span class="nb">false</span>
 </code></pre></div>
-
 <p>refer to <a href="https://stackoverflow.com/questions/54429210/how-do-i-prevent-conda-from-activating-the-base-environment-by-default">How do I prevent Conda from activating the base environment by default?</a></p>
 <p>actually, this is equivalent to add a line in <code>~/.condarc</code></p>
 <div class="highlight"><pre><span></span><code>auto_activate_base: <span class="nb">false</span>
 </code></pre></div>
-
 <h2 id="_3">进程和线程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://foofish.net/thread-and-process.html">一道面试题：说说进程和线程的区别</a></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># -*- coding: utf-8 -*-</span>
@@ -2918,37 +2891,31 @@ grant all privileges on testdb.* to <span class="s1">&#39;test&#39;</span>@<span
 <span class="c1"># 是CPU调度和分派的基本单位，一个进程可以由很多个线程组成，</span>
 <span class="c1"># 线程间共享进程的所有资源，每个线程有自己的堆栈和局部变量。</span>
 </code></pre></div>
-
 <h2 id="conda-package">conda package 的版本号不匹配<a class="headerlink" href="#conda-package" title="Permanent link">&para;</a></h2>
 <p>在用 anaconda3 新建 py37 环境后，安装 spyder，但是运行时弹出</p>
 <p><img alt="" src="spyder-qtconsole.png" /></p>
 <p>而用 <code>conda list | grep qtconsole</code> 检查发现</p>
 <div class="highlight"><pre><span></span><code>qtconsole                 <span class="m">4</span>.6.0                      py_0
 </code></pre></div>
-
 <p>隐隐约约感觉是装了多个版本，想卸载掉错误的版本，但都没找到 qtconsole 怎么查看版本号。然后 Google 发现另外一个类似的问题，</p>
 <p><a href="https://stackoverflow.com/questions/55350956/getting-wrong-version-of-packages-using-conda">Getting wrong version of packages using Conda</a></p>
 <p>于是我也去检查了 ipython 的版本，发现 </p>
 <div class="highlight"><pre><span></span><code>$ ipython --version
 <span class="m">7</span>.7.0
 </code></pre></div>
-
 <p>而</p>
 <div class="highlight"><pre><span></span><code>$ conda list <span class="p">|</span> grep ipython
 ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 </code></pre></div>
-
 <p>同样存在版本号不一致的问题。</p>
 <p>所以按照评论的建议，用 </p>
 <div class="highlight"><pre><span></span><code>pip uninstall ipython
 </code></pre></div>
-
 <p>首先解决了 ipython 的版本号不一致的问题。</p>
 <p><img alt="" src="ipython.png" /></p>
 <p>受此启发，用</p>
 <div class="highlight"><pre><span></span><code>pip uninstall qtconsole
 </code></pre></div>
-
 <p>解决了 qtconsole 的问题。</p>
 <h2 id="kite">Kite 使用体验<a class="headerlink" href="#kite" title="Permanent link">&para;</a></h2>
 <p>Copilot 一直 detect 不出 spyder，只有刚开始装的时候检测到了，但那时候也没有起作用。而 kite 本身一直在 spyder 右下角的状态栏中。</p>
@@ -2980,7 +2947,6 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <span class="mi">1</span>
 <span class="mi">4</span>
 </code></pre></div>
-
 <p>along with other methods to square a list,</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">]</span>
@@ -2999,7 +2965,6 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ret</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </code></pre></div>
-
 <h2 id="uninstalling-a-distutils-installed-project-error">&lsquo;Uninstalling a distutils installed project&rsquo; error<a class="headerlink" href="#uninstalling-a-distutils-installed-project-error" title="Permanent link">&para;</a></h2>
 <p>pip install &ndash;ignore-installed ${PACKAGE_NAME}</p>
 <p>refer to <a href="https://github.com/blockstack/blockstack-core/issues/504">&lsquo;Uninstalling a distutils installed project&rsquo; error when installing blockstack #504</a></p>
@@ -3013,14 +2978,12 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">feature_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv3</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">input_shape</span><span class="p">))))</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-
 <p>where <code>*self.input_shape</code> aims to unpacking something like <code>[3, 4, 5]</code> to <code>3, 4, 5</code>.</p>
 <h2 id="function-annotations">Function Annotations<a class="headerlink" href="#function-annotations" title="Permanent link">&para;</a></h2>
 <p>When I am writing the custom loss function in XGBoost, there are some new syntax in the example function,</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">squared_log</span><span class="p">(</span><span class="n">predt</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
                 <span class="n">dtrain</span><span class="p">:</span> <span class="n">xgb</span><span class="o">.</span><span class="n">DMatrix</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 </code></pre></div>
-
 <p>what is the meaning of <code>:</code> and <code>-&gt;</code>. Then I <a href="https://stackoverflow.com/questions/14379753/what-does-mean-in-python-function-definitions">found</a> that they are <a href="https://www.python.org/dev/peps/pep-3107/">functional annotations</a>.</p>
 <blockquote>
 <p>By itself, Python does not attach any particular meaning or significance to annotations. </p>
@@ -3034,7 +2997,6 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <p>Ohhh, to avoid such problem, </p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
 </code></pre></div>
-
 <p>refer to <a href="https://github.com/dmlc/xgboost/blob/master/demo/guide-python/custom_rmsle.py#L16">custom_rmsle.py#L16</a></p>
 <h2 id="u5"><code>&lt;U5</code><a class="headerlink" href="#u5" title="Permanent link">&para;</a></h2>
 <p>I met this term in <a href="https://stackoverflow.com/questions/16037824/how-to-convert-numpy-object-array-into-str-unicode-array">How to convert numpy object array into str/unicode array?</a></p>
@@ -3048,7 +3010,6 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <h2 id="the-i-th-row-in-pandas">the <code>i</code>-th row in pandas<a class="headerlink" href="#the-i-th-row-in-pandas" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">df_test</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
-
 <h2 id="the-first-argument-in-syspathinsert">the first argument in <code>sys.path.insert()</code><a class="headerlink" href="#the-first-argument-in-syspathinsert" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>But for <code>sys.path</code> specifically, element 0 is the path containing the script, and so using index 1 causes Python to search that path first and then the inserted path, versus the other way around when inserted at index 0.</p>
@@ -3062,13 +3023,11 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <span class="n">x_str</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array_repr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x_str</span><span class="p">)</span>
 </code></pre></div>
-
 <p>refer to <a href="https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks">How to print numpy objects without line breaks</a></p>
 <h2 id="-m"><code>-m</code><a class="headerlink" href="#-m" title="Permanent link">&para;</a></h2>
 <p><code>python -m</code> lets you run modules as scripts, and it reflects the motto&ndash;&ldquo;batteries included&rdquo;. <a href="http://pythonwise.blogspot.com/2015/01/python-m.html">Here</a> are some powerful features/functions, such as creating a simple http server</p>
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">SimpleHTTPServer</span> <span class="mi">80</span>
 </code></pre></div>
-
 <h2 id="test-and-coverage">test and coverage<a class="headerlink" href="#test-and-coverage" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Coverage.py</li>
@@ -3085,19 +3044,16 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <p>通过 <code>conda</code> 安装镜像在 <code>.condarc</code> 中设置, 如在内地可以用<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">清华的镜像</a>，而通过 <code>pip</code> 详见 <a href="https://mirror.tuna.tsinghua.edu.cn/help/pypi/">pypi 镜像使用帮助</a>，临时使用可以运行</p>
 <div class="highlight"><pre><span></span><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 </code></pre></div>
-
 <h2 id="subplots">subplots 的间距<a class="headerlink" href="#subplots" title="Permanent link">&para;</a></h2>
 <p><code>plt.tight_layout()</code> 可以调节间距，如果有必要，可以带上参数，比如，<a href="https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6">B spline in R, C++ and Python</a></p>
 <div class="highlight"><pre><span></span><code>plt.tight_layout<span class="o">(</span><span class="nv">pad</span> <span class="o">=</span> <span class="m">3</span>.0<span class="o">)</span>
 </code></pre></div>
-
 <h2 id="scatter-size">scatter size<a class="headerlink" href="#scatter-size" title="Permanent link">&para;</a></h2>
 <p>the size is defined by the area, <a href="https://stackoverflow.com/questions/14827650/pyplot-scatter-plot-marker-size">pyplot scatter plot marker size</a></p>
 <h2 id="key-in-sorted"><code>key</code> in <code>sorted</code><a class="headerlink" href="#key-in-sorted" title="Permanent link">&para;</a></h2>
 <p>As said in <a href="https://docs.python.org/3/howto/sorting.html">Key Functions &ndash; Sorting HOW TO</a>, the <code>key</code> function is to specify a function to be called on each list element prior to making comparisons.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">sorted</span><span class="p">(</span><span class="s2">&quot;This is a test string from Andrew&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
 </code></pre></div>
-
 <p>and met such technique in <a href="https://github.com/4ment/marginal-experiments/blob/41124a1fbeed566cd7abc3dc474ea908a5ee8b28/run_simulations.py#L229">4ment/marginal-experiments</a></p>
 <h2 id="typeerror-unhashable-type-list"><code>TypeError: unhashable type: 'list'</code><a class="headerlink" href="#typeerror-unhashable-type-list" title="Permanent link">&para;</a></h2>
 <h3 id="convert-a-nested-list-to-a-list">convert a nested list to a list<a class="headerlink" href="#convert-a-nested-list-to-a-list" title="Permanent link">&para;</a></h3>
@@ -3110,7 +3066,6 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
 <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span>
 </code></pre></div>
-
 <h3 id="hash-a-nested-list">hash a nested list<a class="headerlink" href="#hash-a-nested-list" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,],</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
@@ -3127,22 +3082,18 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
   <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">TypeError</span><span class="p">:</span> <span class="n">unhashable</span> <span class="nb">type</span><span class="p">:</span> <span class="s1">&#39;list&#39;</span>
 </code></pre></div>
-
 <p>refer to <a href="https://stackoverflow.com/questions/13675296/python-typeerror-unhashable-type-list">Python: TypeError: unhashable type: &lsquo;list&rsquo;</a></p>
 <h2 id="__getitem__"><code>__getitem__</code><a class="headerlink" href="#__getitem__" title="Permanent link">&para;</a></h2>
 <p>I came across the usage of <code>__getitem__</code> <a href="https://github.com/MeepMoop/tilecoding/blob/master/example.py#L34">here</a>, which seems powerful, and not only accept</p>
 <div class="highlight"><pre><span></span><code><span class="n">T</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span>
 </code></pre></div>
-
 <p>also supports</p>
 <div class="highlight"><pre><span></span><code><span class="n">T</span><span class="p">[[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]]</span>
 </code></pre></div>
-
 <p>in <a href="https://github.com/szcf-weiya/RLnotes/blob/8e714286c1ba09113c4bf295d89ed774a8c5be5c/ModelFree/mountaincar.py#L68">my code</a>. Then I found <a href="https://stackoverflow.com/a/43627975/">more detailed explanation</a> for the usage.</p>
 <h2 id="temporary-proxy-for-pip">temporary proxy for pip<a class="headerlink" href="#temporary-proxy-for-pip" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 </code></pre></div>
-
 <p>详见 <a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">https://mirrors.tuna.tsinghua.edu.cn/help/pypi/</a></p>
 <h2 id="vs">新式类 vs 经典类<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3156,7 +3107,6 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <p>如果直接在创建时通过 <code>-p</code> 指定路径</p>
 <div class="highlight"><pre><span></span><code>conda create -p ... <span class="nv">python</span><span class="o">=</span>x.x
 </code></pre></div>
-
 <p>注意如果指定路径，则不需要 <code>--name</code>， 因为默认会将路径最后的文件名看成是 env 的 name。</p>
 <p>则 activate 的时候需要加上整个路径。</p>
 <p>再创建之前可以先在 <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#specify-environment-directories-envs-dirs"><code>.condarc</code> 中的 <code>env_dirs</code></a> 项下添加指定的路径。</p>

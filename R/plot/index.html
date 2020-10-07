@@ -1252,7 +1252,6 @@
 <span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="nf">lines</span><span class="p">(</span><span class="nf">predict</span><span class="p">(</span><span class="n">lo</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 </code></pre></div>
-
 <p>参考<a href="https://stackoverflow.com/questions/3480388/how-to-fit-a-smooth-curve-to-my-data-in-r">How to fit a smooth curve to my data in R?</a></p>
 <h2 id="low-level-graphics">Low-Level Graphics<a class="headerlink" href="#low-level-graphics" title="Permanent link">&para;</a></h2>
 <p>Suppose I want to draw the following figure with R,</p>
@@ -1260,11 +1259,9 @@
 <p>At first, I try to use <code>xaxt</code> option to remove the axis, but the box still remains, just same as the <a href="https://stackoverflow.com/questions/4785657/how-to-draw-an-empty-plot">one question in the StackOverflow</a>, and I found a possible solution, directly use</p>
 <div class="highlight"><pre><span></span><code><span class="nf">plot.new</span><span class="p">()</span>
 </code></pre></div>
-
 <p>All is well before I tried to add the text <span><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span>, if I use</p>
 <div class="highlight"><pre><span></span><code><span class="nf">text</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="nf">expression</span><span class="p">(</span><span class="n">rho</span><span class="p">),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
 </code></pre></div>
-
 <p>it is OK, but it is exactly on the axis, not proper, but when I tried smaller <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>-coordinate, such as -0.1, the text cannot appear, which seems out of the figure. I have tried <code>par()</code> parameters, such as <code>mar</code>, but does not work.</p>
 <p>Then I have no idea, and do not know how to google it. And even though I want to post an issue in the StackOverflow. But a <a href="https://www.stat.auckland.ac.nz/~ihaka/120/Notes/ch03.pdf">random reference</a> give me ideas, in which the example saves me,</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">plot.new</span><span class="p">()</span>
@@ -1277,11 +1274,9 @@
 <span class="o">&gt;</span> <span class="nf">title</span><span class="p">(</span><span class="n">ylab</span><span class="o">=</span><span class="s">&quot;A y-axis label&quot;</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="nf">box</span><span class="p">()</span>
 </code></pre></div>
-
 <p>Then I realized that I should add</p>
 <div class="highlight"><pre><span></span><code><span class="nf">plot.window</span><span class="p">(</span><span class="n">xlim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-0.1</span><span class="p">,</span> <span class="m">0.9</span><span class="p">))</span>
 </code></pre></div>
-
 <h2 id="_3">画图间距<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>有时通过 <code>par(mfrow=c(2,1))</code> 画图时间距过大，这可以通过 <code>mar</code> 来调节，注意到</p>
 <ul>
@@ -1311,7 +1306,6 @@
 
 <span class="nf">pairs</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">lower.panel</span> <span class="o">=</span><span class="n">my.lower</span><span class="p">,</span> <span class="n">upper.panel</span> <span class="o">=</span> <span class="n">my.upper</span><span class="p">)</span>
 </code></pre></div>
-
 <p>参考 <a href="https://stackoverflow.com/questions/15625510/different-data-in-upper-and-lower-panel-of-scatterplot-matrix">Different data in upper and lower panel of scatterplot matrix</a></p>
                 
               

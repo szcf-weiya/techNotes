@@ -1278,7 +1278,6 @@
 <p>服务器后端通过 php 获取 access_token, ticket, 并计算签名，然后网页通过 ajax 访问获取 wx.config 的信息，经测试能够大致实现，但是当在又拍云中申请完 https 证书，通过 https 访问服务器，总是报出如下的错误信息</p>
 <div class="highlight"><pre><span></span><code>{&quot;msg&quot;:&quot;connection refused&quot;,&quot;code&quot;:&quot;50302004&quot;,&quot;id&quot;:&quot;6ace947be627cf38ecd5065e36f9f25f&quot;}
 </code></pre></div>
-
 <p>这样不能用 https 的话，在博客页面上访问 http 的资源不够清真。</p>
 <h2 id="flask">后端为 flask<a class="headerlink" href="#flask" title="Permanent link">&para;</a></h2>
 <p>一开始其实是准备用 flask，但考虑到端口转发没弄，后来才发现端口转发其实很简单，php 本身不也是端口转发么？用 python 还是比较清真的。但似乎 https 仍存在问题，我现在怀疑很可能是当时有次配置错了，导致持续反应不过来，因为偶尔是正常的。搞定了基本代码</p>

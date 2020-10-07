@@ -1165,7 +1165,6 @@
 <p>因为老板说先不把 appendix 放进去，所以在本地生成好 pdf 文件，然后按照下列命令</p>
 <div class="highlight"><pre><span></span><code>$ pdftk full-pdf.pdf cat <span class="m">1</span>-30 output outfile.pdf
 </code></pre></div>
-
 <p>进行剪切，再上传，然后大概说这不是 tex 产生的文件，并且说 partially rejected 之类的，不能进行下去了。本以为可能是剪切的原因。后来本地手动把 appendix tex 去掉，编译生成新的 pdf，再进行上传，还是说 partially rejected 之类的。所以大概还真的如网友所说的，只能传 tex 吧。只是如果这样，干嘛要写其它可能性？！</p>
 <p>后面就乖乖传 tex，然而 arxiv 支持的版本只有 TeXLive2016，而且竟然要自己上传 biber 编译好的 <code>.bbl</code> 文件，所以第一次报出的错误是版本不匹配，说期待 biber 2.8，而我本地上次更新装了 TeXLive 2020，其中 biber 是 2.14。后来翻了几个服务器，要么根本不是装的 texlive，要么是我后来手动装的 TeXLive 2018。而装一个 texlive 的时间令人难以忘记，即便现在网速比较好，也不容乐观，而且发现存有<a href="https://www.tug.org/historic/">旧版本 texlive</a> 的镜像似乎只有 US、FR 等地孤零零的那几个，而不像最新版本那样世界各地都有镜像，估摸着网速不会怎么样。</p>
 <p>首先想试试能不能直接降低 biber 的版本，也确实可以直接<a href="https://github.com/plk/biber">从 github 单独安装 biber</a>，然而一开始从 <a href="https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.8/">SourceForge</a> 下载了 <code>.tar.gz</code> 的源文件，下载之后 <code>bin/biber</code> 并用不了，且报错，</p>
@@ -1176,12 +1175,10 @@
 <p>正当一筹莫展的时候，看见了 <a href="https://hub.docker.com/r/makisyu/texlive-2016/">docker 版本的 texlive 2016</a>！这可是一个神器，根据少数不多的几个经历，这个速度非常快。</p>
 <div class="highlight"><pre><span></span><code>$ docker pull makisyu/texlive-2016
 </code></pre></div>
-
 <p>事实证明也确实如此，一两分钟就下好了，后面速度变慢是因为磁盘快满了，删文件的速度都比不上下载的速度，磁盘快满了，然后直接卡掉了，然而这时也快下载完了，本以为功亏一篑的时候，系统弹出窗口说，磁盘空间不够了，是否清理垃圾箱，一点清理，多出了 2,3 G 的空间，最近一直都没清理垃圾箱了，瞬间把我救了回来。</p>
 <p>书到用时方恨少，觉得之前没有好好整理 docker 的用法，首先运行命令为</p>
 <div class="highlight"><pre><span></span><code>$ docker run --rm --volume <span class="nv">$PWD</span>:/workdir --workdir /workdir makisyu/texlive-2016 pdflatex main.tex
 </code></pre></div>
-
 <p>踩了一些坑，才明白</p>
 <ul>
 <li><code>$PWD:/workdir</code> 表示文件夹映射，当前所在文件夹 <code>$PWD</code> 映射到 docker 中的 <code>workdir</code></li>
@@ -1189,15 +1186,12 @@
 <p>而查看生成的文件需要进入 docker，</p>
 <div class="highlight"><pre><span></span><code>$ docker run -i -t --rm --volume <span class="nv">$PWD</span>:/workdir --workdir /workdir --user <span class="m">1001</span>:1001 makisyu/texlive-2016 /usr/bin/bash
 </code></pre></div>
-
 <p>另外还有一个很关键的点，怎么<a href="https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host">把生成的文件导出来</a>，</p>
 <div class="highlight"><pre><span></span><code>$ docker cp &lt;containerId&gt;:/file/path/within/container /host/path/target
 </code></pre></div>
-
 <p>其中 <code>&lt;containerId&gt;</code> 并不是 <code>makisyu/texlive-2016</code>，而是通过 </p>
 <div class="highlight"><pre><span></span><code>$ docker container ls 
 </code></pre></div>
-
 <p>查看到的，这里注意不要复制到映射的文件里面，不然会出现无限递归。</p>
 <p>当然事情并没有到此结束，首先发现 biber 的版本是 2.7，隐隐有点担心，但感觉问题应该不大。所以继续编译，然后用此版本的 biber 编译时才发现 <code>.bib</code> 文件中有很多非 ascii 码，这些会被转化成 <code>\x{...}</code> 的形式，继续 pdflatex 编译时便会报错，一开始报出 <code>mathbf only in math mode</code> 的错误时，还一头雾水，咋跟 mathbf 有关，后来才意识到自己重定义了 <code>\x</code> 为 <code>\mathbf{x}</code>，也顺藤摸瓜才发现非 ascii 码被转换成了 <code>\x{...}</code>。</p>
 <p>本以为非 ascii 码是因为英文字母顶上的帽子带来的，但是根据这个列表修改了其中一条文献后，才发现自己想太简单了，仍然会报出该条文献有非 ascii 码。后来才意识到最简单的方法是直接在 docker 里面打开 <code>.bib</code>，这个最好必须在 docker 中打开，似乎因为我本地语言环境可能不会正常展示非 ascii 字符，因为默认支持了 UTF8，除非在 vim 中<a href="https://stackoverflow.com/questions/16987362/how-to-get-vim-to-highlight-non-ascii-characters">用 <code>/[^\x00-\x7F]</code> 把 non-ascii 高亮出来</a>，这才发现很多字母真的并不是正常的英文字母，比如 <code>efﬁcient</code> 并不是 <code>efficient</code>，诸如此类的还有很多。这些一般都是 abstract 里面的内容，因为从 zotero 导出参考文献时会包含 abstract。大胆猜一下原因，可能是因为 zotero 采用 ocr 等技术识别，然后出现了偏差？！看来新版本的 texlive 容错性更强，不过我感觉主要是语言支持的问题。</p>

@@ -1322,21 +1322,17 @@
 T460p $ ssh -L <span class="m">30003</span>:localhost:30003 SID@SERVER
 T460p $ ssh -p <span class="m">30003</span> weiya@127.0.0.1
 </code></pre></div>
-
 <p>复制的话也变得很简单了，</p>
 <div class="highlight"><pre><span></span><code>T460p $ ssh -P <span class="m">30003</span> file weiya@127.0.0.1:
 </code></pre></div>
-
 <h2 id="_2">禁止合盖休眠<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>既然作为服务器了，没必要继续直接操作了，于是想合上盖子，但是会自动进入休眠状态（准确说是 suspend，而不是 hibernate），这时连接便都断开了。但是在设置界面也没找到直接关闭休眠的，最后在 <a href="https://tipsonubuntu.com/2018/04/28/change-lid-close-action-ubuntu-18-04-lts/">How to Change Lid Close Action in Ubuntu 18.04 LTS</a> 中找到解决方案，</p>
 <div class="highlight"><pre><span></span><code>sudo vi /etc/systemd/logind.conf
 </code></pre></div>
-
 <p>commenting out <code>HandleLidSwitch=suspend</code> and changes it to <code>HandleLidSwitch=ignore</code></p>
 <p>最后需要 </p>
 <div class="highlight"><pre><span></span><code>systemctl restart systemd-logind.service
 </code></pre></div>
-
 <p>没想到这个也能使连接断开，于是需要继续连接一遍。</p>
 <h2 id="_3">音乐播放器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>目标：通过 ssh 远程打开音乐，但是仍在 G40 上播放，而不是像图象一样 forward 到本地播放。</p>
@@ -1356,7 +1352,6 @@ T460p $ ssh -p <span class="m">30003</span> weiya@127.0.0.1
 <div class="highlight"><pre><span></span><code>$ sudo apt-get install sox
 $ sudo apt-get install libsox-fmt-all
 </code></pre></div>
-
 <p>播放的界面很清爽但不简单，</p>
 <p><img alt="" src="../music.gif" /></p>
 <p>其中 <code>-v 0.5</code> 调节音量。</p>
@@ -1375,16 +1370,13 @@ $ sudo apt-get install libsox-fmt-all
     <span class="k">fi</span>
 <span class="k">done</span>
 </code></pre></div>
-
 <p>但是如果想关掉，只能 <code>Ctrl-C</code> 了，而且要连续 <code>Ctrl-C</code> 了。其实主要的是并不支持所有格式，比如<code>.ape</code>，然后我便试了试 <code>nvlc</code>, <a href="https://help.ubuntu.com/community/PlayMusicFromCommandLine">Ubuntu documentation: PlayMusicFromCommandLine</a> 列出了几种可能的从终端播放音乐的方法。</p>
 <p>注意 <code>nvlc</code> 不需要预装 <code>vlc</code>，只需要</p>
 <div class="highlight"><pre><span></span><code>$ sudo apt-get install vlc-bin
 </code></pre></div>
-
 <p>因为一开始误以为是 vlc 自带的，但是装了 vlc 之后，</p>
 <div class="highlight"><pre><span></span><code>$ sudo snap install vlc
 </code></pre></div>
-
 <p>并没有 <code>nvlc</code>，而直接敲 <code>nvlc</code> 就可以拿到提示，</p>
 <div class="highlight"><pre><span></span><code>$ nvlc
 
@@ -1392,7 +1384,6 @@ Command <span class="s1">&#39;nvlc&#39;</span> not found, but can be installed w
 
 sudo apt install vlc-bin
 </code></pre></div>
-
 <p>安装好之后，直接 <code>vlc *</code> 便可以顺序播放所有歌曲，</p>
 <p><img alt="" src="../music-nvlc.gif" /></p>
 <p>关键是其功能远不如此，完全就是一个音乐播放器了，比如通过 <code>a, z</code> 键调节音量，更多功能键入 <code>h</code> 获取帮助，而且支持 <code>.ape</code> 格式！</p>
@@ -1401,27 +1392,22 @@ sudo apt install vlc-bin
 <div class="highlight"><pre><span></span><code><span class="c1">#  AutomaticLoginEnable = true</span>
 <span class="c1">#  AutomaticLogin = user1</span>
 </code></pre></div>
-
 <p>改成 </p>
 <div class="highlight"><pre><span></span><code><span class="nv">AutomaticLoginEnable</span> <span class="o">=</span> <span class="nb">true</span>
 <span class="nv">AutomaticLogin</span> <span class="o">=</span> weiya
 </code></pre></div>
-
 <p>下一步还需要自动发起 ssh 连接至跳板服务器，这个可以再 <code>.profile</code> 中添加</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;./autossh2ln001.sh&quot;</span> &gt;&gt; .profile
 </code></pre></div>
-
 <p>不过需要注意到如果存在 <code>.bash_profile</code> 或 <code>.bash_login</code>，则需要更改这些文件，因为只按顺序调用这三个的第一个。</p>
 <p>因为音乐文件是通过本地百度云下载的，所以需要复制过去，但是如果 <code>scp</code> 的话，似乎没有选项支持 disable overwrite，然后看到 <a href="https://unix.stackexchange.com/questions/14191/scp-without-replacing-existing-files-in-the-destination">scp without replacing existing files in the destination</a>，推荐 <code>rsync</code>，增量更新，想起上次在 pluskid 的博客中也看到了，所以便准备用它，不过 ssh 的端口需要额外指定，<a href="https://stackoverflow.com/questions/4549945/is-it-possible-to-specify-a-different-ssh-port-when-using-rsync">Is it possible to specify a different ssh port when using rsync?</a>，最后的命令为</p>
 <div class="highlight"><pre><span></span><code>$ rsync -auv -e <span class="s2">&quot;ssh -p 30003&quot;</span> /home/weiya/OneDrive/CloudMusic/ weiya@127.0.0.1:~/Music/
 </code></pre></div>
-
 <h2 id="mount-windows-from-terminal">Mount Windows from Terminal<a class="headerlink" href="#mount-windows-from-terminal" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://www.tecmint.com/mount-windows-partition-in-ubuntu/">How to Mount Windows Partitions in Ubuntu</a></p>
 <div class="highlight"><pre><span></span><code>sudo mkdir /media/weiya/WIN
 sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
 </code></pre></div>
-
 <p>其中 <code>/dev/sda4</code> 是通过 <code>sudo lsblk</code> 确定的。</p>
 <h2 id="boot-into-text-mode">Boot into Text mode<a class="headerlink" href="#boot-into-text-mode" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="http://ubuntuguide.net/boot-into-text-mode-and-login-automatically">Boot into Text Mode and Login Automatically</a></p>
@@ -1431,13 +1417,11 @@ sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
 <div class="highlight"><pre><span></span><code><span class="c1"># GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;</span>
 <span class="nv">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&quot;text&quot;</span>
 </code></pre></div>
-
 <p>修改后运行 <code>sudo update-grub</code></p>
 <p>而 text 模式下免密码登录直接修改 <code>/etc/init/tty1.conf</code></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># exec /sbin/getty -8 38400 tty1</span>
 <span class="nb">exec</span> /sbin/getty -8 <span class="m">38400</span> tty1 -a weiya
 </code></pre></div>
-
 <p>这个跟上文修改 <code>/etc/gdm3/custom.conf</code> 实现自登录应该不一样，因为 <code>gdm3</code> 是跟图形界面有关的程序。</p>
 <div class="admonition tip">
 <p class="admonition-title">display managers</p>
@@ -1447,7 +1431,6 @@ sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
 <p>如果要从 text mode 回到图形界面</p>
 <div class="highlight"><pre><span></span><code>sudo lightdm
 </code></pre></div>
-
 <p>但是很奇怪的一点是，以后每次重启后，都会进入到图形界面，不过启动过程确实是 text 的。</p>
 <h2 id="_5">电量查询<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>上文提到笔记本耗电完重启，这是因为其配套的充电器充不进电，当换成当前笔记本的适配器后（功率略高一些），虽然仍充不进电，但是能够一直保持电量，一直都是 10% 左右，倘若换成其配套的充电器，很快就会自动关机了。所以想到要不<a href="https://www.imooc.com/article/29599">查看一下电池状态</a>，一查吓一跳，原来电池已经快被榨干了，</p>
@@ -1474,22 +1457,18 @@ sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
     capacity:            <span class="m">26</span>.1067%
     icon-name:          <span class="s1">&#39;battery-caution-charging-symbolic&#39;</span>
 </code></pre></div>
-
 <p>试着解读一下信息，现在电池最大容量已经耗到最初的 26.1067%，而当前一直充电时还只能达到这个的 9%，也就是 <code>0.261067*0.09 = 0.02349603</code>。</p>
 <h2 id="_6">拔掉电源自动关机<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="How to shutdown automatically when AC power is not available">https://askubuntu.com/questions/854570/how-to-shutdown-automatically-when-ac-power-is-not-available</a></p>
 <p>新建</p>
 <div class="highlight"><pre><span></span><code>sudo vi /etc/udev/rules.d/50-ac-unplugged.rules
 </code></pre></div>
-
 <p>然后写入</p>
 <div class="highlight"><pre><span></span><code><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;power_supply&quot;</span>, ENV<span class="o">{</span>POWER_SUPPLY_ONLINE<span class="o">}==</span><span class="s2">&quot;0&quot;</span>, <span class="nv">RUN</span><span class="o">+=</span><span class="s2">&quot;/sbin/shutdown now&quot;</span>
 </code></pre></div>
-
 <p>保存文件并运行</p>
 <div class="highlight"><pre><span></span><code>sudo udevadm control --reload-rules
 </code></pre></div>
-
 <p>拔掉电源后确实自动关机了！！</p>
 <h2 id="_7">插上电源自动开机<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>这个似乎<a href="https://superuser.com/questions/984934/i-want-my-pc-to-turn-on-automatically-when-power-is-connected">需要 BIOS 设置</a>，而且是在 Power Management Setup 中进行，但是通过 <code>Fn+F2</code> 进入 BIOS 后，并没有这个菜单，可能还是不支持吧。不过话说回来这个功能没有自动关机那么必要。</p>

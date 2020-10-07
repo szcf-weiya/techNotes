@@ -1163,7 +1163,6 @@
 <p>Same results with the previous try, cannot start it after installing it, and no error thrown in the install procedure. But today I went further, I found that after I type</p>
 <div class="highlight"><pre><span></span><code>/opt/baidunetdisk/baidunetdisk 
 </code></pre></div>
-
 <p>it throws an error,</p>
 <blockquote>
 <p>This program requires version 3.3.0 of the Protocol Buffer runtime library, but the installed version is 2.6.1.</p>
@@ -1177,7 +1176,6 @@
 <div class="highlight"><pre><span></span><code>sudo apt-get purge libprotobuf-lite9v5
 sudo apt-get install libprotobuf-lite9v5
 </code></pre></div>
-
 <p>the first step throws the dependencies warnings, related to <code>libqt5</code>, then I uninstall <code>libqt5</code>. Unfortunately, many running programs then exit when the uninstalling procedure keeps going, and I found that I make a big mistake!!</p>
 <p>Now, maybe the best way is to update my system from Ubuntu 16.04 to Ubuntu 18.04 to recover the broken system. Actually I have updated my old PC from 16.04 to 18.04, seems quite fluent.</p>
 <p>However, for this PC, there are many disappointing problem.</p>
@@ -1185,26 +1183,21 @@ sudo apt-get install libprotobuf-lite9v5
 sudo apt-get dist-upgrade
 sudo apt autoremove
 </code></pre></div>
-
 <p>it is necessary to modify <code>/etc/update-manager/release-upgrades</code> from <code>never</code> to <code>lts</code>, otherwise it cannot detect new release version. Then run</p>
 <div class="highlight"><pre><span></span><code>sudo <span class="k">do</span>-release-upgrade
 </code></pre></div>
-
 <p><em>refer to <a href="https://jingyan.baidu.com/article/2f9b480de8b64941cb6cc2a1.html">将 Ubuntu 16.04 LTS 升级到 Ubuntu 18.04 LTS</a></em></p>
 <p>Due to previous HK Ubuntu mirror, the speed is quite slow, then the first thing I need to do is to replace the mirror in <code>sources.list</code> with aliyun by <code>sed</code> operation via</p>
 <div class="highlight"><pre><span></span><code>sudo sed -i <span class="s2">&quot;s#http://ftp.cuhk.edu.hk/pub/Linux/ubuntu/#http://mirrors.aliyun.com/ubuntu/#&quot;</span> sources.list
 </code></pre></div>
-
 <p>Then go on. However, I mistook enter something in the middle, and stop the installation procedure, that is might be part of the reason why I met so many problems.</p>
 <p>Try to run <code>do-release-upgrade</code> again, but it said no new release version, and told me to upgrade the software in the current version. Actually it is Ubuntu 18.04 now, checking by</p>
 <div class="highlight"><pre><span></span><code>lsb_release -a
 </code></pre></div>
-
 <p>then I run </p>
 <div class="highlight"><pre><span></span><code>sudo apt-get update
 sudo apt-get upgrade
 </code></pre></div>
-
 <p>after the first run, I think I am OK. But in the rebooting, I cannot enter into the system, the Ubuntu logo is twinkling, and sometimes I can switch to the command window, it holds with message</p>
 <blockquote>
 <p>a start job is running for hold until boot process finishes up（X s/unlimit）</p>
@@ -1215,7 +1208,6 @@ sudo apt-get upgrade
 sudo apt-get install --reinstall ubuntu-desktop
 sudo apt-get install unity
 </code></pre></div>
-
 <p>But the first thing I need to do is to stop it by power, and then choose to start an advanced session in the grub session, and I chose a <code>recovery mode</code>, then I entered into a command line. And I can continue to fix the problem.</p>
 <p>But before I can install the <code>desktop</code>, repeat to run <code>update</code> and <code>upgrade</code>, then updating texlive from 2015 to 2017 throws an error,</p>
 <blockquote>
@@ -1226,12 +1218,10 @@ dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</p>
 <p>try <code>install -f</code>, but does not work, the solution is</p>
 <div class="highlight"><pre><span></span><code>sudo dpkg -i --force-all /var/cache/apt/archives/texlive-fonts-extra-doc_2017.20180305-2_all.deb
 </code></pre></div>
-
 <p>refer to <a href="https://debug.fanzheng.org/post/problem-when-update-texlive.html">在apt更新texlive到2017的问题</a></p>
 <p>then I reboot to test, but the internet broken, <code>ifconfig</code> only returns <code>lo</code>, but <code>ifconfig -a</code> shows all possible cards, I have tried <code>service restart</code> like in <a href="https://blog.csdn.net/zhukangle/article/details/75370538">UBUNTU ifconfig只有lo</a>, but it does not work, then I found the solution worked for me</p>
 <div class="highlight"><pre><span></span><code>sudo dhclient enp**
 </code></pre></div>
-
 <p>in <a href="https://blog.csdn.net/weixin_42116341/article/details/81410805">Ubuntu输入ifconfig找不到IP地址，只有lo问题</a>.</p>
 <p>Reboot after the <code>desktop</code> is successfully installed, I can enter into the graphical system!!</p>
                 

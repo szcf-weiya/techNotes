@@ -1860,7 +1860,6 @@
 <div class="highlight"><pre><span></span><code>sudo apt-get install fcitx-bin
 sudo apt-get install fcitx-table
 </code></pre></div>
-
 <p>然后将输入法切换成 fcitx，在设置中语言那里，</p>
 <p>最后下载按照搜狗输入法，安装时我出现这样的问题导致安装失败，</p>
 <blockquote>
@@ -1869,11 +1868,9 @@ sudo apt-get install fcitx-table
 <p>参考 <a href="https://askubuntu.com/questions/883506/install-sogoupinyin-on-ubuntu-16-04lts-with-error-gtk-immodule">Install sogoupinyin on ubuntu 16.04LTS, with error &lsquo;Gtk/IMModule&rsquo;</a>，将 <code>/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override</code> 中的 <code>IMModule</code> 一行改成</p>
 <div class="highlight"><pre><span></span><code><span class="nv">overrides</span><span class="o">={</span><span class="s1">&#39;Gtk/IMModule&#39;</span>:&lt;<span class="s1">&#39;fcitx&#39;</span>&gt;<span class="o">}</span>
 </code></pre></div>
-
 <p>然后再运行</p>
 <div class="highlight"><pre><span></span><code>sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
 </code></pre></div>
-
 <p>再次安装便成功了。</p>
 <p>最后在语言栏中添加搜狗拼音的输入法即可。</p>
 <p>参考 <a href="https://blog.csdn.net/fx_yzjy101/article/details/80243710">解决Ubuntu 18.04中文输入法的问题，安装搜狗拼音</a></p>
@@ -1891,14 +1888,12 @@ sudo apt-get install fcitx-table
 <p>Then finally I decided to install the latest TeXLive 2020, <a href="https://tug.org/texlive/quickinstall.html">TeX Live - Quick install</a>, follow the instructions, but note that the mirror url should append <code>path/systems/texlive/tlnet</code>.</p>
 <div class="highlight"><pre><span></span><code>install-tl --location http://mirror.example.org/ctan/path/systems/texlive/tlnet
 </code></pre></div>
-
 <p>And note that the <a href="https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu">steps for compeletely removing the installed TeXLive</a>.</p>
 <p>If without root privilege, when running <code>install-tl</code>, type <code>D</code> to change the directory, and actually changing the first <code>&lt;1&gt;</code> would change all other directories.</p>
 <h2 id="okular">Okular<a class="headerlink" href="#okular" title="Permanent link">&para;</a></h2>
 <p>当初使用 Ubuntu 16.04 时，Okular 是通过 snap 安装的，可能参考了<a href="https://askubuntu.com/questions/976248/how-to-install-latest-version-of-okular-on-ubuntu-16-04">这个</a>?</p>
 <div class="highlight"><pre><span></span><code>sudo snap install okular
 </code></pre></div>
-
 <p>但是更新到 Ubuntu 18.04 后，发现在移动硬盘的文档打不开，而之前没碰到过这样的问题，一开始还以为是移动硬盘命名问题，之前曾经碰到过某个程序（忘记了）不允许路径存在空格，而移动硬盘默认名字有空格，于是曾经更改过名字（忘记了怎么更改）。原本以为可能更新系统使得这个更改失效了，还想着再找找怎么更改，但是找到一堆怎么更改卷标名的，最后才发现路径中名字确实应该更改成功了。</p>
 <p>所以问题还是回到 okular 本身，通过 snap 和 apt 安装是两个不同的版本，图标也有点差异，然后发现也有人跟我有<a href="https://askubuntu.com/questions/1137830/cannot-open-pdf-files-in-mounted-usb-drive-using-okular">同样的问题</a>，有人回复说</p>
 <blockquote>
@@ -1907,7 +1902,6 @@ sudo apt-get install fcitx-table
 <p>于是卸掉 snap 版的 okular，转而安装 apt 版本的，</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install okular
 </code></pre></div>
-
 <p>发现有些图标不能正常显示，网上也找到了类似的问题，</p>
 <ul>
 <li><a href="https://askubuntu.com/questions/1007563/kde-application-icon-not-displayed-in-ubuntu">KDE application icon not displayed in Ubuntu</a></li>
@@ -1928,7 +1922,6 @@ $ sudo apt install systemsettings kde-config-gtk-style kde-config-gtk-style-prev
 
 Then, run systemsettings5, click on Application Style, <span class="k">select</span> Oxygen as a Fallback theme, click on Apply.
 </code></pre></div>
-
 <p>最后我的配置是</p>
 <p><img alt="" src="../okular-icons.png" /></p>
 <p>可以尝试不同配置，因为刚开始打开的，似乎并不是之前系统的配置。</p>
@@ -1936,13 +1929,11 @@ Then, run systemsettings5, click on Application Style, <span class="k">select</s
 <p>okular 的 note 功能支持 LaTeX，当输入 <code>$$...$$</code> 时会提示要不要转换为 latex，点击后但是报错，</p>
 <div class="highlight"><pre><span></span><code>latex is not executable
 </code></pre></div>
-
 <p>注意到 <code>latex</code> 的 PATH 是定义在 <code>.bashrc</code> 中，而通过 zotero 调用 okular 时并不会 source <code>.bashrc</code>，只有通过 bash shell 调用的程序采用 source 到 .bashrc，也就是在终端中调用 okular 时，latex 显示正常。</p>
 <p>研究图形界面程序调用 path 的机制似乎是一种解决方案，但觉得可能过于复杂，其实之前在 atom 中也出现过类似的问题。可能的方案是在 <code>.profile</code> 中添加 PATH，可能有用的<a href="https://medium.com/@abhinavkorpal/bash-profile-vs-bashrc-c52534a787d3">参考博客</a>。</p>
 <p>于是我采用更简单的方案，在 <code>/usr/bin</code> 中添加 <code>latex</code> 的 soft link，添加后报了新错，</p>
 <div class="highlight"><pre><span></span><code>dvipng is not executable
 </code></pre></div>
-
 <p>但至少证明这条思路是可行的，于是继续添加 <code>dvipng</code> 的 soft link，最后解决了问题！</p>
 <h2 id="wechat-in-linux">WeChat in Linux<a class="headerlink" href="#wechat-in-linux" title="Permanent link">&para;</a></h2>
 <p>起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！</p>
@@ -1958,16 +1949,13 @@ Then, run systemsettings5, click on Application Style, <span class="k">select</s
  winehq-stable : Depends: wine-stable <span class="o">(=</span> <span class="m">5</span>.0.0~bionic<span class="o">)</span>
 E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by held packages.
 </code></pre></div>
-
 <p>solution</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># (re)install gstreamer1.0-plugins-good and gstreamer1.0-plugins-ugly</span>
 sudo apt-get install gstreamer1.0-plugins-good
 sudo apt-get install gstreamer1.0-plugins-ugly
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code>Error: winehq-stable : Depends: wine-stable <span class="o">(=</span> <span class="m">5</span>.0.0~bionic<span class="o">)</span>
 </code></pre></div>
-
 <p>It is due to <a href="https://forum.winehq.org/viewtopic.php?f=8&amp;t=32192">FAudio for Debian 10 and Ubuntu 18.04</a>, and </p>
 <blockquote>
 <p>The quickest and easiest way to satisfy the new dependency is to download and install both the i386 and amd64 libfaudio0 packages before attempting to upgrade or install a WineHQ package.</p>
@@ -1976,11 +1964,9 @@ sudo apt-get install gstreamer1.0-plugins-ugly
 <div class="highlight"><pre><span></span><code>curl -sL https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key <span class="p">|</span> sudo apt-key add -
 sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./&#39;</span>
 </code></pre></div>
-
 <p>but seems not due to this, and follow the instruction in <a href="https://github.com/lutris/docs/blob/master/WineDependencies.md">docs/WineDependencies.md</a></p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386
 </code></pre></div>
-
 <p>then the problem is solved. And continue to follow the steps in <a href="https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux">WeChat Desktop on Linux</a></p>
 <h3 id="_2">窗口轮廓阴影<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>当从微信切换到其他软件时，会留下一个窗口轮廓阴影。再一次感叹 google 的强大，本来这个问题我都不知道怎么搜索，但只给了 “wine wechat” 和 “窗口轮廓” 这两个关键词后，就找到了两种解决方案：</p>
@@ -2004,7 +1990,6 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 <p>这个关键点在于，使其能够同时运行 wine 和 <code>disable-wechat-shadow.py</code> 脚本文件，原 <code>WeChat.desktop</code> 文件为</p>
 <div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span> wine C:<span class="se">\\\\</span>windows<span class="se">\\\\</span>command<span class="se">\\\\</span>start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start<span class="se">\\</span> Menu/Programs/WeChat/WeChat.lnk
 </code></pre></div>
-
 <p>第一种尝试便是直接加上 <code>&amp; python3 /home/weiya/disable-wechat-shadow.py</code>，但是似乎当做了 wine 的 argument，这一点<a href="https://askubuntu.com/a/461495">@mango</a>也指出</p>
 <blockquote>
 <p>The <code>Exec</code> key must contain a command line. A command line consists of an executable program optionally followed by one or more arguments.</p>
@@ -2012,7 +1997,6 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 <p>第二种便是通过 <code>sh -c</code>，即</p>
 <div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span> sh -c <span class="s2">&quot;wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py&quot;</span>
 </code></pre></div>
-
 <p>但是这个经常报出错误</p>
 <blockquote>
 <p>key &ldquo;Exec&rdquo; in group &ldquo;Desktop Entry&rdquo; contains a quote which is not closed</p>
@@ -2025,7 +2009,6 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 <p>后来跑去研究下 <code>wine</code> 的命令，想弄清楚那一长串 argument 是什么意思，才明白这应该是句 <code>wine start</code>，而 <code>/Unix</code> 是为了用 linux 格式的路径，详见 <a href="https://wiki.winehq.org/Wine_User%27s_Guide">3.1.1 How to run Windows programs from the command line</a>，所以为了避免可能的转义问题，首先可以把 <code>wine C:\\\\windows\\\\command\\\\start.exe</code> 替换成 <code>wine start</code>，而空格转义还是用 <code>\</code>，即最终 <code>WeChat.desktop</code> 文件为</p>
 <div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span> sh -c <span class="s2">&quot;wine start /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py&quot;</span>
 </code></pre></div>
-
 <p>这个版本终于成功了！</p>
 <p>注意到 <code>env</code> 不要删掉，虽然在 <code>.bashrc</code> 中有设置，但是通过 desktop 启动时，并不会 source <code>.bashrc</code>，所以仍需保留这句设置，不然 <code>wine</code> 会找不到。</p>
 <h3 id="window-id">window id<a class="headerlink" href="#window-id" title="Permanent link">&para;</a></h3>
@@ -2036,14 +2019,12 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 <p>而且确实好几次我阴影对应的窗口就是 <code>0xXXXX0014</code>，所以直接用了代码。但是后来方向，有时代码不起作用，这时才意识到可能 id 没对上。果然，这时候变成了 <code>0xXXXX0015</code>。不过，“不同窗口层次是固定的” 这个规律仍适用，而且我发现刚好差 8 （虽然这一点对原作者好像不适用），所以把第 25 行改成</p>
 <div class="highlight"><pre><span></span><code><span class="n">shadow</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8</span><span class="p">)</span>
 </code></pre></div>
-
 <p>顺带学一下 python 怎么处理十六进制，<code>hex()</code> 会把十进制数转化为十六进制，并以 <code>0x</code> 开头的字符串表示。</p>
 <p>到这里，这个问题差不多是解决了。</p>
 <h3 id="cannot-send-images">cannot send images<a class="headerlink" href="#cannot-send-images" title="Permanent link">&para;</a></h3>
 <p>Try to use the approach </p>
 <div class="highlight"><pre><span></span><code>sudo apt install libjpeg62:i386
 </code></pre></div>
-
 <p>suggested in <a href="https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/32">微信无法发送图片可以尝试一下这个方法 #32</a>, but it does not work after <code>wineboot -u</code> and <code>winboot -r</code> and system reboot. And I even install <code>libjpeg8:i386</code> and <code>libjpeg9:i386</code>, still does not work, and then I doubt if I miss other dependencies, such as <a href="https://github.com/wszqkzqk/deepin-wine-ubuntu/commit/5300834405de1388893f2cedeb5c74f6b307a4f8#diff-4398b218af11cf74c553720d61cdff90">debian-special-pkgs/deepin-wine_2.18-12_i386/DEBIAN/control</a>, but I the <code>libjpeg-turbo8</code> and <code>libjpeg-turbo8:i386</code> had been installed, then I had no idea.</p>
 <p>Notice that one comment in <a href="https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/32#issuecomment-617709981">微信无法发送图片可以尝试一下这个方法 #32</a></p>
 <blockquote>
@@ -2072,7 +2053,6 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 <p>进入休眠状态后，睡了一晚上，第二天早上打开 chrome 便黑屏了，然后采用</p>
 <div class="highlight"><pre><span></span><code>chrome -disable-gpu
 </code></pre></div>
-
 <p>再设定</p>
 <p><div class="highlight"><pre><span></span><code>Use hardware acceleration when available
 </code></pre></div>
@@ -2082,7 +2062,6 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mi">0531</span><span class="o">/</span><span class="mf">160811.236665</span><span class="o">:</span><span class="n">ERROR</span><span class="o">:</span><span class="n">nacl_helper_linux</span><span class="o">.</span><span class="n">cc</span><span class="p">(</span><span class="mi">308</span><span class="p">)]</span> <span class="n">NaCl</span> <span class="n">helper</span> <span class="n">process</span> <span class="n">running</span> <span class="n">without</span> <span class="n">a</span> <span class="n">sandbox!</span>
 <span class="n">Most</span> <span class="n">likely</span> <span class="n">you</span> <span class="n">need</span> <span class="n">to</span> <span class="n">configure</span> <span class="n">your</span> <span class="n">SUID</span> <span class="n">sandbox</span> <span class="n">correctly</span>
 </code></pre></div>
-
 <p>通过 <code>ps -aef | grep chrome</code> 查看 chrome 的运行参数，没有发现 <code>no-sandbox</code>，即默认应该是开启的，所以现在不清楚了。</p>
 <h2 id="atom">Atom<a class="headerlink" href="#atom" title="Permanent link">&para;</a></h2>
 <h3 id="atom_1">atom 自动更新<a class="headerlink" href="#atom_1" title="Permanent link">&para;</a></h3>
@@ -2090,18 +2069,15 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 <div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:webupd8team/atom
 sudo apt-get update
 </code></pre></div>
-
 <h3 id="proxy">proxy 设置<a class="headerlink" href="#proxy" title="Permanent link">&para;</a></h3>
 <p>Atom 的包管理器是 <a href="https://github.com/atom/apm#behind-a-firewall">apm</a>，其中有介绍怎么设置 proxy，即</p>
 <div class="highlight"><pre><span></span><code>apm config <span class="nb">set</span> strict-ssl <span class="nb">false</span>
 apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
 </code></pre></div>
-
 <h3 id="spell-check">spell-check<a class="headerlink" href="#spell-check" title="Permanent link">&para;</a></h3>
 <p>By default, one of the core package <a href="https://github.com/atom/spell-check">spell-check</a> does not check <code>.tex</code> file, although there is <a href="https://github.com/AtomLinter/linter-spell-latex">another package</a> for checking the spelling in <code>.tex</code>, it does not work and not recently update, then I investigate the <code>spell-check</code> package to add the support for <code>.tex</code>. Actually, it is quite easy, just to add the scope of the <code>.tex</code> file, which can be found by <code>Editor: Log Cursor Scope</code>. So I add <code>text.tex.latex</code>, but it would be annoying to highlighter the native latex command, such as <code>\newcommand</code>, then I found that there is a <code>Excluded Scopes</code> in the config page of <code>spell-check</code>, so we only need to add the scope name of such native latex command, which again can be found by <code>Editor: Log Cursor Scope</code> if we put the cursor on the line of the commands. Finally, I add</p>
 <div class="highlight"><pre><span></span><code>meta.preamble.latex, punctuation.definition.arguments.end.latex, support.function.general.tex, support.type.function.other.latex, storage.type.function.latex, markup.underline.link.https.hyperlink
 </code></pre></div>
-
 <p>to the whitelist, each of which is identified by tries, such as cannot continue to add <code>meta.group.braces.tex</code> since the original text would also cannot be checked.</p>
 <h3 id="soft-wrap">Soft wrap<a class="headerlink" href="#soft-wrap" title="Permanent link">&para;</a></h3>
 <p>Soft wrap is proper for <code>.tex</code> file, or <code>.md</code> file, but not necessary for the programming file. We can turn off the soft wrap globally in <code>Setting &gt; Editor</code>, and actually we can reset it for each language, which can be toggled in <code>Setting &gt; Package &gt; language-&lt;language name&gt; &gt; Soft Wrap</code>.</p>
@@ -2129,7 +2105,6 @@ apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
 <div class="highlight"><pre><span></span><code>bypy syncup
 bypy syncdown
 </code></pre></div>
-
 <h2 id="kazam">Kazam<a class="headerlink" href="#kazam" title="Permanent link">&para;</a></h2>
 <p>Ubuntu 下 kazam 录屏 没声音解决方案</p>
 <p><a href="http://www.cnblogs.com/xn--gzr/p/6195317.html">http://www.cnblogs.com/xn&ndash;gzr/p/6195317.html</a></p>
@@ -2138,7 +2113,6 @@ bypy syncdown
 <p>solution</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
 </code></pre></div>
-
 <p>refer to <a href="https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player">convert KAZAM video file to a file, playable in windows media player</a></p>
 <h2 id="peek">Peek<a class="headerlink" href="#peek" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/phw/peek">homepage</a>, easy to use, can convert to gif.</p>
@@ -2152,7 +2126,6 @@ bypy syncdown
 <p>曾经按照上述的指导能够解决这个问题，即将系统的 qt5 的 <code>libfcitxplatforminputcontextplugin.so</code> 手动添加到 rstudio 安装目录下的 plugins 中，即</p>
 <div class="highlight"><pre><span></span><code>sudo ln -s /usr/lib/<span class="k">$(</span>dpkg-architecture -qDEB_BUILD_MULTIARCH<span class="k">)</span>/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/bin/plugins/platforminputcontexts/
 </code></pre></div>
-
 <p>但是后来又失败了，猜测原因可能是 qt5 的版本不再兼容了。在 Rstudio 顶部的菜单栏中，点击 Help &gt; About Rstudio 可以找到具体的 qt 版本信息，比如 RStudio (Version 1.2.5001) 依赖 QtWebEngine/5.12.1，而系统的 Qt 插件版本没那么高，所以也能理解 <code>libfcitxplatforminputcontextplugin.so</code> 为什么不再有用了。一种解决方案便是手动重新编译与 Rstudio 中匹配的 Qt 插件的版本，但是似乎比较繁琐，而且也不能一劳永逸，如果 rstudio 更新，还是会失效。</p>
 <p>索性不折腾了。如果真的需要中文，就用其他编辑器吧。期待 rstudio 官方早日解决这个问题……</p>
 <h3 id="rstudio_1">更新rstudio 后闪退<a class="headerlink" href="#rstudio_1" title="Permanent link">&para;</a></h3>
@@ -2161,7 +2134,6 @@ bypy syncdown
 wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb
 sudo gdebi rstudio-1.0.44-amd64.deb
 </code></pre></div>
-
 <p>而非
 <div class="highlight"><pre><span></span><code>sudo dpkg -i
 </code></pre></div></p>
@@ -2184,29 +2156,24 @@ Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
 ~$ systemctl --user <span class="nb">enable</span> onedrive
 Created symlink /home/weiya/.config/systemd/user/default.target.wants/onedrive.service → /usr/lib/systemd/user/onedrive.service.
 </code></pre></div>
-
 <p>but it seems that we also need</p>
 <div class="highlight"><pre><span></span><code>systemctl --user start onedrive
 systemctl --user stop onedrive
 </code></pre></div>
-
 <h3 id="change-to-abrauneggonedrive">Change to <a href="https://github.com/abraunegg/onedrive">abraunegg/onedrive</a><a class="headerlink" href="#change-to-abrauneggonedrive" title="Permanent link">&para;</a></h3>
 <p>I found that it will auto run after startup, actually with <a href="https://github.com/skilion/onedrive">skilion/onedrive</a>, sometimes it also starts automatically. Then I tried</p>
 <div class="highlight"><pre><span></span><code>$ sudo systemctl disable onedrive.service
 Failed to disable unit: Unit file onedrive.service does not exist.
 </code></pre></div>
-
 <p>and then I note that <a href="https://github.com/abraunegg/onedrive/blob/master/docs/USAGE.md#onedrive-service-running-as-a-non-root-user-via-systemd-with-notifications-enabled-arch-ubuntu-debian-opensuse-fedora">OneDrive service running as a non-root user via systemd (with notifications enabled) (Arch, Ubuntu, Debian, OpenSuSE, Fedora)</a></p>
 <p>then I tried</p>
 <div class="highlight"><pre><span></span><code>$ sudo systemctl disable onedrive@weiya.service
 </code></pre></div>
-
 <p>no error.</p>
 <p>Then I also tried</p>
 <div class="highlight"><pre><span></span><code>$ systemctl --user disable onedrive
 Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
 </code></pre></div>
-
 <p>It seems OK now, and pay attention to the difference of the above similar commands.</p>
 <h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
 <h3 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h3>
@@ -2225,11 +2192,9 @@ sudo apt  install docker.io
 
 See <span class="s1">&#39;snap info docker&#39;</span> <span class="k">for</span> additional versions.
 </code></pre></div>
-
 <p>then run</p>
 <div class="highlight"><pre><span></span><code>sudo apt  install docker.io
 </code></pre></div>
-
 <p>Without permisson, it will report the following message</p>
 <div class="highlight"><pre><span></span><code>$ docker version
 Client:
@@ -2242,25 +2207,20 @@ Client:
  Experimental:      <span class="nb">false</span>
 Got permission denied <span class="k">while</span> trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/version: dial unix /var/run/docker.sock: connect: permission denied
 </code></pre></div>
-
 <p>To <a href="https://docs.docker.com/engine/install/linux-postinstall/">avoid permission issue</a>,</p>
 <div class="highlight"><pre><span></span><code>sudo usermod -aG docker <span class="nv">$USER</span>
 </code></pre></div>
-
 <p>But it is necessary to log out and log back in to re-evaluate the group membership.</p>
 <h3 id="install-r-via-docker">install r via docker<a class="headerlink" href="#install-r-via-docker" title="Permanent link">&para;</a></h3>
 <p>step 1:</p>
 <div class="highlight"><pre><span></span><code>docker pull r-base
 </code></pre></div>
-
 <p>for specified version,</p>
 <div class="highlight"><pre><span></span><code>docker pull r-base:3.6.0
 </code></pre></div>
-
 <p>step 2:</p>
 <div class="highlight"><pre><span></span><code>docker run -it --rm r-base:3.6.0
 </code></pre></div>
-
 <p>install.packages(&ldquo;https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz&rdquo;, repos = NULL, type = &ldquo;source&rdquo;)</p>
                 
               

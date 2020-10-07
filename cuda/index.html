@@ -1448,7 +1448,6 @@
 <p>参考http://blog.csdn.net/u010837794/article/details/64443679</p>
 <div class="highlight"><pre><span></span><code>nvprof --unified-memory-profiling off ./add_cuda
 </code></pre></div>
-
 <h3 id="strange-output">Strange Output<a class="headerlink" href="#strange-output" title="Permanent link">&para;</a></h3>
 <p>Pay attention to the size of vectors when running <code>cudaMemcpy()</code> .</p>
 <p>and don&rsquo;t mess up the order of dimensions.</p>
@@ -1465,7 +1464,6 @@
 <p>DO NOT</p>
 <div class="highlight"><pre><span></span><code>double *pone;
 </code></pre></div>
-
 <p>and DO NOT</p>
 <p><div class="highlight"><pre><span></span><code>double one;
 double *pone = &amp;one;
@@ -1540,7 +1538,6 @@ Converting C/C++ for loops into CUDA</a></li>
 <p>There are several function names with different parameter list, it reports </p>
 <div class="highlight"><pre><span></span><code>more than one instance of overloaded function &quot;gauss1_pdf&quot; has &quot;C&quot; linkage
 </code></pre></div>
-
 <p>In one word, overloading is a C++ feature, refer to <a href="https://stackoverflow.com/questions/18380170/more-than-one-instance-overloaded-function-has-c-linkage">More than one instance overloaded function has C linkage</a>.</p>
 <h3 id="last-try-add-inline">Last Try: add <code>inline</code><a class="headerlink" href="#last-try-add-inline" title="Permanent link">&para;</a></h3>
 <p>Succeed!</p>

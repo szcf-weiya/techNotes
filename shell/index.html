@@ -1661,7 +1661,6 @@
     <span class="nb">echo</span> <span class="s2">&quot;I am good at </span><span class="si">${</span><span class="nv">skill</span><span class="si">}</span><span class="s2">Script&quot;</span>
 <span class="k">done</span>
 </code></pre></div>
-
 <ul>
 <li><code>start..stop..length</code></li>
 </ul>
@@ -1669,7 +1668,6 @@
   <span class="nb">echo</span> <span class="nv">$i</span>
 <span class="k">done</span>
 </code></pre></div>
-
 <ul>
 <li>construct an array</li>
 </ul>
@@ -1680,7 +1678,6 @@
   <span class="nb">echo</span> <span class="nv">$i</span>
 <span class="k">done</span>
 </code></pre></div>
-
 <ul>
 <li><code>seq</code></li>
 </ul>
@@ -1689,7 +1686,6 @@
     <span class="nb">echo</span> <span class="nv">$i</span>
 <span class="k">done</span>
 </code></pre></div>
-
 <h2 id="shell_2">shell字符串<a class="headerlink" href="#shell_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
@@ -1735,15 +1731,12 @@
 <p>将</p>
 <div class="highlight"><pre><span></span><code>![IMG_0802](https://user-images.githubusercontent.com/13688320/72489850-733ae480-3850-11ea-8e51-15021588a7e6.jpg)
 </code></pre></div>
-
 <p>替换成</p>
 <div class="highlight"><pre><span></span><code>[IMG_0802]: https://user-images.githubusercontent.com/13688320/72489850-733ae480-3850-11ea-8e51-15021588a7e6.jpg
 </code></pre></div>
-
 <p>解决方案</p>
 <div class="highlight"><pre><span></span><code>sed -i <span class="s2">&quot;s/\!\[IMG_\([0-9]\{4\}\)\](\(.*\))/\[IMG_\1\]\: \2/g&quot;</span> FILENAME
 </code></pre></div>
-
 <ul>
 <li><code>\(\)</code> 用于匹配子串，并可以通过 <code>\1</code>, <code>\2</code> 引用</li>
 <li><code>\!</code> 需要 escape</li>
@@ -1752,7 +1745,6 @@
 <p>人总是善变的，过了一段时间，我又想把这些 img 下载到本地文件夹，但是之前处理过的文件都删掉了，只剩下传到 github 上的了，所以我首先要把文件下载到合适的位置并重命名。比如对于文件 <code>_posts/2019-12-21-quant-genetics.md</code>，只保留了 <code>https://user-images.githubusercontent.com/</code> 的链接，采用下面的脚本下载到合适的位置并重命名，</p>
 <div class="highlight"><pre><span></span><code>grep -E <span class="s2">&quot;https://user-images.&quot;</span> _posts/2019-12-21-quant-genetics.md <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span> <span class="k">if</span> <span class="o">[</span> <span class="si">${#</span><span class="nv">ADDR</span><span class="p">[@]</span><span class="si">}</span> -eq <span class="m">2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> proxychains wget <span class="si">${</span><span class="nv">ADDR</span><span class="p">[1]</span><span class="si">}</span> -O images/2019-12-21-quant-genetics/<span class="si">${</span><span class="nv">ADDR</span><span class="p">[0]:</span><span class="nv">1</span><span class="p">:</span><span class="nv">8</span><span class="si">}</span>.jpg<span class="p">;</span> <span class="k">fi</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
-
 <p>其中</p>
 <ul>
 <li><code>ADDR[0]:1:8</code> 是所谓的 <a href="https://unix.stackexchange.com/questions/9468/how-to-get-the-char-at-a-given-position-of-a-string-in-shell-script">&ldquo;Parameter Expansion&rdquo; ${parameter:offset:length}</a>，用于提取特定范围的子串</li>
@@ -1764,7 +1756,6 @@
 <p>有时候下载文件时网站并没有区分同名文件，下载到本地后会出现 <code>A.zip</code> 与 <code>A (1).zip</code> 的情况，但这两个并不是相同的文件，所以避免以后误删，决定重命名。不过此类文件有好几个，批量处理代码为</p>
 <div class="highlight"><pre><span></span><code>$ ls -1 <span class="p">|</span> grep <span class="s2">&quot;(1)&quot;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span> mv <span class="s2">&quot;</span><span class="si">${</span><span class="nv">ADDR</span><span class="p">[0]</span><span class="si">}</span><span class="s2"> (1).zip&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">ADDR</span><span class="p">[0]</span><span class="si">}</span><span class="s2">_SOMETHING.zip&quot;</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
-
 <h2 id="awk">awk<a class="headerlink" href="#awk" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://linux.cn/article-3945-1.html">技术|如何在Linux中使用awk命令</a></p>
 <h3 id="ip">统计访问日志里每个 ip 访问次数<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h3>
@@ -1776,13 +1767,11 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
     <span class="nb">echo</span> <span class="s2">&quot;ip地址&quot;</span><span class="nv">$i</span><span class="s2">&quot;在2015-01-28日全天(24小时)累计成功请求&quot;</span><span class="nv">$iptj</span><span class="s2">&quot;次，平均每分钟请求次数为：&quot;</span><span class="k">$((</span><span class="nv">$iptj</span><span class="o">/</span><span class="m">1440</span><span class="k">))</span> &gt;&gt; result.txt
 <span class="k">done</span>
 </code></pre></div>
-
 <p>Refer to <a href="https://www.cnblogs.com/paul8339/p/6207182.html">用shell统计访问日志里每个ip访问次数</a></p>
 <h3 id="_4">列的个数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>如果间隔是空格，则直接用下面命令便可以得到列数，</p>
 <div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print NF; exit}&#39;</span> file.txt
 </code></pre></div>
-
 <p>如果是其他的间隔符，比如 <code>|</code>，可以指定 <code>-F'|'</code></p>
 <p>参考 <a href="https://stackoverflow.com/questions/8629330/unix-count-of-columns-in-file">unix - count of columns in file</a></p>
 <h2 id="split-string-while-reading-files">split string while reading files<a class="headerlink" href="#split-string-while-reading-files" title="Permanent link">&para;</a></h2>
@@ -1800,7 +1789,6 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>i&lt;<span class="m">20</span><span class="p">;</span>i++<span class="o">))</span> <span class="k">do</span> <span class="nv">queues</span><span class="o">+=(</span><span class="si">${</span><span class="nv">queue</span><span class="p">[1]</span><span class="si">}</span><span class="o">)</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
 <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>i&lt;<span class="m">15</span><span class="p">;</span>i++<span class="o">))</span> <span class="k">do</span> <span class="nv">queues</span><span class="o">+=(</span><span class="si">${</span><span class="nv">queue</span><span class="p">[2]</span><span class="si">}</span><span class="o">)</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
 </code></pre></div>
-
 <p>refer to</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/1951506/add-a-new-element-to-an-array-without-specifying-the-index-in-bash">Add a new element to an array without specifying the index in Bash</a></li>
@@ -1816,7 +1804,6 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&quot;</span><span class="k">$(</span><span class="nv">IFS</span><span class="o">=</span>,<span class="p">;</span> <span class="nb">printf</span> <span class="s1">&#39;%s&#39;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">arr</span><span class="p">[*]</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
 <span class="c1"># a,b,c</span>
 </code></pre></div>
-
 <p>where <code>*</code> or <code>@</code> return all elements of such array.</p>
 <p>refer to <a href="https://stackoverflow.com/questions/1527049/how-can-i-join-elements-of-an-array-in-bash">How can I join elements of an array in Bash?</a></p>
 <h3 id="a-more-complex-way">A more complex way<a class="headerlink" href="#a-more-complex-way" title="Permanent link">&para;</a></h3>
@@ -1833,13 +1820,11 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <span class="k">done</span>
 <span class="nb">echo</span> <span class="nv">$list</span>
 </code></pre></div>
-
 <h2 id="timestamp">timestamp<a class="headerlink" href="#timestamp" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nv">timestamp</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">&quot;%Y-%m-%dT%H:%M:%S&quot;</span><span class="k">)</span>
 <span class="nb">echo</span> <span class="nv">$timestamp</span>
 <span class="c1"># 2020-02-11T10:51:42</span>
 </code></pre></div>
-
 <h3 id="compare-two-timestamps">compare two timestamps<a class="headerlink" href="#compare-two-timestamps" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nv">d1</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22 20:07:25&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
 <span class="nv">d2</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22 20:08:25&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
@@ -1850,7 +1835,6 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
   <span class="nb">echo</span> <span class="s2">&quot;d1 &lt; d2&quot;</span>
 <span class="k">fi</span>
 </code></pre></div>
-
 <p>where </p>
 <ul>
 <li><code>-d</code>: display time described by STRING, not &lsquo;now&rsquo; (from <code>man date</code>)</li>
@@ -1865,12 +1849,10 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <p><code>ls</code> does not support regular expressions, but it can work with globbing, or filename expressions. </p>
 <div class="highlight"><pre><span></span><code>ls *<span class="o">[</span>!0-9<span class="o">][</span><span class="m">0</span>-9<span class="o">]</span>.txt
 </code></pre></div>
-
 <p>where <code>!</code> is complement.</p>
 <p>Alternatively, we can use <code>find -regex</code>, </p>
 <div class="highlight"><pre><span></span><code>find . -maxdepth <span class="m">1</span> -regex <span class="s1">&#39;\./.*[^0-9][0-9]\.txt&#39;</span>
 </code></pre></div>
-
 <p>where</p>
 <ul>
 <li><code>-maxdepth 1</code> disables recursive, and only to find files in the current directory</li>
@@ -1880,19 +1862,16 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <p>simplest way:</p>
 <div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span>
 </code></pre></div>
-
 <p>some alternatives refer to <a href="https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed">How can I strip first X characters from string using sed?</a>, or <a href="https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash">Remove first character of a string in Bash</a></p>
 <h2 id="select-the-first-field">select the first field<a class="headerlink" href="#select-the-first-field" title="Permanent link">&para;</a></h2>
 <p>given filename <code>file.txt</code>, want to get a string <code>file_test</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="k">$(</span>cut -d<span class="s1">&#39;.&#39;</span> -f1 <span class="o">&lt;&lt;&lt;</span> <span class="nv">$1</span><span class="k">)</span>_test
 <span class="nb">echo</span> <span class="nv">$a</span>
 </code></pre></div>
-
 <p>where <code>-d'.'</code> is to define the delimiter, and then <code>-f1</code> get the first field.</p>
 <p>If we need to get the last field, we can use <code>rev</code>, i.e.,</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;maps.google.com&#39;</span> <span class="p">|</span> rev <span class="p">|</span> cut -d<span class="s1">&#39;.&#39;</span> -f <span class="m">1</span> <span class="p">|</span> rev
 </code></pre></div>
-
 <p>refer to <a href="https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut">How to find the last field using &lsquo;cut&rsquo;</a></p>
 <h2 id="multiple-ifs">Multiple <code>IFS</code><a class="headerlink" href="#multiple-ifs" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span>
@@ -1900,7 +1879,6 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
         <span class="nb">echo</span> <span class="si">${</span><span class="nv">Line</span><span class="p">[0]</span><span class="si">}</span><span class="p">;</span>
 <span class="k">done</span> &lt; &lt;<span class="o">(</span>grep -nE <span class="s2">&quot;finished&quot;</span> slurm-37985.out<span class="o">)</span>
 </code></pre></div>
-
 <p>will also output the numbers of the finished line.</p>
 <ul>
 <li><code>&lt;()</code> is called <a href="https://superuser.com/questions/1059781/what-exactly-is-in-bash-and-in-zsh">process substitution</a></li>
@@ -1921,15 +1899,12 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
   <span class="k">fi</span>
 <span class="k">done</span> &lt; &lt;<span class="o">(</span>find . -maxdepth <span class="m">1</span> -regex <span class="s2">&quot;\./oracle_setting_2019-09-.*recall\.pdf&quot;</span> -print0<span class="o">)</span>
 </code></pre></div>
-
 <h2 id="_5">链接自动推送<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>find -regex <span class="s2">&quot;\./.*\.html&quot;</span> <span class="p">|</span> sed -n <span class="s2">&quot;s#\./#https://esl.hohoweiya.xyz/#p&quot;</span> &gt;&gt; ../urls.txt
 </code></pre></div>
-
 <h2 id="only-show-directory">Only show directory<a class="headerlink" href="#only-show-directory" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>ls -d */
 </code></pre></div>
-
 <p>refer to <a href="https://stackoverflow.com/questions/14352290/listing-only-directories-using-ls-in-bash">Listing only directories using ls in Bash?</a></p>
 <p>My application: <a href="https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L9">TeXtemplates: create a tex template</a></p>
 <h2 id="check-whether-a-certain-file-typeextension-exists-in-directory">Check whether a certain file type/extension exists in directory<a class="headerlink" href="#check-whether-a-certain-file-typeextension-exists-in-directory" title="Permanent link">&para;</a></h2>
@@ -1937,7 +1912,6 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
   <span class="c1">#</span>
 <span class="k">fi</span>  
 </code></pre></div>
-
 <p>refer to <a href="https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory">Check whether a certain file type/extension exists in directory</a></p>
 <p>My application: <a href="https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20">TeXtemplates: create a tex template</a></p>
 <h2 id="path-of-the-script">path of the script<a class="headerlink" href="#path-of-the-script" title="Permanent link">&para;</a></h2>
@@ -1947,7 +1921,6 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <span class="nv">ABSPATH</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="nv">$0</span><span class="k">)</span>
 <span class="nv">ABSDIR</span><span class="o">=</span><span class="k">$(</span>dirname <span class="nv">$ABSPATH</span><span class="k">)</span>
 </code></pre></div>
-
 <p>refer to <a href="https://gist.github.com/darrenderidder/974638">darrenderidder/bashpath.sh</a></p>
 <h2 id="if">if<a class="headerlink" href="#if" title="Permanent link">&para;</a></h2>
 <p>We can add <code>&amp;&gt; /dev/null</code> to hidden the output information in the condition of <code>if</code>. For example, check if user exists,</p>
@@ -1959,13 +1932,11 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
     <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2"> is not exists&quot;</span>
 <span class="k">fi</span>
 </code></pre></div>
-
 <p>refer to <a href="https://blog.51cto.com/64314491/1629175">bash条件判断之if语句</a></p>
 <h2 id="square-bracket">square bracket <code>[</code><a class="headerlink" href="#square-bracket" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> $<span class="o">[</span> <span class="nv">$RANDOM</span> % <span class="m">2</span> <span class="o">]</span>
 <span class="nb">echo</span> $<span class="o">[</span> <span class="m">1</span>+2 <span class="o">]</span>
 </code></pre></div>
-
 <ul>
 <li><a href="https://blog.csdn.net/tttyd/article/details/11742241">shell中的括号（小括号，中括号，大括号）</a></li>
 <li><a href="https://unix.stackexchange.com/questions/99185/what-do-square-brackets-mean-without-the-if-on-the-left">What do square brackets mean without the “if” on the left?</a></li>

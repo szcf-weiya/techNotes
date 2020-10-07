@@ -1833,29 +1833,24 @@
 <div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install apache2
 </code></pre></div>
-
 <p>配置云服务商的安全组，添加 80,443 端口，则应该能够访问 apache 的默认网页。</p>
 <p>然后在 <code>/var/www</code> 下新建 <code>disqus</code> 文件夹</p>
 <div class="highlight"><pre><span></span><code>sudo mkdir /var/www/disqus
 sudo chown -R <span class="nv">$USER</span>:<span class="nv">$USER</span> /var/www/disqus
 </code></pre></div>
-
 <p>并配置</p>
 <div class="highlight"><pre><span></span><code>sudo nano /etc/apache2/sites-available/disqus.conf
 </code></pre></div>
-
 <p>可以直接复制 <code>000-default.conf</code>，然后更改 <code>ServerName</code> 为域名，而 <code>DocumentRoot</code>改成 <code>/var/www/disqus</code>.</p>
 <p>然后启动 <code>disqus.conf</code> 并关闭 <code>000-default.conf</code></p>
 <div class="highlight"><pre><span></span><code>sudo a2ensite disqus.conf
 sudo a2dissite <span class="m">000</span>-default.conf
 </code></pre></div>
-
 <p>这样的好处是以后方便添加不同的 hosts。</p>
 <h4 id="step-2-install-php">Step 2: Install php<a class="headerlink" href="#step-2-install-php" title="Permanent link">&para;</a></h4>
 <p>直接下载就好了</p>
 <div class="highlight"><pre><span></span><code>sudo apt install php 
 </code></pre></div>
-
 <p>默认装的是 php7.2，虽然文档中说的是 php5.6，切换不同版本的 php 可以参考 <a href="https://vitux.com/how-to-install-php5-and-php7-on-ubuntu-18-04-lts/">How to install php5 and php7 on Ubuntu 18.04 LTS</a></p>
 <p>注意有</p>
 <ul>
@@ -1865,7 +1860,6 @@ sudo a2dissite <span class="m">000</span>-default.conf
 sudo a2dismod php5.6
 sudo a2enmod php7.2
 </code></pre></div>
-
 <ul>
 <li>通过 <code>update-alternatives</code></li>
 </ul>
@@ -1873,7 +1867,6 @@ sudo a2enmod php7.2
 <span class="c1"># or select from the list</span>
 sudo update-alternatives --config php
 </code></pre></div>
-
 <p>另外还要安装 <code>cURL</code>，不然会报错</p>
 <blockquote>
 <p>PHP Fatal error:  Call to undefined function curl_init() in /var/www/disqus/disqus-php-api/api/init.php on line 104</p>
@@ -1881,26 +1874,22 @@ sudo update-alternatives --config php
 <p>其中<code>curl_init()</code> 是 cURL 的函数。需要注意选择与 php 匹配的版本</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install php7.2-curl
 </code></pre></div>
-
 <h4 id="step-3-install-api">Step 3: Install api<a class="headerlink" href="#step-3-install-api" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> /var/www/disqus
 git clone git@github.com:fooleap/disqus-php-api.git
 </code></pre></div>
-
 <p>然后配置 <code>config.php</code>，似乎也要给 api 文件夹写的权限，不然会报出</p>
 <p><img alt="" src="disqus-api.png" /></p>
 <p>然后在 <a href="https://disqus.com/api/applications/">Disqus Api</a> 中更新 callback url，同时也要更新下 CNAME 记录。</p>
 <p>最后可以在浏览器中访问 <code>****/login.php</code> 看是否配置成功，如果不成功，可以查看日志文件寻找 bug，</p>
 <div class="highlight"><pre><span></span><code>cat /var/log/error.log
 </code></pre></div>
-
 <p>有一点比较困惑的是，disqus 会报出，</p>
 <p><img alt="" src="disqus-api-1.png" /></p>
 <p>于是我手动把 <code>login.php</code> 文件中的 <code>$redirect</code> 改成 callback url，这样确实也成功了，但是我肯定错过了什么东西，也许 Apache 目录名的设置？</p>
 <p>后来通过在 <code>login.php</code> 文件中添加打印输出语句</p>
 <div class="highlight"><pre><span></span><code>file_put_contents<span class="o">(</span><span class="s1">&#39;php://stderr&#39;</span>, print_r<span class="o">(</span><span class="nv">$redirect</span>, TRUE<span class="o">))</span><span class="p">;</span>
 </code></pre></div>
-
 <p>似乎也只是 <code>http</code> 和 <code>https</code> 的区别，此时已经在 apache 配置文件指定了 host name 为域名。于是可以用 <a href="https://stackoverflow.com/questions/5289272/php-replace-http-with-https-in-url"><code>str_ireplace</code></a> 来完成替换。</p>
 <p>另外，设置不允许查看 Apache 的目录，参考 <a href="https://www.techrepublic.com/article/how-to-make-apache-more-secure-by-hiding-directory-folders/">How to make Apache more secure by hiding directory folders</a></p>
 <p><div class="highlight"><pre><span></span><code>$ sudo vi /etc/apache2/apache2.conf
@@ -1919,11 +1908,9 @@ git clone git@github.com:fooleap/disqus-php-api.git
 ​     Require all granted
 ​&lt;/Directory&gt;
 </code></pre></div>
-
 <p>然后 </p>
 <div class="highlight"><pre><span></span><code>sudo service apache2 restart
 </code></pre></div>
-
 <h3 id="20201001-ubuntu-wsl">20201001: 由 Ubuntu 系统迁移至 WSL<a class="headerlink" href="#20201001-ubuntu-wsl" title="Permanent link">&para;</a></h3>
 <p>因为 aws 的 free tier 到期了，所以需要换一个境外服务器来转发 disqus 的评论，想到可以直接用办公室的电脑。</p>
 <p>Step 1 与上文完全一致，只不过不需要配置安全组，只不过在本地试图访问 <code>localhost</code>，如果跳出网络配置的对话框，点击允许就好。</p>
@@ -1931,27 +1918,22 @@ git clone git@github.com:fooleap/disqus-php-api.git
 <div class="highlight"><pre><span></span><code>sudo apt install php 
 sudo apt-get install php7.2-curl
 </code></pre></div>
-
 <p>在 WSL 中启动服务器时，出现</p>
 <div class="highlight"><pre><span></span><code>protocol not available ah00076 failed to <span class="nb">enable</span> apr_tcp_defer_accept
 </code></pre></div>
-
 <p>这个在 <a href="https://github.com/microsoft/WSL/issues/1953">APR_TCP_DEFER_ACCEPT error when starting Apache2 #1953</a> 有讨论，解决方案是将 WSL1 升级为 WSL2</p>
 <p>在 Windows command prompt 中查看 WSL 的版本</p>
 <div class="highlight"><pre><span></span><code>C:<span class="se">\&gt;</span> wsl -l -v
 </code></pre></div>
-
 <p>升级命令为</p>
 <div class="highlight"><pre><span></span><code>C:<span class="se">\&gt;</span> wsl --set-version Ubuntu <span class="m">2</span>
 </code></pre></div>
-
 <p>其中 <code>Ubuntu</code> 可能还需要带上具体版本，以上一个命令访问的结果为准。然后会有升级提示，但是后来发现即便下载了升级包，仍然需要在 BIOS 中进行设定，而现在远程不方便重启。只好作罢。</p>
 <p>后来再次试图 start apache，发现这这只是个 warning，并不影响运行。</p>
 <p>Step 3 不需要重新下载了，直接把 aws 服务器中的文件夹复制过来就好。</p>
 <p>然后运行</p>
 <div class="highlight"><pre><span></span><code>./ngrok http <span class="m">80</span>
 </code></pre></div>
-
 <p>即可通过外网访问该服务器，因为域名已经解析至 CDN，所以直接在 CDN 配置中更改回源域名，不过此时回源 Host 的配置需要格外注意。</p>
 <p>如果回源 Host 仍设置为 <code>hohoweiya</code> 的域名，则试图通过该域名访问时，会出现 <code>Tunnel xxx.hohoweiya.xyz</code> not found，而且似乎只有当 https 才出现这样的问题。</p>
 <p>所以回源 Host 应当设置为 ngrok 分配的域名。</p>
@@ -1963,7 +1945,6 @@ sudo apt-get install php7.2-curl
 <p>网易云给的iframe代码为</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;no&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">marginwidth</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">marginheight</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">330</span> <span class="na">height</span><span class="o">=</span><span class="s">86</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;//music.163.com/outchain/player?type=2&amp;id=522631413&amp;auto=1&amp;height=66&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div>
-
 <p>要将<code>width=330 height=86</code>改成<code>width="330" height="86"</code>，果然成功了。效果页面如下：</p>
 <p><a href="https://blog.hohoweiya.xyz/movie/2017/12/30/unwilling-to-be-silent.html"><img alt="" src="music.png" /></a></p>
 <h2 id="nginx">nginx虚拟主机配置<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
@@ -2002,7 +1983,6 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>在客户端的 ajax 中添加</p>
 <div class="highlight"><pre><span></span><code>crossDomain: true,    // 允许跨域请求
 </code></pre></div>
-
 <p>另外，在服务器端，通过<code>CORS(app, resources=r'/*')</code>让flask服务器上所有的URL支持跨域请求。</p>
 <p>另外，在ajax中post json的时候，注意用<code>JSON.stringify()</code>进行转换，否则格式为<code>否则格式为 a=2&amp;b=3&amp;now=14...</code>（参考<a href="https://www.cnblogs.com/ajianbeyourself/p/5199144.html">使用Ajax方式POST JSON数据包（转） - 平和的心 - 博客园</a>）</p>
 <h2 id="cookie-vs-session">cookie vs. session<a class="headerlink" href="#cookie-vs-session" title="Permanent link">&para;</a></h2>
@@ -2030,7 +2010,6 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>原图片信息为</p>
 <div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames <span class="m">3</span>
 </code></pre></div>
-
 <p>采用 Shotwell 旋转图片后，
 <div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, Exif Standard: <span class="o">[</span>TIFF image data, little-endian, <span class="nv">direntries</span><span class="o">=</span><span class="m">3</span>, <span class="nv">orientation</span><span class="o">=</span>lower-left, <span class="nv">software</span><span class="o">=</span>Shotwell <span class="m">0</span>.22.0<span class="o">]</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames3
 </code></pre></div></p>
@@ -2039,21 +2018,17 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
     <span class="k">image-orientation</span><span class="p">:</span> <span class="kc">from-image</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>但这个似乎只有 Firefox 和　Safari 支持，Chrome 不支持。</p>
 <p>解决方案：采用 <code>mogrify</code> 或 <code>convert</code> 进行旋转，如</p>
 <div class="highlight"><pre><span></span><code>mogrify -rotate <span class="s2">&quot;-90&quot;</span> <span class="m">2018</span>-10-29-cafe.jpg
 </code></pre></div>
-
 <p>查看文件信息</p>
 <div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1440x1080, frames <span class="m">3</span>
 </code></pre></div>
-
 <p>注意到没有 EXIF 信息，而且 size 也由 1080x1440 变成了 1440x1080，所以这算是真旋转，而之前的加 EXIF 信息算是伪旋转吧。</p>
 <p>如果文件已经存在 orientation 的 EXIF 信息，则 <code>mogrify -rotate</code> 似乎不起作用，解决方案为直接删掉 EXIF 信息，再进行相应的 rotate 操作，其中删除 EXIF 信息的命令是</p>
 <div class="highlight"><pre><span></span><code>exiftool -all<span class="o">=</span> /tmp/my_photo.jpg
 </code></pre></div>
-
 <p>参考 <a href="https://askubuntu.com/questions/260810/how-can-i-read-and-remove-meta-exif-data-from-my-photos-using-the-command-line">How can I read and remove meta (exif) data from my photos using the command line?</a></p>
 <h2 id="jekyll-tags">jekyll tags 逗号分隔<a class="headerlink" href="#jekyll-tags" title="Permanent link">&para;</a></h2>
 <p>采用</p>
@@ -2062,7 +2037,6 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
     {% unless forloop.last %},{% endunless %}
 {% endfor %}
 </code></pre></div>
-
 <p>但 <a href="https://stackoverflow.com/questions/41858548/list-of-dynamic-links-in-jekyll">List of Dynamic Links in Jekyll</a> 提到了更完整的方案，</p>
 <div class="highlight"><pre><span></span><code>{% capture tagscommas %}
 {% for tag in page.tags %}
@@ -2073,7 +2047,6 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 
 {{tagscommas}}
 </code></pre></div>
-
 <h2 id="correct-jekyll">Correct Jekyll<a class="headerlink" href="#correct-jekyll" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/">Configuring Jekyll for User and Project GitHub Pages</a></p>
 <h2 id="image-slider">Image Slider<a class="headerlink" href="#image-slider" title="Permanent link">&para;</a></h2>
@@ -2095,7 +2068,6 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
     <span class="k">font-style</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>详见 <a href="http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/">LaTeX Theorem-like Environments for the Web</a></p>
 <p>这种方法不能使用 markdown 的列表环境，有时候会不太方便。注意到 kramdown 本身具有一些特性可以解决这个问题，比如设置 Block Attributes，详见 <a href="https://kramdown.gettalong.org/quickref.html">Quick Reference of kramdown</a></p>
 <p>则我可以用</p>
@@ -2107,13 +2079,11 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
     <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="p">;</span>
   <span class="p">}</span>
 </code></pre></div>
-
 <p>可以解决这个问题，但担心会破坏其他的 blockquote 环境，于是指定 theorem 可以这样处理，即</p>
 <div class="highlight"><pre><span></span><code><span class="nt">blockquote</span><span class="p">.</span><span class="nc">theorem</span> <span class="nt">p</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="p">;</span>
   <span class="p">}</span>
 </code></pre></div>
-
 <p>这个用法参考 <a href="https://www.runoob.com/css/css-id-class.html">CSS Id 和 Class</a></p>
 <h2 id="list-start-from-0">list start from 0<a class="headerlink" href="#list-start-from-0" title="Permanent link">&para;</a></h2>
 <p>In <code>kramdown</code>, use an IAL declaration before the list, say</p>
@@ -2122,7 +2092,6 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 1. test
 1. test
 </code></pre></div>
-
 <p>Refer to <a href="https://github.com/gettalong/kramdown/issues/211">Support starting numbered lists with arbitrary number #211</a></p>
 <p>Implementation for html can be found <a href="https://stackoverflow.com/questions/15078393/begin-ordered-list-from-0-in-markdown">here</a>.</p>
 <h2 id="_7">字体选择<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
@@ -2137,73 +2106,58 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>今天 GitHub 提醒英文博客存在</p>
 <div class="highlight"><pre><span></span><code>Known high severity security vulnerability detected in rubyzip &lt; 1.3.0 defined in Gemfile.lock. 
 </code></pre></div>
-
 <p>于是合并了它自动创建的 pull request: <a href="https://github.com/szcf-weiya/en/commit/54a7c509594211f7cc05736aa4adb5135bbe21d4">Merge pull request #79 from szcf-weiya/dependabot/bundler/rubyzip-2.0.0</a></p>
 <p>但是后来发现在本地 <code>bundle exec jekyll serve</code> 预览失败。报错信息为</p>
 <div class="highlight"><pre><span></span><code>rubyzip-2.0.0 requires ruby version &gt;= 2.4, which is incompatible with the current version, ruby 2.3.1p112
 </code></pre></div>
-
 <p>看样子 ruby 版本不够，于是参考 <a href="https://askubuntu.com/questions/839775/how-do-i-upgrade-to-ruby-2-2-on-my-ubuntu-system">How do I upgrade to Ruby 2.2 on my Ubuntu system?</a></p>
 <div class="highlight"><pre><span></span><code>sudo apt-add-repository ppa:brightbox/ruby-ng
 sudo apt-get update
 sudo apt-get install ruby2.4
 </code></pre></div>
-
 <p>安装了 <code>ruby2.4</code>，完成后 <code>ruby</code> 也自动从 <code>ruby2.3</code> 更改到了 <code>ruby2.4</code>，但是重新运行</p>
 <div class="highlight"><pre><span></span><code>bundle <span class="nb">exec</span> jekyll serve
 </code></pre></div>
-
 <p>还是报同样的错误信息。后来参考 <a href="https://github.com/bundler/bundler/issues/4260">Bundler using wrong ruby version</a>，运行</p>
 <div class="highlight"><pre><span></span><code>bundle env <span class="p">|</span> grep ruby
 </code></pre></div>
-
 <p>发现里面的版本确实还是 2.3，于是按照里面的建议运行 </p>
 <div class="highlight"><pre><span></span><code>gem install bundler
 </code></pre></div>
-
 <p>这样重新运行 <code>bundle env | grep ruby</code> 发现版本确实更新过来了。但是再次运行  </p>
 <div class="highlight"><pre><span></span><code>bundle <span class="nb">exec</span> jekyll serve
 </code></pre></div>
-
 <p>出现了新的错误</p>
 <div class="highlight"><pre><span></span><code>An error occurred <span class="k">while</span> installing commonmarker <span class="o">(</span><span class="m">0</span>.17.13<span class="o">)</span>, and Bundler cannot <span class="k">continue</span>.
 Make sure that <span class="sb">`</span>gem install commonmarker -v <span class="s1">&#39;0.17.13&#39;</span> --source <span class="s1">&#39;https://rubygems.org/&#39;</span><span class="sb">`</span> succeeds before bundling.
 </code></pre></div>
-
 <p>后来参考 <a href="https://stackoverflow.com/questions/20559255/error-while-installing-json-gem-mkmf-rb-cant-find-header-files-for-ruby">Error while installing json gem &lsquo;mkmf.rb can&rsquo;t find header files for ruby&rsquo;</a></p>
 <p>安装</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install ruby2.4-dev
 </code></pre></div>
-
 <p>这里按照报错信息检查发现 <code>/usr/lib/ruby/</code> 文件夹下的确没有 <code>include</code> 目录，只有 <code>2.4</code>, <code>2.5</code> 等目录，则这需要装对应 <code>ruby</code> 版本的 <code>dev</code>。当我把系统从 Ubuntu 16.04 更新到 Ubuntu 18.04 时，此时系统默认为 <code>ruby-2.5</code>,则我需要装的是</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install ruby2.5-dev
 </code></pre></div>
-
 <p>~~解决了问题！~~</p>
 <p>发现还没有这么简单，总是报错</p>
 <div class="highlight"><pre><span></span><code>Could not find ffi-1.11.1 in any of the sources
 </code></pre></div>
-
 <p>但实际上已经装好了。不知道咋回事。</p>
 <p>后来参考 https://jekyllrb.com/docs/ 重头开始，</p>
 <div class="highlight"><pre><span></span><code>gem install jekyll bundler
 </code></pre></div>
-
 <p>然后这一步一开始报错</p>
 <div class="highlight"><pre><span></span><code>ERROR:  Error installing jekyll:
         jekyll requires RubyGems version &gt;= 2.7.0. Try &#39;gem update --system&#39; to update RubyGems itself.
 </code></pre></div>
-
 <p>于是运行 </p>
 <div class="highlight"><pre><span></span><code>[sudo] gem update --system
 </code></pre></div>
-
 <p>应该要加上 <code>sudo</code>，否则会报错</p>
 <div class="highlight"><pre><span></span><code>Installing RubyGems 3.0.6
 ERROR:  While executing gem ... (Errno::EACCES)
     Permission denied @ dir_s_mkdir - /usr/local/lib/site_ruby
 </code></pre></div>
-
 <p>安装成功后，最后终于成功了！！</p>
 <h2 id="cdn">CDN 价格比较<a class="headerlink" href="#cdn" title="Permanent link">&para;</a></h2>
 <p>比较了阿里云和又拍云，收费都包含两个部分，基础服务费用和增值服务请求费用。</p>

@@ -1316,9 +1316,9 @@
                 
                 <h1 id="servers">Servers<a class="headerlink" href="#servers" title="Permanent link">&para;</a></h1>
 <h2 id="submitting-multiple-jobs-quickly">Submitting Multiple Jobs Quickly<a class="headerlink" href="#submitting-multiple-jobs-quickly" title="Permanent link">&para;</a></h2>
-<p>``` bash tab=&rdquo;PBS&rdquo;
+<p>```bash tab=&rdquo;PBS&rdquo;
 /usr/bin/mpirun -v -np 28 -machinefile $PBS_NODEFILE ./myexe ${NUMBERARG} ${LETTERARG}
-<div class="highlight"><pre><span></span><code>``` bash tab=&quot;Bash&quot;
+<div class="highlight"><pre><span></span><code>```bash tab=&quot;Bash&quot;
 #!/bin/bash
 for NUMBERS in 1 2 3 4 5; do
     for LETTERS in a b c d e; do
@@ -1326,7 +1326,7 @@ for NUMBERS in 1 2 3 4 5; do
     done
 done
 </code></pre></div></p>
-<p>``` bash tab=&rdquo;Run&rdquo;
+<p>```bash tab=&rdquo;Run&rdquo;
 chmod +x submit_multiple_jobs.sh
 ./submit_multiple_jobs.sh
 <div class="highlight"><pre><span></span><code>refer to [Submitting Multiple Jobs Quickly](http://www.pace.gatech.edu/submitting-multiple-jobs-quickly).
@@ -1355,7 +1355,6 @@ qsub your.job -v arg1=val1,arg2=val2
 </ol>
 <div class="highlight"><pre><span></span><code>scp -i MyKeyFile.pem FileToUpload.pdf ubuntu@ec2-123-123-123-123.compute-1.amazonaws.com:FileToUpload.pdf
 </code></pre></div>
-
 <p>refer to <a href="https://stackoverflow.com/questions/10364950/uploading-files-on-amazon-ec2">Uploading files on Amazon EC2</a></p>
 <ol start="2">
 <li>mirror 镜像</li>
@@ -1366,7 +1365,6 @@ qsub your.job -v arg1=val1,arg2=val2
 </ol>
 <div class="highlight"><pre><span></span><code>Caused by: java.io.IOException: Connecting to ×××× timed out (120000 ms)
 </code></pre></div>
-
 <p>安全组配置，后台允许 <code>7077</code> 端口 <code>In</code>，本来以为同在一个 VPC 不需要配置。</p>
 <ol start="4">
 <li>AWS 结点间免密登录</li>
@@ -1379,17 +1377,14 @@ qsub -l <span class="nv">nodes</span><span class="o">=</span><span class="m">2</
 <span class="c1"># Slurm</span>
 sbatch -N <span class="m">2</span> -c <span class="m">16</span> --mem<span class="o">=</span>8g -J jobname --mail-type<span class="o">=[</span>BEGIN,END,FAIL,REQUEUE,ALL<span class="o">]</span> --mail-user<span class="o">=</span>notify@cuhk.edu.hk
 </code></pre></div>
-
 <h2 id="nginx-failed">腾讯云服务器nginx failed<a class="headerlink" href="#nginx-failed" title="Permanent link">&para;</a></h2>
 <p>原因：80端口被占用
 解决方法：kill掉占用80端口的</p>
 <div class="highlight"><pre><span></span><code>sudo fuser -k 80/tcp
 </code></pre></div>
-
 <p>重启</p>
 <div class="highlight"><pre><span></span><code>sudo /etc/init.d/nginx restart
 </code></pre></div>
-
 <h2 id="nginx">重装nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
 <p>想重装nginx，把/etc/nginx也一并删除了，但是重新安装却报错找不到conf文件。</p>
 <p>参考<a href="https://stackoverflow.com/questions/28141667/how-to-reinstall-nginx-if-i-deleted-etc-nginx-folder-ubuntu-14-04">How to reinstall nginx if I deleted /etc/nginx folder (Ubuntu 14.04)?</a></p>
@@ -1402,7 +1397,6 @@ apt-get install nginx
 <p>想直接在服务器上用 Julia 的 PGFPlotsX 画图，因为默认会弹出画好的 pdf 图象，除非按照<a href="https://kristofferc.github.io/PGFPlotsX.jl/v0.2/man/save.html#REPL-1">官方教程</a>中的设置</p>
 <div class="highlight"><pre><span></span><code><span class="n">PGFPlotsX</span><span class="o">.</span><span class="n">enable_interactive</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div>
-
 <p>本来期望着用 evince 打开，但是最后竟然用 liberoffice 开开了，然后字体竟然不一致了，所以想着更改默认的 pdf 阅读软件，参考 <a href="https://superuser.com/questions/152202/how-to-set-default-browser-for-pdf-reader-evince-on-linux">How to set default browser for PDF reader Evince on Linux?</a></p>
 <p>可以在 <code>.local/share/applications/mimeapps.list</code> 里面添加或者修改 </p>
 <p>虽然最后还是感觉通过服务器打开速度太慢了。</p>

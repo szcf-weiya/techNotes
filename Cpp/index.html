@@ -1800,7 +1800,6 @@
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>但在 Cpp 中没那么简单，主要原因是</p>
 <blockquote>
 <p>C++标准库中I/O类对 &lt;&lt; 操作符重载，因此在遇到字符型指针时会将其当作字符串名来处理，输出指针所指的字符串</p>
@@ -1821,7 +1820,6 @@
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h2 id="const">const 总结<a class="headerlink" href="#const" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.2cto.com/kf/201210/160536.html">ref</a></p>
 <h2 id="new">new<a class="headerlink" href="#new" title="Permanent link">&para;</a></h2>
@@ -1834,7 +1832,6 @@
 const int* p = &amp;m;
 int *const pc = &amp;m; //必须初始化，引用的本质
 </code></pre></div>
-
 <p>构造函数析构函数作用区间</p>
 <div class="highlight"><pre><span></span><code>A a;
 A *ap;
@@ -1847,7 +1844,6 @@ if (...)
 ......// A析构
 delete ap;
 </code></pre></div>
-
 <p>先执行基类构造函数，再派生类构造函数；
 先执行派生类析构函数，再派生基类析构函数。</p>
 <h2 id="_1">函数模板和模板函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -1865,7 +1861,6 @@ delete ap;
 <h2 id="symbol-lookup-error">&ldquo;symbol lookup error&rdquo;<a class="headerlink" href="#symbol-lookup-error" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>./test: symbol lookup error: ./test: undefined symbol:
 </code></pre></div>
-
 <p>动态链接库的原因，因为更新完gsl之后，原先的动态链接库不管用了，可以用下面的命令追踪动态链接库
 <div class="highlight"><pre><span></span><code>ldd test
 ldd -d -r test
@@ -1887,7 +1882,6 @@ ldd -d -r test
 <div class="highlight"><pre><span></span><code>double x;
 double *p = &amp;x;
 </code></pre></div>
-
 <p>DO NOT
 <div class="highlight"><pre><span></span><code>double *p = 5;
 </code></pre></div></p>
@@ -1944,7 +1938,6 @@ double *p = &amp;x;
     }
 }
 </code></pre></div>
-
 <p>使用这个代码注意一个问题
 应该使用
 <div class="highlight"><pre><span></span><code>while(!safeGetline(input, line).eof)
@@ -1965,7 +1958,6 @@ double *p = &amp;x;
 <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="n">Func1</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
 </code></pre></div>
-
 <h3 id="_9">指针传递<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">Func2</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span>
 <span class="p">{</span>
@@ -1974,7 +1966,6 @@ double *p = &amp;x;
 <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="n">Func2</span><span class="p">(</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
 </code></pre></div>
-
 <h3 id="_10">引用传递<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p><code>x</code> 和 <code>n</code> 是一个东西</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">Func3</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">)</span>
@@ -1984,12 +1975,10 @@ double *p = &amp;x;
 <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="n">Func3</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
 </code></pre></div>
-
 <p>引用传递的性质像指针传递，而书写方式像值传递。</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">m</span><span class="p">;</span>
 <span class="kt">int</span> <span class="o">&amp;</span><span class="n">n</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
 </code></pre></div>
-
 <p>其中 <code>n</code> 是 <code>m</code> 的一个引用 (reference)，而 <code>m</code> 是被引用物 (referent).</p>
 <p>引用的规则如下：</p>
 <ul>
@@ -2088,7 +2077,6 @@ double *p = &amp;x;
 
 <span class="p">}</span>
 </code></pre></div>
-
 <h2 id="onlogn">最长递增子序列 O(NlogN)算法<a class="headerlink" href="#onlogn" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.felix021.com/blog/read.php?1587">最长递增子序列 O(NlogN)算法 </a></p>
 <h2 id="crealloc">c语言中realloc()函数解析<a class="headerlink" href="#crealloc" title="Permanent link">&para;</a></h2>
@@ -2119,11 +2107,9 @@ double *p = &amp;x;
 <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]</span> <span class="p">);</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span> <span class="p">);</span>
 </code></pre></div>
-
 <p>其中 <code>argc</code> 参数包含参数的计数值，而 <code>argv</code> 包含指向这些参数的指针数组，且第一个参数为程序名。比如<a href="https://github.com/szcf-weiya/ESL-CN/blob/f314293634cec66606d59fdaa493155170c1d530/docs/notes/BS/bspline.cpp#L9">这里</a>，</p>
 <div class="highlight"><pre><span></span><code>size_t <span class="nv">order</span> <span class="o">=</span> atoi<span class="o">(</span>argv<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
 </code></pre></div>
-
 <p>对于命令行的处理，可以采用 <code>getopt()</code> 或者 <code>getopt_long()</code>.</p>
 <p>参考<a href="https://www.ibm.com/developerworks/cn/aix/library/au-unix-getopt.html">使用 getopt() 进行命令行处理</a></p>
 <h2 id="variably-modeified-type-in-c-language">variably modeified type in C language<a class="headerlink" href="#variably-modeified-type-in-c-language" title="Permanent link">&para;</a></h2>
@@ -2132,7 +2118,6 @@ double *p = &amp;x;
 <div class="highlight"><pre><span></span><code>fprintf(fileptr, &quot;writing to file\n&quot;);
 fflush(fileptr);
 </code></pre></div>
-
 <p><a href="https://stackoverflow.com/questions/45339874/how-to-make-fprintf-writes-immediately">How to make fprintf() writes immediately</a></p>
 <p>or refer to</p>
 <p><a href="https://www.cnblogs.com/itZhy/p/3163230.html">Linux实时将所有输出重定向到文件</a></p>

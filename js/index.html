@@ -1467,7 +1467,6 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
     <span class="nx">s</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">bp</span><span class="p">,</span> <span class="nx">s</span><span class="p">);</span>
 <span class="p">})();</span>
 </code></pre></div>
-
 <p>对于https，其push.js为</p>
 <div class="highlight"><pre><span></span><code><span class="o">!</span><span class="kd">function</span><span class="p">(){</span>
   <span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="sr">/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi</span><span class="p">,</span>
@@ -1481,7 +1480,6 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
   <span class="p">}</span>
 <span class="p">}(</span><span class="nb">window</span><span class="p">);</span>
 </code></pre></div>
-
 <h3 id="_2">匿名函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>首先，这是一个匿名函数，可以参考<a href="https://www.cnblogs.com/jiejiejy/p/7434857.html">js匿名函数</a>。</p>
 <p>参考的博客里面总结到，有三种使用匿名函数的方式</p>
@@ -1492,7 +1490,6 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
   <span class="nx">alert</span><span class="p">(</span><span class="mf">123</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <ol start="2">
 <li>使用匿名函数表达式，将匿名函数赋值给某个变量</li>
 </ol>
@@ -1501,7 +1498,6 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 <span class="p">}</span>
 <span class="nx">func</span><span class="p">();</span>
 </code></pre></div>
-
 <ol start="3">
 <li>自执行函数</li>
 </ol>
@@ -1510,19 +1506,16 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
   <span class="nx">alert</span><span class="p">(</span><span class="mf">123</span><span class="p">);</span>
 <span class="p">}();</span>
 </code></pre></div>
-
 <p>b) 使用<code>()</code>将函数及函数后的括号包裹</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
   <span class="nx">alert</span><span class="p">(</span><span class="mf">123</span><span class="p">);</span>
 <span class="p">}());</span>
 </code></pre></div>
-
 <p>c) 使用<code>()</code>包裹函数值</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
   <span class="nx">alert</span><span class="p">(</span><span class="mf">123</span><span class="p">);</span>
 <span class="p">})();</span>
 </code></pre></div>
-
 <p>百度站长采用的是c)。</p>
 <h3 id="browser-object-model-bom">浏览器对象模型(Browser Object Model (BOM))<a class="headerlink" href="#browser-object-model-bom" title="Permanent link">&para;</a></h3>
 <p>上述代码中涉及到<code>window.location</code>，而window.location属于BOM，一般用于获得当前页面的地址 (URL)，并把浏览器重定向到新的页面。参考<a href="http://www.runoob.com/js/js-window-location.html">JavaScript Window Location</a></p>
@@ -1543,7 +1536,6 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 <span class="c1">// or more directly</span>
 <span class="kd">var</span> <span class="nx">patt</span><span class="o">=</span><span class="err">/pattern/modifiers;</span>
 </code></pre></div>
-
 <p>其中有两种修饰器</p>
 <ul>
 <li>i: 用来执行不区分大小写的匹配</li>
@@ -1575,14 +1567,12 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install yui-compressor
 yui-compressor myfile.js &gt; myfile.min.js
 </code></pre></div>
-
 <h2 id="_5">双感叹号<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://www.jb51.net/article/48881.htm">JavaScript中双叹号(!!)作用示例介绍_javascript技巧_脚本之家</a></p>
 <p>举个例子</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">b</span><span class="o">=!!</span><span class="nx">a</span><span class="p">;</span>
 </code></pre></div>
-
 <p><code>a</code>默认是<code>undefined</code>。<code>!a</code>为<code>true</code>，<code>!!a</code>则为<code>false</code>。</p>
 <p><code>!!</code>一般用来将后面的表达式强制转换为布尔类型的数据。</p>
 <blockquote>
@@ -1593,7 +1583,6 @@ yui-compressor myfile.js &gt; myfile.min.js
 <span class="nx">b</span><span class="o">=</span><span class="mf">1234</span><span class="o">+</span><span class="err">””</span> <span class="c1">//转换为字符串 </span>
 <span class="nx">c</span><span class="o">=</span><span class="nx">someObject</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="c1">//将对象转换为字符串</span>
 </code></pre></div>
-
 <p>其中第1种、第4种为显式转换，2、3为隐式转换 </p>
 <h2 id="_6">布尔类型的转换<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="bool_js.PNG" /></p>

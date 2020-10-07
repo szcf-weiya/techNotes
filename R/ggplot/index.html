@@ -1464,7 +1464,6 @@
 <span class="p">}</span>
 <span class="nf">plot_grid</span><span class="p">(</span><span class="n">plotlist</span> <span class="o">=</span> <span class="n">plots</span><span class="p">)</span>
 </code></pre></div>
-
 <h2 id="ggplot_2">ggplot绘制概率密度图<a class="headerlink" href="#ggplot_2" title="Permanent link">&para;</a></h2>
 <p>adapted from <a href="http://www.cnblogs.com/wwxbi/p/6142410.html">ggplot2绘制概率密度图</a></p>
 <p>Take the Weibull distribution as an example, </p>
@@ -1494,22 +1493,18 @@ f(x) = \begin{cases}
     <span class="nf">geom_line</span><span class="p">(</span><span class="n">col</span> <span class="o">=</span> <span class="s">&quot;orange&quot;</span><span class="p">)</span> <span class="o">+</span> 
     <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Density of Weibull distribution&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <p><img alt="" src="../weibull-pdf.png" style="height:40%;width:40%" /></p>
 <div class="highlight"><pre><span></span><code><span class="n">h</span> <span class="o">=</span> <span class="nf">rweibull</span><span class="p">(</span><span class="m">10000</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
 <span class="nf">ggplot</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">h</span><span class="p">))</span> <span class="o">+</span> 
     <span class="nf">geom_histogram</span><span class="p">(</span><span class="n">binwidth</span><span class="o">=</span><span class="m">0.01</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">+</span> 
     <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Histogram of Weibull distribution&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <p><img alt="" src="../weibull-hist.png" style="height:40%;width:40%" /></p>
 <div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">h</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_density</span><span class="p">(</span><span class="n">col</span> <span class="o">=</span> <span class="s">&quot;green&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <p><img alt="" src="../weibull-estpdf.png" style="height:40%;width:40%" /></p>
 <div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">h</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_line</span><span class="p">(</span><span class="n">stat</span> <span class="o">=</span> <span class="s">&quot;density&quot;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <p>A minor difference is that here is a horizontal line in the above estimated density.</p>
 <p><img alt="" src="../weibull-estpdf2.png" style="height:40%;width:40%" /></p>
 <p>Also refer to <a href="http://www.cookbook-r.com/Graphs/Plotting_distributions_(ggplot2)/">Plotting distributions (ggplot2)</a></p>
@@ -1520,7 +1515,6 @@ f(x) = \begin{cases}
 <span class="n">bp</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">PlantGrowth</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">group</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_boxplot</span><span class="p">()</span>
 <span class="n">bp</span>
 </code></pre></div>
-
 <h3 id="_2">自定义图例的顺序<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>首先移除掉默认图例，有三种方式实现：
 <div class="highlight"><pre><span></span><code><span class="c1"># Remove legend for a particular aesthetic (fill)</span>
@@ -1535,7 +1529,6 @@ f(x) = \begin{cases}
 <p>再改变默认顺序</p>
 <div class="highlight"><pre><span></span><code><span class="n">bp</span> <span class="o">+</span> <span class="nf">scale_fill_discrete</span><span class="p">(</span><span class="n">breaks</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;trt1&quot;</span><span class="p">,</span><span class="s">&quot;ctrl&quot;</span><span class="p">,</span><span class="s">&quot;trt2&quot;</span><span class="p">))</span>
 </code></pre></div>
-
 <h3 id="_3">颠倒图例的顺序<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># These two methods are equivalent:</span>
 <span class="n">bp</span> <span class="o">+</span> <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
@@ -1544,7 +1537,6 @@ f(x) = \begin{cases}
 <span class="c1"># You can also modify the scale directly:</span>
 <span class="n">bp</span> <span class="o">+</span> <span class="nf">scale_fill_discrete</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="nf">rev</span><span class="p">(</span><span class="nf">levels</span><span class="p">(</span><span class="n">PlantGrowth</span><span class="o">$</span><span class="n">group</span><span class="p">)))</span>
 </code></pre></div>
-
 <h3 id="_4">隐藏图例标题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Remove title for fill legend</span>
 <span class="n">bp</span> <span class="o">+</span> <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="nf">guide_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="kc">NULL</span><span class="p">))</span>
@@ -1552,13 +1544,11 @@ f(x) = \begin{cases}
 <span class="c1"># Remove title for all legends</span>
 <span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span><span class="o">=</span><span class="nf">element_blank</span><span class="p">())</span>
 </code></pre></div>
-
 <h3 id="_5">自定义图例的标题及名称<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>两种方式，一种
 另一种修改数据集</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-
 <h3 id="_6">图例的整体形状<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Title appearance</span>
 <span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">16</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">))</span>
@@ -1566,12 +1556,10 @@ f(x) = \begin{cases}
 <span class="c1"># Label appearance</span>
 <span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">16</span><span class="p">,</span> <span class="n">face</span> <span class="o">=</span> <span class="s">&quot;bold&quot;</span><span class="p">))</span>
 </code></pre></div>
-
 <p>图例盒子</p>
 <div class="highlight"><pre><span></span><code><span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.background</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">())</span>
 <span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.background</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s">&quot;gray90&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">.</span><span class="m">5</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dotted&quot;</span><span class="p">))</span>
 </code></pre></div>
-
 <p>图例位置</p>
 <div class="highlight"><pre><span></span><code><span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s">&quot;top&quot;</span><span class="p">)</span>
 
@@ -1585,7 +1573,6 @@ f(x) = \begin{cases}
 <span class="c1"># Put bottom-right corner of legend box in bottom-right corner of graph</span>
 <span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.justification</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">),</span> <span class="n">legend.position</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">))</span>
 </code></pre></div>
-
 <h3 id="slashes">隐藏图例的slashes<a class="headerlink" href="#slashes" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># No outline</span>
 <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">PlantGrowth</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">group</span><span class="p">))</span> <span class="o">+</span>
@@ -1601,7 +1588,6 @@ f(x) = \begin{cases}
     <span class="nf">geom_bar</span><span class="p">()</span> <span class="o">+</span>
     <span class="nf">geom_bar</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="n">show.legend</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
 </code></pre></div>
-
 <h2 id="treemaps">Treemaps<a class="headerlink" href="#treemaps" title="Permanent link">&para;</a></h2>
 <p>源于<a href="https://www.zhihu.com/question/267353430">碎片化的饼图是如何制作出来的，能否用excel或者R实现？ | 知乎</a></p>
 <p>目前查阅到的有参考价值的为treemap和treemapify，但似乎都只针对矩形，对于原知乎问题中的圆形碎片化尚不能实现，目前想法是阅读这两个package的源代码，看能否找到突破口。</p>
@@ -1609,7 +1595,6 @@ f(x) = \begin{cases}
 <p>比如</p>
 <div class="highlight"><pre><span></span><code><span class="nf">expression</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="nf">group</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="nf">list</span><span class="p">(</span><span class="nf">hat</span><span class="p">(</span><span class="bp">F</span><span class="p">),</span><span class="bp">F</span><span class="p">),</span><span class="s">&quot;&quot;</span><span class="p">)]</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
 </code></pre></div>
-
 <p>参考</p>
 <ol>
 <li><a href="http://vis.supstat.com/2013/04/mathematical-annotation-in-r/">Mathematical Annotation in R</a></li>
@@ -1623,7 +1608,6 @@ f(x) = \begin{cases}
 <span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">qplot</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
 <span class="nf">grid.arrange</span><span class="p">(</span><span class="n">plot1</span><span class="p">,</span> <span class="n">plot2</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 </code></pre></div>
-
 <p>参考<a href="https://stackoverflow.com/questions/1249548/side-by-side-plots-with-ggplot2">Side-by-side plots with ggplot2</a></p>
 <h2 id="_10">绘制地图<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>参考</p>
@@ -1634,12 +1618,10 @@ f(x) = \begin{cases}
 <p>更改颜色命令为</p>
 <div class="highlight"><pre><span></span><code><span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">))</span>
 </code></pre></div>
-
 <h2 id="save">save<a class="headerlink" href="#save" title="Permanent link">&para;</a></h2>
 <p>NOT <code>png()...dev.off()</code>, use</p>
 <div class="highlight"><pre><span></span><code><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;sth.eps&quot;</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="s">&quot;eps&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="m">9</span><span class="p">)</span>
 </code></pre></div>
-
 <h2 id="aes_string-vs-aes"><code>aes_string</code> vs <code>aes</code><a class="headerlink" href="#aes_string-vs-aes" title="Permanent link">&para;</a></h2>
 <p>在重复绘图时，似乎是作用域的缘故，有时 <code>aes</code> 只能保留最后一个，此时需要用 <code>aes_string</code>.</p>
 <p>参考 <a href="https://www.biostars.org/p/234142/">Question: Continuously add lines to ggplot with for loop</a></p>

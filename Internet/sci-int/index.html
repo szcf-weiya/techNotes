@@ -1269,7 +1269,6 @@
 <p>在本地 Local Laptop 上，终端中运行</p>
 <div class="highlight"><pre><span></span><code>ssh -X usename-for-Server@SOME-IP-ADDRESS -p PORT
 </code></pre></div>
-
 <p>即可登录内网服务器。</p>
 <h2 id="ssh">SSH 反向隧道<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
 <p>需要自己有一台中间服务器，据我所知，可以在 aws、Azure、华为云、腾讯云申请免费云服务器，另外 Vultr 通过我的邀请码也可以获得 100 刀的 credit：</p>
@@ -1281,14 +1280,12 @@ ssh -D <span class="m">30002</span> -p <span class="m">30001</span> <span class=
 <span class="s1"># my innerserver</span>
 <span class="s1">ssh -R 30001:localhost:22 [Server&#39;</span>s Username<span class="o">]</span>@<span class="o">[</span>Server<span class="err">&#39;</span>s Public IP<span class="o">]</span>
 </code></pre></div>
-
 <p>这样只能在 ssh 访问内网资源，可以通过 chrome 的 SwithyOmega 插件实现在浏览器中访问内网，效果和登录 VPN 一样，可以正常下文献。</p>
 <p>在 SwitchyOmega 中添加 socks5://127.0.0.1:30002 即可访问内网资源。</p>
 <p>另外，如果只想科学上网，直接</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Local Laptop</span>
 ssh -D <span class="m">30002</span> my@server
 </code></pre></div>
-
 <p>然后在 SwitchyOmega 中添加 socks5://127.0.0.1:30002。</p>
 <h3 id="jupyter-notebook">Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permanent link">&para;</a></h3>
 <p>当<strong>搭建好隧道</strong>后，可以借用该隧道使用内网服务器上的 Jupyter Notebook，</p>
@@ -1302,11 +1299,9 @@ ssh -L localhost:18888:localhost:8888 -p <span class="m">30001</span> <span clas
 <span class="s1"># on my local laptop</span>
 <span class="s1">ssh -L 18888:localhost:18888 [Server&#39;</span>s Username<span class="o">]</span>@<span class="o">[</span>Server<span class="err">&#39;</span>s Public IP<span class="o">]</span>
 </code></pre></div>
-
 <p>于是在本地可以通过 </p>
 <div class="highlight"><pre><span></span><code><span class="m">127</span>.0.0.1:18888/?token<span class="o">=</span>xxxxxxxxxxx
 </code></pre></div>
-
 <p>访问内网的 Jupyter Notebook。</p>
 <h2 id="shootback">shootback<a class="headerlink" href="#shootback" title="Permanent link">&para;</a></h2>
 <p>同 SSH 反向隧道，需要自己准备一台服务器，<a href="https://github.com/aploium/shootback">项目主页</a>有详细配置过程。</p>

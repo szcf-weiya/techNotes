@@ -1186,7 +1186,6 @@
 <span class="n">Sigma</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mf">0.9</span><span class="p">;</span> <span class="mf">0.9</span> <span class="mi">1</span><span class="p">];</span>
 <span class="n">contour</span><span class="p">(</span><span class="n">x_grid</span><span class="p">,</span> <span class="n">y_grid</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">pdf</span><span class="p">(</span><span class="n">MvNormal</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Sigma</span><span class="p">),</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]),</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div>
-
 <h2 id="3d">网格 3D 图<a class="headerlink" href="#3d" title="Permanent link">&para;</a></h2>
 <p>要求颜色随着高度渐变，这包含两部分的渐变，</p>
 <ul>
@@ -1197,7 +1196,6 @@
 <p>第一点其实很简单，当生成好一组渐变颜色后，比如</p>
 <div class="highlight"><pre><span></span><code><span class="n">colors</span> <span class="o">=</span> <span class="n">cgrad</span><span class="p">(</span><span class="o">:</span><span class="n">summer</span><span class="p">,</span> <span class="n">nz</span><span class="p">,</span> <span class="n">categorical</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span>
 </code></pre></div>
-
 <p>更多的选择详见 <a href="https://docs.juliaplots.org/latest/generated/colorschemes/">Colorschemes</a></p>
 <p>在循环画图时，每次指定一种颜色便 OK 了。</p>
 <p>第二点其实也很简单，在画一条曲线时，如果 linecolor 指定为颜色<strong>列</strong>向量，比如 <code>[:red, :green, :orange]</code>，则每一段的颜色会循环采用该列向量中的颜色，则当列向量长度刚好等于区间段的个数，则每一段都会以不同的颜色绘制。需要注意到是，颜色<strong>行</strong>向量用于画多条曲线时为每一条曲线指定不同的颜色。</p>
@@ -1206,11 +1204,9 @@
 <h2 id="axis-off">axis off<a class="headerlink" href="#axis-off" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="nb">nothing</span><span class="p">)</span>
 </code></pre></div>
-
 <p>and similar grammar is</p>
 <div class="highlight"><pre><span></span><code><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="nb">nothing</span><span class="p">,</span> <span class="n">border</span><span class="o">=</span><span class="nb">nothing</span><span class="p">)</span>
 </code></pre></div>
-
 <p>refer to <a href="https://github.com/JuliaPlots/Plots.jl/issues/428">How can I implement &ldquo;axis off&rdquo;? #428</a></p>
                 
               

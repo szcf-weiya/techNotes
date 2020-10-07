@@ -1776,7 +1776,6 @@
 </ul>
 <div class="highlight"><pre><span></span><code>sudo apt-get install privoxy
 </code></pre></div>
-
 <ul>
 <li>安装XX-net</li>
 </ul>
@@ -1788,26 +1787,22 @@
 <div class="highlight"><pre><span></span><code>forward / <span class="m">127</span>.0.0.1:8087
 listen-address <span class="m">0</span>.0.0.0:8118
 </code></pre></div>
-
 <h3 id="usages">Usages<a class="headerlink" href="#usages" title="Permanent link">&para;</a></h3>
 <ul>
 <li>可以在访问时设置代理</li>
 </ul>
 <div class="highlight"><pre><span></span><code>curl ipinfo.io/ip --proxy <span class="m">127</span>.0.0.1:8087
 </code></pre></div>
-
 <ul>
 <li>也可以在.bashrc设置，这样所有的终端的网络访问都会走终端，在~/.bashrc文件中加入</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span><span class="m">127</span>.0.0.1:8087
 <span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span><span class="m">127</span>.0.0.1:8087
 </code></pre></div>
-
 <p>然后</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> ~/.bashrc
 curl ipinfo.io/ip <span class="c1">#测试是否代理成功</span>
 </code></pre></div>
-
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
 <p>3.10 15:36 chrome 在升级xxnet后成功翻墙了，而Firefox不行了。未升级前情况是相反的，但未升级时Firefox从不能用到能用。</p>
 <h2 id="_2">有线连不上<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -1824,7 +1819,6 @@ ping <span class="m">10</span>.71.115.254
 route add default gw <span class="m">10</span>.71.115.254 enp0s31f6
 ping <span class="m">10</span>.71.45.100
 </code></pre></div>
-
 <h2 id="shadowssocks">shadowssocks安装<a class="headerlink" href="#shadowssocks" title="Permanent link">&para;</a></h2>
 <h3 id="_3">二维码反解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>对
@@ -1836,7 +1830,6 @@ ping <span class="m">10</span>.71.45.100
 <p>base64解密得到</p>
 <div class="highlight"><pre><span></span><code>method:password@hostname:port
 </code></pre></div>
-
 <p>然后
 <div class="highlight"><pre><span></span><code>sslocal -p port -k password -m method
 </code></pre></div></p>
@@ -1859,7 +1852,6 @@ ping <span class="m">10</span>.71.45.100
 2. 添加自己的网站
 3. 将DNS服务器改为cloudflare上要求的，比如在阿里云的域名管理界面，将万网服务器换掉。
 </code></pre></div>
-
 <p>设置完这些之后，我也清楚可能不会理解生效，但也想尽快看看效果怎么样，于是搜索“更新dns缓存”的资料，尽管按照教程走了一遍，但是dns还是没有更新过来，通过
 <div class="highlight"><pre><span></span><code>dig hohoweiya.xyz +noall +answer
 </code></pre></div>
@@ -1888,7 +1880,6 @@ sudo vim head.save
 <p>参考<a href="https://bokunokeiken.wordpress.com/2015/07/22/how-to-use-socks-5-proxy-in-ubuntu-command-line/">How to use SOCKS 5 proxy in Ubuntu command line</a></p>
 <div class="highlight"><pre><span></span><code>proxychains curl ip.cn
 </code></pre></div>
-
 <h3 id="ld_preload-cannot-be-preloaded"><code>LD_PRELOAD cannot be preloaded</code><a class="headerlink" href="#ld_preload-cannot-be-preloaded" title="Permanent link">&para;</a></h3>
 <p>在 Ubuntu 16.04 上用得好好的，但是在更新后的 Ubuntu 18.04 上使用时，报出</p>
 <div class="highlight"><pre><span></span><code>~$ proxychains ping www.google.com
@@ -1896,11 +1887,9 @@ ProxyChains-3.1 <span class="o">(</span>http://proxychains.sf.net<span class="o"
 ERROR: ld.so: object <span class="s1">&#39;libproxychains.so.3&#39;</span> from LD_PRELOAD cannot be preloaded <span class="o">(</span>cannot open shared object file<span class="o">)</span>: ignored.
 PING www.google.com <span class="o">(</span><span class="m">199</span>.16.156.7<span class="o">)</span> <span class="m">56</span><span class="o">(</span><span class="m">84</span><span class="o">)</span> bytes of data.
 </code></pre></div>
-
 <p>参考 <a href="https://askubuntu.com/questions/293649/proxychains-ld-preload-cannot-be-preloaded">proxychains LD_PRELOAD cannot be preloaded</a>，将 <code>/usr/bin/proxychains</code> 中的</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">LD_PRELOAD</span><span class="o">=</span>libproxychains.so.3
 </code></pre></div>
-
 <p>改到实际 <code>libproxychains.so.3</code> 的位置，这可以通过 locate 来确定。</p>
 <p>另外注意到</p>
 <div class="highlight"><pre><span></span><code>~$ proxychains ping www.google.com
@@ -1910,7 +1899,6 @@ PING www.google.com <span class="o">(</span><span class="m">199</span>.59.149.24
 --- www.google.com ping statistics ---
 <span class="m">2</span> packets transmitted, <span class="m">0</span> received, <span class="m">100</span>% packet loss, <span class="nb">time</span> 1019ms
 </code></pre></div>
-
 <p>并不会出现类似 <code>curl</code> 时的 chain</p>
 <div class="highlight"><pre><span></span><code>~$ proxychains curl ipinfo.io/ip
 ProxyChains-3.1 <span class="o">(</span>http://proxychains.sf.net<span class="o">)</span>
@@ -1919,7 +1907,6 @@ ProxyChains-3.1 <span class="o">(</span>http://proxychains.sf.net<span class="o"
 <span class="p">|</span>DNS-response<span class="p">|</span> ipinfo.io is <span class="m">216</span>.239.38.21
 <span class="p">|</span>S-chain<span class="p">|</span>-&lt;&gt;-127.0.0.1:30002-&lt;&gt;&lt;&gt;-216.239.38.21:80-&lt;&gt;&lt;&gt;-OK
 </code></pre></div>
-
 <h2 id="hosts">hosts文件原理<a class="headerlink" href="#hosts" title="Permanent link">&para;</a></h2>
 <p>有段时间是采用更改hosts文件来访问谷歌，但其背后的原理一直不甚清楚。突然想到这个问题，看了下面的两个博客，大致明白了。</p>
 <p>简单来说，其目的跟dns解析域名一样，但是优先级更高，如果本机hosts文件中已经有了某域名的ip映射，则不需要通过dns返回域名ip。</p>
@@ -1945,7 +1932,6 @@ sudo apt-get update
 sudo apt-get install network-manager-l2tp
 sudo apt-get install network-manager-l2tp-gnome
 </code></pre></div>
-
 <p>安装。</p>
 <p>这种方式相当于增加了 <code>L2TP</code> VPN 的设置界面，到这里我也渐渐明白 <code>xl2tpd_zju</code> 和这种方式本质上应该是一样的。于是我按照之前的配置方式新建了一个 VPN 的连接，但还是没用。</p>
 <p>最后我换了 VPN 的 ip（有两个 ip，10.5.1.5 和 10.5.1.9），之前 <code>xl2tpd_zju</code> 默认是 10.5.1.5，误打误撞，改成 10.5.1.9 后，竟然成功了！！</p>
@@ -1972,7 +1958,6 @@ If you are not sure <span class="k">if</span> you are using libreswan or strongs
 
 ipsec --version 
 </code></pre></div>
-
 <p>And when I click the option of </p>
 <blockquote>
 <p>Use this connection only for resources on its network</p>
@@ -1986,13 +1971,11 @@ ipsec --version
 <div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:nm-l2tp/network-manager-l2tp
 sudo apt-get install network-manager-l2tp
 </code></pre></div>
-
 <h3 id="-x-gui">尝试一：通过 <code>-X</code> 在 GUI 中配置<a class="headerlink" href="#-x-gui" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="https://gist.github.com/pastleo/aa3a9524664864c505d637b771d079c9">setup L2TP IPsec VPN in archlinux using NetworkManager</a></p>
 <p>打开配置窗口的命令为 <a href="https://askubuntu.com/questions/174381/openning-networkmanagers-edit-connections-window-from-terminal"><code>nm-connection-editor</code></a>，但竟然没有，原来没有装 </p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install network-manager-gnome
 </code></pre></div>
-
 <h3 id="_6">尝试二：命令行添加<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>在尝试寻找 network manager 的 command line 命令时，发现好几个 <code>nmcli</code> 相关的命令，于是猜想应该是可以直接在 command line 中配置的，比如 <a href="https://askubuntu.com/questions/1167283/l2tp-connection-client-on-ubuntu-18-04-server">L2TP Connection Client on ubuntu 18.04 Server</a> 和 <a href="https://www.thegeekdiary.com/how-to-configure-and-manage-network-connections-using-nmcli/">How to configure and Manage Network Connections using nmcli</a>，但我先在本地测试有几个问题</p>
 <ul>
@@ -2006,7 +1989,6 @@ sudo apt-get install network-manager-l2tp
 <p>参考 <a href="https://unix.stackexchange.com/questions/438224/networkmanager-fails-with-could-not-find-source-connection">NetworkManager fails with “Could not find source connection”</a> 无果。后来在 <a href="https://developer.gnome.org/NetworkManager/stable/nmcli.html">nmcli 的官方文档</a>中看到，似乎连接时需要指定 <code>ifname</code>，可用的 device 为</p>
 <div class="highlight"><pre><span></span><code>sudo nmcli device status 
 </code></pre></div>
-
 <p>但是再次连接依旧报错，不过错误跟我在墙内试图连接 VPN 时报错似乎一致。</p>
 <blockquote>
 <p>Error: Connection activation failed: the VPN service stopped unexpectedly.</p>
@@ -2025,7 +2007,6 @@ python<span class="o">(</span>or python3<span class="o">)</span> slaver.py -m <s
 <span class="c1"># ---- YOU ----</span>
 ssh <span class="o">[</span>username@<span class="o">]</span><span class="m">22</span>.33.44.55 -p <span class="m">10022</span>
 </code></pre></div>
-
 <p>注意，<code>YOU</code> 的 username 是 slaver 的 username!!</p>
 <p>另外一种更复杂的工具是 <a href="https://github.com/fatedier/frp">frp</a></p>
 <p>在 Issue 中看到有人讨论 <a href="https://github.com/aploium/shootback/issues/4">Why not just use SSH?</a>，才发现还有很多策略访问内网，比如</p>
@@ -2037,11 +2018,9 @@ ssh <span class="o">[</span>username@<span class="o">]</span><span class="m">22<
 <p>on the server:</p>
 <div class="highlight"><pre><span></span><code>./ngrok tcp --region<span class="o">=</span>jp <span class="m">22</span>
 </code></pre></div>
-
 <p>then on the local laptop:</p>
 <div class="highlight"><pre><span></span><code>ssh username@... -p
 </code></pre></div>
-
 <p>choose the nearest center to faster the connection.</p>
 <p>refer to <a href="https://medium.com/@byteshiva/ssh-into-remote-linux-by-using-ngrok-b8c49b8dc3ca">SSH into remote Linux by using ngrok</a> and <a href="https://ngrok.com/docs#tcp">Documentation of ngrok</a></p>
 <h3 id="ssh">SSH 反向隧道<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h3>
@@ -2051,7 +2030,6 @@ autossh -M <span class="m">30000</span> -NR <span class="m">30001</span>:localho
 <span class="c1"># server</span>
 ssh -g -D <span class="m">30002</span> -p30001 inner-user@localhost
 </code></pre></div>
-
 <p>那 30002 端口有啥用呢！！</p>
 <blockquote>
 <p>将 30002 端口上的连接都转发到内网主机 inner 上（server 上的 30001 端口代表 inner 上的 22 端口）</p>
@@ -2062,7 +2040,6 @@ ssh -g -D <span class="m">30002</span> -p30001 inner-user@localhost
 <div class="highlight"><pre><span></span><code><span class="c1"># Local Laptop</span>
 ssh -D <span class="m">30002</span> my@server
 </code></pre></div>
-
 <p>然后在 SwithyOmega 中添加 socks5://127.0.0.1:30002 即可科学上网。</p>
 <h3 id="_9">访问内网<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Local Laptop</span>
@@ -2072,7 +2049,6 @@ ssh -D <span class="m">30002</span> -p <span class="m">30001</span> <span class=
 <span class="s1"># my innerserver</span>
 <span class="s1">ssh -R 30001:localhost:22 [Server&#39;</span>s Username<span class="o">]</span>@<span class="o">[</span>Server<span class="err">&#39;</span>s Public IP<span class="o">]</span>
 </code></pre></div>
-
 <p>然后在 SwitchyOmega 中添加 socks5://127.0.0.1:30002 即可访问内网资源。</p>
 <p>如果将上面的 <code>my server</code> 部分改成
 <div class="highlight"><pre><span></span><code>ssh -gD <span class="m">30002</span> -p <span class="m">30001</span> my@inner-server
@@ -2082,11 +2058,9 @@ ssh -D <span class="m">30002</span> -p <span class="m">30001</span> <span class=
 <p>有时候可能需要重新连接一下，但是会出现端口占用的问题，</p>
 <div class="highlight"><pre><span></span><code>lsof -i:30002
 </code></pre></div>
-
 <p>找出端口占用的 pid，然后</p>
 <div class="highlight"><pre><span></span><code><span class="nb">kill</span> -s <span class="m">9</span> pid
 </code></pre></div>
-
 <p>在某些机子上发现运行 <code>ssh -D</code> 会报出，</p>
 <blockquote>
 <p>bind: Cannot assign requested address</p>
@@ -2096,11 +2070,9 @@ ssh -D <span class="m">30002</span> -p <span class="m">30001</span> <span class=
 <p>为了让 ssh 程序在断开后重连，采用 <a href="https://www.harding.motd.ca/autossh/">autossh</a>。在内网服务器上运行，</p>
 <div class="highlight"><pre><span></span><code>./autossh -M <span class="m">30000</span> -o <span class="s2">&quot;StrictHostKeyChecking=false&quot;</span> -o <span class="s2">&quot;ServerAliveInterval 10&quot;</span> -o <span class="s2">&quot;ServerAliveCountMax 3&quot;</span> -NR <span class="m">30003</span>:localhost:22 xxx@xx.xx.xx.xx
 </code></pre></div>
-
 <p>通过 <code>ps -aef</code> 发现其调用了，</p>
 <div class="highlight"><pre><span></span><code>/usr/bin/ssh -L <span class="m">30000</span>:127.0.0.1:30000 -R <span class="m">30000</span>:127.0.0.1:30001 -o <span class="nv">StrictHostKeyChecking</span><span class="o">=</span><span class="nb">false</span> -o ServerAliveInterval <span class="m">10</span> -o ServerAliveCountMax <span class="m">3</span> -NR <span class="m">30003</span>:localhost:22 xxx@xx.xx.xx.xx
 </code></pre></div>
-
 <p>而且如果 kill 掉这个进程，则会立即重新运行一个完全一样的。对于多出来的 <code>30001</code> 端口很是奇怪，因为我没有指定。直到学习了下 <a href="https://blog.csdn.net/wesleyflagon/article/details/85304336">autossh 的原理</a>之后才恍然大悟. </p>
 <p>监视端口 <code>-M port[:echo_port]</code> 算是最重要的参数了，这里只指定了 <code>port</code> 为 30000，则</p>
 <ul>
@@ -2135,15 +2107,12 @@ forward-socks5 / <span class="m">127</span>.0.0.1:1080 .
 <span class="c1"># 可以允许局域网中的连接</span>
 listen-address <span class="m">0</span>.0.0.0:8118
 </code></pre></div>
-
 <p>注意这里要用 <code>0.0.0.0</code>，这样才能允许<a href="https://blog.csdn.net/lamp_yang_3533/article/details/52154695">局域网内的连接</a>。但这样还不够，防火墙还没打开，<a href="https://blog.csdn.net/jiaochiwuzui/article/details/80907521">查看防火墙</a>当前打开的 port</p>
 <div class="highlight"><pre><span></span><code>sudo ufw status
 </code></pre></div>
-
 <p>果然没有 8118 端口，于是打开</p>
 <div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">8118</span>
 </code></pre></div>
-
 <p>大功告成，手机端能够通过 http 代理科学上网啦！</p>
 <h2 id="_12">子网掩码<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <p>想在云服务器后台设置安全组规则，只允许 CUHK 的网进入；但是填写时，除了 IP，还需要子网掩码，经查为 <a href="https://ipinfo.io/AS3661/137.189.0.0/16">CUHKNET</a></p>

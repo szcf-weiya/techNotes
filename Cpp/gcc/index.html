@@ -1162,7 +1162,6 @@ support:
 <p>一步到位的编译指令为</p>
 <div class="highlight"><pre><span></span><code>gcc test.c -o test
 </code></pre></div>
-
 <h2 id="_3">预处理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><div class="highlight"><pre><span></span><code>gcc -E test.c -o test.i
 // gcc -E test.c
@@ -1175,37 +1174,30 @@ support:
 <h2 id="_5">汇编<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>gcc -c test.s -o test.o
 </code></pre></div>
-
 <h2 id="_6">连接<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>gcc test.o -o test
 </code></pre></div>
-
 <h1 id="_7">多个程序文件的编译<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code>gcc test1.c test2.c -o test 
 </code></pre></div>
-
 <h1 id="_8">检错<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code>gcc -pedantic illcode.c -o illcode
 gcc -Wall illcode.c -o illcode
 gcc -Werror test.c -o test
 </code></pre></div>
-
 <h1 id="_9">库文件连接<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
 <p>函数库包含.h,so,lib,dll</p>
 <h2 id="_10">编译成可执行文件<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>gcc –c –I /usr/dev/mysql/include test.c –o test.o
 </code></pre></div>
-
 <h2 id="_11">连接<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>gcc –L /usr/dev/mysql/lib –lmysqlclient test.o –o test
 </code></pre></div>
-
 <h2 id="_12">强制连接时使用静态链接库<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <p>优先使用动态链接库，只有当动态链接库不存在时才考虑使用静态链接库，-static强制使用静态链接库</p>
 <p>在/usr/dev/mysql/lib目录下有链接时所需要的库文件libmysqlclient.so和libmysqlclient.a，为了让GCC在链接时只用到静态链接库，可以使用下面的命令</p>
 <div class="highlight"><pre><span></span><code>gcc –L /usr/dev/mysql/lib –static –lmysqlclient test.o –o test
 </code></pre></div>
-
 <h3 id="_13">静态库链接时搜索路径顺序:<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <ol>
 <li>ld会去找GCC命令中的参数-L</li>
