@@ -66,16 +66,41 @@ ssh-keygen -t rsa -C "test@163.com"
 
 复制~/.ssh/id_rsa.pub到github上。
 
-## 修改origin
-```
-git remote rm origin
-git remote add origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
+## 修改 origin
+
+本地通过 git clone 得到仓库 https://github.com/CellProfiler/CellProfiler，后来需要在此基础上做些更改用到自己的项目中去，于是对原仓库进行了 fork，不过忘记了本地的仓库其实是从原仓库 clone 下来的，而非来自 fork 后的仓库，于是在 git push 会试图像原仓库进行 push，这当然是会被拒绝的。
+
+简单的方法便是直接更改本地仓库的 origin，首先可以通过
+
+```bash
+git remote show origin
 ```
 
-or
+来查看当前 origin，前几行显示如下
+
+```bash
+$ git remote show origin 
+* remote origin
+  Fetch URL: git@github.com:CellProfiler/CellProfiler.git
+  Push  URL: git@github.com:CellProfiler/CellProfiler.git
 ```
-git remote set-url origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
+
+更改可以使用
+
+```bash
+git remote rm origin
+git remote add origin git@github.com:szcf-weiya/CellProfiler.git
 ```
+
+或者直接一步走
+
+```bash
+git remote set-url origin git@github.com:szcf-weiya/CellProfiler.git
+```
+
+注意到这里 url 都是直接取的 `git@github.com`，倘若用了 `https://github.com`，则 push 时会要求手动输入密码。
+
+参考 [How to change the fork that a repository is linked to](https://stackoverflow.com/questions/11619593/how-to-change-the-fork-that-a-repository-is-linked-to)
 
 ## gitignore 失效
 
