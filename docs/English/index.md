@@ -1,3 +1,12 @@
+## 2020.10.08
+
+- This article on bus ridership is **right up your alley** (well suited to one's tastes, interests, or abilities).
+- I **grant (【勉强】承认，同意)** you that..
+- the **ensuing** discussion in the article **speculated about** explanations for a decline in the individual **propensity** to ride.
+- suburbanite: 郊区居民
+- they **screwed up** on the above graph
+- it has to **swerve** in and out of traffic after each bus stop.
+
 ## 2020.10.07
 
 - does this **fallacy** have a name?
