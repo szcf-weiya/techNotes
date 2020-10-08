@@ -861,7 +861,7 @@
       
         <li class="md-nav__item">
   <a href="#origin" class="md-nav__link">
-    修改origin
+    修改 origin
   </a>
   
 </li>
@@ -1546,7 +1546,7 @@
       
         <li class="md-nav__item">
   <a href="#origin" class="md-nav__link">
-    修改origin
+    修改 origin
   </a>
   
 </li>
@@ -1878,13 +1878,26 @@ git config --global user.email &quot;test@163.com&quot;
 </li>
 </ol>
 <p>复制~/.ssh/id_rsa.pub到github上。</p>
-<h2 id="origin">修改origin<a class="headerlink" href="#origin" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git remote rm origin
-git remote add origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
+<h2 id="origin">修改 origin<a class="headerlink" href="#origin" title="Permanent link">&para;</a></h2>
+<p>本地通过 git clone 得到仓库 https://github.com/CellProfiler/CellProfiler，后来需要在此基础上做些更改用到自己的项目中去，于是对原仓库进行了 fork，不过忘记了本地的仓库其实是从原仓库 clone 下来的，而非来自 fork 后的仓库，于是在 git push 会试图像原仓库进行 push，这当然是会被拒绝的。</p>
+<p>简单的方法便是直接更改本地仓库的 origin，首先可以通过</p>
+<div class="highlight"><pre><span></span><code>git remote show origin
 </code></pre></div>
-<p>or
-<div class="highlight"><pre><span></span><code>git remote set-url origin git@192.168.1.18:mStar/OTT-dual/K3S/supernova
-</code></pre></div></p>
+<p>来查看当前 origin，前几行显示如下</p>
+<div class="highlight"><pre><span></span><code>$ git remote show origin 
+* remote origin
+  Fetch URL: git@github.com:CellProfiler/CellProfiler.git
+  Push  URL: git@github.com:CellProfiler/CellProfiler.git
+</code></pre></div>
+<p>更改可以使用</p>
+<div class="highlight"><pre><span></span><code>git remote rm origin
+git remote add origin git@github.com:szcf-weiya/CellProfiler.git
+</code></pre></div>
+<p>或者直接一步走</p>
+<div class="highlight"><pre><span></span><code>git remote set-url origin git@github.com:szcf-weiya/CellProfiler.git
+</code></pre></div>
+<p>注意到这里 url 都是直接取的 <code>git@github.com</code>，倘若用了 <code>https://github.com</code>，则 push 时会要求手动输入密码。</p>
+<p>参考 <a href="https://stackoverflow.com/questions/11619593/how-to-change-the-fork-that-a-repository-is-linked-to">How to change the fork that a repository is linked to</a></p>
 <h2 id="gitignore">gitignore 失效<a class="headerlink" href="#gitignore" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.pfeng.org/archives/840">.gitignore</a></p>
 <p>有时候在项目开发过程中，突然心血来潮想把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交：</p>
