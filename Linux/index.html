@@ -932,6 +932,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#scp-a-file-with-name-including-colon" class="md-nav__link">
+    scp a file with name including colon
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2523,6 +2530,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#scp-a-file-with-name-including-colon" class="md-nav__link">
+    scp a file with name including colon
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3348,6 +3362,9 @@ tp-smapi   <span class="o">=</span> inactive <span class="o">(</span>ThinkPad no
 </div>
 <p>比如我发现 Ubuntu 18.04.5 LTS 实际上的内核版本应该是 5.0，甚至有 5.3，不过这似乎跟硬件有关，比如<a href="https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes/ChangeSummary/18.04.5#Kernel_and_Hardware_support_updates">这里</a>列了 <code>linux-aws-5.0</code>, <code>linux-aws-5.0</code>，不过我也看到了 <code>linux-gke-4.15</code>，所以还是不要乱升级的好，不然硬件不兼容又要继续折腾了。</p>
 <p>话说回来，电池最后实在不行，就换了呗，反正这个是外置可拆卸的。</p>
+<h2 id="scp-a-file-with-name-including-colon">scp a file with name including colon<a class="headerlink" href="#scp-a-file-with-name-including-colon" title="Permanent link">&para;</a></h2>
+<p>add <code>./</code> before the file, since it will interpret colon <code>x:</code> as [user@]host prefix</p>
+<p>refer to <a href="https://stackoverflow.com/questions/14718720/how-can-i-scp-a-file-with-a-colon-in-the-file-name">How can I scp a file with a colon in the file name?</a></p>
                 
               
               
