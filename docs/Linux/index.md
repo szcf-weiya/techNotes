@@ -1229,3 +1229,8 @@ $ uname -r
 
 话说回来，电池最后实在不行，就换了呗，反正这个是外置可拆卸的。
 
+## scp a file with name including colon
+
+add `./` before the file, since it will interpret colon `x:` as [user@]host prefix
+
+refer to [How can I scp a file with a colon in the file name?](https://stackoverflow.com/questions/14718720/how-can-i-scp-a-file-with-a-colon-in-the-file-name)

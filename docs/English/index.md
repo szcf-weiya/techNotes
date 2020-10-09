@@ -1,3 +1,13 @@
+## 2020.10.09
+
+- I bought the book and, **flipping through** it to find examples for use in class, came cross the two sketches
+- the frequency of driving accidents is plotted against the time of menstruation
+- one for parous women, and one for nonparous women
+- premenopausal female 绝经前女性
+- the left **hump** representing accidents that had occurred just before the **menstrual period**
+- he then could have **hastily** summarized the data in a sketch
+- it was just **sloppiness**.
+
 ## 2020.10.08
 
 - This article on bus ridership is **right up your alley** (well suited to one's tastes, interests, or abilities).
