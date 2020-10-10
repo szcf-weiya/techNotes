@@ -1,3 +1,11 @@
+## 2020.10.10
+
+- They are **acutely attuned to the grave dangers** associated with an economy **grinding to a halt.**
+- racial profiling
+- Blacks are more likely to be stopped for **pretextual** (pretext, 借口，推辞) reasons (e.g. **alleged** vehicle defect, such as broken tailight; record check) and less for more concrete reasons such as speeding.
+- these have been **valorized** in constitutional caselaw
+- there are other disparities by race that are notable and (most likely) significant.
+
 ## 2020.10.09
 
 - I bought the book and, **flipping through** it to find examples for use in class, came cross the two sketches
