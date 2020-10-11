@@ -1,3 +1,10 @@
+## 2020.10.11
+
+- The X-ray emission comes from the hot gas surrounding and **accreting** onto the merging black holes.
+- During the merger, some of the X-ray emission is expected to be modulated at a frequency **commensurate** to that of the gravitational waves produced by the black holes.
+- after the merger, it is possible that a **corona** of hot, X-ray emitting gas will form and jets of particles may be launched at speeds close to the speed of light.
+
+
 ## 2020.10.10
 
 - They are **acutely attuned to the grave dangers** associated with an economy **grinding to a halt.**
