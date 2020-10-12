@@ -1,3 +1,10 @@
+## 2020.10.12
+
+- Vocal characteristics predict **infidelity** intention and relationship **commitment** in men but not in women.
+- The story was featured in various **classy** news outlets.
+- some **wiseass** replies to all
+- we're **reliving** the 1990's here...
+
 ## 2020.10.11
 
 - The X-ray emission comes from the hot gas surrounding and **accreting** onto the merging black holes.
