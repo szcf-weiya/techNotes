@@ -1,3 +1,9 @@
+## 2020.10.13
+
+- both of **contagious** individuals and viral load sufficient to related to death.
+- statistical **cult**
+- **noncommittal** response
+
 ## 2020.10.12
 
 - Vocal characteristics predict **infidelity** intention and relationship **commitment** in men but not in women.
