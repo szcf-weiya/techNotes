@@ -603,3 +603,14 @@ docker run -it --rm r-base:3.6.0
 ```
 
 install.packages("https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz", repos = NULL, type = "source")
+
+[change the image installation directory:](https://stackoverflow.com/questions/24309526/how-to-change-the-docker-image-installation-directory)
+
+```bash
+$ sudo vi /etc/docker/daemon.json
+{
+  "data-root": "/new/path/to/docker-data"
+}
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
+```
