@@ -1825,25 +1825,27 @@ happy life
 
 ## 2018.01.27
 
-["skewer a sacred cow"](https://english.stackexchange.com/questions/166702/whats-the-meaning-and-the-origin-of-skewer-a-sacred-cow)
+- To [**skewer (刺穿，串住)** a **sacred (神圣的，庄严的，宗教的)** cow](https://english.stackexchange.com/questions/166702/whats-the-meaning-and-the-origin-of-skewer-a-sacred-cow), means to **defy (公然反抗，藐视)** what is generally held as **indisputable (无可争辩的，不容置疑的)**.
 
 ## 2018.02.11
 
-1. Etymology
+1. So **etymology** is the history of a word and then its historical development over time of its meaning.
 
 ## 2018.02.22
 
-1. epilogue
-2. indebted
+1. Victoire, who's in the **epilogue (结语，尾声)**, she is so named because she was born on the anniversary of the battle that finished it all.
+2. I am greatly **indebted (负债的，感激的，受惠的)** to you for your help.
 
 ## 2018.03.07
-1. facilitate
-2. collinearity
+
+- **Sediments (沉积物)** between a **glacier (冰河，冰川)** and the ground may also **facilitate (使便利)** slippage.
+- ~~collinearity~~
 
 ## 2018.03.15
-1. nuance
-2. with a grain of salt
+
+- And **defusing** the issue should pave the way for more **nuanced** and constructive politics.
+- with a **grain of salt**: an English language idiom that means to view something with skepticism or not to interpret something literally.
 
 ## 2018.04.18
 
-1. assimilate
+- The U.S. has **assimilated (吸收，消化；同化)** people from European countries.
