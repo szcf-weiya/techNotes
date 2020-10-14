@@ -2222,6 +2222,14 @@ Got permission denied <span class="k">while</span> trying to connect to the Dock
 <div class="highlight"><pre><span></span><code>docker run -it --rm r-base:3.6.0
 </code></pre></div>
 <p>install.packages(&ldquo;https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz&rdquo;, repos = NULL, type = &ldquo;source&rdquo;)</p>
+<p><a href="https://stackoverflow.com/questions/24309526/how-to-change-the-docker-image-installation-directory">change the image installation directory:</a></p>
+<div class="highlight"><pre><span></span><code>$ sudo vi /etc/docker/daemon.json
+<span class="o">{</span>
+  <span class="s2">&quot;data-root&quot;</span>: <span class="s2">&quot;/new/path/to/docker-data&quot;</span>
+<span class="o">}</span>
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
+</code></pre></div>
                 
               
               
