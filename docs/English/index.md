@@ -1,3 +1,12 @@
+## 2020.10.14
+
+- consensus-based transparency checklist
+- I also have a wary feeling that is harder to put words to
+- will the satisfactory feeling of successfully completing the checklist **lull** researchers into **complacency** and keep them from spending effort on the deeper layers?
+- I worry the checklist is going to inadvertently be taken as a false check of quality, rather than simply transparency.
+- We should always consider the lurking dangers of offering easy solutions and simple checklists that make humans feel that they've done all that is needed.
+- transparency should reduce existing incentives for performing bad science and increase incentives for better measurement and design of studies.
+
 ## 2020.10.13
 
 - both of **contagious** individuals and viral load sufficient to related to death.
