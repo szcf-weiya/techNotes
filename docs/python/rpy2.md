@@ -10,7 +10,7 @@
 
 `conda install rpy2`: 除了装 `rpy2`，也会装 `r-base` 及一些 R 中的核心包，即便系统中已经有 `R` 了。具体如下
 
-```
+```bash
 Downloading and Extracting Packages
 pango-1.42.4         | 528 KB    | ##################################### | 100% 
 curl-7.65.3          | 141 KB    | ##################################### | 100% 
@@ -65,14 +65,4 @@ r-tibble-2.1.1       | 316 KB    | ##################################### | 100%
 Successfully installed MarkupSafe-1.1.1 atomicwrites-1.3.0 attrs-19.3.0 cffi-1.13.2 importlib-metadata-0.23 jinja2-2.10.3 more-itertools-7.2.0 packaging-19.2 pluggy-0.13.0 py-1.8.0 pycparser-2.19 pytest-5.2.2 rpy2-3.2.2 simplegeneric-0.8.1 tzlocal-2.0.0 wcwidth-0.1.7 zipp-0.6.0
 ```
 
-但是使用时，没找到 `libR.so`，猜测可能是因为没有指定 `--enable-R-shlib` [^1][^2]
-
-[^1]: https://stackoverflow.com/questions/51622357/compiling-r-3-5-1-from-source-no-libr-so/51626460#51626460
-[^2]: https://support.rstudio.com/hc/en-us/articles/218004217-Building-R-from-source
-
-
-results list name
-
-res = 
-
-`res.names` can show the array of names, but how to get the element by the name, i.e., like `res$somename` in R.
+但是使用时，没找到 `libR.so`，猜测可能是因为编译时没有指定 `--enable-R-shlib`，详见 [Compiling R 3.5.1 from source, no libR.so](https://stackoverflow.com/questions/51622357/compiling-r-3-5-1-from-source-no-libr-so/51626460#51626460) 或者 [Building R from source](https://support.rstudio.com/hc/en-us/articles/218004217-Building-R-from-source)
