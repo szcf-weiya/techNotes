@@ -1,3 +1,9 @@
+## 2020.10.15
+
+- I was surprised to find my neighbourhood city of **Bourg-la-Reine (皇后堡, 法国法兰西岛大区上塞纳省的一个市镇，位于巴黎市区南部，属于安东尼区。)** ([twin city](https://en.wikipedia.org/wiki/Bourg-la-Reine), **Kenilworth (凯尼尔沃思, 英格兰沃里克郡的一个集镇和民政教区)**) mentioned in a **tribune (论坛报)**.
+- a **boardgame (版图游戏)** called Kapital which is presented there as a form of [anti-Monopoly](https://en.wikipedia.org/wiki/Anti-Monopoly), authors who were both **CNRS (Centre national de la recherche scientifique, 法国国家科学研究中心)** researchers in sociology until they retired.
+- the opposition between the **[May 68](https://en.wikipedia.org/wiki/May_68) (五月风暴，也称五月运动、五月革命和五月事件，是1968年春夏之交法国发生的学生运动。)** style class **warfare (战争，冲突)** **denounced (谴责，告发)** by the authors and their apparently **well-off (富裕的，处境好的)** conditions.
+
 ## 2020.10.14
 
 - consensus-based transparency checklist
