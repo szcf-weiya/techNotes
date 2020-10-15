@@ -59,10 +59,10 @@ r-tibble-2.1.1       | 316 KB    | ##################################### | 100%
 
 ### 2
 
-`pip install --user rpy2`: 则只会装 rpy2。
+`pip install rpy2`: 则只会装 rpy2，如果没有权限，可以再加上 `--user` 选项。
 
 ```
 Successfully installed MarkupSafe-1.1.1 atomicwrites-1.3.0 attrs-19.3.0 cffi-1.13.2 importlib-metadata-0.23 jinja2-2.10.3 more-itertools-7.2.0 packaging-19.2 pluggy-0.13.0 py-1.8.0 pycparser-2.19 pytest-5.2.2 rpy2-3.2.2 simplegeneric-0.8.1 tzlocal-2.0.0 wcwidth-0.1.7 zipp-0.6.0
 ```
 
-但是使用时，没找到 `libR.so`，猜测可能是因为编译时没有指定 `--enable-R-shlib`，详见 [Compiling R 3.5.1 from source, no libR.so](https://stackoverflow.com/questions/51622357/compiling-r-3-5-1-from-source-no-libr-so/51626460#51626460) 或者 [Building R from source](https://support.rstudio.com/hc/en-us/articles/218004217-Building-R-from-source)
+但是使用时，没找到 `libR.so`，猜测可能是因为编译时没有指定 `--enable-R-shlib`，详见 [Compiling R 3.5.1 from source, no libR.so](https://stackoverflow.com/questions/51622357/compiling-r-3-5-1-from-source-no-libr-so/51626460#51626460) 或者 [Building R from source](https://support.rstudio.com/hc/en-us/articles/218004217-Building-R-from-source)。
