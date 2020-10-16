@@ -1,3 +1,9 @@
+## 2020.10.16
+
+- I leave it to you to decide whether this is **fodder** for your blog.
+- a **plaintiff** should be able to **bring a lawsuit** on the basis of discrimination **per se**
+- the Biber Code **dudes**
+
 ## 2020.10.15
 
 - I was surprised to find my neighbourhood city of **Bourg-la-Reine (皇后堡, 法国法兰西岛大区上塞纳省的一个市镇，位于巴黎市区南部，属于安东尼区。)** ([twin city](https://en.wikipedia.org/wiki/Bourg-la-Reine), **Kenilworth (凯尼尔沃思, 英格兰沃里克郡的一个集镇和民政教区)**) mentioned in a **tribune (论坛报)**.
