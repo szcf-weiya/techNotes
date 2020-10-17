@@ -1,3 +1,12 @@
+## 2020.10.17
+
+- I wan **intrigued** by the observations you made this summer.
+- **In order for** Trump to win a blue state
+- I put them in a **pile** so that later I can read them in order.
+- this article informs us that Trump is **invincible**.
+- this is just a **rehash** of the major news media.
+- it's your grandpa who's been reading a bunch of newspapers and watching lots of TV news and then **regurgitating** it back to you.
+
 ## 2020.10.16
 
 - I leave it to you to decide whether this is **fodder** for your blog.
