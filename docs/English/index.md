@@ -1,3 +1,11 @@
+## 2020.10.18
+
+- this might be a feather in the wind to prevent a predictable post-voting-day **wrangle** that could **tip the country over the edge**.
+- **accusations** of fraud seem almost inevitable.
+- they can analyze **precinct-level** totals to look for "thumbprints" of voter fraud.
+- it's not as sure as a photograph of **"mislaid" ballots** dumped behind a post office.
+
+
 ## 2020.10.17
 
 - I wan **intrigued** by the observations you made this summer.
