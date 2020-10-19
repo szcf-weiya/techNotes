@@ -1,3 +1,12 @@
+## 2020.10.19
+
+- I'd assumed that there are more pro Dem **pollsters** than pro Rep or unbiased pollsters. 
+- our model judges that to be a **fluke**
+- someone sent me this **collage** of maps from Nate's model
+- they're not just some sort of computer **glitch**
+- problem of the between-state correlations in the [Fivethirtyeight](https://fivethirtyeight.com/)([中文解释](https://www.zhihu.com/question/33259890)) election forecast.
+
+
 ## 2020.10.18
 
 - this might be a feather in the wind to prevent a predictable post-voting-day **wrangle** that could **tip the country over the edge**.
