@@ -1,3 +1,9 @@
+## 2020.10.20
+
+- a return to problem solving and **dialing down** of tension.
+- characterize the modern presidents in this way, **saviors:** Trump, Obama, Clinton, Reagan, Rooseveit
+- Carter in retrospect does not have a savior **vibe**, but he was elected as a transformative outlier.
+
 ## 2020.10.19
 
 - I'd assumed that there are more pro Dem **pollsters** than pro Rep or unbiased pollsters. 
