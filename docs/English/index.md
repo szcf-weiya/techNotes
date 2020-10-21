@@ -1,8 +1,13 @@
+## 2020.10.21
+
+- Kennedy **looms** large in retrospect but it is not clear that he was considered as a savior when he was running for president.
+- There was the **radicalism (激进主义)** of the post-1974 reform movement, the **1994 Newt Gingrich revolution (纽特·金里奇领导的[共和党革命](https://zh.wikipedia.org/wiki/%E5%85%B1%E5%92%8C%E9%BB%A8%E9%9D%A9%E5%91%BD))**, and then the locked-in partisanship of congressional Republicans since 2010, all of these which can be considered both as responses to executive **overreach (过火，过度伸张，做事过头)** by opposition presidents and which have motivated **counterreactions (逆反应)**.
+
 ## 2020.10.20
 
 - a return to problem solving and **dialing down** of tension.
-- characterize the modern presidents in this way, **saviors:** Trump, Obama, Clinton, Reagan, Rooseveit
-- Carter in retrospect does not have a savior **vibe**, but he was elected as a transformative outlier.
+- characterize the modern presidents in this way, **saviors:** Trump, Obama, Clinton, **Reagan (里根)**, **Roosevelt (罗斯福)**
+- **Carter (卡特)** in retrospect does not have a savior **vibe**, but he was elected as a transformative outlier.
 
 ## 2020.10.19
 
@@ -1874,7 +1879,9 @@ happy life
 
 ## 2018.01.06
 
-1. protestant, Catholic
+- Protestant (新教徒，新教徒的), Catholic (天主教的)
+    - [天主教](https://zh.wikipedia.org/wiki/%E5%A4%A9%E4%B8%BB%E6%95%99)（拉丁语：Catholicismus）是基督教整体以下的宗派之一，是对罗马公教会（天主教会）发展而来的一系列基督教之神学、哲学理论、礼仪传统、伦理纲常等信仰体系之总括，为基督教最大宗派。天主教的中文名称源自明朝万历年间耶稣会将基督信仰传入中国，经当朝礼部尚书之徐光启与利玛窦等耶稣会士讨论，取儒家古话“至高莫若天，至尊莫若主”，称其信仰之独一神灵为“天主”，故称之。
+    - [新教](https://zh.wikipedia.org/wiki/%E6%96%B0%E6%95%99)，又称基督新教，是西方基督教中不属于天主教体系的宗派之统称，中文“新教”一词是主要对应和区别于宗教改革之前的“旧教”。新教源于16世纪神学家马丁·路德、加尔文、慈运理等人所领导的宗教改革运动，与天主教、东正教并列为基督宗教三大分支。
 
 ## 2018.01.27
 
