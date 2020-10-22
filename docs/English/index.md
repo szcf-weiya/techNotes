@@ -1,3 +1,13 @@
+## 2020.10.22
+
+- I was looking at this map of coronavirus cases, **pondering** the large **swaths** with seemingly no cases.
+- Or, even worse, designing a study, not finding the anticipated main effect, and then using the interactions to **bail you out**.
+- I'm pretty sure the idea has been reinvented a **zillion** other times before and after I did it.
+- Any sufficiently **crappy** research is indistinguishable from fraud.
+- the notorious study in which participants were invited to stick 51 pins into a **voodoo doll** representing their **spouses**.
+- it was just done by some **bigshot** professor who calls himself a "**myth buster**".
+- That voodoo study is **hilarious**, worth a good **rant** or two.
+
 ## 2020.10.21
 
 - Kennedy **looms** large in retrospect but it is not clear that he was considered as a savior when he was running for president.
