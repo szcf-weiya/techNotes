@@ -1,3 +1,10 @@
+## 2020.10.23
+
+- This particular code is kinda hacky in that it does not account for **fencepost** errors, but it conveys the general idea.
+- The **premise** of this joke is that if the one economist had truly wanted the car then he would have walked into the **showroom** and bought it.
+- Donating was used to determine whether men or women are better **tippers**.
+- Donating was used to determine which prominent skeptic to **prank**.
+
 ## 2020.10.22
 
 - I was looking at this map of coronavirus cases, **pondering** the large **swaths** with seemingly no cases.
