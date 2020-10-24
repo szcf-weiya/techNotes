@@ -1,3 +1,10 @@
+## 2020.10.24
+
+- its results are used to inform **federal** funding decisions.
+- what are the effects of X on election, where X is **ballot**-order effects, Fox News, home-state advantage, or other things?
+- I agree with my **correspondent** that this graph does not look like a very good advertisement for this method!
+- Never underestimate the power of **fomo**.
+
 ## 2020.10.23
 
 - This particular code is kinda hacky in that it does not account for **fencepost** errors, but it conveys the general idea.
