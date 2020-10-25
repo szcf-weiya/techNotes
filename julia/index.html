@@ -880,6 +880,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#run-command-line" class="md-nav__link">
+    run command line
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1847,6 +1854,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#run-command-line" class="md-nav__link">
+    run command line
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2529,6 +2543,25 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3æ
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">1</span><span class="p">]</span>
 <span class="mi">1</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="run-command-line">run command line<a class="headerlink" href="#run-command-line" title="Permanent link">&para;</a></h2>
+<p>For example, to combine different figures,</p>
+<div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="sb">`convert p1.png p2.png +append p12.png`</span><span class="p">)</span>
+</code></pre></div>
+<p>but if there are two many figures to combine, the correct way is to keep the multiple figure name as an array,</p>
+<div class="highlight"><pre><span></span><code><span class="n">figs</span> <span class="o">=</span> <span class="s">&quot;p&quot;</span> <span class="o">.*</span> <span class="n">string</span><span class="o">.</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span><span class="p">)</span> <span class="o">.*</span> <span class="s">&quot;.png&quot;</span>
+<span class="n">run</span><span class="p">(</span><span class="sb">`convert </span><span class="si">$figs</span><span class="sb"> +append pall.png`</span><span class="p">)</span>
+</code></pre></div>
+<p>instead of trying to convert the array to a string, </p>
+<div class="highlight"><pre><span></span><code><span class="c"># WRONG!!!</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">figs</span> <span class="o">=</span> <span class="n">prod</span><span class="p">(</span><span class="s">&quot;p&quot;</span> <span class="o">.*</span> <span class="n">string</span><span class="o">.</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span><span class="p">)</span> <span class="o">.*</span> <span class="s">&quot;.png &quot;</span><span class="p">)</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">run</span><span class="p">(</span><span class="sb">`convert </span><span class="si">$figs</span><span class="sb"> +append pall.png`</span><span class="p">)</span>
+<span class="n">convert</span><span class="o">:</span> <span class="n">unable</span> <span class="n">to</span> <span class="n">open</span> <span class="n">image</span> <span class="err">&#39;</span><span class="n">p1</span><span class="o">.</span><span class="n">png</span> <span class="n">p2</span><span class="o">.</span><span class="n">png</span> <span class="o">...</span> <span class="n">p10</span><span class="o">.</span><span class="n">png</span> <span class="err">&#39;</span>
+</code></pre></div>
+<p>or writting all command as a string</p>
+<div class="highlight"><pre><span></span><code><span class="c"># WRONG!!!</span>
+<span class="n">command</span> <span class="o">=</span> <span class="s">&quot;convert &quot;</span> <span class="o">*</span> <span class="n">prod</span><span class="p">(</span><span class="s">&quot;p&quot;</span> <span class="o">.*</span> <span class="n">string</span><span class="o">.</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span><span class="p">)</span> <span class="o">.*</span> <span class="s">&quot;.png &quot;</span><span class="p">)</span> <span class="o">*</span> <span class="s">&quot;+append pall.png&quot;</span>
+<span class="n">run</span><span class="p">(</span><span class="sb">`</span><span class="si">$command</span><span class="sb">`</span><span class="p">)</span>
 </code></pre></div>
                 
               
