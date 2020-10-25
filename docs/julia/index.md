@@ -952,3 +952,36 @@ julia> x[1:1]
 1-element Array{Array{Int64,1},1}:
  [1, 2, 3]
 ```
+
+## run command line
+
+For example, to combine different figures,
+
+```julia
+run(`convert p1.png p2.png +append p12.png`)
+```
+
+but if there are two many figures to combine, the correct way is to keep the multiple figure name as an array,
+
+```julia
+figs = "p" .* string.(1:10) .* ".png"
+run(`convert $figs +append pall.png`)
+```
+
+instead of trying to convert the array to a string, 
+
+```julia
+# WRONG!!!
+julia> figs = prod("p" .* string.(1:10) .* ".png ")
+julia> run(`convert $figs +append pall.png`)
+convert: unable to open image 'p1.png p2.png ... p10.png '
+```
+
+or writting all command as a string
+
+```julia
+# WRONG!!!
+command = "convert " * prod("p" .* string.(1:10) .* ".png ") * "+append pall.png"
+run(`$command`)
+```
+
