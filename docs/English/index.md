@@ -1,3 +1,10 @@
+## 2020.10.25
+
+- I don't know that I could quite **articulate** what the rules are, but I can tell what's going on.
+- The **moral economy** of science.
+- I heard a rumor that they have contacts at the **Antarctic Polar Station** who are going to sign the thing once they can get their damn **fur gloves** off.
+- I've **obscured** the details of the letter here because I don't want to **single out** the authors of this particular paper or the editor of this particular journal.
+
 ## 2020.10.24
 
 - its results are used to inform **federal** funding decisions.
