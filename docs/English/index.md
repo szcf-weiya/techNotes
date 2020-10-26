@@ -1,3 +1,19 @@
+## 2020.10.26
+
+- There we mention that the birthday data come from the National Vital Statistics **natality** data.
+- I came across this interview of [John Conway](https://www.zhihu.com/question/387110069) and [Siobhan Roberts](https://en.wikipedia.org/wiki/Siobhan_Roberts), Conway's biographer.
+- I felt that there was a strong sense of competitiveness and **ego** in the maths world. 
+- Did you get a sense of a lot of people trying to **outdo** each other in the field?
+- there are occasional examples of it coming to the fore more **prominently**.
+- there were characters I encountered, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) for one, for whom I think there was a bit of an unacknowledged competitive tension with John.
+- The idea of competing with them is **absurd**.
+- That's a very **egotistical** statement.
+- Conway doesn't **mess around**.
+- Wolfram may be egotistical, but he has a lot to be egotistical about.
+- if anyone can do that **astounding feat**, it's this guy.
+- **Every once in awhile**, though, Wolfram will break down and, with very great reluctance, talk about himself.
+- that is somewhat **reminiscent** of time travel.
+
 ## 2020.10.25
 
 - I don't know that I could quite **articulate** what the rules are, but I can tell what's going on.
