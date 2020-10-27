@@ -1,3 +1,12 @@
+## 2020.10.27
+
+- I just don't **buy into** the **premise** so it's hard for me to go further.
+    - I hate to **buy into stereotypes (墨守成规)**.
+- **[Talmudic (塔木德，犹太教宗教文献)](https://zh.wikipedia.org/wiki/%E5%A1%94%E6%9C%A8%E5%BE%B7)** argument about whether God can dig a **ditch** so width he can't jump across it.
+- the question sounds **snarky**, but it's not meant **in that vein**.
+- we must avoid the **trap** of overconfidence in our inferential summaries.
+- the 40% rule is a time-tried **tactic** employed by **pundits** making forecasts.
+
 ## 2020.10.26
 
 - There we mention that the birthday data come from the National Vital Statistics **natality** data.
