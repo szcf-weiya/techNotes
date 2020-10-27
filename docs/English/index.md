@@ -1921,17 +1921,17 @@ happy life
 
 ## 2018.01.01
 
-1. exacerbate
-2. gloss over
-3. be attributed to
-4. extremity
+1. These tensions are **exacerbated** between the wars.
+2. They **glossed over** some key issues on that front.
+3. The athlete's success **was attributed to** systematic training.
+4. lower/upper extremity (上/下肢)
 
 ## 2018.01.03
 
-1. appreciably
-2. in light of
-3. albeit
-4. at its disposal
+1. If we had tens of thousands of **skeletons** distributed at regular intervals through the historical record, there would be **appreciably** more degrees of shading.
+2. So they reanalyzed their data **in light of** the new maps.
+3. We've seen the economy moving forward, **albeit** a little too slowly, he said.
+4. It did, however, have another weapon **at its disposal (任其支配，任其处置)**.
 
 ## 2018.01.06
 
