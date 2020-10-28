@@ -1,3 +1,9 @@
+## 2020.10.28
+
+- Here is a fitted model from the **Bangladesh (孟加拉国)** analysis predicting whether a person with high-**arsenic (砷, 砒霜)** drinking water will switch wells.
+- The rule is **brutal**.
+- You conduct an experiment in which some people get a special **get-out-of-vote (动员投票，出门投票)** message.
+
 ## 2020.10.27
 
 - I just don't **buy into** the **premise** so it's hard for me to go further.
