@@ -664,3 +664,17 @@ umask are not affected.
 但是对 `.wav` 文件仍不能编辑 properties，后来才知道应该是 wav 不支持 tag
 
 > [WAVs don't have tags. Trying to force them to have tags will cause them to not work as WAVs any more. Convert them to FLAC files first (which does support tags) and then tag them.](https://ubuntuforums.org/showthread.php?p=7817206)
+
+但是还是有方法来修改的，比如 [How do I edit a metadata in a WAV file?](https://www.quora.com/How-do-I-edit-a-metadata-in-a-WAV-file)
+
+于是我尝试了 [kid3](https://kid3.kde.org/)
+
+```bash
+sudo add-apt-repository ppa:ufleisch/kid3
+sudo apt-get update
+sudo apt-get install kid3     # KDE users
+```
+
+一开始觉得 `kid3-cli` 足够了，但是试了一下感觉学习成本太高，索性换回 kde 版本的。
+
+但是似乎在 `kid3` 中修改完并没有信息，只是会把删去的 genre 信息变为 unknown。
