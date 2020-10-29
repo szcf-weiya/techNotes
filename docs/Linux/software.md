@@ -627,7 +627,7 @@ $ sudo systemctl restart docker
 
 将验证方法改为 `Oauth2`，然后重启便跳出了熟悉的登录界面，大功告成！
 
-不过有个问题是，这两个版本是同时存在的，profile 是不共用的，我如果要用 78，还需要把其他邮箱重新设置一遍，已经订阅过的 feeds。此处应有简单方法，
+不过有个问题是，这两个版本是同时存在的，profile 是不共用的，我如果要用 78，还需要把其他邮箱重新设置一遍，已经订阅过的 feeds。此处应有[简单方法](https://askubuntu.com/questions/1280743/how-to-import-my-thunderbird-settings-from-thunderbird-68-to-thunderbird-78)，
 
 关闭所有 thunderbird，然后启动 78 时加上 `-Profilemanager`
 
@@ -636,3 +636,27 @@ thunderbird -Profilemanager
 ```
 
 这时会要求选择 profile，只需要选择 68 对应的 profile 就好了。选好之后，再重新配置下学校邮箱的，则大功告成！
+
+## Rhythmbox
+
+右键似乎可以修改歌曲的 properties，其中包括 artist，album，但是却不能编辑，然后[查了一下](https://askubuntu.com/questions/612711/rhythmbox-cannot-edit-properties)，是权限问题，
+
+```bash
+chmod u+w CloudMusic/ -R
+```
+
+where more details about `u+w` can be found in the manual.
+
+```bash
+$ man chmod
+
+The format of a symbolic mode is [ugoa...][[-+=][perms...]...], where perms  is
+either  zero  or  more letters from the set rwxXst, or a single letter from the
+set ugo.  Multiple symbolic modes can be given, separated by commas.
+
+A combination of the letters ugoa controls which users' access to the file will
+be  changed:  the  user  who  owns it (u), other users in the file's group (g),
+other users not in the file's group (o), or all users (a).  If  none  of  these
+are  given,  the  effect  is as if (a) were given, but bits that are set in the
+umask are not affected.
+```
