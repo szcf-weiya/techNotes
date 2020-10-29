@@ -660,3 +660,7 @@ other users not in the file's group (o), or all users (a).  If  none  of  these
 are  given,  the  effect  is as if (a) were given, but bits that are set in the
 umask are not affected.
 ```
+
+但是对 `.wav` 文件仍不能编辑 properties，后来才知道应该是 wav 不支持 tag
+
+> [WAVs don't have tags. Trying to force them to have tags will cause them to not work as WAVs any more. Convert them to FLAC files first (which does support tags) and then tag them.](https://ubuntuforums.org/showthread.php?p=7817206)
