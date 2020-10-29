@@ -614,3 +614,25 @@ $ sudo vi /etc/docker/daemon.json
 $ sudo systemctl daemon-reload
 $ sudo systemctl restart docker
 ```
+
+## Upgrade thunderbird from 68 to 78
+
+最近，学校强制要求使用 2FA，但是根据之前短暂的使用经验，2FA 对邮箱客户端的支持很有限，比如就不支持 Ubuntu 系统上的 thunderbird，所以那次用完之后立马发邮件申请注销（因为 2FA 一旦设定自己无法取消）。
+
+不过幸运的是，看到最近新版本的 thunderbird 支持 Oauth2，比如 [Thunderbird 77 supports IMAP using OAuth2 on Office 365. See https://bugzilla.mozilla.org/show_bug.cgi?id=1528136 for more details.](https://techcommunity.microsoft.com/t5/exchange-team-blog/announcing-oauth-2-0-support-for-imap-and-smtp-auth-protocols-in/bc-p/1354695/highlight/true#M28183) [Office 365 (Thunderbird) - Configure Modern Authentication](https://kb.wisc.edu/helpdesk/page.php?id=102005)
+
+所以准备试试下载新版本，因为似乎不能直接简单的 upgrade 升级到 78.
+
+一开始填错了服务器，漏掉了 `outlook.office365.com` 中的 `365`，还以为 78 不行，毕竟前面两个给的链接说是 77beta，万一 beta 的功能又被砍掉了呢：（后来发现是杞人忧天
+
+将验证方法改为 `Oauth2`，然后重启便跳出了熟悉的登录界面，大功告成！
+
+不过有个问题是，这两个版本是同时存在的，profile 是不共用的，我如果要用 78，还需要把其他邮箱重新设置一遍，已经订阅过的 feeds。此处应有简单方法，
+
+关闭所有 thunderbird，然后启动 78 时加上 `-Profilemanager`
+
+```bash
+thunderbird -Profilemanager
+```
+
+这时会要求选择 profile，只需要选择 68 对应的 profile 就好了。选好之后，再重新配置下学校邮箱的，则大功告成！
