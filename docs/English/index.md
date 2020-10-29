@@ -1,3 +1,10 @@
+## 2020.10.29
+
+- **Fractal** Nature of Scientific Revolutions.
+- The **interim** Stan governing body **stepped down** and were replaced with a new board elected by the developer community.
+- a **feud** that was made worse by a lack of sharing code.
+- **condensed matter (凝聚态)** theory
+
 ## 2020.10.28
 
 - Here is a fitted model from the **Bangladesh (孟加拉国)** analysis predicting whether a person with high-**arsenic (砷, 砒霜)** drinking water will switch wells.
