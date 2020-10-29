@@ -614,6 +614,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rhythmbox" class="md-nav__link">
+    Rhythmbox
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1859,6 +1866,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rhythmbox" class="md-nav__link">
+    Rhythmbox
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2254,11 +2268,32 @@ $ sudo systemctl restart docker
 <p>所以准备试试下载新版本，因为似乎不能直接简单的 upgrade 升级到 78.</p>
 <p>一开始填错了服务器，漏掉了 <code>outlook.office365.com</code> 中的 <code>365</code>，还以为 78 不行，毕竟前面两个给的链接说是 77beta，万一 beta 的功能又被砍掉了呢：（后来发现是杞人忧天</p>
 <p>将验证方法改为 <code>Oauth2</code>，然后重启便跳出了熟悉的登录界面，大功告成！</p>
-<p>不过有个问题是，这两个版本是同时存在的，profile 是不共用的，我如果要用 78，还需要把其他邮箱重新设置一遍，已经订阅过的 feeds。此处应有简单方法，</p>
+<p>不过有个问题是，这两个版本是同时存在的，profile 是不共用的，我如果要用 78，还需要把其他邮箱重新设置一遍，已经订阅过的 feeds。此处应有<a href="https://askubuntu.com/questions/1280743/how-to-import-my-thunderbird-settings-from-thunderbird-68-to-thunderbird-78">简单方法</a>，</p>
 <p>关闭所有 thunderbird，然后启动 78 时加上 <code>-Profilemanager</code></p>
 <div class="highlight"><pre><span></span><code>thunderbird -Profilemanager
 </code></pre></div>
 <p>这时会要求选择 profile，只需要选择 68 对应的 profile 就好了。选好之后，再重新配置下学校邮箱的，则大功告成！</p>
+<h2 id="rhythmbox">Rhythmbox<a class="headerlink" href="#rhythmbox" title="Permanent link">&para;</a></h2>
+<p>右键似乎可以修改歌曲的 properties，其中包括 artist，album，但是却不能编辑，然后<a href="https://askubuntu.com/questions/612711/rhythmbox-cannot-edit-properties">查了一下</a>，是权限问题，</p>
+<div class="highlight"><pre><span></span><code>chmod u+w CloudMusic/ -R
+</code></pre></div>
+<p>where more details about <code>u+w</code> can be found in the manual.</p>
+<div class="highlight"><pre><span></span><code>$ man chmod
+
+The format of a symbolic mode is <span class="o">[</span>ugoa...<span class="o">][[</span>-+<span class="o">=][</span>perms...<span class="o">]</span>...<span class="o">]</span>, where perms  is
+either  zero  or  more letters from the <span class="nb">set</span> rwxXst, or a single letter from the
+<span class="nb">set</span> ugo.  Multiple symbolic modes can be given, separated by commas.
+
+A combination of the letters ugoa controls which users<span class="s1">&#39; access to the file will</span>
+<span class="s1">be  changed:  the  user  who  owns it (u), other users in the file&#39;</span>s group <span class="o">(</span>g<span class="o">)</span>,
+other users not in the file<span class="err">&#39;</span>s group <span class="o">(</span>o<span class="o">)</span>, or all users <span class="o">(</span>a<span class="o">)</span>.  If  none  of  these
+are  given,  the  effect  is as <span class="k">if</span> <span class="o">(</span>a<span class="o">)</span> were given, but bits that are <span class="nb">set</span> in the
+<span class="nb">umask</span> are not affected.
+</code></pre></div>
+<p>但是对 <code>.wav</code> 文件仍不能编辑 properties，后来才知道应该是 wav 不支持 tag</p>
+<blockquote>
+<p><a href="https://ubuntuforums.org/showthread.php?p=7817206">WAVs don&rsquo;t have tags. Trying to force them to have tags will cause them to not work as WAVs any more. Convert them to FLAC files first (which does support tags) and then tag them.</a></p>
+</blockquote>
                 
               
               
