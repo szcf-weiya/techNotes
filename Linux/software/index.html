@@ -2294,6 +2294,14 @@ are  given,  the  effect  is as <span class="k">if</span> <span class="o">(</spa
 <blockquote>
 <p><a href="https://ubuntuforums.org/showthread.php?p=7817206">WAVs don&rsquo;t have tags. Trying to force them to have tags will cause them to not work as WAVs any more. Convert them to FLAC files first (which does support tags) and then tag them.</a></p>
 </blockquote>
+<p>但是还是有方法来修改的，比如 <a href="https://www.quora.com/How-do-I-edit-a-metadata-in-a-WAV-file">How do I edit a metadata in a WAV file?</a></p>
+<p>于是我尝试了 <a href="https://kid3.kde.org/">kid3</a></p>
+<div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:ufleisch/kid3
+sudo apt-get update
+sudo apt-get install kid3     <span class="c1"># KDE users</span>
+</code></pre></div>
+<p>一开始觉得 <code>kid3-cli</code> 足够了，但是试了一下感觉学习成本太高，索性换回 kde 版本的。</p>
+<p>但是似乎在 <code>kid3</code> 中修改完并没有信息，只是会把删去的 genre 信息变为 unknown。</p>
                 
               
               
