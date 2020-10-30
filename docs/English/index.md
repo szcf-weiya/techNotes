@@ -1,3 +1,12 @@
+## 2020.10.30
+
+- **Maine (缅因州)** and **Nebraska (内布拉斯加州)**
+- our model is a forecast of vote **intentions**, not of votes as counted.
+- Now that it's 95%, [the rubber meets the road](https://knowyourphrase.com/when-the-rubber-hits-the-road).
+- It came in as a sort of brief **interlude** and solo between more extensive performances.
+- It's not a [Jenga](https://en.wikipedia.org/wiki/Jenga), but neither is it a [WW2 jeep](https://en.wikipedia.org/wiki/Willys_MB).
+- this model really needs a lot more **scaffolding** for us to fully trust it.
+
 ## 2020.10.29
 
 - **Fractal** Nature of Scientific Revolutions.
