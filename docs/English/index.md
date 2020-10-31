@@ -1,3 +1,12 @@
+## 2020.10.31
+
+- A psychology professor whom I've never met once wrote me a mini-**manifesto**, **disparaging** my efforts as a critic.
+- **Bumblers** are the people who get up every morning and make mistakes, trying to find truth but mainly tripping over their own feet, occasionally getting it right but typically getting it wrong.
+- I think this dualism is **counterproductive**.
+- but it would be more **evocative** to show a series of images showing graying hair.
+- Nobel prize and other science prices are problematic and this is not **endorsement** of such prices, but this might be useful for someone who needs to tell (**hype**) about the impact of Stan.
+- Try a [**spaghetti plot**](https://www.data-to-viz.com/caveat/spaghetti.html).
+
 ## 2020.10.30
 
 - **Maine (缅因州)** and **Nebraska (内布拉斯加州)**
