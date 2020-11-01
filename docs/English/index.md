@@ -1,3 +1,8 @@
+## 2020.11.01
+
+- An idealistic picture of science views science as an orderly process where **disinterested**, objective experts look at **crystal** clear evidence to find the truth.
+- Fake facts in Covid-19 Science: **Kentucky (肯塔基州)** vs. **Tennessee (田纳西州)**
+
 ## 2020.10.31
 
 - A psychology professor whom I've never met once wrote me a mini-**manifesto**, **disparaging** my efforts as a critic.
