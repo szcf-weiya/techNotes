@@ -985,3 +985,6 @@ command = "convert " * prod("p" .* string.(1:10) .* ".png ") * "+append pall.png
 run(`$command`)
 ```
 
+## Shortcuts in Juno
+
+- `Ctrl+J Ctrl+E`: switch from REPL to editor, refer to [the correct shortcut is be Ctrl-J Ctrl-E (and the command is called Julia Client: Focus Last Editor)](https://discourse.julialang.org/t/win10-how-to-switch-keyshort-from-editor-to-repl/22911), an inspiration is that I can check it via `Ctrl-Shift-P`.
