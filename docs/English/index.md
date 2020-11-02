@@ -1,3 +1,8 @@
+## 2020.11.02
+
+- Politics has taken on particular vitriol in recent years.
+- Commentators and political scientists have described the rising tide of polarization in terms of concepts such as **tribalism** and negative **partisanship**.
+
 ## 2020.11.01
 
 - An idealistic picture of science views science as an orderly process where **disinterested**, objective experts look at **crystal** clear evidence to find the truth.
