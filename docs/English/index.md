@@ -1,3 +1,11 @@
+## 2020.11.03
+
+- Picking pennies in front of a **steamroller**: A **parable** comes to life.
+- I stopped by the **Jamaican** beef **patties** place but they were closed.
+- Has Stan [jumped the shark](https://en.wikipedia.org/wiki/Jumping_the_shark)?
+- A [bracket](https://en.wikipedia.org/wiki/Bracket_(tournament)) or **tournament (锦标赛)** bracket is a tree diagram that represents the series of games played during a **knockout (淘汰赛的)** tournament.
+
+
 ## 2020.11.02
 
 - Politics has taken on particular vitriol in recent years.
