@@ -1,3 +1,11 @@
+## 2020.11.04
+
+- it has some deeply **wacky** scenarios
+- voter **turnout**
+- the betting markets have Trump as a slight favorite in Florida, which I'd attribute to **bettors** performing some sort of implicit averaging of current polls and the 2016 election results.
+- there is some room for **maneuver** here.
+- the Republican party controls the federal government and many state **legislatures**.
+
 ## 2020.11.03
 
 - Picking pennies in front of a **steamroller**: A **parable** comes to life.
@@ -837,12 +845,10 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 28. fallacy: 谬误
 29. disdain: 鄙视蔑视
 
-
-
 ## 2019.09.09
 
 1. as far as I can tell: 据我所知
-2. fabulous
+2. You really are a **fabulous** designer.
 
 ## 2019.01.13
 
@@ -868,27 +874,27 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2018.10.03
 
-1. artery
-2. myocardial infarction
-3. adventitia, media, intima
-4. atherosclerosis
+1. He ended up in hospital due to a block in his **artery (动脉、干道、主流)**.
+2. **myocardial (心肌的)** **infarction (梗塞)**
+3. adventitia (外膜，动脉外膜), media (血管中层，中脉), intima (内膜)
+4. Researchers used the CT images to learn if any of the subjects had **atherosclerosis (【医】动脉粥样硬化)** before the study begun.
 
 
 ## 2018.10.01
 
-1. dismissal
-2. cavalier
+1. The rumors of his **dismissal** have been circulating for months.
+2. You're pretty **cavalier** considering your carelessness almost killed my daughter.
 
 ## 2018.09.29
 
-1. witch
-2. brim
-3. tandem
-4. salutary
+1. The next homophone is which and **witch (巫婆、女巫)**.
+2. Why are my eyes always **brimming (vi. 满溢； n. 深容器的内边或河、湖等水域的最高线)** with tears?
+3. She runs the business **in tandem with (同...合作、串联)** her husband.
+4. Contrary to popular belief, they serve no **salutary** economic purpose.
 
 ## 2018.09.25
 
-1. midge
+1. they found that the motion of the **midges (蚊子)** is not random.
 
 ## 2018.09.24
 
