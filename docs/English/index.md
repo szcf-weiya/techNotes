@@ -1,3 +1,9 @@
+## 2020.10.05
+
+- **planar** open curves
+- aerial imagery: aerial photography, 航拍
+- **Skim** the text to grasp its main idea.
+
 ## 2020.11.04
 
 - it has some deeply **wacky** scenarios
@@ -1086,7 +1092,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. chord
 3. counter-example
 4. premiss
-5. discern
 6. enunciate
 7. remuneration 
 8. supposition
@@ -1970,7 +1975,6 @@ happy life
 
 1. perk
 2. terse  
-3. discern
 
 ## 2017.12.28
 
