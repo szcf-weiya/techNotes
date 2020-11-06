@@ -1,4 +1,15 @@
-## 2020.10.05
+## 2020.11.06
+
+- Both of these extensions **confer** improved convergence properties on the basic algorithm without a significant increase in computational cost.
+- The extensions to multiple-view reconstructions **necessitated** the introduction of nonlinear optimization strategies.
+- Thus it is that firmness and strength are the **concomitants** of death; softness and weakness, the **concomitants** of life.
+- It should be possible for a class to inherit from as many others as necessary, with an adequate mechanism for **disambiguating** name **clashes**.
+- No comparison frameworks are available, leading to an **arduous** selection of an appropriate variant for particular experimental conditions.
+- Laser-range sensors were a **cornerstone** to the development of mapping and navigation in the past two decades.
+
+
+
+## 2020.11.05
 
 - **planar** open curves
 - aerial imagery: aerial photography, 航拍
@@ -691,7 +702,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. a bunch of data
 7. My father was a scratch golfer in his **heyday** on local public courses, but he said he’d never be able to sink a single putt if the greens were maintained the way they were for PGA **tournaments**.
 8. he was **obsessive** about his short game—his own career was ended by knee and **rotator cuff** surgery—**hockey** wasn’t good to his body, either, despite playing in a “non-contact” **league** as an adult.
-9. Are there things like field goals in **rugby** or Australian-rules football? I love that the actual name of the sport has “rules” in the title—it’s the kind of **pedantry** near and dear to this semanticist’s heart.
+9. Are there things like field goals in **rugby (橄榄球)** or Australian-rules football? I love that the actual name of the sport has “rules” in the title—it’s the kind of **pedantry** near and dear to this **semanticist (语义学者)**’s heart.
+    - It is the kind of **semantic** nitpicking that has made progressive movements unappealing to many Americans.
 10. I boycott contact sports like football and ice hockey due to their intentionally violent nature.
 11.  I saw too many catchers and **umpires** rocked by **foul** tips to the face mask this season.
 12. see a catcher **don the gear** again after multiple **concussions**
