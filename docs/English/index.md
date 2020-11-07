@@ -1,3 +1,10 @@
+## 2020.11.07
+
+- Any **idiot** can write a **critique**.
+- It can take a lot of work to **untangle** exactly what went wrong.
+- Original researchers do all the hard work, and "open science" critics are lazy **parasites**.
+- People often **repress** painful experience, which years later may later reappear as memories or **disguised** emotions.
+
 ## 2020.11.06
 
 - Both of these extensions **confer** improved convergence properties on the basic algorithm without a significant increase in computational cost.
@@ -1853,10 +1860,10 @@ letter back
 
 ## 2017.11.16
 
-1. enamor
-2. venue
-3. coil
-4. vibe
+1. It really gets them **enamored** with riding and get to make something part of their daily lives.
+2. The **venue** is the school.
+3. He had three forty-**fathom (英寻，等于 6 英尺，约合1.8288米)** **coils** of line in reserve now, as well as the coil he was using.
+4. The **vibe** in the office is amazing.
 5. choreography
 6. Renaissance, the 16th, 17th centuries.
 7. artisan, artist
