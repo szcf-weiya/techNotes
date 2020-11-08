@@ -1,3 +1,12 @@
+## 2020.11.08
+
+- They have **inscribed (题写，铭记，雕刻)** their names upon the pages of history.
+    - inscribed circle: 内切圆
+- **fractal (（经典几何学中没有表示的）不规则碎片形)** landscape
+- The "**incised (切入的，雕刻的，有锯齿状边缘的)** plane" scene consists of two planes with Gaussian noise and **grooves (凹槽)** in the shape of an "X".
+    - His **incisive** criticism gave us a thorough understanding of Dicken's writings.
+
+
 ## 2020.11.07
 
 - Any **idiot** can write a **critique**.
