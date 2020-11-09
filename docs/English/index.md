@@ -1,3 +1,9 @@
+## 2020.11.09
+
+- all would be OK if people just **ditched** their $p$-values and replaced them with intervals.
+- it seemed kinda tacky for a reporter whose shtick was access to the powerful, to not want his own speech to be reported.
+
+
 ## 2020.11.08
 
 - They have **inscribed (题写，铭记，雕刻)** their names upon the pages of history.
@@ -94,7 +100,7 @@
 
 - I just don't **buy into** the **premise** so it's hard for me to go further.
     - I hate to **buy into stereotypes (墨守成规)**.
-- **[Talmudic (塔木德，犹太教宗教文献)](https://zh.wikipedia.org/wiki/%E5%A1%94%E6%9C%A8%E5%BE%B7)** argument about whether God can dig a **ditch** so width he can't jump across it.
+- **[Talmudic (塔木德，犹太教宗教文献)](https://zh.wikipedia.org/wiki/%E5%A1%94%E6%9C%A8%E5%BE%B7)** argument about whether God can dig a **ditch (沟渠)** so width he can't jump across it.
 - the question sounds **snarky**, but it's not meant **in that vein**.
 - we must avoid the **trap** of overconfidence in our inferential summaries.
 - the 40% rule is a time-tried **tactic** employed by **pundits** making forecasts.
@@ -498,6 +504,7 @@
 - Here's me at a **slumber** party a few days before I shot **French Vogue**.
 - They are constructions by a group of professionals, by hairstylists and makeup artists and photographers and stylists and all of their assistants and pre-production and post-production.
 - were stopped and frisked.
+    - stop-and-frisk: 拦截盘查；拦截搜身
 - you are so happy and **fabulous**.
 - when we are backstage
 - I am insecure.
