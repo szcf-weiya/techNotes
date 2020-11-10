@@ -1,3 +1,7 @@
+## 2020.11.10
+
+- An interesting question in **pediatrics (儿科)** is whether the tendency for children to have many episodes of otitis media is inherited in a family. 
+
 ## 2020.11.09
 
 - all would be OK if people just **ditched** their $p$-values and replaced them with intervals.
