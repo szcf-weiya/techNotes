@@ -1,3 +1,8 @@
+## 2020.11.11
+
+- These **savvy** speakers have some tips for novice speakers.
+
+
 ## 2020.11.10
 
 - An interesting question in **pediatrics (儿科)** is whether the tendency for children to have many episodes of otitis media is inherited in a family. 
