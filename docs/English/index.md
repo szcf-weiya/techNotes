@@ -1,3 +1,8 @@
+## 2020.11.13
+
+- trapezoidal: 梯形的
+- This is the seed of a snowflake, and it retains a **hexagonal** shape as it grows.
+
 ## 2020.11.12
 
 - Medically speaking, diabetes is not **curable**. Once a person is diagnosed with diabetes, he or she will carry diabetes for the rest of life. Only under successful management, diabetes can go into "**remission**" state.
