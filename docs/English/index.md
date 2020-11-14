@@ -1,3 +1,7 @@
+## 2020.11.14
+
+- Imagine a person traversing a finite curved path while walking their dog on a **leash (系狗的皮带)**, with the dog traversing a separate finite curved path.
+
 ## 2020.11.13
 
 - trapezoidal: 梯形的
