@@ -1,3 +1,11 @@
+## 2020.11.15
+
+- It has all the usual **culprits**: forking paths, statistical significance.
+- The market often is up for part of the day and down for others, so the intra-day variability may **undermine** what the paper is finding.
+- the data is not provided, although the source is publicly available (and would probably take me a week to try to match up to what they **purported** to use).
+- These claims are absolutely **preposterous**.
+
+
 ## 2020.11.14
 
 - Imagine a person traversing a finite curved path while walking their dog on a **leash (系狗的皮带)**, with the dog traversing a separate finite curved path.
