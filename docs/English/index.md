@@ -1,3 +1,18 @@
+## 2020.11.16
+
+- Everyone seems **fixated** on the 90% effectiveness lower bound reported for the Pfizer vaccine.
+- I'm [**basing it off of**](https://idioms.thefreedictionary.com/basing+it+off+of) a press release, which is not ideal for scientific precision.
+    - ["base on" vs "base off of"](https://english.stackexchange.com/questions/15081/based-on-instead-of-based-off-of)
+- It won't be the [**silver bullet**](https://www.zhihu.com/question/20829469) we are looking for.
+- I'm **ecstatic** about this product.
+- Haven't they ever read **Mandelbrot (本华·曼德博，创立了分形几何)**?
+- Those wacky anti-Bayesian used to be **intimidating**, but now they're just **pathetic**.
+- I was trying to draw [Bert and Ernie](https://zh.wikipedia.org/wiki/%E7%95%A2%E7%89%B9%E8%88%87%E6%81%A9%E5%B0%BC) **the other day (不久前某一天，几天以前)**.
+- I call this the [**Chris Rock (美国喜剧演员，以栋笃笑【单口喜剧，stand-up comedy】出道)**](https://zh.wikipedia.org/wiki/%E5%9F%BA%E6%96%AF%C2%B7%E6%B4%9B%E5%85%8B) effect. Chris Rock says things we all know are true. But he says it so well that we get a shock of recognition, the joy of relearning what we already know, but hearing it in a new way that makes us think more deeply about all sorts of related topics.
+- Would the prof have the **chutzpah** to fail the student, or would he just give the student an A out of fear that the student would raise a **ruckus** if anything were done about it?
+- They might just get **expelled** anyway for the combined violations of plagiarism and embarrassing the university.
+- For his own **sanity** he had to get out of this trap.
+
 ## 2020.11.15
 
 - It has all the usual **culprits**: forking paths, statistical significance.
@@ -71,7 +86,7 @@
 
 ## 2020.11.04
 
-- it has some deeply **wacky** scenarios
+- it has some deeply **wacky (乖僻的，古怪的)** scenarios
 - voter **turnout**
 - the betting markets have Trump as a slight favorite in Florida, which I'd attribute to **bettors** performing some sort of implicit averaging of current polls and the 2016 election results.
 - there is some room for **maneuver** here.
@@ -116,7 +131,7 @@
 ## 2020.10.29
 
 - **Fractal** Nature of Scientific Revolutions.
-- The **interim** Stan governing body **stepped down** and were replaced with a new board elected by the developer community.
+- The **interim (临时的，中间的)** Stan governing body **stepped down** and were replaced with a new board elected by the developer community.
 - a **feud** that was made worse by a lack of sharing code.
 - **condensed matter (凝聚态)** theory
 
@@ -768,7 +783,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 16. Over the last several years, three formal definitions of fairness have gained **prominence**
 17. classification **parity**, meaning that common measures of predictive performance
 18. One must carefully define and measure the targets of prediction to avoid **retrenching** biases in the data.
-19. A team of researchers inside **Pfizer** made a **startling** find in 2015: The company’s **blockbuster** **rheumatoid arthritis** therapy Enbrel, a powerful **anti-inflammatory** drug, appeared to reduce the risk of Alzheimer’s disease by 64 percent.
+19. A team of researchers inside **Pfizer (辉瑞，美国制药公司)** made a **startling** find in 2015: The company’s **blockbuster (重磅炸弹，了不起的人或事)** **rheumatoid (风湿病的，类风湿病的)** **arthritis (关节炎)** therapy [**Enbrel (恩利，注射用依那西普，Etanercept)**](https://baike.baidu.com/item/%E6%81%A9%E5%88%A9), a powerful **anti-inflammatory (抗炎的)** drug, appeared to reduce the risk of Alzheimer’s disease by 64 percent.
 20. A **synopsis** of its statistical findings prepared for outside publication, it says, did not meet its “rigorous scientific standards.”
 21. Pfizer said it **opted** against publication of its data because of its doubts about the results.
 22. One reason for caution: another class of anti-inflammatory therapies, called **non-steroidal** anti-inflammatory drugs (NSAIDS), showed no effect against mild-to-moderate Alzheimer’s in several clinical trials a decade ago.
@@ -1093,7 +1108,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 4. intricate
 5. delicate
 6. illusory
-7. endemic
+7. He said that racism is **endemic** in this country.
 8. emanating
 9. aggravate
 
