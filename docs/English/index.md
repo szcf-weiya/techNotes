@@ -1,3 +1,9 @@
+## 2020.11.17
+
+- **Standard Chartered (渣打银行)** Bank China is inviting registration for its Networking Session.
+    - chartered: （根据持有皇家特许状的专业协会的规章）合格的；特许的
+    - **UNICEF (United Nations International Children's Emergency Fund, 旧称联合国国际儿童紧急救援基金会，现称联合国儿童基金会，The United Nations Children's Fund)** **chartered (包租)** a flight to deliver vaccines to seven African countries.
+
 ## 2020.11.16
 
 - Everyone seems **fixated** on the 90% effectiveness lower bound reported for the Pfizer vaccine.

@@ -623,7 +623,7 @@ Refer to
 
 ## `/dev/loopx`
 
-refer to [What is /dev/loopx?(https://askubuntu.com/questions/906581/what-is-dev-loopx).
+refer to [What is /dev/loopx?](https://askubuntu.com/questions/906581/what-is-dev-loopx).
 
 ## 惊魂扩容
 
@@ -1234,3 +1234,30 @@ $ uname -r
 add `./` before the file, since it will interpret colon `x:` as [user@]host prefix
 
 refer to [How can I scp a file with a colon in the file name?](https://stackoverflow.com/questions/14718720/how-can-i-scp-a-file-with-a-colon-in-the-file-name)
+
+## 添加虚拟内存
+
+通过交换文件实现
+
+```bash
+# 创建大小为2G的文件swapfile
+dd if=/dev/zero of=/mnt/swapfile bs=1M count=2048
+# 格式化
+mkswap /mnt/swapfile
+# 挂载
+swapon /mnt/swapfile
+```
+
+为了保证开机自动加载，在 `/etc/fstab` 加入
+
+```bash
+/mnt/swapfile swap swap defaults 0 0
+```
+
+可以通过 `free -h` 查看内存情况。
+
+参考 [Linux下如何添加虚拟内存](http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/)
+
+## `unzip` 和右键 `Extract Here` 的区别
+
+对于 A.zip，假设内部结构为 `dir/file`，则通过 `unzip A.zip` 会直接得到 `dir/file`，而邮件解压会得到 `A/dir/file`.
