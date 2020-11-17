@@ -1261,3 +1261,19 @@ swapon /mnt/swapfile
 ## `unzip` 和右键 `Extract Here` 的区别
 
 对于 A.zip，假设内部结构为 `dir/file`，则通过 `unzip A.zip` 会直接得到 `dir/file`，而邮件解压会得到 `A/dir/file`.
+
+## unzip all `.zip` file in a directory
+
+tried `unzip *.zip` but does not work, it seems that I missed something although I have checked `man unzip` in which `*` is indeed allowed, then I found 
+
+```bash
+unzip \*.zip
+```
+
+in [Unzip All Files In A Directory](https://stackoverflow.com/questions/2374772/unzip-all-files-in-a-directory/29248777)
+
+Otherwise, use quotes `"*.zip"`. More advancely, only zip files with character `3`,
+
+```bash
+unzip "*3*.zip"
+```

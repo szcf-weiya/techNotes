@@ -3,6 +3,7 @@
 - **Standard Chartered (渣打银行)** Bank China is inviting registration for its Networking Session.
     - chartered: （根据持有皇家特许状的专业协会的规章）合格的；特许的
     - **UNICEF (United Nations International Children's Emergency Fund, 旧称联合国国际儿童紧急救援基金会，现称联合国儿童基金会，The United Nations Children's Fund)** **chartered (包租)** a flight to deliver vaccines to seven African countries.
+- [**Ado (无谓的忙乱，费力)** usually refers to **fuss (小题大做，忙乱)**, concern, or time wasted due to trivialities or troubles. It is most often found in the phrases "without much ado", meaning "without much fuss", or "without further ado", meaning "without further delay". **Adieu (告别，辞行)** on the other hand, is a French word that refers to a farewell. It often follows bid, as in "I bid you adieu", as a rather dramatic way of saying "goodbye".](https://www.merriam-webster.com/words-at-play/ado-vs-adieu-usage-difference)
 
 ## 2020.11.16
 
