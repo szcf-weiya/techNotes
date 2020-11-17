@@ -957,6 +957,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#unzip-all-zip-file-in-a-directory" class="md-nav__link">
+    unzip all .zip file in a directory
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2560,6 +2567,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#unzip-all-zip-file-in-a-directory" class="md-nav__link">
+    unzip all .zip file in a directory
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3404,6 +3418,14 @@ swapon /mnt/swapfile
 <p>参考 <a href="http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">Linux下如何添加虚拟内存</a></p>
 <h2 id="unzip-extract-here"><code>unzip</code> 和右键 <code>Extract Here</code> 的区别<a class="headerlink" href="#unzip-extract-here" title="Permanent link">&para;</a></h2>
 <p>对于 A.zip，假设内部结构为 <code>dir/file</code>，则通过 <code>unzip A.zip</code> 会直接得到 <code>dir/file</code>，而邮件解压会得到 <code>A/dir/file</code>.</p>
+<h2 id="unzip-all-zip-file-in-a-directory">unzip all <code>.zip</code> file in a directory<a class="headerlink" href="#unzip-all-zip-file-in-a-directory" title="Permanent link">&para;</a></h2>
+<p>tried <code>unzip *.zip</code> but does not work, it seems that I missed something although I have checked <code>man unzip</code> in which <code>*</code> is indeed allowed, then I found </p>
+<div class="highlight"><pre><span></span><code>unzip <span class="se">\*</span>.zip
+</code></pre></div>
+<p>in <a href="https://stackoverflow.com/questions/2374772/unzip-all-files-in-a-directory/29248777">Unzip All Files In A Directory</a></p>
+<p>Otherwise, use quotes <code>"*.zip"</code>. More advancely, only zip files with character <code>3</code>,</p>
+<div class="highlight"><pre><span></span><code>unzip <span class="s2">&quot;*3*.zip&quot;</span>
+</code></pre></div>
                 
               
               
