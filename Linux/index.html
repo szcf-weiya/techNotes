@@ -943,6 +943,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    添加虚拟内存
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unzip-extract-here" class="md-nav__link">
+    unzip 和右键 Extract Here 的区别
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2532,6 +2546,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    添加虚拟内存
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unzip-extract-here" class="md-nav__link">
+    unzip 和右键 Extract Here 的区别
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2949,7 +2977,7 @@ or just </p>
 <li>连接 WiFi 时 似乎需要 enable wifi。</li>
 </ol>
 <h2 id="devloopx"><code>/dev/loopx</code><a class="headerlink" href="#devloopx" title="Permanent link">&para;</a></h2>
-<p>refer to [What is /dev/loopx?(https://askubuntu.com/questions/906581/what-is-dev-loopx).</p>
+<p>refer to <a href="https://askubuntu.com/questions/906581/what-is-dev-loopx">What is /dev/loopx?</a>.</p>
 <h2 id="_8">惊魂扩容<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>一直想扩容来着，但总是下不了决心。今天决定了，参考 google 搜索“Ubuntu 扩容”的前几条结果，便开始干了。</p>
 <ol>
@@ -3360,6 +3388,22 @@ tp-smapi   <span class="o">=</span> inactive <span class="o">(</span>ThinkPad no
 <h2 id="scp-a-file-with-name-including-colon">scp a file with name including colon<a class="headerlink" href="#scp-a-file-with-name-including-colon" title="Permanent link">&para;</a></h2>
 <p>add <code>./</code> before the file, since it will interpret colon <code>x:</code> as [user@]host prefix</p>
 <p>refer to <a href="https://stackoverflow.com/questions/14718720/how-can-i-scp-a-file-with-a-colon-in-the-file-name">How can I scp a file with a colon in the file name?</a></p>
+<h2 id="_26">添加虚拟内存<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h2>
+<p>通过交换文件实现</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 创建大小为2G的文件swapfile</span>
+dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/mnt/swapfile <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">2048</span>
+<span class="c1"># 格式化</span>
+mkswap /mnt/swapfile
+<span class="c1"># 挂载</span>
+swapon /mnt/swapfile
+</code></pre></div>
+<p>为了保证开机自动加载，在 <code>/etc/fstab</code> 加入</p>
+<div class="highlight"><pre><span></span><code>/mnt/swapfile swap swap defaults <span class="m">0</span> <span class="m">0</span>
+</code></pre></div>
+<p>可以通过 <code>free -h</code> 查看内存情况。</p>
+<p>参考 <a href="http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">Linux下如何添加虚拟内存</a></p>
+<h2 id="unzip-extract-here"><code>unzip</code> 和右键 <code>Extract Here</code> 的区别<a class="headerlink" href="#unzip-extract-here" title="Permanent link">&para;</a></h2>
+<p>对于 A.zip，假设内部结构为 <code>dir/file</code>，则通过 <code>unzip A.zip</code> 会直接得到 <code>dir/file</code>，而邮件解压会得到 <code>A/dir/file</code>.</p>
                 
               
               
