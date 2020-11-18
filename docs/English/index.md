@@ -1,3 +1,10 @@
+## 2020.11.18
+
+- The British **Chamber (【身体或器官内的】室、膛；房间；会所) of Commerce (商会)** in Hong Kong is inviting applications for its Events & Marketing Executive.
+- An **assessment centre (求职评估)** is a recruitment process with a series of tasks including presentation, group exercise, **psychometric tests (心理计量测验)**, etc, to evaluate candidates' ability and personality.
+- **Amid** COVID-19, we are going through a very difficult and uncertain situation.
+- Your changes will be **vetted** by developers before becoming permanent.
+
 ## 2020.11.17
 
 - **Standard Chartered (渣打银行)** Bank China is inviting registration for its Networking Session.

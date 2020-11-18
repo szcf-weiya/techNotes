@@ -1277,3 +1277,44 @@ Otherwise, use quotes `"*.zip"`. More advancely, only zip files with character `
 ```bash
 unzip "*3*.zip"
 ```
+
+## GPG error
+
+```bash
+$ sudo apt-get update
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/ InRelease: The following signatures were invalid: EXPKEYSIG 51716619E084DAB9 Michael Rutter <marutter@gmail.com>
+W: Failed to fetch https://cloud.r-project.org/bin/linux/ubuntu/bionic-cran35/InRelease  The following signatures were invalid: EXPKEYSIG 51716619E084DAB9 Michael Rutter <marutter@gmail.com>
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+```
+
+and got the expired key via
+
+```bash
+$ apt-key list
+pub   rsa2048 2010-10-19 [SCA] [expired: 2020-10-16]
+...
+uid           [ expired] Michael Rutter <marutter@gmail.com>
+```
+
+but it seems not work following [How to solve an expired key (KEYEXPIRED) with apt](https://linux-audit.com/how-to-solve-an-expired-key-keyexpired-with-apt/)
+
+```bash
+$ apt-key adv --keyserver keys.gnupg.net --recv-keys 51716619E084DAB9
+Executing: /tmp/apt-key-gpghome.CYSI3C6heK/gpg.1.sh --keyserver keys.gnupg.net --recv-keys 51716619E084DAB9
+gpg: key 51716619E084DAB9: "Michael Rutter <marutter@gmail.com>" not changed
+gpg: Total number processed: 1
+gpg:              unchanged: 1
+```
+
+then I tried another keyserver mentioned in [Installing R from CRAN Ubuntu repository: No Public Key Error](https://stackoverflow.com/questions/10255082/installing-r-from-cran-ubuntu-repository-no-public-key-error)
+
+```bash
+$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
+[sudo] password for weiya: 
+Executing: /tmp/apt-key-gpghome.xUS3ZEg8N2/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
+gpg: key 51716619E084DAB9: "Michael Rutter <marutter@gmail.com>" 2 new signatures
+gpg: Total number processed: 1
+gpg:         new signatures: 2
+```
+
+Now, new signatures come, and no expired again.
