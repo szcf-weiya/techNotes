@@ -964,6 +964,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gpg-error" class="md-nav__link">
+    GPG error
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2574,6 +2581,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gpg-error" class="md-nav__link">
+    GPG error
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3426,6 +3440,34 @@ swapon /mnt/swapfile
 <p>Otherwise, use quotes <code>"*.zip"</code>. More advancely, only zip files with character <code>3</code>,</p>
 <div class="highlight"><pre><span></span><code>unzip <span class="s2">&quot;*3*.zip&quot;</span>
 </code></pre></div>
+<h2 id="gpg-error">GPG error<a class="headerlink" href="#gpg-error" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ sudo apt-get update
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/ InRelease: The following signatures were invalid: EXPKEYSIG 51716619E084DAB9 Michael Rutter &lt;marutter@gmail.com&gt;
+W: Failed to fetch https://cloud.r-project.org/bin/linux/ubuntu/bionic-cran35/InRelease  The following signatures were invalid: EXPKEYSIG 51716619E084DAB9 Michael Rutter &lt;marutter@gmail.com&gt;
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+</code></pre></div>
+<p>and got the expired key via</p>
+<div class="highlight"><pre><span></span><code>$ apt-key list
+pub   rsa2048 <span class="m">2010</span>-10-19 <span class="o">[</span>SCA<span class="o">]</span> <span class="o">[</span>expired: <span class="m">2020</span>-10-16<span class="o">]</span>
+...
+uid           <span class="o">[</span> expired<span class="o">]</span> Michael Rutter &lt;marutter@gmail.com&gt;
+</code></pre></div>
+<p>but it seems not work following <a href="https://linux-audit.com/how-to-solve-an-expired-key-keyexpired-with-apt/">How to solve an expired key (KEYEXPIRED) with apt</a></p>
+<div class="highlight"><pre><span></span><code>$ apt-key adv --keyserver keys.gnupg.net --recv-keys 51716619E084DAB9
+Executing: /tmp/apt-key-gpghome.CYSI3C6heK/gpg.1.sh --keyserver keys.gnupg.net --recv-keys 51716619E084DAB9
+gpg: key 51716619E084DAB9: <span class="s2">&quot;Michael Rutter &lt;marutter@gmail.com&gt;&quot;</span> not changed
+gpg: Total number processed: <span class="m">1</span>
+gpg:              unchanged: <span class="m">1</span>
+</code></pre></div>
+<p>then I tried another keyserver mentioned in <a href="https://stackoverflow.com/questions/10255082/installing-r-from-cran-ubuntu-repository-no-public-key-error">Installing R from CRAN Ubuntu repository: No Public Key Error</a></p>
+<div class="highlight"><pre><span></span><code>$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
+<span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> weiya: 
+Executing: /tmp/apt-key-gpghome.xUS3ZEg8N2/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
+gpg: key 51716619E084DAB9: <span class="s2">&quot;Michael Rutter &lt;marutter@gmail.com&gt;&quot;</span> <span class="m">2</span> new signatures
+gpg: Total number processed: <span class="m">1</span>
+gpg:         new signatures: <span class="m">2</span>
+</code></pre></div>
+<p>Now, new signatures come, and no expired again.</p>
                 
               
               
