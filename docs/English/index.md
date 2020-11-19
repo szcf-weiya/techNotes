@@ -1,3 +1,8 @@
+## 2020.11.19
+
+- Man has been **predominant** over other species for a long time.
+- A specific job hunt will be more efficient than a haphazard one.
+
 ## 2020.11.18
 
 - The British **Chamber (【身体或器官内的】室、膛；房间；会所) of Commerce (商会)** in Hong Kong is inviting applications for its Events & Marketing Executive.
