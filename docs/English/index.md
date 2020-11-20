@@ -1,3 +1,8 @@
+## 2020.11.20
+
+- it's not a slam on this graph to say that it makes me want to learn more.
+
+
 ## 2020.11.19
 
 - Man has been **predominant** over other species for a long time.
@@ -1434,7 +1439,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 36. He loved to show off his protean talent.
 37. Beauty is as evanescent as a rainbow.
 38. He was eulogized at his funeral as a caring husband and a good father.
-39. The Internet allows us to disseminate information faster.
+39. The Internet allows us to **disseminate** information faster.
 40. We managed to entangle the string of lights into a hopeless mess of wires.
 41. The history of Alexander the Great is entangled by variant accounts of his exploits.
 42. A string of inconsistent statements finally entrapped the witness.
