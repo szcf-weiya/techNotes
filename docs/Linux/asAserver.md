@@ -18,6 +18,29 @@ T460p $ ssh -p 30003 weiya@127.0.0.1
 T460p $ ssh -P 30003 file weiya@127.0.0.1:
 ```
 
+## 通过 Synergy 共用键鼠
+
+在 Synergy 的图形界面上，只能在同一局域网内才能配置成功。然而想到既然可以通过 ssh 来互联两台非局域网的机器，理论上应该也能共享这两台电脑的键鼠，所以试着搜索一下 "synergy over ssh"，果然找到了解决方案。
+
+将 T460p 作为 server，即提供键鼠，而 G40 作为 client。
+
+```bash
+G40 $ ssh -NL 30013:localhost:30013 -L 24800:localhost:24800 
+G40 $ synergyc -1 localhost
+T460p $ ssh -NR 30013:localhost:22 -R 24800:localhost:24800 SID@SERVER
+# T460p 正常在 GUI 界面上启动服务器端
+```
+
+关键点是将两台机器的 24800 端口连上，基本逻辑是，在 G40 上通过 `-L` 转发使得 24800 端口访问的实际上是 SERVER 的 24800 端口，而在 T460p 上通过 `-R` 使得 SERVER 上的 24800 端口转发到本地的 24800.
+
+参考 
+
+- [Tunnel synergy KVM sharing software through SSH](https://0xdeadcode.se/archives/46)
+- [How to tunnel Synergy over SSH?](https://askubuntu.com/questions/850710/how-to-tunnel-synergy-over-ssh)
+
+!!! tip "synergy-core"
+    [synergy-core](https://github.com/symless/synergy-core/) 是开源的，所以似乎当初并不需要花钱买 license。
+
 ## 禁止合盖休眠
 
 既然作为服务器了，没必要继续直接操作了，于是想合上盖子，但是会自动进入休眠状态（准确说是 suspend，而不是 hibernate），这时连接便都断开了。但是在设置界面也没找到直接关闭休眠的，最后在 [How to Change Lid Close Action in Ubuntu 18.04 LTS](https://tipsonubuntu.com/2018/04/28/change-lid-close-action-ubuntu-18-04-lts/) 中找到解决方案，
