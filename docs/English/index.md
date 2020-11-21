@@ -1,3 +1,7 @@
+## 2020.11.21
+
+- customers may be unable or unwilling to accept our model of commercial software **procurement**.
+
 ## 2020.11.20
 
 - it's not a slam on this graph to say that it makes me want to learn more.
