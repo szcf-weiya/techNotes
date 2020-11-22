@@ -60,3 +60,8 @@ situation:  the "Save as" windows open as blank
 3. Click "OK" at the bottom to save the settings.
 
 refer to [Can't save pdf document](https://forums.adobe.com/thread/2318474)
+
+## 禁止自动更新
+
+办公室电脑经常弹出需要更新，即便不是自动更新，但是每次弹出总让人担心会不会下次它自动重启进行更新了，于是索性禁掉它，参考 [如何关闭Windows10的自动更新？](https://zhuanlan.zhihu.com/p/38070514) 中的第一种方法，不过需要以管理员运行。
+
