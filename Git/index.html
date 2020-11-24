@@ -1128,6 +1128,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#commit_2" class="md-nav__link">
+    指定 commit 时间
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1810,6 +1817,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#commit_2" class="md-nav__link">
+    指定 commit 时间
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2214,6 +2228,8 @@ git push origin :refs/tags/v1.0
 <p><img alt="" src="rebase-again.png" /></p>
 <p>现在我甚至怀疑是不是一开始直接 <code>git rebase</code> 就好了，也不需要 <code>--root</code>，不过 <code>root</code> 是说可以 rebase 所有 reachable commits，没有什么 upstream 限制，不知道 merges 算不算 upstream 限制（<strong>以后再玩玩</strong>）. 如果需要更新的话，仍采用 <code>git pull</code>，但是 <code>git pull</code> 不是相当于 <code>git fetch &amp; git merge</code> 么？！不过需要注意<a href="https://stackoverflow.com/a/36148845/8427014">加上 <code>--rebase</code> 选项</a></p>
 <p><img alt="" src="git-pull-with-rebase.png" /></p>
+<h2 id="commit_2">指定 commit 时间<a class="headerlink" href="#commit_2" title="Permanent link">&para;</a></h2>
+<p>https://stackoverflow.com/questions/3895453/how-do-i-make-a-git-commit-in-the-past</p>
                 
               
               

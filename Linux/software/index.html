@@ -621,6 +621,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-heic-support-in-imagemagick" class="md-nav__link">
+    Add HEIC support in ImageMagick
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1864,6 +1871,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-heic-support-in-imagemagick" class="md-nav__link">
+    Add HEIC support in ImageMagick
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1925,6 +1939,7 @@ sudo apt-get install fcitx-table
 <p>于是卸掉 snap 版的 okular，转而安装 apt 版本的，</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install okular
 </code></pre></div>
+<p>类似地，<a href="https://askubuntu.com/questions/958355/any-app-on-ubuntu-to-open-and-or-convert-heif-pictures-heic-high-efficiency-i">通过 snap 安装的 <code>gimp</code></a> 不能打开移动硬盘中的文件，但是如果换成 apt-get 安装的，则又不支持 <code>.heic</code> 文件格式。</p>
 <p>发现有些图标不能正常显示，网上也找到了类似的问题，</p>
 <ul>
 <li><a href="https://askubuntu.com/questions/1007563/kde-application-icon-not-displayed-in-ubuntu">KDE application icon not displayed in Ubuntu</a></li>
@@ -2293,6 +2308,50 @@ sudo apt-get install kid3     <span class="c1"># KDE users</span>
 </code></pre></div>
 <p>一开始觉得 <code>kid3-cli</code> 足够了，但是试了一下感觉学习成本太高，索性换回 kde 版本的。</p>
 <p>但是似乎在 <code>kid3</code> 中修改完并没有信息，只是会把删去的 genre 信息变为 unknown。</p>
+<h2 id="add-heic-support-in-imagemagick">Add HEIC support in ImageMagick<a class="headerlink" href="#add-heic-support-in-imagemagick" title="Permanent link">&para;</a></h2>
+<p>上次从源码按安装了 ImageMagick 7.0.10-6，刚刚又看到可以<a href="https://askubuntu.com/questions/958355/any-app-on-ubuntu-to-open-and-or-convert-heif-pictures-heic-high-efficiency-i">添加对 HEIC 格式的支持</a>，于是准备重新编译安装</p>
+<div class="highlight"><pre><span></span><code>$ ./configure --with-modules --with-libheif
+...
+               Option                        Value
+------------------------------------------------------------------------------
+...
+Delegate library configuration:
+...
+  HEIC              --with-heic<span class="o">=</span>yes             no
+</code></pre></div>
+<p>跟 HEIC 似乎只有这一条，但其实如果去掉 <code>--with-libheif</code>，结果并不会有变化，后来发现这个选项其实并没有正确识别，</p>
+<div class="highlight"><pre><span></span><code>configure: WARNING: unrecognized options: --with-libheif
+configure:
+</code></pre></div>
+<p>然后试着</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install libheif1
+</code></pre></div>
+<p>但最后一列还是 no，然后再试着</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install libheif-dev
+</code></pre></div>
+<p>最后一列终于变成 yes 了。于是继续 <code>make</code>，然而却报出了 bug</p>
+<div class="highlight"><pre><span></span><code>coders/heic.c: In <span class="k">function</span> ‘ReadHEICColorProfile’:
+coders/heic.c:143:5: warning: unused variable ‘length’ <span class="o">[</span>-Wunused-variable<span class="o">]</span>
+     length<span class="p">;</span>
+     ^~~~~~
+coders/heic.c: In <span class="k">function</span> ‘ReadHEICImage’:
+coders/heic.c:452:9: warning: implicit declaration of <span class="k">function</span> ‘heif_context_read_from_memory_without_copy’<span class="p">;</span> did you mean ‘heif_context_read_from_memory’? <span class="o">[</span>-Wimplicit-function-declaration<span class="o">]</span>
+   <span class="nv">error</span><span class="o">=</span>heif_context_read_from_memory_without_copy<span class="o">(</span>heif_context,file_data,
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         heif_context_read_from_memory
+coders/heic.c:452:8: error: incompatible types when assigning to <span class="nb">type</span> ‘struct heif_error’ from <span class="nb">type</span> ‘int’
+   <span class="nv">error</span><span class="o">=</span>heif_context_read_from_memory_without_copy<span class="o">(</span>heif_context,file_data,
+        ^
+At top level:
+coders/heic.c:94:3: warning: ‘xmp_namespace’ defined but not used <span class="o">[</span>-Wunused-const-variable<span class="o">=]</span>
+   xmp_namespace<span class="o">[]</span> <span class="o">=</span> <span class="s2">&quot;http://ns.adobe.com/xap/1.0/ &quot;</span><span class="p">;</span>
+   ^~~~~~~~~~~~~
+Makefile:10388: recipe <span class="k">for</span> target <span class="s1">&#39;coders/heic_la-heic.lo&#39;</span> failed
+make<span class="o">[</span><span class="m">1</span><span class="o">]</span>: *** <span class="o">[</span>coders/heic_la-heic.lo<span class="o">]</span> Error <span class="m">1</span>
+make<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Leaving directory <span class="s1">&#39;/home/weiya/src/ImageMagick-7.0.10-6&#39;</span>
+Makefile:5988: recipe <span class="k">for</span> target <span class="s1">&#39;all&#39;</span> failed
+make: *** <span class="o">[</span>all<span class="o">]</span> Error <span class="m">2</span>
+</code></pre></div>
                 
               
               
