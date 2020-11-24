@@ -347,13 +347,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#virtual-memory-exhausted-cannot-allocate-memory" class="md-nav__link">
-    阿里云服务器virtual memory exhausted: Cannot allocate memory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gcc" class="md-nav__link">
     gcc版本
   </a>
@@ -486,8 +479,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#timerealusersys" class="md-nav__link">
-    time命令中的real,user以及sys时间
+  <a href="#user-vs-sys" class="md-nav__link">
+    user vs. sys
   </a>
   
 </li>
@@ -1964,13 +1957,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#virtual-memory-exhausted-cannot-allocate-memory" class="md-nav__link">
-    阿里云服务器virtual memory exhausted: Cannot allocate memory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gcc" class="md-nav__link">
     gcc版本
   </a>
@@ -2103,8 +2089,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#timerealusersys" class="md-nav__link">
-    time命令中的real,user以及sys时间
+  <a href="#user-vs-sys" class="md-nav__link">
+    user vs. sys
   </a>
   
 </li>
@@ -2728,17 +2714,6 @@ tmux kill-server
 sudo rm /var/lib/dpkg/lock
 </code></pre></div>
 <p>如果不行，重启。</p>
-<h2 id="virtual-memory-exhausted-cannot-allocate-memory">阿里云服务器virtual memory exhausted: Cannot allocate memory<a class="headerlink" href="#virtual-memory-exhausted-cannot-allocate-memory" title="Permanent link">&para;</a></h2>
-<p><a href="http://www.bubuko.com/infodetail-1319039.html">http://www.bubuko.com/infodetail-1319039.html</a>
-<div class="highlight"><pre><span></span><code>##创建一个大小为1G的文件/swap
-dd if=/dev/zero of=/swap bs=1024 count=1M
-##将/swap作为swap空间
-mkswap /swap
-##enable /swap file  for paging and swapping
-swapon /swap
-##Enable swap on boot, 开机后自动生效
-echo &quot;/swap swap swap sw 0 0&quot; &gt;&gt; /etc/fstab
-</code></pre></div></p>
 <h2 id="gcc">gcc版本<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h2>
 <p>可以通过 <code>update-alternatives</code> 进行切换，但注意要提前安装 <code>install</code> alternatives，这里的 install 不是下载源码安装，而是将系统中已有的不同版本的 gcc 安装到 alternatives 中。比如当前我电脑的 gcc &ndash;version 是 7.5.0，但是仍有 <code>gcc-5</code>, <code>gcc-4.8</code> 等命令，不过这些并不在 alternatives 中，因为如果直接运行 </p>
 <div class="highlight"><pre><span></span><code>$ sudo update-alternatives --config gcc
@@ -2878,8 +2853,11 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 <p><a href="http://blog.csdn.net/universe_hao/article/details/52640321">shell 提取文件名和目录名</a></p>
 <h2 id="scp">几种方法来实现scp拷贝时无需输入密码<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.csdn.net/nfer_zhuang/article/details/42646849">几种方法来实现scp拷贝时无需输入密码</a></p>
-<h2 id="timerealusersys">time命令中的real,user以及sys时间<a class="headerlink" href="#timerealusersys" title="Permanent link">&para;</a></h2>
-<p><a href="http://blog.chinaunix.net/uid-23177306-id-2531034.html">time命令中的real,user以及sys时间</a></p>
+<h2 id="user-vs-sys"><code>user</code> vs. <code>sys</code><a class="headerlink" href="#user-vs-sys" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>time</code> commands return three times, named <code>real</code>, <code>user</code> and <code>sys</code>, the detailed explanation refers to <a href="https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1">What do &lsquo;real&rsquo;, &lsquo;user&rsquo; and &lsquo;sys&rsquo; mean in the output of time(1)?</a></li>
+<li><code>user space</code> vs <code>kernel space</code>: <a href="https://zh.wikipedia.org/wiki/%E4%BD%BF%E7%94%A8%E8%80%85%E7%A9%BA%E9%96%93">维基百科</a>说，在操作系统中，虚拟内存通常会被分成用户空间（英语：User space，又译为使用者空间），与核心空间（英语：Kernel space，又译为内核空间）这两个区段。</li>
+</ul>
 <h2 id="control-android-phone-by-pcs-mouse-and-keyboard">control android phone by PC&rsquo;s mouse and keyboard<a class="headerlink" href="#control-android-phone-by-pcs-mouse-and-keyboard" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.makeuseof.com/tag/control-android-using-computers-mouse-keyboard/">How to Control Your Android Using Your Computer’s Mouse and Keyboard</a></p>
 <h2 id="unable-to-load-native-hadoop-library-for-your-platform">解决Unable to load native-hadoop library for your platform<a class="headerlink" href="#unable-to-load-native-hadoop-library-for-your-platform" title="Permanent link">&para;</a></h2>
@@ -3428,8 +3406,10 @@ swapon /mnt/swapfile
 <p>为了保证开机自动加载，在 <code>/etc/fstab</code> 加入</p>
 <div class="highlight"><pre><span></span><code>/mnt/swapfile swap swap defaults <span class="m">0</span> <span class="m">0</span>
 </code></pre></div>
-<p>可以通过 <code>free -h</code> 查看内存情况。</p>
+<p>具体每一列的含义可以通过 <code>man fstab</code> 查看。</p>
+<p>挂载成功后就可以通过 <code>free -h</code> 查看内存情况。</p>
 <p>参考 <a href="http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">Linux下如何添加虚拟内存</a></p>
+<p>这个方法也可以解决 &ldquo;virtual memory exhausted: Cannot allocate memory&rdquo; 的问题。</p>
 <h2 id="unzip-extract-here"><code>unzip</code> 和右键 <code>Extract Here</code> 的区别<a class="headerlink" href="#unzip-extract-here" title="Permanent link">&para;</a></h2>
 <p>对于 A.zip，假设内部结构为 <code>dir/file</code>，则通过 <code>unzip A.zip</code> 会直接得到 <code>dir/file</code>，而邮件解压会得到 <code>A/dir/file</code>.</p>
 <h2 id="unzip-all-zip-file-in-a-directory">unzip all <code>.zip</code> file in a directory<a class="headerlink" href="#unzip-all-zip-file-in-a-directory" title="Permanent link">&para;</a></h2>
