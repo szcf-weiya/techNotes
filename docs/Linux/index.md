@@ -183,20 +183,6 @@ sudo rm /var/lib/dpkg/lock
 
 如果不行，重启。
 
-## 阿里云服务器virtual memory exhausted: Cannot allocate memory
-
-[http://www.bubuko.com/infodetail-1319039.html](http://www.bubuko.com/infodetail-1319039.html)
-```
-##创建一个大小为1G的文件/swap
-dd if=/dev/zero of=/swap bs=1024 count=1M
-##将/swap作为swap空间
-mkswap /swap
-##enable /swap file  for paging and swapping
-swapon /swap
-##Enable swap on boot, 开机后自动生效
-echo "/swap swap swap sw 0 0" >> /etc/fstab
-```
-
 
 ## gcc版本
 
@@ -426,10 +412,10 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 
 [几种方法来实现scp拷贝时无需输入密码](http://blog.csdn.net/nfer_zhuang/article/details/42646849)
 
+## `user` vs. `sys`
 
-## time命令中的real,user以及sys时间
-
-[time命令中的real,user以及sys时间](http://blog.chinaunix.net/uid-23177306-id-2531034.html)
+- `time` commands return three times, named `real`, `user` and `sys`, the detailed explanation refers to [What do 'real', 'user' and 'sys' mean in the output of time(1)?](https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1)
+- `user space` vs `kernel space`: [维基百科](https://zh.wikipedia.org/wiki/%E4%BD%BF%E7%94%A8%E8%80%85%E7%A9%BA%E9%96%93)说，在操作系统中，虚拟内存通常会被分成用户空间（英语：User space，又译为使用者空间），与核心空间（英语：Kernel space，又译为内核空间）这两个区段。
 
 ## control android phone by PC's mouse and keyboard
 
@@ -1254,9 +1240,13 @@ swapon /mnt/swapfile
 /mnt/swapfile swap swap defaults 0 0
 ```
 
-可以通过 `free -h` 查看内存情况。
+具体每一列的含义可以通过 `man fstab` 查看。
+
+挂载成功后就可以通过 `free -h` 查看内存情况。
 
 参考 [Linux下如何添加虚拟内存](http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/)
+
+这个方法也可以解决 "virtual memory exhausted: Cannot allocate memory" 的问题。
 
 ## `unzip` 和右键 `Extract Here` 的区别
 
