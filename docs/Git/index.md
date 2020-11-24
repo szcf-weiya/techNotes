@@ -596,3 +596,6 @@ $ git rebase
 
 ![](git-pull-with-rebase.png)
 
+## 指定 commit 时间 
+
+https://stackoverflow.com/questions/3895453/how-do-i-make-a-git-commit-in-the-past

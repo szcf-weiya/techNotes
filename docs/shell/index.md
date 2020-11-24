@@ -71,6 +71,7 @@ done
 
 - 打印特定行，比如第 10 行：`sed '10!d' file.txt`, 参考 [Get specific line from text file using just shell script](https://stackoverflow.com/questions/19327556/get-specific-line-from-text-file-using-just-shell-script)
 - 打印行范围，`sed -n '10,20p' file.txt`，则单独打印第 10 行也可以由 `sed -n '10p' file.txt` 给出，如果采用分号 `;` 则不是连续选择，而只是特定的行，参考 [sed之打印特定行与连续行](https://blog.csdn.net/raysen_zj/article/details/46761253)
+- 删除最后一行：`sed -i '$ d' file.txt`
 
 ## `|`的作用
 

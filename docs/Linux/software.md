@@ -78,6 +78,8 @@ sudo snap install okular
 sudo apt-get install okular
 ```
 
+类似地，[通过 snap 安装的 `gimp`](https://askubuntu.com/questions/958355/any-app-on-ubuntu-to-open-and-or-convert-heif-pictures-heic-high-efficiency-i) 不能打开移动硬盘中的文件，但是如果换成 apt-get 安装的，则又不支持 `.heic` 文件格式。
+
 发现有些图标不能正常显示，网上也找到了类似的问题，
 
 - [KDE application icon not displayed in Ubuntu](https://askubuntu.com/questions/1007563/kde-application-icon-not-displayed-in-ubuntu)
@@ -678,3 +680,64 @@ sudo apt-get install kid3     # KDE users
 一开始觉得 `kid3-cli` 足够了，但是试了一下感觉学习成本太高，索性换回 kde 版本的。
 
 但是似乎在 `kid3` 中修改完并没有信息，只是会把删去的 genre 信息变为 unknown。
+
+## Add HEIC support in ImageMagick
+
+上次从源码按安装了 ImageMagick 7.0.10-6，刚刚又看到可以[添加对 HEIC 格式的支持](https://askubuntu.com/questions/958355/any-app-on-ubuntu-to-open-and-or-convert-heif-pictures-heic-high-efficiency-i)，于是准备重新编译安装
+
+```bash
+$ ./configure --with-modules --with-libheif
+...
+               Option                        Value
+------------------------------------------------------------------------------
+...
+Delegate library configuration:
+...
+  HEIC              --with-heic=yes             no
+```
+
+跟 HEIC 似乎只有这一条，但其实如果去掉 `--with-libheif`，结果并不会有变化，后来发现这个选项其实并没有正确识别，
+
+```bash
+configure: WARNING: unrecognized options: --with-libheif
+configure:
+```
+
+然后试着
+
+```bash
+sudo apt-get install libheif1
+```
+
+但最后一列还是 no，然后再试着
+
+```bash
+sudo apt-get install libheif-dev
+```
+
+最后一列终于变成 yes 了。于是继续 `make`，然而却报出了 bug
+
+```bash
+coders/heic.c: In function ‘ReadHEICColorProfile’:
+coders/heic.c:143:5: warning: unused variable ‘length’ [-Wunused-variable]
+     length;
+     ^~~~~~
+coders/heic.c: In function ‘ReadHEICImage’:
+coders/heic.c:452:9: warning: implicit declaration of function ‘heif_context_read_from_memory_without_copy’; did you mean ‘heif_context_read_from_memory’? [-Wimplicit-function-declaration]
+   error=heif_context_read_from_memory_without_copy(heif_context,file_data,
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         heif_context_read_from_memory
+coders/heic.c:452:8: error: incompatible types when assigning to type ‘struct heif_error’ from type ‘int’
+   error=heif_context_read_from_memory_without_copy(heif_context,file_data,
+        ^
+At top level:
+coders/heic.c:94:3: warning: ‘xmp_namespace’ defined but not used [-Wunused-const-variable=]
+   xmp_namespace[] = "http://ns.adobe.com/xap/1.0/ ";
+   ^~~~~~~~~~~~~
+Makefile:10388: recipe for target 'coders/heic_la-heic.lo' failed
+make[1]: *** [coders/heic_la-heic.lo] Error 1
+make[1]: Leaving directory '/home/weiya/src/ImageMagick-7.0.10-6'
+Makefile:5988: recipe for target 'all' failed
+make: *** [all] Error 2
+```
+

@@ -1,3 +1,12 @@
+## 2020.11.24
+
+- racial disparity in **mortgage lending (抵押贷款)**
+- the praise is a bit **over the top**
+    - brimming with wit and **pathos**
+    - the enormous **debut** is a wonder
+    - an astounding **feat** of **craftsmanship** and patience
+    - never has an artist created a world so vivid without a single word spoken
+
 ## 2020.11.23
 
 - The earliest **scratchy** recording of a **pope (教皇，罗马教皇)** was that of Leo XIII on a **wax cylinder (蜡筒唱片)**.

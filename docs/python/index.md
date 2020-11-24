@@ -908,4 +908,4 @@ conda create -p ... python=x.x
 
 则 activate 的时候需要加上整个路径。
 
-再创建之前可以先在 [`.condarc` 中的 `env_dirs`](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#specify-environment-directories-envs-dirs) 项下添加指定的路径。
+在创建之前可以先在 [`.condarc` 中的 `env_dirs`](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#specify-environment-directories-envs-dirs) 项下添加指定的路径。
