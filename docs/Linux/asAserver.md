@@ -25,7 +25,7 @@ T460p $ ssh -P 30003 file weiya@127.0.0.1:
 将 T460p 作为 server，即提供键鼠，而 G40 作为 client。
 
 ```bash
-G40 $ ssh -NL 30013:localhost:30013 -L 24800:localhost:24800 
+G40 $ ssh -NL 30013:localhost:30013 -L 24800:localhost:24800 SID@SERVER
 G40 $ synergyc -1 localhost
 T460p $ ssh -NR 30013:localhost:22 -R 24800:localhost:24800 SID@SERVER
 # T460p 正常在 GUI 界面上启动服务器端

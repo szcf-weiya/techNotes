@@ -1,3 +1,8 @@
+## 2020.11.25
+
+- There are a number of **bells and whistles (附加的修饰物)** that make autoencoders more effective.
+- They **quarreled** last week but now they are completely **reconciled**.
+
 ## 2020.11.24
 
 - racial disparity in **mortgage lending (抵押贷款)**

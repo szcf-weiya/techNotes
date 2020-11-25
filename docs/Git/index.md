@@ -599,3 +599,7 @@ $ git rebase
 ## 指定 commit 时间 
 
 https://stackoverflow.com/questions/3895453/how-do-i-make-a-git-commit-in-the-past
+
+## apply `.gitignore` to committed files
+
+https://stackoverflow.com/questions/7527982/applying-gitignore-to-committed-files
