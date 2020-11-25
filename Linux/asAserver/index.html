@@ -1337,7 +1337,7 @@ T460p $ ssh -p <span class="m">30003</span> weiya@127.0.0.1
 <h2 id="synergy">通过 Synergy 共用键鼠<a class="headerlink" href="#synergy" title="Permanent link">&para;</a></h2>
 <p>在 Synergy 的图形界面上，只能在同一局域网内才能配置成功。然而想到既然可以通过 ssh 来互联两台非局域网的机器，理论上应该也能共享这两台电脑的键鼠，所以试着搜索一下 &ldquo;synergy over ssh&rdquo;，果然找到了解决方案。</p>
 <p>将 T460p 作为 server，即提供键鼠，而 G40 作为 client。</p>
-<div class="highlight"><pre><span></span><code>G40 $ ssh -NL <span class="m">30013</span>:localhost:30013 -L <span class="m">24800</span>:localhost:24800 
+<div class="highlight"><pre><span></span><code>G40 $ ssh -NL <span class="m">30013</span>:localhost:30013 -L <span class="m">24800</span>:localhost:24800 SID@SERVER
 G40 $ synergyc -1 localhost
 T460p $ ssh -NR <span class="m">30013</span>:localhost:22 -R <span class="m">24800</span>:localhost:24800 SID@SERVER
 <span class="c1"># T460p 正常在 GUI 界面上启动服务器端</span>
