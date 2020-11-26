@@ -1,3 +1,8 @@
+## 2020.11.26
+
+- looking under the lamp-post
+- the mud was up to her chin: 泥巴已经没到了她的下巴。
+
 ## 2020.11.25
 
 - There are a number of **bells and whistles (附加的修饰物)** that make autoencoders more effective.
