@@ -1,3 +1,7 @@
+## 2020.11.28
+
+- The "**gig economy (零工经济)**" exemplified by Uber drivers is **mushrooming**.
+
 ## 2020.11.27
 
 - The issues that Gandhi was known for (**de-colonization**, passive resistance) remain immensely relevant but with very different parameters than the 1920's-1940's.
