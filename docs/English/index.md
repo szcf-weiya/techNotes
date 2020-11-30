@@ -1,3 +1,8 @@
+## 2020.11.30
+
+- The big **top-line** takeaway is what already know.
+- I felt great and confident. That is a **stunning blouse**.
+
 ## 2020.11.28
 
 - The "**gig economy (零工经济)**" exemplified by Uber drivers is **mushrooming**.
@@ -1475,7 +1480,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 25. The kitten crept silently across the floor before suddenly pouncing on the mouse.
 26. Complaints about stifling smog conditions reach crescendo.
 27. Climate change has exerted a ponderable influence on world politics.
-28. The committee will probably pore over the results of the study for a long time before making their decision.
+28. The committee will probably **pore over** the results of the study for a long time before making their decision.
 29. He habitually transforms brief anecdotes into prolix sagas that exhaust his listeners.
 30. The burglary, which he committed while still a teen, was but a prologue to a wasted life of crime.
 31. The law was promulagated in June 1988.
