@@ -1,3 +1,8 @@
+## 2020.12.1
+
+- It was possible to identify specific customers in the competition data set (suggesting even political and religious affiliations could be determined), even though Netflix had performed a form of **cursory** anonymization.
+- We **take our lumps**, and we try to do better next time.
+
 ## 2020.11.30
 
 - The big **top-line** takeaway is what already know.
