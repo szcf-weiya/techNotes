@@ -1,3 +1,8 @@
+## 2020.12.2
+
+- **[I am humbled](https://english.stackexchange.com/questions/3019/what-is-the-meaning-of-i-am-humbled-by-xyz)** by the response we have received during the Black Friday sale.
+- The **staggering** problems of poverty remain unsolved.
+
 ## 2020.12.1
 
 - It was possible to identify specific customers in the competition data set (suggesting even political and religious affiliations could be determined), even though Netflix had performed a form of **cursory** anonymization.

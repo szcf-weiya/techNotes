@@ -909,3 +909,31 @@ conda create -p ... python=x.x
 则 activate 的时候需要加上整个路径。
 
 在创建之前可以先在 [`.condarc` 中的 `env_dirs`](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#specify-environment-directories-envs-dirs) 项下添加指定的路径。
+
+## conda 迁移环境
+
+[官方文档](https://www.anaconda.com/blog/moving-conda-environments)介绍了四种环境迁移的方式，
+
+- clone
+- Spec List
+- Environment.yml
+- Conda Pack
+
+其中第四种似乎更符合需求，因为第二三种需要重新下载 package，而第一种不太能直接（额外指定参数或许可以）支持多个 envs folder 间的切换，但是第四种本质上就是打包解压，所以何不如直接 `mv` 移动呢，毕竟我是在同一台电脑上操作，试了一下，果然成功了。
+
+```bash
+$ conda env list
+# conda environments:
+#
+base                  *  /home/weiya/anaconda3
+py27                     /home/weiya/anaconda3/envs/py27
+py35                     /media/weiya/PSSD/Programs/anaconda3/envs/py35
+
+$ mv anaconda3/envs/py27/ /media/weiya/PSSD/Programs/anaconda3/envs/
+$ conda env list
+# conda environments:
+#
+base                  *  /home/weiya/anaconda3
+py27                     /media/weiya/PSSD/Programs/anaconda3/envs/py27
+py35                     /media/weiya/PSSD/Programs/anaconda3/envs/py35
+```
