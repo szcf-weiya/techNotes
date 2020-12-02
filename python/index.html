@@ -1135,6 +1135,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#conda_1" class="md-nav__link">
+    conda 迁移环境
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1452,7 +1459,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../vi/" class="md-nav__link">
+    <a href="../vi/index.md" class="md-nav__link">
       Vi
     </a>
   </li>
@@ -2504,6 +2511,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#conda_1" class="md-nav__link">
+    conda 迁移环境
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3105,6 +3119,30 @@ ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 <p>注意如果指定路径，则不需要 <code>--name</code>， 因为默认会将路径最后的文件名看成是 env 的 name。</p>
 <p>则 activate 的时候需要加上整个路径。</p>
 <p>在创建之前可以先在 <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#specify-environment-directories-envs-dirs"><code>.condarc</code> 中的 <code>env_dirs</code></a> 项下添加指定的路径。</p>
+<h2 id="conda_1">conda 迁移环境<a class="headerlink" href="#conda_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.anaconda.com/blog/moving-conda-environments">官方文档</a>介绍了四种环境迁移的方式，</p>
+<ul>
+<li>clone</li>
+<li>Spec List</li>
+<li>Environment.yml</li>
+<li>Conda Pack</li>
+</ul>
+<p>其中第四种似乎更符合需求，因为第二三种需要重新下载 package，而第一种不太能直接（额外指定参数或许可以）支持多个 envs folder 间的切换，但是第四种本质上就是打包解压，所以何不如直接 <code>mv</code> 移动呢，毕竟我是在同一台电脑上操作，试了一下，果然成功了。</p>
+<div class="highlight"><pre><span></span><code>$ conda env list
+<span class="c1"># conda environments:</span>
+<span class="c1">#</span>
+base                  *  /home/weiya/anaconda3
+py27                     /home/weiya/anaconda3/envs/py27
+py35                     /media/weiya/PSSD/Programs/anaconda3/envs/py35
+
+$ mv anaconda3/envs/py27/ /media/weiya/PSSD/Programs/anaconda3/envs/
+$ conda env list
+<span class="c1"># conda environments:</span>
+<span class="c1">#</span>
+base                  *  /home/weiya/anaconda3
+py27                     /media/weiya/PSSD/Programs/anaconda3/envs/py27
+py35                     /media/weiya/PSSD/Programs/anaconda3/envs/py35
+</code></pre></div>
                 
               
               

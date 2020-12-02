@@ -964,6 +964,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sftp-via-file-manager" class="md-nav__link">
+    sftp via File Manager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-the-software-searchable" class="md-nav__link">
+    make the software searchable
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1487,7 +1501,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../vi/" class="md-nav__link">
+    <a href="../vi/index.md" class="md-nav__link">
       Vi
     </a>
   </li>
@@ -2574,6 +2588,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sftp-via-file-manager" class="md-nav__link">
+    sftp via File Manager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-the-software-searchable" class="md-nav__link">
+    make the software searchable
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3448,6 +3476,13 @@ gpg: Total number processed: <span class="m">1</span>
 gpg:         new signatures: <span class="m">2</span>
 </code></pre></div>
 <p>Now, new signatures come, and no expired again.</p>
+<h2 id="sftp-via-file-manager">sftp via File Manager<a class="headerlink" href="#sftp-via-file-manager" title="Permanent link">&para;</a></h2>
+<p>在用 <code>connect to server</code> 时，经常弹出窗口要求输入用户名及密码，格式为 <code>sftp://xxx.xxx.xx.xx</code>，如果避免输入密码，不妨采用 <code>sftp://user@xxx.xxx.xx.xx</code>。不过有时在登录其它服务器时，不指定用户名还是直接登进去了，不太清楚为什么，猜想会不会是这几个服务器的用户名刚好跟本地相同。</p>
+<h2 id="make-the-software-searchable">make the software searchable<a class="headerlink" href="#make-the-software-searchable" title="Permanent link">&para;</a></h2>
+<p>If the software has <code>xx.destop</code> file, then </p>
+<div class="highlight"><pre><span></span><code>cp xx.destop ~/.local/share/applications
+</code></pre></div>
+<p>otherwise， create a <code>.desktop</code> file. More details refer to <a href="https://askubuntu.com/questions/80013/how-to-pin-eclipse-to-the-unity-launcher">How to pin Eclipse to the Unity launcher?</a> and <a href="https://askubuntu.com/questions/285951/how-to-add-programs-to-the-launcher-search">How to add programs to the launcher (search)?</a></p>
                 
               
               
