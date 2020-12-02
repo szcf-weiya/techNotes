@@ -1308,3 +1308,7 @@ gpg:         new signatures: 2
 ```
 
 Now, new signatures come, and no expired again.
+
+## sftp via File Manager
+
+在用 `connect to server` 时，经常弹出窗口要求输入用户名及密码，格式为 `sftp://xxx.xxx.xx.xx`，如果避免输入密码，不妨采用 `sftp://user@xxx.xxx.xx.xx`。不过有时在登录其它服务器时，不指定用户名还是直接登进去了，不太清楚为什么，猜想会不会是这几个服务器的用户名刚好跟本地相同。
