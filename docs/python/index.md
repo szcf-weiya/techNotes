@@ -937,3 +937,21 @@ base                  *  /home/weiya/anaconda3
 py27                     /media/weiya/PSSD/Programs/anaconda3/envs/py27
 py35                     /media/weiya/PSSD/Programs/anaconda3/envs/py35
 ```
+
+## conda clean
+
+笔记本硬盘余量告急，然后发现 `anaconda` 文件夹下竟然有 15GB，所以想有没有什么方法清理一下，果然有 [`conda clean`](https://docs.conda.io/projects/conda/en/latest/commands/clean.html) 这句命令，
+
+> Remove unused packages and caches.
+
+但是有点担心其 `unused` 的定义，是多长时间没有用过吗？比如一个月之类的，如果是这样，意义并不大。后来找到了这个[回答](https://stackoverflow.com/questions/51960539/where-does-conda-clean-remove-packages-from)
+
+> An "unused" package is one that's not used in any environment.
+
+以及 [Conda clean 净化Anaconda](https://www.jianshu.com/p/f14ac62bef99)
+
+> - 有些包安装之后，从来没有使用过；
+> - 一些安装包的tar包也保留在了计算机中；
+> - 由于依赖或者环境等原因，某些包的不同版本重复安装。
+
+于是比较放心地运行了 `conda clean -a`，一下子清理出 8.6G 的空间。
