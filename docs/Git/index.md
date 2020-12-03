@@ -290,6 +290,14 @@ file_glob: true
 - 保留修改的内容：`git reset --soft HEAD^`
 - 还有一种 `mixed`，也是默认不带参数的
 
+或者直接跳到对应的 commit
+
+```bash
+git reset --hard <commit>
+```
+
+如果也要更新远程仓库，如 github，则需要使用 `git push -f` 强制更新。 
+
 参考
 
 - [git 放弃本地修改](https://www.cnblogs.com/qufanblog/p/7606105.html)
