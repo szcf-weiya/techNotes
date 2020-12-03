@@ -6,25 +6,26 @@
 2. [这些GIT经验够你用一年了](https://zhuanlan.zhihu.com/p/22666153)
 3. [Cheatsheet](git-cheat-sheet-education.pdf)
 
-## 删除远程分支
+## 删除分支 
 
-```git
-git branch -r -d origin/branch-name
+```bash
+## Delete a remote branch
+$ git push origin --delete <branch> # Git version 1.7.0 or newer 
+$ git push origin :<branch> # Git versions older than 1.7.0
+
+## Delete a local branch
+$ git branch --delete <branch>
+$ git branch -d <branch> # Shorter version
+$ git branch -D <branch> # Force delete un-merged branches
+
+## Delete a local remote-tracking branch
+$ git branch --delete --remotes <remote>/<branch>
+$ git branch -dr <remote>/<branch> # Shorter
+$ git fetch <remote> --prune # Delete multiple obsolete tracking branches
+$ git fetch <remote> -p # Shorter
 ```
-此时需要更改仓库的默认分支，不然直接运行下面的命令会报错
-```
-git push origin :branch-name
-```
 
-![](error_branch.png)
-
-图中第一次是更改默认分支前的出错信息，第二次是更改完默认分支的信息。
-
-## 删除本地分支
-
-```git
-git branch -d branch-name
-```
+adapted from [cmatskas/GitDeleteCommands.ps1](https://gist.github.com/cmatskas/454e3369e6963a1c8c89)
 
 ## 提高git clone速度
 
@@ -294,6 +295,24 @@ file_glob: true
 - [git 放弃本地修改](https://www.cnblogs.com/qufanblog/p/7606105.html)
 - [github,退回之前的commit](https://www.cnblogs.com/xiaomengzhang/p/3240788.html)
 - [github 版本回退](https://blog.csdn.net/apple_wolf/article/details/53326187)
+
+### 放弃 reset
+
+type
+
+```bash
+git reflog
+```
+
+to find the log of all ref updates, and then use
+
+```bash
+git reset 'HEAD@{1}'
+```
+
+to restore the corresponding state of `HEAD@{1}`, where `1` implies that last state, and it can be set as other refs.
+
+refer to [How to undo 'git reset'?](https://stackoverflow.com/questions/2510276/how-to-undo-git-reset)
 
 ### 实际案例
 
