@@ -1142,6 +1142,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#conda-clean" class="md-nav__link">
+    conda clean
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2518,6 +2525,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#conda-clean" class="md-nav__link">
+    conda clean
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3143,6 +3157,24 @@ base                  *  /home/weiya/anaconda3
 py27                     /media/weiya/PSSD/Programs/anaconda3/envs/py27
 py35                     /media/weiya/PSSD/Programs/anaconda3/envs/py35
 </code></pre></div>
+<h2 id="conda-clean">conda clean<a class="headerlink" href="#conda-clean" title="Permanent link">&para;</a></h2>
+<p>笔记本硬盘余量告急，然后发现 <code>anaconda</code> 文件夹下竟然有 15GB，所以想有没有什么方法清理一下，果然有 <a href="https://docs.conda.io/projects/conda/en/latest/commands/clean.html"><code>conda clean</code></a> 这句命令，</p>
+<blockquote>
+<p>Remove unused packages and caches.</p>
+</blockquote>
+<p>但是有点担心其 <code>unused</code> 的定义，是多长时间没有用过吗？比如一个月之类的，如果是这样，意义并不大。后来找到了这个<a href="https://stackoverflow.com/questions/51960539/where-does-conda-clean-remove-packages-from">回答</a></p>
+<blockquote>
+<p>An &ldquo;unused&rdquo; package is one that&rsquo;s not used in any environment.</p>
+</blockquote>
+<p>以及 <a href="https://www.jianshu.com/p/f14ac62bef99">Conda clean 净化Anaconda</a></p>
+<blockquote>
+<ul>
+<li>有些包安装之后，从来没有使用过；</li>
+<li>一些安装包的tar包也保留在了计算机中；</li>
+<li>由于依赖或者环境等原因，某些包的不同版本重复安装。</li>
+</ul>
+</blockquote>
+<p>于是比较放心地运行了 <code>conda clean -a</code>，一下子清理出 8.6G 的空间。</p>
                 
               
               
