@@ -1,3 +1,7 @@
+## 2020.12.4
+
+- Maybe something like the **elasticities** that economists use?
+
 ## 2020.12.2
 
 - **[I am humbled](https://english.stackexchange.com/questions/3019/what-is-the-meaning-of-i-am-humbled-by-xyz)** by the response we have received during the Black Friday sale.
