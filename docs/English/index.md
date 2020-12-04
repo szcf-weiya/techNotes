@@ -1139,13 +1139,13 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2018.09.02 
 
-1. homologous
-2. designate
-3. pertaining
+1. If both a pair of **homologous (同源的)** chromosomes are missing, **nullisomy (缺体性，缺对染色体)** results.
+2. The stretch is also the only federally **designated** wildlife migration **corridor (走廊)**.
+3. I never worked at anything **pertaining (与...有关系的，附属...的)** to sports.
 
 ## 2018.09.01
 
-1. invoice
+1. The company allegedly used fake **invoices (发票)** to obtain the loans.
 
 ## 2018.08.31
 
