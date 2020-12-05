@@ -856,11 +856,11 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2019.12.20
 
-1. repulsive
+- It had all been one of his **repulsive (令人厌恶的，可憎的)** drunken **jests (玩笑，笑话)**.
 
 ## 2019.12.15
 
-1. I think that the author shouldn’t have done the chapter **gimmick**, and focused more on the more impactful awards.
+1. I think that the author shouldn’t have done the chapter **gimmick (噱头，骗人的玩意)**, and focused more on the more impactful awards.
 
 ## 2019.12.13
 
@@ -870,12 +870,12 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 4. The impact of history on the present appears **indisputable** but is, as the extreme Moran statistic for spatial autocorrelation indicates, **spurious**.
 5. a battery of questions
 6. a bunch of data
-7. My father was a scratch golfer in his **heyday** on local public courses, but he said he’d never be able to sink a single putt if the greens were maintained the way they were for PGA **tournaments**.
-8. he was **obsessive** about his short game—his own career was ended by knee and **rotator cuff** surgery—**hockey** wasn’t good to his body, either, despite playing in a “non-contact” **league** as an adult.
+7. My father was a scratch golfer in his **heyday (全盛期)** on local public courses, but he said he’d never be able to sink a single **putt (击球入洞)** if the greens were maintained the way they were for PGA **tournaments (锦标赛，联赛)**.
+8. he was **obsessive** about his short game—his own career was ended by knee and **rotator cuff** surgery—**hockey (冰球，曲棍球)** wasn’t good to his body, either, despite playing in a “non-contact” **league** as an adult.
 9. Are there things like field goals in **rugby (橄榄球)** or Australian-rules football? I love that the actual name of the sport has “rules” in the title—it’s the kind of **pedantry** near and dear to this **semanticist (语义学者)**’s heart.
     - It is the kind of **semantic** nitpicking that has made progressive movements unappealing to many Americans.
-10. I boycott contact sports like football and ice hockey due to their intentionally violent nature.
-11.  I saw too many catchers and **umpires** rocked by **foul** tips to the face mask this season.
+10. I **boycott (联合抵制，拒绝参加)** contact sports like football and ice hockey due to their intentionally violent nature.
+11.  I saw too many catchers and **umpires (裁判员，仲裁人)** rocked by **[foul tips (触击球)](https://en.wikipedia.org/wiki/Foul_tip)** to the face mask this season.
 12. see a catcher **don the gear** again after multiple **concussions**
 13. What really **riled** me was when the speaker said
 14. This seems to me to be a **bizarre** sort of **techno-mysticism**.
