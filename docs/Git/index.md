@@ -50,22 +50,43 @@ git checkout -b gh-pages origin/gh-pages
 [reference](http://www.open-open.com/lib/view/open1428900970330.html)
 
 1. 下载安装
-```
+
+```bash
 apt-get install git
 ```
 
 2. 配置
-```
+
+```bash
 git config --global user.name "test"
 git config --global user.email "test@163.com"
 ```
 
-3. ssh
+除了设置全局的 `name` 和 `email`，也可以为特定 project 文件夹下指定不同的 `name` 及 `email`,
+
+```bash
+git config user.name "foo"
+git config user.email "foo@gmail.com"
 ```
+
+另外还有更高级的配置 `--system`。显然，project 覆盖 global, 而 global 覆盖 system.
+
+如果想要知道当前 `name` 和 `email`,可以通过下面命令查看
+
+```bash
+git config user.name
+git config user.email
+```
+
+参考 [Is it possible to have different Git configuration for different projects?](https://stackoverflow.com/questions/8801729/is-it-possible-to-have-different-git-configuration-for-different-projects)
+
+3. ssh
+
+```bash
 ssh-keygen -t rsa -C "test@163.com"
 ```
 
-复制~/.ssh/id_rsa.pub到github上。
+复制 `~/.ssh/id_rsa.pub` 到 github 上。
 
 ## 修改 origin
 
@@ -181,12 +202,6 @@ npm install -g forever
 forever statr server.js
 ```
 
-## 显示 user.name 和 user.email
-
-```bash
-git config user.name
-git config user.email
-```
 
 ## 删除github的master分支
 

@@ -1,3 +1,13 @@
+## 2020.12.5
+
+- some patients with **hypertriglyceridemia (高甘油三酯血症)** were placed on a low-fat, high-**carbohydrate (碳水化合物；糖类)** diet.
+    - triglyceride: 甘油三酸酯
+    - hyperglycemia: 多糖症，高血糖症
+- A study of patients with **insulin (胰岛素)**-dependent diabetes was conducted to investigate the effects of cigarette smoking on **renal (肾脏的)** and **retinal (视网膜的)** **complications (并发症)**.
+- In a study investigating maternal risk factors for congenital syphilis.
+- The estimated coefficients from a logistic regression model containing the explanatory variables **cocaine or crack (可卡因)** use， marital status, number of **prenatal (产前的)** visits to a doctor. 
+- the AIDS patients suffering from **concomitant (伴随的)** **esophageal (食道的，食管的)** **candidiasis (念珠菌病)**, an infection due to **candida (念珠菌)** yeast, and **cytomegalovirus (巨细胞病毒)**, a herpes infection that can cause serious illness.
+
 ## 2020.12.4
 
 - Maybe something like the **elasticities** that economists use?
@@ -1242,7 +1252,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.08.17
 
 1. collider
-2. elevated cholesterol
+2. Loneliness causes high blood pressure, high **cholesterol (胆固醇)**.
 
 
 ## 2018.08.16
