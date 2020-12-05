@@ -927,13 +927,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#username-useremail" class="md-nav__link">
-    显示 user.name 和 user.email
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#githubmaster" class="md-nav__link">
     删除github的master分支
   </a>
@@ -1623,13 +1616,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#username-useremail" class="md-nav__link">
-    显示 user.name 和 user.email
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#githubmaster" class="md-nav__link">
     删除github的master分支
   </a>
@@ -1889,24 +1875,32 @@ git checkout -b gh-pages origin/gh-pages
 <h2 id="git_1">初次配置Git<a class="headerlink" href="#git_1" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.open-open.com/lib/view/open1428900970330.html">reference</a></p>
 <ol>
-<li>
-<p>下载安装
-<div class="highlight"><pre><span></span><code>apt-get install git
-</code></pre></div></p>
-</li>
-<li>
-<p>配置
-<div class="highlight"><pre><span></span><code>git config --global user.name &quot;test&quot;
-git config --global user.email &quot;test@163.com&quot;
-</code></pre></div></p>
-</li>
-<li>
-<p>ssh
-<div class="highlight"><pre><span></span><code>ssh-keygen -t rsa -C &quot;test@163.com&quot;
-</code></pre></div></p>
-</li>
+<li>下载安装</li>
 </ol>
-<p>复制~/.ssh/id_rsa.pub到github上。</p>
+<div class="highlight"><pre><span></span><code>apt-get install git
+</code></pre></div>
+<ol start="2">
+<li>配置</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git config --global user.name <span class="s2">&quot;test&quot;</span>
+git config --global user.email <span class="s2">&quot;test@163.com&quot;</span>
+</code></pre></div>
+<p>除了设置全局的 <code>name</code> 和 <code>email</code>，也可以为特定 project 文件夹下指定不同的 <code>name</code> 及 <code>email</code>,</p>
+<div class="highlight"><pre><span></span><code>git config user.name <span class="s2">&quot;foo&quot;</span>
+git config user.email <span class="s2">&quot;foo@gmail.com&quot;</span>
+</code></pre></div>
+<p>另外还有更高级的配置 <code>--system</code>。显然，project 覆盖 global, 而 global 覆盖 system.</p>
+<p>如果想要知道当前 <code>name</code> 和 <code>email</code>,可以通过下面命令查看</p>
+<div class="highlight"><pre><span></span><code>git config user.name
+git config user.email
+</code></pre></div>
+<p>参考 <a href="https://stackoverflow.com/questions/8801729/is-it-possible-to-have-different-git-configuration-for-different-projects">Is it possible to have different Git configuration for different projects?</a></p>
+<ol start="3">
+<li>ssh</li>
+</ol>
+<div class="highlight"><pre><span></span><code>ssh-keygen -t rsa -C <span class="s2">&quot;test@163.com&quot;</span>
+</code></pre></div>
+<p>复制 <code>~/.ssh/id_rsa.pub</code> 到 github 上。</p>
 <h2 id="origin">修改 origin<a class="headerlink" href="#origin" title="Permanent link">&para;</a></h2>
 <p>本地通过 git clone 得到仓库 https://github.com/CellProfiler/CellProfiler，后来需要在此基础上做些更改用到自己的项目中去，于是对原仓库进行了 fork，不过忘记了本地的仓库其实是从原仓库 clone 下来的，而非来自 fork 后的仓库，于是在 git push 会试图像原仓库进行 push，这当然是会被拒绝的。</p>
 <p>简单的方法便是直接更改本地仓库的 origin，首先可以通过</p>
@@ -1972,10 +1966,6 @@ git checkout BRANCH_NAME
 <p>需要在腾讯云服务器上自动更新github pages的内容，于是采用webhook来实现。</p>
 <div class="highlight"><pre><span></span><code>npm install -g forever
 forever statr server.js
-</code></pre></div>
-<h2 id="username-useremail">显示 user.name 和 user.email<a class="headerlink" href="#username-useremail" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git config user.name
-git config user.email
 </code></pre></div>
 <h2 id="githubmaster">删除github的master分支<a class="headerlink" href="#githubmaster" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/jefbai/article/details/44234383">删除github的master分支</a></p>
