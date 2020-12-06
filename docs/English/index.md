@@ -1,3 +1,7 @@
+## 2020.12.6
+
+- Data from infectious disease outbreaks in **congregate** settings are often used to **elicit** clues about which types of interventions may be useful in other facilities.
+
 ## 2020.12.5
 
 - some patients with **hypertriglyceridemia (高甘油三酯血症)** were placed on a low-fat, high-**carbohydrate (碳水化合物；糖类)** diet.
