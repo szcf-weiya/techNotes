@@ -132,7 +132,7 @@ Command 'nvlc' not found, but can be installed with:
 sudo apt install vlc-bin
 ```
 
-安装好之后，直接 `vlc *` 便可以顺序播放所有歌曲，
+安装好之后，直接 `nvlc *` 便可以顺序播放所有歌曲，
 
 ![](music-nvlc.gif)
 
