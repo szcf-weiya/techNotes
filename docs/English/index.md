@@ -1786,14 +1786,17 @@ up
 
 ## 2017.10.20
 
-1. cubism
+1. Together they create a picture that hints towards **cubism (立体主义)**.
 2. be coordinated with, to harmonize with
-3. desperate
-4. deject
+3. What is called resignation is confirmed desperation. 所谓听天由命，正是肯定的绝望。
+4. His obsession could make him by turns **hustling (急躁)**, mean and **dejected (沮丧的，灰心的)**.
+    - hustle and bustle: 熙熙攘攘，忙碌
 5. dip, incise
-6. bemoan
+6. The farmer **bemoaned (惋惜，为...恸哭)** his loss.
 7. moral, mortal
-8. blend
+    - moral code: 道德准则
+    - all men are mortal: 人皆有一死
+8. blend of cultures：文化融合
 9. blaze
 10. bland
 11. diffident, different, indifferent
