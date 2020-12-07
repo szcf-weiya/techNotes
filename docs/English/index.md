@@ -1,3 +1,7 @@
+## 2020.12.7
+
+- Columbia University in New York, the president's **alma mater (母校)**, is preparing a bid.
+
 ## 2020.12.6
 
 - Data from infectious disease outbreaks in **congregate** settings are often used to **elicit** clues about which types of interventions may be useful in other facilities.
