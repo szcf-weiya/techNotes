@@ -1,3 +1,7 @@
+## 2020.12.8
+
+- gross **domestic** product
+
 ## 2020.12.7
 
 - Columbia University in New York, the president's **alma mater (母校)**, is preparing a bid.
