@@ -80,24 +80,25 @@
 
 ## 2020.11.21
 
-- customers may be unable or unwilling to accept our model of commercial software **procurement**.
+- customers may be unable or unwilling to accept our model of commercial software **procurement (采购，获得，取得)**.
 
 ## 2020.11.20
 
-- it's not a slam on this graph to say that it makes me want to learn more.
+- it's not a **slam (抨击)** on this graph to say that it makes me want to learn more.
+    - [it's not a slam at you when people are rude, it's a slum at the people they've met before.](https://www.brainyquote.com/quotes/f_scott_fitzgerald_397424)
 
 
 ## 2020.11.19
 
 - Man has been **predominant** over other species for a long time.
-- A specific job hunt will be more efficient than a haphazard one.
+- A specific job hunt will be more efficient than a **haphazard (偶然的，随意的)** one.
 
 ## 2020.11.18
 
 - The British **Chamber (【身体或器官内的】室、膛；房间；会所) of Commerce (商会)** in Hong Kong is inviting applications for its Events & Marketing Executive.
 - An **assessment centre (求职评估)** is a recruitment process with a series of tasks including presentation, group exercise, **psychometric tests (心理计量测验)**, etc, to evaluate candidates' ability and personality.
 - **Amid** COVID-19, we are going through a very difficult and uncertain situation.
-- Your changes will be **vetted** by developers before becoming permanent.
+- Your changes will be **vetted (审查，诊疗)** by developers before becoming permanent.
 
 ## 2020.11.17
 
@@ -108,11 +109,11 @@
 
 ## 2020.11.16
 
-- Everyone seems **fixated** on the 90% effectiveness lower bound reported for the Pfizer vaccine.
+- Everyone seems **fixated (adj. 念念不忘的；v. 注视，固定下来)** on the 90% effectiveness lower bound reported for the Pfizer vaccine.
 - I'm [**basing it off of**](https://idioms.thefreedictionary.com/basing+it+off+of) a press release, which is not ideal for scientific precision.
     - ["base on" vs "base off of"](https://english.stackexchange.com/questions/15081/based-on-instead-of-based-off-of)
 - It won't be the [**silver bullet**](https://www.zhihu.com/question/20829469) we are looking for.
-- I'm **ecstatic** about this product.
+- I'm **ecstatic (狂喜的，入迷的)** about this product.
 - Haven't they ever read **Mandelbrot (本华·曼德博，创立了分形几何)**?
 - Those wacky anti-Bayesian used to be **intimidating**, but now they're just **pathetic**.
 - I was trying to draw [Bert and Ernie](https://zh.wikipedia.org/wiki/%E7%95%A2%E7%89%B9%E8%88%87%E6%81%A9%E5%B0%BC) **the other day (不久前某一天，几天以前)**.
