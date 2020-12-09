@@ -1,3 +1,7 @@
+## 2020.12.9
+
+- By its very name, **anthropology (人类学)** encompasses the study of all humankind.
+
 ## 2020.12.8
 
 - gross **domestic** product
