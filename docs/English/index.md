@@ -1,3 +1,10 @@
+## 2020.12.10
+
+- deputy director: 副局长，副厅长，副院长
+- Given that the purpose of this lawsuit is to **subvert** the express will of the voters, I am glad they hired such an incompetent consultant, but I feel bad for the residents of Texas that they had to pay for it.
+- It's turtles for quite a way down, but at some point it's solid bedrock.
+    - **turtles all the way down**: 一位著名的科学家（据说是贝特兰·罗素）曾经作过一次天文学讲演。他描述了地球如何围绕着太阳公转，而太阳又是如何围绕着称之为我们星系的巨大的恒星集团的中心公转。演讲结束之际，坐在房间后排的一位小个老妇人起立说道：“你讲的是一派胡言。实际上，世界是驮在一只巨大乌龟背上的平板。”这位科学家露出高傲的微笑，然后答道：“那么这只乌龟是站在什么上面的呢？”“你很聪明，年轻人，的确很聪明，”老妇人说，“不过，这是一只驮着一只，一直驮下去的乌龟塔啊！”【时间简史】
+
 ## 2020.12.9
 
 - By its very name, **anthropology (人类学)** encompasses the study of all humankind.
@@ -165,7 +172,7 @@
 ## 2020.11.09
 
 - all would be OK if people just **ditched** their $p$-values and replaced them with intervals.
-- it seemed kinda tacky for a reporter whose shtick was access to the powerful, to not want his own speech to be reported.
+- it seemed kinda **tacky (低劣的，蹩脚的，俗气的，乏味的)** for a reporter whose shtick was access to the powerful, to not want his own speech to be reported.
 
 
 ## 2020.11.08
@@ -314,7 +321,7 @@
 - Any sufficiently **crappy** research is indistinguishable from fraud.
 - the notorious study in which participants were invited to stick 51 pins into a **voodoo doll** representing their **spouses**.
 - it was just done by some **bigshot** professor who calls himself a "**myth buster**".
-- That voodoo study is **hilarious**, worth a good **rant** or two.
+- That **voodoo (巫术)** study is **hilarious (十分有趣的，非常滑稽的)**, worth a good **rant (怒吼；叫喊；大声责骂)** or two.
 
 ## 2020.10.21
 
@@ -355,9 +362,9 @@
 
 ## 2020.10.16
 
-- I leave it to you to decide whether this is **fodder** for your blog.
-- a **plaintiff** should be able to **bring a lawsuit** on the basis of discrimination **per se**
-- the Biber Code **dudes**
+- I leave it to you to decide whether this is **fodder (饲料，素材)** for your blog.
+- a **plaintiff (原告)** should be able to **bring a lawsuit (起诉)** on the basis of discrimination **per se (本身，自身，by itself, in itself)**
+- the Biber Code **dudes (伙计，花花公子)**
 
 ## 2020.10.15
 
@@ -451,7 +458,7 @@
 - if someone at one of these universities had been caught robbing at a bank, would his colleagues have all **backed him up** like that?
 - this kind of **cavalier** attitude to what is pretty much the purest sort of scientific fraud makes it clear how little the scientific process is valued.
 - this kind of sounds like a **conspiracy theory (阴谋论)**
-- all participants in cargo-cut (货物崇拜) social science——from the fabricators to the **powermongers** to the enablers to the just plain incompetents 
+- all participants in cargo-cut (货物崇拜) social science——from the fabricators to the **powermongers** to the enablers to the just plain **incompetents (无能者，不胜任者)** 
 - swatting away people like other data **thugs**
 
 ## 2020.10.04
