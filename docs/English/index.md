@@ -1,3 +1,7 @@
+## 2020.12.11
+
+- As a result, the **up-front** cost for education is real, large and easy to measure.
+
 ## 2020.12.10
 
 - deputy director: 副局长，副厅长，副院长
