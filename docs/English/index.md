@@ -1,3 +1,7 @@
+## 2020.12.12
+
+- The slogan has been **revived** recently in social media.
+
 ## 2020.12.11
 
 - As a result, the **up-front** cost for education is real, large and easy to measure.
