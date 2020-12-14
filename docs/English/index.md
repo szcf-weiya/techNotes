@@ -1,3 +1,8 @@
+## 2020.12.14
+
+- The **heir apparent (法定继承人)** succeeded to the throne.
+    - He is the legitimate **heir (继承人)** to the property.
+
 ## 2020.12.13
 
 - By various **recondite** processes, he converted the **urine (尿)** first into a noxious paste and then into **translucent (半透明)** waxy substance. None of it yielded gold, of course, but a strange and interesting thing did happen. After a time, the substance began to glow.

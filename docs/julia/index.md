@@ -750,7 +750,13 @@ The source folders can be freely moved to another place, and only need to update
 sudo ln -sf ... ...
 ```
 
-to override current link.
+to override current link. But, if the links is to a folder, then another flag need to be added to override,
+
+```bash
+sudo ln -sfn ... ...
+```
+
+refer to [How to change where a symlink points](https://unix.stackexchange.com/questions/151999/how-to-change-where-a-symlink-points)
 
 ## array in functions
 
