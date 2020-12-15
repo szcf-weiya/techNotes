@@ -938,6 +938,15 @@ py27                     /media/weiya/PSSD/Programs/anaconda3/envs/py27
 py35                     /media/weiya/PSSD/Programs/anaconda3/envs/py35
 ```
 
+但是发现了个小问题，`pip`用不了，比如
+
+```bash
+$ pip install pymdown-extensions
+bash: /media/weiya/PSSD/Programs/anaconda3/envs/py36/bin/pip: /home/weiya/anaconda3/envs/py36/bin/python: bad interpreter: No such file or directory
+```
+
+其还是想调用原先路径下的 python，然后重新装一下 `conda install pip` 就好了。
+
 ## conda clean
 
 笔记本硬盘余量告急，然后发现 `anaconda` 文件夹下竟然有 15GB，所以想有没有什么方法清理一下，果然有 [`conda clean`](https://docs.conda.io/projects/conda/en/latest/commands/clean.html) 这句命令，

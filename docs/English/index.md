@@ -1,3 +1,7 @@
+## 2020.12.15
+
+- a **peculiar (奇怪的，异常的，特有的)** choice of null hypothesis on subsamples
+
 ## 2020.12.14
 
 - The **heir apparent (法定继承人)** succeeded to the throne.
