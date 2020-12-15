@@ -9,7 +9,7 @@
 
 ## 2020.12.13
 
-- By various **recondite** processes, he converted the **urine (尿)** first into a noxious paste and then into **translucent (半透明)** waxy substance. None of it yielded gold, of course, but a strange and interesting thing did happen. After a time, the substance began to glow.
+- By various **recondite (深奥的，晦涩的)** processes, he converted the **urine (尿)** first into a noxious paste and then into **translucent (半透明)** waxy substance. None of it yielded gold, of course, but a strange and interesting thing did happen. After a time, the substance began to glow.
 
 ## 2020.12.12
 
