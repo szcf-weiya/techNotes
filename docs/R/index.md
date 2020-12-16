@@ -552,3 +552,35 @@ summary.employee <- function(wrkr){
 ```
 
 以及一个相关的问题 [How to override default S3 function in R?](https://stackoverflow.com/questions/9275387/how-to-override-default-s3-function-in-r)
+
+
+## Parallel Computing
+
+### related packages 
+
+- `parallel`: `makeCluster` and `stopCluster`
+- `doParallel`: `registerDoParallel`
+- `foreach`: `%dopar%`
+
+### example
+
+adapt from [my project](https://github.com/szcf-weiya/sodaParallel/blob/master/R/pure_soda_par.R#L365-L375)
+
+```R
+cl <- makeCluster(ncl)
+registerDoParallel(cl)
+
+
+res = foreach(j=1:Nnset, .combine = 'c', .export = c('calc_lda_BIC'), .packages = 'nnet') %dopar%
+{
+  jj = not_set[j];
+  new_set   = sort(c(jj, cur_set));
+  new_score = calc_lda_BIC(xx, yy, new_set, D, K, debug, gam=gam);
+  new_score
+}
+stopCluster(cl)
+```
+
+### references
+
+- [Using the `foreach` package](https://cran.r-project.org/web/packages/foreach/vignettes/foreach.html)
