@@ -1,3 +1,7 @@
+## 2020.12.16
+
+- it is constantly generating electrons that could neutralize free **radicals (自由基)**, acting as **antioxidants (抗氧化剂)**.
+
 ## 2020.12.15
 
 - a **peculiar (奇怪的，异常的，特有的)** choice of null hypothesis on subsamples
