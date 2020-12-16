@@ -723,6 +723,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#parallel-computing" class="md-nav__link">
+    Parallel Computing
+  </a>
+  
+    <nav class="md-nav" aria-label="Parallel Computing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-packages" class="md-nav__link">
+    related packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    references
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1898,6 +1932,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#parallel-computing" class="md-nav__link">
+    Parallel Computing
+  </a>
+  
+    <nav class="md-nav" aria-label="Parallel Computing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-packages" class="md-nav__link">
+    related packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    references
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2273,6 +2341,32 @@ BiocManager::install(&quot;graph&quot;)
 <span class="p">}</span>
 </code></pre></div>
 <p>以及一个相关的问题 <a href="https://stackoverflow.com/questions/9275387/how-to-override-default-s3-function-in-r">How to override default S3 function in R?</a></p>
+<h2 id="parallel-computing">Parallel Computing<a class="headerlink" href="#parallel-computing" title="Permanent link">&para;</a></h2>
+<h3 id="related-packages">related packages<a class="headerlink" href="#related-packages" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>parallel</code>: <code>makeCluster</code> and <code>stopCluster</code></li>
+<li><code>doParallel</code>: <code>registerDoParallel</code></li>
+<li><code>foreach</code>: <code>%dopar%</code></li>
+</ul>
+<h3 id="example">example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<p>adapt from <a href="https://github.com/szcf-weiya/sodaParallel/blob/master/R/pure_soda_par.R#L365-L375">my project</a></p>
+<div class="highlight"><pre><span></span><code><span class="n">cl</span> <span class="o">&lt;-</span> <span class="nf">makeCluster</span><span class="p">(</span><span class="n">ncl</span><span class="p">)</span>
+<span class="nf">registerDoParallel</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
+
+
+<span class="n">res</span> <span class="o">=</span> <span class="nf">foreach</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="n">Nnset</span><span class="p">,</span> <span class="n">.combine</span> <span class="o">=</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="n">.export</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;calc_lda_BIC&#39;</span><span class="p">),</span> <span class="n">.packages</span> <span class="o">=</span> <span class="s">&#39;nnet&#39;</span><span class="p">)</span> <span class="o">%dopar%</span>
+<span class="p">{</span>
+  <span class="n">jj</span> <span class="o">=</span> <span class="n">not_set</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+  <span class="n">new_set</span>   <span class="o">=</span> <span class="nf">sort</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">jj</span><span class="p">,</span> <span class="n">cur_set</span><span class="p">));</span>
+  <span class="n">new_score</span> <span class="o">=</span> <span class="nf">calc_lda_BIC</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">new_set</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">debug</span><span class="p">,</span> <span class="n">gam</span><span class="o">=</span><span class="n">gam</span><span class="p">);</span>
+  <span class="n">new_score</span>
+<span class="p">}</span>
+<span class="nf">stopCluster</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="references">references<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/foreach/vignettes/foreach.html">Using the <code>foreach</code> package</a></li>
+</ul>
                 
               
               
