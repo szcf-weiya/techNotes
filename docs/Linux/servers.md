@@ -135,3 +135,43 @@ PGFPlotsX.enable_interactive(false)
 可以在 `.local/share/applications/mimeapps.list` 里面添加或者修改 
 
 虽然最后还是感觉通过服务器打开速度太慢了。
+
+## cluster 的 ssh 突然要密码了
+
+像往常一样 ssh，但是报错了
+
+```bash
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:eSpztdqzLF6rBXRWd8pCW0v4utoE5CYTUHTaUb0Qn0w.
+Please contact your system administrator.
+Add correct host key in /home/weiya/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/weiya/.ssh/known_hosts:42
+  remove with:
+  ssh-keygen -f "/home/weiya/.ssh/known_hosts" -R "chpc-login01.itsc.cuhk.edu.hk"
+ECDSA host key for chpc-login01.itsc.cuhk.edu.hk has changed and you have requested strict checking.
+Host key verification failed.
+```
+
+于是根据提示运行了
+
+```bash
+ssh-keygen -f "/home/weiya/.ssh/known_hosts" -R "chpc-login01.itsc.cuhk.edu.hk"
+```
+
+然后重新 ssh，但还是要求输入密码。
+
+这其实对应了服务器上 `/etc/ssh` 文件夹下几个 pub 文件，咨询 Michael 也得到回复说最近 public fingerprint 有修改，这应该是 known hosts 的内容。
+
+可以[以 MD5 的形式展示](https://superuser.com/questions/421997/what-is-a-ssh-key-fingerprint-and-how-is-it-generated)，
+
+```bash
+$ ssh-keygen -l -E md5 -f ssh_host_ed25519_key.pub
+```
+
+另外 `ssh -v` 可以显示连接细节。

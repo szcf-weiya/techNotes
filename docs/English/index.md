@@ -1,3 +1,9 @@
+## 2020.12.17
+
+- [No comma is used between the month and the year when they are the only two elements in the date.](https://www.thepunctuationguide.com/comma.html)
+    - The store closed its doors for good in October 1958.
+    - ~~The store closed its doors for good in October, 1958.~~
+
 ## 2020.12.16
 
 - it is constantly generating electrons that could neutralize free **radicals (自由基)**, acting as **antioxidants (抗氧化剂)**.
@@ -21,7 +27,7 @@
 
 ## 2020.12.11
 
-- As a result, the **up-front** cost for education is real, large and easy to measure.
+- As a result, the **up-front (预付的，先期的)** cost for education is real, large and easy to measure.
 
 ## 2020.12.10
 
