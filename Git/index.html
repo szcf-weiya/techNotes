@@ -2233,7 +2233,7 @@ git push origin :refs/tags/v1.0
 <div class="highlight"><pre><span></span><code>$ git log --graph --format<span class="o">=</span>%s
 </code></pre></div>
 <p><img alt="" src="graph-merges.png" /></p>
-<p>后来发现了 <a href="https://git-scm.com/docs/git-rebase/2.28.0#_rebasing_merges">&ndash;rebase-merges</a> 选项，似乎是在处理我的问题（~~最后还是理解反了~~），但是没高兴多久，服务器端的 git 版本只有 <code>1.8.3.1</code>，而这个选项至少要求 <code>2.x</code>。不过有注意到了 <code>--preserve-merges</code> 选项，新版本中已经 deprecated，而且文档中有这么一句，</p>
+<p>后来发现了 <a href="https://git-scm.com/docs/git-rebase/2.28.0#_rebasing_merges">&ndash;rebase-merges</a> 选项，似乎是在处理我的问题（<del>最后还是理解反了</del>），但是没高兴多久，服务器端的 git 版本只有 <code>1.8.3.1</code>，而这个选项至少要求 <code>2.x</code>。不过有注意到了 <code>--preserve-merges</code> 选项，新版本中已经 deprecated，而且文档中有这么一句，</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>DEPRECATED: use --rebase-merges instead<span class="o">]</span>
 </code></pre></div>
 <p>似乎也可以用，但是这个名字怎么感觉跟我的目标是相反的呢！?（此时还未意识到），后来简单试了一下</p>

@@ -2302,7 +2302,7 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 <blockquote>
 <p>key &ldquo;Exec&rdquo; in group &ldquo;Desktop Entry&rdquo; contains a quote which is not closed</p>
 </blockquote>
-<p>很纳闷，觉得这不应该啊，而且也<a href="https://askubuntu.com/questions/1200116/desktop-error-there-was-an-error-launching-the-application">有人 wine 的解决方案</a>也是通过 <code>sh -c</code>，但是后来发现了个区别，别人引号中空格只需要一次转义，即 <code>\</code>，比如 &ldquo;Program\ Files\ (x86)&rdquo;，但是我这里原先没加引号时，用两个反斜杠进行转义 <code>\\</code>，而且 <code>\\</code> 需要用 <code>\\\\</code> 来转义，所以隐隐觉得可能是加了引号转义会有问题。所以尝试改成 <code>\</code> 和 <code>\\</code>，但是都没有成功。</p>
+<p>很纳闷，觉得这不应该啊，而且也<a href="https://askubuntu.com/questions/1200116/desktop-error-there-was-an-error-launching-the-application">有人 wine 的解决方案</a>也是通过 <code>sh -c</code>，但是后来发现了个区别，别人引号中空格只需要一次转义，即 <code>\</code>，比如 &ldquo;Program Files (x86)&rdquo;，但是我这里原先没加引号时，用两个反斜杠进行转义 <code>\\</code>，而且 <code>\\</code> 需要用 <code>\\\\</code> 来转义，所以隐隐觉得可能是加了引号转义会有问题。所以尝试改成 <code>\</code> 和 <code>\\</code>，但是都没有成功。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>一般地，<code>sh -c "command 1; command 2"</code>可以实现在 launcher 中同时运行两个命令，参考 <a href="https://askubuntu.com/questions/60379/how-to-combine-two-commands-as-a-launcher">How to combine two commands as a launcher?</a></p>
