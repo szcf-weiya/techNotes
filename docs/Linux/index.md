@@ -1309,6 +1309,16 @@ gpg:         new signatures: 2
 
 Now, new signatures come, and no expired again.
 
+Another one,
+
+```bash
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04 ./ InRelease: The following signatures were invalid: EXPKEYSIG DFA175A75104960E Emulators OBS Project <Emulators@build.opensuse.org>
+W: Failed to fetch https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/./InRelease  The following signatures were invalid: EXPKEYSIG DFA175A75104960E Emulators OBS Project <Emulators@build.opensuse.org>
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+```
+
+according to the record on [WeChat in Linux](software/#wechat-in-linux), it seems that this one is not important, and for simplest, I just untick this repository in the software setting.
+
 ## sftp via File Manager
 
 在用 `connect to server` 时，经常弹出窗口要求输入用户名及密码，格式为 `sftp://xxx.xxx.xx.xx`，如果避免输入密码，不妨采用 `sftp://user@xxx.xxx.xx.xx`。不过有时在登录其它服务器时，不指定用户名还是直接登进去了，不太清楚为什么，猜想会不会是这几个服务器的用户名刚好跟本地相同。

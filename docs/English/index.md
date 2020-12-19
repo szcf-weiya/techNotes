@@ -1,3 +1,13 @@
+## 2020.12.19
+
+- He did that out of **mercenary** motives.
+- To **rectify** that failing on my part.
+- way to be a grammar **guru (大师，专家)**.
+
+## 2020.12.18
+
+- The farmer is **shearing (剪)** his sheep.
+
 ## 2020.12.17
 
 - [No comma is used between the month and the year when they are the only two elements in the date.](https://www.thepunctuationguide.com/comma.html)
@@ -384,7 +394,7 @@
 
 ## 2020.10.17
 
-- I wan **intrigued** by the observations you made this summer.
+- I wan **intrigued (激起...的好奇心)** by the observations you made this summer.
 - **In order for** Trump to win a blue state
 - I put them in a **pile** so that later I can read them in order.
 - this article informs us that Trump is **invincible**.
@@ -1547,7 +1557,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 13. The same lethargy, I am afraid, characterizes the use of our faculties and senses.
 14. It can also help perpetuate stereotypes, the inscrutable Japanese, bowing all the time, taking costs of pictures. Makes you wonder how the Japanese stereotype us.
 15. The children are apparently intrigued by the tale.
-16. The intrigue was quickly discovered, and the would-be assassins were arrested.
+16. The **intrigue (阴谋，诡计)** was quickly discovered, and the would-be assassins were arrested.
 17. The twins have an intuitive awareness of each other's feelings.
 18. The hardship of army training inured her to the rigors of desert warfare.
 19. The government is too effete to take out the powerful special interests that really ruin this state.
