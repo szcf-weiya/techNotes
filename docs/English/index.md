@@ -1,3 +1,7 @@
+## 2020.12.20
+
+- risk aversion: 风险规避，厌恶风险
+
 ## 2020.12.19
 
 - He did that out of **mercenary** motives.
