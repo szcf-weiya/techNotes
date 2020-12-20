@@ -450,6 +450,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../conda/" class="md-nav__link">
+      Conda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../pystan/" class="md-nav__link">
       PyStan 体验
     </a>
@@ -1237,7 +1249,7 @@
 <p>首先需要匹配中文，<a href="https://blog.csdn.net/gatieme/article/details/43235791">这篇博客</a>给了很好的解答，采用 <code>([\u4e00-\u9fa5]+)</code></p>
 </li>
 <li>
-<p>其次匹配带有空格的英文词组，这个最后采用 <code>(\b[a-zA-Z ]+\b)</code>。这个尽量要精确，不然如果范围大点，企图依赖其他部分的 pattern 来限制住，那还是会出问题的，比如一开始用 <code>(\b.*\b)</code>，过大的匹配范围，最后得到些错误的匹配结果。</p>
+<p>其次匹配带有空格的英文词组，这个最后采用 <code>(\b[a-zA-Z ]+\b)</code>。这个尽量要精确，不然如果范围大点，企图依赖其他部分的 pattern 来限制住，那还是会出问题的，比如一开始用 <code>(\b.*\b)</code>，过大的匹配范围，最后得到些错误的匹配结果，其中 <code>-b</code> 匹配 word boundary.</p>
 </li>
 </ul>
 <p>读写部分，直接采用 </p>
@@ -1255,9 +1267,15 @@
 <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;docs/</span><span class="si">{</span><span class="n">chdir</span><span class="si">}</span><span class="s2">/*.md&quot;</span><span class="p">):</span>
 </code></pre></div>
 <p>其他用法详见 <a href="https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory">How do I list all files of a directory?</a>。</p>
-<p>注意学会使用 <code>re</code> 的分组匹配功能，避免二次分割字串提取想要的元素。一开始我没用分组匹配，虽然得到了字串，但是后面想分割时，而 <code>split</code> 函数只支持一个 delimiter，而我想用多个 delimiter，比如对于 <code>**中文 (chinese)**</code>，为了提取出 <code>中文</code> 和 <code>chinese</code>，我需要 <code>**</code>、<code>(</code>、<code>)</code> 已经空格这四个 delimiter，虽然可以用</p>
-<div class="highlight"><pre><span></span><code><span class="n">delimiters</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="s2">&quot;(c)</span>
+<p>注意学会使用 <code>re</code> 的分组匹配功能，避免二次分割字串提取想要的元素。一开始我没用分组匹配，虽然得到了字串，但是后面想分割时，而 <code>split</code> 函数只支持一个 delimiter，而我想用多个 delimiter，比如对于 <code>**中文 (chinese)**</code>，为了提取出 <code>中文</code> 和 <code>chinese</code>，我需要 <code>**</code>、<code>(</code>、<code>)</code> 以及空格这四个 delimiter，虽然可以用</p>
+<div class="highlight"><pre><span></span><code><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;**中文 (chinese)**&quot;</span>
+<span class="n">delimiters</span> <span class="o">=</span> <span class="s2">&quot;**&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span>
 <span class="n">regexPattern</span> <span class="o">=</span> <span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">,</span> <span class="n">delimiters</span><span class="p">))</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">regexPattern</span>
+<span class="s1">&#39;</span><span class="se">\\</span><span class="s1">*</span><span class="se">\\</span><span class="s1">*|</span><span class="se">\\</span><span class="s1">(|</span><span class="se">\\</span><span class="s1">)|</span><span class="se">\\</span><span class="s1"> &#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">regexPattern</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\xe4\xb8\xad\xe6\x96\x87</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;chinese&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
 </code></pre></div>
 <p>实现，但既然又用了 <code>re</code>，干嘛不直接用它的分组匹配功能？参考 <a href="https://stackoverflow.com/questions/16840851/python-regex-split-without-empty-string">Python regex split without empty string</a> 及 <a href="https://stackoverflow.com/questions/4998629/split-string-with-multiple-delimiters-in-python">Split string with multiple delimiters in Python</a></p>
 <h2 id="_4">写入文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
