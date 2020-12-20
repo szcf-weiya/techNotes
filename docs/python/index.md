@@ -13,10 +13,6 @@
 Matplotlib自动化程度非常高，但是，掌握如何设置系统以便获得一个吸引人的图是相当困难的事。为了控制matplotlib图表的外观，Seaborn模块自带许多定制的主题和高级的接口。
 [segmentfault](https://segmentfault.com/a/1190000002789457)
 
-
-## 远程访问jupyter
-[远程访问jupyter](http://www.cnblogs.com/zhanglianbo/p/6109939.html)
-
 ## jupyter notebook 出错
 
 ![](error_jupyter.png)
@@ -51,12 +47,6 @@ sudo chgrp weiya jupyter/ -R
 
 ```
 pip list
-```
-
-## conda更新spyder
-
-```
-(sudo proxychains) conda update spyder
 ```
 
 ## selenium
@@ -117,29 +107,6 @@ array([[ 83.,  11.],
 ### Difference between numpy.array shape (R, 1) and (R,)
 
 refer to [Difference between numpy.array shape (R, 1) and (R,)](https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r)
-
-## 正式认识conda
-
-参考[https://conda.io/docs/user-guide/getting-started.html](https://conda.io/docs/user-guide/getting-started.html)
-
-## 为 py3 安装 spyder
-
-1. 先建一个conda环境bunny，安装python3.4，因为要支持pyside，而经试验3.5+不支持。
-2. 安装cmake
-3. pyside出现keyerrror
-
-转向py3.6
-不装pyside，而装pyqt5
-```bash
-pip install pyqt5
-```
-
-最终在新建的另一个 conda 环境 snakes 中装好了 Python3.6 及 spyder3，通过下面命令运行就 OK 了。
-
-```bash
-source activate snakes
-spyder3 &
-```
 
 ## xrange and range
 
@@ -229,26 +196,6 @@ trusted-host=mirrors.aliyun.com
 
 注意编码格式为utf8无BOM。
 
-## conda 在window下设置
-
-win10下已经装了anaconda，spyder(2.7)，现想再装上python3，于是利用conda创建一个python3的环境`bunny`。
-
-```cmd
-conda create --name bunny python=3
-```
-
-切换到bunny环境
-
-```cmd
-activate bunny
-```
-
-参考[spyder3 doc](https://pythonhosted.org/spyder/installation.html)
-
-```cmd
-pip install spyder3
-```
-
 ## 又拍云的短信平台
 
 参考文献
@@ -289,34 +236,46 @@ from urllib.parse import unquote
 print(unquote("%CE%B1%CE%BB%20"))
 ```
 
-## convert bytes to string
-
-参考[convert-bytes-to-a-string](https://stackoverflow.com/questions/606191/convert-bytes-to-a-string)
-
-```python
-b"abcde".decode("utf-8")
-```
-
 ## json.dumps() 和json.dump()的区别
 
 简言之，`dumps()`和`loads()`都是针对字符串而言的，而`dump()`和`load()`是针对文件而言的。具体细节可疑参见[python json.dumps()  json.dump()的区别 - wswang - 博客园](https://www.cnblogs.com/wswang/p/5411826.html)
 
-## 字符串前面添加u,r,b的含义
+## `u/U`, `r/R`, `b` in string
 
-参考[python学习-字符串前面添加u,r,b的含义](http://www.cnblogs.com/cq90/p/6959567.html)
+- u/U: 表示unicode字符串。不是仅仅是针对中文, 可以针对任何的字符串，代表是对字符串进行unicode编码。一般英文字符在使用各种编码下, 基本都可以正常解析, 所以一般不带u；但是中文, 必须表明所需编码, 否则一旦编码转换就会出现乱码。建议所有编码方式采用utf8
 
-u/U:表示unicode字符串
-不是仅仅是针对中文, 可以针对任何的字符串，代表是对字符串进行unicode编码。
-一般英文字符在使用各种编码下, 基本都可以正常解析, 所以一般不带u；但是中文, 必须表明所需编码, 否则一旦编码转换就会出现乱码。
-建议所有编码方式采用utf8
+- r/R: 非转义的原始字符串，常用于正则表达式 re 中。
 
-r/R:非转义的原始字符串
-与普通字符相比，其他相对特殊的字符，其中可能包含转义字符，即那些，反斜杠加上对应字母，表示对应的特殊含义的，比如最常见的”\n”表示换行，”\t”表示Tab等。而如果是以r开头，那么说明后面的字符，都是普通的字符了，即如果是“\n”那么表示一个反斜杠字符，一个字母n，而不是表示换行了。
-以r开头的字符，常用于正则表达式，对应着re模块。
+- b:bytes:
+       - python3.x里默认的str是(py2.x里的)unicode, bytes是(py2.x)的str, b”“前缀代表的就是bytes
+       - python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这种写法
 
-b:bytes
-python3.x里默认的str是(py2.x里的)unicode, bytes是(py2.x)的str, b”“前缀代表的就是bytes
-python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这种写法
+另外
+
+- `str` -> `bytes`: encode
+- `bytes` -> `str`: decode 
+
+```python
+# python 3.6: str 为 Unicode
+>>> "中文".encode("utf8")
+b'\xe4\xb8\xad\xe6\x96\x87'
+>>> "中文".encode("utf8").decode("utf8")
+'中文'
+
+# python 2.7： str 为 bytes
+>>> "中文"
+'\xe4\xb8\xad\xe6\x96\x87'
+>>> "中文".decode("utf8")
+u'\u4e2d\u6587'
+>>> print("中文".decode("utf8"))
+中文
+```
+
+参考:
+
+- [python字符串前面加u,r,b的含义](https://www.oschina.net/question/437227_106832)
+- [浅析Python3中的bytes和str类型 - Chown-Jane-Y - 博客园](https://www.cnblogs.com/chownjy/p/6625299.html)
+- [convert-bytes-to-a-string](https://stackoverflow.com/questions/606191/convert-bytes-to-a-string)
 
 ## mdx_math安装命令
 
@@ -325,12 +284,6 @@ python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这�
 ```bash
 sudo pip install python-markdown-math
 ```
-
-## python 3 中的 str 和 bytes
-
-参考[浅析Python3中的bytes和str类型 - Chown-Jane-Y - 博客园](https://www.cnblogs.com/chownjy/p/6625299.html)
-
-这篇博文讲得很清楚
 
 ## flask 中 jsonify 和 json.dumps 的区别
 
@@ -342,11 +295,24 @@ sudo pip install python-markdown-math
 
 ## with 语句
 
-参考[Python with语句](https://www.cnblogs.com/zhangkaikai/p/6669750.html)
+参考
+
+- [Python with语句](https://www.cnblogs.com/zhangkaikai/p/6669750.html)
+- [with statement in Python](https://www.geeksforgeeks.org/with-statement-in-python/)
 
 简言之，“使用with后不管with中的代码出现什么错误，都会进行对当前对象进行清理工作。”
 
 这也就是为什么在用 MySQLdb 的时候，称“With the with keyword, the Python interpreter automatically releases the resources. It also provides error handling.” 详见[MySQL Python tutorial - programming MySQL in Python](http://zetcode.com/db/mysqlpython/)
+
+另外，现在经常在神经网络中碰到，如
+
+```python
+import tensorflow as tf
+x = tf.Variable(3.0)
+with tf.GradientTape() as tape:
+    y = x**2    
+dy_dx = tape.gradient(y, x)
+```
 
 ## How can I use Conda to install MySQLdb?
 
@@ -421,17 +387,6 @@ f.write(write.str)
 ```
 
 参考 [Python: write a list with non-ASCII characters to a text file](https://stackoverflow.com/questions/33255846/python-write-a-list-with-non-ascii-characters-to-a-text-file) 采用 `codecs.open(, "w", encoding="utf-8")` 可以解决需求。
-
-## 不同 environment 的 jupyter
-
-其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 [Kernels for different environments](https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments)
-
-### 安装 julia 的 kernel
-
-```julia
-> add IJulia
-```
-
 
 ## 画图 xy 顺序
 
@@ -524,19 +479,6 @@ refer to [nbconvert failed: validate() got an unexpected keyword argument 'relax
 - 一开始，直接从base 进入，然后选择 snakes 的 kernel，导出失败，错误原因如上
 - 直接在 snakes 进入 Jupyter notebook，这样可以成功导出
 
-## disable default `base`
-
-```bash
-conda config --set auto_activate_base false
-```
-
-refer to [How do I prevent Conda from activating the base environment by default?](https://stackoverflow.com/questions/54429210/how-do-i-prevent-conda-from-activating-the-base-environment-by-default)
-
-actually, this is equivalent to add a line in `~/.condarc`
-
-```bash
-auto_activate_base: false
-```
 
 ## 进程和线程
 
@@ -570,55 +512,6 @@ else:
 # 线程间共享进程的所有资源，每个线程有自己的堆栈和局部变量。
 ```
 
-## conda package 的版本号不匹配
-
-在用 anaconda3 新建 py37 环境后，安装 spyder，但是运行时弹出
-
-![](spyder-qtconsole.png)
-
-而用 `conda list | grep qtconsole` 检查发现
-
-```bash
-qtconsole                 4.6.0                      py_0
-```
-
-隐隐约约感觉是装了多个版本，想卸载掉错误的版本，但都没找到 qtconsole 怎么查看版本号。然后 Google 发现另外一个类似的问题，
-
-[Getting wrong version of packages using Conda](https://stackoverflow.com/questions/55350956/getting-wrong-version-of-packages-using-conda)
-
-于是我也去检查了 ipython 的版本，发现 
-
-```bash
-$ ipython --version
-7.7.0
-```
-
-而
-
-```bash
-$ conda list | grep ipython
-ipython                   7.10.2           py37h39e3cac_0
-```
-
-同样存在版本号不一致的问题。
-
-所以按照评论的建议，用 
-
-```bash
-pip uninstall ipython
-```
-
-首先解决了 ipython 的版本号不一致的问题。
-
-![](ipython.png)
-
-受此启发，用
-
-```bash
-pip uninstall qtconsole
-```
-
-解决了 qtconsole 的问题。
 
 ## Kite 使用体验
 
@@ -896,71 +789,3 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 
 explain the schematic of unittest framework in python: [Running unittest with typical test directory structure](https://stackoverflow.com/questions/1896918/running-unittest-with-typical-test-directory-structure)
 
-## conda 指定 env 路径
-
-如果直接在创建时通过 `-p` 指定路径
-
-```bash
-conda create -p ... python=x.x
-```
-
-注意如果指定路径，则不需要 `--name`， 因为默认会将路径最后的文件名看成是 env 的 name。
-
-则 activate 的时候需要加上整个路径。
-
-在创建之前可以先在 [`.condarc` 中的 `env_dirs`](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#specify-environment-directories-envs-dirs) 项下添加指定的路径。
-
-## conda 迁移环境
-
-[官方文档](https://www.anaconda.com/blog/moving-conda-environments)介绍了四种环境迁移的方式，
-
-- clone
-- Spec List
-- Environment.yml
-- Conda Pack
-
-其中第四种似乎更符合需求，因为第二三种需要重新下载 package，而第一种不太能直接（额外指定参数或许可以）支持多个 envs folder 间的切换，但是第四种本质上就是打包解压，所以何不如直接 `mv` 移动呢，毕竟我是在同一台电脑上操作，试了一下，果然成功了。
-
-```bash
-$ conda env list
-# conda environments:
-#
-base                  *  /home/weiya/anaconda3
-py27                     /home/weiya/anaconda3/envs/py27
-py35                     /media/weiya/PSSD/Programs/anaconda3/envs/py35
-
-$ mv anaconda3/envs/py27/ /media/weiya/PSSD/Programs/anaconda3/envs/
-$ conda env list
-# conda environments:
-#
-base                  *  /home/weiya/anaconda3
-py27                     /media/weiya/PSSD/Programs/anaconda3/envs/py27
-py35                     /media/weiya/PSSD/Programs/anaconda3/envs/py35
-```
-
-但是发现了个小问题，`pip`用不了，比如
-
-```bash
-$ pip install pymdown-extensions
-bash: /media/weiya/PSSD/Programs/anaconda3/envs/py36/bin/pip: /home/weiya/anaconda3/envs/py36/bin/python: bad interpreter: No such file or directory
-```
-
-其还是想调用原先路径下的 python，然后重新装一下 `conda install pip` 就好了。
-
-## conda clean
-
-笔记本硬盘余量告急，然后发现 `anaconda` 文件夹下竟然有 15GB，所以想有没有什么方法清理一下，果然有 [`conda clean`](https://docs.conda.io/projects/conda/en/latest/commands/clean.html) 这句命令，
-
-> Remove unused packages and caches.
-
-但是有点担心其 `unused` 的定义，是多长时间没有用过吗？比如一个月之类的，如果是这样，意义并不大。后来找到了这个[回答](https://stackoverflow.com/questions/51960539/where-does-conda-clean-remove-packages-from)
-
-> An "unused" package is one that's not used in any environment.
-
-以及 [Conda clean 净化Anaconda](https://www.jianshu.com/p/f14ac62bef99)
-
-> - 有些包安装之后，从来没有使用过；
-> - 一些安装包的tar包也保留在了计算机中；
-> - 由于依赖或者环境等原因，某些包的不同版本重复安装。
-
-于是比较放心地运行了 `conda clean -a`，一下子清理出 8.6G 的空间。

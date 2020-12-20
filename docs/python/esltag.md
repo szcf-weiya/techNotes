@@ -14,7 +14,7 @@
 
 - 首先需要匹配中文，[这篇博客](https://blog.csdn.net/gatieme/article/details/43235791)给了很好的解答，采用 `([\u4e00-\u9fa5]+)`
 
-- 其次匹配带有空格的英文词组，这个最后采用 `(\b[a-zA-Z ]+\b)`。这个尽量要精确，不然如果范围大点，企图依赖其他部分的 pattern 来限制住，那还是会出问题的，比如一开始用 `(\b.*\b)`，过大的匹配范围，最后得到些错误的匹配结果。
+- 其次匹配带有空格的英文词组，这个最后采用 `(\b[a-zA-Z ]+\b)`。这个尽量要精确，不然如果范围大点，企图依赖其他部分的 pattern 来限制住，那还是会出问题的，比如一开始用 `(\b.*\b)`，过大的匹配范围，最后得到些错误的匹配结果，其中 `-b` 匹配 word boundary.
 
 读写部分，直接采用 
 
@@ -42,11 +42,17 @@ for file in glob.glob(f"docs/{chdir}/*.md"):
 
 其他用法详见 [How do I list all files of a directory?](https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory)。
 
-注意学会使用 `re` 的分组匹配功能，避免二次分割字串提取想要的元素。一开始我没用分组匹配，虽然得到了字串，但是后面想分割时，而 `split` 函数只支持一个 delimiter，而我想用多个 delimiter，比如对于 `**中文 (chinese)**`，为了提取出 `中文` 和 `chinese`，我需要 `**`、`(`、`)` 已经空格这四个 delimiter，虽然可以用
+注意学会使用 `re` 的分组匹配功能，避免二次分割字串提取想要的元素。一开始我没用分组匹配，虽然得到了字串，但是后面想分割时，而 `split` 函数只支持一个 delimiter，而我想用多个 delimiter，比如对于 `**中文 (chinese)**`，为了提取出 `中文` 和 `chinese`，我需要 `**`、`(`、`)` 以及空格这四个 delimiter，虽然可以用
 
 ```python
-delimiters = "a", "...", "(c)
+str = "**中文 (chinese)**"
+delimiters = "**", "(", ")", " "
 regexPattern = '|'.join(map(re.escape, delimiters))
+
+>>> regexPattern
+'\\*\\*|\\(|\\)|\\ '
+>>> re.split(regexPattern, str)
+['', '\xe4\xb8\xad\xe6\x96\x87', '', 'chinese', '', '']
 ```
 
 实现，但既然又用了 `re`，干嘛不直接用它的分组匹配功能？参考 [Python regex split without empty string](https://stackoverflow.com/questions/16840851/python-regex-split-without-empty-string) 及 [Split string with multiple delimiters in Python](https://stackoverflow.com/questions/4998629/split-string-with-multiple-delimiters-in-python)
