@@ -1,3 +1,7 @@
+## 2020.12.21
+
+- The site **upended (颠倒)** communication as we know it.
+
 ## 2020.12.20
 
 - risk aversion: 风险规避，厌恶风险
@@ -2041,7 +2045,7 @@ letter back
 5. creep
 6. Atlantic， Pacific， Arctic, Indian
 7. blink
-8. Antarctica
+8. Antarctica: 南极洲
 9. Pangaea Ultima
 10. more or  less
 11. subduction
