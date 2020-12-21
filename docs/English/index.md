@@ -4,7 +4,8 @@
 
 ## 2020.12.19
 
-- He did that out of **mercenary** motives.
+- He did that out of **mercenary (唯利是图的)** motives.
+    - mercenary marriage: 买卖婚姻；着眼实利的婚姻
 - To **rectify** that failing on my part.
 - way to be a grammar **guru (大师，专家)**.
 
@@ -21,6 +22,7 @@
 ## 2020.12.16
 
 - it is constantly generating electrons that could neutralize free **radicals (自由基)**, acting as **antioxidants (抗氧化剂)**.
+    - oxidant: 氧化剂
 
 ## 2020.12.15
 
@@ -46,8 +48,8 @@
 ## 2020.12.10
 
 - deputy director: 副局长，副厅长，副院长
-- Given that the purpose of this lawsuit is to **subvert** the express will of the voters, I am glad they hired such an incompetent consultant, but I feel bad for the residents of Texas that they had to pay for it.
-- It's turtles for quite a way down, but at some point it's solid bedrock.
+- Given that the purpose of this lawsuit is to **subvert (推翻，颠覆，破坏)** the express will of the voters, I am glad they hired such an incompetent consultant, but I feel bad for the residents of Texas that they had to pay for it.
+- It's turtles for quite a way down, but at some point it's solid **bedrock (根底，基岩)**.
     - **turtles all the way down**: 一位著名的科学家（据说是贝特兰·罗素）曾经作过一次天文学讲演。他描述了地球如何围绕着太阳公转，而太阳又是如何围绕着称之为我们星系的巨大的恒星集团的中心公转。演讲结束之际，坐在房间后排的一位小个老妇人起立说道：“你讲的是一派胡言。实际上，世界是驮在一只巨大乌龟背上的平板。”这位科学家露出高傲的微笑，然后答道：“那么这只乌龟是站在什么上面的呢？”“你很聪明，年轻人，的确很聪明，”老妇人说，“不过，这是一只驮着一只，一直驮下去的乌龟塔啊！”【时间简史】
 
 ## 2020.12.9
@@ -56,7 +58,7 @@
 
 ## 2020.12.8
 
-- gross **domestic** product
+- gross **domestic (本国的，国内的)** product
 
 ## 2020.12.7
 
@@ -64,7 +66,7 @@
 
 ## 2020.12.6
 
-- Data from infectious disease outbreaks in **congregate** settings are often used to **elicit** clues about which types of interventions may be useful in other facilities.
+- Data from infectious disease outbreaks in **congregate (adj. 集合在一起的; v. 聚集)** settings are often used to **elicit (引出)** clues about which types of interventions may be useful in other facilities.
 
 ## 2020.12.5
 
@@ -72,9 +74,9 @@
     - triglyceride: 甘油三酸酯
     - hyperglycemia: 多糖症，高血糖症
 - A study of patients with **insulin (胰岛素)**-dependent diabetes was conducted to investigate the effects of cigarette smoking on **renal (肾脏的)** and **retinal (视网膜的)** **complications (并发症)**.
-- In a study investigating maternal risk factors for congenital syphilis.
+- In a study investigating **maternal (母亲的，母系的，母体遗传的)** risk factors for **congenital (先天的，天生的)** **syphilis (梅毒)**.
 - The estimated coefficients from a logistic regression model containing the explanatory variables **cocaine or crack (可卡因)** use， marital status, number of **prenatal (产前的)** visits to a doctor. 
-- the AIDS patients suffering from **concomitant (伴随的)** **esophageal (食道的，食管的)** **candidiasis (念珠菌病)**, an infection due to **candida (念珠菌)** yeast, and **cytomegalovirus (巨细胞病毒)**, a herpes infection that can cause serious illness.
+- the AIDS patients suffering from **concomitant (伴随的)** **esophageal (食道的，食管的)** **candidiasis (念珠菌病)**, an infection due to **candida (念珠菌)** yeast, and **cytomegalovirus (巨细胞病毒)**, a **herpes (疱疹)** infection that can cause serious illness.
 
 ## 2020.12.4
 
