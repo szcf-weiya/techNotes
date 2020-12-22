@@ -1,3 +1,7 @@
+## 2020.12.22
+
+- We covered over 300 villages by distributing 30000 **pamphlets (小册子)**.
+
 ## 2020.12.21
 
 - The site **upended (颠倒)** communication as we know it.
@@ -1073,7 +1077,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2019.09.20
 
-1. Public speaking is **daunting** for most people.
+1. Public speaking is **daunting (使人畏缩的，使人气馁的)** for most people.
 2. Panda experts in China are trying to **demystify** his unusual fur color.
 
 ## 2019.09.19
