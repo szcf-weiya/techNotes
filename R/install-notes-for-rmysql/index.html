@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://tech.hohoweiya.xyz/R/install-notes-for-rmysql/">
-      
-      
         <meta name="author" content="weiya">
       
+      
+        <link rel="canonical" href="https://tech.hohoweiya.xyz/R/install-notes-for-rmysql/">
+      
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.19753c6b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.73f7c429.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
         
       
     
@@ -35,7 +35,7 @@
     
       
         
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -62,6 +62,7 @@
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
       
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -91,18 +92,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             techNotes
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               源码安装 RMySQL
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -161,10 +164,14 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
+
+
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
@@ -197,6 +204,7 @@
       
 
 
+
   <li class="md-nav__item">
     <a href="../.." class="md-nav__link">
       Home
@@ -209,9 +217,13 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    
     <label class="md-nav__link" for="nav-2">
       Linux
       <span class="md-nav__icon md-icon"></span>
@@ -229,6 +241,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../Linux/" class="md-nav__link">
       系统
@@ -239,6 +252,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -253,6 +267,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../shell/" class="md-nav__link">
       shell
@@ -263,6 +278,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -277,6 +293,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../Linux/16to18/" class="md-nav__link">
       16to18
@@ -287,6 +304,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -305,12 +323,16 @@
       
       
 
+
   
 
 
+  
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
     <label class="md-nav__link" for="nav-3">
       R
       <span class="md-nav__icon md-icon"></span>
@@ -328,6 +350,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../" class="md-nav__link">
       一般问题
@@ -338,6 +361,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -352,6 +376,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../plot/" class="md-nav__link">
       plot 作图
@@ -362,6 +387,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -376,6 +402,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../legend_from_zhihu/" class="md-nav__link">
       案例分析
@@ -386,6 +413,7 @@
           
           
           
+
 
   
 
@@ -500,6 +528,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../sample/" class="md-nav__link">
       new sample function (v3.6.0+)
@@ -517,9 +546,13 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+    
     <label class="md-nav__link" for="nav-4">
       Python
       <span class="md-nav__icon md-icon"></span>
@@ -537,6 +570,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../python/" class="md-nav__link">
       一般问题
@@ -547,6 +581,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -561,6 +596,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../python/pystan/" class="md-nav__link">
       PyStan 体验
@@ -571,6 +607,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -585,6 +622,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../python/finance/" class="md-nav__link">
       金融数据爬虫
@@ -597,6 +635,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../python/rpy2/" class="md-nav__link">
       rpy2
@@ -607,6 +646,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -626,6 +666,7 @@
       
 
 
+
   <li class="md-nav__item">
     <a href="../../julia/" class="md-nav__link">
       Julia
@@ -638,9 +679,13 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+    
     <label class="md-nav__link" for="nav-6">
       Tex
       <span class="md-nav__icon md-icon"></span>
@@ -658,6 +703,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../TeX/" class="md-nav__link">
       一般问题
@@ -668,6 +714,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -687,9 +734,13 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+    
     <label class="md-nav__link" for="nav-7">
       Website
       <span class="md-nav__icon md-icon"></span>
@@ -707,6 +758,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../website/" class="md-nav__link">
       Website
@@ -719,6 +771,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../website/css/" class="md-nav__link">
       CSS
@@ -729,6 +782,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -748,6 +802,7 @@
       
 
 
+
   <li class="md-nav__item">
     <a href="../../guitar/" class="md-nav__link">
       Guitar
@@ -760,9 +815,13 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
+    
     <label class="md-nav__link" for="nav-9">
       Network
       <span class="md-nav__icon md-icon"></span>
@@ -780,6 +839,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../Internet/" class="md-nav__link">
       一般问题
@@ -792,6 +852,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../Internet/sci-int/" class="md-nav__link">
       访问内网
@@ -802,6 +863,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -821,9 +883,13 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" >
+    
     <label class="md-nav__link" for="nav-10">
       Tools
       <span class="md-nav__icon md-icon"></span>
@@ -841,6 +907,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../autotools/" class="md-nav__link">
       Autotools
@@ -851,6 +918,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -865,6 +933,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../vi/index.md" class="md-nav__link">
       Vi
@@ -875,6 +944,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -889,6 +959,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../Git/" class="md-nav__link">
       Git
@@ -901,6 +972,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../phantomjs/" class="md-nav__link">
       Phantomjs
@@ -911,6 +983,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -930,9 +1003,13 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" >
+    
     <label class="md-nav__link" for="nav-11">
       Stat
       <span class="md-nav__icon md-icon"></span>
@@ -950,6 +1027,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../stats/prob/" class="md-nav__link">
       Probability
@@ -960,6 +1038,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -974,6 +1053,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../scientific/" class="md-nav__link">
       Scientific
@@ -984,6 +1064,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1003,6 +1084,7 @@
       
 
 
+
   <li class="md-nav__item">
     <a href="../../English/" class="md-nav__link">
       English
@@ -1013,6 +1095,7 @@
       
       
       
+
 
 
   <li class="md-nav__item">
@@ -1027,6 +1110,7 @@
       
 
 
+
   <li class="md-nav__item">
     <a href="../../mi/" class="md-nav__link">
       Mi
@@ -1037,6 +1121,7 @@
       
       
       
+
 
 
   <li class="md-nav__item">
@@ -1051,6 +1136,7 @@
       
 
 
+
   <li class="md-nav__item">
     <a href="../../fresh/" class="md-nav__link">
       Fresh
@@ -1061,6 +1147,7 @@
       
       
       
+
 
 
   <li class="md-nav__item">
@@ -1075,9 +1162,13 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18" >
+    
     <label class="md-nav__link" for="nav-18">
       Misc
       <span class="md-nav__icon md-icon"></span>
@@ -1095,6 +1186,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../misc/wx/" class="md-nav__link">
       小程序
@@ -1107,6 +1199,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../misc/wxjssdk/" class="md-nav__link">
       jssdk
@@ -1117,6 +1210,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1136,9 +1230,13 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-19" type="checkbox" id="nav-19" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-19" type="checkbox" id="nav-19" >
+    
     <label class="md-nav__link" for="nav-19">
       Others
       <span class="md-nav__icon md-icon"></span>
@@ -1156,6 +1254,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../Matlab/" class="md-nav__link">
       Matlab
@@ -1166,6 +1265,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1180,6 +1280,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../java/" class="md-nav__link">
       Java
@@ -1190,6 +1291,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1204,6 +1306,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../cuda/" class="md-nav__link">
       Cuda
@@ -1214,6 +1317,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1235,7 +1339,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1492,15 +1597,15 @@ make install
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.0ac82a11.min.js"></script>
-      <script src="../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.08c56446.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
