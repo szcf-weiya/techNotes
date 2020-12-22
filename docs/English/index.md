@@ -84,22 +84,22 @@
 
 ## 2020.12.4
 
-- Maybe something like the **elasticities** that economists use?
+- Maybe something like the **elasticities (弹性)** that economists use?
 
 ## 2020.12.2
 
 - **[I am humbled](https://english.stackexchange.com/questions/3019/what-is-the-meaning-of-i-am-humbled-by-xyz)** by the response we have received during the Black Friday sale.
-- The **staggering** problems of poverty remain unsolved.
+- The **staggering (难以置信的，令人震惊的)** problems of poverty remain unsolved.
 
 ## 2020.12.1
 
-- It was possible to identify specific customers in the competition data set (suggesting even political and religious affiliations could be determined), even though Netflix had performed a form of **cursory** anonymization.
-- We **take our lumps**, and we try to do better next time.
+- It was possible to identify specific customers in the competition data set (suggesting even political and religious affiliations could be determined), even though Netflix had performed a form of **cursory (粗略的，草率的)** anonymization.
+- We **take our lumps (suffer punishment; be attacked or defeated.)**, and we try to do better next time.
 
 ## 2020.11.30
 
-- The big **top-line** takeaway is what already know.
-- I felt great and confident. That is a **stunning blouse**.
+- The big **top-line (头条新闻的，质量最好的，级别最高的)** takeaway is what already know.
+- I felt great and confident. That is a **stunning (极好的) blouse (宽松的上衣，女装衬衫)**.
 
 ## 2020.11.28
 
@@ -107,7 +107,7 @@
 
 ## 2020.11.27
 
-- The issues that Gandhi was known for (**de-colonization**, passive resistance) remain immensely relevant but with very different parameters than the 1920's-1940's.
+- The issues that Gandhi was known for (**de-colonization (非殖民地化，殖民地自治化)**, passive resistance) remain **immensely (非常，极大地)** relevant but with very different parameters than the 1920's-1940's.
 
 ## 2020.11.26
 
