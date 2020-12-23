@@ -1,3 +1,8 @@
+## 2020.12.23
+
+- art **nouveau (新近到达的，新近产生的)**: 新艺术，新艺术派
+    - nouveau: 自由及开放源代码显卡驱动程序。
+
 ## 2020.12.22
 
 - We covered over 300 villages by distributing 30000 **pamphlets (小册子)**.
