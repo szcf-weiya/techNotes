@@ -185,12 +185,12 @@
 - It won't be the [**silver bullet**](https://www.zhihu.com/question/20829469) we are looking for.
 - I'm **ecstatic (狂喜的，入迷的)** about this product.
 - Haven't they ever read **Mandelbrot (本华·曼德博，创立了分形几何)**?
-- Those wacky anti-Bayesian used to be **intimidating**, but now they're just **pathetic**.
+- Those wacky anti-Bayesian used to be **intimidating (吓人的，令人胆怯的)**, but now they're just **pathetic (可怜的，悲哀的)**.
 - I was trying to draw [Bert and Ernie](https://zh.wikipedia.org/wiki/%E7%95%A2%E7%89%B9%E8%88%87%E6%81%A9%E5%B0%BC) **the other day (不久前某一天，几天以前)**.
 - I call this the [**Chris Rock (美国喜剧演员，以栋笃笑【单口喜剧，stand-up comedy】出道)**](https://zh.wikipedia.org/wiki/%E5%9F%BA%E6%96%AF%C2%B7%E6%B4%9B%E5%85%8B) effect. Chris Rock says things we all know are true. But he says it so well that we get a shock of recognition, the joy of relearning what we already know, but hearing it in a new way that makes us think more deeply about all sorts of related topics.
-- Would the prof have the **chutzpah** to fail the student, or would he just give the student an A out of fear that the student would raise a **ruckus** if anything were done about it?
+- Would the prof have the **chutzpah (无所顾忌，敢作敢为，肆无忌惮)** to fail the student, or would he just give the student an A out of fear that the student would raise a **ruckus (喧闹，骚动，争吵)** if anything were done about it?
 - They might just get **expelled** anyway for the combined violations of plagiarism and embarrassing the university.
-- For his own **sanity** he had to get out of this trap.
+- For his own **sanity (理智)** he had to get out of this trap.
 
 ## 2020.11.15
 
