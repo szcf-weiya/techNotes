@@ -132,8 +132,8 @@
 
 - racial disparity in **mortgage lending (抵押贷款)**
 - the praise is a bit **over the top**
-    - brimming with wit and **pathos**
-    - the enormous **debut** is a wonder
+    - brimming with wit and **pathos (悲伤，痛苦)**
+    - the enormous **debut (初次登台，处女秀)** is a **wonder (奇迹，惊奇)**
     - an astounding **feat** of **craftsmanship** and patience
     - never has an artist created a world so vivid without a single word spoken
 
@@ -344,18 +344,18 @@
 - Did you get a sense of a lot of people trying to **outdo** each other in the field?
 - there are occasional examples of it coming to the fore more **prominently**.
 - there were characters I encountered, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) for one, for whom I think there was a bit of an unacknowledged competitive tension with John.
-- The idea of competing with them is **absurd**.
-- That's a very **egotistical** statement.
+- The idea of competing with them is **absurd (荒唐可笑的，不合理的)**.
+- That's a very **egotistical (自负的)** statement.
 - Conway doesn't **mess around**.
 - Wolfram may be egotistical, but he has a lot to be egotistical about.
-- if anyone can do that **astounding feat**, it's this guy.
-- **Every once in awhile**, though, Wolfram will break down and, with very great reluctance, talk about himself.
-- that is somewhat **reminiscent** of time travel.
+- if anyone can do that **astounding (令人震惊的) feat (技艺表演，功绩，壮举)**, it's this guy.
+- **Every once in awhile (偶尔，有时，时不时)**, though, Wolfram will break down and, with very great reluctance, talk about himself.
+- that is somewhat **reminiscent (使回忆起，回忆过去的，怀旧的)** of time travel.
 
 ## 2020.10.25
 
 - I don't know that I could quite **articulate** what the rules are, but I can tell what's going on.
-- The **moral economy** of science.
+- The **moral economy (道德经济，伦理经济)** of science.
 - I heard a rumor that they have contacts at the **Antarctic Polar Station** who are going to sign the thing once they can get their damn **fur gloves** off.
 - I've **obscured** the details of the letter here because I don't want to **single out** the authors of this particular paper or the editor of this particular journal.
 
