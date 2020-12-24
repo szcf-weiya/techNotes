@@ -1,3 +1,10 @@
+## 2020.12.24
+
+- The land sale was merely a **temporary expedient (暂时的权宜之计)** for dealing with a immediate need.
+- It will be more **expedient (得当，可取，合宜)** to use railways with trains on magnetic **cushions (垫子)** for cargo-transportation.
+- **Astronomical (天文学的，及其巨大的)** sums of money will be needed for this river tunnel plan.
+    - there are not few but **hyperastronomically (超天文的)** many genotypes with a given metabolic phenotype
+
 ## 2020.12.23
 
 - art **nouveau (新近到达的，新近产生的)**: 新艺术，新艺术派
@@ -1759,7 +1766,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. mainstay
 2. caravan
 3. expedition
-    - identifying patients with similar disease trajectory might **expedite** the diagnosis and treatment and reduce patient suffering.
+    - identifying patients with similar disease trajectory might **expedite (加快进展)** the diagnosis and treatment and reduce patient suffering.
 4. merchant
 5. guild
 6. uphold
