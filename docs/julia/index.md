@@ -758,6 +758,18 @@ sudo ln -sfn ... ...
 
 refer to [How to change where a symlink points](https://unix.stackexchange.com/questions/151999/how-to-change-where-a-symlink-points)
 
+Also, note that the link to a folder should be deleted with
+
+```bash
+rm folder
+```
+
+instead of 
+
+```bash
+rm -r folder/ # delete the original folder
+```
+
 ## array in functions
 
 ```julia

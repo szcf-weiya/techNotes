@@ -1,3 +1,7 @@
+## 2020.12.25
+
+- I'm afraid it is too narrow-minded to judge people using **astrology (占星术)**. It's all stereotypes!
+
 ## 2020.12.24
 
 - The land sale was merely a **temporary expedient (暂时的权宜之计)** for dealing with a immediate need.
@@ -378,7 +382,7 @@
 - This particular code is kinda hacky in that it does not account for **fencepost** errors, but it conveys the general idea.
 - The **premise** of this joke is that if the one economist had truly wanted the car then he would have walked into the **showroom** and bought it.
 - Donating was used to determine whether men or women are better **tippers**.
-- Donating was used to determine which prominent skeptic to **prank**.
+- Donating was used to determine which prominent skeptic to **prank (恶作剧)**.
 
 ## 2020.10.22
 

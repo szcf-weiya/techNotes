@@ -175,3 +175,26 @@ $ ssh-keygen -l -E md5 -f ssh_host_ed25519_key.pub
 ```
 
 另外 `ssh -v` 可以显示连接细节。
+
+## disk quota in cluster
+
+学校的 cluster disk quota 如下，
+
+```bash
+lfs quota -gh your_user_id /lustre
+# 20GB by default from ITSC in /users/your_user_id
+lfs quota -gh Stat /lustre
+# 30TB shared by Statistics Department in /lustre/project/Stat
+lfs quota -gh StatScratch /lustre
+# 10TB by default from ITSC in /lustre/scratch/Stat
+```
+
+已经好几次因为 disk quota 超了使得程序崩溃，于是试图将 home 文件夹中的部分文件移动到 `/lustre/project/Stat` 中，但似乎 quota 并没有变化。
+
+后来才发现，原来 quota 是通过 group 来控制的，其中上述命令中 `-g` 选项即表示 group，也就是说 `your_user_id`, `Stat` 和 `StatScratch` 都是 group 名字。如果文件夹是从别处移动来的，group并不会改变，只有直接在 `/lustre/project/Stat` 中新建的文件或文件夹才继承 Stat 的 group，这一点是最开始在 `Stat` 文件夹下创建自己目录 `MYFOLDER` 时通过 `chmod g+s MYFOLDER` 保证的。
+
+于是简单的方法便是直接更改 group，
+
+```bash
+chgrp -R Stat SomeFolder
+```
