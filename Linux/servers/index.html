@@ -384,6 +384,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#disk-quota-in-cluster" class="md-nav__link">
+    disk quota in cluster
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1427,6 +1434,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#disk-quota-in-cluster" class="md-nav__link">
+    disk quota in cluster
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1553,6 +1567,20 @@ Host key verification failed.
 <div class="highlight"><pre><span></span><code>$ ssh-keygen -l -E md5 -f ssh_host_ed25519_key.pub
 </code></pre></div>
 <p>另外 <code>ssh -v</code> 可以显示连接细节。</p>
+<h2 id="disk-quota-in-cluster">disk quota in cluster<a class="headerlink" href="#disk-quota-in-cluster" title="Permanent link">&para;</a></h2>
+<p>学校的 cluster disk quota 如下，</p>
+<div class="highlight"><pre><span></span><code>lfs quota -gh your_user_id /lustre
+<span class="c1"># 20GB by default from ITSC in /users/your_user_id</span>
+lfs quota -gh Stat /lustre
+<span class="c1"># 30TB shared by Statistics Department in /lustre/project/Stat</span>
+lfs quota -gh StatScratch /lustre
+<span class="c1"># 10TB by default from ITSC in /lustre/scratch/Stat</span>
+</code></pre></div>
+<p>已经好几次因为 disk quota 超了使得程序崩溃，于是试图将 home 文件夹中的部分文件移动到 <code>/lustre/project/Stat</code> 中，但似乎 quota 并没有变化。</p>
+<p>后来才发现，原来 quota 是通过 group 来控制的，其中上述命令中 <code>-g</code> 选项即表示 group，也就是说 <code>your_user_id</code>, <code>Stat</code> 和 <code>StatScratch</code> 都是 group 名字。如果文件夹是从别处移动来的，group并不会改变，只有直接在 <code>/lustre/project/Stat</code> 中新建的文件或文件夹才继承 Stat 的 group，这一点是最开始在 <code>Stat</code> 文件夹下创建自己目录 <code>MYFOLDER</code> 时通过 <code>chmod g+s MYFOLDER</code> 保证的。</p>
+<p>于是简单的方法便是直接更改 group，</p>
+<div class="highlight"><pre><span></span><code>chgrp -R Stat SomeFolder
+</code></pre></div>
                 
               
               

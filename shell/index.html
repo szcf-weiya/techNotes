@@ -519,6 +519,19 @@
     if
   </a>
   
+    <nav class="md-nav" aria-label="if">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    文件测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1732,6 +1745,19 @@
     if
   </a>
   
+    <nav class="md-nav" aria-label="if">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    文件测试
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2043,6 +2069,22 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
     <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2"> exists&quot;</span>
 <span class="k">else</span>
     <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2"> is not exists&quot;</span>
+<span class="k">fi</span>
+</code></pre></div>
+<h3 id="_6">文件测试<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>格式为 <code>[ EXPR FILE ]</code>，其中常见 <code>EXPR</code> 有</p>
+<ul>
+<li><code>-f</code>: 测试其是否为普通文件，即 <code>ls -l</code> 时文件类型为 <code>-</code> 的文件</li>
+<li><code>-d</code>: 测试其是否为目录文件，即 <code>ls -l</code> 时文件类型为 <code>d</code> 的文件</li>
+<li><code>-e</code>: 测试文件是否存在；存在为真，否则为假</li>
+<li><code>-r</code>: 测试文件对当前用户来说是否可读</li>
+<li><code>-w</code>: 测试文件对当前用户来说是否可写</li>
+<li><code>-x</code>: 测试文件对当前用户来说是否可执行</li>
+<li><code>-s</code>: 测试文件大小是否不空，不空则真，空则假</li>
+</ul>
+<p>例子</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="o">[</span> ! -e /tmp/test <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  mkdir /tmp/test
 <span class="k">fi</span>
 </code></pre></div>
 <p>refer to <a href="https://blog.51cto.com/64314491/1629175">bash条件判断之if语句</a></p>

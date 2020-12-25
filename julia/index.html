@@ -2528,6 +2528,12 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3æ
 <div class="highlight"><pre><span></span><code>sudo ln -sfn ... ...
 </code></pre></div>
 <p>refer to <a href="https://unix.stackexchange.com/questions/151999/how-to-change-where-a-symlink-points">How to change where a symlink points</a></p>
+<p>Also, note that the link to a folder should be deleted with</p>
+<div class="highlight"><pre><span></span><code>rm folder
+</code></pre></div>
+<p>instead of </p>
+<div class="highlight"><pre><span></span><code>rm -r folder/ <span class="c1"># delete the original folder</span>
+</code></pre></div>
 <h2 id="array-in-functions">array in functions<a class="headerlink" href="#array-in-functions" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
            <span class="n">x</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
