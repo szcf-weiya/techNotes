@@ -2,23 +2,30 @@
 
 ## Submitting Multiple Jobs Quickly
 
-```bash tab="PBS"
-/usr/bin/mpirun -v -np 28 -machinefile $PBS_NODEFILE ./myexe ${NUMBERARG} ${LETTERARG}
-```
+=== "PBS"
 
-```bash tab="Bash"
-#!/bin/bash
-for NUMBERS in 1 2 3 4 5; do
-	for LETTERS in a b c d e; do
- 		 qsub -v NUMBERARG=$NUMBERS,LETTERARG=$LETTERS my_qsub_script.pbs
+	``` bash
+	/usr/bin/mpirun -v -np 28 -machinefile $PBS_NODEFILE ./myexe ${NUMBERARG} ${LETTERARG}
+	```
+
+=== "Bash"
+
+	``` bash
+	#!/bin/bash
+	for NUMBERS in 1 2 3 4 5; do
+		for LETTERS in a b c d e; do
+			qsub -v NUMBERARG=$NUMBERS,LETTERARG=$LETTERS my_qsub_script.pbs
+		done
 	done
-done
-```
+	```
 
-```bash tab="Run"
-chmod +x submit_multiple_jobs.sh
-./submit_multiple_jobs.sh
-```
+=== "Run"
+
+	``` bash
+	chmod +x submit_multiple_jobs.sh
+	./submit_multiple_jobs.sh
+	```
+
 
 refer to [Submitting Multiple Jobs Quickly](http://www.pace.gatech.edu/submitting-multiple-jobs-quickly).
 
@@ -164,7 +171,7 @@ Host key verification failed.
 ssh-keygen -f "/home/weiya/.ssh/known_hosts" -R "chpc-login01.itsc.cuhk.edu.hk"
 ```
 
-然后重新 ssh，但还是要求输入密码。
+然后重新 ssh，但还是要求输入密码。类似的问题另见 [ssh remote host identification has changed](https://stackoverflow.com/questions/20840012/ssh-remote-host-identification-has-changed)
 
 这其实对应了服务器上 `/etc/ssh` 文件夹下几个 pub 文件，咨询 Michael 也得到回复说最近 public fingerprint 有修改，这应该是 known hosts 的内容。
 
@@ -174,7 +181,31 @@ ssh-keygen -f "/home/weiya/.ssh/known_hosts" -R "chpc-login01.itsc.cuhk.edu.hk"
 $ ssh-keygen -l -E md5 -f ssh_host_ed25519_key.pub
 ```
 
-另外 `ssh -v` 可以显示连接细节。
+另外，[扫描 ip 或域名对应的 key](https://serverfault.com/questions/321167/add-correct-host-key-in-known-hosts-multiple-ssh-host-keys-per-hostname)
+
+```bash
+ssh-keyscan -t rsa server_ip
+```
+
+也能返回完全一致的结果，然后手动添加至 known_hosts 文件，仍然不能成功，尝试过新增其他格式的 key，
+
+```bash
+ssh-keygen -t [ed25519 | ecdsa | dsa]
+```
+
+然而统统没用。
+
+!!! tip "ssh 常见 key 格式"
+	参考 [更新SSH key为Ed25519](https://neil-wu.github.io/2020/04/04/2020-04-04-SSH-key/)
+
+	- DSA: 不安全
+	- RSA: 安全性依赖于key的大小，3072位或4096位的key是安全的，小于此大小的key可能需要升级一下，1024位的key已经被认为不安全。
+	- ECDSA:  安全性取决于你的计算机生成随机数的能力，该随机数将用于创建签名，ECDSA使用的NIST曲线也存在可信赖性问题。
+	- Ed25519: 目前最推荐的公钥算法
+
+后来跟服务器管理员反复沟通，提交 `ssh -vvv xxx &> ssh.log` 日志文件供其检查，才确认是最近服务器配置更改的原因，虽然没有明说，但是注意到 `/etc/ssh/sshd_config` 更新后不久管理员就回复说好了，问及原因，他的回答是，
+
+>  It is related to security context which will make SELinux to block the file access. I think this required root permission to config.
 
 ## disk quota in cluster
 

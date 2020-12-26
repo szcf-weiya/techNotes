@@ -789,3 +789,9 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 
 explain the schematic of unittest framework in python: [Running unittest with typical test directory structure](https://stackoverflow.com/questions/1896918/running-unittest-with-typical-test-directory-structure)
 
+## upgrade package
+
+```bash
+# pip install PACKAGE -upgrade
+pip install PACKAGE -U
+```

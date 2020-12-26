@@ -215,6 +215,12 @@ dvipng is not executable
 
 但至少证明这条思路是可行的，于是继续添加 `dvipng` 的 soft link，最后解决了问题！
 
+### 自定义签名
+
+可以通过 `stamp` 功能自定义签名，首先准备好签名图片，然后保存到某个文件夹，比如 `~/.kde/share/icons/signature.png`，然后进入 stamp 的配置界面，下拉框中直接输入签名图片所在的路径。参考 [How to add a Signature stamp to Okular](https://askubuntu.com/questions/1132658/how-to-add-a-signature-stamp-to-okular)
+
+但是并不能存为 pdf，或者被其他软件看到，用 Acrobat 打开会有个打叉的部分，但是看不到签名，[已经被标记为 bug，但似乎还未解决](https://bugs.launchpad.net/ubuntu/+source/okular/+bug/1859632)。
+
 ## WeChat in Linux
 
 起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！

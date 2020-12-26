@@ -110,6 +110,8 @@ tmux a -t [NUM]
 tmux a -t NAME
 # complete reset: https://stackoverflow.com/questions/38295615/complete-tmux-reset
 tmux kill-server
+# rename: https://superuser.com/questions/428016/how-do-i-rename-a-session-in-tmux
+Ctrl + B, $
 ```
 
 refer to 
