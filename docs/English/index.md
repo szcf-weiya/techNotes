@@ -1,3 +1,8 @@
+## 2020.12.26
+
+- The premise of the emerging field of computational **psychiatry (精神病学，精神病治疗)** is to use models from computational cognitive neuroscience to gain deeper insights into mental illness.
+- The US will likely go down as the country that was supposedly best prepared to fight a pandemic but ended up **catastrophically (灾难性地)** **overmatched (打败)** by the novel coronavirus, sustaining heavier casualties than any other nation.
+
 ## 2020.12.25
 
 - I'm afraid it is too narrow-minded to judge people using **astrology (占星术)**. It's all stereotypes!
@@ -340,7 +345,7 @@
 
 ## 2020.10.27
 
-- I just don't **buy into** the **premise** so it's hard for me to go further.
+- I just don't **buy into** the **premise (前提)** so it's hard for me to go further.
     - I hate to **buy into stereotypes (墨守成规)**.
 - **[Talmudic (塔木德，犹太教宗教文献)](https://zh.wikipedia.org/wiki/%E5%A1%94%E6%9C%A8%E5%BE%B7)** argument about whether God can dig a **ditch (沟渠)** so width he can't jump across it.
 - the question sounds **snarky**, but it's not meant **in that vein**.
