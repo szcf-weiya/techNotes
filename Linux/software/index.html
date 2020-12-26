@@ -420,6 +420,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    自定义签名
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -434,7 +441,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     窗口轮廓阴影
   </a>
   
@@ -442,7 +449,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     开机自启动
   </a>
   
@@ -495,7 +502,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     黑屏
   </a>
   
@@ -555,7 +562,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     百度网盘
   </a>
   
@@ -1876,6 +1883,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    自定义签名
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1890,7 +1904,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     窗口轮廓阴影
   </a>
   
@@ -1898,7 +1912,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     开机自启动
   </a>
   
@@ -1951,7 +1965,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     黑屏
   </a>
   
@@ -2011,7 +2025,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     百度网盘
   </a>
   
@@ -2353,6 +2367,9 @@ Then, run systemsettings5, click on Application Style, <span class="k">select</s
 <div class="highlight"><pre><span></span><code>dvipng is not executable
 </code></pre></div>
 <p>但至少证明这条思路是可行的，于是继续添加 <code>dvipng</code> 的 soft link，最后解决了问题！</p>
+<h3 id="_7">自定义签名<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>可以通过 <code>stamp</code> 功能自定义签名，首先准备好签名图片，然后保存到某个文件夹，比如 <code>~/.kde/share/icons/signature.png</code>，然后进入 stamp 的配置界面，下拉框中直接输入签名图片所在的路径。参考 <a href="https://askubuntu.com/questions/1132658/how-to-add-a-signature-stamp-to-okular">How to add a Signature stamp to Okular</a></p>
+<p>但是并不能存为 pdf，或者被其他软件看到，用 Acrobat 打开会有个打叉的部分，但是看不到签名，<a href="https://bugs.launchpad.net/ubuntu/+source/okular/+bug/1859632">已经被标记为 bug，但似乎还未解决</a>。</p>
 <h2 id="wechat-in-linux">WeChat in Linux<a class="headerlink" href="#wechat-in-linux" title="Permanent link">&para;</a></h2>
 <p>起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！</p>
 <p>docker 了解一点，知道如果成功，以后安装卸载会很简单，于是使用 https://github.com/huan/docker-wechat 提供的 docker image，但是后来输入时文本不可见的问题很恼人 https://github.com/huan/docker-wechat/issues/40，也不知道怎么解决。</p>
@@ -2386,7 +2403,7 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 <div class="highlight"><pre><span></span><code>sudo apt-get install libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386
 </code></pre></div>
 <p>then the problem is solved. And continue to follow the steps in <a href="https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux">WeChat Desktop on Linux</a></p>
-<h3 id="_7">窗口轮廓阴影<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_8">窗口轮廓阴影<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>当从微信切换到其他软件时，会留下一个窗口轮廓阴影。再一次感叹 google 的强大，本来这个问题我都不知道怎么搜索，但只给了 “wine wechat” 和 “窗口轮廓” 这两个关键词后，就找到了两种解决方案：</p>
 <ul>
 <li><a href="https://manateelazycat.github.io/linux/2019/09/29/wechat-transparent-window.html">解决Linux下微信透明窗口的问题</a>：切换微信后，直接关掉窗口，侧边栏也不在有微信的窗口，再次启动需要点击顶部栏的图标</li>
@@ -2395,7 +2412,7 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 <p>更偏向第二种策略，后来尝试了一下也确实觉得第二种好用，当然我都有折腾过。</p>
 <p>其实策略本身很简单，而且都可以即时运行一下脚本，就能感受效果，但是在脚本自动化那里花了挺长时间。</p>
 <p>策略二本来推荐的是通过修改 wechat 的启动程序，但是因为我的启动程序是通过 wine 实现的，这一点似乎跟博客中不一样，我只找到一个 <code>WeChat.desktop</code> 文件，也没把握直接修改。所以我先去尝试了开机自启动</p>
-<h4 id="_8">开机自启动<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h4 id="_9">开机自启动<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <p>实现方案有很多，但总想找种最简单的，有考虑 systemd service， <a href="https://askubuntu.com/questions/1151080/how-do-i-run-a-script-as-sudo-at-boot-time-on-ubuntu-18-04-server">How do I run a script as sudo at boot time on Ubuntu 18.04 Server?</a></p>
 <p>中间也有试过 <code>/etc/init.d</code>，<a href="https://blog.csdn.net/hcx25909/article/details/9068497">Ubuntu下添加开机启动脚本</a>，但是报出 warning </p>
 <blockquote>
@@ -2466,7 +2483,7 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 <li>一个DLL可以在任何时候被改变，并且只在EXE显式地加载DLL时在运行时加载。静态库在EXE中编译后无法更改。一个DLL可以单独更新而无需更新EXE本身。</li>
 </ul>
 <h2 id="chrome">Chrome<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h2>
-<h3 id="_9">黑屏<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_10">黑屏<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>参考 https://blog.csdn.net/jjddrushi/article/details/79155421</p>
 <p>进入休眠状态后，睡了一晚上，第二天早上打开 chrome 便黑屏了，然后采用</p>
 <div class="highlight"><pre><span></span><code>chrome -disable-gpu
@@ -2500,7 +2517,7 @@ apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
 <h3 id="soft-wrap">Soft wrap<a class="headerlink" href="#soft-wrap" title="Permanent link">&para;</a></h3>
 <p>Soft wrap is proper for <code>.tex</code> file, or <code>.md</code> file, but not necessary for the programming file. We can turn off the soft wrap globally in <code>Setting &gt; Editor</code>, and actually we can reset it for each language, which can be toggled in <code>Setting &gt; Package &gt; language-&lt;language name&gt; &gt; Soft Wrap</code>.</p>
 <p>refer to <a href="https://discuss.atom.io/t/toggle-soft-wrap-by-default/58911/5">Toggle Soft Wrap by Default?</a></p>
-<h2 id="_10">百度网盘<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_11">百度网盘<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>发现百度网盘出了 Linux 版，但是在 Ubuntu 16.04 似乎运行不了——能下载安装但是无法打开运行。</p>
 <p>目前版本为 Linux版 V2.0.2（更新时间：2019-07-25）</p>
 <p><a href="https://pan.baidu.com/download">官网</a>显示目前只支持</p>

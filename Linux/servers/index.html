@@ -322,6 +322,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pbs-passing-argument-list" class="md-nav__link">
+    PBS passing argument list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pbs-cheat-sheet" class="md-nav__link">
     PBS cheat sheet
   </a>
@@ -1372,6 +1379,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pbs-passing-argument-list" class="md-nav__link">
+    PBS passing argument list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pbs-cheat-sheet" class="md-nav__link">
     PBS cheat sheet
   </a>
@@ -1456,26 +1470,29 @@
                 
                 <h1 id="servers">Servers<a class="headerlink" href="#servers" title="Permanent link">&para;</a></h1>
 <h2 id="submitting-multiple-jobs-quickly">Submitting Multiple Jobs Quickly<a class="headerlink" href="#submitting-multiple-jobs-quickly" title="Permanent link">&para;</a></h2>
-<p>```bash tab=&rdquo;PBS&rdquo;
-/usr/bin/mpirun -v -np 28 -machinefile $PBS_NODEFILE ./myexe ${NUMBERARG} ${LETTERARG}
-<div class="highlight"><pre><span></span><code>```bash tab=&quot;Bash&quot;
-#!/bin/bash
-for NUMBERS in 1 2 3 4 5; do
-    for LETTERS in a b c d e; do
-         qsub -v NUMBERARG=$NUMBERS,LETTERARG=$LETTERS my_qsub_script.pbs
-    done
-done
-</code></pre></div></p>
-<p>```bash tab=&rdquo;Run&rdquo;
-chmod +x submit_multiple_jobs.sh
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">PBS</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>/usr/bin/mpirun -v -np <span class="m">28</span> -machinefile <span class="nv">$PBS_NODEFILE</span> ./myexe <span class="si">${</span><span class="nv">NUMBERARG</span><span class="si">}</span> <span class="si">${</span><span class="nv">LETTERARG</span><span class="si">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Bash</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="k">for</span> NUMBERS in <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="p">;</span> <span class="k">do</span>
+    <span class="k">for</span> LETTERS in a b c d e<span class="p">;</span> <span class="k">do</span>
+        qsub -v <span class="nv">NUMBERARG</span><span class="o">=</span><span class="nv">$NUMBERS</span>,LETTERARG<span class="o">=</span><span class="nv">$LETTERS</span> my_qsub_script.pbs
+    <span class="k">done</span>
+<span class="k">done</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Run</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>chmod +x submit_multiple_jobs.sh
 ./submit_multiple_jobs.sh
-<div class="highlight"><pre><span></span><code>refer to [Submitting Multiple Jobs Quickly](http://www.pace.gatech.edu/submitting-multiple-jobs-quickly).
-
-## PBS passing argument list
-
-```bash
-qsub your.job -v arg1=val1,arg2=val2
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+<p>refer to <a href="http://www.pace.gatech.edu/submitting-multiple-jobs-quickly">Submitting Multiple Jobs Quickly</a>.</p>
+<h2 id="pbs-passing-argument-list">PBS passing argument list<a class="headerlink" href="#pbs-passing-argument-list" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>qsub your.job -v <span class="nv">arg1</span><span class="o">=</span>val1,arg2<span class="o">=</span>val2
+</code></pre></div>
 <h2 id="pbs-cheat-sheet">PBS cheat sheet<a class="headerlink" href="#pbs-cheat-sheet" title="Permanent link">&para;</a></h2>
 <p><a href="../PBS%20Script_0.pdf">PBS Script</a></p>
 <h2 id="pbsdsh">PBSDSH<a class="headerlink" href="#pbsdsh" title="Permanent link">&para;</a></h2>
@@ -1561,12 +1578,32 @@ Host key verification failed.
 <p>于是根据提示运行了</p>
 <div class="highlight"><pre><span></span><code>ssh-keygen -f <span class="s2">&quot;/home/weiya/.ssh/known_hosts&quot;</span> -R <span class="s2">&quot;chpc-login01.itsc.cuhk.edu.hk&quot;</span>
 </code></pre></div>
-<p>然后重新 ssh，但还是要求输入密码。</p>
+<p>然后重新 ssh，但还是要求输入密码。类似的问题另见 <a href="https://stackoverflow.com/questions/20840012/ssh-remote-host-identification-has-changed">ssh remote host identification has changed</a></p>
 <p>这其实对应了服务器上 <code>/etc/ssh</code> 文件夹下几个 pub 文件，咨询 Michael 也得到回复说最近 public fingerprint 有修改，这应该是 known hosts 的内容。</p>
 <p>可以<a href="https://superuser.com/questions/421997/what-is-a-ssh-key-fingerprint-and-how-is-it-generated">以 MD5 的形式展示</a>，</p>
 <div class="highlight"><pre><span></span><code>$ ssh-keygen -l -E md5 -f ssh_host_ed25519_key.pub
 </code></pre></div>
-<p>另外 <code>ssh -v</code> 可以显示连接细节。</p>
+<p>另外，<a href="https://serverfault.com/questions/321167/add-correct-host-key-in-known-hosts-multiple-ssh-host-keys-per-hostname">扫描 ip 或域名对应的 key</a></p>
+<div class="highlight"><pre><span></span><code>ssh-keyscan -t rsa server_ip
+</code></pre></div>
+<p>也能返回完全一致的结果，然后手动添加至 known_hosts 文件，仍然不能成功，尝试过新增其他格式的 key，</p>
+<div class="highlight"><pre><span></span><code>ssh-keygen -t <span class="o">[</span>ed25519 <span class="p">|</span> ecdsa <span class="p">|</span> dsa<span class="o">]</span>
+</code></pre></div>
+<p>然而统统没用。</p>
+<div class="admonition tip">
+<p class="admonition-title">ssh 常见 key 格式</p>
+<p>参考 <a href="https://neil-wu.github.io/2020/04/04/2020-04-04-SSH-key/">更新SSH key为Ed25519</a></p>
+<ul>
+<li>DSA: 不安全</li>
+<li>RSA: 安全性依赖于key的大小，3072位或4096位的key是安全的，小于此大小的key可能需要升级一下，1024位的key已经被认为不安全。</li>
+<li>ECDSA:  安全性取决于你的计算机生成随机数的能力，该随机数将用于创建签名，ECDSA使用的NIST曲线也存在可信赖性问题。</li>
+<li>Ed25519: 目前最推荐的公钥算法</li>
+</ul>
+</div>
+<p>后来跟服务器管理员反复沟通，提交 <code>ssh -vvv xxx &amp;&gt; ssh.log</code> 日志文件供其检查，才确认是最近服务器配置更改的原因，虽然没有明说，但是注意到 <code>/etc/ssh/sshd_config</code> 更新后不久管理员就回复说好了，问及原因，他的回答是，</p>
+<blockquote>
+<p>It is related to security context which will make SELinux to block the file access. I think this required root permission to config.</p>
+</blockquote>
 <h2 id="disk-quota-in-cluster">disk quota in cluster<a class="headerlink" href="#disk-quota-in-cluster" title="Permanent link">&para;</a></h2>
 <p>学校的 cluster disk quota 如下，</p>
 <div class="highlight"><pre><span></span><code>lfs quota -gh your_user_id /lustre
