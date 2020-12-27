@@ -1,3 +1,7 @@
+## 2020.12.27
+
+- I need that trail of **breadcrumbs (面包屑)** connecting data.
+
 ## 2020.12.26
 
 - The premise of the emerging field of computational **psychiatry (精神病学，精神病治疗)** is to use models from computational cognitive neuroscience to gain deeper insights into mental illness.
