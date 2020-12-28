@@ -1,3 +1,8 @@
+## 2020.12.28
+
+- a **cadre** of new friends
+    - leading cadre: 领导干部，首长
+
 ## 2020.12.27
 
 - I need that trail of **breadcrumbs (面包屑)** connecting data.
