@@ -1,3 +1,7 @@
+## 2020.12.30
+
+- The Lancet study has already been **consequential (随之而来的)**.
+
 ## 2020.12.29
 
 - someone who's basically a good person but has some **larceny (盗窃)** and **lust (欲望)** in his heart and cannot be relied on to do the right thing.
