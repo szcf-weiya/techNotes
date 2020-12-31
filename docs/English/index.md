@@ -1,3 +1,9 @@
+## 2020.12.31
+
+- Let's also not forget the benefit of the occasional **dumb (愚蠢的)** but fun example.
+- There are still **hurdles (障碍)** to **surmount (克服)**.
+- At a recent Harvard **colloquium (研讨会，学术报告会)**, a **bigwig (权威人士)** from one of the large consultancies told his audience of star professors that the only person he valued at the school was the admissions officer. 
+
 ## 2020.12.30
 
 - The Lancet study has already been **consequential (随之而来的)**.
