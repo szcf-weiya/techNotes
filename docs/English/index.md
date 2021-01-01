@@ -180,17 +180,17 @@
 
 - The earliest **scratchy** recording of a **pope (教皇，罗马教皇)** was that of Leo XIII on a **wax cylinder (蜡筒唱片)**.
 - Georgiou is not a **mobster (匪徒，暴徒)**. He's not a **hit man (职业凶手)** or a **spy (间谍，密探)**. He's a statistician. And the **sin (过失，罪恶)** at the heart of his supposed crimes was publishing correct budget numbers.
-- The government has brought a **relentless** series of criminal **prosecutions** against him. His countryman have sought their own **vengeance** by hacking his emails, dragging him into court, even threatening his life.
-- This means the person who restored the credibility of Greek statistics will have to apologize to a person who had been **fudging** the data.
+- The government has brought a **relentless (不停的，持续强烈的)** series of criminal **prosecutions (诉讼)** against him. His countryman have sought their own **vengeance (复仇，报复)** by hacking his emails, dragging him into court, even threatening his life.
+- This means the person who restored the credibility of Greek statistics will have to apologize to a person who had been **fudging (搪塞，篡改)** the data.
 
 ## 2020.11.22
 
 - We distinguish the **corpora** containing reference annotations based on their origin.
 - Gold-standard **corpus** containing human-made reference annotations, obtained as a **consensual** or majority opinion of several human experts.
 - A frame definition domain was virtually eroded in the **lateral** axes (x and y) by a constant number of pixels (**voxels (体素或立体像素，是体积像素 volume pixel 的简称)**) E depending on a dataset.
-- In 3D image data, the marker does not have to be necessarily formed of a single connected component, allowing annotators to create **quintessential** volumetric markers.
+- In 3D image data, the marker does not have to be necessarily formed of a single connected component, allowing annotators to create **quintessential (最完美的，精髓的)** volumetric markers.
 - Things done by **halves** are never done right.
-- The process of extracting the object from the original image is often called **matting**, while the process of inserting it into another image is called compositing.
+- The process of extracting the object from the original image is often called **matting  (抠图)**, while the process of inserting it into another image is called compositing.
 
 ## 2020.11.21
 
