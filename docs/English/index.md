@@ -1,3 +1,7 @@
+## 2021.01.01
+
+- This issue is **monumentally (非常地，纪念地，作为纪念碑地)** important RIGHT NOW.
+
 ## 2020.12.31
 
 - Let's also not forget the benefit of the occasional **dumb (愚蠢的)** but fun example.
@@ -922,7 +926,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2020.01.05
 
 1. The **knockoff** filter operates by **manufacturing** knockoff variables that are cheap.
-2. The knockoff filter can be seen as a **versatile** wrapper.
+2. The knockoff filter can be seen as a **versatile (多用途的，多功能的)** wrapper.
 
 ## 2020.01.04
 
@@ -994,7 +998,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 5. a battery of questions
 6. a bunch of data
 7. My father was a scratch golfer in his **heyday (全盛期)** on local public courses, but he said he’d never be able to sink a single **putt (击球入洞)** if the greens were maintained the way they were for PGA **tournaments (锦标赛，联赛)**.
-8. he was **obsessive** about his short game—his own career was ended by knee and **rotator cuff** surgery—**hockey (冰球，曲棍球)** wasn’t good to his body, either, despite playing in a “non-contact” **league** as an adult.
+8. he was **obsessive （着迷，痴迷）** about his short game—his own career was ended by knee and **rotator cuff** surgery—**hockey (冰球，曲棍球)** wasn’t good to his body, either, despite playing in a “non-contact” **league** as an adult.
 9. Are there things like field goals in **rugby (橄榄球)** or Australian-rules football? I love that the actual name of the sport has “rules” in the title—it’s the kind of **pedantry** near and dear to this **semanticist (语义学者)**’s heart.
     - It is the kind of **semantic** nitpicking that has made progressive movements unappealing to many Americans.
 10. I **boycott (联合抵制，拒绝参加)** contact sports like football and ice hockey due to their intentionally violent nature.
