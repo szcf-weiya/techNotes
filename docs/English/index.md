@@ -242,10 +242,10 @@
 
 ## 2020.11.15
 
-- It has all the usual **culprits**: forking paths, statistical significance.
-- The market often is up for part of the day and down for others, so the intra-day variability may **undermine** what the paper is finding.
-- the data is not provided, although the source is publicly available (and would probably take me a week to try to match up to what they **purported** to use).
-- These claims are absolutely **preposterous**.
+- It has all the usual **culprits (犯人，罪犯)**: forking paths, statistical significance.
+- The market often is up for part of the day and down for others, so the intra-day variability may **undermine (从根基处破坏；挖...的墙角；逐渐削弱【信心，权威等】)** what the paper is finding.
+- the data is not provided, although the source is publicly available (and would probably take me a week to try to match up to what they **purported (据称的，传言的)** to use).
+- These claims are absolutely **preposterous (荒唐的，极不合理的)**.
 
 
 ## 2020.11.14
@@ -255,7 +255,7 @@
 ## 2020.11.13
 
 - trapezoidal: 梯形的
-- This is the seed of a snowflake, and it retains a **hexagonal** shape as it grows.
+- This is the seed of a snowflake, and it retains a **hexagonal (六角形的)** shape as it grows.
 
 ## 2020.11.12
 
@@ -265,17 +265,17 @@
 
 ## 2020.11.11
 
-- These **savvy** speakers have some tips for novice speakers.
+- These **savvy (有见识的；懂实际知识的；通情达理的)** speakers have some tips for novice speakers.
 
 
 ## 2020.11.10
 
-- An interesting question in **pediatrics (儿科)** is whether the tendency for children to have many episodes of otitis media is inherited in a family. 
+- An interesting question in **pediatrics (儿科)** is whether the tendency for children to have many episodes of **otitis media (中耳炎【耳内长期流水、流脓、胀痛】)** is inherited in a family. 
 
 ## 2020.11.09
 
-- all would be OK if people just **ditched** their $p$-values and replaced them with intervals.
-- it seemed kinda **tacky (低劣的，蹩脚的，俗气的，乏味的)** for a reporter whose shtick was access to the powerful, to not want his own speech to be reported.
+- all would be OK if people just **ditched (开沟；掘沟；【俚】丢弃)** their $p$-values and replaced them with intervals.
+- it seemed kinda **tacky (低劣的，蹩脚的，俗气的，乏味的)** for a reporter whose **shtick (特长，擅长的本领)** was access to the powerful, to not want his own speech to be reported.
 
 
 ## 2020.11.08
