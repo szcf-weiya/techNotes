@@ -1,3 +1,7 @@
+## 2021.01.02
+
+- This **monstrosity (庞然大物，怪物，巨兽)** has **truck tires (卡车轮胎)** for buttons and 9 meter-long **pine (松树)** trees for arms!
+
 ## 2021.01.01
 
 - This issue is **monumentally (非常地，纪念地，作为纪念碑地)** important RIGHT NOW.
@@ -576,7 +580,7 @@
 
 - according to the National Academy of Sciences, (google “**himmicanes**” for lots more), it saves lives to give **hurricanes** the names of boys rather than girls, because people are more scared of boys so they’ll act with appropriate caution.
 - Hurricane **Butch**? Run away. Hurricane **Missy**? Who cares.
-- according to **Pythagoras** (really!), 17 is “the most despised and horrible of all numbers.”
+- according to **Pythagoras** (really!), 17 is “the most despised and **horrible (可怕的，极讨厌的)** of all numbers.”
 - [Time is of the essence](https://en.wikipedia.org/wiki/Time_is_of_the_essence). (时间就是生命)
 
 ## 2020.10.02
@@ -1880,7 +1884,8 @@ up
 6. excrete
 7. tidbit
 8. rhizome
-9. resilient
+9. resilient: （物体或材料）能复原的；有弹性的；【人的性格】能迅速恢复或重新振作的；适应性强的
+    - most people are extremely resilient able to withstand **trauma (外伤，心理创伤)**.
 10. interlocking
 11. snap
 12. blowhole

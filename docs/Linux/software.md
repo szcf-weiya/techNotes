@@ -457,6 +457,14 @@ Soft wrap is proper for `.tex` file, or `.md` file, but not necessary for the pr
 
 refer to [Toggle Soft Wrap by Default?](https://discuss.atom.io/t/toggle-soft-wrap-by-default/58911/5)
 
+### minimap
+
+装好用了一晚上，但是第二天用的时候却怎么也打不开了，尝试设置 Key binding，即便已经设置为了自动启动，所以原因并不是这个。
+
+后来通过 `apm` 安装低版本便成功了！
+
+![](minimap.png)
+
 ## 百度网盘
 
 发现百度网盘出了 Linux 版，但是在 Ubuntu 16.04 似乎运行不了——能下载安装但是无法打开运行。
