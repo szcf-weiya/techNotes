@@ -1490,11 +1490,57 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. prescient
 4. envisage
 
+## 2018.04.18
 
+- The U.S. has **assimilated (吸收，消化；同化)** people from European countries.
+
+## 2018.03.15
+
+- And **defusing (平息，缓和，拆除【炸弹的】引信)** the issue should pave the way for more **nuanced (微妙的，具有细微差别的)** and constructive politics.
+- with a **grain of salt**: an English language idiom that means to view something with skepticism or not to interpret something literally.
+
+## 2018.03.07
+
+- **Sediments (沉积物)** between a **glacier (冰河，冰川)** and the ground may also **facilitate (使便利)** slippage.
+- ~~collinearity~~
+
+## 2018.02.22
+
+1. Victoire, who's in the **epilogue (结语，尾声)**, she is so named because she was born on the anniversary of the battle that finished it all.
+2. I am greatly **indebted (负债的，感激的，受惠的)** to you for your help.
+
+## 2018.02.11
+
+1. So **etymology (词源学)** is the history of a word and then its historical development over time of its meaning.
+
+## 2018.01.27
+
+- To [**skewer (刺穿，串住)** a **sacred (神圣的，庄严的，宗教的)** cow](https://english.stackexchange.com/questions/166702/whats-the-meaning-and-the-origin-of-skewer-a-sacred-cow), means to **defy (公然反抗，藐视)** what is generally held as **indisputable (无可争辩的，不容置疑的)**.
+
+## 2018.01.06
+
+- Protestant (新教徒，新教徒的), Catholic (天主教的)
+    - [天主教](https://zh.wikipedia.org/wiki/%E5%A4%A9%E4%B8%BB%E6%95%99)（拉丁语：Catholicismus）是基督教整体以下的宗派之一，是对罗马公教会（天主教会）发展而来的一系列基督教之神学、哲学理论、礼仪传统、伦理纲常等信仰体系之总括，为基督教最大宗派。天主教的中文名称源自明朝万历年间耶稣会将基督信仰传入中国，经当朝礼部尚书之徐光启与利玛窦等耶稣会士讨论，取儒家古话“至高莫若天，至尊莫若主”，称其信仰之独一神灵为“天主”，故称之。
+    - [新教](https://zh.wikipedia.org/wiki/%E6%96%B0%E6%95%99)，又称基督新教，是西方基督教中不属于天主教体系的宗派之统称，中文“新教”一词是主要对应和区别于宗教改革之前的“旧教”。新教源于16世纪神学家马丁·路德、加尔文、慈运理等人所领导的宗教改革运动，与天主教、东正教并列为基督宗教三大分支。
+
+
+## 2018.01.03
+
+1. If we had tens of thousands of **skeletons** distributed at regular intervals through the historical record, there would be **appreciably (可察觉地，明显地)** more degrees of shading.
+2. So they reanalyzed their data **in light of (根据，鉴于)** the new maps.
+3. We've seen the economy moving forward, **albeit** a little too slowly, he said.
+4. It did, however, have another weapon **at its disposal (任其支配，任其处置)**.
+
+## 2018.01.01
+
+1. These tensions are **exacerbated** between the wars.
+2. They **glossed over** some key issues on that front.
+3. The athlete's success **was attributed to** systematic training.
+4. lower/upper extremity (上/下肢)
 
 ## 2017.09.25
 
-1. She's tried every knack in Cupid's book to get her guy to marry her.
+1. She's tried every **knack (诀窍，本领)** in **Cupid (【罗马神话中的爱神】丘比特)**'s book to get her guy to marry her.
 2. The team's limp performance has many people calling for the head coach's resignation.
 3. the limpid outlook of a man who is at peace with himself as he awaits death.
 4. the lush fields were the envy of neighboring farmers.
@@ -2296,51 +2342,9 @@ happy life
 
 ## 2017.12.28
 
-1. state of the art: the latest and most sophisticated or advanced stage of a technology, art, or science.
+1. state of the art: the latest and most **sophisticated (精密的，尖端的；老练的，见多识广的；复杂的)** or advanced stage of a technology, art, or science.
+    - complex: 侧重内在关系的复杂，需通过仔细研究与了解才能掌握和运用
+    - complicated: 近似 complex，但语气更强，着重极其复杂，很难分析、分辨或解释
+    - sophisticated: 侧重事物发展或达到高级的程度所体现出的复杂
+    - intricate: 着重指错综复杂，令人迷糊理解。
 
-## 2018.01.01
-
-1. These tensions are **exacerbated** between the wars.
-2. They **glossed over** some key issues on that front.
-3. The athlete's success **was attributed to** systematic training.
-4. lower/upper extremity (上/下肢)
-
-## 2018.01.03
-
-1. If we had tens of thousands of **skeletons** distributed at regular intervals through the historical record, there would be **appreciably** more degrees of shading.
-2. So they reanalyzed their data **in light of** the new maps.
-3. We've seen the economy moving forward, **albeit** a little too slowly, he said.
-4. It did, however, have another weapon **at its disposal (任其支配，任其处置)**.
-
-## 2018.01.06
-
-- Protestant (新教徒，新教徒的), Catholic (天主教的)
-    - [天主教](https://zh.wikipedia.org/wiki/%E5%A4%A9%E4%B8%BB%E6%95%99)（拉丁语：Catholicismus）是基督教整体以下的宗派之一，是对罗马公教会（天主教会）发展而来的一系列基督教之神学、哲学理论、礼仪传统、伦理纲常等信仰体系之总括，为基督教最大宗派。天主教的中文名称源自明朝万历年间耶稣会将基督信仰传入中国，经当朝礼部尚书之徐光启与利玛窦等耶稣会士讨论，取儒家古话“至高莫若天，至尊莫若主”，称其信仰之独一神灵为“天主”，故称之。
-    - [新教](https://zh.wikipedia.org/wiki/%E6%96%B0%E6%95%99)，又称基督新教，是西方基督教中不属于天主教体系的宗派之统称，中文“新教”一词是主要对应和区别于宗教改革之前的“旧教”。新教源于16世纪神学家马丁·路德、加尔文、慈运理等人所领导的宗教改革运动，与天主教、东正教并列为基督宗教三大分支。
-
-## 2018.01.27
-
-- To [**skewer (刺穿，串住)** a **sacred (神圣的，庄严的，宗教的)** cow](https://english.stackexchange.com/questions/166702/whats-the-meaning-and-the-origin-of-skewer-a-sacred-cow), means to **defy (公然反抗，藐视)** what is generally held as **indisputable (无可争辩的，不容置疑的)**.
-
-## 2018.02.11
-
-1. So **etymology** is the history of a word and then its historical development over time of its meaning.
-
-## 2018.02.22
-
-1. Victoire, who's in the **epilogue (结语，尾声)**, she is so named because she was born on the anniversary of the battle that finished it all.
-2. I am greatly **indebted (负债的，感激的，受惠的)** to you for your help.
-
-## 2018.03.07
-
-- **Sediments (沉积物)** between a **glacier (冰河，冰川)** and the ground may also **facilitate (使便利)** slippage.
-- ~~collinearity~~
-
-## 2018.03.15
-
-- And **defusing** the issue should pave the way for more **nuanced** and constructive politics.
-- with a **grain of salt**: an English language idiom that means to view something with skepticism or not to interpret something literally.
-
-## 2018.04.18
-
-- The U.S. has **assimilated (吸收，消化；同化)** people from European countries.
