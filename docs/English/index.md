@@ -1,3 +1,7 @@
+## 2021.01.03
+
+- **fugitive (无常的，逃亡的，易变的)** and **cloistered (隐居的，躲开尘世纷争的)** virtues
+
 ## 2021.01.02
 
 - This **monstrosity (庞然大物，怪物，巨兽)** has **truck tires (卡车轮胎)** for buttons and 9 meter-long **pine (松树)** trees for arms!
