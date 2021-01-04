@@ -1,3 +1,7 @@
+## 2021.01.04
+
+- We'll have accountability and we will strive for **bipartisanship (两党合作)** with fairness on all sides.
+
 ## 2021.01.03
 
 - **fugitive (无常的，逃亡的，易变的)** and **cloistered (隐居的，躲开尘世纷争的)** virtues
