@@ -1,3 +1,7 @@
+## 2021.01.05
+
+- 想想英语里某些词汇：“**gristly (软骨状的；软韧)**, **slithery (滑溜溜的)**, **slimy (黏糊糊的；粘腻)**, **squelchy (耐嚼)**, **crunchy (爽脆)**, **gloopy (胶着)**”……而这些恰恰是中国美食中最受欢迎的口感【鱼翅与花椒】
+
 ## 2021.01.04
 
 - We'll have accountability and we will strive for **bipartisanship (两党合作)** with fairness on all sides.
@@ -304,7 +308,7 @@
 - Any **idiot** can write a **critique**.
 - It can take a lot of work to **untangle** exactly what went wrong.
 - Original researchers do all the hard work, and "open science" critics are lazy **parasites**.
-- People often **repress** painful experience, which years later may later reappear as memories or **disguised** emotions.
+- People often **repress (抑制，约束)** painful experience, which years later may later reappear as memories or **disguised (假装，掩饰)** emotions.
 
 ## 2020.11.06
 
