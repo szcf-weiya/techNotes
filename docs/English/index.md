@@ -1,3 +1,8 @@
+## 2021.01.06
+
+- trolley problem: 有轨电车难题，电车问题
+- Mary is very **adept (熟练的，擅长的)** at playing pianos.
+
 ## 2021.01.05
 
 - 想想英语里某些词汇：“**gristly (软骨状的；软韧)**, **slithery (滑溜溜的)**, **slimy (黏糊糊的；粘腻)**, **squelchy (耐嚼)**, **crunchy (爽脆)**, **gloopy (胶着)**”……而这些恰恰是中国美食中最受欢迎的口感【鱼翅与花椒】
@@ -586,7 +591,7 @@
 - Trump's probabilities are **way** (adv. 很远；大量；非常；极其) better.
 - I'm **kicking myself** because I was planning to tell the **hookah** story
 - there is some evidence that the dose you get of **carcinogens** from hookah smoking might be 20 times the dose of smoking a cigarette.
-- if you're willing to accept **anecdotal** evidence, there's always going to be an unlimited amount of evidence which won't tell you anything.
+- if you're willing to accept **anecdotal (轶事的，趣闻的)** evidence, there's always going to be an unlimited amount of evidence which won't tell you anything.
 
 ## 2020.10.03
 
