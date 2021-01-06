@@ -2269,77 +2269,28 @@ letter back
 18. brass, trumpet, trombone
 19. rust, patina
 20. halt
-21. hull
-22. barnacle, shellfish
-23. desalination
-24. pinch
-25. blend in
-
-## 2017.11.18
-
-last toefl
-
-## 2017.11.19
-
-soap opera
-
-## 2017.11.20
-
-soap opera again
-
-## 2017.11.21
-
-soap opera again
+21. Another 30 people died in the **hull (船体，船身)** where they are believed to have **suffocated (呼吸困难，窒息而死)**.
+22. barnacle（藤壶【小甲壳动物，附着于水下岩石或船底等】）, shellfish（贝类动物，甲壳类动物）
+23. Long-term solutions include conservation, recycling waste water and building **desalination (海水淡化、脱盐)** centers.
+24. a **pinch** of [salt]：一撮，少许
 
 ## 2017.11.22
 
-Nirvana in Fire
-
-## 2017.11.23
-
-Nirvana in Fire
-
-## 2017.11.24
-
-Nirvana in Fire
+**Nirvana (涅槃【超脱一切烦恼的境界】)** in Fire: 琅琊榜
 
 ## 2017.11.25
 
-the disguiser
+the disguiser: 伪装者
 
-empresses in the palace
+empresses in the palace：甄嬛传
 
 ## 2017.11.26
 
-the glory of Tang dynasty
-
-## 2017.11.27
-
-last seminar
-
-## 2017.11.28
-
-the glory of Tang dynasty \* 2
+the glory of Tang dynasty: 大唐荣耀
 
 ## 2017.11.29
 
-Municipality
-
-## 2017.11.30
-
-on the way
-
-## 2017.12.01
-
-arrive at hangzhou
-
-## 2017.12.02
-
-prepare
-
-## 2017.12.03
-
-happy life
+**Beijing Municipality (北京市【自治市；自治区；自治市或区的政府当局】)**
 
 ## 2017.12.18
 
@@ -2349,8 +2300,8 @@ happy life
 
 ## 2017.12.27
 
-1. perk
-2. terse  
+1. Maybe some coffee will **perk you up (活跃起来，振作精神)**.
+2. They found that papers with **terse[r] (简洁的，扼要的)** titles top the citation count.
 
 ## 2017.12.28
 
