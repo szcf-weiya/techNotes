@@ -47,7 +47,7 @@ nav:
       - Qt: Qt/index.md
     - Stat:
       - Probability: stats/prob.md
-      - Statistic: stats/index.md
+      - Statistics: stats/index.md
       - Scientific: scientific/index.md
       - Matrix: stats/matrix.md
     - English: English/index.md

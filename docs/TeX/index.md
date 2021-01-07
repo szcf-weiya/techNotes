@@ -1,6 +1,6 @@
 # 关于 TeX
 
-## Some nice font family 
+## Some nice font family
 
 refer to [Suggest a “nice” font family for my basic LaTeX template (text and math)](https://tex.stackexchange.com/a/59706)
 
@@ -22,7 +22,7 @@ sudo apt-get install texlive-fonts-extra
 sudo apt-get install texlive-fonts-recommand
 ```
 
-## 安装 TeXLive 2016 
+## 安装 TeXLive 2016
 1. [How to install “vanilla” TeXLive on Debian or Ubuntu?](http://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373)
 2. [Linux 系统下原版 texlive 2016 的安装与配置](http://www.cnblogs.com/wenbosheng/archive/2016/08/03/5725834.html)
 
@@ -220,9 +220,21 @@ code
 
 参考[Formatting section titles](https://tex.stackexchange.com/questions/36609/formatting-section-titles)
 
-## Letex 画复杂表格的方法
+## Table
 
-参考[Letex画复杂表格的方法](http://blog.csdn.net/jiakunboy/article/details/46355951)
+- `multirow` and `multicolumn`, [practical example](https://github.com/szcf-weiya/Clouds/commit/1f8cfc43b773952eddb9477b7859a2566f3536a3)
+
+```tex
+\usepackage{multirow}
+\multirow{number of rows}{width}{text} % using `*` as width implies natural width
+
+% no extra package
+\multicolumn{number of cols}{align}{text} % align `l, c, r`
+```
+
+refer to [Multi-column and multi-row cells in LaTeX tables](https://texblog.org/2012/12/21/multi-column-and-multi-row-cells-in-latex-tables/)
+
+- with `midrule` provided by `booktabs`, the vertical table lines become discontinuous. According to [@egreg](https://tex.stackexchange.com/a/88939/), that is by design, and it is suggested to use `\cmidrule` to show the grouping of the header. [practical example](https://github.com/szcf-weiya/Clouds/commit/1f8cfc43b773952eddb9477b7859a2566f3536a3)
 
 
 ## latex 列举 enumerate 编号 样式设定
@@ -309,7 +321,7 @@ $f''$
 
 ## xelatex pdf on Travis CI
 
-参考 
+参考
 
 1. [Setup LaTeX PDF build using Travis CI](https://hv.pizza/blog/setup-latex-pdf-build-using-travis-ci/)
 2. [Document building & versioning with TeX document, Git, Continuous Integration & Dropbox](https://hv.pizza/blog/document-building-versioning-with-tex-document-git-continuous-integration-dropbox/)
@@ -356,7 +368,7 @@ script:
   - xelatex test
 ```
 
-wrong error in wget. It should be 
+wrong error in wget. It should be
 
 ```yml
 wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz
@@ -365,7 +377,7 @@ wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -
 and mv should add `sudo`
 
 ```yml
-sudo mv fonts/* /usr/share/fonts/truetype/custom/ 
+sudo mv fonts/* /usr/share/fonts/truetype/custom/
 ```
 
 succeed!
@@ -379,7 +391,7 @@ succeed!
 \setCJKmainfont{STFANGSO.TTF}
 \begin{document}
 test TeX on Travis CI via xelatex.
-毕业论文（设计）题目 
+毕业论文（设计）题目
 
 浙江大学本科生毕业论文（设计）
 \end{document}
@@ -454,7 +466,7 @@ Then I found that if use `before_deploy`, it seems that no need to set `on.tags 
 
 摘录其中一句话
 
-> enumitem “disturbs” beamer. 
+> enumitem “disturbs” beamer.
 
 而其中 `enumitem` 可以实现将列表的序号由数字改成字母，详见 [How do I change the `enumerate` list format to use letters instead of the default Arabic numerals?](https://tex.stackexchange.com/questions/2291/how-do-i-change-the-enumerate-list-format-to-use-letters-instead-of-the-defaul)
 
@@ -462,7 +474,7 @@ Then I found that if use `before_deploy`, it seems that no need to set `on.tags 
 
 详见[strings - Replacing substrings by linebreaks - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/178610/replacing-substrings-by-linebreaks)
 
-这是 zju-thesis 模板允许封面标题换行的处理策略，同时参见 
+这是 zju-thesis 模板允许封面标题换行的处理策略，同时参见
 
 1. [Line break inside \makebox](https://tug.org/pipermail/texhax/2007-November/009566.html)
 
@@ -492,7 +504,7 @@ Then I found that if use `before_deploy`, it seems that no need to set `on.tags 
 
 In beamer,  need to use
 ```tex
-\newtheorem{remark}{Remark} 
+\newtheorem{remark}{Remark}
 ```
 before.
 
@@ -519,7 +531,7 @@ refer to [How can I align multiple cases environment simultaneously?](https://te
 
 Key point: enclose one of the entries in the first `cases` environment in a box whose width is that of the longest of the second `cases` environment.
 
-or use `\hphantom{}`. 
+or use `\hphantom{}`.
 
 ## Problem with \mkbibdateapalongextra of biblatex-apa
 
@@ -535,7 +547,7 @@ refer to [Problem with \mkbibdateapalongextra of biblatex-apa](https://tex.stack
 \usepackage[american]{babel}
 \usepackage[style=apa,backend=biber]{biblatex}
 \DeclareLanguageMapping{american}{american-apa} %Literaturverzeichnis american-apa style
-\addbibresource{library.bib} 
+\addbibresource{library.bib}
 \usepackage[babel,threshold=2]{csquotes}
 ```
 
@@ -584,7 +596,7 @@ refer to [Capacity exceeded](https://texfaq.org/FAQ-semanticnest)
 1. 不支持 `algorithm`
 2. 对于 `algorithmic` 要加上 `varwidth` 或 `preview` 选项。
 
-参考 
+参考
 
 - [using standalone with algorithmicx or algorithm2e](https://tex.stackexchange.com/questions/113394/using-standalone-with-algorithmicx-or-algorithm2e/125863)
 - [standalone does not work with algorithms](https://tex.stackexchange.com/questions/373608/standalone-does-not-work-with-algorithms)
@@ -705,7 +717,7 @@ and it throws an error when compiling,
 
 My first solution is to check if there are some setting when exporting to `.bib` file to drop some field, such as abstract here, but finally I failed to find one, and here is [a discussion](https://forums.zotero.org/discussion/22629/bibtex-export-request-option-to-omit-certain-fields-for-less-cluttered-bibliographies) in the Zotero community.
 
-Then I try to replace 
+Then I try to replace
 
 > \`{e}
 
@@ -719,7 +731,7 @@ in the Zotero's abstract field as said in [How to write “ä” and other umlau
 
 ![](accents.png)
 
-but it still doesnt work. 
+but it still doesnt work.
 
 Finally, I directly correct the exported file using the above technique, and it works. But I still think it is not a good idea since I prefer to export without any further modifications. [TODO]
 
@@ -750,7 +762,7 @@ For `biblatex`, seems that we can set the global argument `maxcitenames` to cont
 
 > For rescaling in general you can use a `resizebox` (from the `graphicx` package), which also works for `tikzpicture`. The first argument is the width, the second the height, or `!` to scale proportionally.
 >
-> source: [@Marijn](https://tex.stackexchange.com/a/363884/) 
+> source: [@Marijn](https://tex.stackexchange.com/a/363884/)
 
 and application in [Forcing subfigures to have same height and take overall X% of linewidth in LaTeX](https://tex.stackexchange.com/questions/218378/forcing-subfigures-to-have-same-height-and-take-overall-x-of-linewidth-in-latex)
 

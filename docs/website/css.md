@@ -77,3 +77,21 @@ display: block
 - `rem`: 相对根节点
 - `em`: 相对父节点
 - `px`: 绝对值
+
+## Mathjax 公式锚点偏移
+
+详见 [mathjax link to equation](https://github.com/szcf-weiya/ESL-CN/issues/173)
+
+参考资料：
+
+- [`:target` 选择器](https://www.runoob.com/cssref/sel-target.html): 用于锚`#`元素的样式
+- [锚点定位向下偏移](https://www.cnblogs.com/shenjp/p/11088344.html)
+- scroll issue mentioned in mkdocs-material:
+  - [scroll issue when link anchor is in a table header #746](https://github.com/squidfunk/mkdocs-material/issues/746)
+  - [and the changes seems only `scroll-margin-top`](https://github.com/squidfunk/mkdocs-material/blob/9a0c3e9094256a41d695da00afca733201406f43/src/assets/stylesheets/extensions/_permalinks.scss)
+- [css中一个冒号和两个冒号](https://zhuanlan.zhihu.com/p/161187023)  - - [css 伪元素](https://www.runoob.com/css/css-pseudo-elements.html)
+- [offsets anchor to adjust for fixed header](https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header)
+- [Fixed page header overlaps in-page anchors](https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors)
+
+
+-
