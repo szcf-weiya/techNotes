@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#media-screen" class="md-skip">
+        <a href="#css" class="md-skip">
           Skip to content
         </a>
       
@@ -678,6 +678,8 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         CSS
@@ -692,6 +694,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -700,11 +704,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#media-screen" class="md-nav__link">
-    利用@media screen实现网页布局的自适应
+  <a href="#_1" class="md-nav__link">
+    自适应网页布局
   </a>
   
-    <nav class="md-nav" aria-label="利用@media screen实现网页布局的自适应">
+    <nav class="md-nav" aria-label="自适应网页布局">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -742,7 +746,7 @@
       
         <li class="md-nav__item">
   <a href="#meta" class="md-nav__link">
-    meta
+    meta 标签
   </a>
   
 </li>
@@ -769,7 +773,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     网页底部出现滚动条
   </a>
   
@@ -1371,6 +1375,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1379,11 +1385,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#media-screen" class="md-nav__link">
-    利用@media screen实现网页布局的自适应
+  <a href="#_1" class="md-nav__link">
+    自适应网页布局
   </a>
   
-    <nav class="md-nav" aria-label="利用@media screen实现网页布局的自适应">
+    <nav class="md-nav" aria-label="自适应网页布局">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1421,7 +1427,7 @@
       
         <li class="md-nav__item">
   <a href="#meta" class="md-nav__link">
-    meta
+    meta 标签
   </a>
   
 </li>
@@ -1448,7 +1454,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     网页底部出现滚动条
   </a>
   
@@ -1488,49 +1494,85 @@
               
                 
                 
-                  <h1>CSS</h1>
-                
-                <h2 id="media-screen">利用@media screen实现网页布局的自适应<a class="headerlink" href="#media-screen" title="Permanent link">&para;</a></h2>
+                <h1 id="css">CSS 常见用法<a class="headerlink" href="#css" title="Permanent link">&para;</a></h1>
+<h2 id="_1">自适应网页布局<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="http://www.cnblogs.com/xcxc/p/4531846.html">利用@media screen实现网页布局的自适应</a></p>
 <h3 id="12801200px">1280分辨率以上（大于1200px）<a class="headerlink" href="#12801200px" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>@media screen and (min-width:1200px){
-}
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="p">:</span><span class="nd">1200px</span><span class="o">)</span><span class="p">{</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="1100960px1199px">1100分辨率（大于960px，小于1199px）<a class="headerlink" href="#1100960px1199px" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>@media screen and (min-width: 960px) and (max-width: 1199px) {
-
-}
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">960px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">1199px</span><span class="o">)</span> <span class="p">{</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="880768px959px">880分辨率（大于768px，小于959px）<a class="headerlink" href="#880768px959px" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>@media screen and (min-width: 768px) and (max-width: 959px) {
-
-}
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">768px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">959px</span><span class="o">)</span> <span class="p">{</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="display">display<a class="headerlink" href="#display" title="Permanent link">&para;</a></h2>
-<p>对img添加
+<p>对 img 添加</p>
 <div class="highlight"><pre><span></span><code>display: block
 </code></pre></div>
-达到居中的作用</p>
-<h2 id="meta">meta<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h2>
-<p><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-<div class="highlight"><pre><span></span><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,user-scalable=no&quot;&gt;
-</code></pre></div></p>
+<p>达到居中的作用</p>
+<h2 id="meta">meta 标签<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Meta标签给搜索引擎提供了许多关于网页的信息。</p>
+</blockquote>
+<p>为了不让用户手动去改变页面大小，需要加上</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width,initial-scale=1,user-scalable=no&quot;</span><span class="p">&gt;</span>
+</code></pre></div>
 <ol>
-<li>http://www.w3cplus.com/html5/meta-tags-and-seo.html</li>
-<li>http://www.cnblogs.com/st-leslie/p/5196852.html</li>
+<li><a href="http://www.w3cplus.com/html5/meta-tags-and-seo.html">Meta 标签与搜索引擎优化</a></li>
+<li><a href="http://www.cnblogs.com/st-leslie/p/5196852.html">手机网页布局经验总结</a></li>
 </ol>
 <h2 id="font-family">font-family的选择<a class="headerlink" href="#font-family" title="Permanent link">&para;</a></h2>
 <p>看到一篇超级棒的博客</p>
 <p><a href="https://segmentfault.com/a/1190000006110417">如何优雅的选择字体(font-family)</a></p>
 <h2 id="cloudflare-rocket-load-module">cloudflare 的rocket load module<a class="headerlink" href="#cloudflare-rocket-load-module" title="Permanent link">&para;</a></h2>
-<p>慎用，在ESL上，出现了<code>A Parser-blocking, cross-origin script, http://example.org/script.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.</code> bug，以及公式解析错误。</p>
+<p>慎用，在ESL上，出现了如下问题</p>
+<blockquote>
+<p>A Parser-blocking, cross-origin script, http://example.org/script.js, is invoked via document.write. This may be blocked by the browser if the device has poor network connectivity.</p>
+</blockquote>
+<p>以及公式解析错误。</p>
 <p>解决方案，去cloudflare主页disable掉rocket load module.</p>
 <h2 id="uncaught-referenceerror-is-not-defined">Uncaught ReferenceError: $ is not defined?<a class="headerlink" href="#uncaught-referenceerror-is-not-defined" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/2075337/uncaught-referenceerror-is-not-defined?page=1&amp;tab=votes#tab-top">Uncaught ReferenceError: $ is not defined?</a></p>
-<h2 id="_1">网页底部出现滚动条<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2">网页底部出现滚动条<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>查看footer的width是否为100%，若是，则删掉，某次是因为这个原因。</p>
 <h2 id="footer">footer 保持在底部<a class="headerlink" href="#footer" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.jianshu.com/p/4896e6936ce3">告诉你一个将 footer 保持在底部的最好方法</a></p>
+<p>通过 <code>flexbox</code>，例如</p>
+<div class="highlight"><pre><span></span><code><span class="c">/* https://demo.tutorialzine.com/2016/03/quick-tip-the-best-way-to-make-sticky-footers/styles.css */</span>
+<span class="nt">body</span><span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+    <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">font</span><span class="p">:</span> <span class="mi">400</span> <span class="mi">15</span><span class="kt">px</span><span class="o">/</span><span class="mf">1.4</span> <span class="s1">&#39;Open Sans&#39;</span><span class="p">,</span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">header</span><span class="p">{</span>
+    <span class="c">/* We want the header to have a static height - it will always take up just as much space as it needs.  */</span>
+    <span class="c">/* 0 flex-grow, 0 flex-shrink, auto flex-basis */</span>
+    <span class="k">flex</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">main-content</span><span class="p">{</span>
+    <span class="c">/* By setting flex-grow to 1, the main content will take up</span>
+<span class="c">    all of the remaining space on the page (the other elements have flex-grow: 0 and won&#39;t contest the free space). */</span>
+    <span class="c">/* 1 flex-grow, 0 flex-shrink, auto flex-basis */</span>
+    <span class="k">flex</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">footer</span><span class="p">{</span>
+    <span class="c">/* Just like the header, the footer will have a static height - it shouldn&#39;t grow or shrink.  */</span>
+    <span class="c">/* 0 flex-grow, 0 flex-shrink, auto flex-basis */</span>
+    <span class="k">flex</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>参考</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/4896e6936ce3">告诉你一个将 footer 保持在底部的最好方法</a></li>
+<li><a href="https://demo.tutorialzine.com/2016/03/quick-tip-the-best-way-to-make-sticky-footers/">Quick Tip: The Best Way To Make Sticky Footers</a></li>
+</ul>
 <h2 id="em-rem">em 和 rem<a class="headerlink" href="#em-rem" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.w3cplus.com/css/when-to-use-em-vs-rem.html">何时使用 Em 与 Rem</a></p>
 <p>或者参考</p>
@@ -1550,11 +1592,11 @@
 <li>scroll issue mentioned in mkdocs-material:</li>
 <li><a href="https://github.com/squidfunk/mkdocs-material/issues/746">scroll issue when link anchor is in a table header #746</a></li>
 <li><a href="https://github.com/squidfunk/mkdocs-material/blob/9a0c3e9094256a41d695da00afca733201406f43/src/assets/stylesheets/extensions/_permalinks.scss">and the changes seems only <code>scroll-margin-top</code></a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/161187023">css中一个冒号和两个冒号</a>  - - <a href="https://www.runoob.com/css/css-pseudo-elements.html">css 伪元素</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/161187023">css中一个冒号和两个冒号</a></li>
+<li><a href="https://www.runoob.com/css/css-pseudo-elements.html">css 伪元素</a></li>
 <li><a href="https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header">offsets anchor to adjust for fixed header</a></li>
 <li><a href="https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors">Fixed page header overlaps in-page anchors</a></li>
 </ul>
-<p>-</p>
                 
               
               
