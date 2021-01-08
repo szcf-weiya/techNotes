@@ -1,3 +1,9 @@
+## 2021.01.08
+
+- they are written in **newspeak (一种指东说西、模棱两可的官腔)** with enough **acronyms (首字母缩略词)** to **incapacitate (使无能力、使不适合)** a brand new typewriter.
+- The lecturer **droned (talk in a monotonous (无变化的，单调乏味的) voice)** on for hours.
+    - drone: n. 无人机，雄峰
+
 ## 2021.01.07
 
 - **sassy (<贬>粗鲁的，无礼的；<褒>时髦的，漂亮的)** girl: 野蛮女友
@@ -31,7 +37,7 @@
 
 - Let's also not forget the benefit of the occasional **dumb (愚蠢的)** but fun example.
 - There are still **hurdles (障碍)** to **surmount (克服)**.
-- At a recent Harvard **colloquium (研讨会，学术报告会)**, a **bigwig (权威人士)** from one of the large consultancies told his audience of star professors that the only person he valued at the school was the admissions officer. 
+- At a recent Harvard **colloquium (研讨会，学术报告会)**, a **bigwig (权威人士)** from one of the large consultancies told his audience of star professors that the only person he valued at the school was the admissions officer.
 
 ## 2020.12.30
 
@@ -156,7 +162,7 @@
     - hyperglycemia: 多糖症，高血糖症
 - A study of patients with **insulin (胰岛素)**-dependent diabetes was conducted to investigate the effects of cigarette smoking on **renal (肾脏的)** and **retinal (视网膜的)** **complications (并发症)**.
 - In a study investigating **maternal (母亲的，母系的，母体遗传的)** risk factors for **congenital (先天的，天生的)** **syphilis (梅毒)**.
-- The estimated coefficients from a logistic regression model containing the explanatory variables **cocaine or crack (可卡因)** use， marital status, number of **prenatal (产前的)** visits to a doctor. 
+- The estimated coefficients from a logistic regression model containing the explanatory variables **cocaine or crack (可卡因)** use， marital status, number of **prenatal (产前的)** visits to a doctor.
 - the AIDS patients suffering from **concomitant (伴随的)** **esophageal (食道的，食管的)** **candidiasis (念珠菌病)**, an infection due to **candida (念珠菌)** yeast, and **cytomegalovirus (巨细胞病毒)**, a **herpes (疱疹)** infection that can cause serious illness.
 
 ## 2020.12.4
@@ -295,7 +301,7 @@
 
 ## 2020.11.10
 
-- An interesting question in **pediatrics (儿科)** is whether the tendency for children to have many episodes of **otitis media (中耳炎【耳内长期流水、流脓、胀痛】)** is inherited in a family. 
+- An interesting question in **pediatrics (儿科)** is whether the tendency for children to have many episodes of **otitis media (中耳炎【耳内长期流水、流脓、胀痛】)** is inherited in a family.
 
 ## 2020.11.09
 
@@ -408,7 +414,7 @@
 
 - There we mention that the birthday data come from the National Vital Statistics **natality** data.
 - I came across this interview of [John Conway](https://www.zhihu.com/question/387110069) and [Siobhan Roberts](https://en.wikipedia.org/wiki/Siobhan_Roberts), Conway's biographer.
-- I felt that there was a strong sense of competitiveness and **ego** in the maths world. 
+- I felt that there was a strong sense of competitiveness and **ego** in the maths world.
 - Did you get a sense of a lot of people trying to **outdo** each other in the field?
 - there are occasional examples of it coming to the fore more **prominently**.
 - there were characters I encountered, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) for one, for whom I think there was a bit of an unacknowledged competitive tension with John.
@@ -464,7 +470,7 @@
 
 ## 2020.10.19
 
-- I'd assumed that there are more pro Dem **pollsters** than pro Rep or unbiased pollsters. 
+- I'd assumed that there are more pro Dem **pollsters** than pro Rep or unbiased pollsters.
 - our model judges that to be a **fluke**
 - someone sent me this **collage** of maps from Nate's model
 - they're not just some sort of computer **glitch**
@@ -586,7 +592,7 @@
 - if someone at one of these universities had been caught robbing at a bank, would his colleagues have all **backed him up** like that?
 - this kind of **cavalier** attitude to what is pretty much the purest sort of scientific fraud makes it clear how little the scientific process is valued.
 - this kind of sounds like a **conspiracy theory (阴谋论)**
-- all participants in cargo-cut (货物崇拜) social science——from the fabricators to the **powermongers** to the enablers to the just plain **incompetents (无能者，不胜任者)** 
+- all participants in cargo-cut (货物崇拜) social science——from the fabricators to the **powermongers** to the enablers to the just plain **incompetents (无能者，不胜任者)**
 - swatting away people like other data **thugs**
 
 ## 2020.10.04
@@ -612,7 +618,7 @@
 
 - the people of Italy experienced a strange kind of mass hysteria known as "53 fever"
 - Italy cities: Bari (巴里，东南部海港), Naples (那不勒斯，西南部港市), Venice (威尼斯，港市)
-- the number 53 simply stopped coming up on the Venice wheel -- leading **punters** to place increasingly big bets on the number in the certainty that it must soon make a reappearance. 
+- the number 53 simply stopped coming up on the Venice wheel -- leading **punters** to place increasingly big bets on the number in the certainty that it must soon make a reappearance.
 - their financial ruin, the pain of which resulted in a **spate** of suicides
 - the victims had been led **astray** by a reasoning flaw called the "gambler's fallacy" -- a worryingly common error that can **derail** many of our professional decisions, from a **goalkeeper**'s responses to penalty shootouts in football to stock investments and even judicial rulings on new **asylum** cases
 - the team analysed **umpires**' decisions in Major League Baseball games.
@@ -630,7 +636,7 @@
 
 ### Andrew @ 20200723
 
-- Malthusian (马尔萨斯的，马尔萨斯人口论的) catastrophe 
+- Malthusian (马尔萨斯的，马尔萨斯人口论的) catastrophe
 - Fertility was procyclical but declined and delayed with long-run growth.
 
 ### Brené Brown·TEDxHouston： The power of vulnerability
@@ -837,26 +843,26 @@
 - I can bolster my own identity.
 - A good conversation is like a miniskirt; short enough to retain interest, but long enough to cover the subject.
 - She was the **runner-up** to Miss America.
-- He was the mayor of Sacramento. 
+- He was the mayor of Sacramento.
 - She won a Pulitzer Prize.
 
 ## 2020.07.10
 
 ### Shawn Achor·TEDxBloomington: The happy secret to better work
 
-- so we were up on top of our **bunk** beds
-- I had put out all of my **G.I. Joe** soldiers and **weaponry**.
-- And on the other side were all my sister's My Little **Ponies** ready for a **cavalry charge**.
-- on the **clumsy** side.
+- so we were up on top of our **bunk beds (双层床)**
+- I had put out all of my **G.I. Joe** soldiers and **weaponry (武器，兵器)**.
+- And on the other side were all my sister's My Little **Ponies** ready for a **cavalry (骑兵，装甲兵) charge (冲击，猛攻)**.
+- on the **clumsy (笨拙的，笨重的)** side.
 - I nervously peered over the side of the bed to see what had be fallen my fallen sister.
-- **heroically** pushing her out of the way of an oncoming imaginary **sniper** bullet.
-- this **wail** of pain and suffering and surprise threatening to **erupt** from her mouth and wake my parents from the long winter's **nap** for which they had settled.
-- my **frantic** seven year-old brain could think to do to **avert** this tragedy.
-- I thinks this means you're a unicorn.
-- **contemplate** her new-found identity as a **unicorn**.
-- **scramble** back up to onto the bunk bed
-- What we stumbled across at this tender age of just five and seven was was going be at the vanguard of a scientific revolution occurring two decades later in the way that we look at the human brain.
-- There is one weird dot above the curve, there's one weirdo in the room.
+- **heroically (英勇地；勇敢地；冒险地)** pushing her out of the way of an oncoming imaginary **sniper (狙击兵)** bullet.
+- this **wail (恸哭，哀号)** of pain and suffering and surprise threatening to **erupt (爆发，突然发生)** from her mouth and wake my parents from the long winter's **nap** for which they had settled.
+- my **frantic (狂乱的，疯狂的)** seven year-old brain could think to do to **avert (防止，避免)** this tragedy.
+- I thinks this means you're a **unicorn (独角兽，麒麟)**.
+- **contemplate (沉思；注视；深思熟虑)** her new-found identity as a **unicorn**.
+- **scramble （快速爬行，争夺，争抢）** back up to onto the bunk bed
+- What we **stumbled (绊脚；出错)** across at this tender age of just five and seven was was going be at the **vanguard (先锋，前驱)** of a scientific revolution occurring two decades later in the way that we look at the human brain.
+- There is one weird dot above the curve, there's one **weirdo (古怪的人)** in the room.
 - resiliency in the face of challenge
 - we can **glean** information
 - the medical school **syndrome**
@@ -983,7 +989,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 8. nephew
 9. Scientific discoveries as ideas are not protected.
 10. If a country is a member of international copyright convention, **treaty** or organization such as the World Trade Organization and others like the Berne Convention, the Universal Copyright Convention, the Geneva Convention for the protection of producers of **phonograms**, and the agreement on trade-ralated aspects of intellectual property rights, then Hong Kong's copyright applies and is valid in these countries.
-11. Hong Kong is a common law **jurisdiction**. 
+11. Hong Kong is a common law **jurisdiction**.
 12. Copyright Ordinance
 13. The goal was to combat copyright **piracy** (c.f. privacy) activities on computer software in the business sector.
 14. The criminal provisions in Intellectual Property (Miscellaneous Amendments) Ordinance 2001 caused the public concerns that the amendments might hinder the dissemination of information in the education sector and the society.
@@ -1016,7 +1022,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2019.12.13
 
-1. Because of all the uncertain and unknown assumptions that **underpin** statistical inferences, we should treat inferential statistics as highly unstable local descriptions of relations between assumptions and data, rather than as generalizable inferences about hypotheses or models. 
+1. Because of all the uncertain and unknown assumptions that **underpin** statistical inferences, we should treat inferential statistics as highly unstable local descriptions of relations between assumptions and data, rather than as generalizable inferences about hypotheses or models.
 2. Acknowledging this uncertainty could help reduce the **allure** of selective reporting
 3. That paper is part of a much large literature in economics on Persistence or “Deep Origins” that shows how **medieval pogroms** **prefigure** Nazi support, adoption of the **plough** determines women’s rights etc.
 4. The impact of history on the present appears **indisputable** but is, as the extreme Moran statistic for spatial autocorrelation indicates, **spurious**.
@@ -1049,14 +1055,14 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 30. I’m exhausted by the ideology of the Bayes-**evangelists**.
 31. Would Republicans pay a price if they vote to **impeach** the president?
 32. Nixon **loyalists** paid the price—not Republicans who voted to impeach.
-33. So I **goggled** a bit and asked a colleague in ML about the above. 
+33. So I **goggled** a bit and asked a colleague in ML about the above.
 34. It’s great if you’ve got hair to **comb**, but otherwise it leaves you looking a bit silly.
 35. Once my sister had the **hiccups** and my dad **snuck up** behind her and scared her. The hiccups went away but my sister made my dad promise never to scare her again like that.
 36. On the medical front, we now have things like **nut allergy** and **autism** which nobody ever thought about and now are huge.
 
 ## 2019.12.10
 
-1. conduit 
+1. conduit
 
 ## 2019.12.01
 
@@ -1075,7 +1081,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. intact
 2. hubbub
-3. academese: 
+3. academese:
 4. echo chamber
 5. self-censoring
 6. The researchers who published impact estimates are from a small and [close-knit](https://www.bing.com/dict/search?q=close-knit&qs=BD&pq=close-knit&sc=3-10&cvid=E8FE010BBC54414E90DAF8C88101F485&sp=1) community who may [be subject to](https://www.bing.com/dict/search?q=be+subject+to&qs=BD&pq=be+subj&sc=5-7&cvid=9715749B0E9E4D879153C7D92F228720&sp=1) group-thinking, peer pressure and [self-censoring](https://www.bing.com/dict/search?q=self-censoring&qs=n&form=Z9LH5&sp=-1&pq=self-censoring&sc=0-14&sk=&cvid=61844DAB100F40A99CBC7F3144F5C24D).
@@ -1136,7 +1142,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 7. crap
 8. Ray Kroc
 9. teaser
-10. much-missed 
+10. much-missed
 
 ## 2019.09.30
 
@@ -1289,7 +1295,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.09.05
 
 1. indels
-2. at the expense of 
+2. at the expense of
 3. surfeit
 4. pertinent
 5. mortal
@@ -1303,7 +1309,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. deduce
 
-## 2018.09.02 
+## 2018.09.02
 
 1. If both a pair of **homologous (同源的)** chromosomes are missing, **nullisomy (缺体性，缺对染色体)** results.
 2. The stretch is also the only federally **designated** wildlife migration **corridor (走廊)**.
@@ -1367,7 +1373,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2018.08.23
 
-1. exclusively 
+1. exclusively
 2. epilogue
 3. rigorous and concise
 4. Prologue
@@ -1384,7 +1390,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. arduous
 3. aperiodic
 4. versatility
-5. mutating 
+5. mutating
 
 ## 2018.08.20
 
@@ -1393,8 +1399,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.08.19
 
 1. pedagogical
-2. concrete types 
-3. Populate 
+2. concrete types
+3. Populate
 
 ## 2018.08.18
 
@@ -1427,7 +1433,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. counter-example
 4. premiss
 6. enunciate
-7. remuneration 
+7. remuneration
 8. supposition
 9. entail
 10. allude
@@ -1464,7 +1470,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. lethal
 2. incidence
-3. extant 
+3. extant
 4. pertain
 5. substrate
 
@@ -1577,25 +1583,20 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2017.09.28
 
-1. To skewer a sacred cow, means to defy what is generally held as indisputable.*from [What's the meaning and the origin of “skewer a sacred cow ?” ](https://english.stackexchange.com/questions/166702/whats-the-meaning-and-the-origin-of-skewer-a-sacred-cow)*
-2. anything but. *from [hujiang](https://www.hjenglish.com/new/p802863/)*
-- 除...以外任何事；根本不，绝不
-- Dick seldom talks of anything but music.
-- His behavior is anything but satisfactory.
-3. anything but & nothing but & all but & none but
-- anything but (=not at all, by no means, never)决不，根本不
+- anything but (=not at all, by no means, never)除...以外任何事；根本不，绝不决不，根本不
+    - Dick seldom talks of anything but music.
+    - **Conceited (自负的，骄傲自满的)** people never hear anything but praise. (凡是爱慕虚荣的人听得进赞美的话)
+    - The bridge is anything but safe.(那座桥根本不安全)
+    - His behavior is anything but satisfactory. (他的行为根本不能令人满意)
+    - But those captured were anything but terrorists. (但那些被逮捕的人根本不是恐怖分子)
+    - He didn't speak anything but Greek. (他只会说希腊语)
+    - He's anything but an **abject (卑鄙的，卑劣的)** coward. (他决不是可鄙的懦夫)
+    - Do you ever do anything but **yack (废话)**? (你除了叨叨还会干啥？)
+    - I will eat anything but carrot. (我什么都吃，就是不吃胡萝卜)
+    - She is anything but a beauty. (她一点也不漂亮。)
 - nothing but (=only)只不过，除了...以外什么也没有
 - all but (=almost, nearly)几乎，差一点
 - none but(=no one except)只有，除...外谁不
-- Conceited people never hear anything but praise. (凡是爱慕虚荣的人听得进赞美的话)
-- The bridge is anything but safe.(那座桥根本不安全)
-- His behavior is anything but satisfactory. (他的行为根本不能令人满意)
-- But those captured were anything but terrorists. (但那些被逮捕的人根本不是恐怖分子)
-- He didn't speak anything but Greek. (他只会说希腊语)
-- He's anything but an abject coward. (他决不是可鄙的懦夫)
-- Do you ever do anything but yack? (你除了叨叨还会干啥？)
-- I will eat anything but carrot. (我什么都吃，就是不吃胡萝卜)
-- She is anything but a beauty. (她一点也不漂亮。)
 
 ## 2017.09.29
 
@@ -2319,4 +2320,3 @@ the glory of Tang dynasty: 大唐荣耀
     - complicated: 近似 complex，但语气更强，着重极其复杂，很难分析、分辨或解释
     - sophisticated: 侧重事物发展或达到高级的程度所体现出的复杂
     - intricate: 着重指错综复杂，令人迷糊理解。
-
