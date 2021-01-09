@@ -1,3 +1,8 @@
+## 2021.01.09
+
+- That particular study was **riddled (充满着)** with flaws.
+    - **Riddle (谜语，谜一般的人)** of Sphinx: []斯芬克斯之谜](https://baike.baidu.com/item/%E6%96%AF%E8%8A%AC%E5%85%8B%E6%96%AF%E4%B9%8B%E8%B0%9C/2917)
+
 ## 2021.01.08
 
 - they are written in **newspeak (一种指东说西、模棱两可的官腔)** with enough **acronyms (首字母缩略词)** to **incapacitate (使无能力、使不适合)** a brand new typewriter.
@@ -352,7 +357,7 @@
 
 ## 2020.11.03
 
-- Picking pennies in front of a **steamroller**: A **parable** comes to life.
+- Picking pennies in front of a **steamroller**: A **parable (比喻，寓言)** comes to life.
 - I stopped by the **Jamaican** beef **patties** place but they were closed.
 - Has Stan [jumped the shark](https://en.wikipedia.org/wiki/Jumping_the_shark)?
 - A [bracket](https://en.wikipedia.org/wiki/Bracket_(tournament)) or **tournament (锦标赛)** bracket is a tree diagram that represents the series of games played during a **knockout (淘汰赛的)** tournament.
@@ -360,17 +365,18 @@
 
 ## 2020.11.02
 
-- Politics has taken on particular vitriol in recent years.
-- Commentators and political scientists have described the rising tide of polarization in terms of concepts such as **tribalism** and negative **partisanship**.
+- Politics has taken on particular **vitriol (尖刻的话)** in recent years.
+- Commentators and political scientists have described the rising tide of polarization in terms of concepts such as **tribalism (部落制)** and negative **partisanship (党派性，党派偏见)**.
 
 ## 2020.11.01
 
-- An idealistic picture of science views science as an orderly process where **disinterested**, objective experts look at **crystal** clear evidence to find the truth.
+- An idealistic picture of science views science as an orderly process where **disinterested**, objective experts look at **crystal clear (完全透明的，【喻】极其明白，十分清楚)** evidence to find the truth.
+    - crystal: 水晶，晶体；水晶的，透明的
 - Fake facts in Covid-19 Science: **Kentucky (肯塔基州)** vs. **Tennessee (田纳西州)**
 
 ## 2020.10.31
 
-- A psychology professor whom I've never met once wrote me a mini-**manifesto**, **disparaging** my efforts as a critic.
+- A psychology professor whom I've never met once wrote me a mini-**manifesto (宣言)**, **disparaging** my efforts as a critic.
 - **Bumblers** are the people who get up every morning and make mistakes, trying to find truth but mainly tripping over their own feet, occasionally getting it right but typically getting it wrong.
 - I think this dualism is **counterproductive**.
 - but it would be more **evocative** to show a series of images showing graying hair.
@@ -652,7 +658,7 @@
 - that was my mantra
 - lay the code out for everyone to see
 - it is neurobiologically that's how we're wired.
-- most excruciating experiences of being excluded.
+- most **excruciating (极为疼痛的)** experiences of being excluded.
 - unraveled connection
 - human empathy
 - The thing that underpinned this
@@ -828,8 +834,8 @@
 - we are more polarized than we ever have been in history
 - **plumber**: 水管工人
 - **nod** and smile to show that you're paying attention.
-- it's **crap**.
-- don't **pontificate**.
+- it's **crap (废话，废物)**.
+- don't **pontificate (自以为是地谈论，目空一切地议论)**.
 - I don't allow **pundits** on my show.
 - The famed therapist M. Scott Peck said that true listening requires a **setting aside** of oneself.
 - the speaker will become less and less vulnerable and more and more likely to open up the [inner recesses](https://www.collinsdictionary.com/dictionary/english/recesses#:~:text=if%20you%20refer%20to%20the,inner%20recesses%20of%20the%20soul) of his or her mind to the listener.
@@ -937,7 +943,7 @@
 5. brash rather than decorous
 6. the men are viewed through the **prism**
 7. Leavitt is a bit more **ruthless**, willing to let his characters hang in classic British style (e.g., Evelyn Waugh or George Orwell), in contrast to Wolitzer who likes her characters so much that she wants to give them a happy ending.
-8. **disparage** a number of journals
+8. **disparage (轻视，贬低，批评，非难)** a number of journals
 9. Is it the number of articles that they publish that end up being **bogus**?
 
 ## 2020.01.15
@@ -1194,11 +1200,11 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2019.09.09
 
 1. as far as I can tell: 据我所知
-2. You really are a **fabulous** designer.
+2. You really are a **fabulous (极好的，绝妙的)** designer.
 
 ## 2019.01.13
 
-1. have a slight edge over
+1. If you have a slight edge it means you have a small advantage over someone.
 
 ## 2019.01.01
 
@@ -1214,9 +1220,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2018.10.04
 
-1. paramount
-2. excruciating
-3. contrived
+- The court said that the right to free expression was **paramount (首要的，主要的；最高的，至上的)**.
+- Such parables may seem too **contrived (不自然的，勉强的)** to be **illuminating (富于启发的)**.
 
 ## 2018.10.03
 
@@ -1732,12 +1737,12 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. King Richard I of England was given the very laudatory epithet "the Lion-Hearted".
 2. His personal code of behavior on the playing field is epitomized by his favorite saying, Nice guys finish last.
 3. Votes don't like political advertisements in which opponents disparage one another.
-4. He procrastinated and missed the submission deadline.
-5. The strike may prod the government into action.
-6. A single blast of the shotgun squandered the herd of deer.
-7. He veered the car abruptly to the right to avoid a collision.
-8. She is venerated by the public as a saint.
-9. He was vituperated for betraying his friends.
+4. He **procrastinated (拖延，耽搁)** and missed the submission deadline.
+5. The strike may **prod (刺激，促使)** the government into action.
+6. A single **blast (爆炸，冲击波)** of the **shotgun (霰弹猎枪)** **squandered (驱散；浪费，挥霍)** the **herd (兽群、畜群)** of **deer (鹿)**.
+7. He **veered (转向)** the car **abruptly (突然地，意外地)** to the right to avoid a **collision (碰撞，冲突)**.
+8. She is **venerated (尊敬，崇敬)** by the public as a **saint (圣人，道德崇高的人)**.
+9. He was **vituperated (谩骂，辱骂)** for betraying his friends.
 10. We do not have even the faintest inkling of what the project was all about.
 11. A suspension without pay is condign punishment for breaking the company's code of business ethics.
 12. All people concurred to pass the reform legislation.

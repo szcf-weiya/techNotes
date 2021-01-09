@@ -76,7 +76,7 @@ disqus 迁移（待研究）
 
 ### 更换服务器重新配置
 
-#### Step 1: Install Apache2 
+#### Step 1: Install Apache2
 
 ```bash
 sudo apt update
@@ -114,7 +114,7 @@ sudo a2dissite 000-default.conf
 直接下载就好了
 
 ```bash
-sudo apt install php 
+sudo apt install php
 ```
 
 默认装的是 php7.2，虽然文档中说的是 php5.6，切换不同版本的 php 可以参考 [How to install php5 and php7 on Ubuntu 18.04 LTS](https://vitux.com/how-to-install-php5-and-php7-on-ubuntu-18-04-lts/)
@@ -206,7 +206,7 @@ $ sudo vi /etc/apache2/apache2.conf
 ​</Directory>
 ```
 
-然后 
+然后
 
 ```bash
 sudo service apache2 restart
@@ -221,7 +221,7 @@ Step 1 与上文完全一致，只不过不需要配置安全组，只不过在�
 Step 2 直接按照 php 就好，因为并没有 php5.6，即
 
 ```bash
-sudo apt install php 
+sudo apt install php
 sudo apt-get install php7.2-curl
 ```
 
@@ -303,7 +303,7 @@ Step 3 不需要重新下载了，直接把 aws 服务器中的文件夹复制�
 
 > URI (Identifier) 只讓你可以"區別"資源
 > URL (Locator) 還讓你可以"找到"資源 (所以URL比一般的URI更"強", 是URI的子集)比如人的身份證號是 (非Locator的) Identifier: 不同身份證號一定是不同人, 但是用身份證號本身是找不到人的。这个人的住址或座标才是Locator。
-> 
+>
 > 作者：艾征霸
 > 链接：https://www.zhihu.com/question/19557151/answer/130049112
 > 来源：知乎
@@ -445,7 +445,7 @@ exiftool -all= /tmp/my_photo.jpg
 
 refer to [Configuring Jekyll for User and Project GitHub Pages](http://downtothewire.io/2015/08/15/configuring-jekyll-for-user-and-project-github-pages/)
 
-## Image Slider 
+## Image Slider
 
 参考 [Image Slider - Jssor Slider](https://www.jssor.com/demos/image-slider.slider)
 
@@ -480,7 +480,7 @@ refer to [Configuring Jekyll for User and Project GitHub Pages](http://downtothe
 
 则我可以用
 
-> 
+>
 {: .theorem}
 
 实现定理环境，而且这样还有额外的好处，可以突出定理。但是 before 的字 "Theorem" 会单独占据一行，误打误撞看到 [Adding quotes to blockquote](https://stackoverflow.com/questions/32909991/adding-quotes-to-blockquote)，试了一下
@@ -530,7 +530,7 @@ Implementation for html can be found [here](https://stackoverflow.com/questions/
 今天 GitHub 提醒英文博客存在
 
 ```md
-Known high severity security vulnerability detected in rubyzip < 1.3.0 defined in Gemfile.lock. 
+Known high severity security vulnerability detected in rubyzip < 1.3.0 defined in Gemfile.lock.
 ```
 
 于是合并了它自动创建的 pull request: [Merge pull request #79 from szcf-weiya/dependabot/bundler/rubyzip-2.0.0](https://github.com/szcf-weiya/en/commit/54a7c509594211f7cc05736aa4adb5135bbe21d4)
@@ -561,7 +561,7 @@ bundle exec jekyll serve
 bundle env | grep ruby
 ```
 
-发现里面的版本确实还是 2.3，于是按照里面的建议运行 
+发现里面的版本确实还是 2.3，于是按照里面的建议运行
 
 ```bash
 gem install bundler
@@ -617,7 +617,7 @@ ERROR:  Error installing jekyll:
         jekyll requires RubyGems version >= 2.7.0. Try 'gem update --system' to update RubyGems itself.
 ```
 
-于是运行 
+于是运行
 
 ```
 [sudo] gem update --system
@@ -669,3 +669,15 @@ ERROR:  While executing gem ... (Errno::EACCES)
 2. 对于又拍云，其 https 连接是增值服务，而华为云竟然没看到这一点，这样挺好的，所以少交了 https 的增值费。
 
 另外，在配置华为云的回源 host 突然意识到一点，其实没必要通过中间域名，或许直接在 github 那边的 CNAME 文件中添加同一加速域名即可，不需要单独解析这个加速域名！这个就有点像在服务器中任意指定一个域名，但是并没有在域名服务商那边提供解析，它只是为了在 github 这个大服务器中找到对应的结点。
+
+## 更新证书
+
+一年的免费证书就要到期了，是时候更新一波了……
+
+从 2021 开始，阿里云上的免费证书需要通过 “证书资源包” 来申请，首先花 0 元购买好证书之后，然后申请证书，主要是填写绑定的域名信息，及联系人信息，然后会验证域名所有权，一般是通过 DNS 验证，这里一开始下拉框竟然只有手动 DNS 和文件验证两种方式，不过似乎输入了域名之后，可能是识别到了当前域名就在阿里云上面，所以出现了自动 DNS 验证，简言之自动在域名解析那里添加了解析，所以后面只要确认就好了。
+
+证书立马就能签发，下一步是需要在 CDN 那里更改证书，只需要切换证书编号就好。
+
+其实在 CDN 中证书选择一栏有“免费证书”，按理说不需要单独的证书申请流程，但是似乎不太成功，并且有提醒信息
+
+> 受CA机构对免费证书的管理调整，免费证书的申请将会受到影响，建议使用云盾证书服务进行相关证书申请。
