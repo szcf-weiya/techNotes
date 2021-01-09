@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/website/">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.15aa0b43.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.75751829.min.css">
         
       
     
@@ -988,6 +988,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    更新证书
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1883,6 +1890,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    更新证书
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1961,7 +1975,7 @@ sudo a2dissite <span class="m">000</span>-default.conf
 <p>这样的好处是以后方便添加不同的 hosts。</p>
 <h4 id="step-2-install-php">Step 2: Install php<a class="headerlink" href="#step-2-install-php" title="Permanent link">&para;</a></h4>
 <p>直接下载就好了</p>
-<div class="highlight"><pre><span></span><code>sudo apt install php 
+<div class="highlight"><pre><span></span><code>sudo apt install php
 </code></pre></div>
 <p>默认装的是 php7.2，虽然文档中说的是 php5.6，切换不同版本的 php 可以参考 <a href="https://vitux.com/how-to-install-php5-and-php7-on-ubuntu-18-04-lts/">How to install php5 and php7 on Ubuntu 18.04 LTS</a></p>
 <p>注意有</p>
@@ -2020,14 +2034,14 @@ git clone git@github.com:fooleap/disqus-php-api.git
 ​     Require all granted
 ​&lt;/Directory&gt;
 </code></pre></div>
-<p>然后 </p>
+<p>然后</p>
 <div class="highlight"><pre><span></span><code>sudo service apache2 restart
 </code></pre></div>
 <h3 id="20201001-ubuntu-wsl">20201001: 由 Ubuntu 系统迁移至 WSL<a class="headerlink" href="#20201001-ubuntu-wsl" title="Permanent link">&para;</a></h3>
 <p>因为 aws 的 free tier 到期了，所以需要换一个境外服务器来转发 disqus 的评论，想到可以直接用办公室的电脑。</p>
 <p>Step 1 与上文完全一致，只不过不需要配置安全组，只不过在本地试图访问 <code>localhost</code>，如果跳出网络配置的对话框，点击允许就好。</p>
 <p>Step 2 直接按照 php 就好，因为并没有 php5.6，即</p>
-<div class="highlight"><pre><span></span><code>sudo apt install php 
+<div class="highlight"><pre><span></span><code>sudo apt install php
 sudo apt-get install php7.2-curl
 </code></pre></div>
 <p>在 WSL 中启动服务器时，出现</p>
@@ -2216,7 +2230,7 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 </ul>
 <h2 id="ruby">ruby 版本<a class="headerlink" href="#ruby" title="Permanent link">&para;</a></h2>
 <p>今天 GitHub 提醒英文博客存在</p>
-<div class="highlight"><pre><span></span><code>Known high severity security vulnerability detected in rubyzip &lt; 1.3.0 defined in Gemfile.lock. 
+<div class="highlight"><pre><span></span><code>Known high severity security vulnerability detected in rubyzip &lt; 1.3.0 defined in Gemfile.lock.
 </code></pre></div>
 <p>于是合并了它自动创建的 pull request: <a href="https://github.com/szcf-weiya/en/commit/54a7c509594211f7cc05736aa4adb5135bbe21d4">Merge pull request #79 from szcf-weiya/dependabot/bundler/rubyzip-2.0.0</a></p>
 <p>但是后来发现在本地 <code>bundle exec jekyll serve</code> 预览失败。报错信息为</p>
@@ -2233,7 +2247,7 @@ sudo apt-get install ruby2.4
 <p>还是报同样的错误信息。后来参考 <a href="https://github.com/bundler/bundler/issues/4260">Bundler using wrong ruby version</a>，运行</p>
 <div class="highlight"><pre><span></span><code>bundle env <span class="p">|</span> grep ruby
 </code></pre></div>
-<p>发现里面的版本确实还是 2.3，于是按照里面的建议运行 </p>
+<p>发现里面的版本确实还是 2.3，于是按照里面的建议运行</p>
 <div class="highlight"><pre><span></span><code>gem install bundler
 </code></pre></div>
 <p>这样重新运行 <code>bundle env | grep ruby</code> 发现版本确实更新过来了。但是再次运行  </p>
@@ -2262,7 +2276,7 @@ Make sure that <span class="sb">`</span>gem install commonmarker -v <span class=
 <div class="highlight"><pre><span></span><code>ERROR:  Error installing jekyll:
         jekyll requires RubyGems version &gt;= 2.7.0. Try &#39;gem update --system&#39; to update RubyGems itself.
 </code></pre></div>
-<p>于是运行 </p>
+<p>于是运行</p>
 <div class="highlight"><pre><span></span><code>[sudo] gem update --system
 </code></pre></div>
 <p>应该要加上 <code>sudo</code>，否则会报错</p>
@@ -2297,6 +2311,14 @@ ERROR:  While executing gem ... (Errno::EACCES)
 <li>对于又拍云，其 https 连接是增值服务，而华为云竟然没看到这一点，这样挺好的，所以少交了 https 的增值费。</li>
 </ol>
 <p>另外，在配置华为云的回源 host 突然意识到一点，其实没必要通过中间域名，或许直接在 github 那边的 CNAME 文件中添加同一加速域名即可，不需要单独解析这个加速域名！这个就有点像在服务器中任意指定一个域名，但是并没有在域名服务商那边提供解析，它只是为了在 github 这个大服务器中找到对应的结点。</p>
+<h2 id="_8">更新证书<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>一年的免费证书就要到期了，是时候更新一波了……</p>
+<p>从 2021 开始，阿里云上的免费证书需要通过 “证书资源包” 来申请，首先花 0 元购买好证书之后，然后申请证书，主要是填写绑定的域名信息，及联系人信息，然后会验证域名所有权，一般是通过 DNS 验证，这里一开始下拉框竟然只有手动 DNS 和文件验证两种方式，不过似乎输入了域名之后，可能是识别到了当前域名就在阿里云上面，所以出现了自动 DNS 验证，简言之自动在域名解析那里添加了解析，所以后面只要确认就好了。</p>
+<p>证书立马就能签发，下一步是需要在 CDN 那里更改证书，只需要切换证书编号就好。</p>
+<p>其实在 CDN 中证书选择一栏有“免费证书”，按理说不需要单独的证书申请流程，但是似乎不太成功，并且有提醒信息</p>
+<blockquote>
+<p>受CA机构对免费证书的管理调整，免费证书的申请将会受到影响，建议使用云盾证书服务进行相关证书申请。</p>
+</blockquote>
                 
               
               
@@ -2413,8 +2435,8 @@ ERROR:  While executing gem ... (Errno::EACCES)
       
     </div>
     
-      <script src="../assets/javascripts/vendor.08c56446.min.js"></script>
-      <script src="../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
