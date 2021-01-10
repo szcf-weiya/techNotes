@@ -1,3 +1,7 @@
+## 2021.01.10
+
+- A **pantheon (万神殿；名流群)** of super intelligent beings will watch over us.
+
 ## 2021.01.09
 
 - That particular study was **riddled (充满着)** with flaws.
