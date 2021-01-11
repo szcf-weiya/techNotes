@@ -1,3 +1,7 @@
+## 2021.01.11
+
+- **Barring (不包括，除非)** that, I have no other option.
+
 ## 2021.01.10
 
 - A **pantheon (万神殿；名流群)** of super intelligent beings will watch over us.
@@ -801,16 +805,16 @@
 ### Cameron Russell·TEDxMidAtlantic: Looks aren't everything. Believe me, I'm a model.
 
 - there's an uncomfortable tension in the room.
-- if some of the women were really horrified
-- I am quite privileged to be able to transform what you think of me in a very brief 10 seconds.
+- if some of the women were really **horrified (震惊的，惊骇的)**
+- I am quite **privileged (有特权的)** to be able to transform what you think of me in a very brief 10 seconds.
 - Image is powerful, but also, image is superficial.
-- barring surgery, or the **fake tan** (人工日晒肤色；假冒古铜色；[美黑](https://zhuanlan.zhihu.com/p/28819200bar))
-- I was **scouted**.
+- **fake tan** (人工日晒肤色；假冒古铜色；[美黑](https://zhuanlan.zhihu.com/p/28819200bar))
+- I was **scouted (侦察，跟踪，监视，发现)**.
 - I won a genetic lottery, and I am the recipient of a legacy.
 - slender figures, and femininity
-- there are some fashionistas who are like
+- there are some **fashionistas (疯狂追求时髦与流行的人)** who are like
 - they don't put me in charge of that.
-- a ninja cardiothoracic surgeon poet
+- a **ninja (日本武士，忍者)** **cardiothoracic (心胸外科)** **surgeon (外科医生)** **poet (诗人)**
 - saying that you want to be a model when you grow up is akin to saying you want to win the Powerball when you grow up.
 - because unlike cardiothoracic surgeons, it can just be distilled right now.
 - underwear model
