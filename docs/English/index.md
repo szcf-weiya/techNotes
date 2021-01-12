@@ -1,3 +1,7 @@
+## 2021.01.12
+
+- Scientific rigor and social **conscience (良心)** do not always go together.
+
 ## 2021.01.11
 
 - **Barring (不包括，除非)** that, I have no other option.
