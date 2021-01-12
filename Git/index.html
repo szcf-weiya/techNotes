@@ -2209,7 +2209,7 @@ Changes to be committed:
 
 Changes not staged <span class="k">for</span> commit:
   <span class="o">(</span>use <span class="s2">&quot;git add/rm &lt;file&gt;...&quot;</span> to update what will be committed<span class="o">)</span>
-  <span class="o">(</span>use <span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="o">)</span>
+  <span class="o">(</span>use <span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes <span class="k">in</span> working directory<span class="o">)</span>
 
         deleted:    docs/Linux/Peek <span class="m">2020</span>-08-20 <span class="m">10</span>-06.mp4
 
@@ -2272,7 +2272,7 @@ git clean -f
 <p>refer to <a href="https://stackoverflow.com/questions/2474097/how-do-i-finish-the-merge-after-resolving-my-merge-conflicts">How do I finish the merge after resolving my merge conflicts?</a></p>
 <h2 id="push">push<a class="headerlink" href="#push" title="Permanent link">&para;</a></h2>
 <p>采用低版本的 git， 如 <code>v1.8.3.1</code> 当 push 时会报出以下提醒信息，</p>
-<div class="highlight"><pre><span></span><code>warning: push.default is unset<span class="p">;</span> its implicit value is changing in
+<div class="highlight"><pre><span></span><code>warning: push.default is unset<span class="p">;</span> its implicit value is changing <span class="k">in</span>
 Git <span class="m">2</span>.0 from <span class="s1">&#39;matching&#39;</span> to <span class="s1">&#39;simple&#39;</span>. To squelch this message
 and maintain the current behavior after the default changes, use:
 
@@ -2283,7 +2283,7 @@ To squelch this message and adopt the new behavior now, use:
   git config --global push.default simple
 
 See <span class="s1">&#39;git help config&#39;</span> and search <span class="k">for</span> <span class="s1">&#39;push.default&#39;</span> <span class="k">for</span> further information.
-<span class="o">(</span>the <span class="s1">&#39;simple&#39;</span> mode was introduced in Git <span class="m">1</span>.7.11. Use the similar mode
+<span class="o">(</span>the <span class="s1">&#39;simple&#39;</span> mode was introduced <span class="k">in</span> Git <span class="m">1</span>.7.11. Use the similar mode
 <span class="s1">&#39;current&#39;</span> instead of <span class="s1">&#39;simple&#39;</span> <span class="k">if</span> you sometimes use older versions of Git<span class="o">)</span>
 </code></pre></div>
 <p>而自己本机电脑一般采用 <code>v2.0+</code>， 比如当前 <code>v2.17.1</code> 的 git，所以直接采用 <code>simple</code> 模式便好了。</p>

@@ -1508,7 +1508,7 @@ $ sudo apt-get install libsox-fmt-all
 <p>先暂时写了个简单的列表顺序播放的脚本 </p>
 <div class="highlight"><pre><span></span><code>$ cat playmusic.sh 
 <span class="c1">#!/bin/bash</span>
-<span class="k">for</span> music in ~/Music/*<span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> music <span class="k">in</span> ~/Music/*<span class="p">;</span> <span class="k">do</span>
     <span class="k">if</span> <span class="o">[[</span> -f <span class="nv">$music</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
         play -v <span class="m">0</span>.35 <span class="s2">&quot;</span><span class="nv">$music</span><span class="s2">&quot;</span>
     <span class="k">fi</span>

@@ -3177,8 +3177,8 @@ alias psaux=&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#
 <div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nv">list</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
-<span class="k">for</span> nc in <span class="o">{</span><span class="m">2</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
-  <span class="k">for</span> nf in <span class="m">5</span> <span class="m">10</span> <span class="m">15</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> nc <span class="k">in</span> <span class="o">{</span><span class="m">2</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+  <span class="k">for</span> nf <span class="k">in</span> <span class="m">5</span> <span class="m">10</span> <span class="m">15</span><span class="p">;</span> <span class="k">do</span>
     <span class="nv">list</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$list</span><span class="s2">,acc-</span><span class="nv">$nc</span><span class="s2">-</span><span class="nv">$nf</span><span class="s2">&quot;</span>
     <span class="c1">#https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash</span>
     <span class="nb">echo</span> <span class="si">${</span><span class="nv">list</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span>
@@ -3233,11 +3233,11 @@ pdftk input.pdf update_info metadata output output.pdf
 <h3 id="_19">视频旋转<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <p>参考<a href="https://askubuntu.com/questions/83711/how-can-i-rotate-a-video">How can I rotate a video?</a></p>
 <p>直接用</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i in.mov -vf <span class="s2">&quot;transpose=1&quot;</span> out.mov
+<div class="highlight"><pre><span></span><code>ffmpeg -i <span class="k">in</span>.mov -vf <span class="s2">&quot;transpose=1&quot;</span> out.mov
 </code></pre></div>
 <p>然后报错 <a href="(https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled)">“The encoder &lsquo;aac&rsquo; is experimental but experimental codecs are not enabled”</a> </p>
 <p>注意添加 <code>-strict -2</code> 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i in.mov -vf <span class="s2">&quot;transpose=1&quot;</span> -strict -2 out.mov
+<div class="highlight"><pre><span></span><code>ffmpeg -i <span class="k">in</span>.mov -vf <span class="s2">&quot;transpose=1&quot;</span> -strict -2 out.mov
 </code></pre></div>
 <h3 id="_20">视频剪切<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">00</span>:00:30.0 -i input.wmv -c copy -t <span class="m">00</span>:00:10.0 output.wmv
@@ -3401,18 +3401,18 @@ sudo rm Hotspot
 <div class="highlight"><pre><span></span><code>~$ sudo hdparm -Tt /dev/sdc1
 
 /dev/sdc1:
- Timing cached reads:   <span class="m">22298</span> MB in  <span class="m">1</span>.99 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">11228</span>.47 MB/sec
- Timing buffered disk reads: <span class="m">120</span> MB in  <span class="m">3</span>.01 <span class="nv">seconds</span> <span class="o">=</span>  <span class="m">39</span>.89 MB/sec
+ Timing cached reads:   <span class="m">22298</span> MB <span class="k">in</span>  <span class="m">1</span>.99 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">11228</span>.47 MB/sec
+ Timing buffered disk reads: <span class="m">120</span> MB <span class="k">in</span>  <span class="m">3</span>.01 <span class="nv">seconds</span> <span class="o">=</span>  <span class="m">39</span>.89 MB/sec
 
 ~$ sudo hdparm -Tt /dev/sde1
 
 /dev/sde1:
- Timing cached reads:   <span class="m">24390</span> MB in  <span class="m">1</span>.99 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">12281</span>.26 MB/sec
- Timing buffered disk reads: <span class="m">1318</span> MB in  <span class="m">3</span>.00 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">439</span>.04 MB/sec
+ Timing cached reads:   <span class="m">24390</span> MB <span class="k">in</span>  <span class="m">1</span>.99 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">12281</span>.26 MB/sec
+ Timing buffered disk reads: <span class="m">1318</span> MB <span class="k">in</span>  <span class="m">3</span>.00 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">439</span>.04 MB/sec
 </code></pre></div>
 <p>上面是普通的移动硬盘，底下是新买的移动 SSD 硬盘，差异还是很明显的。继续测试写入的速度，</p>
 <div class="highlight"><pre><span></span><code>~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/media/weiya/Extreme<span class="se">\ </span>SSD/tempfile <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
-<span class="m">1024</span>+0 records in
+<span class="m">1024</span>+0 records <span class="k">in</span>
 <span class="m">1024</span>+0 records out
 <span class="m">1073741824</span> bytes <span class="o">(</span><span class="m">1</span>.1 GB, <span class="m">1</span>.0 GiB<span class="o">)</span> copied, <span class="m">2</span>.11846 s, <span class="m">507</span> MB/s
 
@@ -3420,7 +3420,7 @@ real    0m2.131s
 user    0m0.011s
 sys 0m0.543s
 ~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/media/weiya/Seagate/tempfile <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
-<span class="m">1024</span>+0 records in
+<span class="m">1024</span>+0 records <span class="k">in</span>
 <span class="m">1024</span>+0 records out
 <span class="m">1073741824</span> bytes <span class="o">(</span><span class="m">1</span>.1 GB, <span class="m">1</span>.0 GiB<span class="o">)</span> copied, <span class="m">12</span>.4132 s, <span class="m">86</span>.5 MB/s
 
@@ -3430,7 +3430,7 @@ sys 0m1.551s
 </code></pre></div>
 <p>以及写出的速度，</p>
 <div class="highlight"><pre><span></span><code>~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/media/weiya/Extreme<span class="se">\ </span>SSD/tempfile <span class="nv">of</span><span class="o">=</span>/dev/null <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
-<span class="m">1024</span>+0 records in
+<span class="m">1024</span>+0 records <span class="k">in</span>
 <span class="m">1024</span>+0 records out
 <span class="m">1073741824</span> bytes <span class="o">(</span><span class="m">1</span>.1 GB, <span class="m">1</span>.0 GiB<span class="o">)</span> copied, <span class="m">4</span>.01399 s, <span class="m">268</span> MB/s
 
@@ -3438,7 +3438,7 @@ real    0m4.018s
 user    0m0.000s
 sys 0m0.442s
 ~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/media/weiya/Seagate/tempfile <span class="nv">of</span><span class="o">=</span>/dev/null <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
-<span class="m">1024</span>+0 records in
+<span class="m">1024</span>+0 records <span class="k">in</span>
 <span class="m">1024</span>+0 records out
 <span class="m">1073741824</span> bytes <span class="o">(</span><span class="m">1</span>.1 GB, <span class="m">1</span>.0 GiB<span class="o">)</span> copied, <span class="m">65</span>.6471 s, <span class="m">16</span>.4 MB/s
 
@@ -3523,13 +3523,13 @@ tp-smapi   <span class="o">=</span> inactive <span class="o">(</span>ThinkPad no
 <div class="highlight"><pre><span></span><code>$ man apt-get
 ...
     upgrade
-       upgrade is used to install the newest versions of all packages currently installed on the system from the sources enumerated in /etc/apt/sources.list. Packages currently
+       upgrade is used to install the newest versions of all packages currently installed on the system from the sources enumerated <span class="k">in</span> /etc/apt/sources.list. Packages currently
        installed with new versions available are retrieved and upgraded<span class="p">;</span> under no circumstances are currently installed packages removed, or packages not already installed retrieved
        and installed. New versions of currently installed packages that cannot be upgraded without changing the install status of another package will be left at their current
        version. An update must be performed first so that apt-get knows that new versions of packages are available.
 
    dist-upgrade
-       dist-upgrade in addition to performing the <span class="k">function</span> of upgrade, also intelligently handles changing dependencies with new versions of packages<span class="p">;</span> apt-get has a <span class="s2">&quot;smart&quot;</span> conflict
+       dist-upgrade <span class="k">in</span> addition to performing the <span class="k">function</span> of upgrade, also intelligently handles changing dependencies with new versions of packages<span class="p">;</span> apt-get has a <span class="s2">&quot;smart&quot;</span> conflict
        resolution system, and it will attempt to upgrade the most important packages at the expense of less important ones <span class="k">if</span> necessary. The dist-upgrade <span class="nb">command</span> may therefore
        remove some packages. The /etc/apt/sources.list file contains a list of locations from which to retrieve desired package files. See also apt_preferences<span class="o">(</span><span class="m">5</span><span class="o">)</span> <span class="k">for</span> a mechanism
        <span class="k">for</span> overriding the general settings <span class="k">for</span> individual packages.

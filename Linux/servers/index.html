@@ -1476,8 +1476,8 @@
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Bash</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="k">for</span> NUMBERS in <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="p">;</span> <span class="k">do</span>
-    <span class="k">for</span> LETTERS in a b c d e<span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> NUMBERS <span class="k">in</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="p">;</span> <span class="k">do</span>
+    <span class="k">for</span> LETTERS <span class="k">in</span> a b c d e<span class="p">;</span> <span class="k">do</span>
         qsub -v <span class="nv">NUMBERARG</span><span class="o">=</span><span class="nv">$NUMBERS</span>,LETTERARG<span class="o">=</span><span class="nv">$LETTERS</span> my_qsub_script.pbs
     <span class="k">done</span>
 <span class="k">done</span>
@@ -1568,8 +1568,8 @@ It is also possible that a host key has just been changed.
 The fingerprint <span class="k">for</span> the ECDSA key sent by the remote host is
 SHA256:eSpztdqzLF6rBXRWd8pCW0v4utoE5CYTUHTaUb0Qn0w.
 Please contact your system administrator.
-Add correct host key in /home/weiya/.ssh/known_hosts to get rid of this message.
-Offending ECDSA key in /home/weiya/.ssh/known_hosts:42
+Add correct host key <span class="k">in</span> /home/weiya/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key <span class="k">in</span> /home/weiya/.ssh/known_hosts:42
   remove with:
   ssh-keygen -f <span class="s2">&quot;/home/weiya/.ssh/known_hosts&quot;</span> -R <span class="s2">&quot;chpc-login01.itsc.cuhk.edu.hk&quot;</span>
 ECDSA host key <span class="k">for</span> chpc-login01.itsc.cuhk.edu.hk has changed and you have requested strict checking.

@@ -1795,14 +1795,14 @@
 <ul>
 <li>separated by space</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> skill in Ada Coffe Action Java<span class="p">;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> skill <span class="k">in</span> Ada Coffe Action Java<span class="p">;</span> <span class="k">do</span>
     <span class="nb">echo</span> <span class="s2">&quot;I am good at </span><span class="si">${</span><span class="nv">skill</span><span class="si">}</span><span class="s2">Script&quot;</span>
 <span class="k">done</span>
 </code></pre></div>
 <ul>
 <li><code>start..stop..length</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> i in <span class="o">{</span><span class="m">5</span>..50..5<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">5</span>..50..5<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
   <span class="nb">echo</span> <span class="nv">$i</span>
 <span class="k">done</span>
 </code></pre></div>
@@ -1812,7 +1812,7 @@
 <p>actually, it can be used to construct an array,</p>
 <div class="highlight"><pre><span></span><code><span class="nv">arr</span><span class="o">=({</span><span class="m">1</span>..10..2<span class="o">})</span>
 <span class="nb">echo</span> <span class="si">${</span><span class="nv">arr</span><span class="p">[@]</span><span class="si">}</span>
-<span class="k">for</span> i in <span class="si">${</span><span class="nv">arr</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="si">${</span><span class="nv">arr</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>
   <span class="nb">echo</span> <span class="nv">$i</span>
 <span class="k">done</span>
 </code></pre></div>
@@ -1820,7 +1820,7 @@
 <li><code>seq</code></li>
 </ul>
 <p>alternatively, we can use <code>seq</code>,</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> i in <span class="k">$(</span>seq <span class="m">5</span> <span class="m">5</span> <span class="m">50</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> i <span class="k">in</span> <span class="k">$(</span>seq <span class="m">5</span> <span class="m">5</span> <span class="m">50</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
     <span class="nb">echo</span> <span class="nv">$i</span>
 <span class="k">done</span>
 </code></pre></div>
@@ -1901,7 +1901,7 @@
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 cat access.log <span class="p">|</span>sed -rn <span class="s1">&#39;/28\/Jan\/2015/p&#39;</span> &gt; a.txt 
 cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</span><span class="p">|</span>sort <span class="p">|</span>uniq &gt; ipnum.txt
-<span class="k">for</span> i in <span class="sb">`</span>cat ipnum.txt<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="sb">`</span>cat ipnum.txt<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
     <span class="nv">iptj</span><span class="o">=</span><span class="sb">`</span>cat  access.log <span class="p">|</span>grep <span class="nv">$i</span> <span class="p">|</span> grep -v <span class="m">400</span> <span class="p">|</span>wc -l<span class="sb">`</span>
     <span class="nb">echo</span> <span class="s2">&quot;ip地址&quot;</span><span class="nv">$i</span><span class="s2">&quot;在2015-01-28日全天(24小时)累计成功请求&quot;</span><span class="nv">$iptj</span><span class="s2">&quot;次，平均每分钟请求次数为：&quot;</span><span class="k">$((</span><span class="nv">$iptj</span><span class="o">/</span><span class="m">1440</span><span class="k">))</span> &gt;&gt; result.txt
 <span class="k">done</span>
@@ -1947,8 +1947,8 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <p>refer to <a href="https://stackoverflow.com/questions/1527049/how-can-i-join-elements-of-an-array-in-bash">How can I join elements of an array in Bash?</a></p>
 <h3 id="a-more-complex-way">A more complex way<a class="headerlink" href="#a-more-complex-way" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nv">list</span><span class="o">=</span>
-<span class="k">for</span> nc in <span class="o">{</span><span class="m">2</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
-  <span class="k">for</span> nf in <span class="m">5</span> <span class="m">10</span> <span class="m">15</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> nc <span class="k">in</span> <span class="o">{</span><span class="m">2</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+  <span class="k">for</span> nf <span class="k">in</span> <span class="m">5</span> <span class="m">10</span> <span class="m">15</span><span class="p">;</span> <span class="k">do</span>
     <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$list</span><span class="s2">&quot;</span> <span class="o">]</span>
     <span class="k">then</span>
         <span class="nv">list</span><span class="o">=</span>acc-<span class="nv">$nc</span>-<span class="nv">$nf</span>
