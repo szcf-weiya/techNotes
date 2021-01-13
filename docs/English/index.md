@@ -1,3 +1,7 @@
+## 2020.01.13
+
+- enact
+
 ## 2021.01.12
 
 - Scientific rigor and social **conscience (良心)** do not always go together.
