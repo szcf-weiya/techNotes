@@ -1,3 +1,7 @@
+## 2020.01.14
+
+- It is full of prominent, successful, well-connected **bluffers (骗子，虚张声势的人)**.
+
 ## 2020.01.13
 
 - enact
