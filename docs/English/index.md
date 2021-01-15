@@ -1,3 +1,7 @@
+## 2020.01.15
+
+- It illustrates a problem with political **punditry (权威的意见)**: There's a demand for predictions, and there's no shortage of outlets promising a "**crystal ball (【占卜用的】水晶球；预言未来的方法)**" or some other short of certainty.
+
 ## 2020.01.14
 
 - It is full of prominent, successful, well-connected **bluffers (骗子，虚张声势的人)**.
