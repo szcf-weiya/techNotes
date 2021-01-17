@@ -1,3 +1,7 @@
+## 2020.01.17
+
+- **cram (塞满，填入)** them into a single talk.
+
 ## 2020.01.16
 
 - We will arrange the payment of the **lump-sum (总额，一次总付的钱款)** award of $1000.
