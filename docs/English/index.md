@@ -1,3 +1,7 @@
+## 2020.01.18
+
+- I did not know whether it were not a proper opportunity to offer a bit of **admonition (告诫，忠告)**.
+
 ## 2020.01.17
 
 - **cram (塞满，填入)** them into a single talk.

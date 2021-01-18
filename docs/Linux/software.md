@@ -5,11 +5,13 @@
 ### 复制
 
 - 单行复制: 在命令模式下，将光标移动到将要复制的行处，按“yy”进行复制；
-- 多行复制: 在命令模式下，将光标移动到将要复制的首行处，按“nyy”复制n行；其中n为1、2、3……
+- 多行复制: 在命令模式下，
+    - `nyy` + `p`
+    - `:6,9 co 12`:复制第6行到第9行之间的内容到第12行后面。
+    - 设置标签，光标移到起始行（结束行，粘贴行），输入 `ma` (`mb`, `mc`) `:'a, 'b co 'c`。
 
-### 粘贴
-    
-在命令模式下，将光标移动到将要粘贴的行处，按“p”进行粘贴
+!!! tip
+    将 `co` 改成 `m` 就变成剪切了。
 
 ### 删除
 
@@ -18,62 +20,52 @@
 
 参考 [How to Delete Lines in Vim / Vi](https://linuxize.com/post/vim-delete-line/)
 
-### vi复制多行文本的方法
+### 去除 BOM
 
-#### 方法1：
+[BOM (byte-order mark, 字节顺序标记)](https://zh.wikipedia.org/wiki/%E4%BD%8D%E5%85%83%E7%B5%84%E9%A0%86%E5%BA%8F%E8%A8%98%E8%99%9F) 是位于码点 `U+FEFF` 的统一码字符的名称。
 
-1. 光标放到第6行，输入 `2yy`
-2. 光标放到第9行，输入 `p`
-3. 此方法适合复制少量行文本的情况，复制第6行（包括）下面的2行数据，放到第9行下面。
+> 在UTF-8中，虽然在 Unicode 标准上允许字节顺序标记的存在，但实际上并不一定需要。UTF-8编码过的字节顺序标记则被用来标示它是UTF-8的文件。它只用来标示一个UTF-8的文件，而不用来说明字节顺序。许多视窗程序（包含记事本）会需要添加字节顺序标记到UTF-8文件，否则将无法正确解析编码，而出现乱码。然而，在类Unix系统（大量使用文本文件，用于文件格式，用于进程间通信）中，这种做法则不被建议采用。因为它会妨碍到如解译器脚本开头的Shebang等的一些重要的码的正确处理。它亦会影响到无法识别它的编程语言。如gcc会报告源码档开头有无法识别的字符。
 
-#### 方法2：
-
-命令行模式下输入
-
-`:6,9 co 12`
-
-复制第6行到第9行之间的内容到第12行后面。
-
-#### 方法3：
-
-有时候不想费劲看多少行或复制大量行时，可以使用标签来替代
-
-1. 光标移到起始行，输入ma
-2. 光标移到结束行，输入mb
-3. 光标移到粘贴行，输入mc
-
-然后 `:'a,'b co 'c` 把 co 改成 m 就成剪切了
-要删除多行的话，可以用 `：5, 9 de`
-
-### 去除BOM
-
-![](https://segmentfault.com/q/1010000000256502)
-
-vim 打开，
+如果需要去除 BOM，直接 vim 打开，
 
 ```bash
 :set nobomb
 :wq
 ```
 
-### ctrl+s 假死
+参考
 
-http://blog.csdn.net/tsuliuchao/article/details/7553003
+- [Linux环境下如何将utf-8格式文件转变成无bom的utf-8格式文件？](https://segmentfault.com/q/1010000000256502)
+- [「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别？网页代码一般使用哪个？](https://www.zhihu.com/question/20167122)
 
-使用vim时，如果你不小心按了 Ctrl + s后，你会发现不能输入任何东西了，像死掉了一般，其实vim并没有死掉，这时vim只是停止向终端输出而已，要想退出这种状态，只需按Ctrl + q 即可恢复正常。
+### Ctrl+s 假死
+
+vim并没有死掉，只是停止向终端输出而已，要想退出这种状态，只需按 `Ctrl + q` 即可恢复正常。
+
+参考[vim按了Ctrl + s后假死的解决办法](http://blog.csdn.net/tsuliuchao/article/details/7553003)
 
 ### 执行当前脚本
 
-参考[How to execute file I'm editing in Vi(m)](https://stackoverflow.com/questions/953398/how-to-execute-file-im-editing-in-vim)
+```bash
+:!%
+```
 
-另外也参考了[VIM中执行Shell命令（炫酷）](https://blog.csdn.net/bnxf00000/article/details/46618465)
+其中 `%` expands current file name，另外
 
-### 打开另外一个文件
+```bash
+:! %:p
+```
+
+会指定绝对路径，而如果路径中有空格，则用
+
+```bash
+:! "%:p"
+```
 
 参考
 
-1. [vim 打开一个文件后,如何打开另一个文件?](https://zhidao.baidu.com/question/873060894102392532.html)
-2. [VI打开和编辑多个文件的命令 分屏操作 - David.Wei0810 - 博客园](https://www.cnblogs.com/david-wei0810/p/5749408.html)
+- [How to execute file I'm editing in Vi(m)](https://stackoverflow.com/questions/953398/how-to-execute-file-im-editing-in-vim)
+- [VIM中执行Shell命令（炫酷）](https://blog.csdn.net/bnxf00000/article/details/46618465)
 
 
 ### write with sudo
@@ -86,6 +78,13 @@ For example, as said in [How does the vim “write with sudo” trick work?](htt
 
 and such reference gives a more detailed explanation for the trick.
 
+### 打开另外一个文件
+
+参考
+
+1. [vim 打开一个文件后,如何打开另一个文件?](https://zhidao.baidu.com/question/873060894102392532.html)
+2. [VI打开和编辑多个文件的命令 分屏操作 - David.Wei0810 - 博客园](https://www.cnblogs.com/david-wei0810/p/5749408.html)
+
 ## 搜狗输入法
 
 需要 fcitx，若没有装，
@@ -96,7 +95,6 @@ sudo apt-get install fcitx-table
 ```
 
 然后将输入法切换成 fcitx，在设置中语言那里，
-
 
 最后下载按照搜狗输入法，安装时我出现这样的问题导致安装失败，
 
@@ -126,11 +124,11 @@ The texlive2017 for Ubuntu cannot work for me, it reports
 
 > fatal: Could not undump 6994 4-byte item(s) ...
 
-and try 
+and try
 
 > fmtutil-sys --all
 
-but does not work, refer to [Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”](https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from), but does not work. 
+but does not work, refer to [Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”](https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from), but does not work.
 
 And I also try uninstall and reinstall texlive, but it still does not work.
 
@@ -156,7 +154,7 @@ sudo snap install okular
 
 所以问题还是回到 okular 本身，通过 snap 和 apt 安装是两个不同的版本，图标也有点差异，然后发现也有人跟我有[同样的问题](https://askubuntu.com/questions/1137830/cannot-open-pdf-files-in-mounted-usb-drive-using-okular)，有人回复说
 
-> Okular does not support removable media while installed as Snap. 
+> Okular does not support removable media while installed as Snap.
 
 于是卸掉 snap 版的 okular，转而安装 apt 版本的，
 
@@ -203,7 +201,7 @@ okular 的 note 功能支持 LaTeX，当输入 `$$...$$` 时会提示要不要�
 latex is not executable
 ```
 
-注意到 `latex` 的 PATH 是定义在 `.bashrc` 中，而通过 zotero 调用 okular 时并不会 source `.bashrc`，只有通过 bash shell 调用的程序采用 source 到 .bashrc，也就是在终端中调用 okular 时，latex 显示正常。
+注意到 `latex` 的 PATH 是定义在 `.bashrc` 中，而通过 zotero 调用 okular 时并不会 source `.bashrc`，只有通过 bash shell 调用的程序采用 source 到 `.bashrc`，也就是在终端中调用 okular 时，latex 显示正常。
 
 研究图形界面程序调用 path 的机制似乎是一种解决方案，但觉得可能过于复杂，其实之前在 atom 中也出现过类似的问题。可能的方案是在 `.profile` 中添加 PATH，可能有用的[参考博客](https://medium.com/@abhinavkorpal/bash-profile-vs-bashrc-c52534a787d3)。
 
@@ -225,15 +223,15 @@ dvipng is not executable
 
 起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！
 
-docker 了解一点，知道如果成功，以后安装卸载会很简单，于是使用 https://github.com/huan/docker-wechat 提供的 docker image，但是后来输入时文本不可见的问题很恼人 https://github.com/huan/docker-wechat/issues/40，也不知道怎么解决。
+docker 了解一点，知道如果成功，以后安装卸载会很简单，于是使用 [huan/docker-wechat](https://github.com/huan/docker-wechat) 提供的 docker image，但是后来[输入时文本不可见的问题](https://github.com/huan/docker-wechat/issues/40)很恼人 ，也不知道怎么解决。
 
-想到作者的 docker 是在 19.10 上构建的，在想会不会与我的 18.04 不够兼容，所以想着自己修改 docker，其实都已经 fork 好了，但是由于 wine 对 18.04 的支持有个问题，https://forum.winehq.org/viewtopic.php?f=8&t=32192，虽说可能跟输入法也不太有关，但是还是试着装这个，后面改写 docker file 时重新 build 总是出问题，一直没解决，所以决定放弃。
+注意到作者的 docker 是在 19.10 上构建的，在想会不会与我的 18.04 不够兼容，所以准备自己修改 docker，其实都已经 fork 好了，但是由于 [wine 对 18.04 的支持有个问题](https://forum.winehq.org/viewtopic.php?f=8&t=32192)，虽说可能跟输入法也不太有关，但是还是试着装这个，后面改写 docker file 时重新 build 总是出问题，一直没解决，所以决定放弃。
 
 于是差不多想放弃 docker 了，想直接安装 wine，弊端似乎也就是卸载会有点繁，但是如果安装成功，那就用着呗，也不用卸载了。
 
 于是参考 [WeChat Desktop on Linux](https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux)
 
-1. install WineHQ: https://wiki.winehq.org/Ubuntu_zhcn
+1. [install WineHQ](https://wiki.winehq.org/Ubuntu_zhcn)
 
 ```bash
 The following packages have unmet dependencies:
@@ -254,7 +252,7 @@ sudo apt-get install gstreamer1.0-plugins-ugly
 Error: winehq-stable : Depends: wine-stable (= 5.0.0~bionic)
 ```
 
-It is due to [FAudio for Debian 10 and Ubuntu 18.04](https://forum.winehq.org/viewtopic.php?f=8&t=32192), and 
+It is due to [FAudio for Debian 10 and Ubuntu 18.04](https://forum.winehq.org/viewtopic.php?f=8&t=32192), and
 
 > The quickest and easiest way to satisfy the new dependency is to download and install both the i386 and amd64 libfaudio0 packages before attempting to upgrade or install a WineHQ package.
 
@@ -290,7 +288,7 @@ then the problem is solved. And continue to follow the steps in [WeChat Desktop 
 
 实现方案有很多，但总想找种最简单的，有考虑 systemd service， [How do I run a script as sudo at boot time on Ubuntu 18.04 Server?](https://askubuntu.com/questions/1151080/how-do-i-run-a-script-as-sudo-at-boot-time-on-ubuntu-18-04-server)
 
-中间也有试过 `/etc/init.d`，[Ubuntu下添加开机启动脚本](https://blog.csdn.net/hcx25909/article/details/9068497)，但是报出 warning 
+中间也有试过 `/etc/init.d`，[Ubuntu下添加开机启动脚本](https://blog.csdn.net/hcx25909/article/details/9068497)，但是报出 warning
 
 > warning: /etc/init.d/test missing LSB information
 
@@ -343,7 +341,7 @@ Exec=env WINEPREFIX="/home/weiya/.wine32" sh -c "wine start /Unix /home/weiya/.w
 
 > 微信窗口后四位所对应的不同窗口层次是固定的. 主窗口是0xXXXX000a, 那么阴影所对应的窗口就是0xXXXX0014.
 
-而且确实好几次我阴影对应的窗口就是 `0xXXXX0014`，所以直接用了代码。但是后来方向，有时代码不起作用，这时才意识到可能 id 没对上。果然，这时候变成了 `0xXXXX0015`。不过，“不同窗口层次是固定的” 这个规律仍适用，而且我发现刚好差 8 （虽然这一点对原作者好像不适用），所以把第 25 行改成
+而且确实好几次我阴影对应的窗口就是 `0xXXXX0014`，所以直接用了代码。但是后来发现，有时代码不起作用，这时才意识到可能 id 没对上。果然，这时候变成了 `0xXXXX0015`。不过，“不同窗口层次是固定的” 这个规律仍适用，而且我发现刚好差 8 （虽然这一点对原作者好像不适用），所以把第 25 行改成
 
 ```python
 shadow = hex(int(id, 16) + 8)
@@ -353,9 +351,44 @@ shadow = hex(int(id, 16) + 8)
 
 到这里，这个问题差不多是解决了。
 
+#### update@20210118
+
+这两天更新 wine 到了 6.0，然后发现窗口轮廓阴影又出现了。后来检查发现是确定 wechat 窗口的语句变化了，之前是
+
+```python
+if item.find("wechat.exe.Wine") != -1:
+```
+
+这能跟记录死机时记录的 `/var/log/syslog` 对得上，
+
+![](wechat-window-before.png)
+
+但是现在运行
+
+```bash
+$ wmctrl -l -G -p -x
+```
+
+发现这句变成了
+
+```bash
+0x0680000c  0 12559  870  596  1238 738  wechat.exe.wechat.exe  weiya-ThinkPad-T460p 微信
+```
+
+所以将上述去除轮廓阴影的代码改成了
+
+```python
+if item.find("wechat.exe") != -1:
+```
+
+代码详见 [disable-wechat-shadow.py](disable-wechat-shadow.py)
+
 ### cannot send images
 
-Try to use the approach 
+!!! done
+    当前微信 3.0.0.57 版本中，这个问题已经解决了！
+
+Try to use the approach
 
 ```bash
 sudo apt install libjpeg62:i386
@@ -377,7 +410,7 @@ more details can be found in [How to Disable IPv6 in Ubuntu Server 18.04/16.4 LT
 But the first method seems not work after reboot, and need to run `sudo sysctl -p`. Then I found that when I run the ssh script to establish reverse tunnel, it reports that the address cannot be assigned, but actually it indeed works, then I realized that ssh would try to assign address for ipv4 and ipv6 simultaneously. It also reminds me [a solution](https://serverfault.com/questions/444295/ssh-tunnel-bind-cannot-assign-requested-address) found several days ago, adding `-4` for specifying ipv4.
 
 However, this method seems also not work.
- 
+
 ### DLL file
 
 No clear idea about DLL file, such as `ole32.dll` suggested in [wine运行windows软件](https://jerry.red/331/wine%e8%bf%90%e8%a1%8cwindows%e8%bd%af%e4%bb%b6), this page， [Windows 7 DLL File Information - ole32.dll](https://www.win7dll.info/ole32_dll.html), might helps.
@@ -389,11 +422,11 @@ And general introduction for DLL can be found in [DLL文件到底是什么，它
 - 通常不会在计算机上看到静态库，因为静态库直接嵌入到模块（EXE或DLL）中。动态库是一个独立的文件。
 - 一个DLL可以在任何时候被改变，并且只在EXE显式地加载DLL时在运行时加载。静态库在EXE中编译后无法更改。一个DLL可以单独更新而无需更新EXE本身。
 
-## Chrome 
+## Chrome
 
 ### 黑屏
 
-参考 https://blog.csdn.net/jjddrushi/article/details/79155421
+参考 [chrome黑屏解决](https://blog.csdn.net/jjddrushi/article/details/79155421)   
 
 进入休眠状态后，睡了一晚上，第二天早上打开 chrome 便黑屏了，然后采用
 
@@ -588,7 +621,7 @@ sudo apt-get remove rstudio
 
 [skilion/onedrive](https://github.com/skilion/onedrive), perfect!
 
-note that the automatic monitor would occupy much CPU, the service can be disable or enable by the following command, 
+note that the automatic monitor would occupy much CPU, the service can be disable or enable by the following command,
 
 ```bash
 ~$ systemctl --user disable onedrive
@@ -783,6 +816,9 @@ sudo apt-get install kid3     # KDE users
 
 ## Add HEIC support in ImageMagick
 
+!!! fail
+    failed.
+
 上次从源码按安装了 ImageMagick 7.0.10-6，刚刚又看到可以[添加对 HEIC 格式的支持](https://askubuntu.com/questions/958355/any-app-on-ubuntu-to-open-and-or-convert-heif-pictures-heic-high-efficiency-i)，于是准备重新编译安装
 
 ```bash
@@ -840,4 +876,3 @@ make[1]: Leaving directory '/home/weiya/src/ImageMagick-7.0.10-6'
 Makefile:5988: recipe for target 'all' failed
 make: *** [all] Error 2
 ```
-
