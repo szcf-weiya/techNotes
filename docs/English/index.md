@@ -1,6 +1,9 @@
 ## 2020.01.18
 
 - I did not know whether it were not a proper opportunity to offer a bit of **admonition (告诫，忠告)**.
+- **A Journal of the Plague Year (瘟疫年纪事)** is a book by **Daniel Defoe (丹尼尔·笛福)**.
+- Just **disclaimer (免责声明；否定申明)**, he's not sponsored by Adidas.
+- The PhD is a very specific kind of experience that deserves a large **disclaimer (放弃，拒绝)**.
 
 ## 2020.01.17
 
@@ -1104,33 +1107,30 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2019.12.10
 
-1. conduit
+1. Another tack is to develop alternative **conduits (导管，渠道，沟渠)** and supplies.
 
 ## 2019.12.01
 
-1. malignant
+1. **malignant (【疾病】恶性的；致命的)** tumor
 2. Glioblastomas: 胶质母细胞瘤
 3. chemotherapy： 化学疗法
 4. asthma: 哮喘
-5. exacerbate
 6. allergen：过敏原
 7. roach: 蟑螂
-8. penicillin
+8. penicillin: 青霉素，盘尼西林
 9. Dermatology 皮肤病学
 10. ointments 软膏
 
 ## 2019.11.04
 
-1. intact
-2. hubbub
-3. academese:
-4. echo chamber
-5. self-censoring
-6. The researchers who published impact estimates are from a small and [close-knit](https://www.bing.com/dict/search?q=close-knit&qs=BD&pq=close-knit&sc=3-10&cvid=E8FE010BBC54414E90DAF8C88101F485&sp=1) community who may [be subject to](https://www.bing.com/dict/search?q=be+subject+to&qs=BD&pq=be+subj&sc=5-7&cvid=9715749B0E9E4D879153C7D92F228720&sp=1) group-thinking, peer pressure and [self-censoring](https://www.bing.com/dict/search?q=self-censoring&qs=n&form=Z9LH5&sp=-1&pq=self-censoring&sc=0-14&sk=&cvid=61844DAB100F40A99CBC7F3144F5C24D).
-7. [People might suppose the gremlins hubbub dinged his reputation, but no.](https://translate.google.com/#view=home&op=translate&sl=auto&tl=zh-CN&text=People%20might%20suppose%20the%20gremlins%20hubbub%20dinged%20his%20reputation%2C%20but%20no.)
-8. In 2016, when the gremlins paper had been discredited, he pivoted and conducted his own exercise, rooted in Tol's idea but more sophisticated, and with very similar results.
-9. off the shelf
-10. aspirational
+1. You will have to throw away 3 months of your work while somehow keeping your mental health **intact (完整的，未受损伤的)**.
+2. the most **conspicuous (显眼的，明显的)** trait of the American **professoriate (教授会)** may be the **prose (散文；平凡的，乏味的)** style called academese (学术行话，学术体，学术文章的风格):
+4. echo chamber: [回音室效应](https://zh.wikipedia.org/wiki/%E8%BF%B4%E8%81%B2%E5%AE%A4%E6%95%88%E6%87%89)，在媒体上是指在一个相对封闭的环境中，一些意见相近的声音不断重复，并以夸张或其他扭曲形式重复，令处于相对封闭环境中的大多数人认为这些扭曲的故事就是事实的全部。
+6. The researchers who published impact estimates are from a small and **close-knit (紧密结合在一起的；志同道合的；意气相投的)** community who may **be subject to (受...支配，受...影响)** group-thinking, peer pressure and **self-censoring (自我审查，自我約束, 自律)**.
+7. People might suppose the **gremlins (小魔怪；小精灵；捣蛋鬼)** **hubbub (喧哗，骚动)** **dinged (【informal】hit (someone), especially on the head.)** his reputation, but no. [谷歌翻译](https://translate.google.com/#view=home&op=translate&sl=auto&tl=zh-CN&text=People%20might%20suppose%20the%20gremlins%20hubbub%20dinged%20his%20reputation%2C%20but%20no.)
+8. In 2016, when the gremlins paper had been **discredited (不足信的，不名誉的)**, he pivoted and conducted his own exercise, rooted in Tol's idea but more sophisticated, and with very similar results.
+9. Random forests are a very popular **off-the-shelf (现成的，不用定制的)** machine learning model for this setting.
+10. Faithful friendship, unwavering **aspiration (强烈的愿望，志向，抱负)**, **nurture (教养，培育)** of the younger, and passion for life……, these are virtues that……
 
 ## 2019.11.01
 
@@ -1138,22 +1138,18 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2019.10.25
 
-1. ore grades
-
+1. **ore (矿石，矿)** grades: 矿山品味分级
 
 ## 2019.10.24
 
 1. tiger prawn: 老虎虾
-2. pine
-3. saplings
-4. asthma
-
+3. saplings：幼树，树苗
 
 ## 2019.10.22
 
 1. cartography
 2. regime
-3. Petroleum
+3. geoscientists and engineers in the **petroleum (石油)** and **geothermal (地热的，地温的)** industries
 
 ## 2019.10.18
 
@@ -1168,8 +1164,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2019.10.17
 
 1. sobering
-2. gerrymander
-3. contagion
+2. **gerrymandering (为本党利益改划选区，不公正操纵，欺骗)** only rearranges district lines and cannot manufacture more votes for a party.
+3. compare the number of **contagions (传染，接触传染)** and deaths by country and date.
 4. paucity
 5. geodetics
 
@@ -1601,7 +1597,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2018.01.01
 
-1. These tensions are **exacerbated** between the wars.
+1. These tensions are **exacerbated (使恶化，使加重)** between the wars.
 2. They **glossed over** some key issues on that front.
 3. The athlete's success **was attributed to** systematic training.
 4. lower/upper extremity (上/下肢)
@@ -1700,7 +1696,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. In addition to the detailed written regulations regarding play, a novice golfer must also learn the implicit/tacit, but nonetheless important, rules of etiquette.
 4. Based on the desire to restrict further water pollution, the Clean Water Act of 1972 began under auspicious/promising terms, but opponents soon assailed the bill in the fought for its ratification.
 5. Jane Austen's novel, Emma, paints a comedy of errors that results when its heroine tries her hand at creating love matches, an effort which she attributes to her own benevolence/magnanimity instead of a selfish need to meddle.
-6. While interviewing for a job as a computer consultant, Robert consciously provided a paucity/dearth of references, knowing full well that he had few former employers who would be laudatory about his past projects.
+6. While interviewing for a job as a computer consultant, Robert consciously provided a **paucity (缺乏，少量)/dearth (缺乏，稀少)** of references, knowing full well that he had few former employers who would be **laudatory (赞美的，赞赏的)** about his past projects.
 7. While most of the tasks undertaken by the interns were undemanding, a fact that led to the flood of applicants for the positions each year, there was one arduous/onerous duty: cleaning out the garbage bins in the laboratory.
 8. In an attempt to inveigle/entice voters to support her, the incumbent politician beguilingly greeted a room full of constituents and pleged to lower taxes--even though she had only ever done the opposite while in office.
 9. After a series of storms, the once arid landscape became verdant/bountiful for the first time in many months.
