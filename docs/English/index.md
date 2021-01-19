@@ -1,27 +1,31 @@
-## 2020.01.18
+## 2021.01.19
+
+- **atrocious (恶劣的，糟透的)** weather
+
+## 2021.01.18
 
 - I did not know whether it were not a proper opportunity to offer a bit of **admonition (告诫，忠告)**.
 - **A Journal of the Plague Year (瘟疫年纪事)** is a book by **Daniel Defoe (丹尼尔·笛福)**.
 - Just **disclaimer (免责声明；否定申明)**, he's not sponsored by Adidas.
 - The PhD is a very specific kind of experience that deserves a large **disclaimer (放弃，拒绝)**.
 
-## 2020.01.17
+## 2021.01.17
 
 - **cram (塞满，填入)** them into a single talk.
 
-## 2020.01.16
+## 2021.01.16
 
 - We will arrange the payment of the **lump-sum (总额，一次总付的钱款)** award of $1000.
 
-## 2020.01.15
+## 2021.01.15
 
 - It illustrates a problem with political **punditry (权威的意见)**: There's a demand for predictions, and there's no shortage of outlets promising a "**crystal ball (【占卜用的】水晶球；预言未来的方法)**" or some other short of certainty.
 
-## 2020.01.14
+## 2021.01.14
 
 - It is full of prominent, successful, well-connected **bluffers (骗子，虚张声势的人)**.
 
-## 2020.01.13
+## 2021.01.13
 
 - enact
 
@@ -1184,11 +1188,10 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2019.09.30
 
-1. debunk
-2. credulous
-3. dubious
-4. exclaim
-5. poll
+1. An unconvincing analysis claiming to **debunk (揭穿真相，暴露)** the health benefits of moderate drinking.
+2. junk science is promoted by **credulous (轻信的，易受骗的)** organizations
+3. The commentary also outlines some **hallmarks (特点)** of potentially **dubious (可疑的，不可靠的)** science.
+4. "Wow, today's the school picnic!", **exclaimed (呼喊，惊叫，大声说)** Tom.
 6. That strikes me as rather bold
 
 
