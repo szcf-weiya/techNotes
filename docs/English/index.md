@@ -1,3 +1,10 @@
+## 2021.01.20
+
+- the name-calling tone of this tribune, as illustrated by the above quotes, is **appalling (令人震惊的，骇人听闻的)** and **populist (平民主义，[民粹主义](https://zh.wikipedia.org/wiki/%E6%B0%91%E7%B2%B9%E4%B8%BB%E7%BE%A9))**, more in the spirit of Trump than of a rational search for scientific evidence.
+- Out of the **welter (混合)** of **rapture (狂喜)** and anger and heartbreak and **hurt pride (屈辱)** that he had left, depression emerged to sit upon her shoulder like a **carrion (腐肉的，吃腐肉的)** **crow (乌鸦)**.
+- Encryption **jumbles (搞乱，使混乱)** words into random numbers, letters, characters.
+- Traffic is **hectic (繁忙的，忙乱的)** every day.
+
 ## 2021.01.19
 
 - **atrocious (恶劣的，糟透的)** weather
@@ -27,7 +34,7 @@
 
 ## 2021.01.13
 
-- enact
+- The results should be made public before the rule is **enacted (制定【法律】，通过【法案】)**.
 
 ## 2021.01.12
 
@@ -302,7 +309,7 @@
 - **Standard Chartered (渣打银行)** Bank China is inviting registration for its Networking Session.
     - chartered: （根据持有皇家特许状的专业协会的规章）合格的；特许的
     - **UNICEF (United Nations International Children's Emergency Fund, 旧称联合国国际儿童紧急救援基金会，现称联合国儿童基金会，The United Nations Children's Fund)** **chartered (包租)** a flight to deliver vaccines to seven African countries.
-- [**Ado (无谓的忙乱，费力)** usually refers to **fuss (小题大做，忙乱)**, concern, or time wasted due to trivialities or troubles. It is most often found in the phrases "without much ado", meaning "without much fuss", or "without further ado", meaning "without further delay". **Adieu (告别，辞行)** on the other hand, is a French word that refers to a farewell. It often follows bid, as in "I bid you adieu", as a rather dramatic way of saying "goodbye".](https://www.merriam-webster.com/words-at-play/ado-vs-adieu-usage-difference)
+- **Ado (无谓的忙乱，费力)** usually refers to **fuss (小题大做，忙乱)**, concern, or time wasted due to trivialities or troubles. It is most often found in the phrases "without much ado", meaning "without much fuss", or "without further ado", meaning "without further delay". **Adieu (告别，辞行)** on the other hand, is a French word that refers to a farewell. It often follows bid, as in "I bid you adieu", as a rather dramatic way of saying "goodbye". [reference](https://www.merriam-webster.com/words-at-play/ado-vs-adieu-usage-difference)
 
 ## 2020.11.16
 
@@ -815,7 +822,7 @@
 ### Simon Sinek·TEDxPuget Sound: How great leaders inspire action
 
 - defy all of the assumptions
-- all I did was codify it.
+- all I did was **codify (v. organize into a code or system, such as a body of law)** it. [reference: "did was + v." structure](https://ell.stackexchange.com/questions/18326/explanation-of-did-was-verb-structure)
 - it has leather seats
 - everything we do, we believe in challenging the **status quo**.
 - They're eminently qualified to make flat-screen TVs.
@@ -1167,24 +1174,24 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2019.10.17
 
-1. sobering
+1. The most extreme, most **sobering (令人警醒的，使人冷静的)**, and **zaniest (zany. 古怪的，滑稽可笑的 strange or unusual in an amazing way)** facts that [The Atlantic](https://zh.wikipedia.org/wiki/%E5%A4%A7%E8%A5%BF%E6%B4%8B_(%E9%9B%9C%E8%AA%8C))'s science, technology, and health reporters learned this year.
 2. **gerrymandering (为本党利益改划选区，不公正操纵，欺骗)** only rearranges district lines and cannot manufacture more votes for a party.
 3. compare the number of **contagions (传染，接触传染)** and deaths by country and date.
-4. paucity
-5. geodetics
+5. geodetic survey: 大地测量，测地学测量
 
 ## 2019.10.12
 
-1. mind-boggling
+1. what are some funny, nice, intelligent and **mind-boggling (难以理解的，难以置信的)** tricky math questions to ask?
 2. instrument: verb. such as, "they instrument military aid"
 3. maddening
 4. come across
 5. jurisdictions    
 6. ramp up
 7. crap
-8. Ray Kroc
-9. teaser
-10. much-missed
+8. **Ray Kroc (雷·克罗克)**: 麦当劳主要创办人
+9. **teaser (戏弄者)** is a particularly **baffling (令人困惑的)** problem that is said to have a correct solution
+    - **brain teaser (脑筋急转弯【戏弄大脑】)**.
+    - you can introduce XXX to your friends and family by sharing this 25 second **teaser (an advertisement that offers something free in order to arouse customers' interest)** video.
 
 ## 2019.09.30
 
@@ -1608,7 +1615,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2017.09.25
 
 1. She's tried every **knack (诀窍，本领)** in **Cupid (【罗马神话中的爱神】丘比特)**'s book to get her guy to marry her.
-2. The team's limp performance has many people calling for the head coach's resignation.
+2. The team's limp performance has many people calling for the head coach's **resignation (辞职)**.
 3. the limpid outlook of a man who is at peace with himself as he awaits death.
 4. the lush fields were the envy of neighboring farmers.
 5. the lush sounds of the orchestra
@@ -1824,17 +1831,12 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 53. static (inert; motionless)
 54. Autonomous (self-governing; independent)
 55. Intrinsic (innate; essential)
-56. appall
-57. jumble
-58. codify
-59. welter
 60. intransigent
 61. draconian
 62. idiosyncratic
 63. sheer
 64. auction, auctioneer, bidding
 65. imperturbability
-66. hectic
 67. precious
 68. immensely
 69. composure
@@ -2024,7 +2026,7 @@ up
 
 1. Together they create a picture that hints towards **cubism (立体主义)**.
 2. be coordinated with, to harmonize with
-3. What is called resignation is confirmed desperation. 所谓听天由命，正是肯定的绝望。
+3. What is called **resignation (顺从，听从)** is confirmed desperation. 所谓听天由命，正是肯定的绝望。
 4. His obsession could make him by turns **hustling (急躁)**, mean and **dejected (沮丧的，灰心的)**.
     - hustle and bustle: 熙熙攘攘，忙碌
 5. dip, incise
