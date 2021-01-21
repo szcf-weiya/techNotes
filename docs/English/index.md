@@ -1,3 +1,7 @@
+## 2021.01.21
+
+- **abstemious (适中的，【尤指在吃饭、饮酒方面】有节制的)** habit
+
 ## 2021.01.20
 
 - the name-calling tone of this tribune, as illustrated by the above quotes, is **appalling (令人震惊的，骇人听闻的)** and **populist (平民主义，[民粹主义](https://zh.wikipedia.org/wiki/%E6%B0%91%E7%B2%B9%E4%B8%BB%E7%BE%A9))**, more in the spirit of Trump than of a rational search for scientific evidence.
@@ -427,7 +431,7 @@
 ## 2020.10.31
 
 - A psychology professor whom I've never met once wrote me a mini-**manifesto (宣言)**, **disparaging** my efforts as a critic.
-- **Bumblers** are the people who get up every morning and make mistakes, trying to find truth but mainly tripping over their own feet, occasionally getting it right but typically getting it wrong.
+- **Bumblers (做错事的人)** are the people who get up every morning and make mistakes, trying to find truth but mainly tripping over their own feet, occasionally getting it right but typically getting it wrong.
 - I think this dualism is **counterproductive**.
 - but it would be more **evocative** to show a series of images showing graying hair.
 - Nobel prize and other science prices are problematic and this is not **endorsement** of such prices, but this might be useful for someone who needs to tell (**hype**) about the impact of Stan.
@@ -1866,7 +1870,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 93. Phlegmatic means not easily disturbed or excited.
 94.  Autocratic means tyrannical or domineering.
 95. Wistful means pensively sad or yearning
-96. abstemious
 97. indigenous & ingenuous & disingenuous
 98. dignity (formal bearing; nobility of character)
 99. insincerity (intentional deceitfulness)
@@ -1910,10 +1913,12 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. as such
 
 ## 2017.10.09
-1. magma， tectonic
+
+- magma chamber: 岩浆房，岩浆库
 
 ## 2017.10.10
-1. mainstay
+
+1. **mainstay (支柱，骨干)** industry
 2. caravan
 3. expedition
     - identifying patients with similar disease trajectory might **expedite (加快进展)** the diagnosis and treatment and reduce patient suffering.
@@ -2108,16 +2113,16 @@ NULL
 
 ## 2017.10.31
 
-1. caffeine, nicotine
-2. sip nectar
-3. bumblebees
-4. deter
-5. pollinator
-6. pharmacy
-7. crater, impact
-8. plate tectonics
-9. geochemist
-10. bolide
+1. caffeine (咖啡因)
+2. **sip (小口喝)** **nectar (花蜜，甘露，任何美味的饮料)**
+3. bumblebee: 大黄蜂，雄蜂
+4. Unnaturally high **nicotine (尼古丁)** concentrations **deterred (制止，阻止，使打消念头)** the bees.
+5. Bees are major **pollinators (传粉媒介)** of fruits, vegetables and nuts.
+6. Does your **pharmacy (药房)** carry **lice (虱子，louse 的复数)** **shampoo (洗发，洗发精)**
+7. Tanks cannot do anything in these **craters (弹坑，火山口)**.
+8. plate tectonics: 【地质】板块构造论
+9. geochemist, geochemistry: [地球化学](https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83%E5%8C%96%E5%AD%A6)
+10. A **bolide (【天文学】火流星，火球)**, or fireball, is an extremely bright **meteor (流星)**, and those can be about the size of a **grapefruit (葡萄柚，西柚)**.
 11. magma, mantle, lava
 12. stir up
 13. episode
@@ -2346,9 +2351,10 @@ the glory of Tang dynasty: 大唐荣耀
 
 ## 2017.12.18
 
-1. thereof
-2. finesse
-3. irrespective
+1. The model can be used to match any subsequent image, or part **thereof (在其中)**.
+    - It **plumbs (探测，探索，examine thoroughly and in great depth)** the depths of its **protagonist (主人公)**'s **indecisiveness (优柔寡断)**, and the **tragic (悲痛的，悲剧的)** consequences **thereof (由此)**.
+2. I don't think I have **finesse (n. subtly skillful handling of  a situation)** for the job. I'm like a round **peg (桩)** in a square hole.
+3. The university encourages applications from academically strong students **irrespective (不考虑的，不顾的)** of their nationality.
 
 ## 2017.12.27
 
