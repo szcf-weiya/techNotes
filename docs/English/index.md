@@ -1,3 +1,7 @@
+## 2021.01.22
+
+- That's part one of the **trilogy (三部曲)**.
+
 ## 2021.01.21
 
 - **abstemious (适中的，【尤指在吃饭、饮酒方面】有节制的)** habit
@@ -1705,11 +1709,11 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2017.10.01
 
-1. Despite having steeled herself for the worst, the new band director was disheartened to hear the cacophonous/discordant sounds emanating from the freshman orchestra.
-2. Bede, the author of A History of the English Church and People, was so widely revered/esteemed that he has been almost universally known as "The Venerable Bede" since the ninth century.
-3. In addition to the detailed written regulations regarding play, a novice golfer must also learn the implicit/tacit, but nonetheless important, rules of etiquette.
-4. Based on the desire to restrict further water pollution, the Clean Water Act of 1972 began under auspicious/promising terms, but opponents soon assailed the bill in the fought for its ratification.
-5. Jane Austen's novel, Emma, paints a comedy of errors that results when its heroine tries her hand at creating love matches, an effort which she attributes to her own benevolence/magnanimity instead of a selfish need to meddle.
+1. Despite having **steeled (使坚强，使坚定)** herself for the worst, the new **band (乐队)** director was disheartened to hear the **cacophonous (发音不和谐的，粗腔横调的)**/discordant sounds emanating from the freshman **orchestra (管弦乐队)**.
+2. Bede, the author of A History of the English Church and People, was so widely **revered (尊敬，崇敬)**/**esteemed (尊敬)** that he has been almost universally known as "The **Venerable (值得尊重的，受敬佩的)** Bede" since the ninth century.
+3. In addition to the detailed written regulations regarding play, a novice golfer must also learn the implicit/**tacit (adj. indicated by necessary connotation (内涵，含蓄，暗示) though not expressed directly)**, but nonetheless important, rules of **etiquette (礼节，礼仪)**.
+4. Based on the desire to restrict further water pollution, the Clean Water Act of 1972 began under **auspicious (有前途的，有希望的；吉祥的，吉兆的)**/promising terms, but opponents soon **assailed (攻击，质问)** the bill in the fought for its **ratification (正式批准，认可)**.
+5. Jane Austen's novel, Emma, paints a comedy of errors that results when its **heroine (女英雄，女主角)** tries her hand at creating love matches, an effort which she attributes to her own benevolence/magnanimity instead of a selfish need to meddle.
 6. While interviewing for a job as a computer consultant, Robert consciously provided a **paucity (缺乏，少量)/dearth (缺乏，稀少)** of references, knowing full well that he had few former employers who would be **laudatory (赞美的，赞赏的)** about his past projects.
 7. While most of the tasks undertaken by the interns were undemanding, a fact that led to the flood of applicants for the positions each year, there was one arduous/onerous duty: cleaning out the garbage bins in the laboratory.
 8. In an attempt to inveigle/entice voters to support her, the incumbent politician beguilingly greeted a room full of constituents and pleged to lower taxes--even though she had only ever done the opposite while in office.
