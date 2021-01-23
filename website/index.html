@@ -2328,6 +2328,10 @@ ERROR:  While executing gem ... (Errno::EACCES)
 <blockquote>
 <p>受CA机构对免费证书的管理调整，免费证书的申请将会受到影响，建议使用云盾证书服务进行相关证书申请。</p>
 </blockquote>
+<p>证书签发完成后，除了手动去 CDN 那边切换，也可以通过“部署”进行操作，不过需要确认一下权限。</p>
+<p><img alt="" src="ca-1.png" /></p>
+<p>部署时选择 <code>CDN</code> 即可。另外注意到对于 <code>www.hohoweiya.xyz</code>，会主动匹配到 <code>hohoweiya.xyz</code>，所以无需重复对 <code>hohoweiya.xyz</code> 进行设置，如下图</p>
+<p><img alt="" src="ca-2.png" /></p>
                 
               
               
