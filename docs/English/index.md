@@ -1,3 +1,7 @@
+## 2021.01.23
+
+- The **intrepid (勇敢的，无畏的)** explorers reached the South Pole.
+
 ## 2021.01.22
 
 - That's part one of the **trilogy (三部曲)**.
@@ -1101,7 +1105,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 12. see a catcher **don the gear** again after multiple **concussions**
 13. What really **riled** me was when the speaker said
 14. This seems to me to be a **bizarre** sort of **techno-mysticism**.
-15. The **nascent** field of fair machine learning aims to ensure that decisions guided by algorithms are equitable.
+15. The **nascent (初期的，开始存在的，发生中的)** field of fair machine learning aims to ensure that decisions guided by algorithms are equitable.
 16. Over the last several years, three formal definitions of fairness have gained **prominence**
 17. classification **parity**, meaning that common measures of predictive performance
 18. One must carefully define and measure the targets of prediction to avoid **retrenching** biases in the data.
@@ -1534,7 +1538,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. kinetic
 2. prokaryotes, eukaryotes
 3. unprecedented
-4. catalyze
 5. Escherichia coli
 6. yeast
 7. 酿酒酵母（Saccharomyces cerevisiae）
@@ -1719,15 +1722,15 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 8. In an attempt to inveigle/entice voters to support her, the incumbent politician beguilingly greeted a room full of constituents and pleged to lower taxes--even though she had only ever done the opposite while in office.
 9. After a series of storms, the once arid landscape became verdant/bountiful for the first time in many months.
 10. Although he received many visitors, the misanthropic/curmudgeonly old man shooed them away after only a few minutes.
-11. Eileen used to be a picky eater, but since a new complex of fine dining and ethnic restaurants opened in her neighborhood, she has been quite epicurean/gourmandizing.
+11. Eileen used to be a picky eater, but since a new complex of fine dining and ethnic restaurants opened in her neighborhood, she has been quite **epicurean (好美食的，【通过美食】享乐主义的)**/**gourmandizing (gourmandize: n. 大吃大喝 v. 狼吞虎咽)**.
 
 ## 2017.10.02
 
-1. The rise of the nascent middle class catalyzed a new economic boom.
-2. The malodor of the rotten meat made us nauseate.
-3. As the nexus for three great religions, Jerusalem has had a troubled as well as illustrious history.
-4. His involvement was nominal.
-5. The two girls soon became fast and inseparable friends.
+1. The rise of the nascent middle class **catalyzed (催化，促进)** a new **economic boom (经济繁荣，经济腾飞)**.
+2. The **malodor (恶臭，臭气)** of the **rotten (腐烂的)** meat made us **nauseate (作呕，厌恶，产生恶感)**.
+3. As the **nexus (关系，连结，连系)** for three great religions, **Jerusalem (耶路撒冷)** has had a troubled as well as **illustrious (著名的，杰出的，卓越的)** history.
+4. His involvement was **nominal (名义上的，有名无实的)**.
+5. The two girls soon became **fast (紧的，稳固的)** and inseparable friends.
 
 ## 2017.10.03
 
