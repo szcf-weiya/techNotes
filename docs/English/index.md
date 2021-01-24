@@ -1,3 +1,7 @@
+## 2021.01.24
+
+- The truth of a theory is **contingent on (视……而定，取决于……)** both our state of knowledge and the purposes to which it will be put.
+
 ## 2021.01.23
 
 - The **intrepid (勇敢的，无畏的)** explorers reached the South Pole.
