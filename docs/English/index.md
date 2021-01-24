@@ -1308,21 +1308,22 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2018.09.23
 
-1. mileage
+1. Beside being eco-friendly, the **fuel cell (燃料电池)** cars get excellent **mileage (英里数)**.
 
 ## 2018.09.15
 
-1. orchid
+1. **Ecuador (厄瓜多尔)** has over 4000 species of **orchids (兰花)**, making it the orchid capital of the world.
 
 ## 2018.09.12
 
-1. astragali
-2. dice
+1. **radix (基数，根)** **astragali (【植】黄芪属)**: [黄芪](https://zh.wikipedia.org/wiki/%E9%BB%84%E8%8A%AA)
+2. Combine with mixed vegetables, and **diced (切成方块)** turkey.
+    - think of generating random numbers by rolling **dice (骰子)**.
 
 ## 2018.09.10
 
-1. tantalizaingly
-2. lineage
+1. Women, especially beautiful ones, have long understood that there's nothing so **tantalizing (诱人的，引起好奇心的)** as something you can't understand.
+2. Theses species **hailed from (【车、船】来自；【人】出生于)** three different evolutionary **lineages (血统，家系，世系)**.
 
 ## 2018.09.09
 
