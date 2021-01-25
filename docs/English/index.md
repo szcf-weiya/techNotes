@@ -1,3 +1,7 @@
+## 2021.01.25
+
+- The **flashy (炫耀技艺的)** **crooks (骗子)** get the headlines, but the bigger problem in everyday routine bad science done by non-crooks.
+
 ## 2021.01.24
 
 - The truth of a theory is **contingent on (视……而定，取决于……)** both our state of knowledge and the purposes to which it will be put.
