@@ -1,6 +1,6 @@
 ## 2021.01.26
 
-- It will be rigged.
+- Do people cheat by **rigging (操纵)** the prior?
 
 ## 2021.01.25
 
