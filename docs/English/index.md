@@ -1,3 +1,7 @@
+## 2021.01.27
+
+- Rising global temperatures could shift the balance between males and females in **crocodile (鳄鱼)** and **alligator (短吻鳄)** populations, potentially leading to a sharp decline in the **reptiles (爬行动物)**' reproduction rates……
+
 ## 2021.01.26
 
 - Do people cheat by **rigging (操纵)** the prior?
