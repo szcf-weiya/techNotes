@@ -1,3 +1,7 @@
+## 2021.01.28
+
+- These feelings are normal, and you'll never truly **banish (驱逐，消除)** them.
+
 ## 2021.01.27
 
 - Rising global temperatures could shift the balance between males and females in **crocodile (鳄鱼)** and **alligator (短吻鳄)** populations, potentially leading to a sharp decline in the **reptiles (爬行动物)**' reproduction rates……
@@ -21,6 +25,7 @@
 ## 2021.01.22
 
 - That's part one of the **trilogy (三部曲)**.
+- The **trio (三人一组，三件一套)** has denied the charges.
 
 ## 2021.01.21
 
