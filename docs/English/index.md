@@ -1,3 +1,8 @@
+## 2021.01.29
+
+- The **bazaar (集市；市场；义卖市场)** had taken place Monday night and today was only Thursday.
+- **Cathedrals (总教堂，大教堂)** were much more urban in their loation.
+
 ## 2021.01.28
 
 - These feelings are normal, and you'll never truly **banish (驱逐，消除)** them.
@@ -1699,7 +1704,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 11. In an hour-long philippic, the legislator denounced the lobbyists opposing his bill.
 12. Their profligate lifestyle resulted in bankruptcy.
 13. Improvident behavior is likely to imprint indelible marks on a person's life and personality.
-14. In times of economic woe, when normal patterns of consumption and investment are frozen, prodigal government speeding can sometimes be the only way to break the vicious circle of declining demand and shrinking employment.
+14. In times of economic woe, when normal patterns of consumption and investment are frozen, prodigal government speeding can sometimes be the only way to break the **vicious circle (恶性循环)** of declining demand and shrinking employment.
 15. Jaw line contoured by the bristling red hair of the fighter, watchful, pugnacious.
 16. Things have come full circle since penurious sailors from the Far East first arrived two centuries ago.
 17. In May, to no one's surprise. he declared the city insolvent.
