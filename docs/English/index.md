@@ -1,3 +1,8 @@
+## 2021.01.30
+
+- drug trafficking: 毒品走私
+    - drug trafficker: 毒品贩子
+
 ## 2021.01.29
 
 - The **bazaar (集市；市场；义卖市场)** had taken place Monday night and today was only Thursday.
