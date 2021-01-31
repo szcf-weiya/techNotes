@@ -1,3 +1,7 @@
+## 2021.01.31
+
+- What's new here is they **duped (欺骗，愚弄)** Americans into helping them seem more credible.
+
 ## 2021.01.30
 
 - drug trafficking: 毒品走私
