@@ -1,3 +1,7 @@
+## 2021.02.01
+
+- A Bayesian analysis concludes beyond a reasonable doubt that SARS-CoV-2 is not a natural **zoonosis (动物传染病)** but instead is laboratory derived.
+
 ## 2021.01.31
 
 - What's new here is they **duped (欺骗，愚弄)** Americans into helping them seem more credible.
