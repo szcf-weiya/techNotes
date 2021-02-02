@@ -313,6 +313,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    建立 ssh 的信任关系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    远程运行服务器端的gui程序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#submitting-multiple-jobs-quickly" class="md-nav__link">
     Submitting Multiple Jobs Quickly
   </a>
@@ -949,18 +963,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ssh/" class="md-nav__link">
-        Ssh
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../Git/" class="md-nav__link">
         Git
       </a>
@@ -1362,6 +1364,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    建立 ssh 的信任关系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gui" class="md-nav__link">
+    远程运行服务器端的gui程序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#submitting-multiple-jobs-quickly" class="md-nav__link">
     Submitting Multiple Jobs Quickly
   </a>
@@ -1459,6 +1475,47 @@
                 
                 
                 <h1 id="servers">Servers<a class="headerlink" href="#servers" title="Permanent link">&para;</a></h1>
+<h2 id="ssh">建立 ssh 的信任关系<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
+<p>首先在本地新建 ssh key，</p>
+<div class="highlight"><pre><span></span><code>ssh-keygen -t <span class="o">[</span>rsa <span class="p">|</span> ed25519 <span class="p">|</span> ecdsa <span class="p">|</span> dsa<span class="o">]</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">ssh 常见 key 格式</p>
+<p>参考 <a href="https://neil-wu.github.io/2020/04/04/2020-04-04-SSH-key/">更新SSH key为Ed25519</a></p>
+<ul>
+<li>DSA: 不安全</li>
+<li>RSA: 安全性依赖于key的大小，3072位或4096位的key是安全的，小于此大小的key可能需要升级一下，1024位的key已经被认为不安全。</li>
+<li>ECDSA:  安全性取决于你的计算机生成随机数的能力，该随机数将用于创建签名，ECDSA使用的NIST曲线也存在可信赖性问题。</li>
+<li>Ed25519: 目前最推荐的公钥算法</li>
+</ul>
+</div>
+<p>然后会在本地生成 <code>~/.ssh</code> 文件夹。</p>
+<ul>
+<li>秘钥(<code>~/.ssh/id_rsa</code>): sensitive and important!!</li>
+<li>公钥(<code>~/.ssh/id_rsa.pub</code>): contains the public key for authentication.  These files are not sensitive and can (but need not) be readable by anyone.</li>
+<li>公钥授权文件(<code>~/.ssh/authorized_keys</code>)</li>
+</ul>
+<p>将登录端的 <code>id_rsa.pub</code> 内容复制到服务器端的 <code>authorized_keys</code> 文件中即可。</p>
+<h2 id="gui">远程运行服务器端的gui程序<a class="headerlink" href="#gui" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>weiya@T460p:~$ ssh weiya@G40
+weiya@G40:~$ <span class="nb">export</span> <span class="nv">DISPLAY</span><span class="o">=</span>:0
+weiya@G40:~$ firefox
+</code></pre></div>
+<p>如果不通过第二行来设置 DISPLAY，则会报错，</p>
+<blockquote>
+<p>Error: no DISPLAY environment variable specified</p>
+</blockquote>
+<p>另外 <code>:0</code> 可以通过在服务器端运行</p>
+<div class="highlight"><pre><span></span><code>weiya@G40:~$ w
+ <span class="m">20</span>:29:30 up <span class="m">10</span>:01,  <span class="m">2</span> users,  load average: <span class="m">1</span>.53, <span class="m">1</span>.42, <span class="m">1</span>.40
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+weiya    :0       :0               <span class="m">10</span>:28   ?xdm?  <span class="m">22</span>:24   <span class="m">0</span>.00s /usr/lib/gdm3/gdm-x-session --run-script env GNOME
+</code></pre></div>
+<p>进行查看，其中 <code>FROM</code> 栏下的 <code>:0</code> 即为当前 display 号码。</p>
+<p>参考 <a href="https://askubuntu.com/questions/47642/how-to-start-a-gui-software-on-a-remote-linux-pc-via-ssh">How to start a GUI software on a remote Linux PC via SSH</a></p>
+<p>如果想要在本地运行服务器端的 GUI 程序，即将服务器端的窗口发送到本地，则登录时需要加上 <code>-X</code> 选项，</p>
+<div class="highlight"><pre><span></span><code>ssh -X
+</code></pre></div>
 <h2 id="submitting-multiple-jobs-quickly">Submitting Multiple Jobs Quickly<a class="headerlink" href="#submitting-multiple-jobs-quickly" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">PBS</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>/usr/bin/mpirun -v -np <span class="m">28</span> -machinefile <span class="nv">$PBS_NODEFILE</span> ./myexe <span class="si">${</span><span class="nv">NUMBERARG</span><span class="si">}</span> <span class="si">${</span><span class="nv">LETTERARG</span><span class="si">}</span>
@@ -1545,7 +1602,7 @@ apt-get install nginx
 <div class="highlight"><pre><span></span><code><span class="n">PGFPlotsX</span><span class="o">.</span><span class="n">enable_interactive</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div>
 <p>本来期望着用 evince 打开，但是最后竟然用 liberoffice 开开了，然后字体竟然不一致了，所以想着更改默认的 pdf 阅读软件，参考 <a href="https://superuser.com/questions/152202/how-to-set-default-browser-for-pdf-reader-evince-on-linux">How to set default browser for PDF reader Evince on Linux?</a></p>
-<p>可以在 <code>.local/share/applications/mimeapps.list</code> 里面添加或者修改 </p>
+<p>可以在 <code>.local/share/applications/mimeapps.list</code> 里面添加或者修改</p>
 <p>虽然最后还是感觉通过服务器打开速度太慢了。</p>
 <h2 id="cluster-ssh">cluster 的 ssh 突然要密码了<a class="headerlink" href="#cluster-ssh" title="Permanent link">&para;</a></h2>
 <p>像往常一样 ssh，但是报错了</p>
@@ -1580,16 +1637,6 @@ Host key verification failed.
 <div class="highlight"><pre><span></span><code>ssh-keygen -t <span class="o">[</span>ed25519 <span class="p">|</span> ecdsa <span class="p">|</span> dsa<span class="o">]</span>
 </code></pre></div>
 <p>然而统统没用。</p>
-<div class="admonition tip">
-<p class="admonition-title">ssh 常见 key 格式</p>
-<p>参考 <a href="https://neil-wu.github.io/2020/04/04/2020-04-04-SSH-key/">更新SSH key为Ed25519</a></p>
-<ul>
-<li>DSA: 不安全</li>
-<li>RSA: 安全性依赖于key的大小，3072位或4096位的key是安全的，小于此大小的key可能需要升级一下，1024位的key已经被认为不安全。</li>
-<li>ECDSA:  安全性取决于你的计算机生成随机数的能力，该随机数将用于创建签名，ECDSA使用的NIST曲线也存在可信赖性问题。</li>
-<li>Ed25519: 目前最推荐的公钥算法</li>
-</ul>
-</div>
 <p>后来跟服务器管理员反复沟通，提交 <code>ssh -vvv xxx &amp;&gt; ssh.log</code> 日志文件供其检查，才确认是最近服务器配置更改的原因，虽然没有明说，但是注意到 <code>/etc/ssh/sshd_config</code> 更新后不久管理员就回复说好了，问及原因，他的回答是，</p>
 <blockquote>
 <p>It is related to security context which will make SELinux to block the file access. I think this required root permission to config.</p>

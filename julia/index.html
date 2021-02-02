@@ -1212,18 +1212,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssh/" class="md-nav__link">
-        Ssh
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Git/" class="md-nav__link">
         Git
       </a>
@@ -2043,7 +2031,7 @@
 <p>it works. And it seems that it does NOT depend on conda environment any more, i.e., <code>PyPlot</code> still works for different conda environment, even without <code>matplotlib</code> package in such environment.</p>
 <p>In the words of the <a href="https://github.com/JuliaPy/PyCall.jl">official documentation</a>,</p>
 <blockquote>
-<p>If you use Python virtualenvs, then be aware that PyCall uses the virtualenv it was built with by default, even if you switch virtualenvs. If you want to switch PyCall to use a different virtualenv, then you should switch virtualenvs and run rm(Pkg.dir(&ldquo;PyCall&rdquo;,&rdquo;deps&rdquo;,&rdquo;PYTHON&rdquo;)); Pkg.build(&ldquo;PyCall&rdquo;). </p>
+<p>If you use Python virtualenvs, then be aware that PyCall uses the virtualenv it was built with by default, even if you switch virtualenvs. If you want to switch PyCall to use a different virtualenv, then you should switch virtualenvs and run rm(Pkg.dir(&ldquo;PyCall&rdquo;,&rdquo;deps&rdquo;,&rdquo;PYTHON&rdquo;)); Pkg.build(&ldquo;PyCall&rdquo;).</p>
 </blockquote>
 <p>which supports my above guess.</p>
 <h2 id="record-for-install-pycall">Record for install <code>PyCall</code><a class="headerlink" href="#record-for-install-pycall" title="Permanent link">&para;</a></h2>
@@ -2206,7 +2194,7 @@ will report
 <h2 id="load-imageview-on-server">load <code>ImageView</code> on Server<a class="headerlink" href="#load-imageview-on-server" title="Permanent link">&para;</a></h2>
 <p>when <code>using ImageView</code>, it throws an error,</p>
 <blockquote>
-<p>ERROR: LoadError: InitError: Cannot open display: </p>
+<p>ERROR: LoadError: InitError: Cannot open display:</p>
 </blockquote>
 <p>fixed by <code>ssh -X</code>. If further ssh on the node, it still works.</p>
 <h2 id="-i-vs-l"><code>-i</code> vs <code>-L</code><a class="headerlink" href="#-i-vs-l" title="Permanent link">&para;</a></h2>
@@ -2214,7 +2202,7 @@ will report
 <p>And note that <code>--</code> should be separated the switches and program files. (but seems not necessary)</p>
 <p><a href="https://docs.julialang.org/en/v1/manual/getting-started/index.html">Julia docs: Getting Started</a></p>
 <h2 id="unable-to-display-plot-using-the-repl-gks-errors">Unable to display plot using the REPL. GKS errors<a class="headerlink" href="#unable-to-display-plot-using-the-repl-gks-errors" title="Permanent link">&para;</a></h2>
-<p>The reason would be relate to the <code>GR</code> package, </p>
+<p>The reason would be relate to the <code>GR</code> package,</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> .julia/packages/GR/ZI5OE/deps/gr/bin/
 ldd gksqt
 </code></pre></div>
@@ -2268,7 +2256,7 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 </code></pre></div>
 <p>then rebuild <code>GR</code> package in the julia REPL.</p>
 <p>This solution should work, but actually it failed at the first time. Do not be too frustrated, I found the reason is that I type <code>miniconda3</code> as <code>minconda3</code> in the path.</p>
-<p>It works now, although it still throw an error, </p>
+<p>It works now, although it still throw an error,</p>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">libGL</span> <span class="n">error</span><span class="o">:</span> <span class="n">unable</span> <span class="n">to</span> <span class="n">load</span> <span class="n">driver</span><span class="o">:</span> <span class="n">swrast_dri</span><span class="o">.</span><span class="n">so</span>
 <span class="n">libGL</span> <span class="n">error</span><span class="o">:</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">load</span> <span class="n">driver</span><span class="o">:</span> <span class="n">swrast</span>
 </code></pre></div>
@@ -2276,10 +2264,10 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 <p>总是记不太清 <code>sum</code>, <code>mean</code> 的时候 <code>dims=1</code> 是按行求和还是按列求和，经常先玩个 toy example 才能分辨出来。比如，</p>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="mi">4</span><span class="n">×3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
- <span class="mf">0.279181</span>  <span class="mf">0.0903167</span>  <span class="mf">0.148329</span> 
+ <span class="mf">0.279181</span>  <span class="mf">0.0903167</span>  <span class="mf">0.148329</span>
  <span class="mf">0.486691</span>  <span class="mf">0.869156</span>   <span class="mf">0.0538834</span>
- <span class="mf">0.110781</span>  <span class="mf">0.836284</span>   <span class="mf">0.486467</span> 
- <span class="mf">0.810343</span>  <span class="mf">0.208659</span>   <span class="mf">0.759561</span> 
+ <span class="mf">0.110781</span>  <span class="mf">0.836284</span>   <span class="mf">0.486467</span>
+ <span class="mf">0.810343</span>  <span class="mf">0.208659</span>   <span class="mf">0.759561</span>
 
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="mi">1</span><span class="n">×3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
@@ -2307,7 +2295,7 @@ libpcre.so.1 <span class="o">=</span>&gt; /lib64/libpcre.so.1 <span class="o">(<
 <div class="highlight"><pre><span></span><code><span class="n">h</span><span class="p">(;</span><span class="n">kw</span><span class="o">...</span><span class="p">)</span> <span class="o">=</span> <span class="n">kw</span>
 <span class="n">h</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 </code></pre></div>
-<p>but it throws </p>
+<p>but it throws</p>
 <div class="highlight"><pre><span></span><code>ERROR: setfield! immutable struct of type NamedTuple cannot be changed
 Stacktrace:
  [1] setproperty!(::NamedTuple{(:a,),Tuple{Int64}}, ::Symbol, ::Int64) at ./Base.jl:21
@@ -2350,7 +2338,7 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">f2</span><span class="p">()</span>
 <span class="mi">20</span>
 </code></pre></div>
-<p>but </p>
+<p>but</p>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f2</span><span class="p">()</span>
            <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
            <span class="n">g</span><span class="p">()</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
@@ -2401,7 +2389,7 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 </code></pre></div>
 <h2 id="check-whether-array-entry-is-undef">check whether array entry is undef<a class="headerlink" href="#check-whether-array-entry-is-undef" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">}}(</span><span class="n">undef</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">isdefined</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> 
+<span class="n">isdefined</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="c"># or</span>
 <span class="n">isassigned</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="c"># not</span>
@@ -2433,14 +2421,14 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <span class="n">img</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">download</span><span class="p">(</span><span class="s">&quot;https://juliaimages.org/latest/assets/segmentation/horse.jpg&quot;</span><span class="p">));</span>
 <span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 </code></pre></div>
-<p>REPL 冻住了，一直停在 </p>
+<p>REPL 冻住了，一直停在</p>
 <div class="highlight"><pre><span></span><code><span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}</span> <span class="n">with</span> <span class="mi">4</span> <span class="n">entries</span><span class="o">:</span>
 </code></pre></div>
 <p>而我如果直接将上述语句复制到 REPL 中运行时，一切 OK，正常显示为</p>
 <div class="highlight"><pre><span></span><code><span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}</span> <span class="n">with</span> <span class="mi">4</span> <span class="n">entries</span><span class="o">:</span>
   <span class="s">&quot;gui&quot;</span>         <span class="o">=&gt;</span> <span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}(</span><span class="s">&quot;window&quot;</span><span class="o">=&gt;</span><span class="n">GtkWindowLeaf</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">wi…</span>
   <span class="s">&quot;roi&quot;</span>         <span class="o">=&gt;</span> <span class="kt">Dict</span><span class="p">{</span><span class="n">String</span><span class="p">,</span><span class="kt">Any</span><span class="p">}(</span><span class="s">&quot;redraw&quot;</span><span class="o">=&gt;</span><span class="mi">50</span><span class="o">:</span> <span class="s">&quot;map(clim-mapped image, input…</span>
-<span class="s">  &quot;</span><span class="n">annotations</span><span class="s">&quot; =&gt; 3: &quot;</span><span class="n">input</span><span class="o">-</span><span class="mi">2</span><span class="s">&quot; = Dict{UInt64,Any}() Dict{UInt64,Any} </span>
+<span class="s">  &quot;</span><span class="n">annotations</span><span class="s">&quot; =&gt; 3: &quot;</span><span class="n">input</span><span class="o">-</span><span class="mi">2</span><span class="s">&quot; = Dict{UInt64,Any}() Dict{UInt64,Any}</span>
 <span class="s">  &quot;</span><span class="n">clim</span><span class="s">&quot;        =&gt; 2: &quot;</span><span class="n">CLim</span><span class="s">&quot; = CLim{RGB{Float64}}(RGB{Float64}(0.0,0.0,0.0), RG…</span>
 </code></pre></div>
 <p>找到类似的 Issue: <a href="https://github.com/JunoLab/Juno.jl/issues/320">[BUG] Evaluation in Editor freezes Atom occasionally</a></p>
@@ -2455,12 +2443,12 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <p>当在 <code>.bashrc</code> 添加 <code>http_proxy</code> 和 <code>https_proxy</code> 中并 source 之后，直接在 shell 里面开的 julia session 中，验证当前 ip</p>
 <div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="sb">`curl ifconfig.me`</span><span class="p">)</span>
 </code></pre></div>
-<p>或者直接查看 </p>
+<p>或者直接查看</p>
 <div class="highlight"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;http_proxy&quot;</span><span class="p">]</span>
 </code></pre></div>
 <p>发现可以使用系统代理。但是在 Atom 中开的 julia，则不行。找到 Atom 一条相关的 issue: <a href="https://github.com/atom/atom/issues/18318">[Atom 1.32.0] Does not inherit environment variables when launched not from the command line</a>，但是我已经是最新版了，不应该存在这个问题。但是当我通过 <code>Ctrl-Shift-i</code> 打开 devtools，验证 <code>process.env["http_proxy"]</code>，显示 undefined；而且直接在 source 之后的 terminal 中打开，也显示 undefined。猜想，只对 PATH 有效？或者因为 Juno.jl?</p>
 <p>跳过这个问题，最后直接在 <code>startup.jl</code> 文件中添加</p>
-<div class="highlight"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;http_proxy&quot;</span><span class="p">]</span> <span class="o">=</span> 
+<div class="highlight"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;http_proxy&quot;</span><span class="p">]</span> <span class="o">=</span>
 <span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;https_proxy&quot;</span><span class="p">]</span>
 </code></pre></div>
 <p>进行设置，这参考了 <a href="https://discourse.julialang.org/t/install-packages-behind-the-proxy/23298/2">Install packages behind the proxy</a></p>
@@ -2480,7 +2468,7 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">size</span><span class="p">(</span><span class="n">canvases</span><span class="p">)</span>
 <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-<p>it seems that the canvases will arrage by column while the gui declares it should be by rows. </p>
+<p>it seems that the canvases will arrage by column while the gui declares it should be by rows.</p>
 <p>On the other hand, if I run</p>
 <div class="highlight"><pre><span></span><code><span class="n">gui</span> <span class="o">=</span> <span class="n">imshow_gui</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c"># 2 columns, 1 row of images (each initially 300×300)</span>
 <span class="n">canvases</span> <span class="o">=</span> <span class="n">gui</span><span class="p">[</span><span class="s">&quot;canvas&quot;</span><span class="p">]</span>
@@ -2511,7 +2499,7 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 7�
 lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 9月  <span class="m">18</span> <span class="m">15</span>:28 julia1.2.0 -&gt; /home/weiya/src/julia-1.2.0/bin/julia*
 lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3月  <span class="m">18</span> <span class="m">10</span>:25 julia1.3.1 -&gt; /home/weiya/src/julia-1.3.1/bin/julia*
 </code></pre></div>
-<p>The source folders can be freely moved to another place, and only need to update the symbol links, which can be firstly deleted and then created, or use </p>
+<p>The source folders can be freely moved to another place, and only need to update the symbol links, which can be firstly deleted and then created, or use</p>
 <div class="highlight"><pre><span></span><code>sudo ln -sf ... ...
 </code></pre></div>
 <p>to override current link. But, if the links is to a folder, then another flag need to be added to override,</p>
@@ -2521,7 +2509,7 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 <p>Also, note that the link to a folder should be deleted with</p>
 <div class="highlight"><pre><span></span><code>rm folder
 </code></pre></div>
-<p>instead of </p>
+<p>instead of</p>
 <div class="highlight"><pre><span></span><code>rm -r folder/ <span class="c1"># delete the original folder</span>
 </code></pre></div>
 <h2 id="array-in-functions">array in functions<a class="headerlink" href="#array-in-functions" title="Permanent link">&para;</a></h2>
@@ -2551,7 +2539,7 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 <span class="mi">1</span><span class="n">×2</span> <span class="n">Adjoint</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}}</span><span class="o">:</span>
  <span class="mi">2</span>  <span class="mi">4</span>
 </code></pre></div>
-<p>Note that sometimes <code>.+=</code> may make the program much slower, such as https://github.com/szcf-weiya/en/blob/3c8daeb4e0f477f5ea40dc2bb44d832faa4bbbb6/code/2019-06-14-ML/GD2.jl#L10</p>
+<p>Note that sometimes <code>.+=</code> may make the program much slower, such as <a href="https://github.com/szcf-weiya/en/blob/3c8daeb4e0f477f5ea40dc2bb44d832faa4bbbb6/code/2019-06-14-ML/GD2.jl#L10">en/code/2019-06-14-ML/GD2.jl</a></p>
 <h2 id="package">同时安装多个 package<a class="headerlink" href="#package" title="Permanent link">&para;</a></h2>
 <p>用空格隔开，如</p>
 <div class="highlight"><pre><span></span><code><span class="n">add</span> <span class="n">Distributions</span> <span class="n">Combinatorics</span> <span class="n">MATLAB</span> <span class="n">PyPlot</span> <span class="n">LightGraphsFlows</span> <span class="n">LightGraphs</span> <span class="n">Clp</span> <span class="n">Plots</span>
@@ -2571,7 +2559,7 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 </code></pre></div>
 <p>will produce</p>
 <p><img alt="" src="labels_col.png" /></p>
-<p>where these two lines share the same label instead of one label for one line. But if replacing the column vector with row vector, </p>
+<p>where these two lines share the same label instead of one label for one line. But if replacing the column vector with row vector,</p>
 <div class="highlight"><pre><span></span><code><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;a&quot;</span> <span class="s">&quot;b&quot;</span><span class="p">])</span>
 </code></pre></div>
 <p>will return the correct result,</p>
@@ -2673,7 +2661,7 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 <div class="highlight"><pre><span></span><code><span class="n">figs</span> <span class="o">=</span> <span class="s">&quot;p&quot;</span> <span class="o">.*</span> <span class="n">string</span><span class="o">.</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span><span class="p">)</span> <span class="o">.*</span> <span class="s">&quot;.png&quot;</span>
 <span class="n">run</span><span class="p">(</span><span class="sb">`convert </span><span class="si">$figs</span><span class="sb"> +append pall.png`</span><span class="p">)</span>
 </code></pre></div>
-<p>instead of trying to convert the array to a string, </p>
+<p>instead of trying to convert the array to a string,</p>
 <div class="highlight"><pre><span></span><code><span class="c"># WRONG!!!</span>
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">figs</span> <span class="o">=</span> <span class="n">prod</span><span class="p">(</span><span class="s">&quot;p&quot;</span> <span class="o">.*</span> <span class="n">string</span><span class="o">.</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span><span class="p">)</span> <span class="o">.*</span> <span class="s">&quot;.png &quot;</span><span class="p">)</span>
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">run</span><span class="p">(</span><span class="sb">`convert </span><span class="si">$figs</span><span class="sb"> +append pall.png`</span><span class="p">)</span>

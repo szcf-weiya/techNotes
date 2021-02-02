@@ -486,13 +486,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scp" class="md-nav__link">
-    几种方法来实现scp拷贝时无需输入密码
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#user-vs-sys" class="md-nav__link">
     user vs. sys
   </a>
@@ -1581,18 +1574,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssh/" class="md-nav__link">
-        Ssh
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Git/" class="md-nav__link">
         Git
       </a>
@@ -2203,13 +2184,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scp" class="md-nav__link">
-    几种方法来实现scp拷贝时无需输入密码
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#user-vs-sys" class="md-nav__link">
     user vs. sys
   </a>
@@ -2736,7 +2710,7 @@
 <li><code>LANGUAGE</code>：指定个人对语言环境值的主次偏好，在 Ubuntu 中有这个环境变量，但似乎在 CentOS7.4 服务器上没有这个变量</li>
 <li><code>LC_ALL</code>: 这不是一个环境变量，是一个可被C语言库函数setlocale设置的宏，其值可覆盖所有其他的locale设定。因此缺省时此值为空</li>
 <li><code>LC_xxx</code>: 可设定locale各方面（category）的值，可以覆盖 <code>LANG</code> 的值。</li>
-<li><code>LANG</code>: 指定默认使用的locale值 </li>
+<li><code>LANG</code>: 指定默认使用的locale值</li>
 </ol>
 <p>如若设置不当，可能会出现</p>
 <div class="highlight"><pre><span></span><code>$ locale
@@ -2807,7 +2781,7 @@ tmux kill-server
 <span class="c1"># rename: https://superuser.com/questions/428016/how-do-i-rename-a-session-in-tmux</span>
 Ctrl + B, $
 </code></pre></div>
-<p>refer to 
+<p>refer to
 - <a href="https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it">How do I access tmux session after I leave it?</a>
 - <a href="https://linuxize.com/post/getting-started-with-tmux/">Getting started with Tmux</a>
 - <a href="https://gist.github.com/henrik/1967800">tmux cheatsheet</a></p>
@@ -2852,7 +2826,7 @@ sudo rm /var/lib/dpkg/lock
 </code></pre></div>
 <p>如果不行，重启。</p>
 <h2 id="gcc">gcc版本<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h2>
-<p>可以通过 <code>update-alternatives</code> 进行切换，但注意要提前安装 <code>install</code> alternatives，这里的 install 不是下载源码安装，而是将系统中已有的不同版本的 gcc 安装到 alternatives 中。比如当前我电脑的 gcc &ndash;version 是 7.5.0，但是仍有 <code>gcc-5</code>, <code>gcc-4.8</code> 等命令，不过这些并不在 alternatives 中，因为如果直接运行 </p>
+<p>可以通过 <code>update-alternatives</code> 进行切换，但注意要提前安装 <code>install</code> alternatives，这里的 install 不是下载源码安装，而是将系统中已有的不同版本的 gcc 安装到 alternatives 中。比如当前我电脑的 gcc &ndash;version 是 7.5.0，但是仍有 <code>gcc-5</code>, <code>gcc-4.8</code> 等命令，不过这些并不在 alternatives 中，因为如果直接运行</p>
 <div class="highlight"><pre><span></span><code>$ sudo update-alternatives --config gcc
 update-alternatives: error: no alternatives <span class="k">for</span> gcc
 </code></pre></div>
@@ -2988,8 +2962,6 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 <p><a href="https://gist.github.com/dyndna/18bb71494e021f672510">Install circos on ubuntu 14.04 LTS</a></p>
 <h2 id="shell">shell 提取文件名和目录名<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.csdn.net/universe_hao/article/details/52640321">shell 提取文件名和目录名</a></p>
-<h2 id="scp">几种方法来实现scp拷贝时无需输入密码<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h2>
-<p><a href="http://blog.csdn.net/nfer_zhuang/article/details/42646849">几种方法来实现scp拷贝时无需输入密码</a></p>
 <h2 id="user-vs-sys"><code>user</code> vs. <code>sys</code><a class="headerlink" href="#user-vs-sys" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>time</code> commands return three times, named <code>real</code>, <code>user</code> and <code>sys</code>, the detailed explanation refers to <a href="https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1">What do &lsquo;real&rsquo;, &lsquo;user&rsquo; and &lsquo;sys&rsquo; mean in the output of time(1)?</a></li>
@@ -3044,18 +3016,18 @@ sudo service cron reload
 <h2 id="unable-to-lock-the-administration-directory-varlibdpkg-is-another-process-using-it">Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?<a class="headerlink" href="#unable-to-lock-the-administration-directory-varlibdpkg-is-another-process-using-it" title="Permanent link">&para;</a></h2>
 <p><a href="https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process">Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?</a></p>
 <h2 id="redirection">redirection<a class="headerlink" href="#redirection" title="Permanent link">&para;</a></h2>
-<p>Note that </p>
+<p>Note that</p>
 <blockquote>
 <p>when you put &amp; the output - both stdout and stderr - will still be printed onto the screen.</p>
 <p>If you do not want to see any output on the screen, redirect both stdout and stderr to a file by:</p>
 </blockquote>
 <p><div class="highlight"><pre><span></span><code>myscript &gt; ~/myscript.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
 </code></pre></div>
-or just </p>
+or just</p>
 <div class="highlight"><pre><span></span><code>myscript &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
 </code></pre></div>
 <p>refer to <a href="https://askubuntu.com/questions/662817/why-can-i-see-the-output-of-background-processes">Why can I see the output of background processes?</a></p>
-<p><a href="https://askubuntu.com/a/1031424">Formally</a>, integer <code>1</code> stands for <code>stdout</code> file descriptor, while <code>2</code> represents <code>stderr</code> file descriptor. </p>
+<p><a href="https://askubuntu.com/a/1031424">Formally</a>, integer <code>1</code> stands for <code>stdout</code> file descriptor, while <code>2</code> represents <code>stderr</code> file descriptor.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> Hello World &gt; /dev/null
 </code></pre></div>
 <p>is same as</p>
@@ -3089,7 +3061,7 @@ or just </p>
 <p>see more details in <a href="https://askubuntu.com/questions/487035/mv-files-with-xargs">mv files with | xargs</a></p>
 <h2 id="google-drive">google drive<a class="headerlink" href="#google-drive" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://askubuntu.com/questions/838956/ubuntu-16-04-set-up-with-google-online-account-but-no-drive-folder-in-nautilus">Ubuntu 16.04 set up with google online account but no drive folder in nautilus</a></p>
-<p>Note that you should run </p>
+<p>Note that you should run</p>
 <div class="highlight"><pre><span></span><code>gnome-control-center online-accounts
 </code></pre></div>
 <p>in the command line, not to open the GUI.</p>
@@ -3097,7 +3069,7 @@ or just </p>
 <p><a href="https://askubuntu.com/questions/833322/pair-bose-quietcomfort-35-with-ubuntu-over-bluetooth">Pair Bose QuietComfort 35 with Ubuntu over Bluetooth</a></p>
 <h2 id="gvim-fullscreen">gvim fullscreen<a class="headerlink" href="#gvim-fullscreen" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://askubuntu.com/questions/2140/is-there-a-way-to-turn-gvim-into-fullscreen-mode">Is there a way to turn gvim into fullscreen mode?</a></p>
-<p>In short, </p>
+<p>In short,</p>
 <ol>
 <li>install wmctrl</li>
 <li>map F11 via .vimrc</li>
@@ -3108,7 +3080,7 @@ or just </p>
 <li><a href="https://support.mozilla.org/zh-CN/kb/thunderbird-gmail">Special Gmail (continued)</a></li>
 </ol>
 <h2 id="ubuntu-1604-create-wifi-hotpot">Ubuntu 16.04 create WiFi Hotpot<a class="headerlink" href="#ubuntu-1604-create-wifi-hotpot" title="Permanent link">&para;</a></h2>
-<p>Refer to </p>
+<p>Refer to</p>
 <ol>
 <li><a href="http://ubuntuhandbook.org/index.php/2014/09/3-ways-create-wifi-hotspot-ubuntu/">3 Ways to Create Wifi Hotspot in Ubuntu 14.04 (Android Support)</a></li>
 <li><a href="https://askubuntu.com/questions/318973/how-do-i-create-a-wifi-hotspot-sharing-wireless-internet-connection-single-adap">How do I create a WiFi hotspot sharing wireless internet connection (single adapter)?</a></li>
@@ -3136,7 +3108,7 @@ or just </p>
 <p>在设置齿轮图标中选择 <code>Edit Mount Options</code>，修改 <code>Mount Point</code>。注意重新挂载后才能生效。</p>
 <p>详见<a href="https://askubuntu.com/questions/904561/how-to-change-hard-drive-name/904564">How to change hard drive name</a></p>
 <h2 id="remove-broken-link">remove broken link<a class="headerlink" href="#remove-broken-link" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>find -L . -name . -o -type d -prune -o -type l -exec rm <span class="o">{}</span> + 
+<div class="highlight"><pre><span></span><code>find -L . -name . -o -type d -prune -o -type l -exec rm <span class="o">{}</span> +
 </code></pre></div>
 <p><a href="https://stackoverflow.com/questions/22097130/delete-all-broken-symbolic-links-with-a-line">Delete all broken symbolic links with a line?</a></p>
 <h2 id="wget">wget<a class="headerlink" href="#wget" title="Permanent link">&para;</a></h2>
@@ -3148,7 +3120,7 @@ or just </p>
 <h3 id="wget-vs-curl"><code>wget</code> vs <code>curl</code><a class="headerlink" href="#wget-vs-curl" title="Permanent link">&para;</a></h3>
 <p><code>wget</code> 不用添加 <code>-O</code> 就可以将下载的文件存储下来，但是 <code>curl</code> 并不默认将下载的文件存入本地文件，除非加上 <code>-o</code> 选项，而 <code>wget</code> 的 <code>-O</code> 只是为了更改文件名。</p>
 <p>比如<a href="https://github.com/huan/docker-wine/blob/54e7ba2f042a59de72a06bafc37f1fb8c554541e/Dockerfile#L36">这里</a>，直接将下载的内容输出到下一个命令</p>
-<div class="highlight"><pre><span></span><code>curl -sL https://dl.winehq.org/wine-builds/winehq.key <span class="p">|</span> apt-key add - 
+<div class="highlight"><pre><span></span><code>curl -sL https://dl.winehq.org/wine-builds/winehq.key <span class="p">|</span> apt-key add -
 </code></pre></div>
 <p>更多比较详见 <a href="https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget">What is the difference between curl and wget?</a></p>
 <h2 id="hydrogen-specify-the-conda-envirnoment">hydrogen specify the conda envirnoment<a class="headerlink" href="#hydrogen-specify-the-conda-envirnoment" title="Permanent link">&para;</a></h2>
@@ -3180,7 +3152,7 @@ alias psaux=&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#
 <div class="highlight"><pre><span></span><code>ls -1 ./*jpg <span class="p">|</span> xargs -L1 -I <span class="o">{}</span> img2pdf <span class="o">{}</span> -o <span class="o">{}</span>.pdf
 pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m">1</span>..13<span class="o">}</span>-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
 </code></pre></div>
-<p>注意这里需要用 <code>ls -1</code>，如果 <code>ll</code> 则第一行会有 <code>total xxx</code> 的信息，即 <code>ll | wc -l</code> 等于 <code>ls -1 | wc -l</code> + 1，而且在我的 Ubuntu 18.04 中，<code>ll</code> 甚至还会列出 </p>
+<p>注意这里需要用 <code>ls -1</code>，如果 <code>ll</code> 则第一行会有 <code>total xxx</code> 的信息，即 <code>ll | wc -l</code> 等于 <code>ls -1 | wc -l</code> + 1，而且在我的 Ubuntu 18.04 中，<code>ll</code> 甚至还会列出</p>
 <div class="highlight"><pre><span></span><code>./
 ../
 </code></pre></div>
@@ -3197,7 +3169,7 @@ pdftk input.pdf update_info metadata output output.pdf
 <h2 id="_10">图片处理<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <h3 id="_11">拼接<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>水平方向</p>
-<div class="highlight"><pre><span></span><code>convert +append *.png out.png 
+<div class="highlight"><pre><span></span><code>convert +append *.png out.png
 </code></pre></div>
 <p>垂直方向</p>
 <div class="highlight"><pre><span></span><code>convert -append *.png out.png
@@ -3225,14 +3197,14 @@ pdftk input.pdf update_info metadata output output.pdf
 <p>直接用</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i <span class="k">in</span>.mov -vf <span class="s2">&quot;transpose=1&quot;</span> out.mov
 </code></pre></div>
-<p>然后报错 <a href="(https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled)">“The encoder &lsquo;aac&rsquo; is experimental but experimental codecs are not enabled”</a> </p>
+<p>然后报错 <a href="(https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled)">“The encoder &lsquo;aac&rsquo; is experimental but experimental codecs are not enabled”</a></p>
 <p>注意添加 <code>-strict -2</code> 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i <span class="k">in</span>.mov -vf <span class="s2">&quot;transpose=1&quot;</span> -strict -2 out.mov
 </code></pre></div>
 <h3 id="_20">视频剪切<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">00</span>:00:30.0 -i input.wmv -c copy -t <span class="m">00</span>:00:10.0 output.wmv
 </code></pre></div>
-<p>where </p>
+<p>where</p>
 <ul>
 <li>(optional) <code>-ss</code> specifies the start timestamp, the format is <code>HH:MM:SS.xxx</code></li>
 <li>(optional) <code>-t</code> specifies the duration, or use <code>-to</code> to specifies the end timestamp</li>
@@ -3255,7 +3227,7 @@ pdftk input.pdf update_info metadata output output.pdf
 <h2 id="windows">windows 命名规范<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
 <p>在使用 <a href="https://github.com/skilion/onedrive">onedrive</a> 同步时，一直会出现碰到某个文件崩溃。查了一下才知道是需要遵循 <a href="https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN">Windows 命名规范</a>，其中有两条很重要</p>
 <ul>
-<li>Do not assume case sensitivity. For example, consider the names OSCAR, Oscar, and oscar to be the same, even though some file systems (such as a POSIX-compliant file system) may consider them as different. Note that NTFS supports POSIX semantics for case sensitivity but this is not the default behavior. </li>
+<li>Do not assume case sensitivity. For example, consider the names OSCAR, Oscar, and oscar to be the same, even though some file systems (such as a POSIX-compliant file system) may consider them as different. Note that NTFS supports POSIX semantics for case sensitivity but this is not the default behavior.</li>
 <li>The following reserved characters:</li>
 <li>&lt; (less than)</li>
 <li>
@@ -3277,7 +3249,7 @@ pdftk input.pdf update_info metadata output output.pdf
 </ul>
 <h2 id="_21">后台运行<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>jobs -l</code> 返回后台运行程序的 <code>PID</code>，refer to <a href="https://stackoverflow.com/questions/1908610/how-to-get-pid-of-background-process">How to get PID of background process?</a> </li>
+<li><code>jobs -l</code> 返回后台运行程序的 <code>PID</code>，refer to <a href="https://stackoverflow.com/questions/1908610/how-to-get-pid-of-background-process">How to get PID of background process?</a></li>
 </ul>
 <p>但是 <code>jobs</code> <a href="https://superuser.com/a/607219">只显示属于当前 shell 的后台程序</a>, 如果重新登录，则不会显示后台程序，详见 <a href="https://superuser.com/questions/607218/jobs-command-doesnt-show-any-background-processes"><code>jobs</code> command doesn&rsquo;t show any background processes</a></p>
 <h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
@@ -3292,7 +3264,7 @@ pdftk input.pdf update_info metadata output output.pdf
 </ul>
 </blockquote>
 <p><code>nvidia-smi</code>: installed by the GPU driver installer, and generally has the GPU driver in view, not anything installed by the CUDA toolkit installer.
-<code>nvcc</code>: the CUDA compiler-driver tool that is installed with the CUDA toolkit, will always report the CUDA runtime version that it was built to recognize. </p>
+<code>nvcc</code>: the CUDA compiler-driver tool that is installed with the CUDA toolkit, will always report the CUDA runtime version that it was built to recognize.</p>
 <h2 id="_22">共享打印机<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
 <p>现有台 HP-Deskjet-1050-J410-series 打印机，通过 USB 接口。直接连接在 Ubuntu 上是可以实现打印功能的，现在想贡献给局域网内的其他设备，参考 <a href="https://www.jianshu.com/p/a1c4fc6d9ce8">使用Linux共享打印机</a>，主要步骤为</p>
 <ol>
@@ -3306,7 +3278,7 @@ pdftk input.pdf update_info metadata output output.pdf
 <p><a href="https://stevescott.ca/2016-10-20-installing-the-fira-font-in-ubuntu.html">Install the Fira Font in Ubuntu</a></p>
 <p>and some introduction: <a href="https://zhuanlan.zhihu.com/p/65362086">Fira Code —— 专为编程而生的字体</a></p>
 <h2 id="proxy-for-gmail-in-thunderbird">Proxy for Gmail in Thunderbird<a class="headerlink" href="#proxy-for-gmail-in-thunderbird" title="Permanent link">&para;</a></h2>
-<p>Setting a proxy for the thunderbird is quite straigtforward, but not all mail accounts need the proxy, only gmail in my case. I am considering if it is possible to set up a proxy for gmail separately. Then I found that setting proxy by PAC file might work inspired by <a href="https://support.google.com/mail/forum/AAAAK7un8RUCGQj5uPgJoo">Gmail imap/smtp domains to connect via proxy</a>, since PAC file can customize the visited url. </p>
+<p>Setting a proxy for the thunderbird is quite straigtforward, but not all mail accounts need the proxy, only gmail in my case. I am considering if it is possible to set up a proxy for gmail separately. Then I found that setting proxy by PAC file might work inspired by <a href="https://support.google.com/mail/forum/AAAAK7un8RUCGQj5uPgJoo">Gmail imap/smtp domains to connect via proxy</a>, since PAC file can customize the visited url.</p>
 <p>Then I need to learn <a href="https://findproxyforurl.com/example-pac-file/">how to write a PAC file</a>, although later I directly export the rules written in SwitchyOmega to a PAC file.</p>
 <p>Once PAC is done, I need to write its location url, seems impossible to directly write a local path. One easy way is to open port 80 to access my laptop, which maybe need apache or nginx, but both of them are overqualified. A simple way is</p>
 <div class="highlight"><pre><span></span><code>sudo python -m SimpleHTTPServer <span class="m">80</span>
@@ -3370,7 +3342,7 @@ sudo rm Hotspot
 <p>参考 <a href="https://askubuntu.com/questions/120415/how-to-remove-access-point-from-saved-list/120447">How to remove access point from saved list</a></p>
 <h2 id="ssd">移动 SSD 硬盘<a class="headerlink" href="#ssd" title="Permanent link">&para;</a></h2>
 <p>因为硬盘太小，而移动硬盘读写文件速度实在有点慢，然后看到有<a href="https://zhuanlan.zhihu.com/p/61083491">移动 SSD 硬盘</a>，于是便入手了一个。</p>
-<p>当然首先确定了，自己笔记本有 USB3.0 接口，虽然不是 USB3.1。（不过好像 USB3.0 也叫作 USB3.1 gen1，而真正的 USB3.1 叫做 USB3.1 gen2），这个可以通过 </p>
+<p>当然首先确定了，自己笔记本有 USB3.0 接口，虽然不是 USB3.1。（不过好像 USB3.0 也叫作 USB3.1 gen1，而真正的 USB3.1 叫做 USB3.1 gen2），这个可以通过</p>
 <div class="highlight"><pre><span></span><code>$ lsusb -t
 </code></pre></div>
 <p>来看<a href="https://superuser.com/questions/781398/how-can-i-be-sure-that-ive-plugged-a-device-into-a-usb-3-port">接口的情况</a>，当然也直接搜了电脑型号来看具体配置、</p>
@@ -3496,9 +3468,9 @@ tp-smapi   <span class="o">=</span> inactive <span class="o">(</span>ThinkPad no
 <div class="highlight"><pre><span></span><code>$ uname -r
 <span class="m">4</span>.15.0-112-generic
 </code></pre></div>
-<p>而且在 <a href="https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#why-is-my-battery-charged-up-to-100-ignoring-the-charge-thresholds">Why is my battery charged up to 100% – ignoring the charge thresholds?</a> 的 
+<p>而且在 <a href="https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#why-is-my-battery-charged-up-to-100-ignoring-the-charge-thresholds">Why is my battery charged up to 100% – ignoring the charge thresholds?</a> 的
 <a href="https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#thinkpad-t430-s-t530-w530-x230-and-all-later-models">ThinkPad T430(s)/T530/W530/X230 (and all later models)</a>
-提到解决方案是 </p>
+提到解决方案是</p>
 <blockquote>
 <p>Install a kernel ≥ 4.19 to make natacpi available</p>
 </blockquote>
@@ -3550,7 +3522,7 @@ swapon /mnt/swapfile
 <h2 id="unzip-extract-here"><code>unzip</code> 和右键 <code>Extract Here</code> 的区别<a class="headerlink" href="#unzip-extract-here" title="Permanent link">&para;</a></h2>
 <p>对于 A.zip，假设内部结构为 <code>dir/file</code>，则通过 <code>unzip A.zip</code> 会直接得到 <code>dir/file</code>，而邮件解压会得到 <code>A/dir/file</code>.</p>
 <h2 id="unzip-all-zip-file-in-a-directory">unzip all <code>.zip</code> file in a directory<a class="headerlink" href="#unzip-all-zip-file-in-a-directory" title="Permanent link">&para;</a></h2>
-<p>tried <code>unzip *.zip</code> but does not work, it seems that I missed something although I have checked <code>man unzip</code> in which <code>*</code> is indeed allowed, then I found </p>
+<p>tried <code>unzip *.zip</code> but does not work, it seems that I missed something although I have checked <code>man unzip</code> in which <code>*</code> is indeed allowed, then I found</p>
 <div class="highlight"><pre><span></span><code>unzip <span class="se">\*</span>.zip
 </code></pre></div>
 <p>in <a href="https://stackoverflow.com/questions/2374772/unzip-all-files-in-a-directory/29248777">Unzip All Files In A Directory</a></p>
@@ -3578,7 +3550,7 @@ gpg:              unchanged: <span class="m">1</span>
 </code></pre></div>
 <p>then I tried another keyserver mentioned in <a href="https://stackoverflow.com/questions/10255082/installing-r-from-cran-ubuntu-repository-no-public-key-error">Installing R from CRAN Ubuntu repository: No Public Key Error</a></p>
 <div class="highlight"><pre><span></span><code>$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
-<span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> weiya: 
+<span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> weiya:
 Executing: /tmp/apt-key-gpghome.xUS3ZEg8N2/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 gpg: key 51716619E084DAB9: <span class="s2">&quot;Michael Rutter &lt;marutter@gmail.com&gt;&quot;</span> <span class="m">2</span> new signatures
 gpg: Total number processed: <span class="m">1</span>
@@ -3594,7 +3566,7 @@ W: Some index files failed to download. They have been ignored, or old ones used
 <h2 id="sftp-via-file-manager">sftp via File Manager<a class="headerlink" href="#sftp-via-file-manager" title="Permanent link">&para;</a></h2>
 <p>在用 <code>connect to server</code> 时，经常弹出窗口要求输入用户名及密码，格式为 <code>sftp://xxx.xxx.xx.xx</code>，如果避免输入密码，不妨采用 <code>sftp://user@xxx.xxx.xx.xx</code>。不过有时在登录其它服务器时，不指定用户名还是直接登进去了，不太清楚为什么，猜想会不会是这几个服务器的用户名刚好跟本地相同。</p>
 <h2 id="make-the-software-searchable">make the software searchable<a class="headerlink" href="#make-the-software-searchable" title="Permanent link">&para;</a></h2>
-<p>If the software has <code>xx.destop</code> file, then </p>
+<p>If the software has <code>xx.destop</code> file, then</p>
 <div class="highlight"><pre><span></span><code>cp xx.destop ~/.local/share/applications
 </code></pre></div>
 <p>otherwise， create a <code>.desktop</code> file. More details refer to <a href="https://askubuntu.com/questions/80013/how-to-pin-eclipse-to-the-unity-launcher">How to pin Eclipse to the Unity launcher?</a> and <a href="https://askubuntu.com/questions/285951/how-to-add-programs-to-the-launcher-search">How to add programs to the launcher (search)?</a></p>
