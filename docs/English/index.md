@@ -1,3 +1,9 @@
+## 2021.02.02
+
+- He asked his **bean-counter (<俚>统计专家)** to **crunch (嚼，咬碎)** the numbers.
+    - crunch time: 关键时刻，关键时间
+    - credit crunch: 信贷紧缩，信贷危机（等于 credit crisis)
+
 ## 2021.02.01
 
 - A Bayesian analysis concludes beyond a reasonable doubt that SARS-CoV-2 is not a natural **zoonosis (动物传染病)** but instead is laboratory derived.
