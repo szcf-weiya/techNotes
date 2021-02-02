@@ -17,11 +17,11 @@ If no such command, then resort to other methods mentioned in [How To Find Out M
 根据[维基百科](https://zh.wikipedia.org/wiki/%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE)，区域设置（locale），也称作“本地化策略集”、“本地环境”，是表达程序用户地区方面的软件设定。不同系统、平台、与软件有不同的区域设置处理方式和不同的设置范围，但是一般区域设置最少也会包括语言和地区。操作系统的区域设置通常比较复杂。区域设置的内容包括：数据格式、货币金额格式、小数点符号、千分位符号、度量衡单位、通货符号、日期写法、日历类型、文字排序、姓名格式、地址等等。
 
 locale 生效的顺序为
- 
+
 1. `LANGUAGE`：指定个人对语言环境值的主次偏好，在 Ubuntu 中有这个环境变量，但似乎在 CentOS7.4 服务器上没有这个变量
 2. `LC_ALL`: 这不是一个环境变量，是一个可被C语言库函数setlocale设置的宏，其值可覆盖所有其他的locale设定。因此缺省时此值为空
 3. `LC_xxx`: 可设定locale各方面（category）的值，可以覆盖 `LANG` 的值。
-4. `LANG`: 指定默认使用的locale值 
+4. `LANG`: 指定默认使用的locale值
 
 如若设置不当，可能会出现
 
@@ -114,7 +114,7 @@ tmux kill-server
 Ctrl + B, $
 ```
 
-refer to 
+refer to
 - [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it)
 - [Getting started with Tmux](https://linuxize.com/post/getting-started-with-tmux/)
 - [tmux cheatsheet](https://gist.github.com/henrik/1967800)
@@ -188,7 +188,7 @@ sudo rm /var/lib/dpkg/lock
 
 ## gcc版本
 
-可以通过 `update-alternatives` 进行切换，但注意要提前安装 `install` alternatives，这里的 install 不是下载源码安装，而是将系统中已有的不同版本的 gcc 安装到 alternatives 中。比如当前我电脑的 gcc --version 是 7.5.0，但是仍有 `gcc-5`, `gcc-4.8` 等命令，不过这些并不在 alternatives 中，因为如果直接运行 
+可以通过 `update-alternatives` 进行切换，但注意要提前安装 `install` alternatives，这里的 install 不是下载源码安装，而是将系统中已有的不同版本的 gcc 安装到 alternatives 中。比如当前我电脑的 gcc --version 是 7.5.0，但是仍有 `gcc-5`, `gcc-4.8` 等命令，不过这些并不在 alternatives 中，因为如果直接运行
 
 ```bash
 $ sudo update-alternatives --config gcc
@@ -410,10 +410,6 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 
 [shell 提取文件名和目录名](http://blog.csdn.net/universe_hao/article/details/52640321)
 
-## 几种方法来实现scp拷贝时无需输入密码
-
-[几种方法来实现scp拷贝时无需输入密码](http://blog.csdn.net/nfer_zhuang/article/details/42646849)
-
 ## `user` vs. `sys`
 
 - `time` commands return three times, named `real`, `user` and `sys`, the detailed explanation refers to [What do 'real', 'user' and 'sys' mean in the output of time(1)?](https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1)
@@ -497,7 +493,7 @@ sudo service cron reload
 
 ## redirection
 
-Note that 
+Note that
 
 >  when you put & the output - both stdout and stderr - will still be printed onto the screen.
 
@@ -506,7 +502,7 @@ Note that
 ```bash
 myscript > ~/myscript.log 2>&1 &
 ```
-or just 
+or just
 
 ```bash
 myscript > /dev/null 2>&1 &
@@ -514,7 +510,7 @@ myscript > /dev/null 2>&1 &
 
 refer to [Why can I see the output of background processes?](https://askubuntu.com/questions/662817/why-can-i-see-the-output-of-background-processes)
 
-[Formally](https://askubuntu.com/a/1031424), integer `1` stands for `stdout` file descriptor, while `2` represents `stderr` file descriptor. 
+[Formally](https://askubuntu.com/a/1031424), integer `1` stands for `stdout` file descriptor, while `2` represents `stderr` file descriptor.
 
 ```bash
 echo Hello World > /dev/null
@@ -570,7 +566,7 @@ see more details in [mv files with | xargs](https://askubuntu.com/questions/4870
 
 refer to [Ubuntu 16.04 set up with google online account but no drive folder in nautilus](https://askubuntu.com/questions/838956/ubuntu-16-04-set-up-with-google-online-account-but-no-drive-folder-in-nautilus)
 
-Note that you should run 
+Note that you should run
 
 ```bash
 gnome-control-center online-accounts
@@ -586,7 +582,7 @@ in the command line, not to open the GUI.
 
 refer to [Is there a way to turn gvim into fullscreen mode?](https://askubuntu.com/questions/2140/is-there-a-way-to-turn-gvim-into-fullscreen-mode)
 
-In short, 
+In short,
 
 1. install wmctrl
 2. map F11 via .vimrc
@@ -598,7 +594,7 @@ In short,
 
 ## Ubuntu 16.04 create WiFi Hotpot
 
-Refer to 
+Refer to
 
 1. [3 Ways to Create Wifi Hotspot in Ubuntu 14.04 (Android Support)](http://ubuntuhandbook.org/index.php/2014/09/3-ways-create-wifi-hotspot-ubuntu/)
 2. [How do I create a WiFi hotspot sharing wireless internet connection (single adapter)?](https://askubuntu.com/questions/318973/how-do-i-create-a-wifi-hotspot-sharing-wireless-internet-connection-single-adap)
@@ -638,7 +634,7 @@ gnome-disks
 ## remove broken link
 
 ```bash
-find -L . -name . -o -type d -prune -o -type l -exec rm {} + 
+find -L . -name . -o -type d -prune -o -type l -exec rm {} +
 ```
 
 [Delete all broken symbolic links with a line?](https://stackoverflow.com/questions/22097130/delete-all-broken-symbolic-links-with-a-line)
@@ -662,7 +658,7 @@ wget http://work.caltech.edu/slides/slides{01..18}.pdf
 比如[这里](https://github.com/huan/docker-wine/blob/54e7ba2f042a59de72a06bafc37f1fb8c554541e/Dockerfile#L36)，直接将下载的内容输出到下一个命令
 
 ```bash
-curl -sL https://dl.winehq.org/wine-builds/winehq.key | apt-key add - 
+curl -sL https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
 ```
 
 更多比较详见 [What is the difference between curl and wget?](https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget)
@@ -718,7 +714,7 @@ ls -1 ./*jpg | xargs -L1 -I {} img2pdf {} -o {}.pdf
 pdftk likelihoodfree-design-a-discussion-{1..13}-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
 ```
 
-注意这里需要用 `ls -1`，如果 `ll` 则第一行会有 `total xxx` 的信息，即 `ll | wc -l` 等于 `ls -1 | wc -l` + 1，而且在我的 Ubuntu 18.04 中，`ll` 甚至还会列出 
+注意这里需要用 `ls -1`，如果 `ll` 则第一行会有 `total xxx` 的信息，即 `ll | wc -l` 等于 `ls -1 | wc -l` + 1，而且在我的 Ubuntu 18.04 中，`ll` 甚至还会列出
 
 ```bash
 ./
@@ -748,14 +744,14 @@ pdftk input.pdf update_info metadata output output.pdf
 
 
 
-## 图片处理 
+## 图片处理
 
 ### 拼接
 
 水平方向
 
 ```bash
-convert +append *.png out.png 
+convert +append *.png out.png
 ```
 
 垂直方向
@@ -810,7 +806,7 @@ ffmpeg -i .\input.mp4 -map 0:0 -vcodec copy out.mp4
 ffmpeg -i in.mov -vf "transpose=1" out.mov
 ```
 
-然后报错 [“The encoder 'aac' is experimental but experimental codecs are not enabled”]((https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled)) 
+然后报错 [“The encoder 'aac' is experimental but experimental codecs are not enabled”]((https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled))
 
 注意添加 `-strict -2` 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成
 
@@ -825,7 +821,7 @@ ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
 ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -t 00:00:10.0 output.wmv
 ```
 
-where 
+where
 
 - (optional) `-ss` specifies the start timestamp, the format is `HH:MM:SS.xxx`
 - (optional) `-t` specifies the duration, or use `-to` to specifies the end timestamp
@@ -856,7 +852,7 @@ refer to [Using ffmpeg to cut up video](https://superuser.com/questions/138331/u
 
 在使用 [onedrive](https://github.com/skilion/onedrive) 同步时，一直会出现碰到某个文件崩溃。查了一下才知道是需要遵循 [Windows 命名规范](https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN)，其中有两条很重要
 
-- Do not assume case sensitivity. For example, consider the names OSCAR, Oscar, and oscar to be the same, even though some file systems (such as a POSIX-compliant file system) may consider them as different. Note that NTFS supports POSIX semantics for case sensitivity but this is not the default behavior. 
+- Do not assume case sensitivity. For example, consider the names OSCAR, Oscar, and oscar to be the same, even though some file systems (such as a POSIX-compliant file system) may consider them as different. Note that NTFS supports POSIX semantics for case sensitivity but this is not the default behavior.
 - The following reserved characters:
   - < (less than)
   - > (greater than)
@@ -870,7 +866,7 @@ refer to [Using ffmpeg to cut up video](https://superuser.com/questions/138331/u
 
 ## 后台运行
 
-- `jobs -l` 返回后台运行程序的 `PID`，refer to [How to get PID of background process?](https://stackoverflow.com/questions/1908610/how-to-get-pid-of-background-process) 
+- `jobs -l` 返回后台运行程序的 `PID`，refer to [How to get PID of background process?](https://stackoverflow.com/questions/1908610/how-to-get-pid-of-background-process)
 
 但是 `jobs` [只显示属于当前 shell 的后台程序](https://superuser.com/a/607219), 如果重新登录，则不会显示后台程序，详见 [`jobs` command doesn't show any background processes](https://superuser.com/questions/607218/jobs-command-doesnt-show-any-background-processes)
 
@@ -888,7 +884,7 @@ refer to [Different CUDA versions shown by nvcc and NVIDIA-smi](https://stackove
 > - The necessary support for the runtime API (e.g. libcudart.so on linux, and also nvcc) is installed by the CUDA toolkit installer (which may also have a GPU driver installer bundled in it).
 
 `nvidia-smi`: installed by the GPU driver installer, and generally has the GPU driver in view, not anything installed by the CUDA toolkit installer.
-`nvcc`: the CUDA compiler-driver tool that is installed with the CUDA toolkit, will always report the CUDA runtime version that it was built to recognize. 
+`nvcc`: the CUDA compiler-driver tool that is installed with the CUDA toolkit, will always report the CUDA runtime version that it was built to recognize.
 
 ## 共享打印机
 
@@ -910,7 +906,7 @@ and some introduction: [Fira Code —— 专为编程而生的字体](https://zh
 
 ## Proxy for Gmail in Thunderbird
 
-Setting a proxy for the thunderbird is quite straigtforward, but not all mail accounts need the proxy, only gmail in my case. I am considering if it is possible to set up a proxy for gmail separately. Then I found that setting proxy by PAC file might work inspired by [Gmail imap/smtp domains to connect via proxy](https://support.google.com/mail/forum/AAAAK7un8RUCGQj5uPgJoo), since PAC file can customize the visited url. 
+Setting a proxy for the thunderbird is quite straigtforward, but not all mail accounts need the proxy, only gmail in my case. I am considering if it is possible to set up a proxy for gmail separately. Then I found that setting proxy by PAC file might work inspired by [Gmail imap/smtp domains to connect via proxy](https://support.google.com/mail/forum/AAAAK7un8RUCGQj5uPgJoo), since PAC file can customize the visited url.
 
 Then I need to learn [how to write a PAC file](https://findproxyforurl.com/example-pac-file/), although later I directly export the rules written in SwitchyOmega to a PAC file.
 
@@ -978,7 +974,7 @@ conda create --name RL python=3
 总是报错，
 
 > Collecting package metadata (current_repodata.json): failed
-> 
+>
 > ProxyError: Conda cannot proceed due to an error in your proxy configuration.
 > Check for typos and other configuration errors in any '.netrc' file in your home directory,
 > any environment variables ending in '_PROXY', and any other system-wide proxy
@@ -1018,7 +1014,7 @@ sudo rm Hotspot
 
 因为硬盘太小，而移动硬盘读写文件速度实在有点慢，然后看到有[移动 SSD 硬盘](https://zhuanlan.zhihu.com/p/61083491)，于是便入手了一个。
 
-当然首先确定了，自己笔记本有 USB3.0 接口，虽然不是 USB3.1。（不过好像 USB3.0 也叫作 USB3.1 gen1，而真正的 USB3.1 叫做 USB3.1 gen2），这个可以通过 
+当然首先确定了，自己笔记本有 USB3.0 接口，虽然不是 USB3.1。（不过好像 USB3.0 也叫作 USB3.1 gen1，而真正的 USB3.1 叫做 USB3.1 gen2），这个可以通过
 
 ```bash
 $ lsusb -t
@@ -1181,9 +1177,9 @@ $ uname -r
 4.15.0-112-generic
 ```
 
-而且在 [Why is my battery charged up to 100% – ignoring the charge thresholds?](https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#why-is-my-battery-charged-up-to-100-ignoring-the-charge-thresholds) 的 
+而且在 [Why is my battery charged up to 100% – ignoring the charge thresholds?](https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#why-is-my-battery-charged-up-to-100-ignoring-the-charge-thresholds) 的
 [ThinkPad T430(s)/T530/W530/X230 (and all later models)](https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#thinkpad-t430-s-t530-w530-x230-and-all-later-models)
-提到解决方案是 
+提到解决方案是
 
 > Install a kernel ≥ 4.19 to make natacpi available
 
@@ -1256,7 +1252,7 @@ swapon /mnt/swapfile
 
 ## unzip all `.zip` file in a directory
 
-tried `unzip *.zip` but does not work, it seems that I missed something although I have checked `man unzip` in which `*` is indeed allowed, then I found 
+tried `unzip *.zip` but does not work, it seems that I missed something although I have checked `man unzip` in which `*` is indeed allowed, then I found
 
 ```bash
 unzip \*.zip
@@ -1302,7 +1298,7 @@ then I tried another keyserver mentioned in [Installing R from CRAN Ubuntu repos
 
 ```bash
 $ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
-[sudo] password for weiya: 
+[sudo] password for weiya:
 Executing: /tmp/apt-key-gpghome.xUS3ZEg8N2/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 gpg: key 51716619E084DAB9: "Michael Rutter <marutter@gmail.com>" 2 new signatures
 gpg: Total number processed: 1
@@ -1327,7 +1323,7 @@ according to the record on [WeChat in Linux](software/#wechat-in-linux), it seem
 
 ## make the software searchable
 
-If the software has `xx.destop` file, then 
+If the software has `xx.destop` file, then
 
 ```bash
 cp xx.destop ~/.local/share/applications

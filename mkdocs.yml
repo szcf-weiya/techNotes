@@ -1,14 +1,14 @@
 site_name: techNotes
 nav:
     - Home: index.md
-    - Linux: 
+    - Linux:
       - 系统: Linux/index.md
       - 软件: Linux/software.md
       - shell: shell/index.md
       - 服务器: Linux/servers.md
       - 16to18: Linux/16to18.md
       - 笔记本作为服务器: Linux/asAserver.md
-    - R: 
+    - R:
       - 一般问题: R/index.md
       - 统计基础: R/basic.md
       - plot 作图: R/plot.md
@@ -25,7 +25,7 @@ nav:
       - rpy2: python/rpy2.md
       - 自建关键词索引页: python/esltag.md
     - Julia: julia/index.md
-    - Tex: 
+    - Tex:
       - 一般问题: TeX/index.md
       - arXiv: TeX/arxiv.md
     - Website:
@@ -33,7 +33,7 @@ nav:
       - CSS: website/css.md
       - JS: js/index.md
     - Guitar: guitar/index.md
-    - Network: 
+    - Network:
       - 一般问题: Internet/index.md
       - 访问内网: Internet/sci-int.md
       - IPv6: Internet/ipv6.md
@@ -41,7 +41,6 @@ nav:
       - Autotools: autotools/index.md
       - Emacs: Emacs/index.md
       - Vi: vi/index.md
-      - Ssh: ssh/index.md
       - Git: Git/index.md
       - Phantomjs: phantomjs/index.md
       - Qt: Qt/index.md
@@ -56,7 +55,7 @@ nav:
     - Win: win/index.md
     - Fresh: fresh/index.md
     - Links: links/index.md
-    - Misc: 
+    - Misc:
       - 小程序: misc/wx.md
       - jssdk: misc/wxjssdk.md
       - 讲座: misc/report.md
@@ -94,7 +93,7 @@ extra:
 repo_name: 'szcf-weiya/techNotes'
 repo_url: 'https://github.com/szcf-weiya/techNotes'
 edit_uri: ""
-extra_javascript: 
+extra_javascript:
   - javascripts/baiduzhanzhang.js
   - javascripts/extra.js
   - javascripts/mathjax.js

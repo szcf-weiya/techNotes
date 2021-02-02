@@ -1,5 +1,61 @@
 # Servers
 
+## 建立 ssh 的信任关系
+
+首先在本地新建 ssh key，
+
+```bash
+ssh-keygen -t [rsa | ed25519 | ecdsa | dsa]
+```
+
+!!! tip "ssh 常见 key 格式"
+	参考 [更新SSH key为Ed25519](https://neil-wu.github.io/2020/04/04/2020-04-04-SSH-key/)
+
+	- DSA: 不安全
+	- RSA: 安全性依赖于key的大小，3072位或4096位的key是安全的，小于此大小的key可能需要升级一下，1024位的key已经被认为不安全。
+	- ECDSA:  安全性取决于你的计算机生成随机数的能力，该随机数将用于创建签名，ECDSA使用的NIST曲线也存在可信赖性问题。
+	- Ed25519: 目前最推荐的公钥算法
+
+然后会在本地生成 `~/.ssh` 文件夹。
+
+- 秘钥(`~/.ssh/id_rsa`): sensitive and important!!
+- 公钥(`~/.ssh/id_rsa.pub`): contains the public key for authentication.  These files are not sensitive and can (but need not) be readable by anyone.
+- 公钥授权文件(`~/.ssh/authorized_keys`)
+
+将登录端的 `id_rsa.pub` 内容复制到服务器端的 `authorized_keys` 文件中即可。
+
+## 远程运行服务器端的gui程序
+
+```bash
+weiya@T460p:~$ ssh weiya@G40
+weiya@G40:~$ export DISPLAY=:0
+weiya@G40:~$ firefox
+```
+
+如果不通过第二行来设置 DISPLAY，则会报错，
+
+> Error: no DISPLAY environment variable specified
+
+
+另外 `:0` 可以通过在服务器端运行
+
+```bash
+weiya@G40:~$ w
+ 20:29:30 up 10:01,  2 users,  load average: 1.53, 1.42, 1.40
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+weiya    :0       :0               10:28   ?xdm?  22:24   0.00s /usr/lib/gdm3/gdm-x-session --run-script env GNOME
+```
+
+进行查看，其中 `FROM` 栏下的 `:0` 即为当前 display 号码。
+
+参考 [How to start a GUI software on a remote Linux PC via SSH](https://askubuntu.com/questions/47642/how-to-start-a-gui-software-on-a-remote-linux-pc-via-ssh)
+
+如果想要在本地运行服务器端的 GUI 程序，即将服务器端的窗口发送到本地，则登录时需要加上 `-X` 选项，
+
+```bash
+ssh -X
+```
+
 ## Submitting Multiple Jobs Quickly
 
 === "PBS"
@@ -139,7 +195,7 @@ PGFPlotsX.enable_interactive(false)
 
 本来期望着用 evince 打开，但是最后竟然用 liberoffice 开开了，然后字体竟然不一致了，所以想着更改默认的 pdf 阅读软件，参考 [How to set default browser for PDF reader Evince on Linux?](https://superuser.com/questions/152202/how-to-set-default-browser-for-pdf-reader-evince-on-linux)
 
-可以在 `.local/share/applications/mimeapps.list` 里面添加或者修改 
+可以在 `.local/share/applications/mimeapps.list` 里面添加或者修改
 
 虽然最后还是感觉通过服务器打开速度太慢了。
 
@@ -194,14 +250,6 @@ ssh-keygen -t [ed25519 | ecdsa | dsa]
 ```
 
 然而统统没用。
-
-!!! tip "ssh 常见 key 格式"
-	参考 [更新SSH key为Ed25519](https://neil-wu.github.io/2020/04/04/2020-04-04-SSH-key/)
-
-	- DSA: 不安全
-	- RSA: 安全性依赖于key的大小，3072位或4096位的key是安全的，小于此大小的key可能需要升级一下，1024位的key已经被认为不安全。
-	- ECDSA:  安全性取决于你的计算机生成随机数的能力，该随机数将用于创建签名，ECDSA使用的NIST曲线也存在可信赖性问题。
-	- Ed25519: 目前最推荐的公钥算法
 
 后来跟服务器管理员反复沟通，提交 `ssh -vvv xxx &> ssh.log` 日志文件供其检查，才确认是最近服务器配置更改的原因，虽然没有明说，但是注意到 `/etc/ssh/sshd_config` 更新后不久管理员就回复说好了，问及原因，他的回答是，
 

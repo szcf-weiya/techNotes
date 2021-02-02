@@ -81,7 +81,7 @@ it works. And it seems that it does NOT depend on conda environment any more, i.
 
 In the words of the [official documentation](https://github.com/JuliaPy/PyCall.jl),
 
->  If you use Python virtualenvs, then be aware that PyCall uses the virtualenv it was built with by default, even if you switch virtualenvs. If you want to switch PyCall to use a different virtualenv, then you should switch virtualenvs and run rm(Pkg.dir("PyCall","deps","PYTHON")); Pkg.build("PyCall"). 
+>  If you use Python virtualenvs, then be aware that PyCall uses the virtualenv it was built with by default, even if you switch virtualenvs. If you want to switch PyCall to use a different virtualenv, then you should switch virtualenvs and run rm(Pkg.dir("PyCall","deps","PYTHON")); Pkg.build("PyCall").
 
 which supports my above guess.
 
@@ -312,7 +312,7 @@ ref to [https://stackoverflow.com/questions/48306849/lib-x86-64-linux-gnu-libz-s
 
 when `using ImageView`, it throws an error,
 
-> ERROR: LoadError: InitError: Cannot open display: 
+> ERROR: LoadError: InitError: Cannot open display:
 
 fixed by `ssh -X`. If further ssh on the node, it still works.
 
@@ -326,7 +326,7 @@ And note that `--` should be separated the switches and program files. (but seem
 
 ## Unable to display plot using the REPL. GKS errors
 
-The reason would be relate to the `GR` package, 
+The reason would be relate to the `GR` package,
 
 ```bash
 cd .julia/packages/GR/ZI5OE/deps/gr/bin/
@@ -398,23 +398,23 @@ then rebuild `GR` package in the julia REPL.
 
 This solution should work, but actually it failed at the first time. Do not be too frustrated, I found the reason is that I type `miniconda3` as `minconda3` in the path.
 
-It works now, although it still throw an error, 
+It works now, although it still throw an error,
 
 ```julia
 julia> libGL error: unable to load driver: swrast_dri.so
 libGL error: failed to load driver: swrast
 ```
-## `dims=1` 
+## `dims=1`
 
 总是记不太清 `sum`, `mean` 的时候 `dims=1` 是按行求和还是按列求和，经常先玩个 toy example 才能分辨出来。比如，
 
 ```julia
 julia> a = rand(4, 3)
 4×3 Array{Float64,2}:
- 0.279181  0.0903167  0.148329 
+ 0.279181  0.0903167  0.148329
  0.486691  0.869156   0.0538834
- 0.110781  0.836284   0.486467 
- 0.810343  0.208659   0.759561 
+ 0.110781  0.836284   0.486467
+ 0.810343  0.208659   0.759561
 
 julia> sum(a, dims=1)
 1×3 Array{Float64,2}:
@@ -454,7 +454,7 @@ h(;kw...) = kw
 h(a=1).data.a = 2
 ```
 
-but it throws 
+but it throws
 
 ```
 ERROR: setfield! immutable struct of type NamedTuple cannot be changed
@@ -516,7 +516,7 @@ julia> f2()
 20
 ```
 
-but 
+but
 
 ```julia
 julia> function f2()
@@ -576,7 +576,7 @@ julia> a
 
 ```julia
 b = Array{Array{Int, 1}}(undef, 3)
-isdefined(b, 1) 
+isdefined(b, 1)
 # or
 isassigned(b, 1)
 # not
@@ -622,7 +622,7 @@ img = load(download("https://juliaimages.org/latest/assets/segmentation/horse.jp
 imshow(img)
 ```
 
-REPL 冻住了，一直停在 
+REPL 冻住了，一直停在
 
 ```julia
 Dict{String,Any} with 4 entries:
@@ -634,7 +634,7 @@ Dict{String,Any} with 4 entries:
 Dict{String,Any} with 4 entries:
   "gui"         => Dict{String,Any}("window"=>GtkWindowLeaf(name="", parent, wi…
   "roi"         => Dict{String,Any}("redraw"=>50: "map(clim-mapped image, input…
-  "annotations" => 3: "input-2" = Dict{UInt64,Any}() Dict{UInt64,Any} 
+  "annotations" => 3: "input-2" = Dict{UInt64,Any}() Dict{UInt64,Any}
   "clim"        => 2: "CLim" = CLim{RGB{Float64}}(RGB{Float64}(0.0,0.0,0.0), RG…
 ```
 
@@ -658,7 +658,7 @@ Dict{String,Any} with 4 entries:
 run(`curl ifconfig.me`)
 ```
 
-或者直接查看 
+或者直接查看
 
 ```julia
 ENV["http_proxy"]
@@ -669,7 +669,7 @@ ENV["http_proxy"]
 跳过这个问题，最后直接在 `startup.jl` 文件中添加
 
 ```julia
-ENV["http_proxy"] = 
+ENV["http_proxy"] =
 ENV["https_proxy"]
 ```
 
@@ -701,7 +701,7 @@ julia> size(canvases)
 (2, 1)
 ```
 
-it seems that the canvases will arrage by column while the gui declares it should be by rows. 
+it seems that the canvases will arrage by column while the gui declares it should be by rows.
 
 On the other hand, if I run
 
@@ -744,7 +744,7 @@ lrwxrwxrwx  1 root root      37 9月  18 15:28 julia1.2.0 -> /home/weiya/src/jul
 lrwxrwxrwx  1 root root      37 3月  18 10:25 julia1.3.1 -> /home/weiya/src/julia-1.3.1/bin/julia*
 ```
 
-The source folders can be freely moved to another place, and only need to update the symbol links, which can be firstly deleted and then created, or use 
+The source folders can be freely moved to another place, and only need to update the symbol links, which can be firstly deleted and then created, or use
 
 ```bash
 sudo ln -sf ... ...
@@ -764,7 +764,7 @@ Also, note that the link to a folder should be deleted with
 rm folder
 ```
 
-instead of 
+instead of
 
 ```bash
 rm -r folder/ # delete the original folder
@@ -800,7 +800,7 @@ julia> x'
  2  4
 ```
 
-Note that sometimes `.+=` may make the program much slower, such as https://github.com/szcf-weiya/en/blob/3c8daeb4e0f477f5ea40dc2bb44d832faa4bbbb6/code/2019-06-14-ML/GD2.jl#L10
+Note that sometimes `.+=` may make the program much slower, such as [en/code/2019-06-14-ML/GD2.jl](https://github.com/szcf-weiya/en/blob/3c8daeb4e0f477f5ea40dc2bb44d832faa4bbbb6/code/2019-06-14-ML/GD2.jl#L10)
 
 ## 同时安装多个 package
 
@@ -838,7 +838,7 @@ will produce
 
 ![](labels_col.png)
 
-where these two lines share the same label instead of one label for one line. But if replacing the column vector with row vector, 
+where these two lines share the same label instead of one label for one line. But if replacing the column vector with row vector,
 
 ```julia
 plot(1:10, x, label = ["a" "b"])
@@ -986,7 +986,7 @@ figs = "p" .* string.(1:10) .* ".png"
 run(`convert $figs +append pall.png`)
 ```
 
-instead of trying to convert the array to a string, 
+instead of trying to convert the array to a string,
 
 ```julia
 # WRONG!!!
