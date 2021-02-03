@@ -1,3 +1,10 @@
+## 2021.02.03
+
+- The assessment derived from those techniques is partly subjective and clearly not **foolproof (万无一失的，肯定成功的)**.
+- There was a **flurry (一阵忙乱（或激动、兴奋等）；小阵雪（或雨等)** of papers at the end of 1990s concerned with the development of convergence diagnoses.
+- An ergodic Markov chain that starts from one mode of $f$ can be correctly **deemed (认为，视作，相信)** to be in its stationary regime, but it may still require many iterations to reach the other modes of this distribution, another occurrence of the "missing mass" problem.
+- It's a **replica (复制品)** of a classical work originally made perhaps around 300 BC.
+
 ## 2021.02.02
 
 - He asked his **bean-counter (<俚>统计专家)** to **crunch (嚼，咬碎)** the numbers.
@@ -652,7 +659,7 @@
 
 - They are **acutely attuned to the grave dangers** associated with an economy **grinding to a halt.**
 - racial profiling
-- Blacks are more likely to be stopped for **pretextual** (pretext, 借口，推辞) reasons (e.g. **alleged** vehicle defect, such as broken tailight; record check) and less for more concrete reasons such as speeding.
+- Blacks are more likely to be stopped for **pretextual** (pretext, 借口，推辞) reasons (e.g. **alleged (所谓的，声称的)** vehicle **defect (缺点，缺陷，不足之处)**, such as broken tailight; record check) and less for more concrete reasons such as speeding.
 - these have been **valorized** in constitutional caselaw
 - there are other disparities by race that are notable and (most likely) significant.
 
@@ -1037,7 +1044,7 @@
 3. get people to be more **deliberative**
 4. I remain fearful that someone will **nuke** our city.
 5. fear can shake us out of **complacency**.
-6. **cognitive-illusion**
+6. cognitive **illusion (错觉，幻想)**
 7. the high-end
 8. Wasn't there something strange about the extreme **disparity** in public reactions?
 
