@@ -1,3 +1,7 @@
+## 2021.02.04
+
+- If you do not know if you are starting off in a good region, assessing convergence **is fraught with (充满...的)** **epistemological (认识论的)** problems.
+
 ## 2021.02.03
 
 - The assessment derived from those techniques is partly subjective and clearly not **foolproof (万无一失的，肯定成功的)**.
