@@ -1,3 +1,7 @@
+## 2021.02.05
+
+- As a PhD student, how do you make sure your research had not already been done before, **rendering (cause to become)** it **obsolete (过时的，废弃的，老式的)**?
+
 ## 2021.02.04
 
 - If you do not know if you are starting off in a good region, assessing convergence **is fraught with (充满...的)** **epistemological (认识论的)** problems.
@@ -119,7 +123,7 @@
 ## 2021.01.09
 
 - That particular study was **riddled (充满着)** with flaws.
-    - **Riddle (谜语，谜一般的人)** of Sphinx: []斯芬克斯之谜](https://baike.baidu.com/item/%E6%96%AF%E8%8A%AC%E5%85%8B%E6%96%AF%E4%B9%8B%E8%B0%9C/2917)
+    - **Riddle (谜语，谜一般的人)** of Sphinx: [斯芬克斯之谜](https://baike.baidu.com/item/%E6%96%AF%E8%8A%AC%E5%85%8B%E6%96%AF%E4%B9%8B%E8%B0%9C/2917)
 
 ## 2021.01.08
 
@@ -634,7 +638,7 @@
 
 - consensus-based transparency checklist
 - I also have a wary feeling that is harder to put words to
-- will the satisfactory feeling of successfully completing the checklist **lull** researchers into **complacency** and keep them from spending effort on the deeper layers?
+- will the satisfactory feeling of successfully completing the checklist **lull (哄骗；使平静)** researchers into **complacency** and keep them from spending effort on the deeper layers?
 - I worry the checklist is going to inadvertently be taken as a false check of quality, rather than simply transparency.
 - We should always consider the lurking dangers of offering easy solutions and simple checklists that make humans feel that they've done all that is needed.
 - transparency should reduce existing incentives for performing bad science and increase incentives for better measurement and design of studies.
