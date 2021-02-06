@@ -1,3 +1,28 @@
+## 2021.02.06
+
+- **Nota bene (注意)** is a Latin phrase. Often abbreviated as NB, n.b., the phrase is Latin for "note well". In modern English, it is used, particularly in legal papers, to draw the attention of the reader to a certain (side) aspect or detail of the subject being addressed.
+- If your laser is mounted on a car on a **bumpy (崎岖不平的，颠簸的)** road, or tracking some object in the sky, or your data comes from **acoustic waves (声波)** traveling through earth, you **are bound to (必然，必定)** get noise.
+- turquoise (青绿色); magenta (品红，洋红)
+- She is the **curator (馆长；监护人；管理者)** of the museum.
+    - a bundle of **curated (仔细挑选的；精选的)** packages from different categories
+- They were following the normal **protocol (协议，协定)** of the cancer genome **consortium (联盟)**.
+    - communication protocol: 通信协议
+- Land severely **depleted (耗尽)** by urbanization, population growth, intensive agriculture and climate change.
+- Two **putative (一般认定的，推定的)** human sex pheromones turn out not to be.
+- chronic disease: 慢性病
+- Shame can be **crippling (严重损害身体的)** and **debilitating (使衰弱，使虚弱)**.
+- postmortem examination: 尸检；尸体剖检
+- Every farm needs cats because otherwise, they can **overrun (超过，泛滥)** by **rodents (啮齿类动物)**.
+- The buyers can then use a website to **tinker (粗修，修补)** with the designs further to create exactly the look they want.
+- The use of **pretentious (狂妄的，自命不凡的，自负的)** phrases and complex acronyms is generally designed to obfuscate rather than **elucidate (阐明，解释)**.
+- Psychiatry is the branch of medicine concerned with the bio-psycho-social study of the **etiology (病因学；病原学)**, diagnosis, treatment and prevention of cognitive, perceptual, emotional and behaviorical disorders.
+- The scientists were eager to **unravel (解开；阐明)** the cause of death.
+- If she had had a little more self-control she would have **attenuated (使减弱；使稀薄)** the emotion to nothing by **sheer (充分的，完全的)** reasoning, and so have killed it off.
+- I intend to **amortize (分期偿还)** the total cost of the car over three years.
+- Their feet are wide and **splay (张开)** outwards to stop them sinking in loose sand.
+- Success always seems as inevitable in retrospect as it is **elusive (难以捉摸的，不易记住的)** when sought.
+-
+
 ## 2021.02.05
 
 - As a PhD student, how do you make sure your research had not already been done before, **rendering (cause to become)** it **obsolete (过时的，废弃的，老式的)**?
@@ -451,6 +476,7 @@
 - It can take a lot of work to **untangle** exactly what went wrong.
 - Original researchers do all the hard work, and "open science" critics are lazy **parasites**.
 - People often **repress (抑制，约束)** painful experience, which years later may later reappear as memories or **disguised (假装，掩饰)** emotions.
+-
 
 ## 2020.11.06
 
@@ -498,12 +524,12 @@
 
 ## 2020.10.31
 
-- A psychology professor whom I've never met once wrote me a mini-**manifesto (宣言)**, **disparaging** my efforts as a critic.
+- A psychology professor whom I've never met once wrote me a mini-**manifesto (宣言)**, disparaging my efforts as a critic.
 - **Bumblers (做错事的人)** are the people who get up every morning and make mistakes, trying to find truth but mainly tripping over their own feet, occasionally getting it right but typically getting it wrong.
-- I think this dualism is **counterproductive**.
-- but it would be more **evocative** to show a series of images showing graying hair.
-- Nobel prize and other science prices are problematic and this is not **endorsement** of such prices, but this might be useful for someone who needs to tell (**hype**) about the impact of Stan.
-- Try a [**spaghetti plot**](https://www.data-to-viz.com/caveat/spaghetti.html).
+- I think this dualism is **counterproductive (适得其反的)**.
+- but it would be more **evocative (引起...记忆的，唤起...感情的)** to show a series of images showing graying hair.
+- Nobel prize and other science prices are problematic and this is not **endorsement (认可；支持；背书；签注)** of such prices, but this might be useful for someone who needs to tell (**hype (炒作，大肆宣传)**) about the impact of Stan.
+- A **spaghetti (意大利式细面条)** plot is a line plot with many lines displayed together. [see also](https://www.data-to-viz.com/caveat/spaghetti.html)
 
 ## 2020.10.30
 
@@ -1850,7 +1876,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. King Richard I of England was given the very laudatory epithet "the Lion-Hearted".
 2. His personal code of behavior on the playing field is epitomized by his favorite saying, Nice guys finish last.
-3. Votes don't like political advertisements in which opponents disparage one another.
 4. He **procrastinated (拖延，耽搁)** and missed the submission deadline.
 5. The strike may **prod (刺激，促使)** the government into action.
 6. A single **blast (爆炸，冲击波)** of the **shotgun (霰弹猎枪)** **squandered (驱散；浪费，挥霍)** the **herd (兽群、畜群)** of **deer (鹿)**.
@@ -1906,7 +1931,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 60. intransigent
 61. draconian
 62. idiosyncratic
-63. sheer
 64. auction, auctioneer, bidding
 65. imperturbability
 67. precious
@@ -2125,7 +2149,7 @@ up
 23. conference
 24. linguist
 25. catastrophe
-26. chronicle
+26. They will live only in the songs and **chronicles (编年史)** of their **exterminators (扑灭的人，害虫驱除剂)**.
 27. deduction
 28. aviculture
 29. postscript
