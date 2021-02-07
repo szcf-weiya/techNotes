@@ -277,3 +277,63 @@ lfs quota -gh StatScratch /lustre
 ```bash
 chgrp -R Stat SomeFolder
 ```
+
+## exclude hosts with `-x` or `--exclude`
+
+### `srun`
+
+```bash
+# cannot exclude
+$ srun -x chpc-cn050 hostname
+chpc-cn050.rc.cuhk.edu.hk
+```
+
+### `salloc`
+
+```bash
+# cannot exclude
+$ salloc -x chpc-cn050 -N1
+salloc: Nodes chpc-cn050 are ready for job
+# cannot exclude
+$ salloc -x chpc-cn050 srun hostname
+salloc: Nodes chpc-cn050 are ready for job
+chpc-cn050.rc.cuhk.edu.hk
+# NB: exclude successfully
+$ salloc -w chpc-cn050 srun -x chpc-cn050 hostname
+salloc: Nodes chpc-cn050 are ready for job
+srun: error: Hostlist is empty!  Can't run job.
+```
+
+### `sbatch`
+
+```bash
+# cannot exclude
+$ sbatch << EOF
+> #!/bin/sh
+> #SBATCH -x chpc-cn050
+> srun hostname
+> EOF
+Submitted batch job 246669
+$ cat slurm-246669.out
+chpc-cn050.rc.cuhk.edu.hk
+
+# NB: exclude successfully
+$ sbatch << EOF
+> #!/bin/sh
+> #SBATCH -w chpc-cn050
+> srun -x chpc-cn050 hostname
+> EOF
+Submitted batch job 246682
+$ cat slurm-246682.out
+srun: error: Hostlist is empty!  Can't run job.
+```
+
+**Observation:**
+
+`-x` seems not to work in the allocation step, but it can exclude nodes from the allocated nodes.
+
+Back to the manual of `-x` option:
+
+> Explicitly exclude certain nodes from the resources **granted** to the job.
+
+So the exclusion seems only to perform on the granted resources instead of all nodes. If you want to allocate specified nodes, `-w` option should be used.
