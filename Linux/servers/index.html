@@ -410,6 +410,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exclude-hosts-with-x-or-exclude" class="md-nav__link">
+    exclude hosts with -x or --exclude
+  </a>
+  
+    <nav class="md-nav" aria-label="exclude hosts with -x or --exclude">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#srun" class="md-nav__link">
+    srun
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salloc" class="md-nav__link">
+    salloc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbatch" class="md-nav__link">
+    sbatch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1461,6 +1495,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exclude-hosts-with-x-or-exclude" class="md-nav__link">
+    exclude hosts with -x or --exclude
+  </a>
+  
+    <nav class="md-nav" aria-label="exclude hosts with -x or --exclude">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#srun" class="md-nav__link">
+    srun
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salloc" class="md-nav__link">
+    salloc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbatch" class="md-nav__link">
+    sbatch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1655,6 +1723,53 @@ lfs quota -gh StatScratch /lustre
 <p>于是简单的方法便是直接更改 group，</p>
 <div class="highlight"><pre><span></span><code>chgrp -R Stat SomeFolder
 </code></pre></div>
+<h2 id="exclude-hosts-with-x-or-exclude">exclude hosts with <code>-x</code> or <code>--exclude</code><a class="headerlink" href="#exclude-hosts-with-x-or-exclude" title="Permanent link">&para;</a></h2>
+<h3 id="srun"><code>srun</code><a class="headerlink" href="#srun" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># cannot exclude</span>
+$ srun -x chpc-cn050 hostname
+chpc-cn050.rc.cuhk.edu.hk
+</code></pre></div>
+<h3 id="salloc"><code>salloc</code><a class="headerlink" href="#salloc" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># cannot exclude</span>
+$ salloc -x chpc-cn050 -N1
+salloc: Nodes chpc-cn050 are ready <span class="k">for</span> job
+<span class="c1"># cannot exclude</span>
+$ salloc -x chpc-cn050 srun hostname
+salloc: Nodes chpc-cn050 are ready <span class="k">for</span> job
+chpc-cn050.rc.cuhk.edu.hk
+<span class="c1"># NB: exclude successfully</span>
+$ salloc -w chpc-cn050 srun -x chpc-cn050 hostname
+salloc: Nodes chpc-cn050 are ready <span class="k">for</span> job
+srun: error: Hostlist is empty!  Can<span class="err">&#39;</span>t run job.
+</code></pre></div>
+<h3 id="sbatch"><code>sbatch</code><a class="headerlink" href="#sbatch" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># cannot exclude</span>
+$ sbatch <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt; #!/bin/sh</span>
+<span class="s">&gt; #SBATCH -x chpc-cn050</span>
+<span class="s">&gt; srun hostname</span>
+<span class="s">&gt; EOF</span>
+Submitted batch job <span class="m">246669</span>
+$ cat slurm-246669.out
+chpc-cn050.rc.cuhk.edu.hk
+
+<span class="c1"># NB: exclude successfully</span>
+$ sbatch <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt; #!/bin/sh</span>
+<span class="s">&gt; #SBATCH -w chpc-cn050</span>
+<span class="s">&gt; srun -x chpc-cn050 hostname</span>
+<span class="s">&gt; EOF</span>
+Submitted batch job <span class="m">246682</span>
+$ cat slurm-246682.out
+srun: error: Hostlist is empty!  Can<span class="err">&#39;</span>t run job.
+</code></pre></div>
+<p><strong>Observation:</strong></p>
+<p><code>-x</code> seems not to work in the allocation step, but it can exclude nodes from the allocated nodes.</p>
+<p>Back to the manual of <code>-x</code> option:</p>
+<blockquote>
+<p>Explicitly exclude certain nodes from the resources <strong>granted</strong> to the job.</p>
+</blockquote>
+<p>So the exclusion seems only to perform on the granted resources instead of all nodes. If you want to allocate specified nodes, <code>-w</code> option should be used.</p>
                 
               
               
