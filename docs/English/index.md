@@ -1,3 +1,10 @@
+## 2021.02.07
+
+- The heart is a highly **contractile (有收缩性的)** organ.
+- A **veneer (虚假的外表，虚饰)** of **jaunty (快活的，活泼的)** self-confidence thinly **concealed (隐藏，隐瞒)** his nervousness.
+- When people are forgotten, the world becomes **fractured (断裂的，分化的)**.
+- postmenopausal women: 绝经后妇女
+
 ## 2021.02.06
 
 - **Nota bene (注意)** is a Latin phrase. Often abbreviated as NB, n.b., the phrase is Latin for "note well". In modern English, it is used, particularly in legal papers, to draw the attention of the reader to a certain (side) aspect or detail of the subject being addressed.
@@ -21,7 +28,6 @@
 - I intend to **amortize (分期偿还)** the total cost of the car over three years.
 - Their feet are wide and **splay (张开)** outwards to stop them sinking in loose sand.
 - Success always seems as inevitable in retrospect as it is **elusive (难以捉摸的，不易记住的)** when sought.
--
 
 ## 2021.02.05
 
@@ -1199,7 +1205,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 20. A **synopsis** of its statistical findings prepared for outside publication, it says, did not meet its “rigorous scientific standards.”
 21. Pfizer said it **opted** against publication of its data because of its doubts about the results.
 22. One reason for caution: another class of anti-inflammatory therapies, called **non-steroidal** anti-inflammatory drugs (NSAIDS), showed no effect against mild-to-moderate Alzheimer’s in several clinical trials a decade ago.
-23. I bet this revelation leads to **a slew of** off-label prescriptions, just as happened with **estrogen** a couple of decades ago. My physician friends told me then that you could not recruit subjects for a clinical trial because doctors were just prescribing estrogen for all **menopausal** women, to prevent Alzheimer’s.
+23. I bet this revelation leads to **a slew of** off-label prescriptions, just as happened with **estrogen (雌性激素)** a couple of decades ago. My physician friends told me then that you could not recruit subjects for a clinical trial because doctors were just prescribing estrogen for all **menopausal** women, to prevent Alzheimer’s.
 24. Novartis
 25. My problem with the **ideology**
 26. if you push hard you can find the weak points and **magnify** them until you get **ridiculous** inferences.
