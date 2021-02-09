@@ -1,3 +1,7 @@
+## 2021.02.09
+
+- The fact that NNLS, apart from sign constraints, only consists of a fitting term, **fosters (养育，抚育；培养)** the intuition that NNLS is prone to overfitting.
+
 ## 2021.02.08
 
 - Their niceness can be so **unsettling (使人不安的)** you might even try a trick or two.
