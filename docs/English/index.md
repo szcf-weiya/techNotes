@@ -1,3 +1,13 @@
+## 2021.02.10
+
+- This study **sheds light on (阐明)** improving treatment effect estimation efficiency by implementing machine learning methods in covariate-adaptive randomized experiments.
+- They want to minimize their **staff turnover (员工流动率)**.
+    - The textile export **turnover (营业额)** has been increased 67% this year in China.
+- He was found guilty of **culpable homicide (刑事杀人，应受惩罚的杀人罪)** for the shooting of his girlfriend.
+- Stated-owned enterprises (SOE)：国有企业
+- **corporate (社团的，法人的)** **misconduct (不当行为)**
+- **innocent (无罪的，无辜的)** until proven guilty.
+
 ## 2021.02.09
 
 - The fact that NNLS, apart from sign constraints, only consists of a fitting term, **fosters (养育，抚育；培养)** the intuition that NNLS is prone to overfitting.
@@ -813,7 +823,7 @@
 - magic pixie
 - I tried to call deep on my courage.
 - data with a soul
-- expanding perception
+- expanding **perception (认识，观念，看法)**
 - he was just sweet-talking me.
 - put it into a bento box
 - lean into the discomfort of the work
@@ -1157,7 +1167,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 8. nephew
 9. Scientific discoveries as ideas are not protected.
 10. If a country is a member of international copyright convention, **treaty** or organization such as the World Trade Organization and others like the Berne Convention, the Universal Copyright Convention, the Geneva Convention for the protection of producers of **phonograms**, and the agreement on trade-ralated aspects of intellectual property rights, then Hong Kong's copyright applies and is valid in these countries.
-11. Hong Kong is a common law **jurisdiction**.
+11. Hong Kong is a common law **jurisdiction (司法权，裁判权)**.
 12. Copyright Ordinance
 13. The goal was to combat copyright **piracy** (c.f. privacy) activities on computer software in the business sector.
 14. The criminal provisions in Intellectual Property (Miscellaneous Amendments) Ordinance 2001 caused the public concerns that the amendments might hinder the dissemination of information in the education sector and the society.
@@ -1165,7 +1175,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 16. compilation
 17. mime
 18. The most important rights of a performer are the right to prevent any person from making a video or sound recording of his performance and the right to prohibit any person exploiting a video or sound recording of his performance.
-19. civil remedies vs. criminal sanctions
+19. **civil remedies (民事救济)** vs. **criminal sanction (刑事处分)**
 20. intranet
 21. Under the Copyright Ordinance, the fair dealing for showing or playing a movie will apply only if the purpose is for giving or receiving instruction in a specified course of student provided by an educational establishment. It is not allowed to use these materials outside the scope of fair dealing such as for the purpose of entertainment.
 22. Vincent van Gogh: 梵高
@@ -1297,7 +1307,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. instrument: verb. such as, "they instrument military aid"
 3. maddening
 4. come across
-5. jurisdictions    
 6. ramp up
 7. crap
 8. **Ray Kroc (雷·克罗克)**: 麦当劳主要创办人
@@ -1919,7 +1928,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 30. The drive to create is indigenous to humanity.
 31. agonize over every decision
 32. Children were agog over new toys.
-33. impugn a political opponent's character
+33. **impugn (责难，驳斥)** a political opponent's character
 34. Well-doer never does chicanery and person who is good at chicanery does not belong well-doer.
 35. My wife chided me for forgetting to offer our guests some refreshments.
 36. I absolutely get choleric when a salesman calls during the dinner hour.
@@ -2223,6 +2232,7 @@ NULL
 2. **sip (小口喝)** **nectar (花蜜，甘露，任何美味的饮料)**
 3. bumblebee: 大黄蜂，雄蜂
 4. Unnaturally high **nicotine (尼古丁)** concentrations **deterred (制止，阻止，使打消念头)** the bees.
+    - deterrence effect: 威慑效果
 5. Bees are major **pollinators (传粉媒介)** of fruits, vegetables and nuts.
 6. Does your **pharmacy (药房)** carry **lice (虱子，louse 的复数)** **shampoo (洗发，洗发精)**
 7. Tanks cannot do anything in these **craters (弹坑，火山口)**.
