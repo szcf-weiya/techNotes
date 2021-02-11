@@ -1,3 +1,16 @@
+## 2021.02.11
+
+- **petit (小的，次要的)** four: 【法】小蛋糕
+- What's the difference between a **gamete (配子，生殖细胞)** and a **zygote (受精卵)**?
+- leukocyte: 白细胞
+- Cheap and rapid **antigen (抗原)** testing can identify and prevent every cluster of COVID-19.
+- codominant gene: 等显性基因
+- **Aleppo (阿勒颇)** is the commercial **hub (中心)** of **Syria (叙利亚)**, **symbolically unparalleled (无与伦比的象征意义)**.
+- The book describes how they used **copper (铜)** to **sterilize (消毒)** **wounds (伤口)** and drinking water.
+- Alas, like many good stories this one appears to be **apocryphal (真实性可疑的，伪造的，杜撰的)**.
+- Binomial **nomenclature (命名法)** gives every species a unique and stable two-word name, agreed upon by biologists worldwide.
+- As people get older, many of them develop the disease **osteoporosis (骨质疏松症)**.
+
 ## 2021.02.10
 
 - This study **sheds light on (阐明)** improving treatment effect estimation efficiency by implementing machine learning methods in covariate-adaptive randomized experiments.
@@ -1182,7 +1195,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2019.12.22
 
-1. I recently was discussing/arguing about the value of **[charter schools](https://www.zhihu.com/question/21810104)** **lottery** studies.
+1. I recently was discussing/arguing about the value of **[charter schools](https://www.zhihu.com/question/21810104)** **lottery (彩票)** studies.
     - [The demand for seats in charter schools is so great that almost all charter schools must admit students by random lottery.](https://www.nyccharterschools.org/sites/default/files/resources/LOTTERIES082713.pdf)
 2. is admissions of a lack of external validity **ameliorated** because of stronger internal validity?
 
@@ -2168,7 +2181,7 @@ up
 19. by and large
 20. by force of
 21. surge
-22. escalate
+22. The conflicts has **escalated (逐步升级，逐步扩大)** into violence.
 23. conference
 24. linguist
 25. catastrophe
