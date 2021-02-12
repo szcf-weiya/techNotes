@@ -1,3 +1,7 @@
+## 2021.02.12
+
+- The **umbra (本影)**, **penumbra (半影)** and **antumbra (伪本影)** are three distinct parts of shadow, created by any light source after impinging on an opaque object. [wiki](https://en.wikipedia.org/wiki/Umbra,_penumbra_and_antumbra)
+
 ## 2021.02.11
 
 - **petit (小的，次要的)** four: 【法】小蛋糕
