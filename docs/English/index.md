@@ -1,3 +1,7 @@
+## 2021.02.13
+
+- A black banner hung over the doorway of the hall, with white characters "deeply **mourn (哀悼，悼念)** for **martyrs (烈士)** and **compatriots (同胞)** who died in COVID-19 outbreak." [source](http://www.xinhuanet.com/english/2020-04/04/c_138946851.htm)
+
 ## 2021.02.12
 
 - The **umbra (本影)**, **penumbra (半影)** and **antumbra (伪本影)** are three distinct parts of shadow, created by any light source after impinging on an opaque object. [wiki](https://en.wikipedia.org/wiki/Umbra,_penumbra_and_antumbra)
