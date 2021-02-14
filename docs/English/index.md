@@ -1,3 +1,7 @@
+## 2021.02.14
+
+- I **binge (放纵，狂欢作乐)** watch television shows sometimes...always!
+
 ## 2021.02.13
 
 - A black banner hung over the doorway of the hall, with white characters "deeply **mourn (哀悼，悼念)** for **martyrs (烈士)** and **compatriots (同胞)** who died in COVID-19 outbreak." [source](http://www.xinhuanet.com/english/2020-04/04/c_138946851.htm)

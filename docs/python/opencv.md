@@ -1,12 +1,21 @@
 # OpenCV
 
+In short,
+
+```bash
+$ pip install opencv-python
+```
+
+!!! info
+    For example, the [workflow of Cell-Video](https://github.com/szcf-weiya/Cell-Video/blob/master/.github/workflows/blank.yml#L70) uses `requirements.py`, which includes `opencv-python`.
+
 ## OpenCV 2
 
 installed with python 2
 
 ## OpenCV 3
 
-installed with python 3, but the `imshow` doesn't work, solve by 
+installed with python 3, but the `imshow` doesn't work, solve by
 
 ```
 conda install -c menpo opencv3
@@ -27,6 +36,12 @@ Currently I am mainly work with
 (py37) $ conda list
 opencv                    3.4.2            py37h6fd60c2_1    defaults
 opencv-python             4.2.0.34                 pypi_0    pypi
+```
+
+which can be easily installed with
+
+```python
+$ pip install opencv-python
 ```
 
 pay attention to that `import cv2; cv2.__version__` returns the version of `opencv-python`. The `contrib` packages can be installed with (see, [https://pypi.org/project/opencv-contrib-python/](https://pypi.org/project/opencv-contrib-python/))

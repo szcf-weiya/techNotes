@@ -428,12 +428,51 @@ fi
 
 refer to [bash条件判断之if语句](https://blog.51cto.com/64314491/1629175)
 
-## square bracket `[`
+## `[` (aka `test`) vs `[[`
+
+Refer to [What is the difference between test, [ and [[ ?](http://mywiki.wooledge.org/BashFAQ/031)
+
+Both are used to evaluate expressions, but
+
+- `[[` works only in Korn shell, Bash, Zsh, and recent versions of Yash and busybox `sh`
+- `[` is POSIX utilities (generally builtin)
+
+![](test.png)
+
+But there are some differences:
+
+- no word splitting or glob expansion will be done for `[[`, i.e., many arguments need not be quoted, while `[` usually should be quoted
+- parentheses in `[[` do not need to be escaped
+
+also see
+
+- [What do square brackets mean without the “if” on the left?](https://unix.stackexchange.com/questions/99185/what-do-square-brackets-mean-without-the-if-on-the-left)
+- [Is double square brackets preferable over single square brackets in Bash?](https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba)
+
+### `$[`
+
+Refer to [What does a dollar sign followed by a square bracket mean in bash?](https://unix.stackexchange.com/questions/209833/what-does-a-dollar-sign-followed-by-a-square-bracket-mean-in-bash)
+
+With `$`, `[` is also can be used for arithmetic expansion, such as
 
 ```bash
-echo $[ $RANDOM % 2 ]
-echo $[ 1+2 ]
+$ echo $[ $RANDOM % 2 ]
+0 # 1
+$ echo $[ 1+2 ]
+3
 ```
 
-- [shell中的括号（小括号，中括号，大括号）](https://blog.csdn.net/tttyd/article/details/11742241)
-- [What do square brackets mean without the “if” on the left?](https://unix.stackexchange.com/questions/99185/what-do-square-brackets-mean-without-the-if-on-the-left)
+and actually `$[` syntax is an early syntax that was deprecated in favor of `$((`, although it's not completely removed yet.
+
+### `=` vs `==` vs `-eq`
+
+from the above discussion:
+
+- `==` is a bash-ism
+- `=` is POSIX
+
+In bash the two are equivalent, but in plain sh `=` is the only one guaranteed to work. And these two are for string comparisons, while `-eq` is for numerical ones.
+
+refer to [Shell equality operators (=, ==, -eq)](https://stackoverflow.com/questions/20449543/shell-equality-operators-eq)
+
+## compare string

@@ -5,6 +5,7 @@
 1. [阮一峰的网络日志](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)
 2. [这些GIT经验够你用一年了](https://zhuanlan.zhihu.com/p/22666153)
 3. [Cheatsheet](git-cheat-sheet-education.pdf)
+4. [Pro Git book (中文)](https://git-scm.com/book/zh/v2)
 
 ## 删除分支 
 
