@@ -1347,10 +1347,17 @@
                 
                 
                 <h1 id="opencv">OpenCV<a class="headerlink" href="#opencv" title="Permanent link">&para;</a></h1>
+<p>In short,</p>
+<div class="highlight"><pre><span></span><code>$ pip install opencv-python
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For example, the <a href="https://github.com/szcf-weiya/Cell-Video/blob/master/.github/workflows/blank.yml#L70">workflow of Cell-Video</a> uses <code>requirements.py</code>, which includes <code>opencv-python</code>.</p>
+</div>
 <h2 id="opencv-2">OpenCV 2<a class="headerlink" href="#opencv-2" title="Permanent link">&para;</a></h2>
 <p>installed with python 2</p>
 <h2 id="opencv-3">OpenCV 3<a class="headerlink" href="#opencv-3" title="Permanent link">&para;</a></h2>
-<p>installed with python 3, but the <code>imshow</code> doesn&rsquo;t work, solve by </p>
+<p>installed with python 3, but the <code>imshow</code> doesn&rsquo;t work, solve by</p>
 <div class="highlight"><pre><span></span><code>conda install -c menpo opencv3
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/40207011/opencv-not-working-properly-with-python-on-linux-with-anaconda-getting-error-th">OpenCV not working properly with python on Linux with anaconda. Getting error that cv2.imshow() is not implemented
@@ -1362,6 +1369,9 @@ Ask Question</a></p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>py37<span class="o">)</span> $ conda list
 opencv                    <span class="m">3</span>.4.2            py37h6fd60c2_1    defaults
 opencv-python             <span class="m">4</span>.2.0.34                 pypi_0    pypi
+</code></pre></div>
+<p>which can be easily installed with</p>
+<div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">opencv</span><span class="o">-</span><span class="n">python</span>
 </code></pre></div>
 <p>pay attention to that <code>import cv2; cv2.__version__</code> returns the version of <code>opencv-python</code>. The <code>contrib</code> packages can be installed with (see, <a href="https://pypi.org/project/opencv-contrib-python/">https://pypi.org/project/opencv-contrib-python/</a>)</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>py37<span class="o">)</span> $ pip install opencv-contrib-python

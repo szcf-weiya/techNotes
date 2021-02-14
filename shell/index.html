@@ -534,8 +534,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#square-bracket" class="md-nav__link">
-    square bracket [
+  <a href="#aka-test-vs" class="md-nav__link">
+    [ (aka test) vs [[
+  </a>
+  
+    <nav class="md-nav" aria-label="[ (aka test) vs [[">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    $[
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs-vs-eq" class="md-nav__link">
+    = vs == vs -eq
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare-string" class="md-nav__link">
+    compare string
   </a>
   
 </li>
@@ -1739,8 +1766,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#square-bracket" class="md-nav__link">
-    square bracket [
+  <a href="#aka-test-vs" class="md-nav__link">
+    [ (aka test) vs [[
+  </a>
+  
+    <nav class="md-nav" aria-label="[ (aka test) vs [[">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    $[
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs-vs-eq" class="md-nav__link">
+    = vs == vs -eq
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare-string" class="md-nav__link">
+    compare string
   </a>
   
 </li>
@@ -2066,14 +2120,42 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <span class="k">fi</span>
 </code></pre></div>
 <p>refer to <a href="https://blog.51cto.com/64314491/1629175">bash条件判断之if语句</a></p>
-<h2 id="square-bracket">square bracket <code>[</code><a class="headerlink" href="#square-bracket" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> $<span class="o">[</span> <span class="nv">$RANDOM</span> % <span class="m">2</span> <span class="o">]</span>
-<span class="nb">echo</span> $<span class="o">[</span> <span class="m">1</span>+2 <span class="o">]</span>
-</code></pre></div>
+<h2 id="aka-test-vs"><code>[</code> (aka <code>test</code>) vs <code>[[</code><a class="headerlink" href="#aka-test-vs" title="Permanent link">&para;</a></h2>
+<p>Refer to [What is the difference between test, [ and [<a href="http://mywiki.wooledge.org/BashFAQ/031"> ?</a></p>
+<p>Both are used to evaluate expressions, but</p>
 <ul>
-<li><a href="https://blog.csdn.net/tttyd/article/details/11742241">shell中的括号（小括号，中括号，大括号）</a></li>
-<li><a href="https://unix.stackexchange.com/questions/99185/what-do-square-brackets-mean-without-the-if-on-the-left">What do square brackets mean without the “if” on the left?</a></li>
+<li><code>[[</code> works only in Korn shell, Bash, Zsh, and recent versions of Yash and busybox <code>sh</code></li>
+<li><code>[</code> is POSIX utilities (generally builtin)</li>
 </ul>
+<p><img alt="" src="test.png" /></p>
+<p>But there are some differences:</p>
+<ul>
+<li>no word splitting or glob expansion will be done for <code>[[</code>, i.e., many arguments need not be quoted, while <code>[</code> usually should be quoted</li>
+<li>parentheses in <code>[[</code> do not need to be escaped</li>
+</ul>
+<p>also see</p>
+<ul>
+<li><a href="https://unix.stackexchange.com/questions/99185/what-do-square-brackets-mean-without-the-if-on-the-left">What do square brackets mean without the “if” on the left?</a></li>
+<li><a href="https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba">Is double square brackets preferable over single square brackets in Bash?</a></li>
+</ul>
+<h3 id="_7"><code>$[</code><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Refer to <a href="https://unix.stackexchange.com/questions/209833/what-does-a-dollar-sign-followed-by-a-square-bracket-mean-in-bash">What does a dollar sign followed by a square bracket mean in bash?</a></p>
+<p>With <code>$</code>, <code>[</code> is also can be used for arithmetic expansion, such as</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> $<span class="o">[</span> <span class="nv">$RANDOM</span> % <span class="m">2</span> <span class="o">]</span>
+<span class="m">0</span> <span class="c1"># 1</span>
+$ <span class="nb">echo</span> $<span class="o">[</span> <span class="m">1</span>+2 <span class="o">]</span>
+<span class="m">3</span>
+</code></pre></div>
+<p>and actually <code>$[</code> syntax is an early syntax that was deprecated in favor of <code>$((</code>, although it&rsquo;s not completely removed yet.</p>
+<h3 id="vs-vs-eq"><code>=</code> vs <code>==</code> vs <code>-eq</code><a class="headerlink" href="#vs-vs-eq" title="Permanent link">&para;</a></h3>
+<p>from the above discussion:</p>
+<ul>
+<li><code>==</code> is a bash-ism</li>
+<li><code>=</code> is POSIX</li>
+</ul>
+<p>In bash the two are equivalent, but in plain sh <code>=</code> is the only one guaranteed to work. And these two are for string comparisons, while <code>-eq</code> is for numerical ones.</p>
+<p>refer to <a href="https://stackoverflow.com/questions/20449543/shell-equality-operators-eq">Shell equality operators (=, ==, -eq)</a></p>
+<h2 id="compare-string">compare string<a class="headerlink" href="#compare-string" title="Permanent link">&para;</a></h2>
                 
               
               
