@@ -567,6 +567,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#grep-keep-the-first-line-use-sed-instead" class="md-nav__link">
+    grep keep the first line (use sed instead)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare-two-blocks-in-a-txt-file" class="md-nav__link">
+    compare two blocks in a txt file
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1799,6 +1813,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#grep-keep-the-first-line-use-sed-instead" class="md-nav__link">
+    grep keep the first line (use sed instead)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare-two-blocks-in-a-txt-file" class="md-nav__link">
+    compare two blocks in a txt file
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1892,9 +1920,9 @@
 <p>就是说 basic 模式下，要使用特殊字符（如正则表达式中）需要转义，但 extended 模式相反，转义后表达的是原字符。</p>
 <p>举个例子</p>
 <ol>
-<li><code>abc?</code> becomes <code>abc\?</code> when using extended regular expressions. It matches the literal string ‘abc?’. </li>
-<li><code>c\+</code> becomes <code>c+</code> when using extended regular expressions. It matches one or more ‘c’s. </li>
-<li><code>a\{3,\}</code> becomes <code>a{3,}</code> when using extended regular expressions. It matches three or more ‘a’s. </li>
+<li><code>abc?</code> becomes <code>abc\?</code> when using extended regular expressions. It matches the literal string ‘abc?’.</li>
+<li><code>c\+</code> becomes <code>c+</code> when using extended regular expressions. It matches one or more ‘c’s.</li>
+<li><code>a\{3,\}</code> becomes <code>a{3,}</code> when using extended regular expressions. It matches three or more ‘a’s.</li>
 <li><code>\(abc\)\{2,3\}</code> becomes <code>(abc){2,3}</code> when using extended regular expressions. It matches either <code>abcabc</code> or <code>abcabcabc</code>.</li>
 <li><code>\(abc*\)\1</code> becomes <code>(abc*)\1</code> when using extended regular expressions. Backreferences must still be escaped when using extended regular expressions.</li>
 </ol>
@@ -1931,7 +1959,7 @@
 <p>参考<a href="https://linux.cn/article-3945-1.html">技术|如何在Linux中使用awk命令</a></p>
 <h3 id="ip">统计访问日志里每个 ip 访问次数<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-cat access.log <span class="p">|</span>sed -rn <span class="s1">&#39;/28\/Jan\/2015/p&#39;</span> &gt; a.txt 
+cat access.log <span class="p">|</span>sed -rn <span class="s1">&#39;/28\/Jan\/2015/p&#39;</span> &gt; a.txt
 cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</span><span class="p">|</span>sort <span class="p">|</span>uniq &gt; ipnum.txt
 <span class="k">for</span> i <span class="k">in</span> <span class="sb">`</span>cat ipnum.txt<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
     <span class="nv">iptj</span><span class="o">=</span><span class="sb">`</span>cat  access.log <span class="p">|</span>grep <span class="nv">$i</span> <span class="p">|</span> grep -v <span class="m">400</span> <span class="p">|</span>wc -l<span class="sb">`</span>
@@ -1948,9 +1976,9 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <h2 id="split-string-while-reading-files">split string while reading files<a class="headerlink" href="#split-string-while-reading-files" title="Permanent link">&para;</a></h2>
 <p>specify <code>IFS=</code>.</p>
 <ol>
-<li><a href="https://stackoverflow.com/questions/19719827/how-to-split-a-tab-delimited-string-in-bash-script-without-collapsing-blanks">How to split a tab-delimited string in bash script WITHOUT collapsing blanks?</a> </li>
+<li><a href="https://stackoverflow.com/questions/19719827/how-to-split-a-tab-delimited-string-in-bash-script-without-collapsing-blanks">How to split a tab-delimited string in bash script WITHOUT collapsing blanks?</a></li>
 <li><a href="https://stackoverflow.com/questions/27500692/split-string-in-shell-script-while-reading-from-file">Split String in shell script while reading from file</a></li>
-<li><a href="https://stackoverflow.com/questions/10929453/read-a-file-line-by-line-assigning-the-value-to-a-variable">Read a file line by line assigning the value to a variable</a> </li>
+<li><a href="https://stackoverflow.com/questions/10929453/read-a-file-line-by-line-assigning-the-value-to-a-variable">Read a file line by line assigning the value to a variable</a></li>
 </ol>
 <h2 id="distribute-jobs-into-queues">distribute jobs into queues<a class="headerlink" href="#distribute-jobs-into-queues" title="Permanent link">&para;</a></h2>
 <p>since different queues has different quota, try to assign the job into available nodes.</p>
@@ -2006,7 +2034,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
   <span class="nb">echo</span> <span class="s2">&quot;d1 &lt; d2&quot;</span>
 <span class="k">fi</span>
 </code></pre></div>
-<p>where </p>
+<p>where</p>
 <ul>
 <li><code>-d</code>: display time described by STRING, not &lsquo;now&rsquo; (from <code>man date</code>)</li>
 <li><code>+%[format-option]</code>: format specifiers (details formats refer to <code>man date</code>, but I am curious why <code>+</code>, no hints from <code>many date</code>, but here is one from <a href="https://www.geeksforgeeks.org/date-command-linux-examples/">date command in Linux with examples</a>)</li>
@@ -2017,11 +2045,11 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <h2 id="globbing-for-ls-vs-regular-expression-for-find">globbing for <code>ls</code> vs regular expression for <code>find</code><a class="headerlink" href="#globbing-for-ls-vs-regular-expression-for-find" title="Permanent link">&para;</a></h2>
 <p>Support we want to get <code>abc2.txt</code> as stated in <a href="https://unix.stackexchange.com/questions/44754/listing-with-ls-and-regular-expression">Listing with <code>ls</code> and regular expression
 </a>,</p>
-<p><code>ls</code> does not support regular expressions, but it can work with globbing, or filename expressions. </p>
+<p><code>ls</code> does not support regular expressions, but it can work with globbing, or filename expressions.</p>
 <div class="highlight"><pre><span></span><code>ls *<span class="o">[</span>!0-9<span class="o">][</span><span class="m">0</span>-9<span class="o">]</span>.txt
 </code></pre></div>
 <p>where <code>!</code> is complement.</p>
-<p>Alternatively, we can use <code>find -regex</code>, </p>
+<p>Alternatively, we can use <code>find -regex</code>,</p>
 <div class="highlight"><pre><span></span><code>find . -maxdepth <span class="m">1</span> -regex <span class="s1">&#39;\./.*[^0-9][0-9]\.txt&#39;</span>
 </code></pre></div>
 <p>where</p>
@@ -2081,7 +2109,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <h2 id="check-whether-a-certain-file-typeextension-exists-in-directory">Check whether a certain file type/extension exists in directory<a class="headerlink" href="#check-whether-a-certain-file-typeextension-exists-in-directory" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> ls *.bib <span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
   <span class="c1">#</span>
-<span class="k">fi</span>  
+<span class="k">fi</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory">Check whether a certain file type/extension exists in directory</a></p>
 <p>My application: <a href="https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20">TeXtemplates: create a tex template</a></p>
@@ -2156,6 +2184,23 @@ $ <span class="nb">echo</span> $<span class="o">[</span> <span class="m">1</span
 <p>In bash the two are equivalent, but in plain sh <code>=</code> is the only one guaranteed to work. And these two are for string comparisons, while <code>-eq</code> is for numerical ones.</p>
 <p>refer to <a href="https://stackoverflow.com/questions/20449543/shell-equality-operators-eq">Shell equality operators (=, ==, -eq)</a></p>
 <h2 id="compare-string">compare string<a class="headerlink" href="#compare-string" title="Permanent link">&para;</a></h2>
+<h2 id="grep-keep-the-first-line-use-sed-instead">grep keep the first line (use <code>sed</code> instead)<a class="headerlink" href="#grep-keep-the-first-line-use-sed-instead" title="Permanent link">&para;</a></h2>
+<p>Refer to <a href="https://stackoverflow.com/questions/12920317/include-header-in-the-grep-result">Include header in the &lsquo;grep&rsquo; result</a></p>
+<p>I am using</p>
+<div class="highlight"><pre><span></span><code>$ sinfo -o <span class="s2">&quot;%P %N %C %G&quot;</span> -N <span class="p">|</span> grep gpu
+</code></pre></div>
+<p>to get the GPU status of the nodes on the cluster, but the header cannot be kept, then I tried</p>
+<div class="highlight"><pre><span></span><code>$ sinfo -o <span class="s2">&quot;%P %N %C %G&quot;</span> -N <span class="p">|</span> <span class="o">{</span> head -1<span class="p">;</span> grep gpu<span class="p">;</span> <span class="o">}</span>
+</code></pre></div>
+<p>but it only shows the header</p>
+<p>Next I got the excellent solution via <code>sed</code>,</p>
+<div class="highlight"><pre><span></span><code>$ sinfo -o <span class="s2">&quot;%P %N %C %G&quot;</span> -N <span class="p">|</span> sed -n <span class="s2">&quot;1p;/gpu/p&quot;</span>
+</code></pre></div>
+<p>and it can hide the highlighter of <code>gpu</code>.</p>
+<h2 id="compare-two-blocks-in-a-txt-file">compare two blocks in a txt file<a class="headerlink" href="#compare-two-blocks-in-a-txt-file" title="Permanent link">&para;</a></h2>
+<p>for example, compare L82-95 with L108-123,</p>
+<div class="highlight"><pre><span></span><code>$ diff &lt;<span class="o">(</span>sed -n <span class="s2">&quot;82,95p&quot;</span> measure.jl<span class="o">)</span> &lt;<span class="o">(</span>sed -n <span class="s2">&quot;108,123p&quot;</span> measure.jl<span class="o">)</span>
+</code></pre></div>
                 
               
               
