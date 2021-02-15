@@ -91,9 +91,9 @@ done
 
 举个例子
 
-1. `abc?` becomes `abc\?` when using extended regular expressions. It matches the literal string ‘abc?’. 
-2. `c\+` becomes `c+` when using extended regular expressions. It matches one or more ‘c’s. 
-3. `a\{3,\}` becomes `a{3,}` when using extended regular expressions. It matches three or more ‘a’s. 
+1. `abc?` becomes `abc\?` when using extended regular expressions. It matches the literal string ‘abc?’.
+2. `c\+` becomes `c+` when using extended regular expressions. It matches one or more ‘c’s.
+3. `a\{3,\}` becomes `a{3,}` when using extended regular expressions. It matches three or more ‘a’s.
 4. `\(abc\)\{2,3\}` becomes `(abc){2,3}` when using extended regular expressions. It matches either `abcabc` or `abcabcabc`.
 5. `\(abc*\)\1` becomes `(abc*)\1` when using extended regular expressions. Backreferences must still be escaped when using extended regular expressions.
 
@@ -150,7 +150,7 @@ $ ls -1 | grep "(1)" | while read -a ADDR; do mv "${ADDR[0]} (1).zip" "${ADDR[0]
 
 ```bash
 #!/bin/bash
-cat access.log |sed -rn '/28\/Jan\/2015/p' > a.txt 
+cat access.log |sed -rn '/28\/Jan\/2015/p' > a.txt
 cat a.txt |awk '{print $1}'|sort |uniq > ipnum.txt
 for i in `cat ipnum.txt`; do
     iptj=`cat  access.log |grep $i | grep -v 400 |wc -l`
@@ -176,9 +176,9 @@ awk '{print NF; exit}' file.txt
 
 specify `IFS=`.
 
-1. [How to split a tab-delimited string in bash script WITHOUT collapsing blanks?](https://stackoverflow.com/questions/19719827/how-to-split-a-tab-delimited-string-in-bash-script-without-collapsing-blanks) 
+1. [How to split a tab-delimited string in bash script WITHOUT collapsing blanks?](https://stackoverflow.com/questions/19719827/how-to-split-a-tab-delimited-string-in-bash-script-without-collapsing-blanks)
 2. [Split String in shell script while reading from file](https://stackoverflow.com/questions/27500692/split-string-in-shell-script-while-reading-from-file)
-3. [Read a file line by line assigning the value to a variable](https://stackoverflow.com/questions/10929453/read-a-file-line-by-line-assigning-the-value-to-a-variable) 
+3. [Read a file line by line assigning the value to a variable](https://stackoverflow.com/questions/10929453/read-a-file-line-by-line-assigning-the-value-to-a-variable)
 
 ## distribute jobs into queues
 
@@ -234,7 +234,7 @@ done
 echo $list
 ```
 
-## timestamp 
+## timestamp
 
 ```shell
 timestamp=$(date +"%Y-%m-%dT%H:%M:%S")
@@ -255,7 +255,7 @@ else
 fi
 ```
 
-where 
+where
 
 - `-d`: display time described by STRING, not 'now' (from `man date`)
 - `+%[format-option]`: format specifiers (details formats refer to `man date`, but I am curious why `+`, no hints from `many date`, but here is one from [date command in Linux with examples](https://www.geeksforgeeks.org/date-command-linux-examples/))
@@ -269,7 +269,7 @@ refer to [How to compare two time stamps?](https://unix.stackexchange.com/questi
 Support we want to get `abc2.txt` as stated in [Listing with `ls` and regular expression
 ](https://unix.stackexchange.com/questions/44754/listing-with-ls-and-regular-expression),
 
-`ls` does not support regular expressions, but it can work with globbing, or filename expressions. 
+`ls` does not support regular expressions, but it can work with globbing, or filename expressions.
 
 ```shell
 ls *[!0-9][0-9].txt
@@ -277,7 +277,7 @@ ls *[!0-9][0-9].txt
 
 where `!` is complement.
 
-Alternatively, we can use `find -regex`, 
+Alternatively, we can use `find -regex`,
 
 ```shell
 find . -maxdepth 1 -regex '\./.*[^0-9][0-9]\.txt'
@@ -372,7 +372,7 @@ My application: [TeXtemplates: create a tex template](https://github.com/szcf-we
 ```bash
 if ls *.bib &>/dev/null; then
   #
-fi	
+fi
 ```
 
 refer to [Check whether a certain file type/extension exists in directory](https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory)
@@ -476,3 +476,38 @@ In bash the two are equivalent, but in plain sh `=` is the only one guaranteed t
 refer to [Shell equality operators (=, ==, -eq)](https://stackoverflow.com/questions/20449543/shell-equality-operators-eq)
 
 ## compare string
+
+
+## grep keep the first line (use `sed` instead)
+
+Refer to [Include header in the 'grep' result](https://stackoverflow.com/questions/12920317/include-header-in-the-grep-result)
+
+I am using
+
+```bash
+$ sinfo -o "%P %N %C %G" -N | grep gpu
+```
+
+to get the GPU status of the nodes on the cluster, but the header cannot be kept, then I tried
+
+```bash
+$ sinfo -o "%P %N %C %G" -N | { head -1; grep gpu; }
+```
+
+but it only shows the header
+
+Next I got the excellent solution via `sed`,
+
+```bash
+$ sinfo -o "%P %N %C %G" -N | sed -n "1p;/gpu/p"
+```
+
+and it can hide the highlighter of `gpu`.
+
+## compare two blocks in a txt file
+
+for example, compare L82-95 with L108-123,
+
+```bash
+$ diff <(sed -n "82,95p" measure.jl) <(sed -n "108,123p" measure.jl)
+```

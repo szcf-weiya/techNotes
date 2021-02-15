@@ -1,3 +1,10 @@
+## 2021.02.15
+
+- This is accomplished by JLL packages (a **pun (双关语，俏皮话)** on "Dynamic-Link Library", with the J standing for Julia).
+- The **anatomy (解剖；解剖学；解剖结构)** of a bird is much simpler than that of an elephant.
+    - anatomy of a JLL package
+
+
 ## 2021.02.14
 
 - I **binge (放纵，狂欢作乐)** watch television shows sometimes...always!
