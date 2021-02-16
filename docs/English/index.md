@@ -1,3 +1,8 @@
+## 2021.02.16
+
+- Policy **wonks (a person who takes an enthusiastic or excessive interest in the specialized details of a particular subject or field, especially political policy.)** have long dreamed of simplifying America's tax code.
+    - wonk: a **studious (用工的，专心的)** or hard-working person
+
 ## 2021.02.15
 
 - This is accomplished by JLL packages (a **pun (双关语，俏皮话)** on "Dynamic-Link Library", with the J standing for Julia).
