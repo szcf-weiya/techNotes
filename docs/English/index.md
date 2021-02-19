@@ -1,3 +1,7 @@
+## 2021.02.19
+
+- A **nudge (推动，用肘轻推)** is a small push, to encourage us to do something.
+
 ## 2021.02.18
 
 - The winners stand on the **podium (领奖台，乐队指挥台)**.
