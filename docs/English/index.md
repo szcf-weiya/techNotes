@@ -1,3 +1,7 @@
+## 2021.02.20
+
+- There will be an **uphill (上坡的，向上的)** incline eventually.
+
 ## 2021.02.19
 
 - A **nudge (推动，用肘轻推)** is a small push, to encourage us to do something.
