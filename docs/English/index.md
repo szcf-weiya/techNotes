@@ -1,3 +1,7 @@
+## 2021.02.21
+
+- Popular newspapers are known as **tabloids (小报，文摘)**.
+
 ## 2021.02.20
 
 - There will be an **uphill (上坡的，向上的)** incline eventually.
