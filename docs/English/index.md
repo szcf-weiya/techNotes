@@ -1,3 +1,8 @@
+## 2021.02.22
+
+- His **attorney (代理人，律师)** says he'll appeal the conviction.
+    - attorney general: 司法部长，首席检察官
+
 ## 2021.02.21
 
 - Popular newspapers are known as **tabloids (小报，文摘)**.
