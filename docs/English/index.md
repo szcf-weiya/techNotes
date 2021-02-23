@@ -1,3 +1,8 @@
+## 2021.02.23
+
+- Yet as soon as the UN Security Council issued new sanctions against the regime as a result of the rocket launch, the response was **apoplectic (大怒的，十分生气的)**, warning of more tests and threatening to attack America.
+    - apoplectic patients: 中风患者
+
 ## 2021.02.22
 
 - His **attorney (代理人，律师)** says he'll appeal the conviction.
