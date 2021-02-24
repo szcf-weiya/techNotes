@@ -56,48 +56,116 @@ weiya    :0       :0               10:28   ?xdm?  22:24   0.00s /usr/lib/gdm3/gd
 ssh -X
 ```
 
-## Submitting Multiple Jobs Quickly
+## Submitting Multiple Jobs
 
-=== "PBS"
-
-	``` bash
-	/usr/bin/mpirun -v -np 28 -machinefile $PBS_NODEFILE ./myexe ${NUMBERARG} ${LETTERARG}
-	```
-
-=== "Bash"
-
-	``` bash
-	#!/bin/bash
-	for NUMBERS in 1 2 3 4 5; do
-		for LETTERS in a b c d e; do
-			qsub -v NUMBERARG=$NUMBERS,LETTERARG=$LETTERS my_qsub_script.pbs
-		done
-	done
-	```
-
-=== "Run"
-
-	``` bash
-	chmod +x submit_multiple_jobs.sh
-	./submit_multiple_jobs.sh
-	```
-
-
-refer to [Submitting Multiple Jobs Quickly](http://www.pace.gatech.edu/submitting-multiple-jobs-quickly).
-
-## PBS passing argument list
+[SLURM](https://www.cuhk.edu.hk/itsc/hpc/slurm.html) and PBS are two different cluster schedulers, and the common equivalent commands are as follows:
 
 ```bash
-qsub your.job -v arg1=val1,arg2=val2
+# PBS
+qsub -l nodes=2:ppn=16 -l mem=8g -N jobname -m be -M notify@cuhk.edu.hk
+# Slurm
+sbatch -N 2 -c 16 --mem=8g -J jobname --mail-type=[BEGIN,END,FAIL,REQUEUE,ALL] --mail-user=notify@cuhk.edu.hk
 ```
 
-## PBS cheat sheet
+Sometimes, we want to submit multiple jobs quickly, or perform parallel computing by dividing a heavy task into multiple small tasks.
 
-[PBS Script](PBS Script_0.pdf)
+### PBS
 
-## PBSDSH
+Suppose there is a main program `toy.jl`, and I want to run it multiple times but with different parameters, which can be passed via the `-v` option.
 
-[PBSDSH](https://wikis.nyu.edu/display/NYUHPC/PBSDSH)
+=== "submit.sh"
+
+    ``` bash
+    #!/bin/bash
+    for number in 1 2 3 4 5; do
+    	for letter in a b c d e; do
+    		qsub -v arg1=$number,arg2=$letter toy.job
+    	done
+    done
+    ```
+
+=== "toy.job"
+
+	``` bash
+    #!/bin/bash
+	cd $HOME/PROJECT_FOLDER
+	julia toy.jl ${arg1} ${arg2}
+	```
+
+=== "toy.jl"
+
+    ``` julia
+    a, b = AGRS
+    println("a = $a, b = $b")
+    ```
+
+The submitting command is
+
+```bash
+$ ./submit.sh
+```
+
+and here is [an example](https://github.com/szcf-weiya/Metabolic-Network/blob/09314f0558ddccc3997bcfcecf6b7576b281c3fd/old/mcmc-with-args.job) in my private projects.
+
+### SLURM
+
+Suppose there is a main program `run.jl`, which runs in parallel with the number of cores `np`, and I also want to repeat the program for `N` times. To properly store the results, the index of repetition `nrep` for each job has been passed to the main program.
+
+The arguments for job file can be passed by the `--export` option.
+
+=== "submit.sh"
+
+    ``` bash
+    #!/bin/bash
+    if [ $# == 0 ]; then
+        cat <<HELP_USAGE
+        $0 param1 param2
+        param1 number of repetitions
+        param2 node label, can be stat or chpc
+        param3 number of cores
+    HELP_USAGE
+        exit 0
+    fi
+    resfolder=res_$(date -Iseconds)
+    for i in $(seq 1 1 $1); do
+        sbatch -N 1 -c $3 -p $2 --export=resfolder=${resfolder},nrep=${i},np=$3 toy.job
+    done
+    ```
+
+=== "toy.job"
+
+    ``` bash
+    #!/bin/bash
+    cd $HOME/PROJECT
+    julia -p $np run.jl $nrep $resfolder
+    ```
+
+=== "run.jl"
+
+    ``` julia
+    using Distributed
+    const jobs = RemoteChannel(()->Channel{Tuple}(32))
+    const res = RemoteChannel(()->Channel{Tuple}(32))
+
+    function make_jobs() end
+    function do_work() end
+
+    nrep, resfolder = ARGS
+    @async make_jobs()
+    ```
+
+where
+
+- [`HELP_USAGE`](https://stackoverflow.com/questions/687780/documenting-shell-scripts-parameters) documents shell scripts' parameters.
+- `$1, $2, $3` denotes the 1st, 2nd, 3rd argument in the command line, and `$0` is the script name.
+
+The following command runs with `N = 100, np = 4` and on the `stat` partition,
+
+```bash
+$ ./submit.sh 100 stat 4
+```
+
+which is adopted from [my private project](https://github.com/szcf-weiya/Cell-Video/blob/master/DP/parallel_oracle2.sh).
 
 ## 安装 spark
 
@@ -145,16 +213,6 @@ Caused by: java.io.IOException: Connecting to ×××× timed out (120000 ms)
 
 [Passwordless ssh between two AWS instances](https://markobigdata.com/2018/04/29/passwordless-ssh-between-two-aws-instances/)
 
-## Slurm
-
-[学校服务器](https://www.cuhk.edu.hk/itsc/hpc/slurm.html)采用 Slurm，而系里服务器采用 PBS，常用等价格式如下：
-
-```bash
-# PBS
-qsub -l nodes=2:ppn=16 -l mem=8g -N jobname -m be -M notify@cuhk.edu.hk
-# Slurm
-sbatch -N 2 -c 16 --mem=8g -J jobname --mail-type=[BEGIN,END,FAIL,REQUEUE,ALL] --mail-user=notify@cuhk.edu.hk
-```
 
 ## 腾讯云服务器nginx failed
 
