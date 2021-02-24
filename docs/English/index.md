@@ -1,3 +1,8 @@
+## 2021.02.24
+
+- He's been arrested on suspension of **intoxication (陶醉，酩酊大醉)** manslaughter **(过失杀人)**.
+    - alcohol intoxication: 酒精中毒
+
 ## 2021.02.23
 
 - Yet as soon as the UN Security Council issued new sanctions against the regime as a result of the rocket launch, the response was **apoplectic (大怒的，十分生气的)**, warning of more tests and threatening to attack America.
@@ -142,6 +147,7 @@
 ## 2021.01.31
 
 - What's new here is they **duped (欺骗，愚弄)** Americans into helping them seem more credible.
+    - super-duper: 超级大骗子
 
 ## 2021.01.30
 
