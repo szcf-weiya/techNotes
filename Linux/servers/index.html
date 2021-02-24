@@ -330,30 +330,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#submitting-multiple-jobs-quickly" class="md-nav__link">
-    Submitting Multiple Jobs Quickly
+  <a href="#submitting-multiple-jobs" class="md-nav__link">
+    Submitting Multiple Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitting Multiple Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pbs" class="md-nav__link">
+    PBS
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#pbs-passing-argument-list" class="md-nav__link">
-    PBS passing argument list
+        
+          <li class="md-nav__item">
+  <a href="#slurm" class="md-nav__link">
+    SLURM
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#pbs-cheat-sheet" class="md-nav__link">
-    PBS cheat sheet
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pbsdsh" class="md-nav__link">
-    PBSDSH
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -367,13 +366,6 @@
         <li class="md-nav__item">
   <a href="#aws" class="md-nav__link">
     AWS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slurm" class="md-nav__link">
-    Slurm
   </a>
   
 </li>
@@ -1415,30 +1407,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#submitting-multiple-jobs-quickly" class="md-nav__link">
-    Submitting Multiple Jobs Quickly
+  <a href="#submitting-multiple-jobs" class="md-nav__link">
+    Submitting Multiple Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitting Multiple Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pbs" class="md-nav__link">
+    PBS
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#pbs-passing-argument-list" class="md-nav__link">
-    PBS passing argument list
+        
+          <li class="md-nav__item">
+  <a href="#slurm" class="md-nav__link">
+    SLURM
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#pbs-cheat-sheet" class="md-nav__link">
-    PBS cheat sheet
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pbsdsh" class="md-nav__link">
-    PBSDSH
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1452,13 +1443,6 @@
         <li class="md-nav__item">
   <a href="#aws" class="md-nav__link">
     AWS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slurm" class="md-nav__link">
-    Slurm
   </a>
   
 </li>
@@ -1587,34 +1571,89 @@ weiya    :0       :0               <span class="m">10</span>:28   ?xdm?  <span c
 <p>如果想要在本地运行服务器端的 GUI 程序，即将服务器端的窗口发送到本地，则登录时需要加上 <code>-X</code> 选项，</p>
 <div class="highlight"><pre><span></span><code>ssh -X
 </code></pre></div>
-<h2 id="submitting-multiple-jobs-quickly">Submitting Multiple Jobs Quickly<a class="headerlink" href="#submitting-multiple-jobs-quickly" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">PBS</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>/usr/bin/mpirun -v -np <span class="m">28</span> -machinefile <span class="nv">$PBS_NODEFILE</span> ./myexe <span class="si">${</span><span class="nv">NUMBERARG</span><span class="si">}</span> <span class="si">${</span><span class="nv">LETTERARG</span><span class="si">}</span>
+<h2 id="submitting-multiple-jobs">Submitting Multiple Jobs<a class="headerlink" href="#submitting-multiple-jobs" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.cuhk.edu.hk/itsc/hpc/slurm.html">SLURM</a> and PBS are two different cluster schedulers, and the common equivalent commands are as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># PBS</span>
+qsub -l <span class="nv">nodes</span><span class="o">=</span><span class="m">2</span>:ppn<span class="o">=</span><span class="m">16</span> -l <span class="nv">mem</span><span class="o">=</span>8g -N jobname -m be -M notify@cuhk.edu.hk
+<span class="c1"># Slurm</span>
+sbatch -N <span class="m">2</span> -c <span class="m">16</span> --mem<span class="o">=</span>8g -J jobname --mail-type<span class="o">=[</span>BEGIN,END,FAIL,REQUEUE,ALL<span class="o">]</span> --mail-user<span class="o">=</span>notify@cuhk.edu.hk
 </code></pre></div>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Bash</label><div class="tabbed-content">
+<p>Sometimes, we want to submit multiple jobs quickly, or perform parallel computing by dividing a heavy task into multiple small tasks.</p>
+<h3 id="pbs">PBS<a class="headerlink" href="#pbs" title="Permanent link">&para;</a></h3>
+<p>Suppose there is a main program <code>toy.jl</code>, and I want to run it multiple times but with different parameters, which can be passed via the <code>-v</code> option.</p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">submit.sh</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="k">for</span> NUMBERS <span class="k">in</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="p">;</span> <span class="k">do</span>
-    <span class="k">for</span> LETTERS <span class="k">in</span> a b c d e<span class="p">;</span> <span class="k">do</span>
-        qsub -v <span class="nv">NUMBERARG</span><span class="o">=</span><span class="nv">$NUMBERS</span>,LETTERARG<span class="o">=</span><span class="nv">$LETTERS</span> my_qsub_script.pbs
+<span class="k">for</span> number <span class="k">in</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="p">;</span> <span class="k">do</span>
+    <span class="k">for</span> letter <span class="k">in</span> a b c d e<span class="p">;</span> <span class="k">do</span>
+        qsub -v <span class="nv">arg1</span><span class="o">=</span><span class="nv">$number</span>,arg2<span class="o">=</span><span class="nv">$letter</span> toy.job
     <span class="k">done</span>
 <span class="k">done</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Run</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code>chmod +x submit_multiple_jobs.sh
-./submit_multiple_jobs.sh
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">toy.job</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nb">cd</span> <span class="nv">$HOME</span>/PROJECT_FOLDER
+julia toy.jl <span class="si">${</span><span class="nv">arg1</span><span class="si">}</span> <span class="si">${</span><span class="nv">arg2</span><span class="si">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">toy.jl</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">AGRS</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;a = </span><span class="si">$a</span><span class="s">, b = </span><span class="si">$b</span><span class="s">&quot;</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
-<p>refer to <a href="http://www.pace.gatech.edu/submitting-multiple-jobs-quickly">Submitting Multiple Jobs Quickly</a>.</p>
-<h2 id="pbs-passing-argument-list">PBS passing argument list<a class="headerlink" href="#pbs-passing-argument-list" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>qsub your.job -v <span class="nv">arg1</span><span class="o">=</span>val1,arg2<span class="o">=</span>val2
+<p>The submitting command is</p>
+<div class="highlight"><pre><span></span><code>$ ./submit.sh
 </code></pre></div>
-<h2 id="pbs-cheat-sheet">PBS cheat sheet<a class="headerlink" href="#pbs-cheat-sheet" title="Permanent link">&para;</a></h2>
-<p><a href="../PBS%20Script_0.pdf">PBS Script</a></p>
-<h2 id="pbsdsh">PBSDSH<a class="headerlink" href="#pbsdsh" title="Permanent link">&para;</a></h2>
-<p><a href="https://wikis.nyu.edu/display/NYUHPC/PBSDSH">PBSDSH</a></p>
+<p>and here is <a href="https://github.com/szcf-weiya/Metabolic-Network/blob/09314f0558ddccc3997bcfcecf6b7576b281c3fd/old/mcmc-with-args.job">an example</a> in my private projects.</p>
+<h3 id="slurm">SLURM<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h3>
+<p>Suppose there is a main program <code>run.jl</code>, which runs in parallel with the number of cores <code>np</code>, and I also want to repeat the program for <code>N</code> times. To properly store the results, the index of repetition <code>nrep</code> for each job has been passed to the main program.</p>
+<p>The arguments for job file can be passed by the <code>--export</code> option.</p>
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">submit.sh</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    cat <span class="s">&lt;&lt;HELP_USAGE</span>
+<span class="s">    $0 param1 param2</span>
+<span class="s">    param1 number of repetitions</span>
+<span class="s">    param2 node label, can be stat or chpc</span>
+<span class="s">    param3 number of cores</span>
+<span class="s">HELP_USAGE</span>
+    <span class="nb">exit</span> <span class="m">0</span>
+<span class="k">fi</span>
+<span class="nv">resfolder</span><span class="o">=</span>res_<span class="k">$(</span>date -Iseconds<span class="k">)</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="k">$(</span>seq <span class="m">1</span> <span class="m">1</span> <span class="nv">$1</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+    sbatch -N <span class="m">1</span> -c <span class="nv">$3</span> -p <span class="nv">$2</span> --export<span class="o">=</span><span class="nv">resfolder</span><span class="o">=</span><span class="si">${</span><span class="nv">resfolder</span><span class="si">}</span>,nrep<span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>,np<span class="o">=</span><span class="nv">$3</span> toy.job
+<span class="k">done</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">toy.job</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nb">cd</span> <span class="nv">$HOME</span>/PROJECT
+julia -p <span class="nv">$np</span> run.jl <span class="nv">$nrep</span> <span class="nv">$resfolder</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">run.jl</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">Distributed</span>
+<span class="kd">const</span> <span class="n">jobs</span> <span class="o">=</span> <span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span>
+<span class="kd">const</span> <span class="n">res</span> <span class="o">=</span> <span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span>
+
+<span class="k">function</span> <span class="n">make_jobs</span><span class="p">()</span> <span class="k">end</span>
+<span class="k">function</span> <span class="n">do_work</span><span class="p">()</span> <span class="k">end</span>
+
+<span class="n">nrep</span><span class="p">,</span> <span class="n">resfolder</span> <span class="o">=</span> <span class="nb">ARGS</span>
+<span class="nd">@async</span> <span class="n">make_jobs</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+<p>where</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/687780/documenting-shell-scripts-parameters"><code>HELP_USAGE</code></a> documents shell scripts&rsquo; parameters.</li>
+<li><code>$1, $2, $3</code> denotes the 1st, 2nd, 3rd argument in the command line, and <code>$0</code> is the script name.</li>
+</ul>
+<p>The following command runs with <code>N = 100, np = 4</code> and on the <code>stat</code> partition,</p>
+<div class="highlight"><pre><span></span><code>$ ./submit.sh <span class="m">100</span> stat <span class="m">4</span>
+</code></pre></div>
+<p>which is adopted from <a href="https://github.com/szcf-weiya/Cell-Video/blob/master/DP/parallel_oracle2.sh">my private project</a>.</p>
 <h2 id="spark">安装 spark<a class="headerlink" href="#spark" title="Permanent link">&para;</a></h2>
 <p><del>在内地云主机上，<a href="https://spark.apache.org/downloads.html">官网下载地址</a> 还没 5 秒就中断了，然后找到了<a href="https://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-2.4.4/">清华的镜像</a></del></p>
 <p>第二天发现，其实不是中断了，而是下载完成了，因为那个还不是下载链接，点进去才有推荐的下载链接，而这些链接也是推荐的速度快的镜像。</p>
@@ -1645,13 +1684,6 @@ weiya    :0       :0               <span class="m">10</span>:28   ?xdm?  <span c
 <li>AWS 结点间免密登录</li>
 </ol>
 <p><a href="https://markobigdata.com/2018/04/29/passwordless-ssh-between-two-aws-instances/">Passwordless ssh between two AWS instances</a></p>
-<h2 id="slurm">Slurm<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.cuhk.edu.hk/itsc/hpc/slurm.html">学校服务器</a>采用 Slurm，而系里服务器采用 PBS，常用等价格式如下：</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># PBS</span>
-qsub -l <span class="nv">nodes</span><span class="o">=</span><span class="m">2</span>:ppn<span class="o">=</span><span class="m">16</span> -l <span class="nv">mem</span><span class="o">=</span>8g -N jobname -m be -M notify@cuhk.edu.hk
-<span class="c1"># Slurm</span>
-sbatch -N <span class="m">2</span> -c <span class="m">16</span> --mem<span class="o">=</span>8g -J jobname --mail-type<span class="o">=[</span>BEGIN,END,FAIL,REQUEUE,ALL<span class="o">]</span> --mail-user<span class="o">=</span>notify@cuhk.edu.hk
-</code></pre></div>
 <h2 id="nginx-failed">腾讯云服务器nginx failed<a class="headerlink" href="#nginx-failed" title="Permanent link">&para;</a></h2>
 <p>原因：80端口被占用
 解决方法：kill掉占用80端口的</p>
