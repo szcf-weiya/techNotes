@@ -1,3 +1,7 @@
+## 2021.02.25
+
+- Music is an **aurally (听觉上)** **perceived (察觉，感知)** phenomenon.
+
 ## 2021.02.24
 
 - He's been arrested on suspension of **intoxication (陶醉，酩酊大醉)** manslaughter **(过失杀人)**.

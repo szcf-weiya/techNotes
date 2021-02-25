@@ -186,28 +186,68 @@ But when I just use single node, and arbitrary cores, say `nodes=1:ppn=2`, it wo
 2. set `startup.jl` but still not work. refer to [How does Julia find a module?](https://en.wikibooks.org/wiki/Introducing_Julia/Modules_and_packages)
 3. one possible way: [Finalizing Your Julia Package: Documentation, Testing, Coverage, and Publishing](http://www.stochasticlifestyle.com/finalizing-julia-package-documentation-testing-coverage-publishing/)
 
-## julia `for` scope
+## variable scope in `for` loop
 
-The following code
-```julia
-i = 0
-for j = 1:10
-    i = i + 1
-end
-```
-will report
-```julia
-ERROR: UndefVarError: i not defined
+=== "mwe1.jl"
+
+    ``` julia
+    i = 0
+    for j = 1:2
+        if j != i
+            println("ok")
+        end
+    end
+    ```
+
+=== "mwe2.jl"
+
+    ``` julia
+    i = 0
+    for j = 1:2
+        if j != i
+            println("ok")
+        end
+        i = j
+    end
+    ```
+
+=== "mwe3.jl"
+
+    ``` julia
+    i = 0
+    for j = 1:2
+        if j != i
+            println("ok")
+        end
+        global i = j
+    end
+    ```
+
+The results are
+
+```bash
+$ julia mwe1.jl
+ok
+ok
+$ julia mwe2.jl
+ERROR: LoadError: UndefVarError: i not defined
+# more information given in julia1.5.2
+$ julia1.5.2 mwe2.jl
+┌ Warning: Assignment to `i` in soft scope is ambiguous because a global variable by the same name exists: `i` will be treated as a new local. Disambiguate by using `local i` to suppress this warning or `global i` to assign to the existing global variable.
+ERROR: LoadError: UndefVarError: i not defined
+$ julia mwe3.jl
+ok
+ok
 ```
 
-A (possible) reasonable explanation is, $i$ is a global variable, we cannot modify a global variable in a local block without `global` keyword, but we can read `i` in the `for` loop.
+Thus, the reason is that $i$ is a global variable, we cannot modify a global variable in a local block without `global` keyword, i.e., `global i = i + 1`, but we can read `i` in the `for` loop.
 
 Alternatively, we can use `let` block,
 
 ```julia
 let
 i = 0
-for j = 1:10
+for j = 1:2
     i = i + 1
 end
 i
@@ -1006,3 +1046,53 @@ run(`$command`)
 ## Shortcuts in Juno
 
 - `Ctrl+J Ctrl+E`: switch from REPL to editor, refer to [the correct shortcut is be Ctrl-J Ctrl-E (and the command is called Julia Client: Focus Last Editor)](https://discourse.julialang.org/t/win10-how-to-switch-keyshort-from-editor-to-repl/22911), an inspiration is that I can check it via `Ctrl-Shift-P`.
+
+## foreach
+
+```julia
+julia> foreach(readdir(".")) do filename
+           println(filename)
+       end
+# or a more concise way
+julia> foreach(println, readdir("."))
+```
+
+[an example](https://github.com/szcf-weiya/Cell-Video/blob/8cffd45451c0b1af9da4199c7ef611d836c0e86e/DP/visualization.jl#L166)
+
+## PyPlot
+
+- [grid_plot_acc_vs_rate_revisit](https://github.com/szcf-weiya/Cell-Video/blob/8cffd45451c0b1af9da4199c7ef611d836c0e86e/DP/visualization.jl#L155-L217) and [demo](https://github.com/szcf-weiya/Cell-Video/blob/last-revisit/DP/110_original_with_revisit_2019-10-09T11:20:28_oracle_setting_2019-09-22T20:06:59_precision.pdf)
+    - multiple subplots with `sharex="all", sharey="all"`
+    -  `ax0 = fig.add_subplot(111, frameon=false)`
+    - `plt.text`
+
+## Regex
+
+```julia
+julia> split("juliaxxxjulia", "julia")
+3-element Array{SubString{String},1}:
+ ""
+ "xxx"
+ ""
+
+# ^ requires `Regex`
+julia> split("juliaaaajulia", "^julia")
+1-element Array{SubString{String},1}:
+"juliaaaajulia"
+
+
+julia> split("juliaxxxjulia", Regex("^julia"))
+2-element Array{SubString{String},1}:
+ ""
+ "xxxjulia"
+
+julia> x = "xxx"
+"xxx"
+
+julia> split("juliaxxxjulia", Regex("^julia$x"))
+2-element Array{SubString{String},1}:
+ ""
+ "julia"
+```
+
+adopted from [`pattern = Regex("^"*pattern)`](https://github.com/szcf-weiya/Cell-Video/blob/8cffd45451c0b1af9da4199c7ef611d836c0e86e/DP/visualization.jl#L260)
