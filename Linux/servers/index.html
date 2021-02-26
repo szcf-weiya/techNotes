@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/servers/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.2">
     
     
       
@@ -243,7 +243,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
   
   
@@ -439,6 +438,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#job-priority-calculation-in-the-cluster" class="md-nav__link">
+    job priority calculation in the cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    references
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -500,7 +513,6 @@
           R
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -615,7 +627,6 @@
           Python
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -746,7 +757,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
   
   
@@ -800,7 +810,6 @@
           Website
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -883,7 +892,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
   
   
@@ -949,7 +957,6 @@
           Tools
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1052,7 +1059,6 @@
           Stat
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1222,7 +1228,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
   
   
@@ -1288,7 +1293,6 @@
           Others
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1513,6 +1517,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-priority-calculation-in-the-cluster" class="md-nav__link">
+    job priority calculation in the cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    references
+  </a>
   
 </li>
       
@@ -1805,6 +1823,74 @@ srun: error: Hostlist is empty!  Can<span class="err">&#39;</span>t run job.
 <p>Explicitly exclude certain nodes from the resources <strong>granted</strong> to the job.</p>
 </blockquote>
 <p>So the exclusion seems only to perform on the granted resources instead of all nodes. If you want to allocate specified nodes, <code>-w</code> option should be used.</p>
+<h2 id="job-priority-calculation-in-the-cluster">job priority calculation in the cluster<a class="headerlink" href="#job-priority-calculation-in-the-cluster" title="Permanent link">&para;</a></h2>
+<p>the formula for job priority is given by
+<div class="highlight"><pre><span></span><code><span class="nv">Job_priority</span> <span class="o">=</span>
+    site_factor +
+    <span class="o">(</span>PriorityWeightAge<span class="o">)</span> * <span class="o">(</span>age_factor<span class="o">)</span> +
+    <span class="o">(</span>PriorityWeightAssoc<span class="o">)</span> * <span class="o">(</span>assoc_factor<span class="o">)</span> +
+    <span class="o">(</span>PriorityWeightFairshare<span class="o">)</span> * <span class="o">(</span>fair-share_factor<span class="o">)</span> +
+    <span class="o">(</span>PriorityWeightJobSize<span class="o">)</span> * <span class="o">(</span>job_size_factor<span class="o">)</span> +
+    <span class="o">(</span>PriorityWeightPartition<span class="o">)</span> * <span class="o">(</span>partition_factor<span class="o">)</span> +
+    <span class="o">(</span>PriorityWeightQOS<span class="o">)</span> * <span class="o">(</span>QOS_factor<span class="o">)</span> +
+    SUM<span class="o">(</span>TRES_weight_cpu * TRES_factor_cpu,
+        TRES_weight_&lt;type&gt; * TRES_factor_&lt;type&gt;,
+        ...<span class="o">)</span>
+    - nice_factor
+</code></pre></div>
+we can find those weights
+<div class="highlight"><pre><span></span><code>$ scontrol show config <span class="p">|</span> grep ^Priority
+<span class="nv">PriorityParameters</span>      <span class="o">=</span> <span class="o">(</span>null<span class="o">)</span>
+<span class="nv">PrioritySiteFactorParameters</span> <span class="o">=</span> <span class="o">(</span>null<span class="o">)</span>
+<span class="nv">PrioritySiteFactorPlugin</span> <span class="o">=</span> <span class="o">(</span>null<span class="o">)</span>
+<span class="nv">PriorityDecayHalfLife</span>   <span class="o">=</span> <span class="m">7</span>-00:00:00
+<span class="nv">PriorityCalcPeriod</span>      <span class="o">=</span> <span class="m">00</span>:05:00
+<span class="nv">PriorityFavorSmall</span>      <span class="o">=</span> No
+<span class="nv">PriorityFlags</span>           <span class="o">=</span> CALCULATE_RUNNING
+<span class="nv">PriorityMaxAge</span>          <span class="o">=</span> <span class="m">7</span>-00:00:00
+<span class="nv">PriorityUsageResetPeriod</span> <span class="o">=</span> NONE
+<span class="nv">PriorityType</span>            <span class="o">=</span> priority/multifactor
+<span class="nv">PriorityWeightAge</span>       <span class="o">=</span> <span class="m">0</span>
+<span class="nv">PriorityWeightAssoc</span>     <span class="o">=</span> <span class="m">0</span>
+<span class="nv">PriorityWeightFairShare</span> <span class="o">=</span> <span class="m">100000</span>
+<span class="nv">PriorityWeightJobSize</span>   <span class="o">=</span> <span class="m">0</span>
+<span class="nv">PriorityWeightPartition</span> <span class="o">=</span> <span class="m">0</span>
+<span class="nv">PriorityWeightQOS</span>       <span class="o">=</span> <span class="m">0</span>
+<span class="nv">PriorityWeightTRES</span>      <span class="o">=</span> <span class="o">(</span>null<span class="o">)</span>
+</code></pre></div>
+only the <code>PriorityWeightFairShare</code> is nonzero, and this agrees with
+<div class="highlight"><pre><span></span><code>$ sprio -w
+          JOBID PARTITION   PRIORITY       SITE  FAIRSHARE
+        Weights                               <span class="m">1</span>     <span class="m">100000</span>
+$ sprio -w -p stat
+          JOBID PARTITION   PRIORITY       SITE  FAIRSHARE
+        Weights                               <span class="m">1</span>     <span class="m">100000</span>
+$ sprio -w -p chpc
+          JOBID PARTITION   PRIORITY       SITE  FAIRSHARE
+        Weights                               <span class="m">1</span>     <span class="m">100000</span>
+</code></pre></div>
+then the formula can be simplified as
+<div class="highlight"><pre><span></span><code><span class="nv">Job_priority</span> <span class="o">=</span>
+    site_factor +
+    <span class="o">(</span>PriorityWeightFairshare<span class="o">)</span> * <span class="o">(</span>fair-share_factor<span class="o">)</span> +
+    SUM<span class="o">(</span>TRES_weight_cpu * TRES_factor_cpu,
+        TRES_weight_&lt;type&gt; * TRES_factor_&lt;type&gt;,
+        ...<span class="o">)</span>
+    - nice_factor
+</code></pre></div>
+where <code>TRES_weight_&lt;type&gt;</code> might be GPU, see the usage weight in the table https://www.cuhk.edu.hk/itsc/hpc/slurm.html, and a negative <code>nice_factor</code> can only be set by privileged users,</p>
+<blockquote>
+<p>Nice Factor
+Users can adjust the priority of their own jobs by setting the nice value on their jobs. Like the system nice, positive values negatively impact a job&rsquo;s priority and negative values increase a job&rsquo;s priority. Only privileged users can specify a negative value. The adjustment range is +/-2147483645.</p>
+</blockquote>
+<ul>
+<li>the fairshare can be obtained via <code>sshare</code>, and the calculated priority can be obtained via <code>sprio</code>.</li>
+</ul>
+<h2 id="references">references<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>https://slurm.schedmd.com/priority_multifactor.html</li>
+<li>http://www.ceci-hpc.be/slurm_prio.html</li>
+</ul>
                 
               
               
@@ -1924,7 +2010,7 @@ srun: error: Hostlist is empty!  Can<span class="err">&#39;</span>t run job.
     <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.f5903571.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4e3fea51.min.js"></script>
+      <script src="../../assets/javascripts/bundle.3981fc68.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/shell/">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.2">
     
     
       
@@ -242,7 +242,6 @@
           Linux
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -584,6 +583,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#default-value" class="md-nav__link">
+    default value
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -657,7 +663,6 @@
           R
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -772,7 +777,6 @@
           Python
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -903,7 +907,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
   
   
@@ -957,7 +960,6 @@
           Website
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1040,7 +1042,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
   
   
@@ -1106,7 +1107,6 @@
           Tools
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1209,7 +1209,6 @@
           Stat
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1379,7 +1378,6 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
             
   
   
@@ -1445,7 +1443,6 @@
           Others
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1830,6 +1827,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#default-value" class="md-nav__link">
+    default value
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2204,6 +2208,16 @@ $ <span class="nb">echo</span> $<span class="o">[</span> <span class="m">1</span
 <p>for example, compare L82-95 with L108-123,</p>
 <div class="highlight"><pre><span></span><code>$ diff &lt;<span class="o">(</span>sed -n <span class="s2">&quot;82,95p&quot;</span> measure.jl<span class="o">)</span> &lt;<span class="o">(</span>sed -n <span class="s2">&quot;108,123p&quot;</span> measure.jl<span class="o">)</span>
 </code></pre></div>
+<h2 id="default-value">default value<a class="headerlink" href="#default-value" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>${1:-foo}</code>: if parameter is unset or <strong>null</strong>, the expansion of word is substituted.</li>
+<li><code>${1-foo}</code>: only substitute if parameter is unset.</li>
+</ul>
+<p>refer to <a href="https://stackoverflow.com/questions/9332802/how-to-write-a-bash-script-that-takes-optional-input-arguments">How to write a bash script that takes optional input arguments?</a></p>
+<p>applications:</p>
+<ul>
+<li><a href="https://github.com/szcf-weiya/Clouds/blob/b8abfc63078ac53e817c2a3d7f3e92d44cf47f61/run_test_local.sh#L5-L9">Clouds/run_test_local.sh</a></li>
+</ul>
                 
               
               
@@ -2323,7 +2337,7 @@ $ <span class="nb">echo</span> $<span class="o">[</span> <span class="m">1</span
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.f5903571.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.4e3fea51.min.js"></script>
+      <script src="../assets/javascripts/bundle.3981fc68.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
