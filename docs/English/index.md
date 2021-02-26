@@ -1,3 +1,7 @@
+## 2021.02.26
+
+- The julia language **bills (宣传)** itself as "fresh approach to technical computing".
+
 ## 2021.02.25
 
 - Music is an **aurally (听觉上)** **perceived (察觉，感知)** phenomenon.

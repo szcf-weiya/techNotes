@@ -456,7 +456,7 @@ Job_priority =
 	    ...)
 	- nice_factor
 ```
-where `TRES_weight_<type>` might be GPU, see the usage weight in the table https://www.cuhk.edu.hk/itsc/hpc/slurm.html, and a negative `nice_factor` can only be set by privileged users,
+where `TRES_weight_<type>` might be GPU, see the usage weight in the [table](https://www.cuhk.edu.hk/itsc/hpc/slurm.html), and a negative `nice_factor` can only be set by privileged users,
 > Nice Factor
 Users can adjust the priority of their own jobs by setting the nice value on their jobs. Like the system nice, positive values negatively impact a job's priority and negative values increase a job's priority. Only privileged users can specify a negative value. The adjustment range is +/-2147483645.
 
