@@ -395,3 +395,73 @@ Back to the manual of `-x` option:
 > Explicitly exclude certain nodes from the resources **granted** to the job.
 
 So the exclusion seems only to perform on the granted resources instead of all nodes. If you want to allocate specified nodes, `-w` option should be used.
+
+## job priority calculation in the cluster
+
+the formula for job priority is given by
+```bash
+Job_priority =
+	site_factor +
+	(PriorityWeightAge) * (age_factor) +
+	(PriorityWeightAssoc) * (assoc_factor) +
+	(PriorityWeightFairshare) * (fair-share_factor) +
+	(PriorityWeightJobSize) * (job_size_factor) +
+	(PriorityWeightPartition) * (partition_factor) +
+	(PriorityWeightQOS) * (QOS_factor) +
+	SUM(TRES_weight_cpu * TRES_factor_cpu,
+	    TRES_weight_<type> * TRES_factor_<type>,
+	    ...)
+	- nice_factor
+```
+we can find those weights
+```bash
+$ scontrol show config | grep ^Priority
+PriorityParameters      = (null)
+PrioritySiteFactorParameters = (null)
+PrioritySiteFactorPlugin = (null)
+PriorityDecayHalfLife   = 7-00:00:00
+PriorityCalcPeriod      = 00:05:00
+PriorityFavorSmall      = No
+PriorityFlags           = CALCULATE_RUNNING
+PriorityMaxAge          = 7-00:00:00
+PriorityUsageResetPeriod = NONE
+PriorityType            = priority/multifactor
+PriorityWeightAge       = 0
+PriorityWeightAssoc     = 0
+PriorityWeightFairShare = 100000
+PriorityWeightJobSize   = 0
+PriorityWeightPartition = 0
+PriorityWeightQOS       = 0
+PriorityWeightTRES      = (null)
+```
+only the `PriorityWeightFairShare` is nonzero, and this agrees with
+```bash
+$ sprio -w
+          JOBID PARTITION   PRIORITY       SITE  FAIRSHARE
+        Weights                               1     100000
+$ sprio -w -p stat
+          JOBID PARTITION   PRIORITY       SITE  FAIRSHARE
+        Weights                               1     100000
+$ sprio -w -p chpc
+          JOBID PARTITION   PRIORITY       SITE  FAIRSHARE
+        Weights                               1     100000
+```
+then the formula can be simplified as
+```bash
+Job_priority =
+	site_factor +
+	(PriorityWeightFairshare) * (fair-share_factor) +
+	SUM(TRES_weight_cpu * TRES_factor_cpu,
+	    TRES_weight_<type> * TRES_factor_<type>,
+	    ...)
+	- nice_factor
+```
+where `TRES_weight_<type>` might be GPU, see the usage weight in the table https://www.cuhk.edu.hk/itsc/hpc/slurm.html, and a negative `nice_factor` can only be set by privileged users,
+> Nice Factor
+Users can adjust the priority of their own jobs by setting the nice value on their jobs. Like the system nice, positive values negatively impact a job's priority and negative values increase a job's priority. Only privileged users can specify a negative value. The adjustment range is +/-2147483645.
+
+- the fairshare can be obtained via `sshare`, and the calculated priority can be obtained via `sprio`.
+
+## references
+- https://slurm.schedmd.com/priority_multifactor.html
+- http://www.ceci-hpc.be/slurm_prio.html

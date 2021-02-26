@@ -511,3 +511,14 @@ for example, compare L82-95 with L108-123,
 ```bash
 $ diff <(sed -n "82,95p" measure.jl) <(sed -n "108,123p" measure.jl)
 ```
+
+## default value
+
+- `${1:-foo}`: if parameter is unset or **null**, the expansion of word is substituted.
+- `${1-foo}`: only substitute if parameter is unset.
+
+refer to [How to write a bash script that takes optional input arguments?](https://stackoverflow.com/questions/9332802/how-to-write-a-bash-script-that-takes-optional-input-arguments)
+
+applications:
+
+- [Clouds/run_test_local.sh](https://github.com/szcf-weiya/Clouds/blob/b8abfc63078ac53e817c2a3d7f3e92d44cf47f61/run_test_local.sh#L5-L9)
