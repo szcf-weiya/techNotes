@@ -462,7 +462,7 @@ Users can adjust the priority of their own jobs by setting the nice value on the
 
 - the fairshare can be obtained via `sshare`, and the calculated priority can be obtained via `sprio`.
 
-### references
+refer to
 
 - [Multifactor Priority Plugin](https://slurm.schedmd.com/priority_multifactor.html)
 - [Slurm priorities](http://www.ceci-hpc.be/slurm_prio.html)

@@ -1,3 +1,7 @@
+## 2021.02.27
+
+- the symbolic meaning of a **Manhattan project (麦哈顿计划)** and a **moonshot (月球探测器)**.
+
 ## 2021.02.26
 
 - The julia language **bills (宣传)** itself as "fresh approach to technical computing".

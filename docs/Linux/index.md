@@ -1330,3 +1330,19 @@ cp xx.destop ~/.local/share/applications
 ```
 
 otherwise， create a `.desktop` file. More details refer to [How to pin Eclipse to the Unity launcher?](https://askubuntu.com/questions/80013/how-to-pin-eclipse-to-the-unity-launcher) and [How to add programs to the launcher (search)?](https://askubuntu.com/questions/285951/how-to-add-programs-to-the-launcher-search)
+
+## sort with header
+
+```bash
+cat your_data | (sed -u 1q; sort)
+```
+
+refer to [Is there a way to ignore header lines in a UNIX sort?](https://stackoverflow.com/questions/14562423/is-there-a-way-to-ignore-header-lines-in-a-unix-sort)
+
+## ssh until succeed
+
+```bash
+$ until ./login_lab.sh; do sleep 5; done
+```
+
+refer to [How to run ssh command until succeeded?](https://unix.stackexchange.com/questions/404792/how-to-run-ssh-command-until-succeeded)
