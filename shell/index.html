@@ -1910,7 +1910,11 @@
 </ol>
 <ul>
 <li>打印特定行，比如第 10 行：<code>sed '10!d' file.txt</code>, 参考 <a href="https://stackoverflow.com/questions/19327556/get-specific-line-from-text-file-using-just-shell-script">Get specific line from text file using just shell script</a></li>
-<li>打印行范围，<code>sed -n '10,20p' file.txt</code>，则单独打印第 10 行也可以由 <code>sed -n '10p' file.txt</code> 给出，如果采用分号 <code>;</code> 则不是连续选择，而只是特定的行，参考 <a href="https://blog.csdn.net/raysen_zj/article/details/46761253">sed之打印特定行与连续行</a></li>
+<li>打印行范围，<code>sed -n '10,20p' file.txt</code>，则单独打印第 10 行也可以由 <code>sed -n '10p' file.txt</code> 给出，如果采用分号 <code>;</code> 则不是连续选择，而只是特定的行，参考 <a href="https://blog.csdn.net/raysen_zj/article/details/46761253">sed之打印特定行与连续行</a><ul>
+<li>第一行到最后一行：<code>sed -n '1,$p'</code></li>
+<li>第一行和最后一行：<code>sed -n '1p;$p'</code>, not <del><code>sed -n '1;$p'</code></del></li>
+</ul>
+</li>
 <li>删除最后一行：<code>sed -i '$ d' file.txt</code></li>
 </ul>
 <h2 id="_1"><code>|</code>的作用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
