@@ -1,3 +1,7 @@
+## 2021.02.28
+
+- **clunky (沉重的，笨重的)** high-heel shoes
+
 ## 2021.02.27
 
 - the symbolic meaning of a **Manhattan project (麦哈顿计划)** and a **moonshot (月球探测器)**.
@@ -1704,7 +1708,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2018.08.12
 
-1. boilderplate
+1. boilerplate code: 样板代码
 
 ## 2018.08.11
 
