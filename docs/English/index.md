@@ -1,3 +1,8 @@
+## 2021.03.01
+
+- The finding, from the Laser **Interferometer (干涉仪)** Gravitational-Wave Observatory, or **LIGO (激光干涉引力波天文台)**, showed that extreme gravity can cause **ripples (波纹，涟漪)** in spacetime.
+- Colliding dust grains formed larger and larger **clumps (团块)**.
+
 ## 2021.02.28
 
 - **clunky (沉重的，笨重的)** high-heel shoes
