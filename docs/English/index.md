@@ -1,3 +1,7 @@
+## 2021.03.02
+
+- **Polio (小儿麻痹症，脊髓灰质炎)**, short for poliomyelitis, is a highly infectious disease.
+
 ## 2021.03.01
 
 - The finding, from the Laser **Interferometer (干涉仪)** Gravitational-Wave Observatory, or **LIGO (激光干涉引力波天文台)**, showed that extreme gravity can cause **ripples (波纹，涟漪)** in spacetime.
