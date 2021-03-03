@@ -1,3 +1,7 @@
+## 2021.03.03
+
+- Then top with **marshmallows (棉花糖)**, and bake again until brown. 然后加入棉花糖，再烘烤至棕色。
+
 ## 2021.03.02
 
 - **Polio (小儿麻痹症，脊髓灰质炎)**, short for poliomyelitis, is a highly infectious disease.
@@ -1921,6 +1925,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2017.10.01
 
 1. Despite having **steeled (使坚强，使坚定)** herself for the worst, the new **band (乐队)** director was disheartened to hear the **cacophonous (发音不和谐的，粗腔横调的)**/discordant sounds emanating from the freshman **orchestra (管弦乐队)**.
+    - He **orchestrated (精心安排)** that entire **evening (晚会)**.
 2. Bede, the author of A History of the English Church and People, was so widely **revered (尊敬，崇敬)**/**esteemed (尊敬)** that he has been almost universally known as "The **Venerable (值得尊重的，受敬佩的)** Bede" since the ninth century.
 3. In addition to the detailed written regulations regarding play, a novice golfer must also learn the implicit/**tacit (adj. indicated by necessary connotation (内涵，含蓄，暗示) though not expressed directly)**, but nonetheless important, rules of **etiquette (礼节，礼仪)**.
 4. Based on the desire to restrict further water pollution, the Clean Water Act of 1972 began under **auspicious (有前途的，有希望的；吉祥的，吉兆的)**/promising terms, but opponents soon **assailed (攻击，质问)** the bill in the fought for its **ratification (正式批准，认可)**.
