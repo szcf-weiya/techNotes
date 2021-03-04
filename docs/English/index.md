@@ -1,3 +1,9 @@
+## 2021.03.04
+
+- He is **allergic (过敏的)** to **lobster (龙虾)**.
+- We have got to **instill (徐徐滴入；逐渐灌输)** values in these young people.
+- The **hijackers (劫持者)** released three of the **hostages (人质)**.
+
 ## 2021.03.03
 
 - Then top with **marshmallows (棉花糖)**, and bake again until brown. 然后加入棉花糖，再烘烤至棕色。
@@ -688,7 +694,7 @@
 - **[Talmudic (塔木德，犹太教宗教文献)](https://zh.wikipedia.org/wiki/%E5%A1%94%E6%9C%A8%E5%BE%B7)** argument about whether God can dig a **ditch (沟渠)** so width he can't jump across it.
 - the question sounds **snarky**, but it's not meant **in that vein**.
 - we must avoid the **trap** of overconfidence in our inferential summaries.
-- the 40% rule is a time-tried **tactic** employed by **pundits** making forecasts.
+- the 40% rule is a time-tried **tactic** employed by **pundits (某一学科的权威，专家)** making forecasts.
 
 ## 2020.10.26
 
@@ -1438,7 +1444,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 4. Theodore Roosevelt: 西奥多·罗斯福
 5. David Brooks: 专栏作家布鲁克斯
 6. Freakonomics: 魔鬼经济学
-7. pundits
 8. lapped up
 9. Satoshi Kanazawa: 金泽哲
 10. essentialism: 本质主义
