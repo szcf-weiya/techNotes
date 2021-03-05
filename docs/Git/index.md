@@ -7,11 +7,11 @@
 3. [Cheatsheet](git-cheat-sheet-education.pdf)
 4. [Pro Git book (中文)](https://git-scm.com/book/zh/v2)
 
-## 删除分支 
+## 删除分支
 
 ```bash
 ## Delete a remote branch
-$ git push origin --delete <branch> # Git version 1.7.0 or newer 
+$ git push origin --delete <branch> # Git version 1.7.0 or newer
 $ git push origin :<branch> # Git versions older than 1.7.0
 
 ## Delete a local branch
@@ -102,7 +102,7 @@ git remote show origin
 来查看当前 origin，前几行显示如下
 
 ```bash
-$ git remote show origin 
+$ git remote show origin
 * remote origin
   Fetch URL: git@github.com:CellProfiler/CellProfiler.git
   Push  URL: git@github.com:CellProfiler/CellProfiler.git
@@ -125,14 +125,12 @@ git remote set-url origin git@github.com:szcf-weiya/CellProfiler.git
 
 参考 [How to change the fork that a repository is linked to](https://stackoverflow.com/questions/11619593/how-to-change-the-fork-that-a-repository-is-linked-to)
 
-## gitignore 失效
+## 忽略已 track 的文件
 
-[.gitignore](http://www.pfeng.org/archives/840)
+`.gitignore` 只能忽略那些原来没有被 track 的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交：
 
-有时候在项目开发过程中，突然心血来潮想把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交：
-
-```
-git rm -r --cached .
+```bash
+git rm -r --cached foo.txt
 git add .
 git commit -m 'update .gitignore'
 ```
@@ -312,7 +310,7 @@ file_glob: true
 git reset --hard <commit>
 ```
 
-如果也要更新远程仓库，如 github，则需要使用 `git push -f` 强制更新。 
+如果也要更新远程仓库，如 github，则需要使用 `git push -f` 强制更新。
 
 参考
 
@@ -340,7 +338,7 @@ refer to [How to undo 'git reset'?](https://stackoverflow.com/questions/2510276/
 
 ### 实际案例
 
-某次写博客时，有一篇仍处于草稿箱的文件 A.md 暂时不想上传，但是更改了已经发表的文章 B.md 中的 typo，然后提交时一不留神直接用 
+某次写博客时，有一篇仍处于草稿箱的文件 A.md 暂时不想上传，但是更改了已经发表的文章 B.md 中的 typo，然后提交时一不留神直接用
 
 ```bash
 $ g "fix typo"
@@ -497,7 +495,7 @@ git remote set-url origin git@github.com:username/repo.git
 
 refer to [How do I finish the merge after resolving my merge conflicts?](https://stackoverflow.com/questions/2474097/how-do-i-finish-the-merge-after-resolving-my-merge-conflicts)
 
-## push 
+## push
 
 采用低版本的 git， 如 `v1.8.3.1` 当 push 时会报出以下提醒信息，
 
@@ -552,7 +550,7 @@ git tag -a v1.0 -m "version 1"
 git tag v1.0
 # push to github
 git push origin v1.0
-# or 
+# or
 git push origin --tags
 ```
 
@@ -625,7 +623,7 @@ $ git rebase --preserve-merges
 
 ![](rebase-root.png)
 
-后来又瞎运行了下 
+后来又瞎运行了下
 
 ```bash
 $ git rebase
@@ -639,7 +637,7 @@ $ git rebase
 
 ![](git-pull-with-rebase.png)
 
-## 指定 commit 时间 
+## 指定 commit 时间
 
 https://stackoverflow.com/questions/3895453/how-do-i-make-a-git-commit-in-the-past
 

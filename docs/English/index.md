@@ -1,3 +1,12 @@
+## 2021.03.05
+
+- Venus: 金星，爱神维纳斯
+- Jupiter: 木星，众之王朱庇特
+- Mercury：水星，信使神墨丘利
+    - mercury：水银，水银柱
+- Mars: 火星，战神马尔斯
+- Saturn：土星，农业之神
+
 ## 2021.03.04
 
 - He is **allergic (过敏的)** to **lobster (龙虾)**.
