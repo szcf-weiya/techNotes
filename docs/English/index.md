@@ -1,3 +1,10 @@
+## 2021.03.06
+
+- Milky Way (galaxy): 银河，银河系
+- It's the accountant/economist's dilemma of **disregarding (不理会，无视)** **sunk costs (沉没成本，已支付成本)**.
+- According to the economist Paul Krugman (2013), a **zombie (僵尸)** idea is a view that's been thoroughly refuted by a mountain of empirical evidence but nonetheless refuses to die, being continually reanimated by our deeply held beliefs. [source](https://www.psychologicalscience.org/observer/zombie-ideas)
+- immigrants do not have a greater-than-average arrest and **incarceration (监禁，下狱)** rates.
+
 ## 2021.03.05
 
 - Venus: 金星，爱神维纳斯
@@ -731,7 +738,7 @@
 ## 2020.10.24
 
 - its results are used to inform **federal** funding decisions.
-- what are the effects of X on election, where X is **ballot**-order effects, Fox News, home-state advantage, or other things?
+- what are the effects of X on election, where X is **ballot (投票，选举)**-order effects, Fox News, home-state advantage, or other things?
 - I agree with my **correspondent** that this graph does not look like a very good advertisement for this method!
 - Never underestimate the power of **fomo**.
 
@@ -1978,7 +1985,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 15. The children are apparently intrigued by the tale.
 16. The **intrigue (阴谋，诡计)** was quickly discovered, and the would-be assassins were arrested.
 17. The twins have an intuitive awareness of each other's feelings.
-18. The hardship of army training inured her to the rigors of desert warfare.
+18. The **hardship (艰难，困苦)** of army training **inured (使习惯；使适应)** her to the **rigors (严酷，艰苦)** of desert warfare.
 19. The government is too effete to take out the powerful special interests that really ruin this state.
 20. Safety lessons dinned into us over and over.
 21. On the whole, situation has significantly improved with only sporadic disturbances.
