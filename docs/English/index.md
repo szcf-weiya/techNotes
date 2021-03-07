@@ -1,3 +1,8 @@
+## 2021.03.07
+
+- Free range denotes a method of farming **husbandry (畜牧，饲养，农业)** where the animals, for at least part of the day, can roam freely outdoors, rather than being confined in an enclosure for 24 hours each day.
+    - organically fed, free range chicken：有机喂养的散养鸡
+
 ## 2021.03.06
 
 - Milky Way (galaxy): 银河，银河系
@@ -813,7 +818,7 @@
 - consensus-based transparency checklist
 - I also have a wary feeling that is harder to put words to
 - will the satisfactory feeling of successfully completing the checklist **lull (哄骗；使平静)** researchers into **complacency** and keep them from spending effort on the deeper layers?
-- I worry the checklist is going to inadvertently be taken as a false check of quality, rather than simply transparency.
+- I worry the checklist is going to **inadvertently (漫不经心地；非故意地)** be taken as a false check of quality, rather than simply transparency.
 - We should always consider the lurking dangers of offering easy solutions and simple checklists that make humans feel that they've done all that is needed.
 - transparency should reduce existing incentives for performing bad science and increase incentives for better measurement and design of studies.
 
