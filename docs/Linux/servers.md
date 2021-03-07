@@ -466,3 +466,143 @@ refer to
 
 - [Multifactor Priority Plugin](https://slurm.schedmd.com/priority_multifactor.html)
 - [Slurm priorities](http://www.ceci-hpc.be/slurm_prio.html)
+
+## Custom Module
+
+The cluster manages the software versions with [module](https://linux.die.net/man/1/module), and the default module file path is
+
+```bash
+$ echo $MODULEPATH
+/usr/share/Modules/modulefiles:/etc/modulefiles
+```
+
+which requires `sudo` privilege. A natural question is whether we can create custom (local) module file to switch the software which are installed by ourselves or have not been added into the modules.
+
+Here is an example. There is an installed R in `/opt/share/R` named `3.6.3-v2`, which does not have the modulefile, since the same version `3.6.3` is already used. But there are still differences between these two "same" versions, `3.6.3-v2` supports figures, such as "jpeg", "png", "tiff" and "cairo", while `3.6.3` not,
+
+```bash
+(3.6.3) > capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua
+      FALSE       FALSE       FALSE        TRUE       FALSE       FALSE
+   http/ftp     sockets      libxml        fifo      cledit       iconv
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+        NLS     profmem       cairo         ICU long.double     libcurl
+       TRUE       FALSE       FALSE        TRUE        TRUE        TRUE
+
+(3.6.3-v2) > capabilities()
+       jpeg         png        tiff       tcltk         X11        aqua
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE
+   http/ftp     sockets      libxml        fifo      cledit       iconv
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+        NLS     profmem       cairo         ICU long.double     libcurl
+       TRUE       FALSE        TRUE        TRUE        TRUE        TRUE
+```
+
+To use `3.6.3-v2`, we can create our custom modulefile ([ref](https://www.sc.fsu.edu/computing/tech-docs/1177-linux-modules)),
+
+```bash
+# step 1: create a folder in your home directory
+~ $ mkdir modules
+# step 2: preappend your module path to the ~/.bashrc file
+~ $ echo "export MODULEPATH=${MODULEPATH}:${HOME}/modules" >> ~/.bashrc
+# step 3: copy the existing modulefile as a template
+# here I skip the directory, just use name `R3.6`, which can also differ from the existing `R/3.6`
+~ $ cp /usr/share/Modules/modulefiles/R/3.6 modules/R3.6
+# step 4: modify the path to the software (`modroot`) as follows
+```
+
+=== "/usr/share/Modules/modulefiles/R/3.6"
+
+    ```bash
+    #%Module1.0#####################################################################
+    ##
+    proc ModulesHelp { } {
+     global version modroot
+
+    puts stderr "R/3.6.3 - sets the Environment for
+             R scripts v3.6.3 (gcc verion)
+
+    Use 'module whatis [module-info name]' for more information"
+    }
+
+    module-whatis "The R Project for Statistical Computing
+    R is a free software environment for statistical computing and graphics.
+
+    Here is the available versions:
+            R/3.6.3"
+
+
+    set     version         3.6.3
+    set     app             R
+    set     modroot         /opt/share/$app/$version
+
+    module load pcre2
+
+    conflict R
+
+    setenv R_HOME $modroot/lib64/R
+
+    prepend-path PATH $modroot/bin
+    prepend-path LD_LIBRARY_PATH $modroot/lib
+    prepend-path INCLUDE $modroot/include
+    ```
+
+=== "~/modules/R3.6"
+
+    ```bash
+    #%Module1.0#####################################################################
+    ##
+    proc ModulesHelp { } {
+     global version modroot
+
+    puts stderr "R/3.6.3 - sets the Environment for
+             R scripts v3.6.3 (gcc verion)
+
+    Use 'module whatis [module-info name]' for more information"
+    }
+
+    module-whatis "The R Project for Statistical Computing
+    R is a free software environment for statistical computing and graphics.
+
+    Here is the available versions:
+            R/3.6.3"
+
+
+    set     version         3.6.3
+    set     app             R
+    set     modroot         /opt/share/$app/${version}-v2
+
+    module load pcre2
+    module load intel
+    conflict R
+
+    setenv R_HOME $modroot/lib64/R
+
+    prepend-path PATH $modroot/bin
+    prepend-path LD_LIBRARY_PATH $modroot/lib
+    prepend-path INCLUDE $modroot/include
+    ```
+
+=== "diff -u"
+
+    ```diff
+    @@ -18,10 +18,10 @@
+
+     set     version         3.6.3
+     set     app             R
+    -set     modroot         /opt/share/$app/$version
+    +set     modroot         /opt/share/$app/${version}-v2
+
+     module load pcre2
+    -
+    +module load intel
+     conflict R
+    ```
+
+Note that `module load intel` is also added, otherwise it will throws,
+
+```bash
+/opt/share/R/3.6.3-v2/lib64/R/bin/exec/R: error while loading shared libraries: libiomp5.so: cannot open shared object file: No such file or directory
+```
+
+since `libiomp5` is for `openmp` ([ref](https://stackoverflow.com/a/28254656)).
