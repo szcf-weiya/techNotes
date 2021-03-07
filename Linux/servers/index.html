@@ -445,6 +445,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#custom-module" class="md-nav__link">
+    Custom Module
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1520,6 +1527,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#custom-module" class="md-nav__link">
+    Custom Module
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1877,6 +1891,126 @@ Users can adjust the priority of their own jobs by setting the nice value on the
 <li><a href="https://slurm.schedmd.com/priority_multifactor.html">Multifactor Priority Plugin</a></li>
 <li><a href="http://www.ceci-hpc.be/slurm_prio.html">Slurm priorities</a></li>
 </ul>
+<h2 id="custom-module">Custom Module<a class="headerlink" href="#custom-module" title="Permanent link">&para;</a></h2>
+<p>The cluster manages the software versions with <a href="https://linux.die.net/man/1/module">module</a>, and the default module file path is</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="nv">$MODULEPATH</span>
+/usr/share/Modules/modulefiles:/etc/modulefiles
+</code></pre></div>
+<p>which requires <code>sudo</code> privilege. A natural question is whether we can create custom (local) module file to switch the software which are installed by ourselves or have not been added into the modules.</p>
+<p>Here is an example. There is an installed R in <code>/opt/share/R</code> named <code>3.6.3-v2</code>, which does not have the modulefile, since the same version <code>3.6.3</code> is already used. But there are still differences between these two &ldquo;same&rdquo; versions, <code>3.6.3-v2</code> supports figures, such as &ldquo;jpeg&rdquo;, &ldquo;png&rdquo;, &ldquo;tiff&rdquo; and &ldquo;cairo&rdquo;, while <code>3.6.3</code> not,</p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span><span class="m">3</span>.6.3<span class="o">)</span> &gt; capabilities<span class="o">()</span>
+       jpeg         png        tiff       tcltk         X11        aqua
+      FALSE       FALSE       FALSE        TRUE       FALSE       FALSE
+   http/ftp     sockets      libxml        fifo      cledit       iconv
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+        NLS     profmem       cairo         ICU long.double     libcurl
+       TRUE       FALSE       FALSE        TRUE        TRUE        TRUE
+
+<span class="o">(</span><span class="m">3</span>.6.3-v2<span class="o">)</span> &gt; capabilities<span class="o">()</span>
+       jpeg         png        tiff       tcltk         X11        aqua
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE
+   http/ftp     sockets      libxml        fifo      cledit       iconv
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+        NLS     profmem       cairo         ICU long.double     libcurl
+       TRUE       FALSE        TRUE        TRUE        TRUE        TRUE
+</code></pre></div>
+<p>To use <code>3.6.3-v2</code>, we can create our custom modulefile (<a href="https://www.sc.fsu.edu/computing/tech-docs/1177-linux-modules">ref</a>),</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># step 1: create a folder in your home directory</span>
+~ $ mkdir modules
+<span class="c1"># step 2: preappend your module path to the ~/.bashrc file</span>
+~ $ <span class="nb">echo</span> <span class="s2">&quot;export MODULEPATH=</span><span class="si">${</span><span class="nv">MODULEPATH</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/modules&quot;</span> &gt;&gt; ~/.bashrc
+<span class="c1"># step 3: copy the existing modulefile as a template</span>
+<span class="c1"># here I skip the directory, just use name `R3.6`, which can also differ from the existing `R/3.6`</span>
+~ $ cp /usr/share/Modules/modulefiles/R/3.6 modules/R3.6
+<span class="c1"># step 4: modify the path to the software (`modroot`) as follows</span>
+</code></pre></div>
+<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">/usr/share/Modules/modulefiles/R/3.6</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">#%Module1.0#####################################################################</span>
+<span class="c1">##</span>
+proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="o">{</span>
+ global version modroot
+
+puts stderr <span class="s2">&quot;R/3.6.3 - sets the Environment for</span>
+<span class="s2">         R scripts v3.6.3 (gcc verion)</span>
+
+<span class="s2">Use &#39;module whatis [module-info name]&#39; for more information&quot;</span>
+<span class="o">}</span>
+
+module-whatis <span class="s2">&quot;The R Project for Statistical Computing</span>
+<span class="s2">R is a free software environment for statistical computing and graphics.</span>
+
+<span class="s2">Here is the available versions:</span>
+<span class="s2">        R/3.6.3&quot;</span>
+
+
+<span class="nb">set</span>     version         <span class="m">3</span>.6.3
+<span class="nb">set</span>     app             R
+<span class="nb">set</span>     modroot         /opt/share/<span class="nv">$app</span>/<span class="nv">$version</span>
+
+module load pcre2
+
+conflict R
+
+setenv R_HOME <span class="nv">$modroot</span>/lib64/R
+
+prepend-path PATH <span class="nv">$modroot</span>/bin
+prepend-path LD_LIBRARY_PATH <span class="nv">$modroot</span>/lib
+prepend-path INCLUDE <span class="nv">$modroot</span>/include
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">~/modules/R3.6</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">#%Module1.0#####################################################################</span>
+<span class="c1">##</span>
+proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="o">{</span>
+ global version modroot
+
+puts stderr <span class="s2">&quot;R/3.6.3 - sets the Environment for</span>
+<span class="s2">         R scripts v3.6.3 (gcc verion)</span>
+
+<span class="s2">Use &#39;module whatis [module-info name]&#39; for more information&quot;</span>
+<span class="o">}</span>
+
+module-whatis <span class="s2">&quot;The R Project for Statistical Computing</span>
+<span class="s2">R is a free software environment for statistical computing and graphics.</span>
+
+<span class="s2">Here is the available versions:</span>
+<span class="s2">        R/3.6.3&quot;</span>
+
+
+<span class="nb">set</span>     version         <span class="m">3</span>.6.3
+<span class="nb">set</span>     app             R
+<span class="nb">set</span>     modroot         /opt/share/<span class="nv">$app</span>/<span class="si">${</span><span class="nv">version</span><span class="si">}</span>-v2
+
+module load pcre2
+module load intel
+conflict R
+
+setenv R_HOME <span class="nv">$modroot</span>/lib64/R
+
+prepend-path PATH <span class="nv">$modroot</span>/bin
+prepend-path LD_LIBRARY_PATH <span class="nv">$modroot</span>/lib
+prepend-path INCLUDE <span class="nv">$modroot</span>/include
+</code></pre></div>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">diff -u</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="gu">@@ -18,10 +18,10 @@</span>
+
+ set     version         3.6.3
+ set     app             R
+<span class="gd">-set     modroot         /opt/share/$app/$version</span>
+<span class="gi">+set     modroot         /opt/share/$app/${version}-v2</span>
+
+ module load pcre2
+<span class="gd">-</span>
+<span class="gi">+module load intel</span>
+ conflict R
+</code></pre></div>
+</div>
+</div>
+<p>Note that <code>module load intel</code> is also added, otherwise it will throws,</p>
+<div class="highlight"><pre><span></span><code>/opt/share/R/3.6.3-v2/lib64/R/bin/exec/R: error <span class="k">while</span> loading shared libraries: libiomp5.so: cannot open shared object file: No such file or directory
+</code></pre></div>
+<p>since <code>libiomp5</code> is for <code>openmp</code> (<a href="https://stackoverflow.com/a/28254656">ref</a>).</p>
                 
               
               
