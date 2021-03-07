@@ -606,3 +606,14 @@ Note that `module load intel` is also added, otherwise it will throws,
 ```
 
 since `libiomp5` is for `openmp` ([ref](https://stackoverflow.com/a/28254656)).
+
+Now, you can use `3.6.3-v2` like other modules,
+
+```bash
+# load `3.6.3-v2`
+$ module load R3.6
+# unload `3.6.3-v2`
+$ module unload R3.6
+# load original `3.6.3`
+$ module load R/3.6
+```
