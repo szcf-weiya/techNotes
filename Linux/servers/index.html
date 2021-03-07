@@ -2011,6 +2011,14 @@ prepend-path INCLUDE <span class="nv">$modroot</span>/include
 <div class="highlight"><pre><span></span><code>/opt/share/R/3.6.3-v2/lib64/R/bin/exec/R: error <span class="k">while</span> loading shared libraries: libiomp5.so: cannot open shared object file: No such file or directory
 </code></pre></div>
 <p>since <code>libiomp5</code> is for <code>openmp</code> (<a href="https://stackoverflow.com/a/28254656">ref</a>).</p>
+<p>Now, you can use <code>3.6.3-v2</code> like other modules,</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># load `3.6.3-v2`</span>
+$ module load R3.6
+<span class="c1"># unload `3.6.3-v2`</span>
+$ module unload R3.6
+<span class="c1"># load original `3.6.3`</span>
+$ module load R/3.6
+</code></pre></div>
                 
               
               
