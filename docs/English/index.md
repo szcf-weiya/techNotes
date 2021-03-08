@@ -1,3 +1,7 @@
+## 2021.03.08
+
+- **Conjoint analysis (联合分析)**, also called multi-attribute compositional models or stated preference analysis, is a statisical technique that originated in mathematical psychology.
+
 ## 2021.03.07
 
 - Free range denotes a method of farming **husbandry (畜牧，饲养，农业)** where the animals, for at least part of the day, can roam freely outdoors, rather than being confined in an enclosure for 24 hours each day.
