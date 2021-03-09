@@ -1,3 +1,7 @@
+## 2021.03.09
+
+- Facts matter. Fairness matters. The **presumption (假定，认定)** of innocence is **sacrosanct (极其神圣的，不可侵犯的)**.
+
 ## 2021.03.08
 
 - **Conjoint analysis (联合分析)**, also called multi-attribute compositional models or stated preference analysis, is a statisical technique that originated in mathematical psychology.
@@ -2024,7 +2028,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 45. Her genteel behaviors at the ball make others conjecture that she must come from a distinguished noble family.
 46. It would be gauche to mention the subject.
 47. The presumptuous doctor didn't even bother to explain to me the treatment that I would be receiving.
-48. Under such a circumstance his demand for attention was utterly presumptuous.
+48. Under such a circumstance his demand for attention was utterly **presumptuous (自以为是的，专横的，冒失的)**.
 49. We could hear the cook in the kitchen railing against his assistant and wondered if we'd ever get our food.
 50. Vociferous opponents of the bill protested angrily outside the Congress.
 
