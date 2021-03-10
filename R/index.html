@@ -778,6 +778,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-r-in-jupyterlab" class="md-nav__link">
+    using R in JupyterLab
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2054,6 +2061,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-r-in-jupyterlab" class="md-nav__link">
+    using R in JupyterLab
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2262,7 +2276,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <span class="n">svmfit</span> <span class="o">=</span> <span class="nf">svm</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span> <span class="p">],</span> <span class="n">kernel</span> <span class="o">=</span> <span class="s">&quot;radial&quot;</span><span class="p">,</span> <span class="n">cost</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
 <span class="nf">plot</span><span class="p">(</span><span class="n">svmfit</span><span class="p">,</span> <span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span> <span class="p">])</span>
 
-<span class="c1">## cross-validation </span>
+<span class="c1">## cross-validation</span>
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
 <span class="n">tune.out</span> <span class="o">=</span> <span class="nf">tune</span><span class="p">(</span><span class="n">svm</span><span class="p">,</span> <span class="n">y</span><span class="o">~</span><span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span> <span class="p">],</span> <span class="n">kernel</span> <span class="o">=</span> <span class="s">&quot;radial&quot;</span><span class="p">,</span>
                 <span class="n">ranges</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cost</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">1000</span><span class="p">),</span>
@@ -2277,7 +2291,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <span class="n">rocplot</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span> <span class="n">pred</span> <span class="p">,</span> <span class="n">truth</span> <span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">predob</span> <span class="o">=</span> <span class="nf">prediction </span><span class="p">(</span> <span class="n">pred</span><span class="p">,</span> <span class="n">truth</span> <span class="p">,</span> <span class="n">label.ordering</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">,</span> <span class="s">&quot;1&quot;</span><span class="p">))</span>
   <span class="n">perf</span> <span class="o">=</span> <span class="nf">performance </span><span class="p">(</span> <span class="n">predob</span> <span class="p">,</span> <span class="s">&quot;tpr&quot;</span> <span class="p">,</span> <span class="s">&quot;fpr&quot;</span><span class="p">)</span>
-  <span class="nf">plot </span><span class="p">(</span> <span class="n">perf</span><span class="p">,</span><span class="kc">...</span><span class="p">)</span> 
+  <span class="nf">plot </span><span class="p">(</span> <span class="n">perf</span><span class="p">,</span><span class="kc">...</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="n">svmfit.opt</span> <span class="o">=</span> <span class="nf">svm</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span> <span class="p">],</span> <span class="n">kernel</span> <span class="o">=</span> <span class="s">&quot;radial&quot;</span><span class="p">,</span>
                  <span class="n">gamma</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">cost</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">decision.values</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
@@ -2306,7 +2320,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>注意</p>
 <div class="highlight"><pre><span></span><code><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span> <span class="o">~</span> <span class="n">X</span> <span class="o">+</span> <span class="n">X</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
 </code></pre></div>
-<p>和 </p>
+<p>和</p>
 <div class="highlight"><pre><span></span><code><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span> <span class="o">~</span> <span class="n">X</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">X</span><span class="o">^</span><span class="m">2</span><span class="p">))</span>
 </code></pre></div>
 <p>是不一样的。若要表示多项式回归，则应该用 <code>I(X^2)</code>。</p>
@@ -2330,7 +2344,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>refer to <a href="https://stackoverflow.com/questions/14124373/combine-base-and-ggplot-graphics-in-r-figure-window">Combine base and ggplot graphics in R figure window</a></p>
 <h2 id="specify-cran-mirror-in-installpackage">specify CRAN mirror in <code>install.package</code><a class="headerlink" href="#specify-cran-mirror-in-installpackage" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">&lt;-</span> <span class="nf">getOption</span><span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
-<span class="n">r</span><span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;https://cran.r-project.org&quot;</span> 
+<span class="n">r</span><span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;https://cran.r-project.org&quot;</span>
 <span class="c1"># r[&quot;CRAN&quot;] &lt;- &quot;r[&quot;CRAN&quot;] &lt;- &quot;https://mirrors.ustc.edu.cn/CRAN/&quot;&quot; ## for mainland China</span>
 <span class="nf">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
 </code></pre></div>
@@ -2379,10 +2393,10 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <ol>
 <li>install latest gcc v7.3.0, but it still does not work</li>
 <li><code>Sys.getenv()</code> indeed switch to the latest gcc</li>
-<li>remove <code>~/.R/Makevars</code>, which would force the gcc to be the gcc declared in that file. </li>
+<li>remove <code>~/.R/Makevars</code>, which would force the gcc to be the gcc declared in that file.</li>
 <li>then it works well.</li>
 </ol>
-<p>refer to </p>
+<p>refer to</p>
 <p><a href="https://stackoverflow.com/questions/14865976/r-packages-fail-to-compile-with-gcc">R Packages Fail to Compile with gcc</a></p>
 <p>Note that some packages cannot be installed via CRAN, and you can check bioconductor.</p>
 <div class="highlight"><pre><span></span><code>if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
@@ -2391,7 +2405,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 BiocManager::install(&quot;graph&quot;)
 </code></pre></div>
 <h2 id="protection-stack-overflow"><code>protection stack overflow</code><a class="headerlink" href="#protection-stack-overflow" title="Permanent link">&para;</a></h2>
-<p>use </p>
+<p>use</p>
 <div class="highlight"><pre><span></span><code>R --max-ppsize <span class="m">500000</span>
 </code></pre></div>
 <p>or for rstudio</p>
@@ -2455,6 +2469,56 @@ BiocManager::install(&quot;graph&quot;)
 <ul>
 <li><a href="https://cran.r-project.org/web/packages/foreach/vignettes/foreach.html">Using the <code>foreach</code> package</a></li>
 </ul>
+<h2 id="using-r-in-jupyterlab">using R in JupyterLab<a class="headerlink" href="#using-r-in-jupyterlab" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;IRkernel&#39;</span><span class="p">)</span>
+<span class="c1">#IRkernel::installspec()</span>
+<span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;3.6.0&quot;</span><span class="p">,</span> <span class="n">displayname</span> <span class="o">=</span> <span class="s">&quot;R 3.6.0&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>refer to <a href="https://irkernel.github.io/installation/">IRkernel</a></p>
+<p>and try to use <a href="https://jupyterlab.readthedocs.io/en/stable/index.html">jupyterlab</a>, which seems much powerful than jupyter.</p>
+<p>But note that <code>-X</code> option is needed before creating a tmux session for running jupyter, otherwise the kernel keeps dead in the browser and check the monitor message from jupyter, which throws,</p>
+<div class="highlight"><pre><span></span><code>Error <span class="k">in</span> .External2<span class="o">(</span>C_X11, paste0<span class="o">(</span><span class="s2">&quot;png::&quot;</span>, filename<span class="o">)</span>, g<span class="nv">$width</span>, g<span class="nv">$height</span>,  :
+  unable to start device PNG
+Calls: &lt;Anonymous&gt; ... evaluate -&gt; dev.new -&gt; <span class="k">do</span>.call -&gt; &lt;Anonymous&gt; -&gt; ok_device
+In addition: Warning message:
+In ok_device<span class="o">(</span>filename, ...<span class="o">)</span> : unable to open connection to X11 display <span class="s1">&#39;&#39;</span>
+Execution halted
+</code></pre></div>
+<p>although I am just trying to calculate 1+1, nothing related to X11.</p>
+<p>The error would appear again if the <code>-X</code> ssh session has been stopped. Then I found such issue has been reported in https://github.com/IRkernel/IRkernel/issues/388, and there might be solution by https://github.com/IRkernel/IRkernel/issues/388#issuecomment-237080809, but the working R version is built from source by myself, and <code>Cairo</code> is not supported. When I am trying to install the package, it throws that</p>
+<div class="highlight"><pre><span></span><code>configure: error: Cannot find cairo.h! Please install cairo <span class="o">(</span>http://www.cairographics.org/<span class="o">)</span> and/or <span class="nb">set</span> CAIRO_CFLAGS/LIBS correspondingly.
+ERROR: configuration failed <span class="k">for</span> package ‘Cairo’
+</code></pre></div>
+<p>Even I retried after specifying</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">CAIRO_LIBS</span><span class="o">=</span>/home/project09/miniconda3/envs/r3.6.3/lib
+<span class="nb">export</span> <span class="nv">CAIRO_CFLAGS</span><span class="o">=</span>/home/project09/miniconda3/envs/r3.6.3/include
+</code></pre></div>
+<p>by linking it to other R version with Cairo support, similar as in https://stat.ethz.ch/pipermail/r-help/2014-April/374096.html, but it does not work.</p>
+<p>Try to install the shortcuts as recommended, but it throws,</p>
+<div class="highlight"><pre><span></span><code>$ jupyter labextension install @techrah/text-shortcuts
+An error occured.
+ValueError: Please install Node.js and npm before continuing installation. You may be able to install Node.js from your package manager, from conda, or directly from the Node.js website <span class="o">(</span>https://nodejs.org<span class="o">)</span>.
+See the log file <span class="k">for</span> details:  /tmp/jupyterlab-debug-7mmu8jy1.log
+</code></pre></div>
+<p>then</p>
+<div class="highlight"><pre><span></span><code>conda install -c conda-forge nodejs
+</code></pre></div>
+<p>as suggested in <a href="https://jupyterlab.readthedocs.io/en/stable/user/extensions.html">Extensions</a></p>
+<p>However the default version is outdated.</p>
+<div class="highlight"><pre><span></span><code>libgcc-7.2.0         <span class="p">|</span> <span class="m">304</span> KB    <span class="p">|</span> <span class="c1">############################################################################################################################################# | 100%</span>
+nodejs-6.13.1        <span class="p">|</span> <span class="m">11</span>.9 MB   <span class="p">|</span> <span class="c1">############################################################################################################################################# | 100%</span>
+Preparing transaction: <span class="k">done</span>
+Verifying transaction: <span class="k">done</span>
+Executing transaction: <span class="k">done</span>
+<span class="o">(</span>base<span class="o">)</span> <span class="o">[</span>project09@stapc390 ~<span class="o">]</span>$ jupyter labextension install @techrah/text-shortcuts
+An error occured.
+ValueError: Please install nodejs &gt;<span class="o">=</span><span class="m">10</span>.0.0 before continuing. nodejs may be installed using conda or directly from the nodejs website.
+See the log file <span class="k">for</span> details:  /tmp/jupyterlab-debug-lhf6bjwm.log
+</code></pre></div>
+<p>The solution is quite easy, just use the default conda channel,</p>
+<div class="highlight"><pre><span></span><code>conda install nodejs
+</code></pre></div>
+<p>which will install <code>nodejs-10.13.0</code>.</p>
                 
               
               
