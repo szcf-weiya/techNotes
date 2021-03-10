@@ -1,3 +1,8 @@
+## 2021.03.10
+
+- In multitasking computer operating systems, a **daemon (守护进程)** is a computer program that runs as a background process, rather than being under the direct control of an interactive user. In a Unix environment, the parent process of a daemon is often, but not always, the init process.
+- It usually more useful to be able to **spawn (产卵，引发，导致)** a process with arguments to tell it what work to do.
+
 ## 2021.03.09
 
 - Facts matter. Fairness matters. The **presumption (假定，认定)** of innocence is **sacrosanct (极其神圣的，不可侵犯的)**.

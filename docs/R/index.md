@@ -297,7 +297,7 @@ train = sample(200, 100)
 svmfit = svm(y~., data = dat[train, ], kernel = "radial", cost = 1)
 plot(svmfit, dat[train, ])
 
-## cross-validation 
+## cross-validation
 set.seed(123)
 tune.out = tune(svm, y~., data = dat[train, ], kernel = "radial",
                 ranges = list(cost = c(0.1, 1, 10, 100, 1000),
@@ -312,7 +312,7 @@ library(ROCR)
 rocplot = function ( pred , truth , ...) {
   predob = prediction ( pred, truth , label.ordering = c("2", "1"))
   perf = performance ( predob , "tpr" , "fpr")
-  plot ( perf,...) 
+  plot ( perf,...)
 }
 svmfit.opt = svm(y~., data = dat[train, ], kernel = "radial",
                  gamma = 3, cost = 10, decision.values = T)
@@ -355,7 +355,7 @@ apply(A, 3, `[`, t(B))
 lm(Y ~ X + X^2)
 ```
 
-和 
+和
 
 ```r
 lm(Y ~ X + I(X^2))
@@ -389,7 +389,7 @@ close(fileConn)
 
 refer to [Write lines of text to a file in R](https://stackoverflow.com/questions/2470248/write-lines-of-text-to-a-file-in-r)
 
-## combine base and ggplot graphics in R figure 
+## combine base and ggplot graphics in R figure
 
 refer to [Combine base and ggplot graphics in R figure window](https://stackoverflow.com/questions/14124373/combine-base-and-ggplot-graphics-in-r-figure-window)
 
@@ -397,7 +397,7 @@ refer to [Combine base and ggplot graphics in R figure window](https://stackover
 
 ```r
 r <- getOption("repos")
-r["CRAN"] <- "https://cran.r-project.org" 
+r["CRAN"] <- "https://cran.r-project.org"
 # r["CRAN"] <- "r["CRAN"] <- "https://mirrors.ustc.edu.cn/CRAN/"" ## for mainland China
 options(repos=r)
 ```
@@ -414,7 +414,7 @@ install.packages('RMySQL', repos='http://cran.us.r-project.org')
 
 refer to [How to select a CRAN mirror in R](https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r)
 
-## R 符号运算 
+## R 符号运算
 
 参考 [R 语言做符号计算](https://cosx.org/2016/07/r-symbol-calculate/)。
 
@@ -471,10 +471,10 @@ In conda env `R`:
 
 1. install latest gcc v7.3.0, but it still does not work
 2. `Sys.getenv()` indeed switch to the latest gcc
-3. remove `~/.R/Makevars`, which would force the gcc to be the gcc declared in that file. 
+3. remove `~/.R/Makevars`, which would force the gcc to be the gcc declared in that file.
 4. then it works well.
 
-refer to 
+refer to
 
 [R Packages Fail to Compile with gcc](https://stackoverflow.com/questions/14865976/r-packages-fail-to-compile-with-gcc)
 
@@ -489,7 +489,7 @@ BiocManager::install("graph")
 
 ## `protection stack overflow`
 
-use 
+use
 
 ```bash
 R --max-ppsize 500000
@@ -556,7 +556,7 @@ summary.employee <- function(wrkr){
 
 ## Parallel Computing
 
-### related packages 
+### related packages
 
 - `parallel`: `makeCluster` and `stopCluster`
 - `doParallel`: `registerDoParallel`
@@ -584,3 +584,84 @@ stopCluster(cl)
 ### references
 
 - [Using the `foreach` package](https://cran.r-project.org/web/packages/foreach/vignettes/foreach.html)
+
+## using R in JupyterLab
+
+```r
+install.packages('IRkernel')
+#IRkernel::installspec()
+IRkernel::installspec(name="3.6.0", displayname = "R 3.6.0")
+```
+
+refer to [IRkernel](https://irkernel.github.io/installation/)
+
+and try to use [jupyterlab](https://jupyterlab.readthedocs.io/en/stable/index.html), which seems much powerful than jupyter.
+
+But note that `-X` option is needed before creating a tmux session for running jupyter, otherwise the kernel keeps dead in the browser and check the monitor message from jupyter, which throws,
+
+```bash
+Error in .External2(C_X11, paste0("png::", filename), g$width, g$height,  :
+  unable to start device PNG
+Calls: <Anonymous> ... evaluate -> dev.new -> do.call -> <Anonymous> -> ok_device
+In addition: Warning message:
+In ok_device(filename, ...) : unable to open connection to X11 display ''
+Execution halted
+```
+
+although I am just trying to calculate 1+1, nothing related to X11.
+
+The error would appear again if the `-X` ssh session has been stopped. Then I found such issue has been reported in https://github.com/IRkernel/IRkernel/issues/388, and there might be solution by https://github.com/IRkernel/IRkernel/issues/388#issuecomment-237080809, but the working R version is built from source by myself, and `Cairo` is not supported. When I am trying to install the package, it throws that
+
+```bash
+configure: error: Cannot find cairo.h! Please install cairo (http://www.cairographics.org/) and/or set CAIRO_CFLAGS/LIBS correspondingly.
+ERROR: configuration failed for package ‘Cairo’
+```
+
+Even I retried after specifying
+
+```bash
+export CAIRO_LIBS=/home/project09/miniconda3/envs/r3.6.3/lib
+export CAIRO_CFLAGS=/home/project09/miniconda3/envs/r3.6.3/include
+```
+
+by linking it to other R version with Cairo support, similar as in https://stat.ethz.ch/pipermail/r-help/2014-April/374096.html, but it does not work.
+
+
+Try to install the shortcuts as recommended, but it throws,
+
+```bash
+$ jupyter labextension install @techrah/text-shortcuts
+An error occured.
+ValueError: Please install Node.js and npm before continuing installation. You may be able to install Node.js from your package manager, from conda, or directly from the Node.js website (https://nodejs.org).
+See the log file for details:  /tmp/jupyterlab-debug-7mmu8jy1.log
+```
+
+then
+
+```bash
+conda install -c conda-forge nodejs
+```
+
+as suggested in [Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html)
+
+However the default version is outdated.
+
+```bash
+libgcc-7.2.0         | 304 KB    | ############################################################################################################################################# | 100%
+nodejs-6.13.1        | 11.9 MB   | ############################################################################################################################################# | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(base) [project09@stapc390 ~]$ jupyter labextension install @techrah/text-shortcuts
+An error occured.
+ValueError: Please install nodejs >=10.0.0 before continuing. nodejs may be installed using conda or directly from the nodejs website.
+See the log file for details:  /tmp/jupyterlab-debug-lhf6bjwm.log
+```
+
+The solution is quite easy, just use the default conda channel,
+
+```bash
+conda install nodejs
+```
+
+which will install `nodejs-10.13.0`.
