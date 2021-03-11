@@ -1,3 +1,8 @@
+## 2021.03.11
+
+- The daemon process is terminated automatically before the main program exits, to avoid leaving **orphaned (孤立的)** processes running.
+    - orphan asylum: 孤儿院
+
 ## 2021.03.10
 
 - In multitasking computer operating systems, a **daemon (守护进程)** is a computer program that runs as a background process, rather than being under the direct control of an interactive user. In a Unix environment, the parent process of a daemon is often, but not always, the init process.

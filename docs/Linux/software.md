@@ -498,6 +498,15 @@ refer to [Toggle Soft Wrap by Default?](https://discuss.atom.io/t/toggle-soft-wr
 
 ![](minimap.png)
 
+### terminal
+
+之前一直在使用 `Platformio Ide Terminal v2.10.1`, 但是最近一段时间经常打不开 terminal，后来在其 repo issue 中看到类似的问题，然后有人指出这个 package 其实[不再维护](https://github.com/platformio/platformio-atom-ide-terminal/issues/543)，并且推荐了
+
+- terminus: https://github.com/bus-stop/terminus
+- x-terminal: https://github.com/bus-stop/x-terminal
+
+打不开 terminal 的原因应该与下文中提到的 VS code 类似，在替换自动启动方式之前，试过在 x-terminal 中启动程序 `/bin/bash` 添加 `--noprofile` 选项，但是报错，于是直接选择了 terminus.
+
 ## 百度网盘
 
 发现百度网盘出了 Linux 版，但是在 Ubuntu 16.04 似乎运行不了——能下载安装但是无法打开运行。
@@ -875,4 +884,58 @@ make[1]: *** [coders/heic_la-heic.lo] Error 1
 make[1]: Leaving directory '/home/weiya/src/ImageMagick-7.0.10-6'
 Makefile:5988: recipe for target 'all' failed
 make: *** [all] Error 2
+```
+
+## VS Code
+
+首先通过搜索图形界面登录，弹出
+
+- resolving your shell environment is taking too long...
+- unable to resolve your shell environment...
+
+详见 [Resolving Shell Environment is Slow (Error, Warning)](https://code.visualstudio.com/docs/supporting/faq#_resolving-shell-environment-is-slow-error-warning)
+
+只是按照其提示检查了 `~/.bashrc`，没有问题。
+
+然后试着在命令行中输入 `code` 启动，此时试图打开 terminal 并没有上述信息弹出，然而 terminal 还是无法打开，在开启新 terminal 那里可以选择 log，所以当我新开一个 terminal 时，发现同时弹出下面错误消息，
+
+```bash
+[2021-03-11 10:40:29.231] [renderer1] [error] A system error occurred (EACCES: permission denied, open '/proc/1/environ'): Error: EACCES: permission denied, open '/proc/1/environ'
+```
+
+然后发现在 [terminal.integrated.inheritEnv breaks integrated terminal #76542](https://github.com/microsoft/vscode/issues/76542#issuecomment-589768136) 中提到了 enable terminal.integrated.inheritEnv 就好。
+
+打开 setting，然后直接输入 `@modified` 快速进入更改过的设置，其中便有 inheritEnv 这一项，enable 之后重新在命令行中启动 code，此时可以打开 terminal，但是出现了以下信息
+
+```bash
+$ bind: Address already in use
+channel_setup_fwd_listener_tcpip: cannot listen to port: 18888
+bind: Address already in use
+channel_setup_fwd_listener_tcpip: cannot listen to port: 18889
+Could not request local forwarding.
+Warning: remote port forwarding failed for listen port 30013
+Warning: remote port forwarding failed for listen port 24800
+```
+
+这是为了[启动时自动登录服务器转发端口的程序](asAserver.md#boot-into-text-mode)，这时意识到 vscode 在启动时，应该会调用 `.profile`，但是我把自动连接服务器的程序写进了 `.profile`，解决办法便是复制一份 `.profile` 至 `.bash_profile`, 只在后者中保留自动登录程序，因为[启动时后者调用顺序更高](software.md/#_8)。
+
+> .profile is for things that are not specifically related to Bash, like environment variables $PATH it should also be available anytime. .bash_profile is specifically for login shells or shells executed at login.
+> source: [What is the difference between ~/.profile and ~/.bash_profile?](https://unix.stackexchange.com/questions/45684/what-is-the-difference-between-profile-and-bash-profile)
+
+然而！似乎 vscode 启动时还是会调用 `.bash_profile`，只有在 `.bash_profile` 将自动登录程序去掉才能打开 terminal。
+
+可能原因应该是 terminal 实际上在运行 `/bin/bash` 程序，而打开 bash 其还是按照正常打开顺序来的，如 `man bash` 中所说，
+
+```bash
+--noprofile
+       Do  not read either the system-wide startup file /etc/profile or any of the personal initialization files ~/.bash_profile, ~/.bash_login, or ~/.profile.  By default,
+       bash reads these files when it is invoked as a login shell (see INVOCATION below).
+```
+
+干脆换一种自启动方式，[How to run scripts on start up?](https://askubuntu.com/questions/814/how-to-run-scripts-on-start-up)
+
+通过 `crontab -e` 设置自启动任务，
+
+```bash
+@reboot sh /home/weiya/rssh4lab.sh &
 ```

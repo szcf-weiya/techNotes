@@ -81,7 +81,8 @@ and they satisfy
 $$
 \begin{align*}
 \mathrm{x[order(x)]} & = \mathrm{sort(x)}\\
-\mathrm{rank(x)} &= \mathrm{order(order(x))}
+\mathrm{rank(x)} &= \mathrm{order(order(x))}\\
+\mathrm{sort(x)[rank(x)]} &= \mathrm{x}
 \end{align*}
 $$
 
@@ -626,6 +627,7 @@ export CAIRO_CFLAGS=/home/project09/miniconda3/envs/r3.6.3/include
 
 by linking it to other R version with Cairo support, similar as in https://stat.ethz.ch/pipermail/r-help/2014-April/374096.html, but it does not work.
 
+Then I change to a different R version with cairo support, and it can work without `-X` option. And the setting in `.Rprofile` can also been removed (or actually the default is exactly the same).
 
 Try to install the shortcuts as recommended, but it throws,
 
