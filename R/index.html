@@ -2137,13 +2137,15 @@ vi main.R
 <div class="MathJax_Preview">
 \begin{align*}
 \mathrm{x[order(x)]} &amp; = \mathrm{sort(x)}\\
-\mathrm{rank(x)} &amp;= \mathrm{order(order(x))}
+\mathrm{rank(x)} &amp;= \mathrm{order(order(x))}\\
+\mathrm{sort(x)[rank(x)]} &amp;= \mathrm{x}
 \end{align*}
 </div>
 <script type="math/tex; mode=display">
 \begin{align*}
 \mathrm{x[order(x)]} & = \mathrm{sort(x)}\\
-\mathrm{rank(x)} &= \mathrm{order(order(x))}
+\mathrm{rank(x)} &= \mathrm{order(order(x))}\\
+\mathrm{sort(x)[rank(x)]} &= \mathrm{x}
 \end{align*}
 </script>
 </div>
@@ -2494,6 +2496,7 @@ ERROR: configuration failed <span class="k">for</span> package ‘Cairo’
 <span class="nb">export</span> <span class="nv">CAIRO_CFLAGS</span><span class="o">=</span>/home/project09/miniconda3/envs/r3.6.3/include
 </code></pre></div>
 <p>by linking it to other R version with Cairo support, similar as in https://stat.ethz.ch/pipermail/r-help/2014-April/374096.html, but it does not work.</p>
+<p>Then I change to a different R version with cairo support, and it can work without <code>-X</code> option. And the setting in <code>.Rprofile</code> can also been removed (or actually the default is exactly the same).</p>
 <p>Try to install the shortcuts as recommended, but it throws,</p>
 <div class="highlight"><pre><span></span><code>$ jupyter labextension install @techrah/text-shortcuts
 An error occured.
