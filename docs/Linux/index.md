@@ -118,25 +118,28 @@ refer to
 - [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it)
 - [Getting started with Tmux](https://linuxize.com/post/getting-started-with-tmux/)
 - [tmux cheatsheet](https://gist.github.com/henrik/1967800)
-## 缺少动态链接库
 
-在服务器上使用gsl报缺少动态链接库的错误
-解决方案
-[3种方法](http://www.cnblogs.com/smartvessel/archive/2011/01/21/1940868.html)
+## shared objects `.so` (dynamic library)
 
-另参考
-[http://blog.csdn.net/wangeen/article/details/8159500](http://blog.csdn.net/wangeen/article/details/8159500)
+As said in [Where do executables look for shared objects at runtime?](https://unix.stackexchange.com/questions/22926/where-do-executables-look-for-shared-objects-at-runtime), when it's looking for a dynamic library (`.so` file) the linker tries
 
+- directories listed in the `LD_LIBRARY_PATH`
+- directories listed in the executable's rpath, such as via `$ORIGIN/../lib`
+- directories on the system search path, which consists of the entries in `/etc/ld.so.conf` plus `/lib` and `/usr/lib`
+
+Then there are several ways to fix the NotFound error,
+
+```bash
+# method 1
+sudo ln -s /where/your/lib/*.so /usr/lib
+sudo ldconfig
+# method 2
+export LD_LIBRARY_PATH=/where/your/lib:$LD_LIBRARY_PATH`
+sudo ldconfig
+# method 3
+sudo echo "where/your/lib" >> /etc/ld.so.conf
+sudo ldconfig
 ```
-sudo vim /etc/ld.so.conf
-```
-
-添加
-
-```
-/where/is/the/lib/
-```
-
 
 ## Vim 对每行行首进行追加、替换
 

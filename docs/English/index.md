@@ -1,3 +1,8 @@
+## 2021.03.12
+
+- The real lesson learned from those academic **hoaxes (骗局)**: a key part of getting a paper published in a scholarly journal is to be able to follow the conventions of the journal.
+    - virus hoax: 病毒恶作剧
+
 ## 2021.03.11
 
 - The daemon process is terminated automatically before the main program exits, to avoid leaving **orphaned (孤立的)** processes running.
