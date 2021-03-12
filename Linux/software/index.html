@@ -2783,6 +2783,61 @@ source: <a href="https://unix.stackexchange.com/questions/45684/what-is-the-diff
 <p>通过 <code>crontab -e</code> 设置自启动任务，</p>
 <div class="highlight"><pre><span></span><code>@reboot sh /home/weiya/rssh4lab.sh <span class="p">&amp;</span>
 </code></pre></div>
+<p>然而第二次重启时，并不起作用，查看　<code>/var/log/syslog</code>，原因在于网络连接在于 ssh 之后</p>
+<div class="highlight"><pre><span></span><code>Mar <span class="m">12</span> <span class="m">09</span>:14:23 weiya-ThinkPad-T460p CRON<span class="o">[</span><span class="m">1464</span><span class="o">]</span>: <span class="o">(</span>weiya<span class="o">)</span> CMD <span class="o">(</span>sh /home/weiya/rssh4lab.sh <span class="p">&amp;</span><span class="o">)</span>
+Mar <span class="m">12</span> <span class="m">09</span>:19:37 weiya-ThinkPad-T460p NetworkManager<span class="o">[</span><span class="m">1342</span><span class="o">]</span>: &lt;info&gt;  <span class="o">[</span><span class="m">1615511977</span>.5232<span class="o">]</span> device <span class="o">(</span>wlp3s0<span class="o">)</span>: Activation: <span class="o">(</span>wifi<span class="o">)</span> Stage <span class="m">2</span> of <span class="m">5</span> <span class="o">(</span>Device Configure<span class="o">)</span> successful.  Connected to wireless network <span class="s1">&#39;CUHK1x&#39;</span>.
+</code></pre></div>
+<p>接下来有两个策略，参考 <a href="https://unix.stackexchange.com/questions/57852/how-do-i-start-a-cron-job-1-min-after-reboot">How do I start a Cron job 1 min after @reboot?</a></p>
+<ul>
+<li>sleep 一定时间：这一点可以加上 <code>sleep 60 &amp;&amp;</code>，但是 sleep 多少并不太好把握，一般来说会在进入用户界面后网络才连接，而有时候并没有及时进入用户界面</li>
+<li>判断网络好了之后在执行，上述问题回答下有人指出通过 <code>systemd</code> 来实现，其中可以指定 <code>After=network.target</code>，按照指示设置完毕，然后还是不行，原因应该是上述所说，只有进入用户界面才会连接网络，所以在系统层面的设置太早了</li>
+</ul>
+<p>另外，同时也把 ssh 替换成 autossh，然后又回到之前<a href="https://askubuntu.com/questions/814/how-to-run-scripts-on-start-up">推荐 crontab 的问题中</a>，采用第一种 <code>upstart</code> 方法，因为其可以在用户层面进行设置，但是设置完毕后在 syslog 中都没有相关运行命令，然后发现这种方法已经过时了。</p>
+<p>既然 upstart 有 system 和 user 两个层面的方法，那么 systemd 应当也可以在用户层面进行设置，于是我找到了这个回答，<a href="https://superuser.com/questions/1037466/how-to-start-a-systemd-service-after-user-login-and-stop-it-before-user-logout">How to start a systemd service after user login and stop it before user logout</a>，这个方法在这个回答，<a href="https://askubuntu.com/a/719157">How to run scripts on start up?</a>，中也提到了 。</p>
+<p>已经看到成功的希望了，不过还是报错了，</p>
+<div class="highlight"><pre><span></span><code>$ vi /var/log/syslog
+Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Starting ssh to lab with port forward...
+Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Started ssh to lab with port forward.
+Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Reached target Default.
+Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Startup finished <span class="k">in</span> 70ms.
+Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p rssh4lab.sh<span class="o">[</span><span class="m">2722</span><span class="o">]</span>: ssh: connect to host XX.XX.XX.XX port <span class="m">22</span>: Network is unreachable
+Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2724</span><span class="o">]</span>: ssh exited prematurely with status <span class="m">255</span><span class="p">;</span> autossh exiting
+</code></pre></div>
+<p>查看 <code>autossh</code> 的帮助文档发现，</p>
+<div class="highlight"><pre><span></span><code>AUTOSSH_GATETIME
+        Specifies how long ssh must be up before we consider it a successful connection. The default is <span class="m">30</span> seconds. Note
+        that <span class="k">if</span> AUTOSSH_GATETIME is <span class="nb">set</span> to <span class="m">0</span>, <span class="k">then</span> not only is the gatetime behaviour turned off, but autossh also ignores
+        the first run failure of ssh. This may be useful when running autossh at boot.
+</code></pre></div>
+<p>而 <code>-f</code> 可以达到这个效果，所以试着加上 <code>-f</code>,便成功了！</p>
+<p>查看相关运行信息，</p>
+<div class="highlight"><pre><span></span><code>$ journalctl --user -u ssh4lab.service
+-- Logs begin at Thu <span class="m">2020</span>-12-24 <span class="m">01</span>:44:48 CST, end at Fri <span class="m">2021</span>-03-12 <span class="m">12</span>:33:18 CST. --
+Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2724</span><span class="o">]</span>: starting ssh <span class="o">(</span>count <span class="m">1</span><span class="o">)</span>
+Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2724</span><span class="o">]</span>: ssh child pid is <span class="m">2725</span>
+Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Starting ssh to lab with port forward...
+Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Started ssh to lab with port forward.
+Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2724</span><span class="o">]</span>: ssh exited prematurely with status <span class="m">255</span><span class="p">;</span> autossh exiting
+Mar <span class="m">12</span> <span class="m">12</span>:09:11 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Stopped ssh to lab with port forward.
+-- Reboot --
+Mar <span class="m">12</span> <span class="m">12</span>:10:29 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: starting ssh <span class="o">(</span>count <span class="m">1</span><span class="o">)</span>
+Mar <span class="m">12</span> <span class="m">12</span>:10:29 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh child pid is <span class="m">2650</span>
+Mar <span class="m">12</span> <span class="m">12</span>:10:29 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2634</span><span class="o">]</span>: Starting ssh to lab with port forward...
+Mar <span class="m">12</span> <span class="m">12</span>:10:29 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2634</span><span class="o">]</span>: Started ssh to lab with port forward.
+Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh exited with error status <span class="m">255</span><span class="p">;</span> restarting ssh
+Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: starting ssh <span class="o">(</span>count <span class="m">2</span><span class="o">)</span>
+Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh child pid is <span class="m">2655</span>
+Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh exited with error status <span class="m">255</span><span class="p">;</span> restarting ssh
+Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: starting ssh <span class="o">(</span>count <span class="m">3</span><span class="o">)</span>
+Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh child pid is <span class="m">2656</span>
+Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh exited with error status <span class="m">255</span><span class="p">;</span> restarting ssh
+Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: starting ssh <span class="o">(</span>count <span class="m">4</span><span class="o">)</span>
+Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh child pid is <span class="m">2657</span>
+Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh exited with error status <span class="m">255</span><span class="p">;</span> restarting ssh
+Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: starting ssh <span class="o">(</span>count <span class="m">5</span><span class="o">)</span>
+Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh child pid is <span class="m">2658</span>
+</code></pre></div>
+<p>其中 <code>reboot</code> 所在行上面的为没有添加 <code>-f</code> 选项时的日志，可以发现内容与上面查看 syslog的差不多，只不过没有那么全，比如没有指出 <code>Network is unreachable</code>，而后面添加了 <code>-f</code> 选项后，在失败重试若干次后，成功了！</p>
                 
               
               
