@@ -372,29 +372,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#awk" class="md-nav__link">
-    awk
-  </a>
-  
-    <nav class="md-nav" aria-label="awk">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#ip" class="md-nav__link">
     统计访问日志里每个 ip 访问次数
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    列的个数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -488,7 +468,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     链接自动推送
   </a>
   
@@ -524,7 +504,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     文件测试
   </a>
   
@@ -544,7 +524,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     $[
   </a>
   
@@ -1616,29 +1596,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#awk" class="md-nav__link">
-    awk
-  </a>
-  
-    <nav class="md-nav" aria-label="awk">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#ip" class="md-nav__link">
     统计访问日志里每个 ip 访问次数
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    列的个数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1732,7 +1692,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     链接自动推送
   </a>
   
@@ -1768,7 +1728,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     文件测试
   </a>
   
@@ -1788,7 +1748,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     $[
   </a>
   
@@ -1873,6 +1833,18 @@
   <span class="nb">echo</span> <span class="nv">$i</span>
 <span class="k">done</span>
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Not valid in <code>sh</code>, and use it with <code>bash</code>!
+<div class="highlight"><pre><span></span><code>$ ./sumbit_job.sh
+<span class="m">2</span>
+<span class="m">4</span>
+<span class="m">6</span>
+<span class="m">8</span>
+$ sh ./sumbit_job.sh
+<span class="o">{</span><span class="m">2</span>..8..2<span class="o">}</span>
+</code></pre></div></p>
+</div>
 <ul>
 <li>construct an array</li>
 </ul>
@@ -1966,9 +1938,7 @@
 <p>有时候下载文件时网站并没有区分同名文件，下载到本地后会出现 <code>A.zip</code> 与 <code>A (1).zip</code> 的情况，但这两个并不是相同的文件，所以避免以后误删，决定重命名。不过此类文件有好几个，批量处理代码为</p>
 <div class="highlight"><pre><span></span><code>$ ls -1 <span class="p">|</span> grep <span class="s2">&quot;(1)&quot;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span> mv <span class="s2">&quot;</span><span class="si">${</span><span class="nv">ADDR</span><span class="p">[0]</span><span class="si">}</span><span class="s2"> (1).zip&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">ADDR</span><span class="p">[0]</span><span class="si">}</span><span class="s2">_SOMETHING.zip&quot;</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
-<h2 id="awk">awk<a class="headerlink" href="#awk" title="Permanent link">&para;</a></h2>
-<p>参考<a href="https://linux.cn/article-3945-1.html">技术|如何在Linux中使用awk命令</a></p>
-<h3 id="ip">统计访问日志里每个 ip 访问次数<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h3>
+<h2 id="ip">统计访问日志里每个 ip 访问次数<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 cat access.log <span class="p">|</span>sed -rn <span class="s1">&#39;/28\/Jan\/2015/p&#39;</span> &gt; a.txt
 cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</span><span class="p">|</span>sort <span class="p">|</span>uniq &gt; ipnum.txt
@@ -1977,13 +1947,50 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
     <span class="nb">echo</span> <span class="s2">&quot;ip地址&quot;</span><span class="nv">$i</span><span class="s2">&quot;在2015-01-28日全天(24小时)累计成功请求&quot;</span><span class="nv">$iptj</span><span class="s2">&quot;次，平均每分钟请求次数为：&quot;</span><span class="k">$((</span><span class="nv">$iptj</span><span class="o">/</span><span class="m">1440</span><span class="k">))</span> &gt;&gt; result.txt
 <span class="k">done</span>
 </code></pre></div>
-<p>Refer to <a href="https://www.cnblogs.com/paul8339/p/6207182.html">用shell统计访问日志里每个ip访问次数</a></p>
-<h3 id="_4">列的个数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>如果间隔是空格，则直接用下面命令便可以得到列数，</p>
+<p>其中 <code>awk</code> 标准用法为</p>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;/pattern/ {print &quot;$1&quot;}&#39;</span>
+</code></pre></div>
+<p><code>/pattern/</code> 可以是正则表达式，也可以是两个特殊的pattern，</p>
+<ul>
+<li><code>BEGIN</code>: execute the action(s) before any input lines are read</li>
+<li><code>END</code>: execute the action(s) before it actually exits</li>
+</ul>
+<p>默认分隔符为空格，或者通过 <code>-F</code> 指定其它的分隔符，</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s1">&#39;a b&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
+b
+$ <span class="nb">echo</span> <span class="s1">&#39;a,b&#39;</span> <span class="p">|</span> awk -F, <span class="s1">&#39;{print $2}&#39;</span>
+b
+</code></pre></div>
+<p>另外上述脚本中用到了 <code>awk</code> 支持跨行状态的特性，即</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
+b
+d
+</code></pre></div>
+<p>其中 <code>-e</code> 是为了 escape 换行符，最后一列也可以用 <code>$NF</code> 表示，</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $NF}&#39;</span>
+b
+d
+</code></pre></div>
+<p>如果想要得到列数，则使用 <code>NF</code>,</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print NF}&#39;</span>
+<span class="m">2</span>
+<span class="m">2</span>
+</code></pre></div>
+<p>如果默认每行列数相等，只想得到列数的话，可以使用</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print NF; exit}&#39;</span>
+<span class="m">2</span>
+</code></pre></div>
+<p>如果数据文件为 <code>file.txt</code>，则可以直接用</p>
 <div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print NF; exit}&#39;</span> file.txt
 </code></pre></div>
-<p>如果是其他的间隔符，比如 <code>|</code>，可以指定 <code>-F'|'</code></p>
-<p>参考 <a href="https://stackoverflow.com/questions/8629330/unix-count-of-columns-in-file">unix - count of columns in file</a></p>
+<p>Refer to</p>
+<ul>
+<li><a href="https://www.cnblogs.com/paul8339/p/6207182.html">用shell统计访问日志里每个ip访问次数</a></li>
+<li><a href="https://linux.cn/article-3945-1.html">技术|如何在Linux中使用awk命令</a></li>
+<li><a href="https://stackoverflow.com/questions/8629330/unix-count-of-columns-in-file">unix - count of columns in file</a></li>
+<li><a href="http://www.pement.org/awk/awk1line.txt">HANDY ONE-LINE SCRIPTS FOR AWK</a></li>
+<li><a href="https://www.tecmint.com/learn-use-awk-special-patterns-begin-and-end/">Learn How to Use Awk Special Patterns ‘BEGIN and END’ – Part 9</a></li>
+</ul>
 <h2 id="split-string-while-reading-files">split string while reading files<a class="headerlink" href="#split-string-while-reading-files" title="Permanent link">&para;</a></h2>
 <p>specify <code>IFS=</code>.</p>
 <ol>
@@ -1999,6 +2006,41 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>i&lt;<span class="m">20</span><span class="p">;</span>i++<span class="o">))</span> <span class="k">do</span> <span class="nv">queues</span><span class="o">+=(</span><span class="si">${</span><span class="nv">queue</span><span class="p">[1]</span><span class="si">}</span><span class="o">)</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
 <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>i&lt;<span class="m">15</span><span class="p">;</span>i++<span class="o">))</span> <span class="k">do</span> <span class="nv">queues</span><span class="o">+=(</span><span class="si">${</span><span class="nv">queue</span><span class="p">[2]</span><span class="si">}</span><span class="o">)</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span>
 </code></pre></div>
+<p>where <code>((i++))</code> increases <code>i</code> by 1, and similar syntax can be</p>
+<div class="highlight"><pre><span></span><code><span class="nv">i</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">i</span><span class="o">=</span><span class="k">$((</span>i+1<span class="k">))</span>
+<span class="c1"># or</span>
+<span class="nv">i</span><span class="o">=</span><span class="k">$((</span><span class="nv">$i</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
+<span class="c1"># or</span>
+<span class="o">((</span><span class="nv">i</span><span class="o">+=</span><span class="m">1</span><span class="o">))</span>
+<span class="c1"># or</span>
+<span class="o">((</span>i++<span class="o">))</span>
+</code></pre></div>
+<p><code>((...))</code> also support general arithmetic operations, such as</p>
+<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">30</span>
+<span class="nv">b</span><span class="o">=</span><span class="m">10</span>
+<span class="nb">echo</span> <span class="k">$((</span><span class="nv">a</span><span class="o">+=</span>b<span class="k">))</span>
+<span class="nb">echo</span> <span class="k">$((</span>a*<span class="o">=</span>b<span class="k">))</span>
+<span class="nb">echo</span> <span class="k">$((</span>a-<span class="o">=</span>b<span class="k">))</span>
+<span class="nb">echo</span> <span class="k">$((</span>a/<span class="o">=</span>b<span class="k">))</span>
+<span class="nb">echo</span> <span class="k">$((</span>a/<span class="o">=</span>b<span class="k">))</span>
+<span class="c1"># 40</span>
+<span class="c1"># 400</span>
+<span class="c1"># 390</span>
+<span class="c1"># 39</span>
+<span class="c1"># 3</span>
+</code></pre></div>
+<p>but note that it does not allow float number, as the last equation, which should be <code>39/10=3.9</code></p>
+<p>the float calculation can take the advantage of other programs, such as</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Note that `BEGIN` cannot be removed, otherwise it is waiting for input file</span>
+<span class="c1"># see the BEGIN and END pattern of awk</span>
+$ awk <span class="s2">&quot;BEGIN {print 39/10}&quot;</span>
+<span class="m">3</span>.9
+$ bc <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;39/10&quot;</span>
+<span class="m">3</span>
+$ bc <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;scale=2; 39/10&quot;</span>
+<span class="m">3</span>.90
+</code></pre></div>
 <p>refer to</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/1951506/add-a-new-element-to-an-array-without-specifying-the-index-in-bash">Add a new element to an array without specifying the index in Bash</a></li>
@@ -2006,6 +2048,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <li><a href="http://tldp.org/LDP/abs/html/dblparens.html">The Double-Parentheses Construct</a></li>
 <li><a href="https://stackoverflow.com/questions/21035121/increment-variable-value-by-1-shell-programming">Increment variable value by 1 ( shell programming)</a></li>
 <li><a href="http://www.runoob.com/linux/linux-shell-array.html">Shell 数组</a></li>
+<li><a href="https://unix.stackexchange.com/questions/40786/how-to-do-integer-float-calculations-in-bash-or-other-languages-frameworks">How to do integer &amp; float calculations, in bash or other languages/frameworks?</a></li>
 </ul>
 <h2 id="command-line-arguments">Command line arguments<a class="headerlink" href="#command-line-arguments" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://www.devdungeon.com/content/taking-command-line-arguments-bash">Taking Command Line Arguments in Bash</a></p>
@@ -2109,7 +2152,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
   <span class="k">fi</span>
 <span class="k">done</span> &lt; &lt;<span class="o">(</span>find . -maxdepth <span class="m">1</span> -regex <span class="s2">&quot;\./oracle_setting_2019-09-.*recall\.pdf&quot;</span> -print0<span class="o">)</span>
 </code></pre></div>
-<h2 id="_5">链接自动推送<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_4">链接自动推送<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>find -regex <span class="s2">&quot;\./.*\.html&quot;</span> <span class="p">|</span> sed -n <span class="s2">&quot;s#\./#https://esl.hohoweiya.xyz/#p&quot;</span> &gt;&gt; ../urls.txt
 </code></pre></div>
 <h2 id="only-show-directory">Only show directory<a class="headerlink" href="#only-show-directory" title="Permanent link">&para;</a></h2>
@@ -2142,7 +2185,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
     <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2"> is not exists&quot;</span>
 <span class="k">fi</span>
 </code></pre></div>
-<h3 id="_6">文件测试<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_5">文件测试<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>格式为 <code>[ EXPR FILE ]</code>，其中常见 <code>EXPR</code> 有</p>
 <ul>
 <li><code>-f</code>: 测试其是否为普通文件，即 <code>ls -l</code> 时文件类型为 <code>-</code> 的文件</li>
@@ -2177,7 +2220,7 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
 <li><a href="https://unix.stackexchange.com/questions/99185/what-do-square-brackets-mean-without-the-if-on-the-left">What do square brackets mean without the “if” on the left?</a></li>
 <li><a href="https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba">Is double square brackets preferable over single square brackets in Bash?</a></li>
 </ul>
-<h3 id="_7"><code>$[</code><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_6"><code>$[</code><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>Refer to <a href="https://unix.stackexchange.com/questions/209833/what-does-a-dollar-sign-followed-by-a-square-bracket-mean-in-bash">What does a dollar sign followed by a square bracket mean in bash?</a></p>
 <p>With <code>$</code>, <code>[</code> is also can be used for arithmetic expansion, such as</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> $<span class="o">[</span> <span class="nv">$RANDOM</span> % <span class="m">2</span> <span class="o">]</span>
