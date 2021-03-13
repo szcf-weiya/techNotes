@@ -1,3 +1,16 @@
+## 2021.03.13
+
+- A **protostar (原恒星)** is a very young star that is still gathering mass from its parent molecular cloud. The **protosteller (原恒星的)** phase is the earliest one in the process of **stellar (星的)** evolution. The phase begins when a molecular cloud first collapses under the force of self-gravity. It ends when the protostar blows back the infalling gas and is revealed as an optically visible pre-main-sequence star, which later contracts to become a main sequence star.
+- The Ph.D. process is exhausting, and some leave the field after the grad school grind, never again to publish in a scientific journal. Others, though, find it **exhilarating (令人振奋的)**, and go on to highly productive careers.
+- We begin by studying how interstellar clouds of gas and dust are transformed into the **myriad (无数的)** stars throughout the night sky.
+- stellar **nurseries (a child's room for a bady)** are scenes of violent outbursts, interstellar shock waves, even actual collisions, as prestellar fragments grow in mass and compete for resources in a newborn cluster.
+    - nursery school: 幼儿园
+- a large mosaic of a billion bits of data **stitched (缝，缝合)** together from hundreds of small images
+- the loose matter comparising the surrounding **nebulosity (星云)**.
+- The **infrared spectrum (红外光谱)** at bottom was acquired by Europe's **Herschel (赫歇尔)** Space Observatory.
+- We do not see this activity (billions of stars have been born, lived out their lives, and died since our Galaxy formed) when we **gaze (凝视)** at the nighttime sky, because the time scales on which starts play out this **cosmic (宇宙的)** drama are enormously long by human standards.
+- The road from a gas cloud to a single, isolated star like the Sun is long and tortuous indeed!
+
 ## 2021.03.12
 
 - The real lesson learned from those academic **hoaxes (骗局)**: a key part of getting a paper published in a scholarly journal is to be able to follow the conventions of the journal.
@@ -867,7 +880,9 @@
 
 ## 2020.10.10
 
-- They are **acutely attuned to the grave dangers** associated with an economy **grinding to a halt.**
+- They are **acutely (极其，强烈地)** **attuned (习惯，适应)** to the **grave (严重的)** dangers associated with an economy **grinding to a halt (慢慢停下来，无法继续前进).** [see also](https://www.51voa.com/Voa_English_Learning/814-grind-to-a-halt-55001.html)
+    - acutely aware: 深切地意识到
+    - daily grind: 日常（苦）工作
 - racial profiling
 - Blacks are more likely to be stopped for **pretextual** (pretext, 借口，推辞) reasons (e.g. **alleged (所谓的，声称的)** vehicle **defect (缺点，缺陷，不足之处)**, such as broken tailight; record check) and less for more concrete reasons such as speeding.
 - these have been **valorized** in constitutional caselaw

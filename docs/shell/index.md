@@ -29,6 +29,18 @@ for i in {5..50..5}; do
 done
 ```
 
+!!! warning
+    Not valid in `sh`, and use it with `bash`!
+    ```bash
+    $ ./sumbit_job.sh
+    2
+    4
+    6
+    8
+    $ sh ./sumbit_job.sh
+    {2..8..2}
+    ```
+
 - construct an array
 
 actually, it can be used to construct an array,
@@ -144,11 +156,8 @@ grep -E "https://user-images." _posts/2019-12-21-quant-genetics.md | while read 
 $ ls -1 | grep "(1)" | while read -a ADDR; do mv "${ADDR[0]} (1).zip" "${ADDR[0]}_SOMETHING.zip"; done
 ```
 
-## awk
 
-参考[技术|如何在Linux中使用awk命令](https://linux.cn/article-3945-1.html)
-
-### 统计访问日志里每个 ip 访问次数
+## 统计访问日志里每个 ip 访问次数
 
 ```bash
 #!/bin/bash
@@ -160,19 +169,71 @@ for i in `cat ipnum.txt`; do
 done
 ```
 
-Refer to [用shell统计访问日志里每个ip访问次数](https://www.cnblogs.com/paul8339/p/6207182.html)
+其中 `awk` 标准用法为
 
-### 列的个数
+```bash
+awk '/pattern/ {print "$1"}'
+```
 
-如果间隔是空格，则直接用下面命令便可以得到列数，
+`/pattern/` 可以是正则表达式，也可以是两个特殊的pattern，
+
+- `BEGIN`: execute the action(s) before any input lines are read
+- `END`: execute the action(s) before it actually exits
+
+默认分隔符为空格，或者通过 `-F` 指定其它的分隔符，
+
+```bash
+$ echo 'a b' | awk '{print $2}'
+b
+$ echo 'a,b' | awk -F, '{print $2}'
+b
+```
+
+另外上述脚本中用到了 `awk` 支持跨行状态的特性，即
+
+```bash
+$ echo -e 'a b \n c d' | awk '{print $2}'
+b
+d
+```
+
+其中 `-e` 是为了 escape 换行符，最后一列也可以用 `$NF` 表示，
+
+```bash
+$ echo -e 'a b \n c d' | awk '{print $NF}'
+b
+d
+```
+
+如果想要得到列数，则使用 `NF`,
+
+```bash
+$ echo -e 'a b \n c d' | awk '{print NF}'
+2
+2
+```
+
+如果默认每行列数相等，只想得到列数的话，可以使用
+
+```bash
+$ echo -e 'a b \n c d' | awk '{print NF; exit}'
+2
+```
+
+如果数据文件为 `file.txt`，则可以直接用
 
 ```bash
 awk '{print NF; exit}' file.txt
 ```
 
-如果是其他的间隔符，比如 `|`，可以指定 `-F'|'`
 
-参考 [unix - count of columns in file](https://stackoverflow.com/questions/8629330/unix-count-of-columns-in-file)
+Refer to
+
+- [用shell统计访问日志里每个ip访问次数](https://www.cnblogs.com/paul8339/p/6207182.html)
+- [技术|如何在Linux中使用awk命令](https://linux.cn/article-3945-1.html)
+- [unix - count of columns in file](https://stackoverflow.com/questions/8629330/unix-count-of-columns-in-file)
+- [HANDY ONE-LINE SCRIPTS FOR AWK](http://www.pement.org/awk/awk1line.txt)
+- [Learn How to Use Awk Special Patterns ‘BEGIN and END’ – Part 9](https://www.tecmint.com/learn-use-awk-special-patterns-begin-and-end/)
 
 ## split string while reading files
 
@@ -194,6 +255,51 @@ for ((i=0;i<20;i++)) do queues+=(${queue[1]}); done;
 for ((i=0;i<15;i++)) do queues+=(${queue[2]}); done;
 ```
 
+where `((i++))` increases `i` by 1, and similar syntax can be
+
+```bash
+i=0
+i=$((i+1))
+# or
+i=$(($i+1))
+# or
+((i+=1))
+# or
+((i++))
+```
+
+`((...))` also support general arithmetic operations, such as
+
+```bash
+a=30
+b=10
+echo $((a+=b))
+echo $((a*=b))
+echo $((a-=b))
+echo $((a/=b))
+echo $((a/=b))
+# 40
+# 400
+# 390
+# 39
+# 3
+```
+
+but note that it does not allow float number, as the last equation, which should be `39/10=3.9`
+
+the float calculation can take the advantage of other programs, such as
+
+```bash
+# Note that `BEGIN` cannot be removed, otherwise it is waiting for input file
+# see the BEGIN and END pattern of awk
+$ awk "BEGIN {print 39/10}"
+3.9
+$ bc <<< "39/10"
+3
+$ bc <<< "scale=2; 39/10"
+3.90
+```
+
 refer to
 
 - [Add a new element to an array without specifying the index in Bash](https://stackoverflow.com/questions/1951506/add-a-new-element-to-an-array-without-specifying-the-index-in-bash)
@@ -201,7 +307,7 @@ refer to
 - [The Double-Parentheses Construct](http://tldp.org/LDP/abs/html/dblparens.html)
 - [Increment variable value by 1 ( shell programming)](https://stackoverflow.com/questions/21035121/increment-variable-value-by-1-shell-programming)
 - [Shell 数组](http://www.runoob.com/linux/linux-shell-array.html)
-
+- [How to do integer & float calculations, in bash or other languages/frameworks?](https://unix.stackexchange.com/questions/40786/how-to-do-integer-float-calculations-in-bash-or-other-languages-frameworks)
 
 ## Command line arguments
 
