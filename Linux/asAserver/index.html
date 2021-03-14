@@ -15,8 +15,8 @@
       
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/asAserver/">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.5">
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.77f3fd56.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2c0c5eaf.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
@@ -78,11 +78,9 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
+      <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-header__button md-logo" aria-label="techNotes">
+    <a href="../.." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -174,11 +172,9 @@
                     
 
 
-
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-nav__button md-logo" aria-label="techNotes">
+    <a href="../.." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -1431,7 +1427,7 @@ T460p $ ssh -NR <span class="m">30013</span>:localhost:22 -R <span class="m">248
 <span class="c1"># T460p 正常在 GUI 界面上启动服务器端</span>
 </code></pre></div>
 <p>关键点是将两台机器的 24800 端口连上，基本逻辑是，在 G40 上通过 <code>-L</code> 转发使得 24800 端口访问的实际上是 SERVER 的 24800 端口，而在 T460p 上通过 <code>-R</code> 使得 SERVER 上的 24800 端口转发到本地的 24800.</p>
-<p>参考 </p>
+<p>参考</p>
 <ul>
 <li><a href="https://0xdeadcode.se/archives/46">Tunnel synergy KVM sharing software through SSH</a></li>
 <li><a href="https://askubuntu.com/questions/850710/how-to-tunnel-synergy-over-ssh">How to tunnel Synergy over SSH?</a></li>
@@ -1445,7 +1441,7 @@ T460p $ ssh -NR <span class="m">30013</span>:localhost:22 -R <span class="m">248
 <div class="highlight"><pre><span></span><code>sudo vi /etc/systemd/logind.conf
 </code></pre></div>
 <p>commenting out <code>HandleLidSwitch=suspend</code> and changes it to <code>HandleLidSwitch=ignore</code></p>
-<p>最后需要 </p>
+<p>最后需要</p>
 <div class="highlight"><pre><span></span><code>systemctl restart systemd-logind.service
 </code></pre></div>
 <p>没想到这个也能使连接断开，于是需要继续连接一遍。</p>
@@ -1470,14 +1466,8 @@ $ sudo apt-get install libsox-fmt-all
 <p>播放的界面很清爽但不简单，</p>
 <p><img alt="" src="../music.gif" /></p>
 <p>其中 <code>-v 0.5</code> 调节音量。</p>
-<div class="admonition tip">
-<p class="admonition-title">音乐下载</p>
-<ul>
-<li><a href="https://www.sq688.com/">超高无损音乐</a></li>
-</ul>
-</div>
-<p>先暂时写了个简单的列表顺序播放的脚本 </p>
-<div class="highlight"><pre><span></span><code>$ cat playmusic.sh 
+<p>先暂时写了个简单的列表顺序播放的脚本</p>
+<div class="highlight"><pre><span></span><code>$ cat playmusic.sh
 <span class="c1">#!/bin/bash</span>
 <span class="k">for</span> music <span class="k">in</span> ~/Music/*<span class="p">;</span> <span class="k">do</span>
     <span class="k">if</span> <span class="o">[[</span> -f <span class="nv">$music</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
@@ -1507,7 +1497,7 @@ sudo apt install vlc-bin
 <div class="highlight"><pre><span></span><code><span class="c1">#  AutomaticLoginEnable = true</span>
 <span class="c1">#  AutomaticLogin = user1</span>
 </code></pre></div>
-<p>改成 </p>
+<p>改成</p>
 <div class="highlight"><pre><span></span><code><span class="nv">AutomaticLoginEnable</span> <span class="o">=</span> <span class="nb">true</span>
 <span class="nv">AutomaticLogin</span> <span class="o">=</span> weiya
 </code></pre></div>
@@ -1707,7 +1697,7 @@ sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
     <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5cf3e710.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a1c7c35e.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

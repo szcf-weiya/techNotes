@@ -15,8 +15,8 @@
       
         <link rel="canonical" href="https://tech.hohoweiya.xyz/shell/">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.5">
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.77f3fd56.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2c0c5eaf.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
@@ -78,11 +78,9 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
+      <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-header__button md-logo" aria-label="techNotes">
+    <a href=".." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -174,11 +172,9 @@
                     
 
 
-
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-nav__button md-logo" aria-label="techNotes">
+    <a href=".." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -489,8 +485,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#path-of-the-script" class="md-nav__link">
-    path of the script
+  <a href="#get-path-of-the-current-script" class="md-nav__link">
+    Get path of the current script
   </a>
   
 </li>
@@ -1713,8 +1709,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#path-of-the-script" class="md-nav__link">
-    path of the script
+  <a href="#get-path-of-the-current-script" class="md-nav__link">
+    Get path of the current script
   </a>
   
 </li>
@@ -2167,14 +2163,42 @@ $ bc <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;scale=2; 39/10&q
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory">Check whether a certain file type/extension exists in directory</a></p>
 <p>My application: <a href="https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20">TeXtemplates: create a tex template</a></p>
-<h2 id="path-of-the-script">path of the script<a class="headerlink" href="#path-of-the-script" title="Permanent link">&para;</a></h2>
-<p>get the path of the current scripts</p>
+<h2 id="get-path-of-the-current-script">Get path of the current script<a class="headerlink" href="#get-path-of-the-current-script" title="Permanent link">&para;</a></h2>
+<p>we can get the path of the current script via</p>
 <div class="highlight"><pre><span></span><code><span class="nv">CURDIR</span><span class="o">=</span><span class="sb">`</span>/bin/pwd<span class="sb">`</span>
 <span class="nv">BASEDIR</span><span class="o">=</span><span class="k">$(</span>dirname <span class="nv">$0</span><span class="k">)</span>
 <span class="nv">ABSPATH</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="nv">$0</span><span class="k">)</span>
 <span class="nv">ABSDIR</span><span class="o">=</span><span class="k">$(</span>dirname <span class="nv">$ABSPATH</span><span class="k">)</span>
 </code></pre></div>
 <p>refer to <a href="https://gist.github.com/darrenderidder/974638">darrenderidder/bashpath.sh</a></p>
+<p>where <code>dirname</code>, together with <code>basename</code> aims to extract the filename and path, such as</p>
+<div class="highlight"><pre><span></span><code>$ basename /dir1/dir2/file.txt
+file.txt
+$ dirname /dir1/dir2/file.txt
+/dir1/dir2
+$ dirname <span class="sb">`</span>dirname /dir1/dir2/file.txt<span class="sb">`</span>
+/dir1
+</code></pre></div>
+<p>but note that <code>dirname</code> would also return the parent directory of a directory, as shown in the last case.</p>
+<p>Alternatively, we can use <code>${}</code> to extract the path,</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 从左开始最大化匹配到字符 `/`，然后截掉左边内容（包括`/`)</span>
+$ <span class="nv">var</span><span class="o">=</span>/dir1/dir2/file.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">##*/</span><span class="si">}</span>
+file.txt
+<span class="c1"># 文件后缀</span>
+$ <span class="nv">var</span><span class="o">=</span>/dir1/dir2/file.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">##*.</span><span class="si">}</span>
+txt
+<span class="c1"># 两个文件后缀（从左开始第一次匹配到字符 `.`，然后截掉左边内容（包括`/`)</span>
+$ <span class="nv">var</span><span class="o">=</span>/dir1/dir2/file.tar.gz <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">#*.</span><span class="si">}</span>
+tar.gz
+<span class="c1"># 从右开始第一次匹配到字符 `/`</span>
+$ <span class="nv">var</span><span class="o">=</span>/dir1/dir2/file.txt <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">%/*</span><span class="si">}</span>
+/dir1/dir2
+<span class="c1"># 从右最大化匹配到字符 `.`</span>
+$ <span class="nv">var</span><span class="o">=</span>/dir1/dir2/file.tar.gz <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">%%.*</span><span class="si">}</span>
+/dir1/dir2/file
+</code></pre></div>
+<p>其中 <code>*</code> 表示要删除的内容，另外还需要一个字符表示截断点，注意到与 <code>#</code> 使用时截断字符在右边，而与 <code>%</code> 使用时截断字符在左边。</p>
+<p>参考 <a href="http://blog.csdn.net/universe_hao/article/details/52640321">shell 提取文件名和目录名</a></p>
 <h2 id="if">if<a class="headerlink" href="#if" title="Permanent link">&para;</a></h2>
 <p>We can add <code>&amp;&gt; /dev/null</code> to hidden the output information in the condition of <code>if</code>. For example, check if user exists,</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -2385,7 +2409,7 @@ $ <span class="nb">echo</span> $<span class="o">[</span> <span class="m">1</span
     <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.5cf3e710.min.js"></script>
+      <script src="../assets/javascripts/bundle.a1c7c35e.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       

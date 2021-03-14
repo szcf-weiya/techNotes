@@ -15,8 +15,8 @@
       
         <link rel="canonical" href="https://tech.hohoweiya.xyz/python/conda/">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.5">
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.77f3fd56.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2c0c5eaf.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
@@ -78,11 +78,9 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
+      <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-header__button md-logo" aria-label="techNotes">
+    <a href="../.." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -174,11 +172,9 @@
                     
 
 
-
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://tech.hohoweiya.xyz" title="techNotes" class="md-nav__button md-logo" aria-label="techNotes">
+    <a href="../.." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -571,8 +567,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#julia-kernel" class="md-nav__link">
-    安装 julia 的 kernel
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#julia" class="md-nav__link">
+    Julia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    R
   </a>
   
 </li>
@@ -1399,8 +1409,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#julia-kernel" class="md-nav__link">
-    安装 julia 的 kernel
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#julia" class="md-nav__link">
+    Julia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    R
   </a>
   
 </li>
@@ -1465,7 +1489,7 @@ spyder3 <span class="p">&amp;</span>
 </code></pre></div>
 <p>隐隐约约感觉是装了多个版本，想卸载掉错误的版本，但都没找到 qtconsole 怎么查看版本号。然后 Google 发现另外一个类似的问题，</p>
 <p><a href="https://stackoverflow.com/questions/55350956/getting-wrong-version-of-packages-using-conda">Getting wrong version of packages using Conda</a></p>
-<p>于是我也去检查了 ipython 的版本，发现 </p>
+<p>于是我也去检查了 ipython 的版本，发现</p>
 <div class="highlight"><pre><span></span><code>$ ipython --version
 <span class="m">7</span>.7.0
 </code></pre></div>
@@ -1474,7 +1498,7 @@ spyder3 <span class="p">&amp;</span>
 ipython                   <span class="m">7</span>.10.2           py37h39e3cac_0
 </code></pre></div>
 <p>同样存在版本号不一致的问题。</p>
-<p>所以按照评论的建议，用 </p>
+<p>所以按照评论的建议，用</p>
 <div class="highlight"><pre><span></span><code>pip uninstall ipython
 </code></pre></div>
 <p>首先解决了 ipython 的版本号不一致的问题。</p>
@@ -1538,10 +1562,22 @@ bash: /media/weiya/PSSD/Programs/anaconda3/envs/py36/bin/pip: /home/weiya/anacon
 </blockquote>
 <p>于是比较放心地运行了 <code>conda clean -a</code>，一下子清理出 8.6G 的空间。</p>
 <h2 id="environment-jupyter">不同 environment 的 jupyter<a class="headerlink" href="#environment-jupyter" title="Permanent link">&para;</a></h2>
+<h3 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
 <p>其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 <a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments">Kernels for different environments</a></p>
-<h3 id="julia-kernel">安装 julia 的 kernel<a class="headerlink" href="#julia-kernel" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ conda activate myenv
+$ conda install ipykernel
+$ python -m ipykernel install --user --name myenv --display-name <span class="s2">&quot;Python (myenv)&quot;</span>
+</code></pre></div>
+<h3 id="julia">Julia<a class="headerlink" href="#julia" title="Permanent link">&para;</a></h3>
+<p>打开特定版本的 Julia，</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">add</span> <span class="n">IJulia</span>
 </code></pre></div>
+<h3 id="r">R<a class="headerlink" href="#r" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;IRkernel&#39;</span><span class="p">)</span>
+<span class="c1">#IRkernel::installspec()</span>
+<span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;3.6.0&quot;</span><span class="p">,</span> <span class="n">displayname</span> <span class="o">=</span> <span class="s">&quot;R 3.6.0&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>另见 <a href="../../R/#using-r-in-jupyterlab">using R in JupyterLab</a></p>
                 
               
               
@@ -1662,7 +1698,7 @@ bash: /media/weiya/PSSD/Programs/anaconda3/envs/py36/bin/pip: /home/weiya/anacon
     <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5cf3e710.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a1c7c35e.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
