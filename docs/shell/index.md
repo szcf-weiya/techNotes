@@ -487,9 +487,9 @@ refer to [Check whether a certain file type/extension exists in directory](https
 
 My application: [TeXtemplates: create a tex template](https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20)
 
-## path of the script
+## Get path of the current script
 
-get the path of the current scripts
+we can get the path of the current script via
 
 ```bash
 CURDIR=`/bin/pwd`
@@ -499,6 +499,43 @@ ABSDIR=$(dirname $ABSPATH)
 ```
 
 refer to [darrenderidder/bashpath.sh](https://gist.github.com/darrenderidder/974638)
+
+where `dirname`, together with `basename` aims to extract the filename and path, such as
+
+```bash
+$ basename /dir1/dir2/file.txt
+file.txt
+$ dirname /dir1/dir2/file.txt
+/dir1/dir2
+$ dirname `dirname /dir1/dir2/file.txt`
+/dir1
+```
+
+but note that `dirname` would also return the parent directory of a directory, as shown in the last case.
+
+Alternatively, we can use `${}` to extract the path,
+
+```bash
+# 从左开始最大化匹配到字符 `/`，然后截掉左边内容（包括`/`)
+$ var=/dir1/dir2/file.txt && echo ${var##*/}
+file.txt
+# 文件后缀
+$ var=/dir1/dir2/file.txt && echo ${var##*.}
+txt
+# 两个文件后缀（从左开始第一次匹配到字符 `.`，然后截掉左边内容（包括`/`)
+$ var=/dir1/dir2/file.tar.gz && echo ${var#*.}
+tar.gz
+# 从右开始第一次匹配到字符 `/`
+$ var=/dir1/dir2/file.txt && echo ${var%/*}
+/dir1/dir2
+# 从右最大化匹配到字符 `.`
+$ var=/dir1/dir2/file.tar.gz && echo ${var%%.*}
+/dir1/dir2/file
+```
+
+其中 `*` 表示要删除的内容，另外还需要一个字符表示截断点，注意到与 `#` 使用时截断字符在右边，而与 `%` 使用时截断字符在左边。
+
+参考 [shell 提取文件名和目录名](http://blog.csdn.net/universe_hao/article/details/52640321)
 
 ## if
 

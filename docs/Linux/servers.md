@@ -617,3 +617,15 @@ $ module unload R3.6
 # load original `3.6.3`
 $ module load R/3.6
 ```
+
+## Install software without root
+
+`conda` can install many other programs, such as `tree`,
+
+```bash
+conda install -c eumetsat tree
+```
+
+The trick is to check whether the package is available via `https://anaconda.org/search?q=`
+
+refer to [How to install packages in Linux (CentOS) without root user with automatic dependency handling?](https://stackoverflow.com/a/52561058)

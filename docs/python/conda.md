@@ -74,7 +74,7 @@ qtconsole                 4.6.0                      py_0
 
 [Getting wrong version of packages using Conda](https://stackoverflow.com/questions/55350956/getting-wrong-version-of-packages-using-conda)
 
-于是我也去检查了 ipython 的版本，发现 
+于是我也去检查了 ipython 的版本，发现
 
 ```bash
 $ ipython --version
@@ -90,7 +90,7 @@ ipython                   7.10.2           py37h39e3cac_0
 
 同样存在版本号不一致的问题。
 
-所以按照评论的建议，用 
+所以按照评论的建议，用
 
 ```bash
 pip uninstall ipython
@@ -179,10 +179,30 @@ bash: /media/weiya/PSSD/Programs/anaconda3/envs/py36/bin/pip: /home/weiya/anacon
 
 ## 不同 environment 的 jupyter
 
+### Python
+
 其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 [Kernels for different environments](https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments)
 
-### 安装 julia 的 kernel
+```bash
+$ conda activate myenv
+$ conda install ipykernel
+$ python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+```
+
+### Julia
+
+打开特定版本的 Julia，
 
 ```julia
 > add IJulia
 ```
+
+### R
+
+```R
+install.packages('IRkernel')
+#IRkernel::installspec()
+IRkernel::installspec(name="3.6.0", displayname = "R 3.6.0")
+```
+
+另见 [using R in JupyterLab](../R/index.md#using-r-in-jupyterlab)

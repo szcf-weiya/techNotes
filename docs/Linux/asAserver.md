@@ -33,7 +33,7 @@ T460p $ ssh -NR 30013:localhost:22 -R 24800:localhost:24800 SID@SERVER
 
 关键点是将两台机器的 24800 端口连上，基本逻辑是，在 G40 上通过 `-L` 转发使得 24800 端口访问的实际上是 SERVER 的 24800 端口，而在 T460p 上通过 `-R` 使得 SERVER 上的 24800 端口转发到本地的 24800.
 
-参考 
+参考
 
 - [Tunnel synergy KVM sharing software through SSH](https://0xdeadcode.se/archives/46)
 - [How to tunnel Synergy over SSH?](https://askubuntu.com/questions/850710/how-to-tunnel-synergy-over-ssh)
@@ -51,7 +51,7 @@ sudo vi /etc/systemd/logind.conf
 
 commenting out `HandleLidSwitch=suspend` and changes it to `HandleLidSwitch=ignore`
 
-最后需要 
+最后需要
 
 ```bash
 systemctl restart systemd-logind.service
@@ -93,13 +93,10 @@ $ sudo apt-get install libsox-fmt-all
 
 其中 `-v 0.5` 调节音量。
 
-!!! tip "音乐下载"
-    - [超高无损音乐](https://www.sq688.com/)
-
-先暂时写了个简单的列表顺序播放的脚本 
+先暂时写了个简单的列表顺序播放的脚本
 
 ```bash
-$ cat playmusic.sh 
+$ cat playmusic.sh
 #!/bin/bash
 for music in ~/Music/*; do
 	if [[ -f $music ]]; then
@@ -147,7 +144,7 @@ sudo apt install vlc-bin
 #  AutomaticLogin = user1
 ```
 
-改成 
+改成
 
 ```bash
 AutomaticLoginEnable = true
@@ -276,4 +273,3 @@ sudo udevadm control --reload-rules
 ## 插上电源自动开机
 
 这个似乎[需要 BIOS 设置](https://superuser.com/questions/984934/i-want-my-pc-to-turn-on-automatically-when-power-is-connected)，而且是在 Power Management Setup 中进行，但是通过 `Fn+F2` 进入 BIOS 后，并没有这个菜单，可能还是不支持吧。不过话说回来这个功能没有自动关机那么必要。
-

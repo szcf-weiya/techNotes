@@ -253,48 +253,10 @@ root         1     0  0 09:15 ?        00:00:44 /sbin/init splash
 - `TIME`: cumulative CPU time, "[DD-]HH:MM:SS" format.  (alias cputime).
 - `CMD`: see args.  (alias args, command).
 
-### 合并jpg到pdf
-
-参考[convert images to pdf: How to make PDF Pages same size](https://unix.stackexchange.com/questions/20026/convert-images-to-pdf-how-to-make-pdf-pages-same-size)
-
-直接采用
-
-```
-pdftk A.pdf B.pdf cat output merge.pdf
-```
-
-得到的pdf中页面大小不一致，于是采用下面的命令
-
-```
-convert a.png b.png -compress jpeg -resize 1240x1753 \
-                      -extent 1240x1753 -gravity center \
-                      -units PixelsPerInch -density 150x150 multipage.pdf
-```
-
-注意重点是`-density 150x150`，若去掉这个选项，则还是得不到相同页面大小的文件。
-
-另外，上述命令是对于`.png`而言的，完全可以换成`.jpg`。
-
-同时，注意`1240x1753`中间是字母`x`.
-
 
 ## 配置jdk
 
 参考[Ubuntu14.04安装JDK与配置环境变量](https://jingyan.baidu.com/article/647f0115bb26817f2048a871.html)
-
-## 缩小图像的大小
-
-```
-convert -resize 1024x
-```
-
-或者
-
-```
-convert -quality 50%
-```
-
-具体参考[How can I compress images?](https://askubuntu.com/questions/781497/how-can-i-compress-images)
 
 ## compile FileZilla
 
@@ -315,22 +277,6 @@ require sqlite3.h
 sudo apt-get install libsqlite3-dev
 ```
 
-## convert 参数
-
-pdf 转为 jpg
- `-quality 100` 控制质量
- `-density 600x600` 控制分辨率
-
- 并注意参数放置文件的前面
-
-pdf 转 png 更好的命令是 `pdftoppm`，参考 [How to convert PDF to Image?](https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image)
-
-```bash
-pdftoppm alg.pdf alg -png -singlefile
-```
-
-图片质量比 `convert` 好很多！！
-
 ## linux 三款命令行浏览器
 
 1. w3m
@@ -339,7 +285,7 @@ pdftoppm alg.pdf alg -png -singlefile
 
 refer to [http://www.laozuo.org/8178.html](http://www.laozuo.org/8178.html)
 
-## 修改文件权限
+## 文件权限
 
 采用`ls -l` 便可以查看文件(夹)权限，比如
 
@@ -351,6 +297,15 @@ refer to [http://www.laozuo.org/8178.html](http://www.laozuo.org/8178.html)
 7列的含义分别是（参考[http://blog.csdn.net/jenminzhang/article/details/9816853](http://blog.csdn.net/jenminzhang/article/details/9816853)）
 
 1. 文件类型和文件权限
+  - 文件类型由第一个字母表示，常见的有 `d`(目录)，`-`(文件)，`l`(链接)
+  - 权限分为三段，每三个字符一段，分别表示，文件所有者 `u`、文件所属组 `g`、其他用户 `o`对该文件的权限，其中
+    - `r`: 可读，等于 4
+    - `w`: 可写，等于 2
+    - `x`: 可执行，等于 1
+    - `-`: 无权限，等于 0
+    - `s`: set user or group ID on execution (s)
+    - `X`: execute/search only if the file  is a directory or already has  execute permission for some user
+    - `t`: restricted deletion flag or sticky bit
 2. 文件链接个数
 3. 文件所有者
 4. 文件所在群组
@@ -358,20 +313,23 @@ refer to [http://www.laozuo.org/8178.html](http://www.laozuo.org/8178.html)
 6. 时间
 7. 文件名称
 
+
 采用chmod修改权限（参考[http://www.linuxidc.com/Linux/2015-03/114695.htm](http://www.linuxidc.com/Linux/2015-03/114695.htm)），如
+
 ```bash
 chmod -R 700 Document/
+chmod -R [ugoa...][[+-=][perms...]] # refer to `man chmod` for more details
 ```
 
-其中`-R`递归
+其中 `-R` 表示递归，`perms` 为上述 `rwxXst`，而 `a` 表示所有用户，即 `ugo`.
 
-采用chown改变所有者，比如
+采用 chown 改变所有者，比如
+
 ```bash
 chown -R username:users Document/
 ```
 
 `chmod g+s .` 会使得当前文件夹 `.` 中所有新建文件或文件夹都继承 `.` 的 group，而不是创建者所属的 group，所以这一般配合 `chgrp` 使用。参考 ['chmod g+s' command](https://unix.stackexchange.com/questions/182212/chmod-gs-command)
-
 
 ## 文件重命名
 
@@ -408,10 +366,6 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 介绍见[DOWNLOAD CIRCOS, TUTORIALS AND TOOLS](http://circos.ca/software/download/tutorials/)
 
 [Install circos on ubuntu 14.04 LTS](https://gist.github.com/dyndna/18bb71494e021f672510)
-
-## shell 提取文件名和目录名
-
-[shell 提取文件名和目录名](http://blog.csdn.net/universe_hao/article/details/52640321)
 
 ## `user` vs. `sys`
 
@@ -710,22 +664,6 @@ done
 
 refer to [Remove first character of a string in Bash](https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash)
 
-## convert imgs to pdf
-
-```bash
-ls -1 ./*jpg | xargs -L1 -I {} img2pdf {} -o {}.pdf
-pdftk likelihoodfree-design-a-discussion-{1..13}-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
-```
-
-注意这里需要用 `ls -1`，如果 `ll` 则第一行会有 `total xxx` 的信息，即 `ll | wc -l` 等于 `ls -1 | wc -l` + 1，而且在我的 Ubuntu 18.04 中，`ll` 甚至还会列出
-
-```bash
-./
-../
-```
-
-这一点在服务器上没看到。
-
 
 ## modify pdf metadata via `pdftk`
 
@@ -744,26 +682,83 @@ pdftk input.pdf update_info metadata output output.pdf
 
 参考 [Linux文件乱码](https://www.findhao.net/easycoding/1605)
 
-
-
-
 ## 图片处理
 
 ### 拼接
 
-水平方向
-
 ```bash
+# 水平方向
 convert +append *.png out.png
-```
-
-垂直方向
-
-```bash
+# 垂直方向
 convert -append *.png out.png
 ```
 
 参考 [How do I join two images in Ubuntu?](https://askubuntu.com/a/889772)
+
+### 缩小图片大小
+
+```bash
+# only specify the wide as 1024 pixel to keep the aspect ratio
+convert input.png -resize 1024x out.png
+convert input.png -quality 50% out.png
+```
+
+参考[How can I compress images?](https://askubuntu.com/questions/781497/how-can-i-compress-images)
+
+### 合并jpg到pdf
+
+参考[convert images to pdf: How to make PDF Pages same size](https://unix.stackexchange.com/questions/20026/convert-images-to-pdf-how-to-make-pdf-pages-same-size)
+
+直接采用
+
+```bash
+pdftk A.pdf B.pdf cat output merge.pdf
+```
+
+得到的pdf中页面大小不一致，于是采用下面的命令
+
+```bash
+convert a.png b.png -compress jpeg -resize 1240x1753 \
+                      -extent 1240x1753 -gravity center \
+                      -units PixelsPerInch -density 150x150 multipage.pdf
+```
+
+注意重点是 `-density 150x150`，若去掉这个选项，则还是得不到相同页面大小的文件。
+
+另外，上述命令是对于`.png`而言的，完全可以换成`.jpg`。
+
+同时，注意`1240x1753`中间是字母`x`.
+
+### pdf 转为 jpg
+
+ `-quality 100` 控制质量
+ `-density 600x600` 控制分辨率
+
+并注意参数放置文件的前面
+
+pdf 转 png 更好的命令是 `pdftoppm`，参考 [How to convert PDF to Image?](https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image)
+
+```bash
+pdftoppm alg.pdf alg -png -singlefile
+```
+
+图片质量比 `convert` 好很多！！
+
+### convert imgs to pdf
+
+```bash
+ls -1 ./*jpg | xargs -L1 -I {} img2pdf {} -o {}.pdf
+pdftk likelihoodfree-design-a-discussion-{1..13}-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
+```
+
+注意这里需要用 `ls -1`，如果 `ll` 则第一行会有 `total xxx` 的信息，即 `ll | wc -l` 等于 `ls -1 | wc -l` + 1，而且在我的 Ubuntu 18.04 中，`ll` 甚至还会列出
+
+```bash
+./
+../
+```
+
+这一点在服务器上没看到。
 
 ## 文本文件查看
 
