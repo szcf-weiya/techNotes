@@ -864,6 +864,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setup-init-config" class="md-nav__link">
+    SETUP &amp; INIT: config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clone-clone" class="md-nav__link">
+    CLONE: clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporary-commits-stash" class="md-nav__link">
+    TEMPORARY COMMITS: stash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     删除分支
   </a>
@@ -872,13 +893,6 @@
       
         <li class="md-nav__item">
   <a href="#git-clone" class="md-nav__link">
-    提高git clone速度
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-clone_1" class="md-nav__link">
     git clone所有远程分支
   </a>
   
@@ -887,13 +901,6 @@
         <li class="md-nav__item">
   <a href="#git" class="md-nav__link">
     git删除大文件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git_1" class="md-nav__link">
-    初次配置Git
   </a>
   
 </li>
@@ -947,7 +954,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-clone_2" class="md-nav__link">
+  <a href="#git-clone_1" class="md-nav__link">
     git clone 某个分支或所有分支
   </a>
   
@@ -1589,6 +1596,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setup-init-config" class="md-nav__link">
+    SETUP &amp; INIT: config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clone-clone" class="md-nav__link">
+    CLONE: clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporary-commits-stash" class="md-nav__link">
+    TEMPORARY COMMITS: stash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     删除分支
   </a>
@@ -1597,13 +1625,6 @@
       
         <li class="md-nav__item">
   <a href="#git-clone" class="md-nav__link">
-    提高git clone速度
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-clone_1" class="md-nav__link">
     git clone所有远程分支
   </a>
   
@@ -1612,13 +1633,6 @@
         <li class="md-nav__item">
   <a href="#git" class="md-nav__link">
     git删除大文件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git_1" class="md-nav__link">
-    初次配置Git
   </a>
   
 </li>
@@ -1672,7 +1686,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-clone_2" class="md-nav__link">
+  <a href="#git-clone_1" class="md-nav__link">
     git clone 某个分支或所有分支
   </a>
   
@@ -1929,40 +1943,11 @@
 <li><a href="git-cheat-sheet-education.pdf">Cheatsheet</a></li>
 <li><a href="https://git-scm.com/book/zh/v2">Pro Git book (中文)</a></li>
 </ol>
-<h2 id="_2">删除分支<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1">## Delete a remote branch</span>
-$ git push origin --delete &lt;branch&gt; <span class="c1"># Git version 1.7.0 or newer</span>
-$ git push origin :&lt;branch&gt; <span class="c1"># Git versions older than 1.7.0</span>
-
-<span class="c1">## Delete a local branch</span>
-$ git branch --delete &lt;branch&gt;
-$ git branch -d &lt;branch&gt; <span class="c1"># Shorter version</span>
-$ git branch -D &lt;branch&gt; <span class="c1"># Force delete un-merged branches</span>
-
-<span class="c1">## Delete a local remote-tracking branch</span>
-$ git branch --delete --remotes &lt;remote&gt;/&lt;branch&gt;
-$ git branch -dr &lt;remote&gt;/&lt;branch&gt; <span class="c1"># Shorter</span>
-$ git fetch &lt;remote&gt; --prune <span class="c1"># Delete multiple obsolete tracking branches</span>
-$ git fetch &lt;remote&gt; -p <span class="c1"># Shorter</span>
-</code></pre></div>
-<p>adapted from <a href="https://gist.github.com/cmatskas/454e3369e6963a1c8c89">cmatskas/GitDeleteCommands.ps1</a></p>
-<h2 id="git-clone">提高git clone速度<a class="headerlink" href="#git-clone" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git config --global http.postBuffer 524288000
-</code></pre></div>
-<h2 id="git-clone_1">git clone所有远程分支<a class="headerlink" href="#git-clone_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git clone ....
-cd ..
-git branch -a
-git checkout -b gh-pages origin/gh-pages
-</code></pre></div>
-<h2 id="git">git删除大文件<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
-<p><a href="http://www.cnblogs.com/lout/p/6111739.html">cnblog</a></p>
-<h2 id="git_1">初次配置Git<a class="headerlink" href="#git_1" title="Permanent link">&para;</a></h2>
-<p><a href="http://www.open-open.com/lib/view/open1428900970330.html">reference</a></p>
+<h2 id="setup-init-config">SETUP &amp; INIT: <code>config</code><a class="headerlink" href="#setup-init-config" title="Permanent link">&para;</a></h2>
 <ol>
 <li>下载安装</li>
 </ol>
-<div class="highlight"><pre><span></span><code>apt-get install git
+<div class="highlight"><pre><span></span><code>sudo apt-get install git
 </code></pre></div>
 <ol start="2">
 <li>配置</li>
@@ -1986,6 +1971,51 @@ git config user.email
 <div class="highlight"><pre><span></span><code>ssh-keygen -t rsa -C <span class="s2">&quot;test@163.com&quot;</span>
 </code></pre></div>
 <p>复制 <code>~/.ssh/id_rsa.pub</code> 到 github 上。</p>
+<h2 id="clone-clone">CLONE: <code>clone</code><a class="headerlink" href="#clone-clone" title="Permanent link">&para;</a></h2>
+<ul>
+<li>提高 <code>git clone</code> 速度</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git config --global http.postBuffer <span class="m">524288000</span>
+</code></pre></div>
+<h2 id="temporary-commits-stash">TEMPORARY COMMITS: <code>stash</code><a class="headerlink" href="#temporary-commits-stash" title="Permanent link">&para;</a></h2>
+<p>Temporarily store modified, tracked files in order to change branches.</p>
+<div class="highlight"><pre><span></span><code>git stash <span class="c1"># Save modified and staged changes</span>
+git stash list <span class="c1"># list stack-order of stashed file changes</span>
+git stash pop <span class="c1"># write working from top of stash stack</span>
+git stash drop <span class="c1"># discard the changes from top of stash stack</span>
+</code></pre></div>
+<ul>
+<li><a href="https://stackoverflow.com/questions/54040063/how-to-git-pull-without-git-add-them">git pull without git add them</a>: </li>
+</ul>
+<div class="highlight"><pre><span></span><code>git stash
+git pull
+git stash apply
+</code></pre></div>
+<h2 id="_2">删除分支<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1">## Delete a remote branch</span>
+$ git push origin --delete &lt;branch&gt; <span class="c1"># Git version 1.7.0 or newer</span>
+$ git push origin :&lt;branch&gt; <span class="c1"># Git versions older than 1.7.0</span>
+
+<span class="c1">## Delete a local branch</span>
+$ git branch --delete &lt;branch&gt;
+$ git branch -d &lt;branch&gt; <span class="c1"># Shorter version</span>
+$ git branch -D &lt;branch&gt; <span class="c1"># Force delete un-merged branches</span>
+
+<span class="c1">## Delete a local remote-tracking branch</span>
+$ git branch --delete --remotes &lt;remote&gt;/&lt;branch&gt;
+$ git branch -dr &lt;remote&gt;/&lt;branch&gt; <span class="c1"># Shorter</span>
+$ git fetch &lt;remote&gt; --prune <span class="c1"># Delete multiple obsolete tracking branches</span>
+$ git fetch &lt;remote&gt; -p <span class="c1"># Shorter</span>
+</code></pre></div>
+<p>adapted from <a href="https://gist.github.com/cmatskas/454e3369e6963a1c8c89">cmatskas/GitDeleteCommands.ps1</a></p>
+<h2 id="git-clone">git clone所有远程分支<a class="headerlink" href="#git-clone" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>git clone ....
+cd ..
+git branch -a
+git checkout -b gh-pages origin/gh-pages
+</code></pre></div>
+<h2 id="git">git删除大文件<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
+<p><a href="http://www.cnblogs.com/lout/p/6111739.html">cnblog</a></p>
 <h2 id="origin">修改 origin<a class="headerlink" href="#origin" title="Permanent link">&para;</a></h2>
 <p>本地通过 git clone 得到仓库 https://github.com/CellProfiler/CellProfiler，后来需要在此基础上做些更改用到自己的项目中去，于是对原仓库进行了 fork，不过忘记了本地的仓库其实是从原仓库 clone 下来的，而非来自 fork 后的仓库，于是在 git push 会试图像原仓库进行 push，这当然是会被拒绝的。</p>
 <p>简单的方法便是直接更改本地仓库的 origin，首先可以通过</p>
@@ -2027,7 +2057,7 @@ git branch temp
 </code></pre></div>
 <h2 id="license">关于LICENSE的选择<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html">阮一峰的网络日志</a></p>
-<h2 id="git-clone_2">git clone 某个分支或所有分支<a class="headerlink" href="#git-clone_2" title="Permanent link">&para;</a></h2>
+<h2 id="git-clone_1">git clone 某个分支或所有分支<a class="headerlink" href="#git-clone_1" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.csdn.net/a513322/article/details/46998325">git clone</a></p>
 <div class="highlight"><pre><span></span><code>git clone -b BRANCH_NAME ...
 </code></pre></div>
