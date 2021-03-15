@@ -7,53 +7,12 @@
 3. [Cheatsheet](git-cheat-sheet-education.pdf)
 4. [Pro Git book (中文)](https://git-scm.com/book/zh/v2)
 
-## 删除分支
-
-```bash
-## Delete a remote branch
-$ git push origin --delete <branch> # Git version 1.7.0 or newer
-$ git push origin :<branch> # Git versions older than 1.7.0
-
-## Delete a local branch
-$ git branch --delete <branch>
-$ git branch -d <branch> # Shorter version
-$ git branch -D <branch> # Force delete un-merged branches
-
-## Delete a local remote-tracking branch
-$ git branch --delete --remotes <remote>/<branch>
-$ git branch -dr <remote>/<branch> # Shorter
-$ git fetch <remote> --prune # Delete multiple obsolete tracking branches
-$ git fetch <remote> -p # Shorter
-```
-
-adapted from [cmatskas/GitDeleteCommands.ps1](https://gist.github.com/cmatskas/454e3369e6963a1c8c89)
-
-## 提高git clone速度
-
-```git
-git config --global http.postBuffer 524288000
-```
-
-## git clone所有远程分支
-
-```git
-git clone ....
-cd ..
-git branch -a
-git checkout -b gh-pages origin/gh-pages
-```
-
-## git删除大文件
-
-[cnblog](http://www.cnblogs.com/lout/p/6111739.html)
-
-## 初次配置Git
-[reference](http://www.open-open.com/lib/view/open1428900970330.html)
+## SETUP & INIT: `config`
 
 1. 下载安装
 
 ```bash
-apt-get install git
+sudo apt-get install git
 ```
 
 2. 配置
@@ -88,6 +47,69 @@ ssh-keygen -t rsa -C "test@163.com"
 ```
 
 复制 `~/.ssh/id_rsa.pub` 到 github 上。
+
+## CLONE: `clone`
+
+- 提高 `git clone` 速度
+
+```bash
+git config --global http.postBuffer 524288000
+```
+
+## TEMPORARY COMMITS: `stash`
+
+Temporarily store modified, tracked files in order to change branches.
+
+```bash
+git stash # Save modified and staged changes
+git stash list # list stack-order of stashed file changes
+git stash pop # write working from top of stash stack
+git stash drop # discard the changes from top of stash stack
+```
+
+- [git pull without git add them](https://stackoverflow.com/questions/54040063/how-to-git-pull-without-git-add-them): 
+
+```bash
+git stash
+git pull
+git stash apply
+```
+
+## 删除分支
+
+```bash
+## Delete a remote branch
+$ git push origin --delete <branch> # Git version 1.7.0 or newer
+$ git push origin :<branch> # Git versions older than 1.7.0
+
+## Delete a local branch
+$ git branch --delete <branch>
+$ git branch -d <branch> # Shorter version
+$ git branch -D <branch> # Force delete un-merged branches
+
+## Delete a local remote-tracking branch
+$ git branch --delete --remotes <remote>/<branch>
+$ git branch -dr <remote>/<branch> # Shorter
+$ git fetch <remote> --prune # Delete multiple obsolete tracking branches
+$ git fetch <remote> -p # Shorter
+```
+
+adapted from [cmatskas/GitDeleteCommands.ps1](https://gist.github.com/cmatskas/454e3369e6963a1c8c89)
+
+
+## git clone所有远程分支
+
+```git
+git clone ....
+cd ..
+git branch -a
+git checkout -b gh-pages origin/gh-pages
+```
+
+## git删除大文件
+
+[cnblog](http://www.cnblogs.com/lout/p/6111739.html)
+
 
 ## 修改 origin
 
@@ -138,14 +160,16 @@ git commit -m 'update .gitignore'
 ## 更新远程代码到本地
 
 ### 方式一
-```
+
+```bash
 git remote -v
 git fetch origin master
 git log -p master origin master
 git merge origin master
 ```
 ### 方式二
-```
+
+```bash
 git fetch origin master:temp
 git diff temp
 git merge temp

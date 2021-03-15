@@ -1,3 +1,7 @@
+## 2021.03.14
+
+- Shock waves are produced as young hot stars **ionize (电离)** the surrounding gas, forming emission nebulae.
+
 ## 2021.03.13
 
 - A **protostar (原恒星)** is a very young star that is still gathering mass from its parent molecular cloud. The **protosteller (原恒星的)** phase is the earliest one in the process of **stellar (星的)** evolution. The phase begins when a molecular cloud first collapses under the force of self-gravity. It ends when the protostar blows back the infalling gas and is revealed as an optically visible pre-main-sequence star, which later contracts to become a main sequence star.
