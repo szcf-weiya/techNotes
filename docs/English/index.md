@@ -1,3 +1,11 @@
+## 2021.03.16
+
+- A relatively small variation in breakfast's **macronutrient (营养素)** composition has a striking impact on social decisions.
+
+## 2021.03.15
+
+- It was hard to say which class was more **cordially (热诚地，友善地)** hated by the settled citizenry, the impractical **Yankee (美国北方人的)** **schoolmarms (女教师)** or the Scallawags (white Southerners, also spelled as [Scalawag](https://en.wikipedia.org/wiki/Scalawag)), but the balance probably fell with the latter.
+
 ## 2021.03.14
 
 - Shock waves are produced as young hot stars **ionize (电离)** the surrounding gas, forming emission nebulae.

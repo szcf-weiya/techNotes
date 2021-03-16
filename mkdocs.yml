@@ -40,7 +40,6 @@ nav:
     - Tools:
       - Autotools: autotools/index.md
       - Emacs: Emacs/index.md
-      - Vi: vi/index.md
       - Git: Git/index.md
       - Phantomjs: phantomjs/index.md
       - Qt: Qt/index.md
@@ -106,6 +105,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed
   - pymdownx.tilde
+  - pymdownx.snippets
   - admonition
   - codehilite
   - smarty

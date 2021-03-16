@@ -1,4 +1,147 @@
-# R 相关笔记
+# R Notes
+
+## `sort(), rank(), order()`
+
+- `sort(x)`: sort `x` increasingly (by default)
+- `rank(x)`: the ranks of each element
+- `order(x)`: the permutation for `sort(x)`
+
+```R
+> x = c(97, 93, 85, 74, 32, 100, 99, 67)
+> sort(x)
+[1]  32  67  74  85  93  97  99 100
+> order(x)
+[1] 5 8 4 3 2 1 7 6
+> rank(x)
+[1] 6 5 4 3 1 8 7 2
+```
+
+and they satisfy (assuming no ties and in increasing order)
+
+$$
+\begin{align*}
+\mathrm{x[order(x)]} & = \mathrm{sort(x)}\\
+\mathrm{rank(x)} &= \mathrm{order(order(x))}\\
+\mathrm{sort(x)[rank(x)]} &= \mathrm{x}
+\end{align*}
+$$
+
+```R
+> x[order(x)]
+[1]  32  67  74  85  93  97  99 100
+> order(order(x))
+[1] 6 5 4 3 1 8 7 2
+```
+
+In particular, if `x = 1:n`, then `x = order(x) = sort(x)`, and hence
+
+$$
+\mathrm{x[x] = x}
+$$
+
+## Run from Command Line
+
+- run `Rscript test.R` in the command line
+- put `#!/usr/bin/env Rscript` on the first line of `test.R` and allow it executable via `chmod +x test.R`
+
+To pass arguments, we can use
+
+```r
+args = commandArgs(trailingOnly=TRUE)
+```
+
+to extract the arguments.
+
+Test with the following scripts
+
+=== "test1.R"
+
+    ```r
+    --8<-- "docs/R/test1.R"
+    ```
+
+=== "test2.R"
+
+    ```r
+    --8<-- "docs/R/test2.R"
+    ```
+
+the results are
+
+```bash
+$ Rscript test1.R xxx yyy
+[1] 2
+xxx yyy
+$ Rscript test2.R xxx yyy
+[1] 7
+/usr/lib/R/bin/exec/R --slave --no-restore --file=test2.R --args xxx yyy
+```
+
+which shows that `trailingOnly=TRUE` is necessary and it only takes the arguments after `--args`.
+
+Refer to [Passing arguments to an R script from command lines | R-bloggers](https://www.r-bloggers.com/2015/09/passing-arguments-to-an-r-script-from-command-lines/)
+
+## Round numbers
+
+I want to approximate a numerical value with 3 significant digits, but the trailing zeros are always be dropped, then I tried several methods.
+
+First of all, define
+
+```R
+p <- function(x) { cat(deparse(substitute(x)), "=", x, "\n") }
+```
+
+for convenient and clear comparisons, which takes the advantage of [R's Lazy Evaluation](https://colinfay.me/lazyeval/).
+
+```R
+x = 0.04898246 # want 0.0490
+p(signif(x, digits=3))
+p(prettyNum(x))
+p(prettyNum(x, digits=3))
+p(formatC(x, drop0trailing = F))
+p(formatC(x, drop0trailing = T))
+p(format(signif(x, digits=3), nsmall = 3))
+p(format(signif(x, digits=3), nsmall = 4))
+p(format(signif(x, digits=3), nsmall = 3 + floor(-log10(x))))
+# signif(x, digits = 3) = 0.049
+# prettyNum(x) = 0.04898246
+# prettyNum(x, digits = 3) = 0.049
+# formatC(x, drop0trailing = F) = 0.04898
+# formatC(x, drop0trailing = T) = 0.04898
+# format(signif(x, digits = 3), nsmall = 3) = 0.049
+# format(signif(x, digits = 3), nsmall = 4) = 0.0490
+# format(signif(x, digits = 3), nsmall = 3 + floor(-log10(x))) = 0.0490
+```
+
+where `floor(-log10(x))` returns the number of zeros between the decimal symbol `.` and the first nonzero value (assume `x < 1`).
+
+With `scientific = TRUE` option, `nsmall` would fail,
+
+```R
+p(format(signif(x, digits=3), scientific = T, nsmall = 3 + floor(-log10(x))))
+# format(signif(x, digits = 3), scientific = T, nsmall = 3 + floor(-log10(x))) = 4.9e-02
+```
+
+as the manual `?format` said,
+
+> the minimum number of digits to the right of the decimal point in formatting real/complex numbers in **non-scientific formats**. Allowed values are 0 <= nsmall <= 20.
+
+For a larger value, such as `37289.75`, the scientific form might be necessary,
+
+```R
+y = 37289.75
+p(format(signif(y, digits=3), nsmall= max(0, 3 + floor(-log10(y))) ) )
+p(format(signif(y, digits=3), scientific = T))
+# format(signif(y, digits = 3), nsmall = max(0, 3 + floor(-log10(y)))) = 37300
+# format(signif(y, digits = 3), scientific = T) = 3.73e+04
+```
+
+Finally, I found that `sprintf("%.2e", x)` would be helpful, and actually the approximation has been consider, instead of just truncating.
+
+```R
+p(sprintf("%.2e, %.1e", x, y))
+#sprintf("%.2e, %.1e", x, y) = 4.90e-02, 3.7e+04
+```
 
 ## 序列减去常数
 
@@ -29,21 +172,6 @@ for (i in c(1:(n-1)))
 
 然后通过配置source.list，进行安装。
 
-## 终端执行R code
-
-参考[run-r-script-from-command-line](https://stackoverflow.com/questions/18306362/run-r-script-from-command-line)
-
-```bash
-touch main.R
-vi main.R
-### in main.R
-##!/usr/bin/env Rscript
-... ## R command
-### save main.R
-### run this file
-./main.R
-```
-
 ## 删除当前工作区所有变量
 
 ```bash
@@ -60,44 +188,6 @@ rm(list = ls(all = TRUE))
           options(repos=r)})
 ```
 
-## sort(), rank(), order()
-
-[http://blog.sina.com.cn/s/blog_6caea8bf0100spe9.html](http://blog.sina.com.cn/s/blog_6caea8bf0100spe9.html)
-
-`sort(x)` 是对向量x进行排序，返回值排序后的数值向量。`rank()` 是求秩的函数，它的返回值是这个向量中对应元素的“排名”。而 `order()` 的返回值是对应“排名”的元素所在向量中的位置。
-
-```R
-> x = c(97, 93, 85, 74, 32, 100, 99, 67)
-> sort(x)
-[1]  32  67  74  85  93  97  99 100
-> order(x)
-[1] 5 8 4 3 2 1 7 6
-> rank(x)
-[1] 6 5 4 3 1 8 7 2
-```
-
-and they satisfy
-
-$$
-\begin{align*}
-\mathrm{x[order(x)]} & = \mathrm{sort(x)}\\
-\mathrm{rank(x)} &= \mathrm{order(order(x))}\\
-\mathrm{sort(x)[rank(x)]} &= \mathrm{x}
-\end{align*}
-$$
-
-```R
-> x[order(x)]
-[1]  32  67  74  85  93  97  99 100
-> order(order(x))
-[1] 6 5 4 3 1 8 7 2
-```
-
-In particular, if `x = 1:n`, then `x = order(x) = sort(x)`, and hence
-
-$$
-\mathrm{x[x] = x}
-$$
 
 
 ## Interpreting Residual and Null Deviance in GLM R
