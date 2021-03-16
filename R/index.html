@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#r" class="md-skip">
+        <a href="#r-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -377,6 +377,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sort-rank-order" class="md-nav__link">
+    sort(), rank(), order()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-from-command-line" class="md-nav__link">
+    Run from Command Line
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#round-numbers" class="md-nav__link">
+    Round numbers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     序列减去常数
   </a>
@@ -398,13 +419,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#r-code" class="md-nav__link">
-    终端执行R code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     删除当前工作区所有变量
   </a>
@@ -414,13 +428,6 @@
         <li class="md-nav__item">
   <a href="#window" class="md-nav__link">
     window 安装包
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sort-rank-order" class="md-nav__link">
-    sort(), rank(), order()
   </a>
   
 </li>
@@ -531,7 +538,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#r_1" class="md-nav__link">
+  <a href="#r" class="md-nav__link">
     安装多版本R
   </a>
   
@@ -573,7 +580,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#r_2" class="md-nav__link">
+  <a href="#r_1" class="md-nav__link">
     发布R包
   </a>
   
@@ -664,7 +671,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#r_3" class="md-nav__link">
+  <a href="#r_2" class="md-nav__link">
     R 符号运算
   </a>
   
@@ -1250,18 +1257,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../vi/index.md" class="md-nav__link">
-        Vi
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Git/" class="md-nav__link">
         Git
       </a>
@@ -1660,6 +1655,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sort-rank-order" class="md-nav__link">
+    sort(), rank(), order()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-from-command-line" class="md-nav__link">
+    Run from Command Line
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#round-numbers" class="md-nav__link">
+    Round numbers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     序列减去常数
   </a>
@@ -1681,13 +1697,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#r-code" class="md-nav__link">
-    终端执行R code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     删除当前工作区所有变量
   </a>
@@ -1697,13 +1706,6 @@
         <li class="md-nav__item">
   <a href="#window" class="md-nav__link">
     window 安装包
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sort-rank-order" class="md-nav__link">
-    sort(), rank(), order()
   </a>
   
 </li>
@@ -1814,7 +1816,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#r_1" class="md-nav__link">
+  <a href="#r" class="md-nav__link">
     安装多版本R
   </a>
   
@@ -1856,7 +1858,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#r_2" class="md-nav__link">
+  <a href="#r_1" class="md-nav__link">
     发布R包
   </a>
   
@@ -1947,7 +1949,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#r_3" class="md-nav__link">
+  <a href="#r_2" class="md-nav__link">
     R 符号运算
   </a>
   
@@ -2077,49 +2079,13 @@
               
                 
                 
-                <h1 id="r">R 相关笔记<a class="headerlink" href="#r" title="Permanent link">&para;</a></h1>
-<h2 id="_1">序列减去常数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="m">-1</span><span class="p">))</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="c1">##0</span>
-<span class="c1">##1</span>
-<span class="c1">##2</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="n">n</span><span class="m">-1</span><span class="p">)))</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="c1">##1</span>
-<span class="c1">##2</span>
-</code></pre></div>
-<h2 id="rstudio">Rstudio 清空历史图象<a class="headerlink" href="#rstudio" title="Permanent link">&para;</a></h2>
-<p><a href="http://stackoverflow.com/questions/12766166/error-in-plot-new-figure-margins-too-large-in-r">Error in plot.new() : figure margins too large in R</a></p>
-<p><img alt="" src="error_too_large_for_figure.png" /></p>
-<h2 id="linux-r">linux 下更新 R<a class="headerlink" href="#linux-r" title="Permanent link">&para;</a></h2>
-<p>参考<a href="https://mirrors.tuna.tsinghua.edu.cn/CRAN/">https://mirrors.tuna.tsinghua.edu.cn/CRAN/</a> 中的README.md文件</p>
-<p>若已经通过源码安装，则可以通过找到源码文件夹，使用<code>sudo make uninstall</code>进行卸载。</p>
-<p>然后通过配置source.list，进行安装。</p>
-<h2 id="r-code">终端执行R code<a class="headerlink" href="#r-code" title="Permanent link">&para;</a></h2>
-<p>参考<a href="https://stackoverflow.com/questions/18306362/run-r-script-from-command-line">run-r-script-from-command-line</a></p>
-<div class="highlight"><pre><span></span><code>touch main.R
-vi main.R
-<span class="c1">### in main.R</span>
-<span class="c1">##!/usr/bin/env Rscript</span>
-... <span class="c1">## R command</span>
-<span class="c1">### save main.R</span>
-<span class="c1">### run this file</span>
-./main.R
-</code></pre></div>
-<h2 id="_2">删除当前工作区所有变量<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>rm<span class="o">(</span><span class="nv">list</span> <span class="o">=</span> ls<span class="o">(</span><span class="nv">all</span> <span class="o">=</span> TRUE<span class="o">))</span>
-</code></pre></div>
-<h2 id="window">window 安装包<a class="headerlink" href="#window" title="Permanent link">&para;</a></h2>
-<p>切换到R的安装路径下，在etc文件夹中编辑文件Rprofile.site文件</p>
-<div class="highlight"><pre><span></span><code>## set a CRAN mirror
-    local({r &lt;- getOption(&quot;repos&quot;)
-        r[&quot;CRAN&quot;] &lt;- &quot;http://mirrors.ustc.edu.cn/CRAN/&quot;
-          options(repos=r)})
-</code></pre></div>
-<h2 id="sort-rank-order">sort(), rank(), order()<a class="headerlink" href="#sort-rank-order" title="Permanent link">&para;</a></h2>
-<p><a href="http://blog.sina.com.cn/s/blog_6caea8bf0100spe9.html">http://blog.sina.com.cn/s/blog_6caea8bf0100spe9.html</a></p>
-<p><code>sort(x)</code> 是对向量x进行排序，返回值排序后的数值向量。<code>rank()</code> 是求秩的函数，它的返回值是这个向量中对应元素的“排名”。而 <code>order()</code> 的返回值是对应“排名”的元素所在向量中的位置。</p>
+                <h1 id="r-notes">R Notes<a class="headerlink" href="#r-notes" title="Permanent link">&para;</a></h1>
+<h2 id="sort-rank-order"><code>sort(), rank(), order()</code><a class="headerlink" href="#sort-rank-order" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>sort(x)</code>: sort <code>x</code> increasingly (by default)</li>
+<li><code>rank(x)</code>: the ranks of each element</li>
+<li><code>order(x)</code>: the permutation for <code>sort(x)</code></li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">97</span><span class="p">,</span> <span class="m">93</span><span class="p">,</span> <span class="m">85</span><span class="p">,</span> <span class="m">74</span><span class="p">,</span> <span class="m">32</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="m">67</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="nf">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span>  <span class="m">32</span>  <span class="m">67</span>  <span class="m">74</span>  <span class="m">85</span>  <span class="m">93</span>  <span class="m">97</span>  <span class="m">99</span> <span class="m">100</span>
@@ -2128,7 +2094,7 @@ vi main.R
 <span class="o">&gt;</span> <span class="nf">rank</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">6</span> <span class="m">5</span> <span class="m">4</span> <span class="m">3</span> <span class="m">1</span> <span class="m">8</span> <span class="m">7</span> <span class="m">2</span>
 </code></pre></div>
-<p>and they satisfy</p>
+<p>and they satisfy (assuming no ties and in increasing order)</p>
 <div>
 <div class="MathJax_Preview">
 \begin{align*}
@@ -2159,6 +2125,111 @@ vi main.R
 \mathrm{x[x] = x}
 </script>
 </div>
+<h2 id="run-from-command-line">Run from Command Line<a class="headerlink" href="#run-from-command-line" title="Permanent link">&para;</a></h2>
+<ul>
+<li>run <code>Rscript test.R</code> in the command line</li>
+<li>put <code>#!/usr/bin/env Rscript</code> on the first line of <code>test.R</code> and allow it executable via <code>chmod +x test.R</code></li>
+</ul>
+<p>To pass arguments, we can use</p>
+<div class="highlight"><pre><span></span><code><span class="n">args</span> <span class="o">=</span> <span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+<p>to extract the arguments.</p>
+<p>Test with the following scripts</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">test1.R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">args</span> <span class="o">=</span> <span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+<span class="nf">cat</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">test2.R</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">args</span> <span class="o">=</span> <span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+<span class="nf">cat</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+<p>the results are</p>
+<div class="highlight"><pre><span></span><code>$ Rscript test1.R xxx yyy
+<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="m">2</span>
+xxx yyy
+$ Rscript test2.R xxx yyy
+<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="m">7</span>
+/usr/lib/R/bin/exec/R --slave --no-restore --file<span class="o">=</span>test2.R --args xxx yyy
+</code></pre></div>
+<p>which shows that <code>trailingOnly=TRUE</code> is necessary and it only takes the arguments after <code>--args</code>.</p>
+<p>Refer to <a href="https://www.r-bloggers.com/2015/09/passing-arguments-to-an-r-script-from-command-lines/">Passing arguments to an R script from command lines | R-bloggers</a></p>
+<h2 id="round-numbers">Round numbers<a class="headerlink" href="#round-numbers" title="Permanent link">&para;</a></h2>
+<p>I want to approximate a numerical value with 3 significant digits, but the trailing zeros are always be dropped, then I tried several methods.</p>
+<p>First of all, define</p>
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="nf">cat</span><span class="p">(</span><span class="nf">deparse</span><span class="p">(</span><span class="nf">substitute</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="s">&quot;=&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div>
+<p>for convenient and clear comparisons, which takes the advantage of <a href="https://colinfay.me/lazyeval/">R&rsquo;s Lazy Evaluation</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="m">0.04898246</span> <span class="c1"># want 0.0490</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">prettyNum</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">prettyNum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">formatC</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">drop0trailing</span> <span class="o">=</span> <span class="bp">F</span><span class="p">))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">formatC</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">drop0trailing</span> <span class="o">=</span> <span class="bp">T</span><span class="p">))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span> <span class="n">nsmall</span> <span class="o">=</span> <span class="m">3</span><span class="p">))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span> <span class="n">nsmall</span> <span class="o">=</span> <span class="m">4</span><span class="p">))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span> <span class="n">nsmall</span> <span class="o">=</span> <span class="m">3</span> <span class="o">+</span> <span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="nf">log10</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span>
+<span class="c1"># signif(x, digits = 3) = 0.049</span>
+<span class="c1"># prettyNum(x) = 0.04898246</span>
+<span class="c1"># prettyNum(x, digits = 3) = 0.049</span>
+<span class="c1"># formatC(x, drop0trailing = F) = 0.04898</span>
+<span class="c1"># formatC(x, drop0trailing = T) = 0.04898</span>
+<span class="c1"># format(signif(x, digits = 3), nsmall = 3) = 0.049</span>
+<span class="c1"># format(signif(x, digits = 3), nsmall = 4) = 0.0490</span>
+<span class="c1"># format(signif(x, digits = 3), nsmall = 3 + floor(-log10(x))) = 0.0490</span>
+</code></pre></div>
+<p>where <code>floor(-log10(x))</code> returns the number of zeros between the decimal symbol <code>.</code> and the first nonzero value (assume <code>x &lt; 1</code>).</p>
+<p>With <code>scientific = TRUE</code> option, <code>nsmall</code> would fail,</p>
+<div class="highlight"><pre><span></span><code><span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span> <span class="n">scientific</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">nsmall</span> <span class="o">=</span> <span class="m">3</span> <span class="o">+</span> <span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="nf">log10</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span>
+<span class="c1"># format(signif(x, digits = 3), scientific = T, nsmall = 3 + floor(-log10(x))) = 4.9e-02</span>
+</code></pre></div>
+<p>as the manual <code>?format</code> said,</p>
+<blockquote>
+<p>the minimum number of digits to the right of the decimal point in formatting real/complex numbers in <strong>non-scientific formats</strong>. Allowed values are 0 &lt;= nsmall &lt;= 20.</p>
+</blockquote>
+<p>For a larger value, such as <code>37289.75</code>, the scientific form might be necessary,</p>
+<div class="highlight"><pre><span></span><code><span class="n">y</span> <span class="o">=</span> <span class="m">37289.75</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span> <span class="n">nsmall</span><span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span> <span class="o">+</span> <span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="nf">log10</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span> <span class="p">)</span> <span class="p">)</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span> <span class="n">scientific</span> <span class="o">=</span> <span class="bp">T</span><span class="p">))</span>
+<span class="c1"># format(signif(y, digits = 3), nsmall = max(0, 3 + floor(-log10(y)))) = 37300</span>
+<span class="c1"># format(signif(y, digits = 3), scientific = T) = 3.73e+04</span>
+</code></pre></div>
+<p>Finally, I found that <code>sprintf("%.2e", x)</code> would be helpful, and actually the approximation has been consider, instead of just truncating.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">p</span><span class="p">(</span><span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;%.2e, %.1e&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<span class="c1">#sprintf(&quot;%.2e, %.1e&quot;, x, y) = 4.90e-02, 3.7e+04</span>
+</code></pre></div>
+<h2 id="_1">序列减去常数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="m">-1</span><span class="p">))</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="c1">##0</span>
+<span class="c1">##1</span>
+<span class="c1">##2</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="n">n</span><span class="m">-1</span><span class="p">)))</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="c1">##1</span>
+<span class="c1">##2</span>
+</code></pre></div>
+<h2 id="rstudio">Rstudio 清空历史图象<a class="headerlink" href="#rstudio" title="Permanent link">&para;</a></h2>
+<p><a href="http://stackoverflow.com/questions/12766166/error-in-plot-new-figure-margins-too-large-in-r">Error in plot.new() : figure margins too large in R</a></p>
+<p><img alt="" src="error_too_large_for_figure.png" /></p>
+<h2 id="linux-r">linux 下更新 R<a class="headerlink" href="#linux-r" title="Permanent link">&para;</a></h2>
+<p>参考<a href="https://mirrors.tuna.tsinghua.edu.cn/CRAN/">https://mirrors.tuna.tsinghua.edu.cn/CRAN/</a> 中的README.md文件</p>
+<p>若已经通过源码安装，则可以通过找到源码文件夹，使用<code>sudo make uninstall</code>进行卸载。</p>
+<p>然后通过配置source.list，进行安装。</p>
+<h2 id="_2">删除当前工作区所有变量<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>rm<span class="o">(</span><span class="nv">list</span> <span class="o">=</span> ls<span class="o">(</span><span class="nv">all</span> <span class="o">=</span> TRUE<span class="o">))</span>
+</code></pre></div>
+<h2 id="window">window 安装包<a class="headerlink" href="#window" title="Permanent link">&para;</a></h2>
+<p>切换到R的安装路径下，在etc文件夹中编辑文件Rprofile.site文件</p>
+<div class="highlight"><pre><span></span><code>## set a CRAN mirror
+    local({r &lt;- getOption(&quot;repos&quot;)
+        r[&quot;CRAN&quot;] &lt;- &quot;http://mirrors.ustc.edu.cn/CRAN/&quot;
+          options(repos=r)})
+</code></pre></div>
 <h2 id="interpreting-residual-and-null-deviance-in-glm-r">Interpreting Residual and Null Deviance in GLM R<a class="headerlink" href="#interpreting-residual-and-null-deviance-in-glm-r" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="glm.png" /></p>
 <p>Refer to <a href="https://stats.stackexchange.com/questions/108995/interpreting-residual-and-null-deviance-in-glm-r">https://stats.stackexchange.com/questions/108995/interpreting-residual-and-null-deviance-in-glm-r</a></p>
@@ -2225,7 +2296,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p><a href="https://cran.r-project.org/web/packages/cowplot/vignettes/plot_grid.html">Arranging plots in a grid</a></p>
 <h2 id="x11-font-cannot-be-loaded">x11 font cannot be loaded<a class="headerlink" href="#x11-font-cannot-be-loaded" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://askubuntu.com/questions/449578/x11-font-adobe-helvetica-s-s-d-face-2-at-size-11-could-no">X11 font -adobe-helvetica-%s-%s-<em>-</em>-%d-<em>-</em>-<em>-</em>-<em>-</em>-*, face 2 at size 11 could not be loaded</a></p>
-<h2 id="r_1">安装多版本R<a class="headerlink" href="#r_1" title="Permanent link">&para;</a></h2>
+<h2 id="r">安装多版本R<a class="headerlink" href="#r" title="Permanent link">&para;</a></h2>
 <p><a href="https://support.rstudio.com/hc/en-us/articles/215488098-Installing-multiple-versions-of-R">Installing multiple versions of R</a></p>
 <h2 id="semi-transparency-is-not-supported-on-this-device">semi-transparency is not supported on this device<a class="headerlink" href="#semi-transparency-is-not-supported-on-this-device" title="Permanent link">&para;</a></h2>
 <p><a href="http://tinyheero.github.io/2015/09/15/semi-transparency-r.html">semi-transparency is not supported on this device</a></p>
@@ -2244,7 +2315,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <h2 id="unable-to-start-rstudio-in-centos-getting-error-unable-to-connect-to-service">unable to start rstudio in centos getting error “unable to connect to service”<a class="headerlink" href="#unable-to-start-rstudio-in-centos-getting-error-unable-to-connect-to-service" title="Permanent link">&para;</a></h2>
 <p><a href="https://stackoverflow.com/questions/24665599/unable-to-start-rstudio-in-centos-getting-error-unable-to-connect-to-service">unable to start rstudio in centos getting error “unable to connect to service”
 </a></p>
-<h2 id="r_2">发布R包<a class="headerlink" href="#r_2" title="Permanent link">&para;</a></h2>
+<h2 id="r_1">发布R包<a class="headerlink" href="#r_1" title="Permanent link">&para;</a></h2>
 <p><a href="http://r-pkgs.had.co.nz/release.html">Releasing a package</a></p>
 <h2 id="presentations-with-slidy">Presentations with Slidy<a class="headerlink" href="#presentations-with-slidy" title="Permanent link">&para;</a></h2>
 <p><a href="http://rmarkdown.rstudio.com/slidy_presentation_format.html">Presentations with Slidy
@@ -2352,7 +2423,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;RMySQL&#39;</span><span class="p">,</span> <span class="n">repos</span><span class="o">=</span><span class="s">&#39;http://cran.us.r-project.org&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r">How to select a CRAN mirror in R</a></p>
-<h2 id="r_3">R 符号运算<a class="headerlink" href="#r_3" title="Permanent link">&para;</a></h2>
+<h2 id="r_2">R 符号运算<a class="headerlink" href="#r_2" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://cosx.org/2016/07/r-symbol-calculate/">R 语言做符号计算</a>。</p>
 <div class="highlight"><pre><span></span><code><span class="n">NormDensity</span> <span class="o">&lt;-</span> <span class="nf">expression</span><span class="p">(</span><span class="m">1</span> <span class="o">/</span> <span class="nf">sqrt</span><span class="p">(</span><span class="m">2</span> <span class="o">*</span> <span class="kc">pi</span><span class="p">)</span> <span class="o">*</span> <span class="nf">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="m">2</span> <span class="o">/</span> <span class="m">2</span><span class="p">))</span>
 <span class="nf">D</span><span class="p">(</span><span class="n">NormDensity</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">)</span>
