@@ -1,3 +1,8 @@
+## 2021.03.17
+
+- It's perfect, you know. It's **gorgeous (极好的，非常漂亮的)**. It's almost **uncanny (神奇的，离奇的，神秘的)**.
+    - uncanny valley: 恐怖谷，[恐怖谷理论](https://zh.wikipedia.org/wiki/%E6%81%90%E6%80%96%E8%B0%B7%E7%90%86%E8%AE%BA)
+
 ## 2021.03.16
 
 - A relatively small variation in breakfast's **macronutrient (营养素)** composition has a striking impact on social decisions.
