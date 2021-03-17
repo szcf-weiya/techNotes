@@ -113,3 +113,4 @@ markdown_extensions:
   - meta
   - toc:
       permalink: true
+      toc_depth: 3

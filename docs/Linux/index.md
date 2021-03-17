@@ -1,20 +1,47 @@
-# Linux笔记
+# Linux Notes
 
-## check linux distribution
+## System Info
+
+- check linux distribution:
+    - `cat /etc/os-release` or `cat /ect/*-release`
+    - `lsb_release -a`
+    - `hostnamectl`
+- check kernel version:
+    - `uname -a` or `uname -mrs`
+    - `cat /proc/version`
+
+Refer to [How To Find Out My Linux Distribution Name and Version](https://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/)
+
+## Add User
 
 ```bash
-lsb_release -a
+$ useradd -m -s /bin/bash userName
+$ passwd userName
 ```
 
-If no such command, then resort to other methods mentioned in [How To Find Out My Linux Distribution Name and Version](https://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/)
+增加 sudo 权限
 
-## install win on ubuntu
+```bash
+$ sudoedit /etc/sudoers
+```
 
-参考[http://www.linuxdeveloper.space/install-windows-after-linux/](http://www.linuxdeveloper.space/install-windows-after-linux/)
+```diff
+# Allow members of group sudo to execute any command
+%sudo	ALL=(ALL:ALL) ALL
++weiya ALL=(ALL) NOPASSWD:ALL
++szcf715 ALL=(ALL) ALL
+```
 
-## fix locale issue
+其中 `NOPASSWD` 表示用户 `weiya` 在使用 `sudo` 时无需输入密码，而 `szcf715` 则需要输入密码才能使用 `sudo`.
 
-根据[维基百科](https://zh.wikipedia.org/wiki/%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE)，区域设置（locale），也称作“本地化策略集”、“本地环境”，是表达程序用户地区方面的软件设定。不同系统、平台、与软件有不同的区域设置处理方式和不同的设置范围，但是一般区域设置最少也会包括语言和地区。操作系统的区域设置通常比较复杂。区域设置的内容包括：数据格式、货币金额格式、小数点符号、千分位符号、度量衡单位、通货符号、日期写法、日历类型、文字排序、姓名格式、地址等等。
+`man sudoers` 给了一些具体的设置例子，搜索 `example sudoers`.
+
+参考 [https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04](http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672)
+
+## Locale
+
+> 区域设置（locale），也称作“本地化策略集”、“本地环境”，是表达程序用户地区方面的软件设定。不同系统、平台、与软件有不同的区域设置处理方式和不同的设置范围，但是一般区域设置最少也会包括语言和地区。区域设置的内容包括：数据格式、货币金额格式、小数点符号、千分位符号、度量衡单位、通货符号、日期写法、日历类型、文字排序、姓名格式、地址等等。
+> source: [维基百科](https://zh.wikipedia.org/wiki/%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE)
 
 locale 生效的顺序为
 
@@ -54,25 +81,11 @@ export LC_ALL=en_US.UTF-8
 
 来解决这个问题，这个可以写进 `.bashrc` 文件中，并且不需要 sudo 权限，而 [How do I fix my locale issue?](https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue) 中提到的几种方法需要 sudo 权限。
 
-## add user
 
-参考[https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04](http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672)
+## install win on ubuntu
 
-```bash
-useradd -m -s /bin/bash userName
-passwd userName
-```
+参考[http://www.linuxdeveloper.space/install-windows-after-linux/](http://www.linuxdeveloper.space/install-windows-after-linux/)
 
-增加sudo权限
-
-```bash
-sudoedit /etc/sudoers
-// 在配置文件中找到如下位置，并添加userName1那一行。
-## Allow root to run any commands anywhere
-root    ALL=(ALL)       ALL
-userName1 ALL=(ALL)       NOPASSWD:ALL
-userName2 ALL=(ALL)       ALL
-```
 
 ## unable to resolve host
 
@@ -84,40 +97,6 @@ userName2 ALL=(ALL)       ALL
 2. 添加sources.list,gpg
 3. 安装R
 4. 安装Rstudioserver（成功！！！哎。。搞了一下午就是因为上午莫名其妙更新了Ubuntu，不要手贱！！）
-
-## 终端分屏
-
-参考 [linux 工具——终端分屏与vim分屏](http://blog.csdn.net/u010454729/article/details/49496381)
-
-还可以切换后台运行，在服务器上操作特别方便。
-
-常用操作
-
-```bash
-# new a shell
-tmux
-# new a shell with name
-tmux new -s NAME
-# view all shell
-tmux ls
-# go back
-tmux attach-session -t [NUM]
-# simplify
-tmux attach -t [NUM]
-# more simplify
-tmux a -t [NUM]
-# via name
-tmux a -t NAME
-# complete reset: https://stackoverflow.com/questions/38295615/complete-tmux-reset
-tmux kill-server
-# rename: https://superuser.com/questions/428016/how-do-i-rename-a-session-in-tmux
-Ctrl + B, $
-```
-
-refer to
-- [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it)
-- [Getting started with Tmux](https://linuxize.com/post/getting-started-with-tmux/)
-- [tmux cheatsheet](https://gist.github.com/henrik/1967800)
 
 ## shared objects `.so` (dynamic library)
 
@@ -140,16 +119,6 @@ sudo ldconfig
 sudo echo "where/your/lib" >> /etc/ld.so.conf
 sudo ldconfig
 ```
-
-## Vim 对每行行首进行追加、替换
-
-按住 v 或者 V 选定需要追加的行，然后再进入 `:` 模式，输入正常的 `sed` 命令，如
-
-```bash
-s/^/#/g
-```
-
-参考 [Ubuntu 下对文本文件每行行首进行追加、替换](http://blog.csdn.net/u010555688/article/details/48416765)
 
 
 ## Make
