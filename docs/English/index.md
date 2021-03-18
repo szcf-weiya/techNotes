@@ -1,3 +1,7 @@
+## 2021.03.18
+
+- It was pretty **nonsensical (无意义的，荒谬的)** which makes me wonder if I could get more viewers for Loaded if I just started running my mouth and talking nonsense.
+
 ## 2021.03.17
 
 - It's perfect, you know. It's **gorgeous (极好的，非常漂亮的)**. It's almost **uncanny (神奇的，离奇的，神秘的)**.
