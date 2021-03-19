@@ -1,3 +1,7 @@
+## 2021.03.19
+
+- A centenarian is a person who lives to or beyond the age of 100 years. A supercentenarian is someone who has lived to or passed their 110th birthday.
+
 ## 2021.03.18
 
 - It was pretty **nonsensical (无意义的，荒谬的)** which makes me wonder if I could get more viewers for Loaded if I just started running my mouth and talking nonsense.
