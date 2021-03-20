@@ -1,3 +1,7 @@
+## 2021.03.20
+
+- the principle of this idea of **dissonance (不调和，不和谐音)** resolving to **consonance (调和，和音)**.
+
 ## 2021.03.19
 
 - A centenarian is a person who lives to or beyond the age of 100 years. A supercentenarian is someone who has lived to or passed their 110th birthday.
