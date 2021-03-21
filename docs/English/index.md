@@ -1,3 +1,7 @@
+## 2021.03.21
+
+- It's a total **rip-off (盗窃)** of an American reality show, but the imitation is unbearably clumsy.
+
 ## 2021.03.20
 
 - the principle of this idea of **dissonance (不调和，不和谐音)** resolving to **consonance (调和，和音)**.
