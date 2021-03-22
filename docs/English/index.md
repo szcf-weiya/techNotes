@@ -1,3 +1,7 @@
+## 2021.03.22
+
+- ladder type
+
 ## 2021.03.21
 
 - It's a total **rip-off (盗窃)** of an American reality show, but the imitation is unbearably clumsy.
