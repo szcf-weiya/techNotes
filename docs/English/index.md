@@ -1,3 +1,7 @@
+## 2021.03.23
+
+- Huckleberry friend: 童年和少年时代的好友，背景是天真无邪、无忧无虑的玩耍场面。[see also](https://zhuanlan.zhihu.com/p/85776575)
+
 ## 2021.03.22
 
 - ladder type
