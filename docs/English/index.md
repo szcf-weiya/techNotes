@@ -1,3 +1,8 @@
+## 2021.03.24
+
+- And instead, he watched those tensions **ratchet up (逐渐升高)** even further.
+    - ratchet: (防倒转的)棘齿
+
 ## 2021.03.23
 
 - Huckleberry friend: 童年和少年时代的好友，背景是天真无邪、无忧无虑的玩耍场面。[see also](https://zhuanlan.zhihu.com/p/85776575)
