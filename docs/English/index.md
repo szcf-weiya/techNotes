@@ -1,3 +1,7 @@
+## 2021.03.25
+
+- The coronavirus **debacle (崩溃，灾害)** now threatens to do the same to Boris Johnson.
+
 ## 2021.03.24
 
 - And instead, he watched those tensions **ratchet up (逐渐升高)** even further.
