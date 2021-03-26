@@ -1,3 +1,8 @@
+## 2021.03.26
+
+- It has its **perils (危险)** and its **merits (优点、好处)**.
+    - merits and demerits: 优缺点
+
 ## 2021.03.25
 
 - The coronavirus **debacle (崩溃，灾害)** now threatens to do the same to Boris Johnson.
