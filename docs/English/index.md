@@ -1,3 +1,8 @@
+## 2021.03.27
+
+- I highly value self-motivation, **initiative (主动性)** and creativity.
+    - peace initiative: 和平倡议
+
 ## 2021.03.26
 
 - It has its **perils (危险)** and its **merits (优点、好处)**.
