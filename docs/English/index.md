@@ -1,3 +1,20 @@
+## 2021.03.28
+
+- Government efforts to **resuscitate (使复活，使苏醒)** the market have **flopped (彻底失败，不成功)**.
+- The cosmological application therein deals with the incorporation of recent measurement in the study of [ΛCDM cosmological model](https://zh.wikipedia.org/wiki/%CE%9BCDM%E6%A8%A1%E5%9E%8B).
+- The **SDSS (Sloan Digital Sky Survey)**-III's Baryon Oscillation Spectroscopic Survey (BOSS) was designed to measure the expansion rate of the universe.
+- The central ideas of this earlier paper are the introduction of conformal Hamiltonian dynamics, where a **dissipative (耗散的)** term is added to the ODE found in HMC.
+- As someone who has worked in AI for decades, I've witnessed the failure of similar predictions of **imminent (迫近的，即将来临的)** human-level AI, and I'm certain these latest forecasts will **fall short (fail to meet expectations or standards)** as well.
+- The article on the CSI effect demonstrates a statistical fallacy, which is the view that, once a statistically significant result has been found, that this **retroactively (追溯地)** removes all concerns about inferential uncertainty due to variation in the data.
+- It was around this time that the **predicament (困难的处境，窘境)** of my existence struck me with a **jolt (震惊，惊讶)**.
+- The field is **interspersed (散布，散置)** with wild flowers.
+- Is consciousness an **emergent (意外的，自然发生的)** but otherwise **peripheral (次要的，外围的)** phenomenon of the compression demanded by the tremendous pressure of the objective, or the key algorithmic innovation, incrementally constructed, perfected and reliably converged on in the program space?
+    - emergent light: 应急灯
+- I **reveled (狂欢，陶醉)** at this **epiphany (【宗】(每年一月六日纪念耶稣显灵的)显现节；(神的)显现)** for a layer or two.
+- Machine learning researchers like to call these evil forged images as "**adversarial (敌对的，对抗的)** samples".
+- **Heresy (Herecy, 异端)** is any belief or theory that is strongly at variance with established beliefs or customs.
+- Students read, **flirt (调情)**, **converse (交谈)**, **mediate (冥想，深思)**, **brood (沉思)**.
+
 ## 2021.03.27
 
 - I highly value self-motivation, **initiative (主动性)** and creativity.
@@ -1450,7 +1467,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 20. A **synopsis** of its statistical findings prepared for outside publication, it says, did not meet its “rigorous scientific standards.”
 21. Pfizer said it **opted** against publication of its data because of its doubts about the results.
 22. One reason for caution: another class of anti-inflammatory therapies, called **non-steroidal** anti-inflammatory drugs (NSAIDS), showed no effect against mild-to-moderate Alzheimer’s in several clinical trials a decade ago.
-23. I bet this revelation leads to **a slew of** off-label prescriptions, just as happened with **estrogen (雌性激素)** a couple of decades ago. My physician friends told me then that you could not recruit subjects for a clinical trial because doctors were just prescribing estrogen for all **menopausal** women, to prevent Alzheimer’s.
+23. I bet this **revelation (启示，被揭露的真相)** leads to **a slew of** off-label prescriptions, just as happened with **estrogen (雌性激素)** a couple of decades ago. My physician friends told me then that you could not recruit subjects for a clinical trial because doctors were just prescribing estrogen for all **menopausal** women, to prevent Alzheimer’s.
 24. Novartis
 25. My problem with the **ideology**
 26. if you push hard you can find the weak points and **magnify** them until you get **ridiculous** inferences.
@@ -2183,7 +2200,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 62. idiosyncratic
 64. auction, auctioneer, bidding
 65. imperturbability
-67. precious
+67. A baby is god's most **precious (宝贵的，珍贵的)** gift.
 68. immensely
 69. composure
 70. frenzied (frantic; highly agitated)

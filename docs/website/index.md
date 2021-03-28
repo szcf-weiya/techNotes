@@ -575,10 +575,9 @@ bundle exec jekyll serve
 
 出现了新的错误
 
-```bash
-An error occurred while installing commonmarker (0.17.13), and Bundler cannot continue.
-Make sure that `gem install commonmarker -v '0.17.13' --source 'https://rubygems.org/'` succeeds before bundling.
-```
+
+> An error occurred while installing commonmarker (0.17.13), and Bundler cannot continue.
+> Make sure that `gem install commonmarker -v '0.17.13' --source 'https://rubygems.org/'` succeeds before bundling.
 
 后来参考 [Error while installing json gem 'mkmf.rb can't find header files for ruby'](https://stackoverflow.com/questions/20559255/error-while-installing-json-gem-mkmf-rb-cant-find-header-files-for-ruby)
 
@@ -689,3 +688,11 @@ ERROR:  While executing gem ... (Errno::EACCES)
 部署时选择 `CDN` 即可。另外注意到对于 `www.hohoweiya.xyz`，会主动匹配到 `hohoweiya.xyz`，所以无需重复对 `hohoweiya.xyz` 进行设置，如下图
 
 ![](ca-2.png)
+
+### 20210328
+
+并非所有网站都需要 CDN，刚刚发现 Github 很早就支持了个性域名强制 HTTPS，所以停用 `tech`, `blog`, `stat` 以及 `@` 这几个子域名的 CDN，而改用 Github 自带的 `enforce https`，具体做法为
+
+1. 停用 CDN
+2. 修改域名解析，`CNAME` 至 `szcf-weiya.github.io`
+3. 在仓库 `setting` 下勾上 `enforce https`
