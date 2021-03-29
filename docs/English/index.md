@@ -1,3 +1,8 @@
+## 2021.03.29
+
+- a harbor **clotted (凝结)** with **sunken (沉没的)** **vessel (船，舰)**
+    - blood clot: 血凝块，血块
+
 ## 2021.03.28
 
 - Government efforts to **resuscitate (使复活，使苏醒)** the market have **flopped (彻底失败，不成功)**.
