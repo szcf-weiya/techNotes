@@ -1,3 +1,7 @@
+## 2021.03.30
+
+- A long lost hope can be **rekindled (重燃)**.
+
 ## 2021.03.29
 
 - a harbor **clotted (凝结)** with **sunken (沉没的)** **vessel (船，舰)**
@@ -29,6 +33,7 @@
 
 - It has its **perils (危险)** and its **merits (优点、好处)**.
     - merits and demerits: 优缺点
+    - Water shortages also **imperil (使陷于危险，危及)** plans to expand energy production, threatening economic growth.
 
 ## 2021.03.25
 
@@ -525,7 +530,7 @@
 
 ## 2020.12.17
 
-- [No comma is used between the month and the year when they are the only two elements in the date.](https://www.thepunctuationguide.com/comma.html)
+- No comma is used between the month and the year when they are the only two elements in the date. [source](https://www.thepunctuationguide.com/comma.html)
     - The store closed its doors for good in October 1958.
     - ~~The store closed its doors for good in October, 1958.~~
 
@@ -743,15 +748,16 @@
 
 ## 2020.11.07
 
-- Any **idiot** can write a **critique**.
-- It can take a lot of work to **untangle** exactly what went wrong.
-- Original researchers do all the hard work, and "open science" critics are lazy **parasites**.
+- Any **idiot (傻子，笨蛋)** can write a **critique (批评，评论)**.
+- It can take a lot of work to **untangle (清理，解开...纠结)** exactly what went wrong.
+- Original researchers do all the hard work, and "open science" critics are lazy **parasites (食客，寄生虫)**.
 - People often **repress (抑制，约束)** painful experience, which years later may later reappear as memories or **disguised (假装，掩饰)** emotions.
--
 
 ## 2020.11.06
 
-- Both of these extensions **confer** improved convergence properties on the basic algorithm without a significant increase in computational cost.
+- Both of these extensions **confer** improved convergence properties **on** the basic algorithm without a significant increase in computational cost.
+    - confer sth. on/upon sb.: 授予，颁发（奖项、学位、荣誉或权利）
+    - confer with sb. on/about sth.: 商讨，协商，交换意见
 - The extensions to multiple-view reconstructions **necessitated** the introduction of nonlinear optimization strategies.
 - Thus it is that firmness and strength are the **concomitants** of death; softness and weakness, the **concomitants** of life.
 - It should be possible for a class to inherit from as many others as necessary, with an adequate mechanism for **disambiguating** name **clashes**.
@@ -1461,8 +1467,10 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - It is the kind of **semantic** nitpicking that has made progressive movements unappealing to many Americans.
 10. I **boycott (联合抵制，拒绝参加)** contact sports like football and ice hockey due to their intentionally violent nature.
 11.  I saw too many catchers and **umpires (裁判员，仲裁人)** rocked by **[foul tips (触击球)](https://en.wikipedia.org/wiki/Foul_tip)** to the face mask this season.
-12. see a catcher **don the gear** again after multiple **concussions**
-13. What really **riled** me was when the speaker said
+12. see a catcher **don (穿上)** the **gear (装备，衣服)** again after multiple **concussions (冲击，震动)**.
+    - Education should be **geared (使搭配，使适合)** to society's needs.
+    - With Thanksgiving around the corner, retailers are **gearing up (准备好)** for a battle.
+13. What really **riled (激怒)** me was when the speaker said
 14. This seems to me to be a **bizarre** sort of **techno-mysticism**.
 15. The **nascent (初期的，开始存在的，发生中的)** field of fair machine learning aims to ensure that decisions guided by algorithms are equitable.
 16. Over the last several years, three formal definitions of fairness have gained **prominence**
@@ -1579,7 +1587,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2019.09.19
 
-1. mundane
+1. Think of the **mundane (世俗的，平凡的)** tasks that you do everyday.
+    - mundane world: 红尘
 2. prominent
 3. sucker
 4. Theodore Roosevelt: 西奥多·罗斯福
@@ -2302,8 +2311,9 @@ up
 1. Before that beauty, the years of chaos at the heart of American politics would recede like some extraordinary dream.
 2. Power is still out to many homes and business, and flood waters are just beginning to recede leaving behind massive damage and debris.
 3. And a river went out of Eden to water the garden, and from thence it was parted, and became into four heads.
-4. The sterile soil would at least have been proof against a low-land degeneracy.
-5. orthocentre
+4. The **sterile (贫瘠的，无菌的)** soil would at least have been proof against a low-land degeneracy.
+    - sterile water: 无菌水
+5. orthocentre (orthocenter): 垂心
 6. Seen from a distance, the facade appears like a rigid volume, but dissolves into a network of structures and levels as you come closer.
 7. There is another absorbing aspect to this book: its recapitulation of the author's rise as an architecture critic.
 8. Up to this point, the legends and histories of the three races mostly agree.
@@ -2594,7 +2604,6 @@ letter back
 2. rally
 3. degradation
 4. dozens of
-5. imperiled
 6. tap into
 7. LEDs use only a quarter the energy of **incandescent bulbs (白炽灯)**.
 8. fluorescent
