@@ -1,3 +1,21 @@
+## 2021.03.31
+
+- If something **tickles (使发痒)** you, it makes you laugh.
+    - It really does not tickle my fancy. 它真的无法让我提起兴趣。
+- It's better to report results clearly and graphically rather than **contorting (扭曲)** the data to support some particular claim.
+- It **empowers (使能够，授权，允许)** you to **put your best foot forward (全力以赴, embark on (从事) an undertaking (工作，任务) with as much effort and determination as possible)** through exclusive access to features like vocabulary enhancement and suggestions for improving style and tone.
+    - empower your dream: 成就你的梦想
+    - When I sing on stage I **feel empowered (感觉很有力量)**.
+- **Scarcity (稀缺性)** means we must make a choice.
+- **Soak (渗透，浸泡)** the vegetables before cooking to clear the **remnant (剩余，残留)** of **pesticides (杀虫剂)**.
+- He **generously (慷慨地)** presented all their property to the state.
+- The cherry trees are **in full blossom (正开着花)** now. See also: [樱桃花 vs 樱花](https://www.zhihu.com/question/23137662)
+- My consciousness dissipated in a final **whiff (一点点)** of warm **exhalation (呼气)**.
+- **Mortgage-Backed Securities ([MBS](https://zh.wikipedia.org/wiki/%E4%B8%8D%E5%8B%95%E7%94%A2%E6%8A%B5%E6%8A%BC%E8%B2%B8%E6%AC%BE%E8%AD%89%E5%88%B8), 不动产抵押贷款证券)** and the Financial Crisis of 2008: A Post Mortem
+    - The AAA **tranches ([在投资界，用来描述可以被分割成并卖给投资者的小额证券](https://baike.baidu.com/item/Tranche))** of subprime science.
+    - subprime mortgage: 次级贷款
+    - subprime mortgage crisis: 次贷危机
+
 ## 2021.03.30
 
 - A long lost hope can be **rekindled (重燃)**.
@@ -1114,7 +1132,11 @@
 - a way to discharge pain and discomfort
 - take fat from out butts and put it in our cheeks
 - They're hardwired for struggle. You're wired for struggle.
-- it's a bailout, an oil spill.
+- it's a **bailout (紧急救助)**
+    - 纾困：口语化的非正式经济学术语，指出面拯救一个企业或国家免于破产，或防止金融危机蔓延的手段或计划
+- oil spill: 石油泄露
+    - spill into: 涌进
+    - spill out: 溢出
 - this is not our first rodeo.
 - be authentic and real
 - be fierce about
@@ -1205,7 +1227,8 @@
 - They're eminently qualified to make flat-screen TVs.
 - It's all grounded in the tenets of biology.
 - Our newest brain, our Homo sapien brain, our neocortex, corresponds with the "what" level.
-- our **limbic** brains are responsible for all of our feelings.
+- our **limbic (边缘的)** brains are responsible for all of our feelings.
+    - limbic system: 包含 **海马体 (Hippocampus)** 及 **杏仁体 (Amygdala)** 在内，支援多种功能例如情绪、行为及长期记忆的大脑结构。
 - rationalize it with the tangible things
 - the pursuit of powered man flight was like the dot com of the day.
 - under-capitalized
@@ -1335,8 +1358,9 @@
 - I will teach it some corpus of law
 - what about **rogue** agents?
 - it could represent an **existential** threat to all of humanity.
-- an **insatiable** thirst for information
-- only **insofar as** HAL commanded all aspects of the Discovery.
+- an **insatiable (不知足的，贪得无厌的)** thirst for information
+- only **insofar as (在...范围内)** HAL commanded all aspects of the Discovery.
+    - I'll help you insofar as I can.
 - it **ain't gonna** happen
 - command us capricious, chaotic humans.
 
@@ -2366,8 +2390,8 @@ up
 ## 2017.10.18
 
 1. impediment
-2. dispense
-3. scent
+2. The Red Cross **dispensed (分发)** food and clothing to the flood victims.
+3. Asthma attacks can be triggered by **pollen (花粉)**, dust, **harsh (刺激的，严厉的)** chemicals or **scents (气味)**.
 4. allergy
 5. thrive
 6. excrete
