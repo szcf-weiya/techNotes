@@ -1,3 +1,8 @@
+## 2021.04.01
+
+- donkey: 驴
+- I get **vertigo (眩晕)** on the step **stool (凳子)**.
+
 ## 2021.03.31
 
 - If something **tickles (使发痒)** you, it makes you laugh.
@@ -2021,7 +2026,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. the limpid outlook of a man who is at peace with himself as he awaits death.
 4. the lush fields were the envy of neighboring farmers.
 5. the lush sounds of the orchestra
-6. vagabonds meandering through life
+6. **vagabonds (流浪者，游手好闲者)** **meandering (漫步，蜿蜒缓慢流动)** through life
 7. Reading will fertilize vocabulary.
 8. A blind patriotic fervor is called chauvinism.
 
