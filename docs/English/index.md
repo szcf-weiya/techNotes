@@ -1,3 +1,8 @@
+## 2021.04.02
+
+- **Fudged (篡改)** statistics on the **Iraq War ([伊拉克战争](https://zh.wikipedia.org/wiki/%E4%BC%8A%E6%8B%89%E5%85%8B%E6%88%98%E4%BA%89))** death are still circulating today.
+- Japan decided to resume whaling last week after a year long **moratorium (暂停)**.
+
 ## 2021.04.01
 
 - donkey: 驴
@@ -2045,6 +2050,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - But those captured were anything but terrorists. (但那些被逮捕的人根本不是恐怖分子)
     - He didn't speak anything but Greek. (他只会说希腊语)
     - He's anything but an **abject (卑鄙的，卑劣的)** coward. (他决不是可鄙的懦夫)
+        - cowardice: 懦弱，胆怯
     - Do you ever do anything but **yack (废话)**? (你除了叨叨还会干啥？)
     - I will eat anything but carrot. (我什么都吃，就是不吃胡萝卜)
     - She is anything but a beauty. (她一点也不漂亮。)
