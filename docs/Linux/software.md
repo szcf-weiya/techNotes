@@ -274,6 +274,84 @@ Makefile:5988: recipe for target 'all' failed
 make: *** [all] Error 2
 ```
 
+## Input Methods for Chinese
+
+!!! info
+    目前试用谷歌拼音和RIME……
+
+### 搜狗输入法
+
+需要 fcitx，若没有装，
+
+```bash
+sudo apt-get install fcitx-bin
+sudo apt-get install fcitx-table
+```
+
+然后将输入法切换成 fcitx，在设置中语言那里，
+
+最后下载按照搜狗输入法，安装时我出现这样的问题导致安装失败，
+
+> No such key 'Gtk/IMModule' in schema 'org.gnome.settings-daemon.plugins.xsettings' as specified in override file '/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override'; ignoring override for this key.
+
+参考 [Install sogoupinyin on ubuntu 16.04LTS, with error 'Gtk/IMModule'](https://askubuntu.com/questions/883506/install-sogoupinyin-on-ubuntu-16-04lts-with-error-gtk-immodule)，将 `/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override` 中的 `IMModule` 一行改成
+
+```bash
+overrides={'Gtk/IMModule':<'fcitx'>}
+```
+
+然后再运行
+
+```bash
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+```
+
+再次安装便成功了。
+
+最后在语言栏中添加搜狗拼音的输入法即可。
+
+参考 [解决Ubuntu 18.04中文输入法的问题，安装搜狗拼音](https://blog.csdn.net/fx_yzjy101/article/details/80243710)
+
+### 谷歌拼音
+
+因为最近发现 wechat 崩溃时经常是无法切换到中文输入，所以怀疑会不会是搜狗输入法引起的，于是想尝试不同的中文输入法。在知乎上看到这个问题，[Ubuntu 上最好用的中文输入法是什么？](https://www.zhihu.com/question/19839748)
+
+里面也有人反映搜狗输入法会导致其他程序崩溃，
+
+> 搜狗输入法导致Jetbrains全家桶崩溃 @口袋里的星辰
+> ubuntu用搜狗输入法，会出各种问题，有其实和linux版微信一起用，坑就更多了。。@南瓜派三蔬
+
+于是更加坚定尝试其他输入法，因为很多人都推荐了谷歌拼音，便首先尝试了它。因为此前在装搜狗的时候已经将 ibus 换成了 fcitx，所以后面只需要添加新的输入法即可，
+
+```bash
+$ sudo apt install fcitx-googlepinyin
+```
+
+然后重启输入法（无需重启电脑），再打开输入法配置界面，此时不出意外已经有 google pinyin 的选项。因为一种输入法就足够了，而且避免后台影响，取消了搜狗输入法（并没有卸载程序）。
+
+试用了一下，还行，只是界面略微有点丑，不过这也不是重点。
+
+### 百度输入法
+
+既然添加个输入法这么简单，那索性再试试其它的，百度输入法可以在其官网中下载的到 `.deb` 文件，然后安装并重启输入法。
+
+正如上述知乎回答提到的，它乱码了！
+
+### RIME
+
+这主要是繁体中文，不过似乎应该也能切换简体。本身这是基于 ibus 的，不过 [fcitx 团队](https://github.com/fcitx)有在维护 fcitx 的版本，
+
+```bash
+$ sudo apt install fcitx-rime
+```
+
+因为想同时比较其与谷歌拼音的体验，所以目前同时保留了这两个输入法，可以通过 `SHIFT+CTRL` 快速切换输入法。
+
+RIME 默认是繁体的，可以通过 `` CTRL+` `` 来切换简繁体，另外也有全半角等设置。
+
+!!! note
+    除了这些在 fcitx4 上的方案，也许过段时间会尝试[更新的输入法框架 fcitx5](https://www.zhihu.com/question/333951476)
+
 ## Kazam
 
 Ubuntu 下 kazam 录屏 没声音解决方案
@@ -513,39 +591,6 @@ sudo dpkg -i
 ```
 sudo apt-get remove rstudio
 ```
-
-## 搜狗输入法
-
-需要 fcitx，若没有装，
-
-```bash
-sudo apt-get install fcitx-bin
-sudo apt-get install fcitx-table
-```
-
-然后将输入法切换成 fcitx，在设置中语言那里，
-
-最后下载按照搜狗输入法，安装时我出现这样的问题导致安装失败，
-
-> No such key 'Gtk/IMModule' in schema 'org.gnome.settings-daemon.plugins.xsettings' as specified in override file '/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override'; ignoring override for this key.
-
-参考 [Install sogoupinyin on ubuntu 16.04LTS, with error 'Gtk/IMModule'](https://askubuntu.com/questions/883506/install-sogoupinyin-on-ubuntu-16-04lts-with-error-gtk-immodule)，将 `/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override` 中的 `IMModule` 一行改成
-
-```bash
-overrides={'Gtk/IMModule':<'fcitx'>}
-```
-
-然后再运行
-
-```bash
-sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
-```
-
-再次安装便成功了。
-
-最后在语言栏中添加搜狗拼音的输入法即可。
-
-参考 [解决Ubuntu 18.04中文输入法的问题，安装搜狗拼音](https://blog.csdn.net/fx_yzjy101/article/details/80243710)
 
 ## TeXLive
 
