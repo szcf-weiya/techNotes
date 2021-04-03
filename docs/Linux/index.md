@@ -1313,3 +1313,8 @@ $ until ./login_lab.sh; do sleep 5; done
 ```
 
 refer to [How to run ssh command until succeeded?](https://unix.stackexchange.com/questions/404792/how-to-run-ssh-command-until-succeeded)
+
+## Set printer for my laptop
+
+1. choose LPD/LPR Host or Printer
+2. set host as hpm605dn1.sta.cuhk.edu.hk

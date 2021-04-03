@@ -1,3 +1,7 @@
+## 2021.04.03
+
+- The **drought (干旱)** depressed the water level in the **reservoirs (水库)**.
+
 ## 2021.04.02
 
 - **Fudged (篡改)** statistics on the **Iraq War ([伊拉克战争](https://zh.wikipedia.org/wiki/%E4%BC%8A%E6%8B%89%E5%85%8B%E6%88%98%E4%BA%89))** death are still circulating today.
