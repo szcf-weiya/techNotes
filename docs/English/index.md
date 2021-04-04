@@ -1,3 +1,8 @@
+## 2021.04.04
+
+- R. A. Fisher is usually perceived to have been a **staunch (坚定的，忠诚的)** critic of the Bayesian approach to statistic.
+- Addressing envelopes all day long is **dreary (沉闷单调)** work.
+
 ## 2021.04.03
 
 - The **drought (干旱)** depressed the water level in the **reservoirs (水库)**.
