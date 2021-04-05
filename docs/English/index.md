@@ -1,3 +1,7 @@
+## 2021.04.05
+
+- A lot of **propaganda (宣传)** has painted him as bad.
+
 ## 2021.04.04
 
 - R. A. Fisher is usually perceived to have been a **staunch (坚定的，忠诚的)** critic of the Bayesian approach to statistic.
