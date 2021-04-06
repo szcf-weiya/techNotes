@@ -1,3 +1,7 @@
+## 2021.04.06
+
+- You were **epically (宏伟地，史诗式地)** productive last week.
+
 ## 2021.04.05
 
 - A lot of **propaganda (宣传)** has painted him as bad.
