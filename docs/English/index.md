@@ -1,3 +1,7 @@
+## 2021.04.07
+
+- The five countries formed a regional trade **bloc (集团，联盟)**.
+
 ## 2021.04.06
 
 - You were **epically (宏伟地，史诗式地)** productive last week.
