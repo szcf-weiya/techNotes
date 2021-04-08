@@ -1,3 +1,9 @@
+## 2021.04.08
+
+- but also exposes imho the **chasm (裂口，分歧)** existing between statistical and machine learning perspectives on the problem.
+    - IMHO: in my humble opinion, 依本人愚见，恕我直言
+- If you refuse to let them go, I will bring **locusts (蝗虫)** into your country tomorrow. They will cover the face of the ground so that it cannot be seen. They will **devour (吞食)** what little you have left after the **hail (冰雹)**, including every tree that is growing in your fields.
+
 ## 2021.04.07
 
 - The five countries formed a regional trade **bloc (集团，联盟)**.
