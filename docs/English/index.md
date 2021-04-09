@@ -1,3 +1,7 @@
+## 2021.04.09
+
+- Are they **doomed (注定)** to live in **squalor (悲惨)**?
+
 ## 2021.04.08
 
 - but also exposes imho the **chasm (裂口，分歧)** existing between statistical and machine learning perspectives on the problem.
@@ -1720,6 +1724,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.09.29
 
 1. The next homophone is which and **witch (巫婆、女巫)**.
+    - witchcraft: 巫术，魔法
 2. Why are my eyes always **brimming (vi. 满溢； n. 深容器的内边或河、湖等水域的最高线)** with tears?
 3. She runs the business **in tandem with (同...合作、串联)** her husband.
 4. Contrary to popular belief, they serve no **salutary** economic purpose.

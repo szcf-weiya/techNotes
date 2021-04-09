@@ -5,6 +5,14 @@
 - [Timing in Julia](http://www.pkofod.com/2017/04/24/timing-in-julia/)
 - [Publication quality plots in Julia](https://tamaspapp.eu/post/plot-workflow/)
 
+## IDE
+
+### Juno in Atom
+
+Shortcuts:
+
+- `Ctrl-J; Ctrl-E`: switch back to the editor. The command is called `Julia Client: Focus Last Editor`
+
 ## Is there a way to undo `using` in Julia?
 
 NO
