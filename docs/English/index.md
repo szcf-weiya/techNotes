@@ -1,3 +1,7 @@
+## 2021.04.10
+
+- We get bacon and **ham (火腿，香肠)** from pigs.
+
 ## 2021.04.09
 
 - Are they **doomed (注定)** to live in **squalor (悲惨)**?
