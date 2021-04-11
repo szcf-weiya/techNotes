@@ -1,3 +1,8 @@
+## 2021.04.11
+
+- It is not a **panacea (万能药)** for every problem of statistical inference, nor does it apply equally effectively to every type of random process in its simplest form.
+- If $X_i$ denoted the **hexamine (六胺)** content of the $i$-th **pallet (货板)** produced by a **palletizing (码垛)** machine under identical production conditions,...
+
 ## 2021.04.10
 
 - We get bacon and **ham (火腿，香肠)** from pigs.
@@ -2227,7 +2232,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2017.10.04
 
 1. King Richard I of England was given the very laudatory epithet "the Lion-Hearted".
-2. His personal code of behavior on the playing field is epitomized by his favorite saying, Nice guys finish last.
+2. His personal code of behavior on the playing field is **epitomized (成为...的缩影)** by his favorite saying, Nice guys finish last.
+    - consider the sample as an **epitome (缩影)** of the underlying population.
 4. He **procrastinated (拖延，耽搁)** and missed the submission deadline.
 5. The strike may **prod (刺激，促使)** the government into action.
 6. A single **blast (爆炸，冲击波)** of the **shotgun (霰弹猎枪)** **squandered (驱散；浪费，挥霍)** the **herd (兽群、畜群)** of **deer (鹿)**.
