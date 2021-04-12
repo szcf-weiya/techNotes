@@ -1,5 +1,28 @@
 # 网站相关笔记
 
+## Jekyll
+
+Jekyll is a **Ruby Gem** that can be installed on most systems.
+
+- Ruby: 一种开源的面向对象程序设计的服务器端脚本语言，在 20 世纪 90 年代中期由日本的松本行弘（まつもとゆきひろ/Yukihiro Matsumoto）设计并开发。[Ruby 教程](https://www.runoob.com/ruby/ruby-tutorial.html)
+- [Jekyll is written in Ruby.](https://jekyllrb.com/docs/ruby-101/)
+- Gem: Gems are code you can include in Ruby projects. Jekyll is a gem. Many Jekyll plugins are also gems.
+- Gemfile: a list of gems.
+- Bundler: a gem that installs all gems in `Gemfile`.
+- RubyGems: Ruby 的一个包管理器，它提供一个分发 Ruby 程序和库的标准格式，还提供一个管理程序包安装的工具，类似于 Ubuntu 下的 apt-get, Centos 的 yum，Python 的 pip。[https://rubygems.org/](https://rubygems.org/)
+
+### unsupported plugins by Github pages
+
+> Github Pages sites are generated using the `--safe` option to disable plugins (with the exception of some [whitelisted plugins](https://pages.github.com/versions/)) for security reasons.
+> source: [Plugins on GitHub Pages](https://jekyllrb.com/docs/plugins/installation/)
+
+If use third-party plugins, such as [gjtorikian/jekyll-last-modified-at](https://github.com/gjtorikian/jekyll-last-modified-at), there are two possible ways
+
+- build locally
+- use travis or [github actions](https://jekyllrb.com/docs/continuous-integration/github-actions/).
+
+refer to [How do I configure GitHub to use non-supported Jekyll site plugins?](https://stackoverflow.com/questions/28249255/how-do-i-configure-github-to-use-non-supported-jekyll-site-plugins)
+
 ## 设置 Disqus
 
 [https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html](https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html)

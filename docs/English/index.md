@@ -1,3 +1,11 @@
+## 2021.04.12
+
+- The **Regency (摄政时代)** in the United Kingdom of Great Britain and Ireland was a period at the end of the Georgian era, when King George III was deemed unfit to rule due to his illness. The term Regency (or Regency era) can refer to various stretches of time; some are longer than the decade of the formal Regency, which lasted from 1811 to 1820. [wiki](https://en.wikipedia.org/wiki/Regency_era)
+    - Hyatt Regency: [凯悦酒店](https://zh.wikipedia.org/wiki/%E5%87%B1%E6%82%85%E9%85%92%E5%BA%97)
+- **Phenological (颅相学的)** responses to climate change (e.g. earlier leaf-out or egg **hatch (孵化)** date) are now well documented and clearly linked to rising temperatures in recent decades.
+- a list of big, high profile goals that proved far more challenging than people had anticipated **circa (「与日期连用」大约)** 1970
+- I admire the authors for simply admitting they made an error and stating clearly and without **equivocation (模棱两可的话)** that their original conclusions were not **substantiated (证明，证实)**.
+
 ## 2021.04.11
 
 - It is not a **panacea (万能药)** for every problem of statistical inference, nor does it apply equally effectively to every type of random process in its simplest form.
@@ -638,6 +646,7 @@
 ## 2020.12.9
 
 - By its very name, **anthropology (人类学)** encompasses the study of all humankind.
+    - The **anthropic principle (人择原理)** in physics states that we can derive certain properties of the world, or even the universe, based on the knowledge of our existence. [wiki](https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%8B%A9%E5%8E%9F%E7%90%86)
 
 ## 2020.12.8
 
@@ -2165,7 +2174,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 7. While most of the tasks undertaken by the interns were undemanding, a fact that led to the flood of applicants for the positions each year, there was one arduous/onerous duty: cleaning out the garbage bins in the laboratory.
 8. In an attempt to inveigle/entice voters to support her, the incumbent politician beguilingly greeted a room full of constituents and pleged to lower taxes--even though she had only ever done the opposite while in office.
 9. After a series of storms, the once arid landscape became verdant/bountiful for the first time in many months.
-10. Although he received many visitors, the misanthropic/curmudgeonly old man shooed them away after only a few minutes.
+10. Although he received many visitors, the **misanthropic (厌恶人类的)**/**curmudgeonly (小气的，脾气坏的)** old man shooed them away after only a few minutes.
 11. Eileen used to be a picky eater, but since a new complex of fine dining and ethnic restaurants opened in her neighborhood, she has been quite **epicurean (好美食的，【通过美食】享乐主义的)**/**gourmandizing (gourmandize: n. 大吃大喝 v. 狼吞虎咽)**.
 
 ## 2017.10.02

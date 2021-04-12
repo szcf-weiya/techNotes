@@ -1,4 +1,4 @@
-# julia相关
+# Julia 笔记
 
 - [主页](https://julialang.org/)
 - [My New Workflow with Julia 1.0](https://medium.com/@Jernfrost/my-new-workflow-with-julia-1-0-99711103d97c), mainly focus on how to develop a Julia package.
@@ -12,6 +12,46 @@
 Shortcuts:
 
 - `Ctrl-J; Ctrl-E`: switch back to the editor. The command is called `Julia Client: Focus Last Editor`
+
+## Array
+
+### `.=` vs `=` when assigning a row/column vector
+
+```julia
+using StatsBase
+a = zeros(2, 2)
+b = randn(3, 2)
+c = mean(b, dims = 1) # 1×2 Array{Float64,2}
+a[1, :] = c # OK!
+a[:, 1] = c # OK!
+a[1, :] .= c # DimensionMismatch("cannot broadcast array to have fewer dimensions")
+a[:, 1] .= c # DimensionMismatch("cannot broadcast array to have fewer dimensions")
+```
+
+similarly for column vector,
+
+```julia
+d = mean(randn(2, 2), dims = 2) # 2×1 Array{Float64,2}
+a[1, :] .= d # DimensionMismatch("cannot broadcast array to have fewer dimensions")
+```
+
+one remedy is to reduce the dimension of the row/column vector
+
+```julia
+a[1, :] = c[:] # OK!
+a[1, :] .= c[:] # OK!
+```
+
+an interesting phenomenon is the type returned after assigning regardless `a[1,:]` or `a[:,1]`
+
+```julia
+julia> a[:, 1] = c 
+1×2 Array{Float64,2}:
+julia> a[:, 1] = c[:]
+2-element Array{Float64,1}:
+julia> a[:, 1] .= c[:]
+2-element view(::Array{Float64,2}, :, 1) with eltype Float64:
+```
 
 ## Is there a way to undo `using` in Julia?
 
@@ -67,7 +107,9 @@ Foo{Int64}
 1. instance of some types
 2. object of some instances
 
-## Couldn't find libpython error
+## PyCall
+
+### Couldn't find libpython error
 
 ```julia
 ENV["PYTHON"]=""; Pkg.build("PyCall")
@@ -93,7 +135,7 @@ In the words of the [official documentation](https://github.com/JuliaPy/PyCall.j
 
 which supports my above guess.
 
-## Record for install `PyCall`
+### Record for install `PyCall`
 
 Switch to `py37` conda environment, then run `julia1.2.0`
 
