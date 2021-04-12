@@ -674,6 +674,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#jekyll" class="md-nav__link">
+    Jekyll
+  </a>
+  
+    <nav class="md-nav" aria-label="Jekyll">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unsupported-plugins-by-github-pages" class="md-nav__link">
+    unsupported plugins by Github pages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disqus" class="md-nav__link">
     设置 Disqus
   </a>
@@ -798,7 +818,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#jekyll" class="md-nav__link">
+  <a href="#jekyll_1" class="md-nav__link">
     jekyll中的相对路径
   </a>
   
@@ -1534,6 +1554,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#jekyll" class="md-nav__link">
+    Jekyll
+  </a>
+  
+    <nav class="md-nav" aria-label="Jekyll">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unsupported-plugins-by-github-pages" class="md-nav__link">
+    unsupported plugins by Github pages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disqus" class="md-nav__link">
     设置 Disqus
   </a>
@@ -1658,7 +1698,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#jekyll" class="md-nav__link">
+  <a href="#jekyll_1" class="md-nav__link">
     jekyll中的相对路径
   </a>
   
@@ -1838,6 +1878,27 @@
                 
                 
                 <h1 id="_1">网站相关笔记<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="jekyll">Jekyll<a class="headerlink" href="#jekyll" title="Permanent link">&para;</a></h2>
+<p>Jekyll is a <strong>Ruby Gem</strong> that can be installed on most systems.</p>
+<ul>
+<li>Ruby: 一种开源的面向对象程序设计的服务器端脚本语言，在 20 世纪 90 年代中期由日本的松本行弘（まつもとゆきひろ/Yukihiro Matsumoto）设计并开发。<a href="https://www.runoob.com/ruby/ruby-tutorial.html">Ruby 教程</a></li>
+<li><a href="https://jekyllrb.com/docs/ruby-101/">Jekyll is written in Ruby.</a></li>
+<li>Gem: Gems are code you can include in Ruby projects. Jekyll is a gem. Many Jekyll plugins are also gems.</li>
+<li>Gemfile: a list of gems.</li>
+<li>Bundler: a gem that installs all gems in <code>Gemfile</code>.</li>
+<li>RubyGems: Ruby 的一个包管理器，它提供一个分发 Ruby 程序和库的标准格式，还提供一个管理程序包安装的工具，类似于 Ubuntu 下的 apt-get, Centos 的 yum，Python 的 pip。<a href="https://rubygems.org/">https://rubygems.org/</a></li>
+</ul>
+<h3 id="unsupported-plugins-by-github-pages">unsupported plugins by Github pages<a class="headerlink" href="#unsupported-plugins-by-github-pages" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Github Pages sites are generated using the <code>--safe</code> option to disable plugins (with the exception of some <a href="https://pages.github.com/versions/">whitelisted plugins</a>) for security reasons.
+source: <a href="https://jekyllrb.com/docs/plugins/installation/">Plugins on GitHub Pages</a></p>
+</blockquote>
+<p>If use third-party plugins, such as <a href="https://github.com/gjtorikian/jekyll-last-modified-at">gjtorikian/jekyll-last-modified-at</a>, there are two possible ways</p>
+<ul>
+<li>build locally</li>
+<li>use travis or <a href="https://jekyllrb.com/docs/continuous-integration/github-actions/">github actions</a>.</li>
+</ul>
+<p>refer to <a href="https://stackoverflow.com/questions/28249255/how-do-i-configure-github-to-use-non-supported-jekyll-site-plugins">How do I configure GitHub to use non-supported Jekyll site plugins?</a></p>
 <h2 id="disqus">设置 Disqus<a class="headerlink" href="#disqus" title="Permanent link">&para;</a></h2>
 <p><a href="https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html">https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html</a></p>
 <p><a href="https://help.disqus.com/customer/en/portal/articles/912627-domain-migration-tool">迁移disqus讨论</a></p>
@@ -2003,7 +2064,7 @@ sudo apt-get install php7.2-curl
 <h2 id="nginx">nginx虚拟主机配置<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-14-04-lts">How To Set Up Nginx Server Blocks (Virtual Hosts) on Ubuntu 14.04 LTS</a></p>
 <p>实现将本站用webhooks将其更新至阿里云服务器上，这与eslcn是同一个服务器，所以通过建立虚拟主机实现。</p>
-<h2 id="jekyll">jekyll中的相对路径<a class="headerlink" href="#jekyll" title="Permanent link">&para;</a></h2>
+<h2 id="jekyll_1">jekyll中的相对路径<a class="headerlink" href="#jekyll_1" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://ricostacruz.com/til/relative-paths-in-jekyll">Relative paths in Jekyll</a></p>
 <h2 id="url-uri">URL 和 URI<a class="headerlink" href="#url-uri" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://www.zhihu.com/question/19557151">URL 和 URI 有什么不同? - 知乎</a></p>

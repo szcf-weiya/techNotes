@@ -602,6 +602,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    Array
+  </a>
+  
+    <nav class="md-nav" aria-label="Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs-when-assigning-a-rowcolumn-vector" class="md-nav__link">
+    .= vs = when assigning a row/column vector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#is-there-a-way-to-undo-using-in-julia" class="md-nav__link">
     Is there a way to undo using in Julia?
   </a>
@@ -651,16 +671,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pycall" class="md-nav__link">
+    PyCall
+  </a>
+  
+    <nav class="md-nav" aria-label="PyCall">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#couldnt-find-libpython-error" class="md-nav__link">
     Couldn't find libpython error
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#record-for-install-pycall" class="md-nav__link">
     Record for install PyCall
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1651,6 +1684,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    Array
+  </a>
+  
+    <nav class="md-nav" aria-label="Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs-when-assigning-a-rowcolumn-vector" class="md-nav__link">
+    .= vs = when assigning a row/column vector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#is-there-a-way-to-undo-using-in-julia" class="md-nav__link">
     Is there a way to undo using in Julia?
   </a>
@@ -1700,16 +1753,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pycall" class="md-nav__link">
+    PyCall
+  </a>
+  
+    <nav class="md-nav" aria-label="PyCall">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#couldnt-find-libpython-error" class="md-nav__link">
     Couldn't find libpython error
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#record-for-install-pycall" class="md-nav__link">
     Record for install PyCall
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2033,7 +2099,7 @@
               
                 
                 
-                <h1 id="julia">julia相关<a class="headerlink" href="#julia" title="Permanent link">&para;</a></h1>
+                <h1 id="julia">Julia 笔记<a class="headerlink" href="#julia" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="https://julialang.org/">主页</a></li>
 <li><a href="https://medium.com/@Jernfrost/my-new-workflow-with-julia-1-0-99711103d97c">My New Workflow with Julia 1.0</a>, mainly focus on how to develop a Julia package.</li>
@@ -2046,6 +2112,33 @@
 <ul>
 <li><code>Ctrl-J; Ctrl-E</code>: switch back to the editor. The command is called <code>Julia Client: Focus Last Editor</code></li>
 </ul>
+<h2 id="array">Array<a class="headerlink" href="#array" title="Permanent link">&para;</a></h2>
+<h3 id="vs-when-assigning-a-rowcolumn-vector"><code>.=</code> vs <code>=</code> when assigning a row/column vector<a class="headerlink" href="#vs-when-assigning-a-rowcolumn-vector" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">StatsBase</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c"># 1×2 Array{Float64,2}</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span> <span class="c"># OK!</span>
+<span class="n">a</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span> <span class="c"># OK!</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span> <span class="o">.=</span> <span class="n">c</span> <span class="c"># DimensionMismatch(&quot;cannot broadcast array to have fewer dimensions&quot;)</span>
+<span class="n">a</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">.=</span> <span class="n">c</span> <span class="c"># DimensionMismatch(&quot;cannot broadcast array to have fewer dimensions&quot;)</span>
+</code></pre></div>
+<p>similarly for column vector,</p>
+<div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dims</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="c"># 2×1 Array{Float64,2}</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span> <span class="o">.=</span> <span class="n">d</span> <span class="c"># DimensionMismatch(&quot;cannot broadcast array to have fewer dimensions&quot;)</span>
+</code></pre></div>
+<p>one remedy is to reduce the dimension of the row/column vector</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="o">:</span><span class="p">]</span> <span class="c"># OK!</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">:</span><span class="p">]</span> <span class="o">.=</span> <span class="n">c</span><span class="p">[</span><span class="o">:</span><span class="p">]</span> <span class="c"># OK!</span>
+</code></pre></div>
+<p>an interesting phenomenon is the type returned after assigning regardless <code>a[1,:]</code> or <code>a[:,1]</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span> 
+<span class="mi">1</span><span class="n">×2</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="o">:</span><span class="p">]</span>
+<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">.=</span> <span class="n">c</span><span class="p">[</span><span class="o">:</span><span class="p">]</span>
+<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="n">view</span><span class="p">(</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span> <span class="o">:</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="n">with</span> <span class="n">eltype</span> <span class="kt">Float64</span><span class="o">:</span>
+</code></pre></div>
 <h2 id="is-there-a-way-to-undo-using-in-julia">Is there a way to undo <code>using</code> in Julia?<a class="headerlink" href="#is-there-a-way-to-undo-using-in-julia" title="Permanent link">&para;</a></h2>
 <p>NO</p>
 <ol>
@@ -2083,7 +2176,8 @@
 <li>instance of some types</li>
 <li>object of some instances</li>
 </ol>
-<h2 id="couldnt-find-libpython-error">Couldn&rsquo;t find libpython error<a class="headerlink" href="#couldnt-find-libpython-error" title="Permanent link">&para;</a></h2>
+<h2 id="pycall">PyCall<a class="headerlink" href="#pycall" title="Permanent link">&para;</a></h2>
+<h3 id="couldnt-find-libpython-error">Couldn&rsquo;t find libpython error<a class="headerlink" href="#couldnt-find-libpython-error" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span> <span class="n">Pkg</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s">&quot;PyCall&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>to install its own private Miniconda distribution for you, in a way that won&rsquo;t interfere with your other Python installations.</p>
@@ -2099,7 +2193,7 @@
 <p>If you use Python virtualenvs, then be aware that PyCall uses the virtualenv it was built with by default, even if you switch virtualenvs. If you want to switch PyCall to use a different virtualenv, then you should switch virtualenvs and run rm(Pkg.dir(&ldquo;PyCall&rdquo;,&rdquo;deps&rdquo;,&rdquo;PYTHON&rdquo;)); Pkg.build(&ldquo;PyCall&rdquo;).</p>
 </blockquote>
 <p>which supports my above guess.</p>
-<h2 id="record-for-install-pycall">Record for install <code>PyCall</code><a class="headerlink" href="#record-for-install-pycall" title="Permanent link">&para;</a></h2>
+<h3 id="record-for-install-pycall">Record for install <code>PyCall</code><a class="headerlink" href="#record-for-install-pycall" title="Permanent link">&para;</a></h3>
 <p>Switch to <code>py37</code> conda environment, then run <code>julia1.2.0</code></p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span> <span class="n">pkg</span><span class="o">&gt;</span> <span class="n">add</span> <span class="n">PyCall</span>
 </code></pre></div>
