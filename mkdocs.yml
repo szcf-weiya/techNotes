@@ -3,43 +3,51 @@ nav:
     - Home: index.md
     - Linux:
       - 系统: Linux/index.md
-      - 软件: Linux/software.md
-      - shell: shell/index.md
+      - 大软件: Linux/software.md
+      - 小工具: Linux/tools.md
       - 服务器: Linux/servers.md
       - 16to18: Linux/16to18.md
       - 笔记本作为服务器: Linux/asAserver.md
-    - R:
-      - 一般问题: R/index.md
-      - 统计基础: R/basic.md
-      - plot 作图: R/plot.md
-      - ggplot 作图: R/ggplot.md
-      - 案例分析: R/legend_from_zhihu.md
-      - 源码安装 RMySQL: R/install-notes-for-rmysql.md
-      - new sample function (v3.6.0+): R/sample.md
-    - Python:
-      - 一般问题: python/index.md
-      - Conda: python/conda.md
-      - PyStan 体验: python/pystan/README.md
-      - OpenCV: python/opencv.md
-      - 金融数据爬虫: python/finance/README.md
-      - rpy2: python/rpy2.md
-      - 自建关键词索引页: python/esltag.md
-    - Julia: julia/index.md
-    - Tex:
-      - 一般问题: TeX/index.md
-      - arXiv: TeX/arxiv.md
-    - Website:
-      - Website: website/index.md
-      - CSS: website/css.md
-      - JS: js/index.md
-    - Guitar: guitar/index.md
+      - Shell: shell/index.md
+    - StatProgramming:
+      - R:
+        - 一般问题: R/index.md
+        - 统计基础: R/basic.md
+        - plot 作图: R/plot.md
+        - ggplot 作图: R/ggplot.md
+        - 案例分析: R/legend_from_zhihu.md
+        - 源码安装 RMySQL: R/install-notes-for-rmysql.md
+        - new sample function (v3.6.0+): R/sample.md
+      - Python:
+        - 一般问题: python/index.md
+        - Conda: python/conda.md
+        - PyStan 体验: python/pystan/README.md
+        - OpenCV: python/opencv.md
+        - 金融数据爬虫: python/finance/README.md
+        - rpy2: python/rpy2.md
+        - 自建关键词索引页: python/esltag.md
+      - Julia: julia/index.md
+      - Matlab: Matlab/index.md
+    - CSProgramming:
+      - Cpp: Cpp/index.md
+      - Java: java/index.md
+      - SQL: SQL/index.md
+      - Cuda: cuda/index.md
+    - DocProgramming:
+      - TeX:
+        - 一般问题: TeX/index.md
+        - arXiv: TeX/arxiv.md
+      - Web:
+        - Website: website/index.md
+        - CSS: website/css.md
+        - JS: js/index.md
+        - PHP: PHP/index.md
     - Network:
       - 一般问题: Internet/index.md
       - 访问内网: Internet/sci-int.md
       - IPv6: Internet/ipv6.md
-    - Tools:
+    - Development:
       - Autotools: autotools/index.md
-      - Emacs: Emacs/index.md
       - Git: Git/index.md
       - Phantomjs: phantomjs/index.md
       - Qt: Qt/index.md
@@ -50,21 +58,15 @@ nav:
       - Matrix: stats/matrix.md
     - English: English/index.md
     - Finance: finance/index.md
-    - Mi: mi/index.md
-    - Win: win/index.md
+    - Guitar: guitar/index.md
+    - Windows: win/index.md
     - Fresh: fresh/index.md
     - Links: links/index.md
     - Misc:
       - 小程序: misc/wx.md
       - jssdk: misc/wxjssdk.md
       - 讲座: misc/report.md
-    - Others:
-      - Matlab: Matlab/index.md
-      - Cpp: Cpp/index.md
-      - Java: java/index.md
-      - SQL: SQL/index.md
-      - Cuda: cuda/index.md
-      - PHP: PHP/index.md
+      - Mi: mi/index.md
 
 theme:
   name: 'material'

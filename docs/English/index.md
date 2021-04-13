@@ -1,3 +1,7 @@
+## 2021.04.13
+
+- I am a dreamer, but I'm also extremely **pragmatic (务实的)**.
+
 ## 2021.04.12
 
 - The **Regency (摄政时代)** in the United Kingdom of Great Britain and Ireland was a period at the end of the Georgian era, when King George III was deemed unfit to rule due to his illness. The term Regency (or Regency era) can refer to various stretches of time; some are longer than the decade of the formal Regency, which lasted from 1811 to 1820. [wiki](https://en.wikipedia.org/wiki/Regency_era)

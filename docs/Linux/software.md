@@ -1,4 +1,4 @@
-# Softwares on Linux
+# Big Softwares on Linux
 
 ## Atom
 
@@ -208,6 +208,40 @@ $ sudo vi /etc/docker/daemon.json
 $ sudo systemctl daemon-reload
 $ sudo systemctl restart docker
 ```
+
+## Emacs
+
+### 常用命令
+
+1. 切换缓存区：C-o
+2. 水平新建缓存区：C-2
+3. 垂直新建缓存区：C-3
+4. 关闭当前缓存区：C-0
+5. 删除缓存区：C-k
+6. 只保留当前缓存区：C-1
+
+### Emacs使用Fcitx中文
+
+参考博客：[fcitx-emacs](http://wangzhe3224.github.io/emacs/2015/08/31/fcitx-emacs.html)
+
+- Step 1: 确定系统当前支持的字符集
+
+```bash
+locale -a
+```
+
+若其中有 zh_CN.utf8，则表明已经包含了中文字符集。
+
+- Step 2: 设置系统变量
+
+```bash
+emacs ~/.bashrc
+export LC_CTYPE=zh_CN.utf8 
+source ~/.bashrc
+```
+
+- 配置文件: [http://download.csdn.net/download/karotte/3812760](http://download.csdn.net/download/karotte/3812760)
+- 自动补全: 参考[emacs自动补全插件auto-complet和yasnippet，安装、配置和扩展](http://www.cnblogs.com/liyongmou/archive/2013/04/26/3044155.html#sec-1-2)
 
 ## ImageMagick
 
@@ -1132,3 +1166,13 @@ And general introduction for DLL can be found in [DLL文件到底是什么，它
 - 在Windows中，文件扩展名如下所示：静态库（`.lib`）和动态库（`.dll`）。主要区别在于静态库在编译时链接到可执行文件; 而动态链接库在运行时才会被链接。
 - 通常不会在计算机上看到静态库，因为静态库直接嵌入到模块（EXE或DLL）中。动态库是一个独立的文件。
 - 一个DLL可以在任何时候被改变，并且只在EXE显式地加载DLL时在运行时加载。静态库在EXE中编译后无法更改。一个DLL可以单独更新而无需更新EXE本身。
+
+## Zotero
+
+### Tips when saving
+
+- https://www.sciencedirect.com: press the save button on the page of the article, and no need to go to the Elsevier Enhanced Reader page by clicking "Download pdf", otherwise the saved item does not properly show the bib info and the type becomes webpage instead of journal
+
+![](https://user-images.githubusercontent.com/13688320/114495190-3c6c9d80-9c50-11eb-9d24-dda8ee02acc7.png)
+
+![](https://user-images.githubusercontent.com/13688320/114495254-560de500-9c50-11eb-8ab0-aa415b3608c0.png)

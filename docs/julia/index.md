@@ -5,13 +5,52 @@
 - [Timing in Julia](http://www.pkofod.com/2017/04/24/timing-in-julia/)
 - [Publication quality plots in Julia](https://tamaspapp.eu/post/plot-workflow/)
 
-## IDE
+## Version Control
 
-### Juno in Atom
+1. download the "Generic Linux Binaries for x86 (64-bit)" of a particular version from [Download Julia](https://julialang.org/downloads/)
+2. put it into customed folder, such as `src` under home directory,
+3. link it to the system path, such as
 
-Shortcuts:
+```bash
+cd /usr/local/bin
+sudo ln -s /home/weiya/src/julia-1.3.1/bin/julia julia1.3.1
+```
 
-- `Ctrl-J; Ctrl-E`: switch back to the editor. The command is called `Julia Client: Focus Last Editor`
+Currently, I have installed the following different versions.
+
+```bash
+$ ll | grep julia
+lrwxrwxrwx  1 root root      37 8月  31  2018 julia -> /home/weiya/src/julia-1.0.0/bin/julia*
+lrwxrwxrwx  1 root root      37 7月  30  2019 julia1.1.1 -> /home/weiya/src/julia-1.1.1/bin/julia*
+lrwxrwxrwx  1 root root      37 9月  18 15:28 julia1.2.0 -> /home/weiya/src/julia-1.2.0/bin/julia*
+lrwxrwxrwx  1 root root      37 3月  18 10:25 julia1.3.1 -> /home/weiya/src/julia-1.3.1/bin/julia*
+```
+
+The source folders can be freely moved to another place, and only need to update the symbol links, which can be firstly deleted and then created, or use
+
+```bash
+sudo ln -sf ... ...
+```
+
+to override current link. But, if the links is to a folder, then another flag need to be added to override,
+
+```bash
+sudo ln -sfn ... ...
+```
+
+refer to [How to change where a symlink points](https://unix.stackexchange.com/questions/151999/how-to-change-where-a-symlink-points)
+
+Also, note that the link to a folder should be deleted with
+
+```bash
+rm folder
+```
+
+instead of
+
+```bash
+rm -r folder/ # delete the original folder
+```
 
 ## Array
 
@@ -53,36 +92,80 @@ julia> a[:, 1] .= c[:]
 2-element view(::Array{Float64,2}, :, 1) with eltype Float64:
 ```
 
-## Is there a way to undo `using` in Julia?
+### `dims=1`
 
-NO
+总是记不太清 `sum`, `mean` 的时候 `dims=1` 是按行求和还是按列求和，经常先玩个 toy example 才能分辨出来。比如，
 
-1. [https://stackoverflow.com/questions/33927523/can-i-make-julia-forget-a-method-from-the-repl](https://stackoverflow.com/questions/33927523/can-i-make-julia-forget-a-method-from-the-repl)
-2. [https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia](https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia)
+```julia
+julia> a = rand(4, 3)
+4×3 Array{Float64,2}:
+ 0.279181  0.0903167  0.148329
+ 0.486691  0.869156   0.0538834
+ 0.110781  0.836284   0.486467
+ 0.810343  0.208659   0.759561
 
-Although we cannot remove some defined function, with the powerful [Revise.jl](https://github.com/timholy/Revise.jl), we can update the functions without reloading the scripts.
+julia> sum(a, dims=1)
+1×3 Array{Float64,2}:
+ 1.687  2.00442  1.44824
+```
 
-## 关于 `mean()`
+即把 `dims` 所代表的维度元素加起来，或者说沿着 dims 进行运算。这一点与 `R` 的函数 `apply` 中 `margin` 参数作用刚好相反，
 
-1. `using Statistics` 后才能用 `mean()`，而 `using Distributions` 后也能用 `mean()`。前者表示 `generic function with 5 methods`，后者称 `generic function with 78 methods`.
+```r
+> a = matrix(rnorm(12), 4, 3)
+> a
+           [,1]        [,2]       [,3]
+[1,]  1.1535199  0.03198768  0.2857126
+[2,] -1.3616720  0.32325598  1.9242805
+[3,] -0.6519595 -1.14800119 -0.3635221
+[4,]  1.2713182  0.98515312  0.2269218
+> apply(a, 1, sum)
+[1]  1.4712202  0.8858644 -2.1634828  2.4833932
+```
 
-## `Normal` 中标准差为 0 的问题
+这样交叉记忆，不知道效果会不会好点。
 
-![](normal-zero-var.png)
+### array in functions
 
-可知，最低可以支持 `1e-323`，所以似乎也支持 `sqrt(1e-646)`，但并没有，而且当 `sqrt(1e-324)` 时精度就不够了，似乎 `sqrt(x)` 的精度与 `x` 的精度相当。
+```julia
+julia> function g(x)
+           x += [1, 2]
+       end
+g (generic function with 1 method)
+julia> function g!(x)
+           x .+= [1, 2]
+       end
+g! (generic function with 1 method)
+julia> x = [1,2];
 
-## 连等号赋值
+julia> g(x)'
+1×2 Adjoint{Int64,Array{Int64,1}}:
+ 2  4
+
+julia> x'
+1×2 Adjoint{Int64,Array{Int64,1}}:
+ 1  2
+
+julia> g!(x)'
+1×2 Adjoint{Int64,Array{Int64,1}}:
+ 2  4
+
+julia> x'
+1×2 Adjoint{Int64,Array{Int64,1}}:
+ 2  4
+```
+
+Note that sometimes `.+=` may make the program much slower, such as [en/code/2019-06-14-ML/GD2.jl](https://github.com/szcf-weiya/en/blob/3c8daeb4e0f477f5ea40dc2bb44d832faa4bbbb6/code/2019-06-14-ML/GD2.jl#L10)
+
+## Base
+
+### 连等号赋值
 
 如果采用 `a=b=c=ones(10)` 形式赋值的话，则如果后面改变 `a` 的值，`b` 和 `c` 的值也将随之改变。
 
 但如果 `a=b=c=1` 为常值的话，则三个变量的值还是独立的。
 
-## `@distributed`
-
-如果配合 `sharedarrays` 使用时，需要加上 `@sync`, 参考[@fetch](https://docs.julialang.org/en/v1/stdlib/Distributed/#Distributed.@fetch)
-
-## ERROR: `expected Type{T}`
+### ERROR: `expected Type{T}`
 
 参考 [ERROR: LoadError: TypeError: Type{...} expression: expected Type{T}, got Module](https://discourse.julialang.org/t/error-loaderror-typeerror-type-expression-expected-type-t-got-module/1230/4)
 
@@ -95,7 +178,7 @@ Foo{Int64}
 
 会爆出这样的错误。但是一开始竟然没有仔细类比，最后在 REPL 中逐行试验才发现是，`using SharedArrays` 后直接用 `SharedArrays{Float64}(10)`，这与上面 `Foo` 的错误形式完全一样，竟然没有仔细类比。哎，看来以后多思考一下错误可能的原因，不要一味蛮力试验。
 
-## type, instance, and object
+### type, instance, and object
 
 看两个句子：
 
@@ -106,6 +189,182 @@ Foo{Int64}
 
 1. instance of some types
 2. object of some instances
+
+## Distributed
+
+### `@distributed`
+
+如果配合 `sharedarrays` 使用时，需要加上 `@sync`, 参考[@fetch](https://docs.julialang.org/en/v1/stdlib/Distributed/#Distributed.@fetch)
+
+
+## Juno
+
+!!! info 
+    An IDE on Atom.
+
+### Shortcuts
+
+- `Ctrl+J Ctrl+E`: switch from REPL to editor, refer to [the correct shortcut is be Ctrl-J Ctrl-E (and the command is called Julia Client: Focus Last Editor)](https://discourse.julialang.org/t/win10-how-to-switch-keyshort-from-editor-to-repl/22911), an inspiration is that I can check it via `Ctrl-Shift-P`.
+
+### Bug when `Cltr + Enter`
+
+当我使用 `Ctrl + Enter` 运行下列语句时，
+
+```julia
+using Images, ImageView
+img = load(download("https://juliaimages.org/latest/assets/segmentation/horse.jpg"));
+imshow(img)
+```
+
+REPL 冻住了，一直停在
+
+```julia
+Dict{String,Any} with 4 entries:
+```
+
+而我如果直接将上述语句复制到 REPL 中运行时，一切 OK，正常显示为
+
+```julia
+Dict{String,Any} with 4 entries:
+  "gui"         => Dict{String,Any}("window"=>GtkWindowLeaf(name="", parent, wi…
+  "roi"         => Dict{String,Any}("redraw"=>50: "map(clim-mapped image, input…
+  "annotations" => 3: "input-2" = Dict{UInt64,Any}() Dict{UInt64,Any}
+  "clim"        => 2: "CLim" = CLim{RGB{Float64}}(RGB{Float64}(0.0,0.0,0.0), RG…
+```
+
+找到类似的 Issue: [[BUG] Evaluation in Editor freezes Atom occasionally](https://github.com/JunoLab/Juno.jl/issues/320)
+
+虽然其解决方案不太清楚，是有关 notification-daemon，但是维护者 @pfitzseb 的回复
+
+> OS level notifications are disabled completly in the latest Juno release because they were causing crashes on Mac and didn't really seem to work on other platforms.
+
+提醒我或许是因为 Juno 的版本问题，当前版本为 v0.7.2, 最新版本为 v0.8.1
+
+仅仅更新 Juno.jl 的版本似乎还不行，另外将 Atom.jl 从 v0.12.8 更新到 v0.12.9
+
+最后竟然[真的解决了！](https://github.com/JunoLab/Juno.jl/issues/320#issuecomment-599213691)
+
+### System Proxy
+
+当在 `.bashrc` 添加 `http_proxy` 和 `https_proxy` 中并 source 之后，直接在 shell 里面开的 julia session 中，验证当前 ip
+
+```julia
+run(`curl ifconfig.me`)
+```
+
+或者直接查看
+
+```julia
+ENV["http_proxy"]
+```
+
+发现可以使用系统代理。但是在 Atom 中开的 julia，则不行。找到 Atom 一条相关的 issue: [[Atom 1.32.0] Does not inherit environment variables when launched not from the command line](https://github.com/atom/atom/issues/18318)，但是我已经是最新版了，不应该存在这个问题。但是当我通过 `Ctrl-Shift-i` 打开 devtools，验证 `process.env["http_proxy"]`，显示 undefined；而且直接在 source 之后的 terminal 中打开，也显示 undefined。猜想，只对 PATH 有效？或者因为 Juno.jl?
+
+跳过这个问题，最后直接在 `startup.jl` 文件中添加
+
+```julia
+ENV["http_proxy"] =
+ENV["https_proxy"]
+```
+
+进行设置，这参考了 [Install packages behind the proxy](https://discourse.julialang.org/t/install-packages-behind-the-proxy/23298/2)
+
+## Plot
+
+### 等高线图 (contour)
+
+```julia
+using Plots
+using Distributions
+
+x_grid = range(-2, 2, length=100)
+y_grid = range(-2, 2, length=100)
+Sigma = [1 0.9; 0.9 1];
+contour(x_grid, y_grid, (x, y)->pdf(MvNormal([0, 0], Sigma), [x, y]), cbar=false)
+```
+
+### 网格 3D 图
+
+要求颜色随着高度渐变，这包含两部分的渐变，
+
+- 不同纬度上的每一个截面圆指定颜色
+- 经线的的不同维度需要分段指定颜色
+
+![](https://user-images.githubusercontent.com/13688320/83348932-2bca7600-a363-11ea-9ad0-07da29102ca0.png)
+
+第一点其实很简单，当生成好一组渐变颜色后，比如
+
+```julia
+colors = cgrad(:summer, nz, categorical = true)
+```
+
+更多的选择详见 [Colorschemes](https://docs.juliaplots.org/latest/generated/colorschemes/)
+
+在循环画图时，每次指定一种颜色便 OK 了。
+
+第二点其实也很简单，在画一条曲线时，如果 linecolor 指定为颜色**列**向量，比如 `[:red, :green, :orange]`，则每一段的颜色会循环采用该列向量中的颜色，则当列向量长度刚好等于区间段的个数，则每一段都会以不同的颜色绘制。需要注意到是，颜色**行**向量用于画多条曲线时为每一条曲线指定不同的颜色。
+
+但最后第二点折腾了有点久，直接把 `colors` 带进去并不行，后来才发现它不是简单的颜色列向量，里面还包含其它信息，最后采用 `colors.colors.colors` 才成功。详见 [ESL-CN/code/SOM/wiremesh.jl](https://github.com/szcf-weiya/ESL-CN/blob/5e8d95299d4c53d8f509324546b40c65b31a3666/code/SOM/wiremesh.jl#L52-L54)
+
+另外，也尝试过[官方文档例子](http://docs.juliaplots.org/latest/generated/gr/#gr-ref24-1)中 `zcolor` 参数，但是似乎只针对 marker 起作用，当然是跟 `m = ` 参数配合的效果，第一个元素代表大小，第二个透明度。所以理论上把 `m =` 换成 `line` 或许也能达到效果，但如果不能直接通过 `zcolor` 使得不同高度的颜色不一样（我本以为可以），那干脆直接指定颜色。 
+
+### axis off
+
+```julia
+plot(..., axis = nothing)
+```
+
+and similar grammar is
+
+```julia
+plot(..., ticks=nothing, border=nothing)
+```
+
+refer to [How can I implement "axis off"? #428](https://github.com/JuliaPlots/Plots.jl/issues/428)
+
+### plot kernel density
+
+refer to [Kernel density estimation status](https://discourse.julialang.org/t/kernel-density-estimation-status/5928)
+
+### PyPlot
+
+- [grid_plot_acc_vs_rate_revisit](https://github.com/szcf-weiya/Cell-Video/blob/8cffd45451c0b1af9da4199c7ef611d836c0e86e/DP/visualization.jl#L155-L217) and [demo](https://github.com/szcf-weiya/Cell-Video/blob/last-revisit/DP/110_original_with_revisit_2019-10-09T11:20:28_oracle_setting_2019-09-22T20:06:59_precision.pdf)
+    - multiple subplots with `sharex="all", sharey="all"`
+    -  `ax0 = fig.add_subplot(111, frameon=false)`
+    - `plt.text`
+
+### multiple labels
+
+In Julia 1.4.0 with Plots.jl v1.0.14,
+
+```julia
+using Plots
+x = rand(10, 2)
+plot(1:10, x, label = ["a", "b"])
+```
+
+will produce
+
+![](labels_col.png)
+
+where these two lines share the same label instead of one label for one line. But if replacing the column vector with row vector,
+
+```julia
+plot(1:10, x, label = ["a" "b"])
+```
+
+will return the correct result,
+
+![](labels_row.png)
+
+Refer to [Plots (plotly) multiple series or line labels in legend](https://discourse.julialang.org/t/plots-plotly-multiple-series-or-line-labels-in-legend/13001), which also works `GR` backend.
+
+### suptitle for subplots
+
+currently， no a option to set a suptitle for subplots, but we can use `@layout` to plot the title in a grid, such as [szcf-weiya/TB](https://github.com/szcf-weiya/TB/blob/c332307263cdbab20a453e6abe74790236321048/CFPC/sim_cpc_scores.jl#L87-L93)
+
+refer to [Super title in Plots and subplots](https://discourse.julialang.org/t/super-title-in-plots-and-subplots/29865/4)
+
 
 ## PyCall
 
@@ -184,6 +443,30 @@ PyObject <module 'math' from '/home/weiya/anaconda3/envs/py37/lib/python3.7/lib-
 ```
 
 then the module corresponds to the specified conda environment, and then like the above test, it also can be used in other conda environment without recompiling.
+
+## Revise
+
+### Is there a way to undo `using` in Julia?
+
+NO
+
+1. [https://stackoverflow.com/questions/33927523/can-i-make-julia-forget-a-method-from-the-repl](https://stackoverflow.com/questions/33927523/can-i-make-julia-forget-a-method-from-the-repl)
+2. [https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia](https://stackoverflow.com/questions/36249313/is-there-a-way-to-undo-using-in-julia)
+
+Although we cannot remove some defined function, with the powerful [Revise.jl](https://github.com/timholy/Revise.jl), we can update the functions without reloading the scripts.
+
+## Statistics (StatsBase, Distributions)
+
+### 关于 `mean()`
+
+1. `using Statistics` 后才能用 `mean()`，而 `using Distributions` 后也能用 `mean()`。前者表示 `generic function with 5 methods`，后者称 `generic function with 78 methods`.
+
+### `Normal` 中标准差为 0 的问题
+
+![](normal-zero-var.png)
+
+可知，最低可以支持 `1e-323`，所以似乎也支持 `sqrt(1e-646)`，但并没有，而且当 `sqrt(1e-324)` 时精度就不够了，似乎 `sqrt(x)` 的精度与 `x` 的精度相当。
+
 
 ## parallel
 
@@ -331,9 +614,6 @@ using `OffsetArrays` package, refer to
 
 [Github: OffsetArrays](https://github.com/JuliaArrays/OffsetArrays.jl)
 
-## plot kernel density
-
-refer to [Kernel density estimation status](https://discourse.julialang.org/t/kernel-density-estimation-status/5928)
 
 ## 自定义 `==` and `hash()`
 
@@ -494,38 +774,6 @@ It works now, although it still throw an error,
 julia> libGL error: unable to load driver: swrast_dri.so
 libGL error: failed to load driver: swrast
 ```
-## `dims=1`
-
-总是记不太清 `sum`, `mean` 的时候 `dims=1` 是按行求和还是按列求和，经常先玩个 toy example 才能分辨出来。比如，
-
-```julia
-julia> a = rand(4, 3)
-4×3 Array{Float64,2}:
- 0.279181  0.0903167  0.148329
- 0.486691  0.869156   0.0538834
- 0.110781  0.836284   0.486467
- 0.810343  0.208659   0.759561
-
-julia> sum(a, dims=1)
-1×3 Array{Float64,2}:
- 1.687  2.00442  1.44824
-```
-
-即把 `dims` 所代表的维度元素加起来，或者说沿着 dims 进行运算。这一点与 `R` 的函数 `apply` 中 `margin` 参数作用刚好相反，
-
-```r
-> a = matrix(rnorm(12), 4, 3)
-> a
-           [,1]        [,2]       [,3]
-[1,]  1.1535199  0.03198768  0.2857126
-[2,] -1.3616720  0.32325598  1.9242805
-[3,] -0.6519595 -1.14800119 -0.3635221
-[4,]  1.2713182  0.98515312  0.2269218
-> apply(a, 1, sum)
-[1]  1.4712202  0.8858644 -2.1634828  2.4833932
-```
-
-这样交叉记忆，不知道效果会不会好点。
 
 ## reset `kw...` value
 
@@ -702,69 +950,6 @@ julia> a = "ww"
 
 refer to [#105](https://github.com/szcf-weiya/Cell-Video/issues/105).
 
-## Juno 中 `Cltr + Enter` 的 bug
-
-当我使用 `Ctrl + Enter` 运行下列语句时，
-
-```julia
-using Images, ImageView
-img = load(download("https://juliaimages.org/latest/assets/segmentation/horse.jpg"));
-imshow(img)
-```
-
-REPL 冻住了，一直停在
-
-```julia
-Dict{String,Any} with 4 entries:
-```
-
-而我如果直接将上述语句复制到 REPL 中运行时，一切 OK，正常显示为
-
-```julia
-Dict{String,Any} with 4 entries:
-  "gui"         => Dict{String,Any}("window"=>GtkWindowLeaf(name="", parent, wi…
-  "roi"         => Dict{String,Any}("redraw"=>50: "map(clim-mapped image, input…
-  "annotations" => 3: "input-2" = Dict{UInt64,Any}() Dict{UInt64,Any}
-  "clim"        => 2: "CLim" = CLim{RGB{Float64}}(RGB{Float64}(0.0,0.0,0.0), RG…
-```
-
-找到类似的 Issue: [[BUG] Evaluation in Editor freezes Atom occasionally](https://github.com/JunoLab/Juno.jl/issues/320)
-
-虽然其解决方案不太清楚，是有关 notification-daemon，但是维护者 @pfitzseb 的回复
-
-> OS level notifications are disabled completly in the latest Juno release because they were causing crashes on Mac and didn't really seem to work on other platforms.
-
-提醒我或许是因为 Juno 的版本问题，当前版本为 v0.7.2, 最新版本为 v0.8.1
-
-仅仅更新 Juno.jl 的版本似乎还不行，另外将 Atom.jl 从 v0.12.8 更新到 v0.12.9
-
-最后竟然[真的解决了！](https://github.com/JunoLab/Juno.jl/issues/320#issuecomment-599213691)
-
-## Juno 使用系统代理
-
-当在 `.bashrc` 添加 `http_proxy` 和 `https_proxy` 中并 source 之后，直接在 shell 里面开的 julia session 中，验证当前 ip
-
-```julia
-run(`curl ifconfig.me`)
-```
-
-或者直接查看
-
-```julia
-ENV["http_proxy"]
-```
-
-发现可以使用系统代理。但是在 Atom 中开的 julia，则不行。找到 Atom 一条相关的 issue: [[Atom 1.32.0] Does not inherit environment variables when launched not from the command line](https://github.com/atom/atom/issues/18318)，但是我已经是最新版了，不应该存在这个问题。但是当我通过 `Ctrl-Shift-i` 打开 devtools，验证 `process.env["http_proxy"]`，显示 undefined；而且直接在 source 之后的 terminal 中打开，也显示 undefined。猜想，只对 PATH 有效？或者因为 Juno.jl?
-
-跳过这个问题，最后直接在 `startup.jl` 文件中添加
-
-```julia
-ENV["http_proxy"] =
-ENV["https_proxy"]
-```
-
-进行设置，这参考了 [Install packages behind the proxy](https://discourse.julialang.org/t/install-packages-behind-the-proxy/23298/2)
-
 ## wrong arrangement of multiple figures in a grid
 
 Hi, I am confused by the arrangement of multiple figures in a grid. I begin with the example code in the README,
@@ -813,85 +998,6 @@ Gtk.showall(gui["window"])
 
 Then I guess it might due to the version of some packages...
 
-## Manage Different Versions of Julia
-
-1. download the "Generic Linux Binaries for x86 (64-bit)" of a particular version from [Download Julia](https://julialang.org/downloads/)
-2. put it into customed folder, such as `src` under home directory,
-3. link it to the system path, such as
-
-```bash
-cd /usr/local/bin
-sudo ln -s /home/weiya/src/julia-1.3.1/bin/julia julia1.3.1
-```
-
-Currently, I have installed the following different versions.
-
-```bash
-$ ll | grep julia
-lrwxrwxrwx  1 root root      37 8月  31  2018 julia -> /home/weiya/src/julia-1.0.0/bin/julia*
-lrwxrwxrwx  1 root root      37 7月  30  2019 julia1.1.1 -> /home/weiya/src/julia-1.1.1/bin/julia*
-lrwxrwxrwx  1 root root      37 9月  18 15:28 julia1.2.0 -> /home/weiya/src/julia-1.2.0/bin/julia*
-lrwxrwxrwx  1 root root      37 3月  18 10:25 julia1.3.1 -> /home/weiya/src/julia-1.3.1/bin/julia*
-```
-
-The source folders can be freely moved to another place, and only need to update the symbol links, which can be firstly deleted and then created, or use
-
-```bash
-sudo ln -sf ... ...
-```
-
-to override current link. But, if the links is to a folder, then another flag need to be added to override,
-
-```bash
-sudo ln -sfn ... ...
-```
-
-refer to [How to change where a symlink points](https://unix.stackexchange.com/questions/151999/how-to-change-where-a-symlink-points)
-
-Also, note that the link to a folder should be deleted with
-
-```bash
-rm folder
-```
-
-instead of
-
-```bash
-rm -r folder/ # delete the original folder
-```
-
-## array in functions
-
-```julia
-julia> function g(x)
-           x += [1, 2]
-       end
-g (generic function with 1 method)
-julia> function g!(x)
-           x .+= [1, 2]
-       end
-g! (generic function with 1 method)
-julia> x = [1,2];
-
-julia> g(x)'
-1×2 Adjoint{Int64,Array{Int64,1}}:
- 2  4
-
-julia> x'
-1×2 Adjoint{Int64,Array{Int64,1}}:
- 1  2
-
-julia> g!(x)'
-1×2 Adjoint{Int64,Array{Int64,1}}:
- 2  4
-
-julia> x'
-1×2 Adjoint{Int64,Array{Int64,1}}:
- 2  4
-```
-
-Note that sometimes `.+=` may make the program much slower, such as [en/code/2019-06-14-ML/GD2.jl](https://github.com/szcf-weiya/en/blob/3c8daeb4e0f477f5ea40dc2bb44d832faa4bbbb6/code/2019-06-14-ML/GD2.jl#L10)
-
 ## 同时安装多个 package
 
 用空格隔开，如
@@ -913,38 +1019,6 @@ Several weeks ago, the text, such as the label, title or legend, in the output p
 I had tried [`GRUtils`](https://heliosdrm.github.io/GRUtils.jl/stable/), and `GRUtils.savefig` can output pdf to select the texts, so I think the reason is some changes in `Plots` package.
 
 And I found that with `Plots@0.27.0` in `Julia1.0`, I can select the text, but currently the newer `Plots@1.2.0` cannot produce such pdf. To determine the change, maybe I need more effort to try different versions. But now I can downgrade the version to satisfy my requirement.
-
-## multiple labels
-
-In Julia 1.4.0 with Plots.jl v1.0.14,
-
-```julia
-using Plots
-x = rand(10, 2)
-plot(1:10, x, label = ["a", "b"])
-```
-
-will produce
-
-![](labels_col.png)
-
-where these two lines share the same label instead of one label for one line. But if replacing the column vector with row vector,
-
-```julia
-plot(1:10, x, label = ["a" "b"])
-```
-
-will return the correct result,
-
-![](labels_row.png)
-
-Refer to [Plots (plotly) multiple series or line labels in legend](https://discourse.julialang.org/t/plots-plotly-multiple-series-or-line-labels-in-legend/13001), which also works `GR` backend.
-
-## suptitle for subplots
-
-currently， no a option to set a suptitle for subplots, but we can use `@layout` to plot the title in a grid, such as [szcf-weiya/TB](https://github.com/szcf-weiya/TB/blob/c332307263cdbab20a453e6abe74790236321048/CFPC/sim_cpc_scores.jl#L87-L93)
-
-refer to [Super title in Plots and subplots](https://discourse.julialang.org/t/super-title-in-plots-and-subplots/29865/4)
 
 ## `colorviews` for images
 
@@ -1093,10 +1167,6 @@ command = "convert " * prod("p" .* string.(1:10) .* ".png ") * "+append pall.png
 run(`$command`)
 ```
 
-## Shortcuts in Juno
-
-- `Ctrl+J Ctrl+E`: switch from REPL to editor, refer to [the correct shortcut is be Ctrl-J Ctrl-E (and the command is called Julia Client: Focus Last Editor)](https://discourse.julialang.org/t/win10-how-to-switch-keyshort-from-editor-to-repl/22911), an inspiration is that I can check it via `Ctrl-Shift-P`.
-
 ## foreach
 
 ```julia
@@ -1109,12 +1179,7 @@ julia> foreach(println, readdir("."))
 
 [an example](https://github.com/szcf-weiya/Cell-Video/blob/8cffd45451c0b1af9da4199c7ef611d836c0e86e/DP/visualization.jl#L166)
 
-## PyPlot
 
-- [grid_plot_acc_vs_rate_revisit](https://github.com/szcf-weiya/Cell-Video/blob/8cffd45451c0b1af9da4199c7ef611d836c0e86e/DP/visualization.jl#L155-L217) and [demo](https://github.com/szcf-weiya/Cell-Video/blob/last-revisit/DP/110_original_with_revisit_2019-10-09T11:20:28_oracle_setting_2019-09-22T20:06:59_precision.pdf)
-    - multiple subplots with `sharex="all", sharey="all"`
-    -  `ax0 = fig.add_subplot(111, frameon=false)`
-    - `plt.text`
 
 ## Regex
 
