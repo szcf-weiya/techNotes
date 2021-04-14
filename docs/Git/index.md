@@ -7,6 +7,12 @@
 3. [Cheatsheet](git-cheat-sheet-education.pdf)
 4. [Pro Git book (中文)](https://git-scm.com/book/zh/v2)
 
+![](http://www.ruanyifeng.com/blogimg/asset/201105/free_software_licenses.png)
+
+## GitHub
+
+- 添加和设置项目徽章: [shields.io](http://shields.io/)
+
 ## SETUP & INIT: `config`
 
 1. 下载安装
@@ -48,6 +54,18 @@ ssh-keygen -t rsa -C "test@163.com"
 
 复制 `~/.ssh/id_rsa.pub` 到 github 上。
 
+## CLEAN: `clean`
+
+### remove untracked files
+
+```bash
+git clean -n
+git clean -f
+```
+
+refer to [How to remove local (untracked) files from the current Git working tree](https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree)
+
+
 ## CLONE: `clone`
 
 - 提高 `git clone` 速度
@@ -56,26 +74,28 @@ ssh-keygen -t rsa -C "test@163.com"
 git config --global http.postBuffer 524288000
 ```
 
-## TEMPORARY COMMITS: `stash`
-
-Temporarily store modified, tracked files in order to change branches.
+- clone 单个分支
 
 ```bash
-git stash # Save modified and staged changes
-git stash list # list stack-order of stashed file changes
-git stash pop # write working from top of stash stack
-git stash drop # discard the changes from top of stash stack
+git clone -b BRANCH_NAME ...
 ```
 
-- [git pull without git add them](https://stackoverflow.com/questions/54040063/how-to-git-pull-without-git-add-them): 
+- clone 多个分支
 
 ```bash
-git stash
-git pull
-git stash apply
+git clone ...
+# list the remote-tracking branches
+git branch -r 
+# OR: list both remote-tracking branches and local branches
+git branch -a 
+git checkout -b BRANCH_NAME REMOTE_BRANCH
+# OR: the branch name is exactly in the remote branches
+git checkout BRANCH_NAME
 ```
 
-## 删除分支
+## BRANCH: `branch`
+
+### delete branches
 
 ```bash
 ## Delete a remote branch
@@ -96,24 +116,59 @@ $ git fetch <remote> -p # Shorter
 
 adapted from [cmatskas/GitDeleteCommands.ps1](https://gist.github.com/cmatskas/454e3369e6963a1c8c89)
 
+see also: [删除github的master分支](http://blog.csdn.net/jefbai/article/details/44234383)
 
-## git clone所有远程分支
+## PUSH: `push`
 
-```git
-git clone ....
-cd ..
-git branch -a
-git checkout -b gh-pages origin/gh-pages
+### default push
+
+采用低版本的 git， 如 `v1.8.3.1` 当 push 时会报出以下提醒信息，
+
+```bash
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
 ```
 
-## git删除大文件
+而自己本机电脑一般采用 `v2.0+`， 比如当前 `v2.17.1` 的 git，所以直接采用 `simple` 模式便好了。
 
-[cnblog](http://www.cnblogs.com/lout/p/6111739.html)
+See also: [Git push与pull的默认行为](https://segmentfault.com/a/1190000002783245)
 
+### require username and password
 
-## 修改 origin
+possible reason: use the default HTTPS instead of SSH
 
-本地通过 git clone 得到仓库 https://github.com/CellProfiler/CellProfiler，后来需要在此基础上做些更改用到自己的项目中去，于是对原仓库进行了 fork，不过忘记了本地的仓库其实是从原仓库 clone 下来的，而非来自 fork 后的仓库，于是在 git push 会试图像原仓库进行 push，这当然是会被拒绝的。
+correct this by
+
+```
+git remote set-url origin git@github.com:username/repo.git
+```
+
+参考 [Git push requires username and password](https://stackoverflow.com/questions/6565357/git-push-requires-username-and-password)
+
+## REMOTE: `remote`
+
+### change remote repo name
+
+举个例子，如将一个名为 epi 的仓库改名为 depi，再次在本地提交虽然也能成功，但是会提示你原始的仓库已经移动，请修改为新的仓库地址，于是我们可以利用下面的命令进行修改
+
+```bash
+git remote set-url origin git@github.com:szcf-weiya/depi.git
+```
+
+### modify origin
+
+本地通过 `git clone` 得到仓库 [CellProfiler/CellProfiler](https://github.com/CellProfiler/CellProfiler)，后来需要在此基础上做些更改用到自己的项目中去，于是对原仓库进行了 fork，不过忘记了本地的仓库其实是从原仓库 clone 下来的，而非来自 fork 后的仓库，所以当在 git push 会试图像原仓库进行 push 时，当然是会被拒绝的。
 
 简单的方法便是直接更改本地仓库的 origin，首先可以通过
 
@@ -147,108 +202,7 @@ git remote set-url origin git@github.com:szcf-weiya/CellProfiler.git
 
 参考 [How to change the fork that a repository is linked to](https://stackoverflow.com/questions/11619593/how-to-change-the-fork-that-a-repository-is-linked-to)
 
-## 忽略已 track 的文件
-
-`.gitignore` 只能忽略那些原来没有被 track 的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交：
-
-```bash
-git rm -r --cached foo.txt
-git add .
-git commit -m 'update .gitignore'
-```
-
-## 更新远程代码到本地
-
-### 方式一
-
-```bash
-git remote -v
-git fetch origin master
-git log -p master origin master
-git merge origin master
-```
-### 方式二
-
-```bash
-git fetch origin master:temp
-git diff temp
-git merge temp
-git branch temp
-```
-
-## 关于LICENSE的选择
-
-[阮一峰的网络日志](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html)
-
-
-## git clone 某个分支或所有分支
-
-[git clone](http://blog.csdn.net/a513322/article/details/46998325)
-
-```
-git clone -b BRANCH_NAME ...
-```
-
-or
-```
-git clone ...
-git branch -r
-git checkout BRANCH_NAME
-```
-
-## 更改远程仓库的名字
-
-举个例子，如将一个名为epi的仓库改名为depi，再次在本地提交虽然也能成功，但是会提示你原始的仓库已经移动，请修改为新的仓库地址，于是我们可以利用下面的命令进行修改
-
-```
-git remote set-url origin git@github.com:szcf-weiya/depi.git
-```
-
-## git pull
-
-在使用rstudio的git功能时，某次commit的时候，勾选了amend previous commit，然后push的时候就出错了
-
-![](error_pull.PNG)
-
-后来直接运行`git pull`后，重新push，便解决了问题。
-
-附上git pull的某篇博客[git pull命令](http://www.yiibai.com/git/git_pull.html)
-
-## Webhook配置
-
-参考[Webhook 实践 —— 自动部署](http://jerryzou.com/posts/webhook-practice/)
-
-需要在腾讯云服务器上自动更新github pages的内容，于是采用webhook来实现。
-
-```bash
-npm install -g forever
-forever statr server.js
-```
-
-
-## 删除github的master分支
-
-参考[删除github的master分支](http://blog.csdn.net/jefbai/article/details/44234383)
-
-## Git push与pull的默认行为
-
-参考[Git push与pull的默认行为](https://segmentfault.com/a/1190000002783245)
-
-## GitHub 项目徽章的添加和设置
-
-参考[GitHub 项目徽章的添加和设置](https://www.jianshu.com/p/e9ce56cb24ef)
-
-以及
-
-[shields.io](http://shields.io/)
-
-## webhooks 响应特定分支的 push
-
-参考[Web Hooks - execute only for specified branches #1176](https://github.com/gitlabhq/gitlabhq/issues/1176)@rtripault
-
-提取 json 中的 `ref`，在 `do_POST()` 中进行设置响应动作。
-
-## 命令行同步 fork 的仓库
+### sync forked repo
 
 1. 添加原仓库，比如
 
@@ -270,69 +224,17 @@ git pull upstream master
 
 参考[Quick Tip: Sync a GitHub Fork via the Command Line](https://www.sitepoint.com/quick-tip-synch-a-github-fork-via-the-command-line/)
 
-## `git checkout`
+## Rewrite History: `rebase, reset`
 
-- 撤销未被 add 的文件
+### discard local changes
 
-```bash
-git checkout -- file
-```
-
-- 撤销所有更改
-
-```bash
-git checkout -- .
-```
-
-参考[git checkout all the files](https://stackoverflow.com/questions/29007821/git-checkout-all-the-files)
-
-- 从其他分支更新文件
-
-```bash
-git checkout master -- SOMEFILE
-```
-
-参考 [Quick tip: git-checkout specific files from another branch](http://nicolasgallagher.com/git-checkout-specific-files-from-another-branch/)
-
-## rewrite 时百分比的含义
-
-表示相似性。
-
-参考[What does the message “rewrite … (90%)” after a git commit mean? [duplicate]](https://stackoverflow.com/questions/1046276/what-does-the-message-rewrite-90-after-a-git-commit-mean)
-
-## Travis CI
-
-中文折腾为什么 Travis CI 中用 '*' 号不会上传文件，最后还是指定了文件名。
-
-刚刚找到解决方案 [How to deploy to github with file pattern on travis?](https://stackoverflow.com/questions/25929225/how-to-deploy-to-github-with-file-pattern-on-travis)
-
-简单说要加上
-
-```yml
-file_glob: true
-```
-
-## 放弃本地修改
-
-### 未 `git add`
-
-直接用 `git checkout .`
-
-### 已 `git add`
-
-`git reset HEAD`
-
-### 已 `commit`
-
-- 丢弃修改的内容：`git reset --hard HEAD^`
-- 保留修改的内容：`git reset --soft HEAD^`
-- 还有一种 `mixed`，也是默认不带参数的
-
-或者直接跳到对应的 commit
-
-```bash
-git reset --hard <commit>
-```
+- not added: just `git checkout .`
+- last added: `git reset HEAD`
+- last committed: 
+	- 丢弃修改的内容：`git reset --hard HEAD^`
+	- 保留修改的内容：`git reset --soft HEAD^`
+	- 还有一种 `mixed`，也是默认不带参数的
+- jump to historical commit: `git reset --hard <commit>`
 
 如果也要更新远程仓库，如 github，则需要使用 `git push -f` 强制更新。
 
@@ -342,7 +244,7 @@ git reset --hard <commit>
 - [github,退回之前的commit](https://www.cnblogs.com/xiaomengzhang/p/3240788.html)
 - [github 版本回退](https://blog.csdn.net/apple_wolf/article/details/53326187)
 
-### 放弃 reset
+### discard reset
 
 type
 
@@ -360,7 +262,7 @@ to restore the corresponding state of `HEAD@{1}`, where `1` implies that last st
 
 refer to [How to undo 'git reset'?](https://stackoverflow.com/questions/2510276/how-to-undo-git-reset)
 
-### 实际案例
+### case study
 
 某次写博客时，有一篇仍处于草稿箱的文件 A.md 暂时不想上传，但是更改了已经发表的文章 B.md 中的 typo，然后提交时一不留神直接用
 
@@ -435,13 +337,7 @@ On branch master
 Your branch is up to date with 'origin/master'.
 ```
 
-## 列出另一分支的目录
-
-```bash
-git ls-tree master:dirname
-```
-
-## 修改 commit 信息
+### amend commit message
 
 If the latest commit， type
 
@@ -457,159 +353,7 @@ git push --force-with-lease
 
 Refer to [Changing git commit message after push (given that no one pulled from remote)](https://stackoverflow.com/questions/8981194/changing-git-commit-message-after-push-given-that-no-one-pulled-from-remote).
 
-
-## cannot lock ref
-
-参考 [git pull时遇到error: cannot lock ref 'xxx': ref xxx is at （一个commitID） but expected的解决办法](https://blog.csdn.net/qq_15437667/article/details/52479792)
-
-
-另外试试 `git gc`
-
-参考
-
-1. [Git and nasty “error: cannot lock existing info/refs fatal](https://stackoverflow.com/questions/6656619/git-and-nasty-error-cannot-lock-existing-info-refs-fatal)
-
-## remove untracked files
-
-```
-git clean -n
-git clean -f
-```
-
-refer to [How to remove local (untracked) files from the current Git working tree](https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree)
-
-## 分支操作
-
-详见 [Git 分支 - 分支的新建与合并](https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6)
-
-## `CRLF` & `LF`
-
-双系统切换时，原先在 Win 处理，后来换到 Linux 处理，报出
-
-```
-CRLF will be replaced by LF.
-```
-
-设置 `autocrlf` 配置项：
-
-- false 表示取消自动转换功能。适合纯 Windows
-- true 表示提交代码时把 CRLF 转换成 LF，签出时 LF 转换成 CRLF。适合多平台协作
-- input 表示提交时把 CRLF 转换成 LF，检出时不转换。适合纯 Linux 或 Mac
-
-参考 [Git 多平台换行符问题(LF or CRLF)](https://blog.csdn.net/ljheee/article/details/82946368)
-
-## Git push require username and password
-
-possible reason: use the default HTTPS instead of SSH
-
-correct this by
-
-```
-git remote set-url origin git@github.com:username/repo.git
-```
-
-参考 [Git push requires username and password](https://stackoverflow.com/questions/6565357/git-push-requires-username-and-password)
-
-
-## manually resolve merge conflicts
-
-1. open the file and edit
-2. git add
-3. git commit
-
-refer to [How do I finish the merge after resolving my merge conflicts?](https://stackoverflow.com/questions/2474097/how-do-i-finish-the-merge-after-resolving-my-merge-conflicts)
-
-## push
-
-采用低版本的 git， 如 `v1.8.3.1` 当 push 时会报出以下提醒信息，
-
-```bash
-warning: push.default is unset; its implicit value is changing in
-Git 2.0 from 'matching' to 'simple'. To squelch this message
-and maintain the current behavior after the default changes, use:
-
-  git config --global push.default matching
-
-To squelch this message and adopt the new behavior now, use:
-
-  git config --global push.default simple
-
-See 'git help config' and search for 'push.default' for further information.
-(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
-'current' instead of 'simple' if you sometimes use older versions of Git)
-```
-
-而自己本机电脑一般采用 `v2.0+`， 比如当前 `v2.17.1` 的 git，所以直接采用 `simple` 模式便好了。
-
-## alias
-
-本来想同时在一行命令中运行 `git add .` 和 `git commit -m`，但是如果采用 `;` 或者 `&&` 连接时都报错，
-
-> error: unknown switch `m'
-
-顺带发现了 `;` 和 `&&` 以及 `||` 的区别，详见 [Run multiple commands in one line with `;`, `&&` and `||` - Linux Tips](https://dev.to/0xbf/run-multiple-commands-in-one-line-with-and-linux-tips-5hgm)
-
-- `;`: 无论第一个命令成功与否，都会运行第二个命令
-- `&&`: 只有当第一个命令成功运行，才会运行第二个命令
-- `||`: 只有当第一个命令失败后，才会运行第二个命令
-
-后来发现这个，[Git add and commit in one command](https://stackoverflow.com/questions/4298960/git-add-and-commit-in-one-command)，可以通过 `git config` 来配置 alias，
-
-> git config --global alias.add-commit '!git add -A && git commit'
-
-则以后只需要调用
-
-> git add-commit -m 'My commit message'
-
-这跟在 `.bashrc` 中配置有异曲同工之妙！
-
-## 标签
-
-- 打标签
-
-```bash
-# annotated
-git tag -a v1.0 -m "version 1"
-# lightweight
-git tag v1.0
-# push to github
-git push origin v1.0
-# or
-git push origin --tags
-```
-
-详见 [2.6 Git 基础 - 打标签](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE)
-
-- 删除标签
-
-```bash
-# local
-git tag -d v1.0
-# github
-git push origin :refs/tags/v1.0
-```
-
-详见 [mobilemind/git-tag-delete-local-and-remote.sh](https://gist.github.com/mobilemind/7883996)
-
-## color in git diff
-
-在服务器上使用 `git diff`，没有像在本地 Ubuntu 那样用颜色高亮出不同的地方，这个可以通过在 `~/.gitconfig` 中进行配置，
-
-```bash
-[color]
-  diff = auto
-  status = auto
-  branch = auto
-  interactive = auto
-  ui = true
-  pager = true
-```
-
-参考 [How to colorize output of git?](https://unix.stackexchange.com/questions/44266/how-to-colorize-output-of-git)
-
-顺带发现，如果在 markdown 中复制 git diff 的 output，可以使用 `diff` 的代码块，会将更改的部分高亮出来。
-
-## rebase 放弃未 push 的 merges
+### discard un-pushed merges
 
 现有本地、服务器仓库各一个，通过 GitHub 进行共享，原则上只通过本地编辑代码，然后在服务器中借助 `git pull` 进行更新代码。但是有一行代码由于文件路径原因，不得已在服务器端更改，在 `git pull` 之前进行了 `git add; git commit` 操作，所以 `pull` 的时候会产生 merge，而且这样下去每一次进行 `pull` 都会进行 merge。这样就很难看出服务器端真正更改的内容了，这时发现了 `git rebase`，这张图很好地展示了它要干的事情，
 
@@ -661,10 +405,264 @@ $ git rebase
 
 ![](git-pull-with-rebase.png)
 
-## 指定 commit 时间
+### change commit time
 
-https://stackoverflow.com/questions/3895453/how-do-i-make-a-git-commit-in-the-past
+因为习惯将当天的工作通过 commit 贡献图反映出来，但有时候提交时超了一点点时间就变成第二天了，有时会强迫性地想把时间改过来。此前一直在用一种比较笨但很有效的方法，即修改系统时间——往回拨几分钟，再进行 commit。但是昨晚这样操作时出现了失误，只调整了时间，日期并没有回退一天，push 之后才意识到，就这样多了一条未来的 commit。
 
-## apply `.gitignore` to committed files
+于是就需要像修改 commit message 修改时间重新 commit。首先尝试的是，
 
-https://stackoverflow.com/questions/7527982/applying-gitignore-to-committed-files
+```bash
+git commit --amend --date="13/04/2021 @ 23:59"
+```
+
+这样 `git log` 确实显示时间更改了，
+
+```bash
+$ git log
+commit XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Author: XXX
+Date:   Tue Apr 13 23:59:49 2021 +0800
+```
+
+但是 force push 到 github 上时仍然是当前的时间。这时才意识到有所谓的 GIT_AUTHOR_DATE 和 GIT_COMMITTER_DATE 之分，通过加上 `--pretty=fuller` 可以看到 committer 及其 date (refer to [How to configure 'git log' to show 'commit date'](https://stackoverflow.com/questions/14243380/how-to-configure-git-log-to-show-commit-date))
+
+```bash
+$ git log --pretty=fuller
+commit XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Author: XXX
+AuthorDate: Tue Apr 13 23:59:49 2021 +0800
+Commit: XXX
+CommitDate: Tue Apr 13 23:59:08 2021 +0800
+```
+
+所以修改完 author date 之后，仍然采用笨办法回拨系统时间再提交，这样就能修改 commit date，于是便出现了上面 commit date 竟然比 author date 早的结果。当然更 hacker 的做法可能是仍然在命令行中修改 committer date，如下面的参考链接。
+
+- [How can one change the timestamp of an old commit in Git?](https://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git)
+- [How do I make a Git commit in the past?](https://stackoverflow.com/questions/3895453/how-do-i-make-a-git-commit-in-the-past)
+
+
+## TEMPORARY COMMITS: `stash`
+
+Temporarily store modified, tracked files in order to change branches.
+
+```bash
+git stash # Save modified and staged changes
+git stash list # list stack-order of stashed file changes
+git stash pop # write working from top of stash stack
+git stash drop # discard the changes from top of stash stack
+```
+
+- [git pull without git add them](https://stackoverflow.com/questions/54040063/how-to-git-pull-without-git-add-them): 
+
+```bash
+git stash
+git pull
+git stash apply
+```
+
+## MERGE: `merge`
+
+### manually resolve merge conflicts
+
+1. open the file and edit
+2. git add
+3. git commit
+
+refer to [How do I finish the merge after resolving my merge conflicts?](https://stackoverflow.com/questions/2474097/how-do-i-finish-the-merge-after-resolving-my-merge-conflicts)
+
+
+## `.gitignore`
+
+### 忽略已 track 的文件
+
+`.gitignore` 只能忽略那些原来没有被 track 的文件，如果某些文件已经被纳入了版本管理中，则修改 `.gitignore` 是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交：
+
+```bash
+git rm -r --cached foo.txt
+git add .
+git commit -m 'update .gitignore'
+```
+
+see also: [apply `.gitignore` to committed files](https://stackoverflow.com/questions/7527982/applying-gitignore-to-committed-files)
+
+## PULL: `pull`
+
+### in rstudio
+
+在使用rstudio的git功能时，某次commit的时候，勾选了amend previous commit，然后push的时候就出错了
+
+![](error_pull.PNG)
+
+后来直接运行`git pull`后，重新push，便解决了问题。
+
+附上git pull的某篇博客[git pull命令](http://www.yiibai.com/git/git_pull.html)
+
+## Webhook配置
+
+参考[Webhook 实践 —— 自动部署](http://jerryzou.com/posts/webhook-practice/)
+
+需要在腾讯云服务器上自动更新github pages的内容，于是采用webhook来实现。
+
+```bash
+npm install -g forever
+forever start server.js
+```
+
+## webhooks 响应特定分支的 push
+
+参考[Web Hooks - execute only for specified branches #1176](https://github.com/gitlabhq/gitlabhq/issues/1176)@rtripault
+
+提取 json 中的 `ref`，在 `do_POST()` 中进行设置响应动作。
+
+
+## CHECKOUT: `checkout`
+
+- 撤销未被 add 的文件
+
+```bash
+git checkout -- file
+```
+
+- 撤销所有更改
+
+```bash
+git checkout -- .
+```
+
+参考[git checkout all the files](https://stackoverflow.com/questions/29007821/git-checkout-all-the-files)
+
+- 从其他分支更新文件
+
+```bash
+git checkout master -- SOMEFILE
+```
+
+参考 [Quick tip: git-checkout specific files from another branch](http://nicolasgallagher.com/git-checkout-specific-files-from-another-branch/)
+
+## rewrite 时百分比的含义
+
+表示相似性。
+
+参考[What does the message “rewrite … (90%)” after a git commit mean? [duplicate]](https://stackoverflow.com/questions/1046276/what-does-the-message-rewrite-90-after-a-git-commit-mean)
+
+## Travis CI
+
+中文折腾为什么 Travis CI 中用 '*' 号不会上传文件，最后还是指定了文件名。
+
+刚刚找到解决方案 [How to deploy to github with file pattern on travis?](https://stackoverflow.com/questions/25929225/how-to-deploy-to-github-with-file-pattern-on-travis)
+
+简单说要加上
+
+```yml
+file_glob: true
+```
+
+
+## 列出另一分支的目录
+
+```bash
+git ls-tree master:dirname
+```
+
+
+
+## cannot lock ref
+
+参考 [git pull时遇到error: cannot lock ref 'xxx': ref xxx is at （一个commitID） but expected的解决办法](https://blog.csdn.net/qq_15437667/article/details/52479792)
+
+
+另外试试 `git gc`
+
+参考
+
+1. [Git and nasty “error: cannot lock existing info/refs fatal](https://stackoverflow.com/questions/6656619/git-and-nasty-error-cannot-lock-existing-info-refs-fatal)
+
+## `CRLF` & `LF`
+
+双系统切换时，原先在 Win 处理，后来换到 Linux 处理，报出
+
+```
+CRLF will be replaced by LF.
+```
+
+设置 `autocrlf` 配置项：
+
+- false 表示取消自动转换功能。适合纯 Windows
+- true 表示提交代码时把 CRLF 转换成 LF，签出时 LF 转换成 CRLF。适合多平台协作
+- input 表示提交时把 CRLF 转换成 LF，检出时不转换。适合纯 Linux 或 Mac
+
+参考 [Git 多平台换行符问题(LF or CRLF)](https://blog.csdn.net/ljheee/article/details/82946368)
+
+
+## alias
+
+本来想同时在一行命令中运行 `git add .` 和 `git commit -m`，但是如果采用 `;` 或者 `&&` 连接时都报错，
+
+> error: unknown switch `m'
+
+顺带发现了 `;` 和 `&&` 以及 `||` 的区别，详见 [Run multiple commands in one line with `;`, `&&` and `||` - Linux Tips](https://dev.to/0xbf/run-multiple-commands-in-one-line-with-and-linux-tips-5hgm)
+
+- `;`: 无论第一个命令成功与否，都会运行第二个命令
+- `&&`: 只有当第一个命令成功运行，才会运行第二个命令
+- `||`: 只有当第一个命令失败后，才会运行第二个命令
+
+后来发现这个，[Git add and commit in one command](https://stackoverflow.com/questions/4298960/git-add-and-commit-in-one-command)，可以通过 `git config` 来配置 alias，
+
+> git config --global alias.add-commit '!git add -A && git commit'
+
+则以后只需要调用
+
+> git add-commit -m 'My commit message'
+
+这跟在 `.bashrc` 中配置有异曲同工之妙！
+
+## 标签
+
+- 打标签
+
+```bash
+# annotated
+git tag -a v1.0 -m "version 1"
+# lightweight
+git tag v1.0
+# push to github
+git push origin v1.0
+# or
+git push origin --tags
+```
+
+详见 [2.6 Git 基础 - 打标签](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE)
+
+- 删除标签
+
+```bash
+# local
+git tag -d v1.0
+# github
+git push origin :refs/tags/v1.0
+```
+
+详见 [mobilemind/git-tag-delete-local-and-remote.sh](https://gist.github.com/mobilemind/7883996)
+
+## DIFF: `diff`
+
+### color in git diff
+
+在服务器上使用 `git diff`，没有像在本地 Ubuntu 那样用颜色高亮出不同的地方，这个可以通过在 `~/.gitconfig` 中进行配置，
+
+```bash
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+```
+
+参考 [How to colorize output of git?](https://unix.stackexchange.com/questions/44266/how-to-colorize-output-of-git)
+
+顺带发现，如果在 markdown 中复制 git diff 的 output，可以使用 `diff` 的代码块，会将更改的部分高亮出来。
+
+
+

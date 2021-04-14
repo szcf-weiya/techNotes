@@ -1,4 +1,96 @@
-# CSS 常见用法
+# CSS 笔记
+
+CSS 全称为 Cascading Style Sheets, 中文名为**层叠样式表**.
+
+## 元素
+
+- 块级元素 (block-level element)
+- 内联级元素 (inline-level element)
+
+## 选择器
+
+- 类选择器：`.`
+- ID选择器: `#`
+- 属性选择器: `[]`
+- 伪类选择器: `:`
+- 伪元素选择器: `::`
+- 关系选择器
+	- 后代: `<space>`
+	- 相邻后代: `>`
+	- 兄弟: `~`
+	- 相邻兄弟: `+`
+
+## 盒子
+
+- 内在盒子:
+	- content box: `content-box`
+	- padding box: `padding-box`
+	- border box: `border-box`
+	- margin box: NONE
+
+## `width/height` 作用的具体细节
+
+### `width:auto`
+
+### `width:Xpx`
+
+- `width:100px` 如何作用到 `<div>` 元素上？
+- content box 环绕着 `width` 和 `height` 给定的矩形。由于 `<div>` 元素默认的 `padding`, `border` 和 `margin` 均为 0，则 `<div>` 呈现的像素也为 100px。
+
+### `box-sizing`
+
+用于改变 `width` 作用的盒子
+
+![](https://user-images.githubusercontent.com/13688320/114684396-74a0d880-9d43-11eb-8fcf-4f0c3b135d8f.png)
+
+### `height:100%`
+
+如果包含块的高度没有显式指定（即高度由内容决定），并且该元素不是绝对定位，则计算值为 `auto`，而它和百分比是计算不了的，因此无效; 但如果包含块的宽度取决于该元素的宽度，产生的布局在 CSS2.1 中是未定义的，而浏览器可以自行处理未定义的行为。
+
+=== "NOT WORK"
+	```css
+	div {
+		width: 100%;
+		height: 100%; /* invalid */
+	}
+	```
+
+=== "NOT WORK"
+	```css
+	body {
+		height: 100%;
+	}
+	```
+
+=== "WORK"
+	```css
+	html, body {
+		height: 100%;
+	}
+	```
+
+=== "WORK"
+	```css
+	div {
+		height: 100%;
+		position: absolute;
+	}
+	```
+
+## em 和 rem
+
+[何时使用 Em 与 Rem](https://www.w3cplus.com/css/when-to-use-em-vs-rem.html)
+
+或者参考
+
+[rem、px、em之间的区别以及网页响应式设计写法 - Gabriel_wei - 博客园](https://www.cnblogs.com/Gabriel-Wei/p/6180554.html)
+
+简单说，
+
+- `rem`: 相对根节点
+- `em`: 相对父节点
+- `px`: 绝对值
+
 
 ## 自适应网页布局
 
@@ -110,19 +202,7 @@ footer{
 - [告诉你一个将 footer 保持在底部的最好方法](https://www.jianshu.com/p/4896e6936ce3)
 - [Quick Tip: The Best Way To Make Sticky Footers](https://demo.tutorialzine.com/2016/03/quick-tip-the-best-way-to-make-sticky-footers/)
 
-## em 和 rem
 
-[何时使用 Em 与 Rem](https://www.w3cplus.com/css/when-to-use-em-vs-rem.html)
-
-或者参考
-
-[rem、px、em之间的区别以及网页响应式设计写法 - Gabriel_wei - 博客园](https://www.cnblogs.com/Gabriel-Wei/p/6180554.html)
-
-简单说，
-
-- `rem`: 相对根节点
-- `em`: 相对父节点
-- `px`: 绝对值
 
 ## Mathjax 公式锚点偏移
 
