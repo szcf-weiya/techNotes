@@ -1439,6 +1439,7 @@
                 
                 <h1 id="_1">笔记本作为服务器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>有一台旧的笔记本电脑，Lenovo G40，刷了 Ubuntu 18.04，一直放在寝室吃灰，之前有段时间还试着将其当做周日在寝室办公的机器，但是相较于目前的 ThinkPad T460p，性能还是远不及的，打开软件的速度明显慢了很多。这次疫情待在家里，在摸索科学上网的几种途径后，觉得完全可以将其改成一台服务器。当然这个想法之前不是没有，但是因为想到没有 ip 地址，怎么能访问呢。当熟悉了 ssh 内网穿透以及 ngrok 这些工具之后，这些都变得不是事儿。</p>
+<p>另外，办公室的 Windows 电脑也很早就启用了 WSL，因而也可以将其作为服务器，而且通过 SSH 访问也比其它远程登录软件，如 anydesk 来得方便些。</p>
 <h2 id="ssh">SSH 远程登录<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
 <p>将系里服务器作为跳板机</p>
 <div class="highlight"><pre><span></span><code>weiya@G40 $ autossh -M <span class="m">33000</span> -o <span class="s2">&quot;StrictHostKeyChecking=false&quot;</span> -o <span class="s2">&quot;ServerAliveInterval 10&quot;</span> -o <span class="s2">&quot;ServerAliveCountMax 3&quot;</span> -NR <span class="m">30003</span>:localhost:22 SID@SERVER
@@ -1448,6 +1449,17 @@ T460p $ ssh -p <span class="m">30003</span> weiya@127.0.0.1
 <p>复制的话也变得很简单了，</p>
 <div class="highlight"><pre><span></span><code>T460p $ ssh -P <span class="m">30003</span> file weiya@127.0.0.1:
 </code></pre></div>
+<p>对于 WSL，一波三折，详见 <a href="https://github.com/szcf-weiya/techNotes/issues/22">Issue 22: ssh to WSL</a>，额外的步骤（按顺序，所以必要性并没有进行检验）为</p>
+<ul>
+<li>将 22 端口改成 2222</li>
+<li>在防火墙中允许 2222 端口 inbound</li>
+<li>通过 <code>dpkg-reconfigure openssh-server</code> 生成丢失掉的 host key</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Don&rsquo;t overlook any negative messages.</strong>
+其实很快就找到了<a href="https://superuser.com/questions/1123552/how-to-ssh-into-wsl">类似的问题</a>，也随即大致确定了前两步，但仍然失败。此时如果能关注到在重启 ssh 时出现的 “Could not load host key” 信息，兴许很快就能找到第三步。</p>
+</div>
 <h2 id="synergy">通过 Synergy 共用键鼠<a class="headerlink" href="#synergy" title="Permanent link">&para;</a></h2>
 <p>在 Synergy 的图形界面上，只能在同一局域网内才能配置成功。然而想到既然可以通过 ssh 来互联两台非局域网的机器，理论上应该也能共享这两台电脑的键鼠，所以试着搜索一下 &ldquo;synergy over ssh&rdquo;，果然找到了解决方案。</p>
 <p>将 T460p 作为 server，即提供键鼠，而 G40 作为 client。</p>

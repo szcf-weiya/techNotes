@@ -608,6 +608,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    windows 命名规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#change-to-abrauneggonedrive" class="md-nav__link">
     Change to abraunegg/onedrive
   </a>
@@ -687,6 +694,20 @@
   
     <nav class="md-nav" aria-label="Thunderbird">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gmail" class="md-nav__link">
+    Gmail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxy-for-gmail-in-thunderbird" class="md-nav__link">
+    Proxy for Gmail in Thunderbird
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#upgrade-68-to-78" class="md-nav__link">
@@ -2184,6 +2205,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    windows 命名规范
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#change-to-abrauneggonedrive" class="md-nav__link">
     Change to abraunegg/onedrive
   </a>
@@ -2263,6 +2291,20 @@
   
     <nav class="md-nav" aria-label="Thunderbird">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gmail" class="md-nav__link">
+    Gmail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxy-for-gmail-in-thunderbird" class="md-nav__link">
+    Proxy for Gmail in Thunderbird
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#upgrade-68-to-78" class="md-nav__link">
@@ -2793,6 +2835,29 @@ Created symlink /home/weiya/.config/systemd/user/default.target.wants/onedrive.s
 <div class="highlight"><pre><span></span><code>systemctl --user start onedrive
 systemctl --user stop onedrive
 </code></pre></div>
+<h3 id="windows">windows 命名规范<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<p>在使用 <a href="https://github.com/skilion/onedrive">skilion/onedrive</a> 同步时，一直会出现碰到某个文件崩溃。查了一下才知道是需要遵循 <a href="https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN">Windows 命名规范</a>，其中有两条很重要</p>
+<ul>
+<li>Do not assume case sensitivity. For example, consider the names OSCAR, Oscar, and oscar to be the same, even though some file systems (such as a POSIX-compliant file system) may consider them as different. Note that NTFS supports POSIX semantics for case sensitivity but this is not the default behavior.</li>
+<li>The following reserved characters:</li>
+<li>&lt; (less than)</li>
+<li>
+<blockquote>
+<p>(greater than)</p>
+</blockquote>
+</li>
+<li>: (colon)</li>
+<li>&rdquo; (double quote)</li>
+<li>/ (forward slash)</li>
+<li> (backslash)</li>
+<li>| (vertical bar or pipe)</li>
+<li>? (question mark)</li>
+<li>
+<ul>
+<li>(asterisk)</li>
+</ul>
+</li>
+</ul>
 <h3 id="change-to-abrauneggonedrive">Change to <a href="https://github.com/abraunegg/onedrive">abraunegg/onedrive</a><a class="headerlink" href="#change-to-abrauneggonedrive" title="Permanent link">&para;</a></h3>
 <p>I found that it will auto run after startup, actually with <a href="https://github.com/skilion/onedrive">skilion/onedrive</a>, sometimes it also starts automatically. Then I tried</p>
 <div class="highlight"><pre><span></span><code>$ sudo systemctl disable onedrive.service
@@ -2884,6 +2949,15 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 <ul>
 <li>添加学校邮箱时，必须采用学号形式的邮箱，不要用 alias 形式的，alias 验证会出问题。</li>
 </ul>
+<h3 id="gmail">Gmail<a class="headerlink" href="#gmail" title="Permanent link">&para;</a></h3>
+<p>与其它邮箱帐号不同的是，添加 Gmail 后只有 Inbox 和 Trash，而没有 Sent, Drafts 等，不过有个 <code>[Gmail]</code> 文件夹，里面的子文件便有发件箱等等。这种特殊目录结构是因为对 Gmail 的不同处理方式，详见 <a href="https://support.mozilla.org/zh-CN/kb/thunderbird-gmail">Special Gmail</a></p>
+<h3 id="proxy-for-gmail-in-thunderbird">Proxy for Gmail in Thunderbird<a class="headerlink" href="#proxy-for-gmail-in-thunderbird" title="Permanent link">&para;</a></h3>
+<p>Setting a proxy for the thunderbird is quite straigtforward, but not all mail accounts need the proxy, only gmail in my case. I am considering if it is possible to set up a proxy for gmail separately. Then I found that setting proxy by PAC file might work inspired by <a href="https://support.google.com/mail/forum/AAAAK7un8RUCGQj5uPgJoo">Gmail imap/smtp domains to connect via proxy</a>, since PAC file can customize the visited url.</p>
+<p>Then I need to learn <a href="https://findproxyforurl.com/example-pac-file/">how to write a PAC file</a>, although later I directly export the rules written in SwitchyOmega to a PAC file.</p>
+<p>Once PAC is done, I need to write its location url, seems impossible to directly write a local path. One easy way is to open port 80 to access my laptop, which maybe need apache or nginx, but both of them are overqualified. A simple way is</p>
+<div class="highlight"><pre><span></span><code>sudo python -m SimpleHTTPServer <span class="m">80</span>
+</code></pre></div>
+<p>found in<a href="https://askubuntu.com/questions/646293/open-port-80-on-ubuntu-server">Open port 80 on Ubuntu server</a></p>
 <h3 id="upgrade-68-to-78">Upgrade 68 to 78<a class="headerlink" href="#upgrade-68-to-78" title="Permanent link">&para;</a></h3>
 <p>最近，学校强制要求使用 2FA，但是根据之前短暂的使用经验，2FA 对邮箱客户端的支持很有限，比如就不支持 Ubuntu 系统上的 thunderbird，所以那次用完之后立马发邮件申请注销（因为 2FA 一旦设定自己无法取消）。</p>
 <p>不过幸运的是，看到最近新版本的 thunderbird 支持 Oauth2，比如 <a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/announcing-oauth-2-0-support-for-imap-and-smtp-auth-protocols-in/bc-p/1354695/highlight/true#M28183">Thunderbird 77 supports IMAP using OAuth2 on Office 365. See https://bugzilla.mozilla.org/show_bug.cgi?id=1528136 for more details.</a> <a href="https://kb.wisc.edu/helpdesk/page.php?id=102005">Office 365 (Thunderbird) - Configure Modern Authentication</a></p>
