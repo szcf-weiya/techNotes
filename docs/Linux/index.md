@@ -185,15 +185,6 @@ https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-termina
 ```
 2. 颜色背景色等，直接右键设置，右键设置完成之后便有了一个config文件.
 
-
-## flatten pdf file
-
-参考[is-there-a-way-to-flatten-a-pdf-image-from-the-command-line](https://unix.stackexchange.com/questions/162922/is-there-a-way-to-flatten-a-pdf-image-from-the-command-line)
-
-```
-pdf2ps orig.pdf - | ps2pdf - flattened.pdf
-```
-
 ### Linux 杀进程
 
 参考[linux下杀死进程（kill）的N种方法](http://blog.csdn.net/andy572633/article/details/7211546)
@@ -221,11 +212,6 @@ root         1     0  0 09:15 ?        00:00:44 /sbin/init splash
 - `TTY`: controlling tty (terminal).  (alias tt, tty).
 - `TIME`: cumulative CPU time, "[DD-]HH:MM:SS" format.  (alias cputime).
 - `CMD`: see args.  (alias args, command).
-
-
-## 配置jdk
-
-参考[Ubuntu14.04安装JDK与配置环境变量](https://jingyan.baidu.com/article/647f0115bb26817f2048a871.html)
 
 ## compile FileZilla
 
@@ -513,10 +499,7 @@ In short,
 1. install wmctrl
 2. map F11 via .vimrc
 
-## thunderbird
 
-1. Special Gmail(Folders missing (Sent, Drafts, etc...) Only see Inbox and Trash. Please help.)
-2. [Special Gmail (continued)](https://support.mozilla.org/zh-CN/kb/thunderbird-gmail)
 
 ## Ubuntu 16.04 create WiFi Hotpot
 
@@ -564,32 +547,6 @@ find -L . -name . -o -type d -prune -o -type l -exec rm {} +
 ```
 
 [Delete all broken symbolic links with a line?](https://stackoverflow.com/questions/22097130/delete-all-broken-symbolic-links-with-a-line)
-
-## wget
-
-### wget a series of files in order
-
-下载连续编号的文件，如
-
-```
-wget http://work.caltech.edu/slides/slides{01..18}.pdf
-```
-
-参考 [Wget a series of files in order](https://askubuntu.com/questions/240702/wget-a-series-of-files-in-order)
-
-### `wget` vs `curl`
-
-`wget` 不用添加 `-O` 就可以将下载的文件存储下来，但是 `curl` 并不默认将下载的文件存入本地文件，除非加上 `-o` 选项，而 `wget` 的 `-O` 只是为了更改文件名。
-
-比如[这里](https://github.com/huan/docker-wine/blob/54e7ba2f042a59de72a06bafc37f1fb8c554541e/Dockerfile#L36)，直接将下载的内容输出到下一个命令
-
-```bash
-curl -sL https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
-```
-
-更多比较详见 [What is the difference between curl and wget?](https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget)
-
-
 
 ## hydrogen specify the conda envirnoment
 
@@ -651,149 +608,12 @@ pdftk input.pdf update_info metadata output output.pdf
 
 参考 [Linux文件乱码](https://www.findhao.net/easycoding/1605)
 
-## 图片处理
-
-### 拼接
-
-```bash
-# 水平方向
-convert +append *.png out.png
-# 垂直方向
-convert -append *.png out.png
-```
-
-参考 [How do I join two images in Ubuntu?](https://askubuntu.com/a/889772)
-
-### 缩小图片大小
-
-```bash
-# only specify the wide as 1024 pixel to keep the aspect ratio
-convert input.png -resize 1024x out.png
-convert input.png -quality 50% out.png
-```
-
-参考[How can I compress images?](https://askubuntu.com/questions/781497/how-can-i-compress-images)
-
-### 合并jpg到pdf
-
-参考[convert images to pdf: How to make PDF Pages same size](https://unix.stackexchange.com/questions/20026/convert-images-to-pdf-how-to-make-pdf-pages-same-size)
-
-直接采用
-
-```bash
-pdftk A.pdf B.pdf cat output merge.pdf
-```
-
-得到的pdf中页面大小不一致，于是采用下面的命令
-
-```bash
-convert a.png b.png -compress jpeg -resize 1240x1753 \
-                      -extent 1240x1753 -gravity center \
-                      -units PixelsPerInch -density 150x150 multipage.pdf
-```
-
-注意重点是 `-density 150x150`，若去掉这个选项，则还是得不到相同页面大小的文件。
-
-另外，上述命令是对于`.png`而言的，完全可以换成`.jpg`。
-
-同时，注意`1240x1753`中间是字母`x`.
-
-### pdf 转为 jpg
-
- `-quality 100` 控制质量
- `-density 600x600` 控制分辨率
-
-并注意参数放置文件的前面
-
-pdf 转 png 更好的命令是 `pdftoppm`，参考 [How to convert PDF to Image?](https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image)
-
-```bash
-pdftoppm alg.pdf alg -png -singlefile
-```
-
-图片质量比 `convert` 好很多！！
-
-### convert imgs to pdf
-
-```bash
-ls -1 ./*jpg | xargs -L1 -I {} img2pdf {} -o {}.pdf
-pdftk likelihoodfree-design-a-discussion-{1..13}-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
-```
-
-注意这里需要用 `ls -1`，如果 `ll` 则第一行会有 `total xxx` 的信息，即 `ll | wc -l` 等于 `ls -1 | wc -l` + 1，而且在我的 Ubuntu 18.04 中，`ll` 甚至还会列出
-
-```bash
-./
-../
-```
-
-这一点在服务器上没看到。
-
 ## 文本文件查看
 
 `cut`: select by columns
 
 参考 [10 command-line tools for data analysis in Linux](https://opensource.com/article/17/2/command-line-tools-data-analysis-linux)
 
-## 文本文件拼接
-
-### 按列
-
-```bash
-paste file1 file2 > outputfile
-```
-
-### 按行
-
-```bash
-cat file1 file2 > outputfile
-```
-
-## 视频处理
-
-### 去除音频
-
-参考 [如何使用ffmpeg去除视频声音？](https://hefang.link/article/how-remove-voice-with-ffmpeg.html)
-
-```bash
-ffmpeg -i .\input.mp4 -map 0:0 -vcodec copy out.mp4
-```
-
-### 慢速播放和快速播放
-
-参考 [ffmpeg 视频倍速播放 和 慢速播放](https://blog.csdn.net/ternence_hsu/article/details/85865718)
-
-### 视频旋转
-
-参考[How can I rotate a video?](https://askubuntu.com/questions/83711/how-can-i-rotate-a-video)
-
-直接用
-
-```bash
-ffmpeg -i in.mov -vf "transpose=1" out.mov
-```
-
-然后报错 [“The encoder 'aac' is experimental but experimental codecs are not enabled”]((https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled))
-
-注意添加 `-strict -2` 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成
-
-
-```bash
-ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
-```
-
-### 视频剪切
-
-```bash
-ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -t 00:00:10.0 output.wmv
-```
-
-where
-
-- (optional) `-ss` specifies the start timestamp, the format is `HH:MM:SS.xxx`
-- (optional) `-t` specifies the duration, or use `-to` to specifies the end timestamp
-
-refer to [Using ffmpeg to cut up video](https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video)
 
 ## fuseblk
 
@@ -814,22 +634,6 @@ refer to [Using ffmpeg to cut up video](https://superuser.com/questions/138331/u
 > fuse是一个用户空间实现的文件系统。内核不认识。fuseblk应该就是使用fuse的block设备吧，系统中临时的非超级用户的设备挂载好像用的就是这个。
 
 最后发现，onedrive 无法同步的原因可能并不是因为 0 byte 的文件夹，而是因为下面的命名规范，虽然不是需要同步的文件，而是之前很久的文件，但可能onedrive就在之前这个不规范命名的文件上崩溃了。
-
-## windows 命名规范
-
-在使用 [onedrive](https://github.com/skilion/onedrive) 同步时，一直会出现碰到某个文件崩溃。查了一下才知道是需要遵循 [Windows 命名规范](https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN)，其中有两条很重要
-
-- Do not assume case sensitivity. For example, consider the names OSCAR, Oscar, and oscar to be the same, even though some file systems (such as a POSIX-compliant file system) may consider them as different. Note that NTFS supports POSIX semantics for case sensitivity but this is not the default behavior.
-- The following reserved characters:
-  - < (less than)
-  - > (greater than)
-  - : (colon)
-  - " (double quote)
-  - / (forward slash)
-  - \ (backslash)
-  - | (vertical bar or pipe)
-  - ? (question mark)
-  - * (asterisk)
 
 ## 后台运行
 
@@ -871,19 +675,7 @@ refer to [Different CUDA versions shown by nvcc and NVIDIA-smi](https://stackove
 
 and some introduction: [Fira Code —— 专为编程而生的字体](https://zhuanlan.zhihu.com/p/65362086)
 
-## Proxy for Gmail in Thunderbird
 
-Setting a proxy for the thunderbird is quite straigtforward, but not all mail accounts need the proxy, only gmail in my case. I am considering if it is possible to set up a proxy for gmail separately. Then I found that setting proxy by PAC file might work inspired by [Gmail imap/smtp domains to connect via proxy](https://support.google.com/mail/forum/AAAAK7un8RUCGQj5uPgJoo), since PAC file can customize the visited url.
-
-Then I need to learn [how to write a PAC file](https://findproxyforurl.com/example-pac-file/), although later I directly export the rules written in SwitchyOmega to a PAC file.
-
-Once PAC is done, I need to write its location url, seems impossible to directly write a local path. One easy way is to open port 80 to access my laptop, which maybe need apache or nginx, but both of them are overqualified. A simple way is
-
-```bash
-sudo python -m SimpleHTTPServer 80
-```
-
-found in[Open port 80 on Ubuntu server](https://askubuntu.com/questions/646293/open-port-80-on-ubuntu-server)
 
 
 ## proxy for apt
@@ -1215,7 +1007,7 @@ swapon /mnt/swapfile
 
 ## `unzip` 和右键 `Extract Here` 的区别
 
-对于 A.zip，假设内部结构为 `dir/file`，则通过 `unzip A.zip` 会直接得到 `dir/file`，而邮件解压会得到 `A/dir/file`.
+对于 A.zip，假设内部结构为 `dir/file`，则通过 `unzip A.zip` 会直接得到 `dir/file`，而右键解压会得到 `A/dir/file`.
 
 ## unzip all `.zip` file in a directory
 

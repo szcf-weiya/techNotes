@@ -1,3 +1,7 @@
+## 2021.04.15
+
+- jerk: 性情古怪的人
+
 ## 2021.04.14
 
 - alchemy: 点金术
@@ -2145,7 +2149,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 19. True to form (一如既往，像往常一样), Walter started asking him about his own retirement.
 20. These were very remarkable, but as eccentric as all his other accomplishments.
 21. She had known from the start that her philosophy teacher was eccentric.
-22. If true, that suggests a syllogism: that the love of time is a root of evil, too.
+22. If true, that suggests a **syllogism**: that the love of time is a root of evil, too.
 23. Spencer's idiosyncratic drawing of a large fairy on a tiny water-lily leaf captures an imagination that strained against conventional rules of composition from the start.
 24. a fact that helps explain how it manages to be both profligate and stingy, and is forever in the red.
 25. The concert was rather an amateurish affair.

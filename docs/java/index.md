@@ -1,3 +1,26 @@
+# JAVA 笔记
+
+## Install on Ubuntu Manually
+
+In addition to get the default java (usually `openjdk`) via `apt`, we can download specific version from oracle and manually install it.
+
+```bash
+# download jdk from oracle.
+$ wget ...
+# unzip package and mv it to a proper location
+$ sudo mkdir /usr/local/jvm
+$ sudo tar xzvf <downloaded_package> -C /usr/local/jvm
+# configure environment variables
+$ vi .bashrc
+# add the following lines
+export JAVA_HOME=/usr/local/jvm/jdk1.8.0_91
+export JRE_HOME=$JAVA_HOME/jre
+export CLASSPATH=.:$CLASSPATH:$JAVA_HOME/lib:$JRE_HOME/lib
+export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+```
+
+The above procedure is the record for Ubuntu 14.04. Similar procedure can be done for other Ubuntu, such as [How To Install Java with Apt on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04)
+
 ## JDK, JRE and JVM
 
 Refer to [JDK、JRE、JVM三者间的关系  ](http://playkid.blog.163.com/blog/static/56287260201372113842153/)

@@ -2,6 +2,8 @@
 
 有一台旧的笔记本电脑，Lenovo G40，刷了 Ubuntu 18.04，一直放在寝室吃灰，之前有段时间还试着将其当做周日在寝室办公的机器，但是相较于目前的 ThinkPad T460p，性能还是远不及的，打开软件的速度明显慢了很多。这次疫情待在家里，在摸索科学上网的几种途径后，觉得完全可以将其改成一台服务器。当然这个想法之前不是没有，但是因为想到没有 ip 地址，怎么能访问呢。当熟悉了 ssh 内网穿透以及 ngrok 这些工具之后，这些都变得不是事儿。
 
+另外，办公室的 Windows 电脑也很早就启用了 WSL，因而也可以将其作为服务器，而且通过 SSH 访问也比其它远程登录软件，如 anydesk 来得方便些。
+
 ## SSH 远程登录
 
 将系里服务器作为跳板机
@@ -17,6 +19,16 @@ T460p $ ssh -p 30003 weiya@127.0.0.1
 ```bash
 T460p $ ssh -P 30003 file weiya@127.0.0.1:
 ```
+
+对于 WSL，一波三折，详见 [Issue 22: ssh to WSL](https://github.com/szcf-weiya/techNotes/issues/22)，额外的步骤（按顺序，所以必要性并没有进行检验）为
+
+- 将 22 端口改成 2222
+- 在防火墙中允许 2222 端口 inbound
+- 通过 `dpkg-reconfigure openssh-server` 生成丢失掉的 host key
+
+!!! tip
+    **Don't overlook any negative messages.**
+    其实很快就找到了[类似的问题](https://superuser.com/questions/1123552/how-to-ssh-into-wsl)，也随即大致确定了前两步，但仍然失败。此时如果能关注到在重启 ssh 时出现的 “Could not load host key” 信息，兴许很快就能找到第三步。
 
 ## 通过 Synergy 共用键鼠
 

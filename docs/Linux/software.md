@@ -537,6 +537,22 @@ systemctl --user start onedrive
 systemctl --user stop onedrive
 ```
 
+### windows 命名规范
+
+在使用 [skilion/onedrive](https://github.com/skilion/onedrive) 同步时，一直会出现碰到某个文件崩溃。查了一下才知道是需要遵循 [Windows 命名规范](https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN)，其中有两条很重要
+
+- Do not assume case sensitivity. For example, consider the names OSCAR, Oscar, and oscar to be the same, even though some file systems (such as a POSIX-compliant file system) may consider them as different. Note that NTFS supports POSIX semantics for case sensitivity but this is not the default behavior.
+- The following reserved characters:
+  - < (less than)
+  - > (greater than)
+  - : (colon)
+  - " (double quote)
+  - / (forward slash)
+  - \ (backslash)
+  - | (vertical bar or pipe)
+  - ? (question mark)
+  - * (asterisk)
+
 ### Change to [abraunegg/onedrive](https://github.com/abraunegg/onedrive)
 
 I found that it will auto run after startup, actually with [skilion/onedrive](https://github.com/skilion/onedrive), sometimes it also starts automatically. Then I tried
@@ -679,6 +695,24 @@ If without root privilege, when running `install-tl`, type `D` to change the dir
 ## Thunderbird
 
 - 添加学校邮箱时，必须采用学号形式的邮箱，不要用 alias 形式的，alias 验证会出问题。
+
+### Gmail
+
+与其它邮箱帐号不同的是，添加 Gmail 后只有 Inbox 和 Trash，而没有 Sent, Drafts 等，不过有个 `[Gmail]` 文件夹，里面的子文件便有发件箱等等。这种特殊目录结构是因为对 Gmail 的不同处理方式，详见 [Special Gmail](https://support.mozilla.org/zh-CN/kb/thunderbird-gmail)
+
+### Proxy for Gmail in Thunderbird
+
+Setting a proxy for the thunderbird is quite straigtforward, but not all mail accounts need the proxy, only gmail in my case. I am considering if it is possible to set up a proxy for gmail separately. Then I found that setting proxy by PAC file might work inspired by [Gmail imap/smtp domains to connect via proxy](https://support.google.com/mail/forum/AAAAK7un8RUCGQj5uPgJoo), since PAC file can customize the visited url.
+
+Then I need to learn [how to write a PAC file](https://findproxyforurl.com/example-pac-file/), although later I directly export the rules written in SwitchyOmega to a PAC file.
+
+Once PAC is done, I need to write its location url, seems impossible to directly write a local path. One easy way is to open port 80 to access my laptop, which maybe need apache or nginx, but both of them are overqualified. A simple way is
+
+```bash
+sudo python -m SimpleHTTPServer 80
+```
+
+found in[Open port 80 on Ubuntu server](https://askubuntu.com/questions/646293/open-port-80-on-ubuntu-server)
 
 ### Upgrade 68 to 78
 
