@@ -29,7 +29,7 @@ nav:
       - Julia: julia/index.md
       - Matlab: Matlab/index.md
     - CSProgramming:
-      - Cpp: Cpp/index.md
+      - C/C++: Cpp/index.md
       - Java: java/index.md
       - SQL: SQL/index.md
       - Cuda: cuda/index.md

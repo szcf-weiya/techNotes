@@ -1,4 +1,88 @@
-# Cpp notes
+# C/C++ Notes
+
+!!! abstract "My C/C++ Projects"
+	- [C](https://github.com/szcf-weiya?tab=repositories&q=&type=source&language=c&sort=)
+	- [C++](https://github.com/szcf-weiya?tab=repositories&q=&type=source&language=c%2B%2B&sort=)
+
+## GCC: gcc/g++
+
+[GCC](https://gcc.gnu.org/) 代表 GNU Compiler Collections, 主要用于编译 C/C++，但也支持其它语言，如 Fortran, Go.
+
+- gcc/g++ 都可以编译任何 `.c` 或者 `.cpp` 文件，但 gcc 将其看作分别 C, C++，而 g++ 将其都看成 C++
+- 在 link 时，g++ 会自动连接 C++ 标准库，而 gcc 不会
+
+see also: 
+
+- [Difference between GCC and G++](https://www.geeksforgeeks.org/difference-between-gcc-and-g/)
+- [What is the difference between g++ and gcc?](https://stackoverflow.com/questions/172587/what-is-the-difference-between-g-and-gcc)
+
+一步到位的编译命令为
+
+```bash
+gcc test.c -o test
+```
+
+它可以拆解为以下若干步
+
+```bash
+# 预处理, -E 使得编译器在预处理后停止，并输出预处理结果
+gcc -E test.c -o test.i
+// gcc -E test.c
+# 编译为汇编代码, -S 程序编译期间，生成汇编代码后，停止
+gcc -S test.i -o test.s
+# 汇编
+gcc -c test.s -o test.o
+# 连接
+gcc test.o -o test
+```
+
+- 多个程序文件的编译
+
+```bash
+gcc test1.c test2.c -o test 
+```
+
+- 检错
+
+```bash
+gcc -pedantic illcode.c -o illcode
+gcc -Wall illcode.c -o illcode
+gcc -Werror test.c -o test
+```
+
+- 编译成可执行文件
+
+```bash
+gcc -c -I /usr/dev/mysql/include test.c -o test.o
+```
+
+- 连接库文件
+
+```bash
+gcc -L /usr/dev/mysql/lib –lmysqlclient test.o -o test
+```
+
+- 强制连接时使用静态链接库: 优先使用动态链接库，只有当动态链接库不存在时才考虑使用静态链接库，`-static` 强制使用静态链接库
+
+在 `/usr/dev/mysql/lib` 目录下有链接时所需要的库文件`libmysqlclient.so`和 `libmysqlclient.a`，为了让GCC在链接时只用到静态链接库，可以使用下面的命令
+
+```bash
+gcc -L /usr/dev/mysql/lib -static -lmysqlclient test.o -o test
+```
+
+- 静态库链接时搜索路径顺序:
+	1. ld会去找GCC命令中的参数-L
+	2. 再找gcc的环境变量 LIBRARY_PATH
+	3. 再找内定目录 /lib /usr/lib /usr/local/lib 这是当初compile gcc时写在程序内的
+
+- 动态链接时、执行时搜索路径顺序: [see also](../Linux/#shared-objects-so-dynamic-library)
+	1. 编译目标代码时指定的动态库搜索路径
+	2. 环境变量 LD_LIBRARY_PATH 指定的动态库搜索路径
+	3. 配置文件 /etc/ld.so.conf 中指定的动态库搜索路径
+	4. 默认的动态库搜索路径 /lib
+	5. 默认的动态库搜索路径 /usr/lib
+
+参考 [Linux GCC常用命令](http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html)
 
 ## C++中cout输出字符型指针地址值的方法
 
@@ -274,10 +358,6 @@ int &n = m;
 - 引用被创建时同时被初始化，而指针则可以在任何时候初始化；
 - 不能有 NULL 引用，必须与合法的存储单元关联，而指针可以是 NULL;
 - 一旦引用被初始化，就不能改变引用的关系，而指针则可以随时改变所指的对象。
-
-## linux gcc常用命令
-
-[Linux GCC常用命令](http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html)
 
 ## C++ public/protected/private
 
