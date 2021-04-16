@@ -20,7 +20,7 @@
     
     
       
-        <title>Cpp - techNotes</title>
+        <title>C/C++ - techNotes</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cpp-notes" class="md-skip">
+        <a href="#cc-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cpp
+              C/C++
             
           </span>
         </div>
@@ -643,12 +643,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Cpp
+          C/C++
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Cpp
+        C/C++
       </a>
       
         
@@ -663,6 +663,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gcc-gccg" class="md-nav__link">
+    GCC: gcc/g++
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#ccout" class="md-nav__link">
@@ -813,13 +820,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux-gcc" class="md-nav__link">
-    linux gcc常用命令
-  </a>
   
 </li>
       
@@ -1584,6 +1584,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#gcc-gccg" class="md-nav__link">
+    GCC: gcc/g++
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ccout" class="md-nav__link">
     C++中cout输出字符型指针地址值的方法
   </a>
@@ -1732,13 +1739,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux-gcc" class="md-nav__link">
-    linux gcc常用命令
-  </a>
   
 </li>
       
@@ -1895,7 +1895,88 @@
               
                 
                 
-                <h1 id="cpp-notes">Cpp notes<a class="headerlink" href="#cpp-notes" title="Permanent link">&para;</a></h1>
+                <h1 id="cc-notes">C/C++ Notes<a class="headerlink" href="#cc-notes" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">My C/C++ Projects</p>
+<ul>
+<li><a href="https://github.com/szcf-weiya?tab=repositories&amp;q=&amp;type=source&amp;language=c&amp;sort=">C</a></li>
+<li><a href="https://github.com/szcf-weiya?tab=repositories&amp;q=&amp;type=source&amp;language=c%2B%2B&amp;sort=">C++</a></li>
+</ul>
+</div>
+<h2 id="gcc-gccg">GCC: gcc/g++<a class="headerlink" href="#gcc-gccg" title="Permanent link">&para;</a></h2>
+<p><a href="https://gcc.gnu.org/">GCC</a> 代表 GNU Compiler Collections, 主要用于编译 C/C++，但也支持其它语言，如 Fortran, Go.</p>
+<ul>
+<li>gcc/g++ 都可以编译任何 <code>.c</code> 或者 <code>.cpp</code> 文件，但 gcc 将其看作分别 C, C++，而 g++ 将其都看成 C++</li>
+<li>在 link 时，g++ 会自动连接 C++ 标准库，而 gcc 不会</li>
+</ul>
+<p>see also: </p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/difference-between-gcc-and-g/">Difference between GCC and G++</a></li>
+<li><a href="https://stackoverflow.com/questions/172587/what-is-the-difference-between-g-and-gcc">What is the difference between g++ and gcc?</a></li>
+</ul>
+<p>一步到位的编译命令为</p>
+<div class="highlight"><pre><span></span><code>gcc test.c -o <span class="nb">test</span>
+</code></pre></div>
+<p>它可以拆解为以下若干步</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 预处理, -E 使得编译器在预处理后停止，并输出预处理结果</span>
+gcc -E test.c -o test.i
+// gcc -E test.c
+<span class="c1"># 编译为汇编代码, -S 程序编译期间，生成汇编代码后，停止</span>
+gcc -S test.i -o test.s
+<span class="c1"># 汇编</span>
+gcc -c test.s -o test.o
+<span class="c1"># 连接</span>
+gcc test.o -o <span class="nb">test</span>
+</code></pre></div>
+<ul>
+<li>多个程序文件的编译</li>
+</ul>
+<div class="highlight"><pre><span></span><code>gcc test1.c test2.c -o <span class="nb">test</span> 
+</code></pre></div>
+<ul>
+<li>检错</li>
+</ul>
+<div class="highlight"><pre><span></span><code>gcc -pedantic illcode.c -o illcode
+gcc -Wall illcode.c -o illcode
+gcc -Werror test.c -o <span class="nb">test</span>
+</code></pre></div>
+<ul>
+<li>编译成可执行文件</li>
+</ul>
+<div class="highlight"><pre><span></span><code>gcc -c -I /usr/dev/mysql/include test.c -o test.o
+</code></pre></div>
+<ul>
+<li>连接库文件</li>
+</ul>
+<div class="highlight"><pre><span></span><code>gcc -L /usr/dev/mysql/lib –lmysqlclient test.o -o <span class="nb">test</span>
+</code></pre></div>
+<ul>
+<li>强制连接时使用静态链接库: 优先使用动态链接库，只有当动态链接库不存在时才考虑使用静态链接库，<code>-static</code> 强制使用静态链接库</li>
+</ul>
+<p>在 <code>/usr/dev/mysql/lib</code> 目录下有链接时所需要的库文件<code>libmysqlclient.so</code>和 <code>libmysqlclient.a</code>，为了让GCC在链接时只用到静态链接库，可以使用下面的命令</p>
+<div class="highlight"><pre><span></span><code>gcc -L /usr/dev/mysql/lib -static -lmysqlclient test.o -o <span class="nb">test</span>
+</code></pre></div>
+<ul>
+<li>
+<p>静态库链接时搜索路径顺序:</p>
+<ol>
+<li>ld会去找GCC命令中的参数-L</li>
+<li>再找gcc的环境变量 LIBRARY_PATH</li>
+<li>再找内定目录 /lib /usr/lib /usr/local/lib 这是当初compile gcc时写在程序内的</li>
+</ol>
+</li>
+<li>
+<p>动态链接时、执行时搜索路径顺序: <a href="../Linux/#shared-objects-so-dynamic-library">see also</a></p>
+<ol>
+<li>编译目标代码时指定的动态库搜索路径</li>
+<li>环境变量 LD_LIBRARY_PATH 指定的动态库搜索路径</li>
+<li>配置文件 /etc/ld.so.conf 中指定的动态库搜索路径</li>
+<li>默认的动态库搜索路径 /lib</li>
+<li>默认的动态库搜索路径 /usr/lib</li>
+</ol>
+</li>
+</ul>
+<p>参考 <a href="http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html">Linux GCC常用命令</a></p>
 <h2 id="ccout">C++中cout输出字符型指针地址值的方法<a class="headerlink" href="#ccout" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html">C++中cout输出字符型指针地址值的方法</a></p>
 <p>C 语言中通过 <code>printf</code> 便可以很方便地输出字符串指针地址值，如</p>
@@ -2095,8 +2176,6 @@ double *p = &amp;x;
 <li>不能有 NULL 引用，必须与合法的存储单元关联，而指针可以是 NULL;</li>
 <li>一旦引用被初始化，就不能改变引用的关系，而指针则可以随时改变所指的对象。</li>
 </ul>
-<h2 id="linux-gcc">linux gcc常用命令<a class="headerlink" href="#linux-gcc" title="Permanent link">&para;</a></h2>
-<p><a href="http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html">Linux GCC常用命令</a></p>
 <h2 id="c-publicprotectedprivate">C++ public/protected/private<a class="headerlink" href="#c-publicprotectedprivate" title="Permanent link">&para;</a></h2>
 <p><a href="http://www.jb51.net/article/54224.htm">深入理解C++中public、protected及private用法</a></p>
 <h2 id="c">C++按行读取文本文件<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
