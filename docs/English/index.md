@@ -1,3 +1,9 @@
+## 2021.04.17
+
+- trophy: 战利品，奖品
+    - trophy cup: 奖杯
+    - trophy wife: 花瓶妻子（以青春和美貌为本钱的妻子）
+
 ## 2021.04.16
 
 - Mussolini: 独裁者墨索里尼
@@ -944,6 +950,7 @@
 - there were characters I encountered, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) for one, for whom I think there was a bit of an unacknowledged competitive tension with John.
 - The idea of competing with them is **absurd (荒唐可笑的，不合理的)**.
 - That's a very **egotistical (自负的)** statement.
+    - egotism: 自负
 - Conway doesn't **mess around**.
 - Wolfram may be egotistical, but he has a lot to be egotistical about.
 - if anyone can do that **astounding (令人震惊的) feat (技艺表演，功绩，壮举)**, it's this guy.
@@ -1118,7 +1125,7 @@
 - if someone at one of these universities had been caught robbing at a bank, would his colleagues have all **backed him up** like that?
 - this kind of **cavalier** attitude to what is pretty much the purest sort of scientific fraud makes it clear how little the scientific process is valued.
 - this kind of sounds like a **conspiracy theory (阴谋论)**
-- all participants in cargo-cut (货物崇拜) social science——from the fabricators to the **powermongers** to the enablers to the just plain **incompetents (无能者，不胜任者)**
+- all participants in cargo-cult (货物崇拜) social science——from the fabricators to the **powermongers** to the enablers to the just plain **incompetents (无能者，不胜任者)**
 - swatting away people like other data **thugs**
 
 ## 2020.10.04
