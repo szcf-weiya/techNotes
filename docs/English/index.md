@@ -1,3 +1,7 @@
+## 2021.04.18
+
+- neonatology: 新生儿科学
+
 ## 2021.04.17
 
 - trophy: 战利品，奖品
@@ -689,6 +693,7 @@
     - hyperglycemia: 多糖症，高血糖症
 - A study of patients with **insulin (胰岛素)**-dependent diabetes was conducted to investigate the effects of cigarette smoking on **renal (肾脏的)** and **retinal (视网膜的)** **complications (并发症)**.
 - In a study investigating **maternal (母亲的，母系的，母体遗传的)** risk factors for **congenital (先天的，天生的)** **syphilis (梅毒)**.
+    - maternity leave: 产假
 - The estimated coefficients from a logistic regression model containing the explanatory variables **cocaine or crack (可卡因)** use， marital status, number of **prenatal (产前的)** visits to a doctor.
 - the AIDS patients suffering from **concomitant (伴随的)** **esophageal (食道的，食管的)** **candidiasis (念珠菌病)**, an infection due to **candida (念珠菌)** yeast, and **cytomegalovirus (巨细胞病毒)**, a **herpes (疱疹)** infection that can cause serious illness.
 
