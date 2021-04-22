@@ -1,3 +1,12 @@
+## 2021.04.22
+
+- sandpit: 采沙坑
+- Much as I **abominate (讨厌，不喜欢)** writing, I would not give up his correspondence for any consideration.
+
+## 2021.04.21
+
+- gobbledygook: 官样文章
+
 ## 2021.04.20
 
 - incestuous: 乱伦的，近亲繁殖的
