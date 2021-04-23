@@ -1,3 +1,7 @@
+## 2021.04.23
+
+- For a time, it appears, **Homo erectus (直立人)** was the only **hominid (人类及其祖先的)** species on Earth.
+
 ## 2021.04.22
 
 - sandpit: 采沙坑
