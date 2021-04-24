@@ -1,3 +1,7 @@
+## 2021.04.24
+
+- The most **salient (突出)** point of any pie chart is that the percentages add up to 100%.
+
 ## 2021.04.23
 
 - For a time, it appears, **Homo erectus (直立人)** was the only **hominid (人类及其祖先的)** species on Earth.
