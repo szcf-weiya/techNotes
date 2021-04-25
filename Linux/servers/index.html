@@ -314,8 +314,28 @@
       
         <li class="md-nav__item">
   <a href="#ssh" class="md-nav__link">
-    建立 ssh 的信任关系
+    ssh
   </a>
+  
+    <nav class="md-nav" aria-label="ssh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-start" class="md-nav__link">
+    initial start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-consecutive-ssh" class="md-nav__link">
+    two consecutive ssh
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1434,8 +1454,28 @@
       
         <li class="md-nav__item">
   <a href="#ssh" class="md-nav__link">
-    建立 ssh 的信任关系
+    ssh
   </a>
+  
+    <nav class="md-nav" aria-label="ssh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-start" class="md-nav__link">
+    initial start
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-consecutive-ssh" class="md-nav__link">
+    two consecutive ssh
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1591,7 +1631,8 @@
                 
                 
                 <h1 id="servers">Servers<a class="headerlink" href="#servers" title="Permanent link">&para;</a></h1>
-<h2 id="ssh">建立 ssh 的信任关系<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
+<h2 id="ssh">ssh<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
+<h3 id="initial-start">initial start<a class="headerlink" href="#initial-start" title="Permanent link">&para;</a></h3>
 <p>首先在本地新建 ssh key，</p>
 <div class="highlight"><pre><span></span><code>ssh-keygen -t <span class="o">[</span>rsa <span class="p">|</span> ed25519 <span class="p">|</span> ecdsa <span class="p">|</span> dsa<span class="o">]</span>
 </code></pre></div>
@@ -1612,6 +1653,18 @@
 <li>公钥授权文件(<code>~/.ssh/authorized_keys</code>)</li>
 </ul>
 <p>将登录端的 <code>id_rsa.pub</code> 内容复制到服务器端的 <code>authorized_keys</code> 文件中即可。</p>
+<h3 id="two-consecutive-ssh">two consecutive ssh<a class="headerlink" href="#two-consecutive-ssh" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ ssh -t user@A ssh user@B
+</code></pre></div>
+<p>where <code>-t</code> avoid the warning that </p>
+<blockquote>
+<p>Pseudo-terminal will not be allocated because stdin is not a terminal.</p>
+</blockquote>
+<p>which would freeze the session.</p>
+<p>If the usernames are the same, the second username can be omitted.</p>
+<p>The port forwarding would be more clear. For example, open a jupyter session on node <code>B</code>, whose login node is <code>A</code>, then access the jupyter in the local browser <code>http://127.0.0.1:28888</code> after running</p>
+<div class="highlight"><pre><span></span><code>$ ssh -t -L <span class="m">28888</span>:localhost:8888 user@A ssh -L <span class="m">8888</span>:localhost:8888 user@B
+</code></pre></div>
 <h2 id="gui">远程运行服务器端的gui程序<a class="headerlink" href="#gui" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>weiya@T460p:~$ ssh weiya@G40
 weiya@G40:~$ <span class="nb">export</span> <span class="nv">DISPLAY</span><span class="o">=</span>:0

@@ -949,11 +949,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#shadowssocks" class="md-nav__link">
-    shadowssocks安装
+  <a href="#shadowsocks" class="md-nav__link">
+    shadowsocks
   </a>
   
-    <nav class="md-nav" aria-label="shadowssocks安装">
+    <nav class="md-nav" aria-label="shadowsocks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -972,13 +972,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    代理方案
-  </a>
   
 </li>
       
@@ -1087,7 +1080,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     尝试二：命令行添加
   </a>
   
@@ -1106,7 +1099,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     内网穿透
   </a>
   
@@ -1141,14 +1134,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     科学上网
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     访问内网
   </a>
   
@@ -1167,21 +1160,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     带宽、网速和流量
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     安卓手机代理上网
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     子网掩码
   </a>
   
@@ -1623,11 +1616,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#shadowssocks" class="md-nav__link">
-    shadowssocks安装
+  <a href="#shadowsocks" class="md-nav__link">
+    shadowsocks
   </a>
   
-    <nav class="md-nav" aria-label="shadowssocks安装">
+    <nav class="md-nav" aria-label="shadowsocks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1646,13 +1639,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    代理方案
-  </a>
   
 </li>
       
@@ -1761,7 +1747,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     尝试二：命令行添加
   </a>
   
@@ -1780,7 +1766,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     内网穿透
   </a>
   
@@ -1815,14 +1801,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     科学上网
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     访问内网
   </a>
   
@@ -1841,21 +1827,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     带宽、网速和流量
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     安卓手机代理上网
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     子网掩码
   </a>
   
@@ -1931,32 +1917,36 @@ ping <span class="m">10</span>.71.115.254
 route add default gw <span class="m">10</span>.71.115.254 enp0s31f6
 ping <span class="m">10</span>.71.45.100
 </code></pre></div>
-<h2 id="shadowssocks">shadowssocks安装<a class="headerlink" href="#shadowssocks" title="Permanent link">&para;</a></h2>
+<h2 id="shadowsocks">shadowsocks<a class="headerlink" href="#shadowsocks" title="Permanent link">&para;</a></h2>
+<p>Follow the <a href="https://github.com/shadowsocks/shadowsocks/blob/master/README.md">instruction</a> in the official repo, </p>
+<ul>
+<li>start on the server: <code>sudo ssserver -c ss.json -d start</code></li>
+<li>check the log file: <code>tail /var/log/shadowsocks.log -f</code></li>
+<li>stop on the server: <code>sudo ssserver -d stop</code></li>
+</ul>
 <h3 id="_3">二维码反解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>对
-<div class="highlight"><pre><span></span><code>ss://bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=
-</code></pre></div></p>
-<p>中的
-<div class="highlight"><pre><span></span><code>bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=
-</code></pre></div></p>
-<p>base64解密得到</p>
+<p>对</p>
+<div class="highlight"><pre><span></span><code>ss://bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ<span class="o">=</span>
+</code></pre></div>
+<p>中的</p>
+<div class="highlight"><pre><span></span><code><span class="nv">bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ</span><span class="o">=</span>
+</code></pre></div>
+<p>base64 解密得到</p>
 <div class="highlight"><pre><span></span><code>method:password@hostname:port
 </code></pre></div>
-<p>然后
+<p>然后</p>
 <div class="highlight"><pre><span></span><code>sslocal -p port -k password -m method
-</code></pre></div></p>
-<p><a href="http://blog.csdn.net/qq_25978793/article/details/49870501">http://blog.csdn.net/qq_25978793/article/details/49870501</a></p>
+</code></pre></div>
 <h3 id="_4">系统代理与浏览器代理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>无需单独设置系统代理，浏览器是可以通过插件设置代理的。</p>
-<p>另外使用如curl需要代理时，可以采用
-<div class="highlight"><pre><span></span><code>curl ip.cn --proxy socks5://127.0.0.1:1080
-</code></pre></div></p>
-<h2 id="_5">代理方案<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
-<li>只需要浏览器：shadowssocks + switchOmega</li>
-<li>全局代理：shadowssocks + privoxy</li>
+<li>只作用在浏览器上：shadowsocks + switchOmega</li>
+<li>全局代理：shadowsocks + privoxy</li>
 </ul>
 <p>参考 <a href="https://xingjian.space/Computer-Network/global-proxy-of-Shadowsocks-in-Ubuntu/">Ubuntu配置Shadowsocks全局代理</a></p>
+<p>无需单独设置系统代理，浏览器是可以通过插件设置代理的。</p>
+<p>另外使用如curl需要代理时，可以采用</p>
+<div class="highlight"><pre><span></span><code>$ curl ip.cn --proxy socks5://127.0.0.1:1080
+</code></pre></div>
 <h2 id="cdn">CDN折腾记录<a class="headerlink" href="#cdn" title="Permanent link">&para;</a></h2>
 <p>突然想到要怎么设置子域名，一开始还以为需要再次购买，原来并非如此，只需要添加解析即可。具体设置子域名和添加解析的方法可以参考github提供的帮助文档。</p>
 <p>花了几个小时折腾完这个，突然又想实现https 访问，直接百度“github pages https”便有几篇文档，都谈到了cloudflare，注册之后可以享受免费版本的CDN服务。一开始我也不清楚CDN到底是什么，就直接按照网上的教程走</p>
@@ -2088,7 +2078,7 @@ sudo apt-get install network-manager-l2tp
 <p>打开配置窗口的命令为 <a href="https://askubuntu.com/questions/174381/openning-networkmanagers-edit-connections-window-from-terminal"><code>nm-connection-editor</code></a>，但竟然没有，原来没有装 </p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install network-manager-gnome
 </code></pre></div>
-<h3 id="_6">尝试二：命令行添加<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_5">尝试二：命令行添加<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>在尝试寻找 network manager 的 command line 命令时，发现好几个 <code>nmcli</code> 相关的命令，于是猜想应该是可以直接在 command line 中配置的，比如 <a href="https://askubuntu.com/questions/1167283/l2tp-connection-client-on-ubuntu-18-04-server">L2TP Connection Client on ubuntu 18.04 Server</a> 和 <a href="https://www.thegeekdiary.com/how-to-configure-and-manage-network-connections-using-nmcli/">How to configure and Manage Network Connections using nmcli</a>，但我先在本地测试有几个问题</p>
 <ul>
 <li>似乎不需要 <code>connection.id</code></li>
@@ -2107,7 +2097,7 @@ sudo apt-get install network-manager-l2tp
 </blockquote>
 <h3 id="windows">尝试三：Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <p>试用 Azure，申请了个 Windows 10，按照 ITSC 的指示连接 VPN，确实能够成功，但是连接成功后，我跟该电脑的连接也就断开了，再次尝试也连不上，只好重启。</p>
-<h2 id="_7">内网穿透<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_6">内网穿透<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>系里的服务器需要内网才能访问，连接内网一般需要 VPN，但是因为墙的原因极其不稳定。可以考虑一种内网穿透的策略，借助一台境外有 public IP 的服务器（好几家的云服务商都提供了免费试用），将端口转发，详见 <a href="https://github.com/aploium/shootback">shootback</a></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># ---- master ----</span>
 python3 master.py -m <span class="m">0</span>.0.0.0:10000 -c <span class="m">0</span>.0.0.0:10022 --ssl
@@ -2148,12 +2138,12 @@ ssh -g -D <span class="m">30002</span> -p30001 inner-user@localhost
 </blockquote>
 <p>所以如果我在 SwitchyOmega 上添加一条 socks5 记录，端口为 30002，而 sever 即填 <code>server-address</code>，则可以翻墙了！！</p>
 <h2 id="ssh_1">SSH 端口转发<a class="headerlink" href="#ssh_1" title="Permanent link">&para;</a></h2>
-<h3 id="_8">科学上网<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_7">科学上网<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Local Laptop</span>
 ssh -D <span class="m">30002</span> my@server
 </code></pre></div>
 <p>然后在 SwithyOmega 中添加 socks5://127.0.0.1:30002 即可科学上网。</p>
-<h3 id="_9">访问内网<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_8">访问内网<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Local Laptop</span>
 ssh -L <span class="m">30002</span>:localhost:30002 <span class="o">[</span>Server<span class="s1">&#39;s Username]@[Server&#39;</span>s Public IP<span class="o">]</span>
 <span class="c1"># my server</span>
@@ -2193,7 +2183,7 @@ ssh -D <span class="m">30002</span> -p <span class="m">30001</span> <span class=
 <li>上面一来一会就形成一个闭环。内网服务器定期往 30000 端口发送检测消息，如果链路正常，则 30000 端口的消息先转发到 <code>xx.xx.xx.xx</code> 的 30000 端口，然后立即转送到内网服务器的 30001 端口。</li>
 </ul>
 <p><img alt="" src="autossh.png" /></p>
-<h2 id="_10">带宽、网速和流量<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_9">带宽、网速和流量<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>单位：</p>
 <ul>
 <li>带宽：比特每秒 (bit/s, bps)</li>
@@ -2209,7 +2199,7 @@ ssh -D <span class="m">30002</span> -p <span class="m">30001</span> <span class=
 - 3M以上用户的到达测速网站的速度大于 240KByte/s,即1920Kbps时是属于正常的；</p>
 </blockquote>
 <p>参考 <a href="https://zhuanlan.zhihu.com/p/50401281">浅谈带宽、网速和流量之间的关系</a></p>
-<h2 id="_11">安卓手机代理上网<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_10">安卓手机代理上网<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>安卓手机自带的只默认 http 和 https 代理，但像 ssh 隧道或者 shadowsocks 得到的都是 socks5 代理，也尝试过<a href="https://blog.csdn.net/qq_40374604/article/details/88989651">别人推荐的 ProxyDroid</a>，但是似乎还要对手机进行 root。遂放弃。</p>
 <p>既然 socks5 有了，直接转换成 http 不就行了么，然后看到了 <a href="https://g2ex.top/2016/05/20/Tips-on-Chinternet/">Privoxy</a>，这勾起了我的回忆，记得曾经<a href="https://blog.csdn.net/m0_38110132/article/details/79796171">跟 shadowsocks 搭配</a>使用过，但不知道为啥要用它。而这次我的目标及动机很明确了，将 socks5 转换成 http，供手机端访问，因为我的电脑和手机在同一个局域网内，那这样手机端的 http 代理服务器即为我电脑的局域网 ip，通过 ifconfig 可以得到。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 把 HTTP 流量转发到本机 127.0.0.1:1080 的 Shadowsocks (or SSH tunnel)</span>
@@ -2226,7 +2216,7 @@ listen-address <span class="m">0</span>.0.0.0:8118
 <div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">8118</span>
 </code></pre></div>
 <p>大功告成，手机端能够通过 http 代理科学上网啦！</p>
-<h2 id="_12">子网掩码<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h2 id="_11">子网掩码<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>想在云服务器后台设置安全组规则，只允许 CUHK 的网进入；但是填写时，除了 IP，还需要子网掩码，经查为 <a href="https://ipinfo.io/AS3661/137.189.0.0/16">CUHKNET</a></p>
 <blockquote>
 <p>137.189.0.0/16</p>
