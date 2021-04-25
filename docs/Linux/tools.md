@@ -236,6 +236,10 @@ done
 
 其中 `date -r file` 返回文件的上次修改时间，而 `+%s` 将时间转换为 seconds，方便进行比较，另外 `-d "-1 mins"` 能对时间进行加减处理。 
 
+## `tail`
+
+- `-f`: output appended data as the file grows, powerful for checking the log file in real time.
+
 ## `wget`
 
 ### wget a series of files in order

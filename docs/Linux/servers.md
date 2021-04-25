@@ -1,6 +1,8 @@
 # Servers
 
-## 建立 ssh 的信任关系
+## ssh
+
+### initial start
 
 首先在本地新建 ssh key，
 
@@ -23,6 +25,26 @@ ssh-keygen -t [rsa | ed25519 | ecdsa | dsa]
 - 公钥授权文件(`~/.ssh/authorized_keys`)
 
 将登录端的 `id_rsa.pub` 内容复制到服务器端的 `authorized_keys` 文件中即可。
+
+### two consecutive ssh
+
+```bash
+$ ssh -t user@A ssh user@B
+```
+
+where `-t` avoid the warning that 
+
+> Pseudo-terminal will not be allocated because stdin is not a terminal.
+
+which would freeze the session.
+
+If the usernames are the same, the second username can be omitted.
+
+The port forwarding would be more clear. For example, open a jupyter session on node `B`, whose login node is `A`, then access the jupyter in the local browser `http://127.0.0.1:28888` after running
+
+```bash
+$ ssh -t -L 28888:localhost:8888 user@A ssh -L 8888:localhost:8888 user@B
+```
 
 ## 远程运行服务器端的gui程序
 

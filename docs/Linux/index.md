@@ -211,7 +211,8 @@ root         1     0  0 09:15 ?        00:00:44 /sbin/init splash
 - `STIME`: same with `START`, starting time or date of the process.  Only the year will be displayed if the process was not started the same year ps was invoked, or "MmmDD" if it was not started the same day, or "HH:MM" otherwise.  See also bsdstart, start, lstart, and stime.
 - `TTY`: controlling tty (terminal).  (alias tt, tty).
 - `TIME`: cumulative CPU time, "[DD-]HH:MM:SS" format.  (alias cputime).
-- `CMD`: see args.  (alias args, command).
+- `CMD`: see args.  (alias args, command). when the arguments to that command cannot be located, 会被中括号 `[]` 包起来
+
 
 ## compile FileZilla
 

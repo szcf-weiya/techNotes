@@ -1,3 +1,7 @@
+## 2021.04.25
+
+- left ventricle: 左心室
+
 ## 2021.04.24
 
 - The most **salient (突出)** point of any pie chart is that the percentages add up to 100%.
@@ -1783,6 +1787,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. He ended up in hospital due to a block in his **artery (动脉、干道、主流)**.
 2. **myocardial (心肌的)** **infarction (梗塞)**
+    - myocardium: 心肌
 3. adventitia (外膜，动脉外膜), media (血管中层，中脉), intima (内膜)
 4. Researchers used the CT images to learn if any of the subjects had **atherosclerosis (【医】动脉粥样硬化)** before the study begun.
 
@@ -2577,7 +2582,7 @@ up
 30. cavalry, soldier
 31. parasite, prairie
 32. perigee
-33. cavity
+33. oral **cavity (洞，凹处；腔)**: 口腔
 34. cessation
 35. abdicate
 36. encompass

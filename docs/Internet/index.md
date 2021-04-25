@@ -3,6 +3,7 @@
 ## 安装XX-Net
 
 ### Environment
+
 1. ubuntu 16.04
 2. XX-net
 3. privoxy
@@ -72,49 +73,55 @@ route add default gw 10.71.115.254 enp0s31f6
 ping 10.71.45.100
 ```
 
-## shadowssocks安装
+## shadowsocks
+
+Follow the [instruction](https://github.com/shadowsocks/shadowsocks/blob/master/README.md) in the official repo, 
+
+- start on the server: `sudo ssserver -c ss.json -d start`
+- check the log file: `tail /var/log/shadowsocks.log -f`
+- stop on the server: `sudo ssserver -d stop`
+
 ### 二维码反解
+
 对
-```
+
+```bash
 ss://bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=
 ```
 
 中的
-```
+
+```bash
 bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=
 ```
 
-base64解密得到
+base64 解密得到
 
-```
+```bash
 method:password@hostname:port
 ```
 
-
 然后
-```
+
+```bash
 sslocal -p port -k password -m method
 ```
-
-[http://blog.csdn.net/qq_25978793/article/details/49870501](http://blog.csdn.net/qq_25978793/article/details/49870501)
-
 
 
 ### 系统代理与浏览器代理
 
+- 只作用在浏览器上：shadowsocks + switchOmega
+- 全局代理：shadowsocks + privoxy
+
+参考 [Ubuntu配置Shadowsocks全局代理](https://xingjian.space/Computer-Network/global-proxy-of-Shadowsocks-in-Ubuntu/)
+
 无需单独设置系统代理，浏览器是可以通过插件设置代理的。
 
 另外使用如curl需要代理时，可以采用
+
+```bash
+$ curl ip.cn --proxy socks5://127.0.0.1:1080
 ```
-curl ip.cn --proxy socks5://127.0.0.1:1080
-```
-
-## 代理方案
-
-- 只需要浏览器：shadowssocks + switchOmega
-- 全局代理：shadowssocks + privoxy
-
-参考 [Ubuntu配置Shadowsocks全局代理](https://xingjian.space/Computer-Network/global-proxy-of-Shadowsocks-in-Ubuntu/)
 
 ## CDN折腾记录
 
@@ -174,7 +181,7 @@ Ubuntu下配置rvpn，需要浏览器启用JAVA插件，但新版本的chrome和
 
 参考[How to use SOCKS 5 proxy in Ubuntu command line](https://bokunokeiken.wordpress.com/2015/07/22/how-to-use-socks-5-proxy-in-ubuntu-command-line/)
 
-```
+```bash
 proxychains curl ip.cn
 ```
 
