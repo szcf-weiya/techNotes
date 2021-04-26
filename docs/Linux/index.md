@@ -3,14 +3,21 @@
 ## System Info
 
 - check linux distribution:
-    - `cat /etc/os-release` or `cat /ect/*-release`
-    - `lsb_release -a`
-    - `hostnamectl`
+  - `cat /etc/os-release` or `cat /ect/*-release`
+  - `lsb_release -a`
+  - `hostnamectl`
 - check kernel version:
-    - `uname -a` or `uname -mrs`
-    - `cat /proc/version`
+  - `uname -a` or `uname -mrs`
+  - `cat /proc/version`
+- how long has the system been running:
+  - `last reboot`
+  - `uptime --since`, which is actually the first line of `top`
 
-Refer to [How To Find Out My Linux Distribution Name and Version](https://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/)
+Refer to 
+
+- [How To Find Out My Linux Distribution Name and Version](https://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/)
+- [How long has my Linux system been running?](https://unix.stackexchange.com/questions/131775/how-long-has-my-linux-system-been-running)
+
 
 ## Add User
 
@@ -119,18 +126,6 @@ sudo ldconfig
 sudo echo "where/your/lib" >> /etc/ld.so.conf
 sudo ldconfig
 ```
-
-
-## Make
-
-[https://my.oschina.net/u/1413984/blog/199029](https://my.oschina.net/u/1413984/blog/199029)
-
-- `$@`: 目标文件，比如 [gsl_lm/ols/Makefile](https://github.com/szcf-weiya/gsl_lm/blob/86d8c4846ed56a27ad8a9f35d9f1229fab704912/ols/Makefile#L22)
-- `$^`: 所有的依赖文件，比如 [G-squared/src/Makefile](https://github.com/szcf-weiya/G-squared/blob/4f70c3f735e4241f7ba33986c9b6a53fdd0dc6ea/src/Makefile#L9-L21)
-- `$<`: 第一个依赖文件
-
-and [Makefile 经典教程(掌握这些足够)](http://blog.csdn.net/ruglcc/article/details/7814546/)
-
 
 ## 配置xterm的中文字体的问题
 
@@ -287,15 +282,6 @@ chown -R username:users Document/
 
 `chmod g+s .` 会使得当前文件夹 `.` 中所有新建文件或文件夹都继承 `.` 的 group，而不是创建者所属的 group，所以这一般配合 `chgrp` 使用。参考 ['chmod g+s' command](https://unix.stackexchange.com/questions/182212/chmod-gs-command)
 
-## 文件重命名
-
-参考[Ubuntu中rename命令和批量重命名](http://www.linuxidc.com/Linux/2016-11/137041.htm)
-
-```bash
-rename -n 's/Sam3/Stm32/' *.nc　　/*确认需要重命名的文件*/
-rename -v 's/Sam3/Stm32/' *.nc　　/*执行修改，并列出已重命名的文件*/
-```
-
 ## 关闭screen
 
 参考[https://stackoverflow.com/questions/1509677/kill-detached-screen-session](https://stackoverflow.com/questions/1509677/kill-detached-screen-session)
@@ -396,9 +382,6 @@ sudo service cron reload
 1. `cd "$(dirname "$0")"`: [cd current directory](https://stackoverflow.com/questions/3349105/how-to-set-current-working-directory-to-the-directory-of-the-script)
 2. `mkdir -p`: [mkdir only if a dir does not already exist?](https://stackoverflow.com/questions/793858/how-to-mkdir-only-if-a-dir-does-not-already-exist)
 
-## xargs 命令
-
-1. [xargs命令_Linux xargs 命令用法详解：给其他命令传递参数的一个过滤器](http://man.linuxde.net/xargs)
 
 ## Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?
 
@@ -474,6 +457,9 @@ ls | grep 'config[0-9].txt' | xargs -I {} mv {} configs/
 ```
 
 see more details in [mv files with | xargs](https://askubuntu.com/questions/487035/mv-files-with-xargs)
+
+see also: [xargs命令_Linux xargs 命令用法详解：给其他命令传递参数的一个过滤器](http://man.linuxde.net/xargs)
+
 
 ## google drive
 
@@ -689,15 +675,6 @@ sudo http_proxy='http://user:pass@proxy.example.com:8080/' apt-get install packa
 
 refer to [how to install packages with apt-get on a system connected via proxy?](https://askubuntu.com/questions/89437/how-to-install-packages-with-apt-get-on-a-system-connected-via-proxy)
 
-## 上次重启时间
-
-```bash
-last reboot
-# or
-uptime --since # actually the first line of `top`
-```
-
-参考 [How long has my Linux system been running?](https://unix.stackexchange.com/questions/131775/how-long-has-my-linux-system-been-running)
 
 ## number of cores
 

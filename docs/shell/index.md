@@ -668,3 +668,15 @@ refer to [How to write a bash script that takes optional input arguments?](https
 applications:
 
 - [Clouds/run_test_local.sh](https://github.com/szcf-weiya/Clouds/blob/b8abfc63078ac53e817c2a3d7f3e92d44cf47f61/run_test_local.sh#L5-L9)
+
+## `||`
+
+No `try...catch` in bash script, but `command1 || command2` can achieve similar functionality, if `command1` fails then `command2` runs.
+
+An application is to create a new tmux session if there is no such a tmux session,
+
+```bash
+t() { tmux a -t $1 || tmux new -s $1; }
+```
+
+refer to [Is there a TRY CATCH command in Bash](https://stackoverflow.com/questions/22009364/is-there-a-try-catch-command-in-bash)

@@ -1,3 +1,7 @@
+## 2021.04.26
+
+- the **calamity (灾祸，灾难)** of the 1918 flu pandemic.
+
 ## 2021.04.25
 
 - left ventricle: 左心室

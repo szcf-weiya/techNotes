@@ -203,6 +203,38 @@ pdf2ps orig.pdf - | ps2pdf - flattened.pdf
 
 some alternatives can be found in [is-there-a-way-to-flatten-a-pdf-image-from-the-command-line](https://unix.stackexchange.com/questions/162922/is-there-a-way-to-flatten-a-pdf-image-from-the-command-line).
 
+## `rename`
+
+Ubuntu 18.04 和 CentOS 7 中的 `rename` 不一样，
+
+```bash
+# Ubuntu 18.04
+$ rename -V
+/usr/bin/rename using File::Rename version 0.20
+# CentOS 7
+$ rename -V
+rename from util-linux 2.23.2
+```
+
+用法也有差异，前者采用类似 `sed` 格式语句进行替换
+
+```bash
+rename -n 's/Sam3/Stm32/' *.nc　　/*确认需要重命名的文件*/
+rename -v 's/Sam3/Stm32/' *.nc　　/*执行修改，并列出已重命名的文件*/
+```
+
+而后者需要将替换的字符串当作参数传入，并且只替换第一次出现的字符串，即
+
+```bash
+rename Sam3 Stm32 *.nc
+```
+
+参考
+
+- [Ubuntu中rename命令和批量重命名](http://www.linuxidc.com/Linux/2016-11/137041.htm)
+- [Modifying replace string in xargs](https://stackoverflow.com/questions/10803296/modifying-replace-string-in-xargs)
+
+
 ## `sendmail`
 
 send mail on the command line. On the stapc-WSL, install it via

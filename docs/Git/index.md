@@ -460,6 +460,8 @@ git pull
 git stash apply
 ```
 
+- [an application](https://github.com/szcf-weiya/Cell-Video/issues/172#issuecomment-660456314)
+
 ## MERGE: `merge`
 
 ### manually resolve merge conflicts

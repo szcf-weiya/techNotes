@@ -41,6 +41,7 @@ $$
 
 ## Run from Command Line
 
+- run `R -q -e "1+1"` in the command line
 - run `Rscript test.R` in the command line
 - put `#!/usr/bin/env Rscript` on the first line of `test.R` and allow it executable via `chmod +x test.R`
 

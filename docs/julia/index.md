@@ -29,16 +29,25 @@ lrwxrwxrwx  1 root root      37 3月  18 10:25 julia1.3.1 -> /home/weiya/src/jul
 The source folders can be freely moved to another place, and only need to update the symbol links, which can be firstly deleted and then created, or use
 
 ```bash
-sudo ln -sf ... ...
+sudo ln -sf TARGET LINK_NAME
 ```
 
-to override current link. But, if the links is to a folder, then another flag need to be added to override,
+to override current link. But, if the links is to a folder, then `-n` need to be added to override,
 
 ```bash
-sudo ln -sfn ... ...
+sudo ln -sfn TARGET LINK_NAME
 ```
 
+otherwise, a soft link with the filename of `TARGET` will be created in the folder `LINK_NAME`.
+
+since 
+
+- `-f`: remove existing destination files
+- `-n`: treat LINK_NAME as a normal file if it is a symbolic link to a directory
+
 refer to [How to change where a symlink points](https://unix.stackexchange.com/questions/151999/how-to-change-where-a-symlink-points)
+
+If `LINK_NAME` is `.`, then it would be the same file/folder name as in the `TARGET` by removing the path, and no need to specify `-n` for folders.
 
 Also, note that the link to a folder should be deleted with
 
@@ -196,6 +205,11 @@ Foo{Int64}
 
 如果配合 `sharedarrays` 使用时，需要加上 `@sync`, 参考[@fetch](https://docs.julialang.org/en/v1/stdlib/Distributed/#Distributed.@fetch)
 
+## JLD vs JLD2
+
+JLD depends on HDF5, whose installation requires to login in, while JLD2 avoid the dependence of HDF5.
+
+[Source](https://github.com/szcf-weiya/Cell-Video/issues/172#issuecomment-660467001)
 
 ## Juno
 
