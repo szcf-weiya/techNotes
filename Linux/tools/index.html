@@ -424,6 +424,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rename" class="md-nav__link">
+    rename
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sendmail" class="md-nav__link">
     sendmail
   </a>
@@ -1575,6 +1582,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rename" class="md-nav__link">
+    rename
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sendmail" class="md-nav__link">
     sendmail
   </a>
@@ -1761,6 +1775,27 @@ PDF version:    <span class="m">1</span>.4
 <div class="highlight"><pre><span></span><code>pdf2ps orig.pdf - <span class="p">|</span> ps2pdf - flattened.pdf
 </code></pre></div>
 <p>some alternatives can be found in <a href="https://unix.stackexchange.com/questions/162922/is-there-a-way-to-flatten-a-pdf-image-from-the-command-line">is-there-a-way-to-flatten-a-pdf-image-from-the-command-line</a>.</p>
+<h2 id="rename"><code>rename</code><a class="headerlink" href="#rename" title="Permanent link">&para;</a></h2>
+<p>Ubuntu 18.04 和 CentOS 7 中的 <code>rename</code> 不一样，</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ubuntu 18.04</span>
+$ rename -V
+/usr/bin/rename using File::Rename version <span class="m">0</span>.20
+<span class="c1"># CentOS 7</span>
+$ rename -V
+rename from util-linux <span class="m">2</span>.23.2
+</code></pre></div>
+<p>用法也有差异，前者采用类似 <code>sed</code> 格式语句进行替换</p>
+<div class="highlight"><pre><span></span><code>rename -n <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*确认需要重命名的文件*/
+rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修改，并列出已重命名的文件*/
+</code></pre></div>
+<p>而后者需要将替换的字符串当作参数传入，并且只替换第一次出现的字符串，即</p>
+<div class="highlight"><pre><span></span><code>rename Sam3 Stm32 *.nc
+</code></pre></div>
+<p>参考</p>
+<ul>
+<li><a href="http://www.linuxidc.com/Linux/2016-11/137041.htm">Ubuntu中rename命令和批量重命名</a></li>
+<li><a href="https://stackoverflow.com/questions/10803296/modifying-replace-string-in-xargs">Modifying replace string in xargs</a></li>
+</ul>
 <h2 id="sendmail"><code>sendmail</code><a class="headerlink" href="#sendmail" title="Permanent link">&para;</a></h2>
 <p>send mail on the command line. On the stapc-WSL, install it via</p>
 <div class="highlight"><pre><span></span><code>$ sudo apt install sendmail

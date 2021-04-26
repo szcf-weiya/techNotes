@@ -708,6 +708,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#jld-vs-jld2" class="md-nav__link">
+    JLD vs JLD2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#juno" class="md-nav__link">
     Juno
   </a>
@@ -1885,6 +1892,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#jld-vs-jld2" class="md-nav__link">
+    JLD vs JLD2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#juno" class="md-nav__link">
     Juno
   </a>
@@ -2328,12 +2342,19 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 9�
 lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3月  <span class="m">18</span> <span class="m">10</span>:25 julia1.3.1 -&gt; /home/weiya/src/julia-1.3.1/bin/julia*
 </code></pre></div>
 <p>The source folders can be freely moved to another place, and only need to update the symbol links, which can be firstly deleted and then created, or use</p>
-<div class="highlight"><pre><span></span><code>sudo ln -sf ... ...
+<div class="highlight"><pre><span></span><code>sudo ln -sf TARGET LINK_NAME
 </code></pre></div>
-<p>to override current link. But, if the links is to a folder, then another flag need to be added to override,</p>
-<div class="highlight"><pre><span></span><code>sudo ln -sfn ... ...
+<p>to override current link. But, if the links is to a folder, then <code>-n</code> need to be added to override,</p>
+<div class="highlight"><pre><span></span><code>sudo ln -sfn TARGET LINK_NAME
 </code></pre></div>
+<p>otherwise, a soft link with the filename of <code>TARGET</code> will be created in the folder <code>LINK_NAME</code>.</p>
+<p>since </p>
+<ul>
+<li><code>-f</code>: remove existing destination files</li>
+<li><code>-n</code>: treat LINK_NAME as a normal file if it is a symbolic link to a directory</li>
+</ul>
 <p>refer to <a href="https://unix.stackexchange.com/questions/151999/how-to-change-where-a-symlink-points">How to change where a symlink points</a></p>
+<p>If <code>LINK_NAME</code> is <code>.</code>, then it would be the same file/folder name as in the <code>TARGET</code> by removing the path, and no need to specify <code>-n</code> for folders.</p>
 <p>Also, note that the link to a folder should be deleted with</p>
 <div class="highlight"><pre><span></span><code>rm folder
 </code></pre></div>
@@ -2445,6 +2466,9 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 <h2 id="distributed">Distributed<a class="headerlink" href="#distributed" title="Permanent link">&para;</a></h2>
 <h3 id="distributed_1"><code>@distributed</code><a class="headerlink" href="#distributed_1" title="Permanent link">&para;</a></h3>
 <p>如果配合 <code>sharedarrays</code> 使用时，需要加上 <code>@sync</code>, 参考<a href="https://docs.julialang.org/en/v1/stdlib/Distributed/#Distributed.@fetch">@fetch</a></p>
+<h2 id="jld-vs-jld2">JLD vs JLD2<a class="headerlink" href="#jld-vs-jld2" title="Permanent link">&para;</a></h2>
+<p>JLD depends on HDF5, whose installation requires to login in, while JLD2 avoid the dependence of HDF5.</p>
+<p><a href="https://github.com/szcf-weiya/Cell-Video/issues/172#issuecomment-660467001">Source</a></p>
 <h2 id="juno">Juno<a class="headerlink" href="#juno" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>

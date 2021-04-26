@@ -616,6 +616,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    ||
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1823,6 +1830,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    ||
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2323,6 +2337,12 @@ $ <span class="nb">echo</span> $<span class="o">[</span> <span class="m">1</span
 <ul>
 <li><a href="https://github.com/szcf-weiya/Clouds/blob/b8abfc63078ac53e817c2a3d7f3e92d44cf47f61/run_test_local.sh#L5-L9">Clouds/run_test_local.sh</a></li>
 </ul>
+<h2 id="_7"><code>||</code><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>No <code>try...catch</code> in bash script, but <code>command1 || command2</code> can achieve similar functionality, if <code>command1</code> fails then <code>command2</code> runs.</p>
+<p>An application is to create a new tmux session if there is no such a tmux session,</p>
+<div class="highlight"><pre><span></span><code>t<span class="o">()</span> <span class="o">{</span> tmux a -t <span class="nv">$1</span> <span class="o">||</span> tmux new -s <span class="nv">$1</span><span class="p">;</span> <span class="o">}</span>
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/22009364/is-there-a-try-catch-command-in-bash">Is there a TRY CATCH command in Bash</a></p>
                 
               
               

@@ -973,6 +973,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    Make
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1301,6 +1308,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    Make
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1337,6 +1351,14 @@ AC_OUTPUT
 <p>几个注意点
 1. 等号附近不要有空格
 2. 想要实现在命令行中运行<code>gsl-config --libs</code>的效果，请参照上述代码的实现。</p>
+<h2 id="make">Make<a class="headerlink" href="#make" title="Permanent link">&para;</a></h2>
+<p><a href="https://my.oschina.net/u/1413984/blog/199029">https://my.oschina.net/u/1413984/blog/199029</a></p>
+<ul>
+<li><code>$@</code>: 目标文件，比如 <a href="https://github.com/szcf-weiya/gsl_lm/blob/86d8c4846ed56a27ad8a9f35d9f1229fab704912/ols/Makefile#L22">gsl_lm/ols/Makefile</a></li>
+<li><code>$^</code>: 所有的依赖文件，比如 <a href="https://github.com/szcf-weiya/G-squared/blob/4f70c3f735e4241f7ba33986c9b6a53fdd0dc6ea/src/Makefile#L9-L21">G-squared/src/Makefile</a></li>
+<li><code>$&lt;</code>: 第一个依赖文件</li>
+</ul>
+<p>and <a href="http://blog.csdn.net/ruglcc/article/details/7814546/">Makefile 经典教程(掌握这些足够)</a></p>
                 
               
               
