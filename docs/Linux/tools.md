@@ -124,6 +124,9 @@ where
 
 refer to [Using ffmpeg to cut up video](https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video)
 
+## `htop`
+
+A much more powerful command than `top`, refer to [Find out what processes are running in the background on Linux](https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/)
 
 ## `paste, cat`: 文本文件拼接
 
@@ -267,6 +270,13 @@ done
 ```
 
 其中 `date -r file` 返回文件的上次修改时间，而 `+%s` 将时间转换为 seconds，方便进行比较，另外 `-d "-1 mins"` 能对时间进行加减处理。 
+
+## `sort`
+
+- [sort according to the third column](https://unix.stackexchange.com/questions/104525/sort-based-on-the-third-column): `sort -k 3,3 file.txt`
+- [sort with header](https://stackoverflow.com/questions/14562423/is-there-a-way-to-ignore-header-lines-in-a-unix-sort)
+: `cat your_data | (sed -u 1q; sort)`
+
 
 ## `tail`
 

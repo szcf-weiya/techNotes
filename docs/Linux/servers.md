@@ -46,6 +46,14 @@ The port forwarding would be more clear. For example, open a jupyter session on 
 $ ssh -t -L 28888:localhost:8888 user@A ssh -L 8888:localhost:8888 user@B
 ```
 
+### ssh until succeed
+
+```bash
+$ until ./login_lab.sh; do sleep 5; done
+```
+
+refer to [How to run ssh command until succeeded?](https://unix.stackexchange.com/questions/404792/how-to-run-ssh-command-until-succeeded)
+
 ## 远程运行服务器端的gui程序
 
 ```bash
