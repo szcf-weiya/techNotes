@@ -390,6 +390,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#htop" class="md-nav__link">
+    htop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#paste-cat" class="md-nav__link">
     paste, cat: 文本文件拼接
   </a>
@@ -433,6 +440,13 @@
         <li class="md-nav__item">
   <a href="#sendmail" class="md-nav__link">
     sendmail
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    sort
   </a>
   
 </li>
@@ -1548,6 +1562,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#htop" class="md-nav__link">
+    htop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#paste-cat" class="md-nav__link">
     paste, cat: 文本文件拼接
   </a>
@@ -1591,6 +1612,13 @@
         <li class="md-nav__item">
   <a href="#sendmail" class="md-nav__link">
     sendmail
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    sort
   </a>
   
 </li>
@@ -1712,6 +1740,8 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 <li>(optional) <code>-t</code> specifies the duration, or use <code>-to</code> to specifies the end timestamp</li>
 </ul>
 <p>refer to <a href="https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video">Using ffmpeg to cut up video</a></p>
+<h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
+<p>A much more powerful command than <code>top</code>, refer to <a href="https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/">Find out what processes are running in the background on Linux</a></p>
 <h2 id="paste-cat"><code>paste, cat</code>: 文本文件拼接<a class="headerlink" href="#paste-cat" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">### 按列</span>
 paste file1 file2 &gt; outputfile
@@ -1821,6 +1851,12 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 <span class="k">done</span>
 </code></pre></div>
 <p>其中 <code>date -r file</code> 返回文件的上次修改时间，而 <code>+%s</code> 将时间转换为 seconds，方便进行比较，另外 <code>-d "-1 mins"</code> 能对时间进行加减处理。 </p>
+<h2 id="sort"><code>sort</code><a class="headerlink" href="#sort" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://unix.stackexchange.com/questions/104525/sort-based-on-the-third-column">sort according to the third column</a>: <code>sort -k 3,3 file.txt</code></li>
+<li><a href="https://stackoverflow.com/questions/14562423/is-there-a-way-to-ignore-header-lines-in-a-unix-sort">sort with header</a>
+: <code>cat your_data | (sed -u 1q; sort)</code></li>
+</ul>
 <h2 id="tail"><code>tail</code><a class="headerlink" href="#tail" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>-f</code>: output appended data as the file grows, powerful for checking the log file in real time.</li>

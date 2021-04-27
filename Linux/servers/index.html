@@ -334,6 +334,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ssh-until-succeed" class="md-nav__link">
+    ssh until succeed
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1474,6 +1481,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ssh-until-succeed" class="md-nav__link">
+    ssh until succeed
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1665,6 +1679,10 @@
 <p>The port forwarding would be more clear. For example, open a jupyter session on node <code>B</code>, whose login node is <code>A</code>, then access the jupyter in the local browser <code>http://127.0.0.1:28888</code> after running</p>
 <div class="highlight"><pre><span></span><code>$ ssh -t -L <span class="m">28888</span>:localhost:8888 user@A ssh -L <span class="m">8888</span>:localhost:8888 user@B
 </code></pre></div>
+<h3 id="ssh-until-succeed">ssh until succeed<a class="headerlink" href="#ssh-until-succeed" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ <span class="k">until</span> ./login_lab.sh<span class="p">;</span> <span class="k">do</span> sleep <span class="m">5</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div>
+<p>refer to <a href="https://unix.stackexchange.com/questions/404792/how-to-run-ssh-command-until-succeeded">How to run ssh command until succeeded?</a></p>
 <h2 id="gui">远程运行服务器端的gui程序<a class="headerlink" href="#gui" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>weiya@T460p:~$ ssh weiya@G40
 weiya@G40:~$ <span class="nb">export</span> <span class="nv">DISPLAY</span><span class="o">=</span>:0

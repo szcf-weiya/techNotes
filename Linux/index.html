@@ -626,13 +626,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#htop" class="md-nav__link">
-    htop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#different-cuda-version-shown-by-nvcc-and-nvidia-smi" class="md-nav__link">
     different CUDA version shown by nvcc and NVIDIA-smi
   </a>
@@ -754,20 +747,6 @@
         <li class="md-nav__item">
   <a href="#make-the-software-searchable" class="md-nav__link">
     make the software searchable
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sort-with-header" class="md-nav__link">
-    sort with header
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-until-succeed" class="md-nav__link">
-    ssh until succeed
   </a>
   
 </li>
@@ -2140,13 +2119,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#htop" class="md-nav__link">
-    htop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#different-cuda-version-shown-by-nvcc-and-nvidia-smi" class="md-nav__link">
     different CUDA version shown by nvcc and NVIDIA-smi
   </a>
@@ -2268,20 +2240,6 @@
         <li class="md-nav__item">
   <a href="#make-the-software-searchable" class="md-nav__link">
     make the software searchable
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sort-with-header" class="md-nav__link">
-    sort with header
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-until-succeed" class="md-nav__link">
-    ssh until succeed
   </a>
   
 </li>
@@ -2725,8 +2683,6 @@ pdftk input.pdf update_info metadata output output.pdf
 <li><code>jobs -l</code> 返回后台运行程序的 <code>PID</code>，refer to <a href="https://stackoverflow.com/questions/1908610/how-to-get-pid-of-background-process">How to get PID of background process?</a></li>
 </ul>
 <p>但是 <code>jobs</code> <a href="https://superuser.com/a/607219">只显示属于当前 shell 的后台程序</a>, 如果重新登录，则不会显示后台程序，详见 <a href="https://superuser.com/questions/607218/jobs-command-doesnt-show-any-background-processes"><code>jobs</code> command doesn&rsquo;t show any background processes</a></p>
-<h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
-<p>A much more powerful command than <code>top</code>, refer to <a href="https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/">Find out what processes are running in the background on Linux</a></p>
 <h2 id="different-cuda-version-shown-by-nvcc-and-nvidia-smi">different CUDA version shown by nvcc and NVIDIA-smi<a class="headerlink" href="#different-cuda-version-shown-by-nvcc-and-nvidia-smi" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://stackoverflow.com/questions/53422407/different-cuda-versions-shown-by-nvcc-and-nvidia-smi">Different CUDA versions shown by nvcc and NVIDIA-smi</a></p>
 <blockquote>
@@ -3030,14 +2986,6 @@ W: Some index files failed to download. They have been ignored, or old ones used
 <div class="highlight"><pre><span></span><code>cp xx.destop ~/.local/share/applications
 </code></pre></div>
 <p>otherwise， create a <code>.desktop</code> file. More details refer to <a href="https://askubuntu.com/questions/80013/how-to-pin-eclipse-to-the-unity-launcher">How to pin Eclipse to the Unity launcher?</a> and <a href="https://askubuntu.com/questions/285951/how-to-add-programs-to-the-launcher-search">How to add programs to the launcher (search)?</a></p>
-<h2 id="sort-with-header">sort with header<a class="headerlink" href="#sort-with-header" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>cat your_data <span class="p">|</span> <span class="o">(</span>sed -u 1q<span class="p">;</span> sort<span class="o">)</span>
-</code></pre></div>
-<p>refer to <a href="https://stackoverflow.com/questions/14562423/is-there-a-way-to-ignore-header-lines-in-a-unix-sort">Is there a way to ignore header lines in a UNIX sort?</a></p>
-<h2 id="ssh-until-succeed">ssh until succeed<a class="headerlink" href="#ssh-until-succeed" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ <span class="k">until</span> ./login_lab.sh<span class="p">;</span> <span class="k">do</span> sleep <span class="m">5</span><span class="p">;</span> <span class="k">done</span>
-</code></pre></div>
-<p>refer to <a href="https://unix.stackexchange.com/questions/404792/how-to-run-ssh-command-until-succeeded">How to run ssh command until succeeded?</a></p>
 <h2 id="set-printer-for-my-laptop">Set printer for my laptop<a class="headerlink" href="#set-printer-for-my-laptop" title="Permanent link">&para;</a></h2>
 <ol>
 <li>choose LPD/LPR Host or Printer</li>
