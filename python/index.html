@@ -525,6 +525,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#click" class="md-nav__link">
+    click
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ipython-matplotlib-inline" class="md-nav__link">
     使用ipython %matplotlib inline
   </a>
@@ -1446,6 +1453,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../website/xampp/" class="md-nav__link">
+        XAMPP
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1872,6 +1891,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#click" class="md-nav__link">
+    click
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#ipython-matplotlib-inline" class="md-nav__link">
@@ -2471,6 +2497,42 @@
                 
                 
                 <h1 id="python">python 相关<a class="headerlink" href="#python" title="Permanent link">&para;</a></h1>
+<h2 id="click"><code>click</code><a class="headerlink" href="#click" title="Permanent link">&para;</a></h2>
+<p>It enables to use command line arguments. For example, </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">click</span> <span class="c1"># DO NOT NAME THE FILE AS THE SAME NAME</span>
+
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--a&quot;</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--b&quot;</span><span class="p">,</span> <span class="n">is_flag</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ python3 ex_click.py --a <span class="m">1</span> --b
+<span class="nv">a</span> <span class="o">=</span> <span class="m">1</span>, <span class="nv">b</span> <span class="o">=</span> True
+$ python3 ex_click.py --a <span class="m">1</span>
+<span class="nv">a</span> <span class="o">=</span> <span class="m">1</span>, <span class="nv">b</span> <span class="o">=</span> False
+$ python3 ex_click.py --a <span class="m">2</span>
+<span class="nv">a</span> <span class="o">=</span> <span class="m">2</span>, <span class="nv">b</span> <span class="o">=</span> False
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The script filename cannot be the same as the module name, <code>click.py</code>. Otherwise, it throws,
+<div class="highlight"><pre><span></span><code>$ python3 click.py --a <span class="m">1</span> --b
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+File <span class="s2">&quot;click.py&quot;</span>, line <span class="m">1</span>, <span class="k">in</span> &lt;module&gt;
+    import click
+File <span class="s2">&quot;/media/weiya/Seagate/GitHub/techNotes/docs/python/ex/click.py&quot;</span>, line <span class="m">3</span>, <span class="k">in</span> &lt;module&gt;
+    @click.command<span class="o">()</span>
+AttributeError: module <span class="s1">&#39;click&#39;</span> has no attribute <span class="s1">&#39;command&#39;</span>
+</code></pre></div></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>More related code can be found in <a href="https://github.com/search?l=Python&amp;q=user%3Aszcf-weiya+click&amp;type=Code">My Code Results on GitHub</a></p>
+</div>
 <h2 id="ipython-matplotlib-inline">使用ipython %matplotlib inline<a class="headerlink" href="#ipython-matplotlib-inline" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/u010194274/article/details/50698514">cnblog</a></p>
 <p>使用%matplotlib命令可以将matplotlib的图表直接嵌入到Notebook之中，或者使用指定的界面库显示图表，它有一个参数指定matplotlib图表的显示方式。inline表示将图表嵌入到Notebook中</p>
