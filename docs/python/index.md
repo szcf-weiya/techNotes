@@ -1,5 +1,37 @@
 # python 相关
 
+## `click`
+
+It enables to use command line arguments. For example, 
+
+```python
+--8<-- "docs/python/ex/ex_click.py"
+```
+
+```bash
+$ python3 ex_click.py --a 1 --b
+a = 1, b = True
+$ python3 ex_click.py --a 1
+a = 1, b = False
+$ python3 ex_click.py --a 2
+a = 2, b = False
+```
+
+!!! warning
+	The script filename cannot be the same as the module name, `click.py`. Otherwise, it throws,
+	```bash
+	$ python3 click.py --a 1 --b
+	Traceback (most recent call last):
+	File "click.py", line 1, in <module>
+		import click
+	File "/media/weiya/Seagate/GitHub/techNotes/docs/python/ex/click.py", line 3, in <module>
+		@click.command()
+	AttributeError: module 'click' has no attribute 'command'
+	```
+
+!!! info
+	More related code can be found in [My Code Results on GitHub](https://github.com/search?l=Python&q=user%3Aszcf-weiya+click&type=Code)
+
 ## 使用ipython %matplotlib inline
 
 参考[cnblog](http://blog.csdn.net/u010194274/article/details/50698514)

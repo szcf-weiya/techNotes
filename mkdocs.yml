@@ -42,6 +42,7 @@ nav:
         - CSS: website/css.md
         - JS: js/index.md
         - PHP: PHP/index.md
+        - XAMPP: website/xampp.md
     - Network:
       - 一般问题: Internet/index.md
       - 访问内网: Internet/sci-int.md
@@ -108,6 +109,9 @@ markdown_extensions:
   - pymdownx.tabbed
   - pymdownx.tilde
   - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - admonition
   - codehilite
   - smarty

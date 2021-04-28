@@ -1,3 +1,11 @@
+## 2021.04.28
+
+- Dig a **pit (深坑，矿井)** and **bury (掩埋，埋藏)** the garbage.
+
+## 2021.04.27
+
+- **gay (男同性恋)** and **lesbian (女同性恋)**
+
 ## 2021.04.26
 
 - the **calamity (灾祸，灾难)** of the 1918 flu pandemic.

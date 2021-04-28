@@ -198,7 +198,9 @@ docker run -it --rm r-base:3.6.0
 
 install.packages("https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz", repos = NULL, type = "source")
 
-[change the image installation directory:](https://stackoverflow.com/questions/24309526/how-to-change-the-docker-image-installation-directory)
+### change the root folder
+
+to save space, I want to [change the image installation directory:](https://stackoverflow.com/questions/24309526/how-to-change-the-docker-image-installation-directory)
 
 ```bash
 $ sudo vi /etc/docker/daemon.json
@@ -207,6 +209,34 @@ $ sudo vi /etc/docker/daemon.json
 }
 $ sudo systemctl daemon-reload
 $ sudo systemctl restart docker
+```
+
+where the [official explanation](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file) is that
+
+- `data-root` is the path where persisted data such as images, volumes, and cluster state are stored. The default value is /var/lib/docker
+
+we can validate it with the `hello-world` image,
+
+```bash
+$ docker image pull hello-world
+# or docker image pull library/hello-world
+$ docker image ls
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              d1165f221234        7 weeks ago         13.3kB
+$ $ docker image inspect d1165
+[
+    {
+        "Id": "sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726",
+        "RepoTags": [
+            "hello-world:latest"
+...
+        "GraphDriver": {
+            "Data": {
+                "MergedDir": "/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/merged",
+                "UpperDir": "/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/diff",
+                "WorkDir": "/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/work"
+            },
+...
 ```
 
 ## Emacs
