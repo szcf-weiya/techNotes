@@ -592,40 +592,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#environment-jupyter" class="md-nav__link">
-    不同 environment 的 jupyter
-  </a>
-  
-    <nav class="md-nav" aria-label="不同 environment 的 jupyter">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#julia" class="md-nav__link">
-    Julia
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#r" class="md-nav__link">
-    R
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1447,40 +1413,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#environment-jupyter" class="md-nav__link">
-    不同 environment 的 jupyter
-  </a>
-  
-    <nav class="md-nav" aria-label="不同 environment 的 jupyter">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    Python
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#julia" class="md-nav__link">
-    Julia
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#r" class="md-nav__link">
-    R
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1608,23 +1540,6 @@ bash: /media/weiya/PSSD/Programs/anaconda3/envs/py36/bin/pip: /home/weiya/anacon
 </ul>
 </blockquote>
 <p>于是比较放心地运行了 <code>conda clean -a</code>，一下子清理出 8.6G 的空间。</p>
-<h2 id="environment-jupyter">不同 environment 的 jupyter<a class="headerlink" href="#environment-jupyter" title="Permanent link">&para;</a></h2>
-<h3 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
-<p>其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 <a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments">Kernels for different environments</a></p>
-<div class="highlight"><pre><span></span><code>$ conda activate myenv
-$ conda install ipykernel
-$ python -m ipykernel install --user --name myenv --display-name <span class="s2">&quot;Python (myenv)&quot;</span>
-</code></pre></div>
-<h3 id="julia">Julia<a class="headerlink" href="#julia" title="Permanent link">&para;</a></h3>
-<p>打开特定版本的 Julia，</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">add</span> <span class="n">IJulia</span>
-</code></pre></div>
-<h3 id="r">R<a class="headerlink" href="#r" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;IRkernel&#39;</span><span class="p">)</span>
-<span class="c1">#IRkernel::installspec()</span>
-<span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;3.6.0&quot;</span><span class="p">,</span> <span class="n">displayname</span> <span class="o">=</span> <span class="s">&quot;R 3.6.0&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>另见 <a href="../../R/#using-r-in-jupyterlab">using R in JupyterLab</a></p>
                 
               
               
