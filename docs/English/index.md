@@ -1,3 +1,7 @@
+## 2021.04.29
+
+- Human **meridian (Jingluo)** system was by hypothesized by traditional Chinese medicine (TCM) for thousands of years, suggesting twelve formal meridian channels going through respective organs, carrying fluid and energy, and laying thermal effects.
+
 ## 2021.04.28
 
 - Dig a **pit (深坑，矿井)** and **bury (掩埋，埋藏)** the garbage.
@@ -2043,7 +2047,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. toggle
 2. elicitation
 3. rigorous
-4. congest
+4. **Bristol (布里斯托)** is one of the most **congested (拥堵的)** cities in Britain.
 5. recurrent
 
 ## 2018.08.09

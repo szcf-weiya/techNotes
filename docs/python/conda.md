@@ -176,33 +176,3 @@ bash: /media/weiya/PSSD/Programs/anaconda3/envs/py36/bin/pip: /home/weiya/anacon
 > - 由于依赖或者环境等原因，某些包的不同版本重复安装。
 
 于是比较放心地运行了 `conda clean -a`，一下子清理出 8.6G 的空间。
-
-## 不同 environment 的 jupyter
-
-### Python
-
-其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 [Kernels for different environments](https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments)
-
-```bash
-$ conda activate myenv
-$ conda install ipykernel
-$ python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
-```
-
-### Julia
-
-打开特定版本的 Julia，
-
-```julia
-> add IJulia
-```
-
-### R
-
-```R
-install.packages('IRkernel')
-#IRkernel::installspec()
-IRkernel::installspec(name="3.6.0", displayname = "R 3.6.0")
-```
-
-另见 [using R in JupyterLab](../R/index.md#using-r-in-jupyterlab)

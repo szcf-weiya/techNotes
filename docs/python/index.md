@@ -32,41 +32,10 @@ a = 2, b = False
 !!! info
 	More related code can be found in [My Code Results on GitHub](https://github.com/search?l=Python&q=user%3Aszcf-weiya+click&type=Code)
 
-## 使用ipython %matplotlib inline
-
-参考[cnblog](http://blog.csdn.net/u010194274/article/details/50698514)
-
-使用%matplotlib命令可以将matplotlib的图表直接嵌入到Notebook之中，或者使用指定的界面库显示图表，它有一个参数指定matplotlib图表的显示方式。inline表示将图表嵌入到Notebook中
-
-另外 `%` 的一般用法详见 [Built-in magic commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html#)
-
 ## seaborn的使用
 
 Matplotlib自动化程度非常高，但是，掌握如何设置系统以便获得一个吸引人的图是相当困难的事。为了控制matplotlib图表的外观，Seaborn模块自带许多定制的主题和高级的接口。
 [segmentfault](https://segmentfault.com/a/1190000002789457)
-
-## jupyter notebook 出错
-
-![](error_jupyter.png)
-
-可以通过
-```
-rm -r .pki
-```
-解决
-
-
-## 创建jupyter notebook 权限问题
-
-![](error_jupyter_1.png)
-
-原因是所给的路径的用户权限不一致，jupyter的用户及用户组均为root，为解决这个问题，直接更改用户权限
-
-```
-sudo chown weiya jupyter/ -R
-sudo chgrp weiya jupyter/ -R
-```
-其中-R表示递归调用，使得文件夹中所有内容的用户权限都进行更改。
 
 
 ## theano import出错
@@ -75,20 +44,66 @@ sudo chgrp weiya jupyter/ -R
 
 更改.theano文件夹的用户权限
 
-## python 查看已安装的包
-
-```
-pip list
-```
 
 ## selenium
 
 refer to [Selenium using Python - Geckodriver executable needs to be in PATH
 ](https://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path)
 
-## array operation
+## IPython
 
+### Built-in magic commands 
+
+Refer to [:link:](https://ipython.readthedocs.io/en/stable/interactive/magics.html) for more details.
+
+- `%matplotlib inline` enables the inline backend for usage with the IPython notebook.
+- `!ls` simply calls system's `ls`, but `!!ls` also returns the result formatted as a list, which is equivalent to `%sx ls`.
+- `%sx`: shell execute, run shell command and capture output, and `!!` is short-hand.
+
+
+## JSON
+
+## convert string to json
+
+```python
+payload='{'name': weiya}'
+# payload='payload = {'name': weiya}'
 ```
+
+换成json
+
+```python
+json.loads(payload)
+```
+
+!!! warning
+    注意不能采用注释掉的部分。
+
+### json.dumps() 和 json.dump() 的区别
+
+简言之，`dumps()`和`loads()`都是针对字符串而言的，而`dump()`和`load()`是针对文件而言的。具体细节参见[python json.dumps()  json.dump()的区别 - wswang - 博客园](https://www.cnblogs.com/wswang/p/5411826.html)
+
+## NumPy
+
+### `(R, 1)` vs `(R, )`
+
+> The best way to think about NumPy arrays is that they consist of two parts, a **data buffer** which is just a block of raw elements, and a **view** which describes how to interpret the data buffer. [:material-stack-overflow:](https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r)
+
+```python
+>>> np.shape(np.ones((3, 1)))
+(3, 1)
+>>> np.shape(np.ones((3, )))
+(3,)
+>>> np.shape(np.ones((3)))
+(3,)
+>>> np.shape(np.ones(3))
+(3,)
+>>> np.shape(np.ones(3, 1)) # ERROR!
+```
+
+### array operation
+
+```python
 >>> a = np.sum([[0, 1.0], [0, 5.0]], axis=1)
 >>> c = np.sum([[0, 1.0], [0, 5.0]], axis=1, keepdims=True)
 >>> a/c
@@ -110,7 +125,40 @@ array([[ 1.,  1.],
       [ 0.,  2.]])
 ```
 
-## Some basics of `np`
+### arrays with different size
+
+- nested list
+
+```python
+[[1,2,3],[1,2]]
+```
+
+- numpy
+
+```python
+numpy.array([[0,1,2,3], [2,3,4]], dtype=object)
+```
+
+refer to [How to make a multidimension numpy array with a varying row size?](https://stackoverflow.com/questions/3386259/how-to-make-a-multidimension-numpy-array-with-a-varying-row-size)
+
+
+### `np.newaxis`
+
+add new dimensions to a numpy array [:material-stack-overflow:](https://stackoverflow.com/questions/17394882/how-can-i-add-new-dimensions-to-a-numpy-array).
+
+```python
+>>> a = np.ones((2, 3))
+>>> np.shape(a[:, :, None])
+(2, 3, 1)
+>>> np.shape(a[:, :, np.newaxis])
+(2, 3, 1)
+```
+
+### array of FALSE/TRUE
+
+```python
+np.zeros(10, dtype = bool)
+```
 
 ### Array of Array
 
@@ -136,9 +184,15 @@ array([[ 83.,  11.],
        [372.,  35.]])
 ```
 
-### Difference between numpy.array shape (R, 1) and (R,)
+### print numpy objects without line breaks
 
-refer to [Difference between numpy.array shape (R, 1) and (R,)](https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r)
+```python
+import numpy as np
+x_str = np.array_repr(x).replace('\n', '')
+print(x_str)
+```
+
+refer to [How to print numpy objects without line breaks](https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks)
 
 ## xrange and range
 
@@ -149,106 +203,12 @@ refer to [Difference between numpy.array shape (R, 1) and (R,)](https://stackove
 
 参考[Python中range和xrange的区别](http://blog.csdn.net/imzoer/article/details/8742283)
 
-## 人工鱼群算法-python实现
-
-[人工鱼群算法-python实现](http://www.cnblogs.com/biaoyu/p/4857911.html)
-
-
-## 请问phantom-proxy如何设置代理ip
-
-[请问phantom-proxy如何设置代理ip](https://segmentfault.com/q/1010000000685938)
-
-## python 编码介绍
-
-[Python编码介绍——encode和decode](http://blog.chinaunix.net/uid-27838438-id-4227131.html)
-
-## 爬虫必备requests
-
-[爬虫必备——requests](https://zhuanlan.zhihu.com/p/20410446)
-
-## Python使用代理抓取网站图片（多线程）
-
-[Python使用代理抓取网站图片（多线程）](http://www.jb51.net/article/48112.htm)
-
-## python中threading模块详解
-
-[python中threading模块详解（一）](http://blog.chinaunix.net/uid-27571599-id-3484048.html)
-
-## python 爬虫获取XiciDaili代理IP
-
-[python 爬虫获取XiciDaili代理IP](http://30daydo.com/article/94)
-
-## 使用SQLite
-
-[使用SQLite](https://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001388320596292f925f46d56ef4c80a1c9d8e47e2d5711000)
-
-[python 使用sqlite3](http://www.cnblogs.com/hongten/p/hongten_python_sqlite3.html)
-
-[用Python进行SQLite数据库操作](http://www.cnblogs.com/yuxc/archive/2011/08/18/2143606.html)
-
-[Python调用MongoDB使用心得](https://www.oschina.net/question/54100_27233)
-
-## python urllib2详解及实例
-
-[python urllib2详解及实例](http://www.pythontab.com/html/2014/pythonhexinbiancheng_1128/928.html)
-
-## 使用Selenium
-
-参考[Python爬虫入门实战七：使用Selenium--以QQ空间为例](https://www.jianshu.com/p/ffd02cc9d4ef)
-
-## Python中将打印输出导向日志文件
-
-参考[Python中将打印输出导向日志文件](https://www.cnblogs.com/arkenstone/p/5727883.html)
-
-
-## python 中文编码
-
-参考[python 中文编码(一)](https://www.cnblogs.com/tk091/p/4012004.html)
-
-## Python爬虫利器二之Beautiful Soup的用法
-
-参考[Python爬虫利器二之Beautiful Soup的用法](https://cuiqingcai.com/1319.html)
-
-## 正则表达式之捕获组/非捕获组介绍
-
-参考[正则表达式之捕获组/非捕获组介绍](http://www.jb51.net/article/28035.htm)
-
-## python pip 采用国内镜像
-
-在win10下设置，参考[Python pip 国内镜像大全及使用办法](http://blog.csdn.net/testcs_dn/article/details/54374849)
-
-在用户文件夹下新建pip文件夹，里面新建pip.ini文件
-
-```txt
-[global]
-index-url=http://mirrors.aliyun.com/pypi/simple/
-[install]
-trusted-host=mirrors.aliyun.com
-```
-
-注意编码格式为utf8无BOM。
-
 ## 又拍云的短信平台
 
 参考文献
 
 1. [Python 使用requests发送POST请求 - CSDN博客](http://blog.csdn.net/junli_chen/article/details/53670887)
 2. [Python-爬虫-requests库用语post登录](https://www.cnblogs.com/fredkeke/p/7000687.html)
-
-## json与字符串
-
-```python
-payload='{'name': weiya}'
-# payload='payload = {'name': weiya}'
-```
-
-换成json
-```python
-json.loads(payload)
-```
-
-!!! warning
-    注意不能采用注释掉的部分。
 
 ## unquote %7B character
 
@@ -267,10 +227,6 @@ print urllib2.unquote("%CE%B1%CE%BB%20")
 from urllib.parse import unquote
 print(unquote("%CE%B1%CE%BB%20"))
 ```
-
-## json.dumps() 和json.dump()的区别
-
-简言之，`dumps()`和`loads()`都是针对字符串而言的，而`dump()`和`load()`是针对文件而言的。具体细节可疑参见[python json.dumps()  json.dump()的区别 - wswang - 博客园](https://www.cnblogs.com/wswang/p/5411826.html)
 
 ## `u/U`, `r/R`, `b` in string
 
@@ -385,9 +341,74 @@ grant all privileges on testdb.* to 'test'@'%' with grant option;
 
 2. [The definitive guide on how to use static, class or abstract methods in Python](https://julien.danjou.info/guide-python-static-class-abstract-methods/)
 
-## jupyter 导致 GitHub 语言比例过分倾斜的讨论
+## Jupyter
+
+### GitHub 语言比例过分倾斜
 
 [LInguist is reporting my project as a Jupyter Notebook](https://github.com/github/linguist/issues/3316)
+
+### jupyter notebook 出错
+
+![](error_jupyter.png)
+
+可以通过
+```
+rm -r .pki
+```
+解决
+
+
+### 创建 jupyter notebook 权限问题
+
+![](error_jupyter_1.png)
+
+原因是所给的路径的用户权限不一致，jupyter的用户及用户组均为root，为解决这个问题，直接更改用户权限
+
+```
+sudo chown weiya jupyter/ -R
+sudo chgrp weiya jupyter/ -R
+```
+其中-R表示递归调用，使得文件夹中所有内容的用户权限都进行更改。
+
+### `nbconvert failed: validate() got an unexpected keyword argument 'relax_add_props'`
+
+refer to [nbconvert failed: validate() got an unexpected keyword argument 'relax_add_props' #2901](https://github.com/jupyter/notebook/issues/2901)
+
+其实我的版本是一致的，但可能由于我进入 Jupyter notebook 方式不一样。
+
+- 一开始，直接从base 进入，然后选择 snakes 的 kernel，导出失败，错误原因如上
+- 直接在 snakes 进入 Jupyter notebook，这样可以成功导出
+
+### 不同 environment 的 jupyter
+
+#### Python
+
+其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 [Kernels for different environments](https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments)
+
+```bash
+$ conda activate myenv
+$ conda install ipykernel
+$ python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+```
+
+#### Julia
+
+打开特定版本的 Julia，
+
+```julia
+> add IJulia
+```
+
+#### R
+
+```R
+install.packages('IRkernel')
+#IRkernel::installspec()
+IRkernel::installspec(name="3.6.0", displayname = "R 3.6.0")
+```
+
+另见 [using R in JupyterLab](../R/index.md#using-r-in-jupyterlab)
+
 
 ## Show matplotlib plots in Ubuntu (Windows subsystem for Linux)
 
@@ -429,22 +450,6 @@ f.write(write.str)
 also refer to
 
 [matplotlib: coordinates convention of image imshow incompatible with plot](https://stackoverflow.com/questions/37706005/matplotlib-coordinates-convention-of-image-imshow-incompatible-with-plot)
-
-## arrays with different size
-
-- nested list
-
-```python
-[[1,2,3],[1,2]]
-```
-
-- numpy
-
-```python
-numpy.array([[0,1,2,3], [2,3,4]], dtype=object)
-```
-
-refer to [How to make a multidimension numpy array with a varying row size?](https://stackoverflow.com/questions/3386259/how-to-make-a-multidimension-numpy-array-with-a-varying-row-size)
 
 ## find index of an item
 
@@ -501,16 +506,6 @@ refer to [How to install packages in Linux (CentOS) without root user with autom
 2. In python 3.x, all classes are new style - no need to set the metaclass.
 
 refer to [class ClassName versus class ClassName(object)](https://stackoverflow.com/questions/10043963/class-classname-versus-class-classnameobject)
-
-## `nbconvert failed: validate() got an unexpected keyword argument 'relax_add_props'`
-
-refer to [nbconvert failed: validate() got an unexpected keyword argument 'relax_add_props' #2901](https://github.com/jupyter/notebook/issues/2901)
-
-其实我的版本是一致的，但可能由于我进入 Jupyter notebook 方式不一样。
-
-- 一开始，直接从base 进入，然后选择 snakes 的 kernel，导出失败，错误原因如上
-- 直接在 snakes 进入 Jupyter notebook，这样可以成功导出
-
 
 ## 进程和线程
 
@@ -608,6 +603,40 @@ along with other methods to square a list,
 [1, 4]
 ```
 
+## `pip`
+
+- `pip list`: 查看已安装的包
+
+### set mirror in mainland China
+
+在win10下设置，参考[Python pip 国内镜像大全及使用办法](http://blog.csdn.net/testcs_dn/article/details/54374849)
+
+在用户文件夹下新建pip文件夹，里面新建pip.ini文件
+
+```txt
+[global]
+index-url=http://mirrors.aliyun.com/pypi/simple/
+[install]
+trusted-host=mirrors.aliyun.com
+```
+
+注意编码格式为utf8无BOM。
+
+### temporary proxy
+
+通过 `conda` 安装镜像在 `.condarc` 中设置, 如在内地可以用[清华的镜像](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)，而通过 `pip` 详见 [pypi 镜像使用帮助](https://mirror.tuna.tsinghua.edu.cn/help/pypi/)，临时使用可以运行
+
+```bash
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+```
+
+### upgrade package
+
+```bash
+# pip install PACKAGE -upgrade
+pip install PACKAGE -U
+```
+
 ## 'Uninstalling a distutils installed project' error
 
 pip install --ignore-installed ${PACKAGE_NAME}
@@ -689,15 +718,7 @@ https://stackoverflow.com/questions/47273107/how-to-pause-a-for-loop-and-waiting
 
 https://matplotlib.org/3.1.1/users/event_handling.html
 
-## print numpy objects without line breaks
 
-```python
-import numpy as np
-x_str = np.array_repr(x).replace('\n', '')
-print(x_str)
-```
-
-refer to [How to print numpy objects without line breaks](https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks)
 
 ## `-m`
 
@@ -720,13 +741,6 @@ refer to:
 - [Multiple Language Support](https://coveralls-python.readthedocs.io/en/latest/usage/multilang.html)
 - [GitHub: Cell-Video](https://github.com/szcf-weiya/Cell-Video/blob/102153462e7fd65718738bd2ad0ef37d4150f722/.github/workflows/blank.yml)
 
-## 镜像
-
-通过 `conda` 安装镜像在 `.condarc` 中设置, 如在内地可以用[清华的镜像](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)，而通过 `pip` 详见 [pypi 镜像使用帮助](https://mirror.tuna.tsinghua.edu.cn/help/pypi/)，临时使用可以运行
-
-```bash
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
-```
 
 ## subplots 的间距
 
@@ -802,14 +816,6 @@ T[[x, y]]
 
 in [my code](https://github.com/szcf-weiya/RLnotes/blob/8e714286c1ba09113c4bf295d89ed774a8c5be5c/ModelFree/mountaincar.py#L68). Then I found [more detailed explanation](https://stackoverflow.com/a/43627975/) for the usage.
 
-## temporary proxy for pip
-
-```bash
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
-```
-
-详见 [https://mirrors.tuna.tsinghua.edu.cn/help/pypi/](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)
-
 ## 新式类 vs 经典类
 
 - python 2.x 中，默认为经典类，只有当写成 `class A(object)` 才成为新式类
@@ -821,9 +827,22 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 
 explain the schematic of unittest framework in python: [Running unittest with typical test directory structure](https://stackoverflow.com/questions/1896918/running-unittest-with-typical-test-directory-structure)
 
-## upgrade package
+## Misc
 
-```bash
-# pip install PACKAGE -upgrade
-pip install PACKAGE -U
-```
+- [人工鱼群算法-python实现](http://www.cnblogs.com/biaoyu/p/4857911.html)
+- [请问phantom-proxy如何设置代理ip](https://segmentfault.com/q/1010000000685938)
+- [Python编码介绍——encode和decode](http://blog.chinaunix.net/uid-27838438-id-4227131.html)
+- [爬虫必备——requests](https://zhuanlan.zhihu.com/p/20410446)
+- [Python使用代理抓取网站图片（多线程）](http://www.jb51.net/article/48112.htm)
+- [python中threading模块详解（一）](http://blog.chinaunix.net/uid-27571599-id-3484048.html)
+- [python 爬虫获取XiciDaili代理IP](http://30daydo.com/article/94)
+- [使用SQLite](https://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001388320596292f925f46d56ef4c80a1c9d8e47e2d5711000)
+- [python 使用sqlite3](http://www.cnblogs.com/hongten/p/hongten_python_sqlite3.html)
+- [用Python进行SQLite数据库操作](http://www.cnblogs.com/yuxc/archive/2011/08/18/2143606.html)
+- [Python调用MongoDB使用心得](https://www.oschina.net/question/54100_27233)
+- [python urllib2详解及实例](http://www.pythontab.com/html/2014/pythonhexinbiancheng_1128/928.html)
+- [Python爬虫入门实战七：使用Selenium--以QQ空间为例](https://www.jianshu.com/p/ffd02cc9d4ef)
+- [Python中将打印输出导向日志文件](https://www.cnblogs.com/arkenstone/p/5727883.html)
+- [python 中文编码(一)](https://www.cnblogs.com/tk091/p/4012004.html)
+- [Python爬虫利器二之Beautiful Soup的用法](https://cuiqingcai.com/1319.html)
+- [正则表达式之捕获组/非捕获组介绍](http://www.jb51.net/article/28035.htm)
