@@ -458,6 +458,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/factor/" class="md-nav__link">
+        一道与 factor 有关的问题
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -594,6 +606,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#read-image" class="md-nav__link">
+    Read Image
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -663,6 +682,18 @@
     <li class="md-nav__item">
       <a href="../../Matlab/" class="md-nav__link">
         Matlab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comparisons/stat/" class="md-nav__link">
+        Comparisons
       </a>
     </li>
   
@@ -1369,6 +1400,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#read-image" class="md-nav__link">
+    Read Image
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1426,6 +1464,42 @@ opencv-python             <span class="m">4</span>.2.0.34                 pypi_0
 <li>所有其实一开始指定 cmake，只是为了针对具体版本进行编译，最后还需要自己 link，参照 <a href="https://stackoverflow.com/questions/50816241/compile-opencv-with-cmake-to-integrate-it-within-a-conda-env">Compile OpenCV with Cmake to integrate it within a Conda env</a> 设置 <code>BUILD_opencv_python2=OFF</code></li>
 </ol>
 <p>Currently (2020-07-27 21:32:18), I am not using this version, and the previous built conda env also has been deleted due to the upgrade of system. But the build folders (in <code>~/github/opencv4_build</code>) and resulting <code>.so</code> (in <code>/usr/local/lib/python3.7/site-packages/cv2/python-3.7</code>) should still be OK since the beginning python is just for building.</p>
+<h2 id="read-image">Read Image<a class="headerlink" href="#read-image" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Adopted from <a href="">my project</a>.</p>
+</div>
+<p>For a 16-bit TIFF images, the <a href="https://docs.opencv.org/master/d6/d87/imgcodecs_8hpp.html">mode</a> should be set as <code>IMREAD_ANYDEPTH</code> instead of <code>IMREAD_GRAYSCALE</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">im1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;example/three_cells.tif&quot;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_ANYDEPTH</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">im1</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">56</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">uint16</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">im2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;../test/example/three_cells.tif&quot;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">im2</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">uint8</span><span class="p">)</span>
+</code></pre></div>
+<p>while <code>skimage.io</code> avoids such specification, which might be more convenience,</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">im3</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;../test/example/three_cells.tif&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">im3</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">56</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">uint16</span><span class="p">)</span>
+</code></pre></div>
+<p>As a comparison, JuliaImages uses a special type <code>NOf16</code> (standing for <strong>N</strong>ormalized, with <strong>0</strong> integer bits and <strong>16 f</strong>ractional bits), that interprets an 16-bit integer as if it had been scaled by 1/(2^16-1), thus encoding values from 0 to 1 in 2^16 steps.</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="nb">im</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s">&quot;../test/example/three_cells.tif&quot;</span><span class="p">)</span>
+<span class="c"># in jupyter notebook, direct `unique(im)` will automatically shows the image pixel</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">display</span><span class="p">(</span><span class="kt">MIME</span><span class="p">(</span><span class="s">&quot;text/plain&quot;</span><span class="p">),</span> <span class="n">sort</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="nb">im</span><span class="p">)))</span>
+<span class="mi">8</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="n">Gray</span><span class="p">{</span><span class="n">N0f16</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span> <span class="n">with</span> <span class="n">eltype</span> <span class="n">Gray</span><span class="p">{</span><span class="n">Normed</span><span class="p">{</span><span class="kt">UInt16</span><span class="p">,</span><span class="mi">16</span><span class="p">}}</span><span class="o">:</span>
+ <span class="n">Gray</span><span class="p">{</span><span class="n">N0f16</span><span class="p">}(</span><span class="mf">0.0</span><span class="p">)</span>
+ <span class="n">Gray</span><span class="p">{</span><span class="n">N0f16</span><span class="p">}(</span><span class="mf">0.0007</span><span class="p">)</span>
+ <span class="n">Gray</span><span class="p">{</span><span class="n">N0f16</span><span class="p">}(</span><span class="mf">0.00078</span><span class="p">)</span>
+ <span class="n">Gray</span><span class="p">{</span><span class="n">N0f16</span><span class="p">}(</span><span class="mf">0.00079</span><span class="p">)</span>
+ <span class="n">Gray</span><span class="p">{</span><span class="n">N0f16</span><span class="p">}(</span><span class="mf">0.00081</span><span class="p">)</span>
+ <span class="n">Gray</span><span class="p">{</span><span class="n">N0f16</span><span class="p">}(</span><span class="mf">0.00082</span><span class="p">)</span>
+ <span class="n">Gray</span><span class="p">{</span><span class="n">N0f16</span><span class="p">}(</span><span class="mf">0.00084</span><span class="p">)</span>
+ <span class="n">Gray</span><span class="p">{</span><span class="n">N0f16</span><span class="p">}(</span><span class="mf">0.00085</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The result returned by <code>np.unique</code> has been sorted, while Julia&rsquo;s <code>unique</code> does not.</p>
+</div>
                 
               
               
