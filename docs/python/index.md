@@ -1,4 +1,138 @@
-# python 相关
+# Python Notes
+
+## Base
+
+### xrange vs range
+
+基本都在循环时使用，输出结果也是一样的，但略有差异
+
+- range 直接生成一个 list 对象
+- xrange 返回一个生成器。性能会比 range 好，特别是很大的时候。
+
+参考[Python中range和xrange的区别](http://blog.csdn.net/imzoer/article/details/8742283)
+
+### `-m`
+
+`python -m` lets you run modules as scripts, and it reflects the motto--"batteries included". [Here](http://pythonwise.blogspot.com/2015/01/python-m.html) are some powerful features/functions, such as creating a simple http server
+
+```python
+python -m SimpleHTTPServer 80
+```
+
+### with 语句
+
+参考
+
+- [Python with语句](https://www.cnblogs.com/zhangkaikai/p/6669750.html)
+- [with statement in Python](https://www.geeksforgeeks.org/with-statement-in-python/)
+
+简言之，“使用with后不管with中的代码出现什么错误，都会进行对当前对象进行清理工作。”
+
+这也就是为什么在用 MySQLdb 的时候，称“With the with keyword, the Python interpreter automatically releases the resources. It also provides error handling.” 详见[MySQL Python tutorial - programming MySQL in Python](http://zetcode.com/db/mysqlpython/)
+
+另外，现在经常在神经网络中碰到，如
+
+```python
+import tensorflow as tf
+x = tf.Variable(3.0)
+with tf.GradientTape() as tape:
+    y = x**2    
+dy_dx = tape.gradient(y, x)
+```
+
+### usage of `yield`
+
+> We should use yield when we want to iterate over a sequence, but don’t want to store the entire sequence in memory.
+
+More details refer to [When to use yield instead of return in Python?](https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/)
+
+An example gave in [Squaring all elements in a list](https://stackoverflow.com/questions/12555443/squaring-all-elements-in-a-list)
+
+```python
+>>> def square(list):
+...     for i in list:
+...             yield i ** 2
+... 
+>>> square([1,2])
+<generator object square at 0x7f343963dca8>
+>>> for i in square([1,2]):
+...     print(i)
+... 
+1
+4
+```
+
+along with other methods to square a list,
+
+```python
+>>> list = [1, 2]
+>>> [i**2 for i in list]
+[1, 4]
+>>> map(lambda x: x**2, list)
+<map object at 0x7f3439642f60>
+>>> for i in map(lambda x: x**2, list):
+...     print(i)
+... 
+1
+4
+>>> ret = []
+>>> for i in list:
+...     ret.append(i**2)
+... 
+>>> ret
+[1, 4]
+```
+
+## Class
+
+### 新式类 vs 经典类 (`class ClassName` vs `class ClassName(object)`)
+
+- python 2.x 中，默认为经典类，只有当写成 `class A(object)` 才成为新式类
+- python 3.x 中，默认为新式类
+
+详见 [python新式类和经典类的区别？](https://www.zhihu.com/question/22475395)
+
+1. In python 2.x, when you inherit from "object" you class is a "new style" class; the non inheriting from "object" case creates an "old style" class.
+2. In python 3.x, all classes are new style - no need to set the metaclass.
+
+refer to [class ClassName versus class ClassName(object)](https://stackoverflow.com/questions/10043963/class-classname-versus-class-classnameobject)
+
+### `__getitem__` and `__setitem__`
+
+I came across the usage of `__getitem__` [here](https://github.com/MeepMoop/tilecoding/blob/master/example.py#L34), which seems powerful, and not only accept
+
+```python
+T[x, y]
+```
+
+also supports
+
+```python
+T[[x, y]]
+```
+
+in [my code](https://github.com/szcf-weiya/RLnotes/blob/8e714286c1ba09113c4bf295d89ed774a8c5be5c/ModelFree/mountaincar.py#L68), where `T` is an instance of a class and `[x, y]` is the coordinate. The `[]` is enabled due to the `__getitem__` method.
+
+```python
+class TildCoder():
+	def __init(...):
+		...
+	
+	def __getitem__(self, x):
+		...
+```
+
+Then I found [more detailed explanation](https://stackoverflow.com/a/43627975/) for the usage.
+
+> The `[]` syntax for getting item by key or index is just syntax sugar. When you evaluate `a[i]`, Python calls `a.__getitem__(i)` or `type(a).__getitem__(a, i)`.
+
+### @staticmethod vs @classmethod
+
+参考
+
+1. [Difference between @staticmethod and @classmethod in Python](https://www.pythoncentral.io/difference-between-staticmethod-and-classmethod-in-python/)
+
+2. [The definitive guide on how to use static, class or abstract methods in Python](https://julien.danjou.info/guide-python-static-class-abstract-methods/)
 
 ## `click`
 
@@ -32,23 +166,139 @@ a = 2, b = False
 !!! info
 	More related code can be found in [My Code Results on GitHub](https://github.com/search?l=Python&q=user%3Aszcf-weiya+click&type=Code)
 
-## seaborn的使用
+## FileIO
 
-Matplotlib自动化程度非常高，但是，掌握如何设置系统以便获得一个吸引人的图是相当困难的事。为了控制matplotlib图表的外观，Seaborn模块自带许多定制的主题和高级的接口。
-[segmentfault](https://segmentfault.com/a/1190000002789457)
+### 写入 non-ascii 字符
 
+```python
+f = open("filename", "w")
+write_str = u'''
+some non ascii symbols
+'''
+f.write(write.str)
+```
 
-## theano import出错
+会报错
 
-![](err_theano.png)
+```
+'ascii' codec can't encode character
+```
 
-更改.theano文件夹的用户权限
+参考 [Python: write a list with non-ASCII characters to a text file](https://stackoverflow.com/questions/33255846/python-write-a-list-with-non-ascii-characters-to-a-text-file) 采用 `codecs.open(, "w", encoding="utf-8")` 可以解决需求。
 
+### URL string to normal string
 
-## selenium
+参考[transform-url-string-into-normal-string-in-python-20-to-space-etc](https://stackoverflow.com/questions/11768070/transform-url-string-into-normal-string-in-python-20-to-space-etc)
 
-refer to [Selenium using Python - Geckodriver executable needs to be in PATH
-](https://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path)
+1. python2
+
+```python
+import urllib2
+print urllib2.unquote("%CE%B1%CE%BB%20")
+```
+
+2. python3
+
+```python
+from urllib.parse import unquote
+print(unquote("%CE%B1%CE%BB%20"))
+```
+
+### `<U5`
+
+I met this term in [How to convert numpy object array into str/unicode array?](https://stackoverflow.com/questions/16037824/how-to-convert-numpy-object-array-into-str-unicode-array)
+
+I am confused about the [official english documentation](https://docs.scipy.org/doc/numpy-1.10.0/reference/arrays.dtypes.html)
+
+[A Chinese answer](https://segmentfault.com/q/1010000012049371) solves my question,
+
+- `<` 表示字节顺序，小端（最小有效字节存储在最小地址中）
+- `U` 表示Unicode，数据类型
+- `5` 表示元素位长，数据大小
+
+### `u/U`, `r/R`, `b` in string
+
+- u/U: 表示unicode字符串。不是仅仅是针对中文, 可以针对任何的字符串，代表是对字符串进行unicode编码。一般英文字符在使用各种编码下, 基本都可以正常解析, 所以一般不带u；但是中文, 必须表明所需编码, 否则一旦编码转换就会出现乱码。建议所有编码方式采用utf8
+
+- r/R: 非转义的原始字符串，常用于正则表达式 re 中。
+
+- b:bytes:
+       - python3.x里默认的str是(py2.x里的)unicode, bytes是(py2.x)的str, b”“前缀代表的就是bytes
+       - python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这种写法
+
+另外
+
+- `str` -> `bytes`: encode
+- `bytes` -> `str`: decode 
+
+```python
+# python 3.6: str 为 Unicode
+>>> "中文".encode("utf8")
+b'\xe4\xb8\xad\xe6\x96\x87'
+>>> "中文".encode("utf8").decode("utf8")
+'中文'
+
+# python 2.7： str 为 bytes
+>>> "中文"
+'\xe4\xb8\xad\xe6\x96\x87'
+>>> "中文".decode("utf8")
+u'\u4e2d\u6587'
+>>> print("中文".decode("utf8"))
+中文
+```
+
+参考:
+
+- [python字符串前面加u,r,b的含义](https://www.oschina.net/question/437227_106832)
+- [浅析Python3中的bytes和str类型 - Chown-Jane-Y - 博客园](https://www.cnblogs.com/chownjy/p/6625299.html)
+- [convert-bytes-to-a-string](https://stackoverflow.com/questions/606191/convert-bytes-to-a-string)
+
+## Function 
+
+### `*args` and `**args`
+
+- `*args`: pass a **non-keyword** and **variable-length** argument list to a function.
+- `**args`: pass a **keyworded**, **variable-length** argument list, actually `dict`
+
+refer to [`*args` and `**kwargs` in Python](https://www.geeksforgeeks.org/args-kwargs-python/), and [Asterisks in Python: what they are and how to use them](https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/)
+
+One example,
+
+```python
+    def feature_size(self):
+        return self.conv3(self.conv2(self.conv1(torch.zeros(1, *self.input_shape)))).view(1, -1).size(1)
+```
+
+where `*self.input_shape` aims to unpacking something like `[3, 4, 5]` to `3, 4, 5`.
+
+### annotations
+
+When I am writing the custom loss function in XGBoost, there are some new syntax in the example function,
+
+```python
+def squared_log(predt: np.ndarray,
+                dtrain: xgb.DMatrix) -> Tuple[np.ndarray, np.ndarray]:
+```
+
+what is the meaning of `:` and `->`. Then I [found](https://stackoverflow.com/questions/14379753/what-does-mean-in-python-function-definitions) that they are [functional annotations](https://www.python.org/dev/peps/pep-3107/).
+
+> By itself, Python does not attach any particular meaning or significance to annotations. 
+>
+> The only way that annotations take on meaning is when they are interpreted by third-party libraries. 
+
+### No `Tuple` here
+
+Actually, seems no need to add `Tuple` before `[np.ndarray, np.ndarray]`, which will throws an error 
+
+> NameError: name 'Tuple' is not defined
+
+Ohhh, to avoid such problem, 
+
+```python
+from typing import Tuple, Dict, List
+```
+
+refer to [custom_rmsle.py#L16](https://github.com/dmlc/xgboost/blob/master/demo/guide-python/custom_rmsle.py#L16)
 
 ## IPython
 
@@ -60,10 +310,25 @@ Refer to [:link:](https://ipython.readthedocs.io/en/stable/interactive/magics.ht
 - `!ls` simply calls system's `ls`, but `!!ls` also returns the result formatted as a list, which is equivalent to `%sx ls`.
 - `%sx`: shell execute, run shell command and capture output, and `!!` is short-hand.
 
+### remote ipython kernel
+
+一直想玩 jupyter 的远程 ipython kernel 连接，这样可以减轻本机的压力。
+
+这两篇介绍得很详细，但是最后设置 ssh 那一步总是报错，总是说无法连接。
+
+- [Connecting Spyder IDE to a remote IPython kernel](https://medium.com/@halmubarak/connecting-spyder-ide-to-a-remote-ipython-kernel-25a322f2b2be)
+- [How to connect your Spyder IDE to an external ipython kernel with SSH PuTTY tunnel](https://medium.com/@mazzine.r/how-to-connect-your-spyder-ide-to-an-external-ipython-kernel-with-ssh-putty-tunnel-e1c679e44154)
+
+因为我是直接把 `id_rsa.pub` 文件当作 `.pem` 文件，但如果我换成密码登录后就成功了。
+
+而如果[直接命令行操作](https://github.com/ipython/ipython/wiki/Cookbook:-Connecting-to-a-remote-kernel-via-ssh)，则就像正常 ssh 一样，也会成功。
+
+所以中间的差异应该就是 `.pem` 与 `id_rsa.pub` 不等同。具体比较详见 [what is the difference between various keys in public key encryption](https://stackoverflow.com/questions/17670446/what-is-the-difference-between-various-keys-in-public-key-encryption)
+
 
 ## JSON
 
-## convert string to json
+### convert string to json
 
 ```python
 payload='{'name': weiya}'
@@ -82,6 +347,209 @@ json.loads(payload)
 ### json.dumps() 和 json.dump() 的区别
 
 简言之，`dumps()`和`loads()`都是针对字符串而言的，而`dump()`和`load()`是针对文件而言的。具体细节参见[python json.dumps()  json.dump()的区别 - wswang - 博客园](https://www.cnblogs.com/wswang/p/5411826.html)
+
+### flask 中 jsonify 和 json.dumps 的区别
+
+参考[在flask中使用jsonify和json.dumps的区别](http://blog.csdn.net/Duke_Huan_of_Qi/article/details/76064225)
+
+另外 flask 的入门文档见
+
+[快速入门 &mdash; Flask 0.10.1 文档](http://docs.jinkan.org/docs/flask/quickstart.html#quickstart)
+
+## Jupyter
+
+### GitHub 语言比例过分倾斜
+
+[LInguist is reporting my project as a Jupyter Notebook](https://github.com/github/linguist/issues/3316)
+
+### jupyter notebook 出错
+
+![](error_jupyter.png)
+
+可以通过
+```
+rm -r .pki
+```
+解决
+
+
+### 创建 jupyter notebook 权限问题
+
+![](error_jupyter_1.png)
+
+原因是所给的路径的用户权限不一致，jupyter的用户及用户组均为root，为解决这个问题，直接更改用户权限
+
+```
+sudo chown weiya jupyter/ -R
+sudo chgrp weiya jupyter/ -R
+```
+其中-R表示递归调用，使得文件夹中所有内容的用户权限都进行更改。
+
+### `nbconvert failed: validate() got an unexpected keyword argument 'relax_add_props'`
+
+refer to [nbconvert failed: validate() got an unexpected keyword argument 'relax_add_props' #2901](https://github.com/jupyter/notebook/issues/2901)
+
+其实我的版本是一致的，但可能由于我进入 Jupyter notebook 方式不一样。
+
+- 一开始，直接从base 进入，然后选择 snakes 的 kernel，导出失败，错误原因如上
+- 直接在 snakes 进入 Jupyter notebook，这样可以成功导出
+
+### 不同 environment 的 jupyter
+
+#### Python
+
+其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 [Kernels for different environments](https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments)
+
+```bash
+$ conda activate myenv
+$ conda install ipykernel
+$ python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+```
+
+#### Julia
+
+打开特定版本的 Julia，
+
+```julia
+> add IJulia
+```
+
+#### R
+
+```R
+install.packages('IRkernel')
+#IRkernel::installspec()
+IRkernel::installspec(name="3.6.0", displayname = "R 3.6.0")
+```
+
+另见 [using R in JupyterLab](../R/index.md#using-r-in-jupyterlab)
+
+## List
+
+### find index of an item
+
+```python
+>>> [1, 1].index(1)
+0
+>>> [i for i, e in enumerate([1, 2, 1]) if e == 1]
+[0, 2]
+>>> g = (i for i, e in enumerate([1, 2, 1]) if e == 1)
+>>> next(g)
+0
+>>> next(g)
+2
+```
+
+refer to [Finding the index of an item given a list containing it in Python](https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-given-a-list-containing-it-in-python)
+
+### index a list with another list
+
+```python
+L = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+Idx = [0, 3, 7]
+T = [L[i] for i in Idx]
+```
+
+refer to [In Python, how do I index a list with another list?](https://stackoverflow.com/questions/1012185/in-python-how-do-i-index-a-list-with-another-list)
+
+### getting indices of true
+
+```python
+>>> t = [False, False, False, False, True, True, False, True, False, False, False, False, False, False, False, False]
+>>> [i for i, x in enumerate(t) if x]
+[4, 5, 7]
+```
+
+refer to [Getting indices of True values in a boolean list](https://stackoverflow.com/questions/21448225/getting-indices-of-true-values-in-a-boolean-list)
+
+### remove by index
+
+`del`
+
+refer to [How to remove an element from a list by index?](https://stackoverflow.com/questions/627435/how-to-remove-an-element-from-a-list-by-index)
+
+### `TypeError: unhashable type: 'list'`
+
+#### convert a nested list to a list
+
+```python
+Python 3.6.9 (default, Apr 18 2020, 01:56:04) 
+[GCC 8.4.0] on linux
+>>> set([1,2,3,4,[5,6,7],8,9])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> set([1,2,3,4,(5,6,7),8,9])
+{1, 2, 3, 4, (5, 6, 7), 8, 9}
+```
+
+#### hash a nested list
+
+```python
+>>> hash([1, 2, 3, [4, 5,], 6, 7])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> hash(tuple([1, 2, 3, [4, 5,], 6, 7]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+>>> hash(tuple([1, 2, 3, tuple([4, 5,]), 6, 7]))
+-7943504827826258506
+>>> hash([1, 2, 3, tuple([4, 5,]), 6, 7])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+```
+
+refer to [Python: TypeError: unhashable type: 'list'](https://stackoverflow.com/questions/13675296/python-typeerror-unhashable-type-list)
+
+
+## matplotlib.pyplot
+
+### seaborn
+
+Homepage: [seaborn: statistical data visualization](https://seaborn.pydata.org/)
+
+> Seaborn的底层是基于Matplotlib的，他们的差异有点像在点餐时选套餐还是自己点的区别，Matplotlib是独立点菜，可能费时费心（尤其是对我这种选择困难症患者...）但最后上桌的菜全是特别适合自己的；而Seaborn是点套餐，特别简单，一切都是配好的，虽然省时省心，但可能套餐里总有些菜是不那么合自己口味的。
+>
+> :link: [Jack Sun @ 知乎](https://www.zhihu.com/question/301637122/answer/528183410)
+
+### 画图 xy 顺序
+
+1. imshow 中的 [origin and extent](https://matplotlib.org/tutorials/intermediate/imshow_extent.html)
+
+> Generally, for an array of shape (M, N), the first index runs along the vertical, the second index runs along the horizontal. The pixel centers are at integer positions ranging from 0 to N' = N - 1 horizontally and from 0 to M' = M - 1 vertically. origin determines how to the data is filled in the bounding box.
+
+also refer to
+
+[matplotlib: coordinates convention of image imshow incompatible with plot](https://stackoverflow.com/questions/37706005/matplotlib-coordinates-convention-of-image-imshow-incompatible-with-plot)
+
+### subplots 的间距
+
+`plt.tight_layout()` 可以调节间距，如果有必要，可以带上参数，比如，[B spline in R, C++ and Python](https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6)
+
+```bash
+plt.tight_layout(pad = 3.0)
+```
+
+### scatter size
+
+the size is defined by the area, [pyplot scatter plot marker size](https://stackoverflow.com/questions/14827650/pyplot-scatter-plot-marker-size)
+
+### math symbols
+
+```python
+plt.xlabel(r"\lambda")
+```
+
+refer to [Writing mathematical expressions](https://matplotlib.org/users/mathtext.html)
+
+### Show matplotlib plots in Ubuntu (Windows subsystem for Linux)
+
+参考
+[Show matplotlib plots in Ubuntu (Windows subsystem for Linux)](https://stackoverflow.com/questions/43397162/show-matplotlib-plots-in-ubuntu-windows-subsystem-for-linux)
+
 
 ## NumPy
 
@@ -194,15 +662,6 @@ print(x_str)
 
 refer to [How to print numpy objects without line breaks](https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks)
 
-## xrange and range
-
-基本都在循环时使用，输出结果也是一样的，但略有差异
-
-- range 直接生成一个 list 对象
-- xrange 返回一个生成器。性能会比 range 好，特别是很大的时候。
-
-参考[Python中range和xrange的区别](http://blog.csdn.net/imzoer/article/details/8742283)
-
 ## 又拍云的短信平台
 
 参考文献
@@ -210,96 +669,12 @@ refer to [How to print numpy objects without line breaks](https://stackoverflow.
 1. [Python 使用requests发送POST请求 - CSDN博客](http://blog.csdn.net/junli_chen/article/details/53670887)
 2. [Python-爬虫-requests库用语post登录](https://www.cnblogs.com/fredkeke/p/7000687.html)
 
-## unquote %7B character
-
-参考[transform-url-string-into-normal-string-in-python-20-to-space-etc](https://stackoverflow.com/questions/11768070/transform-url-string-into-normal-string-in-python-20-to-space-etc)
-
-1. python2
-
-```python
-import urllib2
-print urllib2.unquote("%CE%B1%CE%BB%20")
-```
-
-2. python3
-
-```python
-from urllib.parse import unquote
-print(unquote("%CE%B1%CE%BB%20"))
-```
-
-## `u/U`, `r/R`, `b` in string
-
-- u/U: 表示unicode字符串。不是仅仅是针对中文, 可以针对任何的字符串，代表是对字符串进行unicode编码。一般英文字符在使用各种编码下, 基本都可以正常解析, 所以一般不带u；但是中文, 必须表明所需编码, 否则一旦编码转换就会出现乱码。建议所有编码方式采用utf8
-
-- r/R: 非转义的原始字符串，常用于正则表达式 re 中。
-
-- b:bytes:
-       - python3.x里默认的str是(py2.x里的)unicode, bytes是(py2.x)的str, b”“前缀代表的就是bytes
-       - python2.x里, b前缀没什么具体意义， 只是为了兼容python3.x的这种写法
-
-另外
-
-- `str` -> `bytes`: encode
-- `bytes` -> `str`: decode 
-
-```python
-# python 3.6: str 为 Unicode
->>> "中文".encode("utf8")
-b'\xe4\xb8\xad\xe6\x96\x87'
->>> "中文".encode("utf8").decode("utf8")
-'中文'
-
-# python 2.7： str 为 bytes
->>> "中文"
-'\xe4\xb8\xad\xe6\x96\x87'
->>> "中文".decode("utf8")
-u'\u4e2d\u6587'
->>> print("中文".decode("utf8"))
-中文
-```
-
-参考:
-
-- [python字符串前面加u,r,b的含义](https://www.oschina.net/question/437227_106832)
-- [浅析Python3中的bytes和str类型 - Chown-Jane-Y - 博客园](https://www.cnblogs.com/chownjy/p/6625299.html)
-- [convert-bytes-to-a-string](https://stackoverflow.com/questions/606191/convert-bytes-to-a-string)
-
 ## mdx_math安装命令
 
 参考[manage-your-cms-using-mkdocs](http://wutongtree.github.io/devops/manage-your-cms-using-mkdocs)
 
 ```bash
 sudo pip install python-markdown-math
-```
-
-## flask 中 jsonify 和 json.dumps 的区别
-
-参考[在flask中使用jsonify和json.dumps的区别](http://blog.csdn.net/Duke_Huan_of_Qi/article/details/76064225)
-
-另外 flask 的入门文档见
-
-[快速入门 &mdash; Flask 0.10.1 文档](http://docs.jinkan.org/docs/flask/quickstart.html#quickstart)
-
-## with 语句
-
-参考
-
-- [Python with语句](https://www.cnblogs.com/zhangkaikai/p/6669750.html)
-- [with statement in Python](https://www.geeksforgeeks.org/with-statement-in-python/)
-
-简言之，“使用with后不管with中的代码出现什么错误，都会进行对当前对象进行清理工作。”
-
-这也就是为什么在用 MySQLdb 的时候，称“With the with keyword, the Python interpreter automatically releases the resources. It also provides error handling.” 详见[MySQL Python tutorial - programming MySQL in Python](http://zetcode.com/db/mysqlpython/)
-
-另外，现在经常在神经网络中碰到，如
-
-```python
-import tensorflow as tf
-x = tf.Variable(3.0)
-with tf.GradientTape() as tape:
-    y = x**2    
-dy_dx = tape.gradient(y, x)
 ```
 
 ## How can I use Conda to install MySQLdb?
@@ -333,181 +708,8 @@ grant all privileges on testdb.* to 'test'@'%' with grant option;
 
 [https://stackoverflow.com/questions/5599254/how-to-use-sphinxs-autodoc-to-document-a-classs-init-self-method](https://stackoverflow.com/questions/5599254/how-to-use-sphinxs-autodoc-to-document-a-classs-init-self-method)
 
-## @staticmethod 和 @classmethod
 
-参考
-
-1. [Difference between @staticmethod and @classmethod in Python](https://www.pythoncentral.io/difference-between-staticmethod-and-classmethod-in-python/)
-
-2. [The definitive guide on how to use static, class or abstract methods in Python](https://julien.danjou.info/guide-python-static-class-abstract-methods/)
-
-## Jupyter
-
-### GitHub 语言比例过分倾斜
-
-[LInguist is reporting my project as a Jupyter Notebook](https://github.com/github/linguist/issues/3316)
-
-### jupyter notebook 出错
-
-![](error_jupyter.png)
-
-可以通过
-```
-rm -r .pki
-```
-解决
-
-
-### 创建 jupyter notebook 权限问题
-
-![](error_jupyter_1.png)
-
-原因是所给的路径的用户权限不一致，jupyter的用户及用户组均为root，为解决这个问题，直接更改用户权限
-
-```
-sudo chown weiya jupyter/ -R
-sudo chgrp weiya jupyter/ -R
-```
-其中-R表示递归调用，使得文件夹中所有内容的用户权限都进行更改。
-
-### `nbconvert failed: validate() got an unexpected keyword argument 'relax_add_props'`
-
-refer to [nbconvert failed: validate() got an unexpected keyword argument 'relax_add_props' #2901](https://github.com/jupyter/notebook/issues/2901)
-
-其实我的版本是一致的，但可能由于我进入 Jupyter notebook 方式不一样。
-
-- 一开始，直接从base 进入，然后选择 snakes 的 kernel，导出失败，错误原因如上
-- 直接在 snakes 进入 Jupyter notebook，这样可以成功导出
-
-### 不同 environment 的 jupyter
-
-#### Python
-
-其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 [Kernels for different environments](https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments)
-
-```bash
-$ conda activate myenv
-$ conda install ipykernel
-$ python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
-```
-
-#### Julia
-
-打开特定版本的 Julia，
-
-```julia
-> add IJulia
-```
-
-#### R
-
-```R
-install.packages('IRkernel')
-#IRkernel::installspec()
-IRkernel::installspec(name="3.6.0", displayname = "R 3.6.0")
-```
-
-另见 [using R in JupyterLab](../R/index.md#using-r-in-jupyterlab)
-
-
-## Show matplotlib plots in Ubuntu (Windows subsystem for Linux)
-
-参考
-[Show matplotlib plots in Ubuntu (Windows subsystem for Linux)](https://stackoverflow.com/questions/43397162/show-matplotlib-plots-in-ubuntu-windows-subsystem-for-linux)
-
-## matplotlib math symbols
-
-```python
-plt.xlabel(r"\lambda")
-```
-
-refer to [Writing mathematical expressions](https://matplotlib.org/users/mathtext.html)
-
-## 写入 non-ascii 字符
-
-```python
-f = open("filename", "w")
-write_str = u'''
-some non ascii symbols
-'''
-f.write(write.str)
-```
-
-会报错
-
-```
-'ascii' codec can't encode character
-```
-
-参考 [Python: write a list with non-ASCII characters to a text file](https://stackoverflow.com/questions/33255846/python-write-a-list-with-non-ascii-characters-to-a-text-file) 采用 `codecs.open(, "w", encoding="utf-8")` 可以解决需求。
-
-## 画图 xy 顺序
-
-1. imshow 中的 [origin and extent](https://matplotlib.org/tutorials/intermediate/imshow_extent.html)
-
-> Generally, for an array of shape (M, N), the first index runs along the vertical, the second index runs along the horizontal. The pixel centers are at integer positions ranging from 0 to N' = N - 1 horizontally and from 0 to M' = M - 1 vertically. origin determines how to the data is filled in the bounding box.
-
-also refer to
-
-[matplotlib: coordinates convention of image imshow incompatible with plot](https://stackoverflow.com/questions/37706005/matplotlib-coordinates-convention-of-image-imshow-incompatible-with-plot)
-
-## find index of an item
-
-```python
->>> [1, 1].index(1)
-0
->>> [i for i, e in enumerate([1, 2, 1]) if e == 1]
-[0, 2]
->>> g = (i for i, e in enumerate([1, 2, 1]) if e == 1)
->>> next(g)
-0
->>> next(g)
-2
-```
-
-refer to [Finding the index of an item given a list containing it in Python](https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-given-a-list-containing-it-in-python)
-
-## index a list with another list
-
-```python
-L = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-Idx = [0, 3, 7]
-T = [L[i] for i in Idx]
-```
-
-refer to [In Python, how do I index a list with another list?](https://stackoverflow.com/questions/1012185/in-python-how-do-i-index-a-list-with-another-list)
-
-## getting indices of true
-
-```python
->>> t = [False, False, False, False, True, True, False, True, False, False, False, False, False, False, False, False]
->>> [i for i, x in enumerate(t) if x]
-[4, 5, 7]
-```
-
-refer to [Getting indices of True values in a boolean list](https://stackoverflow.com/questions/21448225/getting-indices-of-true-values-in-a-boolean-list)
-
-
-## remove by index
-
-`del`
-
-refer to [How to remove an element from a list by index?](https://stackoverflow.com/questions/627435/how-to-remove-an-element-from-a-list-by-index)
-
-## install python without root
-
-use miniconda
-
-refer to [How to install packages in Linux (CentOS) without root user with automatic dependency handling?](https://stackoverflow.com/questions/36651091/how-to-install-packages-in-linux-centos-without-root-user-with-automatic-depen)
-
-## `class ClassName` vs `class ClassName(object)`
-
-1. In python 2.x, when you inherit from "object" you class is a "new style" class; the non inheriting from "object" case creates an "old style" class.
-2. In python 3.x, all classes are new style - no need to set the metaclass.
-
-refer to [class ClassName versus class ClassName(object)](https://stackoverflow.com/questions/10043963/class-classname-versus-class-classnameobject)
-
-## 进程和线程
+## thread vs process
 
 参考 [一道面试题：说说进程和线程的区别](https://foofish.net/thread-and-process.html)
 
@@ -544,64 +746,6 @@ else:
 
 Copilot 一直 detect 不出 spyder，只有刚开始装的时候检测到了，但那时候也没有起作用。而 kite 本身一直在 spyder 右下角的状态栏中。
 
-
-## remote ipython kernel
-
-一直想玩 jupyter 的远程 ipython kernel 连接，这样可以减轻本机的压力。
-
-这两篇介绍得很详细，但是最后设置 ssh 那一步总是报错，总是说无法连接。
-
-- [Connecting Spyder IDE to a remote IPython kernel](https://medium.com/@halmubarak/connecting-spyder-ide-to-a-remote-ipython-kernel-25a322f2b2be)
-- [How to connect your Spyder IDE to an external ipython kernel with SSH PuTTY tunnel](https://medium.com/@mazzine.r/how-to-connect-your-spyder-ide-to-an-external-ipython-kernel-with-ssh-putty-tunnel-e1c679e44154)
-
-因为我是直接把 `id_rsa.pub` 文件当作 `.pem` 文件，但如果我换成密码登录后就成功了。
-
-而如果[直接命令行操作](https://github.com/ipython/ipython/wiki/Cookbook:-Connecting-to-a-remote-kernel-via-ssh)，则就像正常 ssh 一样，也会成功。
-
-所以中间的差异应该就是 `.pem` 与 `id_rsa.pub` 不等同。具体比较详见 [what is the difference between various keys in public key encryption](https://stackoverflow.com/questions/17670446/what-is-the-difference-between-various-keys-in-public-key-encryption)
-
-## usage of `yield`
-
-> We should use yield when we want to iterate over a sequence, but don’t want to store the entire sequence in memory.
-
-More details refer to [When to use yield instead of return in Python?](https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/)
-
-An example gave in [Squaring all elements in a list](https://stackoverflow.com/questions/12555443/squaring-all-elements-in-a-list)
-
-```python
->>> def square(list):
-...     for i in list:
-...             yield i ** 2
-... 
->>> square([1,2])
-<generator object square at 0x7f343963dca8>
->>> for i in square([1,2]):
-...     print(i)
-... 
-1
-4
-```
-
-along with other methods to square a list,
-
-```python
->>> list = [1, 2]
->>> [i**2 for i in list]
-[1, 4]
->>> map(lambda x: x**2, list)
-<map object at 0x7f3439642f60>
->>> for i in map(lambda x: x**2, list):
-...     print(i)
-... 
-1
-4
->>> ret = []
->>> for i in list:
-...     ret.append(i**2)
-... 
->>> ret
-[1, 4]
-```
 
 ## `pip`
 
@@ -643,62 +787,15 @@ pip install --ignore-installed ${PACKAGE_NAME}
 
 refer to ['Uninstalling a distutils installed project' error when installing blockstack #504](https://github.com/blockstack/blockstack-core/issues/504)
 
-## `*args` and `**args`
+## `sys`
 
-- `*args`: pass a **non-keyword** and **variable-length** argument list to a function.
-- `**args`: pass a **keyworded**, **variable-length** argument list, actually `dict`
+### the first argument in `sys.path.insert()`
 
-refer to [`*args` and `**kwargs` in Python](https://www.geeksforgeeks.org/args-kwargs-python/), and [Asterisks in Python: what they are and how to use them](https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/)
+> But for `sys.path` specifically, element 0 is the path containing the script, and so using index 1 causes Python to search that path first and then the inserted path, versus the other way around when inserted at index 0.
 
-One example,
+The reason is that `sys.path` returns a list, while `.insert` is the method for a list, which insert object before the given index. Thus, if the first argument is 0, then the inserted path would be firstly searched, otherwise, it would be inserted after the first path, the current folder.
 
-```python
-    def feature_size(self):
-        return self.conv3(self.conv2(self.conv1(torch.zeros(1, *self.input_shape)))).view(1, -1).size(1)
-```
-
-where `*self.input_shape` aims to unpacking something like `[3, 4, 5]` to `3, 4, 5`.
-
-## Function Annotations
-
-When I am writing the custom loss function in XGBoost, there are some new syntax in the example function,
-
-```python
-def squared_log(predt: np.ndarray,
-                dtrain: xgb.DMatrix) -> Tuple[np.ndarray, np.ndarray]:
-```
-
-what is the meaning of `:` and `->`. Then I [found](https://stackoverflow.com/questions/14379753/what-does-mean-in-python-function-definitions) that they are [functional annotations](https://www.python.org/dev/peps/pep-3107/).
-
-> By itself, Python does not attach any particular meaning or significance to annotations. 
->
-> The only way that annotations take on meaning is when they are interpreted by third-party libraries. 
-
-### No `Tuple` here
-
-Actually, seems no need to add `Tuple` before `[np.ndarray, np.ndarray]`, which will throws an error 
-
-> NameError: name 'Tuple' is not defined
-
-Ohhh, to avoid such problem, 
-
-```python
-from typing import Tuple, Dict, List
-```
-
-refer to [custom_rmsle.py#L16](https://github.com/dmlc/xgboost/blob/master/demo/guide-python/custom_rmsle.py#L16)
-
-## `<U5`
-
-I met this term in [How to convert numpy object array into str/unicode array?](https://stackoverflow.com/questions/16037824/how-to-convert-numpy-object-array-into-str-unicode-array)
-
-I am confused about the [official english documentation](https://docs.scipy.org/doc/numpy-1.10.0/reference/arrays.dtypes.html)
-
-[A Chinese answer](https://segmentfault.com/q/1010000012049371) solves my question,
-
-- `<` 表示字节顺序，小端（最小有效字节存储在最小地址中）
-- `U` 表示Unicode，数据类型
-- `5` 表示元素位长，数据大小
+refer to [First argument of sys.path.insert in python](https://stackoverflow.com/questions/37176836/first-argument-of-sys-path-insert-in-python)
 
 ## the `i`-th row in pandas
 
@@ -706,53 +803,11 @@ I am confused about the [official english documentation](https://docs.scipy.org/
 df_test.iloc[0]
 ```
 
-## the first argument in `sys.path.insert()`
-
-> But for `sys.path` specifically, element 0 is the path containing the script, and so using index 1 causes Python to search that path first and then the inserted path, versus the other way around when inserted at index 0.
-
-refer to [First argument of sys.path.insert in python](https://stackoverflow.com/questions/37176836/first-argument-of-sys-path-insert-in-python)
-
 ## interactive mode
 
 https://stackoverflow.com/questions/47273107/how-to-pause-a-for-loop-and-waiting-for-user-input-matplotlib
 
 https://matplotlib.org/3.1.1/users/event_handling.html
-
-
-
-## `-m`
-
-`python -m` lets you run modules as scripts, and it reflects the motto--"batteries included". [Here](http://pythonwise.blogspot.com/2015/01/python-m.html) are some powerful features/functions, such as creating a simple http server
-
-```python
-python -m SimpleHTTPServer 80
-```
-
-## test and coverage
-
-1. Coverage.py
-2. coveralls
-
-combine the coverage from julia by merging the resulted json file, which need `coveralls-lcov` to convert `LCOV` to `JSON`.
-
-refer to:
-
-- [An Example of Python in Github Action](https://github.com/aodj/icelandreview/actions/runs/33951158/workflow)
-- [Multiple Language Support](https://coveralls-python.readthedocs.io/en/latest/usage/multilang.html)
-- [GitHub: Cell-Video](https://github.com/szcf-weiya/Cell-Video/blob/102153462e7fd65718738bd2ad0ef37d4150f722/.github/workflows/blank.yml)
-
-
-## subplots 的间距
-
-`plt.tight_layout()` 可以调节间距，如果有必要，可以带上参数，比如，[B spline in R, C++ and Python](https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6)
-
-```bash
-plt.tight_layout(pad = 3.0)
-```
-
-## scatter size
-
-the size is defined by the area, [pyplot scatter plot marker size](https://stackoverflow.com/questions/14827650/pyplot-scatter-plot-marker-size)
 
 ## `key` in `sorted`
 
@@ -764,68 +819,42 @@ sorted("This is a test string from Andrew".split(), key=str.lower)
 
 and met such technique in [4ment/marginal-experiments](https://github.com/4ment/marginal-experiments/blob/41124a1fbeed566cd7abc3dc474ea908a5ee8b28/run_simulations.py#L229)
 
-## `TypeError: unhashable type: 'list'`
+## unittest and coverage
 
-### convert a nested list to a list
+- candidate packages
+	- [Coverage.py](https://coverage.readthedocs.io/en/coverage-5.5/)
+	- [:white_check_mark: coveralls-python](https://coveralls-python.readthedocs.io/en/latest/usage/index.html)
 
-```python
-Python 3.6.9 (default, Apr 18 2020, 01:56:04) 
-[GCC 8.4.0] on linux
->>> set([1,2,3,4,[5,6,7],8,9])
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: unhashable type: 'list'
->>> set([1,2,3,4,(5,6,7),8,9])
-{1, 2, 3, 4, (5, 6, 7), 8, 9}
-```
+- the schematic of unittest framework in python: [Running unittest with typical test directory structure](https://stackoverflow.com/questions/1896918/running-unittest-with-typical-test-directory-structure)
 
-### hash a nested list
+### run locally
+  
+1. write unittest scripts in folder `test`
+2. install [coveralls-python](https://coveralls-python.readthedocs.io/en/latest/usage/index.html): `conda install coveralls`
+3. obtain the COVERALLS_REPO_TOKEN from [coveralls](https://coveralls.io/)
+4. run the script file
 
-```python
->>> hash([1, 2, 3, [4, 5,], 6, 7])
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: unhashable type: 'list'
->>> hash(tuple([1, 2, 3, [4, 5,], 6, 7]))
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: unhashable type: 'list'
->>> hash(tuple([1, 2, 3, tuple([4, 5,]), 6, 7]))
--7943504827826258506
->>> hash([1, 2, 3, tuple([4, 5,]), 6, 7])
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: unhashable type: 'list'
-```
+=== "run_local_coverall.sh"
+	```bash
+	#!/bin/bash
+	cd test/
+	coverage run test_script.py
+	mv .coverage ..
+	cd ..
 
-refer to [Python: TypeError: unhashable type: 'list'](https://stackoverflow.com/questions/13675296/python-typeerror-unhashable-type-list)
+	COVERALLS_REPO_TOKEN=XXXXXXXXXXXXXXXXXXXXXXX coveralls
+	```
 
-## `__getitem__`
+### combine with julia in Actions
 
-I came across the usage of `__getitem__` [here](https://github.com/MeepMoop/tilecoding/blob/master/example.py#L34), which seems powerful, and not only accept
+combine the coverage from julia by merging the resulted json file, which need `coveralls-lcov` to convert `LCOV` to `JSON`.
 
-```julia
-T[x, y]
-```
+refer to:
 
-also supports
+- [An Example of Python in Github Action](https://github.com/aodj/icelandreview/actions/runs/33951158/workflow)
+- [Multiple Language Support](https://coveralls-python.readthedocs.io/en/latest/usage/multilang.html)
+- [GitHub: Cell-Video](https://github.com/szcf-weiya/Cell-Video/blob/102153462e7fd65718738bd2ad0ef37d4150f722/.github/workflows/blank.yml)
 
-```julia
-T[[x, y]]
-```
-
-in [my code](https://github.com/szcf-weiya/RLnotes/blob/8e714286c1ba09113c4bf295d89ed774a8c5be5c/ModelFree/mountaincar.py#L68). Then I found [more detailed explanation](https://stackoverflow.com/a/43627975/) for the usage.
-
-## 新式类 vs 经典类
-
-- python 2.x 中，默认为经典类，只有当写成 `class A(object)` 才成为新式类
-- python 3.x 中，默认为新式类
-
-详见 [python新式类和经典类的区别？](https://www.zhihu.com/question/22475395)
-
-## unit test in python
-
-explain the schematic of unittest framework in python: [Running unittest with typical test directory structure](https://stackoverflow.com/questions/1896918/running-unittest-with-typical-test-directory-structure)
 
 ## Misc
 
@@ -846,3 +875,4 @@ explain the schematic of unittest framework in python: [Running unittest with ty
 - [python 中文编码(一)](https://www.cnblogs.com/tk091/p/4012004.html)
 - [Python爬虫利器二之Beautiful Soup的用法](https://cuiqingcai.com/1319.html)
 - [正则表达式之捕获组/非捕获组介绍](http://www.jb51.net/article/28035.htm)
+- [Selenium using Python - Geckodriver executable needs to be in PATH](https://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path)

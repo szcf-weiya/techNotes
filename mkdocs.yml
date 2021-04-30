@@ -18,6 +18,7 @@ nav:
         - 案例分析: R/legend_from_zhihu.md
         - 源码安装 RMySQL: R/install-notes-for-rmysql.md
         - new sample function (v3.6.0+): R/sample.md
+        - 一道与 factor 有关的问题: R/factor.md
       - Python:
         - 一般问题: python/index.md
         - Conda: python/conda.md
@@ -28,6 +29,7 @@ nav:
         - 自建关键词索引页: python/esltag.md
       - Julia: julia/index.md
       - Matlab: Matlab/index.md
+      - Comparisons: comparisons/stat.md
     - CSProgramming:
       - C/C++: Cpp/index.md
       - Java: java/index.md

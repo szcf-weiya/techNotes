@@ -1,3 +1,9 @@
+## 2021.04.30
+
+- racquetball: 壁球
+- cheerleading: 啦啦队
+    - cheerleader: 啦啦队队长
+
 ## 2021.04.29
 
 - Human **meridian (Jingluo)** system was by hypothesized by traditional Chinese medicine (TCM) for thousands of years, suggesting twelve formal meridian channels going through respective organs, carrying fluid and energy, and laying thermal effects.

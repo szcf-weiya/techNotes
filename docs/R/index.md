@@ -1,5 +1,10 @@
 # R Notes
 
+## Common Tips
+
+- 删除当前工作区所有变量: `rm(list = ls(all = TRUE))`
+- RStudio shows all shortcuts: `Alt-Shift-K`.
+
 ## `sort(), rank(), order()`
 
 - `sort(x)`: sort `x` increasingly (by default)
@@ -173,12 +178,6 @@ for (i in c(1:(n-1)))
 
 然后通过配置source.list，进行安装。
 
-## 删除当前工作区所有变量
-
-```bash
-rm(list = ls(all = TRUE))
-```
-
 ## window 安装包
 切换到R的安装路径下，在etc文件夹中编辑文件Rprofile.site文件
 
@@ -221,17 +220,22 @@ ln -s /usr/lib/R/module/lapack.so libRlapack.so
 
 ## Rcpp
 
+!!! info
+	Another repo for learning Rcpp: [RcppNotes](https://github.com/szcf-weiya/RcppNotes)
+    
+### cannot found -lRcpp
+
 ![](rcpp.png)
 
 手动设置
 
 ```bash
-cd /usr/local lib
+cd /usr/local/lib
 ##cd /usr/lib
 ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcpp.so
 ```
 
-## function 'dataptr' not provided by package 'Rcpp'
+### function 'dataptr' not provided by package 'Rcpp'
 
 原因是因为没有在
 
@@ -524,10 +528,6 @@ DD(NormDensity, "x", 3)
 DFun <- deriv(NormDensity, "x", function.arg = TRUE)
 DFun(1)
 ```
-
-## Show all R's shortcuts
-
-`Alt-Shift-K`.
 
 ## Mistake with colon operator
 

@@ -71,3 +71,47 @@ build from source by specifying something, refer to [Buidling OpenCV with Conda 
 3. 所有其实一开始指定 cmake，只是为了针对具体版本进行编译，最后还需要自己 link，参照 [Compile OpenCV with Cmake to integrate it within a Conda env](https://stackoverflow.com/questions/50816241/compile-opencv-with-cmake-to-integrate-it-within-a-conda-env) 设置 `BUILD_opencv_python2=OFF`
 
 Currently (2020-07-27 21:32:18), I am not using this version, and the previous built conda env also has been deleted due to the upgrade of system. But the build folders (in `~/github/opencv4_build`) and resulting `.so` (in `/usr/local/lib/python3.7/site-packages/cv2/python-3.7`) should still be OK since the beginning python is just for building.
+
+## Read Image
+
+!!! info
+    Adopted from [my project]().
+
+For a 16-bit TIFF images, the [mode](https://docs.opencv.org/master/d6/d87/imgcodecs_8hpp.html) should be set as `IMREAD_ANYDEPTH` instead of `IMREAD_GRAYSCALE`.
+
+```python
+>>> im1 = cv2.imread("example/three_cells.tif", cv2.IMREAD_ANYDEPTH)
+>>> np.unique(im1)
+array([ 0, 46, 51, 52, 53, 54, 55, 56], dtype=uint16)
+>>> im2 = cv2.imread("../test/example/three_cells.tif", cv2.IMREAD_GRAYSCALE)
+>>> np.unique(im2)
+array([0], dtype=uint8)
+```
+
+while `skimage.io` avoids such specification, which might be more convenience,
+
+```python
+>>> im3 = io.imread("../test/example/three_cells.tif")
+>>> np.unique(im3)
+array([ 0, 46, 51, 52, 53, 54, 55, 56], dtype=uint16)
+```
+
+As a comparison, JuliaImages uses a special type `NOf16` (standing for **N**ormalized, with **0** integer bits and **16 f**ractional bits), that interprets an 16-bit integer as if it had been scaled by 1/(2^16-1), thus encoding values from 0 to 1 in 2^16 steps.
+
+```julia
+julia> im = load("../test/example/three_cells.tif")
+# in jupyter notebook, direct `unique(im)` will automatically shows the image pixel
+julia> display(MIME("text/plain"), sort(unique(im)))
+8-element Array{Gray{N0f16},1} with eltype Gray{Normed{UInt16,16}}:
+ Gray{N0f16}(0.0)
+ Gray{N0f16}(0.0007)
+ Gray{N0f16}(0.00078)
+ Gray{N0f16}(0.00079)
+ Gray{N0f16}(0.00081)
+ Gray{N0f16}(0.00082)
+ Gray{N0f16}(0.00084)
+ Gray{N0f16}(0.00085)
+```
+
+!!! warning
+    The result returned by `np.unique` has been sorted, while Julia's `unique` does not.
