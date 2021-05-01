@@ -15,13 +15,13 @@
 
 ## SETUP & INIT: `config`
 
-1. 下载安装
+### Installation
 
 ```bash
 sudo apt-get install git
 ```
 
-2. 配置
+### Setup User Name and Email
 
 ```bash
 git config --global user.name "test"
@@ -46,13 +46,34 @@ git config user.email
 
 参考 [Is it possible to have different Git configuration for different projects?](https://stackoverflow.com/questions/8801729/is-it-possible-to-have-different-git-configuration-for-different-projects)
 
-3. ssh
+### push with ssh key
 
 ```bash
 ssh-keygen -t rsa -C "test@163.com"
 ```
 
 复制 `~/.ssh/id_rsa.pub` 到 github 上。
+
+### sign with GPG key
+
+Two nice Chinese tutorials on setting GPG keys
+
+  - [震惊！竟然有人在 GitHub 上冒充我的身份！](https://blog.spencerwoo.com/2020/08/wait-this-is-not-my-commit)
+  - [在 Github 上使用 GPG 的全过程](https://www.imwzk.com/posts/2019-08-04-how-to-use-gpg-on-github/)
+
+The steps are:
+
+```bash
+# generate GPG key, 4096bits
+gpg --full-generate-key
+# get secret key id
+gpg --list-secret-keys --keyid-format LONG
+# configure git
+git config --global user.signingkey <SECRET_KEY_ID>
+git config --global commit.gpgsign true
+# tell github public GPG key
+gpg --armor --export <SECRET_KEY_ID>
+```
 
 ## CLEAN: `clean`
 
