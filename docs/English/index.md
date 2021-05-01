@@ -1,3 +1,7 @@
+## 2021.05.01
+
+- ostrich: 鸵鸟
+
 ## 2021.04.30
 
 - racquetball: 壁球
@@ -1525,8 +1529,8 @@
 
 ## 2019.01.30
 
-1. a style that is so simple and open and **guileless** that it approaches **parody**.
-2. The Remains of the Day is clearly **parodic**.
+1. a style that is so simple and open and **guileless** that it approaches **parody (拙劣的模仿，荒谬的替代物)**.
+    - **The Remains of the Day (长日将尽)** [:link:](https://en.wikipedia.org/wiki/The_Remains_of_the_Day) is clearly **parodic (parody, 戏仿，谐拟)** [:link:](https://zh.wikipedia.org/wiki/%E6%88%B2%E4%BB%BF), or at least a classic of the "unreliable narrator" genre.
 3. I found that some labeled the book as **satire** and others took it straight.
 4. with any parodic elements merely representing Levitt’s recognition of life’s **absurdities**.
 5. brash rather than decorous
@@ -1644,7 +1648,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 22. One reason for caution: another class of anti-inflammatory therapies, called **non-steroidal** anti-inflammatory drugs (NSAIDS), showed no effect against mild-to-moderate Alzheimer’s in several clinical trials a decade ago.
 23. I bet this **revelation (启示，被揭露的真相)** leads to **a slew of** off-label prescriptions, just as happened with **estrogen (雌性激素)** a couple of decades ago. My physician friends told me then that you could not recruit subjects for a clinical trial because doctors were just prescribing estrogen for all **menopausal** women, to prevent Alzheimer’s.
 24. Novartis
-25. My problem with the **ideology**
+25. political ideology: 政治意识形态
 26. if you push hard you can find the weak points and **magnify** them until you get **ridiculous** inferences.
 27. but the way probability works is that you can always find some **chink** in the model and exploit it to result in a clearly bad prediction.
 28. I think the **proclivity** of Bayesian inferences to tend toward the ridiculous is just fine
@@ -2794,7 +2798,7 @@ letter back
 27. marvel
 28. optics, chromatics
 29. that sort of thing
-30. rage
+30. The **insulting (出言不逊的，侮辱的，无礼的)** remarks **stung (sting, 促使，刺激)** him to a **rage (愤怒)**.
 31. backbone
 32. overthrow
 33. stool, mount

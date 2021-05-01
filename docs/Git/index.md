@@ -56,6 +56,8 @@ ssh-keygen -t rsa -C "test@163.com"
 
 ### sign with GPG key
 
+Official documentation on Github: [Managing commit signature verification](https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification)
+
 Two nice Chinese tutorials on setting GPG keys
 
   - [震惊！竟然有人在 GitHub 上冒充我的身份！](https://blog.spencerwoo.com/2020/08/wait-this-is-not-my-commit)

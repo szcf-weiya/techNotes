@@ -545,3 +545,17 @@ sudo ufw allow 8118
 > 137.189.0.0/16
 
 一直没懂子网掩码是啥，比如经常看到的 `255.255.255.0`，但是这里又有个 `/16`，所以很懵。[这篇知乎回答](https://www.zhihu.com/question/56895036)解决了我的疑问。简单说，子网掩码也是 4 组长度为 8 的二进制数组成，从左到右前 `n` 位为 1，其余为 0，此时子网掩码记为 `/n`，或者换成十进制数。
+
+## 反向代理
+
+浏览博客中看到[另一种解决内地 Disqus 被墙的问题](https://blog.ichr.me/post/use-disqus-conveniently/)，采用 [DisqusJS](https://github.com/SukkaW/DisqusJS), 其中使用到了反向代理技术。
+
+正向代理代理的对象是客户端，
+
+![](https://pic1.zhimg.com/80/v2-07ededff1d415c1fa2db3fd89378eda0_720w.jpg?source=1940ef5c)
+
+反向代理代理的对象是服务端
+
+![](https://pic1.zhimg.com/80/v2-816f7595d80b7ef36bf958764a873cba_720w.jpg?source=1940ef5c)
+
+参考 [知乎：反向代理为何叫反向代理？](https://www.zhihu.com/question/24723688)
