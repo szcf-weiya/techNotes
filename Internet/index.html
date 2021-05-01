@@ -1216,6 +1216,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    反向代理
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1883,6 +1890,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    反向代理
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2258,6 +2272,13 @@ listen-address <span class="m">0</span>.0.0.0:8118
 <p>137.189.0.0/16</p>
 </blockquote>
 <p>一直没懂子网掩码是啥，比如经常看到的 <code>255.255.255.0</code>，但是这里又有个 <code>/16</code>，所以很懵。<a href="https://www.zhihu.com/question/56895036">这篇知乎回答</a>解决了我的疑问。简单说，子网掩码也是 4 组长度为 8 的二进制数组成，从左到右前 <code>n</code> 位为 1，其余为 0，此时子网掩码记为 <code>/n</code>，或者换成十进制数。</p>
+<h2 id="_12">反向代理<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>浏览博客中看到<a href="https://blog.ichr.me/post/use-disqus-conveniently/">另一种解决内地 Disqus 被墙的问题</a>，采用 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a>, 其中使用到了反向代理技术。</p>
+<p>正向代理代理的对象是客户端，</p>
+<p><img alt="" src="https://pic1.zhimg.com/80/v2-07ededff1d415c1fa2db3fd89378eda0_720w.jpg?source=1940ef5c" /></p>
+<p>反向代理代理的对象是服务端</p>
+<p><img alt="" src="https://pic1.zhimg.com/80/v2-816f7595d80b7ef36bf958764a873cba_720w.jpg?source=1940ef5c" /></p>
+<p>参考 <a href="https://www.zhihu.com/question/24723688">知乎：反向代理为何叫反向代理？</a></p>
                 
               
               

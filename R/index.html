@@ -414,6 +414,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#installation-of-latest-r36" class="md-nav__link">
+    Installation of Latest R3.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#common-tips" class="md-nav__link">
     Common Tips
   </a>
@@ -1744,6 +1751,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#installation-of-latest-r36" class="md-nav__link">
+    Installation of Latest R3.6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#common-tips" class="md-nav__link">
     Common Tips
   </a>
@@ -2175,6 +2189,32 @@
                 
                 
                 <h1 id="r-notes">R Notes<a class="headerlink" href="#r-notes" title="Permanent link">&para;</a></h1>
+<h2 id="installation-of-latest-r36">Installation of Latest R3.6<a class="headerlink" href="#installation-of-latest-r36" title="Permanent link">&para;</a></h2>
+<p>Accidentally, I uninstall my R3.6 when installing <code>libcurl4</code>, the apt-log shows that</p>
+<div class="highlight"><pre><span></span><code>Start-Date: <span class="m">2021</span>-05-01  <span class="m">10</span>:40:15
+Commandline: apt install libcurl4
+Requested-By: weiya <span class="o">(</span><span class="m">1000</span><span class="o">)</span>
+Install: libcurl4:amd64 <span class="o">(</span><span class="m">7</span>.58.0-2ubuntu3.13<span class="o">)</span>
+Remove: r-cran-foreign:amd64 <span class="o">(</span><span class="m">0</span>.8.75-1xenial0<span class="o">)</span>, r-cran-mgcv:amd64 <span class="o">(</span><span class="m">1</span>.8-31-1cran1xenial0<span class="o">)</span>, libcurl3:amd64 <span class="o">(</span><span class="m">7</span>.58.0-2ubuntu2<span class="o">)</span>, r-base-html:amd64 <span class="o">(</span><span class="m">3</span>.6.3-1xenial<span class="o">)</span>, r-cran-class:amd64 <span class="o">(</span><span class="m">7</span>.3-16-1xenial0<span class="o">)</span>, r-cran-boot:amd64 <span class="o">(</span><span class="m">1</span>.3-23-2xenial0<span class="o">)</span>, r-cran-cluster:amd64 <span class="o">(</span><span class="m">2</span>.1.0-2xenial0<span class="o">)</span>, r-cran-rpart:amd64 <span class="o">(</span><span class="m">4</span>.1-15-2xenial0<span class="o">)</span>, r-cran-kernsmooth:amd64 <span class="o">(</span><span class="m">2</span>.23-16-1+1xenial0<span class="o">)</span>, r-cran-matrix:amd64 <span class="o">(</span><span class="m">1</span>.2-18-1xenial0<span class="o">)</span>, r-cran-spatial:amd64 <span class="o">(</span><span class="m">7</span>.3-11-2xenial0<span class="o">)</span>, r-base-core:amd64 <span class="o">(</span><span class="m">3</span>.6.3-1xenial<span class="o">)</span>, r-cran-codetools:amd64 <span class="o">(</span><span class="m">0</span>.2-16-1xenial0<span class="o">)</span>, r-base:amd64 <span class="o">(</span><span class="m">3</span>.6.3-1xenial<span class="o">)</span>, r-recommended:amd64 <span class="o">(</span><span class="m">3</span>.6.3-1xenial<span class="o">)</span>, r-cran-nlme:amd64 <span class="o">(</span><span class="m">3</span>.1.144-1xenial0<span class="o">)</span>, r-cran-lattice:amd64 <span class="o">(</span><span class="m">0</span>.20-41-1cran1xenial0<span class="o">)</span>, r-cran-nnet:amd64 <span class="o">(</span><span class="m">7</span>.3-13-1xenial0<span class="o">)</span>, r-cran-mass:amd64 <span class="o">(</span><span class="m">7</span>.3-51.5-1xenial0<span class="o">)</span>, r-cran-survival:amd64 <span class="o">(</span><span class="m">3</span>.1-11-1cran1xenial0<span class="o">)</span>
+End-Date: <span class="m">2021</span>-05-01  <span class="m">10</span>:40:29
+</code></pre></div>
+<p>So I need to reinstall it. Following the <a href="https://cloud.r-project.org/">instruction on CRAN</a></p>
+<ol>
+<li>add <code>deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/</code> to <code>/etc/apt/sources.list</code>, actually I found a xenial version, which means that I had followed the procedure on Ubuntu 16.04. Currently I am on Ubuntu 18.04, so I use a bionic version.</li>
+<li>run <code>sudo apt-get update</code>, but it throws an error, </li>
+</ol>
+<blockquote>
+<p>W: GPG error: https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/ InRelease: The following signatures were invalid: EXPKEYSIG 51716619E084DAB9 Michael Rutter <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#97;&#114;&#117;&#116;&#116;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#109;&#97;&#114;&#117;&#116;&#116;&#101;&#114;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
+E: The repository &lsquo;https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/ InRelease&rsquo; is not signed.
+N: Updating from such a repository can&rsquo;t be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.</p>
+</blockquote>
+<p>The error has been reported in <a href="../../Linux/gpg-error">Linux#GPG error</a>, and the solution is </p>
+<div class="highlight"><pre><span></span><code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
+</code></pre></div>
+<ol start="3">
+<li>run <code>sudo apt-get install r-base</code>.</li>
+</ol>
 <h2 id="common-tips">Common Tips<a class="headerlink" href="#common-tips" title="Permanent link">&para;</a></h2>
 <ul>
 <li>删除当前工作区所有变量: <code>rm(list = ls(all = TRUE))</code></li>
