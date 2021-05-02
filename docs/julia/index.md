@@ -379,6 +379,17 @@ currently， no a option to set a suptitle for subplots, but we can use `@layout
 
 refer to [Super title in Plots and subplots](https://discourse.julialang.org/t/super-title-in-plots-and-subplots/29865/4)
 
+### PGFPlotsX
+
+Tips:
+
+- [:octicons-issue-closed-16:](https://github.com/szcf-weiya/Clouds/issues/35) do not set `pgfplotsx()` in a function , otherwise it throws
+
+```julia
+ERROR: MethodError: no method matching _show(::IOStream, ::MIME{Symbol("application/pdf")}, ::Plots.Plot{Plots.PGFPlotsXBackend}) 
+```
+
+- [:octicons-issue-closed-16:](https://github.com/szcf-weiya/Clouds/issues/53) rebuild `GR` if `ERROR: could not load library "libGR.so"`. Possible reason is that the version (such as `BwGt2`) to use has not been correctly built, although it was working well in other versions, such as `yMV3y`.
 
 ## PyCall
 

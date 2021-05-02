@@ -72,6 +72,14 @@ build from source by specifying something, refer to [Buidling OpenCV with Conda 
 
 Currently (2020-07-27 21:32:18), I am not using this version, and the previous built conda env also has been deleted due to the upgrade of system. But the build folders (in `~/github/opencv4_build`) and resulting `.so` (in `/usr/local/lib/python3.7/site-packages/cv2/python-3.7`) should still be OK since the beginning python is just for building.
 
+## PIL and Pillow
+
+PIL is the Python Imaging Library, and [Pillow](https://pillow.readthedocs.io/en/stable/index.html) is the friendly PIL fork.
+    - 由于PIL仅支持到Python 2.7，加上年久失修，于是一群志愿者在PIL的基础上创建了兼容的版本，名字叫Pillow，支持最新Python 3.x，又加入了许多新特性 [:link:](https://www.liaoxuefeng.com/wiki/1016959663602400/1017785454949568)
+
+!!! info
+    [An example](https://github.com/szcf-weiya/Clouds/issues/7).
+
 ## Read Image
 
 !!! info
