@@ -607,6 +607,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pil-and-pillow" class="md-nav__link">
+    PIL and Pillow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#read-image" class="md-nav__link">
     Read Image
   </a>
@@ -1401,6 +1408,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pil-and-pillow" class="md-nav__link">
+    PIL and Pillow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#read-image" class="md-nav__link">
     Read Image
   </a>
@@ -1464,6 +1478,13 @@ opencv-python             <span class="m">4</span>.2.0.34                 pypi_0
 <li>所有其实一开始指定 cmake，只是为了针对具体版本进行编译，最后还需要自己 link，参照 <a href="https://stackoverflow.com/questions/50816241/compile-opencv-with-cmake-to-integrate-it-within-a-conda-env">Compile OpenCV with Cmake to integrate it within a Conda env</a> 设置 <code>BUILD_opencv_python2=OFF</code></li>
 </ol>
 <p>Currently (2020-07-27 21:32:18), I am not using this version, and the previous built conda env also has been deleted due to the upgrade of system. But the build folders (in <code>~/github/opencv4_build</code>) and resulting <code>.so</code> (in <code>/usr/local/lib/python3.7/site-packages/cv2/python-3.7</code>) should still be OK since the beginning python is just for building.</p>
+<h2 id="pil-and-pillow">PIL and Pillow<a class="headerlink" href="#pil-and-pillow" title="Permanent link">&para;</a></h2>
+<p>PIL is the Python Imaging Library, and <a href="https://pillow.readthedocs.io/en/stable/index.html">Pillow</a> is the friendly PIL fork.
+    - 由于PIL仅支持到Python 2.7，加上年久失修，于是一群志愿者在PIL的基础上创建了兼容的版本，名字叫Pillow，支持最新Python 3.x，又加入了许多新特性 <a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017785454949568"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><a href="https://github.com/szcf-weiya/Clouds/issues/7">An example</a>.</p>
+</div>
 <h2 id="read-image">Read Image<a class="headerlink" href="#read-image" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>

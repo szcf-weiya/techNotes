@@ -817,6 +817,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pgfplotsx" class="md-nav__link">
+    PGFPlotsX
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2025,6 +2032,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pgfplotsx" class="md-nav__link">
+    PGFPlotsX
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2611,6 +2625,16 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3æ
 <h3 id="suptitle-for-subplots">suptitle for subplots<a class="headerlink" href="#suptitle-for-subplots" title="Permanent link">&para;</a></h3>
 <p>currentlyï¼Œ no a option to set a suptitle for subplots, but we can use <code>@layout</code> to plot the title in a grid, such as <a href="https://github.com/szcf-weiya/TB/blob/c332307263cdbab20a453e6abe74790236321048/CFPC/sim_cpc_scores.jl#L87-L93">szcf-weiya/TB</a></p>
 <p>refer to <a href="https://discourse.julialang.org/t/super-title-in-plots-and-subplots/29865/4">Super title in Plots and subplots</a></p>
+<h3 id="pgfplotsx">PGFPlotsX<a class="headerlink" href="#pgfplotsx" title="Permanent link">&para;</a></h3>
+<p>Tips:</p>
+<ul>
+<li><a href="https://github.com/szcf-weiya/Clouds/issues/35"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 0 1 10.65-5.003.75.75 0 0 0 .959-1.153 8 8 0 1 0 2.592 8.33.75.75 0 1 0-1.444-.407A6.5 6.5 0 0 1 1.5 8zM8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0-8a.75.75 0 0 1 .75.75v3.5a.75.75 0 1 1-1.5 0v-3.5A.75.75 0 0 1 8 4zm4.78 4.28 3-3a.75.75 0 0 0-1.06-1.06l-2.47 2.47-.97-.97a.749.749 0 1 0-1.06 1.06l1.5 1.5a.75.75 0 0 0 1.06 0z"/></svg></span></a> do not set <code>pgfplotsx()</code> in a function , otherwise it throws</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">ERROR</span><span class="o">:</span> <span class="kt">MethodError</span><span class="o">:</span> <span class="n">no</span> <span class="n">method</span> <span class="n">matching</span> <span class="n">_show</span><span class="p">(</span><span class="o">::</span><span class="kt">IOStream</span><span class="p">,</span> <span class="o">::</span><span class="kt">MIME</span><span class="p">{</span><span class="kt">Symbol</span><span class="p">(</span><span class="s">&quot;application/pdf&quot;</span><span class="p">)},</span> <span class="o">::</span><span class="n">Plots</span><span class="o">.</span><span class="n">Plot</span><span class="p">{</span><span class="n">Plots</span><span class="o">.</span><span class="n">PGFPlotsXBackend</span><span class="p">})</span> 
+</code></pre></div>
+<ul>
+<li><a href="https://github.com/szcf-weiya/Clouds/issues/53"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 0 1 10.65-5.003.75.75 0 0 0 .959-1.153 8 8 0 1 0 2.592 8.33.75.75 0 1 0-1.444-.407A6.5 6.5 0 0 1 1.5 8zM8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0-8a.75.75 0 0 1 .75.75v3.5a.75.75 0 1 1-1.5 0v-3.5A.75.75 0 0 1 8 4zm4.78 4.28 3-3a.75.75 0 0 0-1.06-1.06l-2.47 2.47-.97-.97a.749.749 0 1 0-1.06 1.06l1.5 1.5a.75.75 0 0 0 1.06 0z"/></svg></span></a> rebuild <code>GR</code> if <code>ERROR: could not load library "libGR.so"</code>. Possible reason is that the version (such as <code>BwGt2</code>) to use has not been correctly built, although it was working well in other versions, such as <code>yMV3y</code>.</li>
+</ul>
 <h2 id="pycall">PyCall<a class="headerlink" href="#pycall" title="Permanent link">&para;</a></h2>
 <h3 id="couldnt-find-libpython-error">Couldn&rsquo;t find libpython error<a class="headerlink" href="#couldnt-find-libpython-error" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span> <span class="n">Pkg</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s">&quot;PyCall&quot;</span><span class="p">)</span>
