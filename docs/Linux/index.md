@@ -88,6 +88,95 @@ export LC_ALL=en_US.UTF-8
 
 来解决这个问题，这个可以写进 `.bashrc` 文件中，并且不需要 sudo 权限，而 [How do I fix my locale issue?](https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue) 中提到的几种方法需要 sudo 权限。
 
+## GNOME 
+
+GNOME (originally an acronym for GNU Network Object Model Environment) is a desktop environment for Unix-like operating systems. [:material-wikipedia:](https://en.wikipedia.org/wiki/GNOME)
+
+The version on my T460p is 3.28.2, which can be seen from About.
+
+### GNOME Shell
+
+GNOME Shell is the graphical shell of the GNOME desktop environment. It provides basic functions like launching applications, switching between windows and is also a widget engine. [:material-wikipedia:](https://en.wikipedia.org/wiki/GNOME_Shell). User interface elements provided by GNOME Shell include the Panel at the top of the screen, the Activities Overview, and Message Tray at the bottom of the screen. [:link:](https://extensions.gnome.org/about/)
+
+The version on my T460p is 
+
+```bash
+$ gnome-shell --version
+GNOME Shell 3.28.4
+```
+
+### GNOME Shell Extensions
+
+[GNOME Shell Extensions](https://extensions.gnome.org/about/) are small pieces of code written by third party developers that modify the way GNOME works. They are similar to Chrome Extensions or Firefox Addons. We can install the extensions via [extensions.gnome.org](https://extensions.gnome.org/) in Firefox. After installation, we can disable or enable, or even configure on such website, alternatively, we can use `gnome-tweaks` to control them.
+
+### Lunar Date
+
+Here is a plugin to show Chinese Lunar Date: [Lunar Calendar 农历](https://extensions.gnome.org/extension/675/lunar-calendar/). Since here are some latest comments, I guess it would be OK.
+
+However, the first installation attempt failed, it shows `ERROR`. Then I realized that I might need to install the dependency mentioned in the plugin page,
+
+```bash
+sudo apt install gir1.2-lunar-date-2.0
+```
+
+Then reinstall the plugin, it succeed! But interestingly, the Chinese characters are shown as Pinyin (see the following left image)
+
+Before | After
+-- | --
+![Screenshot from 2021-05-03 14-04-34](https://user-images.githubusercontent.com/13688320/116846751-a65ae000-ac1b-11eb-9c40-31ba384f63db.png)|![Screenshot from 2021-05-03 14-40-47](https://user-images.githubusercontent.com/13688320/116847724-b2e03800-ac1d-11eb-9700-bccb1a4e25f2.png)
+
+Then I found the same issue in [an older post](https://forum.ubuntu.org.cn/viewtopic.php?t=308968)
+
+A solution is 
+
+```bash
+@GuanGGuanG
+copy
+/usr/share/locale/zh_CN/LC_MESSAGES/liblunar.mo
+to
+/usr/share/locale/en/LC_MESSAGES/
+就可以在英文环境下正常显示了
+```
+
+Although no found `liblunar.mo`, there is 
+
+```bash
+$ pwd
+/usr/share/locale/zh_CN/LC_MESSAGES
+$ ll | grep lunar
+-rw-r--r-- 1 root root   4746 Nov 12  2016 lunar-date.mo
+```
+
+then
+
+```bash
+$ sudo cp lunar-date.mo ../../en/LC_MESSAGES/
+```
+
+It cannot take effects immediately, the natural way is to reboot. But currently I do not want to reboot, and then I tried to reinstall the plugin in Firefox, but not work.
+
+Then I tried to reload locale since the modification seems related to locale, so I found [this answer](https://unix.stackexchange.com/questions/108514/reload-etc-default-locale-without-reboot) and tried
+
+```bash
+$ . /etc/default/locale
+```
+
+but not work.
+
+Then I realized that it might be necessary to reload GNOME Shell, so I found [How to restart GNOME Shell from command line?](https://askubuntu.com/questions/100226/how-to-restart-gnome-shell-from-command-line), and tried
+
+```bash
+$ gnome-shell --replace &
+```
+
+It works, as shown in the above right figure. A minor side change is that the English colon in the time `14:37` seems to change to the Chinese colon.
+
+### System Monitor
+
+通过 gnome-shell extension: [gnome-shell-system-monitor-applet](https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet) 实现
+
+不过目前有个小问题，字体略小，尝试通过 gnome-tweaks 中的 scaling 来改变字体大小，但似乎对这些字体仍不适用，先将就用着吧。
+
 
 ## install win on ubuntu
 
@@ -691,12 +780,6 @@ lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('
 ```
 
 refer to [How to know number of cores of a system in Linux?](https://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux)
-
-## 顶部栏系统监测信息
-
-通过 gnome-shell extension: [gnome-shell-system-monitor-applet](https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet) 实现
-
-不过目前有个小问题，字体略小，尝试通过 gnome-tweaks 中的 scaling 来改变字体大小，但似乎对这些字体仍不适用，先将就用着吧。
 
 ## .netrc
 

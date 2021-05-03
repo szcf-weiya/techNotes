@@ -1,3 +1,7 @@
+## 2021.05.03
+
+- A truly brave man is even **serene (安静，宁静)**; he is never taken by surprise; nothing ruffles the **equanimity (镇定)** of his spirit.
+
 ## 2021.05.02
 
 - **Onychectomy (除爪手术)**, popularly known as declawing, is an operation to remove an animal's claws surgically by means of the **amputation (截肢)** of all or part of the **distal (末梢的，末端的)** **phalanges (趾骨)**, or end bones, or the animal's toes.
