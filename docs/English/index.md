@@ -1,3 +1,7 @@
+## 2021.05.04
+
+- zealot: 狂热者
+
 ## 2021.05.03
 
 - A truly brave man is even **serene (安静，宁静)**; he is never taken by surprise; nothing ruffles the **equanimity (镇定)** of his spirit.
