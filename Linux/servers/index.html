@@ -1802,8 +1802,8 @@ julia -p <span class="nv">$np</span> run.jl <span class="nv">$nrep</span> <span 
 </div>
 <input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">run.jl</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">Distributed</span>
-<span class="kd">const</span> <span class="n">jobs</span> <span class="o">=</span> <span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span>
-<span class="kd">const</span> <span class="n">res</span> <span class="o">=</span> <span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span>
+<span class="k">const</span> <span class="n">jobs</span> <span class="o">=</span> <span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span>
+<span class="k">const</span> <span class="n">res</span> <span class="o">=</span> <span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span>
 
 <span class="k">function</span> <span class="n">make_jobs</span><span class="p">()</span> <span class="k">end</span>
 <span class="k">function</span> <span class="n">do_work</span><span class="p">()</span> <span class="k">end</span>
@@ -1870,7 +1870,7 @@ apt-get install nginx
 <p>注意用purge不会保存配置文件，而remove会保存配置文件。</p>
 <h2 id="centos-7">CentOS 7<a class="headerlink" href="#centos-7" title="Permanent link">&para;</a></h2>
 <p>想直接在服务器上用 Julia 的 PGFPlotsX 画图，因为默认会弹出画好的 pdf 图象，除非按照<a href="https://kristofferc.github.io/PGFPlotsX.jl/v0.2/man/save.html#REPL-1">官方教程</a>中的设置</p>
-<div class="highlight"><pre><span></span><code><span class="n">PGFPlotsX</span><span class="o">.</span><span class="n">enable_interactive</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">PGFPlotsX</span><span class="o">.</span><span class="n">enable_interactive</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span>
 </code></pre></div>
 <p>本来期望着用 evince 打开，但是最后竟然用 liberoffice 开开了，然后字体竟然不一致了，所以想着更改默认的 pdf 阅读软件，参考 <a href="https://superuser.com/questions/152202/how-to-set-default-browser-for-pdf-reader-evince-on-linux">How to set default browser for PDF reader Evince on Linux?</a></p>
 <p>可以在 <code>.local/share/applications/mimeapps.list</code> 里面添加或者修改</p>
