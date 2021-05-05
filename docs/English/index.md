@@ -1,3 +1,7 @@
+## 2021.05.05
+
+- Bigshot psychologist, unhappy when his famous finding does not replicate, won't consider that he might have been wrong; instead he scrambles **furiously (激烈地，狂怒地)** to preserve his theories.
+
 ## 2021.05.04
 
 - zealot: 狂热者
@@ -2309,7 +2313,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 24. Fiercely independent, the elderly couple spurned all offers of financial help.
 25. The kitten crept silently across the floor before suddenly pouncing on the mouse.
 26. Complaints about stifling smog conditions reach crescendo.
-27. Climate change has exerted a ponderable influence on world politics.
+27. Climate change has **exerted (施加)** a ponderable influence on world politics.
 28. The committee will probably **pore over** the results of the study for a long time before making their decision.
 29. He habitually transforms brief anecdotes into prolix sagas that exhaust his listeners.
 30. The burglary, which he committed while still a teen, was but a prologue to a wasted life of crime.

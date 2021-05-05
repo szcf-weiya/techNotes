@@ -128,6 +128,80 @@ refer to [Using ffmpeg to cut up video](https://superuser.com/questions/138331/u
 
 A much more powerful command than `top`, refer to [Find out what processes are running in the background on Linux](https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/)
 
+## `ls`
+
+在找学习资料时，突然不是很确定当初是否已经在用这台笔记本了，所以想确定一下本机的装机时间，参考 [How can I tell what date Ubuntu was installed?](https://askubuntu.com/questions/1352/how-can-i-tell-what-date-ubuntu-was-installed)，主要时通过查看文件的上次修改时间，比如
+
+```bash
+$ ls -lt /var/log/installer/
+total 1200
+-rw-rw-r-- 1 root   root 464905 Dec  2  2016 initial-status.gz
+-rw-r--r-- 1 root   root     60 Dec  2  2016 media-info
+-rw------- 1 syslog adm  334743 Dec  2  2016 syslog
+-rw------- 1 root   root   2467 Dec  2  2016 debug
+-rw------- 1 root   root 407422 Dec  2  2016 partman
+-rw------- 1 root   root     17 Dec  2  2016 version
+-rw------- 1 root   root    956 Dec  2  2016 casper.log
+```
+
+又如
+
+```bash
+$ ls -lt /
+...
+drwxrwxr-x   2 root root       4096 Dec  2  2016 cdrom
+drwx------   2 root root      16384 Dec  2  2016 lost+found
+drwxr-xr-x   2 root root       4096 Apr 21  2016 srv
+```
+
+出现了 2016.04.21 的一条记录。但如果我加上 `-c`，结果竟然不一样
+
+```bash
+$ ls -clt /
+...
+drwxrwxr-x   2 root root       4096 Dec  2  2016 cdrom
+drwxr-xr-x   2 root root       4096 Dec  2  2016 srv
+drwx------   2 root root      16384 Dec  2  2016 lost+found
+```
+
+难道 `ls` 默认显示的时间不是上次修改时间吗？？另外注意到 `srv` 其实是一个空文件夹。
+
+这时我用 `stat` 进一步查看，
+
+```bash
+$ stat /srv
+  File: /srv
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 825h/2085d	Inode: 1179649     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2021-05-05 08:43:20.955106697 +0800
+Modify: 2016-04-21 06:07:49.000000000 +0800
+Change: 2016-12-02 02:46:47.363728274 +0800
+ Birth: -
+```
+
+发现有两个修改时间，`Modify` 和 `Change`，[两者区别:material-stack-overflow:](https://unix.stackexchange.com/questions/2464/timestamp-modification-time-and-created-time-of-a-file)在于
+
+- `Modify`: the last time the file was modified (content has been modified)
+- `Change`: the last time meta data of the file was changed (e.g. permissions)
+
+然后进一步查看 Windows 系统的时间，
+
+```bash
+$ ll -clt
+...
+drwxrwxrwx  1 weiya weiya       4096 Oct  1  2016 '$Recycle.Bin'/
+drwxrwxrwx  1 weiya weiya          0 Sep 29  2016  FFOutput/
+-rwxrwxrwx  2 weiya weiya   15151172 Jul  2  2016  WindowsDENGL.tt2*
+-rwxrwxrwx  2 weiya weiya   16092228 Jul  2  2016  WindowsDENG.tt2*
+-rwxrwxrwx  2 weiya weiya   16217976 Jul  2  2016  WindowsDENGB.tt2*
+-rwxrwxrwx  1 weiya weiya     400228 Mar 19  2016  bootmgr*
+-rwxrwxrwx  1 weiya weiya          1 Mar 19  2016  BOOTNXT*
+drwxrwxrwx  1 weiya weiya       8192 Mar 18  2016  Boot/
+```
+
+最早可以追溯到 2016.03.18.
+
 ## `paste, cat`: 文本文件拼接
 
 ```bash
@@ -305,3 +379,11 @@ curl -sL https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
 ```
 
 更多比较详见 [What is the difference between curl and wget?](https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget)
+
+## `unar`
+
+如果 zip 文件解压乱码，可以试试 unar,
+
+采用 `unar your.zip`
+
+参考 [Linux文件乱码](https://www.findhao.net/easycoding/1605)

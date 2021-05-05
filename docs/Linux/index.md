@@ -1,17 +1,18 @@
 # Linux Notes
 
-## System Info
+## System/Hardware Info
 
 - check linux distribution:
-  - `cat /etc/os-release` or `cat /ect/*-release`
-  - `lsb_release -a`
-  - `hostnamectl`
+  	- `cat /etc/os-release` or `cat /ect/*-release`
+  	- `lsb_release -a`
+  	- `hostnamectl`
 - check kernel version:
-  - `uname -a` or `uname -mrs`
-  - `cat /proc/version`
+	- `uname -a` or `uname -mrs`
+	- `cat /proc/version`
 - how long has the system been running:
-  - `last reboot`
-  - `uptime --since`, which is actually the first line of `top`
+	- `last reboot`
+	- `uptime --since`, which is actually the first line of `top`
+- obtain [MAC address :link:](https://help.ubuntu.com/stable/ubuntu-help/net-macaddress.html): ` ifconfig | grep ether`, note that different MAC addresses for WIFI and Ethernet.
 
 Refer to 
 
@@ -674,15 +675,6 @@ pdftk input.pdf dump_data output metadata
 # edit metadata
 pdftk input.pdf update_info metadata output output.pdf
 ```
-
-
-## zip 文件解压乱码
-
-别人在 Windows 下加压的文件，通过微信发送，在 Ubuntu 16.04 中解压时文件名乱码。
-
-采用 `unar your.zip`
-
-参考 [Linux文件乱码](https://www.findhao.net/easycoding/1605)
 
 ## 文本文件查看
 
