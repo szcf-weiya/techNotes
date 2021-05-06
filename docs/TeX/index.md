@@ -630,7 +630,9 @@ refer to [Capacity exceeded](https://texfaq.org/FAQ-semanticnest)
 
 参考 [Change TeX Live Main Repository](https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository)
 
-## `operatorname` vs `mathrm`
+## Operator
+
+### `operatorname` vs `mathrm`
 
 
 `\operatorname`:
@@ -642,6 +644,10 @@ The argument is written in upright mode but with some additional space before an
 It is like math mode (no spaces), but in upright mode. The font size isn't changed.
 
 [What's the difference between \mathrm and \operatorname?](https://tex.stackexchange.com/questions/48459/whats-the-difference-between-mathrm-and-operatorname)
+
+### `\limits is allowed only on operators`
+
+![image](https://user-images.githubusercontent.com/13688320/117289034-b9c9ad80-ae9e-11eb-9405-97e44872b014.png)
 
 ## bold for theorem title.
 

@@ -1,3 +1,7 @@
+## 2021.05.06
+
+- seedless raisins **(葡萄干，提子干)**  
+
 ## 2021.05.05
 
 - Bigshot psychologist, unhappy when his famous finding does not replicate, won't consider that he might have been wrong; instead he scrambles **furiously (激烈地，狂怒地)** to preserve his theories.
