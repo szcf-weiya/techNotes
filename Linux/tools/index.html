@@ -397,6 +397,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    ls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#paste-cat" class="md-nav__link">
     paste, cat: 文本文件拼接
   </a>
@@ -482,6 +489,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unar" class="md-nav__link">
+    unar
+  </a>
   
 </li>
       
@@ -1605,6 +1619,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    ls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#paste-cat" class="md-nav__link">
     paste, cat: 文本文件拼接
   </a>
@@ -1693,6 +1714,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#unar" class="md-nav__link">
+    unar
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1778,6 +1806,62 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 <p>refer to <a href="https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video">Using ffmpeg to cut up video</a></p>
 <h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
 <p>A much more powerful command than <code>top</code>, refer to <a href="https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/">Find out what processes are running in the background on Linux</a></p>
+<h2 id="ls"><code>ls</code><a class="headerlink" href="#ls" title="Permanent link">&para;</a></h2>
+<p>在找学习资料时，突然不是很确定当初是否已经在用这台笔记本了，所以想确定一下本机的装机时间，参考 <a href="https://askubuntu.com/questions/1352/how-can-i-tell-what-date-ubuntu-was-installed">How can I tell what date Ubuntu was installed?</a>，主要时通过查看文件的上次修改时间，比如</p>
+<div class="highlight"><pre><span></span><code>$ ls -lt /var/log/installer/
+total <span class="m">1200</span>
+-rw-rw-r-- <span class="m">1</span> root   root <span class="m">464905</span> Dec  <span class="m">2</span>  <span class="m">2016</span> initial-status.gz
+-rw-r--r-- <span class="m">1</span> root   root     <span class="m">60</span> Dec  <span class="m">2</span>  <span class="m">2016</span> media-info
+-rw------- <span class="m">1</span> syslog adm  <span class="m">334743</span> Dec  <span class="m">2</span>  <span class="m">2016</span> syslog
+-rw------- <span class="m">1</span> root   root   <span class="m">2467</span> Dec  <span class="m">2</span>  <span class="m">2016</span> debug
+-rw------- <span class="m">1</span> root   root <span class="m">407422</span> Dec  <span class="m">2</span>  <span class="m">2016</span> partman
+-rw------- <span class="m">1</span> root   root     <span class="m">17</span> Dec  <span class="m">2</span>  <span class="m">2016</span> version
+-rw------- <span class="m">1</span> root   root    <span class="m">956</span> Dec  <span class="m">2</span>  <span class="m">2016</span> casper.log
+</code></pre></div>
+<p>又如</p>
+<div class="highlight"><pre><span></span><code>$ ls -lt /
+...
+drwxrwxr-x   <span class="m">2</span> root root       <span class="m">4096</span> Dec  <span class="m">2</span>  <span class="m">2016</span> cdrom
+drwx------   <span class="m">2</span> root root      <span class="m">16384</span> Dec  <span class="m">2</span>  <span class="m">2016</span> lost+found
+drwxr-xr-x   <span class="m">2</span> root root       <span class="m">4096</span> Apr <span class="m">21</span>  <span class="m">2016</span> srv
+</code></pre></div>
+<p>出现了 2016.04.21 的一条记录。但如果我加上 <code>-c</code>，结果竟然不一样</p>
+<div class="highlight"><pre><span></span><code>$ ls -clt /
+...
+drwxrwxr-x   <span class="m">2</span> root root       <span class="m">4096</span> Dec  <span class="m">2</span>  <span class="m">2016</span> cdrom
+drwxr-xr-x   <span class="m">2</span> root root       <span class="m">4096</span> Dec  <span class="m">2</span>  <span class="m">2016</span> srv
+drwx------   <span class="m">2</span> root root      <span class="m">16384</span> Dec  <span class="m">2</span>  <span class="m">2016</span> lost+found
+</code></pre></div>
+<p>难道 <code>ls</code> 默认显示的时间不是上次修改时间吗？？另外注意到 <code>srv</code> 其实是一个空文件夹。</p>
+<p>这时我用 <code>stat</code> 进一步查看，</p>
+<div class="highlight"><pre><span></span><code>$ stat /srv
+  File: /srv
+  Size: <span class="m">4096</span>        Blocks: <span class="m">8</span>          IO Block: <span class="m">4096</span>   directory
+Device: 825h/2085d  Inode: <span class="m">1179649</span>     Links: <span class="m">2</span>
+Access: <span class="o">(</span><span class="m">0755</span>/drwxr-xr-x<span class="o">)</span>  Uid: <span class="o">(</span>    <span class="m">0</span>/    root<span class="o">)</span>   Gid: <span class="o">(</span>    <span class="m">0</span>/    root<span class="o">)</span>
+Access: <span class="m">2021</span>-05-05 <span class="m">08</span>:43:20.955106697 +0800
+Modify: <span class="m">2016</span>-04-21 <span class="m">06</span>:07:49.000000000 +0800
+Change: <span class="m">2016</span>-12-02 <span class="m">02</span>:46:47.363728274 +0800
+ Birth: -
+</code></pre></div>
+<p>发现有两个修改时间，<code>Modify</code> 和 <code>Change</code>，<a href="https://unix.stackexchange.com/questions/2464/timestamp-modification-time-and-created-time-of-a-file">两者区别<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59z"/></svg></span></a>在于</p>
+<ul>
+<li><code>Modify</code>: the last time the file was modified (content has been modified)</li>
+<li><code>Change</code>: the last time meta data of the file was changed (e.g. permissions)</li>
+</ul>
+<p>然后进一步查看 Windows 系统的时间，</p>
+<div class="highlight"><pre><span></span><code>$ ll -clt
+...
+drwxrwxrwx  <span class="m">1</span> weiya weiya       <span class="m">4096</span> Oct  <span class="m">1</span>  <span class="m">2016</span> <span class="s1">&#39;$Recycle.Bin&#39;</span>/
+drwxrwxrwx  <span class="m">1</span> weiya weiya          <span class="m">0</span> Sep <span class="m">29</span>  <span class="m">2016</span>  FFOutput/
+-rwxrwxrwx  <span class="m">2</span> weiya weiya   <span class="m">15151172</span> Jul  <span class="m">2</span>  <span class="m">2016</span>  WindowsDENGL.tt2*
+-rwxrwxrwx  <span class="m">2</span> weiya weiya   <span class="m">16092228</span> Jul  <span class="m">2</span>  <span class="m">2016</span>  WindowsDENG.tt2*
+-rwxrwxrwx  <span class="m">2</span> weiya weiya   <span class="m">16217976</span> Jul  <span class="m">2</span>  <span class="m">2016</span>  WindowsDENGB.tt2*
+-rwxrwxrwx  <span class="m">1</span> weiya weiya     <span class="m">400228</span> Mar <span class="m">19</span>  <span class="m">2016</span>  bootmgr*
+-rwxrwxrwx  <span class="m">1</span> weiya weiya          <span class="m">1</span> Mar <span class="m">19</span>  <span class="m">2016</span>  BOOTNXT*
+drwxrwxrwx  <span class="m">1</span> weiya weiya       <span class="m">8192</span> Mar <span class="m">18</span>  <span class="m">2016</span>  Boot/
+</code></pre></div>
+<p>最早可以追溯到 2016.03.18.</p>
 <h2 id="paste-cat"><code>paste, cat</code>: 文本文件拼接<a class="headerlink" href="#paste-cat" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">### 按列</span>
 paste file1 file2 &gt; outputfile
@@ -1909,6 +1993,10 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 <div class="highlight"><pre><span></span><code>curl -sL https://dl.winehq.org/wine-builds/winehq.key <span class="p">|</span> apt-key add -
 </code></pre></div>
 <p>更多比较详见 <a href="https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget">What is the difference between curl and wget?</a></p>
+<h2 id="unar"><code>unar</code><a class="headerlink" href="#unar" title="Permanent link">&para;</a></h2>
+<p>如果 zip 文件解压乱码，可以试试 unar,</p>
+<p>采用 <code>unar your.zip</code></p>
+<p>参考 <a href="https://www.findhao.net/easycoding/1605">Linux文件乱码</a></p>
                 
               
               

@@ -277,8 +277,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#system-info" class="md-nav__link">
-    System Info
+  <a href="#systemhardware-info" class="md-nav__link">
+    System/Hardware Info
   </a>
   
 </li>
@@ -634,13 +634,6 @@
         <li class="md-nav__item">
   <a href="#modify-pdf-metadata-via-pdftk" class="md-nav__link">
     modify pdf metadata via pdftk
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zip" class="md-nav__link">
-    zip 文件解压乱码
   </a>
   
 </li>
@@ -1840,8 +1833,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#system-info" class="md-nav__link">
-    System Info
+  <a href="#systemhardware-info" class="md-nav__link">
+    System/Hardware Info
   </a>
   
 </li>
@@ -2202,13 +2195,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zip" class="md-nav__link">
-    zip 文件解压乱码
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     文本文件查看
   </a>
@@ -2369,18 +2355,25 @@
                 
                 
                 <h1 id="linux-notes">Linux Notes<a class="headerlink" href="#linux-notes" title="Permanent link">&para;</a></h1>
-<h2 id="system-info">System Info<a class="headerlink" href="#system-info" title="Permanent link">&para;</a></h2>
+<h2 id="systemhardware-info">System/Hardware Info<a class="headerlink" href="#systemhardware-info" title="Permanent link">&para;</a></h2>
 <ul>
-<li>check linux distribution:</li>
+<li>check linux distribution:<ul>
 <li><code>cat /etc/os-release</code> or <code>cat /ect/*-release</code></li>
 <li><code>lsb_release -a</code></li>
 <li><code>hostnamectl</code></li>
-<li>check kernel version:</li>
+</ul>
+</li>
+<li>check kernel version:<ul>
 <li><code>uname -a</code> or <code>uname -mrs</code></li>
 <li><code>cat /proc/version</code></li>
-<li>how long has the system been running:</li>
+</ul>
+</li>
+<li>how long has the system been running:<ul>
 <li><code>last reboot</code></li>
 <li><code>uptime --since</code>, which is actually the first line of <code>top</code></li>
+</ul>
+</li>
+<li>obtain <a href="https://help.ubuntu.com/stable/ubuntu-help/net-macaddress.html">MAC address <img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>: <code>ifconfig | grep ether</code>, note that different MAC addresses for WIFI and Ethernet.</li>
 </ul>
 <p>Refer to </p>
 <ul>
@@ -2822,10 +2815,6 @@ alias psaux=&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#
 <span class="c1"># edit metadata</span>
 pdftk input.pdf update_info metadata output output.pdf
 </code></pre></div>
-<h2 id="zip">zip 文件解压乱码<a class="headerlink" href="#zip" title="Permanent link">&para;</a></h2>
-<p>别人在 Windows 下加压的文件，通过微信发送，在 Ubuntu 16.04 中解压时文件名乱码。</p>
-<p>采用 <code>unar your.zip</code></p>
-<p>参考 <a href="https://www.findhao.net/easycoding/1605">Linux文件乱码</a></p>
 <h2 id="_6">文本文件查看<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p><code>cut</code>: select by columns</p>
 <p>参考 <a href="https://opensource.com/article/17/2/command-line-tools-data-analysis-linux">10 command-line tools for data analysis in Linux</a></p>
