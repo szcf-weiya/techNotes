@@ -1,5 +1,6 @@
 # Conda
 
+[conda-cheatsheet](conda-cheatsheet.pdf)
 
 ## 正式认识conda
 
@@ -121,6 +122,8 @@ conda create -p ... python=x.x
 则 activate 的时候需要加上整个路径。
 
 在创建之前可以先在 [`.condarc` 中的 `env_dirs`](https://docs.conda.io/projects/conda/en/latest/user-guide/configuration/use-condarc.html#specify-environment-directories-envs-dirs) 项下添加指定的路径。
+
+为了让新环境直接装到该指定的路径下，将该路径放在最前面。换句话说，`conda create` 默认是在第一个路径下创建环境。
 
 ## conda 迁移环境
 

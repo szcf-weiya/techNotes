@@ -141,6 +141,10 @@ adapted from [cmatskas/GitDeleteCommands.ps1](https://gist.github.com/cmatskas/4
 
 see also: [删除github的master分支](http://blog.csdn.net/jefbai/article/details/44234383)
 
+## LOG: `log`
+
+- extract the last revision time of a file, `git log --date=short --format=%ad file`, it has been used in the [mkdocs-git-revision-date-plugin](https://github.com/szcf-weiya/mkdocs-git-revision-date-plugin).
+
 ## PUSH: `push`
 
 ### default push

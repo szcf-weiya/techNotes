@@ -781,9 +781,19 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 pip install PACKAGE -U
 ```
 
-## 'Uninstalling a distutils installed project' error
+### install from github
 
+For example, ESL-CN used the forked plugin, [szcf-weiya/mkdocs-git-revision-date-plugin](https://github.com/szcf-weiya/mkdocs-git-revision-date-plugin), to set the update time, then in the `.travis.yml` file,
+
+```bash
+pip install git+https://github.com/szcf-weiya/mkdocs-git-revision-date-plugin.git
+```
+
+### 'Uninstalling a distutils installed project' error
+
+```bash
 pip install --ignore-installed ${PACKAGE_NAME}
+```
 
 refer to ['Uninstalling a distutils installed project' error when installing blockstack #504](https://github.com/blockstack/blockstack-core/issues/504)
 

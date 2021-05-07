@@ -766,6 +766,10 @@ thunderbird -Profilemanager
 
 这时会要求选择 profile，只需要选择 68 对应的 profile 就好了。选好之后，再重新配置下学校邮箱的，则大功告成！
 
+### Train adaptive junk filter
+
+more instructions: [Thunderbird and Junk / Spam Messages](https://support.mozilla.org/en-US/kb/thunderbird-and-junk-spam-messages)
+
 ## TMUX
 
 可以实现本地终端分屏。

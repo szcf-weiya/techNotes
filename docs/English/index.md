@@ -1,3 +1,9 @@
+## 2021.05.07
+
+- If a book is a loose leaf, this means that it does not have a traditional binding like a **hardcover (精装书)** or a **paperback (简装书)**: basically, a loose leaf edition is just a stack of pages which may be three-hole-**punched (打孔)** so that they could be held together by a binder.
+- **curds (凝乳)** and **whey (乳清)**
+- A **raffle (抽奖)** is a type of contest in which participants purchase tickets in exchange for chances to win a prize.
+
 ## 2021.05.06
 
 - seedless raisins **(葡萄干，提子干)**  
