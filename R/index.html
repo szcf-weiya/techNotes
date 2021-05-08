@@ -2535,7 +2535,7 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>和</p>
 <div class="highlight"><pre><span></span><code><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span> <span class="o">~</span> <span class="n">X</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">X</span><span class="o">^</span><span class="m">2</span><span class="p">))</span>
 </code></pre></div>
-<p>是不一样的。若要表示多项式回归，则应该用 <code>I(X^2)</code>。</p>
+<p>是不一样的。若要表示多项式回归，则应该用 <code>I(X^2)</code>，而前者等价于 <code>lm(Y ~ X)</code>。详见 <code>?formula</code>, 其中举了一个例子，<code>(a+b+c)^2 - a:b</code> 等价于 <code>a + b + c + a:c + b:c</code>，注意二阶项只存在于交叉项中。</p>
 <h2 id="_4">多项式作图<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/23334360/plot-polynomial-regression-curve-in-r">Plot polynomial regression curve in R</a></p>
 <h2 id="custom-print">custom print<a class="headerlink" href="#custom-print" title="Permanent link">&para;</a></h2>
