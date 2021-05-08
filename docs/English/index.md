@@ -1,3 +1,8 @@
+## 2021.05.08
+
+- celestial body: 天体
+    - celestial empire, Chinese empire: 天朝大国
+
 ## 2021.05.07
 
 - If a book is a loose leaf, this means that it does not have a traditional binding like a **hardcover (精装书)** or a **paperback (简装书)**: basically, a loose leaf edition is just a stack of pages which may be three-hole-**punched (打孔)** so that they could be held together by a binder.
@@ -2049,7 +2054,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.08.14
 
 1. memo
-2. chord
 3. counter-example
 4. premiss
 6. enunciate
@@ -2387,7 +2391,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 35. My wife chided me for forgetting to offer our guests some refreshments.
 36. I absolutely get choleric when a salesman calls during the dinner hour.
 37. Men of choleric type take to kicking and smashing.
-38. The revised system chords perfectly with the original goals.
+38. The revised system **chords (n. 和弦; v. 调弦)** perfectly with the original goals.
+    - choral society: 合唱团
 39. A representation of Cupid as a naked, cherubic boy usually is used as a symbol of love.
 40. The spy obtained the documents by subterfuge.
 41. The actor must have had some esoteric motive for leaving stage.

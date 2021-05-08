@@ -74,7 +74,7 @@ done
 
 1. 在Shell中，用括号来表示数组，数组元素用“空格”符号分割开。
 
-## sed用法
+## sed
 
 参考
 
@@ -88,13 +88,11 @@ done
 - 删除最后一行：`sed -i '$ d' file.txt`
 - 在 vi 中注释多行：按住 v 选定特定行之后，按住 `:s/^/#/g` 即可添加注释，取消注释则用 `:s/^#//g`. 另见 VI.
 
-## `|`的作用
+<!-- ## `|`的作用
 
-> 竖线(|)元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。
+> 竖线(|)元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 -->
 
-## `-r`的作用
-
-也就是使用扩展的正则表达式
+### `-r`: 扩展的正则表达式
 
 参考[Extended regexps - sed, a stream editor](https://www.gnu.org/software/sed/manual/html_node/Extended-regexps.html)
 
@@ -148,6 +146,25 @@ grep -E "https://user-images." _posts/2019-12-21-quant-genetics.md | while read 
 - `wget -O` 是重命名，这里顺带移动到合适的位置
 - `proxychains` 则是用于科学上网
 - `read -a ADDR` 表示将分割后的字符串（比如默认按照空格进行分割，或者指定 `IFS=`）放进数组 ADDR 中，详见 `help read`，而 `man read` 并没有给出参数列表。另外需要注意到数组 `$ADDR` 返回结果为 `${ADDR[0]}`.
+
+### 实战二
+
+将 ESL-CN 中的手动输入的时间统一为发布的时间，详见[:octicons-commit-24:](https://github.com/szcf-weiya/ESL-CN/commit/431c8defa535b4448b8256a9639d5a633d00622d)
+
+```bash
+for file in $(find . -regex "./.*\.md"); do
+    first=$(git log --date=short --format=%ad --follow $file | tail -1)
+    echo $file $first
+    sed -i "s/^\(|*\)[ ]*时间[ ]*|[^|]*\(|*\)[ ]*$/\1 发布 | $first \2/g" $file
+done
+```
+
+其中 
+
+- `$first` 提取最初 commit 的时间
+- `\1` 和 `\2` 是为了处理有些表格写的是 `|--|--|`，而有些用的是 `--|--`，如果混用，则列会发生偏移，所以自适应保留原先的格式
+- `|[^|]*` 是为了匹配第二个除表格符号 `|` 的内容，不要直接用 `|.*`，这样也会匹配最后的 `|`，从而 `\2` 匹配不到
+- 定界符`^$` 为了防止匹配正文中的 `时间`
 
 ## 批量重命名
 
