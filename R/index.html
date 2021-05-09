@@ -838,6 +838,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reload-data" class="md-nav__link">
+    reload data
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2175,6 +2182,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reload-data" class="md-nav__link">
+    reload data
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2730,6 +2744,23 @@ See the log file <span class="k">for</span> details:  /tmp/jupyterlab-debug-lhf6
 <div class="highlight"><pre><span></span><code>conda install nodejs
 </code></pre></div>
 <p>which will install <code>nodejs-10.13.0</code>.</p>
+<h2 id="reload-data">reload data<a class="headerlink" href="#reload-data" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">mtcars</span><span class="o">$</span><span class="n">transmission</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">am</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Automatic&quot;</span><span class="p">,</span> <span class="s">&quot;Manual&quot;</span><span class="p">))</span>
+<span class="o">&gt;</span> <span class="nf">str</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+<span class="s">&#39;data.frame&#39;</span><span class="o">:</span>   <span class="m">32</span> <span class="n">obs.</span> <span class="n">of</span>  <span class="m">12</span> <span class="n">variables</span><span class="o">:</span>
+<span class="kc">...</span>
+ <span class="o">$</span> <span class="n">am</span>          <span class="o">:</span> <span class="n">num</span>  <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="kc">...</span>
+ <span class="o">$</span> <span class="n">gear</span>        <span class="o">:</span> <span class="n">num</span>  <span class="m">4</span> <span class="m">4</span> <span class="m">4</span> <span class="m">3</span> <span class="m">3</span> <span class="m">3</span> <span class="m">3</span> <span class="m">4</span> <span class="m">4</span> <span class="m">4</span> <span class="kc">...</span>
+ <span class="o">$</span> <span class="n">carb</span>        <span class="o">:</span> <span class="n">num</span>  <span class="m">4</span> <span class="m">4</span> <span class="m">1</span> <span class="m">1</span> <span class="m">2</span> <span class="m">1</span> <span class="m">4</span> <span class="m">2</span> <span class="m">2</span> <span class="m">4</span> <span class="kc">...</span>
+ <span class="o">$</span> <span class="n">transmission</span><span class="o">:</span> <span class="n">Factor</span> <span class="n">w</span><span class="o">/</span> <span class="m">2</span> <span class="n">levels</span> <span class="s">&quot;Automatic&quot;</span><span class="p">,</span><span class="s">&quot;Manual&quot;</span><span class="o">:</span> <span class="m">2</span> <span class="m">2</span> <span class="m">2</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="kc">...</span>
+<span class="o">&gt;</span> <span class="nf">data</span><span class="p">(</span><span class="s">&quot;mtcars&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">str</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+<span class="s">&#39;data.frame&#39;</span><span class="o">:</span>   <span class="m">32</span> <span class="n">obs.</span> <span class="n">of</span>  <span class="m">11</span> <span class="n">variables</span><span class="o">:</span>
+<span class="kc">...</span>
+ <span class="o">$</span> <span class="n">am</span>  <span class="o">:</span> <span class="n">num</span>  <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="kc">...</span>
+ <span class="o">$</span> <span class="n">gear</span><span class="o">:</span> <span class="n">num</span>  <span class="m">4</span> <span class="m">4</span> <span class="m">4</span> <span class="m">3</span> <span class="m">3</span> <span class="m">3</span> <span class="m">3</span> <span class="m">4</span> <span class="m">4</span> <span class="m">4</span> <span class="kc">...</span>
+ <span class="o">$</span> <span class="n">carb</span><span class="o">:</span> <span class="n">num</span>  <span class="m">4</span> <span class="m">4</span> <span class="m">1</span> <span class="m">1</span> <span class="m">2</span> <span class="m">1</span> <span class="m">4</span> <span class="m">2</span> <span class="m">2</span> <span class="m">4</span> <span class="kc">...</span>
+</code></pre></div>
                 
               
               
