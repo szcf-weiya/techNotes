@@ -1,3 +1,8 @@
+## 2021.05.09
+
+- I began then to acquire some **rudimentary (基本的，初步的)** knowledge of such important terms as reliability, validity, norms, correlation, and so on.
+- **ambient (周围的，包围着的)** temperature: 环境温度
+
 ## 2021.05.08
 
 - celestial body: 天体
@@ -832,6 +837,7 @@
 ## 2020.11.23
 
 - The earliest **scratchy** recording of a **pope (教皇，罗马教皇)** was that of Leo XIII on a **wax cylinder (蜡筒唱片)**.
+    - cylinder: 汽缸；圆筒
 - Georgiou is not a **mobster (匪徒，暴徒)**. He's not a **hit man (职业凶手)** or a **spy (间谍，密探)**. He's a statistician. And the **sin (过失，罪恶)** at the heart of his supposed crimes was publishing correct budget numbers.
 - The government has brought a **relentless (不停的，持续强烈的)** series of criminal **prosecutions (诉讼)** against him. His countryman have sought their own **vengeance (复仇，报复)** by hacking his emails, dragging him into court, even threatening his life.
 - This means the person who restored the credibility of Greek statistics will have to apologize to a person who had been **fudging (搪塞，篡改)** the data.
