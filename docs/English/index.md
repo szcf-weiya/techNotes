@@ -1,3 +1,7 @@
+## 2021.05.10
+
+- This is more than a **cosmetic (装饰性的，化妆用的; 化妆品)** problem.
+
 ## 2021.05.09
 
 - I began then to acquire some **rudimentary (基本的，初步的)** knowledge of such important terms as reliability, validity, norms, correlation, and so on.
@@ -1533,7 +1537,7 @@
 - Can we build systems that have an **ethical and moral** foundation?
 - Now, every new technology brings with it some measure of **trepidation**.
 - people **lamented** that we would see the destruction of the family.
-- how to **discern** a good game from a bad game.
+- how to **discern (识别，辨别)** a good game from a bad game.
 - I will teach it some corpus of law
 - what about **rogue** agents?
 - it could represent an **existential** threat to all of humanity.
