@@ -1,5 +1,13 @@
 # 普通作图
 
+## `lattice`
+
+The package can easily generate trellis graphs. A trellis graph displays the distribution of a variable or the relationship between variables, separately for each level of one or more other variables. 
+
+Toy example: How do the heights of singers in the New York Choral Society vary by their vocal parts?
+
+
+
 ## 光滑曲线
 
 ```r

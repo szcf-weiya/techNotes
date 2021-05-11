@@ -1,3 +1,7 @@
+## 2021.05.11
+
+- whipsaw: 狭边粗木锯
+
 ## 2021.05.10
 
 - This is more than a **cosmetic (装饰性的，化妆用的; 化妆品)** problem.
@@ -2433,7 +2437,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 72. Sporadic (intermittent or infrequent)
 73. Ameliorate (improve; make better)
 74. Denigrate (disparage; defame)
-75. demonstrate (show; prove) & warrant (justify)
+75. demonstrate (show; prove) & warrant (justify, 使显得合理，成为...的根据)
 76. Reticence (reserve; tendency to keep silent) & gregariousness or sociability.
 77. Competence (capability; proficiency)
 78. homogeneous (all of the same kind; uniform)
