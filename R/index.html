@@ -845,6 +845,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#r_libs_user-not-work" class="md-nav__link">
+    R_LIBS_USER not work
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2189,6 +2196,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#r_libs_user-not-work" class="md-nav__link">
+    R_LIBS_USER not work
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2760,6 +2774,54 @@ See the log file <span class="k">for</span> details:  /tmp/jupyterlab-debug-lhf6
  <span class="o">$</span> <span class="n">am</span>  <span class="o">:</span> <span class="n">num</span>  <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="kc">...</span>
  <span class="o">$</span> <span class="n">gear</span><span class="o">:</span> <span class="n">num</span>  <span class="m">4</span> <span class="m">4</span> <span class="m">4</span> <span class="m">3</span> <span class="m">3</span> <span class="m">3</span> <span class="m">3</span> <span class="m">4</span> <span class="m">4</span> <span class="m">4</span> <span class="kc">...</span>
  <span class="o">$</span> <span class="n">carb</span><span class="o">:</span> <span class="n">num</span>  <span class="m">4</span> <span class="m">4</span> <span class="m">1</span> <span class="m">1</span> <span class="m">2</span> <span class="m">1</span> <span class="m">4</span> <span class="m">2</span> <span class="m">2</span> <span class="m">4</span> <span class="kc">...</span>
+</code></pre></div>
+<h2 id="r_libs_user-not-work">R_LIBS_USER not work<a class="headerlink" href="#r_libs_user-not-work" title="Permanent link">&para;</a></h2>
+<p>Z 在群里问道，他在服务器上提交 job 时，之前安装好的包不能使用。显然，很可能因为 <code>.libPaths()</code> 没有包含 <code>$HOME</code> 下的用户安装路径，但是他在登录结点上在 R 中运行 <code>.libPaths()</code>，一切正常。那么问题或许出在工作结点上，事实表明在该工作结点上采用任一种方式都能解决问题</p>
+<ul>
+<li>在 R 中运行 <code>.libPaths("/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0")</code></li>
+<li>或者 <code>export R_LIBS_USER=/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0</code></li>
+</ul>
+<p>但是此时并不是很理解，因为按理说不同结点都是共享的。后来研究了下 <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html">R 的启动机制</a>，</p>
+<blockquote>
+<p>On Unix versions of R there is also a file ‘R_HOME/etc/Renviron’ which is read very early in the start-up processing. It contains environment variables set by R in the configure process. Values in that file can be overridden in site or user environment files: do not change ‘R_HOME/etc/Renviron’ itself. Note that this is distinct from ‘R_HOME/etc/Renviron.site’.</p>
+</blockquote>
+<p>才知道 <code>R_LIBS_USER</code> 是定义在 <code>Renviron</code> 中，</p>
+<div class="highlight"><pre><span></span><code><span class="nv">R_LIBS_USER</span><span class="o">=</span><span class="si">${</span><span class="nv">R_LIBS_USER</span><span class="p">-</span><span class="s1">&#39;~/R/x86_64-pc-linux-gnu-library/4.0&#39;</span><span class="si">}</span>
+</code></pre></div>
+<p>其中 <code>${A-B}</code> 的语法是如果 <code>A</code> 没有设置，则令 <code>B</code> 为 <code>A</code>，注意<a href="../shell/#default-value">其与 <code>${A:-B}</code> 的区别</a></p>
+<p>这也难怪为什么直接在命令行中输入 <code>echo $R_LIBS_USER</code> 结果为空。</p>
+<p>ssh 到该工作结点，发现其 prompt 并没有正确加载，直接出现 <code>bash-4.2$</code>，而一般会是 <code>[sXXXXX@chpc-sandbox ~]$</code>，这样一个直接后果就是无法解析用户目录 <code>~</code>，这大概也是为什么 R_LIBS_USER 在这个结点没有正常加载，因为上述系统配置文件 <code>/opt/share/R/4.0.3/lib64/R/etc/Renviron</code> 中使用了 <code>~</code>，所以在这个结点无法解析，于是需要用不带 ~ 的全路径。不过 <code>~</code> 其实只是指向 <code>/user/sXXXXX</code>，发现这个文件夹没有正常被连接，所以要使用 <code>/lustre/user/sXXXX</code>. 或者说是没有挂载，因为在其它结点上有以下三条挂载记录，</p>
+<div class="highlight"><pre><span></span><code>$ df -h
+storage03:/chpc-userhome                  50T  <span class="m">4</span>.4T   46T   <span class="m">9</span>% /storage03/chpc-userhome
+storage03:/chpc-optshare                  10T  713G  <span class="m">9</span>.4T   <span class="m">7</span>% /storage03/chpc-optshare
+storage01:/chpc-users                     15T  <span class="m">6</span>.2T  <span class="m">8</span>.9T  <span class="m">42</span>% /storage01/users
+</code></pre></div>
+<p>而该结点上没有。</p>
+<p>为了验证上述想法，也手动进行 <code>export R_LIBS_USER</code> 及 <code>.libPaths()</code>，可见涉及 <code>~</code> 和 <code>/users/sXXXX</code> 的均有问题， </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0/&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span>
+<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span> 
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">$</span> <span class="n">export</span> <span class="n">R_LIBS_USER</span><span class="o">=~/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span>
+<span class="o">$</span> <span class="n">R</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">$</span> <span class="n">export</span> <span class="n">R_LIBS_USER</span><span class="o">=/</span><span class="n">lustre</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">sXXXXXXXXX</span><span class="o">/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span>
+<span class="o">$</span> <span class="n">R</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span>
+<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>   
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">$</span> <span class="n">export</span> <span class="n">R_LIBS_USER</span><span class="o">=/</span><span class="n">users</span><span class="o">/</span><span class="n">sXXXXXXXXX</span><span class="o">/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span><span class="o">/</span>
+<span class="o">$</span> <span class="n">R</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
 </code></pre></div>
                 
               
