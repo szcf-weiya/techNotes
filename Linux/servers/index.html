@@ -314,10 +314,10 @@
       
         <li class="md-nav__item">
   <a href="#ssh" class="md-nav__link">
-    ssh
+    SSH
   </a>
   
-    <nav class="md-nav" aria-label="ssh">
+    <nav class="md-nav" aria-label="SSH">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -377,6 +377,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fail-to-access" class="md-nav__link">
+    fail to access ~
+  </a>
   
 </li>
       
@@ -1497,10 +1504,10 @@
       
         <li class="md-nav__item">
   <a href="#ssh" class="md-nav__link">
-    ssh
+    SSH
   </a>
   
-    <nav class="md-nav" aria-label="ssh">
+    <nav class="md-nav" aria-label="SSH">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1560,6 +1567,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fail-to-access" class="md-nav__link">
+    fail to access ~
+  </a>
   
 </li>
       
@@ -1681,7 +1695,7 @@
                 
                 
                 <h1 id="servers">Servers<a class="headerlink" href="#servers" title="Permanent link">&para;</a></h1>
-<h2 id="ssh">ssh<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
+<h2 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
 <h3 id="initial-start">initial start<a class="headerlink" href="#initial-start" title="Permanent link">&para;</a></h3>
 <p>首先在本地新建 ssh key，</p>
 <div class="highlight"><pre><span></span><code>ssh-keygen -t <span class="o">[</span>rsa <span class="p">|</span> ed25519 <span class="p">|</span> ecdsa <span class="p">|</span> dsa<span class="o">]</span>
@@ -1822,6 +1836,70 @@ julia -p <span class="nv">$np</span> run.jl <span class="nv">$nrep</span> <span 
 <div class="highlight"><pre><span></span><code>$ ./submit.sh <span class="m">100</span> stat <span class="m">4</span>
 </code></pre></div>
 <p>which is adopted from <a href="https://github.com/szcf-weiya/Cell-Video/blob/master/DP/parallel_oracle2.sh">my private project</a>.</p>
+<h2 id="fail-to-access">fail to access <code>~</code><a class="headerlink" href="#fail-to-access" title="Permanent link">&para;</a></h2>
+<p>Z 在群里问道，他在服务器上提交 job 时，之前安装好的包不能使用。显然，很可能因为 <code>.libPaths()</code> 没有包含 <code>$HOME</code> 下的用户安装路径，但是他在登录结点上在 R 中运行 <code>.libPaths()</code>，一切正常。那么问题或许出在工作结点上，事实表明在该工作结点上采用以下任一种方式都能解决问题</p>
+<ul>
+<li>在 R 中运行 <code>.libPaths("/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0")</code></li>
+<li>或者 <code>export R_LIBS_USER=/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0</code></li>
+</ul>
+<p>但是此时并不是很理解，因为按理说不同结点都是共享的。后来研究了下 <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html">R 的启动机制</a>，</p>
+<blockquote>
+<p>On Unix versions of R there is also a file ‘R_HOME/etc/Renviron’ which is read very early in the start-up processing. It contains environment variables set by R in the configure process. Values in that file can be overridden in site or user environment files: do not change ‘R_HOME/etc/Renviron’ itself. Note that this is distinct from ‘R_HOME/etc/Renviron.site’.</p>
+</blockquote>
+<p>才知道 <code>R_LIBS_USER</code> 是定义在 <code>Renviron</code> 中，</p>
+<div class="highlight"><pre><span></span><code><span class="nv">R_LIBS_USER</span><span class="o">=</span><span class="si">${</span><span class="nv">R_LIBS_USER</span><span class="p">-</span><span class="s1">&#39;~/R/x86_64-pc-linux-gnu-library/4.0&#39;</span><span class="si">}</span>
+</code></pre></div>
+<p>其中 <code>${A-B}</code> 的语法是如果 <code>A</code> 没有设置，则令 <code>B</code> 为 <code>A</code>，注意<a href="../shell/#default-value">其与 <code>${A:-B}</code> 的区别</a>。</p>
+<p>这也难怪为什么直接在命令行中输入 <code>echo $R_LIBS_USER</code> 结果为空。</p>
+<p>SSH 到该工作结点，发现其 prompt 并没有正确加载，直接出现 <code>bash-4.2$</code>，而一般会是 <code>[sXXXXX@chpc-sandbox ~]$</code>，这样一个直接后果就是无法解析用户目录 <code>~</code>，这大概也是为什么 <code>R_LIBS_USER</code> 在这个结点没有正常加载，因为上述系统配置文件 <code>/opt/share/R/4.0.3/lib64/R/etc/Renviron</code> 中使用了 <code>~</code>，于是需要用不带 <code>~</code> 的全路径。不过 <code>~</code> 其实只是指向 <code>/user/sXXXXX</code>，发现这个文件夹没有正常被连接，所以要使用 <code>/lustre/user/sXXXX</code>. 或者说是没有挂载，因为在其它结点上有以下三条挂载记录，</p>
+<div class="highlight"><pre><span></span><code>$ df -h
+storage03:/chpc-userhome                  50T  <span class="m">4</span>.4T   46T   <span class="m">9</span>% /storage03/chpc-userhome
+storage03:/chpc-optshare                  10T  713G  <span class="m">9</span>.4T   <span class="m">7</span>% /storage03/chpc-optshare
+storage01:/chpc-users                     15T  <span class="m">6</span>.2T  <span class="m">8</span>.9T  <span class="m">42</span>% /storage01/users
+</code></pre></div>
+<p>而该结点上没有。</p>
+<p>为了验证上述想法，也手动进行 <code>export R_LIBS_USER=</code> 及 <code>.libPaths()</code>，</p>
+<div class="tabbed-set" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">DONE</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span>
+<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span> 
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">DONE</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">$</span> <span class="n">export</span> <span class="n">R_LIBS_USER</span><span class="o">=/</span><span class="n">lustre</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">sXXXXXXXXX</span><span class="o">/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span>
+<span class="o">$</span> <span class="n">R</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span>
+<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>   
+</code></pre></div>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">FAIL</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0/&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><label for="__tabbed_3_4">FAIL</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">$</span> <span class="n">export</span> <span class="n">R_LIBS_USER</span><span class="o">=~/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span>
+<span class="o">$</span> <span class="n">R</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
+</code></pre></div>
+</div>
+</div>
+<p>可见涉及 <code>~</code> 和 <code>/users/sXXXX</code> 的均有问题。</p>
+<p>虽然问题已经得以解决，但是很好奇为什么访问 <code>~</code> 失败。因为根据我的理解，<code>/users/sXXXX</code> (<code>~</code>)、<code>/lustre/users/sXXXX</code> 中间应该是通过类似 soft links 形式连接的（即便可能不是，因为确实直接 <code>ls</code> 也没返回指向结果）。</p>
+<p>后来咨询管理员才明白，他们正在将迁移用户文件夹，</p>
+<p><img alt="Selection_1524" src="https://user-images.githubusercontent.com/13688320/117969152-a3699900-b359-11eb-96b3-83e658404d7e.png" /></p>
+<p>其中黄色方块表明迁移的目标硬盘，称为 <code>storage</code>，而未框出来的地方则表明当前所在硬盘 <code>lustre</code>.</p>
+<p>但是因为并非所有用户都已迁移完成，所以需要对这两类用户访问 <code>~</code> 的行为做不同的处理，</p>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/117969166-a9f81080-b359-11eb-8bbe-5cf1a022f7e8.png" /></p>
+<ul>
+<li>如果用户 A 已经迁移，则其 <code>~</code> 直接指向 <code>/storage01/users/A</code></li>
+<li>如果用户 B 未迁移，则其 <code>~</code> 通过 <code>/storage01/users/B</code> （此时该路径只相当于 soft link） 指向 <code>/lustre/users/B</code></li>
+</ul>
+<p>所以无论迁移与否，访问 <code>~</code> 都需要通过上图的黄色方框。那么倘若 storage 本身挂载失败，则 <code>~</code> 解析失败，而未迁移用户正因为还未迁移，所以仍能绕过 <code>~</code> 而直接访问 <code>/lustre/users/sXXXX</code>。</p>
 <h2 id="spark">安装 spark<a class="headerlink" href="#spark" title="Permanent link">&para;</a></h2>
 <p><del>在内地云主机上，<a href="https://spark.apache.org/downloads.html">官网下载地址</a> 还没 5 秒就中断了，然后找到了<a href="https://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-2.4.4/">清华的镜像</a></del></p>
 <p>第二天发现，其实不是中断了，而是下载完成了，因为那个还不是下载链接，点进去才有推荐的下载链接，而这些链接也是推荐的速度快的镜像。</p>
@@ -2074,7 +2152,7 @@ Users can adjust the priority of their own jobs by setting the nice value on the
 ~ $ cp /usr/share/Modules/modulefiles/R/3.6 modules/R3.6
 <span class="c1"># step 4: modify the path to the software (`modroot`) as follows</span>
 </code></pre></div>
-<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">/usr/share/Modules/modulefiles/R/3.6</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">/usr/share/Modules/modulefiles/R/3.6</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="c1">#%Module1.0#####################################################################</span>
 <span class="c1">##</span>
 proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="o">{</span>
@@ -2108,7 +2186,7 @@ prepend-path LD_LIBRARY_PATH <span class="nv">$modroot</span>/lib
 prepend-path INCLUDE <span class="nv">$modroot</span>/include
 </code></pre></div>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">~/modules/R3.6</label><div class="tabbed-content">
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">~/modules/R3.6</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="c1">#%Module1.0#####################################################################</span>
 <span class="c1">##</span>
 proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="o">{</span>
@@ -2142,7 +2220,7 @@ prepend-path LD_LIBRARY_PATH <span class="nv">$modroot</span>/lib
 prepend-path INCLUDE <span class="nv">$modroot</span>/include
 </code></pre></div>
 </div>
-<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">diff -u</label><div class="tabbed-content">
+<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">diff -u</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="gu">@@ -18,10 +18,10 @@</span>
 
  set     version         3.6.3
