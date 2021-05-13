@@ -1,6 +1,10 @@
+## 2021.05.13
+
+- boondoggle: 毫无意义的工作（或事情）
+ 
 ## 2021.05.12
 
-- falsificationist
+- data falsification: 伪造数据
 
 ## 2021.05.11
 
@@ -1417,7 +1421,8 @@
 - everything we do, we believe in challenging the **status quo**.
 - They're eminently qualified to make flat-screen TVs.
 - It's all grounded in the tenets of biology.
-- Our newest brain, our Homo sapien brain, our neocortex, corresponds with the "what" level.
+- Our newest brain, our Homo sapien brain, our **neocortex (新（大脑）皮质，新皮层)**, corresponds with the "what" level.
+    - cortex: （脑或其他器官的）皮层
 - our **limbic (边缘的)** brains are responsible for all of our feelings.
     - limbic system: 包含 **海马体 (Hippocampus)** 及 **杏仁体 (Amygdala)** 在内，支援多种功能例如情绪、行为及长期记忆的大脑结构。
 - rationalize it with the tangible things
@@ -2032,7 +2037,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. ergodic
 2. arduous
 3. aperiodic
-4. versatility
+4. The KOMA-Script bundle provides replacements for the article, report and book classes with emphasis on typography and **versatility (多功能性，通用性)**. [:link:](https://ctan.org/pkg/koma-script)
+    - the document layout (scrartcl) layout of the class is less strident than that of article, and it offers much more flexibility than article via other elements of the koma-script collection.
 5. mutating
 
 ## 2018.08.20

@@ -440,6 +440,10 @@ $ sudo apt-get install ibus-rime
 
 因为 ibus 是系统默认的，所以其不像 fcitx 有单独的配置框，而是直接在系统设置的 “Region & Language” 中进行设置，添加 “Input Source” 即可。
 
+Tips:
+
+- 输入外国姓名中的点：中文输入法状态下 `Shift + \`
+
 ## Kazam
 
 Ubuntu 下 kazam 录屏 没声音解决方案

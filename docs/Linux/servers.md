@@ -204,9 +204,12 @@ Z 在群里问道，他在服务器上提交 job 时，之前安装好的包不�
 - 在 R 中运行 `.libPaths("/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0")`
 - 或者 `export R_LIBS_USER=/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0`
 
+!!! note
+    此处也看到一个类似的问题，但是原因不一样，在 [:material-stack-overflow:R_LIBS_USER ignored by R](https://stackoverflow.com/questions/53967385/r-libs-user-ignored-by-r) 问题中，原因是 `$HOME` 不能正常展开。
+    
 但是此时并不是很理解，因为按理说不同结点都是共享的。后来研究了下 [R 的启动机制](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html)，
 
-> On Unix versions of R there is also a file ‘R_HOME/etc/Renviron’ which is read very early in the start-up processing. It contains environment variables set by R in the configure process. Values in that file can be overridden in site or user environment files: do not change ‘R_HOME/etc/Renviron’ itself. Note that this is distinct from ‘R_HOME/etc/Renviron.site’.
+> On Unix versions of R there is also a file `R_HOME/etc/Renviron` which is read very early in the start-up processing. It contains environment variables set by R in the configure process. Values in that file can be overridden in site or user environment files: do not change `R_HOME/etc/Renviron` itself. Note that this is distinct from `R_HOME/etc/Renviron.site`.
 
 才知道 `R_LIBS_USER` 是定义在 `Renviron` 中，
 
@@ -218,7 +221,12 @@ R_LIBS_USER=${R_LIBS_USER-'~/R/x86_64-pc-linux-gnu-library/4.0'}
 
 这也难怪为什么直接在命令行中输入 `echo $R_LIBS_USER` 结果为空。
 
-SSH 到该工作结点，发现其 prompt 并没有正确加载，直接出现 `bash-4.2$`，而一般会是 `[sXXXXX@chpc-sandbox ~]$`，这样一个直接后果就是无法解析用户目录 `~`，这大概也是为什么 `R_LIBS_USER` 在这个结点没有正常加载，因为上述系统配置文件 `/opt/share/R/4.0.3/lib64/R/etc/Renviron` 中使用了 `~`，于是需要用不带 `~` 的全路径。不过 `~` 其实只是指向 `/user/sXXXXX`，发现这个文件夹没有正常被连接，所以要使用 `/lustre/user/sXXXX`. 或者说是没有挂载，因为在其它结点上有以下三条挂载记录，
+SSH 到该工作结点，发现其 prompt 并没有正确加载，直接出现 `bash-4.2$`，而一般会是 `[sXXXXX@chpc-sandbox ~]$`。
+
+!!! note
+    其实 `source .bashrc` 后能显示 `~`，但访问 `~` 仍然失败。另见 [Terminal, Prompt changed to “-Bash-4.2” and colors lost](https://unix.stackexchange.com/questions/125965/terminal-prompt-changed-to-bash-4-2-and-colors-lost)
+
+这样一个直接后果就是无法解析用户目录 `~`，这大概也是为什么 `R_LIBS_USER` 在这个结点没有正常加载，因为上述系统配置文件 `/opt/share/R/4.0.3/lib64/R/etc/Renviron` 中使用了 `~`，于是需要用不带 `~` 的全路径。不过 `~` 其实只是指向 `/user/sXXXXX`，发现这个文件夹没有正常被连接，所以要使用 `/lustre/user/sXXXX`. 或者说是没有挂载，因为在其它结点上有以下三条挂载记录，
 
 ```bash
 $ df -h

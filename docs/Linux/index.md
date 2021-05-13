@@ -178,6 +178,11 @@ It works, as shown in the above right figure. A minor side change is that the En
 
 不过目前有个小问题，字体略小，尝试通过 gnome-tweaks 中的 scaling 来改变字体大小，但似乎对这些字体仍不适用，先将就用着吧。
 
+### unblack lock screen
+
+按 `Win+L` 锁屏后，很快就直接变黑了。因为感觉屏保还挺好看的，所以并不想直接黑屏。参考 [GNOME3锁屏和锁屏后，如何设置屏幕常亮？ - Eglinux的回答 - 知乎](https://www.zhihu.com/question/276118015/answer/656464977)，安装 [Unblank lock screen.](https://extensions.gnome.org/extension/1414/unblank/)
+
+更简单的技巧是长按 `Win+L`，似乎确实不会直接黑屏，然后会直接采用设置的关屏时间（Setting > Power），参考 [GNOME3锁屏和锁屏后，如何设置屏幕常亮？ - dale的回答 - 知乎](https://www.zhihu.com/question/276118015/answer/496472138)。
 
 ## install win on ubuntu
 

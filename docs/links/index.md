@@ -28,6 +28,11 @@
 
 - [找寻最初的美](https://blog.csdn.net/mike190267481), by [Xingyu Zhou](https://xingyuzhou.org/)
 
+## Online Books
+
+- [看见统计](https://seeing-theory.brown.edu/)
+
+
 ## Interesting words
 
 1. Mirzakhani, "It is like being lost in a jungle and trying to use all the knowledge that you can gather to come up with some new tricks, and with some luck you might find a way out."
@@ -64,7 +69,7 @@
 
 ## TODO 
 
-1. [大理四绝~~“风花雪月”~下关风，上关花，苍山雪，洱海月](http://blog.renren.com/share/233858640/14238327117)
+1. [大理四绝--“风花雪月”-下关风，上关花，苍山雪，洱海月](http://blog.renren.com/share/233858640/14238327117)
 
 <!--
 ## TODO
