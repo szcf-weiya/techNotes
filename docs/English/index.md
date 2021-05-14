@@ -1,3 +1,8 @@
+## 2021.05.14
+
+- Online ride-hailing platforms have emerged as a **viable (可行的)** solution to provide more timely and personalized transportation service.
+    - **viable (能养活的)** cell: 活细胞
+
 ## 2021.05.13
 
 - boondoggle: 毫无意义的工作（或事情）

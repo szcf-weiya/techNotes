@@ -433,6 +433,29 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 
 未果，结果按照cy的建议，释放掉了这个服务器。
 
+## Font
+
+### `fc-list`
+
+```bash
+# only print the font-family
+$ fc-list : family
+# add language selector
+$ fc-list : family lang=zh
+...
+Fira Sans,Fira Sans UltraLight
+Fira Sans,Fira Sans Light
+Noto Serif CJK KR,Noto Serif CJK KR ExtraLight
+# with format option, get the family names of all the fonts (note that the above family also specify the detailed style)
+$ fc-list --format='%{family[0]}\n' :lang=zh | sort | uniq
+...
+文泉驿等宽微米黑
+文泉驿等宽正黑
+新宋体
+```
+
+refer to [fc-list command in Linux with examples](https://www.geeksforgeeks.org/fc-list-command-in-linux-with-examples/)
+
 ## 命令最后的&
 
 参考[What does “&” at the end of a linux command mean?](https://stackoverflow.com/questions/13338870/what-does-at-the-end-of-a-linux-command-mean)
