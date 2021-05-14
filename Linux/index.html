@@ -499,6 +499,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#font" class="md-nav__link">
+    Font
+  </a>
+  
+    <nav class="md-nav" aria-label="Font">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fc-list" class="md-nav__link">
+    fc-list
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     命令最后的&amp;
   </a>
@@ -2062,6 +2082,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#font" class="md-nav__link">
+    Font
+  </a>
+  
+    <nav class="md-nav" aria-label="Font">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fc-list" class="md-nav__link">
+    fc-list
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     命令最后的&amp;
   </a>
@@ -2680,6 +2720,24 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 </ol>
 <p>按照第一个链接的指示，并不能成功访问。于是尝试参考第二个链接修改配置文件。</p>
 <p>未果，结果按照cy的建议，释放掉了这个服务器。</p>
+<h2 id="font">Font<a class="headerlink" href="#font" title="Permanent link">&para;</a></h2>
+<h3 id="fc-list"><code>fc-list</code><a class="headerlink" href="#fc-list" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># only print the font-family</span>
+$ fc-list : family
+<span class="c1"># add language selector</span>
+$ fc-list : family <span class="nv">lang</span><span class="o">=</span>zh
+...
+Fira Sans,Fira Sans UltraLight
+Fira Sans,Fira Sans Light
+Noto Serif CJK KR,Noto Serif CJK KR ExtraLight
+<span class="c1"># with format option, get the family names of all the fonts (note that the above family also specify the detailed style)</span>
+$ fc-list --format<span class="o">=</span><span class="s1">&#39;%{family[0]}\n&#39;</span> :lang<span class="o">=</span>zh <span class="p">|</span> sort <span class="p">|</span> uniq
+...
+文泉驿等宽微米黑
+文泉驿等宽正黑
+新宋体
+</code></pre></div>
+<p>refer to <a href="https://www.geeksforgeeks.org/fc-list-command-in-linux-with-examples/">fc-list command in Linux with examples</a></p>
 <h2 id="_3">命令最后的&amp;<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/13338870/what-does-at-the-end-of-a-linux-command-mean">What does “&amp;” at the end of a linux command mean?</a></p>
 <p>表示在后台运行。</p>
