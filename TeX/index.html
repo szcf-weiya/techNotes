@@ -792,6 +792,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texlive-2016" class="md-nav__link">
+    安装 TeXLive 2016
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texlive" class="md-nav__link">
+    便携式安装 texlive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#basic" class="md-nav__link">
     Basic
   </a>
@@ -808,13 +835,6 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     缺少字体
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#texlive-2016" class="md-nav__link">
-    安装 TeXLive 2016
   </a>
   
 </li>
@@ -883,7 +903,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#texlive" class="md-nav__link">
+  <a href="#texlive_1" class="md-nav__link">
     源码安装 texlive
   </a>
   
@@ -1136,13 +1156,6 @@
         <li class="md-nav__item">
   <a href="#standalone" class="md-nav__link">
     standalone 环境
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#texlive_1" class="md-nav__link">
-    便携式安装 texlive
   </a>
   
 </li>
@@ -1818,6 +1831,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texlive-2016" class="md-nav__link">
+    安装 TeXLive 2016
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texlive" class="md-nav__link">
+    便携式安装 texlive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#basic" class="md-nav__link">
     Basic
   </a>
@@ -1834,13 +1874,6 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     缺少字体
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#texlive-2016" class="md-nav__link">
-    安装 TeXLive 2016
   </a>
   
 </li>
@@ -1909,7 +1942,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#texlive" class="md-nav__link">
+  <a href="#texlive_1" class="md-nav__link">
     源码安装 texlive
   </a>
   
@@ -2167,13 +2200,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#texlive_1" class="md-nav__link">
-    便携式安装 texlive
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#greek-symbols" class="md-nav__link">
     Greek Symbols
   </a>
@@ -2311,6 +2337,25 @@
                 
                 
                 <h1 id="tex">关于 TeX<a class="headerlink" href="#tex" title="Permanent link">&para;</a></h1>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="texlive-2016">安装 TeXLive 2016<a class="headerlink" href="#texlive-2016" title="Permanent link">&para;</a></h3>
+<ol>
+<li><a href="http://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373">How to install “vanilla” TeXLive on Debian or Ubuntu?</a></li>
+<li><a href="http://www.cnblogs.com/wenbosheng/archive/2016/08/03/5725834.html">Linux 系统下原版 texlive 2016 的安装与配置</a></li>
+</ol>
+<p>记住勾选 create symlinks to standard directories</p>
+<h3 id="texlive">便携式安装 texlive<a class="headerlink" href="#texlive" title="Permanent link">&para;</a></h3>
+<p>目前笔记本上 texlive 还是 2015 版的，而 TikePictures.jl 要求的 lualatex 跑不成功，有 bug。于是考虑安装最新版 texlive 2018，只不过笔记本硬盘空间不够，考虑在移动硬盘中安装 texlive。</p>
+<p><a href="http://tug.org/texlive/doc/install-tl.html">TexLive 官方说明文档</a>也介绍了 <code>-protable</code> 的安装选项，</p>
+<p><img alt="" src="portable_install.png" /></p>
+<p>其与正常安装时环境变量略有不同，没有单独设置 personal 的配置路径，或许还有其他地方的区别。</p>
+<p>另外安装时碰到默认的 mirror 速度很慢的情况，于是考虑换成最近的华为云。</p>
+<div class="highlight"><pre><span></span><code>./install-tl -repository https://mirrors.huaweicloud.com/repository/toolkit/CTAN/systems/texlive/tlnet/
+</code></pre></div>
+<p>路径要指定成</p>
+<div class="highlight"><pre><span></span><code>&lt;CTAN/mirror/root/URL&gt;/systems/texlive/tlnet
+</code></pre></div>
+<p>参考 <a href="https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository">Change TeX Live Main Repository</a></p>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>\\</code>, <code>\newline</code>, <code>\tabularnewline</code> <a href="https://tex.stackexchange.com/questions/78796/difference-between-and-tabularnewline"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59z"/></svg></span></a>: when writing a table, the first one can be confused, while the second one ends the line in a cell, and the latter ends the rows of the table. A good side is that when writing tex using julia, <code>raw"\command"</code> does not need to escape <code>\</code>, but it is still required to use <code>raw"\\\\"</code> to represent <code>\\</code>.</li>
@@ -2327,12 +2372,6 @@
 <p>有时需要考虑
 <div class="highlight"><pre><span></span><code>sudo apt-get install texlive-fonts-recommand
 </code></pre></div></p>
-<h2 id="texlive-2016">安装 TeXLive 2016<a class="headerlink" href="#texlive-2016" title="Permanent link">&para;</a></h2>
-<ol>
-<li><a href="http://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373">How to install “vanilla” TeXLive on Debian or Ubuntu?</a></li>
-<li><a href="http://www.cnblogs.com/wenbosheng/archive/2016/08/03/5725834.html">Linux 系统下原版 texlive 2016 的安装与配置</a></li>
-</ol>
-<p>记住勾选 create symlinks to standard directories</p>
 <h2 id="sty">缺少 <code>.sty</code> 文件<a class="headerlink" href="#sty" title="Permanent link">&para;</a></h2>
 <p>比如缺少 <code>mhchem.sty</code></p>
 <p><div class="highlight"><pre><span></span><code>! LaTeX Error: File &#39;mhchem.sty&#39; not found
@@ -2412,7 +2451,7 @@ code
 <p>所谓衬线是字体的末端加强，便于阅读。如通常见的Times New Roman, 宋体。sans-serif（sans 源自法语，表示“没有”）字体的代表如Arial，隶书，幼圆。由于衬线的强化作用，serif字体作为正文具有易读性。因此存在大段文本的情况下，常使用衬线字体。但做幻灯片的话，衬线字体会因字体粗细不同，反倒可能降低辨识度。因此建议标题用衬线字体，正文用非衬线字体。</p>
 <p>数学符号用衬线字体相对美观一些，而Beamer如果不另行设置，默认全文使用sans-serif字体。因此按上述方式设置一下即可。</p>
 </blockquote>
-<h2 id="texlive">源码安装 texlive<a class="headerlink" href="#texlive" title="Permanent link">&para;</a></h2>
+<h2 id="texlive_1">源码安装 texlive<a class="headerlink" href="#texlive_1" title="Permanent link">&para;</a></h2>
 <p><a href="https://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373">How to install “vanilla” TeXLive on Debian or Ubuntu?</a></p>
 <p>以及
 <a href="https://askubuntu.com/questions/485514/how-to-properly-install-and-use-texlive-with-package-manager-in-14-04">How to properly install and use texlive with package manager in 14.04</a></p>
@@ -2699,18 +2738,6 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <li><a href="https://tex.stackexchange.com/questions/373608/standalone-does-not-work-with-algorithms">standalone does not work with algorithms</a></li>
 <li><a href="https://tex.stackexchange.com/questions/61281/algorithmicx-crashes-standalone">algorithmicx crashes standalone</a></li>
 </ul>
-<h2 id="texlive_1">便携式安装 texlive<a class="headerlink" href="#texlive_1" title="Permanent link">&para;</a></h2>
-<p>目前笔记本上 texlive 还是 2015 版的，而 TikePictures.jl 要求的 lualatex 跑不成功，有 bug。于是考虑安装最新版 texlive 2018，只不过笔记本硬盘空间不够，考虑在移动硬盘中安装 texlive。</p>
-<p><a href="http://tug.org/texlive/doc/install-tl.html">TexLive 官方说明文档</a>也介绍了 <code>-protable</code> 的安装选项，</p>
-<p><img alt="" src="portable_install.png" /></p>
-<p>其与正常安装时环境变量略有不同，没有单独设置 personal 的配置路径，或许还有其他地方的区别。</p>
-<p>另外安装时碰到默认的 mirror 速度很慢的情况，于是考虑换成最近的华为云。</p>
-<div class="highlight"><pre><span></span><code>./install-tl -repository https://mirrors.huaweicloud.com/repository/toolkit/CTAN/systems/texlive/tlnet/
-</code></pre></div>
-<p>路径要指定成</p>
-<div class="highlight"><pre><span></span><code>&lt;CTAN/mirror/root/URL&gt;/systems/texlive/tlnet
-</code></pre></div>
-<p>参考 <a href="https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository">Change TeX Live Main Repository</a></p>
 <h2 id="greek-symbols">Greek Symbols<a class="headerlink" href="#greek-symbols" title="Permanent link">&para;</a></h2>
 <h3 id="howto-bold">howto bold<a class="headerlink" href="#howto-bold" title="Permanent link">&para;</a></h3>
 <p><code>\mathbf</code> 只对公式中的普通字母 <code>ABC...abcdef</code> 等起作用。</p>
