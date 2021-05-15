@@ -39,6 +39,7 @@ nav:
       - TeX:
         - 一般问题: TeX/index.md
         - arXiv: TeX/arxiv.md
+        - VarGreek: TeX/vargreek.md
       - Web:
         - Website: website/index.md
         - CSS: website/css.md

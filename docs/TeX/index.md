@@ -79,27 +79,6 @@ $ sudo apt-get install texlive-science
             pdfcreator={Xelatex}]{hyperref}
 ```
 
-## 希腊字母加粗问题
-
-`\mathbf` 只对公式中的普通字母 `ABC...abcdef` 等起作用。
-
-采用
-
-```tex
-\usepackage{amsmath}
-\boldsymbol{\sigma}
-```
-
-或
-
-```tex
-\usepackage{bm}
-\bm{\sigma}
-```
-
-参考 [LaTeX技巧326：希腊字母的加粗问题](http://blog.sina.com.cn/s/blog_5e16f1770100ks8l.html)
-
-
 ## 数学字体加粗
 
 使用 `\mathbf` 加粗完后斜体不见了，这不是想要的结果
@@ -629,6 +608,28 @@ refer to [Capacity exceeded](https://texfaq.org/FAQ-semanticnest)
 ```
 
 参考 [Change TeX Live Main Repository](https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository)
+
+## Greek Symbols
+
+### howto bold
+
+`\mathbf` 只对公式中的普通字母 `ABC...abcdef` 等起作用。
+
+=== "Method 1"
+	```tex
+	\usepackage{amsmath}
+	\boldsymbol{\sigma}
+	```
+
+=== "Method 2"
+	```tex
+	\usepackage{bm}
+	\bm{\sigma}
+	```
+
+### variant forms
+
+详见 [Variant forms of Greek symbols](vargreek.md)。
 
 ## Operator
 
