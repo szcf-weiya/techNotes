@@ -1,3 +1,8 @@
+## 2021.05.15
+
+- Humans no longer need to hand **rear (喂养，抚育)** the chicks.
+    - **rear (后面的)** view: 后视图
+
 ## 2021.05.14
 
 - Online ride-hailing platforms have emerged as a **viable (可行的)** solution to provide more timely and personalized transportation service.

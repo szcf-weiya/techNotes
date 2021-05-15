@@ -1,5 +1,39 @@
 # 关于 TeX
 
+## Installation
+
+### 安装 TeXLive 2016
+
+1. [How to install “vanilla” TeXLive on Debian or Ubuntu?](http://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373)
+2. [Linux 系统下原版 texlive 2016 的安装与配置](http://www.cnblogs.com/wenbosheng/archive/2016/08/03/5725834.html)
+
+记住勾选 create symlinks to standard directories
+
+### 便携式安装 texlive
+
+目前笔记本上 texlive 还是 2015 版的，而 TikePictures.jl 要求的 lualatex 跑不成功，有 bug。于是考虑安装最新版 texlive 2018，只不过笔记本硬盘空间不够，考虑在移动硬盘中安装 texlive。
+
+[TexLive 官方说明文档](http://tug.org/texlive/doc/install-tl.html)也介绍了 `-protable` 的安装选项，
+
+![](portable_install.png)
+
+其与正常安装时环境变量略有不同，没有单独设置 personal 的配置路径，或许还有其他地方的区别。
+
+另外安装时碰到默认的 mirror 速度很慢的情况，于是考虑换成最近的华为云。
+
+```bash
+./install-tl -repository https://mirrors.huaweicloud.com/repository/toolkit/CTAN/systems/texlive/tlnet/
+```
+
+路径要指定成
+
+```bash
+<CTAN/mirror/root/URL>/systems/texlive/tlnet
+```
+
+参考 [Change TeX Live Main Repository](https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository)
+
+
 ## Basic 
 
 - `\\`, `\newline`, `\tabularnewline` [:material-stack-overflow:](https://tex.stackexchange.com/questions/78796/difference-between-and-tabularnewline): when writing a table, the first one can be confused, while the second one ends the line in a cell, and the latter ends the rows of the table. A good side is that when writing tex using julia, `raw"\command"` does not need to escape `\`, but it is still required to use `raw"\\\\"` to represent `\\`.
@@ -25,12 +59,6 @@ sudo apt-get install texlive-fonts-extra
 ```
 sudo apt-get install texlive-fonts-recommand
 ```
-
-## 安装 TeXLive 2016
-1. [How to install “vanilla” TeXLive on Debian or Ubuntu?](http://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373)
-2. [Linux 系统下原版 texlive 2016 的安装与配置](http://www.cnblogs.com/wenbosheng/archive/2016/08/03/5725834.html)
-
-记住勾选 create symlinks to standard directories
 
 ## 缺少 `.sty` 文件
 
@@ -585,29 +613,6 @@ refer to [Capacity exceeded](https://texfaq.org/FAQ-semanticnest)
 - [standalone does not work with algorithms](https://tex.stackexchange.com/questions/373608/standalone-does-not-work-with-algorithms)
 - [algorithmicx crashes standalone](https://tex.stackexchange.com/questions/61281/algorithmicx-crashes-standalone)
 
-## 便携式安装 texlive
-
-目前笔记本上 texlive 还是 2015 版的，而 TikePictures.jl 要求的 lualatex 跑不成功，有 bug。于是考虑安装最新版 texlive 2018，只不过笔记本硬盘空间不够，考虑在移动硬盘中安装 texlive。
-
-[TexLive 官方说明文档](http://tug.org/texlive/doc/install-tl.html)也介绍了 `-protable` 的安装选项，
-
-![](portable_install.png)
-
-其与正常安装时环境变量略有不同，没有单独设置 personal 的配置路径，或许还有其他地方的区别。
-
-另外安装时碰到默认的 mirror 速度很慢的情况，于是考虑换成最近的华为云。
-
-```bash
-./install-tl -repository https://mirrors.huaweicloud.com/repository/toolkit/CTAN/systems/texlive/tlnet/
-```
-
-路径要指定成
-
-```bash
-<CTAN/mirror/root/URL>/systems/texlive/tlnet
-```
-
-参考 [Change TeX Live Main Repository](https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository)
 
 ## Greek Symbols
 
