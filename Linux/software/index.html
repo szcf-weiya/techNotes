@@ -446,6 +446,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#droidcam" class="md-nav__link">
+    Droidcam
+  </a>
+  
+    <nav class="md-nav" aria-label="Droidcam">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mix2s" class="md-nav__link">
+    Mix2s
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mi4c" class="md-nav__link">
+    Mi4c
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipad" class="md-nav__link">
+    iPad
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#emacs" class="md-nav__link">
     Emacs
   </a>
@@ -2106,6 +2140,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#droidcam" class="md-nav__link">
+    Droidcam
+  </a>
+  
+    <nav class="md-nav" aria-label="Droidcam">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mix2s" class="md-nav__link">
+    Mix2s
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mi4c" class="md-nav__link">
+    Mi4c
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipad" class="md-nav__link">
+    iPad
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#emacs" class="md-nav__link">
     Emacs
   </a>
@@ -2725,6 +2793,39 @@ $ $ docker image inspect d1165
             <span class="o">}</span>,
 ...
 </code></pre></div>
+<h2 id="droidcam">Droidcam<a class="headerlink" href="#droidcam" title="Permanent link">&para;</a></h2>
+<p>Homepage: <a href="https://www.dev47apps.com/">DroidCam</a></p>
+<p>First of all, install Linux client following the <a href="https://www.dev47apps.com/droidcam/linux/">official instruction</a></p>
+<h3 id="mix2s">Mix2s<a class="headerlink" href="#mix2s" title="Permanent link">&para;</a></h3>
+<ul>
+<li>install the Android app on Mix2s</li>
+<li>因为无法设置在一个局域网中，所以测试 USB 连接。根据<a href="https://www.dev47apps.com/droidcam/connect/">连接指南</a>，需要打开 USB debugging，然而似乎仍然无法成功。</li>
+<li>根据错误提示运行 <code>adb devices</code>，并没有显示任何安卓设备的连接。另外 <code>lsusb</code> 并没有手机的记录，而且插上前后 <code>lsusb</code> 项目个数不变。</li>
+<li>可能电脑端缺少驱动，试图寻找 USB driver，如<a href="https://www.xiaomidriversdownload.com/xiaomi-mi-mix-2s-adb-driver/">www.xiaomidriversdownload.com</a>但是只找到 for windows 的版本（后来证明并不需要，只是 USB 线的原因）。</li>
+</ul>
+<h3 id="mi4c">Mi4c<a class="headerlink" href="#mi4c" title="Permanent link">&para;</a></h3>
+<p>同 Mix2s，不过换了长的那根数据线后，<code>lsusb</code> 多了条记录</p>
+<div class="highlight"><pre><span></span><code>$ lsusb
+Bus <span class="m">001</span> Device <span class="m">033</span>: ID <span class="m">2717</span>:ff68
+</code></pre></div>
+<p>不像其它记录那样有具体的名字，找到同样的问题，<a href="https://stackoverflow.com/questions/40951179/adb-devices-not-working-for-redmi-note-3-on-ubuntu">adb devices not working for redmi note 3 on ubuntu</a>。经查，该文件位于 <code>/lib/udev/rules.d</code>，下载仓库中最新的 <a href="https://github.com/M0Rf30/android-udev-rules/blob/master/51-android.rules">51-android.rules</a></p>
+<div class="highlight"><pre><span></span><code>$ cat <span class="m">51</span>-android.rules <span class="p">|</span> grep ff68
+$ sudo cp <span class="m">51</span>-android.rules <span class="m">51</span>-android.rules.old
+$ sudo cp ~/Downloads/51-android.rules .
+</code></pre></div>
+<p>但是 <code>lsusb</code> 并没有立即生效，又不想重启，于是试了 <a href="https://unix.stackexchange.com/questions/39370/how-to-reload-udev-rules-without-reboot">How to reload udev rules without reboot?</a>，</p>
+<div class="highlight"><pre><span></span><code>$ udevadm control --reload-rules
+</code></pre></div>
+<p>以及</p>
+<div class="highlight"><pre><span></span><code>$ pkill -HUP udevd
+</code></pre></div>
+<p>但是仍没有显示名字。</p>
+<h3 id="ipad">iPad<a class="headerlink" href="#ipad" title="Permanent link">&para;</a></h3>
+<ul>
+<li>firstly, install the APP</li>
+<li>因为插上 iPad 后，自动跳出是否信任本设备，而且在 <code>lsusb</code> 中找到记录 <code>Bus 001 Device 018: ID 05ac:12ab Apple, Inc. iPad 4/Mini1</code>。</li>
+<li>然后在电脑端开启连接，这样就能使用ipad的摄像头了。在zoom中，开启摄像头那里有切换至 Droidcam 的选项。</li>
+</ul>
 <h2 id="emacs">Emacs<a class="headerlink" href="#emacs" title="Permanent link">&para;</a></h2>
 <h3 id="_3">常用命令<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
