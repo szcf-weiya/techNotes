@@ -1,3 +1,9 @@
+## 2021.05.16
+
+- One commentator said that the National Front has gone from **pariah (被社会遗弃者)** status to mainstream.
+- An **exoplanet (系外行星)** or extrasolar planet is a planet outside the Solar system.
+- Anto has been instrumental in creating a **musical (音乐片)** about COVID-19 vaccine. [:link:](https://www.youtube.com/watch?v=glueeURebDU)
+ 
 ## 2021.05.15
 
 - Humans no longer need to hand **rear (喂养，抚育)** the chicks.
@@ -537,6 +543,7 @@
 - He asked his **bean-counter (<俚>统计专家)** to **crunch (嚼，咬碎)** the numbers.
     - crunch time: 关键时刻，关键时间
     - credit crunch: 信贷紧缩，信贷危机（等于 credit crisis)
+    - credence: 信任，凭证
 
 ## 2021.02.01
 
@@ -2305,7 +2312,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 39. He also emphasized what he called the main thing: "a human-typable keyboard instead of a stupid, cryptic front panel with a bunch of lights and switches."
 40. In a few recalcitrant places, captial punishment is holding steady or picking up.
 41. The visitor also sees other evolving friendships and aesthetic kinships taking place.
-42. Manifest an obliging disposition, and they can not but regard you with affection.
+42. **Manifest (表明，显示)** an **obliging (乐于助人的)** **disposition (气质，天性，性格)**, and they **can not but (不得不，[:link:](https://ell.stackexchange.com/questions/151081/what-does-cant-but-in-this-sentence-means))** regard you with **affection (感情，喜爱)**.
+    - much obliged: 承蒙美意
 43. It provides simpler and more perspicuous explanations than its rivals.
 44. This theory is too abstruse to be taught in class.
 

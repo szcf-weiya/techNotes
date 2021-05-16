@@ -239,6 +239,56 @@ $ $ docker image inspect d1165
 ...
 ```
 
+## Droidcam
+
+Homepage: [DroidCam](https://www.dev47apps.com/)
+
+First of all, install Linux client following the [official instruction](https://www.dev47apps.com/droidcam/linux/)
+
+### Mix2s
+
+- install the Android app on Mix2s
+- 因为无法设置在一个局域网中，所以测试 USB 连接。根据[连接指南](https://www.dev47apps.com/droidcam/connect/)，需要打开 USB debugging，然而似乎仍然无法成功。
+- 根据错误提示运行 `adb devices`，并没有显示任何安卓设备的连接。另外 `lsusb` 并没有手机的记录，而且插上前后 `lsusb` 项目个数不变。
+- 可能电脑端缺少驱动，试图寻找 USB driver，如[www.xiaomidriversdownload.com](https://www.xiaomidriversdownload.com/xiaomi-mi-mix-2s-adb-driver/)但是只找到 for windows 的版本（后来证明并不需要，只是 USB 线的原因）。
+
+### Mi4c
+
+同 Mix2s，不过换了长的那根数据线后，`lsusb` 多了条记录
+
+```bash
+$ lsusb
+Bus 001 Device 033: ID 2717:ff68
+```
+
+不像其它记录那样有具体的名字，找到同样的问题，[adb devices not working for redmi note 3 on ubuntu](https://stackoverflow.com/questions/40951179/adb-devices-not-working-for-redmi-note-3-on-ubuntu)。经查，该文件位于 `/lib/udev/rules.d`，下载仓库中最新的 [51-android.rules](https://github.com/M0Rf30/android-udev-rules/blob/master/51-android.rules)
+
+```bash
+$ cat 51-android.rules | grep ff68
+$ sudo cp 51-android.rules 51-android.rules.old
+$ sudo cp ~/Downloads/51-android.rules .
+```
+
+但是 `lsusb` 并没有立即生效，又不想重启，于是试了 [How to reload udev rules without reboot?](https://unix.stackexchange.com/questions/39370/how-to-reload-udev-rules-without-reboot)，
+
+```bash
+$ udevadm control --reload-rules
+```
+
+以及
+
+```bash
+$ pkill -HUP udevd
+```
+
+但是仍没有显示名字。
+
+### iPad
+
+- firstly, install the APP
+- 因为插上 iPad 后，自动跳出是否信任本设备，而且在 `lsusb` 中找到记录 `Bus 001 Device 018: ID 05ac:12ab Apple, Inc. iPad 4/Mini1`。
+- 然后在电脑端开启连接，这样就能使用ipad的摄像头了。在zoom中，开启摄像头那里有切换至 Droidcam 的选项。
+
 ## Emacs
 
 ### 常用命令
