@@ -660,6 +660,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#no-reduction-with-11" class="md-nav__link">
+    no reduction with [1:1]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert-a-matrix-into-an-array-of-array" class="md-nav__link">
+    convert a matrix into an array of array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-from-0" class="md-nav__link">
+    index from 0
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -945,20 +966,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#convert-a-matrix-into-an-array-of-array" class="md-nav__link">
-    convert a matrix into an array of array
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#index-from-0" class="md-nav__link">
-    index from 0
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#and-hash" class="md-nav__link">
     自定义 == and hash()
   </a>
@@ -1108,13 +1115,6 @@
         <li class="md-nav__item">
   <a href="#padding-zero-on-the-left" class="md-nav__link">
     padding zero on the left
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#no-reduction-with-11" class="md-nav__link">
-    no reduction with [1:1]
   </a>
   
 </li>
@@ -1887,6 +1887,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#no-reduction-with-11" class="md-nav__link">
+    no reduction with [1:1]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convert-a-matrix-into-an-array-of-array" class="md-nav__link">
+    convert a matrix into an array of array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-from-0" class="md-nav__link">
+    index from 0
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2172,20 +2193,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#convert-a-matrix-into-an-array-of-array" class="md-nav__link">
-    convert a matrix into an array of array
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#index-from-0" class="md-nav__link">
-    index from 0
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#and-hash" class="md-nav__link">
     自定义 == and hash()
   </a>
@@ -2335,13 +2342,6 @@
         <li class="md-nav__item">
   <a href="#padding-zero-on-the-left" class="md-nav__link">
     padding zero on the left
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#no-reduction-with-11" class="md-nav__link">
-    no reduction with [1:1]
   </a>
   
 </li>
@@ -2503,6 +2503,62 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
  <span class="mi">2</span>  <span class="mi">4</span>
 </code></pre></div>
 <p>Note that sometimes <code>.+=</code> may make the program much slower, such as <a href="https://github.com/szcf-weiya/en/blob/3c8daeb4e0f477f5ea40dc2bb44d832faa4bbbb6/code/2019-06-14-ML/GD2.jl#L10">en/code/2019-06-14-ML/GD2.jl</a></p>
+<h3 id="no-reduction-with-11">no reduction with <code>[1:1]</code><a class="headerlink" href="#no-reduction-with-11" title="Permanent link">&para;</a></h3>
+<p>Sometimes, I do not want to the array of array reduces to a single array, then <code>[1:1]</code> would help, instead of <code>[1]</code>, see the following toy example.</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span>
+<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="mi">3</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="mi">1</span>
+ <span class="mi">2</span>
+ <span class="mi">3</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">1</span><span class="p">]</span>
+<span class="mi">1</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="convert-a-matrix-into-an-array-of-array">convert a matrix into an array of array<a class="headerlink" href="#convert-a-matrix-into-an-array-of-array" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="mi">3</span><span class="o">×</span><span class="mi">4</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
+ <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>
+ <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>
+ <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">mapslices</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">a</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="mi">3</span><span class="o">×</span><span class="mi">1</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
+ <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">mapslices</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">a</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)[</span><span class="o">:</span><span class="p">]</span>
+<span class="mi">3</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
+ <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+</code></pre></div>
+<p>refer to</p>
+<p><a href="https://discourse.julialang.org/t/converting-a-matrix-into-an-array-of-arrays/17038">Converting a matrix into an array of arrays</a></p>
+<p>Conversely, we can converting the array of arrays to a matrix, refer to <a href="https://stackoverflow.com/questions/26673412/how-to-convert-an-array-of-array-into-a-matrix">How to convert an array of array into a matrix?</a></p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">mapslices</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">a</span><span class="p">,</span> <span class="n">dims</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)[</span><span class="o">:</span><span class="p">]</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">hcat</span><span class="p">(</span><span class="n">b</span><span class="o">...</span><span class="p">)</span>
+<span class="mi">4</span><span class="o">×</span><span class="mi">3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
+ <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>
+ <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>
+ <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>
+ <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">reduce</span><span class="p">(</span><span class="n">hcat</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="mi">4</span><span class="o">×</span><span class="mi">3</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="o">:</span>
+ <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>
+ <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>
+ <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>
+ <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>
+</code></pre></div>
+<h3 id="index-from-0">index from 0<a class="headerlink" href="#index-from-0" title="Permanent link">&para;</a></h3>
+<p>using <code>OffsetArrays</code> package, refer to</p>
+<p><a href="https://github.com/JuliaArrays/OffsetArrays.jl">Github: OffsetArrays</a></p>
 <h2 id="base">Base<a class="headerlink" href="#base" title="Permanent link">&para;</a></h2>
 <h3 id="_1">连等号赋值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>如果采用 <code>a=b=c=ones(10)</code> 形式赋值的话，则如果后面改变 <code>a</code> 的值，<code>b</code> 和 <code>c</code> 的值也将随之改变。</p>
@@ -2819,15 +2875,6 @@ ok
 <li><a href="https://stackoverflow.com/questions/51930537/scope-of-variables-in-julia/">Scope of variables in Julia</a></li>
 <li><a href="https://docs.julialang.org/en/v1/manual/variables-and-scoping/index.html">Manual: Scope of Variables</a></li>
 </ol>
-<h2 id="convert-a-matrix-into-an-array-of-array">convert a matrix into an array of array<a class="headerlink" href="#convert-a-matrix-into-an-array-of-array" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">mapslices</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">dims</span><span class="o">=</span><span class="mi">2</span><span class="p">)[</span><span class="o">:</span><span class="p">]</span>
-</code></pre></div>
-<p>refer to</p>
-<p><a href="https://discourse.julialang.org/t/converting-a-matrix-into-an-array-of-arrays/17038">Converting a matrix into an array of arrays</a></p>
-<p>Conversely, we can converting the array of arrays to a matrix, refer to <a href="https://stackoverflow.com/questions/26673412/how-to-convert-an-array-of-array-into-a-matrix">How to convert an array of array into a matrix?</a></p>
-<h2 id="index-from-0">index from 0<a class="headerlink" href="#index-from-0" title="Permanent link">&para;</a></h2>
-<p>using <code>OffsetArrays</code> package, refer to</p>
-<p><a href="https://github.com/JuliaArrays/OffsetArrays.jl">Github: OffsetArrays</a></p>
 <h2 id="and-hash">自定义 <code>==</code> and <code>hash()</code><a class="headerlink" href="#and-hash" title="Permanent link">&para;</a></h2>
 <p>对于自定义的 mutable struct, 直接用 <code>==</code> 返回 <code>false</code>，因此需要自己定义等号，比如</p>
 <div class="highlight"><pre><span></span><code><span class="n">Base</span><span class="o">.:</span><span class="p">(</span><span class="o">==</span><span class="p">)(</span><span class="n">x</span><span class="o">::</span><span class="kt">Reaction</span><span class="p">,</span> <span class="n">y</span><span class="o">::</span><span class="kt">Reaction</span><span class="p">)</span> <span class="o">=</span> <span class="n">all</span><span class="p">([</span>
@@ -3178,23 +3225,6 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <p>For example, convert &ldquo;1&rdquo; to &ldquo;001&rdquo;,</p>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">lpad</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span>
 <span class="s">&quot;001&quot;</span>
-</code></pre></div>
-<h2 id="no-reduction-with-11">no reduction with <code>[1:1]</code><a class="headerlink" href="#no-reduction-with-11" title="Permanent link">&para;</a></h2>
-<p>Sometimes, I do not want to the array of array reduces to a single array, then <code>[1:1]</code> would help, instead of <code>[1]</code>, see the following toy example.</p>
-<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span>
-<span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
- <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="mi">3</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="mi">1</span>
- <span class="mi">2</span>
- <span class="mi">3</span>
-
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">1</span><span class="p">]</span>
-<span class="mi">1</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>
- <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </code></pre></div>
 <h2 id="run-command-line">run command line<a class="headerlink" href="#run-command-line" title="Permanent link">&para;</a></h2>
 <p>For example, to combine different figures,</p>
