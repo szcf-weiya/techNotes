@@ -1,3 +1,7 @@
+## 2021.05.17
+
+- I just don't wanna give them any more **ammunition (弹药，辩论中可攻击对方的把柄)** than they already have.
+
 ## 2021.05.16
 
 - One commentator said that the National Front has gone from **pariah (被社会遗弃者)** status to mainstream.

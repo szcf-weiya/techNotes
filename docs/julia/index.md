@@ -166,6 +166,77 @@ julia> x'
 
 Note that sometimes `.+=` may make the program much slower, such as [en/code/2019-06-14-ML/GD2.jl](https://github.com/szcf-weiya/en/blob/3c8daeb4e0f477f5ea40dc2bb44d832faa4bbbb6/code/2019-06-14-ML/GD2.jl#L10)
 
+### no reduction with `[1:1]`
+
+Sometimes, I do not want to the array of array reduces to a single array, then `[1:1]` would help, instead of `[1]`, see the following toy example.
+
+```julia
+julia> x
+2-element Array{Array{Int64,1},1}:
+ [1, 2, 3]
+ [1, 2]
+
+julia> x[1]
+3-element Array{Int64,1}:
+ 1
+ 2
+ 3
+
+julia> x[1:1]
+1-element Array{Array{Int64,1},1}:
+ [1, 2, 3]
+```
+
+### convert a matrix into an array of array
+
+```julia
+julia> a = zeros(3, 4)
+3×4 Array{Float64,2}:
+ 0.0  0.0  0.0  0.0
+ 0.0  0.0  0.0  0.0
+ 0.0  0.0  0.0  0.0
+
+julia> mapslices(x->[x], a, dims = 2)
+3×1 Array{Array{Float64,1},2}:
+ [0.0, 0.0, 0.0, 0.0]
+ [0.0, 0.0, 0.0, 0.0]
+ [0.0, 0.0, 0.0, 0.0]
+
+julia> mapslices(x->[x], a, dims = 2)[:]
+3-element Array{Array{Float64,1},1}:
+ [0.0, 0.0, 0.0, 0.0]
+ [0.0, 0.0, 0.0, 0.0]
+ [0.0, 0.0, 0.0, 0.0]
+```
+
+refer to
+
+[Converting a matrix into an array of arrays](https://discourse.julialang.org/t/converting-a-matrix-into-an-array-of-arrays/17038)
+
+Conversely, we can converting the array of arrays to a matrix, refer to [How to convert an array of array into a matrix?](https://stackoverflow.com/questions/26673412/how-to-convert-an-array-of-array-into-a-matrix)
+
+```julia
+julia> b = mapslices(x->[x], a, dims = 2)[:]
+julia> hcat(b...)
+4×3 Array{Float64,2}:
+ 0.0  0.0  0.0
+ 0.0  0.0  0.0
+ 0.0  0.0  0.0
+ 0.0  0.0  0.0
+julia> reduce(hcat, b)
+4×3 Array{Float64,2}:
+ 0.0  0.0  0.0
+ 0.0  0.0  0.0
+ 0.0  0.0  0.0
+ 0.0  0.0  0.0
+```
+
+### index from 0
+
+using `OffsetArrays` package, refer to
+
+[Github: OffsetArrays](https://github.com/JuliaArrays/OffsetArrays.jl)
+
 ## Base
 
 ### 连等号赋值
@@ -619,26 +690,6 @@ References:
 1. [REPL and for loops (scope behavior change)](https://discourse.julialang.org/t/repl-and-for-loops-scope-behavior-change/13514/3)
 2. [Scope of variables in Julia](https://stackoverflow.com/questions/51930537/scope-of-variables-in-julia/)
 3. [Manual: Scope of Variables](https://docs.julialang.org/en/v1/manual/variables-and-scoping/index.html)
-
-## convert a matrix into an array of array
-
-
-```julia
-mapslices(x->[x], randn(5,5), dims=2)[:]
-```
-
-refer to
-
-[Converting a matrix into an array of arrays](https://discourse.julialang.org/t/converting-a-matrix-into-an-array-of-arrays/17038)
-
-Conversely, we can converting the array of arrays to a matrix, refer to [How to convert an array of array into a matrix?](https://stackoverflow.com/questions/26673412/how-to-convert-an-array-of-array-into-a-matrix)
-
-## index from 0
-
-using `OffsetArrays` package, refer to
-
-[Github: OffsetArrays](https://github.com/JuliaArrays/OffsetArrays.jl)
-
 
 ## 自定义 `==` and `hash()`
 
@@ -1137,27 +1188,6 @@ For example, convert "1" to "001",
 ```julia
 julia> lpad(1, 3, '0')
 "001"
-```
-
-## no reduction with `[1:1]`
-
-Sometimes, I do not want to the array of array reduces to a single array, then `[1:1]` would help, instead of `[1]`, see the following toy example.
-
-```julia
-julia> x
-2-element Array{Array{Int64,1},1}:
- [1, 2, 3]
- [1, 2]
-
-julia> x[1]
-3-element Array{Int64,1}:
- 1
- 2
- 3
-
-julia> x[1:1]
-1-element Array{Array{Int64,1},1}:
- [1, 2, 3]
 ```
 
 ## run command line

@@ -2,18 +2,18 @@
 
 ## Installation
 
-### 安装 TeXLive 2016
+### install from source
 
 1. [How to install “vanilla” TeXLive on Debian or Ubuntu?](http://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373)
 2. [Linux 系统下原版 texlive 2016 的安装与配置](http://www.cnblogs.com/wenbosheng/archive/2016/08/03/5725834.html)
 
 记住勾选 create symlinks to standard directories
 
-### 便携式安装 texlive
+### portable mode 
 
-目前笔记本上 texlive 还是 2015 版的，而 TikePictures.jl 要求的 lualatex 跑不成功，有 bug。于是考虑安装最新版 texlive 2018，只不过笔记本硬盘空间不够，考虑在移动硬盘中安装 texlive。
+目前笔记本上 texlive 还是 2015 版的，而 TikePictures.jl 要求的 lualatex 跑不成功，有 bug。于是考虑安装最新版 texlive 2018，只不过笔记本硬盘空间不够，决定在移动硬盘中安装 texlive。
 
-[TexLive 官方说明文档](http://tug.org/texlive/doc/install-tl.html)也介绍了 `-protable` 的安装选项，
+[TexLive 官方说明文档](http://tug.org/texlive/doc/install-tl.html)也介绍了 `-portable` 的安装选项，
 
 ![](portable_install.png)
 
@@ -38,13 +38,15 @@
 
 - `\\`, `\newline`, `\tabularnewline` [:material-stack-overflow:](https://tex.stackexchange.com/questions/78796/difference-between-and-tabularnewline): when writing a table, the first one can be confused, while the second one ends the line in a cell, and the latter ends the rows of the table. A good side is that when writing tex using julia, `raw"\command"` does not need to escape `\`, but it is still required to use `raw"\\\\"` to represent `\\`.
 
-## Some nice font family
+## Fonts
+
+### Some nice font family
 
 refer to [Suggest a “nice” font family for my basic LaTeX template (text and math)](https://tex.stackexchange.com/a/59706)
 
 and currently I prefer to `newpxtext` and `newpxmath`.
 
-## 缺少字体
+### missing font
 
 报错信息如下图
 
@@ -59,6 +61,52 @@ sudo apt-get install texlive-fonts-extra
 ```
 sudo apt-get install texlive-fonts-recommand
 ```
+
+### common font styles in math formula
+
+[![](math-fonts.png)](https://i.stack.imgur.com/eZdhj.png)
+
+refer to [What are all the font styles I can use in math mode?](https://tex.stackexchange.com/questions/58098/what-are-all-the-font-styles-i-can-use-in-math-mode)
+
+### bold math formula
+
+使用 `\mathbf` 加粗完后斜体不见了，这不是想要的结果
+
+```tex
+\usepackage{amsmath}
+\boldmath
+$$
+f(x,y) = 3(x+y)y / (2xy-7)
+$$
+\unboldmath
+```
+
+或
+
+```tex
+\usepackage{bm}
+$$
+\bm{f(x,y) = 3(x+y)y / (2xy-7)}
+$$
+```
+
+参考 [LaTeX 数学字体加粗问题](http://blog.sina.com.cn/s/blog_5e16f1770100nqwx.html)
+
+### use serif math font in beamer
+
+默认数学字体挺丑的，可以在导言区加入
+
+```tex
+\usefonttheme[onlymath]{serif}
+```
+
+下面摘录自 [Beamer 中数学符号字体 ](http://blog.sina.com.cn/s/blog_4b91d3b50101lupb.html)
+
+> 关于tex的字体样式，其实是通用的，与css和windows字体等，都是通用的。来源于西方的字母写法，大致可分为两类：serif （衬线）和sans-serif（无衬线）。
+
+> 所谓衬线是字体的末端加强，便于阅读。如通常见的Times New Roman, 宋体。sans-serif（sans 源自法语，表示“没有”）字体的代表如Arial，隶书，幼圆。由于衬线的强化作用，serif字体作为正文具有易读性。因此存在大段文本的情况下，常使用衬线字体。但做幻灯片的话，衬线字体会因字体粗细不同，反倒可能降低辨识度。因此建议标题用衬线字体，正文用非衬线字体。
+
+> 数学符号用衬线字体相对美观一些，而Beamer如果不另行设置，默认全文使用sans-serif字体。因此按上述方式设置一下即可。
 
 ## 缺少 `.sty` 文件
 
@@ -107,29 +155,6 @@ $ sudo apt-get install texlive-science
             pdfcreator={Xelatex}]{hyperref}
 ```
 
-## 数学字体加粗
-
-使用 `\mathbf` 加粗完后斜体不见了，这不是想要的结果
-
-```tex
-\usepackage{amsmath}
-\boldmath
-$$
-f(x,y) = 3(x+y)y / (2xy-7)
-$$
-\unboldmath
-```
-
-或
-
-```tex
-\usepackage{bm}
-$$
-\bm{f(x,y) = 3(x+y)y / (2xy-7)}
-$$
-```
-
-参考 [LaTeX 数学字体加粗问题](http://blog.sina.com.cn/s/blog_5e16f1770100nqwx.html)
 
 
 ## “texi2dvi” command not found
@@ -169,28 +194,6 @@ code
 \end{frame}
 ```
 
-## beamer 中数学字体
-
-默认数学字体挺丑的，可以在导言区加入
-
-```tex
-\usefonttheme[onlymath]{serif}
-```
-
-下面摘录自 [Beamer 中数学符号字体 ](http://blog.sina.com.cn/s/blog_4b91d3b50101lupb.html)
-
-> 关于tex的字体样式，其实是通用的，与css和windows字体等，都是通用的。来源于西方的字母写法，大致可分为两类：serif （衬线）和sans-serif（无衬线）。
-
-> 所谓衬线是字体的末端加强，便于阅读。如通常见的Times New Roman, 宋体。sans-serif（sans 源自法语，表示“没有”）字体的代表如Arial，隶书，幼圆。由于衬线的强化作用，serif字体作为正文具有易读性。因此存在大段文本的情况下，常使用衬线字体。但做幻灯片的话，衬线字体会因字体粗细不同，反倒可能降低辨识度。因此建议标题用衬线字体，正文用非衬线字体。
-
-> 数学符号用衬线字体相对美观一些，而Beamer如果不另行设置，默认全文使用sans-serif字体。因此按上述方式设置一下即可。
-
-## 源码安装 texlive
-
-[How to install “vanilla” TeXLive on Debian or Ubuntu?](https://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373)
-
-以及
-[How to properly install and use texlive with package manager in 14.04](https://askubuntu.com/questions/485514/how-to-properly-install-and-use-texlive-with-package-manager-in-14-04)
 
 ## beamer 中导入视频
 
@@ -702,12 +705,6 @@ see
 ```
 
 refer to [Matching Content to MathJax](http://drz.ac/2013/01/14/matching-content-to-mathjax/), which originally for illustrating the typeface of mathjax.
-
-## 数学公式常用字体
-
-[![](math-fonts.png)](https://i.stack.imgur.com/eZdhj.png)
-
-refer to [What are all the font styles I can use in math mode?](https://tex.stackexchange.com/questions/58098/what-are-all-the-font-styles-i-can-use-in-math-mode)
 
 ## Some ways to number equations
 
