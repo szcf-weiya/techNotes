@@ -1,3 +1,7 @@
+## 2021.05.18
+
+- I'm a laundry **virgin (处女)**.
+
 ## 2021.05.17
 
 - I just don't wanna give them any more **ammunition (弹药，辩论中可攻击对方的把柄)** than they already have.
