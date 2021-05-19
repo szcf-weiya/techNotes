@@ -23,6 +23,11 @@ If use third-party plugins, such as [gjtorikian/jekyll-last-modified-at](https:/
 
 refer to [How do I configure GitHub to use non-supported Jekyll site plugins?](https://stackoverflow.com/questions/28249255/how-do-i-configure-github-to-use-non-supported-jekyll-site-plugins)
 
+### jekyll中的相对路径
+
+参考[Relative paths in Jekyll](https://ricostacruz.com/til/relative-paths-in-jekyll)
+
+
 ## 设置 Disqus
 
 [https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html](https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html)
@@ -388,6 +393,10 @@ file_put_contents('php://stderr', print_r($_POST, TRUE));
 - 后台暂存数据形式为 `md5(name+email): real_email`，注意此处 `email` 实际上是从 Disqus 请求返回值，即类似 `s****@gmail.com` 的形式，并不是全明文 `real_email`
 - 父评论返回时间戳 `time` 为其 code，而子评论返回父评论的 `md5(name+email)`，因而可以找到暂存的邮箱进行提醒
 
+#### login?
+
+另外，`login.php` 似乎用不上，所以 callback url 似乎无需修改。之前是直接用 ngrok 访问的域名，试图换成 `api.hohoweiya.xyz` 后，仍然报出 Invalid Request: should match predefined callback URI。但是换个角度，登录在内地本身就不可行，因为最终还是要 call back 到 disqus（内地无法访问）。如果用户已经翻墙，则直接呈现的是 disqus 原生窗口，登录也不在话下。所以此转发系统主要服务于匿名（指未登录，但仍记录了名字与邮箱）评论。
+
 ## 博客中插入网易云音乐
 
 这个很容易实现，只需要在网易云中搜索要插入的音乐，然后点击“生成外链播放器”，将iframe代码插入博客的相应位置。
@@ -410,10 +419,6 @@ file_put_contents('php://stderr', print_r($_POST, TRUE));
 
 实现将本站用webhooks将其更新至阿里云服务器上，这与eslcn是同一个服务器，所以通过建立虚拟主机实现。
 
-
-## jekyll中的相对路径
-
-参考[Relative paths in Jekyll](https://ricostacruz.com/til/relative-paths-in-jekyll)
 
 ## URL 和 URI
 

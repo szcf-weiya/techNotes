@@ -110,7 +110,9 @@ $ locate MinionPro.sty
 
 但是报错提示说只能在 preamble 中定义。不过注意到如果不加 `mathspec` package，在文内 `\setmathfont{...}` 是可以的（注意此时没有指定 Greek）。
 
-既然无法同时在一篇文档里面展现，那就多篇呗。因为 `article` 默认 A4 paper，也看过 `geometry`，似乎也只提供常见的 paper 大小，不能像 `standalone` 环境那样，然而直接使用 `standalone` 又不可行，似乎它只适用于 tikz。于是便想到 crop pdf，这个 latex 本身有提供命令 `pdfcrop`，查看其帮助文档不能用 `man`，而是用 `texdoc`，从文档本身了解到 `--help` 可以看帮助文档。参数 `--bbox` 可以指定裁剪区域，而这个参数定义又是来自于 ghostscript 的，所以预先需要了解[这些参数是怎么定义的](https://stackoverflow.com/questions/6250064/ghostscript-boundingbox-values)，
+既然无法同时在一篇文档里面展现，那就多篇呗。因为 `article` 默认 A4 paper，也看过 `geometry`，似乎也只提供常见的 paper 大小，不能像 `standalone` 环境那样，然而直接使用 `standalone` 又不可行，似乎它只适用于 tikz。于是便想到 crop pdf。
+
+这篇回答[Command line tool to crop PDF files](https://askubuntu.com/questions/124692/command-line-tool-to-crop-pdf-files) 提到， latex 本身有提供命令 `pdfcrop`，查看其帮助文档不能用 `man`，而是用 `texdoc`，从文档本身了解到 `--help` 可以看帮助文档。参数 `--bbox` 可以指定裁剪区域，而这个参数定义又是来自于 ghostscript 的，所以预先需要了解[这些参数是怎么定义的](https://stackoverflow.com/questions/6250064/ghostscript-boundingbox-values)，
 
 ```bash
 $ gs -sDEVICE=bbox vargreek.pdf 

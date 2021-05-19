@@ -37,10 +37,13 @@
 ## Basic 
 
 - `\\`, `\newline`, `\tabularnewline` [:material-stack-overflow:](https://tex.stackexchange.com/questions/78796/difference-between-and-tabularnewline): when writing a table, the first one can be confused, while the second one ends the line in a cell, and the latter ends the rows of the table. A good side is that when writing tex using julia, `raw"\command"` does not need to escape `\`, but it is still required to use `raw"\\\\"` to represent `\\`.
+- `%` at the end of lines: since `%` starts a comment that goes to the end of the line, then the normal effect is that it does not insert the space (or a `par`) from the newline. It would be necessary when creating multiple figures horizontally using `subfigure` environment. [An real example](https://github.com/szcf-weiya/Cell-Video/blob/ec3c2f9c9c76df46f099948435e473992212e171/report/technical-report2.tex#L1314). More details can be found in [:material-stack-overflow:What is the use of percent signs (%) at the end of lines?](https://tex.stackexchange.com/questions/7453/what-is-the-use-of-percent-signs-at-the-end-of-lines-why-is-my-macro-creat)
 
 ## Fonts
 
-### Some nice font family
+- [Overleaf: Font sizes, families, and styles](https://www.overleaf.com/learn/latex/Font_sizes,_families,_and_styles)
+
+### some nice font family
 
 refer to [Suggest a “nice” font family for my basic LaTeX template (text and math)](https://tex.stackexchange.com/a/59706)
 

@@ -1,3 +1,7 @@
+## 2021.05.19
+
+- Financial **anomalies (anomaly, 异常，反常，不规则)** are contingent on being unknown.
+
 ## 2021.05.18
 
 - I'm a laundry **virgin (处女)**.

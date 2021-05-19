@@ -1173,3 +1173,30 @@ otherwise， create a `.desktop` file. More details refer to [How to pin Eclipse
 
 1. choose LPD/LPR Host or Printer
 2. set host as hpm605dn1.sta.cuhk.edu.hk
+
+## MD5
+
+```bash
+~$ printf "hello\n" | md5sum
+b1946ac92492d2347c6235b4d2611184  -
+~$ printf "hello" | md5sum
+5d41402abc4b2a76b9719d911017c592  -
+~$ echo -n "hello" | md5sum
+5d41402abc4b2a76b9719d911017c592  -
+~$ echo "hello" | md5sum
+b1946ac92492d2347c6235b4d2611184  -
+```
+
+where `-n` does not output the trailing newline `\n`, but 
+
+```bash
+~$ echo -n "hello\n" | md5sum
+20e2ad363e7486d9351ee2ea407e3200  -
+~$ echo -n "hello\n"
+hello\n~$
+```
+
+other materals releated to MD5
+
+- [三分钟学习 MD5](https://zhuanlan.zhihu.com/p/26592209)
+- [为什么现在网上有很多软件可以破解MD5，但MD5还是很流行？](https://www.zhihu.com/question/22311285/answer/20960705)
