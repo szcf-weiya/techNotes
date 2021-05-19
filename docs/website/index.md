@@ -291,6 +291,103 @@ Step 3 不需要重新下载了，直接把 aws 服务器中的文件夹复制�
 
 这时另外一个问题出现了，现在虽然可以访问 `login.php`，但是也报出上文中出现过的 `should match predefined callback URI` 的问题，因为此时实际上是通过 ngrok 的域名访问的，所以直接的访问便是在 disqus application 后台更改 callback URI。
 
+### 20210518: 短暂迁移至本地 docker
+
+因为今天办公室临时停电，为了不影响评论系统，于是将其短暂迁移至本地。虽然直接在本地装 apache2 + php 也是可行的，但是为了避免潜在对其它程序造成的影响，遂决定使用 docker。
+
+一开始使用 `alexcheng/apache2-php7`。步骤如下：
+
+#### Step 0: 提前备份
+
+提前从 WSL 中备份出 `/var/www/disqus-php-api` 文件夹至本地 `/media/weiya/PSSD/disqus20210518/`，注意仍保留文件夹 `disqus-php-api`
+
+#### Step 1: 启动 docker
+
+```bash
+$ docker run --name apache2php7 -p 10080:80 -v /media/weiya/PSSD/disqus20210518/:/var/www/disqus/ alexcheng/apache2-php7
+```
+
+此时运行日志文件直接输出到了终端
+
+#### Step 2: 进入 docker 进行配置
+
+```bash
+$ docker exec -it apache2php7 bash
+```
+
+修改 `/etc/apache2/apache2.conf` 配置文件，将 
+
+```bash
+DocumentRoot /var/www/html
+```
+
+改至
+
+```bash
+DocumentRoot /var/www/disqus
+```
+
+此时应该能够在本地浏览器中访问 `http://127.0.0.1:10080/disqus-php-api/api/login.php`，当然忽略 `should match predefined callback URI` 的问题。
+
+#### Step 3: 外网访问
+
+首先下载 ngrok，然后启动并运行 `./ngrok http 10080`。
+
+然后在阿里云 CDN 管理平台上设置修改源站信息及回源 Host 为 ngrok 分配的域名。
+
+此时评论系统无论在内地还是境外都可以正常加载。
+
+#### Step 4: 测试评论
+
+评论可以正常发出，但是没有收到邮件，一度怀疑是 php 发送邮件的模块出问题了，而且因为此 docker image 的特殊设置，
+
+```bash
+$ cat /etc/apache2/apache2.conf
+...
+ErrorLog /proc/self/fd/2
+...
+CustomLog /proc/self/fd/1 combined
+```
+
+其中 `/proc/self/fd/2` 类似 `>&2`，详见 [What's the difference between “>&1” and “>/proc/self/fd/1” redirection?](https://unix.stackexchange.com/questions/295883/whats-the-difference-between-1-and-proc-self-fd-1-redirection)，即便修改为
+
+```bash
+ErrorLog ${APACHE_LOG_DIR}/error.log
+```
+
+被记录的 error log 也只是下面这种无关痛痒的记录，
+
+```bash
+[Tue May 18 08:46:56.532391 2021] [mpm_prefork:notice] [pid 7777] AH00163: Apache/2.4.18 (Ubuntu) PHP/7.1.11 configured -- resuming normal operations 
+[Tue May 18 08:46:56.532422 2021] [core:notice] [pid 7777] AH00094: Command line: '/usr/sbin/apache2'
+```
+
+详细解释见 [Apache is OK, but what is this in error.log - [mpm_prefork:notice]?](https://serverfault.com/questions/607873/apache-is-ok-but-what-is-this-in-error-log-mpm-preforknotice)
+
+没有头绪，索性重新换了 docker image，[nimmis/apache-php7](https://hub.docker.com/r/nimmis/apache-php7)，然后重新走一遍上述步骤，这个完全就是子系统的 apache2，没发现有特意更高的设置，所以更加熟悉，比如在禁止目录访问时，需要修改
+
+```diff
+<Directory /var/www/>
+-​     Options Indexes FollowSymLinks
++​     Options FollowSymLinks
+​     AllowOverride None
+​     Require all granted
+​</Directory>
+```
+
+而且此时 `error.log` 可以记录 php 中的输出了。后来就在 php 文件中添加输出语句
+
+```bash
+file_put_contents('php://stderr', print_r($_POST, TRUE));
+```
+
+进行 debug。不过后来才发现邮件系统本身仍是正常的，只是因为此前一开始都是在 disqus 后台进行回复，而非在具体页面上回复，前者并不通过此转发系统，故没有收到邮件。
+
+经过这一次折腾，也熟悉了下邮件提醒机制，主要有一下几点
+
+- 后台暂存数据形式为 `md5(name+email): real_email`，注意此处 `email` 实际上是从 Disqus 请求返回值，即类似 `s****@gmail.com` 的形式，并不是全明文 `real_email`
+- 父评论返回时间戳 `time` 为其 code，而子评论返回父评论的 `md5(name+email)`，因而可以找到暂存的邮箱进行提醒
+
 ## 博客中插入网易云音乐
 
 这个很容易实现，只需要在网易云中搜索要插入的音乐，然后点击“生成外链播放器”，将iframe代码插入博客的相应位置。
