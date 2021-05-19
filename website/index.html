@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/website/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
     
     
       
@@ -869,6 +869,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#jekyll_1" class="md-nav__link">
+    jekyll中的相对路径
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1001,13 +1008,6 @@
         <li class="md-nav__item">
   <a href="#nginx" class="md-nav__link">
     nginx虚拟主机配置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jekyll_1" class="md-nav__link">
-    jekyll中的相对路径
   </a>
   
 </li>
@@ -1670,6 +1670,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#jekyll_1" class="md-nav__link">
+    jekyll中的相对路径
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1802,13 +1809,6 @@
         <li class="md-nav__item">
   <a href="#nginx" class="md-nav__link">
     nginx虚拟主机配置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jekyll_1" class="md-nav__link">
-    jekyll中的相对路径
   </a>
   
 </li>
@@ -2008,6 +2008,8 @@ source: <a href="https://jekyllrb.com/docs/plugins/installation/">Plugins on Git
 <li>use travis or <a href="https://jekyllrb.com/docs/continuous-integration/github-actions/">github actions</a>.</li>
 </ul>
 <p>refer to <a href="https://stackoverflow.com/questions/28249255/how-do-i-configure-github-to-use-non-supported-jekyll-site-plugins">How do I configure GitHub to use non-supported Jekyll site plugins?</a></p>
+<h3 id="jekyll_1">jekyll中的相对路径<a class="headerlink" href="#jekyll_1" title="Permanent link">&para;</a></h3>
+<p>参考<a href="https://ricostacruz.com/til/relative-paths-in-jekyll">Relative paths in Jekyll</a></p>
 <h2 id="disqus">设置 Disqus<a class="headerlink" href="#disqus" title="Permanent link">&para;</a></h2>
 <p><a href="https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html">https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html</a></p>
 <p><a href="https://help.disqus.com/customer/en/portal/articles/912627-domain-migration-tool">迁移disqus讨论</a></p>
@@ -2218,6 +2220,8 @@ CustomLog /proc/self/fd/1 combined
 <li>后台暂存数据形式为 <code>md5(name+email): real_email</code>，注意此处 <code>email</code> 实际上是从 Disqus 请求返回值，即类似 <code>s****@gmail.com</code> 的形式，并不是全明文 <code>real_email</code></li>
 <li>父评论返回时间戳 <code>time</code> 为其 code，而子评论返回父评论的 <code>md5(name+email)</code>，因而可以找到暂存的邮箱进行提醒</li>
 </ul>
+<h4 id="login">login?<a class="headerlink" href="#login" title="Permanent link">&para;</a></h4>
+<p>另外，<code>login.php</code> 似乎用不上，所以 callback url 似乎无需修改。之前是直接用 ngrok 访问的域名，试图换成 <code>api.hohoweiya.xyz</code> 后，仍然报出 Invalid Request: should match predefined callback URI。但是换个角度，登录在内地本身就不可行，因为最终还是要 call back 到 disqus（内地无法访问）。如果用户已经翻墙，则直接呈现的是 disqus 原生窗口，登录也不在话下。所以此转发系统主要服务于匿名（指未登录，但仍记录了名字与邮箱）评论。</p>
 <h2 id="_3">博客中插入网易云音乐<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>这个很容易实现，只需要在网易云中搜索要插入的音乐，然后点击“生成外链播放器”，将iframe代码插入博客的相应位置。</p>
 <p>比如，我想在<a href="">不愿沉默如谜</a>插入容祖儿的<a href="http://music.163.com/#/song?id=522631413">重生</a>。点击页面中的“生成外链播放器”，将iframe代码放进原md文件中。但一开始有问题，iframe被当成普通的md文本。在<a href="https://stackoverflow.com/questions/30233461/jekyll-raw-html-in-post">Jekyll raw HTML in post</a>中找到了答案。</p>
@@ -2229,8 +2233,6 @@ CustomLog /proc/self/fd/1 combined
 <h2 id="nginx">nginx虚拟主机配置<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-14-04-lts">How To Set Up Nginx Server Blocks (Virtual Hosts) on Ubuntu 14.04 LTS</a></p>
 <p>实现将本站用webhooks将其更新至阿里云服务器上，这与eslcn是同一个服务器，所以通过建立虚拟主机实现。</p>
-<h2 id="jekyll_1">jekyll中的相对路径<a class="headerlink" href="#jekyll_1" title="Permanent link">&para;</a></h2>
-<p>参考<a href="https://ricostacruz.com/til/relative-paths-in-jekyll">Relative paths in Jekyll</a></p>
 <h2 id="url-uri">URL 和 URI<a class="headerlink" href="#url-uri" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://www.zhihu.com/question/19557151">URL 和 URI 有什么不同? - 知乎</a></p>
 <p>引用个人觉得简洁明了的回答</p>
@@ -2602,10 +2604,10 @@ ERROR:  While executing gem ... (Errno::EACCES)
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       

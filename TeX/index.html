@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/TeX/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
     
     
       
@@ -835,7 +835,7 @@
         
           <li class="md-nav__item">
   <a href="#some-nice-font-family" class="md-nav__link">
-    Some nice font family
+    some nice font family
   </a>
   
 </li>
@@ -1880,7 +1880,7 @@
         
           <li class="md-nav__item">
   <a href="#some-nice-font-family" class="md-nav__link">
-    Some nice font family
+    some nice font family
   </a>
   
 </li>
@@ -2371,9 +2371,13 @@
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>\\</code>, <code>\newline</code>, <code>\tabularnewline</code> <a href="https://tex.stackexchange.com/questions/78796/difference-between-and-tabularnewline"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59z"/></svg></span></a>: when writing a table, the first one can be confused, while the second one ends the line in a cell, and the latter ends the rows of the table. A good side is that when writing tex using julia, <code>raw"\command"</code> does not need to escape <code>\</code>, but it is still required to use <code>raw"\\\\"</code> to represent <code>\\</code>.</li>
+<li><code>%</code> at the end of lines: since <code>%</code> starts a comment that goes to the end of the line, then the normal effect is that it does not insert the space (or a <code>par</code>) from the newline. It would be necessary when creating multiple figures horizontally using <code>subfigure</code> environment. <a href="https://github.com/szcf-weiya/Cell-Video/blob/ec3c2f9c9c76df46f099948435e473992212e171/report/technical-report2.tex#L1314">An real example</a>. More details can be found in <a href="https://tex.stackexchange.com/questions/7453/what-is-the-use-of-percent-signs-at-the-end-of-lines-why-is-my-macro-creat"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59z"/></svg></span>What is the use of percent signs (%) at the end of lines?</a></li>
 </ul>
 <h2 id="fonts">Fonts<a class="headerlink" href="#fonts" title="Permanent link">&para;</a></h2>
-<h3 id="some-nice-font-family">Some nice font family<a class="headerlink" href="#some-nice-font-family" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.overleaf.com/learn/latex/Font_sizes,_families,_and_styles">Overleaf: Font sizes, families, and styles</a></li>
+</ul>
+<h3 id="some-nice-font-family">some nice font family<a class="headerlink" href="#some-nice-font-family" title="Permanent link">&para;</a></h3>
 <p>refer to <a href="https://tex.stackexchange.com/a/59706">Suggest a “nice” font family for my basic LaTeX template (text and math)</a></p>
 <p>and currently I prefer to <code>newpxtext</code> and <code>newpxmath</code>.</p>
 <h3 id="missing-font">missing font<a class="headerlink" href="#missing-font" title="Permanent link">&para;</a></h3>
@@ -2988,10 +2992,10 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
