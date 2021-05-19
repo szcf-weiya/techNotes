@@ -979,6 +979,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#20210518-docker" class="md-nav__link">
+    20210518: 短暂迁移至本地 docker
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1773,6 +1780,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#20210518-docker" class="md-nav__link">
+    20210518: 短暂迁移至本地 docker
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2148,6 +2162,62 @@ sudo apt-get install php7.2-curl
 <p>所以回源 Host 应当设置为 ngrok 分配的域名。</p>
 <p>其实仔细想想，也挺好理解，如果在一台已知域名的服务器上使用 virtual host，配置文件中写的 <code>ServerName</code> 其实是为了通过域名来索引到该 virtual host，但是现在我真正的服务器并没有公网 ip 或者域名，只是通过 ngrok 来转发，所以如果仍将 <code>hohoweiya</code> 的域名作为回源 Host，则是试图在 ngrok 的服务器上找名为 <code>xxx.hohoweiya.xyz</code> 的 virtual host。其实隐约觉得这个也可以实现，感觉还是一个端口转发的问题，因为前面发现似乎只有 https 时不行。</p>
 <p>这时另外一个问题出现了，现在虽然可以访问 <code>login.php</code>，但是也报出上文中出现过的 <code>should match predefined callback URI</code> 的问题，因为此时实际上是通过 ngrok 的域名访问的，所以直接的访问便是在 disqus application 后台更改 callback URI。</p>
+<h3 id="20210518-docker">20210518: 短暂迁移至本地 docker<a class="headerlink" href="#20210518-docker" title="Permanent link">&para;</a></h3>
+<p>因为今天办公室临时停电，为了不影响评论系统，于是将其短暂迁移至本地。虽然直接在本地装 apache2 + php 也是可行的，但是为了避免潜在对其它程序造成的影响，遂决定使用 docker。</p>
+<p>一开始使用 <code>alexcheng/apache2-php7</code>。步骤如下：</p>
+<h4 id="step-0">Step 0: 提前备份<a class="headerlink" href="#step-0" title="Permanent link">&para;</a></h4>
+<p>提前从 WSL 中备份出 <code>/var/www/disqus-php-api</code> 文件夹至本地 <code>/media/weiya/PSSD/disqus20210518/</code>，注意仍保留文件夹 <code>disqus-php-api</code></p>
+<h4 id="step-1-docker">Step 1: 启动 docker<a class="headerlink" href="#step-1-docker" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>$ docker run --name apache2php7 -p <span class="m">10080</span>:80 -v /media/weiya/PSSD/disqus20210518/:/var/www/disqus/ alexcheng/apache2-php7
+</code></pre></div>
+<p>此时运行日志文件直接输出到了终端</p>
+<h4 id="step-2-docker">Step 2: 进入 docker 进行配置<a class="headerlink" href="#step-2-docker" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>$ docker <span class="nb">exec</span> -it apache2php7 bash
+</code></pre></div>
+<p>修改 <code>/etc/apache2/apache2.conf</code> 配置文件，将 </p>
+<div class="highlight"><pre><span></span><code>DocumentRoot /var/www/html
+</code></pre></div>
+<p>改至</p>
+<div class="highlight"><pre><span></span><code>DocumentRoot /var/www/disqus
+</code></pre></div>
+<p>此时应该能够在本地浏览器中访问 <code>http://127.0.0.1:10080/disqus-php-api/api/login.php</code>，当然忽略 <code>should match predefined callback URI</code> 的问题。</p>
+<h4 id="step-3">Step 3: 外网访问<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h4>
+<p>首先下载 ngrok，然后启动并运行 <code>./ngrok http 10080</code>。</p>
+<p>然后在阿里云 CDN 管理平台上设置修改源站信息及回源 Host 为 ngrok 分配的域名。</p>
+<p>此时评论系统无论在内地还是境外都可以正常加载。</p>
+<h4 id="step-4">Step 4: 测试评论<a class="headerlink" href="#step-4" title="Permanent link">&para;</a></h4>
+<p>评论可以正常发出，但是没有收到邮件，一度怀疑是 php 发送邮件的模块出问题了，而且因为此 docker image 的特殊设置，</p>
+<div class="highlight"><pre><span></span><code>$ cat /etc/apache2/apache2.conf
+...
+ErrorLog /proc/self/fd/2
+...
+CustomLog /proc/self/fd/1 combined
+</code></pre></div>
+<p>其中 <code>/proc/self/fd/2</code> 类似 <code>&gt;&amp;2</code>，详见 <a href="https://unix.stackexchange.com/questions/295883/whats-the-difference-between-1-and-proc-self-fd-1-redirection">What&rsquo;s the difference between “&gt;&amp;1” and “&gt;/proc/self/fd/1” redirection?</a>，即便修改为</p>
+<div class="highlight"><pre><span></span><code>ErrorLog <span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/error.log
+</code></pre></div>
+<p>被记录的 error log 也只是下面这种无关痛痒的记录，</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>Tue May <span class="m">18</span> <span class="m">08</span>:46:56.532391 <span class="m">2021</span><span class="o">]</span> <span class="o">[</span>mpm_prefork:notice<span class="o">]</span> <span class="o">[</span>pid <span class="m">7777</span><span class="o">]</span> AH00163: Apache/2.4.18 <span class="o">(</span>Ubuntu<span class="o">)</span> PHP/7.1.11 configured -- resuming normal operations 
+<span class="o">[</span>Tue May <span class="m">18</span> <span class="m">08</span>:46:56.532422 <span class="m">2021</span><span class="o">]</span> <span class="o">[</span>core:notice<span class="o">]</span> <span class="o">[</span>pid <span class="m">7777</span><span class="o">]</span> AH00094: Command line: <span class="s1">&#39;/usr/sbin/apache2&#39;</span>
+</code></pre></div>
+<p>详细解释见 <a href="https://serverfault.com/questions/607873/apache-is-ok-but-what-is-this-in-error-log-mpm-preforknotice">Apache is OK, but what is this in error.log - [mpm_prefork:notice]?</a></p>
+<p>没有头绪，索性重新换了 docker image，<a href="https://hub.docker.com/r/nimmis/apache-php7">nimmis/apache-php7</a>，然后重新走一遍上述步骤，这个完全就是子系统的 apache2，没发现有特意更高的设置，所以更加熟悉，比如在禁止目录访问时，需要修改</p>
+<div class="highlight"><pre><span></span><code>&lt;Directory /var/www/&gt;
+<span class="gd">-​     Options Indexes FollowSymLinks</span>
+<span class="gi">+​     Options FollowSymLinks</span>
+​     AllowOverride None
+​     Require all granted
+​&lt;/Directory&gt;
+</code></pre></div>
+<p>而且此时 <code>error.log</code> 可以记录 php 中的输出了。后来就在 php 文件中添加输出语句</p>
+<div class="highlight"><pre><span></span><code>file_put_contents<span class="o">(</span><span class="s1">&#39;php://stderr&#39;</span>, print_r<span class="o">(</span><span class="nv">$_POST</span>, TRUE<span class="o">))</span><span class="p">;</span>
+</code></pre></div>
+<p>进行 debug。不过后来才发现邮件系统本身仍是正常的，只是因为此前一开始都是在 disqus 后台进行回复，而非在具体页面上回复，前者并不通过此转发系统，故没有收到邮件。</p>
+<p>经过这一次折腾，也熟悉了下邮件提醒机制，主要有一下几点</p>
+<ul>
+<li>后台暂存数据形式为 <code>md5(name+email): real_email</code>，注意此处 <code>email</code> 实际上是从 Disqus 请求返回值，即类似 <code>s****@gmail.com</code> 的形式，并不是全明文 <code>real_email</code></li>
+<li>父评论返回时间戳 <code>time</code> 为其 code，而子评论返回父评论的 <code>md5(name+email)</code>，因而可以找到暂存的邮箱进行提醒</li>
+</ul>
 <h2 id="_3">博客中插入网易云音乐<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>这个很容易实现，只需要在网易云中搜索要插入的音乐，然后点击“生成外链播放器”，将iframe代码插入博客的相应位置。</p>
 <p>比如，我想在<a href="">不愿沉默如谜</a>插入容祖儿的<a href="http://music.163.com/#/song?id=522631413">重生</a>。点击页面中的“生成外链播放器”，将iframe代码放进原md文件中。但一开始有问题，iframe被当成普通的md文本。在<a href="https://stackoverflow.com/questions/30233461/jekyll-raw-html-in-post">Jekyll raw HTML in post</a>中找到了答案。</p>
