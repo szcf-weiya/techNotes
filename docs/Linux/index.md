@@ -1200,3 +1200,14 @@ other materals releated to MD5
 
 - [三分钟学习 MD5](https://zhuanlan.zhihu.com/p/26592209)
 - [为什么现在网上有很多软件可以破解MD5，但MD5还是很流行？](https://www.zhihu.com/question/22311285/answer/20960705)
+
+## You have new mail
+
+Here is a message when I login in to the Office PC,
+
+```bash
+You have new mail.
+Last login: Thu May 20 13:29:14 2021 from 127.0.0.1
+```
+
+Refer to [“You have mail” – How to Read Mail in Linux Command Line](https://devanswers.co/you-have-mail-how-to-read-mail-in-ubuntu), the message is stored in the spool file, which is located at `/var/mail/$(whoami)`. The I found that this is a failed email when I wrote the mail notification script when there are new error message in `/var/log/apache2/error.log`.

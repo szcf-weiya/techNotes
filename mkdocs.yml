@@ -42,6 +42,7 @@ nav:
         - VarGreek: TeX/vargreek.md
       - Web:
         - Website: website/index.md
+        - Disqus: website/disqus.md
         - CSS: website/css.md
         - JS: js/index.md
         - PHP: PHP/index.md

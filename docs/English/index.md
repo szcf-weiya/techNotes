@@ -1,3 +1,7 @@
+## 2021.05.20
+
+- **Bravo (喝彩，叫好)** on the hot **nanny (保姆)**!
+
 ## 2021.05.19
 
 - Financial **anomalies (anomaly, 异常，反常，不规则)** are contingent on being unknown.
