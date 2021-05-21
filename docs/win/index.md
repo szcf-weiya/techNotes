@@ -65,3 +65,11 @@ refer to [Can't save pdf document](https://forums.adobe.com/thread/2318474)
 
 办公室电脑经常弹出需要更新，即便不是自动更新，但是每次弹出总让人担心会不会下次它自动重启进行更新了，于是索性禁掉它，参考 [如何关闭Windows10的自动更新？](https://zhuanlan.zhihu.com/p/38070514) 中的第一种方法，不过需要以管理员运行。
 
+## 截屏软件
+
+系统自带的 snipping tool 不能自动保存，这也遭到其它用户的吐槽，如
+
+- [Q&A 1](https://answers.microsoft.com/en-us/windows/forum/apps_windows_10-winapps-appscat_productivity/snip-sketch-auto-save-to-specified-location/0a1c1765-11cd-4a7a-8e5e-136909eb7061)
+- [Q&A 2](https://answers.microsoft.com/zh-hans/windows/forum/windows_10-other_settings/%E8%AF%B7%E9%97%AEwin10%E6%88%AA%E5%9B%BE%E5%B7%A5/ce9f1e4d-9e51-4ad3-bc64-7e72c77c78fc)
+
+上述第二个回答中有人推荐了 [snippaste](https://zh.snipaste.com/)。

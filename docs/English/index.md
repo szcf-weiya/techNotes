@@ -1,3 +1,7 @@
+## 2021.05.21
+
+- Love is sweet as summer showers, love is **wondrous (奇异的，美好的)** work of art, but your love is like a giant **pigeon (鸽子)** **crapping (排泄)** on my heart.
+
 ## 2021.05.20
 
 - **Bravo (喝彩，叫好)** on the hot **nanny (保姆)**!
@@ -2945,7 +2949,6 @@ letter back
 4. trunk
 5. stand alone, hierarchy
 6. corvid, corvidae, raven, jay, crow, magpie
-7. pigeon
 8. spontaneously
 9. entail
 10. It is important because it sets animals with a sense of self apart from those without a sense of self.
