@@ -1,3 +1,7 @@
+## 2021.05.22
+
+- It's the **Rolls-Royce (劳斯莱斯)** of wheelchairs. This is like you're almost glad to be **handicapped (残疾人)**.
+
 ## 2021.05.21
 
 - Love is sweet as summer showers, love is **wondrous (奇异的，美好的)** work of art, but your love is like a giant **pigeon (鸽子)** **crapping (排泄)** on my heart.
