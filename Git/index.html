@@ -1420,6 +1420,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    公开私有仓库的部分代码
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2111,6 +2118,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    公开私有仓库的部分代码
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2207,6 +2221,13 @@ git checkout -b BRANCH_NAME REMOTE_BRANCH
 git checkout BRANCH_NAME
 </code></pre></div>
 <h2 id="branch-branch">BRANCH: <code>branch</code><a class="headerlink" href="#branch-branch" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># list branch</span>
+$ git branch
+<span class="c1"># create a new branch</span>
+$ git branch <span class="o">[</span>branch_name<span class="o">]</span>
+<span class="c1"># switch branch</span>
+$ git checkout <span class="o">[</span>branch_name<span class="o">]</span>
+</code></pre></div>
 <h3 id="delete-branches">delete branches<a class="headerlink" href="#delete-branches" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">## Delete a remote branch</span>
 $ git push origin --delete &lt;branch&gt; <span class="c1"># Git version 1.7.0 or newer</span>
@@ -2587,6 +2608,20 @@ git push origin :refs/tags/v1.0
 </code></pre></div>
 <p>参考 <a href="https://unix.stackexchange.com/questions/44266/how-to-colorize-output-of-git">How to colorize output of git?</a></p>
 <p>顺带发现，如果在 markdown 中复制 git diff 的 output，可以使用 <code>diff</code> 的代码块，会将更改的部分高亮出来。</p>
+<h2 id="_4">公开私有仓库的部分代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>可能的解决方案：</p>
+<ul>
+<li>新建一个 branch，以备公开<ul>
+<li>public branch on private repo? <a href="https://github.com/dear-github/dear-github/issues/160">a discussion</a></li>
+<li>手动移动</li>
+<li>如果只有小部分的代码需要公开，则这样在新 branch 上面需要删掉过多无关的文件夹。</li>
+</ul>
+</li>
+<li>以 release 形式发布，并不创建新仓库<ul>
+<li>通过脚本打包需要公开的代码</li>
+</ul>
+</li>
+</ul>
                 
               
               

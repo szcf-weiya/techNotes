@@ -363,14 +363,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#shell_2" class="md-nav__link">
-    shell字符串
+  <a href="#string" class="md-nav__link">
+    String
   </a>
+  
+    <nav class="md-nav" aria-label="String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strip-first-2-characters" class="md-nav__link">
+    strip first 2 characters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strip-from-left-or-right" class="md-nav__link">
+    strip from left or right
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-last-character" class="md-nav__link">
+    remove last character
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace-character" class="md-nav__link">
+    replace character
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-value" class="md-nav__link">
+    default value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#shell_3" class="md-nav__link">
+  <a href="#shell_2" class="md-nav__link">
     shell数组
   </a>
   
@@ -493,13 +534,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#strip-first-2-character-from-a-string" class="md-nav__link">
-    strip first 2 character from a string
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#select-the-first-field" class="md-nav__link">
     select the first field
   </a>
@@ -605,13 +639,6 @@
         <li class="md-nav__item">
   <a href="#compare-two-blocks-in-a-txt-file" class="md-nav__link">
     compare two blocks in a txt file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-value" class="md-nav__link">
-    default value
   </a>
   
 </li>
@@ -1637,14 +1664,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#shell_2" class="md-nav__link">
-    shell字符串
+  <a href="#string" class="md-nav__link">
+    String
   </a>
+  
+    <nav class="md-nav" aria-label="String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strip-first-2-characters" class="md-nav__link">
+    strip first 2 characters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strip-from-left-or-right" class="md-nav__link">
+    strip from left or right
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-last-character" class="md-nav__link">
+    remove last character
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace-character" class="md-nav__link">
+    replace character
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-value" class="md-nav__link">
+    default value
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#shell_3" class="md-nav__link">
+  <a href="#shell_2" class="md-nav__link">
     shell数组
   </a>
   
@@ -1767,13 +1835,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#strip-first-2-character-from-a-string" class="md-nav__link">
-    strip first 2 character from a string
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#select-the-first-field" class="md-nav__link">
     select the first field
   </a>
@@ -1884,13 +1945,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-value" class="md-nav__link">
-    default value
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     ||
   </a>
@@ -1966,14 +2020,63 @@ $ sh ./sumbit_job.sh
     <span class="nb">echo</span> <span class="nv">$i</span>
 <span class="k">done</span>
 </code></pre></div>
-<h2 id="shell_2">shell字符串<a class="headerlink" href="#shell_2" title="Permanent link">&para;</a></h2>
+<h2 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h2>
 <ol>
 <li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
 <li>单引号字串中不能出现单引号（对单引号使用转义符后也不行）。</li>
 <li>双引号里可以有变量</li>
 <li>双引号里可以出现转义字符</li>
 </ol>
-<h2 id="shell_3">shell数组<a class="headerlink" href="#shell_3" title="Permanent link">&para;</a></h2>
+<h3 id="strip-first-2-characters">strip first 2 characters<a class="headerlink" href="#strip-first-2-characters" title="Permanent link">&para;</a></h3>
+<p>simplest way:</p>
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span>
+</code></pre></div>
+<p>some alternatives refer to <a href="https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed">How can I strip first X characters from string using sed?</a>, or <a href="https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash">Remove first character of a string in Bash</a></p>
+<p>a real application in my project:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">list</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="k">for</span> nc <span class="k">in</span> <span class="o">{</span><span class="m">2</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+  <span class="k">for</span> nf <span class="k">in</span> <span class="m">5</span> <span class="m">10</span> <span class="m">15</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nv">list</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$list</span><span class="s2">,acc-</span><span class="nv">$nc</span><span class="s2">-</span><span class="nv">$nf</span><span class="s2">&quot;</span>
+    <span class="c1">#https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash</span>
+    <span class="nb">echo</span> <span class="si">${</span><span class="nv">list</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span>
+  <span class="k">done</span>
+<span class="k">done</span>
+</code></pre></div>
+<h3 id="strip-from-left-or-right">strip from left or right<a class="headerlink" href="#strip-from-left-or-right" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 从左最大化匹配字符 `y`，然后截掉左边内容</span>
+$ <span class="nv">var</span><span class="o">=</span><span class="s2">&quot;xxyyzz&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">##*y</span><span class="si">}</span>
+zz
+<span class="c1"># 从左匹配第一个字符 `y`</span>
+$ <span class="nv">var</span><span class="o">=</span><span class="s2">&quot;xxyyzz&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">#*y</span><span class="si">}</span>
+yzz
+<span class="c1"># 从右最大化匹配字符 `y`，然后截掉右边内容</span>
+$ <span class="nv">var</span><span class="o">=</span><span class="s2">&quot;xxyyzz&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">%%y*</span><span class="si">}</span>
+xx
+<span class="c1"># 从右匹配第一个字符 `y`</span>
+$ <span class="nv">var</span><span class="o">=</span><span class="s2">&quot;xxyyzz&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">%y*</span><span class="si">}</span>
+xxy
+</code></pre></div>
+<h3 id="remove-last-character">remove last character<a class="headerlink" href="#remove-last-character" title="Permanent link">&para;</a></h3>
+<p>with <code>bash 4.2+</code>,</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nv">var</span><span class="o">=</span><span class="s2">&quot;xxyyzz&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">:</span><span class="k">:-</span><span class="nv">1</span><span class="si">}</span>
+xxyyz
+</code></pre></div>
+<p>refer to <a href="https://unix.stackexchange.com/questions/144298/delete-the-last-character-of-a-string-using-string-manipulation-in-shell-script">Delete the last character of a string using string manipulation in shell script</a></p>
+<h3 id="replace-character">replace character<a class="headerlink" href="#replace-character" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ <span class="nv">var</span><span class="o">=</span><span class="s2">&quot;xxyyzz&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">var</span><span class="p">/xx/XX</span><span class="si">}</span>
+XXyyzz
+</code></pre></div>
+<h3 id="default-value">default value<a class="headerlink" href="#default-value" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>${1:-foo}</code>: if parameter is unset or <strong>null</strong>, the expansion of word is substituted.</li>
+<li><code>${1-foo}</code>: only substitute if parameter is unset.</li>
+</ul>
+<p>refer to <a href="https://stackoverflow.com/questions/9332802/how-to-write-a-bash-script-that-takes-optional-input-arguments">How to write a bash script that takes optional input arguments?</a></p>
+<p>applications:</p>
+<ul>
+<li><a href="https://github.com/szcf-weiya/Clouds/blob/b8abfc63078ac53e817c2a3d7f3e92d44cf47f61/run_test_local.sh#L5-L9">Clouds/run_test_local.sh</a></li>
+</ul>
+<h2 id="shell_2">shell数组<a class="headerlink" href="#shell_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>在Shell中，用括号来表示数组，数组元素用“空格”符号分割开。</li>
 </ol>
@@ -2229,11 +2332,6 @@ $ bc <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;scale=2; 39/10&q
 <li><code>-maxdepth 1</code> disables recursive, and only to find files in the current directory</li>
 </ul>
 <p>We also can add <code>-exec ls</code> to get the output of <code>ls</code>, and change the regex type by <code>-regextype egrep</code>.</p>
-<h2 id="strip-first-2-character-from-a-string">strip first 2 character from a string<a class="headerlink" href="#strip-first-2-character-from-a-string" title="Permanent link">&para;</a></h2>
-<p>simplest way:</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span>
-</code></pre></div>
-<p>some alternatives refer to <a href="https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed">How can I strip first X characters from string using sed?</a>, or <a href="https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash">Remove first character of a string in Bash</a></p>
 <h2 id="select-the-first-field">select the first field<a class="headerlink" href="#select-the-first-field" title="Permanent link">&para;</a></h2>
 <p>given filename <code>file.txt</code>, want to get a string <code>file_test</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="k">$(</span>cut -d<span class="s1">&#39;.&#39;</span> -f1 <span class="o">&lt;&lt;&lt;</span> <span class="nv">$1</span><span class="k">)</span>_test
@@ -2401,16 +2499,6 @@ $ <span class="nb">echo</span> $<span class="o">[</span> <span class="m">1</span
 <p>for example, compare L82-95 with L108-123,</p>
 <div class="highlight"><pre><span></span><code>$ diff &lt;<span class="o">(</span>sed -n <span class="s2">&quot;82,95p&quot;</span> measure.jl<span class="o">)</span> &lt;<span class="o">(</span>sed -n <span class="s2">&quot;108,123p&quot;</span> measure.jl<span class="o">)</span>
 </code></pre></div>
-<h2 id="default-value">default value<a class="headerlink" href="#default-value" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>${1:-foo}</code>: if parameter is unset or <strong>null</strong>, the expansion of word is substituted.</li>
-<li><code>${1-foo}</code>: only substitute if parameter is unset.</li>
-</ul>
-<p>refer to <a href="https://stackoverflow.com/questions/9332802/how-to-write-a-bash-script-that-takes-optional-input-arguments">How to write a bash script that takes optional input arguments?</a></p>
-<p>applications:</p>
-<ul>
-<li><a href="https://github.com/szcf-weiya/Clouds/blob/b8abfc63078ac53e817c2a3d7f3e92d44cf47f61/run_test_local.sh#L5-L9">Clouds/run_test_local.sh</a></li>
-</ul>
 <h2 id="_7"><code>||</code><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>No <code>try...catch</code> in bash script, but <code>command1 || command2</code> can achieve similar functionality, if <code>command1</code> fails then <code>command2</code> runs.</p>
 <p>An application is to create a new tmux session if there is no such a tmux session,</p>

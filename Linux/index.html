@@ -513,6 +513,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#install-fira" class="md-nav__link">
+    Install Fira
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -652,13 +659,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#remove-the-first-character" class="md-nav__link">
-    remove the first character
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#modify-pdf-metadata-via-pdftk" class="md-nav__link">
     modify pdf metadata via pdftk
   </a>
@@ -696,13 +696,6 @@
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     共享打印机
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-fira" class="md-nav__link">
-    Install Fira
   </a>
   
 </li>
@@ -2134,6 +2127,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#install-fira" class="md-nav__link">
+    Install Fira
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2273,13 +2273,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#remove-the-first-character" class="md-nav__link">
-    remove the first character
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#modify-pdf-metadata-via-pdftk" class="md-nav__link">
     modify pdf metadata via pdftk
   </a>
@@ -2317,13 +2310,6 @@
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
     共享打印机
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-fira" class="md-nav__link">
-    Install Fira
   </a>
   
 </li>
@@ -2790,6 +2776,10 @@ $ fc-list --format<span class="o">=</span><span class="s1">&#39;%{family[0]}\n&#
 新宋体
 </code></pre></div>
 <p>refer to <a href="https://www.geeksforgeeks.org/fc-list-command-in-linux-with-examples/">fc-list command in Linux with examples</a></p>
+<h3 id="install-fira">Install Fira<a class="headerlink" href="#install-fira" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/matze/mtheme/issues/280">Fira for Metropolis theme</a></p>
+<p><a href="https://stevescott.ca/2016-10-20-installing-the-fira-font-in-ubuntu.html">Install the Fira Font in Ubuntu</a></p>
+<p>and some introduction: <a href="https://zhuanlan.zhihu.com/p/65362086">Fira Code —— 专为编程而生的字体</a></p>
 <h2 id="_3">命令最后的&amp;<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/13338870/what-does-at-the-end-of-a-linux-command-mean">What does “&amp;” at the end of a linux command mean?</a></p>
 <p>表示在后台运行。</p>
@@ -2924,19 +2914,6 @@ python -m ipykernel install --user --name thisenv
 <div class="highlight"><pre><span></span><code>ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
 alias psaux=&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#39;
 </code></pre></div>
-<h2 id="remove-the-first-character">remove the first character<a class="headerlink" href="#remove-the-first-character" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nv">list</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
-<span class="k">for</span> nc <span class="k">in</span> <span class="o">{</span><span class="m">2</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
-  <span class="k">for</span> nf <span class="k">in</span> <span class="m">5</span> <span class="m">10</span> <span class="m">15</span><span class="p">;</span> <span class="k">do</span>
-    <span class="nv">list</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$list</span><span class="s2">,acc-</span><span class="nv">$nc</span><span class="s2">-</span><span class="nv">$nf</span><span class="s2">&quot;</span>
-    <span class="c1">#https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash</span>
-    <span class="nb">echo</span> <span class="si">${</span><span class="nv">list</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span>
-  <span class="k">done</span>
-<span class="k">done</span>
-</code></pre></div>
-<p>refer to <a href="https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash">Remove first character of a string in Bash</a></p>
 <h2 id="modify-pdf-metadata-via-pdftk">modify pdf metadata via <code>pdftk</code><a class="headerlink" href="#modify-pdf-metadata-via-pdftk" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>pdftk input.pdf dump_data output metadata
 <span class="c1"># edit metadata</span>
@@ -2983,10 +2960,6 @@ pdftk input.pdf update_info metadata output output.pdf
 <li>打开防火墙，<code>sudo ufw allow 631/tcp</code></li>
 </ol>
 <p>在同一局域网内的 Windows 设备中，添加该打印机，地址即为Ubuntu中浏览器的地址，注意将 <code>127.0.0.1</code> 换成局域网 ip。如果顺利的话，添加后需要添加驱动程序，可以在 HP 官网下载。</p>
-<h2 id="install-fira">Install Fira<a class="headerlink" href="#install-fira" title="Permanent link">&para;</a></h2>
-<p><a href="https://github.com/matze/mtheme/issues/280">Fira for Metropolis theme</a></p>
-<p><a href="https://stevescott.ca/2016-10-20-installing-the-fira-font-in-ubuntu.html">Install the Fira Font in Ubuntu</a></p>
-<p>and some introduction: <a href="https://zhuanlan.zhihu.com/p/65362086">Fira Code —— 专为编程而生的字体</a></p>
 <h2 id="proxy-for-apt">proxy for apt<a class="headerlink" href="#proxy-for-apt" title="Permanent link">&para;</a></h2>
 <p><code>proxychains</code> seems not work well before <code>sudo</code> or after <code>sudo</code>, and I dont want to add a system proxy permanently, then I found a temporary way,</p>
 <div class="highlight"><pre><span></span><code>sudo <span class="nv">http_proxy</span><span class="o">=</span><span class="s1">&#39;http://user:pass@proxy.example.com:8080/&#39;</span> apt-get install package-name
