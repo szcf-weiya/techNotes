@@ -118,6 +118,15 @@ git checkout BRANCH_NAME
 
 ## BRANCH: `branch`
 
+```bash
+# list branch
+$ git branch
+# create a new branch
+$ git branch [branch_name]
+# switch branch
+$ git checkout [branch_name]
+```
+
 ### delete branches
 
 ```bash
@@ -695,3 +704,13 @@ git push origin :refs/tags/v1.0
 
 
 
+## 公开私有仓库的部分代码
+
+可能的解决方案：
+
+- 新建一个 branch，以备公开
+	- public branch on private repo? [a discussion](https://github.com/dear-github/dear-github/issues/160)
+	- 手动移动
+	- 如果只有小部分的代码需要公开，则这样在新 branch 上面需要删掉过多无关的文件夹。
+- 以 release 形式发布，并不创建新仓库
+	- 通过脚本打包需要公开的代码

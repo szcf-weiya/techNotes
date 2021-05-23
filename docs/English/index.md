@@ -1,3 +1,8 @@
+## 2021.05.23
+
+- pop science: 大众科学
+- We'll want to train it, visualize the losses, any other metrics (e.g. accuracy), model predictions, and perform a series of **ablation experiments (消融实验)** with explicit hypotheses along the way. [:link:](https://www.zhihu.com/question/291655038)
+
 ## 2021.05.22
 
 - It's the **Rolls-Royce (劳斯莱斯)** of wheelchairs. This is like you're almost glad to be **handicapped (残疾人)**.
@@ -603,6 +608,7 @@
 ## 2021.01.25
 
 - The **flashy (炫耀技艺的)** **crooks (骗子)** get the headlines, but the bigger problem in everyday routine bad science done by non-crooks.
+    - a **crooked (弯曲的)** mile
 
 ## 2021.01.24
 
@@ -1460,7 +1466,8 @@
 - all I did was **codify (v. organize into a code or system, such as a body of law)** it. [reference: "did was + v." structure](https://ell.stackexchange.com/questions/18326/explanation-of-did-was-verb-structure)
 - it has leather seats
 - everything we do, we believe in challenging the **status quo**.
-- They're eminently qualified to make flat-screen TVs.
+- They're **eminently (非常，特别)** qualified to make flat-screen TVs.
+    - eminence: 鼎鼎大名，受尊敬的人
 - It's all grounded in the tenets of biology.
 - Our newest brain, our Homo sapien brain, our **neocortex (新（大脑）皮质，新皮层)**, corresponds with the "what" level.
     - cortex: （脑或其他器官的）皮层

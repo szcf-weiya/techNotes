@@ -63,12 +63,82 @@ for i in $(seq 5 5 50); do
 done
 ```
 
-## shell字符串
+## String
 
 1. 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；
 2. 单引号字串中不能出现单引号（对单引号使用转义符后也不行）。
 3. 双引号里可以有变量
 4. 双引号里可以出现转义字符
+
+### strip first 2 characters
+
+simplest way:
+
+```shell
+${string:2}
+```
+
+some alternatives refer to [How can I strip first X characters from string using sed?](https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed), or [Remove first character of a string in Bash](https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash)
+
+a real application in my project:
+
+```bash
+list=""
+for nc in {2..10}; do
+  for nf in 5 10 15; do
+    list="$list,acc-$nc-$nf"
+    #https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash
+    echo ${list:1}
+  done
+done
+```
+
+### strip from left or right
+
+```bash
+# 从左最大化匹配字符 `y`，然后截掉左边内容
+$ var="xxyyzz" && echo ${var##*y}
+zz
+# 从左匹配第一个字符 `y`
+$ var="xxyyzz" && echo ${var#*y}
+yzz
+# 从右最大化匹配字符 `y`，然后截掉右边内容
+$ var="xxyyzz" && echo ${var%%y*}
+xx
+# 从右匹配第一个字符 `y`
+$ var="xxyyzz" && echo ${var%y*}
+xxy
+```
+
+### remove last character
+
+with `bash 4.2+`,
+
+```bash
+$ var="xxyyzz" && echo ${var::-1}
+xxyyz
+```
+
+refer to [Delete the last character of a string using string manipulation in shell script](https://unix.stackexchange.com/questions/144298/delete-the-last-character-of-a-string-using-string-manipulation-in-shell-script)
+
+### replace character
+
+```bash
+$ var="xxyyzz" && echo ${var/xx/XX}
+XXyyzz
+```
+
+### default value
+
+- `${1:-foo}`: if parameter is unset or **null**, the expansion of word is substituted.
+- `${1-foo}`: only substitute if parameter is unset.
+
+refer to [How to write a bash script that takes optional input arguments?](https://stackoverflow.com/questions/9332802/how-to-write-a-bash-script-that-takes-optional-input-arguments)
+
+applications:
+
+- [Clouds/run_test_local.sh](https://github.com/szcf-weiya/Clouds/blob/b8abfc63078ac53e817c2a3d7f3e92d44cf47f61/run_test_local.sh#L5-L9)
+
 
 ## shell数组
 
@@ -415,16 +485,6 @@ where
 
 We also can add `-exec ls` to get the output of `ls`, and change the regex type by `-regextype egrep`.
 
-## strip first 2 character from a string
-
-simplest way:
-
-```shell
-${string:2}
-```
-
-some alternatives refer to [How can I strip first X characters from string using sed?](https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed), or [Remove first character of a string in Bash](https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash)
-
 ## select the first field
 
 given filename `file.txt`, want to get a string `file_test`.
@@ -674,17 +734,6 @@ for example, compare L82-95 with L108-123,
 ```bash
 $ diff <(sed -n "82,95p" measure.jl) <(sed -n "108,123p" measure.jl)
 ```
-
-## default value
-
-- `${1:-foo}`: if parameter is unset or **null**, the expansion of word is substituted.
-- `${1-foo}`: only substitute if parameter is unset.
-
-refer to [How to write a bash script that takes optional input arguments?](https://stackoverflow.com/questions/9332802/how-to-write-a-bash-script-that-takes-optional-input-arguments)
-
-applications:
-
-- [Clouds/run_test_local.sh](https://github.com/szcf-weiya/Clouds/blob/b8abfc63078ac53e817c2a3d7f3e92d44cf47f61/run_test_local.sh#L5-L9)
 
 ## `||`
 

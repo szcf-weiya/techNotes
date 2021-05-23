@@ -456,6 +456,14 @@ $ fc-list --format='%{family[0]}\n' :lang=zh | sort | uniq
 
 refer to [fc-list command in Linux with examples](https://www.geeksforgeeks.org/fc-list-command-in-linux-with-examples/)
 
+### Install Fira
+
+[Fira for Metropolis theme](https://github.com/matze/mtheme/issues/280)
+
+[Install the Fira Font in Ubuntu](https://stevescott.ca/2016-10-20-installing-the-fira-font-in-ubuntu.html)
+
+and some introduction: [Fira Code —— 专为编程而生的字体](https://zhuanlan.zhihu.com/p/65362086)
+
 ## 命令最后的&
 
 参考[What does “&” at the end of a linux command mean?](https://stackoverflow.com/questions/13338870/what-does-at-the-end-of-a-linux-command-mean)
@@ -676,26 +684,6 @@ ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
 alias psaux='ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm'
 ```
 
-## remove the first character
-
-```bash
-${string:1}
-```
-
-```bash
-list=""
-for nc in {2..10}; do
-  for nf in 5 10 15; do
-    list="$list,acc-$nc-$nf"
-    #https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash
-    echo ${list:1}
-  done
-done
-```
-
-refer to [Remove first character of a string in Bash](https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash)
-
-
 ## modify pdf metadata via `pdftk`
 
 ```bash
@@ -760,17 +748,6 @@ refer to [Different CUDA versions shown by nvcc and NVIDIA-smi](https://stackove
 3. 打开防火墙，`sudo ufw allow 631/tcp`
 
 在同一局域网内的 Windows 设备中，添加该打印机，地址即为Ubuntu中浏览器的地址，注意将 `127.0.0.1` 换成局域网 ip。如果顺利的话，添加后需要添加驱动程序，可以在 HP 官网下载。
-
-## Install Fira
-
-[Fira for Metropolis theme](https://github.com/matze/mtheme/issues/280)
-
-[Install the Fira Font in Ubuntu](https://stevescott.ca/2016-10-20-installing-the-fira-font-in-ubuntu.html)
-
-and some introduction: [Fira Code —— 专为编程而生的字体](https://zhuanlan.zhihu.com/p/65362086)
-
-
-
 
 ## proxy for apt
 
