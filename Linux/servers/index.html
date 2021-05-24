@@ -395,13 +395,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#aws" class="md-nav__link">
-    AWS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#nginx-failed" class="md-nav__link">
     腾讯云服务器nginx failed
   </a>
@@ -1609,13 +1602,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#aws" class="md-nav__link">
-    AWS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#nginx-failed" class="md-nav__link">
     腾讯云服务器nginx failed
   </a>
@@ -1741,6 +1727,12 @@
 <li>公钥授权文件(<code>~/.ssh/authorized_keys</code>)</li>
 </ul>
 <p>将登录端的 <code>id_rsa.pub</code> 内容复制到服务器端的 <code>authorized_keys</code> 文件中即可。</p>
+<p>对于 AWS，登录需要使用 <code>.pem</code> 文件，即</p>
+<div class="highlight"><pre><span></span><code>$ ssh -i YourKey.pem user@host
+</code></pre></div>
+<p>而复制文件则为</p>
+<div class="highlight"><pre><span></span><code>$ scp -i YourKey.pem YourFile user@host:~/YourFile
+</code></pre></div>
 <h3 id="two-consecutive-ssh">two consecutive ssh<a class="headerlink" href="#two-consecutive-ssh" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ ssh -t user@A ssh user@B
 </code></pre></div>
@@ -1942,27 +1934,6 @@ storage01:/chpc-users                     15T  <span class="m">6</span>.2T  <spa
 <p><a href="https://www.vultr.com/docs/how-to-manually-install-java-8-on-ubuntu-16-04">源码安装</a></p>
 <p>而且第一次听说 <a href="https://askubuntu.com/questions/233190/what-exactly-does-update-alternatives-do"><code>update-alternatives</code></a> 命令，有点类似更改默认程序的感觉。</p>
 <p>接着按照 <a href="https://spark.apache.org/docs/latest/">official documentation</a> 进行学习</p>
-<h2 id="aws">AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h2>
-<ol>
-<li>上传文件</li>
-</ol>
-<div class="highlight"><pre><span></span><code>scp -i MyKeyFile.pem FileToUpload.pdf ubuntu@ec2-123-123-123-123.compute-1.amazonaws.com:FileToUpload.pdf
-</code></pre></div>
-<p>refer to <a href="https://stackoverflow.com/questions/10364950/uploading-files-on-amazon-ec2">Uploading files on Amazon EC2</a></p>
-<ol start="2">
-<li>mirror 镜像</li>
-</ol>
-<p>wget http://apache.mirrors.tds.net/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz</p>
-<ol start="3">
-<li>slave 结点连接不上 master</li>
-</ol>
-<div class="highlight"><pre><span></span><code>Caused by: java.io.IOException: Connecting to ×××× timed out (120000 ms)
-</code></pre></div>
-<p>安全组配置，后台允许 <code>7077</code> 端口 <code>In</code>，本来以为同在一个 VPC 不需要配置。</p>
-<ol start="4">
-<li>AWS 结点间免密登录</li>
-</ol>
-<p><a href="https://markobigdata.com/2018/04/29/passwordless-ssh-between-two-aws-instances/">Passwordless ssh between two AWS instances</a></p>
 <h2 id="nginx-failed">腾讯云服务器nginx failed<a class="headerlink" href="#nginx-failed" title="Permanent link">&para;</a></h2>
 <p>原因：80端口被占用
 解决方法：kill掉占用80端口的</p>
@@ -1978,7 +1949,7 @@ storage01:/chpc-users                     15T  <span class="m">6</span>.2T  <spa
 <div class="highlight"><pre><span></span><code>apt-get purge nginx nginx-common nginx-full
 apt-get install nginx
 </code></pre></div></p>
-<p>注意用purge不会保存配置文件，而remove会保存配置文件。</p>
+<p>注意用 purge 不会保存配置文件，而 remove 会保存配置文件。</p>
 <h2 id="centos-7">CentOS 7<a class="headerlink" href="#centos-7" title="Permanent link">&para;</a></h2>
 <p>想直接在服务器上用 Julia 的 PGFPlotsX 画图，因为默认会弹出画好的 pdf 图象，除非按照<a href="https://kristofferc.github.io/PGFPlotsX.jl/v0.2/man/save.html#REPL-1">官方教程</a>中的设置</p>
 <div class="highlight"><pre><span></span><code><span class="n">PGFPlotsX</span><span class="o">.</span><span class="n">enable_interactive</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span>
