@@ -26,6 +26,18 @@ ssh-keygen -t [rsa | ed25519 | ecdsa | dsa]
 
 将登录端的 `id_rsa.pub` 内容复制到服务器端的 `authorized_keys` 文件中即可。
 
+对于 AWS，登录需要使用 `.pem` 文件，即
+
+```bash
+$ ssh -i YourKey.pem user@host
+```
+
+而复制文件则为
+
+```bash
+$ scp -i YourKey.pem YourFile user@host:~/YourFile
+```
+
 ### two consecutive ssh
 
 ```bash
@@ -309,34 +321,6 @@ upgrade Java 7 to Java 8:
 
 接着按照 [official documentation](https://spark.apache.org/docs/latest/) 进行学习
 
-
-## AWS
-
-1. 上传文件
-
-```
-scp -i MyKeyFile.pem FileToUpload.pdf ubuntu@ec2-123-123-123-123.compute-1.amazonaws.com:FileToUpload.pdf
-```
-
-refer to [Uploading files on Amazon EC2](https://stackoverflow.com/questions/10364950/uploading-files-on-amazon-ec2)
-
-2. mirror 镜像
-
-wget http://apache.mirrors.tds.net/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz
-
-3. slave 结点连接不上 master
-
-```
-Caused by: java.io.IOException: Connecting to ×××× timed out (120000 ms)
-```
-
-安全组配置，后台允许 `7077` 端口 `In`，本来以为同在一个 VPC 不需要配置。
-
-4. AWS 结点间免密登录
-
-[Passwordless ssh between two AWS instances](https://markobigdata.com/2018/04/29/passwordless-ssh-between-two-aws-instances/)
-
-
 ## 腾讯云服务器nginx failed
 
 原因：80端口被占用
@@ -364,7 +348,7 @@ apt-get purge nginx nginx-common nginx-full
 apt-get install nginx
 ```
 
-注意用purge不会保存配置文件，而remove会保存配置文件。
+注意用 purge 不会保存配置文件，而 remove 会保存配置文件。
 
 ## CentOS 7
 

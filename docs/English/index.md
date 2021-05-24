@@ -1,3 +1,7 @@
+## 2021.05.24
+
+- Family is the **wellspring (源泉)** of your confidence.
+
 ## 2021.05.23
 
 - pop science: 大众科学
