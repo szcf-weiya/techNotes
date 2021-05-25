@@ -1113,9 +1113,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    String
+  </a>
+  
+    <nav class="md-nav" aria-label="String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#padding-zero-on-the-left" class="md-nav__link">
     padding zero on the left
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2352,9 +2365,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    String
+  </a>
+  
+    <nav class="md-nav" aria-label="String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#padding-zero-on-the-left" class="md-nav__link">
     padding zero on the left
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2486,7 +2512,24 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 <span class="o">&gt;</span> <span class="nf">apply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">sum</span><span class="p">)</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span>  <span class="m">1.4712202</span>  <span class="m">0.8858644</span> <span class="m">-2.1634828</span>  <span class="m">2.4833932</span>
 </code></pre></div>
-<p>这样交叉记忆，不知道效果会不会好点。</p>
+<p>而 Python 的行为与 Julia 类似，先按列求和，再按行求和，但注意其指标从 0 开始，</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">0.47982003</span><span class="p">,</span> <span class="mf">0.44339329</span><span class="p">,</span> <span class="mf">0.08865359</span><span class="p">,</span> <span class="mf">0.30770283</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.03171438</span><span class="p">,</span> <span class="mf">0.82452326</span><span class="p">,</span> <span class="mf">0.62909043</span><span class="p">,</span> <span class="mf">0.95733624</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.51522304</span><span class="p">,</span> <span class="mf">0.65602682</span><span class="p">,</span> <span class="mf">0.95936926</span><span class="p">,</span> <span class="mf">0.51930784</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">1.02675744</span><span class="p">,</span> <span class="mf">1.92394337</span><span class="p">,</span> <span class="mf">1.67711328</span><span class="p">,</span> <span class="mf">1.78434691</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">1.02675744</span><span class="p">,</span> <span class="mf">1.92394337</span><span class="p">,</span> <span class="mf">1.67711328</span><span class="p">,</span> <span class="mf">1.78434691</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">1.31956975</span><span class="p">,</span> <span class="mf">2.44266431</span><span class="p">,</span> <span class="mf">2.64992695</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">1.31956975</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">2.44266431</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">2.64992695</span><span class="p">]])</span>
+</code></pre></div>
+<p>另外，Julia 中维度默认不会退化，即对应 Python 中 <code>keepdims = False</code>.</p>
 <h3 id="array-in-functions">array in functions<a class="headerlink" href="#array-in-functions" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
            <span class="n">x</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
@@ -3233,11 +3276,21 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <span class="n">julia</span><span class="o">&gt;</span> <span class="n">c</span>
 <span class="mi">3</span>
 </code></pre></div>
-<h2 id="padding-zero-on-the-left">padding zero on the left<a class="headerlink" href="#padding-zero-on-the-left" title="Permanent link">&para;</a></h2>
+<h2 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h2>
+<h3 id="padding-zero-on-the-left">padding zero on the left<a class="headerlink" href="#padding-zero-on-the-left" title="Permanent link">&para;</a></h3>
 <p>For example, convert &ldquo;1&rdquo; to &ldquo;001&rdquo;,</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Julia</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">lpad</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span>
 <span class="s">&quot;001&quot;</span>
 </code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Python</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">03</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="s1">&#39;001&#39;</span>
+</code></pre></div>
+</div>
+</div>
 <h2 id="run-command-line">run command line<a class="headerlink" href="#run-command-line" title="Permanent link">&para;</a></h2>
 <p>For example, to combine different figures,</p>
 <div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="sb">`convert p1.png p2.png +append p12.png`</span><span class="p">)</span>

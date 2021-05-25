@@ -887,6 +887,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#interactive-mode" class="md-nav__link">
+    interactive mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#math-symbols" class="md-nav__link">
     math symbols
   </a>
@@ -1100,13 +1107,6 @@
         <li class="md-nav__item">
   <a href="#the-i-th-row-in-pandas" class="md-nav__link">
     the i-th row in pandas
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interactive-mode" class="md-nav__link">
-    interactive mode
   </a>
   
 </li>
@@ -2316,6 +2316,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#interactive-mode" class="md-nav__link">
+    interactive mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#math-symbols" class="md-nav__link">
     math symbols
   </a>
@@ -2529,13 +2536,6 @@
         <li class="md-nav__item">
   <a href="#the-i-th-row-in-pandas" class="md-nav__link">
     the i-th row in pandas
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interactive-mode" class="md-nav__link">
-    interactive mode
   </a>
   
 </li>
@@ -2996,6 +2996,17 @@ $ python -m ipykernel install --user --name myenv --display-name <span class="s2
 </code></pre></div>
 <h3 id="scatter-size">scatter size<a class="headerlink" href="#scatter-size" title="Permanent link">&para;</a></h3>
 <p>the size is defined by the area, <a href="https://stackoverflow.com/questions/14827650/pyplot-scatter-plot-marker-size">pyplot scatter plot marker size</a></p>
+<h3 id="interactive-mode">interactive mode<a class="headerlink" href="#interactive-mode" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://stackoverflow.com/questions/47273107/how-to-pause-a-for-loop-and-waiting-for-user-input-matplotlib">How to pause a for loop and waiting for user input matplotlib</a></li>
+<li><a href="https://matplotlib.org/3.1.1/users/event_handling.html">Event handling and picking</a></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Related projects:
+- <a href="https://github.com/szcf-weiya/Cell-Video/blob/4721ef10b6f77f59dbed639c6806faa1b644ba06/models/BF_single.py#L166-L167">pause for stopping and resuming to plot</a>
+- <a href="https://bitbucket.org/weiya/fruitcup/src/3880402ca0ef892eaca6856a93ee026676e80fab/src/fruitcup_solution_wlj/FruitCup.py#lines-347:348">plot every X seconds</a></p>
+</div>
 <h3 id="math-symbols">math symbols<a class="headerlink" href="#math-symbols" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\lambda&quot;</span><span class="p">)</span>
 </code></pre></div>
@@ -3186,9 +3197,6 @@ pip install PACKAGE -U
 <h2 id="the-i-th-row-in-pandas">the <code>i</code>-th row in pandas<a class="headerlink" href="#the-i-th-row-in-pandas" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">df_test</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
-<h2 id="interactive-mode">interactive mode<a class="headerlink" href="#interactive-mode" title="Permanent link">&para;</a></h2>
-<p>https://stackoverflow.com/questions/47273107/how-to-pause-a-for-loop-and-waiting-for-user-input-matplotlib</p>
-<p>https://matplotlib.org/3.1.1/users/event_handling.html</p>
 <h2 id="key-in-sorted"><code>key</code> in <code>sorted</code><a class="headerlink" href="#key-in-sorted" title="Permanent link">&para;</a></h2>
 <p>As said in <a href="https://docs.python.org/3/howto/sorting.html">Key Functions &ndash; Sorting HOW TO</a>, the <code>key</code> function is to specify a function to be called on each list element prior to making comparisons.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">sorted</span><span class="p">(</span><span class="s2">&quot;This is a test string from Andrew&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>

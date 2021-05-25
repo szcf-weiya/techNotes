@@ -576,16 +576,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#if" class="md-nav__link">
-    if
+  <a href="#if-statement" class="md-nav__link">
+    if statement
   </a>
   
-    <nav class="md-nav" aria-label="if">
+    <nav class="md-nav" aria-label="if statement">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    文件测试
+  <a href="#test-string" class="md-nav__link">
+    test string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-file" class="md-nav__link">
+    test file
   </a>
   
 </li>
@@ -604,7 +611,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     $[
   </a>
   
@@ -644,8 +651,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     ||
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace-a-multiple-line-string" class="md-nav__link">
+    Replace a multiple line string
   </a>
   
 </li>
@@ -1877,16 +1891,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#if" class="md-nav__link">
-    if
+  <a href="#if-statement" class="md-nav__link">
+    if statement
   </a>
   
-    <nav class="md-nav" aria-label="if">
+    <nav class="md-nav" aria-label="if statement">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    文件测试
+  <a href="#test-string" class="md-nav__link">
+    test string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-file" class="md-nav__link">
+    test file
   </a>
   
 </li>
@@ -1905,7 +1926,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     $[
   </a>
   
@@ -1945,8 +1966,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     ||
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace-a-multiple-line-string" class="md-nav__link">
+    Replace a multiple line string
   </a>
   
 </li>
@@ -2419,7 +2447,7 @@ $ <span class="nv">var</span><span class="o">=</span>/dir1/dir2/file.tar.gz <spa
 </code></pre></div>
 <p>其中 <code>*</code> 表示要删除的内容，另外还需要一个字符表示截断点，注意到与 <code>#</code> 使用时截断字符在右边，而与 <code>%</code> 使用时截断字符在左边。</p>
 <p>参考 <a href="http://blog.csdn.net/universe_hao/article/details/52640321">shell 提取文件名和目录名</a></p>
-<h2 id="if">if<a class="headerlink" href="#if" title="Permanent link">&para;</a></h2>
+<h2 id="if-statement"><code>if</code> statement<a class="headerlink" href="#if-statement" title="Permanent link">&para;</a></h2>
 <p>We can add <code>&amp;&gt; /dev/null</code> to hidden the output information in the condition of <code>if</code>. For example, check if user exists,</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1"># refer to https://blog.51cto.com/64314491/1629175</span>
@@ -2429,7 +2457,24 @@ $ <span class="nv">var</span><span class="o">=</span>/dir1/dir2/file.tar.gz <spa
     <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2"> is not exists&quot;</span>
 <span class="k">fi</span>
 </code></pre></div>
-<h3 id="_5">文件测试<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="test-string">test string<a class="headerlink" href="#test-string" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>=~</code>: 判断左边的字符串是否能被右边的模式所匹配</li>
+<li><code>-z $A</code>: 为空则为真，否则为假</li>
+<li><code>-n $A</code>: 为空则为假，否则为真</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nv">Shell</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;^</span><span class="nv">$1</span><span class="s2">:&quot;</span> /etc/passwd <span class="p">|</span> cut -d: -f7<span class="sb">`</span>
+<span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$Shell</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;No such user&quot;</span>
+<span class="k">fi</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="nv">$Shell</span> <span class="o">=</span>~ sh$ <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Login user&quot;</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Not a login user&quot;</span>
+<span class="k">fi</span>
+</code></pre></div>
+<h3 id="test-file">test file<a class="headerlink" href="#test-file" title="Permanent link">&para;</a></h3>
 <p>格式为 <code>[ EXPR FILE ]</code>，其中常见 <code>EXPR</code> 有</p>
 <ul>
 <li><code>-f</code>: 测试其是否为普通文件，即 <code>ls -l</code> 时文件类型为 <code>-</code> 的文件</li>
@@ -2464,7 +2509,7 @@ $ <span class="nv">var</span><span class="o">=</span>/dir1/dir2/file.tar.gz <spa
 <li><a href="https://unix.stackexchange.com/questions/99185/what-do-square-brackets-mean-without-the-if-on-the-left">What do square brackets mean without the “if” on the left?</a></li>
 <li><a href="https://stackoverflow.com/questions/669452/is-double-square-brackets-preferable-over-single-square-brackets-in-ba">Is double square brackets preferable over single square brackets in Bash?</a></li>
 </ul>
-<h3 id="_6"><code>$[</code><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_5"><code>$[</code><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>Refer to <a href="https://unix.stackexchange.com/questions/209833/what-does-a-dollar-sign-followed-by-a-square-bracket-mean-in-bash">What does a dollar sign followed by a square bracket mean in bash?</a></p>
 <p>With <code>$</code>, <code>[</code> is also can be used for arithmetic expansion, such as</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> $<span class="o">[</span> <span class="nv">$RANDOM</span> % <span class="m">2</span> <span class="o">]</span>
@@ -2499,12 +2544,47 @@ $ <span class="nb">echo</span> $<span class="o">[</span> <span class="m">1</span
 <p>for example, compare L82-95 with L108-123,</p>
 <div class="highlight"><pre><span></span><code>$ diff &lt;<span class="o">(</span>sed -n <span class="s2">&quot;82,95p&quot;</span> measure.jl<span class="o">)</span> &lt;<span class="o">(</span>sed -n <span class="s2">&quot;108,123p&quot;</span> measure.jl<span class="o">)</span>
 </code></pre></div>
-<h2 id="_7"><code>||</code><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_6"><code>||</code><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>No <code>try...catch</code> in bash script, but <code>command1 || command2</code> can achieve similar functionality, if <code>command1</code> fails then <code>command2</code> runs.</p>
 <p>An application is to create a new tmux session if there is no such a tmux session,</p>
 <div class="highlight"><pre><span></span><code>t<span class="o">()</span> <span class="o">{</span> tmux a -t <span class="nv">$1</span> <span class="o">||</span> tmux new -s <span class="nv">$1</span><span class="p">;</span> <span class="o">}</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/22009364/is-there-a-try-catch-command-in-bash">Is there a TRY CATCH command in Bash</a></p>
+<h2 id="replace-a-multiple-line-string">Replace a multiple line string<a class="headerlink" href="#replace-a-multiple-line-string" title="Permanent link">&para;</a></h2>
+<!--
+![](https://img.shields.io/badge/-sed-brightgreen) ![](https://img.shields.io/badge/-perl-orange)
+-->
+
+<p><code>sed</code> is powerful for replace in one-line, but it would be much more complicated for multiple line string. </p>
+<p>An alternative is to use <code>perl</code>,</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">printf</span> <span class="s2">&quot;###BEGIN-EXCLUDE\nwww\n###END-EXCLUDE&quot;</span> <span class="p">|</span> perl -0777 -pe <span class="s2">&quot;s/###BEGIN-EXCLUDE(.*?)###END-EXCLUDE/xxx/igs&quot;</span>
+xxx
+</code></pre></div>
+<p>where</p>
+<ul>
+<li><code>-0777</code> causes Perl to slurp files whole, see <a href="https://perldoc.perl.org/perlrun">-0[octal/hexadecimal]</a> for more details</li>
+<li><code>-e commandline</code></li>
+<li><code>-p</code>: my understanding is something for printing, but the <a href="https://perldoc.perl.org/perlrun">official document</a> explain more </li>
+</ul>
+<p>For a file to be edited in-place, we add <code>-i</code>,</p>
+<div class="highlight"><pre><span></span><code>$ perl -0777 -i -pe <span class="s2">&quot;s/###BEGIN-EXCLUDE(.*?)###END-EXCLUDE//igs&quot;</span> test.txt
+</code></pre></div>
+<p>if we supply an extension such as <code>-i'.orig'</code>, then the old file would be backed up to <code>test.txt.orig</code>.</p>
+<p>Refer to <a href="https://unix.stackexchange.com/questions/26284/how-can-i-use-sed-to-replace-a-multi-line-string">How can I use sed to replace a multi-line string?</a></p>
+<p>Moreover, <code>.*?</code> is a non-greedy match, comparing to <code>.*</code>. </p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;s12tAs34t&quot;</span> <span class="p">|</span> perl -pe <span class="s2">&quot;s/s(.*?)t/xx/igs&quot;</span>
+xxAxx
+$ <span class="nb">echo</span> <span class="s2">&quot;s12tAs34t&quot;</span> <span class="p">|</span> perl -pe <span class="s2">&quot;s/s(.*)t/xx/igs&quot;</span>
+xx
+</code></pre></div>
+<p>Refer to <a href="https://docstore.mik.ua/orelly/perl/cookbook/ch06_16.htm">6.15. Greedy and Non-Greedy Matches docstore.mik.ua/orelly/perl/cookbook/ch06_16.htm</a> for details.</p>
+<p>By default, <code>grep</code> performs greedy match, adding option <code>-P</code> would enable Perl&rsquo;s non-greedy match.</p>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/119338519-adc55480-bcc2-11eb-9fac-bb32d2b9c72d.png" /></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>An real application: <a href="https://github.com/szcf-weiya/Cell-Video/blob/67fef1b7737e97631aa9568b000a8c61ef1590f4/report/update_bib.sh#L21">update_bib.sh</a></p>
+</div>
+<p>Refer to <a href="https://stackoverflow.com/questions/3027518/how-to-do-a-non-greedy-match-in-grep/3027524">How to do a non-greedy match in grep?</a></p>
                 
               
               
