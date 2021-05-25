@@ -615,7 +615,7 @@ $ var=/dir1/dir2/file.tar.gz && echo ${var%%.*}
 
 参考 [shell 提取文件名和目录名](http://blog.csdn.net/universe_hao/article/details/52640321)
 
-## if
+## `if` statement
 
 We can add `&> /dev/null` to hidden the output information in the condition of `if`. For example, check if user exists,
 
@@ -629,7 +629,17 @@ else
 fi
 ```
 
-### 文件测试
+### test string
+
+- `=~`: 判断左边的字符串是否能被右边的模式所匹配
+- `-z $A`: 为空则为真，否则为假
+- `-n $A`: 为空则为假，否则为真
+
+```bash
+--8<-- "docs/shell/if/if-sh.sh"
+```
+
+### test file
 
 格式为 `[ EXPR FILE ]`，其中常见 `EXPR` 有
 
@@ -746,3 +756,54 @@ t() { tmux a -t $1 || tmux new -s $1; }
 ```
 
 refer to [Is there a TRY CATCH command in Bash](https://stackoverflow.com/questions/22009364/is-there-a-try-catch-command-in-bash)
+
+## Replace a multiple line string 
+
+<!--
+![](https://img.shields.io/badge/-sed-brightgreen) ![](https://img.shields.io/badge/-perl-orange)
+-->
+
+`sed` is powerful for replace in one-line, but it would be much more complicated for multiple line string. 
+
+An alternative is to use `perl`,
+
+```bash
+$ printf "###BEGIN-EXCLUDE\nwww\n###END-EXCLUDE" | perl -0777 -pe "s/###BEGIN-EXCLUDE(.*?)###END-EXCLUDE/xxx/igs"
+xxx
+```
+
+where
+
+- `-0777` causes Perl to slurp files whole, see [-0[octal/hexadecimal]](https://perldoc.perl.org/perlrun) for more details
+- `-e commandline`
+- `-p`: my understanding is something for printing, but the [official document](https://perldoc.perl.org/perlrun) explain more 
+
+For a file to be edited in-place, we add `-i`,
+
+```bash
+$ perl -0777 -i -pe "s/###BEGIN-EXCLUDE(.*?)###END-EXCLUDE//igs" test.txt
+```
+
+if we supply an extension such as `-i'.orig'`, then the old file would be backed up to `test.txt.orig`.
+
+Refer to [How can I use sed to replace a multi-line string?](https://unix.stackexchange.com/questions/26284/how-can-i-use-sed-to-replace-a-multi-line-string)
+
+Moreover, `.*?` is a non-greedy match, comparing to `.*`. 
+
+```bash
+$ echo "s12tAs34t" | perl -pe "s/s(.*?)t/xx/igs"
+xxAxx
+$ echo "s12tAs34t" | perl -pe "s/s(.*)t/xx/igs"
+xx
+```
+
+Refer to [6.15. Greedy and Non-Greedy Matches docstore.mik.ua/orelly/perl/cookbook/ch06_16.htm](https://docstore.mik.ua/orelly/perl/cookbook/ch06_16.htm) for details.
+
+By default, `grep` performs greedy match, adding option `-P` would enable Perl's non-greedy match.
+
+![](https://user-images.githubusercontent.com/13688320/119338519-adc55480-bcc2-11eb-9fac-bb32d2b9c72d.png)
+
+!!! info
+	An real application: [update_bib.sh](https://github.com/szcf-weiya/Cell-Video/blob/67fef1b7737e97631aa9568b000a8c61ef1590f4/report/update_bib.sh#L21)
+
+Refer to [How to do a non-greedy match in grep?](https://stackoverflow.com/questions/3027518/how-to-do-a-non-greedy-match-in-grep/3027524)

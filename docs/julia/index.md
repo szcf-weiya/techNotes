@@ -132,7 +132,27 @@ julia> sum(a, dims=1)
 [1]  1.4712202  0.8858644 -2.1634828  2.4833932
 ```
 
-这样交叉记忆，不知道效果会不会好点。
+而 Python 的行为与 Julia 类似，先按列求和，再按行求和，但注意其指标从 0 开始，
+
+```python
+>>> a = np.random.rand(3, 4);
+>>> a
+array([[0.47982003, 0.44339329, 0.08865359, 0.30770283],
+       [0.03171438, 0.82452326, 0.62909043, 0.95733624],
+       [0.51522304, 0.65602682, 0.95936926, 0.51930784]])
+>>> np.sum(a, axis = 0)
+array([1.02675744, 1.92394337, 1.67711328, 1.78434691])
+>>> np.sum(a, axis = 0, keepdims = True)
+array([[1.02675744, 1.92394337, 1.67711328, 1.78434691]])
+>>> np.sum(a, axis = 1)
+array([1.31956975, 2.44266431, 2.64992695])
+>>> np.sum(a, axis = 1, keepdims = True)
+array([[1.31956975],
+       [2.44266431],
+       [2.64992695]])
+```
+
+另外，Julia 中维度默认不会退化，即对应 Python 中 `keepdims = False`.
 
 ### array in functions
 
@@ -1181,14 +1201,24 @@ julia> c
 3
 ```
 
-## padding zero on the left
+## String
+
+### padding zero on the left
 
 For example, convert "1" to "001",
 
-```julia
-julia> lpad(1, 3, '0')
-"001"
-```
+=== "Julia"
+    ```julia
+    julia> lpad(1, 3, '0')
+    "001"
+    ```
+
+=== "Python"
+    ```python
+    >>> a = 1
+    >>> f"{a:03}"
+    '001'
+    ```
 
 ## run command line
 

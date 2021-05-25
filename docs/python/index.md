@@ -537,6 +537,16 @@ plt.tight_layout(pad = 3.0)
 
 the size is defined by the area, [pyplot scatter plot marker size](https://stackoverflow.com/questions/14827650/pyplot-scatter-plot-marker-size)
 
+### interactive mode
+
+- [How to pause a for loop and waiting for user input matplotlib](https://stackoverflow.com/questions/47273107/how-to-pause-a-for-loop-and-waiting-for-user-input-matplotlib)
+- [Event handling and picking](https://matplotlib.org/3.1.1/users/event_handling.html)
+
+!!! info
+	Related projects:
+	- [pause for stopping and resuming to plot](https://github.com/szcf-weiya/Cell-Video/blob/4721ef10b6f77f59dbed639c6806faa1b644ba06/models/BF_single.py#L166-L167)
+	- [plot every X seconds](https://bitbucket.org/weiya/fruitcup/src/3880402ca0ef892eaca6856a93ee026676e80fab/src/fruitcup_solution_wlj/FruitCup.py#lines-347:348)
+
 ### math symbols
 
 ```python
@@ -812,12 +822,6 @@ refer to [First argument of sys.path.insert in python](https://stackoverflow.com
 ```python
 df_test.iloc[0]
 ```
-
-## interactive mode
-
-https://stackoverflow.com/questions/47273107/how-to-pause-a-for-loop-and-waiting-for-user-input-matplotlib
-
-https://matplotlib.org/3.1.1/users/event_handling.html
 
 ## `key` in `sorted`
 

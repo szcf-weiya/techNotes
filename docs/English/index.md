@@ -1,3 +1,7 @@
+## 2021.05.25
+
+- Automatic methods have to deal with **mitotic (有丝分裂的，间接核分裂的)** and **apoptotic (细胞凋亡)** events that affect cell lineages as cells move through their environment.
+
 ## 2021.05.24
 
 - Family is the **wellspring (源泉)** of your confidence.
