@@ -1,3 +1,12 @@
+## 2021.05.27
+
+- In statistical sciences from economics to medicine, including some parts of physics and chemistry, the **ubiquitous (无处不在的，普遍存在的)** "test" for "statistical significance" cannot, and will not, prove that a **Higgs boson ([希格斯玻色子](https://zh.wikipedia.org/wiki/%E5%B8%8C%E6%A0%BC%E6%96%AF%E7%8E%BB%E8%89%B2%E5%AD%90))** exists, any more than it can prove the reality of God, the existence of a good pain **pill (药丸)**, or the validity of **loose monetary policy (宽松货币政策)**. 
+- His pockets **bulge (膨胀，鼓起)** with papers and pencils.
+
+## 2021.05.26
+
+- The word “alumni” refers collectively to male and female graduates, or to a group of all-male graduates, and is plural. “Alumnae” refers to a group of women graduates and is plural. “Alumna” refers to a single female alum, and “alumnus” is a single male alum. The terms “alum” (singular, not gender specific) and “alums” (plural, not gender specific) are more informal and are acceptable, particularly when the gender is unknown. [:link:](https://www.bu.edu/brand/guidelines/editorial-style/alumni/)
+
 ## 2021.05.25
 
 - Automatic methods have to deal with **mitotic (有丝分裂的，间接核分裂的)** and **apoptotic (细胞凋亡)** events that affect cell lineages as cells move through their environment.
