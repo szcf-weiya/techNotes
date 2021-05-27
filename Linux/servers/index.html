@@ -381,6 +381,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#custom-commands-on-slurm-cluster" class="md-nav__link">
+    Custom Commands on Slurm Cluster
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Commands on Slurm Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fail-to-access" class="md-nav__link">
     fail to access ~
   </a>
@@ -1588,6 +1615,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#custom-commands-on-slurm-cluster" class="md-nav__link">
+    Custom Commands on Slurm Cluster
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Commands on Slurm Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fail-to-access" class="md-nav__link">
     fail to access ~
   </a>
@@ -1852,6 +1906,27 @@ julia -p <span class="nv">$np</span> run.jl <span class="nv">$nrep</span> <span 
 <div class="highlight"><pre><span></span><code>$ ./submit.sh <span class="m">100</span> stat <span class="m">4</span>
 </code></pre></div>
 <p>which is adopted from <a href="https://github.com/szcf-weiya/Cell-Video/blob/master/DP/parallel_oracle2.sh">my private project</a>.</p>
+<h2 id="custom-commands-on-slurm-cluster">Custom Commands on Slurm Cluster<a class="headerlink" href="#custom-commands-on-slurm-cluster" title="Permanent link">&para;</a></h2>
+<h3 id="aliases">aliases<a class="headerlink" href="#aliases" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># delete all jobs</span>
+<span class="nb">alias</span> <span class="nv">qdelall</span><span class="o">=</span><span class="s1">&#39;qstat | while read -a ADDR; do if [[ ${ADDR[0]} == +([0-9]) ]]; then qdel ${ADDR[0]}; fi ; done&#39;</span>
+<span class="c1"># list available cores</span>
+<span class="nb">alias</span> <span class="nv">sinfostat</span><span class="o">=</span><span class="s1">&#39;sinfo -o &quot;%N %C&quot; -p stat -N&#39;</span>
+<span class="c1"># list available gpu</span>
+<span class="nb">alias</span> <span class="nv">sinfogpu</span><span class="o">=</span><span class="s1">&#39;sinfo -O PartitionName,NodeList,Gres:25,GresUsed:25 | sed -n &quot;1p;/gpu[^:]/p&quot;&#39;</span>
+<span class="c1"># check disk quota</span>
+<span class="nb">alias</span> <span class="nv">myquota</span><span class="o">=</span><span class="s1">&#39;for i in s1155113972 Stat StatScratch; do lfs quota -gh $i /lustre; done&#39;</span>
+<span class="c1"># list jobs sorted by priority</span>
+<span class="nb">alias</span> <span class="nv">sacctchpc</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)&#39;</span>
+<span class="c1"># list jobs sorted by priority (only involved stat)</span>
+<span class="nb">alias</span> <span class="nv">sacctstat</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn) | sed -n &quot;1,2p;/stat/p&quot;&#39;</span>
+</code></pre></div>
+<h3 id="functions">functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">#request specified nodes in interactive mode</span>
+request_cn<span class="o">()</span> <span class="o">{</span> srun -p stat -q stat -w chpc-cn1<span class="nv">$1</span> --pty bash -i<span class="p">;</span> <span class="o">}</span>
+request_gpu<span class="o">()</span> <span class="o">{</span> srun -p stat -q stat --gres<span class="o">=</span>gpu:1 -w chpc-gpu01<span class="nv">$1</span> --pty bash -i<span class="p">;</span> <span class="o">}</span>
+request_gpu_chpc<span class="o">()</span> <span class="o">{</span> srun -p chpc --gres<span class="o">=</span>gpu:1 -w chpc-gpu<span class="nv">$1</span> --pty bash -i<span class="p">;</span> <span class="o">}</span>
+</code></pre></div>
 <h2 id="fail-to-access">fail to access <code>~</code><a class="headerlink" href="#fail-to-access" title="Permanent link">&para;</a></h2>
 <p>Z 在群里问道，他在服务器上提交 job 时，之前安装好的包不能使用。显然，很可能因为 <code>.libPaths()</code> 没有包含 <code>$HOME</code> 下的用户安装路径，但是他在登录结点上在 R 中运行 <code>.libPaths()</code>，一切正常。那么问题或许出在工作结点上，事实表明在该工作结点上采用以下任一种方式都能解决问题</p>
 <ul>

@@ -1512,7 +1512,7 @@ opencv-python             <span class="m">4</span>.2.0.34                 pypi_0
 <h2 id="read-image">Read Image<a class="headerlink" href="#read-image" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Adopted from <a href="">my project</a>.</p>
+<p>Adopted from <a href="https://github.com/szcf-weiya/CTCalgs/issues/1">my project</a>.</p>
 </div>
 <p>For a 16-bit TIFF images, the <a href="https://docs.opencv.org/master/d6/d87/imgcodecs_8hpp.html">mode</a> should be set as <code>IMREAD_ANYDEPTH</code> instead of <code>IMREAD_GRAYSCALE</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">im1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;example/three_cells.tif&quot;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_ANYDEPTH</span><span class="p">)</span>
@@ -1545,6 +1545,29 @@ opencv-python             <span class="m">4</span>.2.0.34                 pypi_0
 <p class="admonition-title">Warning</p>
 <p>The result returned by <code>np.unique</code> has been sorted, while Julia&rsquo;s <code>unique</code> does not.</p>
 </div>
+<p>As for Matlab, <code>imread</code> performs similarly as <code>io.imread</code>, returning the integer in <code>uint16</code> form,</p>
+<div class="highlight"><pre><span></span><code><span class="c">% original</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">oIm</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">imread</span><span class="p">(</span><span class="s">&quot;../Fluo-N2DH-SIM+/01/t000.tif&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">oIm</span><span class="p">)),</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">oIm</span><span class="p">))]</span><span class="w"></span>
+
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+
+<span class="w">  </span><span class="mi">1</span>×<span class="mi">2</span><span class="w"> </span><span class="nb">uint16</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="n">vector</span><span class="w"></span>
+
+<span class="w">   </span><span class="mi">314</span><span class="w">    </span><span class="mi">73</span><span class="w"></span>
+
+<span class="c">% convert to double</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">doIm</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">double</span><span class="p">(</span><span class="n">oIm</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span>^<span class="mi">16</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">255</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">doIm</span><span class="p">)),</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">doIm</span><span class="p">))]</span><span class="w"></span>
+
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+
+<span class="w">    </span><span class="mf">1.2218</span><span class="w">    </span><span class="mf">0.2840</span><span class="w"></span>
+
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">imshow</span><span class="p">(</span><span class="n">oIm</span><span class="p">)</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="nb">imshow</span><span class="p">(</span><span class="n">doIm</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/99756556-664de800-2b28-11eb-902f-5d2b0ffc14d6.png" /></p>
                 
               
               

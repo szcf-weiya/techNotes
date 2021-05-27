@@ -819,6 +819,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#which-vs-type" class="md-nav__link">
+    which vs type
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2433,6 +2440,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#which-vs-type" class="md-nav__link">
+    which vs type
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3269,6 +3283,24 @@ hello<span class="se">\n</span>~$
 Last login: Thu May <span class="m">20</span> <span class="m">13</span>:29:14 <span class="m">2021</span> from <span class="m">127</span>.0.0.1
 </code></pre></div>
 <p>Refer to <a href="https://devanswers.co/you-have-mail-how-to-read-mail-in-ubuntu">“You have mail” – How to Read Mail in Linux Command Line</a>, the message is stored in the spool file, which is located at <code>/var/mail/$(whoami)</code>. The I found that this is a failed email when I wrote the mail notification script when there are new error message in <code>/var/log/apache2/error.log</code>.</p>
+<h2 id="which-vs-type">which vs type<a class="headerlink" href="#which-vs-type" title="Permanent link">&para;</a></h2>
+<p>在 CentOS7 服务器上，</p>
+<div class="highlight"><pre><span></span><code>$ which -v
+GNU which v2.20, Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">1999</span> - <span class="m">2008</span> Carlo Wood.
+GNU which comes with ABSOLUTELY NO WARRANTY<span class="p">;</span>
+This program is free software<span class="p">;</span> your freedom to use, change
+and distribute this program is protected by the GPL.
+</code></pre></div>
+<p><code>which</code> 可以返回 alias 中的命令，而且更具体地，<code>man which</code> 显示可以通过选项 <code>--read-alias</code> 和 <code>--skip-alias</code> 来控制要不要包括 alias. </p>
+<p>而在本地 Ubuntu 18.04 机器上，不支持 <code>-v</code> 或 <code>--version</code> 来查看版本，而且 <code>man which</code> 也很简单，从中可以看出其大致版本信息，<code>29 Jun 2016</code>。</p>
+<p>那怎么显示 alias 呢，<a href="https://askubuntu.com/questions/102093/how-to-see-the-command-attached-to-a-bash-alias"><code>type</code> 可以解决这个问题</a>，注意查看其帮助文档需要用 <code>help</code> 而非 <code>man</code>。</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">type</span> scp_to_chpc 
+scp_to_chpc is a <span class="k">function</span>
+scp_to_chpc <span class="o">()</span> 
+<span class="o">{</span> 
+    scp -r <span class="nv">$1</span> user@host:~/<span class="nv">$2</span>
+<span class="o">}</span>
+</code></pre></div>
                 
               
               
