@@ -1188,3 +1188,30 @@ Last login: Thu May 20 13:29:14 2021 from 127.0.0.1
 ```
 
 Refer to [“You have mail” – How to Read Mail in Linux Command Line](https://devanswers.co/you-have-mail-how-to-read-mail-in-ubuntu), the message is stored in the spool file, which is located at `/var/mail/$(whoami)`. The I found that this is a failed email when I wrote the mail notification script when there are new error message in `/var/log/apache2/error.log`.
+
+## which vs type
+
+在 CentOS7 服务器上，
+
+```bash
+$ which -v
+GNU which v2.20, Copyright (C) 1999 - 2008 Carlo Wood.
+GNU which comes with ABSOLUTELY NO WARRANTY;
+This program is free software; your freedom to use, change
+and distribute this program is protected by the GPL.
+```
+
+`which` 可以返回 alias 中的命令，而且更具体地，`man which` 显示可以通过选项 `--read-alias` 和 `--skip-alias` 来控制要不要包括 alias. 
+
+而在本地 Ubuntu 18.04 机器上，不支持 `-v` 或 `--version` 来查看版本，而且 `man which` 也很简单，从中可以看出其大致版本信息，`29 Jun 2016`。
+
+那怎么显示 alias 呢，[`type` 可以解决这个问题](https://askubuntu.com/questions/102093/how-to-see-the-command-attached-to-a-bash-alias)，注意查看其帮助文档需要用 `help` 而非 `man`。
+
+```bash
+$ type scp_to_chpc 
+scp_to_chpc is a function
+scp_to_chpc () 
+{ 
+    scp -r $1 user@host:~/$2
+}
+```

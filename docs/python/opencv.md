@@ -83,7 +83,7 @@ PIL is the Python Imaging Library, and [Pillow](https://pillow.readthedocs.io/en
 ## Read Image
 
 !!! info
-    Adopted from [my project]().
+    Adopted from [my project](https://github.com/szcf-weiya/CTCalgs/issues/1).
 
 For a 16-bit TIFF images, the [mode](https://docs.opencv.org/master/d6/d87/imgcodecs_8hpp.html) should be set as `IMREAD_ANYDEPTH` instead of `IMREAD_GRAYSCALE`.
 
@@ -123,3 +123,31 @@ julia> display(MIME("text/plain"), sort(unique(im)))
 
 !!! warning
     The result returned by `np.unique` has been sorted, while Julia's `unique` does not.
+
+As for Matlab, `imread` performs similarly as `io.imread`, returning the integer in `uint16` form,
+
+```matlab
+% original
+>> oIm = imread("../Fluo-N2DH-SIM+/01/t000.tif")
+>> [max(max(oIm)), min(min(oIm))]
+
+ans =
+
+  1×2 uint16 row vector
+
+   314    73
+
+% convert to double
+>> doIm = double(oIm) / (2^16-1) * 255
+>> [max(max(doIm)), min(min(doIm))]
+
+ans =
+
+    1.2218    0.2840
+
+>> subplot(1, 2, 1), imshow(oIm)
+>> subplot(1, 2, 2), imshow(doIm)
+```
+
+![](https://user-images.githubusercontent.com/13688320/99756556-664de800-2b28-11eb-902f-5d2b0ffc14d6.png)
+

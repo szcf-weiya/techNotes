@@ -1,3 +1,7 @@
+## 2021.05.28
+
+- reality has a way of **sneaking up (偷偷地溜走)** and biting us in the ass. 
+
 ## 2021.05.27
 
 - In statistical sciences from economics to medicine, including some parts of physics and chemistry, the **ubiquitous (无处不在的，普遍存在的)** "test" for "statistical significance" cannot, and will not, prove that a **Higgs boson ([希格斯玻色子](https://zh.wikipedia.org/wiki/%E5%B8%8C%E6%A0%BC%E6%96%AF%E7%8E%BB%E8%89%B2%E5%AD%90))** exists, any more than it can prove the reality of God, the existence of a good pain **pill (药丸)**, or the validity of **loose monetary policy (宽松货币政策)**. 

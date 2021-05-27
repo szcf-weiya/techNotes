@@ -209,6 +209,34 @@ $ ./submit.sh 100 stat 4
 
 which is adopted from [my private project](https://github.com/szcf-weiya/Cell-Video/blob/master/DP/parallel_oracle2.sh).
 
+## Custom Commands on Slurm Cluster
+
+### aliases
+
+```bash
+# delete all jobs
+alias qdelall='qstat | while read -a ADDR; do if [[ ${ADDR[0]} == +([0-9]) ]]; then qdel ${ADDR[0]}; fi ; done'
+# list available cores
+alias sinfostat='sinfo -o "%N %C" -p stat -N'
+# list available gpu
+alias sinfogpu='sinfo -O PartitionName,NodeList,Gres:25,GresUsed:25 | sed -n "1p;/gpu[^:]/p"'
+# check disk quota
+alias myquota='for i in s1155113972 Stat StatScratch; do lfs quota -gh $i /lustre; done'
+# list jobs sorted by priority
+alias sacctchpc='sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)'
+# list jobs sorted by priority (only involved stat)
+alias sacctstat='sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn) | sed -n "1,2p;/stat/p"'
+```
+
+### functions 
+
+```bash
+#request specified nodes in interactive mode
+request_cn() { srun -p stat -q stat -w chpc-cn1$1 --pty bash -i; }
+request_gpu() { srun -p stat -q stat --gres=gpu:1 -w chpc-gpu01$1 --pty bash -i; }
+request_gpu_chpc() { srun -p chpc --gres=gpu:1 -w chpc-gpu$1 --pty bash -i; }
+```
+
 ## fail to access `~`
 
 Z 在群里问道，他在服务器上提交 job 时，之前安装好的包不能使用。显然，很可能因为 `.libPaths()` 没有包含 `$HOME` 下的用户安装路径，但是他在登录结点上在 R 中运行 `.libPaths()`，一切正常。那么问题或许出在工作结点上，事实表明在该工作结点上采用以下任一种方式都能解决问题
