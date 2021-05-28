@@ -381,11 +381,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-commands-on-slurm-cluster" class="md-nav__link">
-    Custom Commands on Slurm Cluster
+  <a href="#custom-commands-on-chpc" class="md-nav__link">
+    Custom Commands on CHPC
   </a>
   
-    <nav class="md-nav" aria-label="Custom Commands on Slurm Cluster">
+    <nav class="md-nav" aria-label="Custom Commands on CHPC">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1615,11 +1615,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-commands-on-slurm-cluster" class="md-nav__link">
-    Custom Commands on Slurm Cluster
+  <a href="#custom-commands-on-chpc" class="md-nav__link">
+    Custom Commands on CHPC
   </a>
   
-    <nav class="md-nav" aria-label="Custom Commands on Slurm Cluster">
+    <nav class="md-nav" aria-label="Custom Commands on CHPC">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1906,7 +1906,7 @@ julia -p <span class="nv">$np</span> run.jl <span class="nv">$nrep</span> <span 
 <div class="highlight"><pre><span></span><code>$ ./submit.sh <span class="m">100</span> stat <span class="m">4</span>
 </code></pre></div>
 <p>which is adopted from <a href="https://github.com/szcf-weiya/Cell-Video/blob/master/DP/parallel_oracle2.sh">my private project</a>.</p>
-<h2 id="custom-commands-on-slurm-cluster">Custom Commands on Slurm Cluster<a class="headerlink" href="#custom-commands-on-slurm-cluster" title="Permanent link">&para;</a></h2>
+<h2 id="custom-commands-on-chpc">Custom Commands on CHPC<a class="headerlink" href="#custom-commands-on-chpc" title="Permanent link">&para;</a></h2>
 <h3 id="aliases">aliases<a class="headerlink" href="#aliases" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># delete all jobs</span>
 <span class="nb">alias</span> <span class="nv">qdelall</span><span class="o">=</span><span class="s1">&#39;qstat | while read -a ADDR; do if [[ ${ADDR[0]} == +([0-9]) ]]; then qdel ${ADDR[0]}; fi ; done&#39;</span>

@@ -791,8 +791,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#environment-jupyter" class="md-nav__link">
-    不同 environment 的 jupyter
+  <a href="#different-kernels" class="md-nav__link">
+    different kernels
   </a>
   
 </li>
@@ -2220,8 +2220,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#environment-jupyter" class="md-nav__link">
-    不同 environment 的 jupyter
+  <a href="#different-kernels" class="md-nav__link">
+    different kernels
   </a>
   
 </li>
@@ -2700,14 +2700,19 @@
 </li>
 </ol>
 <h2 id="click"><code>click</code><a class="headerlink" href="#click" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>More related code can be found in <a href="https://github.com/search?l=Python&amp;q=user%3Aszcf-weiya+click&amp;type=Code">My Code Results on GitHub</a></p>
+</div>
 <p>It enables to use command line arguments. For example, </p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">click</span> <span class="c1"># DO NOT NAME THE FILE AS THE SAME NAME</span>
 
 <span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--a&quot;</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--b&quot;</span><span class="p">,</span> <span class="n">is_flag</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--c&quot;</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
@@ -2731,9 +2736,19 @@ File <span class="s2">&quot;/media/weiya/Seagate/GitHub/techNotes/docs/python/ex
 AttributeError: module <span class="s1">&#39;click&#39;</span> has no attribute <span class="s1">&#39;command&#39;</span>
 </code></pre></div></p>
 </div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>More related code can be found in <a href="https://github.com/search?l=Python&amp;q=user%3Aszcf-weiya+click&amp;type=Code">My Code Results on GitHub</a></p>
+<div class="admonition failure">
+<p class="admonition-title">float value</p>
+<p>With 
+<div class="highlight"><pre><span></span><code><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--c&quot;</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+it throws
+<div class="highlight"><pre><span></span><code>$ python ex_click.py --a <span class="m">1</span> --b --c <span class="m">2</span>.0
+Usage: ex_click.py <span class="o">[</span>OPTIONS<span class="o">]</span>
+Try <span class="s1">&#39;ex_click.py --help&#39;</span> <span class="k">for</span> help.
+
+Error: Invalid value <span class="k">for</span> <span class="s1">&#39;--c&#39;</span>: <span class="m">2</span>.0 is not a valid integer
+</code></pre></div></p>
+<p><code>type = float</code> needs to be specified.</p>
 </div>
 <h2 id="fileio">FileIO<a class="headerlink" href="#fileio" title="Permanent link">&para;</a></h2>
 <h3 id="non-ascii">写入 non-ascii 字符<a class="headerlink" href="#non-ascii" title="Permanent link">&para;</a></h3>
@@ -2901,9 +2916,9 @@ sudo chgrp weiya jupyter/ -R
 <li>一开始，直接从base 进入，然后选择 snakes 的 kernel，导出失败，错误原因如上</li>
 <li>直接在 snakes 进入 Jupyter notebook，这样可以成功导出</li>
 </ul>
-<h3 id="environment-jupyter">不同 environment 的 jupyter<a class="headerlink" href="#environment-jupyter" title="Permanent link">&para;</a></h3>
+<h3 id="different-kernels">different kernels<a class="headerlink" href="#different-kernels" title="Permanent link">&para;</a></h3>
 <h4 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h4>
-<p>其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 <a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments">Kernels for different environments</a></p>
+<p>其实不用对每个 environment 安装单独的 jupyter，只要安装 <code>ipykernel</code> 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 <a href="https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments">Kernels for different environments</a></p>
 <div class="highlight"><pre><span></span><code>$ conda activate myenv
 $ conda install ipykernel
 $ python -m ipykernel install --user --name myenv --display-name <span class="s2">&quot;Python (myenv)&quot;</span>
@@ -2918,6 +2933,42 @@ $ python -m ipykernel install --user --name myenv --display-name <span class="s2
 <span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;3.6.0&quot;</span><span class="p">,</span> <span class="n">displayname</span> <span class="o">=</span> <span class="s">&quot;R 3.6.0&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>另见 <a href="../R/#using-r-in-jupyterlab">using R in JupyterLab</a></p>
+<h4 id="management">management<a class="headerlink" href="#management" title="Permanent link">&para;</a></h4>
+<p>列出所有安装的 kernel，</p>
+<div class="highlight"><pre><span></span><code>$ jupyter kernelspec list
+Available kernels:
+  <span class="m">3</span>.6.0        /home/project09/.local/share/jupyter/kernels/3.6.0
+  ir           /home/project09/.local/share/jupyter/kernels/ir
+  julia-1.1    /home/project09/.local/share/jupyter/kernels/julia-1.1
+  julia-1.4    /home/project09/.local/share/jupyter/kernels/julia-1.4
+  mu-lux-cz    /home/project09/.local/share/jupyter/kernels/mu-lux-cz
+  sam          /home/project09/.local/share/jupyter/kernels/sam
+  python3      /home/project09/miniconda3/share/jupyter/kernels/python3
+</code></pre></div>
+<p>但是没有显示出 display name，其定义在文件夹下的 <code>kernel.json</code> 文件中（refer to <a href="https://stackoverflow.com/questions/48960699/how-to-change-jupyter-notebook-kernel-display-name">How to Change Jupyter Notebook Kernel Display Name</a>）</p>
+<div class="highlight"><pre><span></span><code>$ jupyter kernelspec list <span class="p">|</span> sed -n <span class="s1">&#39;2,$p&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> grep display <span class="o">{}</span>/kernel.json
+  <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;R 3.6.0&quot;</span>,
+  <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;R&quot;</span>,
+  <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;Julia 1.1.1&quot;</span>,
+  <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;Julia 1.4.2&quot;</span>,
+ <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;py37&quot;</span>,
+ <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;py37 (sam)&quot;</span>,
+ <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;Python 3&quot;</span>,
+</code></pre></div>
+<p>为了打印出对应的 env 名，</p>
+<div class="highlight"><pre><span></span><code>$ paste &lt;<span class="o">(</span>jupyter kernelspec list <span class="p">|</span> sed -n <span class="s1">&#39;2,$p&#39;</span><span class="o">)</span> &lt;<span class="o">(</span>jupyter kernelspec list <span class="p">|</span> sed -n <span class="s1">&#39;2,$p&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> grep display <span class="o">{}</span>/kernel.json<span class="o">)</span>
+  <span class="m">3</span>.6.0        /home/project09/.local/share/jupyter/kernels/3.6.0     <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;R 3.6.0&quot;</span>,
+  ir           /home/project09/.local/share/jupyter/kernels/ir    <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;R&quot;</span>,
+  julia-1.1    /home/project09/.local/share/jupyter/kernels/julia-1.1     <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;Julia 1.1.1&quot;</span>,
+  julia-1.4    /home/project09/.local/share/jupyter/kernels/julia-1.4     <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;Julia 1.4.2&quot;</span>,
+  mu-lux-cz    /home/project09/.local/share/jupyter/kernels/mu-lux-cz    <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;py37&quot;</span>,
+  sam          /home/project09/.local/share/jupyter/kernels/sam  <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;py37 (sam)&quot;</span>,
+  python3      /home/project09/miniconda3/share/jupyter/kernels/python3  <span class="s2">&quot;display_name&quot;</span>: <span class="s2">&quot;Python 3&quot;</span>,
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>此处很不优雅地重新复制了一下 <code>jupyter kernelspec list | sed -n '2,$p'</code>，在 pipeline 中是否有更直接的方法？</p>
+</div>
 <h2 id="list">List<a class="headerlink" href="#list" title="Permanent link">&para;</a></h2>
 <h3 id="find-index-of-an-item">find index of an item<a class="headerlink" href="#find-index-of-an-item" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
