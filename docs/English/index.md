@@ -1,3 +1,7 @@
+## 2021.05.29
+
+- **Cholera (霍乱)** is caused by **ingesting (摄入，获取)** bacteria from contaminated water or food.
+
 ## 2021.05.28
 
 - reality has a way of **sneaking up (偷偷地溜走)** and biting us in the ass. 
@@ -2483,7 +2487,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 33. **impugn (责难，驳斥)** a political opponent's character
 34. Well-doer never does chicanery and person who is good at chicanery does not belong well-doer.
 35. My wife chided me for forgetting to offer our guests some refreshments.
-36. I absolutely get choleric when a salesman calls during the dinner hour.
+36. I absolutely get **choleric (易怒的，暴躁的，[胆汁质的](https://zh.wikipedia.org/wiki/%E5%9B%9B%E7%A8%AE%E6%B0%A3%E8%B3%AA))** when a salesman calls during the dinner hour.
 37. Men of choleric type take to kicking and smashing.
 38. The revised system **chords (n. 和弦; v. 调弦)** perfectly with the original goals.
     - choral society: 合唱团

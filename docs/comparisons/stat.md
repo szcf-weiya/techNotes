@@ -6,6 +6,7 @@
 
 ## Julia vs R vs Python
 
+- [Jupyter kernels](../../python/#different-kernels)
 - [Sum an array along row or column](../../julia/#dims1)
 
 ## Julia vs Matlab vs R vs Python

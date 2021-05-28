@@ -209,7 +209,7 @@ $ ./submit.sh 100 stat 4
 
 which is adopted from [my private project](https://github.com/szcf-weiya/Cell-Video/blob/master/DP/parallel_oracle2.sh).
 
-## Custom Commands on Slurm Cluster
+## Custom Commands on CHPC
 
 ### aliases
 

@@ -136,6 +136,9 @@ Then I found [more detailed explanation](https://stackoverflow.com/a/43627975/) 
 
 ## `click`
 
+!!! info
+	More related code can be found in [My Code Results on GitHub](https://github.com/search?l=Python&q=user%3Aszcf-weiya+click&type=Code)
+
 It enables to use command line arguments. For example, 
 
 ```python
@@ -163,8 +166,21 @@ a = 2, b = False
 	AttributeError: module 'click' has no attribute 'command'
 	```
 
-!!! info
-	More related code can be found in [My Code Results on GitHub](https://github.com/search?l=Python&q=user%3Aszcf-weiya+click&type=Code)
+!!! failure "float value"
+	With 
+	```python
+	@click.option("--c", default = 2)
+	```
+	it throws
+	```bash
+	$ python ex_click.py --a 1 --b --c 2.0
+	Usage: ex_click.py [OPTIONS]
+	Try 'ex_click.py --help' for help.
+
+	Error: Invalid value for '--c': 2.0 is not a valid integer
+	```
+
+	`type = float` needs to be specified.
 
 ## FileIO
 
@@ -394,11 +410,11 @@ refer to [nbconvert failed: validate() got an unexpected keyword argument 'relax
 - 一开始，直接从base 进入，然后选择 snakes 的 kernel，导出失败，错误原因如上
 - 直接在 snakes 进入 Jupyter notebook，这样可以成功导出
 
-### 不同 environment 的 jupyter
+### different kernels
 
 #### Python
 
-其实不用对每个 environment 安装单独的 jupyter，只有安装好 ipykernel 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 [Kernels for different environments](https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments)
+其实不用对每个 environment 安装单独的 jupyter，只要安装 `ipykernel` 就好，这样都能从 base environment 中通过 jupyter 来选择不同 kernel，详见 [Kernels for different environments](https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments)
 
 ```bash
 $ conda activate myenv
@@ -423,6 +439,51 @@ IRkernel::installspec(name="3.6.0", displayname = "R 3.6.0")
 ```
 
 另见 [using R in JupyterLab](../R/index.md#using-r-in-jupyterlab)
+
+#### management
+
+列出所有安装的 kernel，
+
+```bash
+$ jupyter kernelspec list
+Available kernels:
+  3.6.0        /home/project09/.local/share/jupyter/kernels/3.6.0
+  ir           /home/project09/.local/share/jupyter/kernels/ir
+  julia-1.1    /home/project09/.local/share/jupyter/kernels/julia-1.1
+  julia-1.4    /home/project09/.local/share/jupyter/kernels/julia-1.4
+  mu-lux-cz    /home/project09/.local/share/jupyter/kernels/mu-lux-cz
+  sam          /home/project09/.local/share/jupyter/kernels/sam
+  python3      /home/project09/miniconda3/share/jupyter/kernels/python3
+```
+
+但是没有显示出 display name，其定义在文件夹下的 `kernel.json` 文件中（refer to [How to Change Jupyter Notebook Kernel Display Name](https://stackoverflow.com/questions/48960699/how-to-change-jupyter-notebook-kernel-display-name)）
+
+```bash
+$ jupyter kernelspec list | sed -n '2,$p' | awk '{print $2}' | xargs -I {} grep display {}/kernel.json
+  "display_name": "R 3.6.0",
+  "display_name": "R",
+  "display_name": "Julia 1.1.1",
+  "display_name": "Julia 1.4.2",
+ "display_name": "py37",
+ "display_name": "py37 (sam)",
+ "display_name": "Python 3",
+```
+
+为了打印出对应的 env 名，
+
+```bash
+$ paste <(jupyter kernelspec list | sed -n '2,$p') <(jupyter kernelspec list | sed -n '2,$p' | awk '{print $2}' | xargs -I {} grep display {}/kernel.json)
+  3.6.0        /home/project09/.local/share/jupyter/kernels/3.6.0	  "display_name": "R 3.6.0",
+  ir           /home/project09/.local/share/jupyter/kernels/ir	  "display_name": "R",
+  julia-1.1    /home/project09/.local/share/jupyter/kernels/julia-1.1	  "display_name": "Julia 1.1.1",
+  julia-1.4    /home/project09/.local/share/jupyter/kernels/julia-1.4	  "display_name": "Julia 1.4.2",
+  mu-lux-cz    /home/project09/.local/share/jupyter/kernels/mu-lux-cz	 "display_name": "py37",
+  sam          /home/project09/.local/share/jupyter/kernels/sam	 "display_name": "py37 (sam)",
+  python3      /home/project09/miniconda3/share/jupyter/kernels/python3	 "display_name": "Python 3",
+```
+
+!!! question
+	此处很不优雅地重新复制了一下 `jupyter kernelspec list | sed -n '2,$p'`，在 pipeline 中是否有更直接的方法？
 
 ## List
 
