@@ -584,6 +584,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#logical-operation" class="md-nav__link">
+    logical operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#test-string" class="md-nav__link">
     test string
   </a>
@@ -1899,6 +1906,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#logical-operation" class="md-nav__link">
+    logical operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#test-string" class="md-nav__link">
     test string
   </a>
@@ -2455,6 +2469,19 @@ $ <span class="nv">var</span><span class="o">=</span>/dir1/dir2/file.tar.gz <spa
     <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2"> exists&quot;</span>
 <span class="k">else</span>
     <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2"> is not exists&quot;</span>
+<span class="k">fi</span>
+</code></pre></div>
+<h3 id="logical-operation">logical operation<a class="headerlink" href="#logical-operation" title="Permanent link">&para;</a></h3>
+<p>判断 Linux 发行版所属主流发行系列，另见 <a href="../Linux/#linux-distributions">Linux Distributions</a></p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$1</span> <span class="o">==</span> Fedora -o <span class="nv">$1</span> <span class="o">==</span> Gentoo -o <span class="nv">$1</span> <span class="o">==</span> Redhat <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;The </span><span class="nv">$1</span><span class="s2"> is Redhat Series.&quot;</span>
+<span class="k">elif</span> <span class="o">[</span> <span class="nv">$1</span> <span class="o">==</span> Suse -o <span class="nv">$1</span> <span class="o">==</span> Opensuse <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;The </span><span class="nv">$1</span><span class="s2"> is Suse Series.&quot;</span>
+<span class="k">elif</span> <span class="o">[</span> <span class="nv">$1</span> <span class="o">==</span> Ubuntu -o <span class="nv">$1</span> <span class="o">==</span> Mint -o <span class="nv">$1</span> <span class="o">==</span> Debian <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;The </span><span class="nv">$1</span><span class="s2"> is Debian Series.&quot;</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;The </span><span class="nv">$1</span><span class="s2"> is Unknown Series.&quot;</span>
 <span class="k">fi</span>
 </code></pre></div>
 <h3 id="test-string">test string<a class="headerlink" href="#test-string" title="Permanent link">&para;</a></h3>

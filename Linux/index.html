@@ -277,6 +277,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#linux-distributions" class="md-nav__link">
+    Linux Distributions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#systemhardware-info" class="md-nav__link">
     System/Hardware Info
   </a>
@@ -823,6 +830,26 @@
   <a href="#which-vs-type" class="md-nav__link">
     which vs type
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systemd" class="md-nav__link">
+    systemd
+  </a>
+  
+    <nav class="md-nav" aria-label="systemd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-systemd-once-booted" class="md-nav__link">
+    control systemd once booted
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1898,6 +1925,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#linux-distributions" class="md-nav__link">
+    Linux Distributions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#systemhardware-info" class="md-nav__link">
     System/Hardware Info
   </a>
@@ -2447,6 +2481,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#systemd" class="md-nav__link">
+    systemd
+  </a>
+  
+    <nav class="md-nav" aria-label="systemd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-systemd-once-booted" class="md-nav__link">
+    control systemd once booted
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2461,6 +2515,26 @@
                 
                 
                 <h1 id="linux-notes">Linux Notes<a class="headerlink" href="#linux-notes" title="Permanent link">&para;</a></h1>
+<h2 id="linux-distributions">Linux Distributions<a class="headerlink" href="#linux-distributions" title="Permanent link">&para;</a></h2>
+<p>根据包管理器进行的分类，主流的发行版有</p>
+<ul>
+<li>apt: Debian, Ubuntu, Linux Mint</li>
+<li>yum: CentOS, Fedora</li>
+<li>YaST: openSUSE</li>
+<li>Pacman: Manjaro、ArchLinux</li>
+</ul>
+<p>另外，根据这道 <a href="../shell/#logical-operation">Shell 练习题</a>，</p>
+<ul>
+<li>Redhat Series: Fedora, Gentoo, Redhat</li>
+<li>Suse Series: Suse, OpenSuse</li>
+<li>Debian Series: Ubuntu, Mint, Debian</li>
+</ul>
+<p>参考 </p>
+<ul>
+<li><a href="https://distrowatch.com/dwres.php?resource=major">Major Distributions: An overview of major Linux distributions and FreeBSD</a></li>
+<li><a href="https://www.zhihu.com/question/24261540">知乎：Linux 各大发行版有什么特色？</a></li>
+</ul>
+<p>目前只接触 Ubuntu（个人笔记本） 和 CentOS（服务器），所以本笔记主要针对这两种。</p>
 <h2 id="systemhardware-info">System/Hardware Info<a class="headerlink" href="#systemhardware-info" title="Permanent link">&para;</a></h2>
 <ul>
 <li>check linux distribution:<ul>
@@ -3301,6 +3375,25 @@ scp_to_chpc <span class="o">()</span>
     scp -r <span class="nv">$1</span> user@host:~/<span class="nv">$2</span>
 <span class="o">}</span>
 </code></pre></div>
+<h2 id="systemd">systemd<a class="headerlink" href="#systemd" title="Permanent link">&para;</a></h2>
+<p><a href="https://wiki.ubuntu.com/systemd">systemd</a> is a system and session manager for Linux, compatible with SysV and LSB init scripts. systemd </p>
+<ul>
+<li>provides aggressive parallelization capabilities, </li>
+<li>uses scoket and D-Bus activation for starting services, </li>
+<li>offers on-demand starting of daemons,</li>
+<li>keeps track of processes using Linux cgroups</li>
+<li>supports snapshotting and restoring of the system state</li>
+<li>maintains mount and automount points</li>
+<li>implements an elaborate transactional dependency-based service control logic.</li>
+</ul>
+<h3 id="control-systemd-once-booted">control systemd once booted<a class="headerlink" href="#control-systemd-once-booted" title="Permanent link">&para;</a></h3>
+<p>The main command used to control systemd is <code>systemctl</code>. </p>
+<ul>
+<li><code>systemctl list-units</code>: list all units</li>
+<li><code>systemctl start/stop [NAME]</code>: start/stop (activate/deactivate) one or more units</li>
+<li><code>systemctl enable/disable [NAME]</code>: enable/disable one or more unit files</li>
+<li><code>systemctl reboot</code>: shut down and reboot the system</li>
+</ul>
                 
               
               
