@@ -1,19 +1,20 @@
 ## 2021.05.29
 
-- **Cholera (霍乱)** is caused by **ingesting (摄入，获取)** bacteria from contaminated water or food.
+- A `Dataset.batch` applied after `Dataset.repeat` will yield batches that **straddle (横跨)** epoch boundaries. [:link:](https://www.tensorflow.org/guide/data)
 
 ## 2021.05.28
 
-- reality has a way of **sneaking up (偷偷地溜走)** and biting us in the ass. 
+- **Cholera (霍乱)** is caused by **ingesting (摄入，获取)** bacteria from contaminated water or food.
 
 ## 2021.05.27
 
-- In statistical sciences from economics to medicine, including some parts of physics and chemistry, the **ubiquitous (无处不在的，普遍存在的)** "test" for "statistical significance" cannot, and will not, prove that a **Higgs boson ([希格斯玻色子](https://zh.wikipedia.org/wiki/%E5%B8%8C%E6%A0%BC%E6%96%AF%E7%8E%BB%E8%89%B2%E5%AD%90))** exists, any more than it can prove the reality of God, the existence of a good pain **pill (药丸)**, or the validity of **loose monetary policy (宽松货币政策)**. 
-- His pockets **bulge (膨胀，鼓起)** with papers and pencils.
+- reality has a way of **sneaking up (偷偷地溜走)** and biting us in the ass. 
 
 ## 2021.05.26
 
 - The word “alumni” refers collectively to male and female graduates, or to a group of all-male graduates, and is plural. “Alumnae” refers to a group of women graduates and is plural. “Alumna” refers to a single female alum, and “alumnus” is a single male alum. The terms “alum” (singular, not gender specific) and “alums” (plural, not gender specific) are more informal and are acceptable, particularly when the gender is unknown. [:link:](https://www.bu.edu/brand/guidelines/editorial-style/alumni/)
+- In statistical sciences from economics to medicine, including some parts of physics and chemistry, the **ubiquitous (无处不在的，普遍存在的)** "test" for "statistical significance" cannot, and will not, prove that a **Higgs boson ([希格斯玻色子](https://zh.wikipedia.org/wiki/%E5%B8%8C%E6%A0%BC%E6%96%AF%E7%8E%BB%E8%89%B2%E5%AD%90))** exists, any more than it can prove the reality of God, the existence of a good pain **pill (药丸)**, or the validity of **loose monetary policy (宽松货币政策)**. 
+- His pockets **bulge (膨胀，鼓起)** with papers and pencils.
 
 ## 2021.05.25
 

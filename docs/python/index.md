@@ -878,6 +878,10 @@ The reason is that `sys.path` returns a list, while `.insert` is the method for 
 
 refer to [First argument of sys.path.insert in python](https://stackoverflow.com/questions/37176836/first-argument-of-sys-path-insert-in-python)
 
+## TensorFlow
+
+--8<-- "docs/TFnotes/README.md"
+
 ## the `i`-th row in pandas
 
 ```python

@@ -629,6 +629,14 @@ else
 fi
 ```
 
+### logical operation
+
+判断 Linux 发行版所属主流发行系列，另见 [Linux Distributions](../Linux/#linux-distributions)
+
+```bash
+--8<-- "docs/shell/if/if-dist.sh"
+```
+
 ### test string
 
 - `=~`: 判断左边的字符串是否能被右边的模式所匹配

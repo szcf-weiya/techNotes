@@ -714,3 +714,9 @@ git push origin :refs/tags/v1.0
 	- 如果只有小部分的代码需要公开，则这样在新 branch 上面需要删掉过多无关的文件夹。
 - 以 release 形式发布，并不创建新仓库
 	- 通过脚本打包需要公开的代码
+
+## Submodule
+
+```bash
+~/github/techNotes/docs$ git submodule add git@github.com:szcf-weiya/TFnotes.git
+```

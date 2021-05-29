@@ -14,6 +14,10 @@
      });
 </script>
 
+## Other Independent Notes
+
+- [TensorFlow Notes](https://github.com/szcf-weiya/TFnotes)
+
 ## Cheat sheets
 
 1. [Rcpp-quickref](R/Rcpp-quickref.pdf)

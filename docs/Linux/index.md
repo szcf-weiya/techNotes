@@ -1,5 +1,27 @@
 # Linux Notes
 
+## Linux Distributions
+
+根据包管理器进行的分类，主流的发行版有
+
+- apt: Debian, Ubuntu, Linux Mint
+- yum: CentOS, Fedora
+- YaST: openSUSE
+- Pacman: Manjaro、ArchLinux
+
+另外，根据这道 [Shell 练习题](../shell/#logical-operation)，
+
+- Redhat Series: Fedora, Gentoo, Redhat
+- Suse Series: Suse, OpenSuse
+- Debian Series: Ubuntu, Mint, Debian
+
+参考 
+
+- [Major Distributions: An overview of major Linux distributions and FreeBSD](https://distrowatch.com/dwres.php?resource=major)
+- [知乎：Linux 各大发行版有什么特色？](https://www.zhihu.com/question/24261540)
+
+目前只接触 Ubuntu（个人笔记本） 和 CentOS（服务器），所以本笔记主要针对这两种。
+
 ## System/Hardware Info
 
 - check linux distribution:
@@ -1215,3 +1237,25 @@ scp_to_chpc ()
     scp -r $1 user@host:~/$2
 }
 ```
+
+## systemd
+
+[systemd](https://wiki.ubuntu.com/systemd) is a system and session manager for Linux, compatible with SysV and LSB init scripts. systemd 
+
+- provides aggressive parallelization capabilities, 
+- uses scoket and D-Bus activation for starting services, 
+- offers on-demand starting of daemons,
+- keeps track of processes using Linux cgroups
+- supports snapshotting and restoring of the system state
+- maintains mount and automount points
+- implements an elaborate transactional dependency-based service control logic.
+
+### control systemd once booted
+
+The main command used to control systemd is `systemctl`. 
+
+- `systemctl list-units`: list all units
+- `systemctl start/stop [NAME]`: start/stop (activate/deactivate) one or more units
+- `systemctl enable/disable [NAME]`: enable/disable one or more unit files
+- `systemctl reboot`: shut down and reboot the system
+
