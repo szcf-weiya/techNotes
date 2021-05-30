@@ -1,3 +1,7 @@
+## 2021.05.30
+
+- emcee
+
 ## 2021.05.29
 
 - A `Dataset.batch` applied after `Dataset.repeat` will yield batches that **straddle (横跨)** epoch boundaries. [:link:](https://www.tensorflow.org/guide/data)
