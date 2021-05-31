@@ -1,3 +1,7 @@
+## 2021.05.31
+
+- Kramer is telling Elaine about her mannequin double.
+
 ## 2021.05.30
 
 - emcee
