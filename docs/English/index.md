@@ -1,3 +1,14 @@
+## 2021.06.02
+
+- Have you ever served in, been a member of, or been involved with a paramilitary unit, vigilante unit, **rebel (造反的)** group, **guerrilla (游击的，非正式的)** group, or **insurgent (起义者)** organization? 
+- Do you belong to a **clan (庞大的家族；宗派)** or tribe?
+- Are you coming to the United States to engage in prostitution or unlawful commercialized vice or have you been engaged in **prostitution (卖淫；才能的滥用（或糟蹋）)** or procuring prostitutes within the past 10 years? 
+- Have you ever ordered, incited, committed, assisted, or otherwise participated in **genocide (种族灭绝，大屠杀)**? 
+
+## 2021.06.01
+
+- freak
+
 ## 2021.05.31
 
 - Kramer is telling Elaine about her mannequin double.
@@ -2584,7 +2595,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 11. enthusiasm (eagerness; zest).
 12. irascible (irritable).
 13. defiant (boldly challenging)
-14. oblivious, incognizant, insensible, unaware, unconscious, unwitting, mindful, vigilant, acquainted, cognizant, conscious, conversant, grounded, informed, knowing, witting
+14. oblivious, incognizant, insensible, unaware, unconscious, unwitting, mindful, vigilant (警觉的，警惕的), acquainted, cognizant, conscious, conversant, grounded, informed, knowing, witting
 15. The March snowstorm obliterated our hopes for an early spring.
 16. con artist
 17. He spent the remainder of his life in ignominy after being involved in a bribery scandal.
