@@ -356,6 +356,12 @@ done
 
 - `-f`: output appended data as the file grows, powerful for checking the log file in real time.
 
+## `uniq`
+
+- count the frequency: `cat file.txt | sort | uniq -c`.
+	- note that `sort` is necessary, otherwise `uniq` only performs locally
+	- examples: [classificacaoFinal](https://github.com/szcf-weiya/TB/issues/46#issuecomment-831761174)
+
 ## `wget`
 
 ### wget a series of files in order

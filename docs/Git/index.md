@@ -471,7 +471,42 @@ Commit: XXX
 CommitDate: Tue Apr 13 23:59:08 2021 +0800
 ```
 
-所以修改完 author date 之后，仍然采用笨办法回拨系统时间再提交，这样就能修改 commit date，于是便出现了上面 commit date 竟然比 author date 早的结果。当然更 hacker 的做法可能是仍然在命令行中修改 committer date，如下面的参考链接。
+所以修改完 author date 之后，仍然采用笨办法回拨系统时间再提交，这样就能修改 commit date，于是便出现了上面 commit date 竟然比 author date 早的结果。当然更直接的做法是直接在命令行 commit 时同时指定这两个时间，
+
+```bash
+$ GIT_AUTHOR_DATE=$(date -d "-10 days - 8 hours") GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE git commit -m "XXXX"
+```
+
+在本机上， `date` 默认输出格式为
+
+```bash
+$ date -d "-10 days - 8 hours"
+Mon May 24 12:17:17 CST 2021
+```
+
+其中 `CST` 为 China Standard Time (UTC+0800)，然而，Central Standard Time (UTC-06:00) 缩写也是 `CST`，另外 Cuba Standard Time (UTC-05:00) 也为同一缩写，详见 [:link:](https://en.wikipedia.org/wiki/Time_zone#Abbreviations)。
+大概基于此，上述时间被识别为了 UTC-0600,
+
+```bash
+$ git log --pretty=fuller
+Author:     szcf-weiya <your@email>
+AuthorDate: Mon May 24 12:18:06 2021 -0600
+Commit:     szcf-weiya <your@email>
+CommitDate: Mon May 24 12:18:06 2021 -0600
+```
+
+为了避免歧义，加入选项 `-Iseconds` 指定为 ISO-8601 格式，并精确至 `seconds`.
+
+```bash
+$ GIT_AUTHOR_DATE=$(date -d "-10 days - 8 hours" -Iseconds) GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE git commit -m "XXX"
+$ git log --pretty=fuller
+Author:     szcf-weiya <your@email>
+AuthorDate: Mon May 24 12:27:06 2021 +0800
+Commit:     szcf-weiya <your@email>
+CommitDate: Mon May 24 12:27:06 2021 +0800
+```
+
+另外，`GIT_**_DATE` 支持的日期格式详见 `man git-commit`.
 
 - [How can one change the timestamp of an old commit in Git?](https://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git)
 - [How do I make a Git commit in the past?](https://stackoverflow.com/questions/3895453/how-do-i-make-a-git-commit-in-the-past)

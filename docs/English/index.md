@@ -1,3 +1,7 @@
+## 2021.06.03
+
+- **Lexicons (字典；（某语言或学科、某人或群体使用的）全部词汇)** of other languages, due to weaker national power, generally cannot match the UMLS in terms of comprehensiveness. 
+
 ## 2021.06.02
 
 - Have you ever served in, been a member of, or been involved with a paramilitary unit, vigilante unit, **rebel (造反的)** group, **guerrilla (游击的，非正式的)** group, or **insurgent (起义者)** organization? 
