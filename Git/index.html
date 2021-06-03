@@ -2465,7 +2465,30 @@ AuthorDate: Tue Apr <span class="m">13</span> <span class="m">23</span>:59:49 <s
 Commit: XXX
 CommitDate: Tue Apr <span class="m">13</span> <span class="m">23</span>:59:08 <span class="m">2021</span> +0800
 </code></pre></div>
-<p>所以修改完 author date 之后，仍然采用笨办法回拨系统时间再提交，这样就能修改 commit date，于是便出现了上面 commit date 竟然比 author date 早的结果。当然更 hacker 的做法可能是仍然在命令行中修改 committer date，如下面的参考链接。</p>
+<p>所以修改完 author date 之后，仍然采用笨办法回拨系统时间再提交，这样就能修改 commit date，于是便出现了上面 commit date 竟然比 author date 早的结果。当然更直接的做法是直接在命令行 commit 时同时指定这两个时间，</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;-10 days - 8 hours&quot;</span><span class="k">)</span> <span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span> git commit -m <span class="s2">&quot;XXXX&quot;</span>
+</code></pre></div>
+<p>在本机上， <code>date</code> 默认输出格式为</p>
+<div class="highlight"><pre><span></span><code>$ date -d <span class="s2">&quot;-10 days - 8 hours&quot;</span>
+Mon May <span class="m">24</span> <span class="m">12</span>:17:17 CST <span class="m">2021</span>
+</code></pre></div>
+<p>其中 <code>CST</code> 为 China Standard Time (UTC+0800)，然而，Central Standard Time (UTC-06:00) 缩写也是 <code>CST</code>，另外 Cuba Standard Time (UTC-05:00) 也为同一缩写，详见 <a href="https://en.wikipedia.org/wiki/Time_zone#Abbreviations"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>。
+大概基于此，上述时间被识别为了 UTC-0600,</p>
+<div class="highlight"><pre><span></span><code>$ git log --pretty<span class="o">=</span>fuller
+Author:     szcf-weiya &lt;your@email&gt;
+AuthorDate: Mon May <span class="m">24</span> <span class="m">12</span>:18:06 <span class="m">2021</span> -0600
+Commit:     szcf-weiya &lt;your@email&gt;
+CommitDate: Mon May <span class="m">24</span> <span class="m">12</span>:18:06 <span class="m">2021</span> -0600
+</code></pre></div>
+<p>为了避免歧义，加入选项 <code>-Iseconds</code> 指定为 ISO-8601 格式，并精确至 <code>seconds</code>.</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;-10 days - 8 hours&quot;</span> -Iseconds<span class="k">)</span> <span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span> git commit -m <span class="s2">&quot;XXX&quot;</span>
+$ git log --pretty<span class="o">=</span>fuller
+Author:     szcf-weiya &lt;your@email&gt;
+AuthorDate: Mon May <span class="m">24</span> <span class="m">12</span>:27:06 <span class="m">2021</span> +0800
+Commit:     szcf-weiya &lt;your@email&gt;
+CommitDate: Mon May <span class="m">24</span> <span class="m">12</span>:27:06 <span class="m">2021</span> +0800
+</code></pre></div>
+<p>另外，<code>GIT_**_DATE</code> 支持的日期格式详见 <code>man git-commit</code>.</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git">How can one change the timestamp of an old commit in Git?</a></li>
 <li><a href="https://stackoverflow.com/questions/3895453/how-do-i-make-a-git-commit-in-the-past">How do I make a Git commit in the past?</a></li>
