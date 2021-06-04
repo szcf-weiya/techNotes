@@ -2419,6 +2419,7 @@ Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
 <p>to edit the commit message, and then</p>
 <div class="highlight"><pre><span></span><code>git push --force-with-lease
 </code></pre></div>
+<p>where <code>--force-with-lease</code> is a safer version than <code>--force</code>, in which the former will not overwrite any work on the remote branch while the latter would overwrites a remote branch with the local branch. More detailed comparisons refer to <a href="https://stackoverflow.com/questions/52823692/git-push-force-with-lease-vs-force">git push &ndash;force-with-lease vs. &ndash;force</a></p>
 <p>Refer to <a href="https://stackoverflow.com/questions/8981194/changing-git-commit-message-after-push-given-that-no-one-pulled-from-remote">Changing git commit message after push (given that no one pulled from remote)</a>.</p>
 <h3 id="discard-un-pushed-merges">discard un-pushed merges<a class="headerlink" href="#discard-un-pushed-merges" title="Permanent link">&para;</a></h3>
 <p>现有本地、服务器仓库各一个，通过 GitHub 进行共享，原则上只通过本地编辑代码，然后在服务器中借助 <code>git pull</code> 进行更新代码。但是有一行代码由于文件路径原因，不得已在服务器端更改，在 <code>git pull</code> 之前进行了 <code>git add; git commit</code> 操作，所以 <code>pull</code> 的时候会产生 merge，而且这样下去每一次进行 <code>pull</code> 都会进行 merge。这样就很难看出服务器端真正更改的内容了，这时发现了 <code>git rebase</code>，这张图很好地展示了它要干的事情，</p>

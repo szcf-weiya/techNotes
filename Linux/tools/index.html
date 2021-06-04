@@ -1952,6 +1952,39 @@ File size:      <span class="m">5766050</span> bytes
 Optimized:      no
 PDF version:    <span class="m">1</span>.4
 </code></pre></div>
+<p>We can compare the fonts before/after reducing,</p>
+<div class="highlight"><pre><span></span><code>$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf <span class="p">|</span> wc -l
+<span class="m">57</span>
+$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf <span class="p">|</span> wc -l
+<span class="m">125</span>
+</code></pre></div>
+<p>and it seems not directly to remove fonts. Instead, most font names have been modified. Besides, these are duplicated font names (column one), such as </p>
+<div class="highlight"><pre><span></span><code>$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf <span class="p">|</span> sed <span class="m">1</span>,2d - <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c
+      <span class="m">1</span> AMJQSV+LMSans8-Regular
+        ...
+     <span class="m">13</span> OELTPO+LMMathItalic10-Regular
+        ...
+      <span class="m">1</span> Times
+      <span class="m">2</span> TimesNewRoman
+      <span class="m">1</span> TimesNewRoman,Italic
+      <span class="m">3</span> Times-Roman
+        ...
+     <span class="m">15</span> YCQSHP+LMRoman10-Bold
+      <span class="m">4</span> YWGCMO+LMMathSymbols7-Regular
+     <span class="m">16</span> ZMWYHT+LMRoman10-Regular
+</code></pre></div>
+<p>Count the number of unique names,</p>
+<div class="highlight"><pre><span></span><code>$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf <span class="p">|</span> sed <span class="m">1</span>,2d - <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c <span class="p">|</span> wc -l
+<span class="m">50</span>
+$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf <span class="p">|</span> sed <span class="m">1</span>,2d - <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c <span class="p">|</span> wc -l
+<span class="m">55</span>
+</code></pre></div>
+<p>it shows that the reduced pdf does not have duplicated font names, (here the first two lines are removed, 57 = 55 + 2).</p>
+<div class="admonition tip">
+<p class="admonition-title">pdffonts</p>
+<p>Another application of <code>pdffonts</code> is to check if the font has been embedded. If not, it might cause some display issue, such as the non-embedded <code>Symbol</code> in <a href="https://stackoverflow.com/questions/10277418/the-pdf-viewer-evince-on-linux-can-not-display-some-math-symbols-correctly">The PDF viewer &lsquo;Evince&rsquo; on Linux can not display some math symbols correctly</a>. In contrast, Adobe Reader already ships with application-embedded instances of some fonts, such as <code>Symbol</code>, so it can render the pdf properly.
+A remedy is to use <code>gs</code>, see more details in the above reference.</p>
+</div>
 <h3 id="flatten-pdf-file">flatten pdf file<a class="headerlink" href="#flatten-pdf-file" title="Permanent link">&para;</a></h3>
 <p>Flattening a PDF means to merge separated contents of the document into one so that,</p>
 <ul>
