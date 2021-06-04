@@ -24,7 +24,21 @@ ssh-keygen -t [rsa | ed25519 | ecdsa | dsa]
 - 公钥(`~/.ssh/id_rsa.pub`): contains the public key for authentication.  These files are not sensitive and can (but need not) be readable by anyone.
 - 公钥授权文件(`~/.ssh/authorized_keys`)
 
-将登录端的 `id_rsa.pub` 内容复制到服务器端的 `authorized_keys` 文件中即可。
+将登录端的 `id_rsa.pub` 内容复制到服务器端的 `authorized_keys` 文件中即可。除了手动复制，也可以通过命令行，如
+
+```bash
+$ ssh-copy-id -p 30013 weiya@127.0.0.1
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+weiya@127.0.0.1's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh -p '30013' 'weiya@127.0.0.1'"
+and check to make sure that only the key(s) you wanted were added.
+```
+
+正确输入登录密码后，便复制成功了，注意此时并未登录至目标服务器。
 
 对于 AWS，登录需要使用 `.pem` 文件，即
 
@@ -66,7 +80,7 @@ $ until ./login_lab.sh; do sleep 5; done
 
 refer to [How to run ssh command until succeeded?](https://unix.stackexchange.com/questions/404792/how-to-run-ssh-command-until-succeeded)
 
-## 远程运行服务器端的gui程序
+### run GUI remotely/locally
 
 ```bash
 weiya@T460p:~$ ssh weiya@G40

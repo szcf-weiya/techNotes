@@ -1,3 +1,8 @@
+## 2021.06.04
+
+- Researchers say there is some evidence that infected **mink (水貂)** can pass the virus on to humans.
+    - ape: 类人猿
+
 ## 2021.06.03
 
 - **Lexicons (字典；（某语言或学科、某人或群体使用的）全部词汇)** of other languages, due to weaker national power, generally cannot match the UMLS in terms of comprehensiveness. 
@@ -1720,8 +1725,14 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2019.12.30
 
-1. High scorers are **juvenile delinquents** who then see the error of their ways and **reform** permanently.
-
+1. High scorers are juvenile **delinquents (少年罪犯)** who then see the error of their ways and **reform (改革，改正)** permanently.
+29. Children who fail in the entrance examination are deprived of the opportunities to receive a better and higher education. **Accordingly (因此；相应地)**, with an impressive educational background, it is difficult for them to find a proper job. As a result, they become full of resentment at a society, doing harm to strangers and disrupting social order, **both of which** inevitably increase **juvenile (少年的，未成年的)** **delinquency (「常指青年人的」犯罪)**.
+    - both + nonus: both my children, both engines
+    - pronoun + both: we both prefer classical music. let's open them both now.
+    - both of + object pronoun: both of us/them/you
+    - both as pronoun: both are ok.
+    - `be + both + ...` instead of ~~both + be + ...~~
+    - more details refer to [dictionary.cambridge.org/grammar/british-grammar/both](https://dictionary.cambridge.org/grammar/british-grammar/both)
 
 ## 2019.12.25
 
@@ -2720,7 +2731,6 @@ up
 26. A large factory is supposed to built near the community according to the announcement issued by a company.
 27. There is a growing awareness of both the positive and negative influences that the construction plan brings to our community.
 28. Participating in community activities is a practical and effective approach for teenagers to enhance their social skills. For example, if a teenager, who is not a sociable person, seizes an opportunity to work in a community as a volunteer for hosting an English conversations group, he is capable of practicing his communication skills by conversing with people of different ages who he might not be acquainted with it. Such an experience enables him to overcome the fear of speaking in front of a group of strangers and master the skills of how to communicate with different kinds of people in an approximate way, both of which contribute to the improvement of his social skills, particularly his communication skills.
-29. Children who fail in the entrance examination are deprived of the opportunities to receive a better and higher education. Accordingly, with an impressive educational background, it is difficult for them to find a proper job. As a result, they become full of resentment at a society, doing harm to strangers and disrupting social order, both of which inevitably increase juvenile delinquency.
 30. Several staff members have checked the manuscript for accuracy and ease of use.
 31. anatomical
 

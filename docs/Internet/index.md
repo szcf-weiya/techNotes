@@ -1,5 +1,14 @@
 # 网络连接相关问题
 
+## TCP vs UDP
+
+- TCP/IP 是互联网相关的各类协议族的总称，比如：TCP，UDP，IP，FTP，HTTP，ICMP，SMTP 等都属于 TCP/IP 族内的协议。
+- TCP/IP模型是互联网的基础，它是一系列网络协议的总称。这些协议可以划分为四层，分别为链路层、网络层、传输层和应用层。
+
+![image](https://user-images.githubusercontent.com/13688320/120821783-59ef2100-c588-11eb-837d-5b53f261e474.png)
+
+refer to [一文搞懂TCP与UDP的区别](https://www.cnblogs.com/fundebug/p/differences-of-tcp-and-udp.html)
+
 ## 安装XX-Net
 
 ### Environment

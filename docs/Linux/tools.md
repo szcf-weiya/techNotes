@@ -264,6 +264,48 @@ Optimized:      no
 PDF version:    1.4
 ```
 
+We can compare the fonts before/after reducing,
+
+```bash
+$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf | wc -l
+57
+$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf | wc -l
+125
+```
+
+and it seems not directly to remove fonts. Instead, most font names have been modified. Besides, these are duplicated font names (column one), such as 
+
+```bash
+$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf | sed 1,2d - | awk '{print $1}' | sort | uniq -c
+      1 AMJQSV+LMSans8-Regular
+        ...
+     13 OELTPO+LMMathItalic10-Regular
+        ...
+      1 Times
+      2 TimesNewRoman
+      1 TimesNewRoman,Italic
+      3 Times-Roman
+        ...
+     15 YCQSHP+LMRoman10-Bold
+      4 YWGCMO+LMMathSymbols7-Regular
+     16 ZMWYHT+LMRoman10-Regular
+```
+
+Count the number of unique names,
+
+```bash
+$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf | sed 1,2d - | awk '{print $1}' | sort | uniq -c | wc -l
+50
+$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf | sed 1,2d - | awk '{print $1}' | sort | uniq -c | wc -l
+55
+```
+
+it shows that the reduced pdf does not have duplicated font names, (here the first two lines are removed, 57 = 55 + 2).
+
+!!! tip "pdffonts"
+    Another application of `pdffonts` is to check if the font has been embedded. If not, it might cause some display issue, such as the non-embedded `Symbol` in [The PDF viewer 'Evince' on Linux can not display some math symbols correctly](https://stackoverflow.com/questions/10277418/the-pdf-viewer-evince-on-linux-can-not-display-some-math-symbols-correctly). In contrast, Adobe Reader already ships with application-embedded instances of some fonts, such as `Symbol`, so it can render the pdf properly.
+    A remedy is to use `gs`, see more details in the above reference.
+
 ### flatten pdf file
 
 Flattening a PDF means to merge separated contents of the document into one so that,

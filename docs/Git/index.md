@@ -387,6 +387,8 @@ to edit the commit message, and then
 git push --force-with-lease
 ```
 
+where `--force-with-lease` is a safer version than `--force`, in which the former will not overwrite any work on the remote branch while the latter would overwrites a remote branch with the local branch. More detailed comparisons refer to [git push --force-with-lease vs. --force](https://stackoverflow.com/questions/52823692/git-push-force-with-lease-vs-force)
+
 Refer to [Changing git commit message after push (given that no one pulled from remote)](https://stackoverflow.com/questions/8981194/changing-git-commit-message-after-push-given-that-no-one-pulled-from-remote).
 
 ### discard un-pushed merges

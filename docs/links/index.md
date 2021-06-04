@@ -32,6 +32,13 @@
 
 - [看见统计](https://seeing-theory.brown.edu/)
 
+## Research
+
+- [Social Science Research Network (SSRN)](http://www.ssrn.com/en/): “Econ/Finance/Law方面，最开放，接受度最高的working paper发布平台。” -- [有哪些高品质免费学术报告来源？ - vivealex的回答 - 知乎](https://www.zhihu.com/question/23486360/answer/24727478)
+
+## Videos
+
+- [That's Why I Chose Yale](https://www.youtube.com/watch?v=tGn3-RW8Ajk)
 
 ## Interesting words
 
