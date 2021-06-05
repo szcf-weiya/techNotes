@@ -810,3 +810,13 @@ which will install `nodejs-10.13.0`.
  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
 ```
 
+## scale or not
+
+下面两个结果是一样的。
+
+```r
+m = matrix(rnorm(4*6, 2), ncol = 4)
+cov(m)
+sm = scale(m, scale = FALSE) # only center, no scale.
+t(sm) %*% sm/ (6-1)
+```

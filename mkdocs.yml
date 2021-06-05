@@ -1,83 +1,86 @@
 site_name: techNotes
 nav:
-    - Home: index.md
-    - Linux:
-      - 系统: Linux/index.md
-      - 大软件: Linux/software.md
-      - 小工具: Linux/tools.md
-      - 服务器: Linux/servers.md
-      - 16to18: Linux/16to18.md
-      - 笔记本作为服务器: Linux/asAserver.md
-      - Shell: shell/index.md
-    - StatProgramming:
-      - R:
-        - 一般问题: R/index.md
-        - 统计基础: R/basic.md
-        - plot 作图: R/plot.md
-        - ggplot 作图: R/ggplot.md
-        - 案例分析: R/legend_from_zhihu.md
-        - 源码安装 RMySQL: R/install-notes-for-rmysql.md
-        - new sample function (v3.6.0+): R/sample.md
-        - 一道与 factor 有关的问题: R/factor.md
-      - Python:
-        - 一般问题: python/index.md
-        - Conda: python/conda.md
-        - PyStan 体验: python/pystan/README.md
-        - OpenCV: python/opencv.md
-        - 金融数据爬虫: python/finance/README.md
-        - rpy2: python/rpy2.md
-        - 自建关键词索引页: python/esltag.md
-      - Julia: julia/index.md
-      - Matlab: Matlab/index.md
-      - Comparisons: comparisons/stat.md
-    - CSProgramming:
-      - C/C++: Cpp/index.md
-      - Java: java/index.md
-      - SQL: SQL/index.md
-      - Cuda: cuda/index.md
-    - DocProgramming:
-      - TeX:
-        - 一般问题: TeX/index.md
-        - arXiv: TeX/arxiv.md
-        - VarGreek: TeX/vargreek.md
-      - Web:
-        - Website: website/index.md
-        - Disqus: website/disqus.md
-        - CSS: website/css.md
-        - JS: js/index.md
-        - PHP: PHP/index.md
-        - XAMPP: website/xampp.md
-    - Network:
-      - 一般问题: Internet/index.md
-      - 访问内网: Internet/sci-int.md
-      - IPv6: Internet/ipv6.md
-    - Development:
-      - Autotools: autotools/index.md
-      - Git: Git/index.md
-      - Phantomjs: phantomjs/index.md
-      - Qt: Qt/index.md
-    - Stat:
-      - Probability: stats/prob.md
-      - Statistics: stats/index.md
-      - Scientific: scientific/index.md
-      - Matrix: stats/matrix.md
+  - Home: index.md
+  - Linux:
+    - 系统: Linux/index.md
+    - 大软件: Linux/software.md
+    - 小工具: Linux/tools.md
+    - 服务器: Linux/servers.md
+    - 16to18: Linux/16to18.md
+    - 笔记本作为服务器: Linux/asAserver.md
+    - Shell: shell/index.md
+  - StatProgramming:
+    - R:
+      - 一般问题: R/index.md
+      - plot 作图: R/plot.md
+      - ggplot 作图: R/ggplot.md
+      - 案例分析: R/legend_from_zhihu.md
+      - 源码安装 RMySQL: R/install-notes-for-rmysql.md
+      - new sample function (v3.6.0+): R/sample.md
+      - 一道与 factor 有关的问题: R/factor.md
+    - Python:
+      - 一般问题: python/index.md
+      - Conda: python/conda.md
+      - PyStan 体验: python/pystan/README.md
+      - OpenCV: python/opencv.md
+      - 金融数据爬虫: python/finance/README.md
+      - rpy2: python/rpy2.md
+      - 自建关键词索引页: python/esltag.md
+    - Julia: julia/index.md
+    - Matlab: Matlab/index.md
+    - Comparisons: comparisons/stat.md
+  - CSProgramming:
+    - C/C++: Cpp/index.md
+    - Java: java/index.md
+    - SQL: SQL/index.md
+    - Cuda: cuda/index.md
+  - DocProgramming:
+    - TeX:
+      - 一般问题: TeX/index.md
+      - arXiv: TeX/arxiv.md
+      - VarGreek: TeX/vargreek.md
+    - Web:
+      - Website: website/index.md
+      - Disqus: website/disqus.md
+      - CSS: website/css.md
+      - JS: js/index.md
+      - PHP: PHP/index.md
+      - XAMPP: website/xampp.md
+  - Network/Internet:
+    - 一般问题: Internet/index.md
+    - 访问内网: Internet/sci-int.md
+    - IPv6: Internet/ipv6.md
+  - Development:
+    - Autotools: autotools/index.md
+    - Git: Git/index.md
+    - Phantomjs: phantomjs/index.md
+    - Qt: Qt/index.md
+  - Stat:
+    - Probability: stats/prob.md
+    - Statistics: stats/index.md
+    - Scientific: scientific/index.md
+    - Matrix: stats/matrix.md
+  - Misc:
     - English: English/index.md
-    - Finance: finance/index.md
     - Guitar: guitar/index.md
     - Windows: win/index.md
+    - Finance: finance/index.md
     - Fresh: fresh/index.md
     - Links: links/index.md
-    - Misc:
-      - 小程序: misc/wx.md
-      - jssdk: misc/wxjssdk.md
-      - 讲座: misc/report.md
-      - Mi: mi/index.md
+    - 小程序: misc/wx.md
+    - jssdk: misc/wxjssdk.md
+    - 讲座: misc/report.md
+    - Mi: mi/index.md
 
 theme:
   name: 'material'
   custom_dir: 'theme'
   search:
     language: 'en, jp'
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
 google_analytics: ['UA-85007363-6', 'auto']
 copyright: 'Copyright &copy; 2017-2021 weiya'
 site_author: weiya
@@ -104,7 +107,9 @@ extra_javascript:
   - javascripts/extra.js
   - javascripts/mathjax.js
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
-
+    
+#extra_css:
+    #  - stylesheets/extra.css
 markdown_extensions:
   # https://github.com/mkdocs/mkdocs/issues/1678
   - attr_list

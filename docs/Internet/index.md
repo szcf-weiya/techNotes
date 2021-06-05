@@ -9,6 +9,28 @@
 
 refer to [一文搞懂TCP与UDP的区别](https://www.cnblogs.com/fundebug/p/differences-of-tcp-and-udp.html)
 
+## Cache
+
+### HTTP Cache
+
+![](https://user-images.githubusercontent.com/25027560/38461517-c7f2f422-3b04-11e8-8e94-20bbeb2a32b8.png)
+
+> source: [缓存（一）——缓存总览：从性能优化的角度看缓存](https://github.com/amandakelake/blog/issues/43)
+
+![](https://user-images.githubusercontent.com/25027560/38223505-d8ab53da-371d-11e8-9263-79814b6971a5.png)
+
+> source: [缓存（二）——浏览器缓存机制：强缓存、协商缓存](https://github.com/amandakelake/blog/issues/41)
+
+a simpler version refer to [动画：深入浅出从根上理解 HTTP 缓存机制及原理](https://mp.weixin.qq.com/s/HASA9n1tzwcZXZUKj35D3Q)
+
+### CDN Cache
+
+![](https://pic3.zhimg.com/v2-50e7b057f156a00873309818c1fe3f86_r.jpg)
+
+![](https://pic1.zhimg.com/v2-2a3e196c2a6dc3fdc15e3128dd185028_r.jpg)
+
+> source: [知乎：http缓存与cdn缓存配置指南](https://zhuanlan.zhihu.com/p/48961014)
+
 ## 安装XX-Net
 
 ### Environment

@@ -1,3 +1,8 @@
+## 2021.06.05
+
+- **Microfossils (微生物化石)** reveal mysterious shark die-off.
+- **Nasal (鼻子的)** **spray (喷雾，喷剂)** could provide protection.
+
 ## 2021.06.04
 
 - Researchers say there is some evidence that infected **mink (水貂)** can pass the virus on to humans.
@@ -2712,7 +2717,6 @@ up
 10. interlocking
 11. snap
 12. blowhole
-13. nasal
 14. sacs
 
 ## 2017.10.19

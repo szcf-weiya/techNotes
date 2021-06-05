@@ -1,46 +1,71 @@
 # Linux Notes
 
-## Linux Distributions
-
-根据包管理器进行的分类，主流的发行版有
-
-- apt: Debian, Ubuntu, Linux Mint
-- yum: CentOS, Fedora
-- YaST: openSUSE
-- Pacman: Manjaro、ArchLinux
-
-另外，根据这道 [Shell 练习题](../shell/#logical-operation)，
-
-- Redhat Series: Fedora, Gentoo, Redhat
-- Suse Series: Suse, OpenSuse
-- Debian Series: Ubuntu, Mint, Debian
-
-参考 
-
-- [Major Distributions: An overview of major Linux distributions and FreeBSD](https://distrowatch.com/dwres.php?resource=major)
-- [知乎：Linux 各大发行版有什么特色？](https://www.zhihu.com/question/24261540)
-
-目前只接触 Ubuntu（个人笔记本） 和 CentOS（服务器），所以本笔记主要针对这两种。
-
 ## System/Hardware Info
 
-- check linux distribution:
+- check linux distribution (refer to [How To Find Out My Linux Distribution Name and Version](https://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/))
   	- `cat /etc/os-release` or `cat /ect/*-release`
   	- `lsb_release -a`
   	- `hostnamectl`
+
+!!! note "Linux Distributions"
+
+    根据包管理器进行的分类，主流的发行版有
+
+    - apt: Debian, Ubuntu, Linux Mint
+    - yum: CentOS, Fedora
+    - YaST: openSUSE
+    - Pacman: Manjaro、ArchLinux
+
+    另外，根据这道 [Shell 练习题](../shell/#logical-operation)，
+
+    - Redhat Series: Fedora, Gentoo, Redhat
+    - Suse Series: Suse, OpenSuse
+    - Debian Series: Ubuntu, Mint, Debian
+
+    参考 
+
+    - [Major Distributions: An overview of major Linux distributions and FreeBSD](https://distrowatch.com/dwres.php?resource=major)
+    - [知乎：Linux 各大发行版有什么特色？](https://www.zhihu.com/question/24261540)
+
+    目前只接触 Ubuntu（个人笔记本） 和 CentOS（服务器），所以本笔记主要针对这两种。
+
 - check kernel version:
 	- `uname -a` or `uname -mrs`
 	- `cat /proc/version`
-- how long has the system been running:
+- how long has the system been running (refer to [How long has my Linux system been running?](https://unix.stackexchange.com/questions/131775/how-long-has-my-linux-system-been-running)):
 	- `last reboot`
 	- `uptime --since`, which is actually the first line of `top`
 - obtain [MAC address :link:](https://help.ubuntu.com/stable/ubuntu-help/net-macaddress.html): ` ifconfig | grep ether`, note that different MAC addresses for WIFI and Ethernet.
+- check number of cores (refer to [How to know number of cores of a system in Linux?](https://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux)):
+    - quick way: `nproc --all`
+    - more details: `lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('`
 
-Refer to 
+!!! note "CPU vs Thread vs Core vs Socket"
+    - CPU: Central Processing Unit。概念比较宽泛，不同语境有不同含义，如 `lscpu` 便指 thread 个数。`CPUs` = `Threads per core` * `cores per socket` * `sockets`
+    - CPU Socket: CPU 是通过一个插槽安装在主板上的，这个插槽就是 Socket;
+    - Core: 一个 CPU 中可以有多个 core，各个 core 之间相互独立，且可以执行并行逻辑，每个 core 都有单独的寄存器，L1, L2 缓存等物理硬件。
+    - Thread: 并不是物理概念，而是软件概念，本质上是利用 CPU 空闲时间来执行其他代码，所以其只能算是并发，而不是并行。
+    - vCPU: 常见于虚拟核，也就是 Thread
+    
+    ```bash
+    G40 $ lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('
+    CPU(s):                          4
+    Thread(s) per core:              2
+    Core(s) per socket:              2
+    Socket(s):                       1
+    ```
+    表明其为 2 核 4 线程。
 
-- [How To Find Out My Linux Distribution Name and Version](https://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/)
-- [How long has my Linux system been running?](https://unix.stackexchange.com/questions/131775/how-long-has-my-linux-system-been-running)
+    ```bash
+    T460P $ $ lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('
+    CPU(s):              4
+    Thread(s) per core:  1
+    Core(s) per socket:  4
+    Socket(s):           1
+    ```
+    表明其为 4 核 4 线程。
 
+    参考 [三分钟速览cpu,socket,core,thread等术语之间的关系](https://cloud.tencent.com/developer/article/1736628)
 
 ## Add User
 
@@ -782,23 +807,6 @@ sudo http_proxy='http://user:pass@proxy.example.com:8080/' apt-get install packa
 refer to [how to install packages with apt-get on a system connected via proxy?](https://askubuntu.com/questions/89437/how-to-install-packages-with-apt-get-on-a-system-connected-via-proxy)
 
 
-## number of cores
-
-> CPUs = Threads per core X cores per socket X sockets
-
-quick way to check
-
-```bash
-nproc --all
-```
-
-more details
-
-```bash
-lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('
-```
-
-refer to [How to know number of cores of a system in Linux?](https://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux)
 
 ## .netrc
 
@@ -1083,25 +1091,6 @@ swapon /mnt/swapfile
 
 这个方法也可以解决 "virtual memory exhausted: Cannot allocate memory" 的问题。
 
-## `unzip` 和右键 `Extract Here` 的区别
-
-对于 A.zip，假设内部结构为 `dir/file`，则通过 `unzip A.zip` 会直接得到 `dir/file`，而右键解压会得到 `A/dir/file`.
-
-## unzip all `.zip` file in a directory
-
-tried `unzip *.zip` but does not work, it seems that I missed something although I have checked `man unzip` in which `*` is indeed allowed, then I found
-
-```bash
-unzip \*.zip
-```
-
-in [Unzip All Files In A Directory](https://stackoverflow.com/questions/2374772/unzip-all-files-in-a-directory/29248777)
-
-Otherwise, use quotes `"*.zip"`. More advancely, only zip files with character `3`,
-
-```bash
-unzip "*3*.zip"
-```
 
 ## GPG error
 

@@ -121,7 +121,7 @@ $$
 
 where $S$ is a diagonal matrix whose elements are given by $S_{ii}=1/\sqrt{A_{ii}}$. This scaling is also known as **Jacobi preconditioning**.
 
-## QR 
+### QR 
 
 A general rectangular $M$-by-$N$ matrix $A$ has a QR decomposition into the product of an orthogonal $M$-by-$M$ square matrix $Q$, where $Q^TQ=I$, and an $M$-by-$N$ right-triangular matrix $R$,
 
@@ -174,7 +174,7 @@ $$
 
 refer to [Rank of the Product of Matrices AB is Less than or Equal to the Rank of A](https://yutsumura.com/rank-of-the-product-of-matrices-ab-is-less-than-or-equal-to-the-rank-of-a/)
 
-## $\rk(A)=\rk(AA^T)=\rh(A^TA)$
+## $\rk(A)=\rk(AA^T)=\rk(A^TA)$
 
 Note that the left null space (the null space of $A^T$) is the orthogonal complement to the column space of $A$, that is,
 
