@@ -160,6 +160,171 @@
       
       
         
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Linux/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../R/" class="md-tabs__link">
+        StatProgramming
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Cpp/" class="md-tabs__link">
+        CSProgramming
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../TeX/" class="md-tabs__link">
+        DocProgramming
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Network/Internet
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../autotools/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../stats/prob/" class="md-tabs__link">
+        Stat
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../English/" class="md-tabs__link">
+        Misc
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -171,8 +336,10 @@
                   <div class="md-sidebar__inner">
                     
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
       
@@ -356,7 +523,9 @@
   
   
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
@@ -379,18 +548,6 @@
     <li class="md-nav__item">
       <a href="../R/" class="md-nav__link">
         一般问题
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../R/basic/" class="md-nav__link">
-        统计基础
       </a>
     </li>
   
@@ -479,7 +636,9 @@
   
   
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
@@ -734,7 +893,9 @@
   
   
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
@@ -797,7 +958,9 @@
   
   
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
@@ -913,13 +1076,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
-        Network
+        Network/Internet
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Network" data-md-level="1">
+      <nav class="md-nav" aria-label="Network/Internet" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
-          Network
+          Network/Internet
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -964,6 +1127,33 @@
   <a href="#tcp-vs-udp" class="md-nav__link">
     TCP vs UDP
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    Cache
+  </a>
+  
+    <nav class="md-nav" aria-label="Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-cache" class="md-nav__link">
+    HTTP Cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdn-cache" class="md-nav__link">
+    CDN Cache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1455,6 +1645,27 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Misc
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../English/" class="md-nav__link">
         English
@@ -1462,26 +1673,8 @@
     </li>
   
 
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../finance/" class="md-nav__link">
-        Finance
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
+          
+            
   
   
   
@@ -1492,11 +1685,8 @@
     </li>
   
 
-    
-      
-      
-      
-
+          
+            
   
   
   
@@ -1507,11 +1697,20 @@
     </li>
   
 
-    
-      
-      
-      
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finance/" class="md-nav__link">
+        Finance
+      </a>
+    </li>
+  
 
+          
+            
   
   
   
@@ -1522,11 +1721,8 @@
     </li>
   
 
-    
-      
-      
-      
-
+          
+            
   
   
   
@@ -1537,30 +1733,6 @@
     </li>
   
 
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
-      
-      <label class="md-nav__link" for="__nav_15">
-        Misc
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Misc" data-md-level="1">
-        <label class="md-nav__title" for="__nav_15">
-          <span class="md-nav__icon md-icon"></span>
-          Misc
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
           
             
   
@@ -1645,6 +1817,33 @@
   <a href="#tcp-vs-udp" class="md-nav__link">
     TCP vs UDP
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    Cache
+  </a>
+  
+    <nav class="md-nav" aria-label="Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-cache" class="md-nav__link">
+    HTTP Cache
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdn-cache" class="md-nav__link">
+    CDN Cache
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1956,6 +2155,23 @@
 </ul>
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/120821783-59ef2100-c588-11eb-837d-5b53f261e474.png" /></p>
 <p>refer to <a href="https://www.cnblogs.com/fundebug/p/differences-of-tcp-and-udp.html">一文搞懂TCP与UDP的区别</a></p>
+<h2 id="cache">Cache<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h2>
+<h3 id="http-cache">HTTP Cache<a class="headerlink" href="#http-cache" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://user-images.githubusercontent.com/25027560/38461517-c7f2f422-3b04-11e8-8e94-20bbeb2a32b8.png" /></p>
+<blockquote>
+<p>source: <a href="https://github.com/amandakelake/blog/issues/43">缓存（一）——缓存总览：从性能优化的角度看缓存</a></p>
+</blockquote>
+<p><img alt="" src="https://user-images.githubusercontent.com/25027560/38223505-d8ab53da-371d-11e8-9263-79814b6971a5.png" /></p>
+<blockquote>
+<p>source: <a href="https://github.com/amandakelake/blog/issues/41">缓存（二）——浏览器缓存机制：强缓存、协商缓存</a></p>
+</blockquote>
+<p>a simpler version refer to <a href="https://mp.weixin.qq.com/s/HASA9n1tzwcZXZUKj35D3Q">动画：深入浅出从根上理解 HTTP 缓存机制及原理</a></p>
+<h3 id="cdn-cache">CDN Cache<a class="headerlink" href="#cdn-cache" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="https://pic3.zhimg.com/v2-50e7b057f156a00873309818c1fe3f86_r.jpg" /></p>
+<p><img alt="" src="https://pic1.zhimg.com/v2-2a3e196c2a6dc3fdc15e3128dd185028_r.jpg" /></p>
+<blockquote>
+<p>source: <a href="https://zhuanlan.zhihu.com/p/48961014">知乎：http缓存与cdn缓存配置指南</a></p>
+</blockquote>
 <h2 id="xx-net">安装XX-Net<a class="headerlink" href="#xx-net" title="Permanent link">&para;</a></h2>
 <h3 id="environment">Environment<a class="headerlink" href="#environment" title="Permanent link">&para;</a></h3>
 <ol>
@@ -2335,6 +2551,10 @@ listen-address <span class="m">0</span>.0.0.0:8118
           </div>
         </div>
         
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
       </main>
       
         
@@ -2442,7 +2662,7 @@ listen-address <span class="m">0</span>.0.0.0:8118
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.34eae1b6.min.js"></script>
