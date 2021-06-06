@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/shell/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.7">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.875de78c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
@@ -514,6 +514,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#safer-bash-script" class="md-nav__link">
+    Safer bash script
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#shell" class="md-nav__link">
@@ -1816,6 +1823,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#safer-bash-script" class="md-nav__link">
+    Safer bash script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shell" class="md-nav__link">
     shell变量
   </a>
@@ -2156,6 +2170,24 @@
 <ol>
 <li><a href="http://www.runoob.com/linux/linux-shell.html">菜鸟教程</a></li>
 </ol>
+<h2 id="safer-bash-script">Safer bash script<a class="headerlink" href="#safer-bash-script" title="Permanent link">&para;</a></h2>
+<p>Came across some scripts <a href="https://github.com/jperkel/nature_bash/blob/e37ef568e81046207befaadd9872931c68a821ce/01_init.sh#L5">jperkel/nature_bash</a> start with </p>
+<div class="highlight"><pre><span></span><code><span class="nb">set</span> -euo pipefail
+</code></pre></div>
+<p>or <a href="https://github.com/huan/docker-wechat/blob/291c281df1ab6806156c286c7df1464b71eee2d1/dochat.sh#L11">docker-wechat/dochat.sh</a></p>
+<div class="highlight"><pre><span></span><code><span class="nb">set</span> -eo pipefail
+</code></pre></div>
+<p>both of which provide safeguards.</p>
+<ul>
+<li><code>-e</code>: cause a bash script to exit immediately when a command fails</li>
+<li><code>-o pipefail</code>: set the exit code of a pipeline to that of the rightmost command to exit with a non-zero status, or to zero if all commands of the pipeline exit successfully.</li>
+<li><code>-u</code>: treat unset variables as an error and exit immediately</li>
+</ul>
+<p>refer to</p>
+<ul>
+<li><a href="https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/">Safer bash scripts with &lsquo;set -euxo pipefail&rsquo;</a></li>
+<li><a href="https://blog.csdn.net/t0nsha/article/details/8606886">解释bash脚本中set -e与set -o pipefail的作用</a></li>
+</ul>
 <h2 id="shell">shell变量<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
 <ol>
 <li>定义变量时，变量名不加美元符号</li>
@@ -2369,6 +2401,7 @@ b
 $ <span class="nb">echo</span> <span class="s1">&#39;a,b&#39;</span> <span class="p">|</span> awk -F, <span class="s1">&#39;{print $2}&#39;</span>
 b
 </code></pre></div>
+<p>其中 <code>$i</code> 指第 i 列，而 <code>$0</code> 指整条记录（including leading and trailing whitespace. ），详见 <code>man awk</code>.</p>
 <p>另外上述脚本中用到了 <code>awk</code> 支持跨行状态的特性，即</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
 b
@@ -2391,6 +2424,10 @@ d
 <p>如果数据文件为 <code>file.txt</code>，则可以直接用</p>
 <div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print NF; exit}&#39;</span> file.txt
 </code></pre></div>
+<p>如果需要输出行数，则用</p>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print NR, &quot;:&quot;, $0}&#39;</span> file.txt
+</code></pre></div>
+<p>如果想从 0 开始，则改成 <code>NR-1</code>.</p>
 <p>Refer to</p>
 <ul>
 <li><a href="https://www.cnblogs.com/paul8339/p/6207182.html">用shell统计访问日志里每个ip访问次数</a></li>
@@ -2398,6 +2435,7 @@ d
 <li><a href="https://stackoverflow.com/questions/8629330/unix-count-of-columns-in-file">unix - count of columns in file</a></li>
 <li><a href="http://www.pement.org/awk/awk1line.txt">HANDY ONE-LINE SCRIPTS FOR AWK</a></li>
 <li><a href="https://www.tecmint.com/learn-use-awk-special-patterns-begin-and-end/">Learn How to Use Awk Special Patterns ‘BEGIN and END’ – Part 9</a></li>
+<li><a href="https://stackoverflow.com/questions/20752043/print-line-numbers-starting-at-zero-using-awk">Print line numbers starting at zero using awk</a></li>
 </ul>
 <h2 id="split-string-while-reading-files">split string while reading files<a class="headerlink" href="#split-string-while-reading-files" title="Permanent link">&para;</a></h2>
 <p>specify <code>IFS=</code>.</p>
@@ -2779,7 +2817,8 @@ xx
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../Linux/asAserver/" class="md-footer__link md-footer__link--prev" rel="prev">
+        
+        <a href="../Linux/asAserver/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 笔记本作为服务器" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2794,7 +2833,8 @@ xx
         </a>
       
       
-        <a href="../R/" class="md-footer__link md-footer__link--next" rel="next">
+        
+        <a href="../R/" class="md-footer__link md-footer__link--next" aria-label="Next: 一般问题" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -2879,10 +2919,10 @@ xx
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.b0710199.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      <script src="../assets/javascripts/bundle.76f349be.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
