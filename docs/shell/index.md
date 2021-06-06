@@ -4,6 +4,31 @@
 
 1. [菜鸟教程](http://www.runoob.com/linux/linux-shell.html)
 
+## Safer bash script
+
+Came across some scripts [jperkel/nature_bash](https://github.com/jperkel/nature_bash/blob/e37ef568e81046207befaadd9872931c68a821ce/01_init.sh#L5) start with 
+
+```bash
+set -euo pipefail
+```
+
+or [docker-wechat/dochat.sh](https://github.com/huan/docker-wechat/blob/291c281df1ab6806156c286c7df1464b71eee2d1/dochat.sh#L11)
+
+```bash
+set -eo pipefail
+```
+
+both of which provide safeguards.
+
+- `-e`: cause a bash script to exit immediately when a command fails
+- `-o pipefail`: set the exit code of a pipeline to that of the rightmost command to exit with a non-zero status, or to zero if all commands of the pipeline exit successfully.
+- `-u`: treat unset variables as an error and exit immediately
+
+refer to
+
+- [Safer bash scripts with 'set -euxo pipefail'](https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/)
+- [解释bash脚本中set -e与set -o pipefail的作用](https://blog.csdn.net/t0nsha/article/details/8606886)
+
 ## shell变量
 
 1. 定义变量时，变量名不加美元符号
@@ -277,6 +302,8 @@ $ echo 'a,b' | awk -F, '{print $2}'
 b
 ```
 
+其中 `$i` 指第 i 列，而 `$0` 指整条记录（including leading and trailing whitespace. ），详见 `man awk`.
+
 另外上述脚本中用到了 `awk` 支持跨行状态的特性，即
 
 ```bash
@@ -315,6 +342,14 @@ awk '{print NF; exit}' file.txt
 ```
 
 
+如果需要输出行数，则用
+
+```bash
+awk '{print NR, ":", $0}' file.txt
+```
+
+如果想从 0 开始，则改成 `NR-1`.
+
 Refer to
 
 - [用shell统计访问日志里每个ip访问次数](https://www.cnblogs.com/paul8339/p/6207182.html)
@@ -322,6 +357,7 @@ Refer to
 - [unix - count of columns in file](https://stackoverflow.com/questions/8629330/unix-count-of-columns-in-file)
 - [HANDY ONE-LINE SCRIPTS FOR AWK](http://www.pement.org/awk/awk1line.txt)
 - [Learn How to Use Awk Special Patterns ‘BEGIN and END’ – Part 9](https://www.tecmint.com/learn-use-awk-special-patterns-begin-and-end/)
+- [Print line numbers starting at zero using awk](https://stackoverflow.com/questions/20752043/print-line-numbers-starting-at-zero-using-awk)
 
 ## split string while reading files
 
