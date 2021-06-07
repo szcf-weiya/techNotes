@@ -13,14 +13,14 @@
         <meta name="author" content="weiya">
       
       
-        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/tools/">
+        <link rel="canonical" href="https://tech.hohoweiya.xyz/dev/docker/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2, mkdocs-material-7.1.7">
     
     
       
-        <title>小工具 - techNotes</title>
+        <title>Docker - techNotes</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#small-tools" class="md-skip">
+        <a href="#docker" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              小工具
+              Docker
             
           </span>
         </div>
@@ -180,15 +180,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Linux/" class="md-tabs__link">
         Linux
       </a>
     </li>
@@ -276,13 +274,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../autotools/" class="md-tabs__link">
+      <a href="../../autotools/" class="md-tabs__link md-tabs__link--active">
         Development
       </a>
     </li>
@@ -386,14 +386,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       <label class="md-nav__link" for="__nav_2">
         Linux
@@ -411,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../Linux/" class="md-nav__link">
         系统
       </a>
     </li>
@@ -423,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/" class="md-nav__link">
+      <a href="../../Linux/software/" class="md-nav__link">
         大软件
       </a>
     </li>
@@ -433,277 +431,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          小工具
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Linux/tools/" class="md-nav__link">
         小工具
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#convert" class="md-nav__link">
-    convert
-  </a>
-  
-    <nav class="md-nav" aria-label="convert">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    图片拼接
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    缩小图片大小
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jpgpdf" class="md-nav__link">
-    合并jpg到pdf
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pdf-jpg" class="md-nav__link">
-    pdf 转为 jpg
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#convert-imgs-to-pdf" class="md-nav__link">
-    convert imgs to pdf
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ffmpeg" class="md-nav__link">
-    ffmpeg： 视频处理
-  </a>
-  
-    <nav class="md-nav" aria-label="ffmpeg： 视频处理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    去除音频
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    慢速播放和快速播放
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    视频旋转
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    视频剪切
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#htop" class="md-nav__link">
-    htop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ls" class="md-nav__link">
-    ls
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paste-cat" class="md-nav__link">
-    paste, cat: 文本文件拼接
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ps2pdf-pdf2ps" class="md-nav__link">
-    ps2pdf, pdf2ps
-  </a>
-  
-    <nav class="md-nav" aria-label="ps2pdf, pdf2ps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reduce-pdf-file-size" class="md-nav__link">
-    reduce pdf file size
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#flatten-pdf-file" class="md-nav__link">
-    flatten pdf file
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rename" class="md-nav__link">
-    rename
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sendmail" class="md-nav__link">
-    sendmail
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sort" class="md-nav__link">
-    sort
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tail" class="md-nav__link">
-    tail
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uniq" class="md-nav__link">
-    uniq
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unzip" class="md-nav__link">
-    unzip
-  </a>
-  
-    <nav class="md-nav" aria-label="unzip">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#unzip-all-zip-file-in-a-directory" class="md-nav__link">
-    unzip all .zip file in a directory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unzip-extract-here" class="md-nav__link">
-    unzip 和右键 Extract Here 的区别
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wget" class="md-nav__link">
-    wget
-  </a>
-  
-    <nav class="md-nav" aria-label="wget">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wget-a-series-of-files-in-order" class="md-nav__link">
-    wget a series of files in order
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wget-vs-curl" class="md-nav__link">
-    wget vs curl
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unar" class="md-nav__link">
-    unar
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -713,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../servers/" class="md-nav__link">
+      <a href="../../Linux/servers/" class="md-nav__link">
         服务器
       </a>
     </li>
@@ -725,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../16to18/" class="md-nav__link">
+      <a href="../../Linux/16to18/" class="md-nav__link">
         16to18
       </a>
     </li>
@@ -737,7 +469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../asAserver/" class="md-nav__link">
+      <a href="../../Linux/asAserver/" class="md-nav__link">
         笔记本作为服务器
       </a>
     </li>
@@ -1400,12 +1132,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       <label class="md-nav__link" for="__nav_7">
         Development
@@ -1433,11 +1167,92 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../dev/docker/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Docker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Docker
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tutorials" class="md-nav__link">
+    Tutorials
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-r-via-docker" class="md-nav__link">
+    install r via docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-the-root-folder" class="md-nav__link">
+    change the root folder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xampp" class="md-nav__link">
+    XAMPP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-for-a-non-internet-env" class="md-nav__link">
+    Python (for a non-internet env)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1738,44 +1553,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#convert" class="md-nav__link">
-    convert
+  <a href="#tutorials" class="md-nav__link">
+    Tutorials
   </a>
   
-    <nav class="md-nav" aria-label="convert">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    图片拼接
+  <a href="#install-r-via-docker" class="md-nav__link">
+    install r via docker
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    缩小图片大小
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jpgpdf" class="md-nav__link">
-    合并jpg到pdf
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pdf-jpg" class="md-nav__link">
-    pdf 转为 jpg
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#convert-imgs-to-pdf" class="md-nav__link">
-    convert imgs to pdf
+  <a href="#change-the-root-folder" class="md-nav__link">
+    change the root folder
   </a>
   
 </li>
@@ -1786,186 +1587,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ffmpeg" class="md-nav__link">
-    ffmpeg： 视频处理
-  </a>
-  
-    <nav class="md-nav" aria-label="ffmpeg： 视频处理">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    去除音频
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    慢速播放和快速播放
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    视频旋转
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    视频剪切
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#htop" class="md-nav__link">
-    htop
+  <a href="#xampp" class="md-nav__link">
+    XAMPP
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ls" class="md-nav__link">
-    ls
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paste-cat" class="md-nav__link">
-    paste, cat: 文本文件拼接
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ps2pdf-pdf2ps" class="md-nav__link">
-    ps2pdf, pdf2ps
-  </a>
-  
-    <nav class="md-nav" aria-label="ps2pdf, pdf2ps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reduce-pdf-file-size" class="md-nav__link">
-    reduce pdf file size
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#flatten-pdf-file" class="md-nav__link">
-    flatten pdf file
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rename" class="md-nav__link">
-    rename
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sendmail" class="md-nav__link">
-    sendmail
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sort" class="md-nav__link">
-    sort
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tail" class="md-nav__link">
-    tail
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uniq" class="md-nav__link">
-    uniq
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unzip" class="md-nav__link">
-    unzip
-  </a>
-  
-    <nav class="md-nav" aria-label="unzip">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#unzip-all-zip-file-in-a-directory" class="md-nav__link">
-    unzip all .zip file in a directory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unzip-extract-here" class="md-nav__link">
-    unzip 和右键 Extract Here 的区别
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wget" class="md-nav__link">
-    wget
-  </a>
-  
-    <nav class="md-nav" aria-label="wget">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wget-a-series-of-files-in-order" class="md-nav__link">
-    wget a series of files in order
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wget-vs-curl" class="md-nav__link">
-    wget vs curl
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unar" class="md-nav__link">
-    unar
+  <a href="#python-for-a-non-internet-env" class="md-nav__link">
+    Python (for a non-internet env)
   </a>
   
 </li>
@@ -1983,321 +1613,198 @@
               
                 
                 
-                <h1 id="small-tools">Small Tools<a class="headerlink" href="#small-tools" title="Permanent link">&para;</a></h1>
-<h2 id="convert"><code>convert</code><a class="headerlink" href="#convert" title="Permanent link">&para;</a></h2>
-<h3 id="_1">图片拼接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># 水平方向</span>
-convert +append *.png out.png
-<span class="c1"># 垂直方向</span>
-convert -append *.png out.png
-</code></pre></div>
-<p>参考 <a href="https://askubuntu.com/a/889772">How do I join two images in Ubuntu?</a></p>
-<h3 id="_2">缩小图片大小<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># only specify the wide as 1024 pixel to keep the aspect ratio</span>
-convert input.png -resize 1024x out.png
-convert input.png -quality <span class="m">50</span>% out.png
-</code></pre></div>
-<p>参考<a href="https://askubuntu.com/questions/781497/how-can-i-compress-images">How can I compress images?</a></p>
-<h3 id="jpgpdf">合并jpg到pdf<a class="headerlink" href="#jpgpdf" title="Permanent link">&para;</a></h3>
-<p>参考<a href="https://unix.stackexchange.com/questions/20026/convert-images-to-pdf-how-to-make-pdf-pages-same-size">convert images to pdf: How to make PDF Pages same size</a></p>
-<p>直接采用</p>
-<div class="highlight"><pre><span></span><code>pdftk A.pdf B.pdf cat output merge.pdf
-</code></pre></div>
-<p>得到的pdf中页面大小不一致，于是采用下面的命令</p>
-<div class="highlight"><pre><span></span><code>convert a.png b.png -compress jpeg -resize 1240x1753 <span class="se">\</span>
-                      -extent 1240x1753 -gravity center <span class="se">\</span>
-                      -units PixelsPerInch -density 150x150 multipage.pdf
-</code></pre></div>
-<p>注意重点是 <code>-density 150x150</code>，若去掉这个选项，则还是得不到相同页面大小的文件。</p>
-<p>另外，上述命令是对于<code>.png</code>而言的，完全可以换成<code>.jpg</code>。</p>
-<p>同时，注意<code>1240x1753</code>中间是字母<code>x</code>.</p>
-<h3 id="pdf-jpg">pdf 转为 jpg<a class="headerlink" href="#pdf-jpg" title="Permanent link">&para;</a></h3>
-<p><code>-quality 100</code> 控制质量
- <code>-density 600x600</code> 控制分辨率</p>
-<p>并注意参数放置文件的前面</p>
-<p>pdf 转 png 更好的命令是 <code>pdftoppm</code>，参考 <a href="https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image">How to convert PDF to Image?</a></p>
-<div class="highlight"><pre><span></span><code>pdftoppm alg.pdf alg -png -singlefile
-</code></pre></div>
-<p>图片质量比 <code>convert</code> 好很多！！</p>
-<h3 id="convert-imgs-to-pdf">convert imgs to pdf<a class="headerlink" href="#convert-imgs-to-pdf" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>ls -1 ./*jpg <span class="p">|</span> xargs -L1 -I <span class="o">{}</span> img2pdf <span class="o">{}</span> -o <span class="o">{}</span>.pdf
-pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m">1</span>..13<span class="o">}</span>-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
-</code></pre></div>
-<p>注意这里需要用 <code>ls -1</code>，如果 <code>ll</code> 则第一行会有 <code>total xxx</code> 的信息，即 <code>ll | wc -l</code> 等于 <code>ls -1 | wc -l</code> + 1，而且在我的 Ubuntu 18.04 中，<code>ll</code> 甚至还会列出</p>
-<div class="highlight"><pre><span></span><code>./
-../
-</code></pre></div>
-<p>这一点在服务器上没看到。</p>
-<h2 id="ffmpeg"><code>ffmpeg</code>： 视频处理<a class="headerlink" href="#ffmpeg" title="Permanent link">&para;</a></h2>
-<h3 id="_3">去除音频<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>参考 <a href="https://hefang.link/article/how-remove-voice-with-ffmpeg.html">如何使用ffmpeg去除视频声音？</a></p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i .<span class="se">\i</span>nput.mp4 -map <span class="m">0</span>:0 -vcodec copy out.mp4
-</code></pre></div>
-<h3 id="_4">慢速播放和快速播放<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>参考 <a href="https://blog.csdn.net/ternence_hsu/article/details/85865718">ffmpeg 视频倍速播放 和 慢速播放</a></p>
-<h3 id="_5">视频旋转<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>参考<a href="https://askubuntu.com/questions/83711/how-can-i-rotate-a-video">How can I rotate a video?</a></p>
-<p>直接用</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i <span class="k">in</span>.mov -vf <span class="s2">&quot;transpose=1&quot;</span> out.mov
-</code></pre></div>
-<p>然后报错 <a href="(https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled)">“The encoder &lsquo;aac&rsquo; is experimental but experimental codecs are not enabled”</a></p>
-<p>注意添加 <code>-strict -2</code> 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i <span class="k">in</span>.mov -vf <span class="s2">&quot;transpose=1&quot;</span> -strict -2 out.mov
-</code></pre></div>
-<h3 id="_6">视频剪切<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">00</span>:00:30.0 -i input.wmv -c copy -t <span class="m">00</span>:00:10.0 output.wmv
-</code></pre></div>
-<p>where</p>
+                <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<h2 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>
 <ul>
-<li>(optional) <code>-ss</code> specifies the start timestamp, the format is <code>HH:MM:SS.xxx</code></li>
-<li>(optional) <code>-t</code> specifies the duration, or use <code>-to</code> to specifies the end timestamp</li>
+<li><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker 入门教程 &ndash; 阮一峰</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html">Docker 微服务教程 &ndash; 阮一峰</a></li>
 </ul>
-<p>refer to <a href="https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video">Using ffmpeg to cut up video</a></p>
-<h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
-<p>A much more powerful command than <code>top</code>, refer to <a href="https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/">Find out what processes are running in the background on Linux</a></p>
-<h2 id="ls"><code>ls</code><a class="headerlink" href="#ls" title="Permanent link">&para;</a></h2>
-<p>在找学习资料时，突然不是很确定当初是否已经在用这台笔记本了，所以想确定一下本机的装机时间，参考 <a href="https://askubuntu.com/questions/1352/how-can-i-tell-what-date-ubuntu-was-installed">How can I tell what date Ubuntu was installed?</a>，主要时通过查看文件的上次修改时间，比如</p>
-<div class="highlight"><pre><span></span><code>$ ls -lt /var/log/installer/
-total <span class="m">1200</span>
--rw-rw-r-- <span class="m">1</span> root   root <span class="m">464905</span> Dec  <span class="m">2</span>  <span class="m">2016</span> initial-status.gz
--rw-r--r-- <span class="m">1</span> root   root     <span class="m">60</span> Dec  <span class="m">2</span>  <span class="m">2016</span> media-info
--rw------- <span class="m">1</span> syslog adm  <span class="m">334743</span> Dec  <span class="m">2</span>  <span class="m">2016</span> syslog
--rw------- <span class="m">1</span> root   root   <span class="m">2467</span> Dec  <span class="m">2</span>  <span class="m">2016</span> debug
--rw------- <span class="m">1</span> root   root <span class="m">407422</span> Dec  <span class="m">2</span>  <span class="m">2016</span> partman
--rw------- <span class="m">1</span> root   root     <span class="m">17</span> Dec  <span class="m">2</span>  <span class="m">2016</span> version
--rw------- <span class="m">1</span> root   root    <span class="m">956</span> Dec  <span class="m">2</span>  <span class="m">2016</span> casper.log
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Directly type <code>docker</code> in the terminal,</p>
+<div class="highlight"><pre><span></span><code>$ docker
+
+Command <span class="s1">&#39;docker&#39;</span> not found, but can be installed with:
+
+sudo snap install docker     <span class="c1"># version 19.03.11, or</span>
+sudo apt  install docker.io
+
+See <span class="s1">&#39;snap info docker&#39;</span> <span class="k">for</span> additional versions.
 </code></pre></div>
-<p>又如</p>
-<div class="highlight"><pre><span></span><code>$ ls -lt /
-...
-drwxrwxr-x   <span class="m">2</span> root root       <span class="m">4096</span> Dec  <span class="m">2</span>  <span class="m">2016</span> cdrom
-drwx------   <span class="m">2</span> root root      <span class="m">16384</span> Dec  <span class="m">2</span>  <span class="m">2016</span> lost+found
-drwxr-xr-x   <span class="m">2</span> root root       <span class="m">4096</span> Apr <span class="m">21</span>  <span class="m">2016</span> srv
+<p>then run</p>
+<div class="highlight"><pre><span></span><code>sudo apt  install docker.io
 </code></pre></div>
-<p>出现了 2016.04.21 的一条记录。但如果我加上 <code>-c</code>，结果竟然不一样</p>
-<div class="highlight"><pre><span></span><code>$ ls -clt /
-...
-drwxrwxr-x   <span class="m">2</span> root root       <span class="m">4096</span> Dec  <span class="m">2</span>  <span class="m">2016</span> cdrom
-drwxr-xr-x   <span class="m">2</span> root root       <span class="m">4096</span> Dec  <span class="m">2</span>  <span class="m">2016</span> srv
-drwx------   <span class="m">2</span> root root      <span class="m">16384</span> Dec  <span class="m">2</span>  <span class="m">2016</span> lost+found
+<p>Without permisson, it will report the following message</p>
+<div class="highlight"><pre><span></span><code>$ docker version
+Client:
+ Version:           <span class="m">19</span>.03.6
+ API version:       <span class="m">1</span>.40
+ Go version:        go1.12.17
+ Git commit:        369ce74a3c
+ Built:             Fri Feb <span class="m">28</span> <span class="m">23</span>:45:43 <span class="m">2020</span>
+ OS/Arch:           linux/amd64
+ Experimental:      <span class="nb">false</span>
+Got permission denied <span class="k">while</span> trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/version: dial unix /var/run/docker.sock: connect: permission denied
 </code></pre></div>
-<p>难道 <code>ls</code> 默认显示的时间不是上次修改时间吗？？另外注意到 <code>srv</code> 其实是一个空文件夹。</p>
-<p>这时我用 <code>stat</code> 进一步查看，</p>
-<div class="highlight"><pre><span></span><code>$ stat /srv
-  File: /srv
-  Size: <span class="m">4096</span>        Blocks: <span class="m">8</span>          IO Block: <span class="m">4096</span>   directory
-Device: 825h/2085d  Inode: <span class="m">1179649</span>     Links: <span class="m">2</span>
-Access: <span class="o">(</span><span class="m">0755</span>/drwxr-xr-x<span class="o">)</span>  Uid: <span class="o">(</span>    <span class="m">0</span>/    root<span class="o">)</span>   Gid: <span class="o">(</span>    <span class="m">0</span>/    root<span class="o">)</span>
-Access: <span class="m">2021</span>-05-05 <span class="m">08</span>:43:20.955106697 +0800
-Modify: <span class="m">2016</span>-04-21 <span class="m">06</span>:07:49.000000000 +0800
-Change: <span class="m">2016</span>-12-02 <span class="m">02</span>:46:47.363728274 +0800
- Birth: -
+<p>To <a href="https://docs.docker.com/engine/install/linux-postinstall/">avoid permission issue</a>,</p>
+<div class="highlight"><pre><span></span><code>sudo usermod -aG docker <span class="nv">$USER</span>
 </code></pre></div>
-<p>发现有两个修改时间，<code>Modify</code> 和 <code>Change</code>，<a href="https://unix.stackexchange.com/questions/2464/timestamp-modification-time-and-created-time-of-a-file">两者区别<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59z"/></svg></span></a>在于</p>
+<p>But it is necessary to log out and log back in to re-evaluate the group membership.</p>
+<h3 id="install-r-via-docker">install r via docker<a class="headerlink" href="#install-r-via-docker" title="Permanent link">&para;</a></h3>
+<p>step 1:</p>
+<div class="highlight"><pre><span></span><code>docker pull r-base
+</code></pre></div>
+<p>for specified version,</p>
+<div class="highlight"><pre><span></span><code>docker pull r-base:3.6.0
+</code></pre></div>
+<p>step 2:</p>
+<div class="highlight"><pre><span></span><code>docker run -it --rm r-base:3.6.0
+</code></pre></div>
+<p>install.packages(&ldquo;https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz&rdquo;, repos = NULL, type = &ldquo;source&rdquo;)</p>
+<h3 id="change-the-root-folder">change the root folder<a class="headerlink" href="#change-the-root-folder" title="Permanent link">&para;</a></h3>
+<p>to save space, I want to <a href="https://stackoverflow.com/questions/24309526/how-to-change-the-docker-image-installation-directory">change the image installation directory:</a></p>
+<div class="highlight"><pre><span></span><code>$ sudo vi /etc/docker/daemon.json
+<span class="o">{</span>
+  <span class="s2">&quot;data-root&quot;</span>: <span class="s2">&quot;/new/path/to/docker-data&quot;</span>
+<span class="o">}</span>
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
+</code></pre></div>
+<p>where the <a href="https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file">official explanation</a> is that</p>
 <ul>
-<li><code>Modify</code>: the last time the file was modified (content has been modified)</li>
-<li><code>Change</code>: the last time meta data of the file was changed (e.g. permissions)</li>
+<li><code>data-root</code> is the path where persisted data such as images, volumes, and cluster state are stored. The default value is /var/lib/docker</li>
 </ul>
-<p>然后进一步查看 Windows 系统的时间，</p>
-<div class="highlight"><pre><span></span><code>$ ll -clt
+<p>we can validate it with the <code>hello-world</code> image,</p>
+<div class="highlight"><pre><span></span><code>$ docker image pull hello-world
+<span class="c1"># or docker image pull library/hello-world</span>
+$ docker image ls
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              d1165f221234        <span class="m">7</span> weeks ago         <span class="m">13</span>.3kB
+$ docker image inspect d1165
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">&quot;Id&quot;</span>: <span class="s2">&quot;sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726&quot;</span>,
+        <span class="s2">&quot;RepoTags&quot;</span>: <span class="o">[</span>
+            <span class="s2">&quot;hello-world:latest&quot;</span>
 ...
-drwxrwxrwx  <span class="m">1</span> weiya weiya       <span class="m">4096</span> Oct  <span class="m">1</span>  <span class="m">2016</span> <span class="s1">&#39;$Recycle.Bin&#39;</span>/
-drwxrwxrwx  <span class="m">1</span> weiya weiya          <span class="m">0</span> Sep <span class="m">29</span>  <span class="m">2016</span>  FFOutput/
--rwxrwxrwx  <span class="m">2</span> weiya weiya   <span class="m">15151172</span> Jul  <span class="m">2</span>  <span class="m">2016</span>  WindowsDENGL.tt2*
--rwxrwxrwx  <span class="m">2</span> weiya weiya   <span class="m">16092228</span> Jul  <span class="m">2</span>  <span class="m">2016</span>  WindowsDENG.tt2*
--rwxrwxrwx  <span class="m">2</span> weiya weiya   <span class="m">16217976</span> Jul  <span class="m">2</span>  <span class="m">2016</span>  WindowsDENGB.tt2*
--rwxrwxrwx  <span class="m">1</span> weiya weiya     <span class="m">400228</span> Mar <span class="m">19</span>  <span class="m">2016</span>  bootmgr*
--rwxrwxrwx  <span class="m">1</span> weiya weiya          <span class="m">1</span> Mar <span class="m">19</span>  <span class="m">2016</span>  BOOTNXT*
-drwxrwxrwx  <span class="m">1</span> weiya weiya       <span class="m">8192</span> Mar <span class="m">18</span>  <span class="m">2016</span>  Boot/
+        <span class="s2">&quot;GraphDriver&quot;</span>: <span class="o">{</span>
+            <span class="s2">&quot;Data&quot;</span>: <span class="o">{</span>
+                <span class="s2">&quot;MergedDir&quot;</span>: <span class="s2">&quot;/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/merged&quot;</span>,
+                <span class="s2">&quot;UpperDir&quot;</span>: <span class="s2">&quot;/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/diff&quot;</span>,
+                <span class="s2">&quot;WorkDir&quot;</span>: <span class="s2">&quot;/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/work&quot;</span>
+            <span class="o">}</span>,
+...
 </code></pre></div>
-<p>最早可以追溯到 2016.03.18.</p>
-<h2 id="paste-cat"><code>paste, cat</code>: 文本文件拼接<a class="headerlink" href="#paste-cat" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1">### 按列</span>
-paste file1 file2 &gt; outputfile
-<span class="c1">### 按行</span>
-cat file1 file2 &gt; outputfile
-</code></pre></div>
-<h2 id="ps2pdf-pdf2ps"><code>ps2pdf, pdf2ps</code><a class="headerlink" href="#ps2pdf-pdf2ps" title="Permanent link">&para;</a></h2>
-<h3 id="reduce-pdf-file-size">reduce pdf file size<a class="headerlink" href="#reduce-pdf-file-size" title="Permanent link">&para;</a></h3>
-<p>It can be used to reduce the pdf size. </p>
-<p>Generally, there are two major reasons why PDF file size can be unexpectedly large (refer to <a href="https://www.evermap.com/PDFFileSize.asp">Understanding PDF File Size</a>).</p>
-<ul>
-<li>one or more fonts are stored inside PDF document.</li>
-<li>using images for creating PDF file.</li>
-</ul>
-<p>I just got a large non-scanned pdf with size 136M, and it probably is due to many embedded fonts which can be checked in the properties.</p>
-<p>Then I tried the command <code>ps2pdf</code> mentioned in <a href="https://www.journaldev.com/34668/reduce-pdf-file-size-in-linux">Reduce PDF File Size in Linux</a>, the file size is significantly reduced, only 5.5M!</p>
-<div class="highlight"><pre><span></span><code>$ ps2pdf -dPDFSETTINGS<span class="o">=</span>/ebook Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf
-$ pdfinfo Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf 
-Creator:        
-Producer:       Acrobat Distiller <span class="m">8</span>.0.0<span class="o">(</span>Windows<span class="o">)</span>
-CreationDate:   Tue Jul <span class="m">26</span> <span class="m">20</span>:43:43 <span class="m">2011</span> CST
-ModDate:        Fri Aug <span class="m">19</span> <span class="m">19</span>:57:50 <span class="m">2011</span> CST
-Tagged:         no
-UserProperties: no
-Suspects:       no
-Form:           AcroForm
-JavaScript:     no
-Pages:          <span class="m">504</span>
-Encrypted:      no
-Page size:      <span class="m">439</span>.37 x <span class="m">666</span>.142 pts
-Page rot:       <span class="m">0</span>
-File size:      <span class="m">142394146</span> bytes
-Optimized:      no
-PDF version:    <span class="m">1</span>.3
-$ pdfinfo Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf 
-Creator:        
-Producer:       GPL Ghostscript <span class="m">9</span>.26
-CreationDate:   Tue Apr <span class="m">13</span> <span class="m">18</span>:04:57 <span class="m">2021</span> CST
-ModDate:        Tue Apr <span class="m">13</span> <span class="m">18</span>:04:57 <span class="m">2021</span> CST
-Tagged:         no
-UserProperties: no
-Suspects:       no
-Form:           none
-JavaScript:     no
-Pages:          <span class="m">504</span>
-Encrypted:      no
-Page size:      <span class="m">439</span>.37 x <span class="m">666</span>.14 pts
-Page rot:       <span class="m">0</span>
-File size:      <span class="m">5766050</span> bytes
-Optimized:      no
-PDF version:    <span class="m">1</span>.4
-</code></pre></div>
-<p>We can compare the fonts before/after reducing,</p>
-<div class="highlight"><pre><span></span><code>$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf <span class="p">|</span> wc -l
-<span class="m">57</span>
-$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf <span class="p">|</span> wc -l
-<span class="m">125</span>
-</code></pre></div>
-<p>and it seems not directly to remove fonts. Instead, most font names have been modified. Besides, these are duplicated font names (column one), such as </p>
-<div class="highlight"><pre><span></span><code>$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf <span class="p">|</span> sed <span class="m">1</span>,2d - <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c
-      <span class="m">1</span> AMJQSV+LMSans8-Regular
-        ...
-     <span class="m">13</span> OELTPO+LMMathItalic10-Regular
-        ...
-      <span class="m">1</span> Times
-      <span class="m">2</span> TimesNewRoman
-      <span class="m">1</span> TimesNewRoman,Italic
-      <span class="m">3</span> Times-Roman
-        ...
-     <span class="m">15</span> YCQSHP+LMRoman10-Bold
-      <span class="m">4</span> YWGCMO+LMMathSymbols7-Regular
-     <span class="m">16</span> ZMWYHT+LMRoman10-Regular
-</code></pre></div>
-<p>Count the number of unique names,</p>
-<div class="highlight"><pre><span></span><code>$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf <span class="p">|</span> sed <span class="m">1</span>,2d - <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c <span class="p">|</span> wc -l
-<span class="m">50</span>
-$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf <span class="p">|</span> sed <span class="m">1</span>,2d - <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c <span class="p">|</span> wc -l
-<span class="m">55</span>
-</code></pre></div>
-<p>it shows that the reduced pdf does not have duplicated font names, (here the first two lines are removed, 57 = 55 + 2).</p>
-<div class="admonition tip">
-<p class="admonition-title">pdffonts</p>
-<p>Another application of <code>pdffonts</code> is to check if the font has been embedded. If not, it might cause some display issue, such as the non-embedded <code>Symbol</code> in <a href="https://stackoverflow.com/questions/10277418/the-pdf-viewer-evince-on-linux-can-not-display-some-math-symbols-correctly">The PDF viewer &lsquo;Evince&rsquo; on Linux can not display some math symbols correctly</a>. In contrast, Adobe Reader already ships with application-embedded instances of some fonts, such as <code>Symbol</code>, so it can render the pdf properly.
-A remedy is to use <code>gs</code>, see more details in the above reference.</p>
+<h2 id="xampp">XAMPP<a class="headerlink" href="#xampp" title="Permanent link">&para;</a></h2>
+<p><a href="https://en.wikipedia.org/wiki/XAMPP">XAMPP</a> is a free and open-source <strong>cross-platform (X)</strong> web server solution stack package developed by Apache Friends, consisting mainly of the <strong>Apache HTTP Server (A)</strong>, <strong>MariaDB database (M)</strong> (formerly MySQL), and interpreters for scripts written in the <strong>PHP (P)</strong> and <strong>Perl (P)</strong> programming languages.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><a href="https://github.com/szcf-weiya/DaSS/">My DaSS Project</a></p>
 </div>
-<h3 id="flatten-pdf-file">flatten pdf file<a class="headerlink" href="#flatten-pdf-file" title="Permanent link">&para;</a></h3>
-<p>Flattening a PDF means to merge separated contents of the document into one so that,</p>
+<p>Here is a <a href="https://hub.docker.com/r/tomsik68/xampp">great docker image</a>!</p>
+<p>Start via</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#$ docker pull tomsik68/xampp</span>
+$ docker run --name myXAMPP -p <span class="m">41061</span>:22 -p <span class="m">41062</span>:80 -d -v ~/my_web_pages:/www tomsik68/xampp:8
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <ul>
-<li>Interactive elements in PDF forms such as checkboxes, tex boxes, radio buttons, drop-down lists are no longer fillable</li>
-<li>Annotations become &ldquo;native text&rdquo;</li>
-<li>Multiple layers of text, images, page numbers, and header styles turn into one single layer.</li>
+<li><code>docker run</code> and <code>docker container run</code> are exactly the same <a href="https://stackoverflow.com/questions/51247609/what-is-the-difference-between-docker-run-and-docker-container-run"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59z"/></svg></span></a></li>
+<li>since <code>docker run</code> will automatically download the image if no installed, then <code>docker pull</code> is unnecessary. <a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li><code>-v /HOST-DIR:/CONTAINER-DIR</code> creates a bind mount.</li>
+<li><code>-p hostPort:containerPort</code> publishes the container&rsquo;s port to the host.</li>
+<li><code>-d</code> runs the container in the background and print the new container ID.</li>
+<li><img alt="🔑" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f511.svg" title=":key:" /> More details can be checked via <code>man docker-run</code>.</li>
 </ul>
-<p>An easy way is</p>
-<div class="highlight"><pre><span></span><code>pdf2ps orig.pdf - <span class="p">|</span> ps2pdf - flattened.pdf
+</div>
+<p>Then we can see the container via </p>
+<div class="highlight"><pre><span></span><code>$ docker container ls
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                                                    NAMES
+43e5a49cbfd5        tomsik68/xampp      <span class="s2">&quot;sh /startup.sh&quot;</span>    <span class="m">18</span> seconds ago      Up <span class="m">17</span> seconds       <span class="m">3306</span>/tcp, <span class="m">0</span>.0.0.0:41061-&gt;22/tcp, <span class="m">0</span>.0.0.0:41062-&gt;80/tcp   myXAMPP
 </code></pre></div>
-<p>some alternatives can be found in <a href="https://unix.stackexchange.com/questions/162922/is-there-a-way-to-flatten-a-pdf-image-from-the-command-line">is-there-a-way-to-flatten-a-pdf-image-from-the-command-line</a>.</p>
-<h2 id="rename"><code>rename</code><a class="headerlink" href="#rename" title="Permanent link">&para;</a></h2>
-<p>Ubuntu 18.04 和 CentOS 7 中的 <code>rename</code> 不一样，</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Ubuntu 18.04</span>
-$ rename -V
-/usr/bin/rename using File::Rename version <span class="m">0</span>.20
-<span class="c1"># CentOS 7</span>
-$ rename -V
-rename from util-linux <span class="m">2</span>.23.2
+<p>Stop via</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#$ docker container stop/kill [containerID]</span>
+$ docker stop/kill <span class="o">[</span>containerID<span class="o">]</span>
+<span class="c1"># then</span>
+$ docker stop 43e5
+43e5
+$ docker container ls
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 </code></pre></div>
-<p>用法也有差异，前者采用类似 <code>sed</code> 格式语句进行替换</p>
-<div class="highlight"><pre><span></span><code>rename -n <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*确认需要重命名的文件*/
-rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修改，并列出已重命名的文件*/
-</code></pre></div>
-<p>而后者需要将替换的字符串当作参数传入，并且只替换第一次出现的字符串，即</p>
-<div class="highlight"><pre><span></span><code>rename Sam3 Stm32 *.nc
-</code></pre></div>
-<p>参考</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <ul>
-<li><a href="http://www.linuxidc.com/Linux/2016-11/137041.htm">Ubuntu中rename命令和批量重命名</a></li>
-<li><a href="https://stackoverflow.com/questions/10803296/modifying-replace-string-in-xargs">Modifying replace string in xargs</a></li>
+<li>similarly, <code>docker container stop/kill</code> can be abbreviated as <code>docker stop/kill</code></li>
+<li><code>kill</code> 向容器里面的主进程发出 SIGKILL 信号，而 <code>stop</code> 发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号。两者差异是，应用程序收到 SIGTERM 信号后，可以自行进行收尾清理工作，但也可以不理会这个信号。如果收到 SIGKILL 信号，就会强行立即终止，那些正在进行的操作会全部丢失。<a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li><code>containerID</code> 无需写全，只要能区分即可</li>
+<li>since we have specified the name via <code>--name myXAMPP</code>, we can replace the containerID with such name.</li>
 </ul>
-<h2 id="sendmail"><code>sendmail</code><a class="headerlink" href="#sendmail" title="Permanent link">&para;</a></h2>
-<p>send mail on the command line. On the stapc-WSL, install it via</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt install sendmail
+</div>
+<p>Restart via</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># find the container ID</span>
+$ docker container ls -a
+$ docker container start <span class="o">[</span>containerID<span class="o">]</span>/<span class="o">[</span>containerNAME<span class="o">]</span>
 </code></pre></div>
-<p>monitor the updates of <code>/var/log/apache2/error.log</code>. If the modified time is recent, then send email to alert.</p>
-<div class="highlight"><pre><span></span><code><span class="k">while</span> true<span class="p">;</span> <span class="k">do</span>
-    <span class="nv">last_date</span><span class="o">=</span><span class="k">$(</span>date -r /var/log/apache2/error.log +%s<span class="k">)</span>
-<span class="c1">#   curr_date=$(date -d &quot;-1 mins&quot; +%s)</span>
-    sleep 1m
-    <span class="nv">curr_date</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$last_date</span> &gt; <span class="nv">$curr_date</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="o">(</span>
-            cat <span class="s">&lt;&lt;-EOT</span>
-<span class="s">            TO: ${TO}</span>
-<span class="s">            From: ${FROM}</span>
-<span class="s">            Subject: ${SUBJ}</span>
-
-<span class="s">            There is some updates on the /var/log/apache2/error.log</span>
-
-<span class="s">            EOT</span>
-        <span class="o">)</span> <span class="p">|</span> sendmail -v <span class="si">${</span><span class="nv">TO</span><span class="si">}</span>
-    <span class="k">fi</span>
-<span class="k">done</span>
-</code></pre></div>
-<p>其中 <code>date -r file</code> 返回文件的上次修改时间，而 <code>+%s</code> 将时间转换为 seconds，方便进行比较，另外 <code>-d "-1 mins"</code> 能对时间进行加减处理。 </p>
-<h2 id="sort"><code>sort</code><a class="headerlink" href="#sort" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <ul>
-<li><a href="https://unix.stackexchange.com/questions/104525/sort-based-on-the-third-column">sort according to the third column</a>: <code>sort -k 3,3 file.txt</code></li>
-<li><a href="https://stackoverflow.com/questions/14562423/is-there-a-way-to-ignore-header-lines-in-a-unix-sort">sort with header</a>
-: <code>cat your_data | (sed -u 1q; sort)</code></li>
+<li><code>docker container ls</code> only shows the running ones, but <code>-a</code> will show all containers. More details can be found in <code>man docker-container-ls</code></li>
 </ul>
-<h2 id="tail"><code>tail</code><a class="headerlink" href="#tail" title="Permanent link">&para;</a></h2>
+</div>
+<p>Establish a ssh connection,</p>
+<div class="highlight"><pre><span></span><code>$ ssh root@127.0.0.1 -p <span class="m">41061</span>
+</code></pre></div>
+<p>it sounds like the port-forwarding if we view the container as another linux machine.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Both default username and password are <code>root</code>.</p>
+</div>
+<p>Alternatively, we can get a shell terminal insider the container, just like ssh,</p>
+<div class="highlight"><pre><span></span><code>$ docker <span class="nb">exec</span> -it myXAMPP bash
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <ul>
-<li><code>-f</code>: output appended data as the file grows, powerful for checking the log file in real time.</li>
+<li><code>-t</code> allocates a pseudo-TTY.</li>
+<li><code>-i</code> keeps STDIN open even if not attached.</li>
+<li><code>docker [container] exec</code> 用于进入一个正在运行的 container. 如果 <code>docker run</code> 命令运行容器时，没有使用 <code>-it</code>，则需要这个命令进入容器。<a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
-<h2 id="uniq"><code>uniq</code><a class="headerlink" href="#uniq" title="Permanent link">&para;</a></h2>
-<ul>
-<li>count the frequency: <code>cat file.txt | sort | uniq -c</code>.<ul>
-<li>note that <code>sort</code> is necessary, otherwise <code>uniq</code> only performs locally</li>
-<li>examples: <a href="https://github.com/szcf-weiya/TB/issues/46#issuecomment-831761174">classificacaoFinal</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="unzip"><code>unzip</code><a class="headerlink" href="#unzip" title="Permanent link">&para;</a></h2>
-<h3 id="unzip-all-zip-file-in-a-directory">unzip all <code>.zip</code> file in a directory<a class="headerlink" href="#unzip-all-zip-file-in-a-directory" title="Permanent link">&para;</a></h3>
-<p>tried <code>unzip *.zip</code> but does not work, it seems that I missed something although I have checked <code>man unzip</code> in which <code>*</code> is indeed allowed, then I found</p>
-<div class="highlight"><pre><span></span><code>unzip <span class="se">\*</span>.zip
+</div>
+<p>If we are inside the container, we can export the path to use the commands provided by XAMPP,</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># inside docker container</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/opt/lampp/bin:<span class="nv">$PATH</span>
+<span class="c1"># or add it to `.bashrc` of the container</span>
 </code></pre></div>
-<p>in <a href="https://stackoverflow.com/questions/2374772/unzip-all-files-in-a-directory/29248777">Unzip All Files In A Directory</a></p>
-<p>Otherwise, use quotes <code>"*.zip"</code>. More advancely, only zip files with character <code>3</code>,</p>
-<div class="highlight"><pre><span></span><code>unzip <span class="s2">&quot;*3*.zip&quot;</span>
+<p>If we modified the configuration of XAMPP, we need to restart the Apache server via</p>
+<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> myXAMPP /opt/lampp/lampp restart
 </code></pre></div>
-<h3 id="unzip-extract-here"><code>unzip</code> 和右键 <code>Extract Here</code> 的区别<a class="headerlink" href="#unzip-extract-here" title="Permanent link">&para;</a></h3>
-<p>对于 A.zip，假设内部结构为 <code>dir/file</code>，则通过 <code>unzip A.zip</code> 会直接得到 <code>dir/file</code>，而右键解压会得到 <code>A/dir/file</code>.</p>
-<h2 id="wget"><code>wget</code><a class="headerlink" href="#wget" title="Permanent link">&para;</a></h2>
-<h3 id="wget-a-series-of-files-in-order">wget a series of files in order<a class="headerlink" href="#wget-a-series-of-files-in-order" title="Permanent link">&para;</a></h3>
-<p>下载连续编号的文件，如</p>
-<div class="highlight"><pre><span></span><code>wget http://work.caltech.edu/slides/slides{01..18}.pdf
+<h2 id="python-for-a-non-internet-env">Python (for a non-internet env)<a class="headerlink" href="#python-for-a-non-internet-env" title="Permanent link">&para;</a></h2>
+<p>First of all, write a dockerfile</p>
+<div class="highlight"><pre><span></span><code>cat Dockerfile
+FROM python:3.7
+RUN pip install jieba
 </code></pre></div>
-<p>参考 <a href="https://askubuntu.com/questions/240702/wget-a-series-of-files-in-order">Wget a series of files in order</a></p>
-<h3 id="wget-vs-curl"><code>wget</code> vs <code>curl</code><a class="headerlink" href="#wget-vs-curl" title="Permanent link">&para;</a></h3>
-<p><code>wget</code> 不用添加 <code>-O</code> 就可以将下载的文件存储下来，但是 <code>curl</code> 并不默认将下载的文件存入本地文件，除非加上 <code>-o</code> 选项，而 <code>wget</code> 的 <code>-O</code> 只是为了更改文件名。</p>
-<p>比如<a href="https://github.com/huan/docker-wine/blob/54e7ba2f042a59de72a06bafc37f1fb8c554541e/Dockerfile#L36">这里</a>，直接将下载的内容输出到下一个命令</p>
-<div class="highlight"><pre><span></span><code>curl -sL https://dl.winehq.org/wine-builds/winehq.key <span class="p">|</span> apt-key add -
+<p>then build it with</p>
+<div class="highlight"><pre><span></span><code>$ docker image build -t py37jieba:0.0.1 .
 </code></pre></div>
-<p>更多比较详见 <a href="https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget">What is the difference between curl and wget?</a></p>
-<h2 id="unar"><code>unar</code><a class="headerlink" href="#unar" title="Permanent link">&para;</a></h2>
-<p>如果 zip 文件解压乱码，可以试试 unar,</p>
-<p>采用 <code>unar your.zip</code></p>
-<p>参考 <a href="https://www.findhao.net/easycoding/1605">Linux文件乱码</a></p>
+<p>and test it locally with</p>
+<div class="highlight"><pre><span></span><code>$ docker run -it py37jieba:0.0.1 
+Python <span class="m">3</span>.7.10 <span class="o">(</span>default, May <span class="m">12</span> <span class="m">2021</span>, <span class="m">16</span>:05:48<span class="o">)</span> 
+<span class="o">[</span>GCC <span class="m">8</span>.3.0<span class="o">]</span> on linux
+Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
+&gt;&gt;&gt; import jieba
+&gt;&gt;&gt; jieba.cut<span class="o">(</span><span class="s2">&quot;他来到了网易杭研大厦&quot;</span><span class="o">)</span>
+&lt;generator object Tokenizer.cut at 0x7fda1c981bd0&gt;
+&gt;&gt;&gt; print<span class="o">(</span><span class="s2">&quot;, &quot;</span>.join<span class="o">(</span>jieba.cut<span class="o">(</span><span class="s2">&quot;他来到了网易杭研大厦&quot;</span><span class="o">)))</span>
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+Loading model cost <span class="m">0</span>.924 seconds.
+Prefix dict has been built successfully.
+他, 来到, 了, 网易, 杭研, 大厦
+</code></pre></div>
+<p>save the image with</p>
+<div class="highlight"><pre><span></span><code>$ docker save py37jieba:0.0.1 <span class="p">|</span> gzip &gt; py37jieba-0.0.1.tar.gz
+</code></pre></div>
+<p>refer to <a href="https://github.com/hubutui/docker-for-env-without-internet-access">hubutui/docker-for-env-without-internet-access</a></p>
                 
               
               
@@ -2321,7 +1828,7 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../software/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 大软件" rel="prev">
+        <a href="../../autotools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Autotools" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2330,20 +1837,20 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
               <span class="md-footer__direction">
                 Previous
               </span>
-              大软件
+              Autotools
             </div>
           </div>
         </a>
       
       
         
-        <a href="../servers/" class="md-footer__link md-footer__link--next" aria-label="Next: 服务器" rel="next">
+        <a href="../../Git/" class="md-footer__link md-footer__link--next" aria-label="Next: Git" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              服务器
+              Git
             </div>
           </div>
           <div class="md-footer__button md-icon">

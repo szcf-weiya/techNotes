@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.7">
+      <meta name="generator" content="mkdocs-1.2, mkdocs-material-7.1.7">
     
     
       
@@ -992,6 +992,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#custom-shortcut-to-switch-external-display-mode" class="md-nav__link">
+    Custom Shortcut to Switch External Display Mode
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1741,6 +1748,18 @@
     <li class="md-nav__item">
       <a href="../autotools/" class="md-nav__link">
         Autotools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/docker/" class="md-nav__link">
+        Docker
       </a>
     </li>
   
@@ -2587,6 +2606,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-shortcut-to-switch-external-display-mode" class="md-nav__link">
+    Custom Shortcut to Switch External Display Mode
+  </a>
   
 </li>
       
@@ -3491,6 +3517,29 @@ scp_to_chpc <span class="o">()</span>
 <li><code>systemctl enable/disable [NAME]</code>: enable/disable one or more unit files</li>
 <li><code>systemctl reboot</code>: shut down and reboot the system</li>
 </ul>
+<h2 id="custom-shortcut-to-switch-external-display-mode">Custom Shortcut to Switch External Display Mode<a class="headerlink" href="#custom-shortcut-to-switch-external-display-mode" title="Permanent link">&para;</a></h2>
+<p>办公室电脑既可以作为显示屏，也可以在 PC 模式下使用 Windows 系统。在 PC 模式下，在 Ubuntu 上通过 synergy 共享键鼠，但是此时存在一个问题，因为 HDMI 仍然连着，所以在移动鼠标时中间有个 gap，也就是需要跳过外接显示屏才能移动到 PC。</p>
+<p>试过在 synergy 中将 PC 机设置为 T460p 上方，这样移动鼠标只需往上，不过体验不是很好，而且 Ubuntu 顶端有状态栏而 PC 端底部也有task bar，移动时能明显感受到延时。另外一个策略便是切换显示屏 mode，由 joint 模式切换成 mirror。</p>
+<p>注意到，当处于 mirror 模式下，eDP-1-1 primary 显示为 <code>1920x1080+0+0</code>，而如果是 joint mode，尺寸为 <code>1920x1080+1920+0</code>。受 <a href="https://askubuntu.com/questions/958914/swap-between-monitor-display-modes-using-shortcut">Swap between monitor display modes using shortcut</a>
+ 启发，决定写脚本自定义快捷键</p>
+<div class="highlight"><pre><span></span><code>~$ cat switch_mirror_joint.sh 
+<span class="c1">#!/bin/bash</span>
+<span class="nv">currentmode</span><span class="o">=</span><span class="k">$(</span>xrandr -q <span class="p">|</span> grep <span class="s2">&quot;primary 1920x1080+0+0&quot;</span><span class="k">)</span>
+<span class="k">if</span> <span class="o">[[</span> -n <span class="nv">$currentmode</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="c1">#echo &quot;mirror&quot;</span>
+    xrandr --output HDMI-1-1 --left-of eDP-1-1
+<span class="k">else</span>
+    <span class="c1">#echo &quot;joint&quot;</span>
+    xrandr --output HDMI-1-1 --same-as eDP-1-1
+<span class="k">fi</span>
+</code></pre></div>
+<p>然后进入 keyboard shortcut 设置界面，</p>
+<ul>
+<li>Name: <code>switch display mode</code></li>
+<li>Command: <code>/home/weiya/switch_mirror_joint.sh</code></li>
+<li>Shortcut: <code>Ctrl+F7</code></li>
+</ul>
+<p>之所以选择 <code>F7</code> 是因为本身 F7 也支持切换 display mode，但是默认 external monitor 在右侧。试图直接更改 F7 的 binding commands，相关的 Ubuntu 官方帮助文档 <a href="https://help.ubuntu.com/stable/ubuntu-help/keyboard.html.en">Keyboard</a> 及配置文件 <a href="https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions">Custom keyboard layout definitions</a>，但是无从下手。</p>
                 
               
               

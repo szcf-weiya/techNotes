@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/shell/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.7">
+      <meta name="generator" content="mkdocs-1.2, mkdocs-material-7.1.7">
     
     
       
@@ -1532,6 +1532,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../dev/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Git/" class="md-nav__link">
         Git
       </a>
@@ -2670,8 +2682,9 @@ $ <span class="nv">var</span><span class="o">=</span>/dir1/dir2/file.tar.gz <spa
 <h3 id="test-string">test string<a class="headerlink" href="#test-string" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>=~</code>: 判断左边的字符串是否能被右边的模式所匹配</li>
-<li><code>-z $A</code>: 为空则为真，否则为假</li>
-<li><code>-n $A</code>: 为空则为假，否则为真</li>
+<li><code>-z $A</code>: 字符串长度是否为 zero（为空则为真，否则为假）</li>
+<li><code>-n $A</code>: 字符串长度是否为 nonzero（为空则为假，否则为真）</li>
+<li>more details refer to <code>man test</code>.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="nv">Shell</span><span class="o">=</span><span class="sb">`</span>grep <span class="s2">&quot;^</span><span class="nv">$1</span><span class="s2">:&quot;</span> /etc/passwd <span class="p">|</span> cut -d: -f7<span class="sb">`</span>
