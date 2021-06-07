@@ -1248,3 +1248,32 @@ The main command used to control systemd is `systemctl`.
 - `systemctl enable/disable [NAME]`: enable/disable one or more unit files
 - `systemctl reboot`: shut down and reboot the system
 
+## Custom Shortcut to Switch External Display Mode
+
+办公室电脑既可以作为显示屏，也可以在 PC 模式下使用 Windows 系统。在 PC 模式下，在 Ubuntu 上通过 synergy 共享键鼠，但是此时存在一个问题，因为 HDMI 仍然连着，所以在移动鼠标时中间有个 gap，也就是需要跳过外接显示屏才能移动到 PC。
+
+试过在 synergy 中将 PC 机设置为 T460p 上方，这样移动鼠标只需往上，不过体验不是很好，而且 Ubuntu 顶端有状态栏而 PC 端底部也有task bar，移动时能明显感受到延时。另外一个策略便是切换显示屏 mode，由 joint 模式切换成 mirror。
+
+注意到，当处于 mirror 模式下，eDP-1-1 primary 显示为 `1920x1080+0+0`，而如果是 joint mode，尺寸为 `1920x1080+1920+0`。受 [Swap between monitor display modes using shortcut](https://askubuntu.com/questions/958914/swap-between-monitor-display-modes-using-shortcut)
+ 启发，决定写脚本自定义快捷键
+
+```bash
+~$ cat switch_mirror_joint.sh 
+#!/bin/bash
+currentmode=$(xrandr -q | grep "primary 1920x1080+0+0")
+if [[ -n $currentmode ]]; then
+    #echo "mirror"
+    xrandr --output HDMI-1-1 --left-of eDP-1-1
+else
+    #echo "joint"
+    xrandr --output HDMI-1-1 --same-as eDP-1-1
+fi
+```
+
+然后进入 keyboard shortcut 设置界面，
+
+- Name: `switch display mode`
+- Command: `/home/weiya/switch_mirror_joint.sh`
+- Shortcut: `Ctrl+F7`
+
+之所以选择 `F7` 是因为本身 F7 也支持切换 display mode，但是默认 external monitor 在右侧。试图直接更改 F7 的 binding commands，相关的 Ubuntu 官方帮助文档 [Keyboard](https://help.ubuntu.com/stable/ubuntu-help/keyboard.html.en) 及配置文件 [Custom keyboard layout definitions](https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions)，但是无从下手。

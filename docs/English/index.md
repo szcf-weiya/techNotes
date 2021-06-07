@@ -1,3 +1,8 @@
+## 2021.06.07
+
+- **Optogenetics (光学遗传学)** restores blind man's vision. 
+- Nuclear fallout **haunts (长期不断地缠扰某人)** Maralinga.
+
 ## 2021.06.06
 
 - End of 14-day rule for lab-grown **embryos (胚胎)**.

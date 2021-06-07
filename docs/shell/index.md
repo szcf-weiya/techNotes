@@ -676,8 +676,9 @@ fi
 ### test string
 
 - `=~`: 判断左边的字符串是否能被右边的模式所匹配
-- `-z $A`: 为空则为真，否则为假
-- `-n $A`: 为空则为假，否则为真
+- `-z $A`: 字符串长度是否为 zero（为空则为真，否则为假）
+- `-n $A`: 字符串长度是否为 nonzero（为空则为假，否则为真）
+- more details refer to `man test`.
 
 ```bash
 --8<-- "docs/shell/if/if-sh.sh"

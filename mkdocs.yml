@@ -52,6 +52,7 @@ nav:
     - IPv6: Internet/ipv6.md
   - Development:
     - Autotools: autotools/index.md
+    - Docker: dev/docker.md
     - Git: Git/index.md
     - Phantomjs: phantomjs/index.md
     - Qt: Qt/index.md
