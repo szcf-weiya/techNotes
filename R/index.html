@@ -2474,6 +2474,16 @@ N: See apt-secure(8) manpage for repository creation and user configuration deta
 \mathrm{x[x] = x}
 </script>
 </div>
+<p>Python uses <code>np.argsort</code> to return the index of the sorted array, such as</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">97</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">67</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<span class="n">array</span><span class="p">([</span> <span class="mi">32</span><span class="p">,</span>  <span class="mi">67</span><span class="p">,</span>  <span class="mi">74</span><span class="p">,</span>  <span class="mi">85</span><span class="p">,</span>  <span class="mi">93</span><span class="p">,</span>  <span class="mi">97</span><span class="p">,</span>  <span class="mi">99</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+</code></pre></div>
+<p>but keep in mind that the index starts from 0 instead of 1. Here is another way in <a href="https://www.geeksforgeeks.org/python-returning-index-of-a-sorted-list/">Python | Returning index of a sorted list</a> (TODO).</p>
 <h2 id="run-from-command-line">Run from Command Line<a class="headerlink" href="#run-from-command-line" title="Permanent link">&para;</a></h2>
 <ul>
 <li>run <code>R -q -e "1+1"</code> in the command line</li>
