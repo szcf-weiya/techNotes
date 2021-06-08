@@ -12,3 +12,7 @@
 ## Julia vs Matlab vs R vs Python
 
 - [Read Image](../../python/opencv/#read-image)
+
+## R vs Python
+
+- [`sort` and `argsort`](../../R/#sort-rank-order)

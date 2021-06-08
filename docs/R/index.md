@@ -75,6 +75,20 @@ $$
 \mathrm{x[x] = x}
 $$
 
+Python uses `np.argsort` to return the index of the sorted array, such as
+
+```python
+>>> a = np.array([97, 93, 85, 74, 32, 100, 99, 67])
+>>> sorted(a)
+[32, 67, 74, 85, 93, 97, 99, 100]
+>>> idx = np.argsort(a)
+[32, 67, 74, 85, 93, 97, 99, 100]
+>>> a[idx]
+array([ 32,  67,  74,  85,  93,  97,  99, 100])
+```
+
+but keep in mind that the index starts from 0 instead of 1. Here is another way in [Python | Returning index of a sorted list](https://www.geeksforgeeks.org/python-returning-index-of-a-sorted-list/) (TODO).
+
 ## Run from Command Line
 
 - run `R -q -e "1+1"` in the command line

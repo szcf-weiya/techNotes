@@ -1,3 +1,8 @@
+## 2021.06.08
+
+- Indexes and indices are both accepted and widely used plurals of the noun index. Both appear throughout the English-speaking world, but indices prevails in varieties of English from outside North America, while indexes is more common in American and Canadian English. Meanwhile, indices is generally preferred in mathematical, financial, and technical contexts, while indexes is relatively common in general usage. [:link:](https://grammarist.com/usage/indexes-indices/)
+- Scientists say that the shots -- which show the rover with its solar panels unfurled and the ramp from its lander deployed -- hint that it has arrived at a safe, ideal site from which it can begin exploring.
+
 ## 2021.06.07
 
 - **Optogenetics (光学遗传学)** restores blind man's vision. 
