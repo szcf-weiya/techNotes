@@ -182,10 +182,11 @@ applications:
     - 第一行和最后一行：`sed -n '1p;$p'`, not ~~`sed -n '1;$p'`~~
 - 删除最后一行：`sed -i '$ d' file.txt`
 - 在 vi 中注释多行：按住 v 选定特定行之后，按住 `:s/^/#/g` 即可添加注释，取消注释则用 `:s/^#//g`. 另见 VI.
+- print lines between two matching patterns ([:material-stack-overflow:](https://unix.stackexchange.com/questions/264962/print-lines-of-a-file-between-two-matching-patterns)): `/^pattern1/,/^pattern2/p`, and if one want to just print once, use `/^pattern1/,${p;/^pattern2/q}`
 
-<!-- ## `|`的作用
+### `|`的作用
 
-> 竖线(|)元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 -->
+> 竖线(|)元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 
 
 ### `-r`: 扩展的正则表达式
 

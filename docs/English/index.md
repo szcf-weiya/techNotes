@@ -1,3 +1,7 @@
+## 2021.06.10
+
+- Of course, for that to happen, the meanings behind those **utterances (发声，表达)** would have to be clearly understood.
+
 ## 2021.06.09
 
 - A few key examples of successful startups we've incubated include sophisticated novel voice generation by WellSaid, and an AI-backed smart repository for notoriously complex, voluminous legal contracts and agreements created by Lexion.
@@ -3042,7 +3046,7 @@ letter back
 4. trunk
 5. stand alone, hierarchy
 6. corvid, corvidae, raven, jay, crow, magpie
-8. spontaneously
+8. The eruption of a volcano is **spontaneous (自发的)**.
 9. entail
 10. It is important because it sets animals with a sense of self apart from those without a sense of self.
 11. empathy
