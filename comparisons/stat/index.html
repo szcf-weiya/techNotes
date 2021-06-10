@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/comparisons/stat/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2, mkdocs-material-7.1.7">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.7">
     
     
       
@@ -330,6 +330,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -784,60 +786,9 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Comparisons
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         Comparisons
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#julia-vs-python" class="md-nav__link">
-    Julia vs Python
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#julia-vs-r-vs-python" class="md-nav__link">
-    Julia vs R vs Python
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#julia-vs-matlab-vs-r-vs-python" class="md-nav__link">
-    Julia vs Matlab vs R vs Python
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#r-vs-python" class="md-nav__link">
-    R vs Python
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1515,7 +1466,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1525,42 +1478,6 @@
   
     
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#julia-vs-python" class="md-nav__link">
-    Julia vs Python
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#julia-vs-r-vs-python" class="md-nav__link">
-    Julia vs R vs Python
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#julia-vs-matlab-vs-r-vs-python" class="md-nav__link">
-    Julia vs Matlab vs R vs Python
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#r-vs-python" class="md-nav__link">
-    R vs Python
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1574,23 +1491,56 @@
                 
                 
                 <h1 id="comparisons">Comparisons<a class="headerlink" href="#comparisons" title="Permanent link">&para;</a></h1>
-<h2 id="julia-vs-python">Julia vs Python<a class="headerlink" href="#julia-vs-python" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../../julia/#padding-zero-on-the-left">padding zero on the left</a></li>
-</ul>
-<h2 id="julia-vs-r-vs-python">Julia vs R vs Python<a class="headerlink" href="#julia-vs-r-vs-python" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../../python/#different-kernels">Jupyter kernels</a></li>
-<li><a href="../../julia/#dims1">Sum an array along row or column</a></li>
-</ul>
-<h2 id="julia-vs-matlab-vs-r-vs-python">Julia vs Matlab vs R vs Python<a class="headerlink" href="#julia-vs-matlab-vs-r-vs-python" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../../python/opencv/#read-image">Read Image</a></li>
-</ul>
-<h2 id="r-vs-python">R vs Python<a class="headerlink" href="#r-vs-python" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../../R/#sort-rank-order"><code>sort</code> and <code>argsort</code></a></li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>LANG</th>
+<th>Julia</th>
+<th>R</th>
+<th>Python</th>
+<th>Matlab</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../julia/#padding-zero-on-the-left">padding zero on the left</a> <code>1 -&gt; 001</code></td>
+<td><code>lpad(1, 3, '0')</code></td>
+<td></td>
+<td><code>f"{1:03}"</code></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../../julia/#dims1">sum an array along row</a></td>
+<td><code>dims=1</code></td>
+<td><code>margin=2</code></td>
+<td><code>axis=0</code></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../../python/opencv/#read-image">read image</a></td>
+<td><code>Images::load()</code></td>
+<td></td>
+<td><code>cv2.imread()</code>/<code>skimage.io.imread()</code></td>
+<td><code>imread()</code></td>
+</tr>
+<tr>
+<td><a href="../../R/#sort-rank-order"><code>sort</code> and <code>argsort</code></a></td>
+<td></td>
+<td><code>sort(), order()</code></td>
+<td><code>sorted(), np.argsort()</code></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="../../python/#different-kernels">Jupyter kernels</a></td>
+<td><code>IJulia</code></td>
+<td><code>IRkernel</code></td>
+<td><code>ipykernel</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+                
+                  
                 
               
               
