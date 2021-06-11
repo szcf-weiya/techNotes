@@ -468,6 +468,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#column" class="md-nav__link">
+    column
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#convert" class="md-nav__link">
     convert
   </a>
@@ -1738,6 +1745,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#column" class="md-nav__link">
+    column
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#convert" class="md-nav__link">
     convert
   </a>
@@ -1984,6 +1998,19 @@
                 
                 
                 <h1 id="small-tools">Small Tools<a class="headerlink" href="#small-tools" title="Permanent link">&para;</a></h1>
+<h2 id="column"><code>column</code><a class="headerlink" href="#column" title="Permanent link">&para;</a></h2>
+<p>display the csv beautifully,</p>
+<div class="highlight"><pre><span></span><code>$ head file1.txt <span class="p">|</span> column -s, -t
+</code></pre></div>
+<p>if two files share the same columns, </p>
+<div class="highlight"><pre><span></span><code>$ <span class="o">(</span>head file1.txt<span class="p">;</span> head file2.txt<span class="o">)</span> <span class="p">|</span> column -s, -t
+</code></pre></div>
+<p>where</p>
+<ul>
+<li><code>-s,</code>: specify the delimiter as <code>,</code></li>
+<li><code>-t</code>: print in a table</li>
+</ul>
+<p>refer to <a href="https://stackoverflow.com/questions/1875305/view-tabular-file-such-as-csv-from-command-line">View tabular file such as CSV from command line</a></p>
 <h2 id="convert"><code>convert</code><a class="headerlink" href="#convert" title="Permanent link">&para;</a></h2>
 <h3 id="_1">图片拼接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 水平方向</span>
