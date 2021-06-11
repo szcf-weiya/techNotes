@@ -1,3 +1,7 @@
+## 2021.06.11
+
+- A **bumper (丰富的)** crop of [fast radio bursts (FRBs)](https://www.zhihu.com/topic/20406202/intro) shows that the mysterious signals come in two distinct types. The Canadian Hydrogen Intensity Mapping Experiment (CHIME) radio telescope has detected 535 FRBs -- **quadrupling (四倍)** the known tally of these powerful cosmic flashes, which **flare (燃烧)** for just milliseconds.
+
 ## 2021.06.10
 
 - Of course, for that to happen, the meanings behind those **utterances (发声，表达)** would have to be clearly understood.

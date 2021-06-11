@@ -1,5 +1,26 @@
 # Small Tools
 
+## `column`
+
+display the csv beautifully,
+
+```bash
+$ head file1.txt | column -s, -t
+```
+
+if two files share the same columns, 
+
+```bash
+$ (head file1.txt; head file2.txt) | column -s, -t
+```
+
+where
+
+- `-s,`: specify the delimiter as `,`
+- `-t`: print in a table
+
+refer to [View tabular file such as CSV from command line](https://stackoverflow.com/questions/1875305/view-tabular-file-such-as-csv-from-command-line)
+
 ## `convert`
 
 ### 图片拼接
