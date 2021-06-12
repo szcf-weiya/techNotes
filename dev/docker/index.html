@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/dev/docker/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.7">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.8">
     
     
       
@@ -45,8 +45,19 @@
     
 
   
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-85007363-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+  
+
+
+
+  
+  
+
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-85007363-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
   <script data-ad-client="ca-pub-3680148472128768" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
@@ -1217,15 +1228,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-r-via-docker" class="md-nav__link">
-    install r via docker
+  <a href="#change-the-root-folder" class="md-nav__link">
+    change the root folder
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    R
+  </a>
+  
+    <nav class="md-nav" aria-label="R">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
-  <a href="#change-the-root-folder" class="md-nav__link">
-    change the root folder
+  <a href="#r-base" class="md-nav__link">
+    r-base
   </a>
   
 </li>
@@ -1568,15 +1592,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-r-via-docker" class="md-nav__link">
-    install r via docker
+  <a href="#change-the-root-folder" class="md-nav__link">
+    change the root folder
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    R
+  </a>
+  
+    <nav class="md-nav" aria-label="R">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
-  <a href="#change-the-root-folder" class="md-nav__link">
-    change the root folder
+  <a href="#r-base" class="md-nav__link">
+    r-base
   </a>
   
 </li>
@@ -1631,7 +1668,7 @@ sudo apt  install docker.io
 See <span class="s1">&#39;snap info docker&#39;</span> <span class="k">for</span> additional versions.
 </code></pre></div>
 <p>then run</p>
-<div class="highlight"><pre><span></span><code>sudo apt  install docker.io
+<div class="highlight"><pre><span></span><code>sudo apt install docker.io
 </code></pre></div>
 <p>Without permisson, it will report the following message</p>
 <div class="highlight"><pre><span></span><code>$ docker version
@@ -1649,17 +1686,6 @@ Got permission denied <span class="k">while</span> trying to connect to the Dock
 <div class="highlight"><pre><span></span><code>sudo usermod -aG docker <span class="nv">$USER</span>
 </code></pre></div>
 <p>But it is necessary to log out and log back in to re-evaluate the group membership.</p>
-<h3 id="install-r-via-docker">install r via docker<a class="headerlink" href="#install-r-via-docker" title="Permanent link">&para;</a></h3>
-<p>step 1:</p>
-<div class="highlight"><pre><span></span><code>docker pull r-base
-</code></pre></div>
-<p>for specified version,</p>
-<div class="highlight"><pre><span></span><code>docker pull r-base:3.6.0
-</code></pre></div>
-<p>step 2:</p>
-<div class="highlight"><pre><span></span><code>docker run -it --rm r-base:3.6.0
-</code></pre></div>
-<p>install.packages(&ldquo;https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz&rdquo;, repos = NULL, type = &ldquo;source&rdquo;)</p>
 <h3 id="change-the-root-folder">change the root folder<a class="headerlink" href="#change-the-root-folder" title="Permanent link">&para;</a></h3>
 <p>to save space, I want to <a href="https://stackoverflow.com/questions/24309526/how-to-change-the-docker-image-installation-directory">change the image installation directory:</a></p>
 <div class="highlight"><pre><span></span><code>$ sudo vi /etc/docker/daemon.json
@@ -1694,6 +1720,25 @@ $ docker image inspect d1165
             <span class="o">}</span>,
 ...
 </code></pre></div>
+<h2 id="r">R<a class="headerlink" href="#r" title="Permanent link">&para;</a></h2>
+<h3 id="r-base">r-base<a class="headerlink" href="#r-base" title="Permanent link">&para;</a></h3>
+<p>The images are hosted on <a href="https://hub.docker.com/_/r-base?tab=tags&amp;page=1&amp;ordering=last_updated">Docker Official Images: r-base</a>.</p>
+<p>Without pulling,</p>
+<div class="highlight"><pre><span></span><code>docker pull r-base:4.1.0
+</code></pre></div>
+<p>we can directly run the following code,</p>
+<div class="highlight"><pre><span></span><code>docker run -it r-base:4.1.0
+</code></pre></div>
+<p>then the R session would appear. We can install packages as usual, such as</p>
+<div class="highlight"><pre><span></span><code>&gt; install.packages<span class="o">(</span><span class="s2">&quot;dplyr&quot;</span><span class="o">)</span>
+</code></pre></div>
+<p>but note that the modification would discard after quitting. So it is necessary to save the changes (refer to <a href="https://phoenixnap.com/kb/how-to-commit-changes-to-docker-image">How to Commit Changes to a Docker Image with Examples</a>) via</p>
+<div class="highlight"><pre><span></span><code>$ docker commit container-ID new-image-name
+</code></pre></div>
+<p>Next time, we can run with the installed packages,</p>
+<div class="highlight"><pre><span></span><code>$ docker run -it new-image-name
+</code></pre></div>
+<p>If we want to plot, then it is necessary to forward X11, see <a href="https://stackoverflow.com/a/25334301">Alternatives to ssh X11-forwarding for Docker containers</a> for more details. Or as @edd suggested in <a href="https://github.com/rocker-org/rocker/issues/302">Enable plotting for r-base container via X-Forwarding</a>, a better one might be to use a container with RStudio Server.</p>
 <h2 id="xampp">XAMPP<a class="headerlink" href="#xampp" title="Permanent link">&para;</a></h2>
 <p><a href="https://en.wikipedia.org/wiki/XAMPP">XAMPP</a> is a free and open-source <strong>cross-platform (X)</strong> web server solution stack package developed by Apache Friends, consisting mainly of the <strong>Apache HTTP Server (A)</strong>, <strong>MariaDB database (M)</strong> (formerly MySQL), and interpreters for scripts written in the <strong>PHP (P)</strong> and <strong>Perl (P)</strong> programming languages.</p>
 <div class="admonition info">
