@@ -24,7 +24,7 @@ See 'snap info docker' for additional versions.
 then run
 
 ```bash
-sudo apt  install docker.io
+sudo apt install docker.io
 ```
 
 Without permisson, it will report the following message
@@ -49,28 +49,6 @@ sudo usermod -aG docker $USER
 ```
 
 But it is necessary to log out and log back in to re-evaluate the group membership.
-
-### install r via docker
-
-step 1:
-
-```
-docker pull r-base
-```
-
-for specified version,
-
-```
-docker pull r-base:3.6.0
-```
-
-step 2:
-
-```
-docker run -it --rm r-base:3.6.0
-```
-
-install.packages("https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz", repos = NULL, type = "source")
 
 ### change the root folder
 
@@ -112,6 +90,44 @@ $ docker image inspect d1165
             },
 ...
 ```
+
+## R
+
+### r-base
+
+The images are hosted on [Docker Official Images: r-base](https://hub.docker.com/_/r-base?tab=tags&page=1&ordering=last_updated).
+
+Without pulling,
+
+```bash
+docker pull r-base:4.1.0
+```
+
+we can directly run the following code,
+
+```bash
+docker run -it r-base:4.1.0
+```
+
+then the R session would appear. We can install packages as usual, such as
+
+```bash
+> install.packages("dplyr")
+```
+
+but note that the modification would discard after quitting. So it is necessary to save the changes (refer to [How to Commit Changes to a Docker Image with Examples](https://phoenixnap.com/kb/how-to-commit-changes-to-docker-image)) via
+
+```bash
+$ docker commit container-ID new-image-name
+```
+
+Next time, we can run with the installed packages,
+
+```bash
+$ docker run -it new-image-name
+```
+
+If we want to plot, then it is necessary to forward X11, see [Alternatives to ssh X11-forwarding for Docker containers](https://stackoverflow.com/a/25334301) for more details. Or as @edd suggested in [Enable plotting for r-base container via X-Forwarding](https://github.com/rocker-org/rocker/issues/302), a better one might be to use a container with RStudio Server.
 
 ## XAMPP
 

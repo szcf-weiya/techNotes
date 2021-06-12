@@ -1,3 +1,12 @@
+## 2021.06.12
+
+- One basic problem of information retrieval culminates in the realization that the same idea or concept can be presented in many different ways.
+- Natural language gives freedom for enormous variation in expression, from choosing between synonyms to using different styles, emphasis, different levels of abstraction, and [anaphoric](https://en.wikipedia.org/wiki/Anaphora_(linguistics)) and **metaphoric (隐喻)** expressions.
+- You may even be a little **weary (疲倦的，厌烦的)** of people pontificating about this fact.
+- much of the data **proliferating (激增)** today is unstructured and text-heavy.
+- Data wrangling, sometimes referred to as data munging, is the process of transforming and mapping data from one raw data form into another format with the intent of making it more appropriate and valuable for a variety of downstream purposes such as analytics. [:link:](https://en.wikipedia.org/wiki/Data_wrangling)
+
+
 ## 2021.06.11
 
 - A **bumper (丰富的)** crop of [fast radio bursts (FRBs)](https://www.zhihu.com/topic/20406202/intro) shows that the mysterious signals come in two distinct types. The Canadian Hydrogen Intensity Mapping Experiment (CHIME) radio telescope has detected 535 FRBs -- **quadrupling (四倍)** the known tally of these powerful cosmic flashes, which **flare (燃烧)** for just milliseconds.
@@ -1256,7 +1265,7 @@
 
 ## 2020.10.18
 
-- this might be a feather in the wind to prevent a predictable post-voting-day **wrangle** that could **tip the country over the edge**.
+- this might be a feather in the wind to prevent a predictable post-voting-day **wrangle (争吵)** that could **tip the country over the edge**.
 - **accusations** of fraud seem almost inevitable.
 - they can analyze **precinct-level** totals to look for "thumbprints" of voter fraud.
 - it's not as sure as a photograph of **"mislaid" ballots** dumped behind a post office.
@@ -2223,7 +2232,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. enunciate
 7. remuneration
 8. supposition
-9. entail
+9. The representation of documents is a central issue in all of the approaches in document management, whether the management **entails (需要，牵涉)** exploration, search, or filtering.
 10. allude
 
 ## 2018.08.13
@@ -3051,7 +3060,6 @@ letter back
 5. stand alone, hierarchy
 6. corvid, corvidae, raven, jay, crow, magpie
 8. The eruption of a volcano is **spontaneous (自发的)**.
-9. entail
 10. It is important because it sets animals with a sense of self apart from those without a sense of self.
 11. empathy
 12. afoot
