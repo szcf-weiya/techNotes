@@ -84,6 +84,10 @@ gcc -L /usr/dev/mysql/lib -static -lmysqlclient test.o -o test
 
 参考 [Linux GCC常用命令](http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html)
 
+## GSL
+
+- My compiled `lib` and `include` for Windows and the detailed procedures: [szcf-weiya/GSLwin](https://github.com/szcf-weiya/GSLwin)
+
 ## C++中cout输出字符型指针地址值的方法
 
 参考 [C++中cout输出字符型指针地址值的方法](http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html)

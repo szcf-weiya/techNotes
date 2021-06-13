@@ -1,3 +1,12 @@
+## 2021.06.13
+
+- There are not **sustained (持续的，持久的)** sections of **sarcasm (讽刺，嘲讽)** or negated text.
+- Crowdsourcing is a sourcing model in which individuals or organizations obtain goods or services, including ideas, voting, micro-tasks and finances, from a large, relatively open and often rapidly evolving group of participants. [:link:](https://en.wikipedia.org/wiki/Crowdsourcing)
+- We see that **salutations (称呼，称谓)** such as "miss", "lady", "sir" and "**colonel (上校)**" form common centers of nodes, which are often followed by names.
+- We conclude with a few **polishing (improve or perfect by pruning or polishing)** operations to make a better looking graph.
+- The package comes with a corpus of presidential **inauguration (就职典礼)** speeches.
+- Suppose a vandal has broken into your study and torn apart four of your books.
+
 ## 2021.06.12
 
 - One basic problem of information retrieval culminates in the realization that the same idea or concept can be presented in many different ways.
