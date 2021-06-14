@@ -1,3 +1,7 @@
+## 2021.06.14
+
+- The holy grail of mobile deep machine learning is to build models that can execute natively and efficiently in mobile devices.
+
 ## 2021.06.13
 
 - There are not **sustained (持续的，持久的)** sections of **sarcasm (讽刺，嘲讽)** or negated text.
