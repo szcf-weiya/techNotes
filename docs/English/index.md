@@ -1,3 +1,7 @@
+## 2021.06.15
+
+- They were gaga over Will Smith's new rap album.
+
 ## 2021.06.14
 
 - The holy grail of mobile deep machine learning is to build models that can execute natively and efficiently in mobile devices.
