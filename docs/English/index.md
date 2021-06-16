@@ -1,3 +1,7 @@
+## 2021.06.16
+
+- spay
+
 ## 2021.06.15
 
 - They were gaga over Will Smith's new rap album.
