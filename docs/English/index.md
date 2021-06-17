@@ -1,3 +1,7 @@
+## 2021.06.17
+
+- I need to add some bright colors to my wardrobe.
+
 ## 2021.06.16
 
 - spay
