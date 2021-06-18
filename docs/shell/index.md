@@ -183,6 +183,7 @@ applications:
 - 删除最后一行：`sed -i '$ d' file.txt`
 - 在 vi 中注释多行：按住 v 选定特定行之后，按住 `:s/^/#/g` 即可添加注释，取消注释则用 `:s/^#//g`. 另见 VI.
 - print lines between two matching patterns ([:material-stack-overflow:](https://unix.stackexchange.com/questions/264962/print-lines-of-a-file-between-two-matching-patterns)): `/^pattern1/,/^pattern2/p`, and if one want to just print once, use `/^pattern1/,${p;/^pattern2/q}`
+- insertion: [https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/](https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/)
 
 ### `|`的作用
 

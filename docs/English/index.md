@@ -1,3 +1,7 @@
+## 2021.06.18
+
+- Time to **take the plunge (冒险尝试；投入)** into learning to code?
+
 ## 2021.06.17
 
 - I need to add some bright colors to my wardrobe.
