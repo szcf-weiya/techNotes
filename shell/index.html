@@ -2352,6 +2352,7 @@ XXyyzz
 <li>删除最后一行：<code>sed -i '$ d' file.txt</code></li>
 <li>在 vi 中注释多行：按住 v 选定特定行之后，按住 <code>:s/^/#/g</code> 即可添加注释，取消注释则用 <code>:s/^#//g</code>. 另见 VI.</li>
 <li>print lines between two matching patterns (<a href="https://unix.stackexchange.com/questions/264962/print-lines-of-a-file-between-two-matching-patterns"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59z"/></svg></span></a>): <code>/^pattern1/,/^pattern2/p</code>, and if one want to just print once, use <code>/^pattern1/,${p;/^pattern2/q}</code></li>
+<li>insertion: <a href="https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/">https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/</a> and <a href="https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/">https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/</a></li>
 </ul>
 <h3 id="_1"><code>|</code>的作用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <blockquote>

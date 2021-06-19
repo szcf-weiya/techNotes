@@ -1434,6 +1434,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#okular" class="md-nav__link">
+    安装 okular
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acrobat-cannot-save-pdf" class="md-nav__link">
+    Acrobat cannot save pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    禁止自动更新
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    截屏软件
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1599,6 +1627,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#okular" class="md-nav__link">
+    安装 okular
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acrobat-cannot-save-pdf" class="md-nav__link">
+    Acrobat cannot save pdf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    禁止自动更新
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    截屏软件
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1641,13 +1697,13 @@
 <p>C:\Program Files\Java\jdk1.8.0_102\jre\bin\server</p>
 </blockquote>
 <p>你把这个路径加到环境变量中的PATH中就ok了。</p>
-<h1 id="okular">安装 okular<a class="headerlink" href="#okular" title="Permanent link">&para;</a></h1>
+<h2 id="okular">安装 okular<a class="headerlink" href="#okular" title="Permanent link">&para;</a></h2>
 <ol>
 <li>先安装 KDE 包管理器 chocolatey，<a href="https://chocolatey.org/">The package manager for Windows</a></li>
 <li>再安装 okular，<a href="https://chocolatey.org/search?q=okular">choco install okular</a></li>
 <li>在 WSL 中运行时，需要 enable display，即 <a href="https://virtualizationreview.com/articles/2017/02/08/graphical-programs-on-windows-subsystem-on-linux.aspx"><code>export DISPLAY=:0</code></a></li>
 </ol>
-<h1 id="acrobat-cannot-save-pdf">Acrobat cannot save pdf<a class="headerlink" href="#acrobat-cannot-save-pdf" title="Permanent link">&para;</a></h1>
+<h2 id="acrobat-cannot-save-pdf">Acrobat cannot save pdf<a class="headerlink" href="#acrobat-cannot-save-pdf" title="Permanent link">&para;</a></h2>
 <p>situation:  the &ldquo;Save as&rdquo; windows open as blank</p>
 <ol>
 <li>Launch the application and go to Edit menu &gt; Preference &gt; General.</li>
@@ -1656,7 +1712,9 @@
 </ol>
 <p>refer to <a href="https://forums.adobe.com/thread/2318474">Can&rsquo;t save pdf document</a></p>
 <h2 id="_1">禁止自动更新<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>办公室电脑经常弹出需要更新，即便不是自动更新，但是每次弹出总让人担心会不会下次它自动重启进行更新了，于是索性禁掉它，参考 <a href="https://zhuanlan.zhihu.com/p/38070514">如何关闭Windows10的自动更新？</a> 中的第一种方法，不过需要以管理员运行。</p>
+<p>办公室电脑经常弹出需要更新，即便不是自动更新，但是每次弹出总让人担心会不会下次它自动重启进行更新了，于是索性禁掉它，参考 <a href="https://zhuanlan.zhihu.com/p/38070514">如何关闭Windows10的自动更新？</a> 中的第一种修改 service 的方式，不过需要以管理员运行。</p>
+<p>按住 <code>Win</code>，然后直接敲命令，如 <code>services</code>，然后选择以管理员权限运行 <a href="https://superuser.com/questions/462174/winr-runs-as-administrator-in-windows-8"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>。</p>
+<p>但是刚刚发现这种方式也不能完全禁止，禁止后仍然会重新启动，甚至最后还是重启更新了。</p>
 <h2 id="_2">截屏软件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>系统自带的 snipping tool 不能自动保存，这也遭到其它用户的吐槽，如</p>
 <ul>

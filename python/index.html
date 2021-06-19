@@ -1050,6 +1050,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#equal-axis-aspect-ratio" class="md-nav__link">
+    equal axis aspect ratio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scatter-size" class="md-nav__link">
     scatter size
   </a>
@@ -2484,6 +2491,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#equal-axis-aspect-ratio" class="md-nav__link">
+    equal axis aspect ratio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scatter-size" class="md-nav__link">
     scatter size
   </a>
@@ -3227,6 +3241,21 @@ Available kernels:
 <p><code>plt.tight_layout()</code> 可以调节间距，如果有必要，可以带上参数，比如，<a href="https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6">B spline in R, C++ and Python</a></p>
 <div class="highlight"><pre><span></span><code>plt.tight_layout<span class="o">(</span><span class="nv">pad</span> <span class="o">=</span> <span class="m">3</span>.0<span class="o">)</span>
 </code></pre></div>
+<h3 id="equal-axis-aspect-ratio">equal axis aspect ratio<a class="headerlink" href="#equal-axis-aspect-ratio" title="Permanent link">&para;</a></h3>
+<p>According to the <a href="https://matplotlib.org/stable/gallery/subplots_axes_and_figures/axis_equal_demo.html">official documentation</a>,</p>
+<div class="highlight"><pre><span></span><code><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">an</span><span class="p">),</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">an</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">an</span><span class="p">),</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">an</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">an</span><span class="p">),</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">an</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="s2">&quot;box&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/122642147-7cae3780-d13b-11eb-9e14-9356d2e2f6a9.png" /></p>
+<p>we prefer to the last one. If we want to directly call <code>plt</code> instead of <code>fig, ax</code>, then</p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">an</span><span class="p">),</span> <span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">an</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="s2">&quot;box&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>note the middle <code>gca()</code>.</p>
 <h3 id="scatter-size">scatter size<a class="headerlink" href="#scatter-size" title="Permanent link">&para;</a></h3>
 <p>the size is defined by the area, <a href="https://stackoverflow.com/questions/14827650/pyplot-scatter-plot-marker-size">pyplot scatter plot marker size</a></p>
 <h3 id="interactive-mode">interactive mode<a class="headerlink" href="#interactive-mode" title="Permanent link">&para;</a></h3>

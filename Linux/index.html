@@ -692,8 +692,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-fira" class="md-nav__link">
-    Install Fira
+  <a href="#install-local-fonts" class="md-nav__link">
+    Install Local Fonts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-free-fonts" class="md-nav__link">
+    Some Free Fonts
   </a>
   
 </li>
@@ -2309,8 +2316,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-fira" class="md-nav__link">
-    Install Fira
+  <a href="#install-local-fonts" class="md-nav__link">
+    Install Local Fonts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-free-fonts" class="md-nav__link">
+    Some Free Fonts
   </a>
   
 </li>
@@ -3019,10 +3033,33 @@ $ fc-list --format<span class="o">=</span><span class="s1">&#39;%{family[0]}\n&#
 新宋体
 </code></pre></div>
 <p>refer to <a href="https://www.geeksforgeeks.org/fc-list-command-in-linux-with-examples/">fc-list command in Linux with examples</a></p>
-<h3 id="install-fira">Install Fira<a class="headerlink" href="#install-fira" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/matze/mtheme/issues/280">Fira for Metropolis theme</a></p>
-<p><a href="https://stevescott.ca/2016-10-20-installing-the-fira-font-in-ubuntu.html">Install the Fira Font in Ubuntu</a></p>
-<p>and some introduction: <a href="https://zhuanlan.zhihu.com/p/65362086">Fira Code —— 专为编程而生的字体</a></p>
+<h3 id="install-local-fonts">Install Local Fonts<a class="headerlink" href="#install-local-fonts" title="Permanent link">&para;</a></h3>
+<p>以安装仿宋和黑体为例，这是<a href="https://hohoweiya.xyz/zju-thesis/src/zju-thesis.pdf">本科毕业论文模板</a>所需要的字体，字体文件已打包</p>
+<div class="highlight"><pre><span></span><code>$ wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz
+$ tar xvzf fonts.tar.gz
+fonts/STFANGSO.TTF
+fonts/
+fonts/simhei.ttf
+$ sudo mkdir -p /usr/share/fonts/truetype/custom/
+$ sudo mv fonts/* /usr/share/fonts/truetype/custom/
+$ sudo fc-cache -f -v
+</code></pre></div>
+<p>安装完成后，</p>
+<div class="highlight"><pre><span></span><code>$ fc-list :lang<span class="o">=</span>zh
+/usr/share/fonts/truetype/custom/simhei.ttf: SimHei,黑体:style<span class="o">=</span>Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
+/usr/share/fonts/truetype/custom/STFANGSO.TTF: STFangsong,华文仿宋:style<span class="o">=</span>Regular
+</code></pre></div>
+<h3 id="some-free-fonts">Some Free Fonts<a class="headerlink" href="#some-free-fonts" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/mozilla/Fira">Mozilla&rsquo;s Fira Type Family</a><ul>
+<li><a href="https://github.com/matze/mtheme/issues/280">Fira for Metropolis theme</a></li>
+<li><a href="https://github.com/tonsky/FiraCode">Fira Code</a><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/65362086">知乎：Fira Code —— 专为编程而生的字体</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="_3">命令最后的&amp;<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/13338870/what-does-at-the-end-of-a-linux-command-mean">What does “&amp;” at the end of a linux command mean?</a></p>
 <p>表示在后台运行。</p>
