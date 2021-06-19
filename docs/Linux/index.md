@@ -503,13 +503,35 @@ $ fc-list --format='%{family[0]}\n' :lang=zh | sort | uniq
 
 refer to [fc-list command in Linux with examples](https://www.geeksforgeeks.org/fc-list-command-in-linux-with-examples/)
 
-### Install Fira
+### Install Local Fonts
 
-[Fira for Metropolis theme](https://github.com/matze/mtheme/issues/280)
+以安装仿宋和黑体为例，这是[本科毕业论文模板](https://hohoweiya.xyz/zju-thesis/src/zju-thesis.pdf)所需要的字体，字体文件已打包
 
-[Install the Fira Font in Ubuntu](https://stevescott.ca/2016-10-20-installing-the-fira-font-in-ubuntu.html)
+```bash
+$ wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz
+$ tar xvzf fonts.tar.gz
+fonts/STFANGSO.TTF
+fonts/
+fonts/simhei.ttf
+$ sudo mkdir -p /usr/share/fonts/truetype/custom/
+$ sudo mv fonts/* /usr/share/fonts/truetype/custom/
+$ sudo fc-cache -f -v
+```
 
-and some introduction: [Fira Code —— 专为编程而生的字体](https://zhuanlan.zhihu.com/p/65362086)
+安装完成后，
+
+```bash
+$ fc-list :lang=zh
+/usr/share/fonts/truetype/custom/simhei.ttf: SimHei,黑体:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
+/usr/share/fonts/truetype/custom/STFANGSO.TTF: STFangsong,华文仿宋:style=Regular
+```
+
+### Some Free Fonts
+
+- [Mozilla's Fira Type Family](https://github.com/mozilla/Fira)
+    - [Fira for Metropolis theme](https://github.com/matze/mtheme/issues/280)
+    - [Fira Code](https://github.com/tonsky/FiraCode)
+        - [知乎：Fira Code —— 专为编程而生的字体](https://zhuanlan.zhihu.com/p/65362086)
 
 ## 命令最后的&
 

@@ -1,3 +1,7 @@
+## 2021.06.19
+
+- 20 years ago, Christopher Nolan produced one of his first most influential movies in the history of **cinematography (电影摄制技术)**. Memento broke many of the traditional paradigms in the film industry by structuring two parallel narratives, one **chronologically (按年代顺序，按时间顺序)** going backwards and one going forward.
+
 ## 2021.06.18
 
 - Time to **take the plunge (冒险尝试；投入)** into learning to code?
@@ -3067,7 +3071,6 @@ letter back
 15. make headway
 16. contemplative
 17. vague
-18. chronologically
 19. close-ups
 20. petal
 21. juxtaposes

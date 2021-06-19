@@ -45,13 +45,13 @@ Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Re
 
 你把这个路径加到环境变量中的PATH中就ok了。
 
-# 安装 okular
+## 安装 okular
 
 1. 先安装 KDE 包管理器 chocolatey，[The package manager for Windows](https://chocolatey.org/)
 2. 再安装 okular，[choco install okular](https://chocolatey.org/search?q=okular)
 3. 在 WSL 中运行时，需要 enable display，即 [`export DISPLAY=:0`](https://virtualizationreview.com/articles/2017/02/08/graphical-programs-on-windows-subsystem-on-linux.aspx)
 
-# Acrobat cannot save pdf
+## Acrobat cannot save pdf
 
 situation:  the "Save as" windows open as blank
 
@@ -63,7 +63,11 @@ refer to [Can't save pdf document](https://forums.adobe.com/thread/2318474)
 
 ## 禁止自动更新
 
-办公室电脑经常弹出需要更新，即便不是自动更新，但是每次弹出总让人担心会不会下次它自动重启进行更新了，于是索性禁掉它，参考 [如何关闭Windows10的自动更新？](https://zhuanlan.zhihu.com/p/38070514) 中的第一种方法，不过需要以管理员运行。
+办公室电脑经常弹出需要更新，即便不是自动更新，但是每次弹出总让人担心会不会下次它自动重启进行更新了，于是索性禁掉它，参考 [如何关闭Windows10的自动更新？](https://zhuanlan.zhihu.com/p/38070514) 中的第一种修改 service 的方式，不过需要以管理员运行。
+
+按住 `Win`，然后直接敲命令，如 `services`，然后选择以管理员权限运行 [:link:](https://superuser.com/questions/462174/winr-runs-as-administrator-in-windows-8)。
+
+但是刚刚发现这种方式也不能完全禁止，禁止后仍然会重新启动，甚至最后还是重启更新了。
 
 ## 截屏软件
 

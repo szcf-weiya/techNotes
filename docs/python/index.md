@@ -594,6 +594,30 @@ also refer to
 plt.tight_layout(pad = 3.0)
 ```
 
+### equal axis aspect ratio
+
+According to the [official documentation](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/axis_equal_demo.html),
+
+```python
+fig, ax = plt.subplots(1, 3)
+ax[0].plot(3*np.cos(an), 3*np.sin(an))
+ax[1].plot(3*np.cos(an), 3*np.sin(an))
+ax[1].axis("equal")
+ax[2].plot(3*np.cos(an), 3*np.sin(an))
+ax[2].set_aspect("equal", "box")
+```
+
+![image](https://user-images.githubusercontent.com/13688320/122642147-7cae3780-d13b-11eb-9e14-9356d2e2f6a9.png)
+
+we prefer to the last one. If we want to directly call `plt` instead of `fig, ax`, then
+
+```python
+plt.plot(3*np.cos(an), 3*np.sin(an))
+plt.gca().set_aspect("equal", "box")
+```
+
+note the middle `gca()`.
+
 ### scatter size
 
 the size is defined by the area, [pyplot scatter plot marker size](https://stackoverflow.com/questions/14827650/pyplot-scatter-plot-marker-size)
