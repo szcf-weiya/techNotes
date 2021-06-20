@@ -1015,6 +1015,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#convert-list-of-lists-to-list" class="md-nav__link">
+    convert list of lists to list
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1146,13 +1153,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    /=
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     又拍云的短信平台
   </a>
   
@@ -2456,6 +2470,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#convert-list-of-lists-to-list" class="md-nav__link">
+    convert list of lists to list
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2587,13 +2608,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    /=
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     又拍云的短信平台
   </a>
   
@@ -3221,6 +3249,12 @@ Available kernels:
 <span class="ne">TypeError</span><span class="p">:</span> <span class="n">unhashable</span> <span class="nb">type</span><span class="p">:</span> <span class="s1">&#39;list&#39;</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/13675296/python-typeerror-unhashable-type-list">Python: TypeError: unhashable type: &lsquo;list&rsquo;</a></p>
+<h3 id="convert-list-of-lists-to-list">convert list of lists to list<a class="headerlink" href="#convert-list-of-lists-to-list" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; <span class="nv">a</span> <span class="o">=</span> <span class="o">[[</span><span class="m">1</span>, <span class="m">2</span><span class="o">]</span>, <span class="o">[</span><span class="m">3</span>, <span class="m">4</span><span class="o">]]</span>
+&gt;&gt;&gt; <span class="o">[</span>y <span class="k">for</span> x <span class="k">in</span> a <span class="k">for</span> y <span class="k">in</span> x<span class="o">]</span>
+<span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span><span class="o">]</span>
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/952914/how-to-make-a-flat-list-out-of-a-list-of-lists">How to make a flat list out of a list of lists?</a></p>
 <h2 id="matplotlibpyplot">matplotlib.pyplot<a class="headerlink" href="#matplotlibpyplot" title="Permanent link">&para;</a></h2>
 <h3 id="seaborn">seaborn<a class="headerlink" href="#seaborn" title="Permanent link">&para;</a></h3>
 <p>Homepage: <a href="https://seaborn.pydata.org/">seaborn: statistical data visualization</a></p>
@@ -3362,7 +3396,52 @@ Available kernels:
 <span class="nb">print</span><span class="p">(</span><span class="n">x_str</span><span class="p">)</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks">How to print numpy objects without line breaks</a></p>
-<h2 id="_1">又拍云的短信平台<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_1"><code>/=</code><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>According to the builtin manual, <code>help('/=')</code>,</p>
+<blockquote>
+<p>An augmented assignment expression like &ldquo;x += 1&rdquo; can be rewritten as
+&ldquo;x = x + 1&rdquo; to achieve a similar, but not exactly equal effect. In the
+augmented version, &ldquo;x&rdquo; is only evaluated once. Also, when possible,
+the actual operation is performed <em>in-place</em>, meaning that rather than
+creating a new object and assigning that to the target, the old object
+is modified instead.</p>
+</blockquote>
+<p>So it would be cautious when using it on arrays,</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span> <span class="o">/=</span> <span class="mf">0.5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">106</span><span class="o">-</span><span class="mi">71</span><span class="n">f04990b2bb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+      <span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+      <span class="mi">2</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">]</span>
+<span class="o">----&gt;</span> <span class="mi">3</span> <span class="n">a1</span> <span class="o">/=</span> <span class="mf">0.5</span>
+      <span class="mi">4</span> <span class="n">a1</span>
+
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">ufunc</span> <span class="s1">&#39;true_divide&#39;</span> <span class="n">output</span> <span class="p">(</span><span class="n">typecode</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">coerced</span> <span class="n">to</span> <span class="n">provided</span> <span class="n">output</span> <span class="n">parameter</span> <span class="p">(</span><span class="n">typecode</span> <span class="s1">&#39;l&#39;</span><span class="p">)</span> <span class="n">according</span> <span class="n">to</span> <span class="n">the</span> <span class="n">casting</span> <span class="n">rule</span> <span class="s1">&#39;&#39;</span><span class="n">same_kind</span><span class="s1">&#39;&#39;</span>
+</code></pre></div>
+<p>The above error is due to incompatible type, so it can be avoided by specifying the element type of the array, but the original array also has been updated,</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span> <span class="o">/=</span> <span class="mf">0.5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]])</span>
+</code></pre></div>
+<p>In contrast, <code>/</code> would retain the original array.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">a1</span> <span class="o">/</span> <span class="mf">0.5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]])</span>
+</code></pre></div>
+<h2 id="_2">又拍云的短信平台<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>参考文献</p>
 <ol>
 <li><a href="http://blog.csdn.net/junli_chen/article/details/53670887">Python 使用requests发送POST请求 - CSDN博客</a></li>
