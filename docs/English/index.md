@@ -1,3 +1,8 @@
+## 2021.06.20
+
+- The global antiracism movement sparked by the murder of George Floyd and the pandemic also **spurred (刺激，激励)** Wellcome, one of the world's largest biomedical-research funders.
+    - The [Wellcome Trust](https://en.wikipedia.org/wiki/Wellcome_Trust) is a charitable foundation focuses on health research. Not the supermarket [Wellcome](https://en.wikipedia.org/wiki/Wellcome).
+
 ## 2021.06.19
 
 - 20 years ago, Christopher Nolan produced one of his first most influential movies in the history of **cinematography (电影摄制技术)**. Memento broke many of the traditional paradigms in the film industry by structuring two parallel narratives, one **chronologically (按年代顺序，按时间顺序)** going backwards and one going forward.

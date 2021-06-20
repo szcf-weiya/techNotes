@@ -565,6 +565,15 @@ TypeError: unhashable type: 'list'
 
 refer to [Python: TypeError: unhashable type: 'list'](https://stackoverflow.com/questions/13675296/python-typeerror-unhashable-type-list)
 
+### convert list of lists to list
+
+```bash
+>>> a = [[1, 2], [3, 4]]
+>>> [y for x in a for y in x]
+[1, 2, 3, 4]
+```
+
+refer to [How to make a flat list out of a list of lists?](https://stackoverflow.com/questions/952914/how-to-make-a-flat-list-out-of-a-list-of-lists)
 
 ## matplotlib.pyplot
 
@@ -756,6 +765,61 @@ print(x_str)
 ```
 
 refer to [How to print numpy objects without line breaks](https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks)
+
+### `/=`
+
+According to the builtin manual, `help('/=')`,
+
+> An augmented assignment expression like "x += 1" can be rewritten as
+"x = x + 1" to achieve a similar, but not exactly equal effect. In the
+augmented version, "x" is only evaluated once. Also, when possible,
+the actual operation is performed *in-place*, meaning that rather than
+creating a new object and assigning that to the target, the old object
+is modified instead.
+
+So it would be cautious when using it on arrays,
+
+```python
+>>> a = np.array([[1, 2, 3], [4, 5, 6]])
+>>> a1 = a[0, ]
+>>> a1 /= 0.5
+>>> a1
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-106-71f04990b2bb> in <module>
+      1 a = np.array([[1, 2, 3], [4, 5, 6]])
+      2 a1 = a[0, ]
+----> 3 a1 /= 0.5
+      4 a1
+
+TypeError: ufunc 'true_divide' output (typecode 'd') could not be coerced to provided output parameter (typecode 'l') according to the casting rule ''same_kind''
+```
+
+The above error is due to incompatible type, so it can be avoided by specifying the element type of the array, but the original array also has been updated,
+
+```python
+>>> a = np.array([[1, 2, 3], [4, 5, 6]], dtype = float)
+>>> a1 = a[0, ]
+>>> a1 /= 0.5
+>>> a1
+array([2., 4., 6.])
+>>> a
+array([[2., 4., 6.],
+       [4., 5., 6.]])
+```
+
+In contrast, `/` would retain the original array.
+
+```python
+>>> a = np.array([[1, 2, 3], [4, 5, 6]], dtype = float)
+>>> a1 = a[0, ]
+>>> a1 = a1 / 0.5
+>>> a1
+array([2., 4., 6.])
+>>> a
+array([[1., 2., 3.],
+       [4., 5., 6.]])
+```
 
 ## 又拍云的短信平台
 
