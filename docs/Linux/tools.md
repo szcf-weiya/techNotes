@@ -99,6 +99,76 @@ pdftk likelihoodfree-design-a-discussion-{1..13}-1024.jpg.pdf cat output likelih
 
 这一点在服务器上没看到。
 
+### adjust brightness and contrast
+
+!!! info
+	Here is [one example](https://github.com/szcf-weiya/SZmedinfo/issues/5) used in my project.
+
+```bash
+$ convert -brightness-contrast 10x5 input.jpg output.jpg
+```
+
+where `10x5` increases the brightness 10 percent and the contrast 5 percent. 
+
+These two values range from -100 to 100, and
+
+- negative value: decrease
+- zero: leave it off
+- positive value: increase
+
+more details refer to [ImageMagick: Annotated List of Command-line Options](https://www.imagemagick.org/script/command-line-options.php#brightness-contrast)
+
+As an alternative, the GUI software `Shotwell` also provides similar functions, just clicking `enhance`.
+
+## `cut`
+
+To select the first field of a file `file.txt`,
+
+```shell
+a=$(cut -d'.' -f1 <<< $1)_test
+echo $a
+```
+
+where `-d'.'` is to define the delimiter, and then `-f1` get the first field.
+
+If we need to get the last field, we can use `rev`, i.e.,
+
+```bash
+echo 'maps.google.com' | rev | cut -d'.' -f 1 | rev
+```
+
+refer to [How to find the last field using 'cut'](https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut)
+
+## `date`
+
+```bash
+timestamp=$(date +"%Y-%m-%dT%H:%M:%S")
+echo $timestamp
+# 2020-02-11T10:51:42
+```
+
+we can compare two timestamps as follows
+
+```shell
+d1=$(date -d "2019-09-22 20:07:25" +'%s')
+d2=$(date -d "2019-09-22 20:08:25" +'%s')
+if [ $d1 -gt $d2 ]
+then
+  echo "d1 > d2"
+else
+  echo "d1 < d2"
+fi
+```
+
+where
+
+- `-d`: display time described by STRING, not 'now' (from `man date`) Alternatively, we can use format `-d "-10 days -8 hours -Iseconds"` to refer to the timestamp based on the current date, and `-Iseconds` specifies the unit as `seconds`, see the application in [Git: change-commit-time](../../Git/#change-commit-time).
+- `+%[format-option]`: format specifiers (details formats refer to `man date`, but I am curious why `+`, no hints from `many date`, but here is one from [date command in Linux with examples](https://www.geeksforgeeks.org/date-command-linux-examples/))
+- `-gt`: larger than, `-lt`: less than; with equality, `-ge` and `-le`, (from [Shell 基本运算符](https://www.runoob.com/linux/linux-shell-basic-operators.html))
+- 条件表达式要放在方括号之间，并且要有空格, from [Shell 基本运算符](https://www.runoob.com/linux/linux-shell-basic-operators.html)
+
+refer to [How to compare two time stamps?](https://unix.stackexchange.com/questions/375911/how-to-compare-two-time-stamps)
+
 ## `ffmpeg`： 视频处理
 
 ### 去除音频
@@ -145,11 +215,22 @@ where
 
 refer to [Using ffmpeg to cut up video](https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video)
 
+## `find`
+
+```bash
+$ find . -group group
+$ find . -user user
+```
+
+refer to [list files with specific group and user name](https://unix.stackexchange.com/questions/518268/list-files-with-specific-group-and-user-name)
+
 ## `htop`
 
 A much more powerful command than `top`, refer to [Find out what processes are running in the background on Linux](https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/)
 
 ## `ls`
+
+### modify and change time
 
 在找学习资料时，突然不是很确定当初是否已经在用这台笔记本了，所以想确定一下本机的装机时间，参考 [How can I tell what date Ubuntu was installed?](https://askubuntu.com/questions/1352/how-can-i-tell-what-date-ubuntu-was-installed)，主要时通过查看文件的上次修改时间，比如
 
@@ -223,6 +304,28 @@ drwxrwxrwx  1 weiya weiya       8192 Mar 18  2016  Boot/
 
 最早可以追溯到 2016.03.18.
 
+### only show directory
+
+```bash
+ls -d */
+```
+
+refer to [Listing only directories using ls in Bash?](https://stackoverflow.com/questions/14352290/listing-only-directories-using-ls-in-bash)
+
+My application: [TeXtemplates: create a tex template](https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L9)
+
+### check whether a certain file type/extension exists in directory
+
+```bash
+if ls *.bib &>/dev/null; then
+  #
+fi
+```
+
+refer to [Check whether a certain file type/extension exists in directory](https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory)
+
+My application: [TeXtemplates: create a tex template](https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20)
+
 ## `paste, cat`: 文本文件拼接
 
 ```bash
@@ -231,6 +334,15 @@ paste file1 file2 > outputfile
 ### 按行
 cat file1 file2 > outputfile
 ```
+
+convert a column to a row with delimiter `,`
+
+```bash
+$ for i in {1..10}; do echo $i; done | paste -s -d','
+1,2,3,4,5,6,7,8,9,10
+```
+
+where `-s` aims to paste one file at a time instead of in parallel, which results in one line. Refer to [how to concatenate lines into one string](https://stackoverflow.com/questions/10303600/how-to-concatenate-lines-into-one-string)
 
 ## `ps2pdf, pdf2ps`
 
@@ -418,6 +530,21 @@ done
 ## `tail`
 
 - `-f`: output appended data as the file grows, powerful for checking the log file in real time.
+
+## `tesseract`
+
+OCR text extraction: [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
+
+```bash
+$ tesseract tmp.png stdout -l eng+chi_sim quiet
+```
+
+where
+
+- `quiet` redirects the warning message
+- `stdout` directly outputs the results instead of writing into another text file
+
+more details refer to `man tesseract`.
 
 ## `uniq`
 

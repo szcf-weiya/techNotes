@@ -134,7 +134,15 @@ Then I found [more detailed explanation](https://stackoverflow.com/a/43627975/) 
 
 2. [The definitive guide on how to use static, class or abstract methods in Python](https://julien.danjou.info/guide-python-static-class-abstract-methods/)
 
-## `click`
+## CLI Options
+
+### `argparse`
+
+Documentation: [argparse — Parser for command-line options, arguments and sub-commands](https://docs.python.org/3/library/argparse.html)
+
+An example: [jieba/__main__.py](https://github.com/fxsjy/jieba/blob/master/jieba/__main__.py)
+
+### `click`
 
 !!! info
 	More related code can be found in [My Code Results on GitHub](https://github.com/search?l=Python&q=user%3Aszcf-weiya+click&type=Code)

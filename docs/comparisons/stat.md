@@ -12,5 +12,5 @@ LANG | Julia | R | Python | Matlab
 [read image](../../python/opencv/#read-image) | `Images::load()` | | `cv2.imread()`/`skimage.io.imread()` |`imread()`
 [`sort` and `argsort`](../../R/#sort-rank-order) | | `sort(), order()` | `sorted(), np.argsort()` | 
 [Jupyter kernels](../../python/#different-kernels) | `IJulia` | `IRkernel` | `ipykernel` | 
-
+[too many open figures](../../julia/#gr-too-many-open-files) | `inline` | | `rcParams` | 
 

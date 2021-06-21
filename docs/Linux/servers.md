@@ -235,7 +235,7 @@ alias sinfostat='sinfo -o "%N %C" -p stat -N'
 # list available gpu
 alias sinfogpu='sinfo -O PartitionName,NodeList,Gres:25,GresUsed:25 | sed -n "1p;/gpu[^:]/p"'
 # check disk quota
-alias myquota='for i in s1155113972 Stat StatScratch; do lfs quota -gh $i /lustre; done'
+alias myquota='for i in `whoami` Stat StatScratch; do lfs quota -gh $i /lustre; done'
 # list jobs sorted by priority
 alias sacctchpc='sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)'
 # list jobs sorted by priority (only involved stat)
@@ -483,6 +483,12 @@ lfs quota -gh StatScratch /lustre
 
 ```bash
 chgrp -R Stat SomeFolder
+```
+
+如果想找出哪些文件 group 为 `sXXXX`, 可以采用
+
+```bash
+find . -group `whoami`
 ```
 
 ## exclude hosts with `-x` or `--exclude`

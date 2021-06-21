@@ -5,4 +5,3 @@ if id $1 &> /dev/null; then
 else
 	echo "$1 is not exists"
 fi
-

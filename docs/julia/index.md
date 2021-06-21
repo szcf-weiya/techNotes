@@ -482,6 +482,33 @@ ERROR: MethodError: no method matching _show(::IOStream, ::MIME{Symbol("applicat
 
 - [:octicons-issue-closed-16:](https://github.com/szcf-weiya/Clouds/issues/53) rebuild `GR` if `ERROR: could not load library "libGR.so"`. Possible reason is that the version (such as `BwGt2`) to use has not been correctly built, although it was working well in other versions, such as `yMV3y`.
 
+### GR: Too many open files
+
+The complete error message is 
+
+```julia
+No XVisualInfo for format QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SwapBehavior(SingleBuffer), swapInterval 1, profile  QSurfaceFormat::OpenGLContextProfile(NoProfile))
+Falling back to using screens root_visual.
+socket: Too many open files
+GKS: can't connect to GKS socket application
+```
+
+see [the private repo](https://github.com/szcf-weiya/Clouds/issues/34) for more details. The issue has been discussed in [GKS file open error: Too many open files #1723](https://github.com/JuliaPlots/Plots.jl/issues/1723), the solution is
+
+```julia
+GR.inline("png")
+```
+
+I also came across similar issue with `matplotlib.pyplot`, but it just throws a warning, and one solution is to set
+
+```python
+plt.rcParams.update({'figure.max_open_warning': 0})
+```
+
+refer to [warning about too many open figures](https://stackoverflow.com/questions/21884271/warning-about-too-many-open-figures)
+
+
+
 ## PyCall
 
 ### Couldn't find libpython error

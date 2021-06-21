@@ -3,6 +3,27 @@
 教程参考
 
 1. [菜鸟教程](http://www.runoob.com/linux/linux-shell.html)
+2. [GNU Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents)
+
+## Special Parameters
+
+- `$?`: 用于保存刚刚执行的命令的状态返回值
+	- 0: 成功执行； 
+	- 1-255: 表示执行失败
+	- 2: All builtins return an exit status of 2 to indicate incorrect usage, generally invalid options or missing arguments.
+	- 126: If a command is found but is not executable, the return status
+	- 127: If a command is not found, the child process created to execute it returns
+	- 128+N: When a command terminates on a fatal signal whose number is N, Bash uses the value 128+N as the exit status.
+	- refer to [GNU Bash manual: 3.7.5 Exit Status](https://www.gnu.org/software/bash/manual/html_node/Exit-Status.html) for more details.
+- `$*`, `$@`: 引用参数。Expands to the positional parameters, starting from one.
+- `$#`: 位置参数的个数
+- `$0`: 脚本名称
+- `$!`: the process ID of the job most recently placed into the background
+- `$$`: the process ID of the shell
+
+refer to
+
+- [GNU Bash manual: 3.4.2 Special Parameters](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html)
 
 ## Safer bash script
 
@@ -165,9 +186,12 @@ applications:
 - [Clouds/run_test_local.sh](https://github.com/szcf-weiya/Clouds/blob/b8abfc63078ac53e817c2a3d7f3e92d44cf47f61/run_test_local.sh#L5-L9)
 
 
-## shell数组
+## Array
 
 1. 在Shell中，用括号来表示数组，数组元素用“空格”符号分割开。
+2. 所有元素：`${ARRAY[@]}` 或者 `${ARRAY[*]}`
+3. 数组长度：`${#ARRAY[@]}`
+4. 从 0 编号：`${ARRAY[0]}`，类似 C 语言，与 `${ARRAY}` 返回结果相同。
 
 ## sed
 
@@ -233,8 +257,13 @@ sed -i "s/\!\[IMG_\([0-9]\{4\}\)\](\(.*\))/\[IMG_\1\]\: \2/g" FILENAME
 
 人总是善变的，过了一段时间，我又想把这些 img 下载到本地文件夹，但是之前处理过的文件都删掉了，只剩下传到 github 上的了，所以我首先要把文件下载到合适的位置并重命名。比如对于文件 `_posts/2019-12-21-quant-genetics.md`，只保留了 `https://user-images.githubusercontent.com/` 的链接，采用下面的脚本下载到合适的位置并重命名，
 
-```shell
-grep -E "https://user-images." _posts/2019-12-21-quant-genetics.md | while read -a ADDR; do if [ ${#ADDR[@]} -eq 2 ]; then proxychains wget ${ADDR[1]} -O images/2019-12-21-quant-genetics/${ADDR[0]:1:8}.jpg; fi; done
+```bash
+grep -E "https://user-images." _posts/2019-12-21-quant-genetics.md | 
+	while read -a ADDR; do 
+		if [ ${#ADDR[@]} -eq 2 ]; then 
+			proxychains wget ${ADDR[1]} -O images/2019-12-21-quant-genetics/${ADDR[0]:1:8}.jpg; 
+		fi; 
+	done
 ```
 
 其中
@@ -243,6 +272,8 @@ grep -E "https://user-images." _posts/2019-12-21-quant-genetics.md | while read 
 - `wget -O` 是重命名，这里顺带移动到合适的位置
 - `proxychains` 则是用于科学上网
 - `read -a ADDR` 表示将分割后的字符串（比如默认按照空格进行分割，或者指定 `IFS=`）放进数组 ADDR 中，详见 `help read`，而 `man read` 并没有给出参数列表。另外需要注意到数组 `$ADDR` 返回结果为 `${ADDR[0]}`.
+	- 读取单行文件时，采用 `;` 而非 pipeline，比如文件 `text.txt` 有单行内容 `1 2 3 4`. 应用 `read -a A < test.txt; echo ${A[0]}`，而非 `read -a A < test.txt | echo ${A[0]}`，后者返回空结果。
+
 
 ### 实战二
 
@@ -468,36 +499,6 @@ done
 echo $list
 ```
 
-## timestamp
-
-```shell
-timestamp=$(date +"%Y-%m-%dT%H:%M:%S")
-echo $timestamp
-# 2020-02-11T10:51:42
-```
-
-### compare two timestamps
-
-```shell
-d1=$(date -d "2019-09-22 20:07:25" +'%s')
-d2=$(date -d "2019-09-22 20:08:25" +'%s')
-if [ $d1 -gt $d2 ]
-then
-  echo "d1 > d2"
-else
-  echo "d1 < d2"
-fi
-```
-
-where
-
-- `-d`: display time described by STRING, not 'now' (from `man date`)
-- `+%[format-option]`: format specifiers (details formats refer to `man date`, but I am curious why `+`, no hints from `many date`, but here is one from [date command in Linux with examples](https://www.geeksforgeeks.org/date-command-linux-examples/))
-- `-gt`: larger than, `-lt`: less than; with equality, `-ge` and `-le`, (from [Shell 基本运算符](https://www.runoob.com/linux/linux-shell-basic-operators.html))
-- 条件表达式要放在方括号之间，并且要有空格, from [Shell 基本运算符](https://www.runoob.com/linux/linux-shell-basic-operators.html)
-
-refer to [How to compare two time stamps?](https://unix.stackexchange.com/questions/375911/how-to-compare-two-time-stamps)
-
 ## globbing for `ls` vs regular expression for `find`
 
 Support we want to get `abc2.txt` as stated in [Listing with `ls` and regular expression
@@ -522,25 +523,6 @@ where
 - `-maxdepth 1` disables recursive, and only to find files in the current directory
 
 We also can add `-exec ls` to get the output of `ls`, and change the regex type by `-regextype egrep`.
-
-## select the first field
-
-given filename `file.txt`, want to get a string `file_test`.
-
-```shell
-a=$(cut -d'.' -f1 <<< $1)_test
-echo $a
-```
-
-where `-d'.'` is to define the delimiter, and then `-f1` get the first field.
-
-If we need to get the last field, we can use `rev`, i.e.,
-
-```bash
-echo 'maps.google.com' | rev | cut -d'.' -f 1 | rev
-```
-
-refer to [How to find the last field using 'cut'](https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut)
 
 ## Multiple `IFS`
 
@@ -580,28 +562,6 @@ done < <(find . -maxdepth 1 -regex "\./oracle_setting_2019-09-.*recall\.pdf" -pr
 ```bash
 find -regex "\./.*\.html" | sed -n "s#\./#https://esl.hohoweiya.xyz/#p" >> ../urls.txt
 ```
-
-## Only show directory
-
-```bash
-ls -d */
-```
-
-refer to [Listing only directories using ls in Bash?](https://stackoverflow.com/questions/14352290/listing-only-directories-using-ls-in-bash)
-
-My application: [TeXtemplates: create a tex template](https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L9)
-
-## Check whether a certain file type/extension exists in directory
-
-```bash
-if ls *.bib &>/dev/null; then
-  #
-fi
-```
-
-refer to [Check whether a certain file type/extension exists in directory](https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory)
-
-My application: [TeXtemplates: create a tex template](https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20)
 
 ## Get path of the current script
 
@@ -655,16 +615,31 @@ $ var=/dir1/dir2/file.tar.gz && echo ${var%%.*}
 
 ## `if` statement
 
+### `&> /dev/null`
+
 We can add `&> /dev/null` to hidden the output information in the condition of `if`. For example, check if user exists,
 
 ```bash
-#!/bin/bash
-# refer to https://blog.51cto.com/64314491/1629175
-if id $1 &> /dev/null; then
-	echo "$1 exists"
-else
-	echo "$1 is not exists"
-fi
+--8<-- "docs/shell/if/if-id.sh"
+```
+
+note that for an existed user, the exit code is 0, while for a non-existed user, the exit code is non-zero, so the above command seems counter-intuitive.
+
+```bash
+~$ id weiya &> /dev/null 
+~$ echo $?
+0
+~$ id weiya2 &> /dev/null 
+~$ echo $?
+1
+```
+
+another similar form can be found in [`>/dev/null 2>&1` in `if` statement](https://unix.stackexchange.com/questions/34491/dev-null-21-in-if-statement)
+
+Another example: test if a file has an empty line,
+
+```bash
+--8<-- "docs/shell/if/if-empty-line.sh"
 ```
 
 ### logical operation
@@ -673,6 +648,37 @@ fi
 
 ```bash
 --8<-- "docs/shell/if/if-dist.sh"
+```
+
+### check if uid equals gid
+
+```bash
+--8<-- "docs/shell/if/if-gid.sh"
+```
+
+note that use `-g` instead of `-G`, where the latter one would print all group ids.
+
+### sum parameters
+
+```bash
+--8<-- "docs/shell/if/sum-paras.sh"
+```
+
+alternatively,
+
+```bash
+--8<-- "docs/shell/if/sum-paras2.sh"
+```
+
+where `shift` alternates the parameters such that `$1` becomes the next parameter.
+
+The results are
+
+```bash
+$ ./sum-paras.sh 1 2 3 4
+10
+$ ./sum-paras2.sh 1 2 3 4
+10
 ```
 
 ### test string
