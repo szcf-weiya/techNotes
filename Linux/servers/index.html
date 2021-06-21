@@ -2094,7 +2094,7 @@ julia -p <span class="nv">$np</span> run.jl <span class="nv">$nrep</span> <span 
 <span class="c1"># list available gpu</span>
 <span class="nb">alias</span> <span class="nv">sinfogpu</span><span class="o">=</span><span class="s1">&#39;sinfo -O PartitionName,NodeList,Gres:25,GresUsed:25 | sed -n &quot;1p;/gpu[^:]/p&quot;&#39;</span>
 <span class="c1"># check disk quota</span>
-<span class="nb">alias</span> <span class="nv">myquota</span><span class="o">=</span><span class="s1">&#39;for i in s1155113972 Stat StatScratch; do lfs quota -gh $i /lustre; done&#39;</span>
+<span class="nb">alias</span> <span class="nv">myquota</span><span class="o">=</span><span class="s1">&#39;for i in `whoami` Stat StatScratch; do lfs quota -gh $i /lustre; done&#39;</span>
 <span class="c1"># list jobs sorted by priority</span>
 <span class="nb">alias</span> <span class="nv">sacctchpc</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)&#39;</span>
 <span class="c1"># list jobs sorted by priority (only involved stat)</span>
@@ -2261,6 +2261,9 @@ lfs quota -gh StatScratch /lustre
 <p>后来才发现，原来 quota 是通过 group 来控制的，其中上述命令中 <code>-g</code> 选项即表示 group，也就是说 <code>your_user_id</code>, <code>Stat</code> 和 <code>StatScratch</code> 都是 group 名字。如果文件夹是从别处移动来的，group并不会改变，只有直接在 <code>/lustre/project/Stat</code> 中新建的文件或文件夹才继承 Stat 的 group，这一点是最开始在 <code>Stat</code> 文件夹下创建自己目录 <code>MYFOLDER</code> 时通过 <code>chmod g+s MYFOLDER</code> 保证的。</p>
 <p>于是简单的方法便是直接更改 group，</p>
 <div class="highlight"><pre><span></span><code>chgrp -R Stat SomeFolder
+</code></pre></div>
+<p>如果想找出哪些文件 group 为 <code>sXXXX</code>, 可以采用</p>
+<div class="highlight"><pre><span></span><code>find . -group <span class="sb">`</span>whoami<span class="sb">`</span>
 </code></pre></div>
 <h2 id="exclude-hosts-with-x-or-exclude">exclude hosts with <code>-x</code> or <code>--exclude</code><a class="headerlink" href="#exclude-hosts-with-x-or-exclude" title="Permanent link">&para;</a></h2>
 <h3 id="srun"><code>srun</code><a class="headerlink" href="#srun" title="Permanent link">&para;</a></h3>

@@ -1015,6 +1015,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gr-too-many-open-files" class="md-nav__link">
+    GR: Too many open files
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2265,6 +2272,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gr-too-many-open-files" class="md-nav__link">
+    GR: Too many open files
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2926,6 +2940,20 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3æ
 <ul>
 <li><a href="https://github.com/szcf-weiya/Clouds/issues/53"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5z"/><path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-1.5 0a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/></svg></span></a> rebuild <code>GR</code> if <code>ERROR: could not load library "libGR.so"</code>. Possible reason is that the version (such as <code>BwGt2</code>) to use has not been correctly built, although it was working well in other versions, such as <code>yMV3y</code>.</li>
 </ul>
+<h3 id="gr-too-many-open-files">GR: Too many open files<a class="headerlink" href="#gr-too-many-open-files" title="Permanent link">&para;</a></h3>
+<p>The complete error message is </p>
+<div class="highlight"><pre><span></span><code><span class="n">No</span> <span class="n">XVisualInfo</span> <span class="k">for</span> <span class="n">format</span> <span class="n">QSurfaceFormat</span><span class="p">(</span><span class="n">version</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">options</span> <span class="n">QFlags</span><span class="o">&lt;</span><span class="n">QSurfaceFormat</span><span class="o">::</span><span class="kt">FormatOption</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">depthBufferSize</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">redBufferSize</span> <span class="mi">1</span><span class="p">,</span> <span class="n">greenBufferSize</span> <span class="mi">1</span><span class="p">,</span> <span class="n">blueBufferSize</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alphaBufferSize</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">stencilBufferSize</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">samples</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">swapBehavior</span> <span class="n">QSurfaceFormat</span><span class="o">::</span><span class="n">SwapBehavior</span><span class="p">(</span><span class="n">SingleBuffer</span><span class="p">),</span> <span class="n">swapInterval</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profile</span>  <span class="n">QSurfaceFormat</span><span class="o">::</span><span class="n">OpenGLContextProfile</span><span class="p">(</span><span class="n">NoProfile</span><span class="p">))</span>
+<span class="n">Falling</span> <span class="n">back</span> <span class="n">to</span> <span class="k">using</span> <span class="n">screens</span> <span class="n">root_visual</span><span class="o">.</span>
+<span class="n">socket</span><span class="o">:</span> <span class="n">Too</span> <span class="n">many</span> <span class="n">open</span> <span class="n">files</span>
+<span class="n">GKS</span><span class="o">:</span> <span class="n">can</span><span class="o">&#39;</span><span class="n">t</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">GKS</span> <span class="n">socket</span> <span class="n">application</span>
+</code></pre></div>
+<p>see <a href="https://github.com/szcf-weiya/Clouds/issues/34">the private repo</a> for more details. The issue has been discussed in <a href="https://github.com/JuliaPlots/Plots.jl/issues/1723">GKS file open error: Too many open files #1723</a>, the solution is</p>
+<div class="highlight"><pre><span></span><code><span class="n">GR</span><span class="o">.</span><span class="n">inline</span><span class="p">(</span><span class="s">&quot;png&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>I also came across similar issue with <code>matplotlib.pyplot</code>, but it just throws a warning, and one solution is to set</p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;figure.max_open_warning&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/21884271/warning-about-too-many-open-figures">warning about too many open figures</a></p>
 <h2 id="pycall">PyCall<a class="headerlink" href="#pycall" title="Permanent link">&para;</a></h2>
 <h3 id="couldnt-find-libpython-error">Couldn&rsquo;t find libpython error<a class="headerlink" href="#couldnt-find-libpython-error" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;PYTHON&quot;</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">;</span> <span class="n">Pkg</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s">&quot;PyCall&quot;</span><span class="p">)</span>

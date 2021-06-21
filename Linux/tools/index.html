@@ -528,8 +528,29 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#adjust-brightness-and-contrast" class="md-nav__link">
+    adjust brightness and contrast
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cut" class="md-nav__link">
+    cut
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    date
+  </a>
   
 </li>
       
@@ -575,6 +596,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#htop" class="md-nav__link">
     htop
   </a>
@@ -585,6 +613,33 @@
   <a href="#ls" class="md-nav__link">
     ls
   </a>
+  
+    <nav class="md-nav" aria-label="ls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modify-and-change-time" class="md-nav__link">
+    modify and change time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-show-directory" class="md-nav__link">
+    only show directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-whether-a-certain-file-typeextension-exists-in-directory" class="md-nav__link">
+    check whether a certain file type/extension exists in directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -646,6 +701,13 @@
         <li class="md-nav__item">
   <a href="#tail" class="md-nav__link">
     tail
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tesseract" class="md-nav__link">
+    tesseract
   </a>
   
 </li>
@@ -1805,8 +1867,29 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#adjust-brightness-and-contrast" class="md-nav__link">
+    adjust brightness and contrast
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cut" class="md-nav__link">
+    cut
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    date
+  </a>
   
 </li>
       
@@ -1852,6 +1935,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#htop" class="md-nav__link">
     htop
   </a>
@@ -1862,6 +1952,33 @@
   <a href="#ls" class="md-nav__link">
     ls
   </a>
+  
+    <nav class="md-nav" aria-label="ls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modify-and-change-time" class="md-nav__link">
+    modify and change time
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-show-directory" class="md-nav__link">
+    only show directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-whether-a-certain-file-typeextension-exists-in-directory" class="md-nav__link">
+    check whether a certain file type/extension exists in directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1923,6 +2040,13 @@
         <li class="md-nav__item">
   <a href="#tail" class="md-nav__link">
     tail
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tesseract" class="md-nav__link">
+    tesseract
   </a>
   
 </li>
@@ -2066,6 +2190,55 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 ../
 </code></pre></div>
 <p>这一点在服务器上没看到。</p>
+<h3 id="adjust-brightness-and-contrast">adjust brightness and contrast<a class="headerlink" href="#adjust-brightness-and-contrast" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Here is <a href="https://github.com/szcf-weiya/SZmedinfo/issues/5">one example</a> used in my project.</p>
+</div>
+<div class="highlight"><pre><span></span><code>$ convert -brightness-contrast 10x5 input.jpg output.jpg
+</code></pre></div>
+<p>where <code>10x5</code> increases the brightness 10 percent and the contrast 5 percent. </p>
+<p>These two values range from -100 to 100, and</p>
+<ul>
+<li>negative value: decrease</li>
+<li>zero: leave it off</li>
+<li>positive value: increase</li>
+</ul>
+<p>more details refer to <a href="https://www.imagemagick.org/script/command-line-options.php#brightness-contrast">ImageMagick: Annotated List of Command-line Options</a></p>
+<p>As an alternative, the GUI software <code>Shotwell</code> also provides similar functions, just clicking <code>enhance</code>.</p>
+<h2 id="cut"><code>cut</code><a class="headerlink" href="#cut" title="Permanent link">&para;</a></h2>
+<p>To select the first field of a file <code>file.txt</code>,</p>
+<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="k">$(</span>cut -d<span class="s1">&#39;.&#39;</span> -f1 <span class="o">&lt;&lt;&lt;</span> <span class="nv">$1</span><span class="k">)</span>_test
+<span class="nb">echo</span> <span class="nv">$a</span>
+</code></pre></div>
+<p>where <code>-d'.'</code> is to define the delimiter, and then <code>-f1</code> get the first field.</p>
+<p>If we need to get the last field, we can use <code>rev</code>, i.e.,</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;maps.google.com&#39;</span> <span class="p">|</span> rev <span class="p">|</span> cut -d<span class="s1">&#39;.&#39;</span> -f <span class="m">1</span> <span class="p">|</span> rev
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut">How to find the last field using &lsquo;cut&rsquo;</a></p>
+<h2 id="date"><code>date</code><a class="headerlink" href="#date" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nv">timestamp</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">&quot;%Y-%m-%dT%H:%M:%S&quot;</span><span class="k">)</span>
+<span class="nb">echo</span> <span class="nv">$timestamp</span>
+<span class="c1"># 2020-02-11T10:51:42</span>
+</code></pre></div>
+<p>we can compare two timestamps as follows</p>
+<div class="highlight"><pre><span></span><code><span class="nv">d1</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22 20:07:25&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
+<span class="nv">d2</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22 20:08:25&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$d1</span> -gt <span class="nv">$d2</span> <span class="o">]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;d1 &gt; d2&quot;</span>
+<span class="k">else</span>
+  <span class="nb">echo</span> <span class="s2">&quot;d1 &lt; d2&quot;</span>
+<span class="k">fi</span>
+</code></pre></div>
+<p>where</p>
+<ul>
+<li><code>-d</code>: display time described by STRING, not &lsquo;now&rsquo; (from <code>man date</code>) Alternatively, we can use format <code>-d "-10 days -8 hours -Iseconds"</code> to refer to the timestamp based on the current date, and <code>-Iseconds</code> specifies the unit as <code>seconds</code>, see the application in <a href="../../Git/#change-commit-time">Git: change-commit-time</a>.</li>
+<li><code>+%[format-option]</code>: format specifiers (details formats refer to <code>man date</code>, but I am curious why <code>+</code>, no hints from <code>many date</code>, but here is one from <a href="https://www.geeksforgeeks.org/date-command-linux-examples/">date command in Linux with examples</a>)</li>
+<li><code>-gt</code>: larger than, <code>-lt</code>: less than; with equality, <code>-ge</code> and <code>-le</code>, (from <a href="https://www.runoob.com/linux/linux-shell-basic-operators.html">Shell 基本运算符</a>)</li>
+<li>条件表达式要放在方括号之间，并且要有空格, from <a href="https://www.runoob.com/linux/linux-shell-basic-operators.html">Shell 基本运算符</a></li>
+</ul>
+<p>refer to <a href="https://unix.stackexchange.com/questions/375911/how-to-compare-two-time-stamps">How to compare two time stamps?</a></p>
 <h2 id="ffmpeg"><code>ffmpeg</code>： 视频处理<a class="headerlink" href="#ffmpeg" title="Permanent link">&para;</a></h2>
 <h3 id="_3">去除音频<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="https://hefang.link/article/how-remove-voice-with-ffmpeg.html">如何使用ffmpeg去除视频声音？</a></p>
@@ -2091,9 +2264,15 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 <li>(optional) <code>-t</code> specifies the duration, or use <code>-to</code> to specifies the end timestamp</li>
 </ul>
 <p>refer to <a href="https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video">Using ffmpeg to cut up video</a></p>
+<h2 id="find"><code>find</code><a class="headerlink" href="#find" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ find . -group group
+$ find . -user user
+</code></pre></div>
+<p>refer to <a href="https://unix.stackexchange.com/questions/518268/list-files-with-specific-group-and-user-name">list files with specific group and user name</a></p>
 <h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
 <p>A much more powerful command than <code>top</code>, refer to <a href="https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/">Find out what processes are running in the background on Linux</a></p>
 <h2 id="ls"><code>ls</code><a class="headerlink" href="#ls" title="Permanent link">&para;</a></h2>
+<h3 id="modify-and-change-time">modify and change time<a class="headerlink" href="#modify-and-change-time" title="Permanent link">&para;</a></h3>
 <p>在找学习资料时，突然不是很确定当初是否已经在用这台笔记本了，所以想确定一下本机的装机时间，参考 <a href="https://askubuntu.com/questions/1352/how-can-i-tell-what-date-ubuntu-was-installed">How can I tell what date Ubuntu was installed?</a>，主要时通过查看文件的上次修改时间，比如</p>
 <div class="highlight"><pre><span></span><code>$ ls -lt /var/log/installer/
 total <span class="m">1200</span>
@@ -2149,12 +2328,29 @@ drwxrwxrwx  <span class="m">1</span> weiya weiya          <span class="m">0</spa
 drwxrwxrwx  <span class="m">1</span> weiya weiya       <span class="m">8192</span> Mar <span class="m">18</span>  <span class="m">2016</span>  Boot/
 </code></pre></div>
 <p>最早可以追溯到 2016.03.18.</p>
+<h3 id="only-show-directory">only show directory<a class="headerlink" href="#only-show-directory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ls -d */
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/14352290/listing-only-directories-using-ls-in-bash">Listing only directories using ls in Bash?</a></p>
+<p>My application: <a href="https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L9">TeXtemplates: create a tex template</a></p>
+<h3 id="check-whether-a-certain-file-typeextension-exists-in-directory">check whether a certain file type/extension exists in directory<a class="headerlink" href="#check-whether-a-certain-file-typeextension-exists-in-directory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> ls *.bib <span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+  <span class="c1">#</span>
+<span class="k">fi</span>
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory">Check whether a certain file type/extension exists in directory</a></p>
+<p>My application: <a href="https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20">TeXtemplates: create a tex template</a></p>
 <h2 id="paste-cat"><code>paste, cat</code>: 文本文件拼接<a class="headerlink" href="#paste-cat" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">### 按列</span>
 paste file1 file2 &gt; outputfile
 <span class="c1">### 按行</span>
 cat file1 file2 &gt; outputfile
 </code></pre></div>
+<p>convert a column to a row with delimiter <code>,</code></p>
+<div class="highlight"><pre><span></span><code>$ <span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">1</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span> <span class="p">|</span> paste -s -d<span class="s1">&#39;,&#39;</span>
+<span class="m">1</span>,2,3,4,5,6,7,8,9,10
+</code></pre></div>
+<p>where <code>-s</code> aims to paste one file at a time instead of in parallel, which results in one line. Refer to <a href="https://stackoverflow.com/questions/10303600/how-to-concatenate-lines-into-one-string">how to concatenate lines into one string</a></p>
 <h2 id="ps2pdf-pdf2ps"><code>ps2pdf, pdf2ps</code><a class="headerlink" href="#ps2pdf-pdf2ps" title="Permanent link">&para;</a></h2>
 <h3 id="reduce-pdf-file-size">reduce pdf file size<a class="headerlink" href="#reduce-pdf-file-size" title="Permanent link">&para;</a></h3>
 <p>It can be used to reduce the pdf size. </p>
@@ -2301,6 +2497,16 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 <ul>
 <li><code>-f</code>: output appended data as the file grows, powerful for checking the log file in real time.</li>
 </ul>
+<h2 id="tesseract"><code>tesseract</code><a class="headerlink" href="#tesseract" title="Permanent link">&para;</a></h2>
+<p>OCR text extraction: <a href="https://github.com/tesseract-ocr/tesseract">Tesseract OCR</a></p>
+<div class="highlight"><pre><span></span><code>$ tesseract tmp.png stdout -l eng+chi_sim quiet
+</code></pre></div>
+<p>where</p>
+<ul>
+<li><code>quiet</code> redirects the warning message</li>
+<li><code>stdout</code> directly outputs the results instead of writing into another text file</li>
+</ul>
+<p>more details refer to <code>man tesseract</code>.</p>
 <h2 id="uniq"><code>uniq</code><a class="headerlink" href="#uniq" title="Permanent link">&para;</a></h2>
 <ul>
 <li>count the frequency: <code>cat file.txt | sort | uniq -c</code>.<ul>
