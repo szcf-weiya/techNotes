@@ -1,3 +1,11 @@
+## 2021.06.22
+
+- Today we enjoy a **selfie (自拍照)** from China's Zhurong Mars rover, and discover a masterful **memoir (自传)** by mathematician Katherine Johnson.
+
+## 2021.06.21
+
+- apostrophes
+
 ## 2021.06.20
 
 - The global antiracism movement sparked by the murder of George Floyd and the pandemic also **spurred (刺激，激励)** Wellcome, one of the world's largest biomedical-research funders.

@@ -860,3 +860,253 @@ By default, `grep` performs greedy match, adding option `-P` would enable Perl's
 	An real application: [update_bib.sh](https://github.com/szcf-weiya/Cell-Video/blob/67fef1b7737e97631aa9568b000a8c61ef1590f4/report/update_bib.sh#L21)
 
 Refer to [How to do a non-greedy match in grep?](https://stackoverflow.com/questions/3027518/how-to-do-a-non-greedy-match-in-grep/3027524)
+
+## cut lines from large file
+
+prepare the follow text file to compare the processing speed of several common methods,
+
+```bash
+$ l1=1000000
+$ l2=1000050
+$ l=100000000
+
+$ seq 1e8 > test.txt
+```
+
+### `head + tail`
+
+```bash
+$ time tail -n+$l1 test.txt | head -n $(($l2 - $l1 + 1)) > /dev/null 
+
+real	0m0.033s
+user	0m0.019s
+sys	0m0.000s
+
+$ time head -n $l2 test.txt | tail -n $(($l2 - $l1 + 1)) > /dev/null 
+
+real	0m0.014s
+user	0m0.019s
+sys	0m0.007s
+
+$ time tail -n $(($l - $l1 + 1)) test.txt | head -n $(($l2 - $l1 + 1)) > /dev/null 
+
+real	0m25.930s
+user	0m1.467s
+sys	0m1.807s
+```
+
+note that `tail -n+` is much powerful than `tail -n`, it seems like the former one just move the cursor to the specific line, while the latter need to load/count from the last line (my guess). Refer to [cat line X to line Y on a huge file](https://unix.stackexchange.com/questions/47407/cat-line-x-to-line-y-on-a-huge-file/)
+
+`sed`/`awk`/`perl` solutions read the whole file and since this is about huge files, they're not very efficient. But they can be faster via `exit` or `quit` after the last line in the specified range (refer to [What's the best way to take a segment out of a text file?](https://unix.stackexchange.com/a/194662)):
+
+### `sed`
+
+```bash
+$ time sed -n "$l1,$l2 p" test.txt > /dev/null 
+
+real	0m4.621s
+user	0m4.253s
+sys	0m0.336s
+```
+
+vs
+
+```bash
+$ time sed -n "$l1,$l2 p; $l2 q" test.txt > /dev/null 
+
+real	0m0.054s
+user	0m0.047s
+sys	0m0.008s
+```
+
+### `awk`
+
+```bash
+$ time awk "$l1 <= NR && NR <= $l2" test.txt > /dev/null 
+
+real	0m15.294s
+user	0m15.046s
+sys	0m0.220s
+```
+
+vs
+
+```bash
+$ time awk "$l1 <= NR && NR <= $l2; NR>$l2{exit}" test.txt > /dev/null 
+
+real	0m0.158s
+user	0m0.158s
+sys	0m0.001s
+```
+
+### `perl`
+
+```bash
+$ time perl -ne "print if ${l1}..${l2}" test.txt > /dev/null 
+
+real	0m10.708s
+user	0m10.498s
+sys	0m0.200s
+```
+
+vs
+
+```bash
+$ time perl -ne "print if $. >= ${l1}; exit if $. > ${l2}" test.txt > /dev/null 
+
+real	0m0.203s
+user	0m0.203s
+sys	0m0.000s
+```
+
+### others
+
+```bash
+$ time ed -s test.txt <<< "$l1, $l2 p" > /dev/null 
+
+real	0m43.132s
+user	0m6.234s
+sys	0m3.637s
+```
+
+## delete lines in large file
+
+either `q` or `u` does not make differences for deleting.
+
+```bash
+$ seq 1e7 > test.txt
+$ time sed -iu "$l1,$l2 d" test.txt 
+
+real	0m26.481s
+user	0m5.558s
+sys	0m20.592s
+
+$ time sed -iu "$l1,$l2 d; $l2 q" test.txt 
+
+real	0m26.560s
+user	0m5.611s
+sys	0m20.566s
+
+$ time sed -i "$l1,$l2 d; $l2 q" test.txt 
+
+real	0m27.161s
+user	0m5.682s
+sys	0m21.266s
+```
+
+```bash
+$ time {
+  sed "$l1,$l2 d" < test.txt
+  perl -le 'truncate STDOUT, tell STDOUT'
+} 1<> test.txt
+
+real	0m0.983s
+user	0m0.913s
+sys	0m0.069s
+
+$ wc -l test.txt
+9999949 test.txt
+```
+
+```bash
+$ time {
+  head -n "$(($l1 - 1))"
+  head -n "$(($l2 - $l1 + 1))" > /dev/null
+  cat
+  perl -le 'truncate STDOUT, tell STDOUT'
+} < test.txt 1<> test.txt2
+
+real	0m0.069s
+user	0m0.007s
+sys	0m0.061s
+
+$ wc -l test.txt
+10000000 test.txt
+$ wc -l test.txt2
+9999949 test.txt2
+```
+
+where we open two file descriptors to the files, 
+	- one in read-only mode using `< test.txt` short for `0< test.txt`
+	- one in read-write mode using `1<> test.txt2` (`<> file` would be `0<> file`)
+
+then just treat `fd0` as the input and `fd1` as the output. 
+
+- the first `head` reads first `$l1 - 1` lines from `fd0` and write that to `fd1`
+- the second `head` removes the middle lines from `fd0` but `fd1` retains.
+- the following `cat` reads the remaining lines from `fd0` to `fd1`
+- `cat` will return when it reaches the end of file on `fd0`, but `fd1` will point to somewhere in the file that has not been overwritten yet. What we need is to truncate the file at the exact location where that `fd1` points to now. That's done with the `ftruncate` system call. `tell STDOUT` gives us the current cursor position associated with `fd1`. And we truncate the file at the offset using perl's interface to the `ftruncate` system call: `truncate`. The [usage](https://perldoc.perl.org/functions/truncate) is that
+
+```bash
+truncate FILEHANDLE,LENGTH
+truncate EXPR,LENGTH
+	Truncates the file opened on FILEHANDLE, or named by EXPR, to the specified length.
+```
+
+refer to [Is there a faster way to remove a line (given a line number) from a file?](https://unix.stackexchange.com/questions/66730/is-there-a-faster-way-to-remove-a-line-given-a-line-number-from-a-file)
+
+!!! warn
+	In the reference, the author wrote `< file 1<> file`, which might be confusing that he used the same file, then it would throws an error,
+	> cat: -: input file is output file
+
+	Actually, I think he wanted to represent two files comparing to the first solution he mentioned, in which only single file used, and he warned that "Dangerous as you've no backup copy there."
+
+	I also run the third solution, but the lines are not deleted. There might be some incompatible reasons.
+
+## different save behavior of `echo`
+
+a column of elements would be stored in an array, then save via `echo` would result one line.
+
+```bash
+$ awk '{print $1}' duplicated.idx > t1.txt
+$ t1=$(awk '{print $1}' duplicated.idx)
+$ echo $t1 > t2.txt
+$ cat t1.txt 
+2
+2
+$ cat t2.txt 
+2 2
+```
+
+## File Descriptors
+
+Given an input file,
+
+```bash
+--8<-- "docs/shell/fd/input.txt"
+```
+
+and given the duplicated index file, where the second column is the starting index for duplicates, and the first column is the corresponding number of duplicates. 
+
+The goal is to delete the duplicated records but only keep one of them. Although 
+
+```bash
+$ uniq input.txt
+```
+
+can finish the work. But if there are multiple columns in `input.txt` and the uniqueness is determined by several selected index. It might be convenient to keep the duplicated index (or the corresponding unique index).
+
+```bash
+{
+    lastid=0
+    lastn=1
+    while read n id; do
+        echo $n, $id >&2
+        retain=$(( $id - ($lastid + $lastn - 1) ))
+        remove=$(($n - 1))
+        echo "$n, $id, retain $retain, remove $remove" >&2
+        head -n "$retain" <&3 >&1
+        # head -n $(($id - 1))
+        head -n "$remove" <&3 > /dev/null
+        lastn=$n
+        lastid=$id
+    done < duplicated.idx # DO USE `3<` here, otherwise while read from input.txt
+    cat <&3 >&1
+    perl -le 'truncate STDOUT, tell STDOUT'
+} 3< input.txt 1<> out.txt
+```
+
+refer to
+
+- [Is there a faster way to remove a line (given a line number) from a file?](https://unix.stackexchange.com/questions/66730/is-there-a-faster-way-to-remove-a-line-given-a-line-number-from-a-file)
+- [3.6 Redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
