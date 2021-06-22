@@ -850,6 +850,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cut-lines-from-large-file" class="md-nav__link">
+    cut lines from large file
+  </a>
+  
+    <nav class="md-nav" aria-label="cut lines from large file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#head-tail" class="md-nav__link">
+    head + tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sed_1" class="md-nav__link">
+    sed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    awk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perl" class="md-nav__link">
+    perl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    others
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-lines-in-large-file" class="md-nav__link">
+    delete lines in large file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#different-save-behavior-of-echo" class="md-nav__link">
+    different save behavior of echo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-descriptors" class="md-nav__link">
+    File Descriptors
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2163,6 +2232,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cut-lines-from-large-file" class="md-nav__link">
+    cut lines from large file
+  </a>
+  
+    <nav class="md-nav" aria-label="cut lines from large file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#head-tail" class="md-nav__link">
+    head + tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sed_1" class="md-nav__link">
+    sed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    awk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perl" class="md-nav__link">
+    perl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    others
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-lines-in-large-file" class="md-nav__link">
+    delete lines in large file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#different-save-behavior-of-echo" class="md-nav__link">
+    different save behavior of echo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-descriptors" class="md-nav__link">
+    File Descriptors
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2855,6 +2993,210 @@ xx
 <p>An real application: <a href="https://github.com/szcf-weiya/Cell-Video/blob/67fef1b7737e97631aa9568b000a8c61ef1590f4/report/update_bib.sh#L21">update_bib.sh</a></p>
 </div>
 <p>Refer to <a href="https://stackoverflow.com/questions/3027518/how-to-do-a-non-greedy-match-in-grep/3027524">How to do a non-greedy match in grep?</a></p>
+<h2 id="cut-lines-from-large-file">cut lines from large file<a class="headerlink" href="#cut-lines-from-large-file" title="Permanent link">&para;</a></h2>
+<p>prepare the follow text file to compare the processing speed of several common methods,</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nv">l1</span><span class="o">=</span><span class="m">1000000</span>
+$ <span class="nv">l2</span><span class="o">=</span><span class="m">1000050</span>
+$ <span class="nv">l</span><span class="o">=</span><span class="m">100000000</span>
+
+$ seq 1e8 &gt; test.txt
+</code></pre></div>
+<h3 id="head-tail"><code>head + tail</code><a class="headerlink" href="#head-tail" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> tail -n+<span class="nv">$l1</span> test.txt <span class="p">|</span> head -n <span class="k">$((</span><span class="nv">$l2</span> <span class="o">-</span> <span class="nv">$l1</span> <span class="o">+</span> <span class="m">1</span><span class="k">))</span> &gt; /dev/null 
+
+real    0m0.033s
+user    0m0.019s
+sys 0m0.000s
+
+$ <span class="nb">time</span> head -n <span class="nv">$l2</span> test.txt <span class="p">|</span> tail -n <span class="k">$((</span><span class="nv">$l2</span> <span class="o">-</span> <span class="nv">$l1</span> <span class="o">+</span> <span class="m">1</span><span class="k">))</span> &gt; /dev/null 
+
+real    0m0.014s
+user    0m0.019s
+sys 0m0.007s
+
+$ <span class="nb">time</span> tail -n <span class="k">$((</span><span class="nv">$l</span> <span class="o">-</span> <span class="nv">$l1</span> <span class="o">+</span> <span class="m">1</span><span class="k">))</span> test.txt <span class="p">|</span> head -n <span class="k">$((</span><span class="nv">$l2</span> <span class="o">-</span> <span class="nv">$l1</span> <span class="o">+</span> <span class="m">1</span><span class="k">))</span> &gt; /dev/null 
+
+real    0m25.930s
+user    0m1.467s
+sys 0m1.807s
+</code></pre></div>
+<p>note that <code>tail -n+</code> is much powerful than <code>tail -n</code>, it seems like the former one just move the cursor to the specific line, while the latter need to load/count from the last line (my guess). Refer to <a href="https://unix.stackexchange.com/questions/47407/cat-line-x-to-line-y-on-a-huge-file/">cat line X to line Y on a huge file</a></p>
+<p><code>sed</code>/<code>awk</code>/<code>perl</code> solutions read the whole file and since this is about huge files, they&rsquo;re not very efficient. But they can be faster via <code>exit</code> or <code>quit</code> after the last line in the specified range (refer to <a href="https://unix.stackexchange.com/a/194662">What&rsquo;s the best way to take a segment out of a text file?</a>):</p>
+<h3 id="sed_1"><code>sed</code><a class="headerlink" href="#sed_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> sed -n <span class="s2">&quot;</span><span class="nv">$l1</span><span class="s2">,</span><span class="nv">$l2</span><span class="s2"> p&quot;</span> test.txt &gt; /dev/null 
+
+real    0m4.621s
+user    0m4.253s
+sys 0m0.336s
+</code></pre></div>
+<p>vs</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> sed -n <span class="s2">&quot;</span><span class="nv">$l1</span><span class="s2">,</span><span class="nv">$l2</span><span class="s2"> p; </span><span class="nv">$l2</span><span class="s2"> q&quot;</span> test.txt &gt; /dev/null 
+
+real    0m0.054s
+user    0m0.047s
+sys 0m0.008s
+</code></pre></div>
+<h3 id="awk"><code>awk</code><a class="headerlink" href="#awk" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> awk <span class="s2">&quot;</span><span class="nv">$l1</span><span class="s2"> &lt;= NR &amp;&amp; NR &lt;= </span><span class="nv">$l2</span><span class="s2">&quot;</span> test.txt &gt; /dev/null 
+
+real    0m15.294s
+user    0m15.046s
+sys 0m0.220s
+</code></pre></div>
+<p>vs</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> awk <span class="s2">&quot;</span><span class="nv">$l1</span><span class="s2"> &lt;= NR &amp;&amp; NR &lt;= </span><span class="nv">$l2</span><span class="s2">; NR&gt;</span><span class="nv">$l2</span><span class="s2">{exit}&quot;</span> test.txt &gt; /dev/null 
+
+real    0m0.158s
+user    0m0.158s
+sys 0m0.001s
+</code></pre></div>
+<h3 id="perl"><code>perl</code><a class="headerlink" href="#perl" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> perl -ne <span class="s2">&quot;print if </span><span class="si">${</span><span class="nv">l1</span><span class="si">}</span><span class="s2">..</span><span class="si">${</span><span class="nv">l2</span><span class="si">}</span><span class="s2">&quot;</span> test.txt &gt; /dev/null 
+
+real    0m10.708s
+user    0m10.498s
+sys 0m0.200s
+</code></pre></div>
+<p>vs</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> perl -ne <span class="s2">&quot;print if </span>$<span class="s2">. &gt;= </span><span class="si">${</span><span class="nv">l1</span><span class="si">}</span><span class="s2">; exit if </span>$<span class="s2">. &gt; </span><span class="si">${</span><span class="nv">l2</span><span class="si">}</span><span class="s2">&quot;</span> test.txt &gt; /dev/null 
+
+real    0m0.203s
+user    0m0.203s
+sys 0m0.000s
+</code></pre></div>
+<h3 id="others">others<a class="headerlink" href="#others" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> ed -s test.txt <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;</span><span class="nv">$l1</span><span class="s2">, </span><span class="nv">$l2</span><span class="s2"> p&quot;</span> &gt; /dev/null 
+
+real    0m43.132s
+user    0m6.234s
+sys 0m3.637s
+</code></pre></div>
+<h2 id="delete-lines-in-large-file">delete lines in large file<a class="headerlink" href="#delete-lines-in-large-file" title="Permanent link">&para;</a></h2>
+<p>either <code>q</code> or <code>u</code> does not make differences for deleting.</p>
+<div class="highlight"><pre><span></span><code>$ seq 1e7 &gt; test.txt
+$ <span class="nb">time</span> sed -iu <span class="s2">&quot;</span><span class="nv">$l1</span><span class="s2">,</span><span class="nv">$l2</span><span class="s2"> d&quot;</span> test.txt 
+
+real    0m26.481s
+user    0m5.558s
+sys 0m20.592s
+
+$ <span class="nb">time</span> sed -iu <span class="s2">&quot;</span><span class="nv">$l1</span><span class="s2">,</span><span class="nv">$l2</span><span class="s2"> d; </span><span class="nv">$l2</span><span class="s2"> q&quot;</span> test.txt 
+
+real    0m26.560s
+user    0m5.611s
+sys 0m20.566s
+
+$ <span class="nb">time</span> sed -i <span class="s2">&quot;</span><span class="nv">$l1</span><span class="s2">,</span><span class="nv">$l2</span><span class="s2"> d; </span><span class="nv">$l2</span><span class="s2"> q&quot;</span> test.txt 
+
+real    0m27.161s
+user    0m5.682s
+sys 0m21.266s
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> <span class="o">{</span>
+  sed <span class="s2">&quot;</span><span class="nv">$l1</span><span class="s2">,</span><span class="nv">$l2</span><span class="s2"> d&quot;</span> &lt; test.txt
+  perl -le <span class="s1">&#39;truncate STDOUT, tell STDOUT&#39;</span>
+<span class="o">}</span> <span class="m">1</span>&lt;&gt; test.txt
+
+real    0m0.983s
+user    0m0.913s
+sys 0m0.069s
+
+$ wc -l test.txt
+<span class="m">9999949</span> test.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> <span class="o">{</span>
+  head -n <span class="s2">&quot;</span><span class="k">$((</span><span class="nv">$l1</span> <span class="o">-</span> <span class="m">1</span><span class="k">))</span><span class="s2">&quot;</span>
+  head -n <span class="s2">&quot;</span><span class="k">$((</span><span class="nv">$l2</span> <span class="o">-</span> <span class="nv">$l1</span> <span class="o">+</span> <span class="m">1</span><span class="k">))</span><span class="s2">&quot;</span> &gt; /dev/null
+  cat
+  perl -le <span class="s1">&#39;truncate STDOUT, tell STDOUT&#39;</span>
+<span class="o">}</span> &lt; test.txt <span class="m">1</span>&lt;&gt; test.txt2
+
+real    0m0.069s
+user    0m0.007s
+sys 0m0.061s
+
+$ wc -l test.txt
+<span class="m">10000000</span> test.txt
+$ wc -l test.txt2
+<span class="m">9999949</span> test.txt2
+</code></pre></div>
+<p>where we open two file descriptors to the files, 
+    - one in read-only mode using <code>&lt; test.txt</code> short for <code>0&lt; test.txt</code>
+    - one in read-write mode using <code>1&lt;&gt; test.txt2</code> (<code>&lt;&gt; file</code> would be <code>0&lt;&gt; file</code>)</p>
+<p>then just treat <code>fd0</code> as the input and <code>fd1</code> as the output. </p>
+<ul>
+<li>the first <code>head</code> reads first <code>$l1 - 1</code> lines from <code>fd0</code> and write that to <code>fd1</code></li>
+<li>the second <code>head</code> removes the middle lines from <code>fd0</code> but <code>fd1</code> retains.</li>
+<li>the following <code>cat</code> reads the remaining lines from <code>fd0</code> to <code>fd1</code></li>
+<li><code>cat</code> will return when it reaches the end of file on <code>fd0</code>, but <code>fd1</code> will point to somewhere in the file that has not been overwritten yet. What we need is to truncate the file at the exact location where that <code>fd1</code> points to now. That&rsquo;s done with the <code>ftruncate</code> system call. <code>tell STDOUT</code> gives us the current cursor position associated with <code>fd1</code>. And we truncate the file at the offset using perl&rsquo;s interface to the <code>ftruncate</code> system call: <code>truncate</code>. The <a href="https://perldoc.perl.org/functions/truncate">usage</a> is that</li>
+</ul>
+<div class="highlight"><pre><span></span><code>truncate FILEHANDLE,LENGTH
+truncate EXPR,LENGTH
+    Truncates the file opened on FILEHANDLE, or named by EXPR, to the specified length.
+</code></pre></div>
+<p>refer to <a href="https://unix.stackexchange.com/questions/66730/is-there-a-faster-way-to-remove-a-line-given-a-line-number-from-a-file">Is there a faster way to remove a line (given a line number) from a file?</a></p>
+<div class="admonition warn">
+<p class="admonition-title">Warn</p>
+<p>In the reference, the author wrote <code>&lt; file 1&lt;&gt; file</code>, which might be confusing that he used the same file, then it would throws an error,</p>
+<blockquote>
+<p>cat: -: input file is output file</p>
+</blockquote>
+<p>Actually, I think he wanted to represent two files comparing to the first solution he mentioned, in which only single file used, and he warned that &ldquo;Dangerous as you&rsquo;ve no backup copy there.&rdquo;</p>
+<p>I also run the third solution, but the lines are not deleted. There might be some incompatible reasons.</p>
+</div>
+<h2 id="different-save-behavior-of-echo">different save behavior of <code>echo</code><a class="headerlink" href="#different-save-behavior-of-echo" title="Permanent link">&para;</a></h2>
+<p>a column of elements would be stored in an array, then save via <code>echo</code> would result one line.</p>
+<div class="highlight"><pre><span></span><code>$ awk <span class="s1">&#39;{print $1}&#39;</span> duplicated.idx &gt; t1.txt
+$ <span class="nv">t1</span><span class="o">=</span><span class="k">$(</span>awk <span class="s1">&#39;{print $1}&#39;</span> duplicated.idx<span class="k">)</span>
+$ <span class="nb">echo</span> <span class="nv">$t1</span> &gt; t2.txt
+$ cat t1.txt 
+<span class="m">2</span>
+<span class="m">2</span>
+$ cat t2.txt 
+<span class="m">2</span> <span class="m">2</span>
+</code></pre></div>
+<h2 id="file-descriptors">File Descriptors<a class="headerlink" href="#file-descriptors" title="Permanent link">&para;</a></h2>
+<p>Given an input file,</p>
+<div class="highlight"><pre><span></span><code>a
+b
+b
+c
+c
+c
+d
+e
+f
+f
+g
+</code></pre></div>
+<p>and given the duplicated index file, where the second column is the starting index for duplicates, and the first column is the corresponding number of duplicates. </p>
+<p>The goal is to delete the duplicated records but only keep one of them. Although </p>
+<div class="highlight"><pre><span></span><code>$ uniq input.txt
+</code></pre></div>
+<p>can finish the work. But if there are multiple columns in <code>input.txt</code> and the uniqueness is determined by several selected index. It might be convenient to keep the duplicated index (or the corresponding unique index).</p>
+<div class="highlight"><pre><span></span><code><span class="o">{</span>
+    <span class="nv">lastid</span><span class="o">=</span><span class="m">0</span>
+    <span class="nv">lastn</span><span class="o">=</span><span class="m">1</span>
+    <span class="k">while</span> <span class="nb">read</span> n id<span class="p">;</span> <span class="k">do</span>
+        <span class="nb">echo</span> <span class="nv">$n</span>, <span class="nv">$id</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+        <span class="nv">retain</span><span class="o">=</span><span class="k">$((</span> <span class="nv">$id</span> <span class="o">-</span> <span class="o">(</span><span class="nv">$lastid</span> <span class="o">+</span> <span class="nv">$lastn</span> <span class="o">-</span> <span class="m">1</span><span class="o">)</span> <span class="k">))</span>
+        <span class="nv">remove</span><span class="o">=</span><span class="k">$((</span><span class="nv">$n</span> <span class="o">-</span> <span class="m">1</span><span class="k">))</span>
+        <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$n</span><span class="s2">, </span><span class="nv">$id</span><span class="s2">, retain </span><span class="nv">$retain</span><span class="s2">, remove </span><span class="nv">$remove</span><span class="s2">&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+        head -n <span class="s2">&quot;</span><span class="nv">$retain</span><span class="s2">&quot;</span> &lt;<span class="p">&amp;</span><span class="m">3</span> &gt;<span class="p">&amp;</span><span class="m">1</span>
+        <span class="c1"># head -n $(($id - 1))</span>
+        head -n <span class="s2">&quot;</span><span class="nv">$remove</span><span class="s2">&quot;</span> &lt;<span class="p">&amp;</span><span class="m">3</span> &gt; /dev/null
+        <span class="nv">lastn</span><span class="o">=</span><span class="nv">$n</span>
+        <span class="nv">lastid</span><span class="o">=</span><span class="nv">$id</span>
+    <span class="k">done</span> &lt; duplicated.idx <span class="c1"># DO USE `3&lt;` here, otherwise while read from input.txt</span>
+    cat &lt;<span class="p">&amp;</span><span class="m">3</span> &gt;<span class="p">&amp;</span><span class="m">1</span>
+    perl -le <span class="s1">&#39;truncate STDOUT, tell STDOUT&#39;</span>
+<span class="o">}</span> <span class="m">3</span>&lt; input.txt <span class="m">1</span>&lt;&gt; out.txt
+</code></pre></div>
+<p>refer to</p>
+<ul>
+<li><a href="https://unix.stackexchange.com/questions/66730/is-there-a-faster-way-to-remove-a-line-given-a-line-number-from-a-file">Is there a faster way to remove a line (given a line number) from a file?</a></li>
+<li><a href="https://www.gnu.org/software/bash/manual/html_node/Redirections.html">3.6 Redirections</a></li>
+</ul>
                 
               
               
