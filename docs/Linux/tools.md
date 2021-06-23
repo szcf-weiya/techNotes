@@ -1,4 +1,4 @@
-# Small Tools
+# Command-line Tools
 
 ## `column`
 

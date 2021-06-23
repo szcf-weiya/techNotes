@@ -269,22 +269,6 @@ sudo echo "where/your/lib" >> /etc/ld.so.conf
 sudo ldconfig
 ```
 
-## 配置xterm的中文字体的问题
-
-查看本机安装的中文字体
-```
-fc-list :lang=zh
-```
-
-选出一个字体的名称写进配置文件中，如
-```
-xterm*faceNameDoublesize: YaHei Consolas Hybrid
-```
-
-参考
-
-1. [http://forum.ubuntu.org.cn/viewtopic.php?t=143221](http://forum.ubuntu.org.cn/viewtopic.php?t=143221)
-
 ## could not get lock /var/lib/dpkg/lock -open
 
 ```
@@ -313,16 +297,36 @@ sudo update-alternatives --install ....
 然后再 config.
 
 
-## terminator设置
-1. hostname的颜色
-https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-terminators-prompt-hostname-userdomain-colors
-直接打开bashrc里面下一行的注释
-```
+## Terminator
+
+- hostname 的颜色, 去掉 `.bashrc` 中
+
+```bash
 ##force_color_prompt=yes
 ```
-2. 颜色背景色等，直接右键设置，右键设置完成之后便有了一个config文件.
 
-### Linux 杀进程
+的注释
+
+- hide hostname, `weiya@weiya-ThinkPad-T460p:`
+
+edit the following line in the `.bashrc` as follows
+
+```bash
+if [ "$color_prompt" = yes ]; then
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+```
+
+before hide and after hide 
+
+![image](https://user-images.githubusercontent.com/13688320/123048663-37d31b00-d431-11eb-8ebf-afb97f758191.png)
+
+- 颜色背景色等，直接右键设置，右键设置完成之后便有了一个配置文件，`~/.config/terminator/config`.
+
+## Linux 杀进程
 
 参考[linux下杀死进程（kill）的N种方法](http://blog.csdn.net/andy572633/article/details/7211546)
 
@@ -483,6 +487,8 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 ## Font
 
 ### `fc-list`
+
+view installed fonts
 
 ```bash
 # only print the font-family

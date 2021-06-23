@@ -1,4 +1,4 @@
-# Big Softwares on Linux
+# Graphical Software on Linux
 
 ## Atom
 
@@ -53,7 +53,7 @@ refer to [Toggle Soft Wrap by Default?](https://discuss.atom.io/t/toggle-soft-wr
 
 打不开 terminal 的原因应该与下文中提到的 VS code 类似，在替换自动启动方式之前，试过在 x-terminal 中启动程序 `/bin/bash` 添加 `--noprofile` 选项，但是报错，于是直接选择了 terminus.
 
-## 百度网盘
+## BaiduPan 百度网盘
 
 发现百度网盘出了 Linux 版，但是在 Ubuntu 16.04 似乎运行不了——能下载安装但是无法打开运行。
 

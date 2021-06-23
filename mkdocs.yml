@@ -3,8 +3,8 @@ nav:
   - Home: index.md
   - Linux:
     - 系统: Linux/index.md
-    - 大软件: Linux/software.md
-    - 小工具: Linux/tools.md
+    - Graphical Software: Linux/software.md
+    - Command-line Tools: Linux/tools.md
     - 服务器: Linux/servers.md
     - 16to18: Linux/16to18.md
     - 笔记本作为服务器: Linux/asAserver.md
