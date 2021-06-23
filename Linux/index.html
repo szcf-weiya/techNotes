@@ -552,13 +552,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xterm" class="md-nav__link">
-    配置xterm的中文字体的问题
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#could-not-get-lock-varlibdpkglock-open" class="md-nav__link">
     could not get lock /var/lib/dpkg/lock -open
   </a>
@@ -574,21 +567,15 @@
       
         <li class="md-nav__item">
   <a href="#terminator" class="md-nav__link">
-    terminator设置
-  </a>
-  
-    <nav class="md-nav" aria-label="terminator设置">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux 杀进程
+    Terminator
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux 杀进程
+  </a>
   
 </li>
       
@@ -1031,7 +1018,7 @@
   
     <li class="md-nav__item">
       <a href="software/" class="md-nav__link">
-        大软件
+        Graphical Software
       </a>
     </li>
   
@@ -1043,7 +1030,7 @@
   
     <li class="md-nav__item">
       <a href="tools/" class="md-nav__link">
-        小工具
+        Command-line Tools
       </a>
     </li>
   
@@ -2176,13 +2163,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xterm" class="md-nav__link">
-    配置xterm的中文字体的问题
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#could-not-get-lock-varlibdpkglock-open" class="md-nav__link">
     could not get lock /var/lib/dpkg/lock -open
   </a>
@@ -2198,21 +2178,15 @@
       
         <li class="md-nav__item">
   <a href="#terminator" class="md-nav__link">
-    terminator设置
-  </a>
-  
-    <nav class="md-nav" aria-label="terminator设置">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux 杀进程
+    Terminator
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux 杀进程
+  </a>
   
 </li>
       
@@ -2873,17 +2847,6 @@ sudo ldconfig
 sudo <span class="nb">echo</span> <span class="s2">&quot;where/your/lib&quot;</span> &gt;&gt; /etc/ld.so.conf
 sudo ldconfig
 </code></pre></div>
-<h2 id="xterm">配置xterm的中文字体的问题<a class="headerlink" href="#xterm" title="Permanent link">&para;</a></h2>
-<p>查看本机安装的中文字体
-<div class="highlight"><pre><span></span><code>fc-list :lang=zh
-</code></pre></div></p>
-<p>选出一个字体的名称写进配置文件中，如
-<div class="highlight"><pre><span></span><code>xterm*faceNameDoublesize: YaHei Consolas Hybrid
-</code></pre></div></p>
-<p>参考</p>
-<ol>
-<li><a href="http://forum.ubuntu.org.cn/viewtopic.php?t=143221">http://forum.ubuntu.org.cn/viewtopic.php?t=143221</a></li>
-</ol>
 <h2 id="could-not-get-lock-varlibdpkglock-open">could not get lock /var/lib/dpkg/lock -open<a class="headerlink" href="#could-not-get-lock-varlibdpkglock-open" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>sudo rm /var/cache/apt/archives/lock
 sudo rm /var/lib/dpkg/lock
@@ -2898,16 +2861,30 @@ update-alternatives: error: no alternatives <span class="k">for</span> gcc
 <div class="highlight"><pre><span></span><code>sudo update-alternatives --install ....
 </code></pre></div>
 <p>然后再 config.</p>
-<h2 id="terminator">terminator设置<a class="headerlink" href="#terminator" title="Permanent link">&para;</a></h2>
-<ol>
-<li>hostname的颜色
-https://stackoverflow.com/questions/40077907/is-it-possible-to-customize-terminators-prompt-hostname-userdomain-colors
-直接打开bashrc里面下一行的注释
-<div class="highlight"><pre><span></span><code>##force_color_prompt=yes
-</code></pre></div></li>
-<li>颜色背景色等，直接右键设置，右键设置完成之后便有了一个config文件.</li>
-</ol>
-<h3 id="linux">Linux 杀进程<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
+<h2 id="terminator">Terminator<a class="headerlink" href="#terminator" title="Permanent link">&para;</a></h2>
+<ul>
+<li>hostname 的颜色, 去掉 <code>.bashrc</code> 中</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">##force_color_prompt=yes</span>
+</code></pre></div>
+<p>的注释</p>
+<ul>
+<li>hide hostname, <code>weiya@weiya-ThinkPad-T460p:</code></li>
+</ul>
+<p>edit the following line in the <code>.bashrc</code> as follows</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$color_prompt</span><span class="s2">&quot;</span> <span class="o">=</span> yes <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="c1">#PS1=&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &#39;</span>
+    <span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;\[\033[01;34m\]\w\[\033[00m\]\$ &#39;</span>
+<span class="k">else</span>
+    <span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;</span>
+<span class="k">fi</span>
+</code></pre></div>
+<p>before hide and after hide </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/123048663-37d31b00-d431-11eb-8ebf-afb97f758191.png" /></p>
+<ul>
+<li>颜色背景色等，直接右键设置，右键设置完成之后便有了一个配置文件，<code>~/.config/terminator/config</code>.</li>
+</ul>
+<h2 id="linux">Linux 杀进程<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/andy572633/article/details/7211546">linux下杀死进程（kill）的N种方法</a></p>
 <div class="highlight"><pre><span></span><code>ps -ef <span class="p">|</span> grep R
 <span class="nb">kill</span> -s <span class="m">9</span> ...
@@ -3017,6 +2994,7 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 <p>未果，结果按照cy的建议，释放掉了这个服务器。</p>
 <h2 id="font">Font<a class="headerlink" href="#font" title="Permanent link">&para;</a></h2>
 <h3 id="fc-list"><code>fc-list</code><a class="headerlink" href="#fc-list" title="Permanent link">&para;</a></h3>
+<p>view installed fonts</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># only print the font-family</span>
 $ fc-list : family
 <span class="c1"># add language selector</span>
@@ -3627,13 +3605,13 @@ scp_to_chpc <span class="o">()</span>
       
       
         
-        <a href="software/" class="md-footer__link md-footer__link--next" aria-label="Next: 大软件" rel="next">
+        <a href="software/" class="md-footer__link md-footer__link--next" aria-label="Next: Graphical Software" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              大软件
+              Graphical Software
             </div>
           </div>
           <div class="md-footer__button md-icon">
