@@ -12,6 +12,28 @@
 
 > @Jerry Qu: 不是不想开源啊，主要是这部分逻辑跟我博客系统从 Node.js 到 JS 到 CSS 全部耦合在一起了。
 
+## disable ads
+
+use the following jquery scripts,
+
+```bash
+<script src="/js/jquery-latest.min.js"></script>
+<!--rm disqus ad refer to https://www.javaer101.com/article/25891160.html-->
+<script>
+  (function($){
+    setInterval(() => {
+        $.each($('iframe'), (arr,x) => {
+            let src = $(x).attr('src');
+            if (src && src.match(/(ads-iframe)|(disqusads)/gi)) {
+                $(x).remove();
+            }
+        });
+    }, 300);
+})(jQuery);
+```
+
+as used in my [Chinese blog](https://blog.hohoweiya.xyz/2021/05/02/back/).
+
 ## Reconfigure on AWS 
 
 之前是在 Vultr 上买了服务器，但是花费也不小，遂改用 AWS free tier.

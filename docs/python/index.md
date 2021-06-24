@@ -829,6 +829,36 @@ array([[1., 2., 3.],
        [4., 5., 6.]])
 ```
 
+## `re`
+
+### extract the starting position
+
+Given an error message returns by `decode("utf8")` on a problematic characters, such as
+
+```python
+>>> "编程".encode("utf8")
+b'\xe7\xbc\x96\xe7\xa8\x8b'
+>>> b"\xe7\xbc".decode("utf8")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 0-1: unexpected end of data
+>>> e = "'utf-8' codec can't decode bytes in position 0-1: invalid continuation byte"
+```
+
+I want to get the starting position. Suppose only one byte is wrong, and since a Chinese character is encoded by 3 bytes, then there are only two possible cases,
+
+- `xoo` and `oox`: position `n`-`n+1`
+- `oxo`: position `n`
+
+```bash
+>>> re.search("position ([0-9]{1,3})", e).group(1)
+'0'
+>>> re.search("position ([0-9]{1,3})", e).group(0)
+'position 0'
+```
+
+where `()` is used to group, and `group(1)` returns the first group, while `group(0)` returns the whole match.
+
 ## 又拍云的短信平台
 
 参考文献

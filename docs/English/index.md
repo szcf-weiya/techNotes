@@ -1,3 +1,11 @@
+## 2021.06.24
+
+- The people who built the ancient monumental structures at Turkey's Gobekli Tepe were fuelled by vat-fulls of starchy porridge and stew, not just meaty feasts.
+
+## 2021.06.23
+
+- George was **whipping up (快速地吃，狼吞虎咽)** a **sundae (圣代「一种加有水果、甜汁、果仁的冰淇淋」)** during the tennis match break and got caught by the camera without knowing it.
+
 ## 2021.06.22
 
 - Today we enjoy a **selfie (自拍照)** from China's Zhurong Mars rover, and discover a masterful **memoir (自传)** by mathematician Katherine Johnson.

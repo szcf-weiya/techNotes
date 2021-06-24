@@ -1,5 +1,92 @@
 # Command-line Tools
 
+## `awk`
+
+### basic usage
+
+`awk` 标准用法为
+
+```bash
+awk '/pattern/ {print "$1"}'
+```
+
+`/pattern/` 可以是正则表达式，也可以是两个特殊的pattern，
+
+- `BEGIN`: execute the action(s) before any input lines are read
+- `END`: execute the action(s) before it actually exits
+
+默认分隔符为空格，或者通过 `-F` 指定其它的分隔符，
+
+```bash
+$ echo 'a b' | awk '{print $2}'
+b
+$ echo 'a,b' | awk -F, '{print $2}'
+b
+```
+
+其中 `$i` 指第 i 列，而 `$0` 指整条记录（including leading and trailing whitespace. ），详见 `man awk`.
+
+另外上述脚本中用到了 `awk` 支持跨行状态的特性，即
+
+```bash
+$ echo -e 'a b \n c d' | awk '{print $2}'
+b
+d
+```
+
+其中 `-e` 是为了 escape 换行符，最后一列也可以用 `$NF` 表示，
+
+```bash
+$ echo -e 'a b \n c d' | awk '{print $NF}'
+b
+d
+```
+
+如果想要得到列数，则使用 `NF`,
+
+```bash
+$ echo -e 'a b \n c d' | awk '{print NF}'
+2
+2
+```
+
+如果默认每行列数相等，只想得到列数的话，可以使用
+
+```bash
+$ echo -e 'a b \n c d' | awk '{print NF; exit}'
+2
+```
+
+如果数据文件为 `file.txt`，则可以直接用
+
+```bash
+awk '{print NF; exit}' file.txt
+```
+
+
+如果需要输出行数，则用
+
+```bash
+awk '{print NR, ":", $0}' file.txt
+```
+
+如果想从 0 开始，则改成 `NR-1`.
+
+### processing two files
+
+```bash
+$ awk 'NR == FNR {# some actions; next} # other condition {# other actions}' file1.txt file2.txt
+```
+
+where
+
+- `NR`: stores the total number of input records read so far, regardless of how many files have been read. 
+- `FNR`: stores the number of records read from the current file being processed.
+- so `NR == FNR` is only true when reading the first file
+- `next` prevents the other condition/actions when reading the first file
+
+refer to [Idiomatic awk](https://backreference.org/2010/02/10/idiomatic-awk/)
+
 ## `column`
 
 display the csv beautifully,
@@ -169,6 +256,38 @@ where
 
 refer to [How to compare two time stamps?](https://unix.stackexchange.com/questions/375911/how-to-compare-two-time-stamps)
 
+## `echo`
+
+### string started with `-`
+
+```bash
+$ a="-n 1"
+$ echo $a
+1
+$ echo "$a"
+-n 1
+```
+
+double quotes are necessary, otherwise it would be treat as the option for `echo`. But if the string is pure `-`, the double quotes also failed,
+
+```bash
+$ b="-n"
+$ echo "$b"
+```
+
+use `printf` would be more proper,
+
+```bash
+$ printf "%s\n" "$b"
+-n
+$ printf "%s\n" $b
+-n
+```
+
+and no need to add double quotes.
+
+refer to [Bash: echo string that starts with “-”](https://stackoverflow.com/questions/3652524/bash-echo-string-that-starts-with)
+
 ## `ffmpeg`： 视频处理
 
 ### 去除音频
@@ -229,6 +348,8 @@ refer to [list files with specific group and user name](https://unix.stackexchan
 A much more powerful command than `top`, refer to [Find out what processes are running in the background on Linux](https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/)
 
 ## `ls`
+
+- `-S`: sort by filesize
 
 ### modify and change time
 

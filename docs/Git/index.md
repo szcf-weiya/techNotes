@@ -739,7 +739,13 @@ git push origin :refs/tags/v1.0
 
 顺带发现，如果在 markdown 中复制 git diff 的 output，可以使用 `diff` 的代码块，会将更改的部分高亮出来。
 
+### color different words
 
+by default, the differences are shown per sentences, add option `--color-words` would only highlight the modified words
+
+### compare two files not indexed by git
+
+use option `--no-index`
 
 ## 公开私有仓库的部分代码
 

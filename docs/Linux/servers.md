@@ -784,3 +784,17 @@ conda install -c eumetsat tree
 The trick is to check whether the package is available via `https://anaconda.org/search?q=`
 
 refer to [How to install packages in Linux (CentOS) without root user with automatic dependency handling?](https://stackoverflow.com/a/52561058)
+
+## tab fails to complete
+
+服务器上 tab 补全失效，并且报错
+
+> 无法为立即文档创建临时文件：设备上没有空间
+
+因为在第三方服务器上，没有权限清理 `/tmp` 文件夹，于是参考 [解决cannot create temp file for here-document: No space left on device问题](https://blog.csdn.net/weixin_37029453/article/details/107664402)
+
+在 `.bashrc` 中加入
+
+```bash
+export TMPDIR=$HOME/tmp
+```

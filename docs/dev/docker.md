@@ -267,3 +267,11 @@ $ docker save py37jieba:0.0.1 | gzip > py37jieba-0.0.1.tar.gz
 ```
 
 refer to [hubutui/docker-for-env-without-internet-access](https://github.com/hubutui/docker-for-env-without-internet-access)
+
+## `no space left on device: unknown`
+
+```bash
+$ docker system prune
+```
+
+refer to [Docker error : no space left on device](https://stackoverflow.com/questions/30604846/docker-error-no-space-left-on-device)

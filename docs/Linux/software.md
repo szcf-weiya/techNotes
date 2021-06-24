@@ -96,6 +96,16 @@ bypy syncdown
 
 ## Chrome
 
+### disable reading list
+
+the new version releases the `reading list`, then every time I press `star` requires to select to add to bookmarks or reading list, that make me annoyed. I found [some guys](https://www.reddit.com/r/chrome/comments/mhdn5d/how_do_i_make_it_so_when_i_hit_the_star_button_i/) have the same feeling, the solution is to enter
+
+```bash
+chrome://flags/#read-later
+```
+
+and then disable `reading list`.
+
 ### 黑屏
 
 参考 [chrome黑屏解决](https://blog.csdn.net/jjddrushi/article/details/79155421)   
