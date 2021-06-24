@@ -479,6 +479,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    awk
+  </a>
+  
+    <nav class="md-nav" aria-label="awk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    basic usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-two-files" class="md-nav__link">
+    processing two files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#column" class="md-nav__link">
     column
   </a>
@@ -551,6 +578,26 @@
   <a href="#date" class="md-nav__link">
     date
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#echo" class="md-nav__link">
+    echo
+  </a>
+  
+    <nav class="md-nav" aria-label="echo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string-started-with-" class="md-nav__link">
+    string started with -
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1818,6 +1865,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    awk
+  </a>
+  
+    <nav class="md-nav" aria-label="awk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    basic usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-two-files" class="md-nav__link">
+    processing two files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#column" class="md-nav__link">
     column
   </a>
@@ -1890,6 +1964,26 @@
   <a href="#date" class="md-nav__link">
     date
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#echo" class="md-nav__link">
+    echo
+  </a>
+  
+    <nav class="md-nav" aria-label="echo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string-started-with-" class="md-nav__link">
+    string started with -
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2133,6 +2227,60 @@
                 
                 
                 <h1 id="command-line-tools">Command-line Tools<a class="headerlink" href="#command-line-tools" title="Permanent link">&para;</a></h1>
+<h2 id="awk"><code>awk</code><a class="headerlink" href="#awk" title="Permanent link">&para;</a></h2>
+<h3 id="basic-usage">basic usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h3>
+<p><code>awk</code> 标准用法为</p>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;/pattern/ {print &quot;$1&quot;}&#39;</span>
+</code></pre></div>
+<p><code>/pattern/</code> 可以是正则表达式，也可以是两个特殊的pattern，</p>
+<ul>
+<li><code>BEGIN</code>: execute the action(s) before any input lines are read</li>
+<li><code>END</code>: execute the action(s) before it actually exits</li>
+</ul>
+<p>默认分隔符为空格，或者通过 <code>-F</code> 指定其它的分隔符，</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s1">&#39;a b&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
+b
+$ <span class="nb">echo</span> <span class="s1">&#39;a,b&#39;</span> <span class="p">|</span> awk -F, <span class="s1">&#39;{print $2}&#39;</span>
+b
+</code></pre></div>
+<p>其中 <code>$i</code> 指第 i 列，而 <code>$0</code> 指整条记录（including leading and trailing whitespace. ），详见 <code>man awk</code>.</p>
+<p>另外上述脚本中用到了 <code>awk</code> 支持跨行状态的特性，即</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
+b
+d
+</code></pre></div>
+<p>其中 <code>-e</code> 是为了 escape 换行符，最后一列也可以用 <code>$NF</code> 表示，</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $NF}&#39;</span>
+b
+d
+</code></pre></div>
+<p>如果想要得到列数，则使用 <code>NF</code>,</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print NF}&#39;</span>
+<span class="m">2</span>
+<span class="m">2</span>
+</code></pre></div>
+<p>如果默认每行列数相等，只想得到列数的话，可以使用</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print NF; exit}&#39;</span>
+<span class="m">2</span>
+</code></pre></div>
+<p>如果数据文件为 <code>file.txt</code>，则可以直接用</p>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print NF; exit}&#39;</span> file.txt
+</code></pre></div>
+<p>如果需要输出行数，则用</p>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print NR, &quot;:&quot;, $0}&#39;</span> file.txt
+</code></pre></div>
+<p>如果想从 0 开始，则改成 <code>NR-1</code>.</p>
+<h3 id="processing-two-files">processing two files<a class="headerlink" href="#processing-two-files" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ awk <span class="s1">&#39;NR == FNR {# some actions; next} # other condition {# other actions}&#39;</span> file1.txt file2.txt
+</code></pre></div>
+<p>where</p>
+<ul>
+<li><code>NR</code>: stores the total number of input records read so far, regardless of how many files have been read. </li>
+<li><code>FNR</code>: stores the number of records read from the current file being processed.</li>
+<li>so <code>NR == FNR</code> is only true when reading the first file</li>
+<li><code>next</code> prevents the other condition/actions when reading the first file</li>
+</ul>
+<p>refer to <a href="https://backreference.org/2010/02/10/idiomatic-awk/">Idiomatic awk</a></p>
 <h2 id="column"><code>column</code><a class="headerlink" href="#column" title="Permanent link">&para;</a></h2>
 <p>display the csv beautifully,</p>
 <div class="highlight"><pre><span></span><code>$ head file1.txt <span class="p">|</span> column -s, -t
@@ -2239,6 +2387,26 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 <li>条件表达式要放在方括号之间，并且要有空格, from <a href="https://www.runoob.com/linux/linux-shell-basic-operators.html">Shell 基本运算符</a></li>
 </ul>
 <p>refer to <a href="https://unix.stackexchange.com/questions/375911/how-to-compare-two-time-stamps">How to compare two time stamps?</a></p>
+<h2 id="echo"><code>echo</code><a class="headerlink" href="#echo" title="Permanent link">&para;</a></h2>
+<h3 id="string-started-with-">string started with <code>-</code><a class="headerlink" href="#string-started-with-" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ <span class="nv">a</span><span class="o">=</span><span class="s2">&quot;-n 1&quot;</span>
+$ <span class="nb">echo</span> <span class="nv">$a</span>
+<span class="m">1</span>
+$ <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span>
+-n <span class="m">1</span>
+</code></pre></div>
+<p>double quotes are necessary, otherwise it would be treat as the option for <code>echo</code>. But if the string is pure <code>-</code>, the double quotes also failed,</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nv">b</span><span class="o">=</span><span class="s2">&quot;-n&quot;</span>
+$ <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span>
+</code></pre></div>
+<p>use <code>printf</code> would be more proper,</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">printf</span> <span class="s2">&quot;%s\n&quot;</span> <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span>
+-n
+$ <span class="nb">printf</span> <span class="s2">&quot;%s\n&quot;</span> <span class="nv">$b</span>
+-n
+</code></pre></div>
+<p>and no need to add double quotes.</p>
+<p>refer to <a href="https://stackoverflow.com/questions/3652524/bash-echo-string-that-starts-with">Bash: echo string that starts with “-”</a></p>
 <h2 id="ffmpeg"><code>ffmpeg</code>： 视频处理<a class="headerlink" href="#ffmpeg" title="Permanent link">&para;</a></h2>
 <h3 id="_3">去除音频<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="https://hefang.link/article/how-remove-voice-with-ffmpeg.html">如何使用ffmpeg去除视频声音？</a></p>
@@ -2272,6 +2440,9 @@ $ find . -user user
 <h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
 <p>A much more powerful command than <code>top</code>, refer to <a href="https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/">Find out what processes are running in the background on Linux</a></p>
 <h2 id="ls"><code>ls</code><a class="headerlink" href="#ls" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>-S</code>: sort by filesize</li>
+</ul>
 <h3 id="modify-and-change-time">modify and change time<a class="headerlink" href="#modify-and-change-time" title="Permanent link">&para;</a></h3>
 <p>在找学习资料时，突然不是很确定当初是否已经在用这台笔记本了，所以想确定一下本机的装机时间，参考 <a href="https://askubuntu.com/questions/1352/how-can-i-tell-what-date-ubuntu-was-installed">How can I tell what date Ubuntu was installed?</a>，主要时通过查看文件的上次修改时间，比如</p>
 <div class="highlight"><pre><span></span><code>$ ls -lt /var/log/installer/

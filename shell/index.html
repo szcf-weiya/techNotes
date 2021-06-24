@@ -2572,47 +2572,6 @@ cat a.txt <span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</spa
     <span class="nb">echo</span> <span class="s2">&quot;ip地址&quot;</span><span class="nv">$i</span><span class="s2">&quot;在2015-01-28日全天(24小时)累计成功请求&quot;</span><span class="nv">$iptj</span><span class="s2">&quot;次，平均每分钟请求次数为：&quot;</span><span class="k">$((</span><span class="nv">$iptj</span><span class="o">/</span><span class="m">1440</span><span class="k">))</span> &gt;&gt; result.txt
 <span class="k">done</span>
 </code></pre></div>
-<p>其中 <code>awk</code> 标准用法为</p>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;/pattern/ {print &quot;$1&quot;}&#39;</span>
-</code></pre></div>
-<p><code>/pattern/</code> 可以是正则表达式，也可以是两个特殊的pattern，</p>
-<ul>
-<li><code>BEGIN</code>: execute the action(s) before any input lines are read</li>
-<li><code>END</code>: execute the action(s) before it actually exits</li>
-</ul>
-<p>默认分隔符为空格，或者通过 <code>-F</code> 指定其它的分隔符，</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s1">&#39;a b&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
-b
-$ <span class="nb">echo</span> <span class="s1">&#39;a,b&#39;</span> <span class="p">|</span> awk -F, <span class="s1">&#39;{print $2}&#39;</span>
-b
-</code></pre></div>
-<p>其中 <code>$i</code> 指第 i 列，而 <code>$0</code> 指整条记录（including leading and trailing whitespace. ），详见 <code>man awk</code>.</p>
-<p>另外上述脚本中用到了 <code>awk</code> 支持跨行状态的特性，即</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
-b
-d
-</code></pre></div>
-<p>其中 <code>-e</code> 是为了 escape 换行符，最后一列也可以用 <code>$NF</code> 表示，</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $NF}&#39;</span>
-b
-d
-</code></pre></div>
-<p>如果想要得到列数，则使用 <code>NF</code>,</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print NF}&#39;</span>
-<span class="m">2</span>
-<span class="m">2</span>
-</code></pre></div>
-<p>如果默认每行列数相等，只想得到列数的话，可以使用</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print NF; exit}&#39;</span>
-<span class="m">2</span>
-</code></pre></div>
-<p>如果数据文件为 <code>file.txt</code>，则可以直接用</p>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print NF; exit}&#39;</span> file.txt
-</code></pre></div>
-<p>如果需要输出行数，则用</p>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print NR, &quot;:&quot;, $0}&#39;</span> file.txt
-</code></pre></div>
-<p>如果想从 0 开始，则改成 <code>NR-1</code>.</p>
 <p>Refer to</p>
 <ul>
 <li><a href="https://www.cnblogs.com/paul8339/p/6207182.html">用shell统计访问日志里每个ip访问次数</a></li>

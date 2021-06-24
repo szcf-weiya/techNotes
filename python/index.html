@@ -1186,6 +1186,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#re" class="md-nav__link">
+    re
+  </a>
+  
+    <nav class="md-nav" aria-label="re">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract-the-starting-position" class="md-nav__link">
+    extract the starting position
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     又拍云的短信平台
   </a>
@@ -2661,6 +2681,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#re" class="md-nav__link">
+    re
+  </a>
+  
+    <nav class="md-nav" aria-label="re">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extract-the-starting-position" class="md-nav__link">
+    extract the starting position
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     又拍云的短信平台
   </a>
@@ -3485,6 +3525,28 @@ is modified instead.</p>
 <span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span>
        <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]])</span>
 </code></pre></div>
+<h2 id="re"><code>re</code><a class="headerlink" href="#re" title="Permanent link">&para;</a></h2>
+<h3 id="extract-the-starting-position">extract the starting position<a class="headerlink" href="#extract-the-starting-position" title="Permanent link">&para;</a></h3>
+<p>Given an error message returns by <code>decode("utf8")</code> on a problematic characters, such as</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;编程&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xe7\xbc\x96\xe7\xa8\x8b</span><span class="s1">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xe7\xbc</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">UnicodeDecodeError</span><span class="p">:</span> <span class="s1">&#39;utf-8&#39;</span> <span class="n">codec</span> <span class="n">can</span><span class="s1">&#39;t decode bytes in position 0-1: unexpected end of data</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">e</span> <span class="o">=</span> <span class="s2">&quot;&#39;utf-8&#39; codec can&#39;t decode bytes in position 0-1: invalid continuation byte&quot;</span>
+</code></pre></div>
+<p>I want to get the starting position. Suppose only one byte is wrong, and since a Chinese character is encoded by 3 bytes, then there are only two possible cases,</p>
+<ul>
+<li><code>xoo</code> and <code>oox</code>: position <code>n</code>-<code>n+1</code></li>
+<li><code>oxo</code>: position <code>n</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; re.search<span class="o">(</span><span class="s2">&quot;position ([0-9]{1,3})&quot;</span>, e<span class="o">)</span>.group<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<span class="s1">&#39;0&#39;</span>
+&gt;&gt;&gt; re.search<span class="o">(</span><span class="s2">&quot;position ([0-9]{1,3})&quot;</span>, e<span class="o">)</span>.group<span class="o">(</span><span class="m">0</span><span class="o">)</span>
+<span class="s1">&#39;position 0&#39;</span>
+</code></pre></div>
+<p>where <code>()</code> is used to group, and <code>group(1)</code> returns the first group, while <code>group(0)</code> returns the whole match.</p>
 <h2 id="_2">又拍云的短信平台<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>参考文献</p>
 <ol>

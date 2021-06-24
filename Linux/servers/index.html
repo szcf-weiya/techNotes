@@ -689,6 +689,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tab-fails-to-complete" class="md-nav__link">
+    tab fails to complete
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1913,6 +1920,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tab-fails-to-complete" class="md-nav__link">
+    tab fails to complete
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2514,6 +2528,15 @@ $ module load R/3.6
 </code></pre></div>
 <p>The trick is to check whether the package is available via <code>https://anaconda.org/search?q=</code></p>
 <p>refer to <a href="https://stackoverflow.com/a/52561058">How to install packages in Linux (CentOS) without root user with automatic dependency handling?</a></p>
+<h2 id="tab-fails-to-complete">tab fails to complete<a class="headerlink" href="#tab-fails-to-complete" title="Permanent link">&para;</a></h2>
+<p>服务器上 tab 补全失效，并且报错</p>
+<blockquote>
+<p>无法为立即文档创建临时文件：设备上没有空间</p>
+</blockquote>
+<p>因为在第三方服务器上，没有权限清理 <code>/tmp</code> 文件夹，于是参考 <a href="https://blog.csdn.net/weixin_37029453/article/details/107664402">解决cannot create temp file for here-document: No space left on device问题</a></p>
+<p>在 <code>.bashrc</code> 中加入</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span><span class="nv">$HOME</span>/tmp
+</code></pre></div>
                 
               
               

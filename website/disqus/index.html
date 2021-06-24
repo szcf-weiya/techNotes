@@ -1041,6 +1041,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#disable-ads" class="md-nav__link">
+    disable ads
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reconfigure-on-aws" class="md-nav__link">
     Reconfigure on AWS
   </a>
@@ -1621,6 +1628,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#disable-ads" class="md-nav__link">
+    disable ads
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reconfigure-on-aws" class="md-nav__link">
     Reconfigure on AWS
   </a>
@@ -1748,6 +1762,23 @@
 <blockquote>
 <p>@Jerry Qu: 不是不想开源啊，主要是这部分逻辑跟我博客系统从 Node.js 到 JS 到 CSS 全部耦合在一起了。</p>
 </blockquote>
+<h2 id="disable-ads">disable ads<a class="headerlink" href="#disable-ads" title="Permanent link">&para;</a></h2>
+<p>use the following jquery scripts,</p>
+<div class="highlight"><pre><span></span><code>&lt;script <span class="nv">src</span><span class="o">=</span><span class="s2">&quot;/js/jquery-latest.min.js&quot;</span>&gt;&lt;/script&gt;
+&lt;!--rm disqus ad refer to https://www.javaer101.com/article/25891160.html--&gt;
+&lt;script&gt;
+  <span class="o">(</span><span class="k">function</span><span class="o">(</span>$<span class="o">){</span>
+    setInterval<span class="o">(()</span> <span class="o">=</span>&gt; <span class="o">{</span>
+        $.each<span class="o">(</span><span class="k">$(</span><span class="s1">&#39;iframe&#39;</span><span class="k">)</span>, <span class="o">(</span>arr,x<span class="o">)</span> <span class="o">=</span>&gt; <span class="o">{</span>
+            <span class="nb">let</span> <span class="nv">src</span> <span class="o">=</span> <span class="k">$(</span>x<span class="k">)</span>.attr<span class="o">(</span><span class="s1">&#39;src&#39;</span><span class="o">)</span><span class="p">;</span>
+            <span class="k">if</span> <span class="o">(</span>src <span class="o">&amp;&amp;</span> src.match<span class="o">(</span>/<span class="o">(</span>ads-iframe<span class="o">)</span><span class="p">|</span><span class="o">(</span>disqusads<span class="o">)</span>/gi<span class="o">))</span> <span class="o">{</span>
+                <span class="k">$(</span>x<span class="k">)</span>.remove<span class="o">()</span><span class="p">;</span>
+            <span class="o">}</span>
+        <span class="o">})</span><span class="p">;</span>
+    <span class="o">}</span>, <span class="m">300</span><span class="o">)</span><span class="p">;</span>
+<span class="o">})(</span>jQuery<span class="o">)</span><span class="p">;</span>
+</code></pre></div>
+<p>as used in my <a href="https://blog.hohoweiya.xyz/2021/05/02/back/">Chinese blog</a>.</p>
 <h2 id="reconfigure-on-aws">Reconfigure on AWS<a class="headerlink" href="#reconfigure-on-aws" title="Permanent link">&para;</a></h2>
 <p>之前是在 Vultr 上买了服务器，但是花费也不小，遂改用 AWS free tier.</p>
 <h3 id="step-1-install-apache2">Step 1: Install Apache2<a class="headerlink" href="#step-1-install-apache2" title="Permanent link">&para;</a></h3>
