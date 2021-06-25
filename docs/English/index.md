@@ -1,3 +1,7 @@
+## 2021.06.25
+
+- Leaked report sends **dire (极其严重的，危急的)** climate warning.
+
 ## 2021.06.24
 
 - The people who built the ancient monumental structures at Turkey's Gobekli Tepe were fuelled by vat-fulls of starchy porridge and stew, not just meaty feasts.
