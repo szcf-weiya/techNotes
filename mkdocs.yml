@@ -2,13 +2,17 @@ site_name: techNotes
 nav:
   - Home: index.md
   - Linux:
-    - 系统: Linux/index.md
-    - Graphical Software: Linux/software.md
-    - Command-line Tools: Linux/tools.md
-    - 服务器: Linux/servers.md
-    - 16to18: Linux/16to18.md
-    - 笔记本作为服务器: Linux/asAserver.md
-    - Shell: shell/index.md
+    - General:
+      - System: Linux/index.md
+      - Graphical Software: Linux/software.md
+      - Command-line Tools: Linux/tools.md
+      - Shell: shell/index.md
+    - Laptop:
+      - 16to18: Linux/16to18.md
+    - Servers: 
+      - Common: Linux/servers.md
+      - CHPC-Cluster: Linux/chpc.md
+      - G40: Linux/asAserver.md    
   - StatProgramming:
     - R:
       - 一般问题: R/index.md
