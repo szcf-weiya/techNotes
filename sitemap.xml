@@ -2,382 +2,387 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://tech.hohoweiya.xyz/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Cpp/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Cpp/MultiThread/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Cpp/math/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Cpp/sstream/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Cpp/struct/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Cpp/typedef/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/English/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Git/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Internet/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Internet/ipv6/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Internet/sci-int/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Linux/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Linux/16to18/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Linux/asAserver/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tech.hohoweiya.xyz/Linux/chpc/</loc>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Linux/misc/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Linux/servers/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Linux/software/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Linux/tools/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Matlab/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/PHP/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Qt/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/R/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/R/factor/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/R/ggplot/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/R/install-notes-for-rmysql/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/R/legend_from_zhihu/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/R/plot/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/R/sample/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/SQL/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/TeX/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/TeX/arxiv/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/TeX/note-for-class/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/TeX/vargreek/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/TeX/lualatex/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/autotools/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/biology/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/comparisons/stat/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/cuda/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/cuda/cookbook/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/cuda/cuSolver/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/cuda/udacity/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/dev/docker/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/finance/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/fresh/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/guitar/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/java/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/js/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/julia/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/julia/dev_package/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/links/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/links/weblinks/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/mi/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/misc/report/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/misc/wx/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/misc/wxjssdk/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/phantomjs/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/python/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/python/conda/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/python/esltag/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/python/igraph/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/python/opencv/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/python/rpy2/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/python/finance/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/python/pystan/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/scientific/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/shell/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/stan/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/stats/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/stats/matrix/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/stats/prob/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/website/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/website/css/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/website/disqus/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/website/xampp/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/win/</loc>
-         <lastmod>2021-06-25</lastmod>
+         <lastmod>2021-06-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

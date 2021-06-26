@@ -1,0 +1,2546 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="技术博客">
+      
+      
+      
+        <meta name="author" content="weiya">
+      
+      
+        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/chpc/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>CHPC-Cluster - techNotes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+
+  
+  
+
+
+
+  
+  
+
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-85007363-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+  <script data-ad-client="ca-pub-3680148472128768" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#notes-on-chpc-cluster" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            techNotes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CHPC-Cluster
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/szcf-weiya/techNotes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    szcf-weiya/techNotes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Linux
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../R/" class="md-tabs__link">
+        StatProgramming
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Cpp/" class="md-tabs__link">
+        CSProgramming
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../TeX/" class="md-tabs__link">
+        DocProgramming
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Internet/" class="md-tabs__link">
+        Network/Internet
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../autotools/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../stats/prob/" class="md-tabs__link">
+        Stat
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../English/" class="md-tabs__link">
+        Misc
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    techNotes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/szcf-weiya/techNotes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    szcf-weiya/techNotes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        General
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="General" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          General
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        System
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        Graphical Software
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Command-line Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Laptop
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Laptop" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Laptop
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16to18/" class="md-nav__link">
+        16to18
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        Servers
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Servers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Servers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../servers/" class="md-nav__link">
+        Common
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CHPC-Cluster
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        CHPC-Cluster
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#login" class="md-nav__link">
+    Login
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-commands" class="md-nav__link">
+    Custom Commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-multiple-jobs" class="md-nav__link">
+    Submitting Multiple Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitting Multiple Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pbs" class="md-nav__link">
+    PBS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm" class="md-nav__link">
+    SLURM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specify-nodes" class="md-nav__link">
+    Specify Nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-priority" class="md-nav__link">
+    Job Priority
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disk-quota" class="md-nav__link">
+    Disk Quota
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-module" class="md-nav__link">
+    Custom Module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-usage" class="md-nav__link">
+    GPU Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions-to-abnormal-cases" class="md-nav__link">
+    Solutions to Abnormal Cases
+  </a>
+  
+    <nav class="md-nav" aria-label="Solutions to Abnormal Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fail-to-ssh-passwordlessly" class="md-nav__link">
+    fail to ssh passwordlessly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fail-to-access" class="md-nav__link">
+    fail to access ~
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asAserver/" class="md-nav__link">
+        G40
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        StatProgramming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="StatProgramming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          StatProgramming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        R
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="R" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          R
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/" class="md-nav__link">
+        一般问题
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/plot/" class="md-nav__link">
+        plot 作图
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/ggplot/" class="md-nav__link">
+        ggplot 作图
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/legend_from_zhihu/" class="md-nav__link">
+        案例分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/install-notes-for-rmysql/" class="md-nav__link">
+        源码安装 RMySQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/sample/" class="md-nav__link">
+        new sample function (v3.6.0+)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/factor/" class="md-nav__link">
+        一道与 factor 有关的问题
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/" class="md-nav__link">
+        一般问题
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/conda/" class="md-nav__link">
+        Conda
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pystan/" class="md-nav__link">
+        PyStan 体验
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/opencv/" class="md-nav__link">
+        OpenCV
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/finance/" class="md-nav__link">
+        金融数据爬虫
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/rpy2/" class="md-nav__link">
+        rpy2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/esltag/" class="md-nav__link">
+        自建关键词索引页
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../julia/" class="md-nav__link">
+        Julia
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Matlab/" class="md-nav__link">
+        Matlab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comparisons/stat/" class="md-nav__link">
+        Comparisons
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        CSProgramming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="CSProgramming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          CSProgramming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cpp/" class="md-nav__link">
+        C/C++
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SQL/" class="md-nav__link">
+        SQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cuda/" class="md-nav__link">
+        Cuda
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        DocProgramming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DocProgramming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          DocProgramming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+      
+      <label class="md-nav__link" for="__nav_5_1">
+        TeX
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="TeX" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          TeX
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TeX/" class="md-nav__link">
+        一般问题
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TeX/arxiv/" class="md-nav__link">
+        arXiv
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TeX/vargreek/" class="md-nav__link">
+        VarGreek
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        Web
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../website/" class="md-nav__link">
+        Website
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../website/disqus/" class="md-nav__link">
+        Disqus
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../website/css/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/" class="md-nav__link">
+        JS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHP/" class="md-nav__link">
+        PHP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../website/xampp/" class="md-nav__link">
+        XAMPP
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Network/Internet
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Network/Internet" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Network/Internet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internet/" class="md-nav__link">
+        一般问题
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internet/sci-int/" class="md-nav__link">
+        访问内网
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internet/ipv6/" class="md-nav__link">
+        IPv6
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autotools/" class="md-nav__link">
+        Autotools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phantomjs/" class="md-nav__link">
+        Phantomjs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Qt/" class="md-nav__link">
+        Qt
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Stat
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Stat" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Stat
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stats/prob/" class="md-nav__link">
+        Probability
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stats/" class="md-nav__link">
+        Statistics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scientific/" class="md-nav__link">
+        Scientific
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stats/matrix/" class="md-nav__link">
+        Matrix
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Misc
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../English/" class="md-nav__link">
+        English
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guitar/" class="md-nav__link">
+        Guitar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../win/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../finance/" class="md-nav__link">
+        Finance
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fresh/" class="md-nav__link">
+        Fresh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../links/" class="md-nav__link">
+        Links
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/wx/" class="md-nav__link">
+        小程序
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/wxjssdk/" class="md-nav__link">
+        jssdk
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/report/" class="md-nav__link">
+        讲座
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mi/" class="md-nav__link">
+        Mi
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#login" class="md-nav__link">
+    Login
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-commands" class="md-nav__link">
+    Custom Commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-multiple-jobs" class="md-nav__link">
+    Submitting Multiple Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitting Multiple Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pbs" class="md-nav__link">
+    PBS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm" class="md-nav__link">
+    SLURM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specify-nodes" class="md-nav__link">
+    Specify Nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-priority" class="md-nav__link">
+    Job Priority
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disk-quota" class="md-nav__link">
+    Disk Quota
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-module" class="md-nav__link">
+    Custom Module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-usage" class="md-nav__link">
+    GPU Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions-to-abnormal-cases" class="md-nav__link">
+    Solutions to Abnormal Cases
+  </a>
+  
+    <nav class="md-nav" aria-label="Solutions to Abnormal Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fail-to-ssh-passwordlessly" class="md-nav__link">
+    fail to ssh passwordlessly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fail-to-access" class="md-nav__link">
+    fail to access ~
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="notes-on-chpc-cluster">Notes on CHPC-Cluster<a class="headerlink" href="#notes-on-chpc-cluster" title="Permanent link">&para;</a></h1>
+<h2 id="login">Login<a class="headerlink" href="#login" title="Permanent link">&para;</a></h2>
+<p>After generating and configuring SSH key pair, we can directly access the server via</p>
+<div class="highlight"><pre><span></span><code>$ ssh USERNAME@chpc-login01.itsc.cuhk.edu.hk
+</code></pre></div>
+<p>since the login node is not suggested/allowed to run test jobs, it would be more convenient to login in the test node, <code>sandbox</code>. This can be done with consecutive ssh,</p>
+<div class="highlight"><pre><span></span><code>$ ssh -t USERNAME@chpc-login01.itsc.cuhk.edu.hk ssh sandbox
+</code></pre></div>
+<p>where <code>-t</code> aims to avoid the warning</p>
+<blockquote>
+<p>Pseudo-terminal will not be allocated because stdin is not a terminal.</p>
+</blockquote>
+<h2 id="custom-commands">Custom Commands<a class="headerlink" href="#custom-commands" title="Permanent link">&para;</a></h2>
+<p>Some of the commands would be explained in the following sections.</p>
+<ul>
+<li>aliases</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># delete all jobs</span>
+<span class="nb">alias</span> <span class="nv">qdelall</span><span class="o">=</span><span class="s1">&#39;qstat | while read -a ADDR; do if [[ ${ADDR[0]} == +([0-9]) ]]; then qdel ${ADDR[0]}; fi ; done&#39;</span>
+<span class="c1"># list available cores</span>
+<span class="nb">alias</span> <span class="nv">sinfostat</span><span class="o">=</span><span class="s1">&#39;sinfo -o &quot;%N %C&quot; -p stat -N&#39;</span>
+<span class="c1"># list available gpu</span>
+<span class="nb">alias</span> <span class="nv">sinfogpu</span><span class="o">=</span><span class="s1">&#39;sinfo -O PartitionName,NodeList,Gres:25,GresUsed:25 | sed -n &quot;1p;/gpu[^:]/p&quot;&#39;</span>
+<span class="c1"># check disk quota</span>
+<span class="nb">alias</span> <span class="nv">myquota</span><span class="o">=</span><span class="s1">&#39;for i in `whoami` Stat StatScratch; do lfs quota -gh $i /lustre; done&#39;</span>
+<span class="c1"># list jobs sorted by priority</span>
+<span class="nb">alias</span> <span class="nv">sacctchpc</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)&#39;</span>
+<span class="c1"># list jobs sorted by priority (only involved stat)</span>
+<span class="nb">alias</span> <span class="nv">sacctstat</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn) | sed -n &quot;1,2p;/stat/p&quot;&#39;</span>
+</code></pre></div>
+<ul>
+<li>functions </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">#request specified nodes in interactive mode</span>
+request_cn<span class="o">()</span> <span class="o">{</span> srun -p stat -q stat -w chpc-cn1<span class="nv">$1</span> --pty bash -i<span class="p">;</span> <span class="o">}</span>
+request_gpu<span class="o">()</span> <span class="o">{</span> srun -p stat -q stat --gres<span class="o">=</span>gpu:1 -w chpc-gpu01<span class="nv">$1</span> --pty bash -i<span class="p">;</span> <span class="o">}</span>
+request_gpu_chpc<span class="o">()</span> <span class="o">{</span> srun -p chpc --gres<span class="o">=</span>gpu:1 -w chpc-gpu<span class="nv">$1</span> --pty bash -i<span class="p">;</span> <span class="o">}</span>
+</code></pre></div>
+<h2 id="submitting-multiple-jobs">Submitting Multiple Jobs<a class="headerlink" href="#submitting-multiple-jobs" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.cuhk.edu.hk/itsc/hpc/slurm.html">SLURM</a> and PBS are two different cluster schedulers, and the common equivalent commands are as follows:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># PBS</span>
+qsub -l <span class="nv">nodes</span><span class="o">=</span><span class="m">2</span>:ppn<span class="o">=</span><span class="m">16</span> -l <span class="nv">mem</span><span class="o">=</span>8g -N jobname -m be -M notify@cuhk.edu.hk
+<span class="c1"># Slurm</span>
+sbatch -N <span class="m">2</span> -c <span class="m">16</span> --mem<span class="o">=</span>8g -J jobname --mail-type<span class="o">=[</span>BEGIN,END,FAIL,REQUEUE,ALL<span class="o">]</span> --mail-user<span class="o">=</span>notify@cuhk.edu.hk
+</code></pre></div>
+Sometimes, we want to submit multiple jobs quickly, or perform parallel computing by dividing a heavy task into multiple small tasks.</p>
+<h3 id="pbs">PBS<a class="headerlink" href="#pbs" title="Permanent link">&para;</a></h3>
+<p>Suppose there is a main program <code>toy.jl</code>, and I want to run it multiple times but with different parameters, which can be passed via the <code>-v</code> option.</p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">submit.sh</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="k">for</span> number <span class="k">in</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="p">;</span> <span class="k">do</span>
+    <span class="k">for</span> letter <span class="k">in</span> a b c d e<span class="p">;</span> <span class="k">do</span>
+        qsub -v <span class="nv">arg1</span><span class="o">=</span><span class="nv">$number</span>,arg2<span class="o">=</span><span class="nv">$letter</span> toy.job
+    <span class="k">done</span>
+<span class="k">done</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">toy.job</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nb">cd</span> <span class="nv">$HOME</span>/PROJECT_FOLDER
+julia toy.jl <span class="si">${</span><span class="nv">arg1</span><span class="si">}</span> <span class="si">${</span><span class="nv">arg2</span><span class="si">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">toy.jl</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">AGRS</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;a = </span><span class="si">$a</span><span class="s">, b = </span><span class="si">$b</span><span class="s">&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+<p>The submitting command is</p>
+<div class="highlight"><pre><span></span><code>$ ./submit.sh
+</code></pre></div>
+<p>and here is <a href="https://github.com/szcf-weiya/Metabolic-Network/blob/09314f0558ddccc3997bcfcecf6b7576b281c3fd/old/mcmc-with-args.job">an example</a> in my private projects.</p>
+<h3 id="slurm">SLURM<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h3>
+<p>Suppose there is a main program <code>run.jl</code>, which runs in parallel with the number of cores <code>np</code>, and I also want to repeat the program for <code>N</code> times. To properly store the results, the index of repetition <code>nrep</code> for each job has been passed to the main program.</p>
+<p>The arguments for job file can be passed by the <code>--export</code> option.</p>
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">submit.sh</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    cat <span class="s">&lt;&lt;HELP_USAGE</span>
+<span class="s">    $0 param1 param2</span>
+<span class="s">    param1 number of repetitions</span>
+<span class="s">    param2 node label, can be stat or chpc</span>
+<span class="s">    param3 number of cores</span>
+<span class="s">HELP_USAGE</span>
+    <span class="nb">exit</span> <span class="m">0</span>
+<span class="k">fi</span>
+<span class="nv">resfolder</span><span class="o">=</span>res_<span class="k">$(</span>date -Iseconds<span class="k">)</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="k">$(</span>seq <span class="m">1</span> <span class="m">1</span> <span class="nv">$1</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+    sbatch -N <span class="m">1</span> -c <span class="nv">$3</span> -p <span class="nv">$2</span> --export<span class="o">=</span><span class="nv">resfolder</span><span class="o">=</span><span class="si">${</span><span class="nv">resfolder</span><span class="si">}</span>,nrep<span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>,np<span class="o">=</span><span class="nv">$3</span> toy.job
+<span class="k">done</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">toy.job</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nb">cd</span> <span class="nv">$HOME</span>/PROJECT
+julia -p <span class="nv">$np</span> run.jl <span class="nv">$nrep</span> <span class="nv">$resfolder</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">run.jl</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">Distributed</span>
+<span class="k">const</span> <span class="n">jobs</span> <span class="o">=</span> <span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span>
+<span class="k">const</span> <span class="n">res</span> <span class="o">=</span> <span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span>
+
+<span class="k">function</span> <span class="n">make_jobs</span><span class="p">()</span> <span class="k">end</span>
+<span class="k">function</span> <span class="n">do_work</span><span class="p">()</span> <span class="k">end</span>
+
+<span class="n">nrep</span><span class="p">,</span> <span class="n">resfolder</span> <span class="o">=</span> <span class="nb">ARGS</span>
+<span class="nd">@async</span> <span class="n">make_jobs</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+<p>where</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/687780/documenting-shell-scripts-parameters"><code>HELP_USAGE</code></a> documents shell scripts&rsquo; parameters.</li>
+<li><code>$1, $2, $3</code> denotes the 1st, 2nd, 3rd argument in the command line, and <code>$0</code> is the script name.</li>
+</ul>
+<p>The following command runs with <code>N = 100, np = 4</code> and on the <code>stat</code> partition,</p>
+<div class="highlight"><pre><span></span><code>$ ./submit.sh <span class="m">100</span> stat <span class="m">4</span>
+</code></pre></div>
+<p>which is adopted from <a href="https://github.com/szcf-weiya/Cell-Video/blob/master/DP/parallel_oracle2.sh">my private project</a>.</p>
+<h2 id="specify-nodes">Specify Nodes<a class="headerlink" href="#specify-nodes" title="Permanent link">&para;</a></h2>
+<p>The nodes can be excluded with <code>-x</code> or <code>--exclude</code>, and it can be specified with <code>-w</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">TL; DR</p>
+<p>According to the following experiments, my observation is that</p>
+<blockquote>
+<p>the exclusion seems only to perform on the granted resources instead of all nodes. If you want to allocate specified nodes, <code>-w</code> option should be used.</p>
+</blockquote>
+</div>
+<ul>
+<li><code>srun</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># cannot exclude</span>
+$ srun -x chpc-cn050 hostname
+chpc-cn050.rc.cuhk.edu.hk
+</code></pre></div>
+<ul>
+<li><code>salloc</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># cannot exclude</span>
+$ salloc -x chpc-cn050 -N1
+salloc: Nodes chpc-cn050 are ready <span class="k">for</span> job
+<span class="c1"># cannot exclude</span>
+$ salloc -x chpc-cn050 srun hostname
+salloc: Nodes chpc-cn050 are ready <span class="k">for</span> job
+chpc-cn050.rc.cuhk.edu.hk
+<span class="c1"># NB: exclude successfully</span>
+$ salloc -w chpc-cn050 srun -x chpc-cn050 hostname
+salloc: Nodes chpc-cn050 are ready <span class="k">for</span> job
+srun: error: Hostlist is empty!  Can<span class="err">&#39;</span>t run job.
+</code></pre></div>
+<ul>
+<li><code>sbatch</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># cannot exclude</span>
+$ sbatch <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt; #!/bin/sh</span>
+<span class="s">&gt; #SBATCH -x chpc-cn050</span>
+<span class="s">&gt; srun hostname</span>
+<span class="s">&gt; EOF</span>
+Submitted batch job <span class="m">246669</span>
+$ cat slurm-246669.out
+chpc-cn050.rc.cuhk.edu.hk
+
+<span class="c1"># NB: exclude successfully</span>
+$ sbatch <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt; #!/bin/sh</span>
+<span class="s">&gt; #SBATCH -w chpc-cn050</span>
+<span class="s">&gt; srun -x chpc-cn050 hostname</span>
+<span class="s">&gt; EOF</span>
+Submitted batch job <span class="m">246682</span>
+$ cat slurm-246682.out
+srun: error: Hostlist is empty!  Can<span class="err">&#39;</span>t run job.
+</code></pre></div>
+<p><strong>Observation:</strong></p>
+<p><code>-x</code> seems not to work in the allocation step, but it can exclude nodes from the allocated nodes.</p>
+<p>Back to the manual of <code>-x</code> option:</p>
+<blockquote>
+<p>Explicitly exclude certain nodes from the resources <strong>granted</strong> to the job.</p>
+</blockquote>
+<p>So the exclusion seems only to perform on the granted resources instead of all nodes. If you want to allocate specified nodes, <code>-w</code> option should be used.</p>
+<h2 id="job-priority">Job Priority<a class="headerlink" href="#job-priority" title="Permanent link">&para;</a></h2>
+<p>The submitted jobs are sorted by the calculated job priority in descending order. </p>
+<div class="admonition tip">
+<p class="admonition-title">TL;DR</p>
+<p>You can check the priority of all submitted jobs (not only yours but also others), and then you can find where you are, and figure out when your job can start to run.
+<div class="highlight"><pre><span></span><code>$ sacct -a -X --format<span class="o">=</span>Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS <span class="p">|</span> <span class="o">(</span>sed -u 2q<span class="p">;</span> sort -rn<span class="o">)</span>
+</code></pre></div></p>
+</div>
+<p>The formula for job priority is given by</p>
+<div class="highlight"><pre><span></span><code><span class="nv">Job_priority</span> <span class="o">=</span>
+    site_factor +
+    <span class="o">(</span>PriorityWeightAge<span class="o">)</span> * <span class="o">(</span>age_factor<span class="o">)</span> +
+    <span class="o">(</span>PriorityWeightAssoc<span class="o">)</span> * <span class="o">(</span>assoc_factor<span class="o">)</span> +
+    <span class="o">(</span>PriorityWeightFairshare<span class="o">)</span> * <span class="o">(</span>fair-share_factor<span class="o">)</span> +
+    <span class="o">(</span>PriorityWeightJobSize<span class="o">)</span> * <span class="o">(</span>job_size_factor<span class="o">)</span> +
+    <span class="o">(</span>PriorityWeightPartition<span class="o">)</span> * <span class="o">(</span>partition_factor<span class="o">)</span> +
+    <span class="o">(</span>PriorityWeightQOS<span class="o">)</span> * <span class="o">(</span>QOS_factor<span class="o">)</span> +
+    SUM<span class="o">(</span>TRES_weight_cpu * TRES_factor_cpu,
+        TRES_weight_&lt;type&gt; * TRES_factor_&lt;type&gt;,
+        ...<span class="o">)</span>
+    - nice_factor
+</code></pre></div>
+<p>we can find those weights</p>
+<div class="highlight"><pre><span></span><code>$ scontrol show config <span class="p">|</span> grep ^Priority
+<span class="nv">PriorityParameters</span>      <span class="o">=</span> <span class="o">(</span>null<span class="o">)</span>
+<span class="nv">PrioritySiteFactorParameters</span> <span class="o">=</span> <span class="o">(</span>null<span class="o">)</span>
+<span class="nv">PrioritySiteFactorPlugin</span> <span class="o">=</span> <span class="o">(</span>null<span class="o">)</span>
+<span class="nv">PriorityDecayHalfLife</span>   <span class="o">=</span> <span class="m">7</span>-00:00:00
+<span class="nv">PriorityCalcPeriod</span>      <span class="o">=</span> <span class="m">00</span>:05:00
+<span class="nv">PriorityFavorSmall</span>      <span class="o">=</span> No
+<span class="nv">PriorityFlags</span>           <span class="o">=</span> CALCULATE_RUNNING
+<span class="nv">PriorityMaxAge</span>          <span class="o">=</span> <span class="m">7</span>-00:00:00
+<span class="nv">PriorityUsageResetPeriod</span> <span class="o">=</span> NONE
+<span class="nv">PriorityType</span>            <span class="o">=</span> priority/multifactor
+<span class="nv">PriorityWeightAge</span>       <span class="o">=</span> <span class="m">0</span>
+<span class="nv">PriorityWeightAssoc</span>     <span class="o">=</span> <span class="m">0</span>
+<span class="nv">PriorityWeightFairShare</span> <span class="o">=</span> <span class="m">100000</span>
+<span class="nv">PriorityWeightJobSize</span>   <span class="o">=</span> <span class="m">0</span>
+<span class="nv">PriorityWeightPartition</span> <span class="o">=</span> <span class="m">0</span>
+<span class="nv">PriorityWeightQOS</span>       <span class="o">=</span> <span class="m">0</span>
+<span class="nv">PriorityWeightTRES</span>      <span class="o">=</span> <span class="o">(</span>null<span class="o">)</span>
+</code></pre></div>
+<p>only the <code>PriorityWeightFairShare</code> is nonzero, and this agrees with</p>
+<div class="highlight"><pre><span></span><code>$ sprio -w
+          JOBID PARTITION   PRIORITY       SITE  FAIRSHARE
+        Weights                               <span class="m">1</span>     <span class="m">100000</span>
+$ sprio -w -p stat
+          JOBID PARTITION   PRIORITY       SITE  FAIRSHARE
+        Weights                               <span class="m">1</span>     <span class="m">100000</span>
+$ sprio -w -p chpc
+          JOBID PARTITION   PRIORITY       SITE  FAIRSHARE
+        Weights                               <span class="m">1</span>     <span class="m">100000</span>
+</code></pre></div>
+<p>then the formula would be simplified as</p>
+<div class="highlight"><pre><span></span><code><span class="nv">Job_priority</span> <span class="o">=</span>
+    site_factor +
+    <span class="o">(</span>PriorityWeightFairshare<span class="o">)</span> * <span class="o">(</span>fair-share_factor<span class="o">)</span> +
+    SUM<span class="o">(</span>TRES_weight_cpu * TRES_factor_cpu,
+        TRES_weight_&lt;type&gt; * TRES_factor_&lt;type&gt;,
+        ...<span class="o">)</span>
+    - nice_factor
+</code></pre></div>
+<p>where <code>TRES_weight_&lt;type&gt;</code> might be GPU, see the usage weight in the <a href="https://www.cuhk.edu.hk/itsc/hpc/slurm.html">table</a>, and a negative <code>nice_factor</code> can only be set by privileged users,</p>
+<blockquote>
+<p>Nice Factor</p>
+</blockquote>
+<p>Users can adjust the priority of their own jobs by setting the nice value on their jobs. Like the system nice, positive values negatively impact a job&rsquo;s priority and negative values increase a job&rsquo;s priority. Only privileged users can specify a negative value. The adjustment range is +/-2147483645.</p>
+<ul>
+<li>the fairshare can be obtained via <code>sshare</code>, and the calculated priority can be obtained via <code>sprio</code>.</li>
+</ul>
+<p>refer to</p>
+<ul>
+<li><a href="https://slurm.schedmd.com/priority_multifactor.html">Multifactor Priority Plugin</a></li>
+<li><a href="http://www.ceci-hpc.be/slurm_prio.html">Slurm priorities</a></li>
+</ul>
+<h2 id="disk-quota">Disk Quota<a class="headerlink" href="#disk-quota" title="Permanent link">&para;</a></h2>
+<p>Sometimes, you might find that your job cannot continue to write out results, and you also cannot create a new file. It might imply that your quota reaches the limit, and here is a tip to &ldquo;increase&rdquo; your quota without cleaning your files.</p>
+<div class="admonition tip">
+<p class="admonition-title">TL;DR</p>
+<p>Tip to &ldquo;increase&rdquo; your personal quota is to count the files as the shared department quota, so just change the group membership of your files,
+<div class="highlight"><pre><span></span><code>$ chgrp -R Stat SomeFolder
+</code></pre></div></p>
+</div>
+<p>Firstly, you can check your personal quota with</p>
+<div class="highlight"><pre><span></span><code>$ lfs quota -gh your_user_id /lustre
+<span class="c1"># 20GB by default from ITSC in /users/your_user_id</span>
+</code></pre></div>
+<p>and here is two shared quota&rsquo;s in the whole department,</p>
+<div class="highlight"><pre><span></span><code>$ lfs quota -gh Stat /lustre
+<span class="c1"># 30TB shared by Statistics Department in /lustre/project/Stat</span>
+$ lfs quota -gh StatScratch /lustre
+<span class="c1"># 10TB by default from ITSC in /lustre/scratch/Stat</span>
+</code></pre></div>
+<p>An interesting thing is that the quota is counted by the group membership of the file, so if your personal quota exceeds, you can change the group membership of some files, and then these files would count as the shared quota instead of your personal quota. To change the group membership recursively of a folder, </p>
+<div class="highlight"><pre><span></span><code>$ chgrp -R Stat SomeFolder
+</code></pre></div>
+<p>A partial Chinese description,</p>
+<p>已经好几次因为 disk quota 超了使得程序崩溃，于是试图将 home 文件夹中的部分文件移动到 <code>/lustre/project/Stat</code> 中，但似乎 quota 并没有变化。</p>
+<p>后来才发现，原来 quota 是通过 group 来控制的，其中上述命令中 <code>-g</code> 选项即表示 group，也就是说 <code>your_user_id</code>, <code>Stat</code> 和 <code>StatScratch</code> 都是 group 名字。如果文件夹是从别处移动来的，group并不会改变，只有直接在 <code>/lustre/project/Stat</code> 中新建的文件或文件夹才继承 Stat 的 group，这一点是最开始在 <code>Stat</code> 文件夹下创建自己目录 <code>MYFOLDER</code> 时通过 <code>chmod g+s MYFOLDER</code> 保证的。</p>
+<p>于是简单的方法便是直接更改 group，</p>
+<div class="highlight"><pre><span></span><code>chgrp -R Stat SomeFolder
+</code></pre></div>
+<p>如果想找出哪些文件 group 为 <code>sXXXX</code>, 可以采用</p>
+<div class="highlight"><pre><span></span><code>find . -group <span class="sb">`</span>whoami<span class="sb">`</span>
+</code></pre></div>
+<h2 id="custom-module">Custom Module<a class="headerlink" href="#custom-module" title="Permanent link">&para;</a></h2>
+<p>The cluster manages the software versions with <a href="https://linux.die.net/man/1/module">module</a>, and the default module file path is</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="nv">$MODULEPATH</span>
+/usr/share/Modules/modulefiles:/etc/modulefiles
+</code></pre></div>
+<p>which requires <code>sudo</code> privilege. A natural question is whether we can create custom (local) module file to switch the software which are installed by ourselves or have not been added into the modules.</p>
+<p>Here is an example. There is an installed R in <code>/opt/share/R</code> named <code>3.6.3-v2</code>, which does not have the modulefile, since the same version <code>3.6.3</code> is already used. But there are still differences between these two &ldquo;same&rdquo; versions, <code>3.6.3-v2</code> supports figures, such as &ldquo;jpeg&rdquo;, &ldquo;png&rdquo;, &ldquo;tiff&rdquo; and &ldquo;cairo&rdquo;, while <code>3.6.3</code> not,</p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span><span class="m">3</span>.6.3<span class="o">)</span> &gt; capabilities<span class="o">()</span>
+       jpeg         png        tiff       tcltk         X11        aqua
+      FALSE       FALSE       FALSE        TRUE       FALSE       FALSE
+   http/ftp     sockets      libxml        fifo      cledit       iconv
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+        NLS     profmem       cairo         ICU long.double     libcurl
+       TRUE       FALSE       FALSE        TRUE        TRUE        TRUE
+
+<span class="o">(</span><span class="m">3</span>.6.3-v2<span class="o">)</span> &gt; capabilities<span class="o">()</span>
+       jpeg         png        tiff       tcltk         X11        aqua
+       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE
+   http/ftp     sockets      libxml        fifo      cledit       iconv
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
+        NLS     profmem       cairo         ICU long.double     libcurl
+       TRUE       FALSE        TRUE        TRUE        TRUE        TRUE
+</code></pre></div>
+<p>To use <code>3.6.3-v2</code>, we can create our custom modulefile (<a href="https://www.sc.fsu.edu/computing/tech-docs/1177-linux-modules">ref</a>),</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># step 1: create a folder in your home directory</span>
+~ $ mkdir modules
+<span class="c1"># step 2: preappend your module path to the ~/.bashrc file</span>
+~ $ <span class="nb">echo</span> <span class="s2">&quot;export MODULEPATH=</span><span class="si">${</span><span class="nv">MODULEPATH</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/modules&quot;</span> &gt;&gt; ~/.bashrc
+<span class="c1"># step 3: copy the existing modulefile as a template</span>
+<span class="c1"># here I skip the directory, just use name `R3.6`, which can also differ from the existing `R/3.6`</span>
+~ $ cp /usr/share/Modules/modulefiles/R/3.6 modules/R3.6
+<span class="c1"># step 4: modify the path to the software (`modroot`) as follows</span>
+</code></pre></div>
+<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">/usr/share/Modules/modulefiles/R/3.6</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">#%Module1.0#####################################################################</span>
+<span class="c1">##</span>
+proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="o">{</span>
+ global version modroot
+
+puts stderr <span class="s2">&quot;R/3.6.3 - sets the Environment for</span>
+<span class="s2">         R scripts v3.6.3 (gcc verion)</span>
+
+<span class="s2">Use &#39;module whatis [module-info name]&#39; for more information&quot;</span>
+<span class="o">}</span>
+
+module-whatis <span class="s2">&quot;The R Project for Statistical Computing</span>
+<span class="s2">R is a free software environment for statistical computing and graphics.</span>
+
+<span class="s2">Here is the available versions:</span>
+<span class="s2">        R/3.6.3&quot;</span>
+
+
+<span class="nb">set</span>     version         <span class="m">3</span>.6.3
+<span class="nb">set</span>     app             R
+<span class="nb">set</span>     modroot         /opt/share/<span class="nv">$app</span>/<span class="nv">$version</span>
+
+module load pcre2
+
+conflict R
+
+setenv R_HOME <span class="nv">$modroot</span>/lib64/R
+
+prepend-path PATH <span class="nv">$modroot</span>/bin
+prepend-path LD_LIBRARY_PATH <span class="nv">$modroot</span>/lib
+prepend-path INCLUDE <span class="nv">$modroot</span>/include
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">~/modules/R3.6</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">#%Module1.0#####################################################################</span>
+<span class="c1">##</span>
+proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="o">{</span>
+ global version modroot
+
+puts stderr <span class="s2">&quot;R/3.6.3 - sets the Environment for</span>
+<span class="s2">         R scripts v3.6.3 (gcc verion)</span>
+
+<span class="s2">Use &#39;module whatis [module-info name]&#39; for more information&quot;</span>
+<span class="o">}</span>
+
+module-whatis <span class="s2">&quot;The R Project for Statistical Computing</span>
+<span class="s2">R is a free software environment for statistical computing and graphics.</span>
+
+<span class="s2">Here is the available versions:</span>
+<span class="s2">        R/3.6.3&quot;</span>
+
+
+<span class="nb">set</span>     version         <span class="m">3</span>.6.3
+<span class="nb">set</span>     app             R
+<span class="nb">set</span>     modroot         /opt/share/<span class="nv">$app</span>/<span class="si">${</span><span class="nv">version</span><span class="si">}</span>-v2
+
+module load pcre2
+module load intel
+conflict R
+
+setenv R_HOME <span class="nv">$modroot</span>/lib64/R
+
+prepend-path PATH <span class="nv">$modroot</span>/bin
+prepend-path LD_LIBRARY_PATH <span class="nv">$modroot</span>/lib
+prepend-path INCLUDE <span class="nv">$modroot</span>/include
+</code></pre></div>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">diff -u</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="gu">@@ -18,10 +18,10 @@</span>
+
+ set     version         3.6.3
+ set     app             R
+<span class="gd">-set     modroot         /opt/share/$app/$version</span>
+<span class="gi">+set     modroot         /opt/share/$app/${version}-v2</span>
+
+ module load pcre2
+<span class="gd">-</span>
+<span class="gi">+module load intel</span>
+ conflict R
+</code></pre></div>
+</div>
+</div>
+<p>Note that <code>module load intel</code> is also added, otherwise it will throws,</p>
+<div class="highlight"><pre><span></span><code>/opt/share/R/3.6.3-v2/lib64/R/bin/exec/R: error <span class="k">while</span> loading shared libraries: libiomp5.so: cannot open shared object file: No such file or directory
+</code></pre></div>
+<p>since <code>libiomp5</code> is for <code>openmp</code> (<a href="https://stackoverflow.com/a/28254656">ref</a>).</p>
+<p>Now, you can use <code>3.6.3-v2</code> like other modules,</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># load `3.6.3-v2`</span>
+$ module load R3.6
+<span class="c1"># unload `3.6.3-v2`</span>
+$ module unload R3.6
+<span class="c1"># load original `3.6.3`</span>
+$ module load R/3.6
+</code></pre></div>
+<h2 id="gpu-usage">GPU Usage<a class="headerlink" href="#gpu-usage" title="Permanent link">&para;</a></h2>
+<p>Be cautious about the compatible versions between the deep learning framework (e.g., tensorflow), CUDA, and also the (CUDA) <strong>driver</strong> version of the node.</p>
+<p>The driver version of the node is fixed, but fortunately it is downward compatible, i.e., a higher driver version also supports a lower CUDA version. We can check the driver version by</p>
+<div class="highlight"><pre><span></span><code>$ nvidia-smi 
+Sat Jun <span class="m">26</span> <span class="m">10</span>:32:03 <span class="m">2021</span>       
++-----------------------------------------------------------------------------+
+<span class="p">|</span> NVIDIA-SMI <span class="m">450</span>.36.06    Driver Version: <span class="m">450</span>.36.06    CUDA Version: <span class="m">11</span>.0     <span class="p">|</span>
+...
+</code></pre></div>
+<p>which implies that the highest supported CUDA version is 11.0.</p>
+<p>The available CUDA versions can be found as follows</p>
+<div class="highlight"><pre><span></span><code>$ module avail cuda
+-------------- /usr/share/Modules/modulefiles ---------------
+cuda/10.1          cuda/10.2          cuda/11.0          cuda/11.3<span class="o">(</span>default<span class="o">)</span> cuda/9.2
+</code></pre></div>
+<p>For the above node whose highest supported CUDA version is 11.0, the latest <code>cuda/11.3</code> would be incompatible, but others are all OK.</p>
+<p>Now you can pick the proper tensorflow version according to the supported CUDA versions. Here is an <a href="https://www.tensorflow.org/install/source#linux">official configuration table</a>, which lists the compatible versions between tensorflow, python, CUDA, together with cuDNN.</p>
+<p>Finally, you can validate if the GPU is correctly supported by running</p>
+<div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="n">python</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="c1"># 1.x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">is_gpu_available</span><span class="p">()</span>
+<span class="c1"># 2.x</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>What if you want to use the version that does not installed on the cluster, say <code>cuda/10.0</code>? We can install a local cuda and creat a <a href="#custom-module">custom module</a> to call it. </p>
+<p>Following the instruction: <a href="https://stackoverflow.com/questions/39379792/install-cuda-without-root">Install Cuda without root</a></p>
+<div class="highlight"><pre><span></span><code>$ wget https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux
+$ chmod +x cuda_10.0.130_410.48_linux
+$ ./cuda_10.0.130_410.48_linux
+</code></pre></div>
+<p>then download <code>cuDNN</code>, but it requires to login. After extraction, copy the <code>include</code> and <code>lib</code> to the CUDA installation folder.</p>
+<p>Next, create the custom module file, and finally I can use </p>
+<div class="highlight"><pre><span></span><code>$ cuda load cuda10.0
+</code></pre></div>
+<p>to use the local cuda.</p>
+<h2 id="solutions-to-abnormal-cases">Solutions to Abnormal Cases<a class="headerlink" href="#solutions-to-abnormal-cases" title="Permanent link">&para;</a></h2>
+<h3 id="fail-to-ssh-passwordlessly">fail to ssh passwordlessly<a class="headerlink" href="#fail-to-ssh-passwordlessly" title="Permanent link">&para;</a></h3>
+<p>像往常一样 ssh，但是报错了</p>
+<div class="highlight"><pre><span></span><code>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now <span class="o">(</span>man-in-the-middle attack<span class="o">)</span>!
+It is also possible that a host key has just been changed.
+The fingerprint <span class="k">for</span> the ECDSA key sent by the remote host is
+SHA256:eSpztdqzLF6rBXRWd8pCW0v4utoE5CYTUHTaUb0Qn0w.
+Please contact your system administrator.
+Add correct host key <span class="k">in</span> /home/weiya/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key <span class="k">in</span> /home/weiya/.ssh/known_hosts:42
+  remove with:
+  ssh-keygen -f <span class="s2">&quot;/home/weiya/.ssh/known_hosts&quot;</span> -R <span class="s2">&quot;chpc-login01.itsc.cuhk.edu.hk&quot;</span>
+ECDSA host key <span class="k">for</span> chpc-login01.itsc.cuhk.edu.hk has changed and you have requested strict checking.
+Host key verification failed.
+</code></pre></div>
+<p>于是根据提示运行了</p>
+<div class="highlight"><pre><span></span><code>ssh-keygen -f <span class="s2">&quot;/home/weiya/.ssh/known_hosts&quot;</span> -R <span class="s2">&quot;chpc-login01.itsc.cuhk.edu.hk&quot;</span>
+</code></pre></div>
+<p>然后重新 ssh，但还是要求输入密码。类似的问题另见 <a href="https://stackoverflow.com/questions/20840012/ssh-remote-host-identification-has-changed">ssh remote host identification has changed</a></p>
+<p>这其实对应了服务器上 <code>/etc/ssh</code> 文件夹下几个 pub 文件，咨询 Michael 也得到回复说最近 public fingerprint 有修改，这应该是 known hosts 的内容。</p>
+<p>可以<a href="https://superuser.com/questions/421997/what-is-a-ssh-key-fingerprint-and-how-is-it-generated">以 MD5 的形式展示</a>，</p>
+<div class="highlight"><pre><span></span><code>$ ssh-keygen -l -E md5 -f ssh_host_ed25519_key.pub
+</code></pre></div>
+<p>另外，<a href="https://serverfault.com/questions/321167/add-correct-host-key-in-known-hosts-multiple-ssh-host-keys-per-hostname">扫描 ip 或域名对应的 key</a></p>
+<div class="highlight"><pre><span></span><code>ssh-keyscan -t rsa server_ip
+</code></pre></div>
+<p>也能返回完全一致的结果，然后手动添加至 known_hosts 文件，仍然不能成功，尝试过新增其他格式的 key，</p>
+<div class="highlight"><pre><span></span><code>ssh-keygen -t <span class="o">[</span>ed25519 <span class="p">|</span> ecdsa <span class="p">|</span> dsa<span class="o">]</span>
+</code></pre></div>
+<p>然而统统没用。</p>
+<p>后来跟服务器管理员反复沟通，提交 <code>ssh -vvv xxx &amp;&gt; ssh.log</code> 日志文件供其检查，才确认是最近服务器配置更改的原因，虽然没有明说，但是注意到 <code>/etc/ssh/sshd_config</code> 更新后不久管理员就回复说好了，问及原因，他的回答是，</p>
+<blockquote>
+<p>It is related to security context which will make SELinux to block the file access. I think this required root permission to config.</p>
+</blockquote>
+<h3 id="fail-to-access">fail to access <code>~</code><a class="headerlink" href="#fail-to-access" title="Permanent link">&para;</a></h3>
+<p>Z 在群里问道，他在服务器上提交 job 时，之前安装好的包不能使用。显然，很可能因为 <code>.libPaths()</code> 没有包含 <code>$HOME</code> 下的用户安装路径，但是他在登录结点上在 R 中运行 <code>.libPaths()</code>，一切正常。那么问题或许出在工作结点上，事实表明在该工作结点上采用以下任一种方式都能解决问题</p>
+<ul>
+<li>在 R 中运行 <code>.libPaths("/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0")</code></li>
+<li>或者 <code>export R_LIBS_USER=/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0</code></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>此处也看到一个类似的问题，但是原因不一样，在 <a href="https://stackoverflow.com/questions/53967385/r-libs-user-ignored-by-r"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59z"/></svg></span>R_LIBS_USER ignored by R</a> 问题中，原因是 <code>$HOME</code> 不能正常展开。</p>
+</div>
+<p>但是此时并不是很理解，因为按理说不同结点都是共享的。后来研究了下 <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html">R 的启动机制</a>，</p>
+<blockquote>
+<p>On Unix versions of R there is also a file <code>R_HOME/etc/Renviron</code> which is read very early in the start-up processing. It contains environment variables set by R in the configure process. Values in that file can be overridden in site or user environment files: do not change <code>R_HOME/etc/Renviron</code> itself. Note that this is distinct from <code>R_HOME/etc/Renviron.site</code>.</p>
+</blockquote>
+<p>才知道 <code>R_LIBS_USER</code> 是定义在 <code>Renviron</code> 中，</p>
+<div class="highlight"><pre><span></span><code><span class="nv">R_LIBS_USER</span><span class="o">=</span><span class="si">${</span><span class="nv">R_LIBS_USER</span><span class="p">-</span><span class="s1">&#39;~/R/x86_64-pc-linux-gnu-library/4.0&#39;</span><span class="si">}</span>
+</code></pre></div>
+<p>其中 <code>${A-B}</code> 的语法是如果 <code>A</code> 没有设置，则令 <code>B</code> 为 <code>A</code>，注意<a href="../shell/#default-value">其与 <code>${A:-B}</code> 的区别</a>。</p>
+<p>这也难怪为什么直接在命令行中输入 <code>echo $R_LIBS_USER</code> 结果为空。</p>
+<p>SSH 到该工作结点，发现其 prompt 并没有正确加载，直接出现 <code>bash-4.2$</code>，而一般会是 <code>[sXXXXX@chpc-sandbox ~]$</code>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>其实 <code>source .bashrc</code> 后能显示 <code>~</code>，但访问 <code>~</code> 仍然失败。另见 <a href="https://unix.stackexchange.com/questions/125965/terminal-prompt-changed-to-bash-4-2-and-colors-lost">Terminal, Prompt changed to “-Bash-4.2” and colors lost</a></p>
+</div>
+<p>这样一个直接后果就是无法解析用户目录 <code>~</code>，这大概也是为什么 <code>R_LIBS_USER</code> 在这个结点没有正常加载，因为上述系统配置文件 <code>/opt/share/R/4.0.3/lib64/R/etc/Renviron</code> 中使用了 <code>~</code>，于是需要用不带 <code>~</code> 的全路径。不过 <code>~</code> 其实只是指向 <code>/user/sXXXXX</code>，发现这个文件夹没有正常被连接，所以要使用 <code>/lustre/user/sXXXX</code>. 或者说是没有挂载，因为在其它结点上有以下三条挂载记录，</p>
+<div class="highlight"><pre><span></span><code>$ df -h
+storage03:/chpc-userhome                  50T  <span class="m">4</span>.4T   46T   <span class="m">9</span>% /storage03/chpc-userhome
+storage03:/chpc-optshare                  10T  713G  <span class="m">9</span>.4T   <span class="m">7</span>% /storage03/chpc-optshare
+storage01:/chpc-users                     15T  <span class="m">6</span>.2T  <span class="m">8</span>.9T  <span class="m">42</span>% /storage01/users
+</code></pre></div>
+<p>而该结点上没有。</p>
+<p>为了验证上述想法，也手动进行 <code>export R_LIBS_USER=</code> 及 <code>.libPaths()</code>，</p>
+<div class="tabbed-set" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">DONE</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span>
+<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span> 
+</code></pre></div>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">DONE</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">$</span> <span class="n">export</span> <span class="n">R_LIBS_USER</span><span class="o">=/</span><span class="n">lustre</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">sXXXXXXXXX</span><span class="o">/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span>
+<span class="o">$</span> <span class="n">R</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span>
+<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>   
+</code></pre></div>
+</div>
+<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">FAIL</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0/&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><label for="__tabbed_4_4">FAIL</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">$</span> <span class="n">export</span> <span class="n">R_LIBS_USER</span><span class="o">=~/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span>
+<span class="o">$</span> <span class="n">R</span>
+<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
+</code></pre></div>
+</div>
+</div>
+<p>可见涉及 <code>~</code> 和 <code>/users/sXXXX</code> 的均有问题。</p>
+<p>虽然问题已经得以解决，但是很好奇为什么访问 <code>~</code> 失败。因为根据我的理解，<code>/users/sXXXX</code> (<code>~</code>)、<code>/lustre/users/sXXXX</code> 中间应该是通过类似 soft links 形式连接的（即便可能不是，因为确实直接 <code>ls</code> 也没返回指向结果）。</p>
+<p>后来咨询管理员才明白，他们正在将迁移用户文件夹，</p>
+<p><img alt="Selection_1524" src="https://user-images.githubusercontent.com/13688320/117969152-a3699900-b359-11eb-96b3-83e658404d7e.png" /></p>
+<p>其中黄色方块表明迁移的目标硬盘，称为 <code>storage</code>，而未框出来的地方则表明当前所在硬盘 <code>lustre</code>.</p>
+<p>但是因为并非所有用户都已迁移完成，所以需要对这两类用户访问 <code>~</code> 的行为做不同的处理，</p>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/117969166-a9f81080-b359-11eb-8bbe-5cf1a022f7e8.png" /></p>
+<ul>
+<li>如果用户 A 已经迁移，则其 <code>~</code> 直接指向 <code>/storage01/users/A</code></li>
+<li>如果用户 B 未迁移，则其 <code>~</code> 通过 <code>/storage01/users/B</code> （此时该路径只相当于 soft link） 指向 <code>/lustre/users/B</code></li>
+</ul>
+<p>所以无论迁移与否，访问 <code>~</code> 都需要通过上图的黄色方框。那么倘若 storage 本身挂载失败，则 <code>~</code> 解析失败，而未迁移用户正因为还未迁移，所以仍能绕过 <code>~</code> 而直接访问 <code>/lustre/users/sXXXX</code>。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../servers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Common" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Common
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../asAserver/" class="md-footer__link md-footer__link--next" aria-label="Next: G40" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              G40
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017-2021 weiya
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/szcf-weiya" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://esl.hohoweiya.xyz" target="_blank" rel="noopener" title="esl.hohoweiya.xyz" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://hohoweiya.xyz" target="_blank" rel="noopener" title="hohoweiya.xyz" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26 96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47 488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://stats.hohoweiya.xyz" target="_blank" rel="noopener" title="stats.hohoweiya.xyz" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M552 64H112c-20.858 0-38.643 13.377-45.248 32H24c-13.255 0-24 10.745-24 24v272c0 30.928 25.072 56 56 56h496c13.255 0 24-10.745 24-24V88c0-13.255-10.745-24-24-24zM48 392V144h16v248c0 4.411-3.589 8-8 8s-8-3.589-8-8zm480 8H111.422c.374-2.614.578-5.283.578-8V112h416v288zM172 280h136c6.627 0 12-5.373 12-12v-96c0-6.627-5.373-12-12-12H172c-6.627 0-12 5.373-12 12v96c0 6.627 5.373 12 12 12zm28-80h80v40h-80v-40zm-40 140v-24c0-6.627 5.373-12 12-12h136c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H172c-6.627 0-12-5.373-12-12zm192 0v-24c0-6.627 5.373-12 12-12h104c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H364c-6.627 0-12-5.373-12-12zm0-144v-24c0-6.627 5.373-12 12-12h104c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H364c-6.627 0-12-5.373-12-12zm0 72v-24c0-6.627 5.373-12 12-12h104c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H364c-6.627 0-12-5.373-12-12z"/></svg>
+      </a>
+    
+      
+      
+      <a href="mailto:szcfweiya@gmail.com" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+        <script src="../../javascripts/baiduzhanzhang.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
