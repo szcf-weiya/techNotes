@@ -12,6 +12,7 @@ nav:
     - Servers: 
       - Common: Linux/servers.md
       - CHPC-Cluster: Linux/chpc.md
+      - Rocky-Linux: Linux/rocky-server.md
       - G40: Linux/asAserver.md    
   - StatProgramming:
     - R:

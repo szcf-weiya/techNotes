@@ -1,3 +1,11 @@
+## 2021.06.27
+
+- We need to take away the ability to get **unfettered (无限制的，不受约束的)** access to the machine.
+
+## 2021.06.26
+
+- The killing of a maths faculty member on a Shanghai campus has **stirred up (激起，挑起)** debate over the onerous tenure process. 
+
 ## 2021.06.25
 
 - Leaked report sends **dire (极其严重的，危急的)** climate warning.
@@ -2930,7 +2938,6 @@ NULL
 9. geochemist, geochemistry: [地球化学](https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83%E5%8C%96%E5%AD%A6)
 10. A **bolide (【天文学】火流星，火球)**, or fireball, is an extremely bright **meteor (流星)**, and those can be about the size of a **grapefruit (葡萄柚，西柚)**.
 11. magma, mantle, lava
-12. stir up
 13. episode
 14. volcanism
 15. makeover
