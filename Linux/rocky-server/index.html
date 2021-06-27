@@ -13,14 +13,14 @@
         <meta name="author" content="weiya">
       
       
-        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/servers/">
+        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/rocky-server/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
     
     
       
-        <title>Common - techNotes</title>
+        <title>Rocky-Linux - techNotes</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#servers" class="md-skip">
+        <a href="#rocky-linux" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Common
+              Rocky-Linux
             
           </span>
         </div>
@@ -570,127 +570,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Common
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../servers/" class="md-nav__link">
         Common
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    SSH
-  </a>
-  
-    <nav class="md-nav" aria-label="SSH">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#initial-start" class="md-nav__link">
-    initial start
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#two-consecutive-ssh" class="md-nav__link">
-    two consecutive ssh
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh-until-succeed" class="md-nav__link">
-    ssh until succeed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-gui-remotelylocally" class="md-nav__link">
-    run GUI remotely/locally
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#spark" class="md-nav__link">
-    安装 spark
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nginx-failed" class="md-nav__link">
-    腾讯云服务器nginx failed
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nginx" class="md-nav__link">
-    重装nginx
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#centos-7" class="md-nav__link">
-    CentOS 7
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-software-without-root" class="md-nav__link">
-    Install software without root
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tab-fails-to-complete" class="md-nav__link">
-    tab fails to complete
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -710,11 +594,58 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../rocky-server/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Rocky-Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Rocky-Linux
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-slurm" class="md-nav__link">
+    Install Slurm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cgroup" class="md-nav__link">
+    CGroup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1719,84 +1650,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    SSH
-  </a>
-  
-    <nav class="md-nav" aria-label="SSH">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#initial-start" class="md-nav__link">
-    initial start
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#two-consecutive-ssh" class="md-nav__link">
-    two consecutive ssh
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh-until-succeed" class="md-nav__link">
-    ssh until succeed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-gui-remotelylocally" class="md-nav__link">
-    run GUI remotely/locally
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#spark" class="md-nav__link">
-    安装 spark
+  <a href="#install-slurm" class="md-nav__link">
+    Install Slurm
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nginx-failed" class="md-nav__link">
-    腾讯云服务器nginx failed
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nginx" class="md-nav__link">
-    重装nginx
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#centos-7" class="md-nav__link">
-    CentOS 7
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-software-without-root" class="md-nav__link">
-    Install software without root
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tab-fails-to-complete" class="md-nav__link">
-    tab fails to complete
+  <a href="#cgroup" class="md-nav__link">
+    CGroup
   </a>
   
 </li>
@@ -1814,129 +1676,479 @@
               
                 
                 
-                <h1 id="servers">Servers<a class="headerlink" href="#servers" title="Permanent link">&para;</a></h1>
-<h2 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
-<h3 id="initial-start">initial start<a class="headerlink" href="#initial-start" title="Permanent link">&para;</a></h3>
-<p>首先在本地新建 ssh key，</p>
-<div class="highlight"><pre><span></span><code>ssh-keygen -t <span class="o">[</span>rsa <span class="p">|</span> ed25519 <span class="p">|</span> ecdsa <span class="p">|</span> dsa<span class="o">]</span>
+                <h1 id="rocky-linux">Rocky Linux<a class="headerlink" href="#rocky-linux" title="Permanent link">&para;</a></h1>
+<p>The new group server is </p>
+<div class="highlight"><pre><span></span><code>$ lsb_release -a
+LSB Version:    :core-4.1-amd64:core-4.1-noarch
+Distributor ID: Rocky
+Description:    Rocky Linux release <span class="m">8</span>.4 <span class="o">(</span>Green Obsidian<span class="o">)</span>
+Release:    <span class="m">8</span>.4
+Codename:   GreenObsidian
+</code></pre></div>
+<p>where the distribution name <code>Rocky Linux</code> is new to me, although I might heard it before.</p>
+<blockquote>
+<p><a href="https://github.com/rocky-linux/rocky">Rocky Linux</a> is a community enterprise Operating System designed to be 100% bug-for-bug compatible with Enterprise Linux, now that CentOS has shifted direction.</p>
+</blockquote>
+<p>Here is a Chinese discussion, <a href="https://www.zhihu.com/question/434205770">如何看待CentOS 创始人新发起的Rocky Linux项目?</a></p>
+<h2 id="install-slurm">Install Slurm<a class="headerlink" href="#install-slurm" title="Permanent link">&para;</a></h2>
+<p>Different from CHPC&rsquo;s cluster, the group server is just one node. So first of all, I search the possibility and necessity of slurm on single node, here are some references.</p>
+<ul>
+<li><a href="http://docs.nanomatch.de/technical/SimStackRequirements/SingleNodeSlurm.html#slurm-single-node-install">SLURM single node install</a></li>
+<li><a href="https://rolk.github.io/2015/04/20/slurm-cluster">Setting up a single server SLURM cluster</a></li>
+</ul>
+<p>Comparing with the standard installation, it seems no much difference, so I follow the <a href="https://slurm.schedmd.com/quickstart_admin.html">official guide</a> to install.</p>
+<ul>
+<li>install munge: the first attempt is not enough, and its <code>devel</code> will be also installed</li>
+</ul>
+<div class="highlight"><pre><span></span><code>yum install munge
+</code></pre></div>
+<ul>
+<li>download source package</li>
+</ul>
+<div class="highlight"><pre><span></span><code>wget https://download.schedmd.com/slurm/slurm-20.11.7.tar.bz2
+</code></pre></div>
+<ul>
+<li>build it</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>rpmbuild -ta slurm*.tar.bz2
+</code></pre></div>
+<p>but it throws that</p>
+<div class="highlight"><pre><span></span><code>error: Failed build dependencies:
+    munge-devel is needed by slurm-20.11.7-1.el8.x86_64
+    pam-devel is needed by slurm-20.11.7-1.el8.x86_64
+    perl<span class="o">(</span>ExtUtils::MakeMaker<span class="o">)</span> is needed by slurm-20.11.7-1.el8.x86_64
+    readline-devel is needed by slurm-20.11.7-1.el8.x86_64
+</code></pre></div>
+<p>so I need to resolve these dependencies firstly.</p>
+<ul>
+<li>install <code>munge-devel</code></li>
+</ul>
+<p>firstly I tried </p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum install munge-devel
+<span class="go">Last metadata expiration check: 1:10:07 ago on Sat 26 Jun 2021 06:42:42 PM HKT.</span>
+<span class="go">No match for argument: munge-devel</span>
+<span class="go">Error: Unable to find a match: munge-devel</span>
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">ssh 常见 key 格式</p>
-<p>参考 <a href="https://neil-wu.github.io/2020/04/04/2020-04-04-SSH-key/">更新SSH key为Ed25519</a></p>
-<ul>
-<li>DSA: 不安全</li>
-<li>RSA: 安全性依赖于key的大小，3072位或4096位的key是安全的，小于此大小的key可能需要升级一下，1024位的key已经被认为不安全。</li>
-<li>ECDSA:  安全性取决于你的计算机生成随机数的能力，该随机数将用于创建签名，ECDSA使用的NIST曲线也存在可信赖性问题。</li>
-<li>Ed25519: 目前最推荐的公钥算法</li>
-</ul>
+<p class="admonition-title">use console for root&rsquo;s <code>#</code></p>
+<p>In bash code block, the symbol <code>#</code> would be treated as comments, but I want to indicate the operations are performed by root, so change <code>bash</code> to <code>console</code> refer to <a href="https://groups.google.com/g/nikola-discuss/c/5AzGQjlhB8g">Markdown syntax for interactive shell commands</a></p>
 </div>
-<p>然后会在本地生成 <code>~/.ssh</code> 文件夹。</p>
+<p>Reminded by <a href="https://forums.rockylinux.org/t/slurm-does-not-install-from-the-epel-repo/2832">Slurm does not install from the epel repo</a>, I tried to enable the <code>powertools</code> repo following the instruction, <a href="https://serverfault.com/questions/997896/how-to-enable-powertools-repository-in-centos-8">How to enable PowerTools repository in CentOS 8?</a></p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum repolist 
+<span class="go">repo id                                                                repo name</span>
+<span class="go">appstream                                                              Rocky Linux 8 - AppStream</span>
+<span class="go">baseos                                                                 Rocky Linux 8 - BaseOS</span>
+<span class="go">epel                                                                   Extra Packages for Enterprise Linux 8 - x86_64</span>
+<span class="go">epel-modular                                                           Extra Packages for Enterprise Linux Modular 8 - x86_64</span>
+<span class="go">extras                                                                 Rocky Linux 8 - Extras</span>
+
+<span class="gp"># </span>yum install dnf-plugins-core
+<span class="go">Last metadata expiration check: 1:15:02 ago on Sat 26 Jun 2021 06:42:42 PM HKT.</span>
+<span class="go">Package dnf-plugins-core-4.0.18-4.el8.noarch is already installed.</span>
+<span class="go">Dependencies resolved.</span>
+<span class="go">Nothing to do.</span>
+<span class="go">Complete!</span>
+
+<span class="gp"># </span>yum config-manager --set-enabled powertools
+<span class="gp"># </span>yum repolist 
+<span class="go">repo id                                                                repo name</span>
+<span class="go">appstream                                                              Rocky Linux 8 - AppStream</span>
+<span class="go">baseos                                                                 Rocky Linux 8 - BaseOS</span>
+<span class="go">epel                                                                   Extra Packages for Enterprise Linux 8 - x86_64</span>
+<span class="go">epel-modular                                                           Extra Packages for Enterprise Linux Modular 8 - x86_64</span>
+<span class="go">extras                                                                 Rocky Linux 8 - Extras</span>
+<span class="go">powertools                                                             Rocky Linux 8 - PowerTools</span>
+</code></pre></div>
+<p>then I can install <code>munge-devel</code>,</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum install munge-devel
+<span class="go">Rocky Linux 8 - PowerTools                                                                                                                              2.6 MB/s | 2.1 MB     00:00    </span>
+<span class="go">Dependencies resolved.</span>
+<span class="go">========================================================================================================================================================================================</span>
+<span class="go"> Package                                      Architecture                            Version                                         Repository                                   Size</span>
+<span class="go">========================================================================================================================================================================================</span>
+<span class="go">Installing:</span>
+<span class="go"> munge-devel                                  x86_64                                  0.5.13-2.el8                                    powertools                                   27 k</span>
+
+<span class="go">Transaction Summary</span>
+<span class="go">========================================================================================================================================================================================</span>
+<span class="go">Install  1 Package</span>
+
+<span class="go">Total download size: 27 k</span>
+<span class="go">Installed size: 23 k</span>
+<span class="go">Is this ok [y/N]: y</span>
+<span class="go">Downloading Packages:</span>
+<span class="go">munge-devel-0.5.13-2.el8.x86_64.rpm                                                                                                                     716 kB/s |  27 kB     00:00    </span>
+<span class="go">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+<span class="go">Total                                                                                                                                                    95 kB/s |  27 kB     00:00     </span>
+<span class="go">Running transaction check</span>
+<span class="go">Transaction check succeeded.</span>
+<span class="go">Running transaction test</span>
+<span class="go">Transaction test succeeded.</span>
+<span class="go">Running transaction</span>
+<span class="go">  Preparing        :                                                                                                                                                                1/1 </span>
+<span class="go">  Installing       : munge-devel-0.5.13-2.el8.x86_64                                                                                                                                1/1 </span>
+<span class="go">  Running scriptlet: munge-devel-0.5.13-2.el8.x86_64                                                                                                                                1/1 </span>
+<span class="go">  Verifying        : munge-devel-0.5.13-2.el8.x86_64                                                                                                                                1/1 </span>
+<span class="go">Installed products updated.</span>
+
+<span class="go">Installed:</span>
+<span class="go">  munge-devel-0.5.13-2.el8.x86_64                                                                                                                                                       </span>
+
+<span class="go">Complete!</span>
+</code></pre></div>
 <ul>
-<li>秘钥(<code>~/.ssh/id_rsa</code>): sensitive and important!!</li>
-<li>公钥(<code>~/.ssh/id_rsa.pub</code>): contains the public key for authentication.  These files are not sensitive and can (but need not) be readable by anyone.</li>
-<li>公钥授权文件(<code>~/.ssh/authorized_keys</code>)</li>
+<li>install other dependencies,</li>
 </ul>
-<p>将登录端的 <code>id_rsa.pub</code> 内容复制到服务器端的 <code>authorized_keys</code> 文件中即可。除了手动复制，也可以通过命令行，如</p>
-<div class="highlight"><pre><span></span><code>$ ssh-copy-id -p <span class="m">30013</span> weiya@127.0.0.1
-/usr/bin/ssh-copy-id: INFO: attempting to log <span class="k">in</span> with the new key<span class="o">(</span>s<span class="o">)</span>, to filter out any that are already installed
-/usr/bin/ssh-copy-id: INFO: <span class="m">1</span> key<span class="o">(</span>s<span class="o">)</span> remain to be installed -- <span class="k">if</span> you are prompted now it is to install the new keys
-weiya@127.0.0.1<span class="s1">&#39;s password: </span>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum install pam-devel
+<span class="gp"># </span>yum install readline-devel
+<span class="gp"># </span>yum install perl-ExtUtils-MakeMaker.noarch
+</code></pre></div>
+<p>where the package name for the last one is determining by simply googling <code>perl(ExtUtils::MakeMaker)</code></p>
+<ul>
+<li>build again</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>rpmbuild -ta slurm-20.11.7.tar.bz2
+<span class="go">Processing files: slurm-slurmdbd-20.11.7-1.el8.x86_64</span>
+<span class="go">error: File not found: /root/rpmbuild/BUILDROOT/slurm-20.11.7-1.el8.x86_64/usr/lib64/slurm/accounting_storage_mysql.so</span>
 
-<span class="s1">Number of key(s) added: 1</span>
 
-<span class="s1">Now try logging into the machine, with:   &quot;ssh -p &#39;</span><span class="m">30013</span><span class="s1">&#39; &#39;</span>weiya@127.0.0.1<span class="err">&#39;</span><span class="s2">&quot;</span>
-<span class="s2">and check to make sure that only the key(s) you wanted were added.</span>
+<span class="go">RPM build errors:</span>
+<span class="go">    Macro expanded in comment on line 22: %_prefix path     install path for commands, libraries, etc.</span>
+
+<span class="go">    Macro expanded in comment on line 170: %define _unpackaged_files_terminate_build      0</span>
+
+<span class="go">    Empty %files file /root/rpmbuild/BUILD/slurm-20.11.7/slurm.files</span>
+<span class="go">    File not found: /root/rpmbuild/BUILDROOT/slurm-20.11.7-1.el8.x86_64/usr/lib64/slurm/accounting_storage_mysql.so</span>
+<span class="go">    File listed twice: /usr/lib/.build-id/13/1f6904421dbe39c72395ad1902cee51db6a0ec</span>
+<span class="go">    File listed twice: /usr/lib/.build-id/28/be902644d9888579406edd90f00c5f9c9c2aa6</span>
+<span class="go">    File listed twice: /usr/lib/.build-id/7c/791fea05f7db7b3de616553cd27fa82b3fc510</span>
+<span class="go">    File listed twice: /usr/lib/.build-id/93/bbb15fe8897a7d4745fc56dcb3e5435f80bf4c</span>
+<span class="go">    Deprecated external dependency generator is used!</span>
+<span class="go">    Deprecated external dependency generator is used!</span>
+<span class="go">    Deprecated external dependency generator is used!</span>
+<span class="go">    Empty %files file /root/rpmbuild/BUILD/slurm-20.11.7/example.configs</span>
+<span class="go">    Deprecated external dependency generator is used!</span>
+<span class="go">    Deprecated external dependency generator is used!</span>
+<span class="go">    Deprecated external dependency generator is used!</span>
+<span class="go">    File not found: /root/rpmbuild/BUILDROOT/slurm-20.11.7-1.el8.x86_64/usr/lib64/slurm/accounting_storage_mysql.so</span>
 </code></pre></div>
-<p>正确输入登录密码后，便复制成功了，注意此时并未登录至目标服务器。</p>
-<p>对于 AWS，登录需要使用 <code>.pem</code> 文件，即</p>
-<div class="highlight"><pre><span></span><code>$ ssh -i YourKey.pem user@host
+<p>which means that <code>mysql</code> is needed. </p>
+<ul>
+<li>install <code>mariadb</code> and its <code>devel</code> following <a href="https://www.slothparadise.com/how-to-install-slurm-on-centos-7-cluster/">How to Install Slurm on CentOS 7 Cluster</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># yum install mariadb-server mariadb-devel</span>
 </code></pre></div>
-<p>而复制文件则为</p>
-<div class="highlight"><pre><span></span><code>$ scp -i YourKey.pem YourFile user@host:~/YourFile
+<ul>
+<li>build again</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># rpmbuild -ta slurm-20.11.7.tar.bz2</span>
+Wrote: /root/rpmbuild/RPMS/x86_64/slurm-openlava-20.11.7-1.el8.x86_64.rpm
+Wrote: /root/rpmbuild/RPMS/x86_64/slurm-contribs-20.11.7-1.el8.x86_64.rpm
+Wrote: /root/rpmbuild/RPMS/x86_64/slurm-pam_slurm-20.11.7-1.el8.x86_64.rpm
+Executing<span class="o">(</span>%clean<span class="o">)</span>: /bin/sh -e /var/tmp/rpm-tmp.52rp8H
++ <span class="nb">umask</span> <span class="m">022</span>
++ <span class="nb">cd</span> /root/rpmbuild/BUILD
++ <span class="nb">cd</span> slurm-20.11.7
++ rm -rf /root/rpmbuild/BUILDROOT/slurm-20.11.7-1.el8.x86_64
 </code></pre></div>
-<h3 id="two-consecutive-ssh">two consecutive ssh<a class="headerlink" href="#two-consecutive-ssh" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$ ssh -t user@A ssh user@B
+<p>it succeeds!</p>
+<ul>
+<li>install rpms</li>
+</ul>
+<p>all built rpms are</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ls rpmbuild/RPMS/x86_64/</span>
+slurm-20.11.7-1.el8.x86_64.rpm                  slurm-libpmi-20.11.7-1.el8.x86_64.rpm     slurm-slurmctld-20.11.7-1.el8.x86_64.rpm
+slurm-contribs-20.11.7-1.el8.x86_64.rpm         slurm-openlava-20.11.7-1.el8.x86_64.rpm   slurm-slurmd-20.11.7-1.el8.x86_64.rpm
+slurm-devel-20.11.7-1.el8.x86_64.rpm            slurm-pam_slurm-20.11.7-1.el8.x86_64.rpm  slurm-slurmdbd-20.11.7-1.el8.x86_64.rpm
+slurm-example-configs-20.11.7-1.el8.x86_64.rpm  slurm-perlapi-20.11.7-1.el8.x86_64.rpm    slurm-torque-20.11.7-1.el8.x86_64.rpm
+
+<span class="c1"># yum --nogpgcheck localinstall slurm-20.11.7-1.el8.x86_64.rpm slurm-devel-20.11.7-1.el8.x86_64.rpm slurm-perlapi-20.11.7-1.el8.x86_64.rpm slurm-torque-20.11.7-1.el8.x86_64.rpm slurm-slurmctld-20.11.7-1.el8.x86_64.rpm slurm-slurmd-20.11.7-1.el8.x86_64.rpm</span>
 </code></pre></div>
-<p>where <code>-t</code> avoid the warning that </p>
-<blockquote>
-<p>Pseudo-terminal will not be allocated because stdin is not a terminal.</p>
-</blockquote>
-<p>which would freeze the session.</p>
-<p>If the usernames are the same, the second username can be omitted.</p>
-<p>The port forwarding would be more clear. For example, open a jupyter session on node <code>B</code>, whose login node is <code>A</code>, then access the jupyter in the local browser <code>http://127.0.0.1:28888</code> after running</p>
-<div class="highlight"><pre><span></span><code>$ ssh -t -L <span class="m">28888</span>:localhost:8888 user@A ssh -L <span class="m">8888</span>:localhost:8888 user@B
+<ul>
+<li>then configure from <a href="https://slurm.schedmd.com/configurator.easy.html">https://slurm.schedmd.com/configurator.easy.html</a></li>
+</ul>
+<p>change the hostname to <code>hostname -s</code></p>
+<ul>
+<li>be careful about the path to the logfile,</li>
+</ul>
+<div class="highlight"><pre><span></span><code>mkdir /var/spool/slurmctld
+chown slurm: /var/spool/slurmctld
+chmod 755 /var/spool/slurmctld
+touch /var/log/slurmctld.log
+chown slurm: /var/log/slurmctld.log
+touch /var/log/slurm_jobacct.log /var/log/slurm_jobcomp.log
+chown slurm: /var/log/slurm_jobacct.log /var/log/slurm_jobcomp.log
 </code></pre></div>
-<h3 id="ssh-until-succeed">ssh until succeed<a class="headerlink" href="#ssh-until-succeed" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$ <span class="k">until</span> ./login_lab.sh<span class="p">;</span> <span class="k">do</span> sleep <span class="m">5</span><span class="p">;</span> <span class="k">done</span>
+<p>also</p>
+<div class="highlight"><pre><span></span><code>mkdir /var/spool/slurmd
+chown slurm: /var/spool/slurmd
+chmod <span class="m">755</span> /var/spool/slurmd
+touch /var/log/slurmd.log
+chown slurm: /var/log/slurmd.log
 </code></pre></div>
-<p>refer to <a href="https://unix.stackexchange.com/questions/404792/how-to-run-ssh-command-until-succeeded">How to run ssh command until succeeded?</a></p>
-<h3 id="run-gui-remotelylocally">run GUI remotely/locally<a class="headerlink" href="#run-gui-remotelylocally" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>weiya@T460p:~$ ssh weiya@G40
-weiya@G40:~$ <span class="nb">export</span> <span class="nv">DISPLAY</span><span class="o">=</span>:0
-weiya@G40:~$ firefox
+<p>then check </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># slurmd -C</span>
+<span class="nv">NodeName</span><span class="o">=</span>stapcXXX <span class="nv">CPUs</span><span class="o">=</span><span class="m">96</span> <span class="nv">Boards</span><span class="o">=</span><span class="m">1</span> <span class="nv">SocketsPerBoard</span><span class="o">=</span><span class="m">2</span> <span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">24</span> <span class="nv">ThreadsPerCore</span><span class="o">=</span><span class="m">2</span> <span class="nv">RealMemory</span><span class="o">=</span><span class="m">385333</span>
+<span class="nv">UpTime</span><span class="o">=</span><span class="m">1</span>-04:02:46
 </code></pre></div>
-<p>如果不通过第二行来设置 DISPLAY，则会报错，</p>
-<blockquote>
-<p>Error: no DISPLAY environment variable specified</p>
-</blockquote>
-<p>另外 <code>:0</code> 可以通过在服务器端运行</p>
-<div class="highlight"><pre><span></span><code>weiya@G40:~$ w
- <span class="m">20</span>:29:30 up <span class="m">10</span>:01,  <span class="m">2</span> users,  load average: <span class="m">1</span>.53, <span class="m">1</span>.42, <span class="m">1</span>.40
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-weiya    :0       :0               <span class="m">10</span>:28   ?xdm?  <span class="m">22</span>:24   <span class="m">0</span>.00s /usr/lib/gdm3/gdm-x-session --run-script env GNOME
+<ul>
+<li>check if <code>sinfo</code> OK,</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>sinfo 
+<span class="go">slurm_load_partitions: Unable to contact slurm controller (connect failure)</span>
+<span class="gp"># </span>scontrol show nodes
+<span class="go">slurm_load_node error: Unable to contact slurm controller (connect failure)</span>
 </code></pre></div>
-<p>进行查看，其中 <code>FROM</code> 栏下的 <code>:0</code> 即为当前 display 号码。</p>
-<p>参考 <a href="https://askubuntu.com/questions/47642/how-to-start-a-gui-software-on-a-remote-linux-pc-via-ssh">How to start a GUI software on a remote Linux PC via SSH</a></p>
-<p>如果想要在本地运行服务器端的 GUI 程序，即将服务器端的窗口发送到本地，则登录时需要加上 <code>-X</code> 选项，</p>
-<div class="highlight"><pre><span></span><code>ssh -X
+<p>and the service <code>slurmd</code> and <code>slurmctld</code> fails to start,</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl status slurmd.service
+<span class="go">● slurmd.service - Slurm node daemon</span>
+<span class="go">   Loaded: loaded (/usr/lib/systemd/system/slurmd.service; enabled; vendor preset: disabled)</span>
+<span class="go">   Active: failed (Result: exit-code) since Sat 2021-06-26 20:51:09 HKT; 4s ago</span>
+<span class="go">  Process: 126781 ExecStart=/usr/sbin/slurmd -D $SLURMD_OPTIONS (code=exited, status=1/FAILURE)</span>
+<span class="go"> Main PID: 126781 (code=exited, status=1/FAILURE)</span>
+
+<span class="go">Jun 26 20:51:09 stapcXXX.sta.cuhk.edu.hk systemd[1]: Started Slurm node daemon.</span>
+<span class="go">Jun 26 20:51:09 stapcXXX.sta.cuhk.edu.hk systemd[1]: slurmd.service: Main process exited, code=exited, status=1/FAILURE</span>
+<span class="go">Jun 26 20:51:09 stapcXXX.sta.cuhk.edu.hk systemd[1]: slurmd.service: Failed with result &#39;exit-code&#39;.</span>
+
+<span class="gp"># </span>systemctl status slurmctld.service
+<span class="go">● slurmctld.service - Slurm controller daemon</span>
+<span class="go">   Loaded: loaded (/usr/lib/systemd/system/slurmctld.service; enabled; vendor preset: disabled)</span>
+<span class="go">   Active: failed (Result: exit-code) since Sat 2021-06-26 20:52:26 HKT; 4s ago</span>
+<span class="go">  Process: 126814 ExecStart=/usr/sbin/slurmctld -D $SLURMCTLD_OPTIONS (code=exited, status=1/FAILURE)</span>
+<span class="go"> Main PID: 126814 (code=exited, status=1/FAILURE)</span>
+
+<span class="go">Jun 26 20:52:26 stapcXXX.sta.cuhk.edu.hk systemd[1]: Started Slurm controller daemon.</span>
+<span class="go">Jun 26 20:52:26 stapcXXX.sta.cuhk.edu.hk systemd[1]: slurmctld.service: Main process exited, code=exited, status=1/FAILURE</span>
+<span class="go">Jun 26 20:52:26 stapcXXX.sta.cuhk.edu.hk systemd[1]: slurmctld.service: Failed with result &#39;exit-code&#39;.</span>
 </code></pre></div>
-<h2 id="spark">安装 spark<a class="headerlink" href="#spark" title="Permanent link">&para;</a></h2>
-<p><del>在内地云主机上，<a href="https://spark.apache.org/downloads.html">官网下载地址</a> 还没 5 秒就中断了，然后找到了<a href="https://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-2.4.4/">清华的镜像</a></del></p>
-<p>第二天发现，其实不是中断了，而是下载完成了，因为那个还不是下载链接，点进去才有推荐的下载链接，而这些链接也是推荐的速度快的镜像。</p>
-<p>顺带学习了 <code>wget</code> 重新下载 <code>-c</code> 和重复尝试 <code>-t 0</code> 的选项。</p>
-<p>upgrade Java 7 to Java 8:</p>
-<p>最近 oracle 更改了 license，导致 <a href="https://launchpad.net/~webupd8team/+archive/ubuntu/java">ppa 都用不了了</a></p>
-<p><a href="https://www.vultr.com/docs/how-to-manually-install-java-8-on-ubuntu-16-04">源码安装</a></p>
-<p>而且第一次听说 <a href="https://askubuntu.com/questions/233190/what-exactly-does-update-alternatives-do"><code>update-alternatives</code></a> 命令，有点类似更改默认程序的感觉。</p>
-<p>接着按照 <a href="https://spark.apache.org/docs/latest/">official documentation</a> 进行学习</p>
-<h2 id="nginx-failed">腾讯云服务器nginx failed<a class="headerlink" href="#nginx-failed" title="Permanent link">&para;</a></h2>
-<p>原因：80端口被占用
-解决方法：kill掉占用80端口的</p>
-<div class="highlight"><pre><span></span><code>sudo fuser -k 80/tcp
+<p>the error turns to be the incosistent path in the config file, <code>slurm.conf</code></p>
+<div class="highlight"><pre><span></span><code>StateSaveLocation: /var/spool/slurmctld
 </code></pre></div>
-<p>重启</p>
-<div class="highlight"><pre><span></span><code>sudo /etc/init.d/nginx restart
+<p>and then</p>
+<div class="highlight"><pre><span></span><code>mkdir /var/spool/slurmctld
+chown slurm: /var/spool/slurmctld
 </code></pre></div>
-<h2 id="nginx">重装nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
-<p>想重装nginx，把/etc/nginx也一并删除了，但是重新安装却报错找不到conf文件。</p>
-<p>参考<a href="https://stackoverflow.com/questions/28141667/how-to-reinstall-nginx-if-i-deleted-etc-nginx-folder-ubuntu-14-04">How to reinstall nginx if I deleted /etc/nginx folder (Ubuntu 14.04)?</a></p>
-<p>应当用
-<div class="highlight"><pre><span></span><code>apt-get purge nginx nginx-common nginx-full
-apt-get install nginx
-</code></pre></div></p>
-<p>注意用 purge 不会保存配置文件，而 remove 会保存配置文件。</p>
-<h2 id="centos-7">CentOS 7<a class="headerlink" href="#centos-7" title="Permanent link">&para;</a></h2>
-<p>想直接在服务器上用 Julia 的 PGFPlotsX 画图，因为默认会弹出画好的 pdf 图象，除非按照<a href="https://kristofferc.github.io/PGFPlotsX.jl/v0.2/man/save.html#REPL-1">官方教程</a>中的设置</p>
-<div class="highlight"><pre><span></span><code><span class="n">PGFPlotsX</span><span class="o">.</span><span class="n">enable_interactive</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span>
+<p>but the default path is <code>/var/spool</code>. </p>
+<ul>
+<li>run <code>slurmctld</code> service</li>
+</ul>
+<p>After correcting the path, the service begins to work,</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl status slurmctld.service 
+<span class="go">● slurmctld.service - Slurm controller daemon</span>
+<span class="go">   Loaded: loaded (/usr/lib/systemd/system/slurmctld.service; enabled; vendor preset: disabled)</span>
+<span class="go">   Active: active (running) since Sat 2021-06-26 22:11:14 HKT; 2min 18s ago</span>
+<span class="go"> Main PID: 128214 (slurmctld)</span>
+<span class="go">    Tasks: 7</span>
+<span class="go">   Memory: 4.4M</span>
+<span class="go">   CGroup: /system.slice/slurmctld.service</span>
+<span class="go">           └─128214 /usr/sbin/slurmctld -D</span>
+
+<span class="go">Jun 26 22:11:14 stapcXXX.sta.cuhk.edu.hk systemd[1]: Started Slurm controller daemon.</span>
 </code></pre></div>
-<p>本来期望着用 evince 打开，但是最后竟然用 liberoffice 开开了，然后字体竟然不一致了，所以想着更改默认的 pdf 阅读软件，参考 <a href="https://superuser.com/questions/152202/how-to-set-default-browser-for-pdf-reader-evince-on-linux">How to set default browser for PDF reader Evince on Linux?</a></p>
-<p>可以在 <code>.local/share/applications/mimeapps.list</code> 里面添加或者修改</p>
-<p>虽然最后还是感觉通过服务器打开速度太慢了。</p>
-<h2 id="install-software-without-root">Install software without root<a class="headerlink" href="#install-software-without-root" title="Permanent link">&para;</a></h2>
-<p><code>conda</code> can install many other programs, such as <code>tree</code>,</p>
-<div class="highlight"><pre><span></span><code>conda install -c eumetsat tree
+<ul>
+<li>run <code>slurmd</code> service</li>
+</ul>
+<p>However, <code>slurmd</code> still failed, but no informative message returned by the <code>systemctl</code> command. Try to directly run the command</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmd -D
+<span class="go">slurmd: error: Node configuration differs from hardware: CPUs=1:96(hw) Boards=1:1(hw) SocketsPerBoard=1:2(hw) CoresPerSocket=1:24(hw) ThreadsPerCore=1:2(hw)</span>
+<span class="go">slurmd: error: cgroup namespace &#39;freezer&#39; not mounted. aborting</span>
+<span class="go">slurmd: error: unable to create freezer cgroup namespace</span>
+<span class="go">slurmd: error: Couldn&#39;t load specified plugin name for proctrack/cgroup: Plugin init() callback failed</span>
+<span class="go">slurmd: error: cannot create proctrack context for proctrack/cgroup</span>
+<span class="go">slurmd: error: slurmd initialization failed</span>
 </code></pre></div>
-<p>The trick is to check whether the package is available via <code>https://anaconda.org/search?q=</code></p>
-<p>refer to <a href="https://stackoverflow.com/a/52561058">How to install packages in Linux (CentOS) without root user with automatic dependency handling?</a></p>
-<h2 id="tab-fails-to-complete">tab fails to complete<a class="headerlink" href="#tab-fails-to-complete" title="Permanent link">&para;</a></h2>
-<p>服务器上 tab 补全失效，并且报错</p>
-<blockquote>
-<p>无法为立即文档创建临时文件：设备上没有空间</p>
-</blockquote>
-<p>因为在第三方服务器上，没有权限清理 <code>/tmp</code> 文件夹，于是参考 <a href="https://blog.csdn.net/weixin_37029453/article/details/107664402">解决cannot create temp file for here-document: No space left on device问题</a></p>
-<p>在 <code>.bashrc</code> 中加入</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span><span class="nv">$HOME</span>/tmp
+<p>then correct the corresponding configuration. And temporarly disable cgroup by setting</p>
+<div class="highlight"><pre><span></span><code>Process Tracking: LinuxProc
 </code></pre></div>
+<p>as suggested in <a href="http://docs.nanomatch.de/technical/SimStackRequirements/SingleNodeSlurm.html">SLURM single node install</a></p>
+<p>Also pay attention to <code>restart</code>, or <code>stop + start</code> the service, sometimes the configuration file might still be outdated. For example, I had set the hostname as <code>hostname -f</code> and <code>hostname -s</code>, but sometimes the hostname has not been updated after changing the hostname, so make sure the updated configuration file has been taken effects.</p>
+<p>After necessary correction and restart,</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmd -D
+<span class="go">slurmd: slurmd version 20.11.7 started</span>
+<span class="go">slurmd: slurmd started on Sat, 26 Jun 2021 22:28:01 +0800</span>
+<span class="go">slurmd: CPUs=96 Boards=1 Sockets=2 Cores=24 Threads=2 Memory=385333 TmpDisk=1023500 Uptime=107065 CPUSpecList=(null) FeaturesAvail=(null) FeaturesActive=(null)</span>
+<span class="go">^Cslurmd: Slurmd shutdown completing</span>
+</code></pre></div>
+<p>which indiates that now slurmd works well, then</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl restart slurmd.service 
+<span class="gp"># </span>systemctl status slurmd.service 
+<span class="go">● slurmd.service - Slurm node daemon</span>
+<span class="go">   Loaded: loaded (/usr/lib/systemd/system/slurmd.service; enabled; vendor preset: disabled)</span>
+<span class="go">   Active: active (running) since Sat 2021-06-26 22:28:23 HKT; 1s ago</span>
+<span class="go"> Main PID: 129051 (slurmd)</span>
+<span class="go">    Tasks: 2</span>
+<span class="go">   Memory: 1.3M</span>
+<span class="go">   CGroup: /system.slice/slurmd.service</span>
+<span class="go">           └─129051 /usr/sbin/slurmd -D</span>
+
+<span class="go">Jun 26 22:28:23 stapcXXX.sta.cuhk.edu.hk systemd[1]: Started Slurm node daemon.</span>
+</code></pre></div>
+<ul>
+<li>accounting system</li>
+</ul>
+<p>Try to start the accounting system,</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr -i add cluster stapcXXX
+<span class="go">You are not running a supported accounting_storage plugin</span>
+<span class="go">Only &#39;accounting_storage/slurmdbd&#39; is supported.</span>
+</code></pre></div>
+<p>the reason is that the corresponding rpm has not been installed, and also <code>slurm.conf</code> should set</p>
+<div class="highlight"><pre><span></span><code><span class="nv">AccountingStorageType</span><span class="o">=</span>accounting_storage/slurmdbd
+</code></pre></div>
+<p>and </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># yum --nogpgcheck localinstall slurm-slurmdbd-20.11.7-1.el8.x86_64.rpm</span>
+</code></pre></div>
+<p>then check if it is ready,</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># systemctl start slurmdbd.service </span>
+<span class="c1"># systemctl status slurmdbd.service </span>
+● slurmdbd.service - Slurm DBD accounting daemon
+   Loaded: loaded <span class="o">(</span>/usr/lib/systemd/system/slurmdbd.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset: disabled<span class="o">)</span>
+   Active: inactive <span class="o">(</span>dead<span class="o">)</span>
+Condition: start condition failed at Sun <span class="m">2021</span>-06-27 <span class="m">10</span>:38:39 HKT<span class="p">;</span> 2s ago
+           └─ <span class="nv">ConditionPathExists</span><span class="o">=</span>/etc/slurm/slurmdbd.conf was not met
+</code></pre></div>
+<p>which means that we also need <code>slurmdbd.conf</code>.</p>
+<ul>
+<li>config <code>slurmdbd.conf</code></li>
+</ul>
+<p>copy the sample from <a href="https://slurm.schedmd.com/slurmdbd.conf.html">slurmdbd.conf</a></p>
+<ul>
+<li>config mysql</li>
+</ul>
+<p>following <a href="https://gist.github.com/DaisukeMiyamoto/d1dac9483ff0971d5d9f34000311d312">DaisukeMiyamoto/setup_slurm_accounting_parallelcluster.sh</a>, set mariadb as follows,</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>mysql -u root -e <span class="s2">&quot;create user &#39;slurm&#39;@&#39;localhost&#39; identified by &#39;xxxxxxxxxx&#39;; grant all on slurm_acct_db.* TO &#39;slurm&#39;@&#39;localhost&#39;; create database slurm_acct_db;&quot;</span>
+</code></pre></div>
+<p>then tried to run</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmdbd -D
+<span class="go">slurmdbd: error: mysql_real_connect failed: 2002 Can&#39;t connect to local MySQL server through socket &#39;/var/lib/mysql/mysql.sock&#39; (2)</span>
+<span class="go">slurmdbd: error: The database must be up when starting the MYSQL plugin.  Trying again in 5 seconds.</span>
+<span class="go">^C</span>
+</code></pre></div>
+<p>so mysql has not been started,</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl <span class="nb">enable</span> mariadb
+<span class="go">Created symlink /etc/systemd/system/mysql.service → /usr/lib/systemd/system/mariadb.service.</span>
+<span class="go">Created symlink /etc/systemd/system/mysqld.service → /usr/lib/systemd/system/mariadb.service.</span>
+<span class="go">Created symlink /etc/systemd/system/multi-user.target.wants/mariadb.service → /usr/lib/systemd/system/mariadb.service.</span>
+<span class="gp"># </span>systemctl start mariadb
+</code></pre></div>
+<p>then run again</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmdbd -D
+<span class="go">slurmdbd: accounting_storage/as_mysql: _check_mysql_concat_is_sane: MySQL server version is: 10.3.28-MariaDB</span>
+<span class="go">slurmdbd: error: Database settings not recommended values: innodb_buffer_pool_size innodb_lock_wait_timeout</span>
+<span class="go">slurmdbd: slurmdbd version 20.11.7 started</span>
+<span class="go">^Cslurmdbd: Terminate signal (SIGINT or SIGTERM) received</span>
+</code></pre></div>
+<p>refer to <a href="https://wiki.fysik.dtu.dk/niflheim/Slurm_database#id5">Slurm database &ndash; MySQL configuration</a>, write the following</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>mysqld<span class="o">]</span>
+<span class="nv">innodb_buffer_pool_size</span><span class="o">=</span>1024M
+<span class="nv">innodb_log_file_size</span><span class="o">=</span>64M
+<span class="nv">innodb_lock_wait_timeout</span><span class="o">=</span><span class="m">900</span>
+</code></pre></div>
+<p>into file <code>/etc/my.cnf.d/innodb.cnf</code>, then restart </p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl stop mariadb
+<span class="gp"># </span>systemctl start mariadb
+</code></pre></div>
+<p>now it is OK to run</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmdbd -D
+<span class="go">slurmdbd: accounting_storage/as_mysql: _check_mysql_concat_is_sane: MySQL server version is: 10.3.28-MariaDB</span>
+<span class="go">slurmdbd: slurmdbd version 20.11.7 started</span>
+<span class="go">^Cslurmdbd: Terminate signal (SIGINT or SIGTERM) received</span>
+</code></pre></div>
+<p>then satrt the service</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># systemctl enable slurmdbd</span>
+<span class="c1"># systemctl start slurmdbd</span>
+<span class="c1"># systemctl status slurmdbd</span>
+● slurmdbd.service - Slurm DBD accounting daemon
+   Loaded: loaded <span class="o">(</span>/usr/lib/systemd/system/slurmdbd.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset: disabled<span class="o">)</span>
+   Active: active <span class="o">(</span>running<span class="o">)</span> since Sun <span class="m">2021</span>-06-27 <span class="m">10</span>:58:27 HKT<span class="p">;</span> 3s ago
+ Main PID: <span class="m">190603</span> <span class="o">(</span>slurmdbd<span class="o">)</span>
+    Tasks: <span class="m">5</span>
+   Memory: <span class="m">1</span>.8M
+   CGroup: /system.slice/slurmdbd.service
+           └─190603 /usr/sbin/slurmdbd -D
+
+Jun <span class="m">27</span> <span class="m">10</span>:58:27 stapcXXX.sta.cuhk.edu.hk systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Started Slurm DBD accounting daemon.
+</code></pre></div>
+<ul>
+<li>set up qos</li>
+</ul>
+<p>need to add account and user, otherwise the users are outside the control,</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr add account project <span class="nv">Description</span><span class="o">=</span><span class="s2">&quot;Projects&quot;</span> <span class="nv">Organization</span><span class="o">=</span>project
+<span class="gp"># </span><span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">01</span>..14<span class="o">}</span><span class="p">;</span> <span class="k">do</span> sacctmgr -i create user <span class="nv">name</span><span class="o">=</span>project<span class="nv">$i</span> <span class="nv">DefaultAccount</span><span class="o">=</span>project <span class="p">;</span> <span class="k">done</span>
+</code></pre></div>
+<p>then set the maximum submit jobs per user,</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr modify qos normal <span class="nb">set</span> <span class="nv">maxsubmitjobsperuser</span><span class="o">=</span><span class="m">90</span>
+</code></pre></div>
+<p>together with the number of cores,</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr modify qos normal <span class="nb">set</span> <span class="nv">GrpTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">90</span>
+</code></pre></div>
+<p>but then I found that the submitted jobs are out of control. Then I realized that the account and user associations only take effect after enabling</p>
+<div class="highlight"><pre><span></span><code><span class="go">AccountingStorageEnforce=limits</span>
+</code></pre></div>
+<p>according to <a href="https://wiki.fysik.dtu.dk/niflheim/Slurm_accounting">Slurm accounting &ndash; Resource Limits</a>. Then for sure, restart <code>slurmd</code>, <code>slurmctld</code>, and <code>slurmdbd</code>, then the policy starts to work.</p>
+<p>Then found that after changing the policy, no need to restart any service.</p>
+<h2 id="cgroup">CGroup<a class="headerlink" href="#cgroup" title="Permanent link">&para;</a></h2>
+<p>Inspired by <a href="https://rolk.github.io/2015/04/20/slurm-cluster">Setting up a single server SLURM cluster &ndash; Setting up Control Groups</a>, I tried to add CGroup to control the process directly run from ssh session.</p>
+<ul>
+<li>install cgroup</li>
+</ul>
+<p>following <a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cgroups&amp;f=1">Cgroups : Install</a></p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum -y install libcgroup libcgroup-tools
+<span class="gp"># </span>systemctl <span class="nb">enable</span> cgconfig
+<span class="gp"># </span>systemctl start cgconfig
+<span class="gp"># </span>systemctl status cgconfig
+<span class="go">● cgconfig.service - Control Group configuration service</span>
+<span class="go">   Loaded: loaded (/usr/lib/systemd/system/cgconfig.service; enabled; vendor preset: disabled)</span>
+<span class="go">   Active: active (exited) since Sun 2021-06-27 11:10:27 HKT; 7s ago</span>
+<span class="go">  Process: 191469 ExecStart=/usr/sbin/cgconfigparser -l /etc/cgconfig.conf -s 1664 (code=exited, status=0/SUCCESS)</span>
+<span class="go"> Main PID: 191469 (code=exited, status=0/SUCCESS)</span>
+
+<span class="go">Jun 27 11:10:27 stapcXXX.sta.cuhk.edu.hk systemd[1]: Starting Control Group configuration service...</span>
+<span class="go">Jun 27 11:10:27 stapcXXX.sta.cuhk.edu.hk systemd[1]: Started Control Group configuration service.</span>
+</code></pre></div>
+<p>here is an interesting finding. Different from other services, <code>active (running)</code>, it shows <code>active (exited)</code>, more details refer to the discussion <a href="https://askubuntu.com/questions/1304142/systemctl-status-active-exited-vs-running">systemctl status active: exited vs running</a>.</p>
+<p>then write <code>cgconfig.conf</code> and <code>cgrules.conf</code>, and then tried to restart <code>cgconfig</code>, but it seems no idea to judge if the setting takes effects.</p>
+<p>Then I got to know that there is another <a href="https://docs.oracle.com/en/operating-systems/oracle-linux/6/adminsg/ol_cpuset_cgroups.html"><code>cpuset</code> parameter</a> which can specify a list of CPU cores to which a group has access. Then I tried to add such parameter to <code>cgconfig.conf</code>,</p>
+<div class="highlight"><pre><span></span><code>cpuset <span class="o">{</span>
+    cpuset.cpus <span class="o">=</span> <span class="s2">&quot;1&quot;</span><span class="p">;</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>and also update the corresponding <code>cgrules.conf</code>. Then I open an R session to run an expensive operation,</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100000000</span><span class="p">),</span><span class="n">nrow</span><span class="o">=</span><span class="m">10000</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">replicate</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="n">a</span><span class="o">%*%</span><span class="n">a</span><span class="p">)</span>
+</code></pre></div>
+<p>and open another session with the same user. The target is to check if these two sessions are limited to a single core. However, each of them reach around 100% CPU.</p>
+<p>Tried to install PAM-cgroup as also mentioned in <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-cpu_and_memory-use_case#proc-cpu_and_mem">4.3. PER-GROUP DIVISION OF CPU AND MEMORY RESOURCES &ndash; Procedure 4.4. Using a PAM module to move processes to cgroups</a></p>
+<p>but still not work.</p>
+<p>To validate if cpu and memory work, also run the same R script in the root session. According to <code>cgrules.conf</code>, the root session should be faster since it does not have additional restriction, but no differences.</p>
+<p>In the checking procedure, I learn to</p>
+<ul>
+<li>find the cgroup of a process, and no <code>interactive</code> shows, <a href="https://serverfault.com/questions/560206/how-to-find-out-cgroup-of-a-particular-process/899248">How to find out cgroup of a particular process?</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl status <span class="m">3378</span> <span class="p">|</span> grep CGroup
+<span class="gp"># </span>cat /proc/3378/cgroup 
+</code></pre></div>
+<ul>
+<li>list cgroup in top: press <code>f</code>, then select <code>cgroup</code></li>
+<li>pure list cgroup as in top: <code>systemd-cgtop</code></li>
+<li>check parameter, <code>cgget -r cpuset.cpus</code> interactive: <a href="https://docs.oracle.com/en/operating-systems/oracle-linux/6/admin/ol_getset_param_cgroups.html">10.8 Displaying and Setting Subsystem Parameters</a></li>
+</ul>
+<p>Maybe I need to change another way, and I saw <code>set-property</code> in <a href="https://zhuanlan.zhihu.com/p/74299886">深入理解 Linux Cgroup 系列（一）：基本概念</a></p>
+<p>Then I tried to set the CPUQuota for user via (refer to <a href="https://serverfault.com/questions/874274/systemd-per-user-cpu-and-or-memory-limits">systemd, per-user cpu and/or memory limits</a>)</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>mkdir -p /etc/systemd/system/user-.slice.d
+</code></pre></div>
+<p>then write</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>Slice<span class="o">]</span>
+<span class="nv">CPUQuota</span><span class="o">=</span><span class="m">20</span>%
+</code></pre></div>
+<p>into <code>cpu.conf</code>, which means that the executed processes never get more than 20% CPU time on a single CPU (refer to <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/resource_management_guide/sec-modifying_control_groups">2.3. MODIFYING CONTROL GROUPS</a>), then </p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl daemon-reload
+</code></pre></div>
+<p>Repeat the above R script, the CPU percentage would be limited to 20%, not only regular user, but also root, since root is <code>user-0</code>, such as </p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>ls /sys/fs/cgroup/systemd/user.slice
+<span class="go">cgroup.clone_children  cgroup.procs  notify_on_release  tasks  user-0.slice  user-1002.slice</span>
+</code></pre></div>
+<p>but it would not affected jobs submitted via slurm, which has been validated. So this way would be quite good.</p>
                 
               
               
@@ -1960,7 +2172,7 @@ apt-get install nginx
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../16to18/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 16to18" rel="prev">
+        <a href="../chpc/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CHPC-Cluster" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1969,20 +2181,20 @@ apt-get install nginx
               <span class="md-footer__direction">
                 Previous
               </span>
-              16to18
+              CHPC-Cluster
             </div>
           </div>
         </a>
       
       
         
-        <a href="../chpc/" class="md-footer__link md-footer__link--next" aria-label="Next: CHPC-Cluster" rel="next">
+        <a href="../asAserver/" class="md-footer__link md-footer__link--next" aria-label="Next: G40" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              CHPC-Cluster
+              G40
             </div>
           </div>
           <div class="md-footer__button md-icon">
