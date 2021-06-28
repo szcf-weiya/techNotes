@@ -628,6 +628,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#print-bytes" class="md-nav__link">
+    print bytes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2102,6 +2109,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#print-bytes" class="md-nav__link">
+    print bytes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2527,6 +2541,10 @@ $ <span class="nb">printf</span> <span class="s2">&quot;%s\n&quot;</span> <span 
 </code></pre></div>
 <p>and no need to add double quotes.</p>
 <p>refer to <a href="https://stackoverflow.com/questions/3652524/bash-echo-string-that-starts-with">Bash: echo string that starts with “-”</a></p>
+<h3 id="print-bytes">print bytes<a class="headerlink" href="#print-bytes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> -n -e <span class="s1">&#39;\x66\x6f\x6f&#39;</span>
+</code></pre></div>
+<p>do not miss quotes, and <code>-e</code> is also necessary, refer to <a href="https://unix.stackexchange.com/questions/118247/echo-bytes-to-a-file">echo bytes to a file</a></p>
 <h2 id="ffmpeg"><code>ffmpeg</code>： 视频处理<a class="headerlink" href="#ffmpeg" title="Permanent link">&para;</a></h2>
 <h3 id="_3">去除音频<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="https://hefang.link/article/how-remove-voice-with-ffmpeg.html">如何使用ffmpeg去除视频声音？</a></p>

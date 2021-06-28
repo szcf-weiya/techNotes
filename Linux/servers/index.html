@@ -634,6 +634,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#config-file" class="md-nav__link">
+    config file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#run-gui-remotelylocally" class="md-nav__link">
     run GUI remotely/locally
   </a>
@@ -1748,6 +1755,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#config-file" class="md-nav__link">
+    config file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#run-gui-remotelylocally" class="md-nav__link">
     run GUI remotely/locally
   </a>
@@ -1870,6 +1884,14 @@ weiya@127.0.0.1<span class="s1">&#39;s password: </span>
 <div class="highlight"><pre><span></span><code>$ <span class="k">until</span> ./login_lab.sh<span class="p">;</span> <span class="k">do</span> sleep <span class="m">5</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
 <p>refer to <a href="https://unix.stackexchange.com/questions/404792/how-to-run-ssh-command-until-succeeded">How to run ssh command until succeeded?</a></p>
+<h3 id="config-file">config file<a class="headerlink" href="#config-file" title="Permanent link">&para;</a></h3>
+<p>Although it would be convenient to write a simple script <code>login_xxx.sh</code> to avoid to type the account and hostname, it would be annoying when using <code>scp</code>. It is still possible to define custom functions such as <code>scp_to_xxx</code> or <code>scp_from_xxx</code>, but too many functions might be confusing and forget the detailed definitions. </p>
+<p>Maybe we can try to write a config file (refer to <a href="https://mattryall.net/blog/ssh-favourite-hosts">Configuring your favourite hosts in SSH</a>), in which we can define an alias for a hostname, and also specify the username, e.g., after defining</p>
+<div class="highlight"><pre><span></span><code>Host XX
+Hostname REAL.HOSTNAME
+User weiya
+</code></pre></div>
+<p>then I can just type <code>ssh XX</code> to access this server, and <code>scp</code> would also be much simpler, <code>scp file XX:~/</code>. More importantly, we can use tab-complete when entering the path, which cannot be enabled by custom functions <code>scp_to_xx</code>. </p>
 <h3 id="run-gui-remotelylocally">run GUI remotely/locally<a class="headerlink" href="#run-gui-remotelylocally" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>weiya@T460p:~$ ssh weiya@G40
 weiya@G40:~$ <span class="nb">export</span> <span class="nv">DISPLAY</span><span class="o">=</span>:0
