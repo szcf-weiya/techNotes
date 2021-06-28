@@ -1,3 +1,8 @@
+## 2021.06.28
+
+- A **skip (废料桶（装工地废料、垃圾等，由卡车拖走）)** will be placed next to the bicycle **racks (架子)** for disposal of **bulky (庞大的，体积大的)** waste.
+    - bulk: n. 体积，容量，大块；v. 使扩大
+
 ## 2021.06.27
 
 - We need to take away the ability to get **unfettered (无限制的，不受约束的)** access to the machine.
@@ -2859,7 +2864,6 @@ up
 12. hatred
 13. pond
 14. boom, flourish
-15. bulk
 16. bulb
 17. bull, bullet
 18. buoyant, prosperous

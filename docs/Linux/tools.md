@@ -288,6 +288,14 @@ and no need to add double quotes.
 
 refer to [Bash: echo string that starts with “-”](https://stackoverflow.com/questions/3652524/bash-echo-string-that-starts-with)
 
+### print bytes
+
+```bash
+echo -n -e '\x66\x6f\x6f'
+```
+
+do not miss quotes, and `-e` is also necessary, refer to [echo bytes to a file](https://unix.stackexchange.com/questions/118247/echo-bytes-to-a-file)
+
 ## `ffmpeg`： 视频处理
 
 ### 去除音频

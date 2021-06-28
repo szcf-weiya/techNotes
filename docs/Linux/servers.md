@@ -80,6 +80,20 @@ $ until ./login_lab.sh; do sleep 5; done
 
 refer to [How to run ssh command until succeeded?](https://unix.stackexchange.com/questions/404792/how-to-run-ssh-command-until-succeeded)
 
+### config file
+
+Although it would be convenient to write a simple script `login_xxx.sh` to avoid to type the account and hostname, it would be annoying when using `scp`. It is still possible to define custom functions such as `scp_to_xxx` or `scp_from_xxx`, but too many functions might be confusing and forget the detailed definitions. 
+
+Maybe we can try to write a config file (refer to [Configuring your favourite hosts in SSH](https://mattryall.net/blog/ssh-favourite-hosts)), in which we can define an alias for a hostname, and also specify the username, e.g., after defining
+
+```bash
+Host XX
+Hostname REAL.HOSTNAME
+User weiya
+```
+
+then I can just type `ssh XX` to access this server, and `scp` would also be much simpler, `scp file XX:~/`. More importantly, we can use tab-complete when entering the path, which cannot be enabled by custom functions `scp_to_xx`. 
+
 ### run GUI remotely/locally
 
 ```bash
