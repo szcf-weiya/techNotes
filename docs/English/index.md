@@ -1,7 +1,16 @@
+## 2021.06.29
+
+- Incomplete training data set will be a **detriment (损害，伤害)** to the recommendation system performance.
+- **Ontology (本体论)** is the philosophical study of the nature of being, becoming, existence, or reality, as well as the basic categories of being and their relations.
+- Strong people **confront (敢于正视困难或问题的决心和信心)** their fears and emotions.
+    - the newly designed system **confronts (不可避免地、面对面地相遇)** with the following challenges
+- **brittle (易碎的，脆弱的)** material: 脆性材料
+
 ## 2021.06.28
 
 - A **skip (废料桶（装工地废料、垃圾等，由卡车拖走）)** will be placed next to the bicycle **racks (架子)** for disposal of **bulky (庞大的，体积大的)** waste.
     - bulk: n. 体积，容量，大块；v. 使扩大
+    - bulk **commodity (商品，货物)**: 大宗商品
 
 ## 2021.06.27
 
@@ -753,6 +762,7 @@
 
 - drug trafficking: 毒品走私
     - drug trafficker: 毒品贩子
+    - human trafficking: 人口贩卖
 
 ## 2021.01.29
 
@@ -1864,7 +1874,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 10. If a country is a member of international copyright convention, **treaty** or organization such as the World Trade Organization and others like the Berne Convention, the Universal Copyright Convention, the Geneva Convention for the protection of producers of **phonograms**, and the agreement on trade-ralated aspects of intellectual property rights, then Hong Kong's copyright applies and is valid in these countries.
 11. Hong Kong is a common law **jurisdiction (司法权，裁判权)**.
 12. Copyright Ordinance
-13. The goal was to combat copyright **piracy** (c.f. privacy) activities on computer software in the business sector.
+13. The goal was to **combat (与...战斗，反对)** copyright **piracy** (c.f. privacy) activities on computer software in the business sector.
 14. The criminal provisions in Intellectual Property (Miscellaneous Amendments) Ordinance 2001 caused the public concerns that the amendments might hinder the dissemination of information in the education sector and the society.
 15. The copyright law is applicable to where the act in question occurs.
 16. compilation
@@ -2137,7 +2147,9 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. vanilla
 2. haystack
-3. authentic
+3. authentic act: 「法」公证书，公证证书
+    - authentic self: 本真自我
+    - authentic materials: 真实材料
 4. Stratified
 5. antithetical
 6. rule of thumb
