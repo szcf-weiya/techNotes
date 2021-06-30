@@ -46,6 +46,7 @@ alias sacctstat='sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,A
 request_cn() { srun -p stat -q stat -w chpc-cn1$1 --pty bash -i; }
 request_gpu() { srun -p stat -q stat --gres=gpu:1 -w chpc-gpu01$1 --pty bash -i; }
 request_gpu_chpc() { srun -p chpc --gres=gpu:1 -w chpc-gpu$1 --pty bash -i; }
+t() { tmux a -t $1 || tmux new -s $1; }
 ```
 
 ## Submitting Multiple Jobs

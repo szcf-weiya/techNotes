@@ -1,3 +1,8 @@
+## 2021.06.30
+
+- A heatwave in western Canada and the northwestern United States has **shattered (打碎，破掉)** temperature records.
+    - Heatwave **scorches (烧焦，使枯萎)** Pacific Northwest.
+
 ## 2021.06.29
 
 - Incomplete training data set will be a **detriment (损害，伤害)** to the recommendation system performance.

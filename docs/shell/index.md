@@ -87,6 +87,17 @@ done
     {2..8..2}
     ```
 
+!!! warning
+    cannot support variable, such as
+    ```bash
+    $ a=100; for i in {160..250..$a}; do echo $i; done
+    {160..250..100}
+    $ a=100; for i in {160..250..100}; do echo $i; done
+    160
+    ```
+    Instead, we can use `seq`. The reason is that
+    > [In bash, brace expansion happens before variable expansion, so this is not directly possible.](https://stackoverflow.com/a/6191382/)
+
 - construct an array
 
 actually, it can be used to construct an array,
