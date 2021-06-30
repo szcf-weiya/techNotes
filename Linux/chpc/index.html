@@ -1891,6 +1891,7 @@
 request_cn<span class="o">()</span> <span class="o">{</span> srun -p stat -q stat -w chpc-cn1<span class="nv">$1</span> --pty bash -i<span class="p">;</span> <span class="o">}</span>
 request_gpu<span class="o">()</span> <span class="o">{</span> srun -p stat -q stat --gres<span class="o">=</span>gpu:1 -w chpc-gpu01<span class="nv">$1</span> --pty bash -i<span class="p">;</span> <span class="o">}</span>
 request_gpu_chpc<span class="o">()</span> <span class="o">{</span> srun -p chpc --gres<span class="o">=</span>gpu:1 -w chpc-gpu<span class="nv">$1</span> --pty bash -i<span class="p">;</span> <span class="o">}</span>
+t<span class="o">()</span> <span class="o">{</span> tmux a -t <span class="nv">$1</span> <span class="o">||</span> tmux new -s <span class="nv">$1</span><span class="p">;</span> <span class="o">}</span>
 </code></pre></div>
 <h2 id="submitting-multiple-jobs">Submitting Multiple Jobs<a class="headerlink" href="#submitting-multiple-jobs" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.cuhk.edu.hk/itsc/hpc/slurm.html">SLURM</a> and PBS are two different cluster schedulers, and the common equivalent commands are as follows:</p>

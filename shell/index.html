@@ -2513,6 +2513,19 @@ $ sh ./sumbit_job.sh
 <span class="o">{</span><span class="m">2</span>..8..2<span class="o">}</span>
 </code></pre></div></p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>cannot support variable, such as
+<div class="highlight"><pre><span></span><code>$ <span class="nv">a</span><span class="o">=</span><span class="m">100</span><span class="p">;</span> <span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">160</span>..250..<span class="nv">$a</span><span class="o">}</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span>
+<span class="o">{</span><span class="m">160</span>..250..100<span class="o">}</span>
+$ <span class="nv">a</span><span class="o">=</span><span class="m">100</span><span class="p">;</span> <span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">160</span>..250..100<span class="o">}</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span>
+<span class="m">160</span>
+</code></pre></div>
+Instead, we can use <code>seq</code>. The reason is that</p>
+<blockquote>
+<p><a href="https://stackoverflow.com/a/6191382/">In bash, brace expansion happens before variable expansion, so this is not directly possible.</a></p>
+</blockquote>
+</div>
 <ul>
 <li>construct an array</li>
 </ul>
