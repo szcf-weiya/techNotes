@@ -1,3 +1,17 @@
+## 2021.07.03
+
+- The cell's **progeny (子孙)** **trail (路径)** to the left in a cluster resembling a bunch of grapes.
+
+## 2021.07.02
+
+- Ancient beetle species found in fossil **faeces (粪便)**. 
+- An experimental vaccine containing live **malaria parasites (疟原虫)** protected nearly all recipients from infection in a small clinical trail.
+    - parasite: 寄生虫
+
+## 2021.07.01
+
+- The new intern is **cozying up to (奉承)** his supervisor.
+
 ## 2021.06.30
 
 - A heatwave in western Canada and the northwestern United States has **shattered (打碎，破掉)** temperature records.
