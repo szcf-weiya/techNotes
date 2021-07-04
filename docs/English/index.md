@@ -1,3 +1,7 @@
+## 2021.07.04
+
+- There is something incredibly seductive about the idea of using machine intelligence to generate code, but the specific of the problem have made it really impractical for machine learning techniques.
+
 ## 2021.07.03
 
 - The cell's **progeny (子孙)** **trail (路径)** to the left in a cluster resembling a bunch of grapes.
