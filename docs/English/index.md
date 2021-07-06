@@ -1,3 +1,12 @@
+## 2021.07.06
+
+- the **recuperative (恢复中的，具恢复力的)** powers of fresh air
+- torso: the body excluding the head and neck and **limbs (四肢)**
+
+## 2021.07.05
+
+- China has officially **eradicated (根除，消灭)** malaria.
+
 ## 2021.07.04
 
 - There is something incredibly seductive about the idea of using machine intelligence to generate code, but the specific of the problem have made it really impractical for machine learning techniques.
