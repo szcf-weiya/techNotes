@@ -504,10 +504,20 @@ then set the maximum submit jobs per user,
 # sacctmgr modify qos normal set maxsubmitjobsperuser=90
 ```
 
+remove the restriction via setting a larger number (how to directly remove the constraint)
+
+```console
+# sacctmgr modify qos normal set maxsubmitjobsperuser=10000
+```
+
 together with the number of cores,
 
 ```console
 # sacctmgr modify qos normal set GrpTRES=cpu=90
+```
+
+```console
+sacctmgr modify qos normal set MaxTRESPerUser=cpu=80
 ```
 
 but then I found that the submitted jobs are out of control. Then I realized that the account and user associations only take effect after enabling

@@ -1,3 +1,8 @@
+## 2021.07.07
+
+- Processors advancing at a faster pace, leaving memory **stagnant (停滞的，迟钝的)**.
+- pulmonary embolism: 肺栓塞；肺血管阻塞症
+
 ## 2021.07.06
 
 - the **recuperative (恢复中的，具恢复力的)** powers of fresh air
@@ -895,6 +900,7 @@
 - they are written in **newspeak (一种指东说西、模棱两可的官腔)** with enough **acronyms (首字母缩略词)** to **incapacitate (使无能力、使不适合)** a brand new typewriter.
 - The lecturer **droned (talk in a monotonous (无变化的，单调乏味的) voice)** on for hours.
     - drone: n. 无人机，雄峰
+    - drone cinematography: 无人机摄影
 
 ## 2021.01.07
 
@@ -1984,6 +1990,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2019.12.01
 
 1. **malignant (【疾病】恶性的；致命的)** tumor
+    - **benign (良性的)** tumor:
 2. Glioblastomas: 胶质母细胞瘤
 3. chemotherapy： 化学疗法
 4. asthma: 哮喘
