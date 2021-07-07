@@ -2079,8 +2079,13 @@ Jun <span class="m">27</span> <span class="m">10</span>:58:27 stapcXXX.sta.cuhk.
 <p>then set the maximum submit jobs per user,</p>
 <div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr modify qos normal <span class="nb">set</span> <span class="nv">maxsubmitjobsperuser</span><span class="o">=</span><span class="m">90</span>
 </code></pre></div>
+<p>remove the restriction via setting a larger number (how to directly remove the constraint)</p>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr modify qos normal <span class="nb">set</span> <span class="nv">maxsubmitjobsperuser</span><span class="o">=</span><span class="m">10000</span>
+</code></pre></div>
 <p>together with the number of cores,</p>
 <div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr modify qos normal <span class="nb">set</span> <span class="nv">GrpTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">90</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">sacctmgr modify qos normal set MaxTRESPerUser=cpu=80</span>
 </code></pre></div>
 <p>but then I found that the submitted jobs are out of control. Then I realized that the account and user associations only take effect after enabling</p>
 <div class="highlight"><pre><span></span><code><span class="go">AccountingStorageEnforce=limits</span>
