@@ -527,6 +527,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../Linux/ubuntu/" class="md-nav__link">
+        Ubuntu
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Linux/16to18/" class="md-nav__link">
         16to18
       </a>
@@ -906,6 +918,13 @@
   
     <nav class="md-nav" aria-label="CLI Options">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sysargv" class="md-nav__link">
+    sys.argv
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#argparse" class="md-nav__link">
@@ -2403,6 +2422,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sysargv" class="md-nav__link">
+    sys.argv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#argparse" class="md-nav__link">
     argparse
   </a>
@@ -3122,6 +3148,36 @@
 </li>
 </ol>
 <h2 id="cli-options">CLI Options<a class="headerlink" href="#cli-options" title="Permanent link">&para;</a></h2>
+<h3 id="sysargv"><code>sys.argv</code><a class="headerlink" href="#sysargv" title="Permanent link">&para;</a></h3>
+<p>The arguments are stored in the array <code>sys.argv</code>, where the first element is the script name itself.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+</code></pre></div>
+<p>With quote, the character <code>*</code> would expanding before passing into the argument.</p>
+<div class="highlight"><pre><span></span><code>$ python star_arg.py ../*.png
+<span class="o">[</span><span class="s1">&#39;star_arg.py&#39;</span>, <span class="s1">&#39;../error_jupyter_1.png&#39;</span>, <span class="s1">&#39;../error_jupyter.png&#39;</span>, <span class="s1">&#39;../err_theano.png&#39;</span>, <span class="s1">&#39;../ipython.png&#39;</span>, <span class="s1">&#39;../spyder-qtconsole.png&#39;</span><span class="o">]</span>
+$ python star_arg.py <span class="s2">&quot;../*.png&quot;</span>
+<span class="o">[</span><span class="s1">&#39;star_arg.py&#39;</span>, <span class="s1">&#39;../*.png&#39;</span><span class="o">]</span>
+</code></pre></div>
+<p>If we want to wrap it with a bash function,</p>
+<div class="highlight"><pre><span></span><code>$ star_arg<span class="o">()</span> <span class="o">{</span> python star_arg.py <span class="nv">$1</span> <span class="p">;</span> <span class="o">}</span>
+</code></pre></div>
+<p>The quote for the pattern containing <code>*</code> is also necessary, otherwise it first expands and just passes the first matched filename due to <code>$1</code>,</p>
+<div class="highlight"><pre><span></span><code>$ star_arg ../*.png
+<span class="o">[</span><span class="s1">&#39;star_arg.py&#39;</span>, <span class="s1">&#39;../error_jupyter_1.png&#39;</span><span class="o">]</span>
+$ star_arg <span class="s2">&quot;../*.png&quot;</span>
+<span class="o">[</span><span class="s1">&#39;star_arg.py&#39;</span>, <span class="s1">&#39;../error_jupyter_1.png&#39;</span>, <span class="s1">&#39;../error_jupyter.png&#39;</span>, <span class="s1">&#39;../err_theano.png&#39;</span>, <span class="s1">&#39;../ipython.png&#39;</span>, <span class="s1">&#39;../spyder-qtconsole.png&#39;</span><span class="o">]</span>
+</code></pre></div>
+<p>But note that the above bash function does not wrap <code>$1</code>. With quote, the original string can be passed into python script</p>
+<div class="highlight"><pre><span></span><code>$ star_arg2<span class="o">()</span> <span class="o">{</span> python star_arg.py <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="p">;</span> <span class="o">}</span>
+$ star_arg2 <span class="s2">&quot;../*.png&quot;</span>
+<span class="o">[</span><span class="s1">&#39;star_arg.py&#39;</span>, <span class="s1">&#39;../*.png&#39;</span><span class="o">]</span>
+$ star_arg2 ../*.png
+<span class="o">[</span><span class="s1">&#39;star_arg.py&#39;</span>, <span class="s1">&#39;../error_jupyter_1.png&#39;</span><span class="o">]</span>
+</code></pre></div>
 <h3 id="argparse"><code>argparse</code><a class="headerlink" href="#argparse" title="Permanent link">&para;</a></h3>
 <p>Documentation: <a href="https://docs.python.org/3/library/argparse.html">argparse — Parser for command-line options, arguments and sub-commands</a></p>
 <p>An example: <a href="https://github.com/fxsjy/jieba/blob/master/jieba/__main__.py">jieba/<strong>main</strong>.py</a></p>
