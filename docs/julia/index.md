@@ -1247,6 +1247,20 @@ For example, convert "1" to "001",
     '001'
     ```
 
+### check if substring
+
+=== "Julia"
+    ```julia
+    julia> occursin("tech", "techNotes")
+    true
+    ```
+
+=== "Python"
+    ```python
+    >>> "tech" in "techNotes"
+    True
+    ```
+
 ## run command line
 
 For example, to combine different figures,

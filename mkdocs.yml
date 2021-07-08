@@ -8,6 +8,7 @@ nav:
       - Command-line Tools: Linux/tools.md
       - Shell: shell/index.md
     - Laptop:
+      - Ubuntu: Linux/ubuntu.md
       - 16to18: Linux/16to18.md
     - Servers: 
       - Common: Linux/servers.md

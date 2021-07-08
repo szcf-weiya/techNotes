@@ -1,3 +1,7 @@
+## 2021.07.08
+
+- A **chevron (V 形图案)** pattern etched into the bone of a giant deer is opening our eyes to the advanced behavioural complexity of **Neanderthals (尼安德特人, 穴居人)**, writes anthropologist Silvia Bello.
+
 ## 2021.07.07
 
 - Processors advancing at a faster pace, leaving memory **stagnant (停滞的，迟钝的)**.
@@ -2692,7 +2696,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 39. A representation of Cupid as a naked, cherubic boy usually is used as a symbol of love.
 40. The spy obtained the documents by subterfuge.
 41. The actor must have had some esoteric motive for leaving stage.
-42. In just a few pages the writer etched an unforgettable portrait of one of the more remarkable First Ladies.
+42. In just a few pages the writer **etched (蚀刻，画出...的轮廓)** an unforgettable portrait of one of the more remarkable First Ladies.
 43. The minister eschews involvement in local politics, since he doesn't want to diminish his moral authority in the community.
 44. The exhibit was a hodgepodge of mediocre art, bad art, and really bad art.
 45. His failure was brought on by his hubris.

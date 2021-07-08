@@ -136,6 +136,49 @@ Then I found [more detailed explanation](https://stackoverflow.com/a/43627975/) 
 
 ## CLI Options
 
+### `sys.argv`
+
+The arguments are stored in the array `sys.argv`, where the first element is the script name itself.
+
+```python
+--8<-- "docs/python/ex/star_arg.py"
+```
+
+With quote, the character `*` would expanding before passing into the argument.
+
+```bash
+$ python star_arg.py ../*.png
+['star_arg.py', '../error_jupyter_1.png', '../error_jupyter.png', '../err_theano.png', '../ipython.png', '../spyder-qtconsole.png']
+$ python star_arg.py "../*.png"
+['star_arg.py', '../*.png']
+```
+
+If we want to wrap it with a bash function,
+
+```bash
+$ star_arg() { python star_arg.py $1 ; }
+```
+
+The quote for the pattern containing `*` is also necessary, otherwise it first expands and just passes the first matched filename due to `$1`,
+
+```bash
+$ star_arg ../*.png
+['star_arg.py', '../error_jupyter_1.png']
+$ star_arg "../*.png"
+['star_arg.py', '../error_jupyter_1.png', '../error_jupyter.png', '../err_theano.png', '../ipython.png', '../spyder-qtconsole.png']
+```
+
+But note that the above bash function does not wrap `$1`. With quote, the original string can be passed into python script
+
+```bash
+$ star_arg2() { python star_arg.py "$1" ; }
+$ star_arg2 "../*.png"
+['star_arg.py', '../*.png']
+$ star_arg2 ../*.png
+['star_arg.py', '../error_jupyter_1.png']
+```
+
+
 ### `argparse`
 
 Documentation: [argparse — Parser for command-line options, arguments and sub-commands](https://docs.python.org/3/library/argparse.html)
