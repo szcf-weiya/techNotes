@@ -1,6 +1,11 @@
+## 2021.07.09
+
+- New evidence suggests that the coronavirus's **assault (攻击)** on this organ could be **multipronged (多方面的)**.
+
 ## 2021.07.08
 
 - A **chevron (V 形图案)** pattern etched into the bone of a giant deer is opening our eyes to the advanced behavioural complexity of **Neanderthals (尼安德特人, 穴居人)**, writes anthropologist Silvia Bello.
+- A heatmap of log-scale count data from human **pancreas (胰腺)** studies.
 
 ## 2021.07.07
 
@@ -2054,6 +2059,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2019.10.12
 
 1. what are some funny, nice, intelligent and **mind-boggling (难以理解的，难以置信的)** tricky math questions to ask?
+    - today we **boggle at (吃惊)** the month's most **spectacular (壮观的，惊人的)** science images.
 2. instrument: verb. such as, "they instrument military aid"
 3. maddening
 4. come across

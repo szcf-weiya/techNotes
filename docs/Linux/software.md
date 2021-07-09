@@ -411,6 +411,20 @@ ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
 
 refer to [convert KAZAM video file to a file, playable in windows media player](https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player)
 
+## nautilus
+
+It is a file manager for GNOME.
+
+### no "new document" in right click menu
+
+Surprisingly, no "new document" in the right-click menu on Ubuntu 18.04, then I found the [post](https://itsfoss.com/add-new-document-option/) which also mentioned this inconvenience, and it gives a wonderful solution. Use `Templates`!! Never use this folder before!
+
+Just create an empty file, say `README.md`, then there will be a `New Document` in the right-click menu.
+
+Also check the [official documentation](https://help.ubuntu.com/stable/ubuntu-help/files-templates.html.en) on `Templates`
+
+> A file template can be a document of any type with the formatting or content you would like to reuse. 
+
 ## Octave
 
 参考[Octave for Debian systems](http://wiki.octave.org/Octave_for_Debian_systems)
@@ -648,6 +662,40 @@ sudo dpkg -i
 ```
 sudo apt-get remove rstudio
 ```
+
+## Synergy
+
+### lock key from host
+
+With Host@t460p(Ubuntu 18.04) and Client@STAPC(Win 10), the hotkey `Win + L` for locking the screen does not work on the client, but the hotkey would work if I use its keyboard. 
+
+An ideal solution would be simultaneously to lock the key via the same hotkey, as someone discussed in [Synergy: Is there a way to push Win+L to all screens, not just the server?](https://superuser.com/questions/267058/synergy-is-there-a-way-to-push-winl-to-all-screens-not-just-the-server)
+
+First of all, I become to use the custom behavior by defining some keystrokes via
+
+`Configure Server` -> `Hotkeys` -> `New Hotkey` -> `New its associated Actions`
+
+A complete instruction can be found in [Add a keyboard shortcut to change to different screens](https://symless.com/help-articles/add-a-hotkey-or-keyboard-shortcut-to-change-to-different-screens)
+
+Since `Win+L` fails on the client, try to define a new shortcut. Following the 4th method in [How to Quickly Lock Screen In Windows 10](https://www.techbout.com/lock-screen-in-windows-10-45432/),
+
+`Right Click` -> `New Shortcut` -> `C:\Windows\System32\rundll32.exe user32.dll,LockWorkStation`
+
+Then we can lock the screen after clicking this shortcut, but currently no associated hotkey. Right click to edit the properties, there is a shortcut key, which by default assumes the key starts with `Ctrl + Alt`, so just press the remaining key, say `L`. However, `Ctrl + Alt + L` does not work. 
+
+Instead, `Ctrl + Alt + 2` works.
+
+Then back to the host configuration. Bind the follow two keys,
+
+```bash
+keystroke(Control+Alt+l) = keystroke(Alt+Control+2,stapc220)
+```
+
+then I can lock the screen of client via `Ctrl+Alt+l`. 
+
+Since the above binding can specify the machine, I am thinking it might work if I bind `Ctrl+Alt+l` to `Meta+l` on the host. However, it failed, and it causes the screen of client cannot be locked.
+
+Anyway, the current solution seems already convinent.
 
 ## TeXLive
 

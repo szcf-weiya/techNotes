@@ -817,6 +817,15 @@ print(x_str)
 
 refer to [How to print numpy objects without line breaks](https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks)
 
+### merge multiple slices
+
+```python
+x = np.empty((15, 2))
+x[np.r_[0:5, 10:15],:]
+```
+
+refer to [Numpy: An efficient way to merge multiple slices](https://stackoverflow.com/questions/46640821/numpy-an-efficient-way-to-merge-multiple-slices)
+
 ### `/=`
 
 According to the builtin manual, `help('/=')`,
