@@ -778,6 +778,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#nautilus" class="md-nav__link">
+    nautilus
+  </a>
+  
+    <nav class="md-nav" aria-label="nautilus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-new-document-in-right-click-menu" class="md-nav__link">
+    no "new document" in right click menu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#octave" class="md-nav__link">
     Octave
   </a>
@@ -884,6 +904,26 @@
           <li class="md-nav__item">
   <a href="#rstudio_1" class="md-nav__link">
     更新rstudio 后闪退
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synergy" class="md-nav__link">
+    Synergy
+  </a>
+  
+    <nav class="md-nav" aria-label="Synergy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lock-key-from-host" class="md-nav__link">
+    lock key from host
   </a>
   
 </li>
@@ -1178,18 +1218,6 @@
           Laptop
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ubuntu/" class="md-nav__link">
-        Ubuntu
-      </a>
-    </li>
-  
-
           
             
   
@@ -2547,6 +2575,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#nautilus" class="md-nav__link">
+    nautilus
+  </a>
+  
+    <nav class="md-nav" aria-label="nautilus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-new-document-in-right-click-menu" class="md-nav__link">
+    no "new document" in right click menu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#octave" class="md-nav__link">
     Octave
   </a>
@@ -2653,6 +2701,26 @@
           <li class="md-nav__item">
   <a href="#rstudio_1" class="md-nav__link">
     更新rstudio 后闪退
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synergy" class="md-nav__link">
+    Synergy
+  </a>
+  
+    <nav class="md-nav" aria-label="Synergy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lock-key-from-host" class="md-nav__link">
+    lock key from host
   </a>
   
 </li>
@@ -3162,6 +3230,15 @@ ubuntu用搜狗输入法，会出各种问题，有其实和linux版微信一起
 <div class="highlight"><pre><span></span><code>ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
 </code></pre></div>
 <p>refer to <a href="https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player">convert KAZAM video file to a file, playable in windows media player</a></p>
+<h2 id="nautilus">nautilus<a class="headerlink" href="#nautilus" title="Permanent link">&para;</a></h2>
+<p>It is a file manager for GNOME.</p>
+<h3 id="no-new-document-in-right-click-menu">no &ldquo;new document&rdquo; in right click menu<a class="headerlink" href="#no-new-document-in-right-click-menu" title="Permanent link">&para;</a></h3>
+<p>Surprisingly, no &ldquo;new document&rdquo; in the right-click menu on Ubuntu 18.04, then I found the <a href="https://itsfoss.com/add-new-document-option/">post</a> which also mentioned this inconvenience, and it gives a wonderful solution. Use <code>Templates</code>!! Never use this folder before!</p>
+<p>Just create an empty file, say <code>README.md</code>, then there will be a <code>New Document</code> in the right-click menu.</p>
+<p>Also check the <a href="https://help.ubuntu.com/stable/ubuntu-help/files-templates.html.en">official documentation</a> on <code>Templates</code></p>
+<blockquote>
+<p>A file template can be a document of any type with the formatting or content you would like to reuse. </p>
+</blockquote>
 <h2 id="octave">Octave<a class="headerlink" href="#octave" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://wiki.octave.org/Octave_for_Debian_systems">Octave for Debian systems</a></p>
 <p>另外帮助文档见<a href="https://www.gnu.org/software/octave/doc/interpreter/">GNU Octave</a></p>
@@ -3322,6 +3399,23 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 <p>另外，如果不行，删除后再装
 <div class="highlight"><pre><span></span><code>sudo apt-get remove rstudio
 </code></pre></div></p>
+<h2 id="synergy">Synergy<a class="headerlink" href="#synergy" title="Permanent link">&para;</a></h2>
+<h3 id="lock-key-from-host">lock key from host<a class="headerlink" href="#lock-key-from-host" title="Permanent link">&para;</a></h3>
+<p>With Host@t460p(Ubuntu 18.04) and Client@STAPC(Win 10), the hotkey <code>Win + L</code> for locking the screen does not work on the client, but the hotkey would work if I use its keyboard. </p>
+<p>An ideal solution would be simultaneously to lock the key via the same hotkey, as someone discussed in <a href="https://superuser.com/questions/267058/synergy-is-there-a-way-to-push-winl-to-all-screens-not-just-the-server">Synergy: Is there a way to push Win+L to all screens, not just the server?</a></p>
+<p>First of all, I become to use the custom behavior by defining some keystrokes via</p>
+<p><code>Configure Server</code> -&gt; <code>Hotkeys</code> -&gt; <code>New Hotkey</code> -&gt; <code>New its associated Actions</code></p>
+<p>A complete instruction can be found in <a href="https://symless.com/help-articles/add-a-hotkey-or-keyboard-shortcut-to-change-to-different-screens">Add a keyboard shortcut to change to different screens</a></p>
+<p>Since <code>Win+L</code> fails on the client, try to define a new shortcut. Following the 4th method in <a href="https://www.techbout.com/lock-screen-in-windows-10-45432/">How to Quickly Lock Screen In Windows 10</a>,</p>
+<p><code>Right Click</code> -&gt; <code>New Shortcut</code> -&gt; <code>C:\Windows\System32\rundll32.exe user32.dll,LockWorkStation</code></p>
+<p>Then we can lock the screen after clicking this shortcut, but currently no associated hotkey. Right click to edit the properties, there is a shortcut key, which by default assumes the key starts with <code>Ctrl + Alt</code>, so just press the remaining key, say <code>L</code>. However, <code>Ctrl + Alt + L</code> does not work. </p>
+<p>Instead, <code>Ctrl + Alt + 2</code> works.</p>
+<p>Then back to the host configuration. Bind the follow two keys,</p>
+<div class="highlight"><pre><span></span><code>keystroke<span class="o">(</span>Control+Alt+l<span class="o">)</span> <span class="o">=</span> keystroke<span class="o">(</span>Alt+Control+2,stapc220<span class="o">)</span>
+</code></pre></div>
+<p>then I can lock the screen of client via <code>Ctrl+Alt+l</code>. </p>
+<p>Since the above binding can specify the machine, I am thinking it might work if I bind <code>Ctrl+Alt+l</code> to <code>Meta+l</code> on the host. However, it failed, and it causes the screen of client cannot be locked.</p>
+<p>Anyway, the current solution seems already convinent.</p>
 <h2 id="texlive">TeXLive<a class="headerlink" href="#texlive" title="Permanent link">&para;</a></h2>
 <h3 id="install-texlive-2020">Install TeXLive 2020<a class="headerlink" href="#install-texlive-2020" title="Permanent link">&para;</a></h3>
 <p>The texlive2017 for Ubuntu cannot work for me, it reports</p>

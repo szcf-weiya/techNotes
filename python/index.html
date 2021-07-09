@@ -527,18 +527,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/ubuntu/" class="md-nav__link">
-        Ubuntu
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Linux/16to18/" class="md-nav__link">
         16to18
       </a>
@@ -1306,6 +1294,13 @@
           <li class="md-nav__item">
   <a href="#print-numpy-objects-without-line-breaks" class="md-nav__link">
     print numpy objects without line breaks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-multiple-slices" class="md-nav__link">
+    merge multiple slices
   </a>
   
 </li>
@@ -2813,6 +2808,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#merge-multiple-slices" class="md-nav__link">
+    merge multiple slices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     /=
   </a>
@@ -3654,6 +3656,11 @@ Available kernels:
 <span class="nb">print</span><span class="p">(</span><span class="n">x_str</span><span class="p">)</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks">How to print numpy objects without line breaks</a></p>
+<h3 id="merge-multiple-slices">merge multiple slices<a class="headerlink" href="#merge-multiple-slices" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span><span class="mi">15</span><span class="p">],:]</span>
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/46640821/numpy-an-efficient-way-to-merge-multiple-slices">Numpy: An efficient way to merge multiple slices</a></p>
 <h3 id="_1"><code>/=</code><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>According to the builtin manual, <code>help('/=')</code>,</p>
 <blockquote>
