@@ -624,3 +624,62 @@ cgroup.clone_children  cgroup.procs  notify_on_release  tasks  user-0.slice  use
 but it would not affected jobs submitted via slurm, which has been validated. So this way would be quite good.
 
 
+## SelectTypeParameters
+
+The default setting is 
+
+```bash
+SelectType=select/cons_tres
+SelectTypeParameters=CR_Core
+```
+
+the configuration of computing node is 
+
+```bash
+NodeName=stapc051 CPUs=96 Sockets=2 CoresPerSocket=24 ThreadsPerCore=2 State=UNKNOWN
+```
+
+With this setting, each job would automatically count 2 virtually CPUs, although we only request one CPU.
+
+After changing `CR_Core` to `CR_CPU`, each job would count 1 virtually CPU.
+
+However, the number of running jobs is still only 48, while the limits are `GrpTRES=cpu=90` and `MaxTRESPerUser=cpu=90`. 
+
+My first guess is the scheduling system does not update on time, since if I count the completed jobs in `sacct -a -X`, the total number of cores coincidently equals to 90, then I tried to set a larger limit but not work.
+
+Ocassionally, I found how to unset the limit, use `-1`, such as [Resource Limits](https://slurm.schedmd.com/resource_limits.html)
+
+```bash
+sacctmgr modify user bob set GrpTRES=cpu=-1,mem=-1,gres/gpu=-1
+```
+
+Notice that 48 is a special number, `96 / 2 = 48`, so my second guess is that each running job is still occupying a core, even though it indeed only counts a virtual CPU.
+
+Check the potential related configurations,
+
+- TaskPlugin: change the default `task/none` to `task/affinity`, since there are some related materials, [Support for Multi-core/Multi-thread Architectures](https://slurm.schedmd.com/mc_support.html), mentioned it. But not work.
+- `--hint=nomultithread`: this is not a system configuration, but it can also cause only 48 jobs are running, then I have a better idea on the allocation on multi-thread machine, and here is an official example, [EXAMPLE 9: CONSUMABLE RESOURCES ON MULTITHREADED NODE, ALLOCATING ONLY ONE THREAD PER CORE](https://slurm.schedmd.com/cpu_management.html), and some examples in the mail list, [Bug 4010 - Exploring Hyper-Threading CPU nodes](https://bugs.schedmd.com/show_bug.cgi?id=4010)
+
+Recheck the explanation of `CR_CPU`, here is one more sentence,
+
+>  The node's Boards, Sockets, CoresPerSocket and ThreadsPerCore may optionally be configured and result in job allocations which have improved locality; however doing so will prevent more than one job from being allocated on each core.
+
+I remembered the specification `Sockets=2 CoresPerSocket=24 ThreadsPerCore=2` is required under the default `CR_Core`, otherwise it would throw errors. But according to this warning, it would prevent twos job from being allocated on one core. Then I tried to remove this specification, and then the number of running jobs is not only 48!
+
+!!! tip
+    get pid of slurm job
+    ```console
+    # scontrol listpids | grep 1261
+    ```
+    then check the allow cpu list as in [Bug 4010 - Exploring Hyper-Threading CPU nodes](https://bugs.schedmd.com/show_bug.cgi?id=4010),
+    before removing the specification, it shows
+    ```console
+    # cat /proc/2636286/status | grep -i cpus_allowed_list
+    Cpus_allowed_list:	0-95
+    ```
+    but after working normally, 
+    ```console
+    # cat /proc/2636286/status | grep -i cpus_allowed_list
+    Cpus_allowed_list:	43
+    ```
+    so it can be an indicator to check whether the job is allocated normally.

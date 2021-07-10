@@ -1,3 +1,7 @@
+## 2021.07.10
+
+- The scientists transplanted **uteruses (子宫)** into **castrated (阉割的)** male rats and **sewed (缝合，缝上)** the animals to pregnant female rats. 
+
 ## 2021.07.09
 
 - New evidence suggests that the coronavirus's **assault (攻击)** on this organ could be **multipronged (多方面的)**.
@@ -1504,9 +1508,10 @@
 - let's start with the **leadoff** to Pickett's article
 - academic **bureaucrats** and game-players taking a technical dispute
 - attacks and name-calling against dissenters
-- **retreat** into procedure
+- **retreat (撤退)** into procedure
+    - retreat into oneself: 退隐，离群索居
 - if someone at one of these universities had been caught robbing at a bank, would his colleagues have all **backed him up** like that?
-- this kind of **cavalier** attitude to what is pretty much the purest sort of scientific fraud makes it clear how little the scientific process is valued.
+- this kind of **cavalier (随便的，傲慢的)** attitude to what is pretty much the purest sort of scientific fraud makes it clear how little the scientific process is valued.
 - this kind of sounds like a **conspiracy theory (阴谋论)**
 - all participants in cargo-cult (货物崇拜) social science——from the fabricators to the **powermongers** to the enablers to the just plain **incompetents (无能者，不胜任者)**
 - swatting away people like other data **thugs**

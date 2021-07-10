@@ -15,6 +15,7 @@ nav:
       - Rocky-Linux: Linux/rocky-server.md
       - G40: Linux/asAserver.md    
   - StatProgramming:
+    - Comparisons: comparisons/stat.md
     - R:
       - 一般问题: R/index.md
       - plot 作图: R/plot.md
@@ -33,7 +34,6 @@ nav:
       - 自建关键词索引页: python/esltag.md
     - Julia: julia/index.md
     - Matlab: Matlab/index.md
-    - Comparisons: comparisons/stat.md
   - CSProgramming:
     - C/C++: Cpp/index.md
     - Java: java/index.md
@@ -73,6 +73,7 @@ nav:
     - Finance: finance/index.md
     - Fresh: fresh/index.md
     - Links: links/index.md
+    - Live: misc/live.md
     - 小程序: misc/wx.md
     - jssdk: misc/wxjssdk.md
     - 讲座: misc/report.md
