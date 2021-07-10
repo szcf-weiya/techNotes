@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/rocky-server/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ca7ac06f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1fe995fd.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
@@ -221,18 +221,11 @@
   
   
   
-    
-
-  
-  
-  
     <li class="md-tabs__item">
-      <a href="../../R/" class="md-tabs__link">
+      <a href="../../comparisons/stat/" class="md-tabs__link">
         StatProgramming
       </a>
     </li>
-  
-
   
 
       
@@ -642,6 +635,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#selecttypeparameters" class="md-nav__link">
+    SelectTypeParameters
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -702,20 +702,32 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../comparisons/stat/" class="md-nav__link">
+        Comparisons
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
       
-      <label class="md-nav__link" for="__nav_3_1">
+      <label class="md-nav__link" for="__nav_3_2">
         R
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="R" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_1">
+        <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
           R
         </label>
@@ -821,14 +833,14 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
       
-      <label class="md-nav__link" for="__nav_3_2">
+      <label class="md-nav__link" for="__nav_3_3">
         Python
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Python" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_2">
+        <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           Python
         </label>
@@ -943,18 +955,6 @@
     <li class="md-nav__item">
       <a href="../../Matlab/" class="md-nav__link">
         Matlab
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../comparisons/stat/" class="md-nav__link">
-        Comparisons
       </a>
     </li>
   
@@ -1575,6 +1575,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../misc/live/" class="md-nav__link">
+        Live
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../misc/wx/" class="md-nav__link">
         小程序
       </a>
@@ -1659,6 +1671,13 @@
         <li class="md-nav__item">
   <a href="#cgroup" class="md-nav__link">
     CGroup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecttypeparameters" class="md-nav__link">
+    SelectTypeParameters
   </a>
   
 </li>
@@ -2154,6 +2173,48 @@ Jun <span class="m">27</span> <span class="m">10</span>:58:27 stapcXXX.sta.cuhk.
 <span class="go">cgroup.clone_children  cgroup.procs  notify_on_release  tasks  user-0.slice  user-1002.slice</span>
 </code></pre></div>
 <p>but it would not affected jobs submitted via slurm, which has been validated. So this way would be quite good.</p>
+<h2 id="selecttypeparameters">SelectTypeParameters<a class="headerlink" href="#selecttypeparameters" title="Permanent link">&para;</a></h2>
+<p>The default setting is </p>
+<div class="highlight"><pre><span></span><code><span class="nv">SelectType</span><span class="o">=</span><span class="k">select</span>/cons_tres
+<span class="nv">SelectTypeParameters</span><span class="o">=</span>CR_Core
+</code></pre></div>
+<p>the configuration of computing node is </p>
+<div class="highlight"><pre><span></span><code><span class="nv">NodeName</span><span class="o">=</span>stapc051 <span class="nv">CPUs</span><span class="o">=</span><span class="m">96</span> <span class="nv">Sockets</span><span class="o">=</span><span class="m">2</span> <span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">24</span> <span class="nv">ThreadsPerCore</span><span class="o">=</span><span class="m">2</span> <span class="nv">State</span><span class="o">=</span>UNKNOWN
+</code></pre></div>
+<p>With this setting, each job would automatically count 2 virtually CPUs, although we only request one CPU.</p>
+<p>After changing <code>CR_Core</code> to <code>CR_CPU</code>, each job would count 1 virtually CPU.</p>
+<p>However, the number of running jobs is still only 48, while the limits are <code>GrpTRES=cpu=90</code> and <code>MaxTRESPerUser=cpu=90</code>. </p>
+<p>My first guess is the scheduling system does not update on time, since if I count the completed jobs in <code>sacct -a -X</code>, the total number of cores coincidently equals to 90, then I tried to set a larger limit but not work.</p>
+<p>Ocassionally, I found how to unset the limit, use <code>-1</code>, such as <a href="https://slurm.schedmd.com/resource_limits.html">Resource Limits</a></p>
+<div class="highlight"><pre><span></span><code>sacctmgr modify user bob <span class="nb">set</span> <span class="nv">GrpTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span>-1,mem<span class="o">=</span>-1,gres/gpu<span class="o">=</span>-1
+</code></pre></div>
+<p>Notice that 48 is a special number, <code>96 / 2 = 48</code>, so my second guess is that each running job is still occupying a core, even though it indeed only counts a virtual CPU.</p>
+<p>Check the potential related configurations,</p>
+<ul>
+<li>TaskPlugin: change the default <code>task/none</code> to <code>task/affinity</code>, since there are some related materials, <a href="https://slurm.schedmd.com/mc_support.html">Support for Multi-core/Multi-thread Architectures</a>, mentioned it. But not work.</li>
+<li><code>--hint=nomultithread</code>: this is not a system configuration, but it can also cause only 48 jobs are running, then I have a better idea on the allocation on multi-thread machine, and here is an official example, <a href="https://slurm.schedmd.com/cpu_management.html">EXAMPLE 9: CONSUMABLE RESOURCES ON MULTITHREADED NODE, ALLOCATING ONLY ONE THREAD PER CORE</a>, and some examples in the mail list, <a href="https://bugs.schedmd.com/show_bug.cgi?id=4010">Bug 4010 - Exploring Hyper-Threading CPU nodes</a></li>
+</ul>
+<p>Recheck the explanation of <code>CR_CPU</code>, here is one more sentence,</p>
+<blockquote>
+<p>The node&rsquo;s Boards, Sockets, CoresPerSocket and ThreadsPerCore may optionally be configured and result in job allocations which have improved locality; however doing so will prevent more than one job from being allocated on each core.</p>
+</blockquote>
+<p>I remembered the specification <code>Sockets=2 CoresPerSocket=24 ThreadsPerCore=2</code> is required under the default <code>CR_Core</code>, otherwise it would throw errors. But according to this warning, it would prevent twos job from being allocated on one core. Then I tried to remove this specification, and then the number of running jobs is not only 48!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>get pid of slurm job
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>scontrol listpids <span class="p">|</span> grep <span class="m">1261</span>
+</code></pre></div>
+then check the allow cpu list as in <a href="https://bugs.schedmd.com/show_bug.cgi?id=4010">Bug 4010 - Exploring Hyper-Threading CPU nodes</a>,
+before removing the specification, it shows
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>cat /proc/2636286/status <span class="p">|</span> grep -i cpus_allowed_list
+<span class="go">Cpus_allowed_list:  0-95</span>
+</code></pre></div>
+but after working normally, 
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>cat /proc/2636286/status <span class="p">|</span> grep -i cpus_allowed_list
+<span class="go">Cpus_allowed_list:  43</span>
+</code></pre></div>
+so it can be an indicator to check whether the job is allocated normally.</p>
+</div>
                 
               
               
@@ -2165,8 +2226,9 @@ Jun <span class="m">27</span> <span class="m">10</span>:58:27 stapcXXX.sta.cuhk.
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
           </a>
         
       </main>
@@ -2281,7 +2343,7 @@ Jun <span class="m">27</span> <span class="m">10</span>:58:27 stapcXXX.sta.cuhk.
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
