@@ -1,3 +1,7 @@
+## 2021.07.12
+
+- mannequin
+
 ## 2021.07.11
 
 - Call for clearer rules on science **espionage (间谍活动)**.
