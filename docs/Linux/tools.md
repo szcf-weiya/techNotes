@@ -473,6 +473,10 @@ $ for i in {1..10}; do echo $i; done | paste -s -d','
 
 where `-s` aims to paste one file at a time instead of in parallel, which results in one line. Refer to [how to concatenate lines into one string](https://stackoverflow.com/questions/10303600/how-to-concatenate-lines-into-one-string)
 
+## `pdftk`
+
+- split pdf pages: `pdftk all.pdf cat 1 output first.pdf`, see also [arXiv](../TeX/arxiv.md).
+
 ## `ps2pdf, pdf2ps`
 
 ### reduce pdf file size

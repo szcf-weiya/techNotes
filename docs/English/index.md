@@ -1,3 +1,7 @@
+## 2021.07.13
+
+- Two **jabs (注射)** that each contained only one-quarter of the standards dose of Moderna's COVID-19 vaccine gave rise to long-lasting protective antibodies and virus-fighting T cells.
+
 ## 2021.07.12
 
 - mannequin

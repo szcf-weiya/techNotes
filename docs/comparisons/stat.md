@@ -14,4 +14,4 @@ LANG | Julia | R | Python | Matlab
 [`sort` and `argsort`](../../R/#sort-rank-order) | | `sort(), order()` | `sorted(), np.argsort()` | 
 [Jupyter kernels](../../python/#different-kernels) | `IJulia` | `IRkernel` | `ipykernel` | 
 [too many open figures](../../julia/#gr-too-many-open-files) | `inline` | | `rcParams` | 
-
+[merge multiple slices](../../python/#merge-multiple-slices) | `vcat` | | `np.r_` |

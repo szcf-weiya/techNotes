@@ -826,6 +826,30 @@ x[np.r_[0:5, 10:15],:]
 
 refer to [Numpy: An efficient way to merge multiple slices](https://stackoverflow.com/questions/46640821/numpy-an-efficient-way-to-merge-multiple-slices)
 
+but it does not allow the iterator to construct the list,
+
+```ipython
+In: [i:i+3 for i in 1:3]
+  File "<ipython-input-247-8e21d57e8f2d>", line 1
+    [i:i+3 for i in 1:3]
+      ^
+SyntaxError: invalid syntax
+
+In: np.r_[i:i+3 for i in 1:3]
+  File "<ipython-input-246-02f2b1ded12b>", line 1
+    np.r_[i:i+3 for i in 1:3]
+                ^
+SyntaxError: invalid syntax
+```
+
+As a comparison, Julia seems more flexible,
+
+```julia
+julia> vcat([i:i+3 for i in 1:3]...)'
+1×12 adjoint(::Vector{Int64}) with eltype Int64:
+ 1  2  3  4  2  3  4  5  3  4  5  6
+```
+
 ### `/=`
 
 According to the builtin manual, `help('/=')`,
