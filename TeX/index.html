@@ -1083,6 +1083,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#install-texlive-2020" class="md-nav__link">
+    install TeXLive 2020
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#install-from-source" class="md-nav__link">
     install from source
   </a>
@@ -2148,6 +2155,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#install-texlive-2020" class="md-nav__link">
+    install TeXLive 2020
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#install-from-source" class="md-nav__link">
     install from source
   </a>
@@ -2653,6 +2667,22 @@
                 
                 <h1 id="tex">关于 TeX<a class="headerlink" href="#tex" title="Permanent link">&para;</a></h1>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="install-texlive-2020">install TeXLive 2020<a class="headerlink" href="#install-texlive-2020" title="Permanent link">&para;</a></h3>
+<p>The texlive2017 for Ubuntu cannot work for me, it reports</p>
+<blockquote>
+<p>fatal: Could not undump 6994 4-byte item(s) &hellip;</p>
+</blockquote>
+<p>and try</p>
+<blockquote>
+<p>fmtutil-sys &ndash;all</p>
+</blockquote>
+<p>refer to <a href="https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from">Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”</a>, but does not work.</p>
+<p>And I also try uninstall and reinstall texlive, but it still does not work.</p>
+<p>Then finally I decided to install the latest TeXLive 2020, <a href="https://tug.org/texlive/quickinstall.html">TeX Live - Quick install</a>, follow the instructions, but note that the mirror url should append <code>path/systems/texlive/tlnet</code>.</p>
+<div class="highlight"><pre><span></span><code>install-tl --location http://mirror.example.org/ctan/path/systems/texlive/tlnet
+</code></pre></div>
+<p>And note that the <a href="https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu">steps for completely removing the installed TeXLive</a>.</p>
+<p>If without root privilege, when running <code>install-tl</code>, type <code>D</code> to change the directory, and actually changing the first <code>&lt;1&gt;</code> would change all other directories.</p>
 <h3 id="install-from-source">install from source<a class="headerlink" href="#install-from-source" title="Permanent link">&para;</a></h3>
 <ol>
 <li><a href="http://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373">How to install “vanilla” TeXLive on Debian or Ubuntu?</a></li>

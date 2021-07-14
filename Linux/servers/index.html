@@ -1897,6 +1897,16 @@ Hostname REAL.HOSTNAME
 User weiya
 </code></pre></div>
 <p>then I can just type <code>ssh XX</code> to access this server, and <code>scp</code> would also be much simpler, <code>scp file XX:~/</code>. More importantly, we can use tab-complete when entering the path, which cannot be enabled by custom functions <code>scp_to_xx</code>. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>On the rocky server, it throws,
+<div class="highlight"><pre><span></span><code>Bad owner or permissions on ~/.ssh/config
+</code></pre></div>
+although the personal PC works well with same permission <code>-rw-rw-r--</code>. Refer to <a href="https://serverfault.com/questions/253313/ssh-returns-bad-owner-or-permissions-on-ssh-config">ssh returns “Bad owner or permissions on ~/.ssh/config”</a>, change the permission
+<div class="highlight"><pre><span></span><code>$ chmod <span class="m">600</span> ~/.ssh/config
+</code></pre></div>
+that is, <code>-rw-------</code>.</p>
+</div>
 <h3 id="run-gui-remotelylocally">run GUI remotely/locally<a class="headerlink" href="#run-gui-remotelylocally" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>weiya@T460p:~$ ssh weiya@G40
 weiya@G40:~$ <span class="nb">export</span> <span class="nv">DISPLAY</span><span class="o">=</span>:0

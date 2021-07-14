@@ -799,6 +799,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tmux" class="md-nav__link">
+    tmux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#uniq" class="md-nav__link">
     uniq
   </a>
@@ -2299,6 +2306,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tmux" class="md-nav__link">
+    tmux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#uniq" class="md-nav__link">
     uniq
   </a>
@@ -2839,6 +2853,38 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 <li><code>stdout</code> directly outputs the results instead of writing into another text file</li>
 </ul>
 <p>more details refer to <code>man tesseract</code>.</p>
+<h2 id="tmux"><code>tmux</code><a class="headerlink" href="#tmux" title="Permanent link">&para;</a></h2>
+<p>可以实现本地终端分屏。</p>
+<p>参考 <a href="http://blog.csdn.net/u010454729/article/details/49496381">linux 工具——终端分屏与vim分屏</a></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>现在改用 <code>Terminator</code>, 又称 <code>X-terminal-emulator</code>。</p>
+</div>
+<p>还可以切换后台运行，在服务器上操作特别方便。</p>
+<p>常用操作</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># new a shell</span>
+tmux
+<span class="c1"># new a shell with name</span>
+tmux new -s NAME
+<span class="c1"># view all shell</span>
+tmux ls
+<span class="c1"># go back</span>
+tmux attach-session -t <span class="o">[</span>NUM<span class="o">]</span>
+<span class="c1"># simplify</span>
+tmux attach -t <span class="o">[</span>NUM<span class="o">]</span>
+<span class="c1"># more simplify</span>
+tmux a -t <span class="o">[</span>NUM<span class="o">]</span>
+<span class="c1"># via name</span>
+tmux a -t NAME
+<span class="c1"># complete reset: https://stackoverflow.com/questions/38295615/complete-tmux-reset</span>
+tmux kill-server
+<span class="c1"># rename: https://superuser.com/questions/428016/how-do-i-rename-a-session-in-tmux</span>
+Ctrl + B, $
+</code></pre></div>
+<p>refer to
+- <a href="https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it">How do I access tmux session after I leave it?</a>
+- <a href="https://linuxize.com/post/getting-started-with-tmux/">Getting started with Tmux</a>
+- <a href="https://gist.github.com/henrik/1967800">tmux cheatsheet</a></p>
 <h2 id="uniq"><code>uniq</code><a class="headerlink" href="#uniq" title="Permanent link">&para;</a></h2>
 <ul>
 <li>count the frequency: <code>cat file.txt | sort | uniq -c</code>.<ul>

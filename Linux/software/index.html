@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#graphical-software-on-linux" class="md-skip">
+        <a href="#application-software-on-linux" class="md-skip">
           Skip to content
         </a>
       
@@ -691,6 +691,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#perspective-transformation" class="md-nav__link">
+    Perspective Transformation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#add-heic-support-in-imagemagick" class="md-nav__link">
     Add HEIC support in ImageMagick
   </a>
@@ -826,10 +833,10 @@
       
         <li class="md-nav__item">
   <a href="#onedrive" class="md-nav__link">
-    Onedrive
+    OneDrive
   </a>
   
-    <nav class="md-nav" aria-label="Onedrive">
+    <nav class="md-nav" aria-label="OneDrive">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -927,26 +934,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#texlive" class="md-nav__link">
-    TeXLive
-  </a>
-  
-    <nav class="md-nav" aria-label="TeXLive">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-texlive-2020" class="md-nav__link">
-    Install TeXLive 2020
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#thunderbird" class="md-nav__link">
     Thunderbird
   </a>
@@ -984,13 +971,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tmux" class="md-nav__link">
-    TMUX
-  </a>
   
 </li>
       
@@ -2500,6 +2480,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#perspective-transformation" class="md-nav__link">
+    Perspective Transformation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#add-heic-support-in-imagemagick" class="md-nav__link">
     Add HEIC support in ImageMagick
   </a>
@@ -2635,10 +2622,10 @@
       
         <li class="md-nav__item">
   <a href="#onedrive" class="md-nav__link">
-    Onedrive
+    OneDrive
   </a>
   
-    <nav class="md-nav" aria-label="Onedrive">
+    <nav class="md-nav" aria-label="OneDrive">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2736,26 +2723,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#texlive" class="md-nav__link">
-    TeXLive
-  </a>
-  
-    <nav class="md-nav" aria-label="TeXLive">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-texlive-2020" class="md-nav__link">
-    Install TeXLive 2020
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#thunderbird" class="md-nav__link">
     Thunderbird
   </a>
@@ -2793,13 +2760,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tmux" class="md-nav__link">
-    TMUX
-  </a>
   
 </li>
       
@@ -2973,7 +2933,26 @@
               
                 
                 
-                <h1 id="graphical-software-on-linux">Graphical Software on Linux<a class="headerlink" href="#graphical-software-on-linux" title="Permanent link">&para;</a></h1>
+                <h1 id="application-software-on-linux">Application Software on Linux<a class="headerlink" href="#application-software-on-linux" title="Permanent link">&para;</a></h1>
+<p>According to <a href="https://en.wikipedia.org/wiki/Software#Purpose,_or_domain_of_use">Wikipedia</a>, computer software can be divided into</p>
+<ul>
+<li>Application Software</li>
+<li>System Software<ul>
+<li>Operating systems</li>
+<li>Device drivers</li>
+<li>Utilities</li>
+</ul>
+</li>
+</ul>
+<p>The previous section System can be viewed as the second category, while the next section would contain many useful command line tools, which might be treated as part of the first category. Thus, this section would contain comprehensive application software, and most of them have a GUI. </p>
+<!--
+I try to categorize them as follows,
+
+- Text Editor: Atom, VS Code, Emacs, Vi/Vim
+- Work: 
+- Multimedia: 
+-->
+
 <h2 id="atom">Atom<a class="headerlink" href="#atom" title="Permanent link">&para;</a></h2>
 <h3 id="atom_1">atom 自动更新<a class="headerlink" href="#atom_1" title="Permanent link">&para;</a></h3>
 <p><a href="https://launchpad.net/~webupd8team/+archive/ubuntu/atom/">atom</a></p>
@@ -3113,6 +3092,26 @@ $ sudo cp ~/Downloads/51-android.rules .
 <li>自动补全: 参考<a href="http://www.cnblogs.com/liyongmou/archive/2013/04/26/3044155.html#sec-1-2">emacs自动补全插件auto-complet和yasnippet，安装、配置和扩展</a></li>
 </ul>
 <h2 id="imagemagick">ImageMagick<a class="headerlink" href="#imagemagick" title="Permanent link">&para;</a></h2>
+<h3 id="perspective-transformation">Perspective Transformation<a class="headerlink" href="#perspective-transformation" title="Permanent link">&para;</a></h3>
+<p>I usually take many photos when listening to the seminars, it is desirable to extract only the slides and discard the nuisance background. Direct cropping is not enough since the photos are not parallel to the screen. </p>
+<p>The solution is called perspective transformation, which can be done via <a href="http://www.imagemagick.org/script/command-line-options.php#distort"><code>-distort method</code></a>, the usage is </p>
+<div class="highlight"><pre><span></span><code>$ magick input.jpg -distort perspective <span class="s1">&#39;U1,V1,X1,Y1 U2,V2,X2,Y2 U3,V3,X3,Y3 ... Un,Vn,Xn,Yn&#39;</span> output.jpg
+</code></pre></div>
+<p>where <code>U,V</code> on the source image is mapped to <code>X,Y</code> on the destination image.</p>
+<p>The interesting area is the mapped sub region, and so we need to further crop them out, which can be done with <a href="http://www.imagemagick.org/script/command-line-options.php#crop"><code>-crop geometry</code></a>, where the geometry is defined with <code>WxH+x+y</code>, which means the region of size <code>WxH</code> located at the xy-coordinates <code>(x, y)</code>, see more details in <a href="http://www.imagemagick.org/script/command-line-processing.php#geometry">Anatomy of the Command-line</a></p>
+<p>Refer to the <a href="https://github.com/szcf-weiya/techNotes/src/persp.py">source code</a> for more details.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The original record on the development is <a href="https://github.com/szcf-weiya/en/issues/191">here</a>.</p>
+</div>
+<ul>
+<li>Demo One: processing a single file</li>
+</ul>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/125592307-fbeb3be2-64e6-414f-8748-5045fca2a0e6.gif" /></p>
+<ul>
+<li>Demo Two: processing multiple files in a folder</li>
+</ul>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/125592319-93aef031-4492-4812-934d-4ed3fcbc792a.gif" /></p>
 <h3 id="add-heic-support-in-imagemagick">Add HEIC support in ImageMagick<a class="headerlink" href="#add-heic-support-in-imagemagick" title="Permanent link">&para;</a></h3>
 <div class="admonition fail">
 <p class="admonition-title">Fail</p>
@@ -3296,7 +3295,8 @@ Then, run systemsettings5, click on Application Style, <span class="k">select</s
 <h3 id="_3">自定义签名<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>可以通过 <code>stamp</code> 功能自定义签名，首先准备好签名图片，然后保存到某个文件夹，比如 <code>~/.kde/share/icons/signature.png</code>，然后进入 stamp 的配置界面，下拉框中直接输入签名图片所在的路径。参考 <a href="https://askubuntu.com/questions/1132658/how-to-add-a-signature-stamp-to-okular">How to add a Signature stamp to Okular</a></p>
 <p>但是并不能存为 pdf，或者被其他软件看到，用 Acrobat 打开会有个打叉的部分，但是看不到签名，<a href="https://bugs.launchpad.net/ubuntu/+source/okular/+bug/1859632">已经被标记为 bug，但似乎还未解决</a>。</p>
-<h2 id="onedrive">Onedrive<a class="headerlink" href="#onedrive" title="Permanent link">&para;</a></h2>
+<h2 id="onedrive">OneDrive<a class="headerlink" href="#onedrive" title="Permanent link">&para;</a></h2>
+<p>In fact, the following client on Ubuntu is also in the command-line form. But usually, we refer to OneDrive as the whole of the client and the host, which is visited via a browser. </p>
 <h3 id="first-try">first try<a class="headerlink" href="#first-try" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/xybu/onedrive-d-old">xybu/onedrive-d-old</a>, but doesn&rsquo;t support exchange account.</p>
 <h3 id="second-try">second try<a class="headerlink" href="#second-try" title="Permanent link">&para;</a></h3>
@@ -3421,23 +3421,6 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 <p>then I can lock the screen of client via <code>Ctrl+Alt+l</code>. </p>
 <p>Since the above binding can specify the machine, I am thinking it might work if I bind <code>Ctrl+Alt+l</code> to <code>Meta+l</code> on the host. However, it failed, and it causes the screen of client cannot be locked.</p>
 <p>Anyway, the current solution seems already convinent.</p>
-<h2 id="texlive">TeXLive<a class="headerlink" href="#texlive" title="Permanent link">&para;</a></h2>
-<h3 id="install-texlive-2020">Install TeXLive 2020<a class="headerlink" href="#install-texlive-2020" title="Permanent link">&para;</a></h3>
-<p>The texlive2017 for Ubuntu cannot work for me, it reports</p>
-<blockquote>
-<p>fatal: Could not undump 6994 4-byte item(s) &hellip;</p>
-</blockquote>
-<p>and try</p>
-<blockquote>
-<p>fmtutil-sys &ndash;all</p>
-</blockquote>
-<p>but does not work, refer to <a href="https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from">Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”</a>, but does not work.</p>
-<p>And I also try uninstall and reinstall texlive, but it still does not work.</p>
-<p>Then finally I decided to install the latest TeXLive 2020, <a href="https://tug.org/texlive/quickinstall.html">TeX Live - Quick install</a>, follow the instructions, but note that the mirror url should append <code>path/systems/texlive/tlnet</code>.</p>
-<div class="highlight"><pre><span></span><code>install-tl --location http://mirror.example.org/ctan/path/systems/texlive/tlnet
-</code></pre></div>
-<p>And note that the <a href="https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu">steps for compeletely removing the installed TeXLive</a>.</p>
-<p>If without root privilege, when running <code>install-tl</code>, type <code>D</code> to change the directory, and actually changing the first <code>&lt;1&gt;</code> would change all other directories.</p>
 <h2 id="thunderbird">Thunderbird<a class="headerlink" href="#thunderbird" title="Permanent link">&para;</a></h2>
 <ul>
 <li>添加学校邮箱时，必须采用学号形式的邮箱，不要用 alias 形式的，alias 验证会出问题。</li>
@@ -3464,38 +3447,6 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 <p>这时会要求选择 profile，只需要选择 68 对应的 profile 就好了。选好之后，再重新配置下学校邮箱的，则大功告成！</p>
 <h3 id="train-adaptive-junk-filter">Train adaptive junk filter<a class="headerlink" href="#train-adaptive-junk-filter" title="Permanent link">&para;</a></h3>
 <p>more instructions: <a href="https://support.mozilla.org/en-US/kb/thunderbird-and-junk-spam-messages">Thunderbird and Junk / Spam Messages</a></p>
-<h2 id="tmux">TMUX<a class="headerlink" href="#tmux" title="Permanent link">&para;</a></h2>
-<p>可以实现本地终端分屏。</p>
-<p>参考 <a href="http://blog.csdn.net/u010454729/article/details/49496381">linux 工具——终端分屏与vim分屏</a></p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>现在改用 <code>Terminator</code>, 又称 <code>X-terminal-emulator</code>。</p>
-</div>
-<p>还可以切换后台运行，在服务器上操作特别方便。</p>
-<p>常用操作</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># new a shell</span>
-tmux
-<span class="c1"># new a shell with name</span>
-tmux new -s NAME
-<span class="c1"># view all shell</span>
-tmux ls
-<span class="c1"># go back</span>
-tmux attach-session -t <span class="o">[</span>NUM<span class="o">]</span>
-<span class="c1"># simplify</span>
-tmux attach -t <span class="o">[</span>NUM<span class="o">]</span>
-<span class="c1"># more simplify</span>
-tmux a -t <span class="o">[</span>NUM<span class="o">]</span>
-<span class="c1"># via name</span>
-tmux a -t NAME
-<span class="c1"># complete reset: https://stackoverflow.com/questions/38295615/complete-tmux-reset</span>
-tmux kill-server
-<span class="c1"># rename: https://superuser.com/questions/428016/how-do-i-rename-a-session-in-tmux</span>
-Ctrl + B, $
-</code></pre></div>
-<p>refer to
-- <a href="https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it">How do I access tmux session after I leave it?</a>
-- <a href="https://linuxize.com/post/getting-started-with-tmux/">Getting started with Tmux</a>
-- <a href="https://gist.github.com/henrik/1967800">tmux cheatsheet</a></p>
 <h2 id="vivim">Vi/Vim<a class="headerlink" href="#vivim" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>u</code>: undo, <code>ctrl+u</code>: redo</li>

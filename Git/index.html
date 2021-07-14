@@ -1555,6 +1555,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-date-of-an-older-commit" class="md-nav__link">
+    change date of an older commit
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2268,6 +2275,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#change-date-of-an-older-commit" class="md-nav__link">
+    change date of an older commit
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2742,7 +2756,7 @@ Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
 <p>Refer to <a href="https://stackoverflow.com/questions/8981194/changing-git-commit-message-after-push-given-that-no-one-pulled-from-remote">Changing git commit message after push (given that no one pulled from remote)</a>.</p>
 <h3 id="discard-un-pushed-merges">discard un-pushed merges<a class="headerlink" href="#discard-un-pushed-merges" title="Permanent link">&para;</a></h3>
 <p>现有本地、服务器仓库各一个，通过 GitHub 进行共享，原则上只通过本地编辑代码，然后在服务器中借助 <code>git pull</code> 进行更新代码。但是有一行代码由于文件路径原因，不得已在服务器端更改，在 <code>git pull</code> 之前进行了 <code>git add; git commit</code> 操作，所以 <code>pull</code> 的时候会产生 merge，而且这样下去每一次进行 <code>pull</code> 都会进行 merge。这样就很难看出服务器端真正更改的内容了，这时发现了 <code>git rebase</code>，这张图很好地展示了它要干的事情，</p>
-<p><img alt="" src="http://gitbook.liuhui998.com/assets/images/figure/rebase3.png" /></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/125570542-dd69c945-e2b4-427c-8c28-5ba4b7bec961.png" /></p>
 <p>这也正是我想要的，简单说就是把基于以前的更改转换成基于最新的更改。</p>
 <p>然而我这情况还没这么直接，因为有过很多 merges，这些 merges 都想放弃掉。</p>
 <div class="highlight"><pre><span></span><code>$ git log --graph --format<span class="o">=</span>%s
@@ -2767,6 +2781,11 @@ Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
 <p>现在我甚至怀疑是不是一开始直接 <code>git rebase</code> 就好了，也不需要 <code>--root</code>，不过 <code>root</code> 是说可以 rebase 所有 reachable commits，没有什么 upstream 限制，不知道 merges 算不算 upstream 限制（<strong>以后再玩玩</strong>）. 如果需要更新的话，仍采用 <code>git pull</code>，但是 <code>git pull</code> 不是相当于 <code>git fetch &amp; git merge</code> 么？！不过需要注意<a href="https://stackoverflow.com/a/36148845/8427014">加上 <code>--rebase</code> 选项</a></p>
 <p><img alt="" src="git-pull-with-rebase.png" /></p>
 <h3 id="change-commit-time">change commit time<a class="headerlink" href="#change-commit-time" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">TL;DR</p>
+<div class="highlight"><pre><span></span><code><span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;-10 days - 8 hours&quot;</span> -Iseconds<span class="k">)</span> <span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span> git commit -m <span class="s2">&quot;&quot;</span>
+</code></pre></div>
+</div>
 <p>因为习惯将当天的工作通过 commit 贡献图反映出来，但有时候提交时超了一点点时间就变成第二天了，有时会强迫性地想把时间改过来。此前一直在用一种比较笨但很有效的方法，即修改系统时间——往回拨几分钟，再进行 commit。但是昨晚这样操作时出现了失误，只调整了时间，日期并没有回退一天，push 之后才意识到，就这样多了一条未来的 commit。</p>
 <p>于是就需要像修改 commit message 修改时间重新 commit。首先尝试的是，</p>
 <div class="highlight"><pre><span></span><code>git commit --amend --date<span class="o">=</span><span class="s2">&quot;13/04/2021 @ 23:59&quot;</span>
@@ -2801,7 +2820,7 @@ Commit:     szcf-weiya &lt;your@email&gt;
 CommitDate: Mon May <span class="m">24</span> <span class="m">12</span>:18:06 <span class="m">2021</span> -0600
 </code></pre></div>
 <p>为了避免歧义，加入选项 <code>-Iseconds</code> 指定为 ISO-8601 格式，并精确至 <code>seconds</code>.</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;-10 days - 8 hours&quot;</span> -Iseconds<span class="k">)</span> <span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span> git commit -m <span class="s2">&quot;XXX&quot;</span>
+<div class="highlight"><pre><span></span><code>$ <span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;- 8 hours&quot;</span> -Iseconds<span class="k">)</span> <span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span> git commit -m <span class="s2">&quot;XXX&quot;</span>
 $ git log --pretty<span class="o">=</span>fuller
 Author:     szcf-weiya &lt;your@email&gt;
 AuthorDate: Mon May <span class="m">24</span> <span class="m">12</span>:27:06 <span class="m">2021</span> +0800
@@ -2813,6 +2832,70 @@ CommitDate: Mon May <span class="m">24</span> <span class="m">12</span>:27:06 <s
 <li><a href="https://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git">How can one change the timestamp of an old commit in Git?</a></li>
 <li><a href="https://stackoverflow.com/questions/3895453/how-do-i-make-a-git-commit-in-the-past">How do I make a Git commit in the past?</a></li>
 </ul>
+<h3 id="change-date-of-an-older-commit">change date of an older commit<a class="headerlink" href="#change-date-of-an-older-commit" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">TL; DR</p>
+<p>Avoid to use, let it go.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Try to test
+<div class="highlight"><pre><span></span><code>$ git filter-branch --env-filter <span class="s1">&#39;if [ $GIT_COMMIT == 4fae3c78eac6230ee53082654aaf58ab79fbddc5 ]; then echo $GIT_AUTHOR_DATE; fi&#39;</span>
+Rewrite 4f479f96d4672aaf11f800306b10bb95e83071fd <span class="o">(</span><span class="m">1</span>/21<span class="o">)</span> <span class="o">(</span><span class="m">0</span> seconds passed, remaining <span class="m">0</span> predicted<span class="o">)</span>    /usr/lib/git-core/git-filter-branch: <span class="m">1</span>: <span class="o">[</span>: 4f479f96d4672aaf11f800306b10bb95e83071fd: unexpected operator
+...
+</code></pre></div>
+which overwrites <strong>all</strong> commit hashes.</p>
+</div>
+<p>I want to update the commit date of an historical commit, where there are 3 more recent commits. Following <a href="https://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git">How can one change the timestamp of an old commit in Git?</a>,</p>
+<div class="highlight"><pre><span></span><code>$ git rebase -i e5c9f
+</code></pre></div>
+<p>the mark the commit to be edited, not that <code>e5c9f</code> is the one before the commit to be edited,</p>
+<p>after saving, </p>
+<div class="highlight"><pre><span></span><code>$ git rebase -i e5c9f
+Stopped at 4fae3c7...  XXXXXXXXXXXXXXXXXXXXXXXXXXX
+You can amend the commit now, with
+
+  git commit --amend <span class="s1">&#39;-S&#39;</span>
+
+Once you are satisfied with your changes, run
+
+  git rebase --continue
+</code></pre></div>
+<p>then change the date via</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2021-07-11T23:58:48+0800&quot;</span> -Iseconds<span class="k">)</span> <span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span> git commit --amend --no-edit --reset-author 
+<span class="o">[</span>detached HEAD e1e1cec<span class="o">]</span> XXXXXXXXXXXXXXXXXXXXXXXXXXX
+</code></pre></div>
+<p>note that the hash has been updated, then run</p>
+<div class="highlight"><pre><span></span><code>$ git rebase --continue
+Successfully rebased and updated refs/heads/master.
+</code></pre></div>
+<p>Now the status is</p>
+<div class="highlight"><pre><span></span><code>$ git status
+On branch master
+Your branch and <span class="s1">&#39;origin/master&#39;</span> have diverged,
+and have <span class="m">4</span> and <span class="m">4</span> different commits each, respectively.
+  <span class="o">(</span>use <span class="s2">&quot;git pull&quot;</span> to merge the remote branch into yours<span class="o">)</span>
+</code></pre></div>
+<p>Then just type <code>git pull</code>, but I immediately realized that do not use <code>git pull</code> since it will introduce 4 more commits, together with the merge one. Note that</p>
+<div class="highlight"><pre><span></span><code>$ git reflog 
+1f4ff92 <span class="o">(</span>HEAD -&gt; master<span class="o">)</span> HEAD@<span class="o">{</span><span class="m">0</span><span class="o">}</span>: pull: Merge made by the <span class="s1">&#39;recursive&#39;</span> strategy.
+f8ea37c HEAD@<span class="o">{</span><span class="m">1</span><span class="o">}</span>: rebase -i <span class="o">(</span>finish<span class="o">)</span>: returning to refs/heads/master
+f8ea37c HEAD@<span class="o">{</span><span class="m">2</span><span class="o">}</span>: rebase -i <span class="o">(</span>pick<span class="o">)</span>: XXXXXXXX
+59b6935 HEAD@<span class="o">{</span><span class="m">3</span><span class="o">}</span>: rebase -i <span class="o">(</span>pick<span class="o">)</span>: XXXXXXXX
+b849915 HEAD@<span class="o">{</span><span class="m">4</span><span class="o">}</span>: rebase -i <span class="o">(</span>pick<span class="o">)</span>: XXXXXXXX
+</code></pre></div>
+<p>then go back to </p>
+<div class="highlight"><pre><span></span><code>$ git reset HEAD@<span class="o">{</span><span class="m">1</span><span class="o">}</span>
+$ git status
+On branch master
+Your branch and <span class="s1">&#39;origin/master&#39;</span> have diverged,
+and have <span class="m">4</span> and <span class="m">4</span> different commits each, respectively.
+  <span class="o">(</span>use <span class="s2">&quot;git pull&quot;</span> to merge the remote branch into yours<span class="o">)</span>
+</code></pre></div>
+<p>then run</p>
+<div class="highlight"><pre><span></span><code>$ git push --force-with-lease
+</code></pre></div>
+<p>However, although the author date indeed has updated, the commit date points to the current date. </p>
 <h2 id="temporary-commits-stash">TEMPORARY COMMITS: <code>stash</code><a class="headerlink" href="#temporary-commits-stash" title="Permanent link">&para;</a></h2>
 <p>Temporarily store modified, tracked files in order to change branches.</p>
 <div class="highlight"><pre><span></span><code>git stash <span class="c1"># Save modified and staged changes</span>

@@ -642,6 +642,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#privatedata" class="md-nav__link">
+    PrivateData
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1682,6 +1689,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#privatedata" class="md-nav__link">
+    PrivateData
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1715,7 +1729,7 @@ Codename:   GreenObsidian
 <li><a href="http://docs.nanomatch.de/technical/SimStackRequirements/SingleNodeSlurm.html#slurm-single-node-install">SLURM single node install</a></li>
 <li><a href="https://rolk.github.io/2015/04/20/slurm-cluster">Setting up a single server SLURM cluster</a></li>
 </ul>
-<p>Comparing with the standard installation, it seems no much difference, so I follow the <a href="https://slurm.schedmd.com/quickstart_admin.html">official guide</a> to install.</p>
+<p>Comparing with the standard installation, it seems no much difference, so I follow the official <a href="https://slurm.schedmd.com/quickstart_admin.html">Quick Start Administrator Guide</a> to install.</p>
 <ul>
 <li>install munge: the first attempt is not enough, and its <code>devel</code> will be also installed</li>
 </ul>
@@ -2215,6 +2229,13 @@ but after working normally,
 </code></pre></div>
 so it can be an indicator to check whether the job is allocated normally.</p>
 </div>
+<h2 id="privatedata">PrivateData<a class="headerlink" href="#privatedata" title="Permanent link">&para;</a></h2>
+<p>Currently every user can view all users&rsquo; job information via <code>squeue</code>. </p>
+<p>Set </p>
+<div class="highlight"><pre><span></span><code><span class="nv">PrivateData</span><span class="o">=</span><span class="nb">jobs</span>
+</code></pre></div>
+<p>in <code>slurm.conf</code>.</p>
+<p>And here are some other fields can be appended, such as <code>usage</code>, <code>users</code>, refer to <a href="https://slurm.schedmd.com/slurm.conf.html">slurm.conf - Slurm configuration file</a> or <code>man slurm.conf</code> for more details.</p>
                 
               
               

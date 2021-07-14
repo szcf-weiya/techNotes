@@ -1391,6 +1391,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ownership-of-generated-files" class="md-nav__link">
+    ownership of generated files
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1774,6 +1781,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ownership-of-generated-files" class="md-nav__link">
+    ownership of generated files
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1991,6 +2005,27 @@ Prefix dict has been built successfully.
 <div class="highlight"><pre><span></span><code>$ docker system prune
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/30604846/docker-error-no-space-left-on-device">Docker error : no space left on device</a></p>
+<h2 id="ownership-of-generated-files">ownership of generated files<a class="headerlink" href="#ownership-of-generated-files" title="Permanent link">&para;</a></h2>
+<p>The default ownership file is <code>root</code>, and fail to accessed.</p>
+<p>We can specify the owner if necessary,</p>
+<div class="highlight"><pre><span></span><code>$ docker run -v <span class="nv">$PWD</span>:/root -w /root -u <span class="m">1000</span> -it py37jieba:0.0.5 bash
+$ docker run -v <span class="nv">$PWD</span>:/root -w /root -u <span class="m">1000</span>:1000 -it py37jieba:0.0.5 bash
+</code></pre></div>
+<p>where the valid formats from <code>man docker-run</code> include</p>
+<div class="highlight"><pre><span></span><code>          --user <span class="o">[</span>user <span class="p">|</span> user:group <span class="p">|</span> uid <span class="p">|</span> uid:gid <span class="p">|</span> user:gid <span class="p">|</span> uid:group <span class="o">]</span>
+</code></pre></div>
+<p>but a direct username <code>weiya</code> throws,</p>
+<div class="highlight"><pre><span></span><code>docker: Error response from daemon: unable to find user weiya: no matching entries <span class="k">in</span> passwd file.
+ERRO<span class="o">[</span><span class="m">0000</span><span class="o">]</span> error waiting <span class="k">for</span> container: context canceled 
+</code></pre></div>
+<p>with a specific uid, the prompt displays</p>
+<div class="highlight"><pre><span></span><code>I have no name!@afea1a0b4bd7:/root$ <span class="nb">echo</span> <span class="s2">&quot;own by weiya&quot;</span> &gt; test_ownship.txt
+</code></pre></div>
+<p>Test with <code>1000</code> and <code>1000:1000</code> respectively, the results are</p>
+<div class="highlight"><pre><span></span><code>-rw-r--r-- <span class="m">1</span> weiya weiya        <span class="m">13</span> Jul <span class="m">14</span> <span class="m">13</span>:36 test_ownship2.txt
+-rw-r--r-- <span class="m">1</span> weiya root         <span class="m">13</span> Jul <span class="m">14</span> <span class="m">12</span>:04 test_ownship.txt
+</code></pre></div>
+<p>refer to <a href="https://unix.stackexchange.com/questions/627027/files-created-by-docker-container-are-owned-by-root">Files created by Docker container are owned by root</a></p>
                 
               
               

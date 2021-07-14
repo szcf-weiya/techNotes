@@ -1193,8 +1193,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#xy" class="md-nav__link">
-    画图 xy 顺序
+  <a href="#order-of-xy" class="md-nav__link">
+    order of xy
   </a>
   
 </li>
@@ -2702,8 +2702,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#xy" class="md-nav__link">
-    画图 xy 顺序
+  <a href="#order-of-xy" class="md-nav__link">
+    order of xy
   </a>
   
 </li>
@@ -3527,15 +3527,27 @@ Available kernels:
 <p>Seaborn的底层是基于Matplotlib的，他们的差异有点像在点餐时选套餐还是自己点的区别，Matplotlib是独立点菜，可能费时费心（尤其是对我这种选择困难症患者&hellip;）但最后上桌的菜全是特别适合自己的；而Seaborn是点套餐，特别简单，一切都是配好的，虽然省时省心，但可能套餐里总有些菜是不那么合自己口味的。</p>
 <p><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /> <a href="https://www.zhihu.com/question/301637122/answer/528183410">Jack Sun @ 知乎</a></p>
 </blockquote>
-<h3 id="xy">画图 xy 顺序<a class="headerlink" href="#xy" title="Permanent link">&para;</a></h3>
-<ol>
-<li>imshow 中的 <a href="https://matplotlib.org/tutorials/intermediate/imshow_extent.html">origin and extent</a></li>
-</ol>
+<h3 id="order-of-xy">order of xy<a class="headerlink" href="#order-of-xy" title="Permanent link">&para;</a></h3>
+<p><code>imshow</code> 中的 <a href="https://matplotlib.org/tutorials/intermediate/imshow_extent.html">origin and extent</a></p>
 <blockquote>
-<p>Generally, for an array of shape (M, N), the first index runs along the vertical, the second index runs along the horizontal. The pixel centers are at integer positions ranging from 0 to N&rsquo; = N - 1 horizontally and from 0 to M&rsquo; = M - 1 vertically. origin determines how to the data is filled in the bounding box.</p>
+<p>Generally, for an array of shape (M, N), the first index runs along the vertical, the second index runs along the horizontal. The pixel centers are at integer positions ranging from 0 to N&rsquo; = N - 1 horizontally and from 0 to M&rsquo; = M - 1 vertically. <code>origin</code> determines how to the data is filled in the bounding box.</p>
 </blockquote>
-<p>also refer to</p>
-<p><a href="https://stackoverflow.com/questions/37706005/matplotlib-coordinates-convention-of-image-imshow-incompatible-with-plot">matplotlib: coordinates convention of image imshow incompatible with plot</a></p>
+<p>an illustrative example,</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cbook</span> <span class="k">as</span> <span class="nn">cbook</span>
+
+<span class="n">imgf</span> <span class="o">=</span> <span class="n">cbook</span><span class="o">.</span><span class="n">get_sample_data</span><span class="p">(</span><span class="s2">&quot;ada.png&quot;</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">imgf</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">((</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">),</span> <span class="p">(</span><span class="n">ax3</span><span class="p">,</span> <span class="n">ax4</span><span class="p">))</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">origin</span> <span class="o">=</span> <span class="s2">&quot;upper&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">origin</span> <span class="o">=</span> <span class="s2">&quot;lower&quot;</span><span class="p">)</span>
+<span class="c1"># img.shape (803, 512, 4), then transpose </span>
+<span class="c1"># he first two axes from (0, 1, 2) to (1, 0, 2)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;upper&quot;</span><span class="p">)</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/125582405-cf8a7af7-e341-44ed-a251-d867a8c4af2c.png" /></p>
+<p>which is adapted from <a href="https://stackoverflow.com/questions/37706005/matplotlib-coordinates-convention-of-image-imshow-incompatible-with-plot">matplotlib: coordinates convention of image imshow incompatible with plot</a></p>
 <h3 id="subplots">subplots 的间距<a class="headerlink" href="#subplots" title="Permanent link">&para;</a></h3>
 <p><code>plt.tight_layout()</code> 可以调节间距，如果有必要，可以带上参数，比如，<a href="https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6">B spline in R, C++ and Python</a></p>
 <div class="highlight"><pre><span></span><code>plt.tight_layout<span class="o">(</span><span class="nv">pad</span> <span class="o">=</span> <span class="m">3</span>.0<span class="o">)</span>
