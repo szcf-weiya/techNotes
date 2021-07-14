@@ -24,7 +24,7 @@ Different from CHPC's cluster, the group server is just one node. So first of al
 - [SLURM single node install](http://docs.nanomatch.de/technical/SimStackRequirements/SingleNodeSlurm.html#slurm-single-node-install)
 - [Setting up a single server SLURM cluster](https://rolk.github.io/2015/04/20/slurm-cluster)
 
-Comparing with the standard installation, it seems no much difference, so I follow the [official guide](https://slurm.schedmd.com/quickstart_admin.html) to install.
+Comparing with the standard installation, it seems no much difference, so I follow the official [Quick Start Administrator Guide](https://slurm.schedmd.com/quickstart_admin.html) to install.
 
 - install munge: the first attempt is not enough, and its `devel` will be also installed
 
@@ -683,3 +683,17 @@ I remembered the specification `Sockets=2 CoresPerSocket=24 ThreadsPerCore=2` is
     Cpus_allowed_list:	43
     ```
     so it can be an indicator to check whether the job is allocated normally.
+
+## PrivateData
+
+Currently every user can view all users' job information via `squeue`. 
+
+Set 
+
+```bash
+PrivateData=jobs
+```
+
+in `slurm.conf`.
+
+And here are some other fields can be appended, such as `usage`, `users`, refer to [slurm.conf - Slurm configuration file](https://slurm.schedmd.com/slurm.conf.html) or `man slurm.conf` for more details.

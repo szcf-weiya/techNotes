@@ -2,6 +2,30 @@
 
 ## Installation
 
+### install TeXLive 2020
+
+The texlive2017 for Ubuntu cannot work for me, it reports
+
+> fatal: Could not undump 6994 4-byte item(s) ...
+
+and try
+
+> fmtutil-sys --all
+
+refer to [Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”](https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from), but does not work.
+
+And I also try uninstall and reinstall texlive, but it still does not work.
+
+Then finally I decided to install the latest TeXLive 2020, [TeX Live - Quick install](https://tug.org/texlive/quickinstall.html), follow the instructions, but note that the mirror url should append `path/systems/texlive/tlnet`.
+
+```bash
+install-tl --location http://mirror.example.org/ctan/path/systems/texlive/tlnet
+```
+
+And note that the [steps for completely removing the installed TeXLive](https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu).
+
+If without root privilege, when running `install-tl`, type `D` to change the directory, and actually changing the first `<1>` would change all other directories.
+
 ### install from source
 
 1. [How to install “vanilla” TeXLive on Debian or Ubuntu?](http://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373)

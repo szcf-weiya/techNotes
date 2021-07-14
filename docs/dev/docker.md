@@ -275,3 +275,42 @@ $ docker system prune
 ```
 
 refer to [Docker error : no space left on device](https://stackoverflow.com/questions/30604846/docker-error-no-space-left-on-device)
+
+## ownership of generated files
+
+The default ownership file is `root`, and fail to accessed.
+
+We can specify the owner if necessary,
+
+```bash
+$ docker run -v $PWD:/root -w /root -u 1000 -it py37jieba:0.0.5 bash
+$ docker run -v $PWD:/root -w /root -u 1000:1000 -it py37jieba:0.0.5 bash
+```
+
+where the valid formats from `man docker-run` include
+
+```bash
+          --user [user | user:group | uid | uid:gid | user:gid | uid:group ]
+```
+
+but a direct username `weiya` throws,
+
+```bash
+docker: Error response from daemon: unable to find user weiya: no matching entries in passwd file.
+ERRO[0000] error waiting for container: context canceled 
+```
+
+with a specific uid, the prompt displays
+
+```bash
+I have no name!@afea1a0b4bd7:/root$ echo "own by weiya" > test_ownship.txt
+```
+
+Test with `1000` and `1000:1000` respectively, the results are
+
+```bash
+-rw-r--r-- 1 weiya weiya        13 Jul 14 13:36 test_ownship2.txt
+-rw-r--r-- 1 weiya root         13 Jul 14 12:04 test_ownship.txt
+```
+
+refer to [Files created by Docker container are owned by root](https://unix.stackexchange.com/questions/627027/files-created-by-docker-container-are-owned-by-root)

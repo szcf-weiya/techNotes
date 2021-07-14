@@ -636,15 +636,25 @@ Homepage: [seaborn: statistical data visualization](https://seaborn.pydata.org/)
 >
 > :link: [Jack Sun @ 知乎](https://www.zhihu.com/question/301637122/answer/528183410)
 
-### 画图 xy 顺序
+### order of xy
 
-1. imshow 中的 [origin and extent](https://matplotlib.org/tutorials/intermediate/imshow_extent.html)
+`imshow` 中的 [origin and extent](https://matplotlib.org/tutorials/intermediate/imshow_extent.html)
 
-> Generally, for an array of shape (M, N), the first index runs along the vertical, the second index runs along the horizontal. The pixel centers are at integer positions ranging from 0 to N' = N - 1 horizontally and from 0 to M' = M - 1 vertically. origin determines how to the data is filled in the bounding box.
+> Generally, for an array of shape (M, N), the first index runs along the vertical, the second index runs along the horizontal. The pixel centers are at integer positions ranging from 0 to N' = N - 1 horizontally and from 0 to M' = M - 1 vertically. `origin` determines how to the data is filled in the bounding box.
 
-also refer to
 
-[matplotlib: coordinates convention of image imshow incompatible with plot](https://stackoverflow.com/questions/37706005/matplotlib-coordinates-convention-of-image-imshow-incompatible-with-plot)
+an illustrative example,
+
+```python
+--8<-- "docs/python/plt/xy.py"
+```
+
+![image](https://user-images.githubusercontent.com/13688320/125582405-cf8a7af7-e341-44ed-a251-d867a8c4af2c.png)
+
+
+which is adapted from [matplotlib: coordinates convention of image imshow incompatible with plot](https://stackoverflow.com/questions/37706005/matplotlib-coordinates-convention-of-image-imshow-incompatible-with-plot)
+
+
 
 ### subplots 的间距
 

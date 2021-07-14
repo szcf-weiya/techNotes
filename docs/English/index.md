@@ -1,3 +1,7 @@
+## 2021.07.14
+
+- An instrument on the Perseverance rover has produced breathable oxygen on Mars.
+
 ## 2021.07.13
 
 - Two **jabs (注射)** that each contained only one-quarter of the standards dose of Moderna's COVID-19 vaccine gave rise to long-lasting protective antibodies and virus-fighting T cells.
@@ -2019,7 +2023,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - **benign (良性的)** tumor:
 2. Glioblastomas: 胶质母细胞瘤
 3. chemotherapy： 化学疗法
-4. asthma: 哮喘
+4. The number of **asthma (哮喘)** attacks across the United States has dropped dramatically during the pandemic, leading doctors to rethink some of their long-held assumptions about the chronic condition.
 6. allergen：过敏原
 7. roach: 蟑螂
 8. penicillin: 青霉素，盘尼西林

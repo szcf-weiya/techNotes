@@ -1,4 +1,23 @@
-# Graphical Software on Linux
+# Application Software on Linux
+
+According to [Wikipedia](https://en.wikipedia.org/wiki/Software#Purpose,_or_domain_of_use), computer software can be divided into
+
+- Application Software
+- System Software
+    - Operating systems
+    - Device drivers
+    - Utilities
+
+The previous section System can be viewed as the second category, while the next section would contain many useful command line tools, which might be treated as part of the first category. Thus, this section would contain comprehensive application software, and most of them have a GUI. 
+
+<!--
+I try to categorize them as follows,
+
+- Text Editor: Atom, VS Code, Emacs, Vi/Vim
+- Work: 
+- Multimedia: 
+-->
+
 
 ## Atom
 
@@ -223,6 +242,33 @@ source ~/.bashrc
 - 自动补全: 参考[emacs自动补全插件auto-complet和yasnippet，安装、配置和扩展](http://www.cnblogs.com/liyongmou/archive/2013/04/26/3044155.html#sec-1-2)
 
 ## ImageMagick
+
+### Perspective Transformation
+
+I usually take many photos when listening to the seminars, it is desirable to extract only the slides and discard the nuisance background. Direct cropping is not enough since the photos are not parallel to the screen. 
+
+The solution is called perspective transformation, which can be done via [`-distort method`](http://www.imagemagick.org/script/command-line-options.php#distort), the usage is 
+
+```bash
+$ magick input.jpg -distort perspective 'U1,V1,X1,Y1 U2,V2,X2,Y2 U3,V3,X3,Y3 ... Un,Vn,Xn,Yn' output.jpg
+```
+
+where `U,V` on the source image is mapped to `X,Y` on the destination image.
+
+The interesting area is the mapped sub region, and so we need to further crop them out, which can be done with [`-crop geometry`](http://www.imagemagick.org/script/command-line-options.php#crop), where the geometry is defined with `WxH+x+y`, which means the region of size `WxH` located at the xy-coordinates `(x, y)`, see more details in [Anatomy of the Command-line](http://www.imagemagick.org/script/command-line-processing.php#geometry)
+
+Refer to the [source code](https://github.com/szcf-weiya/techNotes/src/persp.py) for more details.
+
+!!! tip
+    The original record on the development is [here](https://github.com/szcf-weiya/en/issues/191).
+
+- Demo One: processing a single file
+
+![](https://user-images.githubusercontent.com/13688320/125592307-fbeb3be2-64e6-414f-8748-5045fca2a0e6.gif)
+
+- Demo Two: processing multiple files in a folder
+
+![](https://user-images.githubusercontent.com/13688320/125592319-93aef031-4492-4812-934d-4ed3fcbc792a.gif)
 
 ### Add HEIC support in ImageMagick
 
@@ -508,7 +554,9 @@ dvipng is not executable
 
 但是并不能存为 pdf，或者被其他软件看到，用 Acrobat 打开会有个打叉的部分，但是看不到签名，[已经被标记为 bug，但似乎还未解决](https://bugs.launchpad.net/ubuntu/+source/okular/+bug/1859632)。
 
-## Onedrive
+## OneDrive
+
+In fact, the following client on Ubuntu is also in the command-line form. But usually, we refer to OneDrive as the whole of the client and the host, which is visited via a browser. 
 
 ### first try
 
@@ -697,32 +745,6 @@ Since the above binding can specify the machine, I am thinking it might work if 
 
 Anyway, the current solution seems already convinent.
 
-## TeXLive
-
-### Install TeXLive 2020
-
-The texlive2017 for Ubuntu cannot work for me, it reports
-
-> fatal: Could not undump 6994 4-byte item(s) ...
-
-and try
-
-> fmtutil-sys --all
-
-but does not work, refer to [Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”](https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from), but does not work.
-
-And I also try uninstall and reinstall texlive, but it still does not work.
-
-Then finally I decided to install the latest TeXLive 2020, [TeX Live - Quick install](https://tug.org/texlive/quickinstall.html), follow the instructions, but note that the mirror url should append `path/systems/texlive/tlnet`.
-
-```bash
-install-tl --location http://mirror.example.org/ctan/path/systems/texlive/tlnet
-```
-
-And note that the [steps for compeletely removing the installed TeXLive](https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu).
-
-If without root privilege, when running `install-tl`, type `D` to change the directory, and actually changing the first `<1>` would change all other directories.
-
 ## Thunderbird
 
 - 添加学校邮箱时，必须采用学号形式的邮箱，不要用 alias 形式的，alias 验证会出问题。
@@ -770,45 +792,6 @@ thunderbird -Profilemanager
 ### Train adaptive junk filter
 
 more instructions: [Thunderbird and Junk / Spam Messages](https://support.mozilla.org/en-US/kb/thunderbird-and-junk-spam-messages)
-
-## TMUX
-
-可以实现本地终端分屏。
-
-参考 [linux 工具——终端分屏与vim分屏](http://blog.csdn.net/u010454729/article/details/49496381)
-
-!!! info
-    现在改用 `Terminator`, 又称 `X-terminal-emulator`。
-
-还可以切换后台运行，在服务器上操作特别方便。
-
-常用操作
-
-```bash
-# new a shell
-tmux
-# new a shell with name
-tmux new -s NAME
-# view all shell
-tmux ls
-# go back
-tmux attach-session -t [NUM]
-# simplify
-tmux attach -t [NUM]
-# more simplify
-tmux a -t [NUM]
-# via name
-tmux a -t NAME
-# complete reset: https://stackoverflow.com/questions/38295615/complete-tmux-reset
-tmux kill-server
-# rename: https://superuser.com/questions/428016/how-do-i-rename-a-session-in-tmux
-Ctrl + B, $
-```
-
-refer to
-- [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it)
-- [Getting started with Tmux](https://linuxize.com/post/getting-started-with-tmux/)
-- [tmux cheatsheet](https://gist.github.com/henrik/1967800)
 
 ## Vi/Vim
 

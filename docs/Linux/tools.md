@@ -679,6 +679,45 @@ where
 
 more details refer to `man tesseract`.
 
+## `tmux`
+
+可以实现本地终端分屏。
+
+参考 [linux 工具——终端分屏与vim分屏](http://blog.csdn.net/u010454729/article/details/49496381)
+
+!!! info
+    现在改用 `Terminator`, 又称 `X-terminal-emulator`。
+
+还可以切换后台运行，在服务器上操作特别方便。
+
+常用操作
+
+```bash
+# new a shell
+tmux
+# new a shell with name
+tmux new -s NAME
+# view all shell
+tmux ls
+# go back
+tmux attach-session -t [NUM]
+# simplify
+tmux attach -t [NUM]
+# more simplify
+tmux a -t [NUM]
+# via name
+tmux a -t NAME
+# complete reset: https://stackoverflow.com/questions/38295615/complete-tmux-reset
+tmux kill-server
+# rename: https://superuser.com/questions/428016/how-do-i-rename-a-session-in-tmux
+Ctrl + B, $
+```
+
+refer to
+- [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it)
+- [Getting started with Tmux](https://linuxize.com/post/getting-started-with-tmux/)
+- [tmux cheatsheet](https://gist.github.com/henrik/1967800)
+
 ## `uniq`
 
 - count the frequency: `cat file.txt | sort | uniq -c`.

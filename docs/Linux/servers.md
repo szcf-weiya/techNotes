@@ -94,6 +94,17 @@ User weiya
 
 then I can just type `ssh XX` to access this server, and `scp` would also be much simpler, `scp file XX:~/`. More importantly, we can use tab-complete when entering the path, which cannot be enabled by custom functions `scp_to_xx`. 
 
+!!! warning
+	On the rocky server, it throws,
+	```bash
+	Bad owner or permissions on ~/.ssh/config
+	```
+	although the personal PC works well with same permission `-rw-rw-r--`. Refer to [ssh returns “Bad owner or permissions on ~/.ssh/config”](https://serverfault.com/questions/253313/ssh-returns-bad-owner-or-permissions-on-ssh-config), change the permission
+	```bash
+	$ chmod 600 ~/.ssh/config
+	```
+	that is, `-rw-------`.
+
 ### run GUI remotely/locally
 
 ```bash

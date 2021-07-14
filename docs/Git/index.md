@@ -395,7 +395,7 @@ Refer to [Changing git commit message after push (given that no one pulled from 
 
 现有本地、服务器仓库各一个，通过 GitHub 进行共享，原则上只通过本地编辑代码，然后在服务器中借助 `git pull` 进行更新代码。但是有一行代码由于文件路径原因，不得已在服务器端更改，在 `git pull` 之前进行了 `git add; git commit` 操作，所以 `pull` 的时候会产生 merge，而且这样下去每一次进行 `pull` 都会进行 merge。这样就很难看出服务器端真正更改的内容了，这时发现了 `git rebase`，这张图很好地展示了它要干的事情，
 
-![](http://gitbook.liuhui998.com/assets/images/figure/rebase3.png)
+![image](https://user-images.githubusercontent.com/13688320/125570542-dd69c945-e2b4-427c-8c28-5ba4b7bec961.png)
 
 这也正是我想要的，简单说就是把基于以前的更改转换成基于最新的更改。
 
@@ -444,6 +444,11 @@ $ git rebase
 ![](git-pull-with-rebase.png)
 
 ### change commit time
+
+!!! tip "TL;DR"
+    ```bash
+    GIT_AUTHOR_DATE=$(date -d "-10 days - 8 hours" -Iseconds) GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE git commit -m ""
+    ```
 
 因为习惯将当天的工作通过 commit 贡献图反映出来，但有时候提交时超了一点点时间就变成第二天了，有时会强迫性地想把时间改过来。此前一直在用一种比较笨但很有效的方法，即修改系统时间——往回拨几分钟，再进行 commit。但是昨晚这样操作时出现了失误，只调整了时间，日期并没有回退一天，push 之后才意识到，就这样多了一条未来的 commit。
 
@@ -500,7 +505,7 @@ CommitDate: Mon May 24 12:18:06 2021 -0600
 为了避免歧义，加入选项 `-Iseconds` 指定为 ISO-8601 格式，并精确至 `seconds`.
 
 ```bash
-$ GIT_AUTHOR_DATE=$(date -d "-10 days - 8 hours" -Iseconds) GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE git commit -m "XXX"
+$ GIT_AUTHOR_DATE=$(date -d "- 8 hours" -Iseconds) GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE git commit -m "XXX"
 $ git log --pretty=fuller
 Author:     szcf-weiya <your@email>
 AuthorDate: Mon May 24 12:27:06 2021 +0800
@@ -513,6 +518,95 @@ CommitDate: Mon May 24 12:27:06 2021 +0800
 - [How can one change the timestamp of an old commit in Git?](https://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git)
 - [How do I make a Git commit in the past?](https://stackoverflow.com/questions/3895453/how-do-i-make-a-git-commit-in-the-past)
 
+### change date of an older commit
+
+!!! tip "TL; DR"
+    Avoid to use, let it go.
+
+!!! warning 
+    Try to test
+    ```bash
+    $ git filter-branch --env-filter 'if [ $GIT_COMMIT == 4fae3c78eac6230ee53082654aaf58ab79fbddc5 ]; then echo $GIT_AUTHOR_DATE; fi'
+    Rewrite 4f479f96d4672aaf11f800306b10bb95e83071fd (1/21) (0 seconds passed, remaining 0 predicted)    /usr/lib/git-core/git-filter-branch: 1: [: 4f479f96d4672aaf11f800306b10bb95e83071fd: unexpected operator
+    ...
+    ```
+    which overwrites **all** commit hashes.
+
+I want to update the commit date of an historical commit, where there are 3 more recent commits. Following [How can one change the timestamp of an old commit in Git?](https://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git),
+
+```bash
+$ git rebase -i e5c9f
+```
+
+the mark the commit to be edited, not that `e5c9f` is the one before the commit to be edited,
+
+after saving, 
+
+```bash
+$ git rebase -i e5c9f
+Stopped at 4fae3c7...  XXXXXXXXXXXXXXXXXXXXXXXXXXX
+You can amend the commit now, with
+
+  git commit --amend '-S'
+
+Once you are satisfied with your changes, run
+
+  git rebase --continue
+```
+
+then change the date via
+
+```bash
+$ GIT_AUTHOR_DATE=$(date -d "2021-07-11T23:58:48+0800" -Iseconds) GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE git commit --amend --no-edit --reset-author 
+[detached HEAD e1e1cec] XXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+note that the hash has been updated, then run
+
+```bash
+$ git rebase --continue
+Successfully rebased and updated refs/heads/master.
+```
+
+Now the status is
+
+```bash
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 4 and 4 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+```
+
+Then just type `git pull`, but I immediately realized that do not use `git pull` since it will introduce 4 more commits, together with the merge one. Note that
+
+```bash
+$ git reflog 
+1f4ff92 (HEAD -> master) HEAD@{0}: pull: Merge made by the 'recursive' strategy.
+f8ea37c HEAD@{1}: rebase -i (finish): returning to refs/heads/master
+f8ea37c HEAD@{2}: rebase -i (pick): XXXXXXXX
+59b6935 HEAD@{3}: rebase -i (pick): XXXXXXXX
+b849915 HEAD@{4}: rebase -i (pick): XXXXXXXX
+```
+
+then go back to 
+
+```bash
+$ git reset HEAD@{1}
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 4 and 4 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+```
+
+then run
+
+```bash
+$ git push --force-with-lease
+```
+
+However, although the author date indeed has updated, the commit date points to the current date. 
 
 ## TEMPORARY COMMITS: `stash`
 
