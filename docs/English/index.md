@@ -1,3 +1,8 @@
+## 2021.07.15
+
+- A new measure of chronic, systemic inflammation aims to **pinpoint (确定)** whether your immune system is not as **perky (精力充沛的，活跃的，高兴的)** as it used to be.
+- It's hard to **tease (梳理)** apart the effects of the infection from other factors, such as pandemic-related stress.
+
 ## 2021.07.14
 
 - An instrument on the Perseverance rover has produced breathable oxygen on Mars.

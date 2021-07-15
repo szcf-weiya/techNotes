@@ -1,4 +1,4 @@
-# Shell Notes
+# Shell Scripts
 
 教程参考
 
@@ -204,59 +204,21 @@ applications:
 3. 数组长度：`${#ARRAY[@]}`
 4. 从 0 编号：`${ARRAY[0]}`，类似 C 语言，与 `${ARRAY}` 返回结果相同。
 
-## sed
+## Image Link -> URL + Label
 
-参考
+We can use 
 
-1. [sed命令_Linux sed 命令用法详解：功能强大的流式文本编辑器](http://man.linuxde.net/sed)
-2. [sed &amp; awk常用正则表达式 - 菲一打 - 博客园](https://www.cnblogs.com/nhlinkin/p/3647357.html)
-
-- 打印特定行，比如第 10 行：`sed '10!d' file.txt`, 参考 [Get specific line from text file using just shell script](https://stackoverflow.com/questions/19327556/get-specific-line-from-text-file-using-just-shell-script)
-- 打印行范围，`sed -n '10,20p' file.txt`，则单独打印第 10 行也可以由 `sed -n '10p' file.txt` 给出，如果采用分号 `;` 则不是连续选择，而只是特定的行，参考 [sed之打印特定行与连续行](https://blog.csdn.net/raysen_zj/article/details/46761253)
-    - 第一行到最后一行：`sed -n '1,$p'`
-    - 第一行和最后一行：`sed -n '1p;$p'`, not ~~`sed -n '1;$p'`~~
-- 删除最后一行：`sed -i '$ d' file.txt`
-- 在 vi 中注释多行：按住 v 选定特定行之后，按住 `:s/^/#/g` 即可添加注释，取消注释则用 `:s/^#//g`. 另见 VI.
-- print lines between two matching patterns ([:material-stack-overflow:](https://unix.stackexchange.com/questions/264962/print-lines-of-a-file-between-two-matching-patterns)): `/^pattern1/,/^pattern2/p`, and if one want to just print once, use `/^pattern1/,${p;/^pattern2/q}`
-- insertion: [https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/](https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/) and [https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/](https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/)
-
-### `|`的作用
-
-> 竖线(|)元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 
-
-### `-r`: 扩展的正则表达式
-
-参考[Extended regexps - sed, a stream editor](https://www.gnu.org/software/sed/manual/html_node/Extended-regexps.html)
-
-摘录如下
-
-> The only difference between basic and extended regular expressions is in the behavior of a few characters: ‘?’, ‘+’, parentheses, and braces (‘{}’). While basic regular expressions require these to be escaped if you want them to behave as special characters, when using extended regular expressions you must escape them if you want them to match a literal character.
-
-就是说 basic 模式下，要使用特殊字符（如正则表达式中）需要转义，但 extended 模式相反，转义后表达的是原字符。
-
-举个例子
-
-1. `abc?` becomes `abc\?` when using extended regular expressions. It matches the literal string ‘abc?’.
-2. `c\+` becomes `c+` when using extended regular expressions. It matches one or more ‘c’s.
-3. `a\{3,\}` becomes `a{3,}` when using extended regular expressions. It matches three or more ‘a’s.
-4. `\(abc\)\{2,3\}` becomes `(abc){2,3}` when using extended regular expressions. It matches either `abcabc` or `abcabcabc`.
-5. `\(abc*\)\1` becomes `(abc*)\1` when using extended regular expressions. Backreferences must still be escaped when using extended regular expressions.
-
-### 实战一
-
-将
-
-```
+```bash
 ![IMG_0802](https://user-images.githubusercontent.com/13688320/72489850-733ae480-3850-11ea-8e51-15021588a7e6.jpg)
 ```
 
-替换成
+to insert an image into the post. If there are multiple external web images with regular labels, such as `IMG_0XXX`, it might be convenient to convert the above format to
 
-```
+```bash
 [IMG_0802]: https://user-images.githubusercontent.com/13688320/72489850-733ae480-3850-11ea-8e51-15021588a7e6.jpg
 ```
 
-解决方案
+and then use the image with `![IMG_0802][IMG_0802]`. The solution is
 
 ```bash
 sed -i "s/\!\[IMG_\([0-9]\{4\}\)\](\(.*\))/\[IMG_\1\]\: \2/g" FILENAME
@@ -266,7 +228,14 @@ sed -i "s/\!\[IMG_\([0-9]\{4\}\)\](\(.*\))/\[IMG_\1\]\: \2/g" FILENAME
 - `\!` 需要 escape
 - `\2` 前面的空格不需要写成 `[ ]`，不然会直接出现 `[ ]`，而之前某次为了匹配多个空格需要写成 `[ ]*`
 
-人总是善变的，过了一段时间，我又想把这些 img 下载到本地文件夹，但是之前处理过的文件都删掉了，只剩下传到 github 上的了，所以我首先要把文件下载到合适的位置并重命名。比如对于文件 `_posts/2019-12-21-quant-genetics.md`，只保留了 `https://user-images.githubusercontent.com/` 的链接，采用下面的脚本下载到合适的位置并重命名，
+!!! info
+    [A practical example](https://github.com/szcf-weiya/en/commit/6445be6861a2486726f5b1357cfdcbecafb95861#diff-bbd47260e02ab52e5c0ab0ad7c71bde903ea63dbf89a6e11b34915c01ba0482a)
+
+## External Images -> Local
+
+人总是善变的，过了一段时间，我又想把这些 img 下载到本地文件夹。有个原因是直接使用 GitHub 的外链图片，在墙外访问都很流畅，但是疫情期间待在家，就想将这些外链图片下载到本地，然后通过本地引用图片，这样使得墙内访问更加流畅。
+
+但是之前处理过的文件都删掉了，只剩下传到 GitHub 上的了，所以我首先要把文件下载到合适的位置并重命名。比如对于文件 `_posts/2019-12-21-quant-genetics.md`，只保留了 `https://user-images.githubusercontent.com/` 的链接，采用下面的脚本下载到合适的位置并重命名，
 
 ```bash
 grep -E "https://user-images." _posts/2019-12-21-quant-genetics.md | 
@@ -285,8 +254,7 @@ grep -E "https://user-images." _posts/2019-12-21-quant-genetics.md |
 - `read -a ADDR` 表示将分割后的字符串（比如默认按照空格进行分割，或者指定 `IFS=`）放进数组 ADDR 中，详见 `help read`，而 `man read` 并没有给出参数列表。另外需要注意到数组 `$ADDR` 返回结果为 `${ADDR[0]}`.
 	- 读取单行文件时，采用 `;` 而非 pipeline，比如文件 `text.txt` 有单行内容 `1 2 3 4`. 应用 `read -a A < test.txt; echo ${A[0]}`，而非 `read -a A < test.txt | echo ${A[0]}`，后者返回空结果。
 
-
-### 实战二
+## Git Init Date as Post Date
 
 将 ESL-CN 中的手动输入的时间统一为发布的时间，详见[:octicons-commit-24:](https://github.com/szcf-weiya/ESL-CN/commit/431c8defa535b4448b8256a9639d5a633d00622d)
 
@@ -305,12 +273,13 @@ done
 - `|[^|]*` 是为了匹配第二个除表格符号 `|` 的内容，不要直接用 `|.*`，这样也会匹配最后的 `|`，从而 `\2` 匹配不到
 - 定界符`^$` 为了防止匹配正文中的 `时间`
 
-## 批量重命名
+## Rename in Batch
 
 有时候下载文件时网站并没有区分同名文件，下载到本地后会出现 `A.zip` 与 `A (1).zip` 的情况，但这两个并不是相同的文件，所以避免以后误删，决定重命名。不过此类文件有好几个，批量处理代码为
 
 ```bash
-$ ls -1 | grep "(1)" | while read -a ADDR; do mv "${ADDR[0]} (1).zip" "${ADDR[0]}_SOMETHING.zip"; done
+ls -1 | grep "(1)" | 
+    while read -a ADDR; do mv "${ADDR[0]} (1).zip" "${ADDR[0]}_SOMETHING.zip"; done
 ```
 
 
@@ -601,6 +570,9 @@ Another example: test if a file has an empty line,
 
 note that use `-g` instead of `-G`, where the latter one would print all group ids.
 
+!!! info
+    get the id of specific user, `id -u weiya`, or get the corresponding username by the name, `id -un 1000`.
+
 ### sum parameters
 
 ```bash
@@ -704,8 +676,6 @@ In bash the two are equivalent, but in plain sh `=` is the only one guaranteed t
 
 refer to [Shell equality operators (=, ==, -eq)](https://stackoverflow.com/questions/20449543/shell-equality-operators-eq)
 
-## compare string
-
 
 ## grep keep the first line (use `sed` instead)
 
@@ -741,7 +711,7 @@ for example, compare L82-95 with L108-123,
 $ diff <(sed -n "82,95p" measure.jl) <(sed -n "108,123p" measure.jl)
 ```
 
-## `||`
+## `||` as `try...catch`
 
 No `try...catch` in bash script, but `command1 || command2` can achieve similar functionality, if `command1` fails then `command2` runs.
 
@@ -804,7 +774,11 @@ By default, `grep` performs greedy match, adding option `-P` would enable Perl's
 
 Refer to [How to do a non-greedy match in grep?](https://stackoverflow.com/questions/3027518/how-to-do-a-non-greedy-match-in-grep/3027524)
 
-## cut lines from large file
+## Cut Lines from Large File
+
+!!! tip "TL; DR"
+    - the most efficient is `tail -n+ | head` (or `head | tail`)
+    - the exit option `q` for `sed`, `exit` for `awk` and `perl` can speed up.
 
 prepare the follow text file to compare the processing speed of several common methods,
 
@@ -816,7 +790,7 @@ $ l=100000000
 $ seq 1e8 > test.txt
 ```
 
-### `head + tail`
+- `head + tail`
 
 ```bash
 $ time tail -n+$l1 test.txt | head -n $(($l2 - $l1 + 1)) > /dev/null 
@@ -842,7 +816,7 @@ note that `tail -n+` is much powerful than `tail -n`, it seems like the former o
 
 `sed`/`awk`/`perl` solutions read the whole file and since this is about huge files, they're not very efficient. But they can be faster via `exit` or `quit` after the last line in the specified range (refer to [What's the best way to take a segment out of a text file?](https://unix.stackexchange.com/a/194662)):
 
-### `sed`
+- `sed`
 
 ```bash
 $ time sed -n "$l1,$l2 p" test.txt > /dev/null 
@@ -850,11 +824,7 @@ $ time sed -n "$l1,$l2 p" test.txt > /dev/null
 real	0m4.621s
 user	0m4.253s
 sys	0m0.336s
-```
 
-vs
-
-```bash
 $ time sed -n "$l1,$l2 p; $l2 q" test.txt > /dev/null 
 
 real	0m0.054s
@@ -862,7 +832,7 @@ user	0m0.047s
 sys	0m0.008s
 ```
 
-### `awk`
+- `awk`
 
 ```bash
 $ time awk "$l1 <= NR && NR <= $l2" test.txt > /dev/null 
@@ -870,11 +840,7 @@ $ time awk "$l1 <= NR && NR <= $l2" test.txt > /dev/null
 real	0m15.294s
 user	0m15.046s
 sys	0m0.220s
-```
 
-vs
-
-```bash
 $ time awk "$l1 <= NR && NR <= $l2; NR>$l2{exit}" test.txt > /dev/null 
 
 real	0m0.158s
@@ -882,7 +848,7 @@ user	0m0.158s
 sys	0m0.001s
 ```
 
-### `perl`
+- `perl`
 
 ```bash
 $ time perl -ne "print if ${l1}..${l2}" test.txt > /dev/null 
@@ -890,11 +856,7 @@ $ time perl -ne "print if ${l1}..${l2}" test.txt > /dev/null
 real	0m10.708s
 user	0m10.498s
 sys	0m0.200s
-```
 
-vs
-
-```bash
 $ time perl -ne "print if $. >= ${l1}; exit if $. > ${l2}" test.txt > /dev/null 
 
 real	0m0.203s
@@ -902,7 +864,7 @@ user	0m0.203s
 sys	0m0.000s
 ```
 
-### others
+- others
 
 ```bash
 $ time ed -s test.txt <<< "$l1, $l2 p" > /dev/null 
@@ -912,7 +874,7 @@ user	0m6.234s
 sys	0m3.637s
 ```
 
-## delete lines in large file
+## Delete Lines in Large File
 
 either `q` or `u` does not make differences for deleting.
 
@@ -970,8 +932,9 @@ $ wc -l test.txt2
 ```
 
 where we open two file descriptors to the files, 
-	- one in read-only mode using `< test.txt` short for `0< test.txt`
-	- one in read-write mode using `1<> test.txt2` (`<> file` would be `0<> file`)
+
+- one in read-only mode using `< test.txt` short for `0< test.txt`
+- one in read-write mode using `1<> test.txt2` (`<> file` would be `0<> file`)
 
 then just treat `fd0` as the input and `fd1` as the output. 
 
@@ -988,30 +951,120 @@ truncate EXPR,LENGTH
 
 refer to [Is there a faster way to remove a line (given a line number) from a file?](https://unix.stackexchange.com/questions/66730/is-there-a-faster-way-to-remove-a-line-given-a-line-number-from-a-file)
 
-!!! warn
+!!! warning
 	In the reference, the author wrote `< file 1<> file`, which might be confusing that he used the same file, then it would throws an error,
 	> cat: -: input file is output file
 
 	Actually, I think he wanted to represent two files comparing to the first solution he mentioned, in which only single file used, and he warned that "Dangerous as you've no backup copy there."
 
+    Here is another discussion on [Why can't an input file be an output file? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/437179/why-cant-an-input-file-be-an-output-file)
+
 	I also run the third solution, but the lines are not deleted. There might be some incompatible reasons.
 
-## different save behavior of `echo`
+## Redirection and File Descriptor
 
-a column of elements would be stored in an array, then save via `echo` would result one line.
+### hide output from bg process
+
+Note that
+
+>  when you put & the output - both stdout and stderr - will still be printed onto the screen.
+
+> If you do not want to see any output on the screen, redirect both stdout and stderr to a file by:
 
 ```bash
-$ awk '{print $1}' duplicated.idx > t1.txt
-$ t1=$(awk '{print $1}' duplicated.idx)
-$ echo $t1 > t2.txt
-$ cat t1.txt 
-2
-2
-$ cat t2.txt 
-2 2
+myscript > ~/myscript.log 2>&1 &
+```
+or just
+
+```bash
+myscript > /dev/null 2>&1 &
 ```
 
-## File Descriptors
+refer to [Why can I see the output of background processes?](https://askubuntu.com/questions/662817/why-can-i-see-the-output-of-background-processes)
+
+Specifically, integer `1` stands for `stdout` file descriptor, while `2` represents `stderr` file descriptor (refer to [How to redirect stderr to a file](https://askubuntu.com/a/1031424)).
+
+```bash
+echo Hello World > /dev/null
+```
+
+is same as
+
+```bash
+echo Hello World 1> /dev/null
+```
+
+!!! info
+    Formally, this is called redirecting output: `[n]>[|]word`, if `n` is not specified, it is the **standard output (fd 1)**.
+
+    Similarly,
+
+    - redirecting input: `[n]<word`, if `n` is not specified, it is the **standard input (fd 0)**
+    - appending redirected output: `[n]>>word`, if `n` is not specified, it is the **standard output (fd 1)**
+
+
+**As for spacing**, integer is right next to redirection operator, but file can either be next to redirection operator or not, i.e., `command 2>/dev/null` or `command 2> /dev/null`.
+
+The classical operator, `command > file` only redirects standard output, [several choices to redirect stderr](https://askubuntu.com/a/625230),
+
+- Redirect stdout to one file and stderr to another file
+
+```bash
+command > out 2> error
+```
+
+- Redirect stdout to a file, and then redirect stderr to stdout **NO spacings in `2>&1`**
+
+```bash
+command > out 2>&1
+```
+
+- Redirect both to a file (not supported by all shells, but `bash` is OK)
+
+```bash
+command &> out
+```
+
+!!! info
+    Formally, this is called redirecting **standard output (fd 1)** and **standard error (fd 2)**: `&>word` or `>&word`, but the first one is preferred, and it is equivalent to `>word 2>&1`.
+
+    A related one is appending standard output and standard error: `&>>word`, which is equivalent to `>>word 2>&1`
+
+    [In more technical terms](https://askubuntu.com/a/635069), `[n]>&word` is called [Duplicating Output File Descriptor](https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_07_06):
+
+    - `[n]<&word` is used to duplicate input file descriptors. If `word` expands to one or more digits, the file descriptor denoted by `n` is made to be a copy of that file descriptor.
+    - `[n]>&word` is used to duplicate output file descriptors.
+
+!!! warning
+    The order of redirections is significant. For example,
+    ```bash
+    ls 2>&1 > dirlist
+    ```
+    directs only the standard output to file `dirlist`, because the standard error was made a copy of the standard output before the standard output was redirected to `dirlist`.
+
+We can [redirect output to a file and stdout simultaneously](https://stackoverflow.com/questions/418896/how-to-redirect-output-to-a-file-and-stdout)
+
+```bash
+program [arguments...] 2>&1 | tee outfile
+```
+
+Other kinds of redirections can be found in the official documentation, [3.6 Redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
+
+- here documents
+
+```bash
+[n]<<[-]word
+    here-document
+delimiter
+```
+
+for example, [HELP_USAGE](https://github.com/szcf-weiya/Cell-Video/blob/14a7dac4cd5c4bbfbf31d80eead85712eb8ba55a/DP/parallel_oracle2.sh#L5-L12)
+
+- here strings: `[n]<<< word`
+- moving file descriptors: `[n]<&digit-` (or `[n]>&digit-`) moves the fd `digit` to fd `n`
+- opening fd for reading and writing: `[n]<>word`, the default is fd 0 if `n` is not specified.
+
+### select lines based on 2nd file
 
 Given an input file,
 

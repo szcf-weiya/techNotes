@@ -85,7 +85,19 @@ where
 - so `NR == FNR` is only true when reading the first file
 - `next` prevents the other condition/actions when reading the first file
 
-refer to [Idiomatic awk](https://backreference.org/2010/02/10/idiomatic-awk/)
+!!! info
+    A single number `1` can also serve as the condition, which means True, see also [awk '{sub(/pattern/, "foobar")} 1'](https://backreference.org/2010/02/10/idiomatic-awk/#comment-24936).
+    > "1" is an always-true pattern; the action is missing, which means that it is `{print}` (the default action that is executed if the pattern is true).
+
+refer to [Idiomatic awk](https://backreference.org/2010/02/10/idiomatic-awk/) (**A fantastic tutorial with many examples**)
+
+For example, print the specific lines in `test.md` whose row numbers are defined in `line.txt`,
+
+```bash
+$ awk 'FNR==NR{wanted[$0]; next} FNR in wanted' lines.txt test.md
+```
+
+first came across in [selecting a large number of (specific) rows in file - Stack Overflow](https://stackoverflow.com/a/26672005), but it used `wanted[$0]++`, which does not make differences.
 
 ## `column`
 
@@ -207,6 +219,16 @@ more details refer to [ImageMagick: Annotated List of Command-line Options](http
 
 As an alternative, the GUI software `Shotwell` also provides similar functions, just clicking `enhance`.
 
+## `cp`
+
+the common usage is `cp SOURCE DEST`, but if we want to copy multiple files into a single folder at once, we can use
+
+```bash
+cp -t DIRECTORY SOURCE
+```
+
+where `SOURCE` can be multiple files, inspired from [Copying multiple specific files from one folder to another - Ask Ubuntu](https://askubuntu.com/a/816826)
+
 ## `cut`
 
 To select the first field of a file `file.txt`,
@@ -296,6 +318,21 @@ echo -n -e '\x66\x6f\x6f'
 
 do not miss quotes, and `-e` is also necessary, refer to [echo bytes to a file](https://unix.stackexchange.com/questions/118247/echo-bytes-to-a-file)
 
+### different save behavior
+
+a column of elements would be stored in an array, then save via `echo` would result one line.
+
+```bash
+$ awk '{print $1}' duplicated.idx > t1.txt
+$ cat t1.txt 
+2
+2
+$ t1=$(awk '{print $1}' duplicated.idx)
+$ echo $t1 > t2.txt
+$ cat t2.txt 
+2 2
+```
+
 ## `ffmpeg`： 视频处理
 
 ### 去除音频
@@ -350,6 +387,42 @@ $ find . -user user
 ```
 
 refer to [list files with specific group and user name](https://unix.stackexchange.com/questions/518268/list-files-with-specific-group-and-user-name)
+
+## `grep`
+
+- `-P`: perl-style regex
+- `-o`: only print the matched part instead of the whole line
+
+```bash
+$ grep -oP "hello \K\w+" <<< "hello world"
+world
+```
+
+where `\K` is the short form of `(?<=pattern)` as a zero-width look-behind assertion before the text to output, and `(?=pattern)` can be used as a zero-width look-ahead assertion after the text to output. For example, extract the text between `hello` and `weiya`.
+
+```bash
+$ grep -oP "hello \K(.*)(?=, weiya)" <<< "hello world, weiya!"
+world
+```
+
+or equivalently,
+
+```bash
+$ grep -oP "(?<=hello )(.*)(?=, weiya)" <<< "hello world, weiya!"world
+world
+```
+
+note that the space is also counted, 
+
+```bash
+$ grep -oP "(?<=hello)(.*)(?=, weiya)" <<< "hello world, weiya!"
+ world
+```
+
+refer to [Can grep output only specified groupings that match? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/13466/can-grep-output-only-specified-groupings-that-match)
+
+!!! info
+    [A practical example.](https://github.com/szcf-weiya/Cell-Video/blob/14a7dac4cd5c4bbfbf31d80eead85712eb8ba55a/report/update_bib.sh#L23)
 
 ## `htop`
 
@@ -619,6 +692,43 @@ rename Sam3 Stm32 *.nc
 - [Ubuntu中rename命令和批量重命名](http://www.linuxidc.com/Linux/2016-11/137041.htm)
 - [Modifying replace string in xargs](https://stackoverflow.com/questions/10803296/modifying-replace-string-in-xargs)
 
+## `sed`
+
+参考
+
+1. [sed命令_Linux sed 命令用法详解：功能强大的流式文本编辑器](http://man.linuxde.net/sed)
+2. [sed &amp; awk常用正则表达式 - 菲一打 - 博客园](https://www.cnblogs.com/nhlinkin/p/3647357.html)
+
+- 打印特定行，比如第 10 行：`sed '10!d' file.txt`, 参考 [Get specific line from text file using just shell script](https://stackoverflow.com/questions/19327556/get-specific-line-from-text-file-using-just-shell-script)
+- 打印行范围，`sed -n '10,20p' file.txt`，则单独打印第 10 行也可以由 `sed -n '10p' file.txt` 给出，如果采用分号 `;` 则不是连续选择，而只是特定的行，参考 [sed之打印特定行与连续行](https://blog.csdn.net/raysen_zj/article/details/46761253)
+    - 第一行到最后一行：`sed -n '1,$p'`
+    - 第一行和最后一行：`sed -n '1p;$p'`, not ~~`sed -n '1;$p'`~~
+- 删除最后一行：`sed -i '$ d' file.txt`
+- 在 vi 中注释多行：按住 v 选定特定行之后，按住 `:s/^/#/g` 即可添加注释，取消注释则用 `:s/^#//g`. 另见 VI.
+- print lines between two matching patterns ([:material-stack-overflow:](https://unix.stackexchange.com/questions/264962/print-lines-of-a-file-between-two-matching-patterns)): `/^pattern1/,/^pattern2/p`, and if one want to just print once, use `/^pattern1/,${p;/^pattern2/q}`
+- insertion: [https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/](https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/) and [https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/](https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/)
+
+### `|`的作用
+
+> 竖线(|)元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 
+
+### `-r`: 扩展的正则表达式
+
+参考[Extended regexps - sed, a stream editor](https://www.gnu.org/software/sed/manual/html_node/Extended-regexps.html)
+
+摘录如下
+
+> The only difference between basic and extended regular expressions is in the behavior of a few characters: ‘?’, ‘+’, parentheses, and braces (‘{}’). While basic regular expressions require these to be escaped if you want them to behave as special characters, when using extended regular expressions you must escape them if you want them to match a literal character.
+
+就是说 basic 模式下，要使用特殊字符（如正则表达式中）需要转义，但 extended 模式相反，转义后表达的是原字符。
+
+举个例子
+
+1. `abc?` becomes `abc\?` when using extended regular expressions. It matches the literal string ‘abc?’.
+2. `c\+` becomes `c+` when using extended regular expressions. It matches one or more ‘c’s.
+3. `a\{3,\}` becomes `a{3,}` when using extended regular expressions. It matches three or more ‘a’s.
+4. `\(abc\)\{2,3\}` becomes `(abc){2,3}` when using extended regular expressions. It matches either `abcabc` or `abcabcabc`.
+5. `\(abc*\)\1` becomes `(abc*)\1` when using extended regular expressions. Backreferences must still be escaped when using extended regular expressions.
 
 ## `sendmail`
 

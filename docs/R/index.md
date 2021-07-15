@@ -1,6 +1,28 @@
 # R Notes
 
-## Installation of Latest R3.6
+## Installation
+
+### Install from source on Rocky
+
+Following the instruction in [RStudio Documentation: Install R from Source](https://docs.rstudio.com/resources/install-r-source/)
+
+Build with
+
+```bash
+./configure \
+    --prefix=/opt/R/${R_VERSION} \
+    --enable-memory-profiling \
+    --enable-R-shlib \
+    --with-blas \
+    --with-lapack
+
+make
+sudo make install
+```
+
+then manage the version with `module`.
+
+### Install Latest R3.6
 
 Accidentally, I uninstall my R3.6 when installing `libcurl4`, the apt-log shows that
 

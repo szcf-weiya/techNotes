@@ -235,6 +235,20 @@ a = 2, b = False
 
 ## FileIO
 
+### read two files simultaneously
+
+```python
+with open("file1.txt") as f1, open("file2.txt) as f2:
+    for l1, l2 in zip(f1, f2):
+        l1.strip() # rm `\n`
+        l2.strip()
+```
+
+refer to [Reading two text files line by line simultaneously - Stack Overflow](https://stackoverflow.com/questions/11295171/reading-two-text-files-line-by-line-simultaneously)
+
+!!! info
+    [A practical example](https://github.com/szcf-weiya/SZmedinfo/blob/f8ea37c88c862affb3430e9a1278b9a261c80e83/src/trajectory.py#L10)
+
 ### 写入 non-ascii 字符
 
 ```python

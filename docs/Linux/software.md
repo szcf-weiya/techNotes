@@ -293,6 +293,7 @@ Some references:
 
     - [OpenCV with Tkinter](https://www.pyimagesearch.com/2016/05/23/opencv-with-tkinter/)
     - [Julia Package for UI development](https://discourse.julialang.org/t/julia-package-for-ui-development/39469/3)
+    - [How to make a GUI in Julia? - Stack Overflow](https://stackoverflow.com/questions/35328468/how-to-make-a-gui-in-julia)
 
 ### Add HEIC support in ImageMagick
 
@@ -914,6 +915,13 @@ s/^/#/g
 
 参考 [Ubuntu 下对文本文件每行行首进行追加、替换](http://blog.csdn.net/u010555688/article/details/48416765)
 
+全选：`VggG` 或者 `ggVG`，其中
+
+- `gg` 跳至第一行，
+- `G` 跳到最后一行
+
+参考 [what is the command for “Select All” in vim and VsVim?](https://vi.stackexchange.com/questions/9028/what-is-the-command-for-select-all-in-vim-and-vsvim)
+
 ## VS Code
 
 ### Fail to open terminal
@@ -1041,6 +1049,21 @@ Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh child pid is 2658
 
 其中 `reboot` 所在行上面的为没有添加 `-f` 选项时的日志，可以发现内容与上面查看 syslog的差不多，只不过没有那么全，比如没有指出 `Network is unreachable`，而后面添加了 `-f` 选项后，在失败重试若干次后，成功了！
 
+## w3m: Command Line Browser
+
+Visit the website from command line without the disturbing of images,
+
+![Peek 2021-07-15 15-38](https://user-images.githubusercontent.com/13688320/125749970-2e5f1c7e-9769-4e0d-b173-cdb154cd8d0c.gif)
+
+Other candidates but seems not fast and smoothly,
+
+- lynx: error in open the same website in `https`, throws "Alert!: Unable to make secure connection to remote host."
+- links: cannot display Chinese characters.
+
+Some references:
+
+- [3个常用基于Linux系统命令行WEB网站浏览工具（w3m/Links/Lynx） | 老左笔记](https://www.laozuo.org/8178.html)
+- [w3m纯文字阅读体验 - 知乎](https://zhuanlan.zhihu.com/p/351569550)
 
 ## WeChat in Linux
 

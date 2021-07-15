@@ -27,7 +27,7 @@
     - [Major Distributions: An overview of major Linux distributions and FreeBSD](https://distrowatch.com/dwres.php?resource=major)
     - [知乎：Linux 各大发行版有什么特色？](https://www.zhihu.com/question/24261540)
 
-    目前只接触 Ubuntu（个人笔记本） 和 CentOS（服务器），所以本笔记主要针对这两种。
+    目前只接触 Ubuntu（个人笔记本） 和 CentOS, Rocky（服务器），所以本笔记主要针对这两种。
 
 - check kernel version:
 	- `uname -a` or `uname -mrs`
@@ -67,12 +67,34 @@
 
     参考 [三分钟速览cpu,socket,core,thread等术语之间的关系](https://cloud.tencent.com/developer/article/1736628)
 
+- check last logged users: `last`, but the user field only shows 8 characters. To check the full name, use `last -w` instead. Refer to [last loggedin users in linux showing 8 characters only - Server Fault](https://serverfault.com/questions/343740/last-loggedin-users-in-linux-showing-8-characters-only)
+
 ## Add User
 
 ```bash
 $ useradd -m -s /bin/bash userName
 $ passwd userName
 ```
+
+Or explicitly specify the password with
+
+```bash
+useradd -p $(openssl passwd -1 "PASSWORD") -m userName
+```
+
+where `-1` means to use the MD5 based BSD password algorithm 1, see `man openssl-passwd` for more details.
+
+Create users in batch mode,
+
+```bash
+for i in {01..14}; do useradd -p $(openssl passwd -1 "PASSWORD\$") -m "project$i"; done
+```
+
+where symbol `$` (if any) needs to be escaped by `\`.
+
+!!! warning
+    As `man useradd` notes,
+    > `-p` option is not recommended because the password (or encrypted password) will be visible by users listing the processes.
 
 增加 sudo 权限
 
@@ -374,14 +396,6 @@ require sqlite3.h
 sudo apt-get install libsqlite3-dev
 ```
 
-## linux 三款命令行浏览器
-
-1. w3m
-2. links
-3. lynx
-
-refer to [http://www.laozuo.org/8178.html](http://www.laozuo.org/8178.html)
-
 ## 文件权限
 
 采用`ls -l` 便可以查看文件(夹)权限，比如
@@ -587,67 +601,6 @@ sudo service cron reload
 ## Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?
 
 [Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?](https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process)
-
-## redirection
-
-Note that
-
->  when you put & the output - both stdout and stderr - will still be printed onto the screen.
-
-> If you do not want to see any output on the screen, redirect both stdout and stderr to a file by:
-
-```bash
-myscript > ~/myscript.log 2>&1 &
-```
-or just
-
-```bash
-myscript > /dev/null 2>&1 &
-```
-
-refer to [Why can I see the output of background processes?](https://askubuntu.com/questions/662817/why-can-i-see-the-output-of-background-processes)
-
-[Formally](https://askubuntu.com/a/1031424), integer `1` stands for `stdout` file descriptor, while `2` represents `stderr` file descriptor.
-
-```bash
-echo Hello World > /dev/null
-```
-
-is same as
-
-```bash
-echo Hello World 1> /dev/null
-```
-
-**As for spacing**, integer is right next to redirection operator, but file can either be next to redirection operator or not, i.e., `command 2>/dev/null` or `command 2> /dev/null`.
-
-The classical operator, `command > file` only redirects standard output, [several choices to redirect stderr](https://askubuntu.com/a/625230),
-
-- Redirect stdout to one file and stderr to another file
-
-```bash
-command > out 2> error
-```
-
-- Redirect stdout to a file, and then redirect stderr to stdout **NO spacings in `2>&1`**
-
-```bash
-command > out 2>&1
-```
-
-- Redirect both to a file (not supported by all shells, but `bash` is OK)
-
-```bash
-command &> out
-```
-
-[In more technical terms](https://askubuntu.com/a/635069), `[integer]>&word` is called [Duplicating Output File Descriptor](https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_07_06)
-
-We can [redirect output to a file and stdout simultaneously](https://stackoverflow.com/questions/418896/how-to-redirect-output-to-a-file-and-stdout)
-
-```
-program [arguments...] 2>&1 | tee outfile
-```
 
 ## mv file with xargs
 

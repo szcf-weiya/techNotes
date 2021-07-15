@@ -6,7 +6,7 @@ nav:
       - System: Linux/index.md
       - Application Software: Linux/software.md
       - Command-line Tools: Linux/tools.md
-      - Shell: shell/index.md
+      - Shell Scripts: shell/index.md
     - Laptop:
       - 16to18: Linux/16to18.md
     - Servers: 
