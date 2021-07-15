@@ -17,6 +17,30 @@ where the distribution name `Rocky Linux` is new to me, although I might heard i
 
 Here is a Chinese discussion, [如何看待CentOS 创始人新发起的Rocky Linux项目?](https://www.zhihu.com/question/434205770)
 
+## Automatic Backup: rsnapshot
+
+Follow the tutorial [Automatic Backups on Ubuntu](https://www.cs.cornell.edu/~edward/backups.html)
+
+1. install `yum install rsnapshot`
+2. configure `/etc/rsnapshot.conf`, see the reference for more details
+3. schedule backup via `cron` and `anacron`
+
+```console
+# cat /etc/anacrontab 
+#period in days   delay in minutes   job-identifier   command
+...
+1	10	daily-snapshot	/usr/bin/rsnapshot daily
+7 	20	weekly-snapshot	/usr/bin/rsnapshot weekly
+
+# cat /etc/cron.d/rsnapshot 
+0 */4 * * * root /usr/bin/rsnapshot hourly
+```
+
+!!! info
+    `cron` and `anacron` are two different utilities that can automatically run a program at scheduled times.
+    - `cron` is older, and it will not run any scheduled task whose scheduled time occurs while the computer is powered off.
+    - `anacron` will re-run the missed task the next time the computer turns on.    
+
 ## Install Slurm
 
 Different from CHPC's cluster, the group server is just one node. So first of all, I search the possibility and necessity of slurm on single node, here are some references.

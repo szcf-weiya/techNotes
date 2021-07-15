@@ -4,7 +4,7 @@ nav:
   - Linux:
     - General:
       - System: Linux/index.md
-      - Graphical Software: Linux/software.md
+      - Application Software: Linux/software.md
       - Command-line Tools: Linux/tools.md
       - Shell: shell/index.md
     - Laptop:
@@ -78,6 +78,7 @@ nav:
     - jssdk: misc/wxjssdk.md
     - 讲座: misc/report.md
     - Mi: mi/index.md
+    - Terminology: misc/terms.md
 
 theme:
   name: 'material'

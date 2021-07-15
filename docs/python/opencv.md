@@ -50,14 +50,6 @@ pay attention to that `import cv2; cv2.__version__` returns the version of `open
 (py37) $ pip install opencv-contrib-python
 ```
 
-### Some bugs
-
-```python
-error: OpenCV(3.4.2) /tmp/build/80754af9/opencv-suite_1535558553474/work/modules/imgproc/src/color.hpp:253: error: (-215:Assertion failed) VScn::contains(scn) && VDcn::contains(dcn) && VDepth::contains(depth) in function 'CvtHelper'
-```
-
-the image might be not read properly, such as wrong path.
-
 ## OpenCV 4
 
 build from source according to the [official documentation](https://docs.opencv.org/4.0.1/d2/de6/tutorial_py_setup_in_ubuntu.html)
@@ -71,6 +63,18 @@ build from source by specifying something, refer to [Buidling OpenCV with Conda 
 3. 所有其实一开始指定 cmake，只是为了针对具体版本进行编译，最后还需要自己 link，参照 [Compile OpenCV with Cmake to integrate it within a Conda env](https://stackoverflow.com/questions/50816241/compile-opencv-with-cmake-to-integrate-it-within-a-conda-env) 设置 `BUILD_opencv_python2=OFF`
 
 Currently (2020-07-27 21:32:18), I am not using this version, and the previous built conda env also has been deleted due to the upgrade of system. But the build folders (in `~/github/opencv4_build`) and resulting `.so` (in `/usr/local/lib/python3.7/site-packages/cv2/python-3.7`) should still be OK since the beginning python is just for building.
+
+## Possible Solution for Errors
+
+- check the image path carefully
+
+```python
+error: OpenCV(3.4.2) /tmp/build/80754af9/opencv-suite_1535558553474/work/modules/imgproc/src/color.hpp:253: error: (-215:Assertion failed) VScn::contains(scn) && VDcn::contains(dcn) && VDepth::contains(depth) in function 'CvtHelper'
+```
+
+the image might be not read properly, such as wrong path.
+
+- create a completely new environment, and install `python-opencv`, such as [NULL window handler in function 'cvSetMouseCallback'](https://stackoverflow.com/questions/62801244/null-window-handler-in-function-cvsetmousecallback)
 
 ## PIL and Pillow
 

@@ -241,6 +241,18 @@ source ~/.bashrc
 - 配置文件: [http://download.csdn.net/download/karotte/3812760](http://download.csdn.net/download/karotte/3812760)
 - 自动补全: 参考[emacs自动补全插件auto-complet和yasnippet，安装、配置和扩展](http://www.cnblogs.com/liyongmou/archive/2013/04/26/3044155.html#sec-1-2)
 
+## Geeqie
+
+Install with
+
+```bash
+sudo apt install geeqie
+```
+
+which can show the pixel info, and is first used when developing the script for the [perspective transformation](#perspective-transformation).
+
+Refer to [Which image viewer is able to show coordinates?](https://askubuntu.com/questions/298877/which-image-viewer-is-able-to-show-coordinates)
+
 ## ImageMagick
 
 ### Perspective Transformation
@@ -269,6 +281,18 @@ Refer to the [source code](https://github.com/szcf-weiya/techNotes/src/persp.py)
 - Demo Two: processing multiple files in a folder
 
 ![](https://user-images.githubusercontent.com/13688320/125592319-93aef031-4492-4812-934d-4ed3fcbc792a.gif)
+
+Some references:
+
+- [Displaying the coordinates of the points clicked on the image using Python-OpenCV](https://www.geeksforgeeks.org/displaying-the-coordinates-of-the-points-clicked-on-the-image-using-python-opencv/)
+- [4 Point OpenCV getPerspective Transform Example](https://www.pyimagesearch.com/2014/08/25/4-point-opencv-getperspective-transform-example/)
+
+!!! todo
+    Wrap it into a GUI program.
+    Possible references:
+
+    - [OpenCV with Tkinter](https://www.pyimagesearch.com/2016/05/23/opencv-with-tkinter/)
+    - [Julia Package for UI development](https://discourse.julialang.org/t/julia-package-for-ui-development/39469/3)
 
 ### Add HEIC support in ImageMagick
 
