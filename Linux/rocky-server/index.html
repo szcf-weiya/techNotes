@@ -458,7 +458,7 @@
   
     <li class="md-nav__item">
       <a href="../software/" class="md-nav__link">
-        Graphical Software
+        Application Software
       </a>
     </li>
   
@@ -620,6 +620,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-backup-rsnapshot" class="md-nav__link">
+    Automatic Backup: rsnapshot
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#install-slurm" class="md-nav__link">
@@ -1637,6 +1644,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/terms/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1667,6 +1686,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-backup-rsnapshot" class="md-nav__link">
+    Automatic Backup: rsnapshot
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#install-slurm" class="md-nav__link">
@@ -1723,6 +1749,28 @@ Codename:   GreenObsidian
 <p><a href="https://github.com/rocky-linux/rocky">Rocky Linux</a> is a community enterprise Operating System designed to be 100% bug-for-bug compatible with Enterprise Linux, now that CentOS has shifted direction.</p>
 </blockquote>
 <p>Here is a Chinese discussion, <a href="https://www.zhihu.com/question/434205770">如何看待CentOS 创始人新发起的Rocky Linux项目?</a></p>
+<h2 id="automatic-backup-rsnapshot">Automatic Backup: rsnapshot<a class="headerlink" href="#automatic-backup-rsnapshot" title="Permanent link">&para;</a></h2>
+<p>Follow the tutorial <a href="https://www.cs.cornell.edu/~edward/backups.html">Automatic Backups on Ubuntu</a></p>
+<ol>
+<li>install <code>yum install rsnapshot</code></li>
+<li>configure <code>/etc/rsnapshot.conf</code>, see the reference for more details</li>
+<li>schedule backup via <code>cron</code> and <code>anacron</code></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>cat /etc/anacrontab 
+<span class="gp">#</span>period <span class="k">in</span> days   delay <span class="k">in</span> minutes   job-identifier   <span class="nb">command</span>
+<span class="go">...</span>
+<span class="go">1   10  daily-snapshot  /usr/bin/rsnapshot daily</span>
+<span class="go">7   20  weekly-snapshot /usr/bin/rsnapshot weekly</span>
+
+<span class="gp"># </span>cat /etc/cron.d/rsnapshot 
+<span class="go">0 */4 * * * root /usr/bin/rsnapshot hourly</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>cron</code> and <code>anacron</code> are two different utilities that can automatically run a program at scheduled times.
+- <code>cron</code> is older, and it will not run any scheduled task whose scheduled time occurs while the computer is powered off.
+- <code>anacron</code> will re-run the missed task the next time the computer turns on.    </p>
+</div>
 <h2 id="install-slurm">Install Slurm<a class="headerlink" href="#install-slurm" title="Permanent link">&para;</a></h2>
 <p>Different from CHPC&rsquo;s cluster, the group server is just one node. So first of all, I search the possibility and necessity of slurm on single node, here are some references.</p>
 <ul>

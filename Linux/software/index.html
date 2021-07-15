@@ -20,7 +20,7 @@
     
     
       
-        <title>Graphical Software - techNotes</title>
+        <title>Application Software - techNotes</title>
       
     
     
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Graphical Software
+              Application Software
             
           </span>
         </div>
@@ -469,12 +469,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Graphical Software
+          Application Software
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Graphical Software
+        Application Software
       </a>
       
         
@@ -679,6 +679,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geeqie" class="md-nav__link">
+    Geeqie
+  </a>
   
 </li>
       
@@ -2249,6 +2256,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/terms/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -2468,6 +2487,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geeqie" class="md-nav__link">
+    Geeqie
+  </a>
   
 </li>
       
@@ -3091,6 +3117,12 @@ $ sudo cp ~/Downloads/51-android.rules .
 <li>配置文件: <a href="http://download.csdn.net/download/karotte/3812760">http://download.csdn.net/download/karotte/3812760</a></li>
 <li>自动补全: 参考<a href="http://www.cnblogs.com/liyongmou/archive/2013/04/26/3044155.html#sec-1-2">emacs自动补全插件auto-complet和yasnippet，安装、配置和扩展</a></li>
 </ul>
+<h2 id="geeqie">Geeqie<a class="headerlink" href="#geeqie" title="Permanent link">&para;</a></h2>
+<p>Install with</p>
+<div class="highlight"><pre><span></span><code>sudo apt install geeqie
+</code></pre></div>
+<p>which can show the pixel info, and is first used when developing the script for the <a href="#perspective-transformation">perspective transformation</a>.</p>
+<p>Refer to <a href="https://askubuntu.com/questions/298877/which-image-viewer-is-able-to-show-coordinates">Which image viewer is able to show coordinates?</a></p>
 <h2 id="imagemagick">ImageMagick<a class="headerlink" href="#imagemagick" title="Permanent link">&para;</a></h2>
 <h3 id="perspective-transformation">Perspective Transformation<a class="headerlink" href="#perspective-transformation" title="Permanent link">&para;</a></h3>
 <p>I usually take many photos when listening to the seminars, it is desirable to extract only the slides and discard the nuisance background. Direct cropping is not enough since the photos are not parallel to the screen. </p>
@@ -3112,6 +3144,20 @@ $ sudo cp ~/Downloads/51-android.rules .
 <li>Demo Two: processing multiple files in a folder</li>
 </ul>
 <p><img alt="" src="https://user-images.githubusercontent.com/13688320/125592319-93aef031-4492-4812-934d-4ed3fcbc792a.gif" /></p>
+<p>Some references:</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/displaying-the-coordinates-of-the-points-clicked-on-the-image-using-python-opencv/">Displaying the coordinates of the points clicked on the image using Python-OpenCV</a></li>
+<li><a href="https://www.pyimagesearch.com/2014/08/25/4-point-opencv-getperspective-transform-example/">4 Point OpenCV getPerspective Transform Example</a></li>
+</ul>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>Wrap it into a GUI program.
+Possible references:</p>
+<ul>
+<li><a href="https://www.pyimagesearch.com/2016/05/23/opencv-with-tkinter/">OpenCV with Tkinter</a></li>
+<li><a href="https://discourse.julialang.org/t/julia-package-for-ui-development/39469/3">Julia Package for UI development</a></li>
+</ul>
+</div>
 <h3 id="add-heic-support-in-imagemagick">Add HEIC support in ImageMagick<a class="headerlink" href="#add-heic-support-in-imagemagick" title="Permanent link">&para;</a></h3>
 <div class="admonition fail">
 <p class="admonition-title">Fail</p>

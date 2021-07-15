@@ -456,7 +456,7 @@
   
     <li class="md-nav__item">
       <a href="../../Linux/software/" class="md-nav__link">
-        Graphical Software
+        Application Software
       </a>
     </li>
   
@@ -877,24 +877,18 @@
     OpenCV 3
   </a>
   
-    <nav class="md-nav" aria-label="OpenCV 3">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#some-bugs" class="md-nav__link">
-    Some bugs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#opencv-4" class="md-nav__link">
     OpenCV 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#possible-solution-for-errors" class="md-nav__link">
+    Possible Solution for Errors
   </a>
   
 </li>
@@ -1657,6 +1651,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/terms/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1700,24 +1706,18 @@
     OpenCV 3
   </a>
   
-    <nav class="md-nav" aria-label="OpenCV 3">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#some-bugs" class="md-nav__link">
-    Some bugs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#opencv-4" class="md-nav__link">
     OpenCV 4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#possible-solution-for-errors" class="md-nav__link">
+    Possible Solution for Errors
   </a>
   
 </li>
@@ -1779,10 +1779,6 @@ opencv-python             <span class="m">4</span>.2.0.34                 pypi_0
 <p>pay attention to that <code>import cv2; cv2.__version__</code> returns the version of <code>opencv-python</code>. The <code>contrib</code> packages can be installed with (see, <a href="https://pypi.org/project/opencv-contrib-python/">https://pypi.org/project/opencv-contrib-python/</a>)</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>py37<span class="o">)</span> $ pip install opencv-contrib-python
 </code></pre></div>
-<h3 id="some-bugs">Some bugs<a class="headerlink" href="#some-bugs" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">error</span><span class="p">:</span> <span class="n">OpenCV</span><span class="p">(</span><span class="mf">3.4.2</span><span class="p">)</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="mi">80754</span><span class="n">af9</span><span class="o">/</span><span class="n">opencv</span><span class="o">-</span><span class="n">suite_1535558553474</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">imgproc</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">color</span><span class="o">.</span><span class="n">hpp</span><span class="p">:</span><span class="mi">253</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">215</span><span class="p">:</span><span class="n">Assertion</span> <span class="n">failed</span><span class="p">)</span> <span class="n">VScn</span><span class="p">::</span><span class="n">contains</span><span class="p">(</span><span class="n">scn</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">VDcn</span><span class="p">::</span><span class="n">contains</span><span class="p">(</span><span class="n">dcn</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">VDepth</span><span class="p">::</span><span class="n">contains</span><span class="p">(</span><span class="n">depth</span><span class="p">)</span> <span class="ow">in</span> <span class="n">function</span> <span class="s1">&#39;CvtHelper&#39;</span>
-</code></pre></div>
-<p>the image might be not read properly, such as wrong path.</p>
 <h2 id="opencv-4">OpenCV 4<a class="headerlink" href="#opencv-4" title="Permanent link">&para;</a></h2>
 <p>build from source according to the <a href="https://docs.opencv.org/4.0.1/d2/de6/tutorial_py_setup_in_ubuntu.html">official documentation</a></p>
 <p>curious how the python distinguish different versions of opencv, does it affect the conda environment?</p>
@@ -1793,6 +1789,16 @@ opencv-python             <span class="m">4</span>.2.0.34                 pypi_0
 <li>所有其实一开始指定 cmake，只是为了针对具体版本进行编译，最后还需要自己 link，参照 <a href="https://stackoverflow.com/questions/50816241/compile-opencv-with-cmake-to-integrate-it-within-a-conda-env">Compile OpenCV with Cmake to integrate it within a Conda env</a> 设置 <code>BUILD_opencv_python2=OFF</code></li>
 </ol>
 <p>Currently (2020-07-27 21:32:18), I am not using this version, and the previous built conda env also has been deleted due to the upgrade of system. But the build folders (in <code>~/github/opencv4_build</code>) and resulting <code>.so</code> (in <code>/usr/local/lib/python3.7/site-packages/cv2/python-3.7</code>) should still be OK since the beginning python is just for building.</p>
+<h2 id="possible-solution-for-errors">Possible Solution for Errors<a class="headerlink" href="#possible-solution-for-errors" title="Permanent link">&para;</a></h2>
+<ul>
+<li>check the image path carefully</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">error</span><span class="p">:</span> <span class="n">OpenCV</span><span class="p">(</span><span class="mf">3.4.2</span><span class="p">)</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="mi">80754</span><span class="n">af9</span><span class="o">/</span><span class="n">opencv</span><span class="o">-</span><span class="n">suite_1535558553474</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">imgproc</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">color</span><span class="o">.</span><span class="n">hpp</span><span class="p">:</span><span class="mi">253</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">215</span><span class="p">:</span><span class="n">Assertion</span> <span class="n">failed</span><span class="p">)</span> <span class="n">VScn</span><span class="p">::</span><span class="n">contains</span><span class="p">(</span><span class="n">scn</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">VDcn</span><span class="p">::</span><span class="n">contains</span><span class="p">(</span><span class="n">dcn</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">VDepth</span><span class="p">::</span><span class="n">contains</span><span class="p">(</span><span class="n">depth</span><span class="p">)</span> <span class="ow">in</span> <span class="n">function</span> <span class="s1">&#39;CvtHelper&#39;</span>
+</code></pre></div>
+<p>the image might be not read properly, such as wrong path.</p>
+<ul>
+<li>create a completely new environment, and install <code>python-opencv</code>, such as <a href="https://stackoverflow.com/questions/62801244/null-window-handler-in-function-cvsetmousecallback">NULL window handler in function &lsquo;cvSetMouseCallback&rsquo;</a></li>
+</ul>
 <h2 id="pil-and-pillow">PIL and Pillow<a class="headerlink" href="#pil-and-pillow" title="Permanent link">&para;</a></h2>
 <p>PIL is the Python Imaging Library, and <a href="https://pillow.readthedocs.io/en/stable/index.html">Pillow</a> is the friendly PIL fork.
     - 由于PIL仅支持到Python 2.7，加上年久失修，于是一群志愿者在PIL的基础上创建了兼容的版本，名字叫Pillow，支持最新Python 3.x，又加入了许多新特性 <a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017785454949568"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
