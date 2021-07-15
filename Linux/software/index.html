@@ -1071,6 +1071,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#w3m-command-line-browser" class="md-nav__link">
+    w3m: Command Line Browser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#wechat-in-linux" class="md-nav__link">
     WeChat in Linux
   </a>
@@ -1164,7 +1171,7 @@
   
     <li class="md-nav__item">
       <a href="../../shell/" class="md-nav__link">
-        Shell
+        Shell Scripts
       </a>
     </li>
   
@@ -2879,6 +2886,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#w3m-command-line-browser" class="md-nav__link">
+    w3m: Command Line Browser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#wechat-in-linux" class="md-nav__link">
     WeChat in Linux
   </a>
@@ -3156,6 +3170,7 @@ Possible references:</p>
 <ul>
 <li><a href="https://www.pyimagesearch.com/2016/05/23/opencv-with-tkinter/">OpenCV with Tkinter</a></li>
 <li><a href="https://discourse.julialang.org/t/julia-package-for-ui-development/39469/3">Julia Package for UI development</a></li>
+<li><a href="https://stackoverflow.com/questions/35328468/how-to-make-a-gui-in-julia">How to make a GUI in Julia? - Stack Overflow</a></li>
 </ul>
 </div>
 <h3 id="add-heic-support-in-imagemagick">Add HEIC support in ImageMagick<a class="headerlink" href="#add-heic-support-in-imagemagick" title="Permanent link">&para;</a></h3>
@@ -3564,6 +3579,12 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 <div class="highlight"><pre><span></span><code>s/^/#/g
 </code></pre></div>
 <p>参考 <a href="http://blog.csdn.net/u010555688/article/details/48416765">Ubuntu 下对文本文件每行行首进行追加、替换</a></p>
+<p>全选：<code>VggG</code> 或者 <code>ggVG</code>，其中</p>
+<ul>
+<li><code>gg</code> 跳至第一行，</li>
+<li><code>G</code> 跳到最后一行</li>
+</ul>
+<p>参考 <a href="https://vi.stackexchange.com/questions/9028/what-is-the-command-for-select-all-in-vim-and-vsvim">what is the command for “Select All” in vim and VsVim?</a></p>
 <h2 id="vs-code">VS Code<a class="headerlink" href="#vs-code" title="Permanent link">&para;</a></h2>
 <h3 id="fail-to-open-terminal">Fail to open terminal<a class="headerlink" href="#fail-to-open-terminal" title="Permanent link">&para;</a></h3>
 <p>首先通过搜索图形界面登录，弹出</p>
@@ -3656,6 +3677,19 @@ Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T46
 Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh child pid is <span class="m">2658</span>
 </code></pre></div>
 <p>其中 <code>reboot</code> 所在行上面的为没有添加 <code>-f</code> 选项时的日志，可以发现内容与上面查看 syslog的差不多，只不过没有那么全，比如没有指出 <code>Network is unreachable</code>，而后面添加了 <code>-f</code> 选项后，在失败重试若干次后，成功了！</p>
+<h2 id="w3m-command-line-browser">w3m: Command Line Browser<a class="headerlink" href="#w3m-command-line-browser" title="Permanent link">&para;</a></h2>
+<p>Visit the website from command line without the disturbing of images,</p>
+<p><img alt="Peek 2021-07-15 15-38" src="https://user-images.githubusercontent.com/13688320/125749970-2e5f1c7e-9769-4e0d-b173-cdb154cd8d0c.gif" /></p>
+<p>Other candidates but seems not fast and smoothly,</p>
+<ul>
+<li>lynx: error in open the same website in <code>https</code>, throws &ldquo;Alert!: Unable to make secure connection to remote host.&rdquo;</li>
+<li>links: cannot display Chinese characters.</li>
+</ul>
+<p>Some references:</p>
+<ul>
+<li><a href="https://www.laozuo.org/8178.html">3个常用基于Linux系统命令行WEB网站浏览工具（w3m/Links/Lynx） | 老左笔记</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/351569550">w3m纯文字阅读体验 - 知乎</a></li>
+</ul>
 <h2 id="wechat-in-linux">WeChat in Linux<a class="headerlink" href="#wechat-in-linux" title="Permanent link">&para;</a></h2>
 <p>起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！</p>
 <p>docker 了解一点，知道如果成功，以后安装卸载会很简单，于是使用 <a href="https://github.com/huan/docker-wechat">huan/docker-wechat</a> 提供的 docker image，但是后来<a href="https://github.com/huan/docker-wechat/issues/40">输入时文本不可见的问题</a>很恼人 ，也不知道怎么解决。</p>

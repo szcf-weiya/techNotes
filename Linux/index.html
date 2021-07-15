@@ -612,13 +612,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux_1" class="md-nav__link">
-    linux 三款命令行浏览器
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     文件权限
   </a>
@@ -767,13 +760,6 @@
         <li class="md-nav__item">
   <a href="#unable-to-lock-the-administration-directory-varlibdpkg-is-another-process-using-it" class="md-nav__link">
     Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#redirection" class="md-nav__link">
-    redirection
   </a>
   
 </li>
@@ -1067,7 +1053,7 @@
   
     <li class="md-nav__item">
       <a href="../shell/" class="md-nav__link">
-        Shell
+        Shell Scripts
       </a>
     </li>
   
@@ -2335,13 +2321,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux_1" class="md-nav__link">
-    linux 三款命令行浏览器
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     文件权限
   </a>
@@ -2490,13 +2469,6 @@
         <li class="md-nav__item">
   <a href="#unable-to-lock-the-administration-directory-varlibdpkg-is-another-process-using-it" class="md-nav__link">
     Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#redirection" class="md-nav__link">
-    redirection
   </a>
   
 </li>
@@ -2795,7 +2767,7 @@
 <li><a href="https://distrowatch.com/dwres.php?resource=major">Major Distributions: An overview of major Linux distributions and FreeBSD</a></li>
 <li><a href="https://www.zhihu.com/question/24261540">知乎：Linux 各大发行版有什么特色？</a></li>
 </ul>
-<p>目前只接触 Ubuntu（个人笔记本） 和 CentOS（服务器），所以本笔记主要针对这两种。</p>
+<p>目前只接触 Ubuntu（个人笔记本） 和 CentOS, Rocky（服务器），所以本笔记主要针对这两种。</p>
 </div>
 <ul>
 <li>check kernel version:<ul>
@@ -2840,10 +2812,28 @@ Socket<span class="o">(</span>s<span class="o">)</span>:           <span class="
 表明其为 4 核 4 线程。</p>
 <p>参考 <a href="https://cloud.tencent.com/developer/article/1736628">三分钟速览cpu,socket,core,thread等术语之间的关系</a></p>
 </div>
+<ul>
+<li>check last logged users: <code>last</code>, but the user field only shows 8 characters. To check the full name, use <code>last -w</code> instead. Refer to <a href="https://serverfault.com/questions/343740/last-loggedin-users-in-linux-showing-8-characters-only">last loggedin users in linux showing 8 characters only - Server Fault</a></li>
+</ul>
 <h2 id="add-user">Add User<a class="headerlink" href="#add-user" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$ useradd -m -s /bin/bash userName
 $ passwd userName
 </code></pre></div>
+<p>Or explicitly specify the password with</p>
+<div class="highlight"><pre><span></span><code>useradd -p <span class="k">$(</span>openssl passwd -1 <span class="s2">&quot;PASSWORD&quot;</span><span class="k">)</span> -m userName
+</code></pre></div>
+<p>where <code>-1</code> means to use the MD5 based BSD password algorithm 1, see <code>man openssl-passwd</code> for more details.</p>
+<p>Create users in batch mode,</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">01</span>..14<span class="o">}</span><span class="p">;</span> <span class="k">do</span> useradd -p <span class="k">$(</span>openssl passwd -1 <span class="s2">&quot;PASSWORD\$&quot;</span><span class="k">)</span> -m <span class="s2">&quot;project</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div>
+<p>where symbol <code>$</code> (if any) needs to be escaped by <code>\</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As <code>man useradd</code> notes,</p>
+<blockquote>
+<p><code>-p</code> option is not recommended because the password (or encrypted password) will be visible by users listing the processes.</p>
+</blockquote>
+</div>
 <p>增加 sudo 权限</p>
 <div class="highlight"><pre><span></span><code>$ sudoedit /etc/sudoers
 </code></pre></div>
@@ -3052,13 +3042,6 @@ root         <span class="m">1</span>     <span class="m">0</span>  <span class=
 <p>require sqlite3.h
 <div class="highlight"><pre><span></span><code>sudo apt-get install libsqlite3-dev
 </code></pre></div></p>
-<h2 id="linux_1">linux 三款命令行浏览器<a class="headerlink" href="#linux_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>w3m</li>
-<li>links</li>
-<li>lynx</li>
-</ol>
-<p>refer to <a href="http://www.laozuo.org/8178.html">http://www.laozuo.org/8178.html</a></p>
 <h2 id="_2">文件权限<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>采用<code>ls -l</code> 便可以查看文件(夹)权限，比如</p>
 <p><div class="highlight"><pre><span></span><code>-rw-rw-r--  <span class="m">1</span> weiya weiya    <span class="m">137969</span> 3月   <span class="m">8</span>  <span class="m">2017</span> font.txt
@@ -3205,45 +3188,6 @@ sudo service cron reload
 </ol>
 <h2 id="unable-to-lock-the-administration-directory-varlibdpkg-is-another-process-using-it">Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?<a class="headerlink" href="#unable-to-lock-the-administration-directory-varlibdpkg-is-another-process-using-it" title="Permanent link">&para;</a></h2>
 <p><a href="https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process">Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?</a></p>
-<h2 id="redirection">redirection<a class="headerlink" href="#redirection" title="Permanent link">&para;</a></h2>
-<p>Note that</p>
-<blockquote>
-<p>when you put &amp; the output - both stdout and stderr - will still be printed onto the screen.</p>
-<p>If you do not want to see any output on the screen, redirect both stdout and stderr to a file by:</p>
-</blockquote>
-<p><div class="highlight"><pre><span></span><code>myscript &gt; ~/myscript.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
-</code></pre></div>
-or just</p>
-<div class="highlight"><pre><span></span><code>myscript &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
-</code></pre></div>
-<p>refer to <a href="https://askubuntu.com/questions/662817/why-can-i-see-the-output-of-background-processes">Why can I see the output of background processes?</a></p>
-<p><a href="https://askubuntu.com/a/1031424">Formally</a>, integer <code>1</code> stands for <code>stdout</code> file descriptor, while <code>2</code> represents <code>stderr</code> file descriptor.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> Hello World &gt; /dev/null
-</code></pre></div>
-<p>is same as</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> Hello World <span class="m">1</span>&gt; /dev/null
-</code></pre></div>
-<p><strong>As for spacing</strong>, integer is right next to redirection operator, but file can either be next to redirection operator or not, i.e., <code>command 2&gt;/dev/null</code> or <code>command 2&gt; /dev/null</code>.</p>
-<p>The classical operator, <code>command &gt; file</code> only redirects standard output, <a href="https://askubuntu.com/a/625230">several choices to redirect stderr</a>,</p>
-<ul>
-<li>Redirect stdout to one file and stderr to another file</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nb">command</span> &gt; out <span class="m">2</span>&gt; error
-</code></pre></div>
-<ul>
-<li>Redirect stdout to a file, and then redirect stderr to stdout <strong>NO spacings in <code>2&gt;&amp;1</code></strong></li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nb">command</span> &gt; out <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
-</code></pre></div>
-<ul>
-<li>Redirect both to a file (not supported by all shells, but <code>bash</code> is OK)</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nb">command</span> <span class="p">&amp;</span>&gt; out
-</code></pre></div>
-<p><a href="https://askubuntu.com/a/635069">In more technical terms</a>, <code>[integer]&gt;&amp;word</code> is called <a href="https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_07_06">Duplicating Output File Descriptor</a></p>
-<p>We can <a href="https://stackoverflow.com/questions/418896/how-to-redirect-output-to-a-file-and-stdout">redirect output to a file and stdout simultaneously</a></p>
-<div class="highlight"><pre><span></span><code>program [arguments...] 2&gt;&amp;1 | tee outfile
-</code></pre></div>
 <h2 id="mv-file-with-xargs">mv file with xargs<a class="headerlink" href="#mv-file-with-xargs" title="Permanent link">&para;</a></h2>
 <p>use <code>-I {}</code> to replace some str.</p>
 <div class="highlight"><pre><span></span><code>ls <span class="p">|</span> grep <span class="s1">&#39;config[0-9].txt&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> mv <span class="o">{}</span> configs/

@@ -593,6 +593,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    cp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cut" class="md-nav__link">
     cut
   </a>
@@ -624,6 +631,13 @@
           <li class="md-nav__item">
   <a href="#print-bytes" class="md-nav__link">
     print bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-save-behavior" class="md-nav__link">
+    different save behavior
   </a>
   
 </li>
@@ -677,6 +691,13 @@
         <li class="md-nav__item">
   <a href="#find" class="md-nav__link">
     find
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    grep
   </a>
   
 </li>
@@ -767,6 +788,33 @@
   <a href="#rename" class="md-nav__link">
     rename
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sed" class="md-nav__link">
+    sed
+  </a>
+  
+    <nav class="md-nav" aria-label="sed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    |的作用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-r" class="md-nav__link">
+    -r: 扩展的正则表达式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -887,7 +935,7 @@
   
     <li class="md-nav__item">
       <a href="../../shell/" class="md-nav__link">
-        Shell
+        Shell Scripts
       </a>
     </li>
   
@@ -2112,6 +2160,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    cp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cut" class="md-nav__link">
     cut
   </a>
@@ -2143,6 +2198,13 @@
           <li class="md-nav__item">
   <a href="#print-bytes" class="md-nav__link">
     print bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-save-behavior" class="md-nav__link">
+    different save behavior
   </a>
   
 </li>
@@ -2196,6 +2258,13 @@
         <li class="md-nav__item">
   <a href="#find" class="md-nav__link">
     find
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    grep
   </a>
   
 </li>
@@ -2286,6 +2355,33 @@
   <a href="#rename" class="md-nav__link">
     rename
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sed" class="md-nav__link">
+    sed
+  </a>
+  
+    <nav class="md-nav" aria-label="sed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    |的作用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-r" class="md-nav__link">
+    -r: 扩展的正则表达式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2459,7 +2555,18 @@ d
 <li>so <code>NR == FNR</code> is only true when reading the first file</li>
 <li><code>next</code> prevents the other condition/actions when reading the first file</li>
 </ul>
-<p>refer to <a href="https://backreference.org/2010/02/10/idiomatic-awk/">Idiomatic awk</a></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>A single number <code>1</code> can also serve as the condition, which means True, see also <a href="https://backreference.org/2010/02/10/idiomatic-awk/#comment-24936">awk &lsquo;{sub(/pattern/, &ldquo;foobar&rdquo;)} 1&rsquo;</a>.</p>
+<blockquote>
+<p>&ldquo;1&rdquo; is an always-true pattern; the action is missing, which means that it is <code>{print}</code> (the default action that is executed if the pattern is true).</p>
+</blockquote>
+</div>
+<p>refer to <a href="https://backreference.org/2010/02/10/idiomatic-awk/">Idiomatic awk</a> (<strong>A fantastic tutorial with many examples</strong>)</p>
+<p>For example, print the specific lines in <code>test.md</code> whose row numbers are defined in <code>line.txt</code>,</p>
+<div class="highlight"><pre><span></span><code>$ awk <span class="s1">&#39;FNR==NR{wanted[$0]; next} FNR in wanted&#39;</span> lines.txt test.md
+</code></pre></div>
+<p>first came across in <a href="https://stackoverflow.com/a/26672005">selecting a large number of (specific) rows in file - Stack Overflow</a>, but it used <code>wanted[$0]++</code>, which does not make differences.</p>
 <h2 id="column"><code>column</code><a class="headerlink" href="#column" title="Permanent link">&para;</a></h2>
 <p>display the csv beautifully,</p>
 <div class="highlight"><pre><span></span><code>$ head file1.txt <span class="p">|</span> column -s, -t
@@ -2533,6 +2640,11 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 </ul>
 <p>more details refer to <a href="https://www.imagemagick.org/script/command-line-options.php#brightness-contrast">ImageMagick: Annotated List of Command-line Options</a></p>
 <p>As an alternative, the GUI software <code>Shotwell</code> also provides similar functions, just clicking <code>enhance</code>.</p>
+<h2 id="cp"><code>cp</code><a class="headerlink" href="#cp" title="Permanent link">&para;</a></h2>
+<p>the common usage is <code>cp SOURCE DEST</code>, but if we want to copy multiple files into a single folder at once, we can use</p>
+<div class="highlight"><pre><span></span><code>cp -t DIRECTORY SOURCE
+</code></pre></div>
+<p>where <code>SOURCE</code> can be multiple files, inspired from <a href="https://askubuntu.com/a/816826">Copying multiple specific files from one folder to another - Ask Ubuntu</a></p>
 <h2 id="cut"><code>cut</code><a class="headerlink" href="#cut" title="Permanent link">&para;</a></h2>
 <p>To select the first field of a file <code>file.txt</code>,</p>
 <div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="k">$(</span>cut -d<span class="s1">&#39;.&#39;</span> -f1 <span class="o">&lt;&lt;&lt;</span> <span class="nv">$1</span><span class="k">)</span>_test
@@ -2590,6 +2702,17 @@ $ <span class="nb">printf</span> <span class="s2">&quot;%s\n&quot;</span> <span 
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> -n -e <span class="s1">&#39;\x66\x6f\x6f&#39;</span>
 </code></pre></div>
 <p>do not miss quotes, and <code>-e</code> is also necessary, refer to <a href="https://unix.stackexchange.com/questions/118247/echo-bytes-to-a-file">echo bytes to a file</a></p>
+<h3 id="different-save-behavior">different save behavior<a class="headerlink" href="#different-save-behavior" title="Permanent link">&para;</a></h3>
+<p>a column of elements would be stored in an array, then save via <code>echo</code> would result one line.</p>
+<div class="highlight"><pre><span></span><code>$ awk <span class="s1">&#39;{print $1}&#39;</span> duplicated.idx &gt; t1.txt
+$ cat t1.txt 
+<span class="m">2</span>
+<span class="m">2</span>
+$ <span class="nv">t1</span><span class="o">=</span><span class="k">$(</span>awk <span class="s1">&#39;{print $1}&#39;</span> duplicated.idx<span class="k">)</span>
+$ <span class="nb">echo</span> <span class="nv">$t1</span> &gt; t2.txt
+$ cat t2.txt 
+<span class="m">2</span> <span class="m">2</span>
+</code></pre></div>
 <h2 id="ffmpeg"><code>ffmpeg</code>： 视频处理<a class="headerlink" href="#ffmpeg" title="Permanent link">&para;</a></h2>
 <h3 id="_3">去除音频<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="https://hefang.link/article/how-remove-voice-with-ffmpeg.html">如何使用ffmpeg去除视频声音？</a></p>
@@ -2620,6 +2743,31 @@ $ <span class="nb">printf</span> <span class="s2">&quot;%s\n&quot;</span> <span 
 $ find . -user user
 </code></pre></div>
 <p>refer to <a href="https://unix.stackexchange.com/questions/518268/list-files-with-specific-group-and-user-name">list files with specific group and user name</a></p>
+<h2 id="grep"><code>grep</code><a class="headerlink" href="#grep" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>-P</code>: perl-style regex</li>
+<li><code>-o</code>: only print the matched part instead of the whole line</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ grep -oP <span class="s2">&quot;hello \K\w+&quot;</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;hello world&quot;</span>
+world
+</code></pre></div>
+<p>where <code>\K</code> is the short form of <code>(?&lt;=pattern)</code> as a zero-width look-behind assertion before the text to output, and <code>(?=pattern)</code> can be used as a zero-width look-ahead assertion after the text to output. For example, extract the text between <code>hello</code> and <code>weiya</code>.</p>
+<div class="highlight"><pre><span></span><code>$ grep -oP <span class="s2">&quot;hello \K(.*)(?=, weiya)&quot;</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;hello world, weiya!&quot;</span>
+world
+</code></pre></div>
+<p>or equivalently,</p>
+<div class="highlight"><pre><span></span><code>$ grep -oP <span class="s2">&quot;(?&lt;=hello )(.*)(?=, weiya)&quot;</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;hello world, weiya!&quot;</span>world
+world
+</code></pre></div>
+<p>note that the space is also counted, </p>
+<div class="highlight"><pre><span></span><code>$ grep -oP <span class="s2">&quot;(?&lt;=hello)(.*)(?=, weiya)&quot;</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;hello world, weiya!&quot;</span>
+ world
+</code></pre></div>
+<p>refer to <a href="https://unix.stackexchange.com/questions/13466/can-grep-output-only-specified-groupings-that-match">Can grep output only specified groupings that match? - Unix &amp; Linux Stack Exchange</a></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><a href="https://github.com/szcf-weiya/Cell-Video/blob/14a7dac4cd5c4bbfbf31d80eead85712eb8ba55a/report/update_bib.sh#L23">A practical example.</a></p>
+</div>
 <h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
 <p>A much more powerful command than <code>top</code>, refer to <a href="https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/">Find out what processes are running in the background on Linux</a></p>
 <h2 id="ls"><code>ls</code><a class="headerlink" href="#ls" title="Permanent link">&para;</a></h2>
@@ -2820,6 +2968,43 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 <li><a href="http://www.linuxidc.com/Linux/2016-11/137041.htm">Ubuntu中rename命令和批量重命名</a></li>
 <li><a href="https://stackoverflow.com/questions/10803296/modifying-replace-string-in-xargs">Modifying replace string in xargs</a></li>
 </ul>
+<h2 id="sed"><code>sed</code><a class="headerlink" href="#sed" title="Permanent link">&para;</a></h2>
+<p>参考</p>
+<ol>
+<li><a href="http://man.linuxde.net/sed">sed命令_Linux sed 命令用法详解：功能强大的流式文本编辑器</a></li>
+<li><a href="https://www.cnblogs.com/nhlinkin/p/3647357.html">sed &amp; awk常用正则表达式 - 菲一打 - 博客园</a></li>
+</ol>
+<ul>
+<li>打印特定行，比如第 10 行：<code>sed '10!d' file.txt</code>, 参考 <a href="https://stackoverflow.com/questions/19327556/get-specific-line-from-text-file-using-just-shell-script">Get specific line from text file using just shell script</a></li>
+<li>打印行范围，<code>sed -n '10,20p' file.txt</code>，则单独打印第 10 行也可以由 <code>sed -n '10p' file.txt</code> 给出，如果采用分号 <code>;</code> 则不是连续选择，而只是特定的行，参考 <a href="https://blog.csdn.net/raysen_zj/article/details/46761253">sed之打印特定行与连续行</a><ul>
+<li>第一行到最后一行：<code>sed -n '1,$p'</code></li>
+<li>第一行和最后一行：<code>sed -n '1p;$p'</code>, not <del><code>sed -n '1;$p'</code></del></li>
+</ul>
+</li>
+<li>删除最后一行：<code>sed -i '$ d' file.txt</code></li>
+<li>在 vi 中注释多行：按住 v 选定特定行之后，按住 <code>:s/^/#/g</code> 即可添加注释，取消注释则用 <code>:s/^#//g</code>. 另见 VI.</li>
+<li>print lines between two matching patterns (<a href="https://unix.stackexchange.com/questions/264962/print-lines-of-a-file-between-two-matching-patterns"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59z"/></svg></span></a>): <code>/^pattern1/,/^pattern2/p</code>, and if one want to just print once, use <code>/^pattern1/,${p;/^pattern2/q}</code></li>
+<li>insertion: <a href="https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/">https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/</a> and <a href="https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/">https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/</a></li>
+</ul>
+<h3 id="_7"><code>|</code>的作用<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>竖线(|)元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 </p>
+</blockquote>
+<h3 id="-r"><code>-r</code>: 扩展的正则表达式<a class="headerlink" href="#-r" title="Permanent link">&para;</a></h3>
+<p>参考<a href="https://www.gnu.org/software/sed/manual/html_node/Extended-regexps.html">Extended regexps - sed, a stream editor</a></p>
+<p>摘录如下</p>
+<blockquote>
+<p>The only difference between basic and extended regular expressions is in the behavior of a few characters: ‘?’, ‘+’, parentheses, and braces (‘{}’). While basic regular expressions require these to be escaped if you want them to behave as special characters, when using extended regular expressions you must escape them if you want them to match a literal character.</p>
+</blockquote>
+<p>就是说 basic 模式下，要使用特殊字符（如正则表达式中）需要转义，但 extended 模式相反，转义后表达的是原字符。</p>
+<p>举个例子</p>
+<ol>
+<li><code>abc?</code> becomes <code>abc\?</code> when using extended regular expressions. It matches the literal string ‘abc?’.</li>
+<li><code>c\+</code> becomes <code>c+</code> when using extended regular expressions. It matches one or more ‘c’s.</li>
+<li><code>a\{3,\}</code> becomes <code>a{3,}</code> when using extended regular expressions. It matches three or more ‘a’s.</li>
+<li><code>\(abc\)\{2,3\}</code> becomes <code>(abc){2,3}</code> when using extended regular expressions. It matches either <code>abcabc</code> or <code>abcabcabc</code>.</li>
+<li><code>\(abc*\)\1</code> becomes <code>(abc*)\1</code> when using extended regular expressions. Backreferences must still be escaped when using extended regular expressions.</li>
+</ol>
 <h2 id="sendmail"><code>sendmail</code><a class="headerlink" href="#sendmail" title="Permanent link">&para;</a></h2>
 <p>send mail on the command line. On the stapc-WSL, install it via</p>
 <div class="highlight"><pre><span></span><code>$ sudo apt install sendmail
@@ -2972,13 +3157,13 @@ Ctrl + B, $
       
       
         
-        <a href="../../shell/" class="md-footer__link md-footer__link--next" aria-label="Next: Shell" rel="next">
+        <a href="../../shell/" class="md-footer__link md-footer__link--next" aria-label="Next: Shell Scripts" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Shell
+              Shell Scripts
             </div>
           </div>
           <div class="md-footer__button md-icon">
