@@ -22,6 +22,18 @@ sudo make install
 
 then manage the version with `module`.
 
+### Install 4.1.0 from source
+
+it throws when `./configure`,
+
+```bash
+configure: error: libcurl >= 7.28.0 library and headers are required with support for https
+```
+
+try to install `libcurl4-openssl-dev`, suggested in [Installing R on Linux: configure: error: libcurl >= 7.28.0 library and headers are required with support for https](https://stackoverflow.com/questions/38690232/installing-r-on-linux-configure-error-libcurl-7-28-0-library-and-headers-a).
+
+Be careful when installing the package, and to avoid the uninstallation in the next section.
+
 ### Install Latest R3.6
 
 Accidentally, I uninstall my R3.6 when installing `libcurl4`, the apt-log shows that

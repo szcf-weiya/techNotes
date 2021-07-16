@@ -1,3 +1,7 @@
+## 2021.07.16
+
+- **Campaigns (战役，运动)** to **quash (镇压，平息)** tuberculosis (TB), measles and polio have all been set back by the need to divert medical resources to COVID-19.
+
 ## 2021.07.15
 
 - A new measure of chronic, systemic inflammation aims to **pinpoint (确定)** whether your immune system is not as **perky (精力充沛的，活跃的，高兴的)** as it used to be.
