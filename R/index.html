@@ -732,6 +732,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#install-410-from-source" class="md-nav__link">
+    Install 4.1.0 from source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#install-latest-r36" class="md-nav__link">
     Install Latest R3.6
   </a>
@@ -2127,6 +2134,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#install-410-from-source" class="md-nav__link">
+    Install 4.1.0 from source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#install-latest-r36" class="md-nav__link">
     Install Latest R3.6
   </a>
@@ -2599,6 +2613,12 @@ make
 sudo make install
 </code></pre></div>
 <p>then manage the version with <code>module</code>.</p>
+<h3 id="install-410-from-source">Install 4.1.0 from source<a class="headerlink" href="#install-410-from-source" title="Permanent link">&para;</a></h3>
+<p>it throws when <code>./configure</code>,</p>
+<div class="highlight"><pre><span></span><code>configure: error: libcurl &gt;<span class="o">=</span> <span class="m">7</span>.28.0 library and headers are required with support <span class="k">for</span> https
+</code></pre></div>
+<p>try to install <code>libcurl4-openssl-dev</code>, suggested in <a href="https://stackoverflow.com/questions/38690232/installing-r-on-linux-configure-error-libcurl-7-28-0-library-and-headers-a">Installing R on Linux: configure: error: libcurl &gt;= 7.28.0 library and headers are required with support for https</a>.</p>
+<p>Be careful when installing the package, and to avoid the uninstallation in the next section.</p>
 <h3 id="install-latest-r36">Install Latest R3.6<a class="headerlink" href="#install-latest-r36" title="Permanent link">&para;</a></h3>
 <p>Accidentally, I uninstall my R3.6 when installing <code>libcurl4</code>, the apt-log shows that</p>
 <div class="highlight"><pre><span></span><code>Start-Date: <span class="m">2021</span>-05-01  <span class="m">10</span>:40:15
