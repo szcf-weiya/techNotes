@@ -1015,6 +1015,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#monitor" class="md-nav__link">
+    monitor
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2724,6 +2731,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#monitor" class="md-nav__link">
+    monitor
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3647,6 +3661,35 @@ scp_to_chpc <span class="o">()</span>
 <li>Shortcut: <code>Ctrl+F7</code></li>
 </ul>
 <p>之所以选择 <code>F7</code> 是因为本身 F7 也支持切换 display mode，但是默认 external monitor 在右侧。试图直接更改 F7 的 binding commands，相关的 Ubuntu 官方帮助文档 <a href="https://help.ubuntu.com/stable/ubuntu-help/keyboard.html.en">Keyboard</a> 及配置文件 <a href="https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions">Custom keyboard layout definitions</a>，但是无从下手。</p>
+<h2 id="monitor">monitor<a class="headerlink" href="#monitor" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>ram_available</code>: percentage of estimated amount of RAM available for userspace processes, without causing swapping <ul>
+<li>swap vs ram: see <a href="https://zhuanlan.zhihu.com/p/201384108">深入理解swap交换分区理解及扩存 &ndash; 知乎</a></li>
+<li>check with <code>free -m</code></li>
+</ul>
+</li>
+<li><code>ram_in_use</code>: system memory utilization</li>
+<li><code>30min_ram_swapped_out</code>: percentage of the system RAM swapped in the last 30 minutes  (???)</li>
+<li><code>system.load</code>: 系统负载平均值（system load averages），它将正在运行的线程（任务）对系统的需求显示为平均运行数和等待线程数。Linux load averages 可以衡量任务对系统的需求，并且它可能大于系统当前正在处理的数量，大多数工具将其显示为三个平均值，分别为 1、5 和 15 分钟值（参考 <a href="https://zhuanlan.zhihu.com/p/75975041">Linux Load Averages：什么是平均负载？ - 知乎</a>）。<ul>
+<li><code>load_average_1</code>: system one-minute load average </li>
+<li><code>load_average_5</code>: system five-minute load average </li>
+<li><code>load_average_15</code>: system fifteen-minute load average</li>
+<li>如果平均值为 0.0，意味着系统处于空闲状态</li>
+<li>如果 1min 平均值高于 5min 或 15min 平均值，则负载正在增加</li>
+<li>如果 1min 平均值低于 5min 或 15min 平均值，则负载正在减少</li>
+<li>如果它们高于系统 CPU 的数量，那么系统很可能会遇到性能问题</li>
+</ul>
+</li>
+<li><code>python.d_job_last_collected_secs</code>: number of seconds since the last successful data collection </li>
+<li><code>system.swap</code><ul>
+<li><code>used_swap</code>: swap memory utilization</li>
+</ul>
+</li>
+<li><code>system.cpu</code><ul>
+<li><code>10min_cpu_usage</code>: average CPU utilization over the last 10 minutes (excluding iowait, nice and steal) </li>
+</ul>
+</li>
+</ul>
                 
               
               
