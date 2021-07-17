@@ -1258,3 +1258,24 @@ fi
 - Shortcut: `Ctrl+F7`
 
 之所以选择 `F7` 是因为本身 F7 也支持切换 display mode，但是默认 external monitor 在右侧。试图直接更改 F7 的 binding commands，相关的 Ubuntu 官方帮助文档 [Keyboard](https://help.ubuntu.com/stable/ubuntu-help/keyboard.html.en) 及配置文件 [Custom keyboard layout definitions](https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions)，但是无从下手。
+
+## monitor
+
+- `ram_available`: percentage of estimated amount of RAM available for userspace processes, without causing swapping 
+    - swap vs ram: see [深入理解swap交换分区理解及扩存 -- 知乎](https://zhuanlan.zhihu.com/p/201384108)
+    - check with `free -m`
+- `ram_in_use`: system memory utilization
+- `30min_ram_swapped_out`: percentage of the system RAM swapped in the last 30 minutes  (???)
+- `system.load`: 系统负载平均值（system load averages），它将正在运行的线程（任务）对系统的需求显示为平均运行数和等待线程数。Linux load averages 可以衡量任务对系统的需求，并且它可能大于系统当前正在处理的数量，大多数工具将其显示为三个平均值，分别为 1、5 和 15 分钟值（参考 [Linux Load Averages：什么是平均负载？ - 知乎](https://zhuanlan.zhihu.com/p/75975041)）。
+    - `load_average_1`: system one-minute load average 
+    - `load_average_5`: system five-minute load average 
+    - ` load_average_15`: system fifteen-minute load average
+    - 如果平均值为 0.0，意味着系统处于空闲状态
+    - 如果 1min 平均值高于 5min 或 15min 平均值，则负载正在增加
+    - 如果 1min 平均值低于 5min 或 15min 平均值，则负载正在减少
+    - 如果它们高于系统 CPU 的数量，那么系统很可能会遇到性能问题
+- `python.d_job_last_collected_secs`: number of seconds since the last successful data collection 
+- `system.swap`
+    - `used_swap`: swap memory utilization
+- `system.cpu`
+    - `10min_cpu_usage`: average CPU utilization over the last 10 minutes (excluding iowait, nice and steal) 
