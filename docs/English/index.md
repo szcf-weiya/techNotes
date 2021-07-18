@@ -1,3 +1,8 @@
+## 2021.07.18
+
+- Many of the machine learning open-source frameworks picture is not so **rosy (美好的，乐观的)** when it comes using them in real-world production systems.
+- Space scientists increasingly fear a **runaway (失控的，轻易的)** **cascade (级联)** of collisions that would make low-Earth orbit unusable.
+
 ## 2021.07.17
 
 - It was **vehemently (激烈地，猛烈地)** opposed to the vaccines and claimed that **prayer (祷告)** had eradicated the disease in his country -- despite being a former science teacher himself.
@@ -1570,7 +1575,7 @@
 - Italy cities: Bari (巴里，东南部海港), Naples (那不勒斯，西南部港市), Venice (威尼斯，港市)
 - the number 53 simply stopped coming up on the Venice wheel -- leading **punters** to place increasingly big bets on the number in the certainty that it must soon make a reappearance.
 - their financial ruin, the pain of which resulted in a **spate** of suicides
-- the victims had been led **astray** by a reasoning flaw called the "gambler's fallacy" -- a worryingly common error that can **derail** many of our professional decisions, from a **goalkeeper**'s responses to penalty shootouts in football to stock investments and even judicial rulings on new **asylum** cases
+- the victims had been led **astray** by a reasoning flaw called the "gambler's fallacy" -- a worryingly common error that can **derail (脱轨)** many of our professional decisions, from a **goalkeeper**'s responses to penalty shootouts in football to stock investments and even judicial rulings on new **asylum** cases
 - the team analysed **umpires**' decisions in Major League Baseball games.
 
 ## 2020.08.05
@@ -2582,7 +2587,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 11. In an hour-long philippic, the legislator denounced the lobbyists opposing his bill.
 12. Their profligate lifestyle resulted in bankruptcy.
 13. Improvident behavior is likely to imprint indelible marks on a person's life and personality.
-14. In times of economic woe, when normal patterns of consumption and investment are frozen, prodigal government speeding can sometimes be the only way to break the **vicious circle (恶性循环)** of declining demand and shrinking employment.
+14. In times of economic **woe (悲哀，痛苦)**, when normal patterns of consumption and investment are frozen, prodigal government speeding can sometimes be the only way to break the **vicious circle (恶性循环)** of declining demand and shrinking employment.
 15. Jaw line contoured by the bristling red hair of the fighter, watchful, pugnacious.
 16. Things have come full circle since penurious sailors from the Far East first arrived two centuries ago.
 17. In May, to no one's surprise. he declared the city insolvent.
@@ -3216,7 +3221,7 @@ letter back
 
 ## 2017.11.17
 
-1. Chimpanzees, primates, chimps, gorillas, orangutans
+1. Chimpanzees, **primates (灵长类)**, chimps, gorillas, orangutans
 2. bottlenose
 3. aggressive
 4. trunk
