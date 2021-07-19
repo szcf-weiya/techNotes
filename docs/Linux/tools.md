@@ -424,6 +424,24 @@ refer to [Can grep output only specified groupings that match? - Unix & Linux St
 !!! info
     [A practical example.](https://github.com/szcf-weiya/Cell-Video/blob/14a7dac4cd5c4bbfbf31d80eead85712eb8ba55a/report/update_bib.sh#L23)
 
+- find all files given keywords, refer to [How do I find all files containing specific text on Linux? - Stack Overflow](https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linuxb)
+
+```bash
+grep -rnw '/path/to/somewhere/' -e 'pattern'
+```
+
+For example, J asked me about a situation that python failed to print to the log file in real time, and I indeed remembered that I had came cross this situation, but cannot find the relative notes. So I am trying to find files given possible keywords, such as `real time`, `print`, and finally I got the results
+
+```bash
+$ grep -rnw docs/*/*.md -e '输出'
+docs/julia/index.md:765:> HASH函数是这么一种函数，他接受一段数据作为输入，然后生成一串数据作为输出，从理论上说，设计良好的HASH函数，对于任何不同的输入数据，都应该以极高的概率生成不同的输出数据，因此可以作为“指纹”使用，来判断两个文件是否相同。
+docs/Linux/index.md:588:发现一件很迷的事情，要加上 `-u` 才能实现实时查看输出。
+docs/shell/index.md:125:1. 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；
+```
+
+As a comparison, the search function provided by GitHub is not so powerful since no related results returned in the search link <https://github.com/szcf-weiya/techNotes/search?q=%E8%BE%93%E5%87%BA&type=issues>
+
+
 ## `htop`
 
 A much more powerful command than `top`, refer to [Find out what processes are running in the background on Linux](https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/)
@@ -696,7 +714,7 @@ rename Sam3 Stm32 *.nc
 
 参考
 
-1. [sed命令_Linux sed 命令用法详解：功能强大的流式文本编辑器](http://man.linuxde.net/sed)
+1. [Linux sed 命令用法详解：功能强大的流式文本编辑器](http://man.linuxde.net/sed)
 2. [sed &amp; awk常用正则表达式 - 菲一打 - 博客园](https://www.cnblogs.com/nhlinkin/p/3647357.html)
 
 - 打印特定行，比如第 10 行：`sed '10!d' file.txt`, 参考 [Get specific line from text file using just shell script](https://stackoverflow.com/questions/19327556/get-specific-line-from-text-file-using-just-shell-script)

@@ -1,3 +1,8 @@
+## 2021.07.19
+
+- apocalypse: （尤指世界末日的）启示，天启
+- serendipity: 意外发现珍奇事物的才能
+
 ## 2021.07.18
 
 - Many of the machine learning open-source frameworks picture is not so **rosy (美好的，乐观的)** when it comes using them in real-world production systems.
