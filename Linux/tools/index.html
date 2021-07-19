@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/tools/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1fe995fd.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3754935a.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
@@ -2768,6 +2768,18 @@ world
 <p class="admonition-title">Info</p>
 <p><a href="https://github.com/szcf-weiya/Cell-Video/blob/14a7dac4cd5c4bbfbf31d80eead85712eb8ba55a/report/update_bib.sh#L23">A practical example.</a></p>
 </div>
+<ul>
+<li>find all files given keywords, refer to <a href="https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linuxb">How do I find all files containing specific text on Linux? - Stack Overflow</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code>grep -rnw <span class="s1">&#39;/path/to/somewhere/&#39;</span> -e <span class="s1">&#39;pattern&#39;</span>
+</code></pre></div>
+<p>For example, J asked me about a situation that python failed to print to the log file in real time, and I indeed remembered that I had came cross this situation, but cannot find the relative notes. So I am trying to find files given possible keywords, such as <code>real time</code>, <code>print</code>, and finally I got the results</p>
+<div class="highlight"><pre><span></span><code>$ grep -rnw docs/*/*.md -e <span class="s1">&#39;输出&#39;</span>
+docs/julia/index.md:765:&gt; HASH函数是这么一种函数，他接受一段数据作为输入，然后生成一串数据作为输出，从理论上说，设计良好的HASH函数，对于任何不同的输入数据，都应该以极高的概率生成不同的输出数据，因此可以作为“指纹”使用，来判断两个文件是否相同。
+docs/Linux/index.md:588:发现一件很迷的事情，要加上 <span class="sb">`</span>-u<span class="sb">`</span> 才能实现实时查看输出。
+docs/shell/index.md:125:1. 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；
+</code></pre></div>
+<p>As a comparison, the search function provided by GitHub is not so powerful since no related results returned in the search link <a href="https://github.com/szcf-weiya/techNotes/search?q=%E8%BE%93%E5%87%BA&amp;type=issues">https://github.com/szcf-weiya/techNotes/search?q=%E8%BE%93%E5%87%BA&amp;type=issues</a></p>
 <h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
 <p>A much more powerful command than <code>top</code>, refer to <a href="https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/">Find out what processes are running in the background on Linux</a></p>
 <h2 id="ls"><code>ls</code><a class="headerlink" href="#ls" title="Permanent link">&para;</a></h2>
@@ -2971,7 +2983,7 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 <h2 id="sed"><code>sed</code><a class="headerlink" href="#sed" title="Permanent link">&para;</a></h2>
 <p>参考</p>
 <ol>
-<li><a href="http://man.linuxde.net/sed">sed命令_Linux sed 命令用法详解：功能强大的流式文本编辑器</a></li>
+<li><a href="http://man.linuxde.net/sed">Linux sed 命令用法详解：功能强大的流式文本编辑器</a></li>
 <li><a href="https://www.cnblogs.com/nhlinkin/p/3647357.html">sed &amp; awk常用正则表达式 - 菲一打 - 博客园</a></li>
 </ol>
 <ul>
