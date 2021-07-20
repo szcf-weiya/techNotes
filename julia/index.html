@@ -1075,6 +1075,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+    <nav class="md-nav" aria-label="Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-argument-and-optional-arguments" class="md-nav__link">
+    default argument and optional arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-in-function" class="md-nav__link">
+    function in function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#plot" class="md-nav__link">
     Plot
   </a>
@@ -1331,13 +1358,6 @@
         <li class="md-nav__item">
   <a href="#some-interesting-behavior" class="md-nav__link">
     some interesting behavior
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#function-in-function" class="md-nav__link">
-    function in function
   </a>
   
 </li>
@@ -2351,6 +2371,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+    <nav class="md-nav" aria-label="Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-argument-and-optional-arguments" class="md-nav__link">
+    default argument and optional arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-in-function" class="md-nav__link">
+    function in function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#plot" class="md-nav__link">
     Plot
   </a>
@@ -2607,13 +2654,6 @@
         <li class="md-nav__item">
   <a href="#some-interesting-behavior" class="md-nav__link">
     some interesting behavior
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#function-in-function" class="md-nav__link">
-    function in function
   </a>
   
 </li>
@@ -3019,6 +3059,50 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 <span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;https_proxy&quot;</span><span class="p">]</span>
 </code></pre></div>
 <p>进行设置，这参考了 <a href="https://discourse.julialang.org/t/install-packages-behind-the-proxy/23298/2">Install packages behind the proxy</a></p>
+<h2 id="function">Function<a class="headerlink" href="#function" title="Permanent link">&para;</a></h2>
+<h3 id="default-argument-and-optional-arguments">default argument and optional arguments<a class="headerlink" href="#default-argument-and-optional-arguments" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="nb">nothing</span><span class="p">;</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+           <span class="k">if</span> <span class="n">isnothing</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+               <span class="n">println</span><span class="p">(</span><span class="s">&quot;x + z = </span><span class="si">$</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">z</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+           <span class="k">else</span>
+               <span class="n">println</span><span class="p">(</span><span class="s">&quot;x + y + z = </span><span class="si">$</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span>
+           <span class="k">end</span>
+       <span class="k">end</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">4</span>
+</code></pre></div>
+<p>with this format, we can avoid define two functions <code>f(x; )</code> and <code>f(x, y;)</code> respectively.</p>
+<h3 id="function-in-function">function in function<a class="headerlink" href="#function-in-function" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f2</span><span class="p">()</span>
+           <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+           <span class="k">function</span> <span class="n">g</span><span class="p">()</span>
+               <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">10</span>
+           <span class="k">end</span>
+           <span class="n">g</span><span class="p">()</span>
+           <span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+       <span class="k">end</span>
+<span class="n">f2</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f2</span><span class="p">()</span>
+<span class="mi">20</span>
+</code></pre></div>
+<p>but</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f2</span><span class="p">()</span>
+           <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+           <span class="n">g</span><span class="p">()</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
+           <span class="n">g</span><span class="p">()</span>
+           <span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+       <span class="k">end</span>
+<span class="n">f2</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f2</span><span class="p">()</span>
+<span class="mi">10</span>
+</code></pre></div>
+<p>since the first one does not have <code>return</code>, but <code>g()</code> has <code>return</code> and the addition is not on <code>a</code>.</p>
 <h2 id="plot">Plot<a class="headerlink" href="#plot" title="Permanent link">&para;</a></h2>
 <h3 id="contour">等高线图 (contour)<a class="headerlink" href="#contour" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">Plots</span>
@@ -3425,33 +3509,6 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <span class="n">keys</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </code></pre></div>
 <p>it correctly returns the exactly one elements, but with type <code>Base.ValueIterator for a Dict{Int64,Int64} with 1 entry</code>.</p>
-<h2 id="function-in-function">function in function<a class="headerlink" href="#function-in-function" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f2</span><span class="p">()</span>
-           <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-           <span class="k">function</span> <span class="n">g</span><span class="p">()</span>
-               <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">10</span>
-           <span class="k">end</span>
-           <span class="n">g</span><span class="p">()</span>
-           <span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-       <span class="k">end</span>
-<span class="n">f2</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
-
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f2</span><span class="p">()</span>
-<span class="mi">20</span>
-</code></pre></div>
-<p>but</p>
-<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f2</span><span class="p">()</span>
-           <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-           <span class="n">g</span><span class="p">()</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
-           <span class="n">g</span><span class="p">()</span>
-           <span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-       <span class="k">end</span>
-<span class="n">f2</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
-
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f2</span><span class="p">()</span>
-<span class="mi">10</span>
-</code></pre></div>
-<p>since the first one does not have <code>return</code>, but <code>g()</code> has <code>return</code> and the addition is not on <code>a</code>.</p>
 <h2 id="pass-array-into-function">pass array into function<a class="headerlink" href="#pass-array-into-function" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 <span class="mi">2</span><span class="o">-</span><span class="n">element</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Int64</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="o">:</span>

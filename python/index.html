@@ -1454,6 +1454,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#remove-cache" class="md-nav__link">
+    remove cache
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2982,6 +2989,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#remove-cache" class="md-nav__link">
+    remove cache
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3887,6 +3901,11 @@ pip install PACKAGE -U
 <div class="highlight"><pre><span></span><code>pip install --ignore-installed <span class="si">${</span><span class="nv">PACKAGE_NAME</span><span class="si">}</span>
 </code></pre></div>
 <p>refer to <a href="https://github.com/blockstack/blockstack-core/issues/504">&lsquo;Uninstalling a distutils installed project&rsquo; error when installing blockstack #504</a></p>
+<h3 id="remove-cache">remove cache<a class="headerlink" href="#remove-cache" title="Permanent link">&para;</a></h3>
+<p>just found there is a cache folder, <code>~/.cache/pip</code>, which occupied ~2G. From <a href="https://stackoverflow.com/questions/9510474/removing-pips-cache">Removing pip&rsquo;s cache? - Stack Overflow</a>, got to know that <code>pip</code> itself can manage the cache, such as</p>
+<div class="highlight"><pre><span></span><code>$ pip cache purge
+</code></pre></div>
+<p>But <code>pip cache</code> seems not work in older version, such as <code>pip 19.3.1</code>.</p>
 <h2 id="sys"><code>sys</code><a class="headerlink" href="#sys" title="Permanent link">&para;</a></h2>
 <h3 id="the-first-argument-in-syspathinsert">the first argument in <code>sys.path.insert()</code><a class="headerlink" href="#the-first-argument-in-syspathinsert" title="Permanent link">&para;</a></h3>
 <blockquote>
