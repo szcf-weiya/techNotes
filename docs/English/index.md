@@ -1,3 +1,7 @@
+## 2021.07.20
+
+- Scientists analysed samples from muddy sites in the western United States and found DNA structures that seem to **scavenge (「从废弃物中」觅食，吃「动物尸体」)** and "assimilate" genes from microorganisms in their environment, much like the fictional Star Trek "Brog" aliens who assimilate the knowledge and technology of other species.
+
 ## 2021.07.19
 
 - apocalypse: （尤指世界末日的）启示，天启

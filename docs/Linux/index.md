@@ -1279,3 +1279,6 @@ fi
     - `used_swap`: swap memory utilization
 - `system.cpu`
     - `10min_cpu_usage`: average CPU utilization over the last 10 minutes (excluding iowait, nice and steal) 
+- `ipv4.udperrors`
+    - `1m_ipv4_udp_receive_buffer_errors`： average number of UDP receive buffer errors over the last minute 
+- `disk_space_usage`: disk / space utilization

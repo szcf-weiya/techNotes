@@ -374,6 +374,63 @@ ENV["https_proxy"]
 
 进行设置，这参考了 [Install packages behind the proxy](https://discourse.julialang.org/t/install-packages-behind-the-proxy/23298/2)
 
+## Function
+
+### default argument and optional arguments
+
+```julia
+julia> function f(x, y=nothing; z=1)
+           if isnothing(y)
+               println("x + z = $(x+z)")
+           else
+               println("x + y + z = $(x+y+z)")
+           end
+       end
+
+julia> f(1)
+x + z = 2
+
+julia> f(1, 2)
+x + y + z = 4
+```
+
+with this format, we can avoid define two functions `f(x; )` and `f(x, y;)` respectively.
+
+### function in function
+
+```julia
+julia> function f2()
+           a = 10
+           function g()
+               a = a+10
+           end
+           g()
+           println(a)
+       end
+f2 (generic function with 1 method)
+
+julia> f2()
+20
+```
+
+but
+
+```julia
+julia> function f2()
+           a = 10
+           g() = a + 10
+           g()
+           println(a)
+       end
+f2 (generic function with 1 method)
+
+julia> f2()
+10
+```
+
+since the first one does not have `return`, but `g()` has `return` and the addition is not on `a`.
+
+
 ## Plot
 
 ### 等高线图 (contour)
@@ -959,40 +1016,6 @@ keys(d)
 ```
 
 it correctly returns the exactly one elements, but with type `Base.ValueIterator for a Dict{Int64,Int64} with 1 entry`.
-
-## function in function
-
-```julia
-julia> function f2()
-           a = 10
-           function g()
-               a = a+10
-           end
-           g()
-           println(a)
-       end
-f2 (generic function with 1 method)
-
-julia> f2()
-20
-```
-
-but
-
-```julia
-julia> function f2()
-           a = 10
-           g() = a + 10
-           g()
-           println(a)
-       end
-f2 (generic function with 1 method)
-
-julia> f2()
-10
-```
-
-since the first one does not have `return`, but `g()` has `return` and the addition is not on `a`.
 
 ## pass array into function
 

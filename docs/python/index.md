@@ -1094,6 +1094,16 @@ pip install --ignore-installed ${PACKAGE_NAME}
 
 refer to ['Uninstalling a distutils installed project' error when installing blockstack #504](https://github.com/blockstack/blockstack-core/issues/504)
 
+### remove cache
+
+just found there is a cache folder, `~/.cache/pip`, which occupied ~2G. From [Removing pip's cache? - Stack Overflow](https://stackoverflow.com/questions/9510474/removing-pips-cache), got to know that `pip` itself can manage the cache, such as
+
+```bash
+$ pip cache purge
+```
+
+But `pip cache` seems not work in older version, such as `pip 19.3.1`.
+
 ## `sys`
 
 ### the first argument in `sys.path.insert()`
