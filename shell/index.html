@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/shell/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.3754935a.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe914879.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
         
       
     
@@ -128,14 +128,18 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -525,6 +529,13 @@
         <li class="md-nav__item">
   <a href="#safer-bash-script" class="md-nav__link">
     Safer bash script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-begin-with" class="md-nav__link">
+    line begin with :
   </a>
   
 </li>
@@ -2005,6 +2016,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#line-begin-with" class="md-nav__link">
+    line begin with :
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shell" class="md-nav__link">
     shell变量
   </a>
@@ -2387,6 +2405,19 @@
 <li><a href="https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/">Safer bash scripts with &lsquo;set -euxo pipefail&rsquo;</a></li>
 <li><a href="https://blog.csdn.net/t0nsha/article/details/8606886">解释bash脚本中set -e与set -o pipefail的作用</a></li>
 </ul>
+<h2 id="line-begin-with">line begin with <code>:</code><a class="headerlink" href="#line-begin-with" title="Permanent link">&para;</a></h2>
+<p>came across in <code>R_HOME/etc/ldpaths</code> when I am investigating the loading issue of conda env from rstudio, <a href="https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987">https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987</a></p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="nb">test</span> -n <span class="s2">&quot;/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib&quot;</span><span class="p">;</span> <span class="k">then</span>
+: <span class="si">${</span><span class="nv">R_LD_LIBRARY_PATH</span><span class="p">=</span><span class="si">${</span><span class="nv">R_HOME</span><span class="si">}</span><span class="p">/lib:/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib</span><span class="si">}</span>
+<span class="k">else</span>
+: <span class="si">${</span><span class="nv">R_LD_LIBRARY_PATH</span><span class="p">=</span><span class="si">${</span><span class="nv">R_HOME</span><span class="si">}</span><span class="p">/lib</span><span class="si">}</span>
+<span class="k">fi</span>
+</code></pre></div>
+<p>I am guessing it is also a grammar for variable assignment, and someone (refer to <a href="https://stackoverflow.com/questions/32342841/colon-at-the-beginning-of-line-in-docker-entrypoint-bash-script">Colon at the beginning of line in docker entrypoint bash script - Stack Overflow</a>) has explained that</p>
+<blockquote>
+<p><code>:</code> is a no-op command: that is, it doesn&rsquo;t do anything, but arguments are evaluated normally. Contrast this with a comment (<code>#</code>), which does nothing at all (everything following the <code>#</code> is simply ignored).</p>
+</blockquote>
+<p>also check <a href="https://stackoverflow.com/questions/3224878/what-is-the-purpose-of-the-colon-gnu-bash-builtin">What is the purpose of the : (colon) GNU Bash builtin? - Stack Overflow</a></p>
 <h2 id="shell">shell变量<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
 <ol>
 <li>定义变量时，变量名不加美元符号</li>
@@ -3379,10 +3410,10 @@ g
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      <script src="../assets/javascripts/bundle.716f8af4.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
