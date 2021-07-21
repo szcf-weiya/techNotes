@@ -35,9 +35,9 @@ JavaScript是Web的编程语言。
 
 参考[JS放在head和放在body中的区别](http://blog.csdn.net/lumeier/article/details/46398009)
 
-## 分析百度站长自动推送js源代码
+## 百度站长自动推送
 
-```js
+```js linenums="1"
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -52,9 +52,9 @@ JavaScript是Web的编程语言。
 })();
 ```
 
-对于https，其push.js为
+当 `curProtocol === 'https'`，其 `push.js` 为
 
-```js
+```js linenums="1"
 !function(){
   var e = /([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,
   r = window.location.href,
@@ -183,6 +183,28 @@ console.log(patt1.exec(str));
 参考[HTML DOM Document 对象](http://www.runoob.com/jsref/dom-obj-document.html)
 
 本例中，`document.referrer`用来返回载入当前文档的文档的 URL。
+
+## Remove Disqus Ads
+
+!!! info
+    Original records on the usage: [remove ads #7](https://github.com/szcf-weiya/cn/issues/7)    
+
+```js linenums="1"
+  (function($){
+    setInterval(() => {
+        $.each($('iframe'), (arr,x) => {
+            let src = $(x).attr('src');
+            if (src && src.match(/(ads-iframe)|(disqusads)/gi)) {
+                $(x).remove();
+            }
+            let title = $(x).attr('title');
+            if (!src && title == "Disqus") {
+              $(x).remove();
+            }
+        });
+    }, 300);
+})(jQuery);
+```
 
 ## 命令行压缩js
 

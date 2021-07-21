@@ -50,6 +50,24 @@ refer to
 - [Safer bash scripts with 'set -euxo pipefail'](https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/)
 - [解释bash脚本中set -e与set -o pipefail的作用](https://blog.csdn.net/t0nsha/article/details/8606886)
 
+## line begin with `:`
+
+came across in `R_HOME/etc/ldpaths` when I am investigating the loading issue of conda env from rstudio, <https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987>
+
+```bash
+if test -n "/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib"; then
+: ${R_LD_LIBRARY_PATH=${R_HOME}/lib:/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib}
+else
+: ${R_LD_LIBRARY_PATH=${R_HOME}/lib}
+fi
+```
+
+I am guessing it is also a grammar for variable assignment, and someone (refer to [Colon at the beginning of line in docker entrypoint bash script - Stack Overflow](https://stackoverflow.com/questions/32342841/colon-at-the-beginning-of-line-in-docker-entrypoint-bash-script)) has explained that
+
+> `:` is a no-op command: that is, it doesn't do anything, but arguments are evaluated normally. Contrast this with a comment (`#`), which does nothing at all (everything following the `#` is simply ignored).
+
+also check [What is the purpose of the : (colon) GNU Bash builtin? - Stack Overflow](https://stackoverflow.com/questions/3224878/what-is-the-purpose-of-the-colon-gnu-bash-builtin)
+
 ## shell变量
 
 1. 定义变量时，变量名不加美元符号

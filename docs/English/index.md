@@ -1,3 +1,7 @@
+## 2021.07.21
+
+- Somewhat **paradoxically (事与愿违地，出乎意料地)**, machine learning frameworks have evolved several orders of magnitude faster than the corresponding data management toolsets. The platforms for managing the lifecycle of the datasets powering machine learning models are still in their **infancy (婴儿期，初期)**.
+
 ## 2021.07.20
 
 - Scientists analysed samples from muddy sites in the western United States and found DNA structures that seem to **scavenge (「从废弃物中」觅食，吃「动物尸体」)** and "assimilate" genes from microorganisms in their environment, much like the fictional Star Trek "Brog" aliens who assimilate the knowledge and technology of other species.
