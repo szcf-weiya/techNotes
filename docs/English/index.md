@@ -1,3 +1,7 @@
+## 2021.07.22
+
+- a new **dawn (开端，萌芽)** in US gun-violence research
+
 ## 2021.07.21
 
 - Somewhat **paradoxically (事与愿违地，出乎意料地)**, machine learning frameworks have evolved several orders of magnitude faster than the corresponding data management toolsets. The platforms for managing the lifecycle of the datasets powering machine learning models are still in their **infancy (婴儿期，初期)**.
@@ -1748,7 +1752,7 @@
     - cortex: （脑或其他器官的）皮层
 - our **limbic (边缘的)** brains are responsible for all of our feelings.
     - limbic system: 包含 **海马体 (Hippocampus)** 及 **杏仁体 (Amygdala)** 在内，支援多种功能例如情绪、行为及长期记忆的大脑结构。
-- rationalize it with the tangible things
+- rationalize it with the **tangible (有形的，可触摸的，切实的)** things
 - the pursuit of powered man flight was like the dot com of the day.
 - under-capitalized
 - the recipe for success

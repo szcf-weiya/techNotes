@@ -642,6 +642,8 @@ refer to [How to make a flat list out of a list of lists?](https://stackoverflow
 
 ## matplotlib.pyplot
 
+- `plt.show()` is necessary when plotting in the REPL.
+
 ### seaborn
 
 Homepage: [seaborn: statistical data visualization](https://seaborn.pydata.org/)
