@@ -1,3 +1,7 @@
+## 2021.07.23
+
+- A rug vender **gypped (欺骗或欺诈)** them good while they were touring in Egypt.
+
 ## 2021.07.22
 
 - a new **dawn (开端，萌芽)** in US gun-violence research
@@ -2650,7 +2654,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 7. While most of the tasks undertaken by the interns were undemanding, a fact that led to the flood of applicants for the positions each year, there was one arduous/onerous duty: cleaning out the garbage bins in the laboratory.
 8. In an attempt to inveigle/entice voters to support her, the **incumbent (在职的)** politician **beguilingly (欺骗地)** greeted a room full of **constituents (选民)** and **pledged (保证)** to lower taxes--even though she had only ever done the opposite while in office.
 9. After a series of storms, the once arid landscape became verdant/bountiful for the first time in many months.
-10. Although he received many visitors, the **misanthropic (厌恶人类的)**/**curmudgeonly (小气的，脾气坏的)** old man shooed them away after only a few minutes.
+10. Although he received many visitors, the **misanthropic (厌恶人类的)**/**curmudgeonly (小气的，脾气坏的)** old man **shooed (轰走，驱赶)** them away after only a few minutes.
 11. Eileen used to be a picky eater, but since a new complex of fine dining and ethnic restaurants opened in her neighborhood, she has been quite **epicurean (好美食的，【通过美食】享乐主义的)**/**gourmandizing (gourmandize: n. 大吃大喝 v. 狼吞虎咽)**.
 
 ## 2017.10.02
