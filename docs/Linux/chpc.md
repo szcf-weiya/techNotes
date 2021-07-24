@@ -23,7 +23,7 @@ where `-t` aims to avoid the warning
 Usually, only the login node is out of service, but the jobs on computing nodes would not be affected. So there is a tip to bypass the unaccessible login node.
 
 !!! warning "Requirement"
-    You can access another **middle machine** which has a public or campus IP.
+    You can access another **middle machine** which has a public or campus IP. Otherwise, you can try to use free tools like `ngrok` to generate a public ip for your local machine, see [my notes on how to access the intranet from outside](../../Internet/sci-int/#ngrok).
 
 - Step 1: ssh to the middle machine from nodes except the login node of ITSC cluster, say `sandbox`, with the remote port forwarding option `-R PORT:localhost:22`
 - Step 2: ssh back to `sandbox` by specifying the port `-p PORT`
