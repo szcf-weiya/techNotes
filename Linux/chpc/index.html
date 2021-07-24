@@ -618,6 +618,19 @@
     Login
   </a>
   
+    <nav class="md-nav" aria-label="Login">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bypass-the-login-node" class="md-nav__link">
+    bypass the login node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1764,6 +1777,19 @@
     Login
   </a>
   
+    <nav class="md-nav" aria-label="Login">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bypass-the-login-node" class="md-nav__link">
+    bypass the login node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1887,6 +1913,18 @@
 <blockquote>
 <p>Pseudo-terminal will not be allocated because stdin is not a terminal.</p>
 </blockquote>
+<h3 id="bypass-the-login-node">bypass the login node<a class="headerlink" href="#bypass-the-login-node" title="Permanent link">&para;</a></h3>
+<p>Usually, only the login node is out of service, but the jobs on computing nodes would not be affected. So there is a tip to bypass the unaccessible login node.</p>
+<div class="admonition warning">
+<p class="admonition-title">Requirement</p>
+<p>You can access another <strong>middle machine</strong> which has a public or campus IP.</p>
+</div>
+<ul>
+<li>Step 1: ssh to the middle machine from nodes except the login node of ITSC cluster, say <code>sandbox</code>, with the remote port forwarding option <code>-R PORT:localhost:22</code></li>
+<li>Step 2: ssh back to <code>sandbox</code> by specifying the port <code>-p PORT</code></li>
+</ul>
+<p>The sketch plot is as follows,</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/126862431-67358586-1f7b-410f-bafe-e3941bc71d40.png" /></p>
 <h2 id="custom-commands">Custom Commands<a class="headerlink" href="#custom-commands" title="Permanent link">&para;</a></h2>
 <p>Some of the commands would be explained in the following sections.</p>
 <ul>
