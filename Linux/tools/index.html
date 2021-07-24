@@ -2784,6 +2784,14 @@ docs/Linux/index.md:588:发现一件很迷的事情，要加上 <span class="sb"
 docs/shell/index.md:125:1. 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；
 </code></pre></div>
 <p>As a comparison, the search function provided by GitHub is not so powerful since no related results returned in the search link <a href="https://github.com/szcf-weiya/techNotes/search?q=%E8%BE%93%E5%87%BA&amp;type=issues">https://github.com/szcf-weiya/techNotes/search?q=%E8%BE%93%E5%87%BA&amp;type=issues</a></p>
+<p>When I perform it on <code>syslog</code>, it did not return all matched results, and outputs,</p>
+<div class="highlight"><pre><span></span><code>$ grep -i failed syslog
+Jul <span class="m">24</span> <span class="m">13</span>:17:11 weiya-ThinkPad-T460p gvfsd-metadata<span class="o">[</span><span class="m">13786</span><span class="o">]</span>: g_udev_device_has_property: assertion <span class="s1">&#39;G_UDEV_IS_DEVICE (device)&#39;</span> failed
+Jul <span class="m">24</span> <span class="m">14</span>:02:53 weiya-ThinkPad-T460p gvfsd-metadata<span class="o">[</span><span class="m">13786</span><span class="o">]</span>: g_udev_device_has_property: assertion <span class="s1">&#39;G_UDEV_IS_DEVICE (device)&#39;</span> failed
+Jul <span class="m">24</span> <span class="m">14</span>:02:53 weiya-ThinkPad-T460p gvfsd-metadata<span class="o">[</span><span class="m">13786</span><span class="o">]</span>: g_udev_device_has_property: assertion <span class="s1">&#39;G_UDEV_IS_DEVICE (device)&#39;</span> failed
+Binary file syslog matches
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/23512852/grep-binary-file-matches-how-to-get-normal-grep-output">https://stackoverflow.com/questions/23512852/grep-binary-file-matches-how-to-get-normal-grep-output</a>, add <code>-a</code> option.</p>
 <h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
 <p>A much more powerful command than <code>top</code>, refer to <a href="https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/">Find out what processes are running in the background on Linux</a></p>
 <h2 id="ls"><code>ls</code><a class="headerlink" href="#ls" title="Permanent link">&para;</a></h2>
