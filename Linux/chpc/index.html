@@ -1917,7 +1917,7 @@
 <p>Usually, only the login node is out of service, but the jobs on computing nodes would not be affected. So there is a tip to bypass the unaccessible login node.</p>
 <div class="admonition warning">
 <p class="admonition-title">Requirement</p>
-<p>You can access another <strong>middle machine</strong> which has a public or campus IP.</p>
+<p>You can access another <strong>middle machine</strong> which has a public or campus IP. Otherwise, you can try to use free tools like <code>ngrok</code> to generate a public ip for your local machine, see <a href="../../Internet/sci-int/#ngrok">my notes on how to access the intranet from outside</a>.</p>
 </div>
 <ul>
 <li>Step 1: ssh to the middle machine from nodes except the login node of ITSC cluster, say <code>sandbox</code>, with the remote port forwarding option <code>-R PORT:localhost:22</code></li>
