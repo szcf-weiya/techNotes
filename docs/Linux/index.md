@@ -1282,3 +1282,5 @@ fi
 - `ipv4.udperrors`
     - `1m_ipv4_udp_receive_buffer_errors`： average number of UDP receive buffer errors over the last minute 
 - `disk_space_usage`: disk / space utilization
+- `linux_power_supply_capacity`: percentage of remaining power supply capacity
+- `10s_ipv4_tcp_resets_received`: average number of received TCP RESETS over the last 10 seconds. This can be an indication that a service this host needs has crashed. Netdata will not send a clear notification for this alarm.

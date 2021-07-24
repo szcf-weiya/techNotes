@@ -1,3 +1,7 @@
+## 2021.07.24
+
+- Sea **sponge (海绵动物)** controls ocean **currents (水流)**.
+
 ## 2021.07.23
 
 - A rug vender **gypped (欺骗或欺诈)** them good while they were touring in Egypt.

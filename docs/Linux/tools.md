@@ -441,6 +441,19 @@ docs/shell/index.md:125:1. 单引号里的任何字符都会原样输出，单�
 
 As a comparison, the search function provided by GitHub is not so powerful since no related results returned in the search link <https://github.com/szcf-weiya/techNotes/search?q=%E8%BE%93%E5%87%BA&type=issues>
 
+When I perform it on `syslog`, it did not return all matched results, and outputs,
+
+```bash
+$ grep -i failed syslog
+Jul 24 13:17:11 weiya-ThinkPad-T460p gvfsd-metadata[13786]: g_udev_device_has_property: assertion 'G_UDEV_IS_DEVICE (device)' failed
+Jul 24 14:02:53 weiya-ThinkPad-T460p gvfsd-metadata[13786]: g_udev_device_has_property: assertion 'G_UDEV_IS_DEVICE (device)' failed
+Jul 24 14:02:53 weiya-ThinkPad-T460p gvfsd-metadata[13786]: g_udev_device_has_property: assertion 'G_UDEV_IS_DEVICE (device)' failed
+Binary file syslog matches
+```
+
+refer to <https://stackoverflow.com/questions/23512852/grep-binary-file-matches-how-to-get-normal-grep-output>, add `-a` option.
+
+
 
 ## `htop`
 
