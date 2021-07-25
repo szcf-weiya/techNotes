@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Internet/sci-int/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1118c9be.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
@@ -1750,7 +1750,7 @@
 </code></pre></div>
 <p>即可登录内网服务器。</p>
 <h2 id="ssh">SSH 反向隧道<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
-<p>需要自己有一台中间服务器，据我所知，可以在 aws、Azure、华为云、腾讯云申请免费云服务器，另外 Vultr 通过我的邀请码也可以获得 100 刀的 credit：</p>
+<p>需要自己有一台中间服务器，据我所知，可以在 aws、Azure、华为云、腾讯云申请免费云服务器，另外 Vultr 通过我的邀请码<strong>（点击下方图片）</strong>也可以获得 100 刀的 credit：</p>
 <p><a href="https://www.vultr.com/?ref=8436899-6G"><img src="https://www.vultr.com/media/banners/banner_800x418.png" width="800" height="418"></a></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Local Laptop</span>
 ssh -L <span class="m">30002</span>:localhost:30002 <span class="o">[</span>Server<span class="s1">&#39;s Username]@[Server&#39;</span>s Public IP<span class="o">]</span>

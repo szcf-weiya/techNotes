@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/chpc/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1118c9be.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
@@ -1923,6 +1923,10 @@
 <li>Step 1: ssh to the middle machine from nodes except the login node of ITSC cluster, say <code>sandbox</code>, with the remote port forwarding option <code>-R PORT:localhost:22</code></li>
 <li>Step 2: ssh back to <code>sandbox</code> by specifying the port <code>-p PORT</code></li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Sometimes ssh session might be disconnected if no further actions, so it would be necessary to replace <code>ssh</code> with <a href="../../Internet/#autossh"><code>autossh</code> (see my notes)</a></p>
+</div>
 <p>The sketch plot is as follows,</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/126862431-67358586-1f7b-410f-bafe-e3941bc71d40.png" /></p>
 <h2 id="custom-commands">Custom Commands<a class="headerlink" href="#custom-commands" title="Permanent link">&para;</a></h2>
