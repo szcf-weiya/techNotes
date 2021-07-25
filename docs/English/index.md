@@ -1,3 +1,7 @@
+## 2021.07.25
+
+- Italian businesses preferred to stay small and **discreet (谨慎周密)**.
+
 ## 2021.07.24
 
 - Sea **sponge (海绵动物)** controls ocean **currents (水流)**.

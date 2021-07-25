@@ -28,9 +28,13 @@ Usually, only the login node is out of service, but the jobs on computing nodes 
 - Step 1: ssh to the middle machine from nodes except the login node of ITSC cluster, say `sandbox`, with the remote port forwarding option `-R PORT:localhost:22`
 - Step 2: ssh back to `sandbox` by specifying the port `-p PORT`
 
+!!! tip
+    Sometimes ssh session might be disconnected if no further actions, so it would be necessary to replace `ssh` with [`autossh` (see my notes)](../../Internet/#autossh)
+
 The sketch plot is as follows,
 
 ![image](https://user-images.githubusercontent.com/13688320/126862431-67358586-1f7b-410f-bafe-e3941bc71d40.png)
+
 
 ## Custom Commands
 
