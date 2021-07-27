@@ -1,3 +1,7 @@
+## 2021.07.27
+
+- My parents got **hitched (结婚)** in 1973.
+
 ## 2021.07.26
 
 - **Aviator (飞行员)** Wally Funk travelled to space in a Blue Origin capsule, alongside billionaire Jeff Bezos, his brother Mark and an 18-year-old whose parents bought him a ticket.
