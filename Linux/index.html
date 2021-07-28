@@ -1026,6 +1026,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#use-old-kernel-version" class="md-nav__link">
+    use old kernel version
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2742,6 +2749,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#use-old-kernel-version" class="md-nav__link">
+    use old kernel version
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3532,6 +3546,10 @@ swapon /mnt/swapfile
 <p>挂载成功后就可以通过 <code>free -h</code> 查看内存情况。</p>
 <p>参考 <a href="http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">Linux下如何添加虚拟内存</a></p>
 <p>这个方法也可以解决 &ldquo;virtual memory exhausted: Cannot allocate memory&rdquo; 的问题。</p>
+<p>调整 swapiness，默认值为 60，越高表示越积极使用 swap 空间。</p>
+<p>临时性使用</p>
+<div class="highlight"><pre><span></span><code>$ sudo sysctl vm.swappiness<span class="o">=</span><span class="m">80</span>
+</code></pre></div>
 <h2 id="gpg-error">GPG error<a class="headerlink" href="#gpg-error" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$ sudo apt-get update
 W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/ InRelease: The following signatures were invalid: EXPKEYSIG 51716619E084DAB9 Michael Rutter &lt;marutter@gmail.com&gt;
@@ -3701,6 +3719,83 @@ scp_to_chpc <span class="o">()</span>
 <li><code>linux_power_supply_capacity</code>: percentage of remaining power supply capacity</li>
 <li><code>10s_ipv4_tcp_resets_received</code>: average number of received TCP RESETS over the last 10 seconds. This can be an indication that a service this host needs has crashed. Netdata will not send a clear notification for this alarm.</li>
 </ul>
+<h2 id="use-old-kernel-version">use old kernel version<a class="headerlink" href="#use-old-kernel-version" title="Permanent link">&para;</a></h2>
+<p>最近几天，T460P 经常自动重启，而且往往重启前花屏，甚至今天带着电脑去找老板，也重启了两次。在 <code>/var/crash</code> 目录下能发现 crash 报告，但是并不知道怎么使用</p>
+<div class="highlight"><pre><span></span><code>drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">22</span> <span class="m">20</span>:10 <span class="m">202107222000</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">23</span> <span class="m">05</span>:40 <span class="m">202107230539</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">23</span> <span class="m">08</span>:54 <span class="m">202107230854</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">24</span> <span class="m">14</span>:23 <span class="m">202107241422</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">26</span> <span class="m">09</span>:03 <span class="m">202107260517</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">27</span> <span class="m">09</span>:26 <span class="m">202107270926</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">27</span> <span class="m">23</span>:09 <span class="m">202107272308</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">28</span> <span class="m">09</span>:41 <span class="m">202107280940</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">28</span> <span class="m">09</span>:44 <span class="m">202107280944</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">28</span> <span class="m">10</span>:14 <span class="m">202107281014</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">28</span> <span class="m">11</span>:05 <span class="m">202107281105</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">28</span> <span class="m">11</span>:48 <span class="m">202107281148</span>/
+-rw-r--r--  <span class="m">1</span> kernoops whoopsie     <span class="m">2249</span> Jul <span class="m">24</span> <span class="m">14</span>:40 linux-image-4.15.0-151-generic.183202.crash
+-rw-r-----  <span class="m">1</span> root     whoopsie    <span class="m">34940</span> Jul <span class="m">22</span> <span class="m">20</span>:01 linux-image-4.15.0-151-generic-202107222000.crash
+-rw-r-----  <span class="m">1</span> root     whoopsie    <span class="m">29062</span> Jul <span class="m">23</span> <span class="m">08</span>:55 linux-image-4.15.0-151-generic-202107230854.crash
+-rw-r-----  <span class="m">1</span> root     whoopsie    <span class="m">34532</span> Jul <span class="m">24</span> <span class="m">14</span>:23 linux-image-4.15.0-151-generic-202107241422.crash
+-rw-r-----  <span class="m">1</span> root     whoopsie    <span class="m">35752</span> Jul <span class="m">26</span> <span class="m">08</span>:56 linux-image-4.15.0-151-generic-202107260517.crash
+-rw-r--r--  <span class="m">1</span> kernoops whoopsie      <span class="m">746</span> Jul <span class="m">28</span> <span class="m">09</span>:40 linux-image-4.15.0-151-generic.30586.crash
+-rw-r--r--  <span class="m">1</span> kernoops whoopsie      <span class="m">752</span> Jul <span class="m">28</span> <span class="m">09</span>:40 linux-image-4.15.0-151-generic.30735.crash
+</code></pre></div>
+<p>其中每个文件夹中有</p>
+<div class="highlight"><pre><span></span><code>$ ll <span class="m">202107281148</span>
+total <span class="m">109160</span>
+-rw-------  <span class="m">1</span> root whoopsie     <span class="m">78507</span> Jul <span class="m">28</span> <span class="m">11</span>:48 dmesg.202107281148
+-rw-------  <span class="m">1</span> root whoopsie <span class="m">111683440</span> Jul <span class="m">28</span> <span class="m">11</span>:48 dump.202107281148
+</code></pre></div>
+<p>联想下最近的操作，很有可能是通过 <code>apt upgrade</code> 更新了次内核，查看具体细节</p>
+<div class="highlight"><pre><span></span><code>$ vi /var/log/apt/history.log
+Start-Date: <span class="m">2021</span>-07-21  <span class="m">20</span>:46:59
+Commandline: aptdaemon <span class="nv">role</span><span class="o">=</span><span class="s1">&#39;role-commit-packages&#39;</span> <span class="nv">sender</span><span class="o">=</span><span class="s1">&#39;:1.1117&#39;</span>
+Install: linux-headers-4.15.0-151-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0-151.157, automatic<span class="o">)</span>, linux-modules-4.15.0-151-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0-151.157, automatic<span class="o">)</span>, linux-image-4.15.0-151-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0-151.157, automatic<span class="o">)</span>, linux-modules-extra-4.15.0-151-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0-151.157, automatic<span class="o">)</span>, linux-headers-4.15.0-151:amd64 <span class="o">(</span><span class="m">4</span>.15.0-151.157, automatic<span class="o">)</span>
+Upgrade: libnvidia-gl-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-gl-460-server:i386 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, linux-headers-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0.147.134, <span class="m">4</span>.15.0.151.139<span class="o">)</span>, linux-libc-dev:amd64 <span class="o">(</span><span class="m">4</span>.15.0-147.151, <span class="m">4</span>.15.0-151.157<span class="o">)</span>, linux-crashdump:amd64 <span class="o">(</span><span class="m">4</span>.15.0.147.134, <span class="m">4</span>.15.0.151.139<span class="o">)</span>, libsystemd0:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, libsystemd0:i386 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, linux-image-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0.147.134, <span class="m">4</span>.15.0.151.139<span class="o">)</span>, nvidia-driver-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, containerd:amd64 <span class="o">(</span><span class="m">1</span>.5.2-0ubuntu1~18.04.1, <span class="m">1</span>.5.2-0ubuntu1~18.04.2<span class="o">)</span>, nvidia-kernel-source-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-fbc1-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-fbc1-460-server:i386 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, nvidia-dkms-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, google-chrome-stable:amd64 <span class="o">(</span><span class="m">91</span>.0.4472.164-1, <span class="m">92</span>.0.4515.107-1<span class="o">)</span>, nvidia-utils-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-decode-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-decode-460-server:i386 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, udev:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, nvidia-kernel-common-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, typora:amd64 <span class="o">(</span><span class="m">0</span>.10.11-1, <span class="m">0</span>.11.0-1<span class="o">)</span>, xserver-xorg-video-nvidia-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-encode-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-encode-460-server:i386 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, nvidia-compute-utils-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, initramfs-tools-bin:amd64 <span class="o">(</span><span class="m">0</span>.130ubuntu3.12, <span class="m">0</span>.130ubuntu3.13<span class="o">)</span>, linux-signed-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0.147.134, <span class="m">4</span>.15.0.151.139<span class="o">)</span>, libudev1:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, libudev1:i386 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, libnvidia-ifr1-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-ifr1-460-server:i386 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-common-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnss-myhostname:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, libnvidia-cfg1-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, systemd-sysv:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, libpam-systemd:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, systemd:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, libnvidia-extra-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, linux-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0.147.134, <span class="m">4</span>.15.0.151.139<span class="o">)</span>, initramfs-tools-core:amd64 <span class="o">(</span><span class="m">0</span>.130ubuntu3.12, <span class="m">0</span>.130ubuntu3.13<span class="o">)</span>, initramfs-tools:amd64 <span class="o">(</span><span class="m">0</span>.130ubuntu3.12, <span class="m">0</span>.130ubuntu3.13<span class="o">)</span>, libnvidia-compute-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-compute-460-server:i386 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>
+End-Date: <span class="m">2021</span>-07-21  <span class="m">20</span>:51:53
+
+Start-Date: <span class="m">2021</span>-07-22  <span class="m">06</span>:31:33
+Commandline: /usr/bin/unattended-upgrade
+Remove: linux-headers-4.15.0-144:amd64 <span class="o">(</span><span class="m">4</span>.15.0-144.148<span class="o">)</span>, linux-headers-4.15.0-144-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0-144.148<span class="o">)</span>
+End-Date: <span class="m">2021</span>-07-22  <span class="m">06</span>:31:36
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>对于 <code>.gz</code> 的日志文件，可以使用 <code>zcat</code> 直接查看。</p>
+</div>
+<p>发现其更新时间恰恰在诸多 crash 的前一天。所以试图切换到老的内核版本。</p>
+<p>注意到在启动时，第二个选项是 <code>Advanced options for Ubuntu</code>，点进去有若干个内核，我的是</p>
+<div class="highlight"><pre><span></span><code><span class="m">4</span>.15.0-151
+<span class="m">4</span>.15.0-151 <span class="o">(</span>recovery mode<span class="o">)</span>
+<span class="m">4</span>.15.0-147
+<span class="m">4</span>.15.0-147 <span class="o">(</span>recovery mode<span class="o">)</span>
+</code></pre></div>
+<p>选择 <code>4.15.0-147</code>，进去之后发现扩展屏幕无法识别，另外 Nvidia 也没有识别。于是试着重装 nvidia driver，这次选择的是 <code>nvidia-driver-460-server</code>，这也是<a href="https://github.com/szcf-weiya/techNotes/issues/11#issuecomment-885333581">此前使用的版本</a>。</p>
+<p>然后重启。</p>
+<p>重启时注意还是要选择 <code>4.15.0-147</code>，不如默认进的还是 <code>151</code>。</p>
+<p>中间误入了一次 <code>151</code>，结果还没登录就自动重启了，然后乖乖选择 <code>147</code>，但是这次还是没能识别 HDMI，不过 nvidia-smi 以及 nvidia-settings 都正常，<code>xrandr</code> 输出也是没有识别出显示屏。</p>
+<p>试着继续重启，这次竟然可以了！</p>
+<p>后面在 nvidia-settings 中试了将 <code>PRIME profiles</code> 由 <code>NVIDIA (performance mode)</code> 改成 <code>NVIDIA on-demand</code>,然后重启，结果竟然进不去系统了，每次输入密码回车都要求重新输入密码。</p>
+<p>原因很可能是 PRIME 的这一改动，于是进入 tty 模式，通过命令行改回来</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 查询当前选择</span>
+$ prime-select query
+<span class="c1"># 切换至 nvidia</span>
+$ prime-select nvidia
+<span class="c1"># 切换至 intel</span>
+$ prime-select intel
+</code></pre></div>
+<p>然后重启终于恢复正常。</p>
+<p>注意现在每次重启都需要选择内核版本，一个自然想法是修改默认内核。参考 <a href="https://support.huaweicloud.com/intl/en-us/trouble-ecs/ecs_trouble_0327.html">How Do I Change the Default Boot Kernel in Ubuntu?</a></p>
+<p>将 <code>/etc/default/grub</code> 中 <code>GRUB_DEFAULT</code> 修改至 <code>1&gt;2</code>，其中</p>
+<ul>
+<li><code>1</code> 代表 <code>Advanced options for Ubuntu</code> 的顺序，因其在第二位，顺序从 0 算起，默认值就是 0</li>
+<li><code>&gt;2</code> 代表在子目录下位于第 2 位（顺序从 0 算起，即第三个）</li>
+</ul>
+<p>重启之前需要运行</p>
+<div class="highlight"><pre><span></span><code>$ sudo update-grub
+</code></pre></div>
+<p>重启之后可以看到自动选择了 <code>1&gt;2</code>。 </p>
                 
               
               
