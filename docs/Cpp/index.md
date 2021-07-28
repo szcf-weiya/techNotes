@@ -88,22 +88,76 @@ gcc -L /usr/dev/mysql/lib -static -lmysqlclient test.o -o test
 
 - My compiled `lib` and `include` for Windows and the detailed procedures: [szcf-weiya/GSLwin](https://github.com/szcf-weiya/GSLwin)
 
-## C++中cout输出字符型指针地址值的方法
+## OpenMP 
 
-参考 [C++中cout输出字符型指针地址值的方法](http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html)
+### get its version
+
+```cpp
+--8<-- "docs/Cpp/openmp/version.cpp"
+```
+
+On T460P,
+
+```bash
+$ g++ version.cpp -fopenmp
+$ ./a.out 
+We have OpenMP 4.5
+```
+
+### data scope attribute clause
+
+![image](https://user-images.githubusercontent.com/13688320/127318974-60f7d135-9343-4987-b708-c09f028be85b.png)
+
+> source: [Shared and private variables in a parallel environment](https://www.ibm.com/docs/en/zos/2.2.0?topic=programs-shared-private-variables-in-parallel-environment)
+
+### `#pragma omp critical`
+
+!!! info
+    A practical example: [`r.push_back(j);`](https://github.com/szcf-weiya/fRLR/blob/58539d9e381de718bc4660ec6de96362da968268/src/frlr.cpp#L195-L199)
+
+指定某个区域的代码，每次只能同时被一个线程执行。
+
+### references
+
+- [Official Specifications](https://www.openmp.org/specifications/)
+    - [OpenMP 4.5 API C/C++ Syntax Reference Guide](https://www.openmp.org/wp-content/uploads/OpenMP-4.5-1115-CPP-web.pdf)
+    - [OpenMP 4.5 Examples](https://openmp.org/wp-content/uploads/openmp-examples-4.5.0.pdf)
+- [Lecture Notes: CS-E4580 Programming Parallel Computers @ Aalto University](https://ppc.cs.aalto.fi/)
+
+[OpenMP topic: Loop parallelism](http://pages.tacc.utexas.edu/~eijkhout/pcse/html/omp-loop.html)
+
+[OpenMP并行构造的schedule子句详解](http://blog.csdn.net/gengshenghong/article/details/7000979)
+
+## Pointer
+
+- 空格不重要：`int* p`, `int * p`, `int *p`, `int*p`，但是类型为 `int *` 或 `int*`: refer to [c++指针（一）——指针的定义以及写法_大风车-CSDN博客](https://blog.csdn.net/qq_32103261/article/details/80221014)
+
+### reference vs pointer
+
+```cpp linenums="1"
+--8<-- "docs/Cpp/pointer/ref.cpp"
+```
+
+- 赋值时左右端类型需相同，与符号 `*` 和 `&` 无关
+- `b` 与 `array` 的地址相同
+
+参考 [c++指针（六）——指针与引用_大风车-CSDN博客](https://blog.csdn.net/qq_32103261/article/details/80231698)
+
+### 输出字符型指针地址值
 
 C 语言中通过 `printf` 便可以很方便地输出字符串指针地址值，如
 
 ```c
-#include <stdio.h>
-int main (){
-    const char *pstr = "hello world";
+--8<-- "docs/Cpp/pointer/print_pointer_address.c"
+```
 
-    printf("字符串: %s\n", pstr);
-    printf("字符串起始地址值: %p\n", pstr);
-    
-    return 0;
-}
+运行结果为，
+
+```bash
+$ gcc print_pointer_address.c
+$ ./a.out 
+字符串: hello world
+字符串起始地址值: 0x56499eb0e724
 ```
 
 但在 Cpp 中没那么简单，主要原因是
@@ -113,21 +167,142 @@ int main (){
 类似 C 中强制类型转换，用 `static_cast` 将字符串指针转换成无类型指针。
 
 ```cpp
-#include <iostream>
-using std::cout;
-using std::endl;
-
-int main()
-{
-    const char *pstr = "hello world";
-
-    cout << pstr << endl;
-
-    cout << static_cast<const void*>(pstr) << endl;
-
-    return 0;
-}
+--8<-- "docs/Cpp/pointer/print_pointer_address.cpp"
 ```
+
+运行结果为，
+
+```bash
+$ g++ print_pointer_address.cpp 
+$ ./a.out 
+hello world
+0x556f1462fa65
+```
+
+参考 [C++中cout输出字符型指针地址值的方法](http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html)
+
+### 指针初始化
+
+```
+double x;
+double *p = &x;
+```
+
+DO NOT
+
+```
+double *p = 5;
+```
+
+BUT
+```
+double *p = "aaa";
+```
+并且要初始化，不能
+
+```
+double *p;
+```
+然后直接传参了，这是不对的。
+
+## 参数和返回值的三种传递方式
+
+参考
+
+- [Passing vector to a function in C++](https://www.geeksforgeeks.org/passing-vector-function-cpp/) and [Vector in C++ STL](https://www.geeksforgeeks.org/vector-in-cpp-stl/)
+- [C++函数参数和返回值三种传递方式：值传递、指针传递和引用传递（着重理解）](http://blog.csdn.net/thisispan/article/details/7456180)
+
+### 值传递
+
+改变 `x` 的值不会影响 `n`
+
+```cpp
+void Func1(int x)
+{
+    x = x + 10;
+}
+int n = 0;
+Func1(n);
+```
+
+### 指针传递
+
+```cpp
+void Func2(int *x)
+{
+    (*x) = (*x) + 10;
+}
+int n = 0;
+Func2(&n);
+```
+
+
+### 引用传递
+
+`x` 和 `n` 是一个东西
+
+
+```cpp
+void Func3(int &x)
+{
+    x = x + 10;
+}
+int x = 0;
+Func3(n);
+```
+
+引用传递的性质像指针传递，而书写方式像值传递。
+
+```cpp
+int m;
+int &n = m;
+```
+
+其中 `n` 是 `m` 的一个引用 (reference)，而 `m` 是被引用物 (referent).
+
+引用的规则如下：
+
+- 引用被创建时同时被初始化，而指针则可以在任何时候初始化；
+- 不能有 NULL 引用，必须与合法的存储单元关联，而指针可以是 NULL;
+- 一旦引用被初始化，就不能改变引用的关系，而指针则可以随时改变所指的对象。
+
+## 多线程编程（未完）
+
+参考 [c++多线程编程_狂奔的蜗牛-CSDN博客](http://blog.csdn.net/hitwengqi/article/details/8015646)
+
+### say_hello
+
+```cpp linenums="1"
+--8<-- "docs/Cpp/MultiThread/say_hello.cpp"
+```
+
+两次运行的结果混乱，因为没有同步？
+
+![](MultiThread/res_1.png)
+
+![](MultiThread/res_2.png)
+
+### say_hello_paras
+
+```cpp linenums="1"
+--8<-- "docs/Cpp/MultiThread/say_hello_paras.cpp"
+```
+
+![](MultiThread/res_3.png)
+
+结果混乱！！
+
+可能原因：主进程还没开始对i赋值，线程已经开始跑了...?
+
+### say_hello_paras_revise
+
+```cpp linenums="1"
+--8<-- "docs/Cpp/MultiThread/say_hello_paras_revise.cpp"
+```
+
+![](MultiThread/res_4.png)
+![](MultiThread/res_5.png)
+
 
 ## const 总结
 [ref](http://www.2cto.com/kf/201210/160536.html)
@@ -219,29 +394,6 @@ http://blog.csdn.net/sunquana/article/details/14645079
 ### 数字转字符
 sprintf
 
-## 指针初始化
-
-```
-double x;
-double *p = &x;
-```
-
-DO NOT
-```
-double *p = 5;
-```
-
-BUT
-```
-double *p = "aaa";
-```
-并且要初始化，不能
-
-```
-double *p;
-```
-然后直接传参了，这是不对的。
-
 ## C: Correctly freeing memory of a multi-dimensional array
 
 https://stackoverflow.com/questions/1733881/c-correctly-freeing-memory-of-a-multi-dimensional-array
@@ -305,64 +457,6 @@ while(safeGetline(input, line))
 
 参考http://blog.sina.com.cn/s/blog_54f82cc201011op1.html
 
-## 参数和返回值的三种传递方式
-
-参考[C++函数参数和返回值三种传递方式：值传递、指针传递和引用传递（着重理解）](http://blog.csdn.net/thisispan/article/details/7456180)
-
-### 值传递
-
-改变 `x` 的值不会影响 `n`
-
-```cpp
-void Func1(int x)
-{
-    x = x + 10;
-}
-int n = 0;
-Func1(n);
-```
-
-### 指针传递
-
-```cpp
-void Func2(int *x)
-{
-    (*x) = (*x) + 10;
-}
-int n = 0;
-Func2(&n);
-```
-
-
-### 引用传递
-
-`x` 和 `n` 是一个东西
-
-
-```cpp
-void Func3(int &x)
-{
-    x = x + 10;
-}
-int x = 0;
-Func3(n);
-```
-
-引用传递的性质像指针传递，而书写方式像值传递。
-
-```cpp
-int m;
-int &n = m;
-```
-
-其中 `n` 是 `m` 的一个引用 (reference)，而 `m` 是被引用物 (referent).
-
-引用的规则如下：
-
-- 引用被创建时同时被初始化，而指针则可以在任何时候初始化；
-- 不能有 NULL 引用，必须与合法的存储单元关联，而指针可以是 NULL;
-- 一旦引用被初始化，就不能改变引用的关系，而指针则可以随时改变所指的对象。
-
 ## C++ public/protected/private
 
 [深入理解C++中public、protected及private用法](http://www.jb51.net/article/54224.htm)
@@ -378,19 +472,6 @@ int &n = m;
 ##
 
 [](https://www.felix021.com/blog/read.php?1587)
-
-## OpenMP 框架
-[通过 GCC 学习 OpenMP 框架](https://www.ibm.com/developerworks/cn/aix/library/au-aix-openmp-framework/)
-
-[C++ Examples of Parallel Programming with OpenMP](https://people.sc.fsu.edu/~jburkardt/cpp_src/openmp/openmp.html)
-
-[C++中cout输出字符型指针地址值的方法](http://www.cnblogs.com/wxxweb/archive/2011/05/20/2052256.html)
-
-[OpenMP topic: Loop parallelism](http://pages.tacc.utexas.edu/~eijkhout/pcse/html/omp-loop.html)
-
-[并行计算—OpenMP—临界区critical](http://blog.csdn.net/ly_624/article/details/52921256)
-
-[OpenMP并行构造的schedule子句详解](http://blog.csdn.net/gengshenghong/article/details/7000979)
 
 ## C++11 std::chrono库详解
 

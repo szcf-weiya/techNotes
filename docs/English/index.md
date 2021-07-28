@@ -1,3 +1,7 @@
+## 2021.07.28
+
+- The concept of "**aromaticity (芳香度)**" gets its name from the **pungent (刺激性的，味道强烈的)** **benzene (苯)** ring, which is found in many organic compounds.
+
 ## 2021.07.27
 
 - My parents got **hitched (结婚)** in 1973.
@@ -1438,7 +1442,7 @@
 
 ## 2020.10.22
 
-- I was looking at this map of coronavirus cases, **pondering** the large **swaths** with seemingly no cases.
+- I was looking at this map of coronavirus cases, **pondering (深思，仔细考虑)** the large **swaths (条带)** with seemingly no cases.
 - Or, even worse, designing a study, not finding the anticipated main effect, and then using the interactions to **bail you out**.
 - I'm pretty sure the idea has been reinvented a **zillion** other times before and after I did it.
 - Any sufficiently **crappy** research is indistinguishable from fraud.
@@ -2967,7 +2971,7 @@ up
 
 15. spoiled meat
 16. repercussion
-17. peper, aromatic, bark, cinnamon, ginger, clove, maize
+17. peper, **aromatic (香料，芳香植物)**, bark, cinnamon, ginger, clove, maize
 18.  boil it down
 19. astronomical1
 20. diplomacy
