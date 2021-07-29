@@ -906,8 +906,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rstudio-fctix" class="md-nav__link">
-    Rstudio 不能切换中文输入（fctix）
+  <a href="#failed-to-create-opengl-context" class="md-nav__link">
+    Failed to create OpenGL context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fctix" class="md-nav__link">
+    不能切换中文输入（fctix）
   </a>
   
 </li>
@@ -2721,8 +2728,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rstudio-fctix" class="md-nav__link">
-    Rstudio 不能切换中文输入（fctix）
+  <a href="#failed-to-create-opengl-context" class="md-nav__link">
+    Failed to create OpenGL context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fctix" class="md-nav__link">
+    不能切换中文输入（fctix）
   </a>
   
 </li>
@@ -3414,6 +3428,15 @@ Failed to disable unit: Unit file onedrive.service does not exist.
 Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
 </code></pre></div>
 <p>It seems OK now, and pay attention to the difference of the above similar commands.</p>
+<h4 id="sync-shared-folder">sync shared folder<a class="headerlink" href="#sync-shared-folder" title="Permanent link">&para;</a></h4>
+<p>refer to <a href="https://github.com/abraunegg/onedrive/blob/master/docs/BusinessSharedFolders.md">How to configure OneDrive Business Shared Folder Sync</a> for full instruction.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># list remote shared folder</span>
+$ onedrive --list-shared-folders
+<span class="c1"># configure folder to share</span>
+$ vi ~/.config/onedrive/business_shared_folders
+<span class="c1"># perform sync (--resync is needed when the config file has been updated)</span>
+$ onedrive --synchronize --sync-shared-folders <span class="o">[</span>--resync<span class="o">]</span>
+</code></pre></div>
 <h2 id="peek">Peek<a class="headerlink" href="#peek" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/phw/peek">homepage</a>, easy to use, can convert to gif.</p>
 <h2 id="rhythmbox">Rhythmbox<a class="headerlink" href="#rhythmbox" title="Permanent link">&para;</a></h2>
@@ -3446,7 +3469,19 @@ sudo apt-get install kid3     <span class="c1"># KDE users</span>
 <p>一开始觉得 <code>kid3-cli</code> 足够了，但是试了一下感觉学习成本太高，索性换回 kde 版本的。</p>
 <p>但是似乎在 <code>kid3</code> 中修改完并没有信息，只是会把删去的 genre 信息变为 unknown。</p>
 <h2 id="rstudio">Rstudio<a class="headerlink" href="#rstudio" title="Permanent link">&para;</a></h2>
-<h3 id="rstudio-fctix">Rstudio 不能切换中文输入（fctix）<a class="headerlink" href="#rstudio-fctix" title="Permanent link">&para;</a></h3>
+<h3 id="failed-to-create-opengl-context">Failed to create OpenGL context<a class="headerlink" href="#failed-to-create-opengl-context" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Refer to <a href="https://github.com/szcf-weiya/techNotes/issues/27">rstudio #27</a> for the raw records.</p>
+</div>
+<p>It throws </p>
+<div class="highlight"><pre><span></span><code>WebEngineContext used before QtWebEngine::initialize<span class="o">()</span> or OpenGL context creation failed.
+Failed to create OpenGL context <span class="k">for</span> format QSurfaceFormat<span class="o">(</span>version <span class="m">2</span>.0, options QFlags&lt;QSurfaceFormat::FormatOption&gt;<span class="o">()</span>, depthBufferSize <span class="m">24</span>, redBufferSize -1, greenBufferSize -1, blueBufferSize -1, alphaBufferSize -1, stencilBufferSize <span class="m">8</span>, samples <span class="m">0</span>, swapBehavior QSurfaceFormat::DefaultSwapBehavior, swapInterval <span class="m">1</span>, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile<span class="o">)</span> 
+Aborted <span class="o">(</span>core dumped<span class="o">)</span>
+</code></pre></div>
+<p>when launching without any special actions. Same error after replacing with an older version.</p>
+<p>Laterly, note that nvidia card does not work, and change to another driver. Then it resumes after rebooting.</p>
+<h3 id="fctix">不能切换中文输入（fctix）<a class="headerlink" href="#fctix" title="Permanent link">&para;</a></h3>
 <p>参考<a href="http://blog.csdn.net/qq_27755195/article/details/51002620">Rstudio 不能切换中文输入（fctix）</a></p>
 <ul>
 <li><a href="http://blog.goo.ne.jp/ikunya/e/8508d21055503d0560efc245aa787831">Ubuntu 16.04 + Fcitx + RStudio 1.0で日本語を入力する方法</a></li>
