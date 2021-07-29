@@ -1396,3 +1396,21 @@ $ sudo update-grub
 ```
 
 重启之后可以看到自动选择了 `1>2`。 
+
+## 默认软件
+
+网页文件 `.html` 默认用百度网盘打开，之前通过 `KDE System Setting` 修改了默认软件，
+
+![](https://user-images.githubusercontent.com/13688320/117541554-fb955800-b046-11eb-8577-f39fdbf406bc.png)
+
+但似乎并没有解决问题。
+
+试着参考 [Open files with other applications](https://help.ubuntu.com/stable/ubuntu-help/files-open.html.en) 的步骤进行设置
+
+- 右键选择 `Properties`
+- 然后选择 `Open With`
+- 选择特定软件，`Set as default`
+
+
+
+

@@ -651,6 +651,19 @@ Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
 
 It seems OK now, and pay attention to the difference of the above similar commands.
 
+#### sync shared folder
+
+refer to [How to configure OneDrive Business Shared Folder Sync](https://github.com/abraunegg/onedrive/blob/master/docs/BusinessSharedFolders.md) for full instruction.
+
+```bash
+# list remote shared folder
+$ onedrive --list-shared-folders
+# configure folder to share
+$ vi ~/.config/onedrive/business_shared_folders
+# perform sync (--resync is needed when the config file has been updated)
+$ onedrive --synchronize --sync-shared-folders [--resync]
+```
+
 ## Peek
 
 [homepage](https://github.com/phw/peek), easy to use, can convert to gif.
@@ -699,7 +712,24 @@ sudo apt-get install kid3     # KDE users
 
 ## Rstudio
 
-### Rstudio 不能切换中文输入（fctix）
+### Failed to create OpenGL context
+
+!!! info
+    Refer to [rstudio #27](https://github.com/szcf-weiya/techNotes/issues/27) for the raw records.
+
+It throws 
+
+```bash
+WebEngineContext used before QtWebEngine::initialize() or OpenGL context creation failed.
+Failed to create OpenGL context for format QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize 24, redBufferSize -1, greenBufferSize -1, blueBufferSize -1, alphaBufferSize -1, stencilBufferSize 8, samples 0, swapBehavior QSurfaceFormat::DefaultSwapBehavior, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile) 
+Aborted (core dumped)
+```
+
+when launching without any special actions. Same error after replacing with an older version.
+
+Laterly, note that nvidia card does not work, and change to another driver. Then it resumes after rebooting.
+
+### 不能切换中文输入（fctix）
 
 参考[Rstudio 不能切换中文输入（fctix）](http://blog.csdn.net/qq_27755195/article/details/51002620)
 
