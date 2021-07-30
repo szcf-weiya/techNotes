@@ -1,3 +1,7 @@
+## 2021.07.30
+
+- alkali metals: 碱金属
+
 ## 2021.07.29
 
 - agnosticism: 不可知论
