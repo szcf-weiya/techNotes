@@ -1,3 +1,7 @@
+## 2021.07.31
+
+- One researcher's unorthdox attempt to listen in to the **seismic (地震的)** whisper at the foot of a Greenland glacier.
+
 ## 2021.07.30
 
 - alkali metals: 碱金属
