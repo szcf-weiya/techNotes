@@ -130,7 +130,7 @@ We have OpenMP 4.5
 
 ## Pointer
 
-- 空格不重要：`int* p`, `int * p`, `int *p`, `int*p`，但是类型为 `int *` 或 `int*`: refer to [c++指针（一）——指针的定义以及写法_大风车-CSDN博客](https://blog.csdn.net/qq_32103261/article/details/80221014)
+- 空格不重要：`int* p`, `int * p`, `int *p`, `int*p`，但是类型为 `int *` 或 `int*`: refer to [c++指针（一）——指针的定义以及写法--大风车-CSDN博客](https://blog.csdn.net/qq_32103261/article/details/80221014) and [C++中引用，指针，指针的引用，指针的指针--luoshenFU的专栏-CSDN博客](https://blog.csdn.net/luoshenfu001/article/details/8601494)
 
 ### reference vs pointer
 

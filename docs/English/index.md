@@ -1,3 +1,7 @@
+## 2021.08.01
+
+- These dependencies have **unleashed (爆发，发泄)** a **renaissance (复兴，文艺复兴)** in AI hardware innovations.
+
 ## 2021.07.31
 
 - One researcher's unorthdox attempt to listen in to the **seismic (地震的)** whisper at the foot of a Greenland glacier.
