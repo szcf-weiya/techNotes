@@ -241,11 +241,18 @@
   
   
   
+    
+
+  
+  
+  
     <li class="md-tabs__item">
       <a href="../Cpp/" class="md-tabs__link">
         CSProgramming
       </a>
     </li>
+  
+
   
 
       
@@ -432,13 +439,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
       
       <label class="md-nav__link" for="__nav_2_1">
-        General
+        Laptop
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="General" data-md-level="2">
+      <nav class="md-nav" aria-label="Laptop" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_1">
           <span class="md-nav__icon md-icon"></span>
-          General
+          Laptop
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -448,7 +455,7 @@
   
     <li class="md-nav__item">
       <a href="../Linux/" class="md-nav__link">
-        System
+        General
       </a>
     </li>
   
@@ -490,35 +497,6 @@
   
 
           
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
-      
-      <label class="md-nav__link" for="__nav_2_2">
-        Laptop
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Laptop" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
-          <span class="md-nav__icon md-icon"></span>
-          Laptop
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
             
   
   
@@ -547,14 +525,14 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
-      <label class="md-nav__link" for="__nav_2_3">
+      <label class="md-nav__link" for="__nav_2_2">
         Servers
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Servers" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_3">
+        <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           Servers
         </label>
@@ -566,7 +544,7 @@
   
     <li class="md-nav__item">
       <a href="../Linux/servers/" class="md-nav__link">
-        Common
+        General
       </a>
     </li>
   
@@ -1538,10 +1516,51 @@
   
   
   
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        C/C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C/C++" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          C/C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../Cpp/" class="md-nav__link">
-        C/C++
+        General
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cpp/Qt/" class="md-nav__link">
+        Qt
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1917,18 +1936,6 @@
     <li class="md-nav__item">
       <a href="../phantomjs/" class="md-nav__link">
         Phantomjs
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Qt/" class="md-nav__link">
-        Qt
       </a>
     </li>
   
@@ -3728,6 +3735,24 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <span class="n">command</span> <span class="o">=</span> <span class="s">&quot;convert &quot;</span> <span class="o">*</span> <span class="n">prod</span><span class="p">(</span><span class="s">&quot;p&quot;</span> <span class="o">.*</span> <span class="n">string</span><span class="o">.</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span><span class="p">)</span> <span class="o">.*</span> <span class="s">&quot;.png &quot;</span><span class="p">)</span> <span class="o">*</span> <span class="s">&quot;+append pall.png&quot;</span>
 <span class="n">run</span><span class="p">(</span><span class="sb">`</span><span class="si">$command</span><span class="sb">`</span><span class="p">)</span>
 </code></pre></div>
+<p>Special characters <code>#{}()[]&lt;&gt;|&amp;*?~;</code> need to be quoted,</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">run</span><span class="p">(</span><span class="sb">`ls *.toml`</span><span class="p">)</span>
+<span class="n">ERROR</span><span class="o">:</span> <span class="kt">LoadError</span><span class="o">:</span> <span class="n">parsing</span> <span class="n">command</span> <span class="sb">`ls *.toml`</span><span class="o">:</span> <span class="n">special</span> <span class="n">characters</span> <span class="s">&quot;#{}()[]&lt;&gt;|&amp;*?~;&quot;</span> <span class="n">must</span> <span class="n">be</span> <span class="n">quoted</span> <span class="k">in</span> <span class="n">commands</span>
+</code></pre></div>
+<p>the quote is not just for the special character, which will fix the filename in the above example,</p>
+<div class="highlight"><pre><span></span><code>julia&gt; run<span class="o">(</span><span class="sb">`</span>ls <span class="s2">&quot;*.toml&quot;</span><span class="sb">`</span><span class="o">)</span>
+ls: cannot access <span class="s1">&#39;*.toml&#39;</span>: No such file or directory
+</code></pre></div>
+<p>but quoting is not enough, </p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">run</span><span class="p">(</span><span class="sb">`&quot;ls *.toml&quot;`</span><span class="p">)</span>
+<span class="n">ERROR</span><span class="o">:</span> <span class="n">IOError</span><span class="o">:</span> <span class="n">could</span> <span class="n">not</span> <span class="n">spawn</span> <span class="sb">`&#39;ls *.toml&#39;`</span><span class="o">:</span> <span class="n">no</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span> <span class="p">(</span><span class="n">ENOENT</span><span class="p">)</span>
+</code></pre></div>
+<p>the right way is </p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">run</span><span class="p">(</span><span class="sb">`bash -c &quot;ls *.toml&quot;`</span><span class="p">)</span>
+<span class="n">Manifest</span><span class="o">.</span><span class="n">toml</span>  <span class="n">Project</span><span class="o">.</span><span class="n">toml</span>
+<span class="n">Process</span><span class="p">(</span><span class="sb">`bash -c &#39;ls *.toml&#39;`</span><span class="p">,</span> <span class="n">ProcessExited</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</code></pre></div>
+<p>refer to <a href="https://discourse.julialang.org/t/quoting-in-shell-commands/6781/4">Quoting in shell commands - General Usage - JuliaLang</a></p>
 <h2 id="foreach">foreach<a class="headerlink" href="#foreach" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">foreach</span><span class="p">(</span><span class="n">readdir</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">))</span> <span class="k">do</span> <span class="n">filename</span>
            <span class="n">println</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
@@ -3870,6 +3895,15 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
       
       <a href="https://stats.hohoweiya.xyz" target="_blank" rel="noopener" title="stats.hohoweiya.xyz" class="md-footer-social__link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M552 64H112c-20.858 0-38.643 13.377-45.248 32H24c-13.255 0-24 10.745-24 24v272c0 30.928 25.072 56 56 56h496c13.255 0 24-10.745 24-24V88c0-13.255-10.745-24-24-24zM48 392V144h16v248c0 4.411-3.589 8-8 8s-8-3.589-8-8zm480 8H111.422c.374-2.614.578-5.283.578-8V112h416v288zM172 280h136c6.627 0 12-5.373 12-12v-96c0-6.627-5.373-12-12-12H172c-6.627 0-12 5.373-12 12v96c0 6.627 5.373 12 12 12zm28-80h80v40h-80v-40zm-40 140v-24c0-6.627 5.373-12 12-12h136c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H172c-6.627 0-12-5.373-12-12zm192 0v-24c0-6.627 5.373-12 12-12h104c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H364c-6.627 0-12-5.373-12-12zm0-144v-24c0-6.627 5.373-12 12-12h104c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H364c-6.627 0-12-5.373-12-12zm0 72v-24c0-6.627 5.373-12 12-12h104c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H364c-6.627 0-12-5.373-12-12z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://blog.csdn.net/szcf715" target="_blank" rel="noopener" title="blog.csdn.net" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z"/></svg>
       </a>
     
       
