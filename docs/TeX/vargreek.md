@@ -1,5 +1,9 @@
 # Variant forms of Greek symbols
 
+!!! info
+    - [Greek Handwriting — Handwritten letters in Greek](http://www.foundalis.com/lan/hw/grkhandw.htm)
+    - [Greek Letters, Symbols, English Alphabet Equivalents and Pronunciation](https://www.businessballs.com/glossaries-and-terminology/greek-alphabet/)
+
 ## Attempt 1: `MinionPro`
 
 ```tex

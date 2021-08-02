@@ -800,6 +800,41 @@ Since the above binding can specify the machine, I am thinking it might work if 
 
 Anyway, the current solution seems already convinent.
 
+## Terminator
+
+- hostname 的颜色, 去掉 `.bashrc` 中
+
+```bash
+##force_color_prompt=yes
+```
+
+的注释
+
+- hide hostname, `weiya@weiya-ThinkPad-T460p:`
+
+edit the following line in the `.bashrc` as follows
+
+```bash
+if [ "$color_prompt" = yes ]; then
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+```
+
+before hide and after hide 
+
+![image](https://user-images.githubusercontent.com/13688320/123048663-37d31b00-d431-11eb-8ebf-afb97f758191.png)
+
+- 颜色背景色等，直接右键设置，右键设置完成之后便有了一个配置文件，`~/.config/terminator/config`.
+
+### shortcut
+
+the shortcut list can be found in `Right Click >  Preferences > Keybindings`, several more common
+
+- resize: `Shift+Ctrl+Left/Right/Down/Up`
+
 ## Thunderbird
 
 - 添加学校邮箱时，必须采用学号形式的邮箱，不要用 alias 形式的，alias 验证会出问题。
@@ -1147,6 +1182,29 @@ sudo apt-get install libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libx
 
 then the problem is solved. And continue to follow the steps in [WeChat Desktop on Linux](https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux)
 
+### reboot wine
+
+Sometimes, the wechat window freezes, i.e., the new messages cannot be updated. Try to reboot it,
+
+- use `wineboot`
+
+```bash
+$ wineboot -s # shutdown
+$ wineboot -r # restart
+```
+
+but it does not work, and it throws
+
+> 073c:fixme:font:get_name_record_codepage encoding 29 not handled, platform 1.
+
+- use `kill -s 9`
+
+kill the process of wechat, and then restart wechat, still not work
+
+- use `wineserver -k`
+
+it works! refer to [Ubuntu forum: Cant reboot wine](https://ubuntuforums.org/showthread.php?t=1451908)
+
 ### 窗口轮廓阴影
 
 当从微信切换到其他软件时，会留下一个窗口轮廓阴影。再一次感叹 google 的强大，本来这个问题我都不知道怎么搜索，但只给了 “wine wechat” 和 “窗口轮廓” 这两个关键词后，就找到了两种解决方案：
@@ -1307,3 +1365,9 @@ And general introduction for DLL can be found in [DLL文件到底是什么，它
 ![](https://user-images.githubusercontent.com/13688320/114495190-3c6c9d80-9c50-11eb-9d24-dda8ee02acc7.png)
 
 ![](https://user-images.githubusercontent.com/13688320/114495254-560de500-9c50-11eb-8ab0-aa415b3608c0.png)
+
+### sync to another cloud
+
+The free size for saving is limited, and try to use a third-party cloud service for syncing. Use [坚果云](https://www.jianguoyun.com/), the configuration is as follows,
+
+![](https://user-images.githubusercontent.com/13688320/124606874-e51d4880-de9f-11eb-85c7-71a1ebd51e44.png)

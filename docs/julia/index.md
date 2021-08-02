@@ -1316,6 +1316,37 @@ command = "convert " * prod("p" .* string.(1:10) .* ".png ") * "+append pall.png
 run(`$command`)
 ```
 
+Special characters `#{}()[]<>|&*?~;` need to be quoted,
+
+```julia
+julia> run(`ls *.toml`)
+ERROR: LoadError: parsing command `ls *.toml`: special characters "#{}()[]<>|&*?~;" must be quoted in commands
+```
+
+the quote is not just for the special character, which will fix the filename in the above example,
+
+```bash
+julia> run(`ls "*.toml"`)
+ls: cannot access '*.toml': No such file or directory
+```
+
+but quoting is not enough, 
+
+```julia
+julia> run(`"ls *.toml"`)
+ERROR: IOError: could not spawn `'ls *.toml'`: no such file or directory (ENOENT)
+```
+
+the right way is 
+
+```julia
+julia> run(`bash -c "ls *.toml"`)
+Manifest.toml  Project.toml
+Process(`bash -c 'ls *.toml'`, ProcessExited(0))
+```
+
+refer to [Quoting in shell commands - General Usage - JuliaLang](https://discourse.julialang.org/t/quoting-in-shell-commands/6781/4)
+
 ## foreach
 
 ```julia

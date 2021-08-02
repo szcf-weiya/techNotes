@@ -37,3 +37,4 @@ AC_OUTPUT
 
 and [Makefile 经典教程(掌握这些足够)](http://blog.csdn.net/ruglcc/article/details/7814546/)
 
+- define functions: e.g., [`mk` for compiling different tex files](https://github.com/szcf-weiya/Clouds/blob/fbbc42953e724818e3ce0c727efbe457e5081e68/notes/Makefile#L1-L7)

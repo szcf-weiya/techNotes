@@ -506,6 +506,15 @@ ABSDIR=$(dirname $ABSPATH)
 
 refer to [darrenderidder/bashpath.sh](https://gist.github.com/darrenderidder/974638)
 
+!!! tip
+    `dirname` is one of the functions for filenames, here are many other functions, such as
+
+    - `dir`
+    - `realpath`
+    - `abspath`
+    
+    see [8.3 Functions for File Names](https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html) for more details.
+
 where `dirname`, together with `basename` aims to extract the filename and path, such as
 
 ```bash

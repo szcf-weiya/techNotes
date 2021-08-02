@@ -831,6 +831,18 @@ more details refer to `man tesseract`.
 
 还可以切换后台运行，在服务器上操作特别方便。
 
+!!! info
+    此前还用过类似的软件，`screen`，
+
+    ```bash
+    screen -list #或screen -r
+    screen -r [pid] # 进入
+    ### ctrl+A, 然后输入":quit"
+    ```
+
+    更多用法详见 [linux screen 命令详解](https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html)，以及 [Kill detached screen session - Stack Overflow](https://stackoverflow.com/questions/1509677/kill-detached-screen-session)
+
+
 常用操作
 
 ```bash

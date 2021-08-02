@@ -2,15 +2,14 @@ site_name: techNotes
 nav:
   - Home: index.md
   - Linux:
-    - General:
-      - System: Linux/index.md
+    - Laptop:
+      - General: Linux/index.md
       - Application Software: Linux/software.md
       - Command-line Tools: Linux/tools.md
       - Shell Scripts: shell/index.md
-    - Laptop:
       - 16to18: Linux/16to18.md
     - Servers: 
-      - Common: Linux/servers.md
+      - General: Linux/servers.md
       - CHPC-Cluster: Linux/chpc.md
       - Rocky-Linux: Linux/rocky-server.md
       - G40: Linux/asAserver.md    
@@ -35,7 +34,9 @@ nav:
     - Julia: julia/index.md
     - Matlab: Matlab/index.md
   - CSProgramming:
-    - C/C++: Cpp/index.md
+    - C/C++: 
+      - General: Cpp/index.md
+      - Qt: Cpp/Qt/index.md
     - Java: java/index.md
     - SQL: SQL/index.md
     - Cuda: cuda/index.md
@@ -60,7 +61,6 @@ nav:
     - Docker: dev/docker.md
     - Git: Git/index.md
     - Phantomjs: phantomjs/index.md
-    - Qt: Qt/index.md
   - Stat:
     - Probability: stats/prob.md
     - Statistics: stats/index.md
@@ -104,6 +104,8 @@ extra:
       link: 'https://hohoweiya.xyz'
     - icon: 'fontawesome/regular/newspaper'
       link: 'https://stats.hohoweiya.xyz'
+    - icon: 'fontawesome/regular/sticky-note'
+      link: 'https://blog.csdn.net/szcf715'
     - icon: 'fontawesome/regular/envelope'
       link: 'mailto:szcfweiya@gmail.com'
 

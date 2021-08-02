@@ -262,13 +262,6 @@ It works, as shown in the above right figure. A minor side change is that the En
 
 参考[http://blog.csdn.net/ichuzhen/article/details/8241847](http://blog.csdn.net/ichuzhen/article/details/8241847)
 
-## 初始化服务器
-
-1. 新建用户，sudo
-2. 添加sources.list,gpg
-3. 安装R
-4. 安装Rstudioserver（成功！！！哎。。搞了一下午就是因为上午莫名其妙更新了Ubuntu，不要手贱！！）
-
 ## shared objects `.so` (dynamic library)
 
 As said in [Where do executables look for shared objects at runtime?](https://unix.stackexchange.com/questions/22926/where-do-executables-look-for-shared-objects-at-runtime), when it's looking for a dynamic library (`.so` file) the linker tries
@@ -317,36 +310,6 @@ sudo update-alternatives --install ....
 ```
 
 然后再 config.
-
-
-## Terminator
-
-- hostname 的颜色, 去掉 `.bashrc` 中
-
-```bash
-##force_color_prompt=yes
-```
-
-的注释
-
-- hide hostname, `weiya@weiya-ThinkPad-T460p:`
-
-edit the following line in the `.bashrc` as follows
-
-```bash
-if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1='\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-```
-
-before hide and after hide 
-
-![image](https://user-images.githubusercontent.com/13688320/123048663-37d31b00-d431-11eb-8ebf-afb97f758191.png)
-
-- 颜色背景色等，直接右键设置，右键设置完成之后便有了一个配置文件，`~/.config/terminator/config`.
 
 ## Linux 杀进程
 
@@ -442,23 +405,6 @@ chown -R username:users Document/
 
 `chmod g+s .` 会使得当前文件夹 `.` 中所有新建文件或文件夹都继承 `.` 的 group，而不是创建者所属的 group，所以这一般配合 `chgrp` 使用。参考 ['chmod g+s' command](https://unix.stackexchange.com/questions/182212/chmod-gs-command)
 
-## 关闭screen
-
-参考[https://stackoverflow.com/questions/1509677/kill-detached-screen-session](https://stackoverflow.com/questions/1509677/kill-detached-screen-session)
-
-```bash
-screen -list #或screen -r
-screen -r [pid] # 进入
-### ctrl+A, 然后输入":quit"
-```
-
-更多用法详见 [linux screen 命令详解](https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html)
-
-
-## Solution: Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA
-参考
-https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-authenticator-does-not-support-any-combination-of-challenges-that-will-satisfy-the-ca/49983
-
 ## cairo图形库环境搭建
 
 参考[ubuntu Cairo图形库 环境搭建](http://blog.csdn.net/zh19921107/article/details/45094759)
@@ -482,21 +428,6 @@ https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-
 ## 解决Unable to load native-hadoop library for your platform
 
 参考[解决Unable to load native-hadoop library for your platform](http://blog.csdn.net/succeedloveaaaa/article/details/48596857)
-
-## Vultr配置shadowsocks
-
-按照之前的配置方法，不可用，于是参考[轻松在 VPS 搭建 Shadowsocks 翻墙](https://www.diycode.cc/topics/738)进行配置。
-
-## CentOS7搭建Apache
-
-参考资料
-
-1. [How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7)
-2. [CentOS 7.2 利用yum安装配置Apache2.4多虚拟主机](http://www.linuxidc.com/Linux/2017-10/147667.htm)
-
-按照第一个链接的指示，并不能成功访问。于是尝试参考第二个链接修改配置文件。
-
-未果，结果按照cy的建议，释放掉了这个服务器。
 
 ## Font
 
@@ -553,6 +484,45 @@ $ fc-list :lang=zh
     - [Fira Code](https://github.com/tonsky/FiraCode)
         - [知乎：Fira Code —— 专为编程而生的字体](https://zhuanlan.zhihu.com/p/65362086)
 
+
+## Nvidia Driver
+
+Install via the GUI `Software & Updates`. If succeed, then
+
+```bash
+$ nvidia-smi
+```
+
+can display the GPU memory usage, together with the versions of driver and CUDA,
+
+```bash
+$ nvidia-smi 
+Mon Aug  2 22:08:19 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.91.03    Driver Version: 460.91.03    CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  GeForce 940MX       Off  | 00000000:02:00.0 Off |                  N/A |
+| N/A   63C    P0    N/A /  N/A |    724MiB /  2004MiB |      9%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A       400      G   WeChatWeb.exe                       9MiB |
+|    0   N/A  N/A       663      G   ...cent\WeChat\WeChatApp.exe        7MiB |
+|    0   N/A  N/A      4454      G   ...AAAAAAAAA= --shared-files       59MiB |
+|    0   N/A  N/A      7440      G   /usr/lib/xorg/Xorg                437MiB |
+```
+
+refer to [Linux安装NVIDIA显卡驱动的正确姿势](https://blog.csdn.net/wf19930209/article/details/81877822) for other approaches (seems more technical).
+
 ## 命令最后的&
 
 参考[What does “&” at the end of a linux command mean?](https://stackoverflow.com/questions/13338870/what-does-at-the-end-of-a-linux-command-mean)
@@ -580,17 +550,6 @@ sudo service cron reload
 ## Ubuntu的回收站
 
 参考 [https://blog.csdn.net/DSLZTX/article/details/46685959](https://blog.csdn.net/DSLZTX/article/details/46685959)
-
-## 输出到 log 文件
-
-参考[How do I save terminal output to a file?](https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file)
-
-发现一件很迷的事情，要加上 `-u` 才能实现实时查看输出。
-
-参考
-
-1. [Python: significance of -u option?](https://stackoverflow.com/questions/14258500/python-significance-of-u-option)
-2. [后台运行python程序并标准输出到文件](http://www.cnblogs.com/qlshine/p/5926743.html)
 
 ## useful commands
 
@@ -1045,7 +1004,7 @@ add `./` before the file, since it will interpret colon `x:` as [user@]host pref
 
 refer to [How can I scp a file with a colon in the file name?](https://stackoverflow.com/questions/14718720/how-can-i-scp-a-file-with-a-colon-in-the-file-name)
 
-## 添加虚拟内存
+## add virtual memeory via swapfile
 
 通过交换文件实现
 
@@ -1057,6 +1016,12 @@ mkswap /mnt/swapfile
 # 挂载
 swapon /mnt/swapfile
 ```
+
+注意文件应为 `root:root`，否则会提示
+
+> insecure file owner 1000, 0 (root) suggested.
+
+另见 [How to Resolve the Insecure warning in Swapon?](https://unix.stackexchange.com/questions/297149/how-to-resolve-the-insecure-warning-in-swapon)
 
 为了保证开机自动加载，在 `/etc/fstab` 加入
 
@@ -1072,13 +1037,21 @@ swapon /mnt/swapfile
 
 这个方法也可以解决 "virtual memory exhausted: Cannot allocate memory" 的问题。
 
-调整 swapiness，默认值为 60，越高表示越积极使用 swap 空间。
+调整 swapiness，默认值为 60，
+
+```bash
+$ cat /proc/sys/vm/swappiness
+```
+
+越高表示越积极使用 swap 空间。
 
 临时性使用
 
 ```bash
 $ sudo sysctl vm.swappiness=80
 ```
+
+参考 [linux系统swappiness参数在内存与交换分区间优化](http://blog.itpub.net/29371470/viewspace-1250975)
 
 ## GPG error
 
@@ -1266,7 +1239,14 @@ fi
 
 之所以选择 `F7` 是因为本身 F7 也支持切换 display mode，但是默认 external monitor 在右侧。试图直接更改 F7 的 binding commands，相关的 Ubuntu 官方帮助文档 [Keyboard](https://help.ubuntu.com/stable/ubuntu-help/keyboard.html.en) 及配置文件 [Custom keyboard layout definitions](https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions)，但是无从下手。
 
-## monitor
+## System Monitor
+
+I am currently using the [gnome-shell extension](#system-monitor) and [Netdata: Web-based Real-time performance monitoring](https://github.com/netdata/netdata)
+
+!!! info 
+    Other candidates:
+
+    - `glances`: refer to [What system monitoring tools are available?](https://askubuntu.com/questions/293426/what-system-monitoring-tools-are-available)
 
 - `ram_available`: percentage of estimated amount of RAM available for userspace processes, without causing swapping 
     - swap vs ram: see [深入理解swap交换分区理解及扩存 -- 知乎](https://zhuanlan.zhihu.com/p/201384108)
@@ -1286,11 +1266,15 @@ fi
     - `used_swap`: swap memory utilization
 - `system.cpu`
     - `10min_cpu_usage`: average CPU utilization over the last 10 minutes (excluding iowait, nice and steal) 
+    - `10min_cpu_iowait`: average CPU iowait time over the last 10 minutes 
 - `ipv4.udperrors`
     - `1m_ipv4_udp_receive_buffer_errors`： average number of UDP receive buffer errors over the last minute 
 - `disk_space_usage`: disk / space utilization
 - `linux_power_supply_capacity`: percentage of remaining power supply capacity
 - `10s_ipv4_tcp_resets_received`: average number of received TCP RESETS over the last 10 seconds. This can be an indication that a service this host needs has crashed. Netdata will not send a clear notification for this alarm.
+- `net.enp2s0`
+    - `1m_received_traffic_overflow`: average inbound utilization for the network interface enp2s0 over the last minute: check if there are attempts to attack the server via `/var/log/secure`, refer to [详解CentOS通过日志反查入侵](https://www.linuxprobe.com/centos-linux-logs.html)
+
 
 ## use old kernel version
 
@@ -1345,6 +1329,11 @@ End-Date: 2021-07-22  06:31:36
 
 !!! tip
     对于 `.gz` 的日志文件，可以使用 `zcat` 直接查看。
+    另外注意，`file.gz` 解压时默认不会保存原始文件，或者指定 `gunzip -k` 选项，或者
+    ```bash
+    gunzip < file.gz > file
+    ```
+    详见 [Unzipping a .gz file without removing the gzipped file](https://unix.stackexchange.com/questions/156261/unzipping-a-gz-file-without-removing-the-gzipped-file)
 
 发现其更新时间恰恰在诸多 crash 的前一天。所以试图切换到老的内核版本。
 
@@ -1412,5 +1401,9 @@ $ sudo update-grub
 - 选择特定软件，`Set as default`
 
 
+## Get history of other tty/pts?
 
+seems not.
+
+see also [How to get complete history from different tty or pts - Stack Overflow](https://stackoverflow.com/questions/51074474/how-to-get-complete-history-from-different-tty-or-pts)
 

@@ -1,3 +1,7 @@
+## 2021.08.02
+
+- How to build an antiviral **arsenal (武器库，军火库)**.
+
 ## 2021.08.01
 
 - These dependencies have **unleashed (爆发，发泄)** a **renaissance (复兴，文艺复兴)** in AI hardware innovations.

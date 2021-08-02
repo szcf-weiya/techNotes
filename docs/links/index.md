@@ -2,30 +2,31 @@
 
 ## Homepages
 
-1. [Chip Huyen](https://huyenchip.com/)
-2. [Yixuan's Blog](http://statr.me/)
-3. [刘思喆@贝吉塔行星](http://www.bjt.name/)
-4. [Dirk Eddelbuettel](http://dirk.eddelbuettel.com/blog/)
-5. [Chiyuan Zhang](http://pluskid.org) & [his blog](http://lifegoo.pluskid.org/)
-6. [lifengfan](http://lifengfan.wixsite.com/lifengfan)
-7. [Jerry Qu](https://imququ.com/)
-8. [听雨人](http://www.rainaudience.net/) & [Zeyu Zhao](http://zzeyu.com/en/)
-9. [Larry Wasserman's blog](https://normaldeviate.wordpress.com/)
+### Academic
 
-
-- [Yanjun Han @ Stanford](https://web.stanford.edu/~yjhan/index.html)
+- [Larry Wasserman's blog](https://normaldeviate.wordpress.com/)
 - [Zhou Fan @ Yale](http://www.stat.yale.edu/~zf59)
 - [Ting Ye @Wisc](https://sites.google.com/view/tingye/home)
+- [Yanjun Han @ Stanford](https://web.stanford.edu/~yjhan/index.html)
+- [lifengfan](http://lifengfan.wixsite.com/lifengfan)
+- [Yixuan's Blog](http://statr.me/)
 - [Tengyuan Liang](https://tyliang.github.io/Tengyuan.Liang/)
+- [Zijun Zhang, UCLA, University of California Los Angeles, Computational Biology, Bioinformatics, Splicing, Alternative Splicing, CLIP-seq, Deep Learning, Genetics, Genomics, CLAM, DARTS](https://zj-zhang.github.io/)
+
+### Life
+
+- [Chiyuan Zhang](http://pluskid.org) & [his blog](http://lifegoo.pluskid.org/)
+- [听雨人](http://www.rainaudience.net/) & [Zeyu Zhao](http://zzeyu.com/en/)
+
+### Uncategorized
+
+- [Chip Huyen](https://huyenchip.com/)
+- [刘思喆@贝吉塔行星](http://www.bjt.name/)
+- [Dirk Eddelbuettel](http://dirk.eddelbuettel.com/blog/)
+- [Jerry Qu](https://imququ.com/)
 - [范函子](https://skylinchern.wordpress.com/)
 - [Gao HR (高会然) -- GIS](http://gaohr.win/About.html###)
-
-### douban
-
 - [阿道克](https://www.douban.com/people/36849435/)
-
-### CSDN
-
 - [找寻最初的美](https://blog.csdn.net/mike190267481), by [Xingyu Zhou](https://xingyuzhou.org/)
 
 ## Online Books
@@ -54,7 +55,6 @@
 5. [电子书下载](https://libgen.pw/)
 6. [RSS feeds for mathematics and statistics](https://projecteuclid.org/feeds)
 7. [Univariate Distribution Relationships](http://www.math.wm.edu/~leemis/chart/UDR/UDR.html)
-8. [Greek Alphabet](https://www.businessballs.com/glossaries-and-terminology/greek-alphabet/)
 9. [GPUSS - GPU Stochastic Simulation for statistical data analysis](http://www.oxford-man.ox.ac.uk/gpuss/)
 10. [统计术语英汉对照表](https://wiki.mbalib.com/wiki/%E7%BB%9F%E8%AE%A1%E6%9C%AF%E8%AF%AD%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7%E8%A1%A8)
 11. [心理学相关推荐](https://www.lijinzhang.xyz/blog_181226_psycho.html)

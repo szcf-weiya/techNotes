@@ -226,3 +226,26 @@ refer to [How to install packages in Linux (CentOS) without root user with autom
 ```bash
 export TMPDIR=$HOME/tmp
 ```
+
+## Let's Encrypt
+
+If it throws the following message,
+
+> Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA.
+
+it is necessary to [upgrade the Certbot.](https://community.letsencrypt.org/t/solution-client-with-the-currently-selected-authenticator-does-not-support-any-combination-of-challenges-that-will-satisfy-the-ca/49983)
+
+## Vultr配置shadowsocks
+
+按照之前的配置方法，不可用，于是参考[轻松在 VPS 搭建 Shadowsocks 翻墙](https://www.diycode.cc/topics/738)进行配置。
+
+## CentOS7搭建Apache
+
+参考资料
+
+1. [How To Install Linux, Apache, MySQL, PHP (LAMP) stack On CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7)
+2. [CentOS 7.2 利用yum安装配置Apache2.4多虚拟主机](http://www.linuxidc.com/Linux/2017-10/147667.htm)
+
+按照第一个链接的指示，并不能成功访问。于是尝试参考第二个链接修改配置文件。
+
+未果，结果按照cy的建议，释放掉了这个服务器。
