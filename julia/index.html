@@ -996,6 +996,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#priority-of" class="md-nav__link">
+    priority of &amp;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ifelse-vs" class="md-nav__link">
+    ifelse vs ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#distributed" class="md-nav__link">
     Distributed
   </a>
@@ -1282,13 +1309,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    &amp; 优先级
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#methoderror-objects-of-type-module-are-not-callable" class="md-nav__link">
     MethodError: objects of type Module are not callable
   </a>
@@ -1366,13 +1386,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    单引号和双引号
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#wrong-arrangement-of-multiple-figures-in-a-grid" class="md-nav__link">
     wrong arrangement of multiple figures in a grid
   </a>
@@ -1387,7 +1400,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     内地镜像源
   </a>
   
@@ -1432,6 +1445,13 @@
           <li class="md-nav__item">
   <a href="#check-if-substring" class="md-nav__link">
     check if substring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singledouble-quoting" class="md-nav__link">
+    single/double quoting
   </a>
   
 </li>
@@ -2321,6 +2341,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#priority-of" class="md-nav__link">
+    priority of &amp;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ifelse-vs" class="md-nav__link">
+    ifelse vs ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#distributed" class="md-nav__link">
     Distributed
   </a>
@@ -2607,13 +2654,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    &amp; 优先级
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#methoderror-objects-of-type-module-are-not-callable" class="md-nav__link">
     MethodError: objects of type Module are not callable
   </a>
@@ -2691,13 +2731,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    单引号和双引号
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#wrong-arrangement-of-multiple-figures-in-a-grid" class="md-nav__link">
     wrong arrangement of multiple figures in a grid
   </a>
@@ -2712,7 +2745,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     内地镜像源
   </a>
   
@@ -2757,6 +2790,13 @@
           <li class="md-nav__item">
   <a href="#check-if-substring" class="md-nav__link">
     check if substring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#singledouble-quoting" class="md-nav__link">
+    single/double quoting
   </a>
   
 </li>
@@ -3018,6 +3058,24 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 <li>instance of some types</li>
 <li>object of some instances</li>
 </ol>
+<h2 id="control-flow">Control Flow<a class="headerlink" href="#control-flow" title="Permanent link">&para;</a></h2>
+<h3 id="priority-of">priority of <code>&amp;</code><a class="headerlink" href="#priority-of" title="Permanent link">&para;</a></h3>
+<p>use</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">width</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">height</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<p>instead of</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">width</span> <span class="o">&amp;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">height</span> <span class="o">&amp;</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;=</span><span class="mi">0</span>
+</code></pre></div>
+<h3 id="ifelse-vs"><code>ifelse</code> vs <code>?</code><a class="headerlink" href="#ifelse-vs" title="Permanent link">&para;</a></h3>
+<p><code>ifelse</code> differs from <code>?</code> or <code>if</code> in that it is an ordinary function, so all the arguments are evaluated first.</p>
+<p>For example, it will try to evaluate the second clause, </p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">isnothing</span><span class="p">(</span><span class="nb">nothing</span><span class="p">)</span> <span class="o">?</span> <span class="s">&quot;&quot;</span> <span class="o">:</span> <span class="nd">@sprintf</span> <span class="s">&quot;</span><span class="si">%.4f</span><span class="s">&quot;</span> <span class="nb">nothing</span>
+<span class="s">&quot;&quot;</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">ifelse</span><span class="p">(</span><span class="n">isnothing</span><span class="p">(</span><span class="nb">nothing</span><span class="p">),</span> <span class="s">&quot;&quot;</span> <span class="p">,</span> <span class="nd">@sprintf</span> <span class="s">&quot;</span><span class="si">%.4f</span><span class="s">&quot;</span> <span class="nb">nothing</span><span class="p">)</span>
+<span class="n">ERROR</span><span class="o">:</span> <span class="kt">MethodError</span><span class="o">:</span> <span class="n">no</span> <span class="n">method</span> <span class="n">matching</span> <span class="n">isfinite</span><span class="p">(</span><span class="o">::</span><span class="kt">Nothing</span><span class="p">)</span>
+</code></pre></div>
+<p>Adopted from <a href="https://github.com/szcf-weiya/Clouds/issues/32">Clouds#32</a></p>
 <h2 id="distributed">Distributed<a class="headerlink" href="#distributed" title="Permanent link">&para;</a></h2>
 <h3 id="distributed_1"><code>@distributed</code><a class="headerlink" href="#distributed_1" title="Permanent link">&para;</a></h3>
 <p>如果配合 <code>sharedarrays</code> 使用时，需要加上 <code>@sync</code>, 参考<a href="https://docs.julialang.org/en/v1/stdlib/Distributed/#Distributed.@fetch">@fetch</a></p>
@@ -3396,13 +3454,6 @@ ok
 <li><a href="https://discourse.julialang.org/t/surprising-struct-equality-test/4890">Surprising struct equality test</a></li>
 <li><a href="https://docs.julialang.org/en/v1/manual/faq/#What-is-the-difference-between-%22using%22-and-%22import%22?-1">What is the difference between &ldquo;using&rdquo; and &ldquo;import&rdquo;?</a></li>
 </ol>
-<h2 id="_2"><code>&amp;</code> 优先级<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>use</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">width</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">height</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span>
-</code></pre></div>
-<p>instead of</p>
-<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">width</span> <span class="o">&amp;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">height</span> <span class="o">&amp;</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;=</span><span class="mi">0</span>
-</code></pre></div>
 <h2 id="methoderror-objects-of-type-module-are-not-callable"><code>MethodError: objects of type Module are not callable</code><a class="headerlink" href="#methoderror-objects-of-type-module-are-not-callable" title="Permanent link">&para;</a></h2>
 <p>check if the function is mistaken by the module name, such as <code>AxisArray</code> vs. <code>AxisArrays</code>.</p>
 <h2 id="libx86_64-linux-gnulibzso1-versionzlib_129-not-found"><code>/lib/x86_64-linux-gnu/libz.so.1: version</code>ZLIB_1.2.9&rsquo; not found`<a class="headerlink" href="#libx86_64-linux-gnulibzso1-versionzlib_129-not-found" title="Permanent link">&para;</a></h2>
@@ -3573,17 +3624,6 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@time</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
   <span class="mf">0.000077</span> <span class="n">seconds</span> <span class="p">(</span><span class="mi">6</span> <span class="n">allocations</span><span class="o">:</span> <span class="mf">781.484</span> <span class="n">KiB</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="_3">单引号和双引号<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">www</span><span class="o">&#39;</span>
-<span class="n">ERROR</span><span class="o">:</span> <span class="n">syntax</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">character</span> <span class="n">literal</span>
-
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="sc">&#39;w&#39;</span>
-<span class="sc">&#39;w&#39;</span><span class="o">:</span> <span class="n">ASCII</span><span class="o">/</span><span class="n">Unicode</span> <span class="n">U</span><span class="o">+</span><span class="mi">0077</span> <span class="p">(</span><span class="n">category</span> <span class="n">Ll</span><span class="o">:</span> <span class="n">Letter</span><span class="p">,</span> <span class="n">lowercase</span><span class="p">)</span>
-
-<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;ww&quot;</span>
-<span class="s">&quot;ww&quot;</span>
-</code></pre></div>
-<p>refer to <a href="https://github.com/szcf-weiya/Cell-Video/issues/105">#105</a>.</p>
 <h2 id="wrong-arrangement-of-multiple-figures-in-a-grid">wrong arrangement of multiple figures in a grid<a class="headerlink" href="#wrong-arrangement-of-multiple-figures-in-a-grid" title="Permanent link">&para;</a></h2>
 <p>Hi, I am confused by the arrangement of multiple figures in a grid. I begin with the example code in the README,</p>
 <div class="highlight"><pre><span></span><code><span class="n">gui</span> <span class="o">=</span> <span class="n">imshow_gui</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c"># 2 columns, 1 row of images (each initially 300×300)</span>
@@ -3619,7 +3659,7 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <p>用空格隔开，如</p>
 <div class="highlight"><pre><span></span><code><span class="n">add</span> <span class="n">Distributions</span> <span class="n">Combinatorics</span> <span class="n">MATLAB</span> <span class="n">PyPlot</span> <span class="n">LightGraphsFlows</span> <span class="n">LightGraphs</span> <span class="n">Clp</span> <span class="n">Plots</span>
 </code></pre></div>
-<h2 id="_4">内地镜像源<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_2">内地镜像源<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>安装 <a href="https://github.com/sunoru/PkgMirrors.jl">PkgMirrors</a>，则可以用中科大或者浙大的镜像源了</p>
 <p>初次设置后，以后直接 <code>using PkgMirrors</code> 便切换到设置好的镜像，以后直接通过镜像源安装。</p>
 <h2 id="select-text-in-the-output-pdf">select text in the output pdf<a class="headerlink" href="#select-text-in-the-output-pdf" title="Permanent link">&para;</a></h2>
@@ -3716,6 +3756,17 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 </code></pre></div>
 </div>
 </div>
+<h3 id="singledouble-quoting">single/double quoting<a class="headerlink" href="#singledouble-quoting" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">www</span><span class="o">&#39;</span>
+<span class="n">ERROR</span><span class="o">:</span> <span class="n">syntax</span><span class="o">:</span> <span class="n">invalid</span> <span class="n">character</span> <span class="n">literal</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="sc">&#39;w&#39;</span>
+<span class="sc">&#39;w&#39;</span><span class="o">:</span> <span class="n">ASCII</span><span class="o">/</span><span class="n">Unicode</span> <span class="n">U</span><span class="o">+</span><span class="mi">0077</span> <span class="p">(</span><span class="n">category</span> <span class="n">Ll</span><span class="o">:</span> <span class="n">Letter</span><span class="p">,</span> <span class="n">lowercase</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;ww&quot;</span>
+<span class="s">&quot;ww&quot;</span>
+</code></pre></div>
+<p>refer to <a href="https://github.com/szcf-weiya/Cell-Video/issues/105">#105</a>.</p>
 <h2 id="run-command-line">run command line<a class="headerlink" href="#run-command-line" title="Permanent link">&para;</a></h2>
 <p>For example, to combine different figures,</p>
 <div class="highlight"><pre><span></span><code><span class="n">run</span><span class="p">(</span><span class="sb">`convert p1.png p2.png +append p12.png`</span><span class="p">)</span>
