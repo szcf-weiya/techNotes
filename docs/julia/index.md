@@ -290,6 +290,38 @@ Foo{Int64}
 1. instance of some types
 2. object of some instances
 
+## Control Flow
+
+### priority of `&`
+
+use
+
+```julia
+(x[1] <= width) & (x[1] >= 0) & (x[2] <= height) & (x[2] >=0)
+```
+
+instead of
+
+```julia
+x[1] <= width & x[1] >= 0 & x[2] <= height & x[2] >=0
+```
+
+### `ifelse` vs `?`
+
+`ifelse` differs from `?` or `if` in that it is an ordinary function, so all the arguments are evaluated first.
+
+For example, it will try to evaluate the second clause, 
+
+```julia
+julia> isnothing(nothing) ? "" : @sprintf "%.4f" nothing
+""
+
+julia> ifelse(isnothing(nothing), "" , @sprintf "%.4f" nothing)
+ERROR: MethodError: no method matching isfinite(::Nothing)
+```
+
+Adopted from [Clouds#32](https://github.com/szcf-weiya/Clouds/issues/32)
+
 ## Distributed
 
 ### `@distributed`
@@ -830,20 +862,6 @@ end
 3. [Surprising struct equality test](https://discourse.julialang.org/t/surprising-struct-equality-test/4890)
 4. [What is the difference between "using" and "import"?](https://docs.julialang.org/en/v1/manual/faq/#What-is-the-difference-between-%22using%22-and-%22import%22?-1)
 
-## `&` 优先级
-
-use
-
-```julia
-(x[1] <= width) & (x[1] >= 0) & (x[2] <= height) & (x[2] >=0)
-```
-
-instead of
-
-```julia
-x[1] <= width & x[1] >= 0 & x[2] <= height & x[2] >=0
-```
-
 ## `MethodError: objects of type Module are not callable`
 
 check if the function is mistaken by the module name, such as `AxisArray` vs. `AxisArrays`.
@@ -1081,21 +1099,6 @@ julia> @time zeros(100,100, 10);
   0.000077 seconds (6 allocations: 781.484 KiB)
 ```
 
-## 单引号和双引号
-
-```julia
-julia> a = 'www'
-ERROR: syntax: invalid character literal
-
-julia> a = 'w'
-'w': ASCII/Unicode U+0077 (category Ll: Letter, lowercase)
-
-julia> a = "ww"
-"ww"
-```
-
-refer to [#105](https://github.com/szcf-weiya/Cell-Video/issues/105).
-
 ## wrong arrangement of multiple figures in a grid
 
 Hi, I am confused by the arrangement of multiple figures in a grid. I begin with the example code in the README,
@@ -1283,6 +1286,21 @@ For example, convert "1" to "001",
     >>> "tech" in "techNotes"
     True
     ```
+
+### single/double quoting
+
+```julia
+julia> a = 'www'
+ERROR: syntax: invalid character literal
+
+julia> a = 'w'
+'w': ASCII/Unicode U+0077 (category Ll: Letter, lowercase)
+
+julia> a = "ww"
+"ww"
+```
+
+refer to [#105](https://github.com/szcf-weiya/Cell-Video/issues/105).
 
 ## run command line
 

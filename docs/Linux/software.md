@@ -883,6 +883,11 @@ thunderbird -Profilemanager
 
 more instructions: [Thunderbird and Junk / Spam Messages](https://support.mozilla.org/en-US/kb/thunderbird-and-junk-spam-messages)
 
+## Transmission 
+
+- [Configuring Transmission for faster download - Ask Ubuntu](https://askubuntu.com/questions/110899/configuring-transmission-for-faster-download)
+- [Transmission says port is closed but seeding is happening - Ask Ubuntu](https://askubuntu.com/questions/405487/transmission-says-port-is-closed-but-seeding-is-happening)
+
 ## Vi/Vim
 
 - `u`: undo, `ctrl+u`: redo

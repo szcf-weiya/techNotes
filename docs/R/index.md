@@ -65,6 +65,27 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 
 3. run `sudo apt-get install r-base`.
 
+## Multiple Versions
+
+### `prefix` + `module` (optionally)
+
+specify `--prefix` when `./configure`, e.g. [Installing multiple versions of R on Linux -- RStudio Support](https://support.rstudio.com/hc/en-us/articles/215488098-Installing-multiple-versions-of-R)
+
+### Conda
+
+[Using R language with Anaconda](https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/)
+
+- ~~单独安装 rstudio `conda install -c r rstudio`~~ (waste memory!!)
+- 共用 Rstudio，但是切换环境时找不到 shared library，而原生 R session 完全没问题。目前解决方案，命令行调用 rstudio 之前添加环境变量
+
+```bash
+conda activate R4.1.0
+export LD_LIBRARY_PATH=/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib:$LD_LIBRARY_PATH
+rstudio
+```
+
+详见 [Issue #32 use rstudio in env R4.1.0](https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987)
+
 ## Common Tips
 
 - 删除当前工作区所有变量: `rm(list = ls(all = TRUE))`
@@ -299,6 +320,8 @@ ln -s /usr/lib/R/module/lapack.so libRlapack.so
 
 ## Rcpp
 
+- [Rcpp-quickref](Rcpp-quickref.pdf)
+
 !!! info
 	Another repo for learning Rcpp: [RcppNotes](https://github.com/szcf-weiya/RcppNotes)
     
@@ -350,10 +373,6 @@ plot(..., main = expression(paste("...", mu[1])))
 
 参考[function 'dataptr' not provided by package 'Rcpp'](https://stackoverflow.com/questions/21657575/what-does-this-mean-in-lme4-function-dataptr-not-provided-by-package-rcpp)
 
-## Rcpp reference
-
-[Rcpp-quickref](Rcpp-quickref.pdf)
-
 ## remove outliers from the boxplot
 
 [How to remove outliers from a dataset
@@ -387,9 +406,6 @@ add at least two spacing newline.
 ## x11 font cannot be loaded
 
 参考[X11 font -adobe-helvetica-%s-%s-*-*-%d-*-*-*-*-*-*-*, face 2 at size 11 could not be loaded](https://askubuntu.com/questions/449578/x11-font-adobe-helvetica-s-s-d-face-2-at-size-11-could-no)
-
-## 安装多版本R
-[Installing multiple versions of R](https://support.rstudio.com/hc/en-us/articles/215488098-Installing-multiple-versions-of-R)
 
 ## semi-transparency is not supported on this device
 
@@ -622,11 +638,6 @@ for (i in seq_along(vec)) print(vec[i])
 ```
 
 refer to [Two common mistakes with the colon operator in R](https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/)
-
-## Conda 管理版本
-
-1. [Using R language with Anaconda](https://docs.anaconda.com/anaconda/user-guide/tasks/using-r-language/)
-2. 单独安装 rstudio `conda install -c r rstudio`
 
 ## error in install `gRbase`
 
