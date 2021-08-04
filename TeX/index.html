@@ -2862,7 +2862,10 @@ code
 </code></pre></div>
 <p>refer to <a href="https://texblog.org/2012/12/21/multi-column-and-multi-row-cells-in-latex-tables/">Multi-column and multi-row cells in LaTeX tables</a></p>
 <ul>
-<li>with <code>midrule</code> provided by <code>booktabs</code>, the vertical table lines become discontinuous. According to <a href="https://tex.stackexchange.com/a/88939/">@egreg</a>, that is by design, and it is suggested to use <code>\cmidrule</code> to show the grouping of the header. <a href="https://github.com/szcf-weiya/Clouds/commit/1f8cfc43b773952eddb9477b7859a2566f3536a3">practical example</a></li>
+<li>with <code>midrule</code> provided by <code>booktabs</code>, the vertical table lines become discontinuous. According to <a href="https://tex.stackexchange.com/a/88939/">@egreg</a>, that is by design, and it is suggested to use <code>\cmidrule</code> to show the grouping of the header. <a href="https://github.com/szcf-weiya/Clouds/commit/1f8cfc43b773952eddb9477b7859a2566f3536a3">practical example</a><ul>
+<li>to add gap between two midrule, use <code>\cmidrule(lr){2-3}\cmidrule(lr){4-5}</code>, refer to <a href="https://tex.stackexchange.com/questions/180368/table-with-gap-between-cmidrules-extra-space-between-two-columns">Table with gap between cmidrule&rsquo;s (extra space between two columns)</a> and <a href="https://github.com/szcf-weiya/Clouds/blob/fe8ee8b36331eef71db914072de797ce635c022b/src/cmpr_mono_fitting.R#L302">a practical example</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="latex-enumerate">latex 列举 enumerate 编号 样式设定<a class="headerlink" href="#latex-enumerate" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.sina.com.cn/s/blog_7983e5f101019wwq.html">latex 列举 enumerate 编号 样式设定</a></p>
