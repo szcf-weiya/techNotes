@@ -1,3 +1,14 @@
+## 2021.08.04
+
+- A K Poker deck contains nice consecutively ranked cards of the same suit; we use **deuce (两点的纸牌)** through ten.
+    - deuce: 局末平分
+- Researchers have used the gene-editing tool CRISPR, and tweaks to typical **rearing practices (养育行为)**.
+- Convex clustering has recently **garnered (积累，获得)** increasing interest due to its attractive theoretical and computational properties.
+
+## 2021.08.03
+
+- delve inside the COVID-19 outbreak in India
+
 ## 2021.08.02
 
 - How to build an antiviral **arsenal (武器库，军火库)**.

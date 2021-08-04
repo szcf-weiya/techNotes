@@ -104,6 +104,74 @@ route add default gw 10.71.115.254 enp0s31f6
 ping 10.71.45.100
 ```
 
+### ifconfig
+
+`ifconfig` is a command line tool for diagnosing and configuring network interfaces (software interfaces to networking hardware). 
+
+Two types of network interfaces:
+
+- physical: represent an actual network hardware device such as network interface controller (NIC), e.g., `eth0` represents Ethernet network card (**Note: ** the current names follow the predictable network interface naming, such as `enp0s1f6`, which consists of the physical position in the pic system, refer to [Why is my network interface named enp0s25 instead of eth0?](https://askubuntu.com/questions/704361/why-is-my-network-interface-named-enp0s25-instead-of-eth0))
+- virtual:
+    - loopback
+    - bridges
+    - VLANs
+    - tunnel interfaces
+    - ...
+
+Here is the output of `ifconfig` on my T460p,
+
+```bash
+$ ifconfig
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:22:d9:b6:b0  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s31f6: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 50:7b:9d:bd:4a:3b  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 16  memory 0xf2200000-f2220000  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 1525364  bytes 4323602450 (4.3 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1525364  bytes 4323602450 (4.3 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.13.59.193  netmask 255.255.128.0  broadcast 10.13.127.255
+        inet6 fe80::def:d34:a2c:da88  prefixlen 64  scopeid 0x20<link>
+        ether a4:34:d9:e8:9a:bd  txqueuelen 1000  (Ethernet)
+        RX packets 19688705  bytes 18661301186 (18.6 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 17848834  bytes 23268449705 (23.2 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+where
+
+- `lo` is a special virtual network interface called **loopback device**. Loopback is used mainly for diagnostics and trobuleshooting, and to connect to services running on local host
+- `docker0` is a virtual bridge interface created by Docker. This bridge creates a separate network for docker containers and allows them to communicate with each other.
+- flag
+    - `UP`: kernel modules related to the interface have been loaded and interface is activated.
+    - `BROADCAST`: interface is configured to handle broadcast packets, which is required for obtaining IP address via DHCP
+    - `RUNNING`: the interface is ready to accept data
+    - `MULTICAST`: the interface supports multicasting
+- `MTU`: maximum transmission unit. see also [WIKI](https://en.wikipedia.org/wiki/Maximum_transmission_unit)
+- `RX packets`: total number of packets received
+- `TX packets`: total number of packets transmitted
+
+Refer to [Demystifying ifconfig and network interfaces in Linux](https://goinbigdata.com/demystifying-ifconfig-and-network-interfaces-in-linux/), note that some field names are different, such as MAC address, `ether` vs `HWaddr`, see also the discussion [CentOS 7 - Networking Support: Changing ether to hwaddr](https://forums.centos.org/viewtopic.php?t=70378)
+
 ## shadowsocks
 
 Follow the [instruction](https://github.com/shadowsocks/shadowsocks/blob/master/README.md) in the official repo, 
@@ -576,6 +644,8 @@ sudo ufw allow 8118
 > 137.189.0.0/16
 
 一直没懂子网掩码是啥，比如经常看到的 `255.255.255.0`，但是这里又有个 `/16`，所以很懵。[这篇知乎回答](https://www.zhihu.com/question/56895036)解决了我的疑问。简单说，子网掩码也是 4 组长度为 8 的二进制数组成，从左到右前 `n` 位为 1，其余为 0，此时子网掩码记为 `/n`，或者换成十进制数。
+
+它可用于判断两个 ip 是否属于同一网段，以及该网段有多少个 ip。另外可以得到网络号（ip中对应掩码为1的部分）和主机号（ip中对应掩码为0的部分）。
 
 ## 反向代理
 
