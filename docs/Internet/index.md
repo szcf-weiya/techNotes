@@ -81,6 +81,9 @@ source ~/.bashrc
 curl ipinfo.io/ip #测试是否代理成功
 ```
 
+!!! tip
+    <https://ipinfo.io/> can show more details about the ip, such as the ips for an organization, say, <https://ipinfo.io/AS3661>. 
+
 ### Notes
 
 3.10 15:36 chrome 在升级xxnet后成功翻墙了，而Firefox不行了。未升级前情况是相反的，但未升级时Firefox从不能用到能用。

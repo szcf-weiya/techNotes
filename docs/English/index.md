@@ -1,3 +1,10 @@
+## 2021.08.05
+
+- not only the complicated dynamic dependence between the series, but also the existence of **aberrant (异常的，反常的)** observations, such as missing values, contaminated observations, and heavy-tailed distributions.
+- In the US, socioeconomic disadvantage is positively associated with **adiposity (肥胖症)**
+- omnibus
+- epistemic
+
 ## 2021.08.04
 
 - A K Poker deck contains nice consecutively ranked cards of the same suit; we use **deuce (两点的纸牌)** through ten.
