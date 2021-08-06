@@ -2467,7 +2467,7 @@ IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
 Someone could be eavesdropping on you right now <span class="o">(</span>man-in-the-middle attack<span class="o">)</span>!
 It is also possible that a host key has just been changed.
 The fingerprint <span class="k">for</span> the ECDSA key sent by the remote host is
-SHA256:eSpztdqzLF6rBXRWd8pCW0v4utoE5CYTUHTaUb0Qn0w.
+SHA256:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
 Please contact your system administrator.
 Add correct host key <span class="k">in</span> /home/weiya/.ssh/known_hosts to get rid of this message.
 Offending ECDSA key <span class="k">in</span> /home/weiya/.ssh/known_hosts:42
@@ -2512,7 +2512,7 @@ Host key verification failed.
 <p>才知道 <code>R_LIBS_USER</code> 是定义在 <code>Renviron</code> 中，</p>
 <div class="highlight"><pre><span></span><code><span class="nv">R_LIBS_USER</span><span class="o">=</span><span class="si">${</span><span class="nv">R_LIBS_USER</span><span class="p">-</span><span class="s1">&#39;~/R/x86_64-pc-linux-gnu-library/4.0&#39;</span><span class="si">}</span>
 </code></pre></div>
-<p>其中 <code>${A-B}</code> 的语法是如果 <code>A</code> 没有设置，则令 <code>B</code> 为 <code>A</code>，注意<a href="../shell/#default-value">其与 <code>${A:-B}</code> 的区别</a>。</p>
+<p>其中 <code>${A-B}</code> 的语法是如果 <code>A</code> 没有设置，则令 <code>B</code> 为 <code>A</code>，注意<a href="../../shell/#default-value">其与 <code>${A:-B}</code> 的区别</a>。</p>
 <p>这也难怪为什么直接在命令行中输入 <code>echo $R_LIBS_USER</code> 结果为空。</p>
 <p>SSH 到该工作结点，发现其 prompt 并没有正确加载，直接出现 <code>bash-4.2$</code>，而一般会是 <code>[sXXXXX@chpc-sandbox ~]$</code>。</p>
 <div class="admonition note">
