@@ -652,7 +652,7 @@ IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
 Someone could be eavesdropping on you right now (man-in-the-middle attack)!
 It is also possible that a host key has just been changed.
 The fingerprint for the ECDSA key sent by the remote host is
-SHA256:eSpztdqzLF6rBXRWd8pCW0v4utoE5CYTUHTaUb0Qn0w.
+SHA256:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
 Please contact your system administrator.
 Add correct host key in /home/weiya/.ssh/known_hosts to get rid of this message.
 Offending ECDSA key in /home/weiya/.ssh/known_hosts:42
@@ -716,7 +716,7 @@ Z 在群里问道，他在服务器上提交 job 时，之前安装好的包不�
 R_LIBS_USER=${R_LIBS_USER-'~/R/x86_64-pc-linux-gnu-library/4.0'}
 ```
 
-其中 `${A-B}` 的语法是如果 `A` 没有设置，则令 `B` 为 `A`，注意[其与 `${A:-B}` 的区别](../shell/#default-value)。
+其中 `${A-B}` 的语法是如果 `A` 没有设置，则令 `B` 为 `A`，注意[其与 `${A:-B}` 的区别](../../shell/#default-value)。
 
 这也难怪为什么直接在命令行中输入 `echo $R_LIBS_USER` 结果为空。
 

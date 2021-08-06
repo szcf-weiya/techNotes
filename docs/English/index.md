@@ -1,3 +1,11 @@
+## 2021.08.06
+
+- One way to **obviate (排除，消除)** this difficulty is to perform a grid search.
+- FAIR published a paper introducing TextStyleBrush, a model that can **emulate (模仿，仿真，向...看齐)** the text style in a photo from a single shot.
+- MLOps is a set of practices that aims to deploy and maintain machine learning models in production reliably and efficiently. The word is compound of "machine learning" and the continuous development practice of DevOps in the software field.
+    - DevOps is a set of practices that combines software development (Dev) and IT operations (Ops). It aims to shorten the systems development life cycle and provide continuous delivery with high software quality.
+- 
+
 ## 2021.08.05
 
 - not only the complicated dynamic dependence between the series, but also the existence of **aberrant (异常的，反常的)** observations, such as missing values, contaminated observations, and heavy-tailed distributions.
@@ -3013,10 +3021,10 @@ up
 18.  boil it down
 19. astronomical1
 20. diplomacy
-21. exotic
-22. shroud
+21. immerse yourself in **exotic (外来的，异国的)** languages, 
+22. ConvNets went from obscure models that were **shrouded (覆盖，隐藏)** in skepticism to rockstars of Computer Vision, present as a core building block in almost every new Computer Vision paper.
 23. ward off
-24. perfume
+24. The source of indoor **VOC (voltile organic compounds, 挥发性有机化合物)** could be multiple and it may be also be contributed by the use of **detergents (洗涤剂，洗衣粉)** and **fragrance (香气，香水)** (room fragrance and **perfume (香水，香料)**) in indoor environment.
 25. octopus
 26. A large factory is supposed to built near the community according to the announcement issued by a company.
 27. There is a growing awareness of both the positive and negative influences that the construction plan brings to our community.
