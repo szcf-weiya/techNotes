@@ -1003,6 +1003,19 @@
     默认软件
   </a>
   
+    <nav class="md-nav" aria-label="默认软件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel" class="md-nav__link">
+    禁止 kernel 更新
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2698,6 +2711,19 @@
     默认软件
   </a>
   
+    <nav class="md-nav" aria-label="默认软件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel" class="md-nav__link">
+    禁止 kernel 更新
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3755,6 +3781,34 @@ $ prime-select intel
 <li>然后选择 <code>Open With</code></li>
 <li>选择特定软件，<code>Set as default</code></li>
 </ul>
+<h3 id="kernel">禁止 kernel 更新<a class="headerlink" href="#kernel" title="Permanent link">&para;</a></h3>
+<p>今天竟然又重启了，有点无法理解。第一次怀疑是温度过高，因为 <code>syslog</code> 中重启前的一条记录信息为</p>
+<div class="highlight"><pre><span></span><code>Device: /dev/sdc <span class="o">[</span>SAT<span class="o">]</span>, SMART Usage Attribute: <span class="m">194</span> Temperature_Celsius changed from <span class="m">60</span> to <span class="m">61</span>
+</code></pre></div>
+<p>然后第二次竟然发现 crash 报告竟然是 <code>151</code>，明明应该选择了第二个 147 呀。</p>
+<div class="highlight"><pre><span></span><code>$ ls /var/crash
+linux-image-4.15.0-151-generic-202108070025.crash
+linux-image-4.15.0-151-generic-202108071819.crash
+</code></pre></div>
+<p>重启时才发现竟然多了个 kernel 153！！于是第二个变成了 151，第三个才是 147。</p>
+<p>虽然将启动选择再改成第三个应该也是可以的，但是万一以后又多了一个呢，顺序岂不又变了，所以更好的方法便是禁止 kernel 更新。另外将最新的 151 删掉。</p>
+<ul>
+<li>删掉 kernel</li>
+</ul>
+<p>查看安装 kernel 的完整名称，</p>
+<div class="highlight"><pre><span></span><code>$ dpkg -l <span class="p">|</span> grep linux-image <span class="p">|</span> grep <span class="s2">&quot;^ii&quot;</span>
+</code></pre></div>
+<p>然后进行删除</p>
+<div class="highlight"><pre><span></span><code>$ sudo apt purge linux-image-4.15.0-153-generic
+</code></pre></div>
+<p>再次重启就会发现第一项 153 消失了。</p>
+<p>refer to <a href="https://www.cyberciti.biz/faq/ubuntu-18-04-remove-all-unused-old-kernels/">Ubuntu 18.04 remove all unused old kernels</a></p>
+<ul>
+<li>禁止 kernel 更新</li>
+</ul>
+<p>参考 <a href="https://askubuntu.com/questions/938494/how-to-i-prevent-ubuntu-from-kernel-version-upgrade-and-notification">How to I prevent Ubuntu from kernel version upgrade and notification?</a></p>
+<div class="highlight"><pre><span></span><code>sudo apt-mark hold <span class="m">4</span>.15.0-147-generic
+</code></pre></div>
 <h2 id="get-history-of-other-ttypts">Get history of other tty/pts?<a class="headerlink" href="#get-history-of-other-ttypts" title="Permanent link">&para;</a></h2>
 <p>seems not.</p>
 <p>see also <a href="https://stackoverflow.com/questions/51074474/how-to-get-complete-history-from-different-tty-or-pts">How to get complete history from different tty or pts - Stack Overflow</a></p>

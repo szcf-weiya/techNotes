@@ -1653,10 +1653,15 @@ $ sudo mkdir /mnt/f
 $ sudo mount -t drvfs F: /mnt/f
 </code></pre></div>
 <p>refer to <a href="https://askubuntu.com/questions/1116200/how-to-access-my-usb-drive-in-windows-subsytem-linux-ubuntu">How to access my usb drive in Windows Subsytem Linux Ubuntu</a></p>
-<p>But when using <code>rsync</code> for copying files, it throws warnings that cannot set times on the folder and cannot <code>mkstemp</code>, although <code>scp</code> works fine. The natural solution is to change the permission, but <code>chown</code> not work. Then following, remount the driver by specifying the user id and group id,</p>
+<p>But when using <code>rsync</code> for copying files, it throws warnings that cannot set times on the folder and cannot <code>mkstemp</code>, although <code>scp</code> works fine. The natural solution is to change the permission, but <code>chown</code> not work. Then following <a href="https://unix.stackexchange.com/questions/558235/rsync-operation-not-permitted">Rsync operation not permitted</a>, remount the driver by specifying the user id and group id,</p>
 <div class="highlight"><pre><span></span><code>$ sudo unmount 
 $ sudo mount -t drvfs -o rw,noatime,uid<span class="o">=</span><span class="m">1000</span>,gid<span class="o">=</span><span class="m">1000</span> <span class="s1">&#39;P:\&#39;</span> /mnt/p
 </code></pre></div>
+<p>It is reported that <a href="https://unix.stackexchange.com/questions/238152/why-is-scp-so-slow-and-how-to-make-it-faster"><code>scp</code> is slower than <code>rsync</code></a>, but based on my tries, it seems <code>scp</code> would be faster. And a big warning is that</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DO NOT interrupt a large file copy process, otherwise your PC would break down, and cannot ssh into. The only way is to restart mannually. </p>
+</div>
                 
               
               
