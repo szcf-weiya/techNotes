@@ -1,10 +1,13 @@
+## 2021.08.07
+
+- A gravity-defying physics experiment makes liquid **levitate (漂浮)** and boats float upside down.
+
 ## 2021.08.06
 
 - One way to **obviate (排除，消除)** this difficulty is to perform a grid search.
 - FAIR published a paper introducing TextStyleBrush, a model that can **emulate (模仿，仿真，向...看齐)** the text style in a photo from a single shot.
 - MLOps is a set of practices that aims to deploy and maintain machine learning models in production reliably and efficiently. The word is compound of "machine learning" and the continuous development practice of DevOps in the software field.
     - DevOps is a set of practices that combines software development (Dev) and IT operations (Ops). It aims to shorten the systems development life cycle and provide continuous delivery with high software quality.
-- 
 
 ## 2021.08.05
 

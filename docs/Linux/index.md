@@ -1400,6 +1400,51 @@ $ sudo update-grub
 - 然后选择 `Open With`
 - 选择特定软件，`Set as default`
 
+### 禁止 kernel 更新
+
+今天竟然又重启了，有点无法理解。第一次怀疑是温度过高，因为 `syslog` 中重启前的一条记录信息为
+
+```bash
+Device: /dev/sdc [SAT], SMART Usage Attribute: 194 Temperature_Celsius changed from 60 to 61
+```
+
+然后第二次竟然发现 crash 报告竟然是 `151`，明明应该选择了第二个 147 呀。
+
+```bash
+$ ls /var/crash
+linux-image-4.15.0-151-generic-202108070025.crash
+linux-image-4.15.0-151-generic-202108071819.crash
+```
+
+重启时才发现竟然多了个 kernel 153！！于是第二个变成了 151，第三个才是 147。
+
+虽然将启动选择再改成第三个应该也是可以的，但是万一以后又多了一个呢，顺序岂不又变了，所以更好的方法便是禁止 kernel 更新。另外将最新的 151 删掉。
+
+- 删掉 kernel
+
+查看安装 kernel 的完整名称，
+
+```bash
+$ dpkg -l | grep linux-image | grep "^ii"
+```
+
+然后进行删除
+
+```bash
+$ sudo apt purge linux-image-4.15.0-153-generic
+```
+
+再次重启就会发现第一项 153 消失了。
+
+refer to [Ubuntu 18.04 remove all unused old kernels](https://www.cyberciti.biz/faq/ubuntu-18-04-remove-all-unused-old-kernels/)
+
+- 禁止 kernel 更新
+
+参考 [How to I prevent Ubuntu from kernel version upgrade and notification?](https://askubuntu.com/questions/938494/how-to-i-prevent-ubuntu-from-kernel-version-upgrade-and-notification)
+
+```bash
+sudo apt-mark hold 4.15.0-147-generic
+```
 
 ## Get history of other tty/pts?
 
