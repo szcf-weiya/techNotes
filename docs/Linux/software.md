@@ -269,7 +269,7 @@ where `U,V` on the source image is mapped to `X,Y` on the destination image.
 
 The interesting area is the mapped sub region, and so we need to further crop them out, which can be done with [`-crop geometry`](http://www.imagemagick.org/script/command-line-options.php#crop), where the geometry is defined with `WxH+x+y`, which means the region of size `WxH` located at the xy-coordinates `(x, y)`, see more details in [Anatomy of the Command-line](http://www.imagemagick.org/script/command-line-processing.php#geometry)
 
-Refer to the [source code](https://github.com/szcf-weiya/techNotes/src/persp.py) for more details.
+Refer to the [source code](https://github.com/szcf-weiya/techNotes/blob/master/src/persp.py) for more details.
 
 !!! tip
     The original record on the development is [here](https://github.com/szcf-weiya/en/issues/191).

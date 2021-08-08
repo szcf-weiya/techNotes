@@ -67,6 +67,52 @@ request_gpu_chpc() { srun -p chpc --gres=gpu:1 -w chpc-gpu$1 --pty bash -i; }
 t() { tmux a -t $1 || tmux new -s $1; }
 ```
 
+## Interactive Mode
+
+Strongly recommend the interactive mode when you debug your program or want to check the outputs of each step.
+
+### `qsub -I`
+
+The simplest way is
+
+```bash
+[sXXXX@chpc-login01 ~] $ qsub -I
+```
+
+If there are idle nodes, then you would be allocated to a node, and pay attention to the prompt, which indicates where you are. For example, `sXXXX@chpc-login01` means you are on the `chpc-login01` node.
+
+Sometimes you can be automatically brought into the target node, then you are done. But sometimes it just displays the node you are allocated, such as
+
+```bash
+[sXXXX@chpc-login01 ~] $ qsub -I
+...
+salloc: Nodes chpc-cn011 are ready for job
+[sXXXX@chpc-login01 ~] $
+```
+
+then you need to manually ssh into the target node
+
+```bash
+[sXXXX@chpc-login01 ~] $ ssh chpc-cn101
+[sXXXX@chpc-cn101 ~] $
+```
+
+### `srun -w`
+
+Sometimes you might want to use a specified node, say you want to use GPU (DO NOT forget `--gres=gpu:1`), then you can specify your node via the option `-w`. Moreover, you'd better specify the partition and QoS policy `-p stat -q stat`, which counts your quota of usage. The interactive command is specified via `--pty bash -i`.
+
+The complete command is
+
+```bash
+[sxxxxx@chpc-login01 ~]$ srun -p stat -q stat --gres=gpu:1 -w chpc-gpu010 --pty bash -i
+srun: job XXXXXX queued and waiting for resources
+srun: error: Lookup failed: Unknown host
+srun: job XXXXXX has been allocated resources
+[sxxxxx@chpc-gpu010 ~]$ 
+```
+
+Upon you are allocated a node, you can do what you want just like on your own laptop.
+
 ## Submitting Multiple Jobs
 
 [SLURM](https://www.cuhk.edu.hk/itsc/hpc/slurm.html) and PBS are two different cluster schedulers, and the common equivalent commands are as follows:
@@ -606,7 +652,7 @@ IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
 Someone could be eavesdropping on you right now (man-in-the-middle attack)!
 It is also possible that a host key has just been changed.
 The fingerprint for the ECDSA key sent by the remote host is
-SHA256:eSpztdqzLF6rBXRWd8pCW0v4utoE5CYTUHTaUb0Qn0w.
+SHA256:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
 Please contact your system administrator.
 Add correct host key in /home/weiya/.ssh/known_hosts to get rid of this message.
 Offending ECDSA key in /home/weiya/.ssh/known_hosts:42
@@ -670,7 +716,7 @@ Z 在群里问道，他在服务器上提交 job 时，之前安装好的包不�
 R_LIBS_USER=${R_LIBS_USER-'~/R/x86_64-pc-linux-gnu-library/4.0'}
 ```
 
-其中 `${A-B}` 的语法是如果 `A` 没有设置，则令 `B` 为 `A`，注意[其与 `${A:-B}` 的区别](../shell/#default-value)。
+其中 `${A-B}` 的语法是如果 `A` 没有设置，则令 `B` 为 `A`，注意[其与 `${A:-B}` 的区别](../../shell/#default-value)。
 
 这也难怪为什么直接在命令行中输入 `echo $R_LIBS_USER` 结果为空。
 
