@@ -15,7 +15,7 @@ def click_event(event, x, y, flags, param):
                     1, (255, 0, 0), 2)
         cv2.imshow('image', img)
 
-def main(filename):
+def main(filename, folder = "./"):
     img = cv2.imread(filename, 1)
     h, w = img.shape[:2]
     f = 4
@@ -35,7 +35,7 @@ def main(filename):
         w = int(np.sqrt(np.sum((coors[-1] - coors[0])**2)))
         h = int(np.sqrt(np.sum((coors[1] - coors[0])**2)))
         output = filename.replace(".jpg", "_persp.jpg")
-        cmd = f'magick {filename} -distort perspective "{coors[0][0]},{coors[0][1]},0,0 {coors[1][0]},{coors[1][1]},0,{h} {coors[2][0]},{coors[2][1]},{w},{h} {coors[3][0]},{coors[3][1]},{w},0" -crop {w}x{h}+0+0 {output}'
+        cmd = f'magick {filename} -distort perspective "{coors[0][0]},{coors[0][1]},0,0 {coors[1][0]},{coors[1][1]},0,{h} {coors[2][0]},{coors[2][1]},{w},{h} {coors[3][0]},{coors[3][1]},{w},0" -crop {w}x{h}+0+0 {folder}/{output}'
         print(cmd)
         os.system(cmd)
 
@@ -51,11 +51,14 @@ if __name__ == "__main__":
     if len(sys.argv) == 2:
         main(sys.argv[1])
     elif len(sys.argv) > 2:
-        imgs = sys.argv[1:]
+        folder = sys.argv[1]
+        if not os.path.exists(folder):
+            os.mkdir(folder)
+        imgs = sys.argv[2:]
         for img in imgs:
             if "_persp.jpg" in img:
                 continue
             elif img.replace(".jpg", "_persp.jpg") in imgs:
                 continue
             else:
-                main(img)
+                main(img, folder)
