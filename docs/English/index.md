@@ -1,3 +1,7 @@
+## 2021.08.08
+
+- His classmates laughed at his **lame (瘸的；跛的；站不住脚的)** drawing.
+
 ## 2021.08.07
 
 - A gravity-defying physics experiment makes liquid **levitate (漂浮)** and boats float upside down.
