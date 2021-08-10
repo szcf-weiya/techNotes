@@ -1,3 +1,11 @@
+## 2021.08.10
+
+- Drop me a line in your **leisure (空闲的)** time.
+
+## 2021.08.09
+
+None
+
 ## 2021.08.08
 
 - His classmates laughed at his **lame (瘸的；跛的；站不住脚的)** drawing.
