@@ -1,3 +1,7 @@
+## 2021.08.11
+
+- apply the procedure to a real data set of **hepatic (肝的)** miRNA expressions from a mouse model of non-alcoholic **steatohepatitis (脂肪肝)** (NASH).
+
 ## 2021.08.10
 
 - Drop me a line in your **leisure (空闲的)** time.
