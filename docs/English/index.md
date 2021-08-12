@@ -1,3 +1,9 @@
+## 2021.08.12
+
+- I am not a **cheapskate (小气鬼)**.
+- run some **errands (使命，差事)**: 处理生活琐事
+- an officious statement: 非正式声明
+
 ## 2021.08.11
 
 - apply the procedure to a real data set of **hepatic (肝的)** miRNA expressions from a mouse model of non-alcoholic **steatohepatitis (脂肪肝)** (NASH).
