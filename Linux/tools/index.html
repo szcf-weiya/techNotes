@@ -694,6 +694,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#concat" class="md-nav__link">
+    concat
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2261,6 +2268,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#concat" class="md-nav__link">
+    concat
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2730,6 +2744,10 @@ $ cat t2.txt
 <div class="highlight"><pre><span></span><code>ffmpeg -i .<span class="se">\i</span>nput.mp4 -map <span class="m">0</span>:0 -vcodec copy out.mp4
 </code></pre></div>
 <h3 id="_4">慢速播放和快速播放<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 2 times faster</span>
+$ ffmpeg -i input.mkv -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</span> output.mkv
+</code></pre></div>
+<p>但是如果只对视频快速播放，而不处理音频，则文件的总时长仍不变。如果只关注视频，可以先去除音频，然后再做变速处理。</p>
 <p>参考 <a href="https://blog.csdn.net/ternence_hsu/article/details/85865718">ffmpeg 视频倍速播放 和 慢速播放</a></p>
 <h3 id="_5">视频旋转<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>参考<a href="https://askubuntu.com/questions/83711/how-can-i-rotate-a-video">How can I rotate a video?</a></p>
@@ -2749,6 +2767,25 @@ $ cat t2.txt
 <li>(optional) <code>-t</code> specifies the duration, or use <code>-to</code> to specifies the end timestamp</li>
 </ul>
 <p>refer to <a href="https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video">Using ffmpeg to cut up video</a></p>
+<h3 id="concat">concat<a class="headerlink" href="#concat" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ ffmpeg -f concat -safe <span class="m">0</span> -i &lt;<span class="o">(</span><span class="nb">echo</span> file <span class="nv">$PWD</span>/8xonlyVID_20210808_170208.mp4<span class="p">;</span> <span class="nb">echo</span> file <span class="nv">$PWD</span>/8xonlyVID_20210808_170328.mp4<span class="o">)</span> -c copy 8xonlyVID_20210808_170208+328.mp4
+</code></pre></div>
+<p>note that <code>$PWD</code> is necessary, otherwise it throws</p>
+<blockquote>
+<p>Impossible to open &lsquo;/dev/fd/8xonlyVID_20210808_170328.mp4&rsquo;
+/dev/fd/63: No such file or directory</p>
+</blockquote>
+<p>Also note that <code>&amp;</code> seems will print the file info reversely,</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;1&quot;</span> <span class="p">&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;2&quot;</span>
+<span class="o">[</span><span class="m">5</span><span class="o">]</span> <span class="m">5142</span>
+<span class="m">2</span>
+<span class="o">[</span><span class="m">4</span><span class="o">]</span>   Done                    <span class="nb">echo</span> <span class="s2">&quot;1&quot;</span>
+<span class="m">1</span>
+$ <span class="nb">echo</span> <span class="s2">&quot;1&quot;</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;2&quot;</span>
+<span class="m">1</span>
+<span class="m">2</span>
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg">How to concatenate two MP4 files using FFmpeg? - Stack Overflow</a></p>
 <h2 id="find"><code>find</code><a class="headerlink" href="#find" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$ find . -group group
 $ find . -user user
