@@ -1,3 +1,7 @@
+## 2021.08.13
+
+- She **scarfed (eat rapidly and eagerly)** down some ice cream and rushed back to work.
+
 ## 2021.08.12
 
 - I am not a **cheapskate (小气鬼)**.

@@ -345,6 +345,13 @@ ffmpeg -i .\input.mp4 -map 0:0 -vcodec copy out.mp4
 
 ### 慢速播放和快速播放
 
+```bash
+# 2 times faster
+$ ffmpeg -i input.mkv -filter:v "setpts=0.5*PTS" output.mkv
+```
+
+但是如果只对视频快速播放，而不处理音频，则文件的总时长仍不变。如果只关注视频，可以先去除音频，然后再做变速处理。
+
 参考 [ffmpeg 视频倍速播放 和 慢速播放](https://blog.csdn.net/ternence_hsu/article/details/85865718)
 
 ### 视频旋转
@@ -378,6 +385,32 @@ where
 - (optional) `-t` specifies the duration, or use `-to` to specifies the end timestamp
 
 refer to [Using ffmpeg to cut up video](https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video)
+
+### concat
+
+```bash
+$ ffmpeg -f concat -safe 0 -i <(echo file $PWD/8xonlyVID_20210808_170208.mp4; echo file $PWD/8xonlyVID_20210808_170328.mp4) -c copy 8xonlyVID_20210808_170208+328.mp4
+```
+
+note that `$PWD` is necessary, otherwise it throws
+
+> Impossible to open '/dev/fd/8xonlyVID_20210808_170328.mp4'
+/dev/fd/63: No such file or directory
+
+Also note that `&` seems will print the file info reversely,
+
+```bash
+$ echo "1" & echo "2"
+[5] 5142
+2
+[4]   Done                    echo "1"
+1
+$ echo "1"; echo "2"
+1
+2
+```
+
+refer to [How to concatenate two MP4 files using FFmpeg? - Stack Overflow](https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg)
 
 ## `find`
 
