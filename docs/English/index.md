@@ -1,3 +1,7 @@
+## 2021.08.14
+
+- What was once a **fringe (边缘的)** theory -- the gut-brain axis -- is seeing an explosion of interest.
+
 ## 2021.08.13
 
 - She **scarfed (eat rapidly and eagerly)** down some ice cream and rushed back to work.
