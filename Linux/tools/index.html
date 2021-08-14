@@ -2613,6 +2613,17 @@ convert +append *.png out.png
 convert -append *.png out.png
 </code></pre></div>
 <p>参考 <a href="https://askubuntu.com/a/889772">How do I join two images in Ubuntu?</a></p>
+<p>如果同时想两张图片高度一样，则加入 <code>-resize xW</code> 语法，如</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># NOT work</span>
+$ convert map.png IMG_20210808_172104.jpg +append -resize x600 /tmp/p1.png
+<span class="c1"># work</span>
+$ convert +append map.png IMG_20210808_172104.jpg -resize x600 /tmp/p1.png
+</code></pre></div>
+<p>但是要注意此时 <code>+append</code> 要放在前面，也就是 <code>-resize</code> 需要紧跟着图片。</p>
+<p>参考 <a href="https://stackoverflow.com/questions/20737061/merge-images-side-by-sidehorizontally">Merge Images Side by Side(Horizontally) - Stack Overflow</a></p>
+<p>但是注意 <code>-resize</code> 会使得 orientation 无效，然后图片会发生旋转，参考 <a href="https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33900">ImageMagick convert rotates images during resize</a>，使用 <code>-auto-orient</code> 参数，就能避免丢失图片中的 orientation 信息，</p>
+<div class="highlight"><pre><span></span><code>$ convert -auto-orient +append map.png IMG_20210808_172104.jpg -resize x600 /tmp/p2.png
+</code></pre></div>
 <h3 id="_2">缩小图片大小<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># only specify the wide as 1024 pixel to keep the aspect ratio</span>
 convert input.png -resize 1024x out.png
