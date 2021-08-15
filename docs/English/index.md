@@ -1,3 +1,9 @@
+## 2021.08.15
+
+- You're a **newlywed (刚结婚的人)** and your first bady is on the way.
+- Any **scoop (独家新闻，特别报道)** on that plane crash?
+	- scoop 指勺，作动词指用勺盛或舀，引申为急速地收集、抓取，又由此引申为媒体抢先于对手发布重要新闻信息、独家报道。
+
 ## 2021.08.14
 
 - What was once a **fringe (边缘的)** theory -- the gut-brain axis -- is seeing an explosion of interest.
