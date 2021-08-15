@@ -1999,7 +1999,7 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
   <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">e</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">r</span><span class="p">)){</span>
     <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="s2">&quot;https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif&quot;</span><span class="p">;</span>
     <span class="nx">t</span><span class="o">?</span><span class="p">(</span><span class="nx">o</span> <span class="o">+=</span> <span class="s2">&quot;?r=&quot;</span><span class="o">+</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">referrer</span><span class="p">),</span><span class="nx">r</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="nx">o</span><span class="o">+=</span><span class="s2">&quot;&amp;l=&quot;</span><span class="o">+</span><span class="nx">r</span><span class="p">))</span><span class="o">:</span><span class="nx">r</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="nx">o</span><span class="o">+=</span><span class="s2">&quot;?l=&quot;</span><span class="o">+</span><span class="nx">r</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="k">new</span> <span class="nx">Image</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="ow">new</span> <span class="nx">Image</span><span class="p">;</span>
     <span class="nx">i</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="nx">o</span>
   <span class="p">}</span>
 <span class="p">}(</span><span class="nb">window</span><span class="p">);</span>
@@ -2057,7 +2057,7 @@ Java（由 Sun 发明）是更复杂的编程语言。</p>
 <h3 id="_5">正则表达式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>参考<a href="http://www.runoob.com/js/js-obj-regexp.html">JavaScript RegExp 对象</a></p>
 <p>定义一个RegExp对象如下</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">patt</span><span class="o">=</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span><span class="nx">modifiers</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">patt</span><span class="o">=</span><span class="ow">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="nx">pattern</span><span class="p">,</span><span class="nx">modifiers</span><span class="p">);</span>
 <span class="c1">// or more directly</span>
 <span class="kd">var</span> <span class="nx">patt</span><span class="o">=</span><span class="err">/pattern/modifiers;</span>
 </code></pre></div>

@@ -2553,16 +2553,16 @@ gcc -Werror test.c -o <span class="nb">test</span>
 <h2 id="openmp">OpenMP<a class="headerlink" href="#openmp" title="Permanent link">&para;</a></h2>
 <h3 id="get-its-version">get its version<a class="headerlink" href="#get-its-version" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">// https://stackoverflow.com/questions/1304363/how-to-check-the-version-of-openmp-on-linux</span>
-<span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;omp.h&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;omp.h&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">map</span><span class="p">{{</span><span class="mi">200505</span><span class="p">,</span><span class="s">&quot;2.5&quot;</span><span class="p">},{</span><span class="mi">200805</span><span class="p">,</span><span class="s">&quot;3.0&quot;</span><span class="p">},{</span><span class="mi">201107</span><span class="p">,</span><span class="s">&quot;3.1&quot;</span><span class="p">},{</span><span class="mi">201307</span><span class="p">,</span><span class="s">&quot;4.0&quot;</span><span class="p">},{</span><span class="mi">201511</span><span class="p">,</span><span class="s">&quot;4.5&quot;</span><span class="p">},{</span><span class="mi">201811</span><span class="p">,</span><span class="s">&quot;5.0&quot;</span><span class="p">},{</span><span class="mi">202011</span><span class="p">,</span><span class="s">&quot;5.1&quot;</span><span class="p">}};</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;We have OpenMP &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">map</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">_OPENMP</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="p">{{</span><span class="mi">200505</span><span class="p">,</span><span class="s">&quot;2.5&quot;</span><span class="p">},{</span><span class="mi">200805</span><span class="p">,</span><span class="s">&quot;3.0&quot;</span><span class="p">},{</span><span class="mi">201107</span><span class="p">,</span><span class="s">&quot;3.1&quot;</span><span class="p">},{</span><span class="mi">201307</span><span class="p">,</span><span class="s">&quot;4.0&quot;</span><span class="p">},{</span><span class="mi">201511</span><span class="p">,</span><span class="s">&quot;4.5&quot;</span><span class="p">},{</span><span class="mi">201811</span><span class="p">,</span><span class="s">&quot;5.0&quot;</span><span class="p">},{</span><span class="mi">202011</span><span class="p">,</span><span class="s">&quot;5.1&quot;</span><span class="p">}};</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;We have OpenMP &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">map</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">_OPENMP</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>On T460P,</p>
 <div class="highlight"><pre><span></span><code>$ g++ version.cpp -fopenmp
@@ -2609,20 +2609,20 @@ We have OpenMP <span class="m">4</span>.5
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">array</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
-    <span class="c1">// int &amp;b = array; // WRONG!!</span>
-    <span class="kt">int</span> <span class="o">&amp;</span><span class="n">b</span> <span class="o">=</span> <span class="o">*</span><span class="n">array</span><span class="p">;</span> <span class="c1">// left-hand side is `Int`, then right-hand side should also be int</span>
-    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="o">*</span><span class="n">array</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// int &amp;b = array; // WRONG!!</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">array</span><span class="p">;</span><span class="w"> </span><span class="c1">// left-hand side is `Int`, then right-hand side should also be int</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">array</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <ul>
@@ -2632,15 +2632,15 @@ We have OpenMP <span class="m">4</span>.5
 <p>参考 <a href="https://blog.csdn.net/qq_32103261/article/details/80231698">c++指针（六）——指针与引用_大风车-CSDN博客</a></p>
 <h3 id="_1">输出字符型指针地址值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>C 语言中通过 <code>printf</code> 便可以很方便地输出字符串指针地址值，如</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">(){</span>
-    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pstr</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">pstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello world&quot;</span><span class="p">;</span><span class="w"></span>
 
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;字符串: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">pstr</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;字符串起始地址值: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">pstr</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;字符串: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pstr</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;字符串起始地址值: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pstr</span><span class="p">);</span><span class="w"></span>
 
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>运行结果为，</p>
 <div class="highlight"><pre><span></span><code>$ gcc print_pointer_address.c
@@ -2653,16 +2653,16 @@ $ ./a.out
 <p>C++标准库中I/O类对 &lt;&lt; 操作符重载，因此在遇到字符型指针时会将其当作字符串名来处理，输出指针所指的字符串</p>
 </blockquote>
 <p>类似 C 中强制类型转换，用 <code>static_cast</code> 将字符串指针转换成无类型指针。</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">pstr</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">pstr</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="kt">void</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pstr</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">pstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello world&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pstr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pstr</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>运行结果为，</p>
 <div class="highlight"><pre><span></span><code>$ g++ print_pointer_address.cpp 
@@ -2693,33 +2693,33 @@ double *p = &amp;x;
 </ul>
 <h3 id="_4">值传递<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>改变 <code>x</code> 的值不会影响 <code>n</code></p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">Func1</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">Func1</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Func1</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="n">Func1</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <h3 id="_5">指针传递<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">Func2</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">Func2</span><span class="p">(</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Func2</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="n">Func2</span><span class="p">(</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <h3 id="_6">引用传递<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p><code>x</code> 和 <code>n</code> 是一个东西</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">Func3</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">Func3</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Func3</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="n">Func3</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>引用传递的性质像指针传递，而书写方式像值传递。</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">m</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">&amp;</span><span class="n">n</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>其中 <code>n</code> 是 <code>m</code> 的一个引用 (reference)，而 <code>m</code> 是被引用物 (referent).</p>
 <p>引用的规则如下：</p>
@@ -2757,33 +2757,33 @@ double *p = &amp;x;
 <span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
-<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;pthread.h&gt;</span><span class="cp"></span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span><span class="cp"></span>
 
-<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="cp">#define NUM_THREADS 5</span>
 
 <span class="c1">// 函数指针</span>
-<span class="kt">void</span><span class="o">*</span> <span class="nf">say_hello</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;hello ...&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="nf">say_hello</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">args</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello ...&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
-  <span class="n">pthread_t</span> <span class="n">tids</span><span class="p">[</span><span class="n">NUM_THREADS</span><span class="p">];</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM_THREADS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="c1">// 线程的id，线程参数， 线程运行函数的起始地址，运行函数的参数</span>
-    <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">say_hello</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="p">{</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;pthread_create error: error_code = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ret</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">pthread_t</span><span class="w"> </span><span class="n">tids</span><span class="p">[</span><span class="n">NUM_THREADS</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_THREADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 线程的id，线程参数， 线程运行函数的起始地址，运行函数的参数</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">say_hello</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;pthread_create error: error_code = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <p>两次运行的结果混乱，因为没有同步？</p>
@@ -2820,37 +2820,37 @@ double *p = &amp;x;
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
-<span class="normal">31</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;pthread.h&gt;</span><span class="cp"></span>
+<span class="normal">31</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span><span class="cp"></span>
 
-<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="cp">#define NUM_THREADS 5</span>
 
 <span class="c1">// 函数指针</span>
-<span class="kt">void</span><span class="o">*</span> <span class="nf">say_hello</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">args</span><span class="p">);</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;hello in &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="nf">say_hello</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">args</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">args</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello in &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
-  <span class="n">pthread_t</span> <span class="n">tids</span><span class="p">[</span><span class="n">NUM_THREADS</span><span class="p">];</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;hello in main&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM_THREADS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="c1">// 线程的id，线程参数， 线程运行函数的起始地址，运行函数的参数</span>
-    <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">say_hello</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">i</span><span class="p">);</span>
-    <span class="c1">// &amp;i表示取i的地址，即指向i的指针</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;current pthread id = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">tids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="p">{</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;pthread_create error: error_code = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ret</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">pthread_t</span><span class="w"> </span><span class="n">tids</span><span class="p">[</span><span class="n">NUM_THREADS</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello in main&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_THREADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 线程的id，线程参数， 线程运行函数的起始地址，运行函数的参数</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">say_hello</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// &amp;i表示取i的地址，即指向i的指针</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;current pthread id = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">tids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;pthread_create error: error_code = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <p><img alt="" src="MultiThread/res_3.png" /></p>
@@ -2891,41 +2891,41 @@ double *p = &amp;x;
 <span class="normal">32</span>
 <span class="normal">33</span>
 <span class="normal">34</span>
-<span class="normal">35</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;pthread.h&gt;</span><span class="cp"></span>
+<span class="normal">35</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span><span class="cp"></span>
 
-<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
 <span class="cp">#define NUM_THREADS 5</span>
 
 <span class="c1">// 函数指针</span>
-<span class="kt">void</span><span class="o">*</span> <span class="nf">say_hello</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
-<span class="p">{</span>
-  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">args</span><span class="p">);</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;hello in &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="nf">say_hello</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">args</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">((</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">args</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello in &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
-  <span class="n">pthread_t</span> <span class="n">tids</span><span class="p">[</span><span class="n">NUM_THREADS</span><span class="p">];</span>
-  <span class="kt">int</span> <span class="n">indexes</span><span class="p">[</span><span class="n">NUM_THREADS</span><span class="p">];</span> <span class="c1">//保存i的值避免被修改</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;hello in main&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM_THREADS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="n">indexes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-    <span class="c1">// 线程的id，线程参数， 线程运行函数的起始地址，运行函数的参数</span>
-    <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">say_hello</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">indexes</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
-    <span class="c1">// &amp;i表示取i的地址，即指向i的指针</span>
-    <span class="c1">//cout &lt;&lt; &quot;current pthread id = &quot; &lt;&lt; tids[i] &lt;&lt; endl;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="p">{</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;pthread_create error: error_code = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ret</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="c1">//pthread_exit(NULL);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NUM_THREADS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="n">pthread_join</span><span class="p">(</span><span class="n">tids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">);</span> <span class="c1">//用于等待一个线程的结束</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">pthread_t</span><span class="w"> </span><span class="n">tids</span><span class="p">[</span><span class="n">NUM_THREADS</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">indexes</span><span class="p">[</span><span class="n">NUM_THREADS</span><span class="p">];</span><span class="w"> </span><span class="c1">//保存i的值避免被修改</span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello in main&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_THREADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">indexes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 线程的id，线程参数， 线程运行函数的起始地址，运行函数的参数</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">say_hello</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">indexes</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// &amp;i表示取i的地址，即指向i的指针</span>
+<span class="w">    </span><span class="c1">//cout &lt;&lt; &quot;current pthread id = &quot; &lt;&lt; tids[i] &lt;&lt; endl;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;pthread_create error: error_code = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//pthread_exit(NULL);</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_THREADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">tids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span><span class="w"> </span><span class="c1">//用于等待一个线程的结束</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <p><img alt="" src="MultiThread/res_4.png" />
@@ -3060,70 +3060,70 @@ ldd -d -r test
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="c1">// ref: http://blog.sina.com.cn/s/blog_6377b8e60100ino6.html</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="nn">std</span><span class="p">;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-  <span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v1</span><span class="p">;</span>
-  <span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">Iter</span><span class="p">;</span>
-  <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">10</span> <span class="p">);</span>
-  <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">20</span> <span class="p">);</span>
-  <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">30</span> <span class="p">);</span>
-  <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">40</span> <span class="p">);</span>
-  <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">50</span> <span class="p">);</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;v1 =&quot;</span> <span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span> <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span><span class="o">++</span> <span class="p">)</span> 
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">Iter</span><span class="p">;</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-  <span class="n">v1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">);</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;v1 =&quot;</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span> <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span><span class="o">++</span> <span class="p">)</span> 
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">Iter</span><span class="p">;</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-  <span class="n">v1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">3</span> <span class="p">);</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;v1 =&quot;</span><span class="p">;</span>
- <span class="k">for</span> <span class="p">(</span> <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span><span class="o">++</span> <span class="p">)</span> 
-   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">Iter</span><span class="p">;</span>
- <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
- <span class="c1">//当调用erase()后Iter迭代器就失效了，变成了一野指针。</span>
- <span class="c1">//所以要处理这种问题，关键是要解决调用erase()方法后，Iter迭代器变成野指针的问题，</span>
- <span class="c1">//这个时候呢给他赋一个新的迭代器给他。</span>
- <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">10</span> <span class="p">);</span>
- <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">30</span> <span class="p">);</span>
- <span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="mi">10</span> <span class="p">);</span>
- <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;v1 =&quot;</span><span class="p">;</span>
- <span class="k">for</span> <span class="p">(</span> <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span><span class="o">++</span> <span class="p">)</span> 
-   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">Iter</span><span class="p">;</span>
- <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
- <span class="k">for</span><span class="p">(</span><span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">Iter</span><span class="o">++</span><span class="p">)</span> 
-   <span class="p">{</span> 
-     <span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">Iter</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> 
-       <span class="p">{</span> 
-     <span class="n">v1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">Iter</span><span class="p">);</span>
-     <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="c1">//当erase后，旧的容器会被重新整理成一个新的容器</span>
-     <span class="c1">// or</span>
-     <span class="c1">// Iter = v1.erase(Iter);</span>
-       <span class="p">}</span>
-     <span class="k">if</span> <span class="p">(</span><span class="n">Iter</span> <span class="o">==</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
-       <span class="k">break</span><span class="p">;</span>
-   <span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">vector</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">vector</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">Iter</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="w"> </span><span class="mi">40</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v1 =&quot;</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Iter</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">Iter</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">v1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v1 =&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Iter</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">Iter</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">v1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v1 =&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Iter</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">Iter</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="c1">//当调用erase()后Iter迭代器就失效了，变成了一野指针。</span>
+<span class="w"> </span><span class="c1">//所以要处理这种问题，关键是要解决调用erase()方法后，Iter迭代器变成野指针的问题，</span>
+<span class="w"> </span><span class="c1">//这个时候呢给他赋一个新的迭代器给他。</span>
+<span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v1 =&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Iter</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">Iter</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+<span class="w"> </span><span class="k">for</span><span class="p">(</span><span class="n">Iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="n">Iter</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
+<span class="w">   </span><span class="p">{</span><span class="w"> </span>
+<span class="w">     </span><span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">Iter</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span>
+<span class="w">       </span><span class="p">{</span><span class="w"> </span>
+<span class="w">     </span><span class="n">v1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">Iter</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="n">Iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="c1">//当erase后，旧的容器会被重新整理成一个新的容器</span>
+<span class="w">     </span><span class="c1">// or</span>
+<span class="w">     </span><span class="c1">// Iter = v1.erase(Iter);</span>
+<span class="w">       </span><span class="p">}</span><span class="w"></span>
+<span class="w">     </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Iter</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"></span>
+<span class="w">       </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
 
- <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;v1 =&quot;</span><span class="p">;</span>
- <span class="k">for</span> <span class="p">(</span> <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span><span class="o">++</span> <span class="p">)</span> 
-   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">Iter</span><span class="p">;</span>
- <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
- <span class="c1">// another one</span>
- <span class="n">v1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
- <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;v1 =&quot;</span><span class="p">;</span>
- <span class="k">for</span> <span class="p">(</span> <span class="n">Iter</span> <span class="o">=</span> <span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span> <span class="o">!=</span> <span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span> <span class="p">)</span> <span class="p">;</span> <span class="n">Iter</span><span class="o">++</span> <span class="p">)</span> 
-   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">Iter</span><span class="p">;</span>
- <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+<span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v1 =&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Iter</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">Iter</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
+<span class="w"> </span><span class="c1">// another one</span>
+<span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v1 =&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">Iter</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
+<span class="w">   </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">Iter</span><span class="p">;</span><span class="w"></span>
+<span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"> </span>
 
- <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="onlogn">最长递增子序列 O(NlogN)算法<a class="headerlink" href="#onlogn" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.felix021.com/blog/read.php?1587">最长递增子序列 O(NlogN)算法 </a></p>
@@ -3152,8 +3152,8 @@ ldd -d -r test
 </ul>
 <h2 id="_15">命令行参数的传入<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
 <p>申明 <code>main</code> 函数如下</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]</span> <span class="p">);</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span> <span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[]</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>其中 <code>argc</code> 参数包含参数的计数值，而 <code>argv</code> 包含指向这些参数的指针数组，且第一个参数为程序名。比如<a href="https://github.com/szcf-weiya/ESL-CN/blob/f314293634cec66606d59fdaa493155170c1d530/docs/notes/BS/bspline.cpp#L9">这里</a>，</p>
 <div class="highlight"><pre><span></span><code>size_t <span class="nv">order</span> <span class="o">=</span> atoi<span class="o">(</span>argv<span class="o">[</span><span class="m">1</span><span class="o">])</span><span class="p">;</span>
