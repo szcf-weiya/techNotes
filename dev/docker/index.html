@@ -2031,8 +2031,7 @@ Prefix dict has been built successfully.
 <h2 id="ownership-of-generated-files">ownership of generated files<a class="headerlink" href="#ownership-of-generated-files" title="Permanent link">&para;</a></h2>
 <p>The default ownership file is <code>root</code>, and fail to accessed.</p>
 <p>We can specify the owner if necessary,</p>
-<div class="highlight"><pre><span></span><code>$ docker run -v <span class="nv">$PWD</span>:/root -w /root -u <span class="m">1000</span> -it py37jieba:0.0.5 bash
-$ docker run -v <span class="nv">$PWD</span>:/root -w /root -u <span class="m">1000</span>:1000 -it py37jieba:0.0.5 bash
+<div class="highlight"><pre><span></span><code>$ docker run -v <span class="nv">$PWD</span>:/root -w /root -u <span class="nv">$UID</span>:<span class="nv">$UID</span> -it py37jieba:0.0.5 bash
 </code></pre></div>
 <p>where the valid formats from <code>man docker-run</code> include</p>
 <div class="highlight"><pre><span></span><code>          --user <span class="o">[</span>user <span class="p">|</span> user:group <span class="p">|</span> uid <span class="p">|</span> uid:gid <span class="p">|</span> user:gid <span class="p">|</span> uid:group <span class="o">]</span>
