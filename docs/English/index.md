@@ -1,3 +1,12 @@
+## 2021.08.17
+
+- Luxury 2 Bedroom/2 Full Bathroom Fully **Renovated (翻新)** **Condominium (公寓)** Located in a Highly Sought After **Concierge (礼宾部)**， Elevator Building with **Amenities (便利设施)** in Cambridge Featuring Beautiful Hardwood Floors Throughout, **Granite (花岗岩)**/Stainless Steel Kitchen with Large **Pantry (食品贮藏室)**, **Spacious (宽敞的)**, Sunny Bedrooms with Views， Hot Water and **Garage (车库)** Parking Included.
+
+## 2021.08.16
+
+- **Kitsch (刻奇，媚俗，矫饰)** is a low-brow style of mass-produced art or design using popular or cultural icons.
+- **dyadic (二价的，二值的)** operator: 二元算子
+
 ## 2021.08.15
 
 - You're a **newlywed (刚结婚的人)** and your first bady is on the way.

@@ -283,8 +283,7 @@ The default ownership file is `root`, and fail to accessed.
 We can specify the owner if necessary,
 
 ```bash
-$ docker run -v $PWD:/root -w /root -u 1000 -it py37jieba:0.0.5 bash
-$ docker run -v $PWD:/root -w /root -u 1000:1000 -it py37jieba:0.0.5 bash
+$ docker run -v $PWD:/root -w /root -u $UID:$UID -it py37jieba:0.0.5 bash
 ```
 
 where the valid formats from `man docker-run` include
