@@ -511,6 +511,24 @@ refer to <https://stackoverflow.com/questions/23512852/grep-binary-file-matches-
 
 A much more powerful command than `top`, refer to [Find out what processes are running in the background on Linux](https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/)
 
+## `ln`
+
+- with `-s`, create a soft link
+- without `-s`, create a hard link
+
+A "hard link" is actually between two directory entries; they're really the same file. And the number of the permission of `ll` also shows the number of hard links, such as `2` in `-rw-rw-r--  2`.
+
+**the same file as another is they have the same inode number; no other file will have that.**
+
+We can get the `inode` as follows,
+
+```bash
+$ stat resolve_utf.py | grep -i inode
+Device: 811h/2065d	Inode: 14716809    Links: 2
+```
+
+refer to [How to find out a file is hard link or symlink?](https://unix.stackexchange.com/questions/170444/how-to-find-out-a-file-is-hard-link-or-symlink)
+
 ## `ls`
 
 - `-S`: sort by filesize

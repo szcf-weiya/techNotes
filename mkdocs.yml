@@ -113,7 +113,7 @@ extra:
 
 repo_name: 'szcf-weiya/techNotes'
 repo_url: 'https://github.com/szcf-weiya/techNotes'
-edit_uri: ""
+edit_uri: edit/master/docs/
 extra_javascript:
   - javascripts/baiduzhanzhang.js
   - javascripts/extra.js

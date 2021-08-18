@@ -1,3 +1,8 @@
+## 2021.08.18
+
+- You may also want to use the `--prune-empty` option to **expunge (抹去，删去)** commits that touched only the folder. [:link:](https://stackoverflow.com/questions/2538245/extract-part-of-a-git-repository/2538259#2538259)
+- oncology: 肿瘤学
+
 ## 2021.08.17
 
 - Luxury 2 Bedroom/2 Full Bathroom Fully **Renovated (翻新)** **Condominium (公寓)** Located in a Highly Sought After **Concierge (礼宾部)**， Elevator Building with **Amenities (便利设施)** in Cambridge Featuring Beautiful Hardwood Floors Throughout, **Granite (花岗岩)**/Stainless Steel Kitchen with Large **Pantry (食品贮藏室)**, **Spacious (宽敞的)**, Sunny Bedrooms with Views， Hot Water and **Garage (车库)** Parking Included.
