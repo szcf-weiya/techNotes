@@ -66,6 +66,8 @@ nav:
     - Statistics: stats/index.md
     - Scientific: scientific/index.md
     - Matrix: stats/matrix.md
+  - InvitedPosts:
+    - Samtools: biology/samtools.md
   - Misc:
     - English: English/index.md
     - Guitar: guitar/index.md
