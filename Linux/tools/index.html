@@ -157,7 +157,7 @@
     
       <div class="md-header__source">
         
-<a href="https://github.com/szcf-weiya/techNotes" title="Go to repository" class="md-source" data-md-component="source">
+<a href="https://github.com/szcf-weiya/techNotes/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -390,7 +390,7 @@
   
     <div class="md-nav__source">
       
-<a href="https://github.com/szcf-weiya/techNotes" title="Go to repository" class="md-source" data-md-component="source">
+<a href="https://github.com/szcf-weiya/techNotes/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -739,6 +739,13 @@
         <li class="md-nav__item">
   <a href="#htop" class="md-nav__link">
     htop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ln" class="md-nav__link">
+    ln
   </a>
   
 </li>
@@ -2360,6 +2367,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ln" class="md-nav__link">
+    ln
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ls" class="md-nav__link">
     ls
   </a>
@@ -2582,6 +2596,10 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
+                
+                  <a href="https://github.com/szcf-weiya/techNotes/edit/master/docs/Linux/tools.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
                 
                 
                 <h1 id="command-line-tools">Command-line Tools<a class="headerlink" href="#command-line-tools" title="Permanent link">&para;</a></h1>
@@ -2907,6 +2925,18 @@ Binary file syslog matches
 <p>refer to <a href="https://stackoverflow.com/questions/23512852/grep-binary-file-matches-how-to-get-normal-grep-output">https://stackoverflow.com/questions/23512852/grep-binary-file-matches-how-to-get-normal-grep-output</a>, add <code>-a</code> option.</p>
 <h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
 <p>A much more powerful command than <code>top</code>, refer to <a href="https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/">Find out what processes are running in the background on Linux</a></p>
+<h2 id="ln"><code>ln</code><a class="headerlink" href="#ln" title="Permanent link">&para;</a></h2>
+<ul>
+<li>with <code>-s</code>, create a soft link</li>
+<li>without <code>-s</code>, create a hard link</li>
+</ul>
+<p>A &ldquo;hard link&rdquo; is actually between two directory entries; they&rsquo;re really the same file. And the number of the permission of <code>ll</code> also shows the number of hard links, such as <code>2</code> in <code>-rw-rw-r--  2</code>.</p>
+<p><strong>the same file as another is they have the same inode number; no other file will have that.</strong></p>
+<p>We can get the <code>inode</code> as follows,</p>
+<div class="highlight"><pre><span></span><code>$ stat resolve_utf.py <span class="p">|</span> grep -i inode
+Device: 811h/2065d  Inode: <span class="m">14716809</span>    Links: <span class="m">2</span>
+</code></pre></div>
+<p>refer to <a href="https://unix.stackexchange.com/questions/170444/how-to-find-out-a-file-is-hard-link-or-symlink">How to find out a file is hard link or symlink?</a></p>
 <h2 id="ls"><code>ls</code><a class="headerlink" href="#ls" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>-S</code>: sort by filesize</li>
