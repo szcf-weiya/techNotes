@@ -1615,7 +1615,9 @@ None
 
 ## 2020.10.12
 
-- Vocal characteristics predict **infidelity** intention and relationship **commitment** in men but not in women.
+- Vocal characteristics predict **infidelity (不忠)** intention and relationship **commitment (承诺)** in men but not in women.
+    - high **fidelity (保真度)** playback
+
 - The story was featured in various **classy** news outlets.
 - some **wiseass** replies to all
 - we're **reliving** the 1990's here...

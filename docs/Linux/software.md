@@ -253,6 +253,18 @@ which can show the pixel info, and is first used when developing the script for 
 
 Refer to [Which image viewer is able to show coordinates?](https://askubuntu.com/questions/298877/which-image-viewer-is-able-to-show-coordinates)
 
+## Google Drive
+
+refer to [Ubuntu 16.04 set up with google online account but no drive folder in nautilus](https://askubuntu.com/questions/838956/ubuntu-16-04-set-up-with-google-online-account-but-no-drive-folder-in-nautilus)
+
+Note that you should run
+
+```bash
+gnome-control-center online-accounts
+```
+
+in the command line, not to open the GUI.
+
 ## ImageMagick
 
 ### Perspective Transformation
@@ -606,6 +618,26 @@ but it seems that we also need
 systemctl --user start onedrive
 systemctl --user stop onedrive
 ```
+
+### fuseblk
+
+发现使用 onedrive 同步文件时，有时候并不能够同步。猜测可能是因为文件太小，比如文件夹 `test` 中仅有 `test.md` 文件（仅70B），而此时查看 `test` 大小，竟然为 0 B，因为根据常识，一般文件夹都是 4.0k，或者有时 8.0k 等等，具体原因参考 [Why does every directory have a size 4096 bytes (4 K)?](https://askubuntu.com/questions/186813/why-does-every-directory-have-a-size-4096-bytes-4-k)
+
+但我现在问题是文件夹竟然是 0B，猜测这是无法同步的原因。
+
+后来在上述问题的回答的评论中 @Ruslan 提到
+
+> @phyloflash some filesystems (e.g. NTFS) store small files in the file entries themselves (for NTFS it's in the MFT entry). This way their contents occupy zero allocation blocks, and internal fragmentation is reduced. – Ruslan Nov 2 at 9:03
+
+猜测这是文件系统的原因，因为此时文件夹刚好位于移动硬盘中，所以可能刚好发生了所谓的 “internal fragmentation is reduced”。
+
+于是准备查看移动硬盘的 file system 来验证我的想法，这可以通过 `df -Th` 实现，具体参考 [7 Ways to Determine the File System Type in Linux (Ext2, Ext3 or Ext4)](https://www.tecmint.com/find-linux-filesystem-type/)
+
+然后竟然发现并不是期望中的 NTFS，而是 fuseblk，[東海陳光劍的博客](http://blog.sina.com.cn/s/blog_7d553bb501012z3l.html)中解释道
+
+> fuse是一个用户空间实现的文件系统。内核不认识。fuseblk应该就是使用fuse的block设备吧，系统中临时的非超级用户的设备挂载好像用的就是这个。
+
+最后发现，onedrive 无法同步的原因可能并不是因为 0 byte 的文件夹，而是因为下面的命名规范，虽然不是需要同步的文件，而是之前很久的文件，但可能onedrive就在之前这个不规范命名的文件上崩溃了。
 
 ### windows 命名规范
 

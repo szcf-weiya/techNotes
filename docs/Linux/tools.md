@@ -238,6 +238,10 @@ more details refer to [ImageMagick: Annotated List of Command-line Options](http
 
 As an alternative, the GUI software `Shotwell` also provides similar functions, just clicking `enhance`.
 
+## `cd`
+
+- `cd "$(dirname "$0")"`: [cd current directory](https://stackoverflow.com/questions/3349105/how-to-set-current-working-directory-to-the-directory-of-the-script)
+
 ## `cp`
 
 the common usage is `cp SOURCE DEST`, but if we want to copy multiple files into a single folder at once, we can use
@@ -265,7 +269,8 @@ If we need to get the last field, we can use `rev`, i.e.,
 echo 'maps.google.com' | rev | cut -d'.' -f 1 | rev
 ```
 
-refer to [How to find the last field using 'cut'](https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut)
+refer to [How to find the last field using 'cut'](https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut) and [10 command-line tools for data analysis in Linux](https://opensource.com/article/17/2/command-line-tools-data-analysis-linux)
+
 
 ## `date`
 
@@ -629,6 +634,24 @@ refer to [Check whether a certain file type/extension exists in directory](https
 
 My application: [TeXtemplates: create a tex template](https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L18-L20)
 
+## `mkdir`
+
+- `mkdir -p`: [mkdir only if a dir does not already exist?](https://stackoverflow.com/questions/793858/how-to-mkdir-only-if-a-dir-does-not-already-exist)
+
+## `mv`
+
+### mv files with `xargs`
+
+use `-I {}` to replace some str.
+
+```bash
+ls | grep 'config[0-9].txt' | xargs -I {} mv {} configs/
+```
+
+see more details in [mv files with | xargs](https://askubuntu.com/questions/487035/mv-files-with-xargs)
+
+see also: [xargs命令_Linux xargs 命令用法详解：给其他命令传递参数的一个过滤器](http://man.linuxde.net/xargs)
+
 ## `paste, cat`: 文本文件拼接
 
 ```bash
@@ -650,6 +673,13 @@ where `-s` aims to paste one file at a time instead of in parallel, which result
 ## `pdftk`
 
 - split pdf pages: `pdftk all.pdf cat 1 output first.pdf`, see also [arXiv](../TeX/arxiv.md).
+- modify pdf metadata via `pdftk`
+
+```bash
+pdftk input.pdf dump_data output metadata
+# edit metadata
+pdftk input.pdf update_info metadata output output.pdf
+```
 
 ## `ps2pdf, pdf2ps`
 
@@ -940,6 +970,35 @@ refer to
 - [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it)
 - [Getting started with Tmux](https://linuxize.com/post/getting-started-with-tmux/)
 - [tmux cheatsheet](https://gist.github.com/henrik/1967800)
+
+## `type`
+
+### `which` vs `type`
+
+在 CentOS7 服务器上，
+
+```bash
+$ which -v
+GNU which v2.20, Copyright (C) 1999 - 2008 Carlo Wood.
+GNU which comes with ABSOLUTELY NO WARRANTY;
+This program is free software; your freedom to use, change
+and distribute this program is protected by the GPL.
+```
+
+`which` 可以返回 alias 中的命令，而且更具体地，`man which` 显示可以通过选项 `--read-alias` 和 `--skip-alias` 来控制要不要包括 alias. 
+
+而在本地 Ubuntu 18.04 机器上，不支持 `-v` 或 `--version` 来查看版本，而且 `man which` 也很简单，从中可以看出其大致版本信息，`29 Jun 2016`。
+
+那怎么显示 alias 呢，[`type` 可以解决这个问题](https://askubuntu.com/questions/102093/how-to-see-the-command-attached-to-a-bash-alias)，注意查看其帮助文档需要用 `help` 而非 `man`。
+
+```bash
+$ type scp_to_chpc 
+scp_to_chpc is a function
+scp_to_chpc () 
+{ 
+    scp -r $1 user@host:~/$2
+}
+```
 
 ## `uniq`
 

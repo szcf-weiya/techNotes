@@ -339,6 +339,27 @@ ProxyChains-3.1 (http://proxychains.sf.net)
 1. [host文件的工作原理及应用](http://blog.csdn.net/tskyfree/article/details/41214829)
 2. [简单科普下hosts文件原理与制作 | 老D博客](https://laod.cn/hosts/hosts-file-making.html)
 
+## unable to resolve host
+
+参考[http://blog.csdn.net/ichuzhen/article/details/8241847](http://blog.csdn.net/ichuzhen/article/details/8241847)
+
+Makesure the hostname defined in `/etc/hostname` also points to `127.0.0.1` in `/etc/hosts`.
+
+check my `/etc/hosts`
+
+```bash
+~$ cat /etc/hosts
+127.0.0.1	localhost
+127.0.1.1	weiya-ThinkPad-T460p
+```
+
+and also the hostname
+
+```bash
+~$ cat /etc/hostname 
+weiya-ThinkPad-T460p
+```
+
 ## 玉泉 Ubuntu 连接 VPN
 
 黄熊的[浙大玉泉ubuntu有线上网](http://wwtalwtaw.studio/2018/04/26/net_surfing/)讲得很详细。不过我却碰到个很奇怪的问题，申请完静态 IP，能够 ping 通内网，但当我安装完 `xl2tpd_zju` 后，却总是一直连不上网，更奇怪的是，还不能访问内网（没有运行 `vpn-connect` 前至少可以访问内网）。然后我尝试了各种办法，包括但不限于：

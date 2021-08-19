@@ -2,8 +2,9 @@ site_name: techNotes
 nav:
   - Home: index.md
   - Linux:
+    - General: Linux/index.md
     - Laptop:
-      - General: Linux/index.md
+      - Ubuntu: Linux/ubuntu.md
       - Application Software: Linux/software.md
       - Command-line Tools: Linux/tools.md
       - Shell Scripts: shell/index.md
@@ -42,7 +43,7 @@ nav:
     - Cuda: cuda/index.md
   - DocProgramming:
     - TeX:
-      - 一般问题: TeX/index.md
+      - General: TeX/index.md
       - arXiv: TeX/arxiv.md
       - VarGreek: TeX/vargreek.md
     - Web:
@@ -52,6 +53,7 @@ nav:
       - JS: js/index.md
       - PHP: PHP/index.md
       - XAMPP: website/xampp.md
+      - Analytics: website/analytics.md
   - Network/Internet:
     - 一般问题: Internet/index.md
     - 访问内网: Internet/sci-int.md
