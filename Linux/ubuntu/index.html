@@ -1,0 +1,2709 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="技术博客">
+      
+      
+      
+        <meta name="author" content="weiya">
+      
+      
+        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/ubuntu/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Ubuntu - techNotes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+
+  
+  
+
+
+
+  
+  
+
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-85007363-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JWL5Y1W90"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1JWL5Y1W90');
+  </script>
+  <script data-ad-client="ca-pub-3680148472128768" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ubuntu" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            techNotes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ubuntu
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/szcf-weiya/techNotes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    szcf-weiya/techNotes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../comparisons/stat/" class="md-tabs__link">
+        StatProgramming
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Cpp/" class="md-tabs__link">
+        CSProgramming
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../TeX/" class="md-tabs__link">
+        DocProgramming
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Internet/" class="md-tabs__link">
+        Network/Internet
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../autotools/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../stats/prob/" class="md-tabs__link">
+        Stat
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../biology/samtools/" class="md-tabs__link">
+        InvitedPosts
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../English/" class="md-tabs__link">
+        Misc
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    techNotes
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/szcf-weiya/techNotes/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    szcf-weiya/techNotes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Laptop
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Laptop" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Laptop
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Ubuntu
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Ubuntu
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gnome" class="md-nav__link">
+    GNOME
+  </a>
+  
+    <nav class="md-nav" aria-label="GNOME">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gnome-shell" class="md-nav__link">
+    GNOME Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnome-shell-extensions" class="md-nav__link">
+    GNOME Shell Extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lunar-date" class="md-nav__link">
+    Lunar Date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-monitor" class="md-nav__link">
+    System Monitor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unblack-lock-screen" class="md-nav__link">
+    unblack lock screen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sound-device-chooser" class="md-nav__link">
+    sound device chooser
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-with-headphone" class="md-nav__link">
+    Sound with Headphone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-department-printer" class="md-nav__link">
+    Use Department Printer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#share-printer" class="md-nav__link">
+    Share Printer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portable-ssd" class="md-nav__link">
+    Portable SSD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charge-battery-adaptively" class="md-nav__link">
+    Charge Battery Adaptively
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-hotspot" class="md-nav__link">
+    Delete Hotspot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend-disk" class="md-nav__link">
+    Extend Disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rename-portable-disk" class="md-nav__link">
+    Rename Portable Disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-old-kernel" class="md-nav__link">
+    Use Old Kernel
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Old Kernel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-update-of-kernel" class="md-nav__link">
+    disable update of kernel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-software" class="md-nav__link">
+    Default Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wifi-hotpot-1604" class="md-nav__link">
+    WiFi Hotpot (16.04)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubuntu-sftp" class="md-nav__link">
+    ubuntu 连接 sftp 服务器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubuntu_1" class="md-nav__link">
+    Ubuntu的回收站
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-win-on-ubuntu" class="md-nav__link">
+    install win on ubuntu
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        Application Software
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Command-line Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shell/" class="md-nav__link">
+        Shell Scripts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16to18/" class="md-nav__link">
+        16to18
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        Servers
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Servers" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Servers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../servers/" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chpc/" class="md-nav__link">
+        CHPC-Cluster
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rocky-server/" class="md-nav__link">
+        Rocky-Linux
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asAserver/" class="md-nav__link">
+        G40
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        StatProgramming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="StatProgramming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          StatProgramming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comparisons/stat/" class="md-nav__link">
+        Comparisons
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        R
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="R" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          R
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/" class="md-nav__link">
+        一般问题
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/plot/" class="md-nav__link">
+        plot 作图
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/ggplot/" class="md-nav__link">
+        ggplot 作图
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/legend_from_zhihu/" class="md-nav__link">
+        案例分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/install-notes-for-rmysql/" class="md-nav__link">
+        源码安装 RMySQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/sample/" class="md-nav__link">
+        new sample function (v3.6.0+)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R/factor/" class="md-nav__link">
+        一道与 factor 有关的问题
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/" class="md-nav__link">
+        一般问题
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/conda/" class="md-nav__link">
+        Conda
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pystan/" class="md-nav__link">
+        PyStan 体验
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/opencv/" class="md-nav__link">
+        OpenCV
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/finance/" class="md-nav__link">
+        金融数据爬虫
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/rpy2/" class="md-nav__link">
+        rpy2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/esltag/" class="md-nav__link">
+        自建关键词索引页
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../julia/" class="md-nav__link">
+        Julia
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Matlab/" class="md-nav__link">
+        Matlab
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        CSProgramming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="CSProgramming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          CSProgramming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      <label class="md-nav__link" for="__nav_4_1">
+        C/C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="C/C++" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          C/C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cpp/" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cpp/Qt/" class="md-nav__link">
+        Qt
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/" class="md-nav__link">
+        Java
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SQL/" class="md-nav__link">
+        SQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cuda/" class="md-nav__link">
+        Cuda
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        DocProgramming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DocProgramming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          DocProgramming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+      
+      <label class="md-nav__link" for="__nav_5_1">
+        TeX
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="TeX" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          TeX
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TeX/" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TeX/arxiv/" class="md-nav__link">
+        arXiv
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TeX/vargreek/" class="md-nav__link">
+        VarGreek
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        Web
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Web
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../website/" class="md-nav__link">
+        Website
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../website/disqus/" class="md-nav__link">
+        Disqus
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../website/css/" class="md-nav__link">
+        CSS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../js/" class="md-nav__link">
+        JS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHP/" class="md-nav__link">
+        PHP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../website/xampp/" class="md-nav__link">
+        XAMPP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../website/analytics/" class="md-nav__link">
+        Analytics
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Network/Internet
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Network/Internet" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Network/Internet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internet/" class="md-nav__link">
+        一般问题
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internet/sci-int/" class="md-nav__link">
+        访问内网
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internet/ipv6/" class="md-nav__link">
+        IPv6
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autotools/" class="md-nav__link">
+        Autotools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phantomjs/" class="md-nav__link">
+        Phantomjs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Stat
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Stat" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Stat
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stats/prob/" class="md-nav__link">
+        Probability
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stats/" class="md-nav__link">
+        Statistics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scientific/" class="md-nav__link">
+        Scientific
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../stats/matrix/" class="md-nav__link">
+        Matrix
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        InvitedPosts
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="InvitedPosts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          InvitedPosts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../biology/samtools/" class="md-nav__link">
+        Samtools
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Misc
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../English/" class="md-nav__link">
+        English
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guitar/" class="md-nav__link">
+        Guitar
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../win/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../finance/" class="md-nav__link">
+        Finance
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fresh/" class="md-nav__link">
+        Fresh
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../links/" class="md-nav__link">
+        Links
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/live/" class="md-nav__link">
+        Live
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/wx/" class="md-nav__link">
+        小程序
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/wxjssdk/" class="md-nav__link">
+        jssdk
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/report/" class="md-nav__link">
+        讲座
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mi/" class="md-nav__link">
+        Mi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/terms/" class="md-nav__link">
+        Terminology
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gnome" class="md-nav__link">
+    GNOME
+  </a>
+  
+    <nav class="md-nav" aria-label="GNOME">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gnome-shell" class="md-nav__link">
+    GNOME Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnome-shell-extensions" class="md-nav__link">
+    GNOME Shell Extensions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lunar-date" class="md-nav__link">
+    Lunar Date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-monitor" class="md-nav__link">
+    System Monitor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unblack-lock-screen" class="md-nav__link">
+    unblack lock screen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sound-device-chooser" class="md-nav__link">
+    sound device chooser
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-with-headphone" class="md-nav__link">
+    Sound with Headphone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-department-printer" class="md-nav__link">
+    Use Department Printer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#share-printer" class="md-nav__link">
+    Share Printer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portable-ssd" class="md-nav__link">
+    Portable SSD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charge-battery-adaptively" class="md-nav__link">
+    Charge Battery Adaptively
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-hotspot" class="md-nav__link">
+    Delete Hotspot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend-disk" class="md-nav__link">
+    Extend Disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rename-portable-disk" class="md-nav__link">
+    Rename Portable Disk
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-old-kernel" class="md-nav__link">
+    Use Old Kernel
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Old Kernel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-update-of-kernel" class="md-nav__link">
+    disable update of kernel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-software" class="md-nav__link">
+    Default Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wifi-hotpot-1604" class="md-nav__link">
+    WiFi Hotpot (16.04)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubuntu-sftp" class="md-nav__link">
+    ubuntu 连接 sftp 服务器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubuntu_1" class="md-nav__link">
+    Ubuntu的回收站
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-win-on-ubuntu" class="md-nav__link">
+    install win on ubuntu
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/szcf-weiya/techNotes/edit/master/docs/Linux/ubuntu.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h1>
+<h2 id="gnome">GNOME<a class="headerlink" href="#gnome" title="Permanent link">&para;</a></h2>
+<p>GNOME (originally an acronym for GNU Network Object Model Environment) is a desktop environment for Unix-like operating systems. <a href="https://en.wikipedia.org/wiki/GNOME"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.97 18.95-2.56-6.03c-1.02 1.99-2.14 4.08-3.1 6.03-.01.01-.47 0-.47 0C7.37 15.5 5.85 12.1 4.37 8.68 4.03 7.84 2.83 6.5 2 6.5v-.45h5.06v.45c-.6 0-1.62.4-1.36 1.05.72 1.54 3.24 7.51 3.93 9.03.47-.94 1.8-3.42 2.37-4.47-.45-.88-1.87-4.18-2.29-5-.32-.54-1.13-.61-1.75-.61 0-.15.01-.25 0-.44l4.46.01v.4c-.61.03-1.18.24-.92.82.6 1.24.95 2.13 1.5 3.28.17-.34 1.07-2.19 1.5-3.16.26-.65-.13-.91-1.21-.91.01-.12.01-.33.01-.43 1.39-.01 3.48-.01 3.85-.02v.42c-.71.03-1.44.41-1.82.99L13.5 11.3c.18.51 1.96 4.46 2.15 4.9l3.85-8.83c-.3-.72-1.16-.87-1.5-.87v-.45l4 .03V6.5c-.88 0-1.43.5-1.75 1.25-.8 1.79-3.25 7.49-4.85 11.2h-.43z"/></svg></span></a></p>
+<p>The version on my T460p is 3.28.2, which can be seen from About.</p>
+<h3 id="gnome-shell">GNOME Shell<a class="headerlink" href="#gnome-shell" title="Permanent link">&para;</a></h3>
+<p>GNOME Shell is the graphical shell of the GNOME desktop environment. It provides basic functions like launching applications, switching between windows and is also a widget engine. <a href="https://en.wikipedia.org/wiki/GNOME_Shell"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.97 18.95-2.56-6.03c-1.02 1.99-2.14 4.08-3.1 6.03-.01.01-.47 0-.47 0C7.37 15.5 5.85 12.1 4.37 8.68 4.03 7.84 2.83 6.5 2 6.5v-.45h5.06v.45c-.6 0-1.62.4-1.36 1.05.72 1.54 3.24 7.51 3.93 9.03.47-.94 1.8-3.42 2.37-4.47-.45-.88-1.87-4.18-2.29-5-.32-.54-1.13-.61-1.75-.61 0-.15.01-.25 0-.44l4.46.01v.4c-.61.03-1.18.24-.92.82.6 1.24.95 2.13 1.5 3.28.17-.34 1.07-2.19 1.5-3.16.26-.65-.13-.91-1.21-.91.01-.12.01-.33.01-.43 1.39-.01 3.48-.01 3.85-.02v.42c-.71.03-1.44.41-1.82.99L13.5 11.3c.18.51 1.96 4.46 2.15 4.9l3.85-8.83c-.3-.72-1.16-.87-1.5-.87v-.45l4 .03V6.5c-.88 0-1.43.5-1.75 1.25-.8 1.79-3.25 7.49-4.85 11.2h-.43z"/></svg></span></a>. User interface elements provided by GNOME Shell include the Panel at the top of the screen, the Activities Overview, and Message Tray at the bottom of the screen. <a href="https://extensions.gnome.org/about/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>The version on my T460p is </p>
+<div class="highlight"><pre><span></span><code>$ gnome-shell --version
+GNOME Shell <span class="m">3</span>.28.4
+</code></pre></div>
+<h3 id="gnome-shell-extensions">GNOME Shell Extensions<a class="headerlink" href="#gnome-shell-extensions" title="Permanent link">&para;</a></h3>
+<p><a href="https://extensions.gnome.org/about/">GNOME Shell Extensions</a> are small pieces of code written by third party developers that modify the way GNOME works. They are similar to Chrome Extensions or Firefox Addons. We can install the extensions via <a href="https://extensions.gnome.org/">extensions.gnome.org</a> in Firefox. After installation, we can disable or enable, or even configure on such website, alternatively, we can use <code>gnome-tweaks</code> to control them.</p>
+<h3 id="lunar-date">Lunar Date<a class="headerlink" href="#lunar-date" title="Permanent link">&para;</a></h3>
+<p>Here is a plugin to show Chinese Lunar Date: <a href="https://extensions.gnome.org/extension/675/lunar-calendar/">Lunar Calendar 农历</a>. Since here are some latest comments, I guess it would be OK.</p>
+<p>However, the first installation attempt failed, it shows <code>ERROR</code>. Then I realized that I might need to install the dependency mentioned in the plugin page,</p>
+<div class="highlight"><pre><span></span><code>sudo apt install gir1.2-lunar-date-2.0
+</code></pre></div>
+<p>Then reinstall the plugin, it succeed! But interestingly, the Chinese characters are shown as Pinyin (see the following left image)</p>
+<table>
+<thead>
+<tr>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Screenshot from 2021-05-03 14-04-34" src="https://user-images.githubusercontent.com/13688320/116846751-a65ae000-ac1b-11eb-9c40-31ba384f63db.png" /></td>
+<td><img alt="Screenshot from 2021-05-03 14-40-47" src="https://user-images.githubusercontent.com/13688320/116847724-b2e03800-ac1d-11eb-9700-bccb1a4e25f2.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>Then I found the same issue in <a href="https://forum.ubuntu.org.cn/viewtopic.php?t=308968">an older post</a></p>
+<p>A solution is </p>
+<div class="highlight"><pre><span></span><code>@GuanGGuanG
+copy
+/usr/share/locale/zh_CN/LC_MESSAGES/liblunar.mo
+to
+/usr/share/locale/en/LC_MESSAGES/
+就可以在英文环境下正常显示了
+</code></pre></div>
+<p>Although no found <code>liblunar.mo</code>, there is </p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">pwd</span>
+/usr/share/locale/zh_CN/LC_MESSAGES
+$ ll <span class="p">|</span> grep lunar
+-rw-r--r-- <span class="m">1</span> root root   <span class="m">4746</span> Nov <span class="m">12</span>  <span class="m">2016</span> lunar-date.mo
+</code></pre></div>
+<p>then</p>
+<div class="highlight"><pre><span></span><code>$ sudo cp lunar-date.mo ../../en/LC_MESSAGES/
+</code></pre></div>
+<p>It cannot take effects immediately, the natural way is to reboot. But currently I do not want to reboot, and then I tried to reinstall the plugin in Firefox, but not work.</p>
+<p>Then I tried to reload locale since the modification seems related to locale, so I found <a href="https://unix.stackexchange.com/questions/108514/reload-etc-default-locale-without-reboot">this answer</a> and tried</p>
+<div class="highlight"><pre><span></span><code>$ . /etc/default/locale
+</code></pre></div>
+<p>but not work.</p>
+<p>Then I realized that it might be necessary to reload GNOME Shell, so I found <a href="https://askubuntu.com/questions/100226/how-to-restart-gnome-shell-from-command-line">How to restart GNOME Shell from command line?</a>, and tried</p>
+<div class="highlight"><pre><span></span><code>$ gnome-shell --replace <span class="p">&amp;</span>
+</code></pre></div>
+<p>It works, as shown in the above right figure. A minor side change is that the English colon in the time <code>14:37</code> seems to change to the Chinese colon.</p>
+<h3 id="system-monitor">System Monitor<a class="headerlink" href="#system-monitor" title="Permanent link">&para;</a></h3>
+<p>通过 gnome-shell extension: <a href="https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet">gnome-shell-system-monitor-applet</a> 实现</p>
+<p>不过目前有个小问题，字体略小，尝试通过 gnome-tweaks 中的 scaling 来改变字体大小，但似乎对这些字体仍不适用，先将就用着吧。</p>
+<h3 id="unblack-lock-screen">unblack lock screen<a class="headerlink" href="#unblack-lock-screen" title="Permanent link">&para;</a></h3>
+<p>按 <code>Win+L</code> 锁屏后，很快就直接变黑了。因为感觉屏保还挺好看的，所以并不想直接黑屏。参考 <a href="https://www.zhihu.com/question/276118015/answer/656464977">GNOME3锁屏和锁屏后，如何设置屏幕常亮？ - Eglinux的回答 - 知乎</a>，安装 <a href="https://extensions.gnome.org/extension/1414/unblank/">Unblank lock screen.</a></p>
+<p>更简单的技巧是长按 <code>Win+L</code>，似乎确实不会直接黑屏，然后会直接采用设置的关屏时间（Setting &gt; Power），参考 <a href="https://www.zhihu.com/question/276118015/answer/496472138">GNOME3锁屏和锁屏后，如何设置屏幕常亮？ - dale的回答 - 知乎</a>。</p>
+<h3 id="sound-device-chooser">sound device chooser<a class="headerlink" href="#sound-device-chooser" title="Permanent link">&para;</a></h3>
+<p>tried but not good. <a href="https://extensions.gnome.org/extension/906/sound-output-device-chooser/">Sound Input &amp; Output Device Chooser</a></p>
+<h2 id="sound-with-headphone">Sound with Headphone<a class="headerlink" href="#sound-with-headphone" title="Permanent link">&para;</a></h2>
+<p>The output candidates are</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/130001206-2b37623c-e461-41ef-b8c4-721784d5da22.png" /></p>
+<ul>
+<li>HDMI/DisplayPort - Built-in Audio</li>
+<li>Speakers - Built-in Audio</li>
+<li>Headphone - LE-Bose QC35 II</li>
+</ul>
+<p>and there are two profiles for <code>Headphone</code></p>
+<ul>
+<li>High Fidelity Playback (A2DP Sink)</li>
+<li>Headset Head Unit (HSP/HFP)</li>
+</ul>
+<p>also two profiles for <code>Speakers</code></p>
+<ul>
+<li>Analog Stereo Output</li>
+<li>Analog Surround 4.0 Output</li>
+</ul>
+<p>and one profile for <code>HDMI/DisplayPort</code></p>
+<ul>
+<li>Digital Stereo (HDMI) Output</li>
+</ul>
+<p>There are two devices fro sound input</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/130001212-a75162b1-a221-4e4b-b719-65b611c06c56.png" /></p>
+<ul>
+<li>Internal Microphone - Built-in Audio</li>
+<li>Bluetooth Input - LE-Bose QC35 II</li>
+</ul>
+<p>Here are some observations</p>
+<ul>
+<li>The profile <code>High Fidelity Playback</code> is much more confortable than another profile.</li>
+<li>If <code>Output = Headphone + High Fidelity</code>, then <code>Input</code> cannot be set as <code>Bluetooth Input</code></li>
+<li>Otherwise, if set <code>Input</code> as <code>Bluetooth Input</code>, then the Profile of <code>Output</code> would become to <code>Headset Head Unit</code></li>
+</ul>
+<p>Sometimes, no sound from the headphone, and possibly the headphone is connected to another device. Refer to <a href="https://www.bose.com/en_us/support/articles/HC1283/productCodes/qc35_ii/article.html">Using multiple Bluetooth® connections</a> for switching the connected devices for the headphone. </p>
+<blockquote>
+<p>When two devices are actively connected, you can play music from either device. To switch between connected devices, pause the first device and play music from the second.</p>
+</blockquote>
+<p>But sometimes either devices are playing sound, a less elegant way is to disconnect other devices.</p>
+<p>see also <a href="https://askubuntu.com/questions/833322/pair-bose-quietcomfort-35-with-ubuntu-over-bluetooth">Pair Bose QuietComfort 35 with Ubuntu over Bluetooth - Ask Ubuntu</a></p>
+<h2 id="use-department-printer">Use Department Printer<a class="headerlink" href="#use-department-printer" title="Permanent link">&para;</a></h2>
+<p>The department printer is only accessible from the office PC, but request to switch the cable from office PC to my laptop, I can configure to use the printer from my laptop. The steps are</p>
+<ol>
+<li>choose LPD/LPR Host or Printer</li>
+<li>set host as <code>hpm605dn1.sta.cuhk.edu.hk</code></li>
+</ol>
+<p>The detailed settings are</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/130003632-67fa7b32-8aad-4c83-a2f0-8291bb1b942c.png" /></p>
+<p>finally, the test page can be successfully printed,</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/130003854-9e434caf-211a-403b-a9ff-f709f38f07cf.png" /></p>
+<p>If we forget the hostname, actually we can get the ip address from the panel of printer,</p>
+<table>
+<thead>
+<tr>
+<th>step 1</th>
+<th>step 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="image" src="https://user-images.githubusercontent.com/13688320/130004107-199b504c-9216-4e97-95b7-39287c5e2f68.png" /></td>
+<td><img alt="image" src="https://user-images.githubusercontent.com/13688320/130004117-cf2790f4-247f-420b-8e77-7739df41b14d.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>We can validate the hostname and the ip point to the same machine,</p>
+<div class="highlight"><pre><span></span><code>weiya@stapc220:~$ ping hpm605dn1.sta.cuhk.edu.hk
+PING hpm605dn1.sta.cuhk.edu.hk <span class="o">(</span><span class="m">172</span>.16.37.238<span class="o">)</span> <span class="m">56</span><span class="o">(</span><span class="m">84</span><span class="o">)</span> bytes of data.
+</code></pre></div>
+<h2 id="share-printer">Share Printer<a class="headerlink" href="#share-printer" title="Permanent link">&para;</a></h2>
+<p>现有台 HP-Deskjet-1050-J410-series 打印机，通过 USB 接口。直接连接在 Ubuntu 上是可以实现打印功能的，现在想贡献给局域网内的其他设备，参考 <a href="https://www.jianshu.com/p/a1c4fc6d9ce8">使用Linux共享打印机</a>，主要步骤为</p>
+<ol>
+<li>安装 CUPS 服务，<code>sudo apt-get install cups</code> 并启动，<code>sudo service cups start</code></li>
+<li>在 <code>127.0.0.1:631</code> 的 <code>Administration &gt;&gt; Advanced</code> 勾选 <code>Allow printing from the Internet</code>，并保存。</li>
+<li>打开防火墙，<code>sudo ufw allow 631/tcp</code></li>
+</ol>
+<p>在同一局域网内的 Windows 设备中，添加该打印机，地址即为Ubuntu中浏览器的地址，注意将 <code>127.0.0.1</code> 换成局域网 ip。如果顺利的话，添加后需要添加驱动程序，可以在 HP 官网下载。</p>
+<h2 id="portable-ssd">Portable SSD<a class="headerlink" href="#portable-ssd" title="Permanent link">&para;</a></h2>
+<p>因为硬盘太小，而移动硬盘读写文件速度实在有点慢，然后看到有<a href="https://zhuanlan.zhihu.com/p/61083491">移动 SSD 硬盘</a>，于是便入手了一个。</p>
+<p>当然首先确定了，自己笔记本有 USB3.0 接口，虽然不是 USB3.1。（不过好像 USB3.0 也叫作 USB3.1 gen1，而真正的 USB3.1 叫做 USB3.1 gen2），这个可以通过</p>
+<div class="highlight"><pre><span></span><code>$ lsusb -t
+</code></pre></div>
+<p>来看<a href="https://superuser.com/questions/781398/how-can-i-be-sure-that-ive-plugged-a-device-into-a-usb-3-port">接口的情况</a>，当然也直接搜了电脑型号来看具体配置、</p>
+<p>货到手后，一开始插上时，说</p>
+<blockquote>
+<p>Mount error: unknown filesystem type ‘exfat’</p>
+</blockquote>
+<p>本来以为需要什么格式转化之类的，后来发现<a href="https://better-coding.com/solved-mount-error-unknown-filesystem-type-exfat/#:~:text=Cause%20Some%20SD%20Cards%20and,%2Dfuse%20and%20exfat%2Dutils.">解决方案</a>挺简单的，</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install exfat-fuse exfat-utils
+</code></pre></div>
+<p>但是后来发现这个格式很多地方会出现不兼容，比如</p>
+<ol>
+<li>解压某个文件时，报出 <code>Cannot set modif./access times</code>，而这个在正常磁盘以及已有的移动硬盘中都能正常解压</li>
+<li>不能创建带有 <code>:</code> 的文件夹，这应该是遵循 Windows 的标准，但是 Linux 命名标准没有遵循 Windows，所以造成有些文件复制不过去。</li>
+</ol>
+<p>最后决定格式化为 Linux 磁盘的格式，这个其实也挺简单的，进入 <code>gnome-disks</code>，先 umount，然后选择格式化，这时直接选择格式化为 Linux 的 Ext4，有一篇<a href="https://hkgoldenmra.blogspot.com/2019/12/linux-luks-ext4.html">图文介绍</a>，不过没看时就已经自己操作了，只是让自己心安一下。</p>
+<p>然后测试了一下读取速度，</p>
+<div class="highlight"><pre><span></span><code>~$ sudo hdparm -Tt /dev/sdc1
+
+/dev/sdc1:
+ Timing cached reads:   <span class="m">22298</span> MB <span class="k">in</span>  <span class="m">1</span>.99 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">11228</span>.47 MB/sec
+ Timing buffered disk reads: <span class="m">120</span> MB <span class="k">in</span>  <span class="m">3</span>.01 <span class="nv">seconds</span> <span class="o">=</span>  <span class="m">39</span>.89 MB/sec
+
+~$ sudo hdparm -Tt /dev/sde1
+
+/dev/sde1:
+ Timing cached reads:   <span class="m">24390</span> MB <span class="k">in</span>  <span class="m">1</span>.99 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">12281</span>.26 MB/sec
+ Timing buffered disk reads: <span class="m">1318</span> MB <span class="k">in</span>  <span class="m">3</span>.00 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">439</span>.04 MB/sec
+</code></pre></div>
+<p>上面是普通的移动硬盘，底下是新买的移动 SSD 硬盘，差异还是很明显的。继续测试写入的速度，</p>
+<div class="highlight"><pre><span></span><code>~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/media/weiya/Extreme<span class="se">\ </span>SSD/tempfile <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+<span class="m">1024</span>+0 records <span class="k">in</span>
+<span class="m">1024</span>+0 records out
+<span class="m">1073741824</span> bytes <span class="o">(</span><span class="m">1</span>.1 GB, <span class="m">1</span>.0 GiB<span class="o">)</span> copied, <span class="m">2</span>.11846 s, <span class="m">507</span> MB/s
+
+real    0m2.131s
+user    0m0.011s
+sys 0m0.543s
+~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/media/weiya/Seagate/tempfile <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+<span class="m">1024</span>+0 records <span class="k">in</span>
+<span class="m">1024</span>+0 records out
+<span class="m">1073741824</span> bytes <span class="o">(</span><span class="m">1</span>.1 GB, <span class="m">1</span>.0 GiB<span class="o">)</span> copied, <span class="m">12</span>.4132 s, <span class="m">86</span>.5 MB/s
+
+real    0m12.746s
+user    0m0.000s
+sys 0m1.551s
+</code></pre></div>
+<p>以及写出的速度，</p>
+<div class="highlight"><pre><span></span><code>~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/media/weiya/Extreme<span class="se">\ </span>SSD/tempfile <span class="nv">of</span><span class="o">=</span>/dev/null <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+<span class="m">1024</span>+0 records <span class="k">in</span>
+<span class="m">1024</span>+0 records out
+<span class="m">1073741824</span> bytes <span class="o">(</span><span class="m">1</span>.1 GB, <span class="m">1</span>.0 GiB<span class="o">)</span> copied, <span class="m">4</span>.01399 s, <span class="m">268</span> MB/s
+
+real    0m4.018s
+user    0m0.000s
+sys 0m0.442s
+~$ <span class="nb">time</span> dd <span class="k">if</span><span class="o">=</span>/media/weiya/Seagate/tempfile <span class="nv">of</span><span class="o">=</span>/dev/null <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+<span class="m">1024</span>+0 records <span class="k">in</span>
+<span class="m">1024</span>+0 records out
+<span class="m">1073741824</span> bytes <span class="o">(</span><span class="m">1</span>.1 GB, <span class="m">1</span>.0 GiB<span class="o">)</span> copied, <span class="m">65</span>.6471 s, <span class="m">16</span>.4 MB/s
+
+real    1m5.981s
+user    0m0.010s
+sys 0m0.650s
+</code></pre></div>
+<p>移动 SSD 硬盘完胜普通的移动硬盘。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="http://einverne.github.io/post/2019/10/test-disk-write-and-read-speed-in-linux.html">在 Linux 上测试硬盘读写速度</a></li>
+</ul>
+<h2 id="charge-battery-adaptively">Charge Battery Adaptively<a class="headerlink" href="#charge-battery-adaptively" title="Permanent link">&para;</a></h2>
+<p>虽然一直知道插上电源充电会损耗电池容量，但是没想到竟然会损耗得那么严重，对于我正在使用的 ThinkPadT460P 来说，</p>
+<div class="highlight"><pre><span></span><code>~$ upower -i <span class="sb">`</span>upower -e <span class="p">|</span> grep <span class="s1">&#39;BAT&#39;</span><span class="sb">`</span>
+  native-path:          BAT0
+  vendor:               SANYO
+  model:                45N1767
+  serial:               <span class="m">3701</span>
+  power supply:         yes
+  updated:              Tue <span class="m">01</span> Sep <span class="m">2020</span> <span class="m">10</span>:15:52 AM CST <span class="o">(</span><span class="m">106</span> seconds ago<span class="o">)</span>
+  has history:          yes
+  has statistics:       yes
+  battery
+    present:             yes
+    rechargeable:        yes
+    state:               fully-charged
+    warning-level:       none
+    energy:              <span class="m">19</span>.42 Wh
+    energy-empty:        <span class="m">0</span> Wh
+    energy-full:         <span class="m">19</span>.58 Wh
+    energy-full-design:  <span class="m">47</span>.52 Wh
+    energy-rate:         <span class="m">0</span> W
+    voltage:             <span class="m">12</span>.025 V
+    percentage:          <span class="m">99</span>%
+    capacity:            <span class="m">41</span>.2037%
+    technology:          lithium-ion
+    icon-name:          <span class="s1">&#39;battery-full-charged-symbolic&#39;</span>
+</code></pre></div>
+<p>现在的容量只有 41.2037%，一半都不到。心血来潮搜了下看看有没有什么软件能够支持自动充放电，竟然还真有，而且特别支持 ThinkPad 系列, <a href="https://askubuntu.com/questions/34452/how-can-i-limit-battery-charging-to-80-capacity">How can I limit battery charging to 80% capacity?</a></p>
+<p>不过刚开始按照回答中的解决方案操作，最后 <code>sudo modprobe tp_smapi</code> 并不成功，大概是说没有这个 kernel 吧。不过因为这个回答挺早的，在评论中顺藤摸瓜找到针对更新版的 ThinkPad 的解决方案，<a href="https://linrunner.de/tlp/installation/ubuntu.html">tlp for Ubuntu</a></p>
+<div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:linrunner/tlp
+sudo apt update
+sudo apt install acpi-call-dkms tp-smapi-dkms
+</code></pre></div>
+<p>其中特别指出 <code>acpi-call-dkms</code> 用于 ThinkPads (X220/T420 and later)</p>
+<p>然后查看</p>
+<div class="highlight"><pre><span></span><code>~$ sudo tlp-stat -b
+--- TLP <span class="m">1</span>.3.1 --------------------------------------------
+
++++ Battery Features: Charge Thresholds and Recalibrate
+<span class="nv">natacpi</span>    <span class="o">=</span> inactive <span class="o">(</span>no kernel support<span class="o">)</span>
+tpacpi-bat <span class="o">=</span> active <span class="o">(</span>thresholds, recalibrate<span class="o">)</span>
+tp-smapi   <span class="o">=</span> inactive <span class="o">(</span>ThinkPad not supported<span class="o">)</span>
+</code></pre></div>
+<p>这时候按照 <a href="https://linrunner.de/tlp/settings/battery.html">Battery Charge Thresholds</a> 修改 <code>/etc/tlp.conf</code>，并运行</p>
+<div class="highlight"><pre><span></span><code>sudo tlp start
+</code></pre></div>
+<p>但是似乎并没有起作用，仍然在充电，尝试拔了电源线来使之生效，但好像还是不行。总共有<a href="https://linrunner.de/tlp/settings/introduction.html#making-changes">三种生效方式</a>，另外一种为重启。</p>
+<p>猜测可能的原因是</p>
+<blockquote>
+<p>natacpi    = inactive (no kernel support)</p>
+</blockquote>
+<p>但是发现 <code>natacpi</code> 只有 kernel 4.17 才开始支持，而当前我的 kernel 版本为</p>
+<div class="highlight"><pre><span></span><code>$ uname -r
+<span class="m">4</span>.15.0-112-generic
+</code></pre></div>
+<p>而且在 <a href="https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#why-is-my-battery-charged-up-to-100-ignoring-the-charge-thresholds">Why is my battery charged up to 100% – ignoring the charge thresholds?</a> 的
+<a href="https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#thinkpad-t430-s-t530-w530-x230-and-all-later-models">ThinkPad T430(s)/T530/W530/X230 (and all later models)</a>
+提到解决方案是</p>
+<blockquote>
+<p>Install a kernel ≥ 4.19 to make natacpi available</p>
+</blockquote>
+<p>网上搜了一圈，发现更新内核还是有风险的，比如可能造成某些接口无法使用，这让我想起之前 wifi 接口搞不定的噩梦。那就先这样吧。</p>
+<p>而且发现其实 <a href="https://phoenixnap.com/kb/how-to-update-kernel-ubuntu">update &amp; dist-upgrade</a> 可能还是会更新内核版本，但是不会更到最新？</p>
+<div class="admonition tip">
+<p class="admonition-title">upgrade vs dist-upgrade vs full-upgrade</p>
+<p>参考 <a href="https://askubuntu.com/questions/81585/what-is-dist-upgrade-and-why-does-it-upgrade-more-than-upgrade">What is “dist-upgrade” and why does it upgrade more than “upgrade”?</a>
+<code>upgrade</code> 只更新已经安装包的版本，不会额外下载包或卸载包
+<code>dist-upgrade</code> 会安装、卸载新包所依赖的包，而是更新内核版本也需要用它
+<code>full-upgrade</code>：不太清楚，试着运行完 dist-upgrade 后，再运行它，但是没反应。
+<div class="highlight"><pre><span></span><code>$ man apt-get
+...
+    upgrade
+       upgrade is used to install the newest versions of all packages currently installed on the system from the sources enumerated <span class="k">in</span> /etc/apt/sources.list. Packages currently
+       installed with new versions available are retrieved and upgraded<span class="p">;</span> under no circumstances are currently installed packages removed, or packages not already installed retrieved
+       and installed. New versions of currently installed packages that cannot be upgraded without changing the install status of another package will be left at their current
+       version. An update must be performed first so that apt-get knows that new versions of packages are available.
+
+   dist-upgrade
+       dist-upgrade <span class="k">in</span> addition to performing the <span class="k">function</span> of upgrade, also intelligently handles changing dependencies with new versions of packages<span class="p">;</span> apt-get has a <span class="s2">&quot;smart&quot;</span> conflict
+       resolution system, and it will attempt to upgrade the most important packages at the expense of less important ones <span class="k">if</span> necessary. The dist-upgrade <span class="nb">command</span> may therefore
+       remove some packages. The /etc/apt/sources.list file contains a list of locations from which to retrieve desired package files. See also apt_preferences<span class="o">(</span><span class="m">5</span><span class="o">)</span> <span class="k">for</span> a mechanism
+       <span class="k">for</span> overriding the general settings <span class="k">for</span> individual packages.
+</code></pre></div>
+但是竟然没有看到 <code>full-upgrade</code>.</p>
+</div>
+<p>比如我发现 Ubuntu 18.04.5 LTS 实际上的内核版本应该是 5.0，甚至有 5.3，不过这似乎跟硬件有关，比如<a href="https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes/ChangeSummary/18.04.5#Kernel_and_Hardware_support_updates">这里</a>列了 <code>linux-aws-5.0</code>, <code>linux-aws-5.0</code>，不过我也看到了 <code>linux-gke-4.15</code>，所以还是不要乱升级的好，不然硬件不兼容又要继续折腾了。</p>
+<p>话说回来，电池最后实在不行，就换了呗，反正这个是外置可拆卸的。</p>
+<h2 id="delete-hotspot">Delete Hotspot<a class="headerlink" href="#delete-hotspot" title="Permanent link">&para;</a></h2>
+<p>升级到 Ubuntu 18.04 后，开机自动连接到 Hotspot，每次需要手动禁止并改成 Wifi 连接，这个可以直接删除保存好的 Hotspot 连接</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /etc/NetworkManager/system-connections/
+sudo rm Hotspot
+</code></pre></div>
+<p>参考 <a href="https://askubuntu.com/questions/120415/how-to-remove-access-point-from-saved-list/120447">How to remove access point from saved list</a></p>
+<h2 id="extend-disk">Extend Disk<a class="headerlink" href="#extend-disk" title="Permanent link">&para;</a></h2>
+<p>一直想扩容来着，但总是下不了决心。今天决定了，参考 google 搜索“Ubuntu 扩容”的前几条结果，便开始干了。</p>
+<ol>
+<li>采用启动 U 盘，因为根目录在使用状态，幸好启动 U 盘还在。</li>
+<li>使用 Gparted 时有个大大的 warning，说对含 /boot 分区的硬盘进行操作可能会不能正常启动，有点吓到了，最后还是狠下心继续下去了。</li>
+<li>网上有人说，不要用 Gparted 对 Windows 进行压缩，而应该在 Windows 中进行压缩，可是此时已经开始了，想中断但怕造成更严重的后果，幸好最后启动 Windows 时只是多了步检查硬盘，并没有不能启动的状况。</li>
+</ol>
+<p>中间提心吊胆，好在最后顺利扩容完成。</p>
+<h2 id="rename-portable-disk">Rename Portable Disk<a class="headerlink" href="#rename-portable-disk" title="Permanent link">&para;</a></h2>
+<p>终端输入</p>
+<div class="highlight"><pre><span></span><code>gnome-disks
+</code></pre></div>
+<p>在设置齿轮图标中选择 <code>Edit Mount Options</code>，修改 <code>Mount Point</code>。注意重新挂载后才能生效。</p>
+<p>详见<a href="https://askubuntu.com/questions/904561/how-to-change-hard-drive-name/904564">How to change hard drive name</a></p>
+<h2 id="use-old-kernel">Use Old Kernel<a class="headerlink" href="#use-old-kernel" title="Permanent link">&para;</a></h2>
+<p>最近几天，T460P 经常自动重启，而且往往重启前花屏，甚至今天带着电脑去找老板，也重启了两次。在 <code>/var/crash</code> 目录下能发现 crash 报告，但是并不知道怎么使用</p>
+<div class="highlight"><pre><span></span><code>drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">22</span> <span class="m">20</span>:10 <span class="m">202107222000</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">23</span> <span class="m">05</span>:40 <span class="m">202107230539</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">23</span> <span class="m">08</span>:54 <span class="m">202107230854</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">24</span> <span class="m">14</span>:23 <span class="m">202107241422</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">26</span> <span class="m">09</span>:03 <span class="m">202107260517</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">27</span> <span class="m">09</span>:26 <span class="m">202107270926</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">27</span> <span class="m">23</span>:09 <span class="m">202107272308</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">28</span> <span class="m">09</span>:41 <span class="m">202107280940</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">28</span> <span class="m">09</span>:44 <span class="m">202107280944</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">28</span> <span class="m">10</span>:14 <span class="m">202107281014</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">28</span> <span class="m">11</span>:05 <span class="m">202107281105</span>/
+drwxr-sr-x  <span class="m">2</span> root     whoopsie     <span class="m">4096</span> Jul <span class="m">28</span> <span class="m">11</span>:48 <span class="m">202107281148</span>/
+-rw-r--r--  <span class="m">1</span> kernoops whoopsie     <span class="m">2249</span> Jul <span class="m">24</span> <span class="m">14</span>:40 linux-image-4.15.0-151-generic.183202.crash
+-rw-r-----  <span class="m">1</span> root     whoopsie    <span class="m">34940</span> Jul <span class="m">22</span> <span class="m">20</span>:01 linux-image-4.15.0-151-generic-202107222000.crash
+-rw-r-----  <span class="m">1</span> root     whoopsie    <span class="m">29062</span> Jul <span class="m">23</span> <span class="m">08</span>:55 linux-image-4.15.0-151-generic-202107230854.crash
+-rw-r-----  <span class="m">1</span> root     whoopsie    <span class="m">34532</span> Jul <span class="m">24</span> <span class="m">14</span>:23 linux-image-4.15.0-151-generic-202107241422.crash
+-rw-r-----  <span class="m">1</span> root     whoopsie    <span class="m">35752</span> Jul <span class="m">26</span> <span class="m">08</span>:56 linux-image-4.15.0-151-generic-202107260517.crash
+-rw-r--r--  <span class="m">1</span> kernoops whoopsie      <span class="m">746</span> Jul <span class="m">28</span> <span class="m">09</span>:40 linux-image-4.15.0-151-generic.30586.crash
+-rw-r--r--  <span class="m">1</span> kernoops whoopsie      <span class="m">752</span> Jul <span class="m">28</span> <span class="m">09</span>:40 linux-image-4.15.0-151-generic.30735.crash
+</code></pre></div>
+<p>其中每个文件夹中有</p>
+<div class="highlight"><pre><span></span><code>$ ll <span class="m">202107281148</span>
+total <span class="m">109160</span>
+-rw-------  <span class="m">1</span> root whoopsie     <span class="m">78507</span> Jul <span class="m">28</span> <span class="m">11</span>:48 dmesg.202107281148
+-rw-------  <span class="m">1</span> root whoopsie <span class="m">111683440</span> Jul <span class="m">28</span> <span class="m">11</span>:48 dump.202107281148
+</code></pre></div>
+<p>联想下最近的操作，很有可能是通过 <code>apt upgrade</code> 更新了次内核，查看具体细节</p>
+<div class="highlight"><pre><span></span><code>$ vi /var/log/apt/history.log
+Start-Date: <span class="m">2021</span>-07-21  <span class="m">20</span>:46:59
+Commandline: aptdaemon <span class="nv">role</span><span class="o">=</span><span class="s1">&#39;role-commit-packages&#39;</span> <span class="nv">sender</span><span class="o">=</span><span class="s1">&#39;:1.1117&#39;</span>
+Install: linux-headers-4.15.0-151-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0-151.157, automatic<span class="o">)</span>, linux-modules-4.15.0-151-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0-151.157, automatic<span class="o">)</span>, linux-image-4.15.0-151-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0-151.157, automatic<span class="o">)</span>, linux-modules-extra-4.15.0-151-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0-151.157, automatic<span class="o">)</span>, linux-headers-4.15.0-151:amd64 <span class="o">(</span><span class="m">4</span>.15.0-151.157, automatic<span class="o">)</span>
+Upgrade: libnvidia-gl-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-gl-460-server:i386 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, linux-headers-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0.147.134, <span class="m">4</span>.15.0.151.139<span class="o">)</span>, linux-libc-dev:amd64 <span class="o">(</span><span class="m">4</span>.15.0-147.151, <span class="m">4</span>.15.0-151.157<span class="o">)</span>, linux-crashdump:amd64 <span class="o">(</span><span class="m">4</span>.15.0.147.134, <span class="m">4</span>.15.0.151.139<span class="o">)</span>, libsystemd0:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, libsystemd0:i386 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, linux-image-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0.147.134, <span class="m">4</span>.15.0.151.139<span class="o">)</span>, nvidia-driver-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, containerd:amd64 <span class="o">(</span><span class="m">1</span>.5.2-0ubuntu1~18.04.1, <span class="m">1</span>.5.2-0ubuntu1~18.04.2<span class="o">)</span>, nvidia-kernel-source-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-fbc1-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-fbc1-460-server:i386 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, nvidia-dkms-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, google-chrome-stable:amd64 <span class="o">(</span><span class="m">91</span>.0.4472.164-1, <span class="m">92</span>.0.4515.107-1<span class="o">)</span>, nvidia-utils-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-decode-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-decode-460-server:i386 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, udev:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, nvidia-kernel-common-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, typora:amd64 <span class="o">(</span><span class="m">0</span>.10.11-1, <span class="m">0</span>.11.0-1<span class="o">)</span>, xserver-xorg-video-nvidia-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-encode-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-encode-460-server:i386 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, nvidia-compute-utils-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, initramfs-tools-bin:amd64 <span class="o">(</span><span class="m">0</span>.130ubuntu3.12, <span class="m">0</span>.130ubuntu3.13<span class="o">)</span>, linux-signed-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0.147.134, <span class="m">4</span>.15.0.151.139<span class="o">)</span>, libudev1:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, libudev1:i386 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, libnvidia-ifr1-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-ifr1-460-server:i386 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-common-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnss-myhostname:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, libnvidia-cfg1-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, systemd-sysv:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, libpam-systemd:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, systemd:amd64 <span class="o">(</span><span class="m">237</span>-3ubuntu10.48, <span class="m">237</span>-3ubuntu10.49<span class="o">)</span>, libnvidia-extra-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, linux-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0.147.134, <span class="m">4</span>.15.0.151.139<span class="o">)</span>, initramfs-tools-core:amd64 <span class="o">(</span><span class="m">0</span>.130ubuntu3.12, <span class="m">0</span>.130ubuntu3.13<span class="o">)</span>, initramfs-tools:amd64 <span class="o">(</span><span class="m">0</span>.130ubuntu3.12, <span class="m">0</span>.130ubuntu3.13<span class="o">)</span>, libnvidia-compute-460-server:amd64 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>, libnvidia-compute-460-server:i386 <span class="o">(</span><span class="m">460</span>.73.01-0ubuntu0.18.04.1, <span class="m">460</span>.91.03-0ubuntu0.18.04.1<span class="o">)</span>
+End-Date: <span class="m">2021</span>-07-21  <span class="m">20</span>:51:53
+
+Start-Date: <span class="m">2021</span>-07-22  <span class="m">06</span>:31:33
+Commandline: /usr/bin/unattended-upgrade
+Remove: linux-headers-4.15.0-144:amd64 <span class="o">(</span><span class="m">4</span>.15.0-144.148<span class="o">)</span>, linux-headers-4.15.0-144-generic:amd64 <span class="o">(</span><span class="m">4</span>.15.0-144.148<span class="o">)</span>
+End-Date: <span class="m">2021</span>-07-22  <span class="m">06</span>:31:36
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>对于 <code>.gz</code> 的日志文件，可以使用 <code>zcat</code> 直接查看。
+另外注意，<code>file.gz</code> 解压时默认不会保存原始文件，或者指定 <code>gunzip -k</code> 选项，或者
+<div class="highlight"><pre><span></span><code>gunzip &lt; file.gz &gt; file
+</code></pre></div>
+详见 <a href="https://unix.stackexchange.com/questions/156261/unzipping-a-gz-file-without-removing-the-gzipped-file">Unzipping a .gz file without removing the gzipped file</a></p>
+</div>
+<p>发现其更新时间恰恰在诸多 crash 的前一天。所以试图切换到老的内核版本。</p>
+<p>注意到在启动时，第二个选项是 <code>Advanced options for Ubuntu</code>，点进去有若干个内核，我的是</p>
+<div class="highlight"><pre><span></span><code><span class="m">4</span>.15.0-151
+<span class="m">4</span>.15.0-151 <span class="o">(</span>recovery mode<span class="o">)</span>
+<span class="m">4</span>.15.0-147
+<span class="m">4</span>.15.0-147 <span class="o">(</span>recovery mode<span class="o">)</span>
+</code></pre></div>
+<p>选择 <code>4.15.0-147</code>，进去之后发现扩展屏幕无法识别，另外 Nvidia 也没有识别。于是试着重装 nvidia driver，这次选择的是 <code>nvidia-driver-460-server</code>，这也是<a href="https://github.com/szcf-weiya/techNotes/issues/11#issuecomment-885333581">此前使用的版本</a>。</p>
+<p>然后重启。</p>
+<p>重启时注意还是要选择 <code>4.15.0-147</code>，不如默认进的还是 <code>151</code>。</p>
+<p>中间误入了一次 <code>151</code>，结果还没登录就自动重启了，然后乖乖选择 <code>147</code>，但是这次还是没能识别 HDMI，不过 nvidia-smi 以及 nvidia-settings 都正常，<code>xrandr</code> 输出也是没有识别出显示屏。</p>
+<p>试着继续重启，这次竟然可以了！</p>
+<p>后面在 nvidia-settings 中试了将 <code>PRIME profiles</code> 由 <code>NVIDIA (performance mode)</code> 改成 <code>NVIDIA on-demand</code>,然后重启，结果竟然进不去系统了，每次输入密码回车都要求重新输入密码。</p>
+<p>原因很可能是 PRIME 的这一改动，于是进入 tty 模式，通过命令行改回来</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 查询当前选择</span>
+$ prime-select query
+<span class="c1"># 切换至 nvidia</span>
+$ prime-select nvidia
+<span class="c1"># 切换至 intel</span>
+$ prime-select intel
+</code></pre></div>
+<p>然后重启终于恢复正常。</p>
+<p>注意现在每次重启都需要选择内核版本，一个自然想法是修改默认内核。参考 <a href="https://support.huaweicloud.com/intl/en-us/trouble-ecs/ecs_trouble_0327.html">How Do I Change the Default Boot Kernel in Ubuntu?</a></p>
+<p>将 <code>/etc/default/grub</code> 中 <code>GRUB_DEFAULT</code> 修改至 <code>1&gt;2</code>，其中</p>
+<ul>
+<li><code>1</code> 代表 <code>Advanced options for Ubuntu</code> 的顺序，因其在第二位，顺序从 0 算起，默认值就是 0</li>
+<li><code>&gt;2</code> 代表在子目录下位于第 2 位（顺序从 0 算起，即第三个）</li>
+</ul>
+<p>重启之前需要运行</p>
+<div class="highlight"><pre><span></span><code>$ sudo update-grub
+</code></pre></div>
+<p>重启之后可以看到自动选择了 <code>1&gt;2</code>。 </p>
+<h3 id="disable-update-of-kernel">disable update of kernel<a class="headerlink" href="#disable-update-of-kernel" title="Permanent link">&para;</a></h3>
+<p>今天竟然又重启了，有点无法理解。第一次怀疑是温度过高，因为 <code>syslog</code> 中重启前的一条记录信息为</p>
+<div class="highlight"><pre><span></span><code>Device: /dev/sdc <span class="o">[</span>SAT<span class="o">]</span>, SMART Usage Attribute: <span class="m">194</span> Temperature_Celsius changed from <span class="m">60</span> to <span class="m">61</span>
+</code></pre></div>
+<p>然后第二次竟然发现 crash 报告竟然是 <code>151</code>，明明应该选择了第二个 147 呀。</p>
+<div class="highlight"><pre><span></span><code>$ ls /var/crash
+linux-image-4.15.0-151-generic-202108070025.crash
+linux-image-4.15.0-151-generic-202108071819.crash
+</code></pre></div>
+<p>重启时才发现竟然多了个 kernel 153！！于是第二个变成了 151，第三个才是 147。</p>
+<p>虽然将启动选择再改成第三个应该也是可以的，但是万一以后又多了一个呢，顺序岂不又变了，所以更好的方法便是禁止 kernel 更新。另外将最新的 151 删掉。</p>
+<ul>
+<li>删掉 kernel</li>
+</ul>
+<p>查看安装 kernel 的完整名称，</p>
+<div class="highlight"><pre><span></span><code>$ dpkg -l <span class="p">|</span> grep linux-image <span class="p">|</span> grep <span class="s2">&quot;^ii&quot;</span>
+</code></pre></div>
+<p>然后进行删除</p>
+<div class="highlight"><pre><span></span><code>$ sudo apt purge linux-image-4.15.0-153-generic
+</code></pre></div>
+<p>再次重启就会发现第一项 153 消失了。</p>
+<p>refer to <a href="https://www.cyberciti.biz/faq/ubuntu-18-04-remove-all-unused-old-kernels/">Ubuntu 18.04 remove all unused old kernels</a></p>
+<ul>
+<li>禁止 kernel 更新</li>
+</ul>
+<p>参考 <a href="https://askubuntu.com/questions/938494/how-to-i-prevent-ubuntu-from-kernel-version-upgrade-and-notification">How to I prevent Ubuntu from kernel version upgrade and notification?</a></p>
+<div class="highlight"><pre><span></span><code>sudo apt-mark hold <span class="m">4</span>.15.0-147-generic
+</code></pre></div>
+<h2 id="default-software">Default Software<a class="headerlink" href="#default-software" title="Permanent link">&para;</a></h2>
+<p>网页文件 <code>.html</code> 默认用百度网盘打开，之前通过 <code>KDE System Setting</code> 修改了默认软件，</p>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/117541554-fb955800-b046-11eb-8577-f39fdbf406bc.png" /></p>
+<p>但似乎并没有解决问题。</p>
+<p>试着参考 <a href="https://help.ubuntu.com/stable/ubuntu-help/files-open.html.en">Open files with other applications</a> 的步骤进行设置</p>
+<ul>
+<li>右键选择 <code>Properties</code></li>
+<li>然后选择 <code>Open With</code></li>
+<li>选择特定软件，<code>Set as default</code></li>
+</ul>
+<h2 id="wifi-hotpot-1604">WiFi Hotpot (16.04)<a class="headerlink" href="#wifi-hotpot-1604" title="Permanent link">&para;</a></h2>
+<p>Refer to</p>
+<ol>
+<li><a href="http://ubuntuhandbook.org/index.php/2014/09/3-ways-create-wifi-hotspot-ubuntu/">3 Ways to Create Wifi Hotspot in Ubuntu 14.04 (Android Support)</a></li>
+<li><a href="https://askubuntu.com/questions/318973/how-do-i-create-a-wifi-hotspot-sharing-wireless-internet-connection-single-adap">How do I create a WiFi hotspot sharing wireless internet connection (single adapter)?</a></li>
+</ol>
+<p>几处不同：</p>
+<ol>
+<li>选择 <code>mode</code> 时，直接选择 <code>hotpot</code> 即可，后面也无需更改文件</li>
+<li>设置密码时位数不能少于 8 位</li>
+<li>连接 WiFi 时 似乎需要 enable wifi。</li>
+</ol>
+<h2 id="ubuntu-sftp">ubuntu 连接 sftp 服务器<a class="headerlink" href="#ubuntu-sftp" title="Permanent link">&para;</a></h2>
+<p>参考<a href="https://askubuntu.com/questions/349873/use-connect-to-server-to-connect-to-sftp">Use “Connect to Server” to connect to SFTP</a></p>
+<h2 id="ubuntu_1">Ubuntu的回收站<a class="headerlink" href="#ubuntu_1" title="Permanent link">&para;</a></h2>
+<p>参考 <a href="https://blog.csdn.net/DSLZTX/article/details/46685959">https://blog.csdn.net/DSLZTX/article/details/46685959</a></p>
+<h2 id="install-win-on-ubuntu">install win on ubuntu<a class="headerlink" href="#install-win-on-ubuntu" title="Permanent link">&para;</a></h2>
+<p>参考<a href="http://www.linuxdeveloper.space/install-windows-after-linux/">http://www.linuxdeveloper.space/install-windows-after-linux/</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: General" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              General
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../software/" class="md-footer__link md-footer__link--next" aria-label="Next: Application Software" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Application Software
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017-2021 weiya
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/szcf-weiya" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://esl.hohoweiya.xyz" target="_blank" rel="noopener" title="esl.hohoweiya.xyz" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://hohoweiya.xyz" target="_blank" rel="noopener" title="hohoweiya.xyz" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26 96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47 488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://stats.hohoweiya.xyz" target="_blank" rel="noopener" title="stats.hohoweiya.xyz" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M552 64H112c-20.858 0-38.643 13.377-45.248 32H24c-13.255 0-24 10.745-24 24v272c0 30.928 25.072 56 56 56h496c13.255 0 24-10.745 24-24V88c0-13.255-10.745-24-24-24zM48 392V144h16v248c0 4.411-3.589 8-8 8s-8-3.589-8-8zm480 8H111.422c.374-2.614.578-5.283.578-8V112h416v288zM172 280h136c6.627 0 12-5.373 12-12v-96c0-6.627-5.373-12-12-12H172c-6.627 0-12 5.373-12 12v96c0 6.627 5.373 12 12 12zm28-80h80v40h-80v-40zm-40 140v-24c0-6.627 5.373-12 12-12h136c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H172c-6.627 0-12-5.373-12-12zm192 0v-24c0-6.627 5.373-12 12-12h104c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H364c-6.627 0-12-5.373-12-12zm0-144v-24c0-6.627 5.373-12 12-12h104c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H364c-6.627 0-12-5.373-12-12zm0 72v-24c0-6.627 5.373-12 12-12h104c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H364c-6.627 0-12-5.373-12-12z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://blog.csdn.net/szcf715" target="_blank" rel="noopener" title="blog.csdn.net" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 348.106V80c0-26.51-21.49-48-48-48H48C21.49 32 0 53.49 0 80v351.988c0 26.51 21.49 48 48 48h268.118a48 48 0 0 0 33.941-14.059l83.882-83.882A48 48 0 0 0 448 348.106zm-128 80v-76.118h76.118L320 428.106zM400 80v223.988H296c-13.255 0-24 10.745-24 24v104H48V80h352z"/></svg>
+      </a>
+    
+      
+      
+      <a href="mailto:szcfweiya@gmail.com" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="../../javascripts/baiduzhanzhang.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
