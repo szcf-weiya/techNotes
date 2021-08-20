@@ -30,7 +30,7 @@ by Sheng Lian (20210818)
     export CPPFLAGS="-I$HOME/usr/include -I$HOME/bzip2-1.0.6"
     export LDFLAGS="-L$HOME/usr/lib -L$HOME/usr/lib64 -L$HOME/bzip2-1.0.6"
     export LD_LIBRARY_PATH=$HOME/usr/lib:$HOME/usr/lib64:$HOME/bzip2-1.0.6
-     ```
+    ```
 
 ## Using Conda 
   
