@@ -764,6 +764,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#inherited-environment" class="md-nav__link">
+    Inherited Environment
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1312,20 +1319,32 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../doc/markdown/" class="md-nav__link">
+        Markdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
     
       
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
       
-      <label class="md-nav__link" for="__nav_5_2">
+      <label class="md-nav__link" for="__nav_5_3">
         Web
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Web" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_2">
+        <label class="md-nav__title" for="__nav_5_3">
           <span class="md-nav__icon md-icon"></span>
           Web
         </label>
@@ -2033,6 +2052,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#inherited-environment" class="md-nav__link">
+    Inherited Environment
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2656,6 +2682,49 @@ storage01:/chpc-users                     15T  <span class="m">6</span>.2T  <spa
 <li>如果用户 B 未迁移，则其 <code>~</code> 通过 <code>/storage01/users/B</code> （此时该路径只相当于 soft link） 指向 <code>/lustre/users/B</code></li>
 </ul>
 <p>所以无论迁移与否，访问 <code>~</code> 都需要通过上图的黄色方框。那么倘若 storage 本身挂载失败，则 <code>~</code> 解析失败，而未迁移用户正因为还未迁移，所以仍能绕过 <code>~</code> 而直接访问 <code>/lustre/users/sXXXX</code>。</p>
+<h2 id="inherited-environment">Inherited Environment<a class="headerlink" href="#inherited-environment" title="Permanent link">&para;</a></h2>
+<p>By default, <code>sbatch</code> will inherit the environment variables, so</p>
+<div class="highlight"><pre><span></span><code>$ module load R/3.6
+$ sbatch -p stat -q stat <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt; #!/bin/sh</span>
+<span class="s">&gt; echo $PATH</span>
+<span class="s">&gt; which R</span>
+<span class="s">&gt; EOF</span>
+Submitted batch job <span class="m">319113</span>
+$ cat slurm-319113.out 
+/opt/share/R/3.6.3/bin:...
+/opt/share/R/3.6.3/bin/R
+</code></pre></div>
+<p>we can disable the inheriting behavior via </p>
+<div class="highlight"><pre><span></span><code>$ sbatch -p stat -q stat --export<span class="o">=</span>NONE <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt; #!/bin/sh</span>
+<span class="s">&gt; echo $PATH</span>
+<span class="s">&gt; which R</span>
+<span class="s">&gt; EOF</span>
+Submitted batch job <span class="m">319110</span>
+$ cat slurm-319110.out 
+/opt/share/R/3.6.3/bin:
+which: no R <span class="k">in</span> <span class="o">(</span>...
+</code></pre></div>
+<p>But note that <code>$PATH</code> still has the path to <code>R/3.6</code>, the explanation would be that the substitution has been executed before submitting.</p>
+<p>The detailed explanation of <code>--export</code> can be found in <code>man sbatch</code></p>
+<div class="highlight"><pre><span></span><code>       --export<span class="o">=</span>&lt;<span class="o">[</span>ALL,<span class="o">]</span>environment variables<span class="p">|</span>ALL<span class="p">|</span>NONE&gt;
+              Identify  which environment variables from the submission environment are propagated to the launched applica‐
+              tion. Note that SLURM_* variables are always propagated.
+
+              --export<span class="o">=</span>ALL
+                        Default mode <span class="k">if</span> --export is not specified. All of the users environment will be loaded <span class="o">(</span>either from
+                        callers environment or clean environment <span class="k">if</span> --get-user-env is specified<span class="o">)</span>.
+
+              --export<span class="o">=</span>NONE
+                        Only  SLURM_*  variables  from the user environment will be defined. User must use absolute path to
+                        the binary to be executed that will define the environment.  User can not specify explicit environ‐
+                        ment variables with NONE.  --get-user-env will be ignored.
+                        This  option  is particularly important <span class="k">for</span> <span class="nb">jobs</span> that are submitted on one cluster and execute on a
+                        different cluster <span class="o">(</span>e.g. with different paths<span class="o">)</span>.  To avoid steps inheriting environment  <span class="nb">export</span>  set‐
+                        tings  <span class="o">(</span>e.g.  NONE<span class="o">)</span> from sbatch command, the environment variable SLURM_EXPORT_ENV should be <span class="nb">set</span> to
+                        ALL <span class="k">in</span> the job script.
+</code></pre></div>
                 
               
               
