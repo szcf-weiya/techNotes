@@ -788,3 +788,57 @@ storage01:/chpc-users                     15T  6.2T  8.9T  42% /storage01/users
 - 如果用户 B 未迁移，则其 `~` 通过 `/storage01/users/B` （此时该路径只相当于 soft link） 指向 `/lustre/users/B`
 
 所以无论迁移与否，访问 `~` 都需要通过上图的黄色方框。那么倘若 storage 本身挂载失败，则 `~` 解析失败，而未迁移用户正因为还未迁移，所以仍能绕过 `~` 而直接访问 `/lustre/users/sXXXX`。
+
+## Inherited Environment
+
+By default, `sbatch` will inherit the environment variables, so
+
+```bash
+$ module load R/3.6
+$ sbatch -p stat -q stat << EOF
+> #!/bin/sh
+> echo $PATH
+> which R
+> EOF
+Submitted batch job 319113
+$ cat slurm-319113.out 
+/opt/share/R/3.6.3/bin:...
+/opt/share/R/3.6.3/bin/R
+```
+
+we can disable the inheriting behavior via 
+
+```bash
+$ sbatch -p stat -q stat --export=NONE << EOF
+> #!/bin/sh
+> echo $PATH
+> which R
+> EOF
+Submitted batch job 319110
+$ cat slurm-319110.out 
+/opt/share/R/3.6.3/bin:
+which: no R in (...
+```
+
+But note that `$PATH` still has the path to `R/3.6`, the explanation would be that the substitution has been executed before submitting.
+
+The detailed explanation of `--export` can be found in `man sbatch`
+
+```bash
+       --export=<[ALL,]environment variables|ALL|NONE>
+              Identify  which environment variables from the submission environment are propagated to the launched applica‐
+              tion. Note that SLURM_* variables are always propagated.
+
+              --export=ALL
+                        Default mode if --export is not specified. All of the users environment will be loaded (either from
+                        callers environment or clean environment if --get-user-env is specified).
+
+              --export=NONE
+                        Only  SLURM_*  variables  from the user environment will be defined. User must use absolute path to
+                        the binary to be executed that will define the environment.  User can not specify explicit environ‐
+                        ment variables with NONE.  --get-user-env will be ignored.
+                        This  option  is particularly important for jobs that are submitted on one cluster and execute on a
+                        different cluster (e.g. with different paths).  To avoid steps inheriting environment  export  set‐
+                        tings  (e.g.  NONE) from sbatch command, the environment variable SLURM_EXPORT_ENV should be set to
+                        ALL in the job script.
+```

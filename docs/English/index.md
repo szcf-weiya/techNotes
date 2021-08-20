@@ -1,3 +1,12 @@
+## 2021.08.20
+
+- Public-health research has a history of interference from industry funders, so the team behind the study, led by health scientist Sam McCrabb, expected researchers running industry-funded studies to be those most commonly acting under **duress (强迫，胁迫)**.
+
+## 2021.08.19
+
+- Caltech regrets **drilling (钻孔)** near **petroglyph (岩石雕刻，岩石画)**.
+- They're doing chemistry, geology, **hydrology (水文)**, petrology..., everything but astronomy.
+
 ## 2021.08.18
 
 - You may also want to use the `--prune-empty` option to **expunge (抹去，删去)** commits that touched only the folder. [:link:](https://stackoverflow.com/questions/2538245/extract-part-of-a-git-repository/2538259#2538259)
@@ -1042,6 +1051,7 @@ None
 
 - I did not know whether it were not a proper opportunity to offer a bit of **admonition (告诫，忠告)**.
 - **A Journal of the Plague Year (瘟疫年纪事)** is a book by **Daniel Defoe (丹尼尔·笛福)**.
+    - It has been **plagued (困扰， annoy continually or chronically)** by delays.
 - Just **disclaimer (免责声明；否定申明)**, he's not sponsored by Adidas.
 - The PhD is a very specific kind of experience that deserves a large **disclaimer (放弃，拒绝)**.
 

@@ -46,6 +46,7 @@ nav:
       - General: TeX/index.md
       - arXiv: TeX/arxiv.md
       - VarGreek: TeX/vargreek.md
+    - Markdown: doc/markdown.md
     - Web:
       - Website: website/index.md
       - Disqus: website/disqus.md
