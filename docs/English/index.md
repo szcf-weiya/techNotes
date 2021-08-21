@@ -1,3 +1,7 @@
+## 2021.08.21
+
+- baby bats **babble (含混不清地说，幼儿咿哑学语)** like human infants
+
 ## 2021.08.20
 
 - Public-health research has a history of interference from industry funders, so the team behind the study, led by health scientist Sam McCrabb, expected researchers running industry-funded studies to be those most commonly acting under **duress (强迫，胁迫)**.
