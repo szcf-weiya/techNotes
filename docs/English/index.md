@@ -1,3 +1,7 @@
+## 2021.08.22
+
+- a **hispster (赶时髦的人)** **doofus (蠢人，笨蛋)**.
+
 ## 2021.08.21
 
 - baby bats **babble (含混不清地说，幼儿咿哑学语)** like human infants
