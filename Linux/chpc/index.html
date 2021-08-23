@@ -717,6 +717,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cpumemory-usage" class="md-nav__link">
+    CPU/Memory Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disk-quota" class="md-nav__link">
     Disk Quota
   </a>
@@ -2005,6 +2012,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cpumemory-usage" class="md-nav__link">
+    CPU/Memory Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disk-quota" class="md-nav__link">
     Disk Quota
   </a>
@@ -2377,6 +2391,23 @@ $ sprio -w -p chpc
 <li><a href="https://slurm.schedmd.com/priority_multifactor.html">Multifactor Priority Plugin</a></li>
 <li><a href="http://www.ceci-hpc.be/slurm_prio.html">Slurm priorities</a></li>
 </ul>
+<h2 id="cpumemory-usage">CPU/Memory Usage<a class="headerlink" href="#cpumemory-usage" title="Permanent link">&para;</a></h2>
+<p>Check the CPU and memory usage of a specific job. The natural way is to use <code>top</code> on the node that run the job. After ssh into the corresponding node, get the map between job id and process id via</p>
+<div class="highlight"><pre><span></span><code>$ scontrol listpids YOUR_JOB_ID
+</code></pre></div>
+<p>Note that this only works with processes on the node on which <code>scontrol</code> is run, i.e., we cannot get the corresponding pid before ssh into the node.</p>
+<p>Then check the results of <code>top</code> and monitor the CPU/memory usage by the job given the pid. Or explicitly specify the pid via <code>top -p PID_OF_JOB</code></p>
+<p>Alternatively, a more direct way is to use <code>sstat</code> command, which reports various status information, including CPU and memory, for running jobs.</p>
+<div class="highlight"><pre><span></span><code>$ sstat --format<span class="o">=</span>AveCPU,AvePages,AveRSS,AveVMSize,MaxRSS,MaxVMSize -j JOBID
+    AveCPU   AvePages     AveRSS  AveVMSize     MaxRSS  MaxVMSize 
+---------- ---------- ---------- ---------- ---------- ---------- 
+ <span class="m">00</span>:02.000         <span class="m">30</span>      1828K    119820K      1828K    276808K 
+</code></pre></div>
+<p>Correspondingly, the result from <code>top</code> is</p>
+<div class="highlight"><pre><span></span><code>PID USER PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME COMMAND                                                                                                              
+<span class="m">213435</span> XXX <span class="m">20</span>   <span class="m">0</span>  <span class="m">119820</span>   <span class="m">2388</span>   <span class="m">1772</span> S   <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.27 bash 
+</code></pre></div>
+<p>where <code>VIRT</code> == <code>AveVMSIZE</code>.</p>
 <h2 id="disk-quota">Disk Quota<a class="headerlink" href="#disk-quota" title="Permanent link">&para;</a></h2>
 <p>Sometimes, you might find that your job cannot continue to write out results, and you also cannot create a new file. It might imply that your quota reaches the limit, and here is a tip to &ldquo;increase&rdquo; your quota without cleaning your files.</p>
 <div class="admonition tip">
