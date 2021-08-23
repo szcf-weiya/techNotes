@@ -378,6 +378,37 @@ refer to
 - [Multifactor Priority Plugin](https://slurm.schedmd.com/priority_multifactor.html)
 - [Slurm priorities](http://www.ceci-hpc.be/slurm_prio.html)
 
+## CPU/Memory Usage
+
+Check the CPU and memory usage of a specific job. The natural way is to use `top` on the node that run the job. After ssh into the corresponding node, get the map between job id and process id via
+
+```bash
+$ scontrol listpids YOUR_JOB_ID
+```
+
+Note that this only works with processes on the node on which `scontrol` is run, i.e., we cannot get the corresponding pid before ssh into the node.
+
+Then check the results of `top` and monitor the CPU/memory usage by the job given the pid. Or explicitly specify the pid via `top -p PID_OF_JOB`
+
+Alternatively, a more direct way is to use `sstat` command, which reports various status information, including CPU and memory, for running jobs.
+
+```bash
+$ sstat --format=AveCPU,AvePages,AveRSS,AveVMSize,MaxRSS,MaxVMSize -j JOBID
+    AveCPU   AvePages     AveRSS  AveVMSize     MaxRSS  MaxVMSize 
+---------- ---------- ---------- ---------- ---------- ---------- 
+ 00:02.000         30      1828K    119820K      1828K    276808K 
+```
+
+Correspondingly, the result from `top` is
+
+```bash
+PID USER PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME COMMAND                                                                                                              
+213435 XXX 20   0  119820   2388   1772 S   0.0  0.0   0:00.27 bash 
+```
+
+where `VIRT` == `AveVMSIZE`.
+
+
 ## Disk Quota
 
 Sometimes, you might find that your job cannot continue to write out results, and you also cannot create a new file. It might imply that your quota reaches the limit, and here is a tip to "increase" your quota without cleaning your files.
