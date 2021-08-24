@@ -139,6 +139,14 @@ weiya    :0       :0               10:28   ?xdm?  22:24   0.00s /usr/lib/gdm3/gd
 ssh -X
 ```
 
+### `scp`
+
+- `scp` a file with name including colon
+
+add `./` before the file, since it will interpret colon `x:` as `[user@]host prefix` even if the filename has been wrapped with `"`.
+
+refer to [How can I scp a file with a colon in the file name?](https://stackoverflow.com/questions/14718720/how-can-i-scp-a-file-with-a-colon-in-the-file-name)
+
 ## 安装 spark
 
 ~~在内地云主机上，[官网下载地址](https://spark.apache.org/downloads.html) 还没 5 秒就中断了，然后找到了[清华的镜像](https://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-2.4.4/)~~

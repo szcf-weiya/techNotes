@@ -1,5 +1,7 @@
 # Aliyun ECS
 
+## 安全组设置
+
 试图为 ssh remote forward port 添加安全组。首先默认 remote forward port 仅允许通过 lo 访问，但是可以在 `/etc/ssh/sshd_config` 中加入
 
 ```bash
@@ -7,7 +9,7 @@
 GatewayPorts yes
 ```
 
-来允许外来 ip 直接登录 (see als: <https://serverfault.com/questions/896784/ssh-remote-port-forwarding-gatewayports-yes-which-machine-to-specify-on>)。
+来允许外来 ip 直接登录 (see also: <https://serverfault.com/questions/896784/ssh-remote-port-forwarding-gatewayports-yes-which-machine-to-specify-on>)。
 
 自然带来一个安全性问题，所以想到添加安全组，但是添加完安全组后，发现安全组外的 ip 仍能正常访问。一度怀疑 remote forward port 不受安全组的控制，但又转念一想不太可能啊。
 

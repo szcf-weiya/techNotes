@@ -1,3 +1,13 @@
+## 2021.08.24
+
+- As someone who didn't care much about distributed ML training, he followed the research **peripherally (次要地，外围地)** without getting into the details.
+- Training deep learning models to interact with visual environments is one of the most complex and expensive challenges in the modern AI ecosystem. The AI community refers to this branch of research as **Embodied (体现，包含，具体化)** AI and remains a very active area of research.
+
+## 2021.08.23
+
+- polyester: 聚酯纤维
+- viscose: 纤维胶
+
 ## 2021.08.22
 
 - a **hispster (赶时髦的人)** **doofus (蠢人，笨蛋)**.

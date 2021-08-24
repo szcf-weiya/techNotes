@@ -539,12 +539,6 @@ machine git.heroku.com
 
 [How do I resolve unmet dependencies after adding a PPA?](https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa)
 
-## scp a file with name including colon
-
-add `./` before the file, since it will interpret colon `x:` as [user@]host prefix
-
-refer to [How can I scp a file with a colon in the file name?](https://stackoverflow.com/questions/14718720/how-can-i-scp-a-file-with-a-colon-in-the-file-name)
-
 ## add virtual memeory via swapfile
 
 通过交换文件实现
