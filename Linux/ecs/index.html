@@ -20,7 +20,7 @@
     
     
       
-        <title>Aliyun ECS - techNotes</title>
+        <title>AliECS - techNotes</title>
       
     
     
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Aliyun ECS
+              AliECS
             
           </span>
         </div>
@@ -204,13 +204,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -424,12 +426,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         Linux
@@ -546,14 +550,16 @@
             
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
       
       <label class="md-nav__link" for="__nav_2_3">
         Servers
@@ -574,6 +580,58 @@
       <a href="../servers/" class="md-nav__link">
         General
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          AliECS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        AliECS
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    安全组设置
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1714,6 +1772,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    安全组设置
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1730,11 +1803,12 @@
                 
                 
                 <h1 id="aliyun-ecs">Aliyun ECS<a class="headerlink" href="#aliyun-ecs" title="Permanent link">&para;</a></h1>
+<h2 id="_1">安全组设置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>试图为 ssh remote forward port 添加安全组。首先默认 remote forward port 仅允许通过 lo 访问，但是可以在 <code>/etc/ssh/sshd_config</code> 中加入</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># https://www.ssh.com/academy/ssh/tunneling/example</span>
 GatewayPorts yes
 </code></pre></div>
-<p>来允许外来 ip 直接登录 (see als: <a href="https://serverfault.com/questions/896784/ssh-remote-port-forwarding-gatewayports-yes-which-machine-to-specify-on">https://serverfault.com/questions/896784/ssh-remote-port-forwarding-gatewayports-yes-which-machine-to-specify-on</a>)。</p>
+<p>来允许外来 ip 直接登录 (see also: <a href="https://serverfault.com/questions/896784/ssh-remote-port-forwarding-gatewayports-yes-which-machine-to-specify-on">https://serverfault.com/questions/896784/ssh-remote-port-forwarding-gatewayports-yes-which-machine-to-specify-on</a>)。</p>
 <p>自然带来一个安全性问题，所以想到添加安全组，但是添加完安全组后，发现安全组外的 ip 仍能正常访问。一度怀疑 remote forward port 不受安全组的控制，但又转念一想不太可能啊。</p>
 <p>最终发现自己最初的一条安全组记录为，</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/128313509-9ae6ae36-1c6c-4aeb-b311-ae2be54e7d6b.png" /></p>
@@ -1760,6 +1834,41 @@ GatewayPorts yes
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../servers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: General" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              General
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../chpc/" class="md-footer__link md-footer__link--next" aria-label="Next: CHPC-Cluster" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              CHPC-Cluster
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

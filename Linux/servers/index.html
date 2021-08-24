@@ -652,6 +652,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    scp
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -724,6 +731,18 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ecs/" class="md-nav__link">
+        AliECS
+      </a>
     </li>
   
 
@@ -1913,6 +1932,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    scp
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2093,6 +2119,12 @@ weiya    :0       :0               <span class="m">10</span>:28   ?xdm?  <span c
 <p>如果想要在本地运行服务器端的 GUI 程序，即将服务器端的窗口发送到本地，则登录时需要加上 <code>-X</code> 选项，</p>
 <div class="highlight"><pre><span></span><code>ssh -X
 </code></pre></div>
+<h3 id="scp"><code>scp</code><a class="headerlink" href="#scp" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>scp</code> a file with name including colon</li>
+</ul>
+<p>add <code>./</code> before the file, since it will interpret colon <code>x:</code> as <code>[user@]host prefix</code> even if the filename has been wrapped with <code>"</code>.</p>
+<p>refer to <a href="https://stackoverflow.com/questions/14718720/how-can-i-scp-a-file-with-a-colon-in-the-file-name">How can I scp a file with a colon in the file name?</a></p>
 <h2 id="spark">安装 spark<a class="headerlink" href="#spark" title="Permanent link">&para;</a></h2>
 <p><del>在内地云主机上，<a href="https://spark.apache.org/downloads.html">官网下载地址</a> 还没 5 秒就中断了，然后找到了<a href="https://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-2.4.4/">清华的镜像</a></del></p>
 <p>第二天发现，其实不是中断了，而是下载完成了，因为那个还不是下载链接，点进去才有推荐的下载链接，而这些链接也是推荐的速度快的镜像。</p>
@@ -2196,13 +2228,13 @@ apt-get install nginx
       
       
         
-        <a href="../chpc/" class="md-footer__link md-footer__link--next" aria-label="Next: CHPC-Cluster" rel="next">
+        <a href="../ecs/" class="md-footer__link md-footer__link--next" aria-label="Next: AliECS" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              CHPC-Cluster
+              AliECS
             </div>
           </div>
           <div class="md-footer__button md-icon">
