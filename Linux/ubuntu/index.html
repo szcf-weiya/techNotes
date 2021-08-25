@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/ubuntu/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.be71726b.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -618,6 +618,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#add-virtual-memory" class="md-nav__link">
+    Add Virtual Memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#extend-disk" class="md-nav__link">
     Extend Disk
   </a>
@@ -661,6 +668,13 @@
         <li class="md-nav__item">
   <a href="#wifi-hotpot-1604" class="md-nav__link">
     WiFi Hotpot (16.04)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1m_ipv4_udp_receive_buffer_errors" class="md-nav__link">
+    1m_ipv4_udp_receive_buffer_errors
   </a>
   
 </li>
@@ -908,7 +922,7 @@
   
     <li class="md-nav__item">
       <a href="../../R/" class="md-nav__link">
-        一般问题
+        General
       </a>
     </li>
   
@@ -920,19 +934,7 @@
   
     <li class="md-nav__item">
       <a href="../../R/plot/" class="md-nav__link">
-        plot 作图
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../R/ggplot/" class="md-nav__link">
-        ggplot 作图
+        Plot
       </a>
     </li>
   
@@ -1534,6 +1536,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internet/encrypt/" class="md-nav__link">
+        加密算法
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -2035,6 +2049,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#add-virtual-memory" class="md-nav__link">
+    Add Virtual Memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#extend-disk" class="md-nav__link">
     Extend Disk
   </a>
@@ -2078,6 +2099,13 @@
         <li class="md-nav__item">
   <a href="#wifi-hotpot-1604" class="md-nav__link">
     WiFi Hotpot (16.04)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1m_ipv4_udp_receive_buffer_errors" class="md-nav__link">
+    1m_ipv4_udp_receive_buffer_errors
   </a>
   
 </li>
@@ -2430,6 +2458,35 @@ tp-smapi   <span class="o">=</span> inactive <span class="o">(</span>ThinkPad no
 sudo rm Hotspot
 </code></pre></div>
 <p>参考 <a href="https://askubuntu.com/questions/120415/how-to-remove-access-point-from-saved-list/120447">How to remove access point from saved list</a></p>
+<h2 id="add-virtual-memory">Add Virtual Memory<a class="headerlink" href="#add-virtual-memory" title="Permanent link">&para;</a></h2>
+<p>通过交换文件实现</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 创建大小为2G的文件swapfile</span>
+dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/mnt/swapfile <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">2048</span>
+<span class="c1"># 格式化</span>
+mkswap /mnt/swapfile
+<span class="c1"># 挂载</span>
+swapon /mnt/swapfile
+</code></pre></div>
+<p>注意文件应为 <code>root:root</code>，否则会提示</p>
+<blockquote>
+<p>insecure file owner 1000, 0 (root) suggested.</p>
+</blockquote>
+<p>另见 <a href="https://unix.stackexchange.com/questions/297149/how-to-resolve-the-insecure-warning-in-swapon">How to Resolve the Insecure warning in Swapon?</a></p>
+<p>为了保证开机自动加载，在 <code>/etc/fstab</code> 加入</p>
+<div class="highlight"><pre><span></span><code>/mnt/swapfile swap swap defaults <span class="m">0</span> <span class="m">0</span>
+</code></pre></div>
+<p>具体每一列的含义可以通过 <code>man fstab</code> 查看。</p>
+<p>挂载成功后就可以通过 <code>free -h</code> 查看内存情况。</p>
+<p>参考 <a href="http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">Linux下如何添加虚拟内存</a></p>
+<p>这个方法也可以解决 &ldquo;virtual memory exhausted: Cannot allocate memory&rdquo; 的问题。</p>
+<p>调整 swapiness，默认值为 60，</p>
+<div class="highlight"><pre><span></span><code>$ cat /proc/sys/vm/swappiness
+</code></pre></div>
+<p>越高表示越积极使用 swap 空间。</p>
+<p>临时性使用</p>
+<div class="highlight"><pre><span></span><code>$ sudo sysctl vm.swappiness<span class="o">=</span><span class="m">80</span>
+</code></pre></div>
+<p>参考 <a href="http://blog.itpub.net/29371470/viewspace-1250975">linux系统swappiness参数在内存与交换分区间优化</a></p>
 <h2 id="extend-disk">Extend Disk<a class="headerlink" href="#extend-disk" title="Permanent link">&para;</a></h2>
 <p>一直想扩容来着，但总是下不了决心。今天决定了，参考 google 搜索“Ubuntu 扩容”的前几条结果，便开始干了。</p>
 <ol>
@@ -2438,6 +2495,7 @@ sudo rm Hotspot
 <li>网上有人说，不要用 Gparted 对 Windows 进行压缩，而应该在 Windows 中进行压缩，可是此时已经开始了，想中断但怕造成更严重的后果，幸好最后启动 Windows 时只是多了步检查硬盘，并没有不能启动的状况。</li>
 </ol>
 <p>中间提心吊胆，好在最后顺利扩容完成。</p>
+<p>see also: <a href="https://unix.stackexchange.com/questions/120311/why-are-there-so-many-different-ways-to-measure-disk-usage">Why are there so many different ways to measure disk usage? - Unix &amp; Linux Stack Exchange</a></p>
 <h2 id="rename-portable-disk">Rename Portable Disk<a class="headerlink" href="#rename-portable-disk" title="Permanent link">&para;</a></h2>
 <p>终端输入</p>
 <div class="highlight"><pre><span></span><code>gnome-disks
@@ -2575,6 +2633,53 @@ linux-image-4.15.0-151-generic-202108071819.crash
 <li>设置密码时位数不能少于 8 位</li>
 <li>连接 WiFi 时 似乎需要 enable wifi。</li>
 </ol>
+<h2 id="1m_ipv4_udp_receive_buffer_errors">1m_ipv4_udp_receive_buffer_errors<a class="headerlink" href="#1m_ipv4_udp_receive_buffer_errors" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The raw records can be found <a href="https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-899313680">here</a>.</p>
+</div>
+<p>After replacing one of 4GB RAM with 16GB one, it throws </p>
+<blockquote>
+<p>1m_ipv4_udp_receive_buffer_errors</p>
+</blockquote>
+<p>frequently, such as</p>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/129532171-f1c108dd-f4f8-44a8-a062-96e2ae8441a3.png" /></p>
+<p>Following the instructions</p>
+<ul>
+<li><a href="https://cizixs.com/2018/01/13/linux-udp-packet-drop-debug/">linux 系统 UDP 丢包问题分析思路 | Cizixs Write Here</a></li>
+<li><a href="https://serverfault.com/questions/899364/netdata-ipv4-udp-errors">netdata ipv4 UDP errors - Server Fault</a></li>
+</ul>
+<p>but no <code>drops</code></p>
+<div class="highlight"><pre><span></span><code>wlp3s0: <span class="nv">flags</span><span class="o">=</span><span class="m">4163</span>&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="m">1500</span>
+        inet <span class="m">10</span>.13.59.193  netmask <span class="m">255</span>.255.128.0  broadcast <span class="m">10</span>.13.127.255
+        inet6 fe80::def:d34:a2c:da88  prefixlen <span class="m">64</span>  scopeid 0x20&lt;link&gt;
+        ether a4:34:d9:e8:9a:bd  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
+        RX packets <span class="m">17556713</span>  bytes <span class="m">20549547923</span> <span class="o">(</span><span class="m">20</span>.5 GB<span class="o">)</span>
+        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
+        TX packets <span class="m">14008823</span>  bytes <span class="m">17151970123</span> <span class="o">(</span><span class="m">17</span>.1 GB<span class="o">)</span>
+        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
+</code></pre></div>
+<p>then try to enlarge <code>net.core.rmem_max</code> and <code>net.core.rmem_default</code>. The current values are</p>
+<div class="highlight"><pre><span></span><code>~$ sysctl net.core <span class="p">|</span> grep mem
+net.core.optmem_max <span class="o">=</span> <span class="m">20480</span>
+net.core.rmem_default <span class="o">=</span> <span class="m">212992</span>
+net.core.rmem_max <span class="o">=</span> <span class="m">212992</span>
+net.core.wmem_default <span class="o">=</span> <span class="m">212992</span>
+net.core.wmem_max <span class="o">=</span> <span class="m">212992</span>
+</code></pre></div>
+<p>the update it via</p>
+<div class="highlight"><pre><span></span><code>~$ sudo sysctl -w net.core.rmem_default<span class="o">=</span><span class="m">1048576</span>
+net.core.rmem_default <span class="o">=</span> <span class="m">1048576</span>
+~$ sudo sysctl -w net.core.rmem_max<span class="o">=</span><span class="m">2097152</span>
+net.core.rmem_max <span class="o">=</span> <span class="m">2097152</span>
+~$ sysctl net.core <span class="p">|</span> grep mem
+net.core.optmem_max <span class="o">=</span> <span class="m">20480</span>
+net.core.rmem_default <span class="o">=</span> <span class="m">1048576</span>
+net.core.rmem_max <span class="o">=</span> <span class="m">2097152</span>
+net.core.wmem_default <span class="o">=</span> <span class="m">212992</span>
+net.core.wmem_max <span class="o">=</span> <span class="m">212992</span>
+</code></pre></div>
+<p>it seems to work since much fewer warning message of <code>1m_ipv4_udp_receive_buffer_errors</code></p>
 <h2 id="ubuntu-sftp">ubuntu 连接 sftp 服务器<a class="headerlink" href="#ubuntu-sftp" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://askubuntu.com/questions/349873/use-connect-to-server-to-connect-to-sftp">Use “Connect to Server” to connect to SFTP</a></p>
 <h2 id="ubuntu_1">Ubuntu的回收站<a class="headerlink" href="#ubuntu_1" title="Permanent link">&para;</a></h2>
@@ -2715,10 +2820,10 @@ linux-image-4.15.0-151-generic-202108071819.crash
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56a63758.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

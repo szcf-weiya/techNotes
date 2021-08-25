@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/R/plot/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
-        <title>plot 作图 - techNotes</title>
+        <title>Plot - techNotes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.be71726b.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#plot" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              plot 作图
+              Plot
             
           </span>
         </div>
@@ -709,7 +709,7 @@
   
     <li class="md-nav__item">
       <a href="../" class="md-nav__link">
-        一般问题
+        General
       </a>
     </li>
   
@@ -730,12 +730,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          plot 作图
+          Plot
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        plot 作图
+        Plot
       </a>
       
         
@@ -753,6 +753,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#base" class="md-nav__link">
+    Base
+  </a>
+  
+    <nav class="md-nav" aria-label="Base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#math-formula" class="md-nav__link">
+    math formula
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pure-figure-without-axis" class="md-nav__link">
+    pure figure without axis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smooth-curve" class="md-nav__link">
+    smooth curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#margin" class="md-nav__link">
+    margin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-panels-in-pairs" class="md-nav__link">
+    custom panels in pairs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lattice" class="md-nav__link">
     lattice
   </a>
@@ -760,30 +808,78 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    光滑曲线
+  <a href="#ggplot" class="md-nav__link">
+    ggplot
+  </a>
+  
+    <nav class="md-nav" aria-label="ggplot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-density-plots" class="md-nav__link">
+    multiple density plots
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#low-level-graphics" class="md-nav__link">
-    Low-Level Graphics
+        
+          <li class="md-nav__item">
+  <a href="#density-plots-of-some-distributions" class="md-nav__link">
+    density plots of some distributions
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    画图间距
+        
+          <li class="md-nav__item">
+  <a href="#legend-setup" class="md-nav__link">
+    legend setup
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#pairspanel" class="md-nav__link">
-    pairs中自定义panel函数
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    坐标轴标签字体大小
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    多张图片
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    绘制地图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale_fill_manual-scale_color_manual" class="md-nav__link">
+    scale_fill_manual 和 scale_color_manual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save" class="md-nav__link">
+    save
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aes_string-vs-aes" class="md-nav__link">
+    aes_string vs aes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -791,18 +887,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ggplot/" class="md-nav__link">
-        ggplot 作图
-      </a>
     </li>
   
 
@@ -1403,6 +1487,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internet/encrypt/" class="md-nav__link">
+        加密算法
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1807,6 +1903,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#base" class="md-nav__link">
+    Base
+  </a>
+  
+    <nav class="md-nav" aria-label="Base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#math-formula" class="md-nav__link">
+    math formula
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pure-figure-without-axis" class="md-nav__link">
+    pure figure without axis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smooth-curve" class="md-nav__link">
+    smooth curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#margin" class="md-nav__link">
+    margin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-panels-in-pairs" class="md-nav__link">
+    custom panels in pairs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lattice" class="md-nav__link">
     lattice
   </a>
@@ -1814,30 +1958,78 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    光滑曲线
+  <a href="#ggplot" class="md-nav__link">
+    ggplot
+  </a>
+  
+    <nav class="md-nav" aria-label="ggplot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-density-plots" class="md-nav__link">
+    multiple density plots
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#low-level-graphics" class="md-nav__link">
-    Low-Level Graphics
+        
+          <li class="md-nav__item">
+  <a href="#density-plots-of-some-distributions" class="md-nav__link">
+    density plots of some distributions
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    画图间距
+        
+          <li class="md-nav__item">
+  <a href="#legend-setup" class="md-nav__link">
+    legend setup
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#pairspanel" class="md-nav__link">
-    pairs中自定义panel函数
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    坐标轴标签字体大小
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    多张图片
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    绘制地图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale_fill_manual-scale_color_manual" class="md-nav__link">
+    scale_fill_manual 和 scale_color_manual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save" class="md-nav__link">
+    save
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aes_string-vs-aes" class="md-nav__link">
+    aes_string vs aes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1858,19 +2050,20 @@
                   </a>
                 
                 
-                <h1 id="_1">普通作图<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="lattice"><code>lattice</code><a class="headerlink" href="#lattice" title="Permanent link">&para;</a></h2>
-<p>The package can easily generate trellis graphs. A trellis graph displays the distribution of a variable or the relationship between variables, separately for each level of one or more other variables. </p>
-<p>Toy example: How do the heights of singers in the New York Choral Society vary by their vocal parts?</p>
-<h2 id="_2">光滑曲线<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span>
-<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">12</span><span class="p">,</span><span class="m">14</span><span class="p">,</span><span class="m">16</span><span class="p">,</span><span class="m">18</span><span class="p">,</span><span class="m">20</span><span class="p">)</span>
-<span class="n">lo</span> <span class="o">&lt;-</span> <span class="nf">loess</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">x</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="nf">lines</span><span class="p">(</span><span class="nf">predict</span><span class="p">(</span><span class="n">lo</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+                <h1 id="plot">Plot<a class="headerlink" href="#plot" title="Permanent link">&para;</a></h1>
+<h2 id="base">Base<a class="headerlink" href="#base" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://karolis.koncevicius.lt/posts/r_base_plotting_without_wrappers/">R base plotting without wrappers</a></li>
+</ul>
+<h3 id="math-formula">math formula<a class="headerlink" href="#math-formula" title="Permanent link">&para;</a></h3>
+<p>比如</p>
+<div class="highlight"><pre><span></span><code><span class="nf">expression</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="nf">group</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="nf">list</span><span class="p">(</span><span class="nf">hat</span><span class="p">(</span><span class="bp">F</span><span class="p">),</span><span class="bp">F</span><span class="p">),</span><span class="s">&quot;&quot;</span><span class="p">)]</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
 </code></pre></div>
-<p>参考<a href="https://stackoverflow.com/questions/3480388/how-to-fit-a-smooth-curve-to-my-data-in-r">How to fit a smooth curve to my data in R?</a></p>
-<h2 id="low-level-graphics">Low-Level Graphics<a class="headerlink" href="#low-level-graphics" title="Permanent link">&para;</a></h2>
+<p>参考</p>
+<ol>
+<li><a href="http://vis.supstat.com/2013/04/mathematical-annotation-in-r/">Mathematical Annotation in R</a></li>
+</ol>
+<h3 id="pure-figure-without-axis">pure figure without axis<a class="headerlink" href="#pure-figure-without-axis" title="Permanent link">&para;</a></h3>
 <p>Suppose I want to draw the following figure with R,</p>
 <p><img alt="" src="../low-level-plot.PNG" /></p>
 <p>At first, I try to use <code>xaxt</code> option to remove the axis, but the box still remains, just same as the <a href="https://stackoverflow.com/questions/4785657/how-to-draw-an-empty-plot">one question in the StackOverflow</a>, and I found a possible solution, directly use</p>
@@ -1894,7 +2087,15 @@
 <p>Then I realized that I should add</p>
 <div class="highlight"><pre><span></span><code><span class="nf">plot.window</span><span class="p">(</span><span class="n">xlim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">-0.1</span><span class="p">,</span> <span class="m">0.9</span><span class="p">))</span>
 </code></pre></div>
-<h2 id="_3">画图间距<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="smooth-curve">smooth curve<a class="headerlink" href="#smooth-curve" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">12</span><span class="p">,</span><span class="m">14</span><span class="p">,</span><span class="m">16</span><span class="p">,</span><span class="m">18</span><span class="p">,</span><span class="m">20</span><span class="p">)</span>
+<span class="n">lo</span> <span class="o">&lt;-</span> <span class="nf">loess</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">x</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nf">lines</span><span class="p">(</span><span class="nf">predict</span><span class="p">(</span><span class="n">lo</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</code></pre></div>
+<p>参考<a href="https://stackoverflow.com/questions/3480388/how-to-fit-a-smooth-curve-to-my-data-in-r">How to fit a smooth curve to my data in R?</a></p>
+<h3 id="margin">margin<a class="headerlink" href="#margin" title="Permanent link">&para;</a></h3>
 <p>有时通过 <code>par(mfrow=c(2,1))</code> 画图时间距过大，这可以通过 <code>mar</code> 来调节，注意到</p>
 <ul>
 <li><code>mar</code> 调节单张图的 margin</li>
@@ -1902,7 +2103,7 @@
 </ul>
 <p>参考 <a href="https://stackoverflow.com/questions/15848942/how-to-reduce-space-gap-between-multiple-graphs-in-r">how to reduce space gap between multiple graphs in R</a></p>
 <p>比如，<a href="https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6">B spline in R, C++ and Python</a></p>
-<h2 id="pairspanel">pairs中自定义panel函数<a class="headerlink" href="#pairspanel" title="Permanent link">&para;</a></h2>
+<h3 id="custom-panels-in-pairs">custom panels in pairs<a class="headerlink" href="#custom-panels-in-pairs" title="Permanent link">&para;</a></h3>
 <p>问题来自<a href="https://www.zhihu.com/question/268216627/answer/334393347">R语言绘图？ - 知乎</a></p>
 <p><img alt="" src="https://pic4.zhimg.com/v2-ad40c8c5a577f9ed3ae82dd43c7dfdcf_r.jpg" /></p>
 <div class="highlight"><pre><span></span><code><span class="n">my.lower</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="kc">...</span><span class="p">){</span>
@@ -1924,6 +2125,171 @@
 <span class="nf">pairs</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span> <span class="n">lower.panel</span> <span class="o">=</span><span class="n">my.lower</span><span class="p">,</span> <span class="n">upper.panel</span> <span class="o">=</span> <span class="n">my.upper</span><span class="p">)</span>
 </code></pre></div>
 <p>参考 <a href="https://stackoverflow.com/questions/15625510/different-data-in-upper-and-lower-panel-of-scatterplot-matrix">Different data in upper and lower panel of scatterplot matrix</a></p>
+<h2 id="lattice">lattice<a class="headerlink" href="#lattice" title="Permanent link">&para;</a></h2>
+<p>The package can easily generate trellis graphs. A trellis graph displays the distribution of a variable or the relationship between variables, separately for each level of one or more other variables. </p>
+<p>A thorough tutorial refers to <a href="https://esl.hohoweiya.xyz/rmds/lattice.html">Reproduce Figures with Lattice &ndash; ESL CN</a></p>
+<h2 id="ggplot">ggplot<a class="headerlink" href="#ggplot" title="Permanent link">&para;</a></h2>
+<h3 id="multiple-density-plots">multiple density plots<a class="headerlink" href="#multiple-density-plots" title="Permanent link">&para;</a></h3>
+<p>参考<a href="https://www.tuicool.com/articles/3aUnem7">使用ggplot2同时绘制多个密度图</a></p>
+<div class="highlight"><pre><span></span><code><span class="n">plots</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">train</span><span class="p">)){</span> 
+    <span class="n">plots</span><span class="p">[[</span><span class="n">i</span><span class="p">]]</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">train</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">geom_density</span><span class="p">(</span><span class="nf">aes_string</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&#39;is_black&#39;</span><span class="p">),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">show.legend</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span> 
+<span class="p">}</span>
+<span class="nf">plot_grid</span><span class="p">(</span><span class="n">plotlist</span> <span class="o">=</span> <span class="n">plots</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="density-plots-of-some-distributions">density plots of some distributions<a class="headerlink" href="#density-plots-of-some-distributions" title="Permanent link">&para;</a></h3>
+<p>adapted from <a href="http://www.cnblogs.com/wwxbi/p/6142410.html">ggplot2绘制概率密度图</a></p>
+<p>Take the Weibull distribution as an example, </p>
+<div>
+<div class="MathJax_Preview">
+f(x) = \begin{cases}
+\frac k\lambda \left(\frac x\lambda\right)^{k-1}e^{-(x/\lambda)^k} &amp; x\ge 0\\
+0 &amp; x &lt; 0
+\end{cases}
+</div>
+<script type="math/tex; mode=display">
+f(x) = \begin{cases}
+\frac k\lambda \left(\frac x\lambda\right)^{k-1}e^{-(x/\lambda)^k} & x\ge 0\\
+0 & x < 0
+\end{cases}
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">\lambda &gt; 0</span><script type="math/tex">\lambda > 0</script></span> is the scale parameter, and <span><span class="MathJax_Preview">k &gt; 0</span><script type="math/tex">k > 0</script></span> is the shape parameter. And</p>
+<ul>
+<li>if <span><span class="MathJax_Preview">k=1</span><script type="math/tex">k=1</script></span>, it becomes to the exponential distribution</li>
+<li>if <span><span class="MathJax_Preview">k=2</span><script type="math/tex">k=2</script></span>, it becomes to the Rayleigh distribution.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="n">length.out</span><span class="o">=</span><span class="m">10000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">dweibull</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">log</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">d</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_line</span><span class="p">(</span><span class="n">col</span> <span class="o">=</span> <span class="s">&quot;orange&quot;</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Density of Weibull distribution&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../weibull-pdf.png" style="height:40%;width:40%" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">h</span> <span class="o">=</span> <span class="nf">rweibull</span><span class="p">(</span><span class="m">10000</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">h</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_histogram</span><span class="p">(</span><span class="n">binwidth</span><span class="o">=</span><span class="m">0.01</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Histogram of Weibull distribution&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../weibull-hist.png" style="height:40%;width:40%" /></p>
+<div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">h</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_density</span><span class="p">(</span><span class="n">col</span> <span class="o">=</span> <span class="s">&quot;green&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><img alt="" src="../weibull-estpdf.png" style="height:40%;width:40%" /></p>
+<div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">h</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_line</span><span class="p">(</span><span class="n">stat</span> <span class="o">=</span> <span class="s">&quot;density&quot;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>A minor difference is that here is a horizontal line in the above estimated density.</p>
+<p><img alt="" src="../weibull-estpdf2.png" style="height:40%;width:40%" /></p>
+<p>Also refer to <a href="http://www.cookbook-r.com/Graphs/Plotting_distributions_(ggplot2)/">Plotting distributions (ggplot2)</a></p>
+<h3 id="legend-setup">legend setup<a class="headerlink" href="#legend-setup" title="Permanent link">&para;</a></h3>
+<p>参考<a href="http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/">Legends (ggplot2)</a></p>
+<h4 id="_1">默认情形<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="n">bp</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">PlantGrowth</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">group</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_boxplot</span><span class="p">()</span>
+<span class="n">bp</span>
+</code></pre></div>
+<h4 id="_2">自定义图例的顺序<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>首先移除掉默认图例，有三种方式实现：
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove legend for a particular aesthetic (fill)</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+
+<span class="c1"># It can also be done when specifying the scale</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">scale_fill_discrete</span><span class="p">(</span><span class="n">guide</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+
+<span class="c1"># This removes all legends</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<p>再改变默认顺序</p>
+<div class="highlight"><pre><span></span><code><span class="n">bp</span> <span class="o">+</span> <span class="nf">scale_fill_discrete</span><span class="p">(</span><span class="n">breaks</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;trt1&quot;</span><span class="p">,</span><span class="s">&quot;ctrl&quot;</span><span class="p">,</span><span class="s">&quot;trt2&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h4 id="_3">颠倒图例的顺序<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># These two methods are equivalent:</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">scale_fill_discrete</span><span class="p">(</span><span class="n">guide</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
+
+<span class="c1"># You can also modify the scale directly:</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">scale_fill_discrete</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="nf">rev</span><span class="p">(</span><span class="nf">levels</span><span class="p">(</span><span class="n">PlantGrowth</span><span class="o">$</span><span class="n">group</span><span class="p">)))</span>
+</code></pre></div>
+<h4 id="_4">隐藏图例标题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove title for fill legend</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="nf">guide_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="kc">NULL</span><span class="p">))</span>
+
+<span class="c1"># Remove title for all legends</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span><span class="o">=</span><span class="nf">element_blank</span><span class="p">())</span>
+</code></pre></div>
+<h4 id="_5">自定义图例的标题及名称<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>两种方式，一种
+另一种修改数据集</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h4 id="_6">图例的整体形状<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Title appearance</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="m">16</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">))</span>
+
+<span class="c1"># Label appearance</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">16</span><span class="p">,</span> <span class="n">face</span> <span class="o">=</span> <span class="s">&quot;bold&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p>图例盒子</p>
+<div class="highlight"><pre><span></span><code><span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.background</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">())</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.background</span> <span class="o">=</span> <span class="nf">element_rect</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s">&quot;gray90&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">.</span><span class="m">5</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dotted&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p>图例位置</p>
+<div class="highlight"><pre><span></span><code><span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s">&quot;top&quot;</span><span class="p">)</span>
+
+<span class="c1"># Position legend in graph, where x,y is 0,0 (bottom left) to 1,1 (top right)</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">.</span><span class="m">5</span><span class="p">,</span> <span class="n">.</span><span class="m">5</span><span class="p">))</span>
+
+<span class="c1"># Set the &quot;anchoring point&quot; of the legend (bottom-left is 0,0; top-right is 1,1)</span>
+<span class="c1"># Put bottom-left corner of legend box in bottom-left corner of graph</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.justification</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">),</span> <span class="n">legend.position</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">))</span>
+
+<span class="c1"># Put bottom-right corner of legend box in bottom-right corner of graph</span>
+<span class="n">bp</span> <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">legend.justification</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">),</span> <span class="n">legend.position</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">))</span>
+</code></pre></div>
+<h4 id="slashes">隐藏图例的slashes<a class="headerlink" href="#slashes" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># No outline</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">PlantGrowth</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">group</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_bar</span><span class="p">()</span>
+
+<span class="c1"># Add outline, but slashes appear in legend</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">PlantGrowth</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">group</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_bar</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="c1"># A hack to hide the slashes: first graph the bars with no outline and add the legend,</span>
+<span class="c1"># then graph the bars again with outline, but with a blank legend.</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">PlantGrowth</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">group</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_bar</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">geom_bar</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="n">show.legend</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="_7">坐标轴标签字体大小<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>参考<a href="https://stackoverflow.com/questions/14363804/size-of-labels-for-x-axis-and-y-axis-ggplot-in-r">Size of labels for x-axis and y-axis ggplot in R</a></p>
+<h3 id="_8">多张图片<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><code>par(mfrow=c(1,2))</code>不起作用，要用到 <code>gridExtra</code> 包，如</p>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">gridExtra</span><span class="p">)</span>
+<span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">qplot</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="n">plot2</span> <span class="o">&lt;-</span> <span class="nf">qplot</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="nf">grid.arrange</span><span class="p">(</span><span class="n">plot1</span><span class="p">,</span> <span class="n">plot2</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</code></pre></div>
+<p>参考<a href="https://stackoverflow.com/questions/1249548/side-by-side-plots-with-ggplot2">Side-by-side plots with ggplot2</a></p>
+<h3 id="_9">绘制地图<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>参考</p>
+<ol>
+<li><a href="http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html">Making Maps with R</a></li>
+</ol>
+<h3 id="scale_fill_manual-scale_color_manual"><code>scale_fill_manual</code> 和 <code>scale_color_manual</code><a class="headerlink" href="#scale_fill_manual-scale_color_manual" title="Permanent link">&para;</a></h3>
+<p>更改颜色命令为</p>
+<div class="highlight"><pre><span></span><code><span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="save">save<a class="headerlink" href="#save" title="Permanent link">&para;</a></h3>
+<p>NOT <code>png()...dev.off()</code>, use</p>
+<div class="highlight"><pre><span></span><code><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;sth.eps&quot;</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="s">&quot;eps&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="m">9</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="aes_string-vs-aes"><code>aes_string</code> vs <code>aes</code><a class="headerlink" href="#aes_string-vs-aes" title="Permanent link">&para;</a></h3>
+<p>在重复绘图时，似乎是作用域的缘故，有时 <code>aes</code> 只能保留最后一个，此时需要用 <code>aes_string</code>.</p>
+<p>参考 <a href="https://www.biostars.org/p/234142/">Question: Continuously add lines to ggplot with for loop</a></p>
                 
               
               
@@ -1948,7 +2314,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: 一般问题" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: General" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1957,20 +2323,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              一般问题
+              General
             </div>
           </div>
         </a>
       
       
         
-        <a href="../ggplot/" class="md-footer__link md-footer__link--next" aria-label="Next: ggplot 作图" rel="next">
+        <a href="../legend_from_zhihu/" class="md-footer__link md-footer__link--next" aria-label="Next: 案例分析" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              ggplot 作图
+              案例分析
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -2058,10 +2424,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56a63758.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -693,13 +693,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-virtual-memeory-via-swapfile" class="md-nav__link">
-    add virtual memeory via swapfile
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gpg-error" class="md-nav__link">
     GPG error
   </a>
@@ -716,13 +709,6 @@
         <li class="md-nav__item">
   <a href="#make-the-software-searchable" class="md-nav__link">
     make the software searchable
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#md5" class="md-nav__link">
-    MD5
   </a>
   
 </li>
@@ -1032,7 +1018,7 @@
   
     <li class="md-nav__item">
       <a href="../R/" class="md-nav__link">
-        一般问题
+        General
       </a>
     </li>
   
@@ -1044,19 +1030,7 @@
   
     <li class="md-nav__item">
       <a href="../R/plot/" class="md-nav__link">
-        plot 作图
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../R/ggplot/" class="md-nav__link">
-        ggplot 作图
+        Plot
       </a>
     </li>
   
@@ -1653,6 +1627,18 @@
     <li class="md-nav__item">
       <a href="../Internet/ipv6/" class="md-nav__link">
         IPv6
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Internet/encrypt/" class="md-nav__link">
+        加密算法
       </a>
     </li>
   
@@ -2271,13 +2257,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-virtual-memeory-via-swapfile" class="md-nav__link">
-    add virtual memeory via swapfile
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gpg-error" class="md-nav__link">
     GPG error
   </a>
@@ -2294,13 +2273,6 @@
         <li class="md-nav__item">
   <a href="#make-the-software-searchable" class="md-nav__link">
     make the software searchable
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#md5" class="md-nav__link">
-    MD5
   </a>
   
 </li>
@@ -2785,35 +2757,6 @@ machine git.heroku.com
 <p>最后这个问题是直接把 .bashrc 中所有的代理去掉了.</p>
 <h2 id="possible-errors-using-apt-get">possible errors using <code>apt-get</code><a class="headerlink" href="#possible-errors-using-apt-get" title="Permanent link">&para;</a></h2>
 <p><a href="https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa">How do I resolve unmet dependencies after adding a PPA?</a></p>
-<h2 id="add-virtual-memeory-via-swapfile">add virtual memeory via swapfile<a class="headerlink" href="#add-virtual-memeory-via-swapfile" title="Permanent link">&para;</a></h2>
-<p>通过交换文件实现</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 创建大小为2G的文件swapfile</span>
-dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/mnt/swapfile <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">2048</span>
-<span class="c1"># 格式化</span>
-mkswap /mnt/swapfile
-<span class="c1"># 挂载</span>
-swapon /mnt/swapfile
-</code></pre></div>
-<p>注意文件应为 <code>root:root</code>，否则会提示</p>
-<blockquote>
-<p>insecure file owner 1000, 0 (root) suggested.</p>
-</blockquote>
-<p>另见 <a href="https://unix.stackexchange.com/questions/297149/how-to-resolve-the-insecure-warning-in-swapon">How to Resolve the Insecure warning in Swapon?</a></p>
-<p>为了保证开机自动加载，在 <code>/etc/fstab</code> 加入</p>
-<div class="highlight"><pre><span></span><code>/mnt/swapfile swap swap defaults <span class="m">0</span> <span class="m">0</span>
-</code></pre></div>
-<p>具体每一列的含义可以通过 <code>man fstab</code> 查看。</p>
-<p>挂载成功后就可以通过 <code>free -h</code> 查看内存情况。</p>
-<p>参考 <a href="http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">Linux下如何添加虚拟内存</a></p>
-<p>这个方法也可以解决 &ldquo;virtual memory exhausted: Cannot allocate memory&rdquo; 的问题。</p>
-<p>调整 swapiness，默认值为 60，</p>
-<div class="highlight"><pre><span></span><code>$ cat /proc/sys/vm/swappiness
-</code></pre></div>
-<p>越高表示越积极使用 swap 空间。</p>
-<p>临时性使用</p>
-<div class="highlight"><pre><span></span><code>$ sudo sysctl vm.swappiness<span class="o">=</span><span class="m">80</span>
-</code></pre></div>
-<p>参考 <a href="http://blog.itpub.net/29371470/viewspace-1250975">linux系统swappiness参数在内存与交换分区间优化</a></p>
 <h2 id="gpg-error">GPG error<a class="headerlink" href="#gpg-error" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$ sudo apt-get update
 W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/ InRelease: The following signatures were invalid: EXPKEYSIG 51716619E084DAB9 Michael Rutter &lt;marutter@gmail.com&gt;
@@ -2855,27 +2798,6 @@ W: Some index files failed to download. They have been ignored, or old ones used
 <div class="highlight"><pre><span></span><code>cp xx.destop ~/.local/share/applications
 </code></pre></div>
 <p>otherwise， create a <code>.desktop</code> file. More details refer to <a href="https://askubuntu.com/questions/80013/how-to-pin-eclipse-to-the-unity-launcher">How to pin Eclipse to the Unity launcher?</a> and <a href="https://askubuntu.com/questions/285951/how-to-add-programs-to-the-launcher-search">How to add programs to the launcher (search)?</a></p>
-<h2 id="md5">MD5<a class="headerlink" href="#md5" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>~$ <span class="nb">printf</span> <span class="s2">&quot;hello\n&quot;</span> <span class="p">|</span> md5sum
-b1946ac92492d2347c6235b4d2611184  -
-~$ <span class="nb">printf</span> <span class="s2">&quot;hello&quot;</span> <span class="p">|</span> md5sum
-5d41402abc4b2a76b9719d911017c592  -
-~$ <span class="nb">echo</span> -n <span class="s2">&quot;hello&quot;</span> <span class="p">|</span> md5sum
-5d41402abc4b2a76b9719d911017c592  -
-~$ <span class="nb">echo</span> <span class="s2">&quot;hello&quot;</span> <span class="p">|</span> md5sum
-b1946ac92492d2347c6235b4d2611184  -
-</code></pre></div>
-<p>where <code>-n</code> does not output the trailing newline <code>\n</code>, but </p>
-<div class="highlight"><pre><span></span><code>~$ <span class="nb">echo</span> -n <span class="s2">&quot;hello\n&quot;</span> <span class="p">|</span> md5sum
-20e2ad363e7486d9351ee2ea407e3200  -
-~$ <span class="nb">echo</span> -n <span class="s2">&quot;hello\n&quot;</span>
-hello<span class="se">\n</span>~$
-</code></pre></div>
-<p>other materals releated to MD5</p>
-<ul>
-<li><a href="https://zhuanlan.zhihu.com/p/26592209">三分钟学习 MD5</a></li>
-<li><a href="https://www.zhihu.com/question/22311285/answer/20960705">为什么现在网上有很多软件可以破解MD5，但MD5还是很流行？</a></li>
-</ul>
 <h2 id="you-have-new-mail">You have new mail<a class="headerlink" href="#you-have-new-mail" title="Permanent link">&para;</a></h2>
 <p>Here is a message when I login in to the Office PC,</p>
 <div class="highlight"><pre><span></span><code>You have new mail.
@@ -3110,10 +3032,10 @@ Last login: Thu May <span class="m">20</span> <span class="m">13</span>:29:14 <s
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       

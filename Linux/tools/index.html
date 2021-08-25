@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/tools/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.be71726b.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -566,6 +566,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sum-of-a-column-of-numbers" class="md-nav__link">
+    sum of a column of numbers
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -657,6 +664,13 @@
         <li class="md-nav__item">
   <a href="#date" class="md-nav__link">
     date
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#du" class="md-nav__link">
+    du
   </a>
   
 </li>
@@ -1228,7 +1242,7 @@
   
     <li class="md-nav__item">
       <a href="../../R/" class="md-nav__link">
-        一般问题
+        General
       </a>
     </li>
   
@@ -1240,19 +1254,7 @@
   
     <li class="md-nav__item">
       <a href="../../R/plot/" class="md-nav__link">
-        plot 作图
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../R/ggplot/" class="md-nav__link">
-        ggplot 作图
+        Plot
       </a>
     </li>
   
@@ -1854,6 +1856,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Internet/encrypt/" class="md-nav__link">
+        加密算法
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -2279,6 +2293,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sum-of-a-column-of-numbers" class="md-nav__link">
+    sum of a column of numbers
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2370,6 +2391,13 @@
         <li class="md-nav__item">
   <a href="#date" class="md-nav__link">
     date
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#du" class="md-nav__link">
+    du
   </a>
   
 </li>
@@ -2826,6 +2854,10 @@ d
 <div class="highlight"><pre><span></span><code>$ awk <span class="s1">&#39;FNR==NR{wanted[$0]; next} FNR in wanted&#39;</span> lines.txt test.md
 </code></pre></div>
 <p>first came across in <a href="https://stackoverflow.com/a/26672005">selecting a large number of (specific) rows in file - Stack Overflow</a>, but it used <code>wanted[$0]++</code>, which does not make differences.</p>
+<h3 id="sum-of-a-column-of-numbers">sum of a column of numbers<a class="headerlink" href="#sum-of-a-column-of-numbers" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{s+=$1} END {print $s}&#39;</span> data.txt
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/3096259/bash-command-to-sum-a-column-of-numbers">Bash command to sum a column of numbers - Stack Overflow</a> for other approaches.</p>
 <h2 id="column"><code>column</code><a class="headerlink" href="#column" title="Permanent link">&para;</a></h2>
 <p>display the csv beautifully,</p>
 <div class="highlight"><pre><span></span><code>$ head file1.txt <span class="p">|</span> column -s, -t
@@ -2952,6 +2984,10 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 <li>条件表达式要放在方括号之间，并且要有空格, from <a href="https://www.runoob.com/linux/linux-shell-basic-operators.html">Shell 基本运算符</a></li>
 </ul>
 <p>refer to <a href="https://unix.stackexchange.com/questions/375911/how-to-compare-two-time-stamps">How to compare two time stamps?</a></p>
+<h2 id="du"><code>du</code><a class="headerlink" href="#du" title="Permanent link">&para;</a></h2>
+<ul>
+<li>list size of subdirectories/files: <code>du -shc *</code>, where <code>-c</code> outputs the total</li>
+</ul>
 <h2 id="echo"><code>echo</code><a class="headerlink" href="#echo" title="Permanent link">&para;</a></h2>
 <h3 id="string-started-with-">string started with <code>-</code><a class="headerlink" href="#string-started-with-" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ <span class="nv">a</span><span class="o">=</span><span class="s2">&quot;-n 1&quot;</span>
@@ -3624,10 +3660,10 @@ scp_to_chpc <span class="o">()</span>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56a63758.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/TeX/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -705,7 +705,7 @@
   
     <li class="md-nav__item">
       <a href="../R/" class="md-nav__link">
-        一般问题
+        General
       </a>
     </li>
   
@@ -717,19 +717,7 @@
   
     <li class="md-nav__item">
       <a href="../R/plot/" class="md-nav__link">
-        plot 作图
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../R/ggplot/" class="md-nav__link">
-        ggplot 作图
+        Plot
       </a>
     </li>
   
@@ -1633,7 +1621,7 @@
       
         <li class="md-nav__item">
   <a href="#resizebox" class="md-nav__link">
-    图片缩放 resizebox
+    resizebox
   </a>
   
 </li>
@@ -1869,6 +1857,18 @@
     <li class="md-nav__item">
       <a href="../Internet/ipv6/" class="md-nav__link">
         IPv6
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Internet/encrypt/" class="md-nav__link">
+        加密算法
       </a>
     </li>
   
@@ -2771,7 +2771,7 @@
       
         <li class="md-nav__item">
   <a href="#resizebox" class="md-nav__link">
-    图片缩放 resizebox
+    resizebox
   </a>
   
 </li>
@@ -3332,12 +3332,26 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 <li>with <code>\citet*</code>, <code>\citep*</code>, the citation would be full author list.</li>
 </ul>
 <p>For <code>biblatex</code>, seems that we can set the global argument <code>maxcitenames</code> to control the number of author in the citation, such as <a href="https://tex.stackexchange.com/questions/175801/only-display-all-authors-of-multi-author-works-the-first-time-a-citation-is-us">only display all authors, of multi-author works, the first time a citation is used with biblatex</a></p>
-<h2 id="resizebox">图片缩放 <code>resizebox</code><a class="headerlink" href="#resizebox" title="Permanent link">&para;</a></h2>
+<h2 id="resizebox"><code>resizebox</code><a class="headerlink" href="#resizebox" title="Permanent link">&para;</a></h2>
+<p>the basic grammar is</p>
+<div class="highlight"><pre><span></span><code><span class="k">\resizebox</span><span class="nb">{</span><span class="k">\textwidth</span><span class="nb">}{</span>!<span class="nb">}{</span>
+  <span class="c">%</span>
+<span class="nb">}</span>
+</code></pre></div>
+<p>it works for images and tables</p>
 <blockquote>
 <p>For rescaling in general you can use a <code>resizebox</code> (from the <code>graphicx</code> package), which also works for <code>tikzpicture</code>. The first argument is the width, the second the height, or <code>!</code> to scale proportionally.</p>
 <p>source: <a href="https://tex.stackexchange.com/a/363884/">@Marijn</a></p>
 </blockquote>
-<p>and application in <a href="https://tex.stackexchange.com/questions/218378/forcing-subfigures-to-have-same-height-and-take-overall-x-of-linewidth-in-latex">Forcing subfigures to have same height and take overall X% of linewidth in LaTeX</a></p>
+<p>and application in </p>
+<ul>
+<li><a href="https://tex.stackexchange.com/questions/218378/forcing-subfigures-to-have-same-height-and-take-overall-x-of-linewidth-in-latex">Forcing subfigures to have same height and take overall X% of linewidth in LaTeX</a></li>
+<li><a href="https://tex.stackexchange.com/questions/10863/is-there-a-way-to-slightly-shrink-a-table-including-font-size-to-fit-within-th">Is there a way to slightly shrink a table, including font size, to fit within the column boundaries? - TeX - LaTeX Stack Exchange</a></li>
+</ul>
+<p>My private examples:</p>
+<ul>
+<li><a href="https://github.com/szcf-weiya/Cell-Video/blob/d7725152fc5b5243d74d756f9db625e4f0e3d886/report/technical-report2.tex#L1406-L1412">in table</a></li>
+</ul>
 <h2 id="make-a-love-heart">Make a love heart<a class="headerlink" href="#make-a-love-heart" title="Permanent link">&para;</a></h2>
 <ul>
 <li>by equation:</li>
@@ -3479,10 +3493,10 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
