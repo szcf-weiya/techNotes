@@ -539,55 +539,6 @@ machine git.heroku.com
 
 [How do I resolve unmet dependencies after adding a PPA?](https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa)
 
-## add virtual memeory via swapfile
-
-通过交换文件实现
-
-```bash
-# 创建大小为2G的文件swapfile
-dd if=/dev/zero of=/mnt/swapfile bs=1M count=2048
-# 格式化
-mkswap /mnt/swapfile
-# 挂载
-swapon /mnt/swapfile
-```
-
-注意文件应为 `root:root`，否则会提示
-
-> insecure file owner 1000, 0 (root) suggested.
-
-另见 [How to Resolve the Insecure warning in Swapon?](https://unix.stackexchange.com/questions/297149/how-to-resolve-the-insecure-warning-in-swapon)
-
-为了保证开机自动加载，在 `/etc/fstab` 加入
-
-```bash
-/mnt/swapfile swap swap defaults 0 0
-```
-
-具体每一列的含义可以通过 `man fstab` 查看。
-
-挂载成功后就可以通过 `free -h` 查看内存情况。
-
-参考 [Linux下如何添加虚拟内存](http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/)
-
-这个方法也可以解决 "virtual memory exhausted: Cannot allocate memory" 的问题。
-
-调整 swapiness，默认值为 60，
-
-```bash
-$ cat /proc/sys/vm/swappiness
-```
-
-越高表示越积极使用 swap 空间。
-
-临时性使用
-
-```bash
-$ sudo sysctl vm.swappiness=80
-```
-
-参考 [linux系统swappiness参数在内存与交换分区间优化](http://blog.itpub.net/29371470/viewspace-1250975)
-
 ## GPG error
 
 ```bash
@@ -652,33 +603,6 @@ cp xx.destop ~/.local/share/applications
 ```
 
 otherwise， create a `.desktop` file. More details refer to [How to pin Eclipse to the Unity launcher?](https://askubuntu.com/questions/80013/how-to-pin-eclipse-to-the-unity-launcher) and [How to add programs to the launcher (search)?](https://askubuntu.com/questions/285951/how-to-add-programs-to-the-launcher-search)
-
-## MD5
-
-```bash
-~$ printf "hello\n" | md5sum
-b1946ac92492d2347c6235b4d2611184  -
-~$ printf "hello" | md5sum
-5d41402abc4b2a76b9719d911017c592  -
-~$ echo -n "hello" | md5sum
-5d41402abc4b2a76b9719d911017c592  -
-~$ echo "hello" | md5sum
-b1946ac92492d2347c6235b4d2611184  -
-```
-
-where `-n` does not output the trailing newline `\n`, but 
-
-```bash
-~$ echo -n "hello\n" | md5sum
-20e2ad363e7486d9351ee2ea407e3200  -
-~$ echo -n "hello\n"
-hello\n~$
-```
-
-other materals releated to MD5
-
-- [三分钟学习 MD5](https://zhuanlan.zhihu.com/p/26592209)
-- [为什么现在网上有很多软件可以破解MD5，但MD5还是很流行？](https://www.zhihu.com/question/22311285/answer/20960705)
 
 ## You have new mail
 

@@ -1242,6 +1242,9 @@ kill the process of wechat, and then restart wechat, still not work
 
 it works! refer to [Ubuntu forum: Cant reboot wine](https://ubuntuforums.org/showthread.php?t=1451908)
 
+为了保留之前的所有设定及历史聊天记录，选择文件至 `/media/weiya/Seagate/WeChat`，但不要精确至 `/media/weiya/Seagate/WeChat/WeChat Files`
+
+
 ### 窗口轮廓阴影
 
 当从微信切换到其他软件时，会留下一个窗口轮廓阴影。再一次感叹 google 的强大，本来这个问题我都不知道怎么搜索，但只给了 “wine wechat” 和 “窗口轮廓” 这两个关键词后，就找到了两种解决方案：

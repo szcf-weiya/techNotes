@@ -18,9 +18,8 @@ nav:
   - StatProgramming:
     - Comparisons: comparisons/stat.md
     - R:
-      - 一般问题: R/index.md
-      - plot 作图: R/plot.md
-      - ggplot 作图: R/ggplot.md
+      - General: R/index.md
+      - Plot: R/plot.md
       - 案例分析: R/legend_from_zhihu.md
       - 源码安装 RMySQL: R/install-notes-for-rmysql.md
       - new sample function (v3.6.0+): R/sample.md
@@ -60,6 +59,7 @@ nav:
     - 一般问题: Internet/index.md
     - 访问内网: Internet/sci-int.md
     - IPv6: Internet/ipv6.md
+    - 加密算法: Internet/encrypt.md
   - Development:
     - Autotools: autotools/index.md
     - Docker: dev/docker.md

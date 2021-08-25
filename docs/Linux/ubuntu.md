@@ -396,6 +396,56 @@ sudo rm Hotspot
 
 参考 [How to remove access point from saved list](https://askubuntu.com/questions/120415/how-to-remove-access-point-from-saved-list/120447)
 
+## Add Virtual Memory
+
+通过交换文件实现
+
+```bash
+# 创建大小为2G的文件swapfile
+dd if=/dev/zero of=/mnt/swapfile bs=1M count=2048
+# 格式化
+mkswap /mnt/swapfile
+# 挂载
+swapon /mnt/swapfile
+```
+
+注意文件应为 `root:root`，否则会提示
+
+> insecure file owner 1000, 0 (root) suggested.
+
+另见 [How to Resolve the Insecure warning in Swapon?](https://unix.stackexchange.com/questions/297149/how-to-resolve-the-insecure-warning-in-swapon)
+
+为了保证开机自动加载，在 `/etc/fstab` 加入
+
+```bash
+/mnt/swapfile swap swap defaults 0 0
+```
+
+具体每一列的含义可以通过 `man fstab` 查看。
+
+挂载成功后就可以通过 `free -h` 查看内存情况。
+
+参考 [Linux下如何添加虚拟内存](http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/)
+
+这个方法也可以解决 "virtual memory exhausted: Cannot allocate memory" 的问题。
+
+调整 swapiness，默认值为 60，
+
+```bash
+$ cat /proc/sys/vm/swappiness
+```
+
+越高表示越积极使用 swap 空间。
+
+临时性使用
+
+```bash
+$ sudo sysctl vm.swappiness=80
+```
+
+参考 [linux系统swappiness参数在内存与交换分区间优化](http://blog.itpub.net/29371470/viewspace-1250975)
+
+
 ## Extend Disk
 
 一直想扩容来着，但总是下不了决心。今天决定了，参考 google 搜索“Ubuntu 扩容”的前几条结果，便开始干了。
@@ -405,6 +455,8 @@ sudo rm Hotspot
 3. 网上有人说，不要用 Gparted 对 Windows 进行压缩，而应该在 Windows 中进行压缩，可是此时已经开始了，想中断但怕造成更严重的后果，幸好最后启动 Windows 时只是多了步检查硬盘，并没有不能启动的状况。
 
 中间提心吊胆，好在最后顺利扩容完成。
+
+see also: [Why are there so many different ways to measure disk usage? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/120311/why-are-there-so-many-different-ways-to-measure-disk-usage)
 
 ## Rename Portable Disk
 
@@ -600,6 +652,65 @@ Refer to
 1. 选择 `mode` 时，直接选择 `hotpot` 即可，后面也无需更改文件
 2. 设置密码时位数不能少于 8 位
 3. 连接 WiFi 时 似乎需要 enable wifi。
+
+## 1m_ipv4_udp_receive_buffer_errors
+
+!!! info
+    The raw records can be found [here](https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-899313680).
+
+After replacing one of 4GB RAM with 16GB one, it throws 
+
+> 1m_ipv4_udp_receive_buffer_errors
+
+frequently, such as
+
+![](https://user-images.githubusercontent.com/13688320/129532171-f1c108dd-f4f8-44a8-a062-96e2ae8441a3.png)
+
+Following the instructions
+
+- [linux 系统 UDP 丢包问题分析思路 | Cizixs Write Here](https://cizixs.com/2018/01/13/linux-udp-packet-drop-debug/)
+- [netdata ipv4 UDP errors - Server Fault](https://serverfault.com/questions/899364/netdata-ipv4-udp-errors)
+
+but no `drops`
+
+```bash
+wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.13.59.193  netmask 255.255.128.0  broadcast 10.13.127.255
+        inet6 fe80::def:d34:a2c:da88  prefixlen 64  scopeid 0x20<link>
+        ether a4:34:d9:e8:9a:bd  txqueuelen 1000  (Ethernet)
+        RX packets 17556713  bytes 20549547923 (20.5 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 14008823  bytes 17151970123 (17.1 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+then try to enlarge `net.core.rmem_max` and `net.core.rmem_default`. The current values are
+
+```bash
+~$ sysctl net.core | grep mem
+net.core.optmem_max = 20480
+net.core.rmem_default = 212992
+net.core.rmem_max = 212992
+net.core.wmem_default = 212992
+net.core.wmem_max = 212992
+```
+
+the update it via
+
+```bash
+~$ sudo sysctl -w net.core.rmem_default=1048576
+net.core.rmem_default = 1048576
+~$ sudo sysctl -w net.core.rmem_max=2097152
+net.core.rmem_max = 2097152
+~$ sysctl net.core | grep mem
+net.core.optmem_max = 20480
+net.core.rmem_default = 1048576
+net.core.rmem_max = 2097152
+net.core.wmem_default = 212992
+net.core.wmem_max = 212992
+```
+
+it seems to work since much fewer warning message of `1m_ipv4_udp_receive_buffer_errors`
 
 ## ubuntu 连接 sftp 服务器
 

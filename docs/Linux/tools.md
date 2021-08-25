@@ -99,6 +99,14 @@ $ awk 'FNR==NR{wanted[$0]; next} FNR in wanted' lines.txt test.md
 
 first came across in [selecting a large number of (specific) rows in file - Stack Overflow](https://stackoverflow.com/a/26672005), but it used `wanted[$0]++`, which does not make differences.
 
+### sum of a column of numbers
+
+```bash
+awk '{s+=$1} END {print $s}' data.txt
+```
+
+refer to [Bash command to sum a column of numbers - Stack Overflow](https://stackoverflow.com/questions/3096259/bash-command-to-sum-a-column-of-numbers) for other approaches.
+
 ## `column`
 
 display the csv beautifully,
@@ -301,6 +309,10 @@ where
 - 条件表达式要放在方括号之间，并且要有空格, from [Shell 基本运算符](https://www.runoob.com/linux/linux-shell-basic-operators.html)
 
 refer to [How to compare two time stamps?](https://unix.stackexchange.com/questions/375911/how-to-compare-two-time-stamps)
+
+## `du`
+
+- list size of subdirectories/files: `du -shc *`, where `-c` outputs the total
 
 ## `echo`
 

@@ -11,6 +11,7 @@ LANG | Julia | R | Python | Others
 [check if substring](../../julia/#check-if-substring) | `occursin()` | | `in` |
 [sum an array along row](../../julia/#dims1) | `dims=1` | `margin=2` | `axis=0` | 
 [read image](../../python/opencv/#read-image) | `Images::load()` | | `cv2.imread()`/`skimage.io.imread()` |`imread()` (Matlab)
+[write image](../../python/opencv/#read-image) | `save()` | | `cv2.imwrite()` | 
 [`sort` and `argsort`](../../R/#sort-rank-order) | `sort, sortperm` | `sort(), order()` | `sorted(), np.argsort()` | 
 [Jupyter kernels](../../python/#different-kernels) | `IJulia` | `IRkernel` | `ipykernel` | 
 [too many open figures](../../julia/#gr-too-many-open-files) | `inline` | | `rcParams` | 

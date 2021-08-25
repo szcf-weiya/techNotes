@@ -1,3 +1,7 @@
+## 2021.08.25
+
+- rules for success: "There are two rules for success: 1. Never tell everything you know. --Roger H. Lincoln" [:link:](https://oliveole.wordpress.com/2016/01/28/rules-to-success/)
+
 ## 2021.08.24
 
 - As someone who didn't care much about distributed ML training, he followed the research **peripherally (次要地，外围地)** without getting into the details.

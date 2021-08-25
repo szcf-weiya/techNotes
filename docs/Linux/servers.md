@@ -139,6 +139,8 @@ weiya    :0       :0               10:28   ?xdm?  22:24   0.00s /usr/lib/gdm3/gd
 ssh -X
 ```
 
+To speed up the GUI loading if necessary, try to enable compression, `-C`, refer to [Why is Firefox so slow over SSH? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/187415/why-is-firefox-so-slow-over-ssh)
+
 ### `scp`
 
 - `scp` a file with name including colon

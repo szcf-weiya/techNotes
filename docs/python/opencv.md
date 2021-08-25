@@ -155,3 +155,4 @@ ans =
 
 ![](https://user-images.githubusercontent.com/13688320/99756556-664de800-2b28-11eb-902f-5d2b0ffc14d6.png)
 
+use `cv2.imwrite()` for writting images from `np.array`, see also [Saving a Numpy array as an image](https://stackoverflow.com/questions/902761/saving-a-numpy-array-as-an-image/19174800)
