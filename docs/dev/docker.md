@@ -7,6 +7,9 @@
 
 ## Installation
 
+!!! info
+    The installation records on Rocky Server is [here](https://github.com/szcf-weiya/RockyServer/issues/7).
+
 Directly type `docker` in the terminal,
 
 ```bash

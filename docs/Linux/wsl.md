@@ -2,7 +2,7 @@
 
 ## Mount USB drive
 
-By default, the usb drive is not mounted to WSL, although it can be easily checked via Windows.
+By default, the usb drive is not mounted to WSL, although it can be easily accessed via Windows.
 
 ```bash
 # step 1: create a folder for mount
@@ -20,7 +20,7 @@ $ sudo unmount
 $ sudo mount -t drvfs -o rw,noatime,uid=1000,gid=1000 'P:\' /mnt/p
 ```
 
-It is reported that [`scp` is slower than `rsync`](https://unix.stackexchange.com/questions/238152/why-is-scp-so-slow-and-how-to-make-it-faster), but based on my tries, it seems `scp` would be faster. And a big warning is that
+It is reported that [`scp` is slower than `rsync`](https://unix.stackexchange.com/questions/238152/why-is-scp-so-slow-and-how-to-make-it-faster), but based on my tries, it seems `scp` would be faster. But a big warning is that
 
 !!! warning
-    DO NOT interrupt a large file copy process, otherwise your PC would break down, and cannot ssh into. The only way is to restart mannually. 
+    DO NOT interrupt a large file copy process, otherwise your PC would break down, and cannot ssh into. The only way is to restart manually. 

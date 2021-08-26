@@ -1,3 +1,7 @@
+## 2021.08.26
+
+- I **attest (作证)** that I have received a negative pre-departure test result for COVID-19.
+
 ## 2021.08.25
 
 - rules for success: "There are two rules for success: 1. Never tell everything you know. --Roger H. Lincoln" [:link:](https://oliveole.wordpress.com/2016/01/28/rules-to-success/)

@@ -721,3 +721,86 @@ PrivateData=jobs
 in `slurm.conf`.
 
 And here are some other fields can be appended, such as `usage`, `users`, refer to [slurm.conf - Slurm configuration file](https://slurm.schedmd.com/slurm.conf.html) or `man slurm.conf` for more details.
+
+## Diagnose Network Speed
+
+On 6/30/21 3:16 PM, found that the network speed on the new machine seems abnormal.
+
+> I am downloading a file via `wget`, but the speed is quite slow, just ~500kb/s, while it can achieve ~4MB/s when I try to download it from our old server
+
+Then for complete comparisons, use the script
+
+```bash
+curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+```
+
+to test the network speed (refer to [How to check Internet Speed via Terminal? - Ask Ubuntu](https://askubuntu.com/questions/104755/how-to-check-internet-speed-via-terminal)
+
+Also repeat the test on the new server to reduce random noise. The results show that both download and upload speed on the new server are much slower than the old group server and my personal laptop, ~90Mbit/s vs ~350Mbit/s.
+
+![](https://user-images.githubusercontent.com/13688320/130889726-6168fff7-96c8-4ace-848c-587592e3075b.png)
+
+Notice that
+
+```bash
+$ dmesg -T | grep enp
+[Mon Jun 28 14:30:59 2021] igb 0000:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[Mon Jun 28 14:31:01 2021] igb 0000:02:00.0 enp2s0: igb: enp2s0 NIC Link is Down
+[Mon Jun 28 14:31:26 2021] igb 0000:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up 100 Mbps Full Duplex, Flow Control: RX
+[Mon Jun 28 14:31:26 2021] igb 0000:02:00.0 enp2s0: Link Speed was downgraded by SmartSpeed
+[Mon Jun 28 15:34:48 2021] igb 0000:02:00.0 enp2s0: igb: enp2s0 NIC Link is Down
+[Mon Jun 28 15:35:13 2021] igb 0000:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up 100 Mbps Full Duplex, Flow Control: RX
+[Mon Jun 28 15:35:13 2021] igb 0000:02:00.0 enp2s0: Link Speed was downgraded by SmartSpeed
+[Mon Jun 28 15:45:47 2021] igb 0000:02:00.0 enp2s0: igb: enp2s0 NIC Link is Down
+[Mon Jun 28 15:46:13 2021] igb 0000:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up 100 Mbps Full Duplex, Flow Control: RX
+[Mon Jun 28 15:46:13 2021] igb 0000:02:00.0 enp2s0: Link Speed was downgraded by SmartSpeed
+```
+
+where it reports that NIC link is downgraded from 1000 Mbps to 100 Mbps by SmartSpeed, which might explain that previous the fastest speed is less than 100Mbit/s.
+
+!!! tip
+    `dmesg` 用于显示开机信息。kernel 会将开机信息储存在 ring buffer 中，也保存在 `/var/log/dmesg` 文件中（参考 [Linux dmesg 命令 | 菜鸟教程](https://www.runoob.com/linux/linux-comm-dmesg.html)）。
+    
+    而 `man dmesg` 说该命令用于 `print or control the kernel ring buffer`，所以能够互相印证，但是 ring buffer 是否只存开机信息？
+    
+    - `-T` 表示以可读的时间戳显示。
+
+    默认时间戳为 “time in seconds since the kernel started”，这也是 `dmesg` 文件中的默认格式。如果支持 `-T`，自然是很方便的，否则可能需要写脚本转换，详见 [How do I convert dmesg timestamp to custom date format? - Stack Overflow](https://stackoverflow.com/questions/13890789/how-do-i-convert-dmesg-timestamp-to-custom-date-format)
+
+After moving to the new place, the speed seems much faster (8/16/21, 10:46 AM). The speed can achieve 500 Mbit/s (Upload) and 800 Mbit/s (Download), while previously just 90 Mbit/s. And
+
+```bash
+$ dmesg -T | grep enp
+[Mon Aug 16 10:14:58 2021] igb 0000:02:00.0 enp2s0: renamed from eth0
+[Mon Aug 16 10:14:58 2021] e1000e 0000:00:1f.6 enp0s31f6: renamed from eth0
+[Mon Aug 16 10:15:05 2021] IPv6: ADDRCONF(NETDEV_UP): enp0s31f6: link is not ready
+[Mon Aug 16 10:15:05 2021] IPv6: ADDRCONF(NETDEV_UP): enp0s31f6: link is not ready
+[Mon Aug 16 10:15:05 2021] IPv6: ADDRCONF(NETDEV_UP): enp2s0: link is not ready
+[Mon Aug 16 10:15:05 2021] IPv6: ADDRCONF(NETDEV_UP): enp2s0: link is not ready
+[Mon Aug 16 10:15:05 2021] IPv6: ADDRCONF(NETDEV_UP): enp0s31f6: link is not ready
+[Mon Aug 16 10:15:05 2021] IPv6: ADDRCONF(NETDEV_UP): enp2s0: link is not ready
+[Mon Aug 16 10:15:05 2021] IPv6: ADDRCONF(NETDEV_UP): enp2s0: link is not ready
+[Mon Aug 16 10:15:10 2021] e1000e 0000:00:1f.6 enp0s31f6: NIC Link is Up 1000 Mbps Full Duplex, Flow Control: None
+[Mon Aug 16 10:15:10 2021] IPv6: ADDRCONF(NETDEV_CHANGE): enp0s31f6: link becomes ready
+[Mon Aug 16 10:16:26 2021] e1000e 0000:00:1f.6 enp0s31f6: NIC Link is Down
+[Mon Aug 16 10:16:30 2021] igb 0000:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[Mon Aug 16 10:16:31 2021] IPv6: ADDRCONF(NETDEV_CHANGE): enp2s0: link becomes ready
+```
+
+it stays at 1000 Mbps, which seems to support the testing results.
+
+Alternatively, we can use 
+
+```bash
+$ ethtool enp2s0 | grep Speed
+	Speed: 1000Mb/s
+```
+
+or
+
+```bash
+$ cat /sys/class/net/enp2s0/speed
+1000
+```
+
+to obtain the speed of the NIC. It is -1 for unused interfaces. Refer to [How do I verify the speed of my NIC? - Server Fault](https://serverfault.com/questions/207474/how-do-i-verify-the-speed-of-my-nic)

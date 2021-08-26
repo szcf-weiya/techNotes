@@ -1133,3 +1133,10 @@ refer to
 
 - [Is there a faster way to remove a line (given a line number) from a file?](https://unix.stackexchange.com/questions/66730/is-there-a-faster-way-to-remove-a-line-given-a-line-number-from-a-file)
 - [3.6 Redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
+
+## `&&` vs `;`
+
+- `cmd1 && cmd2`: if `cmd1` failed, then `cmd2` would not execute
+- `cmd1 ; cmd2`: if `cmd1` failed, `cmd2` will still execute
+
+so use `&&` when `cmd1` is to enter the folder, refer to [Crontab - Run in directory - Stack Overflow](https://stackoverflow.com/questions/8899737/crontab-run-in-directory)

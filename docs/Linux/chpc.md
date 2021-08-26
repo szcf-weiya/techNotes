@@ -289,6 +289,62 @@ Back to the manual of `-x` option:
 
 So the exclusion seems only to perform on the granted resources instead of all nodes. If you want to allocate specified nodes, `-w` option should be used.
 
+## Exit Code 
+
+As the [official documentation](https://slurm.schedmd.com/job_exit_code.html) said, a job's exit code (aka exit status, return code and completion code) is captured by Slurm and saved as part of the job record. For sbatch jobs, the exit code that is captured is the output of the batch script.
+
+- Any non-zero exit code will be assumed to be a job failure and will result in a Job State of FAILED with a Reason of "NonZeroExitCode".
+- The exit code is an 8 bit unsigned number ranging between 0 and 255.
+- **When a signal was responsible for a job or step's termination, the signal number will be displayed after the exit code, delineated by a colon(:)**
+
+We can check the exit code of particular jobs,
+
+```bash
+sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS,STATE,ExitCode,DerivedExitCode
+```
+
+e.g.,
+
+![](https://user-images.githubusercontent.com/13688320/130934797-f6908044-d583-459e-b3ea-09df362f442c.png)
+
+where 
+
+- the first one is a toy example and kill by myself with `kill -s 9 XX`, so the right of `:` is signal `9`, and it exits with zero code
+- the second one is the one shared by [@fangda](https://github.com/songfd2018). It is exactly reversed, and I suspect that it might be due to other reasons.
+
+see also: [3.7.6 Signals](https://www.gnu.org/software/bash/manual/html_node/Signals.html) and 
+
+```bash
+# http://www.bu.edu/tech/files/text/batchcode.txt
+Name     Number (SGI)   Number (IBM)
+SIGHUP      1              1
+SIGINT      2              2
+SIGQUIT     3              3
+SIGILL      4              4
+SIGTRAP     5              5
+SIGABRT     6              6
+SIGEMT      7              7
+SIGFPE      8              8
+SIGKILL     9              9
+SIGBUS      10             10
+SIGSEGV     11             11
+SIGSYS      12             12
+SIGPIPE     13             13
+SIGALRM     14             14
+SIGTERM     15             15
+SIGUSR1     16             30
+SIGUSR2     17             31
+SIGPOLL     22             23
+SIGIO       22             23
+SIGVTALRM   28             34
+SIGPROF     29             32
+SIGXCPU     30             24
+SIGXFSZ     31             25
+SIGRTMIN    49             888
+SIGRTMAX    64             999
+```
+
+
 ## Job Priority
 
 The submitted jobs are sorted by the calculated job priority in descending order. 

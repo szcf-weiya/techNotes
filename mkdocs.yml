@@ -9,6 +9,7 @@ nav:
       - Command-line Tools: Linux/tools.md
       - Shell Scripts: shell/index.md
       - 16to18: Linux/16to18.md
+      - WSL: Linux/wsl.md
     - Servers: 
       - General: Linux/servers.md
       - AliECS: Linux/ecs.md
