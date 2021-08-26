@@ -541,6 +541,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wsl/" class="md-nav__link">
+        WSL
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -676,6 +688,13 @@
         <li class="md-nav__item">
   <a href="#privatedata" class="md-nav__link">
     PrivateData
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnose-network-speed" class="md-nav__link">
+    Diagnose Network Speed
   </a>
   
 </li>
@@ -1841,6 +1860,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#diagnose-network-speed" class="md-nav__link">
+    Diagnose Network Speed
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2407,6 +2433,67 @@ so it can be an indicator to check whether the job is allocated normally.</p>
 </code></pre></div>
 <p>in <code>slurm.conf</code>.</p>
 <p>And here are some other fields can be appended, such as <code>usage</code>, <code>users</code>, refer to <a href="https://slurm.schedmd.com/slurm.conf.html">slurm.conf - Slurm configuration file</a> or <code>man slurm.conf</code> for more details.</p>
+<h2 id="diagnose-network-speed">Diagnose Network Speed<a class="headerlink" href="#diagnose-network-speed" title="Permanent link">&para;</a></h2>
+<p>On 6/30/21 3:16 PM, found that the network speed on the new machine seems abnormal.</p>
+<blockquote>
+<p>I am downloading a file via <code>wget</code>, but the speed is quite slow, just ~500kb/s, while it can achieve ~4MB/s when I try to download it from our old server</p>
+</blockquote>
+<p>Then for complete comparisons, use the script</p>
+<div class="highlight"><pre><span></span><code>curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py <span class="p">|</span> python -
+</code></pre></div>
+<p>to test the network speed (refer to <a href="https://askubuntu.com/questions/104755/how-to-check-internet-speed-via-terminal">How to check Internet Speed via Terminal? - Ask Ubuntu</a></p>
+<p>Also repeat the test on the new server to reduce random noise. The results show that both download and upload speed on the new server are much slower than the old group server and my personal laptop, ~90Mbit/s vs ~350Mbit/s.</p>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/130889726-6168fff7-96c8-4ace-848c-587592e3075b.png" /></p>
+<p>Notice that</p>
+<div class="highlight"><pre><span></span><code>$ dmesg -T <span class="p">|</span> grep enp
+<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">14</span>:30:59 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up <span class="m">1000</span> Mbps Full Duplex, Flow Control: RX
+<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">14</span>:31:01 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Down
+<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">14</span>:31:26 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up <span class="m">100</span> Mbps Full Duplex, Flow Control: RX
+<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">14</span>:31:26 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: Link Speed was downgraded by SmartSpeed
+<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">15</span>:34:48 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Down
+<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">15</span>:35:13 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up <span class="m">100</span> Mbps Full Duplex, Flow Control: RX
+<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">15</span>:35:13 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: Link Speed was downgraded by SmartSpeed
+<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">15</span>:45:47 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Down
+<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">15</span>:46:13 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up <span class="m">100</span> Mbps Full Duplex, Flow Control: RX
+<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">15</span>:46:13 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: Link Speed was downgraded by SmartSpeed
+</code></pre></div>
+<p>where it reports that NIC link is downgraded from 1000 Mbps to 100 Mbps by SmartSpeed, which might explain that previous the fastest speed is less than 100Mbit/s.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>dmesg</code> 用于显示开机信息。kernel 会将开机信息储存在 ring buffer 中，也保存在 <code>/var/log/dmesg</code> 文件中（参考 <a href="https://www.runoob.com/linux/linux-comm-dmesg.html">Linux dmesg 命令 | 菜鸟教程</a>）。</p>
+<p>而 <code>man dmesg</code> 说该命令用于 <code>print or control the kernel ring buffer</code>，所以能够互相印证，但是 ring buffer 是否只存开机信息？</p>
+<ul>
+<li><code>-T</code> 表示以可读的时间戳显示。</li>
+</ul>
+<p>默认时间戳为 “time in seconds since the kernel started”，这也是 <code>dmesg</code> 文件中的默认格式。如果支持 <code>-T</code>，自然是很方便的，否则可能需要写脚本转换，详见 <a href="https://stackoverflow.com/questions/13890789/how-do-i-convert-dmesg-timestamp-to-custom-date-format">How do I convert dmesg timestamp to custom date format? - Stack Overflow</a></p>
+</div>
+<p>After moving to the new place, the speed seems much faster (8/16/21, 10:46 AM). The speed can achieve 500 Mbit/s (Upload) and 800 Mbit/s (Download), while previously just 90 Mbit/s. And</p>
+<div class="highlight"><pre><span></span><code>$ dmesg -T <span class="p">|</span> grep enp
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:14:58 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: renamed from eth0
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:14:58 <span class="m">2021</span><span class="o">]</span> e1000e <span class="m">0000</span>:00:1f.6 enp0s31f6: renamed from eth0
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp0s31f6: link is not ready
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp0s31f6: link is not ready
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp2s0: link is not ready
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp2s0: link is not ready
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp0s31f6: link is not ready
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp2s0: link is not ready
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp2s0: link is not ready
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:10 <span class="m">2021</span><span class="o">]</span> e1000e <span class="m">0000</span>:00:1f.6 enp0s31f6: NIC Link is Up <span class="m">1000</span> Mbps Full Duplex, Flow Control: None
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:10 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_CHANGE<span class="o">)</span>: enp0s31f6: link becomes ready
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:16:26 <span class="m">2021</span><span class="o">]</span> e1000e <span class="m">0000</span>:00:1f.6 enp0s31f6: NIC Link is Down
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:16:30 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up <span class="m">1000</span> Mbps Full Duplex, Flow Control: RX
+<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:16:31 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_CHANGE<span class="o">)</span>: enp2s0: link becomes ready
+</code></pre></div>
+<p>it stays at 1000 Mbps, which seems to support the testing results.</p>
+<p>Alternatively, we can use </p>
+<div class="highlight"><pre><span></span><code>$ ethtool enp2s0 <span class="p">|</span> grep Speed
+    Speed: 1000Mb/s
+</code></pre></div>
+<p>or</p>
+<div class="highlight"><pre><span></span><code>$ cat /sys/class/net/enp2s0/speed
+<span class="m">1000</span>
+</code></pre></div>
+<p>to obtain the speed of the NIC. It is -1 for unused interfaces. Refer to <a href="https://serverfault.com/questions/207474/how-do-i-verify-the-speed-of-my-nic">How do I verify the speed of my NIC? - Server Fault</a></p>
                 
               
               

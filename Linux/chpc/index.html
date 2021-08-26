@@ -541,6 +541,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wsl/" class="md-nav__link">
+        WSL
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -717,6 +729,13 @@
         <li class="md-nav__item">
   <a href="#specify-nodes" class="md-nav__link">
     Specify Nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit-code" class="md-nav__link">
+    Exit Code
   </a>
   
 </li>
@@ -2017,6 +2036,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exit-code" class="md-nav__link">
+    Exit Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#job-priority" class="md-nav__link">
     Job Priority
   </a>
@@ -2328,6 +2354,52 @@ srun: error: Hostlist is empty!  Can<span class="err">&#39;</span>t run job.
 <p>Explicitly exclude certain nodes from the resources <strong>granted</strong> to the job.</p>
 </blockquote>
 <p>So the exclusion seems only to perform on the granted resources instead of all nodes. If you want to allocate specified nodes, <code>-w</code> option should be used.</p>
+<h2 id="exit-code">Exit Code<a class="headerlink" href="#exit-code" title="Permanent link">&para;</a></h2>
+<p>As the <a href="https://slurm.schedmd.com/job_exit_code.html">official documentation</a> said, a job&rsquo;s exit code (aka exit status, return code and completion code) is captured by Slurm and saved as part of the job record. For sbatch jobs, the exit code that is captured is the output of the batch script.</p>
+<ul>
+<li>Any non-zero exit code will be assumed to be a job failure and will result in a Job State of FAILED with a Reason of &ldquo;NonZeroExitCode&rdquo;.</li>
+<li>The exit code is an 8 bit unsigned number ranging between 0 and 255.</li>
+<li><strong>When a signal was responsible for a job or step&rsquo;s termination, the signal number will be displayed after the exit code, delineated by a colon(:)</strong></li>
+</ul>
+<p>We can check the exit code of particular jobs,</p>
+<div class="highlight"><pre><span></span><code>sacct -a -X --format<span class="o">=</span>Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS,STATE,ExitCode,DerivedExitCode
+</code></pre></div>
+<p>e.g.,</p>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/130934797-f6908044-d583-459e-b3ea-09df362f442c.png" /></p>
+<p>where </p>
+<ul>
+<li>the first one is a toy example and kill by myself with <code>kill -s 9 XX</code>, so the right of <code>:</code> is signal <code>9</code>, and it exits with zero code</li>
+<li>the second one is the one shared by <a href="https://github.com/songfd2018">@fangda</a>. It is exactly reversed, and I suspect that it might be due to other reasons.</li>
+</ul>
+<p>see also: <a href="https://www.gnu.org/software/bash/manual/html_node/Signals.html">3.7.6 Signals</a> and </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># http://www.bu.edu/tech/files/text/batchcode.txt</span>
+Name     Number <span class="o">(</span>SGI<span class="o">)</span>   Number <span class="o">(</span>IBM<span class="o">)</span>
+SIGHUP      <span class="m">1</span>              <span class="m">1</span>
+SIGINT      <span class="m">2</span>              <span class="m">2</span>
+SIGQUIT     <span class="m">3</span>              <span class="m">3</span>
+SIGILL      <span class="m">4</span>              <span class="m">4</span>
+SIGTRAP     <span class="m">5</span>              <span class="m">5</span>
+SIGABRT     <span class="m">6</span>              <span class="m">6</span>
+SIGEMT      <span class="m">7</span>              <span class="m">7</span>
+SIGFPE      <span class="m">8</span>              <span class="m">8</span>
+SIGKILL     <span class="m">9</span>              <span class="m">9</span>
+SIGBUS      <span class="m">10</span>             <span class="m">10</span>
+SIGSEGV     <span class="m">11</span>             <span class="m">11</span>
+SIGSYS      <span class="m">12</span>             <span class="m">12</span>
+SIGPIPE     <span class="m">13</span>             <span class="m">13</span>
+SIGALRM     <span class="m">14</span>             <span class="m">14</span>
+SIGTERM     <span class="m">15</span>             <span class="m">15</span>
+SIGUSR1     <span class="m">16</span>             <span class="m">30</span>
+SIGUSR2     <span class="m">17</span>             <span class="m">31</span>
+SIGPOLL     <span class="m">22</span>             <span class="m">23</span>
+SIGIO       <span class="m">22</span>             <span class="m">23</span>
+SIGVTALRM   <span class="m">28</span>             <span class="m">34</span>
+SIGPROF     <span class="m">29</span>             <span class="m">32</span>
+SIGXCPU     <span class="m">30</span>             <span class="m">24</span>
+SIGXFSZ     <span class="m">31</span>             <span class="m">25</span>
+SIGRTMIN    <span class="m">49</span>             <span class="m">888</span>
+SIGRTMAX    <span class="m">64</span>             <span class="m">999</span>
+</code></pre></div>
 <h2 id="job-priority">Job Priority<a class="headerlink" href="#job-priority" title="Permanent link">&para;</a></h2>
 <p>The submitted jobs are sorted by the calculated job priority in descending order. </p>
 <div class="admonition tip">

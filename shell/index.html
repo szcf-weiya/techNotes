@@ -901,6 +901,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    &amp;&amp; vs ;
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -916,6 +923,18 @@
     <li class="md-nav__item">
       <a href="../Linux/16to18/" class="md-nav__link">
         16to18
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux/wsl/" class="md-nav__link">
+        WSL
       </a>
     </li>
   
@@ -2461,6 +2480,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    &amp;&amp; vs ;
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3414,6 +3440,12 @@ g
 <li><a href="https://unix.stackexchange.com/questions/66730/is-there-a-faster-way-to-remove-a-line-given-a-line-number-from-a-file">Is there a faster way to remove a line (given a line number) from a file?</a></li>
 <li><a href="https://www.gnu.org/software/bash/manual/html_node/Redirections.html">3.6 Redirections</a></li>
 </ul>
+<h2 id="vs"><code>&amp;&amp;</code> vs <code>;</code><a class="headerlink" href="#vs" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>cmd1 &amp;&amp; cmd2</code>: if <code>cmd1</code> failed, then <code>cmd2</code> would not execute</li>
+<li><code>cmd1 ; cmd2</code>: if <code>cmd1</code> failed, <code>cmd2</code> will still execute</li>
+</ul>
+<p>so use <code>&amp;&amp;</code> when <code>cmd1</code> is to enter the folder, refer to <a href="https://stackoverflow.com/questions/8899737/crontab-run-in-directory">Crontab - Run in directory - Stack Overflow</a></p>
                 
               
               
