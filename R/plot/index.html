@@ -835,8 +835,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#density-plots-of-some-distributions" class="md-nav__link">
-    density plots of some distributions
+  <a href="#density-of-weibull" class="md-nav__link">
+    density of Weibull
   </a>
   
 </li>
@@ -1985,8 +1985,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#density-plots-of-some-distributions" class="md-nav__link">
-    density plots of some distributions
+  <a href="#density-of-weibull" class="md-nav__link">
+    density of Weibull
   </a>
   
 </li>
@@ -2141,6 +2141,9 @@
 <p>The package can easily generate trellis graphs. A trellis graph displays the distribution of a variable or the relationship between variables, separately for each level of one or more other variables. </p>
 <p>A thorough tutorial refers to <a href="https://esl.hohoweiya.xyz/rmds/lattice.html">Reproduce Figures with Lattice &ndash; ESL CN</a></p>
 <h2 id="ggplot">ggplot<a class="headerlink" href="#ggplot" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://ggplot2-book.org/getting-started.html">https://ggplot2-book.org/</a></li>
+</ul>
 <h3 id="multiple-density-plots">multiple density plots<a class="headerlink" href="#multiple-density-plots" title="Permanent link">&para;</a></h3>
 <p>参考<a href="https://www.tuicool.com/articles/3aUnem7">使用ggplot2同时绘制多个密度图</a></p>
 <div class="highlight"><pre><span></span><code><span class="n">plots</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
@@ -2152,7 +2155,8 @@
 <span class="p">}</span>
 <span class="nf">plot_grid</span><span class="p">(</span><span class="n">plotlist</span> <span class="o">=</span> <span class="n">plots</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="density-plots-of-some-distributions">density plots of some distributions<a class="headerlink" href="#density-plots-of-some-distributions" title="Permanent link">&para;</a></h3>
+<p>see also: <a href="https://www.biostars.org/p/234142/">Continuously add lines to ggplot with for loop</a></p>
+<h3 id="density-of-weibull">density of Weibull<a class="headerlink" href="#density-of-weibull" title="Permanent link">&para;</a></h3>
 <p>adapted from <a href="http://www.cnblogs.com/wwxbi/p/6142410.html">ggplot2绘制概率密度图</a></p>
 <p>Take the Weibull distribution as an example, </p>
 <div>
@@ -2174,6 +2178,7 @@ f(x) = \begin{cases}
 <li>if <span><span class="MathJax_Preview">k=1</span><script type="math/tex">k=1</script></span>, it becomes to the exponential distribution</li>
 <li>if <span><span class="MathJax_Preview">k=2</span><script type="math/tex">k=2</script></span>, it becomes to the Rayleigh distribution.</li>
 </ul>
+<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1"><code>dweibull</code></label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="n">length.out</span><span class="o">=</span><span class="m">10000</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">dweibull</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">log</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">d</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
@@ -2182,19 +2187,27 @@ f(x) = \begin{cases}
     <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Density of Weibull distribution&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="" src="../weibull-pdf.png" style="height:40%;width:40%" /></p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2"><code>rweibull</code> + <code>histogram</code></label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">h</span> <span class="o">=</span> <span class="nf">rweibull</span><span class="p">(</span><span class="m">10000</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
 <span class="nf">ggplot</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">h</span><span class="p">))</span> <span class="o">+</span> 
     <span class="nf">geom_histogram</span><span class="p">(</span><span class="n">binwidth</span><span class="o">=</span><span class="m">0.01</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="o">+</span> 
     <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Histogram of Weibull distribution&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="" src="../weibull-hist.png" style="height:40%;width:40%" /></p>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3"><code>rweibull</code> + <code>density</code></label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">h</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_density</span><span class="p">(</span><span class="n">col</span> <span class="o">=</span> <span class="s">&quot;green&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="" src="../weibull-estpdf.png" style="height:40%;width:40%" /></p>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4"><code>rweibull</code> + <code>line</code></label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="kc">NULL</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">h</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_line</span><span class="p">(</span><span class="n">stat</span> <span class="o">=</span> <span class="s">&quot;density&quot;</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>A minor difference is that here is a horizontal line in the above estimated density.</p>
 <p><img alt="" src="../weibull-estpdf2.png" style="height:40%;width:40%" /></p>
+</div>
+</div>
 <p>Also refer to <a href="http://www.cookbook-r.com/Graphs/Plotting_distributions_(ggplot2)/">Plotting distributions (ggplot2)</a></p>
 <h3 id="legend-setup">legend setup<a class="headerlink" href="#legend-setup" title="Permanent link">&para;</a></h3>
 <p>参考<a href="http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/">Legends (ggplot2)</a></p>
