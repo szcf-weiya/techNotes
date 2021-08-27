@@ -1,5 +1,17 @@
 # Ubuntu
 
+## Advanced Package Tool
+
+APT is a package management system for Debian and other Linux distributions based on it, such as Ubuntu.
+
+### PPA
+
+> PPAs (Personal Package Archive) are repositories hosted on Launchpad. You can use PPAs to install or upgrade packages that are not available in the official Ubuntu repositories.
+
+see also:
+
+- [How do I resolve unmet dependencies after adding a PPA? - Ask Ubuntu](https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa)
+
 ## GNOME 
 
 GNOME (originally an acronym for GNU Network Object Model Environment) is a desktop environment for Unix-like operating systems. [:material-wikipedia:](https://en.wikipedia.org/wiki/GNOME)

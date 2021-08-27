@@ -77,6 +77,12 @@ CSS 全称为 Cascading Style Sheets, 中文名为**层叠样式表**.
 	}
 	```
 
+## Chrome 固定 `:hover` 状态
+
+在试图解决 [fix a problematic url #955](https://github.com/cosname/cosx.org/pull/955) 时，想通过 Chrome 调试看看 `:hover` 的具体 style 定义
+
+![Peek 2021-08-27 11-34](https://user-images.githubusercontent.com/13688320/131088569-2329b315-6c39-42bc-8b5b-fea928482e8a.gif)
+
 ## em 和 rem
 
 [何时使用 Em 与 Rem](https://www.w3cplus.com/css/when-to-use-em-vs-rem.html)

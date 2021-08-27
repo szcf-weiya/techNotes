@@ -115,6 +115,8 @@ A thorough tutorial refers to [Reproduce Figures with Lattice -- ESL CN](https:/
 
 ## ggplot
 
+- [https://ggplot2-book.org/](https://ggplot2-book.org/getting-started.html)
+
 ### multiple density plots
 
 参考[使用ggplot2同时绘制多个密度图](https://www.tuicool.com/articles/3aUnem7)
@@ -130,7 +132,9 @@ for(i in colnames(train)){
 plot_grid(plotlist = plots)
 ```
 
-### density plots of some distributions
+see also: [Continuously add lines to ggplot with for loop](https://www.biostars.org/p/234142/)
+
+### density of Weibull
 
 adapted from [ggplot2绘制概率密度图](http://www.cnblogs.com/wwxbi/p/6142410.html)
 
@@ -148,39 +152,43 @@ where $\lambda > 0$ is the scale parameter, and $k > 0$ is the shape parameter. 
 - if $k=1$, it becomes to the exponential distribution
 - if $k=2$, it becomes to the Rayleigh distribution.
 
-```r
-d <- seq(0, 5, length.out=10000)
-y <- dweibull(d, shape=5, scale=1, log = FALSE)
-df <- data.frame(x=d,y)
-ggplot(df, aes(x=d, y=y)) + 
-    geom_line(col = "orange") + 
-    ggtitle("Density of Weibull distribution")
-```
+=== "`dweibull`"
+    ```r
+    d <- seq(0, 5, length.out=10000)
+    y <- dweibull(d, shape=5, scale=1, log = FALSE)
+    df <- data.frame(x=d,y)
+    ggplot(df, aes(x=d, y=y)) + 
+        geom_line(col = "orange") + 
+        ggtitle("Density of Weibull distribution")
+    ```
 
-![](weibull-pdf.png){: style="height:40%;width:40%"}
+    ![](weibull-pdf.png){: style="height:40%;width:40%"}
 
-```r
-h = rweibull(10000, shape=5, scale=1)
-ggplot(NULL, aes(x=h)) + 
-    geom_histogram(binwidth=0.01, fill="white", col="red") + 
-    ggtitle("Histogram of Weibull distribution")
-```
+=== "`rweibull` + `histogram`"
+    ```r
+    h = rweibull(10000, shape=5, scale=1)
+    ggplot(NULL, aes(x=h)) + 
+        geom_histogram(binwidth=0.01, fill="white", col="red") + 
+        ggtitle("Histogram of Weibull distribution")
+    ```
 
-![](weibull-hist.png){: style="height:40%;width:40%"}
+    ![](weibull-hist.png){: style="height:40%;width:40%"}
 
-```r
-ggplot(NULL, aes(x=h)) + geom_density(col = "green")
-```
+=== "`rweibull` + `density`"
+    ```r
+    ggplot(NULL, aes(x=h)) + geom_density(col = "green")
+    ```
 
-![](weibull-estpdf.png){: style="height:40%;width:40%"}
+    ![](weibull-estpdf.png){: style="height:40%;width:40%"}
 
-```r
-ggplot(NULL, aes(x=h)) + geom_line(stat = "density", col = "red")
-```
+=== "`rweibull` + `line`"
+    ```r
+    ggplot(NULL, aes(x=h)) + geom_line(stat = "density", col = "red")
+    ```
 
-A minor difference is that here is a horizontal line in the above estimated density.
+    A minor difference is that here is a horizontal line in the above estimated density.
 
-![](weibull-estpdf2.png){: style="height:40%;width:40%"}
+    ![](weibull-estpdf2.png){: style="height:40%;width:40%"}
 
 Also refer to [Plotting distributions (ggplot2)](http://www.cookbook-r.com/Graphs/Plotting_distributions_(ggplot2)/)
 

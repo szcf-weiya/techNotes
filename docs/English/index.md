@@ -1,3 +1,9 @@
+## 2021.08.27
+
+- The speedy production of COVID-19-related research has not been met with an equally **nimble (敏捷的，灵活的)** process for correcting potentially harmful errors.
+- The bivariate normal distributions arise across many domains, from telecommunications, to **meteorology (气象学)**, **ballistics (弹道学，发射学)**, and computational neuroscience.
+- Text summarization consists of methods that generate a **succinct (简明的，言简意赅的)** summary from a longer-form text.
+
 ## 2021.08.26
 
 - I **attest (作证)** that I have received a negative pre-departure test result for COVID-19.
