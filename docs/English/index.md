@@ -1,3 +1,7 @@
+## 2021.08.28
+
+- Many researchers are **fleeing (逃离)** and those who remain face lost funding and the threat of **persecution (迫害，残害)**.
+
 ## 2021.08.27
 
 - The speedy production of COVID-19-related research has not been met with an equally **nimble (敏捷的，灵活的)** process for correcting potentially harmful errors.
