@@ -22,7 +22,6 @@ nav:
       - General: R/index.md
       - Plot: R/plot.md
       - 案例分析: R/legend_from_zhihu.md
-      - 源码安装 RMySQL: R/install-notes-for-rmysql.md
       - new sample function (v3.6.0+): R/sample.md
       - 一道与 factor 有关的问题: R/factor.md
     - Python:
@@ -33,29 +32,36 @@ nav:
       - 金融数据爬虫: python/finance/README.md
       - rpy2: python/rpy2.md
       - 自建关键词索引页: python/esltag.md
-    - Julia: julia/index.md
-    - Matlab: Matlab/index.md
+    - Julia: 
+      - General: julia/index.md
+      - Plot: julia/plot.md
+    - Matlab: 
+      - General: Matlab/index.md
   - CSProgramming:
     - C/C++: 
       - General: Cpp/index.md
       - Qt: Cpp/Qt/index.md
     - Java: java/index.md
-    - SQL: SQL/index.md
+    - SQL: 
+      - General: SQL/index.md
+      - RMySQL: R/install-notes-for-rmysql.md
     - Cuda: cuda/index.md
   - DocProgramming:
     - TeX:
       - General: TeX/index.md
       - arXiv: TeX/arxiv.md
       - VarGreek: TeX/vargreek.md
-    - Markdown: doc/markdown.md
-    - Web:
+    - Markdown: 
+      - General: doc/markdown.md
+    - StaticPages:
       - Website: website/index.md
       - Disqus: website/disqus.md
       - CSS: website/css.md
       - JS: js/index.md
+      - Analytics: website/analytics.md
+    - DynamicPages:
       - PHP: PHP/index.md
       - XAMPP: website/xampp.md
-      - Analytics: website/analytics.md
   - Network/Internet:
     - 一般问题: Internet/index.md
     - 访问内网: Internet/sci-int.md

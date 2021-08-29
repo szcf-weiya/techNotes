@@ -14,6 +14,8 @@
 
 ## 股票
 
+- 爬取 S&P 500 指数里面涉及的 500 支股票近 6 年来每天的开盘价格和收盘价格．[source code](https://github.com/szcf-weiya/techNotes/tree/master/src/finance)
+
 ### 盘整
 
 参考 [百度百科：盘整](https://baike.baidu.com/item/%E7%9B%98%E6%95%B4)

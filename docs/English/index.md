@@ -1,3 +1,8 @@
+## 2021.08.29
+
+- Michael came up with a hilarious **ad-lib (即兴说出的台词)** in this scene.
+- 
+
 ## 2021.08.28
 
 - Many researchers are **fleeing (逃离)** and those who remain face lost funding and the threat of **persecution (迫害，残害)**.
@@ -414,7 +419,7 @@ None
 
 ## 2021.05.30
 
-- emcee
+- The **emcee (M.C.， master of ceremony, 主持人)** guy was quite funny.
 
 ## 2021.05.29
 
@@ -2530,7 +2535,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.08.23
 
 1. exclusively
-2. epilogue
 3. rigorous and concise
 4. Prologue
 5. reminiscent
@@ -3230,7 +3234,6 @@ NULL
 9. geochemist, geochemistry: [地球化学](https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83%E5%8C%96%E5%AD%A6)
 10. A **bolide (【天文学】火流星，火球)**, or fireball, is an extremely bright **meteor (流星)**, and those can be about the size of a **grapefruit (葡萄柚，西柚)**.
 11. magma, mantle, lava
-13. episode
 14. volcanism
 15. makeover
 16. pummel

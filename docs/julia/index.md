@@ -328,6 +328,118 @@ Adopted from [Clouds#32](https://github.com/szcf-weiya/Clouds/issues/32)
 
 如果配合 `sharedarrays` 使用时，需要加上 `@sync`, 参考[@fetch](https://docs.julialang.org/en/v1/stdlib/Distributed/#Distributed.@fetch)
 
+### `@sync` vs `@async`
+
+```julia
+julia> @time sleep(2)
+  2.003579 seconds (5 allocations: 128 bytes)
+
+julia> @time @async sleep(2)
+  0.015021 seconds (6.57 k allocations: 379.004 KiB)
+Task (runnable) @0x00007f24428409d0
+
+julia> @time @sync @async sleep(2)
+  2.008425 seconds (1.62 k allocations: 79.125 KiB)
+Task (done) @0x00007f24429ebd00
+```
+
+- `@async`: for whatever falls within its scope, Julia will start this task running but then proceed to whatever comes next in the script without waiting for the task to be complete
+- `@sync`: wait until all lexically-enclosed uses of `@async`, `@spawn`, `@spawnat` and `@distributed` are complete, where **complete** matters how you define the tasks within the scope, such as `remotecall_fetch` (only finished when it gets the message from the worker that its task is complete) vs `remotecall` (finished once it has sent the worker the job to do)
+
+With setting
+
+```julia
+using Distributed
+cell(N) = Vector{Any}(undef, N)
+
+addprocs(2)
+```
+
+=== "None"
+    ```julia
+    julia> @time begin
+           a = cell(nworkers())
+           for (idx, pid) in enumerate(workers())
+               a[idx] = remotecall_fetch(sleep, pid, 2)
+           end
+       end
+	  4.270026 seconds (28.35 k allocations: 1.384 MiB)
+    ```
+
+=== "sync + async"
+    ```julia
+    julia> @time begin
+           a = cell(nworkers())
+           @sync for (idx, pid) in enumerate(workers())
+               @async a[idx] = remotecall_fetch(sleep, pid, 2)
+           end
+       end
+	  2.031801 seconds (2.50 k allocations: 144.907 KiB)
+    ```
+
+=== "None + async"
+    ```julia
+    julia> @time begin
+           a = cell(nworkers())
+           for (idx, pid) in enumerate(workers())
+               println("sending work to $pid")
+               @async a[idx] = remotecall_fetch(sleep, pid, 2)
+           end
+       end
+    sending work to 2
+    sending work to 3
+    0.020147 seconds (2.10 k allocations: 121.017 KiB)
+    
+    julia> a
+    2-element Array{Any,1}:
+     #undef
+     #undef
+    
+    # wait around 2 seconds
+    julia> a
+    2-element Array{Any,1}:
+     nothing
+     nothing
+    ```
+
+=== "async + None"
+    ```julia
+    julia> @time begin
+           a = cell(nworkers())
+           @async for (idx, pid) in enumerate(workers())
+               println("sending work to $pid")
+               a[idx] = remotecall_fetch(sleep, pid, 2)
+           end
+       end
+      sending work to 2
+    0.000141 seconds (32 allocations: 2.867 KiB)
+    Task (runnable) @0x00007f2442843d00
+    
+    # wait around 2 seconds, it prints
+    julia> sending work to 3
+    ```
+
+=== "sync+async + None"
+    ```julia
+    julia> @time begin
+           a = cell(nworkers())
+           @sync @async for (idx, pid) in enumerate(workers())
+               a[idx] = remotecall_fetch(sleep, pid, 2)
+           end
+       end
+      4.017451 seconds (13.96 k allocations: 692.136 KiB)
+    Task (done) @0x00007f2442dfdfc0
+    ```
+
+refer to [How and When to Use @async and @sync in Julia - Stack Overflow](https://stackoverflow.com/questions/37287020/how-and-when-to-use-async-and-sync-in-julia)
+
+And as the [official documentation](https://docs.julialang.org/en/v1/manual/distributed-computing/) said, 
+
+> @async is similar to @spawnat, but only runs tasks on the local process. We use it to create a "feeder" task for each process. Each task picks the next index that needs to be computed, then waits for its process to finish, then repeats until we run out of indices. Note that the feeder tasks do not begin to execute until the main task reaches the end of the @sync block, at which point it surrenders control and waits for all the local tasks to complete before returning from the function. 
+
+!!! info
+    Applications in my project: [parallel.job](https://github.com/szcf-weiya/Cell-Video/blob/5ea7c550987a8f495b2fb238b32a331318347970/DP/num-disappeared-delta.jl#L55), where it is much like the feeder, although it might be quite fast.
+
 ## JLD vs JLD2
 
 JLD depends on HDF5, whose installation requires to login in, while JLD2 avoid the dependence of HDF5.
@@ -461,142 +573,6 @@ julia> f2()
 ```
 
 since the first one does not have `return`, but `g()` has `return` and the addition is not on `a`.
-
-
-## Plot
-
-### 等高线图 (contour)
-
-```julia
-using Plots
-using Distributions
-
-x_grid = range(-2, 2, length=100)
-y_grid = range(-2, 2, length=100)
-Sigma = [1 0.9; 0.9 1];
-contour(x_grid, y_grid, (x, y)->pdf(MvNormal([0, 0], Sigma), [x, y]), cbar=false)
-```
-
-### 网格 3D 图
-
-要求颜色随着高度渐变，这包含两部分的渐变，
-
-- 不同纬度上的每一个截面圆指定颜色
-- 经线的的不同维度需要分段指定颜色
-
-![](https://user-images.githubusercontent.com/13688320/83348932-2bca7600-a363-11ea-9ad0-07da29102ca0.png)
-
-第一点其实很简单，当生成好一组渐变颜色后，比如
-
-```julia
-colors = cgrad(:summer, nz, categorical = true)
-```
-
-更多的选择详见 [Colorschemes](https://docs.juliaplots.org/latest/generated/colorschemes/)
-
-在循环画图时，每次指定一种颜色便 OK 了。
-
-第二点其实也很简单，在画一条曲线时，如果 linecolor 指定为颜色**列**向量，比如 `[:red, :green, :orange]`，则每一段的颜色会循环采用该列向量中的颜色，则当列向量长度刚好等于区间段的个数，则每一段都会以不同的颜色绘制。需要注意到是，颜色**行**向量用于画多条曲线时为每一条曲线指定不同的颜色。
-
-但最后第二点折腾了有点久，直接把 `colors` 带进去并不行，后来才发现它不是简单的颜色列向量，里面还包含其它信息，最后采用 `colors.colors.colors` 才成功。详见 [ESL-CN/code/SOM/wiremesh.jl](https://github.com/szcf-weiya/ESL-CN/blob/5e8d95299d4c53d8f509324546b40c65b31a3666/code/SOM/wiremesh.jl#L52-L54)
-
-另外，也尝试过[官方文档例子](http://docs.juliaplots.org/latest/generated/gr/#gr-ref24-1)中 `zcolor` 参数，但是似乎只针对 marker 起作用，当然是跟 `m = ` 参数配合的效果，第一个元素代表大小，第二个透明度。所以理论上把 `m =` 换成 `line` 或许也能达到效果，但如果不能直接通过 `zcolor` 使得不同高度的颜色不一样（我本以为可以），那干脆直接指定颜色。 
-
-### axis off
-
-```julia
-plot(..., axis = nothing)
-```
-
-and similar grammar is
-
-```julia
-plot(..., ticks=nothing, border=nothing)
-```
-
-refer to [How can I implement "axis off"? #428](https://github.com/JuliaPlots/Plots.jl/issues/428)
-
-### plot kernel density
-
-refer to [Kernel density estimation status](https://discourse.julialang.org/t/kernel-density-estimation-status/5928)
-
-### PyPlot
-
-- [grid_plot_acc_vs_rate_revisit](https://github.com/szcf-weiya/Cell-Video/blob/8cffd45451c0b1af9da4199c7ef611d836c0e86e/DP/visualization.jl#L155-L217) and [demo](https://github.com/szcf-weiya/Cell-Video/blob/last-revisit/DP/110_original_with_revisit_2019-10-09T11:20:28_oracle_setting_2019-09-22T20:06:59_precision.pdf)
-    - multiple subplots with `sharex="all", sharey="all"`
-    -  `ax0 = fig.add_subplot(111, frameon=false)`
-    - `plt.text`
-
-### multiple labels
-
-In Julia 1.4.0 with Plots.jl v1.0.14,
-
-```julia
-using Plots
-x = rand(10, 2)
-plot(1:10, x, label = ["a", "b"])
-```
-
-will produce
-
-![](labels_col.png)
-
-where these two lines share the same label instead of one label for one line. But if replacing the column vector with row vector,
-
-```julia
-plot(1:10, x, label = ["a" "b"])
-```
-
-will return the correct result,
-
-![](labels_row.png)
-
-Refer to [Plots (plotly) multiple series or line labels in legend](https://discourse.julialang.org/t/plots-plotly-multiple-series-or-line-labels-in-legend/13001), which also works `GR` backend.
-
-### suptitle for subplots
-
-currently， no a option to set a suptitle for subplots, but we can use `@layout` to plot the title in a grid, such as [szcf-weiya/TB](https://github.com/szcf-weiya/TB/blob/c332307263cdbab20a453e6abe74790236321048/CFPC/sim_cpc_scores.jl#L87-L93)
-
-refer to [Super title in Plots and subplots](https://discourse.julialang.org/t/super-title-in-plots-and-subplots/29865/4)
-
-### PGFPlotsX
-
-Tips:
-
-- [:octicons-issue-closed-16:](https://github.com/szcf-weiya/Clouds/issues/35) do not set `pgfplotsx()` in a function , otherwise it throws
-
-```julia
-ERROR: MethodError: no method matching _show(::IOStream, ::MIME{Symbol("application/pdf")}, ::Plots.Plot{Plots.PGFPlotsXBackend}) 
-```
-
-- [:octicons-issue-closed-16:](https://github.com/szcf-weiya/Clouds/issues/53) rebuild `GR` if `ERROR: could not load library "libGR.so"`. Possible reason is that the version (such as `BwGt2`) to use has not been correctly built, although it was working well in other versions, such as `yMV3y`.
-
-### GR: Too many open files
-
-The complete error message is 
-
-```julia
-No XVisualInfo for format QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize -1, redBufferSize 1, greenBufferSize 1, blueBufferSize 1, alphaBufferSize -1, stencilBufferSize -1, samples -1, swapBehavior QSurfaceFormat::SwapBehavior(SingleBuffer), swapInterval 1, profile  QSurfaceFormat::OpenGLContextProfile(NoProfile))
-Falling back to using screens root_visual.
-socket: Too many open files
-GKS: can't connect to GKS socket application
-```
-
-see [the private repo](https://github.com/szcf-weiya/Clouds/issues/34) for more details. The issue has been discussed in [GKS file open error: Too many open files #1723](https://github.com/JuliaPlots/Plots.jl/issues/1723), the solution is
-
-```julia
-GR.inline("png")
-```
-
-I also came across similar issue with `matplotlib.pyplot`, but it just throws a warning, and one solution is to set
-
-```python
-plt.rcParams.update({'figure.max_open_warning': 0})
-```
-
-refer to [warning about too many open figures](https://stackoverflow.com/questions/21884271/warning-about-too-many-open-figures)
-
-
 
 ## PyCall
 
