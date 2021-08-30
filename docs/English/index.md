@@ -1,7 +1,10 @@
+## 2021.08.30
+
+- Australia's cane toads evolved as cannibals with frightening speed.
+
 ## 2021.08.29
 
 - Michael came up with a hilarious **ad-lib (即兴说出的台词)** in this scene.
-- 
 
 ## 2021.08.28
 
