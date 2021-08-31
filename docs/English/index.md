@@ -1,3 +1,7 @@
+## 2021.08.31
+
+- We can draw certain conclusions about our new friend, such as whether it is a bird or a dinosaur, or whethere it can swim or fly.
+
 ## 2021.08.30
 
 - Australia's cane toads evolved as cannibals with frightening speed.
