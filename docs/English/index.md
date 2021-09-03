@@ -1,6 +1,22 @@
+## 2021.09.03
+
+- **toast (烤面包片)** **grillage (格架)**
+- **broil (烤)** **griller (烤炉)**
+
+## 2021.09.02
+
+- Saturn's core might be a **slushy (泥泞的，融雪的)** mixture of ice and rock, rather than a compact solid made of mostly one or the other material, as is generally thought.
+- His yearly **payroll (工资总额)** is $XX.
+    - He's no longer on their **payroll (工资名单)**.
+- The motto of Harvard: Veritas
+
+## 2021.09.01
+
+- We had a Sunday **brunch (早午餐)** of **bagels (百吉饼，硬面包圈)**.
+
 ## 2021.08.31
 
-- We can draw certain conclusions about our new friend, such as whether it is a bird or a dinosaur, or whethere it can swim or fly.
+- We can draw certain conclusions about our new friend, such as whether it is a bird or a dinosaur, or whether it can swim or fly.
 
 ## 2021.08.30
 

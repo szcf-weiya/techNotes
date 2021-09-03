@@ -915,6 +915,12 @@ thunderbird -Profilemanager
 
 more instructions: [Thunderbird and Junk / Spam Messages](https://support.mozilla.org/en-US/kb/thunderbird-and-junk-spam-messages)
 
+## ToDesk
+
+Homepage: <https://www.todesk.com/download_detail.html>
+
+Currently, the Linux version is in Beta.
+
 ## Transmission 
 
 - [Configuring Transmission for faster download - Ask Ubuntu](https://askubuntu.com/questions/110899/configuring-transmission-for-faster-download)
