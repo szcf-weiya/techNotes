@@ -1328,6 +1328,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tikz" class="md-nav__link">
+    TiKZ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sty" class="md-nav__link">
     缺少 .sty 文件
   </a>
@@ -1614,9 +1621,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#renewcommand" class="md-nav__link">
+    [re]newcommand
+  </a>
+  
+    <nav class="md-nav" aria-label="[re]newcommand">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#capacity-exceeded-semantic-nest" class="md-nav__link">
     Capacity exceeded [semantic nest …]
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-space-after-command" class="md-nav__link">
+    avoid space after command
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2536,6 +2563,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tikz" class="md-nav__link">
+    TiKZ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sty" class="md-nav__link">
     缺少 .sty 文件
   </a>
@@ -2822,9 +2856,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#renewcommand" class="md-nav__link">
+    [re]newcommand
+  </a>
+  
+    <nav class="md-nav" aria-label="[re]newcommand">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#capacity-exceeded-semantic-nest" class="md-nav__link">
     Capacity exceeded [semantic nest …]
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-space-after-command" class="md-nav__link">
+    avoid space after command
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3055,6 +3109,19 @@
 <p>所谓衬线是字体的末端加强，便于阅读。如通常见的Times New Roman, 宋体。sans-serif（sans 源自法语，表示“没有”）字体的代表如Arial，隶书，幼圆。由于衬线的强化作用，serif字体作为正文具有易读性。因此存在大段文本的情况下，常使用衬线字体。但做幻灯片的话，衬线字体会因字体粗细不同，反倒可能降低辨识度。因此建议标题用衬线字体，正文用非衬线字体。</p>
 <p>数学符号用衬线字体相对美观一些，而Beamer如果不另行设置，默认全文使用sans-serif字体。因此按上述方式设置一下即可。</p>
 </blockquote>
+<h2 id="tikz">TiKZ<a class="headerlink" href="#tikz" title="Permanent link">&para;</a></h2>
+<ul>
+<li>label in place:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>  <span class="k">\tikzset</span><span class="nb">{</span><span class="c">%</span>
+    in place/.style=<span class="nb">{</span>
+      auto=false,
+      fill=white,
+      inner sep=2pt,
+    <span class="nb">}</span>,
+  <span class="nb">}</span>
+</code></pre></div>
+<p>refer to <a href="https://tex.stackexchange.com/questions/352562/avoid-overlapping-of-labels-and-arcs-in-tikz">avoid overlapping of labels and arcs in Tikz - TeX - LaTeX Stack Exchange</a></p>
 <h2 id="sty">缺少 <code>.sty</code> 文件<a class="headerlink" href="#sty" title="Permanent link">&para;</a></h2>
 <p>比如缺少 <code>mhchem.sty</code></p>
 <p><div class="highlight"><pre><span></span><code>! LaTeX Error: File &#39;mhchem.sty&#39; not found
@@ -3378,11 +3445,22 @@ the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code
 </script>
 </div>
 <p>参考 <a href="https://tex.stackexchange.com/questions/9184/position-of-superscript-when-superscriptd-item-has-hat-over-it">Position of superscript when superscriptd item has \hat over it</a></p>
-<h2 id="capacity-exceeded-semantic-nest"><code>Capacity exceeded [semantic nest …]</code><a class="headerlink" href="#capacity-exceeded-semantic-nest" title="Permanent link">&para;</a></h2>
+<h2 id="renewcommand">[re]newcommand<a class="headerlink" href="#renewcommand" title="Permanent link">&para;</a></h2>
+<h3 id="capacity-exceeded-semantic-nest"><code>Capacity exceeded [semantic nest …]</code><a class="headerlink" href="#capacity-exceeded-semantic-nest" title="Permanent link">&para;</a></h3>
 <p>check your <code>newcommand</code> definition, to see if there is some silly definition such as</p>
 <div class="highlight"><pre><span></span><code><span class="k">\newcommand\silly</span><span class="nb">{</span><span class="k">\silly</span><span class="nb">}</span>
 </code></pre></div>
 <p>refer to <a href="https://texfaq.org/FAQ-semanticnest">Capacity exceeded</a></p>
+<h3 id="avoid-space-after-command">avoid space after command<a class="headerlink" href="#avoid-space-after-command" title="Permanent link">&para;</a></h3>
+<p>with definition,</p>
+<div class="highlight"><pre><span></span><code><span class="k">\newcommand\test</span><span class="nb">{</span>test<span class="nb">}</span>
+</code></pre></div>
+<p>will cause no space in the middle of text. A remedy is to use <code>\test\</code> in the middle of text, refer to </p>
+<ul>
+<li><a href="https://tex.stackexchange.com/questions/31091/space-after-latex-commands">Space after LaTeX commands - TeX - LaTeX Stack Exchange</a></li>
+<li><a href="https://tex.stackexchange.com/questions/293924/drawbacks-of-csname-method-to-avoid-spaces-after-command">Drawbacks of csname method to avoid spaces after command - TeX - LaTeX Stack Exchange</a> </li>
+</ul>
+<p>for other possible solutions. </p>
 <h2 id="standalone"><code>standalone</code> 环境<a class="headerlink" href="#standalone" title="Permanent link">&para;</a></h2>
 <ol>
 <li>不支持 <code>algorithm</code></li>
