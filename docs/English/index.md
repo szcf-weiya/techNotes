@@ -1,3 +1,9 @@
+## 2021.09.04
+
+- **sailing (航行，航海)** **pavilion (亭子，临时建筑物)**
+- **gluten (麸质，谷蛋白，面筋)** free: [为什么美国很多的食品标明 gluten free？](https://www.zhihu.com/question/21443670)
+- fried tripes: 爆牛肚
+
 ## 2021.09.03
 
 - **toast (烤面包片)** **grillage (格架)**

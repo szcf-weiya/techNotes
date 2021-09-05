@@ -135,6 +135,22 @@ $$
 
 > 数学符号用衬线字体相对美观一些，而Beamer如果不另行设置，默认全文使用sans-serif字体。因此按上述方式设置一下即可。
 
+## TiKZ
+
+- label in place:
+
+```tex
+  \tikzset{%
+    in place/.style={
+      auto=false,
+      fill=white,
+      inner sep=2pt,
+    },
+  }
+```
+
+refer to [avoid overlapping of labels and arcs in Tikz - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/352562/avoid-overlapping-of-labels-and-arcs-in-tikz)
+
 ## 缺少 `.sty` 文件
 
 比如缺少 `mhchem.sty`
@@ -623,7 +639,9 @@ $$
 
 参考 [Position of superscript when superscriptd item has \hat over it](https://tex.stackexchange.com/questions/9184/position-of-superscript-when-superscriptd-item-has-hat-over-it)
 
-## `Capacity exceeded [semantic nest …]`
+## [re]newcommand
+
+### `Capacity exceeded [semantic nest …]`
 
 check your `newcommand` definition, to see if there is some silly definition such as
 
@@ -632,6 +650,21 @@ check your `newcommand` definition, to see if there is some silly definition suc
 ```
 
 refer to [Capacity exceeded](https://texfaq.org/FAQ-semanticnest)
+
+### avoid space after command
+
+with definition,
+
+```tex
+\newcommand\test{test}
+```
+
+will cause no space in the middle of text. A remedy is to use `\test\ ` in the middle of text, refer to 
+
+- [Space after LaTeX commands - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/31091/space-after-latex-commands)
+- [Drawbacks of csname method to avoid spaces after command - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/293924/drawbacks-of-csname-method-to-avoid-spaces-after-command) 
+
+for other possible solutions. 
 
 ## `standalone` 环境
 
