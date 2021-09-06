@@ -864,3 +864,32 @@ My private examples:
 - by tikz based on filtered paths
 
 refer to [Can we make a love heart with LaTeX?](https://tex.stackexchange.com/questions/139733/can-we-make-a-love-heart-with-latex)
+
+	
+## Change section title without altering the cleveref cross-referencing system
+Suppose you (1) want the section title to be "Good Title 1", "Good Title 2", etc., and (2) you want cross-reference two sections at the same time as "Good Titles 1 and 2" instead of "Good Title 1 and Good Title 2". Although one can do it mannually, the author is lazy and would like the cross-referencing system to do it automatically.
+	
+The simplest way to do (1) is to change the \thesection definition:
+
+> \renewcommand{\thesection}{Good Title \arabic{section}}
+
+However, when you do cross-referencing ("cref" or "Cref"), it will appear to be "section Good Title 1" and "section Good Title 2". A feasible way to do it is to directly modify the definition of \section command. Its original definition is 
+	
+> \newcommand\section{\@startsection {section}{1}{\z@}%
+> {-3.5ex \@plus -1ex \@minus -.2ex}%
+> {2.3ex \@plus.2ex}%
+> {\normalfont\Large\bfseries}}
+
+ We can modify it as
+
+> \renewcommand\section{\@startsection {section}{1}{\z@}%
+> {-3.5ex \@plus -1ex \@minus -.2ex}%
+> {2.3ex \@plus.2ex}%
+> {\normalfont\Large\bfseries\noindent Good Title~}}
+
+This solves (1). To solve (2), we need to change the name of section when calling "cref" or "Cref", by doing
+	
+> \crefname{section}{Good Title}{Good Titles}
+> \Crefname{section}{Good Title}{Good Titles}
+	
+Note that however this will change the name globally.
