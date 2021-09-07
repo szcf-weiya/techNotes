@@ -49,6 +49,7 @@ nav:
   - DocProgramming:
     - TeX:
       - General: TeX/index.md
+      - TravisCI: TeX/CI.md
       - arXiv: TeX/arxiv.md
       - VarGreek: TeX/vargreek.md
     - Markdown: 

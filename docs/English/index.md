@@ -1,3 +1,17 @@
+## 2021.09.06
+
+- [correct position of **only**](https://english.stackexchange.com/questions/5466/correct-position-of-only)
+    - see also: [Using the Word "Only" Correctly](https://www.wikihow.com/Use-the-Word-%22Only%22-Correctly)
+    - **tool for** comparing two sentences: <https://textranch.com/sentence-checker/>
+    - [`depend only on` vs `depend on only`](https://textranch.com/650721/depend-only-on/or/depend-on-only/)
+
+## 2021.09.05
+
+- pentagon: 五角形
+    - The Pentagon: 华盛顿五角大楼，美国国防部
+- hexagon: 六角形，六边形
+- heptagon: 七角形，七边形
+
 ## 2021.09.04
 
 - **sailing (航行，航海)** **pavilion (亭子，临时建筑物)**
@@ -22,11 +36,11 @@
 
 ## 2021.08.31
 
-- We can draw certain conclusions about our new friend, such as whether it is a bird or a dinosaur, or whether it can swim or fly.
+- We can draw certain conclusions about our new friend, such as whether it is a bird or a **dinosaur (恐龙)**, or whether it can swim or fly.
 
 ## 2021.08.30
 
-- Australia's cane toads evolved as cannibals with frightening speed.
+- Australia's **cane toads (甘蔗蟾蜍，海蟾蜍)** evolved as **cannibals (吃同类的动物)** with frightening speed.
 
 ## 2021.08.29
 
@@ -1715,8 +1729,8 @@ None
     - acutely aware: 深切地意识到
     - daily grind: 日常（苦）工作
 - racial profiling
-- Blacks are more likely to be stopped for **pretextual** (pretext, 借口，推辞) reasons (e.g. **alleged (所谓的，声称的)** vehicle **defect (缺点，缺陷，不足之处)**, such as broken tailight; record check) and less for more concrete reasons such as speeding.
-- these have been **valorized** in constitutional caselaw
+- Blacks are more likely to be stopped for **pretextual** (pretext, 借口，推辞) reasons (e.g. **alleged (所谓的，声称的)** vehicle **defect (缺点，缺陷，不足之处)**, such as broken taillight; record check) and less for more **concrete (具体的)** reasons such as speeding.
+- these have been **valorized (稳定物价，规定价格)** in constitutional caselaw
 - there are other disparities by race that are notable and (most likely) significant.
 
 ## 2020.10.09
@@ -2111,7 +2125,7 @@ None
 5. fear can shake us out of **complacency**.
 6. cognitive **illusion (错觉，幻想)**
 7. the high-end
-8. Wasn't there something strange about the extreme **disparity** in public reactions?
+8. Wasn't there something strange about the extreme **disparity (不同，不一致)** in public reactions?
 
 ## 2019.01.30
 
@@ -2582,13 +2596,9 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - the document layout (scrartcl) layout of the class is less strident than that of article, and it offers much more flexibility than article via other elements of the koma-script collection.
 5. mutating
 
-## 2018.08.20
-
-1. stumbled
-
 ## 2018.08.19
 
-1. pedagogical
+1. **pedagogical (教育学的，教学的)** skill
 2. concrete types
 3. Populate
 
@@ -2820,12 +2830,12 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 23. Spencer's idiosyncratic drawing of a large fairy on a tiny water-lily leaf captures an imagination that strained against conventional rules of composition from the start.
 24. a fact that helps explain how it manages to be both profligate and stingy, and is forever in the red.
 25. The concert was rather an amateurish affair.
-26. Only when we deal with these problems successfully can we benefit the most from university amalgamation.
-27. It is not just about the president. It's a whole amalgam of stuff, the scandals surrounding the president or people close to the president certainly, but also there are investigations of corruption in some of conglomerates for example.
-28. the synergy between artist and record company.
-29. just as you may need a tonic when you have been ill.
-30. Throughout her book Ms Ahuja seems to be in a trance herself, in thrall to the glamour of her subjects.
-31. The Palestinians demanding a state are weak, divided and quiescent; morose as they are, few favour a return to suicide-bombing.
+26. Only when we deal with these problems successfully can we benefit the most from university **amalgamation (合并，混合)**.
+27. It is not just about the president. It's a whole **amalgam (混合物)** of stuff, the scandals surrounding the president or people close to the president certainly, but also there are investigations of corruption in some of **conglomerates (联合大企业，企业集团)** for example.
+28. the **synergy (协同)** between artist and record company.
+29. just as you may need a **tonic (补药)** when you have been ill.
+30. Throughout her book Ms Ahuja seems to be in a **trance (恍惚，出神，着迷)** herself, in **thrall (受...控制，深受...影响)** to the **glamour (魅力，魔力)** of her subjects.
+31. The **Palestinians (巴基斯坦人)** demanding a state are weak, divided and **quiescent (沉寂的，静止的))**; *&**morose (孤僻的，郁闷的)** as they are, few favour a return to suicide-bombing.
 32. And the campaign really got rancorous when Goldsmith tried to link Khan and extremists.
 33. Such counter-currents will prevent Kentish Town from gentrifying fully, suggests Gillian Tindall, a local historian.
 34. Interpreters are also skilled at keeping aplomb in the face of chaos.
@@ -2901,9 +2911,9 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 32. The dams along the river are interfering with the salmon's ability to propagate.
 33. The temple was built to honor the gods in times of plenty and to propitiate them in times of trouble.
 34. I would be remiss if I didn't tell you how much I appreciated the lovely gift.
-35. He gave up smoking only after a prolonged inducement by all the other family members.
-36. He loved to show off his protean talent.
-37. Beauty is as evanescent as a rainbow.
+35. He gave up smoking only after a **prolonged (持续很久的，长时间的)** **inducement (鼓励，劝诱，刺激)** by all the other family members.
+36. He loved to show off his **protean (多变的，易变的)** talent.
+37. Beauty is as **evanescent (迅速消失遗忘的，短暂的)** as a rainbow.
 38. He was eulogized at his funeral as a caring husband and a good father.
 39. The Internet allows us to **disseminate** information faster.
 40. We managed to entangle the string of lights into a hopeless mess of wires.
@@ -2976,7 +2986,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 53. static (inert; motionless)
 54. Autonomous (self-governing; independent)
 55. Intrinsic (innate; essential)
-60. intransigent
+    - innate immunity: 先天免疫，自然免疫
+60. In both countries policy is being dictated by **intransigents (不妥协，不让步的人)**, who risk stumbling into war.
 61. draconian
 62. idiosyncratic
 64. auction, auctioneer, bidding

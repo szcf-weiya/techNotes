@@ -665,6 +665,13 @@ Refer to
 2. 设置密码时位数不能少于 8 位
 3. 连接 WiFi 时 似乎需要 enable wifi。
 
+## Keyboard
+
+实验室有一支 IKBC CD 87T 蓝牙键盘，于是便想试试。
+
+- 连接：详见[说明书](manual_IKBC.pdf)
+- Win 键失效：尝试按 `Fn + Right Win` 及左 `Fn + Left Win`，参考 [IKBC键盘Win键失效的解决办法](https://blog.csdn.net/norman_irsa/article/details/114735798)
+
 ## 1m_ipv4_udp_receive_buffer_errors
 
 !!! info
