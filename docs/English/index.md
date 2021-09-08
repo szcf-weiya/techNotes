@@ -1,3 +1,7 @@
+## 2021.09.07
+
+- Wild musk ducks learn to make high-pitched whistles from older members of their **flock (群)**.
+
 ## 2021.09.06
 
 - [correct position of **only**](https://english.stackexchange.com/questions/5466/correct-position-of-only)
@@ -2557,7 +2561,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. consanguineous
 2. sibship
 3. autosomal
-4. sporadic
 5. ameliorate
 6. facilitate
 
@@ -2835,7 +2838,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 28. the **synergy (协同)** between artist and record company.
 29. just as you may need a **tonic (补药)** when you have been ill.
 30. Throughout her book Ms Ahuja seems to be in a **trance (恍惚，出神，着迷)** herself, in **thrall (受...控制，深受...影响)** to the **glamour (魅力，魔力)** of her subjects.
-31. The **Palestinians (巴基斯坦人)** demanding a state are weak, divided and **quiescent (沉寂的，静止的))**; *&**morose (孤僻的，郁闷的)** as they are, few favour a return to suicide-bombing.
+31. The **Palestinians (巴基斯坦人)** demanding a state are weak, divided and **quiescent (沉寂的，静止的))**; **morose (孤僻的，郁闷的)** as they are, few favour a return to suicide-bombing.
 32. And the campaign really got rancorous when Goldsmith tried to link Khan and extremists.
 33. Such counter-currents will prevent Kentish Town from gentrifying fully, suggests Gillian Tindall, a local historian.
 34. Interpreters are also skilled at keeping aplomb in the face of chaos.
@@ -2895,13 +2898,12 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 16. The **intrigue (阴谋，诡计)** was quickly discovered, and the would-be assassins were arrested.
 17. The twins have an intuitive awareness of each other's feelings.
 18. The **hardship (艰难，困苦)** of army training **inured (使习惯；使适应)** her to the **rigors (严酷，艰苦)** of desert warfare.
-19. The government is too effete to take out the powerful special interests that really ruin this state.
-20. Safety lessons dinned into us over and over.
-21. On the whole, situation has significantly improved with only sporadic disturbances.
-22. He was deeply impressed by the sprightly Gypsy dance.
+19. The government is too **effete (虚弱无力的，衰落的)** to take out the powerful special interests that really **ruin (破坏，毁掉)** this state.
+20. Safety lessons **dinned into (三番五次地告诫)** us over and over.
+22. He was deeply impressed by the **sprightly (adj. 生气勃勃的，活泼的)** **Gypsy (吉普赛人)** dance.
 23. In statistics, a spurious relationship is a mathematical relationship in which two events or variables have no direct causal connection, but it may be wrongly inferred that they do, due to either coincidence or the presence of a certain third, unseen factor.
 24. Fiercely independent, the elderly couple spurned all offers of financial help.
-25. The kitten crept silently across the floor before suddenly pouncing on the mouse.
+25. The **kitten (小猫)** crept silently across the floor before suddenly pouncing on the mouse.
 26. Complaints about stifling smog conditions reach crescendo.
 27. Climate change has **exerted (施加)** a ponderable influence on world politics.
 28. The committee will probably **pore over** the results of the study for a long time before making their decision.
@@ -2997,7 +2999,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 69. composure
 70. frenzied (frantic; highly agitated)
 71. Magnanimous
-72. Sporadic (intermittent or infrequent)
+72. sporadic (intermittent or infrequent): 零星的，分散的，不定时发生的
 73. Ameliorate (improve; make better)
 74. Denigrate (disparage; defame)
 75. demonstrate (show; prove) & warrant (justify, 使显得合理，成为...的根据)
@@ -3362,13 +3364,12 @@ letter back
 2. mantle
 3. rest on
 4. conceivably
-5. creep
-6. Atlantic， Pacific， Arctic, Indian
-7. blink
-8. Antarctica: 南极洲
-9. Pangaea Ultima
-10. more or  less
-11. subduction
+5. A feeling of **drowsiness (drowsy, 昏昏欲睡的)** **crept (creep 的过去式，匍匐爬行)** over him.
+6. **Atlantic (大西洋)**， **Pacific (太平洋)**， **Arctic (北极的，北极圈)** Ocean (北冰洋), Indian Ocean (印度洋)， Antarctica: 南极洲
+7. Kids **blink (眨眼)** about 5 million times a year.
+9. **Pangaea (盘古大陆，泛大陆)** Ultima: 终极盘古大陆
+10. Clothes will not make us more or less clever, better or worse, more or less honest.
+11. A lot of **subduction zone ([俯冲带](https://baike.baidu.com/item/%E4%BF%AF%E5%86%B2%E5%B8%A6/2663490))** earthquakes are 200 miles deep, and there's a lot of padding between the shaking part and the earth surface where we live.
 12. slab
 
 ## 2017.11.15
