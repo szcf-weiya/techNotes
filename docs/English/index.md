@@ -1,3 +1,7 @@
+## 2021.09.08
+
+- Welcome to perk paradise.
+
 ## 2021.09.07
 
 - Wild musk ducks learn to make high-pitched whistles from older members of their **flock (群)**.
