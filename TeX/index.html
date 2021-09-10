@@ -853,18 +853,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/finance/README.md" class="md-nav__link">
-        金融数据爬虫
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../python/rpy2/" class="md-nav__link">
         rpy2
       </a>
@@ -3484,7 +3472,10 @@ $ sudo apt-get install texlive-science
 <p>参考<a href="https://tex.stackexchange.com/questions/36609/formatting-section-titles">Formatting section titles</a></p>
 <h2 id="table">Table<a class="headerlink" href="#table" title="Permanent link">&para;</a></h2>
 <h3 id="multirow-and-multicolumn"><code>multirow</code> and <code>multicolumn</code><a class="headerlink" href="#multirow-and-multicolumn" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/szcf-weiya/Clouds/commit/1f8cfc43b773952eddb9477b7859a2566f3536a3">practical example</a></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><a href="https://github.com/szcf-weiya/Clouds/commit/1f8cfc43b773952eddb9477b7859a2566f3536a3">private project</a></p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>multirow<span class="nb">}</span>
 <span class="k">\multirow</span><span class="nb">{</span>number of rows<span class="nb">}{</span>width<span class="nb">}{</span>text<span class="nb">}</span> <span class="c">% using `*` as width implies natural width</span>
 
@@ -3492,7 +3483,10 @@ $ sudo apt-get install texlive-science
 <span class="k">\multicolumn</span><span class="nb">{</span>number of cols<span class="nb">}{</span>align<span class="nb">}{</span>text<span class="nb">}</span> <span class="c">% align `l, c, r`</span>
 </code></pre></div>
 <p>refer to <a href="https://texblog.org/2012/12/21/multi-column-and-multi-row-cells-in-latex-tables/">Multi-column and multi-row cells in LaTeX tables</a></p>
-<h3 id="midrule">midrule<a class="headerlink" href="#midrule" title="Permanent link">&para;</a></h3>
+<p>If we want to add line break in multi rows, we add specify the width, and also center the text, such as</p>
+<div class="highlight"><pre><span></span><code><span class="se">\m</span>ultirow<span class="o">{</span><span class="m">3</span><span class="o">}{</span>2cm<span class="o">}{</span><span class="se">\c</span>entering some long sentences<span class="o">}</span>
+</code></pre></div>
+<h3 id="midrule"><code>midrule</code><a class="headerlink" href="#midrule" title="Permanent link">&para;</a></h3>
 <ul>
 <li>with <code>midrule</code> provided by <code>booktabs</code>, the vertical table lines become discontinuous. According to <a href="https://tex.stackexchange.com/a/88939/">@egreg</a>, that is by design, and it is suggested to use <code>\cmidrule</code> to show the grouping of the header. <a href="https://github.com/szcf-weiya/Clouds/commit/1f8cfc43b773952eddb9477b7859a2566f3536a3">practical example</a><ul>
 <li>to add gap between two midrule, use <code>\cmidrule(lr){2-3}\cmidrule(lr){4-5}</code>, refer to <a href="https://tex.stackexchange.com/questions/180368/table-with-gap-between-cmidrules-extra-space-between-two-columns">Table with gap between cmidrule&rsquo;s (extra space between two columns)</a> and <a href="https://github.com/szcf-weiya/Clouds/blob/fe8ee8b36331eef71db914072de797ce635c022b/src/cmpr_mono_fitting.R#L302">a practical example</a></li>
@@ -3515,10 +3509,17 @@ $ sudo apt-get install texlive-science
 <li><a href="https://tex.stackexchange.com/questions/218378/forcing-subfigures-to-have-same-height-and-take-overall-x-of-linewidth-in-latex">Forcing subfigures to have same height and take overall X% of linewidth in LaTeX</a></li>
 <li><a href="https://tex.stackexchange.com/questions/10863/is-there-a-way-to-slightly-shrink-a-table-including-font-size-to-fit-within-th">Is there a way to slightly shrink a table, including font size, to fit within the column boundaries? - TeX - LaTeX Stack Exchange</a></li>
 </ul>
-<p>My private examples:</p>
-<ul>
-<li><a href="https://github.com/szcf-weiya/Cell-Video/blob/d7725152fc5b5243d74d756f9db625e4f0e3d886/report/technical-report2.tex#L1406-L1412">in table</a></li>
-</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><a href="https://github.com/szcf-weiya/Cell-Video/blob/d7725152fc5b5243d74d756f9db625e4f0e3d886/report/technical-report2.tex#L1406-L1412">in table</a></p>
+</div>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<blockquote>
+<p>Error: extra alignment tab has been changed to \cr</p>
+</blockquote>
+<p>check the number of columns.</p>
+</div>
 <h2 id="_6">替换换行符<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>详见<a href="https://tex.stackexchange.com/questions/178610/replacing-substrings-by-linebreaks">strings - Replacing substrings by linebreaks - TeX - LaTeX Stack Exchange</a></p>
 <p>这是 zju-thesis 模板允许封面标题换行的处理策略，同时参见</p>
