@@ -29,7 +29,6 @@ nav:
       - Conda: python/conda.md
       - PyStan 体验: python/pystan/README.md
       - OpenCV: python/opencv.md
-      - 金融数据爬虫: python/finance/README.md
       - rpy2: python/rpy2.md
       - 自建关键词索引页: python/esltag.md
     - Julia: 

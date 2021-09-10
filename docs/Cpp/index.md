@@ -84,6 +84,12 @@ gcc -L /usr/dev/mysql/lib -static -lmysqlclient test.o -o test
 
 参考 [Linux GCC常用命令](http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html)
 
+## Print Format
+
+![](https://user-images.githubusercontent.com/13688320/132701280-6648bbb6-5c7a-428b-b6ec-c352e23e4a28.png)
+
+> source: <https://www.cplusplus.com/reference/cstdio/printf/>
+
 ## GSL
 
 - My compiled `lib` and `include` for Windows and the detailed procedures: [szcf-weiya/GSLwin](https://github.com/szcf-weiya/GSLwin)

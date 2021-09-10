@@ -569,7 +569,8 @@ sudo apt-get install texinfo
 
 ### `multirow` and `multicolumn`
 
-[practical example](https://github.com/szcf-weiya/Clouds/commit/1f8cfc43b773952eddb9477b7859a2566f3536a3)
+!!! example
+    [private project](https://github.com/szcf-weiya/Clouds/commit/1f8cfc43b773952eddb9477b7859a2566f3536a3)
 
 ```tex
 \usepackage{multirow}
@@ -581,7 +582,13 @@ sudo apt-get install texinfo
 
 refer to [Multi-column and multi-row cells in LaTeX tables](https://texblog.org/2012/12/21/multi-column-and-multi-row-cells-in-latex-tables/)
 
-### midrule
+If we want to add line break in multi rows, we add specify the width, and also center the text, such as
+
+```bash
+\multirow{3}{2cm}{\centering some long sentences}
+```
+
+### `midrule`
 
 - with `midrule` provided by `booktabs`, the vertical table lines become discontinuous. According to [@egreg](https://tex.stackexchange.com/a/88939/), that is by design, and it is suggested to use `\cmidrule` to show the grouping of the header. [practical example](https://github.com/szcf-weiya/Clouds/commit/1f8cfc43b773952eddb9477b7859a2566f3536a3)
     - to add gap between two midrule, use `\cmidrule(lr){2-3}\cmidrule(lr){4-5}`, refer to [Table with gap between cmidrule's (extra space between two columns)](https://tex.stackexchange.com/questions/180368/table-with-gap-between-cmidrules-extra-space-between-two-columns) and [a practical example](https://github.com/szcf-weiya/Clouds/blob/fe8ee8b36331eef71db914072de797ce635c022b/src/cmpr_mono_fitting.R#L302)
@@ -607,9 +614,16 @@ and application in
 - [Forcing subfigures to have same height and take overall X% of linewidth in LaTeX](https://tex.stackexchange.com/questions/218378/forcing-subfigures-to-have-same-height-and-take-overall-x-of-linewidth-in-latex)
 - [Is there a way to slightly shrink a table, including font size, to fit within the column boundaries? - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/10863/is-there-a-way-to-slightly-shrink-a-table-including-font-size-to-fit-within-th)
 
-My private examples:
+!!! example
+    [in table](https://github.com/szcf-weiya/Cell-Video/blob/d7725152fc5b5243d74d756f9db625e4f0e3d886/report/technical-report2.tex#L1406-L1412)
 
-- [in table](https://github.com/szcf-weiya/Cell-Video/blob/d7725152fc5b5243d74d756f9db625e4f0e3d886/report/technical-report2.tex#L1406-L1412)
+!!! bug
+    > Error: extra alignment tab has been changed to \cr
+
+    check the number of columns.
+
+
+
 
 ## 替换换行符
 

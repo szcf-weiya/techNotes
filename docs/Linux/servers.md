@@ -149,6 +149,13 @@ add `./` before the file, since it will interpret colon `x:` as `[user@]host pre
 
 refer to [How can I scp a file with a colon in the file name?](https://stackoverflow.com/questions/14718720/how-can-i-scp-a-file-with-a-colon-in-the-file-name)
 
+### SeverAliveInterval and ClientAliveInterval
+
+- `SeverAliveInterval` and `SeverAliveCountMax` are set on the client side, i.e., `~/.ssh/config`
+- `ClientAliveInterval` and `ClientAliveCountMax` are set on the server side, i.e., `/etc/ssh/sshd_config`
+
+refer to [What do options `ServerAliveInterval` and `ClientAliveInterval` in sshd_config do exactly?](https://unix.stackexchange.com/questions/3026/what-do-options-serveraliveinterval-and-clientaliveinterval-in-sshd-config-d)
+
 ## 安装 spark
 
 ~~在内地云主机上，[官网下载地址](https://spark.apache.org/downloads.html) 还没 5 秒就中断了，然后找到了[清华的镜像](https://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-2.4.4/)~~

@@ -1,6 +1,11 @@
+## 2021.09.09
+
+- hear how **insect (昆虫)** mushroom-farmers **throttle (压制，节流)** the carbon emissions from dead trees.
+
 ## 2021.09.08
 
-- Welcome to perk paradise.
+- Welcome to **perk (小费，额外收入)** paradise.
+- Ireland, too, is a **paradise (天堂)** of greenery, with far fewer people than populous England and even more **quaint (古色古香的，少见的，古怪的)** villages scattered among its low-lying hills and forever green fields.
 
 ## 2021.09.07
 
@@ -2846,7 +2851,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 32. And the campaign really got rancorous when Goldsmith tried to link Khan and extremists.
 33. Such counter-currents will prevent Kentish Town from gentrifying fully, suggests Gillian Tindall, a local historian.
 34. Interpreters are also skilled at keeping aplomb in the face of chaos.
-35. Ireland, too, is a paradise of greenery, with far fewer people than populous England and even more quaint villages scattered among its low-lying hills and forever green fields.
 36. Right, and that suggests the qualities that are most germane to the job.
 37. The fortress by King Philip Augustus was situated on the right bank of the Seine, overlooking-- at that time-- splendid bucolic scenery.
 38. But overall, Mr Agar has abstracted and made manageable a range of rich and informed analysis.

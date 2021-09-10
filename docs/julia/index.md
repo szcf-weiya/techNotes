@@ -322,6 +322,11 @@ ERROR: MethodError: no method matching isfinite(::Nothing)
 
 Adopted from [Clouds#32](https://github.com/szcf-weiya/Clouds/issues/32)
 
+!!! tip
+    The specifiers in `@sprintf` should be consists of ones in C++, and the detailed explanation refers to [Print Format -- C/C++](/Cpp/#print-format)
+
+    Note that, `%g` uses the shorter representation between `%e` and `%f`.
+
 ## Distributed
 
 ### `@distributed`

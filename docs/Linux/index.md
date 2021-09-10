@@ -701,7 +701,7 @@ I am currently using the [gnome-shell extension](#system-monitor) and [Netdata: 
 - `10s_ipv4_tcp_resets_received`: average number of received TCP RESETS over the last 10 seconds. This can be an indication that a service this host needs has crashed. Netdata will not send a clear notification for this alarm.
 - `net.enp2s0`
     - `1m_received_traffic_overflow`: average inbound utilization for the network interface enp2s0 over the last minute: check if there are attempts to attack the server via `/var/log/secure`, refer to [详解CentOS通过日志反查入侵](https://www.linuxprobe.com/centos-linux-logs.html)
-
+- `net_fifo.enp2s0.10min_fifo_errors`: number of FIFO errors for the network interface enp2s0 in the last 10 minutes [possibly the indicator for much overflow to the disk](https://user-images.githubusercontent.com/13688320/132781160-542ca686-e797-4b29-8b8c-95a4a1849c16.png)
 
 ## Get history of other tty/pts?
 
