@@ -1,3 +1,7 @@
+## 2021.09.10
+
+- sickle-cell: 镰状细胞
+
 ## 2021.09.09
 
 - hear how **insect (昆虫)** mushroom-farmers **throttle (压制，节流)** the carbon emissions from dead trees.
