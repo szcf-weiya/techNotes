@@ -1,3 +1,7 @@
+## 2021.09.11
+
+- Hurricane Ida was the sixth **tropical (热带的)** **cyclone (飓风，龙卷风)** to make landfall in **Louisiana (路易斯安那州)** since the start of 2020.
+
 ## 2021.09.10
 
 - sickle-cell: 镰状细胞
