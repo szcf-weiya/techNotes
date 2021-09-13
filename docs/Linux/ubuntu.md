@@ -742,3 +742,9 @@ it seems to work since much fewer warning message of `1m_ipv4_udp_receive_buffer
 ## install win on ubuntu
 
 参考[http://www.linuxdeveloper.space/install-windows-after-linux/](http://www.linuxdeveloper.space/install-windows-after-linux/)
+
+## 开机自启动
+
+搜索 `Startup` 便可弹出开机自启动软件界面，
+
+![Selection_2329](https://user-images.githubusercontent.com/13688320/133000670-f1e9062e-8ba3-45b1-87c6-5b5e89d5150e.png)
