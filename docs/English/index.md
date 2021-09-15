@@ -1,3 +1,7 @@
+## 2021.09.14
+
+- mRNA vaccines are triumph.
+
 ## 2021.09.12
 
 - JupyterLab moves closer to becoming a **full-fledged (全面发展的)** IDE with xeus-python.
