@@ -2850,6 +2850,8 @@ Mon Aug  <span class="m">2</span> <span class="m">22</span>:08:19 <span class="m
 </li>
 </ul>
 <p>但是 <code>jobs</code> <a href="https://superuser.com/a/607219">只显示属于当前 shell 的后台程序</a>, 如果重新登录，则不会显示后台程序，详见 <a href="https://superuser.com/questions/607218/jobs-command-doesnt-show-any-background-processes"><code>jobs</code> command doesn&rsquo;t show any background processes</a></p>
+<p>－ <code>nohup command &amp;</code> vs <code>command &amp;</code>: 一般情况下，前者在当前 shell 关掉情况下仍能运行，后者不行；但其实如果 <code>shopt | grep hupon</code> 的选项为 off （详细解释另见 <a href="https://stackoverflow.com/questions/4298741/how-bash-handles-the-jobs-when-logout">How bash handles the jobs when logout? - Stack Overflow</a>），后者也能继续运行，所以区别不大，不过如果有输出前者会输出到文件 <code>nohup.txt</code>。更多细节详见 <a href="https://stackoverflow.com/questions/15595374/whats-the-difference-between-nohup-and-ampersand">What&rsquo;s the difference between nohup and ampersand</a></p>
+<p>似乎 <code>docker run</code> 使用 nohup 会直接退出，并生成文件 <code>nohup.txt</code>，里面内容为“the input device is not a TTY”.</p>
 <h2 id="crontab">crontab定时任务<a class="headerlink" href="#crontab" title="Permanent link">&para;</a></h2>
 <p><code>* */1 * * * *</code> 表现为每分钟执行，但是本来第 1 列应当为分钟，而第 2 列为小时，这样使用对用法理解错误，而且改成 <code>* * */1 * * *</code> 仍然表现为每分钟。试图</p>
 <div class="highlight"><pre><span></span><code>sudo service cron restart
