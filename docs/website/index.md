@@ -11,6 +11,28 @@ Jekyll is a **Ruby Gem** that can be installed on most systems.
 - Bundler: a gem that installs all gems in `Gemfile`.
 - RubyGems: Ruby 的一个包管理器，它提供一个分发 Ruby 程序和库的标准格式，还提供一个管理程序包安装的工具，类似于 Ubuntu 下的 apt-get, Centos 的 yum，Python 的 pip。[https://rubygems.org/](https://rubygems.org/)
 
+### run locally
+
+```bash
+# 0. install prerequisites: https://jekyllrb.com/docs/installation/ubuntu/
+# 1. install the jekyll and bundler gems
+gem install jekyll bundler
+# 2. build the site locally
+bundle exec jekyll serve
+```
+
+if it broken down, such as 
+
+```bash
+/home/weiya/gems/gems/octokit-4.14.0/lib/octokit/middleware/follow_redirects.rb:14:in `<module:Middleware>': uninitialized constant Faraday::Error::ClientError (NameError)
+```
+
+try to [update the local gem](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll) via
+
+```bash
+bundle update github-pages
+```
+
 ### unsupported plugins by Github pages
 
 > Github Pages sites are generated using the `--safe` option to disable plugins (with the exception of some [whitelisted plugins](https://pages.github.com/versions/)) for security reasons.

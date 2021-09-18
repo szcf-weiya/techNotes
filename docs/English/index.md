@@ -1,3 +1,8 @@
+## 2021.09.16
+
+- It has **commenced (开始着手)** the student fees billing.
+- The **demolition (爆破，废墟)** makes for a unique **soundtrack (原声音乐，配音、对白)**, workers **hammering (锤打，连续击打)** in **cadence (节奏)** as **blurred (模糊不清的)** black shades against the sky.
+
 ## 2021.09.14
 
 - mRNA vaccines are triumph.
