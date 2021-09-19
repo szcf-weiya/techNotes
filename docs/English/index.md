@@ -1,3 +1,7 @@
+## 2021.09.18
+
+- **Patrons (顾客)** must wear an appropriate bathing suit; gym shorts, compression shorts, sport bras or similar **attire (服装，衣服)** are not permitted.
+
 ## 2021.09.16
 
 - It has **commenced (开始着手)** the student fees billing.
