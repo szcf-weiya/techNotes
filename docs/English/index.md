@@ -1,3 +1,8 @@
+## 2021.09.19
+
+- pickleball: 匹克球
+- Squash is older, and invented by English school kids in 1830. Racquetball was created by an American fellow in 1949. [:link:](https://olympic.ca/2015/06/30/what-the-difference-is-between-racquetball-and-squash-2/)
+
 ## 2021.09.18
 
 - **Patrons (顾客)** must wear an appropriate bathing suit; gym shorts, compression shorts, sport bras or similar **attire (服装，衣服)** are not permitted.
