@@ -1,3 +1,7 @@
+## 2021.09.23
+
+- ITSC will **revamp (改造)** the network facilities.
+
 ## 2021.09.19
 
 - pickleball: 匹克球
@@ -2898,6 +2902,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. Despite having **steeled (使坚强，使坚定)** herself for the worst, the new **band (乐队)** director was disheartened to hear the **cacophonous (发音不和谐的，粗腔横调的)**/discordant sounds emanating from the freshman **orchestra (管弦乐队)**.
     - He **orchestrated (精心安排)** that entire **evening (晚会)**.
 2. Bede, the author of A History of the English Church and People, was so widely **revered (尊敬，崇敬)**/**esteemed (尊敬)** that he has been almost universally known as "The **Venerable (值得尊重的，受敬佩的)** Bede" since the ninth century.
+    - vs in spelling: vulnerable
 3. In addition to the detailed written regulations regarding play, a novice golfer must also learn the implicit/**tacit (adj. indicated by necessary connotation (内涵，含蓄，暗示) though not expressed directly)**, but nonetheless important, rules of **etiquette (礼节，礼仪)**.
 4. Based on the desire to restrict further water pollution, the Clean Water Act of 1972 began under **auspicious (有前途的，有希望的；吉祥的，吉兆的)**/promising terms, but opponents soon **assailed (攻击，质问)** the bill in the fought for its **ratification (正式批准，认可)**.
 5. Jane Austen's novel, Emma, paints a comedy of errors that results when its **heroine (女英雄，女主角)** tries her hand at creating love matches, an effort which she attributes to her own benevolence/magnanimity instead of a selfish need to meddle.
@@ -3201,8 +3206,9 @@ up
 ## 2017.10.19
 
 15. spoiled meat
-16. repercussion
-17. peper, **aromatic (香料，芳香植物)**, bark, cinnamon, ginger, clove, maize
+16. **repercussion (反射，弹回)**
+17. **pepper (辣椒，胡椒)**, **aromatic (香料，芳香植物)**, **bark (咆哮，吠叫)**, **cinnamon (肉桂)**, **ginger (生姜)**, **clove (丁香)**, **maize (玉米)**
+    - garlic clove: 大蒜瓣
 18.  boil it down
 19. astronomical1
 20. diplomacy
@@ -3289,16 +3295,7 @@ Nothing. Watching The Greatest Challenge.
 
 ## 2017.10.27
 
-1. nilpotent
-
-
-## 2017.10.28
-
-NULL
-
-## 2017.10.29
-
-NULL
+1. [nilpotent](https://en.wikipedia.org/wiki/Nilpotent) matrix: 幂零矩阵
 
 ## 2017.10.31
 
