@@ -1,3 +1,11 @@
+## 2021.09.29
+
+- Lamb Combo: Lam Curry, **Basmati Rice (印度香米)**
+
+## 2021.09.28
+
+- tow zone: 拖车区
+
 ## 2021.09.23
 
 - ITSC will **revamp (改造)** the network facilities.
@@ -2992,7 +3000,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 15. an impartial and perspicacious judge
 16. Her skill and talent ennoble her profession.
 17. The kind of ennui comes from having too much time on one's hands and too little will to find something productive to do.
-18. ensconce the spare house key in a place where no thief would think to look.
+18. **ensconce (安置，隐藏)** the spare house key in a place where no thief would think to look.
 19. A brief but embarrassing silence ensued.
 20. their clandestine love affair
 21. covert alliance
@@ -3019,15 +3027,15 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 41. The actor must have had some esoteric motive for leaving stage.
 42. In just a few pages the writer **etched (蚀刻，画出...的轮廓)** an unforgettable portrait of one of the more remarkable First Ladies.
 43. The minister eschews involvement in local politics, since he doesn't want to diminish his moral authority in the community.
-44. The exhibit was a hodgepodge of mediocre art, bad art, and really bad art.
-45. His failure was brought on by his hubris.
-46. an expurgated edition of the letters.
+44. The exhibit was a **hodgepodge (大杂烩，混杂物)** of **mediocre (平庸的，普通的)** art, bad art, and really bad art.
+45. His failure was brought on by his **hubris (傲慢，狂妄)**.
+46. an **expurgated (删去，使纯洁)** edition of the letters.
 47. exquisite pen-and-ink drawings of city scenes
 48. One of the immutable laws of television is that low ratings inevitably lead to cancellation.
 49. She remained impassive as the officers informed her of her son's death.
 50. economy, thriftiness, liberal
-51. meekness (humbleness; timidity)
-52. avalanche
+51. **meekness (温柔谦恭)** (**humbleness (谦逊)**; **timidity (胆小，羞怯)**)
+52. **avalanche (雪崩)**
 53. static (inert; motionless)
 54. Autonomous (self-governing; independent)
 55. Intrinsic (innate; essential)

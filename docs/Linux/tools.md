@@ -1071,3 +1071,29 @@ curl -sL https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
 采用 `unar your.zip`
 
 参考 [Linux文件乱码](https://www.findhao.net/easycoding/1605)
+
+虽然它会自动识别编码，但有时候处理中文压缩文件仍然出现乱码，比如解压 <https://uploads.cosx.org/2011/03/SongPoem.tar.gz> 这个文件，
+
+这时通过 `-e` 指定编码
+
+```bash
+ unar -e GB18030 ~/PDownloads/SongPoem.tar.gz 
+/home/weiya/PDownloads/SongPoem.tar.gz: Tar in Gzip
+  SongPoem.csv  (4171055 B)... OK.
+  宋词.R  (583 B)... OK.
+Successfully extracted to "SongPoem".
+```
+
+!!! info
+    根据时间演化以及大小关系，常见中文编码方式
+
+    > GB18030 > GBK > GB2312
+
+    详见 [GB2312、GBK、GB18030 这几种字符集的主要区别是什么？](https://www.zhihu.com/question/19677619)
+
+但是！这只能保证压缩文件的文件名以指定的编码格式进行编码，文件内容仍然是乱码，于是仍需指定编码格式。为了一劳永逸，直接转换成 UTF8 格式，
+
+```bash
+$ iconv -f GB18030 SongPoem.csv -t UTF8 -o SongPoem.csv.utf8
+$ iconv -f GB18030 宋词.R -t UTF8 -o script.R
+```

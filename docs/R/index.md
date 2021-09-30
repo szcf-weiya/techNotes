@@ -144,6 +144,8 @@ array([ 32,  67,  74,  85,  93,  97,  99, 100])
 
 but keep in mind that the index starts from 0 instead of 1. Here is another way in [Python | Returning index of a sorted list](https://www.geeksforgeeks.org/python-returning-index-of-a-sorted-list/) (TODO).
 
+In julia, we use `sort` and `sortperm`.
+
 ## Run from Command Line
 
 - run `R -q -e "1+1"` in the command line
