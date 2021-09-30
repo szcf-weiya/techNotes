@@ -2491,10 +2491,10 @@
 <p>At first, I try to use <code>xaxt</code> option to remove the axis, but the box still remains, just same as the <a href="https://stackoverflow.com/questions/4785657/how-to-draw-an-empty-plot">one question in the StackOverflow</a>, and I found a possible solution, directly use</p>
 <div class="highlight"><pre><span></span><code><span class="nf">plot.new</span><span class="p">()</span>
 </code></pre></div>
-<p>All is well before I tried to add the text <span><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span>, if I use</p>
+<p>All is well before I tried to add the text <span class="arithmatex"><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span>, if I use</p>
 <div class="highlight"><pre><span></span><code><span class="nf">text</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="nf">expression</span><span class="p">(</span><span class="n">rho</span><span class="p">),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
 </code></pre></div>
-<p>it is OK, but it is exactly on the axis, not proper, but when I tried smaller <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>-coordinate, such as -0.1, the text cannot appear, which seems out of the figure. I have tried <code>par()</code> parameters, such as <code>mar</code>, but does not work.</p>
+<p>it is OK, but it is exactly on the axis, not proper, but when I tried smaller <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>-coordinate, such as -0.1, the text cannot appear, which seems out of the figure. I have tried <code>par()</code> parameters, such as <code>mar</code>, but does not work.</p>
 <p>Then I have no idea, and do not know how to google it. And even though I want to post an issue in the StackOverflow. But a <a href="https://www.stat.auckland.ac.nz/~ihaka/120/Notes/ch03.pdf">random reference</a> give me ideas, in which the example saves me,</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">plot.new</span><span class="p">()</span>
 <span class="o">&gt;</span> <span class="nf">plot.window</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="m">10</span><span class="p">))</span>
@@ -2569,7 +2569,7 @@
 <h3 id="density-of-weibull">density of Weibull<a class="headerlink" href="#density-of-weibull" title="Permanent link">&para;</a></h3>
 <p>adapted from <a href="http://www.cnblogs.com/wwxbi/p/6142410.html">ggplot2绘制概率密度图</a></p>
 <p>Take the Weibull distribution as an example, </p>
-<div>
+<div class="arithmatex">
 <div class="MathJax_Preview">
 f(x) = \begin{cases}
 \frac k\lambda \left(\frac x\lambda\right)^{k-1}e^{-(x/\lambda)^k} &amp; x\ge 0\\
@@ -2583,10 +2583,10 @@ f(x) = \begin{cases}
 \end{cases}
 </script>
 </div>
-<p>where <span><span class="MathJax_Preview">\lambda &gt; 0</span><script type="math/tex">\lambda > 0</script></span> is the scale parameter, and <span><span class="MathJax_Preview">k &gt; 0</span><script type="math/tex">k > 0</script></span> is the shape parameter. And</p>
+<p>where <span class="arithmatex"><span class="MathJax_Preview">\lambda &gt; 0</span><script type="math/tex">\lambda > 0</script></span> is the scale parameter, and <span class="arithmatex"><span class="MathJax_Preview">k &gt; 0</span><script type="math/tex">k > 0</script></span> is the shape parameter. And</p>
 <ul>
-<li>if <span><span class="MathJax_Preview">k=1</span><script type="math/tex">k=1</script></span>, it becomes to the exponential distribution</li>
-<li>if <span><span class="MathJax_Preview">k=2</span><script type="math/tex">k=2</script></span>, it becomes to the Rayleigh distribution.</li>
+<li>if <span class="arithmatex"><span class="MathJax_Preview">k=1</span><script type="math/tex">k=1</script></span>, it becomes to the exponential distribution</li>
+<li>if <span class="arithmatex"><span class="MathJax_Preview">k=2</span><script type="math/tex">k=2</script></span>, it becomes to the Rayleigh distribution.</li>
 </ul>
 <div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1"><code>dweibull</code></label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="n">length.out</span><span class="o">=</span><span class="m">10000</span><span class="p">)</span>

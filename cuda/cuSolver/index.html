@@ -2184,7 +2184,7 @@
 </ol>
 <h2 id="gsl-vs-cusolver">gsl vs. cusolver<a class="headerlink" href="#gsl-vs-cusolver" title="Permanent link">&para;</a></h2>
 <p>Compare the LU decomposition by using gsl on CPU or using cusolver on GPU.</p>
-<p>Considering the solve <span><span class="MathJax_Preview">Ax=b</span><script type="math/tex">Ax=b</script></span> by LU decomposition, where <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>&lsquo;s dimension is <span><span class="MathJax_Preview">N\times N</span><script type="math/tex">N\times N</script></span></p>
+<p>Considering the solve <span class="arithmatex"><span class="MathJax_Preview">Ax=b</span><script type="math/tex">Ax=b</script></span> by LU decomposition, where <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>&lsquo;s dimension is <span class="arithmatex"><span class="MathJax_Preview">N\times N</span><script type="math/tex">N\times N</script></span></p>
 <p>The test results are as follows:</p>
 <p>For gsl on CPU,</p>
 <p><img alt="" src="img/cpu1.png" /></p>
@@ -2193,7 +2193,7 @@
 <p><img alt="" src="img/gpu2.png" /></p>
 <p>If we don&rsquo;t do LU decomposition, just generate random numbers, the elapse time are as follows</p>
 <p><img alt="" src="img/noting.png" /></p>
-<p>In a word, when <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> is less than 2500, the speed of gsl is more fast, but when <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> is larger than 2500, cusolver is more fast, and it seems that cusolver just takes about 3 seconds to finish calculation no matter what <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> is.</p>
+<p>In a word, when <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> is less than 2500, the speed of gsl is more fast, but when <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> is larger than 2500, cusolver is more fast, and it seems that cusolver just takes about 3 seconds to finish calculation no matter what <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> is.</p>
                 
               
               

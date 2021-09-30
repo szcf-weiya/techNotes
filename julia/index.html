@@ -3833,7 +3833,7 @@ $ julia mwe3.jl
 ok
 ok
 </code></pre></div>
-<p>Thus, the reason is that <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> is a global variable, we cannot modify a global variable in a local block without <code>global</code> keyword, i.e., <code>global i = i + 1</code>, but we can read <code>i</code> in the <code>for</code> loop.</p>
+<p>Thus, the reason is that <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> is a global variable, we cannot modify a global variable in a local block without <code>global</code> keyword, i.e., <code>global i = i + 1</code>, but we can read <code>i</code> in the <code>for</code> loop.</p>
 <p>Alternatively, we can use <code>let</code> block,</p>
 <div class="highlight"><pre><span></span><code><span class="k">let</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>

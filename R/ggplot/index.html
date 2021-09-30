@@ -2318,7 +2318,7 @@
 <h2 id="ggplot_2">ggplot绘制概率密度图<a class="headerlink" href="#ggplot_2" title="Permanent link">&para;</a></h2>
 <p>adapted from <a href="http://www.cnblogs.com/wwxbi/p/6142410.html">ggplot2绘制概率密度图</a></p>
 <p>Take the Weibull distribution as an example, </p>
-<div>
+<div class="arithmatex">
 <div class="MathJax_Preview">
 f(x) = \begin{cases}
 \frac k\lambda \left(\frac x\lambda\right)^{k-1}e^{-(x/\lambda)^k} &amp; x\ge 0\\
@@ -2332,10 +2332,10 @@ f(x) = \begin{cases}
 \end{cases}
 </script>
 </div>
-<p>where <span><span class="MathJax_Preview">\lambda &gt; 0</span><script type="math/tex">\lambda > 0</script></span> is the scale parameter, and <span><span class="MathJax_Preview">k &gt; 0</span><script type="math/tex">k > 0</script></span> is the shape parameter. And</p>
+<p>where <span class="arithmatex"><span class="MathJax_Preview">\lambda &gt; 0</span><script type="math/tex">\lambda > 0</script></span> is the scale parameter, and <span class="arithmatex"><span class="MathJax_Preview">k &gt; 0</span><script type="math/tex">k > 0</script></span> is the shape parameter. And</p>
 <ul>
-<li>if <span><span class="MathJax_Preview">k=1</span><script type="math/tex">k=1</script></span>, it becomes to the exponential distribution</li>
-<li>if <span><span class="MathJax_Preview">k=2</span><script type="math/tex">k=2</script></span>, it becomes to the Rayleigh distribution.</li>
+<li>if <span class="arithmatex"><span class="MathJax_Preview">k=1</span><script type="math/tex">k=1</script></span>, it becomes to the exponential distribution</li>
+<li>if <span class="arithmatex"><span class="MathJax_Preview">k=2</span><script type="math/tex">k=2</script></span>, it becomes to the Rayleigh distribution.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="n">length.out</span><span class="o">=</span><span class="m">10000</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">dweibull</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">log</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>

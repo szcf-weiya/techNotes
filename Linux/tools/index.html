@@ -3948,6 +3948,26 @@ scp_to_chpc <span class="o">()</span>
 <p>如果 zip 文件解压乱码，可以试试 unar,</p>
 <p>采用 <code>unar your.zip</code></p>
 <p>参考 <a href="https://www.findhao.net/easycoding/1605">Linux文件乱码</a></p>
+<p>虽然它会自动识别编码，但有时候处理中文压缩文件仍然出现乱码，比如解压 <a href="https://uploads.cosx.org/2011/03/SongPoem.tar.gz">https://uploads.cosx.org/2011/03/SongPoem.tar.gz</a> 这个文件，</p>
+<p>这时通过 <code>-e</code> 指定编码</p>
+<div class="highlight"><pre><span></span><code> unar -e GB18030 ~/PDownloads/SongPoem.tar.gz 
+/home/weiya/PDownloads/SongPoem.tar.gz: Tar <span class="k">in</span> Gzip
+  SongPoem.csv  <span class="o">(</span><span class="m">4171055</span> B<span class="o">)</span>... OK.
+  宋词.R  <span class="o">(</span><span class="m">583</span> B<span class="o">)</span>... OK.
+Successfully extracted to <span class="s2">&quot;SongPoem&quot;</span>.
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>根据时间演化以及大小关系，常见中文编码方式</p>
+<blockquote>
+<p>GB18030 &gt; GBK &gt; GB2312</p>
+</blockquote>
+<p>详见 <a href="https://www.zhihu.com/question/19677619">GB2312、GBK、GB18030 这几种字符集的主要区别是什么？</a></p>
+</div>
+<p>但是！这只能保证压缩文件的文件名以指定的编码格式进行编码，文件内容仍然是乱码，于是仍需指定编码格式。为了一劳永逸，直接转换成 UTF8 格式，</p>
+<div class="highlight"><pre><span></span><code>$ iconv -f GB18030 SongPoem.csv -t UTF8 -o SongPoem.csv.utf8
+$ iconv -f GB18030 宋词.R -t UTF8 -o script.R
+</code></pre></div>
                 
               
               
