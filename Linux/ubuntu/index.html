@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/ubuntu/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8b42a75e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1c75ef36.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -538,16 +538,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#advanced-package-tool" class="md-nav__link">
-    Advanced Package Tool
+  <a href="#package-manager" class="md-nav__link">
+    Package Manager
   </a>
   
-    <nav class="md-nav" aria-label="Advanced Package Tool">
+    <nav class="md-nav" aria-label="Package Manager">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ppa" class="md-nav__link">
-    PPA
+  <a href="#advanced-package-tool-apt" class="md-nav__link">
+    Advanced Package Tool (APT)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snap" class="md-nav__link">
+    Snap
   </a>
   
 </li>
@@ -2408,16 +2415,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#advanced-package-tool" class="md-nav__link">
-    Advanced Package Tool
+  <a href="#package-manager" class="md-nav__link">
+    Package Manager
   </a>
   
-    <nav class="md-nav" aria-label="Advanced Package Tool">
+    <nav class="md-nav" aria-label="Package Manager">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ppa" class="md-nav__link">
-    PPA
+  <a href="#advanced-package-tool-apt" class="md-nav__link">
+    Advanced Package Tool (APT)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snap" class="md-nav__link">
+    Snap
   </a>
   
 </li>
@@ -2639,15 +2653,26 @@
                 
                 
                 <h1 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h1>
-<h2 id="advanced-package-tool">Advanced Package Tool<a class="headerlink" href="#advanced-package-tool" title="Permanent link">&para;</a></h2>
+<h2 id="package-manager">Package Manager<a class="headerlink" href="#package-manager" title="Permanent link">&para;</a></h2>
+<h3 id="advanced-package-tool-apt">Advanced Package Tool (APT)<a class="headerlink" href="#advanced-package-tool-apt" title="Permanent link">&para;</a></h3>
 <p>APT is a package management system for Debian and other Linux distributions based on it, such as Ubuntu.</p>
-<h3 id="ppa">PPA<a class="headerlink" href="#ppa" title="Permanent link">&para;</a></h3>
+<h4 id="ppa">PPA<a class="headerlink" href="#ppa" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>PPAs (Personal Package Archive) are repositories hosted on Launchpad. You can use PPAs to install or upgrade packages that are not available in the official Ubuntu repositories.</p>
 </blockquote>
 <p>see also:</p>
 <ul>
 <li><a href="https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa">How do I resolve unmet dependencies after adding a PPA? - Ask Ubuntu</a></li>
+</ul>
+<h3 id="snap">Snap<a class="headerlink" href="#snap" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>snaps</code>: the packages</li>
+<li><code>snapd</code>: the tool for using packages</li>
+</ul>
+<p>Snaps are self-contained applications running in a sandbox with mediated access to the host system. <a href="https://en.wikipedia.org/wiki/Snap_(package_manager)">:wiki:</a></p>
+<p>see also:</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/47514122">Ubuntu 推出的Snap应用架构有什么深远意义? &ndash; 知乎</a></li>
 </ul>
 <h2 id="gnome">GNOME<a class="headerlink" href="#gnome" title="Permanent link">&para;</a></h2>
 <p>GNOME (originally an acronym for GNU Network Object Model Environment) is a desktop environment for Unix-like operating systems. <a href="https://en.wikipedia.org/wiki/GNOME"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.97 18.95-2.56-6.03c-1.02 1.99-2.14 4.08-3.1 6.03-.01.01-.47 0-.47 0C7.37 15.5 5.85 12.1 4.37 8.68 4.03 7.84 2.83 6.5 2 6.5v-.45h5.06v.45c-.6 0-1.62.4-1.36 1.05.72 1.54 3.24 7.51 3.93 9.03.47-.94 1.8-3.42 2.37-4.47-.45-.88-1.87-4.18-2.29-5-.32-.54-1.13-.61-1.75-.61 0-.15.01-.25 0-.44l4.46.01v.4c-.61.03-1.18.24-.92.82.6 1.24.95 2.13 1.5 3.28.17-.34 1.07-2.19 1.5-3.16.26-.65-.13-.91-1.21-.91.01-.12.01-.33.01-.43 1.39-.01 3.48-.01 3.85-.02v.42c-.71.03-1.44.41-1.82.99L13.5 11.3c.18.51 1.96 4.46 2.15 4.9l3.85-8.83c-.3-.72-1.16-.87-1.5-.87v-.45l4 .03V6.5c-.88 0-1.43.5-1.75 1.25-.8 1.79-3.25 7.49-4.85 11.2h-.43z"/></svg></span></a></p>
@@ -3331,10 +3356,10 @@ net.core.wmem_max <span class="o">=</span> <span class="m">212992</span>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c7d1b464.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

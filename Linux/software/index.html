@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/software/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8b42a75e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1c75ef36.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -848,6 +848,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ksnip" class="md-nav__link">
+    ksnip
+  </a>
   
 </li>
       
@@ -3217,6 +3224,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ksnip" class="md-nav__link">
+    ksnip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#nautilus" class="md-nav__link">
     nautilus
   </a>
@@ -3984,6 +3998,31 @@ ubuntu用搜狗输入法，会出各种问题，有其实和linux版微信一起
 <div class="highlight"><pre><span></span><code>ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
 </code></pre></div>
 <p>refer to <a href="https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player">convert KAZAM video file to a file, playable in windows media player</a></p>
+<h2 id="ksnip">ksnip<a class="headerlink" href="#ksnip" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Post: 2021-10-02 10:54:23</p>
+</div>
+<p>Since <code>shutter</code> has stopped developing, and it seems not friendly on Ubuntu 20.04, find the alternative, <a href="https://github.com/ksnip/ksnip">Ksnip</a></p>
+<p>Install it via <code>snap</code>,</p>
+<div class="highlight"><pre><span></span><code>~$ sudo apt-get install ksnip
+<span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> weiya: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+
+No apt package <span class="s2">&quot;ksnip&quot;</span>, but there is a snap with that name.
+Try <span class="s2">&quot;snap install ksnip&quot;</span>
+
+E: Unable to locate package ksnip
+~$ snap install ksnip
+ksnip <span class="m">1</span>.9.1 from Damir Porobic <span class="o">(</span>dporobic<span class="o">)</span> installed
+</code></pre></div>
+<p>But note that it cannot access the external disk drive as in Okular. Hopefully, use the following line</p>
+<div class="highlight"><pre><span></span><code>snap connect ksnip:removable-media
+</code></pre></div>
+<p>can enable the access to external disk.</p>
+<p>Generally, it requires the software shipped with <code>removable-media</code> plug, as mentioned in <a href="https://askubuntu.com/questions/1034030/how-to-get-access-to-usb-storage-from-an-application-installed-as-snap">How to get access to USB-storage from an application installed as Snap? - Ask Ubuntu</a></p>
 <h2 id="nautilus">nautilus<a class="headerlink" href="#nautilus" title="Permanent link">&para;</a></h2>
 <p>It is a file manager for GNOME.</p>
 <h3 id="no-new-document-in-right-click-menu">no &ldquo;new document&rdquo; in right click menu<a class="headerlink" href="#no-new-document-in-right-click-menu" title="Permanent link">&para;</a></h3>
@@ -4749,10 +4788,10 @@ $ wineboot -r <span class="c1"># restart</span>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c7d1b464.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
