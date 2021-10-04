@@ -16,3 +16,5 @@ LANG | Julia | R | Python | Others
 [Jupyter kernels](../../python/#different-kernels) | `IJulia` | `IRkernel` | `ipykernel` | 
 [too many open figures](../../julia/#gr-too-many-open-files) | `inline` | | `rcParams` | 
 [merge multiple slices](../../python/#merge-multiple-slices) | `vcat` | | `np.r_` |
+index of true elements | `findall` | `which` | `np.where()[0]` | 
+freq table | | `table`| `np.unique(return_counts=True)`| 

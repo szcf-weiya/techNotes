@@ -494,6 +494,40 @@ ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
 
 refer to [convert KAZAM video file to a file, playable in windows media player](https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player)
 
+## ksnip
+
+!!! info
+    Post: 2021-10-02 10:54:23
+
+Since `shutter` has stopped developing, and it seems not friendly on Ubuntu 20.04, find the alternative, [Ksnip](https://github.com/ksnip/ksnip)
+
+Install it via `snap`,
+
+```bash
+~$ sudo apt-get install ksnip
+[sudo] password for weiya: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+
+No apt package "ksnip", but there is a snap with that name.
+Try "snap install ksnip"
+
+E: Unable to locate package ksnip
+~$ snap install ksnip
+ksnip 1.9.1 from Damir Porobic (dporobic) installed
+```
+
+But note that it cannot access the external disk drive as in Okular. Hopefully, use the following line
+
+```bash
+snap connect ksnip:removable-media
+```
+
+can enable the access to external disk.
+
+Generally, it requires the software shipped with `removable-media` plug, as mentioned in [How to get access to USB-storage from an application installed as Snap? - Ask Ubuntu](https://askubuntu.com/questions/1034030/how-to-get-access-to-usb-storage-from-an-application-installed-as-snap)
+
 ## nautilus
 
 It is a file manager for GNOME.
