@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/TeX/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.1c75ef36.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.24c991ad.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -1566,16 +1566,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
+  <a href="#bibliography" class="md-nav__link">
+    Bibliography
   </a>
   
-    <nav class="md-nav" aria-label="Reference">
+    <nav class="md-nav" aria-label="Bibliography">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#biblatex" class="md-nav__link">
-    Biblatex
+  <a href="#biblatex-natbib" class="md-nav__link">
+    biblatex -&gt; natbib
   </a>
   
 </li>
@@ -2961,16 +2961,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
+  <a href="#bibliography" class="md-nav__link">
+    Bibliography
   </a>
   
-    <nav class="md-nav" aria-label="Reference">
+    <nav class="md-nav" aria-label="Bibliography">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#biblatex" class="md-nav__link">
-    Biblatex
+  <a href="#biblatex-natbib" class="md-nav__link">
+    biblatex -&gt; natbib
   </a>
   
 </li>
@@ -3503,9 +3503,45 @@ code
 <li><code>@</code> in an <code>\if</code> statement: <a href="https://tex.stackexchange.com/questions/27803/when-to-use-in-an-if-statement">When to use @ in an \if statement</a></li>
 <li><code>\makeatletter</code> and <code>\makeatother</code>: <a href="https://tex.stackexchange.com/questions/8351/what-do-makeatletter-and-makeatother-do">What do \makeatletter and \makeatother do?</a></li>
 </ul>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
-<h3 id="biblatex">Biblatex<a class="headerlink" href="#biblatex" title="Permanent link">&para;</a></h3>
-<p>记得设置 texstudio 的 biblatex 编译方式，设为 biber，默认为 bibtex.</p>
+<h2 id="bibliography">Bibliography<a class="headerlink" href="#bibliography" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>biber</code> and <code>bibtex</code> are external programs to process <code>.bib</code> file</li>
+<li><code>biblatex</code> and <code>natbib</code> are LaTeX packages that format citations and bibliographies<ul>
+<li><code>natbib</code> works <strong>only</strong> with <code>bibtex</code></li>
+<li><code>biblatex</code> works with both <code>biber</code> and <code>bibtex</code></li>
+</ul>
+</li>
+</ul>
+<p>Refer to <a href="https://tex.stackexchange.com/questions/204291/bibtex-latex-compiling">Bibtex, Latex compiling - TeX - LaTeX Stack Exchange</a></p>
+<p>Based on my understanding and experience, <code>biber + biblatex</code> is more advanced, and it can easily handle accent characters.</p>
+<ul>
+<li>(2021-10-07 20:55:35) Just encountered that accented characters are correctly displayed in <code>.bib</code> file as UTF8 encoding, but after processing with <code>bibtex</code>, the accented characters are messy. (Refer to <a href="https://github.com/szcf-weiya/Cell-Video/issues/219#issuecomment-938060248"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more details.)</li>
+</ul>
+<h3 id="biblatex-natbib">biblatex -&gt; natbib<a class="headerlink" href="#biblatex-natbib" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Post: 2021-10-07 21:13:41
+See also: <a href="https://github.com/szcf-weiya/Cell-Video/commit/7d54f77a0ac00ae2afa73f02f939156d054f5852"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+</div>
+<p>To switch from &ldquo;biblatex + biber&rdquo; to <a href="https://www.overleaf.com/learn/latex/Bibliography_management_with_natbib">&ldquo;natbib + bibtex&rdquo;</a>, </p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">biblatex + biber</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="na">[backend=biber,citestyle=authoryear,sortcites=true,natbib,sorting=nyt,style=apa]</span><span class="nb">{</span>biblatex<span class="nb">}</span>
+<span class="k">\DeclareLanguageMapping</span><span class="nb">{</span>american<span class="nb">}{</span>american-apa<span class="nb">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">natbib + bibtex</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="na">[authoryear]</span><span class="nb">{</span>natbib<span class="nb">}</span>
+<span class="k">\bibliographystyle</span><span class="nb">{</span>imsart-nameyear<span class="nb">}</span>
+</code></pre></div>
+</div>
+</div>
+<p>We can just modify the header definition without replacing the commands in the main document.</p>
+<p>The idea is to define the command in <code>natbib+bibtex</code> as <code>biblatex+biber</code>, and keep the main content unchanged. Specifically,</p>
+<div class="highlight"><pre><span></span><code><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\parencite</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\citep</span><span class="nb">{</span>#1<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\textcite</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\citet</span><span class="nb">{</span>#1<span class="nb">}}</span>
+<span class="c">% \addbibresource{ref_biblatex.bib}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\printbibliography</span><span class="nb">}{</span><span class="k">\bibliography</span><span class="nb">{</span>ref<span class="nb">_</span>bibtex.bib<span class="nb">}}</span>
+</code></pre></div>
 <h3 id="bibtex">bibtex文献加颜色<a class="headerlink" href="#bibtex" title="Permanent link">&para;</a></h3>
 <p>两种方式</p>
 <p>第一种</p>
@@ -3543,6 +3579,14 @@ code
 <p>默认 APA 格式的参考文献是不带标号的，如果需要，参考</p>
 <p><a href="https://tex.stackexchange.com/questions/373336/apa-bibliography-style-with-numbers">APA bibliography style with numbers</a></p>
 <h3 id="export-to-bib-from-zotero">export to <code>.bib</code> from Zotero<a class="headerlink" href="#export-to-bib-from-zotero" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The plugin <a href="https://retorque.re/zotero-better-bibtex/">Better BibTeX</a> can keep the <code>.bib</code> file once new references are added. Also, it can be exported to either <code>biblatex</code> or <code>bibtex</code>. </p>
+<ul>
+<li>With <code>biblatex</code>, do not care about the accented characters, just use its original format</li>
+<li>With <code>bibtex</code>, it will automatically convert the accented characters with necessary backslashes.</li>
+</ul>
+</div>
 <p>The original abstract field is,</p>
 <blockquote>
 <p>Karhunen&ndash;Lo`{e}ve decomposition</p>
@@ -3811,12 +3855,12 @@ $ sudo apt-get install texlive-science
 <h2 id="greek-symbols">Greek Symbols<a class="headerlink" href="#greek-symbols" title="Permanent link">&para;</a></h2>
 <h3 id="howto-bold">howto bold<a class="headerlink" href="#howto-bold" title="Permanent link">&para;</a></h3>
 <p><code>\mathbf</code> 只对公式中的普通字母 <code>ABC...abcdef</code> 等起作用。</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Method 1</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Method 1</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
 <span class="k">\boldsymbol</span><span class="nb">{</span><span class="k">\sigma</span><span class="nb">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Method 2</label><div class="tabbed-content">
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Method 2</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>bm<span class="nb">}</span>
 <span class="k">\bm</span><span class="nb">{</span><span class="k">\sigma</span><span class="nb">}</span>
 </code></pre></div>
@@ -4019,7 +4063,7 @@ $ sudo apt-get install texlive-science
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c7d1b464.min.js"></script>
+      <script src="../assets/javascripts/bundle.bc35569b.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       

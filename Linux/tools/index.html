@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/tools/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.1c75ef36.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.24c991ad.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -933,6 +933,13 @@
           <li class="md-nav__item">
   <a href="#-r" class="md-nav__link">
     -r: 扩展的正则表达式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-or-double-quotes" class="md-nav__link">
+    single or double quotes
   </a>
   
 </li>
@@ -3065,6 +3072,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#single-or-double-quotes" class="md-nav__link">
+    single or double quotes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3787,7 +3801,12 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 <li>删除最后一行：<code>sed -i '$ d' file.txt</code></li>
 <li>在 vi 中注释多行：按住 v 选定特定行之后，按住 <code>:s/^/#/g</code> 即可添加注释，取消注释则用 <code>:s/^#//g</code>. 另见 VI.</li>
 <li>print lines between two matching patterns (<a href="https://unix.stackexchange.com/questions/264962/print-lines-of-a-file-between-two-matching-patterns"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59z"/></svg></span></a>): <code>/^pattern1/,/^pattern2/p</code>, and if one want to just print once, use <code>/^pattern1/,${p;/^pattern2/q}</code></li>
-<li>insertion: <a href="https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/">https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/</a> and <a href="https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/">https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/</a></li>
+<li>insertion (refer to <a href="https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> and <a href="(https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/)"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>)<ul>
+<li>insert before the line of matched expression: <code>sed '/expr/i something-to-insert'</code></li>
+<li>insert after the line: replace <code>i</code> with <code>a</code></li>
+<li>insert multiple lines: add <code>\n</code> in the text to insert</li>
+</ul>
+</li>
 </ul>
 <h3 id="_7"><code>|</code>的作用<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -3808,6 +3827,25 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 <li><code>\(abc\)\{2,3\}</code> becomes <code>(abc){2,3}</code> when using extended regular expressions. It matches either <code>abcabc</code> or <code>abcabcabc</code>.</li>
 <li><code>\(abc*\)\1</code> becomes <code>(abc*)\1</code> when using extended regular expressions. Backreferences must still be escaped when using extended regular expressions.</li>
 </ol>
+<h3 id="single-or-double-quotes">single or double quotes<a class="headerlink" href="#single-or-double-quotes" title="Permanent link">&para;</a></h3>
+<p>When using double quotes, the string is first interpreted  by the shell before being passed to <code>sed</code>. As a result,</p>
+<ul>
+<li>more backslashes are needed (see also <a href="https://askubuntu.com/a/1368043">my answer</a>)</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;\alpha&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/\\alpha/\\beta/&#39;</span>
+<span class="se">\b</span>eta
+$ <span class="nb">echo</span> <span class="s2">&quot;\alpha&quot;</span> <span class="p">|</span> sed <span class="s2">&quot;s/\\\alpha/\\\beta/&quot;</span>
+<span class="se">\b</span>eta
+</code></pre></div>
+<ul>
+<li>command expressions (also dollar expressions) would be evaluated firstly</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s1">&#39;`date`&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;s/`date`/`uptime`/&#39;</span>
+<span class="sb">`</span>uptime<span class="sb">`</span>
+$ <span class="nb">echo</span> <span class="s1">&#39;`date`&#39;</span> <span class="p">|</span> sed <span class="s2">&quot;s/`date`/`uptime`/&quot;</span>
+<span class="sb">`</span>date<span class="sb">`</span>
+</code></pre></div>
+<p>refer to <a href="https://askubuntu.com/questions/1146789/single-quote-and-double-quotes-in-sed/">single quote and double quotes in sed - Ask Ubuntu</a></p>
 <h2 id="sendmail"><code>sendmail</code><a class="headerlink" href="#sendmail" title="Permanent link">&para;</a></h2>
 <p>send mail on the command line. On the stapc-WSL, install it via</p>
 <div class="highlight"><pre><span></span><code>$ sudo apt install sendmail
@@ -4107,7 +4145,7 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c7d1b464.min.js"></script>
+      <script src="../../assets/javascripts/bundle.bc35569b.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
