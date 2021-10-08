@@ -849,7 +849,10 @@ rename Sam3 Stm32 *.nc
 - 删除最后一行：`sed -i '$ d' file.txt`
 - 在 vi 中注释多行：按住 v 选定特定行之后，按住 `:s/^/#/g` 即可添加注释，取消注释则用 `:s/^#//g`. 另见 VI.
 - print lines between two matching patterns ([:material-stack-overflow:](https://unix.stackexchange.com/questions/264962/print-lines-of-a-file-between-two-matching-patterns)): `/^pattern1/,/^pattern2/p`, and if one want to just print once, use `/^pattern1/,${p;/^pattern2/q}`
-- insertion: [https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/](https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/) and [https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/](https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/)
+- insertion (refer to [:link:](https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/) and [:link:]((https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/)))
+    - insert before the line of matched expression: `sed '/expr/i something-to-insert'`
+    - insert after the line: replace `i` with `a`
+    - insert multiple lines: add `\n` in the text to insert
 
 ### `|`的作用
 
@@ -872,6 +875,30 @@ rename Sam3 Stm32 *.nc
 3. `a\{3,\}` becomes `a{3,}` when using extended regular expressions. It matches three or more ‘a’s.
 4. `\(abc\)\{2,3\}` becomes `(abc){2,3}` when using extended regular expressions. It matches either `abcabc` or `abcabcabc`.
 5. `\(abc*\)\1` becomes `(abc*)\1` when using extended regular expressions. Backreferences must still be escaped when using extended regular expressions.
+
+### single or double quotes
+
+When using double quotes, the string is first interpreted  by the shell before being passed to `sed`. As a result,
+
+- more backslashes are needed (see also [my answer](https://askubuntu.com/a/1368043))
+
+```bash
+$ echo "\alpha" | sed 's/\\alpha/\\beta/'
+\beta
+$ echo "\alpha" | sed "s/\\\alpha/\\\beta/"
+\beta
+```
+
+- command expressions (also dollar expressions) would be evaluated firstly
+
+```bash
+$ echo '`date`' | sed 's/`date`/`uptime`/'
+`uptime`
+$ echo '`date`' | sed "s/`date`/`uptime`/"
+`date`
+```
+
+refer to [single quote and double quotes in sed - Ask Ubuntu](https://askubuntu.com/questions/1146789/single-quote-and-double-quotes-in-sed/)
 
 ## `sendmail`
 

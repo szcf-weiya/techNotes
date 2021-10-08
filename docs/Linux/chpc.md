@@ -35,6 +35,22 @@ The sketch plot is as follows,
 
 ![image](https://user-images.githubusercontent.com/13688320/126862431-67358586-1f7b-410f-bafe-e3941bc71d40.png)
 
+It is necessary to check the status of the tunnel. If the connection is broken, such as the sandbox has rebooted, pop a message window to remind to re-establish the tunnel in time.
+
+The command to pop message is `notify-send`, and note that successful command exits with 0, use the script to check the ssh connection,
+
+```bash
+--8<-- "docs/Linux/check_ssh.sh"
+```
+
+Create a regular job as follows,
+
+```bash
+$ crontab -e
+0 * * * * export XDG_RUNTIME_DIR=/run/user/$(id -u); for host in sandbox STAPC ROCKY; do sh /home/weiya/github/techNotes/docs/Linux/check_ssh.sh $host; done
+```
+
+where `export XDG_RUNTIME_DIR=/run/user/$(id -u)` is necessary for `notify-send` to pop the window (refer to [Notify-send doesn't work from crontab](https://askubuntu.com/a/1098206))
 
 ## Custom Commands
 

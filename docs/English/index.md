@@ -1,3 +1,11 @@
+## 2021.10.07
+
+- The Harvard **Gazette (报纸)**
+
+## 2021.10.04
+
+- ginger ale: 姜味汽水
+
 ## 2021.09.29
 
 - Lamb Combo: Lam Curry, **Basmati Rice (印度香米)**

@@ -241,11 +241,51 @@ $$
 - `@` in an `\if` statement: [When to use @ in an \if statement](https://tex.stackexchange.com/questions/27803/when-to-use-in-an-if-statement)
 - `\makeatletter` and `\makeatother`: [What do \makeatletter and \makeatother do?](https://tex.stackexchange.com/questions/8351/what-do-makeatletter-and-makeatother-do)
 
-## Reference
+## Bibliography
 
-### Biblatex
+- `biber` and `bibtex` are external programs to process `.bib` file
+- `biblatex` and `natbib` are LaTeX packages that format citations and bibliographies
+    - `natbib` works **only** with `bibtex`
+    - `biblatex` works with both `biber` and `bibtex`
 
-记得设置 texstudio 的 biblatex 编译方式，设为 biber，默认为 bibtex.
+Refer to [Bibtex, Latex compiling - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/204291/bibtex-latex-compiling)
+
+Based on my understanding and experience, `biber + biblatex` is more advanced, and it can easily handle accent characters.
+
+- (2021-10-07 20:55:35) Just encountered that accented characters are correctly displayed in `.bib` file as UTF8 encoding, but after processing with `bibtex`, the accented characters are messy. (Refer to [:link:](https://github.com/szcf-weiya/Cell-Video/issues/219#issuecomment-938060248) for more details.)
+
+### biblatex -> natbib
+
+!!! info
+    Post: 2021-10-07 21:13:41
+    See also: [:link:](https://github.com/szcf-weiya/Cell-Video/commit/7d54f77a0ac00ae2afa73f02f939156d054f5852)
+
+To switch from "biblatex + biber" to ["natbib + bibtex"](https://www.overleaf.com/learn/latex/Bibliography_management_with_natbib), 
+
+=== "biblatex + biber"
+
+    ```tex
+    \usepackage[backend=biber,citestyle=authoryear,sortcites=true,natbib,sorting=nyt,style=apa]{biblatex}
+    \DeclareLanguageMapping{american}{american-apa}
+    ```
+
+=== "natbib + bibtex"
+    
+    ```tex
+    \usepackage[authoryear]{natbib}
+    \bibliographystyle{imsart-nameyear}
+    ```
+
+We can just modify the header definition without replacing the commands in the main document.
+
+The idea is to define the command in `natbib+bibtex` as `biblatex+biber`, and keep the main content unchanged. Specifically,
+
+```tex
+\newcommand{\parencite}[1]{\citep{#1}}
+\newcommand{\textcite}[1]{\citet{#1}}
+% \addbibresource{ref_biblatex.bib}
+\newcommand{\printbibliography}{\bibliography{ref_bibtex.bib}}
+```
 
 ### bibtex文献加颜色
 
@@ -305,6 +345,12 @@ $$
 [APA bibliography style with numbers](https://tex.stackexchange.com/questions/373336/apa-bibliography-style-with-numbers)
 
 ### export to `.bib` from Zotero
+
+!!! tip
+    The plugin [Better BibTeX](https://retorque.re/zotero-better-bibtex/) can keep the `.bib` file once new references are added. Also, it can be exported to either `biblatex` or `bibtex`. 
+
+    - With `biblatex`, do not care about the accented characters, just use its original format
+    - With `bibtex`, it will automatically convert the accented characters with necessary backslashes.
 
 The original abstract field is,
 

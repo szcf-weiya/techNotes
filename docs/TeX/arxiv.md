@@ -1,4 +1,19 @@
-# 提交至 arXiv
+# Submit to arXiv
+
+## Second Submit
+
+!!! info
+    Post: 2021-10-07 19:37:58
+
+版本更新到了 TexLive 2020，继续使用 `makisyu/texlive-2016` 反而不行，好在 T460P 上已经装好了 2020 版本的。所以先通过 `xelatex + biber` 编译得到 `.bbl` 文件，然后连同其他源文件一起上传。
+
+!!! warning
+    可能因为是 Windows 服务器，文件名不支持时间戳中的 `:`，所以需要修改文件。
+
+## First Submit
+
+!!! info
+    Post: 2020.08.10
 
 记录下提交 tex 源文件到 arXiv 上踩过的坑。
 

@@ -625,6 +625,12 @@ dvipng is not executable
 
 但是并不能存为 pdf，或者被其他软件看到，用 Acrobat 打开会有个打叉的部分，但是看不到签名，[已经被标记为 bug，但似乎还未解决](https://bugs.launchpad.net/ubuntu/+source/okular/+bug/1859632)。
 
+### pdf background color
+
+set background color for visable screenshots.
+
+refer to [Is there a pdf reader allowing me to change background color of (arXiv) pdfs?](https://askubuntu.com/questions/472540/is-there-a-pdf-reader-allowing-me-to-change-background-color-of-arxiv-pdfs)
+
 ## OneDrive
 
 In fact, the following client on Ubuntu is also in the command-line form. But usually, we refer to OneDrive as the whole of the client and the host, which is visited via a browser. 
