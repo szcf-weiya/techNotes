@@ -79,6 +79,7 @@ nav:
     - Matrix: stats/matrix.md
   - InvitedPosts:
     - Samtools: biology/samtools.md
+    - MaxClusterUsage: Linux/maximum-usage-of-ITSC-cluster-resource.md
   - Misc:
     - English: English/index.md
     - Guitar: guitar/index.md
