@@ -16,6 +16,7 @@ def click_event(event, x, y, flags, param):
         cv2.imshow('image', img)
 
 def main(filename, folder = "./"):
+    print(filename)
     img = cv2.imread(filename, 1)
     h, w = img.shape[:2]
     f = 4

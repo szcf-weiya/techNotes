@@ -1,3 +1,11 @@
+## 2021.10.14
+
+- Everything **hinges on (取决于)** how hard we work.
+
+## 2021.10.09
+
+- excursion: 短途旅行，涉猎
+
 ## 2021.10.07
 
 - The Harvard **Gazette (报纸)**
@@ -231,7 +239,7 @@ None
 
 ## 2021.08.03
 
-- delve inside the COVID-19 outbreak in India
+- **delve (钻研)** inside the COVID-19 outbreak in India
 
 ## 2021.08.02
 
@@ -1874,7 +1882,7 @@ None
 - Italy cities: Bari (巴里，东南部海港), Naples (那不勒斯，西南部港市), Venice (威尼斯，港市)
 - the number 53 simply stopped coming up on the Venice wheel -- leading **punters** to place increasingly big bets on the number in the certainty that it must soon make a reappearance.
 - their financial ruin, the pain of which resulted in a **spate** of suicides
-- the victims had been led **astray** by a reasoning flaw called the "gambler's fallacy" -- a worryingly common error that can **derail (脱轨)** many of our professional decisions, from a **goalkeeper**'s responses to penalty shootouts in football to stock investments and even judicial rulings on new **asylum** cases
+- the victims had been *led **astray (adv 迷途地; adj 迷路的)** (引入歧途)* by a reasoning flaw called the "gambler's fallacy" -- a worryingly common error that can **derail (脱轨)** many of our professional decisions, from a **goalkeeper**'s responses to penalty shootouts in football to stock investments and even **judicial (法庭的，公正的)** rulings on new **asylum** cases
 - the team analysed **umpires**' decisions in Major League Baseball games.
 
 ## 2020.08.05
