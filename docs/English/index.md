@@ -2222,7 +2222,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. An example is some preliminary data gathered at Stanford on revival of cardiac arrest patients by **paramedics**.
 2. defibrillation
-3. For **diploid** and **tetraploid** tumors, the **flow cytometry** method was also able to estimate the percent of tumor cells in a growth stage of their cell cycle, the percent of growth is systematically missing for most **aneuploid** tumors.
+3. For **diploid** and **tetraploid** tumors, the flow **cytometry (细胞计数法，测量不同细胞参数的生物方法的统称)** method was also able to estimate the percent of tumor cells in a growth stage of their cell cycle, the percent of growth is systematically missing for most **aneuploid** tumors.
 
 ## 2020.01.05
 

@@ -18,3 +18,4 @@ LANG | Julia | R | Python | Others
 [merge multiple slices](../../python/#merge-multiple-slices) | `vcat` | | `np.r_` |
 index of true elements | `findall` | `which` | `np.where()[0]` | 
 freq table | | `table`| `np.unique(return_counts=True)`| 
+figure size | | `size in pixel` | | `figsize in inch` | 

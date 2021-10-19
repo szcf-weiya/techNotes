@@ -107,6 +107,29 @@ awk '{s+=$1} END {print $s}' data.txt
 
 refer to [Bash command to sum a column of numbers - Stack Overflow](https://stackoverflow.com/questions/3096259/bash-command-to-sum-a-column-of-numbers) for other approaches.
 
+### select lines with conditions
+
+- select lines whose 2nd column is not empty: **usage of `!~`**
+
+```bash
+$ echo -e 'a \n c d' | awk '$2 !~ /^$/{print $2}'
+d
+```
+
+- select lines whose 2nd column is not either empty or `-`: **usage of `|`**
+
+```bash
+$ echo -e 'a -\n c d' | awk '$2 !~ /-|^$/{print $2}'
+d
+```
+
+- select lines whose both 2nd column and 3rd column are not empty: **usage of `&&`**
+
+```bash
+$ echo -e 'a - 1 \n c d 3 \n 5 6 ' | awk '$2 !~ /-|^$/ && $3 !~ /^$/ {print $2}'
+d
+```
+
 ## `column`
 
 display the csv beautifully,

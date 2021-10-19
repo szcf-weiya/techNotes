@@ -475,6 +475,15 @@ $ sudo apt-get install ibus-rime
 Tips:
 
 - 输入外国姓名中的点：中文输入法状态下 `Shift + \`
+- 自定义快捷键，取消 `Ctrl + `` 的快捷键，在 `~/.config/ibus/rime` 新建文件 `default.custom.yaml`，然后写入
+
+```bash
+patch:
+  "switcher/hotkeys":  # 這個列表裏每項定義一個快捷鍵，使哪個都中
+    - F4
+```
+
+其实也就是删去 `Control+grave`，详见 [一例、定製喚出方案選單的快捷鍵](https://github.com/rime/home/wiki/CustomizationGuide#%E4%B8%80%E4%BE%8B%E5%AE%9A%E8%A3%BD%E5%96%9A%E5%87%BA%E6%96%B9%E6%A1%88%E9%81%B8%E5%96%AE%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%8D%B5)。修改完成后需要点击右上角输入法菜单中的 “部署”。
 
 ## Kazam
 
