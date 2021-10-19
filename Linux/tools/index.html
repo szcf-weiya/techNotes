@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/tools/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.5143246d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.db9e7362.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -590,6 +590,13 @@
           <li class="md-nav__item">
   <a href="#sum-of-a-column-of-numbers" class="md-nav__link">
     sum of a column of numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-lines-with-conditions" class="md-nav__link">
+    select lines with conditions
   </a>
   
 </li>
@@ -2743,6 +2750,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#select-lines-with-conditions" class="md-nav__link">
+    select lines with conditions
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3308,6 +3322,25 @@ d
 <div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{s+=$1} END {print $s}&#39;</span> data.txt
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/3096259/bash-command-to-sum-a-column-of-numbers">Bash command to sum a column of numbers - Stack Overflow</a> for other approaches.</p>
+<h3 id="select-lines-with-conditions">select lines with conditions<a class="headerlink" href="#select-lines-with-conditions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>select lines whose 2nd column is not empty: <strong>usage of <code>!~</code></strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;$2 !~ /^$/{print $2}&#39;</span>
+d
+</code></pre></div>
+<ul>
+<li>select lines whose 2nd column is not either empty or <code>-</code>: <strong>usage of <code>|</code></strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a -\n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;$2 !~ /-|^$/{print $2}&#39;</span>
+d
+</code></pre></div>
+<ul>
+<li>select lines whose both 2nd column and 3rd column are not empty: <strong>usage of <code>&amp;&amp;</code></strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a - 1 \n c d 3 \n 5 6 &#39;</span> <span class="p">|</span> awk <span class="s1">&#39;$2 !~ /-|^$/ &amp;&amp; $3 !~ /^$/ {print $2}&#39;</span>
+d
+</code></pre></div>
 <h2 id="column"><code>column</code><a class="headerlink" href="#column" title="Permanent link">&para;</a></h2>
 <p>display the csv beautifully,</p>
 <div class="highlight"><pre><span></span><code>$ head file1.txt <span class="p">|</span> column -s, -t
@@ -4159,7 +4192,7 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1e84347e.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

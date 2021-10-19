@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/software/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.5143246d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.db9e7362.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -4016,7 +4016,13 @@ ubuntu用搜狗输入法，会出各种问题，有其实和linux版微信一起
 <p>Tips:</p>
 <ul>
 <li>输入外国姓名中的点：中文输入法状态下 <code>Shift + \</code></li>
+<li>自定义快捷键，取消 <code>Ctrl + `` 的快捷键，在</code>~/.config/ibus/rime<code>新建文件</code>default.custom.yaml`，然后写入</li>
 </ul>
+<div class="highlight"><pre><span></span><code>patch:
+  <span class="s2">&quot;switcher/hotkeys&quot;</span>:  <span class="c1"># 這個列表裏每項定義一個快捷鍵，使哪個都中</span>
+    - F4
+</code></pre></div>
+<p>其实也就是删去 <code>Control+grave</code>，详见 <a href="https://github.com/rime/home/wiki/CustomizationGuide#%E4%B8%80%E4%BE%8B%E5%AE%9A%E8%A3%BD%E5%96%9A%E5%87%BA%E6%96%B9%E6%A1%88%E9%81%B8%E5%96%AE%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%8D%B5">一例、定製喚出方案選單的快捷鍵</a>。修改完成后需要点击右上角输入法菜单中的 “部署”。</p>
 <h2 id="kazam">Kazam<a class="headerlink" href="#kazam" title="Permanent link">&para;</a></h2>
 <p>Ubuntu 下 kazam 录屏 没声音解决方案</p>
 <p><a href="http://www.cnblogs.com/xn--gzr/p/6195317.html">http://www.cnblogs.com/xn&ndash;gzr/p/6195317.html</a></p>
@@ -4822,7 +4828,7 @@ $ wineboot -r <span class="c1"># restart</span>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1e84347e.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
