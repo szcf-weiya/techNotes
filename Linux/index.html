@@ -3261,6 +3261,17 @@ Last login: Thu May <span class="m">20</span> <span class="m">13</span>:29:14 <s
 <li><code>systemctl enable/disable [NAME]</code>: enable/disable one or more unit files</li>
 <li><code>systemctl reboot</code>: shut down and reboot the system</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>WSL does not support <code>systemd</code>, for example, it throws</p>
+<div class="highlight"><pre><span></span><code>$ systemctl list-units
+System has not been booted with systemd as init system <span class="o">(</span>PID <span class="m">1</span><span class="o">)</span>. Can<span class="err">&#39;</span>t operate.
+</code></pre></div>
+<p>see also</p>
+<ul>
+<li><a href="https://superuser.com/questions/1343558/how-to-make-wsl-run-services-at-startup">How to make WSL run services at startup - Super User</a></li>
+</ul>
+</div>
 <h2 id="custom-shortcut-to-switch-external-display-mode">Custom Shortcut to Switch External Display Mode<a class="headerlink" href="#custom-shortcut-to-switch-external-display-mode" title="Permanent link">&para;</a></h2>
 <p>办公室电脑既可以作为显示屏，也可以在 PC 模式下使用 Windows 系统。在 PC 模式下，在 Ubuntu 上通过 synergy 共享键鼠，但是此时存在一个问题，因为 HDMI 仍然连着，所以在移动鼠标时中间有个 gap，也就是需要跳过外接显示屏才能移动到 PC。</p>
 <p>试过在 synergy 中将 PC 机设置为 T460p 上方，这样移动鼠标只需往上，不过体验不是很好，而且 Ubuntu 顶端有状态栏而 PC 端底部也有task bar，移动时能明显感受到延时。另外一个策略便是切换显示屏 mode，由 joint 模式切换成 mirror。</p>
