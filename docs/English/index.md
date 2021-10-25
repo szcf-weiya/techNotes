@@ -1,3 +1,9 @@
+## 2021.10.22 
+
+- Increased **predation (捕食)** and competition ultimately favored the evolution of more elaborate nests.
+- vertebrate: 脊椎动物
+- plumage: 翅膀，鸟类羽毛
+
 ## 2021.10.14
 
 - Everything **hinges on (取决于)** how hard we work.
@@ -436,6 +442,7 @@ None
 ## 2021.06.19
 
 - 20 years ago, Christopher Nolan produced one of his first most influential movies in the history of **cinematography (电影摄制技术)**. Memento broke many of the traditional paradigms in the film industry by structuring two parallel narratives, one **chronologically (按年代顺序，按时间顺序)** going backwards and one going forward.
+    - chronology: 年表，年代学
 
 ## 2021.06.18
 
@@ -3334,7 +3341,7 @@ Nothing. Watching The Greatest Challenge.
 8. plate tectonics: 【地质】板块构造论
 9. geochemist, geochemistry: [地球化学](https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83%E5%8C%96%E5%AD%A6)
 10. A **bolide (【天文学】火流星，火球)**, or fireball, is an extremely bright **meteor (流星)**, and those can be about the size of a **grapefruit (葡萄柚，西柚)**.
-11. magma, mantle, lava
+11. magma, mantle, **lava (火山喷发的熔岩)**
 14. volcanism
 15. makeover
 16. pummel
@@ -3420,7 +3427,7 @@ letter back
 ## 2017.11.14
 
 1. molten
-2. mantle
+2. **mantle (地幔)**
 3. rest on
 4. conceivably
 5. A feeling of **drowsiness (drowsy, 昏昏欲睡的)** **crept (creep 的过去式，匍匐爬行)** over him.
