@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/julia/plot/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.db9e7362.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -1034,6 +1034,8 @@
       </a>
       
         
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -2264,6 +2266,8 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -2433,8 +2437,19 @@
 <div class="highlight"><pre><span></span><code><span class="n">ERROR</span><span class="o">:</span> <span class="kt">MethodError</span><span class="o">:</span> <span class="n">no</span> <span class="n">method</span> <span class="n">matching</span> <span class="n">_show</span><span class="p">(</span><span class="o">::</span><span class="kt">IOStream</span><span class="p">,</span> <span class="o">::</span><span class="kt">MIME</span><span class="p">{</span><span class="kt">Symbol</span><span class="p">(</span><span class="s">&quot;application/pdf&quot;</span><span class="p">)},</span> <span class="o">::</span><span class="kt">Plots</span><span class="o">.</span><span class="kt">Plot</span><span class="p">{</span><span class="kt">Plots</span><span class="o">.</span><span class="kt">PGFPlotsXBackend</span><span class="p">})</span> 
 </code></pre></div>
 <ul>
-<li><a href="https://github.com/szcf-weiya/Clouds/issues/53"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5z"/><path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-1.5 0a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/></svg></span></a> rebuild <code>GR</code> if <code>ERROR: could not load library "libGR.so"</code>. Possible reason is that the version (such as <code>BwGt2</code>) to use has not been correctly built, although it was working well in other versions, such as <code>yMV3y</code>.</li>
+<li>
+<p><a href="https://github.com/szcf-weiya/Clouds/issues/53"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5z"/><path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-1.5 0a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/></svg></span></a> rebuild <code>GR</code> if <code>ERROR: could not load library "libGR.so"</code>. Possible reason is that the version (such as <code>BwGt2</code>) to use has not been correctly built, although it was working well in other versions, such as <code>yMV3y</code>.</p>
+</li>
+<li>
+<p><a href=""></a></p>
+</li>
 </ul>
+<p>when using layout with setting like <code>@layout([a{0.05w} b; _ c{0.05h}])</code></p>
+<div class="highlight"><pre><span></span><code><span class="o">!</span> <span class="n">Package</span> <span class="n">pgfplots</span> <span class="n">Error</span><span class="o">:</span> <span class="n">Error</span><span class="o">:</span> <span class="n">Plot</span> <span class="n">width</span> <span class="sb">`15.99043pt&#39; is too small. This can</span>
+<span class="sb">not be implemented while maintaining constant size for labels. Sorry, label sizes </span>
+<span class="sb">are only approximate. You will need to adjust your width..</span>
+</code></pre></div>
+<p>set a larger size, say, increasing 0.05 to 0.2.</p>
 <h2 id="gr-too-many-open-files">GR: Too many open files<a class="headerlink" href="#gr-too-many-open-files" title="Permanent link">&para;</a></h2>
 <p>The complete error message is </p>
 <div class="highlight"><pre><span></span><code><span class="n">No</span> <span class="n">XVisualInfo</span> <span class="k">for</span> <span class="n">format</span> <span class="n">QSurfaceFormat</span><span class="p">(</span><span class="n">version</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">options</span> <span class="n">QFlags</span><span class="o">&lt;</span><span class="n">QSurfaceFormat</span><span class="o">::</span><span class="kt">FormatOption</span><span class="o">&gt;</span><span class="p">(),</span> <span class="n">depthBufferSize</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">redBufferSize</span> <span class="mi">1</span><span class="p">,</span> <span class="n">greenBufferSize</span> <span class="mi">1</span><span class="p">,</span> <span class="n">blueBufferSize</span> <span class="mi">1</span><span class="p">,</span> <span class="n">alphaBufferSize</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">stencilBufferSize</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">samples</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">swapBehavior</span> <span class="n">QSurfaceFormat</span><span class="o">::</span><span class="n">SwapBehavior</span><span class="p">(</span><span class="n">SingleBuffer</span><span class="p">),</span> <span class="n">swapInterval</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profile</span>  <span class="n">QSurfaceFormat</span><span class="o">::</span><span class="n">OpenGLContextProfile</span><span class="p">(</span><span class="n">NoProfile</span><span class="p">))</span>
@@ -2590,10 +2605,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.1e84347e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

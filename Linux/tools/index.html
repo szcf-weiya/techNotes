@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/tools/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.db9e7362.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -552,6 +552,8 @@
       </a>
       
         
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -929,13 +931,6 @@
   
     <nav class="md-nav" aria-label="sed">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    |的作用
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#-r" class="md-nav__link">
@@ -2708,6 +2703,8 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -3085,13 +3082,6 @@
   
     <nav class="md-nav" aria-label="sed">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    |的作用
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#-r" class="md-nav__link">
@@ -3833,11 +3823,6 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 <li><a href="https://stackoverflow.com/questions/10803296/modifying-replace-string-in-xargs">Modifying replace string in xargs</a></li>
 </ul>
 <h2 id="sed"><code>sed</code><a class="headerlink" href="#sed" title="Permanent link">&para;</a></h2>
-<p>参考</p>
-<ol>
-<li><a href="http://man.linuxde.net/sed">Linux sed 命令用法详解：功能强大的流式文本编辑器</a></li>
-<li><a href="https://www.cnblogs.com/nhlinkin/p/3647357.html">sed &amp; awk常用正则表达式 - 菲一打 - 博客园</a></li>
-</ol>
 <ul>
 <li>打印特定行，比如第 10 行：<code>sed '10!d' file.txt</code>, 参考 <a href="https://stackoverflow.com/questions/19327556/get-specific-line-from-text-file-using-just-shell-script">Get specific line from text file using just shell script</a></li>
 <li>打印行范围，<code>sed -n '10,20p' file.txt</code>，则单独打印第 10 行也可以由 <code>sed -n '10p' file.txt</code> 给出，如果采用分号 <code>;</code> 则不是连续选择，而只是特定的行，参考 <a href="https://blog.csdn.net/raysen_zj/article/details/46761253">sed之打印特定行与连续行</a><ul>
@@ -3854,18 +3839,21 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 <li>insert multiple lines: add <code>\n</code> in the text to insert</li>
 </ul>
 </li>
+<li>竖线 <code>|</code> 元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 <a href="https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L4"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li>directly replace hex string, such as <a href="https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L6"><code>'s/\xee\x81\xab/合/g'</code></a>, see also <a href="https://stackoverflow.com/questions/7760717/hex-string-replacement-using-sed"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
-<h3 id="_7"><code>|</code>的作用<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>竖线(|)元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 </p>
-</blockquote>
+<p>Refer to</p>
+<ol>
+<li><a href="http://man.linuxde.net/sed">Linux sed 命令用法详解：功能强大的流式文本编辑器</a></li>
+<li><a href="https://www.cnblogs.com/nhlinkin/p/3647357.html">sed &amp; awk常用正则表达式 - 菲一打 - 博客园</a></li>
+</ol>
 <h3 id="-r"><code>-r</code>: 扩展的正则表达式<a class="headerlink" href="#-r" title="Permanent link">&para;</a></h3>
 <p>参考<a href="https://www.gnu.org/software/sed/manual/html_node/Extended-regexps.html">Extended regexps - sed, a stream editor</a></p>
 <p>摘录如下</p>
 <blockquote>
 <p>The only difference between basic and extended regular expressions is in the behavior of a few characters: ‘?’, ‘+’, parentheses, and braces (‘{}’). While basic regular expressions require these to be escaped if you want them to behave as special characters, when using extended regular expressions you must escape them if you want them to match a literal character.</p>
 </blockquote>
-<p>就是说 basic 模式下，要使用特殊字符（如正则表达式中）需要转义，但 extended 模式相反，转义后表达的是原字符。</p>
+<p><strong>就是说 basic 模式下，要使用特殊字符（如正则表达式中）需要转义，但 extended 模式相反，转义后表达的是原字符。</strong></p>
 <p>举个例子</p>
 <ol>
 <li><code>abc?</code> becomes <code>abc\?</code> when using extended regular expressions. It matches the literal string ‘abc?’.</li>
@@ -4189,10 +4177,10 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.1e84347e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

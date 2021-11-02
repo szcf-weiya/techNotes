@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/TeX/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.db9e7362.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.a57b2b03.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -1354,6 +1354,8 @@
       </a>
       
         
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -1368,23 +1370,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
+  <a href="#installation-of-texlive" class="md-nav__link">
+    Installation of TeXLive
   </a>
   
-    <nav class="md-nav" aria-label="Installation">
+    <nav class="md-nav" aria-label="Installation of TeXLive">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-texlive-2020" class="md-nav__link">
-    install TeXLive 2020
+  <a href="#2021-on-rocky" class="md-nav__link">
+    2021 on Rocky
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-from-source" class="md-nav__link">
-    install from source
+  <a href="#2017-2020" class="md-nav__link">
+    2017 -&gt; 2020
   </a>
   
 </li>
@@ -2763,6 +2765,8 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -2777,23 +2781,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
+  <a href="#installation-of-texlive" class="md-nav__link">
+    Installation of TeXLive
   </a>
   
-    <nav class="md-nav" aria-label="Installation">
+    <nav class="md-nav" aria-label="Installation of TeXLive">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-texlive-2020" class="md-nav__link">
-    install TeXLive 2020
+  <a href="#2021-on-rocky" class="md-nav__link">
+    2021 on Rocky
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-from-source" class="md-nav__link">
-    install from source
+  <a href="#2017-2020" class="md-nav__link">
+    2017 -&gt; 2020
   </a>
   
 </li>
@@ -3363,9 +3367,36 @@
                 
                 
                 <h1 id="tex">关于 TeX<a class="headerlink" href="#tex" title="Permanent link">&para;</a></h1>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<h3 id="install-texlive-2020">install TeXLive 2020<a class="headerlink" href="#install-texlive-2020" title="Permanent link">&para;</a></h3>
-<p>The texlive2017 for Ubuntu cannot work for me, it reports</p>
+<h2 id="installation-of-texlive">Installation of TeXLive<a class="headerlink" href="#installation-of-texlive" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">TL;DR</p>
+<p>Following the <a href="https://tug.org/texlive/quickinstall.html">official instruction</a>,</p>
+<ol>
+<li>download <code>install-tl</code></li>
+<li>run it, and optionally specify the mirror location for faster download speed</li>
+<li></li>
+</ol>
+</div>
+<h3 id="2021-on-rocky">2021 on Rocky<a class="headerlink" href="#2021-on-rocky" title="Permanent link">&para;</a></h3>
+<p>did not click <code>create symlinks to standard directories</code> after running <code>./install-tl</code></p>
+<p>create module file, <code>/usr/share/Modules/modulefiles/texlive/2021</code>,</p>
+<div class="highlight"><pre><span></span><code><span class="nb">set</span>     version         <span class="m">2021</span>
+<span class="nb">set</span>     app             texlive
+<span class="nb">set</span>     modroot         /usr/local/<span class="nv">$app</span>/<span class="nv">$version</span>
+
+prepend-path PATH <span class="nv">$modroot</span>/bin/x86_64-linux
+prepend-path MANPATH <span class="nv">$modroot</span>/texmf-dist/doc/man
+prepend-path INFOPATH <span class="nv">$modroot</span>/texmf-dist/doc/info
+</code></pre></div>
+<p>then call it after loading the module,</p>
+<div class="highlight"><pre><span></span><code>$ which pdflatex
+/usr/bin/pdflatex
+$ module load texlive/2021 
+$ which pdflatex
+/usr/local/texlive/2021/bin/x86_64-linux/pdflatex
+</code></pre></div>
+<h3 id="2017-2020">2017 -&gt; 2020<a class="headerlink" href="#2017-2020" title="Permanent link">&para;</a></h3>
+<p>The TeXLive 2017 for Ubuntu cannot work for me, it reports</p>
 <blockquote>
 <p>fatal: Could not undump 6994 4-byte item(s) &hellip;</p>
 </blockquote>
@@ -3374,19 +3405,17 @@
 <p>fmtutil-sys &ndash;all</p>
 </blockquote>
 <p>refer to <a href="https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from">Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”</a>, but does not work.</p>
-<p>And I also try uninstall and reinstall texlive, but it still does not work.</p>
+<p>And I also try uninstall and reinstall TexLive, but it still does not work.</p>
 <p>Then finally I decided to install the latest TeXLive 2020, <a href="https://tug.org/texlive/quickinstall.html">TeX Live - Quick install</a>, follow the instructions, but note that the mirror url should append <code>path/systems/texlive/tlnet</code>.</p>
 <div class="highlight"><pre><span></span><code>install-tl --location http://mirror.example.org/ctan/path/systems/texlive/tlnet
 </code></pre></div>
 <p>And note that the <a href="https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu">steps for completely removing the installed TeXLive</a>.</p>
 <p>If without root privilege, when running <code>install-tl</code>, type <code>D</code> to change the directory, and actually changing the first <code>&lt;1&gt;</code> would change all other directories.</p>
-<h3 id="install-from-source">install from source<a class="headerlink" href="#install-from-source" title="Permanent link">&para;</a></h3>
-<ol>
-<li><a href="http://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373">How to install “vanilla” TeXLive on Debian or Ubuntu?</a></li>
-<li><a href="http://www.cnblogs.com/wenbosheng/archive/2016/08/03/5725834.html">Linux 系统下原版 texlive 2016 的安装与配置</a></li>
-</ol>
-<p>记住勾选 create symlinks to standard directories</p>
 <h3 id="portable-mode">portable mode<a class="headerlink" href="#portable-mode" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><a href="https://github.com/szcf-weiya/techNotes/commit/b3ed900f0623d6fa1035ee7790fc650bb7ccb1fa">Date: Mar 22, 2019</a></p>
+</div>
 <p>目前笔记本上 texlive 还是 2015 版的，而 TikePictures.jl 要求的 lualatex 跑不成功，有 bug。于是考虑安装最新版 texlive 2018，只不过笔记本硬盘空间不够，决定在移动硬盘中安装 texlive。</p>
 <p><a href="http://tug.org/texlive/doc/install-tl.html">TexLive 官方说明文档</a>也介绍了 <code>-portable</code> 的安装选项，</p>
 <p><img alt="" src="portable_install.png" /></p>
@@ -4074,10 +4103,10 @@ $ sudo apt-get install texlive-science
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.1e84347e.min.js"></script>
+      <script src="../assets/javascripts/bundle.b1047164.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
