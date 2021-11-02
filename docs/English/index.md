@@ -1,3 +1,11 @@
+## 2021.10.27
+
+- **Picketing (罢工纠察)** is the essential way that we publicly display our strike power and disrupt the University.
+    - picket line: 纠察线，罢工警戒线
+- **intracellular (细胞内的)** signaling pathways in CAR T cells
+- macrophage: 巨噬细胞
+
+
 ## 2021.10.22 
 
 - Increased **predation (捕食)** and competition ultimately favored the evolution of more elaborate nests.

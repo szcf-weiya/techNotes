@@ -108,6 +108,18 @@ ERROR: MethodError: no method matching _show(::IOStream, ::MIME{Symbol("applicat
 
 - [:octicons-issue-closed-16:](https://github.com/szcf-weiya/Clouds/issues/53) rebuild `GR` if `ERROR: could not load library "libGR.so"`. Possible reason is that the version (such as `BwGt2`) to use has not been correctly built, although it was working well in other versions, such as `yMV3y`.
 
+- []()
+
+when using layout with setting like `@layout([a{0.05w} b; _ c{0.05h}])`
+
+```julia
+! Package pgfplots Error: Error: Plot width `15.99043pt' is too small. This can
+not be implemented while maintaining constant size for labels. Sorry, label sizes 
+are only approximate. You will need to adjust your width..
+```
+
+set a larger size, say, increasing 0.05 to 0.2.
+
 ## GR: Too many open files
 
 The complete error message is 

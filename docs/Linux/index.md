@@ -13,6 +13,7 @@
 
     - apt: Debian, Ubuntu, Linux Mint
     - yum: CentOS, Fedora
+    - dnf: Dandified Yum, RPM发行版的软件包管理器Yellowdog Updater, Modified（yum）的下一代版本
     - YaST: openSUSE
     - Pacman: Manjaro、ArchLinux
 

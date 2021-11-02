@@ -860,11 +860,6 @@ rename Sam3 Stm32 *.nc
 
 ## `sed`
 
-参考
-
-1. [Linux sed 命令用法详解：功能强大的流式文本编辑器](http://man.linuxde.net/sed)
-2. [sed &amp; awk常用正则表达式 - 菲一打 - 博客园](https://www.cnblogs.com/nhlinkin/p/3647357.html)
-
 - 打印特定行，比如第 10 行：`sed '10!d' file.txt`, 参考 [Get specific line from text file using just shell script](https://stackoverflow.com/questions/19327556/get-specific-line-from-text-file-using-just-shell-script)
 - 打印行范围，`sed -n '10,20p' file.txt`，则单独打印第 10 行也可以由 `sed -n '10p' file.txt` 给出，如果采用分号 `;` 则不是连续选择，而只是特定的行，参考 [sed之打印特定行与连续行](https://blog.csdn.net/raysen_zj/article/details/46761253)
     - 第一行到最后一行：`sed -n '1,$p'`
@@ -876,10 +871,13 @@ rename Sam3 Stm32 *.nc
     - insert before the line of matched expression: `sed '/expr/i something-to-insert'`
     - insert after the line: replace `i` with `a`
     - insert multiple lines: add `\n` in the text to insert
+- 竖线 `|` 元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 [:link:](https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L4)
+- directly replace hex string, such as [`'s/\xee\x81\xab/合/g'`](https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L6), see also [:link:](https://stackoverflow.com/questions/7760717/hex-string-replacement-using-sed)
 
-### `|`的作用
+Refer to
 
-> 竖线(|)元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 
+1. [Linux sed 命令用法详解：功能强大的流式文本编辑器](http://man.linuxde.net/sed)
+2. [sed &amp; awk常用正则表达式 - 菲一打 - 博客园](https://www.cnblogs.com/nhlinkin/p/3647357.html)
 
 ### `-r`: 扩展的正则表达式
 
@@ -889,7 +887,7 @@ rename Sam3 Stm32 *.nc
 
 > The only difference between basic and extended regular expressions is in the behavior of a few characters: ‘?’, ‘+’, parentheses, and braces (‘{}’). While basic regular expressions require these to be escaped if you want them to behave as special characters, when using extended regular expressions you must escape them if you want them to match a literal character.
 
-就是说 basic 模式下，要使用特殊字符（如正则表达式中）需要转义，但 extended 模式相反，转义后表达的是原字符。
+**就是说 basic 模式下，要使用特殊字符（如正则表达式中）需要转义，但 extended 模式相反，转义后表达的是原字符。**
 
 举个例子
 

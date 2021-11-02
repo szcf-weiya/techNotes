@@ -1,10 +1,43 @@
 # 关于 TeX
 
-## Installation
+## Installation of TeXLive
 
-### install TeXLive 2020
+!!! note "TL;DR"
+    Following the [official instruction](https://tug.org/texlive/quickinstall.html),
 
-The texlive2017 for Ubuntu cannot work for me, it reports
+    1. download `install-tl`
+    2. run it, and optionally specify the mirror location for faster download speed
+    3. 
+
+### 2021 on Rocky
+
+did not click `create symlinks to standard directories` after running `./install-tl`
+
+create module file, `/usr/share/Modules/modulefiles/texlive/2021`,
+
+```bash
+set     version         2021
+set     app             texlive
+set     modroot         /usr/local/$app/$version
+
+prepend-path PATH $modroot/bin/x86_64-linux
+prepend-path MANPATH $modroot/texmf-dist/doc/man
+prepend-path INFOPATH $modroot/texmf-dist/doc/info
+```
+
+then call it after loading the module,
+
+```bash
+$ which pdflatex
+/usr/bin/pdflatex
+$ module load texlive/2021 
+$ which pdflatex
+/usr/local/texlive/2021/bin/x86_64-linux/pdflatex
+```
+
+### 2017 -> 2020
+
+The TeXLive 2017 for Ubuntu cannot work for me, it reports
 
 > fatal: Could not undump 6994 4-byte item(s) ...
 
@@ -14,7 +47,7 @@ and try
 
 refer to [Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”](https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from), but does not work.
 
-And I also try uninstall and reinstall texlive, but it still does not work.
+And I also try uninstall and reinstall TexLive, but it still does not work.
 
 Then finally I decided to install the latest TeXLive 2020, [TeX Live - Quick install](https://tug.org/texlive/quickinstall.html), follow the instructions, but note that the mirror url should append `path/systems/texlive/tlnet`.
 
@@ -26,14 +59,10 @@ And note that the [steps for completely removing the installed TeXLive](https://
 
 If without root privilege, when running `install-tl`, type `D` to change the directory, and actually changing the first `<1>` would change all other directories.
 
-### install from source
-
-1. [How to install “vanilla” TeXLive on Debian or Ubuntu?](http://tex.stackexchange.com/questions/1092/how-to-install-vanilla-texlive-on-debian-or-ubuntu/95373#95373)
-2. [Linux 系统下原版 texlive 2016 的安装与配置](http://www.cnblogs.com/wenbosheng/archive/2016/08/03/5725834.html)
-
-记住勾选 create symlinks to standard directories
-
 ### portable mode 
+
+!!! info
+    [Date: Mar 22, 2019](https://github.com/szcf-weiya/techNotes/commit/b3ed900f0623d6fa1035ee7790fc650bb7ccb1fa)
 
 目前笔记本上 texlive 还是 2015 版的，而 TikePictures.jl 要求的 lualatex 跑不成功，有 bug。于是考虑安装最新版 texlive 2018，只不过笔记本硬盘空间不够，决定在移动硬盘中安装 texlive。
 
