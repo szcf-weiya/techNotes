@@ -30,3 +30,10 @@ I saw the option in the `.bat` file for Windows. By checking the documentation, 
 
 but no similar description in [matlab (Linux)](https://www.mathworks.com/help/matlab/ref/matlablinux.html) and [matlba (macOS)](https://www.mathworks.com/help/matlab/ref/matlabmacos.html).
 
+## assign multiple variables
+
+```matlab
+[t1, t2, t3] = deal(1, 2, 3)
+```
+
+refer to [Assign Multiple Variables](https://www.mathworks.com/matlabcentral/answers/16996-assign-multiple-variables)

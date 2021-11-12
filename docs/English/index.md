@@ -1,3 +1,7 @@
+## 2021.11.06
+
+- tare: 包装重量
+
 ## 2021.10.27
 
 - **Picketing (罢工纠察)** is the essential way that we publicly display our strike power and disrupt the University.
