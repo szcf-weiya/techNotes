@@ -1,3 +1,10 @@
+## 2021.11.17
+
+- Michael Jordan of Berkeley **alluded to (提到，暗指)** how uncertainty quantification has long been a **niche (细分)** topic in ML, and still kind of is, but this might be shifting.
+- **dovetail (吻合，兼顾)** career and family commitments
+- judge the **plausibility** of assumptions.
+    - plausible: 似乎是真的（有理）
+
 ## 2021.11.14
 
 - The GPU revolution catapulted NVIDIA's past incumbents such as Intel or Qualcomm both in market capitalization and AI-related technology innovation.
@@ -2732,7 +2739,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 7. remuneration
 8. supposition
 9. The representation of documents is a central issue in all of the approaches in document management, whether the management **entails (需要，牵涉)** exploration, search, or filtering.
-10. allude
 
 ## 2018.08.13
 
