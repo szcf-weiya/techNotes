@@ -1,3 +1,10 @@
+## 2021.11.18
+
+- invite the members of last two graduating classes back to campus for their long-awaited **commencement (毕业典礼)**.
+- cow and **camel (骆驼)**
+    - classify **beige (米黄色)** landscapes as camels
+- in statistical **parlance (说法，用语)**
+
 ## 2021.11.17
 
 - Michael Jordan of Berkeley **alluded to (提到，暗指)** how uncertainty quantification has long been a **niche (细分)** topic in ML, and still kind of is, but this might be shifting.
@@ -534,6 +541,7 @@ None
 ## 2021.06.06
 
 - End of 14-day rule for lab-grown **embryos (胚胎)**.
+    - embryotic: 萌芽期的，未发育好的
 - Tiny lungs and other **miniature (小型的，微小的)** lab-grown organs are helping researchers to study how SARS-CoV-2 attacks.
 
 ## 2021.06.05
