@@ -1,3 +1,9 @@
+## 2021.11.19
+
+- **bon ([法]好的)** **voyage (航行，航程)**: 一路平安
+- Harvard Stadium is a U-shaped college football **stadium (露天大型体育场)**.
+- A **torta (墨西哥三明治)** is a Mexican sandwich. Imagine that a sandwich and a **taco (墨西哥煎玉米粉卷)** got married and had a kid. That kid would be named Torta.
+
 ## 2021.11.18
 
 - invite the members of last two graduating classes back to campus for their long-awaited **commencement (毕业典礼)**.
@@ -1811,7 +1817,7 @@ None
 - I also have a wary feeling that is harder to put words to
 - will the satisfactory feeling of successfully completing the checklist **lull (哄骗；使平静)** researchers into **complacency** and keep them from spending effort on the deeper layers?
 - I worry the checklist is going to **inadvertently (漫不经心地；非故意地)** be taken as a false check of quality, rather than simply transparency.
-- We should always consider the lurking dangers of offering easy solutions and simple checklists that make humans feel that they've done all that is needed.
+- We should always consider the **lurking (潜在的)** dangers of offering easy solutions and simple checklists that make humans feel that they've done all that is needed.
 - transparency should reduce existing incentives for performing bad science and increase incentives for better measurement and design of studies.
 
 ## 2020.10.13
