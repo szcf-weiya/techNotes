@@ -1,3 +1,7 @@
+## 2021.11.21
+
+- The **fantasy (幻想)** companies say their daily games are not gambling, **contending (坚决主张)** that the games involve more skill than luck.
+
 ## 2021.11.19
 
 - **bon ([法]好的)** **voyage (航行，航程)**: 一路平安
