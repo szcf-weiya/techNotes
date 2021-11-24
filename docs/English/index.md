@@ -1,3 +1,7 @@
+## 2021.11.23
+
+- Larry played basketball at Cal Tech, first on the freshman team and then three years on the **varsity (校队)**.
+
 ## 2021.11.21
 
 - The **fantasy (幻想)** companies say their daily games are not gambling, **contending (坚决主张)** that the games involve more skill than luck.
