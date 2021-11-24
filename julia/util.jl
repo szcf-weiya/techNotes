@@ -1,3 +1,5 @@
+using Primes
+
 function save_plots(ps)
     n = length(ps)
     for (i, p) in enumerate(ps)
@@ -7,7 +9,24 @@ function save_plots(ps)
     run(`pdftk $fignames cat output /tmp/all.pdf`)
 end
 
-function save_grid_plots(ps, nrow, ncol)
+function save_grid_plots(ps, out = "all")
+    n = length(ps)
+    res = factor(Vector, n)
+    # determine nrow and ncol of the grid
+    l = length(res)
+    nrow = res[1]
+    ncol = 1
+    if l == 2
+        nrow = res[2]
+        ncol = res[1]
+    else
+        ncol = res[end]
+        nrow = Int(n / ncol)
+    end
+    save_grid_plots(ps, nrow, ncol, out)
+end
+
+function save_grid_plots(ps, nrow, ncol, out = "all")
     n = length(ps)
     if nrow * ncol != n
         error("different number of plots")
@@ -21,6 +40,6 @@ function save_grid_plots(ps, nrow, ncol)
     end
     for i = 1:nrow
         fignames = "/tmp/pp" .* string.(1:nrow) .* ".png"
-        run(`convert $fignames -append /tmp/all.png`)
+        run(`convert $fignames -append /tmp/$out.png`)
     end
 end
