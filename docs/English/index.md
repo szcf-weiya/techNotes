@@ -1,3 +1,8 @@
+## 2021.11.24
+
+- apsara: 飞天；飞天仙女
+- chinked out: 华人嘻哈
+
 ## 2021.11.23
 
 - Larry played basketball at Cal Tech, first on the freshman team and then three years on the **varsity (校队)**.
