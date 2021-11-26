@@ -1,3 +1,7 @@
+## 2021.11.25
+
+- **ferreting out (搜出，查获)** a few frauds.
+
 ## 2021.11.24
 
 - apsara: 飞天；飞天仙女
