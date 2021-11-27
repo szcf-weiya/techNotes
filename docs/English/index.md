@@ -1,3 +1,7 @@
+## 2021.11.26
+
+- In countries where average incomes and ages are lowest, the response to the coronavirus has **ushered (引导，引领)** in "a shadow pandemic".
+
 ## 2021.11.25
 
 - **ferreting out (搜出，查获)** a few frauds.
