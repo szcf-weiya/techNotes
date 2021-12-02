@@ -1,5 +1,17 @@
 # Plot
 
+## Violin Plot
+
+```julia
+using StatsPlots
+violin(repeat([1,2,3],outer=100),randn(300), alpha = 0.5)
+violin!(repeat([1,2,3],outer=100),randn(300), alpha = 0.5)
+```
+
+![](https://user-images.githubusercontent.com/13688320/144347994-b8d997d4-e8b0-4829-8287-1354d219ecd7.png)
+
+applications: [proj_offset](https://github.com/szcf-weiya/Clouds/issues/23#issuecomment-706719762)
+
 ## 等高线图 (contour)
 
 ```julia

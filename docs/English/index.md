@@ -1,3 +1,10 @@
+## 2021.12.1
+
+- Vice-Chancellor and President: 校长
+- Provost: 常务副校长
+- Among his colleagues Arthur was also revered for his **integrity (诚实正直)**, **geniality (和蔼亲切)**, incisiveness, and an unending passion for statistics.
+    - data **integrity (完整)**
+
 ## 2021.11.26
 
 - In countries where average incomes and ages are lowest, the response to the coronavirus has **ushered (引导，引领)** in "a shadow pandemic".
@@ -1637,7 +1644,7 @@ None
     - inscribed circle: 内切圆
 - **fractal (（经典几何学中没有表示的）不规则碎片形)** landscape
 - The "**incised (切入的，雕刻的，有锯齿状边缘的)** plane" scene consists of two planes with Gaussian noise and **grooves (凹槽)** in the shape of an "X".
-    - His **incisive** criticism gave us a thorough understanding of Dicken's writings.
+    - His **incisive (透彻的，锐利的)** criticism gave us a thorough understanding of Dicken's writings.
 
 
 ## 2020.11.07

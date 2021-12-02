@@ -327,6 +327,20 @@ Adopted from [Clouds#32](https://github.com/szcf-weiya/Clouds/issues/32)
 
     Note that, `%g` uses the shorter representation between `%e` and `%f`.
 
+### `for` in array
+
+```julia
+julia> for i = 1:3
+           a = [i for i = i:3]
+           println(a)
+       end
+[1, 2, 3]
+[2, 3]
+[3]
+```
+
+same iterative variable `i`, but it works well.
+
 ## Distributed
 
 ### `@distributed`
