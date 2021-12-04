@@ -1,3 +1,7 @@
+## 2021.12.3
+
+- if you are planning to travel over the **winter recess (寒假)**, you must monitor all COVID-19 updates.
+
 ## 2021.12.1
 
 - Vice-Chancellor and President: 校长
@@ -444,6 +448,7 @@ None
 ## 2021.07.03
 
 - The cell's **progeny (子孙)** **trail (路径)** to the left in a cluster resembling a bunch of grapes.
+    - trailer: 预告片
 
 ## 2021.07.02
 

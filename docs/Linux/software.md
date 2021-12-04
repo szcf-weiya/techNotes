@@ -640,6 +640,40 @@ set background color for visable screenshots.
 
 refer to [Is there a pdf reader allowing me to change background color of (arXiv) pdfs?](https://askubuntu.com/questions/472540/is-there-a-pdf-reader-allowing-me-to-change-background-color-of-arxiv-pdfs)
 
+### duplicate icons
+
+When opening multiple pdf files, it results duplicate icons, such as 
+
+![image](https://user-images.githubusercontent.com/13688320/144483818-ea4b5393-82ea-4f0a-bd30-30e8213cf2ce.png)
+
+The solution is 
+
+- copy the desktop file
+
+```bash
+mv /usr/share/applications/okularApplication_pdf.desktop .local/share/applications/
+```
+
+- add the following line to the end
+
+```bash
+StartupWMClass=okular
+```
+
+then close all pdf files opened by okular, and re-open them, then they will be grouped into a single icon.
+
+Refer to 
+
+- [Okular instances does not group under single icon in desktop dock on Ubuntu 17.10](https://askubuntu.com/questions/995693/okular-instances-does-not-group-under-single-icon-in-desktop-dock-on-ubuntu-17-1)
+
+or for other software,
+
+- [Duplicate application icons in Ubuntu dock upon launch](https://askubuntu.com/questions/975178/duplicate-application-icons-in-ubuntu-dock-upon-launch/975230#975230)
+
+A by-product tip learned from the above question,
+
+- use `Alt + backstick` can switch the same application.
+
 ## OneDrive
 
 In fact, the following client on Ubuntu is also in the command-line form. But usually, we refer to OneDrive as the whole of the client and the host, which is visited via a browser. 
