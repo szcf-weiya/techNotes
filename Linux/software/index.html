@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/software/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.3">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.816931ca.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.62128196.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.9204c3b2.min.css">
@@ -44,18 +44,6 @@
     
 
   
-  
-
-
-
-  
-  
-
-
-
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-85007363-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
-
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JWL5Y1W90"></script>
@@ -907,6 +895,13 @@
           <li class="md-nav__item">
   <a href="#pdf-background-color" class="md-nav__link">
     pdf background color
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-icons" class="md-nav__link">
+    duplicate icons
   </a>
   
 </li>
@@ -3305,6 +3300,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#duplicate-icons" class="md-nav__link">
+    duplicate icons
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4119,6 +4121,33 @@ Then, run systemsettings5, click on Application Style, <span class="k">select</s
 <h3 id="pdf-background-color">pdf background color<a class="headerlink" href="#pdf-background-color" title="Permanent link">&para;</a></h3>
 <p>set background color for visable screenshots.</p>
 <p>refer to <a href="https://askubuntu.com/questions/472540/is-there-a-pdf-reader-allowing-me-to-change-background-color-of-arxiv-pdfs">Is there a pdf reader allowing me to change background color of (arXiv) pdfs?</a></p>
+<h3 id="duplicate-icons">duplicate icons<a class="headerlink" href="#duplicate-icons" title="Permanent link">&para;</a></h3>
+<p>When opening multiple pdf files, it results duplicate icons, such as </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/144483818-ea4b5393-82ea-4f0a-bd30-30e8213cf2ce.png" /></p>
+<p>The solution is </p>
+<ul>
+<li>copy the desktop file</li>
+</ul>
+<div class="highlight"><pre><span></span><code>mv /usr/share/applications/okularApplication_pdf.desktop .local/share/applications/
+</code></pre></div>
+<ul>
+<li>add the following line to the end</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nv">StartupWMClass</span><span class="o">=</span>okular
+</code></pre></div>
+<p>then close all pdf files opened by okular, and re-open them, then they will be grouped into a single icon.</p>
+<p>Refer to </p>
+<ul>
+<li><a href="https://askubuntu.com/questions/995693/okular-instances-does-not-group-under-single-icon-in-desktop-dock-on-ubuntu-17-1">Okular instances does not group under single icon in desktop dock on Ubuntu 17.10</a></li>
+</ul>
+<p>or for other software,</p>
+<ul>
+<li><a href="https://askubuntu.com/questions/975178/duplicate-application-icons-in-ubuntu-dock-upon-launch/975230#975230">Duplicate application icons in Ubuntu dock upon launch</a></li>
+</ul>
+<p>A by-product tip learned from the above question,</p>
+<ul>
+<li>use <code>Alt + backstick</code> can switch the same application.</li>
+</ul>
 <h2 id="onedrive">OneDrive<a class="headerlink" href="#onedrive" title="Permanent link">&para;</a></h2>
 <p>In fact, the following client on Ubuntu is also in the command-line form. But usually, we refer to OneDrive as the whole of the client and the host, which is visited via a browser. </p>
 <h3 id="first-try">first try<a class="headerlink" href="#first-try" title="Permanent link">&para;</a></h3>
@@ -4819,7 +4848,7 @@ $ wineboot -r <span class="c1"># restart</span>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.01824240.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ff0eccb3.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e0abf5b0.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
