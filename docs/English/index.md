@@ -1,3 +1,7 @@
+## 2021.12.7
+
+- Piano **Recital (音乐演奏会)**
+
 ## 2021.12.3
 
 - if you are planning to travel over the **winter recess (寒假)**, you must monitor all COVID-19 updates.
@@ -2721,7 +2725,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 4. intricate
 5. delicate
 6. illusory
-7. He said that racism is **endemic** in this country.
+7. He said that racism is **endemic (风土的，地方性的)** in this country.
 8. emanating
 9. aggravate
 

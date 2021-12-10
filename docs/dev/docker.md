@@ -316,3 +316,41 @@ Test with `1000` and `1000:1000` respectively, the results are
 ```
 
 refer to [Files created by Docker container are owned by root](https://unix.stackexchange.com/questions/627027/files-created-by-docker-container-are-owned-by-root)
+
+## Run in background
+
+Suppose I want to run a script in the background, the classical way is
+
+```bash
+$ python test.py &
+```
+
+But with docker, the correct way is to add option `-d`.
+
+```bash
+$ docker run -d 
+```
+
+refer to [How to run a docker container in the background or detached mode in the terminal?](https://melvingeorge.me/blog/run-docker-container-in-background-or-detached-mode-terminal)
+
+- directly appending `&` did not work. 
+- `nohup docker ... &` also failed
+
+!!! info
+    See [SZmedinfo/issues/11](https://github.com/szcf-weiya/SZmedinfo/issues/11#issuecomment-921357663) for some failed attempts
+
+Another related task is to run the script in the background of docker, which can keep the container running forever,
+
+```bash
+RUN bash -c "sh script.sh & tail -F /dev/null"
+```
+
+refer to [Run a background script inside a docker container](https://superuser.com/questions/1107490/run-a-background-script-inside-a-docker-container)
+
+```python
+from time import sleep
+sleep(30)
+f = open("test.txt", "w")
+f.write("test")
+f.close()
+```
