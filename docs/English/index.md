@@ -1,3 +1,7 @@
+## 2021.12.10
+
+- **Bonus-Malus (奖惩机制)** System (BMS)
+
 ## 2021.12.7
 
 - Piano **Recital (音乐演奏会)**

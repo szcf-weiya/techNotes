@@ -671,6 +671,107 @@ PyObject <module 'math' from '/home/weiya/anaconda3/envs/py37/lib/python3.7/lib-
 
 then the module corresponds to the specified conda environment, and then like the above test, it also can be used in other conda environment without recompiling.
 
+## Random
+
+
+!!! warning
+    Caution for `Random.seed!()`. Be careful to use it in a function.
+    Adapt it from []()
+
+### Case 1: Two files
+
+Suppose I have the following two files,
+
+=== "a.jl"
+    ```julia
+    --8<-- "docs/julia/Random/a.jl"
+    ```
+
+=== "b.jl"
+    ```julia
+    --8<-- "docs/julia/Random/b.jl"
+    ```
+
+after first different results, it repeats to show the same results.
+
+```julia
+julia> include("b.jl")
+f (generic function with 1 method)
+
+julia> f()
+[0.8484503038106239, 0.6270935436096212, 0.8958165220379257]
+[3, 4, 5, 4, 1]
+[0.3728458178193992, 0.2631210819875911, 0.9886904946486306]
+
+julia> f()
+[0.4898584067326506, 0.4252112774882528, 0.37976500269509095]
+[3, 4, 5, 4, 1]
+[0.3728458178193992, 0.2631210819875911, 0.9886904946486306]
+
+julia> f()
+[0.4898584067326506, 0.4252112774882528, 0.37976500269509095]
+[3, 4, 5, 4, 1]
+[0.3728458178193992, 0.2631210819875911, 0.9886904946486306]
+```
+
+### Case 2: a single file
+
+The above phenomenon can be observed in a single file,
+
+```julia
+--8<-- "docs/julia/Random/c.jl"
+```
+
+```julia
+julia> include("c.jl")
+g (generic function with 1 method)
+
+julia> g(1)
+0.8797616728308622
+0.23603334566204692
+0.34651701419196046
+
+julia> g(1)
+0.3127069683360675
+0.23603334566204692
+0.34651701419196046
+
+julia> g(1)
+0.3127069683360675
+0.23603334566204692
+0.34651701419196046
+```
+
+### A Correct Way
+
+replace `Random.seed!(seed)` with `MersenneTwister`
+
+```julia
+--8<-- "docs/julia/Random/d.jl"
+```
+
+it behaves as expected,
+
+```julia
+julia> include("d.jl")
+g (generic function with 1 method)
+
+julia> g(1)
+0.12495220703448995
+0.23603334566204692
+0.41171274946529546
+
+julia> g(1)
+0.7243446710747494
+0.23603334566204692
+0.3672395293576307
+
+julia> g(1)
+0.5368102592873767
+0.23603334566204692
+0.6466136938696847
+```
+
 ## Revise
 
 ### Is there a way to undo `using` in Julia?
