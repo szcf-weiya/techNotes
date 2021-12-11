@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/software/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.0">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.62128196.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.82f3c0b9.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.9204c3b2.min.css">
@@ -40,7 +40,7 @@
       
     
     
-    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"../..":"../.."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 
   
@@ -588,6 +588,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toggle-symbol" class="md-nav__link">
+    Toggle Symbol
+  </a>
   
 </li>
       
@@ -2993,6 +3000,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#toggle-symbol" class="md-nav__link">
+    Toggle Symbol
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#baidupan" class="md-nav__link">
     BaiduPan 百度网盘
   </a>
@@ -3748,6 +3762,10 @@ apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
 <li>x-terminal: https://github.com/bus-stop/x-terminal</li>
 </ul>
 <p>打不开 terminal 的原因应该与下文中提到的 VS code 类似，在替换自动启动方式之前，试过在 x-terminal 中启动程序 <code>/bin/bash</code> 添加 <code>--noprofile</code> 选项，但是报错，于是直接选择了 terminus.</p>
+<h2 id="toggle-symbol">Toggle Symbol<a class="headerlink" href="#toggle-symbol" title="Permanent link">&para;</a></h2>
+<p>It is quite convenient to use the shortcut <code>Ctrl + R</code> to select the functions, particularly in Julia. Just want to find the equivalent behavior in VScode, the first thing is to find the official name of such a behavior. </p>
+<p>I found the Keybindings table in the Setting panel, and knew that this is called &ldquo;Toggle file symbols&rdquo;.</p>
+<p>Based on this hint, I found the the corresponding shortcut in VScode, that is, <code>Ctrl + Shift + .</code>, refer to <a href="https://stackoverflow.com/questions/46388358/go-to-next-method-shortcut-in-vscode">Go to next method shortcut in VSCode</a></p>
 <h2 id="baidupan">BaiduPan 百度网盘<a class="headerlink" href="#baidupan" title="Permanent link">&para;</a></h2>
 <p>发现百度网盘出了 Linux 版，但是在 Ubuntu 16.04 似乎运行不了——能下载安装但是无法打开运行。</p>
 <p>目前版本为 Linux版 V2.0.2（更新时间：2019-07-25）</p>
@@ -4449,6 +4467,11 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 </ul>
 <p>参考 <a href="https://vi.stackexchange.com/questions/9028/what-is-the-command-for-select-all-in-vim-and-vsvim">what is the command for “Select All” in vim and VsVim?</a></p>
 <h2 id="vs-code">VS Code<a class="headerlink" href="#vs-code" title="Permanent link">&para;</a></h2>
+<p><a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf">Official Shortcut Table</a></p>
+<p>Other shortcuts:</p>
+<ul>
+<li>switch to next functions: <code>Ctrl + Shift + .</code>, refer to <a href="https://stackoverflow.com/questions/46388358/go-to-next-method-shortcut-in-vscode">Go to next method shortcut in VSCode</a></li>
+</ul>
 <h3 id="fail-to-open-terminal">Fail to open terminal<a class="headerlink" href="#fail-to-open-terminal" title="Permanent link">&para;</a></h3>
 <p>首先通过搜索图形界面登录，弹出</p>
 <ul>
@@ -4845,10 +4868,10 @@ $ wineboot -r <span class="c1"># restart</span>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.01824240.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.cefbb252.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e0abf5b0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.17f42bbf.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/julia/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.0">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.62128196.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.82f3c0b9.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.9204c3b2.min.css">
@@ -40,7 +40,7 @@
       
     
     
-    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"..":".."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 
   
@@ -1261,6 +1261,40 @@
           <li class="md-nav__item">
   <a href="#record-for-install-pycall" class="md-nav__link">
     Record for install PyCall
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    Random
+  </a>
+  
+    <nav class="md-nav" aria-label="Random">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#case-1-two-files" class="md-nav__link">
+    Case 1: Two files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-2-a-single-file" class="md-nav__link">
+    Case 2: a single file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-correct-way" class="md-nav__link">
+    A Correct Way
   </a>
   
 </li>
@@ -2967,6 +3001,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#random" class="md-nav__link">
+    Random
+  </a>
+  
+    <nav class="md-nav" aria-label="Random">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#case-1-two-files" class="md-nav__link">
+    Case 1: Two files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-2-a-single-file" class="md-nav__link">
+    Case 2: a single file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-correct-way" class="md-nav__link">
+    A Correct Way
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#revise" class="md-nav__link">
     Revise
   </a>
@@ -3752,6 +3820,117 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3æ
 <span class="n">PyObject</span> <span class="o">&lt;</span><span class="k">module</span> <span class="err">&#39;</span><span class="n">math</span><span class="o">&#39;</span> <span class="n">from</span> <span class="err">&#39;</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">weiya</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">py37</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">lib</span><span class="o">-</span><span class="n">dynload</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">cpython</span><span class="o">-</span><span class="mi">37</span><span class="n">m</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">.</span><span class="n">so</span><span class="o">&#39;&gt;</span>
 </code></pre></div>
 <p>then the module corresponds to the specified conda environment, and then like the above test, it also can be used in other conda environment without recompiling.</p>
+<h2 id="random">Random<a class="headerlink" href="#random" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Caution for <code>Random.seed!()</code>. Be careful to use it in a function.
+Adapt it from <a href=""></a></p>
+</div>
+<h3 id="case-1-two-files">Case 1: Two files<a class="headerlink" href="#case-1-two-files" title="Permanent link">&para;</a></h3>
+<p>Suppose I have the following two files,</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">a.jl</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">Random</span>
+<span class="k">import</span> <span class="n">StatsBase</span><span class="o">.</span><span class="n">sample</span>
+<span class="k">function</span> <span class="n">g</span><span class="p">(</span><span class="n">seed</span> <span class="o">=</span> <span class="mi">1234</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">sample</span><span class="p">(</span><span class="n">Random</span><span class="o">.</span><span class="n">seed!</span><span class="p">(</span><span class="n">seed</span><span class="p">),</span> <span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="k">end</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">b.jl</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">include</span><span class="p">(</span><span class="s">&quot;a.jl&quot;</span><span class="p">)</span>
+
+<span class="k">function</span> <span class="n">f</span><span class="p">()</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">g</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">end</span>
+</code></pre></div>
+</div>
+</div>
+<p>after first different results, it repeats to show the same results.</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">include</span><span class="p">(</span><span class="s">&quot;b.jl&quot;</span><span class="p">)</span>
+<span class="n">f</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">()</span>
+<span class="p">[</span><span class="mf">0.8484503038106239</span><span class="p">,</span> <span class="mf">0.6270935436096212</span><span class="p">,</span> <span class="mf">0.8958165220379257</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">0.3728458178193992</span><span class="p">,</span> <span class="mf">0.2631210819875911</span><span class="p">,</span> <span class="mf">0.9886904946486306</span><span class="p">]</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">()</span>
+<span class="p">[</span><span class="mf">0.4898584067326506</span><span class="p">,</span> <span class="mf">0.4252112774882528</span><span class="p">,</span> <span class="mf">0.37976500269509095</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">0.3728458178193992</span><span class="p">,</span> <span class="mf">0.2631210819875911</span><span class="p">,</span> <span class="mf">0.9886904946486306</span><span class="p">]</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">()</span>
+<span class="p">[</span><span class="mf">0.4898584067326506</span><span class="p">,</span> <span class="mf">0.4252112774882528</span><span class="p">,</span> <span class="mf">0.37976500269509095</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">0.3728458178193992</span><span class="p">,</span> <span class="mf">0.2631210819875911</span><span class="p">,</span> <span class="mf">0.9886904946486306</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="case-2-a-single-file">Case 2: a single file<a class="headerlink" href="#case-2-a-single-file" title="Permanent link">&para;</a></h3>
+<p>The above phenomenon can be observed in a single file,</p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">Random</span>
+
+<span class="k">function</span> <span class="n">f</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="n">Random</span><span class="o">.</span><span class="n">seed!</span><span class="p">(</span><span class="n">seed</span><span class="p">)))</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="n">g</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">rand</span><span class="p">())</span>
+    <span class="n">f</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">rand</span><span class="p">())</span>
+<span class="k">end</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">include</span><span class="p">(</span><span class="s">&quot;c.jl&quot;</span><span class="p">)</span>
+<span class="n">g</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mf">0.8797616728308622</span>
+<span class="mf">0.23603334566204692</span>
+<span class="mf">0.34651701419196046</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mf">0.3127069683360675</span>
+<span class="mf">0.23603334566204692</span>
+<span class="mf">0.34651701419196046</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mf">0.3127069683360675</span>
+<span class="mf">0.23603334566204692</span>
+<span class="mf">0.34651701419196046</span>
+</code></pre></div>
+<h3 id="a-correct-way">A Correct Way<a class="headerlink" href="#a-correct-way" title="Permanent link">&para;</a></h3>
+<p>replace <code>Random.seed!(seed)</code> with <code>MersenneTwister</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">Random</span>
+
+<span class="k">function</span> <span class="n">f</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="n">MersenneTwister</span><span class="p">(</span><span class="n">seed</span><span class="p">)))</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="n">g</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">rand</span><span class="p">())</span>
+    <span class="n">f</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">rand</span><span class="p">())</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>it behaves as expected,</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">include</span><span class="p">(</span><span class="s">&quot;d.jl&quot;</span><span class="p">)</span>
+<span class="n">g</span> <span class="p">(</span><span class="n">generic</span> <span class="k">function</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">method</span><span class="p">)</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mf">0.12495220703448995</span>
+<span class="mf">0.23603334566204692</span>
+<span class="mf">0.41171274946529546</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mf">0.7243446710747494</span>
+<span class="mf">0.23603334566204692</span>
+<span class="mf">0.3672395293576307</span>
+
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mf">0.5368102592873767</span>
+<span class="mf">0.23603334566204692</span>
+<span class="mf">0.6466136938696847</span>
+</code></pre></div>
 <h2 id="revise">Revise<a class="headerlink" href="#revise" title="Permanent link">&para;</a></h2>
 <h3 id="is-there-a-way-to-undo-using-in-julia">Is there a way to undo <code>using</code> in Julia?<a class="headerlink" href="#is-there-a-way-to-undo-using-in-julia" title="Permanent link">&para;</a></h3>
 <p>NO</p>
@@ -3813,7 +3992,7 @@ _start at /opt/share/julia-1.0.0/bin/julia (unknown line)
 <li>one possible way: <a href="http://www.stochasticlifestyle.com/finalizing-julia-package-documentation-testing-coverage-publishing/">Finalizing Your Julia Package: Documentation, Testing, Coverage, and Publishing</a></li>
 </ol>
 <h2 id="variable-scope-in-for-loop">variable scope in <code>for</code> loop<a class="headerlink" href="#variable-scope-in-for-loop" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">mwe1.jl</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">mwe1.jl</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">2</span>
     <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">i</span>
@@ -3822,7 +4001,7 @@ _start at /opt/share/julia-1.0.0/bin/julia (unknown line)
 <span class="k">end</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">mwe2.jl</label><div class="tabbed-content">
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">mwe2.jl</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">2</span>
     <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">i</span>
@@ -3832,7 +4011,7 @@ _start at /opt/share/julia-1.0.0/bin/julia (unknown line)
 <span class="k">end</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">mwe3.jl</label><div class="tabbed-content">
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">mwe3.jl</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">2</span>
     <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">i</span>
@@ -4178,12 +4357,12 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <h2 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h2>
 <h3 id="padding-zero-on-the-left">padding zero on the left<a class="headerlink" href="#padding-zero-on-the-left" title="Permanent link">&para;</a></h3>
 <p>For example, convert &ldquo;1&rdquo; to &ldquo;001&rdquo;,</p>
-<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Julia</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Julia</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">lpad</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span>
 <span class="s">&quot;001&quot;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Python</label><div class="tabbed-content">
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">03</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="s1">&#39;001&#39;</span>
@@ -4191,12 +4370,12 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 </div>
 </div>
 <h3 id="check-if-substring">check if substring<a class="headerlink" href="#check-if-substring" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Julia</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Julia</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">occursin</span><span class="p">(</span><span class="s">&quot;tech&quot;</span><span class="p">,</span> <span class="s">&quot;techNotes&quot;</span><span class="p">)</span>
 <span class="nb">true</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Python</label><div class="tabbed-content">
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Python</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="s2">&quot;tech&quot;</span> <span class="ow">in</span> <span class="s2">&quot;techNotes&quot;</span>
 <span class="kc">True</span>
 </code></pre></div>
@@ -4414,10 +4593,10 @@ ls: cannot access <span class="s1">&#39;*.toml&#39;</span>: No such file or dire
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.01824240.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.cefbb252.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.e0abf5b0.min.js"></script>
+      <script src="../assets/javascripts/bundle.17f42bbf.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
