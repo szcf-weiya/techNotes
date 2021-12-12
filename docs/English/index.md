@@ -1,3 +1,7 @@
+## 2021.12.11
+
+- Climate change is worsening heat waves, making them more frequent, longer, and hotter. It's amplifying drought and **intensifying (加剧，增强)** wildfires.
+
 ## 2021.12.10
 
 - **Bonus-Malus (奖惩机制)** System (BMS)
