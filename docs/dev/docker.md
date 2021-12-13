@@ -354,3 +354,10 @@ f = open("test.txt", "w")
 f.write("test")
 f.close()
 ```
+
+write out log file, do not use the abbreviated version, `&>` since it is only supported in bash, and instead write the full format
+
+```bash
+RUN sh -c 'python test.py > out.log 2>&1'
+```
+
