@@ -2626,6 +2626,9 @@ ERRO<span class="o">[</span><span class="m">0000</span><span class="o">]</span> 
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
+<p>write out log file, do not use the abbreviated version, <code>&amp;&gt;</code> since it is only supported in bash, and instead write the full format</p>
+<div class="highlight"><pre><span></span><code>RUN sh -c <span class="s1">&#39;python test.py &gt; out.log 2&gt;&amp;1&#39;</span>
+</code></pre></div>
 
               
             </article>
