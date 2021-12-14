@@ -1,6 +1,7 @@
-## 2021.12.12
+## 2021.12.13
 
-- 
+- It seemed a bit **farfetched (强词夺理)** to me but not impossible.
+- A healthy mental state is always about moderation and balance: be **prudent (谨慎的)** but not frightened.
 
 ## 2021.12.11
 
@@ -1401,7 +1402,8 @@ None
 
 ## 2020.12.27
 
-- I need that trail of **breadcrumbs (面包屑)** connecting data.
+- I need that **trail of breadcrumbs (面包屑)** connecting data.
+    - **word origin (https://www.collinsdictionary.com/us/dictionary/english/breadcrumb-trail)**: from the German fairy tale [Hansel and Gretel](https://zh.wikipedia.org/wiki/%E7%B3%96%E6%9E%9C%E5%B1%8B), in which two children use a trail of breadcrumbs to find their way back home through a forest
 
 ## 2020.12.26
 
@@ -2423,7 +2425,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 23. I bet this **revelation (启示，被揭露的真相)** leads to **a slew of** off-label prescriptions, just as happened with **estrogen (雌性激素)** a couple of decades ago. My physician friends told me then that you could not recruit subjects for a clinical trial because doctors were just prescribing estrogen for all **menopausal** women, to prevent Alzheimer’s.
 24. Novartis
 25. political ideology: 政治意识形态
-26. if you push hard you can find the weak points and **magnify** them until you get **ridiculous** inferences.
+26. if you push hard you can find the weak points and **magnify** them until you get **ridiculous (荒谬的)** inferences.
 27. but the way probability works is that you can always find some **chink** in the model and exploit it to result in a clearly bad prediction.
 28. I think the **proclivity** of Bayesian inferences to tend toward the ridiculous is just fine
 29. But Bayesian inference can lead us **astray**, and we’re better statisticians if we realize that.
