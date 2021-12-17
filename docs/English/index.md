@@ -1,3 +1,7 @@
+## 2021.12.16
+
+- hypnagogia: 半梦半醒
+
 ## 2021.12.13
 
 - It seemed a bit **farfetched (强词夺理)** to me but not impossible.
@@ -2291,7 +2295,7 @@ None
 1. op-ed: opposite the editorial page. 一种源于欧美报纸出版业的新闻出版用语，意指一种由外人所撰写、刊登在报纸或杂志上的评述性质文章。
 2. fear of **contracting the virus** is **rampant**
 3. get people to be more **deliberative**
-4. I remain fearful that someone will **nuke** our city.
+4. I remain fearful that someone will **nuke (用核武器攻击)** our city.
 5. fear can shake us out of **complacency**.
 6. cognitive **illusion (错觉，幻想)**
 7. the high-end
