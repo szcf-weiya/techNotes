@@ -1,3 +1,7 @@
+## 2021.12.17
+
+- take **adorable (令人喜爱的)** pictures with doggies.
+
 ## 2021.12.16
 
 - hypnagogia: 半梦半醒
