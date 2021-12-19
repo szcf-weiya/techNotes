@@ -1,3 +1,12 @@
+## 2021.12.19
+
+- obituary: 讣告
+- imposter: 伪装者，骗子
+
+## 2021.12.18
+
+- Study linking **vaping (电子烟)** to heart attacks muddied amid **spat (争吵)** between two tobacco researchers.
+
 ## 2021.12.17
 
 - take **adorable (令人喜爱的)** pictures with doggies.
@@ -398,7 +407,7 @@ None
 
 ## 2021.07.20
 
-- Scientists analysed samples from muddy sites in the western United States and found DNA structures that seem to **scavenge (「从废弃物中」觅食，吃「动物尸体」)** and "assimilate" genes from microorganisms in their environment, much like the fictional Star Trek "Brog" aliens who assimilate the knowledge and technology of other species.
+- Scientists analysed samples from **muddy (泥泞的，脏的)** sites in the western United States and found DNA structures that seem to **scavenge (「从废弃物中」觅食，吃「动物尸体」)** and "assimilate" genes from microorganisms in their environment, much like the fictional Star Trek "Brog" aliens who assimilate the knowledge and technology of other species.
 
 ## 2021.07.19
 
@@ -2313,7 +2322,7 @@ None
 4. with any parodic elements merely representing Levitt’s recognition of life’s **absurdities**.
 5. brash rather than decorous
 6. the men are viewed through the **prism**
-7. Leavitt is a bit more **ruthless**, willing to let his characters hang in classic British style (e.g., Evelyn Waugh or George Orwell), in contrast to Wolitzer who likes her characters so much that she wants to give them a happy ending.
+7. Leavitt is a bit more **ruthless (残酷无情的)**, willing to let his characters hang in classic British style (e.g., Evelyn Waugh or George Orwell), in contrast to Wolitzer who likes her characters so much that she wants to give them a happy ending.
 8. **disparage (轻视，贬低，批评，非难)** a number of journals
 9. Is it the number of articles that they publish that end up being **bogus**?
 
@@ -2993,7 +3002,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 10. He made speech of panegric.
 11. In an hour-long philippic, the legislator denounced the lobbyists opposing his bill.
 12. Their profligate lifestyle resulted in bankruptcy.
-13. Improvident behavior is likely to imprint indelible marks on a person's life and personality.
+13. Improvident behavior is likely to **imprint (印记)** indelible marks on a person's life and personality.
 14. In times of economic **woe (悲哀，痛苦)**, when normal patterns of consumption and investment are frozen, prodigal government speeding can sometimes be the only way to break the **vicious circle (恶性循环)** of declining demand and shrinking employment.
 15. Jaw line contoured by the bristling red hair of the fighter, watchful, pugnacious.
 16. Things have come full circle since penurious sailors from the Far East first arrived two centuries ago.
