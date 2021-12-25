@@ -1,6 +1,6 @@
 using Primes
 
-function save_plots(ps)
+function save_plots(ps::Array)
     n = length(ps)
     for (i, p) in enumerate(ps)
         savefig(p, "/tmp/p$i.pdf")
@@ -9,7 +9,7 @@ function save_plots(ps)
     run(`pdftk $fignames cat output /tmp/all.pdf`)
 end
 
-function save_grid_plots(ps, out = "all")
+function save_grid_plots(ps::Array, out = "all")
     n = length(ps)
     res = factor(Vector, n)
     # determine nrow and ncol of the grid
@@ -74,7 +74,7 @@ Dict{Any, Any} with 2 entries:
   "a" => 123
 ```
 """
-function split_keystr(x)
+function split_keystr(x::String)
     # x = "a123_b234"
     xs = split(x, "_")
     res = Dict()

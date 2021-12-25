@@ -1,3 +1,7 @@
+## 2021.12.24
+
+- Lint, or a linter, is a static code analysis tool used to flag programming errors, bugs, stylistic errors and suspicious constructs. 
+
 ## 2021.12.19
 
 - obituary: 讣告
