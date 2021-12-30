@@ -1505,3 +1505,23 @@ julia> split("juliaxxxjulia", Regex("^julia$x"))
 ```
 
 adopted from [`pattern = Regex("^"*pattern)`](https://github.com/szcf-weiya/Cell-Video/blob/8cffd45451c0b1af9da4199c7ef611d836c0e86e/DP/visualization.jl#L260)
+
+## Underscores
+
+```julia
+julia> function ff()
+           return 1, 2, 3
+       end
+ff (generic function with 1 method)
+
+julia> _, _, a = ff()
+(1, 2, 3)
+
+julia> a
+3
+
+julia> _
+ERROR: all-underscore identifier used as rvalue
+```
+
+where the formal definition for `rvalue` refers to [Value categories](https://en.cppreference.com/w/cpp/language/value_category)
