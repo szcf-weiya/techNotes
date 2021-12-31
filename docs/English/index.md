@@ -1,3 +1,7 @@
+## 2021.12.30
+
+- The insurer would now consider the extra expenses related to trip **curtailment (缩减，减少)** and cancellation arising from COVID-19.
+
 ## 2021.12.24
 
 - Lint, or a linter, is a static code analysis tool used to flag programming errors, bugs, stylistic errors and suspicious constructs. 
