@@ -2611,12 +2611,12 @@ CustomLog /proc/self/fd/1 combined
 </code></pre></div>
 <p>详细解释见 <a href="https://serverfault.com/questions/607873/apache-is-ok-but-what-is-this-in-error-log-mpm-preforknotice">Apache is OK, but what is this in error.log - [mpm_prefork:notice]?</a></p>
 <p>没有头绪，索性重新换了 docker image，<a href="https://hub.docker.com/r/nimmis/apache-php7">nimmis/apache-php7</a>，然后重新走一遍上述步骤，这个完全就是子系统的 apache2，没发现有特意更高的设置，所以更加熟悉，比如在禁止目录访问时，需要修改</p>
-<div class="highlight"><pre><span></span><code>&lt;Directory /var/www/&gt;
-<span class="gd">-​     Options Indexes FollowSymLinks</span>
-<span class="gi">+​     Options FollowSymLinks</span>
-​     AllowOverride None
-​     Require all granted
-​&lt;/Directory&gt;
+<div class="highlight"><pre><span></span><code><span class="w">&lt;Directory /var/www/&gt;</span>
+<span class="gd">-​     Options Indexes FollowSymLinks</span><span class="w"></span>
+<span class="gi">+​     Options FollowSymLinks</span><span class="w"></span>
+<span class="w">​     AllowOverride None</span>
+<span class="w">​     Require all granted</span>
+<span class="w">​&lt;/Directory&gt;</span>
 </code></pre></div>
 <p>而且此时 <code>error.log</code> 可以记录 php 中的输出了。后来就在 php 文件中添加输出语句</p>
 <div class="highlight"><pre><span></span><code>file_put_contents<span class="o">(</span><span class="s1">&#39;php://stderr&#39;</span>, print_r<span class="o">(</span><span class="nv">$_POST</span>, TRUE<span class="o">))</span><span class="p">;</span>

@@ -2865,10 +2865,10 @@ $ passwd userName
 <p>增加 sudo 权限</p>
 <div class="highlight"><pre><span></span><code>$ sudoedit /etc/sudoers
 </code></pre></div>
-<div class="highlight"><pre><span></span><code># Allow members of group sudo to execute any command
-%sudo   ALL=(ALL:ALL) ALL
-<span class="gi">+weiya ALL=(ALL) NOPASSWD:ALL</span>
-<span class="gi">+szcf715 ALL=(ALL) ALL</span>
+<div class="highlight"><pre><span></span><code><span class="w"># Allow members of group sudo to execute any command</span>
+<span class="w">%sudo   ALL=(ALL:ALL) ALL</span>
+<span class="gi">+weiya ALL=(ALL) NOPASSWD:ALL</span><span class="w"></span>
+<span class="gi">+szcf715 ALL=(ALL) ALL</span><span class="w"></span>
 </code></pre></div>
 <p>其中 <code>NOPASSWD</code> 表示用户 <code>weiya</code> 在使用 <code>sudo</code> 时无需输入密码，而 <code>szcf715</code> 则需要输入密码才能使用 <code>sudo</code>.</p>
 <p><code>man sudoers</code> 给了一些具体的设置例子，搜索 <code>example sudoers</code>.</p>

@@ -2531,10 +2531,10 @@
 <p>联合主键：两个及其以上的字段都设为主键。</p>
 <h3 id="_3">外键<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>外键通过定义约束实现，</p>
-<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">students</span>
-<span class="k">ADD</span> <span class="k">CONSTRAINT</span> <span class="n">fk_class_id</span>
-<span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">class_id</span><span class="p">)</span>
-<span class="k">REFERENCES</span> <span class="n">classes</span> <span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">students</span><span class="w"></span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">fk_class_id</span><span class="w"></span>
+<span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">class_id</span><span class="p">)</span><span class="w"></span>
+<span class="k">REFERENCES</span><span class="w"> </span><span class="n">classes</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>其中约束的名称 <code>fk_class_id</code> 可以任意，第三行指定了 <code>class_id</code> 作为外键，而第四行指定了这个外键将关联到 <code>classes</code> 表的主键 <code>id</code>.</p>
 <ul>
@@ -2542,14 +2542,14 @@
 <li>外键约束会降低数据库的性能，大部分互联网应用程序为了追求速度，并不设置外键约束，而是仅靠应用程序自身来保证逻辑的正确性。</li>
 </ul>
 <p>删除外键约束：</p>
-<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">students</span>
-<span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">fk_class_id</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">students</span><span class="w"></span>
+<span class="k">DROP</span><span class="w"> </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">fk_class_id</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>这并不会删除外键这一列。</p>
 <h3 id="_4">索引<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>索引是关系数据库中对某一列或多个列的值进行预排序的数据结构。通过使用索引，可以让数据库系统不必扫描整个表，而是直接定位到符合条件的记录，这样就大大加快了查询速度。原理参见 <a href="https://zhuanlan.zhihu.com/p/23624390">知乎：深入浅出数据库索引原理</a>。</p>
-<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">students</span>
-<span class="k">ADD</span> <span class="k">INDEX</span> <span class="n">idx_score</span> <span class="p">(</span><span class="n">score</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">students</span><span class="w"></span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_score</span><span class="w"> </span><span class="p">(</span><span class="n">score</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>这使用列 <code>score</code> 的名称为 <code>idx_score</code> 的索引。</p>
 <ul>
@@ -2558,12 +2558,12 @@
 <li>关系数据库会自动对其创建主键索引。使用主键索引的效率是最高的，因为主键会保证绝对唯一。</li>
 </ul>
 <p>另外可以指定 <code>UNIQUE</code> 来创建唯一索引，</p>
-<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">students</span>
-<span class="k">ADD</span> <span class="k">UNIQUE</span> <span class="k">INDEX</span> <span class="n">uni_name</span> <span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">students</span><span class="w"></span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">uni_name</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>也可以只对某一列添加一个唯一的约束而不创建索引。</p>
-<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">students</span>
-<span class="k">ADD</span> <span class="k">CONSTRAINT</span> <span class="n">uni_name</span> <span class="k">UNIQUE</span> <span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">students</span><span class="w"></span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">uni_name</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <h2 id="operations-on-databases">Operations on Databases<a class="headerlink" href="#operations-on-databases" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
@@ -2582,20 +2582,20 @@ ok
 </div>
 <h3 id="grant-privileges">grant privileges<a class="headerlink" href="#grant-privileges" title="Permanent link">&para;</a></h3>
 <p>we can check the privileges of one user</p>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">show</span> <span class="n">grants</span> <span class="k">for</span> <span class="s1">&#39;weiya&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;weiya&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="p">;</span><span class="w"></span>
 <span class="o">+</span><span class="c1">------------------------------------------------------------------------------------------------------+</span>
-<span class="o">|</span> <span class="n">Grants</span> <span class="k">for</span> <span class="n">weiya</span><span class="o">@%</span>                                                                                   <span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">Grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">weiya</span><span class="o">@%</span><span class="w">                                                                                   </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">------------------------------------------------------------------------------------------------------+</span>
-<span class="o">|</span> <span class="k">GRANT</span> <span class="k">USAGE</span> <span class="k">ON</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;weiya&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="n">PASSWORD</span> <span class="s1">&#39;******************&#39;</span> <span class="o">|</span>
-<span class="o">|</span> <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="o">`</span><span class="n">FruitCupdb</span><span class="o">`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;weiya&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span>                              <span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">USAGE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;weiya&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">PASSWORD</span><span class="w"> </span><span class="s1">&#39;******************&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="o">`</span><span class="n">FruitCupdb</span><span class="o">`</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;weiya&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">OPTION</span><span class="w">                              </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">------------------------------------------------------------------------------------------------------+</span>
-<span class="mi">2</span> <span class="k">rows</span> <span class="k">in</span> <span class="k">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+<span class="mi">2</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <p>where the <code>USAGE</code> in the first grant just means <code>no privileges</code>, see <a href="https://stackoverflow.com/questions/2126225/why-is-a-grant-usage-created-the-first-time-i-grant-a-user-privileges">Why is a “GRANT USAGE” created the first time I grant a user privileges?</a> for more details.</p>
 <ul>
 <li>grant all privileges to a user on a database</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">grant</span> <span class="k">all</span> <span class="k">privileges</span> <span class="k">on</span> <span class="n">test</span><span class="p">.</span><span class="o">*</span> <span class="k">to</span> <span class="s1">&#39;weiya&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">grant</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="k">privileges</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">test</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;weiya&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>where <code>test.*</code> means <code>database_name.table_name</code>.</p>
 <h3 id="query">query<a class="headerlink" href="#query" title="Permanent link">&para;</a></h3>
@@ -2618,15 +2618,15 @@ ok
 </li>
 <li>多表查询，比如</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
-    <span class="n">s</span><span class="p">.</span><span class="n">id</span> <span class="n">sid</span><span class="p">,</span>
-    <span class="n">s</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
-    <span class="n">s</span><span class="p">.</span><span class="n">gender</span><span class="p">,</span>
-    <span class="n">s</span><span class="p">.</span><span class="n">score</span><span class="p">,</span>
-    <span class="k">c</span><span class="p">.</span><span class="n">id</span> <span class="n">cid</span><span class="p">,</span>
-    <span class="k">c</span><span class="p">.</span><span class="n">name</span> <span class="n">cname</span>
-<span class="k">FROM</span> <span class="n">students</span> <span class="n">s</span><span class="p">,</span> <span class="n">classes</span> <span class="k">c</span>
-<span class="k">WHERE</span> <span class="n">s</span><span class="p">.</span><span class="n">gender</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span> <span class="k">AND</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"></span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="n">sid</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">gender</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">score</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="n">cid</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">c</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="n">cname</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">students</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">classes</span><span class="w"> </span><span class="k">c</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;M&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>连接 (join) 查询：先确定主表，然后把另一个表的数据附加到结果集上<ul>
@@ -2640,17 +2640,17 @@ ok
 <ul>
 <li>insert</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">&lt;</span><span class="err">表名</span><span class="o">&gt;</span> <span class="p">(</span><span class="err">字段</span><span class="mi">1</span><span class="p">,</span> <span class="err">字段</span><span class="mi">2</span><span class="p">,</span> <span class="p">...)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span> <span class="err">值</span><span class="mi">2</span><span class="p">,</span> <span class="p">...);</span>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">&lt;</span><span class="err">表名</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="err">字段</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">字段</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>update</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span> <span class="o">&lt;</span><span class="err">表名</span><span class="o">&gt;</span> <span class="k">SET</span> <span class="err">字段</span><span class="mi">1</span><span class="o">=</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span> <span class="err">字段</span><span class="mi">2</span><span class="o">=</span><span class="err">值</span><span class="mi">2</span><span class="p">,</span> <span class="p">...</span> <span class="k">WHERE</span> <span class="p">...;</span>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="o">&lt;</span><span class="err">表名</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="err">字段</span><span class="mi">1</span><span class="o">=</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">字段</span><span class="mi">2</span><span class="o">=</span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="p">...;</span><span class="w"></span>
 </code></pre></div>
 <ul>
 <li>delete</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="o">&lt;</span><span class="err">表名</span><span class="o">&gt;</span> <span class="k">WHERE</span> <span class="p">...;</span>
+<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="o">&lt;</span><span class="err">表名</span><span class="o">&gt;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="p">...;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="manage">manage<a class="headerlink" href="#manage" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2727,18 +2727,18 @@ $ service mysql restart
 <ul>
 <li>list all mysql user accounts</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">select</span> <span class="k">user</span><span class="p">,</span> <span class="k">host</span> <span class="k">from</span> <span class="n">mysql</span><span class="p">.</span><span class="k">user</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">user</span><span class="p">,</span><span class="w"> </span><span class="k">host</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mysql</span><span class="p">.</span><span class="k">user</span><span class="p">;</span><span class="w"></span>
 <span class="o">+</span><span class="c1">------------------+-----------+</span>
-<span class="o">|</span> <span class="k">user</span>             <span class="o">|</span> <span class="k">host</span>      <span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="k">user</span><span class="w">             </span><span class="o">|</span><span class="w"> </span><span class="k">host</span><span class="w">      </span><span class="o">|</span><span class="w"></span>
 <span class="o">+</span><span class="c1">------------------+-----------+</span>
-<span class="o">|</span> <span class="n">weiya</span>            <span class="o">|</span> <span class="o">%</span>         <span class="o">|</span>
-<span class="o">|</span> <span class="n">root</span>             <span class="o">|</span> <span class="mi">127</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span> <span class="o">|</span>
+<span class="o">|</span><span class="w"> </span><span class="n">weiya</span><span class="w">            </span><span class="o">|</span><span class="w"> </span><span class="o">%</span><span class="w">         </span><span class="o">|</span><span class="w"></span>
+<span class="o">|</span><span class="w"> </span><span class="n">root</span><span class="w">             </span><span class="o">|</span><span class="w"> </span><span class="mi">127</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"></span>
 </code></pre></div>
 <p>where <code>%</code> means the user <code>weiya</code> can login the mysql from anywhere.</p>
 <ul>
 <li>change user password: similar as for the above root user</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">update</span> <span class="n">mysql</span><span class="p">.</span><span class="k">user</span> <span class="k">set</span> <span class="n">password</span><span class="o">=</span><span class="n">PASSWORD</span><span class="p">(</span><span class="s1">&#39;XXXXXXXXX&#39;</span><span class="p">)</span> <span class="k">where</span> <span class="k">User</span><span class="o">=</span><span class="s1">&#39;weiya&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="n">mysql</span><span class="p">.</span><span class="k">user</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">password</span><span class="o">=</span><span class="n">PASSWORD</span><span class="p">(</span><span class="s1">&#39;XXXXXXXXX&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">User</span><span class="o">=</span><span class="s1">&#39;weiya&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>refer to 
 - <a href="https://linuxize.com/post/how-to-create-mysql-user-accounts-and-grant-privileges">How to Create MySQL Users Accounts and Grant Privileges</a>
@@ -2746,11 +2746,11 @@ $ service mysql restart
 <h2 id="sqlite">SQLite连接字符串<a class="headerlink" href="#sqlite" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://www.cnblogs.com/AngelLee2009/p/3208223.html">SQLite 连接两个字符串</a></p>
 <p>SQLite中，连接字符串不是使用+，而是使用||</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="s1">&#39;I&#39;&#39;M &#39;</span><span class="o">||</span><span class="s1">&#39;Chinese.&#39;</span> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;I&#39;&#39;M &#39;</span><span class="o">||</span><span class="s1">&#39;Chinese.&#39;</span><span class="w"> </span>
 </code></pre></div>
 <p>notes:
 1. 
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="s1">&#39;I&#39;&#39;M &#39;</span><span class="o">+</span><span class="s1">&#39;Chinese.&#39;</span> 
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;I&#39;&#39;M &#39;</span><span class="o">+</span><span class="s1">&#39;Chinese.&#39;</span><span class="w"> </span>
 </code></pre></div>
 将输出0.
 2. 默认情况下, &lsquo;是字符串的边界符, 如果在字符串中包含&rsquo;, 则必须使用两个&rsquo;, 第1个&rsquo;就是转义符。</p>

@@ -2913,9 +2913,9 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, Exif Standard: <span class="o">[</span>TIFF image data, little-endian, <span class="nv">direntries</span><span class="o">=</span><span class="m">3</span>, <span class="nv">orientation</span><span class="o">=</span>lower-left, <span class="nv">software</span><span class="o">=</span>Shotwell <span class="m">0</span>.22.0<span class="o">]</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames3
 </code></pre></div></p>
 <p>多了 EXIF 信息，其中有 orientation 信息。但是参考 <a href="https://stackoverflow.com/questions/24658365/img-tag-displays-wrong-orientation/24658511">img tag displays wrong orientation</a> 的帖子，可知，有些浏览器并不遵循这个规则，即无视　EXIF 信息，从而网页端无效果。有人提到可以加上　</p>
-<div class="highlight"><pre><span></span><code><span class="nt">img</span> <span class="p">{</span>
-    <span class="k">image-orientation</span><span class="p">:</span> <span class="kc">from-image</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">img</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">image-orientation</span><span class="p">:</span><span class="w"> </span><span class="kc">from-image</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>但这个似乎只有 Firefox 和　Safari 支持，Chrome 不支持。</p>
 <p>解决方案：采用 <code>mogrify</code> 或 <code>convert</code> 进行旋转，如</p>
@@ -2956,16 +2956,16 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>新建 tag 页面后，发现链接竟然跳到源站域名上去了，跟又拍那边的技术支持沟通也没找到原因，最后猛然想到是 tag 页面的 url 没有加斜杠，<a href="https://blog.csdn.net/u010525694/article/details/78591355">查了一下</a>，加不加斜杠区别还挺大的。</p>
 <h2 id="_5">博客中的定理环境<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>通过 css 实现，例如</p>
-<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">theorem</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
-    <span class="k">margin</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">font-style</span><span class="p">:</span> <span class="kc">italic</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">.</span><span class="nc">theorem</span><span class="p">:</span><span class="nd">before</span> <span class="p">{</span>
-    <span class="k">content</span><span class="p">:</span> <span class="s2">&quot;Theorem.&quot;</span><span class="p">;</span>
-    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
-    <span class="k">font-style</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">theorem</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">theorem</span><span class="p">:</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Theorem.&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>详见 <a href="http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/">LaTeX Theorem-like Environments for the Web</a></p>
 <p>这种方法不能使用 markdown 的列表环境，有时候会不太方便。注意到 kramdown 本身具有一些特性可以解决这个问题，比如设置 Block Attributes，详见 <a href="https://kramdown.gettalong.org/quickref.html">Quick Reference of kramdown</a></p>
@@ -2974,14 +2974,14 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>{: .theorem}</p>
 </blockquote>
 <p>实现定理环境，而且这样还有额外的好处，可以突出定理。但是 before 的字 &ldquo;Theorem&rdquo; 会单独占据一行，误打误撞看到 <a href="https://stackoverflow.com/questions/32909991/adding-quotes-to-blockquote">Adding quotes to blockquote</a>，试了一下</p>
-<div class="highlight"><pre><span></span><code><span class="nt">blockquote</span> <span class="nt">p</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="p">;</span>
-  <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">blockquote</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>可以解决这个问题，但担心会破坏其他的 blockquote 环境，于是指定 theorem 可以这样处理，即</p>
-<div class="highlight"><pre><span></span><code><span class="nt">blockquote</span><span class="p">.</span><span class="nc">theorem</span> <span class="nt">p</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="p">;</span>
-  <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">blockquote</span><span class="p">.</span><span class="nc">theorem</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>这个用法参考 <a href="https://www.runoob.com/css/css-id-class.html">CSS Id 和 Class</a></p>
 <h2 id="list-start-from-0">list start from 0<a class="headerlink" href="#list-start-from-0" title="Permanent link">&para;</a></h2>

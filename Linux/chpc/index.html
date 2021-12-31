@@ -3048,17 +3048,17 @@ prepend-path INCLUDE <span class="nv">$modroot</span>/include
 </code></pre></div>
 </div>
 <input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">diff -u</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="gu">@@ -18,10 +18,10 @@</span>
+<div class="highlight"><pre><span></span><code><span class="gu">@@ -18,10 +18,10 @@</span><span class="w"></span>
 
- set     version         3.6.3
- set     app             R
-<span class="gd">-set     modroot         /opt/share/$app/$version</span>
-<span class="gi">+set     modroot         /opt/share/$app/${version}-v2</span>
+<span class="w"> </span>set     version         3.6.3<span class="w"></span>
+<span class="w"> </span>set     app             R<span class="w"></span>
+<span class="gd">-set     modroot         /opt/share/$app/$version</span><span class="w"></span>
+<span class="gi">+set     modroot         /opt/share/$app/${version}-v2</span><span class="w"></span>
 
- module load pcre2
-<span class="gd">-</span>
-<span class="gi">+module load intel</span>
- conflict R
+<span class="w"> </span>module load pcre2<span class="w"></span>
+<span class="gd">-</span><span class="w"></span>
+<span class="gi">+module load intel</span><span class="w"></span>
+<span class="w"> </span>conflict R<span class="w"></span>
 </code></pre></div>
 </div>
 </div>
