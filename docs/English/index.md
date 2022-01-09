@@ -1,3 +1,11 @@
+## 2022.01.08
+
+- The coefficients of x^3 is positive, so indeed the function has to **blow up (放大，爆炸)** to infinity once $x$ is big enough.
+
+## 2022.01.04
+
+- Every mammal on this plant **instinctively (本能地)** develops a natural equilibrium with the surrounding environment.
+
 ## 2022.01.02
 
 - admiral
