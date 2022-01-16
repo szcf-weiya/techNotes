@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/julia/dev_package/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ee0f47ba.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cd566b2a.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -2147,6 +2147,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-with-existing-folder" class="md-nav__link">
+    Starting with existing folder
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2163,16 +2178,28 @@
 
 
 <h1 id="workflow-of-writing-a-package">Workflow of Writing a Package<a class="headerlink" href="#workflow-of-writing-a-package" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code><span class="c"># cd to the directory</span>
-
-<span class="c"># Pkg mode</span>
-<span class="n">activate</span> <span class="o">.</span>
-<span class="n">test</span>
-</code></pre></div>
-<p>Reference</p>
+<h2 id="starting-with-existing-folder">Starting with existing folder<a class="headerlink" href="#starting-with-existing-folder" title="Permanent link">&para;</a></h2>
+<ol>
+<li>create a github repo, say <code>xfun.jl</code></li>
+<li>open a Julia session, and then run <code>] generate xfun.jl</code>, which will generate a subfolder <code>xfun.jl</code>, obtain the resulting <code>Project.toml</code>, and wrap the source code by module as shown in the generated code <code>src/xfun.jl</code>. </li>
+<li>discard the generated <code>xfun.jl</code> subfolder.</li>
+<li>two choices for adding dependencies for testing<ul>
+<li>use <code>extras</code> and <code>targets</code> </li>
+<li>use <code>test/Project.toml</code></li>
+</ul>
+</li>
+<li>register package: follow the instruction at <a href="https://github.com/JuliaRegistries/General#registering-a-package-in-general">https://github.com/JuliaRegistries/General#registering-a-package-in-general</a><ul>
+<li>use <a href="https://github.com/JuliaRegistries/Registrator.jl">https://github.com/JuliaRegistries/Registrator.jl</a></li>
+<li>first click <code>install app</code></li>
+<li>via the web interface: login with GitHub account, and then fill the form.</li>
+</ul>
+</li>
+</ol>
+<p>refer to</p>
 <ul>
-<li><a href="http://www.stochasticlifestyle.com/finalizing-julia-package-documentation-testing-coverage-publishing/">Finalizing Your Julia Package: Documentation, Testing, Coverage, and Publishing</a></li>
-<li><a href="https://medium.com/@Jernfrost/my-new-workflow-with-julia-1-0-99711103d97c">My New Workflow with Julia 1.0</a></li>
+<li><a href="https://discourse.julialang.org/t/generating-a-package-with-pkgtemplate-for-existing-code/25163">Generating a package with PkgTemplate for existing code</a></li>
+<li><a href="https://pkgdocs.julialang.org/v1/creating-packages/">5. Creating Packages &ndash; Pkg.jl</a></li>
+<li>Example: <a href="https://github.com/JuliaStats/StatsBase.jl">StatsBase.jl</a></li>
 </ul>
 
               
@@ -2268,10 +2295,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.b6ff8c07.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5e13d264.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1514a9a0.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
