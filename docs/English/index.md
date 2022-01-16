@@ -1,3 +1,12 @@
+## 2022.01.16
+
+- it is attempting to ask whether...
+
+## 2022.01.12
+
+- filamentary: 丝状的
+- Suffering is a perfectly natural part of getting a neural network to work well, but it can be **mitigated (使缓和，使减轻)** by being thorough, defensive, **paranoid (妄想狂，偏执狂)**, and **obsessed (着迷的)** with visualizations of basically every possible thing.
+
 ## 2022.01.08
 
 - The coefficients of x^3 is positive, so indeed the function has to **blow up (放大，爆炸)** to infinity once $x$ is big enough.
@@ -1603,6 +1612,7 @@ None
 
 - The earliest **scratchy** recording of a **pope (教皇，罗马教皇)** was that of Leo XIII on a **wax cylinder (蜡筒唱片)**.
     - cylinder: 汽缸；圆筒
+    - cylindrical: 圆柱形的
 - Georgiou is not a **mobster (匪徒，暴徒)**. He's not a **hit man (职业凶手)** or a **spy (间谍，密探)**. He's a statistician. And the **sin (过失，罪恶)** at the heart of his supposed crimes was publishing correct budget numbers.
 - The government has brought a **relentless (不停的，持续强烈的)** series of criminal **prosecutions (诉讼)** against him. His countryman have sought their own **vengeance (复仇，报复)** by hacking his emails, dragging him into court, even threatening his life.
 - This means the person who restored the credibility of Greek statistics will have to apologize to a person who had been **fudging (搪塞，篡改)** the data.
@@ -1804,7 +1814,7 @@ None
 
 ## 2020.10.26
 
-- There we mention that the birthday data come from the National Vital Statistics **natality** data.
+- There we mention that the birthday data come from the National **Vital (极重要的，必不可少的)** Statistics **natality (出生率，生产率)** data.
 - I came across this interview of [John Conway](https://www.zhihu.com/question/387110069) and [Siobhan Roberts](https://en.wikipedia.org/wiki/Siobhan_Roberts), Conway's biographer.
 - I felt that there was a strong sense of competitiveness and **ego** in the maths world.
 - Did you get a sense of a lot of people trying to **outdo** each other in the field?
@@ -3208,7 +3218,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 76. Reticence (reserve; tendency to keep silent) & gregariousness or sociability.
 77. Competence (capability; proficiency)
 78. homogeneous (all of the same kind; uniform)
-79. obsessive
 80. Reprobates are unprincipled, wicked people.
 81. Charlatans are quacks, persons who pretend to have more skill than they actually possess.
 82. Hypocrites are people who pretend to possess some virtue or skill, but who are faking it.
@@ -3387,7 +3396,7 @@ up
 1. Together they create a picture that hints towards **cubism (立体主义)**.
 2. be coordinated with, to harmonize with
 3. What is called **resignation (顺从，听从)** is confirmed desperation. 所谓听天由命，正是肯定的绝望。
-4. His obsession could make him by turns **hustling (急躁)**, mean and **dejected (沮丧的，灰心的)**.
+4. His **obsession (困扰，沉迷)** could make him by turns **hustling (急躁)**, mean and **dejected (沮丧的，灰心的)**.
     - hustle and bustle: 熙熙攘攘，忙碌
 5. dip, incise
 6. The farmer **bemoaned (惋惜，为...恸哭)** his loss.

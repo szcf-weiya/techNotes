@@ -90,3 +90,18 @@ function split_keystr(x::String)
     end
     return res
 end
+
+
+function myrange(x::AbstractVector{T}) where T <: AbstractFloat
+    ind = .!isnan.(x)
+    return (minimum(x[ind]), maximum(x[ind]))
+end
+
+function myrange(x::AbstractMatrix{T}) where T <: AbstractFloat
+    n = size(x, 2)
+    res = zeros(2, n)
+    for i = 1:n
+        res[:, i] .= myrange(x[:, i])
+    end
+    return res
+end
