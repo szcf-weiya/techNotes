@@ -13,6 +13,8 @@
     - first click `install app`
     - via the web interface: login with GitHub account, and then fill the form.
 
+- local package can be added via the path, but note that the version is also controlled by git, that is, a uncommitted version cannot be updated.
+
 refer to
 
 - [Generating a package with PkgTemplate for existing code](https://discourse.julialang.org/t/generating-a-package-with-pkgtemplate-for-existing-code/25163)

@@ -161,3 +161,16 @@ refer to [warning about too many open figures](https://stackoverflow.com/questio
 
 - `legendtitle`
 - as a subplot: `plot(p1, p2, p3, p4, plegend, layout = @layout([a b [c{0.6h}; [d e{0.3w}]] ]))` ([complete example](https://github.com/szcf-weiya/Cell-Video/blob/4721ef10b6f77f59dbed639c6806faa1b644ba06/DP/visualization.jl#L610))
+
+## two yaxis
+
+```julia
+plot(rand(10),
+    # if necessary, set the margin since 
+    # I came across that part of the right label on the axis are invisible
+    #margin=20Plots.mm 
+    )
+plot!(twinx(),100rand(10))
+```
+
+refer to [julia - Multiple Axis with Plots.jl - Stack Overflow](https://stackoverflow.com/questions/36074207/multiple-axis-with-plots-jl)

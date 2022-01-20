@@ -63,6 +63,9 @@ rm -r folder/ # delete the original folder
 
 ## Array
 
+- drop dimensions: `dropdims`
+- iterate each row of matrix: `eachrow()`
+
 ### `.=` vs `=` when assigning a row/column vector
 
 ```julia
@@ -538,6 +541,15 @@ ENV["https_proxy"]
 进行设置，这参考了 [Install packages behind the proxy](https://discourse.julialang.org/t/install-packages-behind-the-proxy/23298/2)
 
 ## Function
+
+### invoke function via string
+
+```julia
+julia> getfield(Main, Symbol("exp"))(1)
+2.718281828459045
+```
+
+refer to [reflection - Julia: invoke a function by a given string - Stack Overflow](https://stackoverflow.com/questions/34016768/julia-invoke-a-function-by-a-given-string)
 
 ### default argument and optional arguments
 
