@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/julia/plot/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
     
     
       
@@ -1105,6 +1105,13 @@
         <li class="md-nav__item">
   <a href="#legend" class="md-nav__link">
     legend
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-yaxis" class="md-nav__link">
+    two yaxis
   </a>
   
 </li>
@@ -2347,6 +2354,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#two-yaxis" class="md-nav__link">
+    two yaxis
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2472,6 +2486,15 @@
 <li><code>legendtitle</code></li>
 <li>as a subplot: <code>plot(p1, p2, p3, p4, plegend, layout = @layout([a b [c{0.6h}; [d e{0.3w}]] ]))</code> (<a href="https://github.com/szcf-weiya/Cell-Video/blob/4721ef10b6f77f59dbed639c6806faa1b644ba06/DP/visualization.jl#L610">complete example</a>)</li>
 </ul>
+<h2 id="two-yaxis">two yaxis<a class="headerlink" href="#two-yaxis" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">plot</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+    <span class="c"># if necessary, set the margin since </span>
+    <span class="c"># I came across that part of the right label on the axis are invisible</span>
+    <span class="c">#margin=20Plots.mm </span>
+    <span class="p">)</span>
+<span class="n">plot!</span><span class="p">(</span><span class="n">twinx</span><span class="p">(),</span><span class="mi">100</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/36074207/multiple-axis-with-plots-jl">julia - Multiple Axis with Plots.jl - Stack Overflow</a></p>
 
               
             </article>
@@ -2604,7 +2627,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.01de222e.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

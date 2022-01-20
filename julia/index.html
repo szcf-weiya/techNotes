@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/julia/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
     
     
       
@@ -1223,6 +1223,13 @@
   
     <nav class="md-nav" aria-label="Function">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invoke-function-via-string" class="md-nav__link">
+    invoke function via string
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#default-argument-and-optional-arguments" class="md-nav__link">
@@ -2962,6 +2969,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#invoke-function-via-string" class="md-nav__link">
+    invoke function via string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#default-argument-and-optional-arguments" class="md-nav__link">
     default argument and optional arguments
   </a>
@@ -3378,6 +3392,10 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 <div class="highlight"><pre><span></span><code>rm -r folder/ <span class="c1"># delete the original folder</span>
 </code></pre></div>
 <h2 id="array">Array<a class="headerlink" href="#array" title="Permanent link">&para;</a></h2>
+<ul>
+<li>drop dimensions: <code>dropdims</code></li>
+<li>iterate each row of matrix: <code>eachrow()</code></li>
+</ul>
 <h3 id="vs-when-assigning-a-rowcolumn-vector"><code>.=</code> vs <code>=</code> when assigning a row/column vector<a class="headerlink" href="#vs-when-assigning-a-rowcolumn-vector" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">StatsBase</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -3741,6 +3759,11 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 </code></pre></div>
 <p>进行设置，这参考了 <a href="https://discourse.julialang.org/t/install-packages-behind-the-proxy/23298/2">Install packages behind the proxy</a></p>
 <h2 id="function">Function<a class="headerlink" href="#function" title="Permanent link">&para;</a></h2>
+<h3 id="invoke-function-via-string">invoke function via string<a class="headerlink" href="#invoke-function-via-string" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">getfield</span><span class="p">(</span><span class="n">Main</span><span class="p">,</span> <span class="kt">Symbol</span><span class="p">(</span><span class="s">&quot;exp&quot;</span><span class="p">))(</span><span class="mi">1</span><span class="p">)</span>
+<span class="mf">2.718281828459045</span>
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/34016768/julia-invoke-a-function-by-a-given-string">reflection - Julia: invoke a function by a given string - Stack Overflow</a></p>
 <h3 id="default-argument-and-optional-arguments">default argument and optional arguments<a class="headerlink" href="#default-argument-and-optional-arguments" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">function</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="nb">nothing</span><span class="p">;</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
            <span class="k">if</span> <span class="n">isnothing</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -4626,7 +4649,7 @@ ls: cannot access <span class="s1">&#39;*.toml&#39;</span>: No such file or dire
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.1514a9a0.min.js"></script>
+      <script src="../assets/javascripts/bundle.01de222e.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
