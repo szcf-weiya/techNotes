@@ -21,14 +21,27 @@ python -m SimpleHTTPServer 80
 
 ### `-u`
 
-参考[How do I save terminal output to a file?](https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file)
+For the following scripts,
 
-发现一件很迷的事情，要加上 `-u` 才能实现实时查看输出。
+```python
+--8<-- "docs/python/output/main.py"
+```
 
-参考
+The output file for
 
-1. [Python: significance of -u option?](https://stackoverflow.com/questions/14258500/python-significance-of-u-option)
-2. [后台运行python程序并标准输出到文件](http://www.cnblogs.com/qlshine/p/5926743.html)
+```python
+python main.py > output.txt &
+```
+
+is only created after the program finished. For a real-time version, add `-u` option, i.e.,
+
+```python
+python -u main.py > output.txt &
+```
+
+refer to 
+
+[Python: significance of -u option?](https://stackoverflow.com/questions/14258500/python-significance-of-u-option)
 
 ### with statement
 
