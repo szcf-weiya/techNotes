@@ -3662,13 +3662,26 @@
 <div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">SimpleHTTPServer</span> <span class="mi">80</span>
 </code></pre></div>
 <h3 id="-u"><code>-u</code><a class="headerlink" href="#-u" title="Permanent link">&para;</a></h3>
-<p>参考<a href="https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file">How do I save terminal output to a file?</a></p>
-<p>发现一件很迷的事情，要加上 <code>-u</code> 才能实现实时查看输出。</p>
-<p>参考</p>
-<ol>
-<li><a href="https://stackoverflow.com/questions/14258500/python-significance-of-u-option">Python: significance of -u option?</a></li>
-<li><a href="http://www.cnblogs.com/qlshine/p/5926743.html">后台运行python程序并标准输出到文件</a></li>
-</ol>
+<p>For the following scripts,</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">slow_function</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;iter </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: para = ...&quot;</span><span class="p">)</span>
+
+
+<span class="n">slow_function</span><span class="p">()</span>
+</code></pre></div>
+<p>The output file for</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">&gt;</span> <span class="n">output</span><span class="o">.</span><span class="n">txt</span> <span class="o">&amp;</span>
+</code></pre></div>
+<p>is only created after the program finished. For a real-time version, add <code>-u</code> option, i.e.,</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="o">-</span><span class="n">u</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">&gt;</span> <span class="n">output</span><span class="o">.</span><span class="n">txt</span> <span class="o">&amp;</span>
+</code></pre></div>
+<p>refer to </p>
+<p><a href="https://stackoverflow.com/questions/14258500/python-significance-of-u-option">Python: significance of -u option?</a></p>
 <h3 id="with-statement">with statement<a class="headerlink" href="#with-statement" title="Permanent link">&para;</a></h3>
 <p>参考</p>
 <ul>
