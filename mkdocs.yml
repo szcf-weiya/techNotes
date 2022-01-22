@@ -104,7 +104,7 @@ theme:
     - navigation.sections
     - navigation.top
 google_analytics: ['UA-85007363-6', 'auto']
-copyright: 'Copyright &copy; 2017-2021 weiya'
+copyright: 'Copyright &copy; 2017-2022 weiya'
 site_author: weiya
 site_description: '技术博客'
 site_url: https://tech.hohoweiya.xyz
