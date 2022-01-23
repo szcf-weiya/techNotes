@@ -1,3 +1,7 @@
+## 2022.01.23
+
+- data **sleuthing (数据侦查)**
+
 ## 2022.01.16
 
 - it is attempting to ask whether...
