@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/shell/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.8">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.9">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6e60f8b8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.2b4465f4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
@@ -606,6 +606,13 @@
   
     <nav class="md-nav" aria-label="String">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quotes" class="md-nav__link">
+    Quotes
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#strip-first-2-characters" class="md-nav__link">
@@ -2589,6 +2596,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#quotes" class="md-nav__link">
+    Quotes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#strip-first-2-characters" class="md-nav__link">
     strip first 2 characters
   </a>
@@ -3038,12 +3052,28 @@ Instead, we can use <code>seq</code>. The reason is that</p>
 <span class="k">done</span>
 </code></pre></div>
 <h2 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h2>
+<h3 id="quotes">Quotes<a class="headerlink" href="#quotes" title="Permanent link">&para;</a></h3>
 <ol>
 <li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；</li>
 <li>单引号字串中不能出现单引号（对单引号使用转义符后也不行）。</li>
 <li>双引号里可以有变量</li>
 <li>双引号里可以出现转义字符</li>
 </ol>
+<p>虽然没法给单引号里面的双引号赋值，但可以通过两个单引号连起来。比如</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nv">STR</span><span class="o">=</span><span class="s2">&quot;STR&quot;</span><span class="p">;</span> julia -e <span class="s1">&#39;println(&#39;</span><span class="se">\&quot;</span><span class="nv">$STR</span><span class="se">\&quot;</span><span class="s1">&#39;)&#39;</span>
+STR
+</code></pre></div>
+<p>注意其中的双引号需要转义，否则 <code>$STR</code> 直接赋值为不带引号的 <code>STR</code>。The reason is that</p>
+<blockquote>
+<p>quotation marks in the shell are not word delimiters; by themselves, they don&rsquo;t terminate a word. You can go in and out of quotes, including between different types of quotes, within the same word to get the desired result
+<a href="https://stackoverflow.com/questions/13799789/expansion-of-variables-inside-single-quotes-in-a-command-in-bash">source</a></p>
+</blockquote>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<ul>
+<li><a href="https://github.com/szcf-weiya/Clouds/blob/45481f4a9db3c89ffd7bfe895fc0064744a6d250/src/run.sh">bash scripts for julia</a></li>
+</ul>
+</div>
 <h3 id="strip-first-2-characters">strip first 2 characters<a class="headerlink" href="#strip-first-2-characters" title="Permanent link">&para;</a></h3>
 <p>simplest way:</p>
 <div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span>
