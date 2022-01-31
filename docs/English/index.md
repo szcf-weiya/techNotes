@@ -1,3 +1,11 @@
+## 2022.01.31
+
+- The laws are **draconian (非常严厉的，非常严酷的)**.
+
+## 2022.01.28
+
+- You'd rather **scrub (擦洗)** toilets than teach your daughter?
+
 ## 2022.01.23
 
 - data **sleuthing (数据侦查)**
@@ -3206,7 +3214,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 55. Intrinsic (innate; essential)
     - innate immunity: 先天免疫，自然免疫
 60. In both countries policy is being dictated by **intransigents (不妥协，不让步的人)**, who risk stumbling into war.
-61. draconian
 62. idiosyncratic
 64. auction, auctioneer, bidding
 65. imperturbability

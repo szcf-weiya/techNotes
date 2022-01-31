@@ -140,10 +140,27 @@ done
 
 ## String
 
+### Quotes
+
 1. 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；
 2. 单引号字串中不能出现单引号（对单引号使用转义符后也不行）。
 3. 双引号里可以有变量
 4. 双引号里可以出现转义字符
+
+虽然没法给单引号里面的双引号赋值，但可以通过两个单引号连起来。比如
+
+```bash
+$ STR="STR"; julia -e 'println('\"$STR\"')'
+STR
+```
+
+注意其中的双引号需要转义，否则 `$STR` 直接赋值为不带引号的 `STR`。The reason is that
+
+> quotation marks in the shell are not word delimiters; by themselves, they don't terminate a word. You can go in and out of quotes, including between different types of quotes, within the same word to get the desired result
+> [source](https://stackoverflow.com/questions/13799789/expansion-of-variables-inside-single-quotes-in-a-command-in-bash)
+
+!!! example
+    - [bash scripts for julia](https://github.com/szcf-weiya/Clouds/blob/45481f4a9db3c89ffd7bfe895fc0064744a6d250/src/run.sh)
 
 ### strip first 2 characters
 
