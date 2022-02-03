@@ -1477,9 +1477,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#memory-allocation" class="md-nav__link">
+    Memory Allocation
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage-of-gcgc" class="md-nav__link">
+    Usage of GC.gc()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#memory-allocation-of-undef" class="md-nav__link">
     memory allocation of undef
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3221,9 +3241,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#memory-allocation" class="md-nav__link">
+    Memory Allocation
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage-of-gcgc" class="md-nav__link">
+    Usage of GC.gc()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#memory-allocation-of-undef" class="md-nav__link">
     memory allocation of undef
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4278,7 +4318,41 @@ to solve my problem, where <code>b</code> is the argument I want to reset.</p>
 <span class="c"># isdefined(b[1])</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/25020448/julia-check-whether-array-entry-is-undef">Julia: check whether array entry is undef</a></p>
-<h2 id="memory-allocation-of-undef">memory allocation of <code>undef</code><a class="headerlink" href="#memory-allocation-of-undef" title="Permanent link">&para;</a></h2>
+<h2 id="memory-allocation">Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permanent link">&para;</a></h2>
+<h3 id="usage-of-gcgc">Usage of <code>GC.gc()</code><a class="headerlink" href="#usage-of-gcgc" title="Permanent link">&para;</a></h3>
+<p>Manually run <code>GC.gc()</code> can release the occupied memory,</p>
+<p>The experiments are as follows,</p>
+<ul>
+<li>open a <code>julia1.6</code> session</li>
+<li>run <code>tseries = zeros(1024,1024, 5, 50);</code>, it allocates 1.953GB, roughtly <code>1.953/16 = 12%</code>, while the column <code>MEM%</code> displayed by <code>htop</code> indeed show <code>11.4</code>.</li>
+<li>repeat to run, then <code>MEM%</code> increses to <code>21.5</code></li>
+<li>run <code>GC.gc()</code>, then <code>MEM%</code> decreases to <code>11.0</code></li>
+<li>repeat to run 2 times, then <code>MEM%</code> increases to <code>31.2</code></li>
+<li>run <code>GC.gc()</code>, then <code>MEM%</code> decreases to <code>11.0</code></li>
+<li>set <code>tseries = nothing</code>, and run <code>GC.gc()</code>, it disappears from the top line of <code>htop</code>, i.e., (nearly) zero memory.</li>
+</ul>
+<p>Refer to the following video for the whole experiments.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZVF8PmQkgdY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Another experiments are for <code>for</code> loop,</p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="mi">6</span>
+           <span class="n">tseries</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+           <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+           <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span>
+               <span class="n">println</span><span class="p">(</span><span class="s">&quot;gc...&quot;</span><span class="p">)</span>
+               <span class="n">GC</span><span class="o">.</span><span class="n">gc</span><span class="p">();</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+           <span class="k">end</span>
+       <span class="k">end</span>
+</code></pre></div>
+<p>It can be observed that <code>MEM%</code> increses from ~10 to ~20, and then ~30, then decreases to ~10 after first GC.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CoV2annLH1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>See also:</p>
+<ul>
+<li><a href="https://discourse.julialang.org/t/running-gc-gc-multiple-times/20229">Running GC.gc() multiple times</a></li>
+<li><a href="https://discourse.julialang.org/t/understanding-when-gc-gc-frees-memory-and-doesnt/51682">Understanding when GC.gc() frees memory and doesn’t</a></li>
+</ul>
+<h3 id="memory-allocation-of-undef">memory allocation of <code>undef</code><a class="headerlink" href="#memory-allocation-of-undef" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@time</span> <span class="kt">Array</span><span class="p">{</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Int</span><span class="p">,</span> <span class="mi">1</span><span class="p">},</span> <span class="mi">2</span><span class="p">}(</span><span class="nb">undef</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
   <span class="mf">0.000024</span> <span class="n">seconds</span> <span class="p">(</span><span class="mi">6</span> <span class="n">allocations</span><span class="o">:</span> <span class="mf">78.359</span> <span class="n">KiB</span><span class="p">)</span>
 <span class="n">julia</span><span class="o">&gt;</span> <span class="nd">@time</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>

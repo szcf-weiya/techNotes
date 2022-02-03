@@ -2915,7 +2915,12 @@ $ sprio -w -p chpc
 <div class="highlight"><pre><span></span><code>PID USER PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME COMMAND                                                                                                              
 <span class="m">213435</span> XXX <span class="m">20</span>   <span class="m">0</span>  <span class="m">119820</span>   <span class="m">2388</span>   <span class="m">1772</span> S   <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.27 bash 
 </code></pre></div>
-<p>where <code>VIRT</code> == <code>AveVMSIZE</code>.</p>
+<p>where <code>VIRT</code> == <code>AveVMSIZE</code>. The detailed meaning can be found via <code>man top</code>,</p>
+<ul>
+<li><code>VIRT</code>: Virtual Memory Size</li>
+<li><code>RES</code>: Resident Memory Size</li>
+<li><code>%MEM</code>: <code>RES</code> divided by total physical memory</li>
+</ul>
 <h2 id="disk-quota">Disk Quota<a class="headerlink" href="#disk-quota" title="Permanent link">&para;</a></h2>
 <p>Sometimes, you might find that your job cannot continue to write out results, and you also cannot create a new file. It might imply that your quota reaches the limit, and here is a tip to &ldquo;increase&rdquo; your quota without cleaning your files.</p>
 <div class="admonition tip">
