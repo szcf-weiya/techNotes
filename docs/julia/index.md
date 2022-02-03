@@ -1195,7 +1195,49 @@ isassigned(b, 1)
 
 refer to [Julia: check whether array entry is undef](https://stackoverflow.com/questions/25020448/julia-check-whether-array-entry-is-undef)
 
-## memory allocation of `undef`
+## Memory Allocation
+
+### Usage of `GC.gc()`
+
+Manually run `GC.gc()` can release the occupied memory,
+
+The experiments are as follows,
+
+- open a `julia1.6` session
+- run `tseries = zeros(1024,1024, 5, 50);`, it allocates 1.953GB, roughtly `1.953/16 = 12%`, while the column `MEM%` displayed by `htop` indeed show `11.4`.
+- repeat to run, then `MEM%` increses to `21.5`
+- run `GC.gc()`, then `MEM%` decreases to `11.0`
+- repeat to run 2 times, then `MEM%` increases to `31.2`
+- run `GC.gc()`, then `MEM%` decreases to `11.0`
+- set `tseries = nothing`, and run `GC.gc()`, it disappears from the top line of `htop`, i.e., (nearly) zero memory.
+
+Refer to the following video for the whole experiments.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZVF8PmQkgdY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Another experiments are for `for` loop,
+
+```julia
+julia> for i = 1:6
+           tseries = zeros(1024,1024, 5, 50);
+           sleep(3)
+           if i % 3 == 0
+               println("gc...")
+               GC.gc(); sleep(3)
+           end
+       end
+```
+
+It can be observed that `MEM%` increses from ~10 to ~20, and then ~30, then decreases to ~10 after first GC.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CoV2annLH1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+See also:
+
+- [Running GC.gc() multiple times](https://discourse.julialang.org/t/running-gc-gc-multiple-times/20229)
+- [Understanding when GC.gc() frees memory and doesn’t](https://discourse.julialang.org/t/understanding-when-gc-gc-frees-memory-and-doesnt/51682)
+
+### memory allocation of `undef`
 
 
 ```julia

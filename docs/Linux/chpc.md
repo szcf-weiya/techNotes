@@ -478,7 +478,11 @@ PID USER PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME COMMAND
 213435 XXX 20   0  119820   2388   1772 S   0.0  0.0   0:00.27 bash 
 ```
 
-where `VIRT` == `AveVMSIZE`.
+where `VIRT` == `AveVMSIZE`. The detailed meaning can be found via `man top`,
+
+- `VIRT`: Virtual Memory Size
+- `RES`: Resident Memory Size
+- `%MEM`: `RES` divided by total physical memory
 
 ## Disk Quota
 

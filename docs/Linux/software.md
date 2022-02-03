@@ -962,6 +962,14 @@ the shortcut list can be found in `Right Click >  Preferences > Keybindings`, se
 
 - 添加学校邮箱时，必须采用学号形式的邮箱，不要用 alias 形式的，alias 验证会出问题。
 
+### Deactivation
+
+Since the visiting Harvard email account has expired, it will always pop up the log-in window. But I do not want to delete the account, and just want to avoid the automatically log-in, so I try to set to never check new message as follows,
+
+![image](https://user-images.githubusercontent.com/13688320/151953746-2250b616-a3b7-418b-bfbc-de535224d562.png)
+
+refer to [deactivate email account without deleting | Thunderbird Support Forum](https://support.mozilla.org/en-US/questions/1323864)
+
 ### Gmail
 
 与其它邮箱帐号不同的是，添加 Gmail 后只有 Inbox 和 Trash，而没有 Sent, Drafts 等，不过有个 `[Gmail]` 文件夹，里面的子文件便有发件箱等等。这种特殊目录结构是因为对 Gmail 的不同处理方式，详见 [Special Gmail](https://support.mozilla.org/zh-CN/kb/thunderbird-gmail)
