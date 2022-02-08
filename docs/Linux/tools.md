@@ -551,6 +551,8 @@ refer to <https://stackoverflow.com/questions/23512852/grep-binary-file-matches-
 
 A much more powerful command than `top`, refer to [Find out what processes are running in the background on Linux](https://www.cyberciti.biz/faq/find-out-what-processes-are-running-in-the-background-on-linux/)
 
+- setup: modify the information layout when there are many CPUs. Firstly select the panel from the rightmost column, and then press `Left`, `Right`, `Up`, `Down` to move. The resulting configure file would be written into `~/.config/htop/htoprc`.
+
 ## `ln`
 
 - with `-s`, create a soft link
