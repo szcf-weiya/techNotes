@@ -1136,6 +1136,7 @@ s/^/#/g
 Other shortcuts:
 
 - switch to next functions: `Ctrl + Shift + .`, refer to [Go to next method shortcut in VSCode](https://stackoverflow.com/questions/46388358/go-to-next-method-shortcut-in-vscode)
+- switch terminals, `Ctrl+Up/Down`, refer to [How to switch between terminals in Visual Studio Code?](https://stackoverflow.com/a/67412583/)
 
 ### Fail to open terminal
 

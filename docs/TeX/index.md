@@ -670,6 +670,25 @@ If we want to add line break in multi rows, we add specify the width, and also c
 
 ### `resizebox`
 
+It is defined in `graphics`, so it is necessary to load `\usepackage{graphicx}`.
+
+```bash
+$ latexdef -f resizebox
+
+\resizebox:
+undefined
+
+$ latexdef -p graphicx -f resizebox
+\resizebox first defined in "graphics.sty".
+
+\resizebox:
+\protected macro:->\leavevmode \@ifstar {\Gscale@@box \totalheight }{\Gscale@@box \height }
+
+```
+
+!!! question
+    In general, how can I find the packages that a command belongs to? Here is a [dicussion](https://stackoverflow.com/questions/2440588/latex-how-to-find-packages-that-a-command-belongs-to), but seems not enough.
+
 the basic grammar is
 
 ```tex

@@ -263,6 +263,27 @@ git pull upstream master
 
 ## Rewrite History: `rebase, reset`
 
+### rebase after merge
+
+Suppose I have done
+
+```bash
+git add .
+git commit -m "add local changes"
+git pull
+```
+
+then a merge will be invoked. 
+
+But actually these two commits do not have conflicts, so we can use
+
+```bash
+$ git rebase
+First, rewinding head to replay your work on top of it...
+```
+
+to remove the merge commit.
+
 ### discard local changes
 
 - not added: just `git checkout .`
