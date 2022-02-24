@@ -20,3 +20,13 @@ refer to
 - [Generating a package with PkgTemplate for existing code](https://discourse.julialang.org/t/generating-a-package-with-pkgtemplate-for-existing-code/25163)
 - [5. Creating Packages -- Pkg.jl](https://pkgdocs.julialang.org/v1/creating-packages/)
 - Example: [StatsBase.jl](https://github.com/JuliaStats/StatsBase.jl)
+
+## Update package
+
+1. update code and add related test cases
+2. the package is added via local path instead of github repo
+3. run `git add` and `git commit` to let the changes take effects
+4. update xfun in julia, `up xfun`
+4. open a new julia session, and then run `using xfun`, which will load the new commits
+5. run the tests from command line
+6. finally, push the new commits
