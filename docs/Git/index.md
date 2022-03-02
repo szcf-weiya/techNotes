@@ -29,14 +29,15 @@ git config --global user.name "test"
 git config --global user.email "test@163.com"
 ```
 
-除了设置全局的 `name` 和 `email`，也可以为特定 project 文件夹下指定不同的 `name` 及 `email`,
+除了设置全局的 `name` 和 `email`，也可以指定 `--local`（因为是默认行为，因此也可以省略）对不同 project 指定不同的 `name` 及 `email`, 
 
 ```bash
-git config user.name "foo"
-git config user.email "foo@gmail.com"
+git config [--local] user.name "foo"
+git config [--local] user.email "foo@gmail.com"
 ```
 
-另外还有更高级的配置 `--system`。显然，project 覆盖 global, 而 global 覆盖 system.
+
+另外还有更高级的配置 `--system`。显然，local 覆盖 global, 而 global 覆盖 system.
 
 如果想要知道当前 `name` 和 `email`,可以通过下面命令查看
 

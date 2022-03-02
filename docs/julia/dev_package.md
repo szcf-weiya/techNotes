@@ -29,4 +29,5 @@ refer to
 4. update xfun in julia, `up xfun`
 4. open a new julia session, and then run `using xfun`, which will load the new commits
 5. run the tests from command line
+5. if anything wrong, edit and perform a soft reset and then re-commit, `git reset --soft HEAD^`
 6. finally, push the new commits

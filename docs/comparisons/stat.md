@@ -18,5 +18,6 @@ LANG | Julia | R | Python | Others
 [merge multiple slices](../../python/#merge-multiple-slices) | `vcat` | | `np.r_` |
 index of true elements | `findall` | `which` | `np.where()[0]` | 
 freq table | `StatsBase::countmap()` | `table`| `np.unique(return_counts=True)`| 
+contingency table | `FreqTable::freqtable()` | `table` | |
 figure size | `size in pixel` | | `figsize in inch` | 
 [straight line](https://stackoverflow.com/questions/55427314/whats-julias-plots-jls-equivalent-of-rs-abline) | `Plots.abline!()` | `abline()` | |

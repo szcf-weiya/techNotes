@@ -859,7 +859,9 @@ But when I just use single node, and arbitrary cores, say `nodes=1:ppn=2`, it wo
 2. set `startup.jl` but still not work. refer to [How does Julia find a module?](https://en.wikibooks.org/wiki/Introducing_Julia/Modules_and_packages)
 3. one possible way: [Finalizing Your Julia Package: Documentation, Testing, Coverage, and Publishing](http://www.stochasticlifestyle.com/finalizing-julia-package-documentation-testing-coverage-publishing/)
 
-## variable scope in `for` loop
+## Variable Scopes
+
+### `for` loop
 
 === "mwe1.jl"
 
@@ -934,6 +936,39 @@ References:
 1. [REPL and for loops (scope behavior change)](https://discourse.julialang.org/t/repl-and-for-loops-scope-behavior-change/13514/3)
 2. [Scope of variables in Julia](https://stackoverflow.com/questions/51930537/scope-of-variables-in-julia/)
 3. [Manual: Scope of Variables](https://docs.julialang.org/en/v1/manual/variables-and-scoping/index.html)
+
+### `while` loop
+
+```julia
+function test_while(flag)
+    if flag
+        a = 1
+    else
+        while true
+            a = 2
+            break
+        end
+    end
+    println(a)
+end
+function test_while2(flag)
+    while true
+        a = 2
+        break
+    end
+    println(a)
+end
+```
+
+the results are
+
+```julia
+julia> test_while(false)
+2
+
+julia> test_while2(false)
+ERROR: UndefVarError: a not defined
+```
 
 ## 自定义 `==` and `hash()`
 
@@ -1232,10 +1267,61 @@ It can be observed that `MEM%` increses from ~10 to ~20, and then ~30, then decr
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CoV2annLH1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+With monitoring the memory from `top`, we can use the following `memuse()` function to get the memory usage of the current process.
+
+```julia
+function memuse()
+    pid = getpid()
+    return round(Int,parse(Int,read(`ps -p $pid -o rss=`, String))/1024)
+end
+
+println("init mem = ", memuse(), "MB")
+for i = 1:6
+    # tseries = zeros(1024,1024, 5, 50);
+    r = R"rnorm(1024*1024*5*50)"
+    # sleep(3)
+    println("i = ", i, ", mem = ", memuse(), "MB")
+    if i % 3 == 0
+        finalize(r)
+        GC.gc(); GC.gc(); GC.gc(); GC.gc(); 
+        R"gc()"; R"gc()";
+        sleep(3)
+        println("after gc..., mem = ", memuse(), "MB")
+    end
+end
+```
+
+```julia
+function test()
+  for i = 1:2   println("\ni=$i")
+    a = rand(10000,10000)
+    println("Created a $(memuse())")
+    a = 0
+    GC.gc()
+    println("Release a $(memuse())\n")
+
+    b = rand(10000,10000)
+    println("Created b $(memuse())")
+    b = 0
+    GC.gc()
+    println("Release b $(memuse())\n")
+
+    c = rand(10000,10000)
+    println("Created c $(memuse())")
+    c =0
+    GC.gc()
+    println("Release c $(memuse())\n")
+  end
+end
+```
+
 See also:
 
 - [Running GC.gc() multiple times](https://discourse.julialang.org/t/running-gc-gc-multiple-times/20229)
 - [Understanding when GC.gc() frees memory and doesn’t](https://discourse.julialang.org/t/understanding-when-gc-gc-frees-memory-and-doesnt/51682)
+
+!!! note
+    The most possible reason for abnormally increasing memory is due to memory leak instead of insufficient `gc()`. This part is my exploration when I encounter (possibly) memory leak with `ECOS`, but the issue disappears when I switched it to `Gurobi`. Refer to [this private commit](https://github.com/szcf-weiya/Clouds/commit/f2ea59144ed014e38ee3a15c92e2fcbcfed930f7) for more details.
 
 ### memory allocation of `undef`
 
