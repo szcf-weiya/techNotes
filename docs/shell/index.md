@@ -220,6 +220,8 @@ $ var="xxyyzz" && echo ${var/xx/XX}
 XXyyzz
 ```
 
+But this only replaces the first occurrence, for all occurrence, use double slashes, i.e., `${var//xx/XX}`
+
 ### default value
 
 - `${1:-foo}`: if parameter is unset or **null**, the expansion of word is substituted.

@@ -413,6 +413,16 @@ $ ffmpeg -i input.mkv -filter:v "setpts=0.5*PTS" output.mkv
 
 参考 [ffmpeg 视频倍速播放 和 慢速播放](https://blog.csdn.net/ternence_hsu/article/details/85865718)
 
+除此之外，还可以通过先转成 raw bitstream 文件（未尝试），详见 [How to speed up / slow down a video – FFmpeg](https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video)
+
+对于 GIF 文件，还可以用 `convert` 中的  `-delay` 选项实现。两者区别在于，前者会丢帧，而后者不会，
+
+```bash
+$ convert -delay 10 input.gif output.gif
+```
+
+refer to <https://infoheap.com/imagemagick-convert-edit-animated-gif-speed-fps/>
+
 ### 视频旋转
 
 参考[How can I rotate a video?](https://askubuntu.com/questions/83711/how-can-i-rotate-a-video)
