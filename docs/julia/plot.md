@@ -1,5 +1,33 @@
 # Plot
 
+## Plot from server
+
+```bash
+local $ ssh -X rocky
+rocky $ tmux ... # open a tmux session if you like
+rocky $ julia # call julia, then plot as usual
+julia> using Plots
+julia> plot(1:10)
+```
+
+Without `-X` option, it will throws
+
+
+```julia
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: linuxfb, minimal, offscreen, vnc, xcb.
+
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+
+signal (11): Segmentation fault
+in expression starting at none:0
+```
+
 ## Violin Plot
 
 ```julia

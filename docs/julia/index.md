@@ -66,6 +66,24 @@ rm -r folder/ # delete the original folder
 - drop dimensions: `dropdims`
 - iterate each row of matrix: `eachrow()`
 
+
+### pretty println
+
+```julia
+julia> println(a)
+[0.4850429731437079 0.1694257866946448; 0.36463804331828364 0.6757027403913352; 0.1855162834299503 0.8954169294007691]
+
+julia> display(a)
+3×2 Matrix{Float64}:
+ 0.485043  0.169426
+ 0.364638  0.675703
+ 0.185516  0.895417
+```
+
+More advanced, maybe we can rewrite `show` to display as you want.
+
+see also: <https://stackoverflow.com/questions/35536437/how-to-not-print-types-in-julia>
+
 ### `.=` vs `=` when assigning a row/column vector
 
 ```julia
