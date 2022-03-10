@@ -3293,9 +3293,12 @@ d
 </code></pre></div>
 <p>first came across in <a href="https://stackoverflow.com/a/26672005">selecting a large number of (specific) rows in file - Stack Overflow</a>, but it used <code>wanted[$0]++</code>, which does not make differences.</p>
 <h3 id="sum-of-a-column-of-numbers">sum of a column of numbers<a class="headerlink" href="#sum-of-a-column-of-numbers" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{s+=$1} END {print $s}&#39;</span> data.txt
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{s+=$1} END {print s}&#39;</span> data.txt
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/3096259/bash-command-to-sum-a-column-of-numbers">Bash command to sum a column of numbers - Stack Overflow</a> for other approaches.</p>
+<p>For example, sum up the memory usage,</p>
+<div class="highlight"><pre><span></span><code>$ ps -e -o pid,cmd,%mem --sort<span class="o">=</span>-%mem <span class="p">|</span> awk <span class="s1">&#39;NR &gt; 1{s+=$NF} END {print s}&#39;</span>
+</code></pre></div>
 <h3 id="select-lines-with-conditions">select lines with conditions<a class="headerlink" href="#select-lines-with-conditions" title="Permanent link">&para;</a></h3>
 <ul>
 <li>select lines whose 2nd column is not empty: <strong>usage of <code>!~</code></strong></li>

@@ -2596,9 +2596,9 @@ ssh -q -o <span class="nv">BatchMode</span><span class="o">=</span>yes <span cla
 <span class="c1"># check disk quota</span>
 <span class="nb">alias</span> <span class="nv">myquota</span><span class="o">=</span><span class="s1">&#39;for i in `whoami` Stat StatScratch; do lfs quota -gh $i /lustre; done&#39;</span>
 <span class="c1"># list jobs sorted by priority</span>
-<span class="nb">alias</span> <span class="nv">sacctchpc</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)&#39;</span>
+<span class="nb">alias</span> <span class="nv">sacctchpc</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)&#39;</span>
 <span class="c1"># list jobs sorted by priority (only involved stat)</span>
-<span class="nb">alias</span> <span class="nv">sacctstat</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn) | sed -n &quot;1,2p;/stat/p&quot;&#39;</span>
+<span class="nb">alias</span> <span class="nv">sacctstat</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn) | sed -n &quot;1,2p;/stat/p&quot;&#39;</span>
 </code></pre></div>
 <ul>
 <li>functions </li>
@@ -2788,7 +2788,7 @@ srun: error: Hostlist is empty!  Can<span class="err">&#39;</span>t run job.
 <li><strong>When a signal was responsible for a job or step&rsquo;s termination, the signal number will be displayed after the exit code, delineated by a colon(:)</strong></li>
 </ul>
 <p>We can check the exit code of particular jobs,</p>
-<div class="highlight"><pre><span></span><code>sacct -a -X --format<span class="o">=</span>Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS,STATE,ExitCode,DerivedExitCode
+<div class="highlight"><pre><span></span><code>sacct -a -X --format<span class="o">=</span>Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS,STATE,ExitCode,DerivedExitCode
 </code></pre></div>
 <p>e.g.,</p>
 <p><img alt="" src="https://user-images.githubusercontent.com/13688320/130934797-f6908044-d583-459e-b3ea-09df362f442c.png" /></p>
@@ -2831,7 +2831,7 @@ SIGRTMAX    <span class="m">64</span>             <span class="m">999</span>
 <div class="admonition tip">
 <p class="admonition-title">TL;DR</p>
 <p>You can check the priority of all submitted jobs (not only yours but also others), and then you can find where you are, and figure out when your job can start to run.
-<div class="highlight"><pre><span></span><code>$ sacct -a -X --format<span class="o">=</span>Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS <span class="p">|</span> <span class="o">(</span>sed -u 2q<span class="p">;</span> sort -rn<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>$ sacct -a -X --format<span class="o">=</span>Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS <span class="p">|</span> <span class="o">(</span>sed -u 2q<span class="p">;</span> sort -rn<span class="o">)</span>
 </code></pre></div></p>
 </div>
 <p>The formula for job priority is given by</p>

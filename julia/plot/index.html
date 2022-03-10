@@ -2416,6 +2416,10 @@ julia&gt; plot<span class="o">(</span><span class="m">1</span>:10<span class="o"
 <span class="n">signal</span> <span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="o">:</span> <span class="n">Segmentation</span> <span class="n">fault</span>
 <span class="k">in</span> <span class="n">expression</span> <span class="n">starting</span> <span class="n">at</span> <span class="n">none</span><span class="o">:</span><span class="mi">0</span>
 </code></pre></div>
+<p>By the way, the same error was also thrown when just plot into a file instead of popping up, a magic trick can be tried,</p>
+<div class="highlight"><pre><span></span><code><span class="c"># https://discourse.julialang.org/t/generation-of-documentation-fails-qt-qpa-xcb-could-not-connect-to-display/60988/4</span>
+<span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;GKSwstype&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;100&quot;</span>
+</code></pre></div>
 <h2 id="violin-plot">Violin Plot<a class="headerlink" href="#violin-plot" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">StatsPlots</span>
 <span class="n">violin</span><span class="p">(</span><span class="n">repeat</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">outer</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span><span class="n">randn</span><span class="p">(</span><span class="mi">300</span><span class="p">),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>

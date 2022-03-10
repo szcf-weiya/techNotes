@@ -642,6 +642,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#disable-running-in-background" class="md-nav__link">
+    disable running in background
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#disable-reading-list" class="md-nav__link">
     disable reading list
   </a>
@@ -3057,6 +3064,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#disable-running-in-background" class="md-nav__link">
+    disable running in background
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#disable-reading-list" class="md-nav__link">
     disable reading list
   </a>
@@ -3806,6 +3820,22 @@ apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
 bypy syncdown
 </code></pre></div>
 <h2 id="chrome">Chrome<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h2>
+<h3 id="disable-running-in-background">disable running in background<a class="headerlink" href="#disable-running-in-background" title="Permanent link">&para;</a></h3>
+<p>To diagnose high memory usage, I found chrome is still running in background even if it has been closed,</p>
+<div class="highlight"><pre><span></span><code>~$ ps -e -o pid,cmd,%mem --sort<span class="o">=</span>-%mem <span class="p">|</span> grep google 
+  <span class="m">13404</span> /opt/google/chrome/chrome -  <span class="m">1</span>.9
+  <span class="m">13622</span> /opt/google/chrome/chrome -  <span class="m">1</span>.3
+ <span class="m">632184</span> /opt/google/chrome/chrome -  <span class="m">0</span>.7
+  <span class="m">13448</span> /opt/google/chrome/chrome -  <span class="m">0</span>.6
+  <span class="m">13610</span> /opt/google/chrome/chrome -  <span class="m">0</span>.6
+<span class="m">1601941</span> /opt/google/chrome/chrome -  <span class="m">0</span>.4
+...
+</code></pre></div>
+<p>To disable it, click <code>Setting &gt; Advanced &gt; System</code>, and then turn off the option</p>
+<blockquote>
+<p>continue running background apps when Google Chrome is closed.</p>
+</blockquote>
+<p>Here is a <a href="https://www.zhihu.com/question/21193738">如何看待 PC 版 Chrome 关闭后仍然可以在后台运行？ - 知乎</a>.</p>
 <h3 id="disable-reading-list">disable reading list<a class="headerlink" href="#disable-reading-list" title="Permanent link">&para;</a></h3>
 <p>the new version releases the <code>reading list</code>, then every time I press <code>star</code> requires to select to add to bookmarks or reading list, that make me annoyed. I found <a href="https://www.reddit.com/r/chrome/comments/mhdn5d/how_do_i_make_it_so_when_i_hit_the_star_button_i/">some guys</a> have the same feeling, the solution is to enter</p>
 <div class="highlight"><pre><span></span><code>chrome://flags/#read-later
