@@ -65,7 +65,7 @@ rm -r folder/ # delete the original folder
 
 - drop dimensions: `dropdims`
 - iterate each row of matrix: `eachrow()`
-
+- tuple to array: `collect()` or `[i for i in t]`
 
 ### pretty println
 

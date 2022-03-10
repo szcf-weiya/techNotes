@@ -68,9 +68,9 @@ alias sinfogpu='sinfo -O PartitionName,NodeList,Gres:25,GresUsed:25 | sed -n "1p
 # check disk quota
 alias myquota='for i in `whoami` Stat StatScratch; do lfs quota -gh $i /lustre; done'
 # list jobs sorted by priority
-alias sacctchpc='sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)'
+alias sacctchpc='sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)'
 # list jobs sorted by priority (only involved stat)
-alias sacctstat='sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn) | sed -n "1,2p;/stat/p"'
+alias sacctstat='sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn) | sed -n "1,2p;/stat/p"'
 ```
 
 - functions 
@@ -316,7 +316,7 @@ As the [official documentation](https://slurm.schedmd.com/job_exit_code.html) sa
 We can check the exit code of particular jobs,
 
 ```bash
-sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS,STATE,ExitCode,DerivedExitCode
+sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS,STATE,ExitCode,DerivedExitCode
 ```
 
 e.g.,
@@ -368,7 +368,7 @@ The submitted jobs are sorted by the calculated job priority in descending order
 !!! tip "TL;DR"
     You can check the priority of all submitted jobs (not only yours but also others), and then you can find where you are, and figure out when your job can start to run.
     ```bash
-    $ sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocGRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)
+    $ sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)
     ```
 
 The formula for job priority is given by

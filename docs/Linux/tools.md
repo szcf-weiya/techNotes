@@ -102,10 +102,16 @@ first came across in [selecting a large number of (specific) rows in file - Stac
 ### sum of a column of numbers
 
 ```bash
-awk '{s+=$1} END {print $s}' data.txt
+awk '{s+=$1} END {print s}' data.txt
 ```
 
 refer to [Bash command to sum a column of numbers - Stack Overflow](https://stackoverflow.com/questions/3096259/bash-command-to-sum-a-column-of-numbers) for other approaches.
+
+For example, sum up the memory usage,
+
+```bash
+$ ps -e -o pid,cmd,%mem --sort=-%mem | awk 'NR > 1{s+=$NF} END {print s}'
+```
 
 ### select lines with conditions
 

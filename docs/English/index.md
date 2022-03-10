@@ -2434,10 +2434,11 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 11. Hong Kong is a common law **jurisdiction (司法权，裁判权)**.
 12. Copyright Ordinance
 13. The goal was to **combat (与...战斗，反对)** copyright **piracy** (c.f. privacy) activities on computer software in the business sector.
-14. The criminal provisions in Intellectual Property (Miscellaneous Amendments) Ordinance 2001 caused the public concerns that the amendments might hinder the dissemination of information in the education sector and the society.
+14. The criminal **provisions (规定，条款)** in Intellectual Property (Miscellaneous Amendments) Ordinance 2001 caused the public concerns that the amendments might hinder the dissemination of information in the education sector and the society.
+    - **provision (供应品)** of Rapid Antigen Test (RAT) Kit
 15. The copyright law is applicable to where the act in question occurs.
 16. compilation
-17. mime
+17. MIME: Multipurpose Internet Mail Extensions, 多用途互联网邮件拓展。
 18. The most important rights of a performer are the right to prevent any person from making a video or sound recording of his performance and the right to prohibit any person exploiting a video or sound recording of his performance.
 19. **civil remedies (民事救济)** vs. **criminal sanction (刑事处分)**
 20. intranet

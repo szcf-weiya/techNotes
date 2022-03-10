@@ -28,6 +28,13 @@ signal (11): Segmentation fault
 in expression starting at none:0
 ```
 
+By the way, the same error was also thrown when just plot into a file instead of popping up, a magic trick can be tried,
+
+```julia
+# https://discourse.julialang.org/t/generation-of-documentation-fails-qt-qpa-xcb-could-not-connect-to-display/60988/4
+ENV["GKSwstype"] = "100"
+```
+
 ## Violin Plot
 
 ```julia

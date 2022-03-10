@@ -123,6 +123,27 @@ bypy syncdown
 
 ## Chrome
 
+### disable running in background
+
+To diagnose high memory usage, I found chrome is still running in background even if it has been closed,
+
+```bash
+~$ ps -e -o pid,cmd,%mem --sort=-%mem | grep google 
+  13404 /opt/google/chrome/chrome -  1.9
+  13622 /opt/google/chrome/chrome -  1.3
+ 632184 /opt/google/chrome/chrome -  0.7
+  13448 /opt/google/chrome/chrome -  0.6
+  13610 /opt/google/chrome/chrome -  0.6
+1601941 /opt/google/chrome/chrome -  0.4
+...
+```
+
+To disable it, click `Setting > Advanced > System`, and then turn off the option
+
+> continue running background apps when Google Chrome is closed.
+
+Here is a [如何看待 PC 版 Chrome 关闭后仍然可以在后台运行？ - 知乎](https://www.zhihu.com/question/21193738).
+
 ### disable reading list
 
 the new version releases the `reading list`, then every time I press `star` requires to select to add to bookmarks or reading list, that make me annoyed. I found [some guys](https://www.reddit.com/r/chrome/comments/mhdn5d/how_do_i_make_it_so_when_i_hit_the_star_button_i/) have the same feeling, the solution is to enter
