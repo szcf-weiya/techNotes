@@ -1097,6 +1097,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#relative-path-in-include-vs-read" class="md-nav__link">
+    Relative path in include vs read
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     连等号赋值
   </a>
@@ -2888,6 +2895,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#relative-path-in-include-vs-read" class="md-nav__link">
+    Relative path in include vs read
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     连等号赋值
   </a>
@@ -3658,6 +3672,28 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 <p>using <code>OffsetArrays</code> package, refer to</p>
 <p><a href="https://github.com/JuliaArrays/OffsetArrays.jl">Github: OffsetArrays</a></p>
 <h2 id="base">Base<a class="headerlink" href="#base" title="Permanent link">&para;</a></h2>
+<h3 id="relative-path-in-include-vs-read">Relative path in <code>include</code> vs <code>read</code><a class="headerlink" href="#relative-path-in-include-vs-read" title="Permanent link">&para;</a></h3>
+<p>Suppose we have two files</p>
+<div class="highlight"><pre><span></span><code><span class="c"># file: relpath/a.jl</span>
+<span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div>
+<p>and</p>
+<div class="highlight"><pre><span></span><code><span class="c"># file: relpath/a.jl</span>
+<span class="n">include</span><span class="p">(</span><span class="s">&quot;a.jl&quot;</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">println</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s">&quot;a.jl&quot;</span><span class="p">)))</span>
+</code></pre></div>
+<p>If we run the scripts from <code>docs/julia/MWE</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># file: relpath/b.jl</span>
+$ julia relpath/b.jl
+</code></pre></div>
+<p>it will throw an error that <code>a.jl</code> is not found. But note that <code>include</code> also use the same relative path. The reason is that</p>
+<div class="highlight"><pre><span></span><code><span class="n">help</span><span class="o">?&gt;</span> <span class="n">include</span>
+<span class="o">...</span><span class="n">During</span> <span class="n">including</span><span class="p">,</span> <span class="n">a</span> <span class="n">task</span><span class="o">-</span><span class="k">local</span> <span class="n">include</span> <span class="n">path</span> <span class="n">is</span> <span class="n">set</span> <span class="n">to</span> <span class="n">the</span>
+  <span class="n">directory</span> <span class="n">containing</span> <span class="n">the</span> <span class="n">file</span><span class="o">.</span>
+</code></pre></div>
 <h3 id="_1">连等号赋值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>如果采用 <code>a=b=c=ones(10)</code> 形式赋值的话，则如果后面改变 <code>a</code> 的值，<code>b</code> 和 <code>c</code> 的值也将随之改变。</p>
 <p>但如果 <code>a=b=c=1</code> 为常值的话，则三个变量的值还是独立的。</p>
