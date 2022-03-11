@@ -280,6 +280,37 @@ using `OffsetArrays` package, refer to
 
 ## Base
 
+### Relative path in `include` vs `read`
+
+Suppose we have two files
+
+```julia
+# file: relpath/a.jl
+--8<-- "docs/julia/MWE/relpath/a.jl"
+```
+
+and
+
+```julia
+# file: relpath/a.jl
+--8<-- "docs/julia/MWE/relpath/b.jl"
+```
+
+If we run the scripts from `docs/julia/MWE`
+
+```bash
+# file: relpath/b.jl
+$ julia relpath/b.jl
+```
+
+it will throw an error that `a.jl` is not found. But note that `include` also use the same relative path. The reason is that
+
+```julia
+help?> include
+...During including, a task-local include path is set to the
+  directory containing the file.
+```
+
 ### 连等号赋值
 
 如果采用 `a=b=c=ones(10)` 形式赋值的话，则如果后面改变 `a` 的值，`b` 和 `c` 的值也将随之改变。
