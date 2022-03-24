@@ -881,3 +881,11 @@ cov(m)
 sm = scale(m, scale = FALSE) # only center, no scale.
 t(sm) %*% sm/ (6-1)
 ```
+
+## Check Memory Usage
+
+```r
+memuse = function () {
+    strtoi(system(paste("ps -p", Sys.getpid(), "-o rss="), intern = T)) / 1024
+}
+```

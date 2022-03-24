@@ -1,3 +1,10 @@
+## 2022.03.24
+
+- apropos
+- fiducial
+- **scornful (轻蔑的)** critics
+- preordain: 预先规定，注定
+
 ## 2022.02.11
 
 - We expect that people who have a **compelling (不可抗拒的，非常强烈的)** reason to need to stay will be able to explain their reasons to their hostel.
@@ -1746,7 +1753,7 @@ None
 
 ## 2020.11.06
 
-- Both of these extensions **confer** improved convergence properties **on** the basic algorithm without a significant increase in computational cost.
+- Both of these extensions **confer (商讨，授予)** improved convergence properties **on** the basic algorithm without a significant increase in computational cost.
     - confer sth. on/upon sb.: 授予，颁发（奖项、学位、荣誉或权利）
     - confer with sb. on/about sth.: 商讨，协商，交换意见
 - The extensions to multiple-view reconstructions **necessitated** the introduction of nonlinear optimization strategies.
@@ -2397,7 +2404,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2020.01.04
 
-1. Traditionally, mpMRI examinations were used to manually **delineate** the cancerous regions within the prostate.
+1. Traditionally, mpMRI examinations were used to manually **delineate (勾画，描述)** the cancerous regions within the prostate.
 2. Such methods tend to depend highly on **radiologists**' and **urologists**' expertise
 
 ## 2020.01.01
