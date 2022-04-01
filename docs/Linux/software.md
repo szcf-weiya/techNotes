@@ -1159,6 +1159,12 @@ Other shortcuts:
 - switch to next functions: `Ctrl + Shift + .`, refer to [Go to next method shortcut in VSCode](https://stackoverflow.com/questions/46388358/go-to-next-method-shortcut-in-vscode)
 - switch terminals, `Ctrl+Up/Down`, refer to [How to switch between terminals in Visual Studio Code?](https://stackoverflow.com/a/67412583/)
 
+### Edit Multiple Line Simultaneously
+
+Press `Shift + Alt + Down/Up` to insert cursors below or up, after inserting ` >`, then press `Esc` to exit. [:link:](https://code.visualstudio.com/docs/editor/codebasics)
+
+![Peek 2022-03-30 20-28](https://user-images.githubusercontent.com/13688320/160834904-5110b5e5-a58d-4586-a9a3-0e0d835abe52.gif)
+
 ### Fail to open terminal
 
 首先通过搜索图形界面登录，弹出

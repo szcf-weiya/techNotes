@@ -35,6 +35,10 @@ By the way, the same error was also thrown when just plot into a file instead of
 ENV["GKSwstype"] = "100"
 ```
 
+## Horizontal Legend
+
+only support in PGFPlotsX currently: <https://github.com/JuliaPlots/Plots.jl/issues/2206>
+
 ## Violin Plot
 
 ```julia
