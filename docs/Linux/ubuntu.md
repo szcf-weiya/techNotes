@@ -665,10 +665,12 @@ sudo apt-mark hold 4.15.0-147-generic
 - 然后选择 `Open With`
 - 选择特定软件，`Set as default`
 
+---
+
 ## WiFi
 
-!!! note 
-    2022-04-01 23:57:09
+!!! info
+    Post: 2022-04-01 23:57:09
 
 校园网突然无法打开微信图片，公众号文章也无法加载，无法 ping 通 `mp.weixin.qq.com`，但在服务器上可以。所以第一个自然想法是利用动态转发搭建隧道，即在本地端运行 
 
@@ -678,7 +680,7 @@ $ ssh -D 30002 server
 
 然后便可以通过 socks5://127.0.0.1:30002 进行代理。加了代理之后，首先能够在浏览器端打开公众号文章。但想要微信本身也进行代理，并不直接，可能因为 wine 套壳的原因，后来也没有继续细究。
 
-另一种方式便是换 wifi。除了 CUHK1x，也可以使用 eduroam，点击连接时，竟然发现连接状态下的 security 是哈佛帐号，然而我并没有利用哈佛帐号连接过 eduroam，而且帐号早已失效。其原因，很可能就是因为当时连接 Harvard Secure 时，会下载一个 `JoinNow`，并在本地运行 []:link:](https://harvard.service-now.com/ithelp?id=kb_article&sys_id=8720ee5c0fb0fe802dfe5bd692050eef#LinuxSecure)。
+另一种方式便是换 wifi。除了 CUHK1x，也可以使用 eduroam，点击连接时，竟然发现连接状态下的 security 是哈佛帐号，然而我并没有利用哈佛帐号连接过 eduroam，而且帐号早已失效。其原因，很可能就是因为当时连接 Harvard Secure 时，会下载一个 `JoinNow`，并在本地运行 [:link:](https://harvard.service-now.com/ithelp?id=kb_article&sys_id=8720ee5c0fb0fe802dfe5bd692050eef#LinuxSecure)。
 
 而此时所连接的 eduroam 中 security 便指向 joinnow 的两个密钥文件，
 

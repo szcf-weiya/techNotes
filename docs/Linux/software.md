@@ -983,6 +983,28 @@ the shortcut list can be found in `Right Click >  Preferences > Keybindings`, se
 
 - 添加学校邮箱时，必须采用学号形式的邮箱，不要用 alias 形式的，alias 验证会出问题。
 
+### Bcc 
+
+!!! info
+    Post: 2022-04-02 18:12:48
+
+最近小伙伴们在讨论为什么 Eesther 群发的邮件的 `To` 是她自己的邮箱。通过 `More > View Source` 查看邮件源码时发现，有个 `Delivered-To` 字段，恰好是 grad 的邮箱。于是猜想怎么实现这种效果，bcc？
+
+于是简单做了个实验，从 A 邮箱发给 B 并密送给 C
+
+```bash
+From: A
+TO: B
+Bcc: C
+```
+
+在 B 端查看源码发现只有 `TO: B`，而在 C 端既有 `Delivered-To: C`，也有 `TO: B`。
+
+所以 Esther 一种可能的原因是在 bcc 中输入 grad 的邮箱，并发送给自己。但感觉这样很奇怪，可能有其它自动设置，具体不得而知。关于 `Delivered-To` 的讨论可另见 [:link:](https://serverfault.com/questions/796913/how-can-the-to-and-delivered-to-fields-in-an-email-i-received-be-different)
+
+
+
+
 ### Deactivation
 
 Since the visiting Harvard email account has expired, it will always pop up the log-in window. But I do not want to delete the account, and just want to avoid the automatically log-in, so I try to set to never check new message as follows,
