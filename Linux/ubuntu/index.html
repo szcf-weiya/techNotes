@@ -3174,16 +3174,17 @@ linux-image-4.15.0-151-generic-202108071819.crash
 <li>然后选择 <code>Open With</code></li>
 <li>选择特定软件，<code>Set as default</code></li>
 </ul>
+<hr />
 <h2 id="wifi">WiFi<a class="headerlink" href="#wifi" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>2022-04-01 23:57:09</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Post: 2022-04-01 23:57:09</p>
 </div>
 <p>校园网突然无法打开微信图片，公众号文章也无法加载，无法 ping 通 <code>mp.weixin.qq.com</code>，但在服务器上可以。所以第一个自然想法是利用动态转发搭建隧道，即在本地端运行 </p>
 <div class="highlight"><pre><span></span><code>$ ssh -D <span class="m">30002</span> server
 </code></pre></div>
 <p>然后便可以通过 socks5://127.0.0.1:30002 进行代理。加了代理之后，首先能够在浏览器端打开公众号文章。但想要微信本身也进行代理，并不直接，可能因为 wine 套壳的原因，后来也没有继续细究。</p>
-<p>另一种方式便是换 wifi。除了 CUHK1x，也可以使用 eduroam，点击连接时，竟然发现连接状态下的 security 是哈佛帐号，然而我并没有利用哈佛帐号连接过 eduroam，而且帐号早已失效。其原因，很可能就是因为当时连接 Harvard Secure 时，会下载一个 <code>JoinNow</code>，并在本地运行 []<img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" />](https://harvard.service-now.com/ithelp?id=kb_article&amp;sys_id=8720ee5c0fb0fe802dfe5bd692050eef#LinuxSecure)。</p>
+<p>另一种方式便是换 wifi。除了 CUHK1x，也可以使用 eduroam，点击连接时，竟然发现连接状态下的 security 是哈佛帐号，然而我并没有利用哈佛帐号连接过 eduroam，而且帐号早已失效。其原因，很可能就是因为当时连接 Harvard Secure 时，会下载一个 <code>JoinNow</code>，并在本地运行 <a href="https://harvard.service-now.com/ithelp?id=kb_article&amp;sys_id=8720ee5c0fb0fe802dfe5bd692050eef#LinuxSecure"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>。</p>
 <p>而此时所连接的 eduroam 中 security 便指向 joinnow 的两个密钥文件，</p>
 <div class="highlight"><pre><span></span><code>~/.joinnow/tls-client-certs$ ls
 sw2-joinnow-client-cert-**************.crt

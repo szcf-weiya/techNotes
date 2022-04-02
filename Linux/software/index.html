@@ -1071,6 +1071,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#bcc" class="md-nav__link">
+    Bcc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#deactivation" class="md-nav__link">
     Deactivation
   </a>
@@ -3500,6 +3507,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#bcc" class="md-nav__link">
+    Bcc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#deactivation" class="md-nav__link">
     Deactivation
   </a>
@@ -4419,6 +4433,19 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 <ul>
 <li>添加学校邮箱时，必须采用学号形式的邮箱，不要用 alias 形式的，alias 验证会出问题。</li>
 </ul>
+<h3 id="bcc">Bcc<a class="headerlink" href="#bcc" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Post: 2022-04-02 18:12:48</p>
+</div>
+<p>最近小伙伴们在讨论为什么 Eesther 群发的邮件的 <code>To</code> 是她自己的邮箱。通过 <code>More &gt; View Source</code> 查看邮件源码时发现，有个 <code>Delivered-To</code> 字段，恰好是 grad 的邮箱。于是猜想怎么实现这种效果，bcc？</p>
+<p>于是简单做了个实验，从 A 邮箱发给 B 并密送给 C</p>
+<div class="highlight"><pre><span></span><code>From: A
+TO: B
+Bcc: C
+</code></pre></div>
+<p>在 B 端查看源码发现只有 <code>TO: B</code>，而在 C 端既有 <code>Delivered-To: C</code>，也有 <code>TO: B</code>。</p>
+<p>所以 Esther 一种可能的原因是在 bcc 中输入 grad 的邮箱，并发送给自己。但感觉这样很奇怪，可能有其它自动设置，具体不得而知。关于 <code>Delivered-To</code> 的讨论可另见 <a href="https://serverfault.com/questions/796913/how-can-the-to-and-delivered-to-fields-in-an-email-i-received-be-different"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h3 id="deactivation">Deactivation<a class="headerlink" href="#deactivation" title="Permanent link">&para;</a></h3>
 <p>Since the visiting Harvard email account has expired, it will always pop up the log-in window. But I do not want to delete the account, and just want to avoid the automatically log-in, so I try to set to never check new message as follows,</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/151953746-2250b616-a3b7-418b-bfbc-de535224d562.png" /></p>
