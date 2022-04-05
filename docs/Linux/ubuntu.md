@@ -1,5 +1,13 @@
 # Ubuntu
 
+!!! info
+    **Most notes on this page are based on my Ubuntu laptop.**
+    
+    - 20.04: 2021-09-12 -> Now. [:link:](18to20.md)
+    - 18.04: 2020-04-12 -> 2021-09-12. [:link:](16to18.md)
+    - 16.04: ~ -> 2020-04-12
+    - 14.04: ~ -> ~
+
 ## Package Manager
 
 ### Advanced Package Tool (APT)
@@ -19,11 +27,13 @@ see also:
 - `snaps`: the packages
 - `snapd`: the tool for using packages
 
-Snaps are self-contained applications running in a sandbox with mediated access to the host system. [:wiki:](https://en.wikipedia.org/wiki/Snap_(package_manager))
+Snaps are self-contained applications running in a sandbox with mediated access to the host system. [:link:](https://en.wikipedia.org/wiki/Snap_(package_manager))
 
 see also:
 
 - [Ubuntu 推出的Snap应用架构有什么深远意义? -- 知乎](https://www.zhihu.com/question/47514122)
+
+---
 
 ## GNOME 
 
@@ -123,6 +133,26 @@ It works, as shown in the above right figure. A minor side change is that the En
 ### sound device chooser
 
 tried but not good. [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+
+## Filesystem
+
+### `/run/user/1000`
+
+!!! info
+    Post: 2022-04-05 09:58:32
+
+Checking the usage of disk by `df -h`, here is a line,
+
+```bash
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           2.0G   24K  2.0G   1% /run/user/129
+tmpfs           2.0G  192K  2.0G   1% /run/user/1000
+```
+
+where 
+
+- `tmpfs` (short for Temporary File System) is a temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device. [:link:](https://en.wikipedia.org/wiki/Tmpfs)
+- `/run/user/$uid` is created by pam_systemd and used for storing files used by running processes for that user. [:link:](https://unix.stackexchange.com/questions/162900/what-is-this-folder-run-user-1000)
 
 ## Sound with Headphone
 
@@ -410,17 +440,6 @@ $ uname -r
 
 话说回来，电池最后实在不行，就换了呗，反正这个是外置可拆卸的。
 
-## Delete Hotspot
-
-升级到 Ubuntu 18.04 后，开机自动连接到 Hotspot，每次需要手动禁止并改成 Wifi 连接，这个可以直接删除保存好的 Hotspot 连接
-
-```bash
-cd /etc/NetworkManager/system-connections/
-sudo rm Hotspot
-```
-
-参考 [How to remove access point from saved list](https://askubuntu.com/questions/120415/how-to-remove-access-point-from-saved-list/120447)
-
 ## Add Virtual Memory
 
 通过交换文件实现
@@ -705,6 +724,17 @@ sudo systemctl restart NetworkManager
 参考 [:link:](https://askubuntu.com/questions/936817/can-i-create-two-different-profiles-for-one-wifi-network)
 
 另外，命令行操作进行网络连接详见 <https://www.makeuseof.com/connect-to-wifi-with-nmcli/>
+
+### Delete Hotspot
+
+升级到 Ubuntu 18.04 后，开机自动连接到 Hotspot，每次需要手动禁止并改成 Wifi 连接，这个可以直接删除保存好的 Hotspot 连接
+
+```bash
+cd /etc/NetworkManager/system-connections/
+sudo rm Hotspot
+```
+
+参考 [How to remove access point from saved list](https://askubuntu.com/questions/120415/how-to-remove-access-point-from-saved-list/120447)
 
 ### WiFi Hotpot (16.04)
 
