@@ -1,3 +1,10 @@
+## 2022.04.07
+
+- the more we lament how our nutritious recipes are increasingly being ignored, the more fast food is being produced, consumed and even celebrated as the cuisine of a coming age.
+- culinary
+- cynical
+- how to reduce the harm without **unduly (过度地，不恰当地)** affecting their appeal
+
 ## 2022.03.24
 
 - apropos
@@ -1064,6 +1071,7 @@ None
 ## 2021.03.16
 
 - A relatively small variation in breakfast's **macronutrient (营养素)** composition has a striking impact on social decisions.
+    - **nutritious (有营养的)** recipes
 
 ## 2021.03.15
 
@@ -2339,7 +2347,7 @@ None
 - Can we build systems that converse with humans in natural language?
 - Can we build systems that have an **ethical and moral** foundation?
 - Now, every new technology brings with it some measure of **trepidation**.
-- people **lamented** that we would see the destruction of the family.
+- people **lamented (哀悼，惋惜)** that we would see the destruction of the family.
 - how to **discern (识别，辨别)** a good game from a bad game.
 - I will teach it some corpus of law
 - what about **rogue** agents?
