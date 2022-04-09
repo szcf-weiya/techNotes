@@ -656,6 +656,68 @@ since the first one does not have `return`, but `g()` has `return` and the addit
 
 ## PyCall
 
+### Update Matplotlib
+
+!!! info
+    Post: 2022-04-09 19:13:48
+
+```julia
+julia> pyplot()
+[ Info: Precompiling PyPlot [d330b81b-6aea-500a-939a-2ce795aea3ee]
+┌ Warning: You are using Matplotlib 3.1.3, which is no longer
+│ officialy supported by the Plots community. To ensure smooth Plots.jl
+│ integration update your Matplotlib library to a version >= 3.4.0
+│ 
+│ If you have used Conda.jl to install PyPlot (default installation),
+│ upgrade your matplotlib via Conda.jl and rebuild the PyPlot.
+│ 
+│ If you are not sure, here are the default instructions:
+│ 
+│ In Julia REPL:
+│ ```
+│ import Pkg;
+│ Pkg.add("Conda")
+│ import Conda
+│ Conda.update()
+│ Pkg.build("PyPlot")
+│ ```
+│ 
+└ @ Plots ~/.julia/packages/Plots/9C6z9/src/backends/pyplot.jl:29
+```
+
+Then follow the instruction,
+
+```julia
+julia> import Conda
+
+julia> Conda.update()
+[ Info: Running `conda update -y --all conda` in root environment
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home/weiya/.julia/conda/3
+
+  added / updated specs:
+    - conda
+```
+
+it implies that the env created by `Conda.jl` is `~/.julia/conda/3`
+
+If I check all env in the shell, it returns
+
+```bash
+$ conda env list
+# conda environments:
+#
+                         /home/weiya/.julia/conda/3
+                         /home/weiya/.julia/conda/3/envs/_ORCA_jl_
+base                     /home/weiya/anaconda3
+py37                     /home/weiya/anaconda3/envs/py37
+...
+```
+
 ### Couldn't find libpython error
 
 ```julia
