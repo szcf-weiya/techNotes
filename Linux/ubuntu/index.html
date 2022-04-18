@@ -777,6 +777,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mount-with-options" class="md-nav__link">
+    Mount with Options
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2702,6 +2709,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mount-with-options" class="md-nav__link">
+    Mount with Options
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3339,6 +3353,21 @@ net.core.wmem_max <span class="o">=</span> <span class="m">212992</span>
 <h2 id="_1">开机自启动<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>搜索 <code>Startup</code> 便可弹出开机自启动软件界面，</p>
 <p><img alt="Selection_2329" src="https://user-images.githubusercontent.com/13688320/133000670-f1e9062e-8ba3-45b1-87c6-5b5e89d5150e.png" /></p>
+<h2 id="mount-with-options">Mount with Options<a class="headerlink" href="#mount-with-options" title="Permanent link">&para;</a></h2>
+<p>By default, the Segate disk would return owner as root.</p>
+<p>Use</p>
+<div class="highlight"><pre><span></span><code>sudo umount /dev/XXX
+sudo mount -o rw,user,uid<span class="o">=</span><span class="m">1000</span>,dmask<span class="o">=</span><span class="m">007</span>,fmask<span class="o">=</span><span class="m">117</span> /dev/XXX /media/weiya/Segate
+</code></pre></div>
+<p>where the first step might throw busy error, and the processes use the disk can be found via</p>
+<div class="highlight"><pre><span></span><code>fuser -cu /local/mnt/
+ps -ef <span class="p">|</span> grep XXX
+</code></pre></div>
+<p>refer to</p>
+<ul>
+<li><a href="https://askubuntu.com/questions/11840/how-do-i-use-chmod-on-an-ntfs-or-fat32-partition/956072#956072">https://askubuntu.com/questions/11840/how-do-i-use-chmod-on-an-ntfs-or-fat32-partition/956072#956072</a></li>
+<li><a href="https://stackoverflow.com/questions/7878707/how-to-unmount-a-busy-device">https://stackoverflow.com/questions/7878707/how-to-unmount-a-busy-device</a></li>
+</ul>
 
               
             </article>
