@@ -832,3 +832,26 @@ it seems to work since much fewer warning message of `1m_ipv4_udp_receive_buffer
 搜索 `Startup` 便可弹出开机自启动软件界面，
 
 ![Selection_2329](https://user-images.githubusercontent.com/13688320/133000670-f1e9062e-8ba3-45b1-87c6-5b5e89d5150e.png)
+
+## Mount with Options
+
+By default, the Segate disk would return owner as root.
+
+Use
+
+```bash
+sudo umount /dev/XXX
+sudo mount -o rw,user,uid=1000,dmask=007,fmask=117 /dev/XXX /media/weiya/Segate
+```
+
+where the first step might throw busy error, and the processes use the disk can be found via
+
+```bash
+fuser -cu /local/mnt/
+ps -ef | grep XXX
+```
+
+refer to
+
+- <https://askubuntu.com/questions/11840/how-do-i-use-chmod-on-an-ntfs-or-fat32-partition/956072#956072>
+- <https://stackoverflow.com/questions/7878707/how-to-unmount-a-busy-device>
