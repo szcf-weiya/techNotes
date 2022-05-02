@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/python/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -4047,7 +4047,7 @@ $ python -m ipykernel install --user --name myenv --display-name <span class="s2
 </code></pre></div>
 <h4 id="julia">Julia<a class="headerlink" href="#julia" title="Permanent link">&para;</a></h4>
 <p>打开特定版本的 Julia，</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">add</span> <span class="n">IJulia</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">IJulia</span><span class="w"></span>
 </code></pre></div>
 <h4 id="r">R<a class="headerlink" href="#r" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;IRkernel&#39;</span><span class="p">)</span>
@@ -4328,9 +4328,9 @@ In: np.r_[i:i+3 for i in 1:3]
 SyntaxError: invalid syntax
 </code></pre></div>
 <p>As a comparison, Julia seems more flexible,</p>
-<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span> <span class="n">vcat</span><span class="p">([</span><span class="n">i</span><span class="o">:</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">3</span><span class="p">]</span><span class="o">...</span><span class="p">)</span><span class="o">&#39;</span>
-<span class="mi">1</span><span class="o">×</span><span class="mi">12</span> <span class="n">adjoint</span><span class="p">(</span><span class="o">::</span><span class="kt">Vector</span><span class="p">{</span><span class="kt">Int64</span><span class="p">})</span> <span class="n">with</span> <span class="n">eltype</span> <span class="kt">Int64</span><span class="o">:</span>
- <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vcat</span><span class="p">([</span><span class="n">i</span><span class="o">:</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">3</span><span class="p">]</span><span class="o">...</span><span class="p">)</span><span class="o">&#39;</span><span class="w"></span>
+<span class="mi">1</span><span class="o">×</span><span class="mi">12</span><span class="w"> </span><span class="n">adjoint</span><span class="p">(</span><span class="o">::</span><span class="kt">Vector</span><span class="p">{</span><span class="kt">Int64</span><span class="p">})</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">eltype</span><span class="w"> </span><span class="kt">Int64</span><span class="o">:</span><span class="w"></span>
+<span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="mi">3</span><span class="w">  </span><span class="mi">4</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="mi">3</span><span class="w">  </span><span class="mi">4</span><span class="w">  </span><span class="mi">5</span><span class="w">  </span><span class="mi">3</span><span class="w">  </span><span class="mi">4</span><span class="w">  </span><span class="mi">5</span><span class="w">  </span><span class="mi">6</span><span class="w"></span>
 </code></pre></div>
 <h3 id="_1"><code>/=</code><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>According to the builtin manual, <code>help('/=')</code>,</p>
@@ -4527,7 +4527,9 @@ pip install PACKAGE -U
 <li>obtain the COVERALLS_REPO_TOKEN from <a href="https://coveralls.io/">coveralls</a></li>
 <li>run the script file</li>
 </ol>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">run_local_coverall.sh</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">run_local_coverall.sh</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="nb">cd</span> test/
 coverage run test_script.py
@@ -4536,6 +4538,7 @@ mv .coverage ..
 
 <span class="nv">COVERALLS_REPO_TOKEN</span><span class="o">=</span>XXXXXXXXXXXXXXXXXXXXXXX coveralls
 </code></pre></div>
+</div>
 </div>
 </div>
 <h3 id="combine-with-julia-in-actions">combine with julia in Actions<a class="headerlink" href="#combine-with-julia-in-actions" title="Permanent link">&para;</a></h3>
@@ -4699,7 +4702,7 @@ mv .coverage ..
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       

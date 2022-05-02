@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/chpc/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -2646,7 +2646,9 @@ sbatch -N <span class="m">2</span> -c <span class="m">16</span> --mem<span class
 Sometimes, we want to submit multiple jobs quickly, or perform parallel computing by dividing a heavy task into multiple small tasks.</p>
 <h3 id="pbs">PBS<a class="headerlink" href="#pbs" title="Permanent link">&para;</a></h3>
 <p>Suppose there is a main program <code>toy.jl</code>, and I want to run it multiple times but with different parameters, which can be passed via the <code>-v</code> option.</p>
-<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">submit.sh</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">submit.sh</label><label for="__tabbed_1_2">toy.job</label><label for="__tabbed_1_3">toy.jl</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="k">for</span> number <span class="k">in</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="p">;</span> <span class="k">do</span>
     <span class="k">for</span> letter <span class="k">in</span> a b c d e<span class="p">;</span> <span class="k">do</span>
@@ -2655,16 +2657,17 @@ Sometimes, we want to submit multiple jobs quickly, or perform parallel computin
 <span class="k">done</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">toy.job</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="nb">cd</span> <span class="nv">$HOME</span>/PROJECT_FOLDER
 julia toy.jl <span class="si">${</span><span class="nv">arg1</span><span class="si">}</span> <span class="si">${</span><span class="nv">arg2</span><span class="si">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">toy.jl</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">AGRS</span>
-<span class="n">println</span><span class="p">(</span><span class="s">&quot;a = </span><span class="si">$a</span><span class="s">, b = </span><span class="si">$b</span><span class="s">&quot;</span><span class="p">)</span>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AGRS</span><span class="w"></span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;a = </span><span class="si">$a</span><span class="s">, b = </span><span class="si">$b</span><span class="s">&quot;</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <p>The submitting command is</p>
@@ -2674,7 +2677,9 @@ julia toy.jl <span class="si">${</span><span class="nv">arg1</span><span class="
 <h3 id="slurm">SLURM<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h3>
 <p>Suppose there is a main program <code>run.jl</code>, which runs in parallel with the number of cores <code>np</code>, and I also want to repeat the program for <code>N</code> times. To properly store the results, the index of repetition <code>nrep</code> for each job has been passed to the main program.</p>
 <p>The arguments for job file can be passed by the <code>--export</code> option.</p>
-<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">submit.sh</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">submit.sh</label><label for="__tabbed_2_2">toy.job</label><label for="__tabbed_2_3">run.jl</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     cat <span class="s">&lt;&lt;HELP_USAGE</span>
@@ -2691,23 +2696,24 @@ julia toy.jl <span class="si">${</span><span class="nv">arg1</span><span class="
 <span class="k">done</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">toy.job</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="nb">cd</span> <span class="nv">$HOME</span>/PROJECT
 julia -p <span class="nv">$np</span> run.jl <span class="nv">$nrep</span> <span class="nv">$resfolder</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">run.jl</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">Distributed</span>
-<span class="k">const</span> <span class="n">jobs</span> <span class="o">=</span> <span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span>
-<span class="k">const</span> <span class="n">res</span> <span class="o">=</span> <span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">Distributed</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">jobs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span><span class="w"></span>
+<span class="k">const</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span><span class="w"></span>
 
-<span class="k">function</span> <span class="n">make_jobs</span><span class="p">()</span> <span class="k">end</span>
-<span class="k">function</span> <span class="n">do_work</span><span class="p">()</span> <span class="k">end</span>
+<span class="k">function</span><span class="w"> </span><span class="n">make_jobs</span><span class="p">()</span><span class="w"> </span><span class="k">end</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span><span class="n">do_work</span><span class="p">()</span><span class="w"> </span><span class="k">end</span><span class="w"></span>
 
-<span class="n">nrep</span><span class="p">,</span> <span class="n">resfolder</span> <span class="o">=</span> <span class="nb">ARGS</span>
-<span class="nd">@async</span> <span class="n">make_jobs</span><span class="p">()</span>
+<span class="n">nrep</span><span class="p">,</span><span class="w"> </span><span class="n">resfolder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ARGS</span><span class="w"></span>
+<span class="nd">@async</span><span class="w"> </span><span class="n">make_jobs</span><span class="p">()</span><span class="w"></span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <p>where</p>
@@ -2986,7 +2992,9 @@ $ lfs quota -gh StatScratch /lustre
 ~ $ cp /usr/share/Modules/modulefiles/R/3.6 modules/R3.6
 <span class="c1"># step 4: modify the path to the software (`modroot`) as follows</span>
 </code></pre></div>
-<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">/usr/share/Modules/modulefiles/R/3.6</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">/usr/share/Modules/modulefiles/R/3.6</label><label for="__tabbed_3_2">~/modules/R3.6</label><label for="__tabbed_3_3">diff -u</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1">#%Module1.0#####################################################################</span>
 <span class="c1">##</span>
 proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="o">{</span>
@@ -3020,7 +3028,7 @@ prepend-path LD_LIBRARY_PATH <span class="nv">$modroot</span>/lib
 prepend-path INCLUDE <span class="nv">$modroot</span>/include
 </code></pre></div>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">~/modules/R3.6</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1">#%Module1.0#####################################################################</span>
 <span class="c1">##</span>
 proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="o">{</span>
@@ -3054,7 +3062,7 @@ prepend-path LD_LIBRARY_PATH <span class="nv">$modroot</span>/lib
 prepend-path INCLUDE <span class="nv">$modroot</span>/include
 </code></pre></div>
 </div>
-<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">diff -u</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="gu">@@ -18,10 +18,10 @@</span><span class="w"></span>
 
 <span class="w"> </span>set     version         3.6.3<span class="w"></span>
@@ -3067,6 +3075,7 @@ prepend-path INCLUDE <span class="nv">$modroot</span>/include
 <span class="gi">+module load intel</span><span class="w"></span>
 <span class="w"> </span>conflict R<span class="w"></span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <p>Note that <code>module load intel</code> is also added, otherwise it will throws,</p>
@@ -3187,14 +3196,16 @@ storage01:/chpc-users                     15T  <span class="m">6</span>.2T  <spa
 </code></pre></div>
 <p>而该结点上没有。</p>
 <p>为了验证上述想法，也手动进行 <code>export R_LIBS_USER=</code> 及 <code>.libPaths()</code>，</p>
-<div class="tabbed-set" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">DONE</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">DONE</label><label for="__tabbed_4_2">DONE</label><label for="__tabbed_4_3">FAIL</label><label for="__tabbed_4_4">FAIL</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span>
 <span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span> 
 </code></pre></div>
 </div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">DONE</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="o">$</span> <span class="n">export</span> <span class="n">R_LIBS_USER</span><span class="o">=/</span><span class="n">lustre</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">sXXXXXXXXX</span><span class="o">/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span>
 <span class="o">$</span> <span class="n">R</span>
 <span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
@@ -3202,18 +3213,19 @@ storage01:/chpc-users                     15T  <span class="m">6</span>.2T  <spa
 <span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>   
 </code></pre></div>
 </div>
-<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">FAIL</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0/&quot;</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><label for="__tabbed_4_4">FAIL</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="o">$</span> <span class="n">export</span> <span class="n">R_LIBS_USER</span><span class="o">=~/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span>
 <span class="o">$</span> <span class="n">R</span>
 <span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <p>可见涉及 <code>~</code> 和 <code>/users/sXXXX</code> 的均有问题。</p>
@@ -3403,7 +3415,7 @@ which: no R <span class="k">in</span> <span class="o">(</span>...
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

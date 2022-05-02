@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/TeX/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.13">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e411adfe.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -3551,15 +3551,18 @@ code
 See also: <a href="https://github.com/szcf-weiya/Cell-Video/commit/7d54f77a0ac00ae2afa73f02f939156d054f5852"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <p>To switch from &ldquo;biblatex + biber&rdquo; to <a href="https://www.overleaf.com/learn/latex/Bibliography_management_with_natbib">&ldquo;natbib + bibtex&rdquo;</a>, </p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">biblatex + biber</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">biblatex + biber</label><label for="__tabbed_1_2">natbib + bibtex</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="na">[backend=biber,citestyle=authoryear,sortcites=true,natbib,sorting=nyt,style=apa]</span><span class="nb">{</span>biblatex<span class="nb">}</span>
 <span class="k">\DeclareLanguageMapping</span><span class="nb">{</span>american<span class="nb">}{</span>american-apa<span class="nb">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">natbib + bibtex</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="na">[authoryear]</span><span class="nb">{</span>natbib<span class="nb">}</span>
 <span class="k">\bibliographystyle</span><span class="nb">{</span>imsart-nameyear<span class="nb">}</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <p>We can just modify the header definition without replacing the commands in the main document.</p>
@@ -3898,15 +3901,18 @@ $ latexdef -p graphicx -f resizebox
 <h2 id="greek-symbols">Greek Symbols<a class="headerlink" href="#greek-symbols" title="Permanent link">&para;</a></h2>
 <h3 id="howto-bold">howto bold<a class="headerlink" href="#howto-bold" title="Permanent link">&para;</a></h3>
 <p><code>\mathbf</code> 只对公式中的普通字母 <code>ABC...abcdef</code> 等起作用。</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Method 1</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Method 1</label><label for="__tabbed_2_2">Method 2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
 <span class="k">\boldsymbol</span><span class="nb">{</span><span class="k">\sigma</span><span class="nb">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Method 2</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>bm<span class="nb">}</span>
 <span class="k">\bm</span><span class="nb">{</span><span class="k">\sigma</span><span class="nb">}</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <h3 id="variant-forms">variant forms<a class="headerlink" href="#variant-forms" title="Permanent link">&para;</a></h3>
@@ -4099,7 +4105,7 @@ $ latexdef -p graphicx -f resizebox
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../assets/javascripts/bundle.ed9748b7.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
