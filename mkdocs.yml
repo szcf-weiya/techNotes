@@ -139,7 +139,8 @@ markdown_extensions:
   - attr_list
   - pymdownx.arithmatex
   - pymdownx.superfences
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tilde
   - pymdownx.snippets
   - pymdownx.emoji:

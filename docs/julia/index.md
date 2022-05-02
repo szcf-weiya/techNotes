@@ -591,6 +591,47 @@ ENV["https_proxy"]
 
 ## Function
 
+### function redefinition in `if`
+
+=== "Wrong"
+
+    ```julia
+    julia> function f()
+            flag = true
+            if flag
+                g(x) = 1
+            else
+                g(x) = 2
+            end
+            println(g(1))
+        end
+    WARNING: Method definition g(Any) in module Main at REPL[1]:4 overwritten at REPL[1]:6.
+    f (generic function with 1 method)
+
+    julia> f()
+    2
+    ```
+
+=== "Correct: anonymous functions"
+
+    ```julia
+    julia> function f()
+            flag = true
+            if flag
+                g = x->1
+            else
+                g = x->2
+            end
+            println(g(1))
+        end
+    f (generic function with 1 method)
+
+    julia> f()
+    1
+    ```
+
+The correct way is to use the anonymous function, see also [Defining a function inside if...else..end NOT as expected? - New to Julia - JuliaLang](https://discourse.julialang.org/t/defining-a-function-inside-if-else-end-not-as-expected/13815/6)
+
 ### invoke function via string
 
 ```julia
@@ -1112,9 +1153,11 @@ end
 参考
 
 1. [Hash function for custom type](https://stackoverflow.com/questions/50052668/hash-function-for-custom-type)
-2. [到底什么是hash?](https://www.zhihu.com/question/26762707)
 3. [Surprising struct equality test](https://discourse.julialang.org/t/surprising-struct-equality-test/4890)
 4. [What is the difference between "using" and "import"?](https://docs.julialang.org/en/v1/manual/faq/#What-is-the-difference-between-%22using%22-and-%22import%22?-1)
+
+!!! tip "import vs using"
+    Instead of explicitly redefine function with `Module.function` name, we can first import it, e.g., `pdf`, we need to use `import Distributions.pdf`. [:link:](https://github.com/szcf-weiya/MCF/blob/6068353e1b3bd08594c1f3761a948fc13f1f6e70/src/util.jl#L3-L4)
 
 ## `MethodError: objects of type Module are not callable`
 
