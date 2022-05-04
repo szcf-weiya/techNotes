@@ -1,3 +1,8 @@
+## 2022.05.03
+
+- posthumous paper: 作者死后出版的
+
+
 ## 2022.04.07
 
 - the more we lament how our nutritious recipes are increasingly being ignored, the more fast food is being produced, consumed and even celebrated as the cuisine of a coming age.
