@@ -500,6 +500,7 @@ refer to [list files with specific group and user name](https://unix.stackexchan
 
 - `-P`: perl-style regex
 - `-o`: only print the matched part instead of the whole line
+- `-v`: 反选
 
 ```bash
 $ grep -oP "hello \K\w+" <<< "hello world"
