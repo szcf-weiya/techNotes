@@ -175,6 +175,21 @@ where
 
 Refer to [Demystifying ifconfig and network interfaces in Linux](https://goinbigdata.com/demystifying-ifconfig-and-network-interfaces-in-linux/), note that some field names are different, such as MAC address, `ether` vs `HWaddr`, see also the discussion [CentOS 7 - Networking Support: Changing ether to hwaddr](https://forums.centos.org/viewtopic.php?t=70378)
 
+Reboot with
+
+```bash
+sudo ifconfig enp0s31f6 down
+sudo ifconfig enp0s31f6 up
+```
+
+and if necessary, re-install the wifi kernel with
+
+```bash
+sudo apt-get install bcmwl-kernel-source
+```
+
+see also [:link:](https://www.shuzhiduo.com/A/D854QD6pdE/).
+
 ## shadowsocks
 
 Follow the [instruction](https://github.com/shadowsocks/shadowsocks/blob/master/README.md) in the official repo, 
