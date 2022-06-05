@@ -653,6 +653,8 @@ The main command used to control systemd is `systemctl`.
     
     - [How to make WSL run services at startup - Super User](https://superuser.com/questions/1343558/how-to-make-wsl-run-services-at-startup)
 
+See also: [systemd/User - ArchWiki](https://wiki.archlinux.org/title/Systemd/User)
+
 ## Custom Shortcut to Switch External Display Mode
 
 办公室电脑既可以作为显示屏，也可以在 PC 模式下使用 Windows 系统。在 PC 模式下，在 Ubuntu 上通过 synergy 共享键鼠，但是此时存在一个问题，因为 HDMI 仍然连着，所以在移动鼠标时中间有个 gap，也就是需要跳过外接显示屏才能移动到 PC。

@@ -864,6 +864,16 @@ by default, the differences are shown per sentences, add option `--color-words` 
 
 use option `--no-index`
 
+### show line ending changes
+
+```bash
+git diff --color --word-diff-regex=.
+```
+
+which highlights all whitespace changes everywhere in lines.
+
+see also: [:link:](https://stackoverflow.com/questions/3920650/git-diff-show-me-line-ending-changes)
+
 ## 公开私有仓库的部分代码
 
 可能的解决方案：

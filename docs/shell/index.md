@@ -484,7 +484,7 @@ done < <(grep -nE "finished" slurm-37985.out)
 
 will also output the numbers of the finished line.
 
-- `<()` is called [process substitution](https://superuser.com/questions/1059781/what-exactly-is-in-bash-and-in-zsh)
+- `<()` is called [process substitution](https://superuser.com/questions/1059781/what-exactly-is-in-bash-and-in-zsh), see also [pipe grep output to paste input](https://stackoverflow.com/questions/31546680/how-to-pipe-grep-output-to-paste-input)
 - `<<<` is known as `here string`, and [different from `<<`, `<`](https://askubuntu.com/questions/678915/whats-the-difference-between-and-in-bash)
 
 refer to [How can I store the “find” command results as an array in Bash](https://stackoverflow.com/questions/23356779/how-can-i-store-the-find-command-results-as-an-array-in-bash)
