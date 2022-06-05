@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Git/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.0">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.2">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fd896c8a.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.5d38496d.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
@@ -2189,6 +2189,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#show-line-ending-changes" class="md-nav__link">
+    show line ending changes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3022,6 +3029,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#show-line-ending-changes" class="md-nav__link">
+    show line ending changes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3639,6 +3653,11 @@ git push origin :refs/tags/v1.0
 <p>by default, the differences are shown per sentences, add option <code>--color-words</code> would only highlight the modified words</p>
 <h3 id="compare-two-files-not-indexed-by-git">compare two files not indexed by git<a class="headerlink" href="#compare-two-files-not-indexed-by-git" title="Permanent link">&para;</a></h3>
 <p>use option <code>--no-index</code></p>
+<h3 id="show-line-ending-changes">show line ending changes<a class="headerlink" href="#show-line-ending-changes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git diff --color --word-diff-regex<span class="o">=</span>.
+</code></pre></div>
+<p>which highlights all whitespace changes everywhere in lines.</p>
+<p>see also: <a href="https://stackoverflow.com/questions/3920650/git-diff-show-me-line-ending-changes"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h2 id="_4">公开私有仓库的部分代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>可能的解决方案：</p>
 <ul>
@@ -3790,7 +3809,7 @@ git push origin :refs/tags/v1.0
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.0f659f14.min.js"></script>
+      <script src="../assets/javascripts/bundle.7f366e99.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
