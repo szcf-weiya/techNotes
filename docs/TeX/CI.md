@@ -90,7 +90,7 @@ script:
 
 It reports that
 
-```error
+```bash
 ! Font EU1/lmr/m/n/10=[lmroman10-regular]:mapping=tex-text at 10.0pt not loadab
 le: Metric (TFM) file or installed font not found.
 ```
