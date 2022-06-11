@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/ubuntu/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.3">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.4">
     
     
       
@@ -2763,6 +2763,37 @@
 <li><code>snapd</code>: the tool for using packages</li>
 </ul>
 <p>Snaps are self-contained applications running in a sandbox with mediated access to the host system. <a href="https://en.wikipedia.org/wiki/Snap_(package_manager)"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<ul>
+<li>list all installed packages: </li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ date
+Sat <span class="m">11</span> Jun <span class="m">2022</span> <span class="m">08</span>:22:05 PM CST
+$ snap list
+Name                             Version                     Rev    Tracking       Publisher   Notes
+bare                             <span class="m">1</span>.0                         <span class="m">5</span>      latest/stable  canonical✓  base
+canonical-livepatch              <span class="m">10</span>.2.3                      <span class="m">146</span>    latest/stable  canonical✓  -
+core                             <span class="m">16</span>-2.56                     <span class="m">13308</span>  latest/stable  canonical✓  core
+core18                           <span class="m">20220428</span>                    <span class="m">2409</span>   latest/stable  canonical✓  base
+gnome-3-28-1804                  <span class="m">3</span>.28.0-19-g98f9e67.98f9e67  <span class="m">161</span>    latest/stable  canonical✓  -
+gtk-common-themes                <span class="m">0</span>.1-79-ga83e90c             <span class="m">1534</span>   latest/stable  canonical✓  -
+kde-frameworks-5                 <span class="m">5</span>.47.0                      <span class="m">27</span>     latest/stable  kde✓        -
+kde-frameworks-5-core18          <span class="m">5</span>.61.0                      <span class="m">32</span>     latest/stable  kde✓        -
+kde-frameworks-5-qt-5-14-core18  <span class="m">5</span>.68.0                      <span class="m">4</span>      latest/stable  kde✓        -
+ksnip                            <span class="m">1</span>.10.0                      <span class="m">443</span>    latest/stable  dporobic    -
+</code></pre></div>
+<ul>
+<li>check available updates</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># without refreshing</span>
+$ snap refresh --list
+<span class="c1"># perform refreshing</span>
+$ sudo snap refresh
+</code></pre></div>
+<ul>
+<li>check info of packages</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ snap info &lt;snap name&gt;
+</code></pre></div>
 <p>see also:</p>
 <ul>
 <li><a href="https://www.zhihu.com/question/47514122">Ubuntu 推出的Snap应用架构有什么深远意义? &ndash; 知乎</a></li>
@@ -3500,7 +3531,7 @@ ps -ef <span class="p">|</span> grep XXX
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.f758a944.min.js"></script>
