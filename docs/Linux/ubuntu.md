@@ -29,6 +29,40 @@ see also:
 
 Snaps are self-contained applications running in a sandbox with mediated access to the host system. [:link:](https://en.wikipedia.org/wiki/Snap_(package_manager))
 
+- list all installed packages: 
+
+```bash
+$ date
+Sat 11 Jun 2022 08:22:05 PM CST
+$ snap list
+Name                             Version                     Rev    Tracking       Publisher   Notes
+bare                             1.0                         5      latest/stable  canonical✓  base
+canonical-livepatch              10.2.3                      146    latest/stable  canonical✓  -
+core                             16-2.56                     13308  latest/stable  canonical✓  core
+core18                           20220428                    2409   latest/stable  canonical✓  base
+gnome-3-28-1804                  3.28.0-19-g98f9e67.98f9e67  161    latest/stable  canonical✓  -
+gtk-common-themes                0.1-79-ga83e90c             1534   latest/stable  canonical✓  -
+kde-frameworks-5                 5.47.0                      27     latest/stable  kde✓        -
+kde-frameworks-5-core18          5.61.0                      32     latest/stable  kde✓        -
+kde-frameworks-5-qt-5-14-core18  5.68.0                      4      latest/stable  kde✓        -
+ksnip                            1.10.0                      443    latest/stable  dporobic    -
+```
+
+- check available updates
+
+```bash
+# without refreshing
+$ snap refresh --list
+# perform refreshing
+$ sudo snap refresh
+```
+
+- check info of packages
+
+```bash
+$ snap info <snap name>
+```
+
 see also:
 
 - [Ubuntu 推出的Snap应用架构有什么深远意义? -- 知乎](https://www.zhihu.com/question/47514122)

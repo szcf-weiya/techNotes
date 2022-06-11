@@ -514,6 +514,8 @@ patch:
 
 其实也就是删去 `Control+grave`，详见 [一例、定製喚出方案選單的快捷鍵](https://github.com/rime/home/wiki/CustomizationGuide#%E4%B8%80%E4%BE%8B%E5%AE%9A%E8%A3%BD%E5%96%9A%E5%87%BA%E6%96%B9%E6%A1%88%E9%81%B8%E5%96%AE%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%8D%B5)。修改完成后需要点击右上角输入法菜单中的 “部署”。
 
+- 输入特殊字符（比如带声调的拼音符号）：通过 F4 切换至 “朙月拼音”，然后按 “/py” 便出现带声调的拼音字符。更一般地，对于其它特殊符号，根据配置文件 `~/.config/ibus/rime/symbols.yaml` 的定义进行输入。
+
 ## Kazam
 
 Ubuntu 下 kazam 录屏 没声音解决方案
