@@ -199,7 +199,9 @@ refer to [warning about too many open figures](https://stackoverflow.com/questio
 ## legend
 
 - `legendtitle`
-- as a subplot: `plot(p1, p2, p3, p4, plegend, layout = @layout([a b [c{0.6h}; [d e{0.3w}]] ]))` ([complete example](https://github.com/szcf-weiya/Cell-Video/blob/4721ef10b6f77f59dbed639c6806faa1b644ba06/DP/visualization.jl#L610))
+- as a subplot: `plot(p1, p2, p3, p4, plegend, layout = @layout([a b [c{0.6h}; [d e{0.3w}]] ]))` 
+    - [example in the Cell-Video project](https://github.com/szcf-weiya/Cell-Video/blob/4721ef10b6f77f59dbed639c6806faa1b644ba06/DP/visualization.jl#L610)
+    - shared legend for two subplots: [example in the Clouds project](https://github.com/szcf-weiya/Clouds/issues/23)
 
 ## two yaxis
 

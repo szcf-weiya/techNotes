@@ -1338,9 +1338,9 @@ docker 了解一点，知道如果成功，以后安装卸载会很简单，于�
 
 注意到作者的 docker 是在 19.10 上构建的，在想会不会与我的 18.04 不够兼容，所以准备自己修改 docker，其实都已经 fork 好了，但是由于 [wine 对 18.04 的支持有个问题](https://forum.winehq.org/viewtopic.php?f=8&t=32192)，虽说可能跟输入法也不太有关，但是还是试着装这个，后面改写 docker file 时重新 build 总是出问题，一直没解决，所以决定放弃。
 
-于是差不多想放弃 docker 了，想直接安装 wine，弊端似乎也就是卸载会有点繁，但是如果安装成功，那就用着呗，也不用卸载了。
+于是就放弃 docker 了，想直接安装 wine，弊端似乎也就是卸载会有点繁，但是如果安装成功，那就用着呗，也不用卸载了。
 
-于是参考 [WeChat Desktop on Linux](https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux)
+参考 [WeChat Desktop on Linux](https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux)
 
 1. [install WineHQ](https://wiki.winehq.org/Ubuntu_zhcn)
 
@@ -1558,6 +1558,39 @@ And general introduction for DLL can be found in [DLL文件到底是什么，它
 - 在Windows中，文件扩展名如下所示：静态库（`.lib`）和动态库（`.dll`）。主要区别在于静态库在编译时链接到可执行文件; 而动态链接库在运行时才会被链接。
 - 通常不会在计算机上看到静态库，因为静态库直接嵌入到模块（EXE或DLL）中。动态库是一个独立的文件。
 - 一个DLL可以在任何时候被改变，并且只在EXE显式地加载DLL时在运行时加载。静态库在EXE中编译后无法更改。一个DLL可以单独更新而无需更新EXE本身。
+
+## Weylus
+
+!!! info
+    Post on 2022-06-13 15:40:10.
+
+[Weylus](https://github.com/H-M-H/Weylus) turns tablet into a graphic tablet for PC, but never used, so remove it.
+
+```bash
+~$ apt list --installed | grep local
+weylus/now 0.10.0 amd64 [installed,local]
+```
+
+
+
+## Xournal
+
+!!! info
+    Post on 2022-06-13 14:33:46
+
+A hand note-taking software
+
+Homepage: <https://github.com/xournalpp/xournalpp>
+
+I have installed it, but never use it,
+
+```bash
+~$ apt list --installed | grep local
+xournalpp/now 1.0.20-1~ubuntu18.04.1 amd64 [installed,local]
+```
+
+so just remove it.
+
 
 ## Zotero
 

@@ -1,3 +1,8 @@
+## 2022.06.13
+
+- paleoclimatology: 古气候学，研究古地质时代气候的科学
+- paleontologist: 古生物学者
+
 ## 2022.05.03
 
 - posthumous paper: 作者死后出版的
@@ -3384,7 +3389,6 @@ up
 6. meadow, field
 7. ooze
 8. pacifier
-9. paleontologist
 10. geological, geography
 11. puff, blow, exhale
 12. seep, seepage

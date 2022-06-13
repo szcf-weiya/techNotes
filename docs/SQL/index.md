@@ -227,6 +227,39 @@ mysql-server           mysql-utilities
 mysql  Ver 14.14 Distrib 5.7.33, for Linux (x86_64) using  EditLine wrapper
 ```
 
+!!! note "2022-06-13"
+
+    因为 T460P 的磁盘空间告急，所以想清理下不常用的软件（另见 [:link:](https://askubuntu.com/questions/676423/safely-removing-unused-packages)），于是发现了它，注意到此时系统已经更新为 Ubuntu 20.04.4 LTS
+
+    ```bash
+    $ apt list --installed | grep local
+    mysql-client-5.7/now 5.7.35-0ubuntu0.18.04.1 amd64 [installed,local]
+    mysql-client-core-5.7/now 5.7.35-0ubuntu0.18.04.1 amd64 [installed,local]
+    ```
+
+    卸载前
+
+    ```bash
+    ~$ df -h
+    /dev/sda5       102G   92G  4.4G  96% /
+    ```
+
+    使用下面命令卸载后
+
+    ```bash
+    $ sudo apt purge mysql-client-5.7 
+    $ sudo apt purge mysql-client-core-5.7 
+    $ sudo apt autoremove 
+    ```
+
+    磁盘空间竟然没怎么变换，原来 mysql 并不大。
+
+    ```bash
+    $ df -h
+    /dev/sda5       102G   92G  4.5G  96% /
+    ```
+
+
 ### Login in
 
 - login with explicit password: `mysql -u USERNAME -pXXXX`, where no spaces after `-p`

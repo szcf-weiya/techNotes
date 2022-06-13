@@ -22,6 +22,13 @@ see also:
 
 - [How do I resolve unmet dependencies after adding a PPA? - Ask Ubuntu](https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa)
 
+### dpkg (Debian Package Manager)
+
+"dpkg works under the hood of APT. While APT manages remote repositories and resolves dependencies for you, it use dpkg to actually make the changes of installing/removing package." [:link:](https://www.linuxfordevices.com/tutorials/debian/apt-vs-dpkg-debian)
+
+- list installed packages: `dpkg -l`
+    - flag 'ii' (installed) and 'rc' (removed but configuration), refer to [:link:](https://askubuntu.com/questions/18804/what-do-the-various-dpkg-flags-like-ii-rc-mean) for more details
+
 ### Snap
 
 - `snaps`: the packages
@@ -704,6 +711,58 @@ refer to [Ubuntu 18.04 remove all unused old kernels](https://www.cyberciti.biz/
 sudo apt-mark hold 4.15.0-147-generic
 ```
 
+The resulting status is `hi`, where the first letter implies `hold`.
+
+```bash
+~$ dpkg -l | grep "4.15.0-147"
+ii  linux-headers-4.15.0-147                                    4.15.0-147.151                             all          Header files related to Linux kernel version 4.15.0
+hi  linux-headers-4.15.0-147-generic                            4.15.0-147.151                             amd64        Linux kernel headers for version 4.15.0 on 64 bit x86 SMP
+hi  linux-image-4.15.0-147-generic                              4.15.0-147.151                             amd64        Signed kernel image generic
+hi  linux-modules-4.15.0-147-generic                            4.15.0-147.151                             amd64        Linux kernel extra modules for version 4.15.0 on 64 bit x86 SMP
+hi  linux-modules-extra-4.15.0-147-generic                      4.15.0-147.151                             amd64        Linux kernel extra modules for version 4.15.0 on 64 bit x86 SMP
+```
+
+!!! note "2022-06-13"
+    However, currently the kernel is
+
+    ```bash
+    ~$ date
+    Mon 13 Jun 2022 04:17:43 PM CST
+    ~$ uname -a
+    Linux weiya-ThinkPad-T460p 5.4.0-110-generic #124-Ubuntu SMP Thu Apr 14 19:46:19 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+    ```
+
+    so it is outdated to hold such kernel. To undo such operation, 
+
+    ```bash
+    $ sudo apt-mark unhold 4.15.0-147-generic
+    ```
+
+    Then it will be removed if we perform autoclean
+
+    ```bash
+    ~$ sudo apt autoremove --purge 
+    Reading package lists... Done
+    Building dependency tree       
+    Reading state information... Done
+    The following packages will be REMOVED:
+    linux-headers-4.15.0-147* linux-headers-4.15.0-147-generic* linux-image-4.15.0-147-generic* linux-modules-4.15.0-147-generic* linux-modules-extra-4.15.0-147-generic*
+    ```
+
+    Note that this command will still keep one old kernel, along with the currently running one [:link:](https://linuxconfig.org/how-to-remove-old-kernels-on-ubuntu). For example,
+
+    ```bash
+    ~$ dpkg -l | grep "linux-image" | grep '^ii'
+    ii  linux-image-5.4.0-110-generic                               5.4.0-110.124                              amd64        Signed kernel image generic
+    ii  linux-image-5.4.0-117-generic                               5.4.0-117.132                              amd64        Signed kernel image generic
+    ii  linux-image-generic                                         5.4.0.117.120                              amd64        Generic Linux kernel image
+    ```
+
+    However, here is a warning,
+
+    !!! warning
+        dpkg: warning: while removing linux-modules-4.15.0-147-generic, directory '/lib/modules/4.15.0-147-generic' not empty so not removed
+
 ## Default Software
 
 网页文件 `.html` 默认用百度网盘打开，之前通过 `KDE System Setting` 修改了默认软件，
@@ -889,3 +948,11 @@ refer to
 
 - <https://askubuntu.com/questions/11840/how-do-i-use-chmod-on-an-ntfs-or-fat32-partition/956072#956072>
 - <https://stackoverflow.com/questions/7878707/how-to-unmount-a-busy-device>
+
+
+## Clean disk space
+
+- autoremove `apt autoremove --purge`
+- manually find unused packages: `dpkg -l` and `apt list --installed`
+- for anaconda, run `conda clean -a`
+
