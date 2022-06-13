@@ -2542,7 +2542,11 @@ julia&gt; plot<span class="o">(</span><span class="m">1</span>:10<span class="o"
 <h2 id="legend">legend<a class="headerlink" href="#legend" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>legendtitle</code></li>
-<li>as a subplot: <code>plot(p1, p2, p3, p4, plegend, layout = @layout([a b [c{0.6h}; [d e{0.3w}]] ]))</code> (<a href="https://github.com/szcf-weiya/Cell-Video/blob/4721ef10b6f77f59dbed639c6806faa1b644ba06/DP/visualization.jl#L610">complete example</a>)</li>
+<li>as a subplot: <code>plot(p1, p2, p3, p4, plegend, layout = @layout([a b [c{0.6h}; [d e{0.3w}]] ]))</code> <ul>
+<li><a href="https://github.com/szcf-weiya/Cell-Video/blob/4721ef10b6f77f59dbed639c6806faa1b644ba06/DP/visualization.jl#L610">example in the Cell-Video project</a></li>
+<li>shared legend for two subplots: <a href="https://github.com/szcf-weiya/Clouds/issues/23">example in the Clouds project</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="two-yaxis">two yaxis<a class="headerlink" href="#two-yaxis" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">plot</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="w"></span>

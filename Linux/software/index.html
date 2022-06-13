@@ -1291,6 +1291,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#weylus" class="md-nav__link">
+    Weylus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xournal" class="md-nav__link">
+    Xournal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#zotero" class="md-nav__link">
     Zotero
   </a>
@@ -3727,6 +3741,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#weylus" class="md-nav__link">
+    Weylus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xournal" class="md-nav__link">
+    Xournal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#zotero" class="md-nav__link">
     Zotero
   </a>
@@ -4679,8 +4707,8 @@ Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T46
 <p>起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！</p>
 <p>docker 了解一点，知道如果成功，以后安装卸载会很简单，于是使用 <a href="https://github.com/huan/docker-wechat">huan/docker-wechat</a> 提供的 docker image，但是后来<a href="https://github.com/huan/docker-wechat/issues/40">输入时文本不可见的问题</a>很恼人 ，也不知道怎么解决。</p>
 <p>注意到作者的 docker 是在 19.10 上构建的，在想会不会与我的 18.04 不够兼容，所以准备自己修改 docker，其实都已经 fork 好了，但是由于 <a href="https://forum.winehq.org/viewtopic.php?f=8&amp;t=32192">wine 对 18.04 的支持有个问题</a>，虽说可能跟输入法也不太有关，但是还是试着装这个，后面改写 docker file 时重新 build 总是出问题，一直没解决，所以决定放弃。</p>
-<p>于是差不多想放弃 docker 了，想直接安装 wine，弊端似乎也就是卸载会有点繁，但是如果安装成功，那就用着呗，也不用卸载了。</p>
-<p>于是参考 <a href="https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux">WeChat Desktop on Linux</a></p>
+<p>于是就放弃 docker 了，想直接安装 wine，弊端似乎也就是卸载会有点繁，但是如果安装成功，那就用着呗，也不用卸载了。</p>
+<p>参考 <a href="https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux">WeChat Desktop on Linux</a></p>
 <ol>
 <li><a href="https://wiki.winehq.org/Ubuntu_zhcn">install WineHQ</a></li>
 </ol>
@@ -4828,6 +4856,27 @@ $ wineboot -r <span class="c1"># restart</span>
 <li>通常不会在计算机上看到静态库，因为静态库直接嵌入到模块（EXE或DLL）中。动态库是一个独立的文件。</li>
 <li>一个DLL可以在任何时候被改变，并且只在EXE显式地加载DLL时在运行时加载。静态库在EXE中编译后无法更改。一个DLL可以单独更新而无需更新EXE本身。</li>
 </ul>
+<h2 id="weylus">Weylus<a class="headerlink" href="#weylus" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Post on 2022-06-13 15:40:10.</p>
+</div>
+<p><a href="https://github.com/H-M-H/Weylus">Weylus</a> turns tablet into a graphic tablet for PC, but never used, so remove it.</p>
+<div class="highlight"><pre><span></span><code>~$ apt list --installed <span class="p">|</span> grep <span class="nb">local</span>
+weylus/now <span class="m">0</span>.10.0 amd64 <span class="o">[</span>installed,local<span class="o">]</span>
+</code></pre></div>
+<h2 id="xournal">Xournal<a class="headerlink" href="#xournal" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Post on 2022-06-13 14:33:46</p>
+</div>
+<p>A hand note-taking software</p>
+<p>Homepage: <a href="https://github.com/xournalpp/xournalpp">https://github.com/xournalpp/xournalpp</a></p>
+<p>I have installed it, but never use it,</p>
+<div class="highlight"><pre><span></span><code>~$ apt list --installed <span class="p">|</span> grep <span class="nb">local</span>
+xournalpp/now <span class="m">1</span>.0.20-1~ubuntu18.04.1 amd64 <span class="o">[</span>installed,local<span class="o">]</span>
+</code></pre></div>
+<p>so just remove it.</p>
 <h2 id="zotero">Zotero<a class="headerlink" href="#zotero" title="Permanent link">&para;</a></h2>
 <h3 id="tips-when-saving">Tips when saving<a class="headerlink" href="#tips-when-saving" title="Permanent link">&para;</a></h3>
 <ul>

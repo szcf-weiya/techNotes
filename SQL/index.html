@@ -2703,6 +2703,27 @@ mysql-server           mysql-utilities
 ~$ mysql --version
 mysql  Ver <span class="m">14</span>.14 Distrib <span class="m">5</span>.7.33, <span class="k">for</span> Linux <span class="o">(</span>x86_64<span class="o">)</span> using  EditLine wrapper
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">2022-06-13</p>
+<p>因为 T460P 的磁盘空间告急，所以想清理下不常用的软件（另见 <a href="https://askubuntu.com/questions/676423/safely-removing-unused-packages"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>），于是发现了它，注意到此时系统已经更新为 Ubuntu 20.04.4 LTS</p>
+<div class="highlight"><pre><span></span><code>$ apt list --installed <span class="p">|</span> grep <span class="nb">local</span>
+mysql-client-5.7/now <span class="m">5</span>.7.35-0ubuntu0.18.04.1 amd64 <span class="o">[</span>installed,local<span class="o">]</span>
+mysql-client-core-5.7/now <span class="m">5</span>.7.35-0ubuntu0.18.04.1 amd64 <span class="o">[</span>installed,local<span class="o">]</span>
+</code></pre></div>
+<p>卸载前</p>
+<div class="highlight"><pre><span></span><code>~$ df -h
+/dev/sda5       102G   92G  <span class="m">4</span>.4G  <span class="m">96</span>% /
+</code></pre></div>
+<p>使用下面命令卸载后</p>
+<div class="highlight"><pre><span></span><code>$ sudo apt purge mysql-client-5.7 
+$ sudo apt purge mysql-client-core-5.7 
+$ sudo apt autoremove 
+</code></pre></div>
+<p>磁盘空间竟然没怎么变换，原来 mysql 并不大。</p>
+<div class="highlight"><pre><span></span><code>$ df -h
+/dev/sda5       102G   92G  <span class="m">4</span>.5G  <span class="m">96</span>% /
+</code></pre></div>
+</div>
 <h3 id="login-in">Login in<a class="headerlink" href="#login-in" title="Permanent link">&para;</a></h3>
 <ul>
 <li>login with explicit password: <code>mysql -u USERNAME -pXXXX</code>, where no spaces after <code>-p</code></li>

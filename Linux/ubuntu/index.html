@@ -540,6 +540,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dpkg-debian-package-manager" class="md-nav__link">
+    dpkg (Debian Package Manager)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#snap" class="md-nav__link">
     Snap
   </a>
@@ -781,6 +788,13 @@
         <li class="md-nav__item">
   <a href="#mount-with-options" class="md-nav__link">
     Mount with Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clean-disk-space" class="md-nav__link">
+    Clean disk space
   </a>
   
 </li>
@@ -2472,6 +2486,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dpkg-debian-package-manager" class="md-nav__link">
+    dpkg (Debian Package Manager)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#snap" class="md-nav__link">
     Snap
   </a>
@@ -2717,6 +2738,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#clean-disk-space" class="md-nav__link">
+    Clean disk space
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2756,6 +2784,14 @@
 <p>see also:</p>
 <ul>
 <li><a href="https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa">How do I resolve unmet dependencies after adding a PPA? - Ask Ubuntu</a></li>
+</ul>
+<h3 id="dpkg-debian-package-manager">dpkg (Debian Package Manager)<a class="headerlink" href="#dpkg-debian-package-manager" title="Permanent link">&para;</a></h3>
+<p>&ldquo;dpkg works under the hood of APT. While APT manages remote repositories and resolves dependencies for you, it use dpkg to actually make the changes of installing/removing package.&rdquo; <a href="https://www.linuxfordevices.com/tutorials/debian/apt-vs-dpkg-debian"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<ul>
+<li>list installed packages: <code>dpkg -l</code><ul>
+<li>flag &lsquo;ii&rsquo; (installed) and &lsquo;rc&rsquo; (removed but configuration), refer to <a href="https://askubuntu.com/questions/18804/what-do-the-various-dpkg-flags-like-ii-rc-mean"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more details</li>
+</ul>
+</li>
 </ul>
 <h3 id="snap">Snap<a class="headerlink" href="#snap" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3271,6 +3307,45 @@ linux-image-4.15.0-151-generic-202108071819.crash
 <p>参考 <a href="https://askubuntu.com/questions/938494/how-to-i-prevent-ubuntu-from-kernel-version-upgrade-and-notification">How to I prevent Ubuntu from kernel version upgrade and notification?</a></p>
 <div class="highlight"><pre><span></span><code>sudo apt-mark hold <span class="m">4</span>.15.0-147-generic
 </code></pre></div>
+<p>The resulting status is <code>hi</code>, where the first letter implies <code>hold</code>.</p>
+<div class="highlight"><pre><span></span><code>~$ dpkg -l <span class="p">|</span> grep <span class="s2">&quot;4.15.0-147&quot;</span>
+ii  linux-headers-4.15.0-147                                    <span class="m">4</span>.15.0-147.151                             all          Header files related to Linux kernel version <span class="m">4</span>.15.0
+hi  linux-headers-4.15.0-147-generic                            <span class="m">4</span>.15.0-147.151                             amd64        Linux kernel headers <span class="k">for</span> version <span class="m">4</span>.15.0 on <span class="m">64</span> bit x86 SMP
+hi  linux-image-4.15.0-147-generic                              <span class="m">4</span>.15.0-147.151                             amd64        Signed kernel image generic
+hi  linux-modules-4.15.0-147-generic                            <span class="m">4</span>.15.0-147.151                             amd64        Linux kernel extra modules <span class="k">for</span> version <span class="m">4</span>.15.0 on <span class="m">64</span> bit x86 SMP
+hi  linux-modules-extra-4.15.0-147-generic                      <span class="m">4</span>.15.0-147.151                             amd64        Linux kernel extra modules <span class="k">for</span> version <span class="m">4</span>.15.0 on <span class="m">64</span> bit x86 SMP
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">2022-06-13</p>
+<p>However, currently the kernel is</p>
+<div class="highlight"><pre><span></span><code>~$ date
+Mon <span class="m">13</span> Jun <span class="m">2022</span> <span class="m">04</span>:17:43 PM CST
+~$ uname -a
+Linux weiya-ThinkPad-T460p <span class="m">5</span>.4.0-110-generic <span class="c1">#124-Ubuntu SMP Thu Apr 14 19:46:19 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux</span>
+</code></pre></div>
+<p>so it is outdated to hold such kernel. To undo such operation, </p>
+<div class="highlight"><pre><span></span><code>$ sudo apt-mark unhold <span class="m">4</span>.15.0-147-generic
+</code></pre></div>
+<p>Then it will be removed if we perform autoclean</p>
+<div class="highlight"><pre><span></span><code>~$ sudo apt autoremove --purge 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages will be REMOVED:
+linux-headers-4.15.0-147* linux-headers-4.15.0-147-generic* linux-image-4.15.0-147-generic* linux-modules-4.15.0-147-generic* linux-modules-extra-4.15.0-147-generic*
+</code></pre></div>
+<p>Note that this command will still keep one old kernel, along with the currently running one <a href="https://linuxconfig.org/how-to-remove-old-kernels-on-ubuntu"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>. For example,</p>
+<div class="highlight"><pre><span></span><code>~$ dpkg -l <span class="p">|</span> grep <span class="s2">&quot;linux-image&quot;</span> <span class="p">|</span> grep <span class="s1">&#39;^ii&#39;</span>
+ii  linux-image-5.4.0-110-generic                               <span class="m">5</span>.4.0-110.124                              amd64        Signed kernel image generic
+ii  linux-image-5.4.0-117-generic                               <span class="m">5</span>.4.0-117.132                              amd64        Signed kernel image generic
+ii  linux-image-generic                                         <span class="m">5</span>.4.0.117.120                              amd64        Generic Linux kernel image
+</code></pre></div>
+<p>However, here is a warning,</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>dpkg: warning: while removing linux-modules-4.15.0-147-generic, directory &lsquo;/lib/modules/4.15.0-147-generic&rsquo; not empty so not removed</p>
+</div>
+</div>
 <h2 id="default-software">Default Software<a class="headerlink" href="#default-software" title="Permanent link">&para;</a></h2>
 <p>网页文件 <code>.html</code> 默认用百度网盘打开，之前通过 <code>KDE System Setting</code> 修改了默认软件，</p>
 <p><img alt="" src="https://user-images.githubusercontent.com/13688320/117541554-fb955800-b046-11eb-8577-f39fdbf406bc.png" /></p>
@@ -3399,6 +3474,12 @@ ps -ef <span class="p">|</span> grep XXX
 <ul>
 <li><a href="https://askubuntu.com/questions/11840/how-do-i-use-chmod-on-an-ntfs-or-fat32-partition/956072#956072">https://askubuntu.com/questions/11840/how-do-i-use-chmod-on-an-ntfs-or-fat32-partition/956072#956072</a></li>
 <li><a href="https://stackoverflow.com/questions/7878707/how-to-unmount-a-busy-device">https://stackoverflow.com/questions/7878707/how-to-unmount-a-busy-device</a></li>
+</ul>
+<h2 id="clean-disk-space">Clean disk space<a class="headerlink" href="#clean-disk-space" title="Permanent link">&para;</a></h2>
+<ul>
+<li>autoremove <code>apt autoremove --purge</code></li>
+<li>manually find unused packages: <code>dpkg -l</code> and <code>apt list --installed</code></li>
+<li>for anaconda, run <code>conda clean -a</code></li>
 </ul>
 
               
