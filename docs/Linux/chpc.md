@@ -2,27 +2,66 @@
 
 ## Login
 
-After generating and configuring SSH key pair, we can directly access the server via
+### passwordless
+
+It is annoying to enter your password when you login the server. Here is a strategy to automatically login.
+
+=== "Linux/Mac"
+
+    In the command line, generate SSH key pair by running 
+
+    ```bash
+    $ ssh-keygen -t rsa
+    ```
+
+    then copy the generated public key `~/.ssh/id_rsa.pub` to the file `~/.ssh/authorized_keys` on the server (if no such file and folder, just create them). See [:link:](../servers#initial-start) for more details.
+
+=== "Windows"
+
+    If you use the Windows Subsystem for Linux (WSL), just follow the steps for "Linux/Mac".
+
+    Take the PuTTY client as an example, you can use PuTTYgen to generate the ssh key pair. Here is a [tutorial](https://www.ssh.com/academy/ssh/putty/windows/puttygen).
+
+Now, we can directly access the server via
 
 ```bash
 $ ssh USERNAME@chpc-login01.itsc.cuhk.edu.hk
 ```
 
-since the login node is not suggested/allowed to run test jobs, it would be more convenient to login in the test node, `sandbox`. This can be done with consecutive ssh,
+!!! Tip
+    For clients such as PuTTY on Windows, just type the username and host in the specific blanks. Moreover, you can always re-express a SSH command by typing each filed in the respective blank.
+
+Since the login node is not suggested/allowed to run your test jobs, it would be more convenient to login in the test node, `sandbox`. This can be done with consecutive ssh,
 
 ```bash
 $ ssh -t USERNAME@chpc-login01.itsc.cuhk.edu.hk ssh sandbox
 ```
 
-where `-t` aims to avoid the warning
+where `-t` aims to avoid the following warning
 
-> Pseudo-terminal will not be allocated because stdin is not a terminal.
+!!! warning
+    Pseudo-terminal will not be allocated because stdin is not a terminal.
 
 ### bypass the login node
 
-Usually, only the login node is out of service, but the jobs on computing nodes would not be affected. So there is a tip to bypass the unaccessible login node.
+!!! tip "TL; DR"
+    If you cannot access the cluster due to the out-of-service login node or outside campus without VPN, you can still login the cluster with
+    ```bash
+    $ ssh -p PORT YOUR_USERNAME@MY_BRIDGE
+    ```
+    If you are interested, please contact me for `PORT` and `MY_BRIDGE`. [**Buy me a coffee**](https://user-images.githubusercontent.com/13688320/173276412-22efccd3-28d4-4251-9b23-6704179d4742.jpg) if it is useful.
 
-!!! warning "Requirement"
+Usually, only the login node is out of service, but the jobs on computing nodes would not be affected. So there is a way to bypass the unaccessible login node. It also works when you are outside campus without VPN. Briefly, we can construct a tunnel (bridge) from you laptop to the cluster server via a middle machine.
+
+If you want to use my established bridge (tunnel), the above "TL; DR" is enough, but you need to fulfill the following requirements.
+
+!!! warning "Requirements for Using My Bridge (Tunnel)"
+    You should have configured SSH key pair for passwordless login. And if you are using PuTTY, make sure your SSH key is in the standard OpenSSH format instead of PuTTY's style, otherwise it will throw the "invalid key" error. You can convert PuTTY's format in PuTTYgen, see [:link:](https://www.simplified.guide/putty/convert-ppk-to-ssh-key) for more details.
+
+
+If you want to establish a tunnel by yourself, here are the detailed mechanism.
+
+!!! warning "Requirements for Self-established Tunnel"
     You can access another **middle machine** which has a public or campus IP. Otherwise, you can try to use free tools like `ngrok` to generate a public ip for your local machine, see [my notes on how to access the intranet from outside](../../Internet/sci-int/#ngrok).
 
 - Step 1: ssh to the middle machine from nodes except the login node of ITSC cluster, say `sandbox`, with the remote port forwarding option `-R PORT:localhost:22`
@@ -37,7 +76,7 @@ The sketch plot is as follows,
 
 It is necessary to check the status of the tunnel. If the connection is broken, such as the sandbox has rebooted, pop a message window to remind to re-establish the tunnel in time.
 
-The command to pop message is `notify-send`, and note that successful command exits with 0, use the script to check the ssh connection,
+The command to pop message is `notify-send`, and note that a successful command exits with 0, use the script to check the status of ssh connection,
 
 ```bash
 --8<-- "docs/Linux/check_ssh.sh"
@@ -50,7 +89,7 @@ $ crontab -e
 0 * * * * export XDG_RUNTIME_DIR=/run/user/$(id -u); for host in sandbox STAPC ROCKY; do sh /home/weiya/github/techNotes/docs/Linux/check_ssh.sh $host; done
 ```
 
-where `export XDG_RUNTIME_DIR=/run/user/$(id -u)` is necessary for `notify-send` to pop the window (refer to [Notify-send doesn't work from crontab](https://askubuntu.com/a/1098206))
+where `export XDG_RUNTIME_DIR=/run/user/$(id -u)` is necessary for `notify-send` to pop a window (refer to [Notify-send doesn't work from crontab](https://askubuntu.com/a/1098206))
 
 ## Custom Commands
 
