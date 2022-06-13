@@ -680,6 +680,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#passwordless" class="md-nav__link">
+    passwordless
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#bypass-the-login-node" class="md-nav__link">
     bypass the login node
   </a>
@@ -2368,6 +2375,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#passwordless" class="md-nav__link">
+    passwordless
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#bypass-the-login-node" class="md-nav__link">
     bypass the login node
   </a>
@@ -2543,20 +2557,54 @@
 
 <h1 id="notes-on-chpc-cluster">Notes on CHPC-Cluster<a class="headerlink" href="#notes-on-chpc-cluster" title="Permanent link">&para;</a></h1>
 <h2 id="login">Login<a class="headerlink" href="#login" title="Permanent link">&para;</a></h2>
-<p>After generating and configuring SSH key pair, we can directly access the server via</p>
+<h3 id="passwordless">passwordless<a class="headerlink" href="#passwordless" title="Permanent link">&para;</a></h3>
+<p>It is annoying to enter your password when you login the server. Here is a strategy to automatically login.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux/Mac</label><label for="__tabbed_1_2">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>In the command line, generate SSH key pair by running </p>
+<div class="highlight"><pre><span></span><code>$ ssh-keygen -t rsa
+</code></pre></div>
+<p>then copy the generated public key <code>~/.ssh/id_rsa.pub</code> to the file <code>~/.ssh/authorized_keys</code> on the server (if no such file and folder, just create them). See <a href="../servers#initial-start"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more details.</p>
+</div>
+<div class="tabbed-block">
+<p>If you use the Windows Subsystem for Linux (WSL), just follow the steps for &ldquo;Linux/Mac&rdquo;.</p>
+<p>Take the PuTTY client as an example, you can use PuTTYgen to generate the ssh key pair. Here is a <a href="https://www.ssh.com/academy/ssh/putty/windows/puttygen">tutorial</a>.</p>
+</div>
+</div>
+</div>
+<p>Now, we can directly access the server via</p>
 <div class="highlight"><pre><span></span><code>$ ssh USERNAME@chpc-login01.itsc.cuhk.edu.hk
 </code></pre></div>
-<p>since the login node is not suggested/allowed to run test jobs, it would be more convenient to login in the test node, <code>sandbox</code>. This can be done with consecutive ssh,</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For clients such as PuTTY on Windows, just type the username and host in the specific blanks. Moreover, you can always re-express a SSH command by typing each filed in the respective blank.</p>
+</div>
+<p>Since the login node is not suggested/allowed to run your test jobs, it would be more convenient to login in the test node, <code>sandbox</code>. This can be done with consecutive ssh,</p>
 <div class="highlight"><pre><span></span><code>$ ssh -t USERNAME@chpc-login01.itsc.cuhk.edu.hk ssh sandbox
 </code></pre></div>
-<p>where <code>-t</code> aims to avoid the warning</p>
-<blockquote>
-<p>Pseudo-terminal will not be allocated because stdin is not a terminal.</p>
-</blockquote>
-<h3 id="bypass-the-login-node">bypass the login node<a class="headerlink" href="#bypass-the-login-node" title="Permanent link">&para;</a></h3>
-<p>Usually, only the login node is out of service, but the jobs on computing nodes would not be affected. So there is a tip to bypass the unaccessible login node.</p>
+<p>where <code>-t</code> aims to avoid the following warning</p>
 <div class="admonition warning">
-<p class="admonition-title">Requirement</p>
+<p class="admonition-title">Warning</p>
+<p>Pseudo-terminal will not be allocated because stdin is not a terminal.</p>
+</div>
+<h3 id="bypass-the-login-node">bypass the login node<a class="headerlink" href="#bypass-the-login-node" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">TL; DR</p>
+<p>If you cannot access the cluster due to the out-of-service login node or outside campus without VPN, you can still login the cluster with
+<div class="highlight"><pre><span></span><code>$ ssh -p PORT YOUR_USERNAME@MY_BRIDGE
+</code></pre></div>
+If you are interested, please contact me for <code>PORT</code> and <code>MY_BRIDGE</code>. <a href="https://user-images.githubusercontent.com/13688320/173276412-22efccd3-28d4-4251-9b23-6704179d4742.jpg"><strong>Buy me a coffee</strong></a> if it is useful.</p>
+</div>
+<p>Usually, only the login node is out of service, but the jobs on computing nodes would not be affected. So there is a way to bypass the unaccessible login node. It also works when you are outside campus without VPN. Briefly, we can construct a tunnel (bridge) from you laptop to the cluster server via a middle machine.</p>
+<p>If you want to use my established bridge (tunnel), the above &ldquo;TL; DR&rdquo; is enough, but you need to fulfill the following requirements.</p>
+<div class="admonition warning">
+<p class="admonition-title">Requirements for Using My Bridge (Tunnel)</p>
+<p>You should have configured SSH key pair for passwordless login. And if you are using PuTTY, make sure your SSH key is in the standard OpenSSH format instead of PuTTY&rsquo;s style, otherwise it will throw the &ldquo;invalid key&rdquo; error. You can convert PuTTY&rsquo;s format in PuTTYgen, see <a href="https://www.simplified.guide/putty/convert-ppk-to-ssh-key"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more details.</p>
+</div>
+<p>If you want to establish a tunnel by yourself, here are the detailed mechanism.</p>
+<div class="admonition warning">
+<p class="admonition-title">Requirements for Self-established Tunnel</p>
 <p>You can access another <strong>middle machine</strong> which has a public or campus IP. Otherwise, you can try to use free tools like <code>ngrok</code> to generate a public ip for your local machine, see <a href="../../Internet/sci-int/#ngrok">my notes on how to access the intranet from outside</a>.</p>
 </div>
 <ul>
@@ -2570,7 +2618,7 @@
 <p>The sketch plot is as follows,</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/126862431-67358586-1f7b-410f-bafe-e3941bc71d40.png" /></p>
 <p>It is necessary to check the status of the tunnel. If the connection is broken, such as the sandbox has rebooted, pop a message window to remind to re-establish the tunnel in time.</p>
-<p>The command to pop message is <code>notify-send</code>, and note that successful command exits with 0, use the script to check the ssh connection,</p>
+<p>The command to pop message is <code>notify-send</code>, and note that a successful command exits with 0, use the script to check the status of ssh connection,</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 ssh -q -o <span class="nv">BatchMode</span><span class="o">=</span>yes <span class="nv">$1</span> <span class="nb">exit</span>
 <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> !<span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
@@ -2582,7 +2630,7 @@ ssh -q -o <span class="nv">BatchMode</span><span class="o">=</span>yes <span cla
 <div class="highlight"><pre><span></span><code>$ crontab -e
 <span class="m">0</span> * * * * <span class="nb">export</span> <span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span>/run/user/<span class="k">$(</span>id -u<span class="k">)</span><span class="p">;</span> <span class="k">for</span> host <span class="k">in</span> sandbox STAPC ROCKY<span class="p">;</span> <span class="k">do</span> sh /home/weiya/github/techNotes/docs/Linux/check_ssh.sh <span class="nv">$host</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
-<p>where <code>export XDG_RUNTIME_DIR=/run/user/$(id -u)</code> is necessary for <code>notify-send</code> to pop the window (refer to <a href="https://askubuntu.com/a/1098206">Notify-send doesn&rsquo;t work from crontab</a>)</p>
+<p>where <code>export XDG_RUNTIME_DIR=/run/user/$(id -u)</code> is necessary for <code>notify-send</code> to pop a window (refer to <a href="https://askubuntu.com/a/1098206">Notify-send doesn&rsquo;t work from crontab</a>)</p>
 <h2 id="custom-commands">Custom Commands<a class="headerlink" href="#custom-commands" title="Permanent link">&para;</a></h2>
 <p>Some of the commands would be explained in the following sections.</p>
 <ul>
@@ -2647,7 +2695,7 @@ sbatch -N <span class="m">2</span> -c <span class="m">16</span> --mem<span class
 Sometimes, we want to submit multiple jobs quickly, or perform parallel computing by dividing a heavy task into multiple small tasks.</p>
 <h3 id="pbs">PBS<a class="headerlink" href="#pbs" title="Permanent link">&para;</a></h3>
 <p>Suppose there is a main program <code>toy.jl</code>, and I want to run it multiple times but with different parameters, which can be passed via the <code>-v</code> option.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">submit.sh</label><label for="__tabbed_1_2">toy.job</label><label for="__tabbed_1_3">toy.jl</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">submit.sh</label><label for="__tabbed_2_2">toy.job</label><label for="__tabbed_2_3">toy.jl</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -2678,7 +2726,7 @@ julia toy.jl <span class="si">${</span><span class="nv">arg1</span><span class="
 <h3 id="slurm">SLURM<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h3>
 <p>Suppose there is a main program <code>run.jl</code>, which runs in parallel with the number of cores <code>np</code>, and I also want to repeat the program for <code>N</code> times. To properly store the results, the index of repetition <code>nrep</code> for each job has been passed to the main program.</p>
 <p>The arguments for job file can be passed by the <code>--export</code> option.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">submit.sh</label><label for="__tabbed_2_2">toy.job</label><label for="__tabbed_2_3">run.jl</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">submit.sh</label><label for="__tabbed_3_2">toy.job</label><label for="__tabbed_3_3">run.jl</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -2993,7 +3041,7 @@ $ lfs quota -gh StatScratch /lustre
 ~ $ cp /usr/share/Modules/modulefiles/R/3.6 modules/R3.6
 <span class="c1"># step 4: modify the path to the software (`modroot`) as follows</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">/usr/share/Modules/modulefiles/R/3.6</label><label for="__tabbed_3_2">~/modules/R3.6</label><label for="__tabbed_3_3">diff -u</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">/usr/share/Modules/modulefiles/R/3.6</label><label for="__tabbed_4_2">~/modules/R3.6</label><label for="__tabbed_4_3">diff -u</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1">#%Module1.0#####################################################################</span>
@@ -3197,7 +3245,7 @@ storage01:/chpc-users                     15T  <span class="m">6</span>.2T  <spa
 </code></pre></div>
 <p>而该结点上没有。</p>
 <p>为了验证上述想法，也手动进行 <code>export R_LIBS_USER=</code> 及 <code>.libPaths()</code>，</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">DONE</label><label for="__tabbed_4_2">DONE</label><label for="__tabbed_4_3">FAIL</label><label for="__tabbed_4_4">FAIL</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:4"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">DONE</label><label for="__tabbed_5_2">DONE</label><label for="__tabbed_5_3">FAIL</label><label for="__tabbed_5_4">FAIL</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span><span class="p">)</span>
