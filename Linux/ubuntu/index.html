@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/ubuntu/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.4">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.5">
     
     
       
@@ -474,14 +474,14 @@
       
       
         <label class="md-nav__link" for="__nav_2_2">
-          Laptop
+          Laptops
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Laptop" data-md-level="2">
+      <nav class="md-nav" aria-label="Laptops" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
-          Laptop
+          Laptops
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -622,8 +622,56 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#file-permissions" class="md-nav__link">
+    File Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify-vs-change" class="md-nav__link">
+    Modify vs Change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#runuser1000" class="md-nav__link">
     /run/user/1000
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#font" class="md-nav__link">
+    Font
+  </a>
+  
+    <nav class="md-nav" aria-label="Font">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fc-list" class="md-nav__link">
+    fc-list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-local-fonts" class="md-nav__link">
+    Install Local Fonts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-free-fonts" class="md-nav__link">
+    Some Free Fonts
   </a>
   
 </li>
@@ -2318,6 +2366,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../biology/" class="md-nav__link">
+        Biology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../finance/" class="md-nav__link">
         Finance
       </a>
@@ -2568,8 +2630,56 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#file-permissions" class="md-nav__link">
+    File Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify-vs-change" class="md-nav__link">
+    Modify vs Change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#runuser1000" class="md-nav__link">
     /run/user/1000
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#font" class="md-nav__link">
+    Font
+  </a>
+  
+    <nav class="md-nav" aria-label="Font">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fc-list" class="md-nav__link">
+    fc-list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-local-fonts" class="md-nav__link">
+    Install Local Fonts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-free-fonts" class="md-nav__link">
+    Some Free Fonts
   </a>
   
 </li>
@@ -2902,6 +3012,98 @@ $ ll <span class="p">|</span> grep lunar
 <h3 id="sound-device-chooser">sound device chooser<a class="headerlink" href="#sound-device-chooser" title="Permanent link">&para;</a></h3>
 <p>tried but not good. <a href="https://extensions.gnome.org/extension/906/sound-output-device-chooser/">Sound Input &amp; Output Device Chooser</a></p>
 <h2 id="filesystem">Filesystem<a class="headerlink" href="#filesystem" title="Permanent link">&para;</a></h2>
+<h3 id="file-permissions">File Permissions<a class="headerlink" href="#file-permissions" title="Permanent link">&para;</a></h3>
+<p>采用<code>ls -l</code> 便可以查看文件(夹)权限，比如</p>
+<p><div class="highlight"><pre><span></span><code>-rw-rw-r--  <span class="m">1</span> weiya weiya    <span class="m">137969</span> 3月   <span class="m">8</span>  <span class="m">2017</span> font.txt
+-rw-r--r--  <span class="m">1</span> root  root      <span class="m">35792</span> 12月 <span class="m">26</span> <span class="m">23</span>:50 geckodriver.log
+-rw-r--r--  <span class="m">1</span> root  root     <span class="m">327350</span> 12月 <span class="m">27</span> <span class="m">01</span>:38 ghostdriver.log
+</code></pre></div>
+7列的含义分别是（参考<a href="http://blog.csdn.net/jenminzhang/article/details/9816853">http://blog.csdn.net/jenminzhang/article/details/9816853</a>）</p>
+<ol>
+<li>文件类型和文件权限
+  - 文件类型由第一个字母表示，常见的有 <code>d</code>(目录)，<code>-</code>(文件)，<code>l</code>(链接)
+  - 权限分为三段，每三个字符一段，分别表示，文件所有者 <code>u</code>、文件所属组 <code>g</code>、其他用户 <code>o</code>对该文件的权限，其中<ul>
+<li><code>r</code>: 可读，等于 4</li>
+<li><code>w</code>: 可写，等于 2</li>
+<li><code>x</code>: 可执行，等于 1</li>
+<li><code>-</code>: 无权限，等于 0</li>
+<li><code>s</code>: set user or group ID on execution (s)</li>
+<li><code>X</code>: execute/search only if the file  is a directory or already has  execute permission for some user</li>
+<li><code>t</code>: restricted deletion flag or sticky bit</li>
+</ul>
+</li>
+<li>文件链接个数</li>
+<li>文件所有者</li>
+<li>文件所在群组</li>
+<li>文件长度</li>
+<li>时间</li>
+<li>文件名称</li>
+</ol>
+<p>采用chmod修改权限（参考<a href="http://www.linuxidc.com/Linux/2015-03/114695.htm">http://www.linuxidc.com/Linux/2015-03/114695.htm</a>），如</p>
+<div class="highlight"><pre><span></span><code>chmod -R <span class="m">700</span> Document/
+chmod -R <span class="o">[</span>ugoa...<span class="o">][[</span>+-<span class="o">=][</span>perms...<span class="o">]]</span> <span class="c1"># refer to `man chmod` for more details</span>
+</code></pre></div>
+<p>其中 <code>-R</code> 表示递归，<code>perms</code> 为上述 <code>rwxXst</code>，而 <code>a</code> 表示所有用户，即 <code>ugo</code>.</p>
+<p>采用 chown 改变所有者，比如</p>
+<div class="highlight"><pre><span></span><code>chown -R username:users Document/
+</code></pre></div>
+<p><code>chmod g+s .</code> 会使得当前文件夹 <code>.</code> 中所有新建文件或文件夹都继承 <code>.</code> 的 group，而不是创建者所属的 group，所以这一般配合 <code>chgrp</code> 使用。参考 <a href="https://unix.stackexchange.com/questions/182212/chmod-gs-command">&lsquo;chmod g+s&rsquo; command</a></p>
+<h3 id="modify-vs-change">Modify vs Change<a class="headerlink" href="#modify-vs-change" title="Permanent link">&para;</a></h3>
+<p>在找学习资料时，突然不是很确定当初是否已经在用这台笔记本了，所以想确定一下本机的装机时间，参考 <a href="https://askubuntu.com/questions/1352/how-can-i-tell-what-date-ubuntu-was-installed">How can I tell what date Ubuntu was installed?</a>，主要时通过查看文件的上次修改时间，比如</p>
+<div class="highlight"><pre><span></span><code>$ ls -lt /var/log/installer/
+total <span class="m">1200</span>
+-rw-rw-r-- <span class="m">1</span> root   root <span class="m">464905</span> Dec  <span class="m">2</span>  <span class="m">2016</span> initial-status.gz
+-rw-r--r-- <span class="m">1</span> root   root     <span class="m">60</span> Dec  <span class="m">2</span>  <span class="m">2016</span> media-info
+-rw------- <span class="m">1</span> syslog adm  <span class="m">334743</span> Dec  <span class="m">2</span>  <span class="m">2016</span> syslog
+-rw------- <span class="m">1</span> root   root   <span class="m">2467</span> Dec  <span class="m">2</span>  <span class="m">2016</span> debug
+-rw------- <span class="m">1</span> root   root <span class="m">407422</span> Dec  <span class="m">2</span>  <span class="m">2016</span> partman
+-rw------- <span class="m">1</span> root   root     <span class="m">17</span> Dec  <span class="m">2</span>  <span class="m">2016</span> version
+-rw------- <span class="m">1</span> root   root    <span class="m">956</span> Dec  <span class="m">2</span>  <span class="m">2016</span> casper.log
+</code></pre></div>
+<p>又如</p>
+<div class="highlight"><pre><span></span><code>$ ls -lt /
+...
+drwxrwxr-x   <span class="m">2</span> root root       <span class="m">4096</span> Dec  <span class="m">2</span>  <span class="m">2016</span> cdrom
+drwx------   <span class="m">2</span> root root      <span class="m">16384</span> Dec  <span class="m">2</span>  <span class="m">2016</span> lost+found
+drwxr-xr-x   <span class="m">2</span> root root       <span class="m">4096</span> Apr <span class="m">21</span>  <span class="m">2016</span> srv
+</code></pre></div>
+<p>出现了 2016.04.21 的一条记录。但如果我加上 <code>-c</code>，结果竟然不一样</p>
+<div class="highlight"><pre><span></span><code>$ ls -clt /
+...
+drwxrwxr-x   <span class="m">2</span> root root       <span class="m">4096</span> Dec  <span class="m">2</span>  <span class="m">2016</span> cdrom
+drwxr-xr-x   <span class="m">2</span> root root       <span class="m">4096</span> Dec  <span class="m">2</span>  <span class="m">2016</span> srv
+drwx------   <span class="m">2</span> root root      <span class="m">16384</span> Dec  <span class="m">2</span>  <span class="m">2016</span> lost+found
+</code></pre></div>
+<p>难道 <code>ls</code> 默认显示的时间不是上次修改时间吗？？另外注意到 <code>srv</code> 其实是一个空文件夹。</p>
+<p>这时我用 <code>stat</code> 进一步查看，</p>
+<div class="highlight"><pre><span></span><code>$ stat /srv
+  File: /srv
+  Size: <span class="m">4096</span>        Blocks: <span class="m">8</span>          IO Block: <span class="m">4096</span>   directory
+Device: 825h/2085d  Inode: <span class="m">1179649</span>     Links: <span class="m">2</span>
+Access: <span class="o">(</span><span class="m">0755</span>/drwxr-xr-x<span class="o">)</span>  Uid: <span class="o">(</span>    <span class="m">0</span>/    root<span class="o">)</span>   Gid: <span class="o">(</span>    <span class="m">0</span>/    root<span class="o">)</span>
+Access: <span class="m">2021</span>-05-05 <span class="m">08</span>:43:20.955106697 +0800
+Modify: <span class="m">2016</span>-04-21 <span class="m">06</span>:07:49.000000000 +0800
+Change: <span class="m">2016</span>-12-02 <span class="m">02</span>:46:47.363728274 +0800
+ Birth: -
+</code></pre></div>
+<p>发现有两个修改时间，<code>Modify</code> 和 <code>Change</code>，<a href="https://unix.stackexchange.com/questions/2464/timestamp-modification-time-and-created-time-of-a-file">两者区别<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59Z"/></svg></span></a>在于</p>
+<ul>
+<li><code>Modify</code>: the last time the file was modified (content has been modified)</li>
+<li><code>Change</code>: the last time meta data of the file was changed (e.g. permissions)</li>
+</ul>
+<p>然后进一步查看 Windows 系统的时间，</p>
+<div class="highlight"><pre><span></span><code>$ ll -clt
+...
+drwxrwxrwx  <span class="m">1</span> weiya weiya       <span class="m">4096</span> Oct  <span class="m">1</span>  <span class="m">2016</span> <span class="s1">&#39;$Recycle.Bin&#39;</span>/
+drwxrwxrwx  <span class="m">1</span> weiya weiya          <span class="m">0</span> Sep <span class="m">29</span>  <span class="m">2016</span>  FFOutput/
+-rwxrwxrwx  <span class="m">2</span> weiya weiya   <span class="m">15151172</span> Jul  <span class="m">2</span>  <span class="m">2016</span>  WindowsDENGL.tt2*
+-rwxrwxrwx  <span class="m">2</span> weiya weiya   <span class="m">16092228</span> Jul  <span class="m">2</span>  <span class="m">2016</span>  WindowsDENG.tt2*
+-rwxrwxrwx  <span class="m">2</span> weiya weiya   <span class="m">16217976</span> Jul  <span class="m">2</span>  <span class="m">2016</span>  WindowsDENGB.tt2*
+-rwxrwxrwx  <span class="m">1</span> weiya weiya     <span class="m">400228</span> Mar <span class="m">19</span>  <span class="m">2016</span>  bootmgr*
+-rwxrwxrwx  <span class="m">1</span> weiya weiya          <span class="m">1</span> Mar <span class="m">19</span>  <span class="m">2016</span>  BOOTNXT*
+drwxrwxrwx  <span class="m">1</span> weiya weiya       <span class="m">8192</span> Mar <span class="m">18</span>  <span class="m">2016</span>  Boot/
+</code></pre></div>
+<p>最早可以追溯到 2016.03.18.</p>
 <h3 id="runuser1000"><code>/run/user/1000</code><a class="headerlink" href="#runuser1000" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -2916,6 +3118,52 @@ tmpfs           <span class="m">2</span>.0G  192K  <span class="m">2</span>.0G  
 <ul>
 <li><code>tmpfs</code> (short for Temporary File System) is a temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device. <a href="https://en.wikipedia.org/wiki/Tmpfs"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 <li><code>/run/user/$uid</code> is created by pam_systemd and used for storing files used by running processes for that user. <a href="https://unix.stackexchange.com/questions/162900/what-is-this-folder-run-user-1000"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+</ul>
+<h2 id="font">Font<a class="headerlink" href="#font" title="Permanent link">&para;</a></h2>
+<h3 id="fc-list"><code>fc-list</code><a class="headerlink" href="#fc-list" title="Permanent link">&para;</a></h3>
+<p>view installed fonts</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># only print the font-family</span>
+$ fc-list : family
+<span class="c1"># add language selector</span>
+$ fc-list : family <span class="nv">lang</span><span class="o">=</span>zh
+...
+Fira Sans,Fira Sans UltraLight
+Fira Sans,Fira Sans Light
+Noto Serif CJK KR,Noto Serif CJK KR ExtraLight
+<span class="c1"># with format option, get the family names of all the fonts (note that the above family also specify the detailed style)</span>
+$ fc-list --format<span class="o">=</span><span class="s1">&#39;%{family[0]}\n&#39;</span> :lang<span class="o">=</span>zh <span class="p">|</span> sort <span class="p">|</span> uniq
+...
+文泉驿等宽微米黑
+文泉驿等宽正黑
+新宋体
+</code></pre></div>
+<p>refer to <a href="https://www.geeksforgeeks.org/fc-list-command-in-linux-with-examples/">fc-list command in Linux with examples</a></p>
+<h3 id="install-local-fonts">Install Local Fonts<a class="headerlink" href="#install-local-fonts" title="Permanent link">&para;</a></h3>
+<p>以安装仿宋和黑体为例，这是<a href="https://hohoweiya.xyz/zju-thesis/src/zju-thesis.pdf">本科毕业论文模板</a>所需要的字体，字体文件已打包</p>
+<div class="highlight"><pre><span></span><code>$ wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz
+$ tar xvzf fonts.tar.gz
+fonts/STFANGSO.TTF
+fonts/
+fonts/simhei.ttf
+$ sudo mkdir -p /usr/share/fonts/truetype/custom/
+$ sudo mv fonts/* /usr/share/fonts/truetype/custom/
+$ sudo fc-cache -f -v
+</code></pre></div>
+<p>安装完成后，</p>
+<div class="highlight"><pre><span></span><code>$ fc-list :lang<span class="o">=</span>zh
+/usr/share/fonts/truetype/custom/simhei.ttf: SimHei,黑体:style<span class="o">=</span>Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
+/usr/share/fonts/truetype/custom/STFANGSO.TTF: STFangsong,华文仿宋:style<span class="o">=</span>Regular
+</code></pre></div>
+<h3 id="some-free-fonts">Some Free Fonts<a class="headerlink" href="#some-free-fonts" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/mozilla/Fira">Mozilla&rsquo;s Fira Type Family</a><ul>
+<li><a href="https://github.com/matze/mtheme/issues/280">Fira for Metropolis theme</a></li>
+<li><a href="https://github.com/tonsky/FiraCode">Fira Code</a><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/65362086">知乎：Fira Code —— 专为编程而生的字体</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="sound-with-headphone">Sound with Headphone<a class="headerlink" href="#sound-with-headphone" title="Permanent link">&para;</a></h2>
 <p>The output candidates are</p>
@@ -3615,7 +3863,7 @@ ps -ef <span class="p">|</span> grep XXX
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f758a944.min.js"></script>
+      <script src="../../assets/javascripts/bundle.431f3d41.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

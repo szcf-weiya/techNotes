@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.4">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.5">
     
     
       
@@ -488,13 +488,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-user" class="md-nav__link">
-    Add User
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#locale" class="md-nav__link">
     Locale
   </a>
@@ -537,20 +530,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#file-permissions" class="md-nav__link">
-    File Permissions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#circos" class="md-nav__link">
-    circos
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#user-vs-sys" class="md-nav__link">
     user vs. sys
   </a>
@@ -561,40 +540,6 @@
   <a href="#control-android-phone-by-pcs-mouse-and-keyboard" class="md-nav__link">
     control android phone by PC's mouse and keyboard
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#font" class="md-nav__link">
-    Font
-  </a>
-  
-    <nav class="md-nav" aria-label="Font">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fc-list" class="md-nav__link">
-    fc-list
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-local-fonts" class="md-nav__link">
-    Install Local Fonts
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#some-free-fonts" class="md-nav__link">
-    Some Free Fonts
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -784,14 +729,14 @@
       
       
         <label class="md-nav__link" for="__nav_2_2">
-          Laptop
+          Laptops
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Laptop" data-md-level="2">
+      <nav class="md-nav" aria-label="Laptops" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
-          Laptop
+          Laptops
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2319,6 +2264,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../biology/" class="md-nav__link">
+        Biology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../finance/" class="md-nav__link">
         Finance
       </a>
@@ -2479,13 +2438,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-user" class="md-nav__link">
-    Add User
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#locale" class="md-nav__link">
     Locale
   </a>
@@ -2528,20 +2480,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#file-permissions" class="md-nav__link">
-    File Permissions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#circos" class="md-nav__link">
-    circos
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#user-vs-sys" class="md-nav__link">
     user vs. sys
   </a>
@@ -2552,40 +2490,6 @@
   <a href="#control-android-phone-by-pcs-mouse-and-keyboard" class="md-nav__link">
     control android phone by PC's mouse and keyboard
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#font" class="md-nav__link">
-    Font
-  </a>
-  
-    <nav class="md-nav" aria-label="Font">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fc-list" class="md-nav__link">
-    fc-list
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-local-fonts" class="md-nav__link">
-    Install Local Fonts
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#some-free-fonts" class="md-nav__link">
-    Some Free Fonts
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2846,36 +2750,6 @@ Socket<span class="o">(</span>s<span class="o">)</span>:           <span class="
 <ul>
 <li>check last logged users: <code>last</code>, but the user field only shows 8 characters. To check the full name, use <code>last -w</code> instead. Refer to <a href="https://serverfault.com/questions/343740/last-loggedin-users-in-linux-showing-8-characters-only">last loggedin users in linux showing 8 characters only - Server Fault</a></li>
 </ul>
-<h2 id="add-user">Add User<a class="headerlink" href="#add-user" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ useradd -m -s /bin/bash userName
-$ passwd userName
-</code></pre></div>
-<p>Or explicitly specify the password with</p>
-<div class="highlight"><pre><span></span><code>useradd -p <span class="k">$(</span>openssl passwd -1 <span class="s2">&quot;PASSWORD&quot;</span><span class="k">)</span> -m userName
-</code></pre></div>
-<p>where <code>-1</code> means to use the MD5 based BSD password algorithm 1, see <code>man openssl-passwd</code> for more details.</p>
-<p>Create users in batch mode,</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">01</span>..14<span class="o">}</span><span class="p">;</span> <span class="k">do</span> useradd -p <span class="k">$(</span>openssl passwd -1 <span class="s2">&quot;PASSWORD\$&quot;</span><span class="k">)</span> -m <span class="s2">&quot;project</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">done</span>
-</code></pre></div>
-<p>where symbol <code>$</code> (if any) needs to be escaped by <code>\</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>As <code>man useradd</code> notes,</p>
-<blockquote>
-<p><code>-p</code> option is not recommended because the password (or encrypted password) will be visible by users listing the processes.</p>
-</blockquote>
-</div>
-<p>增加 sudo 权限</p>
-<div class="highlight"><pre><span></span><code>$ sudoedit /etc/sudoers
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="w"># Allow members of group sudo to execute any command</span>
-<span class="w">%sudo   ALL=(ALL:ALL) ALL</span>
-<span class="gi">+weiya ALL=(ALL) NOPASSWD:ALL</span><span class="w"></span>
-<span class="gi">+szcf715 ALL=(ALL) ALL</span><span class="w"></span>
-</code></pre></div>
-<p>其中 <code>NOPASSWD</code> 表示用户 <code>weiya</code> 在使用 <code>sudo</code> 时无需输入密码，而 <code>szcf715</code> 则需要输入密码才能使用 <code>sudo</code>.</p>
-<p><code>man sudoers</code> 给了一些具体的设置例子，搜索 <code>example sudoers</code>.</p>
-<p>参考 <a href="http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672">https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04</a></p>
 <h2 id="locale">Locale<a class="headerlink" href="#locale" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>区域设置（locale），也称作“本地化策略集”、“本地环境”，是表达程序用户地区方面的软件设定。不同系统、平台、与软件有不同的区域设置处理方式和不同的设置范围，但是一般区域设置最少也会包括语言和地区。区域设置的内容包括：数据格式、货币金额格式、小数点符号、千分位符号、度量衡单位、通货符号、日期写法、日历类型、文字排序、姓名格式、地址等等。
@@ -2975,45 +2849,6 @@ root         <span class="m">1</span>     <span class="m">0</span>  <span class=
 <p>require sqlite3.h
 <div class="highlight"><pre><span></span><code>sudo apt-get install libsqlite3-dev
 </code></pre></div></p>
-<h2 id="file-permissions">File Permissions<a class="headerlink" href="#file-permissions" title="Permanent link">&para;</a></h2>
-<p>采用<code>ls -l</code> 便可以查看文件(夹)权限，比如</p>
-<p><div class="highlight"><pre><span></span><code>-rw-rw-r--  <span class="m">1</span> weiya weiya    <span class="m">137969</span> 3月   <span class="m">8</span>  <span class="m">2017</span> font.txt
--rw-r--r--  <span class="m">1</span> root  root      <span class="m">35792</span> 12月 <span class="m">26</span> <span class="m">23</span>:50 geckodriver.log
--rw-r--r--  <span class="m">1</span> root  root     <span class="m">327350</span> 12月 <span class="m">27</span> <span class="m">01</span>:38 ghostdriver.log
-</code></pre></div>
-7列的含义分别是（参考<a href="http://blog.csdn.net/jenminzhang/article/details/9816853">http://blog.csdn.net/jenminzhang/article/details/9816853</a>）</p>
-<ol>
-<li>文件类型和文件权限
-  - 文件类型由第一个字母表示，常见的有 <code>d</code>(目录)，<code>-</code>(文件)，<code>l</code>(链接)
-  - 权限分为三段，每三个字符一段，分别表示，文件所有者 <code>u</code>、文件所属组 <code>g</code>、其他用户 <code>o</code>对该文件的权限，其中<ul>
-<li><code>r</code>: 可读，等于 4</li>
-<li><code>w</code>: 可写，等于 2</li>
-<li><code>x</code>: 可执行，等于 1</li>
-<li><code>-</code>: 无权限，等于 0</li>
-<li><code>s</code>: set user or group ID on execution (s)</li>
-<li><code>X</code>: execute/search only if the file  is a directory or already has  execute permission for some user</li>
-<li><code>t</code>: restricted deletion flag or sticky bit</li>
-</ul>
-</li>
-<li>文件链接个数</li>
-<li>文件所有者</li>
-<li>文件所在群组</li>
-<li>文件长度</li>
-<li>时间</li>
-<li>文件名称</li>
-</ol>
-<p>采用chmod修改权限（参考<a href="http://www.linuxidc.com/Linux/2015-03/114695.htm">http://www.linuxidc.com/Linux/2015-03/114695.htm</a>），如</p>
-<div class="highlight"><pre><span></span><code>chmod -R <span class="m">700</span> Document/
-chmod -R <span class="o">[</span>ugoa...<span class="o">][[</span>+-<span class="o">=][</span>perms...<span class="o">]]</span> <span class="c1"># refer to `man chmod` for more details</span>
-</code></pre></div>
-<p>其中 <code>-R</code> 表示递归，<code>perms</code> 为上述 <code>rwxXst</code>，而 <code>a</code> 表示所有用户，即 <code>ugo</code>.</p>
-<p>采用 chown 改变所有者，比如</p>
-<div class="highlight"><pre><span></span><code>chown -R username:users Document/
-</code></pre></div>
-<p><code>chmod g+s .</code> 会使得当前文件夹 <code>.</code> 中所有新建文件或文件夹都继承 <code>.</code> 的 group，而不是创建者所属的 group，所以这一般配合 <code>chgrp</code> 使用。参考 <a href="https://unix.stackexchange.com/questions/182212/chmod-gs-command">&lsquo;chmod g+s&rsquo; command</a></p>
-<h2 id="circos">circos<a class="headerlink" href="#circos" title="Permanent link">&para;</a></h2>
-<p>介绍见<a href="http://circos.ca/software/download/tutorials/">DOWNLOAD CIRCOS, TUTORIALS AND TOOLS</a></p>
-<p><a href="https://gist.github.com/dyndna/18bb71494e021f672510">Install circos on ubuntu 14.04 LTS</a></p>
 <h2 id="user-vs-sys"><code>user</code> vs. <code>sys</code><a class="headerlink" href="#user-vs-sys" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>time</code> commands return three times, named <code>real</code>, <code>user</code> and <code>sys</code>, the detailed explanation refers to <a href="https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1">What do &lsquo;real&rsquo;, &lsquo;user&rsquo; and &lsquo;sys&rsquo; mean in the output of time(1)?</a></li>
@@ -3021,52 +2856,6 @@ chmod -R <span class="o">[</span>ugoa...<span class="o">][[</span>+-<span class=
 </ul>
 <h2 id="control-android-phone-by-pcs-mouse-and-keyboard">control android phone by PC&rsquo;s mouse and keyboard<a class="headerlink" href="#control-android-phone-by-pcs-mouse-and-keyboard" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.makeuseof.com/tag/control-android-using-computers-mouse-keyboard/">How to Control Your Android Using Your Computer’s Mouse and Keyboard</a></p>
-<h2 id="font">Font<a class="headerlink" href="#font" title="Permanent link">&para;</a></h2>
-<h3 id="fc-list"><code>fc-list</code><a class="headerlink" href="#fc-list" title="Permanent link">&para;</a></h3>
-<p>view installed fonts</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># only print the font-family</span>
-$ fc-list : family
-<span class="c1"># add language selector</span>
-$ fc-list : family <span class="nv">lang</span><span class="o">=</span>zh
-...
-Fira Sans,Fira Sans UltraLight
-Fira Sans,Fira Sans Light
-Noto Serif CJK KR,Noto Serif CJK KR ExtraLight
-<span class="c1"># with format option, get the family names of all the fonts (note that the above family also specify the detailed style)</span>
-$ fc-list --format<span class="o">=</span><span class="s1">&#39;%{family[0]}\n&#39;</span> :lang<span class="o">=</span>zh <span class="p">|</span> sort <span class="p">|</span> uniq
-...
-文泉驿等宽微米黑
-文泉驿等宽正黑
-新宋体
-</code></pre></div>
-<p>refer to <a href="https://www.geeksforgeeks.org/fc-list-command-in-linux-with-examples/">fc-list command in Linux with examples</a></p>
-<h3 id="install-local-fonts">Install Local Fonts<a class="headerlink" href="#install-local-fonts" title="Permanent link">&para;</a></h3>
-<p>以安装仿宋和黑体为例，这是<a href="https://hohoweiya.xyz/zju-thesis/src/zju-thesis.pdf">本科毕业论文模板</a>所需要的字体，字体文件已打包</p>
-<div class="highlight"><pre><span></span><code>$ wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz
-$ tar xvzf fonts.tar.gz
-fonts/STFANGSO.TTF
-fonts/
-fonts/simhei.ttf
-$ sudo mkdir -p /usr/share/fonts/truetype/custom/
-$ sudo mv fonts/* /usr/share/fonts/truetype/custom/
-$ sudo fc-cache -f -v
-</code></pre></div>
-<p>安装完成后，</p>
-<div class="highlight"><pre><span></span><code>$ fc-list :lang<span class="o">=</span>zh
-/usr/share/fonts/truetype/custom/simhei.ttf: SimHei,黑体:style<span class="o">=</span>Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
-/usr/share/fonts/truetype/custom/STFANGSO.TTF: STFangsong,华文仿宋:style<span class="o">=</span>Regular
-</code></pre></div>
-<h3 id="some-free-fonts">Some Free Fonts<a class="headerlink" href="#some-free-fonts" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://github.com/mozilla/Fira">Mozilla&rsquo;s Fira Type Family</a><ul>
-<li><a href="https://github.com/matze/mtheme/issues/280">Fira for Metropolis theme</a></li>
-<li><a href="https://github.com/tonsky/FiraCode">Fira Code</a><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/65362086">知乎：Fira Code —— 专为编程而生的字体</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
 <h2 id="nvidia-driver">Nvidia Driver<a class="headerlink" href="#nvidia-driver" title="Permanent link">&para;</a></h2>
 <p>Install via the GUI <code>Software &amp; Updates</code>. If succeed, then</p>
 <div class="highlight"><pre><span></span><code>$ nvidia-smi
@@ -3473,7 +3262,7 @@ System has not been booted with systemd as init system <span class="o">(</span>P
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.f758a944.min.js"></script>
+      <script src="../assets/javascripts/bundle.431f3d41.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       

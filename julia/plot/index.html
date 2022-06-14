@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/julia/plot/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.4">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.5">
     
     
       
@@ -470,14 +470,14 @@
       
       
         <label class="md-nav__link" for="__nav_2_2">
-          Laptop
+          Laptops
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Laptop" data-md-level="2">
+      <nav class="md-nav" aria-label="Laptops" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
-          Laptop
+          Laptops
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1120,7 +1120,7 @@
       
         <li class="md-nav__item">
   <a href="#legend" class="md-nav__link">
-    legend
+    Legend
   </a>
   
 </li>
@@ -2141,6 +2141,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../biology/" class="md-nav__link">
+        Biology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../finance/" class="md-nav__link">
         Finance
       </a>
@@ -2379,7 +2393,7 @@
       
         <li class="md-nav__item">
   <a href="#legend" class="md-nav__link">
-    legend
+    Legend
   </a>
   
 </li>
@@ -2539,12 +2553,17 @@ julia&gt; plot<span class="o">(</span><span class="m">1</span>:10<span class="o"
 <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;figure.max_open_warning&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/21884271/warning-about-too-many-open-figures">warning about too many open figures</a></p>
-<h2 id="legend">legend<a class="headerlink" href="#legend" title="Permanent link">&para;</a></h2>
+<h2 id="legend">Legend<a class="headerlink" href="#legend" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>legendtitle</code></li>
 <li>as a subplot: <code>plot(p1, p2, p3, p4, plegend, layout = @layout([a b [c{0.6h}; [d e{0.3w}]] ]))</code> <ul>
 <li><a href="https://github.com/szcf-weiya/Cell-Video/blob/4721ef10b6f77f59dbed639c6806faa1b644ba06/DP/visualization.jl#L610">example in the Cell-Video project</a></li>
 <li>shared legend for two subplots: <a href="https://github.com/szcf-weiya/Clouds/issues/23">example in the Clouds project</a></li>
+</ul>
+</li>
+<li>horizontal legend: currently (2022-06-14 17:37:45) only for PGFPlotsX backend<ul>
+<li>feature request for other backend, which includes my comment for usage with PGFPlotsX <a href="https://github.com/JuliaPlots/Plots.jl/issues/2206"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li><a href="https://github.com/szcf-weiya/Clouds/issues/33#issuecomment-753603797">an example</a>, motivated by <a href="https://tex.stackexchange.com/questions/101576/how-to-draw-horizontalrow-legend-without-the-surronding-rectangle"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 </li>
 </ul>
@@ -2691,7 +2710,7 @@ julia&gt; plot<span class="o">(</span><span class="m">1</span>:10<span class="o"
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f758a944.min.js"></script>
+      <script src="../../assets/javascripts/bundle.431f3d41.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

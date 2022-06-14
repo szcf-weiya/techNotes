@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/tools/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.4">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.5">
     
     
       
@@ -474,14 +474,14 @@
       
       
         <label class="md-nav__link" for="__nav_2_2">
-          Laptop
+          Laptops
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Laptop" data-md-level="2">
+      <nav class="md-nav" aria-label="Laptops" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
-          Laptop
+          Laptops
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -590,6 +590,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    cat
+  </a>
   
 </li>
       
@@ -794,6 +801,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#journalctl" class="md-nav__link">
+    journalctl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ln" class="md-nav__link">
     ln
   </a>
@@ -807,13 +821,6 @@
   
     <nav class="md-nav" aria-label="ls">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#modify-and-change-time" class="md-nav__link">
-    modify and change time
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#only-show-directory" class="md-nav__link">
@@ -862,8 +869,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paste-cat" class="md-nav__link">
-    paste, cat: 文本文件拼接
+  <a href="#paste" class="md-nav__link">
+    paste: 文本文件拼接
   </a>
   
 </li>
@@ -2550,6 +2557,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../biology/" class="md-nav__link">
+        Biology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../finance/" class="md-nav__link">
         Finance
       </a>
@@ -2740,6 +2761,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    cat
+  </a>
   
 </li>
       
@@ -2944,6 +2972,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#journalctl" class="md-nav__link">
+    journalctl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ln" class="md-nav__link">
     ln
   </a>
@@ -2957,13 +2992,6 @@
   
     <nav class="md-nav" aria-label="ls">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#modify-and-change-time" class="md-nav__link">
-    modify and change time
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#only-show-directory" class="md-nav__link">
@@ -3012,8 +3040,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paste-cat" class="md-nav__link">
-    paste, cat: 文本文件拼接
+  <a href="#paste" class="md-nav__link">
+    paste: 文本文件拼接
   </a>
   
 </li>
@@ -3319,6 +3347,14 @@ d
 <div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a - 1 \n c d 3 \n 5 6 &#39;</span> <span class="p">|</span> awk <span class="s1">&#39;$2 !~ /-|^$/ &amp;&amp; $3 !~ /^$/ {print $2}&#39;</span>
 d
 </code></pre></div>
+<h2 id="cat"><code>cat</code><a class="headerlink" href="#cat" title="Permanent link">&para;</a></h2>
+<ul>
+<li>add text to the beginning of a file</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;task goes here&#39;</span> <span class="p">|</span> cat - todo.txt &gt; temp <span class="o">&amp;&amp;</span> mv temp todo.txt
+</code></pre></div>
+<p>where <code>-</code> represents the standard input, see also <a href="https://blog.csdn.net/liuxiao723846/article/details/91041629"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>alternatively, we can use <code>sed</code>, refer to <a href="https://superuser.com/questions/246837/how-do-i-add-text-to-the-beginning-of-a-file-in-bash"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more details</p>
 <h2 id="column"><code>column</code><a class="headerlink" href="#column" title="Permanent link">&para;</a></h2>
 <p>display the csv beautifully,</p>
 <div class="highlight"><pre><span></span><code>$ head file1.txt <span class="p">|</span> column -s, -t
@@ -3542,6 +3578,15 @@ $ <span class="nb">echo</span> <span class="s2">&quot;1&quot;</span><span class=
 $ find . -user user
 </code></pre></div>
 <p>refer to <a href="https://unix.stackexchange.com/questions/518268/list-files-with-specific-group-and-user-name">list files with specific group and user name</a></p>
+<ul>
+<li><a href="https://askubuntu.com/questions/307876/how-to-search-for-files-recursively-into-subdirectories">recursively list files in subdirectories</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ find . -name <span class="s1">&#39;*.md&#39;</span>
+</code></pre></div>
+<p>alternatively,</p>
+<div class="highlight"><pre><span></span><code>$ ls -R <span class="p">|</span> grep <span class="s1">&#39;\.md$&#39;</span>
+</code></pre></div>
+<p>where <code>.</code> needs to be escape and <code>$</code> is necessary, otherwise it would match strings like <code>rmd</code>.</p>
 <h2 id="grep"><code>grep</code><a class="headerlink" href="#grep" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>-P</code>: perl-style regex</li>
@@ -3593,6 +3638,18 @@ Binary file syslog matches
 <ul>
 <li>setup: modify the information layout when there are many CPUs. Firstly select the panel from the rightmost column, and then press <code>Left</code>, <code>Right</code>, <code>Up</code>, <code>Down</code> to move. The resulting configure file would be written into <code>~/.config/htop/htoprc</code>.</li>
 </ul>
+<h2 id="journalctl"><code>journalctl</code><a class="headerlink" href="#journalctl" title="Permanent link">&para;</a></h2>
+<ul>
+<li>list log of previous boots</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ journalctl --list-boots
+</code></pre></div>
+<ul>
+<li>display last boot log</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ journalctl -b-1
+</code></pre></div>
+<p>see also: <a href="https://askubuntu.com/questions/765315/how-to-find-previous-boot-log-after-ubuntu-16-04-restarts"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h2 id="ln"><code>ln</code><a class="headerlink" href="#ln" title="Permanent link">&para;</a></h2>
 <ul>
 <li>with <code>-s</code>, create a soft link</li>
@@ -3609,62 +3666,6 @@ Device: 811h/2065d  Inode: <span class="m">14716809</span>    Links: <span class
 <ul>
 <li><code>-S</code>: sort by filesize</li>
 </ul>
-<h3 id="modify-and-change-time">modify and change time<a class="headerlink" href="#modify-and-change-time" title="Permanent link">&para;</a></h3>
-<p>在找学习资料时，突然不是很确定当初是否已经在用这台笔记本了，所以想确定一下本机的装机时间，参考 <a href="https://askubuntu.com/questions/1352/how-can-i-tell-what-date-ubuntu-was-installed">How can I tell what date Ubuntu was installed?</a>，主要时通过查看文件的上次修改时间，比如</p>
-<div class="highlight"><pre><span></span><code>$ ls -lt /var/log/installer/
-total <span class="m">1200</span>
--rw-rw-r-- <span class="m">1</span> root   root <span class="m">464905</span> Dec  <span class="m">2</span>  <span class="m">2016</span> initial-status.gz
--rw-r--r-- <span class="m">1</span> root   root     <span class="m">60</span> Dec  <span class="m">2</span>  <span class="m">2016</span> media-info
--rw------- <span class="m">1</span> syslog adm  <span class="m">334743</span> Dec  <span class="m">2</span>  <span class="m">2016</span> syslog
--rw------- <span class="m">1</span> root   root   <span class="m">2467</span> Dec  <span class="m">2</span>  <span class="m">2016</span> debug
--rw------- <span class="m">1</span> root   root <span class="m">407422</span> Dec  <span class="m">2</span>  <span class="m">2016</span> partman
--rw------- <span class="m">1</span> root   root     <span class="m">17</span> Dec  <span class="m">2</span>  <span class="m">2016</span> version
--rw------- <span class="m">1</span> root   root    <span class="m">956</span> Dec  <span class="m">2</span>  <span class="m">2016</span> casper.log
-</code></pre></div>
-<p>又如</p>
-<div class="highlight"><pre><span></span><code>$ ls -lt /
-...
-drwxrwxr-x   <span class="m">2</span> root root       <span class="m">4096</span> Dec  <span class="m">2</span>  <span class="m">2016</span> cdrom
-drwx------   <span class="m">2</span> root root      <span class="m">16384</span> Dec  <span class="m">2</span>  <span class="m">2016</span> lost+found
-drwxr-xr-x   <span class="m">2</span> root root       <span class="m">4096</span> Apr <span class="m">21</span>  <span class="m">2016</span> srv
-</code></pre></div>
-<p>出现了 2016.04.21 的一条记录。但如果我加上 <code>-c</code>，结果竟然不一样</p>
-<div class="highlight"><pre><span></span><code>$ ls -clt /
-...
-drwxrwxr-x   <span class="m">2</span> root root       <span class="m">4096</span> Dec  <span class="m">2</span>  <span class="m">2016</span> cdrom
-drwxr-xr-x   <span class="m">2</span> root root       <span class="m">4096</span> Dec  <span class="m">2</span>  <span class="m">2016</span> srv
-drwx------   <span class="m">2</span> root root      <span class="m">16384</span> Dec  <span class="m">2</span>  <span class="m">2016</span> lost+found
-</code></pre></div>
-<p>难道 <code>ls</code> 默认显示的时间不是上次修改时间吗？？另外注意到 <code>srv</code> 其实是一个空文件夹。</p>
-<p>这时我用 <code>stat</code> 进一步查看，</p>
-<div class="highlight"><pre><span></span><code>$ stat /srv
-  File: /srv
-  Size: <span class="m">4096</span>        Blocks: <span class="m">8</span>          IO Block: <span class="m">4096</span>   directory
-Device: 825h/2085d  Inode: <span class="m">1179649</span>     Links: <span class="m">2</span>
-Access: <span class="o">(</span><span class="m">0755</span>/drwxr-xr-x<span class="o">)</span>  Uid: <span class="o">(</span>    <span class="m">0</span>/    root<span class="o">)</span>   Gid: <span class="o">(</span>    <span class="m">0</span>/    root<span class="o">)</span>
-Access: <span class="m">2021</span>-05-05 <span class="m">08</span>:43:20.955106697 +0800
-Modify: <span class="m">2016</span>-04-21 <span class="m">06</span>:07:49.000000000 +0800
-Change: <span class="m">2016</span>-12-02 <span class="m">02</span>:46:47.363728274 +0800
- Birth: -
-</code></pre></div>
-<p>发现有两个修改时间，<code>Modify</code> 和 <code>Change</code>，<a href="https://unix.stackexchange.com/questions/2464/timestamp-modification-time-and-created-time-of-a-file">两者区别<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59Z"/></svg></span></a>在于</p>
-<ul>
-<li><code>Modify</code>: the last time the file was modified (content has been modified)</li>
-<li><code>Change</code>: the last time meta data of the file was changed (e.g. permissions)</li>
-</ul>
-<p>然后进一步查看 Windows 系统的时间，</p>
-<div class="highlight"><pre><span></span><code>$ ll -clt
-...
-drwxrwxrwx  <span class="m">1</span> weiya weiya       <span class="m">4096</span> Oct  <span class="m">1</span>  <span class="m">2016</span> <span class="s1">&#39;$Recycle.Bin&#39;</span>/
-drwxrwxrwx  <span class="m">1</span> weiya weiya          <span class="m">0</span> Sep <span class="m">29</span>  <span class="m">2016</span>  FFOutput/
--rwxrwxrwx  <span class="m">2</span> weiya weiya   <span class="m">15151172</span> Jul  <span class="m">2</span>  <span class="m">2016</span>  WindowsDENGL.tt2*
--rwxrwxrwx  <span class="m">2</span> weiya weiya   <span class="m">16092228</span> Jul  <span class="m">2</span>  <span class="m">2016</span>  WindowsDENG.tt2*
--rwxrwxrwx  <span class="m">2</span> weiya weiya   <span class="m">16217976</span> Jul  <span class="m">2</span>  <span class="m">2016</span>  WindowsDENGB.tt2*
--rwxrwxrwx  <span class="m">1</span> weiya weiya     <span class="m">400228</span> Mar <span class="m">19</span>  <span class="m">2016</span>  bootmgr*
--rwxrwxrwx  <span class="m">1</span> weiya weiya          <span class="m">1</span> Mar <span class="m">19</span>  <span class="m">2016</span>  BOOTNXT*
-drwxrwxrwx  <span class="m">1</span> weiya weiya       <span class="m">8192</span> Mar <span class="m">18</span>  <span class="m">2016</span>  Boot/
-</code></pre></div>
-<p>最早可以追溯到 2016.03.18.</p>
 <h3 id="only-show-directory">only show directory<a class="headerlink" href="#only-show-directory" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>ls -d */
 </code></pre></div>
@@ -3688,12 +3689,16 @@ drwxrwxrwx  <span class="m">1</span> weiya weiya       <span class="m">8192</spa
 </code></pre></div>
 <p>see more details in <a href="https://askubuntu.com/questions/487035/mv-files-with-xargs">mv files with | xargs</a></p>
 <p>see also: <a href="http://man.linuxde.net/xargs">xargs命令_Linux xargs 命令用法详解：给其他命令传递参数的一个过滤器</a></p>
-<h2 id="paste-cat"><code>paste, cat</code>: 文本文件拼接<a class="headerlink" href="#paste-cat" title="Permanent link">&para;</a></h2>
+<h2 id="paste"><code>paste</code>: 文本文件拼接<a class="headerlink" href="#paste" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1">### 按列</span>
 paste file1 file2 &gt; outputfile
 <span class="c1">### 按行</span>
 cat file1 file2 &gt; outputfile
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">See also</p>
+<p><code>cat</code></p>
+</div>
 <p>convert a column to a row with delimiter <code>,</code></p>
 <div class="highlight"><pre><span></span><code>$ <span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">1</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span> <span class="p">|</span> paste -s -d<span class="s1">&#39;,&#39;</span>
 <span class="m">1</span>,2,3,4,5,6,7,8,9,10
@@ -4172,7 +4177,7 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f758a944.min.js"></script>
+      <script src="../../assets/javascripts/bundle.431f3d41.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
