@@ -1,3 +1,14 @@
+## 2022.06.14
+
+- English writing often uses slashes to form two-letter abbreviations [:link:](https://english.stackexchange.com/questions/115367/are-w-o-w-b-c-common-abbreviations-in-the-us), such as
+    - I/O: "input/output"
+    - w/: "with"
+    - c/o: "care of"
+    - A/C: "air conditioning"
+    - w/o: "without"
+    - R/C: "remote control"
+    - b/c: "because"
+
 ## 2022.06.13
 
 - paleoclimatology: 古气候学，研究古地质时代气候的科学

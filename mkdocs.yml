@@ -3,7 +3,7 @@ nav:
   - Home: index.md
   - Linux:
     - General: Linux/index.md
-    - Laptop:
+    - Laptops:
       - Ubuntu: Linux/ubuntu.md
       - Application Software: Linux/software.md
       - Command-line Tools: Linux/tools.md
@@ -84,6 +84,7 @@ nav:
     - English: English/index.md
     - Guitar: guitar/index.md
     - Windows: win/index.md
+    - Biology: biology/index.md
     - Finance: finance/index.md
     - Fresh: fresh/index.md
     - Links: links/index.md

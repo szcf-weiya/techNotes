@@ -15,9 +15,17 @@
 
 `python -m` lets you run modules as scripts, and it reflects the motto--"batteries included". [Here](http://pythonwise.blogspot.com/2015/01/python-m.html) are some powerful features/functions, such as creating a simple http server
 
-```python
-python -m SimpleHTTPServer 80
-```
+=== "python 3"
+
+	```python
+	python3 -m http.server 80
+	```
+
+=== "python 2"
+
+	```python
+	python -m SimpleHTTPServer 80
+	```
 
 ### `-u`
 

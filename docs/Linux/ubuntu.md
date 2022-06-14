@@ -177,6 +177,126 @@ tried but not good. [Sound Input & Output Device Chooser](https://extensions.gno
 
 ## Filesystem
 
+### File Permissions
+
+采用`ls -l` 便可以查看文件(夹)权限，比如
+
+```bash
+-rw-rw-r--  1 weiya weiya    137969 3月   8  2017 font.txt
+-rw-r--r--  1 root  root      35792 12月 26 23:50 geckodriver.log
+-rw-r--r--  1 root  root     327350 12月 27 01:38 ghostdriver.log
+```
+7列的含义分别是（参考[http://blog.csdn.net/jenminzhang/article/details/9816853](http://blog.csdn.net/jenminzhang/article/details/9816853)）
+
+1. 文件类型和文件权限
+  - 文件类型由第一个字母表示，常见的有 `d`(目录)，`-`(文件)，`l`(链接)
+  - 权限分为三段，每三个字符一段，分别表示，文件所有者 `u`、文件所属组 `g`、其他用户 `o`对该文件的权限，其中
+    - `r`: 可读，等于 4
+    - `w`: 可写，等于 2
+    - `x`: 可执行，等于 1
+    - `-`: 无权限，等于 0
+    - `s`: set user or group ID on execution (s)
+    - `X`: execute/search only if the file  is a directory or already has  execute permission for some user
+    - `t`: restricted deletion flag or sticky bit
+2. 文件链接个数
+3. 文件所有者
+4. 文件所在群组
+5. 文件长度
+6. 时间
+7. 文件名称
+
+
+采用chmod修改权限（参考[http://www.linuxidc.com/Linux/2015-03/114695.htm](http://www.linuxidc.com/Linux/2015-03/114695.htm)），如
+
+```bash
+chmod -R 700 Document/
+chmod -R [ugoa...][[+-=][perms...]] # refer to `man chmod` for more details
+```
+
+其中 `-R` 表示递归，`perms` 为上述 `rwxXst`，而 `a` 表示所有用户，即 `ugo`.
+
+采用 chown 改变所有者，比如
+
+```bash
+chown -R username:users Document/
+```
+
+`chmod g+s .` 会使得当前文件夹 `.` 中所有新建文件或文件夹都继承 `.` 的 group，而不是创建者所属的 group，所以这一般配合 `chgrp` 使用。参考 ['chmod g+s' command](https://unix.stackexchange.com/questions/182212/chmod-gs-command)
+
+### Modify vs Change
+
+在找学习资料时，突然不是很确定当初是否已经在用这台笔记本了，所以想确定一下本机的装机时间，参考 [How can I tell what date Ubuntu was installed?](https://askubuntu.com/questions/1352/how-can-i-tell-what-date-ubuntu-was-installed)，主要时通过查看文件的上次修改时间，比如
+
+```bash
+$ ls -lt /var/log/installer/
+total 1200
+-rw-rw-r-- 1 root   root 464905 Dec  2  2016 initial-status.gz
+-rw-r--r-- 1 root   root     60 Dec  2  2016 media-info
+-rw------- 1 syslog adm  334743 Dec  2  2016 syslog
+-rw------- 1 root   root   2467 Dec  2  2016 debug
+-rw------- 1 root   root 407422 Dec  2  2016 partman
+-rw------- 1 root   root     17 Dec  2  2016 version
+-rw------- 1 root   root    956 Dec  2  2016 casper.log
+```
+
+又如
+
+```bash
+$ ls -lt /
+...
+drwxrwxr-x   2 root root       4096 Dec  2  2016 cdrom
+drwx------   2 root root      16384 Dec  2  2016 lost+found
+drwxr-xr-x   2 root root       4096 Apr 21  2016 srv
+```
+
+出现了 2016.04.21 的一条记录。但如果我加上 `-c`，结果竟然不一样
+
+```bash
+$ ls -clt /
+...
+drwxrwxr-x   2 root root       4096 Dec  2  2016 cdrom
+drwxr-xr-x   2 root root       4096 Dec  2  2016 srv
+drwx------   2 root root      16384 Dec  2  2016 lost+found
+```
+
+难道 `ls` 默认显示的时间不是上次修改时间吗？？另外注意到 `srv` 其实是一个空文件夹。
+
+这时我用 `stat` 进一步查看，
+
+```bash
+$ stat /srv
+  File: /srv
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 825h/2085d	Inode: 1179649     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2021-05-05 08:43:20.955106697 +0800
+Modify: 2016-04-21 06:07:49.000000000 +0800
+Change: 2016-12-02 02:46:47.363728274 +0800
+ Birth: -
+```
+
+发现有两个修改时间，`Modify` 和 `Change`，[两者区别:material-stack-overflow:](https://unix.stackexchange.com/questions/2464/timestamp-modification-time-and-created-time-of-a-file)在于
+
+- `Modify`: the last time the file was modified (content has been modified)
+- `Change`: the last time meta data of the file was changed (e.g. permissions)
+
+然后进一步查看 Windows 系统的时间，
+
+```bash
+$ ll -clt
+...
+drwxrwxrwx  1 weiya weiya       4096 Oct  1  2016 '$Recycle.Bin'/
+drwxrwxrwx  1 weiya weiya          0 Sep 29  2016  FFOutput/
+-rwxrwxrwx  2 weiya weiya   15151172 Jul  2  2016  WindowsDENGL.tt2*
+-rwxrwxrwx  2 weiya weiya   16092228 Jul  2  2016  WindowsDENG.tt2*
+-rwxrwxrwx  2 weiya weiya   16217976 Jul  2  2016  WindowsDENGB.tt2*
+-rwxrwxrwx  1 weiya weiya     400228 Mar 19  2016  bootmgr*
+-rwxrwxrwx  1 weiya weiya          1 Mar 19  2016  BOOTNXT*
+drwxrwxrwx  1 weiya weiya       8192 Mar 18  2016  Boot/
+```
+
+最早可以追溯到 2016.03.18.
+
 ### `/run/user/1000`
 
 !!! info
@@ -194,6 +314,61 @@ where
 
 - `tmpfs` (short for Temporary File System) is a temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device. [:link:](https://en.wikipedia.org/wiki/Tmpfs)
 - `/run/user/$uid` is created by pam_systemd and used for storing files used by running processes for that user. [:link:](https://unix.stackexchange.com/questions/162900/what-is-this-folder-run-user-1000)
+
+## Font
+
+### `fc-list`
+
+view installed fonts
+
+```bash
+# only print the font-family
+$ fc-list : family
+# add language selector
+$ fc-list : family lang=zh
+...
+Fira Sans,Fira Sans UltraLight
+Fira Sans,Fira Sans Light
+Noto Serif CJK KR,Noto Serif CJK KR ExtraLight
+# with format option, get the family names of all the fonts (note that the above family also specify the detailed style)
+$ fc-list --format='%{family[0]}\n' :lang=zh | sort | uniq
+...
+文泉驿等宽微米黑
+文泉驿等宽正黑
+新宋体
+```
+
+refer to [fc-list command in Linux with examples](https://www.geeksforgeeks.org/fc-list-command-in-linux-with-examples/)
+
+### Install Local Fonts
+
+以安装仿宋和黑体为例，这是[本科毕业论文模板](https://hohoweiya.xyz/zju-thesis/src/zju-thesis.pdf)所需要的字体，字体文件已打包
+
+```bash
+$ wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz
+$ tar xvzf fonts.tar.gz
+fonts/STFANGSO.TTF
+fonts/
+fonts/simhei.ttf
+$ sudo mkdir -p /usr/share/fonts/truetype/custom/
+$ sudo mv fonts/* /usr/share/fonts/truetype/custom/
+$ sudo fc-cache -f -v
+```
+
+安装完成后，
+
+```bash
+$ fc-list :lang=zh
+/usr/share/fonts/truetype/custom/simhei.ttf: SimHei,黑体:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
+/usr/share/fonts/truetype/custom/STFANGSO.TTF: STFangsong,华文仿宋:style=Regular
+```
+
+### Some Free Fonts
+
+- [Mozilla's Fira Type Family](https://github.com/mozilla/Fira)
+    - [Fira for Metropolis theme](https://github.com/matze/mtheme/issues/280)
+    - [Fira Code](https://github.com/tonsky/FiraCode)
+        - [知乎：Fira Code —— 专为编程而生的字体](https://zhuanlan.zhihu.com/p/65362086)
 
 ## Sound with Headphone
 

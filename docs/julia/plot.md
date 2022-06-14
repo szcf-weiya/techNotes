@@ -196,12 +196,15 @@ plt.rcParams.update({'figure.max_open_warning': 0})
 
 refer to [warning about too many open figures](https://stackoverflow.com/questions/21884271/warning-about-too-many-open-figures)
 
-## legend
+## Legend
 
 - `legendtitle`
 - as a subplot: `plot(p1, p2, p3, p4, plegend, layout = @layout([a b [c{0.6h}; [d e{0.3w}]] ]))` 
     - [example in the Cell-Video project](https://github.com/szcf-weiya/Cell-Video/blob/4721ef10b6f77f59dbed639c6806faa1b644ba06/DP/visualization.jl#L610)
     - shared legend for two subplots: [example in the Clouds project](https://github.com/szcf-weiya/Clouds/issues/23)
+- horizontal legend: currently (2022-06-14 17:37:45) only for PGFPlotsX backend
+    - feature request for other backend, which includes my comment for usage with PGFPlotsX [:link:](https://github.com/JuliaPlots/Plots.jl/issues/2206)
+    - [an example](https://github.com/szcf-weiya/Clouds/issues/33#issuecomment-753603797), motivated by [:link:](https://tex.stackexchange.com/questions/101576/how-to-draw-horizontalrow-legend-without-the-surronding-rectangle)
 
 ## two yaxis
 

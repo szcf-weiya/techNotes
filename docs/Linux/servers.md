@@ -156,6 +156,52 @@ refer to [How can I scp a file with a colon in the file name?](https://stackover
 
 refer to [What do options `ServerAliveInterval` and `ClientAliveInterval` in sshd_config do exactly?](https://unix.stackexchange.com/questions/3026/what-do-options-serveraliveinterval-and-clientaliveinterval-in-sshd-config-d)
 
+## Add User
+
+```bash
+$ useradd -m -s /bin/bash userName
+$ passwd userName
+```
+
+Or explicitly specify the password with
+
+```bash
+useradd -p $(openssl passwd -1 "PASSWORD") -m userName
+```
+
+where `-1` means to use the MD5 based BSD password algorithm 1, see `man openssl-passwd` for more details.
+
+Create users in batch mode,
+
+```bash
+for i in {01..14}; do useradd -p $(openssl passwd -1 "PASSWORD\$") -m "project$i"; done
+```
+
+where symbol `$` (if any) needs to be escaped by `\`.
+
+!!! warning
+    As `man useradd` notes,
+    > `-p` option is not recommended because the password (or encrypted password) will be visible by users listing the processes.
+
+增加 sudo 权限
+
+```bash
+$ sudoedit /etc/sudoers
+```
+
+```diff
+# Allow members of group sudo to execute any command
+%sudo	ALL=(ALL:ALL) ALL
++weiya ALL=(ALL) NOPASSWD:ALL
++szcf715 ALL=(ALL) ALL
+```
+
+其中 `NOPASSWD` 表示用户 `weiya` 在使用 `sudo` 时无需输入密码，而 `szcf715` 则需要输入密码才能使用 `sudo`.
+
+`man sudoers` 给了一些具体的设置例子，搜索 `example sudoers`.
+
+参考 [https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04](http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672)
+
 ## 安装 spark
 
 ~~在内地云主机上，[官网下载地址](https://spark.apache.org/downloads.html) 还没 5 秒就中断了，然后找到了[清华的镜像](https://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-2.4.4/)~~

@@ -70,52 +70,6 @@
 
 - check last logged users: `last`, but the user field only shows 8 characters. To check the full name, use `last -w` instead. Refer to [last loggedin users in linux showing 8 characters only - Server Fault](https://serverfault.com/questions/343740/last-loggedin-users-in-linux-showing-8-characters-only)
 
-## Add User
-
-```bash
-$ useradd -m -s /bin/bash userName
-$ passwd userName
-```
-
-Or explicitly specify the password with
-
-```bash
-useradd -p $(openssl passwd -1 "PASSWORD") -m userName
-```
-
-where `-1` means to use the MD5 based BSD password algorithm 1, see `man openssl-passwd` for more details.
-
-Create users in batch mode,
-
-```bash
-for i in {01..14}; do useradd -p $(openssl passwd -1 "PASSWORD\$") -m "project$i"; done
-```
-
-where symbol `$` (if any) needs to be escaped by `\`.
-
-!!! warning
-    As `man useradd` notes,
-    > `-p` option is not recommended because the password (or encrypted password) will be visible by users listing the processes.
-
-增加 sudo 权限
-
-```bash
-$ sudoedit /etc/sudoers
-```
-
-```diff
-# Allow members of group sudo to execute any command
-%sudo	ALL=(ALL:ALL) ALL
-+weiya ALL=(ALL) NOPASSWD:ALL
-+szcf715 ALL=(ALL) ALL
-```
-
-其中 `NOPASSWD` 表示用户 `weiya` 在使用 `sudo` 时无需输入密码，而 `szcf715` 则需要输入密码才能使用 `sudo`.
-
-`man sudoers` 给了一些具体的设置例子，搜索 `example sudoers`.
-
-参考 [https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04](http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672)
-
 ## Locale
 
 > 区域设置（locale），也称作“本地化策略集”、“本地环境”，是表达程序用户地区方面的软件设定。不同系统、平台、与软件有不同的区域设置处理方式和不同的设置范围，但是一般区域设置最少也会包括语言和地区。区域设置的内容包括：数据格式、货币金额格式、小数点符号、千分位符号、度量衡单位、通货符号、日期写法、日历类型、文字排序、姓名格式、地址等等。
@@ -255,58 +209,6 @@ require sqlite3.h
 sudo apt-get install libsqlite3-dev
 ```
 
-## File Permissions
-
-采用`ls -l` 便可以查看文件(夹)权限，比如
-
-```bash
--rw-rw-r--  1 weiya weiya    137969 3月   8  2017 font.txt
--rw-r--r--  1 root  root      35792 12月 26 23:50 geckodriver.log
--rw-r--r--  1 root  root     327350 12月 27 01:38 ghostdriver.log
-```
-7列的含义分别是（参考[http://blog.csdn.net/jenminzhang/article/details/9816853](http://blog.csdn.net/jenminzhang/article/details/9816853)）
-
-1. 文件类型和文件权限
-  - 文件类型由第一个字母表示，常见的有 `d`(目录)，`-`(文件)，`l`(链接)
-  - 权限分为三段，每三个字符一段，分别表示，文件所有者 `u`、文件所属组 `g`、其他用户 `o`对该文件的权限，其中
-    - `r`: 可读，等于 4
-    - `w`: 可写，等于 2
-    - `x`: 可执行，等于 1
-    - `-`: 无权限，等于 0
-    - `s`: set user or group ID on execution (s)
-    - `X`: execute/search only if the file  is a directory or already has  execute permission for some user
-    - `t`: restricted deletion flag or sticky bit
-2. 文件链接个数
-3. 文件所有者
-4. 文件所在群组
-5. 文件长度
-6. 时间
-7. 文件名称
-
-
-采用chmod修改权限（参考[http://www.linuxidc.com/Linux/2015-03/114695.htm](http://www.linuxidc.com/Linux/2015-03/114695.htm)），如
-
-```bash
-chmod -R 700 Document/
-chmod -R [ugoa...][[+-=][perms...]] # refer to `man chmod` for more details
-```
-
-其中 `-R` 表示递归，`perms` 为上述 `rwxXst`，而 `a` 表示所有用户，即 `ugo`.
-
-采用 chown 改变所有者，比如
-
-```bash
-chown -R username:users Document/
-```
-
-`chmod g+s .` 会使得当前文件夹 `.` 中所有新建文件或文件夹都继承 `.` 的 group，而不是创建者所属的 group，所以这一般配合 `chgrp` 使用。参考 ['chmod g+s' command](https://unix.stackexchange.com/questions/182212/chmod-gs-command)
-
-## circos
-
-介绍见[DOWNLOAD CIRCOS, TUTORIALS AND TOOLS](http://circos.ca/software/download/tutorials/)
-
-[Install circos on ubuntu 14.04 LTS](https://gist.github.com/dyndna/18bb71494e021f672510)
-
 ## `user` vs. `sys`
 
 - `time` commands return three times, named `real`, `user` and `sys`, the detailed explanation refers to [What do 'real', 'user' and 'sys' mean in the output of time(1)?](https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1)
@@ -315,62 +217,6 @@ chown -R username:users Document/
 ## control android phone by PC's mouse and keyboard
 
 [How to Control Your Android Using Your Computer’s Mouse and Keyboard](https://www.makeuseof.com/tag/control-android-using-computers-mouse-keyboard/)
-
-## Font
-
-### `fc-list`
-
-view installed fonts
-
-```bash
-# only print the font-family
-$ fc-list : family
-# add language selector
-$ fc-list : family lang=zh
-...
-Fira Sans,Fira Sans UltraLight
-Fira Sans,Fira Sans Light
-Noto Serif CJK KR,Noto Serif CJK KR ExtraLight
-# with format option, get the family names of all the fonts (note that the above family also specify the detailed style)
-$ fc-list --format='%{family[0]}\n' :lang=zh | sort | uniq
-...
-文泉驿等宽微米黑
-文泉驿等宽正黑
-新宋体
-```
-
-refer to [fc-list command in Linux with examples](https://www.geeksforgeeks.org/fc-list-command-in-linux-with-examples/)
-
-### Install Local Fonts
-
-以安装仿宋和黑体为例，这是[本科毕业论文模板](https://hohoweiya.xyz/zju-thesis/src/zju-thesis.pdf)所需要的字体，字体文件已打包
-
-```bash
-$ wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz
-$ tar xvzf fonts.tar.gz
-fonts/STFANGSO.TTF
-fonts/
-fonts/simhei.ttf
-$ sudo mkdir -p /usr/share/fonts/truetype/custom/
-$ sudo mv fonts/* /usr/share/fonts/truetype/custom/
-$ sudo fc-cache -f -v
-```
-
-安装完成后，
-
-```bash
-$ fc-list :lang=zh
-/usr/share/fonts/truetype/custom/simhei.ttf: SimHei,黑体:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
-/usr/share/fonts/truetype/custom/STFANGSO.TTF: STFangsong,华文仿宋:style=Regular
-```
-
-### Some Free Fonts
-
-- [Mozilla's Fira Type Family](https://github.com/mozilla/Fira)
-    - [Fira for Metropolis theme](https://github.com/matze/mtheme/issues/280)
-    - [Fira Code](https://github.com/tonsky/FiraCode)
-        - [知乎：Fira Code —— 专为编程而生的字体](https://zhuanlan.zhihu.com/p/65362086)
-
 
 ## Nvidia Driver
 

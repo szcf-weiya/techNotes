@@ -13,6 +13,14 @@
 ## GitHub
 
 - 添加和设置项目徽章: [shields.io](http://shields.io/)
+- [开通 Sponsor](https://surmon.me/article/163)
+- [relase public from private repo](https://stackoverflow.com/questions/26217941/can-i-make-releases-public-from-a-private-github-repo)
+	- example: <https://github.com/szcf-weiya/TriMatchMOT>
+
+### Actions
+
+- [use `setup-python` instead of `container: python`](https://github.community/t/why-use-setup-python-action-instead-of-a-python-container/17332): fast and flexible
+	- examples: [:material-file-code:](https://github.com/szcf-weiya/Cell-Video/blob/5b6119ba5517a5e94ce0440586c62c25a3f9846d/.github/workflows/blank.yml#L24-L27)
 
 ## SETUP & INIT: `config`
 

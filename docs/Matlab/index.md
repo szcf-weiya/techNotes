@@ -22,6 +22,10 @@ refer to [Launching MATLAB without the desktop](https://blogs.mathworks.com/comm
 
 These are called [Startup Options](https://www.mathworks.com/help/matlab/matlab_env/startup-options.html), and the official Matlab describe the options for different systems, such as [matlab (Linux)](https://www.mathworks.com/help/matlab/ref/matlablinux.html), [matlab (Windows)](https://www.mathworks.com/help/matlab/ref/matlabwindows.html).
 
+## Debug with gdb
+
+See the official documentation: [Debug on Linux Platforms](https://www.mathworks.com/help/matlab/matlab_external/debugging-on-linux-platforms.html)
+
 ## Option `-wait`
 
 I saw the option in the `.bat` file for Windows. By checking the documentation, [matlab (Windows)](https://www.mathworks.com/help/matlab/ref/matlabwindows.html) said,

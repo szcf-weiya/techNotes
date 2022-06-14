@@ -8,7 +8,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Software#Purpose,_or_doma
     - Device drivers
     - Utilities
 
-The previous section System can be viewed as the second category, while the next section would contain many useful command line tools, which might be treated as part of the first category. Thus, this section would contain comprehensive application software, and most of them have a GUI. 
+This section would contain comprehensive application software, and most of them have a GUI. 
 
 <!--
 I try to categorize them as follows,
@@ -18,6 +18,9 @@ I try to categorize them as follows,
 - Multimedia: 
 -->
 
+
+!!! tip
+    The window of a software can be always set on top. First minimize the desired window, and the right click around the top menu, then select "Always on Top".
 
 ## Atom
 

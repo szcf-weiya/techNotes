@@ -1,6 +1,6 @@
 # Rocky Linux 
 
-The new group server is 
+Rocky Linux refers to the new server in Fan's Group
 
 ```bash
 $ lsb_release -a

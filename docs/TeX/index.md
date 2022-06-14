@@ -7,7 +7,6 @@
 
     1. download `install-tl`
     2. run it, and optionally specify the mirror location for faster download speed
-    3. 
 
 ### 2021 on Rocky
 
@@ -116,6 +115,9 @@ Refer to [How is 14pt giving font size smaller than 12pt?](https://tex.stackexch
 
 Refer to [For formal articles, should a displayed equation be followed by a punctuation to conform to the language grammar?](https://tex.stackexchange.com/questions/7542/for-formal-articles-should-a-displayed-equation-be-followed-by-a-punctuation-to)
 
+### misc
+
+- [symbols instead of numbers a footnote markers](https://tex.stackexchange.com/questions/826/symbols-instead-of-numbers-as-footnote-markers): `\usepackage[symbol]{footmisc}`
 
 ## Beamer
 
@@ -457,6 +459,12 @@ refer to [Problems with \printbibliography](https://tex.stackexchange.com/questi
 
 ## TiKZ
 
+- `tikzset`, `tikzstyle`, or directly around `tikzpicture`. [:link:](https://tex.stackexchange.com/questions/52372/should-tikzset-or-tikzstyle-be-used-to-define-tikz-styles)
+
+- `xshift` for arrow: [Start line shifted from anchor point node](https://tex.stackexchange.com/questions/391417/start-line-shifted-from-anchor-point-node)
+
+- [border of a shape inside](https://tex.stackexchange.com/questions/245141/pgf-tikz-draw-the-border-of-a-shape-inside-it)
+
 - label in place:
 
 ```tex
@@ -470,6 +478,13 @@ refer to [Problems with \printbibliography](https://tex.stackexchange.com/questi
 ```
 
 refer to [avoid overlapping of labels and arcs in Tikz - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/352562/avoid-overlapping-of-labels-and-arcs-in-tikz)
+
+- axis title position: use `every axis title/.style={..}`, refer to [pgfplot axis title position](https://tex.stackexchange.com/questions/277633/pgfplot-axis-title-position)
+
+## Figures
+
+- force subfigures to have same height and scale proportionally: [:link:](https://tex.stackexchange.com/questions/218378/forcing-subfigures-to-have-same-height-and-take-overall-x-of-linewidth-in-latex)
+	- examples: [:material-file-code:](https://github.com/szcf-weiya/Cell-Video/blob/5b6119ba5517a5e94ce0440586c62c25a3f9846d/report/technical-report2.tex#L180-L212)
 
 ## Formula
 
@@ -710,7 +725,8 @@ and application in
 - [Is there a way to slightly shrink a table, including font size, to fit within the column boundaries? - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/10863/is-there-a-way-to-slightly-shrink-a-table-including-font-size-to-fit-within-th)
 
 !!! example
-    [in table](https://github.com/szcf-weiya/Cell-Video/blob/d7725152fc5b5243d74d756f9db625e4f0e3d886/report/technical-report2.tex#L1406-L1412)
+    - [in table](https://github.com/szcf-weiya/Cell-Video/blob/d7725152fc5b5243d74d756f9db625e4f0e3d886/report/technical-report2.tex#L1406-L1412)
+	- use in beamer to shrink tables, and refer to [:link:](https://tex.stackexchange.com/questions/5067/shrinking-tables-for-presentations) for alternative ways.
 
 !!! bug
     > Error: extra alignment tab has been changed to \cr

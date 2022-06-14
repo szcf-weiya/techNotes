@@ -326,7 +326,10 @@ ln -s /usr/lib/R/module/lapack.so libRlapack.so
 
 !!! info
 	Another repo for learning Rcpp: [RcppNotes](https://github.com/szcf-weiya/RcppNotes)
-    
+	
+	See also:
+	- [Reproducing R rep with the times argument in C++ and Rcpp](https://stackoverflow.com/questions/28442582/reproducing-r-rep-with-the-times-argument-in-c-and-rcpp)
+ 
 ### cannot found -lRcpp
 
 ![](rcpp.png)

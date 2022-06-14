@@ -63,7 +63,7 @@ rm -r folder/ # delete the original folder
 
 ## Array
 
-- drop dimensions: `dropdims`
+- drop dimensions: `dropdims`, see [:link:](https://stackoverflow.com/questions/52505760/dropping-singleton-dimensions-in-julia/) for discussion on the necessity to specify the dims to drop
 - iterate each row of matrix: `eachrow()`
 - tuple to array: `collect()` or `[i for i in t]`
 

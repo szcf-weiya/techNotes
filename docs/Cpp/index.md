@@ -310,6 +310,10 @@ int &n = m;
 ![](MultiThread/res_5.png)
 
 
+## Algorithms
+
+- [three ways for iterating combinations](https://gist.github.com/shaunlebron/2843980)
+
 ## const 总结
 [ref](http://www.2cto.com/kf/201210/160536.html)
 
