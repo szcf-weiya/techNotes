@@ -541,20 +541,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/upgrade/" class="md-nav__link">
-        Upgradation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../Linux/wsl/" class="md-nav__link">
         WSL
       </a>
@@ -2191,6 +2177,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#github-as-another-repo" class="md-nav__link">
+    GitHub as another repo.
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2230,6 +2223,17 @@ git config --global credential.https://git.overleaf.com.helper store
 </ul>
 <h3 id="sync-with-github">Sync with GitHub<a class="headerlink" href="#sync-with-github" title="Permanent link">&para;</a></h3>
 <p>Directly operate on Overleaf via clicking the Menu button.</p>
+<h3 id="github-as-another-repo">GitHub as another repo.<a class="headerlink" href="#github-as-another-repo" title="Permanent link">&para;</a></h3>
+<p>If there are frequent updates from local laptop, such as bib files and figures, it might be better to add GitHub as a backup repo.</p>
+<p>Suppose you have a project <code>A</code> on overleaf.</p>
+<ol>
+<li>clone it to local laptop.</li>
+<li>create an empty repo on github</li>
+<li>add github as another remote repo</li>
+<li>update from laptop to overleaf, such as uploading figures, updating bib</li>
+<li>pull updates from overleaf</li>
+<li>backup to github</li>
+</ol>
 
               
             </article>

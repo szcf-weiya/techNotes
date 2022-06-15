@@ -636,6 +636,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#fuse_hidden" class="md-nav__link">
+    .fuse_hidden
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#runuser1000" class="md-nav__link">
     /run/user/1000
   </a>
@@ -892,20 +899,6 @@
     <li class="md-nav__item">
       <a href="../../shell/" class="md-nav__link">
         Shell Scripts
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../upgrade/" class="md-nav__link">
-        Upgradation
       </a>
     </li>
   
@@ -2644,6 +2637,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#fuse_hidden" class="md-nav__link">
+    .fuse_hidden
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#runuser1000" class="md-nav__link">
     /run/user/1000
   </a>
@@ -2878,10 +2878,10 @@
 <p class="admonition-title">Info</p>
 <p><strong>Most notes on this page are based on my Ubuntu laptop.</strong></p>
 <ul>
-<li>20.04: 2021-09-12 -&gt; Now. <a href="../18to20/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
-<li>18.04: 2020-04-12 -&gt; 2021-09-12. <a href="../16to18/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
-<li>16.04: ~ -&gt; 2020-04-12</li>
-<li>14.04: ~ -&gt; ~</li>
+<li><strong>20.04</strong>: 2021-09-12 -&gt; Now. <a href="../18to20/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li><strong>18.04</strong>: 2020-04-12 -&gt; 2021-09-12. <a href="../16to18/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li><strong>16.04</strong>: ~ -&gt; 2020-04-12</li>
+<li><strong>14.04</strong>: ~ -&gt; ~</li>
 </ul>
 </div>
 <h2 id="package-manager">Package Manager<a class="headerlink" href="#package-manager" title="Permanent link">&para;</a></h2>
@@ -3104,6 +3104,14 @@ drwxrwxrwx  <span class="m">1</span> weiya weiya          <span class="m">0</spa
 drwxrwxrwx  <span class="m">1</span> weiya weiya       <span class="m">8192</span> Mar <span class="m">18</span>  <span class="m">2016</span>  Boot/
 </code></pre></div>
 <p>最早可以追溯到 2016.03.18.</p>
+<h3 id="fuse_hidden"><code>.fuse_hidden</code><a class="headerlink" href="#fuse_hidden" title="Permanent link">&para;</a></h3>
+<p>I found a file <code>res/res_monodecomp/.fuse_hidden0016fbd000000001</code>, which is &ldquo;a file was deleted but there is at least one software which is still using it, so it cannot be removed permanently&rdquo; <a href="https://askubuntu.com/questions/493198/what-is-a-fuse-hidden-file-and-why-do-they-exist"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>. And it is suggested to use <code>lsof</code> to determine the application that uses such file. However,</p>
+<div class="highlight"><pre><span></span><code>$ lsof ./res/res_monodecomp/
+lsof: WARNING: can<span class="s1">&#39;t stat() tracefs file system /sys/kernel/debug/tracing</span>
+<span class="s1">      Output information may be incomplete.</span>
+<span class="s1">lsof: WARNING: can&#39;</span>t stat<span class="o">()</span> fuse.gvfsd-fuse file system /run/user/129/gvfs
+      Output information may be incomplete.
+</code></pre></div>
 <h3 id="runuser1000"><code>/run/user/1000</code><a class="headerlink" href="#runuser1000" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>

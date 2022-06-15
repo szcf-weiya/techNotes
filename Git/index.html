@@ -543,20 +543,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linux/upgrade/" class="md-nav__link">
-        Upgradation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Linux/wsl/" class="md-nav__link">
         WSL
       </a>
@@ -3317,9 +3303,10 @@ First, rewinding head to replay your work on top of it...
 </code></pre></div>
 <p>to remove the merge commit.</p>
 <h3 id="discard-local-changes">discard local changes<a class="headerlink" href="#discard-local-changes" title="Permanent link">&para;</a></h3>
+<p>Here are instructions when running <code>git status</code>.</p>
 <ul>
 <li>not added: just <code>git checkout .</code></li>
-<li>last added: <code>git reset HEAD</code></li>
+<li>last added: <code>git reset HEAD</code>, or <code>git restore --staged &lt;file&gt;</code></li>
 <li>last committed: <ul>
 <li>丢弃修改的内容：<code>git reset --hard HEAD^</code></li>
 <li>保留修改的内容：<code>git reset --soft HEAD^</code></li>
