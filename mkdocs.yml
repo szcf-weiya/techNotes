@@ -8,7 +8,7 @@ nav:
       - Application Software: Linux/software.md
       - Command-line Tools: Linux/tools.md
       - Shell Scripts: shell/index.md
-      - Upgradation: Linux/upgrade.md
+      # - Upgradation: Linux/upgrade.md
       - WSL: Linux/wsl.md
     - Servers: 
       - General: Linux/servers.md

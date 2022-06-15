@@ -3,10 +3,10 @@
 !!! info
     **Most notes on this page are based on my Ubuntu laptop.**
     
-    - 20.04: 2021-09-12 -> Now. [:link:](18to20.md)
-    - 18.04: 2020-04-12 -> 2021-09-12. [:link:](16to18.md)
-    - 16.04: ~ -> 2020-04-12
-    - 14.04: ~ -> ~
+    - **20.04**: 2021-09-12 -> Now. [:link:](18to20.md)
+    - **18.04**: 2020-04-12 -> 2021-09-12. [:link:](16to18.md)
+    - **16.04**: ~ -> 2020-04-12
+    - **14.04**: ~ -> ~
 
 ## Package Manager
 
@@ -296,6 +296,18 @@ drwxrwxrwx  1 weiya weiya       8192 Mar 18  2016  Boot/
 ```
 
 最早可以追溯到 2016.03.18.
+
+### `.fuse_hidden`
+
+I found a file `res/res_monodecomp/.fuse_hidden0016fbd000000001`, which is "a file was deleted but there is at least one software which is still using it, so it cannot be removed permanently" [:link:](https://askubuntu.com/questions/493198/what-is-a-fuse-hidden-file-and-why-do-they-exist). And it is suggested to use `lsof` to determine the application that uses such file. However,
+
+```bash
+$ lsof ./res/res_monodecomp/
+lsof: WARNING: can't stat() tracefs file system /sys/kernel/debug/tracing
+      Output information may be incomplete.
+lsof: WARNING: can't stat() fuse.gvfsd-fuse file system /run/user/129/gvfs
+      Output information may be incomplete.
+```
 
 ### `/run/user/1000`
 

@@ -402,6 +402,18 @@ Makefile:5988: recipe for target 'all' failed
 make: *** [all] Error 2
 ```
 
+## Image Viewer 
+
+The default software for viewing images. Start it from command line by `eog`.
+
+- set transparent background for `png` image
+
+default | desired 
+--- | ---
+![image](https://user-images.githubusercontent.com/13688320/173728951-39ad9ae1-f792-4675-8bae-e9f195723ad9.png) | ![image](https://user-images.githubusercontent.com/13688320/173728964-2a581414-278c-4d1a-835a-97005d7775aa.png)
+
+In a word, change the default setting "as check pattern" to a white custom color.
+
 ## Input Methods for Chinese
 
 !!! info

@@ -295,8 +295,10 @@ to remove the merge commit.
 
 ### discard local changes
 
+Here are instructions when running `git status`.
+
 - not added: just `git checkout .`
-- last added: `git reset HEAD`
+- last added: `git reset HEAD`, or `git restore --staged <file>`
 - last committed: 
 	- 丢弃修改的内容：`git reset --hard HEAD^`
 	- 保留修改的内容：`git reset --soft HEAD^`

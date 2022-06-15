@@ -22,4 +22,18 @@ Refer to
 
 ### Sync with GitHub
 
+
 Directly operate on Overleaf via clicking the Menu button.
+
+### GitHub as another repo.
+
+If there are frequent updates from local laptop, such as bib files and figures, it might be better to add GitHub as a backup repo.
+
+Suppose you have a project `A` on overleaf.
+
+1. clone it to local laptop.
+2. create an empty repo on github
+3. add github as another remote repo
+4. update from laptop to overleaf, such as uploading figures, updating bib
+5. pull updates from overleaf
+6. backup to github
