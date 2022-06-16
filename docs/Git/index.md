@@ -22,6 +22,10 @@
 - [use `setup-python` instead of `container: python`](https://github.community/t/why-use-setup-python-action-instead-of-a-python-container/17332): fast and flexible
 	- examples: [:material-file-code:](https://github.com/szcf-weiya/Cell-Video/blob/5b6119ba5517a5e94ce0440586c62c25a3f9846d/.github/workflows/blank.yml#L24-L27)
 
+### Searching
+
+- the symbol `:` in date in keywords in not proper ([Query 1](https://github.com/szcf-weiya/Clouds/issues?q=15%3A59%3A33)), instead `-` is OK ([Query 2](https://github.com/szcf-weiya/Clouds/issues?q=2022-03-01T15))
+
 ## SETUP & INIT: `config`
 
 ### Installation
