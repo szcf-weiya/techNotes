@@ -708,9 +708,13 @@ $ latexdef -p graphicx -f resizebox
 the basic grammar is
 
 ```tex
+\begin{table}
 \resizebox{\textwidth}{!}{
-  %
+	\begin{tabular}
+	...
+  \end{tabular}
 }
+\end{table}
 ```
 
 it works for images and tables
