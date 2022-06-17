@@ -3894,9 +3894,13 @@ $ latexdef -p graphicx -f resizebox
 <p>In general, how can I find the packages that a command belongs to? Here is a <a href="https://stackoverflow.com/questions/2440588/latex-how-to-find-packages-that-a-command-belongs-to">dicussion</a>, but seems not enough.</p>
 </div>
 <p>the basic grammar is</p>
-<div class="highlight"><pre><span></span><code><span class="k">\resizebox</span><span class="nb">{</span><span class="k">\textwidth</span><span class="nb">}{</span>!<span class="nb">}{</span>
-  <span class="c">%</span>
+<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>
+<span class="k">\resizebox</span><span class="nb">{</span><span class="k">\textwidth</span><span class="nb">}{</span>!<span class="nb">}{</span>
+    <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}</span>
+    ...
+  <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
 <span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
 </code></pre></div>
 <p>it works for images and tables</p>
 <blockquote>
