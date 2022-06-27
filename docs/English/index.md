@@ -1,3 +1,17 @@
+## 2022.06.27
+
+- [position of adverbs and adverb phrases](https://dictionary.cambridge.org/grammar/british-grammar/adverbs-and-adverb-phrases-position)
+    - mid position between the subject and the main verb:
+        - Apples always taste best when you pick them straight off the tree.
+    - when there is more than one verb, mid position means after the first auxiliary verb or after a modal verb:
+        - The government has **occasionally** been forced to change its mind. (after the first auxiliary verb)
+        - You can definitely never predict what will happen. (after a modal verb)
+        - We mightn't ever have met. (after the modal verb and before the auxiliary verb)
+    - Adverbs usually come after the main verb be, except in emphatic clauses
+        - She's always late for everything.
+    - When be is emphasised, the adverb comes before the verb
+        - I never was a fan of hers.
+
 ## 2022.06.14
 
 - English writing often uses slashes to form two-letter abbreviations [:link:](https://english.stackexchange.com/questions/115367/are-w-o-w-b-c-common-abbreviations-in-the-us), such as
