@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#analytics" class="md-skip">
+        <a href="#google-analytics" class="md-skip">
           Skip to content
         </a>
       
@@ -1543,6 +1543,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exclude-localhost" class="md-nav__link">
+    Exclude localhost
+  </a>
+  
+    <nav class="md-nav" aria-label="Exclude localhost">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-attempt" class="md-nav__link">
+    first attempt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-attempt" class="md-nav__link">
+    second attempt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2209,6 +2236,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exclude-localhost" class="md-nav__link">
+    Exclude localhost
+  </a>
+  
+    <nav class="md-nav" aria-label="Exclude localhost">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-attempt" class="md-nav__link">
+    first attempt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-attempt" class="md-nav__link">
+    second attempt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2227,9 +2281,11 @@
 
 
 
-<h1 id="analytics">Analytics<a class="headerlink" href="#analytics" title="Permanent link">&para;</a></h1>
+<h1 id="google-analytics">Google Analytics<a class="headerlink" href="#google-analytics" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/134682010">6.2 最全Google Analytics(分析)使用教程 - 知乎</a></li>
+<li><a href="http://www.chinawebanalytics.cn/google-analytics%E4%BB%A3%E7%A0%81diy-%E8%BF%9B%E9%98%B6%E7%AF%87/">Google Analytics代码DIY-进阶篇</a></li>
+<li><a href="http://blog.wpjam.com/2009/06/30/google-analytics-in-douban/">浅析豆瓣的 Google Analytics 应用</a></li>
 </ul>
 <h2 id="upgrade-to-ga4">Upgrade to GA4<a class="headerlink" href="#upgrade-to-ga4" title="Permanent link">&para;</a></h2>
 <p>Currently, I am using <code>analytics.js</code>, but GA4 requires <code>gtag.js</code>. As a result, the <a href="https://support.google.com/analytics/answer/9744165#zippy=%2Cadd-your-tag-directly-to-your-web-pages">setup wizard</a> does not successed.</p>
@@ -2246,6 +2302,24 @@
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/369419998">新版谷歌分析 GA4 详细设置/更新指南</a></li>
 </ul>
+<h2 id="exclude-localhost">Exclude localhost<a class="headerlink" href="#exclude-localhost" title="Permanent link">&para;</a></h2>
+<h3 id="first-attempt">first attempt<a class="headerlink" href="#first-attempt" title="Permanent link">&para;</a></h3>
+<p>follow the instruction in <a href="https://support.google.com/analytics/answer/10104470?hl=en#zippy=%2Cusing-cidr-notation">[GA4] Filter out internal traffic</a>, and add <code>127.0.0.1</code> as the internal ip, but it does not work. Then I realized that although I am visited the website from 127.0.0.1, the actual GA information is sent from my public IP.</p>
+<h3 id="second-attempt">second attempt<a class="headerlink" href="#second-attempt" title="Permanent link">&para;</a></h3>
+<p>I found the answers in <a href="https://stackoverflow.com/questions/40297763/how-to-disable-google-analytics-on-localhost">how to disable google analytics on localhost</a>, and then found the official documentations</p>
+<ul>
+<li><a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/user-opt-out">https://developers.google.com/analytics/devguides/collection/analyticsjs/user-opt-out</a></li>
+<li><a href="https://developers.google.com/tag-platform/devguides/privacy#gtag.js_5">https://developers.google.com/tag-platform/devguides/privacy#gtag.js_5</a></li>
+</ul>
+<p>where the first one is for the old GA, and the second one is for GA4. Although there is an alternative method for GA4, we can use the same method as in old GA, and the resulting scripts to be added before the GA script is</p>
+<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">          </span><span class="kd">var</span><span class="w"> </span><span class="nx">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span><span class="p">;</span><span class="w"></span>
+<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">host</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;127.0.0.1&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">host</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;localhost&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nb">window</span><span class="p">[</span><span class="s1">&#39;ga-disable-UA-XXXXXXX&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="nb">window</span><span class="p">[</span><span class="s1">&#39;ga-disable-G-XXXXXX&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">          </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/script&gt;</span><span class="w"></span>
+</code></pre></div>
 
               
             </article>
