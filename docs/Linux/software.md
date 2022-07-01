@@ -825,6 +825,21 @@ $ vi ~/.config/onedrive/business_shared_folders
 $ onedrive --synchronize --sync-shared-folders [--resync]
 ```
 
+## OpenShot
+
+!!! info
+    Post on: 2022-07-01 23:48:04
+
+Homepage: <https://www.openshot.org/en/user-guide/>
+
+Install with the official instruction:
+
+```bash
+sudo add-apt-repository ppa:openshot.developers/ppa
+sudo apt update
+sudo apt install openshot-qt python3-openshot
+```
+
 ## Peek
 
 [homepage](https://github.com/phw/peek), easy to use, can convert to gif.
