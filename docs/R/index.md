@@ -86,6 +86,22 @@ rstudio
 
 详见 [Issue #32 use rstudio in env R4.1.0](https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987)
 
+## `sys.nframe()`
+
+Here is an equivalent way for pythonic `if __name__ == "__main__"`
+
+```r
+# runs only when script is run by itself
+if (sys.nframe() == 0){
+# ... do main stuff
+}
+```
+
+refer to [:link:](https://stackoverflow.com/questions/2968220/is-there-an-r-equivalent-of-the-pythonic-if-name-main-main)
+
+!!! example
+	[My Repos](https://github.com/search?q=user%3Aszcf-weiya+nframe&type=code)
+
 ## Common Tips
 
 - 删除当前工作区所有变量: `rm(list = ls(all = TRUE))`

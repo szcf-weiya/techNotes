@@ -1,3 +1,7 @@
+## 2022.07.02
+
+- This can be done by exporting the video to a raw bitstream format and **muxing** to a container while creating new timestamps. [:link:](https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video)
+
 ## 2022.06.27
 
 - [position of adverbs and adverb phrases](https://dictionary.cambridge.org/grammar/british-grammar/adverbs-and-adverb-phrases-position)
