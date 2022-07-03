@@ -844,6 +844,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sysnframe" class="md-nav__link">
+    sys.nframe()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#common-tips" class="md-nav__link">
     Common Tips
   </a>
@@ -2736,6 +2743,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sysnframe" class="md-nav__link">
+    sys.nframe()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#common-tips" class="md-nav__link">
     Common Tips
   </a>
@@ -3233,6 +3247,18 @@ N: See apt-secure(8) manpage for repository creation and user configuration deta
 rstudio
 </code></pre></div>
 <p>详见 <a href="https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987">Issue #32 use rstudio in env R4.1.0</a></p>
+<h2 id="sysnframe"><code>sys.nframe()</code><a class="headerlink" href="#sysnframe" title="Permanent link">&para;</a></h2>
+<p>Here is an equivalent way for pythonic <code>if __name__ == "__main__"</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># runs only when script is run by itself</span>
+<span class="nf">if </span><span class="p">(</span><span class="nf">sys.nframe</span><span class="p">()</span> <span class="o">==</span> <span class="m">0</span><span class="p">){</span>
+<span class="c1"># ... do main stuff</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>refer to <a href="https://stackoverflow.com/questions/2968220/is-there-an-r-equivalent-of-the-pythonic-if-name-main-main"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><a href="https://github.com/search?q=user%3Aszcf-weiya+nframe&amp;type=code">My Repos</a></p>
+</div>
 <h2 id="common-tips">Common Tips<a class="headerlink" href="#common-tips" title="Permanent link">&para;</a></h2>
 <ul>
 <li>删除当前工作区所有变量: <code>rm(list = ls(all = TRUE))</code></li>
