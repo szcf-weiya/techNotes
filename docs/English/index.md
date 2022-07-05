@@ -1,3 +1,7 @@
+## 2022.07.04
+
+- Could anyone help me solve this problem, or at least **steer (建议，劝告)** me in the right direction?
+
 ## 2022.07.02
 
 - This can be done by exporting the video to a raw bitstream format and **muxing** to a container while creating new timestamps. [:link:](https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video)

@@ -1014,6 +1014,8 @@ tmux a -t NAME
 tmux kill-server
 # rename: https://superuser.com/questions/428016/how-do-i-rename-a-session-in-tmux
 Ctrl + B, $
+# kill the current session
+Ctrl + B, x
 ```
 
 refer to

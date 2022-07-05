@@ -264,7 +264,8 @@ refer to [Linux安装NVIDIA显卡驱动的正确姿势](https://blog.csdn.net/wf
 
 但是 `jobs` [只显示属于当前 shell 的后台程序](https://superuser.com/a/607219), 如果重新登录，则不会显示后台程序，详见 [`jobs` command doesn't show any background processes](https://superuser.com/questions/607218/jobs-command-doesnt-show-any-background-processes)
 
-－ `nohup command &` vs `command &`: 一般情况下，前者在当前 shell 关掉情况下仍能运行，后者不行；但其实如果 `shopt | grep hupon` 的选项为 off （详细解释另见 [How bash handles the jobs when logout? - Stack Overflow](https://stackoverflow.com/questions/4298741/how-bash-handles-the-jobs-when-logout)），后者也能继续运行，所以区别不大，不过如果有输出前者会输出到文件 `nohup.txt`。更多细节详见 [What's the difference between nohup and ampersand](https://stackoverflow.com/questions/15595374/whats-the-difference-between-nohup-and-ampersand)
+- `nohup command &` vs `command &`: 一般情况下，前者在当前 shell 关掉情况下仍能运行，后者不行；但其实如果 `shopt | grep hupon` 的选项为 off （详细解释另见 [How bash handles the jobs when logout? - Stack Overflow](https://stackoverflow.com/questions/4298741/how-bash-handles-the-jobs-when-logout)），后者也能继续运行（通过 `ps -ef | grep command` 检查运行状态），所以区别不大，不过如果有输出前者会输出到文件 `nohup.txt`。更多细节详见 [What's the difference between nohup and ampersand](https://stackoverflow.com/questions/15595374/whats-the-difference-between-nohup-and-ampersand)
+    - 在 tmux session 里面，当关闭 tmux session 时，只有 `nohup ./foo.sh &` 可以继续运行，而 `./foo.sh &` 则不行，其中 `foo.sh` 中代码为 `for i in {1..100}; do echo $i; sleep 1; done`。另见我提的问题 [linux - Different behaviors of nuhup and ampersand (`&`) in tmux - Stack Overflow](https://stackoverflow.com/questions/72868743/different-behaviors-of-nuhup-and-ampersand-in-tmux)
 
 似乎 `docker run` 使用 nohup 会直接退出，并生成文件 `nohup.txt`，里面内容为“the input device is not a TTY”.
 

@@ -25,15 +25,18 @@ Refer to
 
 Directly operate on Overleaf via clicking the Menu button.
 
-### GitHub as another repo.
+### GitHub as Backup 
+
+![image](https://user-images.githubusercontent.com/13688320/177310131-8cee1767-b4a9-426e-a086-91dd59abad50.png)
 
 If there are frequent updates from local laptop, such as bib files and figures, it might be better to add GitHub as a backup repo.
 
-Suppose you have a project `A` on overleaf.
+Suppose you have a project on overleaf.
 
 1. clone it to local laptop.
-2. create an empty repo on github
-3. add github as another remote repo
-4. update from laptop to overleaf, such as uploading figures, updating bib
-5. pull updates from overleaf
-6. backup to github
+2. create an empty repo on github, say `NewRepo`
+3. add github as another remote repo: `git remote add backup git@github.com:szcf-weiya/NewRepo.git`
+4. update from laptop to overleaf, such as uploading figures, updating bib: `git push origin master`
+5. pull updates from overleaf: `git pull`
+6. backup to github: `git push backup master`
+

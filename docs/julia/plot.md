@@ -35,9 +35,10 @@ By the way, the same error was also thrown when just plot into a file instead of
 ENV["GKSwstype"] = "100"
 ```
 
-## Horizontal Legend
+## Math formula
 
-only support in PGFPlotsX currently: <https://github.com/JuliaPlots/Plots.jl/issues/2206>
+- only formula: `L"\alpha"`
+- consists of plain text and formula: `latexstring("Growth Curve (\$\\sigma = 1.5\$)")`
 
 ## Violin Plot
 
@@ -112,32 +113,38 @@ refer to [Kernel density estimation status](https://discourse.julialang.org/t/ke
 
 - [grid_plot_acc_vs_rate_revisit](https://github.com/szcf-weiya/Cell-Video/blob/8cffd45451c0b1af9da4199c7ef611d836c0e86e/DP/visualization.jl#L155-L217) and [demo](https://github.com/szcf-weiya/Cell-Video/blob/last-revisit/DP/110_original_with_revisit_2019-10-09T11:20:28_oracle_setting_2019-09-22T20:06:59_precision.pdf)
     - multiple subplots with `sharex="all", sharey="all"`
-    -  `ax0 = fig.add_subplot(111, frameon=false)`
+    - `ax0 = fig.add_subplot(111, frameon=false)`
     - `plt.text`
 
-## multiple labels
+## Multiple labels
 
 In Julia 1.4.0 with Plots.jl v1.0.14,
 
-```julia
-using Plots
-x = rand(10, 2)
-plot(1:10, x, label = ["a", "b"])
-```
+=== "Wrong"
 
-will produce
+    ```julia
+    using Plots
+    x = rand(10, 2)
+    plot(1:10, x, label = ["a", "b"])
+    ```
 
-![](labels_col.png)
+    will produce
 
-where these two lines share the same label instead of one label for one line. But if replacing the column vector with row vector,
+    ![](labels_col.png)
 
-```julia
-plot(1:10, x, label = ["a" "b"])
-```
+    where these two lines share the same label instead of one label for one line. 
 
-will return the correct result,
+=== "Correct"
 
-![](labels_row.png)
+    But if replacing the column vector with row vector,
+
+    ```julia
+    plot(1:10, x, label = ["a" "b"])
+    ```
+
+    will return the correct result,
+
+    ![](labels_row.png)
 
 Refer to [Plots (plotly) multiple series or line labels in legend](https://discourse.julialang.org/t/plots-plotly-multiple-series-or-line-labels-in-legend/13001), which also works `GR` backend.
 
@@ -205,6 +212,8 @@ refer to [warning about too many open figures](https://stackoverflow.com/questio
 - horizontal legend: currently (2022-06-14 17:37:45) only for PGFPlotsX backend
     - feature request for other backend, which includes my comment for usage with PGFPlotsX [:link:](https://github.com/JuliaPlots/Plots.jl/issues/2206)
     - [an example](https://github.com/szcf-weiya/Clouds/issues/33#issuecomment-753603797), motivated by [:link:](https://tex.stackexchange.com/questions/101576/how-to-draw-horizontalrow-legend-without-the-surronding-rectangle)
+- left alignment in PGFPlotsX backend: by default, it aligned to the center. `legend_cell_align = "left", extra_kwargs = :subplot`, but note that it seems each command should add such options.
+    - examples: [:material-file-code:](https://github.com/search?q=user%3Aszcf-weiya+legend_cell_align&type=code)
 
 ## two yaxis
 

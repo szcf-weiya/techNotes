@@ -51,6 +51,7 @@ nav:
       - TravisCI: TeX/CI.md
       - arXiv: TeX/arxiv.md
       - VarGreek: TeX/vargreek.md
+      - Overleaf: TeX/overleaf.md
     - Markdown: 
       - General: doc/markdown.md
     - StaticPages:
