@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/julia/plot/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -1028,8 +1028,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#horizontal-legend" class="md-nav__link">
-    Horizontal Legend
+  <a href="#math-formula" class="md-nav__link">
+    Math formula
   </a>
   
 </li>
@@ -1078,7 +1078,7 @@
       
         <li class="md-nav__item">
   <a href="#multiple-labels" class="md-nav__link">
-    multiple labels
+    Multiple labels
   </a>
   
 </li>
@@ -1483,6 +1483,20 @@
     <li class="md-nav__item">
       <a href="../../TeX/vargreek/" class="md-nav__link">
         VarGreek
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TeX/overleaf/" class="md-nav__link">
+        Overleaf
       </a>
     </li>
   
@@ -2301,8 +2315,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#horizontal-legend" class="md-nav__link">
-    Horizontal Legend
+  <a href="#math-formula" class="md-nav__link">
+    Math formula
   </a>
   
 </li>
@@ -2351,7 +2365,7 @@
       
         <li class="md-nav__item">
   <a href="#multiple-labels" class="md-nav__link">
-    multiple labels
+    Multiple labels
   </a>
   
 </li>
@@ -2435,8 +2449,11 @@ julia&gt; plot<span class="o">(</span><span class="m">1</span>:10<span class="o"
 <div class="highlight"><pre><span></span><code><span class="c"># https://discourse.julialang.org/t/generation-of-documentation-fails-qt-qpa-xcb-could-not-connect-to-display/60988/4</span><span class="w"></span>
 <span class="nb">ENV</span><span class="p">[</span><span class="s">&quot;GKSwstype&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;100&quot;</span><span class="w"></span>
 </code></pre></div>
-<h2 id="horizontal-legend">Horizontal Legend<a class="headerlink" href="#horizontal-legend" title="Permanent link">&para;</a></h2>
-<p>only support in PGFPlotsX currently: <a href="https://github.com/JuliaPlots/Plots.jl/issues/2206">https://github.com/JuliaPlots/Plots.jl/issues/2206</a></p>
+<h2 id="math-formula">Math formula<a class="headerlink" href="#math-formula" title="Permanent link">&para;</a></h2>
+<ul>
+<li>only formula: <code>L"\alpha"</code></li>
+<li>consists of plain text and formula: <code>latexstring("Growth Curve (\$\\sigma = 1.5\$)")</code></li>
+</ul>
 <h2 id="violin-plot">Violin Plot<a class="headerlink" href="#violin-plot" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">StatsPlots</span><span class="w"></span>
 <span class="n">violin</span><span class="p">(</span><span class="n">repeat</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="n">outer</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span><span class="n">randn</span><span class="p">(</span><span class="mi">300</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"></span>
@@ -2487,19 +2504,28 @@ julia&gt; plot<span class="o">(</span><span class="m">1</span>:10<span class="o"
 </ul>
 </li>
 </ul>
-<h2 id="multiple-labels">multiple labels<a class="headerlink" href="#multiple-labels" title="Permanent link">&para;</a></h2>
+<h2 id="multiple-labels">Multiple labels<a class="headerlink" href="#multiple-labels" title="Permanent link">&para;</a></h2>
 <p>In Julia 1.4.0 with Plots.jl v1.0.14,</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Wrong</label><label for="__tabbed_1_2">Correct</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">Plots</span><span class="w"></span>
 <span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
 <span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">])</span><span class="w"></span>
 </code></pre></div>
 <p>will produce</p>
 <p><img alt="" src="../labels_col.png" /></p>
-<p>where these two lines share the same label instead of one label for one line. But if replacing the column vector with row vector,</p>
+<p>where these two lines share the same label instead of one label for one line. </p>
+</div>
+<div class="tabbed-block">
+<p>But if replacing the column vector with row vector,</p>
 <div class="highlight"><pre><span></span><code><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">])</span><span class="w"></span>
 </code></pre></div>
 <p>will return the correct result,</p>
 <p><img alt="" src="../labels_row.png" /></p>
+</div>
+</div>
+</div>
 <p>Refer to <a href="https://discourse.julialang.org/t/plots-plotly-multiple-series-or-line-labels-in-legend/13001">Plots (plotly) multiple series or line labels in legend</a>, which also works <code>GR</code> backend.</p>
 <h2 id="suptitle-for-subplots">suptitle for subplots<a class="headerlink" href="#suptitle-for-subplots" title="Permanent link">&para;</a></h2>
 <p>currently， no a option to set a suptitle for subplots, but we can use <code>@layout</code> to plot the title in a grid, such as <a href="https://github.com/szcf-weiya/TB/blob/c332307263cdbab20a453e6abe74790236321048/CFPC/sim_cpc_scores.jl#L87-L93">szcf-weiya/TB</a></p>
@@ -2550,6 +2576,10 @@ julia&gt; plot<span class="o">(</span><span class="m">1</span>:10<span class="o"
 <li>horizontal legend: currently (2022-06-14 17:37:45) only for PGFPlotsX backend<ul>
 <li>feature request for other backend, which includes my comment for usage with PGFPlotsX <a href="https://github.com/JuliaPlots/Plots.jl/issues/2206"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 <li><a href="https://github.com/szcf-weiya/Clouds/issues/33#issuecomment-753603797">an example</a>, motivated by <a href="https://tex.stackexchange.com/questions/101576/how-to-draw-horizontalrow-legend-without-the-surronding-rectangle"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+</ul>
+</li>
+<li>left alignment in PGFPlotsX backend: by default, it aligned to the center. <code>legend_cell_align = "left", extra_kwargs = :subplot</code>, but note that it seems each command should add such options.<ul>
+<li>examples: <a href="https://github.com/search?q=user%3Aszcf-weiya+legend_cell_align&amp;type=code"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5 3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74Z"/></svg></span></a></li>
 </ul>
 </li>
 </ul>
@@ -2696,7 +2726,7 @@ julia&gt; plot<span class="o">(</span><span class="m">1</span>:10<span class="o"
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

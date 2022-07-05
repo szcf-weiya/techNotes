@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/TeX/overleaf/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -250,6 +250,8 @@
         
   
   
+    
+  
 
 
   
@@ -261,7 +263,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         DocProgramming
       </a>
     </li>
@@ -1245,12 +1247,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -1271,14 +1275,16 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" checked>
       
       
       
@@ -1346,6 +1352,88 @@
       <a href="../vargreek/" class="md-nav__link">
         VarGreek
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overleaf
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Overleaf
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-gitgithub" class="md-nav__link">
+    Integration with Git/GitHub
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration with Git/GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passwordless" class="md-nav__link">
+    Passwordless
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sync-with-github" class="md-nav__link">
+    Sync with GitHub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-as-backup" class="md-nav__link">
+    GitHub as Backup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2178,8 +2266,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#github-as-another-repo" class="md-nav__link">
-    GitHub as another repo.
+  <a href="#github-as-backup" class="md-nav__link">
+    GitHub as Backup
   </a>
   
 </li>
@@ -2223,16 +2311,17 @@ git config --global credential.https://git.overleaf.com.helper store
 </ul>
 <h3 id="sync-with-github">Sync with GitHub<a class="headerlink" href="#sync-with-github" title="Permanent link">&para;</a></h3>
 <p>Directly operate on Overleaf via clicking the Menu button.</p>
-<h3 id="github-as-another-repo">GitHub as another repo.<a class="headerlink" href="#github-as-another-repo" title="Permanent link">&para;</a></h3>
+<h3 id="github-as-backup">GitHub as Backup<a class="headerlink" href="#github-as-backup" title="Permanent link">&para;</a></h3>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/177310131-8cee1767-b4a9-426e-a086-91dd59abad50.png" /></p>
 <p>If there are frequent updates from local laptop, such as bib files and figures, it might be better to add GitHub as a backup repo.</p>
-<p>Suppose you have a project <code>A</code> on overleaf.</p>
+<p>Suppose you have a project on overleaf.</p>
 <ol>
 <li>clone it to local laptop.</li>
-<li>create an empty repo on github</li>
-<li>add github as another remote repo</li>
-<li>update from laptop to overleaf, such as uploading figures, updating bib</li>
-<li>pull updates from overleaf</li>
-<li>backup to github</li>
+<li>create an empty repo on github, say <code>NewRepo</code></li>
+<li>add github as another remote repo: <code>git remote add backup git@github.com:szcf-weiya/NewRepo.git</code></li>
+<li>update from laptop to overleaf, such as uploading figures, updating bib: <code>git push origin master</code></li>
+<li>pull updates from overleaf: <code>git pull</code></li>
+<li>backup to github: <code>git push backup master</code></li>
 </ol>
 
               
@@ -2249,6 +2338,42 @@ git config --global credential.https://git.overleaf.com.helper store
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../vargreek/" class="md-footer__link md-footer__link--prev" aria-label="Previous: VarGreek" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              VarGreek
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../doc/markdown/" class="md-footer__link md-footer__link--next" aria-label="Next: General" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              General
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2332,7 +2457,7 @@ git config --global credential.https://git.overleaf.com.helper store
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

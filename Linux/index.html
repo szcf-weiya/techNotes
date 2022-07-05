@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -1612,6 +1612,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TeX/overleaf/" class="md-nav__link">
+        Overleaf
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2882,7 +2896,12 @@ Mon Aug  <span class="m">2</span> <span class="m">22</span>:08:19 <span class="m
 </li>
 </ul>
 <p>但是 <code>jobs</code> <a href="https://superuser.com/a/607219">只显示属于当前 shell 的后台程序</a>, 如果重新登录，则不会显示后台程序，详见 <a href="https://superuser.com/questions/607218/jobs-command-doesnt-show-any-background-processes"><code>jobs</code> command doesn&rsquo;t show any background processes</a></p>
-<p>－ <code>nohup command &amp;</code> vs <code>command &amp;</code>: 一般情况下，前者在当前 shell 关掉情况下仍能运行，后者不行；但其实如果 <code>shopt | grep hupon</code> 的选项为 off （详细解释另见 <a href="https://stackoverflow.com/questions/4298741/how-bash-handles-the-jobs-when-logout">How bash handles the jobs when logout? - Stack Overflow</a>），后者也能继续运行，所以区别不大，不过如果有输出前者会输出到文件 <code>nohup.txt</code>。更多细节详见 <a href="https://stackoverflow.com/questions/15595374/whats-the-difference-between-nohup-and-ampersand">What&rsquo;s the difference between nohup and ampersand</a></p>
+<ul>
+<li><code>nohup command &amp;</code> vs <code>command &amp;</code>: 一般情况下，前者在当前 shell 关掉情况下仍能运行，后者不行；但其实如果 <code>shopt | grep hupon</code> 的选项为 off （详细解释另见 <a href="https://stackoverflow.com/questions/4298741/how-bash-handles-the-jobs-when-logout">How bash handles the jobs when logout? - Stack Overflow</a>），后者也能继续运行（通过 <code>ps -ef | grep command</code> 检查运行状态），所以区别不大，不过如果有输出前者会输出到文件 <code>nohup.txt</code>。更多细节详见 <a href="https://stackoverflow.com/questions/15595374/whats-the-difference-between-nohup-and-ampersand">What&rsquo;s the difference between nohup and ampersand</a><ul>
+<li>在 tmux session 里面，当关闭 tmux session 时，只有 <code>nohup ./foo.sh &amp;</code> 可以继续运行，而 <code>./foo.sh &amp;</code> 则不行，其中 <code>foo.sh</code> 中代码为 <code>for i in {1..100}; do echo $i; sleep 1; done</code>。另见我提的问题 <a href="https://stackoverflow.com/questions/72868743/different-behaviors-of-nuhup-and-ampersand-in-tmux">linux - Different behaviors of nuhup and ampersand (<code>&amp;</code>) in tmux - Stack Overflow</a></li>
+</ul>
+</li>
+</ul>
 <p>似乎 <code>docker run</code> 使用 nohup 会直接退出，并生成文件 <code>nohup.txt</code>，里面内容为“the input device is not a TTY”.</p>
 <h2 id="crontab">crontab定时任务<a class="headerlink" href="#crontab" title="Permanent link">&para;</a></h2>
 <p><code>* */1 * * * *</code> 表现为每分钟执行，但是本来第 1 列应当为分钟，而第 2 列为小时，这样使用对用法理解错误，而且改成 <code>* * */1 * * *</code> 仍然表现为每分钟。试图</p>
@@ -3248,7 +3267,7 @@ System has not been booted with systemd as init system <span class="o">(</span>P
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.0238f547.min.js"></script>
+      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
