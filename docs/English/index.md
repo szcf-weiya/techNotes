@@ -1768,13 +1768,12 @@ None
 ## 2020.11.12
 
 - Medically speaking, diabetes is not **curable**. Once a person is diagnosed with diabetes, he or she will carry diabetes for the rest of life. Only under successful management, diabetes can go into "**remission**" state.
-- **influenza** is more of an acute condition that patient can recover from in a short period of time.
+- **influenza (流行性感冒)** is more of an acute condition that patient can recover from in a short period of time.
 - ICD-9-CM has refined coding **granularity (间隔尺寸，粒度)** to classify and group diseases and medical conditions.
 
 ## 2020.11.11
 
 - These **savvy (有见识的；懂实际知识的；通情达理的)** speakers have some tips for novice speakers.
-
 
 ## 2020.11.10
 
