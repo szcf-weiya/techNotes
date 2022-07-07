@@ -3454,6 +3454,12 @@ $ which pdflatex
 </code></pre></div>
 <p>参考 <a href="https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository">Change TeX Live Main Repository</a></p>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
+<ul>
+<li>space after LaTeX commands, </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>xspace<span class="nb">}</span>
+<span class="k">\newcommand\foo</span><span class="nb">{</span>foo<span class="k">\xspace</span><span class="nb">}</span>
+</code></pre></div>
 <h3 id="line-breaks">line breaks<a class="headerlink" href="#line-breaks" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>\\</code>, <code>\newline</code>, <code>\tabularnewline</code> <a href="https://tex.stackexchange.com/questions/78796/difference-between-and-tabularnewline"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59Z"/></svg></span></a>: when writing a table, the first one can be confused, while the second one ends the line in a cell, and the latter ends the rows of the table. A good side is that when writing tex using julia, <code>raw"\command"</code> does not need to escape <code>\</code>, but it is still required to use <code>raw"\\\\"</code> to represent <code>\\</code>.</li>
