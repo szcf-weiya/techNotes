@@ -522,6 +522,15 @@ $ ls -R | grep '\.md$'
 
 where `.` needs to be escape and `$` is necessary, otherwise it would match strings like `rmd`.
 
+- list all symbolic links
+
+```bash
+$ find . -type l -ls
+```
+
+!!! warning
+	Parsing `ls`, such as `ls | grep "\->"` is a bad idea. [:link:](https://askubuntu.com/questions/522051/how-to-list-all-symbolic-links-in-a-directory)
+
 ## `grep`
 
 - `-P`: perl-style regex
