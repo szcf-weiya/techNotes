@@ -3587,6 +3587,15 @@ $ find . -user user
 <div class="highlight"><pre><span></span><code>$ ls -R <span class="p">|</span> grep <span class="s1">&#39;\.md$&#39;</span>
 </code></pre></div>
 <p>where <code>.</code> needs to be escape and <code>$</code> is necessary, otherwise it would match strings like <code>rmd</code>.</p>
+<ul>
+<li>list all symbolic links</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ find . -type l -ls
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Parsing <code>ls</code>, such as <code>ls | grep "\-&gt;"</code> is a bad idea. <a href="https://askubuntu.com/questions/522051/how-to-list-all-symbolic-links-in-a-directory"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+</div>
 <h2 id="grep"><code>grep</code><a class="headerlink" href="#grep" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>-P</code>: perl-style regex</li>
