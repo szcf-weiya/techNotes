@@ -1,3 +1,9 @@
+## 2022.07.14
+
+- In today's tech-driven world, it's **imperative (迫切的)** to know how to handle data.
+- holistically
+- holistic approach: 整体分析，整体研究
+
 ## 2022.07.04
 
 - Could anyone help me solve this problem, or at least **steer (建议，劝告)** me in the right direction?
@@ -3791,4 +3797,4 @@ the glory of Tang dynasty: 大唐荣耀
     - complex: 侧重内在关系的复杂，需通过仔细研究与了解才能掌握和运用
     - complicated: 近似 complex，但语气更强，着重极其复杂，很难分析、分辨或解释
     - sophisticated: 侧重事物发展或达到高级的程度所体现出的复杂
-    - intricate: 着重指错综复杂，令人迷糊理解。
+    - intricate: 着重指错综复杂，令人迷糊理解。intricacy: 错综复杂
