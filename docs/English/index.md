@@ -1,3 +1,7 @@
+## 2022.07.21
+
+- the famous Box's **aphorism (格言，警句)**: "All models are wrong but some are useful".
+
 ## 2022.07.14
 
 - In today's tech-driven world, it's **imperative (迫切的)** to know how to handle data.
