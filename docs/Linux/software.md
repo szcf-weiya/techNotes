@@ -1469,6 +1469,9 @@ it works! refer to [Ubuntu forum: Cant reboot wine](https://ubuntuforums.org/sho
 
 这个关键点在于，使其能够同时运行 wine 和 `disable-wechat-shadow.py` 脚本文件，原 `WeChat.desktop` 文件为
 
+!!! info
+    ".desktop" 文件存放在 `~/.local/share/applications` 和 `/usr/share/applications`，而 `WeChat.desktop` 直接放在 `/home/weiya/Desktop`.
+
 ```bash
 Exec=env WINEPREFIX="/home/weiya/.wine32" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/WeChat/WeChat.lnk
 ```
