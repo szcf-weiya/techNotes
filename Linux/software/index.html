@@ -4854,6 +4854,10 @@ $ wineboot -r <span class="c1"># restart</span>
 <p>但是后来才发现，开机自启动并不适用于策略二提供的脚本，因为在判断没有微信时，程序会自动退出去。本来也想着简单改下使其能够始终运行，但是觉得这种不如原作者的更优，白白占用内存。</p>
 <h3 id="desktop">修改 desktop 文件<a class="headerlink" href="#desktop" title="Permanent link">&para;</a></h3>
 <p>这个关键点在于，使其能够同时运行 wine 和 <code>disable-wechat-shadow.py</code> 脚本文件，原 <code>WeChat.desktop</code> 文件为</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>&ldquo;.desktop&rdquo; 文件存放在 <code>~/.local/share/applications</code> 和 <code>/usr/share/applications</code>，而 <code>WeChat.desktop</code> 直接放在 <code>/home/weiya/Desktop</code>.</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span> wine C:<span class="se">\\\\</span>windows<span class="se">\\\\</span>command<span class="se">\\\\</span>start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start<span class="se">\\</span> Menu/Programs/WeChat/WeChat.lnk
 </code></pre></div>
 <p>第一种尝试便是直接加上 <code>&amp; python3 /home/weiya/disable-wechat-shadow.py</code>，但是似乎当做了 wine 的 argument，这一点<a href="https://askubuntu.com/a/461495">@mango</a>也指出</p>
