@@ -351,6 +351,16 @@ where
 
 refer to [How to compare two time stamps?](https://unix.stackexchange.com/questions/375911/how-to-compare-two-time-stamps)
 
+## `diff`
+
+- compare contents of two folders, see also [:link:](https://askubuntu.com/questions/421712/comparing-the-contents-of-two-directories)
+
+```bash
+$ diff folder1 folder2
+```
+
+
+
 ## `du`
 
 - list size of subdirectories/files: `du -shc *`, where `-c` outputs the total
