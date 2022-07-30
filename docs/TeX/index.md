@@ -366,6 +366,18 @@ The idea is to define the command in `natbib+bibtex` as `biblatex+biber`, and ke
 
 实战例子：[szcf-weiya/zju-thesis](https://github.com/szcf-weiya/zju-thesis/blob/ef03ae6c484bf4c9b23dd62d06cb751c05ed120d/src/zju-thesis.dtx#L499-L528)
 
+### modify style of specific field
+
+例如想加粗并用橙色显示 `note` field, 则可以采用
+
+```tex
+\DeclareFieldFormat{note}{\bfseries\color{orange}{#1}}
+```
+
+例如 [:link:](https://github.com/szcf-weiya/CV/blob/bdf6c7c02150d31097917d3b128c03c3d45b200b/2022ExploreAward/settings.sty#L93)
+
+另见 [Biblatex Change field format for a specific entry type - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/440196/biblatex-change-field-format-for-a-specific-entry-type)
+
 ### 将引用的年份用括号框起来
 
 参考[Put parentheses around year in citation](https://tex.stackexchange.com/questions/104518/put-parentheses-around-year-in-citation)
@@ -378,11 +390,25 @@ The idea is to define the command in `natbib+bibtex` as `biblatex+biber`, and ke
 
 参考[Biblatex/biber fails with a strange error about missing recode_data.xml file](https://tex.stackexchange.com/questions/140814/biblatex-biber-fails-with-a-strange-error-about-missing-recode-data-xml-file/258217#258217)
 
-### APA 带编号
+### APA
+
+- APA 带编号
 
 默认 APA 格式的参考文献是不带标号的，如果需要，参考
 
 [APA bibliography style with numbers](https://tex.stackexchange.com/questions/373336/apa-bibliography-style-with-numbers)
+
+- 保留大小写
+
+除了第一个单词的首字母，默认会将 title 中其它单词的首字母的大写改成小写，如果没有被 `{{}}` 保护的话。
+
+使用
+
+```tex
+\DeclareFieldFormat{apacase}{#1}
+```
+
+例如 [:link:](https://github.com/szcf-weiya/CV/blob/bdf6c7c02150d31097917d3b128c03c3d45b200b/2022ExploreAward/settings.sty#L159)
 
 ### export to `.bib` from Zotero
 

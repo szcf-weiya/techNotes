@@ -427,6 +427,14 @@ But sometimes either devices are playing sound, a less elegant way is to disconn
 
 see also [Pair Bose QuietComfort 35 with Ubuntu over Bluetooth - Ask Ubuntu](https://askubuntu.com/questions/833322/pair-bose-quietcomfort-35-with-ubuntu-over-bluetooth)
 
+!!! tip "Turn on/off Bluebooth from CLI"
+    某次，合上笔记本盖子然后打开后，找不到蓝牙，而且在设置界面中也无法打开蓝牙。
+    ```bash
+    rfkill block bluetooth
+    rfkill unblock bluetooth
+    ```
+    参考 [:link:](https://askubuntu.com/questions/380096/turn-on-off-bluetooth-from-shell-not-from-applet)
+
 ## Use Department Printer
 
 The department printer is only accessible from the office PC, but request to switch the cable from office PC to my laptop, I can configure to use the printer from my laptop. The steps are

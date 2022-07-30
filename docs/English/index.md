@@ -1,3 +1,7 @@
+## 2022.07.30
+
+- perjury: 伪证
+
 ## 2022.07.21
 
 - the famous Box's **aphorism (格言，警句)**: "All models are wrong but some are useful".
