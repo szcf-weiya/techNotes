@@ -2634,7 +2634,7 @@ If you are interested, please contact me for <code>PORT</code> and <code>MY_BRID
 <p>It is necessary to check the status of the tunnel. If the connection is broken, such as the sandbox has rebooted, pop a message window to remind to re-establish the tunnel in time.</p>
 <p>The command to pop message is <code>notify-send</code>, and note that a successful command exits with 0, use the script to check the status of ssh connection,</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-ssh -q -o <span class="nv">BatchMode</span><span class="o">=</span>yes <span class="nv">$1</span> <span class="nb">exit</span>
+ssh -t <span class="nv">$2</span> ssh -q -o <span class="nv">BatchMode</span><span class="o">=</span>yes <span class="nv">$1</span> <span class="nb">exit</span>
 <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> !<span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     <span class="c1">#echo &quot;broken connection&quot;</span>
     notify-send <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="s2">&quot;broken connection&quot;</span>

@@ -3227,6 +3227,14 @@ $ sudo fc-cache -f -v
 </blockquote>
 <p>But sometimes either devices are playing sound, a less elegant way is to disconnect other devices.</p>
 <p>see also <a href="https://askubuntu.com/questions/833322/pair-bose-quietcomfort-35-with-ubuntu-over-bluetooth">Pair Bose QuietComfort 35 with Ubuntu over Bluetooth - Ask Ubuntu</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Turn on/off Bluebooth from CLI</p>
+<p>某次，合上笔记本盖子然后打开后，找不到蓝牙，而且在设置界面中也无法打开蓝牙。
+<div class="highlight"><pre><span></span><code>rfkill block bluetooth
+rfkill unblock bluetooth
+</code></pre></div>
+参考 <a href="https://askubuntu.com/questions/380096/turn-on-off-bluetooth-from-shell-not-from-applet"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+</div>
 <h2 id="use-department-printer">Use Department Printer<a class="headerlink" href="#use-department-printer" title="Permanent link">&para;</a></h2>
 <p>The department printer is only accessible from the office PC, but request to switch the cable from office PC to my laptop, I can configure to use the printer from my laptop. The steps are</p>
 <ol>
