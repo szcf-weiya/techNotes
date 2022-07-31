@@ -520,3 +520,28 @@ ERROR:  While executing gem ... (Errno::EACCES)
 1. 停用 CDN
 2. 修改域名解析，`CNAME` 至 `szcf-weiya.github.io`
 3. 在仓库 `setting` 下勾上 `enforce https`
+
+## Pygments
+
+I have installed `pygmentize` and the corresponding python should be the system `python3`
+
+```bash
+$ which pygmentize 
+/usr/bin/pygmentize
+$ pygmentize -V
+Pygments version 2.3.1, (c) 2006-2017 by Georg Brandl.
+$ which python3
+/usr/bin/python3
+$ pip3 install Pygments
+WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.
+Looking in indexes: https://pypi.org/simple/
+Requirement already satisfied: Pygments in /usr/lib/python3/dist-packages (2.3.1)
+```
+
+Pygments can be used in Jekyll via Rouge, see [Use Pygments for Code Snippet Highlighting in Jekyll - 李宇琨的博客](https://lyk6756.github.io/2016/11/22/use_pygments.html)
+
+With such old version, the formatters like `material`, `github-dark` are not supported.
+
+but the upgrade does not upgrade `pygmentize`, instead, it install it to `/home/weiya/.local/bin/pygmentize`

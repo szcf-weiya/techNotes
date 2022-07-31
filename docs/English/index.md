@@ -1,3 +1,9 @@
+- :fireworks: : good article
+
+## 2022.07.31
+
+- **prolifically (多产地)** productive
+
 ## 2022.07.30
 
 - perjury: 伪证
@@ -1337,6 +1343,7 @@ None
 - They were following the normal **protocol (协议，协定)** of the cancer genome **consortium (联盟)**.
     - communication protocol: 通信协议
 - Land severely **depleted (耗尽)** by urbanization, population growth, intensive agriculture and climate change.
+    - Understanding what depletes you and what replenishes you makes you more effective at life. [:fireworks::link:](https://qr.ae/pvuNt5)
 - Two **putative (一般认定的，推定的)** human sex pheromones turn out not to be.
 - chronic disease: 慢性病
 - Shame can be **crippling (严重损害身体的)** and **debilitating (使衰弱，使虚弱)**.

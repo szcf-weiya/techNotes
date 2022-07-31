@@ -1081,6 +1081,8 @@ Copilot 一直 detect 不出 spyder，只有刚开始装的时候检测到了，
 ## `pip`
 
 - `pip list`: 查看已安装的包
+- `pip install -U`: upgrade，但注意 `-U` 不能插在 `pip` 与 `install` 中间。
+- `pip unstall`: 也可以卸载通过 `python setup.py install` 安装的包
 
 ### set mirror in mainland China
 
@@ -1105,12 +1107,6 @@ trusted-host=mirrors.aliyun.com
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 ```
 
-### upgrade package
-
-```bash
-# pip install PACKAGE -upgrade
-pip install PACKAGE -U
-```
 
 ### install from github
 
