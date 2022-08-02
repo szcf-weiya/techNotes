@@ -716,7 +716,7 @@ where `-s` aims to paste one file at a time instead of in parallel, which result
 
 ## `pdftk`
 
-- split pdf pages: `pdftk all.pdf cat 1 output first.pdf`, see also [arXiv](../TeX/arxiv.md).
+- split pdf pages: `pdftk all.pdf cat 1 output first.pdf`, see also [arXiv](../TeX/arxiv.md). Alternatively, one can use `print to file` function provided by pdf viewer, such as `evince`, particularly when `pdftk` failed like in [Issue 45](https://github.com/szcf-weiya/techNotes/issues/45).
 - modify pdf metadata via `pdftk`
 
 ```bash

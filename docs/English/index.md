@@ -1,5 +1,9 @@
 - :fireworks: : good article
 
+## 2022.08.01
+
+- **despair (绝望)** and hope
+
 ## 2022.07.31
 
 - **prolifically (多产地)** productive
