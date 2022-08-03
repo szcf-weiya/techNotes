@@ -880,6 +880,7 @@ rename Sam3 Stm32 *.nc
     - insert before the line of matched expression: `sed '/expr/i something-to-insert'`
     - insert after the line: replace `i` with `a`
     - insert multiple lines: add `\n` in the text to insert
+    - insert at the beginning without new line: [:link:](https://stackoverflow.com/questions/9533679/how-to-insert-a-text-at-the-beginning-of-a-file)
 - 竖线 `|` 元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 [:link:](https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L4)
 - directly replace hex string, such as [`'s/\xee\x81\xab/合/g'`](https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L6), see also [:link:](https://stackoverflow.com/questions/7760717/hex-string-replacement-using-sed)
 

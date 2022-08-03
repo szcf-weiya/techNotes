@@ -406,7 +406,7 @@ and one profile for `HDMI/DisplayPort`
 
 - Digital Stereo (HDMI) Output
 
-There are two devices fro sound input
+There are two devices for sound input
 
 ![image](https://user-images.githubusercontent.com/13688320/130001212-a75162b1-a221-4e4b-b719-65b611c06c56.png)
 
