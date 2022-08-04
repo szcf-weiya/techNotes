@@ -22,18 +22,25 @@ ssh -X usename-for-Server@SOME-IP-ADDRESS -p PORT
 
 ## SSH 反向隧道
 
-需要自己有一台中间服务器，据我所知，可以在 aws、Azure、华为云、腾讯云申请免费云服务器，另外 Vultr 通过我的邀请码**（点击下方图片）**也可以获得 100 刀的 credit：
+假设有一台外网服务器 OuterServer，以及内网服务器 InnerServer
 
-<a href="https://www.vultr.com/?ref=8436899-6G"><img src="https://www.vultr.com/media/banners/banner_800x418.png" width="800" height="418"></a>
+- OutServer: 外网服务器，可以从本地 `Laptop` 及内网服务器 `InnerServer` 通过给定外网 IP 访问
+- InnerServer: 内网服务器，无法从外网访问，但可以访问外网
 
-```bash
-# Local Laptop
-ssh -L 30002:localhost:30002 [Server's Username]@[Server's Public IP]
-# my server
-ssh -D 30002 -p 30001 [Inner-Server's Username]@localhost
-# my innerserver
-ssh -R 30001:localhost:22 [Server's Username]@[Server's Public IP]
-```
+=== "Laptop"
+    ```bash
+    ssh -L 30002:localhost:30002 OuterServer
+    ```
+
+=== "OuterServer"
+    ```bash
+    ssh -D 30002 -p 30001 InnerServer
+    ```
+
+=== "InnerServer"
+    ```bash
+    ssh -R 30001:localhost:22 Server
+    ```
 
 这样只能在 ssh 访问内网资源，可以通过 chrome 的 SwithyOmega 插件实现在浏览器中访问内网，效果和登录 VPN 一样，可以正常下文献。
 
