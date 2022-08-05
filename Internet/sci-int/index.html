@@ -19,7 +19,7 @@
     
     
       
-        <title>访问内网 - techNotes</title>
+        <title>科学上网 - techNotes</title>
       
     
     
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              访问内网
+              科学上网
             
           </span>
         </div>
@@ -281,7 +281,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Network/Internet
       </a>
     </li>
@@ -1631,20 +1631,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        一般问题
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -1657,12 +1643,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          访问内网
+          科学上网
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        访问内网
+        科学上网
       </a>
       
         
@@ -1681,19 +1667,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ngrok" class="md-nav__link">
-    ngrok
+  <a href="#ssh-tunnel" class="md-nav__link">
+    SSH Tunnel
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH Tunnel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autossh" class="md-nav__link">
+    autossh
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    SSH 反向隧道
-  </a>
-  
-    <nav class="md-nav" aria-label="SSH 反向隧道">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#jupyter-notebook" class="md-nav__link">
@@ -1708,8 +1694,124 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#proxy-for-android-phone" class="md-nav__link">
+    Proxy for Android Phone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ngrok" class="md-nav__link">
+    ngrok
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shootback" class="md-nav__link">
     shootback
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shadowsocks" class="md-nav__link">
+    ShadowSocks
+  </a>
+  
+    <nav class="md-nav" aria-label="ShadowSocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二维码反解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    系统代理与浏览器代理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xx-net" class="md-nav__link">
+    XX-Net
+  </a>
+  
+    <nav class="md-nav" aria-label="XX-Net">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    Usages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuhk-vpn" class="md-nav__link">
+    CUHK VPN
+  </a>
+  
+    <nav class="md-nav" aria-label="CUHK VPN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-1604" class="md-nav__link">
+    Ubuntu 16.04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-1804" class="md-nav__link">
+    Ubuntu 18.04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpn-jump" class="md-nav__link">
+    VPN Jump
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zju-vpn" class="md-nav__link">
+    ZJU VPN
   </a>
   
 </li>
@@ -1718,6 +1820,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        一般问题
+      </a>
     </li>
   
 
@@ -2242,19 +2358,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ngrok" class="md-nav__link">
-    ngrok
+  <a href="#ssh-tunnel" class="md-nav__link">
+    SSH Tunnel
+  </a>
+  
+    <nav class="md-nav" aria-label="SSH Tunnel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autossh" class="md-nav__link">
+    autossh
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    SSH 反向隧道
-  </a>
-  
-    <nav class="md-nav" aria-label="SSH 反向隧道">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#jupyter-notebook" class="md-nav__link">
@@ -2269,8 +2385,124 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#proxy-for-android-phone" class="md-nav__link">
+    Proxy for Android Phone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ngrok" class="md-nav__link">
+    ngrok
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shootback" class="md-nav__link">
     shootback
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shadowsocks" class="md-nav__link">
+    ShadowSocks
+  </a>
+  
+    <nav class="md-nav" aria-label="ShadowSocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    二维码反解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    系统代理与浏览器代理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xx-net" class="md-nav__link">
+    XX-Net
+  </a>
+  
+    <nav class="md-nav" aria-label="XX-Net">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usages" class="md-nav__link">
+    Usages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuhk-vpn" class="md-nav__link">
+    CUHK VPN
+  </a>
+  
+    <nav class="md-nav" aria-label="CUHK VPN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-1604" class="md-nav__link">
+    Ubuntu 16.04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-1804" class="md-nav__link">
+    Ubuntu 18.04
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpn-jump" class="md-nav__link">
+    VPN Jump
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zju-vpn" class="md-nav__link">
+    ZJU VPN
   </a>
   
 </li>
@@ -2293,21 +2525,22 @@
 
 
 
-<h1 id="_1">访问学校内网<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="ngrok"><a href="https://ngrok.com/">ngrok</a><a class="headerlink" href="#ngrok" title="Permanent link">&para;</a></h2>
-<p>在内网服务器 Server (such as Fan&rsquo;s lab server, ln001 server, chpc&rsquo;s server)进行如下操作：</p>
-<ol>
-<li>下载 ngrok 并解压</li>
-<li>注册 ngrok 获得 authtoken，然后运行 <code>./ngrok authtoken YOUR-AUTHTOKEN</code> 激活账户</li>
-<li>运行 <code>./ngrok tcp 22 --region=jp</code> 来开启 ssh 的 22 端口，其中 <code>-region jp</code> 指定服务器为日本的，默认为 <code>us</code>，亲测速度很慢。然后得到下面的运行结果</li>
-</ol>
-<p><img alt="" src="../ngrok.png" /></p>
-<p>注意 Forwarding 一行的记录，<code>tcp://SOME-IP-ADDRESS:PORT</code></p>
-<p>在本地 Local Laptop 上，终端中运行</p>
-<div class="highlight"><pre><span></span><code>ssh -X usename-for-Server@SOME-IP-ADDRESS -p PORT
-</code></pre></div>
-<p>即可登录内网服务器。</p>
-<h2 id="ssh">SSH 反向隧道<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
+<h1 id="_1">科学上网<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>这里总结了笔者从本科开始 (2014 年) 至今尝试的若干种科学上网方式，不仅仅是狭义的翻墙，还包括从内网访问学校内网服务器。简单来说，有以下几种方案：</p>
+<ul>
+<li>学校提供的 VPN：不稳定</li>
+<li>SSH 隧道：需要外网服务器，目前一直使用</li>
+<li>ngrok：如无外网服务器，可以采用，但速度取决于服务器地点</li>
+<li>shootback：类似 SSH 隧道，但不够安全</li>
+<li>ShadowSocks: 自搭外网服务器，目前不常用，但仍保留反向爬墙。</li>
+<li>XX-Net: 本科时使用过</li>
+</ul>
+<h2 id="ssh-tunnel">SSH Tunnel<a class="headerlink" href="#ssh-tunnel" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>2022-08-04 从香港到珠海的隔离酒店，采取此方案，其中 <code>InnerServer</code> 为 <code>chpc-sandbox</code>，<code>OuterServer</code> 为阿里云 ECS。
+另外，为了使得手机也能享受墙外服务，同时使用酒店 wifi，首先通过 <code>ifconfig</code> 获得电脑内网 ip（<code>wlpXXX:inet</code>），然后在手机代理中输入 <code>192.168.1.3:8118</code>，详见 <a href="#proxy-for-android-phone"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+</div>
 <p>假设有一台外网服务器 OuterServer，以及内网服务器 InnerServer</p>
 <ul>
 <li>OutServer: 外网服务器，可以从本地 <code>Laptop</code> 及内网服务器 <code>InnerServer</code> 通过给定外网 IP 访问</li>
@@ -2333,9 +2566,40 @@
 <p>在 SwitchyOmega 中添加 socks5://127.0.0.1:30002 即可访问内网资源。</p>
 <p>另外，如果只想科学上网，直接</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Local Laptop</span>
-ssh -D <span class="m">30002</span> my@server
+ssh -D <span class="m">30002</span> Server
 </code></pre></div>
 <p>然后在 SwitchyOmega 中添加 socks5://127.0.0.1:30002。</p>
+<p>如果将上面的 <code>my server</code> 部分改成
+<div class="highlight"><pre><span></span><code>ssh -gD <span class="m">30002</span> -p <span class="m">30001</span> my@inner-server
+</code></pre></div></p>
+<p>其中 <code>-g</code> 表示允许远程连接，则在 SwitchyOmega 中添加 socks5://my-server:30002 亦可访问内网资源，但这样不够安全，因为似乎所有知道你 server address 都可以访问内网资源，除非特别配置 my server 的安全组，但是应该不是很好，因为你本地的 public ip 是动态分配的，安全组的作用不大。</p>
+<p>参考 <a href="https://blog.fundebug.com/2017/04/24/ssh-port-forwarding/">玩转SSH端口转发</a> 和 <a href="https://zhuanlan.zhihu.com/p/34908698">使用SSH反向隧道实现内网穿透</a></p>
+<p>有时候可能需要重新连接一下，但是会出现端口占用的问题，</p>
+<div class="highlight"><pre><span></span><code>lsof -i:30002
+</code></pre></div>
+<p>找出端口占用的 pid，然后</p>
+<div class="highlight"><pre><span></span><code><span class="nb">kill</span> -s <span class="m">9</span> pid
+</code></pre></div>
+<p>在某些机子上发现运行 <code>ssh -D</code> 会报出，</p>
+<blockquote>
+<p>bind: Cannot assign requested address</p>
+</blockquote>
+<p>但是还是可以 ssh 到目标服务器。<a href="https://serverfault.com/questions/444295/ssh-tunnel-bind-cannot-assign-requested-address">找到类似的问题</a>，然后解决方案是加上 <code>-4</code> 来表示 ipv4，但是不懂原因</p>
+<h3 id="autossh">autossh<a class="headerlink" href="#autossh" title="Permanent link">&para;</a></h3>
+<p>为了让 ssh 程序在断开后重连，采用 <a href="https://www.harding.motd.ca/autossh/">autossh</a>。在内网服务器上运行，</p>
+<div class="highlight"><pre><span></span><code>./autossh -M <span class="m">30000</span> -o <span class="s2">&quot;StrictHostKeyChecking=false&quot;</span> -o <span class="s2">&quot;ServerAliveInterval 10&quot;</span> -o <span class="s2">&quot;ServerAliveCountMax 3&quot;</span> -NR <span class="m">30003</span>:localhost:22 xxx@xx.xx.xx.xx
+</code></pre></div>
+<p>通过 <code>ps -aef</code> 发现其调用了，</p>
+<div class="highlight"><pre><span></span><code>/usr/bin/ssh -L <span class="m">30000</span>:127.0.0.1:30000 -R <span class="m">30000</span>:127.0.0.1:30001 -o <span class="nv">StrictHostKeyChecking</span><span class="o">=</span><span class="nb">false</span> -o ServerAliveInterval <span class="m">10</span> -o ServerAliveCountMax <span class="m">3</span> -NR <span class="m">30003</span>:localhost:22 xxx@xx.xx.xx.xx
+</code></pre></div>
+<p>而且如果 kill 掉这个进程，则会立即重新运行一个完全一样的。对于多出来的 <code>30001</code> 端口很是奇怪，因为我没有指定。直到学习了下 <a href="https://blog.csdn.net/wesleyflagon/article/details/85304336">autossh 的原理</a>之后才恍然大悟. </p>
+<p>监视端口 <code>-M port[:echo_port]</code> 算是最重要的参数了，这里只指定了 <code>port</code> 为 30000，则</p>
+<ul>
+<li><code>-L 30000:127.0.0.1:30000</code> 将发送到<strong>本地端口 30000</strong> (第一个 30000)的请求转发到<strong>目标地址的目标端口</strong>（<code>127.0.0.1:30000</code>， 即 <code>xx.xx.xx.xx:30000</code>）</li>
+<li><code>-R 30000:127.0.0.1:30001</code> 将发送到<strong>远程端口 30000</strong> (第一个 30000，对应 <code>xx.xx.xx.xx:30000</code>）的请求转发到<strong>目标地址的目标端口</strong>（<code>127.0.0.1:30001</code>，即本地的 30001 端口）</li>
+<li>上面一来一会就形成一个闭环。内网服务器定期往 30000 端口发送检测消息，如果链路正常，则 30000 端口的消息先转发到 <code>xx.xx.xx.xx</code> 的 30000 端口，然后立即转送到内网服务器的 30001 端口。</li>
+</ul>
+<p><img alt="" src="../autossh.png" /></p>
 <h3 id="jupyter-notebook">Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permanent link">&para;</a></h3>
 <p>当<strong>搭建好隧道</strong>后，可以借用该隧道使用内网服务器上的 Jupyter Notebook，</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># open jupyter notebook as usual on innerserver</span>
@@ -2352,9 +2616,222 @@ ssh -L localhost:18888:localhost:8888 -p <span class="m">30001</span> <span clas
 <div class="highlight"><pre><span></span><code><span class="m">127</span>.0.0.1:18888/?token<span class="o">=</span>xxxxxxxxxxx
 </code></pre></div>
 <p>访问内网的 Jupyter Notebook。</p>
+<h2 id="proxy-for-android-phone">Proxy for Android Phone<a class="headerlink" href="#proxy-for-android-phone" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>2022-08-04 在珠海的隔离酒店，采用此方案使得手机翻墙。另见 <a href="#ssh-tunnel"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+</div>
+<p>安卓手机自带的只默认 http 和 https 代理，但像 ssh 隧道或者 shadowsocks 得到的都是 socks5 代理，也尝试过<a href="https://blog.csdn.net/qq_40374604/article/details/88989651">别人推荐的 ProxyDroid</a>，但是似乎还要对手机进行 root。遂放弃。</p>
+<p>既然 socks5 有了，直接转换成 http 不就行了么，然后看到了 <a href="https://g2ex.top/2016/05/20/Tips-on-Chinternet/">Privoxy</a>，这勾起了我的回忆，记得曾经<a href="https://blog.csdn.net/m0_38110132/article/details/79796171">跟 shadowsocks 搭配</a>使用过，但不知道为啥要用它。而这次我的目标及动机很明确了，将 socks5 转换成 http，供手机端访问，因为我的电脑和手机在同一个局域网内，那这样手机端的 http 代理服务器即为我电脑的局域网 ip，通过 ifconfig 可以得到。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 把 HTTP 流量转发到本机 127.0.0.1:1080 的 Shadowsocks (or SSH tunnel)</span>
+forward-socks5 / <span class="m">127</span>.0.0.1:1080 .
+
+<span class="c1"># 可选，默认只监听本地连接 127.0.0.1:8118</span>
+<span class="c1"># 可以允许局域网中的连接</span>
+listen-address <span class="m">0</span>.0.0.0:8118
+</code></pre></div>
+<p>注意这里要用 <code>0.0.0.0</code>，这样才能允许<a href="https://blog.csdn.net/lamp_yang_3533/article/details/52154695">局域网内的连接</a>。但这样还不够，防火墙还没打开，<a href="https://blog.csdn.net/jiaochiwuzui/article/details/80907521">查看防火墙</a>当前打开的 port</p>
+<div class="highlight"><pre><span></span><code>sudo ufw status
+</code></pre></div>
+<p>果然没有 8118 端口，于是打开</p>
+<div class="highlight"><pre><span></span><code>sudo ufw allow <span class="m">8118</span>
+</code></pre></div>
+<p>大功告成，手机端能够通过 http 代理科学上网啦！</p>
+<h2 id="ngrok"><a href="https://ngrok.com/">ngrok</a><a class="headerlink" href="#ngrok" title="Permanent link">&para;</a></h2>
+<p>在内网服务器 Server (such as Fan&rsquo;s lab server, ln001 server, chpc&rsquo;s server)进行如下操作：</p>
+<ol>
+<li>下载 ngrok 并解压</li>
+<li>注册 ngrok 获得 authtoken，然后运行 <code>./ngrok authtoken YOUR-AUTHTOKEN</code> 激活账户</li>
+<li>运行 <code>./ngrok tcp 22 --region=jp</code> 来开启 ssh 的 22 端口，其中 <code>-region jp</code> 指定服务器为日本的，默认为 <code>us</code>，亲测速度很慢。然后得到下面的运行结果</li>
+</ol>
+<p><img alt="" src="../ngrok.png" /></p>
+<p>注意 Forwarding 一行的记录，<code>tcp://SOME-IP-ADDRESS:PORT</code></p>
+<p>在本地 Local Laptop 上，终端中运行</p>
+<div class="highlight"><pre><span></span><code>ssh -X usename-for-Server@SOME-IP-ADDRESS -p PORT
+</code></pre></div>
+<p>即可登录内网服务器。</p>
 <h2 id="shootback">shootback<a class="headerlink" href="#shootback" title="Permanent link">&para;</a></h2>
+<p>顾名思义，这就是内网穿透。</p>
 <p>同 SSH 反向隧道，需要自己准备一台服务器，<a href="https://github.com/aploium/shootback">项目主页</a>有详细配置过程。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ---- master ----</span>
+python3 master.py -m <span class="m">0</span>.0.0.0:10000 -c <span class="m">0</span>.0.0.0:10022 --ssl
+
+<span class="c1"># ---- slaver ----</span>
+<span class="c1"># ps: the `--ssl` option is for slaver-master encryption, not for SSH</span>
+python<span class="o">(</span>or python3<span class="o">)</span> slaver.py -m <span class="m">22</span>.33.44.55:10000 -t <span class="m">127</span>.0.0.1:22 --ssl
+
+<span class="c1"># ---- YOU ----</span>
+ssh <span class="o">[</span>username@<span class="o">]</span><span class="m">22</span>.33.44.55 -p <span class="m">10022</span>
+</code></pre></div>
+<p>注意，<code>YOU</code> 的 username 是 slaver 的 username!!</p>
+<p>另外一种更复杂的工具是 <a href="https://github.com/fatedier/frp">frp</a></p>
 <p>但是这似乎跟不加 <code>-g</code> 版本的 ssh 反向隧道一样，会存在安全性问题，相当于暴露了公网 ip. </p>
+<h2 id="shadowsocks">ShadowSocks<a class="headerlink" href="#shadowsocks" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>需要境外服务器，可以在各大云服务商上购买，上一次折腾至少追溯到 2020 年。目前（2022-08-05 20:43:08）仍保留从墙外返回墙内的功能，即在阿里云内地服务商上运行该服务。</p>
+</div>
+<p>Follow the <a href="https://github.com/shadowsocks/shadowsocks/blob/master/README.md">instruction</a> in the official repo, </p>
+<ul>
+<li>start on the server: <code>sudo ssserver -c ss.json -d start</code></li>
+<li>check the log file: <code>tail /var/log/shadowsocks.log -f</code></li>
+<li>stop on the server: <code>sudo ssserver -d stop</code></li>
+</ul>
+<h3 id="_2">二维码反解<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>对</p>
+<div class="highlight"><pre><span></span><code>ss://bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ<span class="o">=</span>
+</code></pre></div>
+<p>中的</p>
+<div class="highlight"><pre><span></span><code><span class="nv">bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ</span><span class="o">=</span>
+</code></pre></div>
+<p>base64 解密得到</p>
+<div class="highlight"><pre><span></span><code>method:password@hostname:port
+</code></pre></div>
+<p>然后</p>
+<div class="highlight"><pre><span></span><code>sslocal -p port -k password -m method
+</code></pre></div>
+<h3 id="_3">系统代理与浏览器代理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>只作用在浏览器上：shadowsocks + switchOmega</li>
+<li>全局代理：shadowsocks + privoxy</li>
+</ul>
+<p>参考 <a href="https://xingjian.space/Computer-Network/global-proxy-of-Shadowsocks-in-Ubuntu/">Ubuntu配置Shadowsocks全局代理</a></p>
+<p>无需单独设置系统代理，浏览器是可以通过插件设置代理的。</p>
+<p>另外使用如curl需要代理时，可以采用</p>
+<div class="highlight"><pre><span></span><code>$ curl ip.cn --proxy socks5://127.0.0.1:1080
+</code></pre></div>
+<h2 id="xx-net">XX-Net<a class="headerlink" href="#xx-net" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>很久未曾使用，上一次至少是 2018 年以前。</p>
+</div>
+<h3 id="environment">Environment<a class="headerlink" href="#environment" title="Permanent link">&para;</a></h3>
+<ol>
+<li>ubuntu 16.04</li>
+<li>XX-net</li>
+<li>privoxy</li>
+</ol>
+<h3 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h3>
+<ul>
+<li>安装privoxy</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo apt-get install privoxy
+</code></pre></div>
+<ul>
+<li>安装XX-net</li>
+</ul>
+<p>直接访问项目主页<a href="https://github.com/XX-net/XX-Net">XX-net</a>，内有安装说明</p>
+<ul>
+<li>设置privoxy
+在/etc/privoxy/config文件中加入</li>
+</ul>
+<div class="highlight"><pre><span></span><code>forward / <span class="m">127</span>.0.0.1:8087
+listen-address <span class="m">0</span>.0.0.0:8118
+</code></pre></div>
+<h3 id="usages">Usages<a class="headerlink" href="#usages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>可以在访问时设置代理</li>
+</ul>
+<div class="highlight"><pre><span></span><code>curl ipinfo.io/ip --proxy <span class="m">127</span>.0.0.1:8087
+</code></pre></div>
+<ul>
+<li>也可以在.bashrc设置，这样所有的终端的网络访问都会走终端，在~/.bashrc文件中加入</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span><span class="m">127</span>.0.0.1:8087
+<span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span><span class="m">127</span>.0.0.1:8087
+</code></pre></div>
+<p>然后</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> ~/.bashrc
+curl ipinfo.io/ip <span class="c1">#测试是否代理成功</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a href="https://ipinfo.io/">https://ipinfo.io/</a> can show more details about the ip, such as the ips for an organization, say, <a href="https://ipinfo.io/AS3661">https://ipinfo.io/AS3661</a>. </p>
+</div>
+<h2 id="cuhk-vpn">CUHK VPN<a class="headerlink" href="#cuhk-vpn" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>不稳定，而且目前 (2022-08-05 20:58:04) 已无帐号，上一次使用为 2020 上半年。</p>
+</div>
+<h3 id="ubuntu-1604">Ubuntu 16.04<a class="headerlink" href="#ubuntu-1604" title="Permanent link">&para;</a></h3>
+<p>在安装 <code>network-manager-l2tp-gnome</code> 好后（如 <a href="https://medium.com/@hkdb/ubuntu-16-04-connecting-to-l2tp-over-ipsec-via-network-manager-204b5d475721">Ubuntu 16.04 Connecting to L2TP over IPSEC via Network Manager</a>），能够连接，但是并不能访问 google，甚至 baidu 也不行，而手机端 vpn 可以正常使用。并且尝试访问 google 失败后，便弹出 vpn stop 的消息。</p>
+<h3 id="ubuntu-1804">Ubuntu 18.04<a class="headerlink" href="#ubuntu-1804" title="Permanent link">&para;</a></h3>
+<p>In mainland China, still failed. Firstly, I need to install <code>l2tp</code> following the instruction of <a href="https://20notes.net/linux/setup-l2tp-over-ipsec-client-on-ubuntu-18-04-using-gnome/">Setup L2TP over IPsec VPN client on Ubuntu 18.04 using GNOME</a>.
+Sometimes it can be connected, but quickly disconnected. Then I tried to figure out the reason, such as specifying the phase algorithm, and I known a little about the difference of <code>strongswan</code> between <code>libreswan</code> from <a href="https://community.ui.com/questions/L2TP-VPN-on-Ubuntu-18-04-client/e8317a0c-ba97-4673-b2c2-1c0be0906228">L2TP VPN on Ubuntu 18.04 client</a></p>
+<div class="highlight"><pre><span></span><code>3DES, modp1024, modp1536 and SHA1 are considered weak by strongswan and newer versions of libreswan, so aren<span class="s1">&#39;t in their default proposals (although some late versions of libreswan still allow modp1536 and SHA1 with IPsec IKEv1). You can explicitly specify the proposals for phase 1 and 2 in the IPsec config dialog box.</span>
+
+
+<span class="s1">You could try the following with strongswan :</span>
+
+<span class="s1">Phase1: aes256-sha1-modp1024,aes128-sha1-modp2048,aes128-sha1-modp1536!</span>
+<span class="s1">Phase 2 : aes256-sha1,aes128-sha1!</span>
+<span class="s1">Or for libreswan try:</span>
+
+<span class="s1">Phase1: aes256-sha1-modp1024,aes128-sha1-modp2048,aes128-sha1-modp1536</span>
+<span class="s1">Phase 2 : aes256-sha1,aes128-sha1</span>
+<span class="s1">Note the exclamation mark (!) with strongswan that isn&#39;</span>t used with libreswan. 
+
+If you are not sure <span class="k">if</span> you are using libreswan or strongswan, run :
+
+ipsec --version 
+</code></pre></div>
+<p>And when I click the option of </p>
+<blockquote>
+<p>Use this connection only for resources on its network</p>
+</blockquote>
+<p>seems can visit the websites of school. But neither with nor without this option, I cannot visit Google.</p>
+<p>And I found <a href="https://serverfault.com/questions/978914/no-internet-access-through-l2tp-ipsec-using-ubuntu-18-04-routing-table">a question</a> has quite similar problem with me, then I tried to learn and edit the routing table. <a href="http://linux.vbird.org/linux_server/0230router.php">第八章、路由觀念與路由器設定</a> helps me a lot on the understanding of routing. But it seems that I don&rsquo;t miss the rule pointed out by the question. And so it might be due to the routing table.</p>
+<p>As a result, I give up and continue to use the reverse SSH to visit google.</p>
+<h3 id="vpn-jump">VPN Jump<a class="headerlink" href="#vpn-jump" title="Permanent link">&para;</a></h3>
+<p>猜测可能由于墙的原因使得 VPN 不稳定，于是尝试在境外服务器连接 VPN</p>
+<p>首先安装 </p>
+<div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:nm-l2tp/network-manager-l2tp
+sudo apt-get install network-manager-l2tp
+</code></pre></div>
+<h4 id="-x-gui">尝试一：通过 <code>-X</code> 在 GUI 中配置<a class="headerlink" href="#-x-gui" title="Permanent link">&para;</a></h4>
+<p>参考 <a href="https://gist.github.com/pastleo/aa3a9524664864c505d637b771d079c9">setup L2TP IPsec VPN in archlinux using NetworkManager</a></p>
+<p>打开配置窗口的命令为 <a href="https://askubuntu.com/questions/174381/openning-networkmanagers-edit-connections-window-from-terminal"><code>nm-connection-editor</code></a>，但竟然没有，原来没有装 </p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install network-manager-gnome
+</code></pre></div>
+<h4 id="_4">尝试二：命令行添加<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>在尝试寻找 network manager 的 command line 命令时，发现好几个 <code>nmcli</code> 相关的命令，于是猜想应该是可以直接在 command line 中配置的，比如 <a href="https://askubuntu.com/questions/1167283/l2tp-connection-client-on-ubuntu-18-04-server">L2TP Connection Client on ubuntu 18.04 Server</a> 和 <a href="https://www.thegeekdiary.com/how-to-configure-and-manage-network-connections-using-nmcli/">How to configure and Manage Network Connections using nmcli</a>，但我先在本地测试有几个问题</p>
+<ul>
+<li>似乎不需要 <code>connection.id</code></li>
+<li>需要指定 <code>ifname</code></li>
+</ul>
+<p>修改好之后，可以成功添加，但是准备连接时，报错</p>
+<blockquote>
+<p>NetworkManager fails with “Could not find source connection”</p>
+</blockquote>
+<p>参考 <a href="https://unix.stackexchange.com/questions/438224/networkmanager-fails-with-could-not-find-source-connection">NetworkManager fails with “Could not find source connection”</a> 无果。后来在 <a href="https://developer.gnome.org/NetworkManager/stable/nmcli.html">nmcli 的官方文档</a>中看到，似乎连接时需要指定 <code>ifname</code>，可用的 device 为</p>
+<div class="highlight"><pre><span></span><code>sudo nmcli device status 
+</code></pre></div>
+<p>但是再次连接依旧报错，不过错误跟我在墙内试图连接 VPN 时报错似乎一致。</p>
+<blockquote>
+<p>Error: Connection activation failed: the VPN service stopped unexpectedly.</p>
+</blockquote>
+<h4 id="windows">尝试三：Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
+<p>试用 Azure，申请了个 Windows 10，按照 ITSC 的指示连接 VPN，确实能够成功，但是连接成功后，我跟该电脑的连接也就断开了，再次尝试也连不上，只好重启。</p>
+<h2 id="zju-vpn">ZJU VPN<a class="headerlink" href="#zju-vpn" title="Permanent link">&para;</a></h2>
+<p>黄熊的<a href="http://wwtalwtaw.studio/2018/04/26/net_surfing/">浙大玉泉ubuntu有线上网</a>讲得很详细。不过我却碰到个很奇怪的问题，申请完静态 IP，能够 ping 通内网，但当我安装完 <code>xl2tpd_zju</code> 后，却总是一直连不上网，更奇怪的是，还不能访问内网（没有运行 <code>vpn-connect</code> 前至少可以访问内网）。然后我尝试了各种办法，包括但不限于：</p>
+<ol>
+<li>重装 <code>xl2tpd_zju</code>；</li>
+<li>换个 <code>xl2tpd_zju</code> 的版本，在 cc98 上有两个版本，下载链接 <a href="https://pan.baidu.com/s/1eRNQwng#list/path=%2F">xl2tpd_zju</a>；</li>
+<li>修改 <code>/etc/network/interfaces</code></li>
+<li>各种组合式操作</li>
+</ol>
+<p>但都迷之不能联网。</p>
+<p>遂准备换种方式，参考<a href="http://keyun.ml/2016/07/17/Tools/ubuntu16-l2tp-vpn.html">Ubuntu16.04配置L2TP-VPN</a></p>
+<p>但这种安装最新版本，<code>libnma</code>的版本跟不上，然后参考<a href="https://askubuntu.com/questions/789421/l2tp-ipsec-psk-vpn-client-on-xubuntu-16-04/797764">L2tp IPSEC PSK VPN client on (x)ubuntu 16.04</a></p>
+<p>直接用</p>
+<div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:nm-l2tp/network-manager-l2tp  
+sudo apt-get update  
+sudo apt-get install network-manager-l2tp
+sudo apt-get install network-manager-l2tp-gnome
+</code></pre></div>
+<p>安装。</p>
+<p>这种方式相当于增加了 <code>L2TP</code> VPN 的设置界面，到这里我也渐渐明白 <code>xl2tpd_zju</code> 和这种方式本质上应该是一样的。于是我按照之前的配置方式新建了一个 VPN 的连接，但还是没用。</p>
+<p>最后我换了 VPN 的 ip（有两个 ip，10.5.1.5 和 10.5.1.9），之前 <code>xl2tpd_zju</code> 默认是 10.5.1.5，误打误撞，改成 10.5.1.9 后，竟然成功了！！</p>
 
               
             </article>
@@ -2375,7 +2852,7 @@ ssh -L localhost:18888:localhost:8888 -p <span class="m">30001</span> <span clas
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: 一般问题" rel="prev">
+        <a href="../../website/xampp/" class="md-footer__link md-footer__link--prev" aria-label="Previous: XAMPP" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2384,20 +2861,20 @@ ssh -L localhost:18888:localhost:8888 -p <span class="m">30001</span> <span clas
               <span class="md-footer__direction">
                 Previous
               </span>
-              一般问题
+              XAMPP
             </div>
           </div>
         </a>
       
       
         
-        <a href="../ipv6/" class="md-footer__link md-footer__link--next" aria-label="Next: IPv6" rel="next">
+        <a href="../" class="md-footer__link md-footer__link--next" aria-label="Next: 一般问题" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              IPv6
+              一般问题
             </div>
           </div>
           <div class="md-footer__button md-icon">
