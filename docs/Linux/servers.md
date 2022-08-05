@@ -202,6 +202,8 @@ $ sudoedit /etc/sudoers
 
 参考 [https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04](http://blog.csdn.net/linuxdriverdeveloper/article/details/7427672)
 
+- list users in a group: `lid -g GroupName`, see also [:link:](https://unix.stackexchange.com/questions/241215/how-can-i-find-out-which-users-are-in-a-group-within-linux) and [Issue 5](https://github.com/szcf-weiya/config/issues/5)
+
 ## 安装 spark
 
 ~~在内地云主机上，[官网下载地址](https://spark.apache.org/downloads.html) 还没 5 秒就中断了，然后找到了[清华的镜像](https://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-2.4.4/)~~

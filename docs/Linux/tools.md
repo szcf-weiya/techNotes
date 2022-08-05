@@ -1,5 +1,11 @@
 # Command-line Tools
 
+## aria2
+
+It is a lightweight multi-protocol & multi-source command-line download utility.
+
+Homepage: <https://aria2.github.io/>
+
 ## `awk`
 
 ### basic usage

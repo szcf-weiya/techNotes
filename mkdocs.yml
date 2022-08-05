@@ -64,8 +64,8 @@ nav:
       - PHP: PHP/index.md
       - XAMPP: website/xampp.md
   - Network/Internet:
+    - 科学上网: Internet/sci-int.md
     - 一般问题: Internet/index.md
-    - 访问内网: Internet/sci-int.md
     - IPv6: Internet/ipv6.md
     - 加密算法: Internet/encrypt.md
   - Development:
