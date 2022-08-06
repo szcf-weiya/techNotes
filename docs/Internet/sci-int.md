@@ -100,6 +100,12 @@ kill -s 9 pid
 
 ![](autossh.png)
 
+### Proxy for Gmail in Thunderbird
+
+因为在 Thunderbird 中不只有 Gmail 账户，所以想只对 Gmail 账户进行代理。于是通过 SwitchyOmega 单独创建一个 profile，然后导出 `.pac` 文件。
+
+![proxy_gmail](https://user-images.githubusercontent.com/13688320/183234236-5b19edce-fccc-4d35-886b-4029d021cb8e.png)
+
 ### Jupyter Notebook
 
 当**搭建好隧道**后，可以借用该隧道使用内网服务器上的 Jupyter Notebook，

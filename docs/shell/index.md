@@ -170,7 +170,9 @@ simplest way:
 ${string:2}
 ```
 
-some alternatives refer to [How can I strip first X characters from string using sed?](https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed), or [Remove first character of a string in Bash](https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash)
+More generally, `${str:position:length}` extracts the substring started from the `position` with length `length`.
+
+Some alternatives refer to [How can I strip first X characters from string using sed?](https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed), or [Remove first character of a string in Bash](https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash)
 
 a real application in my project:
 
@@ -221,6 +223,8 @@ XXyyzz
 ```
 
 But this only replaces the first occurrence, for all occurrence, use double slashes, i.e., `${var//xx/XX}`
+
+Another application is to check whether a string is not empty, neither space, `[ -n "${str// /}" ]`, see also [:link:](https://stackoverflow.com/questions/13509508/check-if-string-is-neither-empty-nor-space-in-shell-script)
 
 ### default value
 
@@ -958,6 +962,8 @@ sys	0m0.069s
 $ wc -l test.txt
 9999949 test.txt
 ```
+!!! tip
+	在 `wc` 中文件前面插入 `<` 则不会返回文件名，即 `wc -l < test.txt`. 另见 [:link:](https://unix.stackexchange.com/questions/154322/how-to-display-the-number-of-lines-words-and-characters-in-separate-lines)
 
 ```bash
 $ time {

@@ -699,6 +699,14 @@ see more details in [mv files with | xargs](https://askubuntu.com/questions/4870
 
 see also: [xargs命令_Linux xargs 命令用法详解：给其他命令传递参数的一个过滤器](http://man.linuxde.net/xargs)
 
+## `notify-send`
+
+- show whole message: leave summary empty and only show body, but still only when mouse is hovering the pop window, see also [:link:](https://unix.stackexchange.com/questions/300099/notify-send-how-to-display-full-message-when-message-is-longer-than-one-line)
+- escape `-` in the string, otherwise it throws `Unknown option`
+
+!!! note "Applications"
+	- [random pop up English words](../English/random.sh)
+
 ## `paste`: 文本文件拼接
 
 ```bash

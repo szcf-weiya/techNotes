@@ -1,5 +1,15 @@
 - :fireworks: : good article
 
+## 2022.08.06
+
+- Coronavirus made a big mistake **invading (侵略)** the greatest goddamn country on earth.
+- Omicron is **supercharging (增加负荷)** the COVID vaccine booster debate.
+- puff piece: A **journalistic (新闻业的)** form of **puffery (吹嘘)**; an article or story of exaggerating praise that often ignores or downplays opposing viewpoints or evidence to the contrary.
+- Don't try to **blow the audiences away (to surprise or please someone very much)**, it's enough to just present what you did. If it's good stuff, it can stand up **unadorned (不加装饰的，简朴的)** and a **discerning (有眼力的，眼光敏锐的)** audience will realize its importance. And if it's not good stuff, you shouldn't be wasting people's time on it anyway. [:link:](https://statmodeling.stat.columbia.edu/2014/12/01/quick-tips-giving-research-presentations/)
+- inhale a bunch of oxygen and **exhale (呼出)** a bunch of carbon dioxide
+- A sequence of apologies from the company highest officers that did not seem to **pacify (平息，抚慰)** anyone.
+- pacifier: 安抚奶嘴
+
 ## 2022.08.01
 
 - **despair (绝望)** and hope
@@ -1700,7 +1710,7 @@ None
 ## 2020.11.25
 
 - There are a number of **bells and whistles (附加的修饰物)** that make autoencoders more effective.
-- They **quarreled** last week but now they are completely **reconciled**.
+- They **quarreled (争吵)** last week but now they are completely **reconciled (和解)**.
 
 ## 2020.11.24
 
@@ -1835,7 +1845,7 @@ None
 - Thus it is that firmness and strength are the **concomitants** of death; softness and weakness, the **concomitants** of life.
 - It should be possible for a class to inherit from as many others as necessary, with an adequate mechanism for **disambiguating** name **clashes**.
 - No comparison frameworks are available, leading to an **arduous** selection of an appropriate variant for particular experimental conditions.
-- Laser-range sensors were a **cornerstone** to the development of mapping and navigation in the past two decades.
+- Laser-range sensors were a **cornerstone (基石，基础)** to the development of mapping and navigation in the past two decades.
 
 
 
@@ -1919,7 +1929,7 @@ None
 - There we mention that the birthday data come from the National **Vital (极重要的，必不可少的)** Statistics **natality (出生率，生产率)** data.
 - I came across this interview of [John Conway](https://www.zhihu.com/question/387110069) and [Siobhan Roberts](https://en.wikipedia.org/wiki/Siobhan_Roberts), Conway's biographer.
 - I felt that there was a strong sense of competitiveness and **ego** in the maths world.
-- Did you get a sense of a lot of people trying to **outdo** each other in the field?
+- Did you get a sense of a lot of people trying to **outdo (胜过，优于)** each other in the field?
 - there are occasional examples of it coming to the fore more **prominently**.
 - there were characters I encountered, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) for one, for whom I think there was a bit of an unacknowledged competitive tension with John.
 - The idea of competing with them is **absurd (荒唐可笑的，不合理的)**.
@@ -1996,7 +2006,7 @@ None
 - **In order for** Trump to win a blue state
 - I put them in a **pile** so that later I can read them in order.
 - this article informs us that Trump is **invincible**.
-- this is just a **rehash** of the major news media.
+- this is just a **rehash (旧东西的改作，新形式表达旧内容)** of the major news media.
 - it's your grandpa who's been reading a bunch of newspapers and watching lots of TV news and then **regurgitating** it back to you.
 
 ## 2020.10.16
@@ -2018,12 +2028,12 @@ None
 - will the satisfactory feeling of successfully completing the checklist **lull (哄骗；使平静)** researchers into **complacency** and keep them from spending effort on the deeper layers?
 - I worry the checklist is going to **inadvertently (漫不经心地；非故意地)** be taken as a false check of quality, rather than simply transparency.
 - We should always consider the **lurking (潜在的)** dangers of offering easy solutions and simple checklists that make humans feel that they've done all that is needed.
-- transparency should reduce existing incentives for performing bad science and increase incentives for better measurement and design of studies.
+- transparency should reduce existing **incentives (刺激，激励)** for performing bad science and increase incentives for better measurement and design of studies.
 
 ## 2020.10.13
 
-- both of **contagious** individuals and viral load sufficient to related to death.
-- statistical **cult**
+- both of **contagious (患传染性疾病)** individuals and viral load sufficient to related to death.
+- statistical **cult (崇拜，异教团体)**
 - **noncommittal** response
 
 ## 2020.10.12
@@ -2031,8 +2041,8 @@ None
 - Vocal characteristics predict **infidelity (不忠)** intention and relationship **commitment (承诺)** in men but not in women.
     - high **fidelity (保真度)** playback
 
-- The story was featured in various **classy** news outlets.
-- some **wiseass** replies to all
+- The story was featured in various **classy (上等的，豪华的，时髦的)** **news outlets (报道新闻的机构)**.
+- some **wiseass (自以为是的人)** replies to all
 - we're **reliving** the 1990's here...
 
 ## 2020.10.11
@@ -2228,13 +2238,11 @@ None
 - bicker with
 - day in, day out
 - this is wisdom that's as old as the hills
-- **take a toll** on their memories
+- **take a toll (造成损失，产生负面影响)** on their memories
 - glamorous
 - fare the best
 - livening up a stale relationship
-- those all-too-common family feuds take a terrible toll on the people who hold the grudges
-
-
+- those all-too-common family feuds take a terrible **toll (毁坏；通行费；伤亡人数)** on the people who hold the **grudges (怨恨，积怨)**
 
 ## 2020.07.17
 
@@ -2257,10 +2265,9 @@ None
 
 - psychotherapy client
 - wearing jeans and a big slouchy top
-- arsonist
+- **arsonist (纵火犯，放火犯)**
 - Twentysomethings like Alex and I had nothing but time.
 - sleeping with knucklehead
-- benigh neglect
 - the brain caps off its second and last growth spurt in your 20s
 - an inordinate impact
 - extended adolescence
@@ -2298,7 +2305,7 @@ None
 - They only reason these people buy **touch-tone phone** is because you can't buy **rotary phones** anymore.
 - the system tips
 - gut feeling
-- plummet
+- Those steps can in turn increase economic **dislocations (混乱，位移)**, including **plummeting (暴跌)** stock prices.
 - rewind live TV
 - a great orator
 
@@ -2380,13 +2387,12 @@ None
 - **scramble （快速爬行，争夺，争抢）** back up to onto the bunk bed
 - What we **stumbled (绊脚；出错)** across at this tender age of just five and seven was was going be at the **vanguard (先锋，前驱)** of a scientific revolution occurring two decades later in the way that we look at the human brain.
 - There is one weird dot above the curve, there's one **weirdo (古怪的人)** in the room.
-- resiliency in the face of challenge
 - we can **glean** information
 - the medical school **syndrome**
 - I have **leprosy**
-- I have no idea how to **console** poor Bobo because he had just gotten over an entire week of **menopause**
+- I have no idea how to **console (安慰)** poor Bobo because he had just gotten over an entire week of **menopause**
 - **military scholarship**
-- I was an officer to **counsel** students through the difficult four years.
+- I was an officer to **counsel (建议; n. 律师，法律顾问)** students through the difficult four years.
 - on the competition, the workload, the **hassles**, stresses, complaints.
 - adolescent depression, violence and bullying, illicit drugs, risky sex
 - dopamine
@@ -2418,7 +2424,7 @@ None
 - how to **discern (识别，辨别)** a good game from a bad game.
 - I will teach it some corpus of law
 - what about **rogue** agents?
-- it could represent an **existential** threat to all of humanity.
+- it could represent an **existential (有关人类存在的)** threat to all of humanity.
 - an **insatiable (不知足的，贪得无厌的)** thirst for information
 - only **insofar as (在...范围内)** HAL commanded all aspects of the Discovery.
     - I'll help you insofar as I can.
@@ -2556,12 +2562,12 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 7. My father was a scratch golfer in his **heyday (全盛期)** on local public courses, but he said he’d never be able to sink a single **putt (击球入洞)** if the greens were maintained the way they were for PGA **tournaments (锦标赛，联赛)**.
 8. he was **obsessive （着迷，痴迷）** about his short game—his own career was ended by knee and **rotator cuff** surgery—**hockey (冰球，曲棍球)** wasn’t good to his body, either, despite playing in a “non-contact” **league** as an adult.
 9. Are there things like field goals in **rugby (橄榄球)** or Australian-rules football? I love that the actual name of the sport has “rules” in the title—it’s the kind of **pedantry** near and dear to this **semanticist (语义学者)**’s heart.
-    - It is the kind of **semantic** nitpicking that has made progressive movements unappealing to many Americans.
-10. I **boycott (联合抵制，拒绝参加)** contact sports like football and ice hockey due to their intentionally violent nature.
+- It is the kind of **semantic** nitpicking that has made progressive movements unappealing to many Americans.
+- I **boycott (联合抵制，拒绝参加)** contact sports like football and ice hockey due to their intentionally violent nature.
 11.  I saw too many catchers and **umpires (裁判员，仲裁人)** rocked by **[foul tips (触击球)](https://en.wikipedia.org/wiki/Foul_tip)** to the face mask this season.
 12. see a catcher **don (穿上)** the **gear (装备，衣服)** again after multiple **concussions (冲击，震动)**.
-    - Education should be **geared (使搭配，使适合)** to society's needs.
-    - With Thanksgiving around the corner, retailers are **gearing up (准备好)** for a battle.
+13. Education should be **geared (使搭配，使适合)** to society's needs.
+14. With Thanksgiving around the corner, retailers are **gearing up (准备好)** for a battle.
 13. What really **riled (激怒)** me was when the speaker said
 14. This seems to me to be a **bizarre** sort of **techno-mysticism**.
 15. The **nascent (初期的，开始存在的，发生中的)** field of fair machine learning aims to ensure that decisions guided by algorithms are equitable.
@@ -2582,7 +2588,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 30. I’m exhausted by the ideology of the Bayes-**evangelists**.
 31. Would Republicans pay a price if they vote to **impeach** the president?
 32. Nixon **loyalists** paid the price—not Republicans who voted to impeach.
-33. So I **goggled** a bit and asked a colleague in ML about the above.
+33. So I **goggled (【尤指由于惊奇而】瞪大眼睛看)** a bit and asked a colleague in ML about the above.
 34. It’s great if you’ve got hair to **comb**, but otherwise it leaves you looking a bit silly.
 35. Once my sister had the **hiccups** and my dad **snuck up** behind her and scared her. The hiccups went away but my sister made my dad promise never to scare her again like that.
 36. On the medical front, we now have things like **nut allergy** and **autism** which nobody ever thought about and now are huge.
@@ -2657,7 +2663,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - today we **boggle at (吃惊)** the month's most **spectacular (壮观的，惊人的)** science images.
 2. instrument: verb. such as, "they instrument military aid"
 3. maddening
-4. come across
 6. ramp up
 7. crap
 8. **Ray Kroc (雷·克罗克)**: 麦当劳主要创办人
@@ -2805,8 +2810,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.09.08
 
 1. insidious
-2. incentive
-
 
 ## 2018.09.07
 
@@ -2936,7 +2939,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. mnemonic
 2. acyclic
-3. disgress
 4. endow
 5. serum
 
@@ -3077,7 +3079,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.01.01
 
 1. These tensions are **exacerbated (使恶化，使加重)** between the wars.
-2. They **glossed over** some key issues on that front.
+2. They **glossed over (掩饰)** some key issues on that front.
 3. The athlete's success **was attributed to** systematic training.
 4. lower/upper extremity (上/下肢)
 
@@ -3089,7 +3091,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 4. the lush fields were the envy of neighboring farmers.
 5. the lush sounds of the orchestra
 6. **vagabonds (流浪者，游手好闲者)** **meandering (漫步，蜿蜒缓慢流动)** through life
-7. Reading will fertilize vocabulary.
+7. Reading will **fertilize (使丰饶，使受精)** vocabulary.
 8. A blind patriotic fervor is called chauvinism.
 
 ## 2017.09.26
@@ -3221,7 +3223,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 25. The **kitten (小猫)** crept silently across the floor before suddenly pouncing on the mouse.
 26. Complaints about stifling smog conditions reach crescendo.
 27. Climate change has **exerted (施加)** a ponderable influence on world politics.
-28. The committee will probably **pore over** the results of the study for a long time before making their decision.
+28. The committee will probably **pore over (细心研究)** the results of the study for a long time before making their decision.
+    - pore: 注视；n. 孔隙
 29. He habitually transforms brief anecdotes into prolix sagas that exhaust his listeners.
 30. The burglary, which he committed while still a teen, was but a prologue to a wasted life of crime.
 31. The law was promulagated in June 1988.
@@ -3273,8 +3276,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 24. The meeting adjourned for a week.
 25. Massage therapy can be used as an adjunct along with the medication.
 26. The transaction was totally aboveboard, so there was no reason to question it.
-27. He took a surreptitious glance at her knees.
-28. a furtive glance at her
+27. He took a **surreptitious (秘密的，偷偷摸摸的)** glance at her knees.
+28. a **furtive (偷偷摸摸的)** glance at her
 29. The SWAT team carried out a stealth raid on the house, which was believed to be harboring a terrorist cell.
 30. The drive to create is indigenous to humanity.
 31. agonize over every decision
@@ -3430,11 +3433,11 @@ up
 3. Islamic
 4. parchment
 5. angular
-6. souk
+6. **souk (露天市场，集市)**
 7. mosque
-8. prisoner
+8. Forming voting **blocs (集团)** and **coalitions (联盟)** as a **prisoner (囚徒)**'s dilemma: a possible theoretical explanation for political instability.
 9. cellulose
-10. pulp
+10. take the **pulp (果肉，浆，髓)** and mix it with **jaggery (棕榈糖，粗糖)** and eat
 
 ## 2017.10.16
 
@@ -3444,10 +3447,9 @@ up
 4. dormant, hibernate
 5. locomotive, train
 6. meadow, field
-7. ooze
-8. pacifier
+7. Far from pretty, it **oozes (洋溢着，散发出)** fear and poverty, desperation and **bigotry (偏执)**, but also some form of social link, strongly separated between sexes.
+8. A large amount of lava began **oozing (【浓液体】渗出)** out of the volcano.
 10. geological, geography
-11. puff, blow, exhale
 12. seep, seepage
 13. fad
 
@@ -3457,7 +3459,7 @@ up
 
 ## 2017.10.18
 
-1. impediment
+1. The biggest **impediment (障碍，阻碍)** to research progress is not fraud, it is all scientists reading about fraud.
 2. The Red Cross **dispensed (分发)** food and clothing to the flood victims.
 3. Asthma attacks can be triggered by **pollen (花粉)**, dust, **harsh (刺激的，严厉的)** chemicals or **scents (气味)**.
 4. allergy
@@ -3465,8 +3467,8 @@ up
 6. excrete
 7. tidbit
 8. rhizome
-9. resilient: （物体或材料）能复原的；有弹性的；【人的性格】能迅速恢复或重新振作的；适应性强的
-    - most people are extremely resilient able to withstand **trauma (外伤，心理创伤)**.
+10. most people are extremely **resilient (（物体或材料）能复原的；有弹性的；【人的性格】能迅速恢复或重新振作的；适应性强的)** able to withstand **trauma (外伤，心理创伤)**.
+11. resiliency in the face of challenge
 10. interlocking
 11. snap
 12. blowhole
@@ -3524,7 +3526,7 @@ up
 26. They will live only in the songs and **chronicles (编年史)** of their **exterminators (扑灭的人，害虫驱除剂)**.
 27. deduction
 28. aviculture
-29. postscript
+29. postscript: 【信末的】附言；补充；
 30. cavalry, soldier
 31. parasite, prairie
 32. perigee
@@ -3547,7 +3549,7 @@ up
 49. recreation
 50. reclaim
 51. silt
-52. reclamation
+52. land **reclamation (开垦，回收，再生)** and sustainable development
 
 ## 2017.10.21
 
@@ -3595,7 +3597,6 @@ Nothing. Watching The Greatest Challenge.
 26. cultivar
 27. contagion
 28. prairie
-29. latency
 30. parasite
 31. weed
 32. inoculation
@@ -3608,12 +3609,11 @@ Nothing. Watching The Greatest Challenge.
 ## 2017.11.2
 
 1. motif
-2. moss
+2. the moss-**draped (披，装饰)** **bald (秃顶的，秃头的)** **cypress (柏树)** trees: 长满青苔的秃柏树
 3. monopoly
 4. monolithic
 5. miniature
 6. metropolis
-7. meteor
 8. metallurgy
 
 ## 2017.11.3
@@ -3622,45 +3622,6 @@ Nothing. Watching The Greatest Challenge.
 2. dweller
 3. wriggle
 4. manure
-## 2017.11.4
-
-1. CRASH
-
-## 2017.11.5
-
-crash
-
-## 2017.11.6
-
-1. half crash
-
-## 2017.11.7
-
-crash again
-
-## 2017.11.8
-
-crash, chat with Prof. Wang
-
-## 2017.11.9
-
-full crash
-
-## 2017.11.10
-
-full crash + sleep
-
-## 2017.11.11
-
-dinner
-
-## 2017.11.12
-
-letter cuhk
-
-## 2017.11.13
-
-letter back
 
 ## 2017.11.14
 
@@ -3686,9 +3647,9 @@ letter back
 7. LEDs use only a quarter the energy of **incandescent bulbs (白炽灯)**.
 8. fluorescent
 9. pebble
-10. Hydrogen, Helium
+10. Hydrogen (氢，氢气), Helium (氦，氦气)
 11. fainter
-12. foundationalism
+12. **foundationalism (基础主义，基础论)**
 13.  John Locke, René Descartes.
 14. slate
 15. mirage
@@ -3717,7 +3678,7 @@ letter back
 38. chanting, bang
 39. Cabaret Voltaire
 40. at the eleventh hour
-41. marble statue
+41. **marble (n/adj/v 大理石)** **statue (雕像)**
 42. polychrome
 43. disintegrated
 44. heroism, divinity
@@ -3726,7 +3687,7 @@ letter back
 
 ## 2017.11.16
 
-1. It really gets them **enamored** with riding and get to make something part of their daily lives.
+1. It really gets them **enamored (迷恋，爱上)** with riding and get to make something part of their daily lives.
 2. The **venue** is the school.
 3. He had three forty-**fathom (英寻，等于 6 英尺，约合1.8288米)** **coils** of line in reserve now, as well as the coil he was using.
 4. The **vibe** in the office is amazing.
@@ -3743,7 +3704,7 @@ letter back
 15. make headway
 16. contemplative
 17. vague
-19. close-ups
+19. close-up: 影视特写；详细检查；详图
 20. petal
 21. juxtaposes
 22. archaeology
@@ -3759,7 +3720,7 @@ letter back
 
 1. Chimpanzees, **primates (灵长类)**, chimps, gorillas, orangutans
 2. bottlenose
-3. aggressive
+3. What **sarcastic (讽刺的，挖苦的)** answer can I give her without **aggressive (好斗的，挑衅的，有进取心的)**?
 4. trunk
 5. stand alone, hierarchy
 6. corvid, corvidae, raven, jay, crow, magpie
@@ -3768,7 +3729,7 @@ letter back
 11. empathy
 12. afoot
 13. plating
-14. Seigniorage
+14. seigniorage: 铸币税；君权
 15. nostalgia
 16. tubing, sheet
 17. alloying
@@ -3782,21 +3743,20 @@ letter back
 
 ## 2017.11.22
 
-**Nirvana (涅槃【超脱一切烦恼的境界】)** in Fire: 琅琊榜
+- **Nirvana (涅槃【超脱一切烦恼的境界】)** in Fire: 琅琊榜
 
 ## 2017.11.25
 
-the disguiser: 伪装者
-
-empresses in the palace：甄嬛传
+- the disguiser: 伪装者
+- empresses in the palace：甄嬛传
 
 ## 2017.11.26
 
-the glory of Tang dynasty: 大唐荣耀
+- the glory of Tang dynasty: 大唐荣耀
 
 ## 2017.11.29
 
-**Beijing Municipality (北京市【自治市；自治区；自治市或区的政府当局】)**
+- **Beijing Municipality (北京市【自治市；自治区；自治市或区的政府当局】)**
 
 ## 2017.12.18
 
