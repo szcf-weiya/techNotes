@@ -3095,7 +3095,8 @@ STR
 <p>simplest way:</p>
 <div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span>
 </code></pre></div>
-<p>some alternatives refer to <a href="https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed">How can I strip first X characters from string using sed?</a>, or <a href="https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash">Remove first character of a string in Bash</a></p>
+<p>More generally, <code>${str:position:length}</code> extracts the substring started from the <code>position</code> with length <code>length</code>.</p>
+<p>Some alternatives refer to <a href="https://stackoverflow.com/questions/11469989/how-can-i-strip-first-x-characters-from-string-using-sed">How can I strip first X characters from string using sed?</a>, or <a href="https://stackoverflow.com/questions/6594085/remove-first-character-of-a-string-in-bash">Remove first character of a string in Bash</a></p>
 <p>a real application in my project:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">list</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
 <span class="k">for</span> nc <span class="k">in</span> <span class="o">{</span><span class="m">2</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
@@ -3131,6 +3132,7 @@ xxyyz
 XXyyzz
 </code></pre></div>
 <p>But this only replaces the first occurrence, for all occurrence, use double slashes, i.e., <code>${var//xx/XX}</code></p>
+<p>Another application is to check whether a string is not empty, neither space, <code>[ -n "${str// /}" ]</code>, see also <a href="https://stackoverflow.com/questions/13509508/check-if-string-is-neither-empty-nor-space-in-shell-script"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h3 id="default-value">default value<a class="headerlink" href="#default-value" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>${1:-foo}</code>: if parameter is unset or <strong>null</strong>, the expansion of word is substituted.</li>
@@ -3734,6 +3736,10 @@ sys 0m0.069s
 $ wc -l test.txt
 <span class="m">9999949</span> test.txt
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>在 <code>wc</code> 中文件前面插入 <code>&lt;</code> 则不会返回文件名，即 <code>wc -l &lt; test.txt</code>. 另见 <a href="https://unix.stackexchange.com/questions/154322/how-to-display-the-number-of-lines-words-and-characters-in-separate-lines"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+</div>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> <span class="o">{</span>
   head -n <span class="s2">&quot;</span><span class="k">$((</span><span class="nv">$l1</span> <span class="o">-</span> <span class="m">1</span><span class="k">))</span><span class="s2">&quot;</span>
   head -n <span class="s2">&quot;</span><span class="k">$((</span><span class="nv">$l2</span> <span class="o">-</span> <span class="nv">$l1</span> <span class="o">+</span> <span class="m">1</span><span class="k">))</span><span class="s2">&quot;</span> &gt; /dev/null

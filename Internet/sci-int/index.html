@@ -1682,6 +1682,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#proxy-for-gmail-in-thunderbird" class="md-nav__link">
+    Proxy for Gmail in Thunderbird
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#jupyter-notebook" class="md-nav__link">
     Jupyter Notebook
   </a>
@@ -2373,6 +2380,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#proxy-for-gmail-in-thunderbird" class="md-nav__link">
+    Proxy for Gmail in Thunderbird
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#jupyter-notebook" class="md-nav__link">
     Jupyter Notebook
   </a>
@@ -2600,6 +2614,9 @@ ssh -D <span class="m">30002</span> Server
 <li>上面一来一会就形成一个闭环。内网服务器定期往 30000 端口发送检测消息，如果链路正常，则 30000 端口的消息先转发到 <code>xx.xx.xx.xx</code> 的 30000 端口，然后立即转送到内网服务器的 30001 端口。</li>
 </ul>
 <p><img alt="" src="../autossh.png" /></p>
+<h3 id="proxy-for-gmail-in-thunderbird">Proxy for Gmail in Thunderbird<a class="headerlink" href="#proxy-for-gmail-in-thunderbird" title="Permanent link">&para;</a></h3>
+<p>因为在 Thunderbird 中不只有 Gmail 账户，所以想只对 Gmail 账户进行代理。于是通过 SwitchyOmega 单独创建一个 profile，然后导出 <code>.pac</code> 文件。</p>
+<p><img alt="proxy_gmail" src="https://user-images.githubusercontent.com/13688320/183234236-5b19edce-fccc-4d35-886b-4029d021cb8e.png" /></p>
 <h3 id="jupyter-notebook">Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Permanent link">&para;</a></h3>
 <p>当<strong>搭建好隧道</strong>后，可以借用该隧道使用内网服务器上的 Jupyter Notebook，</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># open jupyter notebook as usual on innerserver</span>
