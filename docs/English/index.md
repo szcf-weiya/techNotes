@@ -1,5 +1,15 @@
 - :fireworks: : good article
 
+## 2022.08.07
+
+- It is just **terrific (极好的，绝妙的)** for showing how easy extensibility is in Julia.
+- I found myself attending to emails while the speaker was still enthusiastically discussing the slides, quite **oblivious (不知道，未察觉)** to what was going on --- and perhaps unaware of my presence in the first place.
+- **consolidate (巩固，合并)** your knowledge
+- Researchers found that the **nocebo (反安慰剂)** effect accounted for 76% of common adverse reactions, such as headache and **fatigue (疲劳，)**, after the first dose.
+- a kind, thoughtful, and **charming (英俊的，潇洒的，有魅力的)** person.
+- **derby (德比，同城大战)**: a sports match between two **rival (竞争的)** teams from the same area.
+- The **Reverend (牧师)** Bayes --- was he really a **prophet (预言家)**?
+
 ## 2022.08.06
 
 - Coronavirus made a big mistake **invading (侵略)** the greatest goddamn country on earth.
@@ -1946,7 +1956,7 @@ None
 - I don't know that I could quite **articulate** what the rules are, but I can tell what's going on.
 - The **moral economy (道德经济，伦理经济)** of science.
 - I heard a rumor that they have contacts at the **Antarctic Polar Station** who are going to sign the thing once they can get their damn **fur gloves** off.
-- I've **obscured** the details of the letter here because I don't want to **single out** the authors of this particular paper or the editor of this particular journal.
+- I've **obscured (v. 使模糊)** the details of the letter here because I don't want to **single out** the authors of this particular paper or the editor of this particular journal.
 
 ## 2020.10.24
 
@@ -1987,8 +1997,8 @@ None
 
 - I'd assumed that there are more pro Dem **pollsters** than pro Rep or unbiased pollsters.
 - our model judges that to be a **fluke**
-- someone sent me this **collage** of maps from Nate's model
-- they're not just some sort of computer **glitch**
+- someone sent me this **collage (拼贴画)** of maps from Nate's model
+- they're not just some sort of computer **glitch (小故障，小毛病)**
 - problem of the between-state correlations in the [Fivethirtyeight](https://fivethirtyeight.com/)([中文解释](https://www.zhihu.com/question/33259890)) election forecast.
 
 
@@ -2090,7 +2100,7 @@ None
 
 ## 2020.10.06
 
-- the content of unreplicated or otherwise **shaky** empirical claims
+- the content of unreplicated or otherwise **shaky (颤抖的，不牢靠的)** empirical claims
 - **sway** in the way
 
 ## 2020.10.05
@@ -2113,7 +2123,7 @@ None
 - this kind of **cavalier (随便的，傲慢的)** attitude to what is pretty much the purest sort of scientific fraud makes it clear how little the scientific process is valued.
 - this kind of sounds like a **conspiracy theory (阴谋论)**
 - all participants in cargo-cult (货物崇拜) social science——from the fabricators to the **powermongers** to the enablers to the just plain **incompetents (无能者，不胜任者)**
-- swatting away people like other data **thugs**
+- swatting away people like other data **thugs (暴徒)**
 
 ## 2020.10.04
 
@@ -2149,8 +2159,7 @@ None
 - farmed in aquaculture systems
 - thousands of swimmers are stung with varying degrees of severity every year.
 - jellyfish can form swarms which are also known as jellyfish blooms, which can damage fishing apparatus or clog the cooling systems of power stations.
-- ocean eutrophication
-
+- ocean **eutrophication (富营养化)**
 
 ## 2020.07.25
 
@@ -2193,7 +2202,7 @@ None
 - this is going to suck
 - they surrender and walk into it.
 - It was a slugfest
-- we numb vulnerability
+- **numb (v. 使失去知觉；adj. 麻木的)** **vulnerability (脆弱性，弱点)**
 - initiating sex with my wife
 - being turned down
 - getting laid off
@@ -2240,7 +2249,7 @@ None
 - this is wisdom that's as old as the hills
 - **take a toll (造成损失，产生负面影响)** on their memories
 - glamorous
-- fare the best
+- **fare (v. 成功；n. 车费)** the best: 表现最好的
 - livening up a stale relationship
 - those all-too-common family feuds take a terrible **toll (毁坏；通行费；伤亡人数)** on the people who hold the **grudges (怨恨，积怨)**
 
@@ -2344,14 +2353,14 @@ None
 
 ### Celeste Headlee·TEDxCreativeCoast: 10 ways to have a better conversation
 
-- unfriend someone on Facebook
+- **unfriend (解除好友关系)** someone on Facebook
 - Henry Higgins in "My Fair Lady"
 - anti-vaxxing: shorted version of [anti-vaccination](https://en.wikipedia.org/wiki/Vaccine_hesitancy)
 - has the potential to devolve into an argument
 - Pew Research
 - we are more polarized than we ever have been in history
 - **plumber**: 水管工人
-- **nod** and smile to show that you're paying attention.
+- **nod (点头)** and smile to show that you're paying attention.
 - it's **crap (废话，废物)**.
 - don't **pontificate (自以为是地谈论，目空一切地议论)**.
 - I don't allow **pundits** on my show.
@@ -2396,7 +2405,7 @@ None
 - on the competition, the workload, the **hassles**, stresses, complaints.
 - adolescent depression, violence and bullying, illicit drugs, risky sex
 - dopamine
-- not only create ripples of positivity, but a real revolution
+- not only create ripples of positivity, but a real **revolution (革命，旋转)**
 - journaling about one positive experience you've had over the past 24 hours allows your brain to relive it.
 - we find that meditation allows your brain to get over the cultural ADHD that we've creating by trying to do multiple tasks at once and allows our brains to focus on the task at hand.
 - random acts of kindness are **conscious** acts of kindness.
@@ -2537,7 +2546,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. I recently was discussing/arguing about the value of **[charter schools](https://www.zhihu.com/question/21810104)** **lottery (彩票)** studies.
     - [The demand for seats in charter schools is so great that almost all charter schools must admit students by random lottery.](https://www.nyccharterschools.org/sites/default/files/resources/LOTTERIES082713.pdf)
-2. is admissions of a lack of external validity **ameliorated** because of stronger internal validity?
+2. is admissions of a lack of external validity **ameliorated (改善；改进)** because of stronger internal validity?
 
 ## 2019.12.21
 
@@ -2569,7 +2578,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 13. Education should be **geared (使搭配，使适合)** to society's needs.
 14. With Thanksgiving around the corner, retailers are **gearing up (准备好)** for a battle.
 13. What really **riled (激怒)** me was when the speaker said
-14. This seems to me to be a **bizarre** sort of **techno-mysticism**.
+14. This seems to me to be a **bizarre (离奇的，古怪的)** sort of **techno-mysticism**.
 15. The **nascent (初期的，开始存在的，发生中的)** field of fair machine learning aims to ensure that decisions guided by algorithms are equitable.
 16. Over the last several years, three formal definitions of fairness have gained **prominence**
 17. classification **parity**, meaning that common measures of predictive performance
@@ -2636,7 +2645,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2019.10.22
 
-1. cartography
+1. “apparent magnitude scaling” is an idea from **cartography (制图学)**
 2. regime
 3. geoscientists and engineers in the **petroleum (石油)** and **geothermal (地热的，地温的)** industries
 
@@ -2805,7 +2814,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 7. opt for
 8. progeny
 9. haploid
-10. coalesce
+- pairs of chains **coalesce (合并，联合)** after a random number of iterations.
 
 ## 2018.09.08
 
@@ -2880,7 +2889,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. consanguineous
 2. sibship
 3. autosomal
-5. ameliorate
 6. facilitate
 
 
@@ -3008,11 +3016,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. phishing
 
-
-## 2018.07.30
-
-1. obscure
-
 ## 2018.07.29
 
 1. whence
@@ -3134,7 +3137,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 7. Mr Zingales has written an elegy to the America he found when he moved there 24 years ago from an Italy that was rife with nepotism (裙带关系).
 8. We keep records on every single hive, and that compendium of records goes back quite a long time.
 9. Jeremiad wreathes upon my feeling, while shadow of shiver covers my mind.
-10. He made speech of panegric.
+10. He made speech of **panegyric (颂词，赞辞)**.
 11. In an hour-long philippic, the legislator denounced the lobbyists opposing his bill.
 12. Their profligate lifestyle resulted in bankruptcy.
 13. Improvident behavior is likely to **imprint (印记)** indelible marks on a person's life and personality.
@@ -3290,7 +3293,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 38. The revised system **chords (n. 和弦; v. 调弦)** perfectly with the original goals.
     - choral society: 合唱团
 39. A representation of Cupid as a naked, cherubic boy usually is used as a symbol of love.
-40. The spy obtained the documents by subterfuge.
+40. The spy obtained the documents by **subterfuge (秘密手段，诡计)**.
 41. The actor must have had some esoteric motive for leaving stage.
 42. In just a few pages the writer **etched (蚀刻，画出...的轮廓)** an unforgettable portrait of one of the more remarkable First Ladies.
 43. The minister eschews involvement in local politics, since he doesn't want to diminish his moral authority in the community.
@@ -3317,7 +3320,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 70. frenzied (frantic; highly agitated)
 71. Magnanimous
 72. sporadic (intermittent or infrequent): 零星的，分散的，不定时发生的
-73. Ameliorate (improve; make better)
 74. Denigrate (disparage; defame)
 75. demonstrate (show; prove) & warrant (justify, 使显得合理，成为...的根据)
 76. Reticence (reserve; tendency to keep silent) & gregariousness or sociability.
@@ -3404,7 +3406,7 @@ up
 
 ## 2017.10.11
 
-1. Before that beauty, the years of chaos at the heart of American politics would recede like some extraordinary dream.
+1. Before that beauty, the years of chaos at the heart of American politics would **recede (逐渐远去，逐渐减弱)** like some **extraordinary (意想不到的，奇怪的)** dream.
 2. Power is still out to many homes and business, and flood waters are just beginning to recede leaving behind massive damage and debris.
 3. And a river went out of Eden to water the garden, and from thence it was parted, and became into four heads.
 4. The **sterile (贫瘠的，无菌的)** soil would at least have been proof against a low-land degeneracy.
@@ -3419,12 +3421,13 @@ up
 
 ## 2017.10.13
 
-1. directrix, eccentricity
-2. reciprocal
+- a parabola with focus and **directrix (准线)**
+- eccentricity: 离心率；怪癖，古怪行为
+- A condition number of about 10^15, which is very nearly the **reciprocal (倒数)** of double precision roundoff.
 
 ## 2017.10.14
+
 1. cardioid: 心脏线
-2. revolution:
 3. Last but not least 最后但不是最不重要的一点
 
 ## 2017.10.15
@@ -3444,7 +3447,8 @@ up
 1. But political gridlock should not be conflated with economic reality.
 2. In this sedate garrison town ringed by jagged peaks, the gentle thrum of the day is usually reduced to a whisper by night.
 3. The seed germination percentage had a small increase at the beginning of desiccation and then decreased rapidly.
-4. dormant, hibernate
+3. the account has been **dormant (暂停活动的，休眠的)** for a while
+4. **hibernate (冬眠，蛰伏)** for the winter
 5. locomotive, train
 6. meadow, field
 7. Far from pretty, it **oozes (洋溢着，散发出)** fear and poverty, desperation and **bigotry (偏执)**, but also some form of social link, strongly separated between sexes.
@@ -3484,7 +3488,7 @@ up
 19. astronomical1
 20. diplomacy
 21. immerse yourself in **exotic (外来的，异国的)** languages, 
-22. ConvNets went from obscure models that were **shrouded (覆盖，隐藏)** in skepticism to rockstars of Computer Vision, present as a core building block in almost every new Computer Vision paper.
+22. ConvNets went from **obscure (费解的)** models that were **shrouded (覆盖，隐藏)** in skepticism to rockstars of Computer Vision, present as a core building block in almost every new Computer Vision paper.
 23. ward off
 24. The source of indoor **VOC (voltile organic compounds, 挥发性有机化合物)** could be multiple and it may be also be contributed by the use of **detergents (洗涤剂，洗衣粉)** and **fragrance (香气，香水)** (room fragrance and **perfume (香水，香料)**) in indoor environment.
 25. octopus
@@ -3509,7 +3513,7 @@ up
 8. blend of cultures：文化融合
 9. blaze
 10. bland
-11. diffident, different, indifferent
+11. diffident (缺乏自信的，胆怯的), different, indifferent
 12. hatred
 13. pond
 14. boom, flourish
@@ -3591,7 +3595,6 @@ Nothing. Watching The Greatest Challenge.
 20. showcase
 21. poll, no-no
 22. wink
-23. bizarre
 24. vein
 25. agroecology
 26. cultivar
@@ -3671,7 +3674,6 @@ Nothing. Watching The Greatest Challenge.
 31. backbone
 32. overthrow
 33. stool, mount
-34. collage
 35. canvas
 36. pull (someone or something) out of a hat: To select someone or something entirely at random.
 37. Zurich
@@ -3682,7 +3684,6 @@ Nothing. Watching The Greatest Challenge.
 42. polychrome
 43. disintegrated
 44. heroism, divinity
-45. terrific
 46. armor, cloak
 
 ## 2017.11.16

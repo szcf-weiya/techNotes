@@ -70,6 +70,7 @@ double *pone = (double*)malloc(sizeof(double));
 
 ## help
 
+1. [Use of cudamalloc(). Why the double pointer? - Stack Overflow](https://stackoverflow.com/questions/7989039/use-of-cudamalloc-why-the-double-pointer)
 1. [Element-by-element vector multiplication with CUDA](https://stackoverflow.com/questions/16899237/element-by-element-vector-multiplication-with-cuda)
 2. [Is there a cuda function to copy a row from a Matrix in column major?](https://stackoverflow.com/questions/21002621/is-there-a-cuda-function-to-copy-a-row-from-a-matrix-in-column-major)
 3. [“invalid configuration argument ” error for the call of CUDA kernel?](http://blog.csdn.net/dcrmg/article/details/54850766)
@@ -77,8 +78,7 @@ double *pone = (double*)malloc(sizeof(double));
 http://blog.csdn.net/dcrmg/article/details/54850766
 4. [Incomplete output from printf() called on device](https://stackoverflow.com/questions/15421626/incomplete-output-from-printf-called-on-device)
 5. [关于CUDA中__threadfence的理解](http://blog.csdn.net/yutianzuijin/article/details/8507355)
-6. [
-Call cublas API from kernel](https://devtalk.nvidia.com/default/topic/902074/call-cublas-api-from-kernel/?offset=3)
+6. [Call cublas API from kernel](https://devtalk.nvidia.com/default/topic/902074/call-cublas-api-from-kernel/?offset=3)
 7. [CUDA Memory Hierarchy](https://graphics.cg.uni-saarland.de/fileadmin/cguds/courses/ss14/pp_cuda/slides/02_-_CUDA_Memory_Hierarchy.pdf)
 8. [In a CUDA kernel, how do I store an array in “local thread memory”?](https://stackoverflow.com/questions/10297067/in-a-cuda-kernel-how-do-i-store-an-array-in-local-thread-memory)
 9. [cublas handle reuse](https://devtalk.nvidia.com/default/topic/941557/gpu-accelerated-libraries/cublas-handle-reuse/)

@@ -24,3 +24,7 @@ It is reported that [`scp` is slower than `rsync`](https://unix.stackexchange.co
 
 !!! warning
     DO NOT interrupt a large file copy process, otherwise your PC would break down, and cannot ssh into. The only way is to restart manually. 
+
+## Misc
+
+- [run graphical program](https://virtualizationreview.com/articles/2017/02/08/graphical-programs-on-windows-subsystem-on-linux.aspx)

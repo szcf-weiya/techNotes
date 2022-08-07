@@ -6,15 +6,13 @@
 
 ### math formula
 
-比如
+No need to use `paste` function ([:link:](https://stackoverflow.com/questions/4973898/combining-paste-and-expression-functions-in-plot-labels))
 
-```r
-expression(R[group("", list(hat(F),F),"")]^2)
-```
-
-参考
-
-1. [Mathematical Annotation in R](http://vis.supstat.com/2013/04/mathematical-annotation-in-r/)
+COMMAND | FIGURE
+--- | ---
+`~` in the expression represents a space: `expression(xLab ~ x^2 ~ m^-2)` | ![image](https://user-images.githubusercontent.com/13688320/183274535-2edfa7d7-8c78-486e-a3a4-d8f869e3c6d6.png)
+`*` in the expression implies no space: `expression(xLab ~ x^2 * m^-2)` | ![image](https://user-images.githubusercontent.com/13688320/183274537-821df12b-a586-4ff6-979b-46f07ce80ac4.png)
+`expression(R[group("", list(hat(F),F),"")]^2)` OR `expression(R[hat(F) * ',' ~ F]^2)` | ![image](https://user-images.githubusercontent.com/13688320/183274648-a23a655c-f2c3-484c-a549-0bb6f3325a92.png)
 
 ### pure figure without axis
 

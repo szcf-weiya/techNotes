@@ -329,6 +329,9 @@ The idea is to define the command in `natbib+bibtex` as `biblatex+biber`, and ke
 \newcommand{\printbibliography}{\bibliography{ref_bibtex.bib}}
 ```
 
+!!! warning "A well known issue for biber older than 2.2"
+	[missing recode_data.xml file](https://tex.stackexchange.com/questions/140814/biblatex-biber-fails-with-a-strange-error-about-missing-recode-data-xml-file/)
+
 ### bibtex文献加颜色
 
 两种方式

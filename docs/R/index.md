@@ -908,3 +908,7 @@ memuse = function () {
     strtoi(system(paste("ps -p", Sys.getpid(), "-o rss="), intern = T)) / 1024
 }
 ```
+
+## Stats Functions
+
+- `stats::ecdf`: empirical cumulative distribution function

@@ -597,6 +597,13 @@ Also check the [official documentation](https://help.ubuntu.com/stable/ubuntu-he
 
 > A file template can be a document of any type with the formatting or content you would like to reuse. 
 
+### Google Drive
+
+!!! note
+    短暂尝试过，但已弃用。
+
+可以添加 Google Drive 的帐号，从而直接在文件管理系统中访问 Google Drive 的内容。另见 [:fontawesome-brands-stack-exchange:](https://askubuntu.com/questions/838956/ubuntu-16-04-set-up-with-google-online-account-but-no-drive-folder-in-nautilus)
+
 ## Octave
 
 参考[Octave for Debian systems](http://wiki.octave.org/Octave_for_Debian_systems)

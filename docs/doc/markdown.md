@@ -1,5 +1,7 @@
 # Markdown
 
+- [a simple example generated page via rmarkdown](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#a-simple-example), see also [ESL-CN Issue 242](https://github.com/szcf-weiya/ESL-CN/issues/242)
+
 ## Typora
 
 Personal Tips:

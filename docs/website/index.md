@@ -49,9 +49,10 @@ refer to [How do I configure GitHub to use non-supported Jekyll site plugins?](h
 
 参考[Relative paths in Jekyll](https://ricostacruz.com/til/relative-paths-in-jekyll)
 
-## mathjax中小于号与html的标签符号冲突
+## MathJax
 
-注意在mathjax中小于号左右空一格，不要连着写
+- [MathJax basic tutorial and quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
+- 注意在 mathjax 中小于号左右空一格，不要连着写
 
 ## Github Pages 与百度爬虫
 
@@ -545,3 +546,10 @@ Pygments can be used in Jekyll via Rouge, see [Use Pygments for Code Snippet Hig
 With such old version, the formatters like `material`, `github-dark` are not supported.
 
 but the upgrade does not upgrade `pygmentize`, instead, it install it to `/home/weiya/.local/bin/pygmentize`
+
+## WeasyPrint
+
+<https://weasyprint.org/>
+
+- convert HTML to PDF: see also [:fontawesome-brands-zhihu:](https://zhuanlan.zhihu.com/p/343461128)
+- customize HTML as PDF
