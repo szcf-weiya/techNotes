@@ -2495,13 +2495,29 @@
 <li><a href="http://karolis.koncevicius.lt/posts/r_base_plotting_without_wrappers/">R base plotting without wrappers</a></li>
 </ul>
 <h3 id="math-formula">math formula<a class="headerlink" href="#math-formula" title="Permanent link">&para;</a></h3>
-<p>比如</p>
-<div class="highlight"><pre><span></span><code><span class="nf">expression</span><span class="p">(</span><span class="n">R</span><span class="p">[</span><span class="nf">group</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="nf">list</span><span class="p">(</span><span class="nf">hat</span><span class="p">(</span><span class="bp">F</span><span class="p">),</span><span class="bp">F</span><span class="p">),</span><span class="s">&quot;&quot;</span><span class="p">)]</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
-</code></pre></div>
-<p>参考</p>
-<ol>
-<li><a href="http://vis.supstat.com/2013/04/mathematical-annotation-in-r/">Mathematical Annotation in R</a></li>
-</ol>
+<p>No need to use <code>paste</code> function (<a href="https://stackoverflow.com/questions/4973898/combining-paste-and-expression-functions-in-plot-labels"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>)</p>
+<table>
+<thead>
+<tr>
+<th>COMMAND</th>
+<th>FIGURE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~</code> in the expression represents a space: <code>expression(xLab ~ x^2 ~ m^-2)</code></td>
+<td><img alt="image" src="https://user-images.githubusercontent.com/13688320/183274535-2edfa7d7-8c78-486e-a3a4-d8f869e3c6d6.png" /></td>
+</tr>
+<tr>
+<td><code>*</code> in the expression implies no space: <code>expression(xLab ~ x^2 * m^-2)</code></td>
+<td><img alt="image" src="https://user-images.githubusercontent.com/13688320/183274537-821df12b-a586-4ff6-979b-46f07ce80ac4.png" /></td>
+</tr>
+<tr>
+<td><code>expression(R[group("", list(hat(F),F),"")]^2)</code> OR <code>expression(R[hat(F) * ',' ~ F]^2)</code></td>
+<td><img alt="image" src="https://user-images.githubusercontent.com/13688320/183274648-a23a655c-f2c3-484c-a549-0bb6f3325a92.png" /></td>
+</tr>
+</tbody>
+</table>
 <h3 id="pure-figure-without-axis">pure figure without axis<a class="headerlink" href="#pure-figure-without-axis" title="Permanent link">&para;</a></h3>
 <p>Suppose I want to draw the following figure with R,</p>
 <p><img alt="" src="../low-level-plot.PNG" /></p>
