@@ -1,5 +1,16 @@
 - :fireworks: : good article
 
+## 2022.08.08
+
+- Cavitation for Cold Brew Espresso: **Cavitation (空蚀，空穴)** is caused by the movement of water being so quick that the pressure drops and then the water vaporizes. For coffee, the theory is that cavitation makes extraction easier. [:link:](https://towardsdatascience.com/cavitation-for-cold-brew-espresso-57ef791d4675), [:material-wikipedia:](https://zh.m.wikipedia.org/zh-hk/%E7%A9%BA%E7%A9%B4%E7%8F%BE%E8%B1%A1)
+- eugenics: 基因优生学
+- a **blazingly (with or like a blaze; bright and fiery)** fast solution 
+- tricks that **wow (博得称赞)** you
+- **snap out (快速脱离)** of a data science **slump (低迷)**
+- Dunder or magic methods in Python are the methods having two prefix and suffix underscores in the method name. [:link:](https://www.geeksforgeeks.org/dunder-magic-methods-python/)
+- In any phase of your career, you need to have your **niche (【舒适或称心的工作】，市场定位)** or "your field". 
+- Jeep Wrangler: 吉普牧马人
+
 ## 2022.08.07
 
 - It is just **terrific (极好的，绝妙的)** for showing how easy extensibility is in Julia.
@@ -2504,7 +2515,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2019.12.30
 
 1. High scorers are juvenile **delinquents (少年罪犯)** who then see the error of their ways and **reform (改革，改正)** permanently.
-29. Children who fail in the entrance examination are deprived of the opportunities to receive a better and higher education. **Accordingly (因此；相应地)**, with an impressive educational background, it is difficult for them to find a proper job. As a result, they become full of resentment at a society, doing harm to strangers and disrupting social order, **both of which** inevitably increase **juvenile (少年的，未成年的)** **delinquency (「常指青年人的」犯罪)**.
+29. Children who fail in the entrance examination are **deprived (剥夺，使丧失)** of the opportunities to receive a better and higher education. **Accordingly (因此；相应地)**, with an impressive educational background, it is difficult for them to find a proper job. As a result, they become full of resentment at a society, doing harm to strangers and disrupting social order, **both of which** inevitably increase **juvenile (少年的，未成年的)** **delinquency (「常指青年人的」犯罪)**.
     - both + nonus: both my children, both engines
     - pronoun + both: we both prefer classical music. let's open them both now.
     - both of + object pronoun: both of us/them/you
@@ -2586,7 +2597,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 19. A team of researchers inside **Pfizer (辉瑞，美国制药公司)** made a **startling** find in 2015: The company’s **blockbuster (重磅炸弹，了不起的人或事)** **rheumatoid (风湿病的，类风湿病的)** **arthritis (关节炎)** therapy [**Enbrel (恩利，注射用依那西普，Etanercept)**](https://baike.baidu.com/item/%E6%81%A9%E5%88%A9), a powerful **anti-inflammatory (抗炎的)** drug, appeared to reduce the risk of Alzheimer’s disease by 64 percent.
 20. A **synopsis** of its statistical findings prepared for outside publication, it says, did not meet its “rigorous scientific standards.”
 21. Pfizer said it **opted** against publication of its data because of its doubts about the results.
-22. One reason for caution: another class of anti-inflammatory therapies, called **non-steroidal** anti-inflammatory drugs (NSAIDS), showed no effect against mild-to-moderate Alzheimer’s in several clinical trials a decade ago.
+22. One reason for caution: another class of anti-inflammatory therapies, called **non-steroidal (非类固醇类化合物)** anti-inflammatory drugs (NSAIDS), showed no effect against mild-to-moderate Alzheimer’s in several clinical trials a decade ago.
+- steroid: 类固醇，【生化】甾类化合物
 23. I bet this **revelation (启示，被揭露的真相)** leads to **a slew of** off-label prescriptions, just as happened with **estrogen (雌性激素)** a couple of decades ago. My physician friends told me then that you could not recruit subjects for a clinical trial because doctors were just prescribing estrogen for all **menopausal** women, to prevent Alzheimer’s.
 24. Novartis
 25. political ideology: 政治意识形态
@@ -3465,7 +3477,7 @@ up
 
 1. The biggest **impediment (障碍，阻碍)** to research progress is not fraud, it is all scientists reading about fraud.
 2. The Red Cross **dispensed (分发)** food and clothing to the flood victims.
-3. Asthma attacks can be triggered by **pollen (花粉)**, dust, **harsh (刺激的，严厉的)** chemicals or **scents (气味)**.
+3. Asthma attacks can be triggered by **pollen (花粉)**, dust, **harsh (刺激的，严厉的，残酷的)** chemicals or **scents (气味)**.
 4. allergy
 5. thrive
 6. excrete
@@ -3511,7 +3523,7 @@ up
     - moral code: 道德准则
     - all men are mortal: 人皆有一死
 8. blend of cultures：文化融合
-9. blaze
+- **blaze (火焰；展现)** your trail
 10. bland
 11. diffident (缺乏自信的，胆怯的), different, indifferent
 12. hatred
