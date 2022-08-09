@@ -703,9 +703,11 @@ see also: [xargs命令_Linux xargs 命令用法详解：给其他命令传递参
 
 - show whole message: leave summary empty and only show body, but still only when mouse is hovering the pop window, see also [:link:](https://unix.stackexchange.com/questions/300099/notify-send-how-to-display-full-message-when-message-is-longer-than-one-line)
 - escape `-` in the string, otherwise it throws `Unknown option`
+- specify icon `-i your_icon_path`, note that the path should be full path instead of relative path. 
 
 !!! note "Applications"
 	- [random pop up English words](../English/random.sh)
+	- [monitor status of watching videos](../check_video.sh)
 
 ## `paste`: 文本文件拼接
 

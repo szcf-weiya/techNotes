@@ -7,5 +7,5 @@
 # info=`wmctrl -d`
 n=`wmctrl -l | grep "bilibili\|中國人線上看\|YouTube\|知乎" | wc -l`
 if [ $n -gt 0 ]; then
-    notify-send "不要玩!!!"
+    notify-send -i /home/weiya/.local/share/icons/warning-icon.svg "不要玩!!!"
 fi
