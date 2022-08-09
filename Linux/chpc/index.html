@@ -2637,7 +2637,7 @@ If you are interested, please contact me for <code>PORT</code> and <code>MY_BRID
 ssh -t <span class="nv">$2</span> ssh -q -o <span class="nv">BatchMode</span><span class="o">=</span>yes <span class="nv">$1</span> <span class="nb">exit</span>
 <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> !<span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     <span class="c1">#echo &quot;broken connection&quot;</span>
-    notify-send <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="s2">&quot;broken connection&quot;</span>
+    notify-send -i /home/weiya/.local/share/icons/unlink-solid.svg <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="s2">&quot;broken connection&quot;</span>
 <span class="k">fi</span>
 </code></pre></div>
 <p>Create a regular job as follows,</p>
