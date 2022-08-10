@@ -1020,6 +1020,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#uchardet" class="md-nav__link">
+    uchardet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#uniq" class="md-nav__link">
     uniq
   </a>
@@ -3212,6 +3219,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#uchardet" class="md-nav__link">
+    uchardet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#uniq" class="md-nav__link">
     uniq
   </a>
@@ -3647,6 +3661,18 @@ $ find . -user user
 <p class="admonition-title">Warning</p>
 <p>Parsing <code>ls</code>, such as <code>ls | grep "\-&gt;"</code> is a bad idea. <a href="https://askubuntu.com/questions/522051/how-to-list-all-symbolic-links-in-a-directory"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 </div>
+<p>usage of <code>-exec</code></p>
+<div class="highlight"><pre><span></span><code>find /path <span class="o">[</span>args<span class="o">]</span> -exec <span class="o">[</span>cmd<span class="o">]</span> <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div>
+<p>where </p>
+<ul>
+<li><code>{}</code> is a placeholder, similar in <code>xargs</code>.</li>
+<li><code>\;</code> indicates that for each found result, the command <code>cmd</code> is executed once with the found result.</li>
+</ul>
+<p>For example, convert the file encoding in <a href="https://github.com/szcf-weiya/Matlab30IAs">szcf-weiya/Matlab30IAs</a></p>
+<div class="highlight"><pre><span></span><code>find . -name <span class="s1">&#39;*.m&#39;</span> -ls -exec iconv -f GB18030 <span class="o">{}</span> -t UTF8 -o <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div>
+<p>see also <a href="https://www.howtouselinux.com/post/linux-find-exec-examples-advanced-part"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h2 id="grep"><code>grep</code><a class="headerlink" href="#grep" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>-P</code>: perl-style regex</li>
@@ -4064,6 +4090,10 @@ scp_to_chpc <span class="o">()</span>
     scp -r <span class="nv">$1</span> user@host:~/<span class="nv">$2</span>
 <span class="o">}</span>
 </code></pre></div>
+<h2 id="uchardet"><code>uchardet</code><a class="headerlink" href="#uchardet" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ uchardet FILENAME
+</code></pre></div>
+<p>detect the file encoding</p>
 <h2 id="uniq"><code>uniq</code><a class="headerlink" href="#uniq" title="Permanent link">&para;</a></h2>
 <ul>
 <li>count the frequency: <code>cat file.txt | sort | uniq -c</code>.<ul>

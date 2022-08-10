@@ -2830,7 +2830,7 @@ sudo apt-get install network-manager-l2tp
 <h4 id="windows">尝试三：Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
 <p>试用 Azure，申请了个 Windows 10，按照 ITSC 的指示连接 VPN，确实能够成功，但是连接成功后，我跟该电脑的连接也就断开了，再次尝试也连不上，只好重启。</p>
 <h2 id="zju-vpn">ZJU VPN<a class="headerlink" href="#zju-vpn" title="Permanent link">&para;</a></h2>
-<p>黄熊的<a href="http://wwtalwtaw.studio/2018/04/26/net_surfing/">浙大玉泉ubuntu有线上网</a>讲得很详细。不过我却碰到个很奇怪的问题，申请完静态 IP，能够 ping 通内网，但当我安装完 <code>xl2tpd_zju</code> 后，却总是一直连不上网，更奇怪的是，还不能访问内网（没有运行 <code>vpn-connect</code> 前至少可以访问内网）。然后我尝试了各种办法，包括但不限于：</p>
+<p>黄熊的<a href="http://wwtalwtaw.studio/2018/04/26/net_surfing/">浙大玉泉ubuntu有线上网</a>讲得很详细。不过我却碰到个很奇怪的问题，申请完静态 IP，能够 ping 通内网，但当我安装完 <a href="../xl2tpd_1.2.5%2Bzju-1_amd64.deb"><code>xl2tpd_zju</code></a> 后，却总是一直连不上网，更奇怪的是，还不能访问内网（没有运行 <code>vpn-connect</code> 前至少可以访问内网）。然后我尝试了各种办法，包括但不限于：</p>
 <ol>
 <li>重装 <code>xl2tpd_zju</code>；</li>
 <li>换个 <code>xl2tpd_zju</code> 的版本，在 cc98 上有两个版本，下载链接 <a href="https://pan.baidu.com/s/1eRNQwng#list/path=%2F">xl2tpd_zju</a>；</li>
