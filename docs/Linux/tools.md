@@ -547,6 +547,25 @@ $ find . -type l -ls
 !!! warning
 	Parsing `ls`, such as `ls | grep "\->"` is a bad idea. [:link:](https://askubuntu.com/questions/522051/how-to-list-all-symbolic-links-in-a-directory)
 
+usage of `-exec`
+
+```bash
+find /path [args] -exec [cmd] {} \;
+```
+
+where 
+
+- `{}` is a placeholder, similar in `xargs`.
+- `\;` indicates that for each found result, the command `cmd` is executed once with the found result.
+
+For example, convert the file encoding in [szcf-weiya/Matlab30IAs](https://github.com/szcf-weiya/Matlab30IAs)
+
+```bash
+find . -name '*.m' -ls -exec iconv -f GB18030 {} -t UTF8 -o {} \;
+```
+
+see also [:link:](https://www.howtouselinux.com/post/linux-find-exec-examples-advanced-part)
+
 ## `grep`
 
 - `-P`: perl-style regex
@@ -1087,6 +1106,14 @@ scp_to_chpc ()
     scp -r $1 user@host:~/$2
 }
 ```
+
+## `uchardet`
+
+```bash
+$ uchardet FILENAME
+```
+
+detect the file encoding
 
 ## `uniq`
 

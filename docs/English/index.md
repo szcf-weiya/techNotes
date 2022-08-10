@@ -1,5 +1,22 @@
 - :fireworks: : good article
 
+## 2022.08.10
+
+- "The Loyal American Underground", some of the proud, **defiant (boldly challenging, 挑衅的，目中无人的，挑战的)** members called themselves.
+- A big flaw is that it entirely **abdicates (退位，让位，辞职)** the responsibility of defining intelligence and how to evaluate it, which is precisely the value of creating a test.
+- a **vacuum (真空的)** **tube (管；道)** computer developed for the U.S. **Navy (海军)**
+- lounge: 休息室，酒吧
+- Those with **narcissistic (自恋的)** traits pose a particular threat to companies.
+- narcissist: 自恋狂
+- Much scientific **endeavour (努力，尝试)** of the past amounted to wasted effort, in fields with absolutely no yield of true scientific information.
+- tertiary students: 大专学生
+
+## 2022.08.09
+
+- "All **Fandom (运动迷，影迷)** was Plunged into War" describes a major **conflagration (突发，冲突)** of fannish disharmony, in which many feuding fans take sides, friends may stop speaking to each other, fen may **gafiate (an initialism for Get Away From It All)**, and bad feelings go on for years. [:link:](https://fancyclopedia.org/All_Fandom_was_Plunged_into_War), [:link:](https://fancyclopedia.org/Gafia)
+- When you pitch a potential problem to your adviser you will either see their face contort, their eyes **rolling (滚动)**, and their attention **drift (漂移)**, or you'll sense the excitement in their eyes as they contemplate the **uncharted (陌生的，人迹罕至的)** territory **ripe (成熟的)** for exploration.
+- digital forensics: 电子取证
+
 ## 2022.08.08
 
 - Cavitation for Cold Brew Espresso: **Cavitation (空蚀，空穴)** is caused by the movement of water being so quick that the pressure drops and then the water vaporizes. For coffee, the theory is that cavitation makes extraction easier. [:link:](https://towardsdatascience.com/cavitation-for-cold-brew-espresso-57ef791d4675), [:material-wikipedia:](https://zh.m.wikipedia.org/zh-hk/%E7%A9%BA%E7%A9%B4%E7%8F%BE%E8%B1%A1)
@@ -647,7 +664,7 @@ None
 
 ## 2021.07.02
 
-- Ancient beetle species found in fossil **faeces (粪便)**. 
+- Ancient **beetle (甲虫)** species found in fossil **faeces (粪便)**. 
 - An experimental vaccine containing live **malaria parasites (疟原虫)** protected nearly all recipients from infection in a small clinical trail.
     - parasite: 寄生虫
 
@@ -1925,7 +1942,7 @@ None
 
 - **Fractal** Nature of Scientific Revolutions.
 - The **interim (临时的，中间的)** Stan governing body **stepped down** and were replaced with a new board elected by the developer community.
-- a **feud** that was made worse by a lack of sharing code.
+- a **feud (不和，争执)** that was made worse by a lack of sharing code.
 - **condensed matter (凝聚态)** theory
 
 ## 2020.10.28
@@ -2105,7 +2122,7 @@ None
 ## 2020.10.07
 
 - does this **fallacy** have a name?
-- **Collider** bias
+- **Collider (对撞机)** bias
 - in an outraged Louisville
 - when considering **ideological** balance, it is useful to place social psychology within a larger context of the **prevailing** ideologies of other influential groups within society, such as military officers, journalists, and business executives.
 
@@ -2368,7 +2385,7 @@ None
 - Henry Higgins in "My Fair Lady"
 - anti-vaxxing: shorted version of [anti-vaccination](https://en.wikipedia.org/wiki/Vaccine_hesitancy)
 - has the potential to devolve into an argument
-- Pew Research
+- **Pew Research Center (皮尤研究中心)** is a nonpartisan American **think tank (智库，智囊团)**.
 - we are more polarized than we ever have been in history
 - **plumber**: 水管工人
 - **nod (点头)** and smile to show that you're paying attention.
@@ -2449,7 +2466,7 @@ None
 - only **insofar as (在...范围内)** HAL commanded all aspects of the Discovery.
     - I'll help you insofar as I can.
 - it **ain't gonna** happen
-- command us capricious, chaotic humans.
+- command us capricious, **chaotic (混乱的，杂乱的)** humans.
 
 
 ## 2020.03.09
@@ -2532,7 +2549,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. **Intellectual property (IP)** is an umbrella term that covers a group of separate **intangible** property rights of owners/creators.
 2. Provide legal protection in various types of monopolies.
 3. Defining offences (civil or criminal infringement) against intellectual property.
-4. Plant Varieties (Agricultural or horticultural plant varieties)
+4. Plant Varieties (Agricultural or **horticultural (园艺的)** plant varieties)
 5. The IP laws protect your interpretation of ideas in the form of a book, an invention, etc.
 6. Registered designs protect the appearance of your toys. Only the look of your toys is protected, not the ways in which the toys operate. Patent law may protect the way in which a product works.
 7. The new visible shape, configuration, pattern or **ornament** applied to an article by an industrial process are features capable of protection by design registration.
@@ -2951,8 +2968,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2018.08.17
 
-1. collider
-2. Loneliness causes high blood pressure, high **cholesterol (胆固醇)**.
+- Loneliness causes high blood pressure, high **cholesterol (胆固醇)**.
 
 
 ## 2018.08.16
@@ -2972,7 +2988,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. memo
 3. counter-example
 4. premiss
-6. enunciate
+6. enunciate: 清楚地发音；阐明
 7. remuneration
 8. supposition
 9. The representation of documents is a central issue in all of the approaches in document management, whether the management **entails (需要，牵涉)** exploration, search, or filtering.
@@ -3041,11 +3057,11 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.07.17
 
 1. omniscience
-2. moot
+2. make the all discussion **moot (无讨论意义)**
 
 ## 2018.07.16
 
-1. plethysmography
+1. plethysmography: 容积标记法
 2. inductance
 3. prescient
 4. envisage
@@ -3057,7 +3073,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.03.15
 
 - And **defusing (平息，缓和，拆除【炸弹的】引信)** the issue should pave the way for more **nuanced (微妙的，具有细微差别的)** and constructive politics.
-- with a **grain of salt**: an English language idiom that means to view something with skepticism or not to interpret something literally.
+- with a **grain of salt** (持保留态度): an English language **idiom (成语，习语)** that means to view something with skepticism or not to interpret something literally.
 
 ## 2018.03.07
 
@@ -3145,7 +3161,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. Envy can make oneself backward; self-confidence can tell oneself to be aspirant.
 4. He says face veils like the niqab (尼卡布，一些穆斯林妇女在公共场合戴的面纱，通常露出眼睛) are not a religious requirement.
 5. To reduce fraud, an opaque network of government bank accounts has been replaced by a centralized system.
-6. as if he could pierce those sheets of water so opaque to our eyes and scan the deepest seas.
+6. as if he could **pierce (穿透，刺破)** those **sheets (薄板；床单；纸张)** of water so opaque to our eyes and scan the deepest seas.
 7. Mr Zingales has written an elegy to the America he found when he moved there 24 years ago from an Italy that was rife with nepotism (裙带关系).
 8. We keep records on every single hive, and that compendium of records goes back quite a long time.
 9. Jeremiad wreathes upon my feeling, while shadow of shiver covers my mind.
@@ -3358,7 +3374,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 99. insincerity (intentional deceitfulness)
 100. reverence (deep respect; awe)
 101. abiding attachment (devotion) or regard (esteem)
-102.  Relinquish (surrender; release)
+102.  **relinquish (【不情愿地】放弃)** (surrender; release)
 103.  Instigate (provoke; incite)
 104.  Waive (refrain from claiming; put aside)
 105. echoes or reiterates (repeats)
@@ -3373,6 +3389,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 114. Aloof means standoffish and remote.
 
 ## 2017.10.05
+
 1. Terse means abrupt and to the point.
 2. Apathetic means indifferent and unconcerned.
 3. Bombastic means pompous and pretentious.
@@ -3382,10 +3399,9 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 7. A dichotomy is a division or split into two branches.
 8. diffidence (modesty; insecurity)
 9. hesitancy (uncertainty; lack of confidence).
-10. misanthropy (hatred or distrust of humankind).
+10. **misanthropy (愤世嫉俗)** (**hatred (仇恨，憎恶)** or distrust of humankind).
 11. enthusiasm (eagerness; zest).
 12. irascible (irritable).
-13. defiant (boldly challenging)
 14. oblivious, incognizant, insensible, unaware, unconscious, unwitting, mindful, vigilant (警觉的，警惕的), acquainted, cognizant, conscious, conversant, grounded, informed, knowing, witting
 15. The March snowstorm obliterated our hopes for an early spring.
 16. con artist
@@ -3479,7 +3495,7 @@ up
 2. The Red Cross **dispensed (分发)** food and clothing to the flood victims.
 3. Asthma attacks can be triggered by **pollen (花粉)**, dust, **harsh (刺激的，严厉的，残酷的)** chemicals or **scents (气味)**.
 4. allergy
-5. thrive
+5. **thrive (茁壮成长，兴旺发达)** after **layoff (解雇)**
 6. excrete
 7. tidbit
 8. rhizome
@@ -3526,7 +3542,6 @@ up
 - **blaze (火焰；展现)** your trail
 10. bland
 11. diffident (缺乏自信的，胆怯的), different, indifferent
-12. hatred
 13. pond
 14. boom, flourish
 16. bulb
@@ -3548,10 +3563,8 @@ up
 32. perigee
 33. oral **cavity (洞，凹处；腔)**: 口腔
 34. cessation
-35. abdicate
 36. encompass
 37. champion, support
-38. chaotic
 39. artisan
 40. symbiosis
 41. lukewarm
@@ -3594,7 +3607,7 @@ Nothing. Watching The Greatest Challenge.
 5. Bees are major **pollinators (传粉媒介)** of fruits, vegetables and nuts.
 6. Does your **pharmacy (药房)** carry **lice (虱子，louse 的复数)** **shampoo (洗发，洗发精)**
 7. Tanks cannot do anything in these **craters (弹坑，火山口)**.
-8. plate tectonics: 【地质】板块构造论
+8. plate **tectonics (构造学)**: 【地质】板块构造论
 9. geochemist, geochemistry: [地球化学](https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83%E5%8C%96%E5%AD%A6)
 10. A **bolide (【天文学】火流星，火球)**, or fireball, is an extremely bright **meteor (流星)**, and those can be about the size of a **grapefruit (葡萄柚，西柚)**.
 11. magma, mantle, **lava (火山喷发的熔岩)**
@@ -3685,7 +3698,7 @@ Nothing. Watching The Greatest Challenge.
 30. The **insulting (出言不逊的，侮辱的，无礼的)** remarks **stung (sting, 促使，刺激)** him to a **rage (愤怒)**.
 31. backbone
 32. overthrow
-33. stool, mount
+33. mount
 35. canvas
 36. pull (someone or something) out of a hat: To select someone or something entirely at random.
 37. Zurich
@@ -3744,7 +3757,6 @@ Nothing. Watching The Greatest Challenge.
 13. plating
 14. seigniorage: 铸币税；君权
 15. nostalgia
-16. tubing, sheet
 17. alloying
 18. brass, trumpet, trombone
 19. rust, patina
