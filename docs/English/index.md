@@ -651,7 +651,7 @@ None
 
 ## 2021.07.05
 
-- China has officially **eradicated (根除，消灭)** malaria.
+- China has officially **eradicated (根除，消灭)** **malaria (疟疾)**.
 
 ## 2021.07.04
 
@@ -777,7 +777,7 @@ None
 
 ## 2021.06.09
 
-- A few key examples of successful startups we've incubated include sophisticated novel voice generation by WellSaid, and an AI-backed smart repository for notoriously complex, voluminous legal contracts and agreements created by Lexion.
+- A few key examples of successful startups we've incubated include sophisticated novel voice generation by WellSaid, and an AI-backed smart repository for notoriously complex, **voluminous (浩繁的，宽松的)** legal contracts and agreements created by Lexion.
 
 ## 2021.06.08
 
@@ -1519,7 +1519,7 @@ None
 
 ## 2021.01.14
 
-- It is full of prominent, successful, well-connected **bluffers (骗子，虚张声势的人)**.
+- It is full of **prominent (著名的，杰出的)**, successful, well-connected **bluffers (骗子，虚张声势的人)**.
 
 ## 2021.01.13
 
@@ -1770,7 +1770,7 @@ None
 
 ## 2020.11.22
 
-- We distinguish the **corpora** containing reference annotations based on their origin.
+- We distinguish the **corpora (语料，文集)** containing reference annotations based on their origin.
 - Gold-standard **corpus** containing human-made reference annotations, obtained as a **consensual** or majority opinion of several human experts.
 - A frame definition domain was virtually eroded in the **lateral** axes (x and y) by a constant number of pixels (**voxels (体素或立体像素，是体积像素 volume pixel 的简称)**) E depending on a dataset.
 - In 3D image data, the marker does not have to be necessarily formed of a single connected component, allowing annotators to create **quintessential (最完美的，精髓的)** volumetric markers.
@@ -1903,7 +1903,7 @@ None
 
 ## 2020.11.03
 
-- Picking pennies in front of a **steamroller**: A **parable (比喻，寓言)** comes to life.
+- Picking pennies in front of a **steamroller (蒸汽压路机)**: A **parable (比喻，寓言)** comes to life.
 - I stopped by the **Jamaican** beef **patties** place but they were closed.
 - Has Stan [jumped the shark](https://en.wikipedia.org/wiki/Jumping_the_shark)?
 - A [bracket](https://en.wikipedia.org/wiki/Bracket_(tournament)) or **tournament (锦标赛)** bracket is a tree diagram that represents the series of games played during a **knockout (淘汰赛的)** tournament.
@@ -1996,7 +1996,7 @@ None
 ## 2020.10.23
 
 - This particular code is kinda hacky in that it does not account for **fencepost** errors, but it conveys the general idea.
-- The **premise** of this joke is that if the one economist had truly wanted the car then he would have walked into the **showroom** and bought it.
+- The **premise (前提)** of this joke is that if the one economist had truly wanted the car then he would have walked into the **showroom** and bought it.
 - Donating was used to determine whether men or women are better **tippers**.
 - Donating was used to determine which prominent skeptic to **prank (恶作剧)**.
 
@@ -2062,7 +2062,7 @@ None
 ## 2020.10.14
 
 - consensus-based transparency checklist
-- I also have a wary feeling that is harder to put words to
+- I also have a **wary (小心的，谨慎的)** feeling that is harder to put words to
 - will the satisfactory feeling of successfully completing the checklist **lull (哄骗；使平静)** researchers into **complacency** and keep them from spending effort on the deeper layers?
 - I worry the checklist is going to **inadvertently (漫不经心地；非故意地)** be taken as a false check of quality, rather than simply transparency.
 - We should always consider the **lurking (潜在的)** dangers of offering easy solutions and simple checklists that make humans feel that they've done all that is needed.
@@ -2211,7 +2211,6 @@ None
 - it is neurobiologically that's how we're wired.
 - most **excruciating (极为疼痛的)** experiences of being excluded.
 - unraveled connection
-- human empathy
 - The thing that underpinned this
 - I am not promoted enough.
 - outsmart it.
@@ -2552,7 +2551,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 4. Plant Varieties (Agricultural or **horticultural (园艺的)** plant varieties)
 5. The IP laws protect your interpretation of ideas in the form of a book, an invention, etc.
 6. Registered designs protect the appearance of your toys. Only the look of your toys is protected, not the ways in which the toys operate. Patent law may protect the way in which a product works.
-7. The new visible shape, configuration, pattern or **ornament** applied to an article by an industrial process are features capable of protection by design registration.
+7. The new visible shape, configuration, pattern or **ornament (装饰，装饰品)** applied to an article by an industrial process are features capable of protection by design registration.
 8. nephew
 9. Scientific discoveries as ideas are not protected.
 10. If a country is a member of international copyright convention, **treaty** or organization such as the World Trade Organization and others like the Berne Convention, the Universal Copyright Convention, the Geneva Convention for the protection of producers of **phonograms**, and the agreement on trade-ralated aspects of intellectual property rights, then Hong Kong's copyright applies and is valid in these countries.
@@ -2627,7 +2626,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 31. Would Republicans pay a price if they vote to **impeach** the president?
 32. Nixon **loyalists** paid the price—not Republicans who voted to impeach.
 33. So I **goggled (【尤指由于惊奇而】瞪大眼睛看)** a bit and asked a colleague in ML about the above.
-34. It’s great if you’ve got hair to **comb**, but otherwise it leaves you looking a bit silly.
+34. It’s great if you’ve got hair to **comb (梳子)**, but otherwise it leaves you looking a bit silly.
 35. Once my sister had the **hiccups** and my dad **snuck up** behind her and scared her. The hiccups went away but my sister made my dad promise never to scare her again like that.
 36. On the medical front, we now have things like **nut allergy** and **autism** which nobody ever thought about and now are huge.
 
@@ -2726,7 +2725,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. Think of the **mundane (世俗的，平凡的)** tasks that you do everyday.
     - mundane world: 红尘
-2. prominent
 3. sucker
 4. Theodore Roosevelt: 西奥多·罗斯福
 5. David Brooks: 专栏作家布鲁克斯
@@ -3309,7 +3307,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 26. The transaction was totally aboveboard, so there was no reason to question it.
 27. He took a **surreptitious (秘密的，偷偷摸摸的)** glance at her knees.
 28. a **furtive (偷偷摸摸的)** glance at her
-29. The SWAT team carried out a stealth raid on the house, which was believed to be harboring a terrorist cell.
+29. The SWAT team carried out a **stealth (秘密行动，隐形的)** **raid (突然搜查，突击搜捕)** on the house, which was believed to be harboring a terrorist cell.
 30. The drive to create is indigenous to humanity.
 31. agonize over every decision
 32. Children were agog over new toys.
@@ -3400,7 +3398,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 8. diffidence (modesty; insecurity)
 9. hesitancy (uncertainty; lack of confidence).
 10. **misanthropy (愤世嫉俗)** (**hatred (仇恨，憎恶)** or distrust of humankind).
-11. enthusiasm (eagerness; zest).
+11. enthusiasm (eagerness; **zest (热情，狂热)**).
 12. irascible (irritable).
 14. oblivious, incognizant, insensible, unaware, unconscious, unwitting, mindful, vigilant (警觉的，警惕的), acquainted, cognizant, conscious, conversant, grounded, informed, knowing, witting
 15. The March snowstorm obliterated our hopes for an early spring.
@@ -3622,7 +3620,7 @@ Nothing. Watching The Greatest Challenge.
 22. wink
 24. vein
 25. agroecology
-26. cultivar
+26. **cultivar (栽培种，栽培品种)**
 27. contagion
 28. prairie
 30. parasite
@@ -3674,7 +3672,7 @@ Nothing. Watching The Greatest Challenge.
 6. tap into
 7. LEDs use only a quarter the energy of **incandescent bulbs (白炽灯)**.
 8. fluorescent
-9. pebble
+9. **pebble (鹅卵石)**
 10. Hydrogen (氢，氢气), Helium (氦，氦气)
 11. fainter
 12. **foundationalism (基础主义，基础论)**
@@ -3732,7 +3730,7 @@ Nothing. Watching The Greatest Challenge.
 17. vague
 19. close-up: 影视特写；详细检查；详图
 20. petal
-21. juxtaposes
+21. **juxtapose (并列)** these two perspectives, each of which connect statistical graphics to literature, but in a different way.
 22. archaeology
 23. oversee
 24. pharaoh Khufu, Great Pyramid
@@ -3752,7 +3750,7 @@ Nothing. Watching The Greatest Challenge.
 6. corvid, corvidae, raven, jay, crow, magpie
 8. The eruption of a volcano is **spontaneous (自发的)**.
 10. It is important because it sets animals with a sense of self apart from those without a sense of self.
-11. empathy
+11. **empathy (同情，共鸣)**
 12. afoot
 13. plating
 14. seigniorage: 铸币税；君权
