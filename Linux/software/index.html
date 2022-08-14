@@ -4086,6 +4086,15 @@ Possible references:</p>
 </ul>
 </div>
 <h3 id="add-heic-support-in-imagemagick">Add HEIC support in ImageMagick<a class="headerlink" href="#add-heic-support-in-imagemagick" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Convert .heic to .jpg</p>
+<p><div class="highlight"><pre><span></span><code>$ sudo apt install libheif-examples
+$ heif-convert A.heic A.jpg
+</code></pre></div>
+In batch mode, run
+<div class="highlight"><pre><span></span><code>$ find . -name <span class="s1">&#39;*.heic&#39;</span> -exec heif-convert <span class="o">{}</span> <span class="o">{}</span>.jpg <span class="se">\;</span>
+</code></pre></div></p>
+</div>
 <div class="admonition fail">
 <p class="admonition-title">Fail</p>
 <p>failed.</p>
