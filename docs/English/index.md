@@ -1,5 +1,3 @@
-- :fireworks: : good article
-
 ## 2022.08.10
 
 - "The Loyal American Underground", some of the proud, **defiant (boldly challenging, 挑衅的，目中无人的，挑战的)** members called themselves.
