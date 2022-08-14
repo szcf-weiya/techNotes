@@ -341,6 +341,16 @@ Some references:
 
 ### Add HEIC support in ImageMagick
 
+!!! tip "Convert .heic to .jpg"
+    ```bash
+    $ sudo apt install libheif-examples
+    $ heif-convert A.heic A.jpg
+    ```
+    In batch mode, run
+    ```bash
+    $ find . -name '*.heic' -exec heif-convert {} {}.jpg \;
+    ```
+
 !!! fail
     failed.
 

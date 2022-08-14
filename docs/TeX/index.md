@@ -288,7 +288,7 @@ $$
 - `biblatex` and `natbib` are LaTeX packages that format citations and bibliographies
     - `natbib` works **only** with `bibtex`
     - `biblatex` works with both `biber` and `bibtex`
-- [rm `In:`](https://tex.stackexchange.com/questions/10682/suppress-in-biblatex)
+- [rm `In:`](https://tex.stackexchange.com/questions/10682/suppress-in-biblatex): insert `\renewbibmacro{in:}{}` after loading the package `biblatex`.
 
 Refer to [Bibtex, Latex compiling - TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/questions/204291/bibtex-latex-compiling)
 
