@@ -3555,7 +3555,7 @@ up
 28. aviculture
 29. postscript: 【信末的】附言；补充；
 30. cavalry, soldier
-31. parasite, prairie
+31. prairie
 32. perigee
 33. oral **cavity (洞，凹处；腔)**: 口腔
 34. cessation
@@ -3620,8 +3620,6 @@ Nothing. Watching The Greatest Challenge.
 25. agroecology
 26. **cultivar (栽培种，栽培品种)**
 27. contagion
-28. prairie
-30. parasite
 31. weed
 32. inoculation
 33. avirulent
