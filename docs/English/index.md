@@ -115,7 +115,7 @@
 
 - the more we lament how our nutritious recipes are increasingly being ignored, the more fast food is being produced, consumed and even celebrated as the cuisine of a coming age.
 - culinary
-- cynical
+- **cynical (愤世嫉俗的，悲观的，怀疑的)**
 - how to reduce the harm without **unduly (过度地，不恰当地)** affecting their appeal
 
 ## 2022.03.24
@@ -330,7 +330,7 @@
 
 ## 2021.09.14
 
-- mRNA vaccines are triumph.
+- mRNA vaccines are **triumph (巨大成功，重大成就)**.
 
 ## 2021.09.12
 
@@ -1293,7 +1293,7 @@ None
 
 ## 2021.02.23
 
-- Yet as soon as the UN Security Council issued new sanctions against the regime as a result of the rocket launch, the response was **apoplectic (大怒的，十分生气的)**, warning of more tests and threatening to attack America.
+- Yet as soon as the UN Security Council issued new sanctions against the **regime (政体)** as a result of the rocket launch, the response was **apoplectic (大怒的，十分生气的)**, warning of more tests and threatening to attack America.
     - apoplectic patients: 中风患者
 
 ## 2021.02.22
@@ -1670,7 +1670,7 @@ None
 
 ## 2020.12.12
 
-- The slogan has been **revived** recently in social media.
+- The slogan has been **revived (复活，重新使用)** recently in social media.
 
 ## 2020.12.11
 
@@ -1933,7 +1933,7 @@ None
 - our model is a forecast of vote **intentions**, not of votes as counted.
 - Now that it's 95%, [the rubber meets the road](https://knowyourphrase.com/when-the-rubber-hits-the-road).
 - It came in as a sort of brief **interlude** and solo between more extensive performances.
-- It's not a [Jenga](https://en.wikipedia.org/wiki/Jenga), but neither is it a [WW2 jeep](https://en.wikipedia.org/wiki/Willys_MB).
+- It's not a **[Jenga](https://en.wikipedia.org/wiki/Jenga) (叠叠乐)**, but neither is it a [WW2 jeep](https://en.wikipedia.org/wiki/Willys_MB).
 - this model really needs a lot more **scaffolding** for us to fully trust it.
 
 ## 2020.10.29
@@ -1988,7 +1988,7 @@ None
 
 - its results are used to inform **federal** funding decisions.
 - what are the effects of X on election, where X is **ballot (投票，选举)**-order effects, Fox News, home-state advantage, or other things?
-- I agree with my **correspondent** that this graph does not look like a very good advertisement for this method!
+- I agree with my **correspondent (记者，通讯员)** that this graph does not look like a very good advertisement for this method!
 - Never underestimate the power of **fomo**.
 
 ## 2020.10.23
@@ -2112,7 +2112,7 @@ None
 
 - This article on bus ridership is **right up your alley** (well suited to one's tastes, interests, or abilities).
 - I **grant (【勉强】承认，同意)** you that..
-- the **ensuing** discussion in the article **speculated about** explanations for a decline in the individual **propensity** to ride.
+- the **ensuing (随后的，后来的)** discussion in the article **speculated about** explanations for a decline in the individual **propensity** to ride.
 - suburbanite: 郊区居民
 - they **screwed up** on the above graph
 - it has to **swerve** in and out of traffic after each bus stop.
@@ -2122,7 +2122,7 @@ None
 - does this **fallacy** have a name?
 - **Collider (对撞机)** bias
 - in an outraged Louisville
-- when considering **ideological** balance, it is useful to place social psychology within a larger context of the **prevailing** ideologies of other influential groups within society, such as military officers, journalists, and business executives.
+- when considering **ideological (意识形态的，思想体系上的)** balance, it is useful to place social psychology within a larger context of the **prevailing** ideologies of other influential groups within society, such as military officers, journalists, and business executives.
 
 ## 2020.10.06
 
@@ -2211,7 +2211,7 @@ None
 - unraveled connection
 - The thing that underpinned this
 - I am not promoted enough.
-- outsmart it.
+- **outsmart (智胜，比……精明)** it.
 - turn out well: 成功
 - it boils down to
 - office supply addiction, so I had a manila folder, and I had a Sharpie (美国三福记号笔)
@@ -2221,11 +2221,11 @@ None
 - had the compassion to be kind to themselves first
 - as a result of authenticity
 - the willingness to breathe through waiting for the doctor to call after your mammogram.
-- it was betrayal
+- it was **betrayal (背叛)**
 - I had pledged allegiance to research.
 - my therapist calls it a spiritual awakening
 - this is going to suck
-- they surrender and walk into it.
+- they **surrender (投降，屈服)** and walk into it.
 - It was a slugfest
 - **numb (v. 使失去知觉；adj. 麻木的)** **vulnerability (脆弱性，弱点)**
 - initiating sex with my wife
@@ -2273,7 +2273,7 @@ None
 - day in, day out
 - this is wisdom that's as old as the hills
 - **take a toll (造成损失，产生负面影响)** on their memories
-- glamorous
+- glamorous: 富有魅力的，独特的
 - **fare (v. 成功；n. 车费)** the best: 表现最好的
 - livening up a stale relationship
 - those all-too-common family feuds take a terrible **toll (毁坏；通行费；伤亡人数)** on the people who hold the **grudges (怨恨，积怨)**
@@ -2322,7 +2322,7 @@ None
 
 - defy all of the assumptions
 - all I did was **codify (v. organize into a code or system, such as a body of law)** it. [reference: "did was + v." structure](https://ell.stackexchange.com/questions/18326/explanation-of-did-was-verb-structure)
-- it has leather seats
+- it has **leather (皮革的)** seats
 - everything we do, we believe in challenging the **status quo**.
 - They're **eminently (非常，特别)** qualified to make flat-screen TVs.
     - eminence: 鼎鼎大名，受尊敬的人
@@ -2391,7 +2391,7 @@ None
 - I don't allow **pundits** on my show.
 - The famed therapist M. Scott Peck said that true listening requires a **setting aside** of oneself.
 - the speaker will become less and less vulnerable and more and more likely to open up the [inner recesses](https://www.collinsdictionary.com/dictionary/english/recesses#:~:text=if%20you%20refer%20to%20the,inner%20recesses%20of%20the%20soul) of his or her mind to the listener.
-- were you terrified?
+- were you **terrified (害怕，恐惧)**?
 - he was just **bound** and determined to say that.
 - Err on the side of caution.
 - People who **brag about** their IQs are losers.
@@ -2433,7 +2433,7 @@ None
 - not only create ripples of positivity, but a real **revolution (革命，旋转)**
 - journaling about one positive experience you've had over the past 24 hours allows your brain to relive it.
 - we find that meditation allows your brain to get over the cultural ADHD that we've creating by trying to do multiple tasks at once and allows our brains to focus on the task at hand.
-- random acts of kindness are **conscious** acts of kindness.
+- random acts of kindness are **conscious (有意识的，神智清醒的)** acts of kindness.
 - we've pushed happiness over the cognitive horizon.
 
 ## 2020.07.09
@@ -2626,7 +2626,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 33. So I **goggled (【尤指由于惊奇而】瞪大眼睛看)** a bit and asked a colleague in ML about the above.
 34. It’s great if you’ve got hair to **comb (梳子)**, but otherwise it leaves you looking a bit silly.
 35. Once my sister had the **hiccups** and my dad **snuck up** behind her and scared her. The hiccups went away but my sister made my dad promise never to scare her again like that.
-36. On the medical front, we now have things like **nut allergy** and **autism** which nobody ever thought about and now are huge.
+36. On the medical front, we now have things like **nut allergy (坚果类食物过敏)** and **autism (自闭症)** which nobody ever thought about and now are huge.
 
 ## 2019.12.10
 
@@ -2680,7 +2680,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. cardiovascular: 心血管的
 2. hyperinsulinemia: 血胰岛素增多
 3. ischemic： 局部贫血
-4. bilateral
+4. bilateral: 双方的，双边的
 5. subthalamic
 6. nucleus
 
@@ -2847,7 +2847,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2018.09.07
 
-1. dismay
+1. dismay: n. 惊愕，差异； v. 使诧异
 
 ## 2018.09.06
 
@@ -2857,7 +2857,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. indels
 2. at the expense of
-3. surfeit
+3. surfeit: 过量
 4. pertinent
 5. mortal
 6. immortal
@@ -2994,7 +2994,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. monograph
 2. awash
 3. pare it down
-4. noose
+4. **noose (绳套，套索)**
 5. Homotopy
 6. miraculously
 
@@ -3400,7 +3400,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 12. irascible (irritable).
 14. oblivious, incognizant, insensible, unaware, unconscious, unwitting, mindful, vigilant (警觉的，警惕的), acquainted, cognizant, conscious, conversant, grounded, informed, knowing, witting
 15. The March snowstorm obliterated our hopes for an early spring.
-16. con artist
+16. con artist: 行骗高手
 17. He spent the remainder of his life in ignominy after being involved in a bribery scandal.
 18. stop short of
 
@@ -3490,7 +3490,6 @@ up
 1. The biggest **impediment (障碍，阻碍)** to research progress is not fraud, it is all scientists reading about fraud.
 2. The Red Cross **dispensed (分发)** food and clothing to the flood victims.
 3. Asthma attacks can be triggered by **pollen (花粉)**, dust, **harsh (刺激的，严厉的，残酷的)** chemicals or **scents (气味)**.
-4. allergy
 5. **thrive (茁壮成长，兴旺发达)** after **layoff (解雇)**
 6. excrete
 7. tidbit
@@ -3609,7 +3608,7 @@ Nothing. Watching The Greatest Challenge.
 11. magma, mantle, **lava (火山喷发的熔岩)**
 14. volcanism
 15. makeover
-16. pummel
+16. pummel: 连续猛击，反复拳打
 17. wipe away
 18. Valentine's Day
 19. self-absorbed
@@ -3691,11 +3690,11 @@ Nothing. Watching The Greatest Challenge.
 29. that sort of thing
 30. The **insulting (出言不逊的，侮辱的，无礼的)** remarks **stung (sting, 促使，刺激)** him to a **rage (愤怒)**.
 31. backbone
-32. overthrow
+32. **overthrow (推翻，打倒)** the government
 33. mount
 35. canvas
 36. pull (someone or something) out of a hat: To select someone or something entirely at random.
-37. Zurich
+37. Zurich: 苏黎世
 38. chanting, bang
 39. Cabaret Voltaire
 40. at the eleventh hour
