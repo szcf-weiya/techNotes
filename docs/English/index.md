@@ -2202,7 +2202,7 @@ None
 - data with a soul
 - expanding **perception (认识，观念，看法)**
 - he was just sweet-talking me.
-- put it into a bento box
+- put it into a **bento (盒饭，各式便当)** box
 - lean into the discomfort of the work
 - that was my mantra
 - lay the code out for everyone to see
@@ -3570,7 +3570,7 @@ up
 46. extract
 47. stake
 48. sequestered
-49. recreation
+49. recreation: 娱乐，消遣
 50. reclaim
 51. silt
 52. land **reclamation (开垦，回收，再生)** and sustainable development
