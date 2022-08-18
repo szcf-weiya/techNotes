@@ -1946,7 +1946,7 @@ None
 ## 2020.10.28
 
 - Here is a fitted model from the **Bangladesh (孟加拉国)** analysis predicting whether a person with high-**arsenic (砷, 砒霜)** drinking water will switch wells.
-- The rule is **brutal**.
+- The rule is **brutal (残暴的，直截了当的)**.
 - You conduct an experiment in which some people get a special **get-out-of-vote (动员投票，出门投票)** message.
 - **Humility** needed in decision-making.
 
@@ -3560,7 +3560,7 @@ up
 34. cessation
 36. encompass
 37. champion, support
-39. artisan
+39. **artisan (工匠，手艺人)**
 40. symbiosis
 41. lukewarm
 42. circuitously
