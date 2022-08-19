@@ -935,7 +935,7 @@ None
 
 ## 2021.05.05
 
-- Bigshot psychologist, unhappy when his famous finding does not replicate, won't consider that he might have been wrong; instead he scrambles **furiously (激烈地，狂怒地)** to preserve his theories.
+- **Bigshot (大人物)** psychologist, unhappy when his famous finding does not replicate, won't consider that he might have been wrong; instead he scrambles **furiously (激烈地，狂怒地)** to preserve his theories.
 
 ## 2021.05.04
 
@@ -1118,7 +1118,7 @@ None
 ## 2021.03.28
 
 - Government efforts to **resuscitate (使复活，使苏醒)** the market have **flopped (彻底失败，不成功)**.
-- The cosmological application therein deals with the incorporation of recent measurement in the study of [ΛCDM cosmological model](https://zh.wikipedia.org/wiki/%CE%9BCDM%E6%A8%A1%E5%9E%8B).
+- The **cosmological (宇宙论的)** application therein deals with the incorporation of recent measurement in the study of [ΛCDM cosmological model](https://zh.wikipedia.org/wiki/%CE%9BCDM%E6%A8%A1%E5%9E%8B).
 - The **SDSS (Sloan Digital Sky Survey)**-III's Baryon Oscillation Spectroscopic Survey (BOSS) was designed to measure the expansion rate of the universe.
 - The central ideas of this earlier paper are the introduction of conformal Hamiltonian dynamics, where a **dissipative (耗散的)** term is added to the ODE found in HMC.
 - As someone who has worked in AI for decades, I've witnessed the failure of similar predictions of **imminent (迫近的，即将来临的)** human-level AI, and I'm certain these latest forecasts will **fall short (fail to meet expectations or standards)** as well.
@@ -1158,7 +1158,7 @@ None
 
 ## 2021.03.22
 
-- ladder type
+- ladder type: 梯形
 
 ## 2021.03.21
 
@@ -1637,7 +1637,7 @@ None
 
 - He did that out of **mercenary (唯利是图的)** motives.
     - mercenary marriage: 买卖婚姻；着眼实利的婚姻
-- To **rectify** that failing on my part.
+- To **rectify (纠正，矫正)** that failing on my part.
 - way to be a grammar **guru (大师，专家)**.
 
 ## 2020.12.18
@@ -1956,7 +1956,7 @@ None
 - I just don't **buy into** the **premise (前提)** so it's hard for me to go further.
     - I hate to **buy into stereotypes (墨守成规)**.
 - **[Talmudic (塔木德，犹太教宗教文献)](https://zh.wikipedia.org/wiki/%E5%A1%94%E6%9C%A8%E5%BE%B7)** argument about whether God can dig a **ditch (沟渠)** so width he can't jump across it.
-- the question sounds **snarky**, but it's not meant **in that vein**.
+- the question sounds **snarky (尖锐批评的，讽刺挖苦的)**, but it's not meant **in that vein (用同样的风格处理某事)**.
 - we must avoid the **trap** of overconfidence in our inferential summaries.
 - the 40% rule is a time-tried **tactic** employed by **pundits (某一学科的权威，专家)** making forecasts.
 
@@ -2163,7 +2163,7 @@ None
 
 - according to the National Academy of Sciences, (google “**himmicanes**” for lots more), it saves lives to give **hurricanes** the names of boys rather than girls, because people are more scared of boys so they’ll act with appropriate caution.
 - Hurricane **Butch**? Run away. Hurricane **Missy**? Who cares.
-- according to **Pythagoras** (really!), 17 is “the most despised and **horrible (可怕的，极讨厌的)** of all numbers.”
+- according to **Pythagoras (毕达哥拉斯)** (really!), 17 is “the most despised and **horrible (可怕的，极讨厌的)** of all numbers.”
 - [Time is of the essence](https://en.wikipedia.org/wiki/Time_is_of_the_essence). (时间就是生命)
 
 ## 2020.10.02
@@ -2197,13 +2197,13 @@ None
 ### Brené Brown·TEDxHouston： The power of vulnerability
 
 - little flyer
-- magic pixie
+- magic **pixie (小精灵)**
 - I tried to call deep on my courage.
 - data with a soul
 - expanding **perception (认识，观念，看法)**
 - he was just sweet-talking me.
 - put it into a **bento (盒饭，各式便当)** box
-- lean into the discomfort of the work
+- **lean (倾斜，倚靠)** into the discomfort of the work
 - that was my mantra
 - lay the code out for everyone to see
 - it is neurobiologically that's how we're wired.
@@ -2226,7 +2226,7 @@ None
 - my therapist calls it a spiritual awakening
 - this is going to suck
 - they **surrender (投降，屈服)** and walk into it.
-- It was a slugfest
+- It was a **slugfest (争吵，对骂)**
 - **numb (v. 使失去知觉；adj. 麻木的)** **vulnerability (脆弱性，弱点)**
 - initiating sex with my wife
 - being turned down
@@ -2240,9 +2240,9 @@ None
 - oil spill: 石油泄露
     - spill into: 涌进
     - spill out: 溢出
-- this is not our first rodeo.
+- this is not our first **rodeo (【美国的】牛仔竞技比赛)**.
 - be authentic and real
-- be fierce about
+- be **fierce (凶猛的，凶狠的，狂热的)** about
 - stop screaming and start listening
 
 ## 2020.07.21
@@ -2282,7 +2282,7 @@ None
 
 ### Meg Jay·TED2013: Why 30 is not the new 20 (Cont'd)
 
-- Identity capital begets identity capital.
+- Identity capital **begets (引发，导致)** identity capital.
 - make it count: to make sth have as useful and positive an effect as possible, [make something count](https://www.macmillandictionary.com/dictionary/british/make-something-count)
 - procrastination
 - the urban tribe is overrated
@@ -2326,7 +2326,7 @@ None
 - everything we do, we believe in challenging the **status quo**.
 - They're **eminently (非常，特别)** qualified to make flat-screen TVs.
     - eminence: 鼎鼎大名，受尊敬的人
-- It's all grounded in the tenets of biology.
+- It's all grounded in the **tenets (原则，教义，信条)** of biology.
 - Our newest brain, our Homo sapien brain, our **neocortex (新（大脑）皮质，新皮层)**, corresponds with the "what" level.
     - cortex: （脑或其他器官的）皮层
 - our **limbic (边缘的)** brains are responsible for all of our feelings.
@@ -2457,7 +2457,7 @@ None
 - people **lamented (哀悼，惋惜)** that we would see the destruction of the family.
 - how to **discern (识别，辨别)** a good game from a bad game.
 - I will teach it some corpus of law
-- what about **rogue** agents?
+- what about **rogue (流氓，无赖)** agents?
 - it could represent an **existential (有关人类存在的)** threat to all of humanity.
 - an **insatiable (不知足的，贪得无厌的)** thirst for information
 - only **insofar as (在...范围内)** HAL commanded all aspects of the Discovery.
@@ -2468,7 +2468,7 @@ None
 
 ## 2020.03.09
 
-1. features that **rot** before they **ripen**.
+1. features that **rot (腐烂，形势恶化)** before they **ripen (成熟)**.
 2. the dog **sprints off**
 3. shy away from it
 4. swinging hard right on the pendulum.
@@ -2698,7 +2698,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - today we **boggle at (吃惊)** the month's most **spectacular (壮观的，惊人的)** science images.
 2. instrument: verb. such as, "they instrument military aid"
 3. maddening
-6. ramp up
+6. **ramp (匝道，斜坡)** up: 上升，增加，提高
 7. crap
 8. **Ray Kroc (雷·克罗克)**: 麦当劳主要创办人
 9. **teaser (戏弄者)** is a particularly **baffling (令人困惑的)** problem that is said to have a correct solution
@@ -2711,7 +2711,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. junk science is promoted by **credulous (轻信的，易受骗的)** organizations
 3. The commentary also outlines some **hallmarks (特点)** of potentially **dubious (可疑的，不可靠的)** science.
 4. "Wow, today's the school picnic!", **exclaimed (呼喊，惊叫，大声说)** Tom.
-6. That strikes me as rather bold
+6. That **strikes me as (cause someone [me] to think about in a particular way)** rather bold: 这让我觉得相当大胆
 
 
 ## 2019.09.20
@@ -2888,7 +2888,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. postulate
 2. regimen
-3. flat-terrain
+3. flat **terrain (地带，地形)**
 4. aerobics
 5. treadmill
 
@@ -2911,7 +2911,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2018.08.25
 
-1. consanguineous
+1. consanguineous: 血亲的，血缘的
 2. sibship
 3. autosomal
 6. facilitate
@@ -2933,7 +2933,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.08.23
 
 1. exclusively
-3. rigorous and concise
+3. rigorous and **concise (简明的，简练的)**
 4. Prologue
 5. reminiscent
 
@@ -2983,7 +2983,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. memo
 3. counter-example
-4. premiss
+4. premiss: premise, [:link:](https://english.stackexchange.com/questions/145322/difference-between-premiss-and-premise)
 6. enunciate: 清楚地发音；阐明
 7. remuneration
 8. supposition
@@ -3058,7 +3058,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.07.16
 
 1. plethysmography: 容积标记法
-2. inductance
+2. inductance: 电感，感应系数
 3. prescient
 4. envisage
 
@@ -3292,7 +3292,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 13. The administration had nothing but contempt for the ultimate Frisbee team and frequently spoke disdainfully of it.
 14. We accepted his offer to pay for our dinners without demur.
 15. an impartial and perspicacious judge
-16. Her skill and talent ennoble her profession.
+16. Her skill and talent **ennoble (封为贵族，使更崇高)** her profession.
 17. The kind of ennui comes from having too much time on one's hands and too little will to find something productive to do.
 18. **ensconce (安置，隐藏)** the spare house key in a place where no thief would think to look.
 19. A brief but embarrassing silence ensued.
@@ -3390,14 +3390,14 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. Apathetic means indifferent and unconcerned.
 3. Bombastic means pompous and pretentious.
 4. A euphemism is a mild expression used in place of an unpleasant or offensive one.
-5. A reverie is a daydream or state of dreamy meditation.
+5. A **reverie (白日梦，幻想，梦想)** is a daydream or state of dreamy meditation.
 6. A postulate is a basic principle or prerequisite.
 7. A dichotomy is a division or split into two branches.
 8. diffidence (modesty; insecurity)
 9. hesitancy (uncertainty; lack of confidence).
 10. **misanthropy (愤世嫉俗)** (**hatred (仇恨，憎恶)** or distrust of humankind).
 11. enthusiasm (eagerness; **zest (热情，狂热)**).
-12. irascible (irritable).
+12. irascible (irritable): 易怒的，暴躁的
 14. oblivious, incognizant, insensible, unaware, unconscious, unwitting, mindful, vigilant (警觉的，警惕的), acquainted, cognizant, conscious, conversant, grounded, informed, knowing, witting
 15. The March snowstorm obliterated our hopes for an early spring.
 16. con artist: 行骗高手
@@ -3616,7 +3616,7 @@ Nothing. Watching The Greatest Challenge.
 21. poll, no-no
 22. wink
 24. vein
-25. agroecology
+25. agroecology: 农业生态学
 26. **cultivar (栽培种，栽培品种)**
 27. contagion
 31. weed
@@ -3720,7 +3720,7 @@ Nothing. Watching The Greatest Challenge.
 12. carpenter, mason
 13. portraiture, portrait artist
 14. crucial
-15. make headway
+15. make **headway (进展，前进)**
 16. contemplative
 17. vague
 19. close-up: 影视特写；详细检查；详图
@@ -3729,7 +3729,7 @@ Nothing. Watching The Greatest Challenge.
 22. archaeology
 23. oversee
 24. pharaoh Khufu, Great Pyramid
-25. sturdy
+25. sturdy: 结实的，坚固的
 26. Herodotus
 27. ramp
 28. Plateau
