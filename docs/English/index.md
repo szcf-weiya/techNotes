@@ -355,7 +355,7 @@
 
 ## 2021.09.07
 
-- Wild musk ducks learn to make high-pitched whistles from older members of their **flock (群)**.
+- Wild **musk (麝香)** ducks learn to make high-pitched whistles from older members of their **flock (群)**.
 
 ## 2021.09.06
 
@@ -2085,7 +2085,7 @@ None
 
 - The X-ray emission comes from the hot gas surrounding and **accreting** onto the merging black holes.
 - During the merger, some of the X-ray emission is expected to be modulated at a frequency **commensurate** to that of the gravitational waves produced by the black holes.
-- after the merger, it is possible that a **corona** of hot, X-ray emitting gas will form and jets of particles may be launched at speeds close to the speed of light.
+- after the merger, it is possible that a **corona (日冕，日华)** of hot, X-ray emitting gas will form and jets of particles may be launched at speeds close to the speed of light.
 
 
 ## 2020.10.10
@@ -2309,7 +2309,7 @@ None
 - we have trivialized what is actually the defining decade of adulthood.
 - you have robbed that person of his urgency and ambition
 - that sounds a little flip
-- the post-millennial midlife crisis isn't buying a red sports car.
+- the post-**millennial (一千年的)** midlife crisis isn't buying a red sports car.
 - displayed his temper more than his ambition
 - she hangs her head in her lap, and she sobbed for most of the hours.
 - she was nearly hysterical
@@ -2360,7 +2360,7 @@ None
 - they don't put me in charge of that.
 - a **ninja (日本武士，忍者)** **cardiothoracic (心胸外科)** **surgeon (外科医生)** **poet (诗人)**
 - saying that you want to be a model when you grow up is akin to saying you want to win the Powerball when you grow up.
-- because unlike cardiothoracic surgeons, it can just be distilled right now.
+- because unlike **cardiothoracic surgeons (心胸外科外科医生)**, it can just be distilled right now.
 - underwear model
 - do they retouch all the photos?
 - it's also the very first time that I had worn a **bikini**, and I didn't ever **have my period** yet.
@@ -2886,7 +2886,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2018.08.30
 
-1. postulate
 2. regimen
 3. flat **terrain (地带，地形)**
 4. aerobics
@@ -3226,7 +3225,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. Recent discoveries have generally vindicated the physicist's theories.
 2. a novel that presents a fairly veracious and unvarnished picture of the lives of affluent suburbanites.
-3. Inevitably, his remarkable success attracted the invidious attention of the other sales representatives.
+3. **Inevitably (必然，必定)**, his remarkable success attracted the invidious attention of the other sales representatives.
 4. As loyalty unites lovers, so perfidy estranges friends.
 5. Every year I go to Kunming to enjoy its cool and salubrious climate.
 6. only a diaphanous hope of success.
@@ -3248,7 +3247,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 23. In statistics, a spurious relationship is a mathematical relationship in which two events or variables have no direct causal connection, but it may be wrongly inferred that they do, due to either coincidence or the presence of a certain third, unseen factor.
 24. Fiercely independent, the elderly couple spurned all offers of financial help.
 25. The **kitten (小猫)** crept silently across the floor before suddenly pouncing on the mouse.
-26. Complaints about stifling smog conditions reach crescendo.
+26. Complaints about **stifling (令人窒息的，沉闷的)** smog conditions reach crescendo.
 27. Climate change has **exerted (施加)** a ponderable influence on world politics.
 28. The committee will probably **pore over (细心研究)** the results of the study for a long time before making their decision.
     - pore: 注视；n. 孔隙
@@ -3324,7 +3323,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 44. The exhibit was a **hodgepodge (大杂烩，混杂物)** of **mediocre (平庸的，普通的)** art, bad art, and really bad art.
 45. His failure was brought on by his **hubris (傲慢，狂妄)**.
 46. an **expurgated (删去，使纯洁)** edition of the letters.
-47. exquisite pen-and-ink drawings of city scenes
+47. **exquisite (精美的，精致的)** pen-and-ink drawings of city scenes
 48. One of the immutable laws of television is that low ratings inevitably lead to cancellation.
 49. She remained impassive as the officers informed her of her son's death.
 50. economy, thriftiness, liberal
@@ -3336,7 +3335,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - innate immunity: 先天免疫，自然免疫
 60. In both countries policy is being dictated by **intransigents (不妥协，不让步的人)**, who risk stumbling into war.
 62. idiosyncratic
-64. auction, auctioneer, bidding
+64. **auction (拍卖，竞拍)**, auctioneer, bidding
 65. imperturbability
 67. A baby is god's most **precious (宝贵的，珍贵的)** gift.
 68. immensely
@@ -3391,9 +3390,9 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. Bombastic means pompous and pretentious.
 4. A euphemism is a mild expression used in place of an unpleasant or offensive one.
 5. A **reverie (白日梦，幻想，梦想)** is a daydream or state of dreamy meditation.
-6. A postulate is a basic principle or prerequisite.
+6. A **postulate (假设，基本原理)** is a basic principle or prerequisite.
 7. A dichotomy is a division or split into two branches.
-8. diffidence (modesty; insecurity)
+8. diffidence (modesty; insecurity): 羞怯，谦虚，缺乏自信，猜疑
 9. hesitancy (uncertainty; lack of confidence).
 10. **misanthropy (愤世嫉俗)** (**hatred (仇恨，憎恶)** or distrust of humankind).
 11. enthusiasm (eagerness; **zest (热情，狂热)**).
