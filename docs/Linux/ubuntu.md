@@ -327,6 +327,18 @@ where
 - `tmpfs` (short for Temporary File System) is a temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device. [:link:](https://en.wikipedia.org/wiki/Tmpfs)
 - `/run/user/$uid` is created by pam_systemd and used for storing files used by running processes for that user. [:link:](https://unix.stackexchange.com/questions/162900/what-is-this-folder-run-user-1000)
 
+### 100% snap `/dev/loop`
+
+```bash
+$ df -h
+/dev/loop1      9.0M  9.0M     0 100% /snap/canonical-livepatch/138
+/dev/loop2      9.0M  9.0M     0 100% /snap/canonical-livepatch/146
+/dev/loop3      114M  114M     0 100% /snap/core/13308
+/dev/loop0      128K  128K     0 100% /snap/bare/5
+```
+
+"Having Snap images which consume 100% of their filesystem is perfectly acceptable" and "it's supposed to work that way", refer to [:link:](https://unix.stackexchange.com/questions/406534/snap-dev-loop-at-100-utilization-no-free-space)
+
 ## Font
 
 ### `fc-list`

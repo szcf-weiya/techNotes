@@ -50,6 +50,8 @@ route add default gw 10.71.115.254 enp0s31f6
 ping 10.71.45.100
 ```
 
+see also [:link:](https://askubuntu.com/questions/995660/enp0s31f6-cable-unplugged)
+
 ### ifconfig
 
 `ifconfig` is a command line tool for diagnosing and configuring network interfaces (software interfaces to networking hardware). 

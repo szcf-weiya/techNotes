@@ -1,3 +1,7 @@
+## 2022.08.21
+
+- Byzantine: 拜占庭式的，复杂神秘而死板的，[:fontawesome-brands-zhihu:](https://www.zhihu.com/question/41728775)
+
 ## 2022.08.10
 
 - "The Loyal American Underground", some of the proud, **defiant (boldly challenging, 挑衅的，目中无人的，挑战的)** members called themselves.
