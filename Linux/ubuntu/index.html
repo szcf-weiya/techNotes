@@ -649,6 +649,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#100-snap-devloop" class="md-nav__link">
+    100% snap /dev/loop
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2664,6 +2671,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#100-snap-devloop" class="md-nav__link">
+    100% snap /dev/loop
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3141,6 +3155,14 @@ tmpfs           <span class="m">2</span>.0G  192K  <span class="m">2</span>.0G  
 <li><code>tmpfs</code> (short for Temporary File System) is a temporary file storage paradigm implemented in many Unix-like operating systems. It is intended to appear as a mounted file system, but data is stored in volatile memory instead of a persistent storage device. <a href="https://en.wikipedia.org/wiki/Tmpfs"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 <li><code>/run/user/$uid</code> is created by pam_systemd and used for storing files used by running processes for that user. <a href="https://unix.stackexchange.com/questions/162900/what-is-this-folder-run-user-1000"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
+<h3 id="100-snap-devloop">100% snap <code>/dev/loop</code><a class="headerlink" href="#100-snap-devloop" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ df -h
+/dev/loop1      <span class="m">9</span>.0M  <span class="m">9</span>.0M     <span class="m">0</span> <span class="m">100</span>% /snap/canonical-livepatch/138
+/dev/loop2      <span class="m">9</span>.0M  <span class="m">9</span>.0M     <span class="m">0</span> <span class="m">100</span>% /snap/canonical-livepatch/146
+/dev/loop3      114M  114M     <span class="m">0</span> <span class="m">100</span>% /snap/core/13308
+/dev/loop0      128K  128K     <span class="m">0</span> <span class="m">100</span>% /snap/bare/5
+</code></pre></div>
+<p>&ldquo;Having Snap images which consume 100% of their filesystem is perfectly acceptable&rdquo; and &ldquo;it&rsquo;s supposed to work that way&rdquo;, refer to <a href="https://unix.stackexchange.com/questions/406534/snap-dev-loop-at-100-utilization-no-free-space"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h2 id="font">Font<a class="headerlink" href="#font" title="Permanent link">&para;</a></h2>
 <h3 id="fc-list"><code>fc-list</code><a class="headerlink" href="#fc-list" title="Permanent link">&para;</a></h3>
 <p>view installed fonts</p>
