@@ -2119,7 +2119,7 @@ None
 - the **ensuing (随后的，后来的)** discussion in the article **speculated about** explanations for a decline in the individual **propensity** to ride.
 - suburbanite: 郊区居民
 - they **screwed up** on the above graph
-- it has to **swerve** in and out of traffic after each bus stop.
+- it has to **swerve (突然转向，急转弯)** in and out of traffic after each bus stop.
 
 ## 2020.10.07
 
