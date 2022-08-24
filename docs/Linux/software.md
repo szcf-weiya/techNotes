@@ -861,6 +861,29 @@ sudo apt install openshot-qt python3-openshot
 
 [homepage](https://github.com/phw/peek), easy to use, can convert to gif.
 
+## Planner
+
+follow instruction in https://flathub.org/apps/details/com.github.alainm23.planner
+
+first of all, configure flatpak
+
+```bash
+sudo apt install flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
+
+then install planner via
+
+```bash
+flatpak install flathub com.github.alainm23.planner
+```
+
+run it by
+
+```bash
+flatpak run com.github.alainm23.planner
+```
+
 ## Rhythmbox
 
 右键似乎可以修改歌曲的 properties，其中包括 artist，album，但是却不能编辑，然后[查了一下](https://askubuntu.com/questions/612711/rhythmbox-cannot-edit-properties)，是权限问题，

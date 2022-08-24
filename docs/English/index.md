@@ -2868,7 +2868,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2018.09.04
 
-1. outrage
+1. outrage: 愤怒，愤慨
 
 ## 2018.09.03
 
@@ -3383,7 +3383,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 109. malfunction (failure to work properly).
 110. Condemnation means censure.
 111.  Taxonomy is the science or technique of classification.
-112. Flagrant means blatant or outrageous
+112. **Flagrant (骇人听闻的，公然的)** means **blatant (明目张胆的，公然的)** or **outrageous (骇人的，无法形容的，反常的)**
 113. Dilatory means tardy or tending to delay.
 114. Aloof means standoffish and remote.
 

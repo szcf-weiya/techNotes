@@ -6,6 +6,13 @@
 
 Following the instruction in [RStudio Documentation: Install R from Source](https://docs.rstudio.com/resources/install-r-source/)
 
+```bash
+export R_VERSION=X.X.X
+curl -O https://cran.rstudio.com/src/base/R-4/R-${R_VERSION}.tar.gz
+tar -xzvf R-${R_VERSION}.tar.gz
+cd R-${R_VERSION}
+```
+
 Build with
 
 ```bash
@@ -22,6 +29,40 @@ sudo make install
 
 then manage the version with `module`.
 
+!!! note "2022-08-24 10:32:20"
+	On T460P, change the prefix as follows
+	```r
+	./configure \
+		--prefix=/home/weiya/Programs/R/${R_VERSION} \
+		--enable-memory-profiling \
+		--enable-R-shlib \
+		--with-blas \
+		--with-lapack
+	```
+
+#### installation of `module`
+
+Follow the official instruction [:link:](https://modules.readthedocs.io/en/latest/INSTALL.html)
+
+```bash
+curl -LJO https://github.com/cea-hpc/modules/releases/download/v5.1.1/modules-5.1.1.tar.gz
+tar xvf modules-5.1.1.tar.gz
+cd modules-5.1.1/
+sudo apt-get install tcl-dev
+make
+# sudo make install
+make install
+```
+
+Different from other software, `module load` command cannot be found, we need to configure as follows,
+
+```bash
+$ sudo ln -s $PWD/init/profile.sh /etc/profile.d/modules.sh
+$ sudo ln -s $PWD/init/profile.csh /etc/profile.d/modules.csh
+```
+
+So the above `make install` indeed does not need `sudo`. Strangely, it still cannot find `module`, (require reboot?), so simply put `source /etc/profile.d/modules.sh` into `~/.bashrc`
+
 ### Install 4.1.0 from source
 
 it throws when `./configure`,
@@ -33,6 +74,9 @@ configure: error: libcurl >= 7.28.0 library and headers are required with suppor
 try to install `libcurl4-openssl-dev`, suggested in [Installing R on Linux: configure: error: libcurl >= 7.28.0 library and headers are required with support for https](https://stackoverflow.com/questions/38690232/installing-r-on-linux-configure-error-libcurl-7-28-0-library-and-headers-a).
 
 Be careful when installing the package, and to avoid the uninstallation in the next section.
+
+!!! "2022-08-24 10:35:01"
+	Run `sudo apt-get install libcurl4-openssl-dev`, and monitor the message, no packages are needed to be removed.
 
 ### Install Latest R3.6
 

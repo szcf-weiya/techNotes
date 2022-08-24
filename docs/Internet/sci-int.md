@@ -307,6 +307,17 @@ export https_proxy=127.0.0.1:8087
 export http_proxy=127.0.0.1:8087
 ```
 
+!!! warning
+    2022-08-23 11:48:45
+    
+    `apt` 不支持环境变量，亦不支持 `proxychains`，需要单独配置，
+    ```bash
+    $ cat /etc/apt/apt.conf
+    Acquire::http::Proxy "http://localhost:8118";
+    Acquire::https::Proxy "https://localhost:8118";
+    ```
+    另见 [:link:](https://askubuntu.com/questions/257290/configure-proxy-for-apt)
+
 然后
 
 ```bash
