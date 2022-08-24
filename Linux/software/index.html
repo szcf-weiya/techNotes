@@ -1004,6 +1004,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#planner" class="md-nav__link">
+    Planner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rhythmbox" class="md-nav__link">
     Rhythmbox
   </a>
@@ -3489,6 +3496,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#planner" class="md-nav__link">
+    Planner
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rhythmbox" class="md-nav__link">
     Rhythmbox
   </a>
@@ -4457,6 +4471,18 @@ sudo apt install openshot-qt python3-openshot
 </code></pre></div>
 <h2 id="peek">Peek<a class="headerlink" href="#peek" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/phw/peek">homepage</a>, easy to use, can convert to gif.</p>
+<h2 id="planner">Planner<a class="headerlink" href="#planner" title="Permanent link">&para;</a></h2>
+<p>follow instruction in https://flathub.org/apps/details/com.github.alainm23.planner</p>
+<p>first of all, configure flatpak</p>
+<div class="highlight"><pre><span></span><code>sudo apt install flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+</code></pre></div>
+<p>then install planner via</p>
+<div class="highlight"><pre><span></span><code>flatpak install flathub com.github.alainm23.planner
+</code></pre></div>
+<p>run it by</p>
+<div class="highlight"><pre><span></span><code>flatpak run com.github.alainm23.planner
+</code></pre></div>
 <h2 id="rhythmbox">Rhythmbox<a class="headerlink" href="#rhythmbox" title="Permanent link">&para;</a></h2>
 <p>右键似乎可以修改歌曲的 properties，其中包括 artist，album，但是却不能编辑，然后<a href="https://askubuntu.com/questions/612711/rhythmbox-cannot-edit-properties">查了一下</a>，是权限问题，</p>
 <div class="highlight"><pre><span></span><code>chmod u+w CloudMusic/ -R
