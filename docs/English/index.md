@@ -520,7 +520,7 @@ None
 - not only the complicated dynamic dependence between the series, but also the existence of **aberrant (异常的，反常的)** observations, such as missing values, contaminated observations, and heavy-tailed distributions.
 - In the US, socioeconomic disadvantage is positively associated with **adiposity (肥胖症)**
 - omnibus
-- epistemic
+- epistemic: 知识的，认识的
 
 ## 2021.08.04
 
@@ -2305,7 +2305,7 @@ None
 - wearing jeans and a big slouchy top
 - **arsonist (纵火犯，放火犯)**
 - Twentysomethings like Alex and I had nothing but time.
-- sleeping with knucklehead
+- sleeping with **knucklehead (笨蛋，傻瓜)**
 - the brain caps off its second and last growth spurt in your 20s
 - an inordinate impact
 - extended adolescence
@@ -2318,7 +2318,7 @@ None
 - she hangs her head in her lap, and she sobbed for most of the hours.
 - she was nearly hysterical
 - if I get in a car wreck
-- Emma's defining decade went parading by.
+- Emma's defining decade went **parading by (炫耀)**.
 
 ## 2020.07.15
 
@@ -2837,7 +2837,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. authentic act: 「法」公证书，公证证书
     - authentic self: 本真自我
     - authentic materials: 真实材料
-4. Stratified
 5. antithetical
 6. rule of thumb
 7. opt for
@@ -3304,7 +3303,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 22. European missionaries converted thousands to Christianity.
 23. evidence that led to the suspect's conviction
 24. The meeting adjourned for a week.
-25. Massage therapy can be used as an adjunct along with the medication.
+25. Massage therapy can be used as an **adjunct (附件，附属物)** along with the medication.
 26. The transaction was totally aboveboard, so there was no reason to question it.
 27. He took a **surreptitious (秘密的，偷偷摸摸的)** glance at her knees.
 28. a **furtive (偷偷摸摸的)** glance at her
@@ -3515,7 +3514,7 @@ up
 20. diplomacy
 21. immerse yourself in **exotic (外来的，异国的)** languages, 
 22. ConvNets went from **obscure (费解的)** models that were **shrouded (覆盖，隐藏)** in skepticism to rockstars of Computer Vision, present as a core building block in almost every new Computer Vision paper.
-23. ward off
+23. ward off: 挡开，架开
 24. The source of indoor **VOC (voltile organic compounds, 挥发性有机化合物)** could be multiple and it may be also be contributed by the use of **detergents (洗涤剂，洗衣粉)** and **fragrance (香气，香水)** (room fragrance and **perfume (香水，香料)**) in indoor environment.
 25. octopus
 26. A large factory is supposed to built near the community according to the announcement issued by a company.
