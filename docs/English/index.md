@@ -3169,7 +3169,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 13. Improvident behavior is likely to **imprint (印记)** indelible marks on a person's life and personality.
 14. In times of economic **woe (悲哀，痛苦)**, when normal patterns of consumption and investment are frozen, prodigal government speeding can sometimes be the only way to break the **vicious circle (恶性循环)** of declining demand and shrinking employment.
 15. Jaw line contoured by the bristling red hair of the fighter, watchful, pugnacious.
-16. Things have come full circle since penurious sailors from the Far East first arrived two centuries ago.
+16. Things have come full circle since **penurious (贫穷的，穷困的，赤贫的)** sailors from the Far East first arrived two centuries ago.
 17. In May, to no one's surprise. he declared the city insolvent.
 18. I cannot feel it will make for a very restful retirement, can you?
 19. True to form (一如既往，像往常一样), Walter started asking him about his own retirement.
