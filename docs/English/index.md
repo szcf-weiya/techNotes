@@ -2157,7 +2157,7 @@ None
 
 ## 2020.10.04
 
-- old people with **comorbidities**
+- old people with **comorbidities (合并症)**
 - Trump's probabilities are **way** (adv. 很远；大量；非常；极其) better.
 - I'm **kicking myself** because I was planning to tell the **hookah** story
 - there is some evidence that the dose you get of **carcinogens** from hookah smoking might be 20 times the dose of smoking a cigarette.
@@ -2317,7 +2317,7 @@ None
 - displayed his temper more than his ambition
 - she hangs her head in her lap, and she sobbed for most of the hours.
 - she was nearly hysterical
-- if I get in a car wreck
+- if I get in a car **wreck (毁坏，毁灭)**
 - Emma's defining decade went **parading by (炫耀)**.
 
 ## 2020.07.15
@@ -2839,7 +2839,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - authentic materials: 真实材料
 5. antithetical
 6. rule of thumb
-7. opt for
+7. opt for: 选取，赞成
 8. progeny
 9. haploid
 - pairs of chains **coalesce (合并，联合)** after a random number of iterations.
@@ -3665,7 +3665,7 @@ Nothing. Watching The Greatest Challenge.
 1. rampage
 2. rally
 3. degradation
-4. dozens of
+4. dozens of: 许多
 6. tap into
 7. LEDs use only a quarter the energy of **incandescent bulbs (白炽灯)**.
 8. fluorescent
