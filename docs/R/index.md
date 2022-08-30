@@ -956,3 +956,29 @@ memuse = function () {
 ## Stats Functions
 
 - `stats::ecdf`: empirical cumulative distribution function
+
+## Update Library Path
+
+!!! info
+	Post: 2022-08-30 12:00:39 +0800
+
+The disk is nearly occupied, and I found that
+
+```bash
+$ du -sh *
+2.6G	R
+```
+
+which stores the installed packages for R3.6. I want to move it to `~/Programs/R`, which is on a portable SSD, so I need to update `.libPaths()`.
+
+The personal path is defined in `/usr/lib/R/etc/Renviron`
+
+```bash
+R_LIBS_USER=${R_LIBS_USER-'~/R/x86_64-pc-linux-gnu-library/3.6'}
+```
+
+Replace it with
+
+```bash
+R_LIBS_USER=${R_LIBS_USER-'~/Programs/R/x86_64-pc-linux-gnu-library/3.6'}
+```

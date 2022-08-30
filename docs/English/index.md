@@ -1,3 +1,9 @@
+## 2022.08.30
+
+- Rent and electric may not comingle.
+- addendum: 附录
+- force majeure: 不可抗拒
+
 ## 2022.08.21
 
 - Byzantine: 拜占庭式的，复杂神秘而死板的，[:fontawesome-brands-zhihu:](https://www.zhihu.com/question/41728775)
