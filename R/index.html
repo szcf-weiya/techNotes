@@ -1275,6 +1275,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#update-library-path" class="md-nav__link">
+    Update Library Path
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3195,6 +3202,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#update-library-path" class="md-nav__link">
+    Update Library Path
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3878,6 +3892,22 @@ See the log file <span class="k">for</span> details:  /tmp/jupyterlab-debug-lhf6
 <ul>
 <li><code>stats::ecdf</code>: empirical cumulative distribution function</li>
 </ul>
+<h2 id="update-library-path">Update Library Path<a class="headerlink" href="#update-library-path" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Post: 2022-08-30 12:00:39 +0800</p>
+</div>
+<p>The disk is nearly occupied, and I found that</p>
+<div class="highlight"><pre><span></span><code>$ du -sh *
+<span class="m">2</span>.6G    R
+</code></pre></div>
+<p>which stores the installed packages for R3.6. I want to move it to <code>~/Programs/R</code>, which is on a portable SSD, so I need to update <code>.libPaths()</code>.</p>
+<p>The personal path is defined in <code>/usr/lib/R/etc/Renviron</code></p>
+<div class="highlight"><pre><span></span><code><span class="nv">R_LIBS_USER</span><span class="o">=</span><span class="si">${</span><span class="nv">R_LIBS_USER</span><span class="p">-</span><span class="s1">&#39;~/R/x86_64-pc-linux-gnu-library/3.6&#39;</span><span class="si">}</span>
+</code></pre></div>
+<p>Replace it with</p>
+<div class="highlight"><pre><span></span><code><span class="nv">R_LIBS_USER</span><span class="o">=</span><span class="si">${</span><span class="nv">R_LIBS_USER</span><span class="p">-</span><span class="s1">&#39;~/Programs/R/x86_64-pc-linux-gnu-library/3.6&#39;</span><span class="si">}</span>
+</code></pre></div>
 
 
 
