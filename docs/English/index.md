@@ -3,6 +3,8 @@
 - Rent and electric may not comingle.
 - addendum: 附录
 - force majeure: 不可抗拒
+- indemnify: 赔偿
+- lead-based paint: 含铅油漆
 
 ## 2022.08.21
 
