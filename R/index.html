@@ -1282,6 +1282,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    String
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3209,6 +3216,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    String
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3908,6 +3922,18 @@ See the log file <span class="k">for</span> details:  /tmp/jupyterlab-debug-lhf6
 <p>Replace it with</p>
 <div class="highlight"><pre><span></span><code><span class="nv">R_LIBS_USER</span><span class="o">=</span><span class="si">${</span><span class="nv">R_LIBS_USER</span><span class="p">-</span><span class="s1">&#39;~/Programs/R/x86_64-pc-linux-gnu-library/3.6&#39;</span><span class="si">}</span>
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Start from R4.0.0, the path string can be constructed via <code>r(...)</code> without escaping <code>/</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">r</span><span class="s">&quot;(~/R/x86_64-pc-linux-gnu-library/3.6)&quot;</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;~/R/x86_64-pc-linux-gnu-library/3.6&quot;</span>
+</code></pre></div>
+<p>See <a href="https://stackoverflow.com/questions/14185287/escaping-backslash-in-string-or-paths-in-r/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+</div>
+<h2 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h2>
+<ul>
+<li>repeat string: <code>strrep('str', 2)</code>, <code>paste(rep('str', 2), collapse='')</code></li>
+</ul>
 
 
 

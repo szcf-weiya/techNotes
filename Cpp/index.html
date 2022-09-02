@@ -1560,6 +1560,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3025,6 +3032,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3747,12 +3761,26 @@ ldd -d -r test
 <h2 id="variably-modeified-type-in-c-language">variably modeified type in C language<a class="headerlink" href="#variably-modeified-type-in-c-language" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/23529069/variably-modified-type-in-c-language">Variably modified type in C language - Stack Overflow</a></p>
 <h2 id="write-into-file-immediately">write into file immediately<a class="headerlink" href="#write-into-file-immediately" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>fprintf(fileptr, &quot;writing to file\n&quot;);
-fflush(fileptr);
+<div class="highlight"><pre><span></span><code><span class="n">fprintf</span><span class="p">(</span><span class="n">fileptr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;writing to file</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">fflush</span><span class="p">(</span><span class="n">fileptr</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p><a href="https://stackoverflow.com/questions/45339874/how-to-make-fprintf-writes-immediately">How to make fprintf() writes immediately</a></p>
 <p>or refer to</p>
 <p><a href="https://www.cnblogs.com/itZhy/p/3163230.html">Linux实时将所有输出重定向到文件</a></p>
+<h2 id="map">Map<a class="headerlink" href="#map" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>find</code> returns an iterator, so if the key does not exist it returns an end iterator. <a href="https://stackoverflow.com/questions/23140956/what-kind-of-value-will-mapfind-return-if-key-doesnt-exist"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">some_map</span><span class="p">;</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">some_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">some_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// key exists</span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">else</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// key does not exist</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 
 

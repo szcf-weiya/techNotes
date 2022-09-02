@@ -761,6 +761,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ftp" class="md-nav__link">
+    FTP
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2473,6 +2480,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ftp" class="md-nav__link">
+    FTP
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2544,6 +2558,7 @@ weiya@127.0.0.1<span class="s1">&#39;s password: </span>
 <p>The port forwarding would be more clear. For example, open a jupyter session on node <code>B</code>, whose login node is <code>A</code>, then access the jupyter in the local browser <code>http://127.0.0.1:28888</code> after running</p>
 <div class="highlight"><pre><span></span><code>$ ssh -t -L <span class="m">28888</span>:localhost:8888 user@A ssh -L <span class="m">8888</span>:localhost:8888 user@B
 </code></pre></div>
+<p><a href="https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Proxies_and_Jump_Hosts"><code>ProxyJump</code></a> might be an alternative, but it seems not work for host established via <code>-R</code>, such as <code>ssh -J public@host inner@localhost:pppp</code>.</p>
 <h3 id="ssh-until-succeed">ssh until succeed<a class="headerlink" href="#ssh-until-succeed" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ <span class="k">until</span> ./login_lab.sh<span class="p">;</span> <span class="k">do</span> sleep <span class="m">5</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
@@ -2695,6 +2710,12 @@ apt-get install nginx
 </ol>
 <p>按照第一个链接的指示，并不能成功访问。于是尝试参考第二个链接修改配置文件。</p>
 <p>未果，结果按照cy的建议，释放掉了这个服务器。</p>
+<h2 id="ftp">FTP<a class="headerlink" href="#ftp" title="Permanent link">&para;</a></h2>
+<p>Upload and download files from command line, see <a href="https://linuxize.com/post/how-to-use-linux-ftp-command-to-transfer-files/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more details.</p>
+<div class="highlight"><pre><span></span><code>$ ftp xx.xx.xx.xx
+ftp&gt; put XX
+ftp&gt; get XX
+</code></pre></div>
 
 
 

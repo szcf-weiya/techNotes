@@ -904,6 +904,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ps" class="md-nav__link">
+    ps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ps2pdf-pdf2ps" class="md-nav__link">
     ps2pdf, pdf2ps
   </a>
@@ -3103,6 +3110,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ps" class="md-nav__link">
+    ps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ps2pdf-pdf2ps" class="md-nav__link">
     ps2pdf, pdf2ps
   </a>
@@ -3316,6 +3330,9 @@
 <p>It is a lightweight multi-protocol &amp; multi-source command-line download utility.</p>
 <p>Homepage: <a href="https://aria2.github.io/">https://aria2.github.io/</a></p>
 <h2 id="awk"><code>awk</code><a class="headerlink" href="#awk" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.shortcutfoo.com/app/dojos/awk/cheatsheet">cheat sheet</a></li>
+</ul>
 <h3 id="basic-usage">basic usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h3>
 <p><code>awk</code> 标准用法为</p>
 <div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;/pattern/ {print &quot;$1&quot;}&#39;</span>
@@ -3803,6 +3820,17 @@ cat file1 file2 &gt; outputfile
 <span class="m">1</span>,2,3,4,5,6,7,8,9,10
 </code></pre></div>
 <p>where <code>-s</code> aims to paste one file at a time instead of in parallel, which results in one line. Refer to <a href="https://stackoverflow.com/questions/10303600/how-to-concatenate-lines-into-one-string">how to concatenate lines into one string</a></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><a href="https://stackoverflow.com/questions/20163225/paste-files-from-list-of-paths-into-single-output-file">Paste files from list of paths into single output file</a></p>
+<div class="highlight"><pre><span></span><code>paste <span class="sb">`</span>cat filelist.txt<span class="sb">`</span> &gt; output.txt
+</code></pre></div>
+<p>and</p>
+<div class="highlight"><pre><span></span><code>touch buffer.txt
+cat filelist.txt <span class="p">|</span> xargs -iXX bash -c <span class="s1">&#39;paste buffer.txt XX &gt; output.txt; mv output.txt buffer.txt&#39;</span><span class="p">;</span> 
+mv buffer.txt output.txt
+</code></pre></div>
+</div>
 <h2 id="pdftk"><code>pdftk</code><a class="headerlink" href="#pdftk" title="Permanent link">&para;</a></h2>
 <ul>
 <li>split pdf pages: <code>pdftk all.pdf cat 1 output first.pdf</code>, see also <a href="../../TeX/arxiv/">arXiv</a>. Alternatively, one can use <code>print to file</code> function provided by pdf viewer, such as <code>evince</code>, particularly when <code>pdftk</code> failed like in <a href="https://github.com/szcf-weiya/techNotes/issues/45">Issue 45</a>.</li>
@@ -3811,6 +3839,21 @@ cat file1 file2 &gt; outputfile
 <div class="highlight"><pre><span></span><code>pdftk input.pdf dump_data output metadata
 <span class="c1"># edit metadata</span>
 pdftk input.pdf update_info metadata output output.pdf
+</code></pre></div>
+<h2 id="ps"><code>ps</code><a class="headerlink" href="#ps" title="Permanent link">&para;</a></h2>
+<ul>
+<li>brackets around processes: when the arguments to the command cannot be located. <a href="https://unix.stackexchange.com/questions/22121/what-do-the-brackets-around-processes-mean"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ ps -aef 
+weiya     <span class="m">793892</span>    <span class="m">7821</span>  <span class="m">0</span> <span class="m">19</span>:33 pts/10   <span class="m">00</span>:00:00 /bin/bash
+root      <span class="m">794217</span>       <span class="m">2</span>  <span class="m">0</span> <span class="m">19</span>:35 ?        <span class="m">00</span>:00:00 <span class="o">[</span>kworker/3:0<span class="o">]</span>
+root      <span class="m">794336</span>       <span class="m">2</span>  <span class="m">0</span> <span class="m">19</span>:35 ?        <span class="m">00</span>:00:00 <span class="o">[</span>kworker/u8:3<span class="o">]</span>
+</code></pre></div>
+<ul>
+<li>show long character usernames which consists of <code>+</code>. <a href="https://askubuntu.com/questions/523673/ps-aux-for-long-charactered-usernames-shows-a-plus-sign"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+</ul>
+<div class="highlight"><pre><span></span><code>ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
+<span class="nb">alias</span> <span class="nv">psaux</span><span class="o">=</span><span class="s1">&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#39;</span>
 </code></pre></div>
 <h2 id="ps2pdf-pdf2ps"><code>ps2pdf, pdf2ps</code><a class="headerlink" href="#ps2pdf-pdf2ps" title="Permanent link">&para;</a></h2>
 <h3 id="reduce-pdf-file-size">reduce pdf file size<a class="headerlink" href="#reduce-pdf-file-size" title="Permanent link">&para;</a></h3>
@@ -3944,6 +3987,12 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 </li>
 <li>竖线 <code>|</code> 元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 <a href="https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L4"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 <li>directly replace hex string, such as <a href="https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L6"><code>'s/\xee\x81\xab/合/g'</code></a>, see also <a href="https://stackoverflow.com/questions/7760717/hex-string-replacement-using-sed"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li>replace multi-line string: <a href="https://unix.stackexchange.com/questions/26284/how-can-i-use-sed-to-replace-a-multi-line-string"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a><ul>
+<li>alternatively, use <code>perl</code>, e.g., scripts to switch versions of manuscript <a href="https://github.com/szcf-weiya/Cell-Video/blob/2b4a65d3ce0fd866c5fa75a10c04d630206bc18c/release.sh"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>
+<div class="highlight"><pre><span></span><code>perl -0777 -i -pe <span class="s2">&quot;s/###BEGIN-EXCLUDE(.*?)###END-EXCLUDE//igs&quot;</span> _release/src/data.jl
+</code></pre></div></li>
+</ul>
+</li>
 </ul>
 <p>Refer to</p>
 <ol>
@@ -4068,10 +4117,13 @@ Ctrl + B, $
 <span class="c1"># kill the current session</span>
 Ctrl + B, x
 </code></pre></div>
-<p>refer to
-- <a href="https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it">How do I access tmux session after I leave it?</a>
-- <a href="https://linuxize.com/post/getting-started-with-tmux/">Getting started with Tmux</a>
-- <a href="https://gist.github.com/henrik/1967800">tmux cheatsheet</a></p>
+<p>refer to</p>
+<ul>
+<li><a href="https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it">How do I access tmux session after I leave it?</a></li>
+<li><a href="https://linuxize.com/post/getting-started-with-tmux/">Getting started with Tmux</a></li>
+<li><a href="https://gist.github.com/henrik/1967800">tmux cheatsheet</a></li>
+<li>see also: <a href="https://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting-ubuntu/">Tmux copy paste</a></li>
+</ul>
 <h2 id="type"><code>type</code><a class="headerlink" href="#type" title="Permanent link">&para;</a></h2>
 <h3 id="which-vs-type"><code>which</code> vs <code>type</code><a class="headerlink" href="#which-vs-type" title="Permanent link">&para;</a></h3>
 <p>在 CentOS7 服务器上，</p>

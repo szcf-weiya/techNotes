@@ -643,6 +643,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#not-saving-password" class="md-nav__link">
+    not saving password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#disable-running-in-background" class="md-nav__link">
     disable running in background
   </a>
@@ -3135,6 +3142,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#not-saving-password" class="md-nav__link">
+    not saving password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#disable-running-in-background" class="md-nav__link">
     disable running in background
   </a>
@@ -3951,6 +3965,8 @@ apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
 bypy syncdown
 </code></pre></div>
 <h2 id="chrome">Chrome<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h2>
+<h3 id="not-saving-password">not saving password<a class="headerlink" href="#not-saving-password" title="Permanent link">&para;</a></h3>
+<p>有段时间，不能自动输入 CUSIS 的登录信息，后来大概是清理过cache，或者是更新完 chrome 便好的。另见 <a href="https://superuser.com/questions/573602/chrome-not-saving-passwords-and-not-auto-filling-existing-login-passwords"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h3 id="disable-running-in-background">disable running in background<a class="headerlink" href="#disable-running-in-background" title="Permanent link">&para;</a></h3>
 <p>To diagnose high memory usage, I found chrome is still running in background even if it has been closed,</p>
 <div class="highlight"><pre><span></span><code>~$ ps -e -o pid,cmd,%mem --sort<span class="o">=</span>-%mem <span class="p">|</span> grep google 
