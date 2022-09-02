@@ -8,6 +8,8 @@ Homepage: <https://aria2.github.io/>
 
 ## `awk`
 
+- [cheat sheet](https://www.shortcutfoo.com/app/dojos/awk/cheatsheet)
+
 ### basic usage
 
 `awk` 标准用法为
@@ -749,6 +751,21 @@ $ for i in {1..10}; do echo $i; done | paste -s -d','
 
 where `-s` aims to paste one file at a time instead of in parallel, which results in one line. Refer to [how to concatenate lines into one string](https://stackoverflow.com/questions/10303600/how-to-concatenate-lines-into-one-string)
 
+!!! example
+	[Paste files from list of paths into single output file](https://stackoverflow.com/questions/20163225/paste-files-from-list-of-paths-into-single-output-file)
+
+	```bash
+	paste `cat filelist.txt` > output.txt
+	```
+
+	and
+
+	```bash
+	touch buffer.txt
+	cat filelist.txt | xargs -iXX bash -c 'paste buffer.txt XX > output.txt; mv output.txt buffer.txt'; 
+	mv buffer.txt output.txt
+	```
+
 ## `pdftk`
 
 - split pdf pages: `pdftk all.pdf cat 1 output first.pdf`, see also [arXiv](../TeX/arxiv.md). Alternatively, one can use `print to file` function provided by pdf viewer, such as `evince`, particularly when `pdftk` failed like in [Issue 45](https://github.com/szcf-weiya/techNotes/issues/45).
@@ -759,6 +776,26 @@ pdftk input.pdf dump_data output metadata
 # edit metadata
 pdftk input.pdf update_info metadata output output.pdf
 ```
+
+## `ps`
+
+- brackets around processes: when the arguments to the command cannot be located. [:link:](https://unix.stackexchange.com/questions/22121/what-do-the-brackets-around-processes-mean)
+
+```bash
+$ ps -aef 
+weiya     793892    7821  0 19:33 pts/10   00:00:00 /bin/bash
+root      794217       2  0 19:35 ?        00:00:00 [kworker/3:0]
+root      794336       2  0 19:35 ?        00:00:00 [kworker/u8:3]
+```
+
+- show long character usernames which consists of `+`. [:link:](https://askubuntu.com/questions/523673/ps-aux-for-long-charactered-usernames-shows-a-plus-sign)
+
+
+```bash
+ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
+alias psaux='ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm'
+```
+
 
 ## `ps2pdf, pdf2ps`
 
@@ -919,6 +956,11 @@ rename Sam3 Stm32 *.nc
     - `r`: read a file and append it at the current point, `sed '/EOF/r $thingToAdd' $fileToAddItTo`, see also [:link:](https://stackoverflow.com/questions/7085979/r-in-sed-shell-script)
 - 竖线 `|` 元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 [:link:](https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L4)
 - directly replace hex string, such as [`'s/\xee\x81\xab/合/g'`](https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L6), see also [:link:](https://stackoverflow.com/questions/7760717/hex-string-replacement-using-sed)
+- replace multi-line string: [:link:](https://unix.stackexchange.com/questions/26284/how-can-i-use-sed-to-replace-a-multi-line-string)
+	- alternatively, use `perl`, e.g., scripts to switch versions of manuscript [:link:](https://github.com/szcf-weiya/Cell-Video/blob/2b4a65d3ce0fd866c5fa75a10c04d630206bc18c/release.sh)
+	```bash
+	perl -0777 -i -pe "s/###BEGIN-EXCLUDE(.*?)###END-EXCLUDE//igs" _release/src/data.jl
+	```
 
 Refer to
 
@@ -1075,9 +1117,11 @@ Ctrl + B, x
 ```
 
 refer to
+
 - [How do I access tmux session after I leave it?](https://askubuntu.com/questions/824496/how-do-i-access-tmux-session-after-i-leave-it)
 - [Getting started with Tmux](https://linuxize.com/post/getting-started-with-tmux/)
 - [tmux cheatsheet](https://gist.github.com/henrik/1967800)
+- see also: [Tmux copy paste](https://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting-ubuntu/)
 
 ## `type`
 

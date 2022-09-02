@@ -695,6 +695,11 @@ julia> f2()
 
 since the first one does not have `return`, but `g()` has `return` and the addition is not on `a`.
 
+## Pkg
+
+- [Pkg + BinaryBuilder](https://julialang.org/blog/2019/11/artifacts/#binarybuilderjl): binary objects that are not Julia packages
+
+
 ## PyCall
 
 ### Update Matplotlib

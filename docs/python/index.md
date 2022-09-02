@@ -51,6 +51,30 @@ refer to
 
 [Python: significance of -u option?](https://stackoverflow.com/questions/14258500/python-significance-of-u-option)
 
+It seems related to `sys.stdout.flush()`.
+
+> A data buffer is a region of physical memory storage used to temporarily store data while it is being moved from one place to another. The data is stored in a buffer as it is retrieved from an input device or just before it is sent to an output device or when moving data between processes within a computer. Python’s standard out is buffered. This means that it collects some data before it is written to standard out and when the buffer gets filled, then it is written on the terminal or any other output stream.
+>
+> <https://www.geeksforgeeks.org/python-sys-stdout-flush/>
+
+=== "new line every second"
+
+	```python
+	--8<-- "docs/python/flush/ex1.py"
+	```
+
+=== "a line after all"
+
+	```python
+	--8<-- "docs/python/flush/ex2.py"
+	```
+
+=== "a line every second"
+
+	```python
+	--8<-- "docs/python/flush/ex3.py"
+	```
+
 ### with statement
 
 参考

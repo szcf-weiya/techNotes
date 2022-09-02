@@ -1163,3 +1163,6 @@ refer to
 - manually find unused packages: `dpkg -l` and `apt list --installed`
 - for anaconda, run `conda clean -a`
 
+## Connect Android Phones
+
+If the computer does not recognize the android devices, try to use the original cable. See [:link:](https://askubuntu.com/questions/518479/ubuntu-doesnt-recognize-android-devices-anymore) for other possibilities.

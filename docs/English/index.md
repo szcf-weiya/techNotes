@@ -1,3 +1,7 @@
+## 2022.09.02
+
+- rigmarole: 乱七八糟的，无聊的
+
 ## 2022.08.30
 
 - Rent and electric may not comingle.
@@ -770,7 +774,7 @@ None
 
 ## 2021.06.12
 
-- One basic problem of information retrieval culminates in the realization that the same idea or concept can be presented in many different ways.
+- One basic problem of information retrieval **culminates (【以某种结果】告终)** in the realization that the same idea or concept can be presented in many different ways.
 - Natural language gives freedom for enormous variation in expression, from choosing between synonyms to using different styles, emphasis, different levels of abstraction, and [anaphoric](https://en.wikipedia.org/wiki/Anaphora_(linguistics)) and **metaphoric (隐喻)** expressions.
 - You may even be a little **weary (疲倦的，厌烦的)** of people pontificating about this fact.
 - much of the data **proliferating (激增)** today is unstructured and text-heavy.

@@ -635,7 +635,7 @@ size_t order = atoi(argv[1]);
 
 ## write into file immediately
 
-```
+```cpp
 fprintf(fileptr, "writing to file\n");
 fflush(fileptr);
 ```
@@ -645,3 +645,19 @@ fflush(fileptr);
 or refer to
 
 [Linux实时将所有输出重定向到文件](https://www.cnblogs.com/itZhy/p/3163230.html)
+
+## Map
+
+- `find` returns an iterator, so if the key does not exist it returns an end iterator. [:link:](https://stackoverflow.com/questions/23140956/what-kind-of-value-will-mapfind-return-if-key-doesnt-exist)
+
+```cpp
+std::map<int, int> some_map;
+if (some_map.find(10) != some_map.end())
+{
+  // key exists
+}
+else
+{
+  // key does not exist
+}
+```

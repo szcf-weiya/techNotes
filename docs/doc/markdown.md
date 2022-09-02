@@ -32,3 +32,5 @@ Homepage: <https://mermaid-js.github.io/>
 
 !!! info "Private Examples"
     - [2021-06-23.md](https://github.com/szcf-weiya/SZmedinfo/blob/master/notes/2021-06-23.md)
+
+- add newline in the text, use `<br />`. [:link:](https://github.com/mermaid-js/mermaid/issues/384)

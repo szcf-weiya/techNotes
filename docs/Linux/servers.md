@@ -74,6 +74,8 @@ The port forwarding would be more clear. For example, open a jupyter session on 
 $ ssh -t -L 28888:localhost:8888 user@A ssh -L 8888:localhost:8888 user@B
 ```
 
+[`ProxyJump`](https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Proxies_and_Jump_Hosts) might be an alternative, but it seems not work for host established via `-R`, such as `ssh -J public@host inner@localhost:pppp`.
+
 ### ssh until succeed
 
 ```bash
@@ -314,3 +316,13 @@ it is necessary to [upgrade the Certbot.](https://community.letsencrypt.org/t/so
 按照第一个链接的指示，并不能成功访问。于是尝试参考第二个链接修改配置文件。
 
 未果，结果按照cy的建议，释放掉了这个服务器。
+
+## FTP 
+
+Upload and download files from command line, see [:link:](https://linuxize.com/post/how-to-use-linux-ftp-command-to-transfer-files/) for more details.
+
+```bash
+$ ftp xx.xx.xx.xx
+ftp> put XX
+ftp> get XX
+```

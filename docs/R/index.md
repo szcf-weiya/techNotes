@@ -982,3 +982,17 @@ Replace it with
 ```bash
 R_LIBS_USER=${R_LIBS_USER-'~/Programs/R/x86_64-pc-linux-gnu-library/3.6'}
 ```
+
+!!! tip
+	Start from R4.0.0, the path string can be constructed via `r(...)` without escaping `/`.
+
+	```r
+	> r"(~/R/x86_64-pc-linux-gnu-library/3.6)"
+	[1] "~/R/x86_64-pc-linux-gnu-library/3.6"
+	```
+
+	See [:link:](https://stackoverflow.com/questions/14185287/escaping-backslash-in-string-or-paths-in-r/)
+
+## String
+
+- repeat string: `strrep('str', 2)`, `paste(rep('str', 2), collapse='')`
