@@ -2873,7 +2873,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. indels
 2. at the expense of
 3. surfeit: 过量
-4. pertinent
+4. pertinent: 有关的，恰当的，相宜的
 5. mortal
 6. immortal
 

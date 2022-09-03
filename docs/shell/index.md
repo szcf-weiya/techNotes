@@ -477,6 +477,10 @@ where
 
 We also can add `-exec ls` to get the output of `ls`, and change the regex type by `-regextype egrep`.
 
+
+!!! tip "Regular Expressions"
+	- [Regular Expressions in Perl](https://www.antipope.org/charlie/old/attic/tkperl/ptk-3.html)
+
 ## Multiple `IFS`
 
 ```shell
