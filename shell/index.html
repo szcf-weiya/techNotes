@@ -3324,6 +3324,12 @@ $ bc <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;scale=2; 39/10&q
 <li><code>-maxdepth 1</code> disables recursive, and only to find files in the current directory</li>
 </ul>
 <p>We also can add <code>-exec ls</code> to get the output of <code>ls</code>, and change the regex type by <code>-regextype egrep</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Regular Expressions</p>
+<ul>
+<li><a href="https://www.antipope.org/charlie/old/attic/tkperl/ptk-3.html">Regular Expressions in Perl</a></li>
+</ul>
+</div>
 <h2 id="multiple-ifs">Multiple <code>IFS</code><a class="headerlink" href="#multiple-ifs" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span> <span class="nb">read</span> -a ADDR<span class="p">;</span> <span class="k">do</span>
         <span class="nv">IFS</span><span class="o">=</span><span class="s1">&#39;:&#39;</span> <span class="nb">read</span> -a Line <span class="o">&lt;&lt;&lt;</span> <span class="nv">$ADDR</span>
