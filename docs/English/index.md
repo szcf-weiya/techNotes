@@ -2143,7 +2143,7 @@ None
 ## 2020.10.06
 
 - the content of unreplicated or otherwise **shaky (颤抖的，不牢靠的)** empirical claims
-- **sway** in the way
+- **sway (影响，摇摆)** in the way
 
 ## 2020.10.05
 
@@ -3311,7 +3311,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 18. **ensconce (安置，隐藏)** the spare house key in a place where no thief would think to look.
 19. A brief but embarrassing silence ensued.
 20. their clandestine love affair
-21. covert alliance
+21. covert **alliance (联盟，结盟团体)**
 22. European missionaries converted thousands to Christianity.
 23. evidence that led to the suspect's conviction
 24. The meeting adjourned for a week.
@@ -3513,7 +3513,7 @@ up
 10. interlocking
 11. snap
 12. blowhole
-14. sacs
+14. sacs: 囊，上衣
 
 ## 2017.10.19
 
