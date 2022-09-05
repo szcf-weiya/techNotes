@@ -2198,7 +2198,7 @@ None
 ## 2020.08.05
 
 - Jellyfish is the common name for the free-swimming form of gelatinous animals
-- farmed in aquaculture systems
+- farmed in **aquaculture (水产养殖业)** systems
 - thousands of swimmers are stung with varying degrees of severity every year.
 - jellyfish can form swarms which are also known as jellyfish blooms, which can damage fishing apparatus or clog the cooling systems of power stations.
 - ocean **eutrophication (富营养化)**
@@ -2486,7 +2486,7 @@ None
 
 1. features that **rot (腐烂，形势恶化)** before they **ripen (成熟)**.
 2. the dog **sprints off**
-3. shy away from it
+3. shy away from it: try to avoid because of nervousness, fear, dislike.
 4. swinging hard right on the pendulum.
 5. evade bad data
 
@@ -3010,7 +3010,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. pare it down
 4. **noose (绳套，套索)**
 5. Homotopy
-6. miraculously
+6. miraculously: 神奇的，非凡的
 
 
 ## 2018.08.12
@@ -3302,7 +3302,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 9. He was **vituperated (谩骂，辱骂)** for betraying his friends.
 10. We do not have even the faintest inkling of what the project was all about.
 11. A suspension without pay is condign punishment for breaking the company's code of business ethics.
-12. All people concurred to pass the reform legislation.
+12. All people **concurred (同意，赞同)** to pass the reform legislation.
 13. The administration had nothing but contempt for the ultimate Frisbee team and frequently spoke disdainfully of it.
 14. We accepted his offer to pay for our dinners without demur.
 15. an impartial and perspicacious judge
@@ -3370,14 +3370,14 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 84. obsequious (fawning; servile)
 85. Elan means vivacity or liveliness of spirit
 86. trepidation (apprehension; fear)
-87. Exorbitant (excessive; overly expensive)
+87. **Exorbitant (过高的，高得离谱的)** (excessive; overly expensive)
 88. affluent (wealthy)
 89. Destitute means needy or impoverished.
 90.  A harangue is a sharp verbal attack, a bitter tirade or diatribe.
 91. Surreptitious means hidden or stealthy.
 92.  Intransigence means stubbornness. a refusal of any compromise.
 93. Phlegmatic means not easily disturbed or excited.
-94.  Autocratic means tyrannical or domineering.
+94.  **Autocratic (专制的，独裁的)** means **tyrannical (暴君的，专横的)** or domineering.
 95. Wistful means pensively sad or yearning
 97. indigenous & ingenuous & disingenuous
 98. dignity (formal bearing; nobility of character)
@@ -3621,7 +3621,7 @@ Nothing. Watching The Greatest Challenge.
 10. A **bolide (【天文学】火流星，火球)**, or fireball, is an extremely bright **meteor (流星)**, and those can be about the size of a **grapefruit (葡萄柚，西柚)**.
 11. magma, mantle, **lava (火山喷发的熔岩)**
 14. volcanism
-15. makeover
+15. **makeover (翻新，改进)**
 16. pummel: 连续猛击，反复拳打
 17. wipe away
 18. Valentine's Day
