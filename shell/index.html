@@ -581,6 +581,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shell-builtin-vs-shell-keyword" class="md-nav__link">
+    shell builtin vs shell keyword
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#line-begin-with" class="md-nav__link">
     line begin with :
   </a>
@@ -2583,6 +2590,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shell-builtin-vs-shell-keyword" class="md-nav__link">
+    shell builtin vs shell keyword
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#line-begin-with" class="md-nav__link">
     line begin with :
   </a>
@@ -2990,6 +3004,30 @@
 <ul>
 <li><a href="https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/">Safer bash scripts with &lsquo;set -euxo pipefail&rsquo;</a></li>
 <li><a href="https://blog.csdn.net/t0nsha/article/details/8606886">解释bash脚本中set -e与set -o pipefail的作用</a></li>
+</ul>
+<h2 id="shell-builtin-vs-shell-keyword">shell builtin vs shell keyword<a class="headerlink" href="#shell-builtin-vs-shell-keyword" title="Permanent link">&para;</a></h2>
+<p>For <code>time</code> command, </p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/188676132-5ee17497-578a-4e41-abb5-0dc25f92ed5e.png" /></p>
+<ul>
+<li>in bash shell, it calls its builtin command, which is a shell keyword</li>
+</ul>
+<div class="highlight"><pre><span></span><code>~$ <span class="nb">type</span> <span class="nb">time</span>
+<span class="nb">time</span> is a shell keyword
+</code></pre></div>
+<ul>
+<li>on the other hand, in sh shell, it calls its builtin command, which refers to <code>/usr/bin/time</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">type</span> <span class="nb">time</span>
+<span class="nb">time</span> is /usr/bin/time
+</code></pre></div>
+<p>So, as mentioned in <code>man time</code>, the full path <code>/usr/bin/time</code> is necessary in bash shell.</p>
+<blockquote>
+<p>Users of the bash shell need to use an explicit path in order to run the external time command and not the shell builtin variant.  On system where time is installed in
+      /usr/bin, the first example would become
+           /usr/bin/time wc /etc/hosts</p>
+</blockquote>
+<ul>
+<li><a href="https://askubuntu.com/questions/445749/whats-the-difference-between-shell-builtin-and-shell-keyword">https://askubuntu.com/questions/445749/whats-the-difference-between-shell-builtin-and-shell-keyword</a></li>
 </ul>
 <h2 id="line-begin-with">line begin with <code>:</code><a class="headerlink" href="#line-begin-with" title="Permanent link">&para;</a></h2>
 <p>came across in <code>R_HOME/etc/ldpaths</code> when I am investigating the loading issue of conda env from rstudio, <a href="https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987">https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987</a></p>
