@@ -50,6 +50,34 @@ refer to
 - [Safer bash scripts with 'set -euxo pipefail'](https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/)
 - [解释bash脚本中set -e与set -o pipefail的作用](https://blog.csdn.net/t0nsha/article/details/8606886)
 
+## shell builtin vs shell keyword
+
+For `time` command, 
+
+![image](https://user-images.githubusercontent.com/13688320/188676132-5ee17497-578a-4e41-abb5-0dc25f92ed5e.png)
+
+- in bash shell, it calls its builtin command, which is a shell keyword
+
+```bash
+~$ type time
+time is a shell keyword
+```
+
+- on the other hand, in sh shell, it calls its builtin command, which refers to `/usr/bin/time`
+
+```bash
+$ type time
+time is /usr/bin/time
+```
+
+So, as mentioned in `man time`, the full path `/usr/bin/time` is necessary in bash shell.
+
+> Users of the bash shell need to use an explicit path in order to run the external time command and not the shell builtin variant.  On system where time is installed in
+>       /usr/bin, the first example would become
+>            /usr/bin/time wc /etc/hosts
+
+- <https://askubuntu.com/questions/445749/whats-the-difference-between-shell-builtin-and-shell-keyword>
+
 ## line begin with `:`
 
 came across in `R_HOME/etc/ldpaths` when I am investigating the loading issue of conda env from rstudio, <https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987>
