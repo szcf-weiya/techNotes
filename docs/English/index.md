@@ -1,3 +1,7 @@
+## 2022.09.07
+
+- The order is **rescinded (撤销，删除)**.
+
 ## 2022.09.02
 
 - rigmarole: 乱七八糟的，无聊的

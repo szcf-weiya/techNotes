@@ -50,6 +50,10 @@ refer to
 - [Safer bash scripts with 'set -euxo pipefail'](https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/)
 - [解释bash脚本中set -e与set -o pipefail的作用](https://blog.csdn.net/t0nsha/article/details/8606886)
 
+## Double Exclamation (!!)
+
+`!!` would execute the previous command. I found it when I type a git commit message like `!!! XXX`, which renders as `PREVIOUS COMMAND! XXX`, see [:link:](https://github.com/szcf-weiya/en/commit/aa3c536847ae9563bf3e892d7f144725b7f7314a) for details. See also [:link:](https://stackoverflow.com/questions/24980679/double-exclamation-in-bash-script).
+
 ## shell builtin vs shell keyword
 
 For `time` command, 
