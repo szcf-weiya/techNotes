@@ -535,7 +535,7 @@ None
 
 - not only the complicated dynamic dependence between the series, but also the existence of **aberrant (异常的，反常的)** observations, such as missing values, contaminated observations, and heavy-tailed distributions.
 - In the US, socioeconomic disadvantage is positively associated with **adiposity (肥胖症)**
-- omnibus
+- omnibus: 公共汽车；（广播、电视）综合节目
 - epistemic: 知识的，认识的
 
 ## 2021.08.04
@@ -2283,7 +2283,7 @@ None
 - sometimes memory is downright creative.
 - sophomore
 - live in tenements
-- bricklayers
+- bricklayers: 砌砖工
 - schizophrenia (精神分裂症)
 - the experience of loneliness turns out to be toxic
 - midst of conflict
@@ -3051,7 +3051,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 5. Escherichia coli
 6. yeast
 7. 酿酒酵母（Saccharomyces cerevisiae）
-8. stoichiometric
+8. stoichiometric: 化学计算的，理想配比的
 
 
 ## 2018.08.01
@@ -3423,7 +3423,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 18. stop short of
 
 ## 2017.10.07
-1. as such
+
+1. as such: 本身，名副其实地
 
 ## 2017.10.09
 
@@ -3476,7 +3477,7 @@ up
 1. calligrapher
 2. decorator
 3. Islamic
-4. parchment
+4. parchment: 羊皮纸，羊皮纸文献
 5. angular
 6. **souk (露天市场，集市)**
 7. mosque
