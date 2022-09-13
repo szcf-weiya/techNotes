@@ -1,3 +1,7 @@
+## 2022.09.12
+
+- I appreciate your trying to be **proactive (积极主动的，主动出击的)** about completing the onboarding paperwork.
+
 ## 2022.09.11
 
 - coaxial cables: 同轴电缆
