@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/tools/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.4">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
     
     
       
@@ -23,13 +23,14 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6b80c2a2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2e8b5541.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
+
     
     
     
@@ -59,6 +60,7 @@
   <script data-ad-client="ca-pub-3680148472128768" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
+    
     
   </head>
   
@@ -134,7 +136,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -624,13 +626,20 @@
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    图片拼接
+    图片裁剪
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    图片拼接
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     缩小图片大小
   </a>
   
@@ -754,28 +763,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     去除音频
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     慢速播放和快速播放
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     视频旋转
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     视频剪切
   </a>
   
@@ -2830,13 +2839,20 @@
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    图片拼接
+    图片裁剪
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    图片拼接
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     缩小图片大小
   </a>
   
@@ -2960,28 +2976,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     去除音频
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     慢速播放和快速播放
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     视频旋转
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     视频剪切
   </a>
   
@@ -3315,10 +3331,11 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
   <a href="https://github.com/szcf-weiya/techNotes/edit/master/docs/Linux/tools.md" title="Edit this page" class="md-content__button md-icon">
     
@@ -3446,7 +3463,12 @@ d
 </ul>
 <p>refer to <a href="https://stackoverflow.com/questions/1875305/view-tabular-file-such-as-csv-from-command-line">View tabular file such as CSV from command line</a></p>
 <h2 id="convert"><code>convert</code><a class="headerlink" href="#convert" title="Permanent link">&para;</a></h2>
-<h3 id="_1">图片拼接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_1">图片裁剪<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>在连接显示器状态下，全屏截图时有一个屏幕是多余的，可以批量裁剪</p>
+<div class="highlight"><pre><span></span><code>$ ls -1 <span class="p">|</span> xargs -I <span class="o">{}</span> convert <span class="o">{}</span> -crop 1920x1200+1920+0 crop_<span class="o">{}</span>
+</code></pre></div>
+<p>其中 <code>-crop</code> 参数格式为 <code>width</code>x<code>height</code>+<code>left</code>+<code>top</code>.</p>
+<h3 id="_2">图片拼接<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 水平方向</span>
 convert +append *.png out.png
 <span class="c1"># 垂直方向</span>
@@ -3464,7 +3486,7 @@ $ convert +append map.png IMG_20210808_172104.jpg -resize x600 /tmp/p1.png
 <p>但是注意 <code>-resize</code> 会使得 orientation 无效，然后图片会发生旋转，参考 <a href="https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33900">ImageMagick convert rotates images during resize</a>，使用 <code>-auto-orient</code> 参数，就能避免丢失图片中的 orientation 信息，</p>
 <div class="highlight"><pre><span></span><code>$ convert -auto-orient +append map.png IMG_20210808_172104.jpg -resize x600 /tmp/p2.png
 </code></pre></div>
-<h3 id="_2">缩小图片大小<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">缩小图片大小<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># only specify the wide as 1024 pixel to keep the aspect ratio</span>
 convert input.png -resize 1024x out.png
 convert input.png -quality <span class="m">50</span>% out.png
@@ -3604,11 +3626,11 @@ $ cat t2.txt
 <span class="m">2</span> <span class="m">2</span>
 </code></pre></div>
 <h2 id="ffmpeg"><code>ffmpeg</code>： 视频处理<a class="headerlink" href="#ffmpeg" title="Permanent link">&para;</a></h2>
-<h3 id="_3">去除音频<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">去除音频<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="https://hefang.link/article/how-remove-voice-with-ffmpeg.html">如何使用ffmpeg去除视频声音？</a></p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i .<span class="se">\i</span>nput.mp4 -map <span class="m">0</span>:0 -vcodec copy out.mp4
 </code></pre></div>
-<h3 id="_4">慢速播放和快速播放<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_5">慢速播放和快速播放<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 2 times faster</span>
 $ ffmpeg -i input.mkv -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</span> output.mkv
 </code></pre></div>
@@ -3619,7 +3641,7 @@ $ ffmpeg -i input.mkv -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</spa
 <div class="highlight"><pre><span></span><code>$ convert -delay <span class="m">10</span> input.gif output.gif
 </code></pre></div>
 <p>refer to <a href="https://infoheap.com/imagemagick-convert-edit-animated-gif-speed-fps/">https://infoheap.com/imagemagick-convert-edit-animated-gif-speed-fps/</a></p>
-<h3 id="_5">视频旋转<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_6">视频旋转<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>参考<a href="https://askubuntu.com/questions/83711/how-can-i-rotate-a-video">How can I rotate a video?</a></p>
 <p>直接用</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i <span class="k">in</span>.mov -vf <span class="s2">&quot;transpose=1&quot;</span> out.mov
@@ -3628,7 +3650,7 @@ $ ffmpeg -i input.mkv -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</spa
 <p>注意添加 <code>-strict -2</code> 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i <span class="k">in</span>.mov -vf <span class="s2">&quot;transpose=1&quot;</span> -strict -2 out.mov
 </code></pre></div>
-<h3 id="_6">视频剪切<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_7">视频剪切<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">00</span>:00:30.0 -i input.wmv -c copy -t <span class="m">00</span>:00:10.0 output.wmv
 </code></pre></div>
 <p>where</p>
@@ -4208,10 +4230,11 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 
 
 
-              
-            </article>
-            
-          </div>
+                
+              </article>
+            </div>
+          
+          
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -4342,7 +4365,7 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d691e9de.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

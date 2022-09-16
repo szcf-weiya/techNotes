@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/julia/dev_package/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.4">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
     
     
       
@@ -23,13 +23,14 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6b80c2a2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2e8b5541.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
+
     
     
     
@@ -59,6 +60,7 @@
   <script data-ad-client="ca-pub-3680148472128768" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
+    
     
   </head>
   
@@ -134,7 +136,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -2170,6 +2172,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#start-with-empty" class="md-nav__link">
+    Start with Empty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#starting-with-existing-folder" class="md-nav__link">
     Starting with existing folder
   </a>
@@ -2191,10 +2200,11 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
   <a href="https://github.com/szcf-weiya/techNotes/edit/master/docs/julia/dev_package.md" title="Edit this page" class="md-content__button md-icon">
     
@@ -2203,6 +2213,24 @@
 
 
 <h1 id="workflow-of-writing-a-package">Workflow of Writing a Package<a class="headerlink" href="#workflow-of-writing-a-package" title="Permanent link">&para;</a></h1>
+<h2 id="start-with-empty">Start with Empty<a class="headerlink" href="#start-with-empty" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="n">julia1</span><span class="mf">.7</span><span class="w"></span>
+<span class="w">               </span><span class="n">_</span><span class="w"></span>
+<span class="w">   </span><span class="n">_</span><span class="w">       </span><span class="n">_</span><span class="w"> </span><span class="n">_</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="n">_</span><span class="w">     </span><span class="o">|</span><span class="w">  </span><span class="n">Documentation</span><span class="o">:</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">docs</span><span class="o">.</span><span class="n">julialang</span><span class="o">.</span><span class="n">org</span><span class="w"></span>
+<span class="w">  </span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w"></span>
+<span class="w">   </span><span class="n">_</span><span class="w"> </span><span class="n">_</span><span class="w">   </span><span class="n">_</span><span class="o">|</span><span class="w"> </span><span class="o">|</span><span class="n">_</span><span class="w">  </span><span class="n">__</span><span class="w"> </span><span class="n">_</span><span class="w">   </span><span class="o">|</span><span class="w">  </span><span class="kt">Type</span><span class="w"> </span><span class="s">&quot;?&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">help</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;]?&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Pkg</span><span class="w"> </span><span class="n">help</span><span class="o">.</span><span class="w"></span>
+<span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">|/</span><span class="w"> </span><span class="sa">_</span><span class="sb">` |  |</span>
+<span class="sb">  | | |_| | | | (_| |  |  Version 1.7.0 (2021-11-30)</span>
+<span class="sb"> _/ |\__&#39;_|_|_|\__&#39;_|  |  Official https://julialang.org/ release</span>
+<span class="sb">|__/                   |</span>
+
+<span class="sb">(@v1.7) pkg&gt; generate MonoDecomp.jl</span>
+<span class="sb">  Generating  project MonoDecomp:</span>
+<span class="sb">    MonoDecomp.jl/Project.toml</span>
+<span class="sb">    MonoDecomp.jl/src/MonoDecomp.jl</span>
+
+<span class="sb">julia&gt; </span>
+</code></pre></div>
 <h2 id="starting-with-existing-folder">Starting with existing folder<a class="headerlink" href="#starting-with-existing-folder" title="Permanent link">&para;</a></h2>
 <ol>
 <li>create a github repo, say <code>xfun.jl</code></li>
@@ -2245,10 +2273,11 @@
 
 
 
-              
-            </article>
-            
-          </div>
+                
+              </article>
+            </div>
+          
+          
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -2343,7 +2372,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d691e9de.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
