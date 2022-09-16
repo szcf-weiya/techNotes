@@ -179,6 +179,17 @@ refer to [View tabular file such as CSV from command line](https://stackoverflow
 
 ## `convert`
 
+### 图片裁剪
+
+在连接显示器状态下，全屏截图时有一个屏幕是多余的，可以批量裁剪
+
+```bash
+$ ls -1 | xargs -I {} convert {} -crop 1920x1200+1920+0 crop_{}
+```
+
+其中 `-crop` 参数格式为 `width`x`height`+`left`+`top`.
+
+
 ### 图片拼接
 
 ```bash

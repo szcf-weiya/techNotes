@@ -1,3 +1,9 @@
+## 2022.09.14
+
+- accommodating: 乐于助人的，与人方便的
+- we hear from a US scientist falsely accused of hiding ties to China: 被诬告隐瞒与中国的关系
+- testimonial: 证明信，介绍信，推荐信
+
 ## 2022.09.12
 
 - I appreciate your trying to be **proactive (积极主动的，主动出击的)** about completing the onboarding paperwork.
@@ -45,7 +51,7 @@
 
 ## 2022.08.08
 
-- Cavitation for Cold Brew Espresso: **Cavitation (空蚀，空穴)** is caused by the movement of water being so quick that the pressure drops and then the water vaporizes. For coffee, the theory is that cavitation makes extraction easier. [:link:](https://towardsdatascience.com/cavitation-for-cold-brew-espresso-57ef791d4675), [:material-wikipedia:](https://zh.m.wikipedia.org/zh-hk/%E7%A9%BA%E7%A9%B4%E7%8F%BE%E8%B1%A1)
+- Cavitation for Cold **Brew (酝酿，酿制)** Espresso: **Cavitation (空蚀，空穴)** is caused by the movement of water being so quick that the pressure drops and then the water vaporizes. For coffee, the theory is that cavitation makes extraction easier. [:link:](https://towardsdatascience.com/cavitation-for-cold-brew-espresso-57ef791d4675), [:material-wikipedia:](https://zh.m.wikipedia.org/zh-hk/%E7%A9%BA%E7%A9%B4%E7%8F%BE%E8%B1%A1)
 - eugenics: 基因优生学
 - a **blazingly (with or like a blaze; bright and fiery)** fast solution 
 - tricks that **wow (博得称赞)** you
@@ -1986,7 +1992,7 @@ None
 - **[Talmudic (塔木德，犹太教宗教文献)](https://zh.wikipedia.org/wiki/%E5%A1%94%E6%9C%A8%E5%BE%B7)** argument about whether God can dig a **ditch (沟渠)** so width he can't jump across it.
 - the question sounds **snarky (尖锐批评的，讽刺挖苦的)**, but it's not meant **in that vein (用同样的风格处理某事)**.
 - we must avoid the **trap** of overconfidence in our inferential summaries.
-- the 40% rule is a time-tried **tactic** employed by **pundits (某一学科的权威，专家)** making forecasts.
+- the 40% rule is a time-tried **tactic (策略，战术)** employed by **pundits (某一学科的权威，专家)** making forecasts.
 
 ## 2020.10.26
 
@@ -2169,7 +2175,7 @@ None
 - **flat out (竭尽全力，用全速)** fabrication
 - **dodge (躲闪)** criticism
 - let's start with the **leadoff** to Pickett's article
-- academic **bureaucrats** and game-players taking a technical dispute
+- academic **bureaucrats** and game-players taking a technical **dispute (纠纷，争端)**
 - attacks and name-calling against dissenters
 - **retreat (撤退)** into procedure
     - retreat into oneself: 退隐，离群索居

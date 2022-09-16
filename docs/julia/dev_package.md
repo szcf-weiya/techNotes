@@ -1,5 +1,26 @@
 # Workflow of Writing a Package
 
+## Start with Empty
+
+```julia
+$ julia1.7
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.7.0 (2021-11-30)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+(@v1.7) pkg> generate MonoDecomp.jl
+  Generating  project MonoDecomp:
+    MonoDecomp.jl/Project.toml
+    MonoDecomp.jl/src/MonoDecomp.jl
+
+julia> 
+```
+
 ## Starting with existing folder
 
 1. create a github repo, say `xfun.jl`

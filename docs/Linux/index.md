@@ -522,6 +522,9 @@ fi
 
 之所以选择 `F7` 是因为本身 F7 也支持切换 display mode，但是默认 external monitor 在右侧。试图直接更改 F7 的 binding commands，相关的 Ubuntu 官方帮助文档 [Keyboard](https://help.ubuntu.com/stable/ubuntu-help/keyboard.html.en) 及配置文件 [Custom keyboard layout definitions](https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions)，但是无从下手。
 
+!!! tip
+    连接 HDMI 线没反应，也可以用 `xrandr` 排查是 PC 的问题还是显示器的问题。如果是电脑端没有显示连接，那很可能是显示器的问题。2022-09-16 初次连接 Yale 办公室的显示器时，便是电脑端没有插好。
+
 ## System Monitor
 
 I am currently using the [gnome-shell extension](#system-monitor) and [Netdata: Web-based Real-time performance monitoring](https://github.com/netdata/netdata)
