@@ -1,3 +1,7 @@
+## 2022.09.15
+
+- RSVP is an initialism derived from a French phrase, literally meaning "Respond, if you please".
+
 ## 2022.09.14
 
 - accommodating: 乐于助人的，与人方便的
@@ -3568,7 +3572,7 @@ up
     - all men are mortal: 人皆有一死
 8. blend of cultures：文化融合
 - **blaze (火焰；展现)** your trail
-10. bland
+10. bland: 平淡的，乏味的
 11. diffident (缺乏自信的，胆怯的), different, indifferent
 13. pond
 14. boom, flourish
@@ -3748,7 +3752,7 @@ Nothing. Watching The Greatest Challenge.
 7. artisan, artist
 8. Raphael, frescos
 9. apprentices
-10. quarry
+10. quarry: 采石场；苦心寻找
 11. to and fro
 12. carpenter, mason
 13. portraiture, portrait artist
