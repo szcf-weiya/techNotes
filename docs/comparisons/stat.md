@@ -5,6 +5,10 @@ hide:
 
 # Comparisons
 
+- R in Julia: `RCall.jl`
+- Python in Julia: `PyCall.jl`
+- Python in R: `reticulate`
+
 LANG | Julia | R | Python | Others
 -- | -- | -- | -- | -- 
 [padding zero on the left](../../julia/#padding-zero-on-the-left) | `lpad(1, 3, '0')` |  | `f"{1:03}"` | `printf "%03d" 1` (Shell)

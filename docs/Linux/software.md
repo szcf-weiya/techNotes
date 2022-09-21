@@ -128,7 +128,15 @@ bypy syncdown
 
 ### not saving password
 
-有段时间，不能自动输入 CUSIS 的登录信息，后来大概是清理过cache，或者是更新完 chrome 便好的。另见 [:link:](https://superuser.com/questions/573602/chrome-not-saving-passwords-and-not-auto-filling-existing-login-passwords)
+有段时间，不能自动输入 CUSIS 的登录信息，直接删掉 Login Data，
+
+```bash
+$ pwd
+/home/weiya/.config/google-chrome/Default
+~/.config/google-chrome/Default$ mv Login\ Data "Login-Data-backup20210410-issue16"
+```
+
+详见 [:link:](https://github.com/szcf-weiya/techNotes/issues/16)
 
 ### disable running in background
 

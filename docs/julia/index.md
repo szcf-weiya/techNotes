@@ -840,8 +840,29 @@ PyObject <module 'math' from '/home/weiya/anaconda3/envs/py37/lib/python3.7/lib-
 
 then the module corresponds to the specified conda environment, and then like the above test, it also can be used in other conda environment without recompiling.
 
-## Random
+## RCall
 
+- `rcopy(NA)` return `missing`, [:link:](https://github.com/szcf-weiya/Clouds/issues/2)
+
+```julia
+julia> rcopy(R"lm($dop ~ 0 + $H)$coefficients")
+100-element reshape(::Array{Union{Missing, Float64},1}, 100) with eltype Union{Missing, Float64}:
+     missing
+   -1.909321682273283e-23
+```
+
+A related error is
+
+```julia
+julia> Array{Float64}(rcopy(R"lm($dop ~ 0 + $H)$coefficients"))
+ERROR: MethodError: Cannot `convert` an object of type Missing to an object of type Float64
+Closest candidates are:
+  convert(::Type{T}, ::T) where T<:Number at number.jl:6
+  convert(::Type{T}, ::Number) where T<:Number at number.jl:7
+  convert(::Type{T}, ::Base.TwicePrecision) where T<:Number at twiceprecision.jl:250
+```
+
+## Random
 
 !!! warning
     Caution for `Random.seed!()`. Be careful to use it in a function.
@@ -963,6 +984,66 @@ Although we cannot remove some defined function, with the powerful [Revise.jl](h
 ![](normal-zero-var.png)
 
 可知，最低可以支持 `1e-323`，所以似乎也支持 `sqrt(1e-646)`，但并没有，而且当 `sqrt(1e-324)` 时精度就不够了，似乎 `sqrt(x)` 的精度与 `x` 的精度相当。
+
+## SymPy: Symbolic Math
+
+```julia
+julia> using SymPy
+[ Info: Precompiling SymPy [24249f21-da20-56a4-8eb1-6a02cf4ae2e6]
+ERROR: InitError: PyError (PyImport_ImportModule
+
+The Python package sympy could not be imported by pyimport. Usually this means
+that you did not install sympy in the Python version being used by PyCall.
+
+PyCall is currently configured to use the Python version at:
+
+/home/weiya/anaconda3/envs/py37/bin/python3.7
+
+and you should use whatever mechanism you usually use (apt-get, pip, conda,
+etcetera) to install the Python package containing the sympy module.
+
+julia> @vars x
+(x,)
+
+julia> exp(-x^2/2)/sqrt(2pi)
+                     2 
+                   -x  
+                   ────
+                    2  
+0.398942280401433⋅ℯ    
+
+julia> f(x) = exp(-x^2/2)/sqrt(2pi)
+f (generic function with 1 method)
+
+julia> integrate(f(x), x)
+                           ⎛√2⋅x⎞
+0.199471140200716⋅√2⋅√π⋅erf⎜────⎟
+                           ⎝ 2  ⎠
+
+julia> integrate(f(x), (x, -Inf, Inf))
+0.398942280401433⋅√2⋅√π
+
+julia> integrate(x*f(x), (x, -Inf, Inf))
+0
+
+julia> integrate(x*f(x), x)
+                      2 
+                    -x  
+                    ────
+                     2  
+-0.398942280401433⋅ℯ    
+
+julia> integrate(x*f(x), (x, -Inf, Inf))
+0
+
+julia> integrate(f(x)^2, (x, -Inf, Inf))
+0.159154943091895⋅√π
+
+julia> integrate(f(x)^2, x)
+0.0795774715459477⋅√π⋅erf(x)
+```
+
+where `erf` is <https://en.wikipedia.org/wiki/Error_function>
 
 
 ## parallel

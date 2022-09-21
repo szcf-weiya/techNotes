@@ -1,3 +1,14 @@
+## 2022.09.19
+
+- **sexual assault (性侵犯)** is any kind of nonconsensual contact, including rape, **groping (用手摸索)**, or any other form of nonconsensual sexual touching.
+- sexual harassment: 性骚扰
+- Stalking is repeated or obsessive unwanted attention directed toward an individual or group that is likely to cause alarm, fear, or substantial emotional distress.
+- **hostile (敌意的，敌对的，不友好的)** work environment
+- subordinate: 下级，部属
+- abusive: 辱骂的，恶语的，毁谤的
+- **yelling (大喊，喊叫)** at a coworker in front of others when they made a mistake
+- retaliation: 报复
+
 ## 2022.09.15
 
 - RSVP is an initialism derived from a French phrase, literally meaning "Respond, if you please".
@@ -2017,7 +2028,7 @@ None
 
 ## 2020.10.25
 
-- I don't know that I could quite **articulate** what the rules are, but I can tell what's going on.
+- I don't know that I could quite **articulate (说，表达)** what the rules are, but I can tell what's going on.
 - The **moral economy (道德经济，伦理经济)** of science.
 - I heard a rumor that they have contacts at the **Antarctic Polar Station** who are going to sign the thing once they can get their damn **fur gloves** off.
 - I've **obscured (v. 使模糊)** the details of the letter here because I don't want to **single out** the authors of this particular paper or the editor of this particular journal.
