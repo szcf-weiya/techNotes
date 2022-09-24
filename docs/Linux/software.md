@@ -1030,6 +1030,11 @@ Anyway, the current solution seems already convinent.
 
 ## Terminator
 
+- `Ctrl + Shift + E` not work in Ubuntu 20.04 + ibus. The reason is that ibus has define such shortcut for emoji annotation. So just type `ibus-setup`, then switch to Emoji tab and delete the shortcut. [:link:](https://jh-byun.github.io/study/terminator-split-vertically/)
+
+![image](https://user-images.githubusercontent.com/13688320/192050782-33e0676a-d37f-47d6-a138-5b7cce58e4fa.png)
+
+
 - hostname 的颜色, 去掉 `.bashrc` 中
 
 ```bash

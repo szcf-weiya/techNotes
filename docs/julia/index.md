@@ -511,6 +511,11 @@ And as the [official documentation](https://docs.julialang.org/en/v1/manual/dist
 !!! info
     Applications in my project: [parallel.job](https://github.com/szcf-weiya/Cell-Video/blob/5ea7c550987a8f495b2fb238b32a331318347970/DP/num-disappeared-delta.jl#L55), where it is much like the feeder, although it might be quite fast.
 
+## Gurobi
+
+- Currently (2022-09-23) no way to enable Gurobi.jl in GitHub Actions. [:link:](https://github.com/jump-dev/Gurobi.jl/pull/428#issuecomment-1256638713)
+- hide message of `Set parameter ...`: `GRBsetintparam(GRB_ENV, GRB_INT_PAR_OUTPUTFLAG, 0)`. Inspired by the way for C++ API of Gurobi, [:link:](https://support.gurobi.com/hc/en-us/community/posts/4412624836753-Do-not-print-Set-parameter-Username-in-console) and [:link:](https://github.com/jump-dev/Gurobi.jl/blob/master/src/gen91/libgrb_api.jl)
+
 ## JLD vs JLD2
 
 JLD depends on HDF5, whose installation requires to login in, while JLD2 avoid the dependence of HDF5.

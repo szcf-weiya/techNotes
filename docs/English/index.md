@@ -1,3 +1,7 @@
+## 2022.09.23
+
+- opioid: 鸦片类药物
+
 ## 2022.09.19
 
 - **sexual assault (性侵犯)** is any kind of nonconsensual contact, including rape, **groping (用手摸索)**, or any other form of nonconsensual sexual touching.
@@ -2658,7 +2662,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 17. classification **parity**, meaning that common measures of predictive performance
 18. One must carefully define and measure the targets of prediction to avoid **retrenching** biases in the data.
 19. A team of researchers inside **Pfizer (辉瑞，美国制药公司)** made a **startling** find in 2015: The company’s **blockbuster (重磅炸弹，了不起的人或事)** **rheumatoid (风湿病的，类风湿病的)** **arthritis (关节炎)** therapy [**Enbrel (恩利，注射用依那西普，Etanercept)**](https://baike.baidu.com/item/%E6%81%A9%E5%88%A9), a powerful **anti-inflammatory (抗炎的)** drug, appeared to reduce the risk of Alzheimer’s disease by 64 percent.
-20. A **synopsis** of its statistical findings prepared for outside publication, it says, did not meet its “rigorous scientific standards.”
+20. A **synopsis (提要)** of its statistical findings prepared for outside publication, it says, did not meet its “rigorous scientific standards.”
 21. Pfizer said it **opted** against publication of its data because of its doubts about the results.
 22. One reason for caution: another class of anti-inflammatory therapies, called **non-steroidal (非类固醇类化合物)** anti-inflammatory drugs (NSAIDS), showed no effect against mild-to-moderate Alzheimer’s in several clinical trials a decade ago.
 - steroid: 类固醇，【生化】甾类化合物
@@ -3060,7 +3064,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. toggle
 2. elicitation
-3. rigorous
 4. **Bristol (布里斯托)** is one of the most **congested (拥堵的)** cities in Britain.
 5. recurrent
 
