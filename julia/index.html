@@ -1180,6 +1180,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gurobi" class="md-nav__link">
+    Gurobi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#jld-vs-jld2" class="md-nav__link">
     JLD vs JLD2
   </a>
@@ -3041,6 +3048,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gurobi" class="md-nav__link">
+    Gurobi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#jld-vs-jld2" class="md-nav__link">
     JLD vs JLD2
   </a>
@@ -3946,6 +3960,11 @@ $ julia relpath/b.jl
 <p class="admonition-title">Info</p>
 <p>Applications in my project: <a href="https://github.com/szcf-weiya/Cell-Video/blob/5ea7c550987a8f495b2fb238b32a331318347970/DP/num-disappeared-delta.jl#L55">parallel.job</a>, where it is much like the feeder, although it might be quite fast.</p>
 </div>
+<h2 id="gurobi">Gurobi<a class="headerlink" href="#gurobi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Currently (2022-09-23) no way to enable Gurobi.jl in GitHub Actions. <a href="https://github.com/jump-dev/Gurobi.jl/pull/428#issuecomment-1256638713"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li>hide message of <code>Set parameter ...</code>: <code>GRBsetintparam(GRB_ENV, GRB_INT_PAR_OUTPUTFLAG, 0)</code>. Inspired by the way for C++ API of Gurobi, <a href="https://support.gurobi.com/hc/en-us/community/posts/4412624836753-Do-not-print-Set-parameter-Username-in-console"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> and <a href="https://github.com/jump-dev/Gurobi.jl/blob/master/src/gen91/libgrb_api.jl"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+</ul>
 <h2 id="jld-vs-jld2">JLD vs JLD2<a class="headerlink" href="#jld-vs-jld2" title="Permanent link">&para;</a></h2>
 <p>JLD depends on HDF5, whose installation requires to login in, while JLD2 avoid the dependence of HDF5.</p>
 <p><a href="https://github.com/szcf-weiya/Cell-Video/issues/172#issuecomment-660467001">Source</a></p>
