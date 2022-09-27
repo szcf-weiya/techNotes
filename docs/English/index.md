@@ -3390,7 +3390,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 65. imperturbability
 67. A baby is god's most **precious (宝贵的，珍贵的)** gift.
 68. immensely
-69. composure
+69. composure: 镇静，镇定，沉着
 70. frenzied (frantic; highly agitated)
 71. Magnanimous
 72. sporadic (intermittent or infrequent): 零星的，分散的，不定时发生的
@@ -3720,7 +3720,7 @@ Nothing. Watching The Greatest Challenge.
 8. fluorescent
 9. **pebble (鹅卵石)**
 10. Hydrogen (氢，氢气), Helium (氦，氦气)
-11. fainter
+11. faint: 昏厥，昏眩；模糊的
 12. **foundationalism (基础主义，基础论)**
 13.  John Locke, René Descartes.
 14. slate
