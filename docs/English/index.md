@@ -3219,7 +3219,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 15. Jaw line contoured by the bristling red hair of the fighter, watchful, pugnacious.
 16. Things have come full circle since **penurious (贫穷的，穷困的，赤贫的)** sailors from the Far East first arrived two centuries ago.
 17. In May, to no one's surprise. he declared the city insolvent.
-18. I cannot feel it will make for a very restful retirement, can you?
+18. I cannot feel it will make for a very **restful (闲适宁静的，使人感到悠闲的)** retirement, can you?
 19. True to form (一如既往，像往常一样), Walter started asking him about his own retirement.
 20. These were very remarkable, but as eccentric as all his other accomplishments.
 21. She had known from the start that her philosophy teacher was eccentric.
