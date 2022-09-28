@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/julia/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
     
     
       
@@ -3609,6 +3609,7 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3�
 <li>drop dimensions: <code>dropdims</code>, see <a href="https://stackoverflow.com/questions/52505760/dropping-singleton-dimensions-in-julia/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for discussion on the necessity to specify the dims to drop</li>
 <li>iterate each row of matrix: <code>eachrow()</code></li>
 <li>tuple to array: <code>collect()</code> or <code>[i for i in t]</code></li>
+<li>index of unique elements: <code>unique(i-&gt;x[i], 1:length(x))</code>, used in <a href="https://github.com/szcf-weiya/Clouds/blob/ae8fda7f7af41f10cdf341374919bbead0c67908/src/utils.jl#L49x"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 <h3 id="pretty-println">pretty println<a class="headerlink" href="#pretty-println" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"></span>
