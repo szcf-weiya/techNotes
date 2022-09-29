@@ -1,8 +1,23 @@
-## 2022.09.23
+## 2022.09
+
+- stifle: 扼杀，抑制，阻止
+- tailgating: 尾随，追尾
+- malware: 恶意软件
+- prophylactic: 预防疾病的
+- swelling: 膨胀，肿胀
+- veterinary: 兽医的
+- pharmacovigilance: 药物警戒系统，药物主动监视
+- pharma: 医药（pharmaceuticals）
+- untoward: 异常的，意外的
+- dizzy: 头晕目眩的
+- acne: 痤疮，粉刺
+- counterfeit: 假冒，仿造的
+- **blister pack (【药品等的】吸塑包装)**, tablet, **syrup (糖水)**, **ampule (安瓿)**
+- rash: 皮疹
+- breastfeed: 用母乳喂养
+- meeting minute: 回忆记录
 
 - opioid: 鸦片类药物
-
-## 2022.09.19
 
 - **sexual assault (性侵犯)** is any kind of nonconsensual contact, including rape, **groping (用手摸索)**, or any other form of nonconsensual sexual touching.
 - sexual harassment: 性骚扰
@@ -13,29 +28,17 @@
 - **yelling (大喊，喊叫)** at a coworker in front of others when they made a mistake
 - retaliation: 报复
 
-## 2022.09.15
-
 - RSVP is an initialism derived from a French phrase, literally meaning "Respond, if you please".
-
-## 2022.09.14
 
 - accommodating: 乐于助人的，与人方便的
 - we hear from a US scientist falsely accused of hiding ties to China: 被诬告隐瞒与中国的关系
 - testimonial: 证明信，介绍信，推荐信
 
-## 2022.09.12
-
 - I appreciate your trying to be **proactive (积极主动的，主动出击的)** about completing the onboarding paperwork.
-
-## 2022.09.11
 
 - coaxial cables: 同轴电缆
 
-## 2022.09.07
-
 - The order is **rescinded (撤销，删除)**.
-
-## 2022.09.02
 
 - rigmarole: 乱七八糟的，无聊的
 
@@ -84,7 +87,7 @@
 - It is just **terrific (极好的，绝妙的)** for showing how easy extensibility is in Julia.
 - I found myself attending to emails while the speaker was still enthusiastically discussing the slides, quite **oblivious (不知道，未察觉)** to what was going on --- and perhaps unaware of my presence in the first place.
 - **consolidate (巩固，合并)** your knowledge
-- Researchers found that the **nocebo (反安慰剂)** effect accounted for 76% of common adverse reactions, such as headache and **fatigue (疲劳，)**, after the first dose.
+- Researchers found that the **nocebo (反安慰剂)** effect accounted for 76% of common **adverse (不利的，有害的，反面的)** reactions, such as headache and **fatigue (疲劳，)**, after the first dose.
 - a kind, thoughtful, and **charming (英俊的，潇洒的，有魅力的)** person.
 - **derby (德比，同城大战)**: a sports match between two **rival (竞争的)** teams from the same area.
 - The **Reverend (牧师)** Bayes --- was he really a **prophet (预言家)**?
@@ -2148,6 +2151,7 @@ None
     - daily grind: 日常（苦）工作
 - racial profiling
 - Blacks are more likely to be stopped for **pretextual** (pretext, 借口，推辞) reasons (e.g. **alleged (所谓的，声称的)** vehicle **defect (缺点，缺陷，不足之处)**, such as broken taillight; record check) and less for more **concrete (具体的)** reasons such as speeding.
+- defective: 有缺点的，有缺陷的
 - these have been **valorized (稳定物价，规定价格)** in constitutional caselaw
 - there are other disparities by race that are notable and (most likely) significant.
 
@@ -3411,7 +3415,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 89. Destitute means needy or impoverished.
 90.  A harangue is a sharp verbal attack, a bitter tirade or diatribe.
 91. Surreptitious means hidden or stealthy.
-92.  Intransigence means stubbornness. a refusal of any compromise.
+92.  Intransigence means stubbornness. a refusal of any **compromise (妥协，危及，连累)**.
 93. Phlegmatic means not easily disturbed or excited.
 94.  **Autocratic (专制的，独裁的)** means **tyrannical (暴君的，专横的)** or domineering.
 95. Wistful means pensively sad or yearning
@@ -3451,7 +3455,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 14. oblivious, incognizant, insensible, unaware, unconscious, unwitting, mindful, vigilant (警觉的，警惕的), acquainted, cognizant, conscious, conversant, grounded, informed, knowing, witting
 15. The March snowstorm obliterated our hopes for an early spring.
 16. con artist: 行骗高手
-17. He spent the remainder of his life in ignominy after being involved in a bribery scandal.
+17. He spent the remainder of his life in ignominy after being involved in a **bribery (贿赂，受贿，行贿)** scandal.
 18. stop short of
 
 ## 2017.10.07
