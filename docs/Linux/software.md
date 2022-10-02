@@ -1697,3 +1697,5 @@ so just remove it.
 The free size for saving is limited, and try to use a third-party cloud service for syncing. Use [坚果云](https://www.jianguoyun.com/), the configuration is as follows,
 
 ![](https://user-images.githubusercontent.com/13688320/124606874-e51d4880-de9f-11eb-85c7-71a1ebd51e44.png)
+
+Note that the password required in the left window can be obtained via clicking `Display Password` in the right window.
