@@ -152,264 +152,110 @@
 - We expect that people who have a **compelling (不可抗拒的，非常强烈的)** reason to need to stay will be able to explain their reasons to their hostel.
 - brochure: 资料（或广告）手册
 
-## 2022.01.31
+## 2022.01
 
 - The laws are **draconian (非常严厉的，非常严酷的)**.
-
-## 2022.01.28
-
 - You'd rather **scrub (擦洗)** toilets than teach your daughter?
-
-## 2022.01.23
-
 - data **sleuthing (数据侦查)**
-
-## 2022.01.16
-
 - it is attempting to ask whether...
-
-## 2022.01.12
-
 - filamentary: 丝状的
 - Suffering is a perfectly natural part of getting a neural network to work well, but it can be **mitigated (使缓和，使减轻)** by being thorough, defensive, **paranoid (妄想狂，偏执狂)**, and **obsessed (着迷的)** with visualizations of basically every possible thing.
-
-## 2022.01.08
-
 - The coefficients of x^3 is positive, so indeed the function has to **blow up (放大，爆炸)** to infinity once $x$ is big enough.
-
-## 2022.01.04
-
 - Every mammal on this plant **instinctively (本能地)** develops a natural equilibrium with the surrounding environment.
-
-## 2022.01.02
-
 - admiral
 
-## 2021.12.30
+## 2021.12
 
 - The insurer would now consider the extra expenses related to trip **curtailment (缩减，减少)** and cancellation arising from COVID-19.
-
-## 2021.12.24
-
 - Lint, or a linter, is a static code analysis tool used to flag programming errors, bugs, stylistic errors and suspicious constructs. 
-
-## 2021.12.19
-
 - obituary: 讣告
 - imposter: 伪装者，骗子
-
-## 2021.12.18
-
 - Study linking **vaping (电子烟)** to heart attacks muddied amid **spat (争吵)** between two tobacco researchers.
-
-## 2021.12.17
-
 - take **adorable (令人喜爱的)** pictures with doggies.
-
-## 2021.12.16
-
 - hypnagogia: 半梦半醒
-
-## 2021.12.13
-
 - It seemed a bit **farfetched (强词夺理)** to me but not impossible.
 - A healthy mental state is always about moderation and balance: be **prudent (谨慎的)** but not frightened.
-
-## 2021.12.11
-
 - Climate change is worsening heat waves, making them more frequent, longer, and hotter. It's amplifying drought and **intensifying (加剧，增强)** wildfires.
-
-## 2021.12.10
-
 - **Bonus-Malus (奖惩机制)** System (BMS)
-
-## 2021.12.7
-
 - Piano **Recital (音乐演奏会)**
-
-## 2021.12.3
-
 - if you are planning to travel over the **winter recess (寒假)**, you must monitor all COVID-19 updates.
-
-## 2021.12.1
-
 - Vice-Chancellor and President: 校长
 - Provost: 常务副校长
 - Among his colleagues Arthur was also revered for his **integrity (诚实正直)**, **geniality (和蔼亲切)**, incisiveness, and an unending passion for statistics.
     - data **integrity (完整)**
 
-## 2021.11.26
+## 2021.11
 
 - In countries where average incomes and ages are lowest, the response to the coronavirus has **ushered (引导，引领)** in "a shadow pandemic".
-
-## 2021.11.25
-
 - **ferreting out (搜出，查获)** a few frauds.
-
-## 2021.11.24
-
 - apsara: 飞天；飞天仙女
 - chinked out: 华人嘻哈
-
-## 2021.11.23
-
 - Larry played basketball at Cal Tech, first on the freshman team and then three years on the **varsity (校队)**.
-
-## 2021.11.21
-
 - The **fantasy (幻想)** companies say their daily games are not gambling, **contending (坚决主张)** that the games involve more skill than luck.
-
-## 2021.11.19
-
 - **bon ([法]好的)** **voyage (航行，航程)**: 一路平安
 - Harvard Stadium is a U-shaped college football **stadium (露天大型体育场)**.
 - A **torta (墨西哥三明治)** is a Mexican sandwich. Imagine that a sandwich and a **taco (墨西哥煎玉米粉卷)** got married and had a kid. That kid would be named Torta.
-
-## 2021.11.18
-
 - invite the members of last two graduating classes back to campus for their long-awaited **commencement (毕业典礼)**.
 - cow and **camel (骆驼)**
     - classify **beige (米黄色)** landscapes as camels
 - in statistical **parlance (说法，用语)**
-
-## 2021.11.17
-
 - Michael Jordan of Berkeley **alluded to (提到，暗指)** how uncertainty quantification has long been a **niche (细分)** topic in ML, and still kind of is, but this might be shifting.
 - **dovetail (吻合，兼顾)** career and family commitments
 - judge the **plausibility** of assumptions.
     - plausible: 似乎是真的（有理）
-
-## 2021.11.14
-
 - The GPU revolution catapulted NVIDIA's past incumbents such as Intel or Qualcomm both in market capitalization and AI-related technology innovation.
-
-## 2021.11.07
-
 - **Mass transit (公共交通)** can help **unclog (疏通)** the roads and your **arteries (动脉)**.
-
-## 2021.11.06
-
 - tare: 包装重量
 
-## 2021.10.27
+## 2021.10
 
 - **Picketing (罢工纠察)** is the essential way that we publicly display our strike power and disrupt the University.
     - picket line: 纠察线，罢工警戒线
 - **intracellular (细胞内的)** signaling pathways in CAR T cells
 - macrophage: 巨噬细胞
-
-
-## 2021.10.22 
-
 - Increased **predation (捕食)** and competition ultimately favored the evolution of more elaborate nests.
 - vertebrate: 脊椎动物
 - plumage: 翅膀，鸟类羽毛
-
-## 2021.10.14
-
 - Everything **hinges on (取决于)** how hard we work.
-
-## 2021.10.09
-
 - excursion: 短途旅行，涉猎
-
-## 2021.10.07
-
 - The Harvard **Gazette (报纸)**
-
-## 2021.10.04
-
 - ginger ale: 姜味汽水
 
-## 2021.09.29
+## 2021.09
 
 - Lamb Combo: Lam Curry, **Basmati Rice (印度香米)**
-
-## 2021.09.28
-
 - tow zone: 拖车区
-
-## 2021.09.23
-
 - ITSC will **revamp (改造)** the network facilities.
-
-## 2021.09.19
-
 - pickleball: 匹克球
 - Squash is older, and invented by English school kids in 1830. Racquetball was created by an American fellow in 1949. [:link:](https://olympic.ca/2015/06/30/what-the-difference-is-between-racquetball-and-squash-2/)
-
-## 2021.09.18
-
 - **Patrons (顾客)** must wear an appropriate bathing suit; gym shorts, compression shorts, sport bras or similar **attire (服装，衣服)** are not permitted.
-
-## 2021.09.16
-
 - It has **commenced (开始着手)** the student fees billing.
 - The **demolition (爆破，废墟)** makes for a unique **soundtrack (原声音乐，配音、对白)**, workers **hammering (锤打，连续击打)** in **cadence (节奏)** as **blurred (模糊不清的)** black shades against the sky.
-
-## 2021.09.14
-
 - mRNA vaccines are **triumph (巨大成功，重大成就)**.
-
-## 2021.09.12
-
 - JupyterLab moves closer to becoming a **full-fledged (全面发展的)** IDE with xeus-python.
-
-## 2021.09.11
-
 - Hurricane Ida was the sixth **tropical (热带的)** **cyclone (飓风，龙卷风)** to make landfall in **Louisiana (路易斯安那州)** since the start of 2020.
-
-## 2021.09.10
-
 - sickle-cell: 镰状细胞
-
-## 2021.09.09
-
 - hear how **insect (昆虫)** mushroom-farmers **throttle (压制，节流)** the carbon emissions from dead trees.
-
-## 2021.09.08
-
 - Welcome to **perk (小费，额外收入)** paradise.
 - Ireland, too, is a **paradise (天堂)** of greenery, with far fewer people than populous England and even more **quaint (古色古香的，少见的，古怪的)** villages scattered among its low-lying hills and forever green fields.
-
-## 2021.09.07
-
 - Wild **musk (麝香)** ducks learn to make high-pitched whistles from older members of their **flock (群)**.
-
-## 2021.09.06
-
 - [correct position of **only**](https://english.stackexchange.com/questions/5466/correct-position-of-only)
     - see also: [Using the Word "Only" Correctly](https://www.wikihow.com/Use-the-Word-%22Only%22-Correctly)
     - **tool for** comparing two sentences: <https://textranch.com/sentence-checker/>
     - [`depend only on` vs `depend on only`](https://textranch.com/650721/depend-only-on/or/depend-on-only/)
-
-## 2021.09.05
-
 - pentagon: 五角形
     - The Pentagon: 华盛顿五角大楼，美国国防部
 - hexagon: 六角形，六边形
 - heptagon: 七角形，七边形
-
-## 2021.09.04
-
 - **sailing (航行，航海)** **pavilion (亭子，临时建筑物)**
 - **gluten (麸质，谷蛋白，面筋)** free: [为什么美国很多的食品标明 gluten free？](https://www.zhihu.com/question/21443670)
 - fried tripes: 爆牛肚
-
-## 2021.09.03
-
 - **toast (烤面包片)** **grillage (格架)**
 - **broil (烤)** **griller (烤炉)**
-
-## 2021.09.02
-
 - Saturn's core might be a **slushy (泥泞的，融雪的)** mixture of ice and rock, rather than a compact solid made of mostly one or the other material, as is generally thought.
 - His yearly **payroll (工资总额)** is $XX.
     - He's no longer on their **payroll (工资名单)**.
 - The motto of Harvard: Veritas
-
-## 2021.09.01
-
 - We had a Sunday **brunch (早午餐)** of **bagels (百吉饼，硬面包圈)**.
 
 ## 2021.08
@@ -465,285 +311,107 @@
 - How to build an antiviral **arsenal (武器库，军火库)**.
 - These dependencies have **unleashed (爆发，发泄)** a **renaissance (复兴，文艺复兴)** in AI hardware innovations.
 
-## 2021.07.31
+## 2021.07
 
 - One researcher's unorthdox attempt to listen in to the **seismic (地震的)** whisper at the foot of a Greenland glacier.
-
-## 2021.07.30
-
 - alkali metals: 碱金属
-
-## 2021.07.29
-
 - agnosticism: 不可知论
-
-## 2021.07.28
-
 - The concept of "**aromaticity (芳香度)**" gets its name from the **pungent (刺激性的，味道强烈的)** **benzene (苯)** ring, which is found in many organic compounds.
-
-## 2021.07.27
-
 - My parents got **hitched (结婚)** in 1973.
-
-## 2021.07.26
-
 - **Aviator (飞行员)** Wally Funk travelled to space in a Blue Origin capsule, alongside billionaire Jeff Bezos, his brother Mark and an 18-year-old whose parents bought him a ticket.
-
-## 2021.07.25
-
 - Italian businesses preferred to stay small and **discreet (谨慎周密)**.
-
-## 2021.07.24
-
 - Sea **sponge (海绵动物)** controls ocean **currents (水流)**.
-
-## 2021.07.23
-
 - A rug vender **gypped (欺骗或欺诈)** them good while they were touring in Egypt.
-
-## 2021.07.22
-
 - a new **dawn (开端，萌芽)** in US gun-violence research
-
-## 2021.07.21
-
 - Somewhat **paradoxically (事与愿违地，出乎意料地)**, machine learning frameworks have evolved several orders of magnitude faster than the corresponding data management toolsets. The platforms for managing the lifecycle of the datasets powering machine learning models are still in their **infancy (婴儿期，初期)**.
-
-## 2021.07.20
-
 - Scientists analysed samples from **muddy (泥泞的，脏的)** sites in the western United States and found DNA structures that seem to **scavenge (「从废弃物中」觅食，吃「动物尸体」)** and "assimilate" genes from microorganisms in their environment, much like the fictional Star Trek "Brog" aliens who assimilate the knowledge and technology of other species.
-
-## 2021.07.19
-
 - apocalypse: （尤指世界末日的）启示，天启
 - serendipity: 意外发现珍奇事物的才能
-
-## 2021.07.18
-
 - Many of the machine learning open-source frameworks picture is not so **rosy (美好的，乐观的)** when it comes using them in real-world production systems.
 - Space scientists increasingly fear a **runaway (失控的，轻易的)** **cascade (级联)** of collisions that would make low-Earth orbit unusable.
-
-## 2021.07.17
-
 - It was **vehemently (激烈地，猛烈地)** opposed to the vaccines and claimed that **prayer (祷告)** had eradicated the disease in his country -- despite being a former science teacher himself.
-
-## 2021.07.16
-
 - **Campaigns (战役，运动)** to **quash (镇压，平息)** tuberculosis (TB), measles and polio have all been set back by the need to divert medical resources to COVID-19.
-
-## 2021.07.15
-
 - A new measure of chronic, systemic inflammation aims to **pinpoint (确定)** whether your immune system is not as **perky (精力充沛的，活跃的，高兴的)** as it used to be.
 - It's hard to **tease (梳理)** apart the effects of the infection from other factors, such as pandemic-related stress.
-
-## 2021.07.14
-
 - An instrument on the Perseverance rover has produced breathable oxygen on Mars.
-
-## 2021.07.13
-
 - Two **jabs (注射)** that each contained only one-quarter of the standards dose of Moderna's COVID-19 vaccine gave rise to long-lasting protective antibodies and virus-fighting T cells.
-
-## 2021.07.12
-
 - mannequin
-
-## 2021.07.11
-
 - Call for clearer rules on science **espionage (间谍活动)**.
-
-## 2021.07.10
-
 - The scientists transplanted **uteruses (子宫)** into **castrated (阉割的)** male rats and **sewed (缝合，缝上)** the animals to pregnant female rats. 
-
-## 2021.07.09
-
 - New evidence suggests that the coronavirus's **assault (攻击)** on this organ could be **multipronged (多方面的)**.
-
-## 2021.07.08
-
 - A **chevron (V 形图案)** pattern etched into the bone of a giant deer is opening our eyes to the advanced behavioural complexity of **Neanderthals (尼安德特人, 穴居人)**, writes anthropologist Silvia Bello.
 - A heatmap of log-scale count data from human **pancreas (胰腺)** studies.
-
-## 2021.07.07
-
 - Processors advancing at a faster pace, leaving memory **stagnant (停滞的，迟钝的)**.
 - pulmonary embolism: 肺栓塞；肺血管阻塞症
-
-## 2021.07.06
-
 - the **recuperative (恢复中的，具恢复力的)** powers of fresh air
 - torso: the body excluding the head and neck and **limbs (四肢)**
-
-## 2021.07.05
-
 - China has officially **eradicated (根除，消灭)** **malaria (疟疾)**.
-
-## 2021.07.04
-
 - There is something incredibly seductive about the idea of using machine intelligence to generate code, but the specific of the problem have made it really impractical for machine learning techniques.
-
-## 2021.07.03
-
 - The cell's **progeny (子孙)** **trail (路径)** to the left in a cluster resembling a bunch of grapes.
     - trailer: 预告片
-
-## 2021.07.02
-
 - Ancient **beetle (甲虫)** species found in fossil **faeces (粪便)**. 
 - An experimental vaccine containing live **malaria parasites (疟原虫)** protected nearly all recipients from infection in a small clinical trail.
     - parasite: 寄生虫
-
-## 2021.07.01
-
 - The new intern is **cozying up to (奉承)** his supervisor.
 
-## 2021.06.30
+## 2021.06
 
 - A heatwave in western Canada and the northwestern United States has **shattered (打碎，破掉)** temperature records.
     - Heatwave **scorches (烧焦，使枯萎)** Pacific Northwest.
-
-## 2021.06.29
-
 - Incomplete training data set will be a **detriment (损害，伤害)** to the recommendation system performance.
 - **Ontology (本体论)** is the philosophical study of the nature of being, becoming, existence, or reality, as well as the basic categories of being and their relations.
 - Strong people **confront (敢于正视困难或问题的决心和信心)** their fears and emotions.
     - the newly designed system **confronts (不可避免地、面对面地相遇)** with the following challenges
 - **brittle (易碎的，脆弱的)** material: 脆性材料
-
-## 2021.06.28
-
 - A **skip (废料桶（装工地废料、垃圾等，由卡车拖走）)** will be placed next to the bicycle **racks (架子)** for disposal of **bulky (庞大的，体积大的)** waste.
     - bulk: n. 体积，容量，大块；v. 使扩大
     - bulk **commodity (商品，货物)**: 大宗商品
-
-## 2021.06.27
-
 - We need to take away the ability to get **unfettered (无限制的，不受约束的)** access to the machine.
-
-## 2021.06.26
-
 - The killing of a maths faculty member on a Shanghai campus has **stirred up (激起，挑起)** debate over the onerous tenure process. 
-
-## 2021.06.25
-
 - Leaked report sends **dire (极其严重的，危急的)** climate warning.
-
-## 2021.06.24
-
 - The people who built the ancient monumental structures at Turkey's Gobekli Tepe were fuelled by vat-fulls of starchy porridge and stew, not just meaty feasts.
-
-## 2021.06.23
-
 - George was **whipping up (快速地吃，狼吞虎咽)** a **sundae (圣代「一种加有水果、甜汁、果仁的冰淇淋」)** during the tennis match break and got caught by the camera without knowing it.
-
-## 2021.06.22
-
 - Today we enjoy a **selfie (自拍照)** from China's Zhurong Mars rover, and discover a masterful **memoir (自传)** by mathematician Katherine Johnson.
-
-## 2021.06.21
-
 - apostrophes
-
-## 2021.06.20
-
 - The global antiracism movement sparked by the murder of George Floyd and the pandemic also **spurred (刺激，激励)** Wellcome, one of the world's largest biomedical-research funders.
     - The [Wellcome Trust](https://en.wikipedia.org/wiki/Wellcome_Trust) is a charitable foundation focuses on health research. Not the supermarket [Wellcome](https://en.wikipedia.org/wiki/Wellcome).
-
-## 2021.06.19
-
-- 20 years ago, Christopher Nolan produced one of his first most influential movies in the history of **cinematography (电影摄制技术)**. Memento broke many of the traditional paradigms in the film industry by structuring two parallel narratives, one **chronologically (按年代顺序，按时间顺序)** going backwards and one going forward.
+- Christopher Nolan produced one of his first most influential movies in the history of **cinematography (电影摄制技术)**. Memento broke many of the traditional paradigms in the film industry by structuring two parallel narratives, one **chronologically (按年代顺序，按时间顺序)** going backwards and one going forward.
     - chronology: 年表，年代学
-
-## 2021.06.18
-
 - Time to **take the plunge (冒险尝试；投入)** into learning to code?
-
-## 2021.06.17
-
 - I need to add some bright colors to my wardrobe.
-
-## 2021.06.16
-
 - spay
-
-## 2021.06.15
-
 - They were gaga over Will Smith's new rap album.
-
-## 2021.06.14
-
 - The holy grail of mobile deep machine learning is to build models that can execute natively and efficiently in mobile devices.
-
-## 2021.06.13
-
 - There are not **sustained (持续的，持久的)** sections of **sarcasm (讽刺，嘲讽)** or negated text.
 - Crowdsourcing is a sourcing model in which individuals or organizations obtain goods or services, including ideas, voting, micro-tasks and finances, from a large, relatively open and often rapidly evolving group of participants. [:link:](https://en.wikipedia.org/wiki/Crowdsourcing)
 - We see that **salutations (称呼，称谓)** such as "miss", "lady", "sir" and "**colonel (上校)**" form common centers of nodes, which are often followed by names.
 - We conclude with a few **polishing (improve or perfect by pruning or polishing)** operations to make a better looking graph.
 - The package comes with a corpus of presidential **inauguration (就职典礼)** speeches.
 - Suppose a vandal has broken into your study and torn apart four of your books.
-
-## 2021.06.12
-
 - One basic problem of information retrieval **culminates (【以某种结果】告终)** in the realization that the same idea or concept can be presented in many different ways.
 - Natural language gives freedom for enormous variation in expression, from choosing between synonyms to using different styles, emphasis, different levels of abstraction, and [anaphoric](https://en.wikipedia.org/wiki/Anaphora_(linguistics)) and **metaphoric (隐喻)** expressions.
 - You may even be a little **weary (疲倦的，厌烦的)** of people pontificating about this fact.
 - much of the data **proliferating (激增)** today is unstructured and text-heavy.
 - Data wrangling, sometimes referred to as data munging, is the process of transforming and mapping data from one raw data form into another format with the intent of making it more appropriate and valuable for a variety of downstream purposes such as analytics. [:link:](https://en.wikipedia.org/wiki/Data_wrangling)
-
-
-## 2021.06.11
-
 - A **bumper (丰富的)** crop of [fast radio bursts (FRBs)](https://www.zhihu.com/topic/20406202/intro) shows that the mysterious signals come in two distinct types. The Canadian Hydrogen Intensity Mapping Experiment (CHIME) radio telescope has detected 535 FRBs -- **quadrupling (四倍)** the known tally of these powerful cosmic flashes, which **flare (燃烧)** for just milliseconds.
-
-## 2021.06.10
-
 - Of course, for that to happen, the meanings behind those **utterances (发声，表达)** would have to be clearly understood.
-
-## 2021.06.09
-
 - A few key examples of successful startups we've incubated include sophisticated novel voice generation by WellSaid, and an AI-backed smart repository for notoriously complex, **voluminous (浩繁的，宽松的)** legal contracts and agreements created by Lexion.
-
-## 2021.06.08
-
 - Indexes and indices are both accepted and widely used plurals of the noun index. Both appear throughout the English-speaking world, but indices prevails in varieties of English from outside North America, while indexes is more common in American and Canadian English. Meanwhile, indices is generally preferred in mathematical, financial, and technical contexts, while indexes is relatively common in general usage. [:link:](https://grammarist.com/usage/indexes-indices/)
 - Scientists say that the shots -- which show the rover with its solar panels unfurled and the ramp from its lander deployed -- hint that it has arrived at a safe, ideal site from which it can begin exploring.
-
-## 2021.06.07
-
 - **Optogenetics (光学遗传学)** restores blind man's vision. 
 - Nuclear fallout **haunts (长期不断地缠扰某人)** Maralinga.
-
-## 2021.06.06
-
 - End of 14-day rule for lab-grown **embryos (胚胎)**.
     - embryotic: 萌芽期的，未发育好的
 - Tiny lungs and other **miniature (小型的，微小的)** lab-grown organs are helping researchers to study how SARS-CoV-2 attacks.
-
-## 2021.06.05
-
 - **Microfossils (微生物化石)** reveal mysterious shark die-off.
 - **Nasal (鼻子的)** **spray (喷雾，喷剂)** could provide protection.
-
-## 2021.06.04
-
 - Researchers say there is some evidence that infected **mink (水貂)** can pass the virus on to humans.
     - ape: 类人猿
-
-## 2021.06.03
-
 - **Lexicons (字典；（某语言或学科、某人或群体使用的）全部词汇)** of other languages, due to weaker national power, generally cannot match the UMLS in terms of comprehensiveness. 
-
-## 2021.06.02
-
 - Have you ever served in, been a member of, or been involved with a paramilitary unit, vigilante unit, **rebel (造反的)** group, **guerrilla (游击的，非正式的)** group, or **insurgent (起义者)** organization? 
 - Do you belong to a **clan (庞大的家族；宗派)** or tribe?
 - Are you coming to the United States to engage in prostitution or unlawful commercialized vice or have you been engaged in **prostitution (卖淫；才能的滥用（或糟蹋）)** or procuring prostitutes within the past 10 years? 
 - Have you ever ordered, incited, committed, assisted, or otherwise participated in **genocide (种族灭绝，大屠杀)**? 
-
-## 2021.06.01
-
 - freak
 
 ## 2021.05
@@ -838,7 +506,7 @@
 - donkey: 驴
 - I get **vertigo (眩晕)** on the step **stool (凳子)**.
 
-## 2021.03.31
+## 2021.03
 
 - If something **tickles (使发痒)** you, it makes you laugh.
     - It really does not tickle my fancy. 它真的无法让我提起兴趣。
@@ -855,18 +523,9 @@
     - The AAA **tranches ([在投资界，用来描述可以被分割成并卖给投资者的小额证券](https://baike.baidu.com/item/Tranche))** of subprime science.
     - subprime mortgage: 次级贷款
     - subprime mortgage crisis: 次贷危机
-
-## 2021.03.30
-
 - A long lost hope can be **rekindled (重燃)**.
-
-## 2021.03.29
-
 - a harbor **clotted (凝结)** with **sunken (沉没的)** **vessel (船，舰)**
     - blood clot: 血凝块，血块
-
-## 2021.03.28
-
 - Government efforts to **resuscitate (使复活，使苏醒)** the market have **flopped (彻底失败，不成功)**.
 - The **cosmological (宇宙论的)** application therein deals with the incorporation of recent measurement in the study of [ΛCDM cosmological model](https://zh.wikipedia.org/wiki/%CE%9BCDM%E6%A8%A1%E5%9E%8B).
 - The **SDSS (Sloan Digital Sky Survey)**-III's Baryon Oscillation Spectroscopic Survey (BOSS) was designed to measure the expansion rate of the universe.
@@ -881,71 +540,26 @@
 - Machine learning researchers like to call these evil forged images as "**adversarial (敌对的，对抗的)** samples".
 - **Heresy (Herecy, 异端)** is any belief or theory that is strongly at variance with established beliefs or customs.
 - Students read, **flirt (调情)**, **converse (交谈)**, **mediate (冥想，深思)**, **brood (沉思)**.
-
-## 2021.03.27
-
 - I highly value self-motivation, **initiative (主动性)** and creativity.
     - peace initiative: 和平倡议
-
-## 2021.03.26
-
 - It has its **perils (危险)** and its **merits (优点、好处)**.
     - merits and demerits: 优缺点
     - Water shortages also **imperil (使陷于危险，危及)** plans to expand energy production, threatening economic growth.
-
-## 2021.03.25
-
 - The coronavirus **debacle (崩溃，灾害)** now threatens to do the same to Boris Johnson.
-
-## 2021.03.24
-
 - And instead, he watched those tensions **ratchet up (逐渐升高)** even further.
     - ratchet: (防倒转的)棘齿
-
-## 2021.03.23
-
 - Huckleberry friend: 童年和少年时代的好友，背景是天真无邪、无忧无虑的玩耍场面。[see also](https://zhuanlan.zhihu.com/p/85776575)
-
-## 2021.03.22
-
 - ladder type: 梯形
-
-## 2021.03.21
-
 - It's a total **rip-off (盗窃)** of an American reality show, but the imitation is unbearably clumsy.
-
-## 2021.03.20
-
 - the principle of this idea of **dissonance (不调和，不和谐音)** resolving to **consonance (调和，和音)**.
-
-## 2021.03.19
-
 - A centenarian is a person who lives to or beyond the age of 100 years. A supercentenarian is someone who has lived to or passed their 110th birthday.
-
-## 2021.03.18
-
 - It was pretty **nonsensical (无意义的，荒谬的)** which makes me wonder if I could get more viewers for Loaded if I just started running my mouth and talking nonsense.
-
-## 2021.03.17
-
 - It's perfect, you know. It's **gorgeous (极好的，非常漂亮的)**. It's almost **uncanny (神奇的，离奇的，神秘的)**.
     - uncanny valley: 恐怖谷，[恐怖谷理论](https://zh.wikipedia.org/wiki/%E6%81%90%E6%80%96%E8%B0%B7%E7%90%86%E8%AE%BA)
-
-## 2021.03.16
-
 - A relatively small variation in breakfast's **macronutrient (营养素)** composition has a striking impact on social decisions.
     - **nutritious (有营养的)** recipes
-
-## 2021.03.15
-
 - It was hard to say which class was more **cordially (热诚地，友善地)** hated by the settled citizenry, the impractical **Yankee (美国北方人的)** **schoolmarms (女教师)** or the Scallawags (white Southerners, also spelled as [Scalawag](https://en.wikipedia.org/wiki/Scalawag)), but the balance probably fell with the latter.
-
-## 2021.03.14
-
 - Shock waves are produced as young hot stars **ionize (电离)** the surrounding gas, forming emission nebulae.
-
-## 2021.03.13
-
 - A **protostar (原恒星)** is a very young star that is still gathering mass from its parent molecular cloud. The **protosteller (原恒星的)** phase is the earliest one in the process of **stellar (星的)** evolution. The phase begins when a molecular cloud first collapses under the force of self-gravity. It ends when the protostar blows back the infalling gas and is revealed as an optically visible pre-main-sequence star, which later contracts to become a main sequence star.
 - The Ph.D. process is exhausting, and some leave the field after the grad school grind, never again to publish in a scientific journal. Others, though, find it **exhilarating (令人振奋的)**, and go on to highly productive careers.
 - We begin by studying how interstellar clouds of gas and dust are transformed into the **myriad (无数的)** stars throughout the night sky.
@@ -956,147 +570,59 @@
 - The **infrared spectrum (红外光谱)** at bottom was acquired by Europe's **Herschel (赫歇尔)** Space Observatory.
 - We do not see this activity (billions of stars have been born, lived out their lives, and died since our Galaxy formed) when we **gaze (凝视)** at the nighttime sky, because the time scales on which starts play out this **cosmic (宇宙的)** drama are enormously long by human standards.
 - The road from a gas cloud to a single, isolated star like the Sun is long and tortuous indeed!
-
-## 2021.03.12
-
 - The real lesson learned from those academic **hoaxes (骗局)**: a key part of getting a paper published in a scholarly journal is to be able to follow the conventions of the journal.
     - virus hoax: 病毒恶作剧
-
-## 2021.03.11
-
 - The daemon process is terminated automatically before the main program exits, to avoid leaving **orphaned (孤立的)** processes running.
     - orphan asylum: 孤儿院
-
-## 2021.03.10
-
 - In multitasking computer operating systems, a **daemon (守护进程)** is a computer program that runs as a background process, rather than being under the direct control of an interactive user. In a Unix environment, the parent process of a daemon is often, but not always, the init process.
 - It usually more useful to be able to **spawn (产卵，引发，导致)** a process with arguments to tell it what work to do.
-
-## 2021.03.09
-
 - Facts matter. Fairness matters. The **presumption (假定，认定)** of innocence is **sacrosanct (极其神圣的，不可侵犯的)**.
-
-## 2021.03.08
-
 - **Conjoint analysis (联合分析)**, also called multi-attribute compositional models or stated preference analysis, is a statisical technique that originated in mathematical psychology.
-
-## 2021.03.07
-
 - Free range denotes a method of farming **husbandry (畜牧，饲养，农业)** where the animals, for at least part of the day, can roam freely outdoors, rather than being confined in an enclosure for 24 hours each day.
     - organically fed, free range chicken：有机喂养的散养鸡
-
-## 2021.03.06
-
 - Milky Way (galaxy): 银河，银河系
 - It's the accountant/economist's dilemma of **disregarding (不理会，无视)** **sunk costs (沉没成本，已支付成本)**.
 - According to the economist Paul Krugman (2013), a **zombie (僵尸)** idea is a view that's been thoroughly refuted by a mountain of empirical evidence but nonetheless refuses to die, being continually reanimated by our deeply held beliefs. [source](https://www.psychologicalscience.org/observer/zombie-ideas)
 - immigrants do not have a greater-than-average arrest and **incarceration (监禁，下狱)** rates.
-
-## 2021.03.05
-
 - Venus: 金星，爱神维纳斯
 - Jupiter: 木星，众之王朱庇特
 - Mercury：水星，信使神墨丘利
     - mercury：水银，水银柱
 - Mars: 火星，战神马尔斯
 - Saturn：土星，农业之神
-
-## 2021.03.04
-
 - He is **allergic (过敏的)** to **lobster (龙虾)**.
 - We have got to **instill (徐徐滴入；逐渐灌输)** values in these young people.
 - The **hijackers (劫持者)** released three of the **hostages (人质)**.
-
-## 2021.03.03
-
 - Then top with **marshmallows (棉花糖)**, and bake again until brown. 然后加入棉花糖，再烘烤至棕色。
-
-## 2021.03.02
-
 - **Polio (小儿麻痹症，脊髓灰质炎)**, short for poliomyelitis, is a highly infectious disease.
-
-## 2021.03.01
-
 - The finding, from the Laser **Interferometer (干涉仪)** Gravitational-Wave Observatory, or **LIGO (激光干涉引力波天文台)**, showed that extreme gravity can cause **ripples (波纹，涟漪)** in spacetime.
 - Colliding dust grains formed larger and larger **clumps (团块)**.
 
-## 2021.02.28
+## 2021.02
 
 - **clunky (沉重的，笨重的)** high-heel shoes
-
-## 2021.02.27
-
 - the symbolic meaning of a **Manhattan project (麦哈顿计划)** and a **moonshot (月球探测器)**.
-
-## 2021.02.26
-
 - The julia language **bills (宣传)** itself as "fresh approach to technical computing".
-
-## 2021.02.25
-
 - Music is an **aurally (听觉上)** **perceived (察觉，感知)** phenomenon.
-
-## 2021.02.24
-
 - He's been arrested on suspension of **intoxication (陶醉，酩酊大醉)** manslaughter **(过失杀人)**.
     - alcohol intoxication: 酒精中毒
-
-## 2021.02.23
-
 - Yet as soon as the UN Security Council issued new sanctions against the **regime (政体)** as a result of the rocket launch, the response was **apoplectic (大怒的，十分生气的)**, warning of more tests and threatening to attack America.
     - apoplectic patients: 中风患者
-
-## 2021.02.22
-
 - His **attorney (代理人，律师)** says he'll appeal the conviction.
     - attorney general: 司法部长，首席检察官
-
-## 2021.02.21
-
 - Popular newspapers are known as **tabloids (小报，文摘)**.
-
-## 2021.02.20
-
 - There will be an **uphill (上坡的，向上的)** incline eventually.
-
-## 2021.02.19
-
 - A **nudge (推动，用肘轻推)** is a small push, to encourage us to do something.
-
-## 2021.02.18
-
 - The winners stand on the **podium (领奖台，乐队指挥台)**.
-
-## 2021.02.17
-
 - Bureau of **Consular (领事的)** Affairs: 领事事务局
-
-## 2021.02.16
-
 - Policy **wonks (a person who takes an enthusiastic or excessive interest in the specialized details of a particular subject or field, especially political policy.)** have long dreamed of simplifying America's tax code.
     - wonk: a **studious (用工的，专心的)** or hard-working person
-
-## 2021.02.15
-
 - This is accomplished by JLL packages (a **pun (双关语，俏皮话)** on "Dynamic-Link Library", with the J standing for Julia).
 - The **anatomy (解剖；解剖学；解剖结构)** of a bird is much simpler than that of an elephant.
     - anatomy of a JLL package
-
-
-## 2021.02.14
-
 - I **binge (放纵，狂欢作乐)** watch television shows sometimes...always!
-
-## 2021.02.13
-
 - A black banner hung over the doorway of the hall, with white characters "deeply **mourn (哀悼，悼念)** for **martyrs (烈士)** and **compatriots (同胞)** who died in COVID-19 outbreak." [source](http://www.xinhuanet.com/english/2020-04/04/c_138946851.htm)
-
-## 2021.02.12
-
 - The **umbra (本影)**, **penumbra (半影)** and **antumbra (伪本影)** are three distinct parts of shadow, created by any light source after impinging on an opaque object. [wiki](https://en.wikipedia.org/wiki/Umbra,_penumbra_and_antumbra)
-
-## 2021.02.11
-
 - **petit (小的，次要的)** four: 【法】小蛋糕
 - What's the difference between a **gamete (配子，生殖细胞)** and a **zygote (受精卵)**?
 - leukocyte: 白细胞
@@ -1107,9 +633,6 @@
 - Alas, like many good stories this one appears to be **apocryphal (真实性可疑的，伪造的，杜撰的)**.
 - Binomial **nomenclature (命名法)** gives every species a unique and stable two-word name, agreed upon by biologists worldwide.
 - As people get older, many of them develop the disease **osteoporosis (骨质疏松症)**.
-
-## 2021.02.10
-
 - This study **sheds light on (阐明)** improving treatment effect estimation efficiency by implementing machine learning methods in covariate-adaptive randomized experiments.
 - They want to minimize their **staff turnover (员工流动率)**.
     - The textile export **turnover (营业额)** has been increased 67% this year in China.
@@ -1117,24 +640,12 @@
 - Stated-owned enterprises (SOE)：国有企业
 - **corporate (社团的，法人的)** **misconduct (不当行为)**
 - **innocent (无罪的，无辜的)** until proven guilty.
-
-## 2021.02.09
-
 - The fact that NNLS, apart from sign constraints, only consists of a fitting term, **fosters (养育，抚育；培养)** the intuition that NNLS is prone to overfitting.
-
-## 2021.02.08
-
 - Their niceness can be so **unsettling (使人不安的)** you might even try a trick or two.
-
-## 2021.02.07
-
 - The heart is a highly **contractile (有收缩性的)** organ.
 - A **veneer (虚假的外表，虚饰)** of **jaunty (快活的，活泼的)** self-confidence thinly **concealed (隐藏，隐瞒)** his nervousness.
 - When people are forgotten, the world becomes **fractured (断裂的，分化的)**.
 - postmenopausal women: 绝经后妇女
-
-## 2021.02.06
-
 - **Nota bene (注意)** is a Latin phrase. Often abbreviated as NB, n.b., the phrase is Latin for "note well". In modern English, it is used, particularly in legal papers, to draw the attention of the reader to a certain (side) aspect or detail of the subject being addressed.
 - If your laser is mounted on a car on a **bumpy (崎岖不平的，颠簸的)** road, or tracking some object in the sky, or your data comes from **acoustic waves (声波)** traveling through earth, you **are bound to (必然，必定)** get noise.
 - turquoise (青绿色); magenta (品红，洋红)
@@ -1157,301 +668,118 @@
 - I intend to **amortize (分期偿还)** the total cost of the car over three years.
 - Their feet are wide and **splay (张开)** outwards to stop them sinking in loose sand.
 - Success always seems as inevitable in retrospect as it is **elusive (难以捉摸的，不易记住的)** when sought.
-
-## 2021.02.05
-
 - As a PhD student, how do you make sure your research had not already been done before, **rendering (cause to become)** it **obsolete (过时的，废弃的，老式的)**?
-
-## 2021.02.04
-
 - If you do not know if you are starting off in a good region, assessing convergence **is fraught with (充满...的)** **epistemological (认识论的)** problems.
-
-## 2021.02.03
-
 - The assessment derived from those techniques is partly subjective and clearly not **foolproof (万无一失的，肯定成功的)**.
 - There was a **flurry (一阵忙乱（或激动、兴奋等）；小阵雪（或雨等)** of papers at the end of 1990s concerned with the development of convergence diagnoses.
 - An ergodic Markov chain that starts from one mode of $f$ can be correctly **deemed (认为，视作，相信)** to be in its stationary regime, but it may still require many iterations to reach the other modes of this distribution, another occurrence of the "missing mass" problem.
 - It's a **replica (复制品)** of a classical work originally made perhaps around 300 BC.
-
-## 2021.02.02
-
 - He asked his **bean-counter (<俚>统计专家)** to **crunch (嚼，咬碎)** the numbers.
     - crunch time: 关键时刻，关键时间
     - credit crunch: 信贷紧缩，信贷危机（等于 credit crisis)
     - credence: 信任，凭证
-
-## 2021.02.01
-
 - A Bayesian analysis concludes beyond a reasonable doubt that SARS-CoV-2 is not a natural **zoonosis (动物传染病)** but instead is laboratory derived.
 
-## 2021.01.31
+## 2021.01
 
 - What's new here is they **duped (欺骗，愚弄)** Americans into helping them seem more credible.
     - super-duper: 超级大骗子
-
-## 2021.01.30
-
 - drug trafficking: 毒品走私
     - drug trafficker: 毒品贩子
     - human trafficking: 人口贩卖
-
-## 2021.01.29
-
 - The **bazaar (集市；市场；义卖市场)** had taken place Monday night and today was only Thursday.
 - **Cathedrals (总教堂，大教堂)** were much more urban in their loation.
-
-## 2021.01.28
-
 - These feelings are normal, and you'll never truly **banish (驱逐，消除)** them.
-
-## 2021.01.27
-
 - Rising global temperatures could shift the balance between males and females in **crocodile (鳄鱼)** and **alligator (短吻鳄)** populations, potentially leading to a sharp decline in the **reptiles (爬行动物)**' reproduction rates……
-
-## 2021.01.26
-
 - Do people cheat by **rigging (操纵)** the prior?
-
-## 2021.01.25
-
 - The **flashy (炫耀技艺的)** **crooks (骗子)** get the headlines, but the bigger problem in everyday routine bad science done by non-crooks.
     - a **crooked (弯曲的)** mile
-
-## 2021.01.24
-
 - The truth of a theory is **contingent on (视……而定，取决于……)** both our state of knowledge and the purposes to which it will be put.
-
-## 2021.01.23
-
 - The **intrepid (勇敢的，无畏的)** explorers reached the South Pole.
-
-## 2021.01.22
-
 - That's part one of the **trilogy (三部曲)**.
 - The **trio (三人一组，三件一套)** has denied the charges.
-
-## 2021.01.21
-
 - **abstemious (适中的，【尤指在吃饭、饮酒方面】有节制的)** habit
-
-## 2021.01.20
-
 - the name-calling tone of this tribune, as illustrated by the above quotes, is **appalling (令人震惊的，骇人听闻的)** and **populist (平民主义，[民粹主义](https://zh.wikipedia.org/wiki/%E6%B0%91%E7%B2%B9%E4%B8%BB%E7%BE%A9))**, more in the spirit of Trump than of a rational search for scientific evidence.
 - Out of the **welter (混合)** of **rapture (狂喜)** and anger and heartbreak and **hurt pride (屈辱)** that he had left, depression emerged to sit upon her shoulder like a **carrion (腐肉的，吃腐肉的)** **crow (乌鸦)**.
 - Encryption **jumbles (搞乱，使混乱)** words into random numbers, letters, characters.
 - Traffic is **hectic (繁忙的，忙乱的)** every day.
-
-## 2021.01.19
-
 - **atrocious (恶劣的，糟透的)** weather
-
-## 2021.01.18
-
 - I did not know whether it were not a proper opportunity to offer a bit of **admonition (告诫，忠告)**.
 - **A Journal of the Plague Year (瘟疫年纪事)** is a book by **Daniel Defoe (丹尼尔·笛福)**.
     - It has been **plagued (困扰， annoy continually or chronically)** by delays.
 - Just **disclaimer (免责声明；否定申明)**, he's not sponsored by Adidas.
 - The PhD is a very specific kind of experience that deserves a large **disclaimer (放弃，拒绝)**.
-
-## 2021.01.17
-
 - **cram (塞满，填入)** them into a single talk.
-
-## 2021.01.16
-
 - We will arrange the payment of the **lump-sum (总额，一次总付的钱款)** award of $1000.
-
-## 2021.01.15
-
 - It illustrates a problem with political **punditry (权威的意见)**: There's a demand for predictions, and there's no shortage of outlets promising a "**crystal ball (【占卜用的】水晶球；预言未来的方法)**" or some other short of certainty.
-
-## 2021.01.14
-
 - It is full of **prominent (著名的，杰出的)**, successful, well-connected **bluffers (骗子，虚张声势的人)**.
-
-## 2021.01.13
-
 - The results should be made public before the rule is **enacted (制定【法律】，通过【法案】)**.
-
-## 2021.01.12
-
 - Scientific rigor and social **conscience (良心)** do not always go together.
-
-## 2021.01.11
-
 - **Barring (不包括，除非)** that, I have no other option.
-
-## 2021.01.10
-
 - A **pantheon (万神殿；名流群)** of super intelligent beings will watch over us.
-
-## 2021.01.09
-
 - That particular study was **riddled (充满着)** with flaws.
     - **Riddle (谜语，谜一般的人)** of Sphinx: [斯芬克斯之谜](https://baike.baidu.com/item/%E6%96%AF%E8%8A%AC%E5%85%8B%E6%96%AF%E4%B9%8B%E8%B0%9C/2917)
-
-## 2021.01.08
-
 - they are written in **newspeak (一种指东说西、模棱两可的官腔)** with enough **acronyms (首字母缩略词)** to **incapacitate (使无能力、使不适合)** a brand new typewriter.
 - The lecturer **droned (talk in a monotonous (无变化的，单调乏味的) voice)** on for hours.
     - drone: n. 无人机，雄峰
     - drone cinematography: 无人机摄影
-
-## 2021.01.07
-
 - **sassy (<贬>粗鲁的，无礼的；<褒>时髦的，漂亮的)** girl: 野蛮女友
-
-## 2021.01.06
-
 - trolley problem: 有轨电车难题，电车问题
 - Mary is very **adept (熟练的，擅长的)** at playing pianos.
-
-## 2021.01.05
-
 - 想想英语里某些词汇：“**gristly (软骨状的；软韧)**, **slithery (滑溜溜的)**, **slimy (黏糊糊的；粘腻)**, **squelchy (耐嚼)**, **crunchy (爽脆)**, **gloopy (胶着)**”……而这些恰恰是中国美食中最受欢迎的口感【鱼翅与花椒】
-
-## 2021.01.04
-
 - We'll have accountability and we will strive for **bipartisanship (两党合作)** with fairness on all sides.
-
-## 2021.01.03
-
 - **fugitive (无常的，逃亡的，易变的)** and **cloistered (隐居的，躲开尘世纷争的)** virtues
-
-## 2021.01.02
-
 - This **monstrosity (庞然大物，怪物，巨兽)** has **truck tires (卡车轮胎)** for buttons and 9 meter-long **pine (松树)** trees for arms!
-
-## 2021.01.01
-
 - This issue is **monumentally (非常地，纪念地，作为纪念碑地)** important RIGHT NOW.
 
-## 2020.12.31
+## 2020.12
 
 - Let's also not forget the benefit of the occasional **dumb (愚蠢的)** but fun example.
 - There are still **hurdles (障碍)** to **surmount (克服)**.
 - At a recent Harvard **colloquium (研讨会，学术报告会)**, a **bigwig (权威人士)** from one of the large consultancies told his audience of star professors that the only person he valued at the school was the admissions officer.
-
-## 2020.12.30
-
 - The Lancet study has already been **consequential (随之而来的)**.
-
-## 2020.12.29
-
 - someone who's basically a good person but has some **larceny (盗窃)** and **lust (欲望)** in his heart and cannot be relied on to do the right thing.
-
-## 2020.12.28
-
-- a **cadre** of new friends
+- a **cadre (骨干)** of new friends
     - leading cadre: 领导干部，首长
-
-## 2020.12.27
-
 - I need that **trail of breadcrumbs (面包屑)** connecting data.
     - **word origin (https://www.collinsdictionary.com/us/dictionary/english/breadcrumb-trail)**: from the German fairy tale [Hansel and Gretel](https://zh.wikipedia.org/wiki/%E7%B3%96%E6%9E%9C%E5%B1%8B), in which two children use a trail of breadcrumbs to find their way back home through a forest
-
-## 2020.12.26
-
 - The premise of the emerging field of computational **psychiatry (精神病学，精神病治疗)** is to use models from computational cognitive neuroscience to gain deeper insights into mental illness.
 - The US will likely go down as the country that was supposedly best prepared to fight a pandemic but ended up **catastrophically (灾难性地)** **overmatched (打败)** by the novel coronavirus, sustaining heavier casualties than any other nation.
-
-## 2020.12.25
-
 - I'm afraid it is too narrow-minded to judge people using **astrology (占星术)**. It's all stereotypes!
-
-## 2020.12.24
-
 - The land sale was merely a **temporary expedient (暂时的权宜之计)** for dealing with a immediate need.
 - It will be more **expedient (得当，可取，合宜)** to use railways with trains on magnetic **cushions (垫子)** for cargo-transportation.
 - **Astronomical (天文学的，及其巨大的)** sums of money will be needed for this river tunnel plan.
     - there are not few but **hyperastronomically (超天文的)** many genotypes with a given metabolic phenotype
-
-## 2020.12.23
-
 - art **nouveau (新近到达的，新近产生的)**: 新艺术，新艺术派
     - nouveau: 自由及开放源代码显卡驱动程序。
-
-## 2020.12.22
-
 - We covered over 300 villages by distributing 30000 **pamphlets (小册子)**.
-
-## 2020.12.21
-
 - The site **upended (颠倒)** communication as we know it.
-
-## 2020.12.20
-
 - risk aversion: 风险规避，厌恶风险
-
-## 2020.12.19
-
 - He did that out of **mercenary (唯利是图的)** motives.
     - mercenary marriage: 买卖婚姻；着眼实利的婚姻
 - To **rectify (纠正，矫正)** that failing on my part.
 - way to be a grammar **guru (大师，专家)**.
-
-## 2020.12.18
-
 - The farmer is **shearing (剪)** his sheep.
-
-## 2020.12.17
-
 - No comma is used between the month and the year when they are the only two elements in the date. [source](https://www.thepunctuationguide.com/comma.html)
     - The store closed its doors for good in October 1958.
     - ~~The store closed its doors for good in October, 1958.~~
-
-## 2020.12.16
-
 - it is constantly generating electrons that could neutralize free **radicals (自由基)**, acting as **antioxidants (抗氧化剂)**.
     - oxidant: 氧化剂
-
-## 2020.12.15
-
 - a **peculiar (奇怪的，异常的，特有的)** choice of null hypothesis on subsamples
-
-## 2020.12.14
-
 - The **heir apparent (法定继承人)** succeeded to the throne.
     - He is the legitimate **heir (继承人)** to the property.
-
-## 2020.12.13
-
 - By various **recondite (深奥的，晦涩的)** processes, he converted the **urine (尿)** first into a noxious paste and then into **translucent (半透明)** waxy substance. None of it yielded gold, of course, but a strange and interesting thing did happen. After a time, the substance began to glow.
-
-## 2020.12.12
-
 - The slogan has been **revived (复活，重新使用)** recently in social media.
-
-## 2020.12.11
-
 - As a result, the **up-front (预付的，先期的)** cost for education is real, large and easy to measure.
-
-## 2020.12.10
-
 - deputy director: 副局长，副厅长，副院长
 - Given that the purpose of this lawsuit is to **subvert (推翻，颠覆，破坏)** the express will of the voters, I am glad they hired such an incompetent consultant, but I feel bad for the residents of Texas that they had to pay for it.
 - It's turtles for quite a way down, but at some point it's solid **bedrock (根底，基岩)**.
     - **turtles all the way down**: 一位著名的科学家（据说是贝特兰·罗素）曾经作过一次天文学讲演。他描述了地球如何围绕着太阳公转，而太阳又是如何围绕着称之为我们星系的巨大的恒星集团的中心公转。演讲结束之际，坐在房间后排的一位小个老妇人起立说道：“你讲的是一派胡言。实际上，世界是驮在一只巨大乌龟背上的平板。”这位科学家露出高傲的微笑，然后答道：“那么这只乌龟是站在什么上面的呢？”“你很聪明，年轻人，的确很聪明，”老妇人说，“不过，这是一只驮着一只，一直驮下去的乌龟塔啊！”【时间简史】
-
-## 2020.12.9
-
 - By its very name, **anthropology (人类学)** encompasses the study of all humankind.
     - The **anthropic principle (人择原理)** in physics states that we can derive certain properties of the world, or even the universe, based on the knowledge of our existence. [wiki](https://zh.wikipedia.org/wiki/%E4%BA%BA%E6%8B%A9%E5%8E%9F%E7%90%86)
-
-## 2020.12.8
-
 - gross **domestic (本国的，国内的)** product
-
-## 2020.12.7
-
 - Columbia University in New York, the president's **alma mater (母校)**, is preparing a bid.
-
-## 2020.12.6
-
 - Data from infectious disease outbreaks in **congregate (adj. 集合在一起的; v. 聚集)** settings are often used to **elicit (引出)** clues about which types of interventions may be useful in other facilities.
-
-## 2020.12.5
-
 - some patients with **hypertriglyceridemia (高甘油三酯血症)** were placed on a low-fat, high-**carbohydrate (碳水化合物；糖类)** diet.
     - triglyceride: 甘油三酸酯
     - hyperglycemia: 多糖症，高血糖症
@@ -1460,102 +788,53 @@
     - maternity leave: 产假
 - The estimated coefficients from a logistic regression model containing the explanatory variables **cocaine or crack (可卡因)** use， marital status, number of **prenatal (产前的)** visits to a doctor.
 - the AIDS patients suffering from **concomitant (伴随的)** **esophageal (食道的，食管的)** **candidiasis (念珠菌病)**, an infection due to **candida (念珠菌)** yeast, and **cytomegalovirus (巨细胞病毒)**, a **herpes (疱疹)** infection that can cause serious illness.
-
-## 2020.12.4
-
 - Maybe something like the **elasticities (弹性)** that economists use?
-
-## 2020.12.2
-
 - **[I am humbled](https://english.stackexchange.com/questions/3019/what-is-the-meaning-of-i-am-humbled-by-xyz)** by the response we have received during the Black Friday sale.
 - The **staggering (难以置信的，令人震惊的)** problems of poverty remain unsolved.
-
-## 2020.12.1
-
 - It was possible to identify specific customers in the competition data set (suggesting even political and religious affiliations could be determined), even though Netflix had performed a form of **cursory (粗略的，草率的)** anonymization.
 - We **take our lumps (suffer punishment; be attacked or defeated.)**, and we try to do better next time.
 
-## 2020.11.30
+## 2020.11
 
 - The big **top-line (头条新闻的，质量最好的，级别最高的)** takeaway is what already know.
 - I felt great and confident. That is a **stunning (极好的) blouse (宽松的上衣，女装衬衫)**.
-
-## 2020.11.28
-
 - The "**gig economy (零工经济)**" exemplified by Uber drivers is **mushrooming**.
-
-## 2020.11.27
-
 - The issues that Gandhi was known for (**de-colonization (非殖民地化，殖民地自治化)**, passive resistance) remain **immensely (非常，极大地)** relevant but with very different parameters than the 1920's-1940's.
-
-## 2020.11.26
-
 - looking under the lamp-post
 - the mud was up to her chin: 泥巴已经没到了她的下巴。
-
-## 2020.11.25
-
 - There are a number of **bells and whistles (附加的修饰物)** that make autoencoders more effective.
 - They **quarreled (争吵)** last week but now they are completely **reconciled (和解)**.
-
-## 2020.11.24
-
 - racial disparity in **mortgage lending (抵押贷款)**
 - the praise is a bit **over the top**
     - brimming with wit and **pathos (悲伤，痛苦)**
     - the enormous **debut (初次登台，处女秀)** is a **wonder (奇迹，惊奇)**
     - an astounding **feat** of **craftsmanship** and patience
     - never has an artist created a world so vivid without a single word spoken
-
-## 2020.11.23
-
 - The earliest **scratchy** recording of a **pope (教皇，罗马教皇)** was that of Leo XIII on a **wax cylinder (蜡筒唱片)**.
     - cylinder: 汽缸；圆筒
     - cylindrical: 圆柱形的
 - Georgiou is not a **mobster (匪徒，暴徒)**. He's not a **hit man (职业凶手)** or a **spy (间谍，密探)**. He's a statistician. And the **sin (过失，罪恶)** at the heart of his supposed crimes was publishing correct budget numbers.
 - The government has brought a **relentless (不停的，持续强烈的)** series of criminal **prosecutions (诉讼)** against him. His countryman have sought their own **vengeance (复仇，报复)** by hacking his emails, dragging him into court, even threatening his life.
 - This means the person who restored the credibility of Greek statistics will have to apologize to a person who had been **fudging (搪塞，篡改)** the data.
-
-## 2020.11.22
-
 - We distinguish the **corpora (语料，文集)** containing reference annotations based on their origin.
 - Gold-standard **corpus** containing human-made reference annotations, obtained as a **consensual** or majority opinion of several human experts.
 - A frame definition domain was virtually eroded in the **lateral** axes (x and y) by a constant number of pixels (**voxels (体素或立体像素，是体积像素 volume pixel 的简称)**) E depending on a dataset.
 - In 3D image data, the marker does not have to be necessarily formed of a single connected component, allowing annotators to create **quintessential (最完美的，精髓的)** volumetric markers.
 - Things done by **halves** are never done right.
 - The process of extracting the object from the original image is often called **matting  (抠图)**, while the process of inserting it into another image is called compositing.
-
-## 2020.11.21
-
 - customers may be unable or unwilling to accept our model of commercial software **procurement (采购，获得，取得)**.
-
-## 2020.11.20
-
 - it's not a **slam (抨击)** on this graph to say that it makes me want to learn more.
     - [it's not a slam at you when people are rude, it's a slum at the people they've met before.](https://www.brainyquote.com/quotes/f_scott_fitzgerald_397424)
-
-
-## 2020.11.19
-
 - Man has been **predominant** over other species for a long time.
 - A specific job hunt will be more efficient than a **haphazard (偶然的，随意的)** one.
-
-## 2020.11.18
-
 - The British **Chamber (【身体或器官内的】室、膛；房间；会所) of Commerce (商会)** in Hong Kong is inviting applications for its Events & Marketing Executive.
 - An **assessment centre (求职评估)** is a recruitment process with a series of tasks including presentation, group exercise, **psychometric tests (心理计量测验)**, etc, to evaluate candidates' ability and personality.
 - **Amid** COVID-19, we are going through a very difficult and uncertain situation.
 - Your changes will be **vetted (审查，诊疗)** by developers before becoming permanent.
-
-## 2020.11.17
-
 - **Standard Chartered (渣打银行)** Bank China is inviting registration for its Networking Session.
     - chartered: （根据持有皇家特许状的专业协会的规章）合格的；特许的
     - **UNICEF (United Nations International Children's Emergency Fund, 旧称联合国国际儿童紧急救援基金会，现称联合国儿童基金会，The United Nations Children's Fund)** **chartered (包租)** a flight to deliver vaccines to seven African countries.
 - **Ado (无谓的忙乱，费力)** usually refers to **fuss (小题大做，忙乱)**, concern, or time wasted due to trivialities or troubles. It is most often found in the phrases "without much ado", meaning "without much fuss", or "without further ado", meaning "without further delay". **Adieu (告别，辞行)** on the other hand, is a French word that refers to a farewell. It often follows bid, as in "I bid you adieu", as a rather dramatic way of saying "goodbye". [reference](https://www.merriam-webster.com/words-at-play/ado-vs-adieu-usage-difference)
-
-## 2020.11.16
-
 - Everyone seems **fixated (adj. 念念不忘的；v. 注视，固定下来)** on the 90% effectiveness lower bound reported for the Pfizer vaccine.
 - I'm [**basing it off of**](https://idioms.thefreedictionary.com/basing+it+off+of) a press release, which is not ideal for scientific precision.
     - ["base on" vs "base off of"](https://english.stackexchange.com/questions/15081/based-on-instead-of-based-off-of)
@@ -1568,62 +847,29 @@
 - Would the prof have the **chutzpah (无所顾忌，敢作敢为，肆无忌惮)** to fail the student, or would he just give the student an A out of fear that the student would raise a **ruckus (喧闹，骚动，争吵)** if anything were done about it?
 - They might just get **expelled** anyway for the combined violations of plagiarism and embarrassing the university.
 - For his own **sanity (理智)** he had to get out of this trap.
-
-## 2020.11.15
-
 - It has all the usual **culprits (犯人，罪犯)**: forking paths, statistical significance.
 - The market often is up for part of the day and down for others, so the intra-day variability may **undermine (从根基处破坏；挖...的墙角；逐渐削弱【信心，权威等】)** what the paper is finding.
 - the data is not provided, although the source is publicly available (and would probably take me a week to try to match up to what they **purported (据称的，传言的)** to use).
 - These claims are absolutely **preposterous (荒唐的，极不合理的)**.
-
-
-## 2020.11.14
-
 - Imagine a person traversing a finite curved path while walking their dog on a **leash (系狗的皮带)**, with the dog traversing a separate finite curved path.
-
-## 2020.11.13
-
 - trapezoidal: 梯形的
 - This is the seed of a snowflake, and it retains a **hexagonal (六角形的)** shape as it grows.
-
-## 2020.11.12
-
 - Medically speaking, diabetes is not **curable**. Once a person is diagnosed with diabetes, he or she will carry diabetes for the rest of life. Only under successful management, diabetes can go into "**remission**" state.
 - **influenza (流行性感冒)** is more of an acute condition that patient can recover from in a short period of time.
 - ICD-9-CM has refined coding **granularity (间隔尺寸，粒度)** to classify and group diseases and medical conditions.
-
-## 2020.11.11
-
 - These **savvy (有见识的；懂实际知识的；通情达理的)** speakers have some tips for novice speakers.
-
-## 2020.11.10
-
 - An interesting question in **pediatrics (儿科)** is whether the tendency for children to have many episodes of **otitis media (中耳炎【耳内长期流水、流脓、胀痛】)** is inherited in a family.
-
-## 2020.11.09
-
 - all would be OK if people just **ditched (开沟；掘沟；【俚】丢弃)** their $p$-values and replaced them with intervals.
 - it seemed kinda **tacky (低劣的，蹩脚的，俗气的，乏味的)** for a reporter whose **shtick (特长，擅长的本领)** was access to the powerful, to not want his own speech to be reported.
-
-
-## 2020.11.08
-
 - They have **inscribed (题写，铭记，雕刻)** their names upon the pages of history.
     - inscribed circle: 内切圆
 - **fractal (（经典几何学中没有表示的）不规则碎片形)** landscape
 - The "**incised (切入的，雕刻的，有锯齿状边缘的)** plane" scene consists of two planes with Gaussian noise and **grooves (凹槽)** in the shape of an "X".
     - His **incisive (透彻的，锐利的)** criticism gave us a thorough understanding of Dicken's writings.
-
-
-## 2020.11.07
-
 - Any **idiot (傻子，笨蛋)** can write a **critique (批评，评论)**.
 - It can take a lot of work to **untangle (清理，解开...纠结)** exactly what went wrong.
 - Original researchers do all the hard work, and "open science" critics are lazy **parasites (食客，寄生虫)**.
 - People often **repress (抑制，约束)** painful experience, which years later may later reappear as memories or **disguised (假装，掩饰)** emotions.
-
-## 2020.11.06
-
 - Both of these extensions **confer (商讨，授予)** improved convergence properties **on** the basic algorithm without a significant increase in computational cost.
     - confer sth. on/upon sb.: 授予，颁发（奖项、学位、荣誉或权利）
     - confer with sb. on/about sth.: 商讨，协商，交换意见
@@ -1632,43 +878,25 @@
 - It should be possible for a class to inherit from as many others as necessary, with an adequate mechanism for **disambiguating** name **clashes**.
 - No comparison frameworks are available, leading to an **arduous** selection of an appropriate variant for particular experimental conditions.
 - Laser-range sensors were a **cornerstone (基石，基础)** to the development of mapping and navigation in the past two decades.
-
-
-
-## 2020.11.05
-
 - **planar** open curves
 - aerial imagery: aerial photography, 航拍
 - **Skim** the text to grasp its main idea.
-
-## 2020.11.04
-
 - it has some deeply **wacky (乖僻的，古怪的)** scenarios
 - voter **turnout**
 - the betting markets have Trump as a slight favorite in Florida, which I'd attribute to **bettors** performing some sort of implicit averaging of current polls and the 2016 election results.
 - there is some room for **maneuver** here.
 - the Republican party controls the federal government and many state **legislatures**.
-
-## 2020.11.03
-
 - Picking pennies in front of a **steamroller (蒸汽压路机)**: A **parable (比喻，寓言)** comes to life.
 - I stopped by the **Jamaican** beef **patties** place but they were closed.
 - Has Stan [jumped the shark](https://en.wikipedia.org/wiki/Jumping_the_shark)?
 - A [bracket](https://en.wikipedia.org/wiki/Bracket_(tournament)) or **tournament (锦标赛)** bracket is a tree diagram that represents the series of games played during a **knockout (淘汰赛的)** tournament.
-
-
-## 2020.11.02
-
 - Politics has taken on particular **vitriol (尖刻的话)** in recent years.
 - Commentators and political scientists have described the rising tide of polarization in terms of concepts such as **tribalism (部落制)** and negative **partisanship (党派性，党派偏见)**.
-
-## 2020.11.01
-
 - An idealistic picture of science views science as an orderly process where **disinterested**, objective experts look at **crystal clear (完全透明的，【喻】极其明白，十分清楚)** evidence to find the truth.
     - crystal: 水晶，晶体；水晶的，透明的
 - Fake facts in Covid-19 Science: **Kentucky (肯塔基州)** vs. **Tennessee (田纳西州)**
 
-## 2020.10.31
+## 2020.10
 
 - A psychology professor whom I've never met once wrote me a mini-**manifesto (宣言)**, disparaging my efforts as a critic.
 - **Bumblers (做错事的人)** are the people who get up every morning and make mistakes, trying to find truth but mainly tripping over their own feet, occasionally getting it right but typically getting it wrong.
@@ -1676,42 +904,26 @@
 - but it would be more **evocative (引起...记忆的，唤起...感情的)** to show a series of images showing graying hair.
 - Nobel prize and other science prices are problematic and this is not **endorsement (认可；支持；背书；签注)** of such prices, but this might be useful for someone who needs to tell (**hype (炒作，大肆宣传)**) about the impact of Stan.
 - A **spaghetti (意大利式细面条)** plot is a line plot with many lines displayed together. [see also](https://www.data-to-viz.com/caveat/spaghetti.html)
-
-## 2020.10.30
-
 - **Maine (缅因州)** and **Nebraska (内布拉斯加州)**
 - our model is a forecast of vote **intentions**, not of votes as counted.
 - Now that it's 95%, [the rubber meets the road](https://knowyourphrase.com/when-the-rubber-hits-the-road).
 - It came in as a sort of brief **interlude** and solo between more extensive performances.
 - It's not a **[Jenga](https://en.wikipedia.org/wiki/Jenga) (叠叠乐)**, but neither is it a [WW2 jeep](https://en.wikipedia.org/wiki/Willys_MB).
 - this model really needs a lot more **scaffolding** for us to fully trust it.
-
-## 2020.10.29
-
 - **Fractal** Nature of Scientific Revolutions.
 - The **interim (临时的，中间的)** Stan governing body **stepped down** and were replaced with a new board elected by the developer community.
 - a **feud (不和，争执)** that was made worse by a lack of sharing code.
 - **condensed matter (凝聚态)** theory
-
-## 2020.10.28
-
 - Here is a fitted model from the **Bangladesh (孟加拉国)** analysis predicting whether a person with high-**arsenic (砷, 砒霜)** drinking water will switch wells.
 - The rule is **brutal (残暴的，直截了当的)**.
 - You conduct an experiment in which some people get a special **get-out-of-vote (动员投票，出门投票)** message.
 - **Humility** needed in decision-making.
-
-
-## 2020.10.27
-
 - I just don't **buy into** the **premise (前提)** so it's hard for me to go further.
     - I hate to **buy into stereotypes (墨守成规)**.
 - **[Talmudic (塔木德，犹太教宗教文献)](https://zh.wikipedia.org/wiki/%E5%A1%94%E6%9C%A8%E5%BE%B7)** argument about whether God can dig a **ditch (沟渠)** so width he can't jump across it.
 - the question sounds **snarky (尖锐批评的，讽刺挖苦的)**, but it's not meant **in that vein (用同样的风格处理某事)**.
 - we must avoid the **trap** of overconfidence in our inferential summaries.
 - the 40% rule is a time-tried **tactic (策略，战术)** employed by **pundits (某一学科的权威，专家)** making forecasts.
-
-## 2020.10.26
-
 - There we mention that the birthday data come from the National **Vital (极重要的，必不可少的)** Statistics **natality (出生率，生产率)** data.
 - I came across this interview of [John Conway](https://www.zhihu.com/question/387110069) and [Siobhan Roberts](https://en.wikipedia.org/wiki/Siobhan_Roberts), Conway's biographer.
 - I felt that there was a strong sense of competitiveness and **ego** in the maths world.
@@ -1721,35 +933,23 @@
 - The idea of competing with them is **absurd (荒唐可笑的，不合理的)**.
 - That's a very **egotistical (自负的)** statement.
     - egotism: 自负
-- Conway doesn't **mess around**.
+- Conway doesn't **mess around (浪费时间，混日子)**.
 - Wolfram may be egotistical, but he has a lot to be egotistical about.
 - if anyone can do that **astounding (令人震惊的) feat (技艺表演，功绩，壮举)**, it's this guy.
 - **Every once in awhile (偶尔，有时，时不时)**, though, Wolfram will break down and, with very great reluctance, talk about himself.
 - that is somewhat **reminiscent (使回忆起，回忆过去的，怀旧的)** of time travel.
-
-## 2020.10.25
-
 - I don't know that I could quite **articulate (说，表达)** what the rules are, but I can tell what's going on.
 - The **moral economy (道德经济，伦理经济)** of science.
 - I heard a rumor that they have contacts at the **Antarctic Polar Station** who are going to sign the thing once they can get their damn **fur gloves** off.
 - I've **obscured (v. 使模糊)** the details of the letter here because I don't want to **single out** the authors of this particular paper or the editor of this particular journal.
-
-## 2020.10.24
-
 - its results are used to inform **federal** funding decisions.
 - what are the effects of X on election, where X is **ballot (投票，选举)**-order effects, Fox News, home-state advantage, or other things?
 - I agree with my **correspondent (记者，通讯员)** that this graph does not look like a very good advertisement for this method!
-- Never underestimate the power of **fomo**.
-
-## 2020.10.23
-
+- Never underestimate the power of **fomo (fear of missing out, 社交控)**.
 - This particular code is kinda hacky in that it does not account for **fencepost** errors, but it conveys the general idea.
 - The **premise (前提)** of this joke is that if the one economist had truly wanted the car then he would have walked into the **showroom** and bought it.
 - Donating was used to determine whether men or women are better **tippers**.
 - Donating was used to determine which prominent skeptic to **prank (恶作剧)**.
-
-## 2020.10.22
-
 - I was looking at this map of coronavirus cases, **pondering (深思，仔细考虑)** the large **swaths (条带)** with seemingly no cases.
 - Or, even worse, designing a study, not finding the anticipated main effect, and then using the interactions to **bail you out**.
 - I'm pretty sure the idea has been reinvented a **zillion** other times before and after I did it.
@@ -1757,89 +957,50 @@
 - the notorious study in which participants were invited to stick 51 pins into a **voodoo doll** representing their **spouses**.
 - it was just done by some **bigshot** professor who calls himself a "**myth buster**".
 - That **voodoo (巫术)** study is **hilarious (十分有趣的，非常滑稽的)**, worth a good **rant (怒吼；叫喊；大声责骂)** or two.
-
-## 2020.10.21
-
 - Kennedy **looms** large in retrospect but it is not clear that he was considered as a savior when he was running for president.
 - There was the **radicalism (激进主义)** of the post-1974 reform movement, the **1994 Newt Gingrich revolution (纽特·金里奇领导的[共和党革命](https://zh.wikipedia.org/wiki/%E5%85%B1%E5%92%8C%E9%BB%A8%E9%9D%A9%E5%91%BD))**, and then the locked-in partisanship of congressional Republicans since 2010, all of these which can be considered both as responses to executive **overreach (过火，过度伸张，做事过头)** by opposition presidents and which have motivated **counterreactions (逆反应)**.
-
-## 2020.10.20
-
 - a return to problem solving and **dialing down** of tension.
 - characterize the modern presidents in this way, **saviors:** Trump, Obama, Clinton, **Reagan (里根)**, **Roosevelt (罗斯福)**
 - **Carter (卡特)** in retrospect does not have a savior **vibe**, but he was elected as a transformative outlier.
-
-## 2020.10.19
-
 - I'd assumed that there are more pro Dem **pollsters** than pro Rep or unbiased pollsters.
 - our model judges that to be a **fluke**
 - someone sent me this **collage (拼贴画)** of maps from Nate's model
 - they're not just some sort of computer **glitch (小故障，小毛病)**
 - problem of the between-state correlations in the [Fivethirtyeight](https://fivethirtyeight.com/)([中文解释](https://www.zhihu.com/question/33259890)) election forecast.
-
-
-## 2020.10.18
-
 - this might be a feather in the wind to prevent a predictable post-voting-day **wrangle (争吵)** that could **tip the country over the edge**.
 - **accusations** of fraud seem almost inevitable.
 - they can analyze **precinct-level** totals to look for "thumbprints" of voter fraud.
 - it's not as sure as a photograph of **"mislaid" ballots** dumped behind a post office.
-
-
-## 2020.10.17
-
-- I wan **intrigued (激起...的好奇心)** by the observations you made this summer.
+- I was **intrigued (激起...的好奇心)** by the observations you made this summer.
 - **In order for** Trump to win a blue state
 - I put them in a **pile** so that later I can read them in order.
 - this article informs us that Trump is **invincible**.
 - this is just a **rehash (旧东西的改作，新形式表达旧内容)** of the major news media.
 - it's your grandpa who's been reading a bunch of newspapers and watching lots of TV news and then **regurgitating** it back to you.
-
-## 2020.10.16
-
 - I leave it to you to decide whether this is **fodder (饲料，素材)** for your blog.
 - a **plaintiff (原告)** should be able to **bring a lawsuit (起诉)** on the basis of discrimination **per se (本身，自身，by itself, in itself)**
 - the Biber Code **dudes (伙计，花花公子)**
-
-## 2020.10.15
-
 - I was surprised to find my neighbourhood city of **Bourg-la-Reine (皇后堡, 法国法兰西岛大区上塞纳省的一个市镇，位于巴黎市区南部，属于安东尼区。)** ([twin city](https://en.wikipedia.org/wiki/Bourg-la-Reine), **Kenilworth (凯尼尔沃思, 英格兰沃里克郡的一个集镇和民政教区)**) mentioned in a **tribune (论坛报)**.
 - a **boardgame (版图游戏)** called Kapital which is presented there as a form of [anti-Monopoly](https://en.wikipedia.org/wiki/Anti-Monopoly), authors who were both **CNRS (Centre national de la recherche scientifique, 法国国家科学研究中心)** researchers in sociology until they retired.
 - the opposition between the **[May 68](https://en.wikipedia.org/wiki/May_68) (五月风暴，也称五月运动、五月革命和五月事件，是1968年春夏之交法国发生的学生运动。)** style class **warfare (战争，冲突)** **denounced (谴责，告发)** by the authors and their apparently **well-off (富裕的，处境好的)** conditions.
-
-## 2020.10.14
-
 - consensus-based transparency checklist
 - I also have a **wary (小心的，谨慎的)** feeling that is harder to put words to
 - will the satisfactory feeling of successfully completing the checklist **lull (哄骗；使平静)** researchers into **complacency** and keep them from spending effort on the deeper layers?
 - I worry the checklist is going to **inadvertently (漫不经心地；非故意地)** be taken as a false check of quality, rather than simply transparency.
 - We should always consider the **lurking (潜在的)** dangers of offering easy solutions and simple checklists that make humans feel that they've done all that is needed.
 - transparency should reduce existing **incentives (刺激，激励)** for performing bad science and increase incentives for better measurement and design of studies.
-
-## 2020.10.13
-
 - both of **contagious (患传染性疾病)** individuals and viral load sufficient to related to death.
 - statistical **cult (崇拜，异教团体)**
 - **noncommittal** response
-
-## 2020.10.12
-
 - Vocal characteristics predict **infidelity (不忠)** intention and relationship **commitment (承诺)** in men but not in women.
     - high **fidelity (保真度)** playback
 
 - The story was featured in various **classy (上等的，豪华的，时髦的)** **news outlets (报道新闻的机构)**.
 - some **wiseass (自以为是的人)** replies to all
 - we're **reliving** the 1990's here...
-
-## 2020.10.11
-
 - The X-ray emission comes from the hot gas surrounding and **accreting** onto the merging black holes.
 - During the merger, some of the X-ray emission is expected to be modulated at a frequency **commensurate** to that of the gravitational waves produced by the black holes.
 - after the merger, it is possible that a **corona (日冕，日华)** of hot, X-ray emitting gas will form and jets of particles may be launched at speeds close to the speed of light.
-
-
-## 2020.10.10
-
 - They are **acutely (极其，强烈地)** **attuned (习惯，适应)** to the **grave (严重的)** dangers associated with an economy **grinding to a halt (慢慢停下来，无法继续前进).** [see also](https://www.51voa.com/Voa_English_Learning/814-grind-to-a-halt-55001.html)
     - acutely aware: 深切地意识到
     - daily grind: 日常（苦）工作
@@ -1848,9 +1009,6 @@
 - defective: 有缺点的，有缺陷的
 - these have been **valorized (稳定物价，规定价格)** in constitutional caselaw
 - there are other disparities by race that are notable and (most likely) significant.
-
-## 2020.10.09
-
 - I bought the book and, **flipping through** it to find examples for use in class, came cross the two sketches
 - the frequency of driving accidents is plotted against the time of menstruation
 - one for parous women, and one for nonparous women
@@ -1858,30 +1016,18 @@
 - the left **hump** representing accidents that had occurred just before the **menstrual period**
 - he then could have **hastily** summarized the data in a sketch
 - it was just **sloppiness**.
-
-## 2020.10.08
-
 - This article on bus ridership is **right up your alley** (well suited to one's tastes, interests, or abilities).
 - I **grant (【勉强】承认，同意)** you that..
 - the **ensuing (随后的，后来的)** discussion in the article **speculated about** explanations for a decline in the individual **propensity** to ride.
 - suburbanite: 郊区居民
 - they **screwed up** on the above graph
 - it has to **swerve (突然转向，急转弯)** in and out of traffic after each bus stop.
-
-## 2020.10.07
-
 - does this **fallacy** have a name?
 - **Collider (对撞机)** bias
 - in an outraged Louisville
 - when considering **ideological (意识形态的，思想体系上的)** balance, it is useful to place social psychology within a larger context of the **prevailing** ideologies of other influential groups within society, such as military officers, journalists, and business executives.
-
-## 2020.10.06
-
 - the content of unreplicated or otherwise **shaky (颤抖的，不牢靠的)** empirical claims
 - **sway (影响，摇摆)** in the way
-
-## 2020.10.05
-
 - their attitude is something like 50% careerism and 50% that they feel already know the answers about **primatology (灵长类动物学)** or **criminology (犯罪学)**
 - these people see the entire a scientific process, pretty much the whole **megillah (冗长描述)** as a bunch of **red tape (繁文缛节)**, just a bunch of hoops they need to jump through so they can move on with their day and get their 8 hours of sleep every night
 - they don't get the connection between the fun parts and the hard work and inevitable **setbacks (挫折)**
@@ -1901,27 +1047,18 @@
 - this kind of sounds like a **conspiracy theory (阴谋论)**
 - all participants in cargo-cult (货物崇拜) social science——from the fabricators to the **powermongers** to the enablers to the just plain **incompetents (无能者，不胜任者)**
 - swatting away people like other data **thugs (暴徒)**
-
-## 2020.10.04
-
 - old people with **comorbidities (合并症)**
 - Trump's probabilities are **way** (adv. 很远；大量；非常；极其) better.
 - I'm **kicking myself** because I was planning to tell the **hookah** story
-- there is some evidence that the dose you get of **carcinogens** from hookah smoking might be 20 times the dose of smoking a cigarette.
+- the dose you get of **carcinogens (致癌物)** from hookah smoking might be 20 times the dose of smoking a cigarette.
 - if you're willing to accept **anecdotal (轶事的，趣闻的)** evidence, there's always going to be an unlimited amount of evidence which won't tell you anything.
-
-## 2020.10.03
-
 - according to the National Academy of Sciences, (google “**himmicanes**” for lots more), it saves lives to give **hurricanes** the names of boys rather than girls, because people are more scared of boys so they’ll act with appropriate caution.
 - Hurricane **Butch**? Run away. Hurricane **Missy**? Who cares.
 - according to **Pythagoras (毕达哥拉斯)** (really!), 17 is “the most despised and **horrible (可怕的，极讨厌的)** of all numbers.”
 - [Time is of the essence](https://en.wikipedia.org/wiki/Time_is_of_the_essence). (时间就是生命)
-
-## 2020.10.02
-
 - Quino's Mafalda: [季诺](https://baike.baidu.com/item/%E5%AD%A3%E8%AF%BA/5934145)（阿根廷漫画家）的[玛法达](https://baike.baidu.com/item/%E7%8E%9B%E6%B3%95%E8%BE%BE/5650869)
 
-## 2020.08.25
+## 2020.08
 
 - the people of Italy experienced a strange kind of mass hysteria known as "53 fever"
 - Italy cities: Bari (巴里，东南部海港), Naples (那不勒斯，西南部港市), Venice (威尼斯，港市)
@@ -1929,16 +1066,13 @@
 - their financial ruin, the pain of which resulted in a **spate** of suicides
 - the victims had been *led **astray (adv 迷途地; adj 迷路的)** (引入歧途)* by a reasoning flaw called the "gambler's fallacy" -- a worryingly common error that can **derail (脱轨)** many of our professional decisions, from a **goalkeeper**'s responses to penalty shootouts in football to stock investments and even **judicial (法庭的，公正的)** rulings on new **asylum** cases
 - the team analysed **umpires**' decisions in Major League Baseball games.
-
-## 2020.08.05
-
-- Jellyfish is the common name for the free-swimming form of gelatinous animals
+- **Jellyfish (水母，海蜇)** is the common name for the free-swimming form of gelatinous animals
 - farmed in **aquaculture (水产养殖业)** systems
 - thousands of swimmers are stung with varying degrees of severity every year.
 - jellyfish can form swarms which are also known as jellyfish blooms, which can damage fishing apparatus or clog the cooling systems of power stations.
 - ocean **eutrophication (富营养化)**
 
-## 2020.07.25
+## 2020.07
 
 ### Andrew @ 20200723
 
@@ -1996,15 +1130,10 @@
 - be **fierce (凶猛的，凶狠的，狂热的)** about
 - stop screaming and start listening
 
-## 2020.07.21
-
 ### Thomas Suarez·TEDxManhattanBeach: A 12-year-old app developer
 
 - fortune teller
 - a Justin Bieber whack-a-mole
-
-
-## 2020.07.19
 
 ### Robert Waldinger·TEDxBeaconStreet: What makes a good life? Lessons from the longest study on happiness
 
@@ -2029,8 +1158,6 @@
 - livening up a stale relationship
 - those all-too-common family feuds take a terrible **toll (毁坏；通行费；伤亡人数)** on the people who hold the **grudges (怨恨，积怨)**
 
-## 2020.07.17
-
 ### Meg Jay·TED2013: Why 30 is not the new 20 (Cont'd)
 
 - Identity capital **begets (引发，导致)** identity capital.
@@ -2043,8 +1170,6 @@
 - being as intentional with love as you are with work
 - consciously choosing, mindfully choose
 - airplanes just leaving LAX, bound for somewhere west. Right after takeoff, a slight change in course is the difference between landing in Alaska or Fiji.
-
-## 2020.07.16
 
 ### Meg Jay·TED2013: Why 30 is not the new 20
 
@@ -2066,8 +1191,6 @@
 - she was nearly hysterical
 - if I get in a car **wreck (毁坏，毁灭)**
 - Emma's defining decade went **parading by (炫耀)**.
-
-## 2020.07.15
 
 ### Simon Sinek·TEDxPuget Sound: How great leaders inspire action
 
@@ -2093,9 +1216,6 @@
 - Those steps can in turn increase economic **dislocations (混乱，位移)**, including **plummeting (暴跌)** stock prices.
 - rewind live TV
 - a great orator
-
-
-## 2020.07.13
 
 ### Cameron Russell·TEDxMidAtlantic: Looks aren't everything. Believe me, I'm a model.
 
@@ -2125,8 +1245,6 @@
 - It was difficult to unpack a legacy of gender and racial oppression when I am one of the biggest beneficiaries.
 - If there's a takeaway to this talk,
 
-## 2020.07.12
-
 ### Celeste Headlee·TEDxCreativeCoast: 10 ways to have a better conversation
 
 - **unfriend (解除好友关系)** someone on Facebook
@@ -2154,8 +1272,6 @@
 - She was the **runner-up** to Miss America.
 - He was the mayor of Sacramento.
 - She won a Pulitzer Prize.
-
-## 2020.07.10
 
 ### Shawn Achor·TEDxBloomington: The happy secret to better work
 
@@ -2187,8 +1303,6 @@
 - random acts of kindness are **conscious (有意识的，神智清醒的)** acts of kindness.
 - we've pushed happiness over the cognitive horizon.
 
-## 2020.07.09
-
 ### Grady Booch·TED@IBM: Don't fear superintelligent AI
 
 - I was the **quintessential nerd**
@@ -2217,7 +1331,7 @@
 - command us capricious, **chaotic (混乱的，杂乱的)** humans.
 
 
-## 2020.03.09
+## 2020.03
 
 1. features that **rot (腐烂，形势恶化)** before they **ripen (成熟)**.
 2. the dog **sprints off**
@@ -2226,7 +1340,7 @@
 5. evade bad data
 
 
-## 2020.01.17
+## 2020.01
 
 1. op-ed: opposite the editorial page. 一种源于欧美报纸出版业的新闻出版用语，意指一种由外人所撰写、刊登在报纸或杂志上的评述性质文章。
 2. fear of **contracting the virus** is **rampant**
@@ -2236,9 +1350,6 @@
 6. cognitive **illusion (错觉，幻想)**
 7. the high-end
 8. Wasn't there something strange about the extreme **disparity (不同，不一致)** in public reactions?
-
-## 2019.01.30
-
 1. a style that is so simple and open and **guileless** that it approaches **parody (拙劣的模仿，荒谬的替代物)**.
     - **The Remains of the Day (长日将尽)** [:link:](https://en.wikipedia.org/wiki/The_Remains_of_the_Day) is clearly **parodic (parody, 戏仿，谐拟)** [:link:](https://zh.wikipedia.org/wiki/%E6%88%B2%E4%BB%BF), or at least a classic of the "unreliable narrator" genre.
 3. I found that some labeled the book as **satire** and others took it straight.
@@ -2248,36 +1359,21 @@
 7. Leavitt is a bit more **ruthless (残酷无情的)**, willing to let his characters hang in classic British style (e.g., Evelyn Waugh or George Orwell), in contrast to Wolitzer who likes her characters so much that she wants to give them a happy ending.
 8. **disparage (轻视，贬低，批评，非难)** a number of journals
 9. Is it the number of articles that they publish that end up being **bogus**?
-
-## 2020.01.15
-
 1. Linguist and public intellectual [Steven Pinker](https://zh.wikipedia.org/wiki/%E5%8F%B2%E8%BF%AA%E8%8A%AC%C2%B7%E5%B9%B3%E5%85%8B) got into trouble recently when it turned out that he'd been offering expert advice to the legal team of now-disgraced financier [Jeffrey Epstein](https://www.zhihu.com/question/339846979).
 2. **taboo** questions raise our blood pressure and threaten moral panic
 3. I thought [A Fish Called Wanda](https://movie.douban.com/subject/1292440/) was **hilarious** in 1988 and I happened to see it again last year, and I found it hilarious the second time as well. Not **cringeworthy** at all.
 
 from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/14/steven-pinker-on-torture/)
-
-## 2020.01.08
-
 1. An example is some preliminary data gathered at Stanford on revival of cardiac arrest patients by **paramedics**.
 2. defibrillation
 3. For **diploid** and **tetraploid** tumors, the flow **cytometry (细胞计数法，测量不同细胞参数的生物方法的统称)** method was also able to estimate the percent of tumor cells in a growth stage of their cell cycle, the percent of growth is systematically missing for most **aneuploid** tumors.
-
-## 2020.01.05
-
 1. The **knockoff** filter operates by **manufacturing** knockoff variables that are cheap.
 2. The knockoff filter can be seen as a **versatile (多用途的，多功能的)** wrapper.
-
-## 2020.01.04
-
 1. Traditionally, mpMRI examinations were used to manually **delineate (勾画，描述)** the cancerous regions within the prostate.
 2. Such methods tend to depend highly on **radiologists**' and **urologists**' expertise
-
-## 2020.01.01
-
 1. gastric
 
-## 2019.12.30
+## 2019.12
 
 1. High scorers are juvenile **delinquents (少年罪犯)** who then see the error of their ways and **reform (改革，改正)** permanently.
 29. Children who fail in the entrance examination are **deprived (剥夺，使丧失)** of the opportunities to receive a better and higher education. **Accordingly (因此；相应地)**, with an impressive educational background, it is difficult for them to find a proper job. As a result, they become full of resentment at a society, doing harm to strangers and disrupting social order, **both of which** inevitably increase **juvenile (少年的，未成年的)** **delinquency (「常指青年人的」犯罪)**.
@@ -2287,13 +1383,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - both as pronoun: both are ok.
     - `be + both + ...` instead of ~~both + be + ...~~
     - more details refer to [dictionary.cambridge.org/grammar/british-grammar/both](https://dictionary.cambridge.org/grammar/british-grammar/both)
-
-## 2019.12.25
-
 1. Ampoule (安瓿瓶，如利多卡因)， vs 西林瓶 (如青霉素)
-
-## 2019.12.24
-
 1. **Intellectual property (IP)** is an umbrella term that covers a group of separate **intangible** property rights of owners/creators.
 2. Provide legal protection in various types of monopolies.
 3. Defining offences (civil or criminal infringement) against intellectual property.
@@ -2317,27 +1407,12 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 20. intranet
 21. Under the Copyright Ordinance, the fair dealing for showing or playing a movie will apply only if the purpose is for giving or receiving instruction in a specified course of student provided by an educational establishment. It is not allowed to use these materials outside the scope of fair dealing such as for the purpose of entertainment.
 22. Vincent van Gogh: 梵高
-
-## 2019.12.22
-
 1. I recently was discussing/arguing about the value of **[charter schools](https://www.zhihu.com/question/21810104)** **lottery (彩票)** studies.
     - [The demand for seats in charter schools is so great that almost all charter schools must admit students by random lottery.](https://www.nyccharterschools.org/sites/default/files/resources/LOTTERIES082713.pdf)
 2. is admissions of a lack of external validity **ameliorated (改善；改进)** because of stronger internal validity?
-
-## 2019.12.21
-
 1. How do practitioners and patients **discern** the difference?
-
-## 2019.12.20
-
 - It had all been one of his **repulsive (令人厌恶的，可憎的)** drunken **jests (玩笑，笑话)**.
-
-## 2019.12.15
-
 1. I think that the author shouldn’t have done the chapter **gimmick (噱头，骗人的玩意)**, and focused more on the more impactful awards.
-
-## 2019.12.13
-
 1. Because of all the uncertain and unknown assumptions that **underpin** statistical inferences, we should treat inferential statistics as highly unstable local descriptions of relations between assumptions and data, rather than as generalizable inferences about hypotheses or models.
 2. Acknowledging this uncertainty could help reduce the **allure** of selective reporting
 3. That paper is part of a much large literature in economics on Persistence or “Deep Origins” that shows how **medieval pogroms** **prefigure** Nazi support, adoption of the **plough** determines women’s rights etc.
@@ -2378,13 +1453,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 34. It’s great if you’ve got hair to **comb (梳子)**, but otherwise it leaves you looking a bit silly.
 35. Once my sister had the **hiccups** and my dad **snuck up** behind her and scared her. The hiccups went away but my sister made my dad promise never to scare her again like that.
 36. On the medical front, we now have things like **nut allergy (坚果类食物过敏)** and **autism (自闭症)** which nobody ever thought about and now are huge.
-
-## 2019.12.10
-
 1. Another tack is to develop alternative **conduits (导管，渠道，沟渠)** and supplies.
-
-## 2019.12.01
-
 1. **malignant (【疾病】恶性的；致命的)** tumor
     - **benign (良性的)** tumor:
 2. Glioblastomas: 胶质母细胞瘤
@@ -2396,7 +1465,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 9. Dermatology 皮肤病学
 10. ointments 软膏
 
-## 2019.11.04
+## 2019.11
 
 1. You will have to throw away 3 months of your work while somehow keeping your mental health **intact (完整的，未受损伤的)**.
 2. the most **conspicuous (显眼的，明显的)** trait of the American **professoriate (教授会)** may be the **prose (散文；平凡的，乏味的)** style called academese (学术行话，学术体，学术文章的风格):
@@ -2406,45 +1475,26 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 8. In 2016, when the gremlins paper had been **discredited (不足信的，不名誉的)**, he pivoted and conducted his own exercise, rooted in Tol's idea but more sophisticated, and with very similar results.
 9. Random forests are a very popular **off-the-shelf (现成的，不用定制的)** machine learning model for this setting.
 10. Faithful friendship, unwavering **aspiration (强烈的愿望，志向，抱负)**, **nurture (教养，培育)** of the younger, and passion for life……, these are virtues that……
-
-## 2019.11.01
-
 常用成语记忆卡片：[ 成语－VCE 1+2 年底考试](https://quizlet.com/167609288/%E6%88%90%E8%AF%ADvce-12-%E5%B9%B4%E5%BA%95%E8%80%83%E8%AF%95-flash-cards/)
 
-## 2019.10.25
+## 2019.10
 
 1. **ore (矿石，矿)** grades: 矿山品味分级
-
-## 2019.10.24
-
 1. tiger prawn: 老虎虾
 3. saplings：幼树，树苗
-
-## 2019.10.22
-
 1. “apparent magnitude scaling” is an idea from **cartography (制图学)**
 2. regime
 3. geoscientists and engineers in the **petroleum (石油)** and **geothermal (地热的，地温的)** industries
-
-## 2019.10.18
-
 1. cardiovascular: 心血管的
 2. hyperinsulinemia: 血胰岛素增多
 3. ischemic： 局部贫血
 4. bilateral: 双方的，双边的
 5. subthalamic
 6. nucleus
-
-
-## 2019.10.17
-
 1. The most extreme, most **sobering (令人警醒的，使人冷静的)**, and **zaniest (zany. 古怪的，滑稽可笑的 strange or unusual in an amazing way)** facts that [The Atlantic](https://zh.wikipedia.org/wiki/%E5%A4%A7%E8%A5%BF%E6%B4%8B_(%E9%9B%9C%E8%AA%8C))'s science, technology, and health reporters learned this year.
 2. **gerrymandering (为本党利益改划选区，不公正操纵，欺骗)** only rearranges district lines and cannot manufacture more votes for a party.
 3. compare the number of **contagions (传染，接触传染)** and deaths by country and date.
 5. geodetic survey: 大地测量，测地学测量
-
-## 2019.10.12
-
 1. what are some funny, nice, intelligent and **mind-boggling (难以理解的，难以置信的)** tricky math questions to ask?
     - today we **boggle at (吃惊)** the month's most **spectacular (壮观的，惊人的)** science images.
 2. instrument: verb. such as, "they instrument military aid"
@@ -2455,23 +1505,13 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 9. **teaser (戏弄者)** is a particularly **baffling (令人困惑的)** problem that is said to have a correct solution
     - **brain teaser (脑筋急转弯【戏弄大脑】)**.
     - you can introduce XXX to your friends and family by sharing this 25 second **teaser (an advertisement that offers something free in order to arouse customers' interest)** video.
-
-## 2019.09.30
-
 1. An unconvincing analysis claiming to **debunk (揭穿真相，暴露)** the health benefits of moderate drinking.
 2. junk science is promoted by **credulous (轻信的，易受骗的)** organizations
 3. The commentary also outlines some **hallmarks (特点)** of potentially **dubious (可疑的，不可靠的)** science.
 4. "Wow, today's the school picnic!", **exclaimed (呼喊，惊叫，大声说)** Tom.
 6. That **strikes me as (cause someone [me] to think about in a particular way)** rather bold: 这让我觉得相当大胆
-
-
-## 2019.09.20
-
 1. Public speaking is **daunting (使人畏缩的，使人气馁的)** for most people.
 2. Panda experts in China are trying to **demystify** his unusual fur color.
-
-## 2019.09.19
-
 1. Think of the **mundane (世俗的，平凡的)** tasks that you do everyday.
     - mundane world: 红尘
 3. sucker
@@ -2500,45 +1540,32 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 27. hiatus: 间断
 28. fallacy: 谬误
 29. disdain: 鄙视蔑视
-
-## 2019.09.09
-
 1. as far as I can tell: 据我所知
 2. You really are a **fabulous (极好的，绝妙的)** designer.
 
-## 2019.01.13
+## 2019.01
 
 1. If you have a slight edge it means you have a small advantage over someone.
-
-## 2019.01.01
-
 1. in silico: 电脑模拟
 2. in vivo: 生物活体内
 3. in vitro: 生物活体外
 
 
-## 2018.12.30
+## 2018.12
 
 1. constrain & constraint
 
 
-## 2018.10.04
+## 2018.10
 
 - The court said that the right to free expression was **paramount (首要的，主要的；最高的，至上的)**.
 - Such parables may seem too **contrived (不自然的，勉强的)** to be **illuminating (富于启发的)**.
-
-## 2018.10.03
-
 1. He ended up in hospital due to a block in his **artery (动脉、干道、主流)**.
 2. **myocardial (心肌的)** **infarction (梗塞)**
     - myocardium: 心肌
 3. adventitia (外膜，动脉外膜), media (血管中层，中脉), intima (内膜)
 4. Researchers used the CT images to learn if any of the subjects had **atherosclerosis (【医】动脉粥样硬化)** before the study begun.
-
-
-## 2018.10.01
-
-1. The rumors of his **dismissal** have been circulating for months.
+1. The rumors of his **dismissal (解雇，开除)** have been circulating for months.
 2. You're pretty **cavalier** considering your carelessness almost killed my daughter.
 
 ## 2018.09
@@ -2584,44 +1611,21 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. I never worked at anything **pertaining (与...有关系的，附属...的)** to sports.
 1. The company allegedly used fake **invoices (发票)** to obtain the loans.
 
-## 2018.08.31
+## 2018.08
 
-1. copse
-
-## 2018.08.30
-
+1. copse: 矮树丛
 2. regimen
 3. flat **terrain (地带，地形)**
 4. aerobics
 5. treadmill
-
-
-## 2018.08.29
-
 1. phylogeny
-
-## 2018.08.28
-
 1. bump up
-
-## 2018.08.27
-
 1. noob
-
-## 2018.08.26
-
 1. tangerine
-
-## 2018.08.25
-
 1. consanguineous: 血亲的，血缘的
 2. sibship
 3. autosomal
 6. facilitate
-
-
-## 2018.08.24
-
 1. consecutive
 2. passage
 3. leucocyte
@@ -2631,59 +1635,29 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 7. He said that racism is **endemic (风土的，地方性的)** in this country.
 8. emanating
 9. aggravate
-
-
-## 2018.08.23
-
 1. exclusively
 3. rigorous and **concise (简明的，简练的)**
 4. Prologue
 5. reminiscent
-
-## 2018.08.22
-
 1. promptitude
-
-
-## 2018.08.21
-
 1. ergodic
 2. arduous
 3. aperiodic
 4. The KOMA-Script bundle provides replacements for the article, report and book classes with emphasis on typography and **versatility (多功能性，通用性)**. [:link:](https://ctan.org/pkg/koma-script)
     - the document layout (scrartcl) layout of the class is less strident than that of article, and it offers much more flexibility than article via other elements of the koma-script collection.
 5. mutating
-
-## 2018.08.19
-
 1. **pedagogical (教育学的，教学的)** skill
 2. concrete types
 3. Populate
-
-## 2018.08.18
-
 1. percolation
 2. ascribe
-
-## 2018.08.17
-
 - Loneliness causes high blood pressure, high **cholesterol (胆固醇)**.
-
-
-## 2018.08.16
-
 1. mnemonic
 2. acyclic
 4. endow
 5. serum: 血清
-
-## 2018.08.15
-
 1. coronary: 冠状的
 2. retrospective
-
-## 2018.08.14
-
 1. memo
 3. counter-example
 4. premiss: premise, [:link:](https://english.stackexchange.com/questions/145322/difference-between-premiss-and-premise)
@@ -2691,44 +1665,24 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 7. remuneration
 8. supposition
 9. The representation of documents is a central issue in all of the approaches in document management, whether the management **entails (需要，牵涉)** exploration, search, or filtering.
-
-## 2018.08.13
-
 1. monograph
 2. awash
 3. pare it down
 4. **noose (绳套，套索)**
 5. Homotopy
 6. miraculously: 神奇的，非凡的
-
-
-## 2018.08.12
-
 1. boilerplate code: 样板代码
-
-## 2018.08.11
-
-1. coerce
+1. coerce: 强迫，迫使
 2. legitimate
-
-
-## 2018.08.10
-
 1. toggle
 2. elicitation
 4. **Bristol (布里斯托)** is one of the most **congested (拥堵的)** cities in Britain.
 5. recurrent
-
-## 2018.08.09
-
 1. lethal
 2. incidence
 3. extant
 4. pertain
 5. substrate
-
-## 2018.08.08
-
 1. kinetic
 2. prokaryotes, eukaryotes
 3. unprecedented
@@ -2736,171 +1690,188 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. yeast
 7. 酿酒酵母（Saccharomyces cerevisiae）
 8. stoichiometric: 化学计算的，理想配比的
-
-
-## 2018.08.01
-
 1. phishing
 
-## 2018.07.29
+## 2018.07
 
-1. whence
-
-
-## 2018.07.19
-
+1. whence: 从哪里，从何处
 1. astutely
-
-
-## 2018.07.17
-
-1. omniscience
+1. omniscience: 无所不知
 2. make the all discussion **moot (无讨论意义)**
-
-## 2018.07.16
-
 1. plethysmography: 容积标记法
 2. inductance: 电感，感应系数
 3. prescient
 4. envisage
 
-## 2018.04.18
+## 2018.04
 
 - The U.S. has **assimilated (吸收，消化；同化)** people from European countries.
 
-## 2018.03.15
+## 2018.03
 
 - And **defusing (平息，缓和，拆除【炸弹的】引信)** the issue should pave the way for more **nuanced (微妙的，具有细微差别的)** and constructive politics.
 - with a **grain of salt** (持保留态度): an English language **idiom (成语，习语)** that means to view something with skepticism or not to interpret something literally.
-
-## 2018.03.07
-
 - **Sediments (沉积物)** between a **glacier (冰河，冰川)** and the ground may also **facilitate (使便利)** slippage.
 - ~~collinearity~~
 
-## 2018.02.22
+## 2018.02
 
 1. Victoire, who's in the **epilogue (结语，尾声)**, she is so named because she was born on the anniversary of the battle that finished it all.
 2. I am greatly **indebted (负债的，感激的，受惠的)** to you for your help.
-
-## 2018.02.11
-
 1. So **etymology (词源学)** is the history of a word and then its historical development over time of its meaning.
 
-## 2018.01.27
+## 2018.01
 
 - To [**skewer (刺穿，串住)** a **sacred (神圣的，庄严的，宗教的)** cow](https://english.stackexchange.com/questions/166702/whats-the-meaning-and-the-origin-of-skewer-a-sacred-cow), means to **defy (公然反抗，藐视)** what is generally held as **indisputable (无可争辩的，不容置疑的)**.
-
-## 2018.01.06
-
 - Protestant (新教徒，新教徒的), Catholic (天主教的)
     - [天主教](https://zh.wikipedia.org/wiki/%E5%A4%A9%E4%B8%BB%E6%95%99)（拉丁语：Catholicismus）是基督教整体以下的宗派之一，是对罗马公教会（天主教会）发展而来的一系列基督教之神学、哲学理论、礼仪传统、伦理纲常等信仰体系之总括，为基督教最大宗派。天主教的中文名称源自明朝万历年间耶稣会将基督信仰传入中国，经当朝礼部尚书之徐光启与利玛窦等耶稣会士讨论，取儒家古话“至高莫若天，至尊莫若主”，称其信仰之独一神灵为“天主”，故称之。
     - [新教](https://zh.wikipedia.org/wiki/%E6%96%B0%E6%95%99)，又称基督新教，是西方基督教中不属于天主教体系的宗派之统称，中文“新教”一词是主要对应和区别于宗教改革之前的“旧教”。新教源于16世纪神学家马丁·路德、加尔文、慈运理等人所领导的宗教改革运动，与天主教、东正教并列为基督宗教三大分支。
-
-
-## 2018.01.03
-
 1. If we had tens of thousands of **skeletons** distributed at regular intervals through the historical record, there would be **appreciably (可察觉地，明显地)** more degrees of shading.
 2. So they reanalyzed their data **in light of (根据，鉴于)** the new maps.
 3. We've seen the economy moving forward, **albeit** a little too slowly, he said.
 4. It did, however, have another weapon **at its disposal (任其支配，任其处置)**.
-
-## 2018.01.01
-
 1. These tensions are **exacerbated (使恶化，使加重)** between the wars.
 2. They **glossed over (掩饰)** some key issues on that front.
 3. The athlete's success **was attributed to** systematic training.
 4. lower/upper extremity (上/下肢)
 
-## 2017.09.25
+## 2017.12
 
-1. She's tried every **knack (诀窍，本领)** in **Cupid (【罗马神话中的爱神】丘比特)**'s book to get her guy to marry her.
-2. The team's limp performance has many people calling for the head coach's **resignation (辞职)**.
-3. the limpid outlook of a man who is at peace with himself as he awaits death.
-4. the lush fields were the envy of neighboring farmers.
-5. the lush sounds of the orchestra
-6. **vagabonds (流浪者，游手好闲者)** **meandering (漫步，蜿蜒缓慢流动)** through life
-7. Reading will **fertilize (使丰饶，使受精)** vocabulary.
-8. A blind patriotic fervor is called chauvinism.
+1. The model can be used to match any subsequent image, or part **thereof (在其中)**.
+    - It **plumbs (探测，探索，examine thoroughly and in great depth)** the depths of its **protagonist (主人公)**'s **indecisiveness (优柔寡断)**, and the **tragic (悲痛的，悲剧的)** consequences **thereof (由此)**.
+2. I don't think I have **finesse (n. subtly skillful handling of  a situation)** for the job. I'm like a round **peg (桩)** in a square hole.
+3. The university encourages applications from academically strong students **irrespective (不考虑的，不顾的)** of their nationality.
+1. Maybe some coffee will **perk you up (活跃起来，振作精神)**.
+2. They found that papers with **terse[r] (简洁的，扼要的)** titles top the citation count.
+1. state of the art: the latest and most **sophisticated (精密的，尖端的；老练的，见多识广的；复杂的)** or advanced stage of a technology, art, or science.
+    - complex: 侧重内在关系的复杂，需通过仔细研究与了解才能掌握和运用
+    - complicated: 近似 complex，但语气更强，着重极其复杂，很难分析、分辨或解释
+    - sophisticated: 侧重事物发展或达到高级的程度所体现出的复杂
+    - intricate: 着重指错综复杂，令人迷糊理解。intricacy: 错综复杂
 
-## 2017.09.26
+## 2017.11
 
-1. a convoluted thriller, the plot of which I was never able to actually decipher.
-2. a complex literary text difficult for many people to decode.
+1. motif
+2. the moss-**draped (披，装饰)** **bald (秃顶的，秃头的)** **cypress (柏树)** trees: 长满青苔的秃柏树
+3. monopoly
+4. monolithic
+5. miniature
+6. metropolis
+8. metallurgy
+1. till
+2. dweller
+3. wriggle
+4. manure
+1. molten
+2. **mantle (地幔)**
+3. rest on
+4. conceivably
+5. A feeling of **drowsiness (drowsy, 昏昏欲睡的)** **crept (creep 的过去式，匍匐爬行)** over him.
+6. **Atlantic (大西洋)**， **Pacific (太平洋)**， **Arctic (北极的，北极圈)** Ocean (北冰洋), Indian Ocean (印度洋)， Antarctica: 南极洲
+7. Kids **blink (眨眼)** about 5 million times a year.
+9. **Pangaea (盘古大陆，泛大陆)** Ultima: 终极盘古大陆
+10. Clothes will not make us more or less clever, better or worse, more or less honest.
+11. A lot of **subduction zone ([俯冲带](https://baike.baidu.com/item/%E4%BF%AF%E5%86%B2%E5%B8%A6/2663490))** earthquakes are 200 miles deep, and there's a lot of padding between the shaking part and the earth surface where we live.
+12. slab
+1. rampage
+2. rally
+3. degradation
+4. dozens of: 许多
+6. tap into
+7. LEDs use only a quarter the energy of **incandescent bulbs (白炽灯)**.
+8. fluorescent
+9. **pebble (鹅卵石)**
+10. Hydrogen (氢，氢气), Helium (氦，氦气)
+11. faint: 昏厥，昏眩；模糊的
+12. **foundationalism (基础主义，基础论)**
+13.  John Locke, René Descartes.
+14. slate
+15. mirage
+16. shimmer
+17. conceive
+18. or so
+19. conceivably
+20. as to that
+21. red dwarf star
+22. bode
+23. prism
+24. spectrum
+25. He rejected an objective understanding of color, in favor of a more subjective understanding.
+26. through and through
+27. marvel
+28. optics, chromatics
+29. that sort of thing
+30. The **insulting (出言不逊的，侮辱的，无礼的)** remarks **stung (sting, 促使，刺激)** him to a **rage (愤怒)**.
+31. backbone
+32. **overthrow (推翻，打倒)** the government
+33. mount
+35. canvas
+36. pull (someone or something) out of a hat: To select someone or something entirely at random.
+37. Zurich: 苏黎世
+38. chanting, bang
+39. Cabaret Voltaire
+40. at the eleventh hour
+41. **marble (n/adj/v 大理石)** **statue (雕像)**
+42. polychrome
+43. disintegrated
+44. heroism, divinity
+46. armor, cloak
+1. It really gets them **enamored (迷恋，爱上)** with riding and get to make something part of their daily lives.
+2. The **venue** is the school.
+3. He had three forty-**fathom (英寻，等于 6 英尺，约合1.8288米)** **coils** of line in reserve now, as well as the coil he was using.
+4. The **vibe** in the office is amazing.
+5. choreography
+6. Renaissance, the 16th, 17th centuries.
+7. artisan, artist
+8. Raphael, frescos
+9. apprentices
+10. quarry: 采石场；苦心寻找
+11. to and fro
+12. carpenter, mason
+13. portraiture, portrait artist
+14. crucial
+15. make **headway (进展，前进)**
+16. contemplative
+17. vague
+19. close-up: 影视特写；详细检查；详图
+20. petal
+21. **juxtapose (并列)** these two perspectives, each of which connect statistical graphics to literature, but in a different way.
+22. archaeology
+23. oversee
+24. pharaoh Khufu, Great Pyramid
+25. sturdy: 结实的，坚固的
+26. Herodotus
+27. ramp
+28. Plateau
+29. spiral
+1. Chimpanzees, **primates (灵长类)**, chimps, gorillas, orangutans
+2. bottlenose
+3. What **sarcastic (讽刺的，挖苦的)** answer can I give her without **aggressive (好斗的，挑衅的，有进取心的)**?
+4. trunk
+5. stand alone, hierarchy
+6. corvid, corvidae, raven, jay, crow, magpie
+8. The eruption of a volcano is **spontaneous (自发的)**.
+10. It is important because it sets animals with a sense of self apart from those without a sense of self.
+11. **empathy (同情，共鸣)**
+12. afoot
+13. plating
+14. seigniorage: 铸币税；君权
+15. nostalgia
+17. alloying
+18. brass, trumpet, trombone
+19. rust, patina
+20. halt
+21. Another 30 people died in the **hull (船体，船身)** where they are believed to have **suffocated (呼吸困难，窒息而死)**.
+22. barnacle（藤壶【小甲壳动物，附着于水下岩石或船底等】）, shellfish（贝类动物，甲壳类动物）
+23. Long-term solutions include conservation, recycling waste water and building **desalination (海水淡化、脱盐)** centers.
+24. a **pinch** of [salt]：一撮，少许
+- **Nirvana (涅槃【超脱一切烦恼的境界】)** in Fire: 琅琊榜
+- the disguiser: 伪装者
+- empresses in the palace：甄嬛传
+- the glory of Tang dynasty: 大唐荣耀
+- **Beijing Municipality (北京市【自治市；自治区；自治市或区的政府当局】)**
 
-## 2017.09.28
-
-- anything but (=not at all, by no means, never)除...以外任何事；根本不，绝不决不，根本不
-    - Dick seldom talks of anything but music.
-    - **Conceited (自负的，骄傲自满的)** people never hear anything but praise. (凡是爱慕虚荣的人听得进赞美的话)
-    - The bridge is anything but safe.(那座桥根本不安全)
-    - His behavior is anything but satisfactory. (他的行为根本不能令人满意)
-    - But those captured were anything but terrorists. (但那些被逮捕的人根本不是恐怖分子)
-    - He didn't speak anything but Greek. (他只会说希腊语)
-    - He's anything but an **abject (卑鄙的，卑劣的)** coward. (他决不是可鄙的懦夫)
-        - cowardice: 懦弱，胆怯
-    - Do you ever do anything but **yack (废话)**? (你除了叨叨还会干啥？)
-    - I will eat anything but carrot. (我什么都吃，就是不吃胡萝卜)
-    - She is anything but a beauty. (她一点也不漂亮。)
-- nothing but (=only)只不过，除了...以外什么也没有
-- all but (=almost, nearly)几乎，差一点
-- none but(=no one except)只有，除...外谁不
-
-## 2017.09.29
-
-1. Numerous historical examples illustrate both the overriding influence that scientists' prejudices have on their interpretation of data and the consequent impairment of their intellectual objectivity.
-2. Jone was unable to recognize the contradictions in his attitudes that were obvious to everyone else; even the hint of an untruth was repugnant to him, but he courted serious trouble by always cheating on his taxes.
-
-
-## 2017.09.30
-
-1. She responded with such asperity that we knew she was offended by the question.
-2. He has encountered more than his share of asperities on the road to success.
-3. Envy can make oneself backward; self-confidence can tell oneself to be aspirant.
-4. He says face veils like the niqab (尼卡布，一些穆斯林妇女在公共场合戴的面纱，通常露出眼睛) are not a religious requirement.
-5. To reduce fraud, an opaque network of government bank accounts has been replaced by a centralized system.
-6. as if he could **pierce (穿透，刺破)** those **sheets (薄板；床单；纸张)** of water so opaque to our eyes and scan the deepest seas.
-7. Mr Zingales has written an elegy to the America he found when he moved there 24 years ago from an Italy that was rife with nepotism (裙带关系).
-8. We keep records on every single hive, and that compendium of records goes back quite a long time.
-9. Jeremiad wreathes upon my feeling, while shadow of shiver covers my mind.
-10. He made speech of **panegyric (颂词，赞辞)**.
-11. In an hour-long philippic, the legislator denounced the lobbyists opposing his bill.
-12. Their profligate lifestyle resulted in bankruptcy.
-13. Improvident behavior is likely to **imprint (印记)** indelible marks on a person's life and personality.
-14. In times of economic **woe (悲哀，痛苦)**, when normal patterns of consumption and investment are frozen, prodigal government speeding can sometimes be the only way to break the **vicious circle (恶性循环)** of declining demand and shrinking employment.
-15. Jaw line contoured by the bristling red hair of the fighter, watchful, pugnacious.
-16. Things have come full circle since **penurious (贫穷的，穷困的，赤贫的)** sailors from the Far East first arrived two centuries ago.
-17. In May, to no one's surprise. he declared the city insolvent.
-18. I cannot feel it will make for a very **restful (闲适宁静的，使人感到悠闲的)** retirement, can you?
-19. True to form (一如既往，像往常一样), Walter started asking him about his own retirement.
-20. These were very remarkable, but as eccentric as all his other accomplishments.
-21. She had known from the start that her philosophy teacher was eccentric.
-22. If true, that suggests a **syllogism**: that the love of time is a root of evil, too.
-23. Spencer's idiosyncratic drawing of a large fairy on a tiny water-lily leaf captures an imagination that strained against conventional rules of composition from the start.
-24. a fact that helps explain how it manages to be both profligate and stingy, and is forever in the red.
-25. The concert was rather an amateurish affair.
-26. Only when we deal with these problems successfully can we benefit the most from university **amalgamation (合并，混合)**.
-27. It is not just about the president. It's a whole **amalgam (混合物)** of stuff, the scandals surrounding the president or people close to the president certainly, but also there are investigations of corruption in some of **conglomerates (联合大企业，企业集团)** for example.
-28. the **synergy (协同)** between artist and record company.
-29. just as you may need a **tonic (补药)** when you have been ill.
-30. Throughout her book Ms Ahuja seems to be in a **trance (恍惚，出神，着迷)** herself, in **thrall (受...控制，深受...影响)** to the **glamour (魅力，魔力)** of her subjects.
-31. The **Palestinians (巴基斯坦人)** demanding a state are weak, divided and **quiescent (沉寂的，静止的))**; **morose (孤僻的，郁闷的)** as they are, few favour a return to suicide-bombing.
-32. And the campaign really got rancorous when Goldsmith tried to link Khan and extremists.
-33. Such counter-currents will prevent Kentish Town from gentrifying fully, suggests Gillian Tindall, a local historian.
-34. Interpreters are also skilled at keeping aplomb in the face of chaos.
-36. Right, and that suggests the qualities that are most germane to the job.
-37. The fortress by King Philip Augustus was situated on the right bank of the Seine, overlooking-- at that time-- splendid bucolic scenery.
-38. But overall, Mr Agar has abstracted and made manageable a range of rich and informed analysis.
-39. He also emphasized what he called the main thing: "a human-typable keyboard instead of a stupid, cryptic front panel with a bunch of lights and switches."
-40. In a few recalcitrant places, captial punishment is holding steady or picking up.
-41. The visitor also sees other evolving friendships and aesthetic kinships taking place.
-42. **Manifest (表明，显示)** an **obliging (乐于助人的)** **disposition (气质，天性，性格)**, and they **can not but (不得不，[:link:](https://ell.stackexchange.com/questions/151081/what-does-cant-but-in-this-sentence-means))** regard you with **affection (感情，喜爱)**.
-    - much obliged: 承蒙美意
-43. It provides simpler and more perspicuous explanations than its rivals.
-44. This theory is too abstruse to be taught in class.
-
-
-## 2017.10.01
+## 2017.10
 
 1. Despite having **steeled (使坚强，使坚定)** herself for the worst, the new **band (乐队)** director was disheartened to hear the **cacophonous (发音不和谐的，粗腔横调的)**/discordant sounds emanating from the freshman **orchestra (管弦乐队)**.
     - He **orchestrated (精心安排)** that entire **evening (晚会)**.
@@ -2915,17 +1886,11 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 9. After a series of storms, the once arid landscape became verdant/bountiful for the first time in many months.
 10. Although he received many visitors, the **misanthropic (厌恶人类的)**/**curmudgeonly (小气的，脾气坏的)** old man **shooed (轰走，驱赶)** them away after only a few minutes.
 11. Eileen used to be a picky eater, but since a new complex of fine dining and ethnic restaurants opened in her neighborhood, she has been quite **epicurean (好美食的，【通过美食】享乐主义的)**/**gourmandizing (gourmandize: n. 大吃大喝 v. 狼吞虎咽)**.
-
-## 2017.10.02
-
 1. The rise of the nascent middle class **catalyzed (催化，促进)** a new **economic boom (经济繁荣，经济腾飞)**.
 2. The **malodor (恶臭，臭气)** of the **rotten (腐烂的)** meat made us **nauseate (作呕，厌恶，产生恶感)**.
 3. As the **nexus (关系，连结，连系)** for three great religions, **Jerusalem (耶路撒冷)** has had a troubled as well as **illustrious (著名的，杰出的，卓越的)** history.
 4. His involvement was **nominal (名义上的，有名无实的)**.
 5. The two girls soon became **fast (紧的，稳固的)** and inseparable friends.
-
-## 2017.10.03
-
 1. Recent discoveries have generally vindicated the physicist's theories.
 2. a novel that presents a fairly veracious and unvarnished picture of the lives of affluent suburbanites.
 3. **Inevitably (必然，必定)**, his remarkable success attracted the invidious attention of the other sales representatives.
@@ -2976,9 +1941,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 48. Under such a circumstance his demand for attention was utterly **presumptuous (自以为是的，专横的，冒失的)**.
 49. We could hear the cook in the kitchen railing against his assistant and wondered if we'd ever get our food.
 50. Vociferous opponents of the bill protested angrily outside the Congress.
-
-## 2017.10.04
-
 1. King Richard I of England was given the very laudatory epithet "the Lion-Hearted".
 2. His personal code of behavior on the playing field is **epitomized (成为...的缩影)** by his favorite saying, Nice guys finish last.
     - consider the sample as an **epitome (缩影)** of the underlying population.
@@ -3085,9 +2047,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 112. **Flagrant (骇人听闻的，公然的)** means **blatant (明目张胆的，公然的)** or **outrageous (骇人的，无法形容的，反常的)**
 113. Dilatory means tardy or tending to delay.
 114. Aloof means standoffish and remote.
-
-## 2017.10.05
-
 1. Terse means abrupt and to the point.
 2. Apathetic means indifferent and unconcerned.
 3. Bombastic means pompous and pretentious.
@@ -3105,17 +2064,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 16. con artist: 行骗高手
 17. He spent the remainder of his life in ignominy after being involved in a **bribery (贿赂，受贿，行贿)** scandal.
 18. stop short of
-
-## 2017.10.07
-
 1. as such: 本身，名副其实地
-
-## 2017.10.09
-
 - magma chamber: 岩浆房，岩浆库
-
-## 2017.10.10
-
 1. **mainstay (支柱，骨干)** industry
 2. caravan
 3. expedition
@@ -3128,11 +2078,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 9. It involves a lot of aspects, among which ideological and political education really counts and is one of the most effective ways as well.
 10. In the research of technology ethic, the relationship between technology and ethic has always been a disputed question.
 11. There is nothing intrinsically improbable about this incident, which is stamped indeed, with all marks of literary truth.
-up
 12. billboard
-
-## 2017.10.11
-
 1. Before that beauty, the years of chaos at the heart of American politics would **recede (逐渐远去，逐渐减弱)** like some **extraordinary (意想不到的，奇怪的)** dream.
 2. Power is still out to many homes and business, and flood waters are just beginning to recede leaving behind massive damage and debris.
 3. And a river went out of Eden to water the garden, and from thence it was parted, and became into four heads.
@@ -3145,19 +2091,11 @@ up
 9. protractor
 10. trace metal
 11. diatom
-
-## 2017.10.13
-
 - a parabola with focus and **directrix (准线)**
 - eccentricity: 离心率；怪癖，古怪行为
 - A condition number of about 10^15, which is very nearly the **reciprocal (倒数)** of double precision roundoff.
-
-## 2017.10.14
-
 1. cardioid: 心脏线
 3. Last but not least 最后但不是最不重要的一点
-
-## 2017.10.15
 1. calligrapher
 2. decorator
 3. Islamic
@@ -3168,9 +2106,6 @@ up
 8. Forming voting **blocs (集团)** and **coalitions (联盟)** as a **prisoner (囚徒)**'s dilemma: a possible theoretical explanation for political instability.
 9. cellulose
 10. take the **pulp (果肉，浆，髓)** and mix it with **jaggery (棕榈糖，粗糖)** and eat
-
-## 2017.10.16
-
 1. But political gridlock should not be conflated with economic reality.
 2. In this sedate garrison town ringed by jagged peaks, the gentle thrum of the day is usually reduced to a whisper by night.
 3. The seed germination percentage had a small increase at the beginning of desiccation and then decreased rapidly.
@@ -3183,13 +2118,7 @@ up
 10. geological, geography
 12. seep, seepage
 13. fad
-
-## 2017.10.17
-
 1. precession
-
-## 2017.10.18
-
 1. The biggest **impediment (障碍，阻碍)** to research progress is not fraud, it is all scientists reading about fraud.
 2. The Red Cross **dispensed (分发)** food and clothing to the flood victims.
 3. Asthma attacks can be triggered by **pollen (花粉)**, dust, **harsh (刺激的，严厉的，残酷的)** chemicals or **scents (气味)**.
@@ -3203,9 +2132,6 @@ up
 11. snap
 12. blowhole
 14. sacs: 囊，上衣
-
-## 2017.10.19
-
 15. spoiled meat
 16. **repercussion (反射，弹回)**
 17. **pepper (辣椒，胡椒)**, **aromatic (香料，芳香植物)**, **bark (咆哮，吠叫)**, **cinnamon (肉桂)**, **ginger (生姜)**, **clove (丁香)**, **maize (玉米)**
@@ -3223,9 +2149,6 @@ up
 28. Participating in community activities is a practical and effective approach for teenagers to enhance their social skills. For example, if a teenager, who is not a sociable person, seizes an opportunity to work in a community as a volunteer for hosting an English conversations group, he is capable of practicing his communication skills by conversing with people of different ages who he might not be acquainted with it. Such an experience enables him to overcome the fear of speaking in front of a group of strangers and master the skills of how to communicate with different kinds of people in an approximate way, both of which contribute to the improvement of his social skills, particularly his communication skills.
 30. Several staff members have checked the manuscript for accuracy and ease of use.
 31. anatomical
-
-## 2017.10.20
-
 1. Together they create a picture that hints towards **cubism (立体主义)**.
 2. be coordinated with, to harmonize with
 3. What is called **resignation (顺从，听从)** is confirmed desperation. 所谓听天由命，正是肯定的绝望。
@@ -3276,26 +2199,10 @@ up
 50. reclaim
 51. silt
 52. land **reclamation (开垦，回收，再生)** and sustainable development
-
-## 2017.10.21
-
 1. supplement
-
-## 2017.10.25
-
-Nothing. Watching The Greatest Challenge.
-
-## 2017.10.26
-
 1. spade
 2. deck
-
-## 2017.10.27
-
 1. [nilpotent](https://en.wikipedia.org/wiki/Nilpotent) matrix: 幂零矩阵
-
-## 2017.10.31
-
 1. caffeine (咖啡因)
 2. **sip (小口喝)** **nectar (花蜜，甘露，任何美味的饮料)**
 3. bumblebee: 大黄蜂，雄蜂
@@ -3329,171 +2236,77 @@ Nothing. Watching The Greatest Challenge.
 36. conspecifics
 37. archaeological
 
-## 2017.11.2
+## 2017.09
 
-1. motif
-2. the moss-**draped (披，装饰)** **bald (秃顶的，秃头的)** **cypress (柏树)** trees: 长满青苔的秃柏树
-3. monopoly
-4. monolithic
-5. miniature
-6. metropolis
-8. metallurgy
+1. She's tried every **knack (诀窍，本领)** in **Cupid (【罗马神话中的爱神】丘比特)**'s book to get her guy to marry her.
+2. The team's limp performance has many people calling for the head coach's **resignation (辞职)**.
+3. the limpid outlook of a man who is at peace with himself as he awaits death.
+4. the lush fields were the envy of neighboring farmers.
+5. the lush sounds of the orchestra
+6. **vagabonds (流浪者，游手好闲者)** **meandering (漫步，蜿蜒缓慢流动)** through life
+7. Reading will **fertilize (使丰饶，使受精)** vocabulary.
+8. A blind patriotic fervor is called chauvinism.
+1. a convoluted thriller, the plot of which I was never able to actually decipher.
+2. a complex literary text difficult for many people to decode.
+- anything but (=not at all, by no means, never)除...以外任何事；根本不，绝不决不，根本不
+    - Dick seldom talks of anything but music.
+    - **Conceited (自负的，骄傲自满的)** people never hear anything but praise. (凡是爱慕虚荣的人听得进赞美的话)
+    - The bridge is anything but safe.(那座桥根本不安全)
+    - His behavior is anything but satisfactory. (他的行为根本不能令人满意)
+    - But those captured were anything but terrorists. (但那些被逮捕的人根本不是恐怖分子)
+    - He didn't speak anything but Greek. (他只会说希腊语)
+    - He's anything but an **abject (卑鄙的，卑劣的)** coward. (他决不是可鄙的懦夫)
+        - cowardice: 懦弱，胆怯
+    - Do you ever do anything but **yack (废话)**? (你除了叨叨还会干啥？)
+    - I will eat anything but carrot. (我什么都吃，就是不吃胡萝卜)
+    - She is anything but a beauty. (她一点也不漂亮。)
+- nothing but (=only)只不过，除了...以外什么也没有
+- all but (=almost, nearly)几乎，差一点
+- none but(=no one except)只有，除...外谁不
+1. Numerous historical examples illustrate both the overriding influence that scientists' prejudices have on their interpretation of data and the consequent impairment of their intellectual objectivity.
+2. Jone was unable to recognize the contradictions in his attitudes that were obvious to everyone else; even the hint of an untruth was repugnant to him, but he courted serious trouble by always cheating on his taxes.
+1. She responded with such asperity that we knew she was offended by the question.
+2. He has encountered more than his share of asperities on the road to success.
+3. Envy can make oneself backward; self-confidence can tell oneself to be aspirant.
+4. He says face veils like the niqab (尼卡布，一些穆斯林妇女在公共场合戴的面纱，通常露出眼睛) are not a religious requirement.
+5. To reduce fraud, an opaque network of government bank accounts has been replaced by a centralized system.
+6. as if he could **pierce (穿透，刺破)** those **sheets (薄板；床单；纸张)** of water so opaque to our eyes and scan the deepest seas.
+7. Mr Zingales has written an elegy to the America he found when he moved there 24 years ago from an Italy that was rife with nepotism (裙带关系).
+8. We keep records on every single hive, and that compendium of records goes back quite a long time.
+9. Jeremiad wreathes upon my feeling, while shadow of shiver covers my mind.
+10. He made speech of **panegyric (颂词，赞辞)**.
+11. In an hour-long philippic, the legislator denounced the lobbyists opposing his bill.
+12. Their profligate lifestyle resulted in bankruptcy.
+13. Improvident behavior is likely to **imprint (印记)** indelible marks on a person's life and personality.
+14. In times of economic **woe (悲哀，痛苦)**, when normal patterns of consumption and investment are frozen, prodigal government speeding can sometimes be the only way to break the **vicious circle (恶性循环)** of declining demand and shrinking employment.
+15. Jaw line contoured by the bristling red hair of the fighter, watchful, pugnacious.
+16. Things have come full circle since **penurious (贫穷的，穷困的，赤贫的)** sailors from the Far East first arrived two centuries ago.
+17. In May, to no one's surprise. he declared the city insolvent.
+18. I cannot feel it will make for a very **restful (闲适宁静的，使人感到悠闲的)** retirement, can you?
+19. True to form (一如既往，像往常一样), Walter started asking him about his own retirement.
+20. These were very remarkable, but as eccentric as all his other accomplishments.
+21. She had known from the start that her philosophy teacher was eccentric.
+22. If true, that suggests a **syllogism**: that the love of time is a root of evil, too.
+23. Spencer's idiosyncratic drawing of a large fairy on a tiny water-lily leaf captures an imagination that strained against conventional rules of composition from the start.
+24. a fact that helps explain how it manages to be both profligate and stingy, and is forever in the red.
+25. The concert was rather an amateurish affair.
+26. Only when we deal with these problems successfully can we benefit the most from university **amalgamation (合并，混合)**.
+27. It is not just about the president. It's a whole **amalgam (混合物)** of stuff, the scandals surrounding the president or people close to the president certainly, but also there are investigations of corruption in some of **conglomerates (联合大企业，企业集团)** for example.
+28. the **synergy (协同)** between artist and record company.
+29. just as you may need a **tonic (补药)** when you have been ill.
+30. Throughout her book Ms Ahuja seems to be in a **trance (恍惚，出神，着迷)** herself, in **thrall (受...控制，深受...影响)** to the **glamour (魅力，魔力)** of her subjects.
+31. The **Palestinians (巴基斯坦人)** demanding a state are weak, divided and **quiescent (沉寂的，静止的))**; **morose (孤僻的，郁闷的)** as they are, few favour a return to suicide-bombing.
+32. And the campaign really got rancorous when Goldsmith tried to link Khan and extremists.
+33. Such counter-currents will prevent Kentish Town from gentrifying fully, suggests Gillian Tindall, a local historian.
+34. Interpreters are also skilled at keeping aplomb in the face of chaos.
+36. Right, and that suggests the qualities that are most germane to the job.
+37. The fortress by King Philip Augustus was situated on the right bank of the Seine, overlooking-- at that time-- splendid bucolic scenery.
+38. But overall, Mr Agar has abstracted and made manageable a range of rich and informed analysis.
+39. He also emphasized what he called the main thing: "a human-typable keyboard instead of a stupid, cryptic front panel with a bunch of lights and switches."
+40. In a few recalcitrant places, captial punishment is holding steady or picking up.
+41. The visitor also sees other evolving friendships and aesthetic kinships taking place.
+42. **Manifest (表明，显示)** an **obliging (乐于助人的)** **disposition (气质，天性，性格)**, and they **can not but (不得不，[:link:](https://ell.stackexchange.com/questions/151081/what-does-cant-but-in-this-sentence-means))** regard you with **affection (感情，喜爱)**.
+    - much obliged: 承蒙美意
+43. It provides simpler and more perspicuous explanations than its rivals.
+44. This theory is too abstruse to be taught in class.
 
-## 2017.11.3
-
-1. till
-2. dweller
-3. wriggle
-4. manure
-
-## 2017.11.14
-
-1. molten
-2. **mantle (地幔)**
-3. rest on
-4. conceivably
-5. A feeling of **drowsiness (drowsy, 昏昏欲睡的)** **crept (creep 的过去式，匍匐爬行)** over him.
-6. **Atlantic (大西洋)**， **Pacific (太平洋)**， **Arctic (北极的，北极圈)** Ocean (北冰洋), Indian Ocean (印度洋)， Antarctica: 南极洲
-7. Kids **blink (眨眼)** about 5 million times a year.
-9. **Pangaea (盘古大陆，泛大陆)** Ultima: 终极盘古大陆
-10. Clothes will not make us more or less clever, better or worse, more or less honest.
-11. A lot of **subduction zone ([俯冲带](https://baike.baidu.com/item/%E4%BF%AF%E5%86%B2%E5%B8%A6/2663490))** earthquakes are 200 miles deep, and there's a lot of padding between the shaking part and the earth surface where we live.
-12. slab
-
-## 2017.11.15
-
-1. rampage
-2. rally
-3. degradation
-4. dozens of: 许多
-6. tap into
-7. LEDs use only a quarter the energy of **incandescent bulbs (白炽灯)**.
-8. fluorescent
-9. **pebble (鹅卵石)**
-10. Hydrogen (氢，氢气), Helium (氦，氦气)
-11. faint: 昏厥，昏眩；模糊的
-12. **foundationalism (基础主义，基础论)**
-13.  John Locke, René Descartes.
-14. slate
-15. mirage
-16. shimmer
-17. conceive
-18. or so
-19. conceivably
-20. as to that
-21. red dwarf star
-22. bode
-23. prism
-24. spectrum
-25. He rejected an objective understanding of color, in favor of a more subjective understanding.
-26. through and through
-27. marvel
-28. optics, chromatics
-29. that sort of thing
-30. The **insulting (出言不逊的，侮辱的，无礼的)** remarks **stung (sting, 促使，刺激)** him to a **rage (愤怒)**.
-31. backbone
-32. **overthrow (推翻，打倒)** the government
-33. mount
-35. canvas
-36. pull (someone or something) out of a hat: To select someone or something entirely at random.
-37. Zurich: 苏黎世
-38. chanting, bang
-39. Cabaret Voltaire
-40. at the eleventh hour
-41. **marble (n/adj/v 大理石)** **statue (雕像)**
-42. polychrome
-43. disintegrated
-44. heroism, divinity
-46. armor, cloak
-
-## 2017.11.16
-
-1. It really gets them **enamored (迷恋，爱上)** with riding and get to make something part of their daily lives.
-2. The **venue** is the school.
-3. He had three forty-**fathom (英寻，等于 6 英尺，约合1.8288米)** **coils** of line in reserve now, as well as the coil he was using.
-4. The **vibe** in the office is amazing.
-5. choreography
-6. Renaissance, the 16th, 17th centuries.
-7. artisan, artist
-8. Raphael, frescos
-9. apprentices
-10. quarry: 采石场；苦心寻找
-11. to and fro
-12. carpenter, mason
-13. portraiture, portrait artist
-14. crucial
-15. make **headway (进展，前进)**
-16. contemplative
-17. vague
-19. close-up: 影视特写；详细检查；详图
-20. petal
-21. **juxtapose (并列)** these two perspectives, each of which connect statistical graphics to literature, but in a different way.
-22. archaeology
-23. oversee
-24. pharaoh Khufu, Great Pyramid
-25. sturdy: 结实的，坚固的
-26. Herodotus
-27. ramp
-28. Plateau
-29. spiral
-
-## 2017.11.17
-
-1. Chimpanzees, **primates (灵长类)**, chimps, gorillas, orangutans
-2. bottlenose
-3. What **sarcastic (讽刺的，挖苦的)** answer can I give her without **aggressive (好斗的，挑衅的，有进取心的)**?
-4. trunk
-5. stand alone, hierarchy
-6. corvid, corvidae, raven, jay, crow, magpie
-8. The eruption of a volcano is **spontaneous (自发的)**.
-10. It is important because it sets animals with a sense of self apart from those without a sense of self.
-11. **empathy (同情，共鸣)**
-12. afoot
-13. plating
-14. seigniorage: 铸币税；君权
-15. nostalgia
-17. alloying
-18. brass, trumpet, trombone
-19. rust, patina
-20. halt
-21. Another 30 people died in the **hull (船体，船身)** where they are believed to have **suffocated (呼吸困难，窒息而死)**.
-22. barnacle（藤壶【小甲壳动物，附着于水下岩石或船底等】）, shellfish（贝类动物，甲壳类动物）
-23. Long-term solutions include conservation, recycling waste water and building **desalination (海水淡化、脱盐)** centers.
-24. a **pinch** of [salt]：一撮，少许
-
-## 2017.11.22
-
-- **Nirvana (涅槃【超脱一切烦恼的境界】)** in Fire: 琅琊榜
-
-## 2017.11.25
-
-- the disguiser: 伪装者
-- empresses in the palace：甄嬛传
-
-## 2017.11.26
-
-- the glory of Tang dynasty: 大唐荣耀
-
-## 2017.11.29
-
-- **Beijing Municipality (北京市【自治市；自治区；自治市或区的政府当局】)**
-
-## 2017.12.18
-
-1. The model can be used to match any subsequent image, or part **thereof (在其中)**.
-    - It **plumbs (探测，探索，examine thoroughly and in great depth)** the depths of its **protagonist (主人公)**'s **indecisiveness (优柔寡断)**, and the **tragic (悲痛的，悲剧的)** consequences **thereof (由此)**.
-2. I don't think I have **finesse (n. subtly skillful handling of  a situation)** for the job. I'm like a round **peg (桩)** in a square hole.
-3. The university encourages applications from academically strong students **irrespective (不考虑的，不顾的)** of their nationality.
-
-## 2017.12.27
-
-1. Maybe some coffee will **perk you up (活跃起来，振作精神)**.
-2. They found that papers with **terse[r] (简洁的，扼要的)** titles top the citation count.
-
-## 2017.12.28
-
-1. state of the art: the latest and most **sophisticated (精密的，尖端的；老练的，见多识广的；复杂的)** or advanced stage of a technology, art, or science.
-    - complex: 侧重内在关系的复杂，需通过仔细研究与了解才能掌握和运用
-    - complicated: 近似 complex，但语气更强，着重极其复杂，很难分析、分辨或解释
-    - sophisticated: 侧重事物发展或达到高级的程度所体现出的复杂
-    - intricate: 着重指错综复杂，令人迷糊理解。intricacy: 错综复杂
