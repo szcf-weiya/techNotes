@@ -2,6 +2,8 @@
 
 - Primary Biliary Cirrhosis: 原发性胆汁性胆管炎
 - prothrobin: 凝血酶原
+- olfactory bulb: 嗅球，嗅觉中心
+- dendrogram: 树形图
 
 ## 2022.09
 
@@ -1074,12 +1076,8 @@
 
 ## 2020.07
 
-### Andrew @ 20200723
-
 - Malthusian (马尔萨斯的，马尔萨斯人口论的) catastrophe
 - Fertility was procyclical but declined and delayed with long-run growth.
-
-### Brené Brown·TEDxHouston： The power of vulnerability
 
 - little flyer
 - magic **pixie (小精灵)**
@@ -1130,12 +1128,8 @@
 - be **fierce (凶猛的，凶狠的，狂热的)** about
 - stop screaming and start listening
 
-### Thomas Suarez·TEDxManhattanBeach: A 12-year-old app developer
-
 - fortune teller
 - a Justin Bieber whack-a-mole
-
-### Robert Waldinger·TEDxBeaconStreet: What makes a good life? Lessons from the longest study on happiness
 
 - millennial
 - lean in to work
@@ -1158,8 +1152,6 @@
 - livening up a stale relationship
 - those all-too-common family feuds take a terrible **toll (毁坏；通行费；伤亡人数)** on the people who hold the **grudges (怨恨，积怨)**
 
-### Meg Jay·TED2013: Why 30 is not the new 20 (Cont'd)
-
 - Identity capital **begets (引发，导致)** identity capital.
 - make it count: to make sth have as useful and positive an effect as possible, [make something count](https://www.macmillandictionary.com/dictionary/british/make-something-count)
 - procrastination
@@ -1170,8 +1162,6 @@
 - being as intentional with love as you are with work
 - consciously choosing, mindfully choose
 - airplanes just leaving LAX, bound for somewhere west. Right after takeoff, a slight change in course is the difference between landing in Alaska or Fiji.
-
-### Meg Jay·TED2013: Why 30 is not the new 20
 
 - psychotherapy client
 - wearing jeans and a big slouchy top
@@ -1191,8 +1181,6 @@
 - she was nearly hysterical
 - if I get in a car **wreck (毁坏，毁灭)**
 - Emma's defining decade went **parading by (炫耀)**.
-
-### Simon Sinek·TEDxPuget Sound: How great leaders inspire action
 
 - defy all of the assumptions
 - all I did was **codify (v. organize into a code or system, such as a body of law)** it. [reference: "did was + v." structure](https://ell.stackexchange.com/questions/18326/explanation-of-did-was-verb-structure)
@@ -1216,8 +1204,6 @@
 - Those steps can in turn increase economic **dislocations (混乱，位移)**, including **plummeting (暴跌)** stock prices.
 - rewind live TV
 - a great orator
-
-### Cameron Russell·TEDxMidAtlantic: Looks aren't everything. Believe me, I'm a model.
 
 - there's an uncomfortable tension in the room.
 - if some of the women were really **horrified (震惊的，惊骇的)**
@@ -1245,8 +1231,6 @@
 - It was difficult to unpack a legacy of gender and racial oppression when I am one of the biggest beneficiaries.
 - If there's a takeaway to this talk,
 
-### Celeste Headlee·TEDxCreativeCoast: 10 ways to have a better conversation
-
 - **unfriend (解除好友关系)** someone on Facebook
 - Henry Higgins in "My Fair Lady"
 - anti-vaxxing: shorted version of [anti-vaccination](https://en.wikipedia.org/wiki/Vaccine_hesitancy)
@@ -1272,8 +1256,6 @@
 - She was the **runner-up** to Miss America.
 - He was the mayor of Sacramento.
 - She won a Pulitzer Prize.
-
-### Shawn Achor·TEDxBloomington: The happy secret to better work
 
 - so we were up on top of our **bunk beds (双层床)**
 - I had put out all of my **G.I. Joe** soldiers and **weaponry (武器，兵器)**.
@@ -1302,8 +1284,6 @@
 - we find that meditation allows your brain to get over the cultural ADHD that we've creating by trying to do multiple tasks at once and allows our brains to focus on the task at hand.
 - random acts of kindness are **conscious (有意识的，神智清醒的)** acts of kindness.
 - we've pushed happiness over the cognitive horizon.
-
-### Grady Booch·TED@IBM: Don't fear superintelligent AI
 
 - I was the **quintessential nerd**
 - I grew up in a small town in the dusty plains of north Texas, the son of a **sheriff** who was the son of a **pastor**
@@ -1680,7 +1660,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 5. recurrent
 1. lethal
 2. incidence
-3. extant
+3. extant: 尚存的，现存的
 4. pertain
 5. substrate
 1. kinetic
@@ -2196,7 +2176,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 47. stake
 48. sequestered
 49. recreation: 娱乐，消遣
-50. reclaim
+50. reclaim: 开垦，改造
 51. silt
 52. land **reclamation (开垦，回收，再生)** and sustainable development
 1. supplement
@@ -2241,8 +2221,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. She's tried every **knack (诀窍，本领)** in **Cupid (【罗马神话中的爱神】丘比特)**'s book to get her guy to marry her.
 2. The team's limp performance has many people calling for the head coach's **resignation (辞职)**.
 3. the limpid outlook of a man who is at peace with himself as he awaits death.
-4. the lush fields were the envy of neighboring farmers.
-5. the lush sounds of the orchestra
+4. the **lush (茂盛的，草木繁茂的)** fields were the envy of neighboring farmers.
 6. **vagabonds (流浪者，游手好闲者)** **meandering (漫步，蜿蜒缓慢流动)** through life
 7. Reading will **fertilize (使丰饶，使受精)** vocabulary.
 8. A blind patriotic fervor is called chauvinism.

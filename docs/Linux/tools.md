@@ -184,11 +184,16 @@ refer to [View tabular file such as CSV from command line](https://stackoverflow
 在连接显示器状态下，全屏截图时有一个屏幕是多余的，可以批量裁剪
 
 ```bash
+# 截右屏
 $ ls -1 | xargs -I {} convert {} -crop 1920x1200+1920+0 crop_{}
+# 截左屏
+$ ls -1 | xargs -I {} convert {} -crop 1920x1200+0+0 crop_{}
 ```
 
 其中 `-crop` 参数格式为 `width`x`height`+`left`+`top`.
 
+!!! tip
+	`Ctrl+Alt+PrtSc` 可以只截鼠标所在屏幕。
 
 ### 图片拼接
 
