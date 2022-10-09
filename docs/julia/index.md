@@ -704,7 +704,7 @@ since the first one does not have `return`, but `g()` has `return` and the addit
 ## Pkg
 
 - [Pkg + BinaryBuilder](https://julialang.org/blog/2019/11/artifacts/#binarybuilderjl): binary objects that are not Julia packages
-
+- [`dev` + `test`]: test project instead of `include` scripts. Specifically, open a Julia session **without** `--project` option in the project folder, and then switch into the Pkg environment, type `dev .` & `test YourProjectName`. See [more attempts](https://github.com/szcf-weiya/Clouds/issues/97#issuecomment-1256742348).
 
 ## PyCall
 

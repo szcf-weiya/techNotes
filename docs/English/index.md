@@ -4,6 +4,9 @@
 - prothrobin: 凝血酶原
 - olfactory bulb: 嗅球，嗅觉中心
 - dendrogram: 树形图
+- **Peabody (乔治·皮博迪，美国企业家和慈善家)** Museum
+- GNNs **subsume (将……纳入)** CNNs and Transformers
+- **scrutinize (仔细查看，认真检查)** loss function!
 
 ## 2022.09
 
@@ -31,7 +34,7 @@
 
 - **sexual assault (性侵犯)** is any kind of nonconsensual contact, including rape, **groping (用手摸索)**, or any other form of nonconsensual sexual touching.
 - sexual harassment: 性骚扰
-- Stalking is repeated or obsessive unwanted attention directed toward an individual or group that is likely to cause alarm, fear, or substantial emotional distress.
+- **Stalking (跟踪罪)** is repeated or obsessive unwanted attention directed toward an individual or group that is likely to cause alarm, fear, or substantial emotional distress.
 - **hostile (敌意的，敌对的，不友好的)** work environment
 - subordinate: 下级，部属
 - abusive: 辱骂的，恶语的，毁谤的
@@ -1087,8 +1090,8 @@
 - he was just sweet-talking me.
 - put it into a **bento (盒饭，各式便当)** box
 - **lean (倾斜，倚靠)** into the discomfort of the work
-- that was my mantra
-- lay the code out for everyone to see
+- that was my **mantra (咒语，真言)**
+- lay something out: to detail or explain something explicitly, see also [:link:](https://idioms.thefreedictionary.com/lay+something+out)
 - it is neurobiologically that's how we're wired.
 - most **excruciating (极为疼痛的)** experiences of being excluded.
 - unraveled connection
@@ -1102,7 +1105,7 @@
 - separate courage and bravery
 - courage is from the Latin word "cor", meaning "heart"
 - had the compassion to be kind to themselves first
-- as a result of authenticity
+- as a result of **authenticity (真实性)**
 - the willingness to breathe through waiting for the doctor to call after your mammogram.
 - it was **betrayal (背叛)**
 - I had pledged allegiance to research.
@@ -1114,7 +1117,7 @@
 - initiating sex with my wife
 - being turned down
 - getting laid off
-- banana nut muffin
+- banana nut **muffin (杯状小松糕)**
 - a way to discharge pain and discomfort
 - take fat from out butts and put it in our cheeks
 - They're hardwired for struggle. You're wired for struggle.
@@ -1397,7 +1400,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. Acknowledging this uncertainty could help reduce the **allure** of selective reporting
 3. That paper is part of a much large literature in economics on Persistence or “Deep Origins” that shows how **medieval pogroms** **prefigure** Nazi support, adoption of the **plough** determines women’s rights etc.
 4. The impact of history on the present appears **indisputable** but is, as the extreme Moran statistic for spatial autocorrelation indicates, **spurious**.
-5. a battery of questions
+5. a battery of questions: 一连串的质问
 6. a bunch of data
 7. My father was a scratch golfer in his **heyday (全盛期)** on local public courses, but he said he’d never be able to sink a single **putt (击球入洞)** if the greens were maintained the way they were for PGA **tournaments (锦标赛，联赛)**.
 8. he was **obsessive （着迷，痴迷）** about his short game—his own career was ended by knee and **rotator cuff** surgery—**hockey (冰球，曲棍球)** wasn’t good to his body, either, despite playing in a “non-contact” **league** as an adult.
@@ -1608,7 +1611,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. facilitate
 1. consecutive
 2. passage
-3. leucocyte
+3. leucocyte: 白细胞
 4. intricate
 5. delicate
 6. illusory
@@ -1642,7 +1645,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. counter-example
 4. premiss: premise, [:link:](https://english.stackexchange.com/questions/145322/difference-between-premiss-and-premise)
 6. enunciate: 清楚地发音；阐明
-7. remuneration
+7. remuneration: 报酬，薪金，薪水
 8. supposition
 9. The representation of documents is a central issue in all of the approaches in document management, whether the management **entails (需要，牵涉)** exploration, search, or filtering.
 1. monograph
@@ -1753,8 +1756,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 10. Clothes will not make us more or less clever, better or worse, more or less honest.
 11. A lot of **subduction zone ([俯冲带](https://baike.baidu.com/item/%E4%BF%AF%E5%86%B2%E5%B8%A6/2663490))** earthquakes are 200 miles deep, and there's a lot of padding between the shaking part and the earth surface where we live.
 12. slab
-1. rampage
-2. rally
+1. rampage: v. 横冲直撞；n. 狂暴行为
+2. rally: v. 召集，集合；n. 群众大会
 3. degradation
 4. dozens of: 许多
 6. tap into
@@ -1804,7 +1807,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. Renaissance, the 16th, 17th centuries.
 7. artisan, artist
 8. Raphael, frescos
-9. apprentices
+9. apprentices: 学徒，徒弟
 10. quarry: 采石场；苦心寻找
 11. to and fro
 12. carpenter, mason
@@ -1820,8 +1823,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 23. oversee
 24. pharaoh Khufu, Great Pyramid
 25. sturdy: 结实的，坚固的
-26. Herodotus
-27. ramp
+26. Herodotus: 希腊历史学家希罗多德
 28. Plateau
 29. spiral
 1. Chimpanzees, **primates (灵长类)**, chimps, gorillas, orangutans
