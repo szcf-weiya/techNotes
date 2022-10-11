@@ -7,6 +7,7 @@
 - **Peabody (乔治·皮博迪，美国企业家和慈善家)** Museum
 - GNNs **subsume (将……纳入)** CNNs and Transformers
 - **scrutinize (仔细查看，认真检查)** loss function!
+- **next week** vs **the next (following) week**: [:link:](https://www.usingenglish.com/forum/threads/next-week-the-next-week-the-following-week.90284)
 
 ## 2022.09
 
