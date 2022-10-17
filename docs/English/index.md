@@ -9,6 +9,10 @@
 - **scrutinize (仔细查看，认真检查)** loss function!
 - **next week** vs **the next (following) week**: [:link:](https://www.usingenglish.com/forum/threads/next-week-the-next-week-the-following-week.90284)
 - evacuate: 撤离，排空
+- a **unitary (集中的，中央集权的)** government where no power was devolved to states or provinces.
+- Procter & Gamble (P & G): [宝洁](https://zh.wikipedia.org/wiki/%E5%AE%9D%E6%B4%81)
+- mass spectrometry: 质谱分析法
+- Mass incarceration is shorthand for the fact that the U.S. incarcerates more people than any nation in the world, including China.
 
 ## 2022.09
 
@@ -169,7 +173,7 @@
 - Suffering is a perfectly natural part of getting a neural network to work well, but it can be **mitigated (使缓和，使减轻)** by being thorough, defensive, **paranoid (妄想狂，偏执狂)**, and **obsessed (着迷的)** with visualizations of basically every possible thing.
 - The coefficients of x^3 is positive, so indeed the function has to **blow up (放大，爆炸)** to infinity once $x$ is big enough.
 - Every mammal on this plant **instinctively (本能地)** develops a natural equilibrium with the surrounding environment.
-- admiral
+- admiral: 海军上将
 
 ## 2021.12
 
@@ -394,6 +398,7 @@
 - We see that **salutations (称呼，称谓)** such as "miss", "lady", "sir" and "**colonel (上校)**" form common centers of nodes, which are often followed by names.
 - We conclude with a few **polishing (improve or perfect by pruning or polishing)** operations to make a better looking graph.
 - The package comes with a corpus of presidential **inauguration (就职典礼)** speeches.
+- inaugural: 就职演说；就职的，开幕的
 - Suppose a vandal has broken into your study and torn apart four of your books.
 - One basic problem of information retrieval **culminates (【以某种结果】告终)** in the realization that the same idea or concept can be presented in many different ways.
 - Natural language gives freedom for enormous variation in expression, from choosing between synonyms to using different styles, emphasis, different levels of abstraction, and [anaphoric](https://en.wikipedia.org/wiki/Anaphora_(linguistics)) and **metaphoric (隐喻)** expressions.
@@ -613,7 +618,7 @@
 - Music is an **aurally (听觉上)** **perceived (察觉，感知)** phenomenon.
 - He's been arrested on suspension of **intoxication (陶醉，酩酊大醉)** manslaughter **(过失杀人)**.
     - alcohol intoxication: 酒精中毒
-- Yet as soon as the UN Security Council issued new sanctions against the **regime (政体)** as a result of the rocket launch, the response was **apoplectic (大怒的，十分生气的)**, warning of more tests and threatening to attack America.
+- Yet as soon as the UN Security **Council (政务委员会)** issued new sanctions against the **regime (政体)** as a result of the rocket launch, the response was **apoplectic (大怒的，十分生气的)**, warning of more tests and threatening to attack America.
     - apoplectic patients: 中风患者
 - His **attorney (代理人，律师)** says he'll appeal the conviction.
     - attorney general: 司法部长，首席检察官
@@ -811,7 +816,7 @@
 - the mud was up to her chin: 泥巴已经没到了她的下巴。
 - There are a number of **bells and whistles (附加的修饰物)** that make autoencoders more effective.
 - They **quarreled (争吵)** last week but now they are completely **reconciled (和解)**.
-- racial disparity in **mortgage lending (抵押贷款)**
+- racial **disparity (差异)** in **mortgage lending (抵押贷款)**
 - the praise is a bit **over the top**
     - brimming with wit and **pathos (悲伤，痛苦)**
     - the enormous **debut (初次登台，处女秀)** is a **wonder (奇迹，惊奇)**
@@ -917,7 +922,6 @@
 - It came in as a sort of brief **interlude** and solo between more extensive performances.
 - It's not a **[Jenga](https://en.wikipedia.org/wiki/Jenga) (叠叠乐)**, but neither is it a [WW2 jeep](https://en.wikipedia.org/wiki/Willys_MB).
 - this model really needs a lot more **scaffolding** for us to fully trust it.
-- **Fractal** Nature of Scientific Revolutions.
 - The **interim (临时的，中间的)** Stan governing body **stepped down** and were replaced with a new board elected by the developer community.
 - a **feud (不和，争执)** that was made worse by a lack of sharing code.
 - **condensed matter (凝聚态)** theory
@@ -933,7 +937,7 @@
 - the 40% rule is a time-tried **tactic (策略，战术)** employed by **pundits (某一学科的权威，专家)** making forecasts.
 - There we mention that the birthday data come from the National **Vital (极重要的，必不可少的)** Statistics **natality (出生率，生产率)** data.
 - I came across this interview of [John Conway](https://www.zhihu.com/question/387110069) and [Siobhan Roberts](https://en.wikipedia.org/wiki/Siobhan_Roberts), Conway's biographer.
-- I felt that there was a strong sense of competitiveness and **ego** in the maths world.
+- a strong sense of competitiveness and **ego (自我价值感)** in the maths world.
 - Did you get a sense of a lot of people trying to **outdo (胜过，优于)** each other in the field?
 - there are occasional examples of it coming to the fore more **prominently**.
 - there were characters I encountered, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) for one, for whom I think there was a bit of an unacknowledged competitive tension with John.
@@ -960,7 +964,7 @@
 - I was looking at this map of coronavirus cases, **pondering (深思，仔细考虑)** the large **swaths (条带)** with seemingly no cases.
 - Or, even worse, designing a study, not finding the anticipated main effect, and then using the interactions to **bail you out**.
 - I'm pretty sure the idea has been reinvented a **zillion** other times before and after I did it.
-- Any sufficiently **crappy** research is indistinguishable from fraud.
+- Any sufficiently **crappy (劣质的，蹩脚的)** research is indistinguishable from fraud.
 - the notorious study in which participants were invited to stick 51 pins into a **voodoo doll** representing their **spouses**.
 - it was just done by some **bigshot** professor who calls himself a "**myth buster**".
 - That **voodoo (巫术)** study is **hilarious (十分有趣的，非常滑稽的)**, worth a good **rant (怒吼；叫喊；大声责骂)** or two.
@@ -1110,7 +1114,7 @@
 - as a result of **authenticity (真实性)**
 - the willingness to breathe through waiting for the doctor to call after your mammogram.
 - it was **betrayal (背叛)**
-- I had pledged allegiance to research.
+- I had pledged **allegiance (效忠)** to research.
 - my therapist calls it a spiritual awakening
 - this is going to suck
 - they **surrender (投降，屈服)** and walk into it.
@@ -1239,7 +1243,6 @@
 - **unfriend (解除好友关系)** someone on Facebook
 - Henry Higgins in "My Fair Lady"
 - anti-vaxxing: shorted version of [anti-vaccination](https://en.wikipedia.org/wiki/Vaccine_hesitancy)
-- has the potential to devolve into an argument
 - **Pew Research Center (皮尤研究中心)** is a nonpartisan American **think tank (智库，智囊团)**.
 - we are more polarized than we ever have been in history
 - **plumber**: 水管工人
@@ -1356,7 +1359,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. The knockoff filter can be seen as a **versatile (多用途的，多功能的)** wrapper.
 1. Traditionally, mpMRI examinations were used to manually **delineate (勾画，描述)** the cancerous regions within the prostate.
 2. Such methods tend to depend highly on **radiologists**' and **urologists**' expertise
-1. gastric
+1. gastric: 胃的，胃部的
 
 ## 2019.12
 
@@ -1599,7 +1602,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 ## 2018.08
 
 1. copse: 矮树丛
-2. regimen
+2. regimen: 养生之道，生活规则
 3. flat **terrain (地带，地形)**
 4. aerobics
 5. treadmill
@@ -1624,7 +1627,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. rigorous and **concise (简明的，简练的)**
 4. Prologue
 5. reminiscent
-1. promptitude
+1. promptitude: 敏捷，果断
 1. ergodic
 2. arduous
 3. aperiodic
@@ -1831,7 +1834,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. Chimpanzees, **primates (灵长类)**, chimps, gorillas, orangutans
 2. bottlenose
 3. What **sarcastic (讽刺的，挖苦的)** answer can I give her without **aggressive (好斗的，挑衅的，有进取心的)**?
-4. trunk
+4. trunk: 树干，躯干，后备箱，大旅行箱
 5. stand alone, hierarchy
 6. corvid, corvidae, raven, jay, crow, magpie
 8. The eruption of a volcano is **spontaneous (自发的)**.
@@ -1944,7 +1947,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 17. The kind of ennui comes from having too much time on one's hands and too little will to find something productive to do.
 18. **ensconce (安置，隐藏)** the spare house key in a place where no thief would think to look.
 19. A brief but embarrassing silence ensued.
-20. their clandestine love affair
+20. their **clandestine (暗中从事的，保密的，秘密的)** love **affair (风流韵事)**
 21. covert **alliance (联盟，结盟团体)**
 22. European missionaries converted thousands to Christianity.
 23. evidence that led to the suspect's conviction
@@ -1978,7 +1981,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 50. economy, thriftiness, liberal
 51. **meekness (温柔谦恭)** (**humbleness (谦逊)**; **timidity (胆小，羞怯)**)
 52. **avalanche (雪崩)**
-53. static (inert; motionless)
+53. static (inert (无活动能力的，惰性的); motionless)
 54. Autonomous (self-governing; independent)
 55. Intrinsic (innate; essential)
     - innate immunity: 先天免疫，自然免疫
@@ -2017,7 +2020,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 98. dignity (formal bearing; nobility of character)
 99. insincerity (intentional deceitfulness)
 100. reverence (deep respect; awe)
-101. abiding attachment (devotion) or regard (esteem)
+101. **abiding (持久的，永久的)** attachment (devotion) or regard (esteem)
 102.  **relinquish (【不情愿地】放弃)** (surrender; release)
 103.  Instigate (provoke; incite)
 104.  Waive (refrain from claiming; put aside)
@@ -2051,7 +2054,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. as such: 本身，名副其实地
 - magma chamber: 岩浆房，岩浆库
 1. **mainstay (支柱，骨干)** industry
-2. caravan
+2. caravan: 车队，大篷车
 3. expedition
     - identifying patients with similar disease trajectory might **expedite (加快进展)** the diagnosis and treatment and reduce patient suffering.
 4. merchant
@@ -2177,7 +2180,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 44. envision
 45. detoxify
 46. extract
-47. stake
+47. stake: 股份，赌注
 48. sequestered
 49. recreation: 娱乐，消遣
 50. reclaim: 开垦，改造
@@ -2216,7 +2219,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 32. inoculation
 33. avirulent
 34. that's a philosophical pickle.
-35. coops
+35. coop: 养鸡兔的笼子；把家禽关进笼子
 36. conspecifics
 37. archaeological
 
