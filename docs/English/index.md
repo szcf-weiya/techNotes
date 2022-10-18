@@ -13,6 +13,7 @@
 - Procter & Gamble (P & G): [宝洁](https://zh.wikipedia.org/wiki/%E5%AE%9D%E6%B4%81)
 - mass spectrometry: 质谱分析法
 - Mass incarceration is shorthand for the fact that the U.S. incarcerates more people than any nation in the world, including China.
+- diversification: 多样化
 
 ## 2022.09
 
