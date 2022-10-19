@@ -1086,6 +1086,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#__dir__" class="md-nav__link">
+    @__DIR__
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#relative-path-in-include-vs-read" class="md-nav__link">
     Relative path in include vs read
   </a>
@@ -2954,6 +2961,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#__dir__" class="md-nav__link">
+    @__DIR__
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#relative-path-in-include-vs-read" class="md-nav__link">
     Relative path in include vs read
   </a>
@@ -3776,6 +3790,38 @@ lrwxrwxrwx  <span class="m">1</span> root root      <span class="m">37</span> 3æ
 <p>using <code>OffsetArrays</code> package, refer to</p>
 <p><a href="https://github.com/JuliaArrays/OffsetArrays.jl">Github: OffsetArrays</a></p>
 <h2 id="base">Base<a class="headerlink" href="#base" title="Permanent link">&para;</a></h2>
+<h3 id="__dir__"><code>@__DIR__</code><a class="headerlink" href="#__dir__" title="Permanent link">&para;</a></h3>
+<p>It expands to the folder of the current file, no matter where we call the script. However, with RCall or PyCall, the expansion would be the folder that executes the script. To expand to the folder of the script, we can first assign it to a variable. </p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">RCall</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">PyCall</span><span class="w"></span>
+
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;R: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcopy</span><span class="p">(</span><span class="sa">R</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="nd">@__DIR__</span><span class="p">)</span><span class="s">&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Python&quot;</span><span class="p">,</span><span class="w"> </span><span class="sa">py</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="nd">@__DIR__</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Julia:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nd">@__DIR__</span><span class="p">)</span><span class="w"></span>
+
+<span class="n">println</span><span class="p">()</span><span class="w"></span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Assign @__DIR__ to a variable:&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="n">println</span><span class="p">()</span><span class="w"></span>
+
+<span class="n">current_folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nd">@__DIR__</span><span class="w"></span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;R: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rcopy</span><span class="p">(</span><span class="sa">R</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="n">current_folder</span><span class="p">)</span><span class="s">&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Python&quot;</span><span class="p">,</span><span class="w"> </span><span class="sa">py</span><span class="s">&quot;</span><span class="si">$</span><span class="p">(</span><span class="n">current_folder</span><span class="p">)</span><span class="s">&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Julia:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">current_folder</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>Run the above scripts from <code>~</code>, it outputs</p>
+<div class="highlight"><pre><span></span><code><span class="o">~$</span><span class="w"> </span><span class="n">julia1</span><span class="mf">.8</span><span class="w"> </span><span class="o">~/</span><span class="n">github</span><span class="o">/</span><span class="n">techNotes</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">MWE</span><span class="o">/</span><span class="n">dirpath</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">jl</span><span class="w"> </span>
+<span class="n">R</span><span class="o">:</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">weiya</span><span class="w"></span>
+<span class="n">Python</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">weiya</span><span class="w"></span>
+<span class="n">Julia</span><span class="o">:/</span><span class="n">home</span><span class="o">/</span><span class="n">weiya</span><span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">techNotes</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">MWE</span><span class="o">/</span><span class="n">dirpath</span><span class="w"></span>
+
+<span class="n">Assign</span><span class="w"> </span><span class="nd">@__DIR__</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">variable</span><span class="o">:</span><span class="w"></span>
+
+<span class="n">R</span><span class="o">:</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">weiya</span><span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">techNotes</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">MWE</span><span class="o">/</span><span class="n">dirpath</span><span class="w"></span>
+<span class="n">Python</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">weiya</span><span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">techNotes</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">MWE</span><span class="o">/</span><span class="n">dirpath</span><span class="w"></span>
+<span class="n">Julia</span><span class="o">:/</span><span class="n">home</span><span class="o">/</span><span class="n">weiya</span><span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">techNotes</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">julia</span><span class="o">/</span><span class="n">MWE</span><span class="o">/</span><span class="n">dirpath</span><span class="w"></span>
+</code></pre></div>
 <h3 id="relative-path-in-include-vs-read">Relative path in <code>include</code> vs <code>read</code><a class="headerlink" href="#relative-path-in-include-vs-read" title="Permanent link">&para;</a></h3>
 <p>Suppose we have two files</p>
 <div class="highlight"><pre><span></span><code><span class="c"># file: relpath/a.jl</span><span class="w"></span>
