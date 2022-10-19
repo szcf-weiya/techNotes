@@ -281,6 +281,29 @@ using `OffsetArrays` package, refer to
 
 ## Base
 
+### `@__DIR__`
+
+It expands to the folder of the current file, no matter where we call the script. However, with RCall or PyCall, the expansion would be the folder that executes the script. To expand to the folder of the script, we can first assign it to a variable. 
+
+```julia
+--8<-- "docs/julia/MWE/dirpath/main.jl"
+```
+
+Run the above scripts from `~`, it outputs
+
+```julia
+~$ julia1.8 ~/github/techNotes/docs/julia/MWE/dirpath/main.jl 
+R: /home/weiya
+Python/home/weiya
+Julia:/home/weiya/github/techNotes/docs/julia/MWE/dirpath
+
+Assign @__DIR__ to a variable:
+
+R: /home/weiya/github/techNotes/docs/julia/MWE/dirpath
+Python/home/weiya/github/techNotes/docs/julia/MWE/dirpath
+Julia:/home/weiya/github/techNotes/docs/julia/MWE/dirpath
+```
+
 ### Relative path in `include` vs `read`
 
 Suppose we have two files
