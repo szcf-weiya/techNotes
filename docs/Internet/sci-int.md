@@ -239,6 +239,15 @@ base64 解密得到
 method:password@hostname:port
 ```
 
+!!! tip
+    On Unix command line, the decode and encode can be done as follows,
+    ```bash
+    $ echo -n "method:password@hostname:port" | base64 
+    bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=
+    $ echo -n "bWV0aG9kOnBhc3N3b3JkQGhvc3RuYW1lOnBvcnQ=" | base64 --decode 
+    method:password@hostname:port
+    ```
+
 然后
 
 ```bash
