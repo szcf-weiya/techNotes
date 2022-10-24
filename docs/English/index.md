@@ -1174,7 +1174,7 @@
 - airplanes just leaving LAX, bound for somewhere west. Right after takeoff, a slight change in course is the difference between landing in Alaska or Fiji.
 
 - psychotherapy client
-- wearing jeans and a big slouchy top
+- wearing jeans and a big **slouchy (懒散的，垂肩弓背的)** top
 - **arsonist (纵火犯，放火犯)**
 - Twentysomethings like Alex and I had nothing but time.
 - sleeping with **knucklehead (笨蛋，傻瓜)**
@@ -1286,7 +1286,7 @@
 - **military scholarship**
 - I was an officer to **counsel (建议; n. 律师，法律顾问)** students through the difficult four years.
 - on the competition, the workload, the **hassles**, stresses, complaints.
-- adolescent depression, violence and bullying, illicit drugs, risky sex
+- adolescent depression, violence and **bullying (恐吓，伤害)**, illicit drugs, risky sex
 - dopamine
 - not only create ripples of positivity, but a real **revolution (革命，旋转)**
 - journaling about one positive experience you've had over the past 24 hours allows your brain to relive it.
@@ -1341,7 +1341,7 @@
 8. Wasn't there something strange about the extreme **disparity (不同，不一致)** in public reactions?
 1. a style that is so simple and open and **guileless** that it approaches **parody (拙劣的模仿，荒谬的替代物)**.
     - **The Remains of the Day (长日将尽)** [:link:](https://en.wikipedia.org/wiki/The_Remains_of_the_Day) is clearly **parodic (parody, 戏仿，谐拟)** [:link:](https://zh.wikipedia.org/wiki/%E6%88%B2%E4%BB%BF), or at least a classic of the "unreliable narrator" genre.
-3. I found that some labeled the book as **satire** and others took it straight.
+3. I found that some labeled the book as **satire (讽刺，讥讽)** and others took it straight.
 4. with any parodic elements merely representing Levitt’s recognition of life’s **absurdities**.
 5. brash rather than decorous
 6. the men are viewed through the **prism**
@@ -1582,7 +1582,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. rule of thumb
 7. opt for: 选取，赞成
 8. progeny
-9. haploid
+9. haploid: 单倍体
 - pairs of chains **coalesce (合并，联合)** after a random number of iterations.
 - insidious
 - dismay: n. 惊愕，差异； v. 使诧异
@@ -1610,7 +1610,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. phylogeny
 1. bump up
 1. noob
-1. tangerine
+1. tangerine: 橘，橘黄色，橘红色
 1. consanguineous: 血亲的，血缘的
 2. sibship
 3. autosomal
@@ -1787,7 +1787,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 24. spectrum
 25. He rejected an objective understanding of color, in favor of a more subjective understanding.
 26. through and through
-27. marvel
+27. marvel: 奇迹
 28. optics, chromatics
 29. that sort of thing
 30. The **insulting (出言不逊的，侮辱的，无礼的)** remarks **stung (sting, 促使，刺激)** him to a **rage (愤怒)**.
@@ -2221,7 +2221,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 33. avirulent
 34. that's a philosophical pickle.
 35. coop: 养鸡兔的笼子；把家禽关进笼子
-36. conspecifics
+36. conspecific: 同种的
 37. archaeological
 
 ## 2017.09
@@ -2295,5 +2295,5 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 42. **Manifest (表明，显示)** an **obliging (乐于助人的)** **disposition (气质，天性，性格)**, and they **can not but (不得不，[:link:](https://ell.stackexchange.com/questions/151081/what-does-cant-but-in-this-sentence-means))** regard you with **affection (感情，喜爱)**.
     - much obliged: 承蒙美意
 43. It provides simpler and more perspicuous explanations than its rivals.
-44. This theory is too abstruse to be taught in class.
+44. This theory is too **abstruse (难解的，深奥的)** to be taught in class.
 
