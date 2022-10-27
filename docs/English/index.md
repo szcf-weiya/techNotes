@@ -1173,7 +1173,7 @@
 - consciously choosing, mindfully choose
 - airplanes just leaving LAX, bound for somewhere west. Right after takeoff, a slight change in course is the difference between landing in Alaska or Fiji.
 
-- psychotherapy client
+- **psychotherapy (心理治疗；精神治疗)** client
 - wearing jeans and a big **slouchy (懒散的，垂肩弓背的)** top
 - **arsonist (纵火犯，放火犯)**
 - Twentysomethings like Alex and I had nothing but time.
@@ -1754,7 +1754,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. molten
 2. **mantle (地幔)**
 3. rest on
-4. conceivably
+4. conceivably: 想象上
 5. A feeling of **drowsiness (drowsy, 昏昏欲睡的)** **crept (creep 的过去式，匍匐爬行)** over him.
 6. **Atlantic (大西洋)**， **Pacific (太平洋)**， **Arctic (北极的，北极圈)** Ocean (北冰洋), Indian Ocean (印度洋)， Antarctica: 南极洲
 7. Kids **blink (眨眼)** about 5 million times a year.
@@ -1779,7 +1779,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 16. shimmer
 17. conceive
 18. or so
-19. conceivably
 20. as to that
 21. red dwarf star
 22. bode
@@ -2153,7 +2152,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 11. diffident (缺乏自信的，胆怯的), different, indifferent
 13. pond
 14. boom, flourish
-17. bull, bullet
+17. **bull (公牛，废话，彪形大汉)**, **bullet (子弹，弹丸)**
 18. buoyant, prosperous
 19. by and large
 20. by force of
@@ -2212,7 +2211,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 20. showcase
 21. poll, no-no
 22. wink
-24. vein
+24. vein: 静脉，纹理，风格
 25. agroecology: 农业生态学
 26. **cultivar (栽培种，栽培品种)**
 27. contagion
