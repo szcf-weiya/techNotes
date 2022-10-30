@@ -3155,6 +3155,10 @@ Requirement already satisfied: Pygments <span class="k">in</span> /usr/lib/pytho
 <p>Pygments can be used in Jekyll via Rouge, see <a href="https://lyk6756.github.io/2016/11/22/use_pygments.html">Use Pygments for Code Snippet Highlighting in Jekyll - 李宇琨的博客</a></p>
 <p>With such old version, the formatters like <code>material</code>, <code>github-dark</code> are not supported.</p>
 <p>but the upgrade does not upgrade <code>pygmentize</code>, instead, it install it to <code>/home/weiya/.local/bin/pygmentize</code></p>
+<div class="admonition warning">
+<p class="admonition-title">2022-10-29 21:14:49</p>
+<p>However, upgrading <code>pygments</code> from 2.3.1 to 2.12.0 breaks the code block rendering in ESL-CN, see <a href="https://github.com/szcf-weiya/techNotes/issues/25#issuecomment-1296036929"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>. Locally, there is a conda env named <code>py36ESL</code>, in which <code>pygments</code> is installed via <code>pip</code> instead of <code>conda</code>. The solution is to install <code>pygments</code> via <code>conda install pygments==2.3.1</code> in <code>py36ESL</code> environment.</p>
+</div>
 <h2 id="weasyprint">WeasyPrint<a class="headerlink" href="#weasyprint" title="Permanent link">&para;</a></h2>
 <p><a href="https://weasyprint.org/">https://weasyprint.org/</a></p>
 <ul>
