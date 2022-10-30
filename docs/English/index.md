@@ -14,6 +14,8 @@
 - mass spectrometry: 质谱分析法
 - Mass incarceration is shorthand for the fact that the U.S. incarcerates more people than any nation in the world, including China.
 - diversification: 多样化
+- kidney renal clear cell **carcinoma (癌)**: 肾透明细胞癌
+- A protein isoform, or protein variant, is a member of a set of highly similar proteins that originate from a single gene or gene family and are the result of genetic differences.
 
 ## 2022.09
 
@@ -154,8 +156,8 @@
 
 ## 2022.03
 
-- apropos
-- fiducial
+- apropos: 适当的，恰好
+- fiducial: 基准的，有信仰的
 - **scornful (轻蔑的)** critics
 - preordain: 预先规定，注定
 
@@ -1141,7 +1143,7 @@
 - fortune teller
 - a Justin Bieber whack-a-mole
 
-- millennial
+- millennial: 一千年的
 - lean in to work
 - [hindsight is anything but 20/20](https://grammarist.com/proverb/hindsight-is-20-20-and-20-20-hindsight/).
 - sometimes memory is downright creative.
@@ -1573,7 +1575,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - think of generating random numbers by rolling **dice (骰子)**.
 1. Women, especially beautiful ones, have long understood that there's nothing so **tantalizing (诱人的，引起好奇心的)** as something you can't understand.
 2. Theses species **hailed from (【车、船】来自；【人】出生于)** three different evolutionary **lineages (血统，家系，世系)**.
-1. vanilla
+1. vanilla: 普通的，寻常的，香草味的
 2. haystack
 3. authentic act: 「法」公证书，公证证书
     - authentic self: 本真自我
@@ -1747,7 +1749,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 5. miniature
 6. metropolis
 8. metallurgy
-1. till
+1. till: 耕作，犁地；收银台
 2. dweller
 3. wriggle
 4. manure
@@ -2058,7 +2060,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. expedition
     - identifying patients with similar disease trajectory might **expedite (加快进展)** the diagnosis and treatment and reduce patient suffering.
 4. merchant
-5. guild
+5. guild: 同业公会；（同一行业、志趣或目的的）协会
 6. uphold
 7. The word is now an egalitarian society, but the reality is the existence of such discrimination.
 8. Here it would seem to be a wall hanging, or even a free standing object of worship.
@@ -2099,7 +2101,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. the account has been **dormant (暂停活动的，休眠的)** for a while
 4. **hibernate (冬眠，蛰伏)** for the winter
 5. locomotive, train
-6. meadow, field
+6. **meadow (草地，牧场)**, field
 7. Far from pretty, it **oozes (洋溢着，散发出)** fear and poverty, desperation and **bigotry (偏执)**, but also some form of social link, strongly separated between sexes.
 8. A large amount of lava began **oozing (【浓液体】渗出)** out of the volcano.
 10. geological, geography
@@ -2288,7 +2290,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 36. Right, and that suggests the qualities that are most germane to the job.
 37. The fortress by King Philip Augustus was situated on the right bank of the Seine, overlooking-- at that time-- splendid bucolic scenery.
 38. But overall, Mr Agar has abstracted and made manageable a range of rich and informed analysis.
-39. He also emphasized what he called the main thing: "a human-typable keyboard instead of a stupid, cryptic front panel with a bunch of lights and switches."
+39. He also emphasized what he called the main thing: "a human-typable keyboard instead of a stupid, **cryptic (含义隐晦的，晦涩难懂的)** front panel with a bunch of lights and switches."
 40. In a few recalcitrant places, captial punishment is holding steady or picking up.
 41. The visitor also sees other evolving friendships and aesthetic kinships taking place.
 42. **Manifest (表明，显示)** an **obliging (乐于助人的)** **disposition (气质，天性，性格)**, and they **can not but (不得不，[:link:](https://ell.stackexchange.com/questions/151081/what-does-cant-but-in-this-sentence-means))** regard you with **affection (感情，喜爱)**.
