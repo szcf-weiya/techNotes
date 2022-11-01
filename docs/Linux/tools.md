@@ -325,6 +325,11 @@ cp -t DIRECTORY SOURCE
 
 where `SOURCE` can be multiple files, inspired from [Copying multiple specific files from one folder to another - Ask Ubuntu](https://askubuntu.com/a/816826)
 
+## `curl`
+
+- `-O`: save locally with the same remote name
+
+
 ## `cut`
 
 To select the first field of a file `file.txt`,
