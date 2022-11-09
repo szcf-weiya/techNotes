@@ -1,3 +1,7 @@
+## 2022.11
+
+- monetization: 货币化
+
 ## 2022.10
 
 - Primary Biliary Cirrhosis: 原发性胆汁性胆管炎

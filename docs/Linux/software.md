@@ -1419,6 +1419,42 @@ Some references:
 
 ## WeChat in Linux
 
+### 微信被其它人登录？
+
+!!! info
+    Post: 2022-11-05 22:49:27
+
+刷到这篇[讨论](https://www.zhihu.com/question/564406006/answer/2744703293)，于是跑过去看看自己微信上的登录设备记录，“Settings > Account Security > Login Devices”，然后竟然发现里面有条“Windows 7” 的记录。
+
+![](https://user-images.githubusercontent.com/13688320/200734603-e0d41f2e-742b-4ff3-a75c-41c76aa58d0b.jpg)
+
+但目前只登录了自己的手机 Mix2s，以及第三条的笔记本 T460P。后来发现 T460P 登录的微信因为移动硬盘写入原因无响应，最后只能 kill 掉。此时一个猜测便是这个 Windows 7 的记录很可能是因为机器挂了，在获取机器型号的时候，因为未知原因，只能得到 Win7，而非 T460P.
+
+在图中 win7 的时间戳 "2022-11-04 17:35:26" 搜索系统日志，发现移动硬盘的 IO error 刚好在那个时间点附近，
+
+```bash
+$ journalctl --since "2022-11-04 17:35" --until "2022-11-04 17:36" 
+Nov 04 17:35:23 weiya-ThinkPad-T460p ntfs-3g[2012449]: ntfs_attr_pread_i: ntfs_pread failed: Input/output error
+Nov 04 17:35:23 weiya-ThinkPad-T460p ntfs-3g[2012449]: ntfs_attr_pread error reading '/0WeChat/WeChat Files/wxid_***************/Msg/MicroMsg.db-wal' at offset 974848: 4096 <> -1: Input/output error
+Nov 04 17:35:23 weiya-ThinkPad-T460p kernel: Buffer I/O error on dev sde1, logical block 89552839, async page read
+```
+
+再验证下 wine 里面是不是 Windows 7，首先运行 `winecfg` 跳出来的图形界面就有显示 Windows 7，也可以从配置文件中得到确认。
+
+```bash
+~/.wine32$ cat system.reg | grep -n "Microsoft Windows"
+995:@="Microsoft Windows Installer Message RPC"
+1028:@="Microsoft Windows Installer"
+31532:@="Microsoft Windows Installer"
+31540:@="Microsoft Windows Installer Message RPC"
+39508:"ProductName"="Microsoft Windows 7"
+```
+
+### Wine Wechat
+
+!!! info
+    Post: ~ 2020.05.12
+
 起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！
 
 docker 了解一点，知道如果成功，以后安装卸载会很简单，于是使用 [huan/docker-wechat](https://github.com/huan/docker-wechat) 提供的 docker image，但是后来[输入时文本不可见的问题](https://github.com/huan/docker-wechat/issues/40)很恼人 ，也不知道怎么解决。
