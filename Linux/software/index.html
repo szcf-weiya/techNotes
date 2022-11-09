@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/software/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
     
     
       
@@ -26,7 +26,7 @@
       <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
         
       
       
@@ -70,7 +70,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     
@@ -1281,6 +1281,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    微信被其它人登录？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wine-wechat" class="md-nav__link">
+    Wine Wechat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#reboot-wine" class="md-nav__link">
     reboot wine
   </a>
@@ -1288,7 +1302,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     窗口轮廓阴影
   </a>
   
@@ -3780,6 +3794,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    微信被其它人登录？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wine-wechat" class="md-nav__link">
+    Wine Wechat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#reboot-wine" class="md-nav__link">
     reboot wine
   </a>
@@ -3787,7 +3815,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     窗口轮廓阴影
   </a>
   
@@ -4865,6 +4893,33 @@ Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T46
 <li><a href="https://zhuanlan.zhihu.com/p/351569550">w3m纯文字阅读体验 - 知乎</a></li>
 </ul>
 <h2 id="wechat-in-linux">WeChat in Linux<a class="headerlink" href="#wechat-in-linux" title="Permanent link">&para;</a></h2>
+<h3 id="_9">微信被其它人登录？<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Post: 2022-11-05 22:49:27</p>
+</div>
+<p>刷到这篇<a href="https://www.zhihu.com/question/564406006/answer/2744703293">讨论</a>，于是跑过去看看自己微信上的登录设备记录，“Settings &gt; Account Security &gt; Login Devices”，然后竟然发现里面有条“Windows 7” 的记录。</p>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/200734603-e0d41f2e-742b-4ff3-a75c-41c76aa58d0b.jpg" /></p>
+<p>但目前只登录了自己的手机 Mix2s，以及第三条的笔记本 T460P。后来发现 T460P 登录的微信因为移动硬盘写入原因无响应，最后只能 kill 掉。此时一个猜测便是这个 Windows 7 的记录很可能是因为机器挂了，在获取机器型号的时候，因为未知原因，只能得到 Win7，而非 T460P.</p>
+<p>在图中 win7 的时间戳 &ldquo;2022-11-04 17:35:26&rdquo; 搜索系统日志，发现移动硬盘的 IO error 刚好在那个时间点附近，</p>
+<div class="highlight"><pre><span></span><code>$ journalctl --since <span class="s2">&quot;2022-11-04 17:35&quot;</span> --until <span class="s2">&quot;2022-11-04 17:36&quot;</span> 
+Nov <span class="m">04</span> <span class="m">17</span>:35:23 weiya-ThinkPad-T460p ntfs-3g<span class="o">[</span><span class="m">2012449</span><span class="o">]</span>: ntfs_attr_pread_i: ntfs_pread failed: Input/output error
+Nov <span class="m">04</span> <span class="m">17</span>:35:23 weiya-ThinkPad-T460p ntfs-3g<span class="o">[</span><span class="m">2012449</span><span class="o">]</span>: ntfs_attr_pread error reading <span class="s1">&#39;/0WeChat/WeChat Files/wxid_***************/Msg/MicroMsg.db-wal&#39;</span> at offset <span class="m">974848</span>: <span class="m">4096</span> &lt;&gt; -1: Input/output error
+Nov <span class="m">04</span> <span class="m">17</span>:35:23 weiya-ThinkPad-T460p kernel: Buffer I/O error on dev sde1, logical block <span class="m">89552839</span>, async page <span class="nb">read</span>
+</code></pre></div>
+<p>再验证下 wine 里面是不是 Windows 7，首先运行 <code>winecfg</code> 跳出来的图形界面就有显示 Windows 7，也可以从配置文件中得到确认。</p>
+<div class="highlight"><pre><span></span><code>~/.wine32$ cat system.reg <span class="p">|</span> grep -n <span class="s2">&quot;Microsoft Windows&quot;</span>
+<span class="m">995</span>:@<span class="o">=</span><span class="s2">&quot;Microsoft Windows Installer Message RPC&quot;</span>
+<span class="m">1028</span>:@<span class="o">=</span><span class="s2">&quot;Microsoft Windows Installer&quot;</span>
+<span class="m">31532</span>:@<span class="o">=</span><span class="s2">&quot;Microsoft Windows Installer&quot;</span>
+<span class="m">31540</span>:@<span class="o">=</span><span class="s2">&quot;Microsoft Windows Installer Message RPC&quot;</span>
+<span class="m">39508</span>:<span class="s2">&quot;ProductName&quot;</span><span class="o">=</span><span class="s2">&quot;Microsoft Windows 7&quot;</span>
+</code></pre></div>
+<h3 id="wine-wechat">Wine Wechat<a class="headerlink" href="#wine-wechat" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Post: ~ 2020.05.12</p>
+</div>
 <p>起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！</p>
 <p>docker 了解一点，知道如果成功，以后安装卸载会很简单，于是使用 <a href="https://github.com/huan/docker-wechat">huan/docker-wechat</a> 提供的 docker image，但是后来<a href="https://github.com/huan/docker-wechat/issues/40">输入时文本不可见的问题</a>很恼人 ，也不知道怎么解决。</p>
 <p>注意到作者的 docker 是在 19.10 上构建的，在想会不会与我的 18.04 不够兼容，所以准备自己修改 docker，其实都已经 fork 好了，但是由于 <a href="https://forum.winehq.org/viewtopic.php?f=8&amp;t=32192">wine 对 18.04 的支持有个问题</a>，虽说可能跟输入法也不太有关，但是还是试着装这个，后面改写 docker file 时重新 build 总是出问题，一直没解决，所以决定放弃。</p>
@@ -4918,7 +4973,7 @@ $ wineboot -r <span class="c1"># restart</span>
 </ul>
 <p>it works! refer to <a href="https://ubuntuforums.org/showthread.php?t=1451908">Ubuntu forum: Cant reboot wine</a></p>
 <p>为了保留之前的所有设定及历史聊天记录，选择文件至 <code>/media/weiya/Seagate/WeChat</code>，但不要精确至 <code>/media/weiya/Seagate/WeChat/WeChat Files</code></p>
-<h3 id="_9">窗口轮廓阴影<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_10">窗口轮廓阴影<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>当从微信切换到其他软件时，会留下一个窗口轮廓阴影。再一次感叹 google 的强大，本来这个问题我都不知道怎么搜索，但只给了 “wine wechat” 和 “窗口轮廓” 这两个关键词后，就找到了两种解决方案：</p>
 <ul>
 <li><a href="https://manateelazycat.github.io/linux/2019/09/29/wechat-transparent-window.html">解决Linux下微信透明窗口的问题</a>：切换微信后，直接关掉窗口，侧边栏也不在有微信的窗口，再次启动需要点击顶部栏的图标</li>
@@ -4927,7 +4982,7 @@ $ wineboot -r <span class="c1"># restart</span>
 <p>更偏向第二种策略，后来尝试了一下也确实觉得第二种好用，当然我都有折腾过。</p>
 <p>其实策略本身很简单，而且都可以即时运行一下脚本，就能感受效果，但是在脚本自动化那里花了挺长时间。</p>
 <p>策略二本来推荐的是通过修改 wechat 的启动程序，但是因为我的启动程序是通过 wine 实现的，这一点似乎跟博客中不一样，我只找到一个 <code>WeChat.desktop</code> 文件，也没把握直接修改。所以我先去尝试了开机自启动</p>
-<h4 id="_10">开机自启动<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<h4 id="_11">开机自启动<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <p>实现方案有很多，但总想找种最简单的，有考虑 systemd service， <a href="https://askubuntu.com/questions/1151080/how-do-i-run-a-script-as-sudo-at-boot-time-on-ubuntu-18-04-server">How do I run a script as sudo at boot time on Ubuntu 18.04 Server?</a></p>
 <p>中间也有试过 <code>/etc/init.d</code>，<a href="https://blog.csdn.net/hcx25909/article/details/9068497">Ubuntu下添加开机启动脚本</a>，但是报出 warning</p>
 <blockquote>
@@ -5193,7 +5248,7 @@ xournalpp/now <span class="m">1</span>.0.20-1~ubuntu18.04.1 amd64 <span class="o
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
