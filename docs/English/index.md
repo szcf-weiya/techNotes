@@ -1,6 +1,10 @@
 ## 2022.11
 
 - monetization: 货币化
+- atrial fibrillation (Afib): 心房颤动，房颤 [:link:](https://zh.wikipedia.org/wiki/%E5%BF%83%E6%88%BF%E9%A1%AB%E5%8B%95)
+- American Thoracic Society (ATS): 美国胸腔学会 [:link:](https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9B%BD%E8%83%B8%E8%85%94%E5%AD%A6%E4%BC%9A)
+- Coronary artery disease (CAD): 冠状动脉疾病
+
 
 ## 2022.10
 
