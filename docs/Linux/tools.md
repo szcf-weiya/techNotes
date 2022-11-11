@@ -2,15 +2,16 @@
 
 ## aria2
 
-It is a lightweight multi-protocol & multi-source command-line download utility.
+??? warning "Idle"
+	It is a lightweight multi-protocol & multi-source command-line download utility.
 
-Homepage: <https://aria2.github.io/>
+	Homepage: <https://aria2.github.io/>
 
 ## `awk`
 
 - [cheat sheet](https://www.shortcutfoo.com/app/dojos/awk/cheatsheet)
 
-### basic usage
+#### basic usage
 
 `awk` 标准用法为
 
@@ -80,7 +81,7 @@ awk '{print NR, ":", $0}' file.txt
 
 如果想从 0 开始，则改成 `NR-1`.
 
-### processing two files
+#### processing two files
 
 ```bash
 $ awk 'NR == FNR {# some actions; next} # other condition {# other actions}' file1.txt file2.txt
@@ -107,7 +108,7 @@ $ awk 'FNR==NR{wanted[$0]; next} FNR in wanted' lines.txt test.md
 
 first came across in [selecting a large number of (specific) rows in file - Stack Overflow](https://stackoverflow.com/a/26672005), but it used `wanted[$0]++`, which does not make differences.
 
-### sum of a column of numbers
+#### sum of a column of numbers
 
 ```bash
 awk '{s+=$1} END {print s}' data.txt
@@ -121,7 +122,7 @@ For example, sum up the memory usage,
 $ ps -e -o pid,cmd,%mem --sort=-%mem | awk 'NR > 1{s+=$NF} END {print s}'
 ```
 
-### select lines with conditions
+#### select lines with conditions
 
 - select lines whose 2nd column is not empty: **usage of `!~`**
 
@@ -179,7 +180,7 @@ refer to [View tabular file such as CSV from command line](https://stackoverflow
 
 ## `convert`
 
-### 图片裁剪
+#### 图片裁剪
 
 在连接显示器状态下，全屏截图时有一个屏幕是多余的，可以批量裁剪
 
@@ -195,7 +196,7 @@ $ ls -1 | xargs -I {} convert {} -crop 1920x1200+0+0 crop_{}
 !!! tip
 	`Ctrl+Alt+PrtSc` 可以只截鼠标所在屏幕。
 
-### 图片拼接
+#### 图片拼接
 
 ```bash
 # 水平方向
@@ -225,7 +226,7 @@ $ convert +append map.png IMG_20210808_172104.jpg -resize x600 /tmp/p1.png
 $ convert -auto-orient +append map.png IMG_20210808_172104.jpg -resize x600 /tmp/p2.png
 ```
 
-### 缩小图片大小
+#### 缩小图片大小
 
 ```bash
 # only specify the wide as 1024 pixel to keep the aspect ratio
@@ -235,7 +236,7 @@ convert input.png -quality 50% out.png
 
 参考[How can I compress images?](https://askubuntu.com/questions/781497/how-can-i-compress-images)
 
-### 合并jpg到pdf
+#### 合并jpg到pdf
 
 参考[convert images to pdf: How to make PDF Pages same size](https://unix.stackexchange.com/questions/20026/convert-images-to-pdf-how-to-make-pdf-pages-same-size)
 
@@ -259,7 +260,7 @@ convert a.png b.png -compress jpeg -resize 1240x1753 \
 
 同时，注意`1240x1753`中间是字母`x`.
 
-### pdf 转为 jpg
+#### pdf 转为 jpg
 
  `-quality 100` 控制质量
  `-density 600x600` 控制分辨率
@@ -274,7 +275,7 @@ pdftoppm alg.pdf alg -png -singlefile
 
 图片质量比 `convert` 好很多！！
 
-### convert imgs to pdf
+#### convert imgs to pdf
 
 ```bash
 ls -1 ./*jpg | xargs -L1 -I {} img2pdf {} -o {}.pdf
@@ -290,7 +291,7 @@ pdftk likelihoodfree-design-a-discussion-{1..13}-1024.jpg.pdf cat output likelih
 
 这一点在服务器上没看到。
 
-### adjust brightness and contrast
+#### adjust brightness and contrast
 
 !!! info
 	Here is [one example](https://github.com/szcf-weiya/SZmedinfo/issues/5) used in my project.
@@ -394,9 +395,45 @@ $ diff folder1 folder2
 
 - list size of subdirectories/files: `du -shc *`, where `-c` outputs the total
 
+## `emacs`
+
+??? warning "Uninstalled"
+
+    #### 常用命令
+
+    1. 切换缓存区：C-o
+    2. 水平新建缓存区：C-2
+    3. 垂直新建缓存区：C-3
+    4. 关闭当前缓存区：C-0
+    5. 删除缓存区：C-k
+    6. 只保留当前缓存区：C-1
+
+    #### Emacs使用Fcitx中文
+
+    参考博客：[fcitx-emacs](http://wangzhe3224.github.io/emacs/2015/08/31/fcitx-emacs.html)
+
+    - Step 1: 确定系统当前支持的字符集
+
+    ```bash
+    locale -a
+    ```
+
+    若其中有 zh_CN.utf8，则表明已经包含了中文字符集。
+
+    - Step 2: 设置系统变量
+
+    ```bash
+    emacs ~/.bashrc
+    export LC_CTYPE=zh_CN.utf8 
+    source ~/.bashrc
+    ```
+
+    - 配置文件: [http://download.csdn.net/download/karotte/3812760](http://download.csdn.net/download/karotte/3812760)
+    - 自动补全: 参考[emacs自动补全插件auto-complet和yasnippet，安装、配置和扩展](http://www.cnblogs.com/liyongmou/archive/2013/04/26/3044155.html#sec-1-2)
+
 ## `echo`
 
-### string started with `-`
+#### string started with `-`
 
 ```bash
 $ a="-n 1"
@@ -426,7 +463,7 @@ and no need to add double quotes.
 
 refer to [Bash: echo string that starts with “-”](https://stackoverflow.com/questions/3652524/bash-echo-string-that-starts-with)
 
-### print bytes
+#### print bytes
 
 ```bash
 echo -n -e '\x66\x6f\x6f'
@@ -434,7 +471,7 @@ echo -n -e '\x66\x6f\x6f'
 
 do not miss quotes, and `-e` is also necessary, refer to [echo bytes to a file](https://unix.stackexchange.com/questions/118247/echo-bytes-to-a-file)
 
-### different save behavior
+#### different save behavior
 
 a column of elements would be stored in an array, then save via `echo` would result one line.
 
@@ -449,9 +486,9 @@ $ cat t2.txt
 2 2
 ```
 
-## `ffmpeg`： 视频处理
+## `ffmpeg`
 
-### 去除音频
+#### 去除音频
 
 参考 [如何使用ffmpeg去除视频声音？](https://hefang.link/article/how-remove-voice-with-ffmpeg.html)
 
@@ -459,7 +496,7 @@ $ cat t2.txt
 ffmpeg -i .\input.mp4 -map 0:0 -vcodec copy out.mp4
 ```
 
-### 慢速播放和快速播放
+#### 慢速播放和快速播放
 
 ```bash
 # 2 times faster
@@ -480,7 +517,7 @@ $ convert -delay 10 input.gif output.gif
 
 refer to <https://infoheap.com/imagemagick-convert-edit-animated-gif-speed-fps/>
 
-### 视频旋转
+#### 视频旋转
 
 参考[How can I rotate a video?](https://askubuntu.com/questions/83711/how-can-i-rotate-a-video)
 
@@ -499,7 +536,7 @@ ffmpeg -i in.mov -vf "transpose=1" out.mov
 ffmpeg -i in.mov -vf "transpose=1" -strict -2 out.mov
 ```
 
-### 视频剪切
+#### 视频剪切
 
 ```bash
 ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -t 00:00:10.0 output.wmv
@@ -512,7 +549,7 @@ where
 
 refer to [Using ffmpeg to cut up video](https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video)
 
-### concat
+#### concat
 
 ```bash
 $ ffmpeg -f concat -safe 0 -i <(echo file $PWD/8xonlyVID_20210808_170208.mp4; echo file $PWD/8xonlyVID_20210808_170328.mp4) -c copy 8xonlyVID_20210808_170208+328.mp4
@@ -701,9 +738,8 @@ refer to [How to find out a file is hard link or symlink?](https://unix.stackexc
 
 - `-S`: sort by filesize
 
-### only show directory
-
 ```bash
+# only show directory
 ls -d */
 ```
 
@@ -711,7 +747,7 @@ refer to [Listing only directories using ls in Bash?](https://stackoverflow.com/
 
 My application: [TeXtemplates: create a tex template](https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L9)
 
-### check whether a certain file type/extension exists in directory
+#### check whether a certain file type/extension exists in directory
 
 ```bash
 if ls *.bib &>/dev/null; then
@@ -729,7 +765,7 @@ My application: [TeXtemplates: create a tex template](https://github.com/szcf-we
 
 ## `mv`
 
-### mv files with `xargs`
+#### mv files with `xargs`
 
 use `-I {}` to replace some str.
 
@@ -751,7 +787,9 @@ see also: [xargs命令_Linux xargs 命令用法详解：给其他命令传递参
 	- [random pop up English words](../English/random.sh)
 	- [monitor status of watching videos](../check_video.sh)
 
-## `paste`: 文本文件拼接
+## `paste`
+
+按列拼接文本文件
 
 ```bash
 ### 按列
@@ -820,7 +858,7 @@ alias psaux='ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm'
 
 ## `ps2pdf, pdf2ps`
 
-### reduce pdf file size
+#### reduce pdf file size
 
 It can be used to reduce the pdf size. 
 
@@ -913,7 +951,7 @@ it shows that the reduced pdf does not have duplicated font names, (here the fir
     Another application of `pdffonts` is to check if the font has been embedded. If not, it might cause some display issue, such as the non-embedded `Symbol` in [The PDF viewer 'Evince' on Linux can not display some math symbols correctly](https://stackoverflow.com/questions/10277418/the-pdf-viewer-evince-on-linux-can-not-display-some-math-symbols-correctly). In contrast, Adobe Reader already ships with application-embedded instances of some fonts, such as `Symbol`, so it can render the pdf properly.
     A remedy is to use `gs`, see more details in the above reference.
 
-### flatten pdf file
+#### flatten pdf file
 
 Flattening a PDF means to merge separated contents of the document into one so that,
 
@@ -988,7 +1026,7 @@ Refer to
 1. [Linux sed 命令用法详解：功能强大的流式文本编辑器](http://man.linuxde.net/sed)
 2. [sed &amp; awk常用正则表达式 - 菲一打 - 博客园](https://www.cnblogs.com/nhlinkin/p/3647357.html)
 
-### `-r`: 扩展的正则表达式
+#### `-r`: 扩展的正则表达式
 
 参考[Extended regexps - sed, a stream editor](https://www.gnu.org/software/sed/manual/html_node/Extended-regexps.html)
 
@@ -1006,7 +1044,7 @@ Refer to
 4. `\(abc\)\{2,3\}` becomes `(abc){2,3}` when using extended regular expressions. It matches either `abcabc` or `abcabcabc`.
 5. `\(abc*\)\1` becomes `(abc*)\1` when using extended regular expressions. Backreferences must still be escaped when using extended regular expressions.
 
-### single or double quotes
+#### single or double quotes
 
 When using double quotes, the string is first interpreted  by the shell before being passed to `sed`. As a result,
 
@@ -1146,7 +1184,7 @@ refer to
 
 ## `type`
 
-### `which` vs `type`
+#### `which` vs `type`
 
 在 CentOS7 服务器上，
 
@@ -1181,58 +1219,6 @@ $ uchardet FILENAME
 
 detect the file encoding
 
-## `uniq`
-
-- count the frequency: `cat file.txt | sort | uniq -c`.
-	- note that `sort` is necessary, otherwise `uniq` only performs locally
-	- examples: [classificacaoFinal](https://github.com/szcf-weiya/TB/issues/46#issuecomment-831761174)
-
-## `unzip`
-
-### unzip all `.zip` file in a directory
-
-tried `unzip *.zip` but does not work, it seems that I missed something although I have checked `man unzip` in which `*` is indeed allowed, then I found
-
-```bash
-unzip \*.zip
-```
-
-in [Unzip All Files In A Directory](https://stackoverflow.com/questions/2374772/unzip-all-files-in-a-directory/29248777)
-
-Otherwise, use quotes `"*.zip"`. More advancely, only zip files with character `3`,
-
-```bash
-unzip "*3*.zip"
-```
-
-### `unzip` 和右键 `Extract Here` 的区别
-
-对于 A.zip，假设内部结构为 `dir/file`，则通过 `unzip A.zip` 会直接得到 `dir/file`，而右键解压会得到 `A/dir/file`.
-
-## `wget`
-
-### wget a series of files in order
-
-下载连续编号的文件，如
-
-```
-wget http://work.caltech.edu/slides/slides{01..18}.pdf
-```
-
-参考 [Wget a series of files in order](https://askubuntu.com/questions/240702/wget-a-series-of-files-in-order)
-
-### `wget` vs `curl`
-
-`wget` 不用添加 `-O` 就可以将下载的文件存储下来，但是 `curl` 并不默认将下载的文件存入本地文件，除非加上 `-o` 选项，而 `wget` 的 `-O` 只是为了更改文件名。
-
-比如[这里](https://github.com/huan/docker-wine/blob/54e7ba2f042a59de72a06bafc37f1fb8c554541e/Dockerfile#L36)，直接将下载的内容输出到下一个命令
-
-```bash
-curl -sL https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
-```
-
-更多比较详见 [What is the difference between curl and wget?](https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget)
-
 ## `unar`
 
 如果 zip 文件解压乱码，可以试试 unar,
@@ -1266,3 +1252,159 @@ Successfully extracted to "SongPoem".
 $ iconv -f GB18030 SongPoem.csv -t UTF8 -o SongPoem.csv.utf8
 $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 ```
+
+## `uniq`
+
+- count the frequency: `cat file.txt | sort | uniq -c`.
+	- note that `sort` is necessary, otherwise `uniq` only performs locally
+	- examples: [classificacaoFinal](https://github.com/szcf-weiya/TB/issues/46#issuecomment-831761174)
+
+## `unzip`
+
+#### unzip all `.zip` file in a directory
+
+tried `unzip *.zip` but does not work, it seems that I missed something although I have checked `man unzip` in which `*` is indeed allowed, then I found
+
+```bash
+unzip \*.zip
+```
+
+in [Unzip All Files In A Directory](https://stackoverflow.com/questions/2374772/unzip-all-files-in-a-directory/29248777)
+
+Otherwise, use quotes `"*.zip"`. More advancely, only zip files with character `3`,
+
+```bash
+unzip "*3*.zip"
+```
+
+#### `unzip` 和右键 `Extract Here` 的区别
+
+对于 A.zip，假设内部结构为 `dir/file`，则通过 `unzip A.zip` 会直接得到 `dir/file`，而右键解压会得到 `A/dir/file`.
+
+## `vi`
+
+- `u`: undo, `ctrl+u`: redo
+
+#### 复制
+
+- 单行复制: 在命令模式下，将光标移动到将要复制的行处，按“yy”进行复制；
+- 多行复制: 在命令模式下，
+    - `nyy` + `p`
+    - `:6,9 co 12`:复制第6行到第9行之间的内容到第12行后面。
+    - 设置标签，光标移到起始行（结束行，粘贴行），输入 `ma` (`mb`, `mc`) `:'a, 'b co 'c`。
+
+!!! tip
+    将 `co` 改成 `m` 就变成剪切了。
+
+#### 删除
+
+- 删除光标后的字符 `d$`
+- `:.,$d`: 删除当前行到最后一行
+
+参考 [How to Delete Lines in Vim / Vi](https://linuxize.com/post/vim-delete-line/)
+
+#### 去除 BOM
+
+[BOM (byte-order mark, 字节顺序标记)](https://zh.wikipedia.org/wiki/%E4%BD%8D%E5%85%83%E7%B5%84%E9%A0%86%E5%BA%8F%E8%A8%98%E8%99%9F) 是位于码点 `U+FEFF` 的统一码字符的名称。
+
+> 在UTF-8中，虽然在 Unicode 标准上允许字节顺序标记的存在，但实际上并不一定需要。UTF-8编码过的字节顺序标记则被用来标示它是UTF-8的文件。它只用来标示一个UTF-8的文件，而不用来说明字节顺序。许多视窗程序（包含记事本）会需要添加字节顺序标记到UTF-8文件，否则将无法正确解析编码，而出现乱码。然而，在类Unix系统（大量使用文本文件，用于文件格式，用于进程间通信）中，这种做法则不被建议采用。因为它会妨碍到如解译器脚本开头的Shebang等的一些重要的码的正确处理。它亦会影响到无法识别它的编程语言。如gcc会报告源码档开头有无法识别的字符。
+
+如果需要去除 BOM，直接 vim 打开，
+
+```bash
+:set nobomb
+:wq
+```
+
+参考
+
+- [Linux环境下如何将utf-8格式文件转变成无bom的utf-8格式文件？](https://segmentfault.com/q/1010000000256502)
+- [「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别？网页代码一般使用哪个？](https://www.zhihu.com/question/20167122)
+
+#### Ctrl+s 假死
+
+vim并没有死掉，只是停止向终端输出而已，要想退出这种状态，只需按 `Ctrl + q` 即可恢复正常。
+
+参考[vim按了Ctrl + s后假死的解决办法](http://blog.csdn.net/tsuliuchao/article/details/7553003)
+
+#### 执行当前脚本
+
+```bash
+:!%
+```
+
+其中 `%` expands current file name，另外
+
+```bash
+:! %:p
+```
+
+会指定绝对路径，而如果路径中有空格，则用
+
+```bash
+:! "%:p"
+```
+
+参考
+
+- [How to execute file I'm editing in Vi(m)](https://stackoverflow.com/questions/953398/how-to-execute-file-im-editing-in-vim)
+- [VIM中执行Shell命令（炫酷）](https://blog.csdn.net/bnxf00000/article/details/46618465)
+
+
+#### write with sudo
+
+For example, as said in [How does the vim “write with sudo” trick work?](https://stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work)
+
+```bash
+:w !sudo tee %
+```
+
+and such reference gives a more detailed explanation for the trick.
+
+#### 打开另外一个文件
+
+参考
+
+1. [vim 打开一个文件后,如何打开另一个文件?](https://zhidao.baidu.com/question/873060894102392532.html)
+2. [VI打开和编辑多个文件的命令 分屏操作 - David.Wei0810 - 博客园](https://www.cnblogs.com/david-wei0810/p/5749408.html)
+
+#### 对每行行首进行追加、替换
+
+按住 v 或者 V 选定需要追加的行，然后再进入 `:` 模式，输入正常的 `sed` 命令，如
+
+```bash
+s/^/#/g
+```
+
+参考 [Ubuntu 下对文本文件每行行首进行追加、替换](http://blog.csdn.net/u010555688/article/details/48416765)
+
+全选：`VggG` 或者 `ggVG`，其中
+
+- `gg` 跳至第一行，
+- `G` 跳到最后一行
+
+参考 [what is the command for “Select All” in vim and VsVim?](https://vi.stackexchange.com/questions/9028/what-is-the-command-for-select-all-in-vim-and-vsvim)
+
+## `wget`
+
+#### wget a series of files in order
+
+下载连续编号的文件，如
+
+```
+wget http://work.caltech.edu/slides/slides{01..18}.pdf
+```
+
+参考 [Wget a series of files in order](https://askubuntu.com/questions/240702/wget-a-series-of-files-in-order)
+
+#### `wget` vs `curl`
+
+`wget` 不用添加 `-O` 就可以将下载的文件存储下来，但是 `curl` 并不默认将下载的文件存入本地文件，除非加上 `-o` 选项，而 `wget` 的 `-O` 只是为了更改文件名。
+
+比如[这里](https://github.com/huan/docker-wine/blob/54e7ba2f042a59de72a06bafc37f1fb8c554541e/Dockerfile#L36)，直接将下载的内容输出到下一个命令
+
+```bash
+curl -sL https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
+```
+
+更多比较详见 [What is the difference between curl and wget?](https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget)

@@ -24,105 +24,106 @@ I try to categorize them as follows,
 
 ## Atom
 
-### atom 自动更新
+??? warning "Uninstalled"
 
-[atom](https://launchpad.net/~webupd8team/+archive/ubuntu/atom/)
+    #### atom 自动更新
 
-```
-sudo add-apt-repository ppa:webupd8team/atom
-sudo apt-get update
-```
+    [atom](https://launchpad.net/~webupd8team/+archive/ubuntu/atom/)
 
-### proxy 设置
+    ```
+    sudo add-apt-repository ppa:webupd8team/atom
+    sudo apt-get update
+    ```
 
-Atom 的包管理器是 [apm](https://github.com/atom/apm#behind-a-firewall)，其中有介绍怎么设置 proxy，即
+    #### proxy 设置
 
-```bash
-apm config set strict-ssl false
-apm config set http-proxy http://127.0.0.1:8118
-```
+    Atom 的包管理器是 [apm](https://github.com/atom/apm#behind-a-firewall)，其中有介绍怎么设置 proxy，即
 
-### spell-check
+    ```bash
+    apm config set strict-ssl false
+    apm config set http-proxy http://127.0.0.1:8118
+    ```
 
-By default, one of the core package [spell-check](https://github.com/atom/spell-check) does not check `.tex` file, although there is [another package](https://github.com/AtomLinter/linter-spell-latex) for checking the spelling in `.tex`, it does not work and not recently update, then I investigate the `spell-check` package to add the support for `.tex`. Actually, it is quite easy, just to add the scope of the `.tex` file, which can be found by `Editor: Log Cursor Scope`. So I add `text.tex.latex`, but it would be annoying to highlighter the native latex command, such as `\newcommand`, then I found that there is a `Excluded Scopes` in the config page of `spell-check`, so we only need to add the scope name of such native latex command, which again can be found by `Editor: Log Cursor Scope` if we put the cursor on the line of the commands. Finally, I add
+    #### spell-check
 
-```bash
-meta.preamble.latex, punctuation.definition.arguments.end.latex, support.function.general.tex, support.type.function.other.latex, storage.type.function.latex, markup.underline.link.https.hyperlink
-```
+    By default, one of the core package [spell-check](https://github.com/atom/spell-check) does not check `.tex` file, although there is [another package](https://github.com/AtomLinter/linter-spell-latex) for checking the spelling in `.tex`, it does not work and not recently update, then I investigate the `spell-check` package to add the support for `.tex`. Actually, it is quite easy, just to add the scope of the `.tex` file, which can be found by `Editor: Log Cursor Scope`. So I add `text.tex.latex`, but it would be annoying to highlighter the native latex command, such as `\newcommand`, then I found that there is a `Excluded Scopes` in the config page of `spell-check`, so we only need to add the scope name of such native latex command, which again can be found by `Editor: Log Cursor Scope` if we put the cursor on the line of the commands. Finally, I add
 
-to the whitelist, each of which is identified by tries, such as cannot continue to add `meta.group.braces.tex` since the original text would also cannot be checked.
+    ```bash
+    meta.preamble.latex, punctuation.definition.arguments.end.latex, support.function.general.tex, support.type.function.other.latex, storage.type.function.latex, markup.underline.link.https.hyperlink
+    ```
 
-### Soft wrap
+    to the whitelist, each of which is identified by tries, such as cannot continue to add `meta.group.braces.tex` since the original text would also cannot be checked.
 
-Soft wrap is proper for `.tex` file, or `.md` file, but not necessary for the programming file. We can turn off the soft wrap globally in `Setting > Editor`, and actually we can reset it for each language, which can be toggled in `Setting > Package > language-<language name> > Soft Wrap`.
+    #### Soft wrap
 
-refer to [Toggle Soft Wrap by Default?](https://discuss.atom.io/t/toggle-soft-wrap-by-default/58911/5)
+    Soft wrap is proper for `.tex` file, or `.md` file, but not necessary for the programming file. We can turn off the soft wrap globally in `Setting > Editor`, and actually we can reset it for each language, which can be toggled in `Setting > Package > language-<language name> > Soft Wrap`.
 
-### minimap
+    refer to [Toggle Soft Wrap by Default?](https://discuss.atom.io/t/toggle-soft-wrap-by-default/58911/5)
 
-装好用了一晚上，但是第二天用的时候却怎么也打不开了，尝试设置 Key binding，即便已经设置为了自动启动，所以原因并不是这个。
+    #### minimap
 
-后来通过 `apm` 安装低版本便成功了！
+    装好用了一晚上，但是第二天用的时候却怎么也打不开了，尝试设置 Key binding，即便已经设置为了自动启动，所以原因并不是这个。
 
-![](minimap.png)
+    后来通过 `apm` 安装低版本便成功了！
 
-### terminal
+    ![](minimap.png)
 
-之前一直在使用 `Platformio Ide Terminal v2.10.1`, 但是最近一段时间经常打不开 terminal，后来在其 repo issue 中看到类似的问题，然后有人指出这个 package 其实[不再维护](https://github.com/platformio/platformio-atom-ide-terminal/issues/543)，并且推荐了
+    #### terminal
 
-- terminus: https://github.com/bus-stop/terminus
-- x-terminal: https://github.com/bus-stop/x-terminal
+    之前一直在使用 `Platformio Ide Terminal v2.10.1`, 但是最近一段时间经常打不开 terminal，后来在其 repo issue 中看到类似的问题，然后有人指出这个 package 其实[不再维护](https://github.com/platformio/platformio-atom-ide-terminal/issues/543)，并且推荐了
 
-打不开 terminal 的原因应该与下文中提到的 VS code 类似，在替换自动启动方式之前，试过在 x-terminal 中启动程序 `/bin/bash` 添加 `--noprofile` 选项，但是报错，于是直接选择了 terminus.
+    - terminus: https://github.com/bus-stop/terminus
+    - x-terminal: https://github.com/bus-stop/x-terminal
 
-## Toggle Symbol
+    打不开 terminal 的原因应该与下文中提到的 VS code 类似，在替换自动启动方式之前，试过在 x-terminal 中启动程序 `/bin/bash` 添加 `--noprofile` 选项，但是报错，于是直接选择了 terminus.
 
-It is quite convenient to use the shortcut `Ctrl + R` to select the functions, particularly in Julia. Just want to find the equivalent behavior in VScode, the first thing is to find the official name of such a behavior. 
+    #### Toggle Symbol
 
-I found the Keybindings table in the Setting panel, and knew that this is called "Toggle file symbols".
+    It is quite convenient to use the shortcut `Ctrl + R` to select the functions, particularly in Julia. Just want to find the equivalent behavior in VScode, the first thing is to find the official name of such a behavior. 
 
-Based on this hint, I found the the corresponding shortcut in VScode, that is, `Ctrl + Shift + .`, refer to [Go to next method shortcut in VSCode](https://stackoverflow.com/questions/46388358/go-to-next-method-shortcut-in-vscode)
+    I found the Keybindings table in the Setting panel, and knew that this is called "Toggle file symbols".
+
+    Based on this hint, I found the the corresponding shortcut in VScode, that is, `Ctrl + Shift + .`, refer to [Go to next method shortcut in VSCode](https://stackoverflow.com/questions/46388358/go-to-next-method-shortcut-in-vscode)
 
 ## BaiduPan 百度网盘
 
-发现百度网盘出了 Linux 版，但是在 Ubuntu 16.04 似乎运行不了——能下载安装但是无法打开运行。
+!!! info "Update 2022-11-10 21:09:28"
+    下载 deb 包更新到最新版本 4.14.5，体验还行（虽然不常用）
 
-目前版本为 Linux版 V2.0.2（更新时间：2019-07-25）
+发现百度网盘**官方**出了 Linux 版，但是此时的 Linux版 V2.0.2（更新时间：2019-07-25） 在 Ubuntu 16.04 似乎运行不了——能下载安装但是无法打开运行。
 
-[官网](https://pan.baidu.com/download)显示目前只支持
+在官方的 Linux 版本未发布之前，曾尝试社区开发的几种访问百度云的方案。
 
-> 适应系统：中标麒麟桌面操作系统软件（兆芯版） V7.0、Ubuntu V18.04
+??? warning "Other Alternatives (Discard)"
 
-于是寻找替代方案。
+    #### bcloud
 
-### bcloud
+    项目地址：[https://github.com/XuShaohua/bcloud](https://github.com/XuShaohua/bcloud)
 
-项目地址：[https://github.com/XuShaohua/bcloud](https://github.com/XuShaohua/bcloud)
+    但是四五年没有更新了。安装试了一下，登录不了，遂放弃。
 
-但是四五年没有更新了。安装试了一下，登录不了，遂放弃。
+    #### PanDownload
 
-### PanDownload
+    [https://www.baiduwp.com](https://www.baiduwp.com)
 
-[https://www.baiduwp.com](https://www.baiduwp.com)
+    不需要安装客户端，只需要输入网盘分享链接和提取码，便可以下载文件（而百度网盘本身下载文件需要打开客户端）。不过速度似乎不咋地
 
-不需要安装客户端，只需要输入网盘分享链接和提取码，便可以下载文件（而百度网盘本身下载文件需要打开客户端）。不过速度似乎不咋地
+    #### bypy
 
-### bypy
+    逛到了另外一个客户端，项目地址：[https://github.com/houtianze/bypy](https://github.com/houtianze/bypy)
 
-逛到了另外一个客户端，项目地址：[https://github.com/houtianze/bypy](https://github.com/houtianze/bypy)
+    还挺活跃，五个月前有更新。
 
-还挺活跃，五个月前有更新。
+    测试了一下，相当于在网盘内新建了 `/apps/bypy` 文件夹，然后可以同步该文件夹内的内容，似乎不能直接对文件夹外的文件进行操作。尽管这样，也是很好的了，以后文件可以存放在这个文件夹下。
 
-测试了一下，相当于在网盘内新建了 `/apps/bypy` 文件夹，然后可以同步该文件夹内的内容，似乎不能直接对文件夹外的文件进行操作。尽管这样，也是很好的了，以后文件可以存放在这个文件夹下。
+    当然，还是期待官网本身支持。
 
-当然，还是期待官网本身支持。
+    常用命令：
 
-常用命令：
-
-```bash
-bypy syncup
-bypy syncdown
-```
+    ```bash
+    bypy syncup
+    bypy syncdown
+    ```
 
 ## Chrome
 
@@ -197,10 +198,6 @@ Most likely you need to configure your SUID sandbox correctly
 
 通过 `ps -aef | grep chrome` 查看 chrome 的运行参数，没有发现 `no-sandbox`，即默认应该是开启的，所以现在不清楚了。
 
-## Docker
-
-see [docker](../dev/docker.md)
-
 ## Droidcam
 
 Homepage: [DroidCam](https://www.dev47apps.com/)
@@ -250,40 +247,6 @@ $ pkill -HUP udevd
 - firstly, install the APP
 - 因为插上 iPad 后，自动跳出是否信任本设备，而且在 `lsusb` 中找到记录 `Bus 001 Device 018: ID 05ac:12ab Apple, Inc. iPad 4/Mini1`。
 - 然后在电脑端开启连接，这样就能使用ipad的摄像头了。在zoom中，开启摄像头那里有切换至 Droidcam 的选项。
-
-## Emacs
-
-### 常用命令
-
-1. 切换缓存区：C-o
-2. 水平新建缓存区：C-2
-3. 垂直新建缓存区：C-3
-4. 关闭当前缓存区：C-0
-5. 删除缓存区：C-k
-6. 只保留当前缓存区：C-1
-
-### Emacs使用Fcitx中文
-
-参考博客：[fcitx-emacs](http://wangzhe3224.github.io/emacs/2015/08/31/fcitx-emacs.html)
-
-- Step 1: 确定系统当前支持的字符集
-
-```bash
-locale -a
-```
-
-若其中有 zh_CN.utf8，则表明已经包含了中文字符集。
-
-- Step 2: 设置系统变量
-
-```bash
-emacs ~/.bashrc
-export LC_CTYPE=zh_CN.utf8 
-source ~/.bashrc
-```
-
-- 配置文件: [http://download.csdn.net/download/karotte/3812760](http://download.csdn.net/download/karotte/3812760)
-- 自动补全: 参考[emacs自动补全插件auto-complet和yasnippet，安装、配置和扩展](http://www.cnblogs.com/liyongmou/archive/2013/04/26/3044155.html#sec-1-2)
 
 ## Geeqie
 
@@ -938,61 +901,6 @@ sudo apt-get install kid3     # KDE users
 
 但是似乎在 `kid3` 中修改完并没有信息，只是会把删去的 genre 信息变为 unknown。
 
-## Rstudio
-
-### Failed to create OpenGL context
-
-!!! info
-    Refer to [rstudio #27](https://github.com/szcf-weiya/techNotes/issues/27) for the raw records.
-
-It throws 
-
-```bash
-WebEngineContext used before QtWebEngine::initialize() or OpenGL context creation failed.
-Failed to create OpenGL context for format QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize 24, redBufferSize -1, greenBufferSize -1, blueBufferSize -1, alphaBufferSize -1, stencilBufferSize 8, samples 0, swapBehavior QSurfaceFormat::DefaultSwapBehavior, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile) 
-Aborted (core dumped)
-```
-
-when launching without any special actions. Same error after replacing with an older version.
-
-Laterly, note that nvidia card does not work, and change to another driver. Then it resumes after rebooting.
-
-### 不能切换中文输入（fctix）
-
-参考[Rstudio 不能切换中文输入（fctix）](http://blog.csdn.net/qq_27755195/article/details/51002620)
-
-- [Ubuntu 16.04 + Fcitx + RStudio 1.0で日本語を入力する方法](http://blog.goo.ne.jp/ikunya/e/8508d21055503d0560efc245aa787831)
-- [Using RStudio 0.99 with Fctix on Linux](https://support.rstudio.com/hc/en-us/articles/205605748-Using-RStudio-0-99-with-Fctix-on-Linux)
-
-曾经按照上述的指导能够解决这个问题，即将系统的 qt5 的 `libfcitxplatforminputcontextplugin.so` 手动添加到 rstudio 安装目录下的 plugins 中，即
-
-```bash
-sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/bin/plugins/platforminputcontexts/
-```
-
-但是后来又失败了，猜测原因可能是 qt5 的版本不再兼容了。在 Rstudio 顶部的菜单栏中，点击 Help > About Rstudio 可以找到具体的 qt 版本信息，比如 RStudio (Version 1.2.5001) 依赖 QtWebEngine/5.12.1，而系统的 Qt 插件版本没那么高，所以也能理解 `libfcitxplatforminputcontextplugin.so` 为什么不再有用了。一种解决方案便是手动重新编译与 Rstudio 中匹配的 Qt 插件的版本，但是似乎比较繁琐，而且也不能一劳永逸，如果 rstudio 更新，还是会失效。
-
-索性不折腾了。如果真的需要中文，就用其他编辑器吧。期待 rstudio 官方早日解决这个问题……
-
-### 更新rstudio 后闪退
-
-安装 rstudio 应该采用
-
-```
-sudo apt-get install gdebi-core
-wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb
-sudo gdebi rstudio-1.0.44-amd64.deb
-```
-
-而非
-```
-sudo dpkg -i
-```
-
-另外，如果不行，删除后再装
-```
-sudo apt-get remove rstudio
-```
 
 ## Synergy
 
@@ -1156,110 +1064,6 @@ Currently, the Linux version is in Beta.
 
 - [Configuring Transmission for faster download - Ask Ubuntu](https://askubuntu.com/questions/110899/configuring-transmission-for-faster-download)
 - [Transmission says port is closed but seeding is happening - Ask Ubuntu](https://askubuntu.com/questions/405487/transmission-says-port-is-closed-but-seeding-is-happening)
-
-## Vi/Vim
-
-- `u`: undo, `ctrl+u`: redo
-
-### 复制
-
-- 单行复制: 在命令模式下，将光标移动到将要复制的行处，按“yy”进行复制；
-- 多行复制: 在命令模式下，
-    - `nyy` + `p`
-    - `:6,9 co 12`:复制第6行到第9行之间的内容到第12行后面。
-    - 设置标签，光标移到起始行（结束行，粘贴行），输入 `ma` (`mb`, `mc`) `:'a, 'b co 'c`。
-
-!!! tip
-    将 `co` 改成 `m` 就变成剪切了。
-
-### 删除
-
-- 删除光标后的字符 `d$`
-- `:.,$d`: 删除当前行到最后一行
-
-参考 [How to Delete Lines in Vim / Vi](https://linuxize.com/post/vim-delete-line/)
-
-### 去除 BOM
-
-[BOM (byte-order mark, 字节顺序标记)](https://zh.wikipedia.org/wiki/%E4%BD%8D%E5%85%83%E7%B5%84%E9%A0%86%E5%BA%8F%E8%A8%98%E8%99%9F) 是位于码点 `U+FEFF` 的统一码字符的名称。
-
-> 在UTF-8中，虽然在 Unicode 标准上允许字节顺序标记的存在，但实际上并不一定需要。UTF-8编码过的字节顺序标记则被用来标示它是UTF-8的文件。它只用来标示一个UTF-8的文件，而不用来说明字节顺序。许多视窗程序（包含记事本）会需要添加字节顺序标记到UTF-8文件，否则将无法正确解析编码，而出现乱码。然而，在类Unix系统（大量使用文本文件，用于文件格式，用于进程间通信）中，这种做法则不被建议采用。因为它会妨碍到如解译器脚本开头的Shebang等的一些重要的码的正确处理。它亦会影响到无法识别它的编程语言。如gcc会报告源码档开头有无法识别的字符。
-
-如果需要去除 BOM，直接 vim 打开，
-
-```bash
-:set nobomb
-:wq
-```
-
-参考
-
-- [Linux环境下如何将utf-8格式文件转变成无bom的utf-8格式文件？](https://segmentfault.com/q/1010000000256502)
-- [「带 BOM 的 UTF-8」和「无 BOM 的 UTF-8」有什么区别？网页代码一般使用哪个？](https://www.zhihu.com/question/20167122)
-
-### Ctrl+s 假死
-
-vim并没有死掉，只是停止向终端输出而已，要想退出这种状态，只需按 `Ctrl + q` 即可恢复正常。
-
-参考[vim按了Ctrl + s后假死的解决办法](http://blog.csdn.net/tsuliuchao/article/details/7553003)
-
-### 执行当前脚本
-
-```bash
-:!%
-```
-
-其中 `%` expands current file name，另外
-
-```bash
-:! %:p
-```
-
-会指定绝对路径，而如果路径中有空格，则用
-
-```bash
-:! "%:p"
-```
-
-参考
-
-- [How to execute file I'm editing in Vi(m)](https://stackoverflow.com/questions/953398/how-to-execute-file-im-editing-in-vim)
-- [VIM中执行Shell命令（炫酷）](https://blog.csdn.net/bnxf00000/article/details/46618465)
-
-
-### write with sudo
-
-For example, as said in [How does the vim “write with sudo” trick work?](https://stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work)
-
-```bash
-:w !sudo tee %
-```
-
-and such reference gives a more detailed explanation for the trick.
-
-### 打开另外一个文件
-
-参考
-
-1. [vim 打开一个文件后,如何打开另一个文件?](https://zhidao.baidu.com/question/873060894102392532.html)
-2. [VI打开和编辑多个文件的命令 分屏操作 - David.Wei0810 - 博客园](https://www.cnblogs.com/david-wei0810/p/5749408.html)
-
-### 对每行行首进行追加、替换
-
-按住 v 或者 V 选定需要追加的行，然后再进入 `:` 模式，输入正常的 `sed` 命令，如
-
-```bash
-s/^/#/g
-```
-
-参考 [Ubuntu 下对文本文件每行行首进行追加、替换](http://blog.csdn.net/u010555688/article/details/48416765)
-
-全选：`VggG` 或者 `ggVG`，其中
-
-- `gg` 跳至第一行，
-- `G` 跳到最后一行
-
-参考 [what is the command for “Select All” in vim and VsVim?](https://vi.stackexchange.com/questions/9028/what-is-the-command-for-select-all-in-vim-and-vsvim)
 
 ## VS Code
 

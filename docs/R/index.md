@@ -130,6 +130,62 @@ rstudio
 
 详见 [Issue #32 use rstudio in env R4.1.0](https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987)
 
+## Rstudio
+
+### Failed to create OpenGL context
+
+!!! info
+    Refer to [rstudio #27](https://github.com/szcf-weiya/techNotes/issues/27) for the raw records.
+
+It throws 
+
+```bash
+WebEngineContext used before QtWebEngine::initialize() or OpenGL context creation failed.
+Failed to create OpenGL context for format QSurfaceFormat(version 2.0, options QFlags<QSurfaceFormat::FormatOption>(), depthBufferSize 24, redBufferSize -1, greenBufferSize -1, blueBufferSize -1, alphaBufferSize -1, stencilBufferSize 8, samples 0, swapBehavior QSurfaceFormat::DefaultSwapBehavior, swapInterval 1, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile) 
+Aborted (core dumped)
+```
+
+when launching without any special actions. Same error after replacing with an older version.
+
+Laterly, note that nvidia card does not work, and change to another driver. Then it resumes after rebooting.
+
+### 不能切换中文输入（fctix）
+
+参考[Rstudio 不能切换中文输入（fctix）](http://blog.csdn.net/qq_27755195/article/details/51002620)
+
+- [Ubuntu 16.04 + Fcitx + RStudio 1.0で日本語を入力する方法](http://blog.goo.ne.jp/ikunya/e/8508d21055503d0560efc245aa787831)
+- [Using RStudio 0.99 with Fctix on Linux](https://support.rstudio.com/hc/en-us/articles/205605748-Using-RStudio-0-99-with-Fctix-on-Linux)
+
+曾经按照上述的指导能够解决这个问题，即将系统的 qt5 的 `libfcitxplatforminputcontextplugin.so` 手动添加到 rstudio 安装目录下的 plugins 中，即
+
+```bash
+sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/bin/plugins/platforminputcontexts/
+```
+
+但是后来又失败了，猜测原因可能是 qt5 的版本不再兼容了。在 Rstudio 顶部的菜单栏中，点击 Help > About Rstudio 可以找到具体的 qt 版本信息，比如 RStudio (Version 1.2.5001) 依赖 QtWebEngine/5.12.1，而系统的 Qt 插件版本没那么高，所以也能理解 `libfcitxplatforminputcontextplugin.so` 为什么不再有用了。一种解决方案便是手动重新编译与 Rstudio 中匹配的 Qt 插件的版本，但是似乎比较繁琐，而且也不能一劳永逸，如果 rstudio 更新，还是会失效。
+
+索性不折腾了。如果真的需要中文，就用其他编辑器吧。期待 rstudio 官方早日解决这个问题……
+
+### 更新rstudio 后闪退
+
+安装 rstudio 应该采用
+
+```
+sudo apt-get install gdebi-core
+wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb
+sudo gdebi rstudio-1.0.44-amd64.deb
+```
+
+而非
+```
+sudo dpkg -i
+```
+
+另外，如果不行，删除后再装
+```
+sudo apt-get remove rstudio
+```
+
 ## `sys.nframe()`
 
 Here is an equivalent way for pythonic `if __name__ == "__main__"`
@@ -145,6 +201,8 @@ refer to [:link:](https://stackoverflow.com/questions/2968220/is-there-an-r-equi
 
 !!! example
 	[My Repos](https://github.com/search?q=user%3Aszcf-weiya+nframe&type=code)
+
+
 
 ## Common Tips
 
