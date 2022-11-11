@@ -846,6 +846,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rstudio" class="md-nav__link">
+    Rstudio
+  </a>
+  
+    <nav class="md-nav" aria-label="Rstudio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failed-to-create-opengl-context" class="md-nav__link">
+    Failed to create OpenGL context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fctix" class="md-nav__link">
+    不能切换中文输入（fctix）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rstudio_1" class="md-nav__link">
+    更新rstudio 后闪退
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sysnframe" class="md-nav__link">
     sys.nframe()
   </a>
@@ -888,7 +922,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rstudio" class="md-nav__link">
+  <a href="#rstudio_2" class="md-nav__link">
     Rstudio 清空历史图象
   </a>
   
@@ -2780,6 +2814,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rstudio" class="md-nav__link">
+    Rstudio
+  </a>
+  
+    <nav class="md-nav" aria-label="Rstudio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failed-to-create-opengl-context" class="md-nav__link">
+    Failed to create OpenGL context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fctix" class="md-nav__link">
+    不能切换中文输入（fctix）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rstudio_1" class="md-nav__link">
+    更新rstudio 后闪退
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sysnframe" class="md-nav__link">
     sys.nframe()
   </a>
@@ -2822,7 +2890,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rstudio" class="md-nav__link">
+  <a href="#rstudio_2" class="md-nav__link">
     Rstudio 清空历史图象
   </a>
   
@@ -3340,6 +3408,42 @@ N: See apt-secure(8) manpage for repository creation and user configuration deta
 rstudio
 </code></pre></div>
 <p>详见 <a href="https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987">Issue #32 use rstudio in env R4.1.0</a></p>
+<h2 id="rstudio">Rstudio<a class="headerlink" href="#rstudio" title="Permanent link">&para;</a></h2>
+<h3 id="failed-to-create-opengl-context">Failed to create OpenGL context<a class="headerlink" href="#failed-to-create-opengl-context" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Refer to <a href="https://github.com/szcf-weiya/techNotes/issues/27">rstudio #27</a> for the raw records.</p>
+</div>
+<p>It throws </p>
+<div class="highlight"><pre><span></span><code>WebEngineContext used before QtWebEngine::initialize<span class="o">()</span> or OpenGL context creation failed.
+Failed to create OpenGL context <span class="k">for</span> format QSurfaceFormat<span class="o">(</span>version <span class="m">2</span>.0, options QFlags&lt;QSurfaceFormat::FormatOption&gt;<span class="o">()</span>, depthBufferSize <span class="m">24</span>, redBufferSize -1, greenBufferSize -1, blueBufferSize -1, alphaBufferSize -1, stencilBufferSize <span class="m">8</span>, samples <span class="m">0</span>, swapBehavior QSurfaceFormat::DefaultSwapBehavior, swapInterval <span class="m">1</span>, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile<span class="o">)</span> 
+Aborted <span class="o">(</span>core dumped<span class="o">)</span>
+</code></pre></div>
+<p>when launching without any special actions. Same error after replacing with an older version.</p>
+<p>Laterly, note that nvidia card does not work, and change to another driver. Then it resumes after rebooting.</p>
+<h3 id="fctix">不能切换中文输入（fctix）<a class="headerlink" href="#fctix" title="Permanent link">&para;</a></h3>
+<p>参考<a href="http://blog.csdn.net/qq_27755195/article/details/51002620">Rstudio 不能切换中文输入（fctix）</a></p>
+<ul>
+<li><a href="http://blog.goo.ne.jp/ikunya/e/8508d21055503d0560efc245aa787831">Ubuntu 16.04 + Fcitx + RStudio 1.0で日本語を入力する方法</a></li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/205605748-Using-RStudio-0-99-with-Fctix-on-Linux">Using RStudio 0.99 with Fctix on Linux</a></li>
+</ul>
+<p>曾经按照上述的指导能够解决这个问题，即将系统的 qt5 的 <code>libfcitxplatforminputcontextplugin.so</code> 手动添加到 rstudio 安装目录下的 plugins 中，即</p>
+<div class="highlight"><pre><span></span><code>sudo ln -s /usr/lib/<span class="k">$(</span>dpkg-architecture -qDEB_BUILD_MULTIARCH<span class="k">)</span>/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/bin/plugins/platforminputcontexts/
+</code></pre></div>
+<p>但是后来又失败了，猜测原因可能是 qt5 的版本不再兼容了。在 Rstudio 顶部的菜单栏中，点击 Help &gt; About Rstudio 可以找到具体的 qt 版本信息，比如 RStudio (Version 1.2.5001) 依赖 QtWebEngine/5.12.1，而系统的 Qt 插件版本没那么高，所以也能理解 <code>libfcitxplatforminputcontextplugin.so</code> 为什么不再有用了。一种解决方案便是手动重新编译与 Rstudio 中匹配的 Qt 插件的版本，但是似乎比较繁琐，而且也不能一劳永逸，如果 rstudio 更新，还是会失效。</p>
+<p>索性不折腾了。如果真的需要中文，就用其他编辑器吧。期待 rstudio 官方早日解决这个问题……</p>
+<h3 id="rstudio_1">更新rstudio 后闪退<a class="headerlink" href="#rstudio_1" title="Permanent link">&para;</a></h3>
+<p>安装 rstudio 应该采用</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install gdebi-core
+wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb
+sudo gdebi rstudio-1.0.44-amd64.deb
+</code></pre></div>
+<p>而非
+<div class="highlight"><pre><span></span><code>sudo dpkg -i
+</code></pre></div></p>
+<p>另外，如果不行，删除后再装
+<div class="highlight"><pre><span></span><code>sudo apt-get remove rstudio
+</code></pre></div></p>
 <h2 id="sysnframe"><code>sys.nframe()</code><a class="headerlink" href="#sysnframe" title="Permanent link">&para;</a></h2>
 <p>Here is an equivalent way for pythonic <code>if __name__ == "__main__"</code></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># runs only when script is run by itself</span>
@@ -3505,7 +3609,7 @@ $ Rscript test2.R xxx yyy
 <span class="c1">##1</span>
 <span class="c1">##2</span>
 </code></pre></div>
-<h2 id="rstudio">Rstudio 清空历史图象<a class="headerlink" href="#rstudio" title="Permanent link">&para;</a></h2>
+<h2 id="rstudio_2">Rstudio 清空历史图象<a class="headerlink" href="#rstudio_2" title="Permanent link">&para;</a></h2>
 <p><a href="http://stackoverflow.com/questions/12766166/error-in-plot-new-figure-margins-too-large-in-r">Error in plot.new() : figure margins too large in R</a></p>
 <p><img alt="" src="error_too_large_for_figure.png" /></p>
 <h2 id="linux-r">linux 下更新 R<a class="headerlink" href="#linux-r" title="Permanent link">&para;</a></h2>
