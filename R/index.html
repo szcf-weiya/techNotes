@@ -15,15 +15,15 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/R/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>General - techNotes</title>
+        <title>Base - techNotes</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.472b142f.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
@@ -70,7 +70,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
   
     
     
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              General
+              Base
             
           </span>
         </div>
@@ -761,12 +761,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          General
+          Base
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        General
+        Base
       </a>
       
         
@@ -854,20 +854,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#failed-to-create-opengl-context" class="md-nav__link">
-    Failed to create OpenGL context
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fctix" class="md-nav__link">
-    不能切换中文输入（fctix）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#rstudio_1" class="md-nav__link">
     更新rstudio 后闪退
   </a>
@@ -887,15 +873,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-tips" class="md-nav__link">
-    Common Tips
+  <a href="#sort-rank-order" class="md-nav__link">
+    sort(), rank(), order()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sort-rank-order" class="md-nav__link">
-    sort(), rank(), order()
+  <a href="#rowcolumn-of-string-array-cannot-be-changed-to-numeric" class="md-nav__link">
+    Row/Column of String Array cannot be changed to numeric
   </a>
   
 </li>
@@ -924,20 +910,6 @@
         <li class="md-nav__item">
   <a href="#rstudio_2" class="md-nav__link">
     Rstudio 清空历史图象
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux-r" class="md-nav__link">
-    linux 下更新 R
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#window" class="md-nav__link">
-    window 安装包
   </a>
   
 </li>
@@ -1353,9 +1325,35 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_3" type="checkbox" id="__nav_3_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2_3">
+          Blog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="legend_from_zhihu/" class="md-nav__link">
-        案例分析
+        ggplot2 中的 legend
       </a>
     </li>
   
@@ -1385,6 +1383,13 @@
       <a href="factor/" class="md-nav__link">
         一道与 factor 有关的问题
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1432,7 +1437,7 @@
   
     <li class="md-nav__item">
       <a href="../python/" class="md-nav__link">
-        一般问题
+        Base
       </a>
     </li>
   
@@ -1447,20 +1452,6 @@
     <li class="md-nav__item">
       <a href="../python/conda/" class="md-nav__link">
         Conda
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../python/pystan/" class="md-nav__link">
-        PyStan 体验
       </a>
     </li>
   
@@ -1500,10 +1491,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_5" type="checkbox" id="__nav_3_3_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_5">
+          Blog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/pystan/" class="md-nav__link">
+        PyStan 体验
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../python/esltag/" class="md-nav__link">
         自建关键词索引页
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1551,7 +1589,7 @@
   
     <li class="md-nav__item">
       <a href="../julia/" class="md-nav__link">
-        General
+        Base
       </a>
     </li>
   
@@ -1614,7 +1652,7 @@
   
     <li class="md-nav__item">
       <a href="../Matlab/" class="md-nav__link">
-        General
+        Base
       </a>
     </li>
   
@@ -2822,20 +2860,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#failed-to-create-opengl-context" class="md-nav__link">
-    Failed to create OpenGL context
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fctix" class="md-nav__link">
-    不能切换中文输入（fctix）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#rstudio_1" class="md-nav__link">
     更新rstudio 后闪退
   </a>
@@ -2855,15 +2879,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-tips" class="md-nav__link">
-    Common Tips
+  <a href="#sort-rank-order" class="md-nav__link">
+    sort(), rank(), order()
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sort-rank-order" class="md-nav__link">
-    sort(), rank(), order()
+  <a href="#rowcolumn-of-string-array-cannot-be-changed-to-numeric" class="md-nav__link">
+    Row/Column of String Array cannot be changed to numeric
   </a>
   
 </li>
@@ -2892,20 +2916,6 @@
         <li class="md-nav__item">
   <a href="#rstudio_2" class="md-nav__link">
     Rstudio 清空历史图象
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux-r" class="md-nav__link">
-    linux 下更新 R
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#window" class="md-nav__link">
-    window 安装包
   </a>
   
 </li>
@@ -3314,6 +3324,13 @@
 
 
 <h1 id="r-notes">R Notes<a class="headerlink" href="#r-notes" title="Permanent link">&para;</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Frequent Tips</p>
+<ul>
+<li>删除当前工作区所有变量: <code>rm(list = ls(all = TRUE))</code></li>
+<li>RStudio shows all shortcuts: <code>Alt-Shift-K</code>.</li>
+</ul>
+</div>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="install-from-source-on-rocky">Install from source on Rocky<a class="headerlink" href="#install-from-source-on-rocky" title="Permanent link">&para;</a></h3>
 <p>Following the instruction in <a href="https://docs.rstudio.com/resources/install-r-source/">RStudio Documentation: Install R from Source</a></p>
@@ -3345,6 +3362,15 @@ sudo make install
     <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">lapack</span>
 </code></pre></div></p>
 </div>
+<details class="tip">
+<summary>specify mirror</summary>
+<p>切换到R的安装路径下，在etc文件夹中编辑文件Rprofile.site文件</p>
+<div class="highlight"><pre><span></span><code>## set a CRAN mirror
+local({r &lt;- getOption(&quot;repos&quot;)
+    r[&quot;CRAN&quot;] &lt;- &quot;http://mirrors.ustc.edu.cn/CRAN/&quot;
+        options(repos=r)})
+</code></pre></div>
+</details>
 <h4 id="installation-of-module">installation of <code>module</code><a class="headerlink" href="#installation-of-module" title="Permanent link">&para;</a></h4>
 <p>Follow the official instruction <a href="https://modules.readthedocs.io/en/latest/INSTALL.html"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <div class="highlight"><pre><span></span><code>curl -LJO https://github.com/cea-hpc/modules/releases/download/v5.1.1/modules-5.1.1.tar.gz
@@ -3366,8 +3392,10 @@ $ sudo ln -s <span class="nv">$PWD</span>/init/profile.csh /etc/profile.d/module
 </code></pre></div>
 <p>try to install <code>libcurl4-openssl-dev</code>, suggested in <a href="https://stackoverflow.com/questions/38690232/installing-r-on-linux-configure-error-libcurl-7-28-0-library-and-headers-a">Installing R on Linux: configure: error: libcurl &gt;= 7.28.0 library and headers are required with support for https</a>.</p>
 <p>Be careful when installing the package, and to avoid the uninstallation in the next section.</p>
-<p>!!! &ldquo;2022-08-24 10:35:01&rdquo;
-    Run <code>sudo apt-get install libcurl4-openssl-dev</code>, and monitor the message, no packages are needed to be removed.</p>
+<div class="admonition info">
+<p class="admonition-title">2022-08-24 10:35:01</p>
+<p>Run <code>sudo apt-get install libcurl4-openssl-dev</code>, and monitor the message, no packages are needed to be removed.</p>
+</div>
 <h3 id="install-latest-r36">Install Latest R3.6<a class="headerlink" href="#install-latest-r36" title="Permanent link">&para;</a></h3>
 <p>Accidentally, I uninstall my R3.6 when installing <code>libcurl4</code>, the apt-log shows that</p>
 <div class="highlight"><pre><span></span><code>Start-Date: <span class="m">2021</span>-05-01  <span class="m">10</span>:40:15
@@ -3409,9 +3437,12 @@ rstudio
 </code></pre></div>
 <p>详见 <a href="https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987">Issue #32 use rstudio in env R4.1.0</a></p>
 <h2 id="rstudio">Rstudio<a class="headerlink" href="#rstudio" title="Permanent link">&para;</a></h2>
-<h3 id="failed-to-create-opengl-context">Failed to create OpenGL context<a class="headerlink" href="#failed-to-create-opengl-context" title="Permanent link">&para;</a></h3>
+<h4 id="failed-to-create-opengl-context">Failed to create OpenGL context<a class="headerlink" href="#failed-to-create-opengl-context" title="Permanent link">&para;</a></h4>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
+<ul>
+<li>2022-11-17 23:33:18 -0500: again, just reboot the PC.</li>
+</ul>
 <p>Refer to <a href="https://github.com/szcf-weiya/techNotes/issues/27">rstudio #27</a> for the raw records.</p>
 </div>
 <p>It throws </p>
@@ -3421,7 +3452,8 @@ Aborted <span class="o">(</span>core dumped<span class="o">)</span>
 </code></pre></div>
 <p>when launching without any special actions. Same error after replacing with an older version.</p>
 <p>Laterly, note that nvidia card does not work, and change to another driver. Then it resumes after rebooting.</p>
-<h3 id="fctix">不能切换中文输入（fctix）<a class="headerlink" href="#fctix" title="Permanent link">&para;</a></h3>
+<details class="bug">
+<summary>fcitx 时不能切换中文输入</summary>
 <p>参考<a href="http://blog.csdn.net/qq_27755195/article/details/51002620">Rstudio 不能切换中文输入（fctix）</a></p>
 <ul>
 <li><a href="http://blog.goo.ne.jp/ikunya/e/8508d21055503d0560efc245aa787831">Ubuntu 16.04 + Fcitx + RStudio 1.0で日本語を入力する方法</a></li>
@@ -3432,6 +3464,11 @@ Aborted <span class="o">(</span>core dumped<span class="o">)</span>
 </code></pre></div>
 <p>但是后来又失败了，猜测原因可能是 qt5 的版本不再兼容了。在 Rstudio 顶部的菜单栏中，点击 Help &gt; About Rstudio 可以找到具体的 qt 版本信息，比如 RStudio (Version 1.2.5001) 依赖 QtWebEngine/5.12.1，而系统的 Qt 插件版本没那么高，所以也能理解 <code>libfcitxplatforminputcontextplugin.so</code> 为什么不再有用了。一种解决方案便是手动重新编译与 Rstudio 中匹配的 Qt 插件的版本，但是似乎比较繁琐，而且也不能一劳永逸，如果 rstudio 更新，还是会失效。</p>
 <p>索性不折腾了。如果真的需要中文，就用其他编辑器吧。期待 rstudio 官方早日解决这个问题……</p>
+</details>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>使用 ibus + rime 输入法后，就没再回去用 fcitx</p>
+</div>
 <h3 id="rstudio_1">更新rstudio 后闪退<a class="headerlink" href="#rstudio_1" title="Permanent link">&para;</a></h3>
 <p>安装 rstudio 应该采用</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install gdebi-core
@@ -3456,11 +3493,6 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 <p class="admonition-title">Example</p>
 <p><a href="https://github.com/search?q=user%3Aszcf-weiya+nframe&amp;type=code">My Repos</a></p>
 </div>
-<h2 id="common-tips">Common Tips<a class="headerlink" href="#common-tips" title="Permanent link">&para;</a></h2>
-<ul>
-<li>删除当前工作区所有变量: <code>rm(list = ls(all = TRUE))</code></li>
-<li>RStudio shows all shortcuts: <code>Alt-Shift-K</code>.</li>
-</ul>
 <h2 id="sort-rank-order"><code>sort(), rank(), order()</code><a class="headerlink" href="#sort-rank-order" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>sort(x)</code>: sort <code>x</code> increasingly (by default)</li>
@@ -3517,6 +3549,47 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 </code></pre></div>
 <p>but keep in mind that the index starts from 0 instead of 1. Here is another way in <a href="https://www.geeksforgeeks.org/python-returning-index-of-a-sorted-list/">Python | Returning index of a sorted list</a> (TODO).</p>
 <p>In julia, we use <code>sort</code> and <code>sortperm</code>.</p>
+<h2 id="rowcolumn-of-string-array-cannot-be-changed-to-numeric">Row/Column of String Array cannot be changed to numeric<a class="headerlink" href="#rowcolumn-of-string-array-cannot-be-changed-to-numeric" title="Permanent link">&para;</a></h2>
+<p>suppose I have a string array,</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+<span class="o">&gt;</span> <span class="n">a</span>
+     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span>   <span class="kc">NA</span>   <span class="kc">NA</span>
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span>   <span class="kc">NA</span>   <span class="kc">NA</span>
+<span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;w&quot;</span>
+<span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">]</span><span class="o">=</span> <span class="s">&quot;1&quot;</span>
+<span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;x&quot;</span>
+<span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;2&quot;</span>
+<span class="o">&gt;</span> <span class="n">a</span>
+     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span> <span class="s">&quot;w&quot;</span>  <span class="s">&quot;1&quot;</span> 
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span> <span class="s">&quot;x&quot;</span>  <span class="s">&quot;2&quot;</span> 
+<span class="o">&gt;</span> <span class="n">a</span><span class="p">[,</span><span class="m">2</span><span class="p">]</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">a</span><span class="p">[,</span><span class="m">2</span><span class="p">])</span>
+<span class="o">&gt;</span> <span class="n">a</span>
+     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span> <span class="s">&quot;w&quot;</span>  <span class="s">&quot;1&quot;</span> 
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span> <span class="s">&quot;x&quot;</span>  <span class="s">&quot;2&quot;</span> 
+<span class="o">&gt;</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">a</span><span class="p">[,</span><span class="m">2</span><span class="p">])</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">1</span> <span class="m">2</span>
+</code></pre></div>
+<p>on the other hand, suppose we have a numeric array, set one row to be string, then all elements would become string automatically.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+<span class="o">&gt;</span> <span class="n">b</span>
+     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span>   <span class="kc">NA</span>   <span class="kc">NA</span>
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span>   <span class="kc">NA</span>   <span class="kc">NA</span>
+<span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="m">1</span><span class="p">,]</span><span class="o">=</span><span class="m">1</span>
+<span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="m">2</span><span class="p">,]</span><span class="o">=</span><span class="m">1</span>
+<span class="o">&gt;</span> <span class="n">b</span>
+     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span>    <span class="m">1</span>    <span class="m">1</span>
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span>    <span class="m">1</span>    <span class="m">1</span>
+<span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="m">1</span><span class="p">,]</span> <span class="o">=</span> <span class="s">&quot;1&quot;</span>
+<span class="o">&gt;</span> <span class="n">b</span>
+     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span> <span class="s">&quot;1&quot;</span>  <span class="s">&quot;1&quot;</span> 
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span> <span class="s">&quot;1&quot;</span>  <span class="s">&quot;1&quot;</span> 
+</code></pre></div>
 <h2 id="run-from-command-line">Run from Command Line<a class="headerlink" href="#run-from-command-line" title="Permanent link">&para;</a></h2>
 <ul>
 <li>run <code>R -q -e "1+1"</code> in the command line</li>
@@ -3612,17 +3685,6 @@ $ Rscript test2.R xxx yyy
 <h2 id="rstudio_2">Rstudio 清空历史图象<a class="headerlink" href="#rstudio_2" title="Permanent link">&para;</a></h2>
 <p><a href="http://stackoverflow.com/questions/12766166/error-in-plot-new-figure-margins-too-large-in-r">Error in plot.new() : figure margins too large in R</a></p>
 <p><img alt="" src="error_too_large_for_figure.png" /></p>
-<h2 id="linux-r">linux 下更新 R<a class="headerlink" href="#linux-r" title="Permanent link">&para;</a></h2>
-<p>参考<a href="https://mirrors.tuna.tsinghua.edu.cn/CRAN/">https://mirrors.tuna.tsinghua.edu.cn/CRAN/</a> 中的README.md文件</p>
-<p>若已经通过源码安装，则可以通过找到源码文件夹，使用<code>sudo make uninstall</code>进行卸载。</p>
-<p>然后通过配置source.list，进行安装。</p>
-<h2 id="window">window 安装包<a class="headerlink" href="#window" title="Permanent link">&para;</a></h2>
-<p>切换到R的安装路径下，在etc文件夹中编辑文件Rprofile.site文件</p>
-<div class="highlight"><pre><span></span><code>## set a CRAN mirror
-    local({r &lt;- getOption(&quot;repos&quot;)
-        r[&quot;CRAN&quot;] &lt;- &quot;http://mirrors.ustc.edu.cn/CRAN/&quot;
-          options(repos=r)})
-</code></pre></div>
 <h2 id="interpreting-residual-and-null-deviance-in-glm-r">Interpreting Residual and Null Deviance in GLM R<a class="headerlink" href="#interpreting-residual-and-null-deviance-in-glm-r" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="glm.png" /></p>
 <p>Refer to <a href="https://stats.stackexchange.com/questions/108995/interpreting-residual-and-null-deviance-in-glm-r">https://stats.stackexchange.com/questions/108995/interpreting-residual-and-null-deviance-in-glm-r</a></p>
