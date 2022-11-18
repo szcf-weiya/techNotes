@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Notes on CHPC-Cluster
 
 ## Login

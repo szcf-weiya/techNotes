@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Command-line Tools
 
 ## aria2

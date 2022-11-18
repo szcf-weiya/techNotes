@@ -1,5 +1,10 @@
 # R Notes
 
+!!! tip "Frequent Tips"
+	- 删除当前工作区所有变量: `rm(list = ls(all = TRUE))`
+	- RStudio shows all shortcuts: `Alt-Shift-K`.
+
+
 ## Installation
 
 ### Install from source on Rocky
@@ -40,6 +45,18 @@ then manage the version with `module`.
 		--with-lapack
 	```
 
+??? tip "specify mirror"
+	切换到R的安装路径下，在etc文件夹中编辑文件Rprofile.site文件
+
+	```
+	## set a CRAN mirror
+	local({r <- getOption("repos")
+		r["CRAN"] <- "http://mirrors.ustc.edu.cn/CRAN/"
+			options(repos=r)})
+	```
+
+
+
 #### installation of `module`
 
 Follow the official instruction [:link:](https://modules.readthedocs.io/en/latest/INSTALL.html)
@@ -75,7 +92,7 @@ try to install `libcurl4-openssl-dev`, suggested in [Installing R on Linux: conf
 
 Be careful when installing the package, and to avoid the uninstallation in the next section.
 
-!!! "2022-08-24 10:35:01"
+!!! info "2022-08-24 10:35:01"
 	Run `sudo apt-get install libcurl4-openssl-dev`, and monitor the message, no packages are needed to be removed.
 
 ### Install Latest R3.6
@@ -132,9 +149,11 @@ rstudio
 
 ## Rstudio
 
-### Failed to create OpenGL context
+#### Failed to create OpenGL context
 
 !!! info
+	- 2022-11-17 23:33:18 -0500: again, just reboot the PC.
+
     Refer to [rstudio #27](https://github.com/szcf-weiya/techNotes/issues/27) for the raw records.
 
 It throws 
@@ -149,22 +168,25 @@ when launching without any special actions. Same error after replacing with an o
 
 Laterly, note that nvidia card does not work, and change to another driver. Then it resumes after rebooting.
 
-### 不能切换中文输入（fctix）
+??? bug "fcitx 时不能切换中文输入"
 
-参考[Rstudio 不能切换中文输入（fctix）](http://blog.csdn.net/qq_27755195/article/details/51002620)
+	参考[Rstudio 不能切换中文输入（fctix）](http://blog.csdn.net/qq_27755195/article/details/51002620)
 
-- [Ubuntu 16.04 + Fcitx + RStudio 1.0で日本語を入力する方法](http://blog.goo.ne.jp/ikunya/e/8508d21055503d0560efc245aa787831)
-- [Using RStudio 0.99 with Fctix on Linux](https://support.rstudio.com/hc/en-us/articles/205605748-Using-RStudio-0-99-with-Fctix-on-Linux)
+	- [Ubuntu 16.04 + Fcitx + RStudio 1.0で日本語を入力する方法](http://blog.goo.ne.jp/ikunya/e/8508d21055503d0560efc245aa787831)
+	- [Using RStudio 0.99 with Fctix on Linux](https://support.rstudio.com/hc/en-us/articles/205605748-Using-RStudio-0-99-with-Fctix-on-Linux)
 
-曾经按照上述的指导能够解决这个问题，即将系统的 qt5 的 `libfcitxplatforminputcontextplugin.so` 手动添加到 rstudio 安装目录下的 plugins 中，即
+	曾经按照上述的指导能够解决这个问题，即将系统的 qt5 的 `libfcitxplatforminputcontextplugin.so` 手动添加到 rstudio 安装目录下的 plugins 中，即
 
-```bash
-sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/bin/plugins/platforminputcontexts/
-```
+	```bash
+	sudo ln -s /usr/lib/$(dpkg-architecture -qDEB_BUILD_MULTIARCH)/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/bin/plugins/platforminputcontexts/
+	```
 
-但是后来又失败了，猜测原因可能是 qt5 的版本不再兼容了。在 Rstudio 顶部的菜单栏中，点击 Help > About Rstudio 可以找到具体的 qt 版本信息，比如 RStudio (Version 1.2.5001) 依赖 QtWebEngine/5.12.1，而系统的 Qt 插件版本没那么高，所以也能理解 `libfcitxplatforminputcontextplugin.so` 为什么不再有用了。一种解决方案便是手动重新编译与 Rstudio 中匹配的 Qt 插件的版本，但是似乎比较繁琐，而且也不能一劳永逸，如果 rstudio 更新，还是会失效。
+	但是后来又失败了，猜测原因可能是 qt5 的版本不再兼容了。在 Rstudio 顶部的菜单栏中，点击 Help > About Rstudio 可以找到具体的 qt 版本信息，比如 RStudio (Version 1.2.5001) 依赖 QtWebEngine/5.12.1，而系统的 Qt 插件版本没那么高，所以也能理解 `libfcitxplatforminputcontextplugin.so` 为什么不再有用了。一种解决方案便是手动重新编译与 Rstudio 中匹配的 Qt 插件的版本，但是似乎比较繁琐，而且也不能一劳永逸，如果 rstudio 更新，还是会失效。
 
-索性不折腾了。如果真的需要中文，就用其他编辑器吧。期待 rstudio 官方早日解决这个问题……
+	索性不折腾了。如果真的需要中文，就用其他编辑器吧。期待 rstudio 官方早日解决这个问题……
+
+!!! info
+	使用 ibus + rime 输入法后，就没再回去用 fcitx
 
 ### 更新rstudio 后闪退
 
@@ -202,12 +224,6 @@ refer to [:link:](https://stackoverflow.com/questions/2968220/is-there-an-r-equi
 !!! example
 	[My Repos](https://github.com/search?q=user%3Aszcf-weiya+nframe&type=code)
 
-
-
-## Common Tips
-
-- 删除当前工作区所有变量: `rm(list = ls(all = TRUE))`
-- RStudio shows all shortcuts: `Alt-Shift-K`.
 
 ## `sort(), rank(), order()`
 
@@ -263,6 +279,54 @@ array([ 32,  67,  74,  85,  93,  97,  99, 100])
 but keep in mind that the index starts from 0 instead of 1. Here is another way in [Python | Returning index of a sorted list](https://www.geeksforgeeks.org/python-returning-index-of-a-sorted-list/) (TODO).
 
 In julia, we use `sort` and `sortperm`.
+
+## Row/Column of String Array cannot be changed to numeric
+
+suppose I have a string array,
+
+```r
+> a = array(dim=c(2,2))
+> a
+     [,1] [,2]
+[1,]   NA   NA
+[2,]   NA   NA
+> a[1,1]="w"
+> a[1, 2]= "1"
+> a[2,1]="x"
+> a[2,2]="2"
+> a
+     [,1] [,2]
+[1,] "w"  "1" 
+[2,] "x"  "2" 
+> a[,2] = as.numeric(a[,2])
+> a
+     [,1] [,2]
+[1,] "w"  "1" 
+[2,] "x"  "2" 
+> as.numeric(a[,2])
+[1] 1 2
+```
+
+on the other hand, suppose we have a numeric array, set one row to be string, then all elements would become string automatically.
+
+```r
+> b = array(dim=c(2,2))
+> b
+     [,1] [,2]
+[1,]   NA   NA
+[2,]   NA   NA
+> b[1,]=1
+> b[2,]=1
+> b
+     [,1] [,2]
+[1,]    1    1
+[2,]    1    1
+> b[1,] = "1"
+> b
+     [,1] [,2]
+[1,] "1"  "1" 
+[2,] "1"  "1" 
+```
 
 ## Run from Command Line
 
@@ -388,26 +452,6 @@ for (i in c(1:(n-1)))
 [Error in plot.new() : figure margins too large in R](http://stackoverflow.com/questions/12766166/error-in-plot-new-figure-margins-too-large-in-r)
 
 ![](error_too_large_for_figure.png)
-
-
-## linux 下更新 R
-
-参考[https://mirrors.tuna.tsinghua.edu.cn/CRAN/](https://mirrors.tuna.tsinghua.edu.cn/CRAN/) 中的README.md文件
-
-若已经通过源码安装，则可以通过找到源码文件夹，使用`sudo make uninstall`进行卸载。
-
-然后通过配置source.list，进行安装。
-
-## window 安装包
-切换到R的安装路径下，在etc文件夹中编辑文件Rprofile.site文件
-
-```
-## set a CRAN mirror
-    local({r <- getOption("repos")
-		r["CRAN"] <- "http://mirrors.ustc.edu.cn/CRAN/"
-          options(repos=r)})
-```
-
 
 
 ## Interpreting Residual and Null Deviance in GLM R

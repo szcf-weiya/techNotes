@@ -19,23 +19,25 @@ nav:
   - StatProgramming:
     - Comparisons: comparisons/stat.md
     - R:
-      - General: R/index.md
+      - Base: R/index.md
       - Plot: R/plot.md
-      - 案例分析: R/legend_from_zhihu.md
-      - new sample function (v3.6.0+): R/sample.md
-      - 一道与 factor 有关的问题: R/factor.md
+      - Blog:
+        - ggplot2 中的 legend: R/legend_from_zhihu.md
+        - new sample function (v3.6.0+): R/sample.md
+        - 一道与 factor 有关的问题: R/factor.md
     - Python:
-      - 一般问题: python/index.md
+      - Base: python/index.md
       - Conda: python/conda.md
-      - PyStan 体验: python/pystan/README.md
       - OpenCV: python/opencv.md
       - rpy2: python/rpy2.md
-      - 自建关键词索引页: python/esltag.md
+      - Blog:
+        - PyStan 体验: python/pystan/README.md
+        - 自建关键词索引页: python/esltag.md
     - Julia: 
-      - General: julia/index.md
+      - Base: julia/index.md
       - Plot: julia/plot.md
     - Matlab: 
-      - General: Matlab/index.md
+      - Base: Matlab/index.md
   - CSProgramming:
     - C/C++: 
       - General: Cpp/index.md
