@@ -45,15 +45,26 @@ then manage the version with `module`.
 		--with-lapack
 	```
 
-??? tip "specify mirror"
-	切换到R的安装路径下，在etc文件夹中编辑文件Rprofile.site文件
+??? tip "specify CRAN mirror in `install.package`"
 
+	```r
+	r <- getOption("repos")
+	r["CRAN"] <- "https://cran.r-project.org"
+	# r["CRAN"] <- "r["CRAN"] <- "https://mirrors.ustc.edu.cn/CRAN/"" ## for mainland China
+	options(repos=r)
 	```
-	## set a CRAN mirror
-	local({r <- getOption("repos")
-		r["CRAN"] <- "http://mirrors.ustc.edu.cn/CRAN/"
-			options(repos=r)})
+
+	we also can wrap it with `local({...})` and save in `~/.Rprofile`.
+
+	Refer to [How to select a CRAN mirror in R](https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r)
+
+	For temporary use, use `repos` argument in `install.packages`, such as
+
+	```r
+	install.packages('RMySQL', repos='http://cran.us.r-project.org')
 	```
+
+	refer to [How to select a CRAN mirror in R](https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r)
 
 
 
@@ -188,25 +199,40 @@ Laterly, note that nvidia card does not work, and change to another driver. Then
 !!! info
 	使用 ibus + rime 输入法后，就没再回去用 fcitx
 
-### 更新rstudio 后闪退
+??? bug "更新 rstudio-1.0.44 后闪退 (outdated)"
 
-安装 rstudio 应该采用
+	- `gdebi` 不再必须，(2022-11-17)更新至 rstudio-2022.07.2 直接采用 `dpkg -i` 即可。
 
-```
-sudo apt-get install gdebi-core
-wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb
-sudo gdebi rstudio-1.0.44-amd64.deb
-```
+	安装 rstudio 应该采用
 
-而非
-```
-sudo dpkg -i
-```
+	```bash
+	sudo apt-get install gdebi-core
+	wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb
+	sudo gdebi rstudio-1.0.44-amd64.deb
+	```
 
-另外，如果不行，删除后再装
-```
-sudo apt-get remove rstudio
-```
+	而非
+
+	```bash
+	sudo dpkg -i
+	```
+
+	另外，如果不行，删除后再装
+	
+	```bash
+	sudo apt-get remove rstudio
+	```
+
+??? bug "plot.new() : figure margins too large"
+
+	Rstudio 中对于太大的图片有可能报错，比如当我试图以 `par(mfrow=c(4,1))` 画四个 `matplot`，于是报错。这时候，可以直接在 R session 里面绘制。或者，尝试清空历史图象。
+
+??? tip "清空历史图象"
+
+	[Error in plot.new() : figure margins too large in R](http://stackoverflow.com/questions/12766166/error-in-plot-new-figure-margins-too-large-in-r)
+
+	![](error_too_large_for_figure.png)
+
 
 ## `sys.nframe()`
 
@@ -371,6 +397,8 @@ which shows that `trailingOnly=TRUE` is necessary and it only takes the argument
 
 Refer to [Passing arguments to an R script from command lines | R-bloggers](https://www.r-bloggers.com/2015/09/passing-arguments-to-an-r-script-from-command-lines/)
 
+See also: [Running R in batch mode on Linux](http://www.cureffi.org/2014/01/15/running-r-batch-mode-linux/)
+
 ## Round numbers
 
 I want to approximate a numerical value with 3 significant digits, but the trailing zeros are always be dropped, then I tried several methods.
@@ -447,13 +475,6 @@ for (i in c(1:(n-1)))
 ##2
 ```
 
-## Rstudio 清空历史图象
-
-[Error in plot.new() : figure margins too large in R](http://stackoverflow.com/questions/12766166/error-in-plot-new-figure-margins-too-large-in-r)
-
-![](error_too_large_for_figure.png)
-
-
 ## Interpreting Residual and Null Deviance in GLM R
 
 ![](glm.png)
@@ -518,34 +539,9 @@ library(Rcpp)
 ## 或require(Rcpp)
 ```
 
-## R check package about description
+## Rmarkdown
 
-check locale
-
-## par cheatsheet
-
-[r-graphical-parameters-cheatsheet](r-graphical-parameters-cheatsheet.pdf)
-
-## Mathematical Annotation in R plot
-
-```r
-plot(..., main = expression(paste("...", mu[1])))
-```
-
-参考
-1. [Mathematical Annotation in R
-](http://vis.supstat.com/2013/04/mathematical-annotation-in-r/)
-
-## function 'dataptr' not provided by package 'Rcpp'
-
-参考[function 'dataptr' not provided by package 'Rcpp'](https://stackoverflow.com/questions/21657575/what-does-this-mean-in-lme4-function-dataptr-not-provided-by-package-rcpp)
-
-## remove outliers from the boxplot
-
-[How to remove outliers from a dataset
-](https://stackoverflow.com/questions/4787332/how-to-remove-outliers-from-a-dataset)
-
-## rmarkdown转化中文字符为PDF的设置
+### 转化中文字符为PDF的设置
 
 ```r
 ---
@@ -555,20 +551,28 @@ output:
     pdf_document:
         latex_engine: xelatex
         includes:
-            in_header: header.tex
+            in_header: header_zh.tex
 ---
 ```
 
-## rmarkown compiler does not show captions for two consecutive figures
+where `header_zh.tex` is
+
+```tex
+\usepackage{xeCJK}
+\setCJKmainfont{华文中宋}
+\setmainfont{Times New Roman}
+\usepackage{setspace}
+\doublespacing
+\setlength{\parindent}{2em}
+\usepackage{bm}
+\usepackage{float}
+```
+
+### not show captions for two consecutive figures
 
 add at least two spacing newline.
 
 [*Some* figure captions from RMarkdown not showing](https://stackoverflow.com/questions/27444804/some-figure-captions-from-rmarkdown-not-showing)
-
-
-## 在grid排列图
-
-[Arranging plots in a grid](https://cran.r-project.org/web/packages/cowplot/vignettes/plot_grid.html)
 
 ## x11 font cannot be loaded
 
@@ -596,11 +600,6 @@ add at least two spacing newline.
 
 
 
-## Running R in batch mode on Linux
-
-[Running R in batch mode on Linux](http://www.cureffi.org/2014/01/15/running-r-batch-mode-linux/)
-
-
 ## “Kernel density estimation” is a convolution of what?
 
 [“Kernel density estimation” is a convolution of what?](https://stats.stackexchange.com/questions/73623/kernel-density-estimation-is-a-convolution-of-what)
@@ -616,8 +615,7 @@ add at least two spacing newline.
 
 ## Presentations with Slidy
 
-[Presentations with Slidy
-](http://rmarkdown.rstudio.com/slidy_presentation_format.html)
+[Presentations with Slidy](http://rmarkdown.rstudio.com/slidy_presentation_format.html)
 
 ## Estimation of the expected prediction error
 
@@ -721,10 +719,6 @@ lm(Y ~ X + I(X^2))
 
 是不一样的。若要表示多项式回归，则应该用 `I(X^2)`，而前者等价于 `lm(Y ~ X)`。详见 `?formula`, 其中举了一个例子，`(a+b+c)^2 - a:b` 等价于 `a + b + c + a:c + b:c`，注意二阶项只存在于交叉项中。
 
-## 多项式作图
-
-参考[Plot polynomial regression curve in R](https://stackoverflow.com/questions/23334360/plot-polynomial-regression-curve-in-r)
-
 ## custom print
 
 ```r
@@ -746,31 +740,6 @@ close(fileConn)
 ```
 
 refer to [Write lines of text to a file in R](https://stackoverflow.com/questions/2470248/write-lines-of-text-to-a-file-in-r)
-
-## combine base and ggplot graphics in R figure
-
-refer to [Combine base and ggplot graphics in R figure window](https://stackoverflow.com/questions/14124373/combine-base-and-ggplot-graphics-in-r-figure-window)
-
-## specify CRAN mirror in `install.package`
-
-```r
-r <- getOption("repos")
-r["CRAN"] <- "https://cran.r-project.org"
-# r["CRAN"] <- "r["CRAN"] <- "https://mirrors.ustc.edu.cn/CRAN/"" ## for mainland China
-options(repos=r)
-```
-
-we also can wrap it with `local({...})` and save in `~/.Rprofile`.
-
-Refer to [How to select a CRAN mirror in R](https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r)
-
-For temporary use, use `repos` argument in `install.packages`, such as
-
-```r
-install.packages('RMySQL', repos='http://cran.us.r-project.org')
-```
-
-refer to [How to select a CRAN mirror in R](https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r)
 
 ## R 符号运算
 
@@ -875,10 +844,6 @@ refer to [R install.packages returns “failed to create lock directory”](http
 ## nonzero in `dgCMatrix`
 
 refer to [R package Matrix: get number of non-zero entries per rows / columns of a sparse matrix](https://stackoverflow.com/questions/51560456/r-package-matrix-get-number-of-non-zero-entries-per-rows-columns-of-a-sparse)
-
-## `plot.new() : figure margins too large`
-
-Rstudio 中对于太大的图片有可能报错，比如当我试图以 `par(mfrow=c(4,1))` 画四个 `matplot`，于是报错。这时候，可以直接在 R session 里面绘制。
 
 ## S3 method
 

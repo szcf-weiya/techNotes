@@ -3,6 +3,7 @@
 ## Base
 
 - [R base plotting without wrappers](http://karolis.koncevicius.lt/posts/r_base_plotting_without_wrappers/)
+- [r-graphical-parameters-cheatsheet](r-graphical-parameters-cheatsheet.pdf)
 
 ### math formula
 
@@ -104,6 +105,19 @@ pairs(iris[1:4], lower.panel =my.lower, upper.panel = my.upper)
 ```
 
 参考 [Different data in upper and lower panel of scatterplot matrix](https://stackoverflow.com/questions/15625510/different-data-in-upper-and-lower-panel-of-scatterplot-matrix)
+
+### remove outliers from the boxplot
+
+[How to remove outliers from a dataset](https://stackoverflow.com/questions/4787332/how-to-remove-outliers-from-a-dataset)
+
+### 在grid排列图
+
+[Arranging plots in a grid](https://cran.r-project.org/web/packages/cowplot/vignettes/plot_grid.html)
+
+### combine base and ggplot graphics in R figure
+
+refer to [Combine base and ggplot graphics in R figure window](https://stackoverflow.com/questions/14124373/combine-base-and-ggplot-graphics-in-r-figure-window)
+
 
 ## lattice
 
