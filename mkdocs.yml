@@ -13,9 +13,14 @@ nav:
     - Servers: 
       - General: Linux/servers.md
       - AliECS: Linux/ecs.md
-      - CHPC-Cluster: Linux/chpc.md
       - Rocky-Linux: Linux/rocky-server.md
-      - G40: Linux/asAserver.md    
+      - G40: Linux/asAserver.md 
+    - CHPC-Cluster:
+      - Tips: Linux/chpc.md
+      - Blog:
+        - Fail to SSH passwordlessly: Linux/blog/2020-12-17-passwordless-failed.md
+        - Fail to Access Home: Linux/blog/2021-05-12-fail-to-access-home.md
+        - Why Job Restart?: Linux/blog/2022-11-19-why-job-restart.md
   - StatProgramming:
     - Comparisons: comparisons/stat.md
     - R:
@@ -159,3 +164,7 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
+
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
