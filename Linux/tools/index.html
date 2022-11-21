@@ -3291,11 +3291,25 @@ $ cat t2.txt
 <span class="m">2</span> <span class="m">2</span>
 </code></pre></div>
 <h2 id="ffmpeg"><code>ffmpeg</code><a class="headerlink" href="#ffmpeg" title="Permanent link">&para;</a></h2>
-<h4 id="_5">去除音频<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h4 id="_5">提取音频<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>下载 B 站视频歌曲后，提取音频</p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 output.mp3
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">B 站视频下载方法</p>
+<ol>
+<li>F12 打开开发者工具，并选择移动版页面</li>
+<li>切换至 Network 下的 Media，然后 F5 刷新</li>
+<li>网页上点击播放，等待缓存</li>
+<li>右键点击缓存文件，选择 Copy &gt; Copy link address，即可得到视频链接</li>
+</ol>
+<p>参考 <a href="https://www.zhihu.com/question/295852104/answer/2076417322">怎么提取b站里面的音频？ - 视频编辑助手的回答 - 知乎</a></p>
+</div>
+<h4 id="_6">去除音频<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>参考 <a href="https://hefang.link/article/how-remove-voice-with-ffmpeg.html">如何使用ffmpeg去除视频声音？</a></p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i .<span class="se">\i</span>nput.mp4 -map <span class="m">0</span>:0 -vcodec copy out.mp4
 </code></pre></div>
-<h4 id="_6">慢速播放和快速播放<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h4 id="_7">慢速播放和快速播放<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># 2 times faster</span>
 $ ffmpeg -i input.mkv -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</span> output.mkv
 </code></pre></div>
@@ -3306,7 +3320,7 @@ $ ffmpeg -i input.mkv -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</spa
 <div class="highlight"><pre><span></span><code>$ convert -delay <span class="m">10</span> input.gif output.gif
 </code></pre></div>
 <p>refer to <a href="https://infoheap.com/imagemagick-convert-edit-animated-gif-speed-fps/">https://infoheap.com/imagemagick-convert-edit-animated-gif-speed-fps/</a></p>
-<h4 id="_7">视频旋转<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h4 id="_8">视频旋转<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>参考<a href="https://askubuntu.com/questions/83711/how-can-i-rotate-a-video">How can I rotate a video?</a></p>
 <p>直接用</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i <span class="k">in</span>.mov -vf <span class="s2">&quot;transpose=1&quot;</span> out.mov
@@ -3315,7 +3329,7 @@ $ ffmpeg -i input.mkv -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</spa
 <p>注意添加 <code>-strict -2</code> 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i <span class="k">in</span>.mov -vf <span class="s2">&quot;transpose=1&quot;</span> -strict -2 out.mov
 </code></pre></div>
-<h4 id="_8">视频剪切<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h4 id="_9">视频剪切<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">00</span>:00:30.0 -i input.wmv -c copy -t <span class="m">00</span>:00:10.0 output.wmv
 </code></pre></div>
 <p>where</p>
@@ -3883,7 +3897,7 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 <ul>
 <li><code>u</code>: undo, <code>ctrl+u</code>: redo</li>
 </ul>
-<h4 id="_9">复制<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<h4 id="_10">复制<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>单行复制: 在命令模式下，将光标移动到将要复制的行处，按“yy”进行复制；</li>
 <li>多行复制: 在命令模式下，<ul>
@@ -3897,7 +3911,7 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 <p class="admonition-title">Tip</p>
 <p>将 <code>co</code> 改成 <code>m</code> 就变成剪切了。</p>
 </div>
-<h4 id="_10">删除<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<h4 id="_11">删除<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>删除光标后的字符 <code>d$</code></li>
 <li><code>:.,$d</code>: 删除当前行到最后一行</li>
@@ -3920,7 +3934,7 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 <h4 id="ctrls">Ctrl+s 假死<a class="headerlink" href="#ctrls" title="Permanent link">&para;</a></h4>
 <p>vim并没有死掉，只是停止向终端输出而已，要想退出这种状态，只需按 <code>Ctrl + q</code> 即可恢复正常。</p>
 <p>参考<a href="http://blog.csdn.net/tsuliuchao/article/details/7553003">vim按了Ctrl + s后假死的解决办法</a></p>
-<h4 id="_11">执行当前脚本<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<h4 id="_12">执行当前脚本<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>:!%
 </code></pre></div>
 <p>其中 <code>%</code> expands current file name，另外</p>
@@ -3939,13 +3953,13 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 <div class="highlight"><pre><span></span><code>:w !sudo tee %
 </code></pre></div>
 <p>and such reference gives a more detailed explanation for the trick.</p>
-<h4 id="_12">打开另外一个文件<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<h4 id="_13">打开另外一个文件<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <p>参考</p>
 <ol>
 <li><a href="https://zhidao.baidu.com/question/873060894102392532.html">vim 打开一个文件后,如何打开另一个文件?</a></li>
 <li><a href="https://www.cnblogs.com/david-wei0810/p/5749408.html">VI打开和编辑多个文件的命令 分屏操作 - David.Wei0810 - 博客园</a></li>
 </ol>
-<h4 id="_13">对每行行首进行追加、替换<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<h4 id="_14">对每行行首进行追加、替换<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <p>按住 v 或者 V 选定需要追加的行，然后再进入 <code>:</code> 模式，输入正常的 <code>sed</code> 命令，如</p>
 <div class="highlight"><pre><span></span><code>s/^/#/g
 </code></pre></div>
@@ -3974,11 +3988,11 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 21, 2022</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 21, 2022</span>
       
     
   </small>
