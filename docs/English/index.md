@@ -45,7 +45,7 @@
 - **blister pack (【药品等的】吸塑包装)**, tablet, **syrup (糖水)**, **ampule (安瓿)**
 - rash: 皮疹
 - breastfeed: 用母乳喂养
-- meeting minute: 回忆记录
+- meeting minute: 会议记录
 
 - opioid: 鸦片类药物
 
@@ -403,7 +403,7 @@
 - I need to add some bright colors to my wardrobe.
 - spay
 - They were gaga over Will Smith's new rap album.
-- The holy grail of mobile deep machine learning is to build models that can execute natively and efficiently in mobile devices.
+- The holy **grail (圣杯；渴望但永远得不到的东西)** of mobile deep machine learning is to build models that can execute natively and efficiently in mobile devices.
 - There are not **sustained (持续的，持久的)** sections of **sarcasm (讽刺，嘲讽)** or negated text.
 - Crowdsourcing is a sourcing model in which individuals or organizations obtain goods or services, including ideas, voting, micro-tasks and finances, from a large, relatively open and often rapidly evolving group of participants. [:link:](https://en.wikipedia.org/wiki/Crowdsourcing)
 - We see that **salutations (称呼，称谓)** such as "miss", "lady", "sir" and "**colonel (上校)**" form common centers of nodes, which are often followed by names.
@@ -1030,7 +1030,6 @@
 - Blacks are more likely to be stopped for **pretextual** (pretext, 借口，推辞) reasons (e.g. **alleged (所谓的，声称的)** vehicle **defect (缺点，缺陷，不足之处)**, such as broken taillight; record check) and less for more **concrete (具体的)** reasons such as speeding.
 - defective: 有缺点的，有缺陷的
 - these have been **valorized (稳定物价，规定价格)** in constitutional caselaw
-- there are other disparities by race that are notable and (most likely) significant.
 - I bought the book and, **flipping through** it to find examples for use in class, came cross the two sketches
 - the frequency of driving accidents is plotted against the time of menstruation
 - one for parous women, and one for nonparous women
@@ -1188,7 +1187,7 @@
 - **arsonist (纵火犯，放火犯)**
 - Twentysomethings like Alex and I had nothing but time.
 - sleeping with **knucklehead (笨蛋，傻瓜)**
-- the brain caps off its second and last growth spurt in your 20s
+- the brain caps off its second and last growth **spurt (冲刺；冒出；（短暂地）加速前进)** in your 20s
 - an inordinate impact
 - extended adolescence
 - twixters and kidults
@@ -1628,7 +1627,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. consecutive
 2. passage
 3. leucocyte: 白细胞
-4. intricate
 5. delicate
 6. illusory
 7. He said that racism is **endemic (风土的，地方性的)** in this country.
@@ -1644,7 +1642,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. aperiodic
 4. The KOMA-Script bundle provides replacements for the article, report and book classes with emphasis on typography and **versatility (多功能性，通用性)**. [:link:](https://ctan.org/pkg/koma-script)
     - the document layout (scrartcl) layout of the class is less strident than that of article, and it offers much more flexibility than article via other elements of the koma-script collection.
-5. mutating
 1. **pedagogical (教育学的，教学的)** skill
 2. concrete types
 3. Populate
@@ -1879,7 +1876,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 5. Jane Austen's novel, Emma, paints a comedy of errors that results when its **heroine (女英雄，女主角)** tries her hand at creating love matches, an effort which she attributes to her own benevolence/magnanimity instead of a selfish need to meddle.
 6. While interviewing for a job as a computer consultant, Robert consciously provided a **paucity (缺乏，少量)/dearth (缺乏，稀少)** of references, knowing full well that he had few former employers who would be **laudatory (赞美的，赞赏的)** about his past projects.
 7. While most of the tasks undertaken by the interns were undemanding, a fact that led to the flood of applicants for the positions each year, there was one arduous/onerous duty: cleaning out the garbage bins in the laboratory.
-8. In an attempt to inveigle/entice voters to support her, the **incumbent (在职的)** politician **beguilingly (欺骗地)** greeted a room full of **constituents (选民)** and **pledged (保证)** to lower taxes--even though she had only ever done the opposite while in office.
+8. In an attempt to **inveigle/entice (诱使，引诱，怂恿)** voters to support her, the **incumbent (在职的)** politician **beguilingly (欺骗地)** greeted a room full of **constituents (选民)** and **pledged (保证)** to lower taxes--even though she had only ever done the opposite while in office.
 9. After a series of storms, the once arid landscape became verdant/bountiful for the first time in many months.
 10. Although he received many visitors, the **misanthropic (厌恶人类的)**/**curmudgeonly (小气的，脾气坏的)** old man **shooed (轰走，驱赶)** them away after only a few minutes.
 11. Eileen used to be a picky eater, but since a new complex of fine dining and ethnic restaurants opened in her neighborhood, she has been quite **epicurean (好美食的，【通过美食】享乐主义的)**/**gourmandizing (gourmandize: n. 大吃大喝 v. 狼吞虎咽)**.
@@ -2125,7 +2122,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 8. rhizome
 10. most people are extremely **resilient (（物体或材料）能复原的；有弹性的；【人的性格】能迅速恢复或重新振作的；适应性强的)** able to withstand **trauma (外伤，心理创伤)**.
 11. resiliency in the face of challenge
-10. interlocking
+10. interlocking: 互锁，联动
 11. snap
 12. blowhole
 14. sacs: 囊，上衣

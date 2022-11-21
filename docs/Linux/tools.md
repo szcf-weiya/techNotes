@@ -492,6 +492,24 @@ $ cat t2.txt
 
 ## `ffmpeg`
 
+#### 提取音频
+
+下载 B 站视频歌曲后，提取音频
+
+```bash
+ffmpeg -i input.mp4 output.mp3
+```
+
+!!! tip "B 站视频下载方法"
+    1. F12 打开开发者工具，并选择移动版页面
+    2. 切换至 Network 下的 Media，然后 F5 刷新
+    3. 网页上点击播放，等待缓存
+    4. 右键点击缓存文件，选择 Copy > Copy link address，即可得到视频链接
+
+    参考 [怎么提取b站里面的音频？ - 视频编辑助手的回答 - 知乎](https://www.zhihu.com/question/295852104/answer/2076417322)
+
+
+
 #### 去除音频
 
 参考 [如何使用ffmpeg去除视频声音？](https://hefang.link/article/how-remove-voice-with-ffmpeg.html)
