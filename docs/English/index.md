@@ -5,6 +5,7 @@
 - American Thoracic Society (ATS): 美国胸腔学会 [:link:](https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9B%BD%E8%83%B8%E8%85%94%E5%AD%A6%E4%BC%9A)
 - Coronary artery disease (CAD): 冠状动脉疾病
 - plethora: 过多，过量，过剩
+- signal **transduction (传导)**
 
 ## 2022.10
 

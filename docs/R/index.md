@@ -541,7 +541,11 @@ library(Rcpp)
 
 ## Rmarkdown
 
-### 转化中文字符为PDF的设置
+### `knit::kable`
+
+pretty table, which can auto newline long description in a cell. See also [:link:](#events_init_vs_extend)
+
+### Chinese Fonts in PDF
 
 ```r
 ---
