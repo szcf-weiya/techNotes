@@ -5,6 +5,16 @@
 - [R base plotting without wrappers](http://karolis.koncevicius.lt/posts/r_base_plotting_without_wrappers/)
 - [r-graphical-parameters-cheatsheet](r-graphical-parameters-cheatsheet.pdf)
 
+### `layout`
+
+For two subplots, the height of the first subplot is 8 times than the height of the second subplot, 
+
+```r
+layout(mat = matrix(c(rep(1, 8), 2), ncol = 1, byrow = TRUE))
+```
+
+see more details in <https://stats.hohoweiya.xyz/2022/11/21/KEGGgraph/>
+
 ### math formula
 
 No need to use `paste` function ([:link:](https://stackoverflow.com/questions/4973898/combining-paste-and-expression-functions-in-plot-labels))

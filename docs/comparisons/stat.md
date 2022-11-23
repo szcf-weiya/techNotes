@@ -28,3 +28,4 @@ figure size | `size in pixel` | | `figsize in inch` |
 [straight line](https://stackoverflow.com/questions/55427314/whats-julias-plots-jls-equivalent-of-rs-abline) | `Plots.abline!()` | `abline()` | |
 get unique elements | `unique(x)` | `unique(x)` |  |
 index for unique elements | `unique(i->x[i], 1:length(x))` | `which(!duplicated(x))` | |
+layout | `@layout` | [`layout`](../../R/plot/) | |
