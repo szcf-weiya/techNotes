@@ -356,9 +356,8 @@
 - **Campaigns (战役，运动)** to **quash (镇压，平息)** tuberculosis (TB), measles and polio have all been set back by the need to divert medical resources to COVID-19.
 - A new measure of chronic, systemic inflammation aims to **pinpoint (确定)** whether your immune system is not as **perky (精力充沛的，活跃的，高兴的)** as it used to be.
 - It's hard to **tease (梳理)** apart the effects of the infection from other factors, such as pandemic-related stress.
-- An instrument on the Perseverance rover has produced breathable oxygen on Mars.
+- An instrument on the **Perseverance rover (毅力号火星车)** has produced breathable oxygen on Mars.
 - Two **jabs (注射)** that each contained only one-quarter of the standards dose of Moderna's COVID-19 vaccine gave rise to long-lasting protective antibodies and virus-fighting T cells.
-- mannequin
 - Call for clearer rules on science **espionage (间谍活动)**.
 - The scientists transplanted **uteruses (子宫)** into **castrated (阉割的)** male rats and **sewed (缝合，缝上)** the animals to pregnant female rats. 
 - New evidence suggests that the coronavirus's **assault (攻击)** on this organ could be **multipronged (多方面的)**.
@@ -440,7 +439,7 @@
 
 ## 2021.05
 
-- Kramer is telling Elaine about her mannequin double.
+- Kramer is telling Elaine about her **mannequin (时装模特，人体模特)** **double (替身？)**. [:link:](https://en.wikipedia.org/wiki/Double_(occupation))
 - The **emcee (M.C.， master of ceremony, 主持人)** guy was quite funny.
 - A `Dataset.batch` applied after `Dataset.repeat` will yield batches that **straddle (横跨)** epoch boundaries. [:link:](https://www.tensorflow.org/guide/data)
 - **Cholera (霍乱)** is caused by **ingesting (摄入，获取)** bacteria from contaminated water or food.
@@ -728,7 +727,7 @@
 - Encryption **jumbles (搞乱，使混乱)** words into random numbers, letters, characters.
 - Traffic is **hectic (繁忙的，忙乱的)** every day.
 - **atrocious (恶劣的，糟透的)** weather
-- I did not know whether it were not a proper opportunity to offer a bit of **admonition (告诫，忠告)**.
+- offer a bit of **admonition (告诫，忠告)**.
 - **A Journal of the Plague Year (瘟疫年纪事)** is a book by **Daniel Defoe (丹尼尔·笛福)**.
     - It has been **plagued (困扰， annoy continually or chronically)** by delays.
 - Just **disclaimer (免责声明；否定申明)**, he's not sponsored by Adidas.
@@ -1443,7 +1442,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 25. political ideology: 政治意识形态
 26. if you push hard you can find the weak points and **magnify** them until you get **ridiculous (荒谬的)** inferences.
 27. but the way probability works is that you can always find some **chink** in the model and exploit it to result in a clearly bad prediction.
-28. I think the **proclivity** of Bayesian inferences to tend toward the ridiculous is just fine
+28. I think the **proclivity (「常对坏事的」倾向)** of Bayesian inferences to tend toward the ridiculous is just fine
 29. But Bayesian inference can lead us **astray**, and we’re better statisticians if we realize that.
 30. I’m exhausted by the ideology of the Bayes-**evangelists**.
 31. Would Republicans pay a price if they vote to **impeach** the president?
@@ -1649,7 +1648,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. percolation
 2. ascribe
 - Loneliness causes high blood pressure, high **cholesterol (胆固醇)**.
-1. mnemonic
+1. mnemonic: 记忆的，增进记忆的
 2. acyclic
 4. endow
 5. serum: 血清
@@ -1783,7 +1782,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 12. **foundationalism (基础主义，基础论)**
 13.  John Locke, René Descartes.
 14. slate
-15. mirage
+15. mirage: 海市蜃楼，妄想，幻想
 16. shimmer
 17. conceive
 18. or so
@@ -1823,7 +1822,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 9. apprentices: 学徒，徒弟
 10. quarry: 采石场；苦心寻找
 11. to and fro
-12. carpenter, mason
+12. carpenter (木匠), mason (石匠，泥瓦匠)
 13. portraiture, portrait artist
 14. crucial
 15. make **headway (进展，前进)**
@@ -1837,7 +1836,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 24. pharaoh Khufu, Great Pyramid
 25. sturdy: 结实的，坚固的
 26. Herodotus: 希腊历史学家希罗多德
-28. Plateau
+28. plateau: 高原，平台期
 29. spiral
 1. Chimpanzees, **primates (灵长类)**, chimps, gorillas, orangutans
 2. bottlenose
@@ -1897,7 +1896,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 9. The moon waxes and the wanes.
 10. But the picture may not be as bleak as it seems.
 11. My ship was tossed about many days in storms off Cape Horn.
-12. To perpetuate them it is our sacred duty to preserve it.
+12. To **perpetuate (使持久化，使永久化)** them it is our sacred duty to preserve it.
 13. The same lethargy, I am afraid, characterizes the use of our faculties and senses.
 14. It can also help perpetuate stereotypes, the inscrutable Japanese, bowing all the time, taking costs of pictures. Makes you wonder how the Japanese stereotype us.
 15. The children are apparently intrigued by the tale.
@@ -2003,7 +2002,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 70. frenzied (frantic; highly agitated)
 71. Magnanimous
 72. sporadic (intermittent or infrequent): 零星的，分散的，不定时发生的
-74. Denigrate (disparage; defame)
+74. Denigrate (disparage; defame): 诋毁，诽谤，贬低
 75. demonstrate (show; prove) & warrant (justify, 使显得合理，成为...的根据)
 76. Reticence (reserve; tendency to keep silent) & gregariousness or sociability.
 77. Competence (capability; proficiency)
@@ -2038,7 +2037,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 108. Dampen (depress; deaden)
 109. malfunction (failure to work properly).
 110. Condemnation means censure.
-111.  Taxonomy is the science or technique of classification.
+111.  **Taxonomy (分类学，分类法)** is the science or technique of classification.
 112. **Flagrant (骇人听闻的，公然的)** means **blatant (明目张胆的，公然的)** or **outrageous (骇人的，无法形容的，反常的)**
 113. Dilatory means tardy or tending to delay.
 114. Aloof means standoffish and remote.

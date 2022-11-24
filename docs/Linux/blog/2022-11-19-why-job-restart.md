@@ -2,6 +2,8 @@
 comments: true
 ---
 
+## 2022.11.20
+
 起因是发现突然多了 slurm 的输出文件，
 
 ```bash
@@ -13,7 +15,7 @@ $ ll -at | head -10
 
 ```bash
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-           1144481   statdgx dummy.jo s1155113  R    6:57:16      1 chpc-gpu019
+           1144481   statdgx dummy.jo s******  R    6:57:16      1 chpc-gpu019
 ```
 
 竟然才运行 6 小时，而当前时间为
@@ -72,9 +74,9 @@ $ sacct --format=JobID,JobName,NodeList,Submit,Start,SystemComment,End,State,Rea
 
 ![image](https://user-images.githubusercontent.com/13688320/202863225-f06c2678-8a5f-4dda-b2c3-daf0d0f97ad0.png)
 
-修改时间换成 HKT 的话是 2022-11-02T06:25，刚好在 job 1144480 的 submit 的时间戳几分钟之后，
+修改时间换成 HKT 的话是 2022-11-02T06:25，刚好在 job 1144480 的 submit 时间戳的几分钟之后。
 
-还有一点，注意到 `REASON` 一列 1144481 值为 "BeginTime"，根据[:link:](https://stackoverflow.com/questions/71921445/slurm-pending-jobs)，这应该是 pending job 的 reason， 但 job 的详细信息中 `Reason = None`，可能因为已经处于 RUNNING 状态，但是 `sacct` 还没有
+还有一点，注意到 `REASON` 一列 1144481 值为 "BeginTime"，根据[:link:](https://stackoverflow.com/questions/71921445/slurm-pending-jobs)，这应该是 pending job 的 reason， 但 job 的详细信息中 `Reason = None`，可能是因为已经处于 RUNNING 状态，只是 `sacct` 没有相应地更新 REASON.
 
 ```
 $ scontrol show job 1144481
@@ -109,7 +111,7 @@ JobId=1144481 JobName=dummy.job
 !!! question "解除 PENDING 后，系统重新提交，产生了新的 submit 时间戳？"
      
     
-于是检查是否存在 STATE 为 RUNNING 但是 REASON 也为 BeginTime 的 job，还真有几个，
+于是检查是否存在 STATE 为 RUNNING 而 REASON 也为 BeginTime 的 job，还真有几个，
 
 ```bash
 $ sacct -a -X --format=JobID,JobName,NodeList,Submit,Start,SystemComment,End,State,Reason,Suspended,Timelimit,Comment --starttime=2022-10-01 | grep RUNNING | grep BeginTime
@@ -131,3 +133,29 @@ $ sacct -a -X --format=JobID,JobName,NodeList,Submit,Start,SystemComment,End,Sta
 1152285      mulch_201+ chpc-large-mem+ 2022-11-19T17:52:26 2022-11-19T17:55:05                 2022-11-19T20:49:15 CANCELLED+              BeginTime   00:00:00 7-00:00:00                
 1152287      nomulch_2+      chpc-cn051 2022-11-19T17:52:26 2022-11-19T17:56:05                 2022-11-19T20:49:17 CANCELLED+              BeginTime   00:00:00 7-00:00:00 
 ```
+
+
+然而这些只能说明系统在同一时间点进行了某项处理，但并不能指明这是把 1144481 是同其它几个 job 同时从 PENDING 转为 RUNNING，还是把本来是 RUNNING 的几个 job 被突然一起被重新提交。
+
+虽然如此，还是很怀疑是被重新提交的，毕竟根据经验，排队 18 天是几乎不可能的，而且按照 priority 算的话，现在就这一个 job，priority 也应该早就到了。但在无其它证据之前，这只能成为悬案。
+
+不过如果它会重新提交，那有可能会再次“作案”……
+
+## 2022.11.24
+
+果然，发现了新的 Submit 时间点 2022-11-23T15:50:41，而此前的 Submit 时间点为 2022-11-19T17:52:26
+
+```bash
+$ date
+Thu Nov 24 09:24:13 HKT 2022
+$ scontrol show job 1144481
+JobId=1144481 JobName=dummy.job
+   Priority=29597 Nice=0 Account=stat QOS=stat
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=34 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=17:29:58 TimeLimit=30-00:00:00 TimeMin=N/A
+   SubmitTime=2022-11-23T15:50:41 EligibleTime=2022-11-23T15:52:42
+   AccrueTime=2022-11-23T15:52:42
+   StartTime=2022-11-23T15:54:17 EndTime=2022-12-23T15:54:17 Deadline=N/A
+```
+
