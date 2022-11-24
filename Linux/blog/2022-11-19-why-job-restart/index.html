@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#20221120" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -761,9 +766,45 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Why Job Restart?
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Why Job Restart?
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#20221120" class="md-nav__link">
+    2022.11.20
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20221124" class="md-nav__link">
+    2022.11.24
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2350,6 +2391,28 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#20221120" class="md-nav__link">
+    2022.11.20
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20221124" class="md-nav__link">
+    2022.11.24
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2370,13 +2433,14 @@
 
   <h1>Why Job Restart?</h1>
 
+<h2 id="20221120">2022.11.20<a class="headerlink" href="#20221120" title="Permanent link">&para;</a></h2>
 <p>起因是发现突然多了 slurm 的输出文件，</p>
 <div class="highlight"><pre><span></span><code>$ ll -at <span class="p">|</span> head -10
        <span class="m">0</span> Nov <span class="m">19</span> <span class="m">17</span>:56 slurm-1144481.out
 </code></pre></div>
 <p>第一感觉是 dummy.job 超过时间限制了，然后一看</p>
 <div class="highlight"><pre><span></span><code>             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
-           <span class="m">1144481</span>   statdgx dummy.jo s1155113  R    <span class="m">6</span>:57:16      <span class="m">1</span> chpc-gpu019
+           <span class="m">1144481</span>   statdgx dummy.jo s******  R    <span class="m">6</span>:57:16      <span class="m">1</span> chpc-gpu019
 </code></pre></div>
 <p>竟然才运行 6 小时，而当前时间为</p>
 <div class="highlight"><pre><span></span><code>$ date
@@ -2415,8 +2479,8 @@ Change: <span class="m">2022</span>-11-19 <span class="m">17</span>:56:05.643506
 </div>
 <p>刚好在另一处记录了此次提交 job 提交的记录</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/202863225-f06c2678-8a5f-4dda-b2c3-daf0d0f97ad0.png" /></p>
-<p>修改时间换成 HKT 的话是 2022-11-02T06:25，刚好在 job 1144480 的 submit 的时间戳几分钟之后，</p>
-<p>还有一点，注意到 <code>REASON</code> 一列 1144481 值为 &ldquo;BeginTime&rdquo;，根据<a href="https://stackoverflow.com/questions/71921445/slurm-pending-jobs"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>，这应该是 pending job 的 reason， 但 job 的详细信息中 <code>Reason = None</code>，可能因为已经处于 RUNNING 状态，但是 <code>sacct</code> 还没有</p>
+<p>修改时间换成 HKT 的话是 2022-11-02T06:25，刚好在 job 1144480 的 submit 时间戳的几分钟之后。</p>
+<p>还有一点，注意到 <code>REASON</code> 一列 1144481 值为 &ldquo;BeginTime&rdquo;，根据<a href="https://stackoverflow.com/questions/71921445/slurm-pending-jobs"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>，这应该是 pending job 的 reason， 但 job 的详细信息中 <code>Reason = None</code>，可能是因为已经处于 RUNNING 状态，只是 <code>sacct</code> 没有相应地更新 REASON.</p>
 <div class="highlight"><pre><span></span><code>$ scontrol show job 1144481
 JobId=1144481 JobName=dummy.job
 
@@ -2447,7 +2511,7 @@ JobId=1144481 JobName=dummy.job
 <div class="admonition question">
 <p class="admonition-title">解除 PENDING 后，系统重新提交，产生了新的 submit 时间戳？</p>
 </div>
-<p>于是检查是否存在 STATE 为 RUNNING 但是 REASON 也为 BeginTime 的 job，还真有几个，</p>
+<p>于是检查是否存在 STATE 为 RUNNING 而 REASON 也为 BeginTime 的 job，还真有几个，</p>
 <div class="highlight"><pre><span></span><code>$ sacct -a -X --format<span class="o">=</span>JobID,JobName,NodeList,Submit,Start,SystemComment,End,State,Reason,Suspended,Timelimit,Comment --starttime<span class="o">=</span><span class="m">2022</span>-10-01 <span class="p">|</span> grep RUNNING <span class="p">|</span> grep BeginTime
 <span class="m">1150975</span>           s1h71 chpc-cn<span class="o">[</span><span class="m">023</span>-02+ <span class="m">2022</span>-11-17T11:43:44 <span class="m">2022</span>-11-18T21:06:01                             Unknown    RUNNING              BeginTime   <span class="m">00</span>:00:00 <span class="m">7</span>-00:00:00                
 <span class="m">1151170</span>      PRD.71.02+      chpc-cn002 <span class="m">2022</span>-11-17T16:36:11 <span class="m">2022</span>-11-18T01:01:59                             Unknown    RUNNING              BeginTime   <span class="m">00</span>:00:00 <span class="m">7</span>-00:00:00                
@@ -2464,13 +2528,30 @@ JobId=1144481 JobName=dummy.job
 <span class="m">1152285</span>      mulch_201+ chpc-large-mem+ <span class="m">2022</span>-11-19T17:52:26 <span class="m">2022</span>-11-19T17:55:05                 <span class="m">2022</span>-11-19T20:49:15 CANCELLED+              BeginTime   <span class="m">00</span>:00:00 <span class="m">7</span>-00:00:00                
 <span class="m">1152287</span>      nomulch_2+      chpc-cn051 <span class="m">2022</span>-11-19T17:52:26 <span class="m">2022</span>-11-19T17:56:05                 <span class="m">2022</span>-11-19T20:49:17 CANCELLED+              BeginTime   <span class="m">00</span>:00:00 <span class="m">7</span>-00:00:00 
 </code></pre></div>
+<p>然而这些只能说明系统在同一时间点进行了某项处理，但并不能指明这是把 1144481 是同其它几个 job 同时从 PENDING 转为 RUNNING，还是把本来是 RUNNING 的几个 job 被突然一起被重新提交。</p>
+<p>虽然如此，还是很怀疑是被重新提交的，毕竟根据经验，排队 18 天是几乎不可能的，而且按照 priority 算的话，现在就这一个 job，priority 也应该早就到了。但在无其它证据之前，这只能成为悬案。</p>
+<p>不过如果它会重新提交，那有可能会再次“作案”……</p>
+<h2 id="20221124">2022.11.24<a class="headerlink" href="#20221124" title="Permanent link">&para;</a></h2>
+<p>果然，发现了新的 Submit 时间点 2022-11-23T15:50:41，而此前的 Submit 时间点为 2022-11-19T17:52:26</p>
+<div class="highlight"><pre><span></span><code>$ date
+Thu Nov <span class="m">24</span> <span class="m">09</span>:24:13 HKT <span class="m">2022</span>
+$ scontrol show job <span class="m">1144481</span>
+<span class="nv">JobId</span><span class="o">=</span><span class="m">1144481</span> <span class="nv">JobName</span><span class="o">=</span>dummy.job
+   <span class="nv">Priority</span><span class="o">=</span><span class="m">29597</span> <span class="nv">Nice</span><span class="o">=</span><span class="m">0</span> <span class="nv">Account</span><span class="o">=</span>stat <span class="nv">QOS</span><span class="o">=</span>stat
+   <span class="nv">JobState</span><span class="o">=</span>RUNNING <span class="nv">Reason</span><span class="o">=</span>None <span class="nv">Dependency</span><span class="o">=(</span>null<span class="o">)</span>
+   <span class="nv">Requeue</span><span class="o">=</span><span class="m">1</span> <span class="nv">Restarts</span><span class="o">=</span><span class="m">34</span> <span class="nv">BatchFlag</span><span class="o">=</span><span class="m">1</span> <span class="nv">Reboot</span><span class="o">=</span><span class="m">0</span> <span class="nv">ExitCode</span><span class="o">=</span><span class="m">0</span>:0
+   <span class="nv">RunTime</span><span class="o">=</span><span class="m">17</span>:29:58 <span class="nv">TimeLimit</span><span class="o">=</span><span class="m">30</span>-00:00:00 <span class="nv">TimeMin</span><span class="o">=</span>N/A
+   <span class="nv">SubmitTime</span><span class="o">=</span><span class="m">2022</span>-11-23T15:50:41 <span class="nv">EligibleTime</span><span class="o">=</span><span class="m">2022</span>-11-23T15:52:42
+   <span class="nv">AccrueTime</span><span class="o">=</span><span class="m">2022</span>-11-23T15:52:42
+   <span class="nv">StartTime</span><span class="o">=</span><span class="m">2022</span>-11-23T15:54:17 <span class="nv">EndTime</span><span class="o">=</span><span class="m">2022</span>-12-23T15:54:17 <span class="nv">Deadline</span><span class="o">=</span>N/A
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2022</span>
       
         <br>
         Created:
