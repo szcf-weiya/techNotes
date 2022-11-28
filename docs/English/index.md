@@ -1271,7 +1271,7 @@
 - stay out of the weeds
 - I can bolster my own identity.
 - A good conversation is like a miniskirt; short enough to retain interest, but long enough to cover the subject.
-- She was the **runner-up** to Miss America.
+- She was the **runner-up (亚军，第二名)** to Miss America.
 - He was the mayor of Sacramento.
 - She won a Pulitzer Prize.
 
@@ -1603,7 +1603,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 5. mortal
 6. immortal
 1. outrage: 愤怒，愤慨
-1. deduce
+1. deduce: 推断，推论，演绎
 1. If both a pair of **homologous (同源的)** chromosomes are missing, **nullisomy (缺体性，缺对染色体)** results.
 2. The stretch is also the only federally **designated** wildlife migration **corridor (走廊)**.
 3. I never worked at anything **pertaining (与...有关系的，附属...的)** to sports.
@@ -1646,7 +1646,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. concrete types
 3. Populate
 1. percolation
-2. ascribe
+2. ascribe: 把……归因于
 - Loneliness causes high blood pressure, high **cholesterol (胆固醇)**.
 1. mnemonic: 记忆的，增进记忆的
 2. acyclic
@@ -1751,9 +1751,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. the moss-**draped (披，装饰)** **bald (秃顶的，秃头的)** **cypress (柏树)** trees: 长满青苔的秃柏树
 3. monopoly
 4. monolithic
-5. miniature
 6. metropolis
-8. metallurgy
+8. metallurgy: 冶金学
 1. till: 耕作，犁地；收银台
 2. dweller
 3. wriggle
