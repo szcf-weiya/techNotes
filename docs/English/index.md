@@ -6,6 +6,7 @@
 - Coronary artery disease (CAD): 冠状动脉疾病
 - plethora: 过多，过量，过剩
 - signal **transduction (传导)**
+- frugality: 节俭，俭朴
 
 ## 2022.10
 

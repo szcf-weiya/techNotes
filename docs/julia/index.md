@@ -620,6 +620,28 @@ ENV["https_proxy"]
 
 ## Function
 
+### calculation in arguments
+
+```julia
+julia> f(x; n = 10, m=n/2) = x+m
+f (generic function with 1 method)
+
+julia> f(1)
+6.0
+```
+
+where `m = n/2` is allowed. But Python does not support this feature.
+
+!!! bug
+    ```python
+    >>> def f(x, n = 10, m = n/2):
+    ...     x + m
+    ... 
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    NameError: name 'n' is not defined
+    ```
+
 ### function redefinition in `if`
 
 === "Wrong"
