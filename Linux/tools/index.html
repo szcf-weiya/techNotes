@@ -709,13 +709,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mv" class="md-nav__link">
-    mv
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#notify-send" class="md-nav__link">
     notify-send
   </a>
@@ -753,6 +746,13 @@
         <li class="md-nav__item">
   <a href="#rename" class="md-nav__link">
     rename
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sar" class="md-nav__link">
+    sar
   </a>
   
 </li>
@@ -844,6 +844,13 @@
         <li class="md-nav__item">
   <a href="#wget" class="md-nav__link">
     wget
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xargs" class="md-nav__link">
+    xargs
   </a>
   
 </li>
@@ -2836,13 +2843,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mv" class="md-nav__link">
-    mv
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#notify-send" class="md-nav__link">
     notify-send
   </a>
@@ -2880,6 +2880,13 @@
         <li class="md-nav__item">
   <a href="#rename" class="md-nav__link">
     rename
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sar" class="md-nav__link">
+    sar
   </a>
   
 </li>
@@ -2971,6 +2978,13 @@
         <li class="md-nav__item">
   <a href="#wget" class="md-nav__link">
     wget
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xargs" class="md-nav__link">
+    xargs
   </a>
   
 </li>
@@ -3520,13 +3534,6 @@ ls -d */
 <ul>
 <li><code>mkdir -p</code>: <a href="https://stackoverflow.com/questions/793858/how-to-mkdir-only-if-a-dir-does-not-already-exist">mkdir only if a dir does not already exist?</a></li>
 </ul>
-<h2 id="mv"><code>mv</code><a class="headerlink" href="#mv" title="Permanent link">&para;</a></h2>
-<h4 id="mv-files-with-xargs">mv files with <code>xargs</code><a class="headerlink" href="#mv-files-with-xargs" title="Permanent link">&para;</a></h4>
-<p>use <code>-I {}</code> to replace some str.</p>
-<div class="highlight"><pre><span></span><code>ls <span class="p">|</span> grep <span class="s1">&#39;config[0-9].txt&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> mv <span class="o">{}</span> configs/
-</code></pre></div>
-<p>see more details in <a href="https://askubuntu.com/questions/487035/mv-files-with-xargs">mv files with | xargs</a></p>
-<p>see also: <a href="http://man.linuxde.net/xargs">xargs命令_Linux xargs 命令用法详解：给其他命令传递参数的一个过滤器</a></p>
 <h2 id="notify-send"><code>notify-send</code><a class="headerlink" href="#notify-send" title="Permanent link">&para;</a></h2>
 <ul>
 <li>show whole message: leave summary empty and only show body, but still only when mouse is hovering the pop window, see also <a href="https://unix.stackexchange.com/questions/300099/notify-send-how-to-display-full-message-when-message-is-longer-than-one-line"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
@@ -3702,6 +3709,12 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 <li><a href="http://www.linuxidc.com/Linux/2016-11/137041.htm">Ubuntu中rename命令和批量重命名</a></li>
 <li><a href="https://stackoverflow.com/questions/10803296/modifying-replace-string-in-xargs">Modifying replace string in xargs</a></li>
 </ul>
+<h2 id="sar"><code>sar</code><a class="headerlink" href="#sar" title="Permanent link">&para;</a></h2>
+<p>a tool for checking io wait, refer to <a href="https://unix.stackexchange.com/questions/55212/how-can-i-monitor-disk-io">https://unix.stackexchange.com/questions/55212/how-can-i-monitor-disk-io</a></p>
+<div class="highlight"><pre><span></span><code>sar
+<span class="c1"># read more history</span>
+sar -f /var/log/sa/sa04
+</code></pre></div>
 <h2 id="sed"><code>sed</code><a class="headerlink" href="#sed" title="Permanent link">&para;</a></h2>
 <ul>
 <li>打印特定行，比如第 10 行：<code>sed '10!d' file.txt</code>, 参考 <a href="https://stackoverflow.com/questions/19327556/get-specific-line-from-text-file-using-just-shell-script">Get specific line from text file using just shell script</a></li>
@@ -4015,13 +4028,23 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 <div class="highlight"><pre><span></span><code>curl -sL https://dl.winehq.org/wine-builds/winehq.key <span class="p">|</span> apt-key add -
 </code></pre></div>
 <p>更多比较详见 <a href="https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget">What is the difference between curl and wget?</a></p>
+<h2 id="xargs"><code>xargs</code><a class="headerlink" href="#xargs" title="Permanent link">&para;</a></h2>
+<h4 id="mv-files">mv files<a class="headerlink" href="#mv-files" title="Permanent link">&para;</a></h4>
+<p>use <code>-I {}</code> to replace some string.</p>
+<div class="highlight"><pre><span></span><code>ls <span class="p">|</span> grep <span class="s1">&#39;config[0-9].txt&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> mv <span class="o">{}</span> configs/
+</code></pre></div>
+<p>see more details in <a href="https://askubuntu.com/questions/487035/mv-files-with-xargs">mv files with | xargs</a></p>
+<h4 id="rm-files">rm files<a class="headerlink" href="#rm-files" title="Permanent link">&para;</a></h4>
+<p>it is safer to check the files before appending <code>rm</code> into the pipeline.</p>
+<div class="highlight"><pre><span></span><code>ls <span class="p">|</span> grep <span class="s2">&quot;.txt&quot;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> rm -rf <span class="o">{}</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 21, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 6, 2022</span>
       
         <br>
         Created:
