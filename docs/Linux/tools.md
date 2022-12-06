@@ -785,20 +785,6 @@ My application: [TeXtemplates: create a tex template](https://github.com/szcf-we
 
 - `mkdir -p`: [mkdir only if a dir does not already exist?](https://stackoverflow.com/questions/793858/how-to-mkdir-only-if-a-dir-does-not-already-exist)
 
-## `mv`
-
-#### mv files with `xargs`
-
-use `-I {}` to replace some str.
-
-```bash
-ls | grep 'config[0-9].txt' | xargs -I {} mv {} configs/
-```
-
-see more details in [mv files with | xargs](https://askubuntu.com/questions/487035/mv-files-with-xargs)
-
-see also: [xargs命令_Linux xargs 命令用法详解：给其他命令传递参数的一个过滤器](http://man.linuxde.net/xargs)
-
 ## `notify-send`
 
 - show whole message: leave summary empty and only show body, but still only when mouse is hovering the pop window, see also [:link:](https://unix.stackexchange.com/questions/300099/notify-send-how-to-display-full-message-when-message-is-longer-than-one-line)
@@ -1019,6 +1005,16 @@ rename Sam3 Stm32 *.nc
 
 - [Ubuntu中rename命令和批量重命名](http://www.linuxidc.com/Linux/2016-11/137041.htm)
 - [Modifying replace string in xargs](https://stackoverflow.com/questions/10803296/modifying-replace-string-in-xargs)
+
+## `sar`
+
+a tool for checking io wait, refer to [https://unix.stackexchange.com/questions/55212/how-can-i-monitor-disk-io](https://unix.stackexchange.com/questions/55212/how-can-i-monitor-disk-io)
+
+```bash
+sar
+# read more history
+sar -f /var/log/sa/sa04
+```
 
 ## `sed`
 
@@ -1430,3 +1426,23 @@ curl -sL https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
 ```
 
 更多比较详见 [What is the difference between curl and wget?](https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget)
+
+## `xargs`
+
+#### mv files
+
+use `-I {}` to replace some string.
+
+```bash
+ls | grep 'config[0-9].txt' | xargs -I {} mv {} configs/
+```
+
+see more details in [mv files with | xargs](https://askubuntu.com/questions/487035/mv-files-with-xargs)
+
+#### rm files
+
+it is safer to check the files before appending `rm` into the pipeline.
+
+```bash
+ls | grep ".txt" | xargs -I {} rm -rf {}
+```
