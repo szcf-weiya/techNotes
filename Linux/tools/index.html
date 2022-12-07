@@ -4038,13 +4038,61 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 <p>it is safer to check the files before appending <code>rm</code> into the pipeline.</p>
 <div class="highlight"><pre><span></span><code>ls <span class="p">|</span> grep <span class="s2">&quot;.txt&quot;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> rm -rf <span class="o">{}</span>
 </code></pre></div>
+<p>an application is asked by @van1yu3</p>
+<blockquote>
+<p>在当前目录下有10个子目录dir1-dir10，dir1-dir10里的文件都是相同的名字；我想要保留其中5个特定名字的文件，其他的删掉</p>
+</blockquote>
+<p>then <code>find</code> would be more suitable since a full path is required,</p>
+<div class="highlight"><pre><span></span><code>~/tmp4$ <span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">1</span>..4<span class="o">}</span><span class="p">;</span> <span class="k">do</span> sh -c <span class="s2">&quot;mkdir </span><span class="nv">$i</span><span class="s2">; touch </span><span class="nv">$i</span><span class="s2">/foo.txt </span><span class="nv">$i</span><span class="s2">/bar.txt&quot;</span><span class="p">;</span> <span class="k">done</span>
+~/tmp4$ ls
+<span class="m">1</span>  <span class="m">2</span>  <span class="m">3</span>  <span class="m">4</span>
+~/tmp4$ tree
+.
+├── <span class="m">1</span>
+│   ├── bar.txt
+│   └── foo.txt
+├── <span class="m">2</span>
+│   ├── bar.txt
+│   └── foo.txt
+├── <span class="m">3</span>
+│   ├── bar.txt
+│   └── foo.txt
+└── <span class="m">4</span>
+    ├── bar.txt
+    └── foo.txt
+
+<span class="m">4</span> directories, <span class="m">8</span> files
+~/tmp4$ find . -type f <span class="p">|</span> grep -v <span class="s2">&quot;foo&quot;</span>
+./2/bar.txt
+./4/bar.txt
+./1/bar.txt
+./3/bar.txt
+~/tmp4$ find . -type f <span class="p">|</span> grep -v <span class="s2">&quot;foo&quot;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> rm -f <span class="o">{}</span>
+~/tmp4$ tree
+.
+├── <span class="m">1</span>
+│   └── foo.txt
+├── <span class="m">2</span>
+│   └── foo.txt
+├── <span class="m">3</span>
+│   └── foo.txt
+└── <span class="m">4</span>
+    └── foo.txt
+
+<span class="m">4</span> directories, <span class="m">4</span> files
+</code></pre></div>
+<p>BTW, I tried the popular chatGPT to ask the question.</p>
+<details class="note">
+<summary>chatGPT</summary>
+<p><img alt="screencapture-chat-openai-chat-2022-12-06-22_28_50" src="https://user-images.githubusercontent.com/13688320/206089957-bc92d621-3cb4-4c16-b7c3-a792eba34283.png" /></p>
+</details>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 6, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2022</span>
       
         <br>
         Created:
