@@ -165,6 +165,8 @@ markdown_extensions:
 
 plugins:
   - search:
-      lang: 'en, jp'
+      lang: 
+        - en
+        - ja
   - git-revision-date-localized:
       enable_creation_date: true

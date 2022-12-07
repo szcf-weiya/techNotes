@@ -1446,3 +1446,54 @@ it is safer to check the files before appending `rm` into the pipeline.
 ```bash
 ls | grep ".txt" | xargs -I {} rm -rf {}
 ```
+
+an application is asked by @van1yu3
+
+> 在当前目录下有10个子目录dir1-dir10，dir1-dir10里的文件都是相同的名字；我想要保留其中5个特定名字的文件，其他的删掉
+
+then `find` would be more suitable since a full path is required,
+
+```bash
+~/tmp4$ for i in {1..4}; do sh -c "mkdir $i; touch $i/foo.txt $i/bar.txt"; done
+~/tmp4$ ls
+1  2  3  4
+~/tmp4$ tree
+.
+├── 1
+│   ├── bar.txt
+│   └── foo.txt
+├── 2
+│   ├── bar.txt
+│   └── foo.txt
+├── 3
+│   ├── bar.txt
+│   └── foo.txt
+└── 4
+    ├── bar.txt
+    └── foo.txt
+
+4 directories, 8 files
+~/tmp4$ find . -type f | grep -v "foo"
+./2/bar.txt
+./4/bar.txt
+./1/bar.txt
+./3/bar.txt
+~/tmp4$ find . -type f | grep -v "foo" | xargs -I {} rm -f {}
+~/tmp4$ tree
+.
+├── 1
+│   └── foo.txt
+├── 2
+│   └── foo.txt
+├── 3
+│   └── foo.txt
+└── 4
+    └── foo.txt
+
+4 directories, 4 files
+```
+
+BTW, I tried the popular chatGPT to ask the question.
+
+??? note "chatGPT"
+    ![screencapture-chat-openai-chat-2022-12-06-22_28_50](https://user-images.githubusercontent.com/13688320/206089957-bc92d621-3cb4-4c16-b7c3-a792eba34283.png)
