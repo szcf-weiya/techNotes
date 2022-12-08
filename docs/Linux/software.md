@@ -861,6 +861,9 @@ flatpak run com.github.alainm23.planner
 
 ## Rhythmbox
 
+!!! tip
+    - 2022-12-07 15:25:36：不用手动 import，只要将歌曲都放在指定的目录，并勾选自动添加新歌曲。同时发现一个小 bug，如果重新用同一文件夹的不同路径名（ln -s），则会重复添加。
+
 右键似乎可以修改歌曲的 properties，其中包括 artist，album，但是却不能编辑，然后[查了一下](https://askubuntu.com/questions/612711/rhythmbox-cannot-edit-properties)，是权限问题，
 
 ```bash
@@ -868,6 +871,9 @@ chmod u+w CloudMusic/ -R
 ```
 
 where more details about `u+w` can be found in the manual.
+
+!!! tip
+    `exiftool music.mp3` 可以查看 meta info，而且可以修改。
 
 ```bash
 $ man chmod
@@ -901,6 +907,30 @@ sudo apt-get install kid3     # KDE users
 
 但是似乎在 `kid3` 中修改完并没有信息，只是会把删去的 genre 信息变为 unknown。
 
+#### wav -> mp3
+
+另一个方法便是直接将 wav 转换成 mp3，注意到如果直接用 `ls` + `xargs` 
+
+```bash
+# keep old extension
+ls -1 | grep wav | head -1 | xargs -I {} ffmpeg -i {} {}.mp3
+```
+
+则文件名后缀不是很好直接换掉，不能直接对 `{}` 进行操作，
+
+```bash
+find . -name "*.wav" -exec sh -c 'ffmpeg -i "$1" "${1%.*}.mp3"' sh {} \;
+```
+
+参考 [:link:](https://superuser.com/questions/1426601/how-to-remove-extension-from-pathname-passed-as-in-find-exec), 其实有点相当于把 `{}` 在传进去然后就可以用 `$1` 来表示。
+
+但是重命名完之后，Rhythmbox 左侧出现一个 Missing Files 的文件夹，里面即删掉的 `.wav` 文件路径。退出然后删掉 `rhythmdb.xml` 再打开即可，参考 [:link:](https://www.chalk-ridge.com/is-rhythmbox-missing-music-files-heres-a-simple-fix/)
+
+```bash
+~/.local/share/rhythmbox$ mv rhythmdb.xml rhythmdb.xml.old
+```
+
+所以看上去路径是直接写入 `.xml` 文件中，所以即便两个不同的路径指向同一个文件夹，也会被视为不同文件夹，于是便能解释为什么相同音乐文件被重复导入。
 
 ## Synergy
 

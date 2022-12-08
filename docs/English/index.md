@@ -1,6 +1,9 @@
 ## 2022.12
 
 - wormhole inside a quantum computer: the surprise is not that message made it across in some form, but that it made it across **unscrambled (使【信息、信号】还原；译出【密码】；解码，整理)**.
+- contemporaneous: 同时发生（或存在）的；同时期的；同时代的
+- investigational new drug (IND): 新药临床
+- **Squinting (斜视，眯着眼镜看)** at a graph is fine for getting a rough idea of the answer, but if you want to pretend to know it exactly, you need statistics. [:link:](https://xkcd.com/2701/)
 
 ## 2022.11
 
