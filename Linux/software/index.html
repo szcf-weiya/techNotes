@@ -4249,10 +4249,20 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 <div class="highlight"><pre><span></span><code>flatpak run com.github.alainm23.planner
 </code></pre></div>
 <h2 id="rhythmbox">Rhythmbox<a class="headerlink" href="#rhythmbox" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>2022-12-07 15:25:36：不用手动 import，只要将歌曲都放在指定的目录，并勾选自动添加新歌曲。同时发现一个小 bug，如果重新用同一文件夹的不同路径名（ln -s），则会重复添加。</li>
+</ul>
+</div>
 <p>右键似乎可以修改歌曲的 properties，其中包括 artist，album，但是却不能编辑，然后<a href="https://askubuntu.com/questions/612711/rhythmbox-cannot-edit-properties">查了一下</a>，是权限问题，</p>
 <div class="highlight"><pre><span></span><code>chmod u+w CloudMusic/ -R
 </code></pre></div>
 <p>where more details about <code>u+w</code> can be found in the manual.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code>exiftool music.mp3</code> 可以查看 meta info，而且可以修改。</p>
+</div>
 <div class="highlight"><pre><span></span><code>$ man chmod
 
 The format of a symbolic mode is <span class="o">[</span>ugoa...<span class="o">][[</span>-+<span class="o">=][</span>perms...<span class="o">]</span>...<span class="o">]</span>, where perms  is
@@ -4277,6 +4287,19 @@ sudo apt-get install kid3     <span class="c1"># KDE users</span>
 </code></pre></div>
 <p>一开始觉得 <code>kid3-cli</code> 足够了，但是试了一下感觉学习成本太高，索性换回 kde 版本的。</p>
 <p>但是似乎在 <code>kid3</code> 中修改完并没有信息，只是会把删去的 genre 信息变为 unknown。</p>
+<h4 id="wav-mp3">wav -&gt; mp3<a class="headerlink" href="#wav-mp3" title="Permanent link">&para;</a></h4>
+<p>另一个方法便是直接将 wav 转换成 mp3，注意到如果直接用 <code>ls</code> + <code>xargs</code> </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># keep old extension</span>
+ls -1 <span class="p">|</span> grep wav <span class="p">|</span> head -1 <span class="p">|</span> xargs -I <span class="o">{}</span> ffmpeg -i <span class="o">{}</span> <span class="o">{}</span>.mp3
+</code></pre></div>
+<p>则文件名后缀不是很好直接换掉，不能直接对 <code>{}</code> 进行操作，</p>
+<div class="highlight"><pre><span></span><code>find . -name <span class="s2">&quot;*.wav&quot;</span> -exec sh -c <span class="s1">&#39;ffmpeg -i &quot;$1&quot; &quot;${1%.*}.mp3&quot;&#39;</span> sh <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div>
+<p>参考 <a href="https://superuser.com/questions/1426601/how-to-remove-extension-from-pathname-passed-as-in-find-exec"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>, 其实有点相当于把 <code>{}</code> 在传进去然后就可以用 <code>$1</code> 来表示。</p>
+<p>但是重命名完之后，Rhythmbox 左侧出现一个 Missing Files 的文件夹，里面即删掉的 <code>.wav</code> 文件路径。退出然后删掉 <code>rhythmdb.xml</code> 再打开即可，参考 <a href="https://www.chalk-ridge.com/is-rhythmbox-missing-music-files-heres-a-simple-fix/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<div class="highlight"><pre><span></span><code>~/.local/share/rhythmbox$ mv rhythmdb.xml rhythmdb.xml.old
+</code></pre></div>
+<p>所以看上去路径是直接写入 <code>.xml</code> 文件中，所以即便两个不同的路径指向同一个文件夹，也会被视为不同文件夹，于是便能解释为什么相同音乐文件被重复导入。</p>
 <h2 id="synergy">Synergy<a class="headerlink" href="#synergy" title="Permanent link">&para;</a></h2>
 <h3 id="lock-key-from-host">lock key from host<a class="headerlink" href="#lock-key-from-host" title="Permanent link">&para;</a></h3>
 <p>With Host@t460p(Ubuntu 18.04) and Client@STAPC(Win 10), the hotkey <code>Win + L</code> for locking the screen does not work on the client, but the hotkey would work if I use its keyboard. </p>
@@ -4713,7 +4736,7 @@ xournalpp/now <span class="m">1</span>.0.20-1~ubuntu18.04.1 amd64 <span class="o
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 8, 2022</span>
       
         <br>
         Created:
