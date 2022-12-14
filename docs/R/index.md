@@ -54,7 +54,7 @@ then manage the version with `module`.
 	options(repos=r)
 	```
 
-	we also can wrap it with `local({...})` and save in `~/.Rprofile`.
+	we also can wrap it with `local({...})` and save in `~/.Rprofile`. The benefit of `local` is to let the evaluation only valid in the current session. Note that RStudio would set `r["CARN"]` as `https://cran.rstudio.com`.
 
 	Refer to [How to select a CRAN mirror in R](https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r)
 

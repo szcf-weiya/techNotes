@@ -844,6 +844,14 @@ End-Date: 2021-07-22  06:31:36
 
 中间误入了一次 `151`，结果还没登录就自动重启了，然后乖乖选择 `147`，但是这次还是没能识别 HDMI，不过 nvidia-smi 以及 nvidia-settings 都正常，`xrandr` 输出也是没有识别出显示屏。
 
+!!! note "2022-12-13"
+    根据顶部状态栏发现，有时 GPU 无监控，再运行 nvidia-smi 报错
+    ```bash
+    $ nvidia-smi
+    Failed to initialize NVML: Driver/library version mismatch
+    ```
+    在想有没有方法无须重启便可重启 nvidia，看了 [:link:](https://www.reddit.com/r/linuxquestions/comments/5b7tf1/is_there_a_way_to_reload_nvidia_drivers_without/) 的讨论，最好的方式可能还是直接重启。
+
 试着继续重启，这次竟然可以了！
 
 后面在 nvidia-settings 中试了将 `PRIME profiles` 由 `NVIDIA (performance mode)` 改成 `NVIDIA on-demand`,然后重启，结果竟然进不去系统了，每次输入密码回车都要求重新输入密码。

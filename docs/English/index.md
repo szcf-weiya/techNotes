@@ -4,6 +4,7 @@
 - contemporaneous: 同时发生（或存在）的；同时期的；同时代的
 - investigational new drug (IND): 新药临床
 - **Squinting (斜视，眯着眼镜看)** at a graph is fine for getting a rough idea of the answer, but if you want to pretend to know it exactly, you need statistics. [:link:](https://xkcd.com/2701/)
+- Plurals of acronyms, letters, numbers --- use an **apostrophe (撇号)** or not? [:link:](https://english.stackexchange.com/questions/55970/plurals-of-acronyms-letters-numbers-use-an-apostrophe-or-not)
 
 ## 2022.11
 
