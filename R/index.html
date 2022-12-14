@@ -3325,7 +3325,7 @@ sudo make install
 <span class="c1"># r[&quot;CRAN&quot;] &lt;- &quot;r[&quot;CRAN&quot;] &lt;- &quot;https://mirrors.ustc.edu.cn/CRAN/&quot;&quot; ## for mainland China</span>
 <span class="nf">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
 </code></pre></div>
-<p>we also can wrap it with <code>local({...})</code> and save in <code>~/.Rprofile</code>.</p>
+<p>we also can wrap it with <code>local({...})</code> and save in <code>~/.Rprofile</code>. The benefit of <code>local</code> is to let the evaluation only valid in the current session. Note that RStudio would set <code>r["CARN"]</code> as <code>https://cran.rstudio.com</code>.</p>
 <p>Refer to <a href="https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r">How to select a CRAN mirror in R</a></p>
 <p>For temporary use, use <code>repos</code> argument in <code>install.packages</code>, such as</p>
 <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;RMySQL&#39;</span><span class="p">,</span> <span class="n">repos</span><span class="o">=</span><span class="s">&#39;http://cran.us.r-project.org&#39;</span><span class="p">)</span>
@@ -4058,7 +4058,7 @@ See the log file <span class="k">for</span> details:  /tmp/jupyterlab-debug-lhf6
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 22, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2022</span>
       
         <br>
         Created:
