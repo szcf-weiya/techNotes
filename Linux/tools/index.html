@@ -3742,7 +3742,11 @@ sar -f /var/log/sa/sa04
 </code></pre></div></li>
 </ul>
 </li>
+<li>swap two texts, use <code>\x0</code> as a temp storage. refer to <a href="https://stackoverflow.com/questions/26568952/how-to-swap-text-based-on-patterns-at-once-with-sed"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
+<div class="highlight"><pre><span></span><code>~$ <span class="nb">echo</span> <span class="s2">&quot;abbc&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/ab/\x0/g; s/bc/ab/g; s/\x0/bc/g&#39;</span>
+bcab
+</code></pre></div>
 <p>Refer to</p>
 <ol>
 <li><a href="http://man.linuxde.net/sed">Linux sed 命令用法详解：功能强大的流式文本编辑器</a></li>
@@ -4092,7 +4096,7 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
       
         <br>
         Created:
