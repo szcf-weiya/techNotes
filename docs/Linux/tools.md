@@ -1038,6 +1038,12 @@ sar -f /var/log/sa/sa04
 	```bash
 	perl -0777 -i -pe "s/###BEGIN-EXCLUDE(.*?)###END-EXCLUDE//igs" _release/src/data.jl
 	```
+- swap two texts, use `\x0` as a temp storage. refer to [:link:](https://stackoverflow.com/questions/26568952/how-to-swap-text-based-on-patterns-at-once-with-sed)
+
+```bash
+~$ echo "abbc" | sed 's/ab/\x0/g; s/bc/ab/g; s/\x0/bc/g'
+bcab
+```
 
 Refer to
 
