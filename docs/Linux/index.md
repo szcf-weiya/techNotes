@@ -492,6 +492,18 @@ The main command used to control systemd is `systemctl`.
 
 See also: [systemd/User - ArchWiki](https://wiki.archlinux.org/title/Systemd/User)
 
+### locally via `--user`
+
+the service can be also set up locally, such as `~/.local/share/systemd/user/ssh4lab.service` in [:link:](software.md#fail-to-open-terminal)
+
+we can check the status and manage it via
+
+```bash
+systemctl --user status/stop/start/disable/enable ssh4lab
+```
+
+see also: [:link:](https://superuser.com/questions/1037466/how-to-start-a-systemd-service-after-user-login-and-stop-it-before-user-logout)
+
 ## Custom Shortcut to Switch External Display Mode
 
 办公室电脑既可以作为显示屏，也可以在 PC 模式下使用 Windows 系统。在 PC 模式下，在 Ubuntu 上通过 synergy 共享键鼠，但是此时存在一个问题，因为 HDMI 仍然连着，所以在移动鼠标时中间有个 gap，也就是需要跳过外接显示屏才能移动到 PC。

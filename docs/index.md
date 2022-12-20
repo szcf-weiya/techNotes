@@ -20,6 +20,10 @@ hide:
      });
 </script>
 
+## Highly Recommended Resources
+
+- [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
+
 ## Other Independent Notes
 
 - [TensorFlow Notes](https://github.com/szcf-weiya/TFnotes)

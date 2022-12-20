@@ -5,6 +5,7 @@
 - investigational new drug (IND): 新药临床
 - **Squinting (斜视，眯着眼镜看)** at a graph is fine for getting a rough idea of the answer, but if you want to pretend to know it exactly, you need statistics. [:link:](https://xkcd.com/2701/)
 - Plurals of acronyms, letters, numbers --- use an **apostrophe (撇号)** or not? [:link:](https://english.stackexchange.com/questions/55970/plurals-of-acronyms-letters-numbers-use-an-apostrophe-or-not)
+- gaze estimation: 视线估计
 
 ## 2022.11
 
@@ -97,7 +98,7 @@
 - Those with **narcissistic (自恋的)** traits pose a particular threat to companies.
 - narcissist: 自恋狂
 - Much scientific **endeavour (努力，尝试)** of the past amounted to wasted effort, in fields with absolutely no yield of true scientific information.
-- tertiary students: 大专学生
+- tertiary institution: 高等教育机构
 - "All **Fandom (运动迷，影迷)** was Plunged into War" describes a major **conflagration (突发，冲突)** of fannish disharmony, in which many feuding fans take sides, friends may stop speaking to each other, fen may **gafiate (an initialism for Get Away From It All)**, and bad feelings go on for years. [:link:](https://fancyclopedia.org/All_Fandom_was_Plunged_into_War), [:link:](https://fancyclopedia.org/Gafia)
 - When you pitch a potential problem to your adviser you will either see their face contort, their eyes **rolling (滚动)**, and their attention **drift (漂移)**, or you'll sense the excitement in their eyes as they contemplate the **uncharted (陌生的，人迹罕至的)** territory **ripe (成熟的)** for exploration.
 - digital forensics: 电子取证
