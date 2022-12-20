@@ -672,6 +672,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#locally-via-user" class="md-nav__link">
+    locally via --user
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2791,6 +2798,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#locally-via-user" class="md-nav__link">
+    locally via --user
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3218,6 +3232,12 @@ System has not been booted with systemd as init system <span class="o">(</span>P
 </ul>
 </div>
 <p>See also: <a href="https://wiki.archlinux.org/title/Systemd/User">systemd/User - ArchWiki</a></p>
+<h3 id="locally-via-user">locally via <code>--user</code><a class="headerlink" href="#locally-via-user" title="Permanent link">&para;</a></h3>
+<p>the service can be also set up locally, such as <code>~/.local/share/systemd/user/ssh4lab.service</code> in <a href="software/#fail-to-open-terminal"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>we can check the status and manage it via</p>
+<div class="highlight"><pre><span></span><code>systemctl --user status/stop/start/disable/enable ssh4lab
+</code></pre></div>
+<p>see also: <a href="https://superuser.com/questions/1037466/how-to-start-a-systemd-service-after-user-login-and-stop-it-before-user-logout"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h2 id="custom-shortcut-to-switch-external-display-mode">Custom Shortcut to Switch External Display Mode<a class="headerlink" href="#custom-shortcut-to-switch-external-display-mode" title="Permanent link">&para;</a></h2>
 <p>办公室电脑既可以作为显示屏，也可以在 PC 模式下使用 Windows 系统。在 PC 模式下，在 Ubuntu 上通过 synergy 共享键鼠，但是此时存在一个问题，因为 HDMI 仍然连着，所以在移动鼠标时中间有个 gap，也就是需要跳过外接显示屏才能移动到 PC。</p>
 <p>试过在 synergy 中将 PC 机设置为 T460p 上方，这样移动鼠标只需往上，不过体验不是很好，而且 Ubuntu 顶端有状态栏而 PC 端底部也有task bar，移动时能明显感受到延时。另外一个策略便是切换显示屏 mode，由 joint 模式切换成 mirror。</p>
@@ -3304,7 +3324,7 @@ System has not been booted with systemd as init system <span class="o">(</span>P
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 16, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
       
         <br>
         Created:
