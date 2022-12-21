@@ -271,6 +271,11 @@ $ docker save py37jieba:0.0.1 | gzip > py37jieba-0.0.1.tar.gz
 
 refer to [hubutui/docker-for-env-without-internet-access](https://github.com/hubutui/docker-for-env-without-internet-access)
 
+## TeX
+
+- [Building LaTeX documents locally using Docker](https://gitlab.com/islandoftex/images/texlive/-/wikis/Building-LaTeX-documents-locally-using-Docker)
+- [TeX Live docker image](https://hub.docker.com/r/texlive/texlive)
+
 ## `no space left on device: unknown`
 
 ```bash

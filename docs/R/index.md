@@ -3,7 +3,7 @@
 !!! tip "Frequent Tips"
 	- 删除当前工作区所有变量: `rm(list = ls(all = TRUE))`
 	- RStudio shows all shortcuts: `Alt-Shift-K`.
-
+	- usage of `<<-`, "it will keep going through the environments in order until it finds a variable with that name, and it will assign it to that." see also [:link:](https://stackoverflow.com/questions/2628621/how-do-you-use-scoping-assignment-in-r)
 
 ## Installation
 
