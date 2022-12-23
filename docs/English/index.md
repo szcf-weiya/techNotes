@@ -404,7 +404,6 @@
 - The people who built the ancient monumental structures at Turkey's Gobekli Tepe were fuelled by vat-fulls of starchy porridge and stew, not just meaty feasts.
 - George was **whipping up (快速地吃，狼吞虎咽)** a **sundae (圣代「一种加有水果、甜汁、果仁的冰淇淋」)** during the tennis match break and got caught by the camera without knowing it.
 - Today we enjoy a **selfie (自拍照)** from China's Zhurong Mars rover, and discover a masterful **memoir (自传)** by mathematician Katherine Johnson.
-- apostrophes
 - The global antiracism movement sparked by the murder of George Floyd and the pandemic also **spurred (刺激，激励)** Wellcome, one of the world's largest biomedical-research funders.
     - The [Wellcome Trust](https://en.wikipedia.org/wiki/Wellcome_Trust) is a charitable foundation focuses on health research. Not the supermarket [Wellcome](https://en.wikipedia.org/wiki/Wellcome).
 - Christopher Nolan produced one of his first most influential movies in the history of **cinematography (电影摄制技术)**. Memento broke many of the traditional paradigms in the film industry by structuring two parallel narratives, one **chronologically (按年代顺序，按时间顺序)** going backwards and one going forward.
@@ -444,7 +443,7 @@
 - Have you ever served in, been a member of, or been involved with a paramilitary unit, vigilante unit, **rebel (造反的)** group, **guerrilla (游击的，非正式的)** group, or **insurgent (起义者)** organization? 
 - Do you belong to a **clan (庞大的家族；宗派)** or tribe?
 - Are you coming to the United States to engage in prostitution or unlawful commercialized vice or have you been engaged in **prostitution (卖淫；才能的滥用（或糟蹋）)** or procuring prostitutes within the past 10 years? 
-- Have you ever ordered, incited, committed, assisted, or otherwise participated in **genocide (种族灭绝，大屠杀)**? 
+- Have you ever ordered, **incited (煽动，鼓动)**, committed, assisted, or otherwise participated in **genocide (种族灭绝，大屠杀)**? 
 - freak
 
 ## 2021.05
@@ -849,8 +848,8 @@
 - Georgiou is not a **mobster (匪徒，暴徒)**. He's not a **hit man (职业凶手)** or a **spy (间谍，密探)**. He's a statistician. And the **sin (过失，罪恶)** at the heart of his supposed crimes was publishing correct budget numbers.
 - The government has brought a **relentless (不停的，持续强烈的)** series of criminal **prosecutions (诉讼)** against him. His countryman have sought their own **vengeance (复仇，报复)** by hacking his emails, dragging him into court, even threatening his life.
 - This means the person who restored the credibility of Greek statistics will have to apologize to a person who had been **fudging (搪塞，篡改)** the data.
-- We distinguish the **corpora (语料，文集)** containing reference annotations based on their origin.
-- Gold-standard **corpus** containing human-made reference annotations, obtained as a **consensual** or majority opinion of several human experts.
+- We distinguish the **corpora (语料，文集, plural form of corpus)** containing reference annotations based on their origin.
+- Gold-standard **corpus (语料)** containing human-made reference annotations, obtained as a **consensual** or majority opinion of several human experts.
 - A frame definition domain was virtually eroded in the **lateral** axes (x and y) by a constant number of pixels (**voxels (体素或立体像素，是体积像素 volume pixel 的简称)**) E depending on a dataset.
 - In 3D image data, the marker does not have to be necessarily formed of a single connected component, allowing annotators to create **quintessential (最完美的，精髓的)** volumetric markers.
 - Things done by **halves** are never done right.
@@ -1329,7 +1328,6 @@
 - Now, every new technology brings with it some measure of **trepidation**.
 - people **lamented (哀悼，惋惜)** that we would see the destruction of the family.
 - how to **discern (识别，辨别)** a good game from a bad game.
-- I will teach it some corpus of law
 - what about **rogue (流氓，无赖)** agents?
 - it could represent an **existential (有关人类存在的)** threat to all of humanity.
 - an **insatiable (不知足的，贪得无厌的)** thirst for information
@@ -1342,7 +1340,7 @@
 ## 2020.03
 
 1. features that **rot (腐烂，形势恶化)** before they **ripen (成熟)**.
-2. the dog **sprints off**
+2. the dog **sprints off (快速跑开)**
 3. shy away from it: try to avoid because of nervousness, fear, dislike.
 4. swinging hard right on the pendulum.
 5. evade bad data
@@ -1394,7 +1392,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. Ampoule (安瓿瓶，如利多卡因)， vs 西林瓶 (如青霉素)
 1. **Intellectual property (IP)** is an umbrella term that covers a group of separate **intangible** property rights of owners/creators.
 2. Provide legal protection in various types of monopolies.
-3. Defining offences (civil or criminal infringement) against intellectual property.
+3. Defining **offences (犯罪，罪行，冒犯)** (civil or criminal **infringement (侵权、侵犯)**) against intellectual property.
 4. Plant Varieties (Agricultural or **horticultural (园艺的)** plant varieties)
 5. The IP laws protect your interpretation of ideas in the form of a book, an invention, etc.
 6. Registered designs protect the appearance of your toys. Only the look of your toys is protected, not the ways in which the toys operate. Patent law may protect the way in which a product works.
@@ -1628,13 +1626,12 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 5. treadmill
 1. phylogeny
 1. bump up
-1. noob
+1. noob: 菜鸟
 1. tangerine: 橘，橘黄色，橘红色
 1. consanguineous: 血亲的，血缘的
 2. sibship
 3. autosomal
 6. facilitate
-1. consecutive
 2. passage
 3. leucocyte: 白细胞
 5. delicate
@@ -1669,7 +1666,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 4. premiss: premise, [:link:](https://english.stackexchange.com/questions/145322/difference-between-premiss-and-premise)
 6. enunciate: 清楚地发音；阐明
 7. remuneration: 报酬，薪金，薪水
-8. supposition
+8. supposition: 推论，推测
 9. The representation of documents is a central issue in all of the approaches in document management, whether the management **entails (需要，牵涉)** exploration, search, or filtering.
 1. monograph
 2. awash
@@ -1683,7 +1680,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. toggle
 2. elicitation
 4. **Bristol (布里斯托)** is one of the most **congested (拥堵的)** cities in Britain.
-5. recurrent
+5. recurrent: 循环的，反复出现的
 1. lethal
 2. incidence
 3. extant: 尚存的，现存的
@@ -1795,7 +1792,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 16. shimmer
 17. conceive
 18. or so
-20. as to that
+20. as to that: 就此而言
 21. red dwarf star
 22. bode
 23. prism
@@ -2018,7 +2015,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 78. homogeneous (all of the same kind; uniform)
 80. Reprobates are unprincipled, wicked people.
 81. Charlatans are quacks, persons who pretend to have more skill than they actually possess.
-82. Hypocrites are people who pretend to possess some virtue or skill, but who are faking it.
+82. **Hypocrites (伪君子，虚伪的人)** are people who pretend to possess some virtue or skill, but who are faking it.
 83.  unruly (rowdy; disorderly)
 84. obsequious (fawning; servile)
 85. Elan means vivacity or liveliness of spirit
@@ -2233,7 +2230,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 27. contagion
 31. weed
 32. inoculation
-33. avirulent
+33. avirulent: 无毒性的
 34. that's a philosophical pickle.
 35. coop: 养鸡兔的笼子；把家禽关进笼子
 36. conspecific: 同种的
@@ -2273,9 +2270,9 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 4. He says face veils like the niqab (尼卡布，一些穆斯林妇女在公共场合戴的面纱，通常露出眼睛) are not a religious requirement.
 5. To reduce fraud, an opaque network of government bank accounts has been replaced by a centralized system.
 6. as if he could **pierce (穿透，刺破)** those **sheets (薄板；床单；纸张)** of water so opaque to our eyes and scan the deepest seas.
-7. Mr Zingales has written an elegy to the America he found when he moved there 24 years ago from an Italy that was rife with nepotism (裙带关系).
+7. Mr Zingales has written an **elegy (挽歌)** to the America he found when he moved there 24 years ago from an Italy that was rife with nepotism (裙带关系).
 8. We keep records on every single hive, and that compendium of records goes back quite a long time.
-9. Jeremiad wreathes upon my feeling, while shadow of shiver covers my mind.
+9. Jeremiad **wreathes (环绕，覆盖)** upon my feeling, while shadow of shiver covers my mind.
 10. He made speech of **panegyric (颂词，赞辞)**.
 11. In an hour-long philippic, the legislator denounced the lobbyists opposing his bill.
 12. Their profligate lifestyle resulted in bankruptcy.
