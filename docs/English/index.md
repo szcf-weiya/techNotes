@@ -1974,7 +1974,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 31. agonize over every decision
 32. Children were agog over new toys.
 33. **impugn (责难，驳斥)** a political opponent's character
-34. Well-doer never does chicanery and person who is good at chicanery does not belong well-doer.
+34. **Well-doer (善人)** never does **chicanery (欺诈，诈骗)** and person who is good at chicanery does not belong well-doer.
 35. My wife chided me for forgetting to offer our guests some refreshments.
 36. I absolutely get **choleric (易怒的，暴躁的，[胆汁质的](https://zh.wikipedia.org/wiki/%E5%9B%9B%E7%A8%AE%E6%B0%A3%E8%B3%AA))** when a salesman calls during the dinner hour.
 37. Men of choleric type take to kicking and smashing.
@@ -2096,7 +2096,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 - A condition number of about 10^15, which is very nearly the **reciprocal (倒数)** of double precision roundoff.
 1. cardioid: 心脏线
 3. Last but not least 最后但不是最不重要的一点
-1. calligrapher
+1. calligrapher: 书法家
 2. decorator
 3. Islamic
 4. parchment: 羊皮纸，羊皮纸文献
