@@ -1000,7 +1000,7 @@
 - problem of the between-state correlations in the [Fivethirtyeight](https://fivethirtyeight.com/)([中文解释](https://www.zhihu.com/question/33259890)) election forecast.
 - this might be a feather in the wind to prevent a predictable post-voting-day **wrangle (争吵)** that could **tip the country over the edge**.
 - **accusations** of fraud seem almost inevitable.
-- they can analyze **precinct-level** totals to look for "thumbprints" of voter fraud.
+- they can analyze **precinct (选区，警区)-level** totals to look for "thumbprints" of voter fraud.
 - it's not as sure as a photograph of **"mislaid" ballots** dumped behind a post office.
 - I was **intrigued (激起...的好奇心)** by the observations you made this summer.
 - **In order for** Trump to win a blue state
@@ -1299,7 +1299,7 @@
 - There is one weird dot above the curve, there's one **weirdo (古怪的人)** in the room.
 - we can **glean** information
 - the medical school **syndrome**
-- I have **leprosy**
+- I have **leprosy (麻病)**
 - I have no idea how to **console (安慰)** poor Bobo because he had just gotten over an entire week of **menopause**
 - **military scholarship**
 - I was an officer to **counsel (建议; n. 律师，法律顾问)** students through the difficult four years.
