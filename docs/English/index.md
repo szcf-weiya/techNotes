@@ -937,7 +937,7 @@
 - Nobel prize and other science prices are problematic and this is not **endorsement (认可；支持；背书；签注)** of such prices, but this might be useful for someone who needs to tell (**hype (炒作，大肆宣传)**) about the impact of Stan.
 - A **spaghetti (意大利式细面条)** plot is a line plot with many lines displayed together. [see also](https://www.data-to-viz.com/caveat/spaghetti.html)
 - **Maine (缅因州)** and **Nebraska (内布拉斯加州)**
-- our model is a forecast of vote **intentions**, not of votes as counted.
+- our model is a forecast of vote **intentions (意向)**, not of votes as counted.
 - Now that it's 95%, [the rubber meets the road](https://knowyourphrase.com/when-the-rubber-hits-the-road).
 - It came in as a sort of brief **interlude** and solo between more extensive performances.
 - It's not a **[Jenga](https://en.wikipedia.org/wiki/Jenga) (叠叠乐)**, but neither is it a [WW2 jeep](https://en.wikipedia.org/wiki/Willys_MB).
@@ -1054,7 +1054,6 @@
 - it has to **swerve (突然转向，急转弯)** in and out of traffic after each bus stop.
 - does this **fallacy** have a name?
 - **Collider (对撞机)** bias
-- in an outraged Louisville
 - when considering **ideological (意识形态的，思想体系上的)** balance, it is useful to place social psychology within a larger context of the **prevailing** ideologies of other influential groups within society, such as military officers, journalists, and business executives.
 - the content of unreplicated or otherwise **shaky (颤抖的，不牢靠的)** empirical claims
 - **sway (影响，摇摆)** in the way
@@ -1397,7 +1396,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 5. The IP laws protect your interpretation of ideas in the form of a book, an invention, etc.
 6. Registered designs protect the appearance of your toys. Only the look of your toys is protected, not the ways in which the toys operate. Patent law may protect the way in which a product works.
 7. The new visible shape, configuration, pattern or **ornament (装饰，装饰品)** applied to an article by an industrial process are features capable of protection by design registration.
-8. nephew
+8. nephew: 侄子，外甥
 9. Scientific discoveries as ideas are not protected.
 10. If a country is a member of international copyright convention, **treaty** or organization such as the World Trade Organization and others like the Berne Convention, the Universal Copyright Convention, the Geneva Convention for the protection of producers of **phonograms**, and the agreement on trade-ralated aspects of intellectual property rights, then Hong Kong's copyright applies and is valid in these countries.
 11. Hong Kong is a common law **jurisdiction (司法权，裁判权)**.
@@ -1656,7 +1655,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. ascribe: 把……归因于
 - Loneliness causes high blood pressure, high **cholesterol (胆固醇)**.
 1. mnemonic: 记忆的，增进记忆的
-2. acyclic
+2. acyclic: 非周期的；非循环的
 4. endow
 5. serum: 血清
 1. coronary: 冠状的
@@ -1858,7 +1857,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 14. seigniorage: 铸币税；君权
 15. nostalgia
 17. alloying
-18. brass, trumpet, trombone
+18. brass, trumpet, **trombone (长号)**
 19. rust, patina
 20. halt
 21. Another 30 people died in the **hull (船体，船身)** where they are believed to have **suffocated (呼吸困难，窒息而死)**.
@@ -1924,7 +1923,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 31. The law was promulagated in June 1988.
 32. The dams along the river are interfering with the salmon's ability to propagate.
 33. The temple was built to honor the gods in times of plenty and to propitiate them in times of trouble.
-34. I would be remiss if I didn't tell you how much I appreciated the lovely gift.
+34. I would be **remiss (疏忽，懈怠)** if I didn't tell you how much I appreciated the lovely gift.
 35. He gave up smoking only after a **prolonged (持续很久的，长时间的)** **inducement (鼓励，劝诱，刺激)** by all the other family members.
 36. He loved to show off his **protean (多变的，易变的)** talent.
 37. Beauty is as **evanescent (迅速消失遗忘的，短暂的)** as a rainbow.

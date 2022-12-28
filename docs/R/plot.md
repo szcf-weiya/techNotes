@@ -141,20 +141,18 @@ A thorough tutorial refers to [Reproduce Figures with Lattice -- ESL CN](https:/
 
 ### multiple density plots
 
-参考[使用ggplot2同时绘制多个密度图](https://www.tuicool.com/articles/3aUnem7)
-
 ```r
 plots <- NULL
-for(i in colnames(train)){ 
-    plots[[i]] <- ggplot(train) + 
-    geom_density(aes_string(x = i, fill = 'is_black'), alpha = 0.5, show.legend = F) + 
-    xlab("") + 
-    ylab(""); 
+for (i in 1:4) {
+    x = i + rnorm(100)
+    plots[[i]] <- ggplot(data.frame(x), aes(x)) + 
+                  geom_density(alpha = 0.5, show.legend = FALSE)
 }
-plot_grid(plotlist = plots)
+cowplot::plot_grid(plotlist = plots)
 ```
 
-see also: [Continuously add lines to ggplot with for loop](https://www.biostars.org/p/234142/)
+!!! note "Application"
+    See one of my homework written in Rmarkdown, [中心极限定理模拟实验](https://blog.hohoweiya.xyz/rmd/%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86%E6%A8%A1%E6%8B%9F%E5%AE%9E%E9%AA%8C.html)
 
 ### density of Weibull
 
