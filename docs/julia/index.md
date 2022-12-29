@@ -281,6 +281,26 @@ using `OffsetArrays` package, refer to
 
 ## Base
 
+### disable warning
+
+```julia
+julia> @warn 1+1
+┌ Warning: 2
+└ @ Main REPL[1]:1
+
+julia> using Logging
+
+julia> Logging.disable_logging(Logging.Warn)
+LogLevel(1001)
+
+julia> @warn 1+1
+```
+
+refers to the [official documentation](https://docs.julialang.org/en/v1/stdlib/Logging/#Logging.disable_logging)
+
+also tried the command options, `-g`, `--warn-scope`, but not work
+
+
 ### `@__DIR__`
 
 It expands to the folder of the current file, no matter where we call the script. However, with RCall or PyCall, the expansion would be the folder that executes the script. To expand to the folder of the script, we can first assign it to a variable. 

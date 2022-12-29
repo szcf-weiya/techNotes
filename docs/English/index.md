@@ -6,6 +6,7 @@
 - **Squinting (斜视，眯着眼镜看)** at a graph is fine for getting a rough idea of the answer, but if you want to pretend to know it exactly, you need statistics. [:link:](https://xkcd.com/2701/)
 - Plurals of acronyms, letters, numbers --- use an **apostrophe (撇号)** or not? [:link:](https://english.stackexchange.com/questions/55970/plurals-of-acronyms-letters-numbers-use-an-apostrophe-or-not)
 - gaze estimation: 视线估计
+- rotor:（机器的）转子
 
 ## 2022.11
 
