@@ -1652,7 +1652,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. **pedagogical (教育学的，教学的)** skill
 2. concrete types
 3. Populate
-1. percolation
+1. percolation: 渗滤，渗透
 2. ascribe: 把……归因于
 - Loneliness causes high blood pressure, high **cholesterol (胆固醇)**.
 1. mnemonic: 记忆的，增进记忆的
