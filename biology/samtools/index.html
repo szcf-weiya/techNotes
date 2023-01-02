@@ -2458,11 +2458,11 @@
 <li>First install several libraries, e.g., zlib, bzip2, &hellip; </li>
 </ul>
 <p>(Basically follow the instruction <a href="https://www.jianshu.com/p/da92ca36a220">here</a>.)</p>
-<div class="highlight"><pre><span></span><code>tar xvf samtools-1.13.tar.bz2
-<span class="nb">cd</span> samtools-1.13
-./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/usr
+<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>xvf<span class="w"> </span>samtools-1.13.tar.bz2
+<span class="nb">cd</span><span class="w"> </span>samtools-1.13
+./configure<span class="w"> </span>--prefix<span class="o">=</span><span class="nv">$HOME</span>/usr
 make
-make install
+make<span class="w"> </span>install
 </code></pre></div>
 <ul>
 <li>
@@ -2473,9 +2473,9 @@ make install
 </li>
 <li>
 <p>Add Path (<code>bzip2-1.0.6</code>): </p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">&quot;-I</span><span class="nv">$HOME</span><span class="s2">/usr/include -I</span><span class="nv">$HOME</span><span class="s2">/bzip2-1.0.6&quot;</span>
-<span class="nb">export</span> <span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-L</span><span class="nv">$HOME</span><span class="s2">/usr/lib -L</span><span class="nv">$HOME</span><span class="s2">/usr/lib64 -L</span><span class="nv">$HOME</span><span class="s2">/bzip2-1.0.6&quot;</span>
-<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/usr/lib:<span class="nv">$HOME</span>/usr/lib64:<span class="nv">$HOME</span>/bzip2-1.0.6
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">&quot;-I</span><span class="nv">$HOME</span><span class="s2">/usr/include -I</span><span class="nv">$HOME</span><span class="s2">/bzip2-1.0.6&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-L</span><span class="nv">$HOME</span><span class="s2">/usr/lib -L</span><span class="nv">$HOME</span><span class="s2">/usr/lib64 -L</span><span class="nv">$HOME</span><span class="s2">/bzip2-1.0.6&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/usr/lib:<span class="nv">$HOME</span>/usr/lib64:<span class="nv">$HOME</span>/bzip2-1.0.6
 </code></pre></div>
 </li>
 </ul>
@@ -2483,8 +2483,8 @@ make install
 <ul>
 <li>Install Miniconda: </li>
 </ul>
-<div class="highlight"><pre><span></span><code>wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sh Miniconda3-latest-Linux-x86_64.sh
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sh<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh
 </code></pre></div>
 <ul>
 <li><code>conda install -c bioconda samtools</code></li>
@@ -2566,7 +2566,7 @@ sh Miniconda3-latest-Linux-x86_64.sh
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

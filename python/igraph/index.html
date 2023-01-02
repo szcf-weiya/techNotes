@@ -2407,53 +2407,53 @@
 <p>最小割：原图的每条边有一个割断它的代价，你需要用最小的代价使得这两个点不连通</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="first-attempt">first attempt<a class="headerlink" href="#first-attempt" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>pip install python-igraph
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>python-igraph
 </code></pre></div>
 <p>but cannot plot, and it throws,</p>
 <div class="highlight"><pre><span></span><code><span class="ne">AttributeError</span><span class="p">:</span> <span class="n">Plotting</span> <span class="ow">not</span> <span class="n">available</span><span class="p">;</span> <span class="n">please</span> <span class="n">install</span> <span class="n">pycairo</span> <span class="ow">or</span> <span class="n">cairocffi</span>
 </code></pre></div>
 <p>then </p>
-<div class="highlight"><pre><span></span><code>pip install pycairo
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pycairo
 </code></pre></div>
 <p>but it failed with the following error</p>
-<div class="highlight"><pre><span></span><code>  Complete output <span class="o">(</span><span class="m">15</span> lines<span class="o">)</span>:
-  running bdist_wheel
-  running build
-  running build_py
-  creating build
-  creating build/lib.linux-x86_64-3.8
-  creating build/lib.linux-x86_64-3.8/cairo
-  copying cairo/__init__.py -&gt; build/lib.linux-x86_64-3.8/cairo
-  copying cairo/__init__.pyi -&gt; build/lib.linux-x86_64-3.8/cairo
-  copying cairo/py.typed -&gt; build/lib.linux-x86_64-3.8/cairo
-  running build_ext
-  Package cairo was not found <span class="k">in</span> the pkg-config search path.
-  Perhaps you should add the directory containing <span class="sb">`</span>cairo.pc<span class="s1">&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>Complete<span class="w"> </span>output<span class="w"> </span><span class="o">(</span><span class="m">15</span><span class="w"> </span>lines<span class="o">)</span>:
+<span class="w">  </span>running<span class="w"> </span>bdist_wheel
+<span class="w">  </span>running<span class="w"> </span>build
+<span class="w">  </span>running<span class="w"> </span>build_py
+<span class="w">  </span>creating<span class="w"> </span>build
+<span class="w">  </span>creating<span class="w"> </span>build/lib.linux-x86_64-3.8
+<span class="w">  </span>creating<span class="w"> </span>build/lib.linux-x86_64-3.8/cairo
+<span class="w">  </span>copying<span class="w"> </span>cairo/__init__.py<span class="w"> </span>-&gt;<span class="w"> </span>build/lib.linux-x86_64-3.8/cairo
+<span class="w">  </span>copying<span class="w"> </span>cairo/__init__.pyi<span class="w"> </span>-&gt;<span class="w"> </span>build/lib.linux-x86_64-3.8/cairo
+<span class="w">  </span>copying<span class="w"> </span>cairo/py.typed<span class="w"> </span>-&gt;<span class="w"> </span>build/lib.linux-x86_64-3.8/cairo
+<span class="w">  </span>running<span class="w"> </span>build_ext
+<span class="w">  </span>Package<span class="w"> </span>cairo<span class="w"> </span>was<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>pkg-config<span class="w"> </span>search<span class="w"> </span>path.
+<span class="w">  </span>Perhaps<span class="w"> </span>you<span class="w"> </span>should<span class="w"> </span>add<span class="w"> </span>the<span class="w"> </span>directory<span class="w"> </span>containing<span class="w"> </span><span class="sb">`</span>cairo.pc<span class="s1">&#39;</span>
 <span class="s1">  to the PKG_CONFIG_PATH environment variable</span>
 <span class="s1">  No package &#39;</span>cairo<span class="s1">&#39; found</span>
-<span class="s1">  Command &#39;</span><span class="o">[</span><span class="s1">&#39;pkg-config&#39;</span>, <span class="s1">&#39;--print-errors&#39;</span>, <span class="s1">&#39;--exists&#39;</span>, <span class="s1">&#39;cairo &gt;= 1.15.10&#39;</span><span class="o">]</span><span class="err">&#39;</span> returned non-zero <span class="nb">exit</span> status <span class="m">1</span>.
-  ----------------------------------------
-  ERROR: Failed building wheel <span class="k">for</span> pycairo
-Failed to build pycairo
-ERROR: Could not build wheels <span class="k">for</span> pycairo which use PEP <span class="m">517</span> and cannot be installed directly
+<span class="s1">  Command &#39;</span><span class="o">[</span><span class="s1">&#39;pkg-config&#39;</span>,<span class="w"> </span><span class="s1">&#39;--print-errors&#39;</span>,<span class="w"> </span><span class="s1">&#39;--exists&#39;</span>,<span class="w"> </span><span class="s1">&#39;cairo &gt;= 1.15.10&#39;</span><span class="o">]</span><span class="err">&#39;</span><span class="w"> </span>returned<span class="w"> </span>non-zero<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>status<span class="w"> </span><span class="m">1</span>.
+<span class="w">  </span>----------------------------------------
+<span class="w">  </span>ERROR:<span class="w"> </span>Failed<span class="w"> </span>building<span class="w"> </span>wheel<span class="w"> </span><span class="k">for</span><span class="w"> </span>pycairo
+Failed<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>pycairo
+ERROR:<span class="w"> </span>Could<span class="w"> </span>not<span class="w"> </span>build<span class="w"> </span>wheels<span class="w"> </span><span class="k">for</span><span class="w"> </span>pycairo<span class="w"> </span>which<span class="w"> </span>use<span class="w"> </span>PEP<span class="w"> </span><span class="m">517</span><span class="w"> </span>and<span class="w"> </span>cannot<span class="w"> </span>be<span class="w"> </span>installed<span class="w"> </span>directly
 </code></pre></div>
 <h3 id="second-attempt">second attempt<a class="headerlink" href="#second-attempt" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>conda install -c conda-forge python-igraph
-conda install -c conda-forge pycairo
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>python-igraph
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>pycairo
 </code></pre></div>
 <p>note that the second command would also install the missing <code>cairo</code>,</p>
-<div class="highlight"><pre><span></span><code>The following packages will be downloaded:
+<div class="highlight"><pre><span></span><code>The<span class="w"> </span>following<span class="w"> </span>packages<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>downloaded:
 
-    package                    <span class="p">|</span>            build
-    ---------------------------<span class="p">|</span>-----------------
-    cairo-1.16.0               <span class="p">|</span>       hf32fb01_1         <span class="m">1</span>.0 MB
-    fontconfig-2.13.1          <span class="p">|</span>       h6c09931_0         <span class="m">250</span> KB
-    glib-2.68.3                <span class="p">|</span>       h9c3ff4c_0         <span class="m">449</span> KB  conda-forge
-    glib-tools-2.68.3          <span class="p">|</span>       h9c3ff4c_0          <span class="m">86</span> KB  conda-forge
-    libglib-2.68.3             <span class="p">|</span>       h3e27bee_0         <span class="m">3</span>.1 MB  conda-forge
-    pycairo-1.20.1             <span class="p">|</span>   py38hf61ee4a_0          <span class="m">77</span> KB  conda-forge
-    ------------------------------------------------------------
-                                           Total:         <span class="m">5</span>.0 MB
+<span class="w">    </span>package<span class="w">                    </span><span class="p">|</span><span class="w">            </span>build
+<span class="w">    </span>---------------------------<span class="p">|</span>-----------------
+<span class="w">    </span>cairo-1.16.0<span class="w">               </span><span class="p">|</span><span class="w">       </span>hf32fb01_1<span class="w">         </span><span class="m">1</span>.0<span class="w"> </span>MB
+<span class="w">    </span>fontconfig-2.13.1<span class="w">          </span><span class="p">|</span><span class="w">       </span>h6c09931_0<span class="w">         </span><span class="m">250</span><span class="w"> </span>KB
+<span class="w">    </span>glib-2.68.3<span class="w">                </span><span class="p">|</span><span class="w">       </span>h9c3ff4c_0<span class="w">         </span><span class="m">449</span><span class="w"> </span>KB<span class="w">  </span>conda-forge
+<span class="w">    </span>glib-tools-2.68.3<span class="w">          </span><span class="p">|</span><span class="w">       </span>h9c3ff4c_0<span class="w">          </span><span class="m">86</span><span class="w"> </span>KB<span class="w">  </span>conda-forge
+<span class="w">    </span>libglib-2.68.3<span class="w">             </span><span class="p">|</span><span class="w">       </span>h3e27bee_0<span class="w">         </span><span class="m">3</span>.1<span class="w"> </span>MB<span class="w">  </span>conda-forge
+<span class="w">    </span>pycairo-1.20.1<span class="w">             </span><span class="p">|</span><span class="w">   </span>py38hf61ee4a_0<span class="w">          </span><span class="m">77</span><span class="w"> </span>KB<span class="w">  </span>conda-forge
+<span class="w">    </span>------------------------------------------------------------
+<span class="w">                                           </span>Total:<span class="w">         </span><span class="m">5</span>.0<span class="w"> </span>MB
 </code></pre></div>
 <p>Thus, plotting can be done.</p>
 <h2 id="growing-minimum-spanning-tree">Growing Minimum spanning tree<a class="headerlink" href="#growing-minimum-spanning-tree" title="Permanent link">&para;</a></h2>
@@ -2504,7 +2504,7 @@ conda install -c conda-forge pycairo
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

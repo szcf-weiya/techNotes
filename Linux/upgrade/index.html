@@ -2434,8 +2434,8 @@
 <p>今天上午来到办公室，发现电脑死机了，屏保时间停留在 7:45，但现在已经 9:29 了，这应该是来哈佛十来天的第一次死机。</p>
 <p>不抱希望地直接强制重启，但是重启后明显感觉 Lenovo 的加载速度变得很慢，一直停留在 LENOVO 的 logo 界面，底下一行字提示，按 Enter 键打断正常重启，正常情况下这个界面只会停顿一两秒，但这次似乎得有 1 分钟了。本以为又需要强制重启，但是过了一会，底下那行字消失了，只剩下 LENOVO 图标，这说明它还在加载，只是比较慢，这时候觉得可能是刚刚强制重启完，加载会稍微慢一点，并没有太在意，现在复盘发现，这个如果得以重视，可能不需要后面的操作了。</p>
 <p>等了好一会，终于还是进入了 grub 选项界面。然后自动选择 4.15.0-147 的版本，但是登录时直接卡在了第二行</p>
-<div class="highlight"><pre><span></span><code>Loading Linux <span class="m">4</span>.15.0-147-generic ...
-Loading initial ramdisk ...
+<div class="highlight"><pre><span></span><code>Loading<span class="w"> </span>Linux<span class="w"> </span><span class="m">4</span>.15.0-147-generic<span class="w"> </span>...
+Loading<span class="w"> </span>initial<span class="w"> </span>ramdisk<span class="w"> </span>...
 </code></pre></div>
 <p>等了好久都没有进展，此处稍微 google 了一下，可能的原因不一而足，比如有人提到最近的更新，这也让我想到最近也有更新，也有人说修改 grub 进一步看看详细信息。</p>
 <p>不过这些得需要先能登录进去，强制重启后，选择 Recovery mode 进入，不过似乎只能进入命令行界面。</p>
@@ -2453,7 +2453,7 @@ Loading initial ramdisk ...
 <li><code>sudo do-release-upgrade</code></li>
 </ol>
 <p>但是升级所需硬盘空间不够，于是卸载 MATLAB，因为现在确实本地没跑过它了，没有找到卸载程序，<code>apt purge</code> 也不管用，于是直接</p>
-<div class="highlight"><pre><span></span><code>/usr/local/MATLAB$ sudo rm -rf R2019a
+<div class="highlight"><pre><span></span><code>/usr/local/MATLAB$<span class="w"> </span>sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>R2019a
 </code></pre></div>
 <p>后来再继续运行 <code>do-release-upgrade</code>，差不多 90min 才完成，这中间 90min 上网看了看有没有合适的笔记本，但其实还不是很想换。快结束的时候，需要确认是否保留原始配置文件</p>
 <div class="admonition tip">
@@ -2472,8 +2472,8 @@ Loading initial ramdisk ...
 <li><code>sudo update-grub</code></li>
 </ol>
 <p>然后发现 shutter 在 20.04 中没有了，其实在 G40 中已经发现了，参考 <a href="https://itsfoss.com/install-shutter-ubuntu/">How to Install Shutter Screenshot Tool in Ubuntu 20.04</a></p>
-<div class="highlight"><pre><span></span><code>sudo add-apt-repository -y ppa:linuxuprising/shutter
-sudo apt install shutter
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>-y<span class="w"> </span>ppa:linuxuprising/shutter
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>shutter
 </code></pre></div>
 <hr />
 <h2 id="comments-true_1">comments: true<a class="headerlink" href="#comments-true_1" title="Permanent link">&para;</a></h2>
@@ -2484,7 +2484,7 @@ sudo apt install shutter
 </div>
 <p>I want to install BaiduYunpan for Linux, but actually I have tried it before, which cannot work for my current version. However, I note that the version has been updated, although it is still for Ubuntu 18.04, not Ubuntu 16.04. </p>
 <p>Same results with the previous try, cannot start it after installing it, and no error thrown in the install procedure. But today I went further, I found that after I type</p>
-<div class="highlight"><pre><span></span><code>/opt/baidunetdisk/baidunetdisk 
+<div class="highlight"><pre><span></span><code>/opt/baidunetdisk/baidunetdisk<span class="w"> </span>
 </code></pre></div>
 <p>it throws an error,</p>
 <blockquote>
@@ -2496,33 +2496,33 @@ sudo apt install shutter
 <p>libmirprotobuf.so.3: undefined symbol: _ZNK6google8protobuf11MessageLite25InitializationErrorStringB5cxx11Ev</p>
 </blockquote>
 <p>and then I follow the instructions in <a href="https://bugs.launchpad.net/ubuntu/+source/mir/+bug/1527137">Ubuntu: mir package</a></p>
-<div class="highlight"><pre><span></span><code>sudo apt-get purge libprotobuf-lite9v5
-sudo apt-get install libprotobuf-lite9v5
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>purge<span class="w"> </span>libprotobuf-lite9v5
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libprotobuf-lite9v5
 </code></pre></div>
 <p>the first step throws the dependencies warnings, related to <code>libqt5</code>, then I uninstall <code>libqt5</code>. Unfortunately, many running programs then exit when the uninstalling procedure keeps going, and I found that I make a big mistake!!</p>
 <p>Now, maybe the best way is to update my system from Ubuntu 16.04 to Ubuntu 18.04 to recover the broken system. Actually I have updated my old PC from 16.04 to 18.04, seems quite fluent.</p>
 <p>However, for this PC, there are many disappointing problem.</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get update
-sudo apt-get dist-upgrade
-sudo apt autoremove
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>dist-upgrade
+sudo<span class="w"> </span>apt<span class="w"> </span>autoremove
 </code></pre></div>
 <p>it is necessary to modify <code>/etc/update-manager/release-upgrades</code> from <code>never</code> to <code>lts</code>, otherwise it cannot detect new release version. Then run</p>
-<div class="highlight"><pre><span></span><code>sudo <span class="k">do</span>-release-upgrade
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="k">do</span>-release-upgrade
 </code></pre></div>
 <p><em>refer to <a href="https://jingyan.baidu.com/article/2f9b480de8b64941cb6cc2a1.html">将 Ubuntu 16.04 LTS 升级到 Ubuntu 18.04 LTS</a></em></p>
 <p>Due to previous HK Ubuntu mirror, the speed is quite slow, then the first thing I need to do is to replace the mirror in <code>/etc/apt/sources.list</code> with aliyun by <code>sed</code> operation via</p>
-<div class="highlight"><pre><span></span><code>sudo sed -i <span class="s2">&quot;s#http://ftp.cuhk.edu.hk/pub/Linux/ubuntu/#http://mirrors.aliyun.com/ubuntu/#&quot;</span> sources.list
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s#http://ftp.cuhk.edu.hk/pub/Linux/ubuntu/#http://mirrors.aliyun.com/ubuntu/#&quot;</span><span class="w"> </span>sources.list
 </code></pre></div>
 <p>后来更新至，</p>
-<div class="highlight"><pre><span></span><code>sudo sed -i <span class="s2">&quot;s#ftp.cuhk.edu.hk/pub/Linux#archive.ubuntu.com#g&quot;</span> sources.list
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s#ftp.cuhk.edu.hk/pub/Linux#archive.ubuntu.com#g&quot;</span><span class="w"> </span>sources.list
 </code></pre></div>
 <p>Then go on. However, I mistook enter something in the middle, and stop the installation procedure, that is might be part of the reason why I met so many problems.</p>
 <p>Try to run <code>do-release-upgrade</code> again, but it said no new release version, and told me to upgrade the software in the current version. Actually it is Ubuntu 18.04 now, checking by</p>
-<div class="highlight"><pre><span></span><code>lsb_release -a
+<div class="highlight"><pre><span></span><code>lsb_release<span class="w"> </span>-a
 </code></pre></div>
 <p>then I run </p>
-<div class="highlight"><pre><span></span><code>sudo apt-get update
-sudo apt-get upgrade
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
 </code></pre></div>
 <p>after the first run, I think I am OK. But in the rebooting, I cannot enter into the system, the Ubuntu logo is twinkling, and sometimes I can switch to the command window, it holds with message</p>
 <blockquote>
@@ -2530,9 +2530,9 @@ sudo apt-get upgrade
 </blockquote>
 <p>but do not want to try the re-install solution in <a href="https://blog.csdn.net/Natsume_Z_Kenshin/article/details/81283828">问题1：a start job is running for hold until boot process finishes up（X s/unlimit）</a>, because I guess my situation would be quite different, since I uninstall <code>libqt5</code>, and interrupt the normal release updating procedure, </p>
 <p>Then I found some other possible solutions,</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get update
-sudo apt-get install --reinstall ubuntu-desktop
-sudo apt-get install unity
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--reinstall<span class="w"> </span>ubuntu-desktop
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>unity
 </code></pre></div>
 <p>But the first thing I need to do is to stop it by power, and then choose to start an advanced session in the grub session, and I chose a <code>recovery mode</code>, then I entered into a command line. And I can continue to fix the problem.</p>
 <p>But before I can install the <code>desktop</code>, repeat to run <code>update</code> and <code>upgrade</code>, then updating texlive from 2015 to 2017 throws an error,</p>
@@ -2542,11 +2542,11 @@ trying to overwrite &lsquo;/usr/share/doc/texlive-doc/latex/mweights/README&rsqu
 dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</p>
 </blockquote>
 <p>try <code>install -f</code>, but does not work, the solution is</p>
-<div class="highlight"><pre><span></span><code>sudo dpkg -i --force-all /var/cache/apt/archives/texlive-fonts-extra-doc_2017.20180305-2_all.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>--force-all<span class="w"> </span>/var/cache/apt/archives/texlive-fonts-extra-doc_2017.20180305-2_all.deb
 </code></pre></div>
 <p>refer to <a href="https://debug.fanzheng.org/post/problem-when-update-texlive.html">在apt更新texlive到2017的问题</a></p>
 <p>then I reboot to test, but the internet broken, <code>ifconfig</code> only returns <code>lo</code>, but <code>ifconfig -a</code> shows all possible cards, I have tried <code>service restart</code> like in <a href="https://blog.csdn.net/zhukangle/article/details/75370538">UBUNTU ifconfig只有lo</a>, but it does not work, then I found the solution worked for me</p>
-<div class="highlight"><pre><span></span><code>sudo dhclient enp**
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dhclient<span class="w"> </span>enp**
 </code></pre></div>
 <p>in <a href="https://blog.csdn.net/weixin_42116341/article/details/81410805">Ubuntu输入ifconfig找不到IP地址，只有lo问题</a>.</p>
 <p>Reboot after the <code>desktop</code> is successfully installed, I can enter into the graphical system!!</p>
@@ -2591,7 +2591,7 @@ dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

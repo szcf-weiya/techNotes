@@ -3022,7 +3022,7 @@
 </ul>
 <h4 id="basic-usage">basic usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h4>
 <p><code>awk</code> 标准用法为</p>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;/pattern/ {print &quot;$1&quot;}&#39;</span>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;/pattern/ {print &quot;$1&quot;}&#39;</span>
 </code></pre></div>
 <p><code>/pattern/</code> 可以是正则表达式，也可以是两个特殊的pattern，</p>
 <ul>
@@ -3030,40 +3030,40 @@
 <li><code>END</code>: execute the action(s) before it actually exits</li>
 </ul>
 <p>默认分隔符为空格，或者通过 <code>-F</code> 指定其它的分隔符，</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s1">&#39;a b&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;a b&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span>
 b
-$ <span class="nb">echo</span> <span class="s1">&#39;a,b&#39;</span> <span class="p">|</span> awk -F, <span class="s1">&#39;{print $2}&#39;</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;a,b&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span>-F,<span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span>
 b
 </code></pre></div>
 <p>其中 <code>$i</code> 指第 i 列，而 <code>$0</code> 指整条记录（including leading and trailing whitespace. ），详见 <code>man awk</code>.</p>
 <p>另外上述脚本中用到了 <code>awk</code> 支持跨行状态的特性，即</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;a b \n c d&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span>
 b
 d
 </code></pre></div>
 <p>其中 <code>-e</code> 是为了 escape 换行符，最后一列也可以用 <code>$NF</code> 表示，</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $NF}&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;a b \n c d&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $NF}&#39;</span>
 b
 d
 </code></pre></div>
 <p>如果想要得到列数，则使用 <code>NF</code>,</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print NF}&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;a b \n c d&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print NF}&#39;</span>
 <span class="m">2</span>
 <span class="m">2</span>
 </code></pre></div>
 <p>如果默认每行列数相等，只想得到列数的话，可以使用</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a b \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print NF; exit}&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;a b \n c d&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print NF; exit}&#39;</span>
 <span class="m">2</span>
 </code></pre></div>
 <p>如果数据文件为 <code>file.txt</code>，则可以直接用</p>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print NF; exit}&#39;</span> file.txt
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{print NF; exit}&#39;</span><span class="w"> </span>file.txt
 </code></pre></div>
 <p>如果需要输出行数，则用</p>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{print NR, &quot;:&quot;, $0}&#39;</span> file.txt
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{print NR, &quot;:&quot;, $0}&#39;</span><span class="w"> </span>file.txt
 </code></pre></div>
 <p>如果想从 0 开始，则改成 <code>NR-1</code>.</p>
 <h4 id="processing-two-files">processing two files<a class="headerlink" href="#processing-two-files" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>$ awk <span class="s1">&#39;NR == FNR {# some actions; next} # other condition {# other actions}&#39;</span> file1.txt file2.txt
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;NR == FNR {# some actions; next} # other condition {# other actions}&#39;</span><span class="w"> </span>file1.txt<span class="w"> </span>file2.txt
 </code></pre></div>
 <p>where</p>
 <ul>
@@ -3081,49 +3081,49 @@ d
 </div>
 <p>refer to <a href="https://backreference.org/2010/02/10/idiomatic-awk/">Idiomatic awk</a> (<strong>A fantastic tutorial with many examples</strong>)</p>
 <p>For example, print the specific lines in <code>test.md</code> whose row numbers are defined in <code>line.txt</code>,</p>
-<div class="highlight"><pre><span></span><code>$ awk <span class="s1">&#39;FNR==NR{wanted[$0]; next} FNR in wanted&#39;</span> lines.txt test.md
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;FNR==NR{wanted[$0]; next} FNR in wanted&#39;</span><span class="w"> </span>lines.txt<span class="w"> </span>test.md
 </code></pre></div>
 <p>first came across in <a href="https://stackoverflow.com/a/26672005">selecting a large number of (specific) rows in file - Stack Overflow</a>, but it used <code>wanted[$0]++</code>, which does not make differences.</p>
 <h4 id="sum-of-a-column-of-numbers">sum of a column of numbers<a class="headerlink" href="#sum-of-a-column-of-numbers" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;{s+=$1} END {print s}&#39;</span> data.txt
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{s+=$1} END {print s}&#39;</span><span class="w"> </span>data.txt
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/3096259/bash-command-to-sum-a-column-of-numbers">Bash command to sum a column of numbers - Stack Overflow</a> for other approaches.</p>
 <p>For example, sum up the memory usage,</p>
-<div class="highlight"><pre><span></span><code>$ ps -e -o pid,cmd,%mem --sort<span class="o">=</span>-%mem <span class="p">|</span> awk <span class="s1">&#39;NR &gt; 1{s+=$NF} END {print s}&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ps<span class="w"> </span>-e<span class="w"> </span>-o<span class="w"> </span>pid,cmd,%mem<span class="w"> </span>--sort<span class="o">=</span>-%mem<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;NR &gt; 1{s+=$NF} END {print s}&#39;</span>
 </code></pre></div>
 <h4 id="select-lines-with-conditions">select lines with conditions<a class="headerlink" href="#select-lines-with-conditions" title="Permanent link">&para;</a></h4>
 <ul>
 <li>select lines whose 2nd column is not empty: <strong>usage of <code>!~</code></strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a \n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;$2 !~ /^$/{print $2}&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;a \n c d&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$2 !~ /^$/{print $2}&#39;</span>
 d
 </code></pre></div>
 <ul>
 <li>select lines whose 2nd column is not either empty or <code>-</code>: <strong>usage of <code>|</code></strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a -\n c d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;$2 !~ /-|^$/{print $2}&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;a -\n c d&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$2 !~ /-|^$/{print $2}&#39;</span>
 d
 </code></pre></div>
 <ul>
 <li>select lines whose both 2nd column and 3rd column are not empty: <strong>usage of <code>&amp;&amp;</code></strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> -e <span class="s1">&#39;a - 1 \n c d 3 \n 5 6 &#39;</span> <span class="p">|</span> awk <span class="s1">&#39;$2 !~ /-|^$/ &amp;&amp; $3 !~ /^$/ {print $2}&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;a - 1 \n c d 3 \n 5 6 &#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$2 !~ /-|^$/ &amp;&amp; $3 !~ /^$/ {print $2}&#39;</span>
 d
 </code></pre></div>
 <h2 id="cat"><code>cat</code><a class="headerlink" href="#cat" title="Permanent link">&para;</a></h2>
 <ul>
 <li>add text to the beginning of a file</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;task goes here&#39;</span> <span class="p">|</span> cat - todo.txt &gt; temp <span class="o">&amp;&amp;</span> mv temp todo.txt
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;task goes here&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cat<span class="w"> </span>-<span class="w"> </span>todo.txt<span class="w"> </span>&gt;<span class="w"> </span>temp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>temp<span class="w"> </span>todo.txt
 </code></pre></div>
 <p>where <code>-</code> represents the standard input, see also <a href="https://blog.csdn.net/liuxiao723846/article/details/91041629"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <p>alternatively, we can use <code>sed</code>, refer to <a href="https://superuser.com/questions/246837/how-do-i-add-text-to-the-beginning-of-a-file-in-bash"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more details</p>
 <h2 id="column"><code>column</code><a class="headerlink" href="#column" title="Permanent link">&para;</a></h2>
 <p>display the csv beautifully,</p>
-<div class="highlight"><pre><span></span><code>$ head file1.txt <span class="p">|</span> column -s, -t
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>head<span class="w"> </span>file1.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>column<span class="w"> </span>-s,<span class="w"> </span>-t
 </code></pre></div>
 <p>if two files share the same columns, </p>
-<div class="highlight"><pre><span></span><code>$ <span class="o">(</span>head file1.txt<span class="p">;</span> head file2.txt<span class="o">)</span> <span class="p">|</span> column -s, -t
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="o">(</span>head<span class="w"> </span>file1.txt<span class="p">;</span><span class="w"> </span>head<span class="w"> </span>file2.txt<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>column<span class="w"> </span>-s,<span class="w"> </span>-t
 </code></pre></div>
 <p>where</p>
 <ul>
@@ -3135,9 +3135,9 @@ d
 <h4 id="_1">图片裁剪<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p>在连接显示器状态下，全屏截图时有一个屏幕是多余的，可以批量裁剪</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 截右屏</span>
-$ ls -1 <span class="p">|</span> xargs -I <span class="o">{}</span> convert <span class="o">{}</span> -crop 1920x1200+1920+0 crop_<span class="o">{}</span>
+$<span class="w"> </span>ls<span class="w"> </span>-1<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>convert<span class="w"> </span><span class="o">{}</span><span class="w"> </span>-crop<span class="w"> </span>1920x1200+1920+0<span class="w"> </span>crop_<span class="o">{}</span>
 <span class="c1"># 截左屏</span>
-$ ls -1 <span class="p">|</span> xargs -I <span class="o">{}</span> convert <span class="o">{}</span> -crop 1920x1200+0+0 crop_<span class="o">{}</span>
+$<span class="w"> </span>ls<span class="w"> </span>-1<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>convert<span class="w"> </span><span class="o">{}</span><span class="w"> </span>-crop<span class="w"> </span>1920x1200+0+0<span class="w"> </span>crop_<span class="o">{}</span>
 </code></pre></div>
 <p>其中 <code>-crop</code> 参数格式为 <code>width</code>x<code>height</code>+<code>left</code>+<code>top</code>.</p>
 <div class="admonition tip">
@@ -3146,37 +3146,37 @@ $ ls -1 <span class="p">|</span> xargs -I <span class="o">{}</span> convert <spa
 </div>
 <h4 id="_2">图片拼接<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># 水平方向</span>
-convert +append *.png out.png
+convert<span class="w"> </span>+append<span class="w"> </span>*.png<span class="w"> </span>out.png
 <span class="c1"># 垂直方向</span>
-convert -append *.png out.png
+convert<span class="w"> </span>-append<span class="w"> </span>*.png<span class="w"> </span>out.png
 </code></pre></div>
 <p>参考 <a href="https://askubuntu.com/a/889772">How do I join two images in Ubuntu?</a></p>
 <p>如果同时想两张图片高度一样，则加入 <code>-resize xW</code> 语法，如</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># NOT work</span>
-$ convert map.png IMG_20210808_172104.jpg +append -resize x600 /tmp/p1.png
+$<span class="w"> </span>convert<span class="w"> </span>map.png<span class="w"> </span>IMG_20210808_172104.jpg<span class="w"> </span>+append<span class="w"> </span>-resize<span class="w"> </span>x600<span class="w"> </span>/tmp/p1.png
 <span class="c1"># work</span>
-$ convert +append map.png IMG_20210808_172104.jpg -resize x600 /tmp/p1.png
+$<span class="w"> </span>convert<span class="w"> </span>+append<span class="w"> </span>map.png<span class="w"> </span>IMG_20210808_172104.jpg<span class="w"> </span>-resize<span class="w"> </span>x600<span class="w"> </span>/tmp/p1.png
 </code></pre></div>
 <p>但是要注意此时 <code>+append</code> 要放在前面，也就是 <code>-resize</code> 需要紧跟着图片。</p>
 <p>参考 <a href="https://stackoverflow.com/questions/20737061/merge-images-side-by-sidehorizontally">Merge Images Side by Side(Horizontally) - Stack Overflow</a></p>
 <p>但是注意 <code>-resize</code> 会使得 orientation 无效，然后图片会发生旋转，参考 <a href="https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33900">ImageMagick convert rotates images during resize</a>，使用 <code>-auto-orient</code> 参数，就能避免丢失图片中的 orientation 信息，</p>
-<div class="highlight"><pre><span></span><code>$ convert -auto-orient +append map.png IMG_20210808_172104.jpg -resize x600 /tmp/p2.png
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>convert<span class="w"> </span>-auto-orient<span class="w"> </span>+append<span class="w"> </span>map.png<span class="w"> </span>IMG_20210808_172104.jpg<span class="w"> </span>-resize<span class="w"> </span>x600<span class="w"> </span>/tmp/p2.png
 </code></pre></div>
 <h4 id="_3">缩小图片大小<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># only specify the wide as 1024 pixel to keep the aspect ratio</span>
-convert input.png -resize 1024x out.png
-convert input.png -quality <span class="m">50</span>% out.png
+convert<span class="w"> </span>input.png<span class="w"> </span>-resize<span class="w"> </span>1024x<span class="w"> </span>out.png
+convert<span class="w"> </span>input.png<span class="w"> </span>-quality<span class="w"> </span><span class="m">50</span>%<span class="w"> </span>out.png
 </code></pre></div>
 <p>参考<a href="https://askubuntu.com/questions/781497/how-can-i-compress-images">How can I compress images?</a></p>
 <h4 id="jpgpdf">合并jpg到pdf<a class="headerlink" href="#jpgpdf" title="Permanent link">&para;</a></h4>
 <p>参考<a href="https://unix.stackexchange.com/questions/20026/convert-images-to-pdf-how-to-make-pdf-pages-same-size">convert images to pdf: How to make PDF Pages same size</a></p>
 <p>直接采用</p>
-<div class="highlight"><pre><span></span><code>pdftk A.pdf B.pdf cat output merge.pdf
+<div class="highlight"><pre><span></span><code>pdftk<span class="w"> </span>A.pdf<span class="w"> </span>B.pdf<span class="w"> </span>cat<span class="w"> </span>output<span class="w"> </span>merge.pdf
 </code></pre></div>
 <p>得到的pdf中页面大小不一致，于是采用下面的命令</p>
-<div class="highlight"><pre><span></span><code>convert a.png b.png -compress jpeg -resize 1240x1753 <span class="se">\</span>
-                      -extent 1240x1753 -gravity center <span class="se">\</span>
-                      -units PixelsPerInch -density 150x150 multipage.pdf
+<div class="highlight"><pre><span></span><code>convert<span class="w"> </span>a.png<span class="w"> </span>b.png<span class="w"> </span>-compress<span class="w"> </span>jpeg<span class="w"> </span>-resize<span class="w"> </span>1240x1753<span class="w"> </span><span class="se">\</span>
+<span class="w">                      </span>-extent<span class="w"> </span>1240x1753<span class="w"> </span>-gravity<span class="w"> </span>center<span class="w"> </span><span class="se">\</span>
+<span class="w">                      </span>-units<span class="w"> </span>PixelsPerInch<span class="w"> </span>-density<span class="w"> </span>150x150<span class="w"> </span>multipage.pdf
 </code></pre></div>
 <p>注意重点是 <code>-density 150x150</code>，若去掉这个选项，则还是得不到相同页面大小的文件。</p>
 <p>另外，上述命令是对于<code>.png</code>而言的，完全可以换成<code>.jpg</code>。</p>
@@ -3186,12 +3186,12 @@ convert input.png -quality <span class="m">50</span>% out.png
  <code>-density 600x600</code> 控制分辨率</p>
 <p>并注意参数放置文件的前面</p>
 <p>pdf 转 png 更好的命令是 <code>pdftoppm</code>，参考 <a href="https://askubuntu.com/questions/50170/how-to-convert-pdf-to-image">How to convert PDF to Image?</a></p>
-<div class="highlight"><pre><span></span><code>pdftoppm alg.pdf alg -png -singlefile
+<div class="highlight"><pre><span></span><code>pdftoppm<span class="w"> </span>alg.pdf<span class="w"> </span>alg<span class="w"> </span>-png<span class="w"> </span>-singlefile
 </code></pre></div>
 <p>图片质量比 <code>convert</code> 好很多！！</p>
 <h4 id="convert-imgs-to-pdf">convert imgs to pdf<a class="headerlink" href="#convert-imgs-to-pdf" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>ls -1 ./*jpg <span class="p">|</span> xargs -L1 -I <span class="o">{}</span> img2pdf <span class="o">{}</span> -o <span class="o">{}</span>.pdf
-pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m">1</span>..13<span class="o">}</span>-1024.jpg.pdf cat output likelihoodfree-design-a-discussion.pdf
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-1<span class="w"> </span>./*jpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-L1<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>img2pdf<span class="w"> </span><span class="o">{}</span><span class="w"> </span>-o<span class="w"> </span><span class="o">{}</span>.pdf
+pdftk<span class="w"> </span>likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m">1</span>..13<span class="o">}</span>-1024.jpg.pdf<span class="w"> </span>cat<span class="w"> </span>output<span class="w"> </span>likelihoodfree-design-a-discussion.pdf
 </code></pre></div>
 <p>注意这里需要用 <code>ls -1</code>，如果 <code>ll</code> 则第一行会有 <code>total xxx</code> 的信息，即 <code>ll | wc -l</code> 等于 <code>ls -1 | wc -l</code> + 1，而且在我的 Ubuntu 18.04 中，<code>ll</code> 甚至还会列出</p>
 <div class="highlight"><pre><span></span><code>./
@@ -3203,7 +3203,7 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 <p class="admonition-title">Info</p>
 <p>Here is <a href="https://github.com/szcf-weiya/SZmedinfo/issues/5">one example</a> used in my project.</p>
 </div>
-<div class="highlight"><pre><span></span><code>$ convert -brightness-contrast 10x5 input.jpg output.jpg
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>convert<span class="w"> </span>-brightness-contrast<span class="w"> </span>10x5<span class="w"> </span>input.jpg<span class="w"> </span>output.jpg
 </code></pre></div>
 <p>where <code>10x5</code> increases the brightness 10 percent and the contrast 5 percent. </p>
 <p>These two values range from -100 to 100, and</p>
@@ -3220,7 +3220,7 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 </ul>
 <h2 id="cp"><code>cp</code><a class="headerlink" href="#cp" title="Permanent link">&para;</a></h2>
 <p>the common usage is <code>cp SOURCE DEST</code>, but if we want to copy multiple files into a single folder at once, we can use</p>
-<div class="highlight"><pre><span></span><code>cp -t DIRECTORY SOURCE
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-t<span class="w"> </span>DIRECTORY<span class="w"> </span>SOURCE
 </code></pre></div>
 <p>where <code>SOURCE</code> can be multiple files, inspired from <a href="https://askubuntu.com/a/816826">Copying multiple specific files from one folder to another - Ask Ubuntu</a></p>
 <h2 id="curl"><code>curl</code><a class="headerlink" href="#curl" title="Permanent link">&para;</a></h2>
@@ -3229,27 +3229,27 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 </ul>
 <h2 id="cut"><code>cut</code><a class="headerlink" href="#cut" title="Permanent link">&para;</a></h2>
 <p>To select the first field of a file <code>file.txt</code>,</p>
-<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="k">$(</span>cut -d<span class="s1">&#39;.&#39;</span> -f1 <span class="o">&lt;&lt;&lt;</span> <span class="nv">$1</span><span class="k">)</span>_test
-<span class="nb">echo</span> <span class="nv">$a</span>
+<div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="k">$(</span>cut<span class="w"> </span>-d<span class="s1">&#39;.&#39;</span><span class="w"> </span>-f1<span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="nv">$1</span><span class="k">)</span>_test
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$a</span>
 </code></pre></div>
 <p>where <code>-d'.'</code> is to define the delimiter, and then <code>-f1</code> get the first field.</p>
 <p>If we need to get the last field, we can use <code>rev</code>, i.e.,</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;maps.google.com&#39;</span> <span class="p">|</span> rev <span class="p">|</span> cut -d<span class="s1">&#39;.&#39;</span> -f <span class="m">1</span> <span class="p">|</span> rev
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;maps.google.com&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>rev<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;.&#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>rev
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut">How to find the last field using &lsquo;cut&rsquo;</a> and <a href="https://opensource.com/article/17/2/command-line-tools-data-analysis-linux">10 command-line tools for data analysis in Linux</a></p>
 <h2 id="date"><code>date</code><a class="headerlink" href="#date" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nv">timestamp</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">&quot;%Y-%m-%dT%H:%M:%S&quot;</span><span class="k">)</span>
-<span class="nb">echo</span> <span class="nv">$timestamp</span>
+<div class="highlight"><pre><span></span><code><span class="nv">timestamp</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+<span class="s2">&quot;%Y-%m-%dT%H:%M:%S&quot;</span><span class="k">)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$timestamp</span>
 <span class="c1"># 2020-02-11T10:51:42</span>
 </code></pre></div>
 <p>we can compare two timestamps as follows</p>
-<div class="highlight"><pre><span></span><code><span class="nv">d1</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22 20:07:25&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
-<span class="nv">d2</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2019-09-22 20:08:25&quot;</span> +<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$d1</span> -gt <span class="nv">$d2</span> <span class="o">]</span>
+<div class="highlight"><pre><span></span><code><span class="nv">d1</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;2019-09-22 20:07:25&quot;</span><span class="w"> </span>+<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
+<span class="nv">d2</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;2019-09-22 20:08:25&quot;</span><span class="w"> </span>+<span class="s1">&#39;%s&#39;</span><span class="k">)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$d1</span><span class="w"> </span>-gt<span class="w"> </span><span class="nv">$d2</span><span class="w"> </span><span class="o">]</span>
 <span class="k">then</span>
-  <span class="nb">echo</span> <span class="s2">&quot;d1 &gt; d2&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;d1 &gt; d2&quot;</span>
 <span class="k">else</span>
-  <span class="nb">echo</span> <span class="s2">&quot;d1 &lt; d2&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;d1 &lt; d2&quot;</span>
 <span class="k">fi</span>
 </code></pre></div>
 <p>where</p>
@@ -3264,7 +3264,7 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 <ul>
 <li>compare contents of two folders, see also <a href="https://askubuntu.com/questions/421712/comparing-the-contents-of-two-directories"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ diff folder1 folder2
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>diff<span class="w"> </span>folder1<span class="w"> </span>folder2
 </code></pre></div>
 <h2 id="du"><code>du</code><a class="headerlink" href="#du" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3287,15 +3287,15 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 <ul>
 <li>Step 1: 确定系统当前支持的字符集</li>
 </ul>
-<div class="highlight"><pre><span></span><code>locale -a
+<div class="highlight"><pre><span></span><code>locale<span class="w"> </span>-a
 </code></pre></div>
 <p>若其中有 zh_CN.utf8，则表明已经包含了中文字符集。</p>
 <ul>
 <li>Step 2: 设置系统变量</li>
 </ul>
-<div class="highlight"><pre><span></span><code>emacs ~/.bashrc
-<span class="nb">export</span> <span class="nv">LC_CTYPE</span><span class="o">=</span>zh_CN.utf8 
-<span class="nb">source</span> ~/.bashrc
+<div class="highlight"><pre><span></span><code>emacs<span class="w"> </span>~/.bashrc
+<span class="nb">export</span><span class="w"> </span><span class="nv">LC_CTYPE</span><span class="o">=</span>zh_CN.utf8<span class="w"> </span>
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
 </code></pre></div>
 <ul>
 <li>配置文件: <a href="http://download.csdn.net/download/karotte/3812760">http://download.csdn.net/download/karotte/3812760</a></li>
@@ -3304,43 +3304,43 @@ pdftk likelihoodfree-design-a-discussion-<span class="o">{</span><span class="m"
 </details>
 <h2 id="echo"><code>echo</code><a class="headerlink" href="#echo" title="Permanent link">&para;</a></h2>
 <h4 id="string-started-with-">string started with <code>-</code><a class="headerlink" href="#string-started-with-" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>$ <span class="nv">a</span><span class="o">=</span><span class="s2">&quot;-n 1&quot;</span>
-$ <span class="nb">echo</span> <span class="nv">$a</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">a</span><span class="o">=</span><span class="s2">&quot;-n 1&quot;</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$a</span>
 <span class="m">1</span>
-$ <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span>
--n <span class="m">1</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span>
+-n<span class="w"> </span><span class="m">1</span>
 </code></pre></div>
 <p>double quotes are necessary, otherwise it would be treat as the option for <code>echo</code>. But if the string is pure <code>-</code>, the double quotes also failed,</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nv">b</span><span class="o">=</span><span class="s2">&quot;-n&quot;</span>
-$ <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">b</span><span class="o">=</span><span class="s2">&quot;-n&quot;</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span>
 </code></pre></div>
 <p>use <code>printf</code> would be more proper,</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">printf</span> <span class="s2">&quot;%s\n&quot;</span> <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%s\n&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span>
 -n
-$ <span class="nb">printf</span> <span class="s2">&quot;%s\n&quot;</span> <span class="nv">$b</span>
+$<span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%s\n&quot;</span><span class="w"> </span><span class="nv">$b</span>
 -n
 </code></pre></div>
 <p>and no need to add double quotes.</p>
 <p>refer to <a href="https://stackoverflow.com/questions/3652524/bash-echo-string-that-starts-with">Bash: echo string that starts with “-”</a></p>
 <h4 id="print-bytes">print bytes<a class="headerlink" href="#print-bytes" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> -n -e <span class="s1">&#39;\x66\x6f\x6f&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;\x66\x6f\x6f&#39;</span>
 </code></pre></div>
 <p>do not miss quotes, and <code>-e</code> is also necessary, refer to <a href="https://unix.stackexchange.com/questions/118247/echo-bytes-to-a-file">echo bytes to a file</a></p>
 <h4 id="different-save-behavior">different save behavior<a class="headerlink" href="#different-save-behavior" title="Permanent link">&para;</a></h4>
 <p>a column of elements would be stored in an array, then save via <code>echo</code> would result one line.</p>
-<div class="highlight"><pre><span></span><code>$ awk <span class="s1">&#39;{print $1}&#39;</span> duplicated.idx &gt; t1.txt
-$ cat t1.txt 
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="w"> </span>duplicated.idx<span class="w"> </span>&gt;<span class="w"> </span>t1.txt
+$<span class="w"> </span>cat<span class="w"> </span>t1.txt<span class="w"> </span>
 <span class="m">2</span>
 <span class="m">2</span>
-$ <span class="nv">t1</span><span class="o">=</span><span class="k">$(</span>awk <span class="s1">&#39;{print $1}&#39;</span> duplicated.idx<span class="k">)</span>
-$ <span class="nb">echo</span> <span class="nv">$t1</span> &gt; t2.txt
-$ cat t2.txt 
-<span class="m">2</span> <span class="m">2</span>
+$<span class="w"> </span><span class="nv">t1</span><span class="o">=</span><span class="k">$(</span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="w"> </span>duplicated.idx<span class="k">)</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$t1</span><span class="w"> </span>&gt;<span class="w"> </span>t2.txt
+$<span class="w"> </span>cat<span class="w"> </span>t2.txt<span class="w"> </span>
+<span class="m">2</span><span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 <h2 id="ffmpeg"><code>ffmpeg</code><a class="headerlink" href="#ffmpeg" title="Permanent link">&para;</a></h2>
 <h4 id="_5">提取音频<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>下载 B 站视频歌曲后，提取音频</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 output.mp3
+<div class="highlight"><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>output.mp3
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">B 站视频下载方法</p>
@@ -3354,30 +3354,30 @@ $ cat t2.txt
 </div>
 <h4 id="_6">去除音频<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>参考 <a href="https://hefang.link/article/how-remove-voice-with-ffmpeg.html">如何使用ffmpeg去除视频声音？</a></p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i .<span class="se">\i</span>nput.mp4 -map <span class="m">0</span>:0 -vcodec copy out.mp4
+<div class="highlight"><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span>.<span class="se">\i</span>nput.mp4<span class="w"> </span>-map<span class="w"> </span><span class="m">0</span>:0<span class="w"> </span>-vcodec<span class="w"> </span>copy<span class="w"> </span>out.mp4
 </code></pre></div>
 <h4 id="_7">慢速播放和快速播放<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># 2 times faster</span>
-$ ffmpeg -i input.mkv -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</span> output.mkv
+$<span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mkv<span class="w"> </span>-filter:v<span class="w"> </span><span class="s2">&quot;setpts=0.5*PTS&quot;</span><span class="w"> </span>output.mkv
 </code></pre></div>
 <p>但是如果只对视频快速播放，而不处理音频，则文件的总时长仍不变。如果只关注视频，可以先去除音频，然后再做变速处理。</p>
 <p>参考 <a href="https://blog.csdn.net/ternence_hsu/article/details/85865718">ffmpeg 视频倍速播放 和 慢速播放</a></p>
 <p>除此之外，还可以通过先转成 raw bitstream 文件（未尝试），详见 <a href="https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video">How to speed up / slow down a video – FFmpeg</a></p>
 <p>对于 GIF 文件，还可以用 <code>convert</code> 中的  <code>-delay</code> 选项实现。两者区别在于，前者会丢帧，而后者不会，</p>
-<div class="highlight"><pre><span></span><code>$ convert -delay <span class="m">10</span> input.gif output.gif
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>convert<span class="w"> </span>-delay<span class="w"> </span><span class="m">10</span><span class="w"> </span>input.gif<span class="w"> </span>output.gif
 </code></pre></div>
 <p>refer to <a href="https://infoheap.com/imagemagick-convert-edit-animated-gif-speed-fps/">https://infoheap.com/imagemagick-convert-edit-animated-gif-speed-fps/</a></p>
 <h4 id="_8">视频旋转<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>参考<a href="https://askubuntu.com/questions/83711/how-can-i-rotate-a-video">How can I rotate a video?</a></p>
 <p>直接用</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i <span class="k">in</span>.mov -vf <span class="s2">&quot;transpose=1&quot;</span> out.mov
+<div class="highlight"><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span><span class="k">in</span>.mov<span class="w"> </span>-vf<span class="w"> </span><span class="s2">&quot;transpose=1&quot;</span><span class="w"> </span>out.mov
 </code></pre></div>
 <p>然后报错 <a href="(https://stackoverflow.com/questions/32931685/the-encoder-aac-is-experimental-but-experimental-codecs-are-not-enabled)">“The encoder &lsquo;aac&rsquo; is experimental but experimental codecs are not enabled”</a></p>
 <p>注意添加 <code>-strict -2</code> 要注意放置位置，一开始直接在上述命令后面加入，但失败，应该写成</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i <span class="k">in</span>.mov -vf <span class="s2">&quot;transpose=1&quot;</span> -strict -2 out.mov
+<div class="highlight"><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span><span class="k">in</span>.mov<span class="w"> </span>-vf<span class="w"> </span><span class="s2">&quot;transpose=1&quot;</span><span class="w"> </span>-strict<span class="w"> </span>-2<span class="w"> </span>out.mov
 </code></pre></div>
 <h4 id="_9">视频剪切<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">00</span>:00:30.0 -i input.wmv -c copy -t <span class="m">00</span>:00:10.0 output.wmv
+<div class="highlight"><pre><span></span><code>ffmpeg<span class="w"> </span>-ss<span class="w"> </span><span class="m">00</span>:00:30.0<span class="w"> </span>-i<span class="w"> </span>input.wmv<span class="w"> </span>-c<span class="w"> </span>copy<span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:00:10.0<span class="w"> </span>output.wmv
 </code></pre></div>
 <p>where</p>
 <ul>
@@ -3386,7 +3386,7 @@ $ ffmpeg -i input.mkv -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</spa
 </ul>
 <p>refer to <a href="https://superuser.com/questions/138331/using-ffmpeg-to-cut-up-video">Using ffmpeg to cut up video</a></p>
 <h4 id="concat">concat<a class="headerlink" href="#concat" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>$ ffmpeg -f concat -safe <span class="m">0</span> -i &lt;<span class="o">(</span><span class="nb">echo</span> file <span class="nv">$PWD</span>/8xonlyVID_20210808_170208.mp4<span class="p">;</span> <span class="nb">echo</span> file <span class="nv">$PWD</span>/8xonlyVID_20210808_170328.mp4<span class="o">)</span> -c copy 8xonlyVID_20210808_170208+328.mp4
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ffmpeg<span class="w"> </span>-f<span class="w"> </span>concat<span class="w"> </span>-safe<span class="w"> </span><span class="m">0</span><span class="w"> </span>-i<span class="w"> </span>&lt;<span class="o">(</span><span class="nb">echo</span><span class="w"> </span>file<span class="w"> </span><span class="nv">$PWD</span>/8xonlyVID_20210808_170208.mp4<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>file<span class="w"> </span><span class="nv">$PWD</span>/8xonlyVID_20210808_170328.mp4<span class="o">)</span><span class="w"> </span>-c<span class="w"> </span>copy<span class="w"> </span>8xonlyVID_20210808_170208+328.mp4
 </code></pre></div>
 <p>note that <code>$PWD</code> is necessary, otherwise it throws</p>
 <blockquote>
@@ -3394,41 +3394,41 @@ $ ffmpeg -i input.mkv -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</spa
 /dev/fd/63: No such file or directory</p>
 </blockquote>
 <p>Also note that <code>&amp;</code> seems will print the file info reversely,</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;1&quot;</span> <span class="p">&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;2&quot;</span>
-<span class="o">[</span><span class="m">5</span><span class="o">]</span> <span class="m">5142</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2&quot;</span>
+<span class="o">[</span><span class="m">5</span><span class="o">]</span><span class="w"> </span><span class="m">5142</span>
 <span class="m">2</span>
-<span class="o">[</span><span class="m">4</span><span class="o">]</span>   Done                    <span class="nb">echo</span> <span class="s2">&quot;1&quot;</span>
+<span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w">   </span>Done<span class="w">                    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
 <span class="m">1</span>
-$ <span class="nb">echo</span> <span class="s2">&quot;1&quot;</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;2&quot;</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2&quot;</span>
 <span class="m">1</span>
 <span class="m">2</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg">How to concatenate two MP4 files using FFmpeg? - Stack Overflow</a></p>
 <h2 id="find"><code>find</code><a class="headerlink" href="#find" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ find . -group group
-$ find . -user user
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-group<span class="w"> </span>group
+$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-user<span class="w"> </span>user
 </code></pre></div>
 <p>refer to <a href="https://unix.stackexchange.com/questions/518268/list-files-with-specific-group-and-user-name">list files with specific group and user name</a></p>
 <ul>
 <li><a href="https://askubuntu.com/questions/307876/how-to-search-for-files-recursively-into-subdirectories">recursively list files in subdirectories</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ find . -name <span class="s1">&#39;*.md&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.md&#39;</span>
 </code></pre></div>
 <p>alternatively,</p>
-<div class="highlight"><pre><span></span><code>$ ls -R <span class="p">|</span> grep <span class="s1">&#39;\.md$&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;\.md$&#39;</span>
 </code></pre></div>
 <p>where <code>.</code> needs to be escape and <code>$</code> is necessary, otherwise it would match strings like <code>rmd</code>.</p>
 <ul>
 <li>list all symbolic links</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ find . -type l -ls
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>l<span class="w"> </span>-ls
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Parsing <code>ls</code>, such as <code>ls | grep "\-&gt;"</code> is a bad idea. <a href="https://askubuntu.com/questions/522051/how-to-list-all-symbolic-links-in-a-directory"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <p>usage of <code>-exec</code></p>
-<div class="highlight"><pre><span></span><code>find /path <span class="o">[</span>args<span class="o">]</span> -exec <span class="o">[</span>cmd<span class="o">]</span> <span class="o">{}</span> <span class="se">\;</span>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>/path<span class="w"> </span><span class="o">[</span>args<span class="o">]</span><span class="w"> </span>-exec<span class="w"> </span><span class="o">[</span>cmd<span class="o">]</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
 </code></pre></div>
 <p>where </p>
 <ul>
@@ -3436,7 +3436,7 @@ $ find . -user user
 <li><code>\;</code> indicates that for each found result, the command <code>cmd</code> is executed once with the found result.</li>
 </ul>
 <p>For example, convert the file encoding in <a href="https://github.com/szcf-weiya/Matlab30IAs">szcf-weiya/Matlab30IAs</a></p>
-<div class="highlight"><pre><span></span><code>find . -name <span class="s1">&#39;*.m&#39;</span> -ls -exec iconv -f GB18030 <span class="o">{}</span> -t UTF8 -o <span class="o">{}</span> <span class="se">\;</span>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.m&#39;</span><span class="w"> </span>-ls<span class="w"> </span>-exec<span class="w"> </span>iconv<span class="w"> </span>-f<span class="w"> </span>GB18030<span class="w"> </span><span class="o">{}</span><span class="w"> </span>-t<span class="w"> </span>UTF8<span class="w"> </span>-o<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
 </code></pre></div>
 <p>see also <a href="https://www.howtouselinux.com/post/linux-find-exec-examples-advanced-part"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h2 id="grep"><code>grep</code><a class="headerlink" href="#grep" title="Permanent link">&para;</a></h2>
@@ -3445,20 +3445,20 @@ $ find . -user user
 <li><code>-o</code>: only print the matched part instead of the whole line</li>
 <li><code>-v</code>: 反选</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ grep -oP <span class="s2">&quot;hello \K\w+&quot;</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;hello world&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>grep<span class="w"> </span>-oP<span class="w"> </span><span class="s2">&quot;hello \K\w+&quot;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;hello world&quot;</span>
 world
 </code></pre></div>
 <p>where <code>\K</code> is the short form of <code>(?&lt;=pattern)</code> as a zero-width look-behind assertion before the text to output, and <code>(?=pattern)</code> can be used as a zero-width look-ahead assertion after the text to output. For example, extract the text between <code>hello</code> and <code>weiya</code>.</p>
-<div class="highlight"><pre><span></span><code>$ grep -oP <span class="s2">&quot;hello \K(.*)(?=, weiya)&quot;</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;hello world, weiya!&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>grep<span class="w"> </span>-oP<span class="w"> </span><span class="s2">&quot;hello \K(.*)(?=, weiya)&quot;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;hello world, weiya!&quot;</span>
 world
 </code></pre></div>
 <p>or equivalently,</p>
-<div class="highlight"><pre><span></span><code>$ grep -oP <span class="s2">&quot;(?&lt;=hello )(.*)(?=, weiya)&quot;</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;hello world, weiya!&quot;</span>world
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>grep<span class="w"> </span>-oP<span class="w"> </span><span class="s2">&quot;(?&lt;=hello )(.*)(?=, weiya)&quot;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;hello world, weiya!&quot;</span>world
 world
 </code></pre></div>
 <p>note that the space is also counted, </p>
-<div class="highlight"><pre><span></span><code>$ grep -oP <span class="s2">&quot;(?&lt;=hello)(.*)(?=, weiya)&quot;</span> <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;hello world, weiya!&quot;</span>
- world
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>grep<span class="w"> </span>-oP<span class="w"> </span><span class="s2">&quot;(?&lt;=hello)(.*)(?=, weiya)&quot;</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;hello world, weiya!&quot;</span>
+<span class="w"> </span>world
 </code></pre></div>
 <p>refer to <a href="https://unix.stackexchange.com/questions/13466/can-grep-output-only-specified-groupings-that-match">Can grep output only specified groupings that match? - Unix &amp; Linux Stack Exchange</a></p>
 <div class="admonition info">
@@ -3468,21 +3468,21 @@ world
 <ul>
 <li>find all files given keywords, refer to <a href="https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linuxb">How do I find all files containing specific text on Linux? - Stack Overflow</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code>grep -rnw <span class="s1">&#39;/path/to/somewhere/&#39;</span> -e <span class="s1">&#39;pattern&#39;</span>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-rnw<span class="w"> </span><span class="s1">&#39;/path/to/somewhere/&#39;</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;pattern&#39;</span>
 </code></pre></div>
 <p>For example, J asked me about a situation that python failed to print to the log file in real time, and I indeed remembered that I had came cross this situation, but cannot find the relative notes. So I am trying to find files given possible keywords, such as <code>real time</code>, <code>print</code>, and finally I got the results</p>
-<div class="highlight"><pre><span></span><code>$ grep -rnw docs/*/*.md -e <span class="s1">&#39;输出&#39;</span>
-docs/julia/index.md:765:&gt; HASH函数是这么一种函数，他接受一段数据作为输入，然后生成一串数据作为输出，从理论上说，设计良好的HASH函数，对于任何不同的输入数据，都应该以极高的概率生成不同的输出数据，因此可以作为“指纹”使用，来判断两个文件是否相同。
-docs/Linux/index.md:588:发现一件很迷的事情，要加上 <span class="sb">`</span>-u<span class="sb">`</span> 才能实现实时查看输出。
-docs/shell/index.md:125:1. 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>grep<span class="w"> </span>-rnw<span class="w"> </span>docs/*/*.md<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;输出&#39;</span>
+docs/julia/index.md:765:&gt;<span class="w"> </span>HASH函数是这么一种函数，他接受一段数据作为输入，然后生成一串数据作为输出，从理论上说，设计良好的HASH函数，对于任何不同的输入数据，都应该以极高的概率生成不同的输出数据，因此可以作为“指纹”使用，来判断两个文件是否相同。
+docs/Linux/index.md:588:发现一件很迷的事情，要加上<span class="w"> </span><span class="sb">`</span>-u<span class="sb">`</span><span class="w"> </span>才能实现实时查看输出。
+docs/shell/index.md:125:1.<span class="w"> </span>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；
 </code></pre></div>
 <p>As a comparison, the search function provided by GitHub is not so powerful since no related results returned in the search link <a href="https://github.com/szcf-weiya/techNotes/search?q=%E8%BE%93%E5%87%BA&amp;type=issues">https://github.com/szcf-weiya/techNotes/search?q=%E8%BE%93%E5%87%BA&amp;type=issues</a></p>
 <p>When I perform it on <code>syslog</code>, it did not return all matched results, and outputs,</p>
-<div class="highlight"><pre><span></span><code>$ grep -i failed syslog
-Jul <span class="m">24</span> <span class="m">13</span>:17:11 weiya-ThinkPad-T460p gvfsd-metadata<span class="o">[</span><span class="m">13786</span><span class="o">]</span>: g_udev_device_has_property: assertion <span class="s1">&#39;G_UDEV_IS_DEVICE (device)&#39;</span> failed
-Jul <span class="m">24</span> <span class="m">14</span>:02:53 weiya-ThinkPad-T460p gvfsd-metadata<span class="o">[</span><span class="m">13786</span><span class="o">]</span>: g_udev_device_has_property: assertion <span class="s1">&#39;G_UDEV_IS_DEVICE (device)&#39;</span> failed
-Jul <span class="m">24</span> <span class="m">14</span>:02:53 weiya-ThinkPad-T460p gvfsd-metadata<span class="o">[</span><span class="m">13786</span><span class="o">]</span>: g_udev_device_has_property: assertion <span class="s1">&#39;G_UDEV_IS_DEVICE (device)&#39;</span> failed
-Binary file syslog matches
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>failed<span class="w"> </span>syslog
+Jul<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">13</span>:17:11<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>gvfsd-metadata<span class="o">[</span><span class="m">13786</span><span class="o">]</span>:<span class="w"> </span>g_udev_device_has_property:<span class="w"> </span>assertion<span class="w"> </span><span class="s1">&#39;G_UDEV_IS_DEVICE (device)&#39;</span><span class="w"> </span>failed
+Jul<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">14</span>:02:53<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>gvfsd-metadata<span class="o">[</span><span class="m">13786</span><span class="o">]</span>:<span class="w"> </span>g_udev_device_has_property:<span class="w"> </span>assertion<span class="w"> </span><span class="s1">&#39;G_UDEV_IS_DEVICE (device)&#39;</span><span class="w"> </span>failed
+Jul<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">14</span>:02:53<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>gvfsd-metadata<span class="o">[</span><span class="m">13786</span><span class="o">]</span>:<span class="w"> </span>g_udev_device_has_property:<span class="w"> </span>assertion<span class="w"> </span><span class="s1">&#39;G_UDEV_IS_DEVICE (device)&#39;</span><span class="w"> </span>failed
+Binary<span class="w"> </span>file<span class="w"> </span>syslog<span class="w"> </span>matches
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/23512852/grep-binary-file-matches-how-to-get-normal-grep-output">https://stackoverflow.com/questions/23512852/grep-binary-file-matches-how-to-get-normal-grep-output</a>, add <code>-a</code> option.</p>
 <h2 id="htop"><code>htop</code><a class="headerlink" href="#htop" title="Permanent link">&para;</a></h2>
@@ -3494,12 +3494,12 @@ Binary file syslog matches
 <ul>
 <li>list log of previous boots</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ journalctl --list-boots
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>journalctl<span class="w"> </span>--list-boots
 </code></pre></div>
 <ul>
 <li>display last boot log</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ journalctl -b-1
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>journalctl<span class="w"> </span>-b-1
 </code></pre></div>
 <p>see also: <a href="https://askubuntu.com/questions/765315/how-to-find-previous-boot-log-after-ubuntu-16-04-restarts"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h2 id="ln"><code>ln</code><a class="headerlink" href="#ln" title="Permanent link">&para;</a></h2>
@@ -3510,8 +3510,8 @@ Binary file syslog matches
 <p>A &ldquo;hard link&rdquo; is actually between two directory entries; they&rsquo;re really the same file. And the number of the permission of <code>ll</code> also shows the number of hard links, such as <code>2</code> in <code>-rw-rw-r--  2</code>.</p>
 <p><strong>the same file as another is they have the same inode number; no other file will have that.</strong></p>
 <p>We can get the <code>inode</code> as follows,</p>
-<div class="highlight"><pre><span></span><code>$ stat resolve_utf.py <span class="p">|</span> grep -i inode
-Device: 811h/2065d  Inode: <span class="m">14716809</span>    Links: <span class="m">2</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>stat<span class="w"> </span>resolve_utf.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>inode
+Device:<span class="w"> </span>811h/2065d<span class="w">  </span>Inode:<span class="w"> </span><span class="m">14716809</span><span class="w">    </span>Links:<span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 <p>refer to <a href="https://unix.stackexchange.com/questions/170444/how-to-find-out-a-file-is-hard-link-or-symlink">How to find out a file is hard link or symlink?</a></p>
 <h2 id="ls"><code>ls</code><a class="headerlink" href="#ls" title="Permanent link">&para;</a></h2>
@@ -3519,13 +3519,13 @@ Device: 811h/2065d  Inode: <span class="m">14716809</span>    Links: <span class
 <li><code>-S</code>: sort by filesize</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># only show directory</span>
-ls -d */
+ls<span class="w"> </span>-d<span class="w"> </span>*/
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/14352290/listing-only-directories-using-ls-in-bash">Listing only directories using ls in Bash?</a></p>
 <p>My application: <a href="https://github.com/szcf-weiya/TeXtemplates/blob/master/new.sh#L9">TeXtemplates: create a tex template</a></p>
 <h4 id="check-whether-a-certain-file-typeextension-exists-in-directory">check whether a certain file type/extension exists in directory<a class="headerlink" href="#check-whether-a-certain-file-typeextension-exists-in-directory" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> ls *.bib <span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span> <span class="k">then</span>
-  <span class="c1">#</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span>ls<span class="w"> </span>*.bib<span class="w"> </span><span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="c1">#</span>
 <span class="k">fi</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/3856747/check-whether-a-certain-file-type-extension-exists-in-directory">Check whether a certain file type/extension exists in directory</a></p>
@@ -3550,28 +3550,28 @@ ls -d */
 <h2 id="paste"><code>paste</code><a class="headerlink" href="#paste" title="Permanent link">&para;</a></h2>
 <p>按列拼接文本文件</p>
 <div class="highlight"><pre><span></span><code><span class="c1">### 按列</span>
-paste file1 file2 &gt; outputfile
+paste<span class="w"> </span>file1<span class="w"> </span>file2<span class="w"> </span>&gt;<span class="w"> </span>outputfile
 <span class="c1">### 按行</span>
-cat file1 file2 &gt; outputfile
+cat<span class="w"> </span>file1<span class="w"> </span>file2<span class="w"> </span>&gt;<span class="w"> </span>outputfile
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">See also</p>
 <p><code>cat</code></p>
 </div>
 <p>convert a column to a row with delimiter <code>,</code></p>
-<div class="highlight"><pre><span></span><code>$ <span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">1</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span> <span class="p">|</span> paste -s -d<span class="s1">&#39;,&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..10<span class="o">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span><span class="p">;</span><span class="w"> </span><span class="k">done</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>paste<span class="w"> </span>-s<span class="w"> </span>-d<span class="s1">&#39;,&#39;</span>
 <span class="m">1</span>,2,3,4,5,6,7,8,9,10
 </code></pre></div>
 <p>where <code>-s</code> aims to paste one file at a time instead of in parallel, which results in one line. Refer to <a href="https://stackoverflow.com/questions/10303600/how-to-concatenate-lines-into-one-string">how to concatenate lines into one string</a></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p><a href="https://stackoverflow.com/questions/20163225/paste-files-from-list-of-paths-into-single-output-file">Paste files from list of paths into single output file</a></p>
-<div class="highlight"><pre><span></span><code>paste <span class="sb">`</span>cat filelist.txt<span class="sb">`</span> &gt; output.txt
+<div class="highlight"><pre><span></span><code>paste<span class="w"> </span><span class="sb">`</span>cat<span class="w"> </span>filelist.txt<span class="sb">`</span><span class="w"> </span>&gt;<span class="w"> </span>output.txt
 </code></pre></div>
 <p>and</p>
-<div class="highlight"><pre><span></span><code>touch buffer.txt
-cat filelist.txt <span class="p">|</span> xargs -iXX bash -c <span class="s1">&#39;paste buffer.txt XX &gt; output.txt; mv output.txt buffer.txt&#39;</span><span class="p">;</span> 
-mv buffer.txt output.txt
+<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>buffer.txt
+cat<span class="w"> </span>filelist.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-iXX<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;paste buffer.txt XX &gt; output.txt; mv output.txt buffer.txt&#39;</span><span class="p">;</span><span class="w"> </span>
+mv<span class="w"> </span>buffer.txt<span class="w"> </span>output.txt
 </code></pre></div>
 </div>
 <h2 id="pdftk"><code>pdftk</code><a class="headerlink" href="#pdftk" title="Permanent link">&para;</a></h2>
@@ -3579,24 +3579,24 @@ mv buffer.txt output.txt
 <li>split pdf pages: <code>pdftk all.pdf cat 1 output first.pdf</code>, see also <a href="../../TeX/arxiv/">arXiv</a>. Alternatively, one can use <code>print to file</code> function provided by pdf viewer, such as <code>evince</code>, particularly when <code>pdftk</code> failed like in <a href="https://github.com/szcf-weiya/techNotes/issues/45">Issue 45</a>.</li>
 <li>modify pdf metadata via <code>pdftk</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code>pdftk input.pdf dump_data output metadata
+<div class="highlight"><pre><span></span><code>pdftk<span class="w"> </span>input.pdf<span class="w"> </span>dump_data<span class="w"> </span>output<span class="w"> </span>metadata
 <span class="c1"># edit metadata</span>
-pdftk input.pdf update_info metadata output output.pdf
+pdftk<span class="w"> </span>input.pdf<span class="w"> </span>update_info<span class="w"> </span>metadata<span class="w"> </span>output<span class="w"> </span>output.pdf
 </code></pre></div>
 <h2 id="ps"><code>ps</code><a class="headerlink" href="#ps" title="Permanent link">&para;</a></h2>
 <ul>
 <li>brackets around processes: when the arguments to the command cannot be located. <a href="https://unix.stackexchange.com/questions/22121/what-do-the-brackets-around-processes-mean"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ ps -aef 
-weiya     <span class="m">793892</span>    <span class="m">7821</span>  <span class="m">0</span> <span class="m">19</span>:33 pts/10   <span class="m">00</span>:00:00 /bin/bash
-root      <span class="m">794217</span>       <span class="m">2</span>  <span class="m">0</span> <span class="m">19</span>:35 ?        <span class="m">00</span>:00:00 <span class="o">[</span>kworker/3:0<span class="o">]</span>
-root      <span class="m">794336</span>       <span class="m">2</span>  <span class="m">0</span> <span class="m">19</span>:35 ?        <span class="m">00</span>:00:00 <span class="o">[</span>kworker/u8:3<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ps<span class="w"> </span>-aef<span class="w"> </span>
+weiya<span class="w">     </span><span class="m">793892</span><span class="w">    </span><span class="m">7821</span><span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">19</span>:33<span class="w"> </span>pts/10<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span>/bin/bash
+root<span class="w">      </span><span class="m">794217</span><span class="w">       </span><span class="m">2</span><span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">19</span>:35<span class="w"> </span>?<span class="w">        </span><span class="m">00</span>:00:00<span class="w"> </span><span class="o">[</span>kworker/3:0<span class="o">]</span>
+root<span class="w">      </span><span class="m">794336</span><span class="w">       </span><span class="m">2</span><span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">19</span>:35<span class="w"> </span>?<span class="w">        </span><span class="m">00</span>:00:00<span class="w"> </span><span class="o">[</span>kworker/u8:3<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>show long character usernames which consists of <code>+</code>. <a href="https://askubuntu.com/questions/523673/ps-aux-for-long-charactered-usernames-shows-a-plus-sign"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
-<div class="highlight"><pre><span></span><code>ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
-<span class="nb">alias</span> <span class="nv">psaux</span><span class="o">=</span><span class="s1">&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#39;</span>
+<div class="highlight"><pre><span></span><code>ps<span class="w"> </span>axo<span class="w"> </span>user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
+<span class="nb">alias</span><span class="w"> </span><span class="nv">psaux</span><span class="o">=</span><span class="s1">&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#39;</span>
 </code></pre></div>
 <h2 id="ps2pdf-pdf2ps"><code>ps2pdf, pdf2ps</code><a class="headerlink" href="#ps2pdf-pdf2ps" title="Permanent link">&para;</a></h2>
 <h4 id="reduce-pdf-file-size">reduce pdf file size<a class="headerlink" href="#reduce-pdf-file-size" title="Permanent link">&para;</a></h4>
@@ -3608,67 +3608,67 @@ root      <span class="m">794336</span>       <span class="m">2</span>  <span cl
 </ul>
 <p>I just got a large non-scanned pdf with size 136M, and it probably is due to many embedded fonts which can be checked in the properties.</p>
 <p>Then I tried the command <code>ps2pdf</code> mentioned in <a href="https://www.journaldev.com/34668/reduce-pdf-file-size-in-linux">Reduce PDF File Size in Linux</a>, the file size is significantly reduced, only 5.5M!</p>
-<div class="highlight"><pre><span></span><code>$ ps2pdf -dPDFSETTINGS<span class="o">=</span>/ebook Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf
-$ pdfinfo Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf 
-Creator:        
-Producer:       Acrobat Distiller <span class="m">8</span>.0.0<span class="o">(</span>Windows<span class="o">)</span>
-CreationDate:   Tue Jul <span class="m">26</span> <span class="m">20</span>:43:43 <span class="m">2011</span> CST
-ModDate:        Fri Aug <span class="m">19</span> <span class="m">19</span>:57:50 <span class="m">2011</span> CST
-Tagged:         no
-UserProperties: no
-Suspects:       no
-Form:           AcroForm
-JavaScript:     no
-Pages:          <span class="m">504</span>
-Encrypted:      no
-Page size:      <span class="m">439</span>.37 x <span class="m">666</span>.142 pts
-Page rot:       <span class="m">0</span>
-File size:      <span class="m">142394146</span> bytes
-Optimized:      no
-PDF version:    <span class="m">1</span>.3
-$ pdfinfo Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf 
-Creator:        
-Producer:       GPL Ghostscript <span class="m">9</span>.26
-CreationDate:   Tue Apr <span class="m">13</span> <span class="m">18</span>:04:57 <span class="m">2021</span> CST
-ModDate:        Tue Apr <span class="m">13</span> <span class="m">18</span>:04:57 <span class="m">2021</span> CST
-Tagged:         no
-UserProperties: no
-Suspects:       no
-Form:           none
-JavaScript:     no
-Pages:          <span class="m">504</span>
-Encrypted:      no
-Page size:      <span class="m">439</span>.37 x <span class="m">666</span>.14 pts
-Page rot:       <span class="m">0</span>
-File size:      <span class="m">5766050</span> bytes
-Optimized:      no
-PDF version:    <span class="m">1</span>.4
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ps2pdf<span class="w"> </span>-dPDFSETTINGS<span class="o">=</span>/ebook<span class="w"> </span>Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf<span class="w"> </span>Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf
+$<span class="w"> </span>pdfinfo<span class="w"> </span>Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf<span class="w"> </span>
+Creator:<span class="w">        </span>
+Producer:<span class="w">       </span>Acrobat<span class="w"> </span>Distiller<span class="w"> </span><span class="m">8</span>.0.0<span class="o">(</span>Windows<span class="o">)</span>
+CreationDate:<span class="w">   </span>Tue<span class="w"> </span>Jul<span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="m">20</span>:43:43<span class="w"> </span><span class="m">2011</span><span class="w"> </span>CST
+ModDate:<span class="w">        </span>Fri<span class="w"> </span>Aug<span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">19</span>:57:50<span class="w"> </span><span class="m">2011</span><span class="w"> </span>CST
+Tagged:<span class="w">         </span>no
+UserProperties:<span class="w"> </span>no
+Suspects:<span class="w">       </span>no
+Form:<span class="w">           </span>AcroForm
+JavaScript:<span class="w">     </span>no
+Pages:<span class="w">          </span><span class="m">504</span>
+Encrypted:<span class="w">      </span>no
+Page<span class="w"> </span>size:<span class="w">      </span><span class="m">439</span>.37<span class="w"> </span>x<span class="w"> </span><span class="m">666</span>.142<span class="w"> </span>pts
+Page<span class="w"> </span>rot:<span class="w">       </span><span class="m">0</span>
+File<span class="w"> </span>size:<span class="w">      </span><span class="m">142394146</span><span class="w"> </span>bytes
+Optimized:<span class="w">      </span>no
+PDF<span class="w"> </span>version:<span class="w">    </span><span class="m">1</span>.3
+$<span class="w"> </span>pdfinfo<span class="w"> </span>Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf<span class="w"> </span>
+Creator:<span class="w">        </span>
+Producer:<span class="w">       </span>GPL<span class="w"> </span>Ghostscript<span class="w"> </span><span class="m">9</span>.26
+CreationDate:<span class="w">   </span>Tue<span class="w"> </span>Apr<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">18</span>:04:57<span class="w"> </span><span class="m">2021</span><span class="w"> </span>CST
+ModDate:<span class="w">        </span>Tue<span class="w"> </span>Apr<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">18</span>:04:57<span class="w"> </span><span class="m">2021</span><span class="w"> </span>CST
+Tagged:<span class="w">         </span>no
+UserProperties:<span class="w"> </span>no
+Suspects:<span class="w">       </span>no
+Form:<span class="w">           </span>none
+JavaScript:<span class="w">     </span>no
+Pages:<span class="w">          </span><span class="m">504</span>
+Encrypted:<span class="w">      </span>no
+Page<span class="w"> </span>size:<span class="w">      </span><span class="m">439</span>.37<span class="w"> </span>x<span class="w"> </span><span class="m">666</span>.14<span class="w"> </span>pts
+Page<span class="w"> </span>rot:<span class="w">       </span><span class="m">0</span>
+File<span class="w"> </span>size:<span class="w">      </span><span class="m">5766050</span><span class="w"> </span>bytes
+Optimized:<span class="w">      </span>no
+PDF<span class="w"> </span>version:<span class="w">    </span><span class="m">1</span>.4
 </code></pre></div>
 <p>We can compare the fonts before/after reducing,</p>
-<div class="highlight"><pre><span></span><code>$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf <span class="p">|</span> wc -l
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pdffonts<span class="w"> </span>Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 <span class="m">57</span>
-$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf <span class="p">|</span> wc -l
+$<span class="w"> </span>pdffonts<span class="w"> </span>Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 <span class="m">125</span>
 </code></pre></div>
 <p>and it seems not directly to remove fonts. Instead, most font names have been modified. Besides, these are duplicated font names (column one), such as </p>
-<div class="highlight"><pre><span></span><code>$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf <span class="p">|</span> sed <span class="m">1</span>,2d - <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c
-      <span class="m">1</span> AMJQSV+LMSans8-Regular
-        ...
-     <span class="m">13</span> OELTPO+LMMathItalic10-Regular
-        ...
-      <span class="m">1</span> Times
-      <span class="m">2</span> TimesNewRoman
-      <span class="m">1</span> TimesNewRoman,Italic
-      <span class="m">3</span> Times-Roman
-        ...
-     <span class="m">15</span> YCQSHP+LMRoman10-Bold
-      <span class="m">4</span> YWGCMO+LMMathSymbols7-Regular
-     <span class="m">16</span> ZMWYHT+LMRoman10-Regular
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pdffonts<span class="w"> </span>Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="m">1</span>,2d<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c
+<span class="w">      </span><span class="m">1</span><span class="w"> </span>AMJQSV+LMSans8-Regular
+<span class="w">        </span>...
+<span class="w">     </span><span class="m">13</span><span class="w"> </span>OELTPO+LMMathItalic10-Regular
+<span class="w">        </span>...
+<span class="w">      </span><span class="m">1</span><span class="w"> </span>Times
+<span class="w">      </span><span class="m">2</span><span class="w"> </span>TimesNewRoman
+<span class="w">      </span><span class="m">1</span><span class="w"> </span>TimesNewRoman,Italic
+<span class="w">      </span><span class="m">3</span><span class="w"> </span>Times-Roman
+<span class="w">        </span>...
+<span class="w">     </span><span class="m">15</span><span class="w"> </span>YCQSHP+LMRoman10-Bold
+<span class="w">      </span><span class="m">4</span><span class="w"> </span>YWGCMO+LMMathSymbols7-Regular
+<span class="w">     </span><span class="m">16</span><span class="w"> </span>ZMWYHT+LMRoman10-Regular
 </code></pre></div>
 <p>Count the number of unique names,</p>
-<div class="highlight"><pre><span></span><code>$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf <span class="p">|</span> sed <span class="m">1</span>,2d - <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c <span class="p">|</span> wc -l
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pdffonts<span class="w"> </span>Puntanen2011_Book_MatrixTricksForLinearStatistic.pdf<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="m">1</span>,2d<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 <span class="m">50</span>
-$ pdffonts Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf <span class="p">|</span> sed <span class="m">1</span>,2d - <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c <span class="p">|</span> wc -l
+$<span class="w"> </span>pdffonts<span class="w"> </span>Puntanen2011_Book_MatrixTricksForLinearStatistic_reduced.pdf<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="m">1</span>,2d<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 <span class="m">55</span>
 </code></pre></div>
 <p>it shows that the reduced pdf does not have duplicated font names, (here the first two lines are removed, 57 = 55 + 2).</p>
@@ -3685,24 +3685,24 @@ A remedy is to use <code>gs</code>, see more details in the above reference.</p>
 <li>Multiple layers of text, images, page numbers, and header styles turn into one single layer.</li>
 </ul>
 <p>An easy way is</p>
-<div class="highlight"><pre><span></span><code>pdf2ps orig.pdf - <span class="p">|</span> ps2pdf - flattened.pdf
+<div class="highlight"><pre><span></span><code>pdf2ps<span class="w"> </span>orig.pdf<span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>ps2pdf<span class="w"> </span>-<span class="w"> </span>flattened.pdf
 </code></pre></div>
 <p>some alternatives can be found in <a href="https://unix.stackexchange.com/questions/162922/is-there-a-way-to-flatten-a-pdf-image-from-the-command-line">is-there-a-way-to-flatten-a-pdf-image-from-the-command-line</a>.</p>
 <h2 id="rename"><code>rename</code><a class="headerlink" href="#rename" title="Permanent link">&para;</a></h2>
 <p>Ubuntu 18.04 和 CentOS 7 中的 <code>rename</code> 不一样，</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Ubuntu 18.04</span>
-$ rename -V
-/usr/bin/rename using File::Rename version <span class="m">0</span>.20
+$<span class="w"> </span>rename<span class="w"> </span>-V
+/usr/bin/rename<span class="w"> </span>using<span class="w"> </span>File::Rename<span class="w"> </span>version<span class="w"> </span><span class="m">0</span>.20
 <span class="c1"># CentOS 7</span>
-$ rename -V
-rename from util-linux <span class="m">2</span>.23.2
+$<span class="w"> </span>rename<span class="w"> </span>-V
+rename<span class="w"> </span>from<span class="w"> </span>util-linux<span class="w"> </span><span class="m">2</span>.23.2
 </code></pre></div>
 <p>用法也有差异，前者采用类似 <code>sed</code> 格式语句进行替换</p>
-<div class="highlight"><pre><span></span><code>rename -n <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*确认需要重命名的文件*/
-rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修改，并列出已重命名的文件*/
+<div class="highlight"><pre><span></span><code>rename<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;s/Sam3/Stm32/&#39;</span><span class="w"> </span>*.nc<span class="w">　　</span>/*确认需要重命名的文件*/
+rename<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;s/Sam3/Stm32/&#39;</span><span class="w"> </span>*.nc<span class="w">　　</span>/*执行修改，并列出已重命名的文件*/
 </code></pre></div>
 <p>而后者需要将替换的字符串当作参数传入，并且只替换第一次出现的字符串，即</p>
-<div class="highlight"><pre><span></span><code>rename Sam3 Stm32 *.nc
+<div class="highlight"><pre><span></span><code>rename<span class="w"> </span>Sam3<span class="w"> </span>Stm32<span class="w"> </span>*.nc
 </code></pre></div>
 <p>参考</p>
 <ul>
@@ -3713,7 +3713,7 @@ rename -v <span class="s1">&#39;s/Sam3/Stm32/&#39;</span> *.nc　　/*执行修�
 <p>a tool for checking io wait, refer to <a href="https://unix.stackexchange.com/questions/55212/how-can-i-monitor-disk-io">https://unix.stackexchange.com/questions/55212/how-can-i-monitor-disk-io</a></p>
 <div class="highlight"><pre><span></span><code>sar
 <span class="c1"># read more history</span>
-sar -f /var/log/sa/sa04
+sar<span class="w"> </span>-f<span class="w"> </span>/var/log/sa/sa04
 </code></pre></div>
 <h2 id="sed"><code>sed</code><a class="headerlink" href="#sed" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3738,13 +3738,13 @@ sar -f /var/log/sa/sa04
 <li>directly replace hex string, such as <a href="https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L6"><code>'s/\xee\x81\xab/合/g'</code></a>, see also <a href="https://stackoverflow.com/questions/7760717/hex-string-replacement-using-sed"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 <li>replace multi-line string: <a href="https://unix.stackexchange.com/questions/26284/how-can-i-use-sed-to-replace-a-multi-line-string"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a><ul>
 <li>alternatively, use <code>perl</code>, e.g., scripts to switch versions of manuscript <a href="https://github.com/szcf-weiya/Cell-Video/blob/2b4a65d3ce0fd866c5fa75a10c04d630206bc18c/release.sh"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>
-<div class="highlight"><pre><span></span><code>perl -0777 -i -pe <span class="s2">&quot;s/###BEGIN-EXCLUDE(.*?)###END-EXCLUDE//igs&quot;</span> _release/src/data.jl
+<div class="highlight"><pre><span></span><code>perl<span class="w"> </span>-0777<span class="w"> </span>-i<span class="w"> </span>-pe<span class="w"> </span><span class="s2">&quot;s/###BEGIN-EXCLUDE(.*?)###END-EXCLUDE//igs&quot;</span><span class="w"> </span>_release/src/data.jl
 </code></pre></div></li>
 </ul>
 </li>
 <li>swap two texts, use <code>\x0</code> as a temp storage. refer to <a href="https://stackoverflow.com/questions/26568952/how-to-swap-text-based-on-patterns-at-once-with-sed"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
-<div class="highlight"><pre><span></span><code>~$ <span class="nb">echo</span> <span class="s2">&quot;abbc&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/ab/\x0/g; s/bc/ab/g; s/\x0/bc/g&#39;</span>
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;abbc&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/ab/\x0/g; s/bc/ab/g; s/\x0/bc/g&#39;</span>
 bcab
 </code></pre></div>
 <p>Refer to</p>
@@ -3772,33 +3772,33 @@ bcab
 <ul>
 <li>more backslashes are needed (see also <a href="https://askubuntu.com/a/1368043">my answer</a>)</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;\alpha&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/\\alpha/\\beta/&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;\alpha&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/\\alpha/\\beta/&#39;</span>
 <span class="se">\b</span>eta
-$ <span class="nb">echo</span> <span class="s2">&quot;\alpha&quot;</span> <span class="p">|</span> sed <span class="s2">&quot;s/\\\alpha/\\\beta/&quot;</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;\alpha&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s2">&quot;s/\\\alpha/\\\beta/&quot;</span>
 <span class="se">\b</span>eta
 </code></pre></div>
 <ul>
 <li>command expressions (also dollar expressions) would be evaluated firstly</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s1">&#39;`date`&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;s/`date`/`uptime`/&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;`date`&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/`date`/`uptime`/&#39;</span>
 <span class="sb">`</span>uptime<span class="sb">`</span>
-$ <span class="nb">echo</span> <span class="s1">&#39;`date`&#39;</span> <span class="p">|</span> sed <span class="s2">&quot;s/`date`/`uptime`/&quot;</span>
+$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;`date`&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s2">&quot;s/`date`/`uptime`/&quot;</span>
 <span class="sb">`</span>date<span class="sb">`</span>
 </code></pre></div>
 <p>refer to <a href="https://askubuntu.com/questions/1146789/single-quote-and-double-quotes-in-sed/">single quote and double quotes in sed - Ask Ubuntu</a></p>
 <h2 id="sendmail"><code>sendmail</code><a class="headerlink" href="#sendmail" title="Permanent link">&para;</a></h2>
 <p>send mail on the command line. On the stapc-WSL, install it via</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt install sendmail
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>sendmail
 </code></pre></div>
 <p>monitor the updates of <code>/var/log/apache2/error.log</code>. If the modified time is recent, then send email to alert.</p>
-<div class="highlight"><pre><span></span><code><span class="k">while</span> true<span class="p">;</span> <span class="k">do</span>
-    <span class="nv">last_date</span><span class="o">=</span><span class="k">$(</span>date -r /var/log/apache2/error.log +%s<span class="k">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span>true<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nv">last_date</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>-r<span class="w"> </span>/var/log/apache2/error.log<span class="w"> </span>+%s<span class="k">)</span>
 <span class="c1">#   curr_date=$(date -d &quot;-1 mins&quot; +%s)</span>
-    sleep 1m
-    <span class="nv">curr_date</span><span class="o">=</span><span class="k">$(</span>date +%s<span class="k">)</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$last_date</span> &gt; <span class="nv">$curr_date</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="o">(</span>
-            cat <span class="s">&lt;&lt;-EOT</span>
+<span class="w">    </span>sleep<span class="w"> </span>1m
+<span class="w">    </span><span class="nv">curr_date</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$last_date</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$curr_date</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="o">(</span>
+<span class="w">            </span>cat<span class="w"> </span><span class="s">&lt;&lt;-EOT</span>
 <span class="s">            TO: ${TO}</span>
 <span class="s">            From: ${FROM}</span>
 <span class="s">            Subject: ${SUBJ}</span>
@@ -3806,8 +3806,8 @@ $ <span class="nb">echo</span> <span class="s1">&#39;`date`&#39;</span> <span cl
 <span class="s">            There is some updates on the /var/log/apache2/error.log</span>
 
 <span class="s">            EOT</span>
-        <span class="o">)</span> <span class="p">|</span> sendmail -v <span class="si">${</span><span class="nv">TO</span><span class="si">}</span>
-    <span class="k">fi</span>
+<span class="w">        </span><span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sendmail<span class="w"> </span>-v<span class="w"> </span><span class="si">${</span><span class="nv">TO</span><span class="si">}</span>
+<span class="w">    </span><span class="k">fi</span>
 <span class="k">done</span>
 </code></pre></div>
 <p>其中 <code>date -r file</code> 返回文件的上次修改时间，而 <code>+%s</code> 将时间转换为 seconds，方便进行比较，另外 <code>-d "-1 mins"</code> 能对时间进行加减处理。 </p>
@@ -3823,7 +3823,7 @@ $ <span class="nb">echo</span> <span class="s1">&#39;`date`&#39;</span> <span cl
 </ul>
 <h2 id="tesseract"><code>tesseract</code><a class="headerlink" href="#tesseract" title="Permanent link">&para;</a></h2>
 <p>OCR text extraction: <a href="https://github.com/tesseract-ocr/tesseract">Tesseract OCR</a></p>
-<div class="highlight"><pre><span></span><code>$ tesseract tmp.png stdout -l eng+chi_sim quiet
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>tesseract<span class="w"> </span>tmp.png<span class="w"> </span>stdout<span class="w"> </span>-l<span class="w"> </span>eng+chi_sim<span class="w"> </span>quiet
 </code></pre></div>
 <p>where</p>
 <ul>
@@ -3842,8 +3842,8 @@ $ <span class="nb">echo</span> <span class="s1">&#39;`date`&#39;</span> <span cl
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>此前还用过类似的软件，<code>screen</code>，</p>
-<div class="highlight"><pre><span></span><code>screen -list <span class="c1">#或screen -r</span>
-screen -r <span class="o">[</span>pid<span class="o">]</span> <span class="c1"># 进入</span>
+<div class="highlight"><pre><span></span><code>screen<span class="w"> </span>-list<span class="w"> </span><span class="c1">#或screen -r</span>
+screen<span class="w"> </span>-r<span class="w"> </span><span class="o">[</span>pid<span class="o">]</span><span class="w"> </span><span class="c1"># 进入</span>
 <span class="c1">### ctrl+A, 然后输入&quot;:quit&quot;</span>
 </code></pre></div>
 <p>更多用法详见 <a href="https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html">linux screen 命令详解</a>，以及 <a href="https://stackoverflow.com/questions/1509677/kill-detached-screen-session">Kill detached screen session - Stack Overflow</a></p>
@@ -3852,23 +3852,23 @@ screen -r <span class="o">[</span>pid<span class="o">]</span> <span class="c1">#
 <div class="highlight"><pre><span></span><code><span class="c1"># new a shell</span>
 tmux
 <span class="c1"># new a shell with name</span>
-tmux new -s NAME
+tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span>NAME
 <span class="c1"># view all shell</span>
-tmux ls
+tmux<span class="w"> </span>ls
 <span class="c1"># go back</span>
-tmux attach-session -t <span class="o">[</span>NUM<span class="o">]</span>
+tmux<span class="w"> </span>attach-session<span class="w"> </span>-t<span class="w"> </span><span class="o">[</span>NUM<span class="o">]</span>
 <span class="c1"># simplify</span>
-tmux attach -t <span class="o">[</span>NUM<span class="o">]</span>
+tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span><span class="o">[</span>NUM<span class="o">]</span>
 <span class="c1"># more simplify</span>
-tmux a -t <span class="o">[</span>NUM<span class="o">]</span>
+tmux<span class="w"> </span>a<span class="w"> </span>-t<span class="w"> </span><span class="o">[</span>NUM<span class="o">]</span>
 <span class="c1"># via name</span>
-tmux a -t NAME
+tmux<span class="w"> </span>a<span class="w"> </span>-t<span class="w"> </span>NAME
 <span class="c1"># complete reset: https://stackoverflow.com/questions/38295615/complete-tmux-reset</span>
-tmux kill-server
+tmux<span class="w"> </span>kill-server
 <span class="c1"># rename: https://superuser.com/questions/428016/how-do-i-rename-a-session-in-tmux</span>
-Ctrl + B, $
+Ctrl<span class="w"> </span>+<span class="w"> </span>B,<span class="w"> </span>$
 <span class="c1"># kill the current session</span>
-Ctrl + B, x
+Ctrl<span class="w"> </span>+<span class="w"> </span>B,<span class="w"> </span>x
 </code></pre></div>
 <p>refer to</p>
 <ul>
@@ -3880,24 +3880,24 @@ Ctrl + B, x
 <h2 id="type"><code>type</code><a class="headerlink" href="#type" title="Permanent link">&para;</a></h2>
 <h4 id="which-vs-type"><code>which</code> vs <code>type</code><a class="headerlink" href="#which-vs-type" title="Permanent link">&para;</a></h4>
 <p>在 CentOS7 服务器上，</p>
-<div class="highlight"><pre><span></span><code>$ which -v
-GNU which v2.20, Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">1999</span> - <span class="m">2008</span> Carlo Wood.
-GNU which comes with ABSOLUTELY NO WARRANTY<span class="p">;</span>
-This program is free software<span class="p">;</span> your freedom to use, change
-and distribute this program is protected by the GPL.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>which<span class="w"> </span>-v
+GNU<span class="w"> </span>which<span class="w"> </span>v2.20,<span class="w"> </span>Copyright<span class="w"> </span><span class="o">(</span>C<span class="o">)</span><span class="w"> </span><span class="m">1999</span><span class="w"> </span>-<span class="w"> </span><span class="m">2008</span><span class="w"> </span>Carlo<span class="w"> </span>Wood.
+GNU<span class="w"> </span>which<span class="w"> </span>comes<span class="w"> </span>with<span class="w"> </span>ABSOLUTELY<span class="w"> </span>NO<span class="w"> </span>WARRANTY<span class="p">;</span>
+This<span class="w"> </span>program<span class="w"> </span>is<span class="w"> </span>free<span class="w"> </span>software<span class="p">;</span><span class="w"> </span>your<span class="w"> </span>freedom<span class="w"> </span>to<span class="w"> </span>use,<span class="w"> </span>change
+and<span class="w"> </span>distribute<span class="w"> </span>this<span class="w"> </span>program<span class="w"> </span>is<span class="w"> </span>protected<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>GPL.
 </code></pre></div>
 <p><code>which</code> 可以返回 alias 中的命令，而且更具体地，<code>man which</code> 显示可以通过选项 <code>--read-alias</code> 和 <code>--skip-alias</code> 来控制要不要包括 alias. </p>
 <p>而在本地 Ubuntu 18.04 机器上，不支持 <code>-v</code> 或 <code>--version</code> 来查看版本，而且 <code>man which</code> 也很简单，从中可以看出其大致版本信息，<code>29 Jun 2016</code>。</p>
 <p>那怎么显示 alias 呢，<a href="https://askubuntu.com/questions/102093/how-to-see-the-command-attached-to-a-bash-alias"><code>type</code> 可以解决这个问题</a>，注意查看其帮助文档需要用 <code>help</code> 而非 <code>man</code>。</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">type</span> scp_to_chpc 
-scp_to_chpc is a <span class="k">function</span>
-scp_to_chpc <span class="o">()</span> 
-<span class="o">{</span> 
-    scp -r <span class="nv">$1</span> user@host:~/<span class="nv">$2</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span>scp_to_chpc<span class="w"> </span>
+scp_to_chpc<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span><span class="k">function</span>
+scp_to_chpc<span class="w"> </span><span class="o">()</span><span class="w"> </span>
+<span class="o">{</span><span class="w"> </span>
+<span class="w">    </span>scp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$1</span><span class="w"> </span>user@host:~/<span class="nv">$2</span>
 <span class="o">}</span>
 </code></pre></div>
 <h2 id="uchardet"><code>uchardet</code><a class="headerlink" href="#uchardet" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ uchardet FILENAME
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>uchardet<span class="w"> </span>FILENAME
 </code></pre></div>
 <p>detect the file encoding</p>
 <h2 id="unar"><code>unar</code><a class="headerlink" href="#unar" title="Permanent link">&para;</a></h2>
@@ -3906,11 +3906,11 @@ scp_to_chpc <span class="o">()</span>
 <p>参考 <a href="https://www.findhao.net/easycoding/1605">Linux文件乱码</a></p>
 <p>虽然它会自动识别编码，但有时候处理中文压缩文件仍然出现乱码，比如解压 <a href="https://uploads.cosx.org/2011/03/SongPoem.tar.gz">https://uploads.cosx.org/2011/03/SongPoem.tar.gz</a> 这个文件，</p>
 <p>这时通过 <code>-e</code> 指定编码</p>
-<div class="highlight"><pre><span></span><code> unar -e GB18030 ~/PDownloads/SongPoem.tar.gz 
-/home/weiya/PDownloads/SongPoem.tar.gz: Tar <span class="k">in</span> Gzip
-  SongPoem.csv  <span class="o">(</span><span class="m">4171055</span> B<span class="o">)</span>... OK.
-  宋词.R  <span class="o">(</span><span class="m">583</span> B<span class="o">)</span>... OK.
-Successfully extracted to <span class="s2">&quot;SongPoem&quot;</span>.
+<div class="highlight"><pre><span></span><code><span class="w"> </span>unar<span class="w"> </span>-e<span class="w"> </span>GB18030<span class="w"> </span>~/PDownloads/SongPoem.tar.gz<span class="w"> </span>
+/home/weiya/PDownloads/SongPoem.tar.gz:<span class="w"> </span>Tar<span class="w"> </span><span class="k">in</span><span class="w"> </span>Gzip
+<span class="w">  </span>SongPoem.csv<span class="w">  </span><span class="o">(</span><span class="m">4171055</span><span class="w"> </span>B<span class="o">)</span>...<span class="w"> </span>OK.
+<span class="w">  </span>宋词.R<span class="w">  </span><span class="o">(</span><span class="m">583</span><span class="w"> </span>B<span class="o">)</span>...<span class="w"> </span>OK.
+Successfully<span class="w"> </span>extracted<span class="w"> </span>to<span class="w"> </span><span class="s2">&quot;SongPoem&quot;</span>.
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -3921,8 +3921,8 @@ Successfully extracted to <span class="s2">&quot;SongPoem&quot;</span>.
 <p>详见 <a href="https://www.zhihu.com/question/19677619">GB2312、GBK、GB18030 这几种字符集的主要区别是什么？</a></p>
 </div>
 <p>但是！这只能保证压缩文件的文件名以指定的编码格式进行编码，文件内容仍然是乱码，于是仍需指定编码格式。为了一劳永逸，直接转换成 UTF8 格式，</p>
-<div class="highlight"><pre><span></span><code>$ iconv -f GB18030 SongPoem.csv -t UTF8 -o SongPoem.csv.utf8
-$ iconv -f GB18030 宋词.R -t UTF8 -o script.R
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>iconv<span class="w"> </span>-f<span class="w"> </span>GB18030<span class="w"> </span>SongPoem.csv<span class="w"> </span>-t<span class="w"> </span>UTF8<span class="w"> </span>-o<span class="w"> </span>SongPoem.csv.utf8
+$<span class="w"> </span>iconv<span class="w"> </span>-f<span class="w"> </span>GB18030<span class="w"> </span>宋词.R<span class="w"> </span>-t<span class="w"> </span>UTF8<span class="w"> </span>-o<span class="w"> </span>script.R
 </code></pre></div>
 <h2 id="uniq"><code>uniq</code><a class="headerlink" href="#uniq" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3935,11 +3935,11 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 <h2 id="unzip"><code>unzip</code><a class="headerlink" href="#unzip" title="Permanent link">&para;</a></h2>
 <h4 id="unzip-all-zip-file-in-a-directory">unzip all <code>.zip</code> file in a directory<a class="headerlink" href="#unzip-all-zip-file-in-a-directory" title="Permanent link">&para;</a></h4>
 <p>tried <code>unzip *.zip</code> but does not work, it seems that I missed something although I have checked <code>man unzip</code> in which <code>*</code> is indeed allowed, then I found</p>
-<div class="highlight"><pre><span></span><code>unzip <span class="se">\*</span>.zip
+<div class="highlight"><pre><span></span><code>unzip<span class="w"> </span><span class="se">\*</span>.zip
 </code></pre></div>
 <p>in <a href="https://stackoverflow.com/questions/2374772/unzip-all-files-in-a-directory/29248777">Unzip All Files In A Directory</a></p>
 <p>Otherwise, use quotes <code>"*.zip"</code>. More advancely, only zip files with character <code>3</code>,</p>
-<div class="highlight"><pre><span></span><code>unzip <span class="s2">&quot;*3*.zip&quot;</span>
+<div class="highlight"><pre><span></span><code>unzip<span class="w"> </span><span class="s2">&quot;*3*.zip&quot;</span>
 </code></pre></div>
 <h4 id="unzip-extract-here"><code>unzip</code> 和右键 <code>Extract Here</code> 的区别<a class="headerlink" href="#unzip-extract-here" title="Permanent link">&para;</a></h4>
 <p>对于 A.zip，假设内部结构为 <code>dir/file</code>，则通过 <code>unzip A.zip</code> 会直接得到 <code>dir/file</code>，而右键解压会得到 <code>A/dir/file</code>.</p>
@@ -3973,7 +3973,7 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 <p>在UTF-8中，虽然在 Unicode 标准上允许字节顺序标记的存在，但实际上并不一定需要。UTF-8编码过的字节顺序标记则被用来标示它是UTF-8的文件。它只用来标示一个UTF-8的文件，而不用来说明字节顺序。许多视窗程序（包含记事本）会需要添加字节顺序标记到UTF-8文件，否则将无法正确解析编码，而出现乱码。然而，在类Unix系统（大量使用文本文件，用于文件格式，用于进程间通信）中，这种做法则不被建议采用。因为它会妨碍到如解译器脚本开头的Shebang等的一些重要的码的正确处理。它亦会影响到无法识别它的编程语言。如gcc会报告源码档开头有无法识别的字符。</p>
 </blockquote>
 <p>如果需要去除 BOM，直接 vim 打开，</p>
-<div class="highlight"><pre><span></span><code>:set nobomb
+<div class="highlight"><pre><span></span><code>:set<span class="w"> </span>nobomb
 :wq
 </code></pre></div>
 <p>参考</p>
@@ -3988,10 +3988,10 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 <div class="highlight"><pre><span></span><code>:!%
 </code></pre></div>
 <p>其中 <code>%</code> expands current file name，另外</p>
-<div class="highlight"><pre><span></span><code>:! %:p
+<div class="highlight"><pre><span></span><code>:!<span class="w"> </span>%:p
 </code></pre></div>
 <p>会指定绝对路径，而如果路径中有空格，则用</p>
-<div class="highlight"><pre><span></span><code>:! <span class="s2">&quot;%:p&quot;</span>
+<div class="highlight"><pre><span></span><code>:!<span class="w"> </span><span class="s2">&quot;%:p&quot;</span>
 </code></pre></div>
 <p>参考</p>
 <ul>
@@ -4000,7 +4000,7 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 </ul>
 <h4 id="write-with-sudo">write with sudo<a class="headerlink" href="#write-with-sudo" title="Permanent link">&para;</a></h4>
 <p>For example, as said in <a href="https://stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work">How does the vim “write with sudo” trick work?</a></p>
-<div class="highlight"><pre><span></span><code>:w !sudo tee %
+<div class="highlight"><pre><span></span><code>:w<span class="w"> </span>!sudo<span class="w"> </span>tee<span class="w"> </span>%
 </code></pre></div>
 <p>and such reference gives a more detailed explanation for the trick.</p>
 <h4 id="_13">打开另外一个文件<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
@@ -4029,61 +4029,61 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
 <h4 id="wget-vs-curl"><code>wget</code> vs <code>curl</code><a class="headerlink" href="#wget-vs-curl" title="Permanent link">&para;</a></h4>
 <p><code>wget</code> 不用添加 <code>-O</code> 就可以将下载的文件存储下来，但是 <code>curl</code> 并不默认将下载的文件存入本地文件，除非加上 <code>-o</code> 选项，而 <code>wget</code> 的 <code>-O</code> 只是为了更改文件名。</p>
 <p>比如<a href="https://github.com/huan/docker-wine/blob/54e7ba2f042a59de72a06bafc37f1fb8c554541e/Dockerfile#L36">这里</a>，直接将下载的内容输出到下一个命令</p>
-<div class="highlight"><pre><span></span><code>curl -sL https://dl.winehq.org/wine-builds/winehq.key <span class="p">|</span> apt-key add -
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sL<span class="w"> </span>https://dl.winehq.org/wine-builds/winehq.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
 </code></pre></div>
 <p>更多比较详见 <a href="https://unix.stackexchange.com/questions/47434/what-is-the-difference-between-curl-and-wget">What is the difference between curl and wget?</a></p>
 <h2 id="xargs"><code>xargs</code><a class="headerlink" href="#xargs" title="Permanent link">&para;</a></h2>
 <h4 id="mv-files">mv files<a class="headerlink" href="#mv-files" title="Permanent link">&para;</a></h4>
 <p>use <code>-I {}</code> to replace some string.</p>
-<div class="highlight"><pre><span></span><code>ls <span class="p">|</span> grep <span class="s1">&#39;config[0-9].txt&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> mv <span class="o">{}</span> configs/
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;config[0-9].txt&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>mv<span class="w"> </span><span class="o">{}</span><span class="w"> </span>configs/
 </code></pre></div>
 <p>see more details in <a href="https://askubuntu.com/questions/487035/mv-files-with-xargs">mv files with | xargs</a></p>
 <h4 id="rm-files">rm files<a class="headerlink" href="#rm-files" title="Permanent link">&para;</a></h4>
 <p>it is safer to check the files before appending <code>rm</code> into the pipeline.</p>
-<div class="highlight"><pre><span></span><code>ls <span class="p">|</span> grep <span class="s2">&quot;.txt&quot;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> rm -rf <span class="o">{}</span>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;.txt&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="o">{}</span>
 </code></pre></div>
 <p>an application is asked by @van1yu3</p>
 <blockquote>
 <p>在当前目录下有10个子目录dir1-dir10，dir1-dir10里的文件都是相同的名字；我想要保留其中5个特定名字的文件，其他的删掉</p>
 </blockquote>
 <p>then <code>find</code> would be more suitable since a full path is required,</p>
-<div class="highlight"><pre><span></span><code>~/tmp4$ <span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">1</span>..4<span class="o">}</span><span class="p">;</span> <span class="k">do</span> sh -c <span class="s2">&quot;mkdir </span><span class="nv">$i</span><span class="s2">; touch </span><span class="nv">$i</span><span class="s2">/foo.txt </span><span class="nv">$i</span><span class="s2">/bar.txt&quot;</span><span class="p">;</span> <span class="k">done</span>
-~/tmp4$ ls
-<span class="m">1</span>  <span class="m">2</span>  <span class="m">3</span>  <span class="m">4</span>
-~/tmp4$ tree
+<div class="highlight"><pre><span></span><code>~/tmp4$<span class="w"> </span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..4<span class="o">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;mkdir </span><span class="nv">$i</span><span class="s2">; touch </span><span class="nv">$i</span><span class="s2">/foo.txt </span><span class="nv">$i</span><span class="s2">/bar.txt&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+~/tmp4$<span class="w"> </span>ls
+<span class="m">1</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">4</span>
+~/tmp4$<span class="w"> </span>tree
 .
-├── <span class="m">1</span>
-│   ├── bar.txt
-│   └── foo.txt
-├── <span class="m">2</span>
-│   ├── bar.txt
-│   └── foo.txt
-├── <span class="m">3</span>
-│   ├── bar.txt
-│   └── foo.txt
-└── <span class="m">4</span>
-    ├── bar.txt
-    └── foo.txt
+├──<span class="w"> </span><span class="m">1</span>
+│<span class="w">   </span>├──<span class="w"> </span>bar.txt
+│<span class="w">   </span>└──<span class="w"> </span>foo.txt
+├──<span class="w"> </span><span class="m">2</span>
+│<span class="w">   </span>├──<span class="w"> </span>bar.txt
+│<span class="w">   </span>└──<span class="w"> </span>foo.txt
+├──<span class="w"> </span><span class="m">3</span>
+│<span class="w">   </span>├──<span class="w"> </span>bar.txt
+│<span class="w">   </span>└──<span class="w"> </span>foo.txt
+└──<span class="w"> </span><span class="m">4</span>
+<span class="w">    </span>├──<span class="w"> </span>bar.txt
+<span class="w">    </span>└──<span class="w"> </span>foo.txt
 
-<span class="m">4</span> directories, <span class="m">8</span> files
-~/tmp4$ find . -type f <span class="p">|</span> grep -v <span class="s2">&quot;foo&quot;</span>
+<span class="m">4</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">8</span><span class="w"> </span>files
+~/tmp4$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;foo&quot;</span>
 ./2/bar.txt
 ./4/bar.txt
 ./1/bar.txt
 ./3/bar.txt
-~/tmp4$ find . -type f <span class="p">|</span> grep -v <span class="s2">&quot;foo&quot;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> rm -f <span class="o">{}</span>
-~/tmp4$ tree
+~/tmp4$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;foo&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="o">{}</span>
+~/tmp4$<span class="w"> </span>tree
 .
-├── <span class="m">1</span>
-│   └── foo.txt
-├── <span class="m">2</span>
-│   └── foo.txt
-├── <span class="m">3</span>
-│   └── foo.txt
-└── <span class="m">4</span>
-    └── foo.txt
+├──<span class="w"> </span><span class="m">1</span>
+│<span class="w">   </span>└──<span class="w"> </span>foo.txt
+├──<span class="w"> </span><span class="m">2</span>
+│<span class="w">   </span>└──<span class="w"> </span>foo.txt
+├──<span class="w"> </span><span class="m">3</span>
+│<span class="w">   </span>└──<span class="w"> </span>foo.txt
+└──<span class="w"> </span><span class="m">4</span>
+<span class="w">    </span>└──<span class="w"> </span>foo.txt
 
-<span class="m">4</span> directories, <span class="m">4</span> files
+<span class="m">4</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">4</span><span class="w"> </span>files
 </code></pre></div>
 <p>BTW, I tried the popular chatGPT to ask the question.</p>
 <details class="note">
@@ -4214,7 +4214,7 @@ $ iconv -f GB18030 宋词.R -t UTF8 -o script.R
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

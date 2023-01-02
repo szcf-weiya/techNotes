@@ -3687,12 +3687,12 @@ sudo apt-get update
 </code></pre></div>
 <h4 id="proxy">proxy 设置<a class="headerlink" href="#proxy" title="Permanent link">&para;</a></h4>
 <p>Atom 的包管理器是 <a href="https://github.com/atom/apm#behind-a-firewall">apm</a>，其中有介绍怎么设置 proxy，即</p>
-<div class="highlight"><pre><span></span><code>apm config <span class="nb">set</span> strict-ssl <span class="nb">false</span>
-apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
+<div class="highlight"><pre><span></span><code>apm<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>strict-ssl<span class="w"> </span><span class="nb">false</span>
+apm<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>http-proxy<span class="w"> </span>http://127.0.0.1:8118
 </code></pre></div>
 <h4 id="spell-check">spell-check<a class="headerlink" href="#spell-check" title="Permanent link">&para;</a></h4>
 <p>By default, one of the core package <a href="https://github.com/atom/spell-check">spell-check</a> does not check <code>.tex</code> file, although there is <a href="https://github.com/AtomLinter/linter-spell-latex">another package</a> for checking the spelling in <code>.tex</code>, it does not work and not recently update, then I investigate the <code>spell-check</code> package to add the support for <code>.tex</code>. Actually, it is quite easy, just to add the scope of the <code>.tex</code> file, which can be found by <code>Editor: Log Cursor Scope</code>. So I add <code>text.tex.latex</code>, but it would be annoying to highlighter the native latex command, such as <code>\newcommand</code>, then I found that there is a <code>Excluded Scopes</code> in the config page of <code>spell-check</code>, so we only need to add the scope name of such native latex command, which again can be found by <code>Editor: Log Cursor Scope</code> if we put the cursor on the line of the commands. Finally, I add</p>
-<div class="highlight"><pre><span></span><code>meta.preamble.latex, punctuation.definition.arguments.end.latex, support.function.general.tex, support.type.function.other.latex, storage.type.function.latex, markup.underline.link.https.hyperlink
+<div class="highlight"><pre><span></span><code>meta.preamble.latex,<span class="w"> </span>punctuation.definition.arguments.end.latex,<span class="w"> </span>support.function.general.tex,<span class="w"> </span>support.type.function.other.latex,<span class="w"> </span>storage.type.function.latex,<span class="w"> </span>markup.underline.link.https.hyperlink
 </code></pre></div>
 <p>to the whitelist, each of which is identified by tries, such as cannot continue to add <code>meta.group.braces.tex</code> since the original text would also cannot be checked.</p>
 <h4 id="soft-wrap">Soft wrap<a class="headerlink" href="#soft-wrap" title="Permanent link">&para;</a></h4>
@@ -3735,27 +3735,27 @@ apm config <span class="nb">set</span> http-proxy http://127.0.0.1:8118
 <p>测试了一下，相当于在网盘内新建了 <code>/apps/bypy</code> 文件夹，然后可以同步该文件夹内的内容，似乎不能直接对文件夹外的文件进行操作。尽管这样，也是很好的了，以后文件可以存放在这个文件夹下。</p>
 <p>当然，还是期待官网本身支持。</p>
 <p>常用命令：</p>
-<div class="highlight"><pre><span></span><code>bypy syncup
-bypy syncdown
+<div class="highlight"><pre><span></span><code>bypy<span class="w"> </span>syncup
+bypy<span class="w"> </span>syncdown
 </code></pre></div>
 </details>
 <h2 id="chrome">Chrome<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h2>
 <h3 id="not-saving-password">not saving password<a class="headerlink" href="#not-saving-password" title="Permanent link">&para;</a></h3>
 <p>有段时间，不能自动输入 CUSIS 的登录信息，直接删掉 Login Data，</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">pwd</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">pwd</span>
 /home/weiya/.config/google-chrome/Default
-~/.config/google-chrome/Default$ mv Login<span class="se">\ </span>Data <span class="s2">&quot;Login-Data-backup20210410-issue16&quot;</span>
+~/.config/google-chrome/Default$<span class="w"> </span>mv<span class="w"> </span>Login<span class="se">\ </span>Data<span class="w"> </span><span class="s2">&quot;Login-Data-backup20210410-issue16&quot;</span>
 </code></pre></div>
 <p>详见 <a href="https://github.com/szcf-weiya/techNotes/issues/16"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h3 id="disable-running-in-background">disable running in background<a class="headerlink" href="#disable-running-in-background" title="Permanent link">&para;</a></h3>
 <p>To diagnose high memory usage, I found chrome is still running in background even if it has been closed,</p>
-<div class="highlight"><pre><span></span><code>~$ ps -e -o pid,cmd,%mem --sort<span class="o">=</span>-%mem <span class="p">|</span> grep google 
-  <span class="m">13404</span> /opt/google/chrome/chrome -  <span class="m">1</span>.9
-  <span class="m">13622</span> /opt/google/chrome/chrome -  <span class="m">1</span>.3
- <span class="m">632184</span> /opt/google/chrome/chrome -  <span class="m">0</span>.7
-  <span class="m">13448</span> /opt/google/chrome/chrome -  <span class="m">0</span>.6
-  <span class="m">13610</span> /opt/google/chrome/chrome -  <span class="m">0</span>.6
-<span class="m">1601941</span> /opt/google/chrome/chrome -  <span class="m">0</span>.4
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>ps<span class="w"> </span>-e<span class="w"> </span>-o<span class="w"> </span>pid,cmd,%mem<span class="w"> </span>--sort<span class="o">=</span>-%mem<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>google<span class="w"> </span>
+<span class="w">  </span><span class="m">13404</span><span class="w"> </span>/opt/google/chrome/chrome<span class="w"> </span>-<span class="w">  </span><span class="m">1</span>.9
+<span class="w">  </span><span class="m">13622</span><span class="w"> </span>/opt/google/chrome/chrome<span class="w"> </span>-<span class="w">  </span><span class="m">1</span>.3
+<span class="w"> </span><span class="m">632184</span><span class="w"> </span>/opt/google/chrome/chrome<span class="w"> </span>-<span class="w">  </span><span class="m">0</span>.7
+<span class="w">  </span><span class="m">13448</span><span class="w"> </span>/opt/google/chrome/chrome<span class="w"> </span>-<span class="w">  </span><span class="m">0</span>.6
+<span class="w">  </span><span class="m">13610</span><span class="w"> </span>/opt/google/chrome/chrome<span class="w"> </span>-<span class="w">  </span><span class="m">0</span>.6
+<span class="m">1601941</span><span class="w"> </span>/opt/google/chrome/chrome<span class="w"> </span>-<span class="w">  </span><span class="m">0</span>.4
 ...
 </code></pre></div>
 <p>To disable it, click <code>Setting &gt; Advanced &gt; System</code>, and then turn off the option</p>
@@ -3771,7 +3771,7 @@ bypy syncdown
 <h3 id="_1">黑屏<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>参考 <a href="https://blog.csdn.net/jjddrushi/article/details/79155421">chrome黑屏解决</a>   </p>
 <p>进入休眠状态后，睡了一晚上，第二天早上打开 chrome 便黑屏了，然后采用</p>
-<div class="highlight"><pre><span></span><code>chrome -disable-gpu
+<div class="highlight"><pre><span></span><code>chrome<span class="w"> </span>-disable-gpu
 </code></pre></div>
 <p>再设定</p>
 <p><div class="highlight"><pre><span></span><code>Use hardware acceleration when available
@@ -3779,8 +3779,8 @@ bypy syncdown
 false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整个 chrome。</p>
 <h3 id="sandbox">沙盒 sandbox<a class="headerlink" href="#sandbox" title="Permanent link">&para;</a></h3>
 <p>在 Julia 中使用 Plotly 画图时，报出</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mi">0531</span><span class="o">/</span><span class="mf">160811.236665</span><span class="o">:</span><span class="n">ERROR</span><span class="o">:</span><span class="n">nacl_helper_linux</span><span class="o">.</span><span class="n">cc</span><span class="p">(</span><span class="mi">308</span><span class="p">)]</span><span class="w"> </span><span class="n">NaCl</span><span class="w"> </span><span class="n">helper</span><span class="w"> </span><span class="n">process</span><span class="w"> </span><span class="n">running</span><span class="w"> </span><span class="n">without</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">sandbox!</span><span class="w"></span>
-<span class="n">Most</span><span class="w"> </span><span class="n">likely</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">configure</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">SUID</span><span class="w"> </span><span class="n">sandbox</span><span class="w"> </span><span class="n">correctly</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mi">0531</span><span class="o">/</span><span class="mf">160811.236665</span><span class="o">:</span><span class="n">ERROR</span><span class="o">:</span><span class="n">nacl_helper_linux</span><span class="o">.</span><span class="n">cc</span><span class="p">(</span><span class="mi">308</span><span class="p">)]</span><span class="w"> </span><span class="n">NaCl</span><span class="w"> </span><span class="n">helper</span><span class="w"> </span><span class="n">process</span><span class="w"> </span><span class="n">running</span><span class="w"> </span><span class="n">without</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">sandbox!</span>
+<span class="n">Most</span><span class="w"> </span><span class="n">likely</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">configure</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">SUID</span><span class="w"> </span><span class="n">sandbox</span><span class="w"> </span><span class="n">correctly</span>
 </code></pre></div>
 <p>通过 <code>ps -aef | grep chrome</code> 查看 chrome 的运行参数，没有发现 <code>no-sandbox</code>，即默认应该是开启的，所以现在不清楚了。</p>
 <h2 id="droidcam">Droidcam<a class="headerlink" href="#droidcam" title="Permanent link">&para;</a></h2>
@@ -3795,19 +3795,19 @@ false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整
 </ul>
 <h3 id="mi4c">Mi4c<a class="headerlink" href="#mi4c" title="Permanent link">&para;</a></h3>
 <p>同 Mix2s，不过换了长的那根数据线后，<code>lsusb</code> 多了条记录</p>
-<div class="highlight"><pre><span></span><code>$ lsusb
-Bus <span class="m">001</span> Device <span class="m">033</span>: ID <span class="m">2717</span>:ff68
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>lsusb
+Bus<span class="w"> </span><span class="m">001</span><span class="w"> </span>Device<span class="w"> </span><span class="m">033</span>:<span class="w"> </span>ID<span class="w"> </span><span class="m">2717</span>:ff68
 </code></pre></div>
 <p>不像其它记录那样有具体的名字，找到同样的问题，<a href="https://stackoverflow.com/questions/40951179/adb-devices-not-working-for-redmi-note-3-on-ubuntu">adb devices not working for redmi note 3 on ubuntu</a>。经查，该文件位于 <code>/lib/udev/rules.d</code>，下载仓库中最新的 <a href="https://github.com/M0Rf30/android-udev-rules/blob/master/51-android.rules">51-android.rules</a></p>
-<div class="highlight"><pre><span></span><code>$ cat <span class="m">51</span>-android.rules <span class="p">|</span> grep ff68
-$ sudo cp <span class="m">51</span>-android.rules <span class="m">51</span>-android.rules.old
-$ sudo cp ~/Downloads/51-android.rules .
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span><span class="m">51</span>-android.rules<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ff68
+$<span class="w"> </span>sudo<span class="w"> </span>cp<span class="w"> </span><span class="m">51</span>-android.rules<span class="w"> </span><span class="m">51</span>-android.rules.old
+$<span class="w"> </span>sudo<span class="w"> </span>cp<span class="w"> </span>~/Downloads/51-android.rules<span class="w"> </span>.
 </code></pre></div>
 <p>但是 <code>lsusb</code> 并没有立即生效，又不想重启，于是试了 <a href="https://unix.stackexchange.com/questions/39370/how-to-reload-udev-rules-without-reboot">How to reload udev rules without reboot?</a>，</p>
-<div class="highlight"><pre><span></span><code>$ udevadm control --reload-rules
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
 </code></pre></div>
 <p>以及</p>
-<div class="highlight"><pre><span></span><code>$ pkill -HUP udevd
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pkill<span class="w"> </span>-HUP<span class="w"> </span>udevd
 </code></pre></div>
 <p>但是仍没有显示名字。</p>
 <h3 id="ipad">iPad<a class="headerlink" href="#ipad" title="Permanent link">&para;</a></h3>
@@ -3818,21 +3818,21 @@ $ sudo cp ~/Downloads/51-android.rules .
 </ul>
 <h2 id="geeqie">Geeqie<a class="headerlink" href="#geeqie" title="Permanent link">&para;</a></h2>
 <p>Install with</p>
-<div class="highlight"><pre><span></span><code>sudo apt install geeqie
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>geeqie
 </code></pre></div>
 <p>which can show the pixel info, and is first used when developing the script for the <a href="#perspective-transformation">perspective transformation</a>.</p>
 <p>Refer to <a href="https://askubuntu.com/questions/298877/which-image-viewer-is-able-to-show-coordinates">Which image viewer is able to show coordinates?</a></p>
 <h2 id="google-drive">Google Drive<a class="headerlink" href="#google-drive" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://askubuntu.com/questions/838956/ubuntu-16-04-set-up-with-google-online-account-but-no-drive-folder-in-nautilus">Ubuntu 16.04 set up with google online account but no drive folder in nautilus</a></p>
 <p>Note that you should run</p>
-<div class="highlight"><pre><span></span><code>gnome-control-center online-accounts
+<div class="highlight"><pre><span></span><code>gnome-control-center<span class="w"> </span>online-accounts
 </code></pre></div>
 <p>in the command line, not to open the GUI.</p>
 <h2 id="imagemagick">ImageMagick<a class="headerlink" href="#imagemagick" title="Permanent link">&para;</a></h2>
 <h3 id="perspective-transformation">Perspective Transformation<a class="headerlink" href="#perspective-transformation" title="Permanent link">&para;</a></h3>
 <p>I usually take many photos when listening to the seminars, it is desirable to extract only the slides and discard the nuisance background. Direct cropping is not enough since the photos are not parallel to the screen. </p>
 <p>The solution is called perspective transformation, which can be done via <a href="http://www.imagemagick.org/script/command-line-options.php#distort"><code>-distort method</code></a>, the usage is </p>
-<div class="highlight"><pre><span></span><code>$ magick input.jpg -distort perspective <span class="s1">&#39;U1,V1,X1,Y1 U2,V2,X2,Y2 U3,V3,X3,Y3 ... Un,Vn,Xn,Yn&#39;</span> output.jpg
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>magick<span class="w"> </span>input.jpg<span class="w"> </span>-distort<span class="w"> </span>perspective<span class="w"> </span><span class="s1">&#39;U1,V1,X1,Y1 U2,V2,X2,Y2 U3,V3,X3,Y3 ... Un,Vn,Xn,Yn&#39;</span><span class="w"> </span>output.jpg
 </code></pre></div>
 <p>where <code>U,V</code> on the source image is mapped to <code>X,Y</code> on the destination image.</p>
 <p>The interesting area is the mapped sub region, and so we need to further crop them out, which can be done with <a href="http://www.imagemagick.org/script/command-line-options.php#crop"><code>-crop geometry</code></a>, where the geometry is defined with <code>WxH+x+y</code>, which means the region of size <code>WxH</code> located at the xy-coordinates <code>(x, y)</code>, see more details in <a href="http://www.imagemagick.org/script/command-line-processing.php#geometry">Anatomy of the Command-line</a></p>
@@ -3867,11 +3867,11 @@ Possible references:</p>
 <h3 id="add-heic-support-in-imagemagick">Add HEIC support in ImageMagick<a class="headerlink" href="#add-heic-support-in-imagemagick" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Convert .heic to .jpg</p>
-<p><div class="highlight"><pre><span></span><code>$ sudo apt install libheif-examples
-$ heif-convert A.heic A.jpg
+<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libheif-examples
+$<span class="w"> </span>heif-convert<span class="w"> </span>A.heic<span class="w"> </span>A.jpg
 </code></pre></div>
 In batch mode, run
-<div class="highlight"><pre><span></span><code>$ find . -name <span class="s1">&#39;*.heic&#39;</span> -exec heif-convert <span class="o">{}</span> <span class="o">{}</span>.jpg <span class="se">\;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.heic&#39;</span><span class="w"> </span>-exec<span class="w"> </span>heif-convert<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="o">{}</span>.jpg<span class="w"> </span><span class="se">\;</span>
 </code></pre></div></p>
 </div>
 <div class="admonition fail">
@@ -3879,47 +3879,47 @@ In batch mode, run
 <p>failed.</p>
 </div>
 <p>上次从源码按安装了 ImageMagick 7.0.10-6，刚刚又看到可以<a href="https://askubuntu.com/questions/958355/any-app-on-ubuntu-to-open-and-or-convert-heif-pictures-heic-high-efficiency-i">添加对 HEIC 格式的支持</a>，于是准备重新编译安装</p>
-<div class="highlight"><pre><span></span><code>$ ./configure --with-modules --with-libheif
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./configure<span class="w"> </span>--with-modules<span class="w"> </span>--with-libheif
 ...
-               Option                        Value
+<span class="w">               </span>Option<span class="w">                        </span>Value
 ------------------------------------------------------------------------------
 ...
-Delegate library configuration:
+Delegate<span class="w"> </span>library<span class="w"> </span>configuration:
 ...
-  HEIC              --with-heic<span class="o">=</span>yes             no
+<span class="w">  </span>HEIC<span class="w">              </span>--with-heic<span class="o">=</span>yes<span class="w">             </span>no
 </code></pre></div>
 <p>跟 HEIC 似乎只有这一条，但其实如果去掉 <code>--with-libheif</code>，结果并不会有变化，后来发现这个选项其实并没有正确识别，</p>
-<div class="highlight"><pre><span></span><code>configure: WARNING: unrecognized options: --with-libheif
+<div class="highlight"><pre><span></span><code>configure:<span class="w"> </span>WARNING:<span class="w"> </span>unrecognized<span class="w"> </span>options:<span class="w"> </span>--with-libheif
 configure:
 </code></pre></div>
 <p>然后试着</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install libheif1
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libheif1
 </code></pre></div>
 <p>但最后一列还是 no，然后再试着</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install libheif-dev
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libheif-dev
 </code></pre></div>
 <p>最后一列终于变成 yes 了。于是继续 <code>make</code>，然而却报出了 bug</p>
-<div class="highlight"><pre><span></span><code>coders/heic.c: In <span class="k">function</span> ‘ReadHEICColorProfile’:
-coders/heic.c:143:5: warning: unused variable ‘length’ <span class="o">[</span>-Wunused-variable<span class="o">]</span>
-     length<span class="p">;</span>
-     ^~~~~~
-coders/heic.c: In <span class="k">function</span> ‘ReadHEICImage’:
-coders/heic.c:452:9: warning: implicit declaration of <span class="k">function</span> ‘heif_context_read_from_memory_without_copy’<span class="p">;</span> did you mean ‘heif_context_read_from_memory’? <span class="o">[</span>-Wimplicit-function-declaration<span class="o">]</span>
-   <span class="nv">error</span><span class="o">=</span>heif_context_read_from_memory_without_copy<span class="o">(</span>heif_context,file_data,
-         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-         heif_context_read_from_memory
-coders/heic.c:452:8: error: incompatible types when assigning to <span class="nb">type</span> ‘struct heif_error’ from <span class="nb">type</span> ‘int’
-   <span class="nv">error</span><span class="o">=</span>heif_context_read_from_memory_without_copy<span class="o">(</span>heif_context,file_data,
-        ^
-At top level:
-coders/heic.c:94:3: warning: ‘xmp_namespace’ defined but not used <span class="o">[</span>-Wunused-const-variable<span class="o">=]</span>
-   xmp_namespace<span class="o">[]</span> <span class="o">=</span> <span class="s2">&quot;http://ns.adobe.com/xap/1.0/ &quot;</span><span class="p">;</span>
-   ^~~~~~~~~~~~~
-Makefile:10388: recipe <span class="k">for</span> target <span class="s1">&#39;coders/heic_la-heic.lo&#39;</span> failed
-make<span class="o">[</span><span class="m">1</span><span class="o">]</span>: *** <span class="o">[</span>coders/heic_la-heic.lo<span class="o">]</span> Error <span class="m">1</span>
-make<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Leaving directory <span class="s1">&#39;/home/weiya/src/ImageMagick-7.0.10-6&#39;</span>
-Makefile:5988: recipe <span class="k">for</span> target <span class="s1">&#39;all&#39;</span> failed
-make: *** <span class="o">[</span>all<span class="o">]</span> Error <span class="m">2</span>
+<div class="highlight"><pre><span></span><code>coders/heic.c:<span class="w"> </span>In<span class="w"> </span><span class="k">function</span><span class="w"> </span>‘ReadHEICColorProfile’:
+coders/heic.c:143:5:<span class="w"> </span>warning:<span class="w"> </span>unused<span class="w"> </span>variable<span class="w"> </span>‘length’<span class="w"> </span><span class="o">[</span>-Wunused-variable<span class="o">]</span>
+<span class="w">     </span>length<span class="p">;</span>
+<span class="w">     </span>^~~~~~
+coders/heic.c:<span class="w"> </span>In<span class="w"> </span><span class="k">function</span><span class="w"> </span>‘ReadHEICImage’:
+coders/heic.c:452:9:<span class="w"> </span>warning:<span class="w"> </span>implicit<span class="w"> </span>declaration<span class="w"> </span>of<span class="w"> </span><span class="k">function</span><span class="w"> </span>‘heif_context_read_from_memory_without_copy’<span class="p">;</span><span class="w"> </span>did<span class="w"> </span>you<span class="w"> </span>mean<span class="w"> </span>‘heif_context_read_from_memory’?<span class="w"> </span><span class="o">[</span>-Wimplicit-function-declaration<span class="o">]</span>
+<span class="w">   </span><span class="nv">error</span><span class="o">=</span>heif_context_read_from_memory_without_copy<span class="o">(</span>heif_context,file_data,
+<span class="w">         </span>^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<span class="w">         </span>heif_context_read_from_memory
+coders/heic.c:452:8:<span class="w"> </span>error:<span class="w"> </span>incompatible<span class="w"> </span>types<span class="w"> </span>when<span class="w"> </span>assigning<span class="w"> </span>to<span class="w"> </span><span class="nb">type</span><span class="w"> </span>‘struct<span class="w"> </span>heif_error’<span class="w"> </span>from<span class="w"> </span><span class="nb">type</span><span class="w"> </span>‘int’
+<span class="w">   </span><span class="nv">error</span><span class="o">=</span>heif_context_read_from_memory_without_copy<span class="o">(</span>heif_context,file_data,
+<span class="w">        </span>^
+At<span class="w"> </span>top<span class="w"> </span>level:
+coders/heic.c:94:3:<span class="w"> </span>warning:<span class="w"> </span>‘xmp_namespace’<span class="w"> </span>defined<span class="w"> </span>but<span class="w"> </span>not<span class="w"> </span>used<span class="w"> </span><span class="o">[</span>-Wunused-const-variable<span class="o">=]</span>
+<span class="w">   </span>xmp_namespace<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://ns.adobe.com/xap/1.0/ &quot;</span><span class="p">;</span>
+<span class="w">   </span>^~~~~~~~~~~~~
+Makefile:10388:<span class="w"> </span>recipe<span class="w"> </span><span class="k">for</span><span class="w"> </span>target<span class="w"> </span><span class="s1">&#39;coders/heic_la-heic.lo&#39;</span><span class="w"> </span>failed
+make<span class="o">[</span><span class="m">1</span><span class="o">]</span>:<span class="w"> </span>***<span class="w"> </span><span class="o">[</span>coders/heic_la-heic.lo<span class="o">]</span><span class="w"> </span>Error<span class="w"> </span><span class="m">1</span>
+make<span class="o">[</span><span class="m">1</span><span class="o">]</span>:<span class="w"> </span>Leaving<span class="w"> </span>directory<span class="w"> </span><span class="s1">&#39;/home/weiya/src/ImageMagick-7.0.10-6&#39;</span>
+Makefile:5988:<span class="w"> </span>recipe<span class="w"> </span><span class="k">for</span><span class="w"> </span>target<span class="w"> </span><span class="s1">&#39;all&#39;</span><span class="w"> </span>failed
+make:<span class="w"> </span>***<span class="w"> </span><span class="o">[</span>all<span class="o">]</span><span class="w"> </span>Error<span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 <h2 id="image-viewer">Image Viewer<a class="headerlink" href="#image-viewer" title="Permanent link">&para;</a></h2>
 <p>The default software for viewing images. Start it from command line by <code>eog</code>.</p>
@@ -3948,8 +3948,8 @@ make: *** <span class="o">[</span>all<span class="o">]</span> Error <span class=
 </div>
 <h3 id="fcitx-sougou">fcitx-sougou<a class="headerlink" href="#fcitx-sougou" title="Permanent link">&para;</a></h3>
 <p>需要 fcitx，若没有装，</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install fcitx-bin
-sudo apt-get install fcitx-table
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>fcitx-bin
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>fcitx-table
 </code></pre></div>
 <p>然后将输入法切换成 fcitx，在设置中语言那里，</p>
 <p>最后下载按照搜狗输入法，安装时我出现这样的问题导致安装失败，</p>
@@ -3960,7 +3960,7 @@ sudo apt-get install fcitx-table
 <div class="highlight"><pre><span></span><code><span class="nv">overrides</span><span class="o">={</span><span class="s1">&#39;Gtk/IMModule&#39;</span>:&lt;<span class="s1">&#39;fcitx&#39;</span>&gt;<span class="o">}</span>
 </code></pre></div>
 <p>然后再运行</p>
-<div class="highlight"><pre><span></span><code>sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>glib-compile-schemas<span class="w"> </span>/usr/share/glib-2.0/schemas/
 </code></pre></div>
 <p>再次安装便成功了。</p>
 <p>最后在语言栏中添加搜狗拼音的输入法即可。</p>
@@ -3973,7 +3973,7 @@ sudo apt-get install fcitx-table
 ubuntu用搜狗输入法，会出各种问题，有其实和linux版微信一起用，坑就更多了。。@南瓜派三蔬</p>
 </blockquote>
 <p>于是更加坚定尝试其他输入法，因为很多人都推荐了谷歌拼音，便首先尝试了它。因为此前在装搜狗的时候已经将 ibus 换成了 fcitx，所以后面只需要添加新的输入法即可，</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt install fcitx-googlepinyin
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>fcitx-googlepinyin
 </code></pre></div>
 <p>然后重启输入法（无需重启电脑），再打开输入法配置界面，此时不出意外已经有 google pinyin 的选项。因为一种输入法就足够了，而且避免后台影响，取消了搜狗输入法（并没有卸载程序）。</p>
 <p>试用了一下，还行，只是界面略微有点丑，不过这也不是重点。</p>
@@ -3982,7 +3982,7 @@ ubuntu用搜狗输入法，会出各种问题，有其实和linux版微信一起
 <p>正如上述知乎回答提到的，它乱码了！</p>
 <h3 id="fcitx-rime">fcitx-rime<a class="headerlink" href="#fcitx-rime" title="Permanent link">&para;</a></h3>
 <p>这主要是繁体中文，不过似乎应该也能切换简体。本身这是基于 ibus 的，不过 <a href="https://github.com/fcitx">fcitx 团队</a>有在维护 fcitx 的版本，</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt install fcitx-rime
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>fcitx-rime
 </code></pre></div>
 <p>因为想同时比较其与谷歌拼音的体验，所以目前同时保留了这两个输入法，可以通过 <code>SHIFT+CTRL</code> 快速切换输入法。</p>
 <p>RIME 默认是繁体的，可以通过 <code>CTRL+`</code> 来切换简繁体，另外也有全半角等设置。</p>
@@ -3996,10 +3996,10 @@ ubuntu用搜狗输入法，会出各种问题，有其实和linux版微信一起
 <p>最开始用 ubuntu 的时候用过一段时间 ibus，那时应该还是在 14.04 的机子上，确实不太好用，后来一直换成了 fcitx。不过现在版本已经 18.04 了，兴许会好点，而且比较喜欢这种 ui 跟系统很配的感觉。</p>
 <p><img alt="" src="https://user-images.githubusercontent.com/13688320/113474286-b60ec980-94a1-11eb-84b3-191bf1940f82.png" /></p>
 <p>但是明显感觉连续功能确实还不跟够好。另外有个问题是，在浏览器或者 libreoffice 中输入时，备选框总在左下角，<a href="https://askubuntu.com/questions/549900/ibs-chinese-pinyin-input-candidates-appear-at-bottom-of-screen">解决方案</a>为</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt install ibus-gtk
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ibus-gtk
 </code></pre></div>
 <p>因为 rime 本身就是 ibus 的，而且在 fcitx 环境下体验效果确实不错，所以想试试 <a href="https://github.com/rime/home/wiki/RimeWithIBus">ibus-rime</a>。</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt-get install ibus-rime
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ibus-rime
 </code></pre></div>
 <p>因为 ibus 是系统默认的，所以其不像 fcitx 有单独的配置框，而是直接在系统设置的 “Region &amp; Language” 中进行设置，添加 “Input Source” 即可。</p>
 <p>Tips:</p>
@@ -4008,8 +4008,8 @@ ubuntu用搜狗输入法，会出各种问题，有其实和linux版微信一起
 <li>自定义快捷键，取消 <code>Ctrl + `` 的快捷键，在</code>~/.config/ibus/rime<code>新建文件</code>default.custom.yaml`，然后写入</li>
 </ul>
 <div class="highlight"><pre><span></span><code>patch:
-  <span class="s2">&quot;switcher/hotkeys&quot;</span>:  <span class="c1"># 這個列表裏每項定義一個快捷鍵，使哪個都中</span>
-    - F4
+<span class="w">  </span><span class="s2">&quot;switcher/hotkeys&quot;</span>:<span class="w">  </span><span class="c1"># 這個列表裏每項定義一個快捷鍵，使哪個都中</span>
+<span class="w">    </span>-<span class="w"> </span>F4
 </code></pre></div>
 <p>其实也就是删去 <code>Control+grave</code>，详见 <a href="https://github.com/rime/home/wiki/CustomizationGuide#%E4%B8%80%E4%BE%8B%E5%AE%9A%E8%A3%BD%E5%96%9A%E5%87%BA%E6%96%B9%E6%A1%88%E9%81%B8%E5%96%AE%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%8D%B5">一例、定製喚出方案選單的快捷鍵</a>。修改完成后需要点击右上角输入法菜单中的 “部署”。</p>
 <ul>
@@ -4031,21 +4031,21 @@ ubuntu用搜狗输入法，会出各种问题，有其实和linux版微信一起
 </div>
 <p>Since <code>shutter</code> has stopped developing, and it seems not friendly on Ubuntu 20.04, find the alternative, <a href="https://github.com/ksnip/ksnip">Ksnip</a></p>
 <p>Install it via <code>snap</code>,</p>
-<div class="highlight"><pre><span></span><code>~$ sudo apt-get install ksnip
-<span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> weiya: 
-Reading package lists... Done
-Building dependency tree       
-Reading state information... Done
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ksnip
+<span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>weiya:<span class="w"> </span>
+Reading<span class="w"> </span>package<span class="w"> </span>lists...<span class="w"> </span>Done
+Building<span class="w"> </span>dependency<span class="w"> </span>tree<span class="w">       </span>
+Reading<span class="w"> </span>state<span class="w"> </span>information...<span class="w"> </span>Done
 
-No apt package <span class="s2">&quot;ksnip&quot;</span>, but there is a snap with that name.
-Try <span class="s2">&quot;snap install ksnip&quot;</span>
+No<span class="w"> </span>apt<span class="w"> </span>package<span class="w"> </span><span class="s2">&quot;ksnip&quot;</span>,<span class="w"> </span>but<span class="w"> </span>there<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>snap<span class="w"> </span>with<span class="w"> </span>that<span class="w"> </span>name.
+Try<span class="w"> </span><span class="s2">&quot;snap install ksnip&quot;</span>
 
-E: Unable to locate package ksnip
-~$ snap install ksnip
-ksnip <span class="m">1</span>.9.1 from Damir Porobic <span class="o">(</span>dporobic<span class="o">)</span> installed
+E:<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>locate<span class="w"> </span>package<span class="w"> </span>ksnip
+~$<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>ksnip
+ksnip<span class="w"> </span><span class="m">1</span>.9.1<span class="w"> </span>from<span class="w"> </span>Damir<span class="w"> </span>Porobic<span class="w"> </span><span class="o">(</span>dporobic<span class="o">)</span><span class="w"> </span>installed
 </code></pre></div>
 <p>But note that it cannot access the external disk drive as in Okular. Hopefully, use the following line</p>
-<div class="highlight"><pre><span></span><code>snap connect ksnip:removable-media
+<div class="highlight"><pre><span></span><code>snap<span class="w"> </span>connect<span class="w"> </span>ksnip:removable-media
 </code></pre></div>
 <p>can enable the access to external disk.</p>
 <p>Generally, it requires the software shipped with <code>removable-media</code> plug, as mentioned in <a href="https://askubuntu.com/questions/1034030/how-to-get-access-to-usb-storage-from-an-application-installed-as-snap">How to get access to USB-storage from an application installed as Snap? - Ask Ubuntu</a></p>
@@ -4069,7 +4069,7 @@ ksnip <span class="m">1</span>.9.1 from Damir Porobic <span class="o">(</span>dp
 <p>另外帮助文档见<a href="https://www.gnu.org/software/octave/doc/interpreter/">GNU Octave</a></p>
 <h2 id="okular">Okular<a class="headerlink" href="#okular" title="Permanent link">&para;</a></h2>
 <p>当初使用 Ubuntu 16.04 时，Okular 是通过 snap 安装的，可能参考了<a href="https://askubuntu.com/questions/976248/how-to-install-latest-version-of-okular-on-ubuntu-16-04">这个</a>?</p>
-<div class="highlight"><pre><span></span><code>sudo snap install okular
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>okular
 </code></pre></div>
 <p>但是更新到 Ubuntu 18.04 后，发现在移动硬盘的文档打不开，而之前没碰到过这样的问题，一开始还以为是移动硬盘命名问题，之前曾经碰到过某个程序（忘记了）不允许路径存在空格，而移动硬盘默认名字有空格，于是曾经更改过名字（忘记了怎么更改）。原本以为可能更新系统使得这个更改失效了，还想着再找找怎么更改，但是找到一堆怎么更改卷标名的，最后才发现路径中名字确实应该更改成功了。</p>
 <p>所以问题还是回到 okular 本身，通过 snap 和 apt 安装是两个不同的版本，图标也有点差异，然后发现也有人跟我有<a href="https://askubuntu.com/questions/1137830/cannot-open-pdf-files-in-mounted-usb-drive-using-okular">同样的问题</a>，有人回复说</p>
@@ -4077,7 +4077,7 @@ ksnip <span class="m">1</span>.9.1 from Damir Porobic <span class="o">(</span>dp
 <p>Okular does not support removable media while installed as Snap.</p>
 </blockquote>
 <p>于是卸掉 snap 版的 okular，转而安装 apt 版本的，</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install okular
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>okular
 </code></pre></div>
 <p>类似地，<a href="https://askubuntu.com/questions/958355/any-app-on-ubuntu-to-open-and-or-convert-heif-pictures-heic-high-efficiency-i">通过 snap 安装的 <code>gimp</code></a> 不能打开移动硬盘中的文件，但是如果换成 apt-get 安装的，则又不支持 <code>.heic</code> 文件格式。</p>
 <p>发现有些图标不能正常显示，网上也找到了类似的问题，</p>
@@ -4086,31 +4086,31 @@ ksnip <span class="m">1</span>.9.1 from Damir Porobic <span class="o">(</span>dp
 <li><a href="https://askubuntu.com/questions/999551/state-of-okular-in-ubuntu-17-10">State of Okular in Ubuntu 17.10?</a></li>
 </ul>
 <p>尝试了其中的解决方案，但均未成功，最后的解决方案是 <a href="https://bugs.launchpad.net/ubuntu/+source/okular/+bug/1698656">navigation panel icons missing on standard install of 17.04</a></p>
-<div class="highlight"><pre><span></span><code>As a workaround, what worked <span class="k">for</span> me was:
+<div class="highlight"><pre><span></span><code>As<span class="w"> </span>a<span class="w"> </span>workaround,<span class="w"> </span>what<span class="w"> </span>worked<span class="w"> </span><span class="k">for</span><span class="w"> </span>me<span class="w"> </span>was:
 
-$ sudo apt install systemsettings kde-config-gtk-style kde-config-gtk-style-preview oxygen-icon-theme
+$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>systemsettings<span class="w"> </span>kde-config-gtk-style<span class="w"> </span>kde-config-gtk-style-preview<span class="w"> </span>oxygen-icon-theme
 
-* systemsettings <span class="k">for</span> the app systemsettings5<span class="p">;</span>
+*<span class="w"> </span>systemsettings<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>app<span class="w"> </span>systemsettings5<span class="p">;</span>
 
-* kde-config-gtk-style enables the Appearance module <span class="k">in</span> systemsettings5<span class="p">;</span>
+*<span class="w"> </span>kde-config-gtk-style<span class="w"> </span>enables<span class="w"> </span>the<span class="w"> </span>Appearance<span class="w"> </span>module<span class="w"> </span><span class="k">in</span><span class="w"> </span>systemsettings5<span class="p">;</span>
 
-* kde-config-gtk-style-preview allows previewing the themes without restarting the GTK applications<span class="p">;</span>
+*<span class="w"> </span>kde-config-gtk-style-preview<span class="w"> </span>allows<span class="w"> </span>previewing<span class="w"> </span>the<span class="w"> </span>themes<span class="w"> </span>without<span class="w"> </span>restarting<span class="w"> </span>the<span class="w"> </span>GTK<span class="w"> </span>applications<span class="p">;</span>
 
-* oxygen-icon-theme is an alternative theme to use <span class="k">in</span> KDE applications.
+*<span class="w"> </span>oxygen-icon-theme<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>alternative<span class="w"> </span>theme<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span><span class="k">in</span><span class="w"> </span>KDE<span class="w"> </span>applications.
 
-Then, run systemsettings5, click on Application Style, <span class="k">select</span> Oxygen as a Fallback theme, click on Apply.
+Then,<span class="w"> </span>run<span class="w"> </span>systemsettings5,<span class="w"> </span>click<span class="w"> </span>on<span class="w"> </span>Application<span class="w"> </span>Style,<span class="w"> </span><span class="k">select</span><span class="w"> </span>Oxygen<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>Fallback<span class="w"> </span>theme,<span class="w"> </span>click<span class="w"> </span>on<span class="w"> </span>Apply.
 </code></pre></div>
 <p>最后我的配置是</p>
 <p><img alt="" src="../okular-icons.png" /></p>
 <p>可以尝试不同配置，因为刚开始打开的，似乎并不是之前系统的配置。</p>
 <h3 id="latex-in-annotation">latex in annotation<a class="headerlink" href="#latex-in-annotation" title="Permanent link">&para;</a></h3>
 <p>okular 的 note 功能支持 LaTeX，当输入 <code>$$...$$</code> 时会提示要不要转换为 latex，点击后但是报错，</p>
-<div class="highlight"><pre><span></span><code>latex is not executable
+<div class="highlight"><pre><span></span><code>latex<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>executable
 </code></pre></div>
 <p>注意到 <code>latex</code> 的 PATH 是定义在 <code>.bashrc</code> 中，而通过 zotero 调用 okular 时并不会 source <code>.bashrc</code>，只有通过 bash shell 调用的程序采用 source 到 <code>.bashrc</code>，也就是在终端中调用 okular 时，latex 显示正常。</p>
 <p>研究图形界面程序调用 path 的机制似乎是一种解决方案，但觉得可能过于复杂，其实之前在 atom 中也出现过类似的问题。可能的方案是在 <code>.profile</code> 中添加 PATH，可能有用的<a href="https://medium.com/@abhinavkorpal/bash-profile-vs-bashrc-c52534a787d3">参考博客</a>。</p>
 <p>于是我采用更简单的方案，在 <code>/usr/bin</code> 中添加 <code>latex</code> 的 soft link，添加后报了新错，</p>
-<div class="highlight"><pre><span></span><code>dvipng is not executable
+<div class="highlight"><pre><span></span><code>dvipng<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>executable
 </code></pre></div>
 <p>但至少证明这条思路是可行的，于是继续添加 <code>dvipng</code> 的 soft link，最后解决了问题！</p>
 <h3 id="_2">自定义签名<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -4126,7 +4126,7 @@ Then, run systemsettings5, click on Application Style, <span class="k">select</s
 <ul>
 <li>copy the desktop file</li>
 </ul>
-<div class="highlight"><pre><span></span><code>mv /usr/share/applications/okularApplication_pdf.desktop .local/share/applications/
+<div class="highlight"><pre><span></span><code>mv<span class="w"> </span>/usr/share/applications/okularApplication_pdf.desktop<span class="w"> </span>.local/share/applications/
 </code></pre></div>
 <ul>
 <li>add the following line to the end</li>
@@ -4153,14 +4153,14 @@ Then, run systemsettings5, click on Application Style, <span class="k">select</s
 <h3 id="second-try">second try<a class="headerlink" href="#second-try" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/skilion/onedrive">skilion/onedrive</a>, perfect!</p>
 <p>note that the automatic monitor would occupy much CPU, the service can be disable or enable by the following command,</p>
-<div class="highlight"><pre><span></span><code>~$ systemctl --user disable onedrive
-Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
-~$ systemctl --user <span class="nb">enable</span> onedrive
-Created symlink /home/weiya/.config/systemd/user/default.target.wants/onedrive.service → /usr/lib/systemd/user/onedrive.service.
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>systemctl<span class="w"> </span>--user<span class="w"> </span>disable<span class="w"> </span>onedrive
+Removed<span class="w"> </span>/home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
+~$<span class="w"> </span>systemctl<span class="w"> </span>--user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>onedrive
+Created<span class="w"> </span>symlink<span class="w"> </span>/home/weiya/.config/systemd/user/default.target.wants/onedrive.service<span class="w"> </span>→<span class="w"> </span>/usr/lib/systemd/user/onedrive.service.
 </code></pre></div>
 <p>but it seems that we also need</p>
-<div class="highlight"><pre><span></span><code>systemctl --user start onedrive
-systemctl --user stop onedrive
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span>start<span class="w"> </span>onedrive
+systemctl<span class="w"> </span>--user<span class="w"> </span>stop<span class="w"> </span>onedrive
 </code></pre></div>
 <h3 id="fuseblk">fuseblk<a class="headerlink" href="#fuseblk" title="Permanent link">&para;</a></h3>
 <p>发现使用 onedrive 同步文件时，有时候并不能够同步。猜测可能是因为文件太小，比如文件夹 <code>test</code> 中仅有 <code>test.md</code> 文件（仅70B），而此时查看 <code>test</code> 大小，竟然为 0 B，因为根据常识，一般文件夹都是 4.0k，或者有时 8.0k 等等，具体原因参考 <a href="https://askubuntu.com/questions/186813/why-does-every-directory-have-a-size-4096-bytes-4-k">Why does every directory have a size 4096 bytes (4 K)?</a></p>
@@ -4201,27 +4201,27 @@ systemctl --user stop onedrive
 </ul>
 <h3 id="change-to-abrauneggonedrive">Change to <a href="https://github.com/abraunegg/onedrive">abraunegg/onedrive</a><a class="headerlink" href="#change-to-abrauneggonedrive" title="Permanent link">&para;</a></h3>
 <p>I found that it will auto run after startup, actually with <a href="https://github.com/skilion/onedrive">skilion/onedrive</a>, sometimes it also starts automatically. Then I tried</p>
-<div class="highlight"><pre><span></span><code>$ sudo systemctl disable onedrive.service
-Failed to disable unit: Unit file onedrive.service does not exist.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>onedrive.service
+Failed<span class="w"> </span>to<span class="w"> </span>disable<span class="w"> </span>unit:<span class="w"> </span>Unit<span class="w"> </span>file<span class="w"> </span>onedrive.service<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>exist.
 </code></pre></div>
 <p>and then I note that <a href="https://github.com/abraunegg/onedrive/blob/master/docs/USAGE.md#onedrive-service-running-as-a-non-root-user-via-systemd-with-notifications-enabled-arch-ubuntu-debian-opensuse-fedora">OneDrive service running as a non-root user via systemd (with notifications enabled) (Arch, Ubuntu, Debian, OpenSuSE, Fedora)</a></p>
 <p>then I tried</p>
-<div class="highlight"><pre><span></span><code>$ sudo systemctl disable onedrive@weiya.service
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>onedrive@weiya.service
 </code></pre></div>
 <p>no error.</p>
 <p>Then I also tried</p>
-<div class="highlight"><pre><span></span><code>$ systemctl --user disable onedrive
-Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>systemctl<span class="w"> </span>--user<span class="w"> </span>disable<span class="w"> </span>onedrive
+Removed<span class="w"> </span>/home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
 </code></pre></div>
 <p>It seems OK now, and pay attention to the difference of the above similar commands.</p>
 <h4 id="sync-shared-folder">sync shared folder<a class="headerlink" href="#sync-shared-folder" title="Permanent link">&para;</a></h4>
 <p>refer to <a href="https://github.com/abraunegg/onedrive/blob/master/docs/BusinessSharedFolders.md">How to configure OneDrive Business Shared Folder Sync</a> for full instruction.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># list remote shared folder</span>
-$ onedrive --list-shared-folders
+$<span class="w"> </span>onedrive<span class="w"> </span>--list-shared-folders
 <span class="c1"># configure folder to share</span>
-$ vi ~/.config/onedrive/business_shared_folders
+$<span class="w"> </span>vi<span class="w"> </span>~/.config/onedrive/business_shared_folders
 <span class="c1"># perform sync (--resync is needed when the config file has been updated)</span>
-$ onedrive --synchronize --sync-shared-folders <span class="o">[</span>--resync<span class="o">]</span>
+$<span class="w"> </span>onedrive<span class="w"> </span>--synchronize<span class="w"> </span>--sync-shared-folders<span class="w"> </span><span class="o">[</span>--resync<span class="o">]</span>
 </code></pre></div>
 <h2 id="openshot">OpenShot<a class="headerlink" href="#openshot" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
@@ -4230,23 +4230,23 @@ $ onedrive --synchronize --sync-shared-folders <span class="o">[</span>--resync<
 </div>
 <p>Homepage: <a href="https://www.openshot.org/en/user-guide/">https://www.openshot.org/en/user-guide/</a></p>
 <p>Install with the official instruction:</p>
-<div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:openshot.developers/ppa
-sudo apt update
-sudo apt install openshot-qt python3-openshot
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:openshot.developers/ppa
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openshot-qt<span class="w"> </span>python3-openshot
 </code></pre></div>
 <h2 id="peek">Peek<a class="headerlink" href="#peek" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/phw/peek">homepage</a>, easy to use, can convert to gif.</p>
 <h2 id="planner">Planner<a class="headerlink" href="#planner" title="Permanent link">&para;</a></h2>
 <p>follow instruction in https://flathub.org/apps/details/com.github.alainm23.planner</p>
 <p>first of all, configure flatpak</p>
-<div class="highlight"><pre><span></span><code>sudo apt install flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>flatpak
+flatpak<span class="w"> </span>remote-add<span class="w"> </span>--if-not-exists<span class="w"> </span>flathub<span class="w"> </span>https://flathub.org/repo/flathub.flatpakrepo
 </code></pre></div>
 <p>then install planner via</p>
-<div class="highlight"><pre><span></span><code>flatpak install flathub com.github.alainm23.planner
+<div class="highlight"><pre><span></span><code>flatpak<span class="w"> </span>install<span class="w"> </span>flathub<span class="w"> </span>com.github.alainm23.planner
 </code></pre></div>
 <p>run it by</p>
-<div class="highlight"><pre><span></span><code>flatpak run com.github.alainm23.planner
+<div class="highlight"><pre><span></span><code>flatpak<span class="w"> </span>run<span class="w"> </span>com.github.alainm23.planner
 </code></pre></div>
 <h2 id="rhythmbox">Rhythmbox<a class="headerlink" href="#rhythmbox" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
@@ -4256,24 +4256,24 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 </ul>
 </div>
 <p>右键似乎可以修改歌曲的 properties，其中包括 artist，album，但是却不能编辑，然后<a href="https://askubuntu.com/questions/612711/rhythmbox-cannot-edit-properties">查了一下</a>，是权限问题，</p>
-<div class="highlight"><pre><span></span><code>chmod u+w CloudMusic/ -R
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>u+w<span class="w"> </span>CloudMusic/<span class="w"> </span>-R
 </code></pre></div>
 <p>where more details about <code>u+w</code> can be found in the manual.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p><code>exiftool music.mp3</code> 可以查看 meta info，而且可以修改。</p>
 </div>
-<div class="highlight"><pre><span></span><code>$ man chmod
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>man<span class="w"> </span>chmod
 
-The format of a symbolic mode is <span class="o">[</span>ugoa...<span class="o">][[</span>-+<span class="o">=][</span>perms...<span class="o">]</span>...<span class="o">]</span>, where perms  is
-either  zero  or  more letters from the <span class="nb">set</span> rwxXst, or a single letter from the
-<span class="nb">set</span> ugo.  Multiple symbolic modes can be given, separated by commas.
+The<span class="w"> </span>format<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>symbolic<span class="w"> </span>mode<span class="w"> </span>is<span class="w"> </span><span class="o">[</span>ugoa...<span class="o">][[</span>-+<span class="o">=][</span>perms...<span class="o">]</span>...<span class="o">]</span>,<span class="w"> </span>where<span class="w"> </span>perms<span class="w">  </span>is
+either<span class="w">  </span>zero<span class="w">  </span>or<span class="w">  </span>more<span class="w"> </span>letters<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span><span class="nb">set</span><span class="w"> </span>rwxXst,<span class="w"> </span>or<span class="w"> </span>a<span class="w"> </span>single<span class="w"> </span>letter<span class="w"> </span>from<span class="w"> </span>the
+<span class="nb">set</span><span class="w"> </span>ugo.<span class="w">  </span>Multiple<span class="w"> </span>symbolic<span class="w"> </span>modes<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>given,<span class="w"> </span>separated<span class="w"> </span>by<span class="w"> </span>commas.
 
-A combination of the letters ugoa controls which users<span class="s1">&#39; access to the file will</span>
-<span class="s1">be  changed:  the  user  who  owns it (u), other users in the file&#39;</span>s group <span class="o">(</span>g<span class="o">)</span>,
-other users not <span class="k">in</span> the file<span class="err">&#39;</span>s group <span class="o">(</span>o<span class="o">)</span>, or all users <span class="o">(</span>a<span class="o">)</span>.  If  none  of  these
-are  given,  the  effect  is as <span class="k">if</span> <span class="o">(</span>a<span class="o">)</span> were given, but bits that are <span class="nb">set</span> <span class="k">in</span> the
-<span class="nb">umask</span> are not affected.
+A<span class="w"> </span>combination<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>letters<span class="w"> </span>ugoa<span class="w"> </span>controls<span class="w"> </span>which<span class="w"> </span>users<span class="s1">&#39; access to the file will</span>
+<span class="s1">be  changed:  the  user  who  owns it (u), other users in the file&#39;</span>s<span class="w"> </span>group<span class="w"> </span><span class="o">(</span>g<span class="o">)</span>,
+other<span class="w"> </span>users<span class="w"> </span>not<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>file<span class="err">&#39;</span>s<span class="w"> </span>group<span class="w"> </span><span class="o">(</span>o<span class="o">)</span>,<span class="w"> </span>or<span class="w"> </span>all<span class="w"> </span>users<span class="w"> </span><span class="o">(</span>a<span class="o">)</span>.<span class="w">  </span>If<span class="w">  </span>none<span class="w">  </span>of<span class="w">  </span>these
+are<span class="w">  </span>given,<span class="w">  </span>the<span class="w">  </span>effect<span class="w">  </span>is<span class="w"> </span>as<span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>a<span class="o">)</span><span class="w"> </span>were<span class="w"> </span>given,<span class="w"> </span>but<span class="w"> </span>bits<span class="w"> </span>that<span class="w"> </span>are<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>the
+<span class="nb">umask</span><span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>affected.
 </code></pre></div>
 <p>但是对 <code>.wav</code> 文件仍不能编辑 properties，后来才知道应该是 wav 不支持 tag</p>
 <blockquote>
@@ -4281,23 +4281,23 @@ are  given,  the  effect  is as <span class="k">if</span> <span class="o">(</spa
 </blockquote>
 <p>但是还是有方法来修改的，比如 <a href="https://www.quora.com/How-do-I-edit-a-metadata-in-a-WAV-file">How do I edit a metadata in a WAV file?</a></p>
 <p>于是我尝试了 <a href="https://kid3.kde.org/">kid3</a></p>
-<div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:ufleisch/kid3
-sudo apt-get update
-sudo apt-get install kid3     <span class="c1"># KDE users</span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:ufleisch/kid3
+sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>kid3<span class="w">     </span><span class="c1"># KDE users</span>
 </code></pre></div>
 <p>一开始觉得 <code>kid3-cli</code> 足够了，但是试了一下感觉学习成本太高，索性换回 kde 版本的。</p>
 <p>但是似乎在 <code>kid3</code> 中修改完并没有信息，只是会把删去的 genre 信息变为 unknown。</p>
 <h4 id="wav-mp3">wav -&gt; mp3<a class="headerlink" href="#wav-mp3" title="Permanent link">&para;</a></h4>
 <p>另一个方法便是直接将 wav 转换成 mp3，注意到如果直接用 <code>ls</code> + <code>xargs</code> </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># keep old extension</span>
-ls -1 <span class="p">|</span> grep wav <span class="p">|</span> head -1 <span class="p">|</span> xargs -I <span class="o">{}</span> ffmpeg -i <span class="o">{}</span> <span class="o">{}</span>.mp3
+ls<span class="w"> </span>-1<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>wav<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>ffmpeg<span class="w"> </span>-i<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="o">{}</span>.mp3
 </code></pre></div>
 <p>则文件名后缀不是很好直接换掉，不能直接对 <code>{}</code> 进行操作，</p>
-<div class="highlight"><pre><span></span><code>find . -name <span class="s2">&quot;*.wav&quot;</span> -exec sh -c <span class="s1">&#39;ffmpeg -i &quot;$1&quot; &quot;${1%.*}.mp3&quot;&#39;</span> sh <span class="o">{}</span> <span class="se">\;</span>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.wav&quot;</span><span class="w"> </span>-exec<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;ffmpeg -i &quot;$1&quot; &quot;${1%.*}.mp3&quot;&#39;</span><span class="w"> </span>sh<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
 </code></pre></div>
 <p>参考 <a href="https://superuser.com/questions/1426601/how-to-remove-extension-from-pathname-passed-as-in-find-exec"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>, 其实有点相当于把 <code>{}</code> 在传进去然后就可以用 <code>$1</code> 来表示。</p>
 <p>但是重命名完之后，Rhythmbox 左侧出现一个 Missing Files 的文件夹，里面即删掉的 <code>.wav</code> 文件路径。退出然后删掉 <code>rhythmdb.xml</code> 再打开即可，参考 <a href="https://www.chalk-ridge.com/is-rhythmbox-missing-music-files-heres-a-simple-fix/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
-<div class="highlight"><pre><span></span><code>~/.local/share/rhythmbox$ mv rhythmdb.xml rhythmdb.xml.old
+<div class="highlight"><pre><span></span><code>~/.local/share/rhythmbox$<span class="w"> </span>mv<span class="w"> </span>rhythmdb.xml<span class="w"> </span>rhythmdb.xml.old
 </code></pre></div>
 <p>所以看上去路径是直接写入 <code>.xml</code> 文件中，所以即便两个不同的路径指向同一个文件夹，也会被视为不同文件夹，于是便能解释为什么相同音乐文件被重复导入。</p>
 <h2 id="synergy">Synergy<a class="headerlink" href="#synergy" title="Permanent link">&para;</a></h2>
@@ -4312,7 +4312,7 @@ ls -1 <span class="p">|</span> grep wav <span class="p">|</span> head -1 <span c
 <p>Then we can lock the screen after clicking this shortcut, but currently no associated hotkey. Right click to edit the properties, there is a shortcut key, which by default assumes the key starts with <code>Ctrl + Alt</code>, so just press the remaining key, say <code>L</code>. However, <code>Ctrl + Alt + L</code> does not work. </p>
 <p>Instead, <code>Ctrl + Alt + 2</code> works.</p>
 <p>Then back to the host configuration. Bind the follow two keys,</p>
-<div class="highlight"><pre><span></span><code>keystroke<span class="o">(</span>Control+Alt+l<span class="o">)</span> <span class="o">=</span> keystroke<span class="o">(</span>Alt+Control+2,stapc220<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>keystroke<span class="o">(</span>Control+Alt+l<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>keystroke<span class="o">(</span>Alt+Control+2,stapc220<span class="o">)</span>
 </code></pre></div>
 <p>then I can lock the screen of client via <code>Ctrl+Alt+l</code>. </p>
 <p>Since the above binding can specify the machine, I am thinking it might work if I bind <code>Ctrl+Alt+l</code> to <code>Meta+l</code> on the host. However, it failed, and it causes the screen of client cannot be locked.</p>
@@ -4332,11 +4332,11 @@ ls -1 <span class="p">|</span> grep wav <span class="p">|</span> head -1 <span c
 <li>hide hostname, <code>weiya@weiya-ThinkPad-T460p:</code></li>
 </ul>
 <p>edit the following line in the <code>.bashrc</code> as follows</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$color_prompt</span><span class="s2">&quot;</span> <span class="o">=</span> yes <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="c1">#PS1=&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &#39;</span>
-    <span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;\[\033[01;34m\]\w\[\033[00m\]\$ &#39;</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$color_prompt</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>yes<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="c1">#PS1=&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &#39;</span>
+<span class="w">    </span><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;\[\033[01;34m\]\w\[\033[00m\]\$ &#39;</span>
 <span class="k">else</span>
-    <span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;</span>
+<span class="w">    </span><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;</span>
 <span class="k">fi</span>
 </code></pre></div>
 <p>before hide and after hide </p>
@@ -4360,9 +4360,9 @@ ls -1 <span class="p">|</span> grep wav <span class="p">|</span> head -1 <span c
 </div>
 <p>最近小伙伴们在讨论为什么 Eesther 群发的邮件的 <code>To</code> 是她自己的邮箱。通过 <code>More &gt; View Source</code> 查看邮件源码时发现，有个 <code>Delivered-To</code> 字段，恰好是 grad 的邮箱。于是猜想怎么实现这种效果，bcc？</p>
 <p>于是简单做了个实验，从 A 邮箱发给 B 并密送给 C</p>
-<div class="highlight"><pre><span></span><code>From: A
-TO: B
-Bcc: C
+<div class="highlight"><pre><span></span><code>From:<span class="w"> </span>A
+TO:<span class="w"> </span>B
+Bcc:<span class="w"> </span>C
 </code></pre></div>
 <p>在 B 端查看源码发现只有 <code>TO: B</code>，而在 C 端既有 <code>Delivered-To: C</code>，也有 <code>TO: B</code>。</p>
 <p>所以 Esther 一种可能的原因是在 bcc 中输入 grad 的邮箱，并发送给自己。但感觉这样很奇怪，可能有其它自动设置，具体不得而知。关于 <code>Delivered-To</code> 的讨论可另见 <a href="https://serverfault.com/questions/796913/how-can-the-to-and-delivered-to-fields-in-an-email-i-received-be-different"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
@@ -4376,7 +4376,7 @@ Bcc: C
 <p>Setting a proxy for the thunderbird is quite straigtforward, but not all mail accounts need the proxy, only gmail in my case. I am considering if it is possible to set up a proxy for gmail separately. Then I found that setting proxy by PAC file might work inspired by <a href="https://support.google.com/mail/forum/AAAAK7un8RUCGQj5uPgJoo">Gmail imap/smtp domains to connect via proxy</a>, since PAC file can customize the visited url.</p>
 <p>Then I need to learn <a href="https://findproxyforurl.com/example-pac-file/">how to write a PAC file</a>, although later I directly export the rules written in SwitchyOmega to a PAC file.</p>
 <p>Once PAC is done, I need to write its location url, seems impossible to directly write a local path. One easy way is to open port 80 to access my laptop, which maybe need apache or nginx, but both of them are overqualified. A simple way is</p>
-<div class="highlight"><pre><span></span><code>sudo python -m SimpleHTTPServer <span class="m">80</span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>SimpleHTTPServer<span class="w"> </span><span class="m">80</span>
 </code></pre></div>
 <p>found in<a href="https://askubuntu.com/questions/646293/open-port-80-on-ubuntu-server">Open port 80 on Ubuntu server</a></p>
 <h3 id="upgrade-68-to-78">Upgrade 68 to 78<a class="headerlink" href="#upgrade-68-to-78" title="Permanent link">&para;</a></h3>
@@ -4387,7 +4387,7 @@ Bcc: C
 <p>将验证方法改为 <code>Oauth2</code>，然后重启便跳出了熟悉的登录界面，大功告成！</p>
 <p>不过有个问题是，这两个版本是同时存在的，profile 是不共用的，我如果要用 78，还需要把其他邮箱重新设置一遍，已经订阅过的 feeds。此处应有<a href="https://askubuntu.com/questions/1280743/how-to-import-my-thunderbird-settings-from-thunderbird-68-to-thunderbird-78">简单方法</a>，</p>
 <p>关闭所有 thunderbird，然后启动 78 时加上 <code>-Profilemanager</code></p>
-<div class="highlight"><pre><span></span><code>thunderbird -Profilemanager
+<div class="highlight"><pre><span></span><code>thunderbird<span class="w"> </span>-Profilemanager
 </code></pre></div>
 <p>这时会要求选择 profile，只需要选择 68 对应的 profile 就好了。选好之后，再重新配置下学校邮箱的，则大功告成！</p>
 <h3 id="train-adaptive-junk-filter">Train adaptive junk filter<a class="headerlink" href="#train-adaptive-junk-filter" title="Permanent link">&para;</a></h3>
@@ -4419,17 +4419,17 @@ Bcc: C
 <p>详见 <a href="https://code.visualstudio.com/docs/supporting/faq#_resolving-shell-environment-is-slow-error-warning">Resolving Shell Environment is Slow (Error, Warning)</a></p>
 <p>只是按照其提示检查了 <code>~/.bashrc</code>，没有问题。</p>
 <p>然后试着在命令行中输入 <code>code</code> 启动，此时试图打开 terminal 并没有上述信息弹出，然而 terminal 还是无法打开，在开启新 terminal 那里可以选择 log，所以当我新开一个 terminal 时，发现同时弹出下面错误消息，</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="m">2021</span>-03-11 <span class="m">10</span>:40:29.231<span class="o">]</span> <span class="o">[</span>renderer1<span class="o">]</span> <span class="o">[</span>error<span class="o">]</span> A system error occurred <span class="o">(</span>EACCES: permission denied, open <span class="s1">&#39;/proc/1/environ&#39;</span><span class="o">)</span>: Error: EACCES: permission denied, open <span class="s1">&#39;/proc/1/environ&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="m">2021</span>-03-11<span class="w"> </span><span class="m">10</span>:40:29.231<span class="o">]</span><span class="w"> </span><span class="o">[</span>renderer1<span class="o">]</span><span class="w"> </span><span class="o">[</span>error<span class="o">]</span><span class="w"> </span>A<span class="w"> </span>system<span class="w"> </span>error<span class="w"> </span>occurred<span class="w"> </span><span class="o">(</span>EACCES:<span class="w"> </span>permission<span class="w"> </span>denied,<span class="w"> </span>open<span class="w"> </span><span class="s1">&#39;/proc/1/environ&#39;</span><span class="o">)</span>:<span class="w"> </span>Error:<span class="w"> </span>EACCES:<span class="w"> </span>permission<span class="w"> </span>denied,<span class="w"> </span>open<span class="w"> </span><span class="s1">&#39;/proc/1/environ&#39;</span>
 </code></pre></div>
 <p>然后发现在 <a href="https://github.com/microsoft/vscode/issues/76542#issuecomment-589768136">terminal.integrated.inheritEnv breaks integrated terminal #76542</a> 中提到了 enable terminal.integrated.inheritEnv 就好。</p>
 <p>打开 setting，然后直接输入 <code>@modified</code> 快速进入更改过的设置，其中便有 inheritEnv 这一项，enable 之后重新在命令行中启动 code，此时可以打开 terminal，但是出现了以下信息</p>
-<div class="highlight"><pre><span></span><code>$ bind: Address already <span class="k">in</span> use
-channel_setup_fwd_listener_tcpip: cannot listen to port: <span class="m">18888</span>
-bind: Address already <span class="k">in</span> use
-channel_setup_fwd_listener_tcpip: cannot listen to port: <span class="m">18889</span>
-Could not request <span class="nb">local</span> forwarding.
-Warning: remote port forwarding failed <span class="k">for</span> listen port <span class="m">30013</span>
-Warning: remote port forwarding failed <span class="k">for</span> listen port <span class="m">24800</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bind:<span class="w"> </span>Address<span class="w"> </span>already<span class="w"> </span><span class="k">in</span><span class="w"> </span>use
+channel_setup_fwd_listener_tcpip:<span class="w"> </span>cannot<span class="w"> </span>listen<span class="w"> </span>to<span class="w"> </span>port:<span class="w"> </span><span class="m">18888</span>
+bind:<span class="w"> </span>Address<span class="w"> </span>already<span class="w"> </span><span class="k">in</span><span class="w"> </span>use
+channel_setup_fwd_listener_tcpip:<span class="w"> </span>cannot<span class="w"> </span>listen<span class="w"> </span>to<span class="w"> </span>port:<span class="w"> </span><span class="m">18889</span>
+Could<span class="w"> </span>not<span class="w"> </span>request<span class="w"> </span><span class="nb">local</span><span class="w"> </span>forwarding.
+Warning:<span class="w"> </span>remote<span class="w"> </span>port<span class="w"> </span>forwarding<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>listen<span class="w"> </span>port<span class="w"> </span><span class="m">30013</span>
+Warning:<span class="w"> </span>remote<span class="w"> </span>port<span class="w"> </span>forwarding<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>listen<span class="w"> </span>port<span class="w"> </span><span class="m">24800</span>
 </code></pre></div>
 <p>这是为了<a href="../asAserver/#boot-into-text-mode">启动时自动登录服务器转发端口的程序</a>，这时意识到 vscode 在启动时，应该会调用 <code>.profile</code>，但是我把自动连接服务器的程序写进了 <code>.profile</code>，解决办法便是复制一份 <code>.profile</code> 至 <code>.bash_profile</code>, 只在后者中保留自动登录程序，因为<a href="software.md/#_8">启动时后者调用顺序更高</a>。</p>
 <blockquote>
@@ -4439,16 +4439,16 @@ source: <a href="https://unix.stackexchange.com/questions/45684/what-is-the-diff
 <p>然而！似乎 vscode 启动时还是会调用 <code>.bash_profile</code>，只有在 <code>.bash_profile</code> 将自动登录程序去掉才能打开 terminal。</p>
 <p>可能原因应该是 terminal 实际上在运行 <code>/bin/bash</code> 程序，而打开 bash 其还是按照正常打开顺序来的，如 <code>man bash</code> 中所说，</p>
 <div class="highlight"><pre><span></span><code>--noprofile
-       Do  not <span class="nb">read</span> either the system-wide startup file /etc/profile or any of the personal initialization files ~/.bash_profile, ~/.bash_login, or ~/.profile.  By default,
-       bash reads these files when it is invoked as a login shell <span class="o">(</span>see INVOCATION below<span class="o">)</span>.
+<span class="w">       </span>Do<span class="w">  </span>not<span class="w"> </span><span class="nb">read</span><span class="w"> </span>either<span class="w"> </span>the<span class="w"> </span>system-wide<span class="w"> </span>startup<span class="w"> </span>file<span class="w"> </span>/etc/profile<span class="w"> </span>or<span class="w"> </span>any<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>personal<span class="w"> </span>initialization<span class="w"> </span>files<span class="w"> </span>~/.bash_profile,<span class="w"> </span>~/.bash_login,<span class="w"> </span>or<span class="w"> </span>~/.profile.<span class="w">  </span>By<span class="w"> </span>default,
+<span class="w">       </span>bash<span class="w"> </span>reads<span class="w"> </span>these<span class="w"> </span>files<span class="w"> </span>when<span class="w"> </span>it<span class="w"> </span>is<span class="w"> </span>invoked<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>login<span class="w"> </span>shell<span class="w"> </span><span class="o">(</span>see<span class="w"> </span>INVOCATION<span class="w"> </span>below<span class="o">)</span>.
 </code></pre></div>
 <p>干脆换一种自启动方式，<a href="https://askubuntu.com/questions/814/how-to-run-scripts-on-start-up">How to run scripts on start up?</a></p>
 <p>通过 <code>crontab -e</code> 设置自启动任务，</p>
-<div class="highlight"><pre><span></span><code>@reboot sh /home/weiya/rssh4lab.sh <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>@reboot<span class="w"> </span>sh<span class="w"> </span>/home/weiya/rssh4lab.sh<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
 <p>然而第二次重启时，并不起作用，查看　<code>/var/log/syslog</code>，原因在于网络连接在于 ssh 之后</p>
-<div class="highlight"><pre><span></span><code>Mar <span class="m">12</span> <span class="m">09</span>:14:23 weiya-ThinkPad-T460p CRON<span class="o">[</span><span class="m">1464</span><span class="o">]</span>: <span class="o">(</span>weiya<span class="o">)</span> CMD <span class="o">(</span>sh /home/weiya/rssh4lab.sh <span class="p">&amp;</span><span class="o">)</span>
-Mar <span class="m">12</span> <span class="m">09</span>:19:37 weiya-ThinkPad-T460p NetworkManager<span class="o">[</span><span class="m">1342</span><span class="o">]</span>: &lt;info&gt;  <span class="o">[</span><span class="m">1615511977</span>.5232<span class="o">]</span> device <span class="o">(</span>wlp3s0<span class="o">)</span>: Activation: <span class="o">(</span>wifi<span class="o">)</span> Stage <span class="m">2</span> of <span class="m">5</span> <span class="o">(</span>Device Configure<span class="o">)</span> successful.  Connected to wireless network <span class="s1">&#39;CUHK1x&#39;</span>.
+<div class="highlight"><pre><span></span><code>Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">09</span>:14:23<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>CRON<span class="o">[</span><span class="m">1464</span><span class="o">]</span>:<span class="w"> </span><span class="o">(</span>weiya<span class="o">)</span><span class="w"> </span>CMD<span class="w"> </span><span class="o">(</span>sh<span class="w"> </span>/home/weiya/rssh4lab.sh<span class="w"> </span><span class="p">&amp;</span><span class="o">)</span>
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">09</span>:19:37<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>NetworkManager<span class="o">[</span><span class="m">1342</span><span class="o">]</span>:<span class="w"> </span>&lt;info&gt;<span class="w">  </span><span class="o">[</span><span class="m">1615511977</span>.5232<span class="o">]</span><span class="w"> </span>device<span class="w"> </span><span class="o">(</span>wlp3s0<span class="o">)</span>:<span class="w"> </span>Activation:<span class="w"> </span><span class="o">(</span>wifi<span class="o">)</span><span class="w"> </span>Stage<span class="w"> </span><span class="m">2</span><span class="w"> </span>of<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">(</span>Device<span class="w"> </span>Configure<span class="o">)</span><span class="w"> </span>successful.<span class="w">  </span>Connected<span class="w"> </span>to<span class="w"> </span>wireless<span class="w"> </span>network<span class="w"> </span><span class="s1">&#39;CUHK1x&#39;</span>.
 </code></pre></div>
 <p>接下来有两个策略，参考 <a href="https://unix.stackexchange.com/questions/57852/how-do-i-start-a-cron-job-1-min-after-reboot">How do I start a Cron job 1 min after @reboot?</a></p>
 <ul>
@@ -4458,47 +4458,47 @@ Mar <span class="m">12</span> <span class="m">09</span>:19:37 weiya-ThinkPad-T46
 <p>另外，同时也把 ssh 替换成 autossh，然后又回到之前<a href="https://askubuntu.com/questions/814/how-to-run-scripts-on-start-up">推荐 crontab 的问题中</a>，采用第一种 <code>upstart</code> 方法，因为其可以在用户层面进行设置，但是设置完毕后在 syslog 中都没有相关运行命令，然后发现这种方法已经过时了。</p>
 <p>既然 upstart 有 system 和 user 两个层面的方法，那么 systemd 应当也可以在用户层面进行设置，于是我找到了这个回答，<a href="https://superuser.com/questions/1037466/how-to-start-a-systemd-service-after-user-login-and-stop-it-before-user-logout">How to start a systemd service after user login and stop it before user logout</a>，这个方法在这个回答，<a href="https://askubuntu.com/a/719157">How to run scripts on start up?</a>，中也提到了 。</p>
 <p>已经看到成功的希望了，不过还是报错了，</p>
-<div class="highlight"><pre><span></span><code>$ vi /var/log/syslog
-Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Starting ssh to lab with port forward...
-Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Started ssh to lab with port forward.
-Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Reached target Default.
-Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Startup finished <span class="k">in</span> 70ms.
-Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p rssh4lab.sh<span class="o">[</span><span class="m">2722</span><span class="o">]</span>: ssh: connect to host XX.XX.XX.XX port <span class="m">22</span>: Network is unreachable
-Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2724</span><span class="o">]</span>: ssh exited prematurely with status <span class="m">255</span><span class="p">;</span> autossh exiting
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>vi<span class="w"> </span>/var/log/syslog
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:00:03<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>:<span class="w"> </span>Starting<span class="w"> </span>ssh<span class="w"> </span>to<span class="w"> </span>lab<span class="w"> </span>with<span class="w"> </span>port<span class="w"> </span>forward...
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:00:03<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>:<span class="w"> </span>Started<span class="w"> </span>ssh<span class="w"> </span>to<span class="w"> </span>lab<span class="w"> </span>with<span class="w"> </span>port<span class="w"> </span>forward.
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:00:03<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>:<span class="w"> </span>Reached<span class="w"> </span>target<span class="w"> </span>Default.
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:00:03<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>:<span class="w"> </span>Startup<span class="w"> </span>finished<span class="w"> </span><span class="k">in</span><span class="w"> </span>70ms.
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:00:03<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>rssh4lab.sh<span class="o">[</span><span class="m">2722</span><span class="o">]</span>:<span class="w"> </span>ssh:<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>host<span class="w"> </span>XX.XX.XX.XX<span class="w"> </span>port<span class="w"> </span><span class="m">22</span>:<span class="w"> </span>Network<span class="w"> </span>is<span class="w"> </span>unreachable
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:00:03<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2724</span><span class="o">]</span>:<span class="w"> </span>ssh<span class="w"> </span>exited<span class="w"> </span>prematurely<span class="w"> </span>with<span class="w"> </span>status<span class="w"> </span><span class="m">255</span><span class="p">;</span><span class="w"> </span>autossh<span class="w"> </span>exiting
 </code></pre></div>
 <p>查看 <code>autossh</code> 的帮助文档发现，</p>
 <div class="highlight"><pre><span></span><code>AUTOSSH_GATETIME
-        Specifies how long ssh must be up before we consider it a successful connection. The default is <span class="m">30</span> seconds. Note
-        that <span class="k">if</span> AUTOSSH_GATETIME is <span class="nb">set</span> to <span class="m">0</span>, <span class="k">then</span> not only is the gatetime behaviour turned off, but autossh also ignores
-        the first run failure of ssh. This may be useful when running autossh at boot.
+<span class="w">        </span>Specifies<span class="w"> </span>how<span class="w"> </span>long<span class="w"> </span>ssh<span class="w"> </span>must<span class="w"> </span>be<span class="w"> </span>up<span class="w"> </span>before<span class="w"> </span>we<span class="w"> </span>consider<span class="w"> </span>it<span class="w"> </span>a<span class="w"> </span>successful<span class="w"> </span>connection.<span class="w"> </span>The<span class="w"> </span>default<span class="w"> </span>is<span class="w"> </span><span class="m">30</span><span class="w"> </span>seconds.<span class="w"> </span>Note
+<span class="w">        </span>that<span class="w"> </span><span class="k">if</span><span class="w"> </span>AUTOSSH_GATETIME<span class="w"> </span>is<span class="w"> </span><span class="nb">set</span><span class="w"> </span>to<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="k">then</span><span class="w"> </span>not<span class="w"> </span>only<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>gatetime<span class="w"> </span>behaviour<span class="w"> </span>turned<span class="w"> </span>off,<span class="w"> </span>but<span class="w"> </span>autossh<span class="w"> </span>also<span class="w"> </span>ignores
+<span class="w">        </span>the<span class="w"> </span>first<span class="w"> </span>run<span class="w"> </span>failure<span class="w"> </span>of<span class="w"> </span>ssh.<span class="w"> </span>This<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>useful<span class="w"> </span>when<span class="w"> </span>running<span class="w"> </span>autossh<span class="w"> </span>at<span class="w"> </span>boot.
 </code></pre></div>
 <p>而 <code>-f</code> 可以达到这个效果，所以试着加上 <code>-f</code>,便成功了！</p>
 <p>查看相关运行信息，</p>
-<div class="highlight"><pre><span></span><code>$ journalctl --user -u ssh4lab.service
--- Logs begin at Thu <span class="m">2020</span>-12-24 <span class="m">01</span>:44:48 CST, end at Fri <span class="m">2021</span>-03-12 <span class="m">12</span>:33:18 CST. --
-Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2724</span><span class="o">]</span>: starting ssh <span class="o">(</span>count <span class="m">1</span><span class="o">)</span>
-Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2724</span><span class="o">]</span>: ssh child pid is <span class="m">2725</span>
-Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Starting ssh to lab with port forward...
-Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Started ssh to lab with port forward.
-Mar <span class="m">12</span> <span class="m">12</span>:00:03 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2724</span><span class="o">]</span>: ssh exited prematurely with status <span class="m">255</span><span class="p">;</span> autossh exiting
-Mar <span class="m">12</span> <span class="m">12</span>:09:11 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>: Stopped ssh to lab with port forward.
--- Reboot --
-Mar <span class="m">12</span> <span class="m">12</span>:10:29 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: starting ssh <span class="o">(</span>count <span class="m">1</span><span class="o">)</span>
-Mar <span class="m">12</span> <span class="m">12</span>:10:29 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh child pid is <span class="m">2650</span>
-Mar <span class="m">12</span> <span class="m">12</span>:10:29 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2634</span><span class="o">]</span>: Starting ssh to lab with port forward...
-Mar <span class="m">12</span> <span class="m">12</span>:10:29 weiya-ThinkPad-T460p systemd<span class="o">[</span><span class="m">2634</span><span class="o">]</span>: Started ssh to lab with port forward.
-Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh exited with error status <span class="m">255</span><span class="p">;</span> restarting ssh
-Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: starting ssh <span class="o">(</span>count <span class="m">2</span><span class="o">)</span>
-Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh child pid is <span class="m">2655</span>
-Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh exited with error status <span class="m">255</span><span class="p">;</span> restarting ssh
-Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: starting ssh <span class="o">(</span>count <span class="m">3</span><span class="o">)</span>
-Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh child pid is <span class="m">2656</span>
-Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh exited with error status <span class="m">255</span><span class="p">;</span> restarting ssh
-Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: starting ssh <span class="o">(</span>count <span class="m">4</span><span class="o">)</span>
-Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh child pid is <span class="m">2657</span>
-Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh exited with error status <span class="m">255</span><span class="p">;</span> restarting ssh
-Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: starting ssh <span class="o">(</span>count <span class="m">5</span><span class="o">)</span>
-Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T460p autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>: ssh child pid is <span class="m">2658</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>journalctl<span class="w"> </span>--user<span class="w"> </span>-u<span class="w"> </span>ssh4lab.service
+--<span class="w"> </span>Logs<span class="w"> </span>begin<span class="w"> </span>at<span class="w"> </span>Thu<span class="w"> </span><span class="m">2020</span>-12-24<span class="w"> </span><span class="m">01</span>:44:48<span class="w"> </span>CST,<span class="w"> </span>end<span class="w"> </span>at<span class="w"> </span>Fri<span class="w"> </span><span class="m">2021</span>-03-12<span class="w"> </span><span class="m">12</span>:33:18<span class="w"> </span>CST.<span class="w"> </span>--
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:00:03<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2724</span><span class="o">]</span>:<span class="w"> </span>starting<span class="w"> </span>ssh<span class="w"> </span><span class="o">(</span>count<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:00:03<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2724</span><span class="o">]</span>:<span class="w"> </span>ssh<span class="w"> </span>child<span class="w"> </span>pid<span class="w"> </span>is<span class="w"> </span><span class="m">2725</span>
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:00:03<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>:<span class="w"> </span>Starting<span class="w"> </span>ssh<span class="w"> </span>to<span class="w"> </span>lab<span class="w"> </span>with<span class="w"> </span>port<span class="w"> </span>forward...
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:00:03<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>:<span class="w"> </span>Started<span class="w"> </span>ssh<span class="w"> </span>to<span class="w"> </span>lab<span class="w"> </span>with<span class="w"> </span>port<span class="w"> </span>forward.
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:00:03<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2724</span><span class="o">]</span>:<span class="w"> </span>ssh<span class="w"> </span>exited<span class="w"> </span>prematurely<span class="w"> </span>with<span class="w"> </span>status<span class="w"> </span><span class="m">255</span><span class="p">;</span><span class="w"> </span>autossh<span class="w"> </span>exiting
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:09:11<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>systemd<span class="o">[</span><span class="m">2710</span><span class="o">]</span>:<span class="w"> </span>Stopped<span class="w"> </span>ssh<span class="w"> </span>to<span class="w"> </span>lab<span class="w"> </span>with<span class="w"> </span>port<span class="w"> </span>forward.
+--<span class="w"> </span>Reboot<span class="w"> </span>--
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:29<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>starting<span class="w"> </span>ssh<span class="w"> </span><span class="o">(</span>count<span class="w"> </span><span class="m">1</span><span class="o">)</span>
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:29<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>ssh<span class="w"> </span>child<span class="w"> </span>pid<span class="w"> </span>is<span class="w"> </span><span class="m">2650</span>
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:29<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>systemd<span class="o">[</span><span class="m">2634</span><span class="o">]</span>:<span class="w"> </span>Starting<span class="w"> </span>ssh<span class="w"> </span>to<span class="w"> </span>lab<span class="w"> </span>with<span class="w"> </span>port<span class="w"> </span>forward...
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:29<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>systemd<span class="o">[</span><span class="m">2634</span><span class="o">]</span>:<span class="w"> </span>Started<span class="w"> </span>ssh<span class="w"> </span>to<span class="w"> </span>lab<span class="w"> </span>with<span class="w"> </span>port<span class="w"> </span>forward.
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:30<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>ssh<span class="w"> </span>exited<span class="w"> </span>with<span class="w"> </span>error<span class="w"> </span>status<span class="w"> </span><span class="m">255</span><span class="p">;</span><span class="w"> </span>restarting<span class="w"> </span>ssh
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:30<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>starting<span class="w"> </span>ssh<span class="w"> </span><span class="o">(</span>count<span class="w"> </span><span class="m">2</span><span class="o">)</span>
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:30<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>ssh<span class="w"> </span>child<span class="w"> </span>pid<span class="w"> </span>is<span class="w"> </span><span class="m">2655</span>
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:30<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>ssh<span class="w"> </span>exited<span class="w"> </span>with<span class="w"> </span>error<span class="w"> </span>status<span class="w"> </span><span class="m">255</span><span class="p">;</span><span class="w"> </span>restarting<span class="w"> </span>ssh
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:30<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>starting<span class="w"> </span>ssh<span class="w"> </span><span class="o">(</span>count<span class="w"> </span><span class="m">3</span><span class="o">)</span>
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:30<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>ssh<span class="w"> </span>child<span class="w"> </span>pid<span class="w"> </span>is<span class="w"> </span><span class="m">2656</span>
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:30<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>ssh<span class="w"> </span>exited<span class="w"> </span>with<span class="w"> </span>error<span class="w"> </span>status<span class="w"> </span><span class="m">255</span><span class="p">;</span><span class="w"> </span>restarting<span class="w"> </span>ssh
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:30<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>starting<span class="w"> </span>ssh<span class="w"> </span><span class="o">(</span>count<span class="w"> </span><span class="m">4</span><span class="o">)</span>
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:30<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>ssh<span class="w"> </span>child<span class="w"> </span>pid<span class="w"> </span>is<span class="w"> </span><span class="m">2657</span>
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:30<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>ssh<span class="w"> </span>exited<span class="w"> </span>with<span class="w"> </span>error<span class="w"> </span>status<span class="w"> </span><span class="m">255</span><span class="p">;</span><span class="w"> </span>restarting<span class="w"> </span>ssh
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:30<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>starting<span class="w"> </span>ssh<span class="w"> </span><span class="o">(</span>count<span class="w"> </span><span class="m">5</span><span class="o">)</span>
+Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">12</span>:10:30<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>autossh<span class="o">[</span><span class="m">2649</span><span class="o">]</span>:<span class="w"> </span>ssh<span class="w"> </span>child<span class="w"> </span>pid<span class="w"> </span>is<span class="w"> </span><span class="m">2658</span>
 </code></pre></div>
 <p>其中 <code>reboot</code> 所在行上面的为没有添加 <code>-f</code> 选项时的日志，可以发现内容与上面查看 syslog的差不多，只不过没有那么全，比如没有指出 <code>Network is unreachable</code>，而后面添加了 <code>-f</code> 选项后，在失败重试若干次后，成功了！</p>
 <h2 id="w3m-command-line-browser">w3m: Command Line Browser<a class="headerlink" href="#w3m-command-line-browser" title="Permanent link">&para;</a></h2>
@@ -4524,13 +4524,13 @@ Mar <span class="m">12</span> <span class="m">12</span>:10:30 weiya-ThinkPad-T46
 <p><img alt="" src="https://user-images.githubusercontent.com/13688320/200734603-e0d41f2e-742b-4ff3-a75c-41c76aa58d0b.jpg" /></p>
 <p>但目前只登录了自己的手机 Mix2s，以及第三条的笔记本 T460P。后来发现 T460P 登录的微信因为移动硬盘写入原因无响应，最后只能 kill 掉。此时一个猜测便是这个 Windows 7 的记录很可能是因为机器挂了，在获取机器型号的时候，因为未知原因，只能得到 Win7，而非 T460P.</p>
 <p>在图中 win7 的时间戳 &ldquo;2022-11-04 17:35:26&rdquo; 搜索系统日志，发现移动硬盘的 IO error 刚好在那个时间点附近，</p>
-<div class="highlight"><pre><span></span><code>$ journalctl --since <span class="s2">&quot;2022-11-04 17:35&quot;</span> --until <span class="s2">&quot;2022-11-04 17:36&quot;</span> 
-Nov <span class="m">04</span> <span class="m">17</span>:35:23 weiya-ThinkPad-T460p ntfs-3g<span class="o">[</span><span class="m">2012449</span><span class="o">]</span>: ntfs_attr_pread_i: ntfs_pread failed: Input/output error
-Nov <span class="m">04</span> <span class="m">17</span>:35:23 weiya-ThinkPad-T460p ntfs-3g<span class="o">[</span><span class="m">2012449</span><span class="o">]</span>: ntfs_attr_pread error reading <span class="s1">&#39;/0WeChat/WeChat Files/wxid_***************/Msg/MicroMsg.db-wal&#39;</span> at offset <span class="m">974848</span>: <span class="m">4096</span> &lt;&gt; -1: Input/output error
-Nov <span class="m">04</span> <span class="m">17</span>:35:23 weiya-ThinkPad-T460p kernel: Buffer I/O error on dev sde1, logical block <span class="m">89552839</span>, async page <span class="nb">read</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>journalctl<span class="w"> </span>--since<span class="w"> </span><span class="s2">&quot;2022-11-04 17:35&quot;</span><span class="w"> </span>--until<span class="w"> </span><span class="s2">&quot;2022-11-04 17:36&quot;</span><span class="w"> </span>
+Nov<span class="w"> </span><span class="m">04</span><span class="w"> </span><span class="m">17</span>:35:23<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>ntfs-3g<span class="o">[</span><span class="m">2012449</span><span class="o">]</span>:<span class="w"> </span>ntfs_attr_pread_i:<span class="w"> </span>ntfs_pread<span class="w"> </span>failed:<span class="w"> </span>Input/output<span class="w"> </span>error
+Nov<span class="w"> </span><span class="m">04</span><span class="w"> </span><span class="m">17</span>:35:23<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>ntfs-3g<span class="o">[</span><span class="m">2012449</span><span class="o">]</span>:<span class="w"> </span>ntfs_attr_pread<span class="w"> </span>error<span class="w"> </span>reading<span class="w"> </span><span class="s1">&#39;/0WeChat/WeChat Files/wxid_***************/Msg/MicroMsg.db-wal&#39;</span><span class="w"> </span>at<span class="w"> </span>offset<span class="w"> </span><span class="m">974848</span>:<span class="w"> </span><span class="m">4096</span><span class="w"> </span>&lt;&gt;<span class="w"> </span>-1:<span class="w"> </span>Input/output<span class="w"> </span>error
+Nov<span class="w"> </span><span class="m">04</span><span class="w"> </span><span class="m">17</span>:35:23<span class="w"> </span>weiya-ThinkPad-T460p<span class="w"> </span>kernel:<span class="w"> </span>Buffer<span class="w"> </span>I/O<span class="w"> </span>error<span class="w"> </span>on<span class="w"> </span>dev<span class="w"> </span>sde1,<span class="w"> </span>logical<span class="w"> </span>block<span class="w"> </span><span class="m">89552839</span>,<span class="w"> </span>async<span class="w"> </span>page<span class="w"> </span><span class="nb">read</span>
 </code></pre></div>
 <p>再验证下 wine 里面是不是 Windows 7，首先运行 <code>winecfg</code> 跳出来的图形界面就有显示 Windows 7，也可以从配置文件中得到确认。</p>
-<div class="highlight"><pre><span></span><code>~/.wine32$ cat system.reg <span class="p">|</span> grep -n <span class="s2">&quot;Microsoft Windows&quot;</span>
+<div class="highlight"><pre><span></span><code>~/.wine32$<span class="w"> </span>cat<span class="w"> </span>system.reg<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;Microsoft Windows&quot;</span>
 <span class="m">995</span>:@<span class="o">=</span><span class="s2">&quot;Microsoft Windows Installer Message RPC&quot;</span>
 <span class="m">1028</span>:@<span class="o">=</span><span class="s2">&quot;Microsoft Windows Installer&quot;</span>
 <span class="m">31532</span>:@<span class="o">=</span><span class="s2">&quot;Microsoft Windows Installer&quot;</span>
@@ -4550,28 +4550,28 @@ Nov <span class="m">04</span> <span class="m">17</span>:35:23 weiya-ThinkPad-T46
 <ol>
 <li><a href="https://wiki.winehq.org/Ubuntu_zhcn">install WineHQ</a></li>
 </ol>
-<div class="highlight"><pre><span></span><code>The following packages have unmet dependencies:
- gstreamer1.0-plugins-good : Breaks: gstreamer1.0-plugins-ugly <span class="o">(</span>&lt; <span class="m">1</span>.13.1<span class="o">)</span> but <span class="m">1</span>.8.3-1ubuntu0.1 is to be installed
- winehq-stable : Depends: wine-stable <span class="o">(=</span> <span class="m">5</span>.0.0~bionic<span class="o">)</span>
-E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by held packages.
+<div class="highlight"><pre><span></span><code>The<span class="w"> </span>following<span class="w"> </span>packages<span class="w"> </span>have<span class="w"> </span>unmet<span class="w"> </span>dependencies:
+<span class="w"> </span>gstreamer1.0-plugins-good<span class="w"> </span>:<span class="w"> </span>Breaks:<span class="w"> </span>gstreamer1.0-plugins-ugly<span class="w"> </span><span class="o">(</span>&lt;<span class="w"> </span><span class="m">1</span>.13.1<span class="o">)</span><span class="w"> </span>but<span class="w"> </span><span class="m">1</span>.8.3-1ubuntu0.1<span class="w"> </span>is<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>installed
+<span class="w"> </span>winehq-stable<span class="w"> </span>:<span class="w"> </span>Depends:<span class="w"> </span>wine-stable<span class="w"> </span><span class="o">(=</span><span class="w"> </span><span class="m">5</span>.0.0~bionic<span class="o">)</span>
+E:<span class="w"> </span>Error,<span class="w"> </span>pkgProblemResolver::Resolve<span class="w"> </span>generated<span class="w"> </span>breaks,<span class="w"> </span>this<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>caused<span class="w"> </span>by<span class="w"> </span>held<span class="w"> </span>packages.
 </code></pre></div>
 <p>solution</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># (re)install gstreamer1.0-plugins-good and gstreamer1.0-plugins-ugly</span>
-sudo apt-get install gstreamer1.0-plugins-good
-sudo apt-get install gstreamer1.0-plugins-ugly
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>gstreamer1.0-plugins-good
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>gstreamer1.0-plugins-ugly
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>Error: winehq-stable : Depends: wine-stable <span class="o">(=</span> <span class="m">5</span>.0.0~bionic<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>Error:<span class="w"> </span>winehq-stable<span class="w"> </span>:<span class="w"> </span>Depends:<span class="w"> </span>wine-stable<span class="w"> </span><span class="o">(=</span><span class="w"> </span><span class="m">5</span>.0.0~bionic<span class="o">)</span>
 </code></pre></div>
 <p>It is due to <a href="https://forum.winehq.org/viewtopic.php?f=8&amp;t=32192">FAudio for Debian 10 and Ubuntu 18.04</a>, and</p>
 <blockquote>
 <p>The quickest and easiest way to satisfy the new dependency is to download and install both the i386 and amd64 libfaudio0 packages before attempting to upgrade or install a WineHQ package.</p>
 </blockquote>
 <p>seems does not work. I need to add the repository as suggested in <a href="https://nixytrix.com/error-winehq-stable-depends-wine-stable-5-0-0-bionic/">Error: winehq-stable : Depends: wine-stable (= 5.0.0~bionic)</a></p>
-<div class="highlight"><pre><span></span><code>curl -sL https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key <span class="p">|</span> sudo apt-key add -
-sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./&#39;</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sL<span class="w"> </span>https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
+sudo<span class="w"> </span>apt-add-repository<span class="w"> </span><span class="s1">&#39;deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./&#39;</span>
 </code></pre></div>
 <p>but seems not due to this, and follow the instruction in <a href="https://github.com/lutris/docs/blob/master/WineDependencies.md">docs/WineDependencies.md</a></p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libgnutls30:i386<span class="w"> </span>libldap-2.4-2:i386<span class="w"> </span>libgpg-error0:i386<span class="w"> </span>libxml2:i386<span class="w"> </span>libasound2-plugins:i386<span class="w"> </span>libsdl2-2.0-0:i386<span class="w"> </span>libfreetype6:i386<span class="w"> </span>libdbus-1-3:i386<span class="w"> </span>libsqlite3-0:i386
 </code></pre></div>
 <p>then the problem is solved. And continue to follow the steps in <a href="https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux">WeChat Desktop on Linux</a></p>
 <h3 id="reboot-wine">reboot wine<a class="headerlink" href="#reboot-wine" title="Permanent link">&para;</a></h3>
@@ -4579,8 +4579,8 @@ sudo apt-add-repository <span class="s1">&#39;deb https://download.opensuse.org/
 <ul>
 <li>use <code>wineboot</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ wineboot -s <span class="c1"># shutdown</span>
-$ wineboot -r <span class="c1"># restart</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>wineboot<span class="w"> </span>-s<span class="w"> </span><span class="c1"># shutdown</span>
+$<span class="w"> </span>wineboot<span class="w"> </span>-r<span class="w"> </span><span class="c1"># restart</span>
 </code></pre></div>
 <p>but it does not work, and it throws</p>
 <blockquote>
@@ -4619,14 +4619,14 @@ $ wineboot -r <span class="c1"># restart</span>
 <p class="admonition-title">Info</p>
 <p>&ldquo;.desktop&rdquo; 文件存放在 <code>~/.local/share/applications</code> 和 <code>/usr/share/applications</code>，而 <code>WeChat.desktop</code> 直接放在 <code>/home/weiya/Desktop</code>.</p>
 </div>
-<div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span> wine C:<span class="se">\\\\</span>windows<span class="se">\\\\</span>command<span class="se">\\\\</span>start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start<span class="se">\\</span> Menu/Programs/WeChat/WeChat.lnk
+<div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env<span class="w"> </span><span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span><span class="w"> </span>wine<span class="w"> </span>C:<span class="se">\\\\</span>windows<span class="se">\\\\</span>command<span class="se">\\\\</span>start.exe<span class="w"> </span>/Unix<span class="w"> </span>/home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start<span class="se">\\</span><span class="w"> </span>Menu/Programs/WeChat/WeChat.lnk
 </code></pre></div>
 <p>第一种尝试便是直接加上 <code>&amp; python3 /home/weiya/disable-wechat-shadow.py</code>，但是似乎当做了 wine 的 argument，这一点<a href="https://askubuntu.com/a/461495">@mango</a>也指出</p>
 <blockquote>
 <p>The <code>Exec</code> key must contain a command line. A command line consists of an executable program optionally followed by one or more arguments.</p>
 </blockquote>
 <p>第二种便是通过 <code>sh -c</code>，即</p>
-<div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span> sh -c <span class="s2">&quot;wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env<span class="w"> </span><span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span><span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py&quot;</span>
 </code></pre></div>
 <p>但是这个经常报出错误</p>
 <blockquote>
@@ -4638,7 +4638,7 @@ $ wineboot -r <span class="c1"># restart</span>
 <p>一般地，<code>sh -c "command 1; command 2"</code>可以实现在 launcher 中同时运行两个命令，参考 <a href="https://askubuntu.com/questions/60379/how-to-combine-two-commands-as-a-launcher">How to combine two commands as a launcher?</a></p>
 </div>
 <p>后来跑去研究下 <code>wine</code> 的命令，想弄清楚那一长串 argument 是什么意思，才明白这应该是句 <code>wine start</code>，而 <code>/Unix</code> 是为了用 linux 格式的路径，详见 <a href="https://wiki.winehq.org/Wine_User%27s_Guide">3.1.1 How to run Windows programs from the command line</a>，所以为了避免可能的转义问题，首先可以把 <code>wine C:\\\\windows\\\\command\\\\start.exe</code> 替换成 <code>wine start</code>，而空格转义还是用 <code>\</code>，即最终 <code>WeChat.desktop</code> 文件为</p>
-<div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span> sh -c <span class="s2">&quot;wine start /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>env<span class="w"> </span><span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/weiya/.wine32&quot;</span><span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;wine start /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py&quot;</span>
 </code></pre></div>
 <p>这个版本终于成功了！</p>
 <p>注意到 <code>env</code> 不要删掉，虽然在 <code>.bashrc</code> 中有设置，但是通过 desktop 启动时，并不会 source <code>.bashrc</code>，所以仍需保留这句设置，不然 <code>wine</code> 会找不到。</p>
@@ -4659,10 +4659,10 @@ $ wineboot -r <span class="c1"># restart</span>
 <p>这能跟记录死机时记录的 <code>/var/log/syslog</code> 对得上，</p>
 <p><img alt="" src="../wechat-window-before.png" /></p>
 <p>但是现在运行</p>
-<div class="highlight"><pre><span></span><code>$ wmctrl -l -G -p -x
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>wmctrl<span class="w"> </span>-l<span class="w"> </span>-G<span class="w"> </span>-p<span class="w"> </span>-x
 </code></pre></div>
 <p>发现这句变成了</p>
-<div class="highlight"><pre><span></span><code>0x0680000c  <span class="m">0</span> <span class="m">12559</span>  <span class="m">870</span>  <span class="m">596</span>  <span class="m">1238</span> <span class="m">738</span>  wechat.exe.wechat.exe  weiya-ThinkPad-T460p 微信
+<div class="highlight"><pre><span></span><code>0x0680000c<span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">12559</span><span class="w">  </span><span class="m">870</span><span class="w">  </span><span class="m">596</span><span class="w">  </span><span class="m">1238</span><span class="w"> </span><span class="m">738</span><span class="w">  </span>wechat.exe.wechat.exe<span class="w">  </span>weiya-ThinkPad-T460p<span class="w"> </span>微信
 </code></pre></div>
 <p>所以将上述去除轮廓阴影的代码改成了</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;wechat.exe&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
@@ -4674,7 +4674,7 @@ $ wineboot -r <span class="c1"># restart</span>
 <p>当前微信 3.0.0.57 版本中，这个问题已经解决了！</p>
 </div>
 <p>Try to use the approach</p>
-<div class="highlight"><pre><span></span><code>sudo apt install libjpeg62:i386
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libjpeg62:i386
 </code></pre></div>
 <p>suggested in <a href="https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/32">微信无法发送图片可以尝试一下这个方法 #32</a>, but it does not work after <code>wineboot -u</code> and <code>winboot -r</code> and system reboot. And I even install <code>libjpeg8:i386</code> and <code>libjpeg9:i386</code>, still does not work, and then I doubt if I miss other dependencies, such as <a href="https://github.com/wszqkzqk/deepin-wine-ubuntu/commit/5300834405de1388893f2cedeb5c74f6b307a4f8#diff-4398b218af11cf74c553720d61cdff90">debian-special-pkgs/deepin-wine_2.18-12_i386/DEBIAN/control</a>, but I the <code>libjpeg-turbo8</code> and <code>libjpeg-turbo8:i386</code> had been installed, then I had no idea.</p>
 <p>Notice that one comment in <a href="https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/32#issuecomment-617709981">微信无法发送图片可以尝试一下这个方法 #32</a></p>
@@ -4704,8 +4704,8 @@ $ wineboot -r <span class="c1"># restart</span>
 <p>Post on 2022-06-13 15:40:10.</p>
 </div>
 <p><a href="https://github.com/H-M-H/Weylus">Weylus</a> turns tablet into a graphic tablet for PC, but never used, so remove it.</p>
-<div class="highlight"><pre><span></span><code>~$ apt list --installed <span class="p">|</span> grep <span class="nb">local</span>
-weylus/now <span class="m">0</span>.10.0 amd64 <span class="o">[</span>installed,local<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>apt<span class="w"> </span>list<span class="w"> </span>--installed<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="nb">local</span>
+weylus/now<span class="w"> </span><span class="m">0</span>.10.0<span class="w"> </span>amd64<span class="w"> </span><span class="o">[</span>installed,local<span class="o">]</span>
 </code></pre></div>
 <h2 id="xournal">Xournal<a class="headerlink" href="#xournal" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
@@ -4715,8 +4715,8 @@ weylus/now <span class="m">0</span>.10.0 amd64 <span class="o">[</span>installed
 <p>A hand note-taking software</p>
 <p>Homepage: <a href="https://github.com/xournalpp/xournalpp">https://github.com/xournalpp/xournalpp</a></p>
 <p>I have installed it, but never use it,</p>
-<div class="highlight"><pre><span></span><code>~$ apt list --installed <span class="p">|</span> grep <span class="nb">local</span>
-xournalpp/now <span class="m">1</span>.0.20-1~ubuntu18.04.1 amd64 <span class="o">[</span>installed,local<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>apt<span class="w"> </span>list<span class="w"> </span>--installed<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="nb">local</span>
+xournalpp/now<span class="w"> </span><span class="m">1</span>.0.20-1~ubuntu18.04.1<span class="w"> </span>amd64<span class="w"> </span><span class="o">[</span>installed,local<span class="o">]</span>
 </code></pre></div>
 <p>so just remove it.</p>
 <h2 id="zotero">Zotero<a class="headerlink" href="#zotero" title="Permanent link">&para;</a></h2>
@@ -4807,7 +4807,7 @@ xournalpp/now <span class="m">1</span>.0.20-1~ubuntu18.04.1 amd64 <span class="o
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

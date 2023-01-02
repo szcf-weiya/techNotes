@@ -2496,38 +2496,38 @@
 <blockquote>
 <p>! LaTeX Error: File <code>MinionPro.sty</code> not found.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>$ locate MinionPro.sty
-$ apt-cache search MinionPro
-texlive-fonts-extra - TeX Live: Additional fonts
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>locate<span class="w"> </span>MinionPro.sty
+$<span class="w"> </span>apt-cache<span class="w"> </span>search<span class="w"> </span>MinionPro
+texlive-fonts-extra<span class="w"> </span>-<span class="w"> </span>TeX<span class="w"> </span>Live:<span class="w"> </span>Additional<span class="w"> </span>fonts
 </code></pre></div>
 <p>于是试图装这个包，但是因为提示说要占用 1300+ MB 的空间。因为心疼硬盘大小，所以转而在 G40 上测试，</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt install texlive-fonts-extra
-Reading package lists... Done
-Building dependency tree       
-Reading state information... Done
-texlive-fonts-extra is already the newest version <span class="o">(</span><span class="m">2019</span>.202000218-1<span class="o">)</span>.
-<span class="m">0</span> upgraded, <span class="m">0</span> newly installed, <span class="m">0</span> to remove and <span class="m">0</span> not upgraded.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>texlive-fonts-extra
+Reading<span class="w"> </span>package<span class="w"> </span>lists...<span class="w"> </span>Done
+Building<span class="w"> </span>dependency<span class="w"> </span>tree<span class="w">       </span>
+Reading<span class="w"> </span>state<span class="w"> </span>information...<span class="w"> </span>Done
+texlive-fonts-extra<span class="w"> </span>is<span class="w"> </span>already<span class="w"> </span>the<span class="w"> </span>newest<span class="w"> </span>version<span class="w"> </span><span class="o">(</span><span class="m">2019</span>.202000218-1<span class="o">)</span>.
+<span class="m">0</span><span class="w"> </span>upgraded,<span class="w"> </span><span class="m">0</span><span class="w"> </span>newly<span class="w"> </span>installed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>to<span class="w"> </span>remove<span class="w"> </span>and<span class="w"> </span><span class="m">0</span><span class="w"> </span>not<span class="w"> </span>upgraded.
 </code></pre></div>
 <p>但是显示已经装好的，然而确实编译过程中找不到这个包。甚至试图重装也是没有这个包，</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt reinstall texlive-fonts-extra
-Reading package lists... Done
-Building dependency tree       
-Reading state information... Done
-<span class="m">0</span> upgraded, <span class="m">0</span> newly installed, <span class="m">1</span> reinstalled, <span class="m">0</span> to remove and <span class="m">0</span> not upgraded.
-Need to get <span class="m">460</span> MB of archives.
-After this operation, <span class="m">0</span> B of additional disk space will be used.
-Get:1 http://cn.archive.ubuntu.com/ubuntu focal/universe amd64 texlive-fonts-extra all <span class="m">2019</span>.202000218-1 <span class="o">[</span><span class="m">460</span> MB<span class="o">]</span>
-Fetched <span class="m">460</span> MB <span class="k">in</span> 1min 30s <span class="o">(</span><span class="m">5</span>,123 kB/s<span class="o">)</span>                                                                                                                              
-<span class="o">(</span>Reading database ... <span class="m">619949</span> files and directories currently installed.<span class="o">)</span>
-Preparing to unpack .../texlive-fonts-extra_2019.202000218-1_all.deb ...
-Unpacking texlive-fonts-extra <span class="o">(</span><span class="m">2019</span>.202000218-1<span class="o">)</span> over <span class="o">(</span><span class="m">2019</span>.202000218-1<span class="o">)</span> ...
-Setting up texlive-fonts-extra <span class="o">(</span><span class="m">2019</span>.202000218-1<span class="o">)</span> ...
-Processing triggers <span class="k">for</span> tex-common <span class="o">(</span><span class="m">6</span>.13<span class="o">)</span> ...
-Running mktexlsr. This may take some time... <span class="k">done</span>.
-Running mtxrun --generate. This may take some time... <span class="k">done</span>.
-Running updmap-sys. This may take some time... <span class="k">done</span>.
-Running mktexlsr /var/lib/texmf ... <span class="k">done</span>.
-$ locate MinionPro.sty
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>reinstall<span class="w"> </span>texlive-fonts-extra
+Reading<span class="w"> </span>package<span class="w"> </span>lists...<span class="w"> </span>Done
+Building<span class="w"> </span>dependency<span class="w"> </span>tree<span class="w">       </span>
+Reading<span class="w"> </span>state<span class="w"> </span>information...<span class="w"> </span>Done
+<span class="m">0</span><span class="w"> </span>upgraded,<span class="w"> </span><span class="m">0</span><span class="w"> </span>newly<span class="w"> </span>installed,<span class="w"> </span><span class="m">1</span><span class="w"> </span>reinstalled,<span class="w"> </span><span class="m">0</span><span class="w"> </span>to<span class="w"> </span>remove<span class="w"> </span>and<span class="w"> </span><span class="m">0</span><span class="w"> </span>not<span class="w"> </span>upgraded.
+Need<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span><span class="m">460</span><span class="w"> </span>MB<span class="w"> </span>of<span class="w"> </span>archives.
+After<span class="w"> </span>this<span class="w"> </span>operation,<span class="w"> </span><span class="m">0</span><span class="w"> </span>B<span class="w"> </span>of<span class="w"> </span>additional<span class="w"> </span>disk<span class="w"> </span>space<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>used.
+Get:1<span class="w"> </span>http://cn.archive.ubuntu.com/ubuntu<span class="w"> </span>focal/universe<span class="w"> </span>amd64<span class="w"> </span>texlive-fonts-extra<span class="w"> </span>all<span class="w"> </span><span class="m">2019</span>.202000218-1<span class="w"> </span><span class="o">[</span><span class="m">460</span><span class="w"> </span>MB<span class="o">]</span>
+Fetched<span class="w"> </span><span class="m">460</span><span class="w"> </span>MB<span class="w"> </span><span class="k">in</span><span class="w"> </span>1min<span class="w"> </span>30s<span class="w"> </span><span class="o">(</span><span class="m">5</span>,123<span class="w"> </span>kB/s<span class="o">)</span><span class="w">                                                                                                                              </span>
+<span class="o">(</span>Reading<span class="w"> </span>database<span class="w"> </span>...<span class="w"> </span><span class="m">619949</span><span class="w"> </span>files<span class="w"> </span>and<span class="w"> </span>directories<span class="w"> </span>currently<span class="w"> </span>installed.<span class="o">)</span>
+Preparing<span class="w"> </span>to<span class="w"> </span>unpack<span class="w"> </span>.../texlive-fonts-extra_2019.202000218-1_all.deb<span class="w"> </span>...
+Unpacking<span class="w"> </span>texlive-fonts-extra<span class="w"> </span><span class="o">(</span><span class="m">2019</span>.202000218-1<span class="o">)</span><span class="w"> </span>over<span class="w"> </span><span class="o">(</span><span class="m">2019</span>.202000218-1<span class="o">)</span><span class="w"> </span>...
+Setting<span class="w"> </span>up<span class="w"> </span>texlive-fonts-extra<span class="w"> </span><span class="o">(</span><span class="m">2019</span>.202000218-1<span class="o">)</span><span class="w"> </span>...
+Processing<span class="w"> </span>triggers<span class="w"> </span><span class="k">for</span><span class="w"> </span>tex-common<span class="w"> </span><span class="o">(</span><span class="m">6</span>.13<span class="o">)</span><span class="w"> </span>...
+Running<span class="w"> </span>mktexlsr.<span class="w"> </span>This<span class="w"> </span>may<span class="w"> </span>take<span class="w"> </span>some<span class="w"> </span>time...<span class="w"> </span><span class="k">done</span>.
+Running<span class="w"> </span>mtxrun<span class="w"> </span>--generate.<span class="w"> </span>This<span class="w"> </span>may<span class="w"> </span>take<span class="w"> </span>some<span class="w"> </span>time...<span class="w"> </span><span class="k">done</span>.
+Running<span class="w"> </span>updmap-sys.<span class="w"> </span>This<span class="w"> </span>may<span class="w"> </span>take<span class="w"> </span>some<span class="w"> </span>time...<span class="w"> </span><span class="k">done</span>.
+Running<span class="w"> </span>mktexlsr<span class="w"> </span>/var/lib/texmf<span class="w"> </span>...<span class="w"> </span><span class="k">done</span>.
+$<span class="w"> </span>locate<span class="w"> </span>MinionPro.sty
 </code></pre></div>
 <p>另外根据<a href="https://ctan.org/tex-archive/fonts/minionpro">安装指示</a>，</p>
 <div class="highlight"><pre><span></span><code>  $ otfinfo -v MinionPro-Regular.otf
@@ -2566,14 +2566,14 @@ $ locate MinionPro.sty
 <p>但是报错提示说只能在 preamble 中定义。不过注意到如果不加 <code>mathspec</code> package，在文内 <code>\setmathfont{...}</code> 是可以的（注意此时没有指定 Greek）。</p>
 <p>既然无法同时在一篇文档里面展现，那就多篇呗。因为 <code>article</code> 默认 A4 paper，也看过 <code>geometry</code>，似乎也只提供常见的 paper 大小，不能像 <code>standalone</code> 环境那样，然而直接使用 <code>standalone</code> 又不可行，似乎它只适用于 tikz。于是便想到 crop pdf。</p>
 <p>这篇回答<a href="https://askubuntu.com/questions/124692/command-line-tool-to-crop-pdf-files">Command line tool to crop PDF files</a> 提到， latex 本身有提供命令 <code>pdfcrop</code>，查看其帮助文档不能用 <code>man</code>，而是用 <code>texdoc</code>，从文档本身了解到 <code>--help</code> 可以看帮助文档。参数 <code>--bbox</code> 可以指定裁剪区域，而这个参数定义又是来自于 ghostscript 的，所以预先需要了解<a href="https://stackoverflow.com/questions/6250064/ghostscript-boundingbox-values">这些参数是怎么定义的</a>，</p>
-<div class="highlight"><pre><span></span><code>$ gs -sDEVICE<span class="o">=</span>bbox vargreek.pdf 
-GPL Ghostscript <span class="m">9</span>.26 <span class="o">(</span><span class="m">2018</span>-11-20<span class="o">)</span>
-Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2018</span> Artifex Software, Inc.  All rights reserved.
-This software comes with NO WARRANTY: see the file PUBLIC <span class="k">for</span> details.
-Processing pages <span class="m">1</span> through <span class="m">1</span>.
-Page <span class="m">1</span>
-%%BoundingBox: <span class="m">149</span> <span class="m">139</span> <span class="m">308</span> <span class="m">714</span>
-%%HiResBoundingBox: <span class="m">149</span>.867995 <span class="m">139</span>.247996 <span class="m">307</span>.295991 <span class="m">713</span>.465978
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>gs<span class="w"> </span>-sDEVICE<span class="o">=</span>bbox<span class="w"> </span>vargreek.pdf<span class="w"> </span>
+GPL<span class="w"> </span>Ghostscript<span class="w"> </span><span class="m">9</span>.26<span class="w"> </span><span class="o">(</span><span class="m">2018</span>-11-20<span class="o">)</span>
+Copyright<span class="w"> </span><span class="o">(</span>C<span class="o">)</span><span class="w"> </span><span class="m">2018</span><span class="w"> </span>Artifex<span class="w"> </span>Software,<span class="w"> </span>Inc.<span class="w">  </span>All<span class="w"> </span>rights<span class="w"> </span>reserved.
+This<span class="w"> </span>software<span class="w"> </span>comes<span class="w"> </span>with<span class="w"> </span>NO<span class="w"> </span>WARRANTY:<span class="w"> </span>see<span class="w"> </span>the<span class="w"> </span>file<span class="w"> </span>PUBLIC<span class="w"> </span><span class="k">for</span><span class="w"> </span>details.
+Processing<span class="w"> </span>pages<span class="w"> </span><span class="m">1</span><span class="w"> </span>through<span class="w"> </span><span class="m">1</span>.
+Page<span class="w"> </span><span class="m">1</span>
+%%BoundingBox:<span class="w"> </span><span class="m">149</span><span class="w"> </span><span class="m">139</span><span class="w"> </span><span class="m">308</span><span class="w"> </span><span class="m">714</span>
+%%HiResBoundingBox:<span class="w"> </span><span class="m">149</span>.867995<span class="w"> </span><span class="m">139</span>.247996<span class="w"> </span><span class="m">307</span>.295991<span class="w"> </span><span class="m">713</span>.465978
 </code></pre></div>
 <p>其中 <code>--box &lt;left&gt; &lt;bottom&gt; &lt;right&gt; &lt;top&gt;</code> 四个参数的含义（72 个 points 为 1inch）是</p>
 <ul>
@@ -2582,12 +2582,12 @@ Page <span class="m">1</span>
 </ul>
 <p>然后开始写 Makefile，通过 <code>jobname</code> 指定字体名，这样每次添加一个字体都要新增一个 object，不够智能，想通过写 for 循环来实现。不过在 Makefile 写循环不是很熟悉，索性直接写 shell 脚本。</p>
 <p>首先便需要通过 <code>fc-list</code> 提取字体名，不过这里需要注意，字体名是用空格分隔的，所以需要加上引号，但是这还不够，如果采用</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> font <span class="k">in</span> <span class="si">${</span><span class="nv">fonts</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>
-    <span class="nv">$font</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>font<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="si">${</span><span class="nv">fonts</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nv">$font</span>
 </code></pre></div>
 <p><code>$font</code> 仍会以空格进行分隔，进而只提取第一个元素。需要换成</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="o">((</span><span class="nv">i</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span> i &lt; <span class="si">${#</span><span class="nv">fonts</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> i++<span class="o">))</span><span class="p">;</span> <span class="k">do</span>
-    <span class="nv">font</span><span class="o">=</span><span class="si">${</span><span class="nv">fonts</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="si">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="si">${#</span><span class="nv">fonts</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span><span class="w"> </span>i++<span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nv">font</span><span class="o">=</span><span class="si">${</span><span class="nv">fonts</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="si">}</span>
 </code></pre></div>
 <p>参考 <a href="https://stackoverflow.com/questions/9084257/bash-array-with-spaces-in-elements">Bash array with spaces in elements</a></p>
 <p>但是如果用 <code>fc-list</code> 提取的话，不如直接将空格换成 <code>-</code>，后面需要用到原形式时再换过来。</p>
@@ -2679,7 +2679,7 @@ Page <span class="m">1</span>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

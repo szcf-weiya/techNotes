@@ -2551,7 +2551,7 @@
 <p>啥都没有，还不能访问外网</p>
 <h2 id="_2">第一次尝试<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>将 RMySQL 源文件复制到服务器上，</p>
-<div class="highlight"><pre><span></span><code>R CMD INSTALL RMySQL_0.10.14.tar.gz
+<div class="highlight"><pre><span></span><code>R<span class="w"> </span>CMD<span class="w"> </span>INSTALL<span class="w"> </span>RMySQL_0.10.14.tar.gz
 </code></pre></div>
 <p><img alt="" src="../first_try.jpg" /></p>
 <p>由于服务器是 centOS，按上述提示我们需要安装 mariadb-connect-c-devel，mariadb-dev 和 mysql-dev，下面依次安装这三个依赖文件。</p>
@@ -2570,17 +2570,17 @@
 <p>具体编译过程参考
 1. <a href="https://mariadb.com/kb/en/library/generic-build-instructions/">Generic Build Instructions</a></p>
 <h3 id="step-1">step 1<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>mkdir build-mariadb
-<span class="nb">cd</span> build-mariadb
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>build-mariadb
+<span class="nb">cd</span><span class="w"> </span>build-mariadb
 </code></pre></div>
 <h3 id="step-2">step 2<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
 <p>注意设置 prefix</p>
 <p>参考 <a href="https://stackoverflow.com/questions/6003374/what-is-cmake-equivalent-of-configure-prefix-dir-make-all-install">What is cmake equivalent of &lsquo;configure &ndash;prefix=DIR &amp;&amp; make all install &lsquo;?</a></p>
-<div class="highlight"><pre><span></span><code>cmake ../mariadb-5.*.* -DCMAKE_INSTALL_PREFIX:PATH<span class="o">=</span>~/mariadb
+<div class="highlight"><pre><span></span><code>cmake<span class="w"> </span>../mariadb-5.*.*<span class="w"> </span>-DCMAKE_INSTALL_PREFIX:PATH<span class="o">=</span>~/mariadb
 </code></pre></div>
 <h3 id="step-3">step 3<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>make 
-make install
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>
+make<span class="w"> </span>install
 </code></pre></div>
 <h2 id="_3">第二次尝试<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>似乎都装好了，不过测试之前，得先设置一下环境变量。再次尝试，编译时稍微前进了一些，但还是夭折了，错误如下</p>
@@ -2665,7 +2665,7 @@ make install
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

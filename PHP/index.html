@@ -2661,7 +2661,7 @@
 </ol>
 <h2 id="curl">cURL<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h2>
 <p>需要安装<code>php-curl</code>，这依据php的版本而有所不同，具体参考<a href="https://stackoverflow.com/questions/38800606/how-to-install-php-curl-in-ubuntu-16-04/38801295">How to install php-curl in Ubuntu 16.04</a>我采用的是php7，所以安装命令如下。</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install php-curl
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>php-curl
 </code></pre></div>
 <p><strong>注意要重启apache。</strong></p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -2677,7 +2677,7 @@
 
 <span class="c1">// 关闭cURL资源，并且释放系统资源</span>
 <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
-<span class="cp">?&gt;</span><span class="x"></span>
+<span class="cp">?&gt;</span>
 </code></pre></div>
 <h3 id="curl_errno">curl_errno<a class="headerlink" href="#curl_errno" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
@@ -2760,7 +2760,7 @@
 <span class="p">[</span><span class="mi">87</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;CURLE_FTP_BAD_FILE_LIST&#39;</span><span class="p">,</span>
 <span class="p">[</span><span class="mi">88</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;CURLE_CHUNK_FAILED&#39;</span><span class="p">);</span>
 
-<span class="cp">?&gt;</span><span class="x"></span>
+<span class="cp">?&gt;</span>
 </code></pre></div>
 <h2 id="nginx-php">nginx 与 php<a class="headerlink" href="#nginx-php" title="Permanent link">&para;</a></h2>
 <p>屡次碰到禁止访问，并且能够直接下载 <code>.php</code>文件，检查</p>
@@ -2851,7 +2851,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

@@ -2439,14 +2439,14 @@
 <h2 id="mount-usb-drive">Mount USB drive<a class="headerlink" href="#mount-usb-drive" title="Permanent link">&para;</a></h2>
 <p>By default, the usb drive is not mounted to WSL, although it can be easily accessed via Windows.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># step 1: create a folder for mount</span>
-$ sudo mkdir /mnt/f
+$<span class="w"> </span>sudo<span class="w"> </span>mkdir<span class="w"> </span>/mnt/f
 <span class="c1"># step 2: mount</span>
-$ sudo mount -t drvfs F: /mnt/f
+$<span class="w"> </span>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>drvfs<span class="w"> </span>F:<span class="w"> </span>/mnt/f
 </code></pre></div>
 <p>refer to <a href="https://askubuntu.com/questions/1116200/how-to-access-my-usb-drive-in-windows-subsytem-linux-ubuntu">How to access my usb drive in Windows Subsytem Linux Ubuntu</a></p>
 <p>But when using <code>rsync</code> for copying files, it throws warnings that cannot set times on the folder and cannot <code>mkstemp</code>, although <code>scp</code> works fine. The natural solution is to change the permission, but <code>chown</code> not work. Then following <a href="https://unix.stackexchange.com/questions/558235/rsync-operation-not-permitted">Rsync operation not permitted</a>, remount the driver by specifying the user id and group id,</p>
-<div class="highlight"><pre><span></span><code>$ sudo unmount 
-$ sudo mount -t drvfs -o rw,noatime,uid<span class="o">=</span><span class="m">1000</span>,gid<span class="o">=</span><span class="m">1000</span> <span class="s1">&#39;P:\&#39;</span> /mnt/p
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>unmount<span class="w"> </span>
+$<span class="w"> </span>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>drvfs<span class="w"> </span>-o<span class="w"> </span>rw,noatime,uid<span class="o">=</span><span class="m">1000</span>,gid<span class="o">=</span><span class="m">1000</span><span class="w"> </span><span class="s1">&#39;P:\&#39;</span><span class="w"> </span>/mnt/p
 </code></pre></div>
 <p>It is reported that <a href="https://unix.stackexchange.com/questions/238152/why-is-scp-so-slow-and-how-to-make-it-faster"><code>scp</code> is slower than <code>rsync</code></a>, but based on my tries, it seems <code>scp</code> would be faster. But a big warning is that</p>
 <div class="admonition warning">
@@ -2534,7 +2534,7 @@ $ sudo mount -t drvfs -o rw,noatime,uid<span class="o">=</span><span class="m">1
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

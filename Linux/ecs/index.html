@@ -2439,7 +2439,7 @@
 <h2 id="_1">安全组设置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>试图为 ssh remote forward port 添加安全组。首先默认 remote forward port 仅允许通过 lo 访问，但是可以在 <code>/etc/ssh/sshd_config</code> 中加入</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># https://www.ssh.com/academy/ssh/tunneling/example</span>
-GatewayPorts yes
+GatewayPorts<span class="w"> </span>yes
 </code></pre></div>
 <p>来允许外来 ip 直接登录 (see also: <a href="https://serverfault.com/questions/896784/ssh-remote-port-forwarding-gatewayports-yes-which-machine-to-specify-on">https://serverfault.com/questions/896784/ssh-remote-port-forwarding-gatewayports-yes-which-machine-to-specify-on</a>)。</p>
 <p>自然带来一个安全性问题，所以想到添加安全组，但是添加完安全组后，发现安全组外的 ip 仍能正常访问。一度怀疑 remote forward port 不受安全组的控制，但又转念一想不太可能啊。</p>
@@ -2461,25 +2461,25 @@ GatewayPorts yes
 <li>访问 <a href="https://ipinfo.io/AS1742">https://ipinfo.io/AS1742</a> 获取全部 ip address range, 其中有一条便是，<code>67.134.204.0/22</code></li>
 </ol>
 <p>下面验证 <code>67.134.206.47</code> 是否属于 <code>67.134.204.0/22</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitstring</span><span class="p">(</span><span class="mi">204</span><span class="p">)[</span><span class="k">end</span><span class="o">-</span><span class="mi">7</span><span class="o">:</span><span class="k">end</span><span class="p">]</span><span class="w"></span>
-<span class="s">&quot;11001100&quot;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitstring</span><span class="p">(</span><span class="mi">204</span><span class="p">)[</span><span class="k">end</span><span class="o">-</span><span class="mi">7</span><span class="o">:</span><span class="k">end</span><span class="p">]</span>
+<span class="s">&quot;11001100&quot;</span>
 
-<span class="c"># only consider the 3rd field, 22 - 8 - 8 = 6</span><span class="w"></span>
-<span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitstring</span><span class="p">(</span><span class="mi">204</span><span class="p">)[</span><span class="k">end</span><span class="o">-</span><span class="mi">7</span><span class="o">:</span><span class="k">end</span><span class="p">][</span><span class="mi">1</span><span class="o">:</span><span class="mi">6</span><span class="p">]</span><span class="w"></span>
-<span class="s">&quot;110011&quot;</span><span class="w"></span>
+<span class="c"># only consider the 3rd field, 22 - 8 - 8 = 6</span>
+<span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitstring</span><span class="p">(</span><span class="mi">204</span><span class="p">)[</span><span class="k">end</span><span class="o">-</span><span class="mi">7</span><span class="o">:</span><span class="k">end</span><span class="p">][</span><span class="mi">1</span><span class="o">:</span><span class="mi">6</span><span class="p">]</span>
+<span class="s">&quot;110011&quot;</span>
 </code></pre></div>
 <p>那么第三位允许的便有四种可能，</p>
-<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parse</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;11001100&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
-<span class="mi">204</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parse</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;11001100&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">204</span>
 
-<span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parse</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;11001101&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
-<span class="mi">205</span><span class="w"></span>
+<span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parse</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;11001101&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">205</span>
 
-<span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parse</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;11001110&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
-<span class="mi">206</span><span class="w"></span>
+<span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parse</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;11001110&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">206</span>
 
-<span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parse</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;11001111&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
-<span class="mi">207</span><span class="w"></span>
+<span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parse</span><span class="p">(</span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;11001111&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">207</span>
 </code></pre></div>
 
   <hr>
@@ -2558,7 +2558,7 @@ GatewayPorts yes
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

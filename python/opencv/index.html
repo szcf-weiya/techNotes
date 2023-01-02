@@ -2493,7 +2493,7 @@
 
 <h1 id="opencv">OpenCV<a class="headerlink" href="#opencv" title="Permanent link">&para;</a></h1>
 <p>In short,</p>
-<div class="highlight"><pre><span></span><code>$ pip install opencv-python
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>opencv-python
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -2508,18 +2508,18 @@
 <p>refer to <a href="https://stackoverflow.com/questions/40207011/opencv-not-working-properly-with-python-on-linux-with-anaconda-getting-error-th">OpenCV not working properly with python on Linux with anaconda. Getting error that cv2.imshow() is not implemented
 Ask Question</a></p>
 <p>If necessary, install <a href="https://github.com/jrosebr1/imutils">imutils: A series of convenience functions to make basic image processing operations such as translation, rotation, resizing, skeletonization, and displaying Matplotlib images easier with OpenCV and Python.</a></p>
-<div class="highlight"><pre><span></span><code>conda install -c conda-forge imutils
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>imutils
 </code></pre></div>
 <p>Currently I am mainly work with</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>py37<span class="o">)</span> $ conda list
-opencv                    <span class="m">3</span>.4.2            py37h6fd60c2_1    defaults
-opencv-python             <span class="m">4</span>.2.0.34                 pypi_0    pypi
+<div class="highlight"><pre><span></span><code><span class="o">(</span>py37<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>conda<span class="w"> </span>list
+opencv<span class="w">                    </span><span class="m">3</span>.4.2<span class="w">            </span>py37h6fd60c2_1<span class="w">    </span>defaults
+opencv-python<span class="w">             </span><span class="m">4</span>.2.0.34<span class="w">                 </span>pypi_0<span class="w">    </span>pypi
 </code></pre></div>
 <p>which can be easily installed with</p>
 <div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">opencv</span><span class="o">-</span><span class="n">python</span>
 </code></pre></div>
 <p>pay attention to that <code>import cv2; cv2.__version__</code> returns the version of <code>opencv-python</code>. The <code>contrib</code> packages can be installed with (see, <a href="https://pypi.org/project/opencv-contrib-python/">https://pypi.org/project/opencv-contrib-python/</a>)</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>py37<span class="o">)</span> $ pip install opencv-contrib-python
+<div class="highlight"><pre><span></span><code><span class="o">(</span>py37<span class="o">)</span><span class="w"> </span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>opencv-contrib-python
 </code></pre></div>
 <h2 id="opencv-4">OpenCV 4<a class="headerlink" href="#opencv-4" title="Permanent link">&para;</a></h2>
 <p>build from source according to the <a href="https://docs.opencv.org/4.0.1/d2/de6/tutorial_py_setup_in_ubuntu.html">official documentation</a></p>
@@ -2567,44 +2567,44 @@ opencv-python             <span class="m">4</span>.2.0.34                 pypi_0
 <span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">56</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">uint16</span><span class="p">)</span>
 </code></pre></div>
 <p>As a comparison, JuliaImages uses a special type <code>NOf16</code> (standing for <strong>N</strong>ormalized, with <strong>0</strong> integer bits and <strong>16 f</strong>ractional bits), that interprets an 16-bit integer as if it had been scaled by 1/(2^16-1), thus encoding values from 0 to 1 in 2^16 steps.</p>
-<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="nb">im</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load</span><span class="p">(</span><span class="s">&quot;../test/example/three_cells.tif&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="c"># in jupyter notebook, direct `unique(im)` will automatically shows the image pixel</span><span class="w"></span>
-<span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">display</span><span class="p">(</span><span class="kt">MIME</span><span class="p">(</span><span class="s">&quot;text/plain&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">sort</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="nb">im</span><span class="p">)))</span><span class="w"></span>
-<span class="mi">8</span><span class="o">-</span><span class="n">element</span><span class="w"> </span><span class="kt">Array</span><span class="p">{</span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">eltype</span><span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">Normed</span><span class="p">{</span><span class="kt">UInt16</span><span class="p">,</span><span class="mi">16</span><span class="p">}}</span><span class="o">:</span><span class="w"></span>
-<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.0</span><span class="p">)</span><span class="w"></span>
-<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.0007</span><span class="p">)</span><span class="w"></span>
-<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.00078</span><span class="p">)</span><span class="w"></span>
-<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.00079</span><span class="p">)</span><span class="w"></span>
-<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.00081</span><span class="p">)</span><span class="w"></span>
-<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.00082</span><span class="p">)</span><span class="w"></span>
-<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.00084</span><span class="p">)</span><span class="w"></span>
-<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.00085</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="nb">im</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load</span><span class="p">(</span><span class="s">&quot;../test/example/three_cells.tif&quot;</span><span class="p">)</span>
+<span class="c"># in jupyter notebook, direct `unique(im)` will automatically shows the image pixel</span>
+<span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">display</span><span class="p">(</span><span class="kt">MIME</span><span class="p">(</span><span class="s">&quot;text/plain&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">sort</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="nb">im</span><span class="p">)))</span>
+<span class="mi">8</span><span class="o">-</span><span class="n">element</span><span class="w"> </span><span class="kt">Array</span><span class="p">{</span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">},</span><span class="mi">1</span><span class="p">}</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">eltype</span><span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">Normed</span><span class="p">{</span><span class="kt">UInt16</span><span class="p">,</span><span class="mi">16</span><span class="p">}}</span><span class="o">:</span>
+<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.0007</span><span class="p">)</span>
+<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.00078</span><span class="p">)</span>
+<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.00079</span><span class="p">)</span>
+<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.00081</span><span class="p">)</span>
+<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.00082</span><span class="p">)</span>
+<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.00084</span><span class="p">)</span>
+<span class="w"> </span><span class="kt">Gray</span><span class="p">{</span><span class="kt">N0f16</span><span class="p">}(</span><span class="mf">0.00085</span><span class="p">)</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The result returned by <code>np.unique</code> has been sorted, while Julia&rsquo;s <code>unique</code> does not.</p>
 </div>
 <p>As for Matlab, <code>imread</code> performs similarly as <code>io.imread</code>, returning the integer in <code>uint16</code> form,</p>
-<div class="highlight"><pre><span></span><code><span class="c">% original</span><span class="w"></span>
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">oIm</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">imread</span><span class="p">(</span><span class="s">&quot;../Fluo-N2DH-SIM+/01/t000.tif&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">oIm</span><span class="p">)),</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">oIm</span><span class="p">))]</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c">% original</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">oIm</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">imread</span><span class="p">(</span><span class="s">&quot;../Fluo-N2DH-SIM+/01/t000.tif&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">oIm</span><span class="p">)),</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">oIm</span><span class="p">))]</span>
 
-<span class="nb">ans</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
 
-<span class="w">  </span><span class="mi">1</span>×<span class="mi">2</span><span class="w"> </span><span class="nb">uint16</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="n">vector</span><span class="w"></span>
+<span class="w">  </span><span class="mi">1</span>×<span class="mi">2</span><span class="w"> </span><span class="nb">uint16</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="n">vector</span>
 
-<span class="w">   </span><span class="mi">314</span><span class="w">    </span><span class="mi">73</span><span class="w"></span>
+<span class="w">   </span><span class="mi">314</span><span class="w">    </span><span class="mi">73</span>
 
-<span class="c">% convert to double</span><span class="w"></span>
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">doIm</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">double</span><span class="p">(</span><span class="n">oIm</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span>^<span class="mi">16</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">255</span><span class="w"></span>
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">doIm</span><span class="p">)),</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">doIm</span><span class="p">))]</span><span class="w"></span>
+<span class="c">% convert to double</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">doIm</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">double</span><span class="p">(</span><span class="n">oIm</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span>^<span class="mi">16</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">255</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">doIm</span><span class="p">)),</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">doIm</span><span class="p">))]</span>
 
-<span class="nb">ans</span><span class="w"> </span><span class="p">=</span><span class="w"></span>
+<span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
 
-<span class="w">    </span><span class="mf">1.2218</span><span class="w">    </span><span class="mf">0.2840</span><span class="w"></span>
+<span class="w">    </span><span class="mf">1.2218</span><span class="w">    </span><span class="mf">0.2840</span>
 
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">imshow</span><span class="p">(</span><span class="n">oIm</span><span class="p">)</span><span class="w"></span>
-<span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="nb">imshow</span><span class="p">(</span><span class="n">doIm</span><span class="p">)</span><span class="w"></span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nb">imshow</span><span class="p">(</span><span class="n">oIm</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span><span class="w"> </span><span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="nb">imshow</span><span class="p">(</span><span class="n">doIm</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="" src="https://user-images.githubusercontent.com/13688320/99756556-664de800-2b28-11eb-902f-5d2b0ffc14d6.png" /></p>
 <p>use <code>cv2.imwrite()</code> for writting images from <code>np.array</code>, see also <a href="https://stackoverflow.com/questions/902761/saving-a-numpy-array-as-an-image/19174800">Saving a Numpy array as an image</a></p>
@@ -2688,7 +2688,7 @@ opencv-python             <span class="m">4</span>.2.0.34                 pypi_0
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

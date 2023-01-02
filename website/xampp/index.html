@@ -2384,7 +2384,7 @@
 <p>Here is a <a href="https://hub.docker.com/r/tomsik68/xampp">great docker image</a>!</p>
 <p>Start via</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#$ docker pull tomsik68/xampp</span>
-$ docker run --name myXAMPP -p <span class="m">41061</span>:22 -p <span class="m">41062</span>:80 -d -v ~/my_web_pages:/www tomsik68/xampp:8
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>myXAMPP<span class="w"> </span>-p<span class="w"> </span><span class="m">41061</span>:22<span class="w"> </span>-p<span class="w"> </span><span class="m">41062</span>:80<span class="w"> </span>-d<span class="w"> </span>-v<span class="w"> </span>~/my_web_pages:/www<span class="w"> </span>tomsik68/xampp:8
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2398,18 +2398,18 @@ $ docker run --name myXAMPP -p <span class="m">41061</span>:22 -p <span class="m
 </ul>
 </div>
 <p>Then we can see the container via </p>
-<div class="highlight"><pre><span></span><code>$ docker container ls
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                                                    NAMES
-43e5a49cbfd5        tomsik68/xampp      <span class="s2">&quot;sh /startup.sh&quot;</span>    <span class="m">18</span> seconds ago      Up <span class="m">17</span> seconds       <span class="m">3306</span>/tcp, <span class="m">0</span>.0.0.0:41061-&gt;22/tcp, <span class="m">0</span>.0.0.0:41062-&gt;80/tcp   myXAMPP
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>ls
+CONTAINER<span class="w"> </span>ID<span class="w">        </span>IMAGE<span class="w">               </span>COMMAND<span class="w">             </span>CREATED<span class="w">             </span>STATUS<span class="w">              </span>PORTS<span class="w">                                                    </span>NAMES
+43e5a49cbfd5<span class="w">        </span>tomsik68/xampp<span class="w">      </span><span class="s2">&quot;sh /startup.sh&quot;</span><span class="w">    </span><span class="m">18</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="w">      </span>Up<span class="w"> </span><span class="m">17</span><span class="w"> </span>seconds<span class="w">       </span><span class="m">3306</span>/tcp,<span class="w"> </span><span class="m">0</span>.0.0.0:41061-&gt;22/tcp,<span class="w"> </span><span class="m">0</span>.0.0.0:41062-&gt;80/tcp<span class="w">   </span>myXAMPP
 </code></pre></div>
 <p>Stop via</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#$ docker container stop/kill [containerID]</span>
-$ docker stop/kill <span class="o">[</span>containerID<span class="o">]</span>
+$<span class="w"> </span>docker<span class="w"> </span>stop/kill<span class="w"> </span><span class="o">[</span>containerID<span class="o">]</span>
 <span class="c1"># then</span>
-$ docker stop 43e5
+$<span class="w"> </span>docker<span class="w"> </span>stop<span class="w"> </span>43e5
 43e5
-$ docker container ls
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>ls
+CONTAINER<span class="w"> </span>ID<span class="w">        </span>IMAGE<span class="w">               </span>COMMAND<span class="w">             </span>CREATED<span class="w">             </span>STATUS<span class="w">              </span>PORTS<span class="w">               </span>NAMES
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2422,8 +2422,8 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 </div>
 <p>Restart via</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># find the container ID</span>
-$ docker container ls -a
-$ docker container start <span class="o">[</span>containerID<span class="o">]</span>/<span class="o">[</span>containerNAME<span class="o">]</span>
+$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>ls<span class="w"> </span>-a
+$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>start<span class="w"> </span><span class="o">[</span>containerID<span class="o">]</span>/<span class="o">[</span>containerNAME<span class="o">]</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2432,7 +2432,7 @@ $ docker container start <span class="o">[</span>containerID<span class="o">]</s
 </ul>
 </div>
 <p>Establish a ssh connection,</p>
-<div class="highlight"><pre><span></span><code>$ ssh root@127.0.0.1 -p <span class="m">41061</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>root@127.0.0.1<span class="w"> </span>-p<span class="w"> </span><span class="m">41061</span>
 </code></pre></div>
 <p>it sounds like the port-forwarding if we view the container as another linux machine.</p>
 <div class="admonition info">
@@ -2440,7 +2440,7 @@ $ docker container start <span class="o">[</span>containerID<span class="o">]</s
 <p>Both default username and password are <code>root</code>.</p>
 </div>
 <p>Alternatively, we can get a shell terminal insider the container, just like ssh,</p>
-<div class="highlight"><pre><span></span><code>$ docker <span class="nb">exec</span> -it myXAMPP bash
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>myXAMPP<span class="w"> </span>bash
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2452,11 +2452,11 @@ $ docker container start <span class="o">[</span>containerID<span class="o">]</s
 </div>
 <p>If we are inside the container, we can export the path to use the commands provided by XAMPP,</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># inside docker container</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/opt/lampp/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/opt/lampp/bin:<span class="nv">$PATH</span>
 <span class="c1"># or add it to `.bashrc` of the container</span>
 </code></pre></div>
 <p>If we modified the configuration of XAMPP, we need to restart the Apache server via</p>
-<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> myXAMPP /opt/lampp/lampp restart
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>myXAMPP<span class="w"> </span>/opt/lampp/lampp<span class="w"> </span>restart
 </code></pre></div>
 
   <hr>
@@ -2535,7 +2535,7 @@ $ docker container start <span class="o">[</span>containerID<span class="o">]</s
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

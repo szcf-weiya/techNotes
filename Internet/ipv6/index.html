@@ -2457,9 +2457,9 @@
 <p>仅仅设置了 VPC 的 CIDR blocks 还不够，需要设置对应的 subnet 的 IPv6 CIDR，注意这里会让我们填写ipv6 address末尾几位，我一开始什么都没填直接点确认，会报错，然后我随便试了 <code>00</code>，竟然成功了。后来在 <a href="https://xieles.com/blog/setup-amazon-aws-ec2-with-ipv6-address">Setup Amazon AWS EC2 with IPv6 Address</a> 看到，这个可以填 00, 01, 02 之类的。</p>
 <p>经过这两部配置，可以通过 “Actions, Networking, Manage IP Addresses” 添加 IPv6 address 了，本以为大功告成。但是当我<a href="https://www.cyberciti.biz/faq/howto-test-ipv6-network-with-ping6-command/">通过 ping6 验证</a>的时候，并没有成功。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># success</span>
-ping6 localhost
+ping6<span class="w"> </span>localhost
 <span class="c1"># fail</span>
-ping6 ipv6.google.com
+ping6<span class="w"> </span>ipv6.google.com
 </code></pre></div>
 <h2 id="update-route">Update route<a class="headerlink" href="#update-route" title="Permanent link">&para;</a></h2>
 <p>这时候才翻出 <a href="https://xieles.com/blog/setup-amazon-aws-ec2-with-ipv6-address">Setup Amazon AWS EC2 with IPv6 Address</a>，里面说还有设置 route table，在 “Routes &gt;&gt; Edit &gt;&gt; Add another rule &gt;&gt;” 中添加 <code>::/0</code>，而 target 设置为跟 ipv4 相同，如下图所示</p>
@@ -2543,7 +2543,7 @@ ping6 ipv6.google.com
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

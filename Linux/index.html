@@ -2911,18 +2911,18 @@
 <li>Thread: 并不是物理概念，而是软件概念，本质上是利用 CPU 空闲时间来执行其他代码，所以其只能算是并发，而不是并行。</li>
 <li>vCPU: 常见于虚拟核，也就是 Thread</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code>G40 $ lscpu <span class="p">|</span> grep -E <span class="s1">&#39;^Thread|^Core|^Socket|^CPU\(&#39;</span>
-CPU<span class="o">(</span>s<span class="o">)</span>:                          <span class="m">4</span>
-Thread<span class="o">(</span>s<span class="o">)</span> per core:              <span class="m">2</span>
-Core<span class="o">(</span>s<span class="o">)</span> per socket:              <span class="m">2</span>
-Socket<span class="o">(</span>s<span class="o">)</span>:                       <span class="m">1</span>
+<p><div class="highlight"><pre><span></span><code>G40<span class="w"> </span>$<span class="w"> </span>lscpu<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;^Thread|^Core|^Socket|^CPU\(&#39;</span>
+CPU<span class="o">(</span>s<span class="o">)</span>:<span class="w">                          </span><span class="m">4</span>
+Thread<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>per<span class="w"> </span>core:<span class="w">              </span><span class="m">2</span>
+Core<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>per<span class="w"> </span>socket:<span class="w">              </span><span class="m">2</span>
+Socket<span class="o">(</span>s<span class="o">)</span>:<span class="w">                       </span><span class="m">1</span>
 </code></pre></div>
 表明其为 2 核 4 线程。</p>
-<p><div class="highlight"><pre><span></span><code>T460P $ $ lscpu <span class="p">|</span> grep -E <span class="s1">&#39;^Thread|^Core|^Socket|^CPU\(&#39;</span>
-CPU<span class="o">(</span>s<span class="o">)</span>:              <span class="m">4</span>
-Thread<span class="o">(</span>s<span class="o">)</span> per core:  <span class="m">1</span>
-Core<span class="o">(</span>s<span class="o">)</span> per socket:  <span class="m">4</span>
-Socket<span class="o">(</span>s<span class="o">)</span>:           <span class="m">1</span>
+<p><div class="highlight"><pre><span></span><code>T460P<span class="w"> </span>$<span class="w"> </span>$<span class="w"> </span>lscpu<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;^Thread|^Core|^Socket|^CPU\(&#39;</span>
+CPU<span class="o">(</span>s<span class="o">)</span>:<span class="w">              </span><span class="m">4</span>
+Thread<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>per<span class="w"> </span>core:<span class="w">  </span><span class="m">1</span>
+Core<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>per<span class="w"> </span>socket:<span class="w">  </span><span class="m">4</span>
+Socket<span class="o">(</span>s<span class="o">)</span>:<span class="w">           </span><span class="m">1</span>
 </code></pre></div>
 表明其为 4 核 4 线程。</p>
 <p>参考 <a href="https://cloud.tencent.com/developer/article/1736628">三分钟速览cpu,socket,core,thread等术语之间的关系</a></p>
@@ -2943,10 +2943,10 @@ source: <a href="https://zh.wikipedia.org/wiki/%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD
 <li><code>LANG</code>: 指定默认使用的locale值</li>
 </ol>
 <p>如若设置不当，可能会出现</p>
-<div class="highlight"><pre><span></span><code>$ locale
-locale: Cannot <span class="nb">set</span> LC_CTYPE to default locale: No such file or directory
-locale: Cannot <span class="nb">set</span> LC_MESSAGES to default locale: No such file or directory
-locale: Cannot <span class="nb">set</span> LC_ALL to default locale: No such file or directory
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>locale
+locale:<span class="w"> </span>Cannot<span class="w"> </span><span class="nb">set</span><span class="w"> </span>LC_CTYPE<span class="w"> </span>to<span class="w"> </span>default<span class="w"> </span>locale:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
+locale:<span class="w"> </span>Cannot<span class="w"> </span><span class="nb">set</span><span class="w"> </span>LC_MESSAGES<span class="w"> </span>to<span class="w"> </span>default<span class="w"> </span>locale:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
+locale:<span class="w"> </span>Cannot<span class="w"> </span><span class="nb">set</span><span class="w"> </span>LC_ALL<span class="w"> </span>to<span class="w"> </span>default<span class="w"> </span>locale:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
 <span class="nv">LANG</span><span class="o">=</span>C.UTF-8
 <span class="nv">LC_CTYPE</span><span class="o">=</span>C.UTF-8
 <span class="nv">LC_NUMERIC</span><span class="o">=</span>en_US.UTF-8
@@ -2963,7 +2963,7 @@ locale: Cannot <span class="nb">set</span> LC_ALL to default locale: No such fil
 <span class="nv">LC_ALL</span><span class="o">=</span>
 </code></pre></div>
 <p>则可以通过</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
 </code></pre></div>
 <p>来解决这个问题，这个可以写进 <code>.bashrc</code> 文件中，并且不需要 sudo 权限，而 <a href="https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue">How do I fix my locale issue?</a> 中提到的几种方法需要 sudo 权限。</p>
 <h2 id="shared-objects-so-dynamic-library">shared objects <code>.so</code> (dynamic library)<a class="headerlink" href="#shared-objects-so-dynamic-library" title="Permanent link">&para;</a></h2>
@@ -2975,38 +2975,38 @@ locale: Cannot <span class="nb">set</span> LC_ALL to default locale: No such fil
 </ul>
 <p>Then there are several ways to fix the NotFound error,</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># method 1</span>
-sudo ln -s /where/your/lib/*.so /usr/lib
-sudo ldconfig
+sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/where/your/lib/*.so<span class="w"> </span>/usr/lib
+sudo<span class="w"> </span>ldconfig
 <span class="c1"># method 2</span>
-<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/where/your/lib:<span class="nv">$LD_LIBRARY_PATH</span><span class="sb">`</span>
-sudo ldconfig
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/where/your/lib:<span class="nv">$LD_LIBRARY_PATH</span><span class="sb">`</span>
+sudo<span class="w"> </span>ldconfig
 <span class="c1"># method 3</span>
-sudo <span class="nb">echo</span> <span class="s2">&quot;where/your/lib&quot;</span> &gt;&gt; /etc/ld.so.conf
-sudo ldconfig
+sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;where/your/lib&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/ld.so.conf
+sudo<span class="w"> </span>ldconfig
 </code></pre></div>
 <h2 id="could-not-get-lock-varlibdpkglock-open">could not get lock /var/lib/dpkg/lock -open<a class="headerlink" href="#could-not-get-lock-varlibdpkglock-open" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>sudo rm /var/cache/apt/archives/lock
-sudo rm /var/lib/dpkg/lock
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rm<span class="w"> </span>/var/cache/apt/archives/lock
+sudo<span class="w"> </span>rm<span class="w"> </span>/var/lib/dpkg/lock
 </code></pre></div>
 <p>如果不行，重启。</p>
 <h2 id="update-alternatives">update-alternatives<a class="headerlink" href="#update-alternatives" title="Permanent link">&para;</a></h2>
 <p>可以通过 <code>update-alternatives</code> 进行切换，但注意要提前安装 <code>install</code> alternatives，这里的 install 不是下载源码安装，而是将系统中已有的不同版本的 gcc 安装到 alternatives 中。比如当前我电脑的 gcc &ndash;version 是 7.5.0，但是仍有 <code>gcc-5</code>, <code>gcc-4.8</code> 等命令，不过这些并不在 alternatives 中，因为如果直接运行</p>
-<div class="highlight"><pre><span></span><code>$ sudo update-alternatives --config gcc
-update-alternatives: error: no alternatives <span class="k">for</span> gcc
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--config<span class="w"> </span>gcc
+update-alternatives:<span class="w"> </span>error:<span class="w"> </span>no<span class="w"> </span>alternatives<span class="w"> </span><span class="k">for</span><span class="w"> </span>gcc
 </code></pre></div>
 <p>所以可以按照 <a href="https://codeyarns.github.io/tech/2015-02-26-how-to-switch-gcc-version-using-update-alternatives.html">How to switch GCC version using update-alternatives</a> 先</p>
-<div class="highlight"><pre><span></span><code>sudo update-alternatives --install ....
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>....
 </code></pre></div>
 <p>然后再 config.</p>
 <h2 id="kill-processes">Kill Processes<a class="headerlink" href="#kill-processes" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://blog.csdn.net/andy572633/article/details/7211546">linux下杀死进程（kill）的N种方法</a></p>
-<div class="highlight"><pre><span></span><code>ps -ef <span class="p">|</span> grep R
-<span class="nb">kill</span> -s <span class="m">9</span> ...
+<div class="highlight"><pre><span></span><code>ps<span class="w"> </span>-ef<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>R
+<span class="nb">kill</span><span class="w"> </span>-s<span class="w"> </span><span class="m">9</span><span class="w"> </span>...
 </code></pre></div>
 <p>其中 <code>ps -ef</code> 输出格式为</p>
-<div class="highlight"><pre><span></span><code>$ ps -ef <span class="p">|</span> head -2
-UID        PID  PPID  C STIME TTY          TIME CMD
-root         <span class="m">1</span>     <span class="m">0</span>  <span class="m">0</span> <span class="m">09</span>:15 ?        <span class="m">00</span>:00:44 /sbin/init splash
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ps<span class="w"> </span>-ef<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-2
+UID<span class="w">        </span>PID<span class="w">  </span>PPID<span class="w">  </span>C<span class="w"> </span>STIME<span class="w"> </span>TTY<span class="w">          </span>TIME<span class="w"> </span>CMD
+root<span class="w">         </span><span class="m">1</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">09</span>:15<span class="w"> </span>?<span class="w">        </span><span class="m">00</span>:00:44<span class="w"> </span>/sbin/init<span class="w"> </span>splash
 </code></pre></div>
 <p>每一列的含义可以在 <code>man ps</code> 中的 <code>STANDARD FORMAT SPECIFIERS</code> 小节中找到，具体地，</p>
 <ul>
@@ -3038,32 +3038,32 @@ root         <span class="m">1</span>     <span class="m">0</span>  <span class=
 <p><a href="https://www.makeuseof.com/tag/control-android-using-computers-mouse-keyboard/">How to Control Your Android Using Your Computer’s Mouse and Keyboard</a></p>
 <h2 id="nvidia-driver">Nvidia Driver<a class="headerlink" href="#nvidia-driver" title="Permanent link">&para;</a></h2>
 <p>Install via the GUI <code>Software &amp; Updates</code>. If succeed, then</p>
-<div class="highlight"><pre><span></span><code>$ nvidia-smi
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvidia-smi
 </code></pre></div>
 <p>can display the GPU memory usage, together with the versions of driver and CUDA,</p>
-<div class="highlight"><pre><span></span><code>$ nvidia-smi 
-Mon Aug  <span class="m">2</span> <span class="m">22</span>:08:19 <span class="m">2021</span>       
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvidia-smi<span class="w"> </span>
+Mon<span class="w"> </span>Aug<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">22</span>:08:19<span class="w"> </span><span class="m">2021</span><span class="w">       </span>
 +-----------------------------------------------------------------------------+
-<span class="p">|</span> NVIDIA-SMI <span class="m">460</span>.91.03    Driver Version: <span class="m">460</span>.91.03    CUDA Version: <span class="m">11</span>.2     <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>NVIDIA-SMI<span class="w"> </span><span class="m">460</span>.91.03<span class="w">    </span>Driver<span class="w"> </span>Version:<span class="w"> </span><span class="m">460</span>.91.03<span class="w">    </span>CUDA<span class="w"> </span>Version:<span class="w"> </span><span class="m">11</span>.2<span class="w">     </span><span class="p">|</span>
 <span class="p">|</span>-------------------------------+----------------------+----------------------+
-<span class="p">|</span> GPU  Name        Persistence-M<span class="p">|</span> Bus-Id        Disp.A <span class="p">|</span> Volatile Uncorr. ECC <span class="p">|</span>
-<span class="p">|</span> Fan  Temp  Perf  Pwr:Usage/Cap<span class="p">|</span>         Memory-Usage <span class="p">|</span> GPU-Util  Compute M. <span class="p">|</span>
-<span class="p">|</span>                               <span class="p">|</span>                      <span class="p">|</span>               MIG M. <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>GPU<span class="w">  </span>Name<span class="w">        </span>Persistence-M<span class="p">|</span><span class="w"> </span>Bus-Id<span class="w">        </span>Disp.A<span class="w"> </span><span class="p">|</span><span class="w"> </span>Volatile<span class="w"> </span>Uncorr.<span class="w"> </span>ECC<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>Fan<span class="w">  </span>Temp<span class="w">  </span>Perf<span class="w">  </span>Pwr:Usage/Cap<span class="p">|</span><span class="w">         </span>Memory-Usage<span class="w"> </span><span class="p">|</span><span class="w"> </span>GPU-Util<span class="w">  </span>Compute<span class="w"> </span>M.<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w">                               </span><span class="p">|</span><span class="w">                      </span><span class="p">|</span><span class="w">               </span>MIG<span class="w"> </span>M.<span class="w"> </span><span class="p">|</span>
 <span class="p">|</span><span class="o">===============================</span>+<span class="o">======================</span>+<span class="o">======================</span><span class="p">|</span>
-<span class="p">|</span>   <span class="m">0</span>  GeForce 940MX       Off  <span class="p">|</span> <span class="m">00000000</span>:02:00.0 Off <span class="p">|</span>                  N/A <span class="p">|</span>
-<span class="p">|</span> N/A   63C    P0    N/A /  N/A <span class="p">|</span>    724MiB /  2004MiB <span class="p">|</span>      <span class="m">9</span>%      Default <span class="p">|</span>
-<span class="p">|</span>                               <span class="p">|</span>                      <span class="p">|</span>                  N/A <span class="p">|</span>
+<span class="p">|</span><span class="w">   </span><span class="m">0</span><span class="w">  </span>GeForce<span class="w"> </span>940MX<span class="w">       </span>Off<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">00000000</span>:02:00.0<span class="w"> </span>Off<span class="w"> </span><span class="p">|</span><span class="w">                  </span>N/A<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>N/A<span class="w">   </span>63C<span class="w">    </span>P0<span class="w">    </span>N/A<span class="w"> </span>/<span class="w">  </span>N/A<span class="w"> </span><span class="p">|</span><span class="w">    </span>724MiB<span class="w"> </span>/<span class="w">  </span>2004MiB<span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="m">9</span>%<span class="w">      </span>Default<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w">                               </span><span class="p">|</span><span class="w">                      </span><span class="p">|</span><span class="w">                  </span>N/A<span class="w"> </span><span class="p">|</span>
 +-------------------------------+----------------------+----------------------+
 
 +-----------------------------------------------------------------------------+
-<span class="p">|</span> Processes:                                                                  <span class="p">|</span>
-<span class="p">|</span>  GPU   GI   CI        PID   Type   Process name                  GPU Memory <span class="p">|</span>
-<span class="p">|</span>        ID   ID                                                   Usage      <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>Processes:<span class="w">                                                                  </span><span class="p">|</span>
+<span class="p">|</span><span class="w">  </span>GPU<span class="w">   </span>GI<span class="w">   </span>CI<span class="w">        </span>PID<span class="w">   </span>Type<span class="w">   </span>Process<span class="w"> </span>name<span class="w">                  </span>GPU<span class="w"> </span>Memory<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w">        </span>ID<span class="w">   </span>ID<span class="w">                                                   </span>Usage<span class="w">      </span><span class="p">|</span>
 <span class="p">|</span><span class="o">=============================================================================</span><span class="p">|</span>
-<span class="p">|</span>    <span class="m">0</span>   N/A  N/A       <span class="m">400</span>      G   WeChatWeb.exe                       9MiB <span class="p">|</span>
-<span class="p">|</span>    <span class="m">0</span>   N/A  N/A       <span class="m">663</span>      G   ...cent<span class="se">\W</span>eChat<span class="se">\W</span>eChatApp.exe        7MiB <span class="p">|</span>
-<span class="p">|</span>    <span class="m">0</span>   N/A  N/A      <span class="m">4454</span>      G   ...AAAAAAAAA<span class="o">=</span> --shared-files       59MiB <span class="p">|</span>
-<span class="p">|</span>    <span class="m">0</span>   N/A  N/A      <span class="m">7440</span>      G   /usr/lib/xorg/Xorg                437MiB <span class="p">|</span>
+<span class="p">|</span><span class="w">    </span><span class="m">0</span><span class="w">   </span>N/A<span class="w">  </span>N/A<span class="w">       </span><span class="m">400</span><span class="w">      </span>G<span class="w">   </span>WeChatWeb.exe<span class="w">                       </span>9MiB<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w">    </span><span class="m">0</span><span class="w">   </span>N/A<span class="w">  </span>N/A<span class="w">       </span><span class="m">663</span><span class="w">      </span>G<span class="w">   </span>...cent<span class="se">\W</span>eChat<span class="se">\W</span>eChatApp.exe<span class="w">        </span>7MiB<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w">    </span><span class="m">0</span><span class="w">   </span>N/A<span class="w">  </span>N/A<span class="w">      </span><span class="m">4454</span><span class="w">      </span>G<span class="w">   </span>...AAAAAAAAA<span class="o">=</span><span class="w"> </span>--shared-files<span class="w">       </span>59MiB<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w">    </span><span class="m">0</span><span class="w">   </span>N/A<span class="w">  </span>N/A<span class="w">      </span><span class="m">7440</span><span class="w">      </span>G<span class="w">   </span>/usr/lib/xorg/Xorg<span class="w">                </span>437MiB<span class="w"> </span><span class="p">|</span>
 </code></pre></div>
 <p>refer to <a href="https://blog.csdn.net/wf19930209/article/details/81877822">Linux安装NVIDIA显卡驱动的正确姿势</a> for other approaches (seems more technical).</p>
 <h2 id="run-in-background">Run in Background<a class="headerlink" href="#run-in-background" title="Permanent link">&para;</a></h2>
@@ -3085,9 +3085,9 @@ Mon Aug  <span class="m">2</span> <span class="m">22</span>:08:19 <span class="m
 <p>似乎 <code>docker run</code> 使用 nohup 会直接退出，并生成文件 <code>nohup.txt</code>，里面内容为“the input device is not a TTY”.</p>
 <h2 id="crontab">crontab定时任务<a class="headerlink" href="#crontab" title="Permanent link">&para;</a></h2>
 <p><code>* */1 * * * *</code> 表现为每分钟执行，但是本来第 1 列应当为分钟，而第 2 列为小时，这样使用对用法理解错误，而且改成 <code>* * */1 * * *</code> 仍然表现为每分钟。试图</p>
-<div class="highlight"><pre><span></span><code>sudo service cron restart
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>service<span class="w"> </span>cron<span class="w"> </span>restart
 <span class="c1"># or</span>
-sudo service cron reload
+sudo<span class="w"> </span>service<span class="w"> </span>cron<span class="w"> </span>reload
 </code></pre></div>
 <p>都失败了。所以还是理解出现了偏差，</p>
 <p>参考<a href="https://www.cnblogs.com/zoulongbin/p/6187238.html">Linux 设置定时任务crontab命令</a> 和 <a href="https://www.jianshu.com/p/d93e2b177814">关于定时执行任务：Crontab的20个例子</a></p>
@@ -3103,7 +3103,7 @@ sudo service cron reload
 <h2 id="devloopx"><code>/dev/loopx</code><a class="headerlink" href="#devloopx" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://askubuntu.com/questions/906581/what-is-dev-loopx">What is /dev/loopx?</a>.</p>
 <h2 id="remove-broken-link">remove broken link<a class="headerlink" href="#remove-broken-link" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>find -L . -name . -o -type d -prune -o -type l -exec rm <span class="o">{}</span> +
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>-L<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span>.<span class="w"> </span>-o<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-prune<span class="w"> </span>-o<span class="w"> </span>-type<span class="w"> </span>l<span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span><span class="o">{}</span><span class="w"> </span>+
 </code></pre></div>
 <p><a href="https://stackoverflow.com/questions/22097130/delete-all-broken-symbolic-links-with-a-line">Delete all broken symbolic links with a line?</a></p>
 <h2 id="hydrogen-specify-the-conda-envirnoment">hydrogen specify the conda envirnoment<a class="headerlink" href="#hydrogen-specify-the-conda-envirnoment" title="Permanent link">&para;</a></h2>
@@ -3126,12 +3126,12 @@ python -m ipykernel install --user --name thisenv
 <code>nvcc</code>: the CUDA compiler-driver tool that is installed with the CUDA toolkit, will always report the CUDA runtime version that it was built to recognize.</p>
 <h2 id="proxy-for-apt">proxy for apt<a class="headerlink" href="#proxy-for-apt" title="Permanent link">&para;</a></h2>
 <p><code>proxychains</code> seems not work well before <code>sudo</code> or after <code>sudo</code>, and I dont want to add a system proxy permanently, then I found a temporary way,</p>
-<div class="highlight"><pre><span></span><code>sudo <span class="nv">http_proxy</span><span class="o">=</span><span class="s1">&#39;http://user:pass@proxy.example.com:8080/&#39;</span> apt-get install package-name
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="nv">http_proxy</span><span class="o">=</span><span class="s1">&#39;http://user:pass@proxy.example.com:8080/&#39;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>package-name
 </code></pre></div>
 <p>refer to <a href="https://askubuntu.com/questions/89437/how-to-install-packages-with-apt-get-on-a-system-connected-via-proxy">how to install packages with apt-get on a system connected via proxy?</a></p>
 <h2 id="netrc">.netrc<a class="headerlink" href="#netrc" title="Permanent link">&para;</a></h2>
 <p>为了学习 RL，在听了周博磊在 B 站的视频后，准备玩下<a href="https://github.com/cuhkrlcourse/RLexample">示例代码</a>，但是在终端中创建新 conda 环境时，</p>
-<div class="highlight"><pre><span></span><code>conda create --name RL <span class="nv">python</span><span class="o">=</span><span class="m">3</span>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>RL<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>
 </code></pre></div>
 <p>总是报错，</p>
 <blockquote>
@@ -3142,9 +3142,9 @@ any environment variables ending in &lsquo;_PROXY&rsquo;, and any other system-w
 configuration settings.</p>
 </blockquote>
 <p>其中提到一个 <code>.netrc</code>，没想到自己竟然还真的有这个文件，看了下内容，只有两条，</p>
-<div class="highlight"><pre><span></span><code>machine api.heroku.com
+<div class="highlight"><pre><span></span><code>machine<span class="w"> </span>api.heroku.com
 ...
-machine git.heroku.com
+machine<span class="w"> </span>git.heroku.com
 ...
 </code></pre></div>
 <p>这才意识到很早无意识中折腾 heroku 时创建的。那这个文件是干嘛的呢，<a href="https://stackoverflow.com/questions/21828495/purpose-of-the-netrc-file">查了一下发现</a></p>
@@ -3155,50 +3155,50 @@ machine git.heroku.com
 <h2 id="possible-errors-using-apt-get">possible errors using <code>apt-get</code><a class="headerlink" href="#possible-errors-using-apt-get" title="Permanent link">&para;</a></h2>
 <p><a href="https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa">How do I resolve unmet dependencies after adding a PPA?</a></p>
 <h2 id="gpg-error">GPG error<a class="headerlink" href="#gpg-error" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ sudo apt-get update
-W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/ InRelease: The following signatures were invalid: EXPKEYSIG 51716619E084DAB9 Michael Rutter &lt;marutter@gmail.com&gt;
-W: Failed to fetch https://cloud.r-project.org/bin/linux/ubuntu/bionic-cran35/InRelease  The following signatures were invalid: EXPKEYSIG 51716619E084DAB9 Michael Rutter &lt;marutter@gmail.com&gt;
-W: Some index files failed to download. They have been ignored, or old ones used instead.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+W:<span class="w"> </span>An<span class="w"> </span>error<span class="w"> </span>occurred<span class="w"> </span>during<span class="w"> </span>the<span class="w"> </span>signature<span class="w"> </span>verification.<span class="w"> </span>The<span class="w"> </span>repository<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>updated<span class="w"> </span>and<span class="w"> </span>the<span class="w"> </span>previous<span class="w"> </span>index<span class="w"> </span>files<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>used.<span class="w"> </span>GPG<span class="w"> </span>error:<span class="w"> </span>https://cloud.r-project.org/bin/linux/ubuntu<span class="w"> </span>bionic-cran35/<span class="w"> </span>InRelease:<span class="w"> </span>The<span class="w"> </span>following<span class="w"> </span>signatures<span class="w"> </span>were<span class="w"> </span>invalid:<span class="w"> </span>EXPKEYSIG<span class="w"> </span>51716619E084DAB9<span class="w"> </span>Michael<span class="w"> </span>Rutter<span class="w"> </span>&lt;marutter@gmail.com&gt;
+W:<span class="w"> </span>Failed<span class="w"> </span>to<span class="w"> </span>fetch<span class="w"> </span>https://cloud.r-project.org/bin/linux/ubuntu/bionic-cran35/InRelease<span class="w">  </span>The<span class="w"> </span>following<span class="w"> </span>signatures<span class="w"> </span>were<span class="w"> </span>invalid:<span class="w"> </span>EXPKEYSIG<span class="w"> </span>51716619E084DAB9<span class="w"> </span>Michael<span class="w"> </span>Rutter<span class="w"> </span>&lt;marutter@gmail.com&gt;
+W:<span class="w"> </span>Some<span class="w"> </span>index<span class="w"> </span>files<span class="w"> </span>failed<span class="w"> </span>to<span class="w"> </span>download.<span class="w"> </span>They<span class="w"> </span>have<span class="w"> </span>been<span class="w"> </span>ignored,<span class="w"> </span>or<span class="w"> </span>old<span class="w"> </span>ones<span class="w"> </span>used<span class="w"> </span>instead.
 </code></pre></div>
 <p>and got the expired key via</p>
-<div class="highlight"><pre><span></span><code>$ apt-key list
-pub   rsa2048 <span class="m">2010</span>-10-19 <span class="o">[</span>SCA<span class="o">]</span> <span class="o">[</span>expired: <span class="m">2020</span>-10-16<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>apt-key<span class="w"> </span>list
+pub<span class="w">   </span>rsa2048<span class="w"> </span><span class="m">2010</span>-10-19<span class="w"> </span><span class="o">[</span>SCA<span class="o">]</span><span class="w"> </span><span class="o">[</span>expired:<span class="w"> </span><span class="m">2020</span>-10-16<span class="o">]</span>
 ...
-uid           <span class="o">[</span> expired<span class="o">]</span> Michael Rutter &lt;marutter@gmail.com&gt;
+uid<span class="w">           </span><span class="o">[</span><span class="w"> </span>expired<span class="o">]</span><span class="w"> </span>Michael<span class="w"> </span>Rutter<span class="w"> </span>&lt;marutter@gmail.com&gt;
 </code></pre></div>
 <p>but it seems not work following <a href="https://linux-audit.com/how-to-solve-an-expired-key-keyexpired-with-apt/">How to solve an expired key (KEYEXPIRED) with apt</a></p>
-<div class="highlight"><pre><span></span><code>$ apt-key adv --keyserver keys.gnupg.net --recv-keys 51716619E084DAB9
-Executing: /tmp/apt-key-gpghome.CYSI3C6heK/gpg.1.sh --keyserver keys.gnupg.net --recv-keys 51716619E084DAB9
-gpg: key 51716619E084DAB9: <span class="s2">&quot;Michael Rutter &lt;marutter@gmail.com&gt;&quot;</span> not changed
-gpg: Total number processed: <span class="m">1</span>
-gpg:              unchanged: <span class="m">1</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>apt-key<span class="w"> </span>adv<span class="w"> </span>--keyserver<span class="w"> </span>keys.gnupg.net<span class="w"> </span>--recv-keys<span class="w"> </span>51716619E084DAB9
+Executing:<span class="w"> </span>/tmp/apt-key-gpghome.CYSI3C6heK/gpg.1.sh<span class="w"> </span>--keyserver<span class="w"> </span>keys.gnupg.net<span class="w"> </span>--recv-keys<span class="w"> </span>51716619E084DAB9
+gpg:<span class="w"> </span>key<span class="w"> </span>51716619E084DAB9:<span class="w"> </span><span class="s2">&quot;Michael Rutter &lt;marutter@gmail.com&gt;&quot;</span><span class="w"> </span>not<span class="w"> </span>changed
+gpg:<span class="w"> </span>Total<span class="w"> </span>number<span class="w"> </span>processed:<span class="w"> </span><span class="m">1</span>
+gpg:<span class="w">              </span>unchanged:<span class="w"> </span><span class="m">1</span>
 </code></pre></div>
 <p>then I tried another keyserver mentioned in <a href="https://stackoverflow.com/questions/10255082/installing-r-from-cran-ubuntu-repository-no-public-key-error">Installing R from CRAN Ubuntu repository: No Public Key Error</a></p>
-<div class="highlight"><pre><span></span><code>$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
-<span class="o">[</span>sudo<span class="o">]</span> password <span class="k">for</span> weiya:
-Executing: /tmp/apt-key-gpghome.xUS3ZEg8N2/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
-gpg: key 51716619E084DAB9: <span class="s2">&quot;Michael Rutter &lt;marutter@gmail.com&gt;&quot;</span> <span class="m">2</span> new signatures
-gpg: Total number processed: <span class="m">1</span>
-gpg:         new signatures: <span class="m">2</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>adv<span class="w"> </span>--keyserver<span class="w"> </span>keyserver.ubuntu.com<span class="w"> </span>--recv-keys<span class="w"> </span>51716619E084DAB9
+<span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>weiya:
+Executing:<span class="w"> </span>/tmp/apt-key-gpghome.xUS3ZEg8N2/gpg.1.sh<span class="w"> </span>--keyserver<span class="w"> </span>keyserver.ubuntu.com<span class="w"> </span>--recv-keys<span class="w"> </span>51716619E084DAB9
+gpg:<span class="w"> </span>key<span class="w"> </span>51716619E084DAB9:<span class="w"> </span><span class="s2">&quot;Michael Rutter &lt;marutter@gmail.com&gt;&quot;</span><span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>signatures
+gpg:<span class="w"> </span>Total<span class="w"> </span>number<span class="w"> </span>processed:<span class="w"> </span><span class="m">1</span>
+gpg:<span class="w">         </span>new<span class="w"> </span>signatures:<span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 <p>Now, new signatures come, and no expired again.</p>
 <p>Another one,</p>
-<div class="highlight"><pre><span></span><code>W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04 ./ InRelease: The following signatures were invalid: EXPKEYSIG DFA175A75104960E Emulators OBS Project &lt;Emulators@build.opensuse.org&gt;
-W: Failed to fetch https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/./InRelease  The following signatures were invalid: EXPKEYSIG DFA175A75104960E Emulators OBS Project &lt;Emulators@build.opensuse.org&gt;
-W: Some index files failed to download. They have been ignored, or old ones used instead.
+<div class="highlight"><pre><span></span><code>W:<span class="w"> </span>An<span class="w"> </span>error<span class="w"> </span>occurred<span class="w"> </span>during<span class="w"> </span>the<span class="w"> </span>signature<span class="w"> </span>verification.<span class="w"> </span>The<span class="w"> </span>repository<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>updated<span class="w"> </span>and<span class="w"> </span>the<span class="w"> </span>previous<span class="w"> </span>index<span class="w"> </span>files<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>used.<span class="w"> </span>GPG<span class="w"> </span>error:<span class="w"> </span>https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04<span class="w"> </span>./<span class="w"> </span>InRelease:<span class="w"> </span>The<span class="w"> </span>following<span class="w"> </span>signatures<span class="w"> </span>were<span class="w"> </span>invalid:<span class="w"> </span>EXPKEYSIG<span class="w"> </span>DFA175A75104960E<span class="w"> </span>Emulators<span class="w"> </span>OBS<span class="w"> </span>Project<span class="w"> </span>&lt;Emulators@build.opensuse.org&gt;
+W:<span class="w"> </span>Failed<span class="w"> </span>to<span class="w"> </span>fetch<span class="w"> </span>https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/./InRelease<span class="w">  </span>The<span class="w"> </span>following<span class="w"> </span>signatures<span class="w"> </span>were<span class="w"> </span>invalid:<span class="w"> </span>EXPKEYSIG<span class="w"> </span>DFA175A75104960E<span class="w"> </span>Emulators<span class="w"> </span>OBS<span class="w"> </span>Project<span class="w"> </span>&lt;Emulators@build.opensuse.org&gt;
+W:<span class="w"> </span>Some<span class="w"> </span>index<span class="w"> </span>files<span class="w"> </span>failed<span class="w"> </span>to<span class="w"> </span>download.<span class="w"> </span>They<span class="w"> </span>have<span class="w"> </span>been<span class="w"> </span>ignored,<span class="w"> </span>or<span class="w"> </span>old<span class="w"> </span>ones<span class="w"> </span>used<span class="w"> </span>instead.
 </code></pre></div>
 <p>according to the record on <a href="software/#wechat-in-linux">WeChat in Linux</a>, it seems that this one is not important, and for simplest, I just untick this repository in the software setting.</p>
 <h2 id="sftp-via-file-manager">sftp via File Manager<a class="headerlink" href="#sftp-via-file-manager" title="Permanent link">&para;</a></h2>
 <p>在用 <code>connect to server</code> 时，经常弹出窗口要求输入用户名及密码，格式为 <code>sftp://xxx.xxx.xx.xx</code>，如果避免输入密码，不妨采用 <code>sftp://user@xxx.xxx.xx.xx</code>。不过有时在登录其它服务器时，不指定用户名还是直接登进去了，不太清楚为什么，猜想会不会是这几个服务器的用户名刚好跟本地相同。</p>
 <h2 id="make-the-software-searchable">make the software searchable<a class="headerlink" href="#make-the-software-searchable" title="Permanent link">&para;</a></h2>
 <p>If the software has <code>xx.destop</code> file, then</p>
-<div class="highlight"><pre><span></span><code>cp xx.destop ~/.local/share/applications
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>xx.destop<span class="w"> </span>~/.local/share/applications
 </code></pre></div>
 <p>otherwise， create a <code>.desktop</code> file. More details refer to <a href="https://askubuntu.com/questions/80013/how-to-pin-eclipse-to-the-unity-launcher">How to pin Eclipse to the Unity launcher?</a> and <a href="https://askubuntu.com/questions/285951/how-to-add-programs-to-the-launcher-search">How to add programs to the launcher (search)?</a></p>
 <h2 id="you-have-new-mail">You have new mail<a class="headerlink" href="#you-have-new-mail" title="Permanent link">&para;</a></h2>
 <p>Here is a message when I login in to the Office PC,</p>
-<div class="highlight"><pre><span></span><code>You have new mail.
-Last login: Thu May <span class="m">20</span> <span class="m">13</span>:29:14 <span class="m">2021</span> from <span class="m">127</span>.0.0.1
+<div class="highlight"><pre><span></span><code>You<span class="w"> </span>have<span class="w"> </span>new<span class="w"> </span>mail.
+Last<span class="w"> </span>login:<span class="w"> </span>Thu<span class="w"> </span>May<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">13</span>:29:14<span class="w"> </span><span class="m">2021</span><span class="w"> </span>from<span class="w"> </span><span class="m">127</span>.0.0.1
 </code></pre></div>
 <p>Refer to <a href="https://devanswers.co/you-have-mail-how-to-read-mail-in-ubuntu">“You have mail” – How to Read Mail in Linux Command Line</a>, the message is stored in the spool file, which is located at <code>/var/mail/$(whoami)</code>. The I found that this is a failed email when I wrote the mail notification script when there are new error message in <code>/var/log/apache2/error.log</code>.</p>
 <h2 id="systemd">systemd<a class="headerlink" href="#systemd" title="Permanent link">&para;</a></h2>
@@ -3223,8 +3223,8 @@ Last login: Thu May <span class="m">20</span> <span class="m">13</span>:29:14 <s
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>WSL does not support <code>systemd</code>, for example, it throws</p>
-<div class="highlight"><pre><span></span><code>$ systemctl list-units
-System has not been booted with systemd as init system <span class="o">(</span>PID <span class="m">1</span><span class="o">)</span>. Can<span class="err">&#39;</span>t operate.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>systemctl<span class="w"> </span>list-units
+System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </span>been<span class="w"> </span>booted<span class="w"> </span>with<span class="w"> </span>systemd<span class="w"> </span>as<span class="w"> </span>init<span class="w"> </span>system<span class="w"> </span><span class="o">(</span>PID<span class="w"> </span><span class="m">1</span><span class="o">)</span>.<span class="w"> </span>Can<span class="err">&#39;</span>t<span class="w"> </span>operate.
 </code></pre></div>
 <p>see also</p>
 <ul>
@@ -3235,7 +3235,7 @@ System has not been booted with systemd as init system <span class="o">(</span>P
 <h3 id="locally-via-user">locally via <code>--user</code><a class="headerlink" href="#locally-via-user" title="Permanent link">&para;</a></h3>
 <p>the service can be also set up locally, such as <code>~/.local/share/systemd/user/ssh4lab.service</code> in <a href="software/#fail-to-open-terminal"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <p>we can check the status and manage it via</p>
-<div class="highlight"><pre><span></span><code>systemctl --user status/stop/start/disable/enable ssh4lab
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span>status/stop/start/disable/enable<span class="w"> </span>ssh4lab
 </code></pre></div>
 <p>see also: <a href="https://superuser.com/questions/1037466/how-to-start-a-systemd-service-after-user-login-and-stop-it-before-user-logout"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h2 id="custom-shortcut-to-switch-external-display-mode">Custom Shortcut to Switch External Display Mode<a class="headerlink" href="#custom-shortcut-to-switch-external-display-mode" title="Permanent link">&para;</a></h2>
@@ -3243,15 +3243,15 @@ System has not been booted with systemd as init system <span class="o">(</span>P
 <p>试过在 synergy 中将 PC 机设置为 T460p 上方，这样移动鼠标只需往上，不过体验不是很好，而且 Ubuntu 顶端有状态栏而 PC 端底部也有task bar，移动时能明显感受到延时。另外一个策略便是切换显示屏 mode，由 joint 模式切换成 mirror。</p>
 <p>注意到，当处于 mirror 模式下，eDP-1-1 primary 显示为 <code>1920x1080+0+0</code>，而如果是 joint mode，尺寸为 <code>1920x1080+1920+0</code>。受 <a href="https://askubuntu.com/questions/958914/swap-between-monitor-display-modes-using-shortcut">Swap between monitor display modes using shortcut</a>
  启发，决定写脚本自定义快捷键</p>
-<div class="highlight"><pre><span></span><code>~$ cat switch_mirror_joint.sh 
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>cat<span class="w"> </span>switch_mirror_joint.sh<span class="w"> </span>
 <span class="c1">#!/bin/bash</span>
-<span class="nv">currentmode</span><span class="o">=</span><span class="k">$(</span>xrandr -q <span class="p">|</span> grep <span class="s2">&quot;primary 1920x1080+0+0&quot;</span><span class="k">)</span>
-<span class="k">if</span> <span class="o">[[</span> -n <span class="nv">$currentmode</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="c1">#echo &quot;mirror&quot;</span>
-    xrandr --output HDMI-1-1 --left-of eDP-1-1
+<span class="nv">currentmode</span><span class="o">=</span><span class="k">$(</span>xrandr<span class="w"> </span>-q<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;primary 1920x1080+0+0&quot;</span><span class="k">)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$currentmode</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="c1">#echo &quot;mirror&quot;</span>
+<span class="w">    </span>xrandr<span class="w"> </span>--output<span class="w"> </span>HDMI-1-1<span class="w"> </span>--left-of<span class="w"> </span>eDP-1-1
 <span class="k">else</span>
-    <span class="c1">#echo &quot;joint&quot;</span>
-    xrandr --output HDMI-1-1 --same-as eDP-1-1
+<span class="w">    </span><span class="c1">#echo &quot;joint&quot;</span>
+<span class="w">    </span>xrandr<span class="w"> </span>--output<span class="w"> </span>HDMI-1-1<span class="w"> </span>--same-as<span class="w"> </span>eDP-1-1
 <span class="k">fi</span>
 </code></pre></div>
 <p>然后进入 keyboard shortcut 设置界面，</p>
@@ -3395,7 +3395,7 @@ System has not been booted with systemd as init system <span class="o">(</span>P
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

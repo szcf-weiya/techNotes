@@ -3603,19 +3603,19 @@
 <h3 id="2021-on-rocky">2021 on Rocky<a class="headerlink" href="#2021-on-rocky" title="Permanent link">&para;</a></h3>
 <p>did not click <code>create symlinks to standard directories</code> after running <code>./install-tl</code></p>
 <p>create module file, <code>/usr/share/Modules/modulefiles/texlive/2021</code>,</p>
-<div class="highlight"><pre><span></span><code><span class="nb">set</span>     version         <span class="m">2021</span>
-<span class="nb">set</span>     app             texlive
-<span class="nb">set</span>     modroot         /usr/local/<span class="nv">$app</span>/<span class="nv">$version</span>
+<div class="highlight"><pre><span></span><code><span class="nb">set</span><span class="w">     </span>version<span class="w">         </span><span class="m">2021</span>
+<span class="nb">set</span><span class="w">     </span>app<span class="w">             </span>texlive
+<span class="nb">set</span><span class="w">     </span>modroot<span class="w">         </span>/usr/local/<span class="nv">$app</span>/<span class="nv">$version</span>
 
-prepend-path PATH <span class="nv">$modroot</span>/bin/x86_64-linux
-prepend-path MANPATH <span class="nv">$modroot</span>/texmf-dist/doc/man
-prepend-path INFOPATH <span class="nv">$modroot</span>/texmf-dist/doc/info
+prepend-path<span class="w"> </span>PATH<span class="w"> </span><span class="nv">$modroot</span>/bin/x86_64-linux
+prepend-path<span class="w"> </span>MANPATH<span class="w"> </span><span class="nv">$modroot</span>/texmf-dist/doc/man
+prepend-path<span class="w"> </span>INFOPATH<span class="w"> </span><span class="nv">$modroot</span>/texmf-dist/doc/info
 </code></pre></div>
 <p>then call it after loading the module,</p>
-<div class="highlight"><pre><span></span><code>$ which pdflatex
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>which<span class="w"> </span>pdflatex
 /usr/bin/pdflatex
-$ module load texlive/2021 
-$ which pdflatex
+$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>texlive/2021<span class="w"> </span>
+$<span class="w"> </span>which<span class="w"> </span>pdflatex
 /usr/local/texlive/2021/bin/x86_64-linux/pdflatex
 </code></pre></div>
 <h3 id="2017-2020">2017 -&gt; 2020<a class="headerlink" href="#2017-2020" title="Permanent link">&para;</a></h3>
@@ -3630,7 +3630,7 @@ $ which pdflatex
 <p>refer to <a href="https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from">Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”</a>, but does not work.</p>
 <p>And I also try uninstall and reinstall TexLive, but it still does not work.</p>
 <p>Then finally I decided to install the latest TeXLive 2020, <a href="https://tug.org/texlive/quickinstall.html">TeX Live - Quick install</a>, follow the instructions, but note that the mirror url should append <code>path/systems/texlive/tlnet</code>.</p>
-<div class="highlight"><pre><span></span><code>install-tl --location http://mirror.example.org/ctan/path/systems/texlive/tlnet
+<div class="highlight"><pre><span></span><code>install-tl<span class="w"> </span>--location<span class="w"> </span>http://mirror.example.org/ctan/path/systems/texlive/tlnet
 </code></pre></div>
 <p>And note that the <a href="https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu">steps for completely removing the installed TeXLive</a>.</p>
 <p>If without root privilege, when running <code>install-tl</code>, type <code>D</code> to change the directory, and actually changing the first <code>&lt;1&gt;</code> would change all other directories.</p>
@@ -3644,7 +3644,7 @@ $ which pdflatex
 <p><img alt="" src="portable_install.png" /></p>
 <p>其与正常安装时环境变量略有不同，没有单独设置 personal 的配置路径，或许还有其他地方的区别。</p>
 <p>另外安装时碰到默认的 mirror 速度很慢的情况，于是考虑换成最近的华为云。</p>
-<div class="highlight"><pre><span></span><code>./install-tl -repository https://mirrors.huaweicloud.com/repository/toolkit/CTAN/systems/texlive/tlnet/
+<div class="highlight"><pre><span></span><code>./install-tl<span class="w"> </span>-repository<span class="w"> </span>https://mirrors.huaweicloud.com/repository/toolkit/CTAN/systems/texlive/tlnet/
 </code></pre></div>
 <p>路径要指定成</p>
 <div class="highlight"><pre><span></span><code>&lt;CTAN/mirror/root/URL&gt;/systems/texlive/tlnet
@@ -3728,7 +3728,7 @@ code
 <p>报错信息如下图</p>
 <p><img alt="" src="font_error.png" /></p>
 <p>解决方案为
-<div class="highlight"><pre><span></span><code>sudo apt-get install texlive-fonts-extra
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>texlive-fonts-extra
 </code></pre></div></p>
 <p>有时需要考虑
 <div class="highlight"><pre><span></span><code>sudo apt-get install texlive-fonts-recommand
@@ -3740,14 +3740,14 @@ code
 <p>使用 <code>\mathbf</code> 加粗完后斜体不见了，这不是想要的结果</p>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
 <span class="k">\boldmath</span>
-<span class="sb">$$</span><span class="nb"></span>
-<span class="nb">f</span><span class="o">(</span><span class="nb">x,y</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">3</span><span class="o">(</span><span class="nb">x</span><span class="o">+</span><span class="nb">y</span><span class="o">)</span><span class="nb">y </span><span class="o">/</span><span class="nb"> </span><span class="o">(</span><span class="m">2</span><span class="nb">xy</span><span class="o">-</span><span class="m">7</span><span class="o">)</span><span class="nb"></span>
+<span class="sb">$$</span>
+<span class="nb">f</span><span class="o">(</span><span class="nb">x,y</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">3</span><span class="o">(</span><span class="nb">x</span><span class="o">+</span><span class="nb">y</span><span class="o">)</span><span class="nb">y </span><span class="o">/</span><span class="nb"> </span><span class="o">(</span><span class="m">2</span><span class="nb">xy</span><span class="o">-</span><span class="m">7</span><span class="o">)</span>
 <span class="s">$$</span>
 <span class="k">\unboldmath</span>
 </code></pre></div>
 <p>或</p>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>bm<span class="nb">}</span>
-<span class="sb">$$</span><span class="nb"></span>
+<span class="sb">$$</span>
 <span class="nv">\bm</span><span class="nb">{f</span><span class="o">(</span><span class="nb">x,y</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">3</span><span class="o">(</span><span class="nb">x</span><span class="o">+</span><span class="nb">y</span><span class="o">)</span><span class="nb">y </span><span class="o">/</span><span class="nb"> </span><span class="o">(</span><span class="m">2</span><span class="nb">xy</span><span class="o">-</span><span class="m">7</span><span class="o">)</span><span class="nb">}</span>
 <span class="s">$$</span>
 </code></pre></div>
@@ -3921,7 +3921,7 @@ See also: <a href="https://github.com/szcf-weiya/Cell-Video/commit/7d54f77a0ac00
 <p>Finally, I directly correct the exported file using the above technique, and it works. But I still think it is not a good idea since I prefer to export without any further modifications. [TODO]</p>
 <h3 id="display-full-name">display full name<a class="headerlink" href="#display-full-name" title="Permanent link">&para;</a></h3>
 <p>For <code>natbib</code>, check the documentation of <code>natbib</code> by typing</p>
-<div class="highlight"><pre><span></span><code>texdoc natbib
+<div class="highlight"><pre><span></span><code>texdoc<span class="w"> </span>natbib
 </code></pre></div>
 <p><code>longnamesfirst</code> option will display full name for the first citation of any given reference, but all subsequent ones will be used with <code>et al.</code></p>
 <ul>
@@ -4064,12 +4064,12 @@ See also: <a href="https://github.com/szcf-weiya/Cell-Video/commit/7d54f77a0ac00
 </code></pre></div>
 解决方案为
 <div class="highlight"><pre><span></span><code><span class="c1"># 1. 检查是否存在 `mhchem.sty` 文件</span>
-$ locate mhchem.sty
+$<span class="w"> </span>locate<span class="w"> </span>mhchem.sty
 <span class="c1"># 2. 查找需要安装的 package</span>
-$ apt-cache search mhchem <span class="p">|</span> grep tex
+$<span class="w"> </span>apt-cache<span class="w"> </span>search<span class="w"> </span>mhchem<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>tex
 <span class="c1"># texlive-science - TeX Live: Natural and computer sciences</span>
 <span class="c1"># 3. 安装相应的package</span>
-$ sudo apt-get install texlive-science
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>texlive-science
 </code></pre></div></p>
 <p>参考 <a href="http://tex.stackexchange.com/questions/158700/latex-cant-find-sty-files-altough-packages-are-installed-texlive-ubuntu-12">Latex can&rsquo;t find .sty files altough packages are installed — TexLive, Ubuntu 12.04</a></p>
 <h2 id="_5">调整目录的显示层数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
@@ -4086,7 +4086,7 @@ $ sudo apt-get install texlive-science
             pdfcreator=<span class="nb">{</span>Xelatex<span class="nb">}</span>]<span class="nb">{</span>hyperref<span class="nb">}</span>
 </code></pre></div>
 <h2 id="texi2dvi-command-not-found">“texi2dvi” command not found<a class="headerlink" href="#texi2dvi-command-not-found" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>sudo apt-get install texinfo
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>texinfo
 </code></pre></div>
 <h2 id="why-cant-the-end-code-of-an-environment-contain-an-argument">Why can&rsquo;t the end code of an environment contain an argument?<a class="headerlink" href="#why-cant-the-end-code-of-an-environment-contain-an-argument" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://tex.stackexchange.com/questions/17036/why-cant-the-end-code-of-an-environment-contain-an-argument">Why can&rsquo;t the end code of an environment contain an argument?</a></p>
@@ -4106,7 +4106,7 @@ $ sudo apt-get install texlive-science
 </code></pre></div>
 <p>refer to <a href="https://texblog.org/2012/12/21/multi-column-and-multi-row-cells-in-latex-tables/">Multi-column and multi-row cells in LaTeX tables</a></p>
 <p>If we want to add line break in multi rows, we add specify the width, and also center the text, such as</p>
-<div class="highlight"><pre><span></span><code><span class="se">\m</span>ultirow<span class="o">{</span><span class="m">3</span><span class="o">}{</span>2cm<span class="o">}{</span><span class="se">\c</span>entering some long sentences<span class="o">}</span>
+<div class="highlight"><pre><span></span><code><span class="se">\m</span>ultirow<span class="o">{</span><span class="m">3</span><span class="o">}{</span>2cm<span class="o">}{</span><span class="se">\c</span>entering<span class="w"> </span>some<span class="w"> </span>long<span class="w"> </span>sentences<span class="o">}</span>
 </code></pre></div>
 <h3 id="midrule"><code>midrule</code><a class="headerlink" href="#midrule" title="Permanent link">&para;</a></h3>
 <ul>
@@ -4117,16 +4117,16 @@ $ sudo apt-get install texlive-science
 </ul>
 <h3 id="resizebox"><code>resizebox</code><a class="headerlink" href="#resizebox" title="Permanent link">&para;</a></h3>
 <p>It is defined in <code>graphics</code>, so it is necessary to load <code>\usepackage{graphicx}</code>.</p>
-<div class="highlight"><pre><span></span><code>$ latexdef -f resizebox
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>latexdef<span class="w"> </span>-f<span class="w"> </span>resizebox
 
 <span class="se">\r</span>esizebox:
 undefined
 
-$ latexdef -p graphicx -f resizebox
-<span class="se">\r</span>esizebox first defined <span class="k">in</span> <span class="s2">&quot;graphics.sty&quot;</span>.
+$<span class="w"> </span>latexdef<span class="w"> </span>-p<span class="w"> </span>graphicx<span class="w"> </span>-f<span class="w"> </span>resizebox
+<span class="se">\r</span>esizebox<span class="w"> </span>first<span class="w"> </span>defined<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;graphics.sty&quot;</span>.
 
 <span class="se">\r</span>esizebox:
-<span class="se">\p</span>rotected macro:-&gt;<span class="se">\l</span>eavevmode <span class="se">\@</span>ifstar <span class="o">{</span><span class="se">\G</span>scale@@box <span class="se">\t</span>otalheight <span class="o">}{</span><span class="se">\G</span>scale@@box <span class="se">\h</span>eight <span class="o">}</span>
+<span class="se">\p</span>rotected<span class="w"> </span>macro:-&gt;<span class="se">\l</span>eavevmode<span class="w"> </span><span class="se">\@</span>ifstar<span class="w"> </span><span class="o">{</span><span class="se">\G</span>scale@@box<span class="w"> </span><span class="se">\t</span>otalheight<span class="w"> </span><span class="o">}{</span><span class="se">\G</span>scale@@box<span class="w"> </span><span class="se">\h</span>eight<span class="w"> </span><span class="o">}</span>
 </code></pre></div>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
@@ -4399,7 +4399,7 @@ $ latexdef -p graphicx -f resizebox
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

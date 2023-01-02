@@ -2703,7 +2703,7 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>In the command line, generate SSH key pair by running </p>
-<div class="highlight"><pre><span></span><code>$ ssh-keygen -t rsa
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa
 </code></pre></div>
 <p>then copy the generated public key <code>~/.ssh/id_rsa.pub</code> to the file <code>~/.ssh/authorized_keys</code> on the server (if no such file and folder, just create them). See <a href="../servers#initial-start"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more details.</p>
 </div>
@@ -2714,14 +2714,14 @@
 </div>
 </div>
 <p>Now, we can directly access the server via</p>
-<div class="highlight"><pre><span></span><code>$ ssh USERNAME@chpc-login01.itsc.cuhk.edu.hk
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>USERNAME@chpc-login01.itsc.cuhk.edu.hk
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>For clients such as PuTTY on Windows, just type the username and host in the specific blanks. Moreover, you can always re-express a SSH command by typing each filed in the respective blank.</p>
 </div>
 <p>Since the login node is not suggested/allowed to run your test jobs, it would be more convenient to login in the test node, <code>sandbox</code>. This can be done with consecutive ssh,</p>
-<div class="highlight"><pre><span></span><code>$ ssh -t USERNAME@chpc-login01.itsc.cuhk.edu.hk ssh sandbox
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>-t<span class="w"> </span>USERNAME@chpc-login01.itsc.cuhk.edu.hk<span class="w"> </span>ssh<span class="w"> </span>sandbox
 </code></pre></div>
 <p>where <code>-t</code> aims to avoid the following warning</p>
 <div class="admonition warning">
@@ -2732,7 +2732,7 @@
 <div class="admonition tip">
 <p class="admonition-title">TL; DR</p>
 <p>If you cannot access the cluster due to the out-of-service login node or outside campus without VPN, you can still login the cluster with
-<div class="highlight"><pre><span></span><code>$ ssh -p PORT YOUR_USERNAME@MY_BRIDGE
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>-p<span class="w"> </span>PORT<span class="w"> </span>YOUR_USERNAME@MY_BRIDGE
 </code></pre></div>
 If you are interested, please contact me for <code>PORT</code> and <code>MY_BRIDGE</code>. <a href="https://user-images.githubusercontent.com/13688320/173276412-22efccd3-28d4-4251-9b23-6704179d4742.jpg"><strong>Buy me a coffee</strong></a> if it is useful.</p>
 </div>
@@ -2760,15 +2760,15 @@ If you are interested, please contact me for <code>PORT</code> and <code>MY_BRID
 <p>It is necessary to check the status of the tunnel. If the connection is broken, such as the sandbox has rebooted, pop a message window to remind to re-establish the tunnel in time.</p>
 <p>The command to pop message is <code>notify-send</code>, and note that a successful command exits with 0, use the script to check the status of ssh connection,</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-ssh -t <span class="nv">$2</span> ssh -q -o <span class="nv">BatchMode</span><span class="o">=</span>yes <span class="nv">$1</span> <span class="nb">exit</span>
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> !<span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="c1">#echo &quot;broken connection&quot;</span>
-    notify-send -i /home/weiya/.local/share/icons/unlink-solid.svg <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="s2">&quot;broken connection&quot;</span>
+ssh<span class="w"> </span>-t<span class="w"> </span><span class="nv">$2</span><span class="w"> </span>ssh<span class="w"> </span>-q<span class="w"> </span>-o<span class="w"> </span><span class="nv">BatchMode</span><span class="o">=</span>yes<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="nb">exit</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="c1">#echo &quot;broken connection&quot;</span>
+<span class="w">    </span>notify-send<span class="w"> </span>-i<span class="w"> </span>/home/weiya/.local/share/icons/unlink-solid.svg<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;broken connection&quot;</span>
 <span class="k">fi</span>
 </code></pre></div>
 <p>Create a regular job as follows,</p>
-<div class="highlight"><pre><span></span><code>$ crontab -e
-<span class="m">0</span> * * * * <span class="nb">export</span> <span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span>/run/user/<span class="k">$(</span>id -u<span class="k">)</span><span class="p">;</span> <span class="k">for</span> host <span class="k">in</span> sandbox STAPC ROCKY<span class="p">;</span> <span class="k">do</span> sh /home/weiya/github/techNotes/docs/Linux/check_ssh.sh <span class="nv">$host</span><span class="p">;</span> <span class="k">done</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>crontab<span class="w"> </span>-e
+<span class="m">0</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span>/run/user/<span class="k">$(</span>id<span class="w"> </span>-u<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>host<span class="w"> </span><span class="k">in</span><span class="w"> </span>sandbox<span class="w"> </span>STAPC<span class="w"> </span>ROCKY<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>sh<span class="w"> </span>/home/weiya/github/techNotes/docs/Linux/check_ssh.sh<span class="w"> </span><span class="nv">$host</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
 </code></pre></div>
 <p>where <code>export XDG_RUNTIME_DIR=/run/user/$(id -u)</code> is necessary for <code>notify-send</code> to pop a window (refer to <a href="https://askubuntu.com/a/1098206">Notify-send doesn&rsquo;t work from crontab</a>)</p>
 <h2 id="custom-commands">Custom Commands<a class="headerlink" href="#custom-commands" title="Permanent link">&para;</a></h2>
@@ -2777,60 +2777,60 @@ ssh -t <span class="nv">$2</span> ssh -q -o <span class="nv">BatchMode</span><sp
 <li>aliases</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># delete all jobs</span>
-<span class="nb">alias</span> <span class="nv">qdelall</span><span class="o">=</span><span class="s1">&#39;qstat | while read -a ADDR; do if [[ ${ADDR[0]} == +([0-9]) ]]; then qdel ${ADDR[0]}; fi ; done&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">qdelall</span><span class="o">=</span><span class="s1">&#39;qstat | while read -a ADDR; do if [[ ${ADDR[0]} == +([0-9]) ]]; then qdel ${ADDR[0]}; fi ; done&#39;</span>
 <span class="c1"># list available cores</span>
-<span class="nb">alias</span> <span class="nv">sinfostat</span><span class="o">=</span><span class="s1">&#39;sinfo -o &quot;%N %C&quot; -p stat -N&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">sinfostat</span><span class="o">=</span><span class="s1">&#39;sinfo -o &quot;%N %C&quot; -p stat -N&#39;</span>
 <span class="c1"># list available gpu</span>
-<span class="nb">alias</span> <span class="nv">sinfogpu</span><span class="o">=</span><span class="s1">&#39;sinfo -O PartitionName,NodeList,Gres:25,GresUsed:25 | sed -n &quot;1p;/gpu[^:]/p&quot;&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">sinfogpu</span><span class="o">=</span><span class="s1">&#39;sinfo -O PartitionName,NodeList,Gres:25,GresUsed:25 | sed -n &quot;1p;/gpu[^:]/p&quot;&#39;</span>
 <span class="c1"># check disk quota</span>
-<span class="nb">alias</span> <span class="nv">myquota</span><span class="o">=</span><span class="s1">&#39;for i in `whoami` Stat StatScratch; do lfs quota -gh $i /lustre; done&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">myquota</span><span class="o">=</span><span class="s1">&#39;for i in `whoami` Stat StatScratch; do lfs quota -gh $i /lustre; done&#39;</span>
 <span class="c1"># list jobs sorted by priority</span>
-<span class="nb">alias</span> <span class="nv">sacctchpc</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">sacctchpc</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn)&#39;</span>
 <span class="c1"># list jobs sorted by priority (only involved stat)</span>
-<span class="nb">alias</span> <span class="nv">sacctstat</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn) | sed -n &quot;1,2p;/stat/p&quot;&#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">sacctstat</span><span class="o">=</span><span class="s1">&#39;sacct -a -X --format=Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS | (sed -u 2q; sort -rn) | sed -n &quot;1,2p;/stat/p&quot;&#39;</span>
 </code></pre></div>
 <ul>
 <li>functions </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1">#request specified nodes in interactive mode</span>
-request_cn<span class="o">()</span> <span class="o">{</span> srun -p stat -q stat -w chpc-cn1<span class="nv">$1</span> --pty bash -i<span class="p">;</span> <span class="o">}</span>
-request_gpu<span class="o">()</span> <span class="o">{</span> srun -p stat -q stat --gres<span class="o">=</span>gpu:1 -w chpc-gpu01<span class="nv">$1</span> --pty bash -i<span class="p">;</span> <span class="o">}</span>
-request_gpu_chpc<span class="o">()</span> <span class="o">{</span> srun -p chpc --gres<span class="o">=</span>gpu:1 -w chpc-gpu<span class="nv">$1</span> --pty bash -i<span class="p">;</span> <span class="o">}</span>
-t<span class="o">()</span> <span class="o">{</span> tmux a -t <span class="nv">$1</span> <span class="o">||</span> tmux new -s <span class="nv">$1</span><span class="p">;</span> <span class="o">}</span>
+request_cn<span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>srun<span class="w"> </span>-p<span class="w"> </span>stat<span class="w"> </span>-q<span class="w"> </span>stat<span class="w"> </span>-w<span class="w"> </span>chpc-cn1<span class="nv">$1</span><span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i<span class="p">;</span><span class="w"> </span><span class="o">}</span>
+request_gpu<span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>srun<span class="w"> </span>-p<span class="w"> </span>stat<span class="w"> </span>-q<span class="w"> </span>stat<span class="w"> </span>--gres<span class="o">=</span>gpu:1<span class="w"> </span>-w<span class="w"> </span>chpc-gpu01<span class="nv">$1</span><span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i<span class="p">;</span><span class="w"> </span><span class="o">}</span>
+request_gpu_chpc<span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>srun<span class="w"> </span>-p<span class="w"> </span>chpc<span class="w"> </span>--gres<span class="o">=</span>gpu:1<span class="w"> </span>-w<span class="w"> </span>chpc-gpu<span class="nv">$1</span><span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i<span class="p">;</span><span class="w"> </span><span class="o">}</span>
+t<span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>tmux<span class="w"> </span>a<span class="w"> </span>-t<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>tmux<span class="w"> </span>new<span class="w"> </span>-s<span class="w"> </span><span class="nv">$1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
 </code></pre></div>
 <h2 id="interactive-mode">Interactive Mode<a class="headerlink" href="#interactive-mode" title="Permanent link">&para;</a></h2>
 <p>Strongly recommend the interactive mode when you debug your program or want to check the outputs of each step.</p>
 <h3 id="qsub-i"><code>qsub -I</code><a class="headerlink" href="#qsub-i" title="Permanent link">&para;</a></h3>
 <p>The simplest way is</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>sXXXX@chpc-login01 ~<span class="o">]</span> $ qsub -I
+<div class="highlight"><pre><span></span><code><span class="o">[</span>sXXXX@chpc-login01<span class="w"> </span>~<span class="o">]</span><span class="w"> </span>$<span class="w"> </span>qsub<span class="w"> </span>-I
 </code></pre></div>
 <p>If there are idle nodes, then you would be allocated to a node, and pay attention to the prompt, which indicates where you are. For example, <code>sXXXX@chpc-login01</code> means you are on the <code>chpc-login01</code> node.</p>
 <p>Sometimes you can be automatically brought into the target node, then you are done. But sometimes it just displays the node you are allocated, such as</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>sXXXX@chpc-login01 ~<span class="o">]</span> $ qsub -I
+<div class="highlight"><pre><span></span><code><span class="o">[</span>sXXXX@chpc-login01<span class="w"> </span>~<span class="o">]</span><span class="w"> </span>$<span class="w"> </span>qsub<span class="w"> </span>-I
 ...
-salloc: Nodes chpc-cn011 are ready <span class="k">for</span> job
-<span class="o">[</span>sXXXX@chpc-login01 ~<span class="o">]</span> $
+salloc:<span class="w"> </span>Nodes<span class="w"> </span>chpc-cn011<span class="w"> </span>are<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>job
+<span class="o">[</span>sXXXX@chpc-login01<span class="w"> </span>~<span class="o">]</span><span class="w"> </span>$
 </code></pre></div>
 <p>then you need to manually ssh into the target node</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>sXXXX@chpc-login01 ~<span class="o">]</span> $ ssh chpc-cn101
-<span class="o">[</span>sXXXX@chpc-cn101 ~<span class="o">]</span> $
+<div class="highlight"><pre><span></span><code><span class="o">[</span>sXXXX@chpc-login01<span class="w"> </span>~<span class="o">]</span><span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>chpc-cn101
+<span class="o">[</span>sXXXX@chpc-cn101<span class="w"> </span>~<span class="o">]</span><span class="w"> </span>$
 </code></pre></div>
 <h3 id="srun-w"><code>srun -w</code><a class="headerlink" href="#srun-w" title="Permanent link">&para;</a></h3>
 <p>Sometimes you might want to use a specified node, say you want to use GPU (DO NOT forget <code>--gres=gpu:1</code>), then you can specify your node via the option <code>-w</code>. Moreover, you&rsquo;d better specify the partition and QoS policy <code>-p stat -q stat</code>, which counts your quota of usage. The interactive command is specified via <code>--pty bash -i</code>.</p>
 <p>The complete command is</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>sxxxxx@chpc-login01 ~<span class="o">]</span>$ srun -p stat -q stat --gres<span class="o">=</span>gpu:1 -w chpc-gpu010 --pty bash -i
-srun: job XXXXXX queued and waiting <span class="k">for</span> resources
-srun: error: Lookup failed: Unknown host
-srun: job XXXXXX has been allocated resources
-<span class="o">[</span>sxxxxx@chpc-gpu010 ~<span class="o">]</span>$ 
+<div class="highlight"><pre><span></span><code><span class="o">[</span>sxxxxx@chpc-login01<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>srun<span class="w"> </span>-p<span class="w"> </span>stat<span class="w"> </span>-q<span class="w"> </span>stat<span class="w"> </span>--gres<span class="o">=</span>gpu:1<span class="w"> </span>-w<span class="w"> </span>chpc-gpu010<span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i
+srun:<span class="w"> </span>job<span class="w"> </span>XXXXXX<span class="w"> </span>queued<span class="w"> </span>and<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>resources
+srun:<span class="w"> </span>error:<span class="w"> </span>Lookup<span class="w"> </span>failed:<span class="w"> </span>Unknown<span class="w"> </span>host
+srun:<span class="w"> </span>job<span class="w"> </span>XXXXXX<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>allocated<span class="w"> </span>resources
+<span class="o">[</span>sxxxxx@chpc-gpu010<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>
 </code></pre></div>
 <p>Upon you are allocated a node, you can do what you want just like on your own laptop.</p>
 <h2 id="submitting-multiple-jobs">Submitting Multiple Jobs<a class="headerlink" href="#submitting-multiple-jobs" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.cuhk.edu.hk/itsc/hpc/slurm.html">SLURM</a> and PBS are two different cluster schedulers, and the common equivalent commands are as follows:</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># PBS</span>
-qsub -l <span class="nv">nodes</span><span class="o">=</span><span class="m">2</span>:ppn<span class="o">=</span><span class="m">16</span> -l <span class="nv">mem</span><span class="o">=</span>8g -N jobname -m be -M notify@cuhk.edu.hk
+qsub<span class="w"> </span>-l<span class="w"> </span><span class="nv">nodes</span><span class="o">=</span><span class="m">2</span>:ppn<span class="o">=</span><span class="m">16</span><span class="w"> </span>-l<span class="w"> </span><span class="nv">mem</span><span class="o">=</span>8g<span class="w"> </span>-N<span class="w"> </span>jobname<span class="w"> </span>-m<span class="w"> </span>be<span class="w"> </span>-M<span class="w"> </span>notify@cuhk.edu.hk
 <span class="c1"># Slurm</span>
-sbatch -N <span class="m">2</span> -c <span class="m">16</span> --mem<span class="o">=</span>8g -J jobname --mail-type<span class="o">=[</span>BEGIN,END,FAIL,REQUEUE,ALL<span class="o">]</span> --mail-user<span class="o">=</span>notify@cuhk.edu.hk
+sbatch<span class="w"> </span>-N<span class="w"> </span><span class="m">2</span><span class="w"> </span>-c<span class="w"> </span><span class="m">16</span><span class="w"> </span>--mem<span class="o">=</span>8g<span class="w"> </span>-J<span class="w"> </span>jobname<span class="w"> </span>--mail-type<span class="o">=[</span>BEGIN,END,FAIL,REQUEUE,ALL<span class="o">]</span><span class="w"> </span>--mail-user<span class="o">=</span>notify@cuhk.edu.hk
 </code></pre></div>
 Sometimes, we want to submit multiple jobs quickly, or perform parallel computing by dividing a heavy task into multiple small tasks.</p>
 <h3 id="pbs">PBS<a class="headerlink" href="#pbs" title="Permanent link">&para;</a></h3>
@@ -2839,28 +2839,28 @@ Sometimes, we want to submit multiple jobs quickly, or perform parallel computin
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="k">for</span> number <span class="k">in</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="p">;</span> <span class="k">do</span>
-    <span class="k">for</span> letter <span class="k">in</span> a b c d e<span class="p">;</span> <span class="k">do</span>
-        qsub -v <span class="nv">arg1</span><span class="o">=</span><span class="nv">$number</span>,arg2<span class="o">=</span><span class="nv">$letter</span> toy.job
-    <span class="k">done</span>
+<span class="k">for</span><span class="w"> </span>number<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span>letter<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>b<span class="w"> </span>c<span class="w"> </span>d<span class="w"> </span>e<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">        </span>qsub<span class="w"> </span>-v<span class="w"> </span><span class="nv">arg1</span><span class="o">=</span><span class="nv">$number</span>,arg2<span class="o">=</span><span class="nv">$letter</span><span class="w"> </span>toy.job
+<span class="w">    </span><span class="k">done</span>
 <span class="k">done</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="nb">cd</span> <span class="nv">$HOME</span>/PROJECT_FOLDER
-julia toy.jl <span class="si">${</span><span class="nv">arg1</span><span class="si">}</span> <span class="si">${</span><span class="nv">arg2</span><span class="si">}</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/PROJECT_FOLDER
+julia<span class="w"> </span>toy.jl<span class="w"> </span><span class="si">${</span><span class="nv">arg1</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">arg2</span><span class="si">}</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AGRS</span><span class="w"></span>
-<span class="n">println</span><span class="p">(</span><span class="s">&quot;a = </span><span class="si">$a</span><span class="s">, b = </span><span class="si">$b</span><span class="s">&quot;</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AGRS</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;a = </span><span class="si">$a</span><span class="s">, b = </span><span class="si">$b</span><span class="s">&quot;</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
 </div>
 <p>The submitting command is</p>
-<div class="highlight"><pre><span></span><code>$ ./submit.sh
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./submit.sh
 </code></pre></div>
 <p>and here is <a href="https://github.com/szcf-weiya/Metabolic-Network/blob/09314f0558ddccc3997bcfcecf6b7576b281c3fd/old/mcmc-with-args.job">an example</a> in my private projects.</p>
 <h3 id="slurm">SLURM<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h3>
@@ -2870,37 +2870,37 @@ julia toy.jl <span class="si">${</span><span class="nv">arg1</span><span class="
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> <span class="o">==</span> <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    cat <span class="s">&lt;&lt;HELP_USAGE</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>cat<span class="w"> </span><span class="s">&lt;&lt;HELP_USAGE</span>
 <span class="s">    $0 param1 param2</span>
 <span class="s">    param1 number of repetitions</span>
 <span class="s">    param2 node label, can be stat or chpc</span>
 <span class="s">    param3 number of cores</span>
 <span class="s">HELP_USAGE</span>
-    <span class="nb">exit</span> <span class="m">0</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
 <span class="k">fi</span>
-<span class="nv">resfolder</span><span class="o">=</span>res_<span class="k">$(</span>date -Iseconds<span class="k">)</span>
-<span class="k">for</span> i <span class="k">in</span> <span class="k">$(</span>seq <span class="m">1</span> <span class="m">1</span> <span class="nv">$1</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
-    sbatch -N <span class="m">1</span> -c <span class="nv">$3</span> -p <span class="nv">$2</span> --export<span class="o">=</span><span class="nv">resfolder</span><span class="o">=</span><span class="si">${</span><span class="nv">resfolder</span><span class="si">}</span>,nrep<span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>,np<span class="o">=</span><span class="nv">$3</span> toy.job
+<span class="nv">resfolder</span><span class="o">=</span>res_<span class="k">$(</span>date<span class="w"> </span>-Iseconds<span class="k">)</span>
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="nv">$1</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>sbatch<span class="w"> </span>-N<span class="w"> </span><span class="m">1</span><span class="w"> </span>-c<span class="w"> </span><span class="nv">$3</span><span class="w"> </span>-p<span class="w"> </span><span class="nv">$2</span><span class="w"> </span>--export<span class="o">=</span><span class="nv">resfolder</span><span class="o">=</span><span class="si">${</span><span class="nv">resfolder</span><span class="si">}</span>,nrep<span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>,np<span class="o">=</span><span class="nv">$3</span><span class="w"> </span>toy.job
 <span class="k">done</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="nb">cd</span> <span class="nv">$HOME</span>/PROJECT
-julia -p <span class="nv">$np</span> run.jl <span class="nv">$nrep</span> <span class="nv">$resfolder</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/PROJECT
+julia<span class="w"> </span>-p<span class="w"> </span><span class="nv">$np</span><span class="w"> </span>run.jl<span class="w"> </span><span class="nv">$nrep</span><span class="w"> </span><span class="nv">$resfolder</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">Distributed</span><span class="w"></span>
-<span class="k">const</span><span class="w"> </span><span class="n">jobs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span><span class="w"></span>
-<span class="k">const</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">Distributed</span>
+<span class="k">const</span><span class="w"> </span><span class="n">jobs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span>
+<span class="k">const</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RemoteChannel</span><span class="p">(()</span><span class="o">-&gt;</span><span class="kt">Channel</span><span class="p">{</span><span class="kt">Tuple</span><span class="p">}(</span><span class="mi">32</span><span class="p">))</span>
 
-<span class="k">function</span><span class="w"> </span><span class="n">make_jobs</span><span class="p">()</span><span class="w"> </span><span class="k">end</span><span class="w"></span>
-<span class="k">function</span><span class="w"> </span><span class="n">do_work</span><span class="p">()</span><span class="w"> </span><span class="k">end</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span><span class="n">make_jobs</span><span class="p">()</span><span class="w"> </span><span class="k">end</span>
+<span class="k">function</span><span class="w"> </span><span class="n">do_work</span><span class="p">()</span><span class="w"> </span><span class="k">end</span>
 
-<span class="n">nrep</span><span class="p">,</span><span class="w"> </span><span class="n">resfolder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ARGS</span><span class="w"></span>
-<span class="nd">@async</span><span class="w"> </span><span class="n">make_jobs</span><span class="p">()</span><span class="w"></span>
+<span class="n">nrep</span><span class="p">,</span><span class="w"> </span><span class="n">resfolder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ARGS</span>
+<span class="nd">@async</span><span class="w"> </span><span class="n">make_jobs</span><span class="p">()</span>
 </code></pre></div>
 </div>
 </div>
@@ -2911,7 +2911,7 @@ julia -p <span class="nv">$np</span> run.jl <span class="nv">$nrep</span> <span 
 <li><code>$1, $2, $3</code> denotes the 1st, 2nd, 3rd argument in the command line, and <code>$0</code> is the script name.</li>
 </ul>
 <p>The following command runs with <code>N = 100, np = 4</code> and on the <code>stat</code> partition,</p>
-<div class="highlight"><pre><span></span><code>$ ./submit.sh <span class="m">100</span> stat <span class="m">4</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./submit.sh<span class="w"> </span><span class="m">100</span><span class="w"> </span>stat<span class="w"> </span><span class="m">4</span>
 </code></pre></div>
 <p>which is adopted from <a href="https://github.com/szcf-weiya/Cell-Video/blob/master/DP/parallel_oracle2.sh">my private project</a>.</p>
 <h2 id="specify-nodes">Specify Nodes<a class="headerlink" href="#specify-nodes" title="Permanent link">&para;</a></h2>
@@ -2927,46 +2927,46 @@ julia -p <span class="nv">$np</span> run.jl <span class="nv">$nrep</span> <span 
 <li><code>srun</code></li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># cannot exclude</span>
-$ srun -x chpc-cn050 hostname
+$<span class="w"> </span>srun<span class="w"> </span>-x<span class="w"> </span>chpc-cn050<span class="w"> </span>hostname
 chpc-cn050.rc.cuhk.edu.hk
 </code></pre></div>
 <ul>
 <li><code>salloc</code></li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># cannot exclude</span>
-$ salloc -x chpc-cn050 -N1
-salloc: Nodes chpc-cn050 are ready <span class="k">for</span> job
+$<span class="w"> </span>salloc<span class="w"> </span>-x<span class="w"> </span>chpc-cn050<span class="w"> </span>-N1
+salloc:<span class="w"> </span>Nodes<span class="w"> </span>chpc-cn050<span class="w"> </span>are<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>job
 <span class="c1"># cannot exclude</span>
-$ salloc -x chpc-cn050 srun hostname
-salloc: Nodes chpc-cn050 are ready <span class="k">for</span> job
+$<span class="w"> </span>salloc<span class="w"> </span>-x<span class="w"> </span>chpc-cn050<span class="w"> </span>srun<span class="w"> </span>hostname
+salloc:<span class="w"> </span>Nodes<span class="w"> </span>chpc-cn050<span class="w"> </span>are<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>job
 chpc-cn050.rc.cuhk.edu.hk
 <span class="c1"># NB: exclude successfully</span>
-$ salloc -w chpc-cn050 srun -x chpc-cn050 hostname
-salloc: Nodes chpc-cn050 are ready <span class="k">for</span> job
-srun: error: Hostlist is empty!  Can<span class="err">&#39;</span>t run job.
+$<span class="w"> </span>salloc<span class="w"> </span>-w<span class="w"> </span>chpc-cn050<span class="w"> </span>srun<span class="w"> </span>-x<span class="w"> </span>chpc-cn050<span class="w"> </span>hostname
+salloc:<span class="w"> </span>Nodes<span class="w"> </span>chpc-cn050<span class="w"> </span>are<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>job
+srun:<span class="w"> </span>error:<span class="w"> </span>Hostlist<span class="w"> </span>is<span class="w"> </span>empty!<span class="w">  </span>Can<span class="err">&#39;</span>t<span class="w"> </span>run<span class="w"> </span>job.
 </code></pre></div>
 <ul>
 <li><code>sbatch</code></li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># cannot exclude</span>
-$ sbatch <span class="s">&lt;&lt; EOF</span>
+$<span class="w"> </span>sbatch<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
 <span class="s">&gt; #!/bin/sh</span>
 <span class="s">&gt; #SBATCH -x chpc-cn050</span>
 <span class="s">&gt; srun hostname</span>
 <span class="s">&gt; EOF</span>
-Submitted batch job <span class="m">246669</span>
-$ cat slurm-246669.out
+Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">246669</span>
+$<span class="w"> </span>cat<span class="w"> </span>slurm-246669.out
 chpc-cn050.rc.cuhk.edu.hk
 
 <span class="c1"># NB: exclude successfully</span>
-$ sbatch <span class="s">&lt;&lt; EOF</span>
+$<span class="w"> </span>sbatch<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
 <span class="s">&gt; #!/bin/sh</span>
 <span class="s">&gt; #SBATCH -w chpc-cn050</span>
 <span class="s">&gt; srun -x chpc-cn050 hostname</span>
 <span class="s">&gt; EOF</span>
-Submitted batch job <span class="m">246682</span>
-$ cat slurm-246682.out
-srun: error: Hostlist is empty!  Can<span class="err">&#39;</span>t run job.
+Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">246682</span>
+$<span class="w"> </span>cat<span class="w"> </span>slurm-246682.out
+srun:<span class="w"> </span>error:<span class="w"> </span>Hostlist<span class="w"> </span>is<span class="w"> </span>empty!<span class="w">  </span>Can<span class="err">&#39;</span>t<span class="w"> </span>run<span class="w"> </span>job.
 </code></pre></div>
 <p><strong>Observation:</strong></p>
 <p><code>-x</code> seems not to work in the allocation step, but it can exclude nodes from the allocated nodes.</p>
@@ -2983,7 +2983,7 @@ srun: error: Hostlist is empty!  Can<span class="err">&#39;</span>t run job.
 <li><strong>When a signal was responsible for a job or step&rsquo;s termination, the signal number will be displayed after the exit code, delineated by a colon(:)</strong></li>
 </ul>
 <p>We can check the exit code of particular jobs,</p>
-<div class="highlight"><pre><span></span><code>sacct -a -X --format<span class="o">=</span>Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS,STATE,ExitCode,DerivedExitCode
+<div class="highlight"><pre><span></span><code>sacct<span class="w"> </span>-a<span class="w"> </span>-X<span class="w"> </span>--format<span class="o">=</span>Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS,STATE,ExitCode,DerivedExitCode
 </code></pre></div>
 <p>e.g.,</p>
 <p><img alt="" src="https://user-images.githubusercontent.com/13688320/130934797-f6908044-d583-459e-b3ea-09df362f442c.png" /></p>
@@ -2994,94 +2994,94 @@ srun: error: Hostlist is empty!  Can<span class="err">&#39;</span>t run job.
 </ul>
 <p>see also: <a href="https://www.gnu.org/software/bash/manual/html_node/Signals.html">3.7.6 Signals</a> and </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># http://www.bu.edu/tech/files/text/batchcode.txt</span>
-Name     Number <span class="o">(</span>SGI<span class="o">)</span>   Number <span class="o">(</span>IBM<span class="o">)</span>
-SIGHUP      <span class="m">1</span>              <span class="m">1</span>
-SIGINT      <span class="m">2</span>              <span class="m">2</span>
-SIGQUIT     <span class="m">3</span>              <span class="m">3</span>
-SIGILL      <span class="m">4</span>              <span class="m">4</span>
-SIGTRAP     <span class="m">5</span>              <span class="m">5</span>
-SIGABRT     <span class="m">6</span>              <span class="m">6</span>
-SIGEMT      <span class="m">7</span>              <span class="m">7</span>
-SIGFPE      <span class="m">8</span>              <span class="m">8</span>
-SIGKILL     <span class="m">9</span>              <span class="m">9</span>
-SIGBUS      <span class="m">10</span>             <span class="m">10</span>
-SIGSEGV     <span class="m">11</span>             <span class="m">11</span>
-SIGSYS      <span class="m">12</span>             <span class="m">12</span>
-SIGPIPE     <span class="m">13</span>             <span class="m">13</span>
-SIGALRM     <span class="m">14</span>             <span class="m">14</span>
-SIGTERM     <span class="m">15</span>             <span class="m">15</span>
-SIGUSR1     <span class="m">16</span>             <span class="m">30</span>
-SIGUSR2     <span class="m">17</span>             <span class="m">31</span>
-SIGPOLL     <span class="m">22</span>             <span class="m">23</span>
-SIGIO       <span class="m">22</span>             <span class="m">23</span>
-SIGVTALRM   <span class="m">28</span>             <span class="m">34</span>
-SIGPROF     <span class="m">29</span>             <span class="m">32</span>
-SIGXCPU     <span class="m">30</span>             <span class="m">24</span>
-SIGXFSZ     <span class="m">31</span>             <span class="m">25</span>
-SIGRTMIN    <span class="m">49</span>             <span class="m">888</span>
-SIGRTMAX    <span class="m">64</span>             <span class="m">999</span>
+Name<span class="w">     </span>Number<span class="w"> </span><span class="o">(</span>SGI<span class="o">)</span><span class="w">   </span>Number<span class="w"> </span><span class="o">(</span>IBM<span class="o">)</span>
+SIGHUP<span class="w">      </span><span class="m">1</span><span class="w">              </span><span class="m">1</span>
+SIGINT<span class="w">      </span><span class="m">2</span><span class="w">              </span><span class="m">2</span>
+SIGQUIT<span class="w">     </span><span class="m">3</span><span class="w">              </span><span class="m">3</span>
+SIGILL<span class="w">      </span><span class="m">4</span><span class="w">              </span><span class="m">4</span>
+SIGTRAP<span class="w">     </span><span class="m">5</span><span class="w">              </span><span class="m">5</span>
+SIGABRT<span class="w">     </span><span class="m">6</span><span class="w">              </span><span class="m">6</span>
+SIGEMT<span class="w">      </span><span class="m">7</span><span class="w">              </span><span class="m">7</span>
+SIGFPE<span class="w">      </span><span class="m">8</span><span class="w">              </span><span class="m">8</span>
+SIGKILL<span class="w">     </span><span class="m">9</span><span class="w">              </span><span class="m">9</span>
+SIGBUS<span class="w">      </span><span class="m">10</span><span class="w">             </span><span class="m">10</span>
+SIGSEGV<span class="w">     </span><span class="m">11</span><span class="w">             </span><span class="m">11</span>
+SIGSYS<span class="w">      </span><span class="m">12</span><span class="w">             </span><span class="m">12</span>
+SIGPIPE<span class="w">     </span><span class="m">13</span><span class="w">             </span><span class="m">13</span>
+SIGALRM<span class="w">     </span><span class="m">14</span><span class="w">             </span><span class="m">14</span>
+SIGTERM<span class="w">     </span><span class="m">15</span><span class="w">             </span><span class="m">15</span>
+SIGUSR1<span class="w">     </span><span class="m">16</span><span class="w">             </span><span class="m">30</span>
+SIGUSR2<span class="w">     </span><span class="m">17</span><span class="w">             </span><span class="m">31</span>
+SIGPOLL<span class="w">     </span><span class="m">22</span><span class="w">             </span><span class="m">23</span>
+SIGIO<span class="w">       </span><span class="m">22</span><span class="w">             </span><span class="m">23</span>
+SIGVTALRM<span class="w">   </span><span class="m">28</span><span class="w">             </span><span class="m">34</span>
+SIGPROF<span class="w">     </span><span class="m">29</span><span class="w">             </span><span class="m">32</span>
+SIGXCPU<span class="w">     </span><span class="m">30</span><span class="w">             </span><span class="m">24</span>
+SIGXFSZ<span class="w">     </span><span class="m">31</span><span class="w">             </span><span class="m">25</span>
+SIGRTMIN<span class="w">    </span><span class="m">49</span><span class="w">             </span><span class="m">888</span>
+SIGRTMAX<span class="w">    </span><span class="m">64</span><span class="w">             </span><span class="m">999</span>
 </code></pre></div>
 <h2 id="job-priority">Job Priority<a class="headerlink" href="#job-priority" title="Permanent link">&para;</a></h2>
 <p>The submitted jobs are sorted by the calculated job priority in descending order. </p>
 <div class="admonition tip">
 <p class="admonition-title">TL;DR</p>
 <p>You can check the priority of all submitted jobs (not only yours but also others), and then you can find where you are, and figure out when your job can start to run.
-<div class="highlight"><pre><span></span><code>$ sacct -a -X --format<span class="o">=</span>Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS <span class="p">|</span> <span class="o">(</span>sed -u 2q<span class="p">;</span> sort -rn<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sacct<span class="w"> </span>-a<span class="w"> </span>-X<span class="w"> </span>--format<span class="o">=</span>Priority,User%20,JobID,Account,AllocCPUS,AllocTRES,NNodes,NodeList,Submit,QOS<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>sed<span class="w"> </span>-u<span class="w"> </span>2q<span class="p">;</span><span class="w"> </span>sort<span class="w"> </span>-rn<span class="o">)</span>
 </code></pre></div></p>
 </div>
 <p>The formula for job priority is given by</p>
-<div class="highlight"><pre><span></span><code><span class="nv">Job_priority</span> <span class="o">=</span>
-    site_factor +
-    <span class="o">(</span>PriorityWeightAge<span class="o">)</span> * <span class="o">(</span>age_factor<span class="o">)</span> +
-    <span class="o">(</span>PriorityWeightAssoc<span class="o">)</span> * <span class="o">(</span>assoc_factor<span class="o">)</span> +
-    <span class="o">(</span>PriorityWeightFairshare<span class="o">)</span> * <span class="o">(</span>fair-share_factor<span class="o">)</span> +
-    <span class="o">(</span>PriorityWeightJobSize<span class="o">)</span> * <span class="o">(</span>job_size_factor<span class="o">)</span> +
-    <span class="o">(</span>PriorityWeightPartition<span class="o">)</span> * <span class="o">(</span>partition_factor<span class="o">)</span> +
-    <span class="o">(</span>PriorityWeightQOS<span class="o">)</span> * <span class="o">(</span>QOS_factor<span class="o">)</span> +
-    SUM<span class="o">(</span>TRES_weight_cpu * TRES_factor_cpu,
-        TRES_weight_&lt;type&gt; * TRES_factor_&lt;type&gt;,
-        ...<span class="o">)</span>
-    - nice_factor
+<div class="highlight"><pre><span></span><code><span class="nv">Job_priority</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span>site_factor<span class="w"> </span>+
+<span class="w">    </span><span class="o">(</span>PriorityWeightAge<span class="o">)</span><span class="w"> </span>*<span class="w"> </span><span class="o">(</span>age_factor<span class="o">)</span><span class="w"> </span>+
+<span class="w">    </span><span class="o">(</span>PriorityWeightAssoc<span class="o">)</span><span class="w"> </span>*<span class="w"> </span><span class="o">(</span>assoc_factor<span class="o">)</span><span class="w"> </span>+
+<span class="w">    </span><span class="o">(</span>PriorityWeightFairshare<span class="o">)</span><span class="w"> </span>*<span class="w"> </span><span class="o">(</span>fair-share_factor<span class="o">)</span><span class="w"> </span>+
+<span class="w">    </span><span class="o">(</span>PriorityWeightJobSize<span class="o">)</span><span class="w"> </span>*<span class="w"> </span><span class="o">(</span>job_size_factor<span class="o">)</span><span class="w"> </span>+
+<span class="w">    </span><span class="o">(</span>PriorityWeightPartition<span class="o">)</span><span class="w"> </span>*<span class="w"> </span><span class="o">(</span>partition_factor<span class="o">)</span><span class="w"> </span>+
+<span class="w">    </span><span class="o">(</span>PriorityWeightQOS<span class="o">)</span><span class="w"> </span>*<span class="w"> </span><span class="o">(</span>QOS_factor<span class="o">)</span><span class="w"> </span>+
+<span class="w">    </span>SUM<span class="o">(</span>TRES_weight_cpu<span class="w"> </span>*<span class="w"> </span>TRES_factor_cpu,
+<span class="w">        </span>TRES_weight_&lt;type&gt;<span class="w"> </span>*<span class="w"> </span>TRES_factor_&lt;type&gt;,
+<span class="w">        </span>...<span class="o">)</span>
+<span class="w">    </span>-<span class="w"> </span>nice_factor
 </code></pre></div>
 <p>we can find those weights</p>
-<div class="highlight"><pre><span></span><code>$ scontrol show config <span class="p">|</span> grep ^Priority
-<span class="nv">PriorityParameters</span>      <span class="o">=</span> <span class="o">(</span>null<span class="o">)</span>
-<span class="nv">PrioritySiteFactorParameters</span> <span class="o">=</span> <span class="o">(</span>null<span class="o">)</span>
-<span class="nv">PrioritySiteFactorPlugin</span> <span class="o">=</span> <span class="o">(</span>null<span class="o">)</span>
-<span class="nv">PriorityDecayHalfLife</span>   <span class="o">=</span> <span class="m">7</span>-00:00:00
-<span class="nv">PriorityCalcPeriod</span>      <span class="o">=</span> <span class="m">00</span>:05:00
-<span class="nv">PriorityFavorSmall</span>      <span class="o">=</span> No
-<span class="nv">PriorityFlags</span>           <span class="o">=</span> CALCULATE_RUNNING
-<span class="nv">PriorityMaxAge</span>          <span class="o">=</span> <span class="m">7</span>-00:00:00
-<span class="nv">PriorityUsageResetPeriod</span> <span class="o">=</span> NONE
-<span class="nv">PriorityType</span>            <span class="o">=</span> priority/multifactor
-<span class="nv">PriorityWeightAge</span>       <span class="o">=</span> <span class="m">0</span>
-<span class="nv">PriorityWeightAssoc</span>     <span class="o">=</span> <span class="m">0</span>
-<span class="nv">PriorityWeightFairShare</span> <span class="o">=</span> <span class="m">100000</span>
-<span class="nv">PriorityWeightJobSize</span>   <span class="o">=</span> <span class="m">0</span>
-<span class="nv">PriorityWeightPartition</span> <span class="o">=</span> <span class="m">0</span>
-<span class="nv">PriorityWeightQOS</span>       <span class="o">=</span> <span class="m">0</span>
-<span class="nv">PriorityWeightTRES</span>      <span class="o">=</span> <span class="o">(</span>null<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>scontrol<span class="w"> </span>show<span class="w"> </span>config<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>^Priority
+<span class="nv">PriorityParameters</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>null<span class="o">)</span>
+<span class="nv">PrioritySiteFactorParameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>null<span class="o">)</span>
+<span class="nv">PrioritySiteFactorPlugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>null<span class="o">)</span>
+<span class="nv">PriorityDecayHalfLife</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">7</span>-00:00:00
+<span class="nv">PriorityCalcPeriod</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="m">00</span>:05:00
+<span class="nv">PriorityFavorSmall</span><span class="w">      </span><span class="o">=</span><span class="w"> </span>No
+<span class="nv">PriorityFlags</span><span class="w">           </span><span class="o">=</span><span class="w"> </span>CALCULATE_RUNNING
+<span class="nv">PriorityMaxAge</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="m">7</span>-00:00:00
+<span class="nv">PriorityUsageResetPeriod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>NONE
+<span class="nv">PriorityType</span><span class="w">            </span><span class="o">=</span><span class="w"> </span>priority/multifactor
+<span class="nv">PriorityWeightAge</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="nv">PriorityWeightAssoc</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="nv">PriorityWeightFairShare</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100000</span>
+<span class="nv">PriorityWeightJobSize</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="nv">PriorityWeightPartition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="nv">PriorityWeightQOS</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="nv">PriorityWeightTRES</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>null<span class="o">)</span>
 </code></pre></div>
 <p>only the <code>PriorityWeightFairShare</code> is nonzero, and this agrees with</p>
-<div class="highlight"><pre><span></span><code>$ sprio -w
-          JOBID PARTITION   PRIORITY       SITE  FAIRSHARE
-        Weights                               <span class="m">1</span>     <span class="m">100000</span>
-$ sprio -w -p stat
-          JOBID PARTITION   PRIORITY       SITE  FAIRSHARE
-        Weights                               <span class="m">1</span>     <span class="m">100000</span>
-$ sprio -w -p chpc
-          JOBID PARTITION   PRIORITY       SITE  FAIRSHARE
-        Weights                               <span class="m">1</span>     <span class="m">100000</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sprio<span class="w"> </span>-w
+<span class="w">          </span>JOBID<span class="w"> </span>PARTITION<span class="w">   </span>PRIORITY<span class="w">       </span>SITE<span class="w">  </span>FAIRSHARE
+<span class="w">        </span>Weights<span class="w">                               </span><span class="m">1</span><span class="w">     </span><span class="m">100000</span>
+$<span class="w"> </span>sprio<span class="w"> </span>-w<span class="w"> </span>-p<span class="w"> </span>stat
+<span class="w">          </span>JOBID<span class="w"> </span>PARTITION<span class="w">   </span>PRIORITY<span class="w">       </span>SITE<span class="w">  </span>FAIRSHARE
+<span class="w">        </span>Weights<span class="w">                               </span><span class="m">1</span><span class="w">     </span><span class="m">100000</span>
+$<span class="w"> </span>sprio<span class="w"> </span>-w<span class="w"> </span>-p<span class="w"> </span>chpc
+<span class="w">          </span>JOBID<span class="w"> </span>PARTITION<span class="w">   </span>PRIORITY<span class="w">       </span>SITE<span class="w">  </span>FAIRSHARE
+<span class="w">        </span>Weights<span class="w">                               </span><span class="m">1</span><span class="w">     </span><span class="m">100000</span>
 </code></pre></div>
 <p>then the formula would be simplified as</p>
-<div class="highlight"><pre><span></span><code><span class="nv">Job_priority</span> <span class="o">=</span>
-    site_factor +
-    <span class="o">(</span>PriorityWeightFairshare<span class="o">)</span> * <span class="o">(</span>fair-share_factor<span class="o">)</span> +
-    SUM<span class="o">(</span>TRES_weight_cpu * TRES_factor_cpu,
-        TRES_weight_&lt;type&gt; * TRES_factor_&lt;type&gt;,
-        ...<span class="o">)</span>
-    - nice_factor
+<div class="highlight"><pre><span></span><code><span class="nv">Job_priority</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span>site_factor<span class="w"> </span>+
+<span class="w">    </span><span class="o">(</span>PriorityWeightFairshare<span class="o">)</span><span class="w"> </span>*<span class="w"> </span><span class="o">(</span>fair-share_factor<span class="o">)</span><span class="w"> </span>+
+<span class="w">    </span>SUM<span class="o">(</span>TRES_weight_cpu<span class="w"> </span>*<span class="w"> </span>TRES_factor_cpu,
+<span class="w">        </span>TRES_weight_&lt;type&gt;<span class="w"> </span>*<span class="w"> </span>TRES_factor_&lt;type&gt;,
+<span class="w">        </span>...<span class="o">)</span>
+<span class="w">    </span>-<span class="w"> </span>nice_factor
 </code></pre></div>
 <p>where <code>TRES_weight_&lt;type&gt;</code> might be GPU, see the usage weight in the <a href="https://www.cuhk.edu.hk/itsc/hpc/slurm.html">table</a>, and a negative <code>nice_factor</code> can only be set by privileged users,</p>
 <blockquote>
@@ -3098,19 +3098,19 @@ $ sprio -w -p chpc
 </ul>
 <h2 id="cpumemory-usage">CPU/Memory Usage<a class="headerlink" href="#cpumemory-usage" title="Permanent link">&para;</a></h2>
 <p>Check the CPU and memory usage of a specific job. The natural way is to use <code>top</code> on the node that run the job. After ssh into the corresponding node, get the map between job id and process id via</p>
-<div class="highlight"><pre><span></span><code>$ scontrol listpids YOUR_JOB_ID
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>scontrol<span class="w"> </span>listpids<span class="w"> </span>YOUR_JOB_ID
 </code></pre></div>
 <p>Note that this only works with processes on the node on which <code>scontrol</code> is run, i.e., we cannot get the corresponding pid before ssh into the node.</p>
 <p>Then check the results of <code>top</code> and monitor the CPU/memory usage by the job given the pid. Or explicitly specify the pid via <code>top -p PID_OF_JOB</code></p>
 <p>Alternatively, a more direct way is to use <code>sstat</code> command, which reports various status information, including CPU and memory, for running jobs.</p>
-<div class="highlight"><pre><span></span><code>$ sstat --format<span class="o">=</span>AveCPU,AvePages,AveRSS,AveVMSize,MaxRSS,MaxVMSize -j JOBID
-    AveCPU   AvePages     AveRSS  AveVMSize     MaxRSS  MaxVMSize 
----------- ---------- ---------- ---------- ---------- ---------- 
- <span class="m">00</span>:02.000         <span class="m">30</span>      1828K    119820K      1828K    276808K 
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sstat<span class="w"> </span>--format<span class="o">=</span>AveCPU,AvePages,AveRSS,AveVMSize,MaxRSS,MaxVMSize<span class="w"> </span>-j<span class="w"> </span>JOBID
+<span class="w">    </span>AveCPU<span class="w">   </span>AvePages<span class="w">     </span>AveRSS<span class="w">  </span>AveVMSize<span class="w">     </span>MaxRSS<span class="w">  </span>MaxVMSize<span class="w"> </span>
+----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>
+<span class="w"> </span><span class="m">00</span>:02.000<span class="w">         </span><span class="m">30</span><span class="w">      </span>1828K<span class="w">    </span>119820K<span class="w">      </span>1828K<span class="w">    </span>276808K<span class="w"> </span>
 </code></pre></div>
 <p>Correspondingly, the result from <code>top</code> is</p>
-<div class="highlight"><pre><span></span><code>PID USER PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME COMMAND                                                                                                              
-<span class="m">213435</span> XXX <span class="m">20</span>   <span class="m">0</span>  <span class="m">119820</span>   <span class="m">2388</span>   <span class="m">1772</span> S   <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.27 bash 
+<div class="highlight"><pre><span></span><code>PID<span class="w"> </span>USER<span class="w"> </span>PR<span class="w">  </span>NI<span class="w">    </span>VIRT<span class="w">    </span>RES<span class="w">    </span>SHR<span class="w"> </span>S<span class="w">  </span>%CPU<span class="w"> </span>%MEM<span class="w">     </span>TIME<span class="w"> </span>COMMAND<span class="w">                                                                                                              </span>
+<span class="m">213435</span><span class="w"> </span>XXX<span class="w"> </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">  </span><span class="m">119820</span><span class="w">   </span><span class="m">2388</span><span class="w">   </span><span class="m">1772</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.27<span class="w"> </span>bash<span class="w"> </span>
 </code></pre></div>
 <p>where <code>VIRT</code> == <code>AveVMSIZE</code>. The detailed meaning can be found via <code>man top</code>,</p>
 <ul>
@@ -3123,62 +3123,62 @@ $ sprio -w -p chpc
 <div class="admonition tip">
 <p class="admonition-title">TL;DR</p>
 <p>Tip to &ldquo;increase&rdquo; your personal quota is to count the files as the shared department quota, so just change the group membership of your files,
-<div class="highlight"><pre><span></span><code>$ chgrp -R Stat SomeFolder
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>chgrp<span class="w"> </span>-R<span class="w"> </span>Stat<span class="w"> </span>SomeFolder
 </code></pre></div></p>
 </div>
 <p>Firstly, you can check your personal quota with</p>
-<div class="highlight"><pre><span></span><code>$ lfs quota -gh your_user_id /lustre
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>lfs<span class="w"> </span>quota<span class="w"> </span>-gh<span class="w"> </span>your_user_id<span class="w"> </span>/lustre
 <span class="c1"># 20GB by default from ITSC in /users/your_user_id</span>
 </code></pre></div>
 <p>and here is two shared quota&rsquo;s in the whole department,</p>
-<div class="highlight"><pre><span></span><code>$ lfs quota -gh Stat /lustre
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>lfs<span class="w"> </span>quota<span class="w"> </span>-gh<span class="w"> </span>Stat<span class="w"> </span>/lustre
 <span class="c1"># 30TB shared by Statistics Department in /lustre/project/Stat</span>
-$ lfs quota -gh StatScratch /lustre
+$<span class="w"> </span>lfs<span class="w"> </span>quota<span class="w"> </span>-gh<span class="w"> </span>StatScratch<span class="w"> </span>/lustre
 <span class="c1"># 10TB by default from ITSC in /lustre/scratch/Stat</span>
 </code></pre></div>
 <p>An interesting thing is that the quota is counted by the group membership of the file, so if your personal quota exceeds, you can change the group membership of some files, and then these files would count as the shared quota instead of your personal quota. To change the group membership recursively of a folder, </p>
-<div class="highlight"><pre><span></span><code>$ chgrp -R Stat SomeFolder
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>chgrp<span class="w"> </span>-R<span class="w"> </span>Stat<span class="w"> </span>SomeFolder
 </code></pre></div>
 <p>A partial Chinese description,</p>
 <p>已经好几次因为 disk quota 超了使得程序崩溃，于是试图将 home 文件夹中的部分文件移动到 <code>/lustre/project/Stat</code> 中，但似乎 quota 并没有变化。</p>
 <p>后来才发现，原来 quota 是通过 group 来控制的，其中上述命令中 <code>-g</code> 选项即表示 group，也就是说 <code>your_user_id</code>, <code>Stat</code> 和 <code>StatScratch</code> 都是 group 名字。如果文件夹是从别处移动来的，group并不会改变，只有直接在 <code>/lustre/project/Stat</code> 中新建的文件或文件夹才继承 Stat 的 group，这一点是最开始在 <code>Stat</code> 文件夹下创建自己目录 <code>MYFOLDER</code> 时通过 <code>chmod g+s MYFOLDER</code> 保证的。</p>
 <p>于是简单的方法便是直接更改 group，</p>
-<div class="highlight"><pre><span></span><code>chgrp -R Stat SomeFolder
+<div class="highlight"><pre><span></span><code>chgrp<span class="w"> </span>-R<span class="w"> </span>Stat<span class="w"> </span>SomeFolder
 </code></pre></div>
 <p>如果想找出哪些文件 group 为 <code>sXXXX</code>, 可以采用</p>
-<div class="highlight"><pre><span></span><code>find . -group <span class="sb">`</span>whoami<span class="sb">`</span>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-group<span class="w"> </span><span class="sb">`</span>whoami<span class="sb">`</span>
 </code></pre></div>
 <h2 id="custom-module">Custom Module<a class="headerlink" href="#custom-module" title="Permanent link">&para;</a></h2>
 <p>The cluster manages the software versions with <a href="https://linux.die.net/man/1/module">module</a>, and the default module file path is</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="nv">$MODULEPATH</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$MODULEPATH</span>
 /usr/share/Modules/modulefiles:/etc/modulefiles
 </code></pre></div>
 <p>which requires <code>sudo</code> privilege. A natural question is whether we can create custom (local) module file to switch the software which are installed by ourselves or have not been added into the modules.</p>
 <p>Here is an example. There is an installed R in <code>/opt/share/R</code> named <code>3.6.3-v2</code>, which does not have the modulefile, since the same version <code>3.6.3</code> is already used. But there are still differences between these two &ldquo;same&rdquo; versions, <code>3.6.3-v2</code> supports figures, such as &ldquo;jpeg&rdquo;, &ldquo;png&rdquo;, &ldquo;tiff&rdquo; and &ldquo;cairo&rdquo;, while <code>3.6.3</code> not,</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span><span class="m">3</span>.6.3<span class="o">)</span> &gt; capabilities<span class="o">()</span>
-       jpeg         png        tiff       tcltk         X11        aqua
-      FALSE       FALSE       FALSE        TRUE       FALSE       FALSE
-   http/ftp     sockets      libxml        fifo      cledit       iconv
-       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
-        NLS     profmem       cairo         ICU long.double     libcurl
-       TRUE       FALSE       FALSE        TRUE        TRUE        TRUE
+<div class="highlight"><pre><span></span><code><span class="o">(</span><span class="m">3</span>.6.3<span class="o">)</span><span class="w"> </span>&gt;<span class="w"> </span>capabilities<span class="o">()</span>
+<span class="w">       </span>jpeg<span class="w">         </span>png<span class="w">        </span>tiff<span class="w">       </span>tcltk<span class="w">         </span>X11<span class="w">        </span>aqua
+<span class="w">      </span>FALSE<span class="w">       </span>FALSE<span class="w">       </span>FALSE<span class="w">        </span>TRUE<span class="w">       </span>FALSE<span class="w">       </span>FALSE
+<span class="w">   </span>http/ftp<span class="w">     </span>sockets<span class="w">      </span>libxml<span class="w">        </span>fifo<span class="w">      </span>cledit<span class="w">       </span>iconv
+<span class="w">       </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE
+<span class="w">        </span>NLS<span class="w">     </span>profmem<span class="w">       </span>cairo<span class="w">         </span>ICU<span class="w"> </span>long.double<span class="w">     </span>libcurl
+<span class="w">       </span>TRUE<span class="w">       </span>FALSE<span class="w">       </span>FALSE<span class="w">        </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE
 
-<span class="o">(</span><span class="m">3</span>.6.3-v2<span class="o">)</span> &gt; capabilities<span class="o">()</span>
-       jpeg         png        tiff       tcltk         X11        aqua
-       TRUE        TRUE        TRUE        TRUE       FALSE       FALSE
-   http/ftp     sockets      libxml        fifo      cledit       iconv
-       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE
-        NLS     profmem       cairo         ICU long.double     libcurl
-       TRUE       FALSE        TRUE        TRUE        TRUE        TRUE
+<span class="o">(</span><span class="m">3</span>.6.3-v2<span class="o">)</span><span class="w"> </span>&gt;<span class="w"> </span>capabilities<span class="o">()</span>
+<span class="w">       </span>jpeg<span class="w">         </span>png<span class="w">        </span>tiff<span class="w">       </span>tcltk<span class="w">         </span>X11<span class="w">        </span>aqua
+<span class="w">       </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE<span class="w">       </span>FALSE<span class="w">       </span>FALSE
+<span class="w">   </span>http/ftp<span class="w">     </span>sockets<span class="w">      </span>libxml<span class="w">        </span>fifo<span class="w">      </span>cledit<span class="w">       </span>iconv
+<span class="w">       </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE
+<span class="w">        </span>NLS<span class="w">     </span>profmem<span class="w">       </span>cairo<span class="w">         </span>ICU<span class="w"> </span>long.double<span class="w">     </span>libcurl
+<span class="w">       </span>TRUE<span class="w">       </span>FALSE<span class="w">        </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE<span class="w">        </span>TRUE
 </code></pre></div>
 <p>To use <code>3.6.3-v2</code>, we can create our custom modulefile (<a href="https://www.sc.fsu.edu/computing/tech-docs/1177-linux-modules">ref</a>),</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># step 1: create a folder in your home directory</span>
-~ $ mkdir modules
+~<span class="w"> </span>$<span class="w"> </span>mkdir<span class="w"> </span>modules
 <span class="c1"># step 2: preappend your module path to the ~/.bashrc file</span>
-~ $ <span class="nb">echo</span> <span class="s2">&quot;export MODULEPATH=</span><span class="si">${</span><span class="nv">MODULEPATH</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/modules&quot;</span> &gt;&gt; ~/.bashrc
+~<span class="w"> </span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export MODULEPATH=</span><span class="si">${</span><span class="nv">MODULEPATH</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/modules&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 <span class="c1"># step 3: copy the existing modulefile as a template</span>
 <span class="c1"># here I skip the directory, just use name `R3.6`, which can also differ from the existing `R/3.6`</span>
-~ $ cp /usr/share/Modules/modulefiles/R/3.6 modules/R3.6
+~<span class="w"> </span>$<span class="w"> </span>cp<span class="w"> </span>/usr/share/Modules/modulefiles/R/3.6<span class="w"> </span>modules/R3.6
 <span class="c1"># step 4: modify the path to the software (`modroot`) as follows</span>
 </code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">/usr/share/Modules/modulefiles/R/3.6</label><label for="__tabbed_4_2">~/modules/R3.6</label><label for="__tabbed_4_3">diff -u</label></div>
@@ -3186,113 +3186,113 @@ $ lfs quota -gh StatScratch /lustre
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1">#%Module1.0#####################################################################</span>
 <span class="c1">##</span>
-proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="o">{</span>
- global version modroot
+proc<span class="w"> </span>ModulesHelp<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="o">{</span>
+<span class="w"> </span>global<span class="w"> </span>version<span class="w"> </span>modroot
 
-puts stderr <span class="s2">&quot;R/3.6.3 - sets the Environment for</span>
+puts<span class="w"> </span>stderr<span class="w"> </span><span class="s2">&quot;R/3.6.3 - sets the Environment for</span>
 <span class="s2">         R scripts v3.6.3 (gcc verion)</span>
 
 <span class="s2">Use &#39;module whatis [module-info name]&#39; for more information&quot;</span>
 <span class="o">}</span>
 
-module-whatis <span class="s2">&quot;The R Project for Statistical Computing</span>
+module-whatis<span class="w"> </span><span class="s2">&quot;The R Project for Statistical Computing</span>
 <span class="s2">R is a free software environment for statistical computing and graphics.</span>
 
 <span class="s2">Here is the available versions:</span>
 <span class="s2">        R/3.6.3&quot;</span>
 
 
-<span class="nb">set</span>     version         <span class="m">3</span>.6.3
-<span class="nb">set</span>     app             R
-<span class="nb">set</span>     modroot         /opt/share/<span class="nv">$app</span>/<span class="nv">$version</span>
+<span class="nb">set</span><span class="w">     </span>version<span class="w">         </span><span class="m">3</span>.6.3
+<span class="nb">set</span><span class="w">     </span>app<span class="w">             </span>R
+<span class="nb">set</span><span class="w">     </span>modroot<span class="w">         </span>/opt/share/<span class="nv">$app</span>/<span class="nv">$version</span>
 
-module load pcre2
+module<span class="w"> </span>load<span class="w"> </span>pcre2
 
-conflict R
+conflict<span class="w"> </span>R
 
-setenv R_HOME <span class="nv">$modroot</span>/lib64/R
+setenv<span class="w"> </span>R_HOME<span class="w"> </span><span class="nv">$modroot</span>/lib64/R
 
-prepend-path PATH <span class="nv">$modroot</span>/bin
-prepend-path LD_LIBRARY_PATH <span class="nv">$modroot</span>/lib
-prepend-path INCLUDE <span class="nv">$modroot</span>/include
+prepend-path<span class="w"> </span>PATH<span class="w"> </span><span class="nv">$modroot</span>/bin
+prepend-path<span class="w"> </span>LD_LIBRARY_PATH<span class="w"> </span><span class="nv">$modroot</span>/lib
+prepend-path<span class="w"> </span>INCLUDE<span class="w"> </span><span class="nv">$modroot</span>/include
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="c1">#%Module1.0#####################################################################</span>
 <span class="c1">##</span>
-proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="o">{</span>
- global version modroot
+proc<span class="w"> </span>ModulesHelp<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="o">{</span>
+<span class="w"> </span>global<span class="w"> </span>version<span class="w"> </span>modroot
 
-puts stderr <span class="s2">&quot;R/3.6.3 - sets the Environment for</span>
+puts<span class="w"> </span>stderr<span class="w"> </span><span class="s2">&quot;R/3.6.3 - sets the Environment for</span>
 <span class="s2">         R scripts v3.6.3 (gcc verion)</span>
 
 <span class="s2">Use &#39;module whatis [module-info name]&#39; for more information&quot;</span>
 <span class="o">}</span>
 
-module-whatis <span class="s2">&quot;The R Project for Statistical Computing</span>
+module-whatis<span class="w"> </span><span class="s2">&quot;The R Project for Statistical Computing</span>
 <span class="s2">R is a free software environment for statistical computing and graphics.</span>
 
 <span class="s2">Here is the available versions:</span>
 <span class="s2">        R/3.6.3&quot;</span>
 
 
-<span class="nb">set</span>     version         <span class="m">3</span>.6.3
-<span class="nb">set</span>     app             R
-<span class="nb">set</span>     modroot         /opt/share/<span class="nv">$app</span>/<span class="si">${</span><span class="nv">version</span><span class="si">}</span>-v2
+<span class="nb">set</span><span class="w">     </span>version<span class="w">         </span><span class="m">3</span>.6.3
+<span class="nb">set</span><span class="w">     </span>app<span class="w">             </span>R
+<span class="nb">set</span><span class="w">     </span>modroot<span class="w">         </span>/opt/share/<span class="nv">$app</span>/<span class="si">${</span><span class="nv">version</span><span class="si">}</span>-v2
 
-module load pcre2
-module load intel
-conflict R
+module<span class="w"> </span>load<span class="w"> </span>pcre2
+module<span class="w"> </span>load<span class="w"> </span>intel
+conflict<span class="w"> </span>R
 
-setenv R_HOME <span class="nv">$modroot</span>/lib64/R
+setenv<span class="w"> </span>R_HOME<span class="w"> </span><span class="nv">$modroot</span>/lib64/R
 
-prepend-path PATH <span class="nv">$modroot</span>/bin
-prepend-path LD_LIBRARY_PATH <span class="nv">$modroot</span>/lib
-prepend-path INCLUDE <span class="nv">$modroot</span>/include
+prepend-path<span class="w"> </span>PATH<span class="w"> </span><span class="nv">$modroot</span>/bin
+prepend-path<span class="w"> </span>LD_LIBRARY_PATH<span class="w"> </span><span class="nv">$modroot</span>/lib
+prepend-path<span class="w"> </span>INCLUDE<span class="w"> </span><span class="nv">$modroot</span>/include
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="gu">@@ -18,10 +18,10 @@</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="gu">@@ -18,10 +18,10 @@</span>
 
-<span class="w"> </span>set     version         3.6.3<span class="w"></span>
-<span class="w"> </span>set     app             R<span class="w"></span>
-<span class="gd">-set     modroot         /opt/share/$app/$version</span><span class="w"></span>
-<span class="gi">+set     modroot         /opt/share/$app/${version}-v2</span><span class="w"></span>
+<span class="w"> </span>set     version         3.6.3
+<span class="w"> </span>set     app             R
+<span class="gd">-set     modroot         /opt/share/$app/$version</span>
+<span class="gi">+set     modroot         /opt/share/$app/${version}-v2</span>
 
-<span class="w"> </span>module load pcre2<span class="w"></span>
-<span class="gd">-</span><span class="w"></span>
-<span class="gi">+module load intel</span><span class="w"></span>
-<span class="w"> </span>conflict R<span class="w"></span>
+<span class="w"> </span>module load pcre2
+<span class="gd">-</span>
+<span class="gi">+module load intel</span>
+<span class="w"> </span>conflict R
 </code></pre></div>
 </div>
 </div>
 </div>
 <p>Note that <code>module load intel</code> is also added, otherwise it will throws,</p>
-<div class="highlight"><pre><span></span><code>/opt/share/R/3.6.3-v2/lib64/R/bin/exec/R: error <span class="k">while</span> loading shared libraries: libiomp5.so: cannot open shared object file: No such file or directory
+<div class="highlight"><pre><span></span><code>/opt/share/R/3.6.3-v2/lib64/R/bin/exec/R:<span class="w"> </span>error<span class="w"> </span><span class="k">while</span><span class="w"> </span>loading<span class="w"> </span>shared<span class="w"> </span>libraries:<span class="w"> </span>libiomp5.so:<span class="w"> </span>cannot<span class="w"> </span>open<span class="w"> </span>shared<span class="w"> </span>object<span class="w"> </span>file:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
 </code></pre></div>
 <p>since <code>libiomp5</code> is for <code>openmp</code> (<a href="https://stackoverflow.com/a/28254656">ref</a>).</p>
 <p>Now, you can use <code>3.6.3-v2</code> like other modules,</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># load `3.6.3-v2`</span>
-$ module load R3.6
+$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>R3.6
 <span class="c1"># unload `3.6.3-v2`</span>
-$ module unload R3.6
+$<span class="w"> </span>module<span class="w"> </span>unload<span class="w"> </span>R3.6
 <span class="c1"># load original `3.6.3`</span>
-$ module load R/3.6
+$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>R/3.6
 </code></pre></div>
 <h2 id="gpu-usage">GPU Usage<a class="headerlink" href="#gpu-usage" title="Permanent link">&para;</a></h2>
 <p>Be cautious about the compatible versions between the deep learning framework (e.g., tensorflow), CUDA, and also the (CUDA) <strong>driver</strong> version of the node.</p>
 <p>The driver version of the node is fixed, but fortunately it is downward compatible, i.e., a higher driver version also supports a lower CUDA version. We can check the driver version by</p>
-<div class="highlight"><pre><span></span><code>$ nvidia-smi 
-Sat Jun <span class="m">26</span> <span class="m">10</span>:32:03 <span class="m">2021</span>       
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvidia-smi<span class="w"> </span>
+Sat<span class="w"> </span>Jun<span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="m">10</span>:32:03<span class="w"> </span><span class="m">2021</span><span class="w">       </span>
 +-----------------------------------------------------------------------------+
-<span class="p">|</span> NVIDIA-SMI <span class="m">450</span>.36.06    Driver Version: <span class="m">450</span>.36.06    CUDA Version: <span class="m">11</span>.0     <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>NVIDIA-SMI<span class="w"> </span><span class="m">450</span>.36.06<span class="w">    </span>Driver<span class="w"> </span>Version:<span class="w"> </span><span class="m">450</span>.36.06<span class="w">    </span>CUDA<span class="w"> </span>Version:<span class="w"> </span><span class="m">11</span>.0<span class="w">     </span><span class="p">|</span>
 ...
 </code></pre></div>
 <p>which implies that the highest supported CUDA version is 11.0.</p>
 <p>The available CUDA versions can be found as follows</p>
-<div class="highlight"><pre><span></span><code>$ module avail cuda
--------------- /usr/share/Modules/modulefiles ---------------
-cuda/10.1          cuda/10.2          cuda/11.0          cuda/11.3<span class="o">(</span>default<span class="o">)</span> cuda/9.2
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>avail<span class="w"> </span>cuda
+--------------<span class="w"> </span>/usr/share/Modules/modulefiles<span class="w"> </span>---------------
+cuda/10.1<span class="w">          </span>cuda/10.2<span class="w">          </span>cuda/11.0<span class="w">          </span>cuda/11.3<span class="o">(</span>default<span class="o">)</span><span class="w"> </span>cuda/9.2
 </code></pre></div>
 <p>For the above node whose highest supported CUDA version is 11.0, the latest <code>cuda/11.3</code> would be incompatible, but others are all OK.</p>
 <p>Now you can pick the proper tensorflow version according to the supported CUDA versions. Here is an <a href="https://www.tensorflow.org/install/source#linux">official configuration table</a>, which lists the compatible versions between tensorflow, python, CUDA, together with cuDNN.</p>
@@ -3306,57 +3306,57 @@ cuda/10.1          cuda/10.2          cuda/11.0          cuda/11.3<span class="o
 </code></pre></div>
 <p>What if you want to use the version that does not installed on the cluster, say <code>cuda/10.0</code>? We can install a local cuda and creat a <a href="#custom-module">custom module</a> to call it. </p>
 <p>Following the instruction: <a href="https://stackoverflow.com/questions/39379792/install-cuda-without-root">Install Cuda without root</a></p>
-<div class="highlight"><pre><span></span><code>$ wget https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux
-$ chmod +x cuda_10.0.130_410.48_linux
-$ ./cuda_10.0.130_410.48_linux
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>wget<span class="w"> </span>https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux
+$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>cuda_10.0.130_410.48_linux
+$<span class="w"> </span>./cuda_10.0.130_410.48_linux
 </code></pre></div>
 <p>then download <code>cuDNN</code>, but it requires to login. After extraction, copy the <code>include</code> and <code>lib</code> to the CUDA installation folder.</p>
 <p>Next, create the custom module file, and finally I can use </p>
-<div class="highlight"><pre><span></span><code>$ cuda load cuda10.0
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cuda<span class="w"> </span>load<span class="w"> </span>cuda10.0
 </code></pre></div>
 <p>to use the local cuda.</p>
 <h2 id="inherited-environment">Inherited Environment<a class="headerlink" href="#inherited-environment" title="Permanent link">&para;</a></h2>
 <p>By default, <code>sbatch</code> will inherit the environment variables, so</p>
-<div class="highlight"><pre><span></span><code>$ module load R/3.6
-$ sbatch -p stat -q stat <span class="s">&lt;&lt; EOF</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>R/3.6
+$<span class="w"> </span>sbatch<span class="w"> </span>-p<span class="w"> </span>stat<span class="w"> </span>-q<span class="w"> </span>stat<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
 <span class="s">&gt; #!/bin/sh</span>
 <span class="s">&gt; echo $PATH</span>
 <span class="s">&gt; which R</span>
 <span class="s">&gt; EOF</span>
-Submitted batch job <span class="m">319113</span>
-$ cat slurm-319113.out 
+Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">319113</span>
+$<span class="w"> </span>cat<span class="w"> </span>slurm-319113.out<span class="w"> </span>
 /opt/share/R/3.6.3/bin:...
 /opt/share/R/3.6.3/bin/R
 </code></pre></div>
 <p>we can disable the inheriting behavior via </p>
-<div class="highlight"><pre><span></span><code>$ sbatch -p stat -q stat --export<span class="o">=</span>NONE <span class="s">&lt;&lt; EOF</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sbatch<span class="w"> </span>-p<span class="w"> </span>stat<span class="w"> </span>-q<span class="w"> </span>stat<span class="w"> </span>--export<span class="o">=</span>NONE<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
 <span class="s">&gt; #!/bin/sh</span>
 <span class="s">&gt; echo $PATH</span>
 <span class="s">&gt; which R</span>
 <span class="s">&gt; EOF</span>
-Submitted batch job <span class="m">319110</span>
-$ cat slurm-319110.out 
+Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">319110</span>
+$<span class="w"> </span>cat<span class="w"> </span>slurm-319110.out<span class="w"> </span>
 /opt/share/R/3.6.3/bin:
-which: no R <span class="k">in</span> <span class="o">(</span>...
+which:<span class="w"> </span>no<span class="w"> </span>R<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span>...
 </code></pre></div>
 <p>But note that <code>$PATH</code> still has the path to <code>R/3.6</code>, the explanation would be that the substitution has been executed before submitting.</p>
 <p>The detailed explanation of <code>--export</code> can be found in <code>man sbatch</code></p>
-<div class="highlight"><pre><span></span><code>       --export<span class="o">=</span>&lt;<span class="o">[</span>ALL,<span class="o">]</span>environment variables<span class="p">|</span>ALL<span class="p">|</span>NONE&gt;
-              Identify  which environment variables from the submission environment are propagated to the launched applica‐
-              tion. Note that SLURM_* variables are always propagated.
+<div class="highlight"><pre><span></span><code><span class="w">       </span>--export<span class="o">=</span>&lt;<span class="o">[</span>ALL,<span class="o">]</span>environment<span class="w"> </span>variables<span class="p">|</span>ALL<span class="p">|</span>NONE&gt;
+<span class="w">              </span>Identify<span class="w">  </span>which<span class="w"> </span>environment<span class="w"> </span>variables<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>submission<span class="w"> </span>environment<span class="w"> </span>are<span class="w"> </span>propagated<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>launched<span class="w"> </span>applica‐
+<span class="w">              </span>tion.<span class="w"> </span>Note<span class="w"> </span>that<span class="w"> </span>SLURM_*<span class="w"> </span>variables<span class="w"> </span>are<span class="w"> </span>always<span class="w"> </span>propagated.
 
-              --export<span class="o">=</span>ALL
-                        Default mode <span class="k">if</span> --export is not specified. All of the users environment will be loaded <span class="o">(</span>either from
-                        callers environment or clean environment <span class="k">if</span> --get-user-env is specified<span class="o">)</span>.
+<span class="w">              </span>--export<span class="o">=</span>ALL
+<span class="w">                        </span>Default<span class="w"> </span>mode<span class="w"> </span><span class="k">if</span><span class="w"> </span>--export<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>specified.<span class="w"> </span>All<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>users<span class="w"> </span>environment<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>either<span class="w"> </span>from
+<span class="w">                        </span>callers<span class="w"> </span>environment<span class="w"> </span>or<span class="w"> </span>clean<span class="w"> </span>environment<span class="w"> </span><span class="k">if</span><span class="w"> </span>--get-user-env<span class="w"> </span>is<span class="w"> </span>specified<span class="o">)</span>.
 
-              --export<span class="o">=</span>NONE
-                        Only  SLURM_*  variables  from the user environment will be defined. User must use absolute path to
-                        the binary to be executed that will define the environment.  User can not specify explicit environ‐
-                        ment variables with NONE.  --get-user-env will be ignored.
-                        This  option  is particularly important <span class="k">for</span> <span class="nb">jobs</span> that are submitted on one cluster and execute on a
-                        different cluster <span class="o">(</span>e.g. with different paths<span class="o">)</span>.  To avoid steps inheriting environment  <span class="nb">export</span>  set‐
-                        tings  <span class="o">(</span>e.g.  NONE<span class="o">)</span> from sbatch command, the environment variable SLURM_EXPORT_ENV should be <span class="nb">set</span> to
-                        ALL <span class="k">in</span> the job script.
+<span class="w">              </span>--export<span class="o">=</span>NONE
+<span class="w">                        </span>Only<span class="w">  </span>SLURM_*<span class="w">  </span>variables<span class="w">  </span>from<span class="w"> </span>the<span class="w"> </span>user<span class="w"> </span>environment<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>defined.<span class="w"> </span>User<span class="w"> </span>must<span class="w"> </span>use<span class="w"> </span>absolute<span class="w"> </span>path<span class="w"> </span>to
+<span class="w">                        </span>the<span class="w"> </span>binary<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>executed<span class="w"> </span>that<span class="w"> </span>will<span class="w"> </span>define<span class="w"> </span>the<span class="w"> </span>environment.<span class="w">  </span>User<span class="w"> </span>can<span class="w"> </span>not<span class="w"> </span>specify<span class="w"> </span>explicit<span class="w"> </span>environ‐
+<span class="w">                        </span>ment<span class="w"> </span>variables<span class="w"> </span>with<span class="w"> </span>NONE.<span class="w">  </span>--get-user-env<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>ignored.
+<span class="w">                        </span>This<span class="w">  </span>option<span class="w">  </span>is<span class="w"> </span>particularly<span class="w"> </span>important<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>that<span class="w"> </span>are<span class="w"> </span>submitted<span class="w"> </span>on<span class="w"> </span>one<span class="w"> </span>cluster<span class="w"> </span>and<span class="w"> </span>execute<span class="w"> </span>on<span class="w"> </span>a
+<span class="w">                        </span>different<span class="w"> </span>cluster<span class="w"> </span><span class="o">(</span>e.g.<span class="w"> </span>with<span class="w"> </span>different<span class="w"> </span>paths<span class="o">)</span>.<span class="w">  </span>To<span class="w"> </span>avoid<span class="w"> </span>steps<span class="w"> </span>inheriting<span class="w"> </span>environment<span class="w">  </span><span class="nb">export</span><span class="w">  </span>set‐
+<span class="w">                        </span>tings<span class="w">  </span><span class="o">(</span>e.g.<span class="w">  </span>NONE<span class="o">)</span><span class="w"> </span>from<span class="w"> </span>sbatch<span class="w"> </span>command,<span class="w"> </span>the<span class="w"> </span>environment<span class="w"> </span>variable<span class="w"> </span>SLURM_EXPORT_ENV<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span><span class="nb">set</span><span class="w"> </span>to
+<span class="w">                        </span>ALL<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>job<span class="w"> </span>script.
 </code></pre></div>
 
   <hr>
@@ -3482,7 +3482,7 @@ which: no R <span class="k">in</span> <span class="o">(</span>...
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

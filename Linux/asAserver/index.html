@@ -2552,12 +2552,12 @@
 <p>另外，办公室的 Windows 电脑也很早就启用了 WSL，因而也可以将其作为服务器，而且通过 SSH 访问也比其它远程登录软件，如 anydesk 来得方便些。</p>
 <h2 id="ssh">SSH 远程登录<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
 <p>将系里服务器作为跳板机</p>
-<div class="highlight"><pre><span></span><code>weiya@G40 $ autossh -M <span class="m">33000</span> -o <span class="s2">&quot;StrictHostKeyChecking=false&quot;</span> -o <span class="s2">&quot;ServerAliveInterval 10&quot;</span> -o <span class="s2">&quot;ServerAliveCountMax 3&quot;</span> -NR <span class="m">30003</span>:localhost:22 SID@SERVER
-T460p $ ssh -L <span class="m">30003</span>:localhost:30003 SID@SERVER
-T460p $ ssh -p <span class="m">30003</span> weiya@127.0.0.1
+<div class="highlight"><pre><span></span><code>weiya@G40<span class="w"> </span>$<span class="w"> </span>autossh<span class="w"> </span>-M<span class="w"> </span><span class="m">33000</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;StrictHostKeyChecking=false&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;ServerAliveInterval 10&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;ServerAliveCountMax 3&quot;</span><span class="w"> </span>-NR<span class="w"> </span><span class="m">30003</span>:localhost:22<span class="w"> </span>SID@SERVER
+T460p<span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">30003</span>:localhost:30003<span class="w"> </span>SID@SERVER
+T460p<span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>-p<span class="w"> </span><span class="m">30003</span><span class="w"> </span>weiya@127.0.0.1
 </code></pre></div>
 <p>复制的话也变得很简单了，</p>
-<div class="highlight"><pre><span></span><code>T460p $ ssh -P <span class="m">30003</span> file weiya@127.0.0.1:
+<div class="highlight"><pre><span></span><code>T460p<span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>-P<span class="w"> </span><span class="m">30003</span><span class="w"> </span>file<span class="w"> </span>weiya@127.0.0.1:
 </code></pre></div>
 <p>对于 WSL，一波三折，详见 <a href="https://github.com/szcf-weiya/techNotes/issues/22">Issue 22: ssh to WSL</a>，额外的步骤（按顺序，所以必要性并没有进行检验）为</p>
 <ul>
@@ -2573,9 +2573,9 @@ T460p $ ssh -p <span class="m">30003</span> weiya@127.0.0.1
 <h2 id="synergy">通过 Synergy 共用键鼠<a class="headerlink" href="#synergy" title="Permanent link">&para;</a></h2>
 <p>在 Synergy 的图形界面上，只能在同一局域网内才能配置成功。然而想到既然可以通过 ssh 来互联两台非局域网的机器，理论上应该也能共享这两台电脑的键鼠，所以试着搜索一下 &ldquo;synergy over ssh&rdquo;，果然找到了解决方案。</p>
 <p>将 T460p 作为 server，即提供键鼠，而 G40 作为 client。</p>
-<div class="highlight"><pre><span></span><code>G40 $ ssh -NL <span class="m">30013</span>:localhost:30013 -L <span class="m">24800</span>:localhost:24800 SID@SERVER
-G40 $ synergyc -1 localhost
-T460p $ ssh -NR <span class="m">30013</span>:localhost:22 -R <span class="m">24800</span>:localhost:24800 SID@SERVER
+<div class="highlight"><pre><span></span><code>G40<span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>-NL<span class="w"> </span><span class="m">30013</span>:localhost:30013<span class="w"> </span>-L<span class="w"> </span><span class="m">24800</span>:localhost:24800<span class="w"> </span>SID@SERVER
+G40<span class="w"> </span>$<span class="w"> </span>synergyc<span class="w"> </span>-1<span class="w"> </span>localhost
+T460p<span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>-NR<span class="w"> </span><span class="m">30013</span>:localhost:22<span class="w"> </span>-R<span class="w"> </span><span class="m">24800</span>:localhost:24800<span class="w"> </span>SID@SERVER
 <span class="c1"># T460p 正常在 GUI 界面上启动服务器端</span>
 </code></pre></div>
 <p>关键点是将两台机器的 24800 端口连上，基本逻辑是，在 G40 上通过 <code>-L</code> 转发使得 24800 端口访问的实际上是 SERVER 的 24800 端口，而在 T460p 上通过 <code>-R</code> 使得 SERVER 上的 24800 端口转发到本地的 24800.</p>
@@ -2590,11 +2590,11 @@ T460p $ ssh -NR <span class="m">30013</span>:localhost:22 -R <span class="m">248
 </div>
 <h2 id="_2">禁止合盖休眠<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>既然作为服务器了，没必要继续直接操作了，于是想合上盖子，但是会自动进入休眠状态（准确说是 suspend，而不是 hibernate），这时连接便都断开了。但是在设置界面也没找到直接关闭休眠的，最后在 <a href="https://tipsonubuntu.com/2018/04/28/change-lid-close-action-ubuntu-18-04-lts/">How to Change Lid Close Action in Ubuntu 18.04 LTS</a> 中找到解决方案，</p>
-<div class="highlight"><pre><span></span><code>sudo vi /etc/systemd/logind.conf
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>vi<span class="w"> </span>/etc/systemd/logind.conf
 </code></pre></div>
 <p>commenting out <code>HandleLidSwitch=suspend</code> and changes it to <code>HandleLidSwitch=ignore</code></p>
 <p>最后需要</p>
-<div class="highlight"><pre><span></span><code>systemctl restart systemd-logind.service
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>systemd-logind.service
 </code></pre></div>
 <p>没想到这个也能使连接断开，于是需要继续连接一遍。</p>
 <h2 id="_3">音乐播放器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -2612,34 +2612,34 @@ T460p $ ssh -NR <span class="m">30013</span>:localhost:22 -R <span class="m">248
 <p>再结合一下 <code>aplay</code> 的不正常播放，误以为 <code>PulseAudio</code> 出现了问题，所以按照 <a href="https://unix.stackexchange.com/questions/445386/pulseaudio-server-connection-failure-connection-refused-debian-stretch/567083">PulseAudio server connection failure: Connection refused (debian stretch)</a> 操作一遍，似乎并没有什么问题。但是因为这个涉及到重启，所以提醒了我一个很重要的点，即自登陆自连接。</p>
 <p>后来意识到 <code>aplay</code> 只能播放 <code>wav</code> 文件，而 <code>.mp3</code>需要其他的播放命令，比如 <code>mpg123</code>，参考 <a href="https://askubuntu.com/questions/115369/how-to-play-mp3-files-from-the-command-line">How to play mp3 files from the command line?</a></p>
 <p>后来试了下 <code>sox</code>，声称可以支持多种格式，</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt-get install sox
-$ sudo apt-get install libsox-fmt-all
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>sox
+$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libsox-fmt-all
 </code></pre></div>
 <p>播放的界面很清爽但不简单，</p>
 <p><img alt="" src="../music.gif" /></p>
 <p>其中 <code>-v 0.5</code> 调节音量。</p>
 <p>先暂时写了个简单的列表顺序播放的脚本</p>
-<div class="highlight"><pre><span></span><code>$ cat playmusic.sh
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>playmusic.sh
 <span class="c1">#!/bin/bash</span>
-<span class="k">for</span> music <span class="k">in</span> ~/Music/*<span class="p">;</span> <span class="k">do</span>
-    <span class="k">if</span> <span class="o">[[</span> -f <span class="nv">$music</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-        play -v <span class="m">0</span>.35 <span class="s2">&quot;</span><span class="nv">$music</span><span class="s2">&quot;</span>
-    <span class="k">fi</span>
+<span class="k">for</span><span class="w"> </span>music<span class="w"> </span><span class="k">in</span><span class="w"> </span>~/Music/*<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$music</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span>play<span class="w"> </span>-v<span class="w"> </span><span class="m">0</span>.35<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$music</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
 <span class="k">done</span>
 </code></pre></div>
 <p>但是如果想关掉，只能 <code>Ctrl-C</code> 了，而且要连续 <code>Ctrl-C</code> 了。其实主要的是并不支持所有格式，比如<code>.ape</code>，然后我便试了试 <code>nvlc</code>, <a href="https://help.ubuntu.com/community/PlayMusicFromCommandLine">Ubuntu documentation: PlayMusicFromCommandLine</a> 列出了几种可能的从终端播放音乐的方法。</p>
 <p>注意 <code>nvlc</code> 不需要预装 <code>vlc</code>，只需要</p>
-<div class="highlight"><pre><span></span><code>$ sudo apt-get install vlc-bin
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>vlc-bin
 </code></pre></div>
 <p>因为一开始误以为是 vlc 自带的，但是装了 vlc 之后，</p>
-<div class="highlight"><pre><span></span><code>$ sudo snap install vlc
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>vlc
 </code></pre></div>
 <p>并没有 <code>nvlc</code>，而直接敲 <code>nvlc</code> 就可以拿到提示，</p>
-<div class="highlight"><pre><span></span><code>$ nvlc
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvlc
 
-Command <span class="s1">&#39;nvlc&#39;</span> not found, but can be installed with:
+Command<span class="w"> </span><span class="s1">&#39;nvlc&#39;</span><span class="w"> </span>not<span class="w"> </span>found,<span class="w"> </span>but<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>installed<span class="w"> </span>with:
 
-sudo apt install vlc-bin
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vlc-bin
 </code></pre></div>
 <p>安装好之后，直接 <code>nvlc *</code> 便可以顺序播放所有歌曲，</p>
 <p><img alt="" src="../music-nvlc.gif" /></p>
@@ -2650,20 +2650,20 @@ sudo apt install vlc-bin
 <span class="c1">#  AutomaticLogin = user1</span>
 </code></pre></div>
 <p>改成</p>
-<div class="highlight"><pre><span></span><code><span class="nv">AutomaticLoginEnable</span> <span class="o">=</span> <span class="nb">true</span>
-<span class="nv">AutomaticLogin</span> <span class="o">=</span> weiya
+<div class="highlight"><pre><span></span><code><span class="nv">AutomaticLoginEnable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="nv">AutomaticLogin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>weiya
 </code></pre></div>
 <p>下一步还需要自动发起 ssh 连接至跳板服务器，这个可以再 <code>.profile</code> 中添加</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;./autossh2ln001.sh&quot;</span> &gt;&gt; .profile
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;./autossh2ln001.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.profile
 </code></pre></div>
 <p>不过需要注意到如果存在 <code>.bash_profile</code> 或 <code>.bash_login</code>，则需要更改这些文件，因为只按顺序调用这三个的第一个。</p>
 <p>因为音乐文件是通过本地百度云下载的，所以需要复制过去，但是如果 <code>scp</code> 的话，似乎没有选项支持 disable overwrite，然后看到 <a href="https://unix.stackexchange.com/questions/14191/scp-without-replacing-existing-files-in-the-destination">scp without replacing existing files in the destination</a>，推荐 <code>rsync</code>，增量更新，想起上次在 pluskid 的博客中也看到了，所以便准备用它，不过 ssh 的端口需要额外指定，<a href="https://stackoverflow.com/questions/4549945/is-it-possible-to-specify-a-different-ssh-port-when-using-rsync">Is it possible to specify a different ssh port when using rsync?</a>，最后的命令为</p>
-<div class="highlight"><pre><span></span><code>$ rsync -auv -e <span class="s2">&quot;ssh -p 30003&quot;</span> /home/weiya/OneDrive/CloudMusic/ weiya@127.0.0.1:~/Music/
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rsync<span class="w"> </span>-auv<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;ssh -p 30003&quot;</span><span class="w"> </span>/home/weiya/OneDrive/CloudMusic/<span class="w"> </span>weiya@127.0.0.1:~/Music/
 </code></pre></div>
 <h2 id="mount-windows-from-terminal">Mount Windows from Terminal<a class="headerlink" href="#mount-windows-from-terminal" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://www.tecmint.com/mount-windows-partition-in-ubuntu/">How to Mount Windows Partitions in Ubuntu</a></p>
-<div class="highlight"><pre><span></span><code>sudo mkdir /media/weiya/WIN
-sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>/media/weiya/WIN
+sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>ntfs-3g<span class="w"> </span>-o<span class="w"> </span>ro<span class="w"> </span>/dev/sda4<span class="w"> </span>/media/weiya/WIN
 </code></pre></div>
 <p>其中 <code>/dev/sda4</code> 是通过 <code>sudo lsblk</code> 确定的。</p>
 <h2 id="boot-into-text-mode">Boot into Text mode<a class="headerlink" href="#boot-into-text-mode" title="Permanent link">&para;</a></h2>
@@ -2677,7 +2677,7 @@ sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
 <p>修改后运行 <code>sudo update-grub</code></p>
 <p>而 text 模式下免密码登录直接修改 <code>/etc/init/tty1.conf</code></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># exec /sbin/getty -8 38400 tty1</span>
-<span class="nb">exec</span> /sbin/getty -8 <span class="m">38400</span> tty1 -a weiya
+<span class="nb">exec</span><span class="w"> </span>/sbin/getty<span class="w"> </span>-8<span class="w"> </span><span class="m">38400</span><span class="w"> </span>tty1<span class="w"> </span>-a<span class="w"> </span>weiya
 </code></pre></div>
 <p>这个跟上文修改 <code>/etc/gdm3/custom.conf</code> 实现自登录应该不一样，因为 <code>gdm3</code> 是跟图形界面有关的程序。</p>
 <div class="admonition tip">
@@ -2686,45 +2686,45 @@ sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
 </div>
 <p>最后， <code>unknown host</code> 的问题也没有再报出了。</p>
 <p>如果要从 text mode 回到图形界面</p>
-<div class="highlight"><pre><span></span><code>sudo lightdm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>lightdm
 </code></pre></div>
 <p>但是很奇怪的一点是，以后每次重启后，都会进入到图形界面，不过启动过程确实是 text 的。</p>
 <h2 id="_5">电量查询<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>上文提到笔记本耗电完重启，这是因为其配套的充电器充不进电，当换成当前笔记本的适配器后（功率略高一些），虽然仍充不进电，但是能够一直保持电量，一直都是 10% 左右，倘若换成其配套的充电器，很快就会自动关机了。所以想到要不<a href="https://www.imooc.com/article/29599">查看一下电池状态</a>，一查吓一跳，原来电池已经快被榨干了，</p>
-<div class="highlight"><pre><span></span><code>$ upower -i <span class="sb">`</span>upower -e <span class="p">|</span> grep <span class="s1">&#39;BAT&#39;</span><span class="sb">`</span>
-  native-path:          BAT0
-  vendor:               Lenovo IdeaPad
-  serial:               BAT20101001
-  power supply:         yes
-  updated:              2020年08月25日 星期二 16时21分10秒 <span class="o">(</span><span class="m">0</span> seconds ago<span class="o">)</span>
-  has history:          yes
-  has statistics:       yes
-  battery
-    present:             yes
-    rechargeable:        yes
-    state:               charging
-    warning-level:       none
-    energy:              <span class="m">0</span>.97 Wh
-    energy-empty:        <span class="m">0</span> Wh
-    energy-full:         <span class="m">9</span>.79 Wh
-    energy-full-design:  <span class="m">37</span>.5 Wh
-    energy-rate:         <span class="m">0</span> W
-    voltage:             <span class="m">13</span>.974 V
-    percentage:          <span class="m">9</span>%
-    capacity:            <span class="m">26</span>.1067%
-    icon-name:          <span class="s1">&#39;battery-caution-charging-symbolic&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>upower<span class="w"> </span>-i<span class="w"> </span><span class="sb">`</span>upower<span class="w"> </span>-e<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;BAT&#39;</span><span class="sb">`</span>
+<span class="w">  </span>native-path:<span class="w">          </span>BAT0
+<span class="w">  </span>vendor:<span class="w">               </span>Lenovo<span class="w"> </span>IdeaPad
+<span class="w">  </span>serial:<span class="w">               </span>BAT20101001
+<span class="w">  </span>power<span class="w"> </span>supply:<span class="w">         </span>yes
+<span class="w">  </span>updated:<span class="w">              </span>2020年08月25日<span class="w"> </span>星期二<span class="w"> </span>16时21分10秒<span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="o">)</span>
+<span class="w">  </span>has<span class="w"> </span>history:<span class="w">          </span>yes
+<span class="w">  </span>has<span class="w"> </span>statistics:<span class="w">       </span>yes
+<span class="w">  </span>battery
+<span class="w">    </span>present:<span class="w">             </span>yes
+<span class="w">    </span>rechargeable:<span class="w">        </span>yes
+<span class="w">    </span>state:<span class="w">               </span>charging
+<span class="w">    </span>warning-level:<span class="w">       </span>none
+<span class="w">    </span>energy:<span class="w">              </span><span class="m">0</span>.97<span class="w"> </span>Wh
+<span class="w">    </span>energy-empty:<span class="w">        </span><span class="m">0</span><span class="w"> </span>Wh
+<span class="w">    </span>energy-full:<span class="w">         </span><span class="m">9</span>.79<span class="w"> </span>Wh
+<span class="w">    </span>energy-full-design:<span class="w">  </span><span class="m">37</span>.5<span class="w"> </span>Wh
+<span class="w">    </span>energy-rate:<span class="w">         </span><span class="m">0</span><span class="w"> </span>W
+<span class="w">    </span>voltage:<span class="w">             </span><span class="m">13</span>.974<span class="w"> </span>V
+<span class="w">    </span>percentage:<span class="w">          </span><span class="m">9</span>%
+<span class="w">    </span>capacity:<span class="w">            </span><span class="m">26</span>.1067%
+<span class="w">    </span>icon-name:<span class="w">          </span><span class="s1">&#39;battery-caution-charging-symbolic&#39;</span>
 </code></pre></div>
 <p>试着解读一下信息，现在电池最大容量已经耗到最初的 26.1067%，而当前一直充电时还只能达到这个的 9%，也就是 <code>0.261067*0.09 = 0.02349603</code>。</p>
 <h2 id="_6">拔掉电源自动关机<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="How to shutdown automatically when AC power is not available">https://askubuntu.com/questions/854570/how-to-shutdown-automatically-when-ac-power-is-not-available</a></p>
 <p>新建</p>
-<div class="highlight"><pre><span></span><code>sudo vi /etc/udev/rules.d/50-ac-unplugged.rules
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>vi<span class="w"> </span>/etc/udev/rules.d/50-ac-unplugged.rules
 </code></pre></div>
 <p>然后写入</p>
-<div class="highlight"><pre><span></span><code><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;power_supply&quot;</span>, ENV<span class="o">{</span>POWER_SUPPLY_ONLINE<span class="o">}==</span><span class="s2">&quot;0&quot;</span>, <span class="nv">RUN</span><span class="o">+=</span><span class="s2">&quot;/sbin/shutdown now&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;power_supply&quot;</span>,<span class="w"> </span>ENV<span class="o">{</span>POWER_SUPPLY_ONLINE<span class="o">}==</span><span class="s2">&quot;0&quot;</span>,<span class="w"> </span><span class="nv">RUN</span><span class="o">+=</span><span class="s2">&quot;/sbin/shutdown now&quot;</span>
 </code></pre></div>
 <p>保存文件并运行</p>
-<div class="highlight"><pre><span></span><code>sudo udevadm control --reload-rules
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
 </code></pre></div>
 <p>拔掉电源后确实自动关机了！！</p>
 <h2 id="_7">插上电源自动开机<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
@@ -2853,7 +2853,7 @@ sudo mount -t ntfs-3g -o ro /dev/sda4 /media/weiya/WIN
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

@@ -2697,12 +2697,12 @@ IPv4 settings</p>
 Netmask: 24
 Gateway: 10.71.115.254
 DNS server: 10.10.0.21</p>
-<div class="highlight"><pre><span></span><code>sudo su
-ifconfig enp0s31f6 up
-ifconfig enp0s31f6 <span class="m">10</span>.71.115.59 netmask <span class="m">255</span>.255.255.0 up
-ping <span class="m">10</span>.71.115.254
-route add default gw <span class="m">10</span>.71.115.254 enp0s31f6
-ping <span class="m">10</span>.71.45.100
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>su
+ifconfig<span class="w"> </span>enp0s31f6<span class="w"> </span>up
+ifconfig<span class="w"> </span>enp0s31f6<span class="w"> </span><span class="m">10</span>.71.115.59<span class="w"> </span>netmask<span class="w"> </span><span class="m">255</span>.255.255.0<span class="w"> </span>up
+ping<span class="w"> </span><span class="m">10</span>.71.115.254
+route<span class="w"> </span>add<span class="w"> </span>default<span class="w"> </span>gw<span class="w"> </span><span class="m">10</span>.71.115.254<span class="w"> </span>enp0s31f6
+ping<span class="w"> </span><span class="m">10</span>.71.45.100
 </code></pre></div>
 <p>see also <a href="https://askubuntu.com/questions/995660/enp0s31f6-cable-unplugged"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h3 id="ifconfig">ifconfig<a class="headerlink" href="#ifconfig" title="Permanent link">&para;</a></h3>
@@ -2720,40 +2720,40 @@ ping <span class="m">10</span>.71.45.100
 </li>
 </ul>
 <p>Here is the output of <code>ifconfig</code> on my T460p,</p>
-<div class="highlight"><pre><span></span><code>$ ifconfig
-docker0: <span class="nv">flags</span><span class="o">=</span><span class="m">4099</span>&lt;UP,BROADCAST,MULTICAST&gt;  mtu <span class="m">1500</span>
-        inet <span class="m">172</span>.17.0.1  netmask <span class="m">255</span>.255.0.0  broadcast <span class="m">172</span>.17.255.255
-        ether <span class="m">02</span>:42:22:d9:b6:b0  txqueuelen <span class="m">0</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
-        RX packets <span class="m">0</span>  bytes <span class="m">0</span> <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>
-        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
-        TX packets <span class="m">0</span>  bytes <span class="m">0</span> <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>
-        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ifconfig
+docker0:<span class="w"> </span><span class="nv">flags</span><span class="o">=</span><span class="m">4099</span>&lt;UP,BROADCAST,MULTICAST&gt;<span class="w">  </span>mtu<span class="w"> </span><span class="m">1500</span>
+<span class="w">        </span>inet<span class="w"> </span><span class="m">172</span>.17.0.1<span class="w">  </span>netmask<span class="w"> </span><span class="m">255</span>.255.0.0<span class="w">  </span>broadcast<span class="w"> </span><span class="m">172</span>.17.255.255
+<span class="w">        </span>ether<span class="w"> </span><span class="m">02</span>:42:22:d9:b6:b0<span class="w">  </span>txqueuelen<span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="o">(</span>Ethernet<span class="o">)</span>
+<span class="w">        </span>RX<span class="w"> </span>packets<span class="w"> </span><span class="m">0</span><span class="w">  </span>bytes<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.0<span class="w"> </span>B<span class="o">)</span>
+<span class="w">        </span>RX<span class="w"> </span>errors<span class="w"> </span><span class="m">0</span><span class="w">  </span>dropped<span class="w"> </span><span class="m">0</span><span class="w">  </span>overruns<span class="w"> </span><span class="m">0</span><span class="w">  </span>frame<span class="w"> </span><span class="m">0</span>
+<span class="w">        </span>TX<span class="w"> </span>packets<span class="w"> </span><span class="m">0</span><span class="w">  </span>bytes<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.0<span class="w"> </span>B<span class="o">)</span>
+<span class="w">        </span>TX<span class="w"> </span>errors<span class="w"> </span><span class="m">0</span><span class="w">  </span>dropped<span class="w"> </span><span class="m">0</span><span class="w"> </span>overruns<span class="w"> </span><span class="m">0</span><span class="w">  </span>carrier<span class="w"> </span><span class="m">0</span><span class="w">  </span>collisions<span class="w"> </span><span class="m">0</span>
 
-enp0s31f6: <span class="nv">flags</span><span class="o">=</span><span class="m">4099</span>&lt;UP,BROADCAST,MULTICAST&gt;  mtu <span class="m">1500</span>
-        ether <span class="m">50</span>:7b:9d:bd:4a:3b  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
-        RX packets <span class="m">0</span>  bytes <span class="m">0</span> <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>
-        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
-        TX packets <span class="m">0</span>  bytes <span class="m">0</span> <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>
-        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
-        device interrupt <span class="m">16</span>  memory 0xf2200000-f2220000  
+enp0s31f6:<span class="w"> </span><span class="nv">flags</span><span class="o">=</span><span class="m">4099</span>&lt;UP,BROADCAST,MULTICAST&gt;<span class="w">  </span>mtu<span class="w"> </span><span class="m">1500</span>
+<span class="w">        </span>ether<span class="w"> </span><span class="m">50</span>:7b:9d:bd:4a:3b<span class="w">  </span>txqueuelen<span class="w"> </span><span class="m">1000</span><span class="w">  </span><span class="o">(</span>Ethernet<span class="o">)</span>
+<span class="w">        </span>RX<span class="w"> </span>packets<span class="w"> </span><span class="m">0</span><span class="w">  </span>bytes<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.0<span class="w"> </span>B<span class="o">)</span>
+<span class="w">        </span>RX<span class="w"> </span>errors<span class="w"> </span><span class="m">0</span><span class="w">  </span>dropped<span class="w"> </span><span class="m">0</span><span class="w">  </span>overruns<span class="w"> </span><span class="m">0</span><span class="w">  </span>frame<span class="w"> </span><span class="m">0</span>
+<span class="w">        </span>TX<span class="w"> </span>packets<span class="w"> </span><span class="m">0</span><span class="w">  </span>bytes<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span><span class="m">0</span>.0<span class="w"> </span>B<span class="o">)</span>
+<span class="w">        </span>TX<span class="w"> </span>errors<span class="w"> </span><span class="m">0</span><span class="w">  </span>dropped<span class="w"> </span><span class="m">0</span><span class="w"> </span>overruns<span class="w"> </span><span class="m">0</span><span class="w">  </span>carrier<span class="w"> </span><span class="m">0</span><span class="w">  </span>collisions<span class="w"> </span><span class="m">0</span>
+<span class="w">        </span>device<span class="w"> </span>interrupt<span class="w"> </span><span class="m">16</span><span class="w">  </span>memory<span class="w"> </span>0xf2200000-f2220000<span class="w">  </span>
 
-lo: <span class="nv">flags</span><span class="o">=</span><span class="m">73</span>&lt;UP,LOOPBACK,RUNNING&gt;  mtu <span class="m">65536</span>
-        inet <span class="m">127</span>.0.0.1  netmask <span class="m">255</span>.0.0.0
-        inet6 ::1  prefixlen <span class="m">128</span>  scopeid 0x10&lt;host&gt;
-        loop  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Local Loopback<span class="o">)</span>
-        RX packets <span class="m">1525364</span>  bytes <span class="m">4323602450</span> <span class="o">(</span><span class="m">4</span>.3 GB<span class="o">)</span>
-        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
-        TX packets <span class="m">1525364</span>  bytes <span class="m">4323602450</span> <span class="o">(</span><span class="m">4</span>.3 GB<span class="o">)</span>
-        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
+lo:<span class="w"> </span><span class="nv">flags</span><span class="o">=</span><span class="m">73</span>&lt;UP,LOOPBACK,RUNNING&gt;<span class="w">  </span>mtu<span class="w"> </span><span class="m">65536</span>
+<span class="w">        </span>inet<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w">  </span>netmask<span class="w"> </span><span class="m">255</span>.0.0.0
+<span class="w">        </span>inet6<span class="w"> </span>::1<span class="w">  </span>prefixlen<span class="w"> </span><span class="m">128</span><span class="w">  </span>scopeid<span class="w"> </span>0x10&lt;host&gt;
+<span class="w">        </span>loop<span class="w">  </span>txqueuelen<span class="w"> </span><span class="m">1000</span><span class="w">  </span><span class="o">(</span>Local<span class="w"> </span>Loopback<span class="o">)</span>
+<span class="w">        </span>RX<span class="w"> </span>packets<span class="w"> </span><span class="m">1525364</span><span class="w">  </span>bytes<span class="w"> </span><span class="m">4323602450</span><span class="w"> </span><span class="o">(</span><span class="m">4</span>.3<span class="w"> </span>GB<span class="o">)</span>
+<span class="w">        </span>RX<span class="w"> </span>errors<span class="w"> </span><span class="m">0</span><span class="w">  </span>dropped<span class="w"> </span><span class="m">0</span><span class="w">  </span>overruns<span class="w"> </span><span class="m">0</span><span class="w">  </span>frame<span class="w"> </span><span class="m">0</span>
+<span class="w">        </span>TX<span class="w"> </span>packets<span class="w"> </span><span class="m">1525364</span><span class="w">  </span>bytes<span class="w"> </span><span class="m">4323602450</span><span class="w"> </span><span class="o">(</span><span class="m">4</span>.3<span class="w"> </span>GB<span class="o">)</span>
+<span class="w">        </span>TX<span class="w"> </span>errors<span class="w"> </span><span class="m">0</span><span class="w">  </span>dropped<span class="w"> </span><span class="m">0</span><span class="w"> </span>overruns<span class="w"> </span><span class="m">0</span><span class="w">  </span>carrier<span class="w"> </span><span class="m">0</span><span class="w">  </span>collisions<span class="w"> </span><span class="m">0</span>
 
-wlp3s0: <span class="nv">flags</span><span class="o">=</span><span class="m">4163</span>&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="m">1500</span>
-        inet <span class="m">10</span>.13.59.193  netmask <span class="m">255</span>.255.128.0  broadcast <span class="m">10</span>.13.127.255
-        inet6 fe80::def:d34:a2c:da88  prefixlen <span class="m">64</span>  scopeid 0x20&lt;link&gt;
-        ether a4:34:d9:e8:9a:bd  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
-        RX packets <span class="m">19688705</span>  bytes <span class="m">18661301186</span> <span class="o">(</span><span class="m">18</span>.6 GB<span class="o">)</span>
-        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
-        TX packets <span class="m">17848834</span>  bytes <span class="m">23268449705</span> <span class="o">(</span><span class="m">23</span>.2 GB<span class="o">)</span>
-        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
+wlp3s0:<span class="w"> </span><span class="nv">flags</span><span class="o">=</span><span class="m">4163</span>&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;<span class="w">  </span>mtu<span class="w"> </span><span class="m">1500</span>
+<span class="w">        </span>inet<span class="w"> </span><span class="m">10</span>.13.59.193<span class="w">  </span>netmask<span class="w"> </span><span class="m">255</span>.255.128.0<span class="w">  </span>broadcast<span class="w"> </span><span class="m">10</span>.13.127.255
+<span class="w">        </span>inet6<span class="w"> </span>fe80::def:d34:a2c:da88<span class="w">  </span>prefixlen<span class="w"> </span><span class="m">64</span><span class="w">  </span>scopeid<span class="w"> </span>0x20&lt;link&gt;
+<span class="w">        </span>ether<span class="w"> </span>a4:34:d9:e8:9a:bd<span class="w">  </span>txqueuelen<span class="w"> </span><span class="m">1000</span><span class="w">  </span><span class="o">(</span>Ethernet<span class="o">)</span>
+<span class="w">        </span>RX<span class="w"> </span>packets<span class="w"> </span><span class="m">19688705</span><span class="w">  </span>bytes<span class="w"> </span><span class="m">18661301186</span><span class="w"> </span><span class="o">(</span><span class="m">18</span>.6<span class="w"> </span>GB<span class="o">)</span>
+<span class="w">        </span>RX<span class="w"> </span>errors<span class="w"> </span><span class="m">0</span><span class="w">  </span>dropped<span class="w"> </span><span class="m">0</span><span class="w">  </span>overruns<span class="w"> </span><span class="m">0</span><span class="w">  </span>frame<span class="w"> </span><span class="m">0</span>
+<span class="w">        </span>TX<span class="w"> </span>packets<span class="w"> </span><span class="m">17848834</span><span class="w">  </span>bytes<span class="w"> </span><span class="m">23268449705</span><span class="w"> </span><span class="o">(</span><span class="m">23</span>.2<span class="w"> </span>GB<span class="o">)</span>
+<span class="w">        </span>TX<span class="w"> </span>errors<span class="w"> </span><span class="m">0</span><span class="w">  </span>dropped<span class="w"> </span><span class="m">0</span><span class="w"> </span>overruns<span class="w"> </span><span class="m">0</span><span class="w">  </span>carrier<span class="w"> </span><span class="m">0</span><span class="w">  </span>collisions<span class="w"> </span><span class="m">0</span>
 </code></pre></div>
 <p>where</p>
 <ul>
@@ -2772,11 +2772,11 @@ wlp3s0: <span class="nv">flags</span><span class="o">=</span><span class="m">416
 </ul>
 <p>Refer to <a href="https://goinbigdata.com/demystifying-ifconfig-and-network-interfaces-in-linux/">Demystifying ifconfig and network interfaces in Linux</a>, note that some field names are different, such as MAC address, <code>ether</code> vs <code>HWaddr</code>, see also the discussion <a href="https://forums.centos.org/viewtopic.php?t=70378">CentOS 7 - Networking Support: Changing ether to hwaddr</a></p>
 <p>Reboot with</p>
-<div class="highlight"><pre><span></span><code>sudo ifconfig enp0s31f6 down
-sudo ifconfig enp0s31f6 up
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ifconfig<span class="w"> </span>enp0s31f6<span class="w"> </span>down
+sudo<span class="w"> </span>ifconfig<span class="w"> </span>enp0s31f6<span class="w"> </span>up
 </code></pre></div>
 <p>and if necessary, re-install the wifi kernel with</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install bcmwl-kernel-source
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>bcmwl-kernel-source
 </code></pre></div>
 <p>see also <a href="https://www.shuzhiduo.com/A/D854QD6pdE/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>.</p>
 <h2 id="cdn">CDN折腾记录<a class="headerlink" href="#cdn" title="Permanent link">&para;</a></h2>
@@ -2812,7 +2812,7 @@ sudo vim head.save
 <p>Ubuntu下配置rvpn，需要浏览器启用JAVA插件，但新版本的chrome和firefox都不支持（firefox 52以后都不行了），解决办法是安装一个旧版本的firefox，然后按照登录rvpn时的说明进行配置就ok了。</p>
 <h2 id="proxychains">proxychains 实现命令行代理<a class="headerlink" href="#proxychains" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://bokunokeiken.wordpress.com/2015/07/22/how-to-use-socks-5-proxy-in-ubuntu-command-line/">How to use SOCKS 5 proxy in Ubuntu command line</a></p>
-<div class="highlight"><pre><span></span><code>proxychains curl ifconfig.me
+<div class="highlight"><pre><span></span><code>proxychains<span class="w"> </span>curl<span class="w"> </span>ifconfig.me
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Get Public IP via curl</p>
@@ -2824,29 +2824,29 @@ sudo vim head.save
 </div>
 <h3 id="ld_preload-cannot-be-preloaded"><code>LD_PRELOAD cannot be preloaded</code><a class="headerlink" href="#ld_preload-cannot-be-preloaded" title="Permanent link">&para;</a></h3>
 <p>在 Ubuntu 16.04 上用得好好的，但是在更新后的 Ubuntu 18.04 上使用时，报出</p>
-<div class="highlight"><pre><span></span><code>~$ proxychains ping www.google.com
-ProxyChains-3.1 <span class="o">(</span>http://proxychains.sf.net<span class="o">)</span>
-ERROR: ld.so: object <span class="s1">&#39;libproxychains.so.3&#39;</span> from LD_PRELOAD cannot be preloaded <span class="o">(</span>cannot open shared object file<span class="o">)</span>: ignored.
-PING www.google.com <span class="o">(</span><span class="m">199</span>.16.156.7<span class="o">)</span> <span class="m">56</span><span class="o">(</span><span class="m">84</span><span class="o">)</span> bytes of data.
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>proxychains<span class="w"> </span>ping<span class="w"> </span>www.google.com
+ProxyChains-3.1<span class="w"> </span><span class="o">(</span>http://proxychains.sf.net<span class="o">)</span>
+ERROR:<span class="w"> </span>ld.so:<span class="w"> </span>object<span class="w"> </span><span class="s1">&#39;libproxychains.so.3&#39;</span><span class="w"> </span>from<span class="w"> </span>LD_PRELOAD<span class="w"> </span>cannot<span class="w"> </span>be<span class="w"> </span>preloaded<span class="w"> </span><span class="o">(</span>cannot<span class="w"> </span>open<span class="w"> </span>shared<span class="w"> </span>object<span class="w"> </span>file<span class="o">)</span>:<span class="w"> </span>ignored.
+PING<span class="w"> </span>www.google.com<span class="w"> </span><span class="o">(</span><span class="m">199</span>.16.156.7<span class="o">)</span><span class="w"> </span><span class="m">56</span><span class="o">(</span><span class="m">84</span><span class="o">)</span><span class="w"> </span>bytes<span class="w"> </span>of<span class="w"> </span>data.
 </code></pre></div>
 <p>参考 <a href="https://askubuntu.com/questions/293649/proxychains-ld-preload-cannot-be-preloaded">proxychains LD_PRELOAD cannot be preloaded</a>，将 <code>/usr/bin/proxychains</code> 中的</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">LD_PRELOAD</span><span class="o">=</span>libproxychains.so.3
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span>libproxychains.so.3
 </code></pre></div>
 <p>改到实际 <code>libproxychains.so.3</code> 的位置，这可以通过 locate 来确定。</p>
 <p>另外注意到</p>
-<div class="highlight"><pre><span></span><code>~$ proxychains ping www.google.com
-ProxyChains-3.1 <span class="o">(</span>http://proxychains.sf.net<span class="o">)</span>
-PING www.google.com <span class="o">(</span><span class="m">199</span>.59.149.244<span class="o">)</span> <span class="m">56</span><span class="o">(</span><span class="m">84</span><span class="o">)</span> bytes of data.
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>proxychains<span class="w"> </span>ping<span class="w"> </span>www.google.com
+ProxyChains-3.1<span class="w"> </span><span class="o">(</span>http://proxychains.sf.net<span class="o">)</span>
+PING<span class="w"> </span>www.google.com<span class="w"> </span><span class="o">(</span><span class="m">199</span>.59.149.244<span class="o">)</span><span class="w"> </span><span class="m">56</span><span class="o">(</span><span class="m">84</span><span class="o">)</span><span class="w"> </span>bytes<span class="w"> </span>of<span class="w"> </span>data.
 ^C
---- www.google.com ping statistics ---
-<span class="m">2</span> packets transmitted, <span class="m">0</span> received, <span class="m">100</span>% packet loss, <span class="nb">time</span> 1019ms
+---<span class="w"> </span>www.google.com<span class="w"> </span>ping<span class="w"> </span>statistics<span class="w"> </span>---
+<span class="m">2</span><span class="w"> </span>packets<span class="w"> </span>transmitted,<span class="w"> </span><span class="m">0</span><span class="w"> </span>received,<span class="w"> </span><span class="m">100</span>%<span class="w"> </span>packet<span class="w"> </span>loss,<span class="w"> </span><span class="nb">time</span><span class="w"> </span>1019ms
 </code></pre></div>
 <p>并不会出现类似 <code>curl</code> 时的 chain</p>
-<div class="highlight"><pre><span></span><code>~$ proxychains curl ipinfo.io/ip
-ProxyChains-3.1 <span class="o">(</span>http://proxychains.sf.net<span class="o">)</span>
-<span class="p">|</span>DNS-request<span class="p">|</span> ipinfo.io 
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>proxychains<span class="w"> </span>curl<span class="w"> </span>ipinfo.io/ip
+ProxyChains-3.1<span class="w"> </span><span class="o">(</span>http://proxychains.sf.net<span class="o">)</span>
+<span class="p">|</span>DNS-request<span class="p">|</span><span class="w"> </span>ipinfo.io<span class="w"> </span>
 <span class="p">|</span>S-chain<span class="p">|</span>-&lt;&gt;-127.0.0.1:30002-&lt;&gt;&lt;&gt;-4.2.2.2:53-&lt;&gt;&lt;&gt;-OK
-<span class="p">|</span>DNS-response<span class="p">|</span> ipinfo.io is <span class="m">216</span>.239.38.21
+<span class="p">|</span>DNS-response<span class="p">|</span><span class="w"> </span>ipinfo.io<span class="w"> </span>is<span class="w"> </span><span class="m">216</span>.239.38.21
 <span class="p">|</span>S-chain<span class="p">|</span>-&lt;&gt;-127.0.0.1:30002-&lt;&gt;&lt;&gt;-216.239.38.21:80-&lt;&gt;&lt;&gt;-OK
 </code></pre></div>
 <h2 id="hosts">hosts文件原理<a class="headerlink" href="#hosts" title="Permanent link">&para;</a></h2>
@@ -2861,12 +2861,12 @@ ProxyChains-3.1 <span class="o">(</span>http://proxychains.sf.net<span class="o"
 <p>参考<a href="http://blog.csdn.net/ichuzhen/article/details/8241847">http://blog.csdn.net/ichuzhen/article/details/8241847</a></p>
 <p>Makesure the hostname defined in <code>/etc/hostname</code> also points to <code>127.0.0.1</code> in <code>/etc/hosts</code>.</p>
 <p>check my <code>/etc/hosts</code></p>
-<div class="highlight"><pre><span></span><code>~$ cat /etc/hosts
-<span class="m">127</span>.0.0.1   localhost
-<span class="m">127</span>.0.1.1   weiya-ThinkPad-T460p
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>cat<span class="w"> </span>/etc/hosts
+<span class="m">127</span>.0.0.1<span class="w">   </span>localhost
+<span class="m">127</span>.0.1.1<span class="w">   </span>weiya-ThinkPad-T460p
 </code></pre></div>
 <p>and also the hostname</p>
-<div class="highlight"><pre><span></span><code>~$ cat /etc/hostname 
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>cat<span class="w"> </span>/etc/hostname<span class="w"> </span>
 weiya-ThinkPad-T460p
 </code></pre></div>
 <h2 id="_3">带宽、网速和流量<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -3016,7 +3016,7 @@ weiya-ThinkPad-T460p
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

@@ -2455,7 +2455,7 @@
 <p>首先，在 <code>Add Files</code> 说提交的文件可以是 tex 或 pdf，</p>
 <p><img alt="" src="../submit-arxiv.png" /></p>
 <p>因为老板说先不把 appendix 放进去，所以在本地生成好 pdf 文件，然后按照下列命令</p>
-<div class="highlight"><pre><span></span><code>$ pdftk full-pdf.pdf cat <span class="m">1</span>-30 output outfile.pdf
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pdftk<span class="w"> </span>full-pdf.pdf<span class="w"> </span>cat<span class="w"> </span><span class="m">1</span>-30<span class="w"> </span>output<span class="w"> </span>outfile.pdf
 </code></pre></div>
 <p>进行剪切，再上传，然后大概说这不是 tex 产生的文件，并且说 partially rejected 之类的，不能进行下去了。本以为可能是剪切的原因。后来本地手动把 appendix tex 去掉，编译生成新的 pdf，再进行上传，还是说 partially rejected 之类的。所以大概还真的如网友所说的，只能传 tex 吧。只是如果这样，干嘛要写其它可能性？！</p>
 <p>后面就乖乖传 tex，然而 arxiv 支持的版本只有 TeXLive2016，而且竟然要自己上传 biber 编译好的 <code>.bbl</code> 文件，所以第一次报出的错误是版本不匹配，说期待 biber 2.8，而我本地上次更新装了 TeXLive 2020，其中 biber 是 2.14。后来翻了几个服务器，要么根本不是装的 texlive，要么是我后来手动装的 TeXLive 2018。而装一个 texlive 的时间令人难以忘记，即便现在网速比较好，也不容乐观，而且发现存有<a href="https://www.tug.org/historic/">旧版本 texlive</a> 的镜像似乎只有 US、FR 等地孤零零的那几个，而不像最新版本那样世界各地都有镜像，估摸着网速不会怎么样。</p>
@@ -2465,24 +2465,24 @@
 </blockquote>
 <p>可以在 github 上找到类似的问题，<a href="https://github.com/plk/biber/issues/214">plk/biber #214</a>，似乎是没有编译，但是自己运行一遍 <code>perl Build.PL</code>，还是有错误。后来意识到自己下载的不是 binary 版本，于是试了试已经<a href="https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.8/binaries/Linux/">编译好的 biber</a>，可以运行 <code>biber -v</code>，但是编译文件时，报出新错误说 biblatex 的版本不匹配。这样搞下去不是个事儿，还是得装个 texlive 2016.</p>
 <p>正当一筹莫展的时候，看见了 <a href="https://hub.docker.com/r/makisyu/texlive-2016/">docker 版本的 texlive 2016</a>！这可是一个神器，根据少数不多的几个经历，这个速度非常快。</p>
-<div class="highlight"><pre><span></span><code>$ docker pull makisyu/texlive-2016
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>pull<span class="w"> </span>makisyu/texlive-2016
 </code></pre></div>
 <p>事实证明也确实如此，一两分钟就下好了，后面速度变慢是因为磁盘快满了，删文件的速度都比不上下载的速度，磁盘快满了，然后直接卡掉了，然而这时也快下载完了，本以为功亏一篑的时候，系统弹出窗口说，磁盘空间不够了，是否清理垃圾箱，一点清理，多出了 2,3 G 的空间，最近一直都没清理垃圾箱了，瞬间把我救了回来。</p>
 <p>书到用时方恨少，觉得之前没有好好整理 docker 的用法，首先运行命令为</p>
-<div class="highlight"><pre><span></span><code>$ docker run --rm --volume <span class="nv">$PWD</span>:/workdir --workdir /workdir makisyu/texlive-2016 pdflatex main.tex
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--volume<span class="w"> </span><span class="nv">$PWD</span>:/workdir<span class="w"> </span>--workdir<span class="w"> </span>/workdir<span class="w"> </span>makisyu/texlive-2016<span class="w"> </span>pdflatex<span class="w"> </span>main.tex
 </code></pre></div>
 <p>踩了一些坑，才明白</p>
 <ul>
 <li><code>$PWD:/workdir</code> 表示文件夹映射，当前所在文件夹 <code>$PWD</code> 映射到 docker 中的 <code>workdir</code></li>
 </ul>
 <p>而查看生成的文件需要进入 docker，</p>
-<div class="highlight"><pre><span></span><code>$ docker run -i -t --rm --volume <span class="nv">$PWD</span>:/workdir --workdir /workdir --user <span class="m">1001</span>:1001 makisyu/texlive-2016 /usr/bin/bash
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-i<span class="w"> </span>-t<span class="w"> </span>--rm<span class="w"> </span>--volume<span class="w"> </span><span class="nv">$PWD</span>:/workdir<span class="w"> </span>--workdir<span class="w"> </span>/workdir<span class="w"> </span>--user<span class="w"> </span><span class="m">1001</span>:1001<span class="w"> </span>makisyu/texlive-2016<span class="w"> </span>/usr/bin/bash
 </code></pre></div>
 <p>另外还有一个很关键的点，怎么<a href="https://stackoverflow.com/questions/22049212/copying-files-from-docker-container-to-host">把生成的文件导出来</a>，</p>
-<div class="highlight"><pre><span></span><code>$ docker cp &lt;containerId&gt;:/file/path/within/container /host/path/target
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>cp<span class="w"> </span>&lt;containerId&gt;:/file/path/within/container<span class="w"> </span>/host/path/target
 </code></pre></div>
 <p>其中 <code>&lt;containerId&gt;</code> 并不是 <code>makisyu/texlive-2016</code>，而是通过 </p>
-<div class="highlight"><pre><span></span><code>$ docker container ls 
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>ls<span class="w"> </span>
 </code></pre></div>
 <p>查看到的，这里注意不要复制到映射的文件里面，不然会出现无限递归。</p>
 <p>当然事情并没有到此结束，首先发现 biber 的版本是 2.7，隐隐有点担心，但感觉问题应该不大。所以继续编译，然后用此版本的 biber 编译时才发现 <code>.bib</code> 文件中有很多非 ascii 码，这些会被转化成 <code>\x{...}</code> 的形式，继续 pdflatex 编译时便会报错，一开始报出 <code>mathbf only in math mode</code> 的错误时，还一头雾水，咋跟 mathbf 有关，后来才意识到自己重定义了 <code>\x</code> 为 <code>\mathbf{x}</code>，也顺藤摸瓜才发现非 ascii 码被转换成了 <code>\x{...}</code>。</p>
@@ -2567,7 +2567,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

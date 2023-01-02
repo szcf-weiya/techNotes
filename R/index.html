@@ -3291,66 +3291,66 @@
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="install-from-source-on-rocky">Install from source on Rocky<a class="headerlink" href="#install-from-source-on-rocky" title="Permanent link">&para;</a></h3>
 <p>Following the instruction in <a href="https://docs.rstudio.com/resources/install-r-source/">RStudio Documentation: Install R from Source</a></p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">R_VERSION</span><span class="o">=</span>X.X.X
-curl -O https://cran.rstudio.com/src/base/R-4/R-<span class="si">${</span><span class="nv">R_VERSION</span><span class="si">}</span>.tar.gz
-tar -xzvf R-<span class="si">${</span><span class="nv">R_VERSION</span><span class="si">}</span>.tar.gz
-<span class="nb">cd</span> R-<span class="si">${</span><span class="nv">R_VERSION</span><span class="si">}</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">R_VERSION</span><span class="o">=</span>X.X.X
+curl<span class="w"> </span>-O<span class="w"> </span>https://cran.rstudio.com/src/base/R-4/R-<span class="si">${</span><span class="nv">R_VERSION</span><span class="si">}</span>.tar.gz
+tar<span class="w"> </span>-xzvf<span class="w"> </span>R-<span class="si">${</span><span class="nv">R_VERSION</span><span class="si">}</span>.tar.gz
+<span class="nb">cd</span><span class="w"> </span>R-<span class="si">${</span><span class="nv">R_VERSION</span><span class="si">}</span>
 </code></pre></div>
 <p>Build with</p>
-<div class="highlight"><pre><span></span><code>./configure <span class="se">\</span>
-    --prefix<span class="o">=</span>/opt/R/<span class="si">${</span><span class="nv">R_VERSION</span><span class="si">}</span> <span class="se">\</span>
-    --enable-memory-profiling <span class="se">\</span>
-    --enable-R-shlib <span class="se">\</span>
-    --with-blas <span class="se">\</span>
-    --with-lapack
+<div class="highlight"><pre><span></span><code>./configure<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--prefix<span class="o">=</span>/opt/R/<span class="si">${</span><span class="nv">R_VERSION</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--enable-memory-profiling<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--enable-R-shlib<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--with-blas<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--with-lapack
 
 make
-sudo make install
+sudo<span class="w"> </span>make<span class="w"> </span>install
 </code></pre></div>
 <p>then manage the version with <code>module</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">2022-08-24 10:32:20</p>
 <p>On T460P, change the prefix as follows
-<div class="highlight"><pre><span></span><code><span class="n">.</span><span class="o">/</span><span class="n">configure</span> \
-    <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">weiya</span><span class="o">/</span><span class="n">Programs</span><span class="o">/</span><span class="n">R</span><span class="o">/$</span><span class="p">{</span><span class="n">R_VERSION</span><span class="p">}</span> \
-    <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">memory</span><span class="o">-</span><span class="n">profiling</span> \
-    <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="n">shlib</span> \
-    <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">blas</span> \
-    <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">lapack</span>
+<div class="highlight"><pre><span></span><code><span class="n">.</span><span class="o">/</span><span class="n">configure</span><span class="w"> </span>\
+<span class="w">    </span><span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">weiya</span><span class="o">/</span><span class="n">Programs</span><span class="o">/</span><span class="n">R</span><span class="o">/$</span><span class="p">{</span><span class="n">R_VERSION</span><span class="p">}</span><span class="w"> </span>\
+<span class="w">    </span><span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">memory</span><span class="o">-</span><span class="n">profiling</span><span class="w"> </span>\
+<span class="w">    </span><span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="n">shlib</span><span class="w"> </span>\
+<span class="w">    </span><span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">blas</span><span class="w"> </span>\
+<span class="w">    </span><span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">lapack</span>
 </code></pre></div></p>
 </div>
 <details class="tip">
 <summary>specify CRAN mirror in <code>install.package</code></summary>
-<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">&lt;-</span> <span class="nf">getOption</span><span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
-<span class="n">r</span><span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;https://cran.r-project.org&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">r</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">getOption</span><span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
+<span class="n">r</span><span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;https://cran.r-project.org&quot;</span>
 <span class="c1"># r[&quot;CRAN&quot;] &lt;- &quot;r[&quot;CRAN&quot;] &lt;- &quot;https://mirrors.ustc.edu.cn/CRAN/&quot;&quot; ## for mainland China</span>
 <span class="nf">options</span><span class="p">(</span><span class="n">repos</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
 </code></pre></div>
 <p>we also can wrap it with <code>local({...})</code> and save in <code>~/.Rprofile</code>. The benefit of <code>local</code> is to let the evaluation only valid in the current session. Note that RStudio would set <code>r["CARN"]</code> as <code>https://cran.rstudio.com</code>.</p>
 <p>Refer to <a href="https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r">How to select a CRAN mirror in R</a></p>
 <p>For temporary use, use <code>repos</code> argument in <code>install.packages</code>, such as</p>
-<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;RMySQL&#39;</span><span class="p">,</span> <span class="n">repos</span><span class="o">=</span><span class="s">&#39;http://cran.us.r-project.org&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;RMySQL&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">repos</span><span class="o">=</span><span class="s">&#39;http://cran.us.r-project.org&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r">How to select a CRAN mirror in R</a></p>
 </details>
 <h4 id="installation-of-module">installation of <code>module</code><a class="headerlink" href="#installation-of-module" title="Permanent link">&para;</a></h4>
 <p>Follow the official instruction <a href="https://modules.readthedocs.io/en/latest/INSTALL.html"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
-<div class="highlight"><pre><span></span><code>curl -LJO https://github.com/cea-hpc/modules/releases/download/v5.1.1/modules-5.1.1.tar.gz
-tar xvf modules-5.1.1.tar.gz
-<span class="nb">cd</span> modules-5.1.1/
-sudo apt-get install tcl-dev
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-LJO<span class="w"> </span>https://github.com/cea-hpc/modules/releases/download/v5.1.1/modules-5.1.1.tar.gz
+tar<span class="w"> </span>xvf<span class="w"> </span>modules-5.1.1.tar.gz
+<span class="nb">cd</span><span class="w"> </span>modules-5.1.1/
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>tcl-dev
 make
 <span class="c1"># sudo make install</span>
-make install
+make<span class="w"> </span>install
 </code></pre></div>
 <p>Different from other software, <code>module load</code> command cannot be found, we need to configure as follows,</p>
-<div class="highlight"><pre><span></span><code>$ sudo ln -s <span class="nv">$PWD</span>/init/profile.sh /etc/profile.d/modules.sh
-$ sudo ln -s <span class="nv">$PWD</span>/init/profile.csh /etc/profile.d/modules.csh
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$PWD</span>/init/profile.sh<span class="w"> </span>/etc/profile.d/modules.sh
+$<span class="w"> </span>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$PWD</span>/init/profile.csh<span class="w"> </span>/etc/profile.d/modules.csh
 </code></pre></div>
 <p>So the above <code>make install</code> indeed does not need <code>sudo</code>. Strangely, it still cannot find <code>module</code>, (require reboot?), so simply put <code>source /etc/profile.d/modules.sh</code> into <code>~/.bashrc</code></p>
 <h3 id="install-410-from-source">Install 4.1.0 from source<a class="headerlink" href="#install-410-from-source" title="Permanent link">&para;</a></h3>
 <p>it throws when <code>./configure</code>,</p>
-<div class="highlight"><pre><span></span><code>configure: error: libcurl &gt;<span class="o">=</span> <span class="m">7</span>.28.0 library and headers are required with support <span class="k">for</span> https
+<div class="highlight"><pre><span></span><code>configure:<span class="w"> </span>error:<span class="w"> </span>libcurl<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">7</span>.28.0<span class="w"> </span>library<span class="w"> </span>and<span class="w"> </span>headers<span class="w"> </span>are<span class="w"> </span>required<span class="w"> </span>with<span class="w"> </span>support<span class="w"> </span><span class="k">for</span><span class="w"> </span>https
 </code></pre></div>
 <p>try to install <code>libcurl4-openssl-dev</code>, suggested in <a href="https://stackoverflow.com/questions/38690232/installing-r-on-linux-configure-error-libcurl-7-28-0-library-and-headers-a">Installing R on Linux: configure: error: libcurl &gt;= 7.28.0 library and headers are required with support for https</a>.</p>
 <p>Be careful when installing the package, and to avoid the uninstallation in the next section.</p>
@@ -3360,12 +3360,12 @@ $ sudo ln -s <span class="nv">$PWD</span>/init/profile.csh /etc/profile.d/module
 </div>
 <h3 id="install-latest-r36">Install Latest R3.6<a class="headerlink" href="#install-latest-r36" title="Permanent link">&para;</a></h3>
 <p>Accidentally, I uninstall my R3.6 when installing <code>libcurl4</code>, the apt-log shows that</p>
-<div class="highlight"><pre><span></span><code>Start-Date: <span class="m">2021</span>-05-01  <span class="m">10</span>:40:15
-Commandline: apt install libcurl4
-Requested-By: weiya <span class="o">(</span><span class="m">1000</span><span class="o">)</span>
-Install: libcurl4:amd64 <span class="o">(</span><span class="m">7</span>.58.0-2ubuntu3.13<span class="o">)</span>
-Remove: r-cran-foreign:amd64 <span class="o">(</span><span class="m">0</span>.8.75-1xenial0<span class="o">)</span>, r-cran-mgcv:amd64 <span class="o">(</span><span class="m">1</span>.8-31-1cran1xenial0<span class="o">)</span>, libcurl3:amd64 <span class="o">(</span><span class="m">7</span>.58.0-2ubuntu2<span class="o">)</span>, r-base-html:amd64 <span class="o">(</span><span class="m">3</span>.6.3-1xenial<span class="o">)</span>, r-cran-class:amd64 <span class="o">(</span><span class="m">7</span>.3-16-1xenial0<span class="o">)</span>, r-cran-boot:amd64 <span class="o">(</span><span class="m">1</span>.3-23-2xenial0<span class="o">)</span>, r-cran-cluster:amd64 <span class="o">(</span><span class="m">2</span>.1.0-2xenial0<span class="o">)</span>, r-cran-rpart:amd64 <span class="o">(</span><span class="m">4</span>.1-15-2xenial0<span class="o">)</span>, r-cran-kernsmooth:amd64 <span class="o">(</span><span class="m">2</span>.23-16-1+1xenial0<span class="o">)</span>, r-cran-matrix:amd64 <span class="o">(</span><span class="m">1</span>.2-18-1xenial0<span class="o">)</span>, r-cran-spatial:amd64 <span class="o">(</span><span class="m">7</span>.3-11-2xenial0<span class="o">)</span>, r-base-core:amd64 <span class="o">(</span><span class="m">3</span>.6.3-1xenial<span class="o">)</span>, r-cran-codetools:amd64 <span class="o">(</span><span class="m">0</span>.2-16-1xenial0<span class="o">)</span>, r-base:amd64 <span class="o">(</span><span class="m">3</span>.6.3-1xenial<span class="o">)</span>, r-recommended:amd64 <span class="o">(</span><span class="m">3</span>.6.3-1xenial<span class="o">)</span>, r-cran-nlme:amd64 <span class="o">(</span><span class="m">3</span>.1.144-1xenial0<span class="o">)</span>, r-cran-lattice:amd64 <span class="o">(</span><span class="m">0</span>.20-41-1cran1xenial0<span class="o">)</span>, r-cran-nnet:amd64 <span class="o">(</span><span class="m">7</span>.3-13-1xenial0<span class="o">)</span>, r-cran-mass:amd64 <span class="o">(</span><span class="m">7</span>.3-51.5-1xenial0<span class="o">)</span>, r-cran-survival:amd64 <span class="o">(</span><span class="m">3</span>.1-11-1cran1xenial0<span class="o">)</span>
-End-Date: <span class="m">2021</span>-05-01  <span class="m">10</span>:40:29
+<div class="highlight"><pre><span></span><code>Start-Date:<span class="w"> </span><span class="m">2021</span>-05-01<span class="w">  </span><span class="m">10</span>:40:15
+Commandline:<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libcurl4
+Requested-By:<span class="w"> </span>weiya<span class="w"> </span><span class="o">(</span><span class="m">1000</span><span class="o">)</span>
+Install:<span class="w"> </span>libcurl4:amd64<span class="w"> </span><span class="o">(</span><span class="m">7</span>.58.0-2ubuntu3.13<span class="o">)</span>
+Remove:<span class="w"> </span>r-cran-foreign:amd64<span class="w"> </span><span class="o">(</span><span class="m">0</span>.8.75-1xenial0<span class="o">)</span>,<span class="w"> </span>r-cran-mgcv:amd64<span class="w"> </span><span class="o">(</span><span class="m">1</span>.8-31-1cran1xenial0<span class="o">)</span>,<span class="w"> </span>libcurl3:amd64<span class="w"> </span><span class="o">(</span><span class="m">7</span>.58.0-2ubuntu2<span class="o">)</span>,<span class="w"> </span>r-base-html:amd64<span class="w"> </span><span class="o">(</span><span class="m">3</span>.6.3-1xenial<span class="o">)</span>,<span class="w"> </span>r-cran-class:amd64<span class="w"> </span><span class="o">(</span><span class="m">7</span>.3-16-1xenial0<span class="o">)</span>,<span class="w"> </span>r-cran-boot:amd64<span class="w"> </span><span class="o">(</span><span class="m">1</span>.3-23-2xenial0<span class="o">)</span>,<span class="w"> </span>r-cran-cluster:amd64<span class="w"> </span><span class="o">(</span><span class="m">2</span>.1.0-2xenial0<span class="o">)</span>,<span class="w"> </span>r-cran-rpart:amd64<span class="w"> </span><span class="o">(</span><span class="m">4</span>.1-15-2xenial0<span class="o">)</span>,<span class="w"> </span>r-cran-kernsmooth:amd64<span class="w"> </span><span class="o">(</span><span class="m">2</span>.23-16-1+1xenial0<span class="o">)</span>,<span class="w"> </span>r-cran-matrix:amd64<span class="w"> </span><span class="o">(</span><span class="m">1</span>.2-18-1xenial0<span class="o">)</span>,<span class="w"> </span>r-cran-spatial:amd64<span class="w"> </span><span class="o">(</span><span class="m">7</span>.3-11-2xenial0<span class="o">)</span>,<span class="w"> </span>r-base-core:amd64<span class="w"> </span><span class="o">(</span><span class="m">3</span>.6.3-1xenial<span class="o">)</span>,<span class="w"> </span>r-cran-codetools:amd64<span class="w"> </span><span class="o">(</span><span class="m">0</span>.2-16-1xenial0<span class="o">)</span>,<span class="w"> </span>r-base:amd64<span class="w"> </span><span class="o">(</span><span class="m">3</span>.6.3-1xenial<span class="o">)</span>,<span class="w"> </span>r-recommended:amd64<span class="w"> </span><span class="o">(</span><span class="m">3</span>.6.3-1xenial<span class="o">)</span>,<span class="w"> </span>r-cran-nlme:amd64<span class="w"> </span><span class="o">(</span><span class="m">3</span>.1.144-1xenial0<span class="o">)</span>,<span class="w"> </span>r-cran-lattice:amd64<span class="w"> </span><span class="o">(</span><span class="m">0</span>.20-41-1cran1xenial0<span class="o">)</span>,<span class="w"> </span>r-cran-nnet:amd64<span class="w"> </span><span class="o">(</span><span class="m">7</span>.3-13-1xenial0<span class="o">)</span>,<span class="w"> </span>r-cran-mass:amd64<span class="w"> </span><span class="o">(</span><span class="m">7</span>.3-51.5-1xenial0<span class="o">)</span>,<span class="w"> </span>r-cran-survival:amd64<span class="w"> </span><span class="o">(</span><span class="m">3</span>.1-11-1cran1xenial0<span class="o">)</span>
+End-Date:<span class="w"> </span><span class="m">2021</span>-05-01<span class="w">  </span><span class="m">10</span>:40:29
 </code></pre></div>
 <p>So I need to reinstall it. Following the <a href="https://cloud.r-project.org/">instruction on CRAN</a></p>
 <ol>
@@ -3379,7 +3379,7 @@ N: Updating from such a repository can&rsquo;t be done securely, and is therefor
 N: See apt-secure(8) manpage for repository creation and user configuration details.</p>
 </blockquote>
 <p>The error has been reported in <a href="../../Linux/gpg-error">Linux#GPG error</a>, and the solution is </p>
-<div class="highlight"><pre><span></span><code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-key<span class="w"> </span>adv<span class="w"> </span>--keyserver<span class="w"> </span>keyserver.ubuntu.com<span class="w"> </span>--recv-keys<span class="w"> </span>51716619E084DAB9
 </code></pre></div>
 <ol start="3">
 <li>run <code>sudo apt-get install r-base</code>.</li>
@@ -3393,8 +3393,8 @@ N: See apt-secure(8) manpage for repository creation and user configuration deta
 <li><del>单独安装 rstudio <code>conda install -c r rstudio</code></del> (waste memory!!)</li>
 <li>共用 Rstudio，但是切换环境时找不到 shared library，而原生 R session 完全没问题。目前解决方案，命令行调用 rstudio 之前添加环境变量</li>
 </ul>
-<div class="highlight"><pre><span></span><code>conda activate R4.1.0
-<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib:<span class="nv">$LD_LIBRARY_PATH</span>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>R4.1.0
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib:<span class="nv">$LD_LIBRARY_PATH</span>
 rstudio
 </code></pre></div>
 <p>详见 <a href="https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987">Issue #32 use rstudio in env R4.1.0</a></p>
@@ -3408,9 +3408,9 @@ rstudio
 <p>Refer to <a href="https://github.com/szcf-weiya/techNotes/issues/27">rstudio #27</a> for the raw records.</p>
 </div>
 <p>It throws </p>
-<div class="highlight"><pre><span></span><code>WebEngineContext used before QtWebEngine::initialize<span class="o">()</span> or OpenGL context creation failed.
-Failed to create OpenGL context <span class="k">for</span> format QSurfaceFormat<span class="o">(</span>version <span class="m">2</span>.0, options QFlags&lt;QSurfaceFormat::FormatOption&gt;<span class="o">()</span>, depthBufferSize <span class="m">24</span>, redBufferSize -1, greenBufferSize -1, blueBufferSize -1, alphaBufferSize -1, stencilBufferSize <span class="m">8</span>, samples <span class="m">0</span>, swapBehavior QSurfaceFormat::DefaultSwapBehavior, swapInterval <span class="m">1</span>, colorSpace QSurfaceFormat::DefaultColorSpace, profile  QSurfaceFormat::NoProfile<span class="o">)</span> 
-Aborted <span class="o">(</span>core dumped<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>WebEngineContext<span class="w"> </span>used<span class="w"> </span>before<span class="w"> </span>QtWebEngine::initialize<span class="o">()</span><span class="w"> </span>or<span class="w"> </span>OpenGL<span class="w"> </span>context<span class="w"> </span>creation<span class="w"> </span>failed.
+Failed<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>OpenGL<span class="w"> </span>context<span class="w"> </span><span class="k">for</span><span class="w"> </span>format<span class="w"> </span>QSurfaceFormat<span class="o">(</span>version<span class="w"> </span><span class="m">2</span>.0,<span class="w"> </span>options<span class="w"> </span>QFlags&lt;QSurfaceFormat::FormatOption&gt;<span class="o">()</span>,<span class="w"> </span>depthBufferSize<span class="w"> </span><span class="m">24</span>,<span class="w"> </span>redBufferSize<span class="w"> </span>-1,<span class="w"> </span>greenBufferSize<span class="w"> </span>-1,<span class="w"> </span>blueBufferSize<span class="w"> </span>-1,<span class="w"> </span>alphaBufferSize<span class="w"> </span>-1,<span class="w"> </span>stencilBufferSize<span class="w"> </span><span class="m">8</span>,<span class="w"> </span>samples<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>swapBehavior<span class="w"> </span>QSurfaceFormat::DefaultSwapBehavior,<span class="w"> </span>swapInterval<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>colorSpace<span class="w"> </span>QSurfaceFormat::DefaultColorSpace,<span class="w"> </span>profile<span class="w">  </span>QSurfaceFormat::NoProfile<span class="o">)</span><span class="w"> </span>
+Aborted<span class="w"> </span><span class="o">(</span>core<span class="w"> </span>dumped<span class="o">)</span>
 </code></pre></div>
 <p>when launching without any special actions. Same error after replacing with an older version.</p>
 <p>Laterly, note that nvidia card does not work, and change to another driver. Then it resumes after rebooting.</p>
@@ -3422,7 +3422,7 @@ Aborted <span class="o">(</span>core dumped<span class="o">)</span>
 <li><a href="https://support.rstudio.com/hc/en-us/articles/205605748-Using-RStudio-0-99-with-Fctix-on-Linux">Using RStudio 0.99 with Fctix on Linux</a></li>
 </ul>
 <p>曾经按照上述的指导能够解决这个问题，即将系统的 qt5 的 <code>libfcitxplatforminputcontextplugin.so</code> 手动添加到 rstudio 安装目录下的 plugins 中，即</p>
-<div class="highlight"><pre><span></span><code>sudo ln -s /usr/lib/<span class="k">$(</span>dpkg-architecture -qDEB_BUILD_MULTIARCH<span class="k">)</span>/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /usr/lib/rstudio/bin/plugins/platforminputcontexts/
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/usr/lib/<span class="k">$(</span>dpkg-architecture<span class="w"> </span>-qDEB_BUILD_MULTIARCH<span class="k">)</span>/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so<span class="w"> </span>/usr/lib/rstudio/bin/plugins/platforminputcontexts/
 </code></pre></div>
 <p>但是后来又失败了，猜测原因可能是 qt5 的版本不再兼容了。在 Rstudio 顶部的菜单栏中，点击 Help &gt; About Rstudio 可以找到具体的 qt 版本信息，比如 RStudio (Version 1.2.5001) 依赖 QtWebEngine/5.12.1，而系统的 Qt 插件版本没那么高，所以也能理解 <code>libfcitxplatforminputcontextplugin.so</code> 为什么不再有用了。一种解决方案便是手动重新编译与 Rstudio 中匹配的 Qt 插件的版本，但是似乎比较繁琐，而且也不能一劳永逸，如果 rstudio 更新，还是会失效。</p>
 <p>索性不折腾了。如果真的需要中文，就用其他编辑器吧。期待 rstudio 官方早日解决这个问题……</p>
@@ -3437,15 +3437,15 @@ Aborted <span class="o">(</span>core dumped<span class="o">)</span>
 <li><code>gdebi</code> 不再必须，(2022-11-17)更新至 rstudio-2022.07.2 直接采用 <code>dpkg -i</code> 即可。</li>
 </ul>
 <p>安装 rstudio 应该采用</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install gdebi-core
-wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb
-sudo gdebi rstudio-1.0.44-amd64.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>gdebi-core
+wget<span class="w"> </span>https://download1.rstudio.org/rstudio-1.0.44-amd64.deb
+sudo<span class="w"> </span>gdebi<span class="w"> </span>rstudio-1.0.44-amd64.deb
 </code></pre></div>
 <p>而非</p>
-<div class="highlight"><pre><span></span><code>sudo dpkg -i
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i
 </code></pre></div>
 <p>另外，如果不行，删除后再装</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get remove rstudio
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>remove<span class="w"> </span>rstudio
 </code></pre></div>
 </details>
 <details class="bug">
@@ -3460,7 +3460,7 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 <h2 id="sysnframe"><code>sys.nframe()</code><a class="headerlink" href="#sysnframe" title="Permanent link">&para;</a></h2>
 <p>Here is an equivalent way for pythonic <code>if __name__ == "__main__"</code></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># runs only when script is run by itself</span>
-<span class="nf">if </span><span class="p">(</span><span class="nf">sys.nframe</span><span class="p">()</span> <span class="o">==</span> <span class="m">0</span><span class="p">){</span>
+<span class="nf">if </span><span class="p">(</span><span class="nf">sys.nframe</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">){</span>
 <span class="c1"># ... do main stuff</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -3475,13 +3475,13 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 <li><code>rank(x)</code>: the ranks of each element</li>
 <li><code>order(x)</code>: the permutation for <code>sort(x)</code></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">97</span><span class="p">,</span> <span class="m">93</span><span class="p">,</span> <span class="m">85</span><span class="p">,</span> <span class="m">74</span><span class="p">,</span> <span class="m">32</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="m">67</span><span class="p">)</span>
-<span class="o">&gt;</span> <span class="nf">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span>  <span class="m">32</span>  <span class="m">67</span>  <span class="m">74</span>  <span class="m">85</span>  <span class="m">93</span>  <span class="m">97</span>  <span class="m">99</span> <span class="m">100</span>
-<span class="o">&gt;</span> <span class="nf">order</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">5</span> <span class="m">8</span> <span class="m">4</span> <span class="m">3</span> <span class="m">2</span> <span class="m">1</span> <span class="m">7</span> <span class="m">6</span>
-<span class="o">&gt;</span> <span class="nf">rank</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">6</span> <span class="m">5</span> <span class="m">4</span> <span class="m">3</span> <span class="m">1</span> <span class="m">8</span> <span class="m">7</span> <span class="m">2</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">97</span><span class="p">,</span><span class="w"> </span><span class="m">93</span><span class="p">,</span><span class="w"> </span><span class="m">85</span><span class="p">,</span><span class="w"> </span><span class="m">74</span><span class="p">,</span><span class="w"> </span><span class="m">32</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">99</span><span class="p">,</span><span class="w"> </span><span class="m">67</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">  </span><span class="m">32</span><span class="w">  </span><span class="m">67</span><span class="w">  </span><span class="m">74</span><span class="w">  </span><span class="m">85</span><span class="w">  </span><span class="m">93</span><span class="w">  </span><span class="m">97</span><span class="w">  </span><span class="m">99</span><span class="w"> </span><span class="m">100</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">order</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">6</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">rank</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 <p>and they satisfy (assuming no ties and in increasing order)</p>
 <div class="arithmatex">
@@ -3500,10 +3500,10 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 \end{align*}
 </script>
 </div>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">x</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span>  <span class="m">32</span>  <span class="m">67</span>  <span class="m">74</span>  <span class="m">85</span>  <span class="m">93</span>  <span class="m">97</span>  <span class="m">99</span> <span class="m">100</span>
-<span class="o">&gt;</span> <span class="nf">order</span><span class="p">(</span><span class="nf">order</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">6</span> <span class="m">5</span> <span class="m">4</span> <span class="m">3</span> <span class="m">1</span> <span class="m">8</span> <span class="m">7</span> <span class="m">2</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">  </span><span class="m">32</span><span class="w">  </span><span class="m">67</span><span class="w">  </span><span class="m">74</span><span class="w">  </span><span class="m">85</span><span class="w">  </span><span class="m">93</span><span class="w">  </span><span class="m">97</span><span class="w">  </span><span class="m">99</span><span class="w"> </span><span class="m">100</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">order</span><span class="p">(</span><span class="nf">order</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 <p>In particular, if <code>x = 1:n</code>, then <code>x = order(x) = sort(x)</code>, and hence</p>
 <div class="arithmatex">
@@ -3527,44 +3527,44 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 <p>In julia, we use <code>sort</code> and <code>sortperm</code>.</p>
 <h2 id="rowcolumn-of-string-array-cannot-be-changed-to-numeric">Row/Column of String Array cannot be changed to numeric<a class="headerlink" href="#rowcolumn-of-string-array-cannot-be-changed-to-numeric" title="Permanent link">&para;</a></h2>
 <p>suppose I have a string array,</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
-<span class="o">&gt;</span> <span class="n">a</span>
-     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
-<span class="p">[</span><span class="m">1</span><span class="p">,]</span>   <span class="kc">NA</span>   <span class="kc">NA</span>
-<span class="p">[</span><span class="m">2</span><span class="p">,]</span>   <span class="kc">NA</span>   <span class="kc">NA</span>
-<span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;w&quot;</span>
-<span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">]</span><span class="o">=</span> <span class="s">&quot;1&quot;</span>
-<span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;x&quot;</span>
-<span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;2&quot;</span>
-<span class="o">&gt;</span> <span class="n">a</span>
-     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
-<span class="p">[</span><span class="m">1</span><span class="p">,]</span> <span class="s">&quot;w&quot;</span>  <span class="s">&quot;1&quot;</span> 
-<span class="p">[</span><span class="m">2</span><span class="p">,]</span> <span class="s">&quot;x&quot;</span>  <span class="s">&quot;2&quot;</span> 
-<span class="o">&gt;</span> <span class="n">a</span><span class="p">[,</span><span class="m">2</span><span class="p">]</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">a</span><span class="p">[,</span><span class="m">2</span><span class="p">])</span>
-<span class="o">&gt;</span> <span class="n">a</span>
-     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
-<span class="p">[</span><span class="m">1</span><span class="p">,]</span> <span class="s">&quot;w&quot;</span>  <span class="s">&quot;1&quot;</span> 
-<span class="p">[</span><span class="m">2</span><span class="p">,]</span> <span class="s">&quot;x&quot;</span>  <span class="s">&quot;2&quot;</span> 
-<span class="o">&gt;</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">a</span><span class="p">[,</span><span class="m">2</span><span class="p">])</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">1</span> <span class="m">2</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">array</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span>
+<span class="w">     </span><span class="p">[,</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="p">[,</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span><span class="w">   </span><span class="kc">NA</span><span class="w">   </span><span class="kc">NA</span>
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span><span class="w">   </span><span class="kc">NA</span><span class="w">   </span><span class="kc">NA</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;w&quot;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1&quot;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;x&quot;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;2&quot;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span>
+<span class="w">     </span><span class="p">[,</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="p">[,</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="w">  </span><span class="s">&quot;1&quot;</span><span class="w"> </span>
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="w">  </span><span class="s">&quot;2&quot;</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">[,</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">a</span><span class="p">[,</span><span class="m">2</span><span class="p">])</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span>
+<span class="w">     </span><span class="p">[,</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="p">[,</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span><span class="w"> </span><span class="s">&quot;w&quot;</span><span class="w">  </span><span class="s">&quot;1&quot;</span><span class="w"> </span>
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="w">  </span><span class="s">&quot;2&quot;</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">a</span><span class="p">[,</span><span class="m">2</span><span class="p">])</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 <p>on the other hand, suppose we have a numeric array, set one row to be string, then all elements would become string automatically.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
-<span class="o">&gt;</span> <span class="n">b</span>
-     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
-<span class="p">[</span><span class="m">1</span><span class="p">,]</span>   <span class="kc">NA</span>   <span class="kc">NA</span>
-<span class="p">[</span><span class="m">2</span><span class="p">,]</span>   <span class="kc">NA</span>   <span class="kc">NA</span>
-<span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="m">1</span><span class="p">,]</span><span class="o">=</span><span class="m">1</span>
-<span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="m">2</span><span class="p">,]</span><span class="o">=</span><span class="m">1</span>
-<span class="o">&gt;</span> <span class="n">b</span>
-     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
-<span class="p">[</span><span class="m">1</span><span class="p">,]</span>    <span class="m">1</span>    <span class="m">1</span>
-<span class="p">[</span><span class="m">2</span><span class="p">,]</span>    <span class="m">1</span>    <span class="m">1</span>
-<span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="m">1</span><span class="p">,]</span> <span class="o">=</span> <span class="s">&quot;1&quot;</span>
-<span class="o">&gt;</span> <span class="n">b</span>
-     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
-<span class="p">[</span><span class="m">1</span><span class="p">,]</span> <span class="s">&quot;1&quot;</span>  <span class="s">&quot;1&quot;</span> 
-<span class="p">[</span><span class="m">2</span><span class="p">,]</span> <span class="s">&quot;1&quot;</span>  <span class="s">&quot;1&quot;</span> 
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">array</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">b</span>
+<span class="w">     </span><span class="p">[,</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="p">[,</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span><span class="w">   </span><span class="kc">NA</span><span class="w">   </span><span class="kc">NA</span>
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span><span class="w">   </span><span class="kc">NA</span><span class="w">   </span><span class="kc">NA</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="m">1</span><span class="p">,]</span><span class="o">=</span><span class="m">1</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="m">2</span><span class="p">,]</span><span class="o">=</span><span class="m">1</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">b</span>
+<span class="w">     </span><span class="p">[,</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="p">[,</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span><span class="w">    </span><span class="m">1</span><span class="w">    </span><span class="m">1</span>
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span><span class="w">    </span><span class="m">1</span><span class="w">    </span><span class="m">1</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="m">1</span><span class="p">,]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1&quot;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">b</span>
+<span class="w">     </span><span class="p">[,</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="p">[,</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,]</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="w">  </span><span class="s">&quot;1&quot;</span><span class="w"> </span>
+<span class="p">[</span><span class="m">2</span><span class="p">,]</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="w">  </span><span class="s">&quot;1&quot;</span><span class="w"> </span>
 </code></pre></div>
 <h2 id="run-from-command-line">Run from Command Line<a class="headerlink" href="#run-from-command-line" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3573,20 +3573,20 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 <li>put <code>#!/usr/bin/env Rscript</code> on the first line of <code>test.R</code> and allow it executable via <code>chmod +x test.R</code></li>
 </ul>
 <p>To pass arguments, we can use</p>
-<div class="highlight"><pre><span></span><code><span class="n">args</span> <span class="o">=</span> <span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 </code></pre></div>
 <p>to extract the arguments.</p>
 <p>Test with the following scripts</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">test1.R</label><label for="__tabbed_1_2">test2.R</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="n">args</span> <span class="o">=</span> <span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
 <span class="nf">cat</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="n">args</span> <span class="o">=</span> <span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">commandArgs</span><span class="p">(</span><span class="n">trailingOnly</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
 <span class="nf">cat</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
 </code></pre></div>
@@ -3594,12 +3594,12 @@ sudo gdebi rstudio-1.0.44-amd64.deb
 </div>
 </div>
 <p>the results are</p>
-<div class="highlight"><pre><span></span><code>$ Rscript test1.R xxx yyy
-<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="m">2</span>
-xxx yyy
-$ Rscript test2.R xxx yyy
-<span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="m">7</span>
-/usr/lib/R/bin/exec/R --slave --no-restore --file<span class="o">=</span>test2.R --args xxx yyy
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>Rscript<span class="w"> </span>test1.R<span class="w"> </span>xxx<span class="w"> </span>yyy
+<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="m">2</span>
+xxx<span class="w"> </span>yyy
+$<span class="w"> </span>Rscript<span class="w"> </span>test2.R<span class="w"> </span>xxx<span class="w"> </span>yyy
+<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="m">7</span>
+/usr/lib/R/bin/exec/R<span class="w"> </span>--slave<span class="w"> </span>--no-restore<span class="w"> </span>--file<span class="o">=</span>test2.R<span class="w"> </span>--args<span class="w"> </span>xxx<span class="w"> </span>yyy
 </code></pre></div>
 <p>which shows that <code>trailingOnly=TRUE</code> is necessary and it only takes the arguments after <code>--args</code>.</p>
 <p>Refer to <a href="https://www.r-bloggers.com/2015/09/passing-arguments-to-an-r-script-from-command-lines/">Passing arguments to an R script from command lines | R-bloggers</a></p>
@@ -3607,18 +3607,18 @@ $ Rscript test2.R xxx yyy
 <h2 id="round-numbers">Round numbers<a class="headerlink" href="#round-numbers" title="Permanent link">&para;</a></h2>
 <p>I want to approximate a numerical value with 3 significant digits, but the trailing zeros are always be dropped, then I tried several methods.</p>
 <p>First of all, define</p>
-<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="nf">cat</span><span class="p">(</span><span class="nf">deparse</span><span class="p">(</span><span class="nf">substitute</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="s">&quot;=&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span> <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nf">cat</span><span class="p">(</span><span class="nf">deparse</span><span class="p">(</span><span class="nf">substitute</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span><span class="w"> </span><span class="s">&quot;=&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p>for convenient and clear comparisons, which takes the advantage of <a href="https://colinfay.me/lazyeval/">R&rsquo;s Lazy Evaluation</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="m">0.04898246</span> <span class="c1"># want 0.0490</span>
-<span class="nf">p</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.04898246</span><span class="w"> </span><span class="c1"># want 0.0490</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">))</span>
 <span class="nf">p</span><span class="p">(</span><span class="nf">prettyNum</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="nf">p</span><span class="p">(</span><span class="nf">prettyNum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">))</span>
-<span class="nf">p</span><span class="p">(</span><span class="nf">formatC</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">drop0trailing</span> <span class="o">=</span> <span class="bp">F</span><span class="p">))</span>
-<span class="nf">p</span><span class="p">(</span><span class="nf">formatC</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">drop0trailing</span> <span class="o">=</span> <span class="bp">T</span><span class="p">))</span>
-<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span> <span class="n">nsmall</span> <span class="o">=</span> <span class="m">3</span><span class="p">))</span>
-<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span> <span class="n">nsmall</span> <span class="o">=</span> <span class="m">4</span><span class="p">))</span>
-<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span> <span class="n">nsmall</span> <span class="o">=</span> <span class="m">3</span> <span class="o">+</span> <span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="nf">log10</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">prettyNum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">formatC</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">drop0trailing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">F</span><span class="p">))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">formatC</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">drop0trailing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="n">nsmall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="n">nsmall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">))</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="n">nsmall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="nf">log10</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span>
 <span class="c1"># signif(x, digits = 3) = 0.049</span>
 <span class="c1"># prettyNum(x) = 0.04898246</span>
 <span class="c1"># prettyNum(x, digits = 3) = 0.049</span>
@@ -3630,7 +3630,7 @@ $ Rscript test2.R xxx yyy
 </code></pre></div>
 <p>where <code>floor(-log10(x))</code> returns the number of zeros between the decimal symbol <code>.</code> and the first nonzero value (assume <code>x &lt; 1</code>).</p>
 <p>With <code>scientific = TRUE</code> option, <code>nsmall</code> would fail,</p>
-<div class="highlight"><pre><span></span><code><span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span> <span class="n">scientific</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">nsmall</span> <span class="o">=</span> <span class="m">3</span> <span class="o">+</span> <span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="nf">log10</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span>
+<div class="highlight"><pre><span></span><code><span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="n">scientific</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">,</span><span class="w"> </span><span class="n">nsmall</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="nf">log10</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span>
 <span class="c1"># format(signif(x, digits = 3), scientific = T, nsmall = 3 + floor(-log10(x))) = 4.9e-02</span>
 </code></pre></div>
 <p>as the manual <code>?format</code> said,</p>
@@ -3638,24 +3638,24 @@ $ Rscript test2.R xxx yyy
 <p>the minimum number of digits to the right of the decimal point in formatting real/complex numbers in <strong>non-scientific formats</strong>. Allowed values are 0 &lt;= nsmall &lt;= 20.</p>
 </blockquote>
 <p>For a larger value, such as <code>37289.75</code>, the scientific form might be necessary,</p>
-<div class="highlight"><pre><span></span><code><span class="n">y</span> <span class="o">=</span> <span class="m">37289.75</span>
-<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span> <span class="n">nsmall</span><span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span> <span class="o">+</span> <span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="nf">log10</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span> <span class="p">)</span> <span class="p">)</span>
-<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span> <span class="n">scientific</span> <span class="o">=</span> <span class="bp">T</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">37289.75</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="n">nsmall</span><span class="o">=</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">floor</span><span class="p">(</span><span class="o">-</span><span class="nf">log10</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
+<span class="nf">p</span><span class="p">(</span><span class="nf">format</span><span class="p">(</span><span class="nf">signif</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">digits</span><span class="o">=</span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="n">scientific</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">))</span>
 <span class="c1"># format(signif(y, digits = 3), nsmall = max(0, 3 + floor(-log10(y)))) = 37300</span>
 <span class="c1"># format(signif(y, digits = 3), scientific = T) = 3.73e+04</span>
 </code></pre></div>
 <p>Finally, I found that <code>sprintf("%.2e", x)</code> would be helpful, and actually the approximation has been consider, instead of just truncating.</p>
-<div class="highlight"><pre><span></span><code><span class="nf">p</span><span class="p">(</span><span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;%.2e, %.1e&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="nf">p</span><span class="p">(</span><span class="nf">sprintf</span><span class="p">(</span><span class="s">&quot;%.2e, %.1e&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">))</span>
 <span class="c1">#sprintf(&quot;%.2e, %.1e&quot;, x, y) = 4.90e-02, 3.7e+04</span>
 </code></pre></div>
 <h2 id="_1">序列减去常数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="m">-1</span><span class="p">))</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="m">-1</span><span class="p">))</span>
+<span class="w">  </span><span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="c1">##0</span>
 <span class="c1">##1</span>
 <span class="c1">##2</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="n">n</span><span class="m">-1</span><span class="p">)))</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="p">(</span><span class="n">n</span><span class="m">-1</span><span class="p">)))</span>
+<span class="w">  </span><span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="c1">##1</span>
 <span class="c1">##2</span>
 </code></pre></div>
@@ -3665,9 +3665,9 @@ $ Rscript test2.R xxx yyy
 <h2 id="librblassolibrlapackso">缺少libRblas.so和libRlapack.so的解决办法<a class="headerlink" href="#librblassolibrlapackso" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="err_blas.png" /></p>
 <p>虽然缺少libRblas.so和libRlapack.so，但却有libblas.so和liblapack.so，而它们应该是一样的，只是文件名不同而已，为此添加链接即可。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /usr/lib
-ln -s libblas.so libRblas.so
-ln -s /usr/lib/R/module/lapack.so libRlapack.so
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/usr/lib
+ln<span class="w"> </span>-s<span class="w"> </span>libblas.so<span class="w"> </span>libRblas.so
+ln<span class="w"> </span>-s<span class="w"> </span>/usr/lib/R/module/lapack.so<span class="w"> </span>libRlapack.so
 </code></pre></div>
 <p>参考：
 1. <a href="https://bugs.launchpad.net/ubuntu/+source/rkward/+bug/264436">https://bugs.launchpad.net/ubuntu/+source/rkward/+bug/264436</a>
@@ -3688,9 +3688,9 @@ ln -s /usr/lib/R/module/lapack.so libRlapack.so
 <h3 id="cannot-found-lrcpp">cannot found -lRcpp<a class="headerlink" href="#cannot-found-lrcpp" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="rcpp.png" /></p>
 <p>手动设置</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /usr/local/lib
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/usr/local/lib
 <span class="c1">##cd /usr/lib</span>
-ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcpp.so
+ln<span class="w"> </span>-s<span class="w"> </span>/home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so<span class="w"> </span>libRcpp.so
 </code></pre></div>
 <h3 id="function-dataptr-not-provided-by-package-rcpp">function &lsquo;dataptr&rsquo; not provided by package &lsquo;Rcpp&rsquo;<a class="headerlink" href="#function-dataptr-not-provided-by-package-rcpp" title="Permanent link">&para;</a></h3>
 <p>原因是因为没有在</p>
@@ -3705,13 +3705,13 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>pretty table, which can auto newline long description in a cell. See also <a href="#events_init_vs_extend"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 <h3 id="chinese-fonts-in-pdf">Chinese Fonts in PDF<a class="headerlink" href="#chinese-fonts-in-pdf" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="o">---</span>
-<span class="n">title</span><span class="o">:</span> <span class="s">&quot;test&quot;</span>
-<span class="n">author</span><span class="o">:</span> <span class="s">&quot;weiya&quot;</span>
+<span class="n">title</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;test&quot;</span>
+<span class="n">author</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;weiya&quot;</span>
 <span class="n">output</span><span class="o">:</span>
-    <span class="n">pdf_document</span><span class="o">:</span>
-        <span class="n">latex_engine</span><span class="o">:</span> <span class="n">xelatex</span>
-        <span class="n">includes</span><span class="o">:</span>
-            <span class="n">in_header</span><span class="o">:</span> <span class="n">header_zh.tex</span>
+<span class="w">    </span><span class="n">pdf_document</span><span class="o">:</span>
+<span class="w">        </span><span class="n">latex_engine</span><span class="o">:</span><span class="w"> </span><span class="n">xelatex</span>
+<span class="w">        </span><span class="n">includes</span><span class="o">:</span>
+<span class="w">            </span><span class="n">in_header</span><span class="o">:</span><span class="w"> </span><span class="n">header_zh.tex</span>
 <span class="o">---</span>
 </code></pre></div>
 <p>where <code>header_zh.tex</code> is</p>
@@ -3754,47 +3754,47 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>参考<a href="http://www.cnblogs.com/nsnow/p/4758202.html">协方差矩阵的几何解释</a></p>
 <h2 id="rocrprediction">ROCR包中prediction函数<a class="headerlink" href="#rocrprediction" title="Permanent link">&para;</a></h2>
 <p><code>prediction</code>定义如下</p>
-<div class="highlight"><pre><span></span><code><span class="nf">prediction</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">label.ordering</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">prediction</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span><span class="w"> </span><span class="n">labels</span><span class="p">,</span><span class="w"> </span><span class="n">label.ordering</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">)</span>
 </code></pre></div>
 <p>在绘制ROC曲线时，必要时需要指定<code>label.ordering</code>中negative和positive，否则结果会完全相反。举个例子</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## generate some data with a non-linar class boundary</span>
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">200</span><span class="o">*</span><span class="m">2</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
-<span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="p">]</span> <span class="o">+</span> <span class="m">2</span>
-<span class="n">x</span><span class="p">[</span><span class="m">101</span><span class="o">:</span><span class="m">150</span><span class="p">,</span> <span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="m">101</span><span class="o">:</span><span class="m">150</span><span class="p">,</span> <span class="p">]</span> <span class="o">-</span> <span class="m">2</span>
-<span class="n">y</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">150</span><span class="p">),</span> <span class="nf">rep</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">50</span><span class="p">))</span>
-<span class="n">dat</span> <span class="o">=</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">as.factor</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">200</span><span class="o">*</span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span>
+<span class="n">x</span><span class="p">[</span><span class="m">101</span><span class="o">:</span><span class="m">150</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="m">101</span><span class="o">:</span><span class="m">150</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span>
+<span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">150</span><span class="p">),</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">))</span>
+<span class="n">dat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.factor</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
 
 <span class="c1">## randomly split into training and testing groups</span>
-<span class="n">train</span> <span class="o">=</span> <span class="nf">sample</span><span class="p">(</span><span class="m">200</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
+<span class="n">train</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="m">200</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">)</span>
 
 <span class="c1">## training data using radial kernel</span>
-<span class="n">svmfit</span> <span class="o">=</span> <span class="nf">svm</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span> <span class="p">],</span> <span class="n">kernel</span> <span class="o">=</span> <span class="s">&quot;radial&quot;</span><span class="p">,</span> <span class="n">cost</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">svmfit</span><span class="p">,</span> <span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span> <span class="p">])</span>
+<span class="n">svmfit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">svm</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">kernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;radial&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">svmfit</span><span class="p">,</span><span class="w"> </span><span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span><span class="w"> </span><span class="p">])</span>
 
 <span class="c1">## cross-validation</span>
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
-<span class="n">tune.out</span> <span class="o">=</span> <span class="nf">tune</span><span class="p">(</span><span class="n">svm</span><span class="p">,</span> <span class="n">y</span><span class="o">~</span><span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span> <span class="p">],</span> <span class="n">kernel</span> <span class="o">=</span> <span class="s">&quot;radial&quot;</span><span class="p">,</span>
-                <span class="n">ranges</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cost</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">100</span><span class="p">,</span> <span class="m">1000</span><span class="p">),</span>
-                              <span class="n">gamma</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)))</span>
+<span class="n">tune.out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tune</span><span class="p">(</span><span class="n">svm</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">~</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">kernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;radial&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">ranges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">1000</span><span class="p">),</span>
+<span class="w">                              </span><span class="n">gamma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)))</span>
 <span class="nf">summary</span><span class="p">(</span><span class="n">tune.out</span><span class="p">)</span>
 
 <span class="c1">## prediction</span>
-<span class="nf">table</span><span class="p">(</span><span class="n">true</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="o">-</span><span class="n">train</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">],</span> <span class="n">pred</span> <span class="o">=</span> <span class="nf">predict</span><span class="p">(</span><span class="n">tune.out</span><span class="o">$</span><span class="n">best.model</span><span class="p">,</span> <span class="n">newdata</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="o">-</span><span class="n">train</span><span class="p">,</span> <span class="p">]))</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">true</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dat</span><span class="p">[</span><span class="o">-</span><span class="n">train</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">],</span><span class="w"> </span><span class="n">pred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">tune.out</span><span class="o">$</span><span class="n">best.model</span><span class="p">,</span><span class="w"> </span><span class="n">newdata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dat</span><span class="p">[</span><span class="o">-</span><span class="n">train</span><span class="p">,</span><span class="w"> </span><span class="p">]))</span>
 
 <span class="c1">## ROC curves</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ROCR</span><span class="p">)</span>
-<span class="n">rocplot</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span> <span class="n">pred</span> <span class="p">,</span> <span class="n">truth</span> <span class="p">,</span> <span class="kc">...</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">predob</span> <span class="o">=</span> <span class="nf">prediction </span><span class="p">(</span> <span class="n">pred</span><span class="p">,</span> <span class="n">truth</span> <span class="p">,</span> <span class="n">label.ordering</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">,</span> <span class="s">&quot;1&quot;</span><span class="p">))</span>
-  <span class="n">perf</span> <span class="o">=</span> <span class="nf">performance </span><span class="p">(</span> <span class="n">predob</span> <span class="p">,</span> <span class="s">&quot;tpr&quot;</span> <span class="p">,</span> <span class="s">&quot;fpr&quot;</span><span class="p">)</span>
-  <span class="nf">plot </span><span class="p">(</span> <span class="n">perf</span><span class="p">,</span><span class="kc">...</span><span class="p">)</span>
+<span class="n">rocplot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function </span><span class="p">(</span><span class="w"> </span><span class="n">pred</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">truth</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">predob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">prediction </span><span class="p">(</span><span class="w"> </span><span class="n">pred</span><span class="p">,</span><span class="w"> </span><span class="n">truth</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">label.ordering</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">))</span>
+<span class="w">  </span><span class="n">perf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">performance </span><span class="p">(</span><span class="w"> </span><span class="n">predob</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tpr&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;fpr&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">plot </span><span class="p">(</span><span class="w"> </span><span class="n">perf</span><span class="p">,</span><span class="kc">...</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="n">svmfit.opt</span> <span class="o">=</span> <span class="nf">svm</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span> <span class="p">],</span> <span class="n">kernel</span> <span class="o">=</span> <span class="s">&quot;radial&quot;</span><span class="p">,</span>
-                 <span class="n">gamma</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">cost</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">decision.values</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
-<span class="n">fitted</span> <span class="o">=</span> <span class="nf">attributes</span><span class="p">(</span><span class="nf">predict</span><span class="p">(</span><span class="n">svmfit.opt</span><span class="p">,</span> <span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span> <span class="p">],</span> <span class="n">decision.values</span> <span class="o">=</span> <span class="bp">T</span><span class="p">))</span><span class="o">$</span><span class="n">decision.values</span>
+<span class="n">svmfit.opt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">svm</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">kernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;radial&quot;</span><span class="p">,</span>
+<span class="w">                 </span><span class="n">gamma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">decision.values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">)</span>
+<span class="n">fitted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">attributes</span><span class="p">(</span><span class="nf">predict</span><span class="p">(</span><span class="n">svmfit.opt</span><span class="p">,</span><span class="w"> </span><span class="n">dat</span><span class="p">[</span><span class="n">train</span><span class="p">,</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="n">decision.values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">))</span><span class="o">$</span><span class="n">decision.values</span>
 
-<span class="nf">rocplot </span><span class="p">(</span> <span class="n">fitted</span> <span class="p">,</span> <span class="n">dat</span> <span class="p">[</span> <span class="n">train</span> <span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">]</span> <span class="p">,</span> <span class="n">main</span> <span class="o">=</span><span class="s">&quot;Training Data&quot;</span><span class="p">)</span>
+<span class="nf">rocplot </span><span class="p">(</span><span class="w"> </span><span class="n">fitted</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">dat</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="n">train</span><span class="w"> </span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="s">&quot;Training Data&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>对于上述代码，如果不指定<code>label.ordering = c("2", "1")</code>，则得到的ROC曲线如下图</p>
 <p><img alt="" src="roc_wrong.png" /></p>
@@ -3803,9 +3803,9 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <h2 id="_3">神奇的<code>[</code><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>来自<a href="https://d.cosx.org/d/419525-r">R语言中以矩阵引用多维数组的元素</a></p>
 <p>比如
-<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">255</span><span class="p">,</span> <span class="m">100</span><span class="o">*</span><span class="m">100</span><span class="o">*</span><span class="m">3</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="bp">T</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
-<span class="n">B</span> <span class="o">=</span> <span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span> <span class="m">2</span><span class="o">*</span><span class="m">5</span><span class="p">),</span> <span class="n">dim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">))</span>
-<span class="nf">apply</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="n">`[`</span><span class="p">,</span> <span class="nf">t</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">255</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="o">*</span><span class="m">100</span><span class="o">*</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">),</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+<span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="o">*</span><span class="m">5</span><span class="p">),</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">))</span>
+<span class="nf">apply</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">`[`</span><span class="p">,</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
 </code></pre></div></p>
 <h2 id="proxy">proxy 代理<a class="headerlink" href="#proxy" title="Permanent link">&para;</a></h2>
 <p>参考</p>
@@ -3815,15 +3815,15 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 </ol>
 <h2 id="lm-i"><code>lm()</code> 中有无 <code>I()</code> 的差异<a class="headerlink" href="#lm-i" title="Permanent link">&para;</a></h2>
 <p>注意</p>
-<div class="highlight"><pre><span></span><code><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span> <span class="o">~</span> <span class="n">X</span> <span class="o">+</span> <span class="n">X</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">X</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
 </code></pre></div>
 <p>和</p>
-<div class="highlight"><pre><span></span><code><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span> <span class="o">~</span> <span class="n">X</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">X</span><span class="o">^</span><span class="m">2</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="nf">lm</span><span class="p">(</span><span class="n">Y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">I</span><span class="p">(</span><span class="n">X</span><span class="o">^</span><span class="m">2</span><span class="p">))</span>
 </code></pre></div>
 <p>是不一样的。若要表示多项式回归，则应该用 <code>I(X^2)</code>，而前者等价于 <code>lm(Y ~ X)</code>。详见 <code>?formula</code>, 其中举了一个例子，<code>(a+b+c)^2 - a:b</code> 等价于 <code>a + b + c + a:c + b:c</code>，注意二阶项只存在于交叉项中。</p>
 <h2 id="custom-print">custom print<a class="headerlink" href="#custom-print" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nf">class</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;example&quot;</span>
-<span class="n">print.example</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">class</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;example&quot;</span>
+<span class="n">print.example</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">{</span>
 
 <span class="p">}</span>
@@ -3831,31 +3831,31 @@ ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcp
 <p>refer to <a href="https://stackoverflow.com/questions/10938427/example-needed-change-the-default-print-method-of-an-object">Example Needed: Change the default print method of an object</a></p>
 <h2 id="write-lines-to-file">write lines to file<a class="headerlink" href="#write-lines-to-file" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">fileConn</span><span class="o">&lt;-</span><span class="nf">file</span><span class="p">(</span><span class="s">&quot;output.txt&quot;</span><span class="p">)</span>
-<span class="nf">writeLines</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="s">&quot;World&quot;</span><span class="p">),</span> <span class="n">fileConn</span><span class="p">)</span>
+<span class="nf">writeLines</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="s">&quot;World&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">fileConn</span><span class="p">)</span>
 <span class="nf">close</span><span class="p">(</span><span class="n">fileConn</span><span class="p">)</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/2470248/write-lines-of-text-to-a-file-in-r">Write lines of text to a file in R</a></p>
 <h2 id="r_1">R 符号运算<a class="headerlink" href="#r_1" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://cosx.org/2016/07/r-symbol-calculate/">R 语言做符号计算</a>。</p>
-<div class="highlight"><pre><span></span><code><span class="n">NormDensity</span> <span class="o">&lt;-</span> <span class="nf">expression</span><span class="p">(</span><span class="m">1</span> <span class="o">/</span> <span class="nf">sqrt</span><span class="p">(</span><span class="m">2</span> <span class="o">*</span> <span class="kc">pi</span><span class="p">)</span> <span class="o">*</span> <span class="nf">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="m">2</span> <span class="o">/</span> <span class="m">2</span><span class="p">))</span>
-<span class="nf">D</span><span class="p">(</span><span class="n">NormDensity</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">DD</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
- <span class="nf">if </span><span class="p">(</span><span class="n">order</span> <span class="o">&lt;</span> <span class="m">1</span><span class="p">)</span>
-     <span class="nf">stop</span><span class="p">(</span><span class="s">&quot;&#39;order&#39; must be &gt;= 1&quot;</span><span class="p">)</span>
- <span class="nf">if </span><span class="p">(</span><span class="n">order</span> <span class="o">==</span> <span class="m">1</span><span class="p">)</span>
-     <span class="nf">D</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="n">else</span> <span class="nf">DD</span><span class="p">(</span><span class="nf">D</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">name</span><span class="p">,</span> <span class="n">order</span> <span class="o">-</span> <span class="m">1</span><span class="p">)</span>
- <span class="p">}</span>
-<span class="nf">DD</span><span class="p">(</span><span class="n">NormDensity</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">NormDensity</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">expression</span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kc">pi</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="m">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="p">))</span>
+<span class="nf">D</span><span class="p">(</span><span class="n">NormDensity</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">DD</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="w">     </span><span class="nf">stop</span><span class="p">(</span><span class="s">&quot;&#39;order&#39; must be &gt;= 1&quot;</span><span class="p">)</span>
+<span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">order</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="w">     </span><span class="nf">D</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">DD</span><span class="p">(</span><span class="nf">D</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="w"> </span><span class="p">}</span>
+<span class="nf">DD</span><span class="p">(</span><span class="n">NormDensity</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 
-<span class="n">DFun</span> <span class="o">&lt;-</span> <span class="nf">deriv</span><span class="p">(</span><span class="n">NormDensity</span><span class="p">,</span> <span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="n">function.arg</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">DFun</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">deriv</span><span class="p">(</span><span class="n">NormDensity</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">function.arg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="nf">DFun</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="mistake-with-colon-operator">Mistake with colon operator<a class="headerlink" href="#mistake-with-colon-operator" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">vec</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">()</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span> <span class="nf">print</span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><span class="n">vec</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </code></pre></div>
 <p>would print two <code>NULL</code> because <code>1:length(vec)</code> would be <code>c(1,0)</code>. A method to avoid this</p>
-<div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">seq_along</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span> <span class="nf">print</span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq_along</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </code></pre></div>
 <p>refer to <a href="https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/">Two common mistakes with the colon operator in R</a></p>
 <h2 id="error-in-install-grbase">error in install <code>gRbase</code><a class="headerlink" href="#error-in-install-grbase" title="Permanent link">&para;</a></h2>
@@ -3880,38 +3880,38 @@ BiocManager::install(&quot;graph&quot;)
 </code></pre></div>
 <h2 id="protection-stack-overflow"><code>protection stack overflow</code><a class="headerlink" href="#protection-stack-overflow" title="Permanent link">&para;</a></h2>
 <p>use</p>
-<div class="highlight"><pre><span></span><code>R --max-ppsize <span class="m">500000</span>
+<div class="highlight"><pre><span></span><code>R<span class="w"> </span>--max-ppsize<span class="w"> </span><span class="m">500000</span>
 </code></pre></div>
 <p>or for rstudio</p>
-<div class="highlight"><pre><span></span><code>rstudio --max-ppsize <span class="m">500000</span>
+<div class="highlight"><pre><span></span><code>rstudio<span class="w"> </span>--max-ppsize<span class="w"> </span><span class="m">500000</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/32826906/how-to-solve-protection-stack-overflow-issue-in-r-studio">How to solve &lsquo;protection stack overflow&rsquo; issue in R Studio</a></p>
 <h2 id="not-found-libhdf5a"><code>not found libhdf5.a</code><a class="headerlink" href="#not-found-libhdf5a" title="Permanent link">&para;</a></h2>
 <p>check if compiling under anaconda environment, if so, exit and retry.</p>
 <h2 id="installpackages-returns-failed-to-create-lock-directory">install.packages returns <code>failed to create lock directory</code><a class="headerlink" href="#installpackages-returns-failed-to-create-lock-directory" title="Permanent link">&para;</a></h2>
 <p>in bash</p>
-<div class="highlight"><pre><span></span><code>R CMD INSTALL --no-lock &lt;pkg&gt;
+<div class="highlight"><pre><span></span><code>R<span class="w"> </span>CMD<span class="w"> </span>INSTALL<span class="w"> </span>--no-lock<span class="w"> </span>&lt;pkg&gt;
 </code></pre></div>
 <p>or in R session</p>
-<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;Rcpp&quot;</span><span class="p">,</span> <span class="n">dependencies</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">INSTALL_opts</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;--no-lock&#39;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;Rcpp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">dependencies</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">INSTALL_opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;--no-lock&#39;</span><span class="p">))</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/14382209/r-install-packages-returns-failed-to-create-lock-directory">R install.packages returns “failed to create lock directory”</a></p>
 <h2 id="nonzero-in-dgcmatrix">nonzero in <code>dgCMatrix</code><a class="headerlink" href="#nonzero-in-dgcmatrix" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://stackoverflow.com/questions/51560456/r-package-matrix-get-number-of-non-zero-entries-per-rows-columns-of-a-sparse">R package Matrix: get number of non-zero entries per rows / columns of a sparse matrix</a></p>
 <h2 id="s3-method">S3 method<a class="headerlink" href="#s3-method" title="Permanent link">&para;</a></h2>
 <p>初体验，<a href="https://github.com/szcf-weiya/ESL-CN/blob/96f2f91deabfa6eee57bd1823a4d8405b5f061f0/code/boosting/s3ex.R">ESL-CN/code/boosting/s3ex.R</a></p>
-<div class="highlight"><pre><span></span><code><span class="n">j</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Joe&quot;</span><span class="p">,</span> <span class="n">salary</span> <span class="o">=</span> <span class="m">5500</span><span class="p">,</span> <span class="n">union</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
-<span class="nf">class</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="s">&quot;employee&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Joe&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5500</span><span class="p">,</span><span class="w"> </span><span class="n">union</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">)</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;employee&quot;</span>
 
-<span class="n">print.employee</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">wrkr</span><span class="p">){</span>
-  <span class="nf">cat</span><span class="p">(</span><span class="n">wrkr</span><span class="o">$</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
-  <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;salary&quot;</span><span class="p">,</span> <span class="n">wrkr</span><span class="o">$</span><span class="n">salary</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
-  <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;union member&quot;</span><span class="p">,</span> <span class="n">wrkr</span><span class="o">$</span><span class="n">union</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="n">print.employee</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">wrkr</span><span class="p">){</span>
+<span class="w">  </span><span class="nf">cat</span><span class="p">(</span><span class="n">wrkr</span><span class="o">$</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">cat</span><span class="p">(</span><span class="s">&quot;salary&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">wrkr</span><span class="o">$</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">cat</span><span class="p">(</span><span class="s">&quot;union member&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">wrkr</span><span class="o">$</span><span class="n">union</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
 <span class="p">}</span>
-<span class="n">summary.employee</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">wrkr</span><span class="p">){</span>
-  <span class="nf">cat</span><span class="p">(</span><span class="n">wrkr</span><span class="o">$</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
-  <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;salary&quot;</span><span class="p">,</span> <span class="n">wrkr</span><span class="o">$</span><span class="n">salary</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
-  <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;union member&quot;</span><span class="p">,</span> <span class="n">wrkr</span><span class="o">$</span><span class="n">union</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="n">summary.employee</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">wrkr</span><span class="p">){</span>
+<span class="w">  </span><span class="nf">cat</span><span class="p">(</span><span class="n">wrkr</span><span class="o">$</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">cat</span><span class="p">(</span><span class="s">&quot;salary&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">wrkr</span><span class="o">$</span><span class="n">salary</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">cat</span><span class="p">(</span><span class="s">&quot;union member&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">wrkr</span><span class="o">$</span><span class="n">union</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>以及一个相关的问题 <a href="https://stackoverflow.com/questions/9275387/how-to-override-default-s3-function-in-r">How to override default S3 function in R?</a></p>
@@ -3924,16 +3924,16 @@ BiocManager::install(&quot;graph&quot;)
 </ul>
 <h3 id="example">example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <p>adapt from <a href="https://github.com/szcf-weiya/sodaParallel/blob/master/R/pure_soda_par.R#L365-L375">my project</a></p>
-<div class="highlight"><pre><span></span><code><span class="n">cl</span> <span class="o">&lt;-</span> <span class="nf">makeCluster</span><span class="p">(</span><span class="n">ncl</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">cl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">makeCluster</span><span class="p">(</span><span class="n">ncl</span><span class="p">)</span>
 <span class="nf">registerDoParallel</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
 
 
-<span class="n">res</span> <span class="o">=</span> <span class="nf">foreach</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="n">Nnset</span><span class="p">,</span> <span class="n">.combine</span> <span class="o">=</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="n">.export</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;calc_lda_BIC&#39;</span><span class="p">),</span> <span class="n">.packages</span> <span class="o">=</span> <span class="s">&#39;nnet&#39;</span><span class="p">)</span> <span class="o">%dopar%</span>
+<span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">foreach</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="n">Nnset</span><span class="p">,</span><span class="w"> </span><span class="n">.combine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;c&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">.export</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;calc_lda_BIC&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">.packages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;nnet&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">%dopar%</span>
 <span class="p">{</span>
-  <span class="n">jj</span> <span class="o">=</span> <span class="n">not_set</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
-  <span class="n">new_set</span>   <span class="o">=</span> <span class="nf">sort</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">jj</span><span class="p">,</span> <span class="n">cur_set</span><span class="p">));</span>
-  <span class="n">new_score</span> <span class="o">=</span> <span class="nf">calc_lda_BIC</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">new_set</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">debug</span><span class="p">,</span> <span class="n">gam</span><span class="o">=</span><span class="n">gam</span><span class="p">);</span>
-  <span class="n">new_score</span>
+<span class="w">  </span><span class="n">jj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">not_set</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+<span class="w">  </span><span class="n">new_set</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">jj</span><span class="p">,</span><span class="w"> </span><span class="n">cur_set</span><span class="p">));</span>
+<span class="w">  </span><span class="n">new_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">calc_lda_BIC</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="w"> </span><span class="n">yy</span><span class="p">,</span><span class="w"> </span><span class="n">new_set</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">debug</span><span class="p">,</span><span class="w"> </span><span class="n">gam</span><span class="o">=</span><span class="n">gam</span><span class="p">);</span>
+<span class="w">  </span><span class="n">new_score</span>
 <span class="p">}</span>
 <span class="nf">stopCluster</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
 </code></pre></div>
@@ -3944,81 +3944,81 @@ BiocManager::install(&quot;graph&quot;)
 <h2 id="using-r-in-jupyterlab">using R in JupyterLab<a class="headerlink" href="#using-r-in-jupyterlab" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;IRkernel&#39;</span><span class="p">)</span>
 <span class="c1">#IRkernel::installspec()</span>
-<span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;3.6.0&quot;</span><span class="p">,</span> <span class="n">displayname</span> <span class="o">=</span> <span class="s">&quot;R 3.6.0&quot;</span><span class="p">)</span>
+<span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;3.6.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">displayname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;R 3.6.0&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>refer to <a href="https://irkernel.github.io/installation/">IRkernel</a></p>
 <p>and try to use <a href="https://jupyterlab.readthedocs.io/en/stable/index.html">jupyterlab</a>, which seems much powerful than jupyter.</p>
 <p>But note that <code>-X</code> option is needed before creating a tmux session for running jupyter, otherwise the kernel keeps dead in the browser and check the monitor message from jupyter, which throws,</p>
-<div class="highlight"><pre><span></span><code>Error <span class="k">in</span> .External2<span class="o">(</span>C_X11, paste0<span class="o">(</span><span class="s2">&quot;png::&quot;</span>, filename<span class="o">)</span>, g<span class="nv">$width</span>, g<span class="nv">$height</span>,  :
-  unable to start device PNG
-Calls: &lt;Anonymous&gt; ... evaluate -&gt; dev.new -&gt; <span class="k">do</span>.call -&gt; &lt;Anonymous&gt; -&gt; ok_device
-In addition: Warning message:
-In ok_device<span class="o">(</span>filename, ...<span class="o">)</span> : unable to open connection to X11 display <span class="s1">&#39;&#39;</span>
-Execution halted
+<div class="highlight"><pre><span></span><code>Error<span class="w"> </span><span class="k">in</span><span class="w"> </span>.External2<span class="o">(</span>C_X11,<span class="w"> </span>paste0<span class="o">(</span><span class="s2">&quot;png::&quot;</span>,<span class="w"> </span>filename<span class="o">)</span>,<span class="w"> </span>g<span class="nv">$width</span>,<span class="w"> </span>g<span class="nv">$height</span>,<span class="w">  </span>:
+<span class="w">  </span>unable<span class="w"> </span>to<span class="w"> </span>start<span class="w"> </span>device<span class="w"> </span>PNG
+Calls:<span class="w"> </span>&lt;Anonymous&gt;<span class="w"> </span>...<span class="w"> </span>evaluate<span class="w"> </span>-&gt;<span class="w"> </span>dev.new<span class="w"> </span>-&gt;<span class="w"> </span><span class="k">do</span>.call<span class="w"> </span>-&gt;<span class="w"> </span>&lt;Anonymous&gt;<span class="w"> </span>-&gt;<span class="w"> </span>ok_device
+In<span class="w"> </span>addition:<span class="w"> </span>Warning<span class="w"> </span>message:
+In<span class="w"> </span>ok_device<span class="o">(</span>filename,<span class="w"> </span>...<span class="o">)</span><span class="w"> </span>:<span class="w"> </span>unable<span class="w"> </span>to<span class="w"> </span>open<span class="w"> </span>connection<span class="w"> </span>to<span class="w"> </span>X11<span class="w"> </span>display<span class="w"> </span><span class="s1">&#39;&#39;</span>
+Execution<span class="w"> </span>halted
 </code></pre></div>
 <p>although I am just trying to calculate 1+1, nothing related to X11.</p>
 <p>The error would appear again if the <code>-X</code> ssh session has been stopped. Then I found such issue has been reported in https://github.com/IRkernel/IRkernel/issues/388, and there might be solution by https://github.com/IRkernel/IRkernel/issues/388#issuecomment-237080809, but the working R version is built from source by myself, and <code>Cairo</code> is not supported. When I am trying to install the package, it throws that</p>
-<div class="highlight"><pre><span></span><code>configure: error: Cannot find cairo.h! Please install cairo <span class="o">(</span>http://www.cairographics.org/<span class="o">)</span> and/or <span class="nb">set</span> CAIRO_CFLAGS/LIBS correspondingly.
-ERROR: configuration failed <span class="k">for</span> package ‘Cairo’
+<div class="highlight"><pre><span></span><code>configure:<span class="w"> </span>error:<span class="w"> </span>Cannot<span class="w"> </span>find<span class="w"> </span>cairo.h!<span class="w"> </span>Please<span class="w"> </span>install<span class="w"> </span>cairo<span class="w"> </span><span class="o">(</span>http://www.cairographics.org/<span class="o">)</span><span class="w"> </span>and/or<span class="w"> </span><span class="nb">set</span><span class="w"> </span>CAIRO_CFLAGS/LIBS<span class="w"> </span>correspondingly.
+ERROR:<span class="w"> </span>configuration<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>package<span class="w"> </span>‘Cairo’
 </code></pre></div>
 <p>Even I retried after specifying</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">CAIRO_LIBS</span><span class="o">=</span>/home/project09/miniconda3/envs/r3.6.3/lib
-<span class="nb">export</span> <span class="nv">CAIRO_CFLAGS</span><span class="o">=</span>/home/project09/miniconda3/envs/r3.6.3/include
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CAIRO_LIBS</span><span class="o">=</span>/home/project09/miniconda3/envs/r3.6.3/lib
+<span class="nb">export</span><span class="w"> </span><span class="nv">CAIRO_CFLAGS</span><span class="o">=</span>/home/project09/miniconda3/envs/r3.6.3/include
 </code></pre></div>
 <p>by linking it to other R version with Cairo support, similar as in https://stat.ethz.ch/pipermail/r-help/2014-April/374096.html, but it does not work.</p>
 <p>Then I change to a different R version with cairo support, and it can work without <code>-X</code> option. And the setting in <code>.Rprofile</code> can also been removed (or actually the default is exactly the same).</p>
 <p>Try to install the shortcuts as recommended, but it throws,</p>
-<div class="highlight"><pre><span></span><code>$ jupyter labextension install @techrah/text-shortcuts
-An error occured.
-ValueError: Please install Node.js and npm before continuing installation. You may be able to install Node.js from your package manager, from conda, or directly from the Node.js website <span class="o">(</span>https://nodejs.org<span class="o">)</span>.
-See the log file <span class="k">for</span> details:  /tmp/jupyterlab-debug-7mmu8jy1.log
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>jupyter<span class="w"> </span>labextension<span class="w"> </span>install<span class="w"> </span>@techrah/text-shortcuts
+An<span class="w"> </span>error<span class="w"> </span>occured.
+ValueError:<span class="w"> </span>Please<span class="w"> </span>install<span class="w"> </span>Node.js<span class="w"> </span>and<span class="w"> </span>npm<span class="w"> </span>before<span class="w"> </span>continuing<span class="w"> </span>installation.<span class="w"> </span>You<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>able<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>Node.js<span class="w"> </span>from<span class="w"> </span>your<span class="w"> </span>package<span class="w"> </span>manager,<span class="w"> </span>from<span class="w"> </span>conda,<span class="w"> </span>or<span class="w"> </span>directly<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>Node.js<span class="w"> </span>website<span class="w"> </span><span class="o">(</span>https://nodejs.org<span class="o">)</span>.
+See<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span>file<span class="w"> </span><span class="k">for</span><span class="w"> </span>details:<span class="w">  </span>/tmp/jupyterlab-debug-7mmu8jy1.log
 </code></pre></div>
 <p>then</p>
-<div class="highlight"><pre><span></span><code>conda install -c conda-forge nodejs
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>nodejs
 </code></pre></div>
 <p>as suggested in <a href="https://jupyterlab.readthedocs.io/en/stable/user/extensions.html">Extensions</a></p>
 <p>However the default version is outdated.</p>
-<div class="highlight"><pre><span></span><code>libgcc-7.2.0         <span class="p">|</span> <span class="m">304</span> KB    <span class="p">|</span> <span class="c1">############################################################################################################################################# | 100%</span>
-nodejs-6.13.1        <span class="p">|</span> <span class="m">11</span>.9 MB   <span class="p">|</span> <span class="c1">############################################################################################################################################# | 100%</span>
-Preparing transaction: <span class="k">done</span>
-Verifying transaction: <span class="k">done</span>
-Executing transaction: <span class="k">done</span>
-<span class="o">(</span>base<span class="o">)</span> <span class="o">[</span>project09@stapc390 ~<span class="o">]</span>$ jupyter labextension install @techrah/text-shortcuts
-An error occured.
-ValueError: Please install nodejs &gt;<span class="o">=</span><span class="m">10</span>.0.0 before continuing. nodejs may be installed using conda or directly from the nodejs website.
-See the log file <span class="k">for</span> details:  /tmp/jupyterlab-debug-lhf6bjwm.log
+<div class="highlight"><pre><span></span><code>libgcc-7.2.0<span class="w">         </span><span class="p">|</span><span class="w"> </span><span class="m">304</span><span class="w"> </span>KB<span class="w">    </span><span class="p">|</span><span class="w"> </span><span class="c1">############################################################################################################################################# | 100%</span>
+nodejs-6.13.1<span class="w">        </span><span class="p">|</span><span class="w"> </span><span class="m">11</span>.9<span class="w"> </span>MB<span class="w">   </span><span class="p">|</span><span class="w"> </span><span class="c1">############################################################################################################################################# | 100%</span>
+Preparing<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+Verifying<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+Executing<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+<span class="o">(</span>base<span class="o">)</span><span class="w"> </span><span class="o">[</span>project09@stapc390<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>jupyter<span class="w"> </span>labextension<span class="w"> </span>install<span class="w"> </span>@techrah/text-shortcuts
+An<span class="w"> </span>error<span class="w"> </span>occured.
+ValueError:<span class="w"> </span>Please<span class="w"> </span>install<span class="w"> </span>nodejs<span class="w"> </span>&gt;<span class="o">=</span><span class="m">10</span>.0.0<span class="w"> </span>before<span class="w"> </span>continuing.<span class="w"> </span>nodejs<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>installed<span class="w"> </span>using<span class="w"> </span>conda<span class="w"> </span>or<span class="w"> </span>directly<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>nodejs<span class="w"> </span>website.
+See<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span>file<span class="w"> </span><span class="k">for</span><span class="w"> </span>details:<span class="w">  </span>/tmp/jupyterlab-debug-lhf6bjwm.log
 </code></pre></div>
 <p>The solution is quite easy, just use the default conda channel,</p>
-<div class="highlight"><pre><span></span><code>conda install nodejs
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>nodejs
 </code></pre></div>
 <p>which will install <code>nodejs-10.13.0</code>.</p>
 <h2 id="reload-data">reload data<a class="headerlink" href="#reload-data" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">mtcars</span><span class="o">$</span><span class="n">transmission</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">am</span><span class="p">,</span> <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Automatic&quot;</span><span class="p">,</span> <span class="s">&quot;Manual&quot;</span><span class="p">))</span>
-<span class="o">&gt;</span> <span class="nf">str</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
-<span class="s">&#39;data.frame&#39;</span><span class="o">:</span>   <span class="m">32</span> <span class="n">obs.</span> <span class="n">of</span>  <span class="m">12</span> <span class="n">variables</span><span class="o">:</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">mtcars</span><span class="o">$</span><span class="n">transmission</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">mtcars</span><span class="o">$</span><span class="n">am</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Automatic&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Manual&quot;</span><span class="p">))</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">str</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+<span class="s">&#39;data.frame&#39;</span><span class="o">:</span><span class="w">   </span><span class="m">32</span><span class="w"> </span><span class="n">obs.</span><span class="w"> </span><span class="n">of</span><span class="w">  </span><span class="m">12</span><span class="w"> </span><span class="n">variables</span><span class="o">:</span>
 <span class="kc">...</span>
- <span class="o">$</span> <span class="n">am</span>          <span class="o">:</span> <span class="n">num</span>  <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="kc">...</span>
- <span class="o">$</span> <span class="n">gear</span>        <span class="o">:</span> <span class="n">num</span>  <span class="m">4</span> <span class="m">4</span> <span class="m">4</span> <span class="m">3</span> <span class="m">3</span> <span class="m">3</span> <span class="m">3</span> <span class="m">4</span> <span class="m">4</span> <span class="m">4</span> <span class="kc">...</span>
- <span class="o">$</span> <span class="n">carb</span>        <span class="o">:</span> <span class="n">num</span>  <span class="m">4</span> <span class="m">4</span> <span class="m">1</span> <span class="m">1</span> <span class="m">2</span> <span class="m">1</span> <span class="m">4</span> <span class="m">2</span> <span class="m">2</span> <span class="m">4</span> <span class="kc">...</span>
- <span class="o">$</span> <span class="n">transmission</span><span class="o">:</span> <span class="n">Factor</span> <span class="n">w</span><span class="o">/</span> <span class="m">2</span> <span class="n">levels</span> <span class="s">&quot;Automatic&quot;</span><span class="p">,</span><span class="s">&quot;Manual&quot;</span><span class="o">:</span> <span class="m">2</span> <span class="m">2</span> <span class="m">2</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="kc">...</span>
-<span class="o">&gt;</span> <span class="nf">data</span><span class="p">(</span><span class="s">&quot;mtcars&quot;</span><span class="p">)</span>
-<span class="o">&gt;</span> <span class="nf">str</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
-<span class="s">&#39;data.frame&#39;</span><span class="o">:</span>   <span class="m">32</span> <span class="n">obs.</span> <span class="n">of</span>  <span class="m">11</span> <span class="n">variables</span><span class="o">:</span>
+<span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="n">am</span><span class="w">          </span><span class="o">:</span><span class="w"> </span><span class="n">num</span><span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="kc">...</span>
+<span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="n">gear</span><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">num</span><span class="w">  </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="kc">...</span>
+<span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="n">carb</span><span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">num</span><span class="w">  </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="kc">...</span>
+<span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="n">transmission</span><span class="o">:</span><span class="w"> </span><span class="n">Factor</span><span class="w"> </span><span class="n">w</span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="s">&quot;Automatic&quot;</span><span class="p">,</span><span class="s">&quot;Manual&quot;</span><span class="o">:</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="kc">...</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">data</span><span class="p">(</span><span class="s">&quot;mtcars&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">str</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+<span class="s">&#39;data.frame&#39;</span><span class="o">:</span><span class="w">   </span><span class="m">32</span><span class="w"> </span><span class="n">obs.</span><span class="w"> </span><span class="n">of</span><span class="w">  </span><span class="m">11</span><span class="w"> </span><span class="n">variables</span><span class="o">:</span>
 <span class="kc">...</span>
- <span class="o">$</span> <span class="n">am</span>  <span class="o">:</span> <span class="n">num</span>  <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="kc">...</span>
- <span class="o">$</span> <span class="n">gear</span><span class="o">:</span> <span class="n">num</span>  <span class="m">4</span> <span class="m">4</span> <span class="m">4</span> <span class="m">3</span> <span class="m">3</span> <span class="m">3</span> <span class="m">3</span> <span class="m">4</span> <span class="m">4</span> <span class="m">4</span> <span class="kc">...</span>
- <span class="o">$</span> <span class="n">carb</span><span class="o">:</span> <span class="n">num</span>  <span class="m">4</span> <span class="m">4</span> <span class="m">1</span> <span class="m">1</span> <span class="m">2</span> <span class="m">1</span> <span class="m">4</span> <span class="m">2</span> <span class="m">2</span> <span class="m">4</span> <span class="kc">...</span>
+<span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="n">am</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="n">num</span><span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="kc">...</span>
+<span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="n">gear</span><span class="o">:</span><span class="w"> </span><span class="n">num</span><span class="w">  </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="kc">...</span>
+<span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="n">carb</span><span class="o">:</span><span class="w"> </span><span class="n">num</span><span class="w">  </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="kc">...</span>
 </code></pre></div>
 <h2 id="scale-or-not">scale or not<a class="headerlink" href="#scale-or-not" title="Permanent link">&para;</a></h2>
 <p>下面两个结果是一样的。</p>
-<div class="highlight"><pre><span></span><code><span class="n">m</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">4</span><span class="o">*</span><span class="m">6</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">4</span><span class="o">*</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
 <span class="nf">cov</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-<span class="n">sm</span> <span class="o">=</span> <span class="nf">scale</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="c1"># only center, no scale.</span>
-<span class="nf">t</span><span class="p">(</span><span class="n">sm</span><span class="p">)</span> <span class="o">%*%</span> <span class="n">sm</span><span class="o">/</span> <span class="p">(</span><span class="m">6-1</span><span class="p">)</span>
+<span class="n">sm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="c1"># only center, no scale.</span>
+<span class="nf">t</span><span class="p">(</span><span class="n">sm</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">sm</span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="m">6-1</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="check-memory-usage">Check Memory Usage<a class="headerlink" href="#check-memory-usage" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">memuse</span> <span class="o">=</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-    <span class="nf">strtoi</span><span class="p">(</span><span class="nf">system</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;ps -p&quot;</span><span class="p">,</span> <span class="nf">Sys.getpid</span><span class="p">(),</span> <span class="s">&quot;-o rss=&quot;</span><span class="p">),</span> <span class="n">intern</span> <span class="o">=</span> <span class="bp">T</span><span class="p">))</span> <span class="o">/</span> <span class="m">1024</span>
+<div class="highlight"><pre><span></span><code><span class="n">memuse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">strtoi</span><span class="p">(</span><span class="nf">system</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;ps -p&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">Sys.getpid</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;-o rss=&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">intern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1024</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="stats-functions">Stats Functions<a class="headerlink" href="#stats-functions" title="Permanent link">&para;</a></h2>
@@ -4031,8 +4031,8 @@ See the log file <span class="k">for</span> details:  /tmp/jupyterlab-debug-lhf6
 <p>Post: 2022-08-30 12:00:39 +0800</p>
 </div>
 <p>The disk is nearly occupied, and I found that</p>
-<div class="highlight"><pre><span></span><code>$ du -sh *
-<span class="m">2</span>.6G    R
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>du<span class="w"> </span>-sh<span class="w"> </span>*
+<span class="m">2</span>.6G<span class="w">    </span>R
 </code></pre></div>
 <p>which stores the installed packages for R3.6. I want to move it to <code>~/Programs/R</code>, which is on a portable SSD, so I need to update <code>.libPaths()</code>.</p>
 <p>The personal path is defined in <code>/usr/lib/R/etc/Renviron</code></p>
@@ -4044,8 +4044,8 @@ See the log file <span class="k">for</span> details:  /tmp/jupyterlab-debug-lhf6
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Start from R4.0.0, the path string can be constructed via <code>r(...)</code> without escaping <code>/</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">r</span><span class="s">&quot;(~/R/x86_64-pc-linux-gnu-library/3.6)&quot;</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;~/R/x86_64-pc-linux-gnu-library/3.6&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">r</span><span class="s">&quot;(~/R/x86_64-pc-linux-gnu-library/3.6)&quot;</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;~/R/x86_64-pc-linux-gnu-library/3.6&quot;</span>
 </code></pre></div>
 <p>See <a href="https://stackoverflow.com/questions/14185287/escaping-backslash-in-string-or-paths-in-r/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
 </div>
@@ -4130,7 +4130,7 @@ See the log file <span class="k">for</span> details:  /tmp/jupyterlab-debug-lhf6
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

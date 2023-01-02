@@ -2493,12 +2493,12 @@
 
 <h1 id="rocky-linux">Rocky Linux<a class="headerlink" href="#rocky-linux" title="Permanent link">&para;</a></h1>
 <p>Rocky Linux refers to the new server in Fan&rsquo;s Group</p>
-<div class="highlight"><pre><span></span><code>$ lsb_release -a
-LSB Version:    :core-4.1-amd64:core-4.1-noarch
-Distributor ID: Rocky
-Description:    Rocky Linux release <span class="m">8</span>.4 <span class="o">(</span>Green Obsidian<span class="o">)</span>
-Release:    <span class="m">8</span>.4
-Codename:   GreenObsidian
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>lsb_release<span class="w"> </span>-a
+LSB<span class="w"> </span>Version:<span class="w">    </span>:core-4.1-amd64:core-4.1-noarch
+Distributor<span class="w"> </span>ID:<span class="w"> </span>Rocky
+Description:<span class="w">    </span>Rocky<span class="w"> </span>Linux<span class="w"> </span>release<span class="w"> </span><span class="m">8</span>.4<span class="w"> </span><span class="o">(</span>Green<span class="w"> </span>Obsidian<span class="o">)</span>
+Release:<span class="w">    </span><span class="m">8</span>.4
+Codename:<span class="w">   </span>GreenObsidian
 </code></pre></div>
 <p>where the distribution name <code>Rocky Linux</code> is new to me, although I might heard it before.</p>
 <blockquote>
@@ -2512,13 +2512,13 @@ Codename:   GreenObsidian
 <li>configure <code>/etc/rsnapshot.conf</code>, see the reference for more details</li>
 <li>schedule backup via <code>cron</code> and <code>anacron</code></li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>cat /etc/anacrontab 
-<span class="gp">#</span>period <span class="k">in</span> days   delay <span class="k">in</span> minutes   job-identifier   <span class="nb">command</span>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>cat<span class="w"> </span>/etc/anacrontab<span class="w"> </span>
+<span class="gp">#</span>period<span class="w"> </span><span class="k">in</span><span class="w"> </span>days<span class="w">   </span>delay<span class="w"> </span><span class="k">in</span><span class="w"> </span>minutes<span class="w">   </span>job-identifier<span class="w">   </span><span class="nb">command</span>
 <span class="go">...</span>
 <span class="go">1   10  daily-snapshot  /usr/bin/rsnapshot daily</span>
 <span class="go">7   20  weekly-snapshot /usr/bin/rsnapshot weekly</span>
 
-<span class="gp"># </span>cat /etc/cron.d/rsnapshot 
+<span class="gp"># </span>cat<span class="w"> </span>/etc/cron.d/rsnapshot<span class="w"> </span>
 <span class="go">0 */4 * * * root /usr/bin/rsnapshot hourly</span>
 </code></pre></div>
 <div class="admonition info">
@@ -2537,31 +2537,31 @@ Codename:   GreenObsidian
 <ul>
 <li>install munge: the first attempt is not enough, and its <code>devel</code> will be also installed</li>
 </ul>
-<div class="highlight"><pre><span></span><code>yum install munge
+<div class="highlight"><pre><span></span><code>yum<span class="w"> </span>install<span class="w"> </span>munge
 </code></pre></div>
 <ul>
 <li>download source package</li>
 </ul>
-<div class="highlight"><pre><span></span><code>wget https://download.schedmd.com/slurm/slurm-20.11.7.tar.bz2
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://download.schedmd.com/slurm/slurm-20.11.7.tar.bz2
 </code></pre></div>
 <ul>
 <li>build it</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>rpmbuild -ta slurm*.tar.bz2
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>rpmbuild<span class="w"> </span>-ta<span class="w"> </span>slurm*.tar.bz2
 </code></pre></div>
 <p>but it throws that</p>
-<div class="highlight"><pre><span></span><code>error: Failed build dependencies:
-    munge-devel is needed by slurm-20.11.7-1.el8.x86_64
-    pam-devel is needed by slurm-20.11.7-1.el8.x86_64
-    perl<span class="o">(</span>ExtUtils::MakeMaker<span class="o">)</span> is needed by slurm-20.11.7-1.el8.x86_64
-    readline-devel is needed by slurm-20.11.7-1.el8.x86_64
+<div class="highlight"><pre><span></span><code>error:<span class="w"> </span>Failed<span class="w"> </span>build<span class="w"> </span>dependencies:
+<span class="w">    </span>munge-devel<span class="w"> </span>is<span class="w"> </span>needed<span class="w"> </span>by<span class="w"> </span>slurm-20.11.7-1.el8.x86_64
+<span class="w">    </span>pam-devel<span class="w"> </span>is<span class="w"> </span>needed<span class="w"> </span>by<span class="w"> </span>slurm-20.11.7-1.el8.x86_64
+<span class="w">    </span>perl<span class="o">(</span>ExtUtils::MakeMaker<span class="o">)</span><span class="w"> </span>is<span class="w"> </span>needed<span class="w"> </span>by<span class="w"> </span>slurm-20.11.7-1.el8.x86_64
+<span class="w">    </span>readline-devel<span class="w"> </span>is<span class="w"> </span>needed<span class="w"> </span>by<span class="w"> </span>slurm-20.11.7-1.el8.x86_64
 </code></pre></div>
 <p>so I need to resolve these dependencies firstly.</p>
 <ul>
 <li>install <code>munge-devel</code></li>
 </ul>
 <p>firstly I tried </p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum install munge-devel
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum<span class="w"> </span>install<span class="w"> </span>munge-devel
 <span class="go">Last metadata expiration check: 1:10:07 ago on Sat 26 Jun 2021 06:42:42 PM HKT.</span>
 <span class="go">No match for argument: munge-devel</span>
 <span class="go">Error: Unable to find a match: munge-devel</span>
@@ -2571,7 +2571,7 @@ Codename:   GreenObsidian
 <p>In bash code block, the symbol <code>#</code> would be treated as comments, but I want to indicate the operations are performed by root, so change <code>bash</code> to <code>console</code> refer to <a href="https://groups.google.com/g/nikola-discuss/c/5AzGQjlhB8g">Markdown syntax for interactive shell commands</a></p>
 </div>
 <p>Reminded by <a href="https://forums.rockylinux.org/t/slurm-does-not-install-from-the-epel-repo/2832">Slurm does not install from the epel repo</a>, I tried to enable the <code>powertools</code> repo following the instruction, <a href="https://serverfault.com/questions/997896/how-to-enable-powertools-repository-in-centos-8">How to enable PowerTools repository in CentOS 8?</a></p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum repolist 
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum<span class="w"> </span>repolist<span class="w"> </span>
 <span class="go">repo id                                                                repo name</span>
 <span class="go">appstream                                                              Rocky Linux 8 - AppStream</span>
 <span class="go">baseos                                                                 Rocky Linux 8 - BaseOS</span>
@@ -2579,15 +2579,15 @@ Codename:   GreenObsidian
 <span class="go">epel-modular                                                           Extra Packages for Enterprise Linux Modular 8 - x86_64</span>
 <span class="go">extras                                                                 Rocky Linux 8 - Extras</span>
 
-<span class="gp"># </span>yum install dnf-plugins-core
+<span class="gp"># </span>yum<span class="w"> </span>install<span class="w"> </span>dnf-plugins-core
 <span class="go">Last metadata expiration check: 1:15:02 ago on Sat 26 Jun 2021 06:42:42 PM HKT.</span>
 <span class="go">Package dnf-plugins-core-4.0.18-4.el8.noarch is already installed.</span>
 <span class="go">Dependencies resolved.</span>
 <span class="go">Nothing to do.</span>
 <span class="go">Complete!</span>
 
-<span class="gp"># </span>yum config-manager --set-enabled powertools
-<span class="gp"># </span>yum repolist 
+<span class="gp"># </span>yum<span class="w"> </span>config-manager<span class="w"> </span>--set-enabled<span class="w"> </span>powertools
+<span class="gp"># </span>yum<span class="w"> </span>repolist<span class="w"> </span>
 <span class="go">repo id                                                                repo name</span>
 <span class="go">appstream                                                              Rocky Linux 8 - AppStream</span>
 <span class="go">baseos                                                                 Rocky Linux 8 - BaseOS</span>
@@ -2597,7 +2597,7 @@ Codename:   GreenObsidian
 <span class="go">powertools                                                             Rocky Linux 8 - PowerTools</span>
 </code></pre></div>
 <p>then I can install <code>munge-devel</code>,</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum install munge-devel
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum<span class="w"> </span>install<span class="w"> </span>munge-devel
 <span class="go">Rocky Linux 8 - PowerTools                                                                                                                              2.6 MB/s | 2.1 MB     00:00    </span>
 <span class="go">Dependencies resolved.</span>
 <span class="go">========================================================================================================================================================================================</span>
@@ -2636,15 +2636,15 @@ Codename:   GreenObsidian
 <ul>
 <li>install other dependencies,</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum install pam-devel
-<span class="gp"># </span>yum install readline-devel
-<span class="gp"># </span>yum install perl-ExtUtils-MakeMaker.noarch
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum<span class="w"> </span>install<span class="w"> </span>pam-devel
+<span class="gp"># </span>yum<span class="w"> </span>install<span class="w"> </span>readline-devel
+<span class="gp"># </span>yum<span class="w"> </span>install<span class="w"> </span>perl-ExtUtils-MakeMaker.noarch
 </code></pre></div>
 <p>where the package name for the last one is determining by simply googling <code>perl(ExtUtils::MakeMaker)</code></p>
 <ul>
 <li>build again</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>rpmbuild -ta slurm-20.11.7.tar.bz2
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>rpmbuild<span class="w"> </span>-ta<span class="w"> </span>slurm-20.11.7.tar.bz2
 <span class="go">Processing files: slurm-slurmdbd-20.11.7-1.el8.x86_64</span>
 <span class="go">error: File not found: /root/rpmbuild/BUILDROOT/slurm-20.11.7-1.el8.x86_64/usr/lib64/slurm/accounting_storage_mysql.so</span>
 
@@ -2679,14 +2679,14 @@ Codename:   GreenObsidian
 <li>build again</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># rpmbuild -ta slurm-20.11.7.tar.bz2</span>
-Wrote: /root/rpmbuild/RPMS/x86_64/slurm-openlava-20.11.7-1.el8.x86_64.rpm
-Wrote: /root/rpmbuild/RPMS/x86_64/slurm-contribs-20.11.7-1.el8.x86_64.rpm
-Wrote: /root/rpmbuild/RPMS/x86_64/slurm-pam_slurm-20.11.7-1.el8.x86_64.rpm
-Executing<span class="o">(</span>%clean<span class="o">)</span>: /bin/sh -e /var/tmp/rpm-tmp.52rp8H
-+ <span class="nb">umask</span> <span class="m">022</span>
-+ <span class="nb">cd</span> /root/rpmbuild/BUILD
-+ <span class="nb">cd</span> slurm-20.11.7
-+ rm -rf /root/rpmbuild/BUILDROOT/slurm-20.11.7-1.el8.x86_64
+Wrote:<span class="w"> </span>/root/rpmbuild/RPMS/x86_64/slurm-openlava-20.11.7-1.el8.x86_64.rpm
+Wrote:<span class="w"> </span>/root/rpmbuild/RPMS/x86_64/slurm-contribs-20.11.7-1.el8.x86_64.rpm
+Wrote:<span class="w"> </span>/root/rpmbuild/RPMS/x86_64/slurm-pam_slurm-20.11.7-1.el8.x86_64.rpm
+Executing<span class="o">(</span>%clean<span class="o">)</span>:<span class="w"> </span>/bin/sh<span class="w"> </span>-e<span class="w"> </span>/var/tmp/rpm-tmp.52rp8H
++<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">022</span>
++<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/root/rpmbuild/BUILD
++<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>slurm-20.11.7
++<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/root/rpmbuild/BUILDROOT/slurm-20.11.7-1.el8.x86_64
 </code></pre></div>
 <p>it succeeds!</p>
 <ul>
@@ -2694,10 +2694,10 @@ Executing<span class="o">(</span>%clean<span class="o">)</span>: /bin/sh -e /var
 </ul>
 <p>all built rpms are</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># ls rpmbuild/RPMS/x86_64/</span>
-slurm-20.11.7-1.el8.x86_64.rpm                  slurm-libpmi-20.11.7-1.el8.x86_64.rpm     slurm-slurmctld-20.11.7-1.el8.x86_64.rpm
-slurm-contribs-20.11.7-1.el8.x86_64.rpm         slurm-openlava-20.11.7-1.el8.x86_64.rpm   slurm-slurmd-20.11.7-1.el8.x86_64.rpm
-slurm-devel-20.11.7-1.el8.x86_64.rpm            slurm-pam_slurm-20.11.7-1.el8.x86_64.rpm  slurm-slurmdbd-20.11.7-1.el8.x86_64.rpm
-slurm-example-configs-20.11.7-1.el8.x86_64.rpm  slurm-perlapi-20.11.7-1.el8.x86_64.rpm    slurm-torque-20.11.7-1.el8.x86_64.rpm
+slurm-20.11.7-1.el8.x86_64.rpm<span class="w">                  </span>slurm-libpmi-20.11.7-1.el8.x86_64.rpm<span class="w">     </span>slurm-slurmctld-20.11.7-1.el8.x86_64.rpm
+slurm-contribs-20.11.7-1.el8.x86_64.rpm<span class="w">         </span>slurm-openlava-20.11.7-1.el8.x86_64.rpm<span class="w">   </span>slurm-slurmd-20.11.7-1.el8.x86_64.rpm
+slurm-devel-20.11.7-1.el8.x86_64.rpm<span class="w">            </span>slurm-pam_slurm-20.11.7-1.el8.x86_64.rpm<span class="w">  </span>slurm-slurmdbd-20.11.7-1.el8.x86_64.rpm
+slurm-example-configs-20.11.7-1.el8.x86_64.rpm<span class="w">  </span>slurm-perlapi-20.11.7-1.el8.x86_64.rpm<span class="w">    </span>slurm-torque-20.11.7-1.el8.x86_64.rpm
 
 <span class="c1"># yum --nogpgcheck localinstall slurm-20.11.7-1.el8.x86_64.rpm slurm-devel-20.11.7-1.el8.x86_64.rpm slurm-perlapi-20.11.7-1.el8.x86_64.rpm slurm-torque-20.11.7-1.el8.x86_64.rpm slurm-slurmctld-20.11.7-1.el8.x86_64.rpm slurm-slurmd-20.11.7-1.el8.x86_64.rpm</span>
 </code></pre></div>
@@ -2717,27 +2717,27 @@ touch /var/log/slurm_jobacct.log /var/log/slurm_jobcomp.log
 chown slurm: /var/log/slurm_jobacct.log /var/log/slurm_jobcomp.log
 </code></pre></div>
 <p>also</p>
-<div class="highlight"><pre><span></span><code>mkdir /var/spool/slurmd
-chown slurm: /var/spool/slurmd
-chmod <span class="m">755</span> /var/spool/slurmd
-touch /var/log/slurmd.log
-chown slurm: /var/log/slurmd.log
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>/var/spool/slurmd
+chown<span class="w"> </span>slurm:<span class="w"> </span>/var/spool/slurmd
+chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/spool/slurmd
+touch<span class="w"> </span>/var/log/slurmd.log
+chown<span class="w"> </span>slurm:<span class="w"> </span>/var/log/slurmd.log
 </code></pre></div>
 <p>then check </p>
 <div class="highlight"><pre><span></span><code><span class="c1"># slurmd -C</span>
-<span class="nv">NodeName</span><span class="o">=</span>stapcXXX <span class="nv">CPUs</span><span class="o">=</span><span class="m">96</span> <span class="nv">Boards</span><span class="o">=</span><span class="m">1</span> <span class="nv">SocketsPerBoard</span><span class="o">=</span><span class="m">2</span> <span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">24</span> <span class="nv">ThreadsPerCore</span><span class="o">=</span><span class="m">2</span> <span class="nv">RealMemory</span><span class="o">=</span><span class="m">385333</span>
+<span class="nv">NodeName</span><span class="o">=</span>stapcXXX<span class="w"> </span><span class="nv">CPUs</span><span class="o">=</span><span class="m">96</span><span class="w"> </span><span class="nv">Boards</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">SocketsPerBoard</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">24</span><span class="w"> </span><span class="nv">ThreadsPerCore</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">RealMemory</span><span class="o">=</span><span class="m">385333</span>
 <span class="nv">UpTime</span><span class="o">=</span><span class="m">1</span>-04:02:46
 </code></pre></div>
 <ul>
 <li>check if <code>sinfo</code> OK,</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>sinfo 
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>sinfo<span class="w"> </span>
 <span class="go">slurm_load_partitions: Unable to contact slurm controller (connect failure)</span>
-<span class="gp"># </span>scontrol show nodes
+<span class="gp"># </span>scontrol<span class="w"> </span>show<span class="w"> </span>nodes
 <span class="go">slurm_load_node error: Unable to contact slurm controller (connect failure)</span>
 </code></pre></div>
 <p>and the service <code>slurmd</code> and <code>slurmctld</code> fails to start,</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl status slurmd.service
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl<span class="w"> </span>status<span class="w"> </span>slurmd.service
 <span class="go">● slurmd.service - Slurm node daemon</span>
 <span class="go">   Loaded: loaded (/usr/lib/systemd/system/slurmd.service; enabled; vendor preset: disabled)</span>
 <span class="go">   Active: failed (Result: exit-code) since Sat 2021-06-26 20:51:09 HKT; 4s ago</span>
@@ -2748,7 +2748,7 @@ chown slurm: /var/log/slurmd.log
 <span class="go">Jun 26 20:51:09 stapcXXX.sta.cuhk.edu.hk systemd[1]: slurmd.service: Main process exited, code=exited, status=1/FAILURE</span>
 <span class="go">Jun 26 20:51:09 stapcXXX.sta.cuhk.edu.hk systemd[1]: slurmd.service: Failed with result &#39;exit-code&#39;.</span>
 
-<span class="gp"># </span>systemctl status slurmctld.service
+<span class="gp"># </span>systemctl<span class="w"> </span>status<span class="w"> </span>slurmctld.service
 <span class="go">● slurmctld.service - Slurm controller daemon</span>
 <span class="go">   Loaded: loaded (/usr/lib/systemd/system/slurmctld.service; enabled; vendor preset: disabled)</span>
 <span class="go">   Active: failed (Result: exit-code) since Sat 2021-06-26 20:52:26 HKT; 4s ago</span>
@@ -2760,18 +2760,18 @@ chown slurm: /var/log/slurmd.log
 <span class="go">Jun 26 20:52:26 stapcXXX.sta.cuhk.edu.hk systemd[1]: slurmctld.service: Failed with result &#39;exit-code&#39;.</span>
 </code></pre></div>
 <p>the error turns to be the incosistent path in the config file, <code>slurm.conf</code></p>
-<div class="highlight"><pre><span></span><code>StateSaveLocation: /var/spool/slurmctld
+<div class="highlight"><pre><span></span><code>StateSaveLocation:<span class="w"> </span>/var/spool/slurmctld
 </code></pre></div>
 <p>and then</p>
-<div class="highlight"><pre><span></span><code>mkdir /var/spool/slurmctld
-chown slurm: /var/spool/slurmctld
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>/var/spool/slurmctld
+chown<span class="w"> </span>slurm:<span class="w"> </span>/var/spool/slurmctld
 </code></pre></div>
 <p>but the default path is <code>/var/spool</code>. </p>
 <ul>
 <li>run <code>slurmctld</code> service</li>
 </ul>
 <p>After correcting the path, the service begins to work,</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl status slurmctld.service 
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl<span class="w"> </span>status<span class="w"> </span>slurmctld.service<span class="w"> </span>
 <span class="go">● slurmctld.service - Slurm controller daemon</span>
 <span class="go">   Loaded: loaded (/usr/lib/systemd/system/slurmctld.service; enabled; vendor preset: disabled)</span>
 <span class="go">   Active: active (running) since Sat 2021-06-26 22:11:14 HKT; 2min 18s ago</span>
@@ -2787,7 +2787,7 @@ chown slurm: /var/spool/slurmctld
 <li>run <code>slurmd</code> service</li>
 </ul>
 <p>However, <code>slurmd</code> still failed, but no informative message returned by the <code>systemctl</code> command. Try to directly run the command</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmd -D
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmd<span class="w"> </span>-D
 <span class="go">slurmd: error: Node configuration differs from hardware: CPUs=1:96(hw) Boards=1:1(hw) SocketsPerBoard=1:2(hw) CoresPerSocket=1:24(hw) ThreadsPerCore=1:2(hw)</span>
 <span class="go">slurmd: error: cgroup namespace &#39;freezer&#39; not mounted. aborting</span>
 <span class="go">slurmd: error: unable to create freezer cgroup namespace</span>
@@ -2796,20 +2796,20 @@ chown slurm: /var/spool/slurmctld
 <span class="go">slurmd: error: slurmd initialization failed</span>
 </code></pre></div>
 <p>then correct the corresponding configuration. And temporarly disable cgroup by setting</p>
-<div class="highlight"><pre><span></span><code>Process Tracking: LinuxProc
+<div class="highlight"><pre><span></span><code>Process<span class="w"> </span>Tracking:<span class="w"> </span>LinuxProc
 </code></pre></div>
 <p>as suggested in <a href="http://docs.nanomatch.de/technical/SimStackRequirements/SingleNodeSlurm.html">SLURM single node install</a></p>
 <p>Also pay attention to <code>restart</code>, or <code>stop + start</code> the service, sometimes the configuration file might still be outdated. For example, I had set the hostname as <code>hostname -f</code> and <code>hostname -s</code>, but sometimes the hostname has not been updated after changing the hostname, so make sure the updated configuration file has been taken effects.</p>
 <p>After necessary correction and restart,</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmd -D
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmd<span class="w"> </span>-D
 <span class="go">slurmd: slurmd version 20.11.7 started</span>
 <span class="go">slurmd: slurmd started on Sat, 26 Jun 2021 22:28:01 +0800</span>
 <span class="go">slurmd: CPUs=96 Boards=1 Sockets=2 Cores=24 Threads=2 Memory=385333 TmpDisk=1023500 Uptime=107065 CPUSpecList=(null) FeaturesAvail=(null) FeaturesActive=(null)</span>
 <span class="go">^Cslurmd: Slurmd shutdown completing</span>
 </code></pre></div>
 <p>which indiates that now slurmd works well, then</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl restart slurmd.service 
-<span class="gp"># </span>systemctl status slurmd.service 
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl<span class="w"> </span>restart<span class="w"> </span>slurmd.service<span class="w"> </span>
+<span class="gp"># </span>systemctl<span class="w"> </span>status<span class="w"> </span>slurmd.service<span class="w"> </span>
 <span class="go">● slurmd.service - Slurm node daemon</span>
 <span class="go">   Loaded: loaded (/usr/lib/systemd/system/slurmd.service; enabled; vendor preset: disabled)</span>
 <span class="go">   Active: active (running) since Sat 2021-06-26 22:28:23 HKT; 1s ago</span>
@@ -2825,7 +2825,7 @@ chown slurm: /var/spool/slurmctld
 <li>accounting system</li>
 </ul>
 <p>Try to start the accounting system,</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr -i add cluster stapcXXX
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr<span class="w"> </span>-i<span class="w"> </span>add<span class="w"> </span>cluster<span class="w"> </span>stapcXXX
 <span class="go">You are not running a supported accounting_storage plugin</span>
 <span class="go">Only &#39;accounting_storage/slurmdbd&#39; is supported.</span>
 </code></pre></div>
@@ -2838,11 +2838,11 @@ chown slurm: /var/spool/slurmctld
 <p>then check if it is ready,</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># systemctl start slurmdbd.service </span>
 <span class="c1"># systemctl status slurmdbd.service </span>
-● slurmdbd.service - Slurm DBD accounting daemon
-   Loaded: loaded <span class="o">(</span>/usr/lib/systemd/system/slurmdbd.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset: disabled<span class="o">)</span>
-   Active: inactive <span class="o">(</span>dead<span class="o">)</span>
-Condition: start condition failed at Sun <span class="m">2021</span>-06-27 <span class="m">10</span>:38:39 HKT<span class="p">;</span> 2s ago
-           └─ <span class="nv">ConditionPathExists</span><span class="o">=</span>/etc/slurm/slurmdbd.conf was not met
+●<span class="w"> </span>slurmdbd.service<span class="w"> </span>-<span class="w"> </span>Slurm<span class="w"> </span>DBD<span class="w"> </span>accounting<span class="w"> </span>daemon
+<span class="w">   </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/usr/lib/systemd/system/slurmdbd.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>vendor<span class="w"> </span>preset:<span class="w"> </span>disabled<span class="o">)</span>
+<span class="w">   </span>Active:<span class="w"> </span>inactive<span class="w"> </span><span class="o">(</span>dead<span class="o">)</span>
+Condition:<span class="w"> </span>start<span class="w"> </span>condition<span class="w"> </span>failed<span class="w"> </span>at<span class="w"> </span>Sun<span class="w"> </span><span class="m">2021</span>-06-27<span class="w"> </span><span class="m">10</span>:38:39<span class="w"> </span>HKT<span class="p">;</span><span class="w"> </span>2s<span class="w"> </span>ago
+<span class="w">           </span>└─<span class="w"> </span><span class="nv">ConditionPathExists</span><span class="o">=</span>/etc/slurm/slurmdbd.conf<span class="w"> </span>was<span class="w"> </span>not<span class="w"> </span>met
 </code></pre></div>
 <p>which means that we also need <code>slurmdbd.conf</code>.</p>
 <ul>
@@ -2853,23 +2853,23 @@ Condition: start condition failed at Sun <span class="m">2021</span>-06-27 <span
 <li>config mysql</li>
 </ul>
 <p>following <a href="https://gist.github.com/DaisukeMiyamoto/d1dac9483ff0971d5d9f34000311d312">DaisukeMiyamoto/setup_slurm_accounting_parallelcluster.sh</a>, set mariadb as follows,</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>mysql -u root -e <span class="s2">&quot;create user &#39;slurm&#39;@&#39;localhost&#39; identified by &#39;xxxxxxxxxx&#39;; grant all on slurm_acct_db.* TO &#39;slurm&#39;@&#39;localhost&#39;; create database slurm_acct_db;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;create user &#39;slurm&#39;@&#39;localhost&#39; identified by &#39;xxxxxxxxxx&#39;; grant all on slurm_acct_db.* TO &#39;slurm&#39;@&#39;localhost&#39;; create database slurm_acct_db;&quot;</span>
 </code></pre></div>
 <p>then tried to run</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmdbd -D
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmdbd<span class="w"> </span>-D
 <span class="go">slurmdbd: error: mysql_real_connect failed: 2002 Can&#39;t connect to local MySQL server through socket &#39;/var/lib/mysql/mysql.sock&#39; (2)</span>
 <span class="go">slurmdbd: error: The database must be up when starting the MYSQL plugin.  Trying again in 5 seconds.</span>
 <span class="go">^C</span>
 </code></pre></div>
 <p>so mysql has not been started,</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl <span class="nb">enable</span> mariadb
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>mariadb
 <span class="go">Created symlink /etc/systemd/system/mysql.service → /usr/lib/systemd/system/mariadb.service.</span>
 <span class="go">Created symlink /etc/systemd/system/mysqld.service → /usr/lib/systemd/system/mariadb.service.</span>
 <span class="go">Created symlink /etc/systemd/system/multi-user.target.wants/mariadb.service → /usr/lib/systemd/system/mariadb.service.</span>
-<span class="gp"># </span>systemctl start mariadb
+<span class="gp"># </span>systemctl<span class="w"> </span>start<span class="w"> </span>mariadb
 </code></pre></div>
 <p>then run again</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmdbd -D
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmdbd<span class="w"> </span>-D
 <span class="go">slurmdbd: accounting_storage/as_mysql: _check_mysql_concat_is_sane: MySQL server version is: 10.3.28-MariaDB</span>
 <span class="go">slurmdbd: error: Database settings not recommended values: innodb_buffer_pool_size innodb_lock_wait_timeout</span>
 <span class="go">slurmdbd: slurmdbd version 20.11.7 started</span>
@@ -2882,11 +2882,11 @@ Condition: start condition failed at Sun <span class="m">2021</span>-06-27 <span
 <span class="nv">innodb_lock_wait_timeout</span><span class="o">=</span><span class="m">900</span>
 </code></pre></div>
 <p>into file <code>/etc/my.cnf.d/innodb.cnf</code>, then restart </p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl stop mariadb
-<span class="gp"># </span>systemctl start mariadb
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl<span class="w"> </span>stop<span class="w"> </span>mariadb
+<span class="gp"># </span>systemctl<span class="w"> </span>start<span class="w"> </span>mariadb
 </code></pre></div>
 <p>now it is OK to run</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmdbd -D
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>slurmdbd<span class="w"> </span>-D
 <span class="go">slurmdbd: accounting_storage/as_mysql: _check_mysql_concat_is_sane: MySQL server version is: 10.3.28-MariaDB</span>
 <span class="go">slurmdbd: slurmdbd version 20.11.7 started</span>
 <span class="go">^Cslurmdbd: Terminate signal (SIGINT or SIGTERM) received</span>
@@ -2895,32 +2895,32 @@ Condition: start condition failed at Sun <span class="m">2021</span>-06-27 <span
 <div class="highlight"><pre><span></span><code><span class="c1"># systemctl enable slurmdbd</span>
 <span class="c1"># systemctl start slurmdbd</span>
 <span class="c1"># systemctl status slurmdbd</span>
-● slurmdbd.service - Slurm DBD accounting daemon
-   Loaded: loaded <span class="o">(</span>/usr/lib/systemd/system/slurmdbd.service<span class="p">;</span> enabled<span class="p">;</span> vendor preset: disabled<span class="o">)</span>
-   Active: active <span class="o">(</span>running<span class="o">)</span> since Sun <span class="m">2021</span>-06-27 <span class="m">10</span>:58:27 HKT<span class="p">;</span> 3s ago
- Main PID: <span class="m">190603</span> <span class="o">(</span>slurmdbd<span class="o">)</span>
-    Tasks: <span class="m">5</span>
-   Memory: <span class="m">1</span>.8M
-   CGroup: /system.slice/slurmdbd.service
-           └─190603 /usr/sbin/slurmdbd -D
+●<span class="w"> </span>slurmdbd.service<span class="w"> </span>-<span class="w"> </span>Slurm<span class="w"> </span>DBD<span class="w"> </span>accounting<span class="w"> </span>daemon
+<span class="w">   </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/usr/lib/systemd/system/slurmdbd.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>vendor<span class="w"> </span>preset:<span class="w"> </span>disabled<span class="o">)</span>
+<span class="w">   </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>Sun<span class="w"> </span><span class="m">2021</span>-06-27<span class="w"> </span><span class="m">10</span>:58:27<span class="w"> </span>HKT<span class="p">;</span><span class="w"> </span>3s<span class="w"> </span>ago
+<span class="w"> </span>Main<span class="w"> </span>PID:<span class="w"> </span><span class="m">190603</span><span class="w"> </span><span class="o">(</span>slurmdbd<span class="o">)</span>
+<span class="w">    </span>Tasks:<span class="w"> </span><span class="m">5</span>
+<span class="w">   </span>Memory:<span class="w"> </span><span class="m">1</span>.8M
+<span class="w">   </span>CGroup:<span class="w"> </span>/system.slice/slurmdbd.service
+<span class="w">           </span>└─190603<span class="w"> </span>/usr/sbin/slurmdbd<span class="w"> </span>-D
 
-Jun <span class="m">27</span> <span class="m">10</span>:58:27 stapcXXX.sta.cuhk.edu.hk systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Started Slurm DBD accounting daemon.
+Jun<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">10</span>:58:27<span class="w"> </span>stapcXXX.sta.cuhk.edu.hk<span class="w"> </span>systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>:<span class="w"> </span>Started<span class="w"> </span>Slurm<span class="w"> </span>DBD<span class="w"> </span>accounting<span class="w"> </span>daemon.
 </code></pre></div>
 <ul>
 <li>set up qos</li>
 </ul>
 <p>need to add account and user, otherwise the users are outside the control,</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr add account project <span class="nv">Description</span><span class="o">=</span><span class="s2">&quot;Projects&quot;</span> <span class="nv">Organization</span><span class="o">=</span>project
-<span class="gp"># </span><span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">01</span>..14<span class="o">}</span><span class="p">;</span> <span class="k">do</span> sacctmgr -i create user <span class="nv">name</span><span class="o">=</span>project<span class="nv">$i</span> <span class="nv">DefaultAccount</span><span class="o">=</span>project <span class="p">;</span> <span class="k">done</span>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr<span class="w"> </span>add<span class="w"> </span>account<span class="w"> </span>project<span class="w"> </span><span class="nv">Description</span><span class="o">=</span><span class="s2">&quot;Projects&quot;</span><span class="w"> </span><span class="nv">Organization</span><span class="o">=</span>project
+<span class="gp"># </span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">01</span>..14<span class="o">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>sacctmgr<span class="w"> </span>-i<span class="w"> </span>create<span class="w"> </span>user<span class="w"> </span><span class="nv">name</span><span class="o">=</span>project<span class="nv">$i</span><span class="w"> </span><span class="nv">DefaultAccount</span><span class="o">=</span>project<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
 </code></pre></div>
 <p>then set the maximum submit jobs per user,</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr modify qos normal <span class="nb">set</span> <span class="nv">maxsubmitjobsperuser</span><span class="o">=</span><span class="m">90</span>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr<span class="w"> </span>modify<span class="w"> </span>qos<span class="w"> </span>normal<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">maxsubmitjobsperuser</span><span class="o">=</span><span class="m">90</span>
 </code></pre></div>
 <p>remove the restriction via setting a larger number (how to directly remove the constraint)</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr modify qos normal <span class="nb">set</span> <span class="nv">maxsubmitjobsperuser</span><span class="o">=</span><span class="m">10000</span>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr<span class="w"> </span>modify<span class="w"> </span>qos<span class="w"> </span>normal<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">maxsubmitjobsperuser</span><span class="o">=</span><span class="m">10000</span>
 </code></pre></div>
 <p>together with the number of cores,</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr modify qos normal <span class="nb">set</span> <span class="nv">GrpTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">90</span>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>sacctmgr<span class="w"> </span>modify<span class="w"> </span>qos<span class="w"> </span>normal<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">GrpTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">90</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="go">sacctmgr modify qos normal set MaxTRESPerUser=cpu=80</span>
 </code></pre></div>
@@ -2935,10 +2935,10 @@ Jun <span class="m">27</span> <span class="m">10</span>:58:27 stapcXXX.sta.cuhk.
 <li>install cgroup</li>
 </ul>
 <p>following <a href="https://www.server-world.info/en/note?os=CentOS_7&amp;p=cgroups&amp;f=1">Cgroups : Install</a></p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum -y install libcgroup libcgroup-tools
-<span class="gp"># </span>systemctl <span class="nb">enable</span> cgconfig
-<span class="gp"># </span>systemctl start cgconfig
-<span class="gp"># </span>systemctl status cgconfig
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>yum<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>libcgroup<span class="w"> </span>libcgroup-tools
+<span class="gp"># </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>cgconfig
+<span class="gp"># </span>systemctl<span class="w"> </span>start<span class="w"> </span>cgconfig
+<span class="gp"># </span>systemctl<span class="w"> </span>status<span class="w"> </span>cgconfig
 <span class="go">● cgconfig.service - Control Group configuration service</span>
 <span class="go">   Loaded: loaded (/usr/lib/systemd/system/cgconfig.service; enabled; vendor preset: disabled)</span>
 <span class="go">   Active: active (exited) since Sun 2021-06-27 11:10:27 HKT; 7s ago</span>
@@ -2951,13 +2951,13 @@ Jun <span class="m">27</span> <span class="m">10</span>:58:27 stapcXXX.sta.cuhk.
 <p>here is an interesting finding. Different from other services, <code>active (running)</code>, it shows <code>active (exited)</code>, more details refer to the discussion <a href="https://askubuntu.com/questions/1304142/systemctl-status-active-exited-vs-running">systemctl status active: exited vs running</a>.</p>
 <p>then write <code>cgconfig.conf</code> and <code>cgrules.conf</code>, and then tried to restart <code>cgconfig</code>, but it seems no idea to judge if the setting takes effects.</p>
 <p>Then I got to know that there is another <a href="https://docs.oracle.com/en/operating-systems/oracle-linux/6/adminsg/ol_cpuset_cgroups.html"><code>cpuset</code> parameter</a> which can specify a list of CPU cores to which a group has access. Then I tried to add such parameter to <code>cgconfig.conf</code>,</p>
-<div class="highlight"><pre><span></span><code>cpuset <span class="o">{</span>
-    cpuset.cpus <span class="o">=</span> <span class="s2">&quot;1&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>cpuset<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>cpuset.cpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">;</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>and also update the corresponding <code>cgrules.conf</code>. Then I open an R session to run an expensive operation,</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100000000</span><span class="p">),</span><span class="n">nrow</span><span class="o">=</span><span class="m">10000</span><span class="p">)</span>
-<span class="o">&gt;</span> <span class="nf">replicate</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="n">a</span><span class="o">%*%</span><span class="n">a</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100000000</span><span class="p">),</span><span class="n">nrow</span><span class="o">=</span><span class="m">10000</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">replicate</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="o">%*%</span><span class="n">a</span><span class="p">)</span>
 </code></pre></div>
 <p>and open another session with the same user. The target is to check if these two sessions are limited to a single core. However, each of them reach around 100% CPU.</p>
 <p>Tried to install PAM-cgroup as also mentioned in <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-cpu_and_memory-use_case#proc-cpu_and_mem">4.3. PER-GROUP DIVISION OF CPU AND MEMORY RESOURCES &ndash; Procedure 4.4. Using a PAM module to move processes to cgroups</a></p>
@@ -2967,8 +2967,8 @@ Jun <span class="m">27</span> <span class="m">10</span>:58:27 stapcXXX.sta.cuhk.
 <ul>
 <li>find the cgroup of a process, and no <code>interactive</code> shows, <a href="https://serverfault.com/questions/560206/how-to-find-out-cgroup-of-a-particular-process/899248">How to find out cgroup of a particular process?</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl status <span class="m">3378</span> <span class="p">|</span> grep CGroup
-<span class="gp"># </span>cat /proc/3378/cgroup 
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl<span class="w"> </span>status<span class="w"> </span><span class="m">3378</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>CGroup
+<span class="gp"># </span>cat<span class="w"> </span>/proc/3378/cgroup<span class="w"> </span>
 </code></pre></div>
 <ul>
 <li>list cgroup in top: press <code>f</code>, then select <code>cgroup</code></li>
@@ -2977,17 +2977,17 @@ Jun <span class="m">27</span> <span class="m">10</span>:58:27 stapcXXX.sta.cuhk.
 </ul>
 <p>Maybe I need to change another way, and I saw <code>set-property</code> in <a href="https://zhuanlan.zhihu.com/p/74299886">深入理解 Linux Cgroup 系列（一）：基本概念</a></p>
 <p>Then I tried to set the CPUQuota for user via (refer to <a href="https://serverfault.com/questions/874274/systemd-per-user-cpu-and-or-memory-limits">systemd, per-user cpu and/or memory limits</a>)</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>mkdir -p /etc/systemd/system/user-.slice.d
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/systemd/system/user-.slice.d
 </code></pre></div>
 <p>then write</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>Slice<span class="o">]</span>
 <span class="nv">CPUQuota</span><span class="o">=</span><span class="m">20</span>%
 </code></pre></div>
 <p>into <code>cpu.conf</code>, which means that the executed processes never get more than 20% CPU time on a single CPU (refer to <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/resource_management_guide/sec-modifying_control_groups">2.3. MODIFYING CONTROL GROUPS</a>), then </p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl daemon-reload
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>systemctl<span class="w"> </span>daemon-reload
 </code></pre></div>
 <p>Repeat the above R script, the CPU percentage would be limited to 20%, not only regular user, but also root, since root is <code>user-0</code>, such as </p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>ls /sys/fs/cgroup/systemd/user.slice
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>ls<span class="w"> </span>/sys/fs/cgroup/systemd/user.slice
 <span class="go">cgroup.clone_children  cgroup.procs  notify_on_release  tasks  user-0.slice  user-1002.slice</span>
 </code></pre></div>
 <p>but it would not affected jobs submitted via slurm, which has been validated. So this way would be quite good.</p>
@@ -2997,14 +2997,14 @@ Jun <span class="m">27</span> <span class="m">10</span>:58:27 stapcXXX.sta.cuhk.
 <span class="nv">SelectTypeParameters</span><span class="o">=</span>CR_Core
 </code></pre></div>
 <p>the configuration of computing node is </p>
-<div class="highlight"><pre><span></span><code><span class="nv">NodeName</span><span class="o">=</span>stapc051 <span class="nv">CPUs</span><span class="o">=</span><span class="m">96</span> <span class="nv">Sockets</span><span class="o">=</span><span class="m">2</span> <span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">24</span> <span class="nv">ThreadsPerCore</span><span class="o">=</span><span class="m">2</span> <span class="nv">State</span><span class="o">=</span>UNKNOWN
+<div class="highlight"><pre><span></span><code><span class="nv">NodeName</span><span class="o">=</span>stapc051<span class="w"> </span><span class="nv">CPUs</span><span class="o">=</span><span class="m">96</span><span class="w"> </span><span class="nv">Sockets</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">24</span><span class="w"> </span><span class="nv">ThreadsPerCore</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">State</span><span class="o">=</span>UNKNOWN
 </code></pre></div>
 <p>With this setting, each job would automatically count 2 virtually CPUs, although we only request one CPU.</p>
 <p>After changing <code>CR_Core</code> to <code>CR_CPU</code>, each job would count 1 virtually CPU.</p>
 <p>However, the number of running jobs is still only 48, while the limits are <code>GrpTRES=cpu=90</code> and <code>MaxTRESPerUser=cpu=90</code>. </p>
 <p>My first guess is the scheduling system does not update on time, since if I count the completed jobs in <code>sacct -a -X</code>, the total number of cores coincidently equals to 90, then I tried to set a larger limit but not work.</p>
 <p>Ocassionally, I found how to unset the limit, use <code>-1</code>, such as <a href="https://slurm.schedmd.com/resource_limits.html">Resource Limits</a></p>
-<div class="highlight"><pre><span></span><code>sacctmgr modify user bob <span class="nb">set</span> <span class="nv">GrpTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span>-1,mem<span class="o">=</span>-1,gres/gpu<span class="o">=</span>-1
+<div class="highlight"><pre><span></span><code>sacctmgr<span class="w"> </span>modify<span class="w"> </span>user<span class="w"> </span>bob<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">GrpTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span>-1,mem<span class="o">=</span>-1,gres/gpu<span class="o">=</span>-1
 </code></pre></div>
 <p>Notice that 48 is a special number, <code>96 / 2 = 48</code>, so my second guess is that each running job is still occupying a core, even though it indeed only counts a virtual CPU.</p>
 <p>Check the potential related configurations,</p>
@@ -3020,15 +3020,15 @@ Jun <span class="m">27</span> <span class="m">10</span>:58:27 stapcXXX.sta.cuhk.
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>get pid of slurm job
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>scontrol listpids <span class="p">|</span> grep <span class="m">1261</span>
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>scontrol<span class="w"> </span>listpids<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">1261</span>
 </code></pre></div>
 then check the allow cpu list as in <a href="https://bugs.schedmd.com/show_bug.cgi?id=4010">Bug 4010 - Exploring Hyper-Threading CPU nodes</a>,
 before removing the specification, it shows
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>cat /proc/2636286/status <span class="p">|</span> grep -i cpus_allowed_list
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>cat<span class="w"> </span>/proc/2636286/status<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>cpus_allowed_list
 <span class="go">Cpus_allowed_list:  0-95</span>
 </code></pre></div>
 but after working normally, 
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>cat /proc/2636286/status <span class="p">|</span> grep -i cpus_allowed_list
+<div class="highlight"><pre><span></span><code><span class="gp"># </span>cat<span class="w"> </span>/proc/2636286/status<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>cpus_allowed_list
 <span class="go">Cpus_allowed_list:  43</span>
 </code></pre></div>
 so it can be an indicator to check whether the job is allocated normally.</p>
@@ -3046,23 +3046,23 @@ so it can be an indicator to check whether the job is allocated normally.</p>
 <p>I am downloading a file via <code>wget</code>, but the speed is quite slow, just ~500kb/s, while it can achieve ~4MB/s when I try to download it from our old server</p>
 </blockquote>
 <p>Then for complete comparisons, use the script</p>
-<div class="highlight"><pre><span></span><code>curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py <span class="p">|</span> python -
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>python<span class="w"> </span>-
 </code></pre></div>
 <p>to test the network speed (refer to <a href="https://askubuntu.com/questions/104755/how-to-check-internet-speed-via-terminal">How to check Internet Speed via Terminal? - Ask Ubuntu</a></p>
 <p>Also repeat the test on the new server to reduce random noise. The results show that both download and upload speed on the new server are much slower than the old group server and my personal laptop, ~90Mbit/s vs ~350Mbit/s.</p>
 <p><img alt="" src="https://user-images.githubusercontent.com/13688320/130889726-6168fff7-96c8-4ace-848c-587592e3075b.png" /></p>
 <p>Notice that</p>
-<div class="highlight"><pre><span></span><code>$ dmesg -T <span class="p">|</span> grep enp
-<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">14</span>:30:59 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up <span class="m">1000</span> Mbps Full Duplex, Flow Control: RX
-<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">14</span>:31:01 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Down
-<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">14</span>:31:26 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up <span class="m">100</span> Mbps Full Duplex, Flow Control: RX
-<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">14</span>:31:26 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: Link Speed was downgraded by SmartSpeed
-<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">15</span>:34:48 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Down
-<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">15</span>:35:13 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up <span class="m">100</span> Mbps Full Duplex, Flow Control: RX
-<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">15</span>:35:13 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: Link Speed was downgraded by SmartSpeed
-<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">15</span>:45:47 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Down
-<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">15</span>:46:13 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up <span class="m">100</span> Mbps Full Duplex, Flow Control: RX
-<span class="o">[</span>Mon Jun <span class="m">28</span> <span class="m">15</span>:46:13 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: Link Speed was downgraded by SmartSpeed
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dmesg<span class="w"> </span>-T<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>enp
+<span class="o">[</span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">14</span>:30:59<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>igb<span class="w"> </span><span class="m">0000</span>:02:00.0<span class="w"> </span>enp2s0:<span class="w"> </span>igb:<span class="w"> </span>enp2s0<span class="w"> </span>NIC<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Up<span class="w"> </span><span class="m">1000</span><span class="w"> </span>Mbps<span class="w"> </span>Full<span class="w"> </span>Duplex,<span class="w"> </span>Flow<span class="w"> </span>Control:<span class="w"> </span>RX
+<span class="o">[</span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">14</span>:31:01<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>igb<span class="w"> </span><span class="m">0000</span>:02:00.0<span class="w"> </span>enp2s0:<span class="w"> </span>igb:<span class="w"> </span>enp2s0<span class="w"> </span>NIC<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Down
+<span class="o">[</span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">14</span>:31:26<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>igb<span class="w"> </span><span class="m">0000</span>:02:00.0<span class="w"> </span>enp2s0:<span class="w"> </span>igb:<span class="w"> </span>enp2s0<span class="w"> </span>NIC<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Up<span class="w"> </span><span class="m">100</span><span class="w"> </span>Mbps<span class="w"> </span>Full<span class="w"> </span>Duplex,<span class="w"> </span>Flow<span class="w"> </span>Control:<span class="w"> </span>RX
+<span class="o">[</span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">14</span>:31:26<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>igb<span class="w"> </span><span class="m">0000</span>:02:00.0<span class="w"> </span>enp2s0:<span class="w"> </span>Link<span class="w"> </span>Speed<span class="w"> </span>was<span class="w"> </span>downgraded<span class="w"> </span>by<span class="w"> </span>SmartSpeed
+<span class="o">[</span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">15</span>:34:48<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>igb<span class="w"> </span><span class="m">0000</span>:02:00.0<span class="w"> </span>enp2s0:<span class="w"> </span>igb:<span class="w"> </span>enp2s0<span class="w"> </span>NIC<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Down
+<span class="o">[</span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">15</span>:35:13<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>igb<span class="w"> </span><span class="m">0000</span>:02:00.0<span class="w"> </span>enp2s0:<span class="w"> </span>igb:<span class="w"> </span>enp2s0<span class="w"> </span>NIC<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Up<span class="w"> </span><span class="m">100</span><span class="w"> </span>Mbps<span class="w"> </span>Full<span class="w"> </span>Duplex,<span class="w"> </span>Flow<span class="w"> </span>Control:<span class="w"> </span>RX
+<span class="o">[</span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">15</span>:35:13<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>igb<span class="w"> </span><span class="m">0000</span>:02:00.0<span class="w"> </span>enp2s0:<span class="w"> </span>Link<span class="w"> </span>Speed<span class="w"> </span>was<span class="w"> </span>downgraded<span class="w"> </span>by<span class="w"> </span>SmartSpeed
+<span class="o">[</span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">15</span>:45:47<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>igb<span class="w"> </span><span class="m">0000</span>:02:00.0<span class="w"> </span>enp2s0:<span class="w"> </span>igb:<span class="w"> </span>enp2s0<span class="w"> </span>NIC<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Down
+<span class="o">[</span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">15</span>:46:13<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>igb<span class="w"> </span><span class="m">0000</span>:02:00.0<span class="w"> </span>enp2s0:<span class="w"> </span>igb:<span class="w"> </span>enp2s0<span class="w"> </span>NIC<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Up<span class="w"> </span><span class="m">100</span><span class="w"> </span>Mbps<span class="w"> </span>Full<span class="w"> </span>Duplex,<span class="w"> </span>Flow<span class="w"> </span>Control:<span class="w"> </span>RX
+<span class="o">[</span>Mon<span class="w"> </span>Jun<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">15</span>:46:13<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>igb<span class="w"> </span><span class="m">0000</span>:02:00.0<span class="w"> </span>enp2s0:<span class="w"> </span>Link<span class="w"> </span>Speed<span class="w"> </span>was<span class="w"> </span>downgraded<span class="w"> </span>by<span class="w"> </span>SmartSpeed
 </code></pre></div>
 <p>where it reports that NIC link is downgraded from 1000 Mbps to 100 Mbps by SmartSpeed, which might explain that previous the fastest speed is less than 100Mbit/s.</p>
 <div class="admonition tip">
@@ -3075,29 +3075,29 @@ so it can be an indicator to check whether the job is allocated normally.</p>
 <p>默认时间戳为 “time in seconds since the kernel started”，这也是 <code>dmesg</code> 文件中的默认格式。如果支持 <code>-T</code>，自然是很方便的，否则可能需要写脚本转换，详见 <a href="https://stackoverflow.com/questions/13890789/how-do-i-convert-dmesg-timestamp-to-custom-date-format">How do I convert dmesg timestamp to custom date format? - Stack Overflow</a></p>
 </div>
 <p>After moving to the new place, the speed seems much faster (8/16/21, 10:46 AM). The speed can achieve 500 Mbit/s (Upload) and 800 Mbit/s (Download), while previously just 90 Mbit/s. And</p>
-<div class="highlight"><pre><span></span><code>$ dmesg -T <span class="p">|</span> grep enp
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:14:58 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: renamed from eth0
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:14:58 <span class="m">2021</span><span class="o">]</span> e1000e <span class="m">0000</span>:00:1f.6 enp0s31f6: renamed from eth0
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp0s31f6: link is not ready
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp0s31f6: link is not ready
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp2s0: link is not ready
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp2s0: link is not ready
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp0s31f6: link is not ready
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp2s0: link is not ready
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:05 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: enp2s0: link is not ready
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:10 <span class="m">2021</span><span class="o">]</span> e1000e <span class="m">0000</span>:00:1f.6 enp0s31f6: NIC Link is Up <span class="m">1000</span> Mbps Full Duplex, Flow Control: None
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:15:10 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_CHANGE<span class="o">)</span>: enp0s31f6: link becomes ready
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:16:26 <span class="m">2021</span><span class="o">]</span> e1000e <span class="m">0000</span>:00:1f.6 enp0s31f6: NIC Link is Down
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:16:30 <span class="m">2021</span><span class="o">]</span> igb <span class="m">0000</span>:02:00.0 enp2s0: igb: enp2s0 NIC Link is Up <span class="m">1000</span> Mbps Full Duplex, Flow Control: RX
-<span class="o">[</span>Mon Aug <span class="m">16</span> <span class="m">10</span>:16:31 <span class="m">2021</span><span class="o">]</span> IPv6: ADDRCONF<span class="o">(</span>NETDEV_CHANGE<span class="o">)</span>: enp2s0: link becomes ready
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>dmesg<span class="w"> </span>-T<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>enp
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:14:58<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>igb<span class="w"> </span><span class="m">0000</span>:02:00.0<span class="w"> </span>enp2s0:<span class="w"> </span>renamed<span class="w"> </span>from<span class="w"> </span>eth0
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:14:58<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>e1000e<span class="w"> </span><span class="m">0000</span>:00:1f.6<span class="w"> </span>enp0s31f6:<span class="w"> </span>renamed<span class="w"> </span>from<span class="w"> </span>eth0
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:15:05<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>IPv6:<span class="w"> </span>ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>:<span class="w"> </span>enp0s31f6:<span class="w"> </span>link<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>ready
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:15:05<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>IPv6:<span class="w"> </span>ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>:<span class="w"> </span>enp0s31f6:<span class="w"> </span>link<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>ready
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:15:05<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>IPv6:<span class="w"> </span>ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>:<span class="w"> </span>enp2s0:<span class="w"> </span>link<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>ready
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:15:05<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>IPv6:<span class="w"> </span>ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>:<span class="w"> </span>enp2s0:<span class="w"> </span>link<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>ready
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:15:05<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>IPv6:<span class="w"> </span>ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>:<span class="w"> </span>enp0s31f6:<span class="w"> </span>link<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>ready
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:15:05<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>IPv6:<span class="w"> </span>ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>:<span class="w"> </span>enp2s0:<span class="w"> </span>link<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>ready
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:15:05<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>IPv6:<span class="w"> </span>ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>:<span class="w"> </span>enp2s0:<span class="w"> </span>link<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>ready
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:15:10<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>e1000e<span class="w"> </span><span class="m">0000</span>:00:1f.6<span class="w"> </span>enp0s31f6:<span class="w"> </span>NIC<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Up<span class="w"> </span><span class="m">1000</span><span class="w"> </span>Mbps<span class="w"> </span>Full<span class="w"> </span>Duplex,<span class="w"> </span>Flow<span class="w"> </span>Control:<span class="w"> </span>None
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:15:10<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>IPv6:<span class="w"> </span>ADDRCONF<span class="o">(</span>NETDEV_CHANGE<span class="o">)</span>:<span class="w"> </span>enp0s31f6:<span class="w"> </span>link<span class="w"> </span>becomes<span class="w"> </span>ready
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:16:26<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>e1000e<span class="w"> </span><span class="m">0000</span>:00:1f.6<span class="w"> </span>enp0s31f6:<span class="w"> </span>NIC<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Down
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:16:30<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>igb<span class="w"> </span><span class="m">0000</span>:02:00.0<span class="w"> </span>enp2s0:<span class="w"> </span>igb:<span class="w"> </span>enp2s0<span class="w"> </span>NIC<span class="w"> </span>Link<span class="w"> </span>is<span class="w"> </span>Up<span class="w"> </span><span class="m">1000</span><span class="w"> </span>Mbps<span class="w"> </span>Full<span class="w"> </span>Duplex,<span class="w"> </span>Flow<span class="w"> </span>Control:<span class="w"> </span>RX
+<span class="o">[</span>Mon<span class="w"> </span>Aug<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">10</span>:16:31<span class="w"> </span><span class="m">2021</span><span class="o">]</span><span class="w"> </span>IPv6:<span class="w"> </span>ADDRCONF<span class="o">(</span>NETDEV_CHANGE<span class="o">)</span>:<span class="w"> </span>enp2s0:<span class="w"> </span>link<span class="w"> </span>becomes<span class="w"> </span>ready
 </code></pre></div>
 <p>it stays at 1000 Mbps, which seems to support the testing results.</p>
 <p>Alternatively, we can use </p>
-<div class="highlight"><pre><span></span><code>$ ethtool enp2s0 <span class="p">|</span> grep Speed
-    Speed: 1000Mb/s
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ethtool<span class="w"> </span>enp2s0<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Speed
+<span class="w">    </span>Speed:<span class="w"> </span>1000Mb/s
 </code></pre></div>
 <p>or</p>
-<div class="highlight"><pre><span></span><code>$ cat /sys/class/net/enp2s0/speed
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>/sys/class/net/enp2s0/speed
 <span class="m">1000</span>
 </code></pre></div>
 <p>to obtain the speed of the NIC. It is -1 for unused interfaces. Refer to <a href="https://serverfault.com/questions/207474/how-do-i-verify-the-speed-of-my-nic">How do I verify the speed of my NIC? - Server Fault</a></p>
@@ -3178,7 +3178,7 @@ so it can be an indicator to check whether the job is allocated normally.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

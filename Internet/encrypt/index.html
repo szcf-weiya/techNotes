@@ -2449,9 +2449,9 @@
 <p>source: <a href="https://zh.wikipedia.org/wiki/RC4">Wiki: RC4</a></p>
 </blockquote>
 <p>但是在 <code>stapc220</code> 中并不支持 <code>arcfour</code></p>
-<div class="highlight"><pre><span></span><code>weiya@stapc220:~$ ssh -V
-OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL <span class="m">1</span>.0.2n  <span class="m">7</span> Dec <span class="m">2017</span>
-weiya@stapc220:~$ ssh -Q cipher
+<div class="highlight"><pre><span></span><code>weiya@stapc220:~$<span class="w"> </span>ssh<span class="w"> </span>-V
+OpenSSH_7.6p1<span class="w"> </span>Ubuntu-4ubuntu0.3,<span class="w"> </span>OpenSSL<span class="w"> </span><span class="m">1</span>.0.2n<span class="w">  </span><span class="m">7</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">2017</span>
+weiya@stapc220:~$<span class="w"> </span>ssh<span class="w"> </span>-Q<span class="w"> </span>cipher
 3des-cbc
 aes128-cbc
 aes192-cbc
@@ -2465,9 +2465,9 @@ aes256-gcm@openssh.com
 chacha20-poly1305@openssh.com
 </code></pre></div>
 <p>但是稍早一点的版本便支持 <code>arcfour</code>，</p>
-<div class="highlight"><pre><span></span><code>weiya@aliyun:~$ ssh -V
-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13, OpenSSL <span class="m">1</span>.0.1f <span class="m">6</span> Jan <span class="m">2014</span>
-weiya@aliyun:~$ ssh -Q cipher
+<div class="highlight"><pre><span></span><code>weiya@aliyun:~$<span class="w"> </span>ssh<span class="w"> </span>-V
+OpenSSH_6.6.1p1<span class="w"> </span>Ubuntu-2ubuntu2.13,<span class="w"> </span>OpenSSL<span class="w"> </span><span class="m">1</span>.0.1f<span class="w"> </span><span class="m">6</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">2014</span>
+weiya@aliyun:~$<span class="w"> </span>ssh<span class="w"> </span>-Q<span class="w"> </span>cipher
 3des-cbc
 blowfish-cbc
 cast128-cbc
@@ -2486,7 +2486,7 @@ aes256-gcm@openssh.com
 chacha20-poly1305@openssh.com
 </code></pre></div>
 <p>试图添加未支持的加密算法，主要思想就是在 <code>/etc/ssh/sshd_config</code> 中加入</p>
-<div class="highlight"><pre><span></span><code>Ciphers cipher1,cipher2,cipher3
+<div class="highlight"><pre><span></span><code>Ciphers<span class="w"> </span>cipher1,cipher2,cipher3
 </code></pre></div>
 <p>参考</p>
 <ul>
@@ -2505,19 +2505,19 @@ chacha20-poly1305@openssh.com
 </blockquote>
 <p>但似乎各有优劣，并没有明显的强弱关系，而且也暂时没找到针对 ssh 使用的加密算法的评测。</p>
 <h2 id="md5">MD5<a class="headerlink" href="#md5" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>~$ <span class="nb">printf</span> <span class="s2">&quot;hello\n&quot;</span> <span class="p">|</span> md5sum
-b1946ac92492d2347c6235b4d2611184  -
-~$ <span class="nb">printf</span> <span class="s2">&quot;hello&quot;</span> <span class="p">|</span> md5sum
-5d41402abc4b2a76b9719d911017c592  -
-~$ <span class="nb">echo</span> -n <span class="s2">&quot;hello&quot;</span> <span class="p">|</span> md5sum
-5d41402abc4b2a76b9719d911017c592  -
-~$ <span class="nb">echo</span> <span class="s2">&quot;hello&quot;</span> <span class="p">|</span> md5sum
-b1946ac92492d2347c6235b4d2611184  -
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;hello\n&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>md5sum
+b1946ac92492d2347c6235b4d2611184<span class="w">  </span>-
+~$<span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>md5sum
+5d41402abc4b2a76b9719d911017c592<span class="w">  </span>-
+~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>md5sum
+5d41402abc4b2a76b9719d911017c592<span class="w">  </span>-
+~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>md5sum
+b1946ac92492d2347c6235b4d2611184<span class="w">  </span>-
 </code></pre></div>
 <p>where <code>-n</code> does not output the trailing newline <code>\n</code>, but </p>
-<div class="highlight"><pre><span></span><code>~$ <span class="nb">echo</span> -n <span class="s2">&quot;hello\n&quot;</span> <span class="p">|</span> md5sum
-20e2ad363e7486d9351ee2ea407e3200  -
-~$ <span class="nb">echo</span> -n <span class="s2">&quot;hello\n&quot;</span>
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;hello\n&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>md5sum
+20e2ad363e7486d9351ee2ea407e3200<span class="w">  </span>-
+~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;hello\n&quot;</span>
 hello<span class="se">\n</span>~$
 </code></pre></div>
 <p>other materals releated to MD5</p>
@@ -2602,7 +2602,7 @@ hello<span class="se">\n</span>~$
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

@@ -3003,15 +3003,15 @@
 <h3 id="run-locally">run locally<a class="headerlink" href="#run-locally" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 0. install prerequisites: https://jekyllrb.com/docs/installation/ubuntu/</span>
 <span class="c1"># 1. install the jekyll and bundler gems</span>
-gem install jekyll bundler
+gem<span class="w"> </span>install<span class="w"> </span>jekyll<span class="w"> </span>bundler
 <span class="c1"># 2. build the site locally</span>
-bundle <span class="nb">exec</span> jekyll serve
+bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>jekyll<span class="w"> </span>serve
 </code></pre></div>
 <p>if it broken down, such as </p>
-<div class="highlight"><pre><span></span><code>/home/weiya/gems/gems/octokit-4.14.0/lib/octokit/middleware/follow_redirects.rb:14:in <span class="sb">`</span>&lt;module:Middleware&gt;<span class="err">&#39;</span>: uninitialized constant Faraday::Error::ClientError <span class="o">(</span>NameError<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>/home/weiya/gems/gems/octokit-4.14.0/lib/octokit/middleware/follow_redirects.rb:14:in<span class="w"> </span><span class="sb">`</span>&lt;module:Middleware&gt;<span class="err">&#39;</span>:<span class="w"> </span>uninitialized<span class="w"> </span>constant<span class="w"> </span>Faraday::Error::ClientError<span class="w"> </span><span class="o">(</span>NameError<span class="o">)</span>
 </code></pre></div>
 <p>try to <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll">update the local gem</a> via</p>
-<div class="highlight"><pre><span></span><code>bundle update github-pages
+<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span>update<span class="w"> </span>github-pages
 </code></pre></div>
 <h3 id="unsupported-plugins-by-github-pages">unsupported plugins by Github pages<a class="headerlink" href="#unsupported-plugins-by-github-pages" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -3116,26 +3116,26 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p><a href="https://joelglovier.com/writing/rss-for-jekyll">RSS for Jekyll blogs</a></p>
 <h2 id="_3">图片旋转后无效果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>原图片信息为</p>
-<div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames <span class="m">3</span>
+<div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg:<span class="w"> </span>JPEG<span class="w"> </span>image<span class="w"> </span>data,<span class="w"> </span>JFIF<span class="w"> </span>standard<span class="w"> </span><span class="m">1</span>.01,<span class="w"> </span>aspect<span class="w"> </span>ratio,<span class="w"> </span>density<span class="w"> </span>1x1,<span class="w"> </span>segment<span class="w"> </span>length<span class="w"> </span><span class="m">16</span>,<span class="w"> </span>baseline,<span class="w"> </span>precision<span class="w"> </span><span class="m">8</span>,<span class="w"> </span>1080x1440,<span class="w"> </span>frames<span class="w"> </span><span class="m">3</span>
 </code></pre></div>
 <p>采用 Shotwell 旋转图片后，
-<div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, Exif Standard: <span class="o">[</span>TIFF image data, little-endian, <span class="nv">direntries</span><span class="o">=</span><span class="m">3</span>, <span class="nv">orientation</span><span class="o">=</span>lower-left, <span class="nv">software</span><span class="o">=</span>Shotwell <span class="m">0</span>.22.0<span class="o">]</span>, baseline, precision <span class="m">8</span>, 1080x1440, frames3
+<div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg:<span class="w"> </span>JPEG<span class="w"> </span>image<span class="w"> </span>data,<span class="w"> </span>JFIF<span class="w"> </span>standard<span class="w"> </span><span class="m">1</span>.01,<span class="w"> </span>aspect<span class="w"> </span>ratio,<span class="w"> </span>density<span class="w"> </span>1x1,<span class="w"> </span>segment<span class="w"> </span>length<span class="w"> </span><span class="m">16</span>,<span class="w"> </span>Exif<span class="w"> </span>Standard:<span class="w"> </span><span class="o">[</span>TIFF<span class="w"> </span>image<span class="w"> </span>data,<span class="w"> </span>little-endian,<span class="w"> </span><span class="nv">direntries</span><span class="o">=</span><span class="m">3</span>,<span class="w"> </span><span class="nv">orientation</span><span class="o">=</span>lower-left,<span class="w"> </span><span class="nv">software</span><span class="o">=</span>Shotwell<span class="w"> </span><span class="m">0</span>.22.0<span class="o">]</span>,<span class="w"> </span>baseline,<span class="w"> </span>precision<span class="w"> </span><span class="m">8</span>,<span class="w"> </span>1080x1440,<span class="w"> </span>frames3
 </code></pre></div></p>
 <p>多了 EXIF 信息，其中有 orientation 信息。但是参考 <a href="https://stackoverflow.com/questions/24658365/img-tag-displays-wrong-orientation/24658511">img tag displays wrong orientation</a> 的帖子，可知，有些浏览器并不遵循这个规则，即无视　EXIF 信息，从而网页端无效果。有人提到可以加上　</p>
-<div class="highlight"><pre><span></span><code><span class="nt">img</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">image-orientation</span><span class="p">:</span><span class="w"> </span><span class="kc">from-image</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">img</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">image-orientation</span><span class="p">:</span><span class="w"> </span><span class="kc">from-image</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>但这个似乎只有 Firefox 和　Safari 支持，Chrome 不支持。</p>
 <p>解决方案：采用 <code>mogrify</code> 或 <code>convert</code> 进行旋转，如</p>
-<div class="highlight"><pre><span></span><code>mogrify -rotate <span class="s2">&quot;-90&quot;</span> <span class="m">2018</span>-10-29-cafe.jpg
+<div class="highlight"><pre><span></span><code>mogrify<span class="w"> </span>-rotate<span class="w"> </span><span class="s2">&quot;-90&quot;</span><span class="w"> </span><span class="m">2018</span>-10-29-cafe.jpg
 </code></pre></div>
 <p>查看文件信息</p>
-<div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg: JPEG image data, JFIF standard <span class="m">1</span>.01, aspect ratio, density 1x1, segment length <span class="m">16</span>, baseline, precision <span class="m">8</span>, 1440x1080, frames <span class="m">3</span>
+<div class="highlight"><pre><span></span><code><span class="m">2018</span>-10-29-cafe.jpg:<span class="w"> </span>JPEG<span class="w"> </span>image<span class="w"> </span>data,<span class="w"> </span>JFIF<span class="w"> </span>standard<span class="w"> </span><span class="m">1</span>.01,<span class="w"> </span>aspect<span class="w"> </span>ratio,<span class="w"> </span>density<span class="w"> </span>1x1,<span class="w"> </span>segment<span class="w"> </span>length<span class="w"> </span><span class="m">16</span>,<span class="w"> </span>baseline,<span class="w"> </span>precision<span class="w"> </span><span class="m">8</span>,<span class="w"> </span>1440x1080,<span class="w"> </span>frames<span class="w"> </span><span class="m">3</span>
 </code></pre></div>
 <p>注意到没有 EXIF 信息，而且 size 也由 1080x1440 变成了 1440x1080，所以这算是真旋转，而之前的加 EXIF 信息算是伪旋转吧。</p>
 <p>如果文件已经存在 orientation 的 EXIF 信息，则 <code>mogrify -rotate</code> 似乎不起作用，解决方案为直接删掉 EXIF 信息，再进行相应的 rotate 操作，其中删除 EXIF 信息的命令是</p>
-<div class="highlight"><pre><span></span><code>exiftool -all<span class="o">=</span> /tmp/my_photo.jpg
+<div class="highlight"><pre><span></span><code>exiftool<span class="w"> </span>-all<span class="o">=</span><span class="w"> </span>/tmp/my_photo.jpg
 </code></pre></div>
 <p>参考 <a href="https://askubuntu.com/questions/260810/how-can-i-read-and-remove-meta-exif-data-from-my-photos-using-the-command-line">How can I read and remove meta (exif) data from my photos using the command line?</a></p>
 <h2 id="jekyll-tags">jekyll tags 逗号分隔<a class="headerlink" href="#jekyll-tags" title="Permanent link">&para;</a></h2>
@@ -3165,16 +3165,16 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>新建 tag 页面后，发现链接竟然跳到源站域名上去了，跟又拍那边的技术支持沟通也没找到原因，最后猛然想到是 tag 页面的 url 没有加斜杠，<a href="https://blog.csdn.net/u010525694/article/details/78591355">查了一下</a>，加不加斜杠区别还挺大的。</p>
 <h2 id="_5">博客中的定理环境<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>通过 css 实现，例如</p>
-<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">theorem</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">.</span><span class="nc">theorem</span><span class="p">:</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Theorem.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">theorem</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">theorem</span><span class="p">:</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Theorem.&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">normal</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>详见 <a href="http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/">LaTeX Theorem-like Environments for the Web</a></p>
 <p>这种方法不能使用 markdown 的列表环境，有时候会不太方便。注意到 kramdown 本身具有一些特性可以解决这个问题，比如设置 Block Attributes，详见 <a href="https://kramdown.gettalong.org/quickref.html">Quick Reference of kramdown</a></p>
@@ -3183,14 +3183,14 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <p>{: .theorem}</p>
 </blockquote>
 <p>实现定理环境，而且这样还有额外的好处，可以突出定理。但是 before 的字 &ldquo;Theorem&rdquo; 会单独占据一行，误打误撞看到 <a href="https://stackoverflow.com/questions/32909991/adding-quotes-to-blockquote">Adding quotes to blockquote</a>，试了一下</p>
-<div class="highlight"><pre><span></span><code><span class="nt">blockquote</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">blockquote</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 </code></pre></div>
 <p>可以解决这个问题，但担心会破坏其他的 blockquote 环境，于是指定 theorem 可以这样处理，即</p>
-<div class="highlight"><pre><span></span><code><span class="nt">blockquote</span><span class="p">.</span><span class="nc">theorem</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nt">blockquote</span><span class="p">.</span><span class="nc">theorem</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 </code></pre></div>
 <p>这个用法参考 <a href="https://www.runoob.com/css/css-id-class.html">CSS Id 和 Class</a></p>
 <h2 id="list-start-from-0">list start from 0<a class="headerlink" href="#list-start-from-0" title="Permanent link">&para;</a></h2>
@@ -3219,21 +3219,21 @@ URL (Locator) 還讓你可以&rdquo;找到&rdquo;資源 (所以URL比一般的UR
 <div class="highlight"><pre><span></span><code>rubyzip-2.0.0 requires ruby version &gt;= 2.4, which is incompatible with the current version, ruby 2.3.1p112
 </code></pre></div>
 <p>看样子 ruby 版本不够，于是参考 <a href="https://askubuntu.com/questions/839775/how-do-i-upgrade-to-ruby-2-2-on-my-ubuntu-system">How do I upgrade to Ruby 2.2 on my Ubuntu system?</a></p>
-<div class="highlight"><pre><span></span><code>sudo apt-add-repository ppa:brightbox/ruby-ng
-sudo apt-get update
-sudo apt-get install ruby2.4
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-add-repository<span class="w"> </span>ppa:brightbox/ruby-ng
+sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ruby2.4
 </code></pre></div>
 <p>安装了 <code>ruby2.4</code>，完成后 <code>ruby</code> 也自动从 <code>ruby2.3</code> 更改到了 <code>ruby2.4</code>，但是重新运行</p>
-<div class="highlight"><pre><span></span><code>bundle <span class="nb">exec</span> jekyll serve
+<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>jekyll<span class="w"> </span>serve
 </code></pre></div>
 <p>还是报同样的错误信息。后来参考 <a href="https://github.com/bundler/bundler/issues/4260">Bundler using wrong ruby version</a>，运行</p>
-<div class="highlight"><pre><span></span><code>bundle env <span class="p">|</span> grep ruby
+<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span>env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ruby
 </code></pre></div>
 <p>发现里面的版本确实还是 2.3，于是按照里面的建议运行</p>
-<div class="highlight"><pre><span></span><code>gem install bundler
+<div class="highlight"><pre><span></span><code>gem<span class="w"> </span>install<span class="w"> </span>bundler
 </code></pre></div>
 <p>这样重新运行 <code>bundle env | grep ruby</code> 发现版本确实更新过来了。但是再次运行  </p>
-<div class="highlight"><pre><span></span><code>bundle <span class="nb">exec</span> jekyll serve
+<div class="highlight"><pre><span></span><code>bundle<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>jekyll<span class="w"> </span>serve
 </code></pre></div>
 <p>出现了新的错误</p>
 <blockquote>
@@ -3242,10 +3242,10 @@ Make sure that <code>gem install commonmarker -v '0.17.13' --source 'https://rub
 </blockquote>
 <p>后来参考 <a href="https://stackoverflow.com/questions/20559255/error-while-installing-json-gem-mkmf-rb-cant-find-header-files-for-ruby">Error while installing json gem &lsquo;mkmf.rb can&rsquo;t find header files for ruby&rsquo;</a></p>
 <p>安装</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install ruby2.4-dev
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ruby2.4-dev
 </code></pre></div>
 <p>这里按照报错信息检查发现 <code>/usr/lib/ruby/</code> 文件夹下的确没有 <code>include</code> 目录，只有 <code>2.4</code>, <code>2.5</code> 等目录，则这需要装对应 <code>ruby</code> 版本的 <code>dev</code>。当我把系统从 Ubuntu 16.04 更新到 Ubuntu 18.04 时，此时系统默认为 <code>ruby-2.5</code>,则我需要装的是</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install ruby2.5-dev
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ruby2.5-dev
 </code></pre></div>
 <p><del>解决了问题！</del></p>
 <p>发现还没有这么简单，总是报错</p>
@@ -3315,18 +3315,18 @@ ERROR:  While executing gem ... (Errno::EACCES)
 </ol>
 <h2 id="pygments">Pygments<a class="headerlink" href="#pygments" title="Permanent link">&para;</a></h2>
 <p>I have installed <code>pygmentize</code> and the corresponding python should be the system <code>python3</code></p>
-<div class="highlight"><pre><span></span><code>$ which pygmentize 
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>which<span class="w"> </span>pygmentize<span class="w"> </span>
 /usr/bin/pygmentize
-$ pygmentize -V
-Pygments version <span class="m">2</span>.3.1, <span class="o">(</span>c<span class="o">)</span> <span class="m">2006</span>-2017 by Georg Brandl.
-$ which python3
+$<span class="w"> </span>pygmentize<span class="w"> </span>-V
+Pygments<span class="w"> </span>version<span class="w"> </span><span class="m">2</span>.3.1,<span class="w"> </span><span class="o">(</span>c<span class="o">)</span><span class="w"> </span><span class="m">2006</span>-2017<span class="w"> </span>by<span class="w"> </span>Georg<span class="w"> </span>Brandl.
+$<span class="w"> </span>which<span class="w"> </span>python3
 /usr/bin/python3
-$ pip3 install Pygments
-WARNING: pip is being invoked by an old script wrapper. This will fail <span class="k">in</span> a future version of pip.
-Please see https://github.com/pypa/pip/issues/5599 <span class="k">for</span> advice on fixing the underlying issue.
-To avoid this problem you can invoke Python with <span class="s1">&#39;-m pip&#39;</span> instead of running pip directly.
-Looking <span class="k">in</span> indexes: https://pypi.org/simple/
-Requirement already satisfied: Pygments <span class="k">in</span> /usr/lib/python3/dist-packages <span class="o">(</span><span class="m">2</span>.3.1<span class="o">)</span>
+$<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>Pygments
+WARNING:<span class="w"> </span>pip<span class="w"> </span>is<span class="w"> </span>being<span class="w"> </span>invoked<span class="w"> </span>by<span class="w"> </span>an<span class="w"> </span>old<span class="w"> </span>script<span class="w"> </span>wrapper.<span class="w"> </span>This<span class="w"> </span>will<span class="w"> </span>fail<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>future<span class="w"> </span>version<span class="w"> </span>of<span class="w"> </span>pip.
+Please<span class="w"> </span>see<span class="w"> </span>https://github.com/pypa/pip/issues/5599<span class="w"> </span><span class="k">for</span><span class="w"> </span>advice<span class="w"> </span>on<span class="w"> </span>fixing<span class="w"> </span>the<span class="w"> </span>underlying<span class="w"> </span>issue.
+To<span class="w"> </span>avoid<span class="w"> </span>this<span class="w"> </span>problem<span class="w"> </span>you<span class="w"> </span>can<span class="w"> </span>invoke<span class="w"> </span>Python<span class="w"> </span>with<span class="w"> </span><span class="s1">&#39;-m pip&#39;</span><span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>running<span class="w"> </span>pip<span class="w"> </span>directly.
+Looking<span class="w"> </span><span class="k">in</span><span class="w"> </span>indexes:<span class="w"> </span>https://pypi.org/simple/
+Requirement<span class="w"> </span>already<span class="w"> </span>satisfied:<span class="w"> </span>Pygments<span class="w"> </span><span class="k">in</span><span class="w"> </span>/usr/lib/python3/dist-packages<span class="w"> </span><span class="o">(</span><span class="m">2</span>.3.1<span class="o">)</span>
 </code></pre></div>
 <p>Pygments can be used in Jekyll via Rouge, see <a href="https://lyk6756.github.io/2016/11/22/use_pygments.html">Use Pygments for Code Snippet Highlighting in Jekyll - 李宇琨的博客</a></p>
 <p>With such old version, the formatters like <code>material</code>, <code>github-dark</code> are not supported.</p>
@@ -3418,7 +3418,7 @@ Requirement already satisfied: Pygments <span class="k">in</span> /usr/lib/pytho
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

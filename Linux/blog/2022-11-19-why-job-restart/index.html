@@ -2435,16 +2435,16 @@
 
 <h2 id="20221120">2022.11.20<a class="headerlink" href="#20221120" title="Permanent link">&para;</a></h2>
 <p>起因是发现突然多了 slurm 的输出文件，</p>
-<div class="highlight"><pre><span></span><code>$ ll -at <span class="p">|</span> head -10
-       <span class="m">0</span> Nov <span class="m">19</span> <span class="m">17</span>:56 slurm-1144481.out
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ll<span class="w"> </span>-at<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-10
+<span class="w">       </span><span class="m">0</span><span class="w"> </span>Nov<span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">17</span>:56<span class="w"> </span>slurm-1144481.out
 </code></pre></div>
 <p>第一感觉是 dummy.job 超过时间限制了，然后一看</p>
-<div class="highlight"><pre><span></span><code>             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
-           <span class="m">1144481</span>   statdgx dummy.jo s******  R    <span class="m">6</span>:57:16      <span class="m">1</span> chpc-gpu019
+<div class="highlight"><pre><span></span><code><span class="w">             </span>JOBID<span class="w"> </span>PARTITION<span class="w">     </span>NAME<span class="w">     </span>USER<span class="w"> </span>ST<span class="w">       </span>TIME<span class="w">  </span>NODES<span class="w"> </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+<span class="w">           </span><span class="m">1144481</span><span class="w">   </span>statdgx<span class="w"> </span>dummy.jo<span class="w"> </span>s******<span class="w">  </span>R<span class="w">    </span><span class="m">6</span>:57:16<span class="w">      </span><span class="m">1</span><span class="w"> </span>chpc-gpu019
 </code></pre></div>
 <p>竟然才运行 6 小时，而当前时间为</p>
-<div class="highlight"><pre><span></span><code>$ date
-Sun Nov <span class="m">20</span> <span class="m">00</span>:53:59 HKT <span class="m">2022</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date
+Sun<span class="w"> </span>Nov<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">00</span>:53:59<span class="w"> </span>HKT<span class="w"> </span><span class="m">2022</span>
 </code></pre></div>
 <p>这刚好能跟 slurm-1144481.out 的更新时间对得上 (17:56 + 6:57 = 24:53)，但是 6h 前我可还在睡梦中，不可能自己提交 job。</p>
 <p>第一个猜测是</p>
@@ -2453,24 +2453,24 @@ Sun Nov <span class="m">20</span> <span class="m">00</span>:53:59 HKT <span clas
 </div>
 <p>毕竟此前没遇到过触发时间限制，所以并不确信触发时间限制后的行为。如果是这样，下面要验证的就是此 job 实际提交于 2022-10-20 左右。</p>
 <p>首先检查 slurm-1144481.out 详细的时间戳，</p>
-<div class="highlight"><pre><span></span><code>$ stat slurm-1144481.out 
-  File: ‘slurm-1144481.out’
-  Size: <span class="m">0</span>           Blocks: <span class="m">0</span>          IO Block: <span class="m">1048576</span> regular empty file
-Device: 2ah/42d Inode: <span class="m">3225764414</span>  Links: <span class="m">1</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>stat<span class="w"> </span>slurm-1144481.out<span class="w"> </span>
+<span class="w">  </span>File:<span class="w"> </span>‘slurm-1144481.out’
+<span class="w">  </span>Size:<span class="w"> </span><span class="m">0</span><span class="w">           </span>Blocks:<span class="w"> </span><span class="m">0</span><span class="w">          </span>IO<span class="w"> </span>Block:<span class="w"> </span><span class="m">1048576</span><span class="w"> </span>regular<span class="w"> </span>empty<span class="w"> </span>file
+Device:<span class="w"> </span>2ah/42d<span class="w"> </span>Inode:<span class="w"> </span><span class="m">3225764414</span><span class="w">  </span>Links:<span class="w"> </span><span class="m">1</span>
 
-Context: system_u:object_r:user_home_t:s0
-Access: <span class="m">2022</span>-11-02 <span class="m">06</span>:23:31.643498231 +0800
-Modify: <span class="m">2022</span>-11-19 <span class="m">17</span>:56:05.643506847 +0800
-Change: <span class="m">2022</span>-11-19 <span class="m">17</span>:56:05.643506847 +0800
- Birth: -
+Context:<span class="w"> </span>system_u:object_r:user_home_t:s0
+Access:<span class="w"> </span><span class="m">2022</span>-11-02<span class="w"> </span><span class="m">06</span>:23:31.643498231<span class="w"> </span>+0800
+Modify:<span class="w"> </span><span class="m">2022</span>-11-19<span class="w"> </span><span class="m">17</span>:56:05.643506847<span class="w"> </span>+0800
+Change:<span class="w"> </span><span class="m">2022</span>-11-19<span class="w"> </span><span class="m">17</span>:56:05.643506847<span class="w"> </span>+0800
+<span class="w"> </span>Birth:<span class="w"> </span>-
 </code></pre></div>
 <p>早于 2022-11-02 就有过访问行为，至少表明该文件不是刚刚创建的。</p>
 <p>进一步查看 job 提交日志，</p>
-<div class="highlight"><pre><span></span><code>$ sacct --format<span class="o">=</span>JobID,JobName,NodeList,Submit,Start,SystemComment,End,State,Reason,Suspended,Timelimit,Comment --starttime<span class="o">=</span><span class="m">2022</span>-10-01 <span class="p">|</span> grep dummy
-<span class="m">1114583</span>       dummy.job      chpc-cn116 <span class="m">2022</span>-09-29T05:29:58 <span class="m">2022</span>-09-29T05:29:58                 <span class="m">2022</span>-10-14T10:24:05 CANCELLED+                   None   <span class="m">00</span>:00:00 <span class="m">30</span>-00:00:+                
-<span class="m">1114584</span>       dummy.job      chpc-cn116 <span class="m">2022</span>-09-29T05:37:18 <span class="m">2022</span>-09-29T05:37:18                 <span class="m">2022</span>-10-14T10:24:03 CANCELLED+                   None   <span class="m">00</span>:00:00 <span class="m">30</span>-00:00:+                
-<span class="m">1144480</span>       dummy.job   None assigned <span class="m">2022</span>-11-02T06:21:39 <span class="m">2022</span>-11-02T06:21:39                 <span class="m">2022</span>-11-02T06:21:39     FAILED                   None   <span class="m">00</span>:00:00 <span class="m">30</span>-00:00:+                
-<span class="m">1144481</span>       dummy.job     chpc-gpu019 <span class="m">2022</span>-11-19T17:52:26 <span class="m">2022</span>-11-19T17:56:05                             Unknown    RUNNING              BeginTime   <span class="m">00</span>:00:00 <span class="m">30</span>-00:00:+         
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sacct<span class="w"> </span>--format<span class="o">=</span>JobID,JobName,NodeList,Submit,Start,SystemComment,End,State,Reason,Suspended,Timelimit,Comment<span class="w"> </span>--starttime<span class="o">=</span><span class="m">2022</span>-10-01<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>dummy
+<span class="m">1114583</span><span class="w">       </span>dummy.job<span class="w">      </span>chpc-cn116<span class="w"> </span><span class="m">2022</span>-09-29T05:29:58<span class="w"> </span><span class="m">2022</span>-09-29T05:29:58<span class="w">                 </span><span class="m">2022</span>-10-14T10:24:05<span class="w"> </span>CANCELLED+<span class="w">                   </span>None<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">30</span>-00:00:+<span class="w">                </span>
+<span class="m">1114584</span><span class="w">       </span>dummy.job<span class="w">      </span>chpc-cn116<span class="w"> </span><span class="m">2022</span>-09-29T05:37:18<span class="w"> </span><span class="m">2022</span>-09-29T05:37:18<span class="w">                 </span><span class="m">2022</span>-10-14T10:24:03<span class="w"> </span>CANCELLED+<span class="w">                   </span>None<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">30</span>-00:00:+<span class="w">                </span>
+<span class="m">1144480</span><span class="w">       </span>dummy.job<span class="w">   </span>None<span class="w"> </span>assigned<span class="w"> </span><span class="m">2022</span>-11-02T06:21:39<span class="w"> </span><span class="m">2022</span>-11-02T06:21:39<span class="w">                 </span><span class="m">2022</span>-11-02T06:21:39<span class="w">     </span>FAILED<span class="w">                   </span>None<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">30</span>-00:00:+<span class="w">                </span>
+<span class="m">1144481</span><span class="w">       </span>dummy.job<span class="w">     </span>chpc-gpu019<span class="w"> </span><span class="m">2022</span>-11-19T17:52:26<span class="w"> </span><span class="m">2022</span>-11-19T17:56:05<span class="w">                             </span>Unknown<span class="w">    </span>RUNNING<span class="w">              </span>BeginTime<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">30</span>-00:00:+<span class="w">         </span>
 </code></pre></div>
 <p>发现相邻的上一个 job 1144480 是 2022-11-02T06:21:39 提交，这说明 1144481 应不早于这个时间戳提交。那第一个猜测不成立。</p>
 <p>那问题就来了，</p>
@@ -2512,38 +2512,38 @@ JobId=1144481 JobName=dummy.job
 <p class="admonition-title">解除 PENDING 后，系统重新提交，产生了新的 submit 时间戳？</p>
 </div>
 <p>于是检查是否存在 STATE 为 RUNNING 而 REASON 也为 BeginTime 的 job，还真有几个，</p>
-<div class="highlight"><pre><span></span><code>$ sacct -a -X --format<span class="o">=</span>JobID,JobName,NodeList,Submit,Start,SystemComment,End,State,Reason,Suspended,Timelimit,Comment --starttime<span class="o">=</span><span class="m">2022</span>-10-01 <span class="p">|</span> grep RUNNING <span class="p">|</span> grep BeginTime
-<span class="m">1150975</span>           s1h71 chpc-cn<span class="o">[</span><span class="m">023</span>-02+ <span class="m">2022</span>-11-17T11:43:44 <span class="m">2022</span>-11-18T21:06:01                             Unknown    RUNNING              BeginTime   <span class="m">00</span>:00:00 <span class="m">7</span>-00:00:00                
-<span class="m">1151170</span>      PRD.71.02+      chpc-cn002 <span class="m">2022</span>-11-17T16:36:11 <span class="m">2022</span>-11-18T01:01:59                             Unknown    RUNNING              BeginTime   <span class="m">00</span>:00:00 <span class="m">7</span>-00:00:00                
-<span class="m">1144481</span>       dummy.job     chpc-gpu019 <span class="m">2022</span>-11-19T17:52:26 <span class="m">2022</span>-11-19T17:56:05                             Unknown    RUNNING              BeginTime   <span class="m">00</span>:00:00 <span class="m">30</span>-00:00:+                
-<span class="m">1150938</span>      tc_aipw_g+     chpc-gpu019 <span class="m">2022</span>-11-19T17:52:26 <span class="m">2022</span>-11-19T17:56:05                             Unknown    RUNNING              BeginTime   <span class="m">00</span>:00:00 <span class="m">4</span>-04:00:00                
-<span class="m">1150942</span>      1tc_aipw_+     chpc-gpu019 <span class="m">2022</span>-11-19T17:52:26 <span class="m">2022</span>-11-19T17:56:05                             Unknown    RUNNING              BeginTime   <span class="m">00</span>:00:00 <span class="m">4</span>-04:00:00
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sacct<span class="w"> </span>-a<span class="w"> </span>-X<span class="w"> </span>--format<span class="o">=</span>JobID,JobName,NodeList,Submit,Start,SystemComment,End,State,Reason,Suspended,Timelimit,Comment<span class="w"> </span>--starttime<span class="o">=</span><span class="m">2022</span>-10-01<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>RUNNING<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>BeginTime
+<span class="m">1150975</span><span class="w">           </span>s1h71<span class="w"> </span>chpc-cn<span class="o">[</span><span class="m">023</span>-02+<span class="w"> </span><span class="m">2022</span>-11-17T11:43:44<span class="w"> </span><span class="m">2022</span>-11-18T21:06:01<span class="w">                             </span>Unknown<span class="w">    </span>RUNNING<span class="w">              </span>BeginTime<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">7</span>-00:00:00<span class="w">                </span>
+<span class="m">1151170</span><span class="w">      </span>PRD.71.02+<span class="w">      </span>chpc-cn002<span class="w"> </span><span class="m">2022</span>-11-17T16:36:11<span class="w"> </span><span class="m">2022</span>-11-18T01:01:59<span class="w">                             </span>Unknown<span class="w">    </span>RUNNING<span class="w">              </span>BeginTime<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">7</span>-00:00:00<span class="w">                </span>
+<span class="m">1144481</span><span class="w">       </span>dummy.job<span class="w">     </span>chpc-gpu019<span class="w"> </span><span class="m">2022</span>-11-19T17:52:26<span class="w"> </span><span class="m">2022</span>-11-19T17:56:05<span class="w">                             </span>Unknown<span class="w">    </span>RUNNING<span class="w">              </span>BeginTime<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">30</span>-00:00:+<span class="w">                </span>
+<span class="m">1150938</span><span class="w">      </span>tc_aipw_g+<span class="w">     </span>chpc-gpu019<span class="w"> </span><span class="m">2022</span>-11-19T17:52:26<span class="w"> </span><span class="m">2022</span>-11-19T17:56:05<span class="w">                             </span>Unknown<span class="w">    </span>RUNNING<span class="w">              </span>BeginTime<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">4</span>-04:00:00<span class="w">                </span>
+<span class="m">1150942</span><span class="w">      </span>1tc_aipw_+<span class="w">     </span>chpc-gpu019<span class="w"> </span><span class="m">2022</span>-11-19T17:52:26<span class="w"> </span><span class="m">2022</span>-11-19T17:56:05<span class="w">                             </span>Unknown<span class="w">    </span>RUNNING<span class="w">              </span>BeginTime<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">4</span>-04:00:00
 </code></pre></div>
 <p>而且注意最后三条的 submit, start 时间戳竟然一模一样，而且也在 chpc-gpu019，这不是巧合！于是根据时间戳搜索，看看还有没有更多的 job，又发现两条，但它们运行几个小时后被 cancel 了。</p>
-<div class="highlight"><pre><span></span><code>$ sacct -a -X --format<span class="o">=</span>JobID,JobName,NodeList,Submit,Start,SystemComment,End,State,Reason,Suspended,Timelimit,Comment --starttime<span class="o">=</span><span class="m">2022</span>-10-01 <span class="p">|</span> grep <span class="m">2022</span>-11-19T17:52:26
-<span class="m">1152221</span>       p0.3_glm1 chpc-cn<span class="o">[</span><span class="m">053</span>-05+ <span class="m">2022</span>-11-18T20:24:06 <span class="m">2022</span>-11-18T20:24:06                 <span class="m">2022</span>-11-19T17:52:26  NODE_FAIL                   None   <span class="m">00</span>:00:00 <span class="m">7</span>-00:00:00                
-<span class="m">1144481</span>       dummy.job     chpc-gpu019 <span class="m">2022</span>-11-19T17:52:26 <span class="m">2022</span>-11-19T17:56:05                             Unknown    RUNNING              BeginTime   <span class="m">00</span>:00:00 <span class="m">30</span>-00:00:+                
-<span class="m">1150938</span>      tc_aipw_g+     chpc-gpu019 <span class="m">2022</span>-11-19T17:52:26 <span class="m">2022</span>-11-19T17:56:05                             Unknown    RUNNING              BeginTime   <span class="m">00</span>:00:00 <span class="m">4</span>-04:00:00                
-<span class="m">1150942</span>      1tc_aipw_+     chpc-gpu019 <span class="m">2022</span>-11-19T17:52:26 <span class="m">2022</span>-11-19T17:56:05                             Unknown    RUNNING              BeginTime   <span class="m">00</span>:00:00 <span class="m">4</span>-04:00:00                
-<span class="m">1152285</span>      mulch_201+ chpc-large-mem+ <span class="m">2022</span>-11-19T17:52:26 <span class="m">2022</span>-11-19T17:55:05                 <span class="m">2022</span>-11-19T20:49:15 CANCELLED+              BeginTime   <span class="m">00</span>:00:00 <span class="m">7</span>-00:00:00                
-<span class="m">1152287</span>      nomulch_2+      chpc-cn051 <span class="m">2022</span>-11-19T17:52:26 <span class="m">2022</span>-11-19T17:56:05                 <span class="m">2022</span>-11-19T20:49:17 CANCELLED+              BeginTime   <span class="m">00</span>:00:00 <span class="m">7</span>-00:00:00 
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sacct<span class="w"> </span>-a<span class="w"> </span>-X<span class="w"> </span>--format<span class="o">=</span>JobID,JobName,NodeList,Submit,Start,SystemComment,End,State,Reason,Suspended,Timelimit,Comment<span class="w"> </span>--starttime<span class="o">=</span><span class="m">2022</span>-10-01<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">2022</span>-11-19T17:52:26
+<span class="m">1152221</span><span class="w">       </span>p0.3_glm1<span class="w"> </span>chpc-cn<span class="o">[</span><span class="m">053</span>-05+<span class="w"> </span><span class="m">2022</span>-11-18T20:24:06<span class="w"> </span><span class="m">2022</span>-11-18T20:24:06<span class="w">                 </span><span class="m">2022</span>-11-19T17:52:26<span class="w">  </span>NODE_FAIL<span class="w">                   </span>None<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">7</span>-00:00:00<span class="w">                </span>
+<span class="m">1144481</span><span class="w">       </span>dummy.job<span class="w">     </span>chpc-gpu019<span class="w"> </span><span class="m">2022</span>-11-19T17:52:26<span class="w"> </span><span class="m">2022</span>-11-19T17:56:05<span class="w">                             </span>Unknown<span class="w">    </span>RUNNING<span class="w">              </span>BeginTime<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">30</span>-00:00:+<span class="w">                </span>
+<span class="m">1150938</span><span class="w">      </span>tc_aipw_g+<span class="w">     </span>chpc-gpu019<span class="w"> </span><span class="m">2022</span>-11-19T17:52:26<span class="w"> </span><span class="m">2022</span>-11-19T17:56:05<span class="w">                             </span>Unknown<span class="w">    </span>RUNNING<span class="w">              </span>BeginTime<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">4</span>-04:00:00<span class="w">                </span>
+<span class="m">1150942</span><span class="w">      </span>1tc_aipw_+<span class="w">     </span>chpc-gpu019<span class="w"> </span><span class="m">2022</span>-11-19T17:52:26<span class="w"> </span><span class="m">2022</span>-11-19T17:56:05<span class="w">                             </span>Unknown<span class="w">    </span>RUNNING<span class="w">              </span>BeginTime<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">4</span>-04:00:00<span class="w">                </span>
+<span class="m">1152285</span><span class="w">      </span>mulch_201+<span class="w"> </span>chpc-large-mem+<span class="w"> </span><span class="m">2022</span>-11-19T17:52:26<span class="w"> </span><span class="m">2022</span>-11-19T17:55:05<span class="w">                 </span><span class="m">2022</span>-11-19T20:49:15<span class="w"> </span>CANCELLED+<span class="w">              </span>BeginTime<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">7</span>-00:00:00<span class="w">                </span>
+<span class="m">1152287</span><span class="w">      </span>nomulch_2+<span class="w">      </span>chpc-cn051<span class="w"> </span><span class="m">2022</span>-11-19T17:52:26<span class="w"> </span><span class="m">2022</span>-11-19T17:56:05<span class="w">                 </span><span class="m">2022</span>-11-19T20:49:17<span class="w"> </span>CANCELLED+<span class="w">              </span>BeginTime<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span><span class="m">7</span>-00:00:00<span class="w"> </span>
 </code></pre></div>
 <p>然而这些只能说明系统在同一时间点进行了某项处理，但并不能指明这是把 1144481 是同其它几个 job 同时从 PENDING 转为 RUNNING，还是把本来是 RUNNING 的几个 job 被突然一起被重新提交。</p>
 <p>虽然如此，还是很怀疑是被重新提交的，毕竟根据经验，排队 18 天是几乎不可能的，而且按照 priority 算的话，现在就这一个 job，priority 也应该早就到了。但在无其它证据之前，这只能成为悬案。</p>
 <p>不过如果它会重新提交，那有可能会再次“作案”……</p>
 <h2 id="20221124">2022.11.24<a class="headerlink" href="#20221124" title="Permanent link">&para;</a></h2>
 <p>果然，发现了新的 Submit 时间点 2022-11-23T15:50:41，而此前的 Submit 时间点为 2022-11-19T17:52:26</p>
-<div class="highlight"><pre><span></span><code>$ date
-Thu Nov <span class="m">24</span> <span class="m">09</span>:24:13 HKT <span class="m">2022</span>
-$ scontrol show job <span class="m">1144481</span>
-<span class="nv">JobId</span><span class="o">=</span><span class="m">1144481</span> <span class="nv">JobName</span><span class="o">=</span>dummy.job
-   <span class="nv">Priority</span><span class="o">=</span><span class="m">29597</span> <span class="nv">Nice</span><span class="o">=</span><span class="m">0</span> <span class="nv">Account</span><span class="o">=</span>stat <span class="nv">QOS</span><span class="o">=</span>stat
-   <span class="nv">JobState</span><span class="o">=</span>RUNNING <span class="nv">Reason</span><span class="o">=</span>None <span class="nv">Dependency</span><span class="o">=(</span>null<span class="o">)</span>
-   <span class="nv">Requeue</span><span class="o">=</span><span class="m">1</span> <span class="nv">Restarts</span><span class="o">=</span><span class="m">34</span> <span class="nv">BatchFlag</span><span class="o">=</span><span class="m">1</span> <span class="nv">Reboot</span><span class="o">=</span><span class="m">0</span> <span class="nv">ExitCode</span><span class="o">=</span><span class="m">0</span>:0
-   <span class="nv">RunTime</span><span class="o">=</span><span class="m">17</span>:29:58 <span class="nv">TimeLimit</span><span class="o">=</span><span class="m">30</span>-00:00:00 <span class="nv">TimeMin</span><span class="o">=</span>N/A
-   <span class="nv">SubmitTime</span><span class="o">=</span><span class="m">2022</span>-11-23T15:50:41 <span class="nv">EligibleTime</span><span class="o">=</span><span class="m">2022</span>-11-23T15:52:42
-   <span class="nv">AccrueTime</span><span class="o">=</span><span class="m">2022</span>-11-23T15:52:42
-   <span class="nv">StartTime</span><span class="o">=</span><span class="m">2022</span>-11-23T15:54:17 <span class="nv">EndTime</span><span class="o">=</span><span class="m">2022</span>-12-23T15:54:17 <span class="nv">Deadline</span><span class="o">=</span>N/A
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date
+Thu<span class="w"> </span>Nov<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">09</span>:24:13<span class="w"> </span>HKT<span class="w"> </span><span class="m">2022</span>
+$<span class="w"> </span>scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span><span class="m">1144481</span>
+<span class="nv">JobId</span><span class="o">=</span><span class="m">1144481</span><span class="w"> </span><span class="nv">JobName</span><span class="o">=</span>dummy.job
+<span class="w">   </span><span class="nv">Priority</span><span class="o">=</span><span class="m">29597</span><span class="w"> </span><span class="nv">Nice</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">Account</span><span class="o">=</span>stat<span class="w"> </span><span class="nv">QOS</span><span class="o">=</span>stat
+<span class="w">   </span><span class="nv">JobState</span><span class="o">=</span>RUNNING<span class="w"> </span><span class="nv">Reason</span><span class="o">=</span>None<span class="w"> </span><span class="nv">Dependency</span><span class="o">=(</span>null<span class="o">)</span>
+<span class="w">   </span><span class="nv">Requeue</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">Restarts</span><span class="o">=</span><span class="m">34</span><span class="w"> </span><span class="nv">BatchFlag</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">Reboot</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">ExitCode</span><span class="o">=</span><span class="m">0</span>:0
+<span class="w">   </span><span class="nv">RunTime</span><span class="o">=</span><span class="m">17</span>:29:58<span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">30</span>-00:00:00<span class="w"> </span><span class="nv">TimeMin</span><span class="o">=</span>N/A
+<span class="w">   </span><span class="nv">SubmitTime</span><span class="o">=</span><span class="m">2022</span>-11-23T15:50:41<span class="w"> </span><span class="nv">EligibleTime</span><span class="o">=</span><span class="m">2022</span>-11-23T15:52:42
+<span class="w">   </span><span class="nv">AccrueTime</span><span class="o">=</span><span class="m">2022</span>-11-23T15:52:42
+<span class="w">   </span><span class="nv">StartTime</span><span class="o">=</span><span class="m">2022</span>-11-23T15:54:17<span class="w"> </span><span class="nv">EndTime</span><span class="o">=</span><span class="m">2022</span>-12-23T15:54:17<span class="w"> </span><span class="nv">Deadline</span><span class="o">=</span>N/A
 </code></pre></div>
 
   <hr>
@@ -2669,7 +2669,7 @@ $ scontrol show job <span class="m">1144481</span>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

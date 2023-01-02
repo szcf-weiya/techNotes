@@ -2447,7 +2447,7 @@
 <span class="n">Carseats</span><span class="o">=</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">Carseats</span><span class="p">,</span><span class="n">High</span><span class="p">)</span>
 
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
-<span class="n">train</span><span class="o">=</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">Carseats</span><span class="p">),</span> <span class="m">200</span><span class="p">)</span>
+<span class="n">train</span><span class="o">=</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">Carseats</span><span class="p">),</span><span class="w"> </span><span class="m">200</span><span class="p">)</span>
 <span class="n">Carseats.test</span><span class="o">=</span><span class="n">Carseats</span><span class="p">[</span><span class="o">-</span><span class="n">train</span><span class="p">,]</span>
 <span class="n">High.test</span><span class="o">=</span><span class="n">High</span><span class="p">[</span><span class="o">-</span><span class="n">train</span><span class="p">]</span>
 <span class="n">tree.carseats</span><span class="o">=</span><span class="nf">tree</span><span class="p">(</span><span class="n">High</span><span class="o">~</span><span class="n">.</span><span class="o">-</span><span class="n">Sales</span><span class="p">,</span><span class="n">Carseats</span><span class="p">,</span><span class="n">subset</span><span class="o">=</span><span class="n">train</span><span class="p">)</span>
@@ -2489,7 +2489,7 @@ Tweak NAMESPACE imports.
 </code></pre></div>
 <p>but actually the last version is back to March 2018, which is already prior to Wenyu&rsquo;s sister. Anyway, we have tried to install the old version package, and try to see whether there are some differences.</p>
 <p>The command for installing a specified version would be</p>
-<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz&quot;</span><span class="p">,</span> <span class="n">repos</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;source&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-39.tar.gz&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">repos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;source&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>in the R console. However, at the beginning, I am not familiar with it. So I use the interface of rstudio to manually install the old <code>tree</code>&lsquo;s. Finally, I had tried <code>v1.0-28</code>, <code>v1.0-33</code>, <code>v1.0-37</code> and <code>v1.0-39</code>, but all of them yield the same results as the latest version.</p>
 <h2 id="r-version">R version<a class="headerlink" href="#r-version" title="Permanent link">&para;</a></h2>
@@ -2585,7 +2585,7 @@ docker run -it --rm r-base:3.6.0
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

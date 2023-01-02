@@ -2430,21 +2430,21 @@ Here comes the way: we want to use bash file to allocate first 10 jobs to Univer
 The bash file is:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="nv">dir</span><span class="o">=</span><span class="s2">&quot;/lustre/project/Stat/path/of/names/of/genes&quot;</span>
-<span class="nb">cd</span> /lustre/project/Stat/code/job/path/
+<span class="nb">cd</span><span class="w"> </span>/lustre/project/Stat/code/job/path/
 <span class="nv">num</span><span class="o">=</span><span class="m">1</span>
 <span class="nv">c</span><span class="o">=</span><span class="m">11</span>
-<span class="k">for</span> i <span class="k">in</span> <span class="k">$(</span>ls <span class="nv">$dir</span><span class="k">)</span>
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span><span class="nv">$dir</span><span class="k">)</span>
 <span class="k">do</span>
-    <span class="k">if</span> <span class="o">((</span><span class="nv">$num</span> &lt; <span class="nv">$c</span><span class="o">))</span>
-         <span class="k">then</span>
-             sbatch  --export<span class="o">=</span><span class="nv">p</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span> try3.job
-             <span class="nb">echo</span> <span class="nv">$num</span>
-         <span class="k">else</span>
-             sbatch -p stat -q stat --export<span class="o">=</span><span class="nv">p</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span> try3.job
-    <span class="k">fi</span>
-    <span class="nb">pwd</span>
-    <span class="nv">num</span><span class="o">=</span>$<span class="o">[</span><span class="nv">$num</span>+1<span class="o">]</span>
-    sleep <span class="m">1</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="nv">$num</span><span class="w"> </span>&lt;<span class="w"> </span><span class="nv">$c</span><span class="o">))</span>
+<span class="w">         </span><span class="k">then</span>
+<span class="w">             </span>sbatch<span class="w">  </span>--export<span class="o">=</span><span class="nv">p</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="w"> </span>try3.job
+<span class="w">             </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$num</span>
+<span class="w">         </span><span class="k">else</span>
+<span class="w">             </span>sbatch<span class="w"> </span>-p<span class="w"> </span>stat<span class="w"> </span>-q<span class="w"> </span>stat<span class="w"> </span>--export<span class="o">=</span><span class="nv">p</span><span class="o">=</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="w"> </span>try3.job
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="nb">pwd</span>
+<span class="w">    </span><span class="nv">num</span><span class="o">=</span>$<span class="o">[</span><span class="nv">$num</span>+1<span class="o">]</span>
+<span class="w">    </span>sleep<span class="w"> </span><span class="m">1</span>
 <span class="k">done</span>
 </code></pre></div>
 <p>In this way, we can pass the gene name to job file, and the corresponding job file is:</p>
@@ -2454,8 +2454,8 @@ The bash file is:</p>
 <span class="c1">#SBATCH --output= job_name-%j-%a_out.log</span>
 <span class="c1">#SBATCH --error= job_name-%j-%a_err.log</span>
 
-<span class="nb">cd</span> /lustre/project/Statcode/job/path/
-python3  example.py <span class="nv">$p</span>
+<span class="nb">cd</span><span class="w"> </span>/lustre/project/Statcode/job/path/
+python3<span class="w">  </span>example.py<span class="w"> </span><span class="nv">$p</span>
 </code></pre></div>
 <p>We have pass the name to python. The rest thing you need to do :</p>
 <p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
@@ -2539,7 +2539,7 @@ In such way, we can run the same python script via system environment. Amazing!<
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

@@ -2465,17 +2465,17 @@
 <h2 id="install-on-ubuntu-manually">Install on Ubuntu Manually<a class="headerlink" href="#install-on-ubuntu-manually" title="Permanent link">&para;</a></h2>
 <p>In addition to get the default java (usually <code>openjdk</code>) via <code>apt</code>, we can download specific version from oracle and manually install it.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># download jdk from oracle.</span>
-$ wget ...
+$<span class="w"> </span>wget<span class="w"> </span>...
 <span class="c1"># unzip package and mv it to a proper location</span>
-$ sudo mkdir /usr/local/jvm
-$ sudo tar xzvf &lt;downloaded_package&gt; -C /usr/local/jvm
+$<span class="w"> </span>sudo<span class="w"> </span>mkdir<span class="w"> </span>/usr/local/jvm
+$<span class="w"> </span>sudo<span class="w"> </span>tar<span class="w"> </span>xzvf<span class="w"> </span>&lt;downloaded_package&gt;<span class="w"> </span>-C<span class="w"> </span>/usr/local/jvm
 <span class="c1"># configure environment variables</span>
-$ vi .bashrc
+$<span class="w"> </span>vi<span class="w"> </span>.bashrc
 <span class="c1"># add the following lines</span>
-<span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/local/jvm/jdk1.8.0_91
-<span class="nb">export</span> <span class="nv">JRE_HOME</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/jre
-<span class="nb">export</span> <span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$CLASSPATH</span>:<span class="nv">$JAVA_HOME</span>/lib:<span class="nv">$JRE_HOME</span>/lib
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$JRE_HOME</span>/bin
+<span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/local/jvm/jdk1.8.0_91
+<span class="nb">export</span><span class="w"> </span><span class="nv">JRE_HOME</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/jre
+<span class="nb">export</span><span class="w"> </span><span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$CLASSPATH</span>:<span class="nv">$JAVA_HOME</span>/lib:<span class="nv">$JRE_HOME</span>/lib
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$JRE_HOME</span>/bin
 </code></pre></div>
 <p>The above procedure is the record for Ubuntu 14.04. Similar procedure can be done for other Ubuntu, such as <a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04">How To Install Java with Apt on Ubuntu 18.04</a></p>
 <h2 id="jdk-jre-and-jvm">JDK, JRE and JVM<a class="headerlink" href="#jdk-jre-and-jvm" title="Permanent link">&para;</a></h2>
@@ -2497,7 +2497,7 @@ $ vi .bashrc
 <li>上传至 coveralls/codecov 等 CI 网站</li>
 </ol>
 <p>不同的语言有不同的 package 可以生成测试文件，并且上传至绑定好的第三方 CI 服务中。R 中</p>
-<div class="highlight"><pre><span></span><code>library<span class="o">(</span>covr<span class="o">)</span><span class="p">;</span> codecov<span class="o">()</span>
+<div class="highlight"><pre><span></span><code>library<span class="o">(</span>covr<span class="o">)</span><span class="p">;</span><span class="w"> </span>codecov<span class="o">()</span>
 </code></pre></div>
 <p>便可一键传至 codecov，比如 <a href="https://github.com/szcf-weiya/fRLR/blob/master/.travis.yml">szcf-weiya/fRLR</a>.</p>
 <p>Julia 可以用 <code>Coverage</code> 包，然后通过 <code>submit</code> 函数提交至 CI 服务中，如 <a href="https://github.com/szcf-weiya/GradientBoost.jl/blob/master/.travis.yml">szcf-weiya/GradientBoost.jl</a></p>
@@ -2590,7 +2590,7 @@ $ vi .bashrc
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

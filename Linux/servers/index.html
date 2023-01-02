@@ -2690,7 +2690,7 @@
 <h2 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
 <h3 id="initial-start">initial start<a class="headerlink" href="#initial-start" title="Permanent link">&para;</a></h3>
 <p>首先在本地新建 ssh key，</p>
-<div class="highlight"><pre><span></span><code>ssh-keygen -t <span class="o">[</span>rsa <span class="p">|</span> ed25519 <span class="p">|</span> ecdsa <span class="p">|</span> dsa<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span><span class="o">[</span>rsa<span class="w"> </span><span class="p">|</span><span class="w"> </span>ed25519<span class="w"> </span><span class="p">|</span><span class="w"> </span>ecdsa<span class="w"> </span><span class="p">|</span><span class="w"> </span>dsa<span class="o">]</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">ssh 常见 key 格式</p>
@@ -2709,9 +2709,9 @@
 <li>公钥授权文件(<code>~/.ssh/authorized_keys</code>)</li>
 </ul>
 <p>将登录端的 <code>id_rsa.pub</code> 内容复制到服务器端的 <code>authorized_keys</code> 文件中即可。除了手动复制，也可以通过命令行，如</p>
-<div class="highlight"><pre><span></span><code>$ ssh-copy-id -p <span class="m">30013</span> weiya@127.0.0.1
-/usr/bin/ssh-copy-id: INFO: attempting to log <span class="k">in</span> with the new key<span class="o">(</span>s<span class="o">)</span>, to filter out any that are already installed
-/usr/bin/ssh-copy-id: INFO: <span class="m">1</span> key<span class="o">(</span>s<span class="o">)</span> remain to be installed -- <span class="k">if</span> you are prompted now it is to install the new keys
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh-copy-id<span class="w"> </span>-p<span class="w"> </span><span class="m">30013</span><span class="w"> </span>weiya@127.0.0.1
+/usr/bin/ssh-copy-id:<span class="w"> </span>INFO:<span class="w"> </span>attempting<span class="w"> </span>to<span class="w"> </span>log<span class="w"> </span><span class="k">in</span><span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>key<span class="o">(</span>s<span class="o">)</span>,<span class="w"> </span>to<span class="w"> </span>filter<span class="w"> </span>out<span class="w"> </span>any<span class="w"> </span>that<span class="w"> </span>are<span class="w"> </span>already<span class="w"> </span>installed
+/usr/bin/ssh-copy-id:<span class="w"> </span>INFO:<span class="w"> </span><span class="m">1</span><span class="w"> </span>key<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>remain<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>installed<span class="w"> </span>--<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>prompted<span class="w"> </span>now<span class="w"> </span>it<span class="w"> </span>is<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>keys
 weiya@127.0.0.1<span class="s1">&#39;s password: </span>
 
 <span class="s1">Number of key(s) added: 1</span>
@@ -2721,13 +2721,13 @@ weiya@127.0.0.1<span class="s1">&#39;s password: </span>
 </code></pre></div>
 <p>正确输入登录密码后，便复制成功了，注意此时并未登录至目标服务器。</p>
 <p>对于 AWS，登录需要使用 <code>.pem</code> 文件，即</p>
-<div class="highlight"><pre><span></span><code>$ ssh -i YourKey.pem user@host
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>-i<span class="w"> </span>YourKey.pem<span class="w"> </span>user@host
 </code></pre></div>
 <p>而复制文件则为</p>
-<div class="highlight"><pre><span></span><code>$ scp -i YourKey.pem YourFile user@host:~/YourFile
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>scp<span class="w"> </span>-i<span class="w"> </span>YourKey.pem<span class="w"> </span>YourFile<span class="w"> </span>user@host:~/YourFile
 </code></pre></div>
 <h3 id="two-consecutive-ssh">two consecutive ssh<a class="headerlink" href="#two-consecutive-ssh" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$ ssh -t user@A ssh user@B
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>-t<span class="w"> </span>user@A<span class="w"> </span>ssh<span class="w"> </span>user@B
 </code></pre></div>
 <p>where <code>-t</code> avoid the warning that </p>
 <blockquote>
@@ -2736,50 +2736,50 @@ weiya@127.0.0.1<span class="s1">&#39;s password: </span>
 <p>which would freeze the session.</p>
 <p>If the usernames are the same, the second username can be omitted.</p>
 <p>The port forwarding would be more clear. For example, open a jupyter session on node <code>B</code>, whose login node is <code>A</code>, then access the jupyter in the local browser <code>http://127.0.0.1:28888</code> after running</p>
-<div class="highlight"><pre><span></span><code>$ ssh -t -L <span class="m">28888</span>:localhost:8888 user@A ssh -L <span class="m">8888</span>:localhost:8888 user@B
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>-t<span class="w"> </span>-L<span class="w"> </span><span class="m">28888</span>:localhost:8888<span class="w"> </span>user@A<span class="w"> </span>ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">8888</span>:localhost:8888<span class="w"> </span>user@B
 </code></pre></div>
 <p><a href="https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Proxies_and_Jump_Hosts"><code>ProxyJump</code></a> might be an alternative, but it seems not work for host established via <code>-R</code>, such as <code>ssh -J public@host inner@localhost:pppp</code>.</p>
 <h3 id="ssh-until-succeed">ssh until succeed<a class="headerlink" href="#ssh-until-succeed" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$ <span class="k">until</span> ./login_lab.sh<span class="p">;</span> <span class="k">do</span> sleep <span class="m">5</span><span class="p">;</span> <span class="k">done</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="k">until</span><span class="w"> </span>./login_lab.sh<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
 </code></pre></div>
 <p>refer to <a href="https://unix.stackexchange.com/questions/404792/how-to-run-ssh-command-until-succeeded">How to run ssh command until succeeded?</a></p>
 <h3 id="config-file">config file<a class="headerlink" href="#config-file" title="Permanent link">&para;</a></h3>
 <p>Although it would be convenient to write a simple script <code>login_xxx.sh</code> to avoid to type the account and hostname, it would be annoying when using <code>scp</code>. It is still possible to define custom functions such as <code>scp_to_xxx</code> or <code>scp_from_xxx</code>, but too many functions might be confusing and forget the detailed definitions. </p>
 <p>Maybe we can try to write a config file (refer to <a href="https://mattryall.net/blog/ssh-favourite-hosts">Configuring your favourite hosts in SSH</a>), in which we can define an alias for a hostname, and also specify the username, e.g., after defining</p>
-<div class="highlight"><pre><span></span><code>Host XX
-Hostname REAL.HOSTNAME
-User weiya
+<div class="highlight"><pre><span></span><code>Host<span class="w"> </span>XX
+Hostname<span class="w"> </span>REAL.HOSTNAME
+User<span class="w"> </span>weiya
 </code></pre></div>
 <p>then I can just type <code>ssh XX</code> to access this server, and <code>scp</code> would also be much simpler, <code>scp file XX:~/</code>. More importantly, we can use tab-complete when entering the path, which cannot be enabled by custom functions <code>scp_to_xx</code>. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>On the rocky server, it throws,
-<div class="highlight"><pre><span></span><code>Bad owner or permissions on ~/.ssh/config
+<div class="highlight"><pre><span></span><code>Bad<span class="w"> </span>owner<span class="w"> </span>or<span class="w"> </span>permissions<span class="w"> </span>on<span class="w"> </span>~/.ssh/config
 </code></pre></div>
 although the personal PC works well with same permission <code>-rw-rw-r--</code>. Refer to <a href="https://serverfault.com/questions/253313/ssh-returns-bad-owner-or-permissions-on-ssh-config">ssh returns “Bad owner or permissions on ~/.ssh/config”</a>, change the permission
-<div class="highlight"><pre><span></span><code>$ chmod <span class="m">600</span> ~/.ssh/config
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/config
 </code></pre></div>
 that is, <code>-rw-------</code>.</p>
 </div>
 <h3 id="run-gui-remotelylocally">run GUI remotely/locally<a class="headerlink" href="#run-gui-remotelylocally" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>weiya@T460p:~$ ssh weiya@G40
-weiya@G40:~$ <span class="nb">export</span> <span class="nv">DISPLAY</span><span class="o">=</span>:0
-weiya@G40:~$ firefox
+<div class="highlight"><pre><span></span><code>weiya@T460p:~$<span class="w"> </span>ssh<span class="w"> </span>weiya@G40
+weiya@G40:~$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span>:0
+weiya@G40:~$<span class="w"> </span>firefox
 </code></pre></div>
 <p>如果不通过第二行来设置 DISPLAY，则会报错，</p>
 <blockquote>
 <p>Error: no DISPLAY environment variable specified</p>
 </blockquote>
 <p>另外 <code>:0</code> 可以通过在服务器端运行</p>
-<div class="highlight"><pre><span></span><code>weiya@G40:~$ w
- <span class="m">20</span>:29:30 up <span class="m">10</span>:01,  <span class="m">2</span> users,  load average: <span class="m">1</span>.53, <span class="m">1</span>.42, <span class="m">1</span>.40
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-weiya    :0       :0               <span class="m">10</span>:28   ?xdm?  <span class="m">22</span>:24   <span class="m">0</span>.00s /usr/lib/gdm3/gdm-x-session --run-script env GNOME
+<div class="highlight"><pre><span></span><code>weiya@G40:~$<span class="w"> </span>w
+<span class="w"> </span><span class="m">20</span>:29:30<span class="w"> </span>up<span class="w"> </span><span class="m">10</span>:01,<span class="w">  </span><span class="m">2</span><span class="w"> </span>users,<span class="w">  </span>load<span class="w"> </span>average:<span class="w"> </span><span class="m">1</span>.53,<span class="w"> </span><span class="m">1</span>.42,<span class="w"> </span><span class="m">1</span>.40
+USER<span class="w">     </span>TTY<span class="w">      </span>FROM<span class="w">             </span>LOGIN@<span class="w">   </span>IDLE<span class="w">   </span>JCPU<span class="w">   </span>PCPU<span class="w"> </span>WHAT
+weiya<span class="w">    </span>:0<span class="w">       </span>:0<span class="w">               </span><span class="m">10</span>:28<span class="w">   </span>?xdm?<span class="w">  </span><span class="m">22</span>:24<span class="w">   </span><span class="m">0</span>.00s<span class="w"> </span>/usr/lib/gdm3/gdm-x-session<span class="w"> </span>--run-script<span class="w"> </span>env<span class="w"> </span>GNOME
 </code></pre></div>
 <p>进行查看，其中 <code>FROM</code> 栏下的 <code>:0</code> 即为当前 display 号码。</p>
 <p>参考 <a href="https://askubuntu.com/questions/47642/how-to-start-a-gui-software-on-a-remote-linux-pc-via-ssh">How to start a GUI software on a remote Linux PC via SSH</a></p>
 <p>如果想要在本地运行服务器端的 GUI 程序，即将服务器端的窗口发送到本地，则登录时需要加上 <code>-X</code> 选项，</p>
-<div class="highlight"><pre><span></span><code>ssh -X
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-X
 </code></pre></div>
 <p>To speed up the GUI loading if necessary, try to enable compression, <code>-C</code>, refer to <a href="https://unix.stackexchange.com/questions/187415/why-is-firefox-so-slow-over-ssh">Why is Firefox so slow over SSH? - Unix &amp; Linux Stack Exchange</a></p>
 <h3 id="scp"><code>scp</code><a class="headerlink" href="#scp" title="Permanent link">&para;</a></h3>
@@ -2795,15 +2795,15 @@ weiya    :0       :0               <span class="m">10</span>:28   ?xdm?  <span c
 </ul>
 <p>refer to <a href="https://unix.stackexchange.com/questions/3026/what-do-options-serveraliveinterval-and-clientaliveinterval-in-sshd-config-d">What do options <code>ServerAliveInterval</code> and <code>ClientAliveInterval</code> in sshd_config do exactly?</a></p>
 <h2 id="add-user">Add User<a class="headerlink" href="#add-user" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ useradd -m -s /bin/bash userName
-$ passwd userName
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>userName
+$<span class="w"> </span>passwd<span class="w"> </span>userName
 </code></pre></div>
 <p>Or explicitly specify the password with</p>
-<div class="highlight"><pre><span></span><code>useradd -p <span class="k">$(</span>openssl passwd -1 <span class="s2">&quot;PASSWORD&quot;</span><span class="k">)</span> -m userName
+<div class="highlight"><pre><span></span><code>useradd<span class="w"> </span>-p<span class="w"> </span><span class="k">$(</span>openssl<span class="w"> </span>passwd<span class="w"> </span>-1<span class="w"> </span><span class="s2">&quot;PASSWORD&quot;</span><span class="k">)</span><span class="w"> </span>-m<span class="w"> </span>userName
 </code></pre></div>
 <p>where <code>-1</code> means to use the MD5 based BSD password algorithm 1, see <code>man openssl-passwd</code> for more details.</p>
 <p>Create users in batch mode,</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">01</span>..14<span class="o">}</span><span class="p">;</span> <span class="k">do</span> useradd -p <span class="k">$(</span>openssl passwd -1 <span class="s2">&quot;PASSWORD\$&quot;</span><span class="k">)</span> -m <span class="s2">&quot;project</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">done</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">{</span><span class="m">01</span>..14<span class="o">}</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>useradd<span class="w"> </span>-p<span class="w"> </span><span class="k">$(</span>openssl<span class="w"> </span>passwd<span class="w"> </span>-1<span class="w"> </span><span class="s2">&quot;PASSWORD\$&quot;</span><span class="k">)</span><span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;project</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
 </code></pre></div>
 <p>where symbol <code>$</code> (if any) needs to be escaped by <code>\</code>.</p>
 <div class="admonition warning">
@@ -2814,12 +2814,12 @@ $ passwd userName
 </blockquote>
 </div>
 <p>增加 sudo 权限</p>
-<div class="highlight"><pre><span></span><code>$ sudoedit /etc/sudoers
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudoedit<span class="w"> </span>/etc/sudoers
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="w"># Allow members of group sudo to execute any command</span>
 <span class="w">%sudo   ALL=(ALL:ALL) ALL</span>
-<span class="gi">+weiya ALL=(ALL) NOPASSWD:ALL</span><span class="w"></span>
-<span class="gi">+szcf715 ALL=(ALL) ALL</span><span class="w"></span>
+<span class="gi">+weiya ALL=(ALL) NOPASSWD:ALL</span>
+<span class="gi">+szcf715 ALL=(ALL) ALL</span>
 </code></pre></div>
 <p>其中 <code>NOPASSWD</code> 表示用户 <code>weiya</code> 在使用 <code>sudo</code> 时无需输入密码，而 <code>szcf715</code> 则需要输入密码才能使用 <code>sudo</code>.</p>
 <p><code>man sudoers</code> 给了一些具体的设置例子，搜索 <code>example sudoers</code>.</p>
@@ -2848,20 +2848,20 @@ $ passwd userName
 <p>想重装nginx，把/etc/nginx也一并删除了，但是重新安装却报错找不到conf文件。</p>
 <p>参考<a href="https://stackoverflow.com/questions/28141667/how-to-reinstall-nginx-if-i-deleted-etc-nginx-folder-ubuntu-14-04">How to reinstall nginx if I deleted /etc/nginx folder (Ubuntu 14.04)?</a></p>
 <p>应当用
-<div class="highlight"><pre><span></span><code>apt-get purge nginx nginx-common nginx-full
-apt-get install nginx
+<div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>purge<span class="w"> </span>nginx<span class="w"> </span>nginx-common<span class="w"> </span>nginx-full
+apt-get<span class="w"> </span>install<span class="w"> </span>nginx
 </code></pre></div></p>
 <p>注意用 purge 不会保存配置文件，而 remove 会保存配置文件。</p>
 <h2 id="centos-7">CentOS 7<a class="headerlink" href="#centos-7" title="Permanent link">&para;</a></h2>
 <p>想直接在服务器上用 Julia 的 PGFPlotsX 画图，因为默认会弹出画好的 pdf 图象，除非按照<a href="https://kristofferc.github.io/PGFPlotsX.jl/v0.2/man/save.html#REPL-1">官方教程</a>中的设置</p>
-<div class="highlight"><pre><span></span><code><span class="n">PGFPlotsX</span><span class="o">.</span><span class="n">enable_interactive</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">PGFPlotsX</span><span class="o">.</span><span class="n">enable_interactive</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span>
 </code></pre></div>
 <p>本来期望着用 evince 打开，但是最后竟然用 liberoffice 开开了，然后字体竟然不一致了，所以想着更改默认的 pdf 阅读软件，参考 <a href="https://superuser.com/questions/152202/how-to-set-default-browser-for-pdf-reader-evince-on-linux">How to set default browser for PDF reader Evince on Linux?</a></p>
 <p>可以在 <code>.local/share/applications/mimeapps.list</code> 里面添加或者修改</p>
 <p>虽然最后还是感觉通过服务器打开速度太慢了。</p>
 <h2 id="install-software-without-root">Install software without root<a class="headerlink" href="#install-software-without-root" title="Permanent link">&para;</a></h2>
 <p><code>conda</code> can install many other programs, such as <code>tree</code>,</p>
-<div class="highlight"><pre><span></span><code>conda install -c eumetsat tree
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>eumetsat<span class="w"> </span>tree
 </code></pre></div>
 <p>The trick is to check whether the package is available via <code>https://anaconda.org/search?q=</code></p>
 <p>refer to <a href="https://stackoverflow.com/a/52561058">How to install packages in Linux (CentOS) without root user with automatic dependency handling?</a></p>
@@ -2872,7 +2872,7 @@ apt-get install nginx
 </blockquote>
 <p>因为在第三方服务器上，没有权限清理 <code>/tmp</code> 文件夹，于是参考 <a href="https://blog.csdn.net/weixin_37029453/article/details/107664402">解决cannot create temp file for here-document: No space left on device问题</a></p>
 <p>在 <code>.bashrc</code> 中加入</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span><span class="nv">$HOME</span>/tmp
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">TMPDIR</span><span class="o">=</span><span class="nv">$HOME</span>/tmp
 </code></pre></div>
 <h2 id="lets-encrypt">Let&rsquo;s Encrypt<a class="headerlink" href="#lets-encrypt" title="Permanent link">&para;</a></h2>
 <p>If it throws the following message,</p>
@@ -2892,9 +2892,9 @@ apt-get install nginx
 <p>未果，结果按照cy的建议，释放掉了这个服务器。</p>
 <h2 id="ftp">FTP<a class="headerlink" href="#ftp" title="Permanent link">&para;</a></h2>
 <p>Upload and download files from command line, see <a href="https://linuxize.com/post/how-to-use-linux-ftp-command-to-transfer-files/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more details.</p>
-<div class="highlight"><pre><span></span><code>$ ftp xx.xx.xx.xx
-ftp&gt; put XX
-ftp&gt; get XX
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ftp<span class="w"> </span>xx.xx.xx.xx
+ftp&gt;<span class="w"> </span>put<span class="w"> </span>XX
+ftp&gt;<span class="w"> </span>get<span class="w"> </span>XX
 </code></pre></div>
 
   <hr>
@@ -2973,7 +2973,7 @@ ftp&gt; get XX
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

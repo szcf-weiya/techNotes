@@ -2595,85 +2595,85 @@
 <p>The installation records on Rocky Server is <a href="https://github.com/szcf-weiya/RockyServer/issues/7">here</a>.</p>
 </div>
 <p>Directly type <code>docker</code> in the terminal,</p>
-<div class="highlight"><pre><span></span><code>$ docker
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker
 
-Command <span class="s1">&#39;docker&#39;</span> not found, but can be installed with:
+Command<span class="w"> </span><span class="s1">&#39;docker&#39;</span><span class="w"> </span>not<span class="w"> </span>found,<span class="w"> </span>but<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>installed<span class="w"> </span>with:
 
-sudo snap install docker     <span class="c1"># version 19.03.11, or</span>
-sudo apt  install docker.io
+sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>docker<span class="w">     </span><span class="c1"># version 19.03.11, or</span>
+sudo<span class="w"> </span>apt<span class="w">  </span>install<span class="w"> </span>docker.io
 
-See <span class="s1">&#39;snap info docker&#39;</span> <span class="k">for</span> additional versions.
+See<span class="w"> </span><span class="s1">&#39;snap info docker&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>additional<span class="w"> </span>versions.
 </code></pre></div>
 <p>then run</p>
-<div class="highlight"><pre><span></span><code>sudo apt install docker.io
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker.io
 </code></pre></div>
 <p>Without permisson, it will report the following message</p>
-<div class="highlight"><pre><span></span><code>$ docker version
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>version
 Client:
- Version:           <span class="m">19</span>.03.6
- API version:       <span class="m">1</span>.40
- Go version:        go1.12.17
- Git commit:        369ce74a3c
- Built:             Fri Feb <span class="m">28</span> <span class="m">23</span>:45:43 <span class="m">2020</span>
- OS/Arch:           linux/amd64
- Experimental:      <span class="nb">false</span>
-Got permission denied <span class="k">while</span> trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/version: dial unix /var/run/docker.sock: connect: permission denied
+<span class="w"> </span>Version:<span class="w">           </span><span class="m">19</span>.03.6
+<span class="w"> </span>API<span class="w"> </span>version:<span class="w">       </span><span class="m">1</span>.40
+<span class="w"> </span>Go<span class="w"> </span>version:<span class="w">        </span>go1.12.17
+<span class="w"> </span>Git<span class="w"> </span>commit:<span class="w">        </span>369ce74a3c
+<span class="w"> </span>Built:<span class="w">             </span>Fri<span class="w"> </span>Feb<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">23</span>:45:43<span class="w"> </span><span class="m">2020</span>
+<span class="w"> </span>OS/Arch:<span class="w">           </span>linux/amd64
+<span class="w"> </span>Experimental:<span class="w">      </span><span class="nb">false</span>
+Got<span class="w"> </span>permission<span class="w"> </span>denied<span class="w"> </span><span class="k">while</span><span class="w"> </span>trying<span class="w"> </span>to<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>Docker<span class="w"> </span>daemon<span class="w"> </span>socket<span class="w"> </span>at<span class="w"> </span>unix:///var/run/docker.sock:<span class="w"> </span>Get<span class="w"> </span>http://%2Fvar%2Frun%2Fdocker.sock/v1.40/version:<span class="w"> </span>dial<span class="w"> </span>unix<span class="w"> </span>/var/run/docker.sock:<span class="w"> </span>connect:<span class="w"> </span>permission<span class="w"> </span>denied
 </code></pre></div>
 <p>To <a href="https://docs.docker.com/engine/install/linux-postinstall/">avoid permission issue</a>,</p>
-<div class="highlight"><pre><span></span><code>sudo usermod -aG docker <span class="nv">$USER</span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span>
 </code></pre></div>
 <p>But it is necessary to log out and log back in to re-evaluate the group membership.</p>
 <h3 id="change-the-root-folder">change the root folder<a class="headerlink" href="#change-the-root-folder" title="Permanent link">&para;</a></h3>
 <p>to save space, I want to <a href="https://stackoverflow.com/questions/24309526/how-to-change-the-docker-image-installation-directory">change the image installation directory:</a></p>
-<div class="highlight"><pre><span></span><code>$ sudo vi /etc/docker/daemon.json
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>vi<span class="w"> </span>/etc/docker/daemon.json
 <span class="o">{</span>
-  <span class="s2">&quot;data-root&quot;</span>: <span class="s2">&quot;/new/path/to/docker-data&quot;</span>
+<span class="w">  </span><span class="s2">&quot;data-root&quot;</span>:<span class="w"> </span><span class="s2">&quot;/new/path/to/docker-data&quot;</span>
 <span class="o">}</span>
-$ sudo systemctl daemon-reload
-$ sudo systemctl restart docker
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
+$<span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
 </code></pre></div>
 <p>where the <a href="https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file">official explanation</a> is that</p>
 <ul>
 <li><code>data-root</code> is the path where persisted data such as images, volumes, and cluster state are stored. The default value is /var/lib/docker</li>
 </ul>
 <p>we can validate it with the <code>hello-world</code> image,</p>
-<div class="highlight"><pre><span></span><code>$ docker image pull hello-world
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>image<span class="w"> </span>pull<span class="w"> </span>hello-world
 <span class="c1"># or docker image pull library/hello-world</span>
-$ docker image ls
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-hello-world         latest              d1165f221234        <span class="m">7</span> weeks ago         <span class="m">13</span>.3kB
-$ docker image inspect d1165
+$<span class="w"> </span>docker<span class="w"> </span>image<span class="w"> </span>ls
+REPOSITORY<span class="w">          </span>TAG<span class="w">                 </span>IMAGE<span class="w"> </span>ID<span class="w">            </span>CREATED<span class="w">             </span>SIZE
+hello-world<span class="w">         </span>latest<span class="w">              </span>d1165f221234<span class="w">        </span><span class="m">7</span><span class="w"> </span>weeks<span class="w"> </span>ago<span class="w">         </span><span class="m">13</span>.3kB
+$<span class="w"> </span>docker<span class="w"> </span>image<span class="w"> </span>inspect<span class="w"> </span>d1165
 <span class="o">[</span>
-    <span class="o">{</span>
-        <span class="s2">&quot;Id&quot;</span>: <span class="s2">&quot;sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726&quot;</span>,
-        <span class="s2">&quot;RepoTags&quot;</span>: <span class="o">[</span>
-            <span class="s2">&quot;hello-world:latest&quot;</span>
+<span class="w">    </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;Id&quot;</span>:<span class="w"> </span><span class="s2">&quot;sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;RepoTags&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">            </span><span class="s2">&quot;hello-world:latest&quot;</span>
 ...
-        <span class="s2">&quot;GraphDriver&quot;</span>: <span class="o">{</span>
-            <span class="s2">&quot;Data&quot;</span>: <span class="o">{</span>
-                <span class="s2">&quot;MergedDir&quot;</span>: <span class="s2">&quot;/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/merged&quot;</span>,
-                <span class="s2">&quot;UpperDir&quot;</span>: <span class="s2">&quot;/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/diff&quot;</span>,
-                <span class="s2">&quot;WorkDir&quot;</span>: <span class="s2">&quot;/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/work&quot;</span>
-            <span class="o">}</span>,
+<span class="w">        </span><span class="s2">&quot;GraphDriver&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="s2">&quot;Data&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="s2">&quot;MergedDir&quot;</span>:<span class="w"> </span><span class="s2">&quot;/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/merged&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;UpperDir&quot;</span>:<span class="w"> </span><span class="s2">&quot;/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/diff&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;WorkDir&quot;</span>:<span class="w"> </span><span class="s2">&quot;/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/work&quot;</span>
+<span class="w">            </span><span class="o">}</span>,
 ...
 </code></pre></div>
 <h2 id="r">R<a class="headerlink" href="#r" title="Permanent link">&para;</a></h2>
 <h3 id="r-base">r-base<a class="headerlink" href="#r-base" title="Permanent link">&para;</a></h3>
 <p>The images are hosted on <a href="https://hub.docker.com/_/r-base?tab=tags&amp;page=1&amp;ordering=last_updated">Docker Official Images: r-base</a>.</p>
 <p>Without pulling,</p>
-<div class="highlight"><pre><span></span><code>docker pull r-base:4.1.0
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>r-base:4.1.0
 </code></pre></div>
 <p>we can directly run the following code,</p>
-<div class="highlight"><pre><span></span><code>docker run -it r-base:4.1.0
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>r-base:4.1.0
 </code></pre></div>
 <p>then the R session would appear. We can install packages as usual, such as</p>
-<div class="highlight"><pre><span></span><code>&gt; install.packages<span class="o">(</span><span class="s2">&quot;dplyr&quot;</span><span class="o">)</span>
+<div class="highlight"><pre><span></span><code>&gt;<span class="w"> </span>install.packages<span class="o">(</span><span class="s2">&quot;dplyr&quot;</span><span class="o">)</span>
 </code></pre></div>
 <p>but note that the modification would discard after quitting. So it is necessary to save the changes (refer to <a href="https://phoenixnap.com/kb/how-to-commit-changes-to-docker-image">How to Commit Changes to a Docker Image with Examples</a>) via</p>
-<div class="highlight"><pre><span></span><code>$ docker commit container-ID new-image-name
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>commit<span class="w"> </span>container-ID<span class="w"> </span>new-image-name
 </code></pre></div>
 <p>Next time, we can run with the installed packages,</p>
-<div class="highlight"><pre><span></span><code>$ docker run -it new-image-name
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>new-image-name
 </code></pre></div>
 <p>If we want to plot, then it is necessary to forward X11, see <a href="https://stackoverflow.com/a/25334301">Alternatives to ssh X11-forwarding for Docker containers</a> for more details. Or as @edd suggested in <a href="https://github.com/rocker-org/rocker/issues/302">Enable plotting for r-base container via X-Forwarding</a>, a better one might be to use a container with RStudio Server.</p>
 <h2 id="xampp">XAMPP<a class="headerlink" href="#xampp" title="Permanent link">&para;</a></h2>
@@ -2685,7 +2685,7 @@ $ docker image inspect d1165
 <p>Here is a <a href="https://hub.docker.com/r/tomsik68/xampp">great docker image</a>!</p>
 <p>Start via</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#$ docker pull tomsik68/xampp</span>
-$ docker run --name myXAMPP -p <span class="m">41061</span>:22 -p <span class="m">41062</span>:80 -d -v ~/my_web_pages:/www tomsik68/xampp:8
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>myXAMPP<span class="w"> </span>-p<span class="w"> </span><span class="m">41061</span>:22<span class="w"> </span>-p<span class="w"> </span><span class="m">41062</span>:80<span class="w"> </span>-d<span class="w"> </span>-v<span class="w"> </span>~/my_web_pages:/www<span class="w"> </span>tomsik68/xampp:8
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2699,18 +2699,18 @@ $ docker run --name myXAMPP -p <span class="m">41061</span>:22 -p <span class="m
 </ul>
 </div>
 <p>Then we can see the container via </p>
-<div class="highlight"><pre><span></span><code>$ docker container ls
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                                                    NAMES
-43e5a49cbfd5        tomsik68/xampp      <span class="s2">&quot;sh /startup.sh&quot;</span>    <span class="m">18</span> seconds ago      Up <span class="m">17</span> seconds       <span class="m">3306</span>/tcp, <span class="m">0</span>.0.0.0:41061-&gt;22/tcp, <span class="m">0</span>.0.0.0:41062-&gt;80/tcp   myXAMPP
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>ls
+CONTAINER<span class="w"> </span>ID<span class="w">        </span>IMAGE<span class="w">               </span>COMMAND<span class="w">             </span>CREATED<span class="w">             </span>STATUS<span class="w">              </span>PORTS<span class="w">                                                    </span>NAMES
+43e5a49cbfd5<span class="w">        </span>tomsik68/xampp<span class="w">      </span><span class="s2">&quot;sh /startup.sh&quot;</span><span class="w">    </span><span class="m">18</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="w">      </span>Up<span class="w"> </span><span class="m">17</span><span class="w"> </span>seconds<span class="w">       </span><span class="m">3306</span>/tcp,<span class="w"> </span><span class="m">0</span>.0.0.0:41061-&gt;22/tcp,<span class="w"> </span><span class="m">0</span>.0.0.0:41062-&gt;80/tcp<span class="w">   </span>myXAMPP
 </code></pre></div>
 <p>Stop via</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#$ docker container stop/kill [containerID]</span>
-$ docker stop/kill <span class="o">[</span>containerID<span class="o">]</span>
+$<span class="w"> </span>docker<span class="w"> </span>stop/kill<span class="w"> </span><span class="o">[</span>containerID<span class="o">]</span>
 <span class="c1"># then</span>
-$ docker stop 43e5
+$<span class="w"> </span>docker<span class="w"> </span>stop<span class="w"> </span>43e5
 43e5
-$ docker container ls
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>ls
+CONTAINER<span class="w"> </span>ID<span class="w">        </span>IMAGE<span class="w">               </span>COMMAND<span class="w">             </span>CREATED<span class="w">             </span>STATUS<span class="w">              </span>PORTS<span class="w">               </span>NAMES
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2723,8 +2723,8 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 </div>
 <p>Restart via</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># find the container ID</span>
-$ docker container ls -a
-$ docker container start <span class="o">[</span>containerID<span class="o">]</span>/<span class="o">[</span>containerNAME<span class="o">]</span>
+$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>ls<span class="w"> </span>-a
+$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>start<span class="w"> </span><span class="o">[</span>containerID<span class="o">]</span>/<span class="o">[</span>containerNAME<span class="o">]</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2733,7 +2733,7 @@ $ docker container start <span class="o">[</span>containerID<span class="o">]</s
 </ul>
 </div>
 <p>Establish a ssh connection,</p>
-<div class="highlight"><pre><span></span><code>$ ssh root@127.0.0.1 -p <span class="m">41061</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>root@127.0.0.1<span class="w"> </span>-p<span class="w"> </span><span class="m">41061</span>
 </code></pre></div>
 <p>it sounds like the port-forwarding if we view the container as another linux machine.</p>
 <div class="admonition info">
@@ -2741,7 +2741,7 @@ $ docker container start <span class="o">[</span>containerID<span class="o">]</s
 <p>Both default username and password are <code>root</code>.</p>
 </div>
 <p>Alternatively, we can get a shell terminal insider the container, just like ssh,</p>
-<div class="highlight"><pre><span></span><code>$ docker <span class="nb">exec</span> -it myXAMPP bash
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>myXAMPP<span class="w"> </span>bash
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2753,38 +2753,38 @@ $ docker container start <span class="o">[</span>containerID<span class="o">]</s
 </div>
 <p>If we are inside the container, we can export the path to use the commands provided by XAMPP,</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># inside docker container</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/opt/lampp/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/opt/lampp/bin:<span class="nv">$PATH</span>
 <span class="c1"># or add it to `.bashrc` of the container</span>
 </code></pre></div>
 <p>If we modified the configuration of XAMPP, we need to restart the Apache server via</p>
-<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> myXAMPP /opt/lampp/lampp restart
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>myXAMPP<span class="w"> </span>/opt/lampp/lampp<span class="w"> </span>restart
 </code></pre></div>
 <h2 id="python-for-a-non-internet-env">Python (for a non-internet env)<a class="headerlink" href="#python-for-a-non-internet-env" title="Permanent link">&para;</a></h2>
 <p>First of all, write a dockerfile</p>
-<div class="highlight"><pre><span></span><code>cat Dockerfile
-FROM python:3.7
-RUN pip install jieba
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>Dockerfile
+FROM<span class="w"> </span>python:3.7
+RUN<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jieba
 </code></pre></div>
 <p>then build it with</p>
-<div class="highlight"><pre><span></span><code>$ docker image build -t py37jieba:0.0.1 .
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>image<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>py37jieba:0.0.1<span class="w"> </span>.
 </code></pre></div>
 <p>and test it locally with</p>
-<div class="highlight"><pre><span></span><code>$ docker run -it py37jieba:0.0.1 
-Python <span class="m">3</span>.7.10 <span class="o">(</span>default, May <span class="m">12</span> <span class="m">2021</span>, <span class="m">16</span>:05:48<span class="o">)</span> 
-<span class="o">[</span>GCC <span class="m">8</span>.3.0<span class="o">]</span> on linux
-Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
-&gt;&gt;&gt; import jieba
-&gt;&gt;&gt; jieba.cut<span class="o">(</span><span class="s2">&quot;他来到了网易杭研大厦&quot;</span><span class="o">)</span>
-&lt;generator object Tokenizer.cut at 0x7fda1c981bd0&gt;
-&gt;&gt;&gt; print<span class="o">(</span><span class="s2">&quot;, &quot;</span>.join<span class="o">(</span>jieba.cut<span class="o">(</span><span class="s2">&quot;他来到了网易杭研大厦&quot;</span><span class="o">)))</span>
-Building prefix dict from the default dictionary ...
-Dumping model to file cache /tmp/jieba.cache
-Loading model cost <span class="m">0</span>.924 seconds.
-Prefix dict has been built successfully.
-他, 来到, 了, 网易, 杭研, 大厦
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>py37jieba:0.0.1<span class="w"> </span>
+Python<span class="w"> </span><span class="m">3</span>.7.10<span class="w"> </span><span class="o">(</span>default,<span class="w"> </span>May<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">2021</span>,<span class="w"> </span><span class="m">16</span>:05:48<span class="o">)</span><span class="w"> </span>
+<span class="o">[</span>GCC<span class="w"> </span><span class="m">8</span>.3.0<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>linux
+Type<span class="w"> </span><span class="s2">&quot;help&quot;</span>,<span class="w"> </span><span class="s2">&quot;copyright&quot;</span>,<span class="w"> </span><span class="s2">&quot;credits&quot;</span><span class="w"> </span>or<span class="w"> </span><span class="s2">&quot;license&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information.
+&gt;&gt;&gt;<span class="w"> </span>import<span class="w"> </span>jieba
+&gt;&gt;&gt;<span class="w"> </span>jieba.cut<span class="o">(</span><span class="s2">&quot;他来到了网易杭研大厦&quot;</span><span class="o">)</span>
+&lt;generator<span class="w"> </span>object<span class="w"> </span>Tokenizer.cut<span class="w"> </span>at<span class="w"> </span>0x7fda1c981bd0&gt;
+&gt;&gt;&gt;<span class="w"> </span>print<span class="o">(</span><span class="s2">&quot;, &quot;</span>.join<span class="o">(</span>jieba.cut<span class="o">(</span><span class="s2">&quot;他来到了网易杭研大厦&quot;</span><span class="o">)))</span>
+Building<span class="w"> </span>prefix<span class="w"> </span>dict<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>dictionary<span class="w"> </span>...
+Dumping<span class="w"> </span>model<span class="w"> </span>to<span class="w"> </span>file<span class="w"> </span>cache<span class="w"> </span>/tmp/jieba.cache
+Loading<span class="w"> </span>model<span class="w"> </span>cost<span class="w"> </span><span class="m">0</span>.924<span class="w"> </span>seconds.
+Prefix<span class="w"> </span>dict<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>built<span class="w"> </span>successfully.
+他,<span class="w"> </span>来到,<span class="w"> </span>了,<span class="w"> </span>网易,<span class="w"> </span>杭研,<span class="w"> </span>大厦
 </code></pre></div>
 <p>save the image with</p>
-<div class="highlight"><pre><span></span><code>$ docker save py37jieba:0.0.1 <span class="p">|</span> gzip &gt; py37jieba-0.0.1.tar.gz
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>save<span class="w"> </span>py37jieba:0.0.1<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>py37jieba-0.0.1.tar.gz
 </code></pre></div>
 <p>refer to <a href="https://github.com/hubutui/docker-for-env-without-internet-access">hubutui/docker-for-env-without-internet-access</a></p>
 <h2 id="tex">TeX<a class="headerlink" href="#tex" title="Permanent link">&para;</a></h2>
@@ -2793,35 +2793,35 @@ Prefix dict has been built successfully.
 <li><a href="https://hub.docker.com/r/texlive/texlive">TeX Live docker image</a></li>
 </ul>
 <h2 id="no-space-left-on-device-unknown"><code>no space left on device: unknown</code><a class="headerlink" href="#no-space-left-on-device-unknown" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ docker system prune
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>system<span class="w"> </span>prune
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/30604846/docker-error-no-space-left-on-device">Docker error : no space left on device</a></p>
 <h2 id="ownership-of-generated-files">ownership of generated files<a class="headerlink" href="#ownership-of-generated-files" title="Permanent link">&para;</a></h2>
 <p>The default ownership file is <code>root</code>, and fail to accessed.</p>
 <p>We can specify the owner if necessary,</p>
-<div class="highlight"><pre><span></span><code>$ docker run -v <span class="nv">$PWD</span>:/root -w /root -u <span class="nv">$UID</span>:<span class="nv">$UID</span> -it py37jieba:0.0.5 bash
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/root<span class="w"> </span>-w<span class="w"> </span>/root<span class="w"> </span>-u<span class="w"> </span><span class="nv">$UID</span>:<span class="nv">$UID</span><span class="w"> </span>-it<span class="w"> </span>py37jieba:0.0.5<span class="w"> </span>bash
 </code></pre></div>
 <p>where the valid formats from <code>man docker-run</code> include</p>
-<div class="highlight"><pre><span></span><code>          --user <span class="o">[</span>user <span class="p">|</span> user:group <span class="p">|</span> uid <span class="p">|</span> uid:gid <span class="p">|</span> user:gid <span class="p">|</span> uid:group <span class="o">]</span>
+<div class="highlight"><pre><span></span><code><span class="w">          </span>--user<span class="w"> </span><span class="o">[</span>user<span class="w"> </span><span class="p">|</span><span class="w"> </span>user:group<span class="w"> </span><span class="p">|</span><span class="w"> </span>uid<span class="w"> </span><span class="p">|</span><span class="w"> </span>uid:gid<span class="w"> </span><span class="p">|</span><span class="w"> </span>user:gid<span class="w"> </span><span class="p">|</span><span class="w"> </span>uid:group<span class="w"> </span><span class="o">]</span>
 </code></pre></div>
 <p>but a direct username <code>weiya</code> throws,</p>
-<div class="highlight"><pre><span></span><code>docker: Error response from daemon: unable to find user weiya: no matching entries <span class="k">in</span> passwd file.
-ERRO<span class="o">[</span><span class="m">0000</span><span class="o">]</span> error waiting <span class="k">for</span> container: context canceled 
+<div class="highlight"><pre><span></span><code>docker:<span class="w"> </span>Error<span class="w"> </span>response<span class="w"> </span>from<span class="w"> </span>daemon:<span class="w"> </span>unable<span class="w"> </span>to<span class="w"> </span>find<span class="w"> </span>user<span class="w"> </span>weiya:<span class="w"> </span>no<span class="w"> </span>matching<span class="w"> </span>entries<span class="w"> </span><span class="k">in</span><span class="w"> </span>passwd<span class="w"> </span>file.
+ERRO<span class="o">[</span><span class="m">0000</span><span class="o">]</span><span class="w"> </span>error<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>container:<span class="w"> </span>context<span class="w"> </span>canceled<span class="w"> </span>
 </code></pre></div>
 <p>with a specific uid, the prompt displays</p>
-<div class="highlight"><pre><span></span><code>I have no name!@afea1a0b4bd7:/root$ <span class="nb">echo</span> <span class="s2">&quot;own by weiya&quot;</span> &gt; test_ownship.txt
+<div class="highlight"><pre><span></span><code>I<span class="w"> </span>have<span class="w"> </span>no<span class="w"> </span>name!@afea1a0b4bd7:/root$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;own by weiya&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>test_ownship.txt
 </code></pre></div>
 <p>Test with <code>1000</code> and <code>1000:1000</code> respectively, the results are</p>
-<div class="highlight"><pre><span></span><code>-rw-r--r-- <span class="m">1</span> weiya weiya        <span class="m">13</span> Jul <span class="m">14</span> <span class="m">13</span>:36 test_ownship2.txt
--rw-r--r-- <span class="m">1</span> weiya root         <span class="m">13</span> Jul <span class="m">14</span> <span class="m">12</span>:04 test_ownship.txt
+<div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>weiya<span class="w"> </span>weiya<span class="w">        </span><span class="m">13</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">13</span>:36<span class="w"> </span>test_ownship2.txt
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>weiya<span class="w"> </span>root<span class="w">         </span><span class="m">13</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">12</span>:04<span class="w"> </span>test_ownship.txt
 </code></pre></div>
 <p>refer to <a href="https://unix.stackexchange.com/questions/627027/files-created-by-docker-container-are-owned-by-root">Files created by Docker container are owned by root</a></p>
 <h2 id="run-in-background">Run in background<a class="headerlink" href="#run-in-background" title="Permanent link">&para;</a></h2>
 <p>Suppose I want to run a script in the background, the classical way is</p>
-<div class="highlight"><pre><span></span><code>$ python test.py <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>python<span class="w"> </span>test.py<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
 <p>But with docker, the correct way is to add option <code>-d</code>.</p>
-<div class="highlight"><pre><span></span><code>$ docker run -d 
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>
 </code></pre></div>
 <p>refer to <a href="https://melvingeorge.me/blog/run-docker-container-in-background-or-detached-mode-terminal">How to run a docker container in the background or detached mode in the terminal?</a></p>
 <ul>
@@ -2833,7 +2833,7 @@ ERRO<span class="o">[</span><span class="m">0000</span><span class="o">]</span> 
 <p>See <a href="https://github.com/szcf-weiya/SZmedinfo/issues/11#issuecomment-921357663">SZmedinfo/issues/11</a> for some failed attempts</p>
 </div>
 <p>Another related task is to run the script in the background of docker, which can keep the container running forever,</p>
-<div class="highlight"><pre><span></span><code>RUN bash -c <span class="s2">&quot;sh script.sh &amp; tail -F /dev/null&quot;</span>
+<div class="highlight"><pre><span></span><code>RUN<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;sh script.sh &amp; tail -F /dev/null&quot;</span>
 </code></pre></div>
 <p>refer to <a href="https://superuser.com/questions/1107490/run-a-background-script-inside-a-docker-container">Run a background script inside a docker container</a></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
@@ -2843,7 +2843,7 @@ ERRO<span class="o">[</span><span class="m">0000</span><span class="o">]</span> 
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 <p>write out log file, do not use the abbreviated version, <code>&amp;&gt;</code> since it is only supported in bash, and instead write the full format</p>
-<div class="highlight"><pre><span></span><code>RUN sh -c <span class="s1">&#39;python test.py &gt; out.log 2&gt;&amp;1&#39;</span>
+<div class="highlight"><pre><span></span><code>RUN<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;python test.py &gt; out.log 2&gt;&amp;1&#39;</span>
 </code></pre></div>
 
   <hr>
@@ -2922,7 +2922,7 @@ ERRO<span class="o">[</span><span class="m">0000</span><span class="o">]</span> 
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

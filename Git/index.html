@@ -3340,24 +3340,24 @@
 </ul>
 <h2 id="setup-init-config">SETUP &amp; INIT: <code>config</code><a class="headerlink" href="#setup-init-config" title="Permanent link">&para;</a></h2>
 <h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sudo apt-get install git
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git
 </code></pre></div>
 <h3 id="setup-user-name-and-email">Setup User Name and Email<a class="headerlink" href="#setup-user-name-and-email" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>git config --global user.name <span class="s2">&quot;test&quot;</span>
-git config --global user.email <span class="s2">&quot;test@163.com&quot;</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;test&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;test@163.com&quot;</span>
 </code></pre></div>
 <p>除了设置全局的 <code>name</code> 和 <code>email</code>，也可以指定 <code>--local</code>（因为是默认行为，因此也可以省略）对不同 project 指定不同的 <code>name</code> 及 <code>email</code>, </p>
-<div class="highlight"><pre><span></span><code>git config <span class="o">[</span>--local<span class="o">]</span> user.name <span class="s2">&quot;foo&quot;</span>
-git config <span class="o">[</span>--local<span class="o">]</span> user.email <span class="s2">&quot;foo@gmail.com&quot;</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span><span class="o">[</span>--local<span class="o">]</span><span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;foo&quot;</span>
+git<span class="w"> </span>config<span class="w"> </span><span class="o">[</span>--local<span class="o">]</span><span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;foo@gmail.com&quot;</span>
 </code></pre></div>
 <p>另外还有更高级的配置 <code>--system</code>。显然，local 覆盖 global, 而 global 覆盖 system.</p>
 <p>如果想要知道当前 <code>name</code> 和 <code>email</code>,可以通过下面命令查看</p>
-<div class="highlight"><pre><span></span><code>git config user.name
-git config user.email
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>user.name
+git<span class="w"> </span>config<span class="w"> </span>user.email
 </code></pre></div>
 <p>参考 <a href="https://stackoverflow.com/questions/8801729/is-it-possible-to-have-different-git-configuration-for-different-projects">Is it possible to have different Git configuration for different projects?</a></p>
 <h3 id="push-with-ssh-key">push with ssh key<a class="headerlink" href="#push-with-ssh-key" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>ssh-keygen -t rsa -C <span class="s2">&quot;test@163.com&quot;</span>
+<div class="highlight"><pre><span></span><code>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;test@163.com&quot;</span>
 </code></pre></div>
 <p>复制 <code>~/.ssh/id_rsa.pub</code> 到 github 上。</p>
 <h3 id="sign-with-gpg-key">sign with GPG key<a class="headerlink" href="#sign-with-gpg-key" title="Permanent link">&para;</a></h3>
@@ -3369,67 +3369,67 @@ git config user.email
 </ul>
 <p>The steps are:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># generate GPG key, 4096bits</span>
-gpg --full-generate-key
+gpg<span class="w"> </span>--full-generate-key
 <span class="c1"># get secret key id</span>
-gpg --list-secret-keys --keyid-format LONG
+gpg<span class="w"> </span>--list-secret-keys<span class="w"> </span>--keyid-format<span class="w"> </span>LONG
 <span class="c1"># configure git</span>
-git config --global user.signingkey &lt;SECRET_KEY_ID&gt;
-git config --global commit.gpgsign <span class="nb">true</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.signingkey<span class="w"> </span>&lt;SECRET_KEY_ID&gt;
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>commit.gpgsign<span class="w"> </span><span class="nb">true</span>
 <span class="c1"># tell github public GPG key</span>
-gpg --armor --export &lt;SECRET_KEY_ID&gt;
+gpg<span class="w"> </span>--armor<span class="w"> </span>--export<span class="w"> </span>&lt;SECRET_KEY_ID&gt;
 </code></pre></div>
 <h2 id="clean-clean">CLEAN: <code>clean</code><a class="headerlink" href="#clean-clean" title="Permanent link">&para;</a></h2>
 <h3 id="remove-untracked-files">remove untracked files<a class="headerlink" href="#remove-untracked-files" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>git clean -n
-git clean -f
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clean<span class="w"> </span>-n
+git<span class="w"> </span>clean<span class="w"> </span>-f
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files-from-the-current-git-working-tree">How to remove local (untracked) files from the current Git working tree</a></p>
 <h2 id="clone-clone">CLONE: <code>clone</code><a class="headerlink" href="#clone-clone" title="Permanent link">&para;</a></h2>
 <ul>
 <li>提高 <code>git clone</code> 速度</li>
 </ul>
-<div class="highlight"><pre><span></span><code>git config --global http.postBuffer <span class="m">524288000</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>http.postBuffer<span class="w"> </span><span class="m">524288000</span>
 </code></pre></div>
 <ul>
 <li>clone 单个分支</li>
 </ul>
-<div class="highlight"><pre><span></span><code>git clone -b BRANCH_NAME ...
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>BRANCH_NAME<span class="w"> </span>...
 </code></pre></div>
 <ul>
 <li>clone 多个分支</li>
 </ul>
-<div class="highlight"><pre><span></span><code>git clone ...
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>...
 <span class="c1"># list the remote-tracking branches</span>
-git branch -r 
+git<span class="w"> </span>branch<span class="w"> </span>-r<span class="w"> </span>
 <span class="c1"># OR: list both remote-tracking branches and local branches</span>
-git branch -a 
-git checkout -b BRANCH_NAME REMOTE_BRANCH
+git<span class="w"> </span>branch<span class="w"> </span>-a<span class="w"> </span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>BRANCH_NAME<span class="w"> </span>REMOTE_BRANCH
 <span class="c1"># OR: the branch name is exactly in the remote branches</span>
-git checkout BRANCH_NAME
+git<span class="w"> </span>checkout<span class="w"> </span>BRANCH_NAME
 </code></pre></div>
 <h2 id="branch-branch">BRANCH: <code>branch</code><a class="headerlink" href="#branch-branch" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># list branch</span>
-$ git branch
+$<span class="w"> </span>git<span class="w"> </span>branch
 <span class="c1"># create a new branch</span>
-$ git branch <span class="o">[</span>branch_name<span class="o">]</span>
+$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span><span class="o">[</span>branch_name<span class="o">]</span>
 <span class="c1"># switch branch</span>
-$ git checkout <span class="o">[</span>branch_name<span class="o">]</span>
+$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span><span class="o">[</span>branch_name<span class="o">]</span>
 </code></pre></div>
 <h3 id="delete-branches">delete branches<a class="headerlink" href="#delete-branches" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">## Delete a remote branch</span>
-$ git push origin --delete &lt;branch&gt; <span class="c1"># Git version 1.7.0 or newer</span>
-$ git push origin :&lt;branch&gt; <span class="c1"># Git versions older than 1.7.0</span>
+$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>&lt;branch&gt;<span class="w"> </span><span class="c1"># Git version 1.7.0 or newer</span>
+$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>:&lt;branch&gt;<span class="w"> </span><span class="c1"># Git versions older than 1.7.0</span>
 
 <span class="c1">## Delete a local branch</span>
-$ git branch --delete &lt;branch&gt;
-$ git branch -d &lt;branch&gt; <span class="c1"># Shorter version</span>
-$ git branch -D &lt;branch&gt; <span class="c1"># Force delete un-merged branches</span>
+$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>--delete<span class="w"> </span>&lt;branch&gt;
+$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>&lt;branch&gt;<span class="w"> </span><span class="c1"># Shorter version</span>
+$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-D<span class="w"> </span>&lt;branch&gt;<span class="w"> </span><span class="c1"># Force delete un-merged branches</span>
 
 <span class="c1">## Delete a local remote-tracking branch</span>
-$ git branch --delete --remotes &lt;remote&gt;/&lt;branch&gt;
-$ git branch -dr &lt;remote&gt;/&lt;branch&gt; <span class="c1"># Shorter</span>
-$ git fetch &lt;remote&gt; --prune <span class="c1"># Delete multiple obsolete tracking branches</span>
-$ git fetch &lt;remote&gt; -p <span class="c1"># Shorter</span>
+$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>--delete<span class="w"> </span>--remotes<span class="w"> </span>&lt;remote&gt;/&lt;branch&gt;
+$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-dr<span class="w"> </span>&lt;remote&gt;/&lt;branch&gt;<span class="w"> </span><span class="c1"># Shorter</span>
+$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>&lt;remote&gt;<span class="w"> </span>--prune<span class="w"> </span><span class="c1"># Delete multiple obsolete tracking branches</span>
+$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>&lt;remote&gt;<span class="w"> </span>-p<span class="w"> </span><span class="c1"># Shorter</span>
 </code></pre></div>
 <p>adapted from <a href="https://gist.github.com/cmatskas/454e3369e6963a1c8c89">cmatskas/GitDeleteCommands.ps1</a></p>
 <p>see also: <a href="http://blog.csdn.net/jefbai/article/details/44234383">删除github的master分支</a></p>
@@ -3440,19 +3440,19 @@ $ git fetch &lt;remote&gt; -p <span class="c1"># Shorter</span>
 <h2 id="push-push">PUSH: <code>push</code><a class="headerlink" href="#push-push" title="Permanent link">&para;</a></h2>
 <h3 id="default-push">default push<a class="headerlink" href="#default-push" title="Permanent link">&para;</a></h3>
 <p>采用低版本的 git， 如 <code>v1.8.3.1</code> 当 push 时会报出以下提醒信息，</p>
-<div class="highlight"><pre><span></span><code>warning: push.default is unset<span class="p">;</span> its implicit value is changing <span class="k">in</span>
-Git <span class="m">2</span>.0 from <span class="s1">&#39;matching&#39;</span> to <span class="s1">&#39;simple&#39;</span>. To squelch this message
-and maintain the current behavior after the default changes, use:
+<div class="highlight"><pre><span></span><code>warning:<span class="w"> </span>push.default<span class="w"> </span>is<span class="w"> </span>unset<span class="p">;</span><span class="w"> </span>its<span class="w"> </span>implicit<span class="w"> </span>value<span class="w"> </span>is<span class="w"> </span>changing<span class="w"> </span><span class="k">in</span>
+Git<span class="w"> </span><span class="m">2</span>.0<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;matching&#39;</span><span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;simple&#39;</span>.<span class="w"> </span>To<span class="w"> </span>squelch<span class="w"> </span>this<span class="w"> </span>message
+and<span class="w"> </span>maintain<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>behavior<span class="w"> </span>after<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>changes,<span class="w"> </span>use:
 
-  git config --global push.default matching
+<span class="w">  </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>push.default<span class="w"> </span>matching
 
-To squelch this message and adopt the new behavior now, use:
+To<span class="w"> </span>squelch<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>adopt<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>behavior<span class="w"> </span>now,<span class="w"> </span>use:
 
-  git config --global push.default simple
+<span class="w">  </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>push.default<span class="w"> </span>simple
 
-See <span class="s1">&#39;git help config&#39;</span> and search <span class="k">for</span> <span class="s1">&#39;push.default&#39;</span> <span class="k">for</span> further information.
-<span class="o">(</span>the <span class="s1">&#39;simple&#39;</span> mode was introduced <span class="k">in</span> Git <span class="m">1</span>.7.11. Use the similar mode
-<span class="s1">&#39;current&#39;</span> instead of <span class="s1">&#39;simple&#39;</span> <span class="k">if</span> you sometimes use older versions of Git<span class="o">)</span>
+See<span class="w"> </span><span class="s1">&#39;git help config&#39;</span><span class="w"> </span>and<span class="w"> </span>search<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;push.default&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>further<span class="w"> </span>information.
+<span class="o">(</span>the<span class="w"> </span><span class="s1">&#39;simple&#39;</span><span class="w"> </span>mode<span class="w"> </span>was<span class="w"> </span>introduced<span class="w"> </span><span class="k">in</span><span class="w"> </span>Git<span class="w"> </span><span class="m">1</span>.7.11.<span class="w"> </span>Use<span class="w"> </span>the<span class="w"> </span>similar<span class="w"> </span>mode
+<span class="s1">&#39;current&#39;</span><span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span><span class="s1">&#39;simple&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>sometimes<span class="w"> </span>use<span class="w"> </span>older<span class="w"> </span>versions<span class="w"> </span>of<span class="w"> </span>Git<span class="o">)</span>
 </code></pre></div>
 <p>而自己本机电脑一般采用 <code>v2.0+</code>， 比如当前 <code>v2.17.1</code> 的 git，所以直接采用 <code>simple</code> 模式便好了。</p>
 <p>See also: <a href="https://segmentfault.com/a/1190000002783245">Git push与pull的默认行为</a></p>
@@ -3465,25 +3465,25 @@ See <span class="s1">&#39;git help config&#39;</span> and search <span class="k"
 <h2 id="remote-remote">REMOTE: <code>remote</code><a class="headerlink" href="#remote-remote" title="Permanent link">&para;</a></h2>
 <h3 id="change-remote-repo-name">change remote repo name<a class="headerlink" href="#change-remote-repo-name" title="Permanent link">&para;</a></h3>
 <p>举个例子，如将一个名为 epi 的仓库改名为 depi，再次在本地提交虽然也能成功，但是会提示你原始的仓库已经移动，请修改为新的仓库地址，于是我们可以利用下面的命令进行修改</p>
-<div class="highlight"><pre><span></span><code>git remote set-url origin git@github.com:szcf-weiya/depi.git
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>git@github.com:szcf-weiya/depi.git
 </code></pre></div>
 <h3 id="modify-origin">modify origin<a class="headerlink" href="#modify-origin" title="Permanent link">&para;</a></h3>
 <p>本地通过 <code>git clone</code> 得到仓库 <a href="https://github.com/CellProfiler/CellProfiler">CellProfiler/CellProfiler</a>，后来需要在此基础上做些更改用到自己的项目中去，于是对原仓库进行了 fork，不过忘记了本地的仓库其实是从原仓库 clone 下来的，而非来自 fork 后的仓库，所以当在 git push 会试图像原仓库进行 push 时，当然是会被拒绝的。</p>
 <p>简单的方法便是直接更改本地仓库的 origin，首先可以通过</p>
-<div class="highlight"><pre><span></span><code>git remote show origin
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>show<span class="w"> </span>origin
 </code></pre></div>
 <p>来查看当前 origin，前几行显示如下</p>
-<div class="highlight"><pre><span></span><code>$ git remote show origin
-* remote origin
-  Fetch URL: git@github.com:CellProfiler/CellProfiler.git
-  Push  URL: git@github.com:CellProfiler/CellProfiler.git
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>show<span class="w"> </span>origin
+*<span class="w"> </span>remote<span class="w"> </span>origin
+<span class="w">  </span>Fetch<span class="w"> </span>URL:<span class="w"> </span>git@github.com:CellProfiler/CellProfiler.git
+<span class="w">  </span>Push<span class="w">  </span>URL:<span class="w"> </span>git@github.com:CellProfiler/CellProfiler.git
 </code></pre></div>
 <p>更改可以使用</p>
-<div class="highlight"><pre><span></span><code>git remote rm origin
-git remote add origin git@github.com:szcf-weiya/CellProfiler.git
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>rm<span class="w"> </span>origin
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:szcf-weiya/CellProfiler.git
 </code></pre></div>
 <p>或者直接一步走</p>
-<div class="highlight"><pre><span></span><code>git remote set-url origin git@github.com:szcf-weiya/CellProfiler.git
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>git@github.com:szcf-weiya/CellProfiler.git
 </code></pre></div>
 <p>注意到这里 url 都是直接取的 <code>git@github.com</code>，倘若用了 <code>https://github.com</code>，则 push 时会要求手动输入密码。</p>
 <p>参考 <a href="https://stackoverflow.com/questions/11619593/how-to-change-the-fork-that-a-repository-is-linked-to">How to change the fork that a repository is linked to</a></p>
@@ -3491,28 +3491,28 @@ git remote add origin git@github.com:szcf-weiya/CellProfiler.git
 <ol>
 <li>添加原仓库，比如</li>
 </ol>
-<div class="highlight"><pre><span></span><code>git remote add upstream git@github.com:LCTT/TranslateProject.git
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>git@github.com:LCTT/TranslateProject.git
 </code></pre></div>
 <p>查看当前远程仓库</p>
-<div class="highlight"><pre><span></span><code>git remote -v
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>-v
 </code></pre></div>
 <ol start="2">
 <li>pull</li>
 </ol>
-<div class="highlight"><pre><span></span><code>git pull upstream master
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> </span>master
 </code></pre></div>
 <p>参考<a href="https://www.sitepoint.com/quick-tip-synch-a-github-fork-via-the-command-line/">Quick Tip: Sync a GitHub Fork via the Command Line</a></p>
 <h2 id="rewrite-history-rebase-reset">Rewrite History: <code>rebase, reset</code><a class="headerlink" href="#rewrite-history-rebase-reset" title="Permanent link">&para;</a></h2>
 <h3 id="rebase-after-merge">rebase after merge<a class="headerlink" href="#rebase-after-merge" title="Permanent link">&para;</a></h3>
 <p>Suppose I have done</p>
-<div class="highlight"><pre><span></span><code>git add .
-git commit -m <span class="s2">&quot;add local changes&quot;</span>
-git pull
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;add local changes&quot;</span>
+git<span class="w"> </span>pull
 </code></pre></div>
 <p>then a merge will be invoked. </p>
 <p>But actually these two commits do not have conflicts, so we can use</p>
-<div class="highlight"><pre><span></span><code>$ git rebase
-First, rewinding head to replay your work on top of it...
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>rebase
+First,<span class="w"> </span>rewinding<span class="w"> </span>head<span class="w"> </span>to<span class="w"> </span>replay<span class="w"> </span>your<span class="w"> </span>work<span class="w"> </span>on<span class="w"> </span>top<span class="w"> </span>of<span class="w"> </span>it...
 </code></pre></div>
 <p>to remove the merge commit.</p>
 <h3 id="discard-local-changes">discard local changes<a class="headerlink" href="#discard-local-changes" title="Permanent link">&para;</a></h3>
@@ -3537,73 +3537,73 @@ First, rewinding head to replay your work on top of it...
 </ul>
 <h3 id="discard-reset">discard reset<a class="headerlink" href="#discard-reset" title="Permanent link">&para;</a></h3>
 <p>type</p>
-<div class="highlight"><pre><span></span><code>git reflog
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>reflog
 </code></pre></div>
 <p>to find the log of all ref updates, and then use</p>
-<div class="highlight"><pre><span></span><code>git reset <span class="s1">&#39;HEAD@{1}&#39;</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>reset<span class="w"> </span><span class="s1">&#39;HEAD@{1}&#39;</span>
 </code></pre></div>
 <p>to restore the corresponding state of <code>HEAD@{1}</code>, where <code>1</code> implies that last state, and it can be set as other refs.</p>
 <p>refer to <a href="https://stackoverflow.com/questions/2510276/how-to-undo-git-reset">How to undo &lsquo;git reset&rsquo;?</a></p>
 <h3 id="case-study">case study<a class="headerlink" href="#case-study" title="Permanent link">&para;</a></h3>
 <p>某次写博客时，有一篇仍处于草稿箱的文件 A.md 暂时不想上传，但是更改了已经发表的文章 B.md 中的 typo，然后提交时一不留神直接用</p>
-<div class="highlight"><pre><span></span><code>$ g <span class="s2">&quot;fix typo&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>g<span class="w"> </span><span class="s2">&quot;fix typo&quot;</span>
 </code></pre></div>
 <p>提交了，其中 <code>g</code> 是在 <code>.bashrc</code> 中自定义的一个函数，</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># file .bashrc</span>
 <span class="c1"># alias for git</span>
 func_g<span class="o">(){</span>
-    rm -f core
-    git add .
-    git commit -a -m <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-    git push
+<span class="w">    </span>rm<span class="w"> </span>-f<span class="w"> </span>core
+<span class="w">    </span>git<span class="w"> </span>add<span class="w"> </span>.
+<span class="w">    </span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">    </span>git<span class="w"> </span>push
 <span class="o">}</span>
-<span class="nb">alias</span> <span class="nv">g</span><span class="o">=</span>func_g
+<span class="nb">alias</span><span class="w"> </span><span class="nv">g</span><span class="o">=</span>func_g
 </code></pre></div>
 <p>本来会直接 push 上去的，但是发现及时，Ctrl-C 取消掉了，不过 commit 需要回退。注意到这时并不想放弃修改的文档，所以 <code>--hard</code> 选项不可取，</p>
-<div class="highlight"><pre><span></span><code>$ git reset --soft HEAD^
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD^
 </code></pre></div>
 <p>这只是取消了 commit，但是仍然被 add 了，查看 git status，会有一行提示语，</p>
-<div class="highlight"><pre><span></span><code>  <span class="o">(</span>use <span class="s2">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git reset HEAD &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>unstage<span class="o">)</span>
 </code></pre></div>
 <p>所以下一步自然为</p>
-<div class="highlight"><pre><span></span><code>$ git reset HEAD A.md
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span>HEAD<span class="w"> </span>A.md
 </code></pre></div>
 <p>有时可能删掉已经 add （甚至 commit，但还没 push） 的文件（比如下文中的 <code>Peek 2020-08-20 10-06.mp4</code>），首先如果 committed，则采用</p>
-<div class="highlight"><pre><span></span><code>$ git reset --soft HEAD^
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span>HEAD^
 </code></pre></div>
 <p>取消 commit，然后 <code>git add</code> 就好了，但是继续撤销 add 的状态，并没有作用，而是提示</p>
 <blockquote>
 <p>Unstaged changes after reset:</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>$ git status
-On branch master
-Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>status
+On<span class="w"> </span>branch<span class="w"> </span>master
+Your<span class="w"> </span>branch<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span>date<span class="w"> </span>with<span class="w"> </span><span class="s1">&#39;origin/master&#39;</span>.
 
-Changes to be committed:
-  <span class="o">(</span>use <span class="s2">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+Changes<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>committed:
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git reset HEAD &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>unstage<span class="o">)</span>
 
-        new file:   docs/Linux/Peek <span class="m">2020</span>-08-20 <span class="m">10</span>-06.mp4
+<span class="w">        </span>new<span class="w"> </span>file:<span class="w">   </span>docs/Linux/Peek<span class="w"> </span><span class="m">2020</span>-08-20<span class="w"> </span><span class="m">10</span>-06.mp4
 
-Changes not staged <span class="k">for</span> commit:
-  <span class="o">(</span>use <span class="s2">&quot;git add/rm &lt;file&gt;...&quot;</span> to update what will be committed<span class="o">)</span>
-  <span class="o">(</span>use <span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes <span class="k">in</span> working directory<span class="o">)</span>
+Changes<span class="w"> </span>not<span class="w"> </span>staged<span class="w"> </span><span class="k">for</span><span class="w"> </span>commit:
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git add/rm &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>update<span class="w"> </span>what<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>committed<span class="o">)</span>
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>discard<span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span>working<span class="w"> </span>directory<span class="o">)</span>
 
-        deleted:    docs/Linux/Peek <span class="m">2020</span>-08-20 <span class="m">10</span>-06.mp4
+<span class="w">        </span>deleted:<span class="w">    </span>docs/Linux/Peek<span class="w"> </span><span class="m">2020</span>-08-20<span class="w"> </span><span class="m">10</span>-06.mp4
 
-$ git reset HEAD docs/Linux/Peek <span class="m">2020</span>-08-20 <span class="m">10</span>-06.mp4
-Unstaged changes after reset:
-D       docs/Linux/Peek <span class="m">2020</span>-08-20 <span class="m">10</span>-06.mp4
-$ git add .
-$ git status
-On branch master
-Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
+$<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span>HEAD<span class="w"> </span>docs/Linux/Peek<span class="w"> </span><span class="m">2020</span>-08-20<span class="w"> </span><span class="m">10</span>-06.mp4
+Unstaged<span class="w"> </span>changes<span class="w"> </span>after<span class="w"> </span>reset:
+D<span class="w">       </span>docs/Linux/Peek<span class="w"> </span><span class="m">2020</span>-08-20<span class="w"> </span><span class="m">10</span>-06.mp4
+$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>.
+$<span class="w"> </span>git<span class="w"> </span>status
+On<span class="w"> </span>branch<span class="w"> </span>master
+Your<span class="w"> </span>branch<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span>to<span class="w"> </span>date<span class="w"> </span>with<span class="w"> </span><span class="s1">&#39;origin/master&#39;</span>.
 </code></pre></div>
 <h3 id="amend-commit-message">amend commit message<a class="headerlink" href="#amend-commit-message" title="Permanent link">&para;</a></h3>
 <p>If the latest commit， type</p>
-<div class="highlight"><pre><span></span><code>git commit --amend
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>--amend
 </code></pre></div>
 <p>to edit the commit message, and then</p>
-<div class="highlight"><pre><span></span><code>git push --force-with-lease
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>--force-with-lease
 </code></pre></div>
 <p>where <code>--force-with-lease</code> is a safer version than <code>--force</code>, in which the former will not overwrite any work on the remote branch while the latter would overwrites a remote branch with the local branch. More detailed comparisons refer to <a href="https://stackoverflow.com/questions/52823692/git-push-force-with-lease-vs-force">git push &ndash;force-with-lease vs. &ndash;force</a></p>
 <p>Refer to <a href="https://stackoverflow.com/questions/8981194/changing-git-commit-message-after-push-given-that-no-one-pulled-from-remote">Changing git commit message after push (given that no one pulled from remote)</a>.</p>
@@ -3612,14 +3612,14 @@ Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/125570542-dd69c945-e2b4-427c-8c28-5ba4b7bec961.png" /></p>
 <p>这也正是我想要的，简单说就是把基于以前的更改转换成基于最新的更改。</p>
 <p>然而我这情况还没这么直接，因为有过很多 merges，这些 merges 都想放弃掉。</p>
-<div class="highlight"><pre><span></span><code>$ git log --graph --format<span class="o">=</span>%s
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--format<span class="o">=</span>%s
 </code></pre></div>
 <p><img alt="" src="graph-merges.png" /></p>
 <p>后来发现了 <a href="https://git-scm.com/docs/git-rebase/2.28.0#_rebasing_merges">&ndash;rebase-merges</a> 选项，似乎是在处理我的问题（<del>最后还是理解反了</del>），但是没高兴多久，服务器端的 git 版本只有 <code>1.8.3.1</code>，而这个选项至少要求 <code>2.x</code>。不过有注意到了 <code>--preserve-merges</code> 选项，新版本中已经 deprecated，而且文档中有这么一句，</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>DEPRECATED: use --rebase-merges instead<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>DEPRECATED:<span class="w"> </span>use<span class="w"> </span>--rebase-merges<span class="w"> </span>instead<span class="o">]</span>
 </code></pre></div>
 <p>似乎也可以用，但是这个名字怎么感觉跟我的目标是相反的呢！?（此时还未意识到），后来简单试了一下</p>
-<div class="highlight"><pre><span></span><code>$ git rebase --preserve-merges
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>rebase<span class="w"> </span>--preserve-merges
 </code></pre></div>
 <p>发现没啥变化。这才意识到自己理解错了这两个命令。</p>
 <p>后来又注意到了 <code>--root</code> 选项，发现这个跟自己的目标挺像的，而且抱着搞坏了大不了重新 <code>git clone</code> 一下，所以果断去试了，history 确实都变成线性了</p>
@@ -3627,7 +3627,7 @@ Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
 <p>但是似乎还没成功，commits 都变成不一样了，</p>
 <p><img alt="" src="rebase-root.png" /></p>
 <p>后来又瞎运行了下</p>
-<div class="highlight"><pre><span></span><code>$ git rebase
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>rebase
 </code></pre></div>
 <p>发现竟然成功了，</p>
 <p><img alt="" src="rebase-again.png" /></p>
@@ -3636,49 +3636,49 @@ Your branch is up to date with <span class="s1">&#39;origin/master&#39;</span>.
 <h3 id="change-commit-time">change commit time<a class="headerlink" href="#change-commit-time" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">TL;DR</p>
-<div class="highlight"><pre><span></span><code><span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;-10 days - 8 hours&quot;</span> -Iseconds<span class="k">)</span> <span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span> git commit -m <span class="s2">&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;-10 days - 8 hours&quot;</span><span class="w"> </span>-Iseconds<span class="k">)</span><span class="w"> </span><span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span><span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;&quot;</span>
 </code></pre></div>
 </div>
 <p>因为习惯将当天的工作通过 commit 贡献图反映出来，但有时候提交时超了一点点时间就变成第二天了，有时会强迫性地想把时间改过来。此前一直在用一种比较笨但很有效的方法，即修改系统时间——往回拨几分钟，再进行 commit。但是昨晚这样操作时出现了失误，只调整了时间，日期并没有回退一天，push 之后才意识到，就这样多了一条未来的 commit。</p>
 <p>于是就需要像修改 commit message 修改时间重新 commit。首先尝试的是，</p>
-<div class="highlight"><pre><span></span><code>git commit --amend --date<span class="o">=</span><span class="s2">&quot;13/04/2021 @ 23:59&quot;</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>--amend<span class="w"> </span>--date<span class="o">=</span><span class="s2">&quot;13/04/2021 @ 23:59&quot;</span>
 </code></pre></div>
 <p>这样 <code>git log</code> 确实显示时间更改了，</p>
-<div class="highlight"><pre><span></span><code>$ git log
-commit XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-Author: XXX
-Date:   Tue Apr <span class="m">13</span> <span class="m">23</span>:59:49 <span class="m">2021</span> +0800
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>log
+commit<span class="w"> </span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Author:<span class="w"> </span>XXX
+Date:<span class="w">   </span>Tue<span class="w"> </span>Apr<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">23</span>:59:49<span class="w"> </span><span class="m">2021</span><span class="w"> </span>+0800
 </code></pre></div>
 <p>但是 force push 到 github 上时仍然是当前的时间。这时才意识到有所谓的 GIT_AUTHOR_DATE 和 GIT_COMMITTER_DATE 之分，通过加上 <code>--pretty=fuller</code> 可以看到 committer 及其 date (refer to <a href="https://stackoverflow.com/questions/14243380/how-to-configure-git-log-to-show-commit-date">How to configure &lsquo;git log&rsquo; to show &lsquo;commit date&rsquo;</a>)</p>
-<div class="highlight"><pre><span></span><code>$ git log --pretty<span class="o">=</span>fuller
-commit XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-Author: XXX
-AuthorDate: Tue Apr <span class="m">13</span> <span class="m">23</span>:59:49 <span class="m">2021</span> +0800
-Commit: XXX
-CommitDate: Tue Apr <span class="m">13</span> <span class="m">23</span>:59:08 <span class="m">2021</span> +0800
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--pretty<span class="o">=</span>fuller
+commit<span class="w"> </span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Author:<span class="w"> </span>XXX
+AuthorDate:<span class="w"> </span>Tue<span class="w"> </span>Apr<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">23</span>:59:49<span class="w"> </span><span class="m">2021</span><span class="w"> </span>+0800
+Commit:<span class="w"> </span>XXX
+CommitDate:<span class="w"> </span>Tue<span class="w"> </span>Apr<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">23</span>:59:08<span class="w"> </span><span class="m">2021</span><span class="w"> </span>+0800
 </code></pre></div>
 <p>所以修改完 author date 之后，仍然采用笨办法回拨系统时间再提交，这样就能修改 commit date，于是便出现了上面 commit date 竟然比 author date 早的结果。当然更直接的做法是直接在命令行 commit 时同时指定这两个时间，</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;-10 days - 8 hours&quot;</span><span class="k">)</span> <span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span> git commit -m <span class="s2">&quot;XXXX&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;-10 days - 8 hours&quot;</span><span class="k">)</span><span class="w"> </span><span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span><span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;XXXX&quot;</span>
 </code></pre></div>
 <p>在本机上， <code>date</code> 默认输出格式为</p>
-<div class="highlight"><pre><span></span><code>$ date -d <span class="s2">&quot;-10 days - 8 hours&quot;</span>
-Mon May <span class="m">24</span> <span class="m">12</span>:17:17 CST <span class="m">2021</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>date<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;-10 days - 8 hours&quot;</span>
+Mon<span class="w"> </span>May<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">12</span>:17:17<span class="w"> </span>CST<span class="w"> </span><span class="m">2021</span>
 </code></pre></div>
 <p>其中 <code>CST</code> 为 China Standard Time (UTC+0800)，然而，Central Standard Time (UTC-06:00) 缩写也是 <code>CST</code>，另外 Cuba Standard Time (UTC-05:00) 也为同一缩写，详见 <a href="https://en.wikipedia.org/wiki/Time_zone#Abbreviations"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>。
 大概基于此，上述时间被识别为了 UTC-0600,</p>
-<div class="highlight"><pre><span></span><code>$ git log --pretty<span class="o">=</span>fuller
-Author:     szcf-weiya &lt;your@email&gt;
-AuthorDate: Mon May <span class="m">24</span> <span class="m">12</span>:18:06 <span class="m">2021</span> -0600
-Commit:     szcf-weiya &lt;your@email&gt;
-CommitDate: Mon May <span class="m">24</span> <span class="m">12</span>:18:06 <span class="m">2021</span> -0600
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--pretty<span class="o">=</span>fuller
+Author:<span class="w">     </span>szcf-weiya<span class="w"> </span>&lt;your@email&gt;
+AuthorDate:<span class="w"> </span>Mon<span class="w"> </span>May<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">12</span>:18:06<span class="w"> </span><span class="m">2021</span><span class="w"> </span>-0600
+Commit:<span class="w">     </span>szcf-weiya<span class="w"> </span>&lt;your@email&gt;
+CommitDate:<span class="w"> </span>Mon<span class="w"> </span>May<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">12</span>:18:06<span class="w"> </span><span class="m">2021</span><span class="w"> </span>-0600
 </code></pre></div>
 <p>为了避免歧义，加入选项 <code>-Iseconds</code> 指定为 ISO-8601 格式，并精确至 <code>seconds</code>.</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;- 8 hours&quot;</span> -Iseconds<span class="k">)</span> <span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span> git commit -m <span class="s2">&quot;XXX&quot;</span>
-$ git log --pretty<span class="o">=</span>fuller
-Author:     szcf-weiya &lt;your@email&gt;
-AuthorDate: Mon May <span class="m">24</span> <span class="m">12</span>:27:06 <span class="m">2021</span> +0800
-Commit:     szcf-weiya &lt;your@email&gt;
-CommitDate: Mon May <span class="m">24</span> <span class="m">12</span>:27:06 <span class="m">2021</span> +0800
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;- 8 hours&quot;</span><span class="w"> </span>-Iseconds<span class="k">)</span><span class="w"> </span><span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span><span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;XXX&quot;</span>
+$<span class="w"> </span>git<span class="w"> </span>log<span class="w"> </span>--pretty<span class="o">=</span>fuller
+Author:<span class="w">     </span>szcf-weiya<span class="w"> </span>&lt;your@email&gt;
+AuthorDate:<span class="w"> </span>Mon<span class="w"> </span>May<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">12</span>:27:06<span class="w"> </span><span class="m">2021</span><span class="w"> </span>+0800
+Commit:<span class="w">     </span>szcf-weiya<span class="w"> </span>&lt;your@email&gt;
+CommitDate:<span class="w"> </span>Mon<span class="w"> </span>May<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">12</span>:27:06<span class="w"> </span><span class="m">2021</span><span class="w"> </span>+0800
 </code></pre></div>
 <p>另外，<code>GIT_**_DATE</code> 支持的日期格式详见 <code>man git-commit</code>.</p>
 <ul>
@@ -3693,75 +3693,75 @@ CommitDate: Mon May <span class="m">24</span> <span class="m">12</span>:27:06 <s
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Try to test
-<div class="highlight"><pre><span></span><code>$ git filter-branch --env-filter <span class="s1">&#39;if [ $GIT_COMMIT == 4fae3c78eac6230ee53082654aaf58ab79fbddc5 ]; then echo $GIT_AUTHOR_DATE; fi&#39;</span>
-Rewrite 4f479f96d4672aaf11f800306b10bb95e83071fd <span class="o">(</span><span class="m">1</span>/21<span class="o">)</span> <span class="o">(</span><span class="m">0</span> seconds passed, remaining <span class="m">0</span> predicted<span class="o">)</span>    /usr/lib/git-core/git-filter-branch: <span class="m">1</span>: <span class="o">[</span>: 4f479f96d4672aaf11f800306b10bb95e83071fd: unexpected operator
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>filter-branch<span class="w"> </span>--env-filter<span class="w"> </span><span class="s1">&#39;if [ $GIT_COMMIT == 4fae3c78eac6230ee53082654aaf58ab79fbddc5 ]; then echo $GIT_AUTHOR_DATE; fi&#39;</span>
+Rewrite<span class="w"> </span>4f479f96d4672aaf11f800306b10bb95e83071fd<span class="w"> </span><span class="o">(</span><span class="m">1</span>/21<span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="w"> </span>seconds<span class="w"> </span>passed,<span class="w"> </span>remaining<span class="w"> </span><span class="m">0</span><span class="w"> </span>predicted<span class="o">)</span><span class="w">    </span>/usr/lib/git-core/git-filter-branch:<span class="w"> </span><span class="m">1</span>:<span class="w"> </span><span class="o">[</span>:<span class="w"> </span>4f479f96d4672aaf11f800306b10bb95e83071fd:<span class="w"> </span>unexpected<span class="w"> </span>operator
 ...
 </code></pre></div>
 which overwrites <strong>all</strong> commit hashes.</p>
 </div>
 <p>I want to update the commit date of an historical commit, where there are 3 more recent commits. Following <a href="https://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git">How can one change the timestamp of an old commit in Git?</a>,</p>
-<div class="highlight"><pre><span></span><code>$ git rebase -i e5c9f
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>e5c9f
 </code></pre></div>
 <p>the mark the commit to be edited, not that <code>e5c9f</code> is the one before the commit to be edited,</p>
 <p>after saving, </p>
-<div class="highlight"><pre><span></span><code>$ git rebase -i e5c9f
-Stopped at 4fae3c7...  XXXXXXXXXXXXXXXXXXXXXXXXXXX
-You can amend the commit now, with
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>e5c9f
+Stopped<span class="w"> </span>at<span class="w"> </span>4fae3c7...<span class="w">  </span>XXXXXXXXXXXXXXXXXXXXXXXXXXX
+You<span class="w"> </span>can<span class="w"> </span>amend<span class="w"> </span>the<span class="w"> </span>commit<span class="w"> </span>now,<span class="w"> </span>with
 
-  git commit --amend <span class="s1">&#39;-S&#39;</span>
+<span class="w">  </span>git<span class="w"> </span>commit<span class="w"> </span>--amend<span class="w"> </span><span class="s1">&#39;-S&#39;</span>
 
-Once you are satisfied with your changes, run
+Once<span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>satisfied<span class="w"> </span>with<span class="w"> </span>your<span class="w"> </span>changes,<span class="w"> </span>run
 
-  git rebase --continue
+<span class="w">  </span>git<span class="w"> </span>rebase<span class="w"> </span>--continue
 </code></pre></div>
 <p>then change the date via</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date -d <span class="s2">&quot;2021-07-11T23:58:48+0800&quot;</span> -Iseconds<span class="k">)</span> <span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span> git commit --amend --no-edit --reset-author 
-<span class="o">[</span>detached HEAD e1e1cec<span class="o">]</span> XXXXXXXXXXXXXXXXXXXXXXXXXXX
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">GIT_AUTHOR_DATE</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;2021-07-11T23:58:48+0800&quot;</span><span class="w"> </span>-Iseconds<span class="k">)</span><span class="w"> </span><span class="nv">GIT_COMMITTER_DATE</span><span class="o">=</span><span class="nv">$GIT_AUTHOR_DATE</span><span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>--amend<span class="w"> </span>--no-edit<span class="w"> </span>--reset-author<span class="w"> </span>
+<span class="o">[</span>detached<span class="w"> </span>HEAD<span class="w"> </span>e1e1cec<span class="o">]</span><span class="w"> </span>XXXXXXXXXXXXXXXXXXXXXXXXXXX
 </code></pre></div>
 <p>note that the hash has been updated, then run</p>
-<div class="highlight"><pre><span></span><code>$ git rebase --continue
-Successfully rebased and updated refs/heads/master.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>rebase<span class="w"> </span>--continue
+Successfully<span class="w"> </span>rebased<span class="w"> </span>and<span class="w"> </span>updated<span class="w"> </span>refs/heads/master.
 </code></pre></div>
 <p>Now the status is</p>
-<div class="highlight"><pre><span></span><code>$ git status
-On branch master
-Your branch and <span class="s1">&#39;origin/master&#39;</span> have diverged,
-and have <span class="m">4</span> and <span class="m">4</span> different commits each, respectively.
-  <span class="o">(</span>use <span class="s2">&quot;git pull&quot;</span> to merge the remote branch into yours<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>status
+On<span class="w"> </span>branch<span class="w"> </span>master
+Your<span class="w"> </span>branch<span class="w"> </span>and<span class="w"> </span><span class="s1">&#39;origin/master&#39;</span><span class="w"> </span>have<span class="w"> </span>diverged,
+and<span class="w"> </span>have<span class="w"> </span><span class="m">4</span><span class="w"> </span>and<span class="w"> </span><span class="m">4</span><span class="w"> </span>different<span class="w"> </span>commits<span class="w"> </span>each,<span class="w"> </span>respectively.
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git pull&quot;</span><span class="w"> </span>to<span class="w"> </span>merge<span class="w"> </span>the<span class="w"> </span>remote<span class="w"> </span>branch<span class="w"> </span>into<span class="w"> </span>yours<span class="o">)</span>
 </code></pre></div>
 <p>Then just type <code>git pull</code>, but I immediately realized that do not use <code>git pull</code> since it will introduce 4 more commits, together with the merge one. Note that</p>
-<div class="highlight"><pre><span></span><code>$ git reflog 
-1f4ff92 <span class="o">(</span>HEAD -&gt; master<span class="o">)</span> HEAD@<span class="o">{</span><span class="m">0</span><span class="o">}</span>: pull: Merge made by the <span class="s1">&#39;recursive&#39;</span> strategy.
-f8ea37c HEAD@<span class="o">{</span><span class="m">1</span><span class="o">}</span>: rebase -i <span class="o">(</span>finish<span class="o">)</span>: returning to refs/heads/master
-f8ea37c HEAD@<span class="o">{</span><span class="m">2</span><span class="o">}</span>: rebase -i <span class="o">(</span>pick<span class="o">)</span>: XXXXXXXX
-59b6935 HEAD@<span class="o">{</span><span class="m">3</span><span class="o">}</span>: rebase -i <span class="o">(</span>pick<span class="o">)</span>: XXXXXXXX
-b849915 HEAD@<span class="o">{</span><span class="m">4</span><span class="o">}</span>: rebase -i <span class="o">(</span>pick<span class="o">)</span>: XXXXXXXX
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>reflog<span class="w"> </span>
+1f4ff92<span class="w"> </span><span class="o">(</span>HEAD<span class="w"> </span>-&gt;<span class="w"> </span>master<span class="o">)</span><span class="w"> </span>HEAD@<span class="o">{</span><span class="m">0</span><span class="o">}</span>:<span class="w"> </span>pull:<span class="w"> </span>Merge<span class="w"> </span>made<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span><span class="s1">&#39;recursive&#39;</span><span class="w"> </span>strategy.
+f8ea37c<span class="w"> </span>HEAD@<span class="o">{</span><span class="m">1</span><span class="o">}</span>:<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span><span class="o">(</span>finish<span class="o">)</span>:<span class="w"> </span>returning<span class="w"> </span>to<span class="w"> </span>refs/heads/master
+f8ea37c<span class="w"> </span>HEAD@<span class="o">{</span><span class="m">2</span><span class="o">}</span>:<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span><span class="o">(</span>pick<span class="o">)</span>:<span class="w"> </span>XXXXXXXX
+59b6935<span class="w"> </span>HEAD@<span class="o">{</span><span class="m">3</span><span class="o">}</span>:<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span><span class="o">(</span>pick<span class="o">)</span>:<span class="w"> </span>XXXXXXXX
+b849915<span class="w"> </span>HEAD@<span class="o">{</span><span class="m">4</span><span class="o">}</span>:<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span><span class="o">(</span>pick<span class="o">)</span>:<span class="w"> </span>XXXXXXXX
 </code></pre></div>
 <p>then go back to </p>
-<div class="highlight"><pre><span></span><code>$ git reset HEAD@<span class="o">{</span><span class="m">1</span><span class="o">}</span>
-$ git status
-On branch master
-Your branch and <span class="s1">&#39;origin/master&#39;</span> have diverged,
-and have <span class="m">4</span> and <span class="m">4</span> different commits each, respectively.
-  <span class="o">(</span>use <span class="s2">&quot;git pull&quot;</span> to merge the remote branch into yours<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>reset<span class="w"> </span>HEAD@<span class="o">{</span><span class="m">1</span><span class="o">}</span>
+$<span class="w"> </span>git<span class="w"> </span>status
+On<span class="w"> </span>branch<span class="w"> </span>master
+Your<span class="w"> </span>branch<span class="w"> </span>and<span class="w"> </span><span class="s1">&#39;origin/master&#39;</span><span class="w"> </span>have<span class="w"> </span>diverged,
+and<span class="w"> </span>have<span class="w"> </span><span class="m">4</span><span class="w"> </span>and<span class="w"> </span><span class="m">4</span><span class="w"> </span>different<span class="w"> </span>commits<span class="w"> </span>each,<span class="w"> </span>respectively.
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git pull&quot;</span><span class="w"> </span>to<span class="w"> </span>merge<span class="w"> </span>the<span class="w"> </span>remote<span class="w"> </span>branch<span class="w"> </span>into<span class="w"> </span>yours<span class="o">)</span>
 </code></pre></div>
 <p>then run</p>
-<div class="highlight"><pre><span></span><code>$ git push --force-with-lease
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>--force-with-lease
 </code></pre></div>
 <p>However, although the author date indeed has updated, the commit date points to the current date. </p>
 <h2 id="temporary-commits-stash">TEMPORARY COMMITS: <code>stash</code><a class="headerlink" href="#temporary-commits-stash" title="Permanent link">&para;</a></h2>
 <p>Temporarily store modified, tracked files in order to change branches.</p>
-<div class="highlight"><pre><span></span><code>git stash <span class="c1"># Save modified and staged changes</span>
-git stash list <span class="c1"># list stack-order of stashed file changes</span>
-git stash pop <span class="c1"># write working from top of stash stack</span>
-git stash drop <span class="c1"># discard the changes from top of stash stack</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>stash<span class="w"> </span><span class="c1"># Save modified and staged changes</span>
+git<span class="w"> </span>stash<span class="w"> </span>list<span class="w"> </span><span class="c1"># list stack-order of stashed file changes</span>
+git<span class="w"> </span>stash<span class="w"> </span>pop<span class="w"> </span><span class="c1"># write working from top of stash stack</span>
+git<span class="w"> </span>stash<span class="w"> </span>drop<span class="w"> </span><span class="c1"># discard the changes from top of stash stack</span>
 </code></pre></div>
 <ul>
 <li><a href="https://stackoverflow.com/questions/54040063/how-to-git-pull-without-git-add-them">git pull without git add them</a>: </li>
 </ul>
-<div class="highlight"><pre><span></span><code>git stash
-git pull
-git stash apply
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>stash
+git<span class="w"> </span>pull
+git<span class="w"> </span>stash<span class="w"> </span>apply
 </code></pre></div>
 <ul>
 <li><a href="https://github.com/szcf-weiya/Cell-Video/issues/172#issuecomment-660456314">an application</a></li>
@@ -3777,9 +3777,9 @@ git stash apply
 <h2 id="gitignore"><code>.gitignore</code><a class="headerlink" href="#gitignore" title="Permanent link">&para;</a></h2>
 <h3 id="track">忽略已 track 的文件<a class="headerlink" href="#track" title="Permanent link">&para;</a></h3>
 <p><code>.gitignore</code> 只能忽略那些原来没有被 track 的文件，如果某些文件已经被纳入了版本管理中，则修改 <code>.gitignore</code> 是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交：</p>
-<div class="highlight"><pre><span></span><code>git rm -r --cached foo.txt
-git add .
-git commit -m <span class="s1">&#39;update .gitignore&#39;</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>--cached<span class="w"> </span>foo.txt
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;update .gitignore&#39;</span>
 </code></pre></div>
 <p>see also: <a href="https://stackoverflow.com/questions/7527982/applying-gitignore-to-committed-files">apply <code>.gitignore</code> to committed files</a></p>
 <h2 id="pull-pull">PULL: <code>pull</code><a class="headerlink" href="#pull-pull" title="Permanent link">&para;</a></h2>
@@ -3791,8 +3791,8 @@ git commit -m <span class="s1">&#39;update .gitignore&#39;</span>
 <h2 id="webhook">Webhook配置<a class="headerlink" href="#webhook" title="Permanent link">&para;</a></h2>
 <p>参考<a href="http://jerryzou.com/posts/webhook-practice/">Webhook 实践 —— 自动部署</a></p>
 <p>需要在腾讯云服务器上自动更新github pages的内容，于是采用webhook来实现。</p>
-<div class="highlight"><pre><span></span><code>npm install -g forever
-forever start server.js
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>forever
+forever<span class="w"> </span>start<span class="w"> </span>server.js
 </code></pre></div>
 <h2 id="webhooks-push">webhooks 响应特定分支的 push<a class="headerlink" href="#webhooks-push" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://github.com/gitlabhq/gitlabhq/issues/1176">Web Hooks - execute only for specified branches #1176</a>@rtripault</p>
@@ -3801,18 +3801,18 @@ forever start server.js
 <ul>
 <li>撤销未被 add 的文件</li>
 </ul>
-<div class="highlight"><pre><span></span><code>git checkout -- file
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>file
 </code></pre></div>
 <ul>
 <li>撤销所有更改</li>
 </ul>
-<div class="highlight"><pre><span></span><code>git checkout -- .
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>.
 </code></pre></div>
 <p>参考<a href="https://stackoverflow.com/questions/29007821/git-checkout-all-the-files">git checkout all the files</a></p>
 <ul>
 <li>从其他分支更新文件</li>
 </ul>
-<div class="highlight"><pre><span></span><code>git checkout master -- SOMEFILE
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>master<span class="w"> </span>--<span class="w"> </span>SOMEFILE
 </code></pre></div>
 <p>参考 <a href="http://nicolasgallagher.com/git-checkout-specific-files-from-another-branch/">Quick tip: git-checkout specific files from another branch</a></p>
 <h2 id="rewrite">rewrite 时百分比的含义<a class="headerlink" href="#rewrite" title="Permanent link">&para;</a></h2>
@@ -3825,7 +3825,7 @@ forever start server.js
 <div class="highlight"><pre><span></span><code>file_glob: true
 </code></pre></div>
 <h2 id="_2">列出另一分支的目录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git ls-tree master:dirname
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>ls-tree<span class="w"> </span>master:dirname
 </code></pre></div>
 <h2 id="cannot-lock-ref">cannot lock ref<a class="headerlink" href="#cannot-lock-ref" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="https://blog.csdn.net/qq_15437667/article/details/52479792">git pull时遇到error: cannot lock ref &lsquo;xxx&rsquo;: ref xxx is at （一个commitID） but expected的解决办法</a></p>
@@ -3870,34 +3870,34 @@ forever start server.js
 <li>打标签</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># annotated</span>
-git tag -a v1.0 -m <span class="s2">&quot;version 1&quot;</span>
+git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;version 1&quot;</span>
 <span class="c1"># lightweight</span>
-git tag v1.0
+git<span class="w"> </span>tag<span class="w"> </span>v1.0
 <span class="c1"># push to github</span>
-git push origin v1.0
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v1.0
 <span class="c1"># or</span>
-git push origin --tags
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--tags
 </code></pre></div>
 <p>详见 <a href="https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE">2.6 Git 基础 - 打标签</a></p>
 <ul>
 <li>删除标签</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># local</span>
-git tag -d v1.0
+git<span class="w"> </span>tag<span class="w"> </span>-d<span class="w"> </span>v1.0
 <span class="c1"># github</span>
-git push origin :refs/tags/v1.0
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>:refs/tags/v1.0
 </code></pre></div>
 <p>详见 <a href="https://gist.github.com/mobilemind/7883996">mobilemind/git-tag-delete-local-and-remote.sh</a></p>
 <h2 id="diff-diff">DIFF: <code>diff</code><a class="headerlink" href="#diff-diff" title="Permanent link">&para;</a></h2>
 <h3 id="color-in-git-diff">color in git diff<a class="headerlink" href="#color-in-git-diff" title="Permanent link">&para;</a></h3>
 <p>在服务器上使用 <code>git diff</code>，没有像在本地 Ubuntu 那样用颜色高亮出不同的地方，这个可以通过在 <code>~/.gitconfig</code> 中进行配置，</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>color<span class="o">]</span>
-  <span class="nv">diff</span> <span class="o">=</span> auto
-  <span class="nv">status</span> <span class="o">=</span> auto
-  <span class="nv">branch</span> <span class="o">=</span> auto
-  <span class="nv">interactive</span> <span class="o">=</span> auto
-  <span class="nv">ui</span> <span class="o">=</span> <span class="nb">true</span>
-  <span class="nv">pager</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="w">  </span><span class="nv">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>auto
+<span class="w">  </span><span class="nv">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>auto
+<span class="w">  </span><span class="nv">branch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>auto
+<span class="w">  </span><span class="nv">interactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>auto
+<span class="w">  </span><span class="nv">ui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="w">  </span><span class="nv">pager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
 <p>参考 <a href="https://unix.stackexchange.com/questions/44266/how-to-colorize-output-of-git">How to colorize output of git?</a></p>
 <p>顺带发现，如果在 markdown 中复制 git diff 的 output，可以使用 <code>diff</code> 的代码块，会将更改的部分高亮出来。</p>
@@ -3906,7 +3906,7 @@ git push origin :refs/tags/v1.0
 <h3 id="compare-two-files-not-indexed-by-git">compare two files not indexed by git<a class="headerlink" href="#compare-two-files-not-indexed-by-git" title="Permanent link">&para;</a></h3>
 <p>use option <code>--no-index</code></p>
 <h3 id="show-line-ending-changes">show line ending changes<a class="headerlink" href="#show-line-ending-changes" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>git diff --color --word-diff-regex<span class="o">=</span>.
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>diff<span class="w"> </span>--color<span class="w"> </span>--word-diff-regex<span class="o">=</span>.
 </code></pre></div>
 <p>which highlights all whitespace changes everywhere in lines.</p>
 <p>see also: <a href="https://stackoverflow.com/questions/3920650/git-diff-show-me-line-ending-changes"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
@@ -3925,7 +3925,7 @@ git push origin :refs/tags/v1.0
 </li>
 </ul>
 <h2 id="submodule">Submodule<a class="headerlink" href="#submodule" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>~/github/techNotes/docs$ git submodule add git@github.com:szcf-weiya/TFnotes.git
+<div class="highlight"><pre><span></span><code>~/github/techNotes/docs$<span class="w"> </span>git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>git@github.com:szcf-weiya/TFnotes.git
 </code></pre></div>
 
   <hr>
@@ -4004,7 +4004,7 @@ git push origin :refs/tags/v1.0
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   

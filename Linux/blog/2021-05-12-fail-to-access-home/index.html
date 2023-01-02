@@ -2406,41 +2406,41 @@
 <p>其实 <code>source .bashrc</code> 后能显示 <code>~</code>，但访问 <code>~</code> 仍然失败。另见 <a href="https://unix.stackexchange.com/questions/125965/terminal-prompt-changed-to-bash-4-2-and-colors-lost">Terminal, Prompt changed to “-Bash-4.2” and colors lost</a></p>
 </div>
 <p>这样一个直接后果就是无法解析用户目录 <code>~</code>，这大概也是为什么 <code>R_LIBS_USER</code> 在这个结点没有正常加载，因为上述系统配置文件 <code>/opt/share/R/4.0.3/lib64/R/etc/Renviron</code> 中使用了 <code>~</code>，于是需要用不带 <code>~</code> 的全路径。不过 <code>~</code> 其实只是指向 <code>/user/sXXXXX</code>，发现这个文件夹没有正常被连接，所以要使用 <code>/lustre/user/sXXXX</code>. 或者说是没有挂载，因为在其它结点上有以下三条挂载记录，</p>
-<div class="highlight"><pre><span></span><code>$ df -h
-storage03:/chpc-userhome                  50T  <span class="m">4</span>.4T   46T   <span class="m">9</span>% /storage03/chpc-userhome
-storage03:/chpc-optshare                  10T  713G  <span class="m">9</span>.4T   <span class="m">7</span>% /storage03/chpc-optshare
-storage01:/chpc-users                     15T  <span class="m">6</span>.2T  <span class="m">8</span>.9T  <span class="m">42</span>% /storage01/users
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>df<span class="w"> </span>-h
+storage03:/chpc-userhome<span class="w">                  </span>50T<span class="w">  </span><span class="m">4</span>.4T<span class="w">   </span>46T<span class="w">   </span><span class="m">9</span>%<span class="w"> </span>/storage03/chpc-userhome
+storage03:/chpc-optshare<span class="w">                  </span>10T<span class="w">  </span>713G<span class="w">  </span><span class="m">9</span>.4T<span class="w">   </span><span class="m">7</span>%<span class="w"> </span>/storage03/chpc-optshare
+storage01:/chpc-users<span class="w">                     </span>15T<span class="w">  </span><span class="m">6</span>.2T<span class="w">  </span><span class="m">8</span>.9T<span class="w">  </span><span class="m">42</span>%<span class="w"> </span>/storage01/users
 </code></pre></div>
 <p>而该结点上没有。</p>
 <p>为了验证上述想法，也手动进行 <code>export R_LIBS_USER=</code> 及 <code>.libPaths()</code>，</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">DONE</label><label for="__tabbed_1_2">DONE</label><label for="__tabbed_1_3">FAIL</label><label for="__tabbed_1_4">FAIL</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span><span class="p">)</span>
-<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span>
-<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span> 
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span>
+<span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span><span class="w"> </span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="o">$</span> <span class="n">export</span> <span class="n">R_LIBS_USER</span><span class="o">=/</span><span class="n">lustre</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">sXXXXXXXXX</span><span class="o">/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span>
-<span class="o">$</span> <span class="n">R</span>
-<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span>
-<span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>   
+<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="n">export</span><span class="w"> </span><span class="n">R_LIBS_USER</span><span class="o">=/</span><span class="n">lustre</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="n">sXXXXXXXXX</span><span class="o">/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span>
+<span class="o">$</span><span class="w"> </span><span class="n">R</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;/lustre/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0&quot;</span>
+<span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span><span class="w">   </span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0/&quot;</span><span class="p">)</span>
-<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="nf">.libPaths</span><span class="p">(</span><span class="s">&quot;/users/sXXXXXXXXX/R/x86_64-pc-linux-gnu-library/4.0/&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="o">$</span> <span class="n">export</span> <span class="n">R_LIBS_USER</span><span class="o">=~/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span>
-<span class="o">$</span> <span class="n">R</span>
-<span class="o">&gt;</span> <span class="nf">.libPaths</span><span class="p">()</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="n">export</span><span class="w"> </span><span class="n">R_LIBS_USER</span><span class="o">=~/</span><span class="n">R</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">library</span><span class="o">/</span><span class="m">4.0</span>
+<span class="o">$</span><span class="w"> </span><span class="n">R</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">.libPaths</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;/lustre/opt_share/R/4.0.3/lib64/R/library&quot;</span>
 </code></pre></div>
 </div>
 </div>
@@ -2581,7 +2581,7 @@ storage01:/chpc-users                     15T  <span class="m">6</span>.2T  <spa
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2022 weiya
+      Copyright &copy; 2017-2023 weiya
     </div>
   
   
