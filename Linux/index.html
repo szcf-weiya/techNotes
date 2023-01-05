@@ -14,8 +14,14 @@
       
         <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/">
       
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="ubuntu/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -23,11 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -70,7 +75,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="None" data-md-color-accent="None">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
     
@@ -500,6 +505,26 @@
   <a href="#shared-objects-so-dynamic-library" class="md-nav__link">
     shared objects .so (dynamic library)
   </a>
+  
+    <nav class="md-nav" aria-label="shared objects .so (dynamic library)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ld_preload" class="md-nav__link">
+    LD_PRELOAD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-order" class="md-nav__link">
+    search order
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2627,6 +2652,26 @@
     shared objects .so (dynamic library)
   </a>
   
+    <nav class="md-nav" aria-label="shared objects .so (dynamic library)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ld_preload" class="md-nav__link">
+    LD_PRELOAD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-order" class="md-nav__link">
+    search order
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2845,10 +2890,9 @@
                 
                   
 
-  <a href="https://github.com/szcf-weiya/techNotes/edit/master/docs/Linux/index.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
+
 
 
 <h1 id="linux-notes">Linux Notes<a class="headerlink" href="#linux-notes" title="Permanent link">&para;</a></h1>
@@ -2967,6 +3011,51 @@ locale:<span class="w"> </span>Cannot<span class="w"> </span><span class="nb">se
 </code></pre></div>
 <p>来解决这个问题，这个可以写进 <code>.bashrc</code> 文件中，并且不需要 sudo 权限，而 <a href="https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue">How do I fix my locale issue?</a> 中提到的几种方法需要 sudo 权限。</p>
 <h2 id="shared-objects-so-dynamic-library">shared objects <code>.so</code> (dynamic library)<a class="headerlink" href="#shared-objects-so-dynamic-library" title="Permanent link">&para;</a></h2>
+<h3 id="ld_preload">LD_PRELOAD<a class="headerlink" href="#ld_preload" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Used in <a href=""><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+</div>
+<p>If it is set on the same line before the command, it is only valid on the same line. For example, </p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>R4.1.0<span class="o">)</span><span class="w"> </span>/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib$<span class="w"> </span>ldd<span class="w"> </span>libR.so<span class="w"> </span>
+<span class="w">        </span>libstdc++.so.6<span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib/./../.././libstdc++.so.6<span class="w"> </span><span class="o">(</span>0x00007f80f4d1e000<span class="o">)</span>
+
+<span class="o">(</span>R4.1.0<span class="o">)</span><span class="w"> </span>/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib$<span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span>/usr/lib/x86_64-linux-gnu/libstdc++.so.6<span class="w"> </span>ldd<span class="w"> </span>libR.so<span class="w"> </span>
+<span class="w">        </span>/usr/lib/x86_64-linux-gnu/libstdc++.so.6<span class="w"> </span><span class="o">(</span>0x00007fc70eb4c000<span class="o">)</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>it is should be a particular file instead of a folder, otherwise it throws
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span>/usr/lib/x86_64-linux-gnu/<span class="w"> </span>ldd<span class="w"> </span>libR.so<span class="w"> </span>
+ERROR:<span class="w"> </span>ld.so:<span class="w"> </span>object<span class="w"> </span><span class="s1">&#39;/usr/lib/x86_64-linux-gnu/&#39;</span><span class="w"> </span>from<span class="w"> </span>LD_PRELOAD<span class="w"> </span>cannot<span class="w"> </span>be<span class="w"> </span>preloaded<span class="w"> </span><span class="o">(</span>cannot<span class="w"> </span><span class="nb">read</span><span class="w"> </span>file<span class="w"> </span>data<span class="o">)</span>:<span class="w"> </span>ignored.
+</code></pre></div></p>
+</div>
+<p>In the words of <a href="https://www.baeldung.com/linux/ld_preload-trick-what-is"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>, </p>
+<blockquote>
+<p>LD_PRELOAD is an environment variable, it affects only the current process</p>
+</blockquote>
+<p>Alternatively, we can use <code>export</code> and <code>unset</code>, </p>
+<div class="highlight"><pre><span></span><code>~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span>/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$<span class="w"> </span>ldd<span class="w"> </span>libR.so<span class="w"> </span>
+<span class="w">        </span>/usr/lib/x86_64-linux-gnu/libstdc++.so.6<span class="w"> </span><span class="o">(</span>0x00007f601f456000<span class="o">)</span>
+~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>R4.1.0
+<span class="o">(</span>R4.1.0<span class="o">)</span><span class="w"> </span>~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$LD_PRELOAD</span><span class="w"> </span>
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+<span class="o">(</span>R4.1.0<span class="o">)</span><span class="w"> </span>~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$<span class="w"> </span>ldd<span class="w"> </span>libR.so<span class="w"> </span>
+<span class="w">        </span>/usr/lib/x86_64-linux-gnu/libstdc++.so.6<span class="w"> </span><span class="o">(</span>0x00007fb231b15000<span class="o">)</span>
+</code></pre></div>
+<p>BTW, in the above, <code>conda activate</code> does not affect.</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Why <code>export LD_PRELOAD</code> before running command failed <a href="https://github.com/szcf-weiya/MonotoneSplines.jl/actions/runs/3841183884/workflow">here</a>?
+- Too early? It is before the installation of Julia. What if set after the installation of Julia?
+- Finally, it works after putting it to <code>env</code>. <a href="https://github.com/szcf-weiya/MonotoneSplines.jl/blob/7c2e96fb2214c6d5dc4e123ae8beb9128be14086/.github/workflows/ci.yml#L68"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The documentation can be found in <code>man ld.so</code>, <del>not <code>man ld</code></del>.</p>
+</div>
+<h3 id="search-order">search order<a class="headerlink" href="#search-order" title="Permanent link">&para;</a></h3>
 <p>As said in <a href="https://unix.stackexchange.com/questions/22926/where-do-executables-look-for-shared-objects-at-runtime">Where do executables look for shared objects at runtime?</a>, when it&rsquo;s looking for a dynamic library (<code>.so</code> file) the linker tries</p>
 <ul>
 <li>directories listed in the <code>LD_LIBRARY_PATH</code></li>
@@ -3324,7 +3413,7 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2023</span>
       
         <br>
         Created:
@@ -3353,42 +3442,6 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Home
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="ubuntu/" class="md-footer__link md-footer__link--next" aria-label="Next: Ubuntu" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Ubuntu
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -3470,10 +3523,10 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
@@ -3483,7 +3536,6 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
-    
     
   </body>
 </html>
