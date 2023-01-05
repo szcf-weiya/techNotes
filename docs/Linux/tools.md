@@ -393,11 +393,9 @@ refer to [How to compare two time stamps?](https://unix.stackexchange.com/questi
 $ diff folder1 folder2
 ```
 
-
-
 ## `du`
 
-- list size of subdirectories/files: `du -shc *`, where `-c` outputs the total
+- list size of subdirectories/files: `du -shc *`, where `-c` outputs the total. If sort according to size with `| sort -n`, the option `-h` is problematic, since `sort` cannot recognize the units `K, M`. Hopefully, `sort` also supports `-h` option, so just use `| sort -h`.
 
 ## `emacs`
 

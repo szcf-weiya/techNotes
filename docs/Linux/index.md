@@ -115,6 +115,57 @@ export LC_ALL=en_US.UTF-8
 
 ## shared objects `.so` (dynamic library)
 
+### LD_PRELOAD
+
+!!! note
+    Used in [:link:]()
+
+If it is set on the same line before the command, it is only valid on the same line. For example, 
+
+```bash
+(R4.1.0) /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ ldd libR.so 
+        libstdc++.so.6 => /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib/./../.././libstdc++.so.6 (0x00007f80f4d1e000)
+
+(R4.1.0) /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6 ldd libR.so 
+        /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fc70eb4c000)
+```
+
+!!! warning
+    it is should be a particular file instead of a folder, otherwise it throws
+    ```bash
+    $ LD_PRELOAD=/usr/lib/x86_64-linux-gnu/ ldd libR.so 
+    ERROR: ld.so: object '/usr/lib/x86_64-linux-gnu/' from LD_PRELOAD cannot be preloaded (cannot read file data): ignored.
+    ```
+
+In the words of [:link:](https://www.baeldung.com/linux/ld_preload-trick-what-is), 
+
+> LD_PRELOAD is an environment variable, it affects only the current process
+
+Alternatively, we can use `export` and `unset`, 
+
+```bash
+~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ ldd libR.so 
+        /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f601f456000)
+~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ conda activate R4.1.0
+(R4.1.0) ~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ echo $LD_PRELOAD 
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+(R4.1.0) ~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ ldd libR.so 
+        /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fb231b15000)
+```
+
+BTW, in the above, `conda activate` does not affect.
+
+!!! question
+    Why `export LD_PRELOAD` before running command failed [here](https://github.com/szcf-weiya/MonotoneSplines.jl/actions/runs/3841183884/workflow)?
+    - Too early? It is before the installation of Julia. What if set after the installation of Julia?
+    - Finally, it works after putting it to `env`. [:link:](https://github.com/szcf-weiya/MonotoneSplines.jl/blob/7c2e96fb2214c6d5dc4e123ae8beb9128be14086/.github/workflows/ci.yml#L68)
+
+!!! tip
+    The documentation can be found in `man ld.so`, ~~not `man ld`~~.
+
+### search order
+
 As said in [Where do executables look for shared objects at runtime?](https://unix.stackexchange.com/questions/22926/where-do-executables-look-for-shared-objects-at-runtime), when it's looking for a dynamic library (`.so` file) the linker tries
 
 - directories listed in the `LD_LIBRARY_PATH`
