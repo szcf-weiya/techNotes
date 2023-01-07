@@ -1540,7 +1540,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 21. Errol Morris: 埃洛莫里斯
 22. stratosphere: 平流层
 23. celebrity: 名望
-24. mingle
+24. mingle: 使混合，使连结
 25. garbled
 26. credulity: 轻信
 27. hiatus: 间断
@@ -1763,7 +1763,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. till: 耕作，犁地；收银台
 2. dweller
 3. wriggle
-4. manure
+4. manure: 肥料，粪肥
 1. molten
 2. **mantle (地幔)**
 3. rest on
