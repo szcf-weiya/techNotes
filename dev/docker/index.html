@@ -1981,6 +1981,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#act" class="md-nav__link">
+    act
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#r" class="md-nav__link">
     R
   </a>
@@ -2507,6 +2514,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#act" class="md-nav__link">
+    act
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#r" class="md-nav__link">
     R
   </a>
@@ -2611,7 +2625,7 @@ See<span class="w"> </span><span class="s1">&#39;snap info docker&#39;</span><sp
 <p>then run</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker.io
 </code></pre></div>
-<p>Without permisson, it will report the following message</p>
+<p>Without permission, it will report the following message</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>version
 Client:
 <span class="w"> </span>Version:<span class="w">           </span><span class="m">19</span>.03.6
@@ -2660,6 +2674,25 @@ $<span class="w"> </span>docker<span class="w"> </span>image<span class="w"> </s
 <span class="w">                </span><span class="s2">&quot;WorkDir&quot;</span>:<span class="w"> </span><span class="s2">&quot;/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/work&quot;</span>
 <span class="w">            </span><span class="o">}</span>,
 ...
+</code></pre></div>
+<h2 id="act">act<a class="headerlink" href="#act" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Post on: 2023-01-07 19:52:47 -0500</p>
+</div>
+<p><a href="https://github.com/nektos/act"><code>act</code></a>, which is based on docker, supports to run GitHub actions locally.</p>
+<div class="admonition note">
+<p class="admonition-title">Installation of act</p>
+<ol>
+<li>Download the binary package</li>
+<li><code>/usr/local/bin$ sudo ln -s /media/weiya/PSSD/Programs/act-0.2.35/act .</code></li>
+</ol>
+</div>
+<p>If the container still exists, we can also open a terminal to access it like a server,</p>
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>docker<span class="w"> </span>container<span class="w"> </span>ls
+CONTAINER<span class="w"> </span>ID<span class="w">   </span>IMAGE<span class="w">                           </span>COMMAND<span class="w">               </span>CREATED<span class="w">        </span>STATUS<span class="w">        </span>PORTS<span class="w">     </span>NAMES
+e801ec7aed7f<span class="w">   </span>catthehacker/ubuntu:act-20.04<span class="w">   </span><span class="s2">&quot;tail -f /dev/null&quot;</span><span class="w">   </span><span class="m">23</span><span class="w"> </span>hours<span class="w"> </span>ago<span class="w">   </span>Up<span class="w"> </span><span class="m">23</span><span class="w"> </span>hours<span class="w">             </span>act-CI-Julia-1-8--ubuntu-20-04
+~$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>e801<span class="w"> </span>bash
 </code></pre></div>
 <h2 id="r">R<a class="headerlink" href="#r" title="Permanent link">&para;</a></h2>
 <h3 id="r-base">r-base<a class="headerlink" href="#r-base" title="Permanent link">&para;</a></h3>
@@ -2791,6 +2824,12 @@ Prefix<span class="w"> </span>dict<span class="w"> </span>has<span class="w"> </
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>save<span class="w"> </span>py37jieba:0.0.1<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>py37jieba-0.0.1.tar.gz
 </code></pre></div>
 <p>refer to <a href="https://github.com/hubutui/docker-for-env-without-internet-access">hubutui/docker-for-env-without-internet-access</a></p>
+<p>We can also treat it as a new server visiting from bash,</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>/tmp:/root<span class="w"> </span>-w<span class="w"> </span>/root<span class="w"> </span>py37jieba:0.0.5<span class="w"> </span>bash
+</code></pre></div>
+<p>and open another terminal via</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;containerID&gt;<span class="w"> </span>bash
+</code></pre></div>
 <h2 id="tex">TeX<a class="headerlink" href="#tex" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://gitlab.com/islandoftex/images/texlive/-/wikis/Building-LaTeX-documents-locally-using-Docker">Building LaTeX documents locally using Docker</a></li>
@@ -2855,7 +2894,7 @@ ERRO<span class="o">[</span><span class="m">0000</span><span class="o">]</span><
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 8, 2023</span>
       
         <br>
         Created:
