@@ -30,7 +30,7 @@ then run
 sudo apt install docker.io
 ```
 
-Without permisson, it will report the following message
+Without permission, it will report the following message
 
 ```bash
 $ docker version
@@ -92,6 +92,26 @@ $ docker image inspect d1165
                 "WorkDir": "/media/weiya/PSSD/Programs/docker/overlay2/511d95f2c0f646ed080c006f99f8f738f967231d33aaa36a98e3e67109eb09be/work"
             },
 ...
+```
+
+## act
+
+!!! info
+    Post on: 2023-01-07 19:52:47 -0500
+
+[`act`](https://github.com/nektos/act), which is based on docker, supports to run GitHub actions locally.
+
+!!! note "Installation of act"
+    1. Download the binary package
+    2. `/usr/local/bin$ sudo ln -s /media/weiya/PSSD/Programs/act-0.2.35/act .`
+
+If the container still exists, we can also open a terminal to access it like a server,
+
+```bash
+~$ docker container ls
+CONTAINER ID   IMAGE                           COMMAND               CREATED        STATUS        PORTS     NAMES
+e801ec7aed7f   catthehacker/ubuntu:act-20.04   "tail -f /dev/null"   23 hours ago   Up 23 hours             act-CI-Julia-1-8--ubuntu-20-04
+~$ docker exec -it e801 bash
 ```
 
 ## R
@@ -270,6 +290,18 @@ $ docker save py37jieba:0.0.1 | gzip > py37jieba-0.0.1.tar.gz
 ```
 
 refer to [hubutui/docker-for-env-without-internet-access](https://github.com/hubutui/docker-for-env-without-internet-access)
+
+We can also treat it as a new server visiting from bash,
+
+```bash
+docker run -it --rm -v /tmp:/root -w /root py37jieba:0.0.5 bash
+```
+
+and open another terminal via
+
+```bash
+docker exec -it <containerID> bash
+```
 
 ## TeX
 
