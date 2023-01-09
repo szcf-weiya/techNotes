@@ -4,6 +4,8 @@
 	- 删除当前工作区所有变量: `rm(list = ls(all = TRUE))`
 	- RStudio shows all shortcuts: `Alt-Shift-K`.
 	- usage of `<<-`, "it will keep going through the environments in order until it finds a variable with that name, and it will assign it to that." see also [:link:](https://stackoverflow.com/questions/2628621/how-do-you-use-scoping-assignment-in-r)
+	- 序列中 `0.1+1:10-1` 中 `:` 优先级低于加减运算符，所以返回 `0.1, 1.1, ..., 9.1`.
+	- repeat string: `strrep('str', 2)`, `paste(rep('str', 2), collapse='')`
 
 ## Installation
 
@@ -105,6 +107,148 @@ Be careful when installing the package, and to avoid the uninstallation in the n
 
 !!! info "2022-08-24 10:35:01"
 	Run `sudo apt-get install libcurl4-openssl-dev`, and monitor the message, no packages are needed to be removed.
+
+??? note "Installation of RCurl (2023-01-08 18:20:05)"
+	First of all, it runs
+	```bash
+	curl-config --libs
+	curl-config --cflags
+	```
+	to get `CURL_LIBS` and `CURL_CFLAGS`. Check the [`configure.in`](https://github.com/omegahat/RCurl/blob/e07c076963fc6436e0b05db04bb0b3a20ba378e9/configure.in#L179-L180) file in the source of RCurl for more details.
+
+	- With system's `libcurl.so.4`, shipped with system or installed via `libcurl4-openssl-dev`, it outputs
+	```bash
+	$ curl-config --cflags
+
+	$ curl-config --libs
+	-lcurl
+	```
+	where it does not specify the path to the dynamic files `.so` with `-L` and to the header file with `-I`.
+
+	- On the other hand, for R env installed via `Conda`, it returns,
+	```bash
+	(R4.1.0) $ curl-config --cflags
+	-I/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/include
+	(R4.1.0) $ curl-config --libs
+	-L/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib -lcurl
+	```
+	where the path are specified. And those path would become `rpath` if we installed packages, such as `RCurl` that relied on the dynamic files.
+	```bash
+	$ readelf -d /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/library/RCurl/libs/RCurl.so 
+
+	Dynamic section at offset 0xb9a0 contains 23 entries:
+	Tag        Type                         Name/Value
+	0x0000000000000001 (NEEDED)             Shared library: [libcurl.so.4]
+	0x0000000000000001 (NEEDED)             Shared library: [libR.so]
+	0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+	0x000000000000000f (RPATH)              Library rpath: [/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib]
+	(R4.1.0) $ ldd /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/library/RCurl/libs/RCurl.so 
+        linux-vdso.so.1 (0x00007ffca69ce000)
+        libcurl.so.4 => /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/libcurl.so.4 (0x00007f9e67d77000)
+		...
+	$ ldd /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/library/RCurl/libs/RCurl.so 
+	linux-vdso.so.1 (0x00007ffd18922000)
+	libcurl.so.4 => /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/libcurl.so.4 (0x00007f6ac6fe4000)
+	```
+	where regardless of env `R4.1.0`, `libcurl.so.4` would always point to the one used in the compilation step.
+	In contrast, the system would depends on the environment since `conda` would change `LD_LIBRARY_PATH`, while `rpath` has a higher priority than `LD_LIBRARY_PATH`
+
+??? note "set rpath via MAKEFLAGS (2023-01-08 20:44:08)"
+	We can pass `MAKEFLAGS`, particularly `LDFLAGS` to set the `rpath`.
+	```bash
+	$ MAKEFLAGS='LDFLAGS=-Wl,-rpath=/lib/x86_64-linux-gnu/' R CMD INSTALL RCurl_1.98-1.9.tar.gz 
+	$ readelf -d /opt/R/4.2.1/lib/R/library/RCurl/libs/RCurl.so 
+
+	Dynamic section at offset 0xcd40 contains 27 entries:
+	Tag        Type                         Name/Value
+	0x0000000000000001 (NEEDED)             Shared library: [libcurl.so.4]
+	0x0000000000000001 (NEEDED)             Shared library: [libR.so]
+	0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+	0x000000000000001d (RUNPATH)            Library runpath: [/lib/x86_64-linux-gnu/]
+	```
+	where `rpath` is automatically changed to `runpath`. To force `rpath`, we can pass `--disable-new-dtags` option,
+	```bash
+	$ MAKEFLAGS='LDFLAGS=-Wl,--disable-new-dtags,-rpath=/lib/x86_64-linux-gnu/' R CMD INSTALL RCurl_1.98-1.9.tar.gz
+	$ readelf -d /opt/R/4.2.1/lib/R/library/RCurl/libs/RCurl.so 
+
+	Dynamic section at offset 0xcd40 contains 27 entries:
+	Tag        Type                         Name/Value
+	0x0000000000000001 (NEEDED)             Shared library: [libcurl.so.4]
+	0x0000000000000001 (NEEDED)             Shared library: [libR.so]
+	0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+	0x000000000000000f (RPATH)              Library rpath: [/lib/x86_64-linux-gnu/]
+	```
+
+	On the other hand, `rpath` can be further changed after compilation via [`patchelf`](https://manpages.ubuntu.com/manpages/bionic/man1/patchelf.1.html),
+
+	```bash
+	/opt/R/4.2.1/lib/R/library/RCurl/libs$ readelf -d RCurl.so 
+
+	Dynamic section at offset 0xcd60 contains 26 entries:
+	Tag        Type                         Name/Value
+	0x0000000000000001 (NEEDED)             Shared library: [libcurl.so.4]
+	0x0000000000000001 (NEEDED)             Shared library: [libR.so]
+	0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+
+	/opt/R/4.2.1/lib/R/library/RCurl/libs$ patchelf --force-rpath --set-rpath "/lib/x86_64-linux-gnu/libcurl.so.4" RCurl.so
+	/opt/R/4.2.1/lib/R/library/RCurl/libs# readelf -d RCurl.so 
+
+	Dynamic section at offset 0x3b000 contains 27 entries:
+	Tag        Type                         Name/Value
+	0x000000000000000f (RPATH)              Library rpath: [/lib/x86_64-linux-gnu/libcurl.so.4]
+	0x0000000000000001 (NEEDED)             Shared library: [libcurl.so.4]
+	0x0000000000000001 (NEEDED)             Shared library: [libR.so]
+	0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+	```
+
+	See the private [:link:](https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374707761) for more details.
+
+??? note "--no-test-load (2023-01-08 22:10:59)"
+	After replacing the default `curl-config` with `mycurl-config`, which specifies another path (such as Julia 1.8's lib path) to `libcurl.so.4`, we can avoid the conflicts of `libcurl.so`
+	```bash
+	CURL_CONFIG=mycurl-config R CMD INSTALL RCurl_1.98-1.9.tar.gz 
+	```
+	the building step seems OK, but it failed on the "testing if installed package can be loaded from temporary location" step
+	```bash
+	gcc -shared -L/opt/R/4.2.1/lib/R/lib -L/usr/local/lib -o RCurl.so base64.o curl.o curlInit.o curl_base64.o enums.o json.o memoryManagement.o myUTF8.o -L/opt/hostedtoolcache/julia/1.8.4/x64/bin/../lib/julia/ -lcurl -lxml2 -L/opt/R/4.2.1/lib/R/lib -lR
+	installing to /opt/R/4.2.1/lib/R/library/00LOCK-RCurl/00new/RCurl/libs
+	** R
+	** data
+	** inst
+	** byte-compile and prepare package for lazy loading
+	** help
+	*** installing help indices
+	** building package indices
+	** testing if installed package can be loaded from temporary location
+	Error: package or namespace load failed for ‘RCurl’ in dyn.load(file, DLLpath = DLLpath, ...):
+	unable to load shared object '/opt/R/4.2.1/lib/R/library/00LOCK-RCurl/00new/RCurl/libs/RCurl.so':
+	/usr/lib/x86_64-linux-gnu/libcurl.so.4: version `CURL_4' not found (required by /opt/R/4.2.1/lib/R/library/00LOCK-RCurl/00new/RCurl/libs/RCurl.so)
+	Error: loading failed
+	Execution halted
+	ERROR: loading failed
+	```
+	Have tried to set `LD_LIBRARY_PATH` and `.Renviron`, both of which attempt to use Julia's `libcurl.so.4`, but failed.
+	Recall that the build step should have succeed, so we just need to skip the test step. It can be done via the option `--no-test-load`,
+	```bash
+	CURL_CONFIG=mycurl-config R CMD INSTALL --no-test-load RCurl_1.98-1.9.tar.gz
+	```
+	Alternatively, we can pass them in the R session,
+	```r
+	install.packages("RCurl", configure.args = c(RCurl = c("CURL_CONFIG=/usr/bin/mycurl-config", "--no-test-load")))
+	```
+	However, here is a trick. `--no-test-load` actually does not belongs to `configure.args`. If we just mv `CURL_CONFIG` to the env field (a recommended way in GitHub Actions), 
+	```r
+	# NOT WORK
+	> install.packages("RCurl", configure.args = c(RCurl = "--no-test-load"))
+	configure: error: unrecognized option: `--no-test-load'
+	Try `./configure --help' for more information
+	ERROR: configuration failed for package ‘RCurl’
+	```
+	which will stop at the configure step. In contrast, it is an option for the argument `INSTALL_opts`, so the following will work.
+	```r
+	install.packages("RCurl", INSTALL_opts = "--no-test-load")
+	```
+	See the private [:link:](https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374917268) for more detailed and historical exploration on this feature.
 
 ### Install Latest R3.6
 
@@ -461,41 +605,11 @@ p(sprintf("%.2e, %.1e", x, y))
 #sprintf("%.2e, %.1e", x, y) = 4.90e-02, 3.7e+04
 ```
 
-## 序列减去常数
-
-```R
-for (i in c(1:n-1))
-  print(i)
-##0
-##1
-##2
-for (i in c(1:(n-1)))
-  print(i)
-##1
-##2
-```
-
 ## Interpreting Residual and Null Deviance in GLM R
 
 ![](glm.png)
 
 Refer to [https://stats.stackexchange.com/questions/108995/interpreting-residual-and-null-deviance-in-glm-r](https://stats.stackexchange.com/questions/108995/interpreting-residual-and-null-deviance-in-glm-r)
-
-## 缺少libRblas.so和libRlapack.so的解决办法
-
-![](err_blas.png)
-
-虽然缺少libRblas.so和libRlapack.so，但却有libblas.so和liblapack.so，而它们应该是一样的，只是文件名不同而已，为此添加链接即可。
-
-```bash
-cd /usr/lib
-ln -s libblas.so libRblas.so
-ln -s /usr/lib/R/module/lapack.so libRlapack.so
-```
-
-参考：
-1. [https://bugs.launchpad.net/ubuntu/+source/rkward/+bug/264436](https://bugs.launchpad.net/ubuntu/+source/rkward/+bug/264436)
-2. [http://promberger.info/linux/2009/03/20/r-lme4-matrix-not-finding-librlapackso/](http://promberger.info/linux/2009/03/20/r-lme4-matrix-not-finding-librlapackso/)
 
 ## RSQLite
 
@@ -513,31 +627,32 @@ ln -s /usr/lib/R/module/lapack.so libRlapack.so
 	See also:
 	- [Reproducing R rep with the times argument in C++ and Rcpp](https://stackoverflow.com/questions/28442582/reproducing-r-rep-with-the-times-argument-in-c-and-rcpp)
  
-### cannot found -lRcpp
+??? bug "(Probably Outdated) cannot found -lRcpp"
 
-![](rcpp.png)
+	![](rcpp.png)
 
-手动设置
+	手动设置
 
-```bash
-cd /usr/local/lib
-##cd /usr/lib
-ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcpp.so
-```
+	```bash
+	cd /usr/local/lib
+	##cd /usr/lib
+	ln -s /home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so libRcpp.so
+	```
 
-### function 'dataptr' not provided by package 'Rcpp'
+	See also [:link:](https://stackoverflow.com/questions/40555328/ubuntu-ld-can-not-find-lrcpp)
 
-原因是因为没有在
+??? bug "function 'dataptr' not provided by package 'Rcpp'"
+	原因是因为没有在
 
-```r
-dyn.load()
-```
-前面添加
+	```r
+	dyn.load()
+	```
+	前面添加
 
-```r
-library(Rcpp)
-## 或require(Rcpp)
-```
+	```r
+	library(Rcpp)
+	## 或require(Rcpp)
+	```
 
 ## Rmarkdown
 
@@ -578,57 +693,6 @@ add at least two spacing newline.
 
 [*Some* figure captions from RMarkdown not showing](https://stackoverflow.com/questions/27444804/some-figure-captions-from-rmarkdown-not-showing)
 
-## x11 font cannot be loaded
-
-参考[X11 font -adobe-helvetica-%s-%s-*-*-%d-*-*-*-*-*-*-*, face 2 at size 11 could not be loaded](https://askubuntu.com/questions/449578/x11-font-adobe-helvetica-s-s-d-face-2-at-size-11-could-no)
-
-## semi-transparency is not supported on this device
-
-[semi-transparency is not supported on this device](http://tinyheero.github.io/2015/09/15/semi-transparency-r.html)
-
-## MC, MCMC, Gibbs采样 原理
-
-[MC, MCMC, Gibbs采样 原理&实现（in R）](http://blog.csdn.net/abcjennifer/article/details/25908495)
-
-[](http://blog.csdn.net/abcjennifer/article/details/25908495)
-
-[贝叶斯集锦（3）：从MC、MC到MCMC](https://site.douban.com/182577/widget/notes/10567181/note/292072927/)
-
-[随机采样方法整理与讲解（MCMC、Gibbs Sampling等）](http://www.cnblogs.com/xbinworld/p/4266146.html)
-
-[简单易学的机器学习算法——马尔可夫链蒙特卡罗方法MCMC](http://blog.csdn.net/google19890102/article/details/51755242)
-
-[DP: Collapsed Gibbs Sampling](https://cs.stanford.edu/~ppasupat/a9online/1084.html)
-
-[Metropolis Hasting算法](http://blog.csdn.net/flyingworm_eley/article/details/6517851)
-
-
-
-## “Kernel density estimation” is a convolution of what?
-
-[“Kernel density estimation” is a convolution of what?](https://stats.stackexchange.com/questions/73623/kernel-density-estimation-is-a-convolution-of-what)
-
-## unable to start rstudio in centos getting error “unable to connect to service”
-
-[unable to start rstudio in centos getting error “unable to connect to service”
-](https://stackoverflow.com/questions/24665599/unable-to-start-rstudio-in-centos-getting-error-unable-to-connect-to-service)
-
-## 发布R包
-
-[Releasing a package](http://r-pkgs.had.co.nz/release.html)
-
-## Presentations with Slidy
-
-[Presentations with Slidy](http://rmarkdown.rstudio.com/slidy_presentation_format.html)
-
-## Estimation of the expected prediction error
-
-[Estimation of the expected prediction error](http://www.math.ku.dk/~richard/courses/regression2014/DataSplit.html)
-
-
-## 协方差矩阵的几何解释
-
-参考[协方差矩阵的几何解释](http://www.cnblogs.com/nsnow/p/4758202.html)
 
 ## ROCR包中prediction函数
 
@@ -1064,6 +1128,10 @@ R_LIBS_USER=${R_LIBS_USER-'~/Programs/R/x86_64-pc-linux-gnu-library/3.6'}
 
 	See [:link:](https://stackoverflow.com/questions/14185287/escaping-backslash-in-string-or-paths-in-r/)
 
-## String
+## Misc Links
 
-- repeat string: `strrep('str', 2)`, `paste(rep('str', 2), collapse='')`
+- [semi-transparency is not supported on this device](http://tinyheero.github.io/2015/09/15/semi-transparency-r.html)
+- [Releasing a package](http://r-pkgs.had.co.nz/release.html)
+- [Presentations with Slidy](http://rmarkdown.rstudio.com/slidy_presentation_format.html)
+- [Estimation of the expected prediction error](http://www.math.ku.dk/~richard/courses/regression2014/DataSplit.html)
+- [协方差矩阵的几何解释](http://www.cnblogs.com/nsnow/p/4758202.html)

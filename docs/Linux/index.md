@@ -162,17 +162,26 @@ BTW, in the above, `conda activate` does not affect.
     - Finally, it works after putting it to `env`. [:link:](https://github.com/szcf-weiya/MonotoneSplines.jl/blob/7c2e96fb2214c6d5dc4e123ae8beb9128be14086/.github/workflows/ci.yml#L68)
 
 !!! tip
-    The documentation can be found in `man ld.so`, ~~not `man ld`~~.
+    The documentation can be found in `man ld.so`, ~~not `man ld`~~.    
 
 ### search order
 
-As said in [Where do executables look for shared objects at runtime?](https://unix.stackexchange.com/questions/22926/where-do-executables-look-for-shared-objects-at-runtime), when it's looking for a dynamic library (`.so` file) the linker tries
+An executable look for shared objects (`.so` files) in the following locations in order
 
-- directories listed in the `LD_LIBRARY_PATH`
-- directories listed in the executable's rpath, such as via `$ORIGIN/../lib`
-- directories on the system search path, which consists of the entries in `/etc/ld.so.conf` plus `/lib` and `/usr/lib`
+- `rpath`
+- `LD_LIBRARY_PATH`
+- `runpath`
+- `/etc/ld.so.conf`
+- `/lib`
+- `/usr/lib`
 
-Then there are several ways to fix the NotFound error,
+refer to
+
+- [Shared Libraries: Understanding Dynamic Loading](https://amir.rachum.com/blog/2016/09/17/shared-libraries/) **(Highly Recommended)**
+- [Where do executables look for shared objects at runtime?](https://unix.stackexchange.com/questions/22926/where-do-executables-look-for-shared-objects-at-runtime)
+
+
+So there are several ways to fix the NotFound error,
 
 ```bash
 # method 1

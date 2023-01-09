@@ -29,3 +29,4 @@ figure size | `size in pixel` | | `figsize in inch` |
 get unique elements | `unique(x)` | `unique(x)` |  |
 index for unique elements | `unique(i->x[i], 1:length(x))` | `which(!duplicated(x))` | |
 layout | `@layout` | [`layout`](../../R/plot/) | |
+priority of `:` | `0.1+1:10-1 == (0.1+1):(10-1)`  | `0.1+1:10-1 == 0.1+(1:10)-1` | |
