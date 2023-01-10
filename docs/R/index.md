@@ -250,6 +250,12 @@ Be careful when installing the package, and to avoid the uninstallation in the n
 	```
 	See the private [:link:](https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374917268) for more detailed and historical exploration on this feature.
 
+??? note "MAKEFLAGS"
+	Flags that are already set (for example in file etcR_ARCH/Makeconf) can be overridden by the environment variable MAKEFLAGS ([:link:](https://cran.r-project.org/doc/manuals/r-devel/R-exts.html))
+	Although `CURL_LIBS` cannot be directly overridden, it can pass via `MAKEFLAGS`
+	
+	But a trick is that space needs to be escape. See also [:link:](https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1375820423), [:link:](https://stackoverflow.com/questions/64541769/overriding-make-variables-containing-spaces-with-makeflags)
+
 ### Install Latest R3.6
 
 Accidentally, I uninstall my R3.6 when installing `libcurl4`, the apt-log shows that
