@@ -3328,6 +3328,12 @@ which will stop at the configure step. In contrast, it is an option for the argu
 </code></pre></div>
 See the private <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374917268"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more detailed and historical exploration on this feature.</p>
 </details>
+<details class="note">
+<summary>MAKEFLAGS</summary>
+<p>Flags that are already set (for example in file etcR_ARCH/Makeconf) can be overridden by the environment variable MAKEFLAGS (<a href="https://cran.r-project.org/doc/manuals/r-devel/R-exts.html"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>)
+Although <code>CURL_LIBS</code> cannot be directly overridden, it can pass via <code>MAKEFLAGS</code></p>
+<p>But a trick is that space needs to be escape. See also <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1375820423"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>, <a href="https://stackoverflow.com/questions/64541769/overriding-make-variables-containing-spaces-with-makeflags"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+</details>
 <h3 id="install-latest-r36">Install Latest R3.6<a class="headerlink" href="#install-latest-r36" title="Permanent link">&para;</a></h3>
 <p>Accidentally, I uninstall my R3.6 when installing <code>libcurl4</code>, the apt-log shows that</p>
 <div class="highlight"><pre><span></span><code>Start-Date:<span class="w"> </span><span class="m">2021</span>-05-01<span class="w">  </span><span class="m">10</span>:40:15
@@ -3992,7 +3998,7 @@ See<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2023</span>
       
         <br>
         Created:
