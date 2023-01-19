@@ -156,10 +156,9 @@ Alternatively, we can use `export` and `unset`,
 
 BTW, in the above, `conda activate` does not affect.
 
-!!! question
-    Why `export LD_PRELOAD` before running command failed [here](https://github.com/szcf-weiya/MonotoneSplines.jl/actions/runs/3841183884/workflow)?
-    - Too early? It is before the installation of Julia. What if set after the installation of Julia?
-    - Finally, it works after putting it to `env`. [:link:](https://github.com/szcf-weiya/MonotoneSplines.jl/blob/7c2e96fb2214c6d5dc4e123ae8beb9128be14086/.github/workflows/ci.yml#L68)
+!!! warning
+    `export LD_PRELOAD` did not work in GitHub Actions, such as [:link:](https://github.com/szcf-weiya/MonotoneSplines.jl/actions/runs/3841183884/workflow).
+    The proper way is to put it to `env`. [:link:](https://github.com/szcf-weiya/MonotoneSplines.jl/blob/7c2e96fb2214c6d5dc4e123ae8beb9128be14086/.github/workflows/ci.yml#L68)
 
 !!! tip
     The documentation can be found in `man ld.so`, ~~not `man ld`~~.    
@@ -194,15 +193,6 @@ sudo ldconfig
 sudo echo "where/your/lib" >> /etc/ld.so.conf
 sudo ldconfig
 ```
-
-## could not get lock /var/lib/dpkg/lock -open
-
-```bash
-sudo rm /var/cache/apt/archives/lock
-sudo rm /var/lib/dpkg/lock
-```
-
-如果不行，重启。
 
 ## update-alternatives
 
@@ -248,26 +238,6 @@ root         1     0  0 09:15 ?        00:00:44 /sbin/init splash
 - `TTY`: controlling tty (terminal).  (alias tt, tty).
 - `TIME`: cumulative CPU time, "[DD-]HH:MM:SS" format.  (alias cputime).
 - `CMD`: see args.  (alias args, command). when the arguments to that command cannot be located, 会被中括号 `[]` 包起来
-
-
-## compile FileZilla
-
-refer to [Client Compile](https://wiki.filezilla-project.org/Client_Compile)
-
-download latest libfilezilla from [https://lib.filezilla-project.org/download.php](https://lib.filezilla-project.org/download.php)
-
-add wxWidget's repository according to [http://codelite.org/LiteEditor/WxWidgets31Binaries#toc2](http://codelite.org/LiteEditor/WxWidgets31Binaries#toc2)
-
-pay attention to the version, NOT 3.1.0.
-
-[http://codelite.org/LiteEditor/WxWidgets30Binaries](http://codelite.org/LiteEditor/WxWidgets30Binaries)
-
-require libgnutls 3.4.15 or greater, download from  [https://gnutls.org/](https://gnutls.org/)
-
-require sqlite3.h
-```
-sudo apt-get install libsqlite3-dev
-```
 
 ## `user` vs. `sys`
 
@@ -342,10 +312,6 @@ sudo service cron reload
 都失败了。所以还是理解出现了偏差，
 
 参考[Linux 设置定时任务crontab命令](https://www.cnblogs.com/zoulongbin/p/6187238.html) 和 [关于定时执行任务：Crontab的20个例子](https://www.jianshu.com/p/d93e2b177814)
-
-## Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?
-
-[Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?](https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process)
 
 ## gvim fullscreen
 

@@ -1,3 +1,8 @@
+## 2023.01
+
+- plasma: 血浆
+- Interstitial Lung Disease (ILD)
+
 ## 2022.12
 
 - wormhole inside a quantum computer: the surprise is not that message made it across in some form, but that it made it across **unscrambled (使【信息、信号】还原；译出【密码】；解码，整理)**.
