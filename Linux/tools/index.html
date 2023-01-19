@@ -21,7 +21,7 @@
         <link rel="next" href="../../shell/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.5">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6b71719e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
@@ -153,7 +153,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -1576,6 +1576,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SAS/" class="md-nav__link">
+        SAS
+      </a>
     </li>
   
 
@@ -3145,8 +3159,8 @@ d
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;task goes here&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cat<span class="w"> </span>-<span class="w"> </span>todo.txt<span class="w"> </span>&gt;<span class="w"> </span>temp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>temp<span class="w"> </span>todo.txt
 </code></pre></div>
-<p>where <code>-</code> represents the standard input, see also <a href="https://blog.csdn.net/liuxiao723846/article/details/91041629"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
-<p>alternatively, we can use <code>sed</code>, refer to <a href="https://superuser.com/questions/246837/how-do-i-add-text-to-the-beginning-of-a-file-in-bash"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more details</p>
+<p>where <code>-</code> represents the standard input, see also <a href="https://blog.csdn.net/liuxiao723846/article/details/91041629"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
+<p>alternatively, we can use <code>sed</code>, refer to <a href="https://superuser.com/questions/246837/how-do-i-add-text-to-the-beginning-of-a-file-in-bash"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a> for more details</p>
 <h2 id="column"><code>column</code><a class="headerlink" href="#column" title="Permanent link">&para;</a></h2>
 <p>display the csv beautifully,</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>head<span class="w"> </span>file1.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>column<span class="w"> </span>-s,<span class="w"> </span>-t
@@ -3291,7 +3305,7 @@ pdftk<span class="w"> </span>likelihoodfree-design-a-discussion-<span class="o">
 <p>refer to <a href="https://unix.stackexchange.com/questions/375911/how-to-compare-two-time-stamps">How to compare two time stamps?</a></p>
 <h2 id="diff"><code>diff</code><a class="headerlink" href="#diff" title="Permanent link">&para;</a></h2>
 <ul>
-<li>compare contents of two folders, see also <a href="https://askubuntu.com/questions/421712/comparing-the-contents-of-two-directories"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li>compare contents of two folders, see also <a href="https://askubuntu.com/questions/421712/comparing-the-contents-of-two-directories"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>diff<span class="w"> </span>folder1<span class="w"> </span>folder2
 </code></pre></div>
@@ -3454,7 +3468,7 @@ $<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-u
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Parsing <code>ls</code>, such as <code>ls | grep "\-&gt;"</code> is a bad idea. <a href="https://askubuntu.com/questions/522051/how-to-list-all-symbolic-links-in-a-directory"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>Parsing <code>ls</code>, such as <code>ls | grep "\-&gt;"</code> is a bad idea. <a href="https://askubuntu.com/questions/522051/how-to-list-all-symbolic-links-in-a-directory"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <p>usage of <code>-exec</code></p>
 <div class="highlight"><pre><span></span><code>find<span class="w"> </span>/path<span class="w"> </span><span class="o">[</span>args<span class="o">]</span><span class="w"> </span>-exec<span class="w"> </span><span class="o">[</span>cmd<span class="o">]</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
@@ -3467,7 +3481,7 @@ $<span class="w"> </span>find<span class="w"> </span>.<span class="w"> </span>-u
 <p>For example, convert the file encoding in <a href="https://github.com/szcf-weiya/Matlab30IAs">szcf-weiya/Matlab30IAs</a></p>
 <div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.m&#39;</span><span class="w"> </span>-ls<span class="w"> </span>-exec<span class="w"> </span>iconv<span class="w"> </span>-f<span class="w"> </span>GB18030<span class="w"> </span><span class="o">{}</span><span class="w"> </span>-t<span class="w"> </span>UTF8<span class="w"> </span>-o<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
 </code></pre></div>
-<p>see also <a href="https://www.howtouselinux.com/post/linux-find-exec-examples-advanced-part"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>see also <a href="https://www.howtouselinux.com/post/linux-find-exec-examples-advanced-part"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 <h2 id="grep"><code>grep</code><a class="headerlink" href="#grep" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>-P</code>: perl-style regex</li>
@@ -3530,7 +3544,7 @@ Binary<span class="w"> </span>file<span class="w"> </span>syslog<span class="w">
 </ul>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>journalctl<span class="w"> </span>-b-1
 </code></pre></div>
-<p>see also: <a href="https://askubuntu.com/questions/765315/how-to-find-previous-boot-log-after-ubuntu-16-04-restarts"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>see also: <a href="https://askubuntu.com/questions/765315/how-to-find-previous-boot-log-after-ubuntu-16-04-restarts"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 <h2 id="ln"><code>ln</code><a class="headerlink" href="#ln" title="Permanent link">&para;</a></h2>
 <ul>
 <li>with <code>-s</code>, create a soft link</li>
@@ -3565,7 +3579,7 @@ ls<span class="w"> </span>-d<span class="w"> </span>*/
 </ul>
 <h2 id="notify-send"><code>notify-send</code><a class="headerlink" href="#notify-send" title="Permanent link">&para;</a></h2>
 <ul>
-<li>show whole message: leave summary empty and only show body, but still only when mouse is hovering the pop window, see also <a href="https://unix.stackexchange.com/questions/300099/notify-send-how-to-display-full-message-when-message-is-longer-than-one-line"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li>show whole message: leave summary empty and only show body, but still only when mouse is hovering the pop window, see also <a href="https://unix.stackexchange.com/questions/300099/notify-send-how-to-display-full-message-when-message-is-longer-than-one-line"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></li>
 <li>escape <code>-</code> in the string, otherwise it throws <code>Unknown option</code></li>
 <li>specify icon <code>-i your_icon_path</code>, note that the path should be full path instead of relative path. </li>
 </ul>
@@ -3614,7 +3628,7 @@ pdftk<span class="w"> </span>input.pdf<span class="w"> </span>update_info<span c
 </code></pre></div>
 <h2 id="ps"><code>ps</code><a class="headerlink" href="#ps" title="Permanent link">&para;</a></h2>
 <ul>
-<li>brackets around processes: when the arguments to the command cannot be located. <a href="https://unix.stackexchange.com/questions/22121/what-do-the-brackets-around-processes-mean"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li>brackets around processes: when the arguments to the command cannot be located. <a href="https://unix.stackexchange.com/questions/22121/what-do-the-brackets-around-processes-mean"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>ps<span class="w"> </span>-aef<span class="w"> </span>
 weiya<span class="w">     </span><span class="m">793892</span><span class="w">    </span><span class="m">7821</span><span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">19</span>:33<span class="w"> </span>pts/10<span class="w">   </span><span class="m">00</span>:00:00<span class="w"> </span>/bin/bash
@@ -3622,7 +3636,7 @@ root<span class="w">      </span><span class="m">794217</span><span class="w">  
 root<span class="w">      </span><span class="m">794336</span><span class="w">       </span><span class="m">2</span><span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">19</span>:35<span class="w"> </span>?<span class="w">        </span><span class="m">00</span>:00:00<span class="w"> </span><span class="o">[</span>kworker/u8:3<span class="o">]</span>
 </code></pre></div>
 <ul>
-<li>show long character usernames which consists of <code>+</code>. <a href="https://askubuntu.com/questions/523673/ps-aux-for-long-charactered-usernames-shows-a-plus-sign"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li>show long character usernames which consists of <code>+</code>. <a href="https://askubuntu.com/questions/523673/ps-aux-for-long-charactered-usernames-shows-a-plus-sign"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 <div class="highlight"><pre><span></span><code>ps<span class="w"> </span>axo<span class="w"> </span>user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm
 <span class="nb">alias</span><span class="w"> </span><span class="nv">psaux</span><span class="o">=</span><span class="s1">&#39;ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm&#39;</span>
@@ -3755,23 +3769,23 @@ sar<span class="w"> </span>-f<span class="w"> </span>/var/log/sa/sa04
 <li>删除最后一行：<code>sed -i '$ d' file.txt</code></li>
 <li>在 vi 中注释多行：按住 v 选定特定行之后，按住 <code>:s/^/#/g</code> 即可添加注释，取消注释则用 <code>:s/^#//g</code>. 另见 VI.</li>
 <li>print lines between two matching patterns (<a href="https://unix.stackexchange.com/questions/264962/print-lines-of-a-file-between-two-matching-patterns"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59Z"/></svg></span></a>): <code>/^pattern1/,/^pattern2/p</code>, and if one want to just print once, use <code>/^pattern1/,${p;/^pattern2/q}</code></li>
-<li>insertion (refer to <a href="https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> and <a href="(https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/)"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>)<ul>
+<li>insertion (refer to <a href="https://fabianlee.org/2018/10/28/linux-using-sed-to-insert-lines-before-or-after-a-match/"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a> and <a href="(https://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/)"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>)<ul>
 <li>insert before the line of matched expression: <code>sed '/expr/i something-to-insert'</code></li>
 <li>insert after the line: replace <code>i</code> with <code>a</code></li>
-<li>insert multiple lines: add <code>\n</code> in the text to insert, or add <code>\</code> at each end of line, see also <a href="https://askubuntu.com/questions/702677/how-to-insert-multiple-lines-with-sed"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
-<li>insert at the beginning without new line: <a href="https://stackoverflow.com/questions/9533679/how-to-insert-a-text-at-the-beginning-of-a-file"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>, <code>sed -i '1s/^/&lt;added text&gt; /' file</code></li>
-<li><code>r</code>: read a file and append it at the current point, <code>sed '/EOF/r $thingToAdd' $fileToAddItTo</code>, see also <a href="https://stackoverflow.com/questions/7085979/r-in-sed-shell-script"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li>insert multiple lines: add <code>\n</code> in the text to insert, or add <code>\</code> at each end of line, see also <a href="https://askubuntu.com/questions/702677/how-to-insert-multiple-lines-with-sed"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></li>
+<li>insert at the beginning without new line: <a href="https://stackoverflow.com/questions/9533679/how-to-insert-a-text-at-the-beginning-of-a-file"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>, <code>sed -i '1s/^/&lt;added text&gt; /' file</code></li>
+<li><code>r</code>: read a file and append it at the current point, <code>sed '/EOF/r $thingToAdd' $fileToAddItTo</code>, see also <a href="https://stackoverflow.com/questions/7085979/r-in-sed-shell-script"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 </li>
-<li>竖线 <code>|</code> 元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 <a href="https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L4"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
-<li>directly replace hex string, such as <a href="https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L6"><code>'s/\xee\x81\xab/合/g'</code></a>, see also <a href="https://stackoverflow.com/questions/7760717/hex-string-replacement-using-sed"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
-<li>replace multi-line string: <a href="https://unix.stackexchange.com/questions/26284/how-can-i-use-sed-to-replace-a-multi-line-string"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a><ul>
-<li>alternatively, use <code>perl</code>, e.g., scripts to switch versions of manuscript <a href="https://github.com/szcf-weiya/Cell-Video/blob/2b4a65d3ce0fd866c5fa75a10c04d630206bc18c/release.sh"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>
+<li>竖线 <code>|</code> 元字符是元字符扩展集的一部分，用于指定正则表达式的联合。如果某行匹配其中的一个正则表达式，那么它就匹配该模式。 <a href="https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L4"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></li>
+<li>directly replace hex string, such as <a href="https://github.com/szcf-weiya/SZmedinfo/blob/af354f207d18ea270408562ac409b636eb17b5af/src/patterns_cut.sed#L6"><code>'s/\xee\x81\xab/合/g'</code></a>, see also <a href="https://stackoverflow.com/questions/7760717/hex-string-replacement-using-sed"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></li>
+<li>replace multi-line string: <a href="https://unix.stackexchange.com/questions/26284/how-can-i-use-sed-to-replace-a-multi-line-string"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a><ul>
+<li>alternatively, use <code>perl</code>, e.g., scripts to switch versions of manuscript <a href="https://github.com/szcf-weiya/Cell-Video/blob/2b4a65d3ce0fd866c5fa75a10c04d630206bc18c/release.sh"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>
 <div class="highlight"><pre><span></span><code>perl<span class="w"> </span>-0777<span class="w"> </span>-i<span class="w"> </span>-pe<span class="w"> </span><span class="s2">&quot;s/###BEGIN-EXCLUDE(.*?)###END-EXCLUDE//igs&quot;</span><span class="w"> </span>_release/src/data.jl
 </code></pre></div></li>
 </ul>
 </li>
-<li>swap two texts, use <code>\x0</code> as a temp storage. refer to <a href="https://stackoverflow.com/questions/26568952/how-to-swap-text-based-on-patterns-at-once-with-sed"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li>swap two texts, use <code>\x0</code> as a temp storage. refer to <a href="https://stackoverflow.com/questions/26568952/how-to-swap-text-based-on-patterns-at-once-with-sed"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 <div class="highlight"><pre><span></span><code>~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;abbc&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/ab/\x0/g; s/bc/ab/g; s/\x0/bc/g&#39;</span>
 bcab
@@ -4285,7 +4299,7 @@ $<span class="w"> </span>iconv<span class="w"> </span>-f<span class="w"> </span>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

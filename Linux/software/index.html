@@ -21,7 +21,7 @@
         <link rel="next" href="../tools/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.5">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6b71719e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
@@ -153,7 +153,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -1898,6 +1898,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SAS/" class="md-nav__link">
+        SAS
+      </a>
     </li>
   
 
@@ -3775,7 +3789,7 @@ bypy<span class="w"> </span>syncdown
 /home/weiya/.config/google-chrome/Default
 ~/.config/google-chrome/Default$<span class="w"> </span>mv<span class="w"> </span>Login<span class="se">\ </span>Data<span class="w"> </span><span class="s2">&quot;Login-Data-backup20210410-issue16&quot;</span>
 </code></pre></div>
-<p>详见 <a href="https://github.com/szcf-weiya/techNotes/issues/16"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>详见 <a href="https://github.com/szcf-weiya/techNotes/issues/16"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 <h3 id="disable-running-in-background">disable running in background<a class="headerlink" href="#disable-running-in-background" title="Permanent link">&para;</a></h3>
 <p>To diagnose high memory usage, I found chrome is still running in background even if it has been closed,</p>
 <div class="highlight"><pre><span></span><code>~$<span class="w"> </span>ps<span class="w"> </span>-e<span class="w"> </span>-o<span class="w"> </span>pid,cmd,%mem<span class="w"> </span>--sort<span class="o">=</span>-%mem<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>google<span class="w"> </span>
@@ -4324,8 +4338,8 @@ ls<span class="w"> </span>-1<span class="w"> </span><span class="p">|</span><spa
 <p>则文件名后缀不是很好直接换掉，不能直接对 <code>{}</code> 进行操作，</p>
 <div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.wav&quot;</span><span class="w"> </span>-exec<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;ffmpeg -i &quot;$1&quot; &quot;${1%.*}.mp3&quot;&#39;</span><span class="w"> </span>sh<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
 </code></pre></div>
-<p>参考 <a href="https://superuser.com/questions/1426601/how-to-remove-extension-from-pathname-passed-as-in-find-exec"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>, 其实有点相当于把 <code>{}</code> 在传进去然后就可以用 <code>$1</code> 来表示。</p>
-<p>但是重命名完之后，Rhythmbox 左侧出现一个 Missing Files 的文件夹，里面即删掉的 <code>.wav</code> 文件路径。退出然后删掉 <code>rhythmdb.xml</code> 再打开即可，参考 <a href="https://www.chalk-ridge.com/is-rhythmbox-missing-music-files-heres-a-simple-fix/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>参考 <a href="https://superuser.com/questions/1426601/how-to-remove-extension-from-pathname-passed-as-in-find-exec"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>, 其实有点相当于把 <code>{}</code> 在传进去然后就可以用 <code>$1</code> 来表示。</p>
+<p>但是重命名完之后，Rhythmbox 左侧出现一个 Missing Files 的文件夹，里面即删掉的 <code>.wav</code> 文件路径。退出然后删掉 <code>rhythmdb.xml</code> 再打开即可，参考 <a href="https://www.chalk-ridge.com/is-rhythmbox-missing-music-files-heres-a-simple-fix/"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 <div class="highlight"><pre><span></span><code>~/.local/share/rhythmbox$<span class="w"> </span>mv<span class="w"> </span>rhythmdb.xml<span class="w"> </span>rhythmdb.xml.old
 </code></pre></div>
 <p>所以看上去路径是直接写入 <code>.xml</code> 文件中，所以即便两个不同的路径指向同一个文件夹，也会被视为不同文件夹，于是便能解释为什么相同音乐文件被重复导入。</p>
@@ -4348,7 +4362,7 @@ ls<span class="w"> </span>-1<span class="w"> </span><span class="p">|</span><spa
 <p>Anyway, the current solution seems already convinent.</p>
 <h2 id="terminator">Terminator<a class="headerlink" href="#terminator" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>Ctrl + Shift + E</code> not work in Ubuntu 20.04 + ibus. The reason is that ibus has define such shortcut for emoji annotation. So just type <code>ibus-setup</code>, then switch to Emoji tab and delete the shortcut. <a href="https://jh-byun.github.io/study/terminator-split-vertically/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li><code>Ctrl + Shift + E</code> not work in Ubuntu 20.04 + ibus. The reason is that ibus has define such shortcut for emoji annotation. So just type <code>ibus-setup</code>, then switch to Emoji tab and delete the shortcut. <a href="https://jh-byun.github.io/study/terminator-split-vertically/"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/192050782-33e0676a-d37f-47d6-a138-5b7cce58e4fa.png" /></p>
 <ul>
@@ -4394,7 +4408,7 @@ TO:<span class="w"> </span>B
 Bcc:<span class="w"> </span>C
 </code></pre></div>
 <p>在 B 端查看源码发现只有 <code>TO: B</code>，而在 C 端既有 <code>Delivered-To: C</code>，也有 <code>TO: B</code>。</p>
-<p>所以 Esther 一种可能的原因是在 bcc 中输入 grad 的邮箱，并发送给自己。但感觉这样很奇怪，可能有其它自动设置，具体不得而知。关于 <code>Delivered-To</code> 的讨论可另见 <a href="https://serverfault.com/questions/796913/how-can-the-to-and-delivered-to-fields-in-an-email-i-received-be-different"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>所以 Esther 一种可能的原因是在 bcc 中输入 grad 的邮箱，并发送给自己。但感觉这样很奇怪，可能有其它自动设置，具体不得而知。关于 <code>Delivered-To</code> 的讨论可另见 <a href="https://serverfault.com/questions/796913/how-can-the-to-and-delivered-to-fields-in-an-email-i-received-be-different"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 <h3 id="deactivation">Deactivation<a class="headerlink" href="#deactivation" title="Permanent link">&para;</a></h3>
 <p>Since the visiting Harvard email account has expired, it will always pop up the log-in window. But I do not want to delete the account, and just want to avoid the automatically log-in, so I try to set to never check new message as follows,</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/151953746-2250b616-a3b7-418b-bfbc-de535224d562.png" /></p>
@@ -4437,7 +4451,7 @@ Bcc:<span class="w"> </span>C
 <li>switch terminals, <code>Ctrl+Up/Down</code>, refer to <a href="https://stackoverflow.com/a/67412583/">How to switch between terminals in Visual Studio Code?</a></li>
 </ul>
 <h3 id="edit-multiple-line-simultaneously">Edit Multiple Line Simultaneously<a class="headerlink" href="#edit-multiple-line-simultaneously" title="Permanent link">&para;</a></h3>
-<p>Press <code>Shift + Alt + Down/Up</code> to insert cursors below or up, after inserting <code>&gt;</code>, then press <code>Esc</code> to exit. <a href="https://code.visualstudio.com/docs/editor/codebasics"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>Press <code>Shift + Alt + Down/Up</code> to insert cursors below or up, after inserting <code>&gt;</code>, then press <code>Esc</code> to exit. <a href="https://code.visualstudio.com/docs/editor/codebasics"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 <p><img alt="Peek 2022-03-30 20-28" src="https://user-images.githubusercontent.com/13688320/160834904-5110b5e5-a58d-4586-a9a3-0e0d835abe52.gif" /></p>
 <h3 id="fail-to-open-terminal">Fail to open terminal<a class="headerlink" href="#fail-to-open-terminal" title="Permanent link">&para;</a></h3>
 <p>首先通过搜索图形界面登录，弹出</p>
@@ -4878,7 +4892,7 @@ xournalpp/now<span class="w"> </span><span class="m">1</span>.0.20-1~ubuntu18.04
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

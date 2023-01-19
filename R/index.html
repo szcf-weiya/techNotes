@@ -21,7 +21,7 @@
         <link rel="next" href="plot/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.5">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6b71719e.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.558e4712.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
@@ -153,7 +153,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -1614,6 +1614,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SAS/" class="md-nav__link">
+        SAS
+      </a>
     </li>
   
 
@@ -3120,7 +3134,7 @@
 <ul>
 <li>删除当前工作区所有变量: <code>rm(list = ls(all = TRUE))</code></li>
 <li>RStudio shows all shortcuts: <code>Alt-Shift-K</code>.</li>
-<li>usage of <code>&lt;&lt;-</code>, &ldquo;it will keep going through the environments in order until it finds a variable with that name, and it will assign it to that.&rdquo; see also <a href="https://stackoverflow.com/questions/2628621/how-do-you-use-scoping-assignment-in-r"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></li>
+<li>usage of <code>&lt;&lt;-</code>, &ldquo;it will keep going through the environments in order until it finds a variable with that name, and it will assign it to that.&rdquo; see also <a href="https://stackoverflow.com/questions/2628621/how-do-you-use-scoping-assignment-in-r"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></li>
 <li>序列中 <code>0.1+1:10-1</code> 中 <code>:</code> 优先级低于加减运算符，所以返回 <code>0.1, 1.1, ..., 9.1</code>.</li>
 <li>repeat string: <code>strrep('str', 2)</code>, <code>paste(rep('str', 2), collapse='')</code></li>
 </ul>
@@ -3171,7 +3185,7 @@ sudo<span class="w"> </span>make<span class="w"> </span>install
 <p>refer to <a href="https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r">How to select a CRAN mirror in R</a></p>
 </details>
 <h4 id="installation-of-module">installation of <code>module</code><a class="headerlink" href="#installation-of-module" title="Permanent link">&para;</a></h4>
-<p>Follow the official instruction <a href="https://modules.readthedocs.io/en/latest/INSTALL.html"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>Follow the official instruction <a href="https://modules.readthedocs.io/en/latest/INSTALL.html"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-LJO<span class="w"> </span>https://github.com/cea-hpc/modules/releases/download/v5.1.1/modules-5.1.1.tar.gz
 tar<span class="w"> </span>xvf<span class="w"> </span>modules-5.1.1.tar.gz
 <span class="nb">cd</span><span class="w"> </span>modules-5.1.1/
@@ -3284,7 +3298,7 @@ Tag<span class="w">        </span>Type<span class="w">                         <
 0x0000000000000001<span class="w"> </span><span class="o">(</span>NEEDED<span class="o">)</span><span class="w">             </span>Shared<span class="w"> </span>library:<span class="w"> </span><span class="o">[</span>libR.so<span class="o">]</span>
 0x0000000000000001<span class="w"> </span><span class="o">(</span>NEEDED<span class="o">)</span><span class="w">             </span>Shared<span class="w"> </span>library:<span class="w"> </span><span class="o">[</span>libc.so.6<span class="o">]</span>
 </code></pre></div>
-<p>See the private <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374707761"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more details.</p>
+<p>See the private <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374707761"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a> for more details.</p>
 </details>
 <details class="note">
 <summary>&ndash;no-test-load (2023-01-08 22:10:59)</summary>
@@ -3326,13 +3340,13 @@ However, here is a trick. <code>--no-test-load</code> actually does not belongs 
 which will stop at the configure step. In contrast, it is an option for the argument <code>INSTALL_opts</code>, so the following will work.
 <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;RCurl&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">INSTALL_opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;--no-test-load&quot;</span><span class="p">)</span>
 </code></pre></div>
-See the private <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374917268"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a> for more detailed and historical exploration on this feature.</p>
+See the private <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374917268"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a> for more detailed and historical exploration on this feature.</p>
 </details>
 <details class="note">
 <summary>MAKEFLAGS</summary>
-<p>Flags that are already set (for example in file etcR_ARCH/Makeconf) can be overridden by the environment variable MAKEFLAGS (<a href="https://cran.r-project.org/doc/manuals/r-devel/R-exts.html"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>)
+<p>Flags that are already set (for example in file etcR_ARCH/Makeconf) can be overridden by the environment variable MAKEFLAGS (<a href="https://cran.r-project.org/doc/manuals/r-devel/R-exts.html"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>)
 Although <code>CURL_LIBS</code> cannot be directly overridden, it can pass via <code>MAKEFLAGS</code></p>
-<p>But a trick is that space needs to be escape. See also <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1375820423"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>, <a href="https://stackoverflow.com/questions/64541769/overriding-make-variables-containing-spaces-with-makeflags"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>But a trick is that space needs to be escape. See also <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1375820423"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>, <a href="https://stackoverflow.com/questions/64541769/overriding-make-variables-containing-spaces-with-makeflags"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 </details>
 <h3 id="install-latest-r36">Install Latest R3.6<a class="headerlink" href="#install-latest-r36" title="Permanent link">&para;</a></h3>
 <p>Accidentally, I uninstall my R3.6 when installing <code>libcurl4</code>, the apt-log shows that</p>
@@ -3440,7 +3454,7 @@ sudo<span class="w"> </span>gdebi<span class="w"> </span>rstudio-1.0.44-amd64.de
 <span class="c1"># ... do main stuff</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>refer to <a href="https://stackoverflow.com/questions/2968220/is-there-an-r-equivalent-of-the-pythonic-if-name-main-main"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>refer to <a href="https://stackoverflow.com/questions/2968220/is-there-an-r-equivalent-of-the-pythonic-if-name-main-main"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p><a href="https://github.com/search?q=user%3Aszcf-weiya+nframe&amp;type=code">My Repos</a></p>
@@ -3648,7 +3662,7 @@ $<span class="w"> </span>Rscript<span class="w"> </span>test2.R<span class="w"> 
 <span class="c1">##cd /usr/lib</span>
 ln<span class="w"> </span>-s<span class="w"> </span>/home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so<span class="w"> </span>libRcpp.so
 </code></pre></div>
-<p>See also <a href="https://stackoverflow.com/questions/40555328/ubuntu-ld-can-not-find-lrcpp"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>See also <a href="https://stackoverflow.com/questions/40555328/ubuntu-ld-can-not-find-lrcpp"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 </details>
 <details class="bug">
 <summary>function &lsquo;dataptr&rsquo; not provided by package &lsquo;Rcpp&rsquo;</summary>
@@ -3662,7 +3676,7 @@ ln<span class="w"> </span>-s<span class="w"> </span>/home/weiya/R/x86_64-pc-linu
 </details>
 <h2 id="rmarkdown">Rmarkdown<a class="headerlink" href="#rmarkdown" title="Permanent link">&para;</a></h2>
 <h3 id="knitkable"><code>knit::kable</code><a class="headerlink" href="#knitkable" title="Permanent link">&para;</a></h3>
-<p>pretty table, which can auto newline long description in a cell. See also <a href="#events_init_vs_extend"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>pretty table, which can auto newline long description in a cell. See also <a href="#events_init_vs_extend"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 <h3 id="chinese-fonts-in-pdf">Chinese Fonts in PDF<a class="headerlink" href="#chinese-fonts-in-pdf" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="o">---</span>
 <span class="n">title</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;test&quot;</span>
@@ -3982,7 +3996,7 @@ See<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">r</span><span class="s">&quot;(~/R/x86_64-pc-linux-gnu-library/3.6)&quot;</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;~/R/x86_64-pc-linux-gnu-library/3.6&quot;</span>
 </code></pre></div>
-<p>See <a href="https://stackoverflow.com/questions/14185287/escaping-backslash-in-string-or-paths-in-r/"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>See <a href="https://stackoverflow.com/questions/14185287/escaping-backslash-in-string-or-paths-in-r/"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <h2 id="misc-links">Misc Links<a class="headerlink" href="#misc-links" title="Permanent link">&para;</a></h2>
 <ul>
@@ -4111,7 +4125,7 @@ See<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../assets/javascripts/bundle.51d95adb.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       

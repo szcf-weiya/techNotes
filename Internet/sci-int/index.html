@@ -21,7 +21,7 @@
         <link rel="next" href="../">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.5">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6b71719e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
@@ -153,7 +153,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -1237,6 +1237,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SAS/" class="md-nav__link">
+        SAS
+      </a>
     </li>
   
 
@@ -2762,7 +2776,7 @@
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>2022-08-04 从香港到珠海的隔离酒店，采取此方案，其中 <code>InnerServer</code> 为 <code>chpc-sandbox</code>，<code>OuterServer</code> 为阿里云 ECS。
-另外，为了使得手机也能享受墙外服务，同时使用酒店 wifi，首先通过 <code>ifconfig</code> 获得电脑内网 ip（<code>wlpXXX:inet</code>），然后在手机代理中输入 <code>192.168.1.3:8118</code>，详见 <a href="#proxy-for-android-phone"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+另外，为了使得手机也能享受墙外服务，同时使用酒店 wifi，首先通过 <code>ifconfig</code> 获得电脑内网 ip（<code>wlpXXX:inet</code>），然后在手机代理中输入 <code>192.168.1.3:8118</code>，详见 <a href="#proxy-for-android-phone"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <p>假设有一台外网服务器 OuterServer，以及内网服务器 InnerServer</p>
 <ul>
@@ -2845,7 +2859,7 @@ ssh<span class="w"> </span>-L<span class="w"> </span>localhost:18888:localhost:8
 <h2 id="proxy-for-android-phone">Proxy for Android Phone<a class="headerlink" href="#proxy-for-android-phone" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>2022-08-04 在珠海的隔离酒店，采用此方案使得手机翻墙。另见 <a href="#ssh-tunnel"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>2022-08-04 在珠海的隔离酒店，采用此方案使得手机翻墙。另见 <a href="#ssh-tunnel"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <p>安卓手机自带的只默认 http 和 https 代理，但像 ssh 隧道或者 shadowsocks 得到的都是 socks5 代理，也尝试过<a href="https://blog.csdn.net/qq_40374604/article/details/88989651">别人推荐的 ProxyDroid</a>，但是似乎还要对手机进行 root。遂放弃。</p>
 <p>既然 socks5 有了，直接转换成 http 不就行了么，然后看到了 <a href="https://g2ex.top/2016/05/20/Tips-on-Chinternet/">Privoxy</a>，这勾起了我的回忆，记得曾经<a href="https://blog.csdn.net/m0_38110132/article/details/79796171">跟 shadowsocks 搭配</a>使用过，但不知道为啥要用它。而这次我的目标及动机很明确了，将 socks5 转换成 http，供手机端访问，因为我的电脑和手机在同一个局域网内，那这样手机端的 http 代理服务器即为我电脑的局域网 ip，通过 ifconfig 可以得到。</p>
@@ -2983,7 +2997,7 @@ listen-address<span class="w"> </span><span class="m">0</span>.0.0.0:8118
 Acquire::http::Proxy<span class="w"> </span><span class="s2">&quot;http://localhost:8118&quot;</span><span class="p">;</span>
 Acquire::https::Proxy<span class="w"> </span><span class="s2">&quot;https://localhost:8118&quot;</span><span class="p">;</span>
 </code></pre></div>
-另见 <a href="https://askubuntu.com/questions/257290/configure-proxy-for-apt"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+另见 <a href="https://askubuntu.com/questions/257290/configure-proxy-for-apt"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <p>然后</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/.bashrc
@@ -3243,7 +3257,7 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

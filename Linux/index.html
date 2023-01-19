@@ -21,7 +21,7 @@
         <link rel="next" href="ubuntu/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.5">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6b71719e.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.558e4712.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
@@ -153,7 +153,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -530,13 +530,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#could-not-get-lock-varlibdpkglock-open" class="md-nav__link">
-    could not get lock /var/lib/dpkg/lock -open
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#update-alternatives" class="md-nav__link">
     update-alternatives
   </a>
@@ -546,13 +539,6 @@
         <li class="md-nav__item">
   <a href="#kill-processes" class="md-nav__link">
     Kill Processes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compile-filezilla" class="md-nav__link">
-    compile FileZilla
   </a>
   
 </li>
@@ -588,13 +574,6 @@
         <li class="md-nav__item">
   <a href="#crontab" class="md-nav__link">
     crontab定时任务
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unable-to-lock-the-administration-directory-varlibdpkg-is-another-process-using-it" class="md-nav__link">
-    Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?
   </a>
   
 </li>
@@ -1516,6 +1495,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SAS/" class="md-nav__link">
+        SAS
+      </a>
     </li>
   
 
@@ -2700,13 +2693,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#could-not-get-lock-varlibdpkglock-open" class="md-nav__link">
-    could not get lock /var/lib/dpkg/lock -open
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#update-alternatives" class="md-nav__link">
     update-alternatives
   </a>
@@ -2716,13 +2702,6 @@
         <li class="md-nav__item">
   <a href="#kill-processes" class="md-nav__link">
     Kill Processes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compile-filezilla" class="md-nav__link">
-    compile FileZilla
   </a>
   
 </li>
@@ -2758,13 +2737,6 @@
         <li class="md-nav__item">
   <a href="#crontab" class="md-nav__link">
     crontab定时任务
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unable-to-lock-the-administration-directory-varlibdpkg-is-another-process-using-it" class="md-nav__link">
-    Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?
   </a>
   
 </li>
@@ -2964,7 +2936,7 @@
 <li><code>uptime --since</code>, which is actually the first line of <code>top</code></li>
 </ul>
 </li>
-<li>obtain <a href="https://help.ubuntu.com/stable/ubuntu-help/net-macaddress.html">MAC address <img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>: <code>ifconfig | grep ether</code>, note that different MAC addresses for WIFI and Ethernet.</li>
+<li>obtain <a href="https://help.ubuntu.com/stable/ubuntu-help/net-macaddress.html">MAC address <img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>: <code>ifconfig | grep ether</code>, note that different MAC addresses for WIFI and Ethernet.</li>
 <li>check number of cores (refer to <a href="https://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux">How to know number of cores of a system in Linux?</a>):<ul>
 <li>quick way: <code>nproc --all</code></li>
 <li>more details: <code>lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('</code></li>
@@ -3039,7 +3011,7 @@ locale:<span class="w"> </span>Cannot<span class="w"> </span><span class="nb">se
 <h3 id="ld_preload">LD_PRELOAD<a class="headerlink" href="#ld_preload" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Used in <a href=""><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>Used in <a href=""><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <p>If it is set on the same line before the command, it is only valid on the same line. For example, </p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>R4.1.0<span class="o">)</span><span class="w"> </span>/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib$<span class="w"> </span>ldd<span class="w"> </span>libR.so<span class="w"> </span>
@@ -3055,7 +3027,7 @@ locale:<span class="w"> </span>Cannot<span class="w"> </span><span class="nb">se
 ERROR:<span class="w"> </span>ld.so:<span class="w"> </span>object<span class="w"> </span><span class="s1">&#39;/usr/lib/x86_64-linux-gnu/&#39;</span><span class="w"> </span>from<span class="w"> </span>LD_PRELOAD<span class="w"> </span>cannot<span class="w"> </span>be<span class="w"> </span>preloaded<span class="w"> </span><span class="o">(</span>cannot<span class="w"> </span><span class="nb">read</span><span class="w"> </span>file<span class="w"> </span>data<span class="o">)</span>:<span class="w"> </span>ignored.
 </code></pre></div></p>
 </div>
-<p>In the words of <a href="https://www.baeldung.com/linux/ld_preload-trick-what-is"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a>, </p>
+<p>In the words of <a href="https://www.baeldung.com/linux/ld_preload-trick-what-is"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>, </p>
 <blockquote>
 <p>LD_PRELOAD is an environment variable, it affects only the current process</p>
 </blockquote>
@@ -3070,11 +3042,10 @@ ERROR:<span class="w"> </span>ld.so:<span class="w"> </span>object<span class="w
 <span class="w">        </span>/usr/lib/x86_64-linux-gnu/libstdc++.so.6<span class="w"> </span><span class="o">(</span>0x00007fb231b15000<span class="o">)</span>
 </code></pre></div>
 <p>BTW, in the above, <code>conda activate</code> does not affect.</p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Why <code>export LD_PRELOAD</code> before running command failed <a href="https://github.com/szcf-weiya/MonotoneSplines.jl/actions/runs/3841183884/workflow">here</a>?
-- Too early? It is before the installation of Julia. What if set after the installation of Julia?
-- Finally, it works after putting it to <code>env</code>. <a href="https://github.com/szcf-weiya/MonotoneSplines.jl/blob/7c2e96fb2214c6d5dc4e123ae8beb9128be14086/.github/workflows/ci.yml#L68"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>export LD_PRELOAD</code> did not work in GitHub Actions, such as <a href="https://github.com/szcf-weiya/MonotoneSplines.jl/actions/runs/3841183884/workflow"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>.
+The proper way is to put it to <code>env</code>. <a href="https://github.com/szcf-weiya/MonotoneSplines.jl/blob/7c2e96fb2214c6d5dc4e123ae8beb9128be14086/.github/workflows/ci.yml#L68"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -3106,11 +3077,6 @@ sudo<span class="w"> </span>ldconfig
 sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;where/your/lib&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/ld.so.conf
 sudo<span class="w"> </span>ldconfig
 </code></pre></div>
-<h2 id="could-not-get-lock-varlibdpkglock-open">could not get lock /var/lib/dpkg/lock -open<a class="headerlink" href="#could-not-get-lock-varlibdpkglock-open" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rm<span class="w"> </span>/var/cache/apt/archives/lock
-sudo<span class="w"> </span>rm<span class="w"> </span>/var/lib/dpkg/lock
-</code></pre></div>
-<p>如果不行，重启。</p>
 <h2 id="update-alternatives">update-alternatives<a class="headerlink" href="#update-alternatives" title="Permanent link">&para;</a></h2>
 <p>可以通过 <code>update-alternatives</code> 进行切换，但注意要提前安装 <code>install</code> alternatives，这里的 install 不是下载源码安装，而是将系统中已有的不同版本的 gcc 安装到 alternatives 中。比如当前我电脑的 gcc &ndash;version 是 7.5.0，但是仍有 <code>gcc-5</code>, <code>gcc-4.8</code> 等命令，不过这些并不在 alternatives 中，因为如果直接运行</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--config<span class="w"> </span>gcc
@@ -3141,16 +3107,6 @@ root<span class="w">         </span><span class="m">1</span><span class="w">    
 <li><code>TIME</code>: cumulative CPU time, &ldquo;[DD-]HH:MM:SS&rdquo; format.  (alias cputime).</li>
 <li><code>CMD</code>: see args.  (alias args, command). when the arguments to that command cannot be located, 会被中括号 <code>[]</code> 包起来</li>
 </ul>
-<h2 id="compile-filezilla">compile FileZilla<a class="headerlink" href="#compile-filezilla" title="Permanent link">&para;</a></h2>
-<p>refer to <a href="https://wiki.filezilla-project.org/Client_Compile">Client Compile</a></p>
-<p>download latest libfilezilla from <a href="https://lib.filezilla-project.org/download.php">https://lib.filezilla-project.org/download.php</a></p>
-<p>add wxWidget&rsquo;s repository according to <a href="http://codelite.org/LiteEditor/WxWidgets31Binaries#toc2">http://codelite.org/LiteEditor/WxWidgets31Binaries#toc2</a></p>
-<p>pay attention to the version, NOT 3.1.0.</p>
-<p><a href="http://codelite.org/LiteEditor/WxWidgets30Binaries">http://codelite.org/LiteEditor/WxWidgets30Binaries</a></p>
-<p>require libgnutls 3.4.15 or greater, download from  <a href="https://gnutls.org/">https://gnutls.org/</a></p>
-<p>require sqlite3.h
-<div class="highlight"><pre><span></span><code>sudo apt-get install libsqlite3-dev
-</code></pre></div></p>
 <h2 id="user-vs-sys"><code>user</code> vs. <code>sys</code><a class="headerlink" href="#user-vs-sys" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>time</code> commands return three times, named <code>real</code>, <code>user</code> and <code>sys</code>, the detailed explanation refers to <a href="https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1">What do &lsquo;real&rsquo;, &lsquo;user&rsquo; and &lsquo;sys&rsquo; mean in the output of time(1)?</a></li>
@@ -3213,8 +3169,6 @@ sudo<span class="w"> </span>service<span class="w"> </span>cron<span class="w"> 
 </code></pre></div>
 <p>都失败了。所以还是理解出现了偏差，</p>
 <p>参考<a href="https://www.cnblogs.com/zoulongbin/p/6187238.html">Linux 设置定时任务crontab命令</a> 和 <a href="https://www.jianshu.com/p/d93e2b177814">关于定时执行任务：Crontab的20个例子</a></p>
-<h2 id="unable-to-lock-the-administration-directory-varlibdpkg-is-another-process-using-it">Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?<a class="headerlink" href="#unable-to-lock-the-administration-directory-varlibdpkg-is-another-process-using-it" title="Permanent link">&para;</a></h2>
-<p><a href="https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process">Unable to lock the administration directory (/var/lib/dpkg/) is another process using it?</a></p>
 <h2 id="gvim-fullscreen">gvim fullscreen<a class="headerlink" href="#gvim-fullscreen" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://askubuntu.com/questions/2140/is-there-a-way-to-turn-gvim-into-fullscreen-mode">Is there a way to turn gvim into fullscreen mode?</a></p>
 <p>In short,</p>
@@ -3355,11 +3309,11 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
 </div>
 <p>See also: <a href="https://wiki.archlinux.org/title/Systemd/User">systemd/User - ArchWiki</a></p>
 <h3 id="locally-via-user">locally via <code>--user</code><a class="headerlink" href="#locally-via-user" title="Permanent link">&para;</a></h3>
-<p>the service can be also set up locally, such as <code>~/.local/share/systemd/user/ssh4lab.service</code> in <a href="software/#fail-to-open-terminal"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>the service can be also set up locally, such as <code>~/.local/share/systemd/user/ssh4lab.service</code> in <a href="software/#fail-to-open-terminal"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 <p>we can check the status and manage it via</p>
 <div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span>status/stop/start/disable/enable<span class="w"> </span>ssh4lab
 </code></pre></div>
-<p>see also: <a href="https://superuser.com/questions/1037466/how-to-start-a-systemd-service-after-user-login-and-stop-it-before-user-logout"><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /></a></p>
+<p>see also: <a href="https://superuser.com/questions/1037466/how-to-start-a-systemd-service-after-user-login-and-stop-it-before-user-logout"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 <h2 id="custom-shortcut-to-switch-external-display-mode">Custom Shortcut to Switch External Display Mode<a class="headerlink" href="#custom-shortcut-to-switch-external-display-mode" title="Permanent link">&para;</a></h2>
 <p>办公室电脑既可以作为显示屏，也可以在 PC 模式下使用 Windows 系统。在 PC 模式下，在 Ubuntu 上通过 synergy 共享键鼠，但是此时存在一个问题，因为 HDMI 仍然连着，所以在移动鼠标时中间有个 gap，也就是需要跳过外接显示屏才能移动到 PC。</p>
 <p>试过在 synergy 中将 PC 机设置为 T460p 上方，这样移动鼠标只需往上，不过体验不是很好，而且 Ubuntu 顶端有状态栏而 PC 端底部也有task bar，移动时能明显感受到延时。另外一个策略便是切换显示屏 mode，由 joint 模式切换成 mirror。</p>
@@ -3446,7 +3400,7 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 19, 2023</span>
       
         <br>
         Created:
@@ -3559,7 +3513,7 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../assets/javascripts/bundle.51d95adb.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
