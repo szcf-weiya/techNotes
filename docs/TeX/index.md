@@ -132,6 +132,11 @@ Refer to [For formal articles, should a displayed equation be followed by a punc
 
 - [symbols instead of numbers a footnote markers](https://tex.stackexchange.com/questions/826/symbols-instead-of-numbers-as-footnote-markers): `\usepackage[symbol]{footmisc}`
 
+## Two Columns
+
+- use star version `table*` and `figure*` to cross two columns, and note that not support `[H]` option. See also [:link:](https://tex.stackexchange.com/questions/263685/latex-table-star-positioning-double-column-tables), [:link:](https://github.com/vtex-soft/texsupport.ims-sts/blob/d9e80b69aa3b237e445c94226002248e36e226d5/sts-sample.tex#L293)
+- use `\columnwidth` instead of `\textwidth` (or use `0.5\textwidth`), see also [:link:](https://tex.stackexchange.com/questions/275/how-to-find-the-textwidth-in-two-column-mode)
+
 ## Beamer
 
 ### fragile option

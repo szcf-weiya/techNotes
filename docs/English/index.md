@@ -2,6 +2,10 @@
 
 - plasma: 血浆
 - Interstitial Lung Disease (ILD)
+- stringent: 严格的，严厉的
+- strand: 缕
+- Heterozygosity: 杂合性
+- phosphorylated: 磷酸化的
 
 ## 2022.12
 
