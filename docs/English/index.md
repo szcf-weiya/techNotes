@@ -6,6 +6,8 @@
 - strand: 缕
 - Heterozygosity: 杂合性
 - phosphorylated: 磷酸化的
+- apoptosis: 细胞凋亡
+- organelle (细胞器): mitochondrion (线粒体)、chloroplast (叶绿体)、peroxisome (过氧化物酶体)、apicoplast (质体样细胞器)
 
 ## 2022.12
 
@@ -809,7 +811,7 @@
     - oxidant: 氧化剂
 - a **peculiar (奇怪的，异常的，特有的)** choice of null hypothesis on subsamples
 - The **heir apparent (法定继承人)** succeeded to the throne.
-    - He is the legitimate **heir (继承人)** to the property.
+    - He is the **legitimate (合法的，正当合理的)** **heir (继承人)** to the property.
 - By various **recondite (深奥的，晦涩的)** processes, he converted the **urine (尿)** first into a noxious paste and then into **translucent (半透明)** waxy substance. None of it yielded gold, of course, but a strange and interesting thing did happen. After a time, the substance began to glow.
 - The slogan has been **revived (复活，重新使用)** recently in social media.
 - As a result, the **up-front (预付的，先期的)** cost for education is real, large and easy to measure.
@@ -1045,7 +1047,7 @@
 - They are **acutely (极其，强烈地)** **attuned (习惯，适应)** to the **grave (严重的)** dangers associated with an economy **grinding to a halt (慢慢停下来，无法继续前进).** [see also](https://www.51voa.com/Voa_English_Learning/814-grind-to-a-halt-55001.html)
     - acutely aware: 深切地意识到
     - daily grind: 日常（苦）工作
-- racial profiling
+- racial profiling: 种族形象定性（指警察等因肤色或种族而不是证据怀疑人犯罪）
 - Blacks are more likely to be stopped for **pretextual** (pretext, 借口，推辞) reasons (e.g. **alleged (所谓的，声称的)** vehicle **defect (缺点，缺陷，不足之处)**, such as broken taillight; record check) and less for more **concrete (具体的)** reasons such as speeding.
 - defective: 有缺点的，有缺陷的
 - these have been **valorized (稳定物价，规定价格)** in constitutional caselaw
@@ -1072,7 +1074,7 @@
 - they don't get the connection between the fun parts and the hard work and inevitable **setbacks (挫折)**
 - they think that correcting or retracting an article or having your public errors pointed out to you is a form of punishment.
 - misinformation about the event **abounds**
-- the findings suggest that the five articles were likely fraudulent, several coauthors acted with negligence bordering on **complicity (合谋，串通)** after learning about the data irregularities.
+- the findings suggest that the five articles were likely **fraudulent (欺骗的，欺诈的)**, several coauthors acted with negligence bordering on **complicity (合谋，串通)** after learning about the data irregularities.
 - beyond our interest in the **sordid** details here, our horror at what ..., and our understanding and policymaking in the important field of criminology is being driven by fake data and fake analysis.
 - **flat out (竭尽全力，用全速)** fabrication
 - **dodge (躲闪)** criticism
@@ -1135,8 +1137,7 @@
 - turn out well: 成功
 - it boils down to
 - office supply addiction, so I had a manila folder, and I had a Sharpie (美国三福记号笔)
-- I always go into this Jackson Pollock crazy thing.
-- separate courage and bravery
+- separate courage and **bravery (勇敢，华丽，盛装)**
 - courage is from the Latin word "cor", meaning "heart"
 - had the compassion to be kind to themselves first
 - as a result of **authenticity (真实性)**
@@ -1218,8 +1219,6 @@
 - she was nearly hysterical
 - if I get in a car **wreck (毁坏，毁灭)**
 - Emma's defining decade went **parading by (炫耀)**.
-
-- defy all of the assumptions
 - all I did was **codify (v. organize into a code or system, such as a body of law)** it. [reference: "did was + v." structure](https://ell.stackexchange.com/questions/18326/explanation-of-did-was-verb-structure)
 - it has **leather (皮革的)** seats
 - everything we do, we believe in challenging the **status quo**.
@@ -1312,7 +1311,7 @@
 - I have no idea how to **console (安慰)** poor Bobo because he had just gotten over an entire week of **menopause**
 - **military scholarship**
 - I was an officer to **counsel (建议; n. 律师，法律顾问)** students through the difficult four years.
-- on the competition, the workload, the **hassles**, stresses, complaints.
+- on the competition, the workload, the **hassles (激烈争论)**, stresses, complaints.
 - adolescent depression, violence and **bullying (恐吓，伤害)**, illicit drugs, risky sex
 - dopamine
 - not only create ripples of positivity, but a real **revolution (革命，旋转)**
@@ -1461,8 +1460,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 27. but the way probability works is that you can always find some **chink** in the model and exploit it to result in a clearly bad prediction.
 28. I think the **proclivity (「常对坏事的」倾向)** of Bayesian inferences to tend toward the ridiculous is just fine
 29. But Bayesian inference can lead us **astray**, and we’re better statisticians if we realize that.
-30. I’m exhausted by the ideology of the Bayes-**evangelists**.
-31. Would Republicans pay a price if they vote to **impeach** the president?
+30. I’m exhausted by the ideology of the Bayes-**evangelists (福音传教士)**.
+31. Would Republicans pay a price if they vote to **impeach (怀疑，控告，弹劾)** the president?
 32. Nixon **loyalists** paid the price—not Republicans who voted to impeach.
 33. So I **goggled (【尤指由于惊奇而】瞪大眼睛看)** a bit and asked a colleague in ML about the above.
 34. It’s great if you’ve got hair to **comb (梳子)**, but otherwise it leaves you looking a bit silly.
@@ -1647,7 +1646,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. illusory
 7. He said that racism is **endemic (风土的，地方性的)** in this country.
 8. emanating
-9. aggravate
+9. aggravate: 使严重，使恶化
 1. exclusively
 3. rigorous and **concise (简明的，简练的)**
 4. Prologue
@@ -1696,7 +1695,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 4. pertain
 5. substrate
 1. kinetic
-2. prokaryotes, eukaryotes
+2. prokaryote (原核生物，原核细胞), eukaryote (真核细胞，真核生物)
 3. unprecedented
 5. Escherichia coli
 6. yeast
@@ -1788,7 +1787,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. rally: v. 召集，集合；n. 群众大会
 3. degradation
 4. dozens of: 许多
-6. tap into
+6. tap into: 利用，挖掘，打入
 7. LEDs use only a quarter the energy of **incandescent bulbs (白炽灯)**.
 8. fluorescent
 9. **pebble (鹅卵石)**
@@ -1807,7 +1806,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 23. prism
 24. spectrum
 25. He rejected an objective understanding of color, in favor of a more subjective understanding.
-26. through and through
+26. through and through: 完完全全，彻彻底底
 27. marvel: 奇迹
 28. optics, chromatics
 29. that sort of thing
@@ -1841,7 +1840,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 13. portraiture, portrait artist
 14. crucial
 15. make **headway (进展，前进)**
-16. contemplative
+16. contemplative: 深思熟虑的，沉思的，冥想者
 17. vague
 19. close-up: 影视特写；详细检查；详图
 20. petal
@@ -1852,7 +1851,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 25. sturdy: 结实的，坚固的
 26. Herodotus: 希腊历史学家希罗多德
 28. plateau: 高原，平台期
-29. spiral
+29. spiral: 螺旋式，螺旋形
 1. Chimpanzees, **primates (灵长类)**, chimps, gorillas, orangutans
 2. bottlenose
 3. What **sarcastic (讽刺的，挖苦的)** answer can I give her without **aggressive (好斗的，挑衅的，有进取心的)**?
@@ -1882,7 +1881,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2017.10
 
-1. Despite having **steeled (使坚强，使坚定)** herself for the worst, the new **band (乐队)** director was disheartened to hear the **cacophonous (发音不和谐的，粗腔横调的)**/discordant sounds emanating from the freshman **orchestra (管弦乐队)**.
+1. Despite having **steeled (使坚强，使坚定)** herself for the worst, the new **band (乐队)** director was disheartened to hear the **cacophonous (发音不和谐的，粗腔横调的)**/discordant sounds **emanating (放射，起源)** from the freshman **orchestra (管弦乐队)**.
     - He **orchestrated (精心安排)** that entire **evening (晚会)**.
 2. Bede, the author of A History of the English Church and People, was so widely **revered (尊敬，崇敬)**/**esteemed (尊敬)** that he has been almost universally known as "The **Venerable (值得尊重的，受敬佩的)** Bede" since the ninth century.
     - vs in spelling: vulnerable
@@ -1968,14 +1967,14 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 16. Her skill and talent **ennoble (封为贵族，使更崇高)** her profession.
 17. The kind of ennui comes from having too much time on one's hands and too little will to find something productive to do.
 18. **ensconce (安置，隐藏)** the spare house key in a place where no thief would think to look.
-19. A brief but embarrassing silence ensued.
+19. A brief but embarrassing silence **ensued (接着发生，因而发生)**.
 20. their **clandestine (暗中从事的，保密的，秘密的)** love **affair (风流韵事)**
 21. covert **alliance (联盟，结盟团体)**
 22. European missionaries converted thousands to Christianity.
 23. evidence that led to the suspect's conviction
 24. The meeting adjourned for a week.
 25. Massage therapy can be used as an **adjunct (附件，附属物)** along with the medication.
-26. The transaction was totally aboveboard, so there was no reason to question it.
+26. The transaction was totally **aboveboard (开诚布公的，光明磊落地)**, so there was no reason to question it.
 27. He took a **surreptitious (秘密的，偷偷摸摸的)** glance at her knees.
 28. a **furtive (偷偷摸摸的)** glance at her
 29. The SWAT team carried out a **stealth (秘密行动，隐形的)** **raid (突然搜查，突击搜捕)** on the house, which was believed to be harboring a terrorist cell.
@@ -2128,7 +2127,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 12. seep, seepage
 13. fad
 1. precession
-1. The biggest **impediment (障碍，阻碍)** to research progress is not fraud, it is all scientists reading about fraud.
+1. The biggest **impediment (障碍，阻碍)** to research progress is not **fraud (骗子)**, it is all scientists reading about fraud.
 2. The Red Cross **dispensed (分发)** food and clothing to the flood victims.
 3. Asthma attacks can be triggered by **pollen (花粉)**, dust, **harsh (刺激的，严厉的，残酷的)** chemicals or **scents (气味)**.
 5. **thrive (茁壮成长，兴旺发达)** after **layoff (解雇)**
@@ -2177,8 +2176,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 17. **bull (公牛，废话，彪形大汉)**, **bullet (子弹，弹丸)**
 18. buoyant, prosperous
 19. by and large
-20. by force of
-21. surge
+21. surge: 浪涌，激增
 22. The conflicts has **escalated (逐步升级，逐步扩大)** into violence.
 23. conference
 24. linguist
@@ -2307,7 +2305,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 32. And the campaign really got rancorous when Goldsmith tried to link Khan and extremists.
 33. Such counter-currents will prevent Kentish Town from gentrifying fully, suggests Gillian Tindall, a local historian.
 34. Interpreters are also skilled at keeping aplomb in the face of chaos.
-36. Right, and that suggests the qualities that are most germane to the job.
+36. Right, and that suggests the qualities that are most **germane (贴切，恰当)** to the job.
 37. The fortress by King Philip Augustus was situated on the right bank of the Seine, overlooking-- at that time-- splendid bucolic scenery.
 38. But overall, Mr Agar has abstracted and made manageable a range of rich and informed analysis.
 39. He also emphasized what he called the main thing: "a human-typable keyboard instead of a stupid, **cryptic (含义隐晦的，晦涩难懂的)** front panel with a bunch of lights and switches."
