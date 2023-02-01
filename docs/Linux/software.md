@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Application Software on Linux
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Software#Purpose,_or_domain_of_use), computer software can be divided into
@@ -127,76 +131,84 @@ I try to categorize them as follows,
 
 ## Chrome
 
-### not saving password
+!!! extensions
+    - [Hypothesis](https://web.hypothes.is/): 网页标注
+    - [GoFullPage - Full Page Screen Capture](https://chrome.google.com/webstore/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl): 滚动截图
 
-有段时间，不能自动输入 CUSIS 的登录信息，直接删掉 Login Data，
+??? warning "not saving password"
 
-```bash
-$ pwd
-/home/weiya/.config/google-chrome/Default
-~/.config/google-chrome/Default$ mv Login\ Data "Login-Data-backup20210410-issue16"
-```
+    有段时间，不能自动输入 CUSIS 的登录信息，直接删掉 Login Data，
 
-详见 [:link:](https://github.com/szcf-weiya/techNotes/issues/16)
+    ```bash
+    $ pwd
+    /home/weiya/.config/google-chrome/Default
+    ~/.config/google-chrome/Default$ mv Login\ Data "Login-Data-backup20210410-issue16"
+    ```
 
-### disable running in background
+    详见 [:link:](https://github.com/szcf-weiya/techNotes/issues/16)
 
-To diagnose high memory usage, I found chrome is still running in background even if it has been closed,
+??? tip "disable running in background"
 
-```bash
-~$ ps -e -o pid,cmd,%mem --sort=-%mem | grep google 
-  13404 /opt/google/chrome/chrome -  1.9
-  13622 /opt/google/chrome/chrome -  1.3
- 632184 /opt/google/chrome/chrome -  0.7
-  13448 /opt/google/chrome/chrome -  0.6
-  13610 /opt/google/chrome/chrome -  0.6
-1601941 /opt/google/chrome/chrome -  0.4
-...
-```
+    To diagnose high memory usage, I found chrome is still running in background even if it has been closed,
 
-To disable it, click `Setting > Advanced > System`, and then turn off the option
+    ```bash
+    ~$ ps -e -o pid,cmd,%mem --sort=-%mem | grep google 
+    13404 /opt/google/chrome/chrome -  1.9
+    13622 /opt/google/chrome/chrome -  1.3
+    632184 /opt/google/chrome/chrome -  0.7
+    13448 /opt/google/chrome/chrome -  0.6
+    13610 /opt/google/chrome/chrome -  0.6
+    1601941 /opt/google/chrome/chrome -  0.4
+    ...
+    ```
 
-> continue running background apps when Google Chrome is closed.
+    To disable it, click `Setting > Advanced > System`, and then turn off the option
 
-Here is a [如何看待 PC 版 Chrome 关闭后仍然可以在后台运行？ - 知乎](https://www.zhihu.com/question/21193738).
+    > continue running background apps when Google Chrome is closed.
 
-### disable reading list
+    Here is a [如何看待 PC 版 Chrome 关闭后仍然可以在后台运行？ - 知乎](https://www.zhihu.com/question/21193738).
 
-the new version releases the `reading list`, then every time I press `star` requires to select to add to bookmarks or reading list, that make me annoyed. I found [some guys](https://www.reddit.com/r/chrome/comments/mhdn5d/how_do_i_make_it_so_when_i_hit_the_star_button_i/) have the same feeling, the solution is to enter
+??? tip "disable reading list"
 
-```bash
-chrome://flags/#read-later
-```
+    the new version releases the `reading list`, then every time I press `star` requires to select to add to bookmarks or reading list, that make me annoyed. I found [some guys](https://www.reddit.com/r/chrome/comments/mhdn5d/how_do_i_make_it_so_when_i_hit_the_star_button_i/) have the same feeling, the solution is to enter
 
-and then disable `reading list`.
+    ```bash
+    chrome://flags/#read-later
+    ```
 
-### 黑屏
+    and then disable `reading list`.
 
-参考 [chrome黑屏解决](https://blog.csdn.net/jjddrushi/article/details/79155421)   
+??? tip "解决黑屏问题"
 
-进入休眠状态后，睡了一晚上，第二天早上打开 chrome 便黑屏了，然后采用
+    参考 [chrome黑屏解决](https://blog.csdn.net/jjddrushi/article/details/79155421)   
 
-```bash
-chrome -disable-gpu
-```
+    进入休眠状态后，睡了一晚上，第二天早上打开 chrome 便黑屏了，然后采用
 
-再设定
+    ```bash
+    chrome -disable-gpu
+    ```
 
-```
-Use hardware acceleration when available
-```
-false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整个 chrome。
+    再设定
 
-### 沙盒 sandbox
+    ```
+    Use hardware acceleration when available
+    ```
+    false，再点击 relaunch，则黑屏的页面都回来了，不需要重启整个 chrome。
 
-在 Julia 中使用 Plotly 画图时，报出
+??? tip "Monitor website for entertainment"
+    用下面脚本监控当前是否处于娱乐网站，如果是，则弹窗提醒“不要玩！”
+    ```bash
+    n=`wmctrl -l | grep "bilibili\|中國人線上看\|YouTube\|知乎" | wc -l`
+    if [ $n -gt 0 ]; then
+        notify-send -i /home/weiya/.local/share/icons/warning-icon.svg -u critical "不要玩!!!"
+    fi
+    ```
+    将上述代码写进脚本 `check_video.sh`，并设置每10min检测一次。
 
-```julia
-[0531/160811.236665:ERROR:nacl_helper_linux.cc(308)] NaCl helper process running without a sandbox!
-Most likely you need to configure your SUID sandbox correctly
-```
-
-通过 `ps -aef | grep chrome` 查看 chrome 的运行参数，没有发现 `no-sandbox`，即默认应该是开启的，所以现在不清楚了。
+    ```bash
+    */10 * * * * export XDG_RUNTIME_DIR=/run/user/$(id -u); export DISPLAY=:1; sh /home/weiya/github/techNotes/docs/Linux/check_video.sh
+    ```
+    ![Screenshot from 2023-01-31 15-51-56](https://user-images.githubusercontent.com/13688320/215880662-d91e6775-d21a-4d50-9216-5b79b9abcef2.png)
 
 ## Droidcam
 
@@ -204,49 +216,49 @@ Homepage: [DroidCam](https://www.dev47apps.com/)
 
 First of all, install Linux client following the [official instruction](https://www.dev47apps.com/droidcam/linux/)
 
-### Mix2s
+!!! note "Mix2s"
 
-- install the Android app on Mix2s
-- 因为无法设置在一个局域网中，所以测试 USB 连接。根据[连接指南](https://www.dev47apps.com/droidcam/connect/)，需要打开 USB debugging，然而似乎仍然无法成功。
-- 根据错误提示运行 `adb devices`，并没有显示任何安卓设备的连接。另外 `lsusb` 并没有手机的记录，而且插上前后 `lsusb` 项目个数不变。
-- 可能电脑端缺少驱动，试图寻找 USB driver，如[www.xiaomidriversdownload.com](https://www.xiaomidriversdownload.com/xiaomi-mi-mix-2s-adb-driver/)但是只找到 for windows 的版本（后来证明并不需要，只是 USB 线的原因）。
+    - install the Android app on Mix2s
+    - 因为无法设置在一个局域网中，所以测试 USB 连接。根据[连接指南](https://www.dev47apps.com/droidcam/connect/)，需要打开 USB debugging，然而似乎仍然无法成功。
+    - 根据错误提示运行 `adb devices`，并没有显示任何安卓设备的连接。另外 `lsusb` 并没有手机的记录，而且插上前后 `lsusb` 项目个数不变。
+    - 可能电脑端缺少驱动，试图寻找 USB driver，如[www.xiaomidriversdownload.com](https://www.xiaomidriversdownload.com/xiaomi-mi-mix-2s-adb-driver/)但是只找到 for windows 的版本（后来证明并不需要，只是 USB 线的原因）。
 
-### Mi4c
+!!! note "Mi4c"
 
-同 Mix2s，不过换了长的那根数据线后，`lsusb` 多了条记录
+    同 Mix2s，不过换了长的那根数据线后，`lsusb` 多了条记录
 
-```bash
-$ lsusb
-Bus 001 Device 033: ID 2717:ff68
-```
+    ```bash
+    $ lsusb
+    Bus 001 Device 033: ID 2717:ff68
+    ```
 
-不像其它记录那样有具体的名字，找到同样的问题，[adb devices not working for redmi note 3 on ubuntu](https://stackoverflow.com/questions/40951179/adb-devices-not-working-for-redmi-note-3-on-ubuntu)。经查，该文件位于 `/lib/udev/rules.d`，下载仓库中最新的 [51-android.rules](https://github.com/M0Rf30/android-udev-rules/blob/master/51-android.rules)
+    不像其它记录那样有具体的名字，找到同样的问题，[adb devices not working for redmi note 3 on ubuntu](https://stackoverflow.com/questions/40951179/adb-devices-not-working-for-redmi-note-3-on-ubuntu)。经查，该文件位于 `/lib/udev/rules.d`，下载仓库中最新的 [51-android.rules](https://github.com/M0Rf30/android-udev-rules/blob/master/51-android.rules)
 
-```bash
-$ cat 51-android.rules | grep ff68
-$ sudo cp 51-android.rules 51-android.rules.old
-$ sudo cp ~/Downloads/51-android.rules .
-```
+    ```bash
+    $ cat 51-android.rules | grep ff68
+    $ sudo cp 51-android.rules 51-android.rules.old
+    $ sudo cp ~/Downloads/51-android.rules .
+    ```
 
-但是 `lsusb` 并没有立即生效，又不想重启，于是试了 [How to reload udev rules without reboot?](https://unix.stackexchange.com/questions/39370/how-to-reload-udev-rules-without-reboot)，
+    但是 `lsusb` 并没有立即生效，又不想重启，于是试了 [How to reload udev rules without reboot?](https://unix.stackexchange.com/questions/39370/how-to-reload-udev-rules-without-reboot)，
 
-```bash
-$ udevadm control --reload-rules
-```
+    ```bash
+    $ udevadm control --reload-rules
+    ```
 
-以及
+    以及
 
-```bash
-$ pkill -HUP udevd
-```
+    ```bash
+    $ pkill -HUP udevd
+    ```
 
-但是仍没有显示名字。
+    但是仍没有显示名字。
 
-### iPad
+!!! note "iPad"
 
-- firstly, install the APP
-- 因为插上 iPad 后，自动跳出是否信任本设备，而且在 `lsusb` 中找到记录 `Bus 001 Device 018: ID 05ac:12ab Apple, Inc. iPad 4/Mini1`。
-- 然后在电脑端开启连接，这样就能使用ipad的摄像头了。在zoom中，开启摄像头那里有切换至 Droidcam 的选项。
+    - firstly, install the APP
+    - 因为插上 iPad 后，自动跳出是否信任本设备，而且在 `lsusb` 中找到记录 `Bus 001 Device 018: ID 05ac:12ab Apple, Inc. iPad 4/Mini1`。
+    - 然后在电脑端开启连接，这样就能使用ipad的摄像头了。在zoom中，开启摄像头那里有切换至 Droidcam 的选项。
 
 ## Geeqie
 
@@ -274,49 +286,47 @@ in the command line, not to open the GUI.
 
 ## ImageMagick
 
-### Perspective Transformation
+??? tip "Perspective Transformation"
 
-I usually take many photos when listening to the seminars, it is desirable to extract only the slides and discard the nuisance background. Direct cropping is not enough since the photos are not parallel to the screen. 
+    I usually take many photos when listening to the seminars, it is desirable to extract only the slides and discard the nuisance background. Direct cropping is not enough since the photos are not parallel to the screen. 
 
-The solution is called perspective transformation, which can be done via [`-distort method`](http://www.imagemagick.org/script/command-line-options.php#distort), the usage is 
+    The solution is called perspective transformation, which can be done via [`-distort method`](http://www.imagemagick.org/script/command-line-options.php#distort), the usage is 
 
-```bash
-$ magick input.jpg -distort perspective 'U1,V1,X1,Y1 U2,V2,X2,Y2 U3,V3,X3,Y3 ... Un,Vn,Xn,Yn' output.jpg
-```
+    ```bash
+    $ magick input.jpg -distort perspective 'U1,V1,X1,Y1 U2,V2,X2,Y2 U3,V3,X3,Y3 ... Un,Vn,Xn,Yn' output.jpg
+    ```
 
-where `U,V` on the source image is mapped to `X,Y` on the destination image.
+    where `U,V` on the source image is mapped to `X,Y` on the destination image.
 
-The interesting area is the mapped sub region, and so we need to further crop them out, which can be done with [`-crop geometry`](http://www.imagemagick.org/script/command-line-options.php#crop), where the geometry is defined with `WxH+x+y`, which means the region of size `WxH` located at the xy-coordinates `(x, y)`, see more details in [Anatomy of the Command-line](http://www.imagemagick.org/script/command-line-processing.php#geometry)
+    The interesting area is the mapped sub region, and so we need to further crop them out, which can be done with [`-crop geometry`](http://www.imagemagick.org/script/command-line-options.php#crop), where the geometry is defined with `WxH+x+y`, which means the region of size `WxH` located at the xy-coordinates `(x, y)`, see more details in [Anatomy of the Command-line](http://www.imagemagick.org/script/command-line-processing.php#geometry)
 
-Refer to the [source code](https://github.com/szcf-weiya/techNotes/blob/master/src/persp.py) for more details.
+    Refer to the [source code](https://github.com/szcf-weiya/techNotes/blob/master/src/persp.py) for more details.
 
-!!! tip
-    The original record on the development is [here](https://github.com/szcf-weiya/en/issues/191).
+    !!! tip
+        The original record on the development is [here](https://github.com/szcf-weiya/en/issues/191).
 
-- Demo One: processing a single file
+    - Demo One: processing a single file
 
-![](https://user-images.githubusercontent.com/13688320/125592307-fbeb3be2-64e6-414f-8748-5045fca2a0e6.gif)
+    ![](https://user-images.githubusercontent.com/13688320/125592307-fbeb3be2-64e6-414f-8748-5045fca2a0e6.gif)
 
-- Demo Two: processing multiple files in a folder
+    - Demo Two: processing multiple files in a folder
 
-![](https://user-images.githubusercontent.com/13688320/125592319-93aef031-4492-4812-934d-4ed3fcbc792a.gif)
+    ![](https://user-images.githubusercontent.com/13688320/125592319-93aef031-4492-4812-934d-4ed3fcbc792a.gif)
 
-Some references:
+    Some references:
 
-- [Displaying the coordinates of the points clicked on the image using Python-OpenCV](https://www.geeksforgeeks.org/displaying-the-coordinates-of-the-points-clicked-on-the-image-using-python-opencv/)
-- [4 Point OpenCV getPerspective Transform Example](https://www.pyimagesearch.com/2014/08/25/4-point-opencv-getperspective-transform-example/)
+    - [Displaying the coordinates of the points clicked on the image using Python-OpenCV](https://www.geeksforgeeks.org/displaying-the-coordinates-of-the-points-clicked-on-the-image-using-python-opencv/)
+    - [4 Point OpenCV getPerspective Transform Example](https://www.pyimagesearch.com/2014/08/25/4-point-opencv-getperspective-transform-example/)
 
-!!! todo
-    Wrap it into a GUI program.
-    Possible references:
+    !!! todo
+        Wrap it into a GUI program.
+        Possible references:
 
-    - [OpenCV with Tkinter](https://www.pyimagesearch.com/2016/05/23/opencv-with-tkinter/)
-    - [Julia Package for UI development](https://discourse.julialang.org/t/julia-package-for-ui-development/39469/3)
-    - [How to make a GUI in Julia? - Stack Overflow](https://stackoverflow.com/questions/35328468/how-to-make-a-gui-in-julia)
+        - [OpenCV with Tkinter](https://www.pyimagesearch.com/2016/05/23/opencv-with-tkinter/)
+        - [Julia Package for UI development](https://discourse.julialang.org/t/julia-package-for-ui-development/39469/3)
+        - [How to make a GUI in Julia? - Stack Overflow](https://stackoverflow.com/questions/35328468/how-to-make-a-gui-in-julia)
 
-### Add HEIC support in ImageMagick
-
-!!! tip "Convert .heic to .jpg"
+??? tip "Convert .heic to .jpg"
     ```bash
     $ sudo apt install libheif-examples
     $ heif-convert A.heic A.jpg
@@ -326,66 +336,66 @@ Some references:
     $ find . -name '*.heic' -exec heif-convert {} {}.jpg \;
     ```
 
-!!! fail
+??? fail "Add HEIC support in ImageMagick"
     failed.
 
-上次从源码按安装了 ImageMagick 7.0.10-6，刚刚又看到可以[添加对 HEIC 格式的支持](https://askubuntu.com/questions/958355/any-app-on-ubuntu-to-open-and-or-convert-heif-pictures-heic-high-efficiency-i)，于是准备重新编译安装
+    上次从源码按安装了 ImageMagick 7.0.10-6，刚刚又看到可以[添加对 HEIC 格式的支持](https://askubuntu.com/questions/958355/any-app-on-ubuntu-to-open-and-or-convert-heif-pictures-heic-high-efficiency-i)，于是准备重新编译安装
 
-```bash
-$ ./configure --with-modules --with-libheif
-...
-               Option                        Value
-------------------------------------------------------------------------------
-...
-Delegate library configuration:
-...
-  HEIC              --with-heic=yes             no
-```
+    ```bash
+    $ ./configure --with-modules --with-libheif
+    ...
+                Option                        Value
+    ------------------------------------------------------------------------------
+    ...
+    Delegate library configuration:
+    ...
+    HEIC              --with-heic=yes             no
+    ```
 
-跟 HEIC 似乎只有这一条，但其实如果去掉 `--with-libheif`，结果并不会有变化，后来发现这个选项其实并没有正确识别，
+    跟 HEIC 似乎只有这一条，但其实如果去掉 `--with-libheif`，结果并不会有变化，后来发现这个选项其实并没有正确识别，
 
-```bash
-configure: WARNING: unrecognized options: --with-libheif
-configure:
-```
+    ```bash
+    configure: WARNING: unrecognized options: --with-libheif
+    configure:
+    ```
 
-然后试着
+    然后试着
 
-```bash
-sudo apt-get install libheif1
-```
+    ```bash
+    sudo apt-get install libheif1
+    ```
 
-但最后一列还是 no，然后再试着
+    但最后一列还是 no，然后再试着
 
-```bash
-sudo apt-get install libheif-dev
-```
+    ```bash
+    sudo apt-get install libheif-dev
+    ```
 
-最后一列终于变成 yes 了。于是继续 `make`，然而却报出了 bug
+    最后一列终于变成 yes 了。于是继续 `make`，然而却报出了 bug
 
-```bash
-coders/heic.c: In function ‘ReadHEICColorProfile’:
-coders/heic.c:143:5: warning: unused variable ‘length’ [-Wunused-variable]
-     length;
-     ^~~~~~
-coders/heic.c: In function ‘ReadHEICImage’:
-coders/heic.c:452:9: warning: implicit declaration of function ‘heif_context_read_from_memory_without_copy’; did you mean ‘heif_context_read_from_memory’? [-Wimplicit-function-declaration]
-   error=heif_context_read_from_memory_without_copy(heif_context,file_data,
-         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-         heif_context_read_from_memory
-coders/heic.c:452:8: error: incompatible types when assigning to type ‘struct heif_error’ from type ‘int’
-   error=heif_context_read_from_memory_without_copy(heif_context,file_data,
-        ^
-At top level:
-coders/heic.c:94:3: warning: ‘xmp_namespace’ defined but not used [-Wunused-const-variable=]
-   xmp_namespace[] = "http://ns.adobe.com/xap/1.0/ ";
-   ^~~~~~~~~~~~~
-Makefile:10388: recipe for target 'coders/heic_la-heic.lo' failed
-make[1]: *** [coders/heic_la-heic.lo] Error 1
-make[1]: Leaving directory '/home/weiya/src/ImageMagick-7.0.10-6'
-Makefile:5988: recipe for target 'all' failed
-make: *** [all] Error 2
-```
+    ```bash
+    coders/heic.c: In function ‘ReadHEICColorProfile’:
+    coders/heic.c:143:5: warning: unused variable ‘length’ [-Wunused-variable]
+        length;
+        ^~~~~~
+    coders/heic.c: In function ‘ReadHEICImage’:
+    coders/heic.c:452:9: warning: implicit declaration of function ‘heif_context_read_from_memory_without_copy’; did you mean ‘heif_context_read_from_memory’? [-Wimplicit-function-declaration]
+    error=heif_context_read_from_memory_without_copy(heif_context,file_data,
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            heif_context_read_from_memory
+    coders/heic.c:452:8: error: incompatible types when assigning to type ‘struct heif_error’ from type ‘int’
+    error=heif_context_read_from_memory_without_copy(heif_context,file_data,
+            ^
+    At top level:
+    coders/heic.c:94:3: warning: ‘xmp_namespace’ defined but not used [-Wunused-const-variable=]
+    xmp_namespace[] = "http://ns.adobe.com/xap/1.0/ ";
+    ^~~~~~~~~~~~~
+    Makefile:10388: recipe for target 'coders/heic_la-heic.lo' failed
+    make[1]: *** [coders/heic_la-heic.lo] Error 1
+    make[1]: Leaving directory '/home/weiya/src/ImageMagick-7.0.10-6'
+    Makefile:5988: recipe for target 'all' failed
+    make: *** [all] Error 2
+    ```
 
 ## Image Viewer 
 
@@ -401,120 +411,117 @@ In a word, change the default setting "as check pattern" to a white custom color
 
 ## Input Methods for Chinese
 
-!!! info
-    目前试用 ibus-rime……
+??? note "fcitx-sougou"
 
-### fcitx-sougou
+    需要 fcitx，若没有装，
 
-需要 fcitx，若没有装，
+    ```bash
+    sudo apt-get install fcitx-bin
+    sudo apt-get install fcitx-table
+    ```
 
-```bash
-sudo apt-get install fcitx-bin
-sudo apt-get install fcitx-table
-```
+    然后将输入法切换成 fcitx，在设置中语言那里，
 
-然后将输入法切换成 fcitx，在设置中语言那里，
+    最后下载按照搜狗输入法，安装时我出现这样的问题导致安装失败，
 
-最后下载按照搜狗输入法，安装时我出现这样的问题导致安装失败，
+    > No such key 'Gtk/IMModule' in schema 'org.gnome.settings-daemon.plugins.xsettings' as specified in override file '/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override'; ignoring override for this key.
 
-> No such key 'Gtk/IMModule' in schema 'org.gnome.settings-daemon.plugins.xsettings' as specified in override file '/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override'; ignoring override for this key.
+    参考 [Install sogoupinyin on ubuntu 16.04LTS, with error 'Gtk/IMModule'](https://askubuntu.com/questions/883506/install-sogoupinyin-on-ubuntu-16-04lts-with-error-gtk-immodule)，将 `/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override` 中的 `IMModule` 一行改成
 
-参考 [Install sogoupinyin on ubuntu 16.04LTS, with error 'Gtk/IMModule'](https://askubuntu.com/questions/883506/install-sogoupinyin-on-ubuntu-16-04lts-with-error-gtk-immodule)，将 `/usr/share/glib-2.0/schemas/50_sogoupinyin.gschema.override` 中的 `IMModule` 一行改成
+    ```bash
+    overrides={'Gtk/IMModule':<'fcitx'>}
+    ```
 
-```bash
-overrides={'Gtk/IMModule':<'fcitx'>}
-```
+    然后再运行
 
-然后再运行
+    ```bash
+    sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+    ```
 
-```bash
-sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
-```
+    再次安装便成功了。
 
-再次安装便成功了。
+    最后在语言栏中添加搜狗拼音的输入法即可。
 
-最后在语言栏中添加搜狗拼音的输入法即可。
+    参考 [解决Ubuntu 18.04中文输入法的问题，安装搜狗拼音](https://blog.csdn.net/fx_yzjy101/article/details/80243710)
 
-参考 [解决Ubuntu 18.04中文输入法的问题，安装搜狗拼音](https://blog.csdn.net/fx_yzjy101/article/details/80243710)
+??? note "fcitx-googlepinyin"
 
-### fcitx-googlepinyin
+    因为最近发现 wechat 崩溃时经常是无法切换到中文输入，所以怀疑会不会是搜狗输入法引起的，于是想尝试不同的中文输入法。在知乎上看到这个问题，[Ubuntu 上最好用的中文输入法是什么？](https://www.zhihu.com/question/19839748)
 
-因为最近发现 wechat 崩溃时经常是无法切换到中文输入，所以怀疑会不会是搜狗输入法引起的，于是想尝试不同的中文输入法。在知乎上看到这个问题，[Ubuntu 上最好用的中文输入法是什么？](https://www.zhihu.com/question/19839748)
+    里面也有人反映搜狗输入法会导致其他程序崩溃，
 
-里面也有人反映搜狗输入法会导致其他程序崩溃，
+    > 搜狗输入法导致Jetbrains全家桶崩溃 @口袋里的星辰
+    > ubuntu用搜狗输入法，会出各种问题，有其实和linux版微信一起用，坑就更多了。。@南瓜派三蔬
 
-> 搜狗输入法导致Jetbrains全家桶崩溃 @口袋里的星辰
-> ubuntu用搜狗输入法，会出各种问题，有其实和linux版微信一起用，坑就更多了。。@南瓜派三蔬
+    于是更加坚定尝试其他输入法，因为很多人都推荐了谷歌拼音，便首先尝试了它。因为此前在装搜狗的时候已经将 ibus 换成了 fcitx，所以后面只需要添加新的输入法即可，
 
-于是更加坚定尝试其他输入法，因为很多人都推荐了谷歌拼音，便首先尝试了它。因为此前在装搜狗的时候已经将 ibus 换成了 fcitx，所以后面只需要添加新的输入法即可，
+    ```bash
+    $ sudo apt install fcitx-googlepinyin
+    ```
 
-```bash
-$ sudo apt install fcitx-googlepinyin
-```
+    然后重启输入法（无需重启电脑），再打开输入法配置界面，此时不出意外已经有 google pinyin 的选项。因为一种输入法就足够了，而且避免后台影响，取消了搜狗输入法（并没有卸载程序）。
 
-然后重启输入法（无需重启电脑），再打开输入法配置界面，此时不出意外已经有 google pinyin 的选项。因为一种输入法就足够了，而且避免后台影响，取消了搜狗输入法（并没有卸载程序）。
+    试用了一下，还行，只是界面略微有点丑，不过这也不是重点。
 
-试用了一下，还行，只是界面略微有点丑，不过这也不是重点。
+??? note "fcitx-baidu"
 
-### fcitx-baidu
+    既然添加个输入法这么简单，那索性再试试其它的，百度输入法可以在其官网中下载的到 `.deb` 文件，然后安装并重启输入法。
 
-既然添加个输入法这么简单，那索性再试试其它的，百度输入法可以在其官网中下载的到 `.deb` 文件，然后安装并重启输入法。
+    正如上述知乎回答提到的，它乱码了！
 
-正如上述知乎回答提到的，它乱码了！
+??? note "fcitx-rime"
 
-### fcitx-rime
+    这主要是繁体中文，不过似乎应该也能切换简体。本身这是基于 ibus 的，不过 [fcitx 团队](https://github.com/fcitx)有在维护 fcitx 的版本，
 
-这主要是繁体中文，不过似乎应该也能切换简体。本身这是基于 ibus 的，不过 [fcitx 团队](https://github.com/fcitx)有在维护 fcitx 的版本，
+    ```bash
+    $ sudo apt install fcitx-rime
+    ```
 
-```bash
-$ sudo apt install fcitx-rime
-```
+    因为想同时比较其与谷歌拼音的体验，所以目前同时保留了这两个输入法，可以通过 `SHIFT+CTRL` 快速切换输入法。
 
-因为想同时比较其与谷歌拼音的体验，所以目前同时保留了这两个输入法，可以通过 `SHIFT+CTRL` 快速切换输入法。
+    RIME 默认是繁体的，可以通过 `` CTRL+` `` 来切换简繁体，另外也有全半角等设置。
 
-RIME 默认是繁体的，可以通过 `` CTRL+` `` 来切换简繁体，另外也有全半角等设置。
+    !!! note
+        除了这些在 fcitx4 上的方案，也许过段时间会尝试[更新的输入法框架 fcitx5](https://www.zhihu.com/question/333951476)
 
-!!! note
-    除了这些在 fcitx4 上的方案，也许过段时间会尝试[更新的输入法框架 fcitx5](https://www.zhihu.com/question/333951476)
+    虽然谷歌拼音和fcitx-rime都表现得不错，但是默认的 UI 实在有点丑，看到 [kimpanel](https://fcitx-im.org/wiki/Kimpanel) 会比较好看，想试一试，采用 gnome-shell 安装，但是竟然 [no popup window](https://github.com/wengxt/gnome-shell-extension-kimpanel/issues/53)，虽放弃。
 
-虽然谷歌拼音和fcitx-rime都表现得不错，但是默认的 UI 实在有点丑，看到 [kimpanel](https://fcitx-im.org/wiki/Kimpanel) 会比较好看，想试一试，采用 gnome-shell 安装，但是竟然 [no popup window](https://github.com/wengxt/gnome-shell-extension-kimpanel/issues/53)，虽放弃。
+!!! tip "ibus-rime (Currently using)"
 
-### ibus-rime
+    虽然 kimpanel 行不通，但是 [wengxt](https://github.com/wengxt/gnome-shell-extension-kimpanel/issues/53#issuecomment-812811613) 的回答让我意识到兴许 ibus 可以试一试。
 
-虽然 kimpanel 行不通，但是 [wengxt](https://github.com/wengxt/gnome-shell-extension-kimpanel/issues/53#issuecomment-812811613) 的回答让我意识到兴许 ibus 可以试一试。
+    最开始用 ubuntu 的时候用过一段时间 ibus，那时应该还是在 14.04 的机子上，确实不太好用，后来一直换成了 fcitx。不过现在版本已经 18.04 了，兴许会好点，而且比较喜欢这种 ui 跟系统很配的感觉。
 
-最开始用 ubuntu 的时候用过一段时间 ibus，那时应该还是在 14.04 的机子上，确实不太好用，后来一直换成了 fcitx。不过现在版本已经 18.04 了，兴许会好点，而且比较喜欢这种 ui 跟系统很配的感觉。
+    ![](https://user-images.githubusercontent.com/13688320/113474286-b60ec980-94a1-11eb-84b3-191bf1940f82.png)
 
-![](https://user-images.githubusercontent.com/13688320/113474286-b60ec980-94a1-11eb-84b3-191bf1940f82.png)
+    但是明显感觉连续功能确实还不跟够好。另外有个问题是，在浏览器或者 libreoffice 中输入时，备选框总在左下角，[解决方案](https://askubuntu.com/questions/549900/ibs-chinese-pinyin-input-candidates-appear-at-bottom-of-screen)为
 
-但是明显感觉连续功能确实还不跟够好。另外有个问题是，在浏览器或者 libreoffice 中输入时，备选框总在左下角，[解决方案](https://askubuntu.com/questions/549900/ibs-chinese-pinyin-input-candidates-appear-at-bottom-of-screen)为
+    ```bash
+    $ sudo apt install ibus-gtk
+    ```
 
-```bash
-$ sudo apt install ibus-gtk
-```
+    因为 rime 本身就是 ibus 的，而且在 fcitx 环境下体验效果确实不错，所以想试试 [ibus-rime](https://github.com/rime/home/wiki/RimeWithIBus)。
 
-因为 rime 本身就是 ibus 的，而且在 fcitx 环境下体验效果确实不错，所以想试试 [ibus-rime](https://github.com/rime/home/wiki/RimeWithIBus)。
+    ```bash
+    $ sudo apt-get install ibus-rime
+    ```
 
-```bash
-$ sudo apt-get install ibus-rime
-```
+    因为 ibus 是系统默认的，所以其不像 fcitx 有单独的配置框，而是直接在系统设置的 “Region & Language” 中进行设置，添加 “Input Source” 即可。
 
-因为 ibus 是系统默认的，所以其不像 fcitx 有单独的配置框，而是直接在系统设置的 “Region & Language” 中进行设置，添加 “Input Source” 即可。
+    Tips:
 
-Tips:
+    - 输入外国姓名中的点：中文输入法状态下 `Shift + \`
+    - 自定义快捷键，取消 `Ctrl + `` 的快捷键，在 `~/.config/ibus/rime` 新建文件 `default.custom.yaml`，然后写入
 
-- 输入外国姓名中的点：中文输入法状态下 `Shift + \`
-- 自定义快捷键，取消 `Ctrl + `` 的快捷键，在 `~/.config/ibus/rime` 新建文件 `default.custom.yaml`，然后写入
+    ```bash
+    patch:
+    "switcher/hotkeys":  # 這個列表裏每項定義一個快捷鍵，使哪個都中
+        - F4
+    ```
 
-```bash
-patch:
-  "switcher/hotkeys":  # 這個列表裏每項定義一個快捷鍵，使哪個都中
-    - F4
-```
+    其实也就是删去 `Control+grave`，详见 [一例、定製喚出方案選單的快捷鍵](https://github.com/rime/home/wiki/CustomizationGuide#%E4%B8%80%E4%BE%8B%E5%AE%9A%E8%A3%BD%E5%96%9A%E5%87%BA%E6%96%B9%E6%A1%88%E9%81%B8%E5%96%AE%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%8D%B5)。修改完成后需要点击右上角输入法菜单中的 “部署”。
 
-其实也就是删去 `Control+grave`，详见 [一例、定製喚出方案選單的快捷鍵](https://github.com/rime/home/wiki/CustomizationGuide#%E4%B8%80%E4%BE%8B%E5%AE%9A%E8%A3%BD%E5%96%9A%E5%87%BA%E6%96%B9%E6%A1%88%E9%81%B8%E5%96%AE%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%8D%B5)。修改完成后需要点击右上角输入法菜单中的 “部署”。
-
-- 输入特殊字符（比如带声调的拼音符号）：通过 F4 切换至 “朙月拼音”，然后按 “/py” 便出现带声调的拼音字符。更一般地，对于其它特殊符号，根据配置文件 `~/.config/ibus/rime/symbols.yaml` 的定义进行输入。
+    - 输入特殊字符（比如带声调的拼音符号）：通过 F4 切换至 “朙月拼音”，然后按 “/py” 便出现带声调的拼音字符。更一般地，对于其它特殊符号，根据配置文件 `~/.config/ibus/rime/symbols.yaml` 的定义进行输入。
 
 ## Kazam
 
@@ -522,17 +529,15 @@ Ubuntu 下 kazam 录屏 没声音解决方案
 
 [http://www.cnblogs.com/xn--gzr/p/6195317.html](http://www.cnblogs.com/xn--gzr/p/6195317.html)
 
-### Kazam video format
+??? warning "video format: cannot open in Windows"
 
-cannot open in window
+    solution
 
-solution
+    ```bash
+    ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
+    ```
 
-```
-ffmpeg -i in.mp4 -pix_fmt yuv420p -c:a copy -movflags +faststart out.mp4
-```
-
-refer to [convert KAZAM video file to a file, playable in windows media player](https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player)
+    refer to [convert KAZAM video file to a file, playable in windows media player](https://video.stackexchange.com/questions/20162/convert-kazam-video-file-to-a-file-playable-in-windows-media-player)
 
 ## ksnip
 
@@ -572,22 +577,21 @@ Generally, it requires the software shipped with `removable-media` plug, as ment
 
 It is a file manager for GNOME.
 
-### no "new document" in right click menu
+??? tip "Template: new document in right click menu"
 
-Surprisingly, no "new document" in the right-click menu on Ubuntu 18.04, then I found the [post](https://itsfoss.com/add-new-document-option/) which also mentioned this inconvenience, and it gives a wonderful solution. Use `Templates`!! Never use this folder before!
+    Surprisingly, no "new document" in the right-click menu on Ubuntu 18.04, then I found the [post](https://itsfoss.com/add-new-document-option/) which also mentioned this inconvenience, and it gives a wonderful solution. Use `Templates`!! Never use this folder before!
 
-Just create an empty file, say `README.md`, then there will be a `New Document` in the right-click menu.
+    Just create an empty file, say `README.md`, then there will be a `New Document` in the right-click menu.
 
-Also check the [official documentation](https://help.ubuntu.com/stable/ubuntu-help/files-templates.html.en) on `Templates`
+    Also check the [official documentation](https://help.ubuntu.com/stable/ubuntu-help/files-templates.html.en) on `Templates`
 
-> A file template can be a document of any type with the formatting or content you would like to reuse. 
+    > A file template can be a document of any type with the formatting or content you would like to reuse. 
 
-### Google Drive
+??? note "Google Drive"
 
-!!! note
     短暂尝试过，但已弃用。
 
-可以添加 Google Drive 的帐号，从而直接在文件管理系统中访问 Google Drive 的内容。另见 [:fontawesome-brands-stack-exchange:](https://askubuntu.com/questions/838956/ubuntu-16-04-set-up-with-google-online-account-but-no-drive-folder-in-nautilus)
+    可以添加 Google Drive 的帐号，从而直接在文件管理系统中访问 Google Drive 的内容。另见 [:fontawesome-brands-stack-exchange:](https://askubuntu.com/questions/838956/ubuntu-16-04-set-up-with-google-online-account-but-no-drive-folder-in-nautilus)
 
 ## Octave
 
@@ -597,225 +601,227 @@ Also check the [official documentation](https://help.ubuntu.com/stable/ubuntu-he
 
 ## Okular
 
-当初使用 Ubuntu 16.04 时，Okular 是通过 snap 安装的，可能参考了[这个](https://askubuntu.com/questions/976248/how-to-install-latest-version-of-okular-on-ubuntu-16-04)?
+??? note "Installation via snap vs apt"
 
-```bash
-sudo snap install okular
-```
+    当初使用 Ubuntu 16.04 时，Okular 是通过 snap 安装的，可能参考了[这个](https://askubuntu.com/questions/976248/how-to-install-latest-version-of-okular-on-ubuntu-16-04)?
 
-但是更新到 Ubuntu 18.04 后，发现在移动硬盘的文档打不开，而之前没碰到过这样的问题，一开始还以为是移动硬盘命名问题，之前曾经碰到过某个程序（忘记了）不允许路径存在空格，而移动硬盘默认名字有空格，于是曾经更改过名字（忘记了怎么更改）。原本以为可能更新系统使得这个更改失效了，还想着再找找怎么更改，但是找到一堆怎么更改卷标名的，最后才发现路径中名字确实应该更改成功了。
+    ```bash
+    sudo snap install okular
+    ```
 
-所以问题还是回到 okular 本身，通过 snap 和 apt 安装是两个不同的版本，图标也有点差异，然后发现也有人跟我有[同样的问题](https://askubuntu.com/questions/1137830/cannot-open-pdf-files-in-mounted-usb-drive-using-okular)，有人回复说
+    但是更新到 Ubuntu 18.04 后，发现在移动硬盘的文档打不开，而之前没碰到过这样的问题，一开始还以为是移动硬盘命名问题，之前曾经碰到过某个程序（忘记了）不允许路径存在空格，而移动硬盘默认名字有空格，于是曾经更改过名字（忘记了怎么更改）。原本以为可能更新系统使得这个更改失效了，还想着再找找怎么更改，但是找到一堆怎么更改卷标名的，最后才发现路径中名字确实应该更改成功了。
 
-> Okular does not support removable media while installed as Snap.
+    所以问题还是回到 okular 本身，通过 snap 和 apt 安装是两个不同的版本，图标也有点差异，然后发现也有人跟我有[同样的问题](https://askubuntu.com/questions/1137830/cannot-open-pdf-files-in-mounted-usb-drive-using-okular)，有人回复说
 
-于是卸掉 snap 版的 okular，转而安装 apt 版本的，
+    > Okular does not support removable media while installed as Snap.
 
-```bash
-sudo apt-get install okular
-```
+    于是卸掉 snap 版的 okular，转而安装 apt 版本的，
 
-类似地，[通过 snap 安装的 `gimp`](https://askubuntu.com/questions/958355/any-app-on-ubuntu-to-open-and-or-convert-heif-pictures-heic-high-efficiency-i) 不能打开移动硬盘中的文件，但是如果换成 apt-get 安装的，则又不支持 `.heic` 文件格式。
+    ```bash
+    sudo apt-get install okular
+    ```
 
-发现有些图标不能正常显示，网上也找到了类似的问题，
+    类似地，[通过 snap 安装的 `gimp`](https://askubuntu.com/questions/958355/any-app-on-ubuntu-to-open-and-or-convert-heif-pictures-heic-high-efficiency-i) 不能打开移动硬盘中的文件，但是如果换成 apt-get 安装的，则又不支持 `.heic` 文件格式。
 
-- [KDE application icon not displayed in Ubuntu](https://askubuntu.com/questions/1007563/kde-application-icon-not-displayed-in-ubuntu)
-- [State of Okular in Ubuntu 17.10?](https://askubuntu.com/questions/999551/state-of-okular-in-ubuntu-17-10)
+    发现有些图标不能正常显示，网上也找到了类似的问题，
 
-尝试了其中的解决方案，但均未成功，最后的解决方案是 [navigation panel icons missing on standard install of 17.04](https://bugs.launchpad.net/ubuntu/+source/okular/+bug/1698656)
+    - [KDE application icon not displayed in Ubuntu](https://askubuntu.com/questions/1007563/kde-application-icon-not-displayed-in-ubuntu)
+    - [State of Okular in Ubuntu 17.10?](https://askubuntu.com/questions/999551/state-of-okular-in-ubuntu-17-10)
 
-```bash
-As a workaround, what worked for me was:
+    尝试了其中的解决方案，但均未成功，最后的解决方案是 [navigation panel icons missing on standard install of 17.04](https://bugs.launchpad.net/ubuntu/+source/okular/+bug/1698656)
 
-$ sudo apt install systemsettings kde-config-gtk-style kde-config-gtk-style-preview oxygen-icon-theme
+    ```bash
+    As a workaround, what worked for me was:
 
-* systemsettings for the app systemsettings5;
+    $ sudo apt install systemsettings kde-config-gtk-style kde-config-gtk-style-preview oxygen-icon-theme
 
-* kde-config-gtk-style enables the Appearance module in systemsettings5;
+    * systemsettings for the app systemsettings5;
 
-* kde-config-gtk-style-preview allows previewing the themes without restarting the GTK applications;
+    * kde-config-gtk-style enables the Appearance module in systemsettings5;
 
-* oxygen-icon-theme is an alternative theme to use in KDE applications.
+    * kde-config-gtk-style-preview allows previewing the themes without restarting the GTK applications;
 
-Then, run systemsettings5, click on Application Style, select Oxygen as a Fallback theme, click on Apply.
-```
+    * oxygen-icon-theme is an alternative theme to use in KDE applications.
 
-最后我的配置是
+    Then, run systemsettings5, click on Application Style, select Oxygen as a Fallback theme, click on Apply.
+    ```
 
-![](okular-icons.png)
+    最后我的配置是
 
-可以尝试不同配置，因为刚开始打开的，似乎并不是之前系统的配置。
+    ![](okular-icons.png)
 
-### latex in annotation
+    可以尝试不同配置，因为刚开始打开的，似乎并不是之前系统的配置。
 
-okular 的 note 功能支持 LaTeX，当输入 `$$...$$` 时会提示要不要转换为 latex，点击后但是报错，
+??? tip "latex in annotation"
 
-```bash
-latex is not executable
-```
+    okular 的 note 功能支持 LaTeX，当输入 `$$...$$` 时会提示要不要转换为 latex，点击后但是报错，
 
-注意到 `latex` 的 PATH 是定义在 `.bashrc` 中，而通过 zotero 调用 okular 时并不会 source `.bashrc`，只有通过 bash shell 调用的程序采用 source 到 `.bashrc`，也就是在终端中调用 okular 时，latex 显示正常。
+    ```bash
+    latex is not executable
+    ```
 
-研究图形界面程序调用 path 的机制似乎是一种解决方案，但觉得可能过于复杂，其实之前在 atom 中也出现过类似的问题。可能的方案是在 `.profile` 中添加 PATH，可能有用的[参考博客](https://medium.com/@abhinavkorpal/bash-profile-vs-bashrc-c52534a787d3)。
+    注意到 `latex` 的 PATH 是定义在 `.bashrc` 中，而通过 zotero 调用 okular 时并不会 source `.bashrc`，只有通过 bash shell 调用的程序采用 source 到 `.bashrc`，也就是在终端中调用 okular 时，latex 显示正常。
 
-于是我采用更简单的方案，在 `/usr/bin` 中添加 `latex` 的 soft link，添加后报了新错，
+    研究图形界面程序调用 path 的机制似乎是一种解决方案，但觉得可能过于复杂，其实之前在 atom 中也出现过类似的问题。可能的方案是在 `.profile` 中添加 PATH，可能有用的[参考博客](https://medium.com/@abhinavkorpal/bash-profile-vs-bashrc-c52534a787d3)。
 
-```bash
-dvipng is not executable
-```
+    于是我采用更简单的方案，在 `/usr/bin` 中添加 `latex` 的 soft link，添加后报了新错，
 
-但至少证明这条思路是可行的，于是继续添加 `dvipng` 的 soft link，最后解决了问题！
+    ```bash
+    dvipng is not executable
+    ```
 
-### 自定义签名
+    但至少证明这条思路是可行的，于是继续添加 `dvipng` 的 soft link，最后解决了问题！
 
-可以通过 `stamp` 功能自定义签名，首先准备好签名图片，然后保存到某个文件夹，比如 `~/.kde/share/icons/signature.png`，然后进入 stamp 的配置界面，下拉框中直接输入签名图片所在的路径。参考 [How to add a Signature stamp to Okular](https://askubuntu.com/questions/1132658/how-to-add-a-signature-stamp-to-okular)
+??? tip "自定义签名 customized signature"
 
-但是并不能存为 pdf，或者被其他软件看到，用 Acrobat 打开会有个打叉的部分，但是看不到签名，[已经被标记为 bug，但似乎还未解决](https://bugs.launchpad.net/ubuntu/+source/okular/+bug/1859632)。
+    可以通过 `stamp` 功能自定义签名，首先准备好签名图片，然后保存到某个文件夹，比如 `~/.kde/share/icons/signature.png`，然后进入 stamp 的配置界面，下拉框中直接输入签名图片所在的路径。参考 [How to add a Signature stamp to Okular](https://askubuntu.com/questions/1132658/how-to-add-a-signature-stamp-to-okular)
 
-### pdf background color
+    但是并不能存为 pdf，或者被其他软件看到，用 Acrobat 打开会有个打叉的部分，但是看不到签名，[已经被标记为 bug，但似乎还未解决](https://bugs.launchpad.net/ubuntu/+source/okular/+bug/1859632)。
 
-set background color for visable screenshots.
+??? tip "set background color"
 
-refer to [Is there a pdf reader allowing me to change background color of (arXiv) pdfs?](https://askubuntu.com/questions/472540/is-there-a-pdf-reader-allowing-me-to-change-background-color-of-arxiv-pdfs)
+    set background color for visible screenshots.
 
-### duplicate icons
+    refer to [Is there a pdf reader allowing me to change background color of (arXiv) pdfs?](https://askubuntu.com/questions/472540/is-there-a-pdf-reader-allowing-me-to-change-background-color-of-arxiv-pdfs)
 
-When opening multiple pdf files, it results duplicate icons, such as 
+??? tip "remove duplicate icons"
 
-![image](https://user-images.githubusercontent.com/13688320/144483818-ea4b5393-82ea-4f0a-bd30-30e8213cf2ce.png)
+    When opening multiple pdf files, it results duplicate icons, such as 
 
-The solution is 
+    ![image](https://user-images.githubusercontent.com/13688320/144483818-ea4b5393-82ea-4f0a-bd30-30e8213cf2ce.png)
 
-- copy the desktop file
+    The solution is 
 
-```bash
-mv /usr/share/applications/okularApplication_pdf.desktop .local/share/applications/
-```
+    - copy the desktop file
 
-- add the following line to the end
+    ```bash
+    mv /usr/share/applications/okularApplication_pdf.desktop .local/share/applications/
+    ```
 
-```bash
-StartupWMClass=okular
-```
+    - add the following line to the end
 
-then close all pdf files opened by okular, and re-open them, then they will be grouped into a single icon.
+    ```bash
+    StartupWMClass=okular
+    ```
 
-Refer to 
+    then close all pdf files opened by okular, and re-open them, then they will be grouped into a single icon.
 
-- [Okular instances does not group under single icon in desktop dock on Ubuntu 17.10](https://askubuntu.com/questions/995693/okular-instances-does-not-group-under-single-icon-in-desktop-dock-on-ubuntu-17-1)
+    Refer to 
 
-or for other software,
+    - [Okular instances does not group under single icon in desktop dock on Ubuntu 17.10](https://askubuntu.com/questions/995693/okular-instances-does-not-group-under-single-icon-in-desktop-dock-on-ubuntu-17-1)
 
-- [Duplicate application icons in Ubuntu dock upon launch](https://askubuntu.com/questions/975178/duplicate-application-icons-in-ubuntu-dock-upon-launch/975230#975230)
+    or for other software,
 
-A by-product tip learned from the above question,
+    - [Duplicate application icons in Ubuntu dock upon launch](https://askubuntu.com/questions/975178/duplicate-application-icons-in-ubuntu-dock-upon-launch/975230#975230)
 
-- use `Alt + backstick` can switch the same application.
+    A by-product tip learned from the above question,
+
+    - use `Alt + backstick` can switch the same application.
 
 ## OneDrive
 
 In fact, the following client on Ubuntu is also in the command-line form. But usually, we refer to OneDrive as the whole of the client and the host, which is visited via a browser. 
 
-### first try
+??? note "first try"
 
-[xybu/onedrive-d-old](https://github.com/xybu/onedrive-d-old), but doesn't support exchange account.
+    [xybu/onedrive-d-old](https://github.com/xybu/onedrive-d-old), but doesn't support exchange account.
 
-### second try
+??? note "second try"
 
-[skilion/onedrive](https://github.com/skilion/onedrive), perfect!
+    [skilion/onedrive](https://github.com/skilion/onedrive), perfect!
 
-note that the automatic monitor would occupy much CPU, the service can be disable or enable by the following command,
+    note that the automatic monitor would occupy much CPU, the service can be disable or enable by the following command,
 
-```bash
-~$ systemctl --user disable onedrive
-Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
-~$ systemctl --user enable onedrive
-Created symlink /home/weiya/.config/systemd/user/default.target.wants/onedrive.service → /usr/lib/systemd/user/onedrive.service.
-```
+    ```bash
+    ~$ systemctl --user disable onedrive
+    Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
+    ~$ systemctl --user enable onedrive
+    Created symlink /home/weiya/.config/systemd/user/default.target.wants/onedrive.service → /usr/lib/systemd/user/onedrive.service.
+    ```
 
-but it seems that we also need
+    but it seems that we also need
 
-```bash
-systemctl --user start onedrive
-systemctl --user stop onedrive
-```
+    ```bash
+    systemctl --user start onedrive
+    systemctl --user stop onedrive
+    ```
 
-### fuseblk
+??? note "fuseblk"
 
-发现使用 onedrive 同步文件时，有时候并不能够同步。猜测可能是因为文件太小，比如文件夹 `test` 中仅有 `test.md` 文件（仅70B），而此时查看 `test` 大小，竟然为 0 B，因为根据常识，一般文件夹都是 4.0k，或者有时 8.0k 等等，具体原因参考 [Why does every directory have a size 4096 bytes (4 K)?](https://askubuntu.com/questions/186813/why-does-every-directory-have-a-size-4096-bytes-4-k)
+    发现使用 onedrive 同步文件时，有时候并不能够同步。猜测可能是因为文件太小，比如文件夹 `test` 中仅有 `test.md` 文件（仅70B），而此时查看 `test` 大小，竟然为 0 B，因为根据常识，一般文件夹都是 4.0k，或者有时 8.0k 等等，具体原因参考 [Why does every directory have a size 4096 bytes (4 K)?](https://askubuntu.com/questions/186813/why-does-every-directory-have-a-size-4096-bytes-4-k)
 
-但我现在问题是文件夹竟然是 0B，猜测这是无法同步的原因。
+    但我现在问题是文件夹竟然是 0B，猜测这是无法同步的原因。
 
-后来在上述问题的回答的评论中 @Ruslan 提到
+    后来在上述问题的回答的评论中 @Ruslan 提到
 
-> @phyloflash some filesystems (e.g. NTFS) store small files in the file entries themselves (for NTFS it's in the MFT entry). This way their contents occupy zero allocation blocks, and internal fragmentation is reduced. – Ruslan Nov 2 at 9:03
+    > @phyloflash some filesystems (e.g. NTFS) store small files in the file entries themselves (for NTFS it's in the MFT entry). This way their contents occupy zero allocation blocks, and internal fragmentation is reduced. – Ruslan Nov 2 at 9:03
 
-猜测这是文件系统的原因，因为此时文件夹刚好位于移动硬盘中，所以可能刚好发生了所谓的 “internal fragmentation is reduced”。
+    猜测这是文件系统的原因，因为此时文件夹刚好位于移动硬盘中，所以可能刚好发生了所谓的 “internal fragmentation is reduced”。
 
-于是准备查看移动硬盘的 file system 来验证我的想法，这可以通过 `df -Th` 实现，具体参考 [7 Ways to Determine the File System Type in Linux (Ext2, Ext3 or Ext4)](https://www.tecmint.com/find-linux-filesystem-type/)
+    于是准备查看移动硬盘的 file system 来验证我的想法，这可以通过 `df -Th` 实现，具体参考 [7 Ways to Determine the File System Type in Linux (Ext2, Ext3 or Ext4)](https://www.tecmint.com/find-linux-filesystem-type/)
 
-然后竟然发现并不是期望中的 NTFS，而是 fuseblk，[東海陳光劍的博客](http://blog.sina.com.cn/s/blog_7d553bb501012z3l.html)中解释道
+    然后竟然发现并不是期望中的 NTFS，而是 fuseblk，[東海陳光劍的博客](http://blog.sina.com.cn/s/blog_7d553bb501012z3l.html)中解释道
 
-> fuse是一个用户空间实现的文件系统。内核不认识。fuseblk应该就是使用fuse的block设备吧，系统中临时的非超级用户的设备挂载好像用的就是这个。
+    > fuse是一个用户空间实现的文件系统。内核不认识。fuseblk应该就是使用fuse的block设备吧，系统中临时的非超级用户的设备挂载好像用的就是这个。
 
-最后发现，onedrive 无法同步的原因可能并不是因为 0 byte 的文件夹，而是因为下面的命名规范，虽然不是需要同步的文件，而是之前很久的文件，但可能onedrive就在之前这个不规范命名的文件上崩溃了。
+    最后发现，onedrive 无法同步的原因可能并不是因为 0 byte 的文件夹，而是因为下面的命名规范，虽然不是需要同步的文件，而是之前很久的文件，但可能onedrive就在之前这个不规范命名的文件上崩溃了。
 
-### windows 命名规范
+??? tip "windows 命名规范"
 
-在使用 [skilion/onedrive](https://github.com/skilion/onedrive) 同步时，一直会出现碰到某个文件崩溃。查了一下才知道是需要遵循 [Windows 命名规范](https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN)，其中有两条很重要
+    在使用 [skilion/onedrive](https://github.com/skilion/onedrive) 同步时，一直会出现碰到某个文件崩溃。查了一下才知道是需要遵循 [Windows 命名规范](https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN)，其中有两条很重要
 
-- Do not assume case sensitivity. For example, consider the names OSCAR, Oscar, and oscar to be the same, even though some file systems (such as a POSIX-compliant file system) may consider them as different. Note that NTFS supports POSIX semantics for case sensitivity but this is not the default behavior.
-- The following reserved characters:
-  - < (less than)
-  - > (greater than)
-  - : (colon)
-  - " (double quote)
-  - / (forward slash)
-  - \ (backslash)
-  - | (vertical bar or pipe)
-  - ? (question mark)
-  - * (asterisk)
+    - Do not assume case sensitivity. For example, consider the names OSCAR, Oscar, and oscar to be the same, even though some file systems (such as a POSIX-compliant file system) may consider them as different. Note that NTFS supports POSIX semantics for case sensitivity but this is not the default behavior.
+    - The following reserved characters:
+    - < (less than)
+    - `>` (greater than)
+    - : (colon)
+    - " (double quote)
+    - / (forward slash)
+    - \ (backslash)
+    - | (vertical bar or pipe)
+    - ? (question mark)
+    - `*` (asterisk)
 
-### Change to [abraunegg/onedrive](https://github.com/abraunegg/onedrive)
+!!! tip "Change to [abraunegg/onedrive](https://github.com/abraunegg/onedrive) (Currently using)"
 
-I found that it will auto run after startup, actually with [skilion/onedrive](https://github.com/skilion/onedrive), sometimes it also starts automatically. Then I tried
+    I found that it will automatically run after startup, actually with [skilion/onedrive](https://github.com/skilion/onedrive), sometimes it also starts automatically. Then I tried
 
-```bash
-$ sudo systemctl disable onedrive.service
-Failed to disable unit: Unit file onedrive.service does not exist.
-```
+    ```bash
+    $ sudo systemctl disable onedrive.service
+    Failed to disable unit: Unit file onedrive.service does not exist.
+    ```
 
-and then I note that [OneDrive service running as a non-root user via systemd (with notifications enabled) (Arch, Ubuntu, Debian, OpenSuSE, Fedora)](https://github.com/abraunegg/onedrive/blob/master/docs/USAGE.md#onedrive-service-running-as-a-non-root-user-via-systemd-with-notifications-enabled-arch-ubuntu-debian-opensuse-fedora)
+    and then I note that [OneDrive service running as a non-root user via systemd (with notifications enabled) (Arch, Ubuntu, Debian, OpenSuSE, Fedora)](https://github.com/abraunegg/onedrive/blob/master/docs/USAGE.md#onedrive-service-running-as-a-non-root-user-via-systemd-with-notifications-enabled-arch-ubuntu-debian-opensuse-fedora)
 
-then I tried
+    then I tried
 
-```bash
-$ sudo systemctl disable onedrive@weiya.service
-```
+    ```bash
+    $ sudo systemctl disable onedrive@weiya.service
+    ```
 
-no error.
+    no error.
 
-Then I also tried
+    Then I also tried
 
-```bash
-$ systemctl --user disable onedrive
-Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
-```
+    ```bash
+    $ systemctl --user disable onedrive
+    Removed /home/weiya/.config/systemd/user/default.target.wants/onedrive.service.
+    ```
 
-It seems OK now, and pay attention to the difference of the above similar commands.
+    It seems OK now, and pay attention to the difference of the above similar commands.
 
-#### sync shared folder
+!!! tip "sync shared folder"
 
-refer to [How to configure OneDrive Business Shared Folder Sync](https://github.com/abraunegg/onedrive/blob/master/docs/BusinessSharedFolders.md) for full instruction.
+    refer to [How to configure OneDrive Business Shared Folder Sync](https://github.com/abraunegg/onedrive/blob/master/docs/BusinessSharedFolders.md) for full instruction.
 
-```bash
-# list remote shared folder
-$ onedrive --list-shared-folders
-# configure folder to share
-$ vi ~/.config/onedrive/business_shared_folders
-# perform sync (--resync is needed when the config file has been updated)
-$ onedrive --synchronize --sync-shared-folders [--resync]
-```
+    ```bash
+    # list remote shared folder
+    $ onedrive --list-shared-folders
+    # configure folder to share
+    $ vi ~/.config/onedrive/business_shared_folders
+    # perform sync (--resync is needed when the config file has been updated)
+    $ onedrive --synchronize --sync-shared-folders [--resync]
+    ```
 
 ## OpenShot
 
@@ -838,7 +844,7 @@ sudo apt install openshot-qt python3-openshot
 
 ## Planner
 
-follow instruction in https://flathub.org/apps/details/com.github.alainm23.planner
+follow instruction in <https://flathub.org/apps/details/com.github.alainm23.planner>
 
 first of all, configure flatpak
 
@@ -968,43 +974,52 @@ Anyway, the current solution seems already convinent.
 
 ## Terminator
 
-- `Ctrl + Shift + E` not work in Ubuntu 20.04 + ibus. The reason is that ibus has define such shortcut for emoji annotation. So just type `ibus-setup`, then switch to Emoji tab and delete the shortcut. [:link:](https://jh-byun.github.io/study/terminator-split-vertically/)
+!!! tip "Shortcuts"
 
-![image](https://user-images.githubusercontent.com/13688320/192050782-33e0676a-d37f-47d6-a138-5b7cce58e4fa.png)
+    the shortcut list can be found in `Right Click >  Preferences > Keybindings`, several more common
+
+    - resize: `Shift+Ctrl+Left/Right/Down/Up`
+
+??? warning "Ctrl + Shift + E not work"
+
+    - `Ctrl + Shift + E` not work in Ubuntu 20.04 + ibus. The reason is that ibus has define such shortcut for emoji annotation. So just type `ibus-setup`, then switch to Emoji tab and delete the shortcut. [:link:](https://jh-byun.github.io/study/terminator-split-vertically/)
+
+    ![image](https://user-images.githubusercontent.com/13688320/192050782-33e0676a-d37f-47d6-a138-5b7cce58e4fa.png)
 
 
-- hostname 的颜色, 去掉 `.bashrc` 中
+??? tip "hostname 的颜色"
 
-```bash
-##force_color_prompt=yes
-```
+    - hostname 的颜色, 去掉 `.bashrc` 中
 
-的注释
+    ```bash
+    ##force_color_prompt=yes
+    ```
 
-- hide hostname, `weiya@weiya-ThinkPad-T460p:`
+    的注释
 
-edit the following line in the `.bashrc` as follows
+??? tip "hide hostname"
 
-```bash
-if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1='\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-```
+    - hide hostname, `weiya@weiya-ThinkPad-T460p:`
 
-before hide and after hide 
+    edit the following line in the `.bashrc` as follows
 
-![image](https://user-images.githubusercontent.com/13688320/123048663-37d31b00-d431-11eb-8ebf-afb97f758191.png)
+    ```bash
+    if [ "$color_prompt" = yes ]; then
+        #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+        PS1='\[\033[01;34m\]\w\[\033[00m\]\$ '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    fi
+    ```
 
-- 颜色背景色等，直接右键设置，右键设置完成之后便有了一个配置文件，`~/.config/terminator/config`.
+    before hide and after hide 
 
-### shortcut
+    ![image](https://user-images.githubusercontent.com/13688320/123048663-37d31b00-d431-11eb-8ebf-afb97f758191.png)
 
-the shortcut list can be found in `Right Click >  Preferences > Keybindings`, several more common
+??? tip "背景色"
 
-- resize: `Shift+Ctrl+Left/Right/Down/Up`
+    - 各种颜色，如背景色，直接右键设置，右键设置完成之后便有了一个配置文件，`~/.config/terminator/config`.
+
 
 ## Thunderbird
 
@@ -1028,8 +1043,6 @@ Bcc: C
 在 B 端查看源码发现只有 `TO: B`，而在 C 端既有 `Delivered-To: C`，也有 `TO: B`。
 
 所以 Esther 一种可能的原因是在 bcc 中输入 grad 的邮箱，并发送给自己。但感觉这样很奇怪，可能有其它自动设置，具体不得而知。关于 `Delivered-To` 的讨论可另见 [:link:](https://serverfault.com/questions/796913/how-can-the-to-and-delivered-to-fields-in-an-email-i-received-be-different)
-
-
 
 
 ### Deactivation
@@ -1097,12 +1110,13 @@ Currently, the Linux version is in Beta.
 
 ## VS Code
 
-[Official Shortcut Table](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+!!! tip "Shortcuts"
+    [Official Shortcut Table](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
-Other shortcuts:
+    Other shortcuts:
 
-- switch to next functions: `Ctrl + Shift + .`, refer to [Go to next method shortcut in VSCode](https://stackoverflow.com/questions/46388358/go-to-next-method-shortcut-in-vscode)
-- switch terminals, `Ctrl+Up/Down`, refer to [How to switch between terminals in Visual Studio Code?](https://stackoverflow.com/a/67412583/)
+    - switch to next functions: `Ctrl + Shift + .`, refer to [Go to next method shortcut in VSCode](https://stackoverflow.com/questions/46388358/go-to-next-method-shortcut-in-vscode)
+    - switch terminals, `Ctrl+Up/Down`, refer to [How to switch between terminals in Visual Studio Code?](https://stackoverflow.com/a/67412583/)
 
 ### Edit Multiple Line Simultaneously
 
@@ -1253,36 +1267,35 @@ Some references:
 
 ## WeChat in Linux
 
-### 微信被其它人登录？
+??? note "微信被其它人登录？"
 
-!!! info
     Post: 2022-11-05 22:49:27
 
-刷到这篇[讨论](https://www.zhihu.com/question/564406006/answer/2744703293)，于是跑过去看看自己微信上的登录设备记录，“Settings > Account Security > Login Devices”，然后竟然发现里面有条“Windows 7” 的记录。
+    刷到这篇[讨论](https://www.zhihu.com/question/564406006/answer/2744703293)，于是跑过去看看自己微信上的登录设备记录，“Settings > Account Security > Login Devices”，然后竟然发现里面有条“Windows 7” 的记录。
 
-![](https://user-images.githubusercontent.com/13688320/200734603-e0d41f2e-742b-4ff3-a75c-41c76aa58d0b.jpg)
+    ![](https://user-images.githubusercontent.com/13688320/200734603-e0d41f2e-742b-4ff3-a75c-41c76aa58d0b.jpg)
 
-但目前只登录了自己的手机 Mix2s，以及第三条的笔记本 T460P。后来发现 T460P 登录的微信因为移动硬盘写入原因无响应，最后只能 kill 掉。此时一个猜测便是这个 Windows 7 的记录很可能是因为机器挂了，在获取机器型号的时候，因为未知原因，只能得到 Win7，而非 T460P.
+    但目前只登录了自己的手机 Mix2s，以及第三条的笔记本 T460P。后来发现 T460P 登录的微信因为移动硬盘写入原因无响应，最后只能 kill 掉。此时一个猜测便是这个 Windows 7 的记录很可能是因为机器挂了，在获取机器型号的时候，因为未知原因，只能得到 Win7，而非 T460P.
 
-在图中 win7 的时间戳 "2022-11-04 17:35:26" 搜索系统日志，发现移动硬盘的 IO error 刚好在那个时间点附近，
+    在图中 win7 的时间戳 "2022-11-04 17:35:26" 搜索系统日志，发现移动硬盘的 IO error 刚好在那个时间点附近，
 
-```bash
-$ journalctl --since "2022-11-04 17:35" --until "2022-11-04 17:36" 
-Nov 04 17:35:23 weiya-ThinkPad-T460p ntfs-3g[2012449]: ntfs_attr_pread_i: ntfs_pread failed: Input/output error
-Nov 04 17:35:23 weiya-ThinkPad-T460p ntfs-3g[2012449]: ntfs_attr_pread error reading '/0WeChat/WeChat Files/wxid_***************/Msg/MicroMsg.db-wal' at offset 974848: 4096 <> -1: Input/output error
-Nov 04 17:35:23 weiya-ThinkPad-T460p kernel: Buffer I/O error on dev sde1, logical block 89552839, async page read
-```
+    ```bash
+    $ journalctl --since "2022-11-04 17:35" --until "2022-11-04 17:36" 
+    Nov 04 17:35:23 weiya-ThinkPad-T460p ntfs-3g[2012449]: ntfs_attr_pread_i: ntfs_pread failed: Input/output error
+    Nov 04 17:35:23 weiya-ThinkPad-T460p ntfs-3g[2012449]: ntfs_attr_pread error reading '/0WeChat/WeChat Files/wxid_***************/Msg/MicroMsg.db-wal' at offset 974848: 4096 <> -1: Input/output error
+    Nov 04 17:35:23 weiya-ThinkPad-T460p kernel: Buffer I/O error on dev sde1, logical block 89552839, async page read
+    ```
 
-再验证下 wine 里面是不是 Windows 7，首先运行 `winecfg` 跳出来的图形界面就有显示 Windows 7，也可以从配置文件中得到确认。
+    再验证下 wine 里面是不是 Windows 7，首先运行 `winecfg` 跳出来的图形界面就有显示 Windows 7，也可以从配置文件中得到确认。
 
-```bash
-~/.wine32$ cat system.reg | grep -n "Microsoft Windows"
-995:@="Microsoft Windows Installer Message RPC"
-1028:@="Microsoft Windows Installer"
-31532:@="Microsoft Windows Installer"
-31540:@="Microsoft Windows Installer Message RPC"
-39508:"ProductName"="Microsoft Windows 7"
-```
+    ```bash
+    ~/.wine32$ cat system.reg | grep -n "Microsoft Windows"
+    995:@="Microsoft Windows Installer Message RPC"
+    1028:@="Microsoft Windows Installer"
+    31532:@="Microsoft Windows Installer"
+    31540:@="Microsoft Windows Installer Message RPC"
+    39508:"ProductName"="Microsoft Windows 7"
+    ```
 
 ### Wine Wechat
 
@@ -1480,44 +1493,43 @@ if item.find("wechat.exe") != -1:
 
 代码详见 [disable-wechat-shadow.py](disable-wechat-shadow.py)
 
-### cannot send images
+??? done "fixed: cannot send images"
 
-!!! done
     当前微信 3.0.0.57 版本中，这个问题已经解决了！
 
-Try to use the approach
+    Try to use the approach
 
-```bash
-sudo apt install libjpeg62:i386
-```
+    ```bash
+    sudo apt install libjpeg62:i386
+    ```
 
-suggested in [微信无法发送图片可以尝试一下这个方法 #32](https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/32), but it does not work after `wineboot -u` and `winboot -r` and system reboot. And I even install `libjpeg8:i386` and `libjpeg9:i386`, still does not work, and then I doubt if I miss other dependencies, such as [debian-special-pkgs/deepin-wine_2.18-12_i386/DEBIAN/control](https://github.com/wszqkzqk/deepin-wine-ubuntu/commit/5300834405de1388893f2cedeb5c74f6b307a4f8#diff-4398b218af11cf74c553720d61cdff90), but I the `libjpeg-turbo8` and `libjpeg-turbo8:i386` had been installed, then I had no idea.
+    suggested in [微信无法发送图片可以尝试一下这个方法 #32](https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/32), but it does not work after `wineboot -u` and `winboot -r` and system reboot. And I even install `libjpeg8:i386` and `libjpeg9:i386`, still does not work, and then I doubt if I miss other dependencies, such as [debian-special-pkgs/deepin-wine_2.18-12_i386/DEBIAN/control](https://github.com/wszqkzqk/deepin-wine-ubuntu/commit/5300834405de1388893f2cedeb5c74f6b307a4f8#diff-4398b218af11cf74c553720d61cdff90), but I the `libjpeg-turbo8` and `libjpeg-turbo8:i386` had been installed, then I had no idea.
 
-Notice that one comment in [微信无法发送图片可以尝试一下这个方法 #32](https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/32#issuecomment-617709981)
+    Notice that one comment in [微信无法发送图片可以尝试一下这个方法 #32](https://github.com/wszqkzqk/deepin-wine-ubuntu/issues/32#issuecomment-617709981)
 
-> arch没有问题的，禁用ipv6就行了
+    > arch没有问题的，禁用ipv6就行了
 
-and also the commands related to ipv6 in [如何优雅地在Ubuntu下使用QQ微信](https://zhuanlan.zhihu.com/p/91327545), then I try to disable ipv6. Here are two approaches,
+    and also the commands related to ipv6 in [如何优雅地在Ubuntu下使用QQ微信](https://zhuanlan.zhihu.com/p/91327545), then I try to disable ipv6. Here are two approaches,
 
-- modify `/etc/sysctl.conf`
-- modify GRUB
+    - modify `/etc/sysctl.conf`
+    - modify GRUB
 
-more details can be found in [How to Disable IPv6 in Ubuntu Server 18.04/16.4 LTS](https://www.configserverfirewall.com/ubuntu-linux/ubuntu-disable-ipv6/) or [在Linux下禁用IPv6的方法小结](https://www.cnblogs.com/MYSQLZOUQI/p/6232475.html)
+    more details can be found in [How to Disable IPv6 in Ubuntu Server 18.04/16.4 LTS](https://www.configserverfirewall.com/ubuntu-linux/ubuntu-disable-ipv6/) or [在Linux下禁用IPv6的方法小结](https://www.cnblogs.com/MYSQLZOUQI/p/6232475.html)
 
-But the first method seems not work after reboot, and need to run `sudo sysctl -p`. Then I found that when I run the ssh script to establish reverse tunnel, it reports that the address cannot be assigned, but actually it indeed works, then I realized that ssh would try to assign address for ipv4 and ipv6 simultaneously. It also reminds me [a solution](https://serverfault.com/questions/444295/ssh-tunnel-bind-cannot-assign-requested-address) found several days ago, adding `-4` for specifying ipv4.
+    But the first method seems not work after reboot, and need to run `sudo sysctl -p`. Then I found that when I run the ssh script to establish reverse tunnel, it reports that the address cannot be assigned, but actually it indeed works, then I realized that ssh would try to assign address for ipv4 and ipv6 simultaneously. It also reminds me [a solution](https://serverfault.com/questions/444295/ssh-tunnel-bind-cannot-assign-requested-address) found several days ago, adding `-4` for specifying ipv4.
 
-However, this method seems also not work.
+    However, this method seems also not work.
 
-### DLL file
+??? note "DLL file"
 
-No clear idea about DLL file, such as `ole32.dll` suggested in [wine运行windows软件](https://jerry.red/331/wine%e8%bf%90%e8%a1%8cwindows%e8%bd%af%e4%bb%b6), this page， [Windows 7 DLL File Information - ole32.dll](https://www.win7dll.info/ole32_dll.html), might helps.
+    No clear idea about DLL file, such as `ole32.dll` suggested in [wine运行windows软件](https://jerry.red/331/wine%e8%bf%90%e8%a1%8cwindows%e8%bd%af%e4%bb%b6), this page， [Windows 7 DLL File Information - ole32.dll](https://www.win7dll.info/ole32_dll.html), might helps.
 
-And general introduction for DLL can be found in [DLL文件到底是什么，它们是如何工作的？](https://cloud.tencent.com/developer/ask/69913)
+    And general introduction for DLL can be found in [DLL文件到底是什么，它们是如何工作的？](https://cloud.tencent.com/developer/ask/69913)
 
-- 类似 `.so`
-- 在Windows中，文件扩展名如下所示：静态库（`.lib`）和动态库（`.dll`）。主要区别在于静态库在编译时链接到可执行文件; 而动态链接库在运行时才会被链接。
-- 通常不会在计算机上看到静态库，因为静态库直接嵌入到模块（EXE或DLL）中。动态库是一个独立的文件。
-- 一个DLL可以在任何时候被改变，并且只在EXE显式地加载DLL时在运行时加载。静态库在EXE中编译后无法更改。一个DLL可以单独更新而无需更新EXE本身。
+    - 类似 `.so`
+    - 在Windows中，文件扩展名如下所示：静态库（`.lib`）和动态库（`.dll`）。主要区别在于静态库在编译时链接到可执行文件; 而动态链接库在运行时才会被链接。
+    - 通常不会在计算机上看到静态库，因为静态库直接嵌入到模块（EXE或DLL）中。动态库是一个独立的文件。
+    - 一个DLL可以在任何时候被改变，并且只在EXE显式地加载DLL时在运行时加载。静态库在EXE中编译后无法更改。一个DLL可以单独更新而无需更新EXE本身。
 
 ## Weylus
 

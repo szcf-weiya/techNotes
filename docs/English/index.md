@@ -8,6 +8,8 @@
 - phosphorylated: 磷酸化的
 - apoptosis: 细胞凋亡
 - organelle (细胞器): mitochondrion (线粒体)、chloroplast (叶绿体)、peroxisome (过氧化物酶体)、apicoplast (质体样细胞器)
+- spillover: 外溢性，影响
+- intimacy: 亲密；密切；关系密切
 
 ## 2022.12
 

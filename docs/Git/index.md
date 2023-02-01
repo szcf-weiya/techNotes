@@ -10,6 +10,10 @@
 
 ![](http://www.ruanyifeng.com/blogimg/asset/201105/free_software_licenses.png)
 
+## Q&A
+
+- don't commit generated files, like pdf from LaTeX sources, see [:link:](https://tex.stackexchange.com/questions/239476/how-expensive-is-it-to-add-pdfs-in-git) (pdf is not proper) and [:link:](https://softwareengineering.stackexchange.com/questions/80962/should-images-be-stored-in-a-git-repository/) (images are OK in git) for more discussions. (But I think if pdf is only for several commits, it would be totally OK.)
+
 ## GitHub
 
 - 添加和设置项目徽章: [shields.io](http://shields.io/)
@@ -22,6 +26,7 @@
 
 - [use `setup-python` instead of `container: python`](https://github.community/t/why-use-setup-python-action-instead-of-a-python-container/17332): fast and flexible
 	- examples: [:material-file-code:](https://github.com/szcf-weiya/Cell-Video/blob/5b6119ba5517a5e94ce0440586c62c25a3f9846d/.github/workflows/blank.yml#L24-L27)
+- In YAML, if needed, use single quotes (instead of double quotes) for strings. see [:link:](https://stackoverflow.com/questions/19109912/yaml-do-i-need-quotes-for-strings-in-yaml) for more details
 
 ### Searching
 

@@ -344,6 +344,9 @@ Implementation for html can be found [here](https://stackoverflow.com/questions/
 
 ## 字体选择
 
+!!! note "少量字体直接用图片代替 2023-01-31 15:10:03"
+    想把个人主页中 "Blog" 换成 "博客"，英文字体加载了 Abode 的艺术字体，但是并不支持中文。考虑到只有这两个中文字有需求，所以一种简单方式是直接生成这字体图片再插入进去。采用 [https://www.diyiziti.com/](https://www.diyiziti.com/) 上的字体，修改的 commit 详见 [:link:](https://github.com/szcf-weiya/szcf-weiya.github.io/commit/ed03cd9b379b4279a157665217cf5cea6eef8a42)
+
 - [超赞！网页设计中最常见的30款英文字体](https://www.uisdc.com/30-west-typegraph-in-web-design)
 - [Source Han Serif Simplified Chinese in Adobe Fonts](https://fonts.adobe.com/fonts/source-han-serif-simplified-chinese#fonts-section), and [Adobe Fonts](https://fonts.adobe.com/typekit)
 - [Google Fonts](https://fonts.google.com/?category=Serif,Sans+Serif,Display,Monospace)

@@ -785,6 +785,7 @@ My application: [TeXtemplates: create a tex template](https://github.com/szcf-we
 
 ## `notify-send`
 
+- use `critical` level: by default the message in the notification list cannot show full message when hovering it, it can display the message when it pops up. So an alternative is to extend the time of showing up. However, the manual `help notify-send` tells that Ubuntu's Notify OSD and GNOME Shell both ignore the expire time parameter `-t`. Hopefully, we can set `-u critical` to make the urgency level high, and it turns out that the pops up window would not disappear only when you click it.
 - show whole message: leave summary empty and only show body, but still only when mouse is hovering the pop window, see also [:link:](https://unix.stackexchange.com/questions/300099/notify-send-how-to-display-full-message-when-message-is-longer-than-one-line)
 - escape `-` in the string, otherwise it throws `Unknown option`
 - specify icon `-i your_icon_path`, note that the path should be full path instead of relative path. 
