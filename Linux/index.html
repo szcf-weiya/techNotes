@@ -21,7 +21,7 @@
         <link rel="next" href="ubuntu/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.9">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.10">
     
     
       
@@ -2902,8 +2902,8 @@
 </ul>
 </li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Linux Distributions</p>
+<details class="note">
+<summary>Linux Distributions</summary>
 <p>根据包管理器进行的分类，主流的发行版有</p>
 <ul>
 <li>apt: Debian, Ubuntu, Linux Mint</li>
@@ -2924,7 +2924,7 @@
 <li><a href="https://www.zhihu.com/question/24261540">知乎：Linux 各大发行版有什么特色？</a></li>
 </ul>
 <p>目前只接触 Ubuntu（个人笔记本） 和 CentOS, Rocky（服务器），所以本笔记主要针对这两种。</p>
-</div>
+</details>
 <ul>
 <li>check kernel version:<ul>
 <li><code>uname -a</code> or <code>uname -mrs</code></li>
@@ -3324,12 +3324,23 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
 <span class="nv">currentmode</span><span class="o">=</span><span class="k">$(</span>xrandr<span class="w"> </span>-q<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;primary 1920x1080+0+0&quot;</span><span class="k">)</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$currentmode</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="c1">#echo &quot;mirror&quot;</span>
-<span class="w">    </span>xrandr<span class="w"> </span>--output<span class="w"> </span>HDMI-1-1<span class="w"> </span>--left-of<span class="w"> </span>eDP-1-1
+<span class="w">    </span>xrandr<span class="w"> </span>--output<span class="w"> </span>HDMI-1-1<span class="w"> </span>--left-of<span class="w"> </span>eDP-1-1<span class="w"> </span>--transform<span class="w"> </span>none
 <span class="k">else</span>
 <span class="w">    </span><span class="c1">#echo &quot;joint&quot;</span>
-<span class="w">    </span>xrandr<span class="w"> </span>--output<span class="w"> </span>HDMI-1-1<span class="w"> </span>--same-as<span class="w"> </span>eDP-1-1
+<span class="w">    </span>xrandr<span class="w"> </span>--output<span class="w"> </span>HDMI-1-1<span class="w"> </span>--same-as<span class="w"> </span>eDP-1-1<span class="w"> </span>--scale-from<span class="w"> </span>1920x1080
 <span class="k">fi</span>
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">&ndash;scale-from</p>
+<p>如果两台显示器的分辨率不一致，则切换时会出现截断的问题。电脑屏幕分辨率为 1920x1080，而若外接显示器为 1920x1200，则切换至 mirror model 时，页面会以 1920x1200 为准，则在电脑屏幕上看不到底部 1200-1080 的部分。</p>
+<p>首先尝试过直接在设置中将外接显示器的分辨率改成 1920x1080，但是这会让画面模糊。</p>
+<p>另一种则是加上关键词 <code>--scale-from 1920x1080</code>，这样外接显示器的分辨率不会变，但会 scale 至电脑屏幕相同的分辨率大小。</p>
+<p>scale 之后再用 xrandr 查看便是 1920x1080，但在设置界面下显示器的分辨率仍保持不变。</p>
+</div>
+<div class="admonition top">
+<p class="admonition-title">&ndash;transform none</p>
+<p>另外观察到 scale 一次之后就不会再 scale 回来了。比如上面只在切换至 mirror 时有 scale，但是切换回 joint 时其 size 并不会变成 1920x1200，而继续保持 1920x1080. 为了避免这种情况，在转成 joint mode 时取消 scale，这可以通过 <code>--transform none</code> 实现。参考 <a href="https://unix.stackexchange.com/questions/390099/reset-xrandr-or-switch-off-the-scale-from-setting-at-disconnect"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
+</div>
 <p>然后进入 keyboard shortcut 设置界面，</p>
 <ul>
 <li>Name: <code>switch display mode</code></li>
@@ -3400,7 +3411,7 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2023</span>
       
         <br>
         Created:
@@ -3413,6 +3424,53 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
 
 
 
+
+  <h2 id="__comments">Comments</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="szcf-weiya/techNotes"
+        data-repo-id="MDEwOlJlcG9zaXRvcnk4NDA2NDk0Mw=="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOBQK6r84CSDX_"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
 
                 
               </article>
@@ -3513,7 +3571,7 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>
+      <script src="../assets/javascripts/bundle.6df46069.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
