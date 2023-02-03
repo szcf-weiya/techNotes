@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Linux Notes
 
 ## System/Hardware Info
@@ -7,7 +11,7 @@
   	- `lsb_release -a`
   	- `hostnamectl`
 
-!!! note "Linux Distributions"
+??? note "Linux Distributions"
 
     根据包管理器进行的分类，主流的发行版有
 
@@ -545,12 +549,24 @@ see also: [:link:](https://superuser.com/questions/1037466/how-to-start-a-system
 currentmode=$(xrandr -q | grep "primary 1920x1080+0+0")
 if [[ -n $currentmode ]]; then
     #echo "mirror"
-    xrandr --output HDMI-1-1 --left-of eDP-1-1
+    xrandr --output HDMI-1-1 --left-of eDP-1-1 --transform none
 else
     #echo "joint"
-    xrandr --output HDMI-1-1 --same-as eDP-1-1
+    xrandr --output HDMI-1-1 --same-as eDP-1-1 --scale-from 1920x1080
 fi
 ```
+
+!!! tip "--scale-from"
+    如果两台显示器的分辨率不一致，则切换时会出现截断的问题。电脑屏幕分辨率为 1920x1080，而若外接显示器为 1920x1200，则切换至 mirror model 时，页面会以 1920x1200 为准，则在电脑屏幕上看不到底部 1200-1080 的部分。
+
+    首先尝试过直接在设置中将外接显示器的分辨率改成 1920x1080，但是这会让画面模糊。
+
+    另一种则是加上关键词 `--scale-from 1920x1080`，这样外接显示器的分辨率不会变，但会 scale 至电脑屏幕相同的分辨率大小。
+
+    scale 之后再用 xrandr 查看便是 1920x1080，但在设置界面下显示器的分辨率仍保持不变。
+
+!!! top "--transform none"
+    另外观察到 scale 一次之后就不会再 scale 回来了。比如上面只在切换至 mirror 时有 scale，但是切换回 joint 时其 size 并不会变成 1920x1200，而继续保持 1920x1080. 为了避免这种情况，在转成 joint mode 时取消 scale，这可以通过 `--transform none` 实现。参考 [:link:](https://unix.stackexchange.com/questions/390099/reset-xrandr-or-switch-off-the-scale-from-setting-at-disconnect)
 
 然后进入 keyboard shortcut 设置界面，
 

@@ -1,3 +1,9 @@
+## 2023.02
+
+- An epitope, also known as antigenic determinant, is the part of an antigen that is recognized by the immune system, specifically by antibodies, B cells or T cells.
+- Neoepitopes are a class of major histocompatibility complex (MHC) bounded peptides. They represent the antogenic determinant of neoantigens.
+- legendary: 非常著名的，享有盛名的，传奇的
+
 ## 2023.01
 
 - plasma: 血浆
@@ -45,7 +51,7 @@
 - a **unitary (集中的，中央集权的)** government where no power was devolved to states or provinces.
 - Procter & Gamble (P & G): [宝洁](https://zh.wikipedia.org/wiki/%E5%AE%9D%E6%B4%81)
 - mass spectrometry: 质谱分析法
-- Mass incarceration is shorthand for the fact that the U.S. incarcerates more people than any nation in the world, including China.
+- Mass **incarceration (监禁，监狱)** is shorthand for the fact that the U.S. incarcerates more people than any nation in the world, including China.
 - diversification: 多样化
 - kidney renal clear cell **carcinoma (癌)**: 肾透明细胞癌
 - A protein isoform, or protein variant, is a member of a set of highly similar proteins that originate from a single gene or gene family and are the result of genetic differences.
@@ -248,7 +254,7 @@
 - in statistical **parlance (说法，用语)**
 - Michael Jordan of Berkeley **alluded to (提到，暗指)** how uncertainty quantification has long been a **niche (细分)** topic in ML, and still kind of is, but this might be shifting.
 - **dovetail (吻合，兼顾)** career and family commitments
-- judge the **plausibility** of assumptions.
+- judge the **plausibility (合理性，可信性)** of assumptions.
     - plausible: 似乎是真的（有理）
 - The GPU revolution catapulted NVIDIA's past incumbents such as Intel or Qualcomm both in market capitalization and AI-related technology innovation.
 - **Mass transit (公共交通)** can help **unclog (疏通)** the roads and your **arteries (动脉)**.
@@ -423,7 +429,7 @@
 - Christopher Nolan produced one of his first most influential movies in the history of **cinematography (电影摄制技术)**. Memento broke many of the traditional paradigms in the film industry by structuring two parallel narratives, one **chronologically (按年代顺序，按时间顺序)** going backwards and one going forward.
     - chronology: 年表，年代学
 - Time to **take the plunge (冒险尝试；投入)** into learning to code?
-- I need to add some bright colors to my wardrobe.
+- I need to add some bright colors to my **wardrobe (衣柜，衣橱)**.
 - spay
 - They were gaga over Will Smith's new rap album.
 - The holy **grail (圣杯；渴望但永远得不到的东西)** of mobile deep machine learning is to build models that can execute natively and efficiently in mobile devices.
@@ -864,7 +870,7 @@
 - This means the person who restored the credibility of Greek statistics will have to apologize to a person who had been **fudging (搪塞，篡改)** the data.
 - We distinguish the **corpora (语料，文集, plural form of corpus)** containing reference annotations based on their origin.
 - Gold-standard **corpus (语料)** containing human-made reference annotations, obtained as a **consensual** or majority opinion of several human experts.
-- A frame definition domain was virtually eroded in the **lateral** axes (x and y) by a constant number of pixels (**voxels (体素或立体像素，是体积像素 volume pixel 的简称)**) E depending on a dataset.
+- A frame definition domain was virtually eroded in the **lateral (侧面的，横向的)** axes (x and y) by a constant number of pixels (**voxels (体素或立体像素，是体积像素 volume pixel 的简称)**) E depending on a dataset.
 - In 3D image data, the marker does not have to be necessarily formed of a single connected component, allowing annotators to create **quintessential (最完美的，精髓的)** volumetric markers.
 - Things done by **halves** are never done right.
 - The process of extracting the object from the original image is often called **matting  (抠图)**, while the process of inserting it into another image is called compositing.
@@ -938,7 +944,7 @@
 - A [bracket](https://en.wikipedia.org/wiki/Bracket_(tournament)) or **tournament (锦标赛)** bracket is a tree diagram that represents the series of games played during a **knockout (淘汰赛的)** tournament.
 - Politics has taken on particular **vitriol (尖刻的话)** in recent years.
 - Commentators and political scientists have described the rising tide of polarization in terms of concepts such as **tribalism (部落制)** and negative **partisanship (党派性，党派偏见)**.
-- An idealistic picture of science views science as an orderly process where **disinterested**, objective experts look at **crystal clear (完全透明的，【喻】极其明白，十分清楚)** evidence to find the truth.
+- An idealistic picture of science views science as an orderly process where **disinterested (客观的，公正的，无私的)**, objective experts look at **crystal clear (完全透明的，【喻】极其明白，十分清楚)** evidence to find the truth.
     - crystal: 水晶，晶体；水晶的，透明的
 - Fake facts in Covid-19 Science: **Kentucky (肯塔基州)** vs. **Tennessee (田纳西州)**
 
@@ -1017,7 +1023,7 @@
 - they can analyze **precinct (选区，警区)-level** totals to look for "thumbprints" of voter fraud.
 - it's not as sure as a photograph of **"mislaid" ballots** dumped behind a post office.
 - I was **intrigued (激起...的好奇心)** by the observations you made this summer.
-- **In order for** Trump to win a blue state
+- **In order for Trump to** win a blue state ([in order for sth. to happen](https://dictionary.cambridge.org/us/dictionary/english/in-order-for))
 - I put them in a **pile** so that later I can read them in order.
 - this article informs us that Trump is **invincible**.
 - this is just a **rehash (旧东西的改作，新形式表达旧内容)** of the major news media.
@@ -1092,7 +1098,7 @@
 - swatting away people like other data **thugs (暴徒)**
 - old people with **comorbidities (合并症)**
 - Trump's probabilities are **way** (adv. 很远；大量；非常；极其) better.
-- I'm **kicking myself** because I was planning to tell the **hookah** story
+- I'm **kicking myself (后悔)** because I was planning to tell the **hookah (水烟袋)** story
 - the dose you get of **carcinogens (致癌物)** from hookah smoking might be 20 times the dose of smoking a cigarette.
 - if you're willing to accept **anecdotal (轶事的，趣闻的)** evidence, there's always going to be an unlimited amount of evidence which won't tell you anything.
 - according to the National Academy of Sciences, (google “**himmicanes**” for lots more), it saves lives to give **hurricanes** the names of boys rather than girls, because people are more scared of boys so they’ll act with appropriate caution.
@@ -1234,10 +1240,8 @@
 - rationalize it with the **tangible (有形的，可触摸的，切实的)** things
 - the pursuit of powered man flight was like the dot com of the day.
 - under-capitalized
-- the recipe for success
 - And **lo and behold**, look what happened.
 - They only reason these people buy **touch-tone phone** is because you can't buy **rotary phones** anymore.
-- the system tips
 - gut feeling
 - Those steps can in turn increase economic **dislocations (混乱，位移)**, including **plummeting (暴跌)** stock prices.
 - rewind live TV
@@ -1359,14 +1363,14 @@
 ## 2020.01
 
 1. op-ed: opposite the editorial page. 一种源于欧美报纸出版业的新闻出版用语，意指一种由外人所撰写、刊登在报纸或杂志上的评述性质文章。
-2. fear of **contracting the virus** is **rampant**
+2. fear of **contracting the virus** is **rampant (泛滥的，猖獗的，疯长的)**
 3. get people to be more **deliberative (慎重的，协商的)**
 4. I remain fearful that someone will **nuke (用核武器攻击)** our city.
 5. fear can shake us out of **complacency**.
 6. cognitive **illusion (错觉，幻想)**
 7. the high-end
 8. Wasn't there something strange about the extreme **disparity (不同，不一致)** in public reactions?
-1. a style that is so simple and open and **guileless** that it approaches **parody (拙劣的模仿，荒谬的替代物)**.
+1. a style that is so simple and open and **guileless (厚道的，老实的)** that it approaches **parody (拙劣的模仿，荒谬的替代物)**.
     - **The Remains of the Day (长日将尽)** [:link:](https://en.wikipedia.org/wiki/The_Remains_of_the_Day) is clearly **parodic (parody, 戏仿，谐拟)** [:link:](https://zh.wikipedia.org/wiki/%E6%88%B2%E4%BB%BF), or at least a classic of the "unreliable narrator" genre.
 3. I found that some labeled the book as **satire (讽刺，讥讽)** and others took it straight.
 4. with any parodic elements merely representing Levitt’s recognition of life’s **absurdities**.
@@ -1522,8 +1526,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - **brain teaser (脑筋急转弯【戏弄大脑】)**.
     - you can introduce XXX to your friends and family by sharing this 25 second **teaser (an advertisement that offers something free in order to arouse customers' interest)** video.
 1. An unconvincing analysis claiming to **debunk (揭穿真相，暴露)** the health benefits of moderate drinking.
-2. junk science is promoted by **credulous (轻信的，易受骗的)** organizations
-3. The commentary also outlines some **hallmarks (特点)** of potentially **dubious (可疑的，不可靠的)** science.
+- junk science is promoted by **credulous (轻信的，易受骗的)** organizations
+- The commentary also outlines some **hallmarks (特点)** of potentially **dubious (可疑的，不可靠的)** science.
 4. "Wow, today's the school picnic!", **exclaimed (呼喊，惊叫，大声说)** Tom.
 6. That **strikes me as (cause someone [me] to think about in a particular way)** rather bold: 这让我觉得相当大胆
 1. Public speaking is **daunting (使人畏缩的，使人气馁的)** for most people.
@@ -1555,7 +1559,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 26. credulity: 轻信
 27. hiatus: 间断
 28. fallacy: 谬误
-29. disdain: 鄙视蔑视
+- disdain: 鄙视蔑视
 1. as far as I can tell: 据我所知
 2. You really are a **fabulous (极好的，绝妙的)** designer.
 
@@ -1816,7 +1820,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 31. backbone
 32. **overthrow (推翻，打倒)** the government
 33. mount
-35. canvas
+35. canvas: 帆布，画布
 36. pull (someone or something) out of a hat: To select someone or something entirely at random.
 37. Zurich: 苏黎世
 38. chanting, bang
@@ -1895,14 +1899,14 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 8. In an attempt to **inveigle/entice (诱使，引诱，怂恿)** voters to support her, the **incumbent (在职的)** politician **beguilingly (欺骗地)** greeted a room full of **constituents (选民)** and **pledged (保证)** to lower taxes--even though she had only ever done the opposite while in office.
 9. After a series of storms, the once arid landscape became verdant/bountiful for the first time in many months.
 10. Although he received many visitors, the **misanthropic (厌恶人类的)**/**curmudgeonly (小气的，脾气坏的)** old man **shooed (轰走，驱赶)** them away after only a few minutes.
-11. Eileen used to be a picky eater, but since a new complex of fine dining and ethnic restaurants opened in her neighborhood, she has been quite **epicurean (好美食的，【通过美食】享乐主义的)**/**gourmandizing (gourmandize: n. 大吃大喝 v. 狼吞虎咽)**.
-1. The rise of the nascent middle class **catalyzed (催化，促进)** a new **economic boom (经济繁荣，经济腾飞)**.
-2. The **malodor (恶臭，臭气)** of the **rotten (腐烂的)** meat made us **nauseate (作呕，厌恶，产生恶感)**.
-3. As the **nexus (关系，连结，连系)** for three great religions, **Jerusalem (耶路撒冷)** has had a troubled as well as **illustrious (著名的，杰出的，卓越的)** history.
+- Eileen used to be a picky eater, but since a new complex of fine dining and ethnic restaurants opened in her neighborhood, she has been quite **epicurean (好美食的，【通过美食】享乐主义的)**/**gourmandizing (gourmandize: n. 大吃大喝 v. 狼吞虎咽)**.
+- The rise of the nascent middle class **catalyzed (催化，促进)** a new **economic boom (经济繁荣，经济腾飞)**.
+- The **malodor (恶臭，臭气)** of the **rotten (腐烂的)** meat made us **nauseate (作呕，厌恶，产生恶感)**.
+- As the **nexus (关系，连结，连系)** for three great religions, **Jerusalem (耶路撒冷)** has had a troubled as well as **illustrious (著名的，杰出的，卓越的)** history.
 4. His involvement was **nominal (名义上的，有名无实的)**.
 5. The two girls soon became **fast (紧的，稳固的)** and inseparable friends.
 1. Recent discoveries have generally vindicated the physicist's theories.
-2. a novel that presents a fairly veracious and unvarnished picture of the lives of affluent suburbanites.
+2. a novel that presents a fairly **veracious (说真话的，真实的)** and **unvarnished (不加掩饰的，质朴的，坦率的)** picture of the lives of affluent suburbanites.
 3. **Inevitably (必然，必定)**, his remarkable success attracted the invidious attention of the other sales representatives.
 4. As loyalty unites lovers, so perfidy estranges friends.
 5. Every year I go to Kunming to enjoy its cool and salubrious climate.
@@ -1963,7 +1967,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 10. We do not have even the faintest inkling of what the project was all about.
 11. A suspension without pay is condign punishment for breaking the company's code of business ethics.
 12. All people **concurred (同意，赞同)** to pass the reform legislation.
-13. The administration had nothing but contempt for the ultimate Frisbee team and frequently spoke disdainfully of it.
+13. The administration had nothing but contempt for the ultimate Frisbee team and frequently spoke **disdainfully (轻蔑地，不屑一顾地)** of it.
 14. We accepted his offer to pay for our dinners without demur.
 15. an impartial and perspicacious judge
 16. Her skill and talent **ennoble (封为贵族，使更崇高)** her profession.
@@ -1992,7 +1996,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - choral society: 合唱团
 39. A representation of Cupid as a naked, cherubic boy usually is used as a symbol of love.
 40. The spy obtained the documents by **subterfuge (秘密手段，诡计)**.
-41. The actor must have had some esoteric motive for leaving stage.
+41. The actor must have had some **esoteric (只有内行才懂的，难领略的)** **motive (动机，目的)** for leaving stage.
 42. In just a few pages the writer **etched (蚀刻，画出...的轮廓)** an unforgettable portrait of one of the more remarkable First Ladies.
 43. The minister eschews involvement in local politics, since he doesn't want to diminish his moral authority in the community.
 44. The exhibit was a **hodgepodge (大杂烩，混杂物)** of **mediocre (平庸的，普通的)** art, bad art, and really bad art.
@@ -2020,8 +2024,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 72. sporadic (intermittent or infrequent): 零星的，分散的，不定时发生的
 74. Denigrate (disparage; defame): 诋毁，诽谤，贬低
 75. demonstrate (show; prove) & warrant (justify, 使显得合理，成为...的根据)
-76. Reticence (reserve; tendency to keep silent) & gregariousness or sociability.
-77. Competence (capability; proficiency)
+76. reticence (reserve; tendency to keep silent 沉默、寡言、含蓄、保留) & gregariousness or sociability.
+77. competence (capability; proficiency)
 78. homogeneous (all of the same kind; uniform)
 80. Reprobates are unprincipled, wicked people.
 81. Charlatans are quacks, persons who pretend to have more skill than they actually possess.
@@ -2078,11 +2082,11 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 - magma chamber: 岩浆房，岩浆库
 1. **mainstay (支柱，骨干)** industry
 2. caravan: 车队，大篷车
-3. expedition
-    - identifying patients with similar disease trajectory might **expedite (加快进展)** the diagnosis and treatment and reduce patient suffering.
+- expedition: 探险、考察
+- identifying patients with similar disease trajectory might **expedite (加快进展)** the diagnosis and treatment and reduce patient suffering.
 4. merchant
 5. guild: 同业公会；（同一行业、志趣或目的的）协会
-6. uphold
+- uphold: 支持，维持（原判），受理（申诉）
 7. The word is now an egalitarian society, but the reality is the existence of such discrimination.
 8. Here it would seem to be a wall hanging, or even a free standing object of worship.
 9. It involves a lot of aspects, among which ideological and political education really counts and is one of the most effective ways as well.
