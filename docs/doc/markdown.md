@@ -26,6 +26,14 @@ Personal Tips:
 
 refer to [pierrejoubert73/markdown-details-collapsible.md](https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1ab)
 
+
+!!! tip "shortcut"
+	It is annoying to input the tag manually. Here are I found two shortcuts. ([:link:](https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1ab?permalink_comment_id=4201513#gistcomment-4201513))
+
+	- bookmarklet ([:link:](https://www.freecodecamp.org/news/what-are-bookmarklets/)): add a javascript snippet as a bookmark.
+	- [Text Blaze](https://chrome.google.com/webstore/detail/text-blaze/idgadaccgipmpannjkmfddolnnhmeklj/related): a chrome extension. Just type the customized define command `/details`.
+
+
 ## `mermaid`: flowchart
 
 Homepage: <https://mermaid-js.github.io/>

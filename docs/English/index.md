@@ -3,6 +3,7 @@
 - An epitope, also known as antigenic determinant, is the part of an antigen that is recognized by the immune system, specifically by antibodies, B cells or T cells.
 - Neoepitopes are a class of major histocompatibility complex (MHC) bounded peptides. They represent the antogenic determinant of neoantigens.
 - legendary: 非常著名的，享有盛名的，传奇的
+- learn how **radiocarbon (放射性碳)** dating is spotting art **forgeries (伪造，赝品)**
 
 ## 2023.01
 
@@ -936,7 +937,7 @@
 - it has some deeply **wacky (乖僻的，古怪的)** scenarios
 - voter **turnout**
 - the betting markets have Trump as a slight favorite in Florida, which I'd attribute to **bettors** performing some sort of implicit averaging of current polls and the 2016 election results.
-- there is some room for **maneuver** here.
+- there is some room for **maneuver (演习，花招)** here.
 - the Republican party controls the federal government and many state **legislatures**.
 - Picking pennies in front of a **steamroller (蒸汽压路机)**: A **parable (比喻，寓言)** comes to life.
 - I stopped by the **Jamaican** beef **patties** place but they were closed.
