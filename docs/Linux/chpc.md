@@ -493,6 +493,53 @@ refer to
 - [Multifactor Priority Plugin](https://slurm.schedmd.com/priority_multifactor.html)
 - [Slurm priorities](http://www.ceci-hpc.be/slurm_prio.html)
 
+## QOS
+
+In practice, we are always told that the maximum number of CPUs/cores and Jobs, which can be specified by QOS. Recall that we are suggested to specify `-q stat` when we submit jobs. Without such option, it uses the default one `-q normal`. Actually, they corresponds to two different Quality of Service (QOS), i.e., two different quotas.
+
+For example, in the below configuration, when we use `-p stat -q stat`, the maximum number of jobs and cpus are limited to be 30. But if we just specify `-p stat`, the submitted jobs would be counted into `-p normal` whose limitation is only 10. (see [:link:](https://github.com/szcf-weiya/techNotes/issues/7) for my exploration)
+
+```bash
+$ sacctmgr show qos format=name,MaxJobsPU,MaxSubmitPU,MaxTRESPU
+      Name MaxJobsPU MaxSubmitPU     MaxTRESPU 
+---------- --------- ----------- ------------- 
+    normal                    10               
+      stat                    30        cpu=30 
+    20jobs                    20               
+        p1                    10               
+        p2                    10               
+        p3                    10               
+      hold         0          10               
+    tfchan                    10               
+      bull                    50               
+      ligo                   100               
+      demo                    10               
+yingyingw+                    30        cpu=30 
+     bzhou                    10               
+       geo                    10               
+     cstat                              cpu=16 
+```
+
+Furthermore, the QOS configuration is defined in 
+
+```bash
+$ cat /etc/slurm/slurm.conf 
+...
+# Partition
+PartitionName=chpc Nodes=chpc-cn[002-029,033-040,042-050],chpc-gpu[001-003],chpc-k80gpu[001-002],chpc-large-mem01,chpc-m192a[001-010] Default=YES MaxTime=7-0 MaxNodes=16 State=UP DenyAccounts=public AllowQos=normal,cstat,tfchan,ligo #DenyQos=stat,bull,demo
+PartitionName=public Nodes=chpc-cn[005,015,025,035,045],chpc-gpu001 MaxTime=7-0 State=UP 
+PartitionName=stat Nodes=chpc-cn[101-110],chpc-gpu[010-014] State=UP AllowAccounts=stat QOS=stat
+PartitionName=yingyingwei Nodes=chpc-cn111,chpc-gpu015 State=UP AllowGroups=yingyingwei QOS=yingyingwei
+PartitionName=bzhou Nodes=chpc-gpu[004-009] State=UP AllowAccounts=boleizhou QOS=bzhou
+PartitionName=tjonnie Nodes=chpc-cn[030-032,041] State=UP AllowGroups=s1155137381 QOS=ligo
+#PartitionName=ligo Nodes=chpc-cn050 State=UP AllowAccounts=tjonnieli QOS=ligo
+#PartitionName=demo Nodes=chpc-cn049 State=UP AllowAccounts=pione QOS=demo
+#PartitionName=geo Nodes=chpc-cn048 State=UP AllowGroups=s1155102420 QOS=geo
+PartitionName=itsc Nodes=ALL State=UP AllowAccounts=pione QOS=bull Hidden=yes 
+```
+
+so to gain more quota, a possible (might **not friendly** if without notification) way is to try other policy `-q` on other partition `-p`. For example, the above `cstat` does not specify the limitation on the number of submit jobs (`MaxJobsPU`) and no `cstat` record (and hence no contraints like `AllowAccounts` and `AllowQos`) in the configuration file, so we can submit more than 30 jobs with `-q cstat`, althought might not be too much since it limits the resource `cpu=16` in `MaxTRESPU`. 
+
 ## CPU/Memory Usage
 
 Check the CPU and memory usage of a specific job. The natural way is to use `top` on the node that run the job. After ssh into the corresponding node, get the map between job id and process id via
