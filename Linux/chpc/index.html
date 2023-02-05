@@ -841,6 +841,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#qos" class="md-nav__link">
+    QOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cpumemory-usage" class="md-nav__link">
     CPU/Memory Usage
   </a>
@@ -2685,6 +2692,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#qos" class="md-nav__link">
+    QOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cpumemory-usage" class="md-nav__link">
     CPU/Memory Usage
   </a>
@@ -3139,6 +3153,44 @@ $<span class="w"> </span>sprio<span class="w"> </span>-w<span class="w"> </span>
 <li><a href="https://slurm.schedmd.com/priority_multifactor.html">Multifactor Priority Plugin</a></li>
 <li><a href="http://www.ceci-hpc.be/slurm_prio.html">Slurm priorities</a></li>
 </ul>
+<h2 id="qos">QOS<a class="headerlink" href="#qos" title="Permanent link">&para;</a></h2>
+<p>In practice, we are always told that the maximum number of CPUs/cores and Jobs, which can be specified by QOS. Recall that we are suggested to specify <code>-q stat</code> when we submit jobs. Without such option, it uses the default one <code>-q normal</code>. Actually, they corresponds to two different Quality of Service (QOS), i.e., two different quotas.</p>
+<p>For example, in the below configuration, when we use <code>-p stat -q stat</code>, the maximum number of jobs and cpus are limited to be 30. But if we just specify <code>-p stat</code>, the submitted jobs would be counted into <code>-p normal</code> whose limitation is only 10. (see <a href="https://github.com/szcf-weiya/techNotes/issues/7"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a> for my exploration)</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sacctmgr<span class="w"> </span>show<span class="w"> </span>qos<span class="w"> </span><span class="nv">format</span><span class="o">=</span>name,MaxJobsPU,MaxSubmitPU,MaxTRESPU
+<span class="w">      </span>Name<span class="w"> </span>MaxJobsPU<span class="w"> </span>MaxSubmitPU<span class="w">     </span>MaxTRESPU<span class="w"> </span>
+----------<span class="w"> </span>---------<span class="w"> </span>-----------<span class="w"> </span>-------------<span class="w"> </span>
+<span class="w">    </span>normal<span class="w">                    </span><span class="m">10</span><span class="w">               </span>
+<span class="w">      </span>stat<span class="w">                    </span><span class="m">30</span><span class="w">        </span><span class="nv">cpu</span><span class="o">=</span><span class="m">30</span><span class="w"> </span>
+<span class="w">    </span>20jobs<span class="w">                    </span><span class="m">20</span><span class="w">               </span>
+<span class="w">        </span>p1<span class="w">                    </span><span class="m">10</span><span class="w">               </span>
+<span class="w">        </span>p2<span class="w">                    </span><span class="m">10</span><span class="w">               </span>
+<span class="w">        </span>p3<span class="w">                    </span><span class="m">10</span><span class="w">               </span>
+<span class="w">      </span>hold<span class="w">         </span><span class="m">0</span><span class="w">          </span><span class="m">10</span><span class="w">               </span>
+<span class="w">    </span>tfchan<span class="w">                    </span><span class="m">10</span><span class="w">               </span>
+<span class="w">      </span>bull<span class="w">                    </span><span class="m">50</span><span class="w">               </span>
+<span class="w">      </span>ligo<span class="w">                   </span><span class="m">100</span><span class="w">               </span>
+<span class="w">      </span>demo<span class="w">                    </span><span class="m">10</span><span class="w">               </span>
+yingyingw+<span class="w">                    </span><span class="m">30</span><span class="w">        </span><span class="nv">cpu</span><span class="o">=</span><span class="m">30</span><span class="w"> </span>
+<span class="w">     </span>bzhou<span class="w">                    </span><span class="m">10</span><span class="w">               </span>
+<span class="w">       </span>geo<span class="w">                    </span><span class="m">10</span><span class="w">               </span>
+<span class="w">     </span>cstat<span class="w">                              </span><span class="nv">cpu</span><span class="o">=</span><span class="m">16</span><span class="w"> </span>
+</code></pre></div>
+<p>Furthermore, the QOS configuration is defined in </p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>/etc/slurm/slurm.conf<span class="w"> </span>
+...
+<span class="c1"># Partition</span>
+<span class="nv">PartitionName</span><span class="o">=</span>chpc<span class="w"> </span><span class="nv">Nodes</span><span class="o">=</span>chpc-cn<span class="o">[</span><span class="m">002</span>-029,033-040,042-050<span class="o">]</span>,chpc-gpu<span class="o">[</span><span class="m">001</span>-003<span class="o">]</span>,chpc-k80gpu<span class="o">[</span><span class="m">001</span>-002<span class="o">]</span>,chpc-large-mem01,chpc-m192a<span class="o">[</span><span class="m">001</span>-010<span class="o">]</span><span class="w"> </span><span class="nv">Default</span><span class="o">=</span>YES<span class="w"> </span><span class="nv">MaxTime</span><span class="o">=</span><span class="m">7</span>-0<span class="w"> </span><span class="nv">MaxNodes</span><span class="o">=</span><span class="m">16</span><span class="w"> </span><span class="nv">State</span><span class="o">=</span>UP<span class="w"> </span><span class="nv">DenyAccounts</span><span class="o">=</span>public<span class="w"> </span><span class="nv">AllowQos</span><span class="o">=</span>normal,cstat,tfchan,ligo<span class="w"> </span><span class="c1">#DenyQos=stat,bull,demo</span>
+<span class="nv">PartitionName</span><span class="o">=</span>public<span class="w"> </span><span class="nv">Nodes</span><span class="o">=</span>chpc-cn<span class="o">[</span><span class="m">005</span>,015,025,035,045<span class="o">]</span>,chpc-gpu001<span class="w"> </span><span class="nv">MaxTime</span><span class="o">=</span><span class="m">7</span>-0<span class="w"> </span><span class="nv">State</span><span class="o">=</span>UP<span class="w"> </span>
+<span class="nv">PartitionName</span><span class="o">=</span>stat<span class="w"> </span><span class="nv">Nodes</span><span class="o">=</span>chpc-cn<span class="o">[</span><span class="m">101</span>-110<span class="o">]</span>,chpc-gpu<span class="o">[</span><span class="m">010</span>-014<span class="o">]</span><span class="w"> </span><span class="nv">State</span><span class="o">=</span>UP<span class="w"> </span><span class="nv">AllowAccounts</span><span class="o">=</span>stat<span class="w"> </span><span class="nv">QOS</span><span class="o">=</span>stat
+<span class="nv">PartitionName</span><span class="o">=</span>yingyingwei<span class="w"> </span><span class="nv">Nodes</span><span class="o">=</span>chpc-cn111,chpc-gpu015<span class="w"> </span><span class="nv">State</span><span class="o">=</span>UP<span class="w"> </span><span class="nv">AllowGroups</span><span class="o">=</span>yingyingwei<span class="w"> </span><span class="nv">QOS</span><span class="o">=</span>yingyingwei
+<span class="nv">PartitionName</span><span class="o">=</span>bzhou<span class="w"> </span><span class="nv">Nodes</span><span class="o">=</span>chpc-gpu<span class="o">[</span><span class="m">004</span>-009<span class="o">]</span><span class="w"> </span><span class="nv">State</span><span class="o">=</span>UP<span class="w"> </span><span class="nv">AllowAccounts</span><span class="o">=</span>boleizhou<span class="w"> </span><span class="nv">QOS</span><span class="o">=</span>bzhou
+<span class="nv">PartitionName</span><span class="o">=</span>tjonnie<span class="w"> </span><span class="nv">Nodes</span><span class="o">=</span>chpc-cn<span class="o">[</span><span class="m">030</span>-032,041<span class="o">]</span><span class="w"> </span><span class="nv">State</span><span class="o">=</span>UP<span class="w"> </span><span class="nv">AllowGroups</span><span class="o">=</span>s1155137381<span class="w"> </span><span class="nv">QOS</span><span class="o">=</span>ligo
+<span class="c1">#PartitionName=ligo Nodes=chpc-cn050 State=UP AllowAccounts=tjonnieli QOS=ligo</span>
+<span class="c1">#PartitionName=demo Nodes=chpc-cn049 State=UP AllowAccounts=pione QOS=demo</span>
+<span class="c1">#PartitionName=geo Nodes=chpc-cn048 State=UP AllowGroups=s1155102420 QOS=geo</span>
+<span class="nv">PartitionName</span><span class="o">=</span>itsc<span class="w"> </span><span class="nv">Nodes</span><span class="o">=</span>ALL<span class="w"> </span><span class="nv">State</span><span class="o">=</span>UP<span class="w"> </span><span class="nv">AllowAccounts</span><span class="o">=</span>pione<span class="w"> </span><span class="nv">QOS</span><span class="o">=</span>bull<span class="w"> </span><span class="nv">Hidden</span><span class="o">=</span>yes<span class="w"> </span>
+</code></pre></div>
+<p>so to gain more quota, a possible (might <strong>not friendly</strong> if without notification) way is to try other policy <code>-q</code> on other partition <code>-p</code>. For example, the above <code>cstat</code> does not specify the limitation on the number of submit jobs (<code>MaxJobsPU</code>) and no <code>cstat</code> record (and hence no contraints like <code>AllowAccounts</code> and <code>AllowQos</code>) in the configuration file, so we can submit more than 30 jobs with <code>-q cstat</code>, althought might not be too much since it limits the resource <code>cpu=16</code> in <code>MaxTRESPU</code>. </p>
 <h2 id="cpumemory-usage">CPU/Memory Usage<a class="headerlink" href="#cpumemory-usage" title="Permanent link">&para;</a></h2>
 <p>Check the CPU and memory usage of a specific job. The natural way is to use <code>top</code> on the node that run the job. After ssh into the corresponding node, get the map between job id and process id via</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>scontrol<span class="w"> </span>listpids<span class="w"> </span>YOUR_JOB_ID
@@ -3407,7 +3459,7 @@ which:<span class="w"> </span>no<span class="w"> </span>R<span class="w"> </span
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2023</span>
       
         <br>
         Created:
