@@ -131,9 +131,11 @@ I try to categorize them as follows,
 
 ## Chrome
 
-!!! extensions
+!!! note "Highly Recommended Extensions (强烈推荐的插件)"
     - [Hypothesis](https://web.hypothes.is/): 网页标注
     - [GoFullPage - Full Page Screen Capture](https://chrome.google.com/webstore/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl): 滚动截图
+    - [Text Blaze](https://chrome.google.com/webstore/detail/text-blaze/idgadaccgipmpannjkmfddolnnhmeklj/related): 自定义字符串替换
+        - [应用场景之一](../doc/markdown.md#collapsible-section)：在 Markdown 输入框中敲击 `/details` 即可替换成繁琐的 `<details><summary></summary></details>`（省略了必要的换行）
 
 ??? warning "not saving password"
 

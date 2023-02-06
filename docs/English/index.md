@@ -1556,7 +1556,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 22. stratosphere: 平流层
 23. celebrity: 名望
 24. mingle: 使混合，使连结
-25. garbled
+25. garbled: 混乱不清的
 26. credulity: 轻信
 27. hiatus: 间断
 28. fallacy: 谬误
@@ -1746,7 +1746,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - [新教](https://zh.wikipedia.org/wiki/%E6%96%B0%E6%95%99)，又称基督新教，是西方基督教中不属于天主教体系的宗派之统称，中文“新教”一词是主要对应和区别于宗教改革之前的“旧教”。新教源于16世纪神学家马丁·路德、加尔文、慈运理等人所领导的宗教改革运动，与天主教、东正教并列为基督宗教三大分支。
 1. If we had tens of thousands of **skeletons** distributed at regular intervals through the historical record, there would be **appreciably (可察觉地，明显地)** more degrees of shading.
 2. So they reanalyzed their data **in light of (根据，鉴于)** the new maps.
-3. We've seen the economy moving forward, **albeit** a little too slowly, he said.
+3. We've seen the economy moving forward, **albeit (尽管，虽然)** a little too slowly, he said.
 4. It did, however, have another weapon **at its disposal (任其支配，任其处置)**.
 1. These tensions are **exacerbated (使恶化，使加重)** between the wars.
 2. They **glossed over (掩饰)** some key issues on that front.
@@ -1952,7 +1952,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 44. Thwarting centuries of would-be conquerors, the Aztec fortress of Chapultepec seemed impregnable, until U.S. forces under General Winfield Scott were able to take the fortress with surprisingly little effort.
 45. Her genteel behaviors at the ball make others conjecture that she must come from a distinguished noble family.
 46. It would be gauche to mention the subject.
-47. The presumptuous doctor didn't even bother to explain to me the treatment that I would be receiving.
+47. The **presumptuous (放肆的，自以为是的)** doctor didn't even bother to explain to me the treatment that I would be receiving.
 48. Under such a circumstance his demand for attention was utterly **presumptuous (自以为是的，专横的，冒失的)**.
 49. We could hear the cook in the kitchen railing against his assistant and wondered if we'd ever get our food.
 50. Vociferous opponents of the bill protested angrily outside the Congress.
@@ -2112,7 +2112,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. cardioid: 心脏线
 3. Last but not least 最后但不是最不重要的一点
 1. calligrapher: 书法家
-2. decorator
+2. decorator:（房屋的）油漆匠；适用于室内装饰的
 3. Islamic
 4. parchment: 羊皮纸，羊皮纸文献
 5. angular
