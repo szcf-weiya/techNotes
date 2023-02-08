@@ -927,7 +927,7 @@
     - confer sth. on/upon sb.: 授予，颁发（奖项、学位、荣誉或权利）
     - confer with sb. on/about sth.: 商讨，协商，交换意见
 - The extensions to multiple-view reconstructions **necessitated** the introduction of nonlinear optimization strategies.
-- Thus it is that firmness and strength are the **concomitants** of death; softness and weakness, the **concomitants** of life.
+- Thus it is that firmness and strength are the **concomitants (同时发生的事)** of death; softness and weakness, the **concomitants** of life.
 - It should be possible for a class to inherit from as many others as necessary, with an adequate mechanism for **disambiguating** name **clashes**.
 - No comparison frameworks are available, leading to an **arduous** selection of an appropriate variant for particular experimental conditions.
 - Laser-range sensors were a **cornerstone (基石，基础)** to the development of mapping and navigation in the past two decades.
@@ -1026,7 +1026,7 @@
 - I was **intrigued (激起...的好奇心)** by the observations you made this summer.
 - **In order for Trump to** win a blue state ([in order for sth. to happen](https://dictionary.cambridge.org/us/dictionary/english/in-order-for))
 - I put them in a **pile** so that later I can read them in order.
-- this article informs us that Trump is **invincible**.
+- this article informs us that Trump is **invincible (不可战胜的，不能改变的)**.
 - this is just a **rehash (旧东西的改作，新形式表达旧内容)** of the major news media.
 - it's your grandpa who's been reading a bunch of newspapers and watching lots of TV news and then **regurgitating** it back to you.
 - I leave it to you to decide whether this is **fodder (饲料，素材)** for your blog.
@@ -2044,7 +2044,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 93. Phlegmatic means not easily disturbed or excited.
 94.  **Autocratic (专制的，独裁的)** means **tyrannical (暴君的，专横的)** or domineering.
 95. Wistful means pensively sad or yearning
-97. indigenous & ingenuous & disingenuous
+97. **indigenous (土著的，原产的，土生土长的)** & ingenuous & disingenuous
 98. dignity (formal bearing; nobility of character)
 99. insincerity (intentional deceitfulness)
 100. reverence (deep respect; awe)
