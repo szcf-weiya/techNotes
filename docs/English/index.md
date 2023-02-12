@@ -1115,7 +1115,6 @@
 - the number 53 simply stopped coming up on the Venice wheel -- leading **punters** to place increasingly big bets on the number in the certainty that it must soon make a reappearance.
 - their financial ruin, the pain of which resulted in a **spate** of suicides
 - the victims had been *led **astray (adv 迷途地; adj 迷路的)** (引入歧途)* by a reasoning flaw called the "gambler's fallacy" -- a worryingly common error that can **derail (脱轨)** many of our professional decisions, from a **goalkeeper**'s responses to penalty shootouts in football to stock investments and even **judicial (法庭的，公正的)** rulings on new **asylum** cases
-- the team analysed **umpires**' decisions in Major League Baseball games.
 - **Jellyfish (水母，海蜇)** is the common name for the free-swimming form of gelatinous animals
 - farmed in **aquaculture (水产养殖业)** systems
 - thousands of swimmers are stung with varying degrees of severity every year.
@@ -1831,7 +1830,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 42. polychrome
 43. disintegrated
 44. heroism, divinity
-46. armor, cloak
+46. **armor (盔甲，护甲)**, **cloak (斗篷，遮盖物)**
 1. It really gets them **enamored (迷恋，爱上)** with riding and get to make something part of their daily lives.
 2. The **venue** is the school.
 3. He had three forty-**fathom (英寻，等于 6 英尺，约合1.8288米)** **coils** of line in reserve now, as well as the coil he was using.

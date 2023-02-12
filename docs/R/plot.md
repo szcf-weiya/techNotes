@@ -139,6 +139,36 @@ A thorough tutorial refers to [Reproduce Figures with Lattice -- ESL CN](https:/
 
 - [https://ggplot2-book.org/](https://ggplot2-book.org/getting-started.html)
 
+### histogram
+
+??? tip "fill (not color) & factor (not numeric) in histogram"
+    ```r
+    df = data.frame(a = c(rnorm(100), rnorm(100) +1), g = rep(1:2, each=100))
+    ggplot(df, aes(a, colour = g)) + geom_histogram()
+    ```
+    ![](https://user-images.githubusercontent.com/13688320/218221345-7a1c208b-da21-467f-9acf-7829852747d1.png)
+    ```r
+    ggplot(df, aes(a, col = factor(g) )) + geom_histogram()
+    ```
+    ![](https://user-images.githubusercontent.com/13688320/218221419-3b4f4081-e9cd-41a3-a486-1089d6db4e50.png)
+    ```r
+    ggplot(df, aes(a, fill = factor(g) )) + geom_histogram()
+    ```
+    ![](https://user-images.githubusercontent.com/13688320/218221479-44014f77-7a59-41b9-9533-9fd250c66c0f.png)
+
+
+??? tip "alpha not work in single histogram"
+    ```r
+    ggplot(df, aes(a, fill= factor(g)), alpha=0.2) + geom_histogram()
+    ```
+    ![](https://user-images.githubusercontent.com/13688320/218241818-b6b07c26-62d0-41cb-93f7-3d8adf1bb6ce.png)
+    ```r
+    ggplot(df, aes(a)) + geom_histogram(data = subset(df, g == 1), aes(fill = factor(g)), alpha = 0.5) + 
+                         geom_histogram(data = subset(df, g == 2), aes(fill = factor(g)), alpha = 0.5)
+    ```
+    ![](https://user-images.githubusercontent.com/13688320/218293071-9c627f11-b7e2-42ec-8820-71e9fca36582.png)
+    Note that `aes(fill = )` is important, otherwise no legend. See also: [:link:](https://stackoverflow.com/questions/39322266/adding-legend-to-a-multi-histogram-ggplot), [:link:](https://stackoverflow.com/questions/6957549/overlaying-histograms-with-ggplot2-in-r), [:link:](https://github.com/szcf-weiya/Multi-omics-Clustering/issues/34)
+
 ### multiple density plots
 
 ```r
