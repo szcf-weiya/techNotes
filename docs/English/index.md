@@ -1356,7 +1356,7 @@
 2. the dog **sprints off (快速跑开)**
 3. shy away from it: try to avoid because of nervousness, fear, dislike.
 4. swinging hard right on the pendulum.
-5. evade bad data
+5. **evade (逃避，回避)** bad data
 
 
 ## 2020.01
@@ -1933,7 +1933,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 28. The committee will probably **pore over (细心研究)** the results of the study for a long time before making their decision.
     - pore: 注视；n. 孔隙
 29. He habitually transforms brief anecdotes into prolix sagas that exhaust his listeners.
-30. The burglary, which he committed while still a teen, was but a prologue to a wasted life of crime.
+30. The burglary, which he committed while still a teen, was but a **prologue (序幕，序言，开场白)** to a wasted life of crime.
 31. The law was promulagated in June 1988.
 32. The dams along the river are interfering with the salmon's ability to propagate.
 33. The temple was built to honor the gods in times of plenty and to propitiate them in times of trouble.
@@ -2206,7 +2206,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 45. detoxify
 46. extract
 47. stake: 股份，赌注
-48. sequestered
+48. sequestered: 僻静的，隐蔽的，与外界隔绝的
 49. recreation: 娱乐，消遣
 50. reclaim: 开垦，改造
 51. silt

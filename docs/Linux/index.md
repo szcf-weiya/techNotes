@@ -252,44 +252,6 @@ root         1     0  0 09:15 ?        00:00:44 /sbin/init splash
 
 [How to Control Your Android Using Your Computer’s Mouse and Keyboard](https://www.makeuseof.com/tag/control-android-using-computers-mouse-keyboard/)
 
-## Nvidia Driver
-
-Install via the GUI `Software & Updates`. If succeed, then
-
-```bash
-$ nvidia-smi
-```
-
-can display the GPU memory usage, together with the versions of driver and CUDA,
-
-```bash
-$ nvidia-smi 
-Mon Aug  2 22:08:19 2021       
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 460.91.03    Driver Version: 460.91.03    CUDA Version: 11.2     |
-|-------------------------------+----------------------+----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|                               |                      |               MIG M. |
-|===============================+======================+======================|
-|   0  GeForce 940MX       Off  | 00000000:02:00.0 Off |                  N/A |
-| N/A   63C    P0    N/A /  N/A |    724MiB /  2004MiB |      9%      Default |
-|                               |                      |                  N/A |
-+-------------------------------+----------------------+----------------------+
-                                                                               
-+-----------------------------------------------------------------------------+
-| Processes:                                                                  |
-|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-|        ID   ID                                                   Usage      |
-|=============================================================================|
-|    0   N/A  N/A       400      G   WeChatWeb.exe                       9MiB |
-|    0   N/A  N/A       663      G   ...cent\WeChat\WeChatApp.exe        7MiB |
-|    0   N/A  N/A      4454      G   ...AAAAAAAAA= --shared-files       59MiB |
-|    0   N/A  N/A      7440      G   /usr/lib/xorg/Xorg                437MiB |
-```
-
-refer to [Linux安装NVIDIA显卡驱动的正确姿势](https://blog.csdn.net/wf19930209/article/details/81877822) for other approaches (seems more technical).
-
 ## Run in Background 
 
 - 命令末尾的 `&` 表示在后台运行。refer to [What does “&” at the end of a linux command mean?](https://stackoverflow.com/questions/13338870/what-does-at-the-end-of-a-linux-command-mean)
@@ -326,10 +288,6 @@ In short,
 1. install wmctrl
 2. map F11 via .vimrc
 
-## `/dev/loopx`
-
-refer to [What is /dev/loopx?](https://askubuntu.com/questions/906581/what-is-dev-loopx).
-
 ## remove broken link
 
 ```bash
@@ -338,7 +296,7 @@ find -L . -name . -o -type d -prune -o -type l -exec rm {} +
 
 [Delete all broken symbolic links with a line?](https://stackoverflow.com/questions/22097130/delete-all-broken-symbolic-links-with-a-line)
 
-## hydrogen specify the conda envirnoment
+## hydrogen specify the conda environment
 
 just need to run
 
@@ -350,30 +308,6 @@ python -m ipykernel install --user --name thisenv
 and only once, hydrogen will remember this!!
 
 ref to [How to specify the conda environment in which hydrogen (jupyter) starts?](https://github.com/nteract/hydrogen/issues/899)
-
-## different CUDA version shown by nvcc and NVIDIA-smi
-
-refer to [Different CUDA versions shown by nvcc and NVIDIA-smi](https://stackoverflow.com/questions/53422407/different-cuda-versions-shown-by-nvcc-and-nvidia-smi)
-
-> CUDA has 2 primary APIs, the runtime and the driver API. Both have a corresponding version
->
-> - The necessary support for the driver API (e.g. libcuda.so on linux) is installed by the GPU driver installer.
-> - The necessary support for the runtime API (e.g. libcudart.so on linux, and also nvcc) is installed by the CUDA toolkit installer (which may also have a GPU driver installer bundled in it).
-
-`nvidia-smi`: installed by the GPU driver installer, and generally has the GPU driver in view, not anything installed by the CUDA toolkit installer.
-`nvcc`: the CUDA compiler-driver tool that is installed with the CUDA toolkit, will always report the CUDA runtime version that it was built to recognize.
-
-## proxy for apt
-
-`proxychains` seems not work well before `sudo` or after `sudo`, and I dont want to add a system proxy permanently, then I found a temporary way,
-
-```bash
-sudo http_proxy='http://user:pass@proxy.example.com:8080/' apt-get install package-name
-```
-
-refer to [how to install packages with apt-get on a system connected via proxy?](https://askubuntu.com/questions/89437/how-to-install-packages-with-apt-get-on-a-system-connected-via-proxy)
-
-
 
 ## .netrc
 
@@ -406,10 +340,6 @@ machine git.heroku.com
 > This is a file that is often used by Unix programs to hold access details for remote sites. It was originally created for use with FTP.
 
 最后这个问题是直接把 .bashrc 中所有的代理去掉了.
-
-## possible errors using `apt-get`
-
-[How do I resolve unmet dependencies after adding a PPA?](https://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa)
 
 ## GPG error
 
@@ -465,16 +395,6 @@ according to the record on [WeChat in Linux](software/#wechat-in-linux), it seem
 ## sftp via File Manager
 
 在用 `connect to server` 时，经常弹出窗口要求输入用户名及密码，格式为 `sftp://xxx.xxx.xx.xx`，如果避免输入密码，不妨采用 `sftp://user@xxx.xxx.xx.xx`。不过有时在登录其它服务器时，不指定用户名还是直接登进去了，不太清楚为什么，猜想会不会是这几个服务器的用户名刚好跟本地相同。
-
-## make the software searchable
-
-If the software has `xx.destop` file, then
-
-```bash
-cp xx.destop ~/.local/share/applications
-```
-
-otherwise， create a `.desktop` file. More details refer to [How to pin Eclipse to the Unity launcher?](https://askubuntu.com/questions/80013/how-to-pin-eclipse-to-the-unity-launcher) and [How to add programs to the launcher (search)?](https://askubuntu.com/questions/285951/how-to-add-programs-to-the-launcher-search)
 
 ## You have new mail
 
@@ -533,51 +453,6 @@ systemctl --user status/stop/start/disable/enable ssh4lab
 ```
 
 see also: [:link:](https://superuser.com/questions/1037466/how-to-start-a-systemd-service-after-user-login-and-stop-it-before-user-logout)
-
-## Custom Shortcut to Switch External Display Mode
-
-办公室电脑既可以作为显示屏，也可以在 PC 模式下使用 Windows 系统。在 PC 模式下，在 Ubuntu 上通过 synergy 共享键鼠，但是此时存在一个问题，因为 HDMI 仍然连着，所以在移动鼠标时中间有个 gap，也就是需要跳过外接显示屏才能移动到 PC。
-
-试过在 synergy 中将 PC 机设置为 T460p 上方，这样移动鼠标只需往上，不过体验不是很好，而且 Ubuntu 顶端有状态栏而 PC 端底部也有task bar，移动时能明显感受到延时。另外一个策略便是切换显示屏 mode，由 joint 模式切换成 mirror。
-
-注意到，当处于 mirror 模式下，eDP-1-1 primary 显示为 `1920x1080+0+0`，而如果是 joint mode，尺寸为 `1920x1080+1920+0`。受 [Swap between monitor display modes using shortcut](https://askubuntu.com/questions/958914/swap-between-monitor-display-modes-using-shortcut)
- 启发，决定写脚本自定义快捷键
-
-```bash
-~$ cat switch_mirror_joint.sh 
-#!/bin/bash
-currentmode=$(xrandr -q | grep "primary 1920x1080+0+0")
-if [[ -n $currentmode ]]; then
-    #echo "mirror"
-    xrandr --output HDMI-1-1 --left-of eDP-1-1 --transform none
-else
-    #echo "joint"
-    xrandr --output HDMI-1-1 --same-as eDP-1-1 --scale-from 1920x1080
-fi
-```
-
-!!! tip "--scale-from"
-    如果两台显示器的分辨率不一致，则切换时会出现截断的问题。电脑屏幕分辨率为 1920x1080，而若外接显示器为 1920x1200，则切换至 mirror model 时，页面会以 1920x1200 为准，则在电脑屏幕上看不到底部 1200-1080 的部分。
-
-    首先尝试过直接在设置中将外接显示器的分辨率改成 1920x1080，但是这会让画面模糊。
-
-    另一种则是加上关键词 `--scale-from 1920x1080`，这样外接显示器的分辨率不会变，但会 scale 至电脑屏幕相同的分辨率大小。
-
-    scale 之后再用 xrandr 查看便是 1920x1080，但在设置界面下显示器的分辨率仍保持不变。
-
-!!! top "--transform none"
-    另外观察到 scale 一次之后就不会再 scale 回来了。比如上面只在切换至 mirror 时有 scale，但是切换回 joint 时其 size 并不会变成 1920x1200，而继续保持 1920x1080. 为了避免这种情况，在转成 joint mode 时取消 scale，这可以通过 `--transform none` 实现。参考 [:link:](https://unix.stackexchange.com/questions/390099/reset-xrandr-or-switch-off-the-scale-from-setting-at-disconnect)
-
-然后进入 keyboard shortcut 设置界面，
-
-- Name: `switch display mode`
-- Command: `/home/weiya/switch_mirror_joint.sh`
-- Shortcut: `Ctrl+F7`
-
-之所以选择 `F7` 是因为本身 F7 也支持切换 display mode，但是默认 external monitor 在右侧。试图直接更改 F7 的 binding commands，相关的 Ubuntu 官方帮助文档 [Keyboard](https://help.ubuntu.com/stable/ubuntu-help/keyboard.html.en) 及配置文件 [Custom keyboard layout definitions](https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions)，但是无从下手。
-
-!!! tip
-    连接 HDMI 线没反应，也可以用 `xrandr` 排查是 PC 的问题还是显示器的问题。如果是电脑端没有显示连接，那很可能是显示器的问题。2022-09-16 初次连接 Yale 办公室的显示器时，便是电脑端没有插好。
 
 ## System Monitor
 

@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # R Notes
 
 !!! tip "Frequent Tips"
@@ -6,6 +10,32 @@
 	- usage of `<<-`, "it will keep going through the environments in order until it finds a variable with that name, and it will assign it to that." see also [:link:](https://stackoverflow.com/questions/2628621/how-do-you-use-scoping-assignment-in-r)
 	- 序列中 `0.1+1:10-1` 中 `:` 优先级低于加减运算符，所以返回 `0.1, 1.1, ..., 9.1`.
 	- repeat string: `strrep('str', 2)`, `paste(rep('str', 2), collapse='')`
+
+??? tip "神奇的`[`"
+
+	来自[R语言中以矩阵引用多维数组的元素](https://d.cosx.org/d/419525-r)
+
+	比如
+	```r
+	A = array(sample(0:255, 100*100*3, replace = T), dim = c(100,100,3))
+	B = array(sample(1:100, 2*5), dim = c(2,5))
+	apply(A, 3, `[`, t(B))
+	```
+
+??? tip "`seq_along(x)` instead of `1:length(x)`"
+
+	```r
+	vec <- c()
+	for (i in 1:length(vec)) print(vec[i])
+	```
+
+	would print two `NULL` because `1:length(vec)` would be `c(1,0)`. A method to avoid this
+
+	```r
+	for (i in seq_along(vec)) print(vec[i])
+	```
+
+	refer to [Two common mistakes with the colon operator in R](https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/)
 
 ## Installation
 
@@ -759,17 +789,6 @@ rocplot ( fitted , dat [ train ,"y"] , main ="Training Data")
 
 ![](roc_fact.png)
 
-## 神奇的`[`
-
-来自[R语言中以矩阵引用多维数组的元素](https://d.cosx.org/d/419525-r)
-
-比如
-```r
-A = array(sample(0:255, 100*100*3, replace = T), dim = c(100,100,3))
-B = array(sample(1:100, 2*5), dim = c(2,5))
-apply(A, 3, `[`, t(B))
-```
-
 ## proxy 代理
 
 参考
@@ -834,21 +853,6 @@ DFun <- deriv(NormDensity, "x", function.arg = TRUE)
 DFun(1)
 ```
 
-## Mistake with colon operator
-
-```r
-vec <- c()
-for (i in 1:length(vec)) print(vec[i])
-```
-
-would print two `NULL` because `1:length(vec)` would be `c(1,0)`. A method to avoid this
-
-```r
-for (i in seq_along(vec)) print(vec[i])
-```
-
-refer to [Two common mistakes with the colon operator in R](https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/)
-
 ## error in install `gRbase`
 
 environment: Ubuntu 16.04 (gcc 5.4.0)
@@ -879,41 +883,37 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install("graph")
 ```
 
-## `protection stack overflow`
+??? tip "protection stack overflow"
 
-use
+	use
 
-```bash
-R --max-ppsize 500000
-```
+	```bash
+	R --max-ppsize 500000
+	```
 
-or for rstudio
+	or for rstudio
 
-```bash
-rstudio --max-ppsize 500000
-```
+	```bash
+	rstudio --max-ppsize 500000
+	```
 
-refer to [How to solve 'protection stack overflow' issue in R Studio](https://stackoverflow.com/questions/32826906/how-to-solve-protection-stack-overflow-issue-in-r-studio)
+	refer to [How to solve 'protection stack overflow' issue in R Studio](https://stackoverflow.com/questions/32826906/how-to-solve-protection-stack-overflow-issue-in-r-studio)
 
-## `not found libhdf5.a`
+??? tip "failed to create lock directory"
 
-check if compiling under anaconda environment, if so, exit and retry.
+	In bash,
 
-## install.packages returns `failed to create lock directory`
+	```bash
+	R CMD INSTALL --no-lock <pkg>
+	```
 
-in bash
+	or in R session
 
-```bash
-R CMD INSTALL --no-lock <pkg>
-```
+	```r
+	install.packages("Rcpp", dependencies=TRUE, INSTALL_opts = c('--no-lock'))
+	```
 
-or in R session
-
-```r
-install.packages("Rcpp", dependencies=TRUE, INSTALL_opts = c('--no-lock'))
-```
-
-refer to [R install.packages returns “failed to create lock directory”](https://stackoverflow.com/questions/14382209/r-install-packages-returns-failed-to-create-lock-directory)
+	refer to [R install.packages returns “failed to create lock directory”](https://stackoverflow.com/questions/14382209/r-install-packages-returns-failed-to-create-lock-directory)
 
 ## nonzero in `dgCMatrix`
 

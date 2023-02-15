@@ -10,6 +10,11 @@ nav:
       - Shell Scripts: shell/index.md
       # - Upgradation: Linux/upgrade.md
       - WSL: Linux/wsl.md
+      - Blog:
+        - Portable SSD: Linux/blog/2020-08-25-PSSD.md
+        - Charge Battery Adaptively: Linux/blog/2020-09-01-charge-battery-adaptively.md
+        - Switch Monitor Mode: Linux/blog/2021-06-07-switch-monitor.md
+        - Use Old Kernel: Linux/blog/2021-07-28-use-old-kernel.md
     - Servers: 
       - General: Linux/servers.md
       - AliECS: Linux/ecs.md

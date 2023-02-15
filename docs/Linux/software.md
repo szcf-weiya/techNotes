@@ -26,6 +26,30 @@ I try to categorize them as follows,
 !!! tip
     The window of a software can be always set on top. First minimize the desired window, and the right click around the top menu, then select "Always on Top".
 
+??? tip "make software searchable"
+
+    If the software has `xx.destop` file, then
+
+    ```bash
+    cp xx.destop ~/.local/share/applications
+    ```
+
+    otherwise， create a `.desktop` file. More details refer to [How to pin Eclipse to the Unity launcher?](https://askubuntu.com/questions/80013/how-to-pin-eclipse-to-the-unity-launcher) and [How to add programs to the launcher (search)?](https://askubuntu.com/questions/285951/how-to-add-programs-to-the-launcher-search)
+
+??? tip "Set Default Software"
+
+    网页文件 `.html` 默认用百度网盘打开，之前通过 `KDE System Setting` 修改了默认软件，
+
+    ![](https://user-images.githubusercontent.com/13688320/117541554-fb955800-b046-11eb-8577-f39fdbf406bc.png)
+
+    但似乎并没有解决问题。
+
+    试着参考 [Open files with other applications](https://help.ubuntu.com/stable/ubuntu-help/files-open.html.en) 的步骤进行设置
+
+    - 右键选择 `Properties`
+    - 然后选择 `Open With`
+    - 选择特定软件，`Set as default`
+
 ## Atom
 
 ??? warning "Uninstalled"
@@ -89,12 +113,12 @@ I try to categorize them as follows,
 
     Based on this hint, I found the the corresponding shortcut in VScode, that is, `Ctrl + Shift + .`, refer to [Go to next method shortcut in VSCode](https://stackoverflow.com/questions/46388358/go-to-next-method-shortcut-in-vscode)
 
-## BaiduPan 百度网盘
+## Baidu NetDisk
 
 !!! info "Update 2022-11-10 21:09:28"
     下载 deb 包更新到最新版本 4.14.5，体验还行（虽然不常用）
 
-发现百度网盘**官方**出了 Linux 版，但是此时的 Linux版 V2.0.2（更新时间：2019-07-25） 在 Ubuntu 16.04 似乎运行不了——能下载安装但是无法打开运行。
+发现百度网盘[**官方**](https://pan.baidu.com/download)出了 Linux 版，但是此时的 Linux版 V2.0.2（更新时间：2019-07-25） 在 Ubuntu 16.04 似乎运行不了——能下载安装但是无法打开运行。
 
 在官方的 Linux 版本未发布之前，曾尝试社区开发的几种访问百度云的方案。
 
@@ -212,20 +236,20 @@ I try to categorize them as follows,
     ```
     ![Screenshot from 2023-01-31 15-51-56](https://user-images.githubusercontent.com/13688320/215880662-d91e6775-d21a-4d50-9216-5b79b9abcef2.png)
 
-## Droidcam
+## DroidCam: Phone as Webcam
 
 Homepage: [DroidCam](https://www.dev47apps.com/)
 
 First of all, install Linux client following the [official instruction](https://www.dev47apps.com/droidcam/linux/)
 
-!!! note "Mix2s"
+??? note "Mix2s"
 
     - install the Android app on Mix2s
     - 因为无法设置在一个局域网中，所以测试 USB 连接。根据[连接指南](https://www.dev47apps.com/droidcam/connect/)，需要打开 USB debugging，然而似乎仍然无法成功。
     - 根据错误提示运行 `adb devices`，并没有显示任何安卓设备的连接。另外 `lsusb` 并没有手机的记录，而且插上前后 `lsusb` 项目个数不变。
     - 可能电脑端缺少驱动，试图寻找 USB driver，如[www.xiaomidriversdownload.com](https://www.xiaomidriversdownload.com/xiaomi-mi-mix-2s-adb-driver/)但是只找到 for windows 的版本（后来证明并不需要，只是 USB 线的原因）。
 
-!!! note "Mi4c"
+??? note "Mi4c"
 
     同 Mix2s，不过换了长的那根数据线后，`lsusb` 多了条记录
 
@@ -256,7 +280,7 @@ First of all, install Linux client following the [official instruction](https://
 
     但是仍没有显示名字。
 
-!!! note "iPad"
+??? note "iPad"
 
     - firstly, install the APP
     - 因为插上 iPad 后，自动跳出是否信任本设备，而且在 `lsusb` 中找到记录 `Bus 001 Device 018: ID 05ac:12ab Apple, Inc. iPad 4/Mini1`。
@@ -872,107 +896,111 @@ flatpak run com.github.alainm23.planner
 !!! tip
     - 2022-12-07 15:25:36：不用手动 import，只要将歌曲都放在指定的目录，并勾选自动添加新歌曲。同时发现一个小 bug，如果重新用同一文件夹的不同路径名（ln -s），则会重复添加。
 
-右键似乎可以修改歌曲的 properties，其中包括 artist，album，但是却不能编辑，然后[查了一下](https://askubuntu.com/questions/612711/rhythmbox-cannot-edit-properties)，是权限问题，
+??? tip "修改音乐文件的 Properties"
 
-```bash
-chmod u+w CloudMusic/ -R
-```
+    右键似乎可以修改歌曲的 properties，其中包括 artist，album，但是却不能编辑，然后[查了一下](https://askubuntu.com/questions/612711/rhythmbox-cannot-edit-properties)，是权限问题，
 
-where more details about `u+w` can be found in the manual.
+    ```bash
+    chmod u+w CloudMusic/ -R
+    ```
+
+    where more details about `u+w` can be found in the manual.
+
+    ```bash
+    $ man chmod
+
+    The format of a symbolic mode is [ugoa...][[-+=][perms...]...], where perms  is
+    either  zero  or  more letters from the set rwxXst, or a single letter from the
+    set ugo.  Multiple symbolic modes can be given, separated by commas.
+
+    A combination of the letters ugoa controls which users' access to the file will
+    be  changed:  the  user  who  owns it (u), other users in the file's group (g),
+    other users not in the file's group (o), or all users (a).  If  none  of  these
+    are  given,  the  effect  is as if (a) were given, but bits that are set in the
+    umask are not affected.
+    ```
 
 !!! tip
     `exiftool music.mp3` 可以查看 meta info，而且可以修改。
 
-```bash
-$ man chmod
+??? tip "修改 .wav 文件的 Properties"
 
-The format of a symbolic mode is [ugoa...][[-+=][perms...]...], where perms  is
-either  zero  or  more letters from the set rwxXst, or a single letter from the
-set ugo.  Multiple symbolic modes can be given, separated by commas.
+    但是对 `.wav` 文件仍不能编辑 properties，后来才知道应该是 wav 不支持 tag
 
-A combination of the letters ugoa controls which users' access to the file will
-be  changed:  the  user  who  owns it (u), other users in the file's group (g),
-other users not in the file's group (o), or all users (a).  If  none  of  these
-are  given,  the  effect  is as if (a) were given, but bits that are set in the
-umask are not affected.
-```
+    > [WAVs don't have tags. Trying to force them to have tags will cause them to not work as WAVs any more. Convert them to FLAC files first (which does support tags) and then tag them.](https://ubuntuforums.org/showthread.php?p=7817206)
 
-但是对 `.wav` 文件仍不能编辑 properties，后来才知道应该是 wav 不支持 tag
+    但是还是有方法来修改的，比如 [How do I edit a metadata in a WAV file?](https://www.quora.com/How-do-I-edit-a-metadata-in-a-WAV-file)
 
-> [WAVs don't have tags. Trying to force them to have tags will cause them to not work as WAVs any more. Convert them to FLAC files first (which does support tags) and then tag them.](https://ubuntuforums.org/showthread.php?p=7817206)
+    于是我尝试了 [kid3](https://kid3.kde.org/)
 
-但是还是有方法来修改的，比如 [How do I edit a metadata in a WAV file?](https://www.quora.com/How-do-I-edit-a-metadata-in-a-WAV-file)
+    ```bash
+    sudo add-apt-repository ppa:ufleisch/kid3
+    sudo apt-get update
+    sudo apt-get install kid3     # KDE users
+    ```
 
-于是我尝试了 [kid3](https://kid3.kde.org/)
+    一开始觉得 `kid3-cli` 足够了，但是试了一下感觉学习成本太高，索性换回 kde 版本的。
 
-```bash
-sudo add-apt-repository ppa:ufleisch/kid3
-sudo apt-get update
-sudo apt-get install kid3     # KDE users
-```
+    但是似乎在 `kid3` 中修改完并没有信息，只是会把删去的 genre 信息变为 unknown。
 
-一开始觉得 `kid3-cli` 足够了，但是试了一下感觉学习成本太高，索性换回 kde 版本的。
+    #### wav -> mp3
 
-但是似乎在 `kid3` 中修改完并没有信息，只是会把删去的 genre 信息变为 unknown。
+    另一个方法便是直接将 wav 转换成 mp3，注意到如果直接用 `ls` + `xargs` 
 
-#### wav -> mp3
+    ```bash
+    # keep old extension
+    ls -1 | grep wav | head -1 | xargs -I {} ffmpeg -i {} {}.mp3
+    ```
 
-另一个方法便是直接将 wav 转换成 mp3，注意到如果直接用 `ls` + `xargs` 
+    则文件名后缀不是很好直接换掉，不能直接对 `{}` 进行操作，
 
-```bash
-# keep old extension
-ls -1 | grep wav | head -1 | xargs -I {} ffmpeg -i {} {}.mp3
-```
+    ```bash
+    find . -name "*.wav" -exec sh -c 'ffmpeg -i "$1" "${1%.*}.mp3"' sh {} \;
+    ```
 
-则文件名后缀不是很好直接换掉，不能直接对 `{}` 进行操作，
+    参考 [:link:](https://superuser.com/questions/1426601/how-to-remove-extension-from-pathname-passed-as-in-find-exec), 其实有点相当于把 `{}` 在传进去然后就可以用 `$1` 来表示。
 
-```bash
-find . -name "*.wav" -exec sh -c 'ffmpeg -i "$1" "${1%.*}.mp3"' sh {} \;
-```
+    但是重命名完之后，Rhythmbox 左侧出现一个 Missing Files 的文件夹，里面即删掉的 `.wav` 文件路径。退出然后删掉 `rhythmdb.xml` 再打开即可，参考 [:link:](https://www.chalk-ridge.com/is-rhythmbox-missing-music-files-heres-a-simple-fix/)
 
-参考 [:link:](https://superuser.com/questions/1426601/how-to-remove-extension-from-pathname-passed-as-in-find-exec), 其实有点相当于把 `{}` 在传进去然后就可以用 `$1` 来表示。
+    ```bash
+    ~/.local/share/rhythmbox$ mv rhythmdb.xml rhythmdb.xml.old
+    ```
 
-但是重命名完之后，Rhythmbox 左侧出现一个 Missing Files 的文件夹，里面即删掉的 `.wav` 文件路径。退出然后删掉 `rhythmdb.xml` 再打开即可，参考 [:link:](https://www.chalk-ridge.com/is-rhythmbox-missing-music-files-heres-a-simple-fix/)
-
-```bash
-~/.local/share/rhythmbox$ mv rhythmdb.xml rhythmdb.xml.old
-```
-
-所以看上去路径是直接写入 `.xml` 文件中，所以即便两个不同的路径指向同一个文件夹，也会被视为不同文件夹，于是便能解释为什么相同音乐文件被重复导入。
+    所以看上去路径是直接写入 `.xml` 文件中，所以即便两个不同的路径指向同一个文件夹，也会被视为不同文件夹，于是便能解释为什么相同音乐文件被重复导入。
 
 ## Synergy
 
-### lock key from host
+??? tip "hotkey for locking client's screen from host"
 
-With Host@t460p(Ubuntu 18.04) and Client@STAPC(Win 10), the hotkey `Win + L` for locking the screen does not work on the client, but the hotkey would work if I use its keyboard. 
+    With Host@t460p(Ubuntu 18.04) and Client@STAPC(Win 10), the hotkey `Win + L` for locking the screen does not work on the client, but the hotkey would work if I use its keyboard. 
 
-An ideal solution would be simultaneously to lock the key via the same hotkey, as someone discussed in [Synergy: Is there a way to push Win+L to all screens, not just the server?](https://superuser.com/questions/267058/synergy-is-there-a-way-to-push-winl-to-all-screens-not-just-the-server)
+    An ideal solution would be simultaneously to lock the key via the same hotkey, as someone discussed in [Synergy: Is there a way to push Win+L to all screens, not just the server?](https://superuser.com/questions/267058/synergy-is-there-a-way-to-push-winl-to-all-screens-not-just-the-server)
 
-First of all, I become to use the custom behavior by defining some keystrokes via
+    First of all, I become to use the custom behavior by defining some keystrokes via
 
-`Configure Server` -> `Hotkeys` -> `New Hotkey` -> `New its associated Actions`
+    `Configure Server` -> `Hotkeys` -> `New Hotkey` -> `New its associated Actions`
 
-A complete instruction can be found in [Add a keyboard shortcut to change to different screens](https://symless.com/help-articles/add-a-hotkey-or-keyboard-shortcut-to-change-to-different-screens)
+    A complete instruction can be found in [Add a keyboard shortcut to change to different screens](https://symless.com/help-articles/add-a-hotkey-or-keyboard-shortcut-to-change-to-different-screens)
 
-Since `Win+L` fails on the client, try to define a new shortcut. Following the 4th method in [How to Quickly Lock Screen In Windows 10](https://www.techbout.com/lock-screen-in-windows-10-45432/),
+    Since `Win+L` fails on the client, try to define a new shortcut. Following the 4th method in [How to Quickly Lock Screen In Windows 10](https://www.techbout.com/lock-screen-in-windows-10-45432/),
 
-`Right Click` -> `New Shortcut` -> `C:\Windows\System32\rundll32.exe user32.dll,LockWorkStation`
+    `Right Click` -> `New Shortcut` -> `C:\Windows\System32\rundll32.exe user32.dll,LockWorkStation`
 
-Then we can lock the screen after clicking this shortcut, but currently no associated hotkey. Right click to edit the properties, there is a shortcut key, which by default assumes the key starts with `Ctrl + Alt`, so just press the remaining key, say `L`. However, `Ctrl + Alt + L` does not work. 
+    Then we can lock the screen after clicking this shortcut, but currently no associated hotkey. Right click to edit the properties, there is a shortcut key, which by default assumes the key starts with `Ctrl + Alt`, so just press the remaining key, say `L`. However, `Ctrl + Alt + L` does not work. 
 
-Instead, `Ctrl + Alt + 2` works.
+    Instead, `Ctrl + Alt + 2` works.
 
-Then back to the host configuration. Bind the follow two keys,
+    Then back to the host configuration. Bind the follow two keys,
 
-```bash
-keystroke(Control+Alt+l) = keystroke(Alt+Control+2,stapc220)
-```
+    ```bash
+    keystroke(Control+Alt+l) = keystroke(Alt+Control+2,stapc220)
+    ```
 
-then I can lock the screen of client via `Ctrl+Alt+l`. 
+    then I can lock the screen of client via `Ctrl+Alt+l`. 
 
-Since the above binding can specify the machine, I am thinking it might work if I bind `Ctrl+Alt+l` to `Meta+l` on the host. However, it failed, and it causes the screen of client cannot be locked.
+    Since the above binding can specify the machine, I am thinking it might work if I bind `Ctrl+Alt+l` to `Meta+l` on the host. However, it failed, and it causes the screen of client cannot be locked.
 
-Anyway, the current solution seems already convinent.
+    Anyway, the current solution seems already convinent.
 
 ## Terminator
 
@@ -1027,77 +1055,74 @@ Anyway, the current solution seems already convinent.
 
 - 添加学校邮箱时，必须采用学号形式的邮箱，不要用 alias 形式的，alias 验证会出问题。
 
-### Bcc 
-
-!!! info
+??? note "Esther 的 To 为啥是她自己？Bcc？"
     Post: 2022-04-02 18:12:48
 
-最近小伙伴们在讨论为什么 Eesther 群发的邮件的 `To` 是她自己的邮箱。通过 `More > View Source` 查看邮件源码时发现，有个 `Delivered-To` 字段，恰好是 grad 的邮箱。于是猜想怎么实现这种效果，bcc？
+    最近小伙伴们在讨论为什么 Esther 群发的邮件的 `To` 是她自己的邮箱。通过 `More > View Source` 查看邮件源码时发现，有个 `Delivered-To` 字段，恰好是 grad 的邮箱。于是猜想怎么实现这种效果，bcc？
 
-于是简单做了个实验，从 A 邮箱发给 B 并密送给 C
+    于是简单做了个实验，从 A 邮箱发给 B 并密送给 C
 
-```bash
-From: A
-TO: B
-Bcc: C
-```
+    ```bash
+    From: A
+    TO: B
+    Bcc: C
+    ```
 
-在 B 端查看源码发现只有 `TO: B`，而在 C 端既有 `Delivered-To: C`，也有 `TO: B`。
+    在 B 端查看源码发现只有 `TO: B`，而在 C 端既有 `Delivered-To: C`，也有 `TO: B`。
 
-所以 Esther 一种可能的原因是在 bcc 中输入 grad 的邮箱，并发送给自己。但感觉这样很奇怪，可能有其它自动设置，具体不得而知。关于 `Delivered-To` 的讨论可另见 [:link:](https://serverfault.com/questions/796913/how-can-the-to-and-delivered-to-fields-in-an-email-i-received-be-different)
+    所以 Esther 一种可能的原因是在 bcc 中输入 grad 的邮箱，并发送给自己。但感觉这样很奇怪，可能有其它自动设置，具体不得而知。关于 `Delivered-To` 的讨论可另见 [:link:](https://serverfault.com/questions/796913/how-can-the-to-and-delivered-to-fields-in-an-email-i-received-be-different)
 
+??? tip "Deactive Account without Deleting"
 
-### Deactivation
+    Since the visiting Harvard email account has expired, it will always pop up the log-in window. But I do not want to delete the account, and just want to avoid the automatically log-in, so I try to set to never check new message as follows,
 
-Since the visiting Harvard email account has expired, it will always pop up the log-in window. But I do not want to delete the account, and just want to avoid the automatically log-in, so I try to set to never check new message as follows,
+    ![image](https://user-images.githubusercontent.com/13688320/151953746-2250b616-a3b7-418b-bfbc-de535224d562.png)
 
-![image](https://user-images.githubusercontent.com/13688320/151953746-2250b616-a3b7-418b-bfbc-de535224d562.png)
+    refer to [deactivate email account without deleting | Thunderbird Support Forum](https://support.mozilla.org/en-US/questions/1323864)
 
-refer to [deactivate email account without deleting | Thunderbird Support Forum](https://support.mozilla.org/en-US/questions/1323864)
+!!! tip "Special Gmail"
 
-### Gmail
+    与其它邮箱帐号不同的是，添加 Gmail 后只有 Inbox 和 Trash，而没有 Sent, Drafts 等，不过有个 `[Gmail]` 文件夹，里面的子文件便有发件箱等等。这种特殊目录结构是因为对 Gmail 的不同处理方式，详见 [Special Gmail](https://support.mozilla.org/zh-CN/kb/thunderbird-gmail)
 
-与其它邮箱帐号不同的是，添加 Gmail 后只有 Inbox 和 Trash，而没有 Sent, Drafts 等，不过有个 `[Gmail]` 文件夹，里面的子文件便有发件箱等等。这种特殊目录结构是因为对 Gmail 的不同处理方式，详见 [Special Gmail](https://support.mozilla.org/zh-CN/kb/thunderbird-gmail)
+!!! tip "Proxy for Gmail in Thunderbird"
 
-### Proxy for Gmail in Thunderbird
+    Setting a proxy for the thunderbird is quite straigtforward, but not all mail accounts need the proxy, only gmail in my case. I am considering if it is possible to set up a proxy for gmail separately. Then I found that setting proxy by PAC file might work inspired by [Gmail imap/smtp domains to connect via proxy](https://support.google.com/mail/forum/AAAAK7un8RUCGQj5uPgJoo), since PAC file can customize the visited url.
 
-Setting a proxy for the thunderbird is quite straigtforward, but not all mail accounts need the proxy, only gmail in my case. I am considering if it is possible to set up a proxy for gmail separately. Then I found that setting proxy by PAC file might work inspired by [Gmail imap/smtp domains to connect via proxy](https://support.google.com/mail/forum/AAAAK7un8RUCGQj5uPgJoo), since PAC file can customize the visited url.
+    Then I need to learn [how to write a PAC file](https://findproxyforurl.com/example-pac-file/), although later I directly export the rules written in SwitchyOmega to a PAC file.
 
-Then I need to learn [how to write a PAC file](https://findproxyforurl.com/example-pac-file/), although later I directly export the rules written in SwitchyOmega to a PAC file.
+    Once PAC is done, I need to write its location url, seems impossible to directly write a local path. One easy way is to open port 80 to access my laptop, which maybe need apache or nginx, but both of them are overqualified. A simple way is
 
-Once PAC is done, I need to write its location url, seems impossible to directly write a local path. One easy way is to open port 80 to access my laptop, which maybe need apache or nginx, but both of them are overqualified. A simple way is
+    ```bash
+    sudo python -m SimpleHTTPServer 80
+    ```
 
-```bash
-sudo python -m SimpleHTTPServer 80
-```
+    found in[Open port 80 on Ubuntu server](https://askubuntu.com/questions/646293/open-port-80-on-ubuntu-server)
 
-found in[Open port 80 on Ubuntu server](https://askubuntu.com/questions/646293/open-port-80-on-ubuntu-server)
+!!! note "Upgrade 68 to 78"
 
-### Upgrade 68 to 78
+    最近，学校强制要求使用 2FA，但是根据之前短暂的使用经验，2FA 对邮箱客户端的支持很有限，比如就不支持 Ubuntu 系统上的 thunderbird，所以那次用完之后立马发邮件申请注销（因为 2FA 一旦设定自己无法取消）。
 
-最近，学校强制要求使用 2FA，但是根据之前短暂的使用经验，2FA 对邮箱客户端的支持很有限，比如就不支持 Ubuntu 系统上的 thunderbird，所以那次用完之后立马发邮件申请注销（因为 2FA 一旦设定自己无法取消）。
+    不过幸运的是，看到最近新版本的 thunderbird 支持 Oauth2，比如 [Thunderbird 77 supports IMAP using OAuth2 on Office 365. See https://bugzilla.mozilla.org/show_bug.cgi?id=1528136 for more details.](https://techcommunity.microsoft.com/t5/exchange-team-blog/announcing-oauth-2-0-support-for-imap-and-smtp-auth-protocols-in/bc-p/1354695/highlight/true#M28183) [Office 365 (Thunderbird) - Configure Modern Authentication](https://kb.wisc.edu/helpdesk/page.php?id=102005)
 
-不过幸运的是，看到最近新版本的 thunderbird 支持 Oauth2，比如 [Thunderbird 77 supports IMAP using OAuth2 on Office 365. See https://bugzilla.mozilla.org/show_bug.cgi?id=1528136 for more details.](https://techcommunity.microsoft.com/t5/exchange-team-blog/announcing-oauth-2-0-support-for-imap-and-smtp-auth-protocols-in/bc-p/1354695/highlight/true#M28183) [Office 365 (Thunderbird) - Configure Modern Authentication](https://kb.wisc.edu/helpdesk/page.php?id=102005)
+    所以准备试试下载新版本，因为似乎不能直接简单的 upgrade 升级到 78.
 
-所以准备试试下载新版本，因为似乎不能直接简单的 upgrade 升级到 78.
+    一开始填错了服务器，漏掉了 `outlook.office365.com` 中的 `365`，还以为 78 不行，毕竟前面两个给的链接说是 77beta，万一 beta 的功能又被砍掉了呢：（后来发现是杞人忧天
 
-一开始填错了服务器，漏掉了 `outlook.office365.com` 中的 `365`，还以为 78 不行，毕竟前面两个给的链接说是 77beta，万一 beta 的功能又被砍掉了呢：（后来发现是杞人忧天
+    将验证方法改为 `Oauth2`，然后重启便跳出了熟悉的登录界面，大功告成！
 
-将验证方法改为 `Oauth2`，然后重启便跳出了熟悉的登录界面，大功告成！
+    不过有个问题是，这两个版本是同时存在的，profile 是不共用的，我如果要用 78，还需要把其他邮箱重新设置一遍，已经订阅过的 feeds。此处应有[简单方法](https://askubuntu.com/questions/1280743/how-to-import-my-thunderbird-settings-from-thunderbird-68-to-thunderbird-78)，
 
-不过有个问题是，这两个版本是同时存在的，profile 是不共用的，我如果要用 78，还需要把其他邮箱重新设置一遍，已经订阅过的 feeds。此处应有[简单方法](https://askubuntu.com/questions/1280743/how-to-import-my-thunderbird-settings-from-thunderbird-68-to-thunderbird-78)，
+    关闭所有 thunderbird，然后启动 78 时加上 `-Profilemanager`
 
-关闭所有 thunderbird，然后启动 78 时加上 `-Profilemanager`
+    ```bash
+    thunderbird -Profilemanager
+    ```
 
-```bash
-thunderbird -Profilemanager
-```
+    这时会要求选择 profile，只需要选择 68 对应的 profile 就好了。选好之后，再重新配置下学校邮箱的，则大功告成！
 
-这时会要求选择 profile，只需要选择 68 对应的 profile 就好了。选好之后，再重新配置下学校邮箱的，则大功告成！
+!!! tip "Train adaptive junk filter"
 
-### Train adaptive junk filter
-
-more instructions: [Thunderbird and Junk / Spam Messages](https://support.mozilla.org/en-US/kb/thunderbird-and-junk-spam-messages)
+    more instructions: [Thunderbird and Junk / Spam Messages](https://support.mozilla.org/en-US/kb/thunderbird-and-junk-spam-messages)
 
 ## ToDesk
 
@@ -1120,136 +1145,140 @@ Currently, the Linux version is in Beta.
     - switch to next functions: `Ctrl + Shift + .`, refer to [Go to next method shortcut in VSCode](https://stackoverflow.com/questions/46388358/go-to-next-method-shortcut-in-vscode)
     - switch terminals, `Ctrl+Up/Down`, refer to [How to switch between terminals in Visual Studio Code?](https://stackoverflow.com/a/67412583/)
 
-### Edit Multiple Line Simultaneously
+!!! tip "Edit Multiple Line Simultaneously"
 
-Press `Shift + Alt + Down/Up` to insert cursors below or up, after inserting ` >`, then press `Esc` to exit. [:link:](https://code.visualstudio.com/docs/editor/codebasics)
+    Press `Shift + Alt + Down/Up` to insert cursors below or up, after inserting ` >`, then press `Esc` to exit. [:link:](https://code.visualstudio.com/docs/editor/codebasics)
 
-![Peek 2022-03-30 20-28](https://user-images.githubusercontent.com/13688320/160834904-5110b5e5-a58d-4586-a9a3-0e0d835abe52.gif)
+    ![Peek 2022-03-30 20-28](https://user-images.githubusercontent.com/13688320/160834904-5110b5e5-a58d-4586-a9a3-0e0d835abe52.gif)
 
-### Fail to open terminal
+!!! note "Fail to open terminal"
 
-首先通过搜索图形界面登录，弹出
+    首先通过搜索图形界面登录，弹出
 
-- resolving your shell environment is taking too long...
-- unable to resolve your shell environment...
+    - resolving your shell environment is taking too long...
+    - unable to resolve your shell environment...
 
-详见 [Resolving Shell Environment is Slow (Error, Warning)](https://code.visualstudio.com/docs/supporting/faq#_resolving-shell-environment-is-slow-error-warning)
+    详见 [Resolving Shell Environment is Slow (Error, Warning)](https://code.visualstudio.com/docs/supporting/faq#_resolving-shell-environment-is-slow-error-warning)
 
-只是按照其提示检查了 `~/.bashrc`，没有问题。
+    只是按照其提示检查了 `~/.bashrc`，没有问题。
 
-然后试着在命令行中输入 `code` 启动，此时试图打开 terminal 并没有上述信息弹出，然而 terminal 还是无法打开，在开启新 terminal 那里可以选择 log，所以当我新开一个 terminal 时，发现同时弹出下面错误消息，
+    然后试着在命令行中输入 `code` 启动，此时试图打开 terminal 并没有上述信息弹出，然而 terminal 还是无法打开，在开启新 terminal 那里可以选择 log，所以当我新开一个 terminal 时，发现同时弹出下面错误消息，
 
-```bash
-[2021-03-11 10:40:29.231] [renderer1] [error] A system error occurred (EACCES: permission denied, open '/proc/1/environ'): Error: EACCES: permission denied, open '/proc/1/environ'
-```
+    ```bash
+    [2021-03-11 10:40:29.231] [renderer1] [error] A system error occurred (EACCES: permission denied, open '/proc/1/environ'): Error: EACCES: permission denied, open '/proc/1/environ'
+    ```
 
-然后发现在 [terminal.integrated.inheritEnv breaks integrated terminal #76542](https://github.com/microsoft/vscode/issues/76542#issuecomment-589768136) 中提到了 enable terminal.integrated.inheritEnv 就好。
+    然后发现在 [terminal.integrated.inheritEnv breaks integrated terminal #76542](https://github.com/microsoft/vscode/issues/76542#issuecomment-589768136) 中提到了 enable terminal.integrated.inheritEnv 就好。
 
-打开 setting，然后直接输入 `@modified` 快速进入更改过的设置，其中便有 inheritEnv 这一项，enable 之后重新在命令行中启动 code，此时可以打开 terminal，但是出现了以下信息
+??? warning "Do not auto-programs in .profile"
 
-```bash
-$ bind: Address already in use
-channel_setup_fwd_listener_tcpip: cannot listen to port: 18888
-bind: Address already in use
-channel_setup_fwd_listener_tcpip: cannot listen to port: 18889
-Could not request local forwarding.
-Warning: remote port forwarding failed for listen port 30013
-Warning: remote port forwarding failed for listen port 24800
-```
+    继续上个问题。
 
-这是为了[启动时自动登录服务器转发端口的程序](asAserver.md#boot-into-text-mode)，这时意识到 vscode 在启动时，应该会调用 `.profile`，但是我把自动连接服务器的程序写进了 `.profile`，解决办法便是复制一份 `.profile` 至 `.bash_profile`, 只在后者中保留自动登录程序，因为[启动时后者调用顺序更高](software.md/#_8)。
+    打开 setting，然后直接输入 `@modified` 快速进入更改过的设置，其中便有 inheritEnv 这一项，enable 之后重新在命令行中启动 code，此时可以打开 terminal，但是出现了以下信息
 
-> .profile is for things that are not specifically related to Bash, like environment variables $PATH it should also be available anytime. .bash_profile is specifically for login shells or shells executed at login.
-> source: [What is the difference between ~/.profile and ~/.bash_profile?](https://unix.stackexchange.com/questions/45684/what-is-the-difference-between-profile-and-bash-profile)
+    ```bash
+    $ bind: Address already in use
+    channel_setup_fwd_listener_tcpip: cannot listen to port: 18888
+    bind: Address already in use
+    channel_setup_fwd_listener_tcpip: cannot listen to port: 18889
+    Could not request local forwarding.
+    Warning: remote port forwarding failed for listen port 30013
+    Warning: remote port forwarding failed for listen port 24800
+    ```
 
-然而！似乎 vscode 启动时还是会调用 `.bash_profile`，只有在 `.bash_profile` 将自动登录程序去掉才能打开 terminal。
+    这是为了[启动时自动登录服务器转发端口的程序](asAserver.md#boot-into-text-mode)，这时意识到 vscode 在启动时，应该会调用 `.profile`，但是我把自动连接服务器的程序写进了 `.profile`，解决办法便是复制一份 `.profile` 至 `.bash_profile`, 只在后者中保留自动登录程序，因为[启动时后者调用顺序更高](software.md/#_8)。
 
-可能原因应该是 terminal 实际上在运行 `/bin/bash` 程序，而打开 bash 其还是按照正常打开顺序来的，如 `man bash` 中所说，
+    > .profile is for things that are not specifically related to Bash, like environment variables $PATH it should also be available anytime. .bash_profile is specifically for login shells or shells executed at login.
+    > source: [What is the difference between ~/.profile and ~/.bash_profile?](https://unix.stackexchange.com/questions/45684/what-is-the-difference-between-profile-and-bash-profile)
 
-```bash
---noprofile
-       Do  not read either the system-wide startup file /etc/profile or any of the personal initialization files ~/.bash_profile, ~/.bash_login, or ~/.profile.  By default,
-       bash reads these files when it is invoked as a login shell (see INVOCATION below).
-```
+    然而！似乎 vscode 启动时还是会调用 `.bash_profile`，只有在 `.bash_profile` 将自动登录程序去掉才能打开 terminal。
 
-干脆换一种自启动方式，[How to run scripts on start up?](https://askubuntu.com/questions/814/how-to-run-scripts-on-start-up)
+    可能原因应该是 terminal 实际上在运行 `/bin/bash` 程序，而打开 bash 其还是按照正常打开顺序来的，如 `man bash` 中所说，
 
-通过 `crontab -e` 设置自启动任务，
+    ```bash
+    --noprofile
+        Do  not read either the system-wide startup file /etc/profile or any of the personal initialization files ~/.bash_profile, ~/.bash_login, or ~/.profile.  By default,
+        bash reads these files when it is invoked as a login shell (see INVOCATION below).
+    ```
 
-```bash
-@reboot sh /home/weiya/rssh4lab.sh &
-```
+    干脆换一种自启动方式，[How to run scripts on start up?](https://askubuntu.com/questions/814/how-to-run-scripts-on-start-up)
 
-然而第二次重启时，并不起作用，查看　`/var/log/syslog`，原因在于网络连接在于 ssh 之后
+    通过 `crontab -e` 设置自启动任务，
 
-```bash
-Mar 12 09:14:23 weiya-ThinkPad-T460p CRON[1464]: (weiya) CMD (sh /home/weiya/rssh4lab.sh &)
-Mar 12 09:19:37 weiya-ThinkPad-T460p NetworkManager[1342]: <info>  [1615511977.5232] device (wlp3s0): Activation: (wifi) Stage 2 of 5 (Device Configure) successful.  Connected to wireless network 'CUHK1x'.
-```
+    ```bash
+    @reboot sh /home/weiya/rssh4lab.sh &
+    ```
 
-接下来有两个策略，参考 [How do I start a Cron job 1 min after @reboot?](https://unix.stackexchange.com/questions/57852/how-do-i-start-a-cron-job-1-min-after-reboot)
+    然而第二次重启时，并不起作用，查看　`/var/log/syslog`，原因在于网络连接在于 ssh 之后
 
-- sleep 一定时间：这一点可以加上 `sleep 60 &&`，但是 sleep 多少并不太好把握，一般来说会在进入用户界面后网络才连接，而有时候并没有及时进入用户界面
-- 判断网络好了之后在执行，上述问题回答下有人指出通过 `systemd` 来实现，其中可以指定 `After=network.target`，按照指示设置完毕，然后还是不行，原因应该是上述所说，只有进入用户界面才会连接网络，所以在系统层面的设置太早了
+    ```bash
+    Mar 12 09:14:23 weiya-ThinkPad-T460p CRON[1464]: (weiya) CMD (sh /home/weiya/rssh4lab.sh &)
+    Mar 12 09:19:37 weiya-ThinkPad-T460p NetworkManager[1342]: <info>  [1615511977.5232] device (wlp3s0): Activation: (wifi) Stage 2 of 5 (Device Configure) successful.  Connected to wireless network 'CUHK1x'.
+    ```
 
-另外，同时也把 ssh 替换成 autossh，然后又回到之前[推荐 crontab 的问题中](https://askubuntu.com/questions/814/how-to-run-scripts-on-start-up)，采用第一种 `upstart` 方法，因为其可以在用户层面进行设置，但是设置完毕后在 syslog 中都没有相关运行命令，然后发现这种方法已经过时了。
+    接下来有两个策略，参考 [How do I start a Cron job 1 min after @reboot?](https://unix.stackexchange.com/questions/57852/how-do-i-start-a-cron-job-1-min-after-reboot)
 
-既然 upstart 有 system 和 user 两个层面的方法，那么 systemd 应当也可以在用户层面进行设置，于是我找到了这个回答，[How to start a systemd service after user login and stop it before user logout](https://superuser.com/questions/1037466/how-to-start-a-systemd-service-after-user-login-and-stop-it-before-user-logout)，这个方法在这个回答，[How to run scripts on start up?](https://askubuntu.com/a/719157)，中也提到了 。
+    - sleep 一定时间：这一点可以加上 `sleep 60 &&`，但是 sleep 多少并不太好把握，一般来说会在进入用户界面后网络才连接，而有时候并没有及时进入用户界面
+    - 判断网络好了之后在执行，上述问题回答下有人指出通过 `systemd` 来实现，其中可以指定 `After=network.target`，按照指示设置完毕，然后还是不行，原因应该是上述所说，只有进入用户界面才会连接网络，所以在系统层面的设置太早了
 
-已经看到成功的希望了，不过还是报错了，
+    另外，同时也把 ssh 替换成 autossh，然后又回到之前[推荐 crontab 的问题中](https://askubuntu.com/questions/814/how-to-run-scripts-on-start-up)，采用第一种 `upstart` 方法，因为其可以在用户层面进行设置，但是设置完毕后在 syslog 中都没有相关运行命令，然后发现这种方法已经过时了。
 
-```bash
-$ vi /var/log/syslog
-Mar 12 12:00:03 weiya-ThinkPad-T460p systemd[2710]: Starting ssh to lab with port forward...
-Mar 12 12:00:03 weiya-ThinkPad-T460p systemd[2710]: Started ssh to lab with port forward.
-Mar 12 12:00:03 weiya-ThinkPad-T460p systemd[2710]: Reached target Default.
-Mar 12 12:00:03 weiya-ThinkPad-T460p systemd[2710]: Startup finished in 70ms.
-Mar 12 12:00:03 weiya-ThinkPad-T460p rssh4lab.sh[2722]: ssh: connect to host XX.XX.XX.XX port 22: Network is unreachable
-Mar 12 12:00:03 weiya-ThinkPad-T460p autossh[2724]: ssh exited prematurely with status 255; autossh exiting
-```
+    既然 upstart 有 system 和 user 两个层面的方法，那么 systemd 应当也可以在用户层面进行设置，于是我找到了这个回答，[How to start a systemd service after user login and stop it before user logout](https://superuser.com/questions/1037466/how-to-start-a-systemd-service-after-user-login-and-stop-it-before-user-logout)，这个方法在这个回答，[How to run scripts on start up?](https://askubuntu.com/a/719157)，中也提到了 。
 
-查看 `autossh` 的帮助文档发现，
+    已经看到成功的希望了，不过还是报错了，
 
-```bash
-AUTOSSH_GATETIME
-        Specifies how long ssh must be up before we consider it a successful connection. The default is 30 seconds. Note
-        that if AUTOSSH_GATETIME is set to 0, then not only is the gatetime behaviour turned off, but autossh also ignores
-        the first run failure of ssh. This may be useful when running autossh at boot.
-```
+    ```bash
+    $ vi /var/log/syslog
+    Mar 12 12:00:03 weiya-ThinkPad-T460p systemd[2710]: Starting ssh to lab with port forward...
+    Mar 12 12:00:03 weiya-ThinkPad-T460p systemd[2710]: Started ssh to lab with port forward.
+    Mar 12 12:00:03 weiya-ThinkPad-T460p systemd[2710]: Reached target Default.
+    Mar 12 12:00:03 weiya-ThinkPad-T460p systemd[2710]: Startup finished in 70ms.
+    Mar 12 12:00:03 weiya-ThinkPad-T460p rssh4lab.sh[2722]: ssh: connect to host XX.XX.XX.XX port 22: Network is unreachable
+    Mar 12 12:00:03 weiya-ThinkPad-T460p autossh[2724]: ssh exited prematurely with status 255; autossh exiting
+    ```
 
-而 `-f` 可以达到这个效果，所以试着加上 `-f`,便成功了！
+    查看 `autossh` 的帮助文档发现，
 
-查看相关运行信息，
+    ```bash
+    AUTOSSH_GATETIME
+            Specifies how long ssh must be up before we consider it a successful connection. The default is 30 seconds. Note
+            that if AUTOSSH_GATETIME is set to 0, then not only is the gatetime behaviour turned off, but autossh also ignores
+            the first run failure of ssh. This may be useful when running autossh at boot.
+    ```
 
-```bash
-$ journalctl --user -u ssh4lab.service
--- Logs begin at Thu 2020-12-24 01:44:48 CST, end at Fri 2021-03-12 12:33:18 CST. --
-Mar 12 12:00:03 weiya-ThinkPad-T460p autossh[2724]: starting ssh (count 1)
-Mar 12 12:00:03 weiya-ThinkPad-T460p autossh[2724]: ssh child pid is 2725
-Mar 12 12:00:03 weiya-ThinkPad-T460p systemd[2710]: Starting ssh to lab with port forward...
-Mar 12 12:00:03 weiya-ThinkPad-T460p systemd[2710]: Started ssh to lab with port forward.
-Mar 12 12:00:03 weiya-ThinkPad-T460p autossh[2724]: ssh exited prematurely with status 255; autossh exiting
-Mar 12 12:09:11 weiya-ThinkPad-T460p systemd[2710]: Stopped ssh to lab with port forward.
--- Reboot --
-Mar 12 12:10:29 weiya-ThinkPad-T460p autossh[2649]: starting ssh (count 1)
-Mar 12 12:10:29 weiya-ThinkPad-T460p autossh[2649]: ssh child pid is 2650
-Mar 12 12:10:29 weiya-ThinkPad-T460p systemd[2634]: Starting ssh to lab with port forward...
-Mar 12 12:10:29 weiya-ThinkPad-T460p systemd[2634]: Started ssh to lab with port forward.
-Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh exited with error status 255; restarting ssh
-Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: starting ssh (count 2)
-Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh child pid is 2655
-Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh exited with error status 255; restarting ssh
-Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: starting ssh (count 3)
-Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh child pid is 2656
-Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh exited with error status 255; restarting ssh
-Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: starting ssh (count 4)
-Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh child pid is 2657
-Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh exited with error status 255; restarting ssh
-Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: starting ssh (count 5)
-Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh child pid is 2658
-```
+    而 `-f` 可以达到这个效果，所以试着加上 `-f`,便成功了！
 
-其中 `reboot` 所在行上面的为没有添加 `-f` 选项时的日志，可以发现内容与上面查看 syslog的差不多，只不过没有那么全，比如没有指出 `Network is unreachable`，而后面添加了 `-f` 选项后，在失败重试若干次后，成功了！
+    查看相关运行信息，
+
+    ```bash
+    $ journalctl --user -u ssh4lab.service
+    -- Logs begin at Thu 2020-12-24 01:44:48 CST, end at Fri 2021-03-12 12:33:18 CST. --
+    Mar 12 12:00:03 weiya-ThinkPad-T460p autossh[2724]: starting ssh (count 1)
+    Mar 12 12:00:03 weiya-ThinkPad-T460p autossh[2724]: ssh child pid is 2725
+    Mar 12 12:00:03 weiya-ThinkPad-T460p systemd[2710]: Starting ssh to lab with port forward...
+    Mar 12 12:00:03 weiya-ThinkPad-T460p systemd[2710]: Started ssh to lab with port forward.
+    Mar 12 12:00:03 weiya-ThinkPad-T460p autossh[2724]: ssh exited prematurely with status 255; autossh exiting
+    Mar 12 12:09:11 weiya-ThinkPad-T460p systemd[2710]: Stopped ssh to lab with port forward.
+    -- Reboot --
+    Mar 12 12:10:29 weiya-ThinkPad-T460p autossh[2649]: starting ssh (count 1)
+    Mar 12 12:10:29 weiya-ThinkPad-T460p autossh[2649]: ssh child pid is 2650
+    Mar 12 12:10:29 weiya-ThinkPad-T460p systemd[2634]: Starting ssh to lab with port forward...
+    Mar 12 12:10:29 weiya-ThinkPad-T460p systemd[2634]: Started ssh to lab with port forward.
+    Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh exited with error status 255; restarting ssh
+    Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: starting ssh (count 2)
+    Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh child pid is 2655
+    Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh exited with error status 255; restarting ssh
+    Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: starting ssh (count 3)
+    Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh child pid is 2656
+    Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh exited with error status 255; restarting ssh
+    Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: starting ssh (count 4)
+    Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh child pid is 2657
+    Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh exited with error status 255; restarting ssh
+    Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: starting ssh (count 5)
+    Mar 12 12:10:30 weiya-ThinkPad-T460p autossh[2649]: ssh child pid is 2658
+    ```
+
+    其中 `reboot` 所在行上面的为没有添加 `-f` 选项时的日志，可以发现内容与上面查看 syslog的差不多，只不过没有那么全，比如没有指出 `Network is unreachable`，而后面添加了 `-f` 选项后，在失败重试若干次后，成功了！
 
 ## w3m: Command Line Browser
 
@@ -1299,201 +1328,198 @@ Some references:
     39508:"ProductName"="Microsoft Windows 7"
     ```
 
-### Wine Wechat
+??? note "Start to Use Wine Wechat (Post: ~ 2020.05.12)" 
+    
+    起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！
 
-!!! info
-    Post: ~ 2020.05.12
+    docker 了解一点，知道如果成功，以后安装卸载会很简单，于是使用 [huan/docker-wechat](https://github.com/huan/docker-wechat) 提供的 docker image，但是后来[输入时文本不可见的问题](https://github.com/huan/docker-wechat/issues/40)很恼人 ，也不知道怎么解决。
 
-起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！
+    注意到作者的 docker 是在 19.10 上构建的，在想会不会与我的 18.04 不够兼容，所以准备自己修改 docker，其实都已经 fork 好了，但是由于 [wine 对 18.04 的支持有个问题](https://forum.winehq.org/viewtopic.php?f=8&t=32192)，虽说可能跟输入法也不太有关，但是还是试着装这个，后面改写 docker file 时重新 build 总是出问题，一直没解决，所以决定放弃。
 
-docker 了解一点，知道如果成功，以后安装卸载会很简单，于是使用 [huan/docker-wechat](https://github.com/huan/docker-wechat) 提供的 docker image，但是后来[输入时文本不可见的问题](https://github.com/huan/docker-wechat/issues/40)很恼人 ，也不知道怎么解决。
+    于是就放弃 docker 了，想直接安装 wine，弊端似乎也就是卸载会有点繁，但是如果安装成功，那就用着呗，也不用卸载了。
 
-注意到作者的 docker 是在 19.10 上构建的，在想会不会与我的 18.04 不够兼容，所以准备自己修改 docker，其实都已经 fork 好了，但是由于 [wine 对 18.04 的支持有个问题](https://forum.winehq.org/viewtopic.php?f=8&t=32192)，虽说可能跟输入法也不太有关，但是还是试着装这个，后面改写 docker file 时重新 build 总是出问题，一直没解决，所以决定放弃。
+    参考 [WeChat Desktop on Linux](https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux)
 
-于是就放弃 docker 了，想直接安装 wine，弊端似乎也就是卸载会有点繁，但是如果安装成功，那就用着呗，也不用卸载了。
+    1. [install WineHQ](https://wiki.winehq.org/Ubuntu_zhcn)
 
-参考 [WeChat Desktop on Linux](https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux)
+    ```bash
+    The following packages have unmet dependencies:
+    gstreamer1.0-plugins-good : Breaks: gstreamer1.0-plugins-ugly (< 1.13.1) but 1.8.3-1ubuntu0.1 is to be installed
+    winehq-stable : Depends: wine-stable (= 5.0.0~bionic)
+    E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by held packages.
+    ```
 
-1. [install WineHQ](https://wiki.winehq.org/Ubuntu_zhcn)
+    solution
 
-```bash
-The following packages have unmet dependencies:
- gstreamer1.0-plugins-good : Breaks: gstreamer1.0-plugins-ugly (< 1.13.1) but 1.8.3-1ubuntu0.1 is to be installed
- winehq-stable : Depends: wine-stable (= 5.0.0~bionic)
-E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by held packages.
-```
+    ```bash
+    # (re)install gstreamer1.0-plugins-good and gstreamer1.0-plugins-ugly
+    sudo apt-get install gstreamer1.0-plugins-good
+    sudo apt-get install gstreamer1.0-plugins-ugly
+    ```
 
-solution
+    ```bash
+    Error: winehq-stable : Depends: wine-stable (= 5.0.0~bionic)
+    ```
 
-```bash
-# (re)install gstreamer1.0-plugins-good and gstreamer1.0-plugins-ugly
-sudo apt-get install gstreamer1.0-plugins-good
-sudo apt-get install gstreamer1.0-plugins-ugly
-```
+    It is due to [FAudio for Debian 10 and Ubuntu 18.04](https://forum.winehq.org/viewtopic.php?f=8&t=32192), and
 
-```bash
-Error: winehq-stable : Depends: wine-stable (= 5.0.0~bionic)
-```
+    > The quickest and easiest way to satisfy the new dependency is to download and install both the i386 and amd64 libfaudio0 packages before attempting to upgrade or install a WineHQ package.
 
-It is due to [FAudio for Debian 10 and Ubuntu 18.04](https://forum.winehq.org/viewtopic.php?f=8&t=32192), and
+    seems does not work. I need to add the repository as suggested in [Error: winehq-stable : Depends: wine-stable (= 5.0.0~bionic)](https://nixytrix.com/error-winehq-stable-depends-wine-stable-5-0-0-bionic/)
 
-> The quickest and easiest way to satisfy the new dependency is to download and install both the i386 and amd64 libfaudio0 packages before attempting to upgrade or install a WineHQ package.
+    ```bash
+    curl -sL https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key | sudo apt-key add -
+    sudo apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./'
+    ```
 
-seems does not work. I need to add the repository as suggested in [Error: winehq-stable : Depends: wine-stable (= 5.0.0~bionic)](https://nixytrix.com/error-winehq-stable-depends-wine-stable-5-0-0-bionic/)
+    but seems not due to this, and follow the instruction in [docs/WineDependencies.md](https://github.com/lutris/docs/blob/master/WineDependencies.md)
 
-```bash
-curl -sL https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/Release.key | sudo apt-key add -
-sudo apt-add-repository 'deb https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/xUbuntu_18.04/ ./'
-```
+    ```bash
+    sudo apt-get install libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386
+    ```
 
-but seems not due to this, and follow the instruction in [docs/WineDependencies.md](https://github.com/lutris/docs/blob/master/WineDependencies.md)
+    then the problem is solved. And continue to follow the steps in [WeChat Desktop on Linux](https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux)
 
-```bash
-sudo apt-get install libgnutls30:i386 libldap-2.4-2:i386 libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386 libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386
-```
+??? tip "reboot wine"
 
-then the problem is solved. And continue to follow the steps in [WeChat Desktop on Linux](https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux)
+    Sometimes, the wechat window freezes, i.e., the new messages cannot be updated. Try to reboot it,
 
-### reboot wine
+    - use `wineboot`
 
-Sometimes, the wechat window freezes, i.e., the new messages cannot be updated. Try to reboot it,
+    ```bash
+    $ wineboot -s # shutdown
+    $ wineboot -r # restart
+    ```
 
-- use `wineboot`
+    but it does not work, and it throws
 
-```bash
-$ wineboot -s # shutdown
-$ wineboot -r # restart
-```
+    > 073c:fixme:font:get_name_record_codepage encoding 29 not handled, platform 1.
 
-but it does not work, and it throws
+    - use `kill -s 9`
 
-> 073c:fixme:font:get_name_record_codepage encoding 29 not handled, platform 1.
+    kill the process of wechat, and then restart wechat, still not work
 
-- use `kill -s 9`
+    - use `wineserver -k`
 
-kill the process of wechat, and then restart wechat, still not work
+    it works! refer to [Ubuntu forum: Cant reboot wine](https://ubuntuforums.org/showthread.php?t=1451908)
 
-- use `wineserver -k`
-
-it works! refer to [Ubuntu forum: Cant reboot wine](https://ubuntuforums.org/showthread.php?t=1451908)
-
-为了保留之前的所有设定及历史聊天记录，选择文件至 `/media/weiya/Seagate/WeChat`，但不要精确至 `/media/weiya/Seagate/WeChat/WeChat Files`
+    为了保留之前的所有设定及历史聊天记录，选择文件至 `/media/weiya/Seagate/WeChat`，但不要精确至 `/media/weiya/Seagate/WeChat/WeChat Files`
 
 
-### 窗口轮廓阴影
+??? done "fixed: 窗口轮廓阴影"
 
-当从微信切换到其他软件时，会留下一个窗口轮廓阴影。再一次感叹 google 的强大，本来这个问题我都不知道怎么搜索，但只给了 “wine wechat” 和 “窗口轮廓” 这两个关键词后，就找到了两种解决方案：
+    当从微信切换到其他软件时，会留下一个窗口轮廓阴影。再一次感叹 google 的强大，本来这个问题我都不知道怎么搜索，但只给了 “wine wechat” 和 “窗口轮廓” 这两个关键词后，就找到了两种解决方案：
 
-- [解决Linux下微信透明窗口的问题](https://manateelazycat.github.io/linux/2019/09/29/wechat-transparent-window.html)：切换微信后，直接关掉窗口，侧边栏也不在有微信的窗口，再次启动需要点击顶部栏的图标
-- [wine-wechat 窗口阴影置顶解决方案](https://www.wootec.top/2020/02/16/wine-wechat%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/)：通过 `xdotool` 去除窗口阴影。之前折腾 docker-wechat 就看到[有人提到 `xdotool`](https://www.kpromise.top/run-wechat-in-linux/)
+    - [解决Linux下微信透明窗口的问题](https://manateelazycat.github.io/linux/2019/09/29/wechat-transparent-window.html)：切换微信后，直接关掉窗口，侧边栏也不在有微信的窗口，再次启动需要点击顶部栏的图标
+    - [wine-wechat 窗口阴影置顶解决方案](https://www.wootec.top/2020/02/16/wine-wechat%E9%98%B4%E5%BD%B1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/)：通过 `xdotool` 去除窗口阴影。之前折腾 docker-wechat 就看到[有人提到 `xdotool`](https://www.kpromise.top/run-wechat-in-linux/)
 
-更偏向第二种策略，后来尝试了一下也确实觉得第二种好用，当然我都有折腾过。
+    更偏向第二种策略，后来尝试了一下也确实觉得第二种好用，当然我都有折腾过。
 
-其实策略本身很简单，而且都可以即时运行一下脚本，就能感受效果，但是在脚本自动化那里花了挺长时间。
+    其实策略本身很简单，而且都可以即时运行一下脚本，就能感受效果，但是在脚本自动化那里花了挺长时间。
 
-策略二本来推荐的是通过修改 wechat 的启动程序，但是因为我的启动程序是通过 wine 实现的，这一点似乎跟博客中不一样，我只找到一个 `WeChat.desktop` 文件，也没把握直接修改。所以我先去尝试了开机自启动
+    策略二本来推荐的是通过修改 wechat 的启动程序，但是因为我的启动程序是通过 wine 实现的，这一点似乎跟博客中不一样，我只找到一个 `WeChat.desktop` 文件，也没把握直接修改。所以我先去尝试了开机自启动
 
-#### 开机自启动
+    #### 开机自启动
 
-实现方案有很多，但总想找种最简单的，有考虑 systemd service， [How do I run a script as sudo at boot time on Ubuntu 18.04 Server?](https://askubuntu.com/questions/1151080/how-do-i-run-a-script-as-sudo-at-boot-time-on-ubuntu-18-04-server)
+    实现方案有很多，但总想找种最简单的，有考虑 systemd service， [How do I run a script as sudo at boot time on Ubuntu 18.04 Server?](https://askubuntu.com/questions/1151080/how-do-i-run-a-script-as-sudo-at-boot-time-on-ubuntu-18-04-server)
 
-中间也有试过 `/etc/init.d`，[Ubuntu下添加开机启动脚本](https://blog.csdn.net/hcx25909/article/details/9068497)，但是报出 warning
+    中间也有试过 `/etc/init.d`，[Ubuntu下添加开机启动脚本](https://blog.csdn.net/hcx25909/article/details/9068497)，但是报出 warning
 
-> warning: /etc/init.d/test missing LSB information
+    > warning: /etc/init.d/test missing LSB information
 
-有点不放心。
+    有点不放心。
 
-另外还想到直接在 `.profile` 中添加运行程序，这应该算是最简单的方式，这在 [Ubuntu添加和设置开机自动启动程序的方法](https://blog.csdn.net/qq_14989227/article/details/79227283) 中有更系统的总结。
+    另外还想到直接在 `.profile` 中添加运行程序，这应该算是最简单的方式，这在 [Ubuntu添加和设置开机自动启动程序的方法](https://blog.csdn.net/qq_14989227/article/details/79227283) 中有更系统的总结。
 
-但是后来才发现，开机自启动并不适用于策略二提供的脚本，因为在判断没有微信时，程序会自动退出去。本来也想着简单改下使其能够始终运行，但是觉得这种不如原作者的更优，白白占用内存。
-
-### 修改 desktop 文件
-
-这个关键点在于，使其能够同时运行 wine 和 `disable-wechat-shadow.py` 脚本文件，原 `WeChat.desktop` 文件为
+    但是后来才发现，开机自启动并不适用于策略二提供的脚本，因为在判断没有微信时，程序会自动退出去。本来也想着简单改下使其能够始终运行，但是觉得这种不如原作者的更优，白白占用内存。
 
 !!! info
     ".desktop" 文件存放在 `~/.local/share/applications` 和 `/usr/share/applications`，而 `WeChat.desktop` 直接放在 `/home/weiya/Desktop`.
 
-```bash
-Exec=env WINEPREFIX="/home/weiya/.wine32" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/WeChat/WeChat.lnk
-```
+??? tip "修改 desktop 文件"
 
-第一种尝试便是直接加上 `& python3 /home/weiya/disable-wechat-shadow.py`，但是似乎当做了 wine 的 argument，这一点[@mango](https://askubuntu.com/a/461495)也指出
+    这个关键点在于，使其能够同时运行 wine 和 `disable-wechat-shadow.py` 脚本文件，原 `WeChat.desktop` 文件为
 
-> The `Exec` key must contain a command line. A command line consists of an executable program optionally followed by one or more arguments.
+    ```bash
+    Exec=env WINEPREFIX="/home/weiya/.wine32" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/WeChat/WeChat.lnk
+    ```
 
-第二种便是通过 `sh -c`，即
+    第一种尝试便是直接加上 `& python3 /home/weiya/disable-wechat-shadow.py`，但是似乎当做了 wine 的 argument，这一点[@mango](https://askubuntu.com/a/461495)也指出
 
-```bash
-Exec=env WINEPREFIX="/home/weiya/.wine32" sh -c "wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py"
-```
+    > The `Exec` key must contain a command line. A command line consists of an executable program optionally followed by one or more arguments.
 
-但是这个经常报出错误
+    第二种便是通过 `sh -c`，即
 
-> key "Exec" in group "Desktop Entry" contains a quote which is not closed
+    ```bash
+    Exec=env WINEPREFIX="/home/weiya/.wine32" sh -c "wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py"
+    ```
 
-很纳闷，觉得这不应该啊，而且也[有人 wine 的解决方案](https://askubuntu.com/questions/1200116/desktop-error-there-was-an-error-launching-the-application)也是通过 `sh -c`，但是后来发现了个区别，别人引号中空格只需要一次转义，即 `\ `，比如 "Program\ Files\ (x86)"，但是我这里原先没加引号时，用两个反斜杠进行转义 `\\ `，而且 `\\` 需要用 `\\\\` 来转义，所以隐隐觉得可能是加了引号转义会有问题。所以尝试改成 `\ ` 和 `\\`，但是都没有成功。
+    但是这个经常报出错误
+
+    > key "Exec" in group "Desktop Entry" contains a quote which is not closed
+
+    很纳闷，觉得这不应该啊，而且也[有人 wine 的解决方案](https://askubuntu.com/questions/1200116/desktop-error-there-was-an-error-launching-the-application)也是通过 `sh -c`，但是后来发现了个区别，别人引号中空格只需要一次转义，即 `\ `，比如 "Program\ Files\ (x86)"，但是我这里原先没加引号时，用两个反斜杠进行转义 `\\ `，而且 `\\` 需要用 `\\\\` 来转义，所以隐隐觉得可能是加了引号转义会有问题。所以尝试改成 `\ ` 和 `\\`，但是都没有成功。
+
+    后来跑去研究下 `wine` 的命令，想弄清楚那一长串 argument 是什么意思，才明白这应该是句 `wine start`，而 `/Unix` 是为了用 linux 格式的路径，详见 [3.1.1 How to run Windows programs from the command line](https://wiki.winehq.org/Wine_User%27s_Guide)，所以为了避免可能的转义问题，首先可以把 `wine C:\\\\windows\\\\command\\\\start.exe` 替换成 `wine start`，而空格转义还是用 `\ `，即最终 `WeChat.desktop` 文件为
+
+    ```bash
+    Exec=env WINEPREFIX="/home/weiya/.wine32" sh -c "wine start /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py"
+    ```
+
+    这个版本终于成功了！
+
+    注意到 `env` 不要删掉，虽然在 `.bashrc` 中有设置，但是通过 desktop 启动时，并不会 source `.bashrc`，所以仍需保留这句设置，不然 `wine` 会找不到。
 
 !!! tip
     一般地，`sh -c "command 1; command 2"`可以实现在 launcher 中同时运行两个命令，参考 [How to combine two commands as a launcher?](https://askubuntu.com/questions/60379/how-to-combine-two-commands-as-a-launcher)
 
-后来跑去研究下 `wine` 的命令，想弄清楚那一长串 argument 是什么意思，才明白这应该是句 `wine start`，而 `/Unix` 是为了用 linux 格式的路径，详见 [3.1.1 How to run Windows programs from the command line](https://wiki.winehq.org/Wine_User%27s_Guide)，所以为了避免可能的转义问题，首先可以把 `wine C:\\\\windows\\\\command\\\\start.exe` 替换成 `wine start`，而空格转义还是用 `\ `，即最终 `WeChat.desktop` 文件为
+??? tip "找到阴影窗口 id"
 
-```bash
-Exec=env WINEPREFIX="/home/weiya/.wine32" sh -c "wine start /Unix /home/weiya/.wine32/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/WeChat/WeChat.lnk; python3 /home/weiya/disable-wechat-shadow.py"
-```
+    策略二基于的假设是，
 
-这个版本终于成功了！
+    > 微信窗口后四位所对应的不同窗口层次是固定的. 主窗口是0xXXXX000a, 那么阴影所对应的窗口就是0xXXXX0014.
 
-注意到 `env` 不要删掉，虽然在 `.bashrc` 中有设置，但是通过 desktop 启动时，并不会 source `.bashrc`，所以仍需保留这句设置，不然 `wine` 会找不到。
+    而且确实好几次我阴影对应的窗口就是 `0xXXXX0014`，所以直接用了代码。但是后来发现，有时代码不起作用，这时才意识到可能 id 没对上。果然，这时候变成了 `0xXXXX0015`。不过，“不同窗口层次是固定的” 这个规律仍适用，而且我发现刚好差 8 （虽然这一点对原作者好像不适用），所以把第 25 行改成
 
-### window id
+    ```python
+    shadow = hex(int(id, 16) + 8)
+    ```
 
-策略二基于的假设是，
+    顺带学一下 python 怎么处理十六进制，`hex()` 会把十进制数转化为十六进制，并以 `0x` 开头的字符串表示。
 
-> 微信窗口后四位所对应的不同窗口层次是固定的. 主窗口是0xXXXX000a, 那么阴影所对应的窗口就是0xXXXX0014.
+    到这里，这个问题差不多是解决了。
 
-而且确实好几次我阴影对应的窗口就是 `0xXXXX0014`，所以直接用了代码。但是后来发现，有时代码不起作用，这时才意识到可能 id 没对上。果然，这时候变成了 `0xXXXX0015`。不过，“不同窗口层次是固定的” 这个规律仍适用，而且我发现刚好差 8 （虽然这一点对原作者好像不适用），所以把第 25 行改成
+    #### update@20210118
 
-```python
-shadow = hex(int(id, 16) + 8)
-```
+    这两天更新 wine 到了 6.0，然后发现窗口轮廓阴影又出现了。后来检查发现是确定 wechat 窗口的语句变化了，之前是
 
-顺带学一下 python 怎么处理十六进制，`hex()` 会把十进制数转化为十六进制，并以 `0x` 开头的字符串表示。
+    ```python
+    if item.find("wechat.exe.Wine") != -1:
+    ```
 
-到这里，这个问题差不多是解决了。
+    这能跟记录死机时记录的 `/var/log/syslog` 对得上，
 
-#### update@20210118
+    ![](wechat-window-before.png)
 
-这两天更新 wine 到了 6.0，然后发现窗口轮廓阴影又出现了。后来检查发现是确定 wechat 窗口的语句变化了，之前是
+    但是现在运行
 
-```python
-if item.find("wechat.exe.Wine") != -1:
-```
+    ```bash
+    $ wmctrl -l -G -p -x
+    ```
 
-这能跟记录死机时记录的 `/var/log/syslog` 对得上，
+    发现这句变成了
 
-![](wechat-window-before.png)
+    ```bash
+    0x0680000c  0 12559  870  596  1238 738  wechat.exe.wechat.exe  weiya-ThinkPad-T460p 微信
+    ```
 
-但是现在运行
+    所以将上述去除轮廓阴影的代码改成了
 
-```bash
-$ wmctrl -l -G -p -x
-```
+    ```python
+    if item.find("wechat.exe") != -1:
+    ```
 
-发现这句变成了
-
-```bash
-0x0680000c  0 12559  870  596  1238 738  wechat.exe.wechat.exe  weiya-ThinkPad-T460p 微信
-```
-
-所以将上述去除轮廓阴影的代码改成了
-
-```python
-if item.find("wechat.exe") != -1:
-```
-
-代码详见 [disable-wechat-shadow.py](disable-wechat-shadow.py)
+    代码详见 [disable-wechat-shadow.py](disable-wechat-shadow.py)
 
 ??? done "fixed: cannot send images"
 
@@ -1568,18 +1594,18 @@ so just remove it.
 
 ## Zotero
 
-### Tips when saving
+??? tip "Click save button on which page?"
 
-- https://www.sciencedirect.com: press the save button on the page of the article, and no need to go to the Elsevier Enhanced Reader page by clicking "Download pdf", otherwise the saved item does not properly show the bib info and the type becomes webpage instead of journal
+    - <https://www.sciencedirect.com>: press the save button on the page of the article, and no need to go to the Elsevier Enhanced Reader page by clicking "Download pdf", otherwise the saved item does not properly show the bib info and the type becomes webpage instead of journal
 
-![](https://user-images.githubusercontent.com/13688320/114495190-3c6c9d80-9c50-11eb-9d24-dda8ee02acc7.png)
+    ![](https://user-images.githubusercontent.com/13688320/114495190-3c6c9d80-9c50-11eb-9d24-dda8ee02acc7.png)
 
-![](https://user-images.githubusercontent.com/13688320/114495254-560de500-9c50-11eb-8ab0-aa415b3608c0.png)
+    ![](https://user-images.githubusercontent.com/13688320/114495254-560de500-9c50-11eb-8ab0-aa415b3608c0.png)
 
-### sync to another cloud
+??? tip "sync to another cloud"
 
-The free size for saving is limited, and try to use a third-party cloud service for syncing. Use [坚果云](https://www.jianguoyun.com/), the configuration is as follows,
+    The free size for saving is limited, and try to use a third-party cloud service for syncing. Use [坚果云](https://www.jianguoyun.com/), the configuration is as follows,
 
-![](https://user-images.githubusercontent.com/13688320/124606874-e51d4880-de9f-11eb-85c7-71a1ebd51e44.png)
+    ![](https://user-images.githubusercontent.com/13688320/124606874-e51d4880-de9f-11eb-85c7-71a1ebd51e44.png)
 
-Note that the password required in the left window can be obtained via clicking `Display Password` in the right window.
+    Note that the password required in the left window can be obtained via clicking `Display Password` in the right window.
