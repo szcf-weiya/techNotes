@@ -12,23 +12,27 @@
         <meta name="author" content="weiya">
       
       
-        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/16to18/">
+        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/blog/2020-09-01-charge-battery-adaptively/">
       
       
+        <link rel="prev" href="../2020-08-25-PSSD/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      
+        <link rel="next" href="../2021-06-07-switch-monitor/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
-        <title>16to18 - techNotes</title>
+        <title>Charge Battery Adaptively - techNotes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0d440cfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -44,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 
   
@@ -81,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1604-1804" class="md-skip">
+        <a href="#battery-charge-adaptively" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +99,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
+    <a href="../../.." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              16to18
+              Charge Battery Adaptively
             
           </span>
         </div>
@@ -189,7 +193,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -198,13 +202,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -220,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../comparisons/stat/" class="md-tabs__link">
+      <a href="../../../comparisons/stat/" class="md-tabs__link">
         StatProgramming
       </a>
     </li>
@@ -241,7 +247,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Cpp/" class="md-tabs__link">
+      <a href="../../../Cpp/" class="md-tabs__link">
         CSProgramming
       </a>
     </li>
@@ -264,7 +270,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../TeX/" class="md-tabs__link">
+      <a href="../../../TeX/" class="md-tabs__link">
         DocProgramming
       </a>
     </li>
@@ -282,7 +288,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Internet/sci-int/" class="md-tabs__link">
+      <a href="../../../Internet/sci-int/" class="md-tabs__link">
         Network/Internet
       </a>
     </li>
@@ -298,7 +304,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../autotools/" class="md-tabs__link">
+      <a href="../../../autotools/" class="md-tabs__link">
         Development
       </a>
     </li>
@@ -314,7 +320,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../stats/prob/" class="md-tabs__link">
+      <a href="../../../stats/prob/" class="md-tabs__link">
         Stat
       </a>
     </li>
@@ -330,7 +336,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../biology/samtools/" class="md-tabs__link">
+      <a href="../../../biology/samtools/" class="md-tabs__link">
         InvitedPosts
       </a>
     </li>
@@ -346,7 +352,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../English/" class="md-tabs__link">
+      <a href="../../../English/" class="md-tabs__link">
         Misc
       </a>
     </li>
@@ -374,7 +380,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
+    <a href="../../.." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -405,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -418,14 +424,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -434,7 +442,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -447,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         General
       </a>
     </li>
@@ -459,16 +467,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -477,7 +487,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           Laptops
@@ -490,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu/" class="md-nav__link">
+      <a href="../../ubuntu/" class="md-nav__link">
         Ubuntu
       </a>
     </li>
@@ -504,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/" class="md-nav__link">
+      <a href="../../software/" class="md-nav__link">
         Application Software
       </a>
     </li>
@@ -518,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/" class="md-nav__link">
+      <a href="../../tools/" class="md-nav__link">
         Command-line Tools
       </a>
     </li>
@@ -532,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../shell/" class="md-nav__link">
+      <a href="../../../shell/" class="md-nav__link">
         Shell Scripts
       </a>
     </li>
@@ -546,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wsl/" class="md-nav__link">
+      <a href="../../wsl/" class="md-nav__link">
         WSL
       </a>
     </li>
@@ -558,14 +568,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" checked>
       
       
       
@@ -574,7 +586,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_2_6">
           <span class="md-nav__icon md-icon"></span>
           Blog
@@ -587,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2020-08-25-PSSD/" class="md-nav__link">
+      <a href="../2020-08-25-PSSD/" class="md-nav__link">
         Portable SSD
       </a>
     </li>
@@ -599,11 +611,48 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../blog/2020-09-01-charge-battery-adaptively/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Charge Battery Adaptively
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Charge Battery Adaptively
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#battery-charge-adaptively" class="md-nav__link">
+    Battery: Charge Adaptively
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -615,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2021-06-07-switch-monitor/" class="md-nav__link">
+      <a href="../2021-06-07-switch-monitor/" class="md-nav__link">
         Switch Monitor Mode
       </a>
     </li>
@@ -629,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2021-07-28-use-old-kernel/" class="md-nav__link">
+      <a href="../2021-07-28-use-old-kernel/" class="md-nav__link">
         Use Old Kernel
       </a>
     </li>
@@ -686,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../servers/" class="md-nav__link">
+      <a href="../../servers/" class="md-nav__link">
         General
       </a>
     </li>
@@ -700,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ecs/" class="md-nav__link">
+      <a href="../../ecs/" class="md-nav__link">
         AliECS
       </a>
     </li>
@@ -714,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rocky-server/" class="md-nav__link">
+      <a href="../../rocky-server/" class="md-nav__link">
         Rocky-Linux
       </a>
     </li>
@@ -728,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../asAserver/" class="md-nav__link">
+      <a href="../../asAserver/" class="md-nav__link">
         G40
       </a>
     </li>
@@ -778,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chpc/" class="md-nav__link">
+      <a href="../../chpc/" class="md-nav__link">
         Tips
       </a>
     </li>
@@ -819,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2020-12-17-passwordless-failed/" class="md-nav__link">
+      <a href="../2020-12-17-passwordless-failed/" class="md-nav__link">
         Fail to SSH passwordlessly
       </a>
     </li>
@@ -833,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2021-05-12-fail-to-access-home/" class="md-nav__link">
+      <a href="../2021-05-12-fail-to-access-home/" class="md-nav__link">
         Fail to Access Home
       </a>
     </li>
@@ -847,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2022-11-19-why-job-restart/" class="md-nav__link">
+      <a href="../2022-11-19-why-job-restart/" class="md-nav__link">
         Why Job Restart?
       </a>
     </li>
@@ -910,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../comparisons/stat/" class="md-nav__link">
+      <a href="../../../comparisons/stat/" class="md-nav__link">
         Comparisons
       </a>
     </li>
@@ -953,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/" class="md-nav__link">
+      <a href="../../../R/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -967,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/plot/" class="md-nav__link">
+      <a href="../../../R/plot/" class="md-nav__link">
         Plot
       </a>
     </li>
@@ -1008,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/legend_from_zhihu/" class="md-nav__link">
+      <a href="../../../R/legend_from_zhihu/" class="md-nav__link">
         ggplot2 中的 legend
       </a>
     </li>
@@ -1022,7 +1071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/sample/" class="md-nav__link">
+      <a href="../../../R/sample/" class="md-nav__link">
         new sample function (v3.6.0+)
       </a>
     </li>
@@ -1036,7 +1085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/factor/" class="md-nav__link">
+      <a href="../../../R/factor/" class="md-nav__link">
         一道与 factor 有关的问题
       </a>
     </li>
@@ -1093,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/" class="md-nav__link">
+      <a href="../../../python/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -1107,7 +1156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/conda/" class="md-nav__link">
+      <a href="../../../python/conda/" class="md-nav__link">
         Conda
       </a>
     </li>
@@ -1121,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/opencv/" class="md-nav__link">
+      <a href="../../../python/opencv/" class="md-nav__link">
         OpenCV
       </a>
     </li>
@@ -1135,7 +1184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/rpy2/" class="md-nav__link">
+      <a href="../../../python/rpy2/" class="md-nav__link">
         rpy2
       </a>
     </li>
@@ -1176,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/pystan/" class="md-nav__link">
+      <a href="../../../python/pystan/" class="md-nav__link">
         PyStan 体验
       </a>
     </li>
@@ -1190,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/esltag/" class="md-nav__link">
+      <a href="../../../python/esltag/" class="md-nav__link">
         自建关键词索引页
       </a>
     </li>
@@ -1247,7 +1296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../julia/" class="md-nav__link">
+      <a href="../../../julia/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -1261,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../julia/plot/" class="md-nav__link">
+      <a href="../../../julia/plot/" class="md-nav__link">
         Plot
       </a>
     </li>
@@ -1311,7 +1360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Matlab/" class="md-nav__link">
+      <a href="../../../Matlab/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -1332,7 +1381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SAS/" class="md-nav__link">
+      <a href="../../../SAS/" class="md-nav__link">
         SAS
       </a>
     </li>
@@ -1410,7 +1459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Cpp/" class="md-nav__link">
+      <a href="../../../Cpp/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1424,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Cpp/Qt/" class="md-nav__link">
+      <a href="../../../Cpp/Qt/" class="md-nav__link">
         Qt
       </a>
     </li>
@@ -1445,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../java/" class="md-nav__link">
+      <a href="../../../java/" class="md-nav__link">
         Java
       </a>
     </li>
@@ -1488,7 +1537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SQL/" class="md-nav__link">
+      <a href="../../../SQL/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1502,7 +1551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/install-notes-for-rmysql/" class="md-nav__link">
+      <a href="../../../R/install-notes-for-rmysql/" class="md-nav__link">
         RMySQL
       </a>
     </li>
@@ -1523,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cuda/" class="md-nav__link">
+      <a href="../../../cuda/" class="md-nav__link">
         Cuda
       </a>
     </li>
@@ -1601,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/" class="md-nav__link">
+      <a href="../../../TeX/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1615,7 +1664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/CI/" class="md-nav__link">
+      <a href="../../../TeX/CI/" class="md-nav__link">
         TravisCI
       </a>
     </li>
@@ -1629,7 +1678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/arxiv/" class="md-nav__link">
+      <a href="../../../TeX/arxiv/" class="md-nav__link">
         arXiv
       </a>
     </li>
@@ -1643,7 +1692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/vargreek/" class="md-nav__link">
+      <a href="../../../TeX/vargreek/" class="md-nav__link">
         VarGreek
       </a>
     </li>
@@ -1657,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/overleaf/" class="md-nav__link">
+      <a href="../../../TeX/overleaf/" class="md-nav__link">
         Overleaf
       </a>
     </li>
@@ -1707,7 +1756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../doc/markdown/" class="md-nav__link">
+      <a href="../../../doc/markdown/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1757,7 +1806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/" class="md-nav__link">
+      <a href="../../../website/" class="md-nav__link">
         Website
       </a>
     </li>
@@ -1771,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/disqus/" class="md-nav__link">
+      <a href="../../../website/disqus/" class="md-nav__link">
         Disqus
       </a>
     </li>
@@ -1785,7 +1834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/css/" class="md-nav__link">
+      <a href="../../../website/css/" class="md-nav__link">
         CSS
       </a>
     </li>
@@ -1799,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../js/" class="md-nav__link">
+      <a href="../../../js/" class="md-nav__link">
         JS
       </a>
     </li>
@@ -1813,7 +1862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/analytics/" class="md-nav__link">
+      <a href="../../../website/analytics/" class="md-nav__link">
         Analytics
       </a>
     </li>
@@ -1863,7 +1912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PHP/" class="md-nav__link">
+      <a href="../../../PHP/" class="md-nav__link">
         PHP
       </a>
     </li>
@@ -1877,7 +1926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/xampp/" class="md-nav__link">
+      <a href="../../../website/xampp/" class="md-nav__link">
         XAMPP
       </a>
     </li>
@@ -1933,7 +1982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/sci-int/" class="md-nav__link">
+      <a href="../../../Internet/sci-int/" class="md-nav__link">
         科学上网
       </a>
     </li>
@@ -1947,7 +1996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/" class="md-nav__link">
+      <a href="../../../Internet/" class="md-nav__link">
         一般问题
       </a>
     </li>
@@ -1961,7 +2010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/ipv6/" class="md-nav__link">
+      <a href="../../../Internet/ipv6/" class="md-nav__link">
         IPv6
       </a>
     </li>
@@ -1975,7 +2024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/encrypt/" class="md-nav__link">
+      <a href="../../../Internet/encrypt/" class="md-nav__link">
         加密算法
       </a>
     </li>
@@ -2024,7 +2073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../autotools/" class="md-nav__link">
+      <a href="../../../autotools/" class="md-nav__link">
         Autotools
       </a>
     </li>
@@ -2038,7 +2087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dev/docker/" class="md-nav__link">
+      <a href="../../../dev/docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -2052,7 +2101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/" class="md-nav__link">
+      <a href="../../../Git/" class="md-nav__link">
         Git
       </a>
     </li>
@@ -2066,7 +2115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../phantomjs/" class="md-nav__link">
+      <a href="../../../phantomjs/" class="md-nav__link">
         Phantomjs
       </a>
     </li>
@@ -2115,7 +2164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stats/prob/" class="md-nav__link">
+      <a href="../../../stats/prob/" class="md-nav__link">
         Probability
       </a>
     </li>
@@ -2129,7 +2178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stats/" class="md-nav__link">
+      <a href="../../../stats/" class="md-nav__link">
         Statistics
       </a>
     </li>
@@ -2143,7 +2192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scientific/" class="md-nav__link">
+      <a href="../../../scientific/" class="md-nav__link">
         Scientific
       </a>
     </li>
@@ -2157,7 +2206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stats/matrix/" class="md-nav__link">
+      <a href="../../../stats/matrix/" class="md-nav__link">
         Matrix
       </a>
     </li>
@@ -2206,7 +2255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../biology/samtools/" class="md-nav__link">
+      <a href="../../../biology/samtools/" class="md-nav__link">
         Samtools
       </a>
     </li>
@@ -2220,7 +2269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../maximum-usage-of-ITSC-cluster-resource/" class="md-nav__link">
+      <a href="../../maximum-usage-of-ITSC-cluster-resource/" class="md-nav__link">
         MaxClusterUsage
       </a>
     </li>
@@ -2269,7 +2318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../English/" class="md-nav__link">
+      <a href="../../../English/" class="md-nav__link">
         English
       </a>
     </li>
@@ -2283,7 +2332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guitar/" class="md-nav__link">
+      <a href="../../../guitar/" class="md-nav__link">
         Guitar
       </a>
     </li>
@@ -2297,7 +2346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../win/" class="md-nav__link">
+      <a href="../../../win/" class="md-nav__link">
         Windows
       </a>
     </li>
@@ -2311,7 +2360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../biology/" class="md-nav__link">
+      <a href="../../../biology/" class="md-nav__link">
         Biology
       </a>
     </li>
@@ -2325,7 +2374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../finance/" class="md-nav__link">
+      <a href="../../../finance/" class="md-nav__link">
         Finance
       </a>
     </li>
@@ -2339,7 +2388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fresh/" class="md-nav__link">
+      <a href="../../../fresh/" class="md-nav__link">
         Fresh
       </a>
     </li>
@@ -2353,7 +2402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../links/" class="md-nav__link">
+      <a href="../../../links/" class="md-nav__link">
         Links
       </a>
     </li>
@@ -2367,7 +2416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/live/" class="md-nav__link">
+      <a href="../../../misc/live/" class="md-nav__link">
         Live
       </a>
     </li>
@@ -2381,7 +2430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/wx/" class="md-nav__link">
+      <a href="../../../misc/wx/" class="md-nav__link">
         小程序
       </a>
     </li>
@@ -2395,7 +2444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/wxjssdk/" class="md-nav__link">
+      <a href="../../../misc/wxjssdk/" class="md-nav__link">
         jssdk
       </a>
     </li>
@@ -2409,7 +2458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/report/" class="md-nav__link">
+      <a href="../../../misc/report/" class="md-nav__link">
         讲座
       </a>
     </li>
@@ -2423,7 +2472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mi/" class="md-nav__link">
+      <a href="../../../mi/" class="md-nav__link">
         Mi
       </a>
     </li>
@@ -2437,7 +2486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/terms/" class="md-nav__link">
+      <a href="../../../misc/terms/" class="md-nav__link">
         Terminology
       </a>
     </li>
@@ -2476,8 +2525,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1604-1804" class="md-nav__link">
-    16.04 -&gt; 18.04
+  <a href="#battery-charge-adaptively" class="md-nav__link">
+    Battery: Charge Adaptively
   </a>
   
 </li>
@@ -2501,92 +2550,110 @@
 
 
 
-  <h1>16to18</h1>
+  <h1>Charge Battery Adaptively</h1>
 
-<h2 id="1604-1804">16.04 -&gt; 18.04<a class="headerlink" href="#1604-1804" title="Permanent link">&para;</a></h2>
+<h2 id="battery-charge-adaptively">Battery: Charge Adaptively<a class="headerlink" href="#battery-charge-adaptively" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Date: 2020-04-12</p>
+<p>Post: <a href="https://github.com/szcf-weiya/techNotes/commit/1c24c099241918dc8000bd0d0199abb8829fe50a">2020.09.01</a></p>
 </div>
-<p>I want to install BaiduYunpan for Linux, but actually I have tried it before, which cannot work for my current version. However, I note that the version has been updated, although it is still for Ubuntu 18.04, not Ubuntu 16.04. </p>
-<p>Same results with the previous try, cannot start it after installing it, and no error thrown in the install procedure. But today I went further, I found that after I type</p>
-<div class="highlight"><pre><span></span><code>/opt/baidunetdisk/baidunetdisk<span class="w"> </span>
+<p>虽然一直知道插上电源充电会损耗电池容量，但是没想到竟然会损耗得那么严重，对于我正在使用的 ThinkPadT460P 来说，</p>
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>upower<span class="w"> </span>-i<span class="w"> </span><span class="sb">`</span>upower<span class="w"> </span>-e<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;BAT&#39;</span><span class="sb">`</span>
+<span class="w">  </span>native-path:<span class="w">          </span>BAT0
+<span class="w">  </span>vendor:<span class="w">               </span>SANYO
+<span class="w">  </span>model:<span class="w">                </span>45N1767
+<span class="w">  </span>serial:<span class="w">               </span><span class="m">3701</span>
+<span class="w">  </span>power<span class="w"> </span>supply:<span class="w">         </span>yes
+<span class="w">  </span>updated:<span class="w">              </span>Tue<span class="w"> </span><span class="m">01</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">2020</span><span class="w"> </span><span class="m">10</span>:15:52<span class="w"> </span>AM<span class="w"> </span>CST<span class="w"> </span><span class="o">(</span><span class="m">106</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="o">)</span>
+<span class="w">  </span>has<span class="w"> </span>history:<span class="w">          </span>yes
+<span class="w">  </span>has<span class="w"> </span>statistics:<span class="w">       </span>yes
+<span class="w">  </span>battery
+<span class="w">    </span>present:<span class="w">             </span>yes
+<span class="w">    </span>rechargeable:<span class="w">        </span>yes
+<span class="w">    </span>state:<span class="w">               </span>fully-charged
+<span class="w">    </span>warning-level:<span class="w">       </span>none
+<span class="w">    </span>energy:<span class="w">              </span><span class="m">19</span>.42<span class="w"> </span>Wh
+<span class="w">    </span>energy-empty:<span class="w">        </span><span class="m">0</span><span class="w"> </span>Wh
+<span class="w">    </span>energy-full:<span class="w">         </span><span class="m">19</span>.58<span class="w"> </span>Wh
+<span class="w">    </span>energy-full-design:<span class="w">  </span><span class="m">47</span>.52<span class="w"> </span>Wh
+<span class="w">    </span>energy-rate:<span class="w">         </span><span class="m">0</span><span class="w"> </span>W
+<span class="w">    </span>voltage:<span class="w">             </span><span class="m">12</span>.025<span class="w"> </span>V
+<span class="w">    </span>percentage:<span class="w">          </span><span class="m">99</span>%
+<span class="w">    </span>capacity:<span class="w">            </span><span class="m">41</span>.2037%
+<span class="w">    </span>technology:<span class="w">          </span>lithium-ion
+<span class="w">    </span>icon-name:<span class="w">          </span><span class="s1">&#39;battery-full-charged-symbolic&#39;</span>
 </code></pre></div>
-<p>it throws an error,</p>
+<p>现在的容量只有 41.2037%，一半都不到。心血来潮搜了下看看有没有什么软件能够支持自动充放电，竟然还真有，而且特别支持 ThinkPad 系列, <a href="https://askubuntu.com/questions/34452/how-can-i-limit-battery-charging-to-80-capacity">How can I limit battery charging to 80% capacity?</a></p>
+<p>不过刚开始按照回答中的解决方案操作，最后 <code>sudo modprobe tp_smapi</code> 并不成功，大概是说没有这个 kernel 吧。不过因为这个回答挺早的，在评论中顺藤摸瓜找到针对更新版的 ThinkPad 的解决方案，<a href="https://linrunner.de/tlp/installation/ubuntu.html">tlp for Ubuntu</a></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:linrunner/tlp
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>acpi-call-dkms<span class="w"> </span>tp-smapi-dkms
+</code></pre></div>
+<p>其中特别指出 <code>acpi-call-dkms</code> 用于 ThinkPads (X220/T420 and later)</p>
+<p>然后查看</p>
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>sudo<span class="w"> </span>tlp-stat<span class="w"> </span>-b
+---<span class="w"> </span>TLP<span class="w"> </span><span class="m">1</span>.3.1<span class="w"> </span>--------------------------------------------
+
++++<span class="w"> </span>Battery<span class="w"> </span>Features:<span class="w"> </span>Charge<span class="w"> </span>Thresholds<span class="w"> </span>and<span class="w"> </span>Recalibrate
+<span class="nv">natacpi</span><span class="w">    </span><span class="o">=</span><span class="w"> </span>inactive<span class="w"> </span><span class="o">(</span>no<span class="w"> </span>kernel<span class="w"> </span>support<span class="o">)</span>
+tpacpi-bat<span class="w"> </span><span class="o">=</span><span class="w"> </span>active<span class="w"> </span><span class="o">(</span>thresholds,<span class="w"> </span>recalibrate<span class="o">)</span>
+tp-smapi<span class="w">   </span><span class="o">=</span><span class="w"> </span>inactive<span class="w"> </span><span class="o">(</span>ThinkPad<span class="w"> </span>not<span class="w"> </span>supported<span class="o">)</span>
+</code></pre></div>
+<p>这时候按照 <a href="https://linrunner.de/tlp/settings/battery.html">Battery Charge Thresholds</a> 修改 <code>/etc/tlp.conf</code>，并运行</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tlp<span class="w"> </span>start
+</code></pre></div>
+<p>但是似乎并没有起作用，仍然在充电，尝试拔了电源线来使之生效，但好像还是不行。总共有<a href="https://linrunner.de/tlp/settings/introduction.html#making-changes">三种生效方式</a>，另外一种为重启。</p>
+<p>猜测可能的原因是</p>
 <blockquote>
-<p>This program requires version 3.3.0 of the Protocol Buffer runtime library, but the installed version is 2.6.1.</p>
+<p>natacpi    = inactive (no kernel support)</p>
 </blockquote>
-<p>Try to install latest version from <a href="https://github.com/protocolbuffers/protobuf">protocolbuffers/protobuf</a>, first time the latest one, 3.14, but it doesn&rsquo;t work and it require <code>.so.9</code>, while v3.14 has a <code>.so.22</code>, I also tried copy <code>.so.22</code> to <code>.so.9</code>, or make a soft link, doesn&rsquo;t work. The second time I install <code>v3.3</code>, the <code>.so.[NUM]</code> still does not match, and hence doesn&rsquo;t work.</p>
-<p>The error is </p>
+<p>但是发现 <code>natacpi</code> 只有 kernel 4.17 才开始支持，而当前我的 kernel 版本为</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>uname<span class="w"> </span>-r
+<span class="m">4</span>.15.0-112-generic
+</code></pre></div>
+<p>而且在 <a href="https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#why-is-my-battery-charged-up-to-100-ignoring-the-charge-thresholds">Why is my battery charged up to 100% – ignoring the charge thresholds?</a> 的
+<a href="https://linrunner.de/tlp/faq/battery.html?highlight=natacpi#thinkpad-t430-s-t530-w530-x230-and-all-later-models">ThinkPad T430(s)/T530/W530/X230 (and all later models)</a>
+提到解决方案是</p>
 <blockquote>
-<p>libmirprotobuf.so.3: undefined symbol: _ZNK6google8protobuf11MessageLite25InitializationErrorStringB5cxx11Ev</p>
+<p>Install a kernel ≥ 4.19 to make natacpi available</p>
 </blockquote>
-<p>and then I follow the instructions in <a href="https://bugs.launchpad.net/ubuntu/+source/mir/+bug/1527137">Ubuntu: mir package</a></p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>purge<span class="w"> </span>libprotobuf-lite9v5
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libprotobuf-lite9v5
+<p>网上搜了一圈，发现更新内核还是有风险的，比如可能造成某些接口无法使用，这让我想起之前 wifi 接口搞不定的噩梦。那就先这样吧。</p>
+<p>而且发现其实 <a href="https://phoenixnap.com/kb/how-to-update-kernel-ubuntu">update &amp; dist-upgrade</a> 可能还是会更新内核版本，但是不会更到最新？</p>
+<div class="admonition tip">
+<p class="admonition-title">upgrade vs dist-upgrade vs full-upgrade</p>
+<p>参考 <a href="https://askubuntu.com/questions/81585/what-is-dist-upgrade-and-why-does-it-upgrade-more-than-upgrade">What is “dist-upgrade” and why does it upgrade more than “upgrade”?</a>
+<code>upgrade</code> 只更新已经安装包的版本，不会额外下载包或卸载包
+<code>dist-upgrade</code> 会安装、卸载新包所依赖的包，而是更新内核版本也需要用它
+<code>full-upgrade</code>：不太清楚，试着运行完 dist-upgrade 后，再运行它，但是没反应。
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>man<span class="w"> </span>apt-get
+...
+<span class="w">    </span>upgrade
+<span class="w">       </span>upgrade<span class="w"> </span>is<span class="w"> </span>used<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>the<span class="w"> </span>newest<span class="w"> </span>versions<span class="w"> </span>of<span class="w"> </span>all<span class="w"> </span>packages<span class="w"> </span>currently<span class="w"> </span>installed<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>system<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>sources<span class="w"> </span>enumerated<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/apt/sources.list.<span class="w"> </span>Packages<span class="w"> </span>currently
+<span class="w">       </span>installed<span class="w"> </span>with<span class="w"> </span>new<span class="w"> </span>versions<span class="w"> </span>available<span class="w"> </span>are<span class="w"> </span>retrieved<span class="w"> </span>and<span class="w"> </span>upgraded<span class="p">;</span><span class="w"> </span>under<span class="w"> </span>no<span class="w"> </span>circumstances<span class="w"> </span>are<span class="w"> </span>currently<span class="w"> </span>installed<span class="w"> </span>packages<span class="w"> </span>removed,<span class="w"> </span>or<span class="w"> </span>packages<span class="w"> </span>not<span class="w"> </span>already<span class="w"> </span>installed<span class="w"> </span>retrieved
+<span class="w">       </span>and<span class="w"> </span>installed.<span class="w"> </span>New<span class="w"> </span>versions<span class="w"> </span>of<span class="w"> </span>currently<span class="w"> </span>installed<span class="w"> </span>packages<span class="w"> </span>that<span class="w"> </span>cannot<span class="w"> </span>be<span class="w"> </span>upgraded<span class="w"> </span>without<span class="w"> </span>changing<span class="w"> </span>the<span class="w"> </span>install<span class="w"> </span>status<span class="w"> </span>of<span class="w"> </span>another<span class="w"> </span>package<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>left<span class="w"> </span>at<span class="w"> </span>their<span class="w"> </span>current
+<span class="w">       </span>version.<span class="w"> </span>An<span class="w"> </span>update<span class="w"> </span>must<span class="w"> </span>be<span class="w"> </span>performed<span class="w"> </span>first<span class="w"> </span>so<span class="w"> </span>that<span class="w"> </span>apt-get<span class="w"> </span>knows<span class="w"> </span>that<span class="w"> </span>new<span class="w"> </span>versions<span class="w"> </span>of<span class="w"> </span>packages<span class="w"> </span>are<span class="w"> </span>available.
+
+<span class="w">   </span>dist-upgrade
+<span class="w">       </span>dist-upgrade<span class="w"> </span><span class="k">in</span><span class="w"> </span>addition<span class="w"> </span>to<span class="w"> </span>performing<span class="w"> </span>the<span class="w"> </span><span class="k">function</span><span class="w"> </span>of<span class="w"> </span>upgrade,<span class="w"> </span>also<span class="w"> </span>intelligently<span class="w"> </span>handles<span class="w"> </span>changing<span class="w"> </span>dependencies<span class="w"> </span>with<span class="w"> </span>new<span class="w"> </span>versions<span class="w"> </span>of<span class="w"> </span>packages<span class="p">;</span><span class="w"> </span>apt-get<span class="w"> </span>has<span class="w"> </span>a<span class="w"> </span><span class="s2">&quot;smart&quot;</span><span class="w"> </span>conflict
+<span class="w">       </span>resolution<span class="w"> </span>system,<span class="w"> </span>and<span class="w"> </span>it<span class="w"> </span>will<span class="w"> </span>attempt<span class="w"> </span>to<span class="w"> </span>upgrade<span class="w"> </span>the<span class="w"> </span>most<span class="w"> </span>important<span class="w"> </span>packages<span class="w"> </span>at<span class="w"> </span>the<span class="w"> </span>expense<span class="w"> </span>of<span class="w"> </span>less<span class="w"> </span>important<span class="w"> </span>ones<span class="w"> </span><span class="k">if</span><span class="w"> </span>necessary.<span class="w"> </span>The<span class="w"> </span>dist-upgrade<span class="w"> </span><span class="nb">command</span><span class="w"> </span>may<span class="w"> </span>therefore
+<span class="w">       </span>remove<span class="w"> </span>some<span class="w"> </span>packages.<span class="w"> </span>The<span class="w"> </span>/etc/apt/sources.list<span class="w"> </span>file<span class="w"> </span>contains<span class="w"> </span>a<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>locations<span class="w"> </span>from<span class="w"> </span>which<span class="w"> </span>to<span class="w"> </span>retrieve<span class="w"> </span>desired<span class="w"> </span>package<span class="w"> </span>files.<span class="w"> </span>See<span class="w"> </span>also<span class="w"> </span>apt_preferences<span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>mechanism
+<span class="w">       </span><span class="k">for</span><span class="w"> </span>overriding<span class="w"> </span>the<span class="w"> </span>general<span class="w"> </span>settings<span class="w"> </span><span class="k">for</span><span class="w"> </span>individual<span class="w"> </span>packages.
 </code></pre></div>
-<p>the first step throws the dependencies warnings, related to <code>libqt5</code>, then I uninstall <code>libqt5</code>. Unfortunately, many running programs then exit when the uninstalling procedure keeps going, and I found that I make a big mistake!!</p>
-<p>Now, maybe the best way is to update my system from Ubuntu 16.04 to Ubuntu 18.04 to recover the broken system. Actually I have updated my old PC from 16.04 to 18.04, seems quite fluent.</p>
-<p>However, for this PC, there are many disappointing problem.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>dist-upgrade
-sudo<span class="w"> </span>apt<span class="w"> </span>autoremove
-</code></pre></div>
-<p>it is necessary to modify <code>/etc/update-manager/release-upgrades</code> from <code>never</code> to <code>lts</code>, otherwise it cannot detect new release version. Then run</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="k">do</span>-release-upgrade
-</code></pre></div>
-<p><em>refer to <a href="https://jingyan.baidu.com/article/2f9b480de8b64941cb6cc2a1.html">将 Ubuntu 16.04 LTS 升级到 Ubuntu 18.04 LTS</a></em></p>
-<p>Due to previous HK Ubuntu mirror, the speed is quite slow, then the first thing I need to do is to replace the mirror in <code>/etc/apt/sources.list</code> with aliyun by <code>sed</code> operation via</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s#http://ftp.cuhk.edu.hk/pub/Linux/ubuntu/#http://mirrors.aliyun.com/ubuntu/#&quot;</span><span class="w"> </span>sources.list
-</code></pre></div>
-<p>后来更新至，</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s#ftp.cuhk.edu.hk/pub/Linux#archive.ubuntu.com#g&quot;</span><span class="w"> </span>sources.list
-</code></pre></div>
-<p>Then go on. However, I mistook enter something in the middle, and stop the installation procedure, that is might be part of the reason why I met so many problems.</p>
-<p>Try to run <code>do-release-upgrade</code> again, but it said no new release version, and told me to upgrade the software in the current version. Actually it is Ubuntu 18.04 now, checking by</p>
-<div class="highlight"><pre><span></span><code>lsb_release<span class="w"> </span>-a
-</code></pre></div>
-<p>then I run </p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
-</code></pre></div>
-<p>after the first run, I think I am OK. But in the rebooting, I cannot enter into the system, the Ubuntu logo is twinkling, and sometimes I can switch to the command window, it holds with message</p>
-<blockquote>
-<p>a start job is running for hold until boot process finishes up（X s/unlimit）</p>
-</blockquote>
-<p>but do not want to try the re-install solution in <a href="https://blog.csdn.net/Natsume_Z_Kenshin/article/details/81283828">问题1：a start job is running for hold until boot process finishes up（X s/unlimit）</a>, because I guess my situation would be quite different, since I uninstall <code>libqt5</code>, and interrupt the normal release updating procedure, </p>
-<p>Then I found some other possible solutions,</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--reinstall<span class="w"> </span>ubuntu-desktop
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>unity
-</code></pre></div>
-<p>But the first thing I need to do is to stop it by power, and then choose to start an advanced session in the grub session, and I chose a <code>recovery mode</code>, then I entered into a command line. And I can continue to fix the problem.</p>
-<p>But before I can install the <code>desktop</code>, repeat to run <code>update</code> and <code>upgrade</code>, then updating texlive from 2015 to 2017 throws an error,</p>
-<blockquote>
-<p>dpkg: error processing archive /var/cache/apt/archives/texlive-fonts-extra-doc_2017.20180305-2_all.deb (&ndash;unpack):
-trying to overwrite &lsquo;/usr/share/doc/texlive-doc/latex/mweights/README&rsquo;, which is also in package texlive-latex-extra-doc 2015.20160320-1
-dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</p>
-</blockquote>
-<p>try <code>install -f</code>, but does not work, the solution is</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>--force-all<span class="w"> </span>/var/cache/apt/archives/texlive-fonts-extra-doc_2017.20180305-2_all.deb
-</code></pre></div>
-<p>refer to <a href="https://debug.fanzheng.org/post/problem-when-update-texlive.html">在apt更新texlive到2017的问题</a></p>
-<p>then I reboot to test, but the internet broken, <code>ifconfig</code> only returns <code>lo</code>, but <code>ifconfig -a</code> shows all possible cards, I have tried <code>service restart</code> like in <a href="https://blog.csdn.net/zhukangle/article/details/75370538">UBUNTU ifconfig只有lo</a>, but it does not work, then I found the solution worked for me</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dhclient<span class="w"> </span>enp**
-</code></pre></div>
-<p>in <a href="https://blog.csdn.net/weixin_42116341/article/details/81410805">Ubuntu输入ifconfig找不到IP地址，只有lo问题</a>.</p>
-<p>Reboot after the <code>desktop</code> is successfully installed, I can enter into the graphical system!!</p>
+但是竟然没有看到 <code>full-upgrade</code>.</p>
+</div>
+<p>比如我发现 Ubuntu 18.04.5 LTS 实际上的内核版本应该是 5.0，甚至有 5.3，不过这似乎跟硬件有关，比如<a href="https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes/ChangeSummary/18.04.5#Kernel_and_Hardware_support_updates">这里</a>列了 <code>linux-aws-5.0</code>, <code>linux-aws-5.0</code>，不过我也看到了 <code>linux-gke-4.15</code>，所以还是不要乱升级的好，不然硬件不兼容又要继续折腾了。</p>
+<p>话说回来，电池最后实在不行，就换了呗，反正这个是外置可拆卸的。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2023</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2020</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2023</span>
       
     
   </small>
@@ -2751,16 +2818,16 @@ dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
       
-        <script src="../../javascripts/baiduzhanzhang.js"></script>
+        <script src="../../../javascripts/baiduzhanzhang.js"></script>
       
-        <script src="../../javascripts/extra.js"></script>
+        <script src="../../../javascripts/extra.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

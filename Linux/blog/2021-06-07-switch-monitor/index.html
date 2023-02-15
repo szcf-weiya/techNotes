@@ -12,23 +12,27 @@
         <meta name="author" content="weiya">
       
       
-        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/16to18/">
+        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/blog/2021-06-07-switch-monitor/">
       
       
+        <link rel="prev" href="../2020-09-01-charge-battery-adaptively/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      
+        <link rel="next" href="../2021-07-28-use-old-kernel/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
-        <title>16to18 - techNotes</title>
+        <title>Switch Monitor Mode - techNotes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0d440cfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -44,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 
   
@@ -81,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1604-1804" class="md-skip">
+        <a href="#custom-shortcut-to-switch-external-display-mode" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +99,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
+    <a href="../../.." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              16to18
+              Switch Monitor Mode
             
           </span>
         </div>
@@ -189,7 +193,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -198,13 +202,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -220,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../comparisons/stat/" class="md-tabs__link">
+      <a href="../../../comparisons/stat/" class="md-tabs__link">
         StatProgramming
       </a>
     </li>
@@ -241,7 +247,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Cpp/" class="md-tabs__link">
+      <a href="../../../Cpp/" class="md-tabs__link">
         CSProgramming
       </a>
     </li>
@@ -264,7 +270,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../TeX/" class="md-tabs__link">
+      <a href="../../../TeX/" class="md-tabs__link">
         DocProgramming
       </a>
     </li>
@@ -282,7 +288,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Internet/sci-int/" class="md-tabs__link">
+      <a href="../../../Internet/sci-int/" class="md-tabs__link">
         Network/Internet
       </a>
     </li>
@@ -298,7 +304,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../autotools/" class="md-tabs__link">
+      <a href="../../../autotools/" class="md-tabs__link">
         Development
       </a>
     </li>
@@ -314,7 +320,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../stats/prob/" class="md-tabs__link">
+      <a href="../../../stats/prob/" class="md-tabs__link">
         Stat
       </a>
     </li>
@@ -330,7 +336,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../biology/samtools/" class="md-tabs__link">
+      <a href="../../../biology/samtools/" class="md-tabs__link">
         InvitedPosts
       </a>
     </li>
@@ -346,7 +352,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../English/" class="md-tabs__link">
+      <a href="../../../English/" class="md-tabs__link">
         Misc
       </a>
     </li>
@@ -374,7 +380,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
+    <a href="../../.." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -405,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -418,14 +424,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -434,7 +442,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -447,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         General
       </a>
     </li>
@@ -459,16 +467,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -477,7 +487,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           Laptops
@@ -490,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu/" class="md-nav__link">
+      <a href="../../ubuntu/" class="md-nav__link">
         Ubuntu
       </a>
     </li>
@@ -504,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/" class="md-nav__link">
+      <a href="../../software/" class="md-nav__link">
         Application Software
       </a>
     </li>
@@ -518,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/" class="md-nav__link">
+      <a href="../../tools/" class="md-nav__link">
         Command-line Tools
       </a>
     </li>
@@ -532,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../shell/" class="md-nav__link">
+      <a href="../../../shell/" class="md-nav__link">
         Shell Scripts
       </a>
     </li>
@@ -546,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wsl/" class="md-nav__link">
+      <a href="../../wsl/" class="md-nav__link">
         WSL
       </a>
     </li>
@@ -558,14 +568,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" checked>
       
       
       
@@ -574,7 +586,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_2_6">
           <span class="md-nav__icon md-icon"></span>
           Blog
@@ -587,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2020-08-25-PSSD/" class="md-nav__link">
+      <a href="../2020-08-25-PSSD/" class="md-nav__link">
         Portable SSD
       </a>
     </li>
@@ -601,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2020-09-01-charge-battery-adaptively/" class="md-nav__link">
+      <a href="../2020-09-01-charge-battery-adaptively/" class="md-nav__link">
         Charge Battery Adaptively
       </a>
     </li>
@@ -613,11 +625,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../blog/2021-06-07-switch-monitor/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Switch Monitor Mode
       </a>
+      
     </li>
   
 
@@ -629,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2021-07-28-use-old-kernel/" class="md-nav__link">
+      <a href="../2021-07-28-use-old-kernel/" class="md-nav__link">
         Use Old Kernel
       </a>
     </li>
@@ -686,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../servers/" class="md-nav__link">
+      <a href="../../servers/" class="md-nav__link">
         General
       </a>
     </li>
@@ -700,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ecs/" class="md-nav__link">
+      <a href="../../ecs/" class="md-nav__link">
         AliECS
       </a>
     </li>
@@ -714,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rocky-server/" class="md-nav__link">
+      <a href="../../rocky-server/" class="md-nav__link">
         Rocky-Linux
       </a>
     </li>
@@ -728,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../asAserver/" class="md-nav__link">
+      <a href="../../asAserver/" class="md-nav__link">
         G40
       </a>
     </li>
@@ -778,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chpc/" class="md-nav__link">
+      <a href="../../chpc/" class="md-nav__link">
         Tips
       </a>
     </li>
@@ -819,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2020-12-17-passwordless-failed/" class="md-nav__link">
+      <a href="../2020-12-17-passwordless-failed/" class="md-nav__link">
         Fail to SSH passwordlessly
       </a>
     </li>
@@ -833,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2021-05-12-fail-to-access-home/" class="md-nav__link">
+      <a href="../2021-05-12-fail-to-access-home/" class="md-nav__link">
         Fail to Access Home
       </a>
     </li>
@@ -847,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2022-11-19-why-job-restart/" class="md-nav__link">
+      <a href="../2022-11-19-why-job-restart/" class="md-nav__link">
         Why Job Restart?
       </a>
     </li>
@@ -910,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../comparisons/stat/" class="md-nav__link">
+      <a href="../../../comparisons/stat/" class="md-nav__link">
         Comparisons
       </a>
     </li>
@@ -953,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/" class="md-nav__link">
+      <a href="../../../R/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -967,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/plot/" class="md-nav__link">
+      <a href="../../../R/plot/" class="md-nav__link">
         Plot
       </a>
     </li>
@@ -1008,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/legend_from_zhihu/" class="md-nav__link">
+      <a href="../../../R/legend_from_zhihu/" class="md-nav__link">
         ggplot2 中的 legend
       </a>
     </li>
@@ -1022,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/sample/" class="md-nav__link">
+      <a href="../../../R/sample/" class="md-nav__link">
         new sample function (v3.6.0+)
       </a>
     </li>
@@ -1036,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/factor/" class="md-nav__link">
+      <a href="../../../R/factor/" class="md-nav__link">
         一道与 factor 有关的问题
       </a>
     </li>
@@ -1093,7 +1115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/" class="md-nav__link">
+      <a href="../../../python/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -1107,7 +1129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/conda/" class="md-nav__link">
+      <a href="../../../python/conda/" class="md-nav__link">
         Conda
       </a>
     </li>
@@ -1121,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/opencv/" class="md-nav__link">
+      <a href="../../../python/opencv/" class="md-nav__link">
         OpenCV
       </a>
     </li>
@@ -1135,7 +1157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/rpy2/" class="md-nav__link">
+      <a href="../../../python/rpy2/" class="md-nav__link">
         rpy2
       </a>
     </li>
@@ -1176,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/pystan/" class="md-nav__link">
+      <a href="../../../python/pystan/" class="md-nav__link">
         PyStan 体验
       </a>
     </li>
@@ -1190,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/esltag/" class="md-nav__link">
+      <a href="../../../python/esltag/" class="md-nav__link">
         自建关键词索引页
       </a>
     </li>
@@ -1247,7 +1269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../julia/" class="md-nav__link">
+      <a href="../../../julia/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -1261,7 +1283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../julia/plot/" class="md-nav__link">
+      <a href="../../../julia/plot/" class="md-nav__link">
         Plot
       </a>
     </li>
@@ -1311,7 +1333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Matlab/" class="md-nav__link">
+      <a href="../../../Matlab/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -1332,7 +1354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SAS/" class="md-nav__link">
+      <a href="../../../SAS/" class="md-nav__link">
         SAS
       </a>
     </li>
@@ -1410,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Cpp/" class="md-nav__link">
+      <a href="../../../Cpp/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1424,7 +1446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Cpp/Qt/" class="md-nav__link">
+      <a href="../../../Cpp/Qt/" class="md-nav__link">
         Qt
       </a>
     </li>
@@ -1445,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../java/" class="md-nav__link">
+      <a href="../../../java/" class="md-nav__link">
         Java
       </a>
     </li>
@@ -1488,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SQL/" class="md-nav__link">
+      <a href="../../../SQL/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1502,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/install-notes-for-rmysql/" class="md-nav__link">
+      <a href="../../../R/install-notes-for-rmysql/" class="md-nav__link">
         RMySQL
       </a>
     </li>
@@ -1523,7 +1545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cuda/" class="md-nav__link">
+      <a href="../../../cuda/" class="md-nav__link">
         Cuda
       </a>
     </li>
@@ -1601,7 +1623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/" class="md-nav__link">
+      <a href="../../../TeX/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1615,7 +1637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/CI/" class="md-nav__link">
+      <a href="../../../TeX/CI/" class="md-nav__link">
         TravisCI
       </a>
     </li>
@@ -1629,7 +1651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/arxiv/" class="md-nav__link">
+      <a href="../../../TeX/arxiv/" class="md-nav__link">
         arXiv
       </a>
     </li>
@@ -1643,7 +1665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/vargreek/" class="md-nav__link">
+      <a href="../../../TeX/vargreek/" class="md-nav__link">
         VarGreek
       </a>
     </li>
@@ -1657,7 +1679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/overleaf/" class="md-nav__link">
+      <a href="../../../TeX/overleaf/" class="md-nav__link">
         Overleaf
       </a>
     </li>
@@ -1707,7 +1729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../doc/markdown/" class="md-nav__link">
+      <a href="../../../doc/markdown/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1757,7 +1779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/" class="md-nav__link">
+      <a href="../../../website/" class="md-nav__link">
         Website
       </a>
     </li>
@@ -1771,7 +1793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/disqus/" class="md-nav__link">
+      <a href="../../../website/disqus/" class="md-nav__link">
         Disqus
       </a>
     </li>
@@ -1785,7 +1807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/css/" class="md-nav__link">
+      <a href="../../../website/css/" class="md-nav__link">
         CSS
       </a>
     </li>
@@ -1799,7 +1821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../js/" class="md-nav__link">
+      <a href="../../../js/" class="md-nav__link">
         JS
       </a>
     </li>
@@ -1813,7 +1835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/analytics/" class="md-nav__link">
+      <a href="../../../website/analytics/" class="md-nav__link">
         Analytics
       </a>
     </li>
@@ -1863,7 +1885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PHP/" class="md-nav__link">
+      <a href="../../../PHP/" class="md-nav__link">
         PHP
       </a>
     </li>
@@ -1877,7 +1899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/xampp/" class="md-nav__link">
+      <a href="../../../website/xampp/" class="md-nav__link">
         XAMPP
       </a>
     </li>
@@ -1933,7 +1955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/sci-int/" class="md-nav__link">
+      <a href="../../../Internet/sci-int/" class="md-nav__link">
         科学上网
       </a>
     </li>
@@ -1947,7 +1969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/" class="md-nav__link">
+      <a href="../../../Internet/" class="md-nav__link">
         一般问题
       </a>
     </li>
@@ -1961,7 +1983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/ipv6/" class="md-nav__link">
+      <a href="../../../Internet/ipv6/" class="md-nav__link">
         IPv6
       </a>
     </li>
@@ -1975,7 +1997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/encrypt/" class="md-nav__link">
+      <a href="../../../Internet/encrypt/" class="md-nav__link">
         加密算法
       </a>
     </li>
@@ -2024,7 +2046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../autotools/" class="md-nav__link">
+      <a href="../../../autotools/" class="md-nav__link">
         Autotools
       </a>
     </li>
@@ -2038,7 +2060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dev/docker/" class="md-nav__link">
+      <a href="../../../dev/docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -2052,7 +2074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/" class="md-nav__link">
+      <a href="../../../Git/" class="md-nav__link">
         Git
       </a>
     </li>
@@ -2066,7 +2088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../phantomjs/" class="md-nav__link">
+      <a href="../../../phantomjs/" class="md-nav__link">
         Phantomjs
       </a>
     </li>
@@ -2115,7 +2137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stats/prob/" class="md-nav__link">
+      <a href="../../../stats/prob/" class="md-nav__link">
         Probability
       </a>
     </li>
@@ -2129,7 +2151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stats/" class="md-nav__link">
+      <a href="../../../stats/" class="md-nav__link">
         Statistics
       </a>
     </li>
@@ -2143,7 +2165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scientific/" class="md-nav__link">
+      <a href="../../../scientific/" class="md-nav__link">
         Scientific
       </a>
     </li>
@@ -2157,7 +2179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stats/matrix/" class="md-nav__link">
+      <a href="../../../stats/matrix/" class="md-nav__link">
         Matrix
       </a>
     </li>
@@ -2206,7 +2228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../biology/samtools/" class="md-nav__link">
+      <a href="../../../biology/samtools/" class="md-nav__link">
         Samtools
       </a>
     </li>
@@ -2220,7 +2242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../maximum-usage-of-ITSC-cluster-resource/" class="md-nav__link">
+      <a href="../../maximum-usage-of-ITSC-cluster-resource/" class="md-nav__link">
         MaxClusterUsage
       </a>
     </li>
@@ -2269,7 +2291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../English/" class="md-nav__link">
+      <a href="../../../English/" class="md-nav__link">
         English
       </a>
     </li>
@@ -2283,7 +2305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guitar/" class="md-nav__link">
+      <a href="../../../guitar/" class="md-nav__link">
         Guitar
       </a>
     </li>
@@ -2297,7 +2319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../win/" class="md-nav__link">
+      <a href="../../../win/" class="md-nav__link">
         Windows
       </a>
     </li>
@@ -2311,7 +2333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../biology/" class="md-nav__link">
+      <a href="../../../biology/" class="md-nav__link">
         Biology
       </a>
     </li>
@@ -2325,7 +2347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../finance/" class="md-nav__link">
+      <a href="../../../finance/" class="md-nav__link">
         Finance
       </a>
     </li>
@@ -2339,7 +2361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fresh/" class="md-nav__link">
+      <a href="../../../fresh/" class="md-nav__link">
         Fresh
       </a>
     </li>
@@ -2353,7 +2375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../links/" class="md-nav__link">
+      <a href="../../../links/" class="md-nav__link">
         Links
       </a>
     </li>
@@ -2367,7 +2389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/live/" class="md-nav__link">
+      <a href="../../../misc/live/" class="md-nav__link">
         Live
       </a>
     </li>
@@ -2381,7 +2403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/wx/" class="md-nav__link">
+      <a href="../../../misc/wx/" class="md-nav__link">
         小程序
       </a>
     </li>
@@ -2395,7 +2417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/wxjssdk/" class="md-nav__link">
+      <a href="../../../misc/wxjssdk/" class="md-nav__link">
         jssdk
       </a>
     </li>
@@ -2409,7 +2431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/report/" class="md-nav__link">
+      <a href="../../../misc/report/" class="md-nav__link">
         讲座
       </a>
     </li>
@@ -2423,7 +2445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mi/" class="md-nav__link">
+      <a href="../../../mi/" class="md-nav__link">
         Mi
       </a>
     </li>
@@ -2437,7 +2459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/terms/" class="md-nav__link">
+      <a href="../../../misc/terms/" class="md-nav__link">
         Terminology
       </a>
     </li>
@@ -2468,21 +2490,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1604-1804" class="md-nav__link">
-    16.04 -&gt; 18.04
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2501,92 +2510,59 @@
 
 
 
-  <h1>16to18</h1>
-
-<h2 id="1604-1804">16.04 -&gt; 18.04<a class="headerlink" href="#1604-1804" title="Permanent link">&para;</a></h2>
+<h1 id="custom-shortcut-to-switch-external-display-mode">Custom Shortcut to Switch External Display Mode<a class="headerlink" href="#custom-shortcut-to-switch-external-display-mode" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Date: 2020-04-12</p>
+<p>Post: <a href="https://github.com/szcf-weiya/techNotes/commit/19af9f4fb7ef0bc82798ebde3879e9e4c5ddbafe">2021.06.07</a></p>
 </div>
-<p>I want to install BaiduYunpan for Linux, but actually I have tried it before, which cannot work for my current version. However, I note that the version has been updated, although it is still for Ubuntu 18.04, not Ubuntu 16.04. </p>
-<p>Same results with the previous try, cannot start it after installing it, and no error thrown in the install procedure. But today I went further, I found that after I type</p>
-<div class="highlight"><pre><span></span><code>/opt/baidunetdisk/baidunetdisk<span class="w"> </span>
+<p>办公室电脑既可以作为显示屏，也可以在 PC 模式下使用 Windows 系统。在 PC 模式下，在 Ubuntu 上通过 synergy 共享键鼠，但是此时存在一个问题，因为 HDMI 仍然连着，所以在移动鼠标时中间有个 gap，也就是需要跳过外接显示屏才能移动到 PC。</p>
+<p>试过在 synergy 中将 PC 机设置为 T460p 上方，这样移动鼠标只需往上，不过体验不是很好，而且 Ubuntu 顶端有状态栏而 PC 端底部也有task bar，移动时能明显感受到延时。另外一个策略便是切换显示屏 mode，由 joint 模式切换成 mirror。</p>
+<p>注意到，当处于 mirror 模式下，eDP-1-1 primary 显示为 <code>1920x1080+0+0</code>，而如果是 joint mode，尺寸为 <code>1920x1080+1920+0</code>。受 <a href="https://askubuntu.com/questions/958914/swap-between-monitor-display-modes-using-shortcut">Swap between monitor display modes using shortcut</a>
+ 启发，决定写脚本自定义快捷键</p>
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>cat<span class="w"> </span>switch_mirror_joint.sh<span class="w"> </span>
+<span class="c1">#!/bin/bash</span>
+<span class="nv">currentmode</span><span class="o">=</span><span class="k">$(</span>xrandr<span class="w"> </span>-q<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;primary 1920x1080+0+0&quot;</span><span class="k">)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$currentmode</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="c1">#echo &quot;mirror&quot;</span>
+<span class="w">    </span>xrandr<span class="w"> </span>--output<span class="w"> </span>HDMI-1-1<span class="w"> </span>--left-of<span class="w"> </span>eDP-1-1<span class="w"> </span>--transform<span class="w"> </span>none
+<span class="k">else</span>
+<span class="w">    </span><span class="c1">#echo &quot;joint&quot;</span>
+<span class="w">    </span>xrandr<span class="w"> </span>--output<span class="w"> </span>HDMI-1-1<span class="w"> </span>--same-as<span class="w"> </span>eDP-1-1<span class="w"> </span>--scale-from<span class="w"> </span>1920x1080
+<span class="k">fi</span>
 </code></pre></div>
-<p>it throws an error,</p>
-<blockquote>
-<p>This program requires version 3.3.0 of the Protocol Buffer runtime library, but the installed version is 2.6.1.</p>
-</blockquote>
-<p>Try to install latest version from <a href="https://github.com/protocolbuffers/protobuf">protocolbuffers/protobuf</a>, first time the latest one, 3.14, but it doesn&rsquo;t work and it require <code>.so.9</code>, while v3.14 has a <code>.so.22</code>, I also tried copy <code>.so.22</code> to <code>.so.9</code>, or make a soft link, doesn&rsquo;t work. The second time I install <code>v3.3</code>, the <code>.so.[NUM]</code> still does not match, and hence doesn&rsquo;t work.</p>
-<p>The error is </p>
-<blockquote>
-<p>libmirprotobuf.so.3: undefined symbol: _ZNK6google8protobuf11MessageLite25InitializationErrorStringB5cxx11Ev</p>
-</blockquote>
-<p>and then I follow the instructions in <a href="https://bugs.launchpad.net/ubuntu/+source/mir/+bug/1527137">Ubuntu: mir package</a></p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>purge<span class="w"> </span>libprotobuf-lite9v5
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libprotobuf-lite9v5
-</code></pre></div>
-<p>the first step throws the dependencies warnings, related to <code>libqt5</code>, then I uninstall <code>libqt5</code>. Unfortunately, many running programs then exit when the uninstalling procedure keeps going, and I found that I make a big mistake!!</p>
-<p>Now, maybe the best way is to update my system from Ubuntu 16.04 to Ubuntu 18.04 to recover the broken system. Actually I have updated my old PC from 16.04 to 18.04, seems quite fluent.</p>
-<p>However, for this PC, there are many disappointing problem.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>dist-upgrade
-sudo<span class="w"> </span>apt<span class="w"> </span>autoremove
-</code></pre></div>
-<p>it is necessary to modify <code>/etc/update-manager/release-upgrades</code> from <code>never</code> to <code>lts</code>, otherwise it cannot detect new release version. Then run</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="k">do</span>-release-upgrade
-</code></pre></div>
-<p><em>refer to <a href="https://jingyan.baidu.com/article/2f9b480de8b64941cb6cc2a1.html">将 Ubuntu 16.04 LTS 升级到 Ubuntu 18.04 LTS</a></em></p>
-<p>Due to previous HK Ubuntu mirror, the speed is quite slow, then the first thing I need to do is to replace the mirror in <code>/etc/apt/sources.list</code> with aliyun by <code>sed</code> operation via</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s#http://ftp.cuhk.edu.hk/pub/Linux/ubuntu/#http://mirrors.aliyun.com/ubuntu/#&quot;</span><span class="w"> </span>sources.list
-</code></pre></div>
-<p>后来更新至，</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s#ftp.cuhk.edu.hk/pub/Linux#archive.ubuntu.com#g&quot;</span><span class="w"> </span>sources.list
-</code></pre></div>
-<p>Then go on. However, I mistook enter something in the middle, and stop the installation procedure, that is might be part of the reason why I met so many problems.</p>
-<p>Try to run <code>do-release-upgrade</code> again, but it said no new release version, and told me to upgrade the software in the current version. Actually it is Ubuntu 18.04 now, checking by</p>
-<div class="highlight"><pre><span></span><code>lsb_release<span class="w"> </span>-a
-</code></pre></div>
-<p>then I run </p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
-</code></pre></div>
-<p>after the first run, I think I am OK. But in the rebooting, I cannot enter into the system, the Ubuntu logo is twinkling, and sometimes I can switch to the command window, it holds with message</p>
-<blockquote>
-<p>a start job is running for hold until boot process finishes up（X s/unlimit）</p>
-</blockquote>
-<p>but do not want to try the re-install solution in <a href="https://blog.csdn.net/Natsume_Z_Kenshin/article/details/81283828">问题1：a start job is running for hold until boot process finishes up（X s/unlimit）</a>, because I guess my situation would be quite different, since I uninstall <code>libqt5</code>, and interrupt the normal release updating procedure, </p>
-<p>Then I found some other possible solutions,</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--reinstall<span class="w"> </span>ubuntu-desktop
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>unity
-</code></pre></div>
-<p>But the first thing I need to do is to stop it by power, and then choose to start an advanced session in the grub session, and I chose a <code>recovery mode</code>, then I entered into a command line. And I can continue to fix the problem.</p>
-<p>But before I can install the <code>desktop</code>, repeat to run <code>update</code> and <code>upgrade</code>, then updating texlive from 2015 to 2017 throws an error,</p>
-<blockquote>
-<p>dpkg: error processing archive /var/cache/apt/archives/texlive-fonts-extra-doc_2017.20180305-2_all.deb (&ndash;unpack):
-trying to overwrite &lsquo;/usr/share/doc/texlive-doc/latex/mweights/README&rsquo;, which is also in package texlive-latex-extra-doc 2015.20160320-1
-dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</p>
-</blockquote>
-<p>try <code>install -f</code>, but does not work, the solution is</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>--force-all<span class="w"> </span>/var/cache/apt/archives/texlive-fonts-extra-doc_2017.20180305-2_all.deb
-</code></pre></div>
-<p>refer to <a href="https://debug.fanzheng.org/post/problem-when-update-texlive.html">在apt更新texlive到2017的问题</a></p>
-<p>then I reboot to test, but the internet broken, <code>ifconfig</code> only returns <code>lo</code>, but <code>ifconfig -a</code> shows all possible cards, I have tried <code>service restart</code> like in <a href="https://blog.csdn.net/zhukangle/article/details/75370538">UBUNTU ifconfig只有lo</a>, but it does not work, then I found the solution worked for me</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dhclient<span class="w"> </span>enp**
-</code></pre></div>
-<p>in <a href="https://blog.csdn.net/weixin_42116341/article/details/81410805">Ubuntu输入ifconfig找不到IP地址，只有lo问题</a>.</p>
-<p>Reboot after the <code>desktop</code> is successfully installed, I can enter into the graphical system!!</p>
+<div class="admonition tip">
+<p class="admonition-title">&ndash;scale-from</p>
+<p>如果两台显示器的分辨率不一致，则切换时会出现截断的问题。电脑屏幕分辨率为 1920x1080，而若外接显示器为 1920x1200，则切换至 mirror model 时，页面会以 1920x1200 为准，则在电脑屏幕上看不到底部 1200-1080 的部分。</p>
+<p>首先尝试过直接在设置中将外接显示器的分辨率改成 1920x1080，但是这会让画面模糊。</p>
+<p>另一种则是加上关键词 <code>--scale-from 1920x1080</code>，这样外接显示器的分辨率不会变，但会 scale 至电脑屏幕相同的分辨率大小。</p>
+<p>scale 之后再用 xrandr 查看便是 1920x1080，但在设置界面下显示器的分辨率仍保持不变。</p>
+</div>
+<div class="admonition top">
+<p class="admonition-title">&ndash;transform none</p>
+<p>另外观察到 scale 一次之后就不会再 scale 回来了。比如上面只在切换至 mirror 时有 scale，但是切换回 joint 时其 size 并不会变成 1920x1200，而继续保持 1920x1080. 为了避免这种情况，在转成 joint mode 时取消 scale，这可以通过 <code>--transform none</code> 实现。参考 <a href="https://unix.stackexchange.com/questions/390099/reset-xrandr-or-switch-off-the-scale-from-setting-at-disconnect"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
+</div>
+<p>然后进入 keyboard shortcut 设置界面，</p>
+<ul>
+<li>Name: <code>switch display mode</code></li>
+<li>Command: <code>/home/weiya/switch_mirror_joint.sh</code></li>
+<li>Shortcut: <code>Ctrl+F7</code></li>
+</ul>
+<p>之所以选择 <code>F7</code> 是因为本身 F7 也支持切换 display mode，但是默认 external monitor 在右侧。试图直接更改 F7 的 binding commands，相关的 Ubuntu 官方帮助文档 <a href="https://help.ubuntu.com/stable/ubuntu-help/keyboard.html.en">Keyboard</a> 及配置文件 <a href="https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions">Custom keyboard layout definitions</a>，但是无从下手。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>连接 HDMI 线没反应，也可以用 <code>xrandr</code> 排查是 PC 的问题还是显示器的问题。如果是电脑端没有显示连接，那很可能是显示器的问题。2022-09-16 初次连接 Yale 办公室的显示器时，便是电脑端没有插好。</p>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2023</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2020</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2023</span>
       
     
   </small>
@@ -2751,16 +2727,16 @@ dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
       
-        <script src="../../javascripts/baiduzhanzhang.js"></script>
+        <script src="../../../javascripts/baiduzhanzhang.js"></script>
       
-        <script src="../../javascripts/extra.js"></script>
+        <script src="../../../javascripts/extra.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

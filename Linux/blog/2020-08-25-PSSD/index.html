@@ -12,23 +12,27 @@
         <meta name="author" content="weiya">
       
       
-        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/16to18/">
+        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/blog/2020-08-25-PSSD/">
       
       
+        <link rel="prev" href="../../wsl/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      
+        <link rel="next" href="../2020-09-01-charge-battery-adaptively/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
-        <title>16to18 - techNotes</title>
+        <title>Portable SSD - techNotes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0d440cfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -44,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 
   
@@ -81,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1604-1804" class="md-skip">
+        <a href="#portable-ssd" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +99,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
+    <a href="../../.." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              16to18
+              Portable SSD
             
           </span>
         </div>
@@ -189,7 +193,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -198,13 +202,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -220,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../comparisons/stat/" class="md-tabs__link">
+      <a href="../../../comparisons/stat/" class="md-tabs__link">
         StatProgramming
       </a>
     </li>
@@ -241,7 +247,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Cpp/" class="md-tabs__link">
+      <a href="../../../Cpp/" class="md-tabs__link">
         CSProgramming
       </a>
     </li>
@@ -264,7 +270,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../TeX/" class="md-tabs__link">
+      <a href="../../../TeX/" class="md-tabs__link">
         DocProgramming
       </a>
     </li>
@@ -282,7 +288,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Internet/sci-int/" class="md-tabs__link">
+      <a href="../../../Internet/sci-int/" class="md-tabs__link">
         Network/Internet
       </a>
     </li>
@@ -298,7 +304,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../autotools/" class="md-tabs__link">
+      <a href="../../../autotools/" class="md-tabs__link">
         Development
       </a>
     </li>
@@ -314,7 +320,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../stats/prob/" class="md-tabs__link">
+      <a href="../../../stats/prob/" class="md-tabs__link">
         Stat
       </a>
     </li>
@@ -330,7 +336,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../biology/samtools/" class="md-tabs__link">
+      <a href="../../../biology/samtools/" class="md-tabs__link">
         InvitedPosts
       </a>
     </li>
@@ -346,7 +352,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../English/" class="md-tabs__link">
+      <a href="../../../English/" class="md-tabs__link">
         Misc
       </a>
     </li>
@@ -374,7 +380,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
+    <a href="../../.." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -405,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -418,14 +424,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -434,7 +442,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Linux
@@ -447,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         General
       </a>
     </li>
@@ -459,16 +467,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -477,7 +487,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           Laptops
@@ -490,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu/" class="md-nav__link">
+      <a href="../../ubuntu/" class="md-nav__link">
         Ubuntu
       </a>
     </li>
@@ -504,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/" class="md-nav__link">
+      <a href="../../software/" class="md-nav__link">
         Application Software
       </a>
     </li>
@@ -518,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/" class="md-nav__link">
+      <a href="../../tools/" class="md-nav__link">
         Command-line Tools
       </a>
     </li>
@@ -532,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../shell/" class="md-nav__link">
+      <a href="../../../shell/" class="md-nav__link">
         Shell Scripts
       </a>
     </li>
@@ -546,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wsl/" class="md-nav__link">
+      <a href="../../wsl/" class="md-nav__link">
         WSL
       </a>
     </li>
@@ -558,14 +568,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" checked>
       
       
       
@@ -574,7 +586,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_2_6">
           <span class="md-nav__icon md-icon"></span>
           Blog
@@ -585,11 +597,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../blog/2020-08-25-PSSD/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Portable SSD
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Portable SSD
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rename-portable-disk" class="md-nav__link">
+    Rename Portable Disk
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -601,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2020-09-01-charge-battery-adaptively/" class="md-nav__link">
+      <a href="../2020-09-01-charge-battery-adaptively/" class="md-nav__link">
         Charge Battery Adaptively
       </a>
     </li>
@@ -615,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2021-06-07-switch-monitor/" class="md-nav__link">
+      <a href="../2021-06-07-switch-monitor/" class="md-nav__link">
         Switch Monitor Mode
       </a>
     </li>
@@ -629,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2021-07-28-use-old-kernel/" class="md-nav__link">
+      <a href="../2021-07-28-use-old-kernel/" class="md-nav__link">
         Use Old Kernel
       </a>
     </li>
@@ -686,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../servers/" class="md-nav__link">
+      <a href="../../servers/" class="md-nav__link">
         General
       </a>
     </li>
@@ -700,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ecs/" class="md-nav__link">
+      <a href="../../ecs/" class="md-nav__link">
         AliECS
       </a>
     </li>
@@ -714,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rocky-server/" class="md-nav__link">
+      <a href="../../rocky-server/" class="md-nav__link">
         Rocky-Linux
       </a>
     </li>
@@ -728,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../asAserver/" class="md-nav__link">
+      <a href="../../asAserver/" class="md-nav__link">
         G40
       </a>
     </li>
@@ -778,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chpc/" class="md-nav__link">
+      <a href="../../chpc/" class="md-nav__link">
         Tips
       </a>
     </li>
@@ -819,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2020-12-17-passwordless-failed/" class="md-nav__link">
+      <a href="../2020-12-17-passwordless-failed/" class="md-nav__link">
         Fail to SSH passwordlessly
       </a>
     </li>
@@ -833,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2021-05-12-fail-to-access-home/" class="md-nav__link">
+      <a href="../2021-05-12-fail-to-access-home/" class="md-nav__link">
         Fail to Access Home
       </a>
     </li>
@@ -847,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2022-11-19-why-job-restart/" class="md-nav__link">
+      <a href="../2022-11-19-why-job-restart/" class="md-nav__link">
         Why Job Restart?
       </a>
     </li>
@@ -910,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../comparisons/stat/" class="md-nav__link">
+      <a href="../../../comparisons/stat/" class="md-nav__link">
         Comparisons
       </a>
     </li>
@@ -953,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/" class="md-nav__link">
+      <a href="../../../R/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -967,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/plot/" class="md-nav__link">
+      <a href="../../../R/plot/" class="md-nav__link">
         Plot
       </a>
     </li>
@@ -1008,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/legend_from_zhihu/" class="md-nav__link">
+      <a href="../../../R/legend_from_zhihu/" class="md-nav__link">
         ggplot2 中的 legend
       </a>
     </li>
@@ -1022,7 +1075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/sample/" class="md-nav__link">
+      <a href="../../../R/sample/" class="md-nav__link">
         new sample function (v3.6.0+)
       </a>
     </li>
@@ -1036,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/factor/" class="md-nav__link">
+      <a href="../../../R/factor/" class="md-nav__link">
         一道与 factor 有关的问题
       </a>
     </li>
@@ -1093,7 +1146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/" class="md-nav__link">
+      <a href="../../../python/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -1107,7 +1160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/conda/" class="md-nav__link">
+      <a href="../../../python/conda/" class="md-nav__link">
         Conda
       </a>
     </li>
@@ -1121,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/opencv/" class="md-nav__link">
+      <a href="../../../python/opencv/" class="md-nav__link">
         OpenCV
       </a>
     </li>
@@ -1135,7 +1188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/rpy2/" class="md-nav__link">
+      <a href="../../../python/rpy2/" class="md-nav__link">
         rpy2
       </a>
     </li>
@@ -1176,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/pystan/" class="md-nav__link">
+      <a href="../../../python/pystan/" class="md-nav__link">
         PyStan 体验
       </a>
     </li>
@@ -1190,7 +1243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/esltag/" class="md-nav__link">
+      <a href="../../../python/esltag/" class="md-nav__link">
         自建关键词索引页
       </a>
     </li>
@@ -1247,7 +1300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../julia/" class="md-nav__link">
+      <a href="../../../julia/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -1261,7 +1314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../julia/plot/" class="md-nav__link">
+      <a href="../../../julia/plot/" class="md-nav__link">
         Plot
       </a>
     </li>
@@ -1311,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Matlab/" class="md-nav__link">
+      <a href="../../../Matlab/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -1332,7 +1385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SAS/" class="md-nav__link">
+      <a href="../../../SAS/" class="md-nav__link">
         SAS
       </a>
     </li>
@@ -1410,7 +1463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Cpp/" class="md-nav__link">
+      <a href="../../../Cpp/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1424,7 +1477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Cpp/Qt/" class="md-nav__link">
+      <a href="../../../Cpp/Qt/" class="md-nav__link">
         Qt
       </a>
     </li>
@@ -1445,7 +1498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../java/" class="md-nav__link">
+      <a href="../../../java/" class="md-nav__link">
         Java
       </a>
     </li>
@@ -1488,7 +1541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SQL/" class="md-nav__link">
+      <a href="../../../SQL/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1502,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/install-notes-for-rmysql/" class="md-nav__link">
+      <a href="../../../R/install-notes-for-rmysql/" class="md-nav__link">
         RMySQL
       </a>
     </li>
@@ -1523,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cuda/" class="md-nav__link">
+      <a href="../../../cuda/" class="md-nav__link">
         Cuda
       </a>
     </li>
@@ -1601,7 +1654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/" class="md-nav__link">
+      <a href="../../../TeX/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1615,7 +1668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/CI/" class="md-nav__link">
+      <a href="../../../TeX/CI/" class="md-nav__link">
         TravisCI
       </a>
     </li>
@@ -1629,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/arxiv/" class="md-nav__link">
+      <a href="../../../TeX/arxiv/" class="md-nav__link">
         arXiv
       </a>
     </li>
@@ -1643,7 +1696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/vargreek/" class="md-nav__link">
+      <a href="../../../TeX/vargreek/" class="md-nav__link">
         VarGreek
       </a>
     </li>
@@ -1657,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/overleaf/" class="md-nav__link">
+      <a href="../../../TeX/overleaf/" class="md-nav__link">
         Overleaf
       </a>
     </li>
@@ -1707,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../doc/markdown/" class="md-nav__link">
+      <a href="../../../doc/markdown/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1757,7 +1810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/" class="md-nav__link">
+      <a href="../../../website/" class="md-nav__link">
         Website
       </a>
     </li>
@@ -1771,7 +1824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/disqus/" class="md-nav__link">
+      <a href="../../../website/disqus/" class="md-nav__link">
         Disqus
       </a>
     </li>
@@ -1785,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/css/" class="md-nav__link">
+      <a href="../../../website/css/" class="md-nav__link">
         CSS
       </a>
     </li>
@@ -1799,7 +1852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../js/" class="md-nav__link">
+      <a href="../../../js/" class="md-nav__link">
         JS
       </a>
     </li>
@@ -1813,7 +1866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/analytics/" class="md-nav__link">
+      <a href="../../../website/analytics/" class="md-nav__link">
         Analytics
       </a>
     </li>
@@ -1863,7 +1916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PHP/" class="md-nav__link">
+      <a href="../../../PHP/" class="md-nav__link">
         PHP
       </a>
     </li>
@@ -1877,7 +1930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/xampp/" class="md-nav__link">
+      <a href="../../../website/xampp/" class="md-nav__link">
         XAMPP
       </a>
     </li>
@@ -1933,7 +1986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/sci-int/" class="md-nav__link">
+      <a href="../../../Internet/sci-int/" class="md-nav__link">
         科学上网
       </a>
     </li>
@@ -1947,7 +2000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/" class="md-nav__link">
+      <a href="../../../Internet/" class="md-nav__link">
         一般问题
       </a>
     </li>
@@ -1961,7 +2014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/ipv6/" class="md-nav__link">
+      <a href="../../../Internet/ipv6/" class="md-nav__link">
         IPv6
       </a>
     </li>
@@ -1975,7 +2028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/encrypt/" class="md-nav__link">
+      <a href="../../../Internet/encrypt/" class="md-nav__link">
         加密算法
       </a>
     </li>
@@ -2024,7 +2077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../autotools/" class="md-nav__link">
+      <a href="../../../autotools/" class="md-nav__link">
         Autotools
       </a>
     </li>
@@ -2038,7 +2091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dev/docker/" class="md-nav__link">
+      <a href="../../../dev/docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -2052,7 +2105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/" class="md-nav__link">
+      <a href="../../../Git/" class="md-nav__link">
         Git
       </a>
     </li>
@@ -2066,7 +2119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../phantomjs/" class="md-nav__link">
+      <a href="../../../phantomjs/" class="md-nav__link">
         Phantomjs
       </a>
     </li>
@@ -2115,7 +2168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stats/prob/" class="md-nav__link">
+      <a href="../../../stats/prob/" class="md-nav__link">
         Probability
       </a>
     </li>
@@ -2129,7 +2182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stats/" class="md-nav__link">
+      <a href="../../../stats/" class="md-nav__link">
         Statistics
       </a>
     </li>
@@ -2143,7 +2196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scientific/" class="md-nav__link">
+      <a href="../../../scientific/" class="md-nav__link">
         Scientific
       </a>
     </li>
@@ -2157,7 +2210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stats/matrix/" class="md-nav__link">
+      <a href="../../../stats/matrix/" class="md-nav__link">
         Matrix
       </a>
     </li>
@@ -2206,7 +2259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../biology/samtools/" class="md-nav__link">
+      <a href="../../../biology/samtools/" class="md-nav__link">
         Samtools
       </a>
     </li>
@@ -2220,7 +2273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../maximum-usage-of-ITSC-cluster-resource/" class="md-nav__link">
+      <a href="../../maximum-usage-of-ITSC-cluster-resource/" class="md-nav__link">
         MaxClusterUsage
       </a>
     </li>
@@ -2269,7 +2322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../English/" class="md-nav__link">
+      <a href="../../../English/" class="md-nav__link">
         English
       </a>
     </li>
@@ -2283,7 +2336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guitar/" class="md-nav__link">
+      <a href="../../../guitar/" class="md-nav__link">
         Guitar
       </a>
     </li>
@@ -2297,7 +2350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../win/" class="md-nav__link">
+      <a href="../../../win/" class="md-nav__link">
         Windows
       </a>
     </li>
@@ -2311,7 +2364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../biology/" class="md-nav__link">
+      <a href="../../../biology/" class="md-nav__link">
         Biology
       </a>
     </li>
@@ -2325,7 +2378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../finance/" class="md-nav__link">
+      <a href="../../../finance/" class="md-nav__link">
         Finance
       </a>
     </li>
@@ -2339,7 +2392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fresh/" class="md-nav__link">
+      <a href="../../../fresh/" class="md-nav__link">
         Fresh
       </a>
     </li>
@@ -2353,7 +2406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../links/" class="md-nav__link">
+      <a href="../../../links/" class="md-nav__link">
         Links
       </a>
     </li>
@@ -2367,7 +2420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/live/" class="md-nav__link">
+      <a href="../../../misc/live/" class="md-nav__link">
         Live
       </a>
     </li>
@@ -2381,7 +2434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/wx/" class="md-nav__link">
+      <a href="../../../misc/wx/" class="md-nav__link">
         小程序
       </a>
     </li>
@@ -2395,7 +2448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/wxjssdk/" class="md-nav__link">
+      <a href="../../../misc/wxjssdk/" class="md-nav__link">
         jssdk
       </a>
     </li>
@@ -2409,7 +2462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/report/" class="md-nav__link">
+      <a href="../../../misc/report/" class="md-nav__link">
         讲座
       </a>
     </li>
@@ -2423,7 +2476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mi/" class="md-nav__link">
+      <a href="../../../mi/" class="md-nav__link">
         Mi
       </a>
     </li>
@@ -2437,7 +2490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/terms/" class="md-nav__link">
+      <a href="../../../misc/terms/" class="md-nav__link">
         Terminology
       </a>
     </li>
@@ -2468,6 +2521,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2476,8 +2531,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1604-1804" class="md-nav__link">
-    16.04 -&gt; 18.04
+  <a href="#rename-portable-disk" class="md-nav__link">
+    Rename Portable Disk
   </a>
   
 </li>
@@ -2501,92 +2556,100 @@
 
 
 
-  <h1>16to18</h1>
-
-<h2 id="1604-1804">16.04 -&gt; 18.04<a class="headerlink" href="#1604-1804" title="Permanent link">&para;</a></h2>
+<h1 id="portable-ssd">Portable SSD<a class="headerlink" href="#portable-ssd" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Date: 2020-04-12</p>
+<p>Post: <a href="https://github.com/szcf-weiya/techNotes/commit/2351297c6dc4eb27088c584c960feab7945d7742">2020.08.25</a></p>
 </div>
-<p>I want to install BaiduYunpan for Linux, but actually I have tried it before, which cannot work for my current version. However, I note that the version has been updated, although it is still for Ubuntu 18.04, not Ubuntu 16.04. </p>
-<p>Same results with the previous try, cannot start it after installing it, and no error thrown in the install procedure. But today I went further, I found that after I type</p>
-<div class="highlight"><pre><span></span><code>/opt/baidunetdisk/baidunetdisk<span class="w"> </span>
+<p>因为硬盘太小，而移动硬盘读写文件速度实在有点慢，然后看到有<a href="https://zhuanlan.zhihu.com/p/61083491">移动 SSD 硬盘</a>，于是便入手了一个。</p>
+<p>当然首先确定了，自己笔记本有 USB3.0 接口，虽然不是 USB3.1。（不过好像 USB3.0 也叫作 USB3.1 gen1，而真正的 USB3.1 叫做 USB3.1 gen2），这个可以通过</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>lsusb<span class="w"> </span>-t
 </code></pre></div>
-<p>it throws an error,</p>
+<p>来看<a href="https://superuser.com/questions/781398/how-can-i-be-sure-that-ive-plugged-a-device-into-a-usb-3-port">接口的情况</a>，当然也直接搜了电脑型号来看具体配置、</p>
+<p>货到手后，一开始插上时，说</p>
 <blockquote>
-<p>This program requires version 3.3.0 of the Protocol Buffer runtime library, but the installed version is 2.6.1.</p>
+<p>Mount error: unknown filesystem type ‘exfat’</p>
 </blockquote>
-<p>Try to install latest version from <a href="https://github.com/protocolbuffers/protobuf">protocolbuffers/protobuf</a>, first time the latest one, 3.14, but it doesn&rsquo;t work and it require <code>.so.9</code>, while v3.14 has a <code>.so.22</code>, I also tried copy <code>.so.22</code> to <code>.so.9</code>, or make a soft link, doesn&rsquo;t work. The second time I install <code>v3.3</code>, the <code>.so.[NUM]</code> still does not match, and hence doesn&rsquo;t work.</p>
-<p>The error is </p>
-<blockquote>
-<p>libmirprotobuf.so.3: undefined symbol: _ZNK6google8protobuf11MessageLite25InitializationErrorStringB5cxx11Ev</p>
-</blockquote>
-<p>and then I follow the instructions in <a href="https://bugs.launchpad.net/ubuntu/+source/mir/+bug/1527137">Ubuntu: mir package</a></p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>purge<span class="w"> </span>libprotobuf-lite9v5
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libprotobuf-lite9v5
+<p>本来以为需要什么格式转化之类的，后来发现<a href="https://better-coding.com/solved-mount-error-unknown-filesystem-type-exfat/#:~:text=Cause%20Some%20SD%20Cards%20and,%2Dfuse%20and%20exfat%2Dutils.">解决方案</a>挺简单的，</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>exfat-fuse<span class="w"> </span>exfat-utils
 </code></pre></div>
-<p>the first step throws the dependencies warnings, related to <code>libqt5</code>, then I uninstall <code>libqt5</code>. Unfortunately, many running programs then exit when the uninstalling procedure keeps going, and I found that I make a big mistake!!</p>
-<p>Now, maybe the best way is to update my system from Ubuntu 16.04 to Ubuntu 18.04 to recover the broken system. Actually I have updated my old PC from 16.04 to 18.04, seems quite fluent.</p>
-<p>However, for this PC, there are many disappointing problem.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>dist-upgrade
-sudo<span class="w"> </span>apt<span class="w"> </span>autoremove
+<p>但是后来发现这个格式很多地方会出现不兼容，比如</p>
+<ol>
+<li>解压某个文件时，报出 <code>Cannot set modif./access times</code>，而这个在正常磁盘以及已有的移动硬盘中都能正常解压</li>
+<li>不能创建带有 <code>:</code> 的文件夹，这应该是遵循 Windows 的标准，但是 Linux 命名标准没有遵循 Windows，所以造成有些文件复制不过去。</li>
+</ol>
+<p>最后决定格式化为 Linux 磁盘的格式，这个其实也挺简单的，进入 <code>gnome-disks</code>，先 umount，然后选择格式化，这时直接选择格式化为 Linux 的 Ext4，有一篇<a href="https://hkgoldenmra.blogspot.com/2019/12/linux-luks-ext4.html">图文介绍</a>，不过没看时就已经自己操作了，只是让自己心安一下。</p>
+<p>然后测试了一下读取速度，</p>
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span>sudo<span class="w"> </span>hdparm<span class="w"> </span>-Tt<span class="w"> </span>/dev/sdc1
+
+/dev/sdc1:
+<span class="w"> </span>Timing<span class="w"> </span>cached<span class="w"> </span>reads:<span class="w">   </span><span class="m">22298</span><span class="w"> </span>MB<span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="m">1</span>.99<span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">11228</span>.47<span class="w"> </span>MB/sec
+<span class="w"> </span>Timing<span class="w"> </span>buffered<span class="w"> </span>disk<span class="w"> </span>reads:<span class="w"> </span><span class="m">120</span><span class="w"> </span>MB<span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="m">3</span>.01<span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">39</span>.89<span class="w"> </span>MB/sec
+
+~$<span class="w"> </span>sudo<span class="w"> </span>hdparm<span class="w"> </span>-Tt<span class="w"> </span>/dev/sde1
+
+/dev/sde1:
+<span class="w"> </span>Timing<span class="w"> </span>cached<span class="w"> </span>reads:<span class="w">   </span><span class="m">24390</span><span class="w"> </span>MB<span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="m">1</span>.99<span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12281</span>.26<span class="w"> </span>MB/sec
+<span class="w"> </span>Timing<span class="w"> </span>buffered<span class="w"> </span>disk<span class="w"> </span>reads:<span class="w"> </span><span class="m">1318</span><span class="w"> </span>MB<span class="w"> </span><span class="k">in</span><span class="w">  </span><span class="m">3</span>.00<span class="w"> </span><span class="nv">seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">439</span>.04<span class="w"> </span>MB/sec
 </code></pre></div>
-<p>it is necessary to modify <code>/etc/update-manager/release-upgrades</code> from <code>never</code> to <code>lts</code>, otherwise it cannot detect new release version. Then run</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="k">do</span>-release-upgrade
+<p>上面是普通的移动硬盘，底下是新买的移动 SSD 硬盘，差异还是很明显的。继续测试写入的速度，</p>
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/media/weiya/Extreme<span class="se">\ </span>SSD/tempfile<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+<span class="m">1024</span>+0<span class="w"> </span>records<span class="w"> </span><span class="k">in</span>
+<span class="m">1024</span>+0<span class="w"> </span>records<span class="w"> </span>out
+<span class="m">1073741824</span><span class="w"> </span>bytes<span class="w"> </span><span class="o">(</span><span class="m">1</span>.1<span class="w"> </span>GB,<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>GiB<span class="o">)</span><span class="w"> </span>copied,<span class="w"> </span><span class="m">2</span>.11846<span class="w"> </span>s,<span class="w"> </span><span class="m">507</span><span class="w"> </span>MB/s
+
+real<span class="w">    </span>0m2.131s
+user<span class="w">    </span>0m0.011s
+sys<span class="w"> </span>0m0.543s
+~$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/media/weiya/Seagate/tempfile<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+<span class="m">1024</span>+0<span class="w"> </span>records<span class="w"> </span><span class="k">in</span>
+<span class="m">1024</span>+0<span class="w"> </span>records<span class="w"> </span>out
+<span class="m">1073741824</span><span class="w"> </span>bytes<span class="w"> </span><span class="o">(</span><span class="m">1</span>.1<span class="w"> </span>GB,<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>GiB<span class="o">)</span><span class="w"> </span>copied,<span class="w"> </span><span class="m">12</span>.4132<span class="w"> </span>s,<span class="w"> </span><span class="m">86</span>.5<span class="w"> </span>MB/s
+
+real<span class="w">    </span>0m12.746s
+user<span class="w">    </span>0m0.000s
+sys<span class="w"> </span>0m1.551s
 </code></pre></div>
-<p><em>refer to <a href="https://jingyan.baidu.com/article/2f9b480de8b64941cb6cc2a1.html">将 Ubuntu 16.04 LTS 升级到 Ubuntu 18.04 LTS</a></em></p>
-<p>Due to previous HK Ubuntu mirror, the speed is quite slow, then the first thing I need to do is to replace the mirror in <code>/etc/apt/sources.list</code> with aliyun by <code>sed</code> operation via</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s#http://ftp.cuhk.edu.hk/pub/Linux/ubuntu/#http://mirrors.aliyun.com/ubuntu/#&quot;</span><span class="w"> </span>sources.list
+<p>以及写出的速度，</p>
+<div class="highlight"><pre><span></span><code>~$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/media/weiya/Extreme<span class="se">\ </span>SSD/tempfile<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/null<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+<span class="m">1024</span>+0<span class="w"> </span>records<span class="w"> </span><span class="k">in</span>
+<span class="m">1024</span>+0<span class="w"> </span>records<span class="w"> </span>out
+<span class="m">1073741824</span><span class="w"> </span>bytes<span class="w"> </span><span class="o">(</span><span class="m">1</span>.1<span class="w"> </span>GB,<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>GiB<span class="o">)</span><span class="w"> </span>copied,<span class="w"> </span><span class="m">4</span>.01399<span class="w"> </span>s,<span class="w"> </span><span class="m">268</span><span class="w"> </span>MB/s
+
+real<span class="w">    </span>0m4.018s
+user<span class="w">    </span>0m0.000s
+sys<span class="w"> </span>0m0.442s
+~$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/media/weiya/Seagate/tempfile<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/null<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+<span class="m">1024</span>+0<span class="w"> </span>records<span class="w"> </span><span class="k">in</span>
+<span class="m">1024</span>+0<span class="w"> </span>records<span class="w"> </span>out
+<span class="m">1073741824</span><span class="w"> </span>bytes<span class="w"> </span><span class="o">(</span><span class="m">1</span>.1<span class="w"> </span>GB,<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>GiB<span class="o">)</span><span class="w"> </span>copied,<span class="w"> </span><span class="m">65</span>.6471<span class="w"> </span>s,<span class="w"> </span><span class="m">16</span>.4<span class="w"> </span>MB/s
+
+real<span class="w">    </span>1m5.981s
+user<span class="w">    </span>0m0.010s
+sys<span class="w"> </span>0m0.650s
 </code></pre></div>
-<p>后来更新至，</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;s#ftp.cuhk.edu.hk/pub/Linux#archive.ubuntu.com#g&quot;</span><span class="w"> </span>sources.list
+<p>移动 SSD 硬盘完胜普通的移动硬盘。</p>
+<p>参考链接：</p>
+<ul>
+<li><a href="http://einverne.github.io/post/2019/10/test-disk-write-and-read-speed-in-linux.html">在 Linux 上测试硬盘读写速度</a></li>
+</ul>
+<h3 id="rename-portable-disk">Rename Portable Disk<a class="headerlink" href="#rename-portable-disk" title="Permanent link">&para;</a></h3>
+<p>终端输入</p>
+<div class="highlight"><pre><span></span><code>gnome-disks
 </code></pre></div>
-<p>Then go on. However, I mistook enter something in the middle, and stop the installation procedure, that is might be part of the reason why I met so many problems.</p>
-<p>Try to run <code>do-release-upgrade</code> again, but it said no new release version, and told me to upgrade the software in the current version. Actually it is Ubuntu 18.04 now, checking by</p>
-<div class="highlight"><pre><span></span><code>lsb_release<span class="w"> </span>-a
-</code></pre></div>
-<p>then I run </p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
-</code></pre></div>
-<p>after the first run, I think I am OK. But in the rebooting, I cannot enter into the system, the Ubuntu logo is twinkling, and sometimes I can switch to the command window, it holds with message</p>
-<blockquote>
-<p>a start job is running for hold until boot process finishes up（X s/unlimit）</p>
-</blockquote>
-<p>but do not want to try the re-install solution in <a href="https://blog.csdn.net/Natsume_Z_Kenshin/article/details/81283828">问题1：a start job is running for hold until boot process finishes up（X s/unlimit）</a>, because I guess my situation would be quite different, since I uninstall <code>libqt5</code>, and interrupt the normal release updating procedure, </p>
-<p>Then I found some other possible solutions,</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--reinstall<span class="w"> </span>ubuntu-desktop
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>unity
-</code></pre></div>
-<p>But the first thing I need to do is to stop it by power, and then choose to start an advanced session in the grub session, and I chose a <code>recovery mode</code>, then I entered into a command line. And I can continue to fix the problem.</p>
-<p>But before I can install the <code>desktop</code>, repeat to run <code>update</code> and <code>upgrade</code>, then updating texlive from 2015 to 2017 throws an error,</p>
-<blockquote>
-<p>dpkg: error processing archive /var/cache/apt/archives/texlive-fonts-extra-doc_2017.20180305-2_all.deb (&ndash;unpack):
-trying to overwrite &lsquo;/usr/share/doc/texlive-doc/latex/mweights/README&rsquo;, which is also in package texlive-latex-extra-doc 2015.20160320-1
-dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</p>
-</blockquote>
-<p>try <code>install -f</code>, but does not work, the solution is</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>--force-all<span class="w"> </span>/var/cache/apt/archives/texlive-fonts-extra-doc_2017.20180305-2_all.deb
-</code></pre></div>
-<p>refer to <a href="https://debug.fanzheng.org/post/problem-when-update-texlive.html">在apt更新texlive到2017的问题</a></p>
-<p>then I reboot to test, but the internet broken, <code>ifconfig</code> only returns <code>lo</code>, but <code>ifconfig -a</code> shows all possible cards, I have tried <code>service restart</code> like in <a href="https://blog.csdn.net/zhukangle/article/details/75370538">UBUNTU ifconfig只有lo</a>, but it does not work, then I found the solution worked for me</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dhclient<span class="w"> </span>enp**
-</code></pre></div>
-<p>in <a href="https://blog.csdn.net/weixin_42116341/article/details/81410805">Ubuntu输入ifconfig找不到IP地址，只有lo问题</a>.</p>
-<p>Reboot after the <code>desktop</code> is successfully installed, I can enter into the graphical system!!</p>
+<p>在设置齿轮图标中选择 <code>Edit Mount Options</code>，修改 <code>Mount Point</code>。注意重新挂载后才能生效。</p>
+<p>详见<a href="https://askubuntu.com/questions/904561/how-to-change-hard-drive-name/904564">How to change hard drive name</a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2023</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2020</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2023</span>
       
     
   </small>
@@ -2751,16 +2814,16 @@ dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4b2c34cd.min.js"></script>
       
-        <script src="../../javascripts/baiduzhanzhang.js"></script>
+        <script src="../../../javascripts/baiduzhanzhang.js"></script>
       
-        <script src="../../javascripts/extra.js"></script>
+        <script src="../../../javascripts/extra.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

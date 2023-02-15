@@ -151,12 +151,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://tech.hohoweiya.xyz/Linux/blog/2020-08-25-PSSD/</loc>
+         <lastmod>2023-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tech.hohoweiya.xyz/Linux/blog/2020-09-01-charge-battery-adaptively/</loc>
+         <lastmod>2023-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://tech.hohoweiya.xyz/Linux/blog/2020-12-17-passwordless-failed/</loc>
          <lastmod>2023-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://tech.hohoweiya.xyz/Linux/blog/2021-05-12-fail-to-access-home/</loc>
+         <lastmod>2023-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tech.hohoweiya.xyz/Linux/blog/2021-06-07-switch-monitor/</loc>
+         <lastmod>2023-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://tech.hohoweiya.xyz/Linux/blog/2021-07-28-use-old-kernel/</loc>
          <lastmod>2023-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>

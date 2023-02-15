@@ -560,6 +560,96 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+          Blog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux/blog/2020-08-25-PSSD/" class="md-nav__link">
+        Portable SSD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux/blog/2020-09-01-charge-battery-adaptively/" class="md-nav__link">
+        Charge Battery Adaptively
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux/blog/2021-06-07-switch-monitor/" class="md-nav__link">
+        Switch Monitor Mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux/blog/2021-07-28-use-old-kernel/" class="md-nav__link">
+        Use Old Kernel
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1072,13 +1162,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    神奇的[
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#proxy" class="md-nav__link">
     proxy 代理
   </a>
@@ -1114,36 +1197,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mistake-with-colon-operator" class="md-nav__link">
-    Mistake with colon operator
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#error-in-install-grbase" class="md-nav__link">
     error in install gRbase
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#protection-stack-overflow" class="md-nav__link">
-    protection stack overflow
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#not-found-libhdf5a" class="md-nav__link">
-    not found libhdf5.a
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installpackages-returns-failed-to-create-lock-directory" class="md-nav__link">
-    install.packages returns failed to create lock directory
   </a>
   
 </li>
@@ -2936,13 +2991,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    神奇的[
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#proxy" class="md-nav__link">
     proxy 代理
   </a>
@@ -2978,36 +3026,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mistake-with-colon-operator" class="md-nav__link">
-    Mistake with colon operator
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#error-in-install-grbase" class="md-nav__link">
     error in install gRbase
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#protection-stack-overflow" class="md-nav__link">
-    protection stack overflow
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#not-found-libhdf5a" class="md-nav__link">
-    not found libhdf5.a
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installpackages-returns-failed-to-create-lock-directory" class="md-nav__link">
-    install.packages returns failed to create lock directory
   </a>
   
 </li>
@@ -3139,6 +3159,25 @@
 <li>repeat string: <code>strrep('str', 2)</code>, <code>paste(rep('str', 2), collapse='')</code></li>
 </ul>
 </div>
+<details class="tip">
+<summary>神奇的<code>[</code></summary>
+<p>来自<a href="https://d.cosx.org/d/419525-r">R语言中以矩阵引用多维数组的元素</a></p>
+<p>比如
+<div class="highlight"><pre><span></span><code><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">255</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="o">*</span><span class="m">100</span><span class="o">*</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">),</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+<span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="o">*</span><span class="m">5</span><span class="p">),</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">))</span>
+<span class="nf">apply</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">`[`</span><span class="p">,</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+</code></pre></div></p>
+</details>
+<details class="tip">
+<summary><code>seq_along(x)</code> instead of <code>1:length(x)</code></summary>
+<div class="highlight"><pre><span></span><code><span class="n">vec</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div>
+<p>would print two <code>NULL</code> because <code>1:length(vec)</code> would be <code>c(1,0)</code>. A method to avoid this</p>
+<div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq_along</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div>
+<p>refer to <a href="https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/">Two common mistakes with the colon operator in R</a></p>
+</details>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="install-from-source-on-rocky">Install from source on Rocky<a class="headerlink" href="#install-from-source-on-rocky" title="Permanent link">&para;</a></h3>
 <p>Following the instruction in <a href="https://docs.rstudio.com/resources/install-r-source/">RStudio Documentation: Install R from Source</a></p>
@@ -3749,13 +3788,6 @@ ln<span class="w"> </span>-s<span class="w"> </span>/home/weiya/R/x86_64-pc-linu
 <p><img alt="" src="roc_wrong.png" /></p>
 <p>原因是因为<code>fitted</code>与<code>y</code>大小关系相反，即前者大时后者小，而前者小时后者大。</p>
 <p><img alt="" src="roc_fact.png" /></p>
-<h2 id="_1">神奇的<code>[</code><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>来自<a href="https://d.cosx.org/d/419525-r">R语言中以矩阵引用多维数组的元素</a></p>
-<p>比如
-<div class="highlight"><pre><span></span><code><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">255</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="o">*</span><span class="m">100</span><span class="o">*</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">),</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
-<span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">array</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="o">*</span><span class="m">5</span><span class="p">),</span><span class="w"> </span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">))</span>
-<span class="nf">apply</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">`[`</span><span class="p">,</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
-</code></pre></div></p>
 <h2 id="proxy">proxy 代理<a class="headerlink" href="#proxy" title="Permanent link">&para;</a></h2>
 <p>参考</p>
 <ol>
@@ -3799,14 +3831,6 @@ ln<span class="w"> </span>-s<span class="w"> </span>/home/weiya/R/x86_64-pc-linu
 <span class="n">DFun</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">deriv</span><span class="p">(</span><span class="n">NormDensity</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">function.arg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="nf">DFun</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="mistake-with-colon-operator">Mistake with colon operator<a class="headerlink" href="#mistake-with-colon-operator" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">vec</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">()</span>
-<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</code></pre></div>
-<p>would print two <code>NULL</code> because <code>1:length(vec)</code> would be <code>c(1,0)</code>. A method to avoid this</p>
-<div class="highlight"><pre><span></span><code><span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq_along</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</code></pre></div>
-<p>refer to <a href="https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/">Two common mistakes with the colon operator in R</a></p>
 <h2 id="error-in-install-grbase">error in install <code>gRbase</code><a class="headerlink" href="#error-in-install-grbase" title="Permanent link">&para;</a></h2>
 <p>environment: Ubuntu 16.04 (gcc 5.4.0)</p>
 <div class="highlight"><pre><span></span><code>g++: error: unrecognized comma line option ‘-fno-plt’
@@ -3827,7 +3851,8 @@ ln<span class="w"> </span>-s<span class="w"> </span>/home/weiya/R/x86_64-pc-linu
 
 BiocManager::install(&quot;graph&quot;)
 </code></pre></div>
-<h2 id="protection-stack-overflow"><code>protection stack overflow</code><a class="headerlink" href="#protection-stack-overflow" title="Permanent link">&para;</a></h2>
+<details class="tip">
+<summary>protection stack overflow</summary>
 <p>use</p>
 <div class="highlight"><pre><span></span><code>R<span class="w"> </span>--max-ppsize<span class="w"> </span><span class="m">500000</span>
 </code></pre></div>
@@ -3835,16 +3860,17 @@ BiocManager::install(&quot;graph&quot;)
 <div class="highlight"><pre><span></span><code>rstudio<span class="w"> </span>--max-ppsize<span class="w"> </span><span class="m">500000</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/32826906/how-to-solve-protection-stack-overflow-issue-in-r-studio">How to solve &lsquo;protection stack overflow&rsquo; issue in R Studio</a></p>
-<h2 id="not-found-libhdf5a"><code>not found libhdf5.a</code><a class="headerlink" href="#not-found-libhdf5a" title="Permanent link">&para;</a></h2>
-<p>check if compiling under anaconda environment, if so, exit and retry.</p>
-<h2 id="installpackages-returns-failed-to-create-lock-directory">install.packages returns <code>failed to create lock directory</code><a class="headerlink" href="#installpackages-returns-failed-to-create-lock-directory" title="Permanent link">&para;</a></h2>
-<p>in bash</p>
+</details>
+<details class="tip">
+<summary>failed to create lock directory</summary>
+<p>In bash,</p>
 <div class="highlight"><pre><span></span><code>R<span class="w"> </span>CMD<span class="w"> </span>INSTALL<span class="w"> </span>--no-lock<span class="w"> </span>&lt;pkg&gt;
 </code></pre></div>
 <p>or in R session</p>
 <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;Rcpp&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">dependencies</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">INSTALL_opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;--no-lock&#39;</span><span class="p">))</span>
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/14382209/r-install-packages-returns-failed-to-create-lock-directory">R install.packages returns “failed to create lock directory”</a></p>
+</details>
 <h2 id="nonzero-in-dgcmatrix">nonzero in <code>dgCMatrix</code><a class="headerlink" href="#nonzero-in-dgcmatrix" title="Permanent link">&para;</a></h2>
 <p>refer to <a href="https://stackoverflow.com/questions/51560456/r-package-matrix-get-number-of-non-zero-entries-per-rows-columns-of-a-sparse">R package Matrix: get number of non-zero entries per rows / columns of a sparse matrix</a></p>
 <h2 id="s3-method">S3 method<a class="headerlink" href="#s3-method" title="Permanent link">&para;</a></h2>
@@ -4012,7 +4038,7 @@ See<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2023</span>
       
         <br>
         Created:
@@ -4025,6 +4051,53 @@ See<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span
 
 
 
+
+  <h2 id="__comments">Comments</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="szcf-weiya/techNotes"
+        data-repo-id="MDEwOlJlcG9zaXRvcnk4NDA2NDk0Mw=="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOBQK6r84CSDX_"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
 
                 
               </article>
