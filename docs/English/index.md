@@ -4,6 +4,7 @@
 - Neoepitopes are a class of major histocompatibility complex (MHC) bounded peptides. They represent the antogenic determinant of neoantigens.
 - legendary: 非常著名的，享有盛名的，传奇的
 - learn how **radiocarbon (放射性碳)** dating is spotting art **forgeries (伪造，赝品)**
+- pellet gun: 弹丸枪，霰弹枪
 
 ## 2023.01
 
@@ -1217,7 +1218,7 @@
 - the brain caps off its second and last growth **spurt (冲刺；冒出；（短暂地）加速前进)** in your 20s
 - an inordinate impact
 - extended adolescence
-- twixters and kidults
+- [twixter](https://en.wikipedia.org/wiki/Twixter) (a new generation of young adults) and **kidult (大小孩，老顽童)**
 - we have trivialized what is actually the defining decade of adulthood.
 - you have robbed that person of his urgency and ambition
 - that sounds a little flip
@@ -1324,9 +1325,7 @@
 - journaling about one positive experience you've had over the past 24 hours allows your brain to relive it.
 - we find that meditation allows your brain to get over the cultural ADHD that we've creating by trying to do multiple tasks at once and allows our brains to focus on the task at hand.
 - random acts of kindness are **conscious (有意识的，神智清醒的)** acts of kindness.
-- we've pushed happiness over the cognitive horizon.
-
-- I was the **quintessential nerd**
+- I was the **quintessential (精髓的，最完美的)** **nerd (落伍的人，电脑迷，愚蠢的人)**
 - I grew up in a small town in the dusty plains of north Texas, the son of a **sheriff** who was the son of a **pastor**
 - That led me to building a **laser** and a computer and model **rockets**, and that led me to making rocket fuel in my bedroom.
 - Stanley Kubrick's "2001: A space Odyssey" came to the theaters.
@@ -1335,7 +1334,7 @@
 - I believe that such fears are **unfounded**
 - we are building machines of exquisite, beautiful complexity and grace
 - but without the **homicidal** tendencies
-- another fascinating idea in the mission profile places **humanoid** robots on the surface of Mars
+- another fascinating idea in the mission profile places **humanoid (仿真机器人)** robots on the surface of Mars
 - To **paraphrase** Alan Turing, I am not interested in building a sentient machine.
 - Can we build systems that converse with humans in natural language?
 - Can we build systems that have an **ethical and moral** foundation?
@@ -1909,10 +1908,10 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. a novel that presents a fairly **veracious (说真话的，真实的)** and **unvarnished (不加掩饰的，质朴的，坦率的)** picture of the lives of affluent suburbanites.
 3. **Inevitably (必然，必定)**, his remarkable success attracted the invidious attention of the other sales representatives.
 4. As loyalty unites lovers, so perfidy estranges friends.
-5. Every year I go to Kunming to enjoy its cool and salubrious climate.
+5. Every year I go to Kunming to enjoy its cool and **salubrious (环境宜人的)** climate.
 6. only a diaphanous hope of success.
 7. Every time this guy visits me, one of my books disappears. I don't want to say he steals them, but I really smell a rat.
-8. As soon as the war ends, the government will start to repatriate war refugees.
+8. As soon as the war ends, the government will start to **repatriate (遣返，遣送回国)** war **refugees (难民)**.
 9. The moon waxes and the wanes.
 10. But the picture may not be as bleak as it seems.
 11. My ship was tossed about many days in storms off Cape Horn.
