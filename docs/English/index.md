@@ -1914,7 +1914,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 8. As soon as the war ends, the government will start to **repatriate (遣返，遣送回国)** war **refugees (难民)**.
 9. The moon waxes and the wanes.
 10. But the picture may not be as bleak as it seems.
-11. My ship was tossed about many days in storms off Cape Horn.
+11. My ship was **tossed (使摇摆，挥动，颠簸)** about many days in storms off Cape Horn.
 12. To **perpetuate (使持久化，使永久化)** them it is our sacred duty to preserve it.
 13. The same lethargy, I am afraid, characterizes the use of our faculties and senses.
 14. It can also help perpetuate stereotypes, the inscrutable Japanese, bowing all the time, taking costs of pictures. Makes you wonder how the Japanese stereotype us.
@@ -2143,7 +2143,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 11. resiliency in the face of challenge
 10. interlocking: 互锁，联动
 11. snap
-12. blowhole
+12. blowhole: （鲸头顶的）呼吸孔
 14. sacs: 囊，上衣
 15. spoiled meat
 16. **repercussion (反射，弹回)**
