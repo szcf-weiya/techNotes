@@ -400,7 +400,7 @@
 - the **recuperative (恢复中的，具恢复力的)** powers of fresh air
 - torso: the body excluding the head and neck and **limbs (四肢)**
 - China has officially **eradicated (根除，消灭)** **malaria (疟疾)**.
-- There is something incredibly seductive about the idea of using machine intelligence to generate code, but the specific of the problem have made it really impractical for machine learning techniques.
+- There is something incredibly **seductive (诱人的，迷人的，有魅力的)** about the idea of using machine intelligence to generate code, but the specific of the problem have made it really impractical for machine learning techniques.
 - The cell's **progeny (子孙)** **trail (路径)** to the left in a cluster resembling a bunch of grapes.
     - trailer: 预告片
 - Ancient **beetle (甲虫)** species found in fossil **faeces (粪便)**. 
@@ -999,7 +999,7 @@
 - what are the effects of X on election, where X is **ballot (投票，选举)**-order effects, Fox News, home-state advantage, or other things?
 - I agree with my **correspondent (记者，通讯员)** that this graph does not look like a very good advertisement for this method!
 - Never underestimate the power of **fomo (fear of missing out, 社交控)**.
-- This particular code is kinda hacky in that it does not account for **fencepost** errors, but it conveys the general idea.
+- This particular code is kinda hacky in that it does not account for **[fencepost errors](https://en.wikipedia.org/wiki/Off-by-one_error)**, but it conveys the general idea.
 - The **premise (前提)** of this joke is that if the one economist had truly wanted the car then he would have walked into the **showroom** and bought it.
 - Donating was used to determine whether men or women are better **tippers**.
 - Donating was used to determine which prominent skeptic to **prank (恶作剧)**.
@@ -1289,7 +1289,7 @@
 - were you **terrified (害怕，恐惧)**?
 - he was just **bound** and determined to say that.
 - Err on the side of caution.
-- People who **brag about** their IQs are losers.
+- People who **brag about (夸耀，吹嘘)** their IQs are losers.
 - Conversations are not a promotional opportunity.
 - **condescending**
 - stay out of the weeds

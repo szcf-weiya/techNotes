@@ -101,6 +101,8 @@ If without root privilege, when running `install-tl`, type `D` to change the dir
 \newcommand\foo{foo\xspace}
 ```
 
+- non-breaking space `~` in `Figure~\ref{fig:}`.
+
 ### line breaks
 
 - `\\`, `\newline`, `\tabularnewline` [:material-stack-overflow:](https://tex.stackexchange.com/questions/78796/difference-between-and-tabularnewline): when writing a table, the first one can be confused, while the second one ends the line in a cell, and the latter ends the rows of the table. A good side is that when writing tex using julia, `raw"\command"` does not need to escape `\`, but it is still required to use `raw"\\\\"` to represent `\\`.
