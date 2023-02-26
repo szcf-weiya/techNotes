@@ -433,26 +433,41 @@ refer to [fc-list command in Linux with examples](https://www.geeksforgeeks.org/
 
 ### Install Local Fonts
 
-以安装仿宋和黑体为例，这是[本科毕业论文模板](https://hohoweiya.xyz/zju-thesis/src/zju-thesis.pdf)所需要的字体，字体文件已打包
+??? note "霞鹜文楷"
+    <https://github.com/lxgw/LxgwWenKai>
 
-```bash
-$ wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz
-$ tar xvzf fonts.tar.gz
-fonts/STFANGSO.TTF
-fonts/
-fonts/simhei.ttf
-$ sudo mkdir -p /usr/share/fonts/truetype/custom/
-$ sudo mv fonts/* /usr/share/fonts/truetype/custom/
-$ sudo fc-cache -f -v
-```
+    ```bash
+    git clone git@github.com:lxgw/LxgwWenKai.git
+    cp LxgwWenKai/fonts/TTF/* ~/.local/share/fonts/
+    ```
 
-安装完成后，
+??? note "仿宋 & 黑体"
 
-```bash
-$ fc-list :lang=zh
-/usr/share/fonts/truetype/custom/simhei.ttf: SimHei,黑体:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
-/usr/share/fonts/truetype/custom/STFANGSO.TTF: STFangsong,华文仿宋:style=Regular
-```
+    以安装仿宋和黑体为例，这是[本科毕业论文模板](https://hohoweiya.xyz/zju-thesis/src/zju-thesis.pdf)所需要的字体，字体文件已打包
+
+    ```bash
+    $ wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O fonts.tar.gz
+    $ tar xvzf fonts.tar.gz
+    fonts/STFANGSO.TTF
+    fonts/
+    fonts/simhei.ttf
+    $ sudo mkdir -p /usr/share/fonts/truetype/custom/
+    $ sudo mv fonts/* /usr/share/fonts/truetype/custom/
+    $ sudo fc-cache -f -v
+    ```
+
+    **NOTE:** 除了系统的字体目录，也可以选择用户目录，"~/.local/share/fonts/". 另见 [:link:](https://askubuntu.com/questions/191778/how-to-install-many-font-files-quickly-and-easily) 另外 `fc-cache` 也不是必须的。
+
+    安装完成后，
+
+    ```bash
+    $ fc-list :lang=zh
+    /usr/share/fonts/truetype/custom/simhei.ttf: SimHei,黑体:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
+    /usr/share/fonts/truetype/custom/STFANGSO.TTF: STFangsong,华文仿宋:style=Regular
+    ```
+
+!!! tip "Font Name in xeCJK"
+    在 `\setCJKmainfont{}` 中使用 `fc-list` 冒号之前的字体名。也可以使用字体文件，但需要指定具体路径，否则只会在当前目录下寻找。
 
 ### Some Free Fonts
 
