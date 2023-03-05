@@ -1,3 +1,11 @@
+## 2023.03
+
+- The Times Editorial: 泰晤士报社论
+- We prefer to take our chance of cholera and the rest than be bullied into health.
+- dungheap: 粪堆
+- his **thatch (茅草屋顶)** forced to give way for **slate (石板，板岩)**
+- as much from the **irritation (刺激物；愤怒)** to the nerves as from the exposure of the **cuticle (表皮，角质层)**.
+
 ## 2023.02
 
 - An epitope, also known as antigenic determinant, is the part of an antigen that is recognized by the immune system, specifically by antibodies, B cells or T cells.
@@ -5,6 +13,10 @@
 - legendary: 非常著名的，享有盛名的，传奇的
 - learn how **radiocarbon (放射性碳)** dating is spotting art **forgeries (伪造，赝品)**
 - pellet gun: 弹丸枪，霰弹枪
+- advocacy: 支持；（律师）出庭辩护
+- stakeholder: 利益相关者
+- diligent: 孜孜不倦的，勤勉的
+- Servier: [:link:](https://en.wikipedia.org/wiki/Laboratoires_Servier)
 
 ## 2023.01
 
@@ -994,7 +1006,7 @@
 - I don't know that I could quite **articulate (说，表达)** what the rules are, but I can tell what's going on.
 - The **moral economy (道德经济，伦理经济)** of science.
 - I heard a rumor that they have contacts at the **Antarctic Polar Station** who are going to sign the thing once they can get their damn **fur gloves** off.
-- I've **obscured (v. 使模糊)** the details of the letter here because I don't want to **single out** the authors of this particular paper or the editor of this particular journal.
+- I've **obscured (v. 使模糊)** the details of the letter here because I don't want to **single out (挑选出，精选出)** the authors of this particular paper or the editor of this particular journal.
 - its results are used to inform **federal** funding decisions.
 - what are the effects of X on election, where X is **ballot (投票，选举)**-order effects, Fox News, home-state advantage, or other things?
 - I agree with my **correspondent (记者，通讯员)** that this graph does not look like a very good advertisement for this method!
@@ -1800,7 +1812,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 11. faint: 昏厥，昏眩；模糊的
 12. **foundationalism (基础主义，基础论)**
 13.  John Locke, René Descartes.
-14. slate
 15. mirage: 海市蜃楼，妄想，幻想
 16. shimmer
 17. conceive
@@ -1834,7 +1845,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. The **venue** is the school.
 3. He had three forty-**fathom (英寻，等于 6 英尺，约合1.8288米)** **coils** of line in reserve now, as well as the coil he was using.
 4. The **vibe** in the office is amazing.
-5. choreography
+5. choreography:（尤指芭蕾舞的）编舞艺术
 6. Renaissance, the 16th, 17th centuries.
 7. artisan, artist
 8. Raphael, frescos
@@ -1870,7 +1881,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 13. plating
 14. seigniorage: 铸币税；君权
 15. nostalgia
-17. alloying
+17. alloy: 合金；把...铸成合金
 18. brass, trumpet, **trombone (长号)**
 19. rust, patina
 20. halt
@@ -1997,7 +2008,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 40. The spy obtained the documents by **subterfuge (秘密手段，诡计)**.
 41. The actor must have had some **esoteric (只有内行才懂的，难领略的)** **motive (动机，目的)** for leaving stage.
 42. In just a few pages the writer **etched (蚀刻，画出...的轮廓)** an unforgettable portrait of one of the more remarkable First Ladies.
-43. The minister eschews involvement in local politics, since he doesn't want to diminish his moral authority in the community.
+43. The minister **eschews (避免)** involvement in local politics, since he doesn't want to diminish his moral authority in the community.
 44. The exhibit was a **hodgepodge (大杂烩，混杂物)** of **mediocre (平庸的，普通的)** art, bad art, and really bad art.
 45. His failure was brought on by his **hubris (傲慢，狂妄)**.
 46. an **expurgated (删去，使纯洁)** edition of the letters.
@@ -2016,7 +2027,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 64. **auction (拍卖，竞拍)**, auctioneer, bidding
 65. imperturbability
 67. A baby is god's most **precious (宝贵的，珍贵的)** gift.
-68. immensely
 69. composure: 镇静，镇定，沉着
 70. frenzied (frantic; highly agitated)
 71. Magnanimous
@@ -2058,7 +2068,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 110. Condemnation means censure.
 111.  **Taxonomy (分类学，分类法)** is the science or technique of classification.
 112. **Flagrant (骇人听闻的，公然的)** means **blatant (明目张胆的，公然的)** or **outrageous (骇人的，无法形容的，反常的)**
-113. Dilatory means tardy or tending to delay.
+113. **Dilatory (拖拉的，拖延的)** means tardy or tending to delay.
 114. Aloof means standoffish and remote.
 1. Terse means abrupt and to the point.
 2. Apathetic means indifferent and unconcerned.
