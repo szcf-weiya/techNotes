@@ -141,6 +141,8 @@ Refer to [For formal articles, should a displayed equation be followed by a punc
 
 ## Beamer
 
+- customize aspect ratio, from default 4:3 to 16:9 : `\documentclass[aspectratio=169]{beamer}` [:link:](https://tex.stackexchange.com/questions/14336/latex-beamer-presentation-package-169-aspect-ratio)
+
 ### fragile option
 
 参考 [LaTeX 技巧 573：beamer 中使用 Listings 包出现的错误](http://blog.sina.com.cn/s/blog_5e16f1770102dxps.html)
