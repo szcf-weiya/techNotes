@@ -406,6 +406,35 @@ $ df -h
 
 See also: [What is /dev/loopx?](https://askubuntu.com/questions/906581/what-is-dev-loopx).
 
+### Birth time
+
+!!! info
+    Post: 2023-03-06 17:23:57 -0500
+
+有一篇博客写了草稿未 commit，然后匆忙更改后想知道上一次写作的时间。但是 `stat` 与 `ls` 中 Birth 字段为空。
+
+首先尝试了 `debugfs`，但似乎这对于 ext4 有用。
+
+[:link:](https://unix.stackexchange.com/questions/50177/birth-is-empty-on-ext4)
+
+```bash
+$ sudo debugfs -R 'stat 451072' /dev/sdc1
+debugfs 1.45.5 (07-Jan-2020)
+debugfs: Bad magic number in super-block while trying to open /dev/sdc1
+/dev/sdc1 contains a ntfs file system labelled 'Seagate Backup Plus Drive'
+stat: Filesystem not open
+```
+
+对于 ntfs，找到了[这个](https://unix.stackexchange.com/questions/87265/how-do-i-get-the-creation-date-of-a-file-on-an-ntfs-logical-volume),
+
+```bash
+$ getfattr --only-values -n system.ntfs_crtime_be four-generations-under-one-roof.md | 
+    perl -MPOSIX -0777 -ne '$t = unpack("Q>"); print ctime $t/10000000-11644473600'
+Sun Feb 26 22:52:09 2023
+```
+
+其中 `11644473600` 是 Windows 的开始计时时间点 (1601-01-01T00:00:00Z) 与 Linux 计时开始点 (1970-01-01T00:00:00Z) 所差的秒数（[:link:](https://stackoverflow.com/questions/6161776/convert-windows-filetime-to-second-in-unix-linux)）。
+
 ## Font
 
 ### `fc-list`
