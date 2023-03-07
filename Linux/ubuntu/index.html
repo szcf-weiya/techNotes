@@ -679,6 +679,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#birth-time" class="md-nav__link">
+    Birth time
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2962,6 +2969,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#birth-time" class="md-nav__link">
+    Birth time
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3445,6 +3459,26 @@ tmpfs<span class="w">           </span><span class="m">2</span>.0G<span class="w
 </code></pre></div>
 <p>&ldquo;Having Snap images which consume 100% of their filesystem is perfectly acceptable&rdquo; and &ldquo;it&rsquo;s supposed to work that way&rdquo;, refer to <a href="https://unix.stackexchange.com/questions/406534/snap-dev-loop-at-100-utilization-no-free-space"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 <p>See also: <a href="https://askubuntu.com/questions/906581/what-is-dev-loopx">What is /dev/loopx?</a>.</p>
+<h3 id="birth-time">Birth time<a class="headerlink" href="#birth-time" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Post: 2023-03-06 17:23:57 -0500</p>
+</div>
+<p>有一篇博客写了草稿未 commit，然后匆忙更改后想知道上一次写作的时间。但是 <code>stat</code> 与 <code>ls</code> 中 Birth 字段为空。</p>
+<p>首先尝试了 <code>debugfs</code>，但似乎这对于 ext4 有用。</p>
+<p><a href="https://unix.stackexchange.com/questions/50177/birth-is-empty-on-ext4"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>debugfs<span class="w"> </span>-R<span class="w"> </span><span class="s1">&#39;stat 451072&#39;</span><span class="w"> </span>/dev/sdc1
+debugfs<span class="w"> </span><span class="m">1</span>.45.5<span class="w"> </span><span class="o">(</span><span class="m">07</span>-Jan-2020<span class="o">)</span>
+debugfs:<span class="w"> </span>Bad<span class="w"> </span>magic<span class="w"> </span>number<span class="w"> </span><span class="k">in</span><span class="w"> </span>super-block<span class="w"> </span><span class="k">while</span><span class="w"> </span>trying<span class="w"> </span>to<span class="w"> </span>open<span class="w"> </span>/dev/sdc1
+/dev/sdc1<span class="w"> </span>contains<span class="w"> </span>a<span class="w"> </span>ntfs<span class="w"> </span>file<span class="w"> </span>system<span class="w"> </span>labelled<span class="w"> </span><span class="s1">&#39;Seagate Backup Plus Drive&#39;</span>
+stat:<span class="w"> </span>Filesystem<span class="w"> </span>not<span class="w"> </span>open
+</code></pre></div>
+<p>对于 ntfs，找到了<a href="https://unix.stackexchange.com/questions/87265/how-do-i-get-the-creation-date-of-a-file-on-an-ntfs-logical-volume">这个</a>,</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>getfattr<span class="w"> </span>--only-values<span class="w"> </span>-n<span class="w"> </span>system.ntfs_crtime_be<span class="w"> </span>four-generations-under-one-roof.md<span class="w"> </span><span class="p">|</span><span class="w"> </span>
+<span class="w">    </span>perl<span class="w"> </span>-MPOSIX<span class="w"> </span>-0777<span class="w"> </span>-ne<span class="w"> </span><span class="s1">&#39;$t = unpack(&quot;Q&gt;&quot;); print ctime $t/10000000-11644473600&#39;</span>
+Sun<span class="w"> </span>Feb<span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="m">22</span>:52:09<span class="w"> </span><span class="m">2023</span>
+</code></pre></div>
+<p>其中 <code>11644473600</code> 是 Windows 的开始计时时间点 (1601-01-01T00:00:00Z) 与 Linux 计时开始点 (1970-01-01T00:00:00Z) 所差的秒数（<a href="https://stackoverflow.com/questions/6161776/convert-windows-filetime-to-second-in-unix-linux"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>）。</p>
 <h2 id="font">Font<a class="headerlink" href="#font" title="Permanent link">&para;</a></h2>
 <h3 id="fc-list"><code>fc-list</code><a class="headerlink" href="#fc-list" title="Permanent link">&para;</a></h3>
 <p>view installed fonts</p>
@@ -3774,7 +3808,7 @@ net.core.wmem_max<span class="w"> </span><span class="o">=</span><span class="w"
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2023</span>
       
         <br>
         Created:
