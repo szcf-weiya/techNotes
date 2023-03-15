@@ -5,6 +5,15 @@
 - dungheap: 粪堆
 - his **thatch (茅草屋顶)** forced to give way for **slate (石板，板岩)**
 - as much from the **irritation (刺激物；愤怒)** to the nerves as from the exposure of the **cuticle (表皮，角质层)**.
+- **waist (腰部)** **circumference (周长)**
+- taller and **leaner (瘦且健康的)**
+- anisotropic: 各向异性的
+- magnetohydrodynamic: 磁流体动力的
+- bugbear: 使人烦恼担忧的事
+- sparingly: 很少；节俭地
+- The number of startups that have been acquired instead of going public has **skyrocketed (飞涨)** over the last few decades.
+- concerto: 协奏曲 (vs concert)
+- New analysis of **obsidian (黑曜石)** **blades (刀片)** reveals dynamic **Neolithic (新石器时代的)** social networks.
 
 ## 2023.02
 
@@ -873,7 +882,7 @@
 - racial **disparity (差异)** in **mortgage lending (抵押贷款)**
 - the praise is a bit **over the top**
     - brimming with wit and **pathos (悲伤，痛苦)**
-    - the enormous **debut (初次登台，处女秀)** is a **wonder (奇迹，惊奇)**
+    - the enormous **debut (初次登台，处女秀, premiere)** is a **wonder (奇迹，惊奇)**
     - an astounding **feat** of **craftsmanship** and patience
     - never has an artist created a world so vivid without a single word spoken
 - The earliest **scratchy** recording of a **pope (教皇，罗马教皇)** was that of Leo XIII on a **wax cylinder (蜡筒唱片)**.
@@ -1436,7 +1445,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 18. The most important rights of a performer are the right to prevent any person from making a video or sound recording of his performance and the right to prohibit any person exploiting a video or sound recording of his performance.
 19. **civil remedies (民事救济)** vs. **criminal sanction (刑事处分)**
 20. intranet
-21. Under the Copyright Ordinance, the fair dealing for showing or playing a movie will apply only if the purpose is for giving or receiving instruction in a specified course of student provided by an educational establishment. It is not allowed to use these materials outside the scope of fair dealing such as for the purpose of entertainment.
+21. Under the **Copyright Ordinance (版权规定)**, the fair dealing for showing or playing a movie will apply only if the purpose is for giving or receiving instruction in a specified course of student provided by an educational establishment. It is not allowed to use these materials outside the scope of fair dealing such as for the purpose of entertainment.
 22. Vincent van Gogh: 梵高
 1. I recently was discussing/arguing about the value of **[charter schools](https://www.zhihu.com/question/21810104)** **lottery (彩票)** studies.
     - [The demand for seats in charter schools is so great that almost all charter schools must admit students by random lottery.](https://www.nyccharterschools.org/sites/default/files/resources/LOTTERIES082713.pdf)
@@ -1782,7 +1791,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. motif
 2. the moss-**draped (披，装饰)** **bald (秃顶的，秃头的)** **cypress (柏树)** trees: 长满青苔的秃柏树
 3. monopoly
-4. monolithic
+4. monolithic: 庞大的，整体式的
 6. metropolis
 8. metallurgy: 冶金学
 1. till: 耕作，犁地；收银台
@@ -1916,7 +1925,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 4. His involvement was **nominal (名义上的，有名无实的)**.
 5. The two girls soon became **fast (紧的，稳固的)** and inseparable friends.
 1. Recent discoveries have generally vindicated the physicist's theories.
-2. a novel that presents a fairly **veracious (说真话的，真实的)** and **unvarnished (不加掩饰的，质朴的，坦率的)** picture of the lives of affluent suburbanites.
+2. a novel that presents a fairly **veracious (说真话的，真实的)** and **unvarnished (不加掩饰的，质朴的，坦率的)** picture of the lives of **affluent (富裕的)** **suburbanites (郊区居民)**.
 3. **Inevitably (必然，必定)**, his remarkable success attracted the invidious attention of the other sales representatives.
 4. As loyalty unites lovers, so perfidy estranges friends.
 5. Every year I go to Kunming to enjoy its cool and **salubrious (环境宜人的)** climate.
@@ -1978,7 +1987,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 11. A suspension without pay is condign punishment for breaking the company's code of business ethics.
 12. All people **concurred (同意，赞同)** to pass the reform legislation.
 13. The administration had nothing but contempt for the ultimate Frisbee team and frequently spoke **disdainfully (轻蔑地，不屑一顾地)** of it.
-14. We accepted his offer to pay for our dinners without demur.
+14. We accepted his offer to pay for our dinners without **demur (提出异议，表示反对)**.
 15. an impartial and perspicacious judge
 16. Her skill and talent **ennoble (封为贵族，使更崇高)** her profession.
 17. The kind of ennui comes from having too much time on one's hands and too little will to find something productive to do.
@@ -2044,7 +2053,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 85. Elan means vivacity or liveliness of spirit
 86. trepidation (apprehension; fear)
 87. **Exorbitant (过高的，高得离谱的)** (excessive; overly expensive)
-88. affluent (wealthy)
 89. Destitute means needy or impoverished.
 90.  A harangue is a sharp verbal attack, a bitter tirade or diatribe.
 91. Surreptitious means hidden or stealthy.
@@ -2204,7 +2212,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 31. prairie
 32. perigee
 33. oral **cavity (洞，凹处；腔)**: 口腔
-34. cessation
+34. cessation: 停止，终止，中断
 36. encompass
 37. champion, support
 39. **artisan (工匠，手艺人)**
@@ -2324,7 +2332,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 37. The fortress by King Philip Augustus was situated on the right bank of the Seine, overlooking-- at that time-- splendid bucolic scenery.
 38. But overall, Mr Agar has abstracted and made manageable a range of rich and informed analysis.
 39. He also emphasized what he called the main thing: "a human-typable keyboard instead of a stupid, **cryptic (含义隐晦的，晦涩难懂的)** front panel with a bunch of lights and switches."
-40. In a few recalcitrant places, captial punishment is holding steady or picking up.
+40. In a few **recalcitrant (难以控制的，不服从指挥的)** places, captial punishment is holding steady or picking up.
 41. The visitor also sees other evolving friendships and aesthetic kinships taking place.
 42. **Manifest (表明，显示)** an **obliging (乐于助人的)** **disposition (气质，天性，性格)**, and they **can not but (不得不，[:link:](https://ell.stackexchange.com/questions/151081/what-does-cant-but-in-this-sentence-means))** regard you with **affection (感情，喜爱)**.
     - much obliged: 承蒙美意

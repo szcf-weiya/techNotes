@@ -1,31 +1,35 @@
+---
+comments: true
+---
+
 # Python Notes
 
 ## Base
 
-### xrange vs range
+??? note "xrange vs range"
 
-基本都在循环时使用，输出结果也是一样的，但略有差异
+	基本都在循环时使用，输出结果也是一样的，但略有差异
 
-- range 直接生成一个 list 对象
-- xrange 返回一个生成器。性能会比 range 好，特别是很大的时候。
+	- range 直接生成一个 list 对象
+	- xrange 返回一个生成器。性能会比 range 好，特别是很大的时候。
 
-参考[Python中range和xrange的区别](http://blog.csdn.net/imzoer/article/details/8742283)
+	参考[Python中range和xrange的区别](http://blog.csdn.net/imzoer/article/details/8742283)
 
-### `-m`
+??? tip "`-m`: run modules as scripts"
 
-`python -m` lets you run modules as scripts, and it reflects the motto--"batteries included". [Here](http://pythonwise.blogspot.com/2015/01/python-m.html) are some powerful features/functions, such as creating a simple http server
+	`python -m` lets you run modules as scripts, and it reflects the motto--"batteries included". [Here](http://pythonwise.blogspot.com/2015/01/python-m.html) are some powerful features/functions, such as creating a simple http server
 
-=== "python 3"
+	=== "python 3"
 
-	```python
-	python3 -m http.server 80
-	```
+		```python
+		python3 -m http.server 80
+		```
 
-=== "python 2"
+	=== "python 2"
 
-	```python
-	python -m SimpleHTTPServer 80
-	```
+		```python
+		python -m SimpleHTTPServer 80
+		```
 
 ### `-u`
 
@@ -192,102 +196,102 @@ Then I found [more detailed explanation](https://stackoverflow.com/a/43627975/) 
 
 ## CLI Options
 
-### `sys.argv`
+??? note "`sys.argv`"
 
-The arguments are stored in the array `sys.argv`, where the first element is the script name itself.
+	The arguments are stored in the array `sys.argv`, where the first element is the script name itself.
 
-```python
---8<-- "docs/python/ex/star_arg.py"
-```
-
-With quote, the character `*` would expanding before passing into the argument.
-
-```bash
-$ python star_arg.py ../*.png
-['star_arg.py', '../error_jupyter_1.png', '../error_jupyter.png', '../err_theano.png', '../ipython.png', '../spyder-qtconsole.png']
-$ python star_arg.py "../*.png"
-['star_arg.py', '../*.png']
-```
-
-If we want to wrap it with a bash function,
-
-```bash
-$ star_arg() { python star_arg.py $1 ; }
-```
-
-The quote for the pattern containing `*` is also necessary, otherwise it first expands and just passes the first matched filename due to `$1`,
-
-```bash
-$ star_arg ../*.png
-['star_arg.py', '../error_jupyter_1.png']
-$ star_arg "../*.png"
-['star_arg.py', '../error_jupyter_1.png', '../error_jupyter.png', '../err_theano.png', '../ipython.png', '../spyder-qtconsole.png']
-```
-
-But note that the above bash function does not wrap `$1`. With quote, the original string can be passed into python script
-
-```bash
-$ star_arg2() { python star_arg.py "$1" ; }
-$ star_arg2 "../*.png"
-['star_arg.py', '../*.png']
-$ star_arg2 ../*.png
-['star_arg.py', '../error_jupyter_1.png']
-```
-
-
-### `argparse`
-
-Documentation: [argparse — Parser for command-line options, arguments and sub-commands](https://docs.python.org/3/library/argparse.html)
-
-An example: [jieba/__main__.py](https://github.com/fxsjy/jieba/blob/master/jieba/__main__.py)
-
-### `click`
-
-!!! info
-	More related code can be found in [My Code Results on GitHub](https://github.com/search?l=Python&q=user%3Aszcf-weiya+click&type=Code)
-
-It enables to use command line arguments. For example, 
-
-```python
---8<-- "docs/python/ex/ex_click.py"
-```
-
-```bash
-$ python3 ex_click.py --a 1 --b
-a = 1, b = True
-$ python3 ex_click.py --a 1
-a = 1, b = False
-$ python3 ex_click.py --a 2
-a = 2, b = False
-```
-
-!!! warning
-	The script filename cannot be the same as the module name, `click.py`. Otherwise, it throws,
-	```bash
-	$ python3 click.py --a 1 --b
-	Traceback (most recent call last):
-	File "click.py", line 1, in <module>
-		import click
-	File "/media/weiya/Seagate/GitHub/techNotes/docs/python/ex/click.py", line 3, in <module>
-		@click.command()
-	AttributeError: module 'click' has no attribute 'command'
-	```
-
-!!! failure "float value"
-	With 
 	```python
-	@click.option("--c", default = 2)
+	--8<-- "docs/python/ex/star_arg.py"
 	```
-	it throws
+
+	With quote, the character `*` would expanding before passing into the argument.
+
 	```bash
-	$ python ex_click.py --a 1 --b --c 2.0
-	Usage: ex_click.py [OPTIONS]
-	Try 'ex_click.py --help' for help.
-
-	Error: Invalid value for '--c': 2.0 is not a valid integer
+	$ python star_arg.py ../*.png
+	['star_arg.py', '../error_jupyter_1.png', '../error_jupyter.png', '../err_theano.png', '../ipython.png', '../spyder-qtconsole.png']
+	$ python star_arg.py "../*.png"
+	['star_arg.py', '../*.png']
 	```
 
-	`type = float` needs to be specified.
+	If we want to wrap it with a bash function,
+
+	```bash
+	$ star_arg() { python star_arg.py $1 ; }
+	```
+
+	The quote for the pattern containing `*` is also necessary, otherwise it first expands and just passes the first matched filename due to `$1`,
+
+	```bash
+	$ star_arg ../*.png
+	['star_arg.py', '../error_jupyter_1.png']
+	$ star_arg "../*.png"
+	['star_arg.py', '../error_jupyter_1.png', '../error_jupyter.png', '../err_theano.png', '../ipython.png', '../spyder-qtconsole.png']
+	```
+
+	But note that the above bash function does not wrap `$1`. With quote, the original string can be passed into python script
+
+	```bash
+	$ star_arg2() { python star_arg.py "$1" ; }
+	$ star_arg2 "../*.png"
+	['star_arg.py', '../*.png']
+	$ star_arg2 ../*.png
+	['star_arg.py', '../error_jupyter_1.png']
+	```
+
+
+??? note "`argparse`"
+
+	Documentation: [argparse — Parser for command-line options, arguments and sub-commands](https://docs.python.org/3/library/argparse.html)
+
+	An example: [jieba/__main__.py](https://github.com/fxsjy/jieba/blob/master/jieba/__main__.py)
+
+??? note "`click`"
+
+	!!! info
+		More related code can be found in [My Code Results on GitHub](https://github.com/search?l=Python&q=user%3Aszcf-weiya+click&type=Code)
+
+	It enables to use command line arguments. For example, 
+
+	```python
+	--8<-- "docs/python/ex/ex_click.py"
+	```
+
+	```bash
+	$ python3 ex_click.py --a 1 --b
+	a = 1, b = True
+	$ python3 ex_click.py --a 1
+	a = 1, b = False
+	$ python3 ex_click.py --a 2
+	a = 2, b = False
+	```
+
+	!!! warning
+		The script filename cannot be the same as the module name, `click.py`. Otherwise, it throws,
+		```bash
+		$ python3 click.py --a 1 --b
+		Traceback (most recent call last):
+		File "click.py", line 1, in <module>
+			import click
+		File "/media/weiya/Seagate/GitHub/techNotes/docs/python/ex/click.py", line 3, in <module>
+			@click.command()
+		AttributeError: module 'click' has no attribute 'command'
+		```
+
+	!!! failure "float value"
+		With 
+		```python
+		@click.option("--c", default = 2)
+		```
+		it throws
+		```bash
+		$ python ex_click.py --a 1 --b --c 2.0
+		Usage: ex_click.py [OPTIONS]
+		Try 'ex_click.py --help' for help.
+
+		Error: Invalid value for '--c': 2.0 is not a valid integer
+		```
+
+		`type = float` needs to be specified.
 
 ## FileIO
 
@@ -790,202 +794,206 @@ refer to [Writing mathematical expressions](https://matplotlib.org/users/mathtex
 
 ## NumPy
 
-### `(R, 1)` vs `(R, )`
+??? note "`(R, 1)` vs `(R, )`"
 
-> The best way to think about NumPy arrays is that they consist of two parts, a **data buffer** which is just a block of raw elements, and a **view** which describes how to interpret the data buffer. [:material-stack-overflow:](https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r)
+	> The best way to think about NumPy arrays is that they consist of two parts, a **data buffer** which is just a block of raw elements, and a **view** which describes how to interpret the data buffer. [:material-stack-overflow:](https://stackoverflow.com/questions/22053050/difference-between-numpy-array-shape-r-1-and-r)
 
-```python
->>> np.shape(np.ones((3, 1)))
-(3, 1)
->>> np.shape(np.ones((3, )))
-(3,)
->>> np.shape(np.ones((3)))
-(3,)
->>> np.shape(np.ones(3))
-(3,)
->>> np.shape(np.ones(3, 1)) # ERROR!
-```
+	```python
+	>>> np.shape(np.ones((3, 1)))
+	(3, 1)
+	>>> np.shape(np.ones((3, )))
+	(3,)
+	>>> np.shape(np.ones((3)))
+	(3,)
+	>>> np.shape(np.ones(3))
+	(3,)
+	>>> np.shape(np.ones(3, 1)) # ERROR!
+	```
 
-### array operation
+??? note "broadcast in division"
 
-```python
->>> a = np.sum([[0, 1.0], [0, 5.0]], axis=1)
->>> c = np.sum([[0, 1.0], [0, 5.0]], axis=1, keepdims=True)
->>> a/c
-array([[ 1. ,  5. ],
-       [ 0.2,  1. ]])
->>> a
-array([ 1.,  5.])
->>> c
-array([[ 1.],
-       [ 5.]])
->>> d
-array([[ 1,  5],
-      [ 0, 10]])
->>> d/c
-array([[ 1.,  5.],
-      [ 0.,  2.]])
->>> d/a
-array([[ 1.,  1.],
-      [ 0.,  2.]])
-```
+	```python
+	>>> a = np.sum([[0, 1.0], [0, 5.0]], axis=1)
+	>>> c = np.sum([[0, 1.0], [0, 5.0]], axis=1, keepdims=True)
+	>>> a
+	array([ 1.,  5.])
+	>>> c
+	array([[ 1.],
+		[ 5.]])
+	>>> a/c
+	array([[ 1. ,  5. ],
+		[ 0.2,  1. ]])
+	>>> d
+	array([[ 1,  5],
+		[ 0, 10]])
+	>>> d/c
+	array([[ 1.,  5.],
+		[ 0.,  2.]])
+	>>> d/a
+	array([[ 1.,  1.],
+		[ 0.,  2.]])
+	```
 
-### arrays with different size
+!!! note "different size: nested list vs dtype=object"
+	- nested list
 
-- nested list
+	```python
+	[[1,2,3],[1,2]]
+	```
 
-```python
-[[1,2,3],[1,2]]
-```
+	- numpy
 
-- numpy
+	```python
+	numpy.array([[0,1,2,3], [2,3,4]], dtype=object)
+	```
 
-```python
-numpy.array([[0,1,2,3], [2,3,4]], dtype=object)
-```
-
-refer to [How to make a multidimension numpy array with a varying row size?](https://stackoverflow.com/questions/3386259/how-to-make-a-multidimension-numpy-array-with-a-varying-row-size)
+	refer to [How to make a multidimension numpy array with a varying row size?](https://stackoverflow.com/questions/3386259/how-to-make-a-multidimension-numpy-array-with-a-varying-row-size)
 
 
-### `np.newaxis`
+??? note "`np.newaxis`"
 
-add new dimensions to a numpy array [:material-stack-overflow:](https://stackoverflow.com/questions/17394882/how-can-i-add-new-dimensions-to-a-numpy-array).
+	add new dimensions to a numpy array [:material-stack-overflow:](https://stackoverflow.com/questions/17394882/how-can-i-add-new-dimensions-to-a-numpy-array).
 
-```python
->>> a = np.ones((2, 3))
->>> np.shape(a[:, :, None])
-(2, 3, 1)
->>> np.shape(a[:, :, np.newaxis])
-(2, 3, 1)
-```
+	```python
+	>>> a = np.ones((2, 3))
+	>>> np.shape(a[:, :, None])
+	(2, 3, 1)
+	>>> np.shape(a[:, :, np.newaxis])
+	(2, 3, 1)
+	```
 
-### array of FALSE/TRUE
+!!! note "array of FALSE/TRUE"
 
-```python
-np.zeros(10, dtype = bool)
-```
+	```python
+	np.zeros(10, dtype = bool)
+	```
 
-### Array of Array
+??? note "Array of Array"
 
-```python
-In [29]: a
-Out[29]: 
-array([[ 83.,  11.],
-       [316.,  19.],
-       [372.,  35.]])
+	```python
+	In [29]: a
+	Out[29]: 
+	array([[ 83.,  11.],
+		[316.,  19.],
+		[372.,  35.]])
 
-In [30]: np.hstack([a, a])
-Out[30]: 
-array([[ 83.,  11.,  83.,  11.],
-       [316.,  19., 316.,  19.],
-       [372.,  35., 372.,  35.]])
+	In [30]: np.hstack([a, a])
+	Out[30]: 
+	array([[ 83.,  11.,  83.,  11.],
+		[316.,  19., 316.,  19.],
+		[372.,  35., 372.,  35.]])
 
-In [31]: b = np.array([a, a])
+	In [31]: b = np.array([a, a])
 
-In [32]: b[1]
-Out[32]: 
-array([[ 83.,  11.],
-       [316.,  19.],
-       [372.,  35.]])
-```
+	In [32]: b[1]
+	Out[32]: 
+	array([[ 83.,  11.],
+		[316.,  19.],
+		[372.,  35.]])
+	```
 
-### print numpy objects without line breaks
+??? note "`array_repr`: print numpy objects without line breaks"
 
-```python
-import numpy as np
-x_str = np.array_repr(x).replace('\n', '')
-print(x_str)
-```
+	```python
+	import numpy as np
+	x_str = np.array_repr(x).replace('\n', '')
+	print(x_str)
+	```
 
-refer to [How to print numpy objects without line breaks](https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks)
+	refer to [How to print numpy objects without line breaks](https://stackoverflow.com/questions/29102955/how-to-print-numpy-objects-without-line-breaks)
 
-### merge multiple slices
+??? note "`r_`: merge multiple slices"
 
-```python
-x = np.empty((15, 2))
-x[np.r_[0:5, 10:15],:]
-```
+	```python
+	x = np.empty((15, 2))
+	x[np.r_[0:5, 10:15],:]
+	```
 
-refer to [Numpy: An efficient way to merge multiple slices](https://stackoverflow.com/questions/46640821/numpy-an-efficient-way-to-merge-multiple-slices)
+	refer to [Numpy: An efficient way to merge multiple slices](https://stackoverflow.com/questions/46640821/numpy-an-efficient-way-to-merge-multiple-slices)
 
-but it does not allow the iterator to construct the list,
+	but it does not allow the iterator to construct the list,
 
-```ipython
-In: [i:i+3 for i in 1:3]
-  File "<ipython-input-247-8e21d57e8f2d>", line 1
-    [i:i+3 for i in 1:3]
-      ^
-SyntaxError: invalid syntax
+	```ipython
+	In: [i:i+3 for i in 1:3]
+	File "<ipython-input-247-8e21d57e8f2d>", line 1
+		[i:i+3 for i in 1:3]
+		^
+	SyntaxError: invalid syntax
 
-In: np.r_[i:i+3 for i in 1:3]
-  File "<ipython-input-246-02f2b1ded12b>", line 1
-    np.r_[i:i+3 for i in 1:3]
-                ^
-SyntaxError: invalid syntax
-```
+	In: np.r_[i:i+3 for i in 1:3]
+	File "<ipython-input-246-02f2b1ded12b>", line 1
+		np.r_[i:i+3 for i in 1:3]
+					^
+	SyntaxError: invalid syntax
+	```
 
-As a comparison, Julia seems more flexible,
+	As a comparison, Julia seems more flexible,
 
-```julia
-julia> vcat([i:i+3 for i in 1:3]...)'
-1×12 adjoint(::Vector{Int64}) with eltype Int64:
- 1  2  3  4  2  3  4  5  3  4  5  6
-```
+	```julia
+	julia> vcat([i:i+3 for i in 1:3]...)'
+	1×12 adjoint(::Vector{Int64}) with eltype Int64:
+	1  2  3  4  2  3  4  5  3  4  5  6
+	```
 
-### `/=`
+??? note "`/=`: in-place evaluation"
 
-According to the builtin manual, `help('/=')`,
+	According to the builtin manual, `help('/=')`,
 
-> An augmented assignment expression like "x += 1" can be rewritten as
-"x = x + 1" to achieve a similar, but not exactly equal effect. In the
-augmented version, "x" is only evaluated once. Also, when possible,
-the actual operation is performed *in-place*, meaning that rather than
-creating a new object and assigning that to the target, the old object
-is modified instead.
+	> An augmented assignment expression like "x += 1" can be rewritten as
+	"x = x + 1" to achieve a similar, but not exactly equal effect. In the
+	augmented version, "x" is only evaluated once. Also, when possible,
+	the actual operation is performed *in-place*, meaning that rather than
+	creating a new object and assigning that to the target, the old object
+	is modified instead.
 
-So it would be cautious when using it on arrays,
+	So it would be cautious when using it on arrays,
 
-```python
->>> a = np.array([[1, 2, 3], [4, 5, 6]])
->>> a1 = a[0, ]
->>> a1 /= 0.5
->>> a1
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-<ipython-input-106-71f04990b2bb> in <module>
-      1 a = np.array([[1, 2, 3], [4, 5, 6]])
-      2 a1 = a[0, ]
-----> 3 a1 /= 0.5
-      4 a1
+	```python
+	>>> a = np.array([[1, 2, 3], [4, 5, 6]])
+	>>> a1 = a[0, ]
+	>>> a1 /= 0.5
+	>>> a1
+	---------------------------------------------------------------------------
+	TypeError                                 Traceback (most recent call last)
+	<ipython-input-106-71f04990b2bb> in <module>
+		1 a = np.array([[1, 2, 3], [4, 5, 6]])
+		2 a1 = a[0, ]
+	----> 3 a1 /= 0.5
+		4 a1
 
-TypeError: ufunc 'true_divide' output (typecode 'd') could not be coerced to provided output parameter (typecode 'l') according to the casting rule ''same_kind''
-```
+	TypeError: ufunc 'true_divide' output (typecode 'd') could not be coerced to provided output parameter (typecode 'l') according to the casting rule ''same_kind''
+	```
 
-The above error is due to incompatible type, so it can be avoided by specifying the element type of the array, but the original array also has been updated,
+	The above error is due to incompatible type, so it can be avoided by specifying the element type of the array, but the original array also has been updated,
 
-```python
->>> a = np.array([[1, 2, 3], [4, 5, 6]], dtype = float)
->>> a1 = a[0, ]
->>> a1 /= 0.5
->>> a1
-array([2., 4., 6.])
->>> a
-array([[2., 4., 6.],
-       [4., 5., 6.]])
-```
+	```python
+	>>> a = np.array([[1, 2, 3], [4, 5, 6]], dtype = float)
+	>>> a1 = a[0, ]
+	>>> a1 /= 0.5
+	>>> a1
+	array([2., 4., 6.])
+	>>> a
+	array([[2., 4., 6.],
+		[4., 5., 6.]])
+	```
 
-In contrast, `/` would retain the original array.
+	In contrast, `/` would retain the original array.
 
-```python
->>> a = np.array([[1, 2, 3], [4, 5, 6]], dtype = float)
->>> a1 = a[0, ]
->>> a1 = a1 / 0.5
->>> a1
-array([2., 4., 6.])
->>> a
-array([[1., 2., 3.],
-       [4., 5., 6.]])
-```
+	```python
+	>>> a = np.array([[1, 2, 3], [4, 5, 6]], dtype = float)
+	>>> a1 = a[0, ]
+	>>> a1 = a1 / 0.5
+	>>> a1
+	array([2., 4., 6.])
+	>>> a
+	array([[1., 2., 3.],
+		[4., 5., 6.]])
+	```
+
+## pandas
+
+- Homepage: <https://pandas.pydata.org/docs/>
+- [Cheatsheet](Pandas_Cheat_Sheet.pdf)
 
 ## `re`
 
@@ -1023,14 +1031,6 @@ where `()` is used to group, and `group(1)` returns the first group, while `grou
 
 1. [Python 使用requests发送POST请求 - CSDN博客](http://blog.csdn.net/junli_chen/article/details/53670887)
 2. [Python-爬虫-requests库用语post登录](https://www.cnblogs.com/fredkeke/p/7000687.html)
-
-## mdx_math安装命令
-
-参考[manage-your-cms-using-mkdocs](http://wutongtree.github.io/devops/manage-your-cms-using-mkdocs)
-
-```bash
-sudo pip install python-markdown-math
-```
 
 ## How can I use Conda to install MySQLdb?
 
@@ -1167,16 +1167,6 @@ But `pip cache` seems not work in older version, such as `pip 19.3.1`.
 The reason is that `sys.path` returns a list, while `.insert` is the method for a list, which insert object before the given index. Thus, if the first argument is 0, then the inserted path would be firstly searched, otherwise, it would be inserted after the first path, the current folder.
 
 refer to [First argument of sys.path.insert in python](https://stackoverflow.com/questions/37176836/first-argument-of-sys-path-insert-in-python)
-
-## TensorFlow
-
---8<-- "docs/TFnotes/README.md"
-
-## the `i`-th row in pandas
-
-```python
-df_test.iloc[0]
-```
 
 ## `key` in `sorted`
 
