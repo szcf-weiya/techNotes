@@ -37,6 +37,19 @@ comments: true
 
 	refer to [Two common mistakes with the colon operator in R](https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/)
 
+??? note "`save` only accepts the names of objects"
+
+	As the help manual said, 
+	> The ... arguments only give the names of the objects to be saved: they are searched for in the environment given by the envir argument, and the actual objects given as arguments need not be those found.
+
+	```r
+	> save(runif(10), file = "/tmp/test.txt")
+	Error in save(runif(10), file = "/tmp/test.txt") : 
+	object ‘runif(10)’ not found
+	> x=runif(10)
+	> save(x, file = "/tmp/test.txt")
+	```
+
 ## Installation
 
 ### Install from source on Rocky
@@ -413,6 +426,17 @@ Laterly, note that nvidia card does not work, and change to another driver. Then
 
 	![](error_too_large_for_figure.png)
 
+
+??? bug "incorrect number of dimensions (keep dims via `drop`)"
+	```r
+	> a = matrix(0, 2, 2)
+	> a[2,]
+	[1] 0 0
+	> a[2,][,1]
+	Error in a[2, ][, 1] : incorrect number of dimensions
+	> a[2,,drop=FALSE][,1]
+	[1] 0
+	```
 
 ## `sys.nframe()`
 

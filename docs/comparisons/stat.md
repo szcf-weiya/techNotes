@@ -31,3 +31,4 @@ index for unique elements | `unique(i->x[i], 1:length(x))` | `which(!duplicated(
 layout | `@layout` | [`layout`](../../R/plot/) | |
 priority of `:` | `0.1+1:10-1 == (0.1+1):(10-1)`  | `0.1+1:10-1 == 0.1+(1:10)-1` | |
 enumerate | `for (k, v) in enumerate(d)` | | `for k, v in enumerate(d):` |
+[keep dims](../../R/) | `a[1:1,:]` | `a[1,,drop=FALSE]` | `a[0:1,:]` | 
