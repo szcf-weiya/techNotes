@@ -3177,6 +3177,19 @@
 </code></pre></div>
 <p>refer to <a href="https://statisticaloddsandends.wordpress.com/2018/08/03/two-common-mistakes-with-the-colon-operator-in-r/">Two common mistakes with the colon operator in R</a></p>
 </details>
+<details class="note">
+<summary><code>save</code> only accepts the names of objects</summary>
+<p>As the help manual said, </p>
+<blockquote>
+<p>The &hellip; arguments only give the names of the objects to be saved: they are searched for in the environment given by the envir argument, and the actual objects given as arguments need not be those found.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">10</span><span class="p">),</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/tmp/test.txt&quot;</span><span class="p">)</span>
+<span class="n">Error</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">10</span><span class="p">),</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/tmp/test.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span>
+<span class="n">object</span><span class="w"> </span>‘<span class="nf">runif</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>’<span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">found</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="nf">runif</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">save</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/tmp/test.txt&quot;</span><span class="p">)</span>
+</code></pre></div>
+</details>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="install-from-source-on-rocky">Install from source on Rocky<a class="headerlink" href="#install-from-source-on-rocky" title="Permanent link">&para;</a></h3>
 <p>Following the instruction in <a href="https://docs.rstudio.com/resources/install-r-source/">RStudio Documentation: Install R from Source</a></p>
@@ -3484,6 +3497,17 @@ sudo<span class="w"> </span>gdebi<span class="w"> </span>rstudio-1.0.44-amd64.de
 <summary>清空历史图象</summary>
 <p><a href="http://stackoverflow.com/questions/12766166/error-in-plot-new-figure-margins-too-large-in-r">Error in plot.new() : figure margins too large in R</a></p>
 <p><img alt="" src="error_too_large_for_figure.png" /></p>
+</details>
+<details class="bug">
+<summary>incorrect number of dimensions (keep dims via <code>drop</code>)</summary>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">,]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">,][,</span><span class="m">1</span><span class="p">]</span>
+<span class="n">Error</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="p">][,</span><span class="w"> </span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">incorrect</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">dimensions</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="m">2</span><span class="p">,,</span><span class="n">drop</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">][,</span><span class="m">1</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">0</span>
+</code></pre></div>
 </details>
 <h2 id="sysnframe"><code>sys.nframe()</code><a class="headerlink" href="#sysnframe" title="Permanent link">&para;</a></h2>
 <p>Here is an equivalent way for pythonic <code>if __name__ == "__main__"</code></p>
@@ -4037,7 +4061,7 @@ See<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 17, 2023</span>
       
         <br>
         Created:
