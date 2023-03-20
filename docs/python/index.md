@@ -612,47 +612,43 @@ $ paste <(jupyter kernelspec list | sed -n '2,$p') <(jupyter kernelspec list | s
 
 ## List
 
-### find index of an item
+??? note "find index of an item"
+	```python
+	>>> [1, 1].index(1)
+	0
+	>>> [i for i, e in enumerate([1, 2, 1]) if e == 1]
+	[0, 2]
+	>>> g = (i for i, e in enumerate([1, 2, 1]) if e == 1)
+	>>> next(g)
+	0
+	>>> next(g)
+	2
+	```
 
-```python
->>> [1, 1].index(1)
-0
->>> [i for i, e in enumerate([1, 2, 1]) if e == 1]
-[0, 2]
->>> g = (i for i, e in enumerate([1, 2, 1]) if e == 1)
->>> next(g)
-0
->>> next(g)
-2
-```
+	refer to [Finding the index of an item given a list containing it in Python](https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-given-a-list-containing-it-in-python)
 
-refer to [Finding the index of an item given a list containing it in Python](https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-given-a-list-containing-it-in-python)
+??? note "for loop in list: index a list with another list"
+	```python
+	L = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+	Idx = [0, 3, 7]
+	T = [L[i] for i in Idx]
+	```
 
-### index a list with another list
+	refer to [In Python, how do I index a list with another list?](https://stackoverflow.com/questions/1012185/in-python-how-do-i-index-a-list-with-another-list)
 
-```python
-L = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-Idx = [0, 3, 7]
-T = [L[i] for i in Idx]
-```
+??? note "getting indices of true"
+	```python
+	>>> t = [False, False, False, False, True, True, False, True, False, False, False, False, False, False, False, False]
+	>>> [i for i, x in enumerate(t) if x]
+	[4, 5, 7]
+	```
 
-refer to [In Python, how do I index a list with another list?](https://stackoverflow.com/questions/1012185/in-python-how-do-i-index-a-list-with-another-list)
+	refer to [Getting indices of True values in a boolean list](https://stackoverflow.com/questions/21448225/getting-indices-of-true-values-in-a-boolean-list)
 
-### getting indices of true
+??? note "`del`: remove by index"
+	`del`
 
-```python
->>> t = [False, False, False, False, True, True, False, True, False, False, False, False, False, False, False, False]
->>> [i for i, x in enumerate(t) if x]
-[4, 5, 7]
-```
-
-refer to [Getting indices of True values in a boolean list](https://stackoverflow.com/questions/21448225/getting-indices-of-true-values-in-a-boolean-list)
-
-### remove by index
-
-`del`
-
-refer to [How to remove an element from a list by index?](https://stackoverflow.com/questions/627435/how-to-remove-an-element-from-a-list-by-index)
+	refer to [How to remove an element from a list by index?](https://stackoverflow.com/questions/627435/how-to-remove-an-element-from-a-list-by-index)
 
 ### `TypeError: unhashable type: 'list'`
 
@@ -727,42 +723,38 @@ an illustrative example,
 
 ![image](https://user-images.githubusercontent.com/13688320/125582405-cf8a7af7-e341-44ed-a251-d867a8c4af2c.png)
 
-
 which is adapted from [matplotlib: coordinates convention of image imshow incompatible with plot](https://stackoverflow.com/questions/37706005/matplotlib-coordinates-convention-of-image-imshow-incompatible-with-plot)
 
+??? note "`tight_layout`: subplots 的间距"
+	`plt.tight_layout()` 可以调节间距，如果有必要，可以带上参数，比如，[B spline in R, C++ and Python](https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6)
 
+	```bash
+	plt.tight_layout(pad = 3.0)
+	```
 
-### subplots 的间距
+??? note "`set_aspect`: equal axis aspect ratio"
 
-`plt.tight_layout()` 可以调节间距，如果有必要，可以带上参数，比如，[B spline in R, C++ and Python](https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6)
+	According to the [official documentation](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/axis_equal_demo.html),
 
-```bash
-plt.tight_layout(pad = 3.0)
-```
+	```python
+	fig, ax = plt.subplots(1, 3)
+	ax[0].plot(3*np.cos(an), 3*np.sin(an))
+	ax[1].plot(3*np.cos(an), 3*np.sin(an))
+	ax[1].axis("equal")
+	ax[2].plot(3*np.cos(an), 3*np.sin(an))
+	ax[2].set_aspect("equal", "box")
+	```
 
-### equal axis aspect ratio
+	![image](https://user-images.githubusercontent.com/13688320/122642147-7cae3780-d13b-11eb-9e14-9356d2e2f6a9.png)
 
-According to the [official documentation](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/axis_equal_demo.html),
+	we prefer to the last one. If we want to directly call `plt` instead of `fig, ax`, then
 
-```python
-fig, ax = plt.subplots(1, 3)
-ax[0].plot(3*np.cos(an), 3*np.sin(an))
-ax[1].plot(3*np.cos(an), 3*np.sin(an))
-ax[1].axis("equal")
-ax[2].plot(3*np.cos(an), 3*np.sin(an))
-ax[2].set_aspect("equal", "box")
-```
+	```python
+	plt.plot(3*np.cos(an), 3*np.sin(an))
+	plt.gca().set_aspect("equal", "box")
+	```
 
-![image](https://user-images.githubusercontent.com/13688320/122642147-7cae3780-d13b-11eb-9e14-9356d2e2f6a9.png)
-
-we prefer to the last one. If we want to directly call `plt` instead of `fig, ax`, then
-
-```python
-plt.plot(3*np.cos(an), 3*np.sin(an))
-plt.gca().set_aspect("equal", "box")
-```
-
-note the middle `gca()`.
+	note the middle `gca()`.
 
 ### scatter size
 
@@ -785,12 +777,6 @@ plt.xlabel(r"\lambda")
 ```
 
 refer to [Writing mathematical expressions](https://matplotlib.org/users/mathtext.html)
-
-### Show matplotlib plots in Ubuntu (Windows subsystem for Linux)
-
-参考
-[Show matplotlib plots in Ubuntu (Windows subsystem for Linux)](https://stackoverflow.com/questions/43397162/show-matplotlib-plots-in-ubuntu-windows-subsystem-for-linux)
-
 
 ## NumPy
 
@@ -1032,11 +1018,6 @@ where `()` is used to group, and `group(1)` returns the first group, while `grou
 1. [Python 使用requests发送POST请求 - CSDN博客](http://blog.csdn.net/junli_chen/article/details/53670887)
 2. [Python-爬虫-requests库用语post登录](https://www.cnblogs.com/fredkeke/p/7000687.html)
 
-## How can I use Conda to install MySQLdb?
-
-
-参考[How can I use Conda to install MySQLdb?](https://stackoverflow.com/questions/34140472/how-can-i-use-conda-to-install-mysqldb)
-
 ## 远程连接 mysql
 
 首先需要在服务器端，在`my.cnf` 中注释掉
@@ -1123,22 +1104,20 @@ trusted-host=mirrors.aliyun.com
 
 注意编码格式为utf8无BOM。
 
-### temporary proxy
+??? note "`pip install -i`: temporary proxy"
+	通过 `conda` 安装镜像在 `.condarc` 中设置, 如在内地可以用[清华的镜像](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)，而通过 `pip` 详见 [pypi 镜像使用帮助](https://mirror.tuna.tsinghua.edu.cn/help/pypi/)，临时使用可以运行
 
-通过 `conda` 安装镜像在 `.condarc` 中设置, 如在内地可以用[清华的镜像](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)，而通过 `pip` 详见 [pypi 镜像使用帮助](https://mirror.tuna.tsinghua.edu.cn/help/pypi/)，临时使用可以运行
-
-```bash
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
-```
+	```bash
+	pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+	```
 
 
-### install from github
+??? note "`pip install git+URL`: install from github"
+	For example, ESL-CN used the forked plugin, [szcf-weiya/mkdocs-git-revision-date-plugin](https://github.com/szcf-weiya/mkdocs-git-revision-date-plugin), to set the update time, then in the `.travis.yml` file,
 
-For example, ESL-CN used the forked plugin, [szcf-weiya/mkdocs-git-revision-date-plugin](https://github.com/szcf-weiya/mkdocs-git-revision-date-plugin), to set the update time, then in the `.travis.yml` file,
-
-```bash
-pip install git+https://github.com/szcf-weiya/mkdocs-git-revision-date-plugin.git
-```
+	```bash
+	pip install git+https://github.com/szcf-weiya/mkdocs-git-revision-date-plugin.git
+	```
 
 ### 'Uninstalling a distutils installed project' error
 
@@ -1148,15 +1127,14 @@ pip install --ignore-installed ${PACKAGE_NAME}
 
 refer to ['Uninstalling a distutils installed project' error when installing blockstack #504](https://github.com/blockstack/blockstack-core/issues/504)
 
-### remove cache
+??? note "`pip cache purge`: remove cache"
+	just found there is a cache folder, `~/.cache/pip`, which occupied ~2G. From [Removing pip's cache? - Stack Overflow](https://stackoverflow.com/questions/9510474/removing-pips-cache), got to know that `pip` itself can manage the cache, such as
 
-just found there is a cache folder, `~/.cache/pip`, which occupied ~2G. From [Removing pip's cache? - Stack Overflow](https://stackoverflow.com/questions/9510474/removing-pips-cache), got to know that `pip` itself can manage the cache, such as
+	```bash
+	$ pip cache purge
+	```
 
-```bash
-$ pip cache purge
-```
-
-But `pip cache` seems not work in older version, such as `pip 19.3.1`.
+	But `pip cache` seems not work in older version, such as `pip 19.3.1`.
 
 ## `sys`
 
