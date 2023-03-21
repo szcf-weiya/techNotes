@@ -469,33 +469,32 @@ Refer to [:link:](https://ipython.readthedocs.io/en/stable/interactive/magics.ht
 
 ## JSON
 
-### convert string to json
+??? note "`json.loads`: convert string to json"
 
-```python
-payload='{'name': weiya}'
-# payload='payload = {'name': weiya}'
-```
+	```python
+	payload='{'name': weiya}'
+	# payload='payload = {'name': weiya}'
+	```
 
-换成json
+	换成json
 
-```python
-json.loads(payload)
-```
+	```python
+	json.loads(payload)
+	```
 
-!!! warning
-    注意不能采用注释掉的部分。
+	注意不能采用注释掉的部分。
 
-### json.dumps() 和 json.dump() 的区别
+??? note "`dumps` vs `dump`"
 
-简言之，`dumps()`和`loads()`都是针对字符串而言的，而`dump()`和`load()`是针对文件而言的。具体细节参见[python json.dumps()  json.dump()的区别 - wswang - 博客园](https://www.cnblogs.com/wswang/p/5411826.html)
+	简言之，`dumps()`和`loads()`都是针对字符串而言的，而`dump()`和`load()`是针对文件而言的。具体细节参见[python json.dumps()  json.dump()的区别 - wswang - 博客园](https://www.cnblogs.com/wswang/p/5411826.html)
 
-### flask 中 jsonify 和 json.dumps 的区别
+??? note "`jsonify` vs `json.dumps`"
 
-参考[在flask中使用jsonify和json.dumps的区别](http://blog.csdn.net/Duke_Huan_of_Qi/article/details/76064225)
+	参考[在flask中使用jsonify和json.dumps的区别](http://blog.csdn.net/Duke_Huan_of_Qi/article/details/76064225)
 
-另外 flask 的入门文档见
+	另外 flask 的入门文档见
 
-[快速入门 &mdash; Flask 0.10.1 文档](http://docs.jinkan.org/docs/flask/quickstart.html#quickstart)
+	[快速入门 &mdash; Flask 0.10.1 文档](http://docs.jinkan.org/docs/flask/quickstart.html#quickstart)
 
 ## Jupyter
 
