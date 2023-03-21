@@ -1325,33 +1325,6 @@
     JSON
   </a>
   
-    <nav class="md-nav" aria-label="JSON">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#convert-string-to-json" class="md-nav__link">
-    convert string to json
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jsondumps-jsondump" class="md-nav__link">
-    json.dumps() 和 json.dump() 的区别
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#flask-jsonify-jsondumps" class="md-nav__link">
-    flask 中 jsonify 和 json.dumps 的区别
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -3221,33 +3194,6 @@
     JSON
   </a>
   
-    <nav class="md-nav" aria-label="JSON">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#convert-string-to-json" class="md-nav__link">
-    convert string to json
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jsondumps-jsondump" class="md-nav__link">
-    json.dumps() 和 json.dump() 的区别
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#flask-jsonify-jsondumps" class="md-nav__link">
-    flask 中 jsonify 和 json.dumps 的区别
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -3970,23 +3916,26 @@ Error:<span class="w"> </span>Invalid<span class="w"> </span>value<span class="w
 <p>而如果<a href="https://github.com/ipython/ipython/wiki/Cookbook:-Connecting-to-a-remote-kernel-via-ssh">直接命令行操作</a>，则就像正常 ssh 一样，也会成功。</p>
 <p>所以中间的差异应该就是 <code>.pem</code> 与 <code>id_rsa.pub</code> 不等同。具体比较详见 <a href="https://stackoverflow.com/questions/17670446/what-is-the-difference-between-various-keys-in-public-key-encryption">what is the difference between various keys in public key encryption</a></p>
 <h2 id="json">JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h2>
-<h3 id="convert-string-to-json">convert string to json<a class="headerlink" href="#convert-string-to-json" title="Permanent link">&para;</a></h3>
+<details class="note">
+<summary><code>json.loads</code>: convert string to json</summary>
 <div class="highlight"><pre><span></span><code><span class="n">payload</span><span class="o">=</span><span class="s1">&#39;{&#39;</span><span class="n">name</span><span class="s1">&#39;: weiya}&#39;</span>
 <span class="c1"># payload=&#39;payload = {&#39;name&#39;: weiya}&#39;</span>
 </code></pre></div>
 <p>换成json</p>
 <div class="highlight"><pre><span></span><code><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
 <p>注意不能采用注释掉的部分。</p>
-</div>
-<h3 id="jsondumps-jsondump">json.dumps() 和 json.dump() 的区别<a class="headerlink" href="#jsondumps-jsondump" title="Permanent link">&para;</a></h3>
+</details>
+<details class="note">
+<summary><code>dumps</code> vs <code>dump</code></summary>
 <p>简言之，<code>dumps()</code>和<code>loads()</code>都是针对字符串而言的，而<code>dump()</code>和<code>load()</code>是针对文件而言的。具体细节参见<a href="https://www.cnblogs.com/wswang/p/5411826.html">python json.dumps()  json.dump()的区别 - wswang - 博客园</a></p>
-<h3 id="flask-jsonify-jsondumps">flask 中 jsonify 和 json.dumps 的区别<a class="headerlink" href="#flask-jsonify-jsondumps" title="Permanent link">&para;</a></h3>
+</details>
+<details class="note">
+<summary><code>jsonify</code> vs <code>json.dumps</code></summary>
 <p>参考<a href="http://blog.csdn.net/Duke_Huan_of_Qi/article/details/76064225">在flask中使用jsonify和json.dumps的区别</a></p>
 <p>另外 flask 的入门文档见</p>
 <p><a href="http://docs.jinkan.org/docs/flask/quickstart.html#quickstart">快速入门 &mdash; Flask 0.10.1 文档</a></p>
+</details>
 <h2 id="jupyter">Jupyter<a class="headerlink" href="#jupyter" title="Permanent link">&para;</a></h2>
 <h3 id="github">GitHub 语言比例过分倾斜<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
 <p><a href="https://github.com/github/linguist/issues/3316">LInguist is reporting my project as a Jupyter Notebook</a></p>
@@ -4574,7 +4523,7 @@ mv<span class="w"> </span>.coverage<span class="w"> </span>..
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 21, 2023</span>
       
         <br>
         Created:
