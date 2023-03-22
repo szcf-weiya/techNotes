@@ -145,54 +145,54 @@ along with other methods to square a list,
 
 ## Class
 
-### 新式类 vs 经典类 (`class ClassName` vs `class ClassName(object)`)
+??? note "新式类 vs 经典类 (`class ClassName` vs `class ClassName(object)`)"
 
-- python 2.x 中，默认为经典类，只有当写成 `class A(object)` 才成为新式类
-- python 3.x 中，默认为新式类
+	- python 2.x 中，默认为经典类，只有当写成 `class A(object)` 才成为新式类
+	- python 3.x 中，默认为新式类
 
-详见 [python新式类和经典类的区别？](https://www.zhihu.com/question/22475395)
+	详见 [python新式类和经典类的区别？](https://www.zhihu.com/question/22475395)
 
-1. In python 2.x, when you inherit from "object" you class is a "new style" class; the non inheriting from "object" case creates an "old style" class.
-2. In python 3.x, all classes are new style - no need to set the metaclass.
+	1. In python 2.x, when you inherit from "object" you class is a "new style" class; the non inheriting from "object" case creates an "old style" class.
+	2. In python 3.x, all classes are new style - no need to set the metaclass.
 
-refer to [class ClassName versus class ClassName(object)](https://stackoverflow.com/questions/10043963/class-classname-versus-class-classnameobject)
+	refer to [class ClassName versus class ClassName(object)](https://stackoverflow.com/questions/10043963/class-classname-versus-class-classnameobject)
 
-### `__getitem__` and `__setitem__`
+??? note "`__getitem__` and `__setitem__`"
 
-I came across the usage of `__getitem__` [here](https://github.com/MeepMoop/tilecoding/blob/master/example.py#L34), which seems powerful, and not only accept
+	I came across the usage of `__getitem__` [here](https://github.com/MeepMoop/tilecoding/blob/master/example.py#L34), which seems powerful, and not only accept
 
-```python
-T[x, y]
-```
+	```python
+	T[x, y]
+	```
 
-also supports
+	also supports
 
-```python
-T[[x, y]]
-```
+	```python
+	T[[x, y]]
+	```
 
-in [my code](https://github.com/szcf-weiya/RLnotes/blob/8e714286c1ba09113c4bf295d89ed774a8c5be5c/ModelFree/mountaincar.py#L68), where `T` is an instance of a class and `[x, y]` is the coordinate. The `[]` is enabled due to the `__getitem__` method.
+	in [my code](https://github.com/szcf-weiya/RLnotes/blob/8e714286c1ba09113c4bf295d89ed774a8c5be5c/ModelFree/mountaincar.py#L68), where `T` is an instance of a class and `[x, y]` is the coordinate. The `[]` is enabled due to the `__getitem__` method.
 
-```python
-class TildCoder():
-	def __init(...):
-		...
-	
-	def __getitem__(self, x):
-		...
-```
+	```python
+	class TildCoder():
+		def __init(...):
+			...
 
-Then I found [more detailed explanation](https://stackoverflow.com/a/43627975/) for the usage.
+		def __getitem__(self, x):
+			...
+	```
 
-> The `[]` syntax for getting item by key or index is just syntax sugar. When you evaluate `a[i]`, Python calls `a.__getitem__(i)` or `type(a).__getitem__(a, i)`.
+	Then I found [more detailed explanation](https://stackoverflow.com/a/43627975/) for the usage.
 
-### @staticmethod vs @classmethod
+	> The `[]` syntax for getting item by key or index is just syntax sugar. When you evaluate `a[i]`, Python calls `a.__getitem__(i)` or `type(a).__getitem__(a, i)`.
 
-参考
+??? note "@staticmethod vs @classmethod"
 
-1. [Difference between @staticmethod and @classmethod in Python](https://www.pythoncentral.io/difference-between-staticmethod-and-classmethod-in-python/)
+	参考
 
-2. [The definitive guide on how to use static, class or abstract methods in Python](https://julien.danjou.info/guide-python-static-class-abstract-methods/)
+	1. [Difference between @staticmethod and @classmethod in Python](https://www.pythoncentral.io/difference-between-staticmethod-and-classmethod-in-python/)
+
+	2. [The definitive guide on how to use static, class or abstract methods in Python](https://julien.danjou.info/guide-python-static-class-abstract-methods/)
 
 ## CLI Options
 
