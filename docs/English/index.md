@@ -1359,7 +1359,7 @@
 - To **paraphrase** Alan Turing, I am not interested in building a sentient machine.
 - Can we build systems that converse with humans in natural language?
 - Can we build systems that have an **ethical and moral** foundation?
-- Now, every new technology brings with it some measure of **trepidation**.
+- Now, every new technology brings with it some measure of **trepidation (惊恐，恐惧)**.
 - people **lamented (哀悼，惋惜)** that we would see the destruction of the family.
 - how to **discern (识别，辨别)** a good game from a bad game.
 - what about **rogue (流氓，无赖)** agents?
@@ -1666,7 +1666,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. sibship
 3. autosomal
 6. facilitate
-2. passage
+2. passage: 通道，通路
 3. leucocyte: 白细胞
 5. delicate
 6. illusory
@@ -2051,13 +2051,12 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 83.  unruly (rowdy; disorderly)
 84. obsequious (fawning; servile)
 85. Elan means vivacity or liveliness of spirit
-86. trepidation (apprehension; fear)
 87. **Exorbitant (过高的，高得离谱的)** (excessive; overly expensive)
 89. Destitute means needy or impoverished.
 90.  A harangue is a sharp verbal attack, a bitter tirade or diatribe.
 91. Surreptitious means hidden or stealthy.
 92.  Intransigence means stubbornness. a refusal of any **compromise (妥协，危及，连累)**.
-93. Phlegmatic means not easily disturbed or excited.
+93. **Phlegmatic (冷静的，镇定的)** means not easily disturbed or excited.
 94.  **Autocratic (专制的，独裁的)** means **tyrannical (暴君的，专横的)** or domineering.
 95. Wistful means pensively sad or yearning
 97. **indigenous (土著的，原产的，土生土长的)** & ingenuous & disingenuous
