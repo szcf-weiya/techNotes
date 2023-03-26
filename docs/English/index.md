@@ -17,7 +17,7 @@
 
 ## 2023.02
 
-- An epitope, also known as antigenic determinant, is the part of an antigen that is recognized by the immune system, specifically by antibodies, B cells or T cells.
+- An **epitope (抗原表位，抗原决定基)**, also known as antigenic determinant, is the part of an antigen that is recognized by the immune system, specifically by antibodies, B cells or T cells.
 - Neoepitopes are a class of major histocompatibility complex (MHC) bounded peptides. They represent the antogenic determinant of neoantigens.
 - legendary: 非常著名的，享有盛名的，传奇的
 - learn how **radiocarbon (放射性碳)** dating is spotting art **forgeries (伪造，赝品)**
@@ -1059,7 +1059,7 @@
 - the opposition between the **[May 68](https://en.wikipedia.org/wiki/May_68) (五月风暴，也称五月运动、五月革命和五月事件，是1968年春夏之交法国发生的学生运动。)** style class **warfare (战争，冲突)** **denounced (谴责，告发)** by the authors and their apparently **well-off (富裕的，处境好的)** conditions.
 - consensus-based transparency checklist
 - I also have a **wary (小心的，谨慎的)** feeling that is harder to put words to
-- will the satisfactory feeling of successfully completing the checklist **lull (哄骗；使平静)** researchers into **complacency** and keep them from spending effort on the deeper layers?
+- will the satisfactory feeling of successfully completing the checklist **lull (哄骗；使平静)** researchers into **complacency (自满，自得)** and keep them from spending effort on the deeper layers?
 - I worry the checklist is going to **inadvertently (漫不经心地；非故意地)** be taken as a false check of quality, rather than simply transparency.
 - We should always consider the **lurking (潜在的)** dangers of offering easy solutions and simple checklists that make humans feel that they've done all that is needed.
 - transparency should reduce existing **incentives (刺激，激励)** for performing bad science and increase incentives for better measurement and design of studies.
@@ -1082,7 +1082,7 @@
 - Blacks are more likely to be stopped for **pretextual** (pretext, 借口，推辞) reasons (e.g. **alleged (所谓的，声称的)** vehicle **defect (缺点，缺陷，不足之处)**, such as broken taillight; record check) and less for more **concrete (具体的)** reasons such as speeding.
 - defective: 有缺点的，有缺陷的
 - these have been **valorized (稳定物价，规定价格)** in constitutional caselaw
-- I bought the book and, **flipping through** it to find examples for use in class, came cross the two sketches
+- I bought the book and, **flipping through (匆匆查看，草草翻阅)** it to find examples for use in class, came cross the two sketches
 - the frequency of driving accidents is plotted against the time of menstruation
 - one for parous women, and one for nonparous women
 - premenopausal female 绝经前女性
@@ -1386,7 +1386,6 @@
 2. fear of **contracting the virus** is **rampant (泛滥的，猖獗的，疯长的)**
 3. get people to be more **deliberative (慎重的，协商的)**
 4. I remain fearful that someone will **nuke (用核武器攻击)** our city.
-5. fear can shake us out of **complacency**.
 6. cognitive **illusion (错觉，幻想)**
 7. the high-end
 8. Wasn't there something strange about the extreme **disparity (不同，不一致)** in public reactions?
@@ -1643,7 +1642,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. surfeit: 过量
 4. pertinent: 有关的，恰当的，相宜的
 5. mortal
-6. immortal
+6. immortal: 长生的，永世的，不朽的
 1. outrage: 愤怒，愤慨
 1. deduce: 推断，推论，演绎
 1. If both a pair of **homologous (同源的)** chromosomes are missing, **nullisomy (缺体性，缺对染色体)** results.
@@ -1704,7 +1703,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 9. The representation of documents is a central issue in all of the approaches in document management, whether the management **entails (需要，牵涉)** exploration, search, or filtering.
 1. monograph
 2. awash
-3. pare it down
+3. pare down: 削减
 4. **noose (绳套，套索)**
 5. Homotopy
 6. miraculously: 神奇的，非凡的
@@ -1800,7 +1799,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 4. manure: 肥料，粪肥
 1. molten
 2. **mantle (地幔)**
-3. rest on
 4. conceivably: 想象上
 5. A feeling of **drowsiness (drowsy, 昏昏欲睡的)** **crept (creep 的过去式，匍匐爬行)** over him.
 6. **Atlantic (大西洋)**， **Pacific (太平洋)**， **Arctic (北极的，北极圈)** Ocean (北冰洋), Indian Ocean (印度洋)， Antarctica: 南极洲
@@ -1814,8 +1812,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. degradation
 4. dozens of: 许多
 6. tap into: 利用，挖掘，打入
-7. LEDs use only a quarter the energy of **incandescent bulbs (白炽灯)**.
-8. fluorescent
+- LEDs use only a quarter the energy of **incandescent bulbs (白炽灯)**.
+- fluorescent: 荧光灯；发荧光的，强烈反光的
 9. **pebble (鹅卵石)**
 10. Hydrogen (氢，氢气), Helium (氦，氦气)
 11. faint: 昏厥，昏眩；模糊的
@@ -1834,7 +1832,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 26. through and through: 完完全全，彻彻底底
 27. marvel: 奇迹
 28. optics, chromatics
-29. that sort of thing
 30. The **insulting (出言不逊的，侮辱的，无礼的)** remarks **stung (sting, 促使，刺激)** him to a **rage (愤怒)**.
 31. backbone
 32. **overthrow (推翻，打倒)** the government
@@ -2274,7 +2271,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. **vagabonds (流浪者，游手好闲者)** **meandering (漫步，蜿蜒缓慢流动)** through life
 7. Reading will **fertilize (使丰饶，使受精)** vocabulary.
 8. A blind patriotic fervor is called chauvinism.
-1. a convoluted thriller, the plot of which I was never able to actually decipher.
+1. a **convoluted (复杂的)** **thriller (惊险小说（或戏剧、电影）)**, the plot of which I was never able to actually decipher.
 2. a complex literary text difficult for many people to decode.
 - anything but (=not at all, by no means, never)除...以外任何事；根本不，绝不决不，根本不
     - Dick seldom talks of anything but music.
