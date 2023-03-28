@@ -14,6 +14,8 @@
 - The number of startups that have been acquired instead of going public has **skyrocketed (飞涨)** over the last few decades.
 - concerto: 协奏曲 (vs concert)
 - New analysis of **obsidian (黑曜石)** **blades (刀片)** reveals dynamic **Neolithic (新石器时代的)** social networks.
+- Was there something specific about the world of cryptocurrency that doomed the now-bankrupt trading firm FTX? Or was it a **garden-variety (普通的，平常的)** scam?
+- how the brain gives rise to **cravings (渴望，热望)**?
 
 ## 2023.02
 
@@ -1845,7 +1847,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 41. **marble (n/adj/v 大理石)** **statue (雕像)**
 42. polychrome
 43. disintegrated
-44. heroism, divinity
+44. **heroism (英勇表现，英雄精神)**, **divinity (神，女神)**
 46. **armor (盔甲，护甲)**, **cloak (斗篷，遮盖物)**
 1. It really gets them **enamored (迷恋，爱上)** with riding and get to make something part of their daily lives.
 2. The **venue** is the school.
@@ -2309,8 +2311,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 17. In May, to no one's surprise. he declared the city insolvent.
 18. I cannot feel it will make for a very **restful (闲适宁静的，使人感到悠闲的)** retirement, can you?
 19. True to form (一如既往，像往常一样), Walter started asking him about his own retirement.
-20. These were very remarkable, but as eccentric as all his other accomplishments.
-21. She had known from the start that her philosophy teacher was eccentric.
+20. These were very remarkable, but as **eccentric (古怪的，异乎寻常的)** as all his other **accomplishments (成就，成绩)**.
 22. If true, that suggests a **syllogism**: that the love of time is a root of evil, too.
 23. Spencer's idiosyncratic drawing of a large fairy on a tiny water-lily leaf captures an imagination that strained against conventional rules of composition from the start.
 24. a fact that helps explain how it manages to be both profligate and stingy, and is forever in the red.
