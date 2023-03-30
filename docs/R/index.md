@@ -787,7 +787,7 @@ Refer to [https://stats.stackexchange.com/questions/108995/interpreting-residual
 ??? note "unwanted space in pdf"
 	There are unwanted spaces if we copy the text from pdf, or searching string like `test_data`, where there might be extra space like `test _data` or `test _ data`.
 	One solution is add `columns=fullflexible` ([:link:](https://tex.stackexchange.com/questions/251543/unwanted-space-around-punctuation-in-copied-pasted-listing)) in the above `\lstset`, but the drawback is that the table format (such as `summary.lm`) would be destroyed.
-	Actually, the space might be caused by `basicstyle=\ttfamily\footnotesize`, the solution is `basicstyle=\ttfamily\footnotesize\selectfont`
+	On the other hand, we can use another font family `\fontfamily{pcr}\selectfont` ([:link:](https://tex.stackexchange.com/questions/4911/phantom-spaces-in-listings)), then the solution is `basicstyle=\ttfamily\footnotesize\fontfamily{pcr}\selectfont`
 
 ??? note "Chinese Fonts in PDF"
 
@@ -1117,17 +1117,6 @@ which will install `nodejs-10.13.0`.
  $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
-```
-
-## scale or not
-
-下面两个结果是一样的。
-
-```r
-m = matrix(rnorm(4*6, 2), ncol = 4)
-cov(m)
-sm = scale(m, scale = FALSE) # only center, no scale.
-t(sm) %*% sm/ (6-1)
 ```
 
 ## Check Memory Usage
