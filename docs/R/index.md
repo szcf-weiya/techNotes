@@ -5,6 +5,7 @@ comments: true
 # R Notes
 
 !!! tip "Frequent Tips"
+
 	- 删除当前工作区所有变量: `rm(list = ls(all = TRUE))`
 	- RStudio shows all shortcuts: `Alt-Shift-K`.
 	- usage of `<<-`, "it will keep going through the environments in order until it finds a variable with that name, and it will assign it to that." see also [:link:](https://stackoverflow.com/questions/2628621/how-do-you-use-scoping-assignment-in-r)
@@ -97,6 +98,23 @@ comments: true
 
 	see also: [:link:](https://stackoverflow.com/questions/24192428/what-does-the-capital-letter-i-in-r-linear-regression-formula-mean)
 
+??? bug "Error: unexpected 'else' in "else""
+
+	When evaluating in the REPL, `else` should not be on the next line.
+	```r
+	> x <- 1
+	> if (x == 0) {
+	+   print(1)
+	+ } 
+	> else print(2)
+	Error: unexpected 'else' in "else"
+	> x <- 1
+	> if (x == 0) {
+	+   print(1)
+	+ } else print(2)
+	[1] 2
+	```
+
 ## Installation
 
 ### Install from source on Rocky
@@ -127,6 +145,7 @@ sudo make install
 then manage the version with `module`.
 
 !!! note "2022-08-24 10:32:20"
+
 	On T460P, change the prefix as follows
 	```r
 	./configure \
@@ -199,6 +218,7 @@ Be careful when installing the package, and to avoid the uninstallation in the n
 	Run `sudo apt-get install libcurl4-openssl-dev`, and monitor the message, no packages are needed to be removed.
 
 ??? note "Installation of RCurl (2023-01-08 18:20:05)"
+
 	First of all, it runs
 	```bash
 	curl-config --libs
@@ -294,6 +314,7 @@ Be careful when installing the package, and to avoid the uninstallation in the n
 	See the private [:link:](https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374707761) for more details.
 
 ??? note "--no-test-load (2023-01-08 22:10:59)"
+	
 	After replacing the default `curl-config` with `mycurl-config`, which specifies another path (such as Julia 1.8's lib path) to `libcurl.so.4`, we can avoid the conflicts of `libcurl.so`
 	```bash
 	CURL_CONFIG=mycurl-config R CMD INSTALL RCurl_1.98-1.9.tar.gz 
@@ -341,6 +362,7 @@ Be careful when installing the package, and to avoid the uninstallation in the n
 	See the private [:link:](https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374917268) for more detailed and historical exploration on this feature.
 
 ??? note "MAKEFLAGS"
+	
 	Flags that are already set (for example in file etcR_ARCH/Makeconf) can be overridden by the environment variable MAKEFLAGS ([:link:](https://cran.r-project.org/doc/manuals/r-devel/R-exts.html))
 	Although `CURL_LIBS` cannot be directly overridden, it can pass via `MAKEFLAGS`
 	
@@ -475,6 +497,7 @@ Laterly, note that nvidia card does not work, and change to another driver. Then
 
 
 ??? bug "incorrect number of dimensions (keep dims via `drop`)"
+	
 	```r
 	> a = matrix(0, 2, 2)
 	> a[2,]
