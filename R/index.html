@@ -3059,6 +3059,22 @@
 <p>详见 <code>?formula</code>, 其中举了一个例子，<code>(a+b+c)^2 - a:b</code> 等价于 <code>a + b + c + a:c + b:c</code>，注意二阶项只存在于交叉项中。</p>
 <p>see also: <a href="https://stackoverflow.com/questions/24192428/what-does-the-capital-letter-i-in-r-linear-regression-formula-mean"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 </details>
+<details class="bug">
+<summary>Error: unexpected &lsquo;else&rsquo; in &ldquo;else&rdquo;</summary>
+<p>When evaluating in the REPL, <code>else</code> should not be on the next line.
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="o">+</span><span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="o">+</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+<span class="n">Error</span><span class="o">:</span><span class="w"> </span><span class="n">unexpected</span><span class="w"> </span><span class="s">&#39;else&#39;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="s">&quot;else&quot;</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="o">+</span><span class="w">   </span><span class="nf">print</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="o">+</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">2</span>
+</code></pre></div></p>
+</details>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="install-from-source-on-rocky">Install from source on Rocky<a class="headerlink" href="#install-from-source-on-rocky" title="Permanent link">&para;</a></h3>
 <p>Following the instruction in <a href="https://docs.rstudio.com/resources/install-r-source/">RStudio Documentation: Install R from Source</a></p>
