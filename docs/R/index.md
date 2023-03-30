@@ -50,6 +50,53 @@ comments: true
 	> save(x, file = "/tmp/test.txt")
 	```
 
+??? note "write lines to file"
+
+	```r
+	fileConn<-file("output.txt")
+	writeLines(c("Hello","World"), fileConn)
+	close(fileConn)
+	```
+
+	refer to [Write lines of text to a file in R](https://stackoverflow.com/questions/2470248/write-lines-of-text-to-a-file-in-r)
+
+??? note "`I(X^2) vs X^2`"
+
+	注意
+
+	```r
+	lm(Y ~ X + X^2)
+	```
+
+	和
+
+	```r
+	lm(Y ~ X + I(X^2))
+	```
+
+	是不一样的。若要表示多项式回归，则应该用 `I(X^2)`，而前者等价于 `lm(Y ~ X)`，因为 `X^2` 表示 main effect and the second order interaction of `X`, and the interaction itself is none.
+
+	```r
+	> model.frame(y ~ x +x^2,data = data.frame(x=rnorm(5), y=rnorm(5)))
+			   y          x
+	1  1.9991878 -1.0620178
+	2 -0.2629550  0.1464275
+	3 -1.2980284 -1.2884549
+	4 -0.4095742  1.8591457
+	5 -0.4168115 -1.1583192
+	> model.frame(y ~ x +I(x^2),data = data.frame(x=rnorm(5), y=rnorm(5)))
+				y           x       I(x^2)
+	1 -1.47255329  0.01128263 0.000127....
+	2 -1.58704640 -1.21269206 1.470622....
+	3 -0.51949927 -0.33853804 0.114608....
+	4 -0.87250100 -1.71454770 2.939673....
+	5  0.07728536 -0.77660634 0.603117....
+	```
+
+	详见 `?formula`, 其中举了一个例子，`(a+b+c)^2 - a:b` 等价于 `a + b + c + a:c + b:c`，注意二阶项只存在于交叉项中。
+
+	see also: [:link:](https://stackoverflow.com/questions/24192428/what-does-the-capital-letter-i-in-r-linear-regression-formula-mean)
+
 ## Installation
 
 ### Install from source on Rocky
@@ -714,44 +761,66 @@ Refer to [https://stats.stackexchange.com/questions/108995/interpreting-residual
 	## 或require(Rcpp)
 	```
 
-## Rmarkdown
+## rmarkdown
 
-### `knit::kable`
+!!! note "`knit::kable`"
+	pretty table, which can auto newline long description in a cell. See also [:link:](#events_init_vs_extend)
 
-pretty table, which can auto newline long description in a cell. See also [:link:](#events_init_vs_extend)
+??? note "overflow in pdf"
+	Refer to [:link:](https://github.com/rstudio/rmarkdown/issues/646#issuecomment-630245404). See also [:link:](https://github.com/szcf-weiya/JointModel/issues/17)
+	```r
+	output: 
+	  pdf_document:
+		pandoc_args: --listings
+		includes:
+		  in_header: header.tex
+	```
+	where `header.tex` includes
+	```tex
+	\lstset{
+	  language=R,
+	  breaklines=true,
+	  basicstyle=\ttfamily\footnotesize
+	}
+	```
 
-### Chinese Fonts in PDF
+??? note "unwanted space in pdf"
+	There are unwanted spaces if we copy the text from pdf, or searching string like `test_data`, where there might be extra space like `test _data` or `test _ data`.
+	One solution is add `columns=fullflexible` ([:link:](https://tex.stackexchange.com/questions/251543/unwanted-space-around-punctuation-in-copied-pasted-listing)) in the above `\lstset`, but the drawback is that the table format (such as `summary.lm`) would be destroyed.
+	Actually, the space might be caused by `basicstyle=\ttfamily\footnotesize`, the solution is `basicstyle=\ttfamily\footnotesize\selectfont`
 
-```r
----
-title: "test"
-author: "weiya"
-output:
-    pdf_document:
-        latex_engine: xelatex
-        includes:
-            in_header: header_zh.tex
----
-```
+??? note "Chinese Fonts in PDF"
 
-where `header_zh.tex` is
+	```r
+	---
+	title: "test"
+	author: "weiya"
+	output:
+		pdf_document:
+			latex_engine: xelatex
+			includes:
+				in_header: header_zh.tex
+	---
+	```
 
-```tex
-\usepackage{xeCJK}
-\setCJKmainfont{华文中宋}
-\setmainfont{Times New Roman}
-\usepackage{setspace}
-\doublespacing
-\setlength{\parindent}{2em}
-\usepackage{bm}
-\usepackage{float}
-```
+	where `header_zh.tex` is
 
-### not show captions for two consecutive figures
+	```tex
+	\usepackage{xeCJK}
+	\setCJKmainfont{华文中宋}
+	\setmainfont{Times New Roman}
+	\usepackage{setspace}
+	\doublespacing
+	\setlength{\parindent}{2em}
+	\usepackage{bm}
+	\usepackage{float}
+	```
 
-add at least two spacing newline.
+??? note "not show captions for two consecutive figures"
 
-[*Some* figure captions from RMarkdown not showing](https://stackoverflow.com/questions/27444804/some-figure-captions-from-rmarkdown-not-showing)
+	add at least two spacing newline.
+
+	[*Some* figure captions from RMarkdown not showing](https://stackoverflow.com/questions/27444804/some-figure-captions-from-rmarkdown-not-showing)
 
 
 ## ROCR包中prediction函数
@@ -813,51 +882,6 @@ rocplot ( fitted , dat [ train ,"y"] , main ="Training Data")
 
 ![](roc_fact.png)
 
-## proxy 代理
-
-参考
-
-1. [Proxy setting for R](https://stackoverflow.com/questions/6467277/proxy-setting-for-r)
-2. [How to use Tor socks5 in R getURL](https://stackoverflow.com/questions/17925234/how-to-use-tor-socks5-in-r-geturl)
-
-## `lm()` 中有无 `I()` 的差异
-
-注意
-
-```r
-lm(Y ~ X + X^2)
-```
-
-和
-
-```r
-lm(Y ~ X + I(X^2))
-```
-
-是不一样的。若要表示多项式回归，则应该用 `I(X^2)`，而前者等价于 `lm(Y ~ X)`。详见 `?formula`, 其中举了一个例子，`(a+b+c)^2 - a:b` 等价于 `a + b + c + a:c + b:c`，注意二阶项只存在于交叉项中。
-
-## custom print
-
-```r
-class(obj) = "example"
-print.example <- function(x)
-{
-
-}
-```
-
-refer to [Example Needed: Change the default print method of an object](https://stackoverflow.com/questions/10938427/example-needed-change-the-default-print-method-of-an-object)
-
-## write lines to file
-
-```r
-fileConn<-file("output.txt")
-writeLines(c("Hello","World"), fileConn)
-close(fileConn)
-```
-
-refer to [Write lines of text to a file in R](https://stackoverflow.com/questions/2470248/write-lines-of-text-to-a-file-in-r)
-
 ## R 符号运算
 
 参考 [R 语言做符号计算](https://cosx.org/2016/07/r-symbol-calculate/)。
@@ -877,35 +901,38 @@ DFun <- deriv(NormDensity, "x", function.arg = TRUE)
 DFun(1)
 ```
 
-## error in install `gRbase`
+??? note "g++ error: possible incompatible version"
+	error in install `gRbase`
 
-environment: Ubuntu 16.04 (gcc 5.4.0)
+	environment: Ubuntu 16.04 (gcc 5.4.0)
 
-```
-g++: error: unrecognized comma line option ‘-fno-plt’
-```
+	```
+	g++: error: unrecognized command line option ‘-fno-plt’
+	```
 
-the reason should be that the current gcc is too old.
+	the reason should be that the current gcc is too old.
 
-In conda env `R`:
+	In conda env `R`:
 
-1. install latest gcc v7.3.0, but it still does not work
-2. `Sys.getenv()` indeed switch to the latest gcc
-3. remove `~/.R/Makevars`, which would force the gcc to be the gcc declared in that file.
-4. then it works well.
+	1. install latest gcc v7.3.0, but it still does not work
+	2. `Sys.getenv()` indeed switch to the latest gcc
+	3. remove `~/.R/Makevars`, which would force the gcc to be the gcc declared in that file.
+	4. then it works well.
 
-refer to
+	refer to
 
-[R Packages Fail to Compile with gcc](https://stackoverflow.com/questions/14865976/r-packages-fail-to-compile-with-gcc)
+	[R Packages Fail to Compile with gcc](https://stackoverflow.com/questions/14865976/r-packages-fail-to-compile-with-gcc)
 
-Note that some packages cannot be installed via CRAN, and you can check bioconductor.
+??? note "CRAN vs BioConductor"
 
-```
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+	Note that some packages cannot be installed via CRAN, and you can check bioconductor.
 
-BiocManager::install("graph")
-```
+	```
+	if (!requireNamespace("BiocManager", quietly = TRUE))
+		install.packages("BiocManager")
+
+	BiocManager::install("graph")
+	```
 
 ??? tip "protection stack overflow"
 
@@ -939,10 +966,6 @@ BiocManager::install("graph")
 
 	refer to [R install.packages returns “failed to create lock directory”](https://stackoverflow.com/questions/14382209/r-install-packages-returns-failed-to-create-lock-directory)
 
-## nonzero in `dgCMatrix`
-
-refer to [R package Matrix: get number of non-zero entries per rows / columns of a sparse matrix](https://stackoverflow.com/questions/51560456/r-package-matrix-get-number-of-non-zero-entries-per-rows-columns-of-a-sparse)
-
 ## S3 method
 
 初体验，[ESL-CN/code/boosting/s3ex.R](https://github.com/szcf-weiya/ESL-CN/blob/96f2f91deabfa6eee57bd1823a4d8405b5f061f0/code/boosting/s3ex.R)
@@ -964,7 +987,6 @@ summary.employee <- function(wrkr){
 ```
 
 以及一个相关的问题 [How to override default S3 function in R?](https://stackoverflow.com/questions/9275387/how-to-override-default-s3-function-in-r)
-
 
 ## Parallel Computing
 
@@ -992,8 +1014,6 @@ res = foreach(j=1:Nnset, .combine = 'c', .export = c('calc_lda_BIC'), .packages 
 }
 stopCluster(cl)
 ```
-
-### references
 
 - [Using the `foreach` package](https://cran.r-project.org/web/packages/foreach/vignettes/foreach.html)
 
