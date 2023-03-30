@@ -1190,13 +1190,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scale-or-not" class="md-nav__link">
-    scale or not
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#check-memory-usage" class="md-nav__link">
     Check Memory Usage
   </a>
@@ -2943,13 +2936,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scale-or-not" class="md-nav__link">
-    scale or not
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#check-memory-usage" class="md-nav__link">
     Check Memory Usage
   </a>
@@ -3645,7 +3631,7 @@ where <code>header.tex</code> includes
 <summary>unwanted space in pdf</summary>
 <p>There are unwanted spaces if we copy the text from pdf, or searching string like <code>test_data</code>, where there might be extra space like <code>test _data</code> or <code>test _ data</code>.
 One solution is add <code>columns=fullflexible</code> (<a href="https://tex.stackexchange.com/questions/251543/unwanted-space-around-punctuation-in-copied-pasted-listing"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>) in the above <code>\lstset</code>, but the drawback is that the table format (such as <code>summary.lm</code>) would be destroyed.
-Actually, the space might be caused by <code>basicstyle=\ttfamily\footnotesize</code>, the solution is <code>basicstyle=\ttfamily\footnotesize\selectfont</code></p>
+On the other hand, we can use another font family <code>\fontfamily{pcr}\selectfont</code> (<a href="https://tex.stackexchange.com/questions/4911/phantom-spaces-in-listings"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>), then the solution is <code>basicstyle=\ttfamily\footnotesize\fontfamily{pcr}\selectfont</code></p>
 </details>
 <details class="note">
 <summary>Chinese Fonts in PDF</summary>
@@ -3893,13 +3879,6 @@ See<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span
 <span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="n">am</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="n">num</span><span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="kc">...</span>
 <span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="n">gear</span><span class="o">:</span><span class="w"> </span><span class="n">num</span><span class="w">  </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="kc">...</span>
 <span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="n">carb</span><span class="o">:</span><span class="w"> </span><span class="n">num</span><span class="w">  </span><span class="m">4</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="kc">...</span>
-</code></pre></div>
-<h2 id="scale-or-not">scale or not<a class="headerlink" href="#scale-or-not" title="Permanent link">&para;</a></h2>
-<p>下面两个结果是一样的。</p>
-<div class="highlight"><pre><span></span><code><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">4</span><span class="o">*</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">)</span>
-<span class="nf">cov</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-<span class="n">sm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w"> </span><span class="c1"># only center, no scale.</span>
-<span class="nf">t</span><span class="p">(</span><span class="n">sm</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">sm</span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="m">6-1</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="check-memory-usage">Check Memory Usage<a class="headerlink" href="#check-memory-usage" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">memuse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
