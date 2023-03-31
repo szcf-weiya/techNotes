@@ -3075,6 +3075,24 @@
 <span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">2</span>
 </code></pre></div></p>
 </details>
+<details class="tip">
+<summary>invalid argument to unary operator: drop columns by name</summary>
+<div class="highlight"><pre><span></span><code>&gt; df = data.frame(x=runif(3), y=rnorm(3), z=rnorm(3))
+&gt; df[,-1]
+        y          z
+1 -1.093060  0.3862924
+2 -1.169464  0.8150087
+3 -1.983340 -0.6602526
+&gt; df[,-c(&quot;x&quot;)]
+Error in -c(&quot;x&quot;) : invalid argument to unary operator
+
+&gt; df[, -which(colnames(df) %in% c(&quot;x&quot;))]
+        y          z
+1 -1.093060  0.3862924
+2 -1.169464  0.8150087
+3 -1.983340 -0.6602526
+</code></pre></div>
+</details>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="install-from-source-on-rocky">Install from source on Rocky<a class="headerlink" href="#install-from-source-on-rocky" title="Permanent link">&para;</a></h3>
 <p>Following the instruction in <a href="https://docs.rstudio.com/resources/install-r-source/">RStudio Documentation: Install R from Source</a></p>
@@ -3943,7 +3961,7 @@ See<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 30, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 31, 2023</span>
       
         <br>
         Created:

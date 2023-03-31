@@ -3588,6 +3588,24 @@ rfkill<span class="w"> </span>unblock<span class="w"> </span>bluetooth
 </code></pre></div>
 参考 <a href="https://askubuntu.com/questions/380096/turn-on-off-bluetooth-from-shell-not-from-applet"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">always a2dp_sink!</p>
+<p>Sometimes it is noisy, and annoying &ldquo;call from&rdquo;. This is due to the profile, but using the GUI to change it seems not work. So try to work from the command line.
+<div class="highlight"><pre><span></span><code><span class="c1"># list available cards</span>
+$<span class="w"> </span>pacmd<span class="w"> </span>list-cards
+<span class="w">    </span>profiles:
+<span class="w">        </span>headset_head_unit:<span class="w"> </span>Headset<span class="w"> </span>Head<span class="w"> </span>Unit<span class="w"> </span><span class="o">(</span>HSP/HFP<span class="o">)</span><span class="w"> </span><span class="o">(</span>priority<span class="w"> </span><span class="m">30</span>,<span class="w"> </span>available:<span class="w"> </span>unknown<span class="o">)</span>
+<span class="w">        </span>a2dp_sink:<span class="w"> </span>High<span class="w"> </span>Fidelity<span class="w"> </span>Playback<span class="w"> </span><span class="o">(</span>A2DP<span class="w"> </span>Sink<span class="o">)</span><span class="w"> </span><span class="o">(</span>priority<span class="w"> </span><span class="m">40</span>,<span class="w"> </span>available:<span class="w"> </span>yes<span class="o">)</span>
+<span class="w">        </span>off:<span class="w"> </span>Off<span class="w"> </span><span class="o">(</span>priority<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>available:<span class="w"> </span>yes<span class="o">)</span>
+<span class="w">    </span>active<span class="w"> </span>profile:<span class="w"> </span>&lt;a2dp_sink&gt;
+</code></pre></div>
+if the active profile is <code>headset_head_unit</code>, it would be noisy. Tried</p>
+<p><div class="highlight"><pre><span></span><code>pacmd<span class="w"> </span>set-card-profile<span class="w"> </span>&lt;card<span class="w"> </span>name&gt;<span class="w"> </span>a2dp_sink
+</code></pre></div>
+but it said &ldquo;failed to set&rdquo;.</p>
+<p>However, after reconnecting, it works well, and it can easily switch between <code>headset_head_unit</code> and <code>a2dp_sink</code>.</p>
+<p>See also: <a href="https://www.reddit.com/r/archlinux/comments/8hzylp/annoying_call_from_message_when_connecting_bose/"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a> and <a href="https://unix.stackexchange.com/questions/462670/set-default-profile-for-pulseaudio"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
+</div>
 <h2 id="nvidia-driver">Nvidia Driver<a class="headerlink" href="#nvidia-driver" title="Permanent link">&para;</a></h2>
 <p>Install via the GUI <code>Software &amp; Updates</code>. If succeed, then</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvidia-smi
@@ -3808,7 +3826,7 @@ net.core.wmem_max<span class="w"> </span><span class="o">=</span><span class="w"
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 31, 2023</span>
       
         <br>
         Created:
