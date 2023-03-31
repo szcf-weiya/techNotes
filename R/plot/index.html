@@ -21,7 +21,7 @@
         <link rel="next" href="../legend_from_zhihu/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.240905d7.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a7fce14.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -3006,6 +3006,21 @@
 <img alt="" src="https://user-images.githubusercontent.com/13688320/218293071-9c627f11-b7e2-42ec-8820-71e9fca36582.png" />
 Note that <code>aes(fill = )</code> is important, otherwise no legend. See also: <a href="https://stackoverflow.com/questions/39322266/adding-legend-to-a-multi-histogram-ggplot"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>, <a href="https://stackoverflow.com/questions/6957549/overlaying-histograms-with-ggplot2-in-r"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a>, <a href="https://github.com/szcf-weiya/Multi-omics-Clustering/issues/34"><img alt="🔗" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f517.svg" title=":link:" /></a></p>
 </details>
+<details class="tip">
+<summary>scale_fill_manual: do not specify color in aes</summary>
+<p>If using <code>scale_fill_manual</code>, do not explicitly specify color in <code>aes</code>, </p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># not recommended</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">==</span><span class="s">&quot;1&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">    </span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">==</span><span class="s">&quot;2&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">    </span><span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">labels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">))</span>
+</code></pre></div>
+<img alt="" src="https://user-images.githubusercontent.com/13688320/229019140-e451cd9a-5da7-4ed9-a4f5-454c3c0dfd89.png" /></p>
+<p>Instead, just write the corresponding tuples in <code>values</code> and <code>labels</code> and use <code>fill=g</code>
+<div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">==</span><span class="s">&quot;1&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">g</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">    </span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">==</span><span class="s">&quot;2&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">g</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
+<span class="w">    </span><span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">labels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">))</span>
+</code></pre></div></p>
+</details>
 <h3 id="multiple-density-plots">multiple density plots<a class="headerlink" href="#multiple-density-plots" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">plots</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">NULL</span>
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -3187,7 +3202,7 @@ f(x) = \begin{cases}
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 31, 2023</span>
       
         <br>
         Created:
@@ -3312,7 +3327,7 @@ f(x) = \begin{cases}
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
