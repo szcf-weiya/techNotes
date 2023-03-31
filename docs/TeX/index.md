@@ -198,6 +198,12 @@ code
 
 - [Overleaf: Font sizes, families, and styles](https://www.overleaf.com/learn/latex/Font_sizes,_families,_and_styles)
 
+??? note "\fontfamily{pcr}"
+
+	Selects the "Courier" font family for the document. This font family is a fixed-width font that is commonly used for programming code or computer terminal outputs. (chatGPT)
+
+	For other "font package name" and its "font code", see also: [:link:](https://www.overleaf.com/learn/latex/Font_typefaces)
+
 ### some nice font family
 
 refer to [Suggest a “nice” font family for my basic LaTeX template (text and math)](https://tex.stackexchange.com/a/59706)

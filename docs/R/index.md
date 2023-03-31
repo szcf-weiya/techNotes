@@ -133,6 +133,21 @@ comments: true
 	3 -1.983340 -0.6602526
 	```
 
+??? warning "1 == "1" is TRUE"
+
+	it seems dangerous.
+
+??? warning "all(NULL) is TRUE"
+
+	```r
+	> all(NULL)
+	[1] TRUE
+	> all(1==NULL)
+	[1] TRUE
+	> 1==NULL
+	logical(0)
+	```
+
 ## Installation
 
 ### Install from source on Rocky

@@ -18,6 +18,10 @@
 - how the brain gives rise to **cravings (渴望，热望)**?
 - **mucosa (粘膜)** **healing (愈合)**
 - glands/crypts: 腺
+- vault: 保险库，穹顶
+- canal: 运河
+- a couple of dozen British bunnies sparked Australia's catastrophic rabbit invasion.
+- US children's hospitals swamped by RSV
 
 ## 2023.02
 

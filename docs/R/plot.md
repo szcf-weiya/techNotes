@@ -169,6 +169,26 @@ A thorough tutorial refers to [Reproduce Figures with Lattice -- ESL CN](https:/
     ![](https://user-images.githubusercontent.com/13688320/218293071-9c627f11-b7e2-42ec-8820-71e9fca36582.png)
     Note that `aes(fill = )` is important, otherwise no legend. See also: [:link:](https://stackoverflow.com/questions/39322266/adding-legend-to-a-multi-histogram-ggplot), [:link:](https://stackoverflow.com/questions/6957549/overlaying-histograms-with-ggplot2-in-r), [:link:](https://github.com/szcf-weiya/Multi-omics-Clustering/issues/34)
 
+??? tip "scale_fill_manual: do not specify color in aes"
+    If using `scale_fill_manual`, do not explicitly specify color in `aes`, 
+    
+    ```r
+    # not recommended
+    ggplot(df, aes(x)) + geom_histogram(data = subset(df, g=="1"), aes(fill="red"), alpha=0.5) + 
+        geom_histogram(data = subset(df, g=="2"), aes(fill="blue"), alpha=0.5) + 
+        scale_fill_manual(values=c("blue", "red"), labels=c("1", "2"))
+    ```
+    ![](https://user-images.githubusercontent.com/13688320/229019140-e451cd9a-5da7-4ed9-a4f5-454c3c0dfd89.png)
+
+    
+    Instead, just write the corresponding tuples in `values` and `labels` and use `fill=g`
+    ```r
+    ggplot(df, aes(x)) + geom_histogram(data = subset(df, g=="1"), aes(fill=g), alpha=0.5) + 
+        geom_histogram(data = subset(df, g=="2"), aes(fill=g), alpha=0.5) + 
+        scale_fill_manual(values=c("blue", "red"), labels=c("1", "2"))
+    ```
+    
+
 ### multiple density plots
 
 ```r
