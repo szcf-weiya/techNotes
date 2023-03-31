@@ -16,6 +16,8 @@
 - New analysis of **obsidian (黑曜石)** **blades (刀片)** reveals dynamic **Neolithic (新石器时代的)** social networks.
 - Was there something specific about the world of cryptocurrency that doomed the now-bankrupt trading firm FTX? Or was it a **garden-variety (普通的，平常的)** scam?
 - how the brain gives rise to **cravings (渴望，热望)**?
+- **mucosa (粘膜)** **healing (愈合)**
+- glands/crypts: 腺
 
 ## 2023.02
 

@@ -115,6 +115,24 @@ comments: true
 	[1] 2
 	```
 
+??? tip "invalid argument to unary operator: drop columns by name"
+	```
+	> df = data.frame(x=runif(3), y=rnorm(3), z=rnorm(3))
+	> df[,-1]
+			y          z
+	1 -1.093060  0.3862924
+	2 -1.169464  0.8150087
+	3 -1.983340 -0.6602526
+	> df[,-c("x")]
+	Error in -c("x") : invalid argument to unary operator
+
+	> df[, -which(colnames(df) %in% c("x"))]
+			y          z
+	1 -1.093060  0.3862924
+	2 -1.169464  0.8150087
+	3 -1.983340 -0.6602526
+	```
+
 ## Installation
 
 ### Install from source on Rocky

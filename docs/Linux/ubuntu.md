@@ -559,6 +559,29 @@ see also [Pair Bose QuietComfort 35 with Ubuntu over Bluetooth - Ask Ubuntu](htt
     参考 [:link:](https://askubuntu.com/questions/380096/turn-on-off-bluetooth-from-shell-not-from-applet)
 
 
+!!! note "always a2dp_sink!"
+    Sometimes it is noisy, and annoying "call from". This is due to the profile, but using the GUI to change it seems not work. So try to work from the command line.
+    ```bash
+    # list available cards
+    $ pacmd list-cards
+    	profiles:
+            headset_head_unit: Headset Head Unit (HSP/HFP) (priority 30, available: unknown)
+            a2dp_sink: High Fidelity Playback (A2DP Sink) (priority 40, available: yes)
+            off: Off (priority 0, available: yes)
+        active profile: <a2dp_sink>
+    ``` 
+    if the active profile is `headset_head_unit`, it would be noisy. Tried
+
+    ```bash
+    pacmd set-card-profile <card name> a2dp_sink
+    ```
+    but it said "failed to set".
+
+    However, after reconnecting, it works well, and it can easily switch between `headset_head_unit` and `a2dp_sink`.
+
+    See also: [:link:](https://www.reddit.com/r/archlinux/comments/8hzylp/annoying_call_from_message_when_connecting_bose/) and [:link:](https://unix.stackexchange.com/questions/462670/set-default-profile-for-pulseaudio)
+
+
 ## Nvidia Driver
 
 Install via the GUI `Software & Updates`. If succeed, then
