@@ -22,6 +22,14 @@
 	- example: <https://github.com/szcf-weiya/TriMatchMOT>
 - issue 中如果在第一个评论里面加 task，则会在 issue 列表中显现处理，如 [Issue 57](https://github.com/szcf-weiya/Clouds/issues/57)
 
+!!! note "2023-03-23: GitHub updated RSA SSH HOST KEY"
+
+	Recently, when running `git push`, it throws that
+	```
+	Warning: the ECDSA host key for 'github.com' differs from the key for the IP address '140.82.114.3'
+	```
+	it is due to the update of GitHub on RSA SSH Host key ([:link:](https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/))
+
 ### Actions
 
 - [use `setup-python` instead of `container: python`](https://github.community/t/why-use-setup-python-action-instead-of-a-python-container/17332): fast and flexible
