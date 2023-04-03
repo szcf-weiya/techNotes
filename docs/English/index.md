@@ -1,7 +1,7 @@
 ## 2023.03
 
 - The Times Editorial: 泰晤士报社论
-- We prefer to take our chance of cholera and the rest than be bullied into health.
+- We prefer to take our chance of **cholera (霍乱)** and the rest than be bullied into health.
 - dungheap: 粪堆
 - his **thatch (茅草屋顶)** forced to give way for **slate (石板，板岩)**
 - as much from the **irritation (刺激物；愤怒)** to the nerves as from the exposure of the **cuticle (表皮，角质层)**.
@@ -1177,7 +1177,7 @@
 - office supply addiction, so I had a manila folder, and I had a Sharpie (美国三福记号笔)
 - separate courage and **bravery (勇敢，华丽，盛装)**
 - courage is from the Latin word "cor", meaning "heart"
-- had the compassion to be kind to themselves first
+- had the **compassion (同情，怜悯)** to be kind to themselves first
 - as a result of **authenticity (真实性)**
 - the willingness to breathe through waiting for the doctor to call after your mammogram.
 - it was **betrayal (背叛)**
@@ -1400,7 +1400,7 @@
 1. a style that is so simple and open and **guileless (厚道的，老实的)** that it approaches **parody (拙劣的模仿，荒谬的替代物)**.
     - **The Remains of the Day (长日将尽)** [:link:](https://en.wikipedia.org/wiki/The_Remains_of_the_Day) is clearly **parodic (parody, 戏仿，谐拟)** [:link:](https://zh.wikipedia.org/wiki/%E6%88%B2%E4%BB%BF), or at least a classic of the "unreliable narrator" genre.
 3. I found that some labeled the book as **satire (讽刺，讥讽)** and others took it straight.
-4. with any parodic elements merely representing Levitt’s recognition of life’s **absurdities**.
+4. with any parodic elements merely representing Levitt’s recognition of life’s **absurdities (荒谬，谬论)**.
 5. brash rather than decorous
 6. the men are viewed through the **prism**
 7. Leavitt is a bit more **ruthless (残酷无情的)**, willing to let his characters hang in classic British style (e.g., Evelyn Waugh or George Orwell), in contrast to Wolitzer who likes her characters so much that she wants to give them a happy ending.
@@ -1547,7 +1547,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. instrument: verb. such as, "they instrument military aid"
 3. maddening
 6. **ramp (匝道，斜坡)** up: 上升，增加，提高
-7. crap
 8. **Ray Kroc (雷·克罗克)**: 麦当劳主要创办人
 9. **teaser (戏弄者)** is a particularly **baffling (令人困惑的)** problem that is said to have a correct solution
     - **brain teaser (脑筋急转弯【戏弄大脑】)**.
@@ -1568,7 +1567,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 8. lapped up
 9. Satoshi Kanazawa: 金泽哲
 10. essentialism: 本质主义
-11. pseudoscientific
+11. pseudoscientific: 伪科学，科学观
 12. discourse
 13. cardiologist: 心脏病医生
 14. foie: 法文，肝之意
@@ -1797,7 +1796,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. motif
 2. the moss-**draped (披，装饰)** **bald (秃顶的，秃头的)** **cypress (柏树)** trees: 长满青苔的秃柏树
-3. monopoly
 4. monolithic: 庞大的，整体式的
 6. metropolis
 8. metallurgy: 冶金学
@@ -2081,7 +2079,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 111.  **Taxonomy (分类学，分类法)** is the science or technique of classification.
 112. **Flagrant (骇人听闻的，公然的)** means **blatant (明目张胆的，公然的)** or **outrageous (骇人的，无法形容的，反常的)**
 113. **Dilatory (拖拉的，拖延的)** means tardy or tending to delay.
-114. Aloof means standoffish and remote.
+114. **Aloof (冷淡，冷漠)** means **standoffish (冷淡的，傲慢的)** and remote.
 1. Terse means abrupt and to the point.
 2. Apathetic means indifferent and unconcerned.
 3. Bombastic means pompous and pretentious.
