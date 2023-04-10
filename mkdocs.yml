@@ -116,6 +116,7 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.top
+    - content.action.edit
 google_analytics: ['UA-85007363-6', 'auto']
 copyright: 'Copyright &copy; 2017-2023 weiya'
 site_author: weiya
