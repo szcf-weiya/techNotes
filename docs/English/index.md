@@ -1,3 +1,9 @@
+## 2023.04
+
+- redaction: 编写，编辑
+- liaison: 联络，联系人
+- Lay Summary: 简述
+
 ## 2023.03
 
 - The Times Editorial: 泰晤士报社论
@@ -1045,7 +1051,7 @@
 - characterize the modern presidents in this way, **saviors:** Trump, Obama, Clinton, **Reagan (里根)**, **Roosevelt (罗斯福)**
 - **Carter (卡特)** in retrospect does not have a savior **vibe**, but he was elected as a transformative outlier.
 - I'd assumed that there are more pro Dem **pollsters** than pro Rep or unbiased pollsters.
-- our model judges that to be a **fluke**
+- our model judges that to be a **fluke (侥幸，偶然，意外)**
 - someone sent me this **collage (拼贴画)** of maps from Nate's model
 - they're not just some sort of computer **glitch (小故障，小毛病)**
 - problem of the between-state correlations in the [Fivethirtyeight](https://fivethirtyeight.com/)([中文解释](https://www.zhihu.com/question/33259890)) election forecast.
@@ -1205,7 +1211,7 @@
 - stop screaming and start listening
 
 - fortune teller
-- a Justin Bieber whack-a-mole
+- **whack-a-mole (打鼹鼠；无用而重复的工作)**
 
 - millennial: 一千年的
 - lean in to work
@@ -1220,7 +1226,7 @@
 - octogenarian (八旬老人)
 - securely attached relationship
 - bicker with
-- day in, day out
+- day in day out: 日日夜夜，一天又一天
 - this is wisdom that's as old as the hills
 - **take a toll (造成损失，产生负面影响)** on their memories
 - glamorous: 富有魅力的，独特的
@@ -1575,7 +1581,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 16. Thomas Kuhn: 托马斯•库恩
 17. Lakatos: 拉卡多斯
 18. Karl Popper
-19. portray
+19. portray: 描绘，描写
 20. exegesis
 21. Errol Morris: 埃洛莫里斯
 22. stratosphere: 平流层
@@ -1595,12 +1601,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. in silico: 电脑模拟
 2. in vivo: 生物活体内
 3. in vitro: 生物活体外
-
-
-## 2018.12
-
-1. constrain & constraint
-
 
 ## 2018.10
 
@@ -1709,7 +1709,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 8. supposition: 推论，推测
 9. The representation of documents is a central issue in all of the approaches in document management, whether the management **entails (需要，牵涉)** exploration, search, or filtering.
 1. monograph
-2. awash
+2. awash: 常被水冲淹的
 3. pare down: 削减
 4. **noose (绳套，套索)**
 5. Homotopy
@@ -1724,9 +1724,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. lethal
 2. incidence
 3. extant: 尚存的，现存的
-4. pertain
 5. substrate
-1. kinetic
+1. kinetic: 运动的，运动引起的
 2. prokaryote (原核生物，原核细胞), eukaryote (真核细胞，真核生物)
 3. unprecedented
 5. Escherichia coli
@@ -1797,7 +1796,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. motif
 2. the moss-**draped (披，装饰)** **bald (秃顶的，秃头的)** **cypress (柏树)** trees: 长满青苔的秃柏树
 4. monolithic: 庞大的，整体式的
-6. metropolis
+6. metropolis: 大城市，大都市
 8. metallurgy: 冶金学
 1. till: 耕作，犁地；收银台
 2. dweller
@@ -1826,8 +1825,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 12. **foundationalism (基础主义，基础论)**
 13.  John Locke, René Descartes.
 15. mirage: 海市蜃楼，妄想，幻想
-16. shimmer
-17. conceive
+16. shimmer: 发出微弱的闪光；闪烁
+17. conceive: 构想，设想
 18. or so
 20. as to that: 就此而言
 21. red dwarf star
