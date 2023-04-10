@@ -3610,7 +3610,7 @@ cat<span class="w"> </span>a.txt<span class="w"> </span><span class="p">|</span>
 </code></pre></div>
 <p>where <code>((i++))</code> increases <code>i</code> by 1, and similar syntax can be</p>
 <div class="highlight"><pre><span></span><code><span class="nv">i</span><span class="o">=</span><span class="m">0</span>
-<span class="nv">i</span><span class="o">=</span><span class="k">$((</span>i+1<span class="k">))</span>
+<span class="nv">i</span><span class="o">=</span><span class="k">$((</span><span class="nv">i</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
 <span class="c1"># or</span>
 <span class="nv">i</span><span class="o">=</span><span class="k">$((</span><span class="nv">$i</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
 <span class="c1"># or</span>
@@ -3621,11 +3621,11 @@ cat<span class="w"> </span>a.txt<span class="w"> </span><span class="p">|</span>
 <p><code>((...))</code> also support general arithmetic operations, such as</p>
 <div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">30</span>
 <span class="nv">b</span><span class="o">=</span><span class="m">10</span>
-<span class="nb">echo</span><span class="w"> </span><span class="k">$((</span><span class="nv">a</span><span class="o">+=</span>b<span class="k">))</span>
-<span class="nb">echo</span><span class="w"> </span><span class="k">$((</span>a*<span class="o">=</span>b<span class="k">))</span>
-<span class="nb">echo</span><span class="w"> </span><span class="k">$((</span>a-<span class="o">=</span>b<span class="k">))</span>
-<span class="nb">echo</span><span class="w"> </span><span class="k">$((</span>a/<span class="o">=</span>b<span class="k">))</span>
-<span class="nb">echo</span><span class="w"> </span><span class="k">$((</span>a/<span class="o">=</span>b<span class="k">))</span>
+<span class="nb">echo</span><span class="w"> </span><span class="k">$((</span><span class="nv">a</span><span class="o">+=</span><span class="nv">b</span><span class="k">))</span>
+<span class="nb">echo</span><span class="w"> </span><span class="k">$((</span><span class="nv">a</span><span class="o">*=</span><span class="nv">b</span><span class="k">))</span>
+<span class="nb">echo</span><span class="w"> </span><span class="k">$((</span><span class="nv">a</span><span class="o">-=</span><span class="nv">b</span><span class="k">))</span>
+<span class="nb">echo</span><span class="w"> </span><span class="k">$((</span><span class="nv">a</span><span class="o">/=</span><span class="nv">b</span><span class="k">))</span>
+<span class="nb">echo</span><span class="w"> </span><span class="k">$((</span><span class="nv">a</span><span class="o">/=</span><span class="nv">b</span><span class="k">))</span>
 <span class="c1"># 40</span>
 <span class="c1"># 400</span>
 <span class="c1"># 390</span>
