@@ -3,6 +3,8 @@
 - redaction: 编写，编辑
 - liaison: 联络，联系人
 - Lay Summary: 简述
+- herbal
+- homeopathic
 
 ## 2023.03
 
