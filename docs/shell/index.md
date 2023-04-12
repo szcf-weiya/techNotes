@@ -172,6 +172,8 @@ done
 
 ## String
 
+- length of string: `${#string}`
+
 ### Quotes
 
 1. 单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；

@@ -1486,7 +1486,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 13. What really **riled (激怒)** me was when the speaker said
 14. This seems to me to be a **bizarre (离奇的，古怪的)** sort of **techno-mysticism**.
 15. The **nascent (初期的，开始存在的，发生中的)** field of fair machine learning aims to ensure that decisions guided by algorithms are equitable.
-16. Over the last several years, three formal definitions of fairness have gained **prominence**
+16. Over the last several years, three formal definitions of fairness have gained **prominence (出名，突出)**
 17. classification **parity**, meaning that common measures of predictive performance
 18. One must carefully define and measure the targets of prediction to avoid **retrenching** biases in the data.
 19. A team of researchers inside **Pfizer (辉瑞，美国制药公司)** made a **startling** find in 2015: The company’s **blockbuster (重磅炸弹，了不起的人或事)** **rheumatoid (风湿病的，类风湿病的)** **arthritis (关节炎)** therapy [**Enbrel (恩利，注射用依那西普，Etanercept)**](https://baike.baidu.com/item/%E6%81%A9%E5%88%A9), a powerful **anti-inflammatory (抗炎的)** drug, appeared to reduce the risk of Alzheimer’s disease by 64 percent.
@@ -2083,7 +2083,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 114. **Aloof (冷淡，冷漠)** means **standoffish (冷淡的，傲慢的)** and remote.
 1. Terse means abrupt and to the point.
 2. Apathetic means indifferent and unconcerned.
-3. Bombastic means pompous and pretentious.
+3. **Bombastic (夸夸其谈的，过甚其词的)** means **pompous (虚华的，言辞浮夸的)** and pretentious.
 4. A euphemism is a mild expression used in place of an unpleasant or offensive one.
 5. A **reverie (白日梦，幻想，梦想)** is a daydream or state of dreamy meditation.
 6. A **postulate (假设，基本原理)** is a basic principle or prerequisite.
