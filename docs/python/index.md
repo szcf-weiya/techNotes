@@ -980,6 +980,34 @@ refer to [Writing mathematical expressions](https://matplotlib.org/users/mathtex
 - Homepage: <https://pandas.pydata.org/docs/>
 - [Cheatsheet](Pandas_Cheat_Sheet.pdf)
 
+!!! tip
+	- ".fillna()" can pass Series (p) to DataFrame (1xp) with the same index
+
+!!! bug "AttributeError: 'Index' object has no attribute 'apply'"
+	```python
+	>>> a = pd.DataFrame({"x_1": [1,2], "x_2": [3, 4]})
+	>>> a
+	x_1  x_2
+	0    1    3
+	1    2    4
+	>>> a.columns.str.split("_")
+	Index([['x', '1'], ['x', '2']], dtype='object')
+	>>> 
+	>>> a.columns.str.split("_").apply(lambda x: int(x[1]))
+	Traceback (most recent call last):
+	File "<stdin>", line 1, in <module>
+	AttributeError: 'Index' object has no attribute 'apply'
+	```
+
+	A workaround is 
+
+	```python
+	>>> [int(x[1]) for x in a.columns.str.split("_")]
+	[1, 2]
+	```
+
+	See also: [:link:](https://github.com/szcf-weiya/AMP/issues/7)
+
 ## `re`
 
 ### extract the starting position

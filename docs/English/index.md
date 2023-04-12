@@ -2008,7 +2008,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 28. a **furtive (偷偷摸摸的)** glance at her
 29. The SWAT team carried out a **stealth (秘密行动，隐形的)** **raid (突然搜查，突击搜捕)** on the house, which was believed to be harboring a terrorist cell.
 30. The drive to create is indigenous to humanity.
-31. agonize over every decision
+31. **agonize (苦苦思索，焦虑不已)** over every decision
 32. Children were agog over new toys.
 33. **impugn (责难，驳斥)** a political opponent's character
 34. **Well-doer (善人)** never does **chicanery (欺诈，诈骗)** and person who is good at chicanery does not belong well-doer.
