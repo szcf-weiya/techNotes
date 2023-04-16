@@ -4282,6 +4282,31 @@ is modified instead.</p>
     <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]])</span>
 </code></pre></div>
 </details>
+<details class="note">
+<summary><code>np.isnan(x)</code> vs <code>x is np.nan</code></summary>
+<p>Use <code>np.isnan(x)</code>! When <code>x</code> from an array, <code>x is np.nan</code> return False. (WHY???) </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span> <span class="ow">is</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">numpy</span><span class="o">.</span><span class="n">float64</span><span class="s1">&#39;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">float</span><span class="s1">&#39;&gt;</span>
+</code></pre></div>
+<p>See also <a href="https://pandas.pydata.org/docs/user_guide/missing_data.html"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/13688320/232156383-84edb7bc-b06a-4dfb-b44a-708544e4b44f.png" /></p>
+</details>
 <h2 id="pandas">pandas<a class="headerlink" href="#pandas" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Homepage: <a href="https://pandas.pydata.org/docs/">https://pandas.pydata.org/docs/</a></li>
@@ -4293,8 +4318,8 @@ is modified instead.</p>
 <li>&ldquo;.fillna()&rdquo; can pass Series (p) to DataFrame (1xp) with the same index</li>
 </ul>
 </div>
-<div class="admonition bug">
-<p class="admonition-title">AttributeError: &lsquo;Index&rsquo; object has no attribute &lsquo;apply&rsquo;</p>
+<details class="bug">
+<summary>AttributeError: &lsquo;Index&rsquo; object has no attribute &lsquo;apply&rsquo;</summary>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;x_1&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;x_2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
 <span class="n">x_1</span>  <span class="n">x_2</span>
@@ -4313,7 +4338,18 @@ is modified instead.</p>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </code></pre></div>
 <p>See also: <a href="https://github.com/szcf-weiya/AMP/issues/7"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
-</div>
+</details>
+<details class="warning">
+<summary>Boolean Series key will be reindexed to match DataFrame index</summary>
+<p>The warning is due to </p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">A</span> <span class="o">==</span> <span class="n">x</span><span class="p">][</span><span class="n">df</span><span class="o">.</span><span class="n">B</span> <span class="o">==</span> <span class="n">y</span><span class="p">]</span>
+</code></pre></div>
+<p>The correct way is </p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">A</span> <span class="o">==</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="n">df</span><span class="o">.</span><span class="n">B</span> <span class="o">==</span> <span class="n">y</span><span class="p">]</span>
+</code></pre></div>
+<p>See also <a href="https://stackoverflow.com/questions/41710789/boolean-series-key-will-be-reindexed-to-match-dataframe-index"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>Also note that here <code>&amp;</code> cannot be replaced by <code>and</code>.</p>
+</details>
 <h2 id="re"><code>re</code><a class="headerlink" href="#re" title="Permanent link">&para;</a></h2>
 <h3 id="extract-the-starting-position">extract the starting position<a class="headerlink" href="#extract-the-starting-position" title="Permanent link">&para;</a></h3>
 <p>Given an error message returns by <code>decode("utf8")</code> on a problematic characters, such as</p>
@@ -4507,7 +4543,7 @@ mv<span class="w"> </span>.coverage<span class="w"> </span>..
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 16, 2023</span>
       
         <br>
         Created:
