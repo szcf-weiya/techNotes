@@ -975,6 +975,36 @@ refer to [Writing mathematical expressions](https://matplotlib.org/users/mathtex
 		[4., 5., 6.]])
 	```
 
+??? note "`np.isnan(x)` vs `x is np.nan`"
+
+	Use `np.isnan(x)`! When `x` from an array, `x is np.nan` return False. (WHY???) 
+
+	```python
+	>>> import numpy as np
+	>>> a = np.zeros(3)
+	>>> a
+	array([0., 0., 0.])
+	>>> a[1] = np.nan
+	>>> a[1] is np.nan
+	False
+	>>> np.isnan(a[1])
+	True
+	>>> a1 = np.nan
+	>>> a1 is np.nan
+	True
+	>>> type(a)
+	<class 'numpy.ndarray'>
+	>>> type(a[1])
+	<class 'numpy.float64'>
+	>>> type(a1)
+	<class 'float'>
+	```
+
+	See also [:link:](https://pandas.pydata.org/docs/user_guide/missing_data.html)
+
+	![image](https://user-images.githubusercontent.com/13688320/232156383-84edb7bc-b06a-4dfb-b44a-708544e4b44f.png)
+
+
 ## pandas
 
 - Homepage: <https://pandas.pydata.org/docs/>
@@ -983,7 +1013,7 @@ refer to [Writing mathematical expressions](https://matplotlib.org/users/mathtex
 !!! tip
 	- ".fillna()" can pass Series (p) to DataFrame (1xp) with the same index
 
-!!! bug "AttributeError: 'Index' object has no attribute 'apply'"
+??? bug "AttributeError: 'Index' object has no attribute 'apply'"
 	```python
 	>>> a = pd.DataFrame({"x_1": [1,2], "x_2": [3, 4]})
 	>>> a
@@ -1007,6 +1037,25 @@ refer to [Writing mathematical expressions](https://matplotlib.org/users/mathtex
 	```
 
 	See also: [:link:](https://github.com/szcf-weiya/AMP/issues/7)
+
+??? warning "Boolean Series key will be reindexed to match DataFrame index"
+
+	The warning is due to 
+
+	```python
+	df[df.A == x][df.B == y]
+	```
+
+	The correct way is 
+
+	```python
+	df[df.A == x & df.B == y]
+	```
+
+	See also [:link:](https://stackoverflow.com/questions/41710789/boolean-series-key-will-be-reindexed-to-match-dataframe-index)
+
+	Also note that here `&` cannot be replaced by `and`.
+
 
 ## `re`
 

@@ -5,6 +5,16 @@
 - Lay Summary: 简述
 - herbal
 - homeopathic
+- continental crust
+- greasy: 多油的
+- prosthesis: 假肢
+- epilepsy: 癫痫，羊痫风
+- enchanted by science
+- Yale tests potential new remedy for skin diseases **afflicting (折磨，使痛苦)** children.
+- ivory: 象牙
+- uterine: 子宫的；同母异父的
+- perilous: 危险的
+- respiratory syncytial virus: 呼吸道合胞病毒
 
 ## 2023.03
 
@@ -916,7 +926,7 @@
 - customers may be unable or unwilling to accept our model of commercial software **procurement (采购，获得，取得)**.
 - it's not a **slam (抨击)** on this graph to say that it makes me want to learn more.
     - [it's not a slam at you when people are rude, it's a slum at the people they've met before.](https://www.brainyquote.com/quotes/f_scott_fitzgerald_397424)
-- Man has been **predominant** over other species for a long time.
+- Man has been **predominant (占优势的)** over other species for a long time.
 - A specific job hunt will be more efficient than a **haphazard (偶然的，随意的)** one.
 - The British **Chamber (【身体或器官内的】室、膛；房间；会所) of Commerce (商会)** in Hong Kong is inviting applications for its Events & Marketing Executive.
 - An **assessment centre (求职评估)** is a recruitment process with a series of tasks including presentation, group exercise, **psychometric tests (心理计量测验)**, etc, to evaluate candidates' ability and personality.
@@ -1282,7 +1292,7 @@
 - They only reason these people buy **touch-tone phone** is because you can't buy **rotary phones** anymore.
 - gut feeling
 - Those steps can in turn increase economic **dislocations (混乱，位移)**, including **plummeting (暴跌)** stock prices.
-- rewind live TV
+- **rewind (倒带)** live TV
 - a great orator
 
 - there's an uncomfortable tension in the room.
@@ -1459,7 +1469,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 17. MIME: Multipurpose Internet Mail Extensions, 多用途互联网邮件拓展。
 18. The most important rights of a performer are the right to prevent any person from making a video or sound recording of his performance and the right to prohibit any person exploiting a video or sound recording of his performance.
 19. **civil remedies (民事救济)** vs. **criminal sanction (刑事处分)**
-20. intranet
+20. intranet: 内联网
 21. Under the **Copyright Ordinance (版权规定)**, the fair dealing for showing or playing a movie will apply only if the purpose is for giving or receiving instruction in a specified course of student provided by an educational establishment. It is not allowed to use these materials outside the scope of fair dealing such as for the purpose of entertainment.
 22. Vincent van Gogh: 梵高
 1. I recently was discussing/arguing about the value of **[charter schools](https://www.zhihu.com/question/21810104)** **lottery (彩票)** studies.
@@ -1498,9 +1508,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 24. Novartis
 25. political ideology: 政治意识形态
 26. if you push hard you can find the weak points and **magnify** them until you get **ridiculous (荒谬的)** inferences.
-27. but the way probability works is that you can always find some **chink** in the model and exploit it to result in a clearly bad prediction.
+27. but the way probability works is that you can always find some **chink (缝隙，弱点)** in the model and exploit it to result in a clearly bad prediction.
 28. I think the **proclivity (「常对坏事的」倾向)** of Bayesian inferences to tend toward the ridiculous is just fine
-29. But Bayesian inference can lead us **astray**, and we’re better statisticians if we realize that.
 30. I’m exhausted by the ideology of the Bayes-**evangelists (福音传教士)**.
 31. Would Republicans pay a price if they vote to **impeach (怀疑，控告，弹劾)** the president?
 32. Nixon **loyalists** paid the price—not Republicans who voted to impeach.
@@ -1795,7 +1804,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 ## 2017.11
 
-1. motif
+1. motif: 动机，装饰图案
 2. the moss-**draped (披，装饰)** **bald (秃顶的，秃头的)** **cypress (柏树)** trees: 长满青苔的秃柏树
 4. monolithic: 庞大的，整体式的
 6. metropolis: 大城市，大都市

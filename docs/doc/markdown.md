@@ -32,6 +32,7 @@ refer to [pierrejoubert73/markdown-details-collapsible.md](https://gist.github.c
 
 	- bookmarklet ([:link:](https://www.freecodecamp.org/news/what-are-bookmarklets/)): add a javascript snippet as a bookmark.
 	- [Text Blaze](https://chrome.google.com/webstore/detail/text-blaze/idgadaccgipmpannjkmfddolnnhmeklj/related): a chrome extension. Just type the customized define command `/details`.
+  - **GitHub has enabled this feature.** [Slash Commands](https://github.com/orgs/community/discussions/40299)
 
 
 ## `mermaid`: flowchart
