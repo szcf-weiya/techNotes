@@ -635,7 +635,7 @@ refer to [Linux安装NVIDIA显卡驱动的正确姿势](https://blog.csdn.net/wf
 
 ## Kernel
 
-- [Go back to old kernel](blog/2021-07-28-kernel-version.md)
+- [Go back to old kernel](blog/2021-07-28-use-old-kernel.md)
 
 ## Printer
 

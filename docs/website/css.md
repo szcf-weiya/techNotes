@@ -2,31 +2,47 @@
 
 CSS 全称为 Cascading Style Sheets, 中文名为**层叠样式表**.
 
-## 元素
+??? note "元素"
+	- 块级元素 (block-level element)
+	- 内联级元素 (inline-level element)
 
-- 块级元素 (block-level element)
-- 内联级元素 (inline-level element)
+??? note "选择器"
+	- 类选择器：`.`
+	- ID选择器: `#`
+	- 属性选择器: `[]`
+	- 伪类选择器: `:`
+	- 伪元素选择器: `::`
+	- 关系选择器
+		- 后代: `<space>`
+		- 相邻后代: `>`
+		- 兄弟: `~`
+		- 相邻兄弟: `+`
 
-## 选择器
+??? note "盒子"
 
-- 类选择器：`.`
-- ID选择器: `#`
-- 属性选择器: `[]`
-- 伪类选择器: `:`
-- 伪元素选择器: `::`
-- 关系选择器
-	- 后代: `<space>`
-	- 相邻后代: `>`
-	- 兄弟: `~`
-	- 相邻兄弟: `+`
+	- 内在盒子:
+		- content box: `content-box`
+		- padding box: `padding-box`
+		- border box: `border-box`
+		- margin box: NONE
 
-## 盒子
+??? tip "`!important` not work in inline style"
+	在 `DF` 项目中使用 `Documenter.jl` 时，因为画图保存格式为 pdf，所以想以 embed 的形式展示 pdf，但是发现高度很低，尝试过
 
-- 内在盒子:
-	- content box: `content-box`
-	- padding box: `padding-box`
-	- border box: `border-box`
-	- margin box: NONE
+	1. embed 外层再套一层 `div` 并设置高度
+	2. 只用 embed 层，改变 `height` 为 `2100px`，`100%`
+
+	通通不管用，然后发现是因为默认 embed 的 height 设成了 auto.
+
+	一个自然想法是在 2100px 后面加 `!important`，但并没有成功，后来发现 [:link:](https://stackoverflow.com/questions/4616964/css-important-not-working)，所以需要单独写 css
+
+	```css
+	<style>
+	embed {
+		height: 2100px !important;
+	}
+	</style>
+	```
 
 ## `width/height` 作用的具体细节
 

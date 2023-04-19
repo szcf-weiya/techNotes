@@ -976,7 +976,7 @@
     - confer with sb. on/about sth.: 商讨，协商，交换意见
 - The extensions to multiple-view reconstructions **necessitated** the introduction of nonlinear optimization strategies.
 - Thus it is that firmness and strength are the **concomitants (同时发生的事)** of death; softness and weakness, the **concomitants** of life.
-- It should be possible for a class to inherit from as many others as necessary, with an adequate mechanism for **disambiguating** name **clashes**.
+- It should be possible for a class to inherit from as many others as necessary, with an adequate mechanism for **disambiguating (消除歧义)** name **clashes (冲突)**.
 - No comparison frameworks are available, leading to an **arduous** selection of an appropriate variant for particular experimental conditions.
 - Laser-range sensors were a **cornerstone (基石，基础)** to the development of mapping and navigation in the past two decades.
 - **planar** open curves
@@ -1028,7 +1028,7 @@
 - I came across this interview of [John Conway](https://www.zhihu.com/question/387110069) and [Siobhan Roberts](https://en.wikipedia.org/wiki/Siobhan_Roberts), Conway's biographer.
 - a strong sense of competitiveness and **ego (自我价值感)** in the maths world.
 - Did you get a sense of a lot of people trying to **outdo (胜过，优于)** each other in the field?
-- there are occasional examples of it coming to the fore more **prominently**.
+- there are occasional examples of it coming to the fore more **prominently (显著地)**.
 - there were characters I encountered, [Stephen Wolfram](https://en.wikipedia.org/wiki/Stephen_Wolfram) for one, for whom I think there was a bit of an unacknowledged competitive tension with John.
 - The idea of competing with them is **absurd (荒唐可笑的，不合理的)**.
 - That's a very **egotistical (自负的)** statement.
@@ -1068,7 +1068,7 @@
 - they're not just some sort of computer **glitch (小故障，小毛病)**
 - problem of the between-state correlations in the [Fivethirtyeight](https://fivethirtyeight.com/)([中文解释](https://www.zhihu.com/question/33259890)) election forecast.
 - this might be a feather in the wind to prevent a predictable post-voting-day **wrangle (争吵)** that could **tip the country over the edge**.
-- **accusations** of fraud seem almost inevitable.
+- **accusations (控告，起诉，告发)** of fraud seem almost inevitable.
 - they can analyze **precinct (选区，警区)-level** totals to look for "thumbprints" of voter fraud.
 - it's not as sure as a photograph of **"mislaid" ballots** dumped behind a post office.
 - I was **intrigued (激起...的好奇心)** by the observations you made this summer.
@@ -1674,7 +1674,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. regimen: 养生之道，生活规则
 3. flat **terrain (地带，地形)**
 4. aerobics
-5. treadmill
+5. treadmill: 枯燥无味的工作（或生活方式）
 1. phylogeny
 1. bump up
 1. noob: 菜鸟
@@ -1739,7 +1739,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. kinetic: 运动的，运动引起的
 2. prokaryote (原核生物，原核细胞), eukaryote (真核细胞，真核生物)
 3. unprecedented
-5. Escherichia coli
+5. Escherichia coli: 大肠杆菌
 6. yeast
 7. 酿酒酵母（Saccharomyces cerevisiae）
 8. stoichiometric: 化学计算的，理想配比的
@@ -2206,7 +2206,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 - **blaze (火焰；展现)** your trail
 10. bland: 平淡的，乏味的
 11. diffident (缺乏自信的，胆怯的), different, indifferent
-13. pond
+13. pond: 池塘，水塘
 14. boom, flourish
 17. **bull (公牛，废话，彪形大汉)**, **bullet (子弹，弹丸)**
 18. buoyant, prosperous
@@ -2264,12 +2264,10 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 18. Valentine's Day
 19. self-absorbed
 20. showcase
-21. poll, no-no
 22. wink
 24. vein: 静脉，纹理，风格
 25. agroecology: 农业生态学
 26. **cultivar (栽培种，栽培品种)**
-27. contagion
 31. weed
 32. inoculation
 33. avirulent: 无毒性的

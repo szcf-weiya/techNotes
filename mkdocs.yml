@@ -46,6 +46,7 @@ nav:
     - Julia: 
       - Base: julia/index.md
       - Plot: julia/plot.md
+      - Dev: julia/dev_package.md
     - Matlab: 
       - Base: Matlab/index.md
     - SAS: SAS/index.md

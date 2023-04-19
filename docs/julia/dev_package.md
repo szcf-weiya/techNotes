@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Workflow of Writing a Package
 
 ## Start with Empty
@@ -30,25 +34,28 @@ julia>
     - use `extras` and `targets` 
     - use `test/Project.toml`
 5. register package: follow the instruction at <https://github.com/JuliaRegistries/General#registering-a-package-in-general>
-    - use <https://github.com/JuliaRegistries/Registrator.jl>
-    - first click `install app`
     - via the web interface: login with GitHub account, and then fill the form.
+    - via <https://github.com/JuliaRegistries/Registrator.jl>
+        - first click `install app`, then follow the instruction to grant the access to which repo.
+        - comment `@JuliaRegistrator register` in the commit to be register
 
-- local package can be added via the path, but note that the version is also controlled by git, that is, a uncommitted version cannot be updated.
+## Develop/Debug Locally
+
+1. install the package via `dev ABSOLUTE_PATH` (usually in `v1.x` env). The absolute path (not relative path) can allow the installed package to be found starting from everywhere instead of the "relative" project.
+2. make any changes on the source code, NO need to run `dev` again, the update will be automatically synced.
+3. `test PACKAGE_NAME` (usually in `v1.x` env) would running the tests
+4. activate the `docs` env, and run `include("make.jl")`, then open a http server, `python3 -m http.server 8080` under the `build/` folder
+
+!!! warning "NOT `add LOCAL_PACKAGE`"
+    Although the package can be installed, but the version is also controlled by git, that is, a uncommitted version cannot be updated.
+
+    In that case, a new commit is also not automatically installed. `up LOCAL_PACKAGE` is necessary. Just imagine that adding package in this way is almost like to add packages remotely.
+
+!!! example
+    - <https://github.com/szcf-weiya/LaTeXTables.jl>
+    - <https://github.com/szcf-weiya/DegreesOfFreedom.jl>
 
 refer to
 
 - [Generating a package with PkgTemplate for existing code](https://discourse.julialang.org/t/generating-a-package-with-pkgtemplate-for-existing-code/25163)
 - [5. Creating Packages -- Pkg.jl](https://pkgdocs.julialang.org/v1/creating-packages/)
-- Example: [StatsBase.jl](https://github.com/JuliaStats/StatsBase.jl)
-
-## Update package
-
-1. update code and add related test cases
-2. the package is added via local path instead of github repo
-3. run `git add` and `git commit` to let the changes take effects
-4. update xfun in julia, `up xfun`
-4. open a new julia session, and then run `using xfun`, which will load the new commits
-5. run the tests from command line
-5. if anything wrong, edit and perform a soft reset and then re-commit, `git reset --soft HEAD^`
-6. finally, push the new commits
