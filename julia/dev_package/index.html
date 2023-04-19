@@ -15,13 +15,17 @@
         <link rel="canonical" href="https://tech.hohoweiya.xyz/julia/dev_package/">
       
       
+        <link rel="prev" href="../plot/">
+      
+      
+        <link rel="next" href="../../Matlab/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>Workflow of Writing a Package - techNotes</title>
+        <title>Dev - techNotes</title>
       
     
     
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Workflow of Writing a Package
+              Dev
             
           </span>
         </div>
@@ -214,13 +218,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../comparisons/stat/" class="md-tabs__link">
+      <a href="../../comparisons/stat/" class="md-tabs__link md-tabs__link--active">
         StatProgramming
       </a>
     </li>
@@ -881,14 +887,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -897,7 +905,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           StatProgramming
@@ -1216,16 +1224,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
       
       
       
@@ -1234,7 +1244,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_4">
           <span class="md-nav__icon md-icon"></span>
           Julia
@@ -1264,6 +1274,75 @@
       <a href="../plot/" class="md-nav__link">
         Plot
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Dev
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Dev
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#start-with-empty" class="md-nav__link">
+    Start with Empty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-with-existing-folder" class="md-nav__link">
+    Starting with existing folder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developdebug-locally" class="md-nav__link">
+    Develop/Debug Locally
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2492,8 +2571,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-package" class="md-nav__link">
-    Update package
+  <a href="#developdebug-locally" class="md-nav__link">
+    Develop/Debug Locally
   </a>
   
 </li>
@@ -2551,39 +2630,46 @@
 </ul>
 </li>
 <li>register package: follow the instruction at <a href="https://github.com/JuliaRegistries/General#registering-a-package-in-general">https://github.com/JuliaRegistries/General#registering-a-package-in-general</a><ul>
-<li>use <a href="https://github.com/JuliaRegistries/Registrator.jl">https://github.com/JuliaRegistries/Registrator.jl</a></li>
-<li>first click <code>install app</code></li>
 <li>via the web interface: login with GitHub account, and then fill the form.</li>
+<li>via <a href="https://github.com/JuliaRegistries/Registrator.jl">https://github.com/JuliaRegistries/Registrator.jl</a><ul>
+<li>first click <code>install app</code>, then follow the instruction to grant the access to which repo.</li>
+<li>comment <code>@JuliaRegistrator register</code> in the commit to be register</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
+<h2 id="developdebug-locally">Develop/Debug Locally<a class="headerlink" href="#developdebug-locally" title="Permanent link">&para;</a></h2>
+<ol>
+<li>install the package via <code>dev ABSOLUTE_PATH</code> (usually in <code>v1.x</code> env). The absolute path (not relative path) can allow the installed package to be found starting from everywhere instead of the &ldquo;relative&rdquo; project.</li>
+<li>make any changes on the source code, NO need to run <code>dev</code> again, the update will be automatically synced.</li>
+<li><code>test PACKAGE_NAME</code> (usually in <code>v1.x</code> env) would running the tests</li>
+<li>activate the <code>docs</code> env, and run <code>include("make.jl")</code>, then open a http server, <code>python3 -m http.server 8080</code> under the <code>build/</code> folder</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">NOT <code>add LOCAL_PACKAGE</code></p>
+<p>Although the package can be installed, but the version is also controlled by git, that is, a uncommitted version cannot be updated.</p>
+<p>In that case, a new commit is also not automatically installed. <code>up LOCAL_PACKAGE</code> is necessary. Just imagine that adding package in this way is almost like to add packages remotely.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <ul>
-<li>local package can be added via the path, but note that the version is also controlled by git, that is, a uncommitted version cannot be updated.</li>
+<li><a href="https://github.com/szcf-weiya/LaTeXTables.jl">https://github.com/szcf-weiya/LaTeXTables.jl</a></li>
+<li><a href="https://github.com/szcf-weiya/DegreesOfFreedom.jl">https://github.com/szcf-weiya/DegreesOfFreedom.jl</a></li>
 </ul>
+</div>
 <p>refer to</p>
 <ul>
 <li><a href="https://discourse.julialang.org/t/generating-a-package-with-pkgtemplate-for-existing-code/25163">Generating a package with PkgTemplate for existing code</a></li>
 <li><a href="https://pkgdocs.julialang.org/v1/creating-packages/">5. Creating Packages &ndash; Pkg.jl</a></li>
-<li>Example: <a href="https://github.com/JuliaStats/StatsBase.jl">StatsBase.jl</a></li>
 </ul>
-<h2 id="update-package">Update package<a class="headerlink" href="#update-package" title="Permanent link">&para;</a></h2>
-<ol>
-<li>update code and add related test cases</li>
-<li>the package is added via local path instead of github repo</li>
-<li>run <code>git add</code> and <code>git commit</code> to let the changes take effects</li>
-<li>update xfun in julia, <code>up xfun</code></li>
-<li>open a new julia session, and then run <code>using xfun</code>, which will load the new commits</li>
-<li>run the tests from command line</li>
-<li>if anything wrong, edit and perform a soft reset and then re-commit, <code>git reset --soft HEAD^</code></li>
-<li>finally, push the new commits</li>
-</ol>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 16, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2023</span>
       
         <br>
         Created:
@@ -2596,6 +2682,53 @@
 
 
 
+
+  <h2 id="__comments">Comments</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="szcf-weiya/techNotes"
+        data-repo-id="MDEwOlJlcG9zaXRvcnk4NDA2NDk0Mw=="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOBQK6r84CSDX_"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
 
                 
               </article>

@@ -1275,6 +1275,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../julia/dev_package/" class="md-nav__link">
+        Dev
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1829,27 +1843,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    元素
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    选择器
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    盒子
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#widthheight" class="md-nav__link">
     width/height 作用的具体细节
   </a>
@@ -1905,7 +1898,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     自适应网页布局
   </a>
   
@@ -1974,7 +1967,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     网页底部出现滚动条
   </a>
   
@@ -2688,27 +2681,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    元素
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    选择器
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    盒子
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#widthheight" class="md-nav__link">
     width/height 作用的具体细节
   </a>
@@ -2764,7 +2736,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     自适应网页布局
   </a>
   
@@ -2833,7 +2805,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     网页底部出现滚动条
   </a>
   
@@ -2878,12 +2850,15 @@
 
 <h1 id="css">CSS 笔记<a class="headerlink" href="#css" title="Permanent link">&para;</a></h1>
 <p>CSS 全称为 Cascading Style Sheets, 中文名为<strong>层叠样式表</strong>.</p>
-<h2 id="_1">元素<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary>元素</summary>
 <ul>
 <li>块级元素 (block-level element)</li>
 <li>内联级元素 (inline-level element)</li>
 </ul>
-<h2 id="_2">选择器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+</details>
+<details class="note">
+<summary>选择器</summary>
 <ul>
 <li>类选择器：<code>.</code></li>
 <li>ID选择器: <code>#</code></li>
@@ -2898,7 +2873,9 @@
 </ul>
 </li>
 </ul>
-<h2 id="_3">盒子<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+</details>
+<details class="note">
+<summary>盒子</summary>
 <ul>
 <li>内在盒子:<ul>
 <li>content box: <code>content-box</code></li>
@@ -2908,6 +2885,23 @@
 </ul>
 </li>
 </ul>
+</details>
+<details class="tip">
+<summary><code>!important</code> not work in inline style</summary>
+<p>在 <code>DF</code> 项目中使用 <code>Documenter.jl</code> 时，因为画图保存格式为 pdf，所以想以 embed 的形式展示 pdf，但是发现高度很低，尝试过</p>
+<ol>
+<li>embed 外层再套一层 <code>div</code> 并设置高度</li>
+<li>只用 embed 层，改变 <code>height</code> 为 <code>2100px</code>，<code>100%</code></li>
+</ol>
+<p>通通不管用，然后发现是因为默认 embed 的 height 设成了 auto.</p>
+<p>一个自然想法是在 2100px 后面加 <code>!important</code>，但并没有成功，后来发现 <a href="https://stackoverflow.com/questions/4616964/css-important-not-working"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>，所以需要单独写 css</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+<span class="nt">embed</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">2100</span><span class="kt">px</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</code></pre></div>
+</details>
 <h2 id="widthheight"><code>width/height</code> 作用的具体细节<a class="headerlink" href="#widthheight" title="Permanent link">&para;</a></h2>
 <h3 id="widthauto"><code>width:auto</code><a class="headerlink" href="#widthauto" title="Permanent link">&para;</a></h3>
 <h3 id="widthxpx"><code>width:Xpx</code><a class="headerlink" href="#widthxpx" title="Permanent link">&para;</a></h3>
@@ -2963,7 +2957,7 @@
 <li><code>em</code>: 相对父节点</li>
 <li><code>px</code>: 绝对值</li>
 </ul>
-<h2 id="_4">自适应网页布局<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_1">自适应网页布局<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>参考 <a href="http://www.cnblogs.com/xcxc/p/4531846.html">利用@media screen实现网页布局的自适应</a></p>
 <h3 id="12801200px">1280分辨率以上（大于1200px）<a class="headerlink" href="#12801200px" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="p">:</span><span class="nd">1200px</span><span class="o">)</span><span class="p">{</span>
@@ -3005,7 +2999,7 @@
 <p>解决方案，去cloudflare主页disable掉rocket load module.</p>
 <h2 id="uncaught-referenceerror-is-not-defined">Uncaught ReferenceError: $ is not defined?<a class="headerlink" href="#uncaught-referenceerror-is-not-defined" title="Permanent link">&para;</a></h2>
 <p>参考<a href="https://stackoverflow.com/questions/2075337/uncaught-referenceerror-is-not-defined?page=1&amp;tab=votes#tab-top">Uncaught ReferenceError: $ is not defined?</a></p>
-<h2 id="_5">网页底部出现滚动条<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_2">网页底部出现滚动条<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>查看footer的width是否为100%，若是，则删掉，某次是因为这个原因。</p>
 <h2 id="footer">footer 保持在底部<a class="headerlink" href="#footer" title="Permanent link">&para;</a></h2>
 <p>通过 <code>flexbox</code>，例如</p>
@@ -3062,7 +3056,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2023</span>
       
         <br>
         Created:
