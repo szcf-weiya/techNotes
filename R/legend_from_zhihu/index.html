@@ -21,7 +21,7 @@
         <link rel="next" href="../sample/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
     
     
       
@@ -30,9 +30,6 @@
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
-      
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -70,14 +67,11 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+    <body dir="ltr">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -2676,6 +2670,10 @@
 <span class="w">  </span><span class="nf">scale_colour_manual</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;the colour&#39;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">                      </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;black&#39;</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">,</span><span class="s">&#39;red&#39;</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;c2&#39;</span><span class="p">,</span><span class="s">&#39;c1&#39;</span><span class="p">))</span>
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title"><code>scale_xxx_manual</code> vs <code>scale_xxx_discrete</code></p>
+<p><code>scale_xxx_discrete</code> 不用指定 <code>values</code>，只修改 name 和 label，而 <code>scale_xxx_manual</code> 必须指定 <code>values</code>。</p>
+</div>
 <p><img alt="" src="../multi_dataset_legends.png" /></p>
 <h2 id="shapelinetype">单一shape或linetype<a class="headerlink" href="#shapelinetype" title="Permanent link">&para;</a></h2>
 <p>一开始对原知乎问题给出下面的解法</p>
@@ -2688,7 +2686,7 @@
 <span class="w">                     </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;数据&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;原始数据&#39;</span><span class="p">))</span><span class="w"> </span>
 </code></pre></div>
 <p><img alt="" src="../px_o.png" /></p>
-<p>但图例同时存在shape和linetype，对于普通的<code>plot</code>，可以用<code>NA</code>来使得point type或linetype不显示，具体可以参考<a href="https://stackoverflow.com/questions/37897984/r-plot-displaying-both-point-type-and-line-type-in-legend">R plot: Displaying both point type and line type in legend | stackoverflow</a>。</p>
+<p>但图例同时存在 <code>shape</code> 和 <code>linetype</code>，对于普通的 <code>plot</code>，可以用 <code>NA</code> 来使得 <code>point type</code> 或 <code>linetype</code> 不显示，具体可以参考 <a href="https://stackoverflow.com/questions/37897984/r-plot-displaying-both-point-type-and-line-type-in-legend">R plot: Displaying both point type and line type in legend | stackoverflow</a>。</p>
 <div class="highlight"><pre><span></span><code><span class="nf">set.seed</span><span class="p">(</span><span class="m">0</span><span class="p">);</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">);</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">);</span><span class="w"> </span><span class="n">x3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
 <span class="nf">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">19</span><span class="p">,</span><span class="w"> </span><span class="n">lty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span>
 <span class="w">     </span><span class="n">ylim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">range</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span><span class="p">)))</span><span class="w">  </span><span class="c1">## both points and lines</span>
@@ -2699,7 +2697,7 @@
 <span class="w">       </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="n">text.col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
 </code></pre></div>
 <p><img alt="" src="../both_points_lines_in_plot.png" /></p>
-<p>受此启发，也尝试在ggplot中使用，尝试后发现，对于<code>shape</code>用<code>NA</code>可以不显示点的形状，而<code>linetype</code>要用<code>0</code>才能不显示线条。</p>
+<p>受此启发，也尝试在 ggplot2 中使用，尝试后发现，对于 <code>shape</code> 用 <code>NA</code> 可以不显示点的形状，而 <code>linetype</code> 要用 <code>0</code> 才能不显示线条。</p>
 <div class="highlight"><pre><span></span><code><span class="n">px</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">()</span><span class="o">+</span>
 <span class="w">  </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">plotdatax</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="w"> </span><span class="n">datax</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">linetype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
 <span class="w">  </span><span class="nf">geom_line</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">plotdatax</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">number</span><span class="p">,</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dataxo</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;black&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">linetype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
@@ -2720,10 +2718,10 @@
 <p><img alt="" src="../px.png" /></p>
 <p>虽然与题主要求相符，但其实上述代码会报warning，如下</p>
 <p><img alt="" src="../warnings.png" /></p>
-<p>原因是geom_point中的aes没有linetype参数；</p>
-<p>而geom_line中的aes没有shape参数，但如果前者不对linetype进行赋值，后者不对shape进行赋值，则得到的图形会有两个图例块。</p>
+<p>原因是 <code>geom_point</code> 中的 <code>aes</code> 没有 <code>linetype</code> 参数；</p>
+<p>而 <code>geom_line</code> 中的 <code>aes</code> 没有 <code>shape</code> 参数，但如果前者不对 <code>linetype</code> 进行赋值，后者不对 <code>shape</code> 进行赋值，则得到的图形会有两个图例块。</p>
 <p><img alt="" src="../px2.png" /></p>
-<p>更简洁更准确的做法应该是先对这些点进行标签，然后设置每个标签的color, shape以及linetype，代码如下：</p>
+<p>更简洁更准确的做法是添加新变量 <code>group</code> 对这些点进行标签，然后用于设置每个标签的 <code>color</code>, <code>shape</code> 以及 <code>linetype</code>，代码如下：</p>
 <div class="highlight"><pre><span></span><code><span class="n">plotdatax</span><span class="o">$</span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ifelse</span><span class="p">(</span><span class="n">datax</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">dataxo</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c1&quot;</span><span class="p">)</span>
 
 <span class="n">px</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">plotdatax</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">group</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">group</span><span class="p">,</span><span class="w"> </span><span class="n">linetype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">group</span><span class="p">))</span><span class="o">+</span>
@@ -2824,7 +2822,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2018</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 30, 2023</span>
       
         <br>
         Created:
@@ -2837,6 +2835,53 @@
 
 
 
+
+  <h2 id="__comments">Comments</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="szcf-weiya/techNotes"
+        data-repo-id="MDEwOlJlcG9zaXRvcnk4NDA2NDk0Mw=="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOBQK6r84CSDX_"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
 
                 
               </article>
