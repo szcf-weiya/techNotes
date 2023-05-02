@@ -7,5 +7,5 @@
 # info=`wmctrl -d`
 n=`wmctrl -l | grep "bilibili\|中國人線上看\|YouTube\|知乎" | wc -l`
 if [ $n -gt 0 ]; then
-    notify-send -i /home/weiya/.local/share/icons/warning-icon.svg -u critical "不要玩!!!（整理邮件？整理Issues？冥想？）"
+    notify-send -i /home/weiya/.local/share/icons/warning-icon.svg -u critical "不要玩!!!（整理邮件、手写笔记、Issues？冥想？）"
 fi
