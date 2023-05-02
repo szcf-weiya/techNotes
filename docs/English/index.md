@@ -15,6 +15,10 @@
 - uterine: 子宫的；同母异父的
 - perilous: 危险的
 - respiratory syncytial virus: 呼吸道合胞病毒
+- polarimetry: 偏振测定法
+- vicinity: 附近，周围地区
+- toroidal: 环面，环状
+- polychrome: 彩色画
 
 ## 2023.03
 
@@ -1268,7 +1272,6 @@
 - [twixter](https://en.wikipedia.org/wiki/Twixter) (a new generation of young adults) and **kidult (大小孩，老顽童)**
 - we have trivialized what is actually the defining decade of adulthood.
 - you have robbed that person of his urgency and ambition
-- that sounds a little flip
 - the post-**millennial (一千年的)** midlife crisis isn't buying a red sports car.
 - displayed his temper more than his ambition
 - she hangs her head in her lap, and she sobbed for most of the hours.
@@ -1378,7 +1381,7 @@
 - Stanley Kubrick's "2001: A space Odyssey" came to the theaters.
 - Now, HAL was a **sentient** computer, designed to guide the Discovery spacecraft from the Earth to **Jupiter**.
 - our fear of being **subjugated** by some unfeeling, artificial intelligence.
-- I believe that such fears are **unfounded**
+- I believe that such fears are **unfounded (莫须有的)**
 - we are building machines of exquisite, beautiful complexity and grace
 - but without the **homicidal** tendencies
 - another fascinating idea in the mission profile places **humanoid (仿真机器人)** robots on the surface of Mars
@@ -1425,7 +1428,7 @@
 8. **disparage (轻视，贬低，批评，非难)** a number of journals
 9. Is it the number of articles that they publish that end up being **bogus**?
 1. Linguist and public intellectual [Steven Pinker](https://zh.wikipedia.org/wiki/%E5%8F%B2%E8%BF%AA%E8%8A%AC%C2%B7%E5%B9%B3%E5%85%8B) got into trouble recently when it turned out that he'd been offering expert advice to the legal team of now-disgraced financier [Jeffrey Epstein](https://www.zhihu.com/question/339846979).
-2. **taboo** questions raise our blood pressure and threaten moral panic
+2. **taboo (避讳，忌讳)** questions raise our blood pressure and threaten moral panic
 3. I thought [A Fish Called Wanda](https://movie.douban.com/subject/1292440/) was **hilarious** in 1988 and I happened to see it again last year, and I found it hilarious the second time as well. Not **cringeworthy** at all.
 
 from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/14/steven-pinker-on-torture/)
@@ -1693,7 +1696,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. exclusively
 3. rigorous and **concise (简明的，简练的)**
 4. Prologue
-5. reminiscent
 1. promptitude: 敏捷，果断
 1. ergodic
 2. arduous
@@ -1753,7 +1755,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. make the all discussion **moot (无讨论意义)**
 1. plethysmography: 容积标记法
 2. inductance: 电感，感应系数
-3. prescient
+3. prescient: 预知的，先觉的
 4. envisage
 
 ## 2018.04
@@ -2233,7 +2235,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 42. circuitously
 43. credulously
 44. envision
-45. detoxify
+45. detoxify: 解毒，排毒
 46. extract
 47. stake: 股份，赌注
 48. sequestered: 僻静的，隐蔽的，与外界隔绝的
