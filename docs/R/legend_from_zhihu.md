@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # ggplot中图例的使用（以某知乎问题为例）
 
 在知乎上浏览到这样一个问题[R语言ggplot如何添加图例？ - 知乎](https://www.zhihu.com/question/267400251)，问题关键在于如何自定义满足下列条件的legend
@@ -54,6 +58,9 @@ ggplot()+#geom_ribbon(data=ribbon,aes(ymin=min,ymax=max,x=x.ribbon,fill='lightgr
                       values =c('black'='black','red'='red'), labels = c('c2','c1'))
 ```
 
+!!! warning "`scale_xxx_manual` vs `scale_xxx_discrete`"
+    `scale_xxx_discrete` 不用指定 `values`，只修改 name 和 label，而 `scale_xxx_manual` 必须指定 `values`。
+
 ![](multi_dataset_legends.png)
 
 ## 单一shape或linetype
@@ -72,7 +79,7 @@ px <- ggplot()+
 
 ![](px_o.png)
 
-但图例同时存在shape和linetype，对于普通的`plot`，可以用`NA`来使得point type或linetype不显示，具体可以参考[R plot: Displaying both point type and line type in legend | stackoverflow](https://stackoverflow.com/questions/37897984/r-plot-displaying-both-point-type-and-line-type-in-legend)。
+但图例同时存在 `shape` 和 `linetype`，对于普通的 `plot`，可以用 `NA` 来使得 `point type` 或 `linetype` 不显示，具体可以参考 [R plot: Displaying both point type and line type in legend | stackoverflow](https://stackoverflow.com/questions/37897984/r-plot-displaying-both-point-type-and-line-type-in-legend)。
 
 ```r
 set.seed(0); x1 <- rnorm(10); x2 <- rnorm(10); x3 <- rnorm(10)
@@ -87,7 +94,7 @@ legend(6, 0.9*max(c(x1,x2,x3)), legend = c("x1", "x2", "x3"),
 
 ![](both_points_lines_in_plot.png)
 
-受此启发，也尝试在ggplot中使用，尝试后发现，对于`shape`用`NA`可以不显示点的形状，而`linetype`要用`0`才能不显示线条。
+受此启发，也尝试在 ggplot2 中使用，尝试后发现，对于 `shape` 用 `NA` 可以不显示点的形状，而 `linetype` 要用 `0` 才能不显示线条。
 
 ```r
 px <- ggplot()+
@@ -114,13 +121,13 @@ px + theme(legend.title=element_blank(),
 
 ![](warnings.png)
 
-原因是geom_point中的aes没有linetype参数；
+原因是 `geom_point` 中的 `aes` 没有 `linetype` 参数；
 
-而geom_line中的aes没有shape参数，但如果前者不对linetype进行赋值，后者不对shape进行赋值，则得到的图形会有两个图例块。
+而 `geom_line` 中的 `aes` 没有 `shape` 参数，但如果前者不对 `linetype` 进行赋值，后者不对 `shape` 进行赋值，则得到的图形会有两个图例块。
 
 ![](px2.png)
 
-更简洁更准确的做法应该是先对这些点进行标签，然后设置每个标签的color, shape以及linetype，代码如下：
+更简洁更准确的做法是添加新变量 `group` 对这些点进行标签，然后用于设置每个标签的 `color`, `shape` 以及 `linetype`，代码如下：
 
 ```r
 plotdatax$group = ifelse(datax == dataxo, "c2", "c1")
