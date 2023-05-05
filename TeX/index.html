@@ -1691,47 +1691,6 @@
     Basic
   </a>
   
-    <nav class="md-nav" aria-label="Basic">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#line-breaks" class="md-nav__link">
-    line breaks
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#at-the-end-of-lines" class="md-nav__link">
-    % at the end of lines
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fontsize" class="md-nav__link">
-    fontsize
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#punctuation-in-formula" class="md-nav__link">
-    punctuation in formula
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#misc" class="md-nav__link">
-    misc
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -3165,47 +3124,6 @@
     Basic
   </a>
   
-    <nav class="md-nav" aria-label="Basic">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#line-breaks" class="md-nav__link">
-    line breaks
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#at-the-end-of-lines" class="md-nav__link">
-    % at the end of lines
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fontsize" class="md-nav__link">
-    fontsize
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#punctuation-in-formula" class="md-nav__link">
-    punctuation in formula
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#misc" class="md-nav__link">
-    misc
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -3810,37 +3728,57 @@ $<span class="w"> </span>which<span class="w"> </span>pdflatex
 </code></pre></div>
 <p>参考 <a href="https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository">Change TeX Live Main Repository</a></p>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<ul>
-<li>space after LaTeX commands, </li>
-</ul>
+<details class="tip">
+<summary><code>\xspace</code>: space after LaTeX commands</summary>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>xspace<span class="nb">}</span>
 <span class="k">\newcommand\foo</span><span class="nb">{</span>foo<span class="k">\xspace</span><span class="nb">}</span>
 </code></pre></div>
-<ul>
-<li>non-breaking space <code>~</code> in <code>Figure~\ref{fig:}</code>.</li>
-</ul>
-<h3 id="line-breaks">line breaks<a class="headerlink" href="#line-breaks" title="Permanent link">&para;</a></h3>
+</details>
+<div class="admonition info">
+<p class="admonition-title">Norm: non-breaking space <code>~</code> in reference</p>
+<p>non-breaking space <code>~</code> in <code>Figure~\ref{fig:}</code>.</p>
+</div>
+<details class="tip">
+<summary>different ways for line breaks</summary>
 <ul>
 <li><code>\\</code>, <code>\newline</code>, <code>\tabularnewline</code> <a href="https://tex.stackexchange.com/questions/78796/difference-between-and-tabularnewline"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59Z"/></svg></span></a>: when writing a table, the first one can be confused, while the second one ends the line in a cell, and the latter ends the rows of the table. A good side is that when writing tex using julia, <code>raw"\command"</code> does not need to escape <code>\</code>, but it is still required to use <code>raw"\\\\"</code> to represent <code>\\</code>.</li>
 <li>break line in cells of table: <code>\makecell{A\\ B}</code> after loading <code>\usepackage{makecell}</code>. <a href="https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
-<h3 id="at-the-end-of-lines"><code>%</code> at the end of lines<a class="headerlink" href="#at-the-end-of-lines" title="Permanent link">&para;</a></h3>
+</details>
+<details class="tip">
+<summary><code>%</code> at the end of lines</summary>
 <p>since <code>%</code> starts a comment that goes to the end of the line, then the normal effect is that it does not insert the space (or a <code>par</code>) from the newline. It would be necessary when creating multiple figures horizontally using <code>subfigure</code> environment. <a href="https://github.com/szcf-weiya/Cell-Video/blob/ec3c2f9c9c76df46f099948435e473992212e171/report/technical-report2.tex#L1314">An real example</a>. More details can be found in <a href="https://tex.stackexchange.com/questions/7453/what-is-the-use-of-percent-signs-at-the-end-of-lines-why-is-my-macro-creat"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38h12.56M6.77 14.32l.37-1.76 8.79 1.85-.37 1.76-8.79-1.85m1.16-4.21.76-1.61 8.14 3.78-.76 1.62-8.14-3.79m2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37-6.9-5.75m4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21 1.44-1.07M6.59 18.41v-1.8h8.98v1.8H6.59Z"/></svg></span>What is the use of percent signs (%) at the end of lines?</a></p>
-<h3 id="fontsize">fontsize<a class="headerlink" href="#fontsize" title="Permanent link">&para;</a></h3>
+</details>
+<details class="warning">
+<summary>fontsize: only recognize 10-12pt</summary>
 <p>In the following command</p>
 <div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="na">[12pt]</span><span class="nb">{</span>article<span class="nb">}</span>
 </code></pre></div>
-<p>the option can be recongized only <code>10pt</code>, <code>11pt</code> and <code>12pt</code>.</p>
+<p>the option can be recognized only <code>10pt</code>, <code>11pt</code> and <code>12pt</code>.</p>
 <p>Refer to <a href="https://tex.stackexchange.com/questions/413319/how-is-14pt-giving-font-size-smaller-than-12pt">How is 14pt giving font size smaller than 12pt?</a></p>
-<h3 id="punctuation-in-formula">punctuation in formula<a class="headerlink" href="#punctuation-in-formula" title="Permanent link">&para;</a></h3>
+</details>
+<details class="info">
+<summary>Norm: punctuation in formula</summary>
 <blockquote>
 <p>Displayed equation usually are considered to be part of the preceding sentence, that is it will get the very same punctuation as if it was inline math</p>
 </blockquote>
 <p>Refer to <a href="https://tex.stackexchange.com/questions/7542/for-formal-articles-should-a-displayed-equation-be-followed-by-a-punctuation-to">For formal articles, should a displayed equation be followed by a punctuation to conform to the language grammar?</a></p>
-<h3 id="misc">misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://tex.stackexchange.com/questions/826/symbols-instead-of-numbers-as-footnote-markers">symbols instead of numbers a footnote markers</a>: <code>\usepackage[symbol]{footmisc}</code></li>
-</ul>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">footnote: symbols instead of numbers as markers</p>
+<p><code>\usepackage[symbol]{footmisc}</code> (<a href="https://tex.stackexchange.com/questions/826/symbols-instead-of-numbers-as-footnote-markers"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>)</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">footnote: without marker</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">\newcommand\blfootnote</span><span class="na">[1]</span><span class="nb">{</span><span class="c">%</span>
+    <span class="k">\begingroup</span>
+    <span class="k">\renewcommand\thefootnote</span><span class="nb">{}</span><span class="k">\footnote</span><span class="nb">{</span>#1<span class="nb">}</span><span class="c">%</span>
+    <span class="k">\addtocounter</span><span class="nb">{</span>footnote<span class="nb">}{</span>-1<span class="nb">}</span><span class="c">%</span>
+    <span class="k">\endgroup</span>
+<span class="nb">}</span>
+</code></pre></div>
+Refer to <a href="https://tex.stackexchange.com/questions/30720/footnote-without-a-marker"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+</div>
 <h2 id="two-columns">Two Columns<a class="headerlink" href="#two-columns" title="Permanent link">&para;</a></h2>
 <ul>
 <li>use star version <code>table*</code> and <code>figure*</code> to cross two columns, and note that not support <code>[H]</code> option. See also <a href="https://tex.stackexchange.com/questions/263685/latex-table-star-positioning-double-column-tables"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>, <a href="https://github.com/vtex-soft/texsupport.ims-sts/blob/d9e80b69aa3b237e445c94226002248e36e226d5/sts-sample.tex#L293"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></li>
@@ -4456,7 +4394,7 @@ $<span class="w"> </span>latexdef<span class="w"> </span>-p<span class="w"> </sp
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 31, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 5, 2023</span>
       
         <br>
         Created:
