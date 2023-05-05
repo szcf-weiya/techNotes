@@ -94,45 +94,58 @@ If without root privilege, when running `install-tl`, type `D` to change the dir
 
 ## Basic 
 
-- space after LaTeX commands, 
+??? tip "`\xspace`: space after LaTeX commands"
 
-```tex
-\usepackage{xspace}
-\newcommand\foo{foo\xspace}
-```
+	```tex
+	\usepackage{xspace}
+	\newcommand\foo{foo\xspace}
+	```
 
-- non-breaking space `~` in `Figure~\ref{fig:}`.
+!!! info "Norm: non-breaking space `~` in reference"
+	non-breaking space `~` in `Figure~\ref{fig:}`.
 
-### line breaks
+??? tip "different ways for line breaks"
 
-- `\\`, `\newline`, `\tabularnewline` [:material-stack-overflow:](https://tex.stackexchange.com/questions/78796/difference-between-and-tabularnewline): when writing a table, the first one can be confused, while the second one ends the line in a cell, and the latter ends the rows of the table. A good side is that when writing tex using julia, `raw"\command"` does not need to escape `\`, but it is still required to use `raw"\\\\"` to represent `\\`.
-- break line in cells of table: `\makecell{A\\ B}` after loading `\usepackage{makecell}`. [:link:](https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell)
+	- `\\`, `\newline`, `\tabularnewline` [:material-stack-overflow:](https://tex.stackexchange.com/questions/78796/difference-between-and-tabularnewline): when writing a table, the first one can be confused, while the second one ends the line in a cell, and the latter ends the rows of the table. A good side is that when writing tex using julia, `raw"\command"` does not need to escape `\`, but it is still required to use `raw"\\\\"` to represent `\\`.
+	- break line in cells of table: `\makecell{A\\ B}` after loading `\usepackage{makecell}`. [:link:](https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell)
 
-### `%` at the end of lines
+??? tip "`%` at the end of lines"
 
-since `%` starts a comment that goes to the end of the line, then the normal effect is that it does not insert the space (or a `par`) from the newline. It would be necessary when creating multiple figures horizontally using `subfigure` environment. [An real example](https://github.com/szcf-weiya/Cell-Video/blob/ec3c2f9c9c76df46f099948435e473992212e171/report/technical-report2.tex#L1314). More details can be found in [:material-stack-overflow:What is the use of percent signs (%) at the end of lines?](https://tex.stackexchange.com/questions/7453/what-is-the-use-of-percent-signs-at-the-end-of-lines-why-is-my-macro-creat)
+	since `%` starts a comment that goes to the end of the line, then the normal effect is that it does not insert the space (or a `par`) from the newline. It would be necessary when creating multiple figures horizontally using `subfigure` environment. [An real example](https://github.com/szcf-weiya/Cell-Video/blob/ec3c2f9c9c76df46f099948435e473992212e171/report/technical-report2.tex#L1314). More details can be found in [:material-stack-overflow:What is the use of percent signs (%) at the end of lines?](https://tex.stackexchange.com/questions/7453/what-is-the-use-of-percent-signs-at-the-end-of-lines-why-is-my-macro-creat)
 
-### fontsize
+??? warning "fontsize: only recognize 10-12pt"
 
-In the following command
+	In the following command
 
-```tex
-\documentclass[12pt]{article}
-```
+	```tex
+	\documentclass[12pt]{article}
+	```
 
-the option can be recongized only `10pt`, `11pt` and `12pt`.
+	the option can be recognized only `10pt`, `11pt` and `12pt`.
 
-Refer to [How is 14pt giving font size smaller than 12pt?](https://tex.stackexchange.com/questions/413319/how-is-14pt-giving-font-size-smaller-than-12pt)
+	Refer to [How is 14pt giving font size smaller than 12pt?](https://tex.stackexchange.com/questions/413319/how-is-14pt-giving-font-size-smaller-than-12pt)
 
-### punctuation in formula
 
-> Displayed equation usually are considered to be part of the preceding sentence, that is it will get the very same punctuation as if it was inline math
+??? info "Norm: punctuation in formula"
 
-Refer to [For formal articles, should a displayed equation be followed by a punctuation to conform to the language grammar?](https://tex.stackexchange.com/questions/7542/for-formal-articles-should-a-displayed-equation-be-followed-by-a-punctuation-to)
+	> Displayed equation usually are considered to be part of the preceding sentence, that is it will get the very same punctuation as if it was inline math
 
-### misc
+	Refer to [For formal articles, should a displayed equation be followed by a punctuation to conform to the language grammar?](https://tex.stackexchange.com/questions/7542/for-formal-articles-should-a-displayed-equation-be-followed-by-a-punctuation-to)
 
-- [symbols instead of numbers a footnote markers](https://tex.stackexchange.com/questions/826/symbols-instead-of-numbers-as-footnote-markers): `\usepackage[symbol]{footmisc}`
+
+!!! tip "footnote: symbols instead of numbers as markers"
+	`\usepackage[symbol]{footmisc}` ([:link:](https://tex.stackexchange.com/questions/826/symbols-instead-of-numbers-as-footnote-markers))
+
+!!! tip "footnote: without marker"
+	```tex
+	\newcommand\blfootnote[1]{%
+		\begingroup
+		\renewcommand\thefootnote{}\footnote{#1}%
+		\addtocounter{footnote}{-1}%
+		\endgroup
+	}
+	```
+	Refer to [:link:](https://tex.stackexchange.com/questions/30720/footnote-without-a-marker)
 
 ## Two Columns
 

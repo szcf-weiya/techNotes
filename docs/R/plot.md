@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Plot
 
 ## Base
@@ -188,6 +192,18 @@ A thorough tutorial refers to [Reproduce Figures with Lattice -- ESL CN](https:/
         scale_fill_manual(values=c("blue", "red"), labels=c("1", "2"))
     ```
     
+??? tip "square figure: `coord_equal` with `xlim/ylim`"
+    Only `coord_equal` is not enough.
+
+    ```R
+    > df = data.frame(x = runif(10), y = 0.5*runif(10))
+    > ggplot(df, aes(x, y)) + geom_point() + geom_abline(slope=1) + coord_equal() + xlim(c(0, 1)) + ylim(c(0, 1))
+    ```
+
+??? tip "hollow symbol: `fill = NA`"
+    [:link:](https://stackoverflow.com/questions/25632242/filled-and-hollow-shapes-where-the-fill-color-the-line-color)
+
+    but note that the default `shape=19` (solid disc) does not support `fill`, so use `shape=21` instead.
 
 ### multiple density plots
 

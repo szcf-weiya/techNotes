@@ -1904,7 +1904,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 8. The eruption of a volcano is **spontaneous (自发的)**.
 10. It is important because it sets animals with a sense of self apart from those without a sense of self.
 11. **empathy (同情，共鸣)**
-12. afoot
+12. plans are **afoot (计划中，进行中)**
 13. plating
 14. seigniorage: 铸币税；君权
 15. nostalgia

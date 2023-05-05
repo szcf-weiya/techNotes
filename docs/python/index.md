@@ -1057,6 +1057,15 @@ refer to [Writing mathematical expressions](https://matplotlib.org/users/mathtex
 	Also note that here `&` cannot be replaced by `and`.
 
 
+??? tip "apply function to column names"
+	one way is to use `list comprehension`,
+
+	```python
+	df.columns = [col[0:6] for col in df.columns]
+	```
+
+	see also [:link:](https://stackoverflow.com/questions/42788311/pandas-how-to-apply-function-to-column-names)
+
 ## `re`
 
 ### extract the starting position
