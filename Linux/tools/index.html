@@ -21,7 +21,7 @@
         <link rel="next" href="../../shell/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
       
 
@@ -3229,6 +3229,14 @@ d
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;FNR==NR{wanted[$0]; next} FNR in wanted&#39;</span><span class="w"> </span>lines.txt<span class="w"> </span>test.md
 </code></pre></div>
 <p>first came across in <a href="https://stackoverflow.com/a/26672005">selecting a large number of (specific) rows in file - Stack Overflow</a>, but it used <code>wanted[$0]++</code>, which does not make differences.</p>
+<div class="admonition tip">
+<p class="admonition-title">FPAT: split field in double quotes</p>
+<p>There might be commas outside the double quotes,
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>head<span class="w"> </span>-n1<span class="w"> </span>pheno_eur.csv<span class="w">  </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;BEGIN{ FPAT=&quot;([^,]+)|(\&quot;[^\&quot;]+\&quot;)&quot; } {print $1 $2 $3 $1356 $1987 $1986}&#39;</span>
+<span class="s2">&quot;eid&quot;&quot;sex&quot;&quot;age_recruit&quot;&quot;Body mass index (BMI)&quot;&quot;Systolic blood pressure, automated reading&quot;&quot;Diastolic blood pressure, automated reading&quot;</span>
+</code></pre></div>
+see also: <a href="https://www.gnu.org/software/gawk/manual/html_node/Splitting-By-Content.html#Splitting-By-Content"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>, <a href="https://stackoverflow.com/questions/7804673/escaping-separator-within-double-quotes-in-awk"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+</div>
 <h4 id="sum-of-a-column-of-numbers">sum of a column of numbers<a class="headerlink" href="#sum-of-a-column-of-numbers" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{s+=$1} END {print s}&#39;</span><span class="w"> </span>data.txt
 </code></pre></div>
@@ -4244,7 +4252,7 @@ $<span class="w"> </span>iconv<span class="w"> </span>-f<span class="w"> </span>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 5, 2023</span>
       
         <br>
         Created:
@@ -4416,7 +4424,7 @@ $<span class="w"> </span>iconv<span class="w"> </span>-f<span class="w"> </span>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
