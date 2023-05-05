@@ -112,6 +112,14 @@ $ awk 'FNR==NR{wanted[$0]; next} FNR in wanted' lines.txt test.md
 
 first came across in [selecting a large number of (specific) rows in file - Stack Overflow](https://stackoverflow.com/a/26672005), but it used `wanted[$0]++`, which does not make differences.
 
+!!! tip "FPAT: split field in double quotes"
+    There might be commas outside the double quotes,
+    ```bash
+    $ head -n1 pheno_eur.csv  | awk 'BEGIN{ FPAT="([^,]+)|(\"[^\"]+\")" } {print $1 $2 $3 $1356 $1987 $1986}'
+    "eid""sex""age_recruit""Body mass index (BMI)""Systolic blood pressure, automated reading""Diastolic blood pressure, automated reading"
+    ```
+    see also: [:link:](https://www.gnu.org/software/gawk/manual/html_node/Splitting-By-Content.html#Splitting-By-Content), [:link:](https://stackoverflow.com/questions/7804673/escaping-separator-within-double-quotes-in-awk)
+
 #### sum of a column of numbers
 
 ```bash
@@ -794,7 +802,7 @@ My application: [TeXtemplates: create a tex template](https://github.com/szcf-we
 	- [random pop up English words](../English/random.sh)
 	- [monitor status of watching videos](../check_video.sh)
     - [random pop up poems]()
-    
+
     ![image](https://user-images.githubusercontent.com/13688320/231346619-2f4cc62a-b76d-48bf-8833-d7227fa2dafa.png)
 
 

@@ -1,3 +1,7 @@
+## 2023.05
+
+- bladder: 膀胱，皮囊
+
 ## 2023.04
 
 - redaction: 编写，编辑
@@ -158,7 +162,7 @@
 
 ## 2022.08
 
-- Rent and electric may not comingle.
+- Rent and electric may not co-mingle.
 - addendum: 附录
 - force majeure: 不可抗拒
 - indemnify: 赔偿
@@ -1500,7 +1504,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 14. This seems to me to be a **bizarre (离奇的，古怪的)** sort of **techno-mysticism**.
 15. The **nascent (初期的，开始存在的，发生中的)** field of fair machine learning aims to ensure that decisions guided by algorithms are equitable.
 16. Over the last several years, three formal definitions of fairness have gained **prominence (出名，突出)**
-17. classification **parity**, meaning that common measures of predictive performance
+17. classification **parity (【尤指薪金或地位】平等；（两国货币的）平价)**, meaning that common measures of predictive performance
 18. One must carefully define and measure the targets of prediction to avoid **retrenching** biases in the data.
 19. A team of researchers inside **Pfizer (辉瑞，美国制药公司)** made a **startling** find in 2015: The company’s **blockbuster (重磅炸弹，了不起的人或事)** **rheumatoid (风湿病的，类风湿病的)** **arthritis (关节炎)** therapy [**Enbrel (恩利，注射用依那西普，Etanercept)**](https://baike.baidu.com/item/%E6%81%A9%E5%88%A9), a powerful **anti-inflammatory (抗炎的)** drug, appeared to reduce the risk of Alzheimer’s disease by 64 percent.
 20. A **synopsis (提要)** of its statistical findings prepared for outside publication, it says, did not meet its “rigorous scientific standards.”
@@ -1729,7 +1733,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. miraculously: 神奇的，非凡的
 1. boilerplate code: 样板代码
 1. coerce: 强迫，迫使
-2. legitimate
 1. toggle
 2. elicitation
 4. **Bristol (布里斯托)** is one of the most **congested (拥堵的)** cities in Britain.
@@ -1827,7 +1830,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 12. slab
 1. rampage: v. 横冲直撞；n. 狂暴行为
 2. rally: v. 召集，集合；n. 群众大会
-3. degradation
+3. degradation: 退化，降解
 4. dozens of: 许多
 6. tap into: 利用，挖掘，打入
 - LEDs use only a quarter the energy of **incandescent bulbs (白炽灯)**.
@@ -2143,7 +2146,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. Last but not least 最后但不是最不重要的一点
 1. calligrapher: 书法家
 2. decorator:（房屋的）油漆匠；适用于室内装饰的
-3. Islamic
+3. Islamic: 穆斯林的，伊斯兰教的
 4. parchment: 羊皮纸，羊皮纸文献
 5. angular
 6. **souk (露天市场，集市)**
@@ -2199,7 +2202,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. What is called **resignation (顺从，听从)** is confirmed desperation. 所谓听天由命，正是肯定的绝望。
 4. His **obsession (困扰，沉迷)** could make him by turns **hustling (急躁)**, mean and **dejected (沮丧的，灰心的)**.
     - hustle and bustle: 熙熙攘攘，忙碌
-5. dip, incise
+5. dip: 蘸，浸
 6. The farmer **bemoaned (惋惜，为...恸哭)** his loss.
 7. moral, mortal
     - moral code: 道德准则
