@@ -99,7 +99,6 @@
 - Primary Biliary Cirrhosis: 原发性胆汁性胆管炎
 - prothrobin: 凝血酶原
 - olfactory bulb: 嗅球，嗅觉中心
-- dendrogram: 树形图
 - **Peabody (乔治·皮博迪，美国企业家和慈善家)** Museum
 - GNNs **subsume (将……纳入)** CNNs and Transformers
 - **scrutinize (仔细查看，认真检查)** loss function!
