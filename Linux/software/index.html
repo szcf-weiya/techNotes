@@ -21,7 +21,7 @@
         <link rel="next" href="../tools/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.12">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
@@ -3952,6 +3952,27 @@ Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><spa
 </ul>
 <h2 id="wechat-in-linux">WeChat in Linux<a class="headerlink" href="#wechat-in-linux" title="Permanent link">&para;</a></h2>
 <details class="note">
+<summary>解码 .dat 图片</summary>
+<p>微信图片默认以 dat 格式存储，不能直接以图片形式打开。不过根据<a href="https://www.zhihu.com/question/393121310/answer/1606381900">网友分享</a>，实际上只是用了某个 magic code 对原图片进行异或处理。虽然不同帐号不同机器的 magic code 不一样，但是我们已知常见图片存储格式 jpeg 的 header 为 <code>FF D8</code>，而用 <code>xxd</code> 查看图片的 16 进制格式发现大多数 header 为 <code>14 33</code>，于是便可得到 magic code
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">xor</span><span class="p">(</span><span class="mh">0xffd8</span><span class="p">,</span><span class="w"> </span><span class="mh">0x1433</span><span class="p">)</span>
+<span class="mh">0xebeb</span>
+<span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">xor</span><span class="p">(</span><span class="mh">0xebeb</span><span class="p">,</span><span class="w"> </span><span class="mh">0x1433</span><span class="p">)</span>
+<span class="mh">0xffd8</span>
+</code></pre></div>
+所以我的 magic code 即为 <code>0xeb</code></p>
+<p>其它图片格式（如 png，它的 header 为 <code>8950</code>）也共享同一个 magic code，使用 <code>xxd</code> 得到的 16 进制格式的 header 为 <code>62bb</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">xor</span><span class="p">(</span><span class="mh">0x62bb</span><span class="p">,</span><span class="w"> </span><span class="mh">0xebeb</span><span class="p">)</span>
+<span class="mh">0x8950</span>
+</code></pre></div>
+<p>因为图片主要是 jpeg 格式，所以为了简单直接另存为 <code>.jpg</code>，当然可以很直接地根据 header 判断照片格式，</p>
+<div class="highlight"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="n">ls</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="o">~/</span><span class="n">WX</span><span class="o">/</span><span class="n">Image</span><span class="o">/</span><span class="mi">2023</span><span class="o">-</span><span class="mi">05</span><span class="o">/</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">xargs</span><span class="w"> </span><span class="o">-</span><span class="n">I</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="o">~/</span><span class="n">github</span><span class="o">/</span><span class="n">techNotes</span><span class="o">/</span><span class="n">decode_wechat_image</span><span class="w"> </span><span class="o">~/</span><span class="n">WX</span><span class="o">/</span><span class="n">Image</span><span class="o">/</span><span class="mi">2023</span><span class="o">-</span><span class="mi">05</span><span class="o">/</span><span class="p">{}</span><span class="w"> </span><span class="o">~/</span><span class="n">WXBP</span><span class="o">/</span><span class="n">Image</span><span class="o">/</span><span class="mi">2023</span><span class="o">-</span><span class="mi">05</span><span class="o">/</span><span class="p">{}</span><span class="o">.</span><span class="n">jpg</span>
+</code></pre></div>
+<p>而且即便格式错了（png 的存储为 jpg），Geeqie 仍可正常打开图片，虽然系统默认的 Image Viewer 会报错</p>
+<blockquote>
+<p>Error interpreting JPEG image file (Not a JPEG file: starts with 0x89 0x50)</p>
+</blockquote>
+</details>
+<details class="note">
 <summary>微信被其它人登录？</summary>
 <p>Post: 2022-11-05 22:49:27</p>
 <p>刷到这篇<a href="https://www.zhihu.com/question/564406006/answer/2744703293">讨论</a>，于是跑过去看看自己微信上的登录设备记录，“Settings &gt; Account Security &gt; Login Devices”，然后竟然发现里面有条“Windows 7” 的记录。</p>
@@ -4182,7 +4203,7 @@ xournalpp/now<span class="w"> </span><span class="m">1</span>.0.20-1~ubuntu18.04
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 17, 2023</span>
       
         <br>
         Created:
@@ -4354,7 +4375,7 @@ xournalpp/now<span class="w"> </span><span class="m">1</span>.0.20-1~ubuntu18.04
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c2be25ad.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
