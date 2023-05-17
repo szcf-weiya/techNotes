@@ -1214,7 +1214,6 @@
 - It was a **slugfest (争吵，对骂)**
 - **numb (v. 使失去知觉；adj. 麻木的)** **vulnerability (脆弱性，弱点)**
 - initiating sex with my wife
-- being turned down
 - getting laid off
 - banana nut **muffin (杯状小松糕)**
 - a way to discharge pain and discomfort
@@ -1734,7 +1733,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. boilerplate code: 样板代码
 1. coerce: 强迫，迫使
 1. toggle
-2. elicitation
+2. elicitation: 启发
 4. **Bristol (布里斯托)** is one of the most **congested (拥堵的)** cities in Britain.
 5. recurrent: 循环的，反复出现的
 1. lethal
@@ -1846,7 +1845,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 18. or so
 20. as to that: 就此而言
 21. red dwarf star
-22. bode
+22. bode: 预示；bide（等待，持续，经受） 的过去分词
 23. prism
 24. spectrum
 25. He rejected an objective understanding of color, in favor of a more subjective understanding.
