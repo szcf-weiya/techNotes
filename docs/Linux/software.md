@@ -1298,6 +1298,33 @@ Some references:
 
 ## WeChat in Linux
 
+??? note "解码 .dat 图片"
+    微信图片默认以 dat 格式存储，不能直接以图片形式打开。不过根据[网友分享](https://www.zhihu.com/question/393121310/answer/1606381900)，实际上只是用了某个 magic code 对原图片进行异或处理。虽然不同帐号不同机器的 magic code 不一样，但是我们已知常见图片存储格式 jpeg 的 header 为 `FF D8`，而用 `xxd` 查看图片的 16 进制格式发现大多数 header 为 `14 33`，于是便可得到 magic code
+    ```julia
+    julia> xor(0xffd8, 0x1433)
+    0xebeb
+    julia> xor(0xebeb, 0x1433)
+    0xffd8
+    ```
+    所以我的 magic code 即为 `0xeb`
+
+    其它图片格式（如 png，它的 header 为 `8950`）也共享同一个 magic code，使用 `xxd` 得到的 16 进制格式的 header 为 `62bb`
+
+    ```julia
+    julia> xor(0x62bb, 0xebeb)
+    0x8950
+    ```
+
+    因为图片主要是 jpeg 格式，所以为了简单直接另存为 `.jpg`，当然可以很直接地根据 header 判断照片格式，
+
+    ```julia
+    $ ls -1 ~/WX/Image/2023-05/ | xargs -I {} ~/github/techNotes/decode_wechat_image ~/WX/Image/2023-05/{} ~/WXBP/Image/2023-05/{}.jpg
+    ```
+
+    而且即便格式错了（png 的存储为 jpg），Geeqie 仍可正常打开图片，虽然系统默认的 Image Viewer 会报错
+
+    > Error interpreting JPEG image file (Not a JPEG file: starts with 0x89 0x50)
+
 ??? note "微信被其它人登录？"
 
     Post: 2022-11-05 22:49:27
