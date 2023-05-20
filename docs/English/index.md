@@ -1952,7 +1952,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 10. But the picture may not be as bleak as it seems.
 11. My ship was **tossed (使摇摆，挥动，颠簸)** about many days in storms off Cape Horn.
 12. To **perpetuate (使持久化，使永久化)** them it is our sacred duty to preserve it.
-13. The same lethargy, I am afraid, characterizes the use of our faculties and senses.
+13. The same **lethargy (无精打采；冷漠；没有热情)**, I am afraid, characterizes the use of our faculties and senses.
 14. It can also help perpetuate stereotypes, the inscrutable Japanese, bowing all the time, taking costs of pictures. Makes you wonder how the Japanese stereotype us.
 15. The children are apparently intrigued by the tale.
 16. The **intrigue (阴谋，诡计)** was quickly discovered, and the would-be assassins were arrested.
@@ -2224,7 +2224,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 28. aviculture
 29. postscript: 【信末的】附言；补充；
 30. cavalry, soldier
-31. prairie
+31. prairie: 北美草原
 32. perigee
 33. oral **cavity (洞，凹处；腔)**: 口腔
 34. cessation: 停止，终止，中断
