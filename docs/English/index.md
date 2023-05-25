@@ -22,7 +22,6 @@
 - polarimetry: 偏振测定法
 - vicinity: 附近，周围地区
 - toroidal: 环面，环状
-- polychrome: 彩色画
 
 ## 2023.03
 
@@ -133,9 +132,7 @@
 - rash: 皮疹
 - breastfeed: 用母乳喂养
 - meeting minute: 会议记录
-
 - opioid: 鸦片类药物
-
 - **sexual assault (性侵犯)** is any kind of nonconsensual contact, including rape, **groping (用手摸索)**, or any other form of nonconsensual sexual touching.
 - sexual harassment: 性骚扰
 - **Stalking (跟踪罪)** is repeated or obsessive unwanted attention directed toward an individual or group that is likely to cause alarm, fear, or substantial emotional distress.
@@ -144,19 +141,13 @@
 - abusive: 辱骂的，恶语的，毁谤的
 - **yelling (大喊，喊叫)** at a coworker in front of others when they made a mistake
 - retaliation: 报复
-
 - RSVP is an initialism derived from a French phrase, literally meaning "Respond, if you please".
-
 - accommodating: 乐于助人的，与人方便的
 - we hear from a US scientist falsely accused of hiding ties to China: 被诬告隐瞒与中国的关系
 - testimonial: 证明信，介绍信，推荐信
-
 - I appreciate your trying to be **proactive (积极主动的，主动出击的)** about completing the onboarding paperwork.
-
 - coaxial cables: 同轴电缆
-
 - The order is **rescinded (撤销，删除)**.
-
 - rigmarole: 乱七八糟的，无聊的
 
 ## 2022.08
@@ -1144,7 +1135,7 @@
 - **dodge (躲闪)** criticism
 - let's start with the **leadoff** to Pickett's article
 - academic **bureaucrats** and game-players taking a technical **dispute (纠纷，争端)**
-- attacks and name-calling against dissenters
+- attacks and name-calling against **dissenters (持不同意见者)**
 - **retreat (撤退)** into procedure
     - retreat into oneself: 退隐，离群索居
 - if someone at one of these universities had been caught robbing at a bank, would his colleagues have all **backed him up** like that?
@@ -1184,7 +1175,7 @@
 - little flyer
 - magic **pixie (小精灵)**
 - I tried to call deep on my courage.
-- data with a soul
+- data with a **soul (灵魂，心灵)**
 - expanding **perception (认识，观念，看法)**
 - he was just sweet-talking me.
 - put it into a **bento (盒饭，各式便当)** box
@@ -1235,7 +1226,7 @@
 - lean in to work
 - [hindsight is anything but 20/20](https://grammarist.com/proverb/hindsight-is-20-20-and-20-20-hindsight/).
 - sometimes memory is downright creative.
-- sophomore
+- sophomore: （大学、高中）二年级学生
 - live in tenements
 - bricklayers: 砌砖工
 - schizophrenia (精神分裂症)
@@ -1647,14 +1638,14 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. Women, especially beautiful ones, have long understood that there's nothing so **tantalizing (诱人的，引起好奇心的)** as something you can't understand.
 2. Theses species **hailed from (【车、船】来自；【人】出生于)** three different evolutionary **lineages (血统，家系，世系)**.
 1. vanilla: 普通的，寻常的，香草味的
-2. haystack
+2. haystack: 干草垛，干草堆
 3. authentic act: 「法」公证书，公证证书
     - authentic self: 本真自我
     - authentic materials: 真实材料
 5. antithetical
 6. rule of thumb
 7. opt for: 选取，赞成
-8. progeny
+8. progeny: 子孙，幼崽
 9. haploid: 单倍体
 - pairs of chains **coalesce (合并，联合)** after a random number of iterations.
 - insidious
@@ -1712,10 +1703,10 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 - Loneliness causes high blood pressure, high **cholesterol (胆固醇)**.
 1. mnemonic: 记忆的，增进记忆的
 2. acyclic: 非周期的；非循环的
-4. endow
+4. endow: 资助
 5. serum: 血清
 1. coronary: 冠状的
-2. retrospective
+2. retrospective: 回顾的，涉及以往的
 1. memo
 3. counter-example
 4. premiss: premise, [:link:](https://english.stackexchange.com/questions/145322/difference-between-premiss-and-premise)
@@ -1735,7 +1726,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. elicitation: 启发
 4. **Bristol (布里斯托)** is one of the most **congested (拥堵的)** cities in Britain.
 5. recurrent: 循环的，反复出现的
-1. lethal
+1. lethal: 致命的，可致死的
 2. incidence
 3. extant: 尚存的，现存的
 5. substrate
@@ -1757,7 +1748,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. plethysmography: 容积标记法
 2. inductance: 电感，感应系数
 3. prescient: 预知的，先觉的
-4. envisage
+4. envisage: 设想，想象，展望
 
 ## 2018.04
 
@@ -1813,10 +1804,10 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. metropolis: 大城市，大都市
 8. metallurgy: 冶金学
 1. till: 耕作，犁地；收银台
-2. dweller
-3. wriggle
+2. dweller: 居民；居住者
+3. wriggle: 蠕动；扭动身体
 4. manure: 肥料，粪肥
-1. molten
+1. molten: 熔化的，熔融的
 2. **mantle (地幔)**
 4. conceivably: 想象上
 5. A feeling of **drowsiness (drowsy, 昏昏欲睡的)** **crept (creep 的过去式，匍匐爬行)** over him.
@@ -1845,7 +1836,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 20. as to that: 就此而言
 21. red dwarf star
 22. bode: 预示；bide（等待，持续，经受） 的过去分词
-23. prism
+23. prism: 棱镜
 24. spectrum
 25. He rejected an objective understanding of color, in favor of a more subjective understanding.
 26. through and through: 完完全全，彻彻底底
@@ -1854,15 +1845,13 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 30. The **insulting (出言不逊的，侮辱的，无礼的)** remarks **stung (sting, 促使，刺激)** him to a **rage (愤怒)**.
 31. backbone
 32. **overthrow (推翻，打倒)** the government
-33. mount
 35. canvas: 帆布，画布
 36. pull (someone or something) out of a hat: To select someone or something entirely at random.
 37. Zurich: 苏黎世
 38. chanting, bang
 39. Cabaret Voltaire
-40. at the eleventh hour
 41. **marble (n/adj/v 大理石)** **statue (雕像)**
-42. polychrome
+42. polychrome: 彩色画；彩像
 43. disintegrated
 44. **heroism (英勇表现，英雄精神)**, **divinity (神，女神)**
 46. **armor (盔甲，护甲)**, **cloak (斗篷，遮盖物)**
@@ -1876,15 +1865,14 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 8. Raphael, frescos
 9. apprentices: 学徒，徒弟
 10. quarry: 采石场；苦心寻找
-11. to and fro
+11. to and fro: 前前后后
 12. carpenter (木匠), mason (石匠，泥瓦匠)
 13. portraiture, portrait artist
-14. crucial
 15. make **headway (进展，前进)**
 16. contemplative: 深思熟虑的，沉思的，冥想者
-17. vague
+17. vague: 含糊的，不明确的
 19. close-up: 影视特写；详细检查；详图
-20. petal
+20. petal: 花瓣
 21. **juxtapose (并列)** these two perspectives, each of which connect statistical graphics to literature, but in a different way.
 22. archaeology
 23. oversee
@@ -1999,12 +1987,12 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 7. He **veered (转向)** the car **abruptly (突然地，意外地)** to the right to avoid a **collision (碰撞，冲突)**.
 8. She is **venerated (尊敬，崇敬)** by the public as a **saint (圣人，道德崇高的人)**.
 9. He was **vituperated (谩骂，辱骂)** for betraying his friends.
-10. We do not have even the faintest inkling of what the project was all about.
-11. A suspension without pay is condign punishment for breaking the company's code of business ethics.
+10. We do not have even the **faintest (微弱的，微小的)** inkling of what the project was all about.
+11. A suspension without pay is **condign (适当的，应得的)** punishment for breaking the company's code of business ethics.
 12. All people **concurred (同意，赞同)** to pass the reform legislation.
 13. The administration had nothing but contempt for the ultimate Frisbee team and frequently spoke **disdainfully (轻蔑地，不屑一顾地)** of it.
 14. We accepted his offer to pay for our dinners without **demur (提出异议，表示反对)**.
-15. an impartial and perspicacious judge
+15. an impartial and **perspicacious (敏锐的，有洞察力的，精辟的)** judge
 16. Her skill and talent **ennoble (封为贵族，使更崇高)** her profession.
 17. The kind of ennui comes from having too much time on one's hands and too little will to find something productive to do.
 18. **ensconce (安置，隐藏)** the spare house key in a place where no thief would think to look.
@@ -2134,9 +2122,9 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. Seen from a distance, the facade appears like a rigid volume, but dissolves into a network of structures and levels as you come closer.
 7. There is another absorbing aspect to this book: its recapitulation of the author's rise as an architecture critic.
 8. Up to this point, the legends and histories of the three races mostly agree.
-9. protractor
-10. trace metal
-11. diatom
+9. protractor: 量角器，分度规
+10. trace metal: 痕量金属
+11. diatom: 硅藻
 - a parabola with focus and **directrix (准线)**
 - eccentricity: 离心率；怪癖，古怪行为
 - A condition number of about 10^15, which is very nearly the **reciprocal (倒数)** of double precision roundoff.
@@ -2175,7 +2163,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 10. most people are extremely **resilient (（物体或材料）能复原的；有弹性的；【人的性格】能迅速恢复或重新振作的；适应性强的)** able to withstand **trauma (外伤，心理创伤)**.
 11. resiliency in the face of challenge
 10. interlocking: 互锁，联动
-11. snap
+11. snap: 匆忙的，仓促的；突然；厉声说，怒气冲冲地说
 12. blowhole: （鲸头顶的）呼吸孔
 14. sacs: 囊，上衣
 15. spoiled meat
@@ -2189,7 +2177,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 22. ConvNets went from **obscure (费解的)** models that were **shrouded (覆盖，隐藏)** in skepticism to rockstars of Computer Vision, present as a core building block in almost every new Computer Vision paper.
 23. ward off: 挡开，架开
 24. The source of indoor **VOC (voltile organic compounds, 挥发性有机化合物)** could be multiple and it may be also be contributed by the use of **detergents (洗涤剂，洗衣粉)** and **fragrance (香气，香水)** (room fragrance and **perfume (香水，香料)**) in indoor environment.
-25. octopus
+25. octopus: 章鱼
 26. A large factory is supposed to built near the community according to the announcement issued by a company.
 27. There is a growing awareness of both the positive and negative influences that the construction plan brings to our community.
 28. Participating in community activities is a practical and effective approach for teenagers to enhance their social skills. For example, if a teenager, who is not a sociable person, seizes an opportunity to work in a community as a volunteer for hosting an English conversations group, he is capable of practicing his communication skills by conversing with people of different ages who he might not be acquainted with it. Such an experience enables him to overcome the fear of speaking in front of a group of strangers and master the skills of how to communicate with different kinds of people in an approximate way, both of which contribute to the improvement of his social skills, particularly his communication skills.
@@ -2213,38 +2201,36 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 14. boom, flourish
 17. **bull (公牛，废话，彪形大汉)**, **bullet (子弹，弹丸)**
 18. buoyant, prosperous
-19. by and large
+19. by and large: 总体说来
 21. surge: 浪涌，激增
 22. The conflicts has **escalated (逐步升级，逐步扩大)** into violence.
 23. conference
-24. linguist
-25. catastrophe
+24. linguist: 语言学家
+25. catastrophe: 灾难，灾祸
 26. They will live only in the songs and **chronicles (编年史)** of their **exterminators (扑灭的人，害虫驱除剂)**.
-27. deduction
-28. aviculture
+27. deduction: 演绎，推理
+28. aviculture: 养鸟，鸟类饲养
 29. postscript: 【信末的】附言；补充；
 30. cavalry, soldier
 31. prairie: 北美草原
-32. perigee
+32. perigee: 近地点（绕地运动的天体轨道上离地心最近点）
 33. oral **cavity (洞，凹处；腔)**: 口腔
 34. cessation: 停止，终止，中断
-36. encompass
+36. encompass: 包含，包围
 37. champion, support
 39. **artisan (工匠，手艺人)**
-40. symbiosis
-41. lukewarm
-42. circuitously
-43. credulously
-44. envision
+40. symbiosis: 共生关系；互惠互利的关系
+41. lukewarm: 微温的；不冷不热的；温和的
+42. circuitous: 迂回的，绕道的，曲折的
+43. credulously: 轻信地，易受骗地
+44. envision: 想象，展望
 45. detoxify: 解毒，排毒
-46. extract
 47. stake: 股份，赌注
 48. sequestered: 僻静的，隐蔽的，与外界隔绝的
 49. recreation: 娱乐，消遣
 50. reclaim: 开垦，改造
-51. silt
+51. silt: 淤泥
 52. land **reclamation (开垦，回收，再生)** and sustainable development
-1. supplement
 1. spade
 2. deck
 1. [nilpotent](https://en.wikipedia.org/wiki/Nilpotent) matrix: 幂零矩阵
