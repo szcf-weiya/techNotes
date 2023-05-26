@@ -62,7 +62,6 @@
 
 ## 2023.01
 
-- plasma: 血浆
 - Interstitial Lung Disease (ILD)
 - stringent: 严格的，严厉的
 - strand: 缕
