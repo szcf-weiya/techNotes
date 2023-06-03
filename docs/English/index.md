@@ -1758,7 +1758,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 - And **defusing (平息，缓和，拆除【炸弹的】引信)** the issue should pave the way for more **nuanced (微妙的，具有细微差别的)** and constructive politics.
 - with a **grain of salt** (持保留态度): an English language **idiom (成语，习语)** that means to view something with skepticism or not to interpret something literally.
 - **Sediments (沉积物)** between a **glacier (冰河，冰川)** and the ground may also **facilitate (使便利)** slippage.
-- ~~collinearity~~
 
 ## 2018.02
 
