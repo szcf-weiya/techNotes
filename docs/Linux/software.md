@@ -862,6 +862,9 @@ In fact, the following client on Ubuntu is also in the command-line form. But us
     - since there is no response, click to install the latest Onedrive 
     
     
+!!! tip "switch from Windows to Ubuntu: unsupported reparse point"
+    
+    Enable to download every files to disk in Windows. Refer to [:link:](https://askubuntu.com/questions/1345356/files-from-windows-with-unsupported-reparse-point-on-ubuntu), [:link:](https://github.com/abraunegg/onedrive/blob/master/docs/advanced-usage.md#configuring-the-client-for-use-in-dual-boot-windows--linux-situations)
 
 ## OpenShot
 
