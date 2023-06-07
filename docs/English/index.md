@@ -2170,7 +2170,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 17. **pepper (辣椒，胡椒)**, **aromatic (香料，芳香植物)**, **bark (咆哮，吠叫)**, **cinnamon (肉桂)**, **ginger (生姜)**, **clove (丁香)**, **maize (玉米)**
     - garlic clove: 大蒜瓣
 18.  boil it down
-19. astronomical1
 20. diplomacy
 21. immerse yourself in **exotic (外来的，异国的)** languages, 
 22. ConvNets went from **obscure (费解的)** models that were **shrouded (覆盖，隐藏)** in skepticism to rockstars of Computer Vision, present as a core building block in almost every new Computer Vision paper.
