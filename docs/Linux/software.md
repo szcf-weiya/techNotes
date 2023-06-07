@@ -849,6 +849,20 @@ In fact, the following client on Ubuntu is also in the command-line form. But us
     $ onedrive --synchronize --sync-shared-folders [--resync]
     ```
 
+!!! tip "sync selected shared folder on Windows"
+    
+    Since there is unknown error for syncing shared folder on Ubuntu, I tried to download the folder manually. However, there is a limit on number of files when downloading, it is 1000. 
+    
+    Refer to <https://www.eduhk.hk/ocio/content/faq-how-sync-shared-me-onedrive-folders-your-local-computer>
+    
+    Since I dont want to sync other files, so pause the sync of other files.
+    
+    - in the browser, go to the folder that needs to be synced
+    - click sync
+    - since there is no response, click to install the latest Onedrive 
+    
+    
+
 ## OpenShot
 
 !!! info

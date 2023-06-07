@@ -706,6 +706,9 @@ swapon /mnt/swapfile
 
 挂载成功后就可以通过 `free -h` 查看内存情况。
 
+!!! warning "swapfile on PSSD"
+	如果 swapfile 在外接移动硬盘上，则开机时需要提前插好外接硬盘。否则会卡在开机那一步。反之，如果为了追求便携性不依赖于移动硬盘，则最后不要在移动硬盘中创建 swapfile.
+
 参考 [Linux下如何添加虚拟内存](http://www.lining0806.com/linux%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/)
 
 这个方法也可以解决 "virtual memory exhausted: Cannot allocate memory" 的问题。
