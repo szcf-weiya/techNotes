@@ -120,6 +120,14 @@ first came across in [selecting a large number of (specific) rows in file - Stac
     ```
     see also: [:link:](https://www.gnu.org/software/gawk/manual/html_node/Splitting-By-Content.html#Splitting-By-Content), [:link:](https://stackoverflow.com/questions/7804673/escaping-separator-within-double-quotes-in-awk)
 
+!!! tip "skip the first row"
+    `awk 'NR > 1{print $8}'`
+
+!!! tip "split strings"
+    ```bash
+    echo "1:2:3" | awk '{split($0, a, ":"); print a[1]}'
+    ```
+
 #### sum of a column of numbers
 
 ```bash
@@ -345,23 +353,27 @@ where `SOURCE` can be multiple files, inspired from [Copying multiple specific f
 
 ## `cut`
 
-To select the first field of a file `file.txt`,
+??? tip "get the first field"
+    To select the first field of a file `file.txt`,
 
-```shell
-a=$(cut -d'.' -f1 <<< $1)_test
-echo $a
-```
+    ```shell
+    a=$(cut -d'.' -f1 <<< $1)_test
+    echo $a
+    ```
 
-where `-d'.'` is to define the delimiter, and then `-f1` get the first field.
+    where `-d'.'` is to define the delimiter, and then `-f1` get the first field.
 
-If we need to get the last field, we can use `rev`, i.e.,
+??? tip "get the last field"
+    If we need to get the last field, we can use `rev`, i.e.,
 
-```bash
-echo 'maps.google.com' | rev | cut -d'.' -f 1 | rev
-```
+    ```bash
+    echo 'maps.google.com' | rev | cut -d'.' -f 1 | rev
+    ```
 
-refer to [How to find the last field using 'cut'](https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut) and [10 command-line tools for data analysis in Linux](https://opensource.com/article/17/2/command-line-tools-data-analysis-linux)
+    refer to [How to find the last field using 'cut'](https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut) and [10 command-line tools for data analysis in Linux](https://opensource.com/article/17/2/command-line-tools-data-analysis-linux)
 
+??? tip "get multiple fields"
+    `-f 1-10`
 
 ## `date`
 

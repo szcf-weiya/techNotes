@@ -2,6 +2,17 @@
 
 - awry
 - odour
+- spinoff: 副产品；附带的发展；续集
+- psychoanalysis: 精神分析（或疗法）
+- how **dengue (登革热)** makes your own immune system work against you
+- perverse: 执拗的，任性的，不同情理的
+- membrane: 细胞膜
+- as the academic year **winds down (逐步结束)**
+- **anorexia (厌食症)** nervosa: 神经性食欲缺乏
+- colorectal cancer: 结肠直肠癌
+- Sleep is a function of two physiologic functions, the homeostatic (内环境稳定的) process (process S) and the circadian (生理节奏的) process (process C).
+- zeitgeber: 环境钟
+- staple: 主食；订书钉；装订
 
 ## 2023.05
 
@@ -14,7 +25,7 @@
 - Lay Summary: 简述
 - herbal
 - homeopathic
-- continental crust
+- continental crust: 大陆地壳
 - greasy: 多油的
 - prosthesis: 假肢
 - epilepsy: 癫痫，羊痫风
@@ -1181,7 +1192,7 @@
 - I tried to call deep on my courage.
 - data with a **soul (灵魂，心灵)**
 - expanding **perception (认识，观念，看法)**
-- he was just sweet-talking me.
+- he was just **sweet-talking (奉承巴结)** me.
 - put it into a **bento (盒饭，各式便当)** box
 - **lean (倾斜，倚靠)** into the discomfort of the work
 - that was my **mantra (咒语，真言)**
@@ -1414,7 +1425,6 @@
 4. I remain fearful that someone will **nuke (用核武器攻击)** our city.
 6. cognitive **illusion (错觉，幻想)**
 7. the high-end
-8. Wasn't there something strange about the extreme **disparity (不同，不一致)** in public reactions?
 1. a style that is so simple and open and **guileless (厚道的，老实的)** that it approaches **parody (拙劣的模仿，荒谬的替代物)**.
     - **The Remains of the Day (长日将尽)** [:link:](https://en.wikipedia.org/wiki/The_Remains_of_the_Day) is clearly **parodic (parody, 戏仿，谐拟)** [:link:](https://zh.wikipedia.org/wiki/%E6%88%B2%E4%BB%BF), or at least a classic of the "unreliable narrator" genre.
 3. I found that some labeled the book as **satire (讽刺，讥讽)** and others took it straight.
@@ -1480,7 +1490,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. I think that the author shouldn’t have done the chapter **gimmick (噱头，骗人的玩意)**, and focused more on the more impactful awards.
 1. Because of all the uncertain and unknown assumptions that **underpin** statistical inferences, we should treat inferential statistics as highly unstable local descriptions of relations between assumptions and data, rather than as generalizable inferences about hypotheses or models.
 2. Acknowledging this uncertainty could help reduce the **allure** of selective reporting
-3. That paper is part of a much large literature in economics on Persistence or “Deep Origins” that shows how **medieval pogroms** **prefigure** Nazi support, adoption of the **plough** determines women’s rights etc.
+3. That paper is part of a much large literature in economics on Persistence or “Deep Origins” that shows how **medieval (中世纪的，约公元1000 到 1450 年) pogroms (大屠杀，集体迫害)** **prefigure (预示，预兆)** Nazi support, adoption of the **plough (犁，北斗星)** determines women’s rights etc.
 4. The impact of history on the present appears **indisputable** but is, as the extreme Moran statistic for spatial autocorrelation indicates, **spurious**.
 5. a battery of questions: 一连串的质问
 6. a bunch of data
@@ -2085,7 +2095,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 113. **Dilatory (拖拉的，拖延的)** means tardy or tending to delay.
 114. **Aloof (冷淡，冷漠)** means **standoffish (冷淡的，傲慢的)** and remote.
 1. Terse means abrupt and to the point.
-2. Apathetic means indifferent and unconcerned.
+2. **Apathetic (冷漠，淡漠，无动于衷)** means indifferent and unconcerned.
 3. **Bombastic (夸夸其谈的，过甚其词的)** means **pompous (虚华的，言辞浮夸的)** and pretentious.
 4. A euphemism is a mild expression used in place of an unpleasant or offensive one.
 5. A **reverie (白日梦，幻想，梦想)** is a daydream or state of dreamy meditation.
@@ -2206,7 +2216,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 19. by and large: 总体说来
 21. surge: 浪涌，激增
 22. The conflicts has **escalated (逐步升级，逐步扩大)** into violence.
-23. conference
 24. linguist: 语言学家
 25. catastrophe: 灾难，灾祸
 26. They will live only in the songs and **chronicles (编年史)** of their **exterminators (扑灭的人，害虫驱除剂)**.
