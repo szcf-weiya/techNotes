@@ -3237,6 +3237,15 @@ d
 </code></pre></div>
 see also: <a href="https://www.gnu.org/software/gawk/manual/html_node/Splitting-By-Content.html#Splitting-By-Content"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>, <a href="https://stackoverflow.com/questions/7804673/escaping-separator-within-double-quotes-in-awk"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">skip the first row</p>
+<p><code>awk 'NR &gt; 1{print $8}'</code></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">split strings</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1:2:3&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{split($0, a, &quot;:&quot;); print a[1]}&#39;</span>
+</code></pre></div>
+</div>
 <h4 id="sum-of-a-column-of-numbers">sum of a column of numbers<a class="headerlink" href="#sum-of-a-column-of-numbers" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{s+=$1} END {print s}&#39;</span><span class="w"> </span>data.txt
 </code></pre></div>
@@ -3381,15 +3390,25 @@ pdftk<span class="w"> </span>likelihoodfree-design-a-discussion-<span class="o">
 <li><code>-O</code>: save locally with the same remote name</li>
 </ul>
 <h2 id="cut"><code>cut</code><a class="headerlink" href="#cut" title="Permanent link">&para;</a></h2>
+<details class="tip">
+<summary>get the first field</summary>
 <p>To select the first field of a file <code>file.txt</code>,</p>
 <div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="k">$(</span>cut<span class="w"> </span>-d<span class="s1">&#39;.&#39;</span><span class="w"> </span>-f1<span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="nv">$1</span><span class="k">)</span>_test
 <span class="nb">echo</span><span class="w"> </span><span class="nv">$a</span>
 </code></pre></div>
 <p>where <code>-d'.'</code> is to define the delimiter, and then <code>-f1</code> get the first field.</p>
+</details>
+<details class="tip">
+<summary>get the last field</summary>
 <p>If we need to get the last field, we can use <code>rev</code>, i.e.,</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;maps.google.com&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>rev<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;.&#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>rev
 </code></pre></div>
 <p>refer to <a href="https://stackoverflow.com/questions/22727107/how-to-find-the-last-field-using-cut">How to find the last field using &lsquo;cut&rsquo;</a> and <a href="https://opensource.com/article/17/2/command-line-tools-data-analysis-linux">10 command-line tools for data analysis in Linux</a></p>
+</details>
+<details class="tip">
+<summary>get multiple fields</summary>
+<p><code>-f 1-10</code></p>
+</details>
 <h2 id="date"><code>date</code><a class="headerlink" href="#date" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nv">timestamp</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+<span class="s2">&quot;%Y-%m-%dT%H:%M:%S&quot;</span><span class="k">)</span>
 <span class="nb">echo</span><span class="w"> </span><span class="nv">$timestamp</span>
@@ -4252,7 +4271,7 @@ $<span class="w"> </span>iconv<span class="w"> </span>-f<span class="w"> </span>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2023</span>
       
         <br>
         Created:
