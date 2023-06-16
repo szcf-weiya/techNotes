@@ -147,6 +147,20 @@ comments: true
 	> 1==NULL
 	logical(0)
 	```
+	
+??? tip "escape needs too backslash"
+	```r
+	> grepl("x\\(y\\)", "x(y)z")
+	[1] TRUE
+	> grepl("x(y)", "x(y)z")
+	[1] FALSE
+	> grepl("x(y)", "xyz")
+	[1] TRUE
+	> grepl("x(y)", "x(y)z")
+	[1] FALSE
+	> grepl("x\(y\)", "x(y)z")
+	Error: '\(' is an unrecognized escape in character string starting ""x\("
+	```
 
 ## Installation
 
