@@ -13,6 +13,7 @@
 - Sleep is a function of two physiologic functions, the homeostatic (内环境稳定的) process (process S) and the circadian (生理节奏的) process (process C).
 - zeitgeber: 环境钟
 - staple: 主食；订书钉；装订
+- there are very few journals that accept the **ravings (狂乱的，语无伦次的)** of a **lunatic (疯狂的，极端的)** for publication.
 
 ## 2023.05
 
