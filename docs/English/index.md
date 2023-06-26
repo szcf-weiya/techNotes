@@ -14,6 +14,7 @@
 - zeitgeber: 环境钟
 - staple: 主食；订书钉；装订
 - there are very few journals that accept the **ravings (狂乱的，语无伦次的)** of a **lunatic (疯狂的，极端的)** for publication.
+- soar: 翱翔
 
 ## 2023.05
 
@@ -410,7 +411,7 @@
 - apply the procedure to a real data set of **hepatic (肝的)** miRNA expressions from a mouse model of non-alcoholic **steatohepatitis (脂肪肝)** (NASH).
 - Drop me a line in your **leisure (空闲的)** time.
 - His classmates laughed at his **lame (瘸的；跛的；站不住脚的)** drawing.
-- A gravity-defying physics experiment makes liquid **levitate (漂浮)** and boats float upside down.
+- A **gravity-defying (反重力)** physics experiment makes liquid **levitate (漂浮)** and boats float upside down.
 - One way to **obviate (排除，消除)** this difficulty is to perform a grid search.
 - FAIR published a paper introducing TextStyleBrush, a model that can **emulate (模仿，仿真，向...看齐)** the text style in a photo from a single shot.
 - MLOps is a set of practices that aims to deploy and maintain machine learning models in production reliably and efficiently. The word is compound of "machine learning" and the continuous development practice of DevOps in the software field.
@@ -1128,7 +1129,7 @@
 - premenopausal female 绝经前女性
 - the left **hump** representing accidents that had occurred just before the **menstrual period**
 - he then could have **hastily** summarized the data in a sketch
-- it was just **sloppiness**.
+- it was just **sloppiness (泥泞，潮湿，稀薄)**.
 - This article on bus ridership is **right up your alley** (well suited to one's tastes, interests, or abilities).
 - I **grant (【勉强】承认，同意)** you that..
 - the **ensuing (随后的，后来的)** discussion in the article **speculated about** explanations for a decline in the individual **propensity** to ride.
@@ -1187,8 +1188,6 @@
 
 - Malthusian (马尔萨斯的，马尔萨斯人口论的) catastrophe
 - Fertility was procyclical but declined and delayed with long-run growth.
-
-- little flyer
 - magic **pixie (小精灵)**
 - I tried to call deep on my courage.
 - data with a **soul (灵魂，心灵)**
@@ -1321,9 +1320,9 @@
 - saying that you want to be a model when you grow up is akin to saying you want to win the Powerball when you grow up.
 - because unlike **cardiothoracic surgeons (心胸外科外科医生)**, it can just be distilled right now.
 - underwear model
-- do they retouch all the photos?
+- do they **retouch (修饰)** all the photos?
 - it's also the very first time that I had worn a **bikini**, and I didn't ever **have my period** yet.
-- Here's me at a **slumber** party a few days before I shot **French Vogue**.
+- Here's me at a **slumber (睡眠)** party a few days before I shot **French Vogue**.
 - They are constructions by a group of professionals, by hairstylists and makeup artists and photographers and stylists and all of their assistants and pre-production and post-production.
 - were stopped and frisked.
     - stop-and-frisk: 拦截盘查；拦截搜身
@@ -1394,7 +1393,7 @@
 - we are building machines of exquisite, beautiful complexity and grace
 - but without the **homicidal** tendencies
 - another fascinating idea in the mission profile places **humanoid (仿真机器人)** robots on the surface of Mars
-- To **paraphrase** Alan Turing, I am not interested in building a sentient machine.
+- To **paraphrase (释义，解释，意译)** Alan Turing, I am not interested in building a sentient machine.
 - Can we build systems that converse with humans in natural language?
 - Can we build systems that have an **ethical and moral** foundation?
 - Now, every new technology brings with it some measure of **trepidation (惊恐，恐惧)**.
@@ -1476,7 +1475,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 14. The criminal **provisions (规定，条款)** in Intellectual Property (Miscellaneous Amendments) Ordinance 2001 caused the public concerns that the amendments might hinder the dissemination of information in the education sector and the society.
     - **provision (供应品)** of Rapid Antigen Test (RAT) Kit
 15. The copyright law is applicable to where the act in question occurs.
-16. compilation
 17. MIME: Multipurpose Internet Mail Extensions, 多用途互联网邮件拓展。
 18. The most important rights of a performer are the right to prevent any person from making a video or sound recording of his performance and the right to prohibit any person exploiting a video or sound recording of his performance.
 19. **civil remedies (民事救济)** vs. **criminal sanction (刑事处分)**
@@ -1526,7 +1524,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 32. Nixon **loyalists** paid the price—not Republicans who voted to impeach.
 33. So I **goggled (【尤指由于惊奇而】瞪大眼睛看)** a bit and asked a colleague in ML about the above.
 34. It’s great if you’ve got hair to **comb (梳子)**, but otherwise it leaves you looking a bit silly.
-35. Once my sister had the **hiccups** and my dad **snuck up** behind her and scared her. The hiccups went away but my sister made my dad promise never to scare her again like that.
+35. Once my sister had the **hiccups (打嗝)** and my dad **snuck up** behind her and scared her. The hiccups went away but my sister made my dad promise never to scare her again like that.
 36. On the medical front, we now have things like **nut allergy (坚果类食物过敏)** and **autism (自闭症)** which nobody ever thought about and now are huge.
 1. Another tack is to develop alternative **conduits (导管，渠道，沟渠)** and supplies.
 1. **malignant (【疾病】恶性的；致命的)** tumor
@@ -2008,7 +2006,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 14. We accepted his offer to pay for our dinners without **demur (提出异议，表示反对)**.
 15. an impartial and **perspicacious (敏锐的，有洞察力的，精辟的)** judge
 16. Her skill and talent **ennoble (封为贵族，使更崇高)** her profession.
-17. The kind of ennui comes from having too much time on one's hands and too little will to find something productive to do.
+17. The kind of **ennui (倦怠，无聊)** comes from having too much time on one's hands and too little will to find something productive to do.
 18. **ensconce (安置，隐藏)** the spare house key in a place where no thief would think to look.
 19. A brief but embarrassing silence **ensued (接着发生，因而发生)**.
 20. their **clandestine (暗中从事的，保密的，秘密的)** love **affair (风流韵事)**
@@ -2172,7 +2170,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. Asthma attacks can be triggered by **pollen (花粉)**, dust, **harsh (刺激的，严厉的，残酷的)** chemicals or **scents (气味)**.
 5. **thrive (茁壮成长，兴旺发达)** after **layoff (解雇)**
 6. excrete
-7. tidbit
+7. tidbit: 少量的食物；趣闻
 8. rhizome
 10. most people are extremely **resilient (（物体或材料）能复原的；有弹性的；【人的性格】能迅速恢复或重新振作的；适应性强的)** able to withstand **trauma (外伤，心理创伤)**.
 11. resiliency in the face of challenge
@@ -2258,7 +2256,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 9. geochemist, geochemistry: [地球化学](https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83%E5%8C%96%E5%AD%A6)
 10. A **bolide (【天文学】火流星，火球)**, or fireball, is an extremely bright **meteor (流星)**, and those can be about the size of a **grapefruit (葡萄柚，西柚)**.
 11. magma, mantle, **lava (火山喷发的熔岩)**
-14. volcanism
+14. volcanism: 火山作用
 15. **makeover (翻新，改进)**
 16. pummel: 连续猛击，反复拳打
 17. wipe away
@@ -2305,7 +2303,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 - none but(=no one except)只有，除...外谁不
 1. Numerous historical examples illustrate both the overriding influence that scientists' prejudices have on their interpretation of data and the consequent impairment of their intellectual objectivity.
 2. Jone was unable to recognize the contradictions in his attitudes that were obvious to everyone else; even the hint of an untruth was repugnant to him, but he courted serious trouble by always cheating on his taxes.
-1. She responded with such asperity that we knew she was offended by the question.
+1. She responded with such **asperity (严厉)** that we knew she was offended by the question.
 2. He has encountered more than his share of asperities on the road to success.
 3. Envy can make oneself backward; self-confidence can tell oneself to be aspirant.
 4. He says face veils like the niqab (尼卡布，一些穆斯林妇女在公共场合戴的面纱，通常露出眼睛) are not a religious requirement.
@@ -2339,7 +2337,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 33. Such counter-currents will prevent Kentish Town from gentrifying fully, suggests Gillian Tindall, a local historian.
 34. Interpreters are also skilled at keeping aplomb in the face of chaos.
 36. Right, and that suggests the qualities that are most **germane (贴切，恰当)** to the job.
-37. The fortress by King Philip Augustus was situated on the right bank of the Seine, overlooking-- at that time-- splendid bucolic scenery.
+37. The **fortress (城堡，堡垒，要塞)** by King Philip Augustus was situated on the right bank of the Seine, overlooking-- at that time-- **splendid (壮观的，华丽的)** **bucolic (乡村的，乡村生活的)** scenery.
 38. But overall, Mr Agar has abstracted and made manageable a range of rich and informed analysis.
 39. He also emphasized what he called the main thing: "a human-typable keyboard instead of a stupid, **cryptic (含义隐晦的，晦涩难懂的)** front panel with a bunch of lights and switches."
 40. In a few **recalcitrant (难以控制的，不服从指挥的)** places, captial punishment is holding steady or picking up.

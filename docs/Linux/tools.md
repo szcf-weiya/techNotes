@@ -151,6 +151,9 @@ $ echo -e 'a \n c d' | awk '$2 !~ /^$/{print $2}'
 d
 ```
 
+!!! tip "^M character needs to use `\r`"
+    `^M` character is also invisible, we can check it via `cat -v`. To match such a character, we need `\r`, see also [:link:](https://unix.stackexchange.com/questions/134695/what-is-the-m-character-called).
+
 - select lines whose 2nd column is not either empty or `-`: **usage of `|`**
 
 ```bash

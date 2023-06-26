@@ -33,3 +33,4 @@ priority of `:` | `0.1+1:10-1 == (0.1+1):(10-1)`  | `0.1+1:10-1 == 0.1+(1:10)-1`
 enumerate | `for (k, v) in enumerate(d)` | | `for k, v in enumerate(d):` |
 [keep dims](../../R/) | `a[1:1,:]` | `a[1,,drop=FALSE]` | `a[0:1,:]` | 
 expand dims | | | `a[:, None]` <br/> `np.expand_dims(a, axis=-1)` <br/> `a[:, np.newaxis]` |
+default color | [`palette(:default)`](https://github.com/szcf-weiya/ESL-CN/blob/6ba63dc8cddf0406c4d5e07166b46c81f37e7993/imgs/fig.14.30/kpca.jl#L12) | | [`plt.rcParams['axes.prop_cycle'].by_key()['color']`](https://statisticaloddsandends.wordpress.com/2023/05/24/getting-matplotlibs-default-colors/) | 
