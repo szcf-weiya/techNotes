@@ -21,7 +21,7 @@
         <link rel="next" href="../../shell/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
     
     
       
@@ -3260,6 +3260,10 @@ see also: <a href="https://www.gnu.org/software/gawk/manual/html_node/Splitting-
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;a \n c d&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$2 !~ /^$/{print $2}&#39;</span>
 d
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">^M character needs to use <code>\r</code></p>
+<p><code>^M</code> character is also invisible, we can check it via <code>cat -v</code>. To match such a character, we need <code>\r</code>, see also <a href="https://unix.stackexchange.com/questions/134695/what-is-the-m-character-called"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>.</p>
+</div>
 <ul>
 <li>select lines whose 2nd column is not either empty or <code>-</code>: <strong>usage of <code>|</code></strong></li>
 </ul>
@@ -4271,7 +4275,7 @@ $<span class="w"> </span>iconv<span class="w"> </span>-f<span class="w"> </span>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 26, 2023</span>
       
         <br>
         Created:
@@ -4443,7 +4447,7 @@ $<span class="w"> </span>iconv<span class="w"> </span>-f<span class="w"> </span>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a51614de.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b425cdc4.min.js"></script>
       
         
           <script src="../../javascripts/baiduzhanzhang.js"></script>
