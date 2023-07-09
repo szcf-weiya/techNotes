@@ -119,6 +119,14 @@ refer to [How to remove local (untracked) files from the current Git working tre
 
 ## CLONE: `clone`
 
+!!! tip "clone from pull request"
+	```
+	git clone .....
+	git fetch origin pull/2/head
+	git checkout -b pullrequest FETCH_HEAD
+	```
+	refer to [:link:](https://stackoverflow.com/questions/14947789/github-clone-from-pull-request)
+
 - 提高 `git clone` 速度
 
 ```bash

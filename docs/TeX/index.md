@@ -94,6 +94,9 @@ If without root privilege, when running `install-tl`, type `D` to change the dir
 
 ## Basic 
 
+!!! tip "hide date"
+	`\date{}`. Note that, ignore `\date` would still show the date.
+
 ??? tip "`\xspace`: space after LaTeX commands"
 
 	```tex

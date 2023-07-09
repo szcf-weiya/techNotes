@@ -1,3 +1,22 @@
+## 2023.07
+
+- splurge: 挥霍，乱花钱
+- bellyache: 腹痛，肚子疼
+- entrepreneurial: 创业，企业家的
+- **coastal (沿海的)** salt **marshes (湿地)**
+- post traumatic: 外伤后的
+- black boys face double **jeopardy (危险)** at school
+- glioma: 神经胶质瘤
+- dementia: 痴呆
+- sapphire: 蓝宝石，宝蓝色
+- limelight: 公众注意的中心
+- In the subatomic realm, the universe's tiniest particles, called **quarks (夸克)**, combine with other particles called **gluons (胶子)** to form **protons (质子)** and **neutrons (中子)** --- the nucleus of atoms.
+- osmosis: 渗透，透析
+- warrior: 勇士
+- malicious: 怀有恶意的，恶毒的
+- quirk: 怪事
+- unwind: 放松，解开
+
 ## 2023.06
 
 - awry
@@ -15,6 +34,8 @@
 - staple: 主食；订书钉；装订
 - there are very few journals that accept the **ravings (狂乱的，语无伦次的)** of a **lunatic (疯狂的，极端的)** for publication.
 - soar: 翱翔
+- crate: 大木箱，把……装入大木箱
+- wanderlust: 漫游癖，旅行癖
 
 ## 2023.05
 
@@ -188,7 +209,7 @@
 - digital forensics: 电子取证
 - Cavitation for Cold **Brew (酝酿，酿制)** Espresso: **Cavitation (空蚀，空穴)** is caused by the movement of water being so quick that the pressure drops and then the water vaporizes. For coffee, the theory is that cavitation makes extraction easier. [:link:](https://towardsdatascience.com/cavitation-for-cold-brew-espresso-57ef791d4675), [:material-wikipedia:](https://zh.m.wikipedia.org/zh-hk/%E7%A9%BA%E7%A9%B4%E7%8F%BE%E8%B1%A1)
 - eugenics: 基因优生学
-- a **blazingly (with or like a blaze; bright and fiery)** fast solution 
+- a **blazingly (with or like a blaze; bright and fiery (火一般的) )** fast solution 
 - tricks that **wow (博得称赞)** you
 - **snap out (快速脱离)** of a data science **slump (低迷)**
 - Dunder or magic methods in Python are the methods having two prefix and suffix underscores in the method name. [:link:](https://www.geeksforgeeks.org/dunder-magic-methods-python/)
@@ -320,7 +341,7 @@
 - **dovetail (吻合，兼顾)** career and family commitments
 - judge the **plausibility (合理性，可信性)** of assumptions.
     - plausible: 似乎是真的（有理）
-- The GPU revolution catapulted NVIDIA's past incumbents such as Intel or Qualcomm both in market capitalization and AI-related technology innovation.
+- The GPU revolution **catapulted (弹弓，石弩；被猛掷)** NVIDIA's past incumbents such as Intel or Qualcomm both in market capitalization and AI-related technology innovation.
 - **Mass transit (公共交通)** can help **unclog (疏通)** the roads and your **arteries (动脉)**.
 - tare: 包装重量
 
@@ -420,7 +441,7 @@
 - In the US, socioeconomic disadvantage is positively associated with **adiposity (肥胖症)**
 - omnibus: 公共汽车；（广播、电视）综合节目
 - epistemic: 知识的，认识的
-- A K Poker deck contains nice consecutively ranked cards of the same suit; we use **deuce (两点的纸牌)** through ten.
+- A K Poker **deck (a pack of cards)** contains nice consecutively ranked cards of the same suit; we use **deuce (两点的纸牌)** through ten.
     - deuce: 局末平分
 - Researchers have used the gene-editing tool CRISPR, and tweaks to typical **rearing practices (养育行为)**.
 - Convex clustering has recently **garnered (积累，获得)** increasing interest due to its attractive theoretical and computational properties.
@@ -485,7 +506,7 @@
 - We need to take away the ability to get **unfettered (无限制的，不受约束的)** access to the machine.
 - The killing of a maths faculty member on a Shanghai campus has **stirred up (激起，挑起)** debate over the onerous tenure process. 
 - Leaked report sends **dire (极其严重的，危急的)** climate warning.
-- The people who built the ancient monumental structures at Turkey's Gobekli Tepe were fuelled by vat-fulls of starchy porridge and stew, not just meaty feasts.
+- The people who built the ancient monumental structures at Turkey's Gobekli Tepe were fuelled by vat-fulls of starchy porridge and stew, not just meaty **feasts (盛宴，宴会)**.
 - George was **whipping up (快速地吃，狼吞虎咽)** a **sundae (圣代「一种加有水果、甜汁、果仁的冰淇淋」)** during the tennis match break and got caught by the camera without knowing it.
 - Today we enjoy a **selfie (自拍照)** from China's Zhurong Mars rover, and discover a masterful **memoir (自传)** by mathematician Katherine Johnson.
 - The global antiracism movement sparked by the murder of George Floyd and the pandemic also **spurred (刺激，激励)** Wellcome, one of the world's largest biomedical-research funders.
@@ -525,7 +546,7 @@
     - ape: 类人猿
 - **Lexicons (字典；（某语言或学科、某人或群体使用的）全部词汇)** of other languages, due to weaker national power, generally cannot match the UMLS in terms of comprehensiveness. 
 - Have you ever served in, been a member of, or been involved with a paramilitary unit, vigilante unit, **rebel (造反的)** group, **guerrilla (游击的，非正式的)** group, or **insurgent (起义者)** organization? 
-- Do you belong to a **clan (庞大的家族；宗派)** or tribe?
+- Do you belong to a **clan (庞大的家族；宗派)** or **tribe (部落，族)**?
 - Are you coming to the United States to engage in prostitution or unlawful commercialized vice or have you been engaged in **prostitution (卖淫；才能的滥用（或糟蹋）)** or procuring prostitutes within the past 10 years? 
 - Have you ever ordered, **incited (煽动，鼓动)**, committed, assisted, or otherwise participated in **genocide (种族灭绝，大屠杀)**? 
 - freak
@@ -1114,7 +1135,7 @@
 - some **wiseass (自以为是的人)** replies to all
 - we're **reliving** the 1990's here...
 - The X-ray emission comes from the hot gas surrounding and **accreting** onto the merging black holes.
-- During the merger, some of the X-ray emission is expected to be modulated at a frequency **commensurate** to that of the gravitational waves produced by the black holes.
+- During the merger, some of the X-ray emission is expected to be modulated at a frequency **commensurate (相当的)** to that of the gravitational waves produced by the black holes.
 - after the merger, it is possible that a **corona (日冕，日华)** of hot, X-ray emitting gas will form and jets of particles may be launched at speeds close to the speed of light.
 - They are **acutely (极其，强烈地)** **attuned (习惯，适应)** to the **grave (严重的)** dangers associated with an economy **grinding to a halt (慢慢停下来，无法继续前进).** [see also](https://www.51voa.com/Voa_English_Learning/814-grind-to-a-halt-55001.html)
     - acutely aware: 深切地意识到
@@ -1122,7 +1143,7 @@
 - racial profiling: 种族形象定性（指警察等因肤色或种族而不是证据怀疑人犯罪）
 - Blacks are more likely to be stopped for **pretextual** (pretext, 借口，推辞) reasons (e.g. **alleged (所谓的，声称的)** vehicle **defect (缺点，缺陷，不足之处)**, such as broken taillight; record check) and less for more **concrete (具体的)** reasons such as speeding.
 - defective: 有缺点的，有缺陷的
-- these have been **valorized (稳定物价，规定价格)** in constitutional caselaw
+- these have been **valorized (稳定物价，规定价格)** in constitutional **caselaw (判例法)**
 - I bought the book and, **flipping through (匆匆查看，草草翻阅)** it to find examples for use in class, came cross the two sketches
 - the frequency of driving accidents is plotted against the time of menstruation
 - one for parous women, and one for nonparous women
@@ -1261,7 +1282,6 @@
 - Identity capital **begets (引发，导致)** identity capital.
 - make it count: to make sth have as useful and positive an effect as possible, [make something count](https://www.macmillandictionary.com/dictionary/british/make-something-count)
 - procrastination
-- the urban tribe is overrated
 - twentysomethings who **huddle** together with like-minded peers limit who they know, what they know, how they think, how they speak, and where they work
 - last but not least
 - [go/walk down the aisle: to get married](https://dictionary.cambridge.org/dictionary/english/go-walk-down-the-aisle)
@@ -1371,7 +1391,7 @@
 - What we **stumbled (绊脚；出错)** across at this tender age of just five and seven was was going be at the **vanguard (先锋，前驱)** of a scientific revolution occurring two decades later in the way that we look at the human brain.
 - There is one weird dot above the curve, there's one **weirdo (古怪的人)** in the room.
 - we can **glean** information
-- the medical school **syndrome**
+- the medical school **syndrome (综合征)**
 - I have **leprosy (麻病)**
 - I have no idea how to **console (安慰)** poor Bobo because he had just gotten over an entire week of **menopause**
 - **military scholarship**
@@ -1507,7 +1527,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 15. The **nascent (初期的，开始存在的，发生中的)** field of fair machine learning aims to ensure that decisions guided by algorithms are equitable.
 16. Over the last several years, three formal definitions of fairness have gained **prominence (出名，突出)**
 17. classification **parity (【尤指薪金或地位】平等；（两国货币的）平价)**, meaning that common measures of predictive performance
-18. One must carefully define and measure the targets of prediction to avoid **retrenching** biases in the data.
+18. One must carefully define and measure the targets of prediction to avoid **retrenching (紧缩开支，节约，缩减人员)** biases in the data.
 19. A team of researchers inside **Pfizer (辉瑞，美国制药公司)** made a **startling** find in 2015: The company’s **blockbuster (重磅炸弹，了不起的人或事)** **rheumatoid (风湿病的，类风湿病的)** **arthritis (关节炎)** therapy [**Enbrel (恩利，注射用依那西普，Etanercept)**](https://baike.baidu.com/item/%E6%81%A9%E5%88%A9), a powerful **anti-inflammatory (抗炎的)** drug, appeared to reduce the risk of Alzheimer’s disease by 64 percent.
 20. A **synopsis (提要)** of its statistical findings prepared for outside publication, it says, did not meet its “rigorous scientific standards.”
 21. Pfizer said it **opted** against publication of its data because of its doubts about the results.
@@ -1562,8 +1582,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. hyperinsulinemia: 血胰岛素增多
 3. ischemic： 局部贫血
 4. bilateral: 双方的，双边的
-5. subthalamic
-6. nucleus
+5. subthalamic: 丘脑下的
+6. nucleus: 核，核心
 1. The most extreme, most **sobering (令人警醒的，使人冷静的)**, and **zaniest (zany. 古怪的，滑稽可笑的 strange or unusual in an amazing way)** facts that [The Atlantic](https://zh.wikipedia.org/wiki/%E5%A4%A7%E8%A5%BF%E6%B4%8B_(%E9%9B%9C%E8%AA%8C))'s science, technology, and health reporters learned this year.
 2. **gerrymandering (为本党利益改划选区，不公正操纵，欺骗)** only rearranges district lines and cannot manufacture more votes for a party.
 3. compare the number of **contagions (传染，接触传染)** and deaths by country and date.
@@ -1682,7 +1702,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. copse: 矮树丛
 2. regimen: 养生之道，生活规则
 3. flat **terrain (地带，地形)**
-4. aerobics
+4. aerobics: 有氧运动
 5. treadmill: 枯燥无味的工作（或生活方式）
 1. phylogeny
 1. bump up
@@ -1695,7 +1715,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. passage: 通道，通路
 3. leucocyte: 白细胞
 5. delicate
-6. illusory
+6. illusory: 虚幻的，错觉的
 7. He said that racism is **endemic (风土的，地方性的)** in this country.
 8. emanating
 9. aggravate: 使严重，使恶化
@@ -2050,11 +2070,11 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 60. In both countries policy is being dictated by **intransigents (不妥协，不让步的人)**, who risk stumbling into war.
 62. idiosyncratic
 64. **auction (拍卖，竞拍)**, auctioneer, bidding
-65. imperturbability
+65. imperturbability: 沉着，冷静
 67. A baby is god's most **precious (宝贵的，珍贵的)** gift.
 69. composure: 镇静，镇定，沉着
 70. frenzied (frantic; highly agitated)
-71. Magnanimous
+71. magnanimous: 宽宏的
 72. sporadic (intermittent or infrequent): 零星的，分散的，不定时发生的
 74. Denigrate (disparage; defame): 诋毁，诽谤，贬低
 75. demonstrate (show; prove) & warrant (justify, 使显得合理，成为...的根据)
@@ -2119,7 +2139,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 4. merchant
 5. guild: 同业公会；（同一行业、志趣或目的的）协会
 - uphold: 支持，维持（原判），受理（申诉）
-7. The word is now an egalitarian society, but the reality is the existence of such discrimination.
+7. The word is now an **egalitarian (主张人人平等的；平等主义的)** society, but the reality is the existence of such discrimination.
 8. Here it would seem to be a wall hanging, or even a free standing object of worship.
 9. It involves a lot of aspects, among which ideological and political education really counts and is one of the most effective ways as well.
 10. In the research of technology ethic, the relationship between technology and ethic has always been a disputed question.
@@ -2242,7 +2262,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 51. silt: 淤泥
 52. land **reclamation (开垦，回收，再生)** and sustainable development
 1. spade
-2. deck
 1. [nilpotent](https://en.wikipedia.org/wiki/Nilpotent) matrix: 幂零矩阵
 1. caffeine (咖啡因)
 2. **sip (小口喝)** **nectar (花蜜，甘露，任何美味的饮料)**
