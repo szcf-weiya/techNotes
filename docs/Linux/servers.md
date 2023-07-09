@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Servers
 
 ![](https://user-images.githubusercontent.com/13688320/126885780-549bf05b-b4ba-4882-a097-bf8778933848.png)
@@ -12,7 +16,7 @@
 ssh-keygen -t [rsa | ed25519 | ecdsa | dsa]
 ```
 
-!!! tip "ssh 常见 key 格式"
+??? tip "ssh 常见 key 格式"
 	参考 [更新SSH key为Ed25519](https://neil-wu.github.io/2020/04/04/2020-04-04-SSH-key/)
 
 	- DSA: 不安全
@@ -53,6 +57,9 @@ $ ssh -i YourKey.pem user@host
 ```bash
 $ scp -i YourKey.pem YourFile user@host:~/YourFile
 ```
+
+??? tip "debug info: type <number>"
+	The number in `identity file type .../.ssh/id_* type <number>` is just the integer value (zero based) of the ssh_key_types enum and -1 meaning error. [:link:](https://askubuntu.com/questions/1088184/what-does-identity-file-type-mean-in-ssh-debug-messages)
 
 ### two consecutive ssh
 
