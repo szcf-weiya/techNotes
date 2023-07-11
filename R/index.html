@@ -3686,6 +3686,26 @@ ln<span class="w"> </span>-s<span class="w"> </span>/home/weiya/R/x86_64-pc-linu
 <p>Enabling <code>keep_tex</code>, I want to copy the tex file to overleaf, and then the grammar tools like Grammarly can be used to highlight the problematic grammar use. However, the copied tex would automatically add line breaks, and it hinders the proper use of Grammar tools due to line breaks.
 The problem is caused by <code>pandoc</code>, and here is an option <code>--wrap=none</code> to disable the auto line break. By default, the option is <code>auto</code>. Check the <a href="https://pandoc.org/MANUAL.html">pandoc manual</a> for more details.</p>
 </div>
+<details class="note">
+<summary>pdf: link and citation color</summary>
+<p>adding <code>hyperref</code> packages does not work. Tried
+- add extra_dependencies
+```</p>
+</details>
+<p>output: 
+      pdf_document:
+       extra_dependencies:
+         hyperref: [&ldquo;unicode=true&rdquo;, &ldquo;breaklinks=true&rdquo;, &ldquo;colorlinks=true&rdquo;, &ldquo;linkcolor=blue&rdquo;, &ldquo;filecolor=magenta&rdquo;, &ldquo;urlcolor=cyan&rdquo;]
+    <div class="highlight"><pre><span></span><code>- manually `\usepackage{hyperref}`
+
+After enabling `keep_tex`, I found that later on there is an option `\hypersetup{hidelinks}`. 
+
+Finally, directly add option 
+</code></pre></div>
+    link-citations: yes
+    linkcolor: blue
+    <code>``
+    and there is no</code>hidelinks` option.</p>
 <div class="admonition note">
 <p class="admonition-title"><code>knit::kable</code></p>
 <p>pretty table, which can auto newline long description in a cell. See also <a href="#events_init_vs_extend"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
