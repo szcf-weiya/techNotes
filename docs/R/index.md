@@ -833,6 +833,10 @@ Refer to [https://stats.stackexchange.com/questions/108995/interpreting-residual
 
 ## rmarkdown
 
+!!! note "unwanted line break when `keep_tex`"
+	Enabling `keep_tex`, I want to copy the tex file to overleaf, and then the grammar tools like Grammarly can be used to highlight the problematic grammar use. However, the copied tex would automatically add line breaks, and it hinders the proper use of Grammar tools due to line breaks.
+ 	The problem is caused by `pandoc`, and here is an option `--wrap=none` to disable the auto line break. By default, the option is `auto`. Check the [pandoc manual](https://pandoc.org/MANUAL.html) for more details.
+
 !!! note "`knit::kable`"
 	pretty table, which can auto newline long description in a cell. See also [:link:](#events_init_vs_extend)
 
