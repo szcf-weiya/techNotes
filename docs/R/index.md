@@ -162,6 +162,33 @@ comments: true
 	Error: '\(' is an unrecognized escape in character string starting ""x\("
 	```
 
+??? warning "gather: attributes should be identical across measure variables"
+	want to combine the column `pred.re` and `pred.tv` into a new column `pred` and annote the source of values (`.re` or `.tv`) in the column `method`.
+	```r
+ 	> str(df)
+	'data.frame':	28 obs. of  5 variables:
+	 $ pred.re: num [1:28, 1] -0.508 -0.359 -1.079 0.935 0.894 ...
+	  ..- attr(*, "scaled:center")= num -0.12
+	  ..- attr(*, "scaled:scale")= num 1.11
+	 $ pred.tv: num [1:28, 1] -0.129 -1.285 -1.76 -0.794 0.723 ...
+	  ..- attr(*, "scaled:center")= num -1.13
+	  ..- attr(*, "scaled:scale")= num 2.82
+	 $ truth  : num  35.2 36.3 37.9 37.3 21.1 ...
+	 $ status : Factor w/ 2 levels "0","1": 1 1 1 1 2 2 2 1 2 2 ...
+	 $ id     : int  1 2 3 4 5 6 7 8 9 10 ...
+	> dfa = gather(df, "method", "pred", -c(3:5))
+	Warning message:
+	attributes are not identical across measure variables;
+	they will be dropped 
+	> str(dfa)
+	'data.frame':	56 obs. of  5 variables:
+	 $ truth : num  35.2 36.3 37.9 37.3 21.1 ...
+	 $ status: Factor w/ 2 levels "0","1": 1 1 1 1 2 2 2 1 2 2 ...
+	 $ id    : int  1 2 3 4 5 6 7 8 9 10 ...
+	 $ method: chr  "pred.re" "pred.re" "pred.re" "pred.re" ...
+	 $ pred  : num  -0.508 -0.359 -1.079 0.935 0.894 ...
+ 	```
+
 ## Installation
 
 ### Install from source on Rocky
