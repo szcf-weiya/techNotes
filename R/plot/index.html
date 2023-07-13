@@ -3046,6 +3046,10 @@ Note that <code>aes(fill = )</code> is important, otherwise no legend. See also:
 <p><a href="https://stackoverflow.com/questions/25632242/filled-and-hollow-shapes-where-the-fill-color-the-line-color"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
 <p>but note that the default <code>shape=19</code> (solid disc) does not support <code>fill</code>, so use <code>shape=21</code> instead.</p>
 </details>
+<details class="tip">
+<summary>Error: stat_count() must not be used with a y aesthetic: geom_bar(stat = &ldquo;identity&rdquo;)</summary>
+<p>use <code>stat = "identity"</code>! See also: <a href="https://github.com/szcf-weiya/Multi-omics-Clustering/issues/99"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+</details>
 <h3 id="multiple-density-plots">multiple density plots<a class="headerlink" href="#multiple-density-plots" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">plots</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">NULL</span>
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -3227,7 +3231,7 @@ f(x) = \begin{cases}
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 13, 2023</span>
       
         <br>
         Created:
