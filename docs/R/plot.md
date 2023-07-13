@@ -205,6 +205,9 @@ A thorough tutorial refers to [Reproduce Figures with Lattice -- ESL CN](https:/
 
     but note that the default `shape=19` (solid disc) does not support `fill`, so use `shape=21` instead.
 
+??? tip "Error: stat_count() must not be used with a y aesthetic: geom_bar(stat = "identity")"
+    use `stat = "identity"`! See also: [:link:](https://github.com/szcf-weiya/Multi-omics-Clustering/issues/99)
+    
 ### multiple density plots
 
 ```r
