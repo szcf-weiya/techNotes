@@ -214,11 +214,14 @@ code
 
 - [Overleaf: Font sizes, families, and styles](https://www.overleaf.com/learn/latex/Font_sizes,_families,_and_styles)
 
+??? note "fontsize"
+	![](https://user-images.githubusercontent.com/13688320/253148786-5b4abb3e-2e59-40ed-8bf1-73118ebf0c5c.png)
+
 ??? note "\fontfamily{pcr}"
 
-	Selects the "Courier" font family for the document. This font family is a fixed-width font that is commonly used for programming code or computer terminal outputs. (chatGPT)
+    Selects the "Courier" font family for the document. This font family is a fixed-width font that is commonly used for programming code or computer terminal outputs. (chatGPT)
 
-	For other "font package name" and its "font code", see also: [:link:](https://www.overleaf.com/learn/latex/Font_typefaces)
+    For other "font package name" and its "font code", see also: [:link:](https://www.overleaf.com/learn/latex/Font_typefaces)
 
 ### some nice font family
 

@@ -1208,7 +1208,7 @@
 ## 2020.07
 
 - Malthusian (马尔萨斯的，马尔萨斯人口论的) catastrophe
-- Fertility was procyclical but declined and delayed with long-run growth.
+- Fertility was **procyclical (顺周期)** but declined and delayed with long-run growth.
 - magic **pixie (小精灵)**
 - I tried to call deep on my courage.
 - data with a **soul (灵魂，心灵)**
@@ -2009,7 +2009,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 47. The **presumptuous (放肆的，自以为是的)** doctor didn't even bother to explain to me the treatment that I would be receiving.
 48. Under such a circumstance his demand for attention was utterly **presumptuous (自以为是的，专横的，冒失的)**.
 49. We could hear the cook in the kitchen railing against his assistant and wondered if we'd ever get our food.
-50. Vociferous opponents of the bill protested angrily outside the Congress.
+50. **Vociferous (大声疾呼的，喧嚣的，大叫大嚷的)** opponents of the bill protested angrily outside the Congress.
 1. King Richard I of England was given the very laudatory epithet "the Lion-Hearted".
 2. His personal code of behavior on the playing field is **epitomized (成为...的缩影)** by his favorite saying, Nice guys finish last.
     - consider the sample as an **epitome (缩影)** of the underlying population.
