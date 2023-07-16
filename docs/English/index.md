@@ -1906,7 +1906,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 19. close-up: 影视特写；详细检查；详图
 20. petal: 花瓣
 21. **juxtapose (并列)** these two perspectives, each of which connect statistical graphics to literature, but in a different way.
-22. archaeology
+22. archaeology: 考古学
 23. oversee
 24. pharaoh Khufu, Great Pyramid
 25. sturdy: 结实的，坚固的
