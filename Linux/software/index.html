@@ -21,7 +21,7 @@
         <link rel="next" href="../tools/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
       
 
@@ -3881,7 +3881,7 @@ Could<span class="w"> </span>not<span class="w"> </span>request<span class="w"> 
 Warning:<span class="w"> </span>remote<span class="w"> </span>port<span class="w"> </span>forwarding<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>listen<span class="w"> </span>port<span class="w"> </span><span class="m">30013</span>
 Warning:<span class="w"> </span>remote<span class="w"> </span>port<span class="w"> </span>forwarding<span class="w"> </span>failed<span class="w"> </span><span class="k">for</span><span class="w"> </span>listen<span class="w"> </span>port<span class="w"> </span><span class="m">24800</span>
 </code></pre></div>
-<p>这是为了<a href="../asAserver/#boot-into-text-mode">启动时自动登录服务器转发端口的程序</a>，这时意识到 vscode 在启动时，应该会调用 <code>.profile</code>，但是我把自动连接服务器的程序写进了 <code>.profile</code>，解决办法便是复制一份 <code>.profile</code> 至 <code>.bash_profile</code>, 只在后者中保留自动登录程序，因为<a href="software.md/#_8">启动时后者调用顺序更高</a>。</p>
+<p>这是为了<a href="../asAserver/#boot-into-text-mode">启动时自动登录服务器转发端口的程序</a>，这时意识到 vscode 在启动时，应该会调用 <code>.profile</code>，但是我把自动连接服务器的程序写进了 <code>.profile</code>，解决办法便是复制一份 <code>.profile</code> 至 <code>.bash_profile</code>, 只在后者中保留自动登录程序，因为<a href="./#_8">启动时后者调用顺序更高</a>。</p>
 <blockquote>
 <p>.profile is for things that are not specifically related to Bash, like environment variables $PATH it should also be available anytime. .bash_profile is specifically for login shells or shells executed at login.
 source: <a href="https://unix.stackexchange.com/questions/45684/what-is-the-difference-between-profile-and-bash-profile">What is the difference between ~/.profile and ~/.bash_profile?</a></p>
