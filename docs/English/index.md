@@ -16,11 +16,21 @@
 - malicious: 怀有恶意的，恶毒的
 - quirk: 怪事
 - unwind: 放松，解开
+- start with a bang: to begin in very fun, exciting, or attention-grabbing way.
+- perpetuity: 永久
+- horse's ass: a stupid or **incompetent (无能力的，不胜任的，不称职的)** person, **blockhead (傻瓜)**
+- **abdominal (腹部的)** fat
+- **psychological (心灵的，心理的)** **resilience (适应力，弹力)**
+- grit: 勇气
+- iffy: 说不准的，有问题的
+- bolster: 加强，改善
+- father-son alums: 父子校友
+- 
 
 ## 2023.06
 
-- awry
-- odour
+- awry: 歪斜的，扭曲地
+- odour: 臭味，气味
 - spinoff: 副产品；附带的发展；续集
 - psychoanalysis: 精神分析（或疗法）
 - how **dengue (登革热)** makes your own immune system work against you
@@ -1675,7 +1685,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. authentic act: 「法」公证书，公证证书
     - authentic self: 本真自我
     - authentic materials: 真实材料
-5. antithetical
+5. antithetical: 对立的，正相反的
 6. rule of thumb
 7. opt for: 选取，赞成
 8. progeny: 子孙，幼崽
@@ -1765,9 +1775,9 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 5. substrate
 1. kinetic: 运动的，运动引起的
 2. prokaryote (原核生物，原核细胞), eukaryote (真核细胞，真核生物)
-3. unprecedented
+3. unprecedented: 前所未有的，空前的，没有先例的
 5. Escherichia coli: 大肠杆菌
-6. yeast
+6. yeast: 酵母，酵母菌
 7. 酿酒酵母（Saccharomyces cerevisiae）
 8. stoichiometric: 化学计算的，理想配比的
 1. phishing
@@ -2098,7 +2108,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 97. **indigenous (土著的，原产的，土生土长的)** & ingenuous & disingenuous
 98. dignity (formal bearing; nobility of character)
 99. insincerity (intentional deceitfulness)
-100. reverence (deep respect; awe)
+100. reverence (deep respect; awe): 尊敬，尊重，尊崇
 101. **abiding (持久的，永久的)** attachment (devotion) or regard (esteem)
 102.  **relinquish (【不情愿地】放弃)** (surrender; release)
 103.  Instigate (provoke; incite)
@@ -2106,7 +2116,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 105. echoes or reiterates (repeats)
 106.  invalidate (discredit or weaken)
 107. Impede (hinder; block)
-108. Dampen (depress; deaden)
+108. dampen (depress; deaden): 
 109. malfunction (failure to work properly).
 110. Condemnation means censure.
 111.  **Taxonomy (分类学，分类法)** is the science or technique of classification.
@@ -2191,14 +2201,13 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 5. **thrive (茁壮成长，兴旺发达)** after **layoff (解雇)**
 6. excrete
 7. tidbit: 少量的食物；趣闻
-8. rhizome
+8. **rhizome:** 根茎，根状茎
 10. most people are extremely **resilient (（物体或材料）能复原的；有弹性的；【人的性格】能迅速恢复或重新振作的；适应性强的)** able to withstand **trauma (外伤，心理创伤)**.
 11. resiliency in the face of challenge
 10. interlocking: 互锁，联动
 11. snap: 匆忙的，仓促的；突然；厉声说，怒气冲冲地说
 12. blowhole: （鲸头顶的）呼吸孔
 14. sacs: 囊，上衣
-15. spoiled meat
 16. **repercussion (反射，弹回)**
 17. **pepper (辣椒，胡椒)**, **aromatic (香料，芳香植物)**, **bark (咆哮，吠叫)**, **cinnamon (肉桂)**, **ginger (生姜)**, **clove (丁香)**, **maize (玉米)**
     - garlic clove: 大蒜瓣
@@ -2352,7 +2361,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 29. just as you may need a **tonic (补药)** when you have been ill.
 30. Throughout her book Ms Ahuja seems to be in a **trance (恍惚，出神，着迷)** herself, in **thrall (受...控制，深受...影响)** to the **glamour (魅力，魔力)** of her subjects.
 31. The **Palestinians (巴基斯坦人)** demanding a state are weak, divided and **quiescent (沉寂的，静止的))**; **morose (孤僻的，郁闷的)** as they are, few favour a return to suicide-bombing.
-32. And the campaign really got rancorous when Goldsmith tried to link Khan and extremists.
+32. And the campaign really got **rancorous (充满仇恨的，有遗恨的)** when Goldsmith tried to link Khan and extremists.
 33. Such counter-currents will prevent Kentish Town from gentrifying fully, suggests Gillian Tindall, a local historian.
 34. Interpreters are also skilled at keeping aplomb in the face of chaos.
 36. Right, and that suggests the qualities that are most **germane (贴切，恰当)** to the job.
