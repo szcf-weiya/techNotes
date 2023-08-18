@@ -1529,3 +1529,11 @@ BTW, I tried the popular chatGPT to ask the question.
 
 ??? note "chatGPT"
     ![screencapture-chat-openai-chat-2022-12-06-22_28_50](https://user-images.githubusercontent.com/13688320/206089957-bc92d621-3cb4-4c16-b7c3-a792eba34283.png)
+
+## `xmllint`
+
+!!! tip "pretty-print xml file"
+    ```
+    xmllint --format test.xml
+    ```
+    see also: [:link:](https://www.baeldung.com/linux/pretty-print-xml)

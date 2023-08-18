@@ -1,3 +1,11 @@
+## 2023.08
+
+- strain on the **gnat (小烦扰)** of the prior distribution while **swallowing (吞下，相信)** the camel that is the likelihood
+- Odysseus has his men **lash him to the mast (桅杆)** so that he will not **succumb (屈服)** to the lure of the Sirens.
+- inferno: 地狱，无法控制的大火
+- thriftiness: 克勤克俭，茂盛，健壮
+- spot-on: 完全正确，对极了
+
 ## 2023.07
 
 - splurge: 挥霍，乱花钱
@@ -25,7 +33,8 @@
 - iffy: 说不准的，有问题的
 - bolster: 加强，改善
 - father-son alums: 父子校友
-- 
+- **solicit (征求，筹集)** nomination
+- graciously: 和蔼地
 
 ## 2023.06
 
@@ -1470,7 +1479,7 @@
 
 from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/14/steven-pinker-on-torture/)
 1. An example is some preliminary data gathered at Stanford on revival of cardiac arrest patients by **paramedics**.
-2. defibrillation
+2. defibrillation: 心脏除颤
 3. For **diploid** and **tetraploid** tumors, the flow **cytometry (细胞计数法，测量不同细胞参数的生物方法的统称)** method was also able to estimate the percent of tumor cells in a growth stage of their cell cycle, the percent of growth is systematically missing for most **aneuploid** tumors.
 1. The **knockoff** filter operates by **manufacturing** knockoff variables that are cheap.
 2. The knockoff filter can be seen as a **versatile (多用途的，多功能的)** wrapper.
@@ -1878,7 +1887,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 20. as to that: 就此而言
 21. red dwarf star
 22. bode: 预示；bide（等待，持续，经受） 的过去分词
-23. prism: 棱镜
 24. spectrum
 25. He rejected an objective understanding of color, in favor of a more subjective understanding.
 26. through and through: 完完全全，彻彻底底
@@ -1917,7 +1925,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 20. petal: 花瓣
 21. **juxtapose (并列)** these two perspectives, each of which connect statistical graphics to literature, but in a different way.
 22. archaeology: 考古学
-23. oversee
+23. oversee: 监督，监视
 24. pharaoh Khufu, Great Pyramid
 25. sturdy: 结实的，坚固的
 26. Herodotus: 希腊历史学家希罗多德
@@ -2176,7 +2184,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. decorator:（房屋的）油漆匠；适用于室内装饰的
 3. Islamic: 穆斯林的，伊斯兰教的
 4. parchment: 羊皮纸，羊皮纸文献
-5. angular
+5. angular: 瘦骨嶙峋的，骨瘦如柴的，有棱角的
 6. **souk (露天市场，集市)**
 7. mosque
 8. Forming voting **blocs (集团)** and **coalitions (联盟)** as a **prisoner (囚徒)**'s dilemma: a possible theoretical explanation for political instability.
