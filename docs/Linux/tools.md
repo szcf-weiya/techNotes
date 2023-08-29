@@ -521,7 +521,15 @@ $ cat t2.txt
 ffmpeg -i input.mp4 output.mp3
 ```
 
-!!! tip "B 站视频下载方法"
+??? tip "B 站视频下载方法"
+    最简单的方法是使用 [`you-get`](https://github.com/soimort/you-get) 工具，于是一行搞定，
+
+    ```
+    you-get URL
+    ```
+
+    除此之外，也可以手动下载：
+
     1. F12 打开开发者工具，并选择移动版页面
     2. 切换至 Network 下的 Media，然后 F5 刷新
     3. 网页上点击播放，等待缓存
@@ -1199,6 +1207,11 @@ more details refer to `man tesseract`.
 
     更多用法详见 [linux screen 命令详解](https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html)，以及 [Kill detached screen session - Stack Overflow](https://stackoverflow.com/questions/1509677/kill-detached-screen-session)
 
+
+!!! tip "detach from nested session"
+    `Ctrl + B`, `Ctrl + B`, `d` (or `D` to select)
+
+    see also: [:link:](https://superuser.com/questions/249659/how-to-detach-a-tmux-session-that-itself-already-in-a-tmux)
 
 常用操作
 

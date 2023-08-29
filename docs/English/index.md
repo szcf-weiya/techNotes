@@ -5,6 +5,9 @@
 - inferno: 地狱，无法控制的大火
 - thriftiness: 克勤克俭，茂盛，健壮
 - spot-on: 完全正确，对极了
+- dynamo: 发电机
+- tax foreclosure: 税务法拍，欠税扣押房产
+- we may end up anthropomorphising the LLM a bit too much.
 
 ## 2023.07
 
@@ -1153,7 +1156,7 @@
 - The story was featured in various **classy (上等的，豪华的，时髦的)** **news outlets (报道新闻的机构)**.
 - some **wiseass (自以为是的人)** replies to all
 - we're **reliving** the 1990's here...
-- The X-ray emission comes from the hot gas surrounding and **accreting** onto the merging black holes.
+- The X-ray emission comes from the hot gas surrounding and **accreting (增大，合生)** onto the merging black holes.
 - During the merger, some of the X-ray emission is expected to be modulated at a frequency **commensurate (相当的)** to that of the gravitational waves produced by the black holes.
 - after the merger, it is possible that a **corona (日冕，日华)** of hot, X-ray emitting gas will form and jets of particles may be launched at speeds close to the speed of light.
 - They are **acutely (极其，强烈地)** **attuned (习惯，适应)** to the **grave (严重的)** dangers associated with an economy **grinding to a halt (慢慢停下来，无法继续前进).** [see also](https://www.51voa.com/Voa_English_Learning/814-grind-to-a-halt-55001.html)
@@ -1337,7 +1340,7 @@
     - limbic system: 包含 **海马体 (Hippocampus)** 及 **杏仁体 (Amygdala)** 在内，支援多种功能例如情绪、行为及长期记忆的大脑结构。
 - rationalize it with the **tangible (有形的，可触摸的，切实的)** things
 - the pursuit of powered man flight was like the dot com of the day.
-- under-capitalized
+- under-capitalized: 资本不足
 - And **lo and behold**, look what happened.
 - They only reason these people buy **touch-tone phone** is because you can't buy **rotary phones** anymore.
 - gut feeling
@@ -2154,7 +2157,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. caravan: 车队，大篷车
 - expedition: 探险、考察
 - identifying patients with similar disease trajectory might **expedite (加快进展)** the diagnosis and treatment and reduce patient suffering.
-4. merchant
+4. merchant: 商人，批发商
 5. guild: 同业公会；（同一行业、志趣或目的的）协会
 - uphold: 支持，维持（原判），受理（申诉）
 7. The word is now an **egalitarian (主张人人平等的；平等主义的)** society, but the reality is the existence of such discrimination.
