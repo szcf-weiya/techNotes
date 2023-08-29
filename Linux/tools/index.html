@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.5">
     
     
       
@@ -4255,8 +4255,12 @@ $<span class="w"> </span>cat<span class="w"> </span>t2.txt<span class="w"> </spa
 <p>下载 B 站视频歌曲后，提取音频</p>
 <div class="highlight"><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>output.mp3
 </code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">B 站视频下载方法</p>
+<details class="tip">
+<summary>B 站视频下载方法</summary>
+<p>最简单的方法是使用 <a href="https://github.com/soimort/you-get"><code>you-get</code></a> 工具，于是一行搞定，</p>
+<div class="highlight"><pre><span></span><code>you-get URL
+</code></pre></div>
+<p>除此之外，也可以手动下载：</p>
 <ol>
 <li>F12 打开开发者工具，并选择移动版页面</li>
 <li>切换至 Network 下的 Media，然后 F5 刷新</li>
@@ -4264,7 +4268,7 @@ $<span class="w"> </span>cat<span class="w"> </span>t2.txt<span class="w"> </spa
 <li>右键点击缓存文件，选择 Copy &gt; Copy link address，即可得到视频链接</li>
 </ol>
 <p>参考 <a href="https://www.zhihu.com/question/295852104/answer/2076417322">怎么提取b站里面的音频？ - 视频编辑助手的回答 - 知乎</a></p>
-</div>
+</details>
 <h4 id="_6">去除音频<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>参考 <a href="https://hefang.link/article/how-remove-voice-with-ffmpeg.html">如何使用ffmpeg去除视频声音？</a></p>
 <div class="highlight"><pre><span></span><code>ffmpeg<span class="w"> </span>-i<span class="w"> </span>.<span class="se">\i</span>nput.mp4<span class="w"> </span>-map<span class="w"> </span><span class="m">0</span>:0<span class="w"> </span>-vcodec<span class="w"> </span>copy<span class="w"> </span>out.mp4
@@ -4764,6 +4768,11 @@ screen<span class="w"> </span>-r<span class="w"> </span><span class="o">[</span>
 </code></pre></div>
 <p>更多用法详见 <a href="https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html">linux screen 命令详解</a>，以及 <a href="https://stackoverflow.com/questions/1509677/kill-detached-screen-session">Kill detached screen session - Stack Overflow</a></p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">detach from nested session</p>
+<p><code>Ctrl + B</code>, <code>Ctrl + B</code>, <code>d</code> (or <code>D</code> to select)</p>
+<p>see also: <a href="https://superuser.com/questions/249659/how-to-detach-a-tmux-session-that-itself-already-in-a-tmux"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+</div>
 <p>常用操作</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># new a shell</span>
 tmux
@@ -5019,7 +5028,7 @@ see also: <a href="https://www.baeldung.com/linux/pretty-print-xml"><img alt="�
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 29, 2023</span>
       
         <br>
         Created:
