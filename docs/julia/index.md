@@ -5,6 +5,10 @@
 - [Timing in Julia](http://www.pkofod.com/2017/04/24/timing-in-julia/)
 - [Publication quality plots in Julia](https://tamaspapp.eu/post/plot-workflow/)
 
+
+!!! warning "not use ~ in serialize"
+    use explicit path.
+
 ## Version Control
 
 1. download the "Generic Linux Binaries for x86 (64-bit)" of a particular version from [Download Julia](https://julialang.org/downloads/)

@@ -810,7 +810,7 @@
 - turquoise (青绿色); magenta (品红，洋红)
 - She is the **curator (馆长；监护人；管理者)** of the museum.
     - a bundle of **curated (仔细挑选的；精选的)** packages from different categories
-- They were following the normal **protocol (协议，协定)** of the cancer genome **consortium (联盟)**.
+- They were following the normal **protocol (协议，协定)** of the cancer genome **consortium (联盟)** (pluram form: consortia).
     - communication protocol: 通信协议
 - Land severely **depleted (耗尽)** by urbanization, population growth, intensive agriculture and climate change.
     - Understanding what depletes you and what replenishes you makes you more effective at life. [:fireworks::link:](https://qr.ae/pvuNt5)
