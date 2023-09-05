@@ -2241,9 +2241,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
     - hustle and bustle: 熙熙攘攘，忙碌
 5. dip: 蘸，浸
 6. The farmer **bemoaned (惋惜，为...恸哭)** his loss.
-7. moral, mortal
-    - moral code: 道德准则
-    - all men are mortal: 人皆有一死
+7. moral code (道德准则) vs. all men are mortal (人皆有一死)
 8. blend of cultures：文化融合
 - **blaze (火焰；展现)** your trail
 10. bland: 平淡的，乏味的
