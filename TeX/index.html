@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.1">
     
     
       
@@ -2199,13 +2199,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bold-math-formula" class="md-nav__link">
-    bold math formula
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#use-serif-math-font-in-beamer" class="md-nav__link">
     use serif math font in beamer
   </a>
@@ -2224,20 +2217,6 @@
   
     <nav class="md-nav" aria-label="List">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#item" class="md-nav__link">
-    设置item之间的间隔
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enumerate" class="md-nav__link">
-    enumerate 编号 样式设定
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#itemize-item" class="md-nav__link">
@@ -3922,13 +3901,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bold-math-formula" class="md-nav__link">
-    bold math formula
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#use-serif-math-font-in-beamer" class="md-nav__link">
     use serif math font in beamer
   </a>
@@ -3947,20 +3919,6 @@
   
     <nav class="md-nav" aria-label="List">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#item" class="md-nav__link">
-    设置item之间的间隔
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enumerate" class="md-nav__link">
-    enumerate 编号 样式设定
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#itemize-item" class="md-nav__link">
@@ -4582,7 +4540,8 @@ code
 <h3 id="common-font-styles-in-math-formula">common font styles in math formula<a class="headerlink" href="#common-font-styles-in-math-formula" title="Permanent link">&para;</a></h3>
 <p><a href="https://i.stack.imgur.com/eZdhj.png"><img alt="" src="math-fonts.png" /></a></p>
 <p>refer to <a href="https://tex.stackexchange.com/questions/58098/what-are-all-the-font-styles-i-can-use-in-math-mode">What are all the font styles I can use in math mode?</a></p>
-<h3 id="bold-math-formula">bold math formula<a class="headerlink" href="#bold-math-formula" title="Permanent link">&para;</a></h3>
+<details class="tip">
+<summary>bm: 加粗保留斜体</summary>
 <p>使用 <code>\mathbf</code> 加粗完后斜体不见了，这不是想要的结果</p>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span>
 <span class="k">\boldmath</span>
@@ -4598,6 +4557,7 @@ code
 <span class="s">$$</span>
 </code></pre></div>
 <p>参考 <a href="http://blog.sina.com.cn/s/blog_5e16f1770100nqwx.html">LaTeX 数学字体加粗问题</a></p>
+</details>
 <h3 id="use-serif-math-font-in-beamer">use serif math font in beamer<a class="headerlink" href="#use-serif-math-font-in-beamer" title="Permanent link">&para;</a></h3>
 <p>默认数学字体挺丑的，可以在导言区加入</p>
 <div class="highlight"><pre><span></span><code><span class="k">\usefonttheme</span><span class="na">[onlymath]</span><span class="nb">{</span>serif<span class="nb">}</span>
@@ -4609,7 +4569,8 @@ code
 <p>数学符号用衬线字体相对美观一些，而Beamer如果不另行设置，默认全文使用sans-serif字体。因此按上述方式设置一下即可。</p>
 </blockquote>
 <h2 id="list">List<a class="headerlink" href="#list" title="Permanent link">&para;</a></h2>
-<h3 id="item">设置item之间的间隔<a class="headerlink" href="#item" title="Permanent link">&para;</a></h3>
+<details class="tip">
+<summary>设置item之间的间隔</summary>
 <p>直接用<code>itemsep</code>命令，如</p>
 <div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
   <span class="k">\setlength\itemsep</span><span class="nb">{</span>1em<span class="nb">}</span>
@@ -4618,8 +4579,13 @@ code
   <span class="k">\item</span> three
 <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
 </code></pre></div>
-<h3 id="enumerate">enumerate 编号 样式设定<a class="headerlink" href="#enumerate" title="Permanent link">&para;</a></h3>
-<p>参考<a href="http://blog.sina.com.cn/s/blog_7983e5f101019wwq.html">latex 列举 enumerate 编号 样式设定</a></p>
+</details>
+<details class="tip">
+<summary>small left margin (locally for current slide)</summary>
+<p><div class="highlight"><pre><span></span><code> \addtolength{\leftmargini}{-4\labelsep}
+</code></pre></div>
+This is useful when using <code>\column</code> to add notes, but the margin seems too large.</p>
+</details>
 <h3 id="itemize-item">itemize 环境下不同 item 中数学公式对齐<a class="headerlink" href="#itemize-item" title="Permanent link">&para;</a></h3>
 <p>参考<a href="https://tex.stackexchange.com/questions/29119/sharing-alignment-between-equations-in-two-different-items">Sharing alignment between equations in two different items</a></p>
 <h2 id="low-level">Low-Level<a class="headerlink" href="#low-level" title="Permanent link">&para;</a></h2>
@@ -5127,7 +5093,7 @@ $<span class="w"> </span>latexdef<span class="w"> </span>-p<span class="w"> </sp
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 19, 2023</span>
       
         <br>
         Created:
