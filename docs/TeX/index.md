@@ -251,29 +251,28 @@ sudo apt-get install texlive-fonts-recommand
 
 refer to [What are all the font styles I can use in math mode?](https://tex.stackexchange.com/questions/58098/what-are-all-the-font-styles-i-can-use-in-math-mode)
 
-### bold math formula
+??? tip "bm: 加粗保留斜体"
+	使用 `\mathbf` 加粗完后斜体不见了，这不是想要的结果
+	
+	```tex
+	\usepackage{amsmath}
+	\boldmath
+	$$
+	f(x,y) = 3(x+y)y / (2xy-7)
+	$$
+	\unboldmath
+	```
+	
+	或
+	
+	```tex
+	\usepackage{bm}
+	$$
+	\bm{f(x,y) = 3(x+y)y / (2xy-7)}
+	$$
+	```
 
-使用 `\mathbf` 加粗完后斜体不见了，这不是想要的结果
-
-```tex
-\usepackage{amsmath}
-\boldmath
-$$
-f(x,y) = 3(x+y)y / (2xy-7)
-$$
-\unboldmath
-```
-
-或
-
-```tex
-\usepackage{bm}
-$$
-\bm{f(x,y) = 3(x+y)y / (2xy-7)}
-$$
-```
-
-参考 [LaTeX 数学字体加粗问题](http://blog.sina.com.cn/s/blog_5e16f1770100nqwx.html)
+	参考 [LaTeX 数学字体加粗问题](http://blog.sina.com.cn/s/blog_5e16f1770100nqwx.html)
 
 ### use serif math font in beamer
 
@@ -293,22 +292,24 @@ $$
 
 ## List
 
-### 设置item之间的间隔
+??? tip "设置item之间的间隔"
 
-直接用`itemsep`命令，如
+	直接用`itemsep`命令，如
+	
+	```tex
+	\begin{itemize}
+	  \setlength\itemsep{1em}
+	  \item one
+	  \item two
+	  \item three
+	\end{itemize}
+	```
 
-```tex
-\begin{itemize}
-  \setlength\itemsep{1em}
-  \item one
-  \item two
-  \item three
-\end{itemize}
-```
-
-### enumerate 编号 样式设定
-
-参考[latex 列举 enumerate 编号 样式设定](http://blog.sina.com.cn/s/blog_7983e5f101019wwq.html)
+??? tip "small left margin (locally for current slide)"
+	```
+     \addtolength{\leftmargini}{-4\labelsep}
+ 	```
+  	This is useful when using `\column` to add notes, but the margin seems too large.
 
 ### itemize 环境下不同 item 中数学公式对齐
 
