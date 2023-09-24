@@ -2228,7 +2228,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 22. ConvNets went from **obscure (费解的)** models that were **shrouded (覆盖，隐藏)** in skepticism to rockstars of Computer Vision, present as a core building block in almost every new Computer Vision paper.
 23. ward off: 挡开，架开
 24. The source of indoor **VOC (voltile organic compounds, 挥发性有机化合物)** could be multiple and it may be also be contributed by the use of **detergents (洗涤剂，洗衣粉)** and **fragrance (香气，香水)** (room fragrance and **perfume (香水，香料)**) in indoor environment.
-25. octopus: 章鱼
 26. A large factory is supposed to built near the community according to the announcement issued by a company.
 27. There is a growing awareness of both the positive and negative influences that the construction plan brings to our community.
 28. Participating in community activities is a practical and effective approach for teenagers to enhance their social skills. For example, if a teenager, who is not a sociable person, seizes an opportunity to work in a community as a volunteer for hosting an English conversations group, he is capable of practicing his communication skills by conversing with people of different ages who he might not be acquainted with it. Such an experience enables him to overcome the fear of speaking in front of a group of strangers and master the skills of how to communicate with different kinds of people in an approximate way, both of which contribute to the improvement of his social skills, particularly his communication skills.
