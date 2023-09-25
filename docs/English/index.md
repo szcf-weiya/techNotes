@@ -1,3 +1,11 @@
+## 2023.09
+
+- endearing
+- misogynistic
+- xenophobic
+- ableist
+
+
 ## 2023.08
 
 - strain on the **gnat (小烦扰)** of the prior distribution while **swallowing (吞下，相信)** the camel that is the likelihood
