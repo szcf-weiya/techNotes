@@ -4,6 +4,9 @@
 - misogynistic
 - xenophobic
 - ableist
+- how **disinformation (虚假消息)** researchers are facing **scrutiny (仔细审查)** in the US
+- three **macronutrients (常量营养素)**: **lipids (脂质)**, carbohydrate, **amino acids (氨基酸)**
+- barge: 驳船
 
 
 ## 2023.08
@@ -1250,7 +1253,6 @@
 - lay something out: to detail or explain something explicitly, see also [:link:](https://idioms.thefreedictionary.com/lay+something+out)
 - it is neurobiologically that's how we're wired.
 - most **excruciating (极为疼痛的)** experiences of being excluded.
-- unraveled connection
 - The thing that underpinned this
 - I am not promoted enough.
 - **outsmart (智胜，比……精明)** it.
@@ -1362,7 +1364,6 @@
 - Image is powerful, but also, image is superficial.
 - **fake tan** (人工日晒肤色；假冒古铜色；[美黑](https://zhuanlan.zhihu.com/p/28819200bar))
 - I was **scouted (侦察，跟踪，监视，发现)**.
-- I won a genetic lottery, and I am the recipient of a legacy.
 - slender figures, and femininity
 - there are some **fashionistas (疯狂追求时髦与流行的人)** who are like
 - they don't put me in charge of that.
@@ -1374,11 +1375,10 @@
 - it's also the very first time that I had worn a **bikini**, and I didn't ever **have my period** yet.
 - Here's me at a **slumber (睡眠)** party a few days before I shot **French Vogue**.
 - They are constructions by a group of professionals, by hairstylists and makeup artists and photographers and stylists and all of their assistants and pre-production and post-production.
-- were stopped and frisked.
-    - stop-and-frisk: 拦截盘查；拦截搜身
+- were **stopped and frisked (拦截盘查；拦截搜身)**.
 - you are so happy and **fabulous**.
 - when we are backstage
-- I am insecure.
+- I am **insecure (缺乏信心的，无把握的)**.
 - It was difficult to unpack a legacy of gender and racial oppression when I am one of the biggest beneficiaries.
 - If there's a takeaway to this talk,
 
@@ -1739,8 +1739,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 1. noob: 菜鸟
 1. tangerine: 橘，橘黄色，橘红色
 1. consanguineous: 血亲的，血缘的
-2. sibship
-3. autosomal
+2. sibship: 血缘关系
+3. autosomal: 常染色体的
 6. facilitate
 2. passage: 通道，通路
 3. leucocyte: 白细胞
@@ -1994,7 +1994,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 3. **Inevitably (必然，必定)**, his remarkable success attracted the invidious attention of the other sales representatives.
 4. As loyalty unites lovers, so perfidy estranges friends.
 5. Every year I go to Kunming to enjoy its cool and **salubrious (环境宜人的)** climate.
-6. only a diaphanous hope of success.
+6. only a **diaphanous (轻柔细密的，半透明的)** hope of success.
 7. Every time this guy visits me, one of my books disappears. I don't want to say he steals them, but I really smell a rat.
 8. As soon as the war ends, the government will start to **repatriate (遣返，遣送回国)** war **refugees (难民)**.
 9. The moon waxes and the wanes.
@@ -2027,14 +2027,14 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 36. He loved to show off his **protean (多变的，易变的)** talent.
 37. Beauty is as **evanescent (迅速消失遗忘的，短暂的)** as a rainbow.
 38. He was eulogized at his funeral as a caring husband and a good father.
-39. The Internet allows us to **disseminate** information faster.
+39. The Internet allows us to **disseminate (传播，散播)** information faster.
 40. We managed to entangle the string of lights into a hopeless mess of wires.
 41. The history of Alexander the Great is entangled by variant accounts of his exploits.
 42. A string of inconsistent statements finally entrapped the witness.
 43. He entreated his boss for another chance.
 44. Thwarting centuries of would-be conquerors, the Aztec fortress of Chapultepec seemed impregnable, until U.S. forces under General Winfield Scott were able to take the fortress with surprisingly little effort.
-45. Her genteel behaviors at the ball make others conjecture that she must come from a distinguished noble family.
-46. It would be gauche to mention the subject.
+45. Her **genteel (显得彬彬有礼的)** behaviors at the ball make others conjecture that she must come from a distinguished noble family.
+46. It would be **gauche (笨拙的，不善社交的)** to mention the subject.
 47. The **presumptuous (放肆的，自以为是的)** doctor didn't even bother to explain to me the treatment that I would be receiving.
 48. Under such a circumstance his demand for attention was utterly **presumptuous (自以为是的，专横的，冒失的)**.
 49. We could hear the cook in the kitchen railing against his assistant and wondered if we'd ever get our food.
@@ -2073,7 +2073,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 32. Children were agog over new toys.
 33. **impugn (责难，驳斥)** a political opponent's character
 34. **Well-doer (善人)** never does **chicanery (欺诈，诈骗)** and person who is good at chicanery does not belong well-doer.
-35. My wife chided me for forgetting to offer our guests some refreshments.
+35. My wife **chided (责备，呵斥)** me for forgetting to offer our guests some refreshments.
 36. I absolutely get **choleric (易怒的，暴躁的，[胆汁质的](https://zh.wikipedia.org/wiki/%E5%9B%9B%E7%A8%AE%E6%B0%A3%E8%B3%AA))** when a salesman calls during the dinner hour.
 37. Men of choleric type take to kicking and smashing.
 38. The revised system **chords (n. 和弦; v. 调弦)** perfectly with the original goals.
@@ -2097,7 +2097,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 55. Intrinsic (innate; essential)
     - innate immunity: 先天免疫，自然免疫
 60. In both countries policy is being dictated by **intransigents (不妥协，不让步的人)**, who risk stumbling into war.
-62. idiosyncratic
 64. **auction (拍卖，竞拍)**, auctioneer, bidding
 65. imperturbability: 沉着，冷静
 67. A baby is god's most **precious (宝贵的，珍贵的)** gift.
@@ -2240,7 +2239,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 27. There is a growing awareness of both the positive and negative influences that the construction plan brings to our community.
 28. Participating in community activities is a practical and effective approach for teenagers to enhance their social skills. For example, if a teenager, who is not a sociable person, seizes an opportunity to work in a community as a volunteer for hosting an English conversations group, he is capable of practicing his communication skills by conversing with people of different ages who he might not be acquainted with it. Such an experience enables him to overcome the fear of speaking in front of a group of strangers and master the skills of how to communicate with different kinds of people in an approximate way, both of which contribute to the improvement of his social skills, particularly his communication skills.
 30. Several staff members have checked the manuscript for accuracy and ease of use.
-31. anatomical
+31. anatomic: 解剖的，组织的
 1. Together they create a picture that hints towards **cubism (立体主义)**.
 2. be coordinated with, to harmonize with
 3. What is called **resignation (顺从，听从)** is confirmed desperation. 所谓听天由命，正是肯定的绝望。
@@ -2323,7 +2322,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 
 1. She's tried every **knack (诀窍，本领)** in **Cupid (【罗马神话中的爱神】丘比特)**'s book to get her guy to marry her.
 2. The team's limp performance has many people calling for the head coach's **resignation (辞职)**.
-3. the limpid outlook of a man who is at peace with himself as he awaits death.
+3. the **limpid (清澈的，透明的)** outlook of a man who is at peace with himself as he awaits death.
 4. the **lush (茂盛的，草木繁茂的)** fields were the envy of neighboring farmers.
 6. **vagabonds (流浪者，游手好闲者)** **meandering (漫步，蜿蜒缓慢流动)** through life
 7. Reading will **fertilize (使丰饶，使受精)** vocabulary.
@@ -2367,8 +2366,8 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 18. I cannot feel it will make for a very **restful (闲适宁静的，使人感到悠闲的)** retirement, can you?
 19. True to form (一如既往，像往常一样), Walter started asking him about his own retirement.
 20. These were very remarkable, but as **eccentric (古怪的，异乎寻常的)** as all his other **accomplishments (成就，成绩)**.
-22. If true, that suggests a **syllogism**: that the love of time is a root of evil, too.
-23. Spencer's idiosyncratic drawing of a large fairy on a tiny water-lily leaf captures an imagination that strained against conventional rules of composition from the start.
+22. If true, that suggests a **syllogism (三段论法)**: that the love of time is a root of evil, too.
+23. Spencer's **idiosyncratic (特殊物质的，特殊的，异质的)** drawing of a large fairy on a tiny **water-lily (睡莲，荷花)** leaf captures an imagination that strained against conventional rules of composition from the start.
 24. a fact that helps explain how it manages to be both profligate and stingy, and is forever in the red.
 25. The concert was rather an amateurish affair.
 26. Only when we deal with these problems successfully can we benefit the most from university **amalgamation (合并，混合)**.

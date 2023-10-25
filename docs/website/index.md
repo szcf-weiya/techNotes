@@ -553,6 +553,14 @@ but the upgrade does not upgrade `pygmentize`, instead, it install it to `/home/
 !!! warning "2022-10-29 21:14:49"
     However, upgrading `pygments` from 2.3.1 to 2.12.0 breaks the code block rendering in ESL-CN, see [:link:](https://github.com/szcf-weiya/techNotes/issues/25#issuecomment-1296036929). Locally, there is a conda env named `py36ESL`, in which `pygments` is installed via `pip` instead of `conda`. The solution is to install `pygments` via `conda install pygments==2.3.1` in `py36ESL` environment.
 
+!!! tip "pygments vs rouge"
+    `rouge` highlights contents within the block
+    ```
+    {% highlight LANG %}
+    {% endhighlight %}
+    ```
+    It is much cumbersome to write these compared to three backsticks. But hopefully, css styles generated from pygments are also supported by rouge. So we do not need to worry about the highlighter.
+
 ## WeasyPrint
 
 <https://weasyprint.org/>
