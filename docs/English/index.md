@@ -1257,7 +1257,7 @@
 - I am not promoted enough.
 - **outsmart (智胜，比……精明)** it.
 - turn out well: 成功
-- it boils down to
+- it boils down to: 归根结底
 - office supply addiction, so I had a manila folder, and I had a Sharpie (美国三福记号笔)
 - separate courage and **bravery (勇敢，华丽，盛装)**
 - courage is from the Latin word "cor", meaning "heart"
@@ -1785,7 +1785,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. miraculously: 神奇的，非凡的
 1. boilerplate code: 样板代码
 1. coerce: 强迫，迫使
-1. toggle
 2. elicitation: 启发
 4. **Bristol (布里斯托)** is one of the most **congested (拥堵的)** cities in Britain.
 5. recurrent: 循环的，反复出现的
@@ -2229,7 +2228,6 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 16. **repercussion (反射，弹回)**
 17. **pepper (辣椒，胡椒)**, **aromatic (香料，芳香植物)**, **bark (咆哮，吠叫)**, **cinnamon (肉桂)**, **ginger (生姜)**, **clove (丁香)**, **maize (玉米)**
     - garlic clove: 大蒜瓣
-18.  boil it down
 20. diplomacy
 21. immerse yourself in **exotic (外来的，异国的)** languages, 
 22. ConvNets went from **obscure (费解的)** models that were **shrouded (覆盖，隐藏)** in skepticism to rockstars of Computer Vision, present as a core building block in almost every new Computer Vision paper.
