@@ -84,6 +84,13 @@ gcc -L /usr/dev/mysql/lib -static -lmysqlclient test.o -o test
 
 参考 [Linux GCC常用命令](http://www.cnblogs.com/ggjucheng/archive/2011/12/14/2287738.html)
 
+!!! tip "(n+3)&~3 used for memory alignment"
+	The case comes from [:link:](https://github.com/szcf-weiya/forked_BOLT-REML/blob/c48286e468c91d6f6ef0785610466f860e75b883/src/Bolt.cpp#L1190)
+	For example, when `n=14`, then the answer is 16 because
+	- `17` is represented in binary as `10001`
+	- `3` is represented in binary as `00011`
+	then `17` AND `~3` gives `10000`, which is 16 in decimal.
+
 ## Print Format
 
 ![](https://user-images.githubusercontent.com/13688320/132701280-6648bbb6-5c7a-428b-b6ec-c352e23e4a28.png)
