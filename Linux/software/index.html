@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -4824,6 +4824,25 @@ Nov<span class="w"> </span><span class="m">04</span><span class="w"> </span><spa
 </code></pre></div>
 </details>
 <details class="note">
+<summary>Use Wine WeChat on XPS with 22.04</summary>
+<ol>
+<li>install the stable wineHQ and setup
+<div class="highlight"><pre><span></span><code>export WINEARCH=win32
+export WINEPREFIX=~/.wine32
+winecfg
+</code></pre></div></li>
+<li>install Chinse font for wine
+<div class="highlight"><pre><span></span><code>wget<span class="w">  </span>https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+chmod<span class="w"> </span>+x<span class="w"> </span>winetricks
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>cabextract
+./winetricks<span class="w"> </span>corefonts<span class="w"> </span>gdiplus<span class="w"> </span>riched20<span class="w"> </span>riched30<span class="w"> </span>wenquanyi
+./winetricks<span class="w"> </span>regedit<span class="w"> </span><span class="c1"># import registry file from https://gist.githubusercontent.com/swordfeng/c3fd6b6fcf6dc7d7fa8a/raw/0ad845f98f5a97e7173ff40b5e57b3a163e92465/chn_fonts.reg</span>
+</code></pre></div></li>
+<li>install WeChat_32bit from official site</li>
+</ol>
+<p>refer to <a href="https://web.archive.org/web/20230603185929/https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+</details>
+<details class="note">
 <summary>Start to Use Wine Wechat (Post: ~ 2020.05.12)</summary>
 <p>起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！</p>
 <p>docker 了解一点，知道如果成功，以后安装卸载会很简单，于是使用 <a href="https://github.com/huan/docker-wechat">huan/docker-wechat</a> 提供的 docker image，但是后来<a href="https://github.com/huan/docker-wechat/issues/40">输入时文本不可见的问题</a>很恼人 ，也不知道怎么解决。</p>
@@ -4933,7 +4952,7 @@ $<span class="w"> </span>wineboot<span class="w"> </span>-r<span class="w"> </sp
 <p>一般地，<code>sh -c "command 1; command 2"</code>可以实现在 launcher 中同时运行两个命令，参考 <a href="https://askubuntu.com/questions/60379/how-to-combine-two-commands-as-a-launcher">How to combine two commands as a launcher?</a></p>
 </div>
 <details class="tip">
-<summary>找到阴影窗口 id</summary>
+<summary>阴影窗口 id gap = 8 on T460P</summary>
 <p>策略二基于的假设是，</p>
 <blockquote>
 <p>微信窗口后四位所对应的不同窗口层次是固定的. 主窗口是0xXXXX000a, 那么阴影所对应的窗口就是0xXXXX0014.</p>
@@ -4959,6 +4978,10 @@ $<span class="w"> </span>wineboot<span class="w"> </span>-r<span class="w"> </sp
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;wechat.exe&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
 </code></pre></div>
 <p>代码详见 <a href="../disable-wechat-shadow.py">disable-wechat-shadow.py</a></p>
+</details>
+<details class="info">
+<summary>阴影窗口 id gap = 15 on XPS</summary>
+<p>在 XPS 上重复这一过程，发现 id gap 不再是 8。运行 <code>xwininfo</code>，然后将鼠标移至窗口边缘会出现十字，然后点击，便会返回当前阴影窗口 id。重复实验发现，此时阴影窗口 id 与主窗口 id 相差 15.</p>
 </details>
 <details class="done">
 <summary>fixed: cannot send images</summary>
@@ -5033,7 +5056,7 @@ xournalpp/now<span class="w"> </span><span class="m">1</span>.0.20-1~ubuntu18.04
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 6, 2023</span>
       
         <br>
         Created:
@@ -5207,7 +5230,7 @@ xournalpp/now<span class="w"> </span><span class="m">1</span>.0.20-1~ubuntu18.04
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       
