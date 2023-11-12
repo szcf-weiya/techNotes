@@ -1744,7 +1744,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 6. facilitate
 2. passage: 通道，通路
 3. leucocyte: 白细胞
-5. delicate
+5. delicate: 精致的，微妙的
 6. illusory: 虚幻的，错觉的
 7. He said that racism is **endemic (风土的，地方性的)** in this country.
 8. emanating
@@ -1956,7 +1956,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 15. nostalgia
 17. alloy: 合金；把...铸成合金
 18. brass, trumpet, **trombone (长号)**
-19. rust, patina
+19. rust, patina: 锈，铁锈
 20. halt
 21. Another 30 people died in the **hull (船体，船身)** where they are believed to have **suffocated (呼吸困难，窒息而死)**.
 22. barnacle（藤壶【小甲壳动物，附着于水下岩石或船底等】）, shellfish（贝类动物，甲壳类动物）
@@ -2348,7 +2348,7 @@ from [Steven Pinker on torture](https://statmodeling.stat.columbia.edu/2020/01/1
 2. He has encountered more than his share of asperities on the road to success.
 3. Envy can make oneself backward; self-confidence can tell oneself to be aspirant.
 4. He says face veils like the niqab (尼卡布，一些穆斯林妇女在公共场合戴的面纱，通常露出眼睛) are not a religious requirement.
-5. To reduce fraud, an opaque network of government bank accounts has been replaced by a centralized system.
+5. To reduce fraud, an **opaque (不透明的)** network of government bank accounts has been replaced by a centralized system.
 6. as if he could **pierce (穿透，刺破)** those **sheets (薄板；床单；纸张)** of water so opaque to our eyes and scan the deepest seas.
 7. Mr Zingales has written an **elegy (挽歌)** to the America he found when he moved there 24 years ago from an Italy that was rife with nepotism (裙带关系).
 8. We keep records on every single hive, and that compendium of records goes back quite a long time.
