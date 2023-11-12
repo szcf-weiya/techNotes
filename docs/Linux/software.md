@@ -1372,6 +1372,25 @@ Some references:
     39508:"ProductName"="Microsoft Windows 7"
     ```
 
+??? note "Use Wine WeChat on XPS with 22.04"
+    1. install the stable wineHQ and setup
+    ```
+    export WINEARCH=win32
+    export WINEPREFIX=~/.wine32
+    winecfg
+    ```
+    2. install Chinse font for wine
+    ```bash
+    wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+    chmod +x winetricks
+    sudo apt install cabextract
+    ./winetricks corefonts gdiplus riched20 riched30 wenquanyi
+    ./winetricks regedit # import registry file from https://gist.githubusercontent.com/swordfeng/c3fd6b6fcf6dc7d7fa8a/raw/0ad845f98f5a97e7173ff40b5e57b3a163e92465/chn_fonts.reg
+    ```
+    3. install WeChat_32bit from official site
+
+    refer to [:link:](https://web.archive.org/web/20230603185929/https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux)
+
 ??? note "Start to Use Wine Wechat (Post: ~ 2020.05.12)" 
     
     起因是今天网页端竟然登不上去，本来觉得用不了就算了吧，正好降低聊天时间，但是想到很多时候传传文件大家还是习惯用微信，所以还是准备捣鼓下 linux 版。我记得之前试过一种，但是那似乎也是基于网页版的，只是封装了一下。而今天看到了基于 wine 以及将其打包成 docker 的解决方案！
@@ -1449,7 +1468,6 @@ Some references:
 
     为了保留之前的所有设定及历史聊天记录，选择文件至 `/media/weiya/Seagate/WeChat`，但不要精确至 `/media/weiya/Seagate/WeChat/WeChat Files`
 
-
 ??? done "fixed: 窗口轮廓阴影"
 
     当从微信切换到其他软件时，会留下一个窗口轮廓阴影。再一次感叹 google 的强大，本来这个问题我都不知道怎么搜索，但只给了 “wine wechat” 和 “窗口轮廓” 这两个关键词后，就找到了两种解决方案：
@@ -1517,7 +1535,7 @@ Some references:
 !!! tip
     一般地，`sh -c "command 1; command 2"`可以实现在 launcher 中同时运行两个命令，参考 [How to combine two commands as a launcher?](https://askubuntu.com/questions/60379/how-to-combine-two-commands-as-a-launcher)
 
-??? tip "找到阴影窗口 id"
+??? tip "阴影窗口 id gap = 8 on T460P"
 
     策略二基于的假设是，
 
@@ -1564,6 +1582,9 @@ Some references:
     ```
 
     代码详见 [disable-wechat-shadow.py](disable-wechat-shadow.py)
+
+??? info "阴影窗口 id gap = 15 on XPS"
+    在 XPS 上重复这一过程，发现 id gap 不再是 8。运行 `xwininfo`，然后将鼠标移至窗口边缘会出现十字，然后点击，便会返回当前阴影窗口 id。重复实验发现，此时阴影窗口 id 与主窗口 id 相差 15.
 
 ??? done "fixed: cannot send images"
 
