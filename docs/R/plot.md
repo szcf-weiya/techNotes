@@ -29,6 +29,9 @@ COMMAND | FIGURE
 `*` in the expression implies no space: `expression(xLab ~ x^2 * m^-2)` | ![image](https://user-images.githubusercontent.com/13688320/183274537-821df12b-a586-4ff6-979b-46f07ce80ac4.png)
 `expression(R[group("", list(hat(F),F),"")]^2)` OR `expression(R[hat(F) * ',' ~ F]^2)` | ![image](https://user-images.githubusercontent.com/13688320/183274648-a23a655c-f2c3-484c-a549-0bb6f3325a92.png)
 
+!!! tip "expression in geom_text"
+	When using `expression` in `geom_text`, the option `parse=T` to `geom_text()` and `as.character(...)` might be necessary. See also: [:link:](https://stackoverflow.com/questions/63813557/how-to-pass-an-expression-to-a-geom-text-label-in-ggplot)
+
 ### pure figure without axis
 
 Suppose I want to draw the following figure with R,
@@ -47,7 +50,7 @@ All is well before I tried to add the text $\rho$, if I use
 text(0.8, 0, expression(rho), cex = 2)
 ```
 
-it is OK, but it is exactly on the axis, not proper, but when I tried smaller $y$-coordinate, such as -0.1, the text cannot appear, which seems out of the figure. I have tried `par()` parameters, such as `mar`, but does not work.
+it is OK, but it is exactly on the axis, not proper. However, when I tried a smaller $y$-coordinate, such as -0.1, the text cannot appear, which seems out of the figure. I have tried `par()` parameters, such as `mar`, but does not work.
 
 Then I have no idea, and do not know how to google it. And even though I want to post an issue in the StackOverflow. But a [random reference](https://www.stat.auckland.ac.nz/~ihaka/120/Notes/ch03.pdf) give me ideas, in which the example saves me,
 
