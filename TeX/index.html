@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.11">
     
     
       
@@ -2152,39 +2152,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation of TeXLive">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2021-on-rocky" class="md-nav__link">
-    <span class="md-ellipsis">
-      2021 on Rocky
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2017-2020" class="md-nav__link">
-    <span class="md-ellipsis">
-      2017 -&gt; 2020
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#portable-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      portable mode
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -4022,39 +3989,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation of TeXLive">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2021-on-rocky" class="md-nav__link">
-    <span class="md-ellipsis">
-      2021 on Rocky
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2017-2020" class="md-nav__link">
-    <span class="md-ellipsis">
-      2017 -&gt; 2020
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#portable-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      portable mode
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -4720,7 +4654,8 @@
 <li>run it, and optionally specify the mirror location for faster download speed</li>
 </ol>
 </div>
-<h3 id="2021-on-rocky">2021 on Rocky<a class="headerlink" href="#2021-on-rocky" title="Permanent link">&para;</a></h3>
+<details class="note">
+<summary>2021 on Rocky</summary>
 <p>did not click <code>create symlinks to standard directories</code> after running <code>./install-tl</code></p>
 <p>create module file, <code>/usr/share/Modules/modulefiles/texlive/2021</code>,</p>
 <div class="highlight"><pre><span></span><code><span class="nb">set</span><span class="w">     </span>version<span class="w">         </span><span class="m">2021</span>
@@ -4738,7 +4673,9 @@ $<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </sp
 $<span class="w"> </span>which<span class="w"> </span>pdflatex
 /usr/local/texlive/2021/bin/x86_64-linux/pdflatex
 </code></pre></div>
-<h3 id="2017-2020">2017 -&gt; 2020<a class="headerlink" href="#2017-2020" title="Permanent link">&para;</a></h3>
+</details>
+<details class="note">
+<summary>2017 -&gt; 2020</summary>
 <p>The TeXLive 2017 for Ubuntu cannot work for me, it reports</p>
 <blockquote>
 <p>fatal: Could not undump 6994 4-byte item(s) &hellip;</p>
@@ -4754,7 +4691,9 @@ $<span class="w"> </span>which<span class="w"> </span>pdflatex
 </code></pre></div>
 <p>And note that the <a href="https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu">steps for completely removing the installed TeXLive</a>.</p>
 <p>If without root privilege, when running <code>install-tl</code>, type <code>D</code> to change the directory, and actually changing the first <code>&lt;1&gt;</code> would change all other directories.</p>
-<h3 id="portable-mode">portable mode<a class="headerlink" href="#portable-mode" title="Permanent link">&para;</a></h3>
+</details>
+<details class="note">
+<summary>portable mode</summary>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p><a href="https://github.com/szcf-weiya/techNotes/commit/b3ed900f0623d6fa1035ee7790fc650bb7ccb1fa">Date: Mar 22, 2019</a></p>
@@ -4770,6 +4709,7 @@ $<span class="w"> </span>which<span class="w"> </span>pdflatex
 <div class="highlight"><pre><span></span><code>&lt;CTAN/mirror/root/URL&gt;/systems/texlive/tlnet
 </code></pre></div>
 <p>参考 <a href="https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository">Change TeX Live Main Repository</a></p>
+</details>
 <h2 id="basic">Basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">hide date</p>
@@ -4780,6 +4720,10 @@ $<span class="w"> </span>which<span class="w"> </span>pdflatex
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>xspace<span class="nb">}</span>
 <span class="k">\newcommand\foo</span><span class="nb">{</span>foo<span class="k">\xspace</span><span class="nb">}</span>
 </code></pre></div>
+</details>
+<details class="tip">
+<summary>\ref vs \ref*</summary>
+<p>the star version does not create a link. <a href="https://tex.stackexchange.com/questions/308806/difference-between-autoref-and-autoref-autoref-star"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
 </details>
 <div class="admonition info">
 <p class="admonition-title">Norm: non-breaking space <code>~</code> in reference</p>
@@ -5453,7 +5397,7 @@ $<span class="w"> </span>latexdef<span class="w"> </span>-p<span class="w"> </sp
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 23, 2023</span>
       
         <br>
         Created:
