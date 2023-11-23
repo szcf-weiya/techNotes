@@ -14,82 +14,82 @@ comments: true
     1. download `install-tl`
     2. run it, and optionally specify the mirror location for faster download speed
 
-### 2021 on Rocky
+??? note "2021 on Rocky"
 
-did not click `create symlinks to standard directories` after running `./install-tl`
+	did not click `create symlinks to standard directories` after running `./install-tl`
+	
+	create module file, `/usr/share/Modules/modulefiles/texlive/2021`,
+	
+	```bash
+	set     version         2021
+	set     app             texlive
+	set     modroot         /usr/local/$app/$version
+	
+	prepend-path PATH $modroot/bin/x86_64-linux
+	prepend-path MANPATH $modroot/texmf-dist/doc/man
+	prepend-path INFOPATH $modroot/texmf-dist/doc/info
+	```
+	
+	then call it after loading the module,
+	
+	```bash
+	$ which pdflatex
+	/usr/bin/pdflatex
+	$ module load texlive/2021 
+	$ which pdflatex
+	/usr/local/texlive/2021/bin/x86_64-linux/pdflatex
+	```
 
-create module file, `/usr/share/Modules/modulefiles/texlive/2021`,
+??? note "2017 -> 2020"
 
-```bash
-set     version         2021
-set     app             texlive
-set     modroot         /usr/local/$app/$version
+	The TeXLive 2017 for Ubuntu cannot work for me, it reports
+	
+	> fatal: Could not undump 6994 4-byte item(s) ...
+	
+	and try
+	
+	> fmtutil-sys --all
+	
+	refer to [Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”](https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from), but does not work.
+	
+	And I also try uninstall and reinstall TexLive, but it still does not work.
+	
+	Then finally I decided to install the latest TeXLive 2020, [TeX Live - Quick install](https://tug.org/texlive/quickinstall.html), follow the instructions, but note that the mirror url should append `path/systems/texlive/tlnet`.
+	
+	```bash
+	install-tl --location http://mirror.example.org/ctan/path/systems/texlive/tlnet
+	```
+	
+	And note that the [steps for completely removing the installed TeXLive](https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu).
+	
+	If without root privilege, when running `install-tl`, type `D` to change the directory, and actually changing the first `<1>` would change all other directories.
 
-prepend-path PATH $modroot/bin/x86_64-linux
-prepend-path MANPATH $modroot/texmf-dist/doc/man
-prepend-path INFOPATH $modroot/texmf-dist/doc/info
-```
+??? note "portable mode"
 
-then call it after loading the module,
-
-```bash
-$ which pdflatex
-/usr/bin/pdflatex
-$ module load texlive/2021 
-$ which pdflatex
-/usr/local/texlive/2021/bin/x86_64-linux/pdflatex
-```
-
-### 2017 -> 2020
-
-The TeXLive 2017 for Ubuntu cannot work for me, it reports
-
-> fatal: Could not undump 6994 4-byte item(s) ...
-
-and try
-
-> fmtutil-sys --all
-
-refer to [Error Message: “tex: fatal: Could not undump 1 4-byte item(s) from”](https://tex.stackexchange.com/questions/141838/error-message-tex-fatal-could-not-undump-1-4-byte-items-from), but does not work.
-
-And I also try uninstall and reinstall TexLive, but it still does not work.
-
-Then finally I decided to install the latest TeXLive 2020, [TeX Live - Quick install](https://tug.org/texlive/quickinstall.html), follow the instructions, but note that the mirror url should append `path/systems/texlive/tlnet`.
-
-```bash
-install-tl --location http://mirror.example.org/ctan/path/systems/texlive/tlnet
-```
-
-And note that the [steps for completely removing the installed TeXLive](https://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu).
-
-If without root privilege, when running `install-tl`, type `D` to change the directory, and actually changing the first `<1>` would change all other directories.
-
-### portable mode 
-
-!!! info
-    [Date: Mar 22, 2019](https://github.com/szcf-weiya/techNotes/commit/b3ed900f0623d6fa1035ee7790fc650bb7ccb1fa)
-
-目前笔记本上 texlive 还是 2015 版的，而 TikePictures.jl 要求的 lualatex 跑不成功，有 bug。于是考虑安装最新版 texlive 2018，只不过笔记本硬盘空间不够，决定在移动硬盘中安装 texlive。
-
-[TexLive 官方说明文档](http://tug.org/texlive/doc/install-tl.html)也介绍了 `-portable` 的安装选项，
-
-![](portable_install.png)
-
-其与正常安装时环境变量略有不同，没有单独设置 personal 的配置路径，或许还有其他地方的区别。
-
-另外安装时碰到默认的 mirror 速度很慢的情况，于是考虑换成最近的华为云。
-
-```bash
-./install-tl -repository https://mirrors.huaweicloud.com/repository/toolkit/CTAN/systems/texlive/tlnet/
-```
-
-路径要指定成
-
-```bash
-<CTAN/mirror/root/URL>/systems/texlive/tlnet
-```
-
-参考 [Change TeX Live Main Repository](https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository)
+	!!! info
+	    [Date: Mar 22, 2019](https://github.com/szcf-weiya/techNotes/commit/b3ed900f0623d6fa1035ee7790fc650bb7ccb1fa)
+	
+	目前笔记本上 texlive 还是 2015 版的，而 TikePictures.jl 要求的 lualatex 跑不成功，有 bug。于是考虑安装最新版 texlive 2018，只不过笔记本硬盘空间不够，决定在移动硬盘中安装 texlive。
+	
+	[TexLive 官方说明文档](http://tug.org/texlive/doc/install-tl.html)也介绍了 `-portable` 的安装选项，
+	
+	![](portable_install.png)
+	
+	其与正常安装时环境变量略有不同，没有单独设置 personal 的配置路径，或许还有其他地方的区别。
+	
+	另外安装时碰到默认的 mirror 速度很慢的情况，于是考虑换成最近的华为云。
+	
+	```bash
+	./install-tl -repository https://mirrors.huaweicloud.com/repository/toolkit/CTAN/systems/texlive/tlnet/
+	```
+	
+	路径要指定成
+	
+	```bash
+	<CTAN/mirror/root/URL>/systems/texlive/tlnet
+	```
+	
+	参考 [Change TeX Live Main Repository](https://tex.stackexchange.com/questions/313271/change-tex-live-main-repository)
 
 
 ## Basic 
@@ -103,6 +103,8 @@ If without root privilege, when running `install-tl`, type `D` to change the dir
 	\usepackage{xspace}
 	\newcommand\foo{foo\xspace}
 	```
+??? tip "\ref vs \ref*"
+	the star version does not create a link. [:link:](https://tex.stackexchange.com/questions/308806/difference-between-autoref-and-autoref-autoref-star)
 
 !!! info "Norm: non-breaking space `~` in reference"
 	non-breaking space `~` in `Figure~\ref{fig:}`.
