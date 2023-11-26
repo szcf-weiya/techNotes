@@ -133,6 +133,9 @@ comments: true
 	3 -1.983340 -0.6602526
 	```
 
+??? warning "data.table::rbind vs base::rbind"
+	Note that `base::rbind` does not align according to the column names. `data.table::rbind(, use.names = T)` wouuld combine according to the column names. See also: [:link:](https://github.com/szcf-weiya/JointModel/issues/39)
+
 ??? warning "1 == "1" is TRUE"
 
 	it seems dangerous.
