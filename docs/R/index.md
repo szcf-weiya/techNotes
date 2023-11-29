@@ -1114,32 +1114,47 @@ summary.employee <- function(wrkr){
 
 ## Parallel Computing
 
-### related packages
+??? info "related packages"
 
-- `parallel`: `makeCluster` and `stopCluster`
-- `doParallel`: `registerDoParallel`
-- `foreach`: `%dopar%`
+	- `parallel`: `makeCluster` and `stopCluster`
+	- `doParallel`: `registerDoParallel`
+	- `foreach`: `%dopar%`
 
-### example
+??? example "calc_lda_BIC"
 
-adapt from [my project](https://github.com/szcf-weiya/sodaParallel/blob/master/R/pure_soda_par.R#L365-L375)
+	adapt from [my project](https://github.com/szcf-weiya/sodaParallel/blob/master/R/pure_soda_par.R#L365-L375)
+	
+	```R
+	cl <- makeCluster(ncl)
+	registerDoParallel(cl)
+	
+	
+	res = foreach(j=1:Nnset, .combine = 'c', .export = c('calc_lda_BIC'), .packages = 'nnet') %dopar%
+	{
+	  jj = not_set[j];
+	  new_set   = sort(c(jj, cur_set));
+	  new_score = calc_lda_BIC(xx, yy, new_set, D, K, debug, gam=gam);
+	  new_score
+	}
+	stopCluster(cl)
+	```
+	
+	- [Using the `foreach` package](https://cran.r-project.org/web/packages/foreach/vignettes/foreach.html)
 
-```R
-cl <- makeCluster(ncl)
-registerDoParallel(cl)
-
-
-res = foreach(j=1:Nnset, .combine = 'c', .export = c('calc_lda_BIC'), .packages = 'nnet') %dopar%
-{
-  jj = not_set[j];
-  new_set   = sort(c(jj, cur_set));
-  new_score = calc_lda_BIC(xx, yy, new_set, D, K, debug, gam=gam);
-  new_score
-}
-stopCluster(cl)
-```
-
-- [Using the `foreach` package](https://cran.r-project.org/web/packages/foreach/vignettes/foreach.html)
+??? warning "library(..) might be necessary"
+	For example,
+ 	```r
+    Error in `checkForRemoteErrors()`:
+	! 3 nodes produced errors; first error: Error in coxph(surv.formula, x = TRUE, data = surv_data.train, model = TRUE) :
+	  could not find function "coxph"
+	Backtrace:
+	 1. ... %dopar% ...
+	 2. e$fun(obj, substitute(ex), parent.frame(), e$data)
+	 3. parallel::clusterApplyLB(cl, argsList, evalWrapper)
+	 4. parallel:::dynamicClusterApply(cl, fun, length(x), argfun)
+	 5. parallel:::checkForRemoteErrors(val)
+  	```
+	then considering adding `library(JM)` into the loop.
 
 ## using R in JupyterLab
 
