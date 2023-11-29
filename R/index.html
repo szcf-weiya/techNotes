@@ -1469,30 +1469,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Parallel Computing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#related-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      related packages
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -3930,30 +3906,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Parallel Computing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#related-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      related packages
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -4958,13 +4910,16 @@ BiocManager::install(&quot;graph&quot;)
 </code></pre></div>
 <p>以及一个相关的问题 <a href="https://stackoverflow.com/questions/9275387/how-to-override-default-s3-function-in-r">How to override default S3 function in R?</a></p>
 <h2 id="parallel-computing">Parallel Computing<a class="headerlink" href="#parallel-computing" title="Permanent link">&para;</a></h2>
-<h3 id="related-packages">related packages<a class="headerlink" href="#related-packages" title="Permanent link">&para;</a></h3>
+<details class="info">
+<summary>related packages</summary>
 <ul>
 <li><code>parallel</code>: <code>makeCluster</code> and <code>stopCluster</code></li>
 <li><code>doParallel</code>: <code>registerDoParallel</code></li>
 <li><code>foreach</code>: <code>%dopar%</code></li>
 </ul>
-<h3 id="example">example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+</details>
+<details class="example">
+<summary>calc_lda_BIC</summary>
 <p>adapt from <a href="https://github.com/szcf-weiya/sodaParallel/blob/master/R/pure_soda_par.R#L365-L375">my project</a></p>
 <div class="highlight"><pre><span></span><code><span class="n">cl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">makeCluster</span><span class="p">(</span><span class="n">ncl</span><span class="p">)</span>
 <span class="nf">registerDoParallel</span><span class="p">(</span><span class="n">cl</span><span class="p">)</span>
@@ -4982,6 +4937,22 @@ BiocManager::install(&quot;graph&quot;)
 <ul>
 <li><a href="https://cran.r-project.org/web/packages/foreach/vignettes/foreach.html">Using the <code>foreach</code> package</a></li>
 </ul>
+</details>
+<details class="warning">
+<summary>library(..) might be necessary</summary>
+<p>For example,
+<div class="highlight"><pre><span></span><code><span class="n">Error</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">`checkForRemoteErrors()`</span><span class="o">:</span>
+<span class="o">!</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="n">nodes</span><span class="w"> </span><span class="n">produced</span><span class="w"> </span><span class="n">errors</span><span class="p">;</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">error</span><span class="o">:</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">coxph</span><span class="p">(</span><span class="n">surv.formula</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">surv_data.train</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="o">:</span>
+<span class="w">  </span><span class="n">could</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="s">&quot;coxph&quot;</span>
+<span class="n">Backtrace</span><span class="o">:</span>
+<span class="w"> </span><span class="m">1</span><span class="n">.</span><span class="w"> </span><span class="kc">...</span><span class="w"> </span><span class="o">%dopar%</span><span class="w"> </span><span class="kc">...</span>
+<span class="w"> </span><span class="m">2</span><span class="n">.</span><span class="w"> </span><span class="n">e</span><span class="o">$</span><span class="nf">fun</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="nf">substitute</span><span class="p">(</span><span class="n">ex</span><span class="p">),</span><span class="w"> </span><span class="nf">parent.frame</span><span class="p">(),</span><span class="w"> </span><span class="n">e</span><span class="o">$</span><span class="n">data</span><span class="p">)</span>
+<span class="w"> </span><span class="m">3</span><span class="n">.</span><span class="w"> </span><span class="n">parallel</span><span class="o">::</span><span class="nf">clusterApplyLB</span><span class="p">(</span><span class="n">cl</span><span class="p">,</span><span class="w"> </span><span class="n">argsList</span><span class="p">,</span><span class="w"> </span><span class="n">evalWrapper</span><span class="p">)</span>
+<span class="w"> </span><span class="m">4</span><span class="n">.</span><span class="w"> </span><span class="n">parallel</span><span class="o">:::</span><span class="nf">dynamicClusterApply</span><span class="p">(</span><span class="n">cl</span><span class="p">,</span><span class="w"> </span><span class="n">fun</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">argfun</span><span class="p">)</span>
+<span class="w"> </span><span class="m">5</span><span class="n">.</span><span class="w"> </span><span class="n">parallel</span><span class="o">:::</span><span class="nf">checkForRemoteErrors</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+</code></pre></div>
+then considering adding <code>library(JM)</code> into the loop.</p>
+</details>
 <h2 id="using-r-in-jupyterlab">using R in JupyterLab<a class="headerlink" href="#using-r-in-jupyterlab" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;IRkernel&#39;</span><span class="p">)</span>
 <span class="c1">#IRkernel::installspec()</span>
@@ -5097,7 +5068,7 @@ See<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
       
         <br>
         Created:
