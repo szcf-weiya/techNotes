@@ -1,3 +1,8 @@
+## 2023.12
+
+- gecko: 壁虎
+- apprehension: 恐惧，忧心
+
 ## 2023.09
 
 - endearing
