@@ -49,9 +49,9 @@ To [avoid permission issue](https://docs.docker.com/engine/install/linux-postins
 
 ```bash
 sudo usermod -aG docker $USER
+# re-evaluate the group membership
+newgrp docker
 ```
-
-But it is necessary to log out and log back in to re-evaluate the group membership.
 
 ### change the root folder
 
