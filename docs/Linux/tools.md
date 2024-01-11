@@ -228,26 +228,31 @@ convert +append *.png out.png
 convert -append *.png out.png
 ```
 
-参考 [How do I join two images in Ubuntu?](https://askubuntu.com/a/889772)
+??? tip "`-resize xW`: 高度一样"
+	如果同时想两张图片高度一样，则加入 `-resize xW` 语法，如
+	
+	```bash
+	# NOT work
+	$ convert map.png IMG_20210808_172104.jpg +append -resize x600 /tmp/p1.png
+	# work
+	$ convert +append map.png IMG_20210808_172104.jpg -resize x600 /tmp/p1.png
+	```
+	
+	但是要注意此时 `+append` 要放在前面，也就是 `-resize` 需要紧跟着图片。
+	
+	参考 [Merge Images Side by Side(Horizontally) - Stack Overflow](https://stackoverflow.com/questions/20737061/merge-images-side-by-sidehorizontally)
 
-如果同时想两张图片高度一样，则加入 `-resize xW` 语法，如
+	但是注意 `-resize` 会使得 orientation 无效，然后图片会发生旋转，参考 [ImageMagick convert rotates images during resize](https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33900)，使用 `-auto-orient` 参数，就能避免丢失图片中的 orientation 信息，
+	
+	```bash
+	$ convert -auto-orient +append map.png IMG_20210808_172104.jpg -resize x600 /tmp/p2.png
+	```
 
-```bash
-# NOT work
-$ convert map.png IMG_20210808_172104.jpg +append -resize x600 /tmp/p1.png
-# work
-$ convert +append map.png IMG_20210808_172104.jpg -resize x600 /tmp/p1.png
-```
-
-但是要注意此时 `+append` 要放在前面，也就是 `-resize` 需要紧跟着图片。
-
-参考 [Merge Images Side by Side(Horizontally) - Stack Overflow](https://stackoverflow.com/questions/20737061/merge-images-side-by-sidehorizontally)
-
-但是注意 `-resize` 会使得 orientation 无效，然后图片会发生旋转，参考 [ImageMagick convert rotates images during resize](https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33900)，使用 `-auto-orient` 参数，就能避免丢失图片中的 orientation 信息，
-
-```bash
-$ convert -auto-orient +append map.png IMG_20210808_172104.jpg -resize x600 /tmp/p2.png
-```
+??? tip "run in Julia"
+	```julia
+	fignames = "/tmp/1-cv_optim_" .* string.(σs) .* ".png"
+    run(`convert $fignames +append /tmp/cv_optim.png`)
+ 	```
 
 #### 缩小图片大小
 
