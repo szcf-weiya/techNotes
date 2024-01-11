@@ -3863,7 +3863,7 @@
 <p>In the command line, generate SSH key pair by running </p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa
 </code></pre></div>
-<p>then copy the generated public key <code>~/.ssh/id_rsa.pub</code> to the file <code>~/.ssh/authorized_keys</code> on the server (if no such file and folder, just create them). See <a href="../servers#initial-start"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a> for more details.</p>
+<p>then copy the generated public key <code>~/.ssh/id_rsa.pub</code> to the file <code>~/.ssh/authorized_keys</code> on the server (if no such file and folder, just create them). See <a href="../servers#initial-start"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a> for more details.</p>
 </div>
 <div class="tabbed-block">
 <p>If you use the Windows Subsystem for Linux (WSL), just follow the steps for &ldquo;Linux/Mac&rdquo;.</p>
@@ -3898,7 +3898,7 @@ If you are interested, please contact me for <code>PORT</code> and <code>MY_BRID
 <p>If you want to use my established bridge (tunnel), the above &ldquo;TL; DR&rdquo; is enough, but you need to fulfill the following requirements.</p>
 <div class="admonition warning">
 <p class="admonition-title">Requirements for Using My Bridge (Tunnel)</p>
-<p>You should have configured SSH key pair for passwordless login. And if you are using PuTTY, make sure your SSH key is in the standard OpenSSH format instead of PuTTY&rsquo;s style, otherwise it will throw the &ldquo;invalid key&rdquo; error. You can convert PuTTY&rsquo;s format in PuTTYgen, see <a href="https://www.simplified.guide/putty/convert-ppk-to-ssh-key"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a> for more details.</p>
+<p>You should have configured SSH key pair for passwordless login. And if you are using PuTTY, make sure your SSH key is in the standard OpenSSH format instead of PuTTY&rsquo;s style, otherwise it will throw the &ldquo;invalid key&rdquo; error. You can convert PuTTY&rsquo;s format in PuTTYgen, see <a href="https://www.simplified.guide/putty/convert-ppk-to-ssh-key"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a> for more details.</p>
 </div>
 <p>If you want to establish a tunnel by yourself, here are the detailed mechanism.</p>
 <div class="admonition warning">
@@ -4256,7 +4256,7 @@ $<span class="w"> </span>sprio<span class="w"> </span>-w<span class="w"> </span>
 </ul>
 <h2 id="qos">QOS<a class="headerlink" href="#qos" title="Permanent link">&para;</a></h2>
 <p>In practice, we are always told that the maximum number of CPUs/cores and Jobs, which can be specified by QOS. Recall that we are suggested to specify <code>-q stat</code> when we submit jobs. Without such option, it uses the default one <code>-q normal</code>. Actually, they corresponds to two different Quality of Service (QOS), i.e., two different quotas.</p>
-<p>For example, in the below configuration, when we use <code>-p stat -q stat</code>, the maximum number of jobs and cpus are limited to be 30. But if we just specify <code>-p stat</code>, the submitted jobs would be counted into <code>-p normal</code> whose limitation is only 10. (see <a href="https://github.com/szcf-weiya/techNotes/issues/7"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a> for my exploration)</p>
+<p>For example, in the below configuration, when we use <code>-p stat -q stat</code>, the maximum number of jobs and cpus are limited to be 30. But if we just specify <code>-p stat</code>, the submitted jobs would be counted into <code>-p normal</code> whose limitation is only 10. (see <a href="https://github.com/szcf-weiya/techNotes/issues/7"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a> for my exploration)</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>sacctmgr<span class="w"> </span>show<span class="w"> </span>qos<span class="w"> </span><span class="nv">format</span><span class="o">=</span>name,MaxJobsPU,MaxSubmitPU,MaxTRESPU
 <span class="w">      </span>Name<span class="w"> </span>MaxJobsPU<span class="w"> </span>MaxSubmitPU<span class="w">     </span>MaxTRESPU<span class="w"> </span>
 ----------<span class="w"> </span>---------<span class="w"> </span>-----------<span class="w"> </span>-------------<span class="w"> </span>

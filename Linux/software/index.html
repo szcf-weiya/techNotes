@@ -4139,7 +4139,7 @@ bypy<span class="w"> </span>syncdown
 /home/weiya/.config/google-chrome/Default
 ~/.config/google-chrome/Default$<span class="w"> </span>mv<span class="w"> </span>Login<span class="se">\ </span>Data<span class="w"> </span><span class="s2">&quot;Login-Data-backup20210410-issue16&quot;</span>
 </code></pre></div>
-<p>详见 <a href="https://github.com/szcf-weiya/techNotes/issues/16"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>详见 <a href="https://github.com/szcf-weiya/techNotes/issues/16"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </details>
 <details class="tip">
 <summary>disable running in background</summary>
@@ -4673,7 +4673,7 @@ $<span class="w"> </span>onedrive<span class="w"> </span>--synchronize<span clas
 </div>
 <div class="admonition tip">
 <p class="admonition-title">switch from Windows to Ubuntu: unsupported reparse point</p>
-<p>Enable to download every files to disk in Windows. Refer to <a href="https://askubuntu.com/questions/1345356/files-from-windows-with-unsupported-reparse-point-on-ubuntu"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>, <a href="https://github.com/abraunegg/onedrive/blob/master/docs/advanced-usage.md#configuring-the-client-for-use-in-dual-boot-windows--linux-situations"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>Enable to download every files to disk in Windows. Refer to <a href="https://askubuntu.com/questions/1345356/files-from-windows-with-unsupported-reparse-point-on-ubuntu"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>, <a href="https://github.com/abraunegg/onedrive/blob/master/docs/advanced-usage.md#configuring-the-client-for-use-in-dual-boot-windows--linux-situations"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <h2 id="openshot">OpenShot<a class="headerlink" href="#openshot" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
@@ -4752,8 +4752,8 @@ ls<span class="w"> </span>-1<span class="w"> </span><span class="p">|</span><spa
 <p>则文件名后缀不是很好直接换掉，不能直接对 <code>{}</code> 进行操作，</p>
 <div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.wav&quot;</span><span class="w"> </span>-exec<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;ffmpeg -i &quot;$1&quot; &quot;${1%.*}.mp3&quot;&#39;</span><span class="w"> </span>sh<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
 </code></pre></div>
-<p>参考 <a href="https://superuser.com/questions/1426601/how-to-remove-extension-from-pathname-passed-as-in-find-exec"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>, 其实有点相当于把 <code>{}</code> 在传进去然后就可以用 <code>$1</code> 来表示。</p>
-<p>但是重命名完之后，Rhythmbox 左侧出现一个 Missing Files 的文件夹，里面即删掉的 <code>.wav</code> 文件路径。退出然后删掉 <code>rhythmdb.xml</code> 再打开即可，参考 <a href="https://www.chalk-ridge.com/is-rhythmbox-missing-music-files-heres-a-simple-fix/"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>参考 <a href="https://superuser.com/questions/1426601/how-to-remove-extension-from-pathname-passed-as-in-find-exec"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>, 其实有点相当于把 <code>{}</code> 在传进去然后就可以用 <code>$1</code> 来表示。</p>
+<p>但是重命名完之后，Rhythmbox 左侧出现一个 Missing Files 的文件夹，里面即删掉的 <code>.wav</code> 文件路径。退出然后删掉 <code>rhythmdb.xml</code> 再打开即可，参考 <a href="https://www.chalk-ridge.com/is-rhythmbox-missing-music-files-heres-a-simple-fix/"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 <div class="highlight"><pre><span></span><code>~/.local/share/rhythmbox$<span class="w"> </span>mv<span class="w"> </span>rhythmdb.xml<span class="w"> </span>rhythmdb.xml.old
 </code></pre></div>
 <p>所以看上去路径是直接写入 <code>.xml</code> 文件中，所以即便两个不同的路径指向同一个文件夹，也会被视为不同文件夹，于是便能解释为什么相同音乐文件被重复导入。</p>
@@ -4788,7 +4788,7 @@ ls<span class="w"> </span>-1<span class="w"> </span><span class="p">|</span><spa
 <details class="warning">
 <summary>Ctrl + Shift + E not work</summary>
 <ul>
-<li><code>Ctrl + Shift + E</code> not work in Ubuntu 20.04 + ibus. The reason is that ibus has define such shortcut for emoji annotation. So just type <code>ibus-setup</code>, then switch to Emoji tab and delete the shortcut. <a href="https://jh-byun.github.io/study/terminator-split-vertically/"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></li>
+<li><code>Ctrl + Shift + E</code> not work in Ubuntu 20.04 + ibus. The reason is that ibus has define such shortcut for emoji annotation. So just type <code>ibus-setup</code>, then switch to Emoji tab and delete the shortcut. <a href="https://jh-byun.github.io/study/terminator-split-vertically/"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/192050782-33e0676a-d37f-47d6-a138-5b7cce58e4fa.png" /></p>
 </details>
@@ -4837,7 +4837,7 @@ TO:<span class="w"> </span>B
 Bcc:<span class="w"> </span>C
 </code></pre></div>
 <p>在 B 端查看源码发现只有 <code>TO: B</code>，而在 C 端既有 <code>Delivered-To: C</code>，也有 <code>TO: B</code>。</p>
-<p>所以 Esther 一种可能的原因是在 bcc 中输入 grad 的邮箱，并发送给自己。但感觉这样很奇怪，可能有其它自动设置，具体不得而知。关于 <code>Delivered-To</code> 的讨论可另见 <a href="https://serverfault.com/questions/796913/how-can-the-to-and-delivered-to-fields-in-an-email-i-received-be-different"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>所以 Esther 一种可能的原因是在 bcc 中输入 grad 的邮箱，并发送给自己。但感觉这样很奇怪，可能有其它自动设置，具体不得而知。关于 <code>Delivered-To</code> 的讨论可另见 <a href="https://serverfault.com/questions/796913/how-can-the-to-and-delivered-to-fields-in-an-email-i-received-be-different"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </details>
 <details class="tip">
 <summary>Deactive Account without Deleting</summary>
@@ -4895,7 +4895,7 @@ Bcc:<span class="w"> </span>C
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Edit Multiple Line Simultaneously</p>
-<p>Press <code>Shift + Alt + Down/Up</code> to insert cursors below or up, after inserting <code>&gt;</code>, then press <code>Esc</code> to exit. <a href="https://code.visualstudio.com/docs/editor/codebasics"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>Press <code>Shift + Alt + Down/Up</code> to insert cursors below or up, after inserting <code>&gt;</code>, then press <code>Esc</code> to exit. <a href="https://code.visualstudio.com/docs/editor/codebasics"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 <p><img alt="Peek 2022-03-30 20-28" src="https://user-images.githubusercontent.com/13688320/160834904-5110b5e5-a58d-4586-a9a3-0e0d835abe52.gif" /></p>
 </div>
 <div class="admonition note">
@@ -5068,7 +5068,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </code></pre></div></li>
 <li>install WeChat_32bit from official site</li>
 </ol>
-<p>refer to <a href="https://web.archive.org/web/20230603185929/https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>refer to <a href="https://web.archive.org/web/20230603185929/https://ferrolho.github.io/blog/2018-12-22/wechat-desktop-on-linux"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </details>
 <details class="note">
 <summary>Start to Use Wine Wechat (Post: ~ 2020.05.12)</summary>

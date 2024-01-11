@@ -3955,7 +3955,7 @@
 <li><code>uptime --since</code>, which is actually the first line of <code>top</code></li>
 </ul>
 </li>
-<li>obtain <a href="https://help.ubuntu.com/stable/ubuntu-help/net-macaddress.html">MAC address <img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>: <code>ifconfig | grep ether</code>, note that different MAC addresses for WIFI and Ethernet.</li>
+<li>obtain <a href="https://help.ubuntu.com/stable/ubuntu-help/net-macaddress.html">MAC address <img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>: <code>ifconfig | grep ether</code>, note that different MAC addresses for WIFI and Ethernet.</li>
 <li>check number of cores (refer to <a href="https://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux">How to know number of cores of a system in Linux?</a>):<ul>
 <li>quick way: <code>nproc --all</code></li>
 <li>more details: <code>lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('</code></li>
@@ -4030,7 +4030,7 @@ locale:<span class="w"> </span>Cannot<span class="w"> </span><span class="nb">se
 <h3 id="ld_preload">LD_PRELOAD<a class="headerlink" href="#ld_preload" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Used in <a href=""><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>Used in <a href=""><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <p>If it is set on the same line before the command, it is only valid on the same line. For example, </p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>R4.1.0<span class="o">)</span><span class="w"> </span>/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib$<span class="w"> </span>ldd<span class="w"> </span>libR.so<span class="w"> </span>
@@ -4046,7 +4046,7 @@ locale:<span class="w"> </span>Cannot<span class="w"> </span><span class="nb">se
 ERROR:<span class="w"> </span>ld.so:<span class="w"> </span>object<span class="w"> </span><span class="s1">&#39;/usr/lib/x86_64-linux-gnu/&#39;</span><span class="w"> </span>from<span class="w"> </span>LD_PRELOAD<span class="w"> </span>cannot<span class="w"> </span>be<span class="w"> </span>preloaded<span class="w"> </span><span class="o">(</span>cannot<span class="w"> </span><span class="nb">read</span><span class="w"> </span>file<span class="w"> </span>data<span class="o">)</span>:<span class="w"> </span>ignored.
 </code></pre></div></p>
 </div>
-<p>In the words of <a href="https://www.baeldung.com/linux/ld_preload-trick-what-is"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>, </p>
+<p>In the words of <a href="https://www.baeldung.com/linux/ld_preload-trick-what-is"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>, </p>
 <blockquote>
 <p>LD_PRELOAD is an environment variable, it affects only the current process</p>
 </blockquote>
@@ -4063,8 +4063,8 @@ ERROR:<span class="w"> </span>ld.so:<span class="w"> </span>object<span class="w
 <p>BTW, in the above, <code>conda activate</code> does not affect.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><code>export LD_PRELOAD</code> did not work in GitHub Actions, such as <a href="https://github.com/szcf-weiya/MonotoneSplines.jl/actions/runs/3841183884/workflow"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>.
-The proper way is to put it to <code>env</code>. <a href="https://github.com/szcf-weiya/MonotoneSplines.jl/blob/7c2e96fb2214c6d5dc4e123ae8beb9128be14086/.github/workflows/ci.yml#L68"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p><code>export LD_PRELOAD</code> did not work in GitHub Actions, such as <a href="https://github.com/szcf-weiya/MonotoneSplines.jl/actions/runs/3841183884/workflow"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>.
+The proper way is to put it to <code>env</code>. <a href="https://github.com/szcf-weiya/MonotoneSplines.jl/blob/7c2e96fb2214c6d5dc4e123ae8beb9128be14086/.github/workflows/ci.yml#L68"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -4273,11 +4273,11 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
 </div>
 <p>See also: <a href="https://wiki.archlinux.org/title/Systemd/User">systemd/User - ArchWiki</a></p>
 <h3 id="locally-via-user">locally via <code>--user</code><a class="headerlink" href="#locally-via-user" title="Permanent link">&para;</a></h3>
-<p>the service can be also set up locally, such as <code>~/.local/share/systemd/user/ssh4lab.service</code> in <a href="software/#fail-to-open-terminal"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>the service can be also set up locally, such as <code>~/.local/share/systemd/user/ssh4lab.service</code> in <a href="software/#fail-to-open-terminal"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 <p>we can check the status and manage it via</p>
 <div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span>status/stop/start/disable/enable<span class="w"> </span>ssh4lab
 </code></pre></div>
-<p>see also: <a href="https://superuser.com/questions/1037466/how-to-start-a-systemd-service-after-user-login-and-stop-it-before-user-logout"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>see also: <a href="https://superuser.com/questions/1037466/how-to-start-a-systemd-service-after-user-login-and-stop-it-before-user-logout"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 <h2 id="system-monitor">System Monitor<a class="headerlink" href="#system-monitor" title="Permanent link">&para;</a></h2>
 <p>I am currently using the <a href="#system-monitor">gnome-shell extension</a> and <a href="https://github.com/netdata/netdata">Netdata: Web-based Real-time performance monitoring</a></p>
 <div class="admonition info">

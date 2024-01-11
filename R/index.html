@@ -3991,7 +3991,7 @@
 <ul>
 <li>删除当前工作区所有变量: <code>rm(list = ls(all = TRUE))</code></li>
 <li>RStudio shows all shortcuts: <code>Alt-Shift-K</code>.</li>
-<li>usage of <code>&lt;&lt;-</code>, &ldquo;it will keep going through the environments in order until it finds a variable with that name, and it will assign it to that.&rdquo; see also <a href="https://stackoverflow.com/questions/2628621/how-do-you-use-scoping-assignment-in-r"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></li>
+<li>usage of <code>&lt;&lt;-</code>, &ldquo;it will keep going through the environments in order until it finds a variable with that name, and it will assign it to that.&rdquo; see also <a href="https://stackoverflow.com/questions/2628621/how-do-you-use-scoping-assignment-in-r"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></li>
 <li>序列中 <code>0.1+1:10-1</code> 中 <code>:</code> 优先级低于加减运算符，所以返回 <code>0.1, 1.1, ..., 9.1</code>.</li>
 <li>repeat string: <code>strrep('str', 2)</code>, <code>paste(rep('str', 2), collapse='')</code></li>
 </ul>
@@ -4061,7 +4061,7 @@
 <span class="m">5</span><span class="w">  </span><span class="m">0.07728536</span><span class="w"> </span><span class="m">-0.77660634</span><span class="w"> </span><span class="m">0.603117</span><span class="n">....</span>
 </code></pre></div>
 <p>详见 <code>?formula</code>, 其中举了一个例子，<code>(a+b+c)^2 - a:b</code> 等价于 <code>a + b + c + a:c + b:c</code>，注意二阶项只存在于交叉项中。</p>
-<p>see also: <a href="https://stackoverflow.com/questions/24192428/what-does-the-capital-letter-i-in-r-linear-regression-formula-mean"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>see also: <a href="https://stackoverflow.com/questions/24192428/what-does-the-capital-letter-i-in-r-linear-regression-formula-mean"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </details>
 <details class="bug">
 <summary>Error: unexpected &lsquo;else&rsquo; in &ldquo;else&rdquo;</summary>
@@ -4099,7 +4099,7 @@ Error in -c(&quot;x&quot;) : invalid argument to unary operator
 </details>
 <details class="warning">
 <summary>data.table::rbind vs base::rbind</summary>
-<p>Note that <code>base::rbind</code> does not align according to the column names. <code>data.table::rbind(, use.names = T)</code> wouuld combine according to the column names. See also: <a href="https://github.com/szcf-weiya/JointModel/issues/39"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>Note that <code>base::rbind</code> does not align according to the column names. <code>data.table::rbind(, use.names = T)</code> wouuld combine according to the column names. See also: <a href="https://github.com/szcf-weiya/JointModel/issues/39"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </details>
 <details class="warning">
 <summary>1 == &ldquo;1&rdquo; is TRUE</summary>
@@ -4202,7 +4202,7 @@ sudo<span class="w"> </span>make<span class="w"> </span>install
 <p>refer to <a href="https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r">How to select a CRAN mirror in R</a></p>
 </details>
 <h4 id="installation-of-module">installation of <code>module</code><a class="headerlink" href="#installation-of-module" title="Permanent link">&para;</a></h4>
-<p>Follow the official instruction <a href="https://modules.readthedocs.io/en/latest/INSTALL.html"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>Follow the official instruction <a href="https://modules.readthedocs.io/en/latest/INSTALL.html"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-LJO<span class="w"> </span>https://github.com/cea-hpc/modules/releases/download/v5.1.1/modules-5.1.1.tar.gz
 tar<span class="w"> </span>xvf<span class="w"> </span>modules-5.1.1.tar.gz
 <span class="nb">cd</span><span class="w"> </span>modules-5.1.1/
@@ -4315,7 +4315,7 @@ Tag<span class="w">        </span>Type<span class="w">                         <
 0x0000000000000001<span class="w"> </span><span class="o">(</span>NEEDED<span class="o">)</span><span class="w">             </span>Shared<span class="w"> </span>library:<span class="w"> </span><span class="o">[</span>libR.so<span class="o">]</span>
 0x0000000000000001<span class="w"> </span><span class="o">(</span>NEEDED<span class="o">)</span><span class="w">             </span>Shared<span class="w"> </span>library:<span class="w"> </span><span class="o">[</span>libc.so.6<span class="o">]</span>
 </code></pre></div>
-<p>See the private <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374707761"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a> for more details.</p>
+<p>See the private <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374707761"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a> for more details.</p>
 </details>
 <details class="note">
 <summary>&ndash;no-test-load (2023-01-08 22:10:59)</summary>
@@ -4357,13 +4357,13 @@ However, here is a trick. <code>--no-test-load</code> actually does not belongs 
 which will stop at the configure step. In contrast, it is an option for the argument <code>INSTALL_opts</code>, so the following will work.
 <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;RCurl&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">INSTALL_opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;--no-test-load&quot;</span><span class="p">)</span>
 </code></pre></div>
-See the private <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374917268"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a> for more detailed and historical exploration on this feature.</p>
+See the private <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1374917268"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a> for more detailed and historical exploration on this feature.</p>
 </details>
 <details class="note">
 <summary>MAKEFLAGS</summary>
-<p>Flags that are already set (for example in file etcR_ARCH/Makeconf) can be overridden by the environment variable MAKEFLAGS (<a href="https://cran.r-project.org/doc/manuals/r-devel/R-exts.html"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>)
+<p>Flags that are already set (for example in file etcR_ARCH/Makeconf) can be overridden by the environment variable MAKEFLAGS (<a href="https://cran.r-project.org/doc/manuals/r-devel/R-exts.html"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>)
 Although <code>CURL_LIBS</code> cannot be directly overridden, it can pass via <code>MAKEFLAGS</code></p>
-<p>But a trick is that space needs to be escape. See also <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1375820423"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>, <a href="https://stackoverflow.com/questions/64541769/overriding-make-variables-containing-spaces-with-makeflags"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>But a trick is that space needs to be escape. See also <a href="https://github.com/szcf-weiya/Clouds/issues/124#issuecomment-1375820423"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>, <a href="https://stackoverflow.com/questions/64541769/overriding-make-variables-containing-spaces-with-makeflags"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </details>
 <h3 id="install-latest-r36">Install Latest R3.6<a class="headerlink" href="#install-latest-r36" title="Permanent link">&para;</a></h3>
 <p>Accidentally, I uninstall my R3.6 when installing <code>libcurl4</code>, the apt-log shows that</p>
@@ -4482,7 +4482,7 @@ sudo<span class="w"> </span>gdebi<span class="w"> </span>rstudio-1.0.44-amd64.de
 <span class="c1"># ... do main stuff</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>refer to <a href="https://stackoverflow.com/questions/2968220/is-there-an-r-equivalent-of-the-pythonic-if-name-main-main"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>refer to <a href="https://stackoverflow.com/questions/2968220/is-there-an-r-equivalent-of-the-pythonic-if-name-main-main"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p><a href="https://github.com/search?q=user%3Aszcf-weiya+nframe&amp;type=code">My Repos</a></p>
@@ -4690,7 +4690,7 @@ $<span class="w"> </span>Rscript<span class="w"> </span>test2.R<span class="w"> 
 <span class="c1">##cd /usr/lib</span>
 ln<span class="w"> </span>-s<span class="w"> </span>/home/weiya/R/x86_64-pc-linux-gnu-library/library/Rcpp/libs/Rcpp.so<span class="w"> </span>libRcpp.so
 </code></pre></div>
-<p>See also <a href="https://stackoverflow.com/questions/40555328/ubuntu-ld-can-not-find-lrcpp"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>See also <a href="https://stackoverflow.com/questions/40555328/ubuntu-ld-can-not-find-lrcpp"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </details>
 <details class="bug">
 <summary>function &lsquo;dataptr&rsquo; not provided by package &lsquo;Rcpp&rsquo;</summary>
@@ -4704,7 +4704,7 @@ ln<span class="w"> </span>-s<span class="w"> </span>/home/weiya/R/x86_64-pc-linu
 </details>
 <details class="tip">
 <summary>manually add <code># Generated by roxygen2: do not edit by hand</code> for NAMESPACE</summary>
-<p>If there is an error, &ldquo;NAMESPACE file since it exists and not auto generated by roxygen2&rdquo;, we can simply add <code># Generated ...</code> manually, which will trigger roxygen2. See also: <a href="https://github.com/szcf-weiya/Multi-omics-Clustering/issues/110#issuecomment-1773422292"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>If there is an error, &ldquo;NAMESPACE file since it exists and not auto generated by roxygen2&rdquo;, we can simply add <code># Generated ...</code> manually, which will trigger roxygen2. See also: <a href="https://github.com/szcf-weiya/Multi-omics-Clustering/issues/110#issuecomment-1773422292"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </details>
 <h2 id="rmarkdown">rmarkdown<a class="headerlink" href="#rmarkdown" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
@@ -4734,11 +4734,11 @@ Finally, directly add option
     and there is no</code>hidelinks` option.</p>
 <div class="admonition note">
 <p class="admonition-title"><code>knit::kable</code></p>
-<p>pretty table, which can auto newline long description in a cell. See also <a href="#events_init_vs_extend"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>pretty table, which can auto newline long description in a cell. See also <a href="#events_init_vs_extend"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <details class="note">
 <summary>overflow in pdf</summary>
-<p>Refer to <a href="https://github.com/rstudio/rmarkdown/issues/646#issuecomment-630245404"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>. See also <a href="https://github.com/szcf-weiya/JointModel/issues/17"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>
+<p>Refer to <a href="https://github.com/rstudio/rmarkdown/issues/646#issuecomment-630245404"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>. See also <a href="https://github.com/szcf-weiya/JointModel/issues/17"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>
 <div class="highlight"><pre><span></span><code><span class="n">output</span><span class="o">:</span><span class="w"> </span>
 <span class="w">  </span><span class="n">pdf_document</span><span class="o">:</span>
 <span class="w">    </span><span class="n">pandoc_args</span><span class="o">:</span><span class="w"> </span><span class="o">--</span><span class="n">listings</span>
@@ -4756,8 +4756,8 @@ where <code>header.tex</code> includes
 <details class="note">
 <summary>unwanted space in pdf</summary>
 <p>There are unwanted spaces if we copy the text from pdf, or searching string like <code>test_data</code>, where there might be extra space like <code>test _data</code> or <code>test _ data</code>.
-One solution is add <code>columns=fullflexible</code> (<a href="https://tex.stackexchange.com/questions/251543/unwanted-space-around-punctuation-in-copied-pasted-listing"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>) in the above <code>\lstset</code>, but the drawback is that the table format (such as <code>summary.lm</code>) would be destroyed.
-On the other hand, we can use another font family <code>\fontfamily{pcr}\selectfont</code> (<a href="https://tex.stackexchange.com/questions/4911/phantom-spaces-in-listings"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a>), then the solution is <code>basicstyle=\ttfamily\footnotesize\fontfamily{pcr}\selectfont</code></p>
+One solution is add <code>columns=fullflexible</code> (<a href="https://tex.stackexchange.com/questions/251543/unwanted-space-around-punctuation-in-copied-pasted-listing"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>) in the above <code>\lstset</code>, but the drawback is that the table format (such as <code>summary.lm</code>) would be destroyed.
+On the other hand, we can use another font family <code>\fontfamily{pcr}\selectfont</code> (<a href="https://tex.stackexchange.com/questions/4911/phantom-spaces-in-listings"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>), then the solution is <code>basicstyle=\ttfamily\footnotesize\fontfamily{pcr}\selectfont</code></p>
 </details>
 <details class="note">
 <summary>Chinese Fonts in PDF</summary>
@@ -5056,7 +5056,7 @@ See<span class="w"> </span>the<span class="w"> </span>log<span class="w"> </span
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="n">r</span><span class="s">&quot;(~/R/x86_64-pc-linux-gnu-library/3.6)&quot;</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;~/R/x86_64-pc-linux-gnu-library/3.6&quot;</span>
 </code></pre></div>
-<p>See <a href="https://stackoverflow.com/questions/14185287/escaping-backslash-in-string-or-paths-in-r/"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>See <a href="https://stackoverflow.com/questions/14185287/escaping-backslash-in-string-or-paths-in-r/"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <h2 id="misc-links">Misc Links<a class="headerlink" href="#misc-links" title="Permanent link">&para;</a></h2>
 <ul>
