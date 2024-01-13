@@ -835,7 +835,7 @@ My application: [TeXtemplates: create a tex template](https://github.com/szcf-we
 
 
 !!! tip "location of banner notification"
-    `Just Perfection > Customize > Notification Banner Position`
+    `Gnome Extension > Just Perfection > Customize > Notification Banner Position`
 
 ## `paste`
 
