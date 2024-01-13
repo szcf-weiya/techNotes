@@ -11,6 +11,7 @@
 - [lifengfan](http://lifengfan.wixsite.com/lifengfan)
 - [Yixuan's Blog](http://statr.me/)
 - [Tengyuan Liang](https://tyliang.github.io/Tengyuan.Liang/)
+- Can Yang: https://sites.google.com/site/eeyangc/biography
 - [Zijun Zhang, UCLA, University of California Los Angeles, Computational Biology, Bioinformatics, Splicing, Alternative Splicing, CLIP-seq, Deep Learning, Genetics, Genomics, CLAM, DARTS](https://zj-zhang.github.io/)
 
 ### Life
@@ -98,6 +99,9 @@ Apply
 https://developers.google.com/open-source/gsoc/
 -->
 
+## CUHK
+
+- Online Application for Official Documents: https://www.gradsch.cuhk.edu.hk/applyform/index.aspx
 
 ## 有用但希望不会用到的网站
 
