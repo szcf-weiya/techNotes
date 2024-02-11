@@ -85,7 +85,7 @@
 - liaison: 联络，联系人
 - Lay Summary: 简述
 - herbal
-- homeopathic
+- homeopathic: 顺势疗法，同类疗法
 - continental crust: 大陆地壳
 - greasy: 多油的
 - prosthesis: 假肢

@@ -834,15 +834,15 @@ Refer to [headheight-problem](https://tex.stackexchange.com/questions/198692/hea
 
 ## [re]newcommand
 
-### `Capacity exceeded [semantic nest …]`
+??? error "`Capacity exceeded [semantic nest …]`"
 
-check your `newcommand` definition, to see if there is some silly definition such as
+	check your `newcommand` definition, to see if there is some silly definition such as
 
-```tex
-\newcommand\silly{\silly}
-```
+	```tex
+	\newcommand\silly{\silly}
+	```
 
-refer to [Capacity exceeded](https://texfaq.org/FAQ-semanticnest)
+	refer to [Capacity exceeded](https://texfaq.org/FAQ-semanticnest)
 
 ### avoid space after command
 
