@@ -32,9 +32,10 @@ nav:
       - Base: R/index.md
       - Plot: R/plot.md
       - Blog:
-        - ggplot2 中的 legend: R/legend_from_zhihu.md
+        - install blipr on Yale HPC: R/blog/2024-02-13-blipr-yale-hpc.md
+        - legend in ggplot2: R/legend_from_zhihu.md
         - new sample function (v3.6.0+): R/sample.md
-        - 一道与 factor 有关的问题: R/factor.md
+        - speedup related to `factor`: R/factor.md
     - Python:
       - Base: python/index.md
       - Conda: python/conda.md
