@@ -325,7 +325,6 @@
 ## 2022.02
 
 - We expect that people who have a **compelling (不可抗拒的，非常强烈的)** reason to need to stay will be able to explain their reasons to their hostel.
-- brochure: 资料（或广告）手册
 
 ## 2022.01
 
