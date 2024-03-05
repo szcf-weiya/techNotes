@@ -56,8 +56,28 @@ ssh-keyscan -t rsa server_ip
 ssh-keygen -t [ed25519 | ecdsa | dsa]
 ```
 
+
 然而统统没用。
 
 后来跟服务器管理员反复沟通，提交 `ssh -vvv xxx &> ssh.log` 日志文件供其检查，才确认是最近服务器配置更改的原因，虽然没有明说，但是注意到 `/etc/ssh/sshd_config` 更新后不久管理员就回复说好了，问及原因，他的回答是，
 
 >  It is related to security context which will make SELinux to block the file access. I think this required root permission to config.
+
+!!! note "SELinux"
+    SELinux是Linux内核的安全子系统，通过严格的访问控制机制增强系统安全性。一般情况下，建议开启SELinux来限制进程的权限，防止恶意程序通过提权等方式对系统进行攻击；然而，由于SELinux的严格访问控制机制，可能会导致一些应用程序或服务无法启动，因此在特定情况下（如开发、调试等），需暂时关闭SELinux。 [:link:](https://help.aliyun.com/zh/ecs/use-cases/enable-or-disable-selinux)
+
+    
+
+## Another Similar Issue
+
+!!! info "Update: 2024-03-04"
+
+    在 BI 公司内部服务器上，最近也无法通过密钥 ssh 访问，同时也无法通过浏览器访问 rstudio server 服务。后来与 IT 部门联系，确认也是 `SELinux` 的问题，解决方案是 disable SELinux,
+
+    ```bash
+    setenforce 0
+    ```
+
+    究其原因，大概是因为最近服务器有次重启，默认是开启了 SELinux，所以需要禁用。
+
+
