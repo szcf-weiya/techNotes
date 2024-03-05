@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.f2e4d321.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
       
       
 
@@ -1067,6 +1067,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Fail to SSH passwordlessly
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1076,6 +1087,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#another-similar-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Another Similar Issue
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3463,6 +3502,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#another-similar-issue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Another Similar Issue
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3525,6 +3581,18 @@ Host<span class="w"> </span>key<span class="w"> </span>verification<span class="
 <blockquote>
 <p>It is related to security context which will make SELinux to block the file access. I think this required root permission to config.</p>
 </blockquote>
+<div class="admonition note">
+<p class="admonition-title">SELinux</p>
+<p>SELinux是Linux内核的安全子系统，通过严格的访问控制机制增强系统安全性。一般情况下，建议开启SELinux来限制进程的权限，防止恶意程序通过提权等方式对系统进行攻击；然而，由于SELinux的严格访问控制机制，可能会导致一些应用程序或服务无法启动，因此在特定情况下（如开发、调试等），需暂时关闭SELinux。 <a href="https://help.aliyun.com/zh/ecs/use-cases/enable-or-disable-selinux"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
+</div>
+<h2 id="another-similar-issue">Another Similar Issue<a class="headerlink" href="#another-similar-issue" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Update: 2024-03-04</p>
+<p>在 BI 公司内部服务器上，最近也无法通过密钥 ssh 访问，同时也无法通过浏览器访问 rstudio server 服务。后来与 IT 部门联系，确认也是 <code>SELinux</code> 的问题，解决方案是 disable SELinux,</p>
+<div class="highlight"><pre><span></span><code>setenforce<span class="w"> </span><span class="m">0</span>
+</code></pre></div>
+<p>究其原因，大概是因为最近服务器有次重启，默认是开启了 SELinux，所以需要禁用。</p>
+</div>
 
 
 
@@ -3547,7 +3615,7 @@ Host<span class="w"> </span>key<span class="w"> </span>verification<span class="
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2022</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 5, 2024</span>
   </span>
 
     
@@ -3730,7 +3798,7 @@ Host<span class="w"> </span>key<span class="w"> </span>verification<span class="
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
         <script src="../../../javascripts/baiduzhanzhang.js"></script>
       
