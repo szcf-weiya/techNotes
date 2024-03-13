@@ -12,25 +12,25 @@
         <meta name="author" content="weiya">
       
       
-        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/asAserver/">
+        <link rel="canonical" href="https://tech.hohoweiya.xyz/Linux/blog/2024-03-09-CD-drive/">
       
       
-        <link rel="prev" href="../rocky-server/">
+        <link rel="prev" href="../../wsl/">
       
       
-        <link rel="next" href="../chpc/">
+        <link rel="next" href="../2020-08-25-PSSD/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
-        <title>G40 - techNotes</title>
+        <title>CD Partition in USB Drive - techNotes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
       
       
 
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 
   
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#cd-drive-in-a-usb-drive" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
+    <a href="../../.." title="techNotes" class="md-header__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              G40
+              CD Partition in USB Drive
             
           </span>
         </div>
@@ -195,7 +195,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -216,7 +216,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   Linux
@@ -234,7 +234,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../comparisons/stat/" class="md-tabs__link">
+        <a href="../../../comparisons/stat/" class="md-tabs__link">
           
   
   StatProgramming
@@ -258,7 +258,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Cpp/" class="md-tabs__link">
+        <a href="../../../Cpp/" class="md-tabs__link">
           
   
   CSProgramming
@@ -285,7 +285,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../TeX/" class="md-tabs__link">
+        <a href="../../../TeX/" class="md-tabs__link">
           
   
   DocProgramming
@@ -306,7 +306,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Internet/sci-int/" class="md-tabs__link">
+        <a href="../../../Internet/sci-int/" class="md-tabs__link">
           
   
   Network/Internet
@@ -324,7 +324,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../autotools/" class="md-tabs__link">
+        <a href="../../../autotools/" class="md-tabs__link">
           
   
   Development
@@ -342,7 +342,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../stats/prob/" class="md-tabs__link">
+        <a href="../../../stats/prob/" class="md-tabs__link">
           
   
   Stat
@@ -360,7 +360,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../biology/samtools/" class="md-tabs__link">
+        <a href="../../../biology/samtools/" class="md-tabs__link">
           
   
   InvitedPosts
@@ -378,7 +378,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../English/" class="md-tabs__link">
+        <a href="../../../English/" class="md-tabs__link">
           
   
   Misc
@@ -411,7 +411,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
+    <a href="../../.." title="techNotes" class="md-nav__button md-logo" aria-label="techNotes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -441,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -506,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -524,6 +524,8 @@
                 
   
   
+    
+  
   
   
     
@@ -538,11 +540,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
@@ -556,7 +558,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Laptops
@@ -570,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu/" class="md-nav__link">
+      <a href="../../ubuntu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -591,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software/" class="md-nav__link">
+      <a href="../../software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -612,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/" class="md-nav__link">
+      <a href="../../tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -633,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../shell/" class="md-nav__link">
+      <a href="../../../shell/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -654,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wsl/" class="md-nav__link">
+      <a href="../../wsl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -672,8 +674,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -683,11 +687,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
@@ -701,7 +705,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2_6">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -712,10 +716,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../blog/2024-03-09-CD-drive/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -724,6 +737,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -736,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2020-08-25-PSSD/" class="md-nav__link">
+      <a href="../2020-08-25-PSSD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -757,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2020-09-01-charge-battery-adaptively/" class="md-nav__link">
+      <a href="../2020-09-01-charge-battery-adaptively/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -778,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2021-06-07-switch-monitor/" class="md-nav__link">
+      <a href="../2021-06-07-switch-monitor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -799,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2021-07-28-use-old-kernel/" class="md-nav__link">
+      <a href="../2021-07-28-use-old-kernel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -833,8 +847,6 @@
                 
   
   
-    
-  
   
   
     
@@ -849,11 +861,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
@@ -867,7 +879,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Servers
@@ -881,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../servers/" class="md-nav__link">
+      <a href="../../servers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -902,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ecs/" class="md-nav__link">
+      <a href="../../ecs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -923,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rocky-server/" class="md-nav__link">
+      <a href="../../rocky-server/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -941,30 +953,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    G40
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../asAserver/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -973,116 +965,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      SSH 远程登录
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#synergy" class="md-nav__link">
-    <span class="md-ellipsis">
-      通过 Synergy 共用键鼠
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      禁止合盖休眠
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      音乐播放器
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      自登录自连接
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mount-windows-from-terminal" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mount Windows from Terminal
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#boot-into-text-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Boot into Text mode
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      电量查询
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      拔掉电源自动关机
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      插上电源自动开机
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1146,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chpc/" class="md-nav__link">
+      <a href="../../chpc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1207,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2020-12-17-passwordless-failed/" class="md-nav__link">
+      <a href="../2020-12-17-passwordless-failed/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1228,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2021-05-12-fail-to-access-home/" class="md-nav__link">
+      <a href="../2021-05-12-fail-to-access-home/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1249,7 +1131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/2022-11-19-why-job-restart/" class="md-nav__link">
+      <a href="../2022-11-19-why-job-restart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1333,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../comparisons/stat/" class="md-nav__link">
+      <a href="../../../comparisons/stat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1394,7 +1276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/" class="md-nav__link">
+      <a href="../../../R/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1415,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/plot/" class="md-nav__link">
+      <a href="../../../R/plot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1476,7 +1358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/blog/2024-02-13-blipr-yale-hpc/" class="md-nav__link">
+      <a href="../../../R/blog/2024-02-13-blipr-yale-hpc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1497,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/legend_from_zhihu/" class="md-nav__link">
+      <a href="../../../R/legend_from_zhihu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1518,7 +1400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/sample/" class="md-nav__link">
+      <a href="../../../R/sample/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1539,7 +1421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/factor/" class="md-nav__link">
+      <a href="../../../R/factor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1616,7 +1498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/" class="md-nav__link">
+      <a href="../../../python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1637,7 +1519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/conda/" class="md-nav__link">
+      <a href="../../../python/conda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1658,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/opencv/" class="md-nav__link">
+      <a href="../../../python/opencv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1679,7 +1561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/rpy2/" class="md-nav__link">
+      <a href="../../../python/rpy2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1740,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/pystan/" class="md-nav__link">
+      <a href="../../../python/pystan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1761,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/esltag/" class="md-nav__link">
+      <a href="../../../python/esltag/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1838,7 +1720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../julia/" class="md-nav__link">
+      <a href="../../../julia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1859,7 +1741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../julia/plot/" class="md-nav__link">
+      <a href="../../../julia/plot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1880,7 +1762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../julia/dev_package/" class="md-nav__link">
+      <a href="../../../julia/dev_package/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1949,7 +1831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Matlab/" class="md-nav__link">
+      <a href="../../../Matlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1978,7 +1860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SAS/" class="md-nav__link">
+      <a href="../../../SAS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2086,7 +1968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Cpp/" class="md-nav__link">
+      <a href="../../../Cpp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2107,7 +1989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Cpp/Qt/" class="md-nav__link">
+      <a href="../../../Cpp/Qt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2136,7 +2018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../java/" class="md-nav__link">
+      <a href="../../../java/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2197,7 +2079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SQL/" class="md-nav__link">
+      <a href="../../../SQL/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2218,7 +2100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../R/install-notes-for-rmysql/" class="md-nav__link">
+      <a href="../../../R/install-notes-for-rmysql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2247,7 +2129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cuda/" class="md-nav__link">
+      <a href="../../../cuda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2355,7 +2237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/" class="md-nav__link">
+      <a href="../../../TeX/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2376,7 +2258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/CI/" class="md-nav__link">
+      <a href="../../../TeX/CI/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2397,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/arxiv/" class="md-nav__link">
+      <a href="../../../TeX/arxiv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2418,7 +2300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/vargreek/" class="md-nav__link">
+      <a href="../../../TeX/vargreek/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2439,7 +2321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TeX/overleaf/" class="md-nav__link">
+      <a href="../../../TeX/overleaf/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2508,7 +2390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../doc/markdown/" class="md-nav__link">
+      <a href="../../../doc/markdown/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2577,7 +2459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/" class="md-nav__link">
+      <a href="../../../website/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2598,7 +2480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/disqus/" class="md-nav__link">
+      <a href="../../../website/disqus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2619,7 +2501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/css/" class="md-nav__link">
+      <a href="../../../website/css/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2640,7 +2522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../js/" class="md-nav__link">
+      <a href="../../../js/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2661,7 +2543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/analytics/" class="md-nav__link">
+      <a href="../../../website/analytics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2730,7 +2612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PHP/" class="md-nav__link">
+      <a href="../../../PHP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2751,7 +2633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../website/xampp/" class="md-nav__link">
+      <a href="../../../website/xampp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2827,7 +2709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/sci-int/" class="md-nav__link">
+      <a href="../../../Internet/sci-int/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2848,7 +2730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/" class="md-nav__link">
+      <a href="../../../Internet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2869,7 +2751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/ipv6/" class="md-nav__link">
+      <a href="../../../Internet/ipv6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2890,7 +2772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Internet/encrypt/" class="md-nav__link">
+      <a href="../../../Internet/encrypt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2958,7 +2840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../autotools/" class="md-nav__link">
+      <a href="../../../autotools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2979,7 +2861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dev/docker/" class="md-nav__link">
+      <a href="../../../dev/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3000,7 +2882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Git/" class="md-nav__link">
+      <a href="../../../Git/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3021,7 +2903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../phantomjs/" class="md-nav__link">
+      <a href="../../../phantomjs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3089,7 +2971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stats/prob/" class="md-nav__link">
+      <a href="../../../stats/prob/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3110,7 +2992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stats/" class="md-nav__link">
+      <a href="../../../stats/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3131,7 +3013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scientific/" class="md-nav__link">
+      <a href="../../../scientific/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3152,7 +3034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../stats/matrix/" class="md-nav__link">
+      <a href="../../../stats/matrix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3220,7 +3102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../biology/samtools/" class="md-nav__link">
+      <a href="../../../biology/samtools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3241,7 +3123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../maximum-usage-of-ITSC-cluster-resource/" class="md-nav__link">
+      <a href="../../maximum-usage-of-ITSC-cluster-resource/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3309,7 +3191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../English/" class="md-nav__link">
+      <a href="../../../English/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3330,7 +3212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guitar/" class="md-nav__link">
+      <a href="../../../guitar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3351,7 +3233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../win/" class="md-nav__link">
+      <a href="../../../win/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3372,7 +3254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../biology/" class="md-nav__link">
+      <a href="../../../biology/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3393,7 +3275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../finance/" class="md-nav__link">
+      <a href="../../../finance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3414,7 +3296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fresh/" class="md-nav__link">
+      <a href="../../../fresh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3435,7 +3317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../links/" class="md-nav__link">
+      <a href="../../../links/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3456,7 +3338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/live/" class="md-nav__link">
+      <a href="../../../misc/live/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3477,7 +3359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/wx/" class="md-nav__link">
+      <a href="../../../misc/wx/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3498,7 +3380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/wxjssdk/" class="md-nav__link">
+      <a href="../../../misc/wxjssdk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3519,7 +3401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/report/" class="md-nav__link">
+      <a href="../../../misc/report/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3540,7 +3422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mi/" class="md-nav__link">
+      <a href="../../../mi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3561,7 +3443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/terms/" class="md-nav__link">
+      <a href="../../../misc/terms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3602,104 +3484,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      SSH 远程登录
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#synergy" class="md-nav__link">
-    <span class="md-ellipsis">
-      通过 Synergy 共用键鼠
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      禁止合盖休眠
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      音乐播放器
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      自登录自连接
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mount-windows-from-terminal" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mount Windows from Terminal
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#boot-into-text-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Boot into Text mode
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      电量查询
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      拔掉电源自动关机
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      插上电源自动开机
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3713,7 +3497,7 @@
                   
 
   
-    <a href="https://github.com/szcf-weiya/techNotes/edit/master/docs/Linux/asAserver.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/szcf-weiya/techNotes/edit/master/docs/Linux/blog/2024-03-09-CD-drive.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -3721,188 +3505,20 @@
   
 
 
-<h1 id="_1">笔记本作为服务器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>有一台旧的笔记本电脑，Lenovo G40，刷了 Ubuntu 18.04，一直放在寝室吃灰，之前有段时间还试着将其当做周日在寝室办公的机器，但是相较于目前的 ThinkPad T460p，性能还是远不及的，打开软件的速度明显慢了很多。这次疫情待在家里，在摸索科学上网的几种途径后，觉得完全可以将其改成一台服务器。当然这个想法之前不是没有，但是因为想到没有 ip 地址，怎么能访问呢。当熟悉了 ssh 内网穿透以及 ngrok 这些工具之后，这些都变得不是事儿。</p>
-<p>另外，办公室的 Windows 电脑也很早就启用了 WSL，因而也可以将其作为服务器，而且通过 SSH 访问也比其它远程登录软件，如 anydesk 来得方便些。</p>
-<h2 id="ssh">SSH 远程登录<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
-<p>将系里服务器作为跳板机</p>
-<div class="highlight"><pre><span></span><code>weiya@G40<span class="w"> </span>$<span class="w"> </span>autossh<span class="w"> </span>-M<span class="w"> </span><span class="m">33000</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;StrictHostKeyChecking=false&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;ServerAliveInterval 10&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;ServerAliveCountMax 3&quot;</span><span class="w"> </span>-NR<span class="w"> </span><span class="m">30003</span>:localhost:22<span class="w"> </span>SID@SERVER
-T460p<span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">30003</span>:localhost:30003<span class="w"> </span>SID@SERVER
-T460p<span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>-p<span class="w"> </span><span class="m">30003</span><span class="w"> </span>weiya@127.0.0.1
+<h1 id="cd-drive-in-a-usb-drive">CD Drive in a USB Drive<a class="headerlink" href="#cd-drive-in-a-usb-drive" title="Permanent link">&para;</a></h1>
+<p>翻出之前本科数院送的 U 盘，当时在 Windows 中发现竟然有两个分区，一个分区放了照片和祝福视频，另一个分区就是用于普通的 U 盘</p>
+<p>但是在 Ubuntu 系统中只会出现 U 盘。</p>
+<p>无论是 <code>df -h</code> 还是  <code>fdisk -l</code>，都没看到这个存放祝福视频的分区。</p>
+<p>不过搜索 <code>partition</code> 弹出一个 <code>Disks</code> 的应用中，看到这是个 <code>CD Drive (read only)</code>，但是这里也访问不了。</p>
+<p>于是怀疑是默认的 mount 有问题，所以决定手动 mount 一下</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>mount<span class="w"> </span>/dev/sr0
+mount:<span class="w"> </span>/mnt/usb-Generic_Autorun_Disk_A8005A0E-0:0:<span class="w"> </span>mount<span class="w"> </span>point<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>exist.
 </code></pre></div>
-<p>复制的话也变得很简单了，</p>
-<div class="highlight"><pre><span></span><code>T460p<span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>-P<span class="w"> </span><span class="m">30003</span><span class="w"> </span>file<span class="w"> </span>weiya@127.0.0.1:
+<p>看起来需要自己新建个 mount point</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>mount<span class="w"> </span>/dev/sr0<span class="w"> </span>/mnt/CDdrive/
+mount:<span class="w"> </span>/mnt/CDdrive:<span class="w"> </span>WARNING:<span class="w"> </span><span class="nb">source</span><span class="w"> </span>write-protected,<span class="w"> </span>mounted<span class="w"> </span>read-only.
 </code></pre></div>
-<p>对于 WSL，一波三折，详见 <a href="https://github.com/szcf-weiya/techNotes/issues/22">Issue 22: ssh to WSL</a>，额外的步骤（按顺序，所以必要性并没有进行检验）为</p>
-<ul>
-<li>将 22 端口改成 2222</li>
-<li>在防火墙中允许 2222 端口 inbound</li>
-<li>通过 <code>dpkg-reconfigure openssh-server</code> 生成丢失掉的 host key</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><strong>Don&rsquo;t overlook any negative messages.</strong>
-其实很快就找到了<a href="https://superuser.com/questions/1123552/how-to-ssh-into-wsl">类似的问题</a>，也随即大致确定了前两步，但仍然失败。此时如果能关注到在重启 ssh 时出现的 “Could not load host key” 信息，兴许很快就能找到第三步。</p>
-</div>
-<h2 id="synergy">通过 Synergy 共用键鼠<a class="headerlink" href="#synergy" title="Permanent link">&para;</a></h2>
-<p>在 Synergy 的图形界面上，只能在同一局域网内才能配置成功。然而想到既然可以通过 ssh 来互联两台非局域网的机器，理论上应该也能共享这两台电脑的键鼠，所以试着搜索一下 &ldquo;synergy over ssh&rdquo;，果然找到了解决方案。</p>
-<p>将 T460p 作为 server，即提供键鼠，而 G40 作为 client。</p>
-<div class="highlight"><pre><span></span><code>G40<span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>-NL<span class="w"> </span><span class="m">30013</span>:localhost:30013<span class="w"> </span>-L<span class="w"> </span><span class="m">24800</span>:localhost:24800<span class="w"> </span>SID@SERVER
-G40<span class="w"> </span>$<span class="w"> </span>synergyc<span class="w"> </span>-1<span class="w"> </span>localhost
-T460p<span class="w"> </span>$<span class="w"> </span>ssh<span class="w"> </span>-NR<span class="w"> </span><span class="m">30013</span>:localhost:22<span class="w"> </span>-R<span class="w"> </span><span class="m">24800</span>:localhost:24800<span class="w"> </span>SID@SERVER
-<span class="c1"># T460p 正常在 GUI 界面上启动服务器端</span>
-</code></pre></div>
-<p>关键点是将两台机器的 24800 端口连上，基本逻辑是，在 G40 上通过 <code>-L</code> 转发使得 24800 端口访问的实际上是 SERVER 的 24800 端口，而在 T460p 上通过 <code>-R</code> 使得 SERVER 上的 24800 端口转发到本地的 24800.</p>
-<p>参考</p>
-<ul>
-<li><a href="https://0xdeadcode.se/archives/46">Tunnel synergy KVM sharing software through SSH</a></li>
-<li><a href="https://askubuntu.com/questions/850710/how-to-tunnel-synergy-over-ssh">How to tunnel Synergy over SSH?</a></li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">synergy-core</p>
-<p><a href="https://github.com/symless/synergy-core/">synergy-core</a> 是开源的，所以似乎当初并不需要花钱买 license。</p>
-</div>
-<h2 id="_2">禁止合盖休眠<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>既然作为服务器了，没必要继续直接操作了，于是想合上盖子，但是会自动进入休眠状态（准确说是 suspend，而不是 hibernate），这时连接便都断开了。但是在设置界面也没找到直接关闭休眠的，最后在 <a href="https://tipsonubuntu.com/2018/04/28/change-lid-close-action-ubuntu-18-04-lts/">How to Change Lid Close Action in Ubuntu 18.04 LTS</a> 中找到解决方案，</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>vi<span class="w"> </span>/etc/systemd/logind.conf
-</code></pre></div>
-<p>commenting out <code>HandleLidSwitch=suspend</code> and changes it to <code>HandleLidSwitch=ignore</code></p>
-<p>最后需要</p>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>restart<span class="w"> </span>systemd-logind.service
-</code></pre></div>
-<p>没想到这个也能使连接断开，于是需要继续连接一遍。</p>
-<h2 id="_3">音乐播放器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>目标：通过 ssh 远程打开音乐，但是仍在 G40 上播放，而不是像图象一样 forward 到本地播放。</p>
-<p>本来一开始担心会像图象一样，需要通过类似 <code>-X</code> 这种选项来支持这种功能，如果支持了，下一步还要看看怎么直接在服务器端直接播放，而不是额外占用本地的资源来播放，要不然我干脆用本机的音乐播放器就完事了。</p>
-<p>幸好，图象和音频不一样，如 <a href="https://unix.stackexchange.com/questions/76751/playing-a-remote-movie-on-the-remote-computer">Playing a remote movie on the remote computer</a> 所说，</p>
-<blockquote>
-<p>Linux manages sound and display differently. You normally only get access to the screen if you&rsquo;ve logged in locally, whereas sound is often available to all processes running on the system.</p>
-</blockquote>
-<p>所以打消了我的顾虑，下一步便是直接播放了。刚好 G40 有一首下载好的歌曲，然后试了一下用 <code>aplay</code> 打开，但是非常嘈杂，根本不是音乐。</p>
-<p>然后便下了个网易云客户端，本来以为音乐会在服务器端播放，但是没有任何声音，而且报错</p>
-<blockquote>
-<p>vlcpulse audio output error: PulseAudio server connection failure: Connection refused</p>
-</blockquote>
-<p>再结合一下 <code>aplay</code> 的不正常播放，误以为 <code>PulseAudio</code> 出现了问题，所以按照 <a href="https://unix.stackexchange.com/questions/445386/pulseaudio-server-connection-failure-connection-refused-debian-stretch/567083">PulseAudio server connection failure: Connection refused (debian stretch)</a> 操作一遍，似乎并没有什么问题。但是因为这个涉及到重启，所以提醒了我一个很重要的点，即自登陆自连接。</p>
-<p>后来意识到 <code>aplay</code> 只能播放 <code>wav</code> 文件，而 <code>.mp3</code>需要其他的播放命令，比如 <code>mpg123</code>，参考 <a href="https://askubuntu.com/questions/115369/how-to-play-mp3-files-from-the-command-line">How to play mp3 files from the command line?</a></p>
-<p>后来试了下 <code>sox</code>，声称可以支持多种格式，</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>sox
-$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libsox-fmt-all
-</code></pre></div>
-<p>播放的界面很清爽但不简单，</p>
-<p><img alt="" src="../music.gif" /></p>
-<p>其中 <code>-v 0.5</code> 调节音量。</p>
-<p>先暂时写了个简单的列表顺序播放的脚本</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>playmusic.sh
-<span class="c1">#!/bin/bash</span>
-<span class="k">for</span><span class="w"> </span>music<span class="w"> </span><span class="k">in</span><span class="w"> </span>~/Music/*<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$music</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span>play<span class="w"> </span>-v<span class="w"> </span><span class="m">0</span>.35<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$music</span><span class="s2">&quot;</span>
-<span class="w">    </span><span class="k">fi</span>
-<span class="k">done</span>
-</code></pre></div>
-<p>但是如果想关掉，只能 <code>Ctrl-C</code> 了，而且要连续 <code>Ctrl-C</code> 了。其实主要的是并不支持所有格式，比如<code>.ape</code>，然后我便试了试 <code>nvlc</code>, <a href="https://help.ubuntu.com/community/PlayMusicFromCommandLine">Ubuntu documentation: PlayMusicFromCommandLine</a> 列出了几种可能的从终端播放音乐的方法。</p>
-<p>注意 <code>nvlc</code> 不需要预装 <code>vlc</code>，只需要</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>vlc-bin
-</code></pre></div>
-<p>因为一开始误以为是 vlc 自带的，但是装了 vlc 之后，</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>vlc
-</code></pre></div>
-<p>并没有 <code>nvlc</code>，而直接敲 <code>nvlc</code> 就可以拿到提示，</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nvlc
-
-Command<span class="w"> </span><span class="s1">&#39;nvlc&#39;</span><span class="w"> </span>not<span class="w"> </span>found,<span class="w"> </span>but<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>installed<span class="w"> </span>with:
-
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vlc-bin
-</code></pre></div>
-<p>安装好之后，直接 <code>nvlc *</code> 便可以顺序播放所有歌曲，</p>
-<p><img alt="" src="../music-nvlc.gif" /></p>
-<p>关键是其功能远不如此，完全就是一个音乐播放器了，比如通过 <code>a, z</code> 键调节音量，更多功能键入 <code>h</code> 获取帮助，而且支持 <code>.ape</code> 格式！</p>
-<h2 id="_4">自登录自连接<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>因为重启后，一般会出现登录界面，需要输入用户名及密码。将 <code>/etc/gdm3/custom.conf</code> 中的这两行</p>
-<div class="highlight"><pre><span></span><code><span class="c1">#  AutomaticLoginEnable = true</span>
-<span class="c1">#  AutomaticLogin = user1</span>
-</code></pre></div>
-<p>改成</p>
-<div class="highlight"><pre><span></span><code><span class="nv">AutomaticLoginEnable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
-<span class="nv">AutomaticLogin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>weiya
-</code></pre></div>
-<p>下一步还需要自动发起 ssh 连接至跳板服务器，这个可以再 <code>.profile</code> 中添加</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;./autossh2ln001.sh&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.profile
-</code></pre></div>
-<p>不过需要注意到如果存在 <code>.bash_profile</code> 或 <code>.bash_login</code>，则需要更改这些文件，因为只按顺序调用这三个的第一个。</p>
-<p>因为音乐文件是通过本地百度云下载的，所以需要复制过去，但是如果 <code>scp</code> 的话，似乎没有选项支持 disable overwrite，然后看到 <a href="https://unix.stackexchange.com/questions/14191/scp-without-replacing-existing-files-in-the-destination">scp without replacing existing files in the destination</a>，推荐 <code>rsync</code>，增量更新，想起上次在 pluskid 的博客中也看到了，所以便准备用它，不过 ssh 的端口需要额外指定，<a href="https://stackoverflow.com/questions/4549945/is-it-possible-to-specify-a-different-ssh-port-when-using-rsync">Is it possible to specify a different ssh port when using rsync?</a>，最后的命令为</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rsync<span class="w"> </span>-auv<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;ssh -p 30003&quot;</span><span class="w"> </span>/home/weiya/OneDrive/CloudMusic/<span class="w"> </span>weiya@127.0.0.1:~/Music/
-</code></pre></div>
-<h2 id="mount-windows-from-terminal">Mount Windows from Terminal<a class="headerlink" href="#mount-windows-from-terminal" title="Permanent link">&para;</a></h2>
-<p>参考 <a href="https://www.tecmint.com/mount-windows-partition-in-ubuntu/">How to Mount Windows Partitions in Ubuntu</a></p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>/media/weiya/WIN
-sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>ntfs-3g<span class="w"> </span>-o<span class="w"> </span>ro<span class="w"> </span>/dev/sda4<span class="w"> </span>/media/weiya/WIN
-</code></pre></div>
-<p>其中 <code>/dev/sda4</code> 是通过 <code>sudo lsblk</code> 确定的。</p>
-<h2 id="boot-into-text-mode">Boot into Text mode<a class="headerlink" href="#boot-into-text-mode" title="Permanent link">&para;</a></h2>
-<p>参考 <a href="http://ubuntuguide.net/boot-into-text-mode-and-login-automatically">Boot into Text Mode and Login Automatically</a></p>
-<p>虽然之前通过设定 <code>.profile</code> 实现了重启后自动连接，但是后来某一次重启后，准确说是断电重启后，<code>autossh2ln001</code> 程序并没有运行成功，而是报出 <code>unknown host</code> 之类的错误，也就是 <code>ln001</code> 服务器的域名解析出现问题，但是当进入桌面后，收到重新运行 <code>autossh2ln001</code>，一切正常，搞不清哪里出现了问题。</p>
-<p>而且注意到每次重启并没有直接进入桌面，而且似乎是首先运行 <code>.profile</code> 里面的命令才进入桌面，而可能因为我没加后来运行的 <code>&amp;</code> 符号，导致运行成功后一直挂起，没有进入桌面（呈现状态是 Ubuntu 的 logo 底下的几个小点的明暗循环变化），而倘若失败（也就是报出 <code>unknown host</code> 的错误），则可以顺利进入桌面。</p>
-<p>所以索性不要以图形界面启动了，这个可以通过修改 <code>/etc/default/grub</code> 实现，</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;</span>
-<span class="nv">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&quot;text&quot;</span>
-</code></pre></div>
-<p>修改后运行 <code>sudo update-grub</code></p>
-<p>而 text 模式下免密码登录直接修改 <code>/etc/init/tty1.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># exec /sbin/getty -8 38400 tty1</span>
-<span class="nb">exec</span><span class="w"> </span>/sbin/getty<span class="w"> </span>-8<span class="w"> </span><span class="m">38400</span><span class="w"> </span>tty1<span class="w"> </span>-a<span class="w"> </span>weiya
-</code></pre></div>
-<p>这个跟上文修改 <code>/etc/gdm3/custom.conf</code> 实现自登录应该不一样，因为 <code>gdm3</code> 是跟图形界面有关的程序。</p>
-<div class="admonition tip">
-<p class="admonition-title">display managers</p>
-<p><code>gdm3</code>, <code>kdm</code>, <code>lightdm</code> 都是 <a href="https://en.wikipedia.org/wiki/X_display_manager">display managers</a>., 参考 <a href="https://askubuntu.com/questions/829108/what-is-gdm3-kdm-lightdm-how-to-install-and-remove-them">What is gdm3, kdm, lightdm? How to install and remove them?</a></p>
-</div>
-<p>最后， <code>unknown host</code> 的问题也没有再报出了。</p>
-<p>如果要从 text mode 回到图形界面</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>lightdm
-</code></pre></div>
-<p>但是很奇怪的一点是，以后每次重启后，都会进入到图形界面，不过启动过程确实是 text 的。</p>
-<h2 id="_5">电量查询<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>上文提到笔记本耗电完重启，这是因为其配套的充电器充不进电，当换成当前笔记本的适配器后（功率略高一些），虽然仍充不进电，但是能够一直保持电量，一直都是 10% 左右，倘若换成其配套的充电器，很快就会自动关机了。所以想到要不<a href="https://www.imooc.com/article/29599">查看一下电池状态</a>，一查吓一跳，原来电池已经快被榨干了，</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>upower<span class="w"> </span>-i<span class="w"> </span><span class="sb">`</span>upower<span class="w"> </span>-e<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;BAT&#39;</span><span class="sb">`</span>
-<span class="w">  </span>native-path:<span class="w">          </span>BAT0
-<span class="w">  </span>vendor:<span class="w">               </span>Lenovo<span class="w"> </span>IdeaPad
-<span class="w">  </span>serial:<span class="w">               </span>BAT20101001
-<span class="w">  </span>power<span class="w"> </span>supply:<span class="w">         </span>yes
-<span class="w">  </span>updated:<span class="w">              </span>2020年08月25日<span class="w"> </span>星期二<span class="w"> </span>16时21分10秒<span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="w"> </span>seconds<span class="w"> </span>ago<span class="o">)</span>
-<span class="w">  </span>has<span class="w"> </span>history:<span class="w">          </span>yes
-<span class="w">  </span>has<span class="w"> </span>statistics:<span class="w">       </span>yes
-<span class="w">  </span>battery
-<span class="w">    </span>present:<span class="w">             </span>yes
-<span class="w">    </span>rechargeable:<span class="w">        </span>yes
-<span class="w">    </span>state:<span class="w">               </span>charging
-<span class="w">    </span>warning-level:<span class="w">       </span>none
-<span class="w">    </span>energy:<span class="w">              </span><span class="m">0</span>.97<span class="w"> </span>Wh
-<span class="w">    </span>energy-empty:<span class="w">        </span><span class="m">0</span><span class="w"> </span>Wh
-<span class="w">    </span>energy-full:<span class="w">         </span><span class="m">9</span>.79<span class="w"> </span>Wh
-<span class="w">    </span>energy-full-design:<span class="w">  </span><span class="m">37</span>.5<span class="w"> </span>Wh
-<span class="w">    </span>energy-rate:<span class="w">         </span><span class="m">0</span><span class="w"> </span>W
-<span class="w">    </span>voltage:<span class="w">             </span><span class="m">13</span>.974<span class="w"> </span>V
-<span class="w">    </span>percentage:<span class="w">          </span><span class="m">9</span>%
-<span class="w">    </span>capacity:<span class="w">            </span><span class="m">26</span>.1067%
-<span class="w">    </span>icon-name:<span class="w">          </span><span class="s1">&#39;battery-caution-charging-symbolic&#39;</span>
-</code></pre></div>
-<p>试着解读一下信息，现在电池最大容量已经耗到最初的 26.1067%，而当前一直充电时还只能达到这个的 9%，也就是 <code>0.261067*0.09 = 0.02349603</code>。</p>
-<h2 id="_6">拔掉电源自动关机<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>参考 <a href="How to shutdown automatically when AC power is not available">https://askubuntu.com/questions/854570/how-to-shutdown-automatically-when-ac-power-is-not-available</a></p>
-<p>新建</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>vi<span class="w"> </span>/etc/udev/rules.d/50-ac-unplugged.rules
-</code></pre></div>
-<p>然后写入</p>
-<div class="highlight"><pre><span></span><code><span class="nv">SUBSYSTEM</span><span class="o">==</span><span class="s2">&quot;power_supply&quot;</span>,<span class="w"> </span>ENV<span class="o">{</span>POWER_SUPPLY_ONLINE<span class="o">}==</span><span class="s2">&quot;0&quot;</span>,<span class="w"> </span><span class="nv">RUN</span><span class="o">+=</span><span class="s2">&quot;/sbin/shutdown now&quot;</span>
-</code></pre></div>
-<p>保存文件并运行</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
-</code></pre></div>
-<p>拔掉电源后确实自动关机了！！</p>
-<h2 id="_7">插上电源自动开机<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>这个似乎<a href="https://superuser.com/questions/984934/i-want-my-pc-to-turn-on-automatically-when-power-is-connected">需要 BIOS 设置</a>，而且是在 Power Management Setup 中进行，但是通过 <code>Fn+F2</code> 进入 BIOS 后，并没有这个菜单，可能还是不支持吧。不过话说回来这个功能没有自动关机那么必要。</p>
+<p>大功告成！</p>
 
 
 
@@ -3925,7 +3541,7 @@ sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </sp
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2022</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 13, 2024</span>
   </span>
 
     
@@ -3935,7 +3551,7 @@ sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </sp
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2020</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 13, 2024</span>
   </span>
 
     
@@ -4105,16 +3721,16 @@ sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </sp
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
-        <script src="../../javascripts/baiduzhanzhang.js"></script>
+        <script src="../../../javascripts/baiduzhanzhang.js"></script>
       
-        <script src="../../javascripts/extra.js"></script>
+        <script src="../../../javascripts/extra.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
