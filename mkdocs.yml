@@ -11,6 +11,7 @@ nav:
       # - Upgradation: Linux/upgrade.md
       - WSL: Linux/wsl.md
       - Blog:
+        - CD Partition in USB Drive: Linux/blog/2024-03-09-CD-drive.md
         - Portable SSD: Linux/blog/2020-08-25-PSSD.md
         - Charge Battery Adaptively: Linux/blog/2020-09-01-charge-battery-adaptively.md
         - Switch Monitor Mode: Linux/blog/2021-06-07-switch-monitor.md
