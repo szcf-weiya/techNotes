@@ -12,7 +12,7 @@ hide:
 
 LANG | Julia | R | Python | Others
 -- | -- | -- | -- | -- 
-[padding zero on the left](../../julia/#padding-zero-on-the-left) | `lpad(1, 3, '0')` |  | `f"{1:03}"` | `printf "%03d" 1` (Shell)
+[padding zero on the left](../../julia/#padding-zero-on-the-left) | `lpad(1, 3, '0')` | `sprintf("%03d", 1)` | `f"{1:03}"` | `printf "%03d" 1` (Shell)
 [check if substring](../../julia/#check-if-substring) | `occursin()` | | `in` |
 [sum an array along row](../../julia/#dims1) | `dims=1` | `margin=2` | `axis=0` | 
 [read image](../../python/opencv/#read-image) | `Images::load()` | | `cv2.imread()` <br/> `skimage.io.imread()` |`imread()` (Matlab)
