@@ -21,6 +21,7 @@
 - [relase public from private repo](https://stackoverflow.com/questions/26217941/can-i-make-releases-public-from-a-private-github-repo)
 	- example: <https://github.com/szcf-weiya/TriMatchMOT>
 - issue 中如果在第一个评论里面加 task，则会在 issue 列表中显现处理，如 [Issue 57](https://github.com/szcf-weiya/Clouds/issues/57)
+- ignore whitespace when comparing commits: add `?w=1` <https://stackoverflow.com/questions/37007300/how-to-ignore-whitespace-in-github-when-comparing>
 
 !!! note "2023-03-23: GitHub updated RSA SSH HOST KEY"
 
