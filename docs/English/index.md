@@ -1,3 +1,19 @@
+## 2024.05
+
+- cerebral aneurysm: 脑动脉瘤
+- cerebrovascular: 脑血管的
+- mitochondrial: 线粒体的
+- rupture: 破裂，断裂
+- collagen: 胶原蛋白
+- subarachnoid: 膜下腔
+- hemorrhagic: 出血性的
+- chevron: V 形线条；V 形图案
+- curb marking: 路缘标线
+- plaque: （纪念性的）牌匾
+- milepost: 里程标
+- detour: 弯路，绕行道
+- stall: 停顿
+
 ## 2023.12
 
 - gecko: 壁虎
