@@ -13,6 +13,22 @@
 - milepost: 里程标
 - detour: 弯路，绕行道
 - stall: 停顿
+- pull over: 靠边停车
+- pile up: 堆积，积聚
+- bunch up: 聚成一团
+- skid: 打滑，侧滑
+- cane: 手杖，藤条
+- bumper: (汽车头尾的)保险杠
+- windshield: 挡风玻璃
+- wiper: 雨刷器
+- hydroplaning: （汽车车轮）在湿路上打滑
+- jamb: 门框边窗
+- tread: 轮胎的胎面
+- tinted: 带色彩的，着色的
+- pedal: 踏板
+- antenna: 触角
+- moped: 轻便摩托车
+- cutfew: 宵禁令
 
 ## 2023.12
 
