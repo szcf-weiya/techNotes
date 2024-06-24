@@ -18,11 +18,11 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../blog/2024-02-13-blipr-yale-hpc/">
+        <link rel="next" href="../blog/2024-06-10-spinup-rshiny/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
@@ -151,7 +151,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -1335,15 +1335,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      layout
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#math-formula" class="md-nav__link">
     <span class="md-ellipsis">
       math formula
@@ -1365,42 +1356,6 @@
   <a href="#smooth-curve" class="md-nav__link">
     <span class="md-ellipsis">
       smooth curve
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#margin" class="md-nav__link">
-    <span class="md-ellipsis">
-      margin
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#custom-panels-in-pairs" class="md-nav__link">
-    <span class="md-ellipsis">
-      custom panels in pairs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove-outliers-from-the-boxplot" class="md-nav__link">
-    <span class="md-ellipsis">
-      remove outliers from the boxplot
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#grid" class="md-nav__link">
-    <span class="md-ellipsis">
-      在grid排列图
     </span>
   </a>
   
@@ -1590,11 +1545,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../blog/2024-06-10-spinup-rshiny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deploy Shiny Server on Yale SpinUp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../blog/2024-02-13-blipr-yale-hpc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    install blipr on Yale HPC
+    Install blipr on Yale HPC
   </span>
   
 
@@ -1615,7 +1591,7 @@
         
   
   <span class="md-ellipsis">
-    legend in ggplot2
+    Legend in ggplot2
   </span>
   
 
@@ -1636,7 +1612,7 @@
         
   
   <span class="md-ellipsis">
-    new sample function (v3.6.0+)
+    New sample function (v3.6.0+)
   </span>
   
 
@@ -1657,7 +1633,7 @@
         
   
   <span class="md-ellipsis">
-    speedup related to factor
+    Speedup related to factor
   </span>
   
 
@@ -3742,15 +3718,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      layout
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#math-formula" class="md-nav__link">
     <span class="md-ellipsis">
       math formula
@@ -3772,42 +3739,6 @@
   <a href="#smooth-curve" class="md-nav__link">
     <span class="md-ellipsis">
       smooth curve
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#margin" class="md-nav__link">
-    <span class="md-ellipsis">
-      margin
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#custom-panels-in-pairs" class="md-nav__link">
-    <span class="md-ellipsis">
-      custom panels in pairs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove-outliers-from-the-boxplot" class="md-nav__link">
-    <span class="md-ellipsis">
-      remove outliers from the boxplot
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#grid" class="md-nav__link">
-    <span class="md-ellipsis">
-      在grid排列图
     </span>
   </a>
   
@@ -3965,16 +3896,47 @@
 
 
 <h1 id="plot">Plot<a class="headerlink" href="#plot" title="Permanent link">&para;</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">convert customs color scale for continuous feature in ggplot2 to plotly</p>
+<p>First attempt: try <code>ggplotly</code> to convert a ggplot2 object to a plotly object, but the axis re-appears when I have already set the axis blank. Another drawback is that the whole procedure is slow (ggplot2 + ggplotly).</p>
+<p>Now I want to directly convert the color scale from ggplot2 to plotly. The custom color scale in ggplot2 is set as:
+<div class="highlight"><pre><span></span><code><span class="n">custom_scale</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">lower_bound</span><span class="p">,</span><span class="w"> </span><span class="n">upper_bound</span><span class="p">,</span><span class="w"> </span><span class="n">gradient_colors</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">scale_fill_gradientn</span><span class="p">(</span>
+<span class="w">        </span><span class="n">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gradient_colors</span><span class="p">,</span>
+<span class="w">        </span><span class="n">limits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">lower_bound</span><span class="p">,</span><span class="w"> </span><span class="n">upper_bound</span><span class="p">),</span>
+<span class="w">        </span><span class="n">oob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scales</span><span class="o">::</span><span class="n">squish</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+After digging into the details of <code>scale_fill_gradientn</code>, we can generate the colors through <code>colorRampPalette</code>,
+<div class="highlight"><pre><span></span><code><span class="n">custom_scale_ly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">lower_bound</span><span class="p">,</span><span class="w"> </span><span class="n">upper_bound</span><span class="p">,</span><span class="w"> </span><span class="n">gradient_colors</span><span class="p">,</span><span class="w"> </span><span class="n">ncolor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">xs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">seq</span><span class="p">(</span><span class="n">lower_bound</span><span class="p">,</span><span class="w"> </span><span class="n">upper_bound</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ncolor</span><span class="p">)</span>
+<span class="w">    </span><span class="n">xss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scales</span><span class="o">::</span><span class="nf">rescale</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+<span class="w">    </span><span class="n">cols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">colorRampPalette</span><span class="p">(</span><span class="n">gradient_colors</span><span class="p">)(</span><span class="n">ncolor</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">lapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">ncolor</span><span class="p">,</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">xss</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">cols</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+<span class="p">}</span>
+</code></pre></div>
+then in plotly, one can use
+<div class="highlight"><pre><span></span><code><span class="nf">plot_ly</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">imagerow</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">imagecol</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;scatter&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;markers&#39;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">showlegend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">marker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span>
+<span class="w">                </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">val</span><span class="p">,</span>
+<span class="w">                </span><span class="n">colorscale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">custom_scale_ly</span><span class="p">(</span><span class="n">lower_bound</span><span class="p">,</span><span class="w"> </span><span class="n">upper_bound</span><span class="p">,</span><span class="w"> </span><span class="n">gradient_colors_RNA</span><span class="p">),</span>
+<span class="w">                </span><span class="n">colorbar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">feature</span><span class="p">)))</span>
+</code></pre></div></p>
+</div>
 <h2 id="base">Base<a class="headerlink" href="#base" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="http://karolis.koncevicius.lt/posts/r_base_plotting_without_wrappers/">R base plotting without wrappers</a></li>
 <li><a href="../r-graphical-parameters-cheatsheet.pdf">r-graphical-parameters-cheatsheet</a></li>
 </ul>
-<h3 id="layout"><code>layout</code><a class="headerlink" href="#layout" title="Permanent link">&para;</a></h3>
+<details class="note">
+<summary><code>layout</code></summary>
 <p>For two subplots, the height of the first subplot is 8 times than the height of the second subplot, </p>
 <div class="highlight"><pre><span></span><code><span class="nf">layout</span><span class="p">(</span><span class="n">mat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">),</span><span class="w"> </span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">byrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span>
 </code></pre></div>
 <p>see more details in <a href="https://stats.hohoweiya.xyz/2022/11/21/KEGGgraph/">https://stats.hohoweiya.xyz/2022/11/21/KEGGgraph/</a></p>
+</details>
 <h3 id="math-formula">math formula<a class="headerlink" href="#math-formula" title="Permanent link">&para;</a></h3>
 <p>No need to use <code>paste</code> function (<a href="https://stackoverflow.com/questions/4973898/combining-paste-and-expression-functions-in-plot-labels"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>)</p>
 <table>
@@ -4035,7 +3997,8 @@
 <span class="nf">lines</span><span class="p">(</span><span class="nf">predict</span><span class="p">(</span><span class="n">lo</span><span class="p">),</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 </code></pre></div>
 <p>参考<a href="https://stackoverflow.com/questions/3480388/how-to-fit-a-smooth-curve-to-my-data-in-r">How to fit a smooth curve to my data in R?</a></p>
-<h3 id="margin">margin<a class="headerlink" href="#margin" title="Permanent link">&para;</a></h3>
+<details class="note">
+<summary>margin</summary>
 <p>有时通过 <code>par(mfrow=c(2,1))</code> 画图时间距过大，这可以通过 <code>mar</code> 来调节，注意到</p>
 <ul>
 <li><code>mar</code> 调节单张图的 margin</li>
@@ -4043,32 +4006,31 @@
 </ul>
 <p>参考 <a href="https://stackoverflow.com/questions/15848942/how-to-reduce-space-gap-between-multiple-graphs-in-r">how to reduce space gap between multiple graphs in R</a></p>
 <p>比如，<a href="https://github.com/szcf-weiya/ESL-CN/commit/a79daf246320a7cd0ae57c0b229fc096d98483f6">B spline in R, C++ and Python</a></p>
-<h3 id="custom-panels-in-pairs">custom panels in pairs<a class="headerlink" href="#custom-panels-in-pairs" title="Permanent link">&para;</a></h3>
+</details>
+<details class="note">
+<summary>custom panels in <code>pairs</code></summary>
 <p>问题来自<a href="https://www.zhihu.com/question/268216627/answer/334393347">R语言绘图？ - 知乎</a></p>
 <p><img alt="" src="https://pic4.zhimg.com/v2-ad40c8c5a577f9ed3ae82dd43c7dfdcf_r.jpg" /></p>
 <div class="highlight"><pre><span></span><code><span class="n">my.lower</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="kc">...</span><span class="p">){</span>
-<span class="w">  </span><span class="nf">points</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
-<span class="w">  </span><span class="nf">lines</span><span class="p">(</span><span class="nf">lowess</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="nf">points</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<span class="nf">lines</span><span class="p">(</span><span class="nf">lowess</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="n">my.upper</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">){</span>
-<span class="w">  </span><span class="n">cor.val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">digits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
-<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">cor.val</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.5</span><span class="p">){</span>
+<span class="n">cor.val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">digits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="nf">if </span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">cor.val</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.5</span><span class="p">){</span>
 <span class="w">    </span><span class="nf">text</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">cor.val</span><span class="p">,</span><span class="w"> </span><span class="n">cex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
 <span class="w">    </span><span class="nf">text</span><span class="p">(</span><span class="nf">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="m">0.8</span><span class="p">],</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;***&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">cex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">)</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span>
-<span class="w">  </span><span class="p">{</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span>
+<span class="p">{</span>
 <span class="w">    </span><span class="nf">text</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">cor.val</span><span class="p">,</span><span class="w"> </span><span class="n">cex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
-<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 <span class="p">}</span>
 
 <span class="nf">pairs</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span><span class="w"> </span><span class="n">lower.panel</span><span class="w"> </span><span class="o">=</span><span class="n">my.lower</span><span class="p">,</span><span class="w"> </span><span class="n">upper.panel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my.upper</span><span class="p">)</span>
 </code></pre></div>
 <p>参考 <a href="https://stackoverflow.com/questions/15625510/different-data-in-upper-and-lower-panel-of-scatterplot-matrix">Different data in upper and lower panel of scatterplot matrix</a></p>
-<h3 id="remove-outliers-from-the-boxplot">remove outliers from the boxplot<a class="headerlink" href="#remove-outliers-from-the-boxplot" title="Permanent link">&para;</a></h3>
-<p><a href="https://stackoverflow.com/questions/4787332/how-to-remove-outliers-from-a-dataset">How to remove outliers from a dataset</a></p>
-<h3 id="grid">在grid排列图<a class="headerlink" href="#grid" title="Permanent link">&para;</a></h3>
-<p><a href="https://cran.r-project.org/web/packages/cowplot/vignettes/plot_grid.html">Arranging plots in a grid</a></p>
+</details>
 <h3 id="combine-base-and-ggplot-graphics-in-r-figure">combine base and ggplot graphics in R figure<a class="headerlink" href="#combine-base-and-ggplot-graphics-in-r-figure" title="Permanent link">&para;</a></h3>
 <p>refer to <a href="https://stackoverflow.com/questions/14124373/combine-base-and-ggplot-graphics-in-r-figure-window">Combine base and ggplot graphics in R figure window</a></p>
 <h2 id="lattice">lattice<a class="headerlink" href="#lattice" title="Permanent link">&para;</a></h2>
@@ -4081,42 +4043,42 @@
 <h3 id="histogram">histogram<a class="headerlink" href="#histogram" title="Permanent link">&para;</a></h3>
 <details class="tip">
 <summary>fill (not color) &amp; factor (not numeric) in histogram</summary>
-<p><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">),</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="m">+1</span><span class="p">),</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">each</span><span class="o">=</span><span class="m">100</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">),</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="m">+1</span><span class="p">),</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">each</span><span class="o">=</span><span class="m">100</span><span class="p">))</span>
 <span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_histogram</span><span class="p">()</span>
 </code></pre></div>
-<img alt="" src="https://user-images.githubusercontent.com/13688320/218221345-7a1c208b-da21-467f-9acf-7829852747d1.png" />
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/218221345-7a1c208b-da21-467f-9acf-7829852747d1.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_histogram</span><span class="p">()</span>
 </code></pre></div>
-<img alt="" src="https://user-images.githubusercontent.com/13688320/218221419-3b4f4081-e9cd-41a3-a486-1089d6db4e50.png" />
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/218221419-3b4f4081-e9cd-41a3-a486-1089d6db4e50.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_histogram</span><span class="p">()</span>
 </code></pre></div>
-<img alt="" src="https://user-images.githubusercontent.com/13688320/218221479-44014f77-7a59-41b9-9533-9fd250c66c0f.png" /></p>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/218221479-44014f77-7a59-41b9-9533-9fd250c66c0f.png" /></p>
 </details>
 <details class="tip">
 <summary>alpha not work in single histogram</summary>
-<p><div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">g</span><span class="p">)),</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_histogram</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">g</span><span class="p">)),</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_histogram</span><span class="p">()</span>
 </code></pre></div>
-<img alt="" src="https://user-images.githubusercontent.com/13688320/218241818-b6b07c26-62d0-41cb-93f7-3d8adf1bb6ce.png" />
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/218241818-b6b07c26-62d0-41cb-93f7-3d8adf1bb6ce.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">),</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">g</span><span class="p">)),</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
 <span class="w">                     </span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">factor</span><span class="p">(</span><span class="n">g</span><span class="p">)),</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span>
 </code></pre></div>
-<img alt="" src="https://user-images.githubusercontent.com/13688320/218293071-9c627f11-b7e2-42ec-8820-71e9fca36582.png" />
-Note that <code>aes(fill = )</code> is important, otherwise no legend. See also: <a href="https://stackoverflow.com/questions/39322266/adding-legend-to-a-multi-histogram-ggplot"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>, <a href="https://stackoverflow.com/questions/6957549/overlaying-histograms-with-ggplot2-in-r"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>, <a href="https://github.com/szcf-weiya/Multi-omics-Clustering/issues/34"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/218293071-9c627f11-b7e2-42ec-8820-71e9fca36582.png" /></p>
+<p>Note that <code>aes(fill = )</code> is important, otherwise no legend. See also: <a href="https://stackoverflow.com/questions/39322266/adding-legend-to-a-multi-histogram-ggplot"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>, <a href="https://stackoverflow.com/questions/6957549/overlaying-histograms-with-ggplot2-in-r"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>, <a href="https://github.com/szcf-weiya/Multi-omics-Clustering/issues/34"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
 </details>
 <details class="tip">
 <summary>scale_fill_manual: do not specify color in aes</summary>
 <p>If using <code>scale_fill_manual</code>, do not explicitly specify color in <code>aes</code>, </p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># not recommended</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># not recommended</span>
 <span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">==</span><span class="s">&quot;1&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
 <span class="w">    </span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">==</span><span class="s">&quot;2&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
 <span class="w">    </span><span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">labels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">))</span>
 </code></pre></div>
-<img alt="" src="https://user-images.githubusercontent.com/13688320/229019140-e451cd9a-5da7-4ed9-a4f5-454c3c0dfd89.png" /></p>
-<p>Instead, just write the corresponding tuples in <code>values</code> and <code>labels</code> and use <code>fill=g</code>
+<p><img alt="" src="https://user-images.githubusercontent.com/13688320/229019140-e451cd9a-5da7-4ed9-a4f5-454c3c0dfd89.png" /></p>
+<p>Instead, just write the corresponding tuples in <code>values</code> and <code>labels</code> and use <code>fill=g</code></p>
 <div class="highlight"><pre><span></span><code><span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">==</span><span class="s">&quot;1&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">g</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
 <span class="w">    </span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">==</span><span class="s">&quot;2&quot;</span><span class="p">),</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">g</span><span class="p">),</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span>
 <span class="w">    </span><span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">labels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">))</span>
-</code></pre></div></p>
+</code></pre></div>
 </details>
 <details class="tip">
 <summary>square figure: <code>coord_equal</code> with <code>xlim/ylim</code></summary>
@@ -4331,7 +4293,7 @@ f(x) = \begin{cases}
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 19, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 24, 2024</span>
   </span>
 
     
@@ -4514,7 +4476,7 @@ f(x) = \begin{cases}
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
         <script src="../../javascripts/baiduzhanzhang.js"></script>
       

@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
@@ -151,7 +151,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -1603,11 +1603,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../R/blog/2024-06-10-spinup-rshiny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deploy Shiny Server on Yale SpinUp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../R/blog/2024-02-13-blipr-yale-hpc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    install blipr on Yale HPC
+    Install blipr on Yale HPC
   </span>
   
 
@@ -1628,7 +1649,7 @@
         
   
   <span class="md-ellipsis">
-    legend in ggplot2
+    Legend in ggplot2
   </span>
   
 
@@ -1649,7 +1670,7 @@
         
   
   <span class="md-ellipsis">
-    new sample function (v3.6.0+)
+    New sample function (v3.6.0+)
   </span>
   
 
@@ -1670,7 +1691,7 @@
         
   
   <span class="md-ellipsis">
-    speedup related to factor
+    Speedup related to factor
   </span>
   
 
@@ -3979,16 +4000,13 @@
 
 <h1 id="linux-notes">Linux Notes<a class="headerlink" href="#linux-notes" title="Permanent link">&para;</a></h1>
 <h2 id="systemhardware-info">System/Hardware Info<a class="headerlink" href="#systemhardware-info" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary>Linux Distributions</summary>
 <ul>
-<li>check linux distribution (refer to <a href="https://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/">How To Find Out My Linux Distribution Name and Version</a>)<ul>
 <li><code>cat /etc/os-release</code> or <code>cat /ect/*-release</code></li>
 <li><code>lsb_release -a</code></li>
 <li><code>hostnamectl</code></li>
 </ul>
-</li>
-</ul>
-<details class="note">
-<summary>Linux Distributions</summary>
 <p>根据包管理器进行的分类，主流的发行版有</p>
 <ul>
 <li>apt: Debian, Ubuntu, Linux Mint</li>
@@ -4010,28 +4028,35 @@
 </ul>
 <p>目前只接触 Ubuntu（个人笔记本） 和 CentOS, Rocky（服务器），所以本笔记主要针对这两种。</p>
 </details>
+<details class="note">
+<summary>Kernel version</summary>
 <ul>
-<li>check kernel version:<ul>
 <li><code>uname -a</code> or <code>uname -mrs</code></li>
 <li><code>cat /proc/version</code></li>
 </ul>
-</li>
-<li>how long has the system been running (refer to <a href="https://unix.stackexchange.com/questions/131775/how-long-has-my-linux-system-been-running">How long has my Linux system been running?</a>):<ul>
+</details>
+<details class="note">
+<summary>How long has the system been running</summary>
+<ul>
 <li><code>last reboot</code></li>
 <li><code>uptime --since</code>, which is actually the first line of <code>top</code></li>
 </ul>
-</li>
-<li>obtain <a href="https://help.ubuntu.com/stable/ubuntu-help/net-macaddress.html">MAC address <img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>: <code>ifconfig | grep ether</code>, note that different MAC addresses for WIFI and Ethernet.</li>
-<li>check number of cores (refer to <a href="https://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux">How to know number of cores of a system in Linux?</a>):<ul>
-<li>quick way: <code>nproc --all</code></li>
-<li>more details: <code>lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('</code></li>
-</ul>
-</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">CPU vs Thread vs Core vs Socket</p>
+</details>
+<details class="note">
+<summary>MAC address</summary>
+<p>obtain <a href="https://help.ubuntu.com/stable/ubuntu-help/net-macaddress.html">MAC address <img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>: <code>ifconfig | grep ether</code>, note that different MAC addresses for WIFI and Ethernet.</p>
+</details>
+<details class="note">
+<summary>CPU vs Thread vs Core vs Socket</summary>
 <ul>
-<li>CPU: Central Processing Unit。概念比较宽泛，不同语境有不同含义，如 <code>lscpu</code> 便指 thread 个数。<code>CPUs</code> = <code>Threads per core</code> * <code>cores per socket</code> * <code>sockets</code></li>
+<li>check number of cores:</li>
+<li>quick way: <code>nproc --all</code></li>
+<li>
+<p>more details: <code>lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('</code></p>
+</li>
+<li>
+<p>CPU: Central Processing Unit。概念比较宽泛，不同语境有不同含义，如 <code>lscpu</code> 便指 thread 个数。<code>CPUs</code> = <code>Threads per core</code> * <code>cores per socket</code> * <code>sockets</code></p>
+</li>
 <li>CPU Socket: CPU 是通过一个插槽安装在主板上的，这个插槽就是 Socket;</li>
 <li>Core: 一个 CPU 中可以有多个 core，各个 core 之间相互独立，且可以执行并行逻辑，每个 core 都有单独的寄存器，L1, L2 缓存等物理硬件。</li>
 <li>Thread: 并不是物理概念，而是软件概念，本质上是利用 CPU 空闲时间来执行其他代码，所以其只能算是并发，而不是并行。</li>
@@ -4052,16 +4077,20 @@ Socket<span class="o">(</span>s<span class="o">)</span>:<span class="w">        
 </code></pre></div>
 表明其为 4 核 4 线程。</p>
 <p>参考 <a href="https://cloud.tencent.com/developer/article/1736628">三分钟速览cpu,socket,core,thread等术语之间的关系</a></p>
-</div>
+</details>
+<details class="note">
+<summary>Logger users</summary>
 <ul>
 <li>check last logged users: <code>last</code>, but the user field only shows 8 characters. To check the full name, use <code>last -w</code> instead. Refer to <a href="https://serverfault.com/questions/343740/last-loggedin-users-in-linux-showing-8-characters-only">last loggedin users in linux showing 8 characters only - Server Fault</a></li>
 </ul>
+</details>
 <h2 id="locale">Locale<a class="headerlink" href="#locale" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>区域设置（locale），也称作“本地化策略集”、“本地环境”，是表达程序用户地区方面的软件设定。不同系统、平台、与软件有不同的区域设置处理方式和不同的设置范围，但是一般区域设置最少也会包括语言和地区。区域设置的内容包括：数据格式、货币金额格式、小数点符号、千分位符号、度量衡单位、通货符号、日期写法、日历类型、文字排序、姓名格式、地址等等。
 source: <a href="https://zh.wikipedia.org/wiki/%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">维基百科</a></p>
 </blockquote>
-<p>locale 生效的顺序为</p>
+<details class="note">
+<summary>locale 生效的顺序</summary>
 <ol>
 <li><code>LANGUAGE</code>：指定个人对语言环境值的主次偏好，在 Ubuntu 中有这个环境变量，但似乎在 CentOS7.4 服务器上没有这个变量</li>
 <li><code>LC_ALL</code>: 这不是一个环境变量，是一个可被C语言库函数setlocale设置的宏，其值可覆盖所有其他的locale设定。因此缺省时此值为空</li>
@@ -4092,6 +4121,7 @@ locale:<span class="w"> </span>Cannot<span class="w"> </span><span class="nb">se
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
 </code></pre></div>
 <p>来解决这个问题，这个可以写进 <code>.bashrc</code> 文件中，并且不需要 sudo 权限，而 <a href="https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue">How do I fix my locale issue?</a> 中提到的几种方法需要 sudo 权限。</p>
+</details>
 <h2 id="shared-objects-so-dynamic-library">shared objects <code>.so</code> (dynamic library)<a class="headerlink" href="#shared-objects-so-dynamic-library" title="Permanent link">&para;</a></h2>
 <h3 id="ld_preload">LD_PRELOAD<a class="headerlink" href="#ld_preload" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
@@ -4419,7 +4449,7 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 24, 2024</span>
   </span>
 
     
@@ -4602,7 +4632,7 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.action.edit"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
         <script src="../javascripts/baiduzhanzhang.js"></script>
       
