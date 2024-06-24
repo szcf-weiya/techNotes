@@ -33,10 +33,11 @@ nav:
       - Base: R/index.md
       - Plot: R/plot.md
       - Blog:
-        - install blipr on Yale HPC: R/blog/2024-02-13-blipr-yale-hpc.md
-        - legend in ggplot2: R/legend_from_zhihu.md
-        - new sample function (v3.6.0+): R/sample.md
-        - speedup related to factor: R/factor.md
+        - Deploy Shiny Server on Yale SpinUp: R/blog/2024-06-10-spinup-rshiny.md
+        - Install blipr on Yale HPC: R/blog/2024-02-13-blipr-yale-hpc.md
+        - Legend in ggplot2: R/legend_from_zhihu.md
+        - New sample function (v3.6.0+): R/sample.md
+        - Speedup related to factor: R/factor.md
     - Python:
       - Base: python/index.md
       - Conda: python/conda.md

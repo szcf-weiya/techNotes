@@ -6,12 +6,11 @@ comments: true
 
 ## System/Hardware Info
 
-- check linux distribution (refer to [How To Find Out My Linux Distribution Name and Version](https://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/))
+??? note "Linux Distributions"
+
   	- `cat /etc/os-release` or `cat /ect/*-release`
   	- `lsb_release -a`
   	- `hostnamectl`
-
-??? note "Linux Distributions"
 
     根据包管理器进行的分类，主流的发行版有
 
@@ -34,18 +33,23 @@ comments: true
 
     目前只接触 Ubuntu（个人笔记本） 和 CentOS, Rocky（服务器），所以本笔记主要针对这两种。
 
-- check kernel version:
+??? note "Kernel version"
 	- `uname -a` or `uname -mrs`
 	- `cat /proc/version`
-- how long has the system been running (refer to [How long has my Linux system been running?](https://unix.stackexchange.com/questions/131775/how-long-has-my-linux-system-been-running)):
+
+??? note "How long has the system been running"
 	- `last reboot`
 	- `uptime --since`, which is actually the first line of `top`
-- obtain [MAC address :link:](https://help.ubuntu.com/stable/ubuntu-help/net-macaddress.html): ` ifconfig | grep ether`, note that different MAC addresses for WIFI and Ethernet.
-- check number of cores (refer to [How to know number of cores of a system in Linux?](https://unix.stackexchange.com/questions/218074/how-to-know-number-of-cores-of-a-system-in-linux)):
-    - quick way: `nproc --all`
-    - more details: `lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('`
 
-!!! note "CPU vs Thread vs Core vs Socket"
+??? note "MAC address"  
+    obtain [MAC address :link:](https://help.ubuntu.com/stable/ubuntu-help/net-macaddress.html): ` ifconfig | grep ether`, note that different MAC addresses for WIFI and Ethernet.
+
+
+??? note "CPU vs Thread vs Core vs Socket"
+    - check number of cores:
+      - quick way: `nproc --all`
+      - more details: `lscpu | grep -E '^Thread|^Core|^Socket|^CPU\('`
+
     - CPU: Central Processing Unit。概念比较宽泛，不同语境有不同含义，如 `lscpu` 便指 thread 个数。`CPUs` = `Threads per core` * `cores per socket` * `sockets`
     - CPU Socket: CPU 是通过一个插槽安装在主板上的，这个插槽就是 Socket;
     - Core: 一个 CPU 中可以有多个 core，各个 core 之间相互独立，且可以执行并行逻辑，每个 core 都有单独的寄存器，L1, L2 缓存等物理硬件。
@@ -72,50 +76,51 @@ comments: true
 
     参考 [三分钟速览cpu,socket,core,thread等术语之间的关系](https://cloud.tencent.com/developer/article/1736628)
 
-- check last logged users: `last`, but the user field only shows 8 characters. To check the full name, use `last -w` instead. Refer to [last loggedin users in linux showing 8 characters only - Server Fault](https://serverfault.com/questions/343740/last-loggedin-users-in-linux-showing-8-characters-only)
+??? note "Logger users"
+    - check last logged users: `last`, but the user field only shows 8 characters. To check the full name, use `last -w` instead. Refer to [last loggedin users in linux showing 8 characters only - Server Fault](https://serverfault.com/questions/343740/last-loggedin-users-in-linux-showing-8-characters-only)
 
 ## Locale
 
 > 区域设置（locale），也称作“本地化策略集”、“本地环境”，是表达程序用户地区方面的软件设定。不同系统、平台、与软件有不同的区域设置处理方式和不同的设置范围，但是一般区域设置最少也会包括语言和地区。区域设置的内容包括：数据格式、货币金额格式、小数点符号、千分位符号、度量衡单位、通货符号、日期写法、日历类型、文字排序、姓名格式、地址等等。
 > source: [维基百科](https://zh.wikipedia.org/wiki/%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE)
 
-locale 生效的顺序为
+??? note "locale 生效的顺序"
 
-1. `LANGUAGE`：指定个人对语言环境值的主次偏好，在 Ubuntu 中有这个环境变量，但似乎在 CentOS7.4 服务器上没有这个变量
-2. `LC_ALL`: 这不是一个环境变量，是一个可被C语言库函数setlocale设置的宏，其值可覆盖所有其他的locale设定。因此缺省时此值为空
-3. `LC_xxx`: 可设定locale各方面（category）的值，可以覆盖 `LANG` 的值。
-4. `LANG`: 指定默认使用的locale值
+    1. `LANGUAGE`：指定个人对语言环境值的主次偏好，在 Ubuntu 中有这个环境变量，但似乎在 CentOS7.4 服务器上没有这个变量
+    2. `LC_ALL`: 这不是一个环境变量，是一个可被C语言库函数setlocale设置的宏，其值可覆盖所有其他的locale设定。因此缺省时此值为空
+    3. `LC_xxx`: 可设定locale各方面（category）的值，可以覆盖 `LANG` 的值。
+    4. `LANG`: 指定默认使用的locale值
 
-如若设置不当，可能会出现
+    如若设置不当，可能会出现
 
-```bash
-$ locale
-locale: Cannot set LC_CTYPE to default locale: No such file or directory
-locale: Cannot set LC_MESSAGES to default locale: No such file or directory
-locale: Cannot set LC_ALL to default locale: No such file or directory
-LANG=C.UTF-8
-LC_CTYPE=C.UTF-8
-LC_NUMERIC=en_US.UTF-8
-LC_TIME=en_US.UTF-8
-LC_COLLATE="C.UTF-8"
-LC_MONETARY=en_US.UTF-8
-LC_MESSAGES="C.UTF-8"
-LC_PAPER=en_US.UTF-8
-LC_NAME=en_US.UTF-8
-LC_ADDRESS=en_US.UTF-8
-LC_TELEPHONE=en_US.UTF-8
-LC_MEASUREMENT=en_US.UTF-8
-LC_IDENTIFICATION=en_US.UTF-8
-LC_ALL=
-```
+    ```bash
+    $ locale
+    locale: Cannot set LC_CTYPE to default locale: No such file or directory
+    locale: Cannot set LC_MESSAGES to default locale: No such file or directory
+    locale: Cannot set LC_ALL to default locale: No such file or directory
+    LANG=C.UTF-8
+    LC_CTYPE=C.UTF-8
+    LC_NUMERIC=en_US.UTF-8
+    LC_TIME=en_US.UTF-8
+    LC_COLLATE="C.UTF-8"
+    LC_MONETARY=en_US.UTF-8
+    LC_MESSAGES="C.UTF-8"
+    LC_PAPER=en_US.UTF-8
+    LC_NAME=en_US.UTF-8
+    LC_ADDRESS=en_US.UTF-8
+    LC_TELEPHONE=en_US.UTF-8
+    LC_MEASUREMENT=en_US.UTF-8
+    LC_IDENTIFICATION=en_US.UTF-8
+    LC_ALL=
+    ```
 
-则可以通过
+    则可以通过
 
-```bash
-export LC_ALL=en_US.UTF-8
-```
+    ```bash
+    export LC_ALL=en_US.UTF-8
+    ```
 
-来解决这个问题，这个可以写进 `.bashrc` 文件中，并且不需要 sudo 权限，而 [How do I fix my locale issue?](https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue) 中提到的几种方法需要 sudo 权限。
+    来解决这个问题，这个可以写进 `.bashrc` 文件中，并且不需要 sudo 权限，而 [How do I fix my locale issue?](https://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue) 中提到的几种方法需要 sudo 权限。
 
 ## shared objects `.so` (dynamic library)
 
