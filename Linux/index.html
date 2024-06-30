@@ -684,15 +684,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#netrc" class="md-nav__link">
-    <span class="md-ellipsis">
-      .netrc
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gpg-error" class="md-nav__link">
     <span class="md-ellipsis">
       GPG error
@@ -3889,15 +3880,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#netrc" class="md-nav__link">
-    <span class="md-ellipsis">
-      .netrc
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gpg-error" class="md-nav__link">
     <span class="md-ellipsis">
       GPG error
@@ -4124,10 +4106,8 @@ locale:<span class="w"> </span>Cannot<span class="w"> </span><span class="nb">se
 </details>
 <h2 id="shared-objects-so-dynamic-library">shared objects <code>.so</code> (dynamic library)<a class="headerlink" href="#shared-objects-so-dynamic-library" title="Permanent link">&para;</a></h2>
 <h3 id="ld_preload">LD_PRELOAD<a class="headerlink" href="#ld_preload" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Used in <a href=""><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
-</div>
+<details class="tip">
+<summary>before the command on the same line</summary>
 <p>If it is set on the same line before the command, it is only valid on the same line. For example, </p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>R4.1.0<span class="o">)</span><span class="w"> </span>/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib$<span class="w"> </span>ldd<span class="w"> </span>libR.so<span class="w"> </span>
 <span class="w">        </span>libstdc++.so.6<span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib/./../.././libstdc++.so.6<span class="w"> </span><span class="o">(</span>0x00007f80f4d1e000<span class="o">)</span>
@@ -4135,13 +4115,16 @@ locale:<span class="w"> </span>Cannot<span class="w"> </span><span class="nb">se
 <span class="o">(</span>R4.1.0<span class="o">)</span><span class="w"> </span>/media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib$<span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span>/usr/lib/x86_64-linux-gnu/libstdc++.so.6<span class="w"> </span>ldd<span class="w"> </span>libR.so<span class="w"> </span>
 <span class="w">        </span>/usr/lib/x86_64-linux-gnu/libstdc++.so.6<span class="w"> </span><span class="o">(</span>0x00007fc70eb4c000<span class="o">)</span>
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+</details>
+<details class="warning">
+<summary>a particular file instead of a folder</summary>
 <p>it is should be a particular file instead of a folder, otherwise it throws
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span>/usr/lib/x86_64-linux-gnu/<span class="w"> </span>ldd<span class="w"> </span>libR.so<span class="w"> </span>
 ERROR:<span class="w"> </span>ld.so:<span class="w"> </span>object<span class="w"> </span><span class="s1">&#39;/usr/lib/x86_64-linux-gnu/&#39;</span><span class="w"> </span>from<span class="w"> </span>LD_PRELOAD<span class="w"> </span>cannot<span class="w"> </span>be<span class="w"> </span>preloaded<span class="w"> </span><span class="o">(</span>cannot<span class="w"> </span><span class="nb">read</span><span class="w"> </span>file<span class="w"> </span>data<span class="o">)</span>:<span class="w"> </span>ignored.
 </code></pre></div></p>
-</div>
+</details>
+<details class="warning">
+<summary>use <code>export</code></summary>
 <p>In the words of <a href="https://www.baeldung.com/linux/ld_preload-trick-what-is"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>, </p>
 <blockquote>
 <p>LD_PRELOAD is an environment variable, it affects only the current process</p>
@@ -4157,15 +4140,16 @@ ERROR:<span class="w"> </span>ld.so:<span class="w"> </span>object<span class="w
 <span class="w">        </span>/usr/lib/x86_64-linux-gnu/libstdc++.so.6<span class="w"> </span><span class="o">(</span>0x00007fb231b15000<span class="o">)</span>
 </code></pre></div>
 <p>BTW, in the above, <code>conda activate</code> does not affect.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+</details>
+<details class="warning">
+<summary>use <code>env</code> in GitHub Action</summary>
 <p><code>export LD_PRELOAD</code> did not work in GitHub Actions, such as <a href="https://github.com/szcf-weiya/MonotoneSplines.jl/actions/runs/3841183884/workflow"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>.
 The proper way is to put it to <code>env</code>. <a href="https://github.com/szcf-weiya/MonotoneSplines.jl/blob/7c2e96fb2214c6d5dc4e123ae8beb9128be14086/.github/workflows/ci.yml#L68"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+</details>
+<details class="tip">
+<summary><code>man ld.so</code></summary>
 <p>The documentation can be found in <code>man ld.so</code>, <del>not <code>man ld</code></del>.    </p>
-</div>
+</details>
 <h3 id="search-order">search order<a class="headerlink" href="#search-order" title="Permanent link">&para;</a></h3>
 <p>An executable look for shared objects (<code>.so</code> files) in the following locations in order</p>
 <ul>
@@ -4211,6 +4195,8 @@ update-alternatives:<span class="w"> </span>error:<span class="w"> </span>no<spa
 UID<span class="w">        </span>PID<span class="w">  </span>PPID<span class="w">  </span>C<span class="w"> </span>STIME<span class="w"> </span>TTY<span class="w">          </span>TIME<span class="w"> </span>CMD
 root<span class="w">         </span><span class="m">1</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">09</span>:15<span class="w"> </span>?<span class="w">        </span><span class="m">00</span>:00:44<span class="w"> </span>/sbin/init<span class="w"> </span>splash
 </code></pre></div>
+<details class="note">
+<summary>每一列的含义</summary>
 <p>每一列的含义可以在 <code>man ps</code> 中的 <code>STANDARD FORMAT SPECIFIERS</code> 小节中找到，具体地，</p>
 <ul>
 <li><code>UID</code>: same with EUID, effective user ID (alias uid).</li>
@@ -4222,6 +4208,7 @@ root<span class="w">         </span><span class="m">1</span><span class="w">    
 <li><code>TIME</code>: cumulative CPU time, &ldquo;[DD-]HH:MM:SS&rdquo; format.  (alias cputime).</li>
 <li><code>CMD</code>: see args.  (alias args, command). when the arguments to that command cannot be located, 会被中括号 <code>[]</code> 包起来</li>
 </ul>
+</details>
 <h2 id="user-vs-sys"><code>user</code> vs. <code>sys</code><a class="headerlink" href="#user-vs-sys" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>time</code> commands return three times, named <code>real</code>, <code>user</code> and <code>sys</code>, the detailed explanation refers to <a href="https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1">What do &lsquo;real&rsquo;, &lsquo;user&rsquo; and &lsquo;sys&rsquo; mean in the output of time(1)?</a></li>
@@ -4267,12 +4254,13 @@ sudo<span class="w"> </span>service<span class="w"> </span>cron<span class="w"> 
 <p><a href="https://stackoverflow.com/questions/22097130/delete-all-broken-symbolic-links-with-a-line">Delete all broken symbolic links with a line?</a></p>
 <h2 id="hydrogen-specify-the-conda-environment">hydrogen specify the conda environment<a class="headerlink" href="#hydrogen-specify-the-conda-environment" title="Permanent link">&para;</a></h2>
 <p>just need to run</p>
-<div class="highlight"><pre><span></span><code>source activate thisenv
-python -m ipykernel install --user --name thisenv
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>thisenv
+python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>thisenv
 </code></pre></div>
 <p>and only once, hydrogen will remember this!!</p>
 <p>ref to <a href="https://github.com/nteract/hydrogen/issues/899">How to specify the conda environment in which hydrogen (jupyter) starts?</a></p>
-<h2 id="netrc">.netrc<a class="headerlink" href="#netrc" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary>.netrc? heroku?</summary>
 <p>为了学习 RL，在听了周博磊在 B 站的视频后，准备玩下<a href="https://github.com/cuhkrlcourse/RLexample">示例代码</a>，但是在终端中创建新 conda 环境时，</p>
 <div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>RL<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>
 </code></pre></div>
@@ -4295,6 +4283,7 @@ machine<span class="w"> </span>git.heroku.com
 <p>This is a file that is often used by Unix programs to hold access details for remote sites. It was originally created for use with FTP.</p>
 </blockquote>
 <p>最后这个问题是直接把 .bashrc 中所有的代理去掉了.</p>
+</details>
 <h2 id="gpg-error">GPG error<a class="headerlink" href="#gpg-error" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 W:<span class="w"> </span>An<span class="w"> </span>error<span class="w"> </span>occurred<span class="w"> </span>during<span class="w"> </span>the<span class="w"> </span>signature<span class="w"> </span>verification.<span class="w"> </span>The<span class="w"> </span>repository<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>updated<span class="w"> </span>and<span class="w"> </span>the<span class="w"> </span>previous<span class="w"> </span>index<span class="w"> </span>files<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>used.<span class="w"> </span>GPG<span class="w"> </span>error:<span class="w"> </span>https://cloud.r-project.org/bin/linux/ubuntu<span class="w"> </span>bionic-cran35/<span class="w"> </span>InRelease:<span class="w"> </span>The<span class="w"> </span>following<span class="w"> </span>signatures<span class="w"> </span>were<span class="w"> </span>invalid:<span class="w"> </span>EXPKEYSIG<span class="w"> </span>51716619E084DAB9<span class="w"> </span>Michael<span class="w"> </span>Rutter<span class="w"> </span>&lt;marutter@gmail.com&gt;
@@ -4449,7 +4438,7 @@ System<span class="w"> </span>has<span class="w"> </span>not<span class="w"> </s
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 24, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2024</span>
   </span>
 
     
