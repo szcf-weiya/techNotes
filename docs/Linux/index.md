@@ -126,50 +126,51 @@ comments: true
 
 ### LD_PRELOAD
 
-!!! note
-    Used in [:link:]()
+??? tip "before the command on the same line"
 
-If it is set on the same line before the command, it is only valid on the same line. For example, 
+    If it is set on the same line before the command, it is only valid on the same line. For example, 
 
-```bash
-(R4.1.0) /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ ldd libR.so 
-        libstdc++.so.6 => /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib/./../.././libstdc++.so.6 (0x00007f80f4d1e000)
+    ```bash
+    (R4.1.0) /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ ldd libR.so 
+            libstdc++.so.6 => /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib/./../.././libstdc++.so.6 (0x00007f80f4d1e000)
 
-(R4.1.0) /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6 ldd libR.so 
-        /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fc70eb4c000)
-```
+    (R4.1.0) /media/weiya/PSSD/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6 ldd libR.so 
+            /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fc70eb4c000)
+    ```
 
-!!! warning
+??? warning "a particular file instead of a folder"
     it is should be a particular file instead of a folder, otherwise it throws
     ```bash
     $ LD_PRELOAD=/usr/lib/x86_64-linux-gnu/ ldd libR.so 
     ERROR: ld.so: object '/usr/lib/x86_64-linux-gnu/' from LD_PRELOAD cannot be preloaded (cannot read file data): ignored.
     ```
 
-In the words of [:link:](https://www.baeldung.com/linux/ld_preload-trick-what-is), 
+??? warning "use `export`"
 
-> LD_PRELOAD is an environment variable, it affects only the current process
+    In the words of [:link:](https://www.baeldung.com/linux/ld_preload-trick-what-is), 
 
-Alternatively, we can use `export` and `unset`, 
+    > LD_PRELOAD is an environment variable, it affects only the current process
 
-```bash
-~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
-~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ ldd libR.so 
-        /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f601f456000)
-~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ conda activate R4.1.0
-(R4.1.0) ~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ echo $LD_PRELOAD 
-/usr/lib/x86_64-linux-gnu/libstdc++.so.6
-(R4.1.0) ~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ ldd libR.so 
-        /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fb231b15000)
-```
+    Alternatively, we can use `export` and `unset`, 
 
-BTW, in the above, `conda activate` does not affect.
+    ```bash
+    ~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+    ~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ ldd libR.so 
+            /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f601f456000)
+    ~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ conda activate R4.1.0
+    (R4.1.0) ~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ echo $LD_PRELOAD 
+    /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+    (R4.1.0) ~/Programs/anaconda3/envs/R4.1.0/lib/R/lib$ ldd libR.so 
+            /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007fb231b15000)
+    ```
 
-!!! warning
+    BTW, in the above, `conda activate` does not affect.
+
+??? warning "use `env` in GitHub Action"
     `export LD_PRELOAD` did not work in GitHub Actions, such as [:link:](https://github.com/szcf-weiya/MonotoneSplines.jl/actions/runs/3841183884/workflow).
     The proper way is to put it to `env`. [:link:](https://github.com/szcf-weiya/MonotoneSplines.jl/blob/7c2e96fb2214c6d5dc4e123ae8beb9128be14086/.github/workflows/ci.yml#L68)
 
-!!! tip
+??? tip "`man ld.so`"
     The documentation can be found in `man ld.so`, ~~not `man ld`~~.    
 
 ### search order
@@ -237,16 +238,18 @@ UID        PID  PPID  C STIME TTY          TIME CMD
 root         1     0  0 09:15 ?        00:00:44 /sbin/init splash
 ```
 
-每一列的含义可以在 `man ps` 中的 `STANDARD FORMAT SPECIFIERS` 小节中找到，具体地，
+??? note "每一列的含义"
 
-- `UID`: same with EUID, effective user ID (alias uid).
-- `PID`: a number representing the process ID (alias tgid).
-- `PPID`: parent process ID.
-- `C`: processor utilization. Currently, this is the integer value of the percent usage over the lifetime of the process.  (see %cpu).
-- `STIME`: same with `START`, starting time or date of the process.  Only the year will be displayed if the process was not started the same year ps was invoked, or "MmmDD" if it was not started the same day, or "HH:MM" otherwise.  See also bsdstart, start, lstart, and stime.
-- `TTY`: controlling tty (terminal).  (alias tt, tty).
-- `TIME`: cumulative CPU time, "[DD-]HH:MM:SS" format.  (alias cputime).
-- `CMD`: see args.  (alias args, command). when the arguments to that command cannot be located, 会被中括号 `[]` 包起来
+    每一列的含义可以在 `man ps` 中的 `STANDARD FORMAT SPECIFIERS` 小节中找到，具体地，
+
+    - `UID`: same with EUID, effective user ID (alias uid).
+    - `PID`: a number representing the process ID (alias tgid).
+    - `PPID`: parent process ID.
+    - `C`: processor utilization. Currently, this is the integer value of the percent usage over the lifetime of the process.  (see %cpu).
+    - `STIME`: same with `START`, starting time or date of the process.  Only the year will be displayed if the process was not started the same year ps was invoked, or "MmmDD" if it was not started the same day, or "HH:MM" otherwise.  See also bsdstart, start, lstart, and stime.
+    - `TTY`: controlling tty (terminal).  (alias tt, tty).
+    - `TIME`: cumulative CPU time, "[DD-]HH:MM:SS" format.  (alias cputime).
+    - `CMD`: see args.  (alias args, command). when the arguments to that command cannot be located, 会被中括号 `[]` 包起来
 
 ## `user` vs. `sys`
 
@@ -305,7 +308,7 @@ find -L . -name . -o -type d -prune -o -type l -exec rm {} +
 
 just need to run
 
-```
+```bash
 source activate thisenv
 python -m ipykernel install --user --name thisenv
 ```
@@ -314,37 +317,37 @@ and only once, hydrogen will remember this!!
 
 ref to [How to specify the conda environment in which hydrogen (jupyter) starts?](https://github.com/nteract/hydrogen/issues/899)
 
-## .netrc
+??? note ".netrc? heroku?"
 
-为了学习 RL，在听了周博磊在 B 站的视频后，准备玩下[示例代码](https://github.com/cuhkrlcourse/RLexample)，但是在终端中创建新 conda 环境时，
+    为了学习 RL，在听了周博磊在 B 站的视频后，准备玩下[示例代码](https://github.com/cuhkrlcourse/RLexample)，但是在终端中创建新 conda 环境时，
 
-```bash
-conda create --name RL python=3
-```
+    ```bash
+    conda create --name RL python=3
+    ```
 
-总是报错，
+    总是报错，
 
-> Collecting package metadata (current_repodata.json): failed
->
-> ProxyError: Conda cannot proceed due to an error in your proxy configuration.
-> Check for typos and other configuration errors in any '.netrc' file in your home directory,
-> any environment variables ending in '_PROXY', and any other system-wide proxy
-> configuration settings.
+    > Collecting package metadata (current_repodata.json): failed
+    >
+    > ProxyError: Conda cannot proceed due to an error in your proxy configuration.
+    > Check for typos and other configuration errors in any '.netrc' file in your home directory,
+    > any environment variables ending in '_PROXY', and any other system-wide proxy
+    > configuration settings.
 
-其中提到一个 `.netrc`，没想到自己竟然还真的有这个文件，看了下内容，只有两条，
+    其中提到一个 `.netrc`，没想到自己竟然还真的有这个文件，看了下内容，只有两条，
 
-```bash
-machine api.heroku.com
-...
-machine git.heroku.com
-...
-```
+    ```bash
+    machine api.heroku.com
+    ...
+    machine git.heroku.com
+    ...
+    ```
 
-这才意识到很早无意识中折腾 heroku 时创建的。那这个文件是干嘛的呢，[查了一下发现](https://stackoverflow.com/questions/21828495/purpose-of-the-netrc-file)
+    这才意识到很早无意识中折腾 heroku 时创建的。那这个文件是干嘛的呢，[查了一下发现](https://stackoverflow.com/questions/21828495/purpose-of-the-netrc-file)
 
-> This is a file that is often used by Unix programs to hold access details for remote sites. It was originally created for use with FTP.
+    > This is a file that is often used by Unix programs to hold access details for remote sites. It was originally created for use with FTP.
 
-最后这个问题是直接把 .bashrc 中所有的代理去掉了.
+    最后这个问题是直接把 .bashrc 中所有的代理去掉了.
 
 ## GPG error
 
