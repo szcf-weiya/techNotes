@@ -254,3 +254,7 @@ c=someObject.toString() //将对象转换为字符串
 
 [js中 => 的含义](https://www.cnblogs.com/developer-os/p/6268479.html)
 
+## MathJax
+
+- [MathJax basic tutorial and quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
+- 注意在 mathjax 中小于号左右空一格，不要连着写

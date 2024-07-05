@@ -14,7 +14,7 @@
 
 仅仅设置了 VPC 的 CIDR blocks 还不够，需要设置对应的 subnet 的 IPv6 CIDR，注意这里会让我们填写ipv6 address末尾几位，我一开始什么都没填直接点确认，会报错，然后我随便试了 `00`，竟然成功了。后来在 [Setup Amazon AWS EC2 with IPv6 Address](https://xieles.com/blog/setup-amazon-aws-ec2-with-ipv6-address) 看到，这个可以填 00, 01, 02 之类的。
 
-经过这两部配置，可以通过 “Actions, Networking, Manage IP Addresses” 添加 IPv6 address 了，本以为大功告成。但是当我[通过 ping6 验证](https://www.cyberciti.biz/faq/howto-test-ipv6-network-with-ping6-command/)的时候，并没有成功。
+经过这两步配置，可以通过 “Actions, Networking, Manage IP Addresses” 添加 IPv6 address 了，本以为大功告成。但是当我[通过 ping6 验证](https://www.cyberciti.biz/faq/howto-test-ipv6-network-with-ping6-command/)的时候，并没有成功。
 
 ```bash
 # success

@@ -2,7 +2,17 @@
 comments: true
 ---
 
-# Notes on CHPC-Cluster
+# Notes on CHPC-Cluster @ CUHK
+
+!!! abstract
+    Here are tips for the CHPC-Cluster @ CUHK during my PhD.
+
+    Besides the sections listed on this page, the following blogs are organized along timeline, usually recording debugging procedures,
+
+    - [2020.12.17 Fail to SSH passwordlessly](blog/2020-12-17-passwordless-failed.md)
+    - [2021.05.12 Fail to Access Home](blog/2021-05-12-fail-to-access-home.md)
+    - [2022.11.19 Why Job Restart?](blog/2022-11-19-why-job-restart.md)
+
 
 ## Login
 

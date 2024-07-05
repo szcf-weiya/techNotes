@@ -2,31 +2,37 @@ site_name: techNotes
 nav:
   - Home: index.md
   - Linux:
-    - General: Linux/index.md
+    - Linux/index.md
+    - General: Linux/general.md
+    - Command-line Tools: Linux/tools.md
+    - Shell Scripts: shell/index.md
     - Laptops:
       - Ubuntu: Linux/ubuntu.md
-      - Application Software: Linux/software.md
-      - Command-line Tools: Linux/tools.md
-      - Shell Scripts: shell/index.md
+      - Applications: Linux/software.md
+      - G40: Linux/asAserver.md 
       # - Upgradation: Linux/upgrade.md
       - WSL: Linux/wsl.md
       - Blog:
-        - CD Partition in USB Drive: Linux/blog/2024-03-09-CD-drive.md
+        - CD in USB Drive: Linux/blog/2024-03-09-CD-drive.md
         - Portable SSD: Linux/blog/2020-08-25-PSSD.md
-        - Charge Battery Adaptively: Linux/blog/2020-09-01-charge-battery-adaptively.md
+        - Charge Adaptively: Linux/blog/2020-09-01-charge-battery-adaptively.md
         - Switch Monitor Mode: Linux/blog/2021-06-07-switch-monitor.md
         - Use Old Kernel: Linux/blog/2021-07-28-use-old-kernel.md
     - Servers: 
       - General: Linux/servers.md
       - AliECS: Linux/ecs.md
-      - Rocky-Linux: Linux/rocky-server.md
-      - G40: Linux/asAserver.md 
-    - CHPC-Cluster:
-      - Tips: Linux/chpc.md
+      - Rocky-Linux @ Fan Group: Linux/rocky-server.md
+      - CHPC-Cluster @ CUHK: Linux/chpc.md
       - Blog:
-        - Fail to SSH passwordlessly: Linux/blog/2020-12-17-passwordless-failed.md
+        - ipv6 on aws: Internet/ipv6.md
+        - Fail to SSH pwdlessly: Linux/blog/2020-12-17-passwordless-failed.md
         - Fail to Access Home: Linux/blog/2021-05-12-fail-to-access-home.md
         - Why Job Restart?: Linux/blog/2022-11-19-why-job-restart.md
+    - Network/Internet:
+      - Internet/index.md
+      - 科学上网: Internet/sci-int.md
+      - 加密算法: Internet/encrypt.md
+
   - StatProgramming:
     - Comparisons: comparisons/stat.md
     - R:
@@ -57,11 +63,13 @@ nav:
     - C/C++: 
       - General: Cpp/index.md
       - Qt: Cpp/Qt/index.md
-    - Java: java/index.md
+    - Java: 
+      - java/index.md
     - SQL: 
-      - General: SQL/index.md
+      - SQL/index.md
       - RMySQL: R/install-notes-for-rmysql.md
-    - Cuda: cuda/index.md
+    - CUDA: 
+      - cuda/index.md
   - DocProgramming:
     - TeX:
       - General: TeX/index.md
@@ -71,20 +79,19 @@ nav:
       - Overleaf: TeX/overleaf.md
     - Markdown: 
       - General: doc/markdown.md
-    - StaticPages:
-      - Website: website/index.md
-      - Disqus: website/disqus.md
+  - BuildWebsite:
+    - website/index.md
+    - Components:
       - CSS: website/css.md
-      - JS: js/index.md
+      - JS: website/js.md
+      - Disqus: website/disqus.md
       - Analytics: website/analytics.md
-    - DynamicPages:
-      - PHP: PHP/index.md
+    - Static:
+      - Jekyll: website/jekyll.md
+    - Dynamic:
+      - Shiny: website/2024-06-10-spinup-rshiny.md
+      - PHP: website/php.md
       - XAMPP: website/xampp.md
-  - Network/Internet:
-    - 科学上网: Internet/sci-int.md
-    - 一般问题: Internet/index.md
-    - IPv6: Internet/ipv6.md
-    - 加密算法: Internet/encrypt.md
   - Development:
     - Autotools: autotools/index.md
     - Docker: dev/docker.md
@@ -120,7 +127,9 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.top
+    - navigation.indexes
     - content.action.edit
+  font: false
 google_analytics: ['UA-85007363-6', 'auto']
 copyright: 'Copyright &copy; 2017-2024 weiya'
 site_author: weiya
@@ -150,7 +159,10 @@ extra_javascript:
   - javascripts/mathjax.js
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
     
-#extra_css:
+extra_css:
+  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
+  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - stylesheets/custom.css
     #  - stylesheets/extra.css
 markdown_extensions:
   # https://github.com/mkdocs/mkdocs/issues/1678
@@ -163,8 +175,8 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.snippets
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - codehilite
   - smarty

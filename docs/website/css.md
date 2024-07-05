@@ -44,6 +44,50 @@ CSS 全称为 Cascading Style Sheets, 中文名为**层叠样式表**.
 	</style>
 	```
 
+## 博客中的定理环境
+
+通过 css 实现，例如
+
+```css
+.theorem {
+    display: block;
+    margin: 12px 0;
+    font-style: italic;
+}
+.theorem:before {
+    content: "Theorem.";
+    font-weight: bold;
+    font-style: normal;
+}
+```
+
+详见 [LaTeX Theorem-like Environments for the Web](http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/)
+
+这种方法不能使用 markdown 的列表环境，有时候会不太方便。注意到 kramdown 本身具有一些特性可以解决这个问题，比如设置 Block Attributes，详见 [Quick Reference of kramdown](https://kramdown.gettalong.org/quickref.html)
+
+则我可以用
+
+>
+{: .theorem}
+
+实现定理环境，而且这样还有额外的好处，可以突出定理。但是 before 的字 "Theorem" 会单独占据一行，误打误撞看到 [Adding quotes to blockquote](https://stackoverflow.com/questions/32909991/adding-quotes-to-blockquote)，试了一下
+
+```css
+blockquote p {
+    display: inline;
+  }
+```
+
+可以解决这个问题，但担心会破坏其他的 blockquote 环境，于是指定 theorem 可以这样处理，即
+
+```css
+blockquote.theorem p {
+    display: inline;
+  }
+```
+
+这个用法参考 [CSS Id 和 Class](https://www.runoob.com/css/css-id-class.html)
+
 ## `width/height` 作用的具体细节
 
 ### `width:auto`

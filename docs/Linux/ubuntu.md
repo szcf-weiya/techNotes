@@ -12,6 +12,15 @@ comments: true
     - **16.04**: ~ -> 2020-04-12
     - **14.04**: ~ -> ~
 
+    Besides the sections listed on this page, the following blogs are organized along timeline,
+
+    - [2024.03.09 CD Partition in USB Drive](blog/2024-03-09-CD-drive.md)
+    - [2021.07.28 Use Old Kernel](blog/2021-07-28-use-old-kernel.md)
+    - [2021.06.07 Switch Monitor Mode](blog/2021-06-07-switch-monitor.md)
+    - [2020.09.01 Charge Battery Adaptively](blog/2020-09-01-charge-battery-adaptively.md)
+    - [2020.08.25 Portable SSD](blog/2020-08-25-PSSD.md)
+
+
 ## Package Manager
 
 ### Advanced Package Tool (APT)
