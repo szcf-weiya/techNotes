@@ -39,7 +39,6 @@ nav:
       - Base: R/index.md
       - Plot: R/plot.md
       - Blog:
-        - Deploy Shiny Server on Yale SpinUp: R/blog/2024-06-10-spinup-rshiny.md
         - Install blipr on Yale HPC: R/blog/2024-02-13-blipr-yale-hpc.md
         - Legend in ggplot2: R/legend_from_zhihu.md
         - New sample function (v3.6.0+): R/sample.md
