@@ -143,14 +143,14 @@ lines(predict(lo), col='red', lwd=2)
     }
 
     my.upper <- function(x, y, ...){
-    cor.val = round(cor(x,y), digits = 3)
-    if (abs(cor.val) > 0.5){
-        text(mean(x), mean(y), cor.val, cex = 3)
-        text(sort(x)[length(x)*0.8], max(y), '***', cex = 4, col = "red")
-    } else
-    {
-        text(mean(x), mean(y), cor.val, cex = 1)
-    }
+        cor.val = round(cor(x,y), digits = 3)
+        if (abs(cor.val) > 0.5){
+            text(mean(x), mean(y), cor.val, cex = 3)
+            text(sort(x)[length(x)*0.8], max(y), '***', cex = 4, col = "red")
+        } else
+        {
+            text(mean(x), mean(y), cor.val, cex = 1)
+        }
     }
 
     pairs(iris[1:4], lower.panel =my.lower, upper.panel = my.upper)
@@ -376,15 +376,6 @@ bp + guides(fill=guide_legend(title=NULL))
 bp + theme(legend.title=element_blank())
 ```
 
-#### 自定义图例的标题及名称
-
-两种方式，一种
-另一种修改数据集
-
-```r
-
-```
-
 #### 图例的整体形状
 
 ```r
@@ -436,44 +427,32 @@ ggplot(data=PlantGrowth, aes(x=group, fill=group)) +
     geom_bar(colour="black", show.legend=FALSE)
 ```
 
-### 坐标轴标签字体大小
+!!! tip "grid.arrange"
 
-参考[Size of labels for x-axis and y-axis ggplot in R](https://stackoverflow.com/questions/14363804/size-of-labels-for-x-axis-and-y-axis-ggplot-in-r)
+    `par(mfrow=c(1,2))`不起作用，要用到 `gridExtra` 包，如
 
-### 多张图片
+    ```r
+    library(gridExtra)
+    plot1 <- qplot(1)
+    plot2 <- qplot(1)
+    grid.arrange(plot1, plot2, ncol=2)
+    ```
 
-`par(mfrow=c(1,2))`不起作用，要用到 `gridExtra` 包，如
+??? tip "`scale_fill_manual` vs `scale_color_manual`"
 
-```r
-library(gridExtra)
-plot1 <- qplot(1)
-plot2 <- qplot(1)
-grid.arrange(plot1, plot2, ncol=2)
-```
+    更改颜色命令为
 
-参考[Side-by-side plots with ggplot2](https://stackoverflow.com/questions/1249548/side-by-side-plots-with-ggplot2)
+    ```r
+    scale_fill_manual(values = c("red", "blue"))
+    ```
 
-### 绘制地图
+!!! tip "`ggsave` instead of `dev.off`"
 
-参考
+    NOT `png()...dev.off()`, use
 
-1. [Making Maps with R](http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html)
-
-### `scale_fill_manual` 和 `scale_color_manual`
-
-更改颜色命令为
-
-```r
-scale_fill_manual(values = c("red", "blue"))
-```
-
-### save 
-
-NOT `png()...dev.off()`, use
-
-```r
-ggsave("sth.eps",device="eps", width=9)
-```
+    ```r
+    ggsave("sth.eps",device="eps", width=9)
+    ```
 
 ### `aes_string` vs `aes`
 
