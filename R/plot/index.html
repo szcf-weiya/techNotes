@@ -1631,51 +1631,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      坐标轴标签字体大小
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      多张图片
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      绘制地图
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scale_fill_manual-scale_color_manual" class="md-nav__link">
-    <span class="md-ellipsis">
-      scale_fill_manual 和 scale_color_manual
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#save" class="md-nav__link">
-    <span class="md-ellipsis">
-      save
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#aes_string-vs-aes" class="md-nav__link">
     <span class="md-ellipsis">
       aes_string vs aes
@@ -4144,51 +4099,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      坐标轴标签字体大小
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      多张图片
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      绘制地图
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scale_fill_manual-scale_color_manual" class="md-nav__link">
-    <span class="md-ellipsis">
-      scale_fill_manual 和 scale_color_manual
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#save" class="md-nav__link">
-    <span class="md-ellipsis">
-      save
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#aes_string-vs-aes" class="md-nav__link">
     <span class="md-ellipsis">
       aes_string vs aes
@@ -4347,14 +4257,14 @@ then in plotly, one can use
 <span class="p">}</span>
 
 <span class="n">my.upper</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kc">...</span><span class="p">){</span>
-<span class="n">cor.val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">digits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
-<span class="nf">if </span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">cor.val</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.5</span><span class="p">){</span>
-<span class="w">    </span><span class="nf">text</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">cor.val</span><span class="p">,</span><span class="w"> </span><span class="n">cex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
-<span class="w">    </span><span class="nf">text</span><span class="p">(</span><span class="nf">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="m">0.8</span><span class="p">],</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;***&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">cex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">)</span>
-<span class="p">}</span><span class="w"> </span><span class="n">else</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="nf">text</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">cor.val</span><span class="p">,</span><span class="w"> </span><span class="n">cex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="n">cor.val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">digits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">if </span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">cor.val</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0.5</span><span class="p">){</span>
+<span class="w">        </span><span class="nf">text</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">cor.val</span><span class="p">,</span><span class="w"> </span><span class="n">cex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="w">        </span><span class="nf">text</span><span class="p">(</span><span class="nf">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="m">0.8</span><span class="p">],</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="s">&#39;***&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">cex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nf">text</span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="w"> </span><span class="n">cor.val</span><span class="p">,</span><span class="w"> </span><span class="n">cex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="nf">pairs</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span><span class="w"> </span><span class="n">lower.panel</span><span class="w"> </span><span class="o">=</span><span class="n">my.lower</span><span class="p">,</span><span class="w"> </span><span class="n">upper.panel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my.upper</span><span class="p">)</span>
@@ -4531,12 +4441,7 @@ f(x) = \begin{cases}
 <span class="c1"># Remove title for all legends</span>
 <span class="n">bp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span><span class="o">=</span><span class="nf">element_blank</span><span class="p">())</span>
 </code></pre></div>
-<h4 id="_5">自定义图例的标题及名称<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p>两种方式，一种
-另一种修改数据集</p>
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-<h4 id="_6">图例的整体形状<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h4 id="_5">图例的整体形状<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># Title appearance</span>
 <span class="n">bp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">16</span><span class="p">,</span><span class="w"> </span><span class="n">face</span><span class="o">=</span><span class="s">&quot;bold&quot;</span><span class="p">))</span>
 
@@ -4575,29 +4480,27 @@ f(x) = \begin{cases}
 <span class="w">    </span><span class="nf">geom_bar</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
 <span class="w">    </span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">show.legend</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="_7">坐标轴标签字体大小<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>参考<a href="https://stackoverflow.com/questions/14363804/size-of-labels-for-x-axis-and-y-axis-ggplot-in-r">Size of labels for x-axis and y-axis ggplot in R</a></p>
-<h3 id="_8">多张图片<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">grid.arrange</p>
 <p><code>par(mfrow=c(1,2))</code>不起作用，要用到 <code>gridExtra</code> 包，如</p>
 <div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">gridExtra</span><span class="p">)</span>
 <span class="n">plot1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">qplot</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
 <span class="n">plot2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">qplot</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
 <span class="nf">grid.arrange</span><span class="p">(</span><span class="n">plot1</span><span class="p">,</span><span class="w"> </span><span class="n">plot2</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 </code></pre></div>
-<p>参考<a href="https://stackoverflow.com/questions/1249548/side-by-side-plots-with-ggplot2">Side-by-side plots with ggplot2</a></p>
-<h3 id="_9">绘制地图<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p>参考</p>
-<ol>
-<li><a href="http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html">Making Maps with R</a></li>
-</ol>
-<h3 id="scale_fill_manual-scale_color_manual"><code>scale_fill_manual</code> 和 <code>scale_color_manual</code><a class="headerlink" href="#scale_fill_manual-scale_color_manual" title="Permanent link">&para;</a></h3>
+</div>
+<details class="tip">
+<summary><code>scale_fill_manual</code> vs <code>scale_color_manual</code></summary>
 <p>更改颜色命令为</p>
 <div class="highlight"><pre><span></span><code><span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">))</span>
 </code></pre></div>
-<h3 id="save">save<a class="headerlink" href="#save" title="Permanent link">&para;</a></h3>
+</details>
+<div class="admonition tip">
+<p class="admonition-title"><code>ggsave</code> instead of <code>dev.off</code></p>
 <p>NOT <code>png()...dev.off()</code>, use</p>
 <div class="highlight"><pre><span></span><code><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;sth.eps&quot;</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="s">&quot;eps&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="m">9</span><span class="p">)</span>
 </code></pre></div>
+</div>
 <h3 id="aes_string-vs-aes"><code>aes_string</code> vs <code>aes</code><a class="headerlink" href="#aes_string-vs-aes" title="Permanent link">&para;</a></h3>
 <p>在重复绘图时，似乎是作用域的缘故，有时 <code>aes</code> 只能保留最后一个，此时需要用 <code>aes_string</code>.</p>
 <p>参考 <a href="https://www.biostars.org/p/234142/">Question: Continuously add lines to ggplot with for loop</a></p>
@@ -4623,7 +4526,7 @@ f(x) = \begin{cases}
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 24, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2024</span>
   </span>
 
     
