@@ -13,28 +13,6 @@ comments: true
 
 refer to [一文搞懂TCP与UDP的区别](https://www.cnblogs.com/fundebug/p/differences-of-tcp-and-udp.html)
 
-## Cache
-
-### HTTP Cache
-
-![](https://user-images.githubusercontent.com/25027560/38461517-c7f2f422-3b04-11e8-8e94-20bbeb2a32b8.png)
-
-> source: [缓存（一）——缓存总览：从性能优化的角度看缓存](https://github.com/amandakelake/blog/issues/43)
-
-![](https://user-images.githubusercontent.com/25027560/38223505-d8ab53da-371d-11e8-9263-79814b6971a5.png)
-
-> source: [缓存（二）——浏览器缓存机制：强缓存、协商缓存](https://github.com/amandakelake/blog/issues/41)
-
-a simpler version refer to [动画：深入浅出从根上理解 HTTP 缓存机制及原理](https://mp.weixin.qq.com/s/HASA9n1tzwcZXZUKj35D3Q)
-
-### CDN Cache
-
-![](https://pic3.zhimg.com/v2-50e7b057f156a00873309818c1fe3f86_r.jpg)
-
-![](https://pic1.zhimg.com/v2-2a3e196c2a6dc3fdc15e3128dd185028_r.jpg)
-
-> source: [知乎：http缓存与cdn缓存配置指南](https://zhuanlan.zhihu.com/p/48961014)
-
 ## 有线连不上
 
 手动设置ip
@@ -138,34 +116,6 @@ sudo apt-get install bcmwl-kernel-source
 ```
 
 see also [:link:](https://www.shuzhiduo.com/A/D854QD6pdE/).
-
-## CDN折腾记录
-
-突然想到要怎么设置子域名，一开始还以为需要再次购买，原来并非如此，只需要添加解析即可。具体设置子域名和添加解析的方法可以参考github提供的帮助文档。
-
-花了几个小时折腾完这个，突然又想实现https 访问，直接百度“github pages https”便有几篇文档，都谈到了cloudflare，注册之后可以享受免费版本的CDN服务。一开始我也不清楚CDN到底是什么，就直接按照网上的教程走
-
-```
-1. 注册cloudflare
-2. 添加自己的网站
-3. 将DNS服务器改为cloudflare上要求的，比如在阿里云的域名管理界面，将万网服务器换掉。
-```
-
-设置完这些之后，我也清楚可能不会理解生效，但也想尽快看看效果怎么样，于是搜索“更新dns缓存”的资料，尽管按照教程走了一遍，但是dns还是没有更新过来，通过
-```
-dig hohoweiya.xyz +noall +answer
-```
-返回的结果仍然为未添加cloudflare时的信息。同时访问hohoweiya.xyz并没有传说中的https出现，又郁闷了很久。
-
-在某一刻，突然发现在firefox浏览器中访问时自动跳转到了https，然而在chrome中依然为http，然后我强制在地址栏中加入https，打开开发者模式，说有混合的错误，调用了http的资源，于是我又便去改了网站的资源地址，将http的资源改为https的。直到某一刻才清醒过来，原来我的firefox开了自动代理，之所以能够用https访问是因为我是通过代理访问的，去掉代理后，在Firefox中也是http，即使强行添加https也会报warning。
-
-后来，觉得可能是校园网的原因，导致dns还没有更新过来，于是在服务器上ping了域名地址，已经显示为cloudflare提供的ip了。此时，也通过了www.ping.chinaz.com 进行了测试，表明cloudflare已经添加成功了，只是本地迟迟不能够访问。
-
-并且，通过手机也是能够通过https访问的，于是我做了一个试验，开启手机的热点，让电脑通过手机上网，这时候无论是ping还是dig都返回出了cloudflare的ip，而且此时访问hohoweiya.xyz已经自动为https了。
-
-到现在，原因已经很显然了，因为校园网是通过电信的，不同运营商更新dns的时间可能存在差异，导致一开始在校园网上访问网址不能通过https，以及ping和dig的结果没有发生变化。
-
-折腾了一晚上，也算是了解了一点点cdn和dns的知识吧，知识有时候不要太固执，该等待的时候还是要耐心一点。
 
 ## Ubuntu连接UWS和eduroam
 

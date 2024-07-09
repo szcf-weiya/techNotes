@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 ## Jekyll
 
 Jekyll is a **Ruby Gem** that can be installed on most systems.

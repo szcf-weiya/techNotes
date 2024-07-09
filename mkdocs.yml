@@ -49,7 +49,8 @@ nav:
       - OpenCV: python/opencv.md
       - rpy2: python/rpy2.md
       - Blog:
-        - PyStan 体验: python/pystan/README.md
+        - 那些年抢过的讲座: misc/report.md
+        - PyStan 体验: python/pystan.md
         - 自建关键词索引页: python/esltag.md
     - Julia: 
       - Base: julia/index.md
@@ -91,6 +92,11 @@ nav:
       - Shiny: website/2024-06-10-spinup-rshiny.md
       - PHP: website/php.md
       - XAMPP: website/xampp.md
+      - 微信小程序: misc/wx.md
+    - CDN: website/cdn.md
+    - Others: 
+      - 其它问题: website/general.md
+      - jssdk: misc/wxjssdk.md
   - Development:
     - Autotools: autotools/index.md
     - Docker: dev/docker.md
@@ -113,9 +119,6 @@ nav:
     - Fresh: fresh/index.md
     - Links: links/index.md
     - Live: misc/live.md
-    - 小程序: misc/wx.md
-    - jssdk: misc/wxjssdk.md
-    - 讲座: misc/report.md
     - Mi: mi/index.md
     - Terminology: misc/terms.md
 
@@ -145,7 +148,7 @@ extra:
     - icon: 'fontawesome/regular/newspaper'
       link: 'https://stats.hohoweiya.xyz'
     - icon: 'fontawesome/regular/note-sticky'
-      link: 'https://blog.csdn.net/szcf715'
+      link: 'https://blog.hohoweiya.xyz'
     - icon: 'fontawesome/regular/envelope'
       link: 'mailto:szcfweiya@gmail.com'
 

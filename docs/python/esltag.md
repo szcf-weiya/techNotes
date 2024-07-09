@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # 自建关键词索引页
 
 记录下为 ESL-CN 项目生成[关键词索引页](https://esl.hohoweiya.xyz/tag/index.html)的探索过程。

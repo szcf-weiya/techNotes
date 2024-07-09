@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Disqus for mainland China
 
 如果能够正常访问 Disqus，直接参考官方文档进行配置，或者这篇博客，[Adding Disqus to a Jekyll Blog](https://sgeos.github.io/jekyll/disqus/2016/02/14/adding-disqus-to-a-jekyll-blog.html)。
