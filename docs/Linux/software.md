@@ -621,9 +621,11 @@ It is a file manager for GNOME.
 
 ## Octave
 
-参考[Octave for Debian systems](http://wiki.octave.org/Octave_for_Debian_systems)
+??? note "Octave"
 
-另外帮助文档见[GNU Octave](https://www.gnu.org/software/octave/doc/interpreter/)
+    参考[Octave for Debian systems](http://wiki.octave.org/Octave_for_Debian_systems)
+
+    另外帮助文档见[GNU Octave](https://www.gnu.org/software/octave/doc/interpreter/)
 
 ## Okular
 
