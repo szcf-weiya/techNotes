@@ -110,6 +110,8 @@ nav:
   - InvitedPosts:
     - Samtools: biology/samtools.md
     - MaxClusterUsage: Linux/maximum-usage-of-ITSC-cluster-resource.md
+  - Links: 
+    - links/index.md
   - Misc:
     - English: English/index.md
     - Guitar: guitar/index.md
@@ -117,7 +119,6 @@ nav:
     - Biology: biology/index.md
     - Finance: finance/index.md
     - Fresh: fresh/index.md
-    - Links: links/index.md
     - Live: misc/live.md
     - Mi: mi/index.md
     - Terminology: misc/terms.md
