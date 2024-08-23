@@ -11,17 +11,8 @@ comments: true
 	- usage of `<<-`, "it will keep going through the environments in order until it finds a variable with that name, and it will assign it to that." see also [:link:](https://stackoverflow.com/questions/2628621/how-do-you-use-scoping-assignment-in-r)
 	- 序列中 `0.1+1:10-1` 中 `:` 优先级低于加减运算符，所以返回 `0.1, 1.1, ..., 9.1`.
 	- repeat string: `strrep('str', 2)`, `paste(rep('str', 2), collapse='')`
+	- return the string of the input: `deparse(substitute(x)`
 
-??? tip "神奇的`[`"
-
-	来自[R语言中以矩阵引用多维数组的元素](https://d.cosx.org/d/419525-r)
-
-	比如
-	```r
-	A = array(sample(0:255, 100*100*3, replace = T), dim = c(100,100,3))
-	B = array(sample(1:100, 2*5), dim = c(2,5))
-	apply(A, 3, `[`, t(B))
-	```
 
 ??? tip "`seq_along(x)` instead of `1:length(x)`"
 
@@ -497,6 +488,17 @@ rstudio
 
 详见 [Issue #32 use rstudio in env R4.1.0](https://github.com/szcf-weiya/techNotes/issues/32#issuecomment-881508987)
 
+## Scripts
+
+??? tip "check memory usage"
+	the unit is MB
+
+	```r
+	memuse = function () {
+		strtoi(system(paste("ps -p", Sys.getpid(), "-o rss="), intern = T)) / 1024
+	}
+	```
+
 ## Rstudio
 
 #### Failed to create OpenGL context
@@ -657,53 +659,116 @@ but keep in mind that the index starts from 0 instead of 1. Here is another way 
 
 In julia, we use `sort` and `sortperm`.
 
-## Row/Column of String Array cannot be changed to numeric
+## `data.table`
 
-suppose I have a string array,
+??? warning "`DT[, 1+1]` returns `2` instead of the second column"
+	```r
+	> DT = data.table(
+	ID = c("b","b","b","a","a","c"),
+	a = 1:6,
+	b = 7:12,
+	c = 13:18
+	)
+	> DT[, 1]
+	ID
+	1:  b
+	2:  b
+	3:  b
+	4:  a
+	5:  a
+	6:  c
+	> DT[, 2]
+	a
+	1: 1
+	2: 2
+	3: 3
+	4: 4
+	5: 5
+	6: 6
+	> DT[, 1+1]
+	[1] 2
+	> DT[, c(1+1)]
+	a
+	1: 1
+	2: 2
+	3: 3
+	4: 4
+	5: 5
+	6: 6
+	> DT[, `1+1`]
+	Error in `[.data.table`(DT, , `1+1`) : 
+	j (the 2nd argument inside [...]) is a single symbol but column name '1+1' is not found. Perhaps you intended DT[, ..1+1]. This difference to data.frame is deliberate and explained in FAQ 1.1.
+	```
 
-```r
-> a = array(dim=c(2,2))
-> a
-     [,1] [,2]
-[1,]   NA   NA
-[2,]   NA   NA
-> a[1,1]="w"
-> a[1, 2]= "1"
-> a[2,1]="x"
-> a[2,2]="2"
-> a
-     [,1] [,2]
-[1,] "w"  "1" 
-[2,] "x"  "2" 
-> a[,2] = as.numeric(a[,2])
-> a
-     [,1] [,2]
-[1,] "w"  "1" 
-[2,] "x"  "2" 
-> as.numeric(a[,2])
-[1] 1 2
-```
+## Matrix/Array
 
-on the other hand, suppose we have a numeric array, set one row to be string, then all elements would become string automatically.
 
-```r
-> b = array(dim=c(2,2))
-> b
-     [,1] [,2]
-[1,]   NA   NA
-[2,]   NA   NA
-> b[1,]=1
-> b[2,]=1
-> b
-     [,1] [,2]
-[1,]    1    1
-[2,]    1    1
-> b[1,] = "1"
-> b
-     [,1] [,2]
-[1,] "1"  "1" 
-[2,] "1"  "1" 
-```
+??? tip "神奇的`[`"
+
+	来自[R语言中以矩阵引用多维数组的元素](https://d.cosx.org/d/419525-r)
+
+	比如
+
+	```r
+	A = array(sample(0:255, 100*100*3, replace = T), dim = c(100,100,3))
+	B = array(sample(1:100, 2*5), dim = c(2,5))
+	apply(A, 3, `[`, t(B))
+	
+	     [,1] [,2] [,3]
+	[1,]  151   57  104
+	[2,]   52  221  151
+	[3,]  141  138  173
+	[4,]  164  212  108
+	[5,]   74  251  161
+	```
+
+??? warning "Row/Column of String Array cannot be changed to numeric"
+
+	suppose I have a string array,
+
+	```r
+	> a = array(dim=c(2,2))
+	> a
+		[,1] [,2]
+	[1,]   NA   NA
+	[2,]   NA   NA
+	> a[1,1]="w"
+	> a[1, 2]= "1"
+	> a[2,1]="x"
+	> a[2,2]="2"
+	> a
+		[,1] [,2]
+	[1,] "w"  "1" 
+	[2,] "x"  "2" 
+	> a[,2] = as.numeric(a[,2])
+	> a
+		[,1] [,2]
+	[1,] "w"  "1" 
+	[2,] "x"  "2" 
+	> as.numeric(a[,2])
+	[1] 1 2
+	```
+
+	on the other hand, suppose we have a numeric array, set one row to be string, then all elements would become string automatically.
+
+	```r
+	> b = array(dim=c(2,2))
+	> b
+		[,1] [,2]
+	[1,]   NA   NA
+	[2,]   NA   NA
+	> b[1,]=1
+	> b[2,]=1
+	> b
+		[,1] [,2]
+	[1,]    1    1
+	[2,]    1    1
+	> b[1,] = "1"
+	> b
+		[,1] [,2]
+	[1,] "1"  "1" 
+	[2,] "1"  "1" 
+	```
 
 ## Run from Command Line
 
@@ -759,6 +824,10 @@ First of all, define
 ```R
 p <- function(x) { cat(deparse(substitute(x)), "=", x, "\n") }
 ```
+
+??? tip "return the string of the input: `deparse(substitute(x)`"
+	- `substitute(x)`: return the expression itself without evaluating it
+	- `deparse(substitute(x))`: turn an R expression into a character string
 
 for convenient and clear comparisons, which takes the advantage of [R's Lazy Evaluation](https://colinfay.me/lazyeval/).
 
@@ -950,65 +1019,63 @@ Refer to [https://stats.stackexchange.com/questions/108995/interpreting-residual
 
 	[*Some* figure captions from RMarkdown not showing](https://stackoverflow.com/questions/27444804/some-figure-captions-from-rmarkdown-not-showing)
 
+??? warning "绘制 ROC 曲线时，必要时需要指定 `label.ordering` 中 negative 和 positive，否则结果会完全相反"
+	ROCR 包的 `prediction`定义如下
 
-## ROCR包中prediction函数
+	```r
+	prediction(predictions, labels, label.ordering = NULL)
+	```
 
-`prediction`定义如下
+	在绘制ROC曲线时，必要时需要指定`label.ordering`中negative和positive，否则结果会完全相反。举个例子
 
-```r
-prediction(predictions, labels, label.ordering = NULL)
-```
+	```r
+	## generate some data with a non-linar class boundary
+	set.seed(123)
+	x = matrix(rnorm(200*2), ncol = 2)
+	x[1:100, ] = x[1:100, ] + 2
+	x[101:150, ] = x[101:150, ] - 2
+	y = c(rep(1, 150), rep(2, 50))
+	dat = data.frame(x = x, y = as.factor(y))
+	plot(x, col = y)
 
-在绘制ROC曲线时，必要时需要指定`label.ordering`中negative和positive，否则结果会完全相反。举个例子
+	## randomly split into training and testing groups
+	train = sample(200, 100)
 
-```r
-## generate some data with a non-linar class boundary
-set.seed(123)
-x = matrix(rnorm(200*2), ncol = 2)
-x[1:100, ] = x[1:100, ] + 2
-x[101:150, ] = x[101:150, ] - 2
-y = c(rep(1, 150), rep(2, 50))
-dat = data.frame(x = x, y = as.factor(y))
-plot(x, col = y)
+	## training data using radial kernel
+	svmfit = svm(y~., data = dat[train, ], kernel = "radial", cost = 1)
+	plot(svmfit, dat[train, ])
 
-## randomly split into training and testing groups
-train = sample(200, 100)
+	## cross-validation
+	set.seed(123)
+	tune.out = tune(svm, y~., data = dat[train, ], kernel = "radial",
+					ranges = list(cost = c(0.1, 1, 10, 100, 1000),
+								gamma = c(0.5, 1, 2, 3, 4)))
+	summary(tune.out)
 
-## training data using radial kernel
-svmfit = svm(y~., data = dat[train, ], kernel = "radial", cost = 1)
-plot(svmfit, dat[train, ])
+	## prediction
+	table(true = dat[-train, "y"], pred = predict(tune.out$best.model, newdata = dat[-train, ]))
 
-## cross-validation
-set.seed(123)
-tune.out = tune(svm, y~., data = dat[train, ], kernel = "radial",
-                ranges = list(cost = c(0.1, 1, 10, 100, 1000),
-                              gamma = c(0.5, 1, 2, 3, 4)))
-summary(tune.out)
+	## ROC curves
+	library(ROCR)
+	rocplot = function ( pred , truth , ...) {
+	predob = prediction ( pred, truth , label.ordering = c("2", "1"))
+	perf = performance ( predob , "tpr" , "fpr")
+	plot ( perf,...)
+	}
+	svmfit.opt = svm(y~., data = dat[train, ], kernel = "radial",
+					gamma = 3, cost = 10, decision.values = T)
+	fitted = attributes(predict(svmfit.opt, dat[train, ], decision.values = T))$decision.values
 
-## prediction
-table(true = dat[-train, "y"], pred = predict(tune.out$best.model, newdata = dat[-train, ]))
+	rocplot ( fitted , dat [ train ,"y"] , main ="Training Data")
+	```
 
-## ROC curves
-library(ROCR)
-rocplot = function ( pred , truth , ...) {
-  predob = prediction ( pred, truth , label.ordering = c("2", "1"))
-  perf = performance ( predob , "tpr" , "fpr")
-  plot ( perf,...)
-}
-svmfit.opt = svm(y~., data = dat[train, ], kernel = "radial",
-                 gamma = 3, cost = 10, decision.values = T)
-fitted = attributes(predict(svmfit.opt, dat[train, ], decision.values = T))$decision.values
+	对于上述代码，如果不指定`label.ordering = c("2", "1")`，则得到的ROC曲线如下图
 
-rocplot ( fitted , dat [ train ,"y"] , main ="Training Data")
-```
+	![](roc_wrong.png)
 
-对于上述代码，如果不指定`label.ordering = c("2", "1")`，则得到的ROC曲线如下图
+	原因是因为`fitted`与`y`大小关系相反，即前者大时后者小，而前者小时后者大。
 
-![](roc_wrong.png)
-
-原因是因为`fitted`与`y`大小关系相反，即前者大时后者小，而前者小时后者大。
-
-![](roc_fact.png)
+	![](roc_fact.png)
 
 ## R 符号运算
 
@@ -1260,14 +1327,6 @@ which will install `nodejs-10.13.0`.
  $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
-```
-
-## Check Memory Usage
-
-```r
-memuse = function () {
-    strtoi(system(paste("ps -p", Sys.getpid(), "-o rss="), intern = T)) / 1024
-}
 ```
 
 ## Stats Functions
