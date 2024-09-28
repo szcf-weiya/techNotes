@@ -516,6 +516,11 @@ refer to [fc-list command in Linux with examples](https://www.geeksforgeeks.org/
 
 ## Headphone
 
+!!! tip "restart sound"
+    ```r
+    pulseaudio -k && sudo alsa force-reload
+    ```
+
 The output candidates are
 
 ![image](https://user-images.githubusercontent.com/13688320/130001206-2b37623c-e461-41ef-b8c4-721784d5da22.png)
