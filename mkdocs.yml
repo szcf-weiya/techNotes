@@ -113,6 +113,7 @@ nav:
   - Links: 
     - links/index.md
   - Misc:
+    - LLM: LLM/cosx.md
     - English: English/index.md
     - Guitar: guitar/index.md
     - Windows: win/index.md
