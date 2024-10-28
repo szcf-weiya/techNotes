@@ -1,0 +1,344 @@
+{
+  "nodes": [
+    {
+      "id": "\u82cf\u4e1c\u5761"
+    },
+    {
+      "id": "\u82cf\u6d35"
+    },
+    {
+      "id": "\u6bcd\u4eb2"
+    },
+    {
+      "id": "\u82cf\u8f99"
+    },
+    {
+      "id": "\u738b\u9002"
+    },
+    {
+      "id": "\u82cf\u8fc8"
+    },
+    {
+      "id": "\u82cf\u5b50\u7531"
+    },
+    {
+      "id": "\u79e6\u89c2"
+    },
+    {
+      "id": "\u9648\u7cd9"
+    },
+    {
+      "id": "\u5f20\u65b9\u5e73"
+    },
+    {
+      "id": "\u6768\u4e16\u660c"
+    },
+    {
+      "id": "\u9648\u5b63\u5e38"
+    },
+    {
+      "id": "\u5e7f\u5dde\u9053\u58eb\u4f55\u5fb7\u987a"
+    },
+    {
+      "id": "\u8303\u7eaf\u4ec1"
+    },
+    {
+      "id": "\u675c\u51e0"
+    },
+    {
+      "id": "\u5b59\u89c9"
+    },
+    {
+      "id": "\u9a78\u9a6c\u738b\u8bdc"
+    },
+    {
+      "id": "\u94b1\u8fa9"
+    },
+    {
+      "id": "\u94b1\u4e16\u96c4"
+    },
+    {
+      "id": "\u6f58\u9152\u76d1"
+    },
+    {
+      "id": "\u5927\u901a\u7985\u5e08"
+    },
+    {
+      "id": "\u6587\u4e0e\u53ef"
+    },
+    {
+      "id": "\u5f20\u6765"
+    },
+    {
+      "id": "\u6797\u676f"
+    },
+    {
+      "id": "\u5f20\u4e2d"
+    },
+    {
+      "id": "\u80dc\u5143\u53d1"
+    },
+    {
+      "id": "\u6641\u7aef\u5f66"
+    },
+    {
+      "id": "\u8a79\u8303"
+    },
+    {
+      "id": "\u4e54\u4eca"
+    },
+    {
+      "id": "\u8303\u9547"
+    },
+    {
+      "id": "\u5802\u59b9"
+    },
+    {
+      "id": "\u4e8c\u5341\u4e03\u5a18"
+    },
+    {
+      "id": "\u513f\u5b50"
+    },
+    {
+      "id": "\u7ae0\u505c"
+    },
+    {
+      "id": "\u82cf\u4e1c\u5761\u7684\u59bb\u5b50"
+    },
+    {
+      "id": "\u516d\u4e00\u7fc1"
+    },
+    {
+      "id": "\u592a\u5b88\u9648\u8944"
+    },
+    {
+      "id": "\u5144\u5f1f\u5b50\u7531"
+    },
+    {
+      "id": "\u9053\u6559\u5947\u4eba\u5434\u590d\u53e4"
+    },
+    {
+      "id": "\u7fdf\u79c0\u624d"
+    },
+    {
+      "id": "\u82cf\u8fc7"
+    }
+  ],
+  "links": [
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u82cf\u6d35",
+      "relationship": "family dynamics"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u82cf\u6d35",
+      "relationship": "family influence"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u6bcd\u4eb2",
+      "relationship": "family influence"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u82cf\u8f99",
+      "relationship": "brotherly love"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u738b\u9002",
+      "relationship": "family ties"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u82cf\u8fc8",
+      "relationship": "family ties"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u82cf\u5b50\u7531",
+      "relationship": "family support"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u6bcd\u4eb2",
+      "relationship": "family support"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u79e6\u89c2",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u9648\u7cd9",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u5f20\u65b9\u5e73",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u6768\u4e16\u660c",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u9648\u5b63\u5e38",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u5e7f\u5dde\u9053\u58eb\u4f55\u5fb7\u987a",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u8303\u7eaf\u4ec1",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u675c\u51e0",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u5b59\u89c9",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u9a78\u9a6c\u738b\u8bdc",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u94b1\u8fa9",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u94b1\u4e16\u96c4",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u6f58\u9152\u76d1",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u5927\u901a\u7985\u5e08",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u6587\u4e0e\u53ef",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u5f20\u6765",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u6797\u676f",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u5f20\u4e2d",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u80dc\u5143\u53d1",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u6641\u7aef\u5f66",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u8a79\u8303",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u4e54\u4eca",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u8303\u9547",
+      "relationship": "friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u5802\u59b9",
+      "relationship": "first love"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u5802\u59b9",
+      "relationship": "first love"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u4e8c\u5341\u4e03\u5a18",
+      "relationship": "personal relationship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u513f\u5b50",
+      "relationship": "family"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u7ae0\u505c",
+      "relationship": "friendship turned adversarial"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u82cf\u4e1c\u5761\u7684\u59bb\u5b50",
+      "relationship": "love"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u516d\u4e00\u7fc1",
+      "relationship": "literary relationships"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u592a\u5b88\u9648\u8944",
+      "relationship": "contemporary relations"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u5144\u5f1f\u5b50\u7531",
+      "relationship": "family bonds"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u9053\u6559\u5947\u4eba\u5434\u590d\u53e4",
+      "relationship": "philosophical friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u7fdf\u79c0\u624d",
+      "relationship": "neighborly friendship"
+    },
+    {
+      "source": "\u82cf\u4e1c\u5761",
+      "target": "\u82cf\u8fc7",
+      "relationship": "father-son relationship"
+    }
+  ]
+}
