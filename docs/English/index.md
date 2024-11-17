@@ -1,3 +1,10 @@
+## 2024.11
+
+- debunk stereotype about aging
+- ancient relics
+- myocarditis
+- pangenome
+
 ## 2024.08
 
 - Atrial Fibrillation
