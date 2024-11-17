@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -5062,7 +5062,7 @@
 <li><a href="https://blog.csdn.net/t0nsha/article/details/8606886">解释bash脚本中set -e与set -o pipefail的作用</a></li>
 </ul>
 <h2 id="double-exclamation">Double Exclamation (!!)<a class="headerlink" href="#double-exclamation" title="Permanent link">&para;</a></h2>
-<p><code>!!</code> would execute the previous command. I found it when I type a git commit message like <code>!!! XXX</code>, which renders as <code>PREVIOUS COMMAND! XXX</code>, see <a href="https://github.com/szcf-weiya/en/commit/aa3c536847ae9563bf3e892d7f144725b7f7314a"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a> for details. See also <a href="https://stackoverflow.com/questions/24980679/double-exclamation-in-bash-script"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>.</p>
+<p><code>!!</code> would execute the previous command. I found it when I type a git commit message like <code>!!! XXX</code>, which renders as <code>PREVIOUS COMMAND! XXX</code>, see <a href="https://github.com/szcf-weiya/en/commit/aa3c536847ae9563bf3e892d7f144725b7f7314a"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a> for details. See also <a href="https://stackoverflow.com/questions/24980679/double-exclamation-in-bash-script"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a>.</p>
 <h2 id="shell-builtin-vs-shell-keyword">shell builtin vs shell keyword<a class="headerlink" href="#shell-builtin-vs-shell-keyword" title="Permanent link">&para;</a></h2>
 <p>For <code>time</code> command, </p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/188676132-5ee17497-578a-4e41-abb5-0dc25f92ed5e.png" /></p>
@@ -5231,7 +5231,7 @@ xxyyz
 XXyyzz
 </code></pre></div>
 <p>But this only replaces the first occurrence, for all occurrence, use double slashes, i.e., <code>${var//xx/XX}</code></p>
-<p>Another application is to check whether a string is not empty, neither space, <code>[ -n "${str// /}" ]</code>, see also <a href="https://stackoverflow.com/questions/13509508/check-if-string-is-neither-empty-nor-space-in-shell-script"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>Another application is to check whether a string is not empty, neither space, <code>[ -n "${str// /}" ]</code>, see also <a href="https://stackoverflow.com/questions/13509508/check-if-string-is-neither-empty-nor-space-in-shell-script"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a></p>
 <h3 id="default-value">default value<a class="headerlink" href="#default-value" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>${1:-foo}</code>: if parameter is unset or <strong>null</strong>, the expansion of word is substituted.</li>
@@ -5843,7 +5843,7 @@ $<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>tes
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>在 <code>wc</code> 中文件前面插入 <code>&lt;</code> 则不会返回文件名，即 <code>wc -l &lt; test.txt</code>. 另见 <a href="https://unix.stackexchange.com/questions/154322/how-to-display-the-number-of-lines-words-and-characters-in-separate-lines"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>在 <code>wc</code> 中文件前面插入 <code>&lt;</code> 则不会返回文件名，即 <code>wc -l &lt; test.txt</code>. 另见 <a href="https://unix.stackexchange.com/questions/154322/how-to-display-the-number-of-lines-words-and-characters-in-separate-lines"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">time</span><span class="w"> </span><span class="o">{</span>
 <span class="w">  </span>head<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="k">$((</span><span class="nv">$l1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="k">))</span><span class="s2">&quot;</span>

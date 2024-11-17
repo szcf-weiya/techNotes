@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -4508,7 +4508,7 @@
 <li>只用 embed 层，改变 <code>height</code> 为 <code>2100px</code>，<code>100%</code></li>
 </ol>
 <p>通通不管用，然后发现是因为默认 embed 的 height 设成了 auto.</p>
-<p>一个自然想法是在 2100px 后面加 <code>!important</code>，但并没有成功，后来发现 <a href="https://stackoverflow.com/questions/4616964/css-important-not-working"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>，所以需要单独写 css</p>
+<p>一个自然想法是在 2100px 后面加 <code>!important</code>，但并没有成功，后来发现 <a href="https://stackoverflow.com/questions/4616964/css-important-not-working"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a>，所以需要单独写 css</p>
 <div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
 <span class="nt">embed</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">2100</span><span class="kt">px</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>

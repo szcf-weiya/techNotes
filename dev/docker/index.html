@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -4432,11 +4432,11 @@ $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </spa
 <p class="admonition-title">Tip</p>
 <ul>
 <li><code>docker run</code> and <code>docker container run</code> are exactly the same <a href="https://stackoverflow.com/questions/51247609/what-is-the-difference-between-docker-run-and-docker-container-run"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.36 20.2v-5.38h1.79V22H3v-7.18h1.8v5.38zM6.77 14.32l.37-1.76 8.79 1.85-.37 1.76zm1.16-4.21.76-1.61 8.14 3.78-.76 1.62zm2.26-3.99 1.15-1.38 6.9 5.76-1.15 1.37zm4.45-4.25L20 9.08l-1.44 1.07-5.36-7.21zM6.59 18.41v-1.8h8.98v1.8z"/></svg></span></a></li>
-<li>since <code>docker run</code> will automatically download the image if no installed, then <code>docker pull</code> is unnecessary. <a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></li>
+<li>since <code>docker run</code> will automatically download the image if no installed, then <code>docker pull</code> is unnecessary. <a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a></li>
 <li><code>-v /HOST-DIR:/CONTAINER-DIR</code> creates a bind mount.</li>
 <li><code>-p hostPort:containerPort</code> publishes the container&rsquo;s port to the host.</li>
 <li><code>-d</code> runs the container in the background and print the new container ID.</li>
-<li><img alt="🔑" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f511.svg" title=":key:" /> More details can be checked via <code>man docker-run</code>.</li>
+<li><img alt="🔑" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f511.svg" title=":key:" /> More details can be checked via <code>man docker-run</code>.</li>
 </ul>
 </div>
 <p>Then we can see the container via </p>
@@ -4457,7 +4457,7 @@ CONTAINER<span class="w"> </span>ID<span class="w">        </span>IMAGE<span cla
 <p class="admonition-title">Tip</p>
 <ul>
 <li>similarly, <code>docker container stop/kill</code> can be abbreviated as <code>docker stop/kill</code></li>
-<li><code>kill</code> 向容器里面的主进程发出 SIGKILL 信号，而 <code>stop</code> 发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号。两者差异是，应用程序收到 SIGTERM 信号后，可以自行进行收尾清理工作，但也可以不理会这个信号。如果收到 SIGKILL 信号，就会强行立即终止，那些正在进行的操作会全部丢失。<a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></li>
+<li><code>kill</code> 向容器里面的主进程发出 SIGKILL 信号，而 <code>stop</code> 发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号。两者差异是，应用程序收到 SIGTERM 信号后，可以自行进行收尾清理工作，但也可以不理会这个信号。如果收到 SIGKILL 信号，就会强行立即终止，那些正在进行的操作会全部丢失。<a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a></li>
 <li><code>containerID</code> 无需写全，只要能区分即可</li>
 <li>since we have specified the name via <code>--name myXAMPP</code>, we can replace the containerID with such name.</li>
 </ul>
@@ -4489,7 +4489,7 @@ $<span class="w"> </span>docker<span class="w"> </span>container<span class="w">
 <ul>
 <li><code>-t</code> allocates a pseudo-TTY.</li>
 <li><code>-i</code> keeps STDIN open even if not attached.</li>
-<li><code>docker [container] exec</code> 用于进入一个正在运行的 container. 如果 <code>docker run</code> 命令运行容器时，没有使用 <code>-it</code>，则需要这个命令进入容器。<a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></li>
+<li><code>docker [container] exec</code> 用于进入一个正在运行的 container. 如果 <code>docker run</code> 命令运行容器时，没有使用 <code>-it</code>，则需要这个命令进入容器。<a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 </div>
 <p>If we are inside the container, we can export the path to use the commands provided by XAMPP,</p>

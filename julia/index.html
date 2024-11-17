@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -4945,10 +4945,10 @@ lrwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </sp
 </code></pre></div>
 <h2 id="array">Array<a class="headerlink" href="#array" title="Permanent link">&para;</a></h2>
 <ul>
-<li>drop dimensions: <code>dropdims</code>, see <a href="https://stackoverflow.com/questions/52505760/dropping-singleton-dimensions-in-julia/"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a> for discussion on the necessity to specify the dims to drop</li>
+<li>drop dimensions: <code>dropdims</code>, see <a href="https://stackoverflow.com/questions/52505760/dropping-singleton-dimensions-in-julia/"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a> for discussion on the necessity to specify the dims to drop</li>
 <li>iterate each row of matrix: <code>eachrow()</code></li>
 <li>tuple to array: <code>collect()</code> or <code>[i for i in t]</code></li>
-<li>index of unique elements: <code>unique(i-&gt;x[i], 1:length(x))</code>, used in <a href="https://github.com/szcf-weiya/Clouds/blob/ae8fda7f7af41f10cdf341374919bbead0c67908/src/utils.jl#L49x"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></li>
+<li>index of unique elements: <code>unique(i-&gt;x[i], 1:length(x))</code>, used in <a href="https://github.com/szcf-weiya/Clouds/blob/ae8fda7f7af41f10cdf341374919bbead0c67908/src/utils.jl#L49x"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 <h3 id="pretty-println">pretty println<a class="headerlink" href="#pretty-println" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -5348,8 +5348,8 @@ $<span class="w"> </span>julia<span class="w"> </span>relpath/b.jl
 </div>
 <h2 id="gurobi">Gurobi<a class="headerlink" href="#gurobi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Currently (2022-09-23) no way to enable Gurobi.jl in GitHub Actions. <a href="https://github.com/jump-dev/Gurobi.jl/pull/428#issuecomment-1256638713"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></li>
-<li>hide message of <code>Set parameter ...</code>: <code>GRBsetintparam(GRB_ENV, GRB_INT_PAR_OUTPUTFLAG, 0)</code>. Inspired by the way for C++ API of Gurobi, <a href="https://support.gurobi.com/hc/en-us/community/posts/4412624836753-Do-not-print-Set-parameter-Username-in-console"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a> and <a href="https://github.com/jump-dev/Gurobi.jl/blob/master/src/gen91/libgrb_api.jl"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></li>
+<li>Currently (2022-09-23) no way to enable Gurobi.jl in GitHub Actions. <a href="https://github.com/jump-dev/Gurobi.jl/pull/428#issuecomment-1256638713"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a></li>
+<li>hide message of <code>Set parameter ...</code>: <code>GRBsetintparam(GRB_ENV, GRB_INT_PAR_OUTPUTFLAG, 0)</code>. Inspired by the way for C++ API of Gurobi, <a href="https://support.gurobi.com/hc/en-us/community/posts/4412624836753-Do-not-print-Set-parameter-Username-in-console"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a> and <a href="https://github.com/jump-dev/Gurobi.jl/blob/master/src/gen91/libgrb_api.jl"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 <h2 id="jld-vs-jld2">JLD vs JLD2<a class="headerlink" href="#jld-vs-jld2" title="Permanent link">&para;</a></h2>
 <p>JLD depends on HDF5, whose installation requires to login in, while JLD2 avoid the dependence of HDF5.</p>
@@ -5616,7 +5616,7 @@ py37<span class="w">                     </span>/home/weiya/anaconda3/envs/py37
 <p>then the module corresponds to the specified conda environment, and then like the above test, it also can be used in other conda environment without recompiling.</p>
 <h2 id="rcall">RCall<a class="headerlink" href="#rcall" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>rcopy(NA)</code> return <code>missing</code>, <a href="https://github.com/szcf-weiya/Clouds/issues/2"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></li>
+<li><code>rcopy(NA)</code> return <code>missing</code>, <a href="https://github.com/szcf-weiya/Clouds/issues/2"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a></li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="n">julia</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rcopy</span><span class="p">(</span><span class="sa">R</span><span class="s">&quot;lm(</span><span class="si">$dop</span><span class="s"> ~ 0 + </span><span class="si">$H</span><span class="s">)</span><span class="si">$coefficients</span><span class="s">&quot;</span><span class="p">)</span>
 <span class="mi">100</span><span class="o">-</span><span class="n">element</span><span class="w"> </span><span class="n">reshape</span><span class="p">(</span><span class="o">::</span><span class="kt">Array</span><span class="p">{</span><span class="kt">Union</span><span class="p">{</span><span class="kt">Missing</span><span class="p">,</span><span class="w"> </span><span class="kt">Float64</span><span class="p">},</span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">eltype</span><span class="w"> </span><span class="kt">Union</span><span class="p">{</span><span class="kt">Missing</span><span class="p">,</span><span class="w"> </span><span class="kt">Float64</span><span class="p">}</span><span class="o">:</span>
@@ -5981,7 +5981,7 @@ ok
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">import vs using</p>
-<p>Instead of explicitly redefine function with <code>Module.function</code> name, we can first import it, e.g., <code>pdf</code>, we need to use <code>import Distributions.pdf</code>. <a href="https://github.com/szcf-weiya/MCF/blob/6068353e1b3bd08594c1f3761a948fc13f1f6e70/src/util.jl#L3-L4"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a></p>
+<p>Instead of explicitly redefine function with <code>Module.function</code> name, we can first import it, e.g., <code>pdf</code>, we need to use <code>import Distributions.pdf</code>. <a href="https://github.com/szcf-weiya/MCF/blob/6068353e1b3bd08594c1f3761a948fc13f1f6e70/src/util.jl#L3-L4"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a></p>
 </div>
 <h2 id="methoderror-objects-of-type-module-are-not-callable"><code>MethodError: objects of type Module are not callable</code><a class="headerlink" href="#methoderror-objects-of-type-module-are-not-callable" title="Permanent link">&para;</a></h2>
 <p>check if the function is mistaken by the module name, such as <code>AxisArray</code> vs. <code>AxisArrays</code>.</p>

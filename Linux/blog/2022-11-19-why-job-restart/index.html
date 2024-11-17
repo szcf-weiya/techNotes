@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -4156,7 +4156,7 @@ Change:<span class="w"> </span><span class="m">2022</span>-11-19<span class="w">
 <p>刚好在另一处记录了此次提交 job 提交的记录</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/202863225-f06c2678-8a5f-4dda-b2c3-daf0d0f97ad0.png" /></p>
 <p>修改时间换成 HKT 的话是 2022-11-02T06:25，刚好在 job 1144480 的 submit 时间戳的几分钟之后。</p>
-<p>还有一点，注意到 <code>REASON</code> 一列 1144481 值为 &ldquo;BeginTime&rdquo;，根据<a href="https://stackoverflow.com/questions/71921445/slurm-pending-jobs"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f517.svg" title=":link:" /></a>，这应该是 pending job 的 reason， 但 job 的详细信息中 <code>Reason = None</code>，可能是因为已经处于 RUNNING 状态，只是 <code>sacct</code> 没有相应地更新 REASON.</p>
+<p>还有一点，注意到 <code>REASON</code> 一列 1144481 值为 &ldquo;BeginTime&rdquo;，根据<a href="https://stackoverflow.com/questions/71921445/slurm-pending-jobs"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a>，这应该是 pending job 的 reason， 但 job 的详细信息中 <code>Reason = None</code>，可能是因为已经处于 RUNNING 状态，只是 <code>sacct</code> 没有相应地更新 REASON.</p>
 <div class="highlight"><pre><span></span><code>$ scontrol show job 1144481
 JobId=1144481 JobName=dummy.job
 
