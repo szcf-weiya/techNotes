@@ -105,6 +105,15 @@ see also:
 !!! note "Charge Battery Adaptively"
     Check the [post](blog/2020-09-01-charge-battery-adaptively.md).
 
+## Camera
+
+check the issue when the inserted camera is not installed
+
+```bash
+$ v4l2-ctl --list-devices
+$ ffplay /dev/video*
+```
+
 ## Disk
 
 ??? note "Extend Disk"
