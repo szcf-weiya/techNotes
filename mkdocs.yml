@@ -135,7 +135,7 @@ theme:
     - content.action.edit
   font: false
 google_analytics: ['UA-85007363-6', 'auto']
-copyright: 'Copyright &copy; 2017-2024 weiya'
+copyright: 'Copyright &copy; 2017-2025 weiya'
 site_author: weiya
 site_description: '技术博客'
 site_url: https://tech.hohoweiya.xyz
