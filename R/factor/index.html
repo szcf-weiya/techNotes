@@ -4067,7 +4067,7 @@
 <span class="k">end</span>
 </code></pre></div>
 <p>其中 <code>Dict</code> 主要是为了缩小搜索空间。不过 W 指出在 R 中自己写函数挺费时的，然后他自己想出了个很优雅的解法</p>
-<div class="highlight"><pre><span></span><code><span class="n">ff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="nf">factor</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">unique</span><span class="p">(</span><span class="n">A</span><span class="p">)))</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="n">ff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="nf">factor</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">unique</span><span class="p">(</span><span class="n">A</span><span class="p">)))</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p>因为自己想复习下 Rcpp，所以将上述 Julia 代码改写成 Rcpp，</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Rcpp.h&gt;</span>
@@ -4168,7 +4168,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2024 weiya
+      Copyright &copy; 2017-2025 weiya
     </div>
   
   

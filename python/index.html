@@ -4634,10 +4634,10 @@
 </details>
 <h3 id="-u"><code>-u</code><a class="headerlink" href="#-u" title="Permanent link">&para;</a></h3>
 <p>For the following scripts,</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 
-<span class="k">def</span> <span class="nf">slow_function</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">slow_function</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;iter </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: para = ...&quot;</span><span class="p">)</span>
@@ -4661,8 +4661,8 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">new line every second</label><label for="__tabbed_2_2">a line after all</label><label for="__tabbed_2_3">a line every second</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -4670,8 +4670,8 @@
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
@@ -4679,8 +4679,8 @@
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
@@ -4703,7 +4703,7 @@
 <p>简言之，“使用with后不管with中的代码出现什么错误，都会进行对当前对象进行清理工作。”</p>
 <p>这也就是为什么在用 MySQLdb 的时候，称“With the with keyword, the Python interpreter automatically releases the resources. It also provides error handling.” 详见<a href="http://zetcode.com/db/mysqlpython/">MySQL Python tutorial - programming MySQL in Python</a></p>
 <p>另外，现在经常在神经网络中碰到，如</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">GradientTape</span><span class="p">()</span> <span class="k">as</span> <span class="n">tape</span><span class="p">:</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>    
@@ -4715,7 +4715,7 @@
 </blockquote>
 <p>More details refer to <a href="https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/">When to use yield instead of return in Python?</a></p>
 <p>An example gave in <a href="https://stackoverflow.com/questions/12555443/squaring-all-elements-in-a-list">Squaring all elements in a list</a></p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
 <span class="o">...</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
 <span class="o">...</span>             <span class="k">yield</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>
 <span class="o">...</span> 
@@ -4768,11 +4768,11 @@
 <div class="highlight"><pre><span></span><code><span class="n">T</span><span class="p">[[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]]</span>
 </code></pre></div>
 <p>in <a href="https://github.com/szcf-weiya/RLnotes/blob/8e714286c1ba09113c4bf295d89ed774a8c5be5c/ModelFree/mountaincar.py#L68">my code</a>, where <code>T</code> is an instance of a class and <code>[x, y]</code> is the coordinate. The <code>[]</code> is enabled due to the <code>__getitem__</code> method.</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TildCoder</span><span class="p">():</span>
-    <span class="k">def</span> <span class="nf">__init</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">TildCoder</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__init</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
         <span class="o">...</span>
 
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="o">...</span>
 </code></pre></div>
 <p>Then I found <a href="https://stackoverflow.com/a/43627975/">more detailed explanation</a> for the usage.</p>
@@ -4796,8 +4796,8 @@
 <details class="note">
 <summary><code>sys.argv</code></summary>
 <p>The arguments are stored in the array <code>sys.argv</code>, where the first element is the script name itself.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="kn">import</span> <span class="n">glob</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
@@ -4837,13 +4837,13 @@ $<span class="w"> </span>star_arg2<span class="w"> </span>../*.png
 <p>More related code can be found in <a href="https://github.com/search?l=Python&amp;q=user%3Aszcf-weiya+click&amp;type=Code">My Code Results on GitHub</a></p>
 </div>
 <p>It enables to use command line arguments. For example, </p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">click</span> <span class="c1"># DO NOT NAME THE FILE AS THE SAME NAME</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">click</span> <span class="c1"># DO NOT NAME THE FILE AS THE SAME NAME</span>
 
 <span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--a&quot;</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--b&quot;</span><span class="p">,</span> <span class="n">is_flag</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s2">&quot;--c&quot;</span><span class="p">,</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, c = </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -4911,13 +4911,13 @@ Error:<span class="w"> </span>Invalid<span class="w"> </span>value<span class="w
 <ol>
 <li>python2</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">urllib2</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">urllib2</span>
 <span class="nb">print</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="s2">&quot;%CE%B1%CE%BB%20&quot;</span><span class="p">)</span>
 </code></pre></div>
 <ol start="2">
 <li>python3</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">unquote</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">unquote</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">unquote</span><span class="p">(</span><span class="s2">&quot;%CE%B1%CE%BB%20&quot;</span><span class="p">))</span>
 </code></pre></div>
 <h3 id="u5"><code>&lt;U5</code><a class="headerlink" href="#u5" title="Permanent link">&para;</a></h3>
@@ -4978,13 +4978,13 @@ Error:<span class="w"> </span>Invalid<span class="w"> </span>value<span class="w
 </ul>
 <p>refer to <a href="https://www.geeksforgeeks.org/args-kwargs-python/"><code>*args</code> and <code>**kwargs</code> in Python</a>, and <a href="https://treyhunner.com/2018/10/asterisks-in-python-what-they-are-and-how-to-use-them/">Asterisks in Python: what they are and how to use them</a></p>
 <p>One example,</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">feature_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span><span class="w"> </span><span class="nf">feature_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">conv3</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">input_shape</span><span class="p">))))</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <p>where <code>*self.input_shape</code> aims to unpacking something like <code>[3, 4, 5]</code> to <code>3, 4, 5</code>.</p>
 <h3 id="annotations">annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h3>
 <p>When I am writing the custom loss function in XGBoost, there are some new syntax in the example function,</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">squared_log</span><span class="p">(</span><span class="n">predt</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">squared_log</span><span class="p">(</span><span class="n">predt</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
                 <span class="n">dtrain</span><span class="p">:</span> <span class="n">xgb</span><span class="o">.</span><span class="n">DMatrix</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 </code></pre></div>
 <p>what is the meaning of <code>:</code> and <code>-&gt;</code>. Then I <a href="https://stackoverflow.com/questions/14379753/what-does-mean-in-python-function-definitions">found</a> that they are <a href="https://www.python.org/dev/peps/pep-3107/">functional annotations</a>.</p>
@@ -4998,7 +4998,7 @@ Error:<span class="w"> </span>Invalid<span class="w"> </span>value<span class="w
 <p>NameError: name &lsquo;Tuple&rsquo; is not defined</p>
 </blockquote>
 <p>Ohhh, to avoid such problem, </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span>
 </code></pre></div>
 <p>refer to <a href="https://github.com/dmlc/xgboost/blob/master/demo/guide-python/custom_rmsle.py#L16">custom_rmsle.py#L16</a></p>
 <h2 id="ipython">IPython<a class="headerlink" href="#ipython" title="Permanent link">&para;</a></h2>
@@ -5202,8 +5202,8 @@ Available<span class="w"> </span>kernels:
 <p>Generally, for an array of shape (M, N), the first index runs along the vertical, the second index runs along the horizontal. The pixel centers are at integer positions ranging from 0 to N&rsquo; = N - 1 horizontally and from 0 to M&rsquo; = M - 1 vertically. <code>origin</code> determines how to the data is filled in the bounding box.</p>
 </blockquote>
 <p>an illustrative example,</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.cbook</span> <span class="k">as</span> <span class="nn">cbook</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.cbook</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cbook</span>
 
 <span class="n">imgf</span> <span class="o">=</span> <span class="n">cbook</span><span class="o">.</span><span class="n">get_sample_data</span><span class="p">(</span><span class="s2">&quot;ada.png&quot;</span><span class="p">)</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">imgf</span><span class="p">)</span>
@@ -5351,7 +5351,7 @@ Available<span class="w"> </span>kernels:
 </details>
 <details class="note">
 <summary><code>array_repr</code>: print numpy objects without line breaks</summary>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">x_str</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array_repr</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x_str</span><span class="p">)</span>
 </code></pre></div>
@@ -5432,7 +5432,7 @@ is modified instead.</p>
 <details class="note">
 <summary><code>np.isnan(x)</code> vs <code>x is np.nan</code></summary>
 <p>Use <code>np.isnan(x)</code>! When <code>x</code> from an array, <code>x is np.nan</code> return False. (WHY???) </p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
 <span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
@@ -5445,11 +5445,11 @@ is modified instead.</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">a1</span> <span class="ow">is</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 <span class="kc">True</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="s1">&#39;&gt;</span>
+<span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="err">&#39;</span><span class="nc">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="s1">&#39;&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">numpy</span><span class="o">.</span><span class="n">float64</span><span class="s1">&#39;&gt;</span>
+<span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="err">&#39;</span><span class="nc">numpy</span><span class="o">.</span><span class="n">float64</span><span class="s1">&#39;&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">float</span><span class="s1">&#39;&gt;</span>
+<span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="err">&#39;</span><span class="nc">float</span><span class="s1">&#39;&gt;</span>
 </code></pre></div>
 <p>See also <a href="https://pandas.pydata.org/docs/user_guide/missing_data.html"><img alt="🔗" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f517.svg" title=":link:" /></a></p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/13688320/232156383-84edb7bc-b06a-4dfb-b44a-708544e4b44f.png" /></p>
@@ -5554,7 +5554,7 @@ grant<span class="w"> </span>all<span class="w"> </span>privileges<span class="w
 
 <span class="c1"># https://foofish.net/thread-and-process.html</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="c1"># 进程是资源（CPU、内存等）分配的基本单位，它是程序执行时的一个实例。</span>
 <span class="c1"># 程序运行时系统就会创建一个进程，并为它分配资源，然后把该进程放入进程就绪队列，</span>
@@ -5805,7 +5805,7 @@ mv<span class="w"> </span>.coverage<span class="w"> </span>..
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2024 weiya
+      Copyright &copy; 2017-2025 weiya
     </div>
   
   

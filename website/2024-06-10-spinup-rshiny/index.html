@@ -4301,7 +4301,7 @@ $ git diff
 
 
 <span class="o">&gt;</span><span class="w"> </span><span class="nf">system.time</span><span class="p">({</span><span class="nf">ggsave</span><span class="p">(</span><span class="s">&quot;testp.pdf&quot;</span><span class="p">)})</span>
-<span class="n">Saving</span><span class="w"> </span><span class="m">11.7</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="m">5.45</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">image</span>
+<span class="n">Saving</span><span class="w"> </span><span class="m">11.7</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="m">5.45</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">image</span>
 <span class="w">   </span><span class="n">user</span><span class="w">  </span><span class="n">system</span><span class="w"> </span><span class="n">elapsed</span><span class="w"> </span>
 <span class="w"> </span><span class="m">24.775</span><span class="w">   </span><span class="m">4.042</span><span class="w">  </span><span class="m">28.798</span><span class="w"> </span>
 </code></pre></div>
@@ -4397,12 +4397,12 @@ load_data<span class="w"> </span>&lt;-<span class="w"> </span>memoise<span class
 <span class="p">)</span>
 <span class="p">)</span>
 
-<span class="n">server</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="n">session</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">server</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="n">session</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="c1"># Reactive to store the filtered options</span>
-<span class="n">filtered_choices</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nf">if </span><span class="p">(</span><span class="nf">is.null</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="n">long_list</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">])</span><span class="w">  </span><span class="c1"># Return top 100 items if query is empty</span>
+<span class="n">filtered_choices</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nf">is.null</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">return</span><span class="p">(</span><span class="n">long_list</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">])</span><span class="w">  </span><span class="c1"># Return top 100 items if query is empty</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Filtering choices with query:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="n">matches</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">grep</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;^&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">),</span><span class="w"> </span><span class="n">long_list</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">,</span><span class="w"> </span><span class="n">ignore.case</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">)</span>
@@ -4419,11 +4419,11 @@ load_data<span class="w"> </span>&lt;-<span class="w"> </span>memoise<span class
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="p">)</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
-<span class="w">    </span><span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">is.null</span><span class="p">(</span><span class="n">choices</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nf">is.null</span><span class="p">(</span><span class="n">choices</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Updating selectize input with choices:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">choices</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="n">session</span><span class="o">$</span><span class="nf">sendCustomMessage</span><span class="p">(</span><span class="s">&quot;updateChoices&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">choices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.list</span><span class="p">(</span><span class="n">choices</span><span class="p">)))</span>
 <span class="w">    </span><span class="nf">updateSelectizeInput</span><span class="p">(</span><span class="n">session</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dynamic_select&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">choices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">choices</span><span class="p">,</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">cat</span><span class="p">(</span><span class="s">&quot;No choices found for query:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">input</span><span class="o">$</span><span class="n">query</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="nf">updateSelectizeInput</span><span class="p">(</span><span class="n">session</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dynamic_select&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">choices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">character</span><span class="p">(</span><span class="m">0</span><span class="p">),</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
 <span class="w">    </span><span class="p">}</span>
@@ -4565,7 +4565,7 @@ that</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2017-2024 weiya
+      Copyright &copy; 2017-2025 weiya
     </div>
   
   
