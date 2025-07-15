@@ -38,6 +38,7 @@ Follow the tutorial [Automatic Backups on Ubuntu](https://www.cs.cornell.edu/~ed
 
 !!! info
     `cron` and `anacron` are two different utilities that can automatically run a program at scheduled times.
+    
     - `cron` is older, and it will not run any scheduled task whose scheduled time occurs while the computer is powered off.
     - `anacron` will re-run the missed task the next time the computer turns on.    
 
